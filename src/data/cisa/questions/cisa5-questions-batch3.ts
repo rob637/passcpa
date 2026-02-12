@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA5_QUESTIONS_BATCH3: Question[] = [
   {
-    id: 'CISA5-033',
+    id: 'cisa5-033',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Defense in depth strategy implements:',
     options: [
       'Single strong control',
@@ -25,10 +27,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Defense in Depth'
   },
   {
-    id: 'CISA5-034',
+    id: 'cisa5-034',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Zero trust security model assumes:',
     options: [
       'Internal network is trusted',
@@ -42,10 +46,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Zero Trust'
   },
   {
-    id: 'CISA5-035',
+    id: 'cisa5-035',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Demilitarized zone (DMZ) provides:',
     options: [
       'Maximum access for all users',
@@ -59,10 +65,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'DMZ'
   },
   {
-    id: 'CISA5-036',
+    id: 'cisa5-036',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Next-generation firewalls (NGFW) add capabilities including:',
     options: [
       'Only basic packet filtering',
@@ -76,10 +84,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'NGFW'
   },
   {
-    id: 'CISA5-037',
+    id: 'cisa5-037',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Wireless security best practices include:',
     options: [
       'Using WEP encryption',
@@ -93,10 +103,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Wireless Security'
   },
   {
-    id: 'CISA5-038',
+    id: 'cisa5-038',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network access control (NAC) ensures:',
     options: [
       'No devices can connect',
@@ -110,10 +122,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'NAC'
   },
   {
-    id: 'CISA5-039',
+    id: 'cisa5-039',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Endpoint detection and response (EDR) provides:',
     options: [
       'Only antivirus protection',
@@ -127,10 +141,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'EDR'
   },
   {
-    id: 'CISA5-040',
+    id: 'cisa5-040',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Mobile device management (MDM) provides:',
     options: [
       'Only email access',
@@ -144,10 +160,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'MDM'
   },
   {
-    id: 'CISA5-041',
+    id: 'cisa5-041',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Bring your own device (BYOD) introduces risks including:',
     options: [
       'No security concerns',
@@ -161,10 +179,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'BYOD'
   },
   {
-    id: 'CISA5-042',
+    id: 'cisa5-042',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat intelligence helps organizations by:',
     options: [
       'Eliminating all threats',
@@ -178,10 +198,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Threat Intelligence'
   },
   {
-    id: 'CISA5-043',
+    id: 'cisa5-043',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security orchestration, automation, and response (SOAR) provides:',
     options: [
       'Only ticketing',
@@ -195,10 +217,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'SOAR'
   },
   {
-    id: 'CISA5-044',
+    id: 'cisa5-044',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Phishing attacks primarily rely on:',
     options: [
       'Technical exploits',
@@ -212,10 +236,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Phishing'
   },
   {
-    id: 'CISA5-045',
+    id: 'cisa5-045',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Ransomware protection should include:',
     options: [
       'Only antivirus',
@@ -229,10 +255,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Ransomware'
   },
   {
-    id: 'CISA5-046',
+    id: 'cisa5-046',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Business email compromise (BEC) attacks target:',
     options: [
       'Network infrastructure',
@@ -246,10 +274,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'BEC'
   },
   {
-    id: 'CISA5-047',
+    id: 'cisa5-047',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Advanced persistent threats (APTs) are characterized by:',
     options: [
       'Quick, random attacks',
@@ -263,10 +293,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'APT'
   },
   {
-    id: 'CISA5-048',
+    id: 'cisa5-048',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Insider threat detection should include:',
     options: [
       'Only background checks',
@@ -280,10 +312,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Insider Threats'
   },
   {
-    id: 'CISA5-049',
+    id: 'cisa5-049',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security testing should include:',
     options: [
       'Only annual assessments',
@@ -297,10 +331,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Security Testing'
   },
   {
-    id: 'CISA5-050',
+    id: 'cisa5-050',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Red team exercises:',
     options: [
       'Test backup procedures',
@@ -314,10 +350,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Red Team'
   },
   {
-    id: 'CISA5-051',
+    id: 'cisa5-051',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Incident response preparation should include:',
     options: [
       'Only technical tools',
@@ -331,10 +369,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'IR Preparation'
   },
   {
-    id: 'CISA5-052',
+    id: 'cisa5-052',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Chain of custody in incident response ensures:',
     options: [
       'Evidence is destroyed',
@@ -348,10 +388,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Evidence Handling'
   },
   {
-    id: 'CISA5-053',
+    id: 'cisa5-053',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Forensic investigation in incident response should:',
     options: [
       'Modify original evidence',
@@ -365,10 +407,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Forensics'
   },
   {
-    id: 'CISA5-054',
+    id: 'cisa5-054',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privacy by design requires:',
     options: [
       'Adding privacy controls after development',
@@ -382,10 +426,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Privacy by Design'
   },
   {
-    id: 'CISA5-055',
+    id: 'cisa5-055',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'GDPR requires organizations to:',
     options: [
       'Only protect EU citizens',
@@ -399,10 +445,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'GDPR'
   },
   {
-    id: 'CISA5-056',
+    id: 'cisa5-056',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data subject access requests require organizations to:',
     options: [
       'Ignore the request',
@@ -416,10 +464,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Data Subject Rights'
   },
   {
-    id: 'CISA5-057',
+    id: 'cisa5-057',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cross-border data transfers require:',
     options: [
       'No special consideration',
@@ -433,10 +483,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Cross-Border Transfers'
   },
   {
-    id: 'CISA5-058',
+    id: 'cisa5-058',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data minimization principle requires:',
     options: [
       'Collecting all available data',
@@ -450,10 +502,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Data Minimization'
   },
   {
-    id: 'CISA5-059',
+    id: 'cisa5-059',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security control effectiveness should be:',
     options: [
       'Assumed',
@@ -467,10 +521,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Control Testing'
   },
   {
-    id: 'CISA5-060',
+    id: 'cisa5-060',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cloud security shared responsibility model means:',
     options: [
       'Cloud provider handles all security',
@@ -484,10 +540,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Shared Responsibility'
   },
   {
-    id: 'CISA5-061',
+    id: 'cisa5-061',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cloud access security brokers (CASBs) provide:',
     options: [
       'Only cloud storage',
@@ -501,10 +559,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'CASB'
   },
   {
-    id: 'CISA5-062',
+    id: 'cisa5-062',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tokenization protects sensitive data by:',
     options: [
       'Encrypting data',

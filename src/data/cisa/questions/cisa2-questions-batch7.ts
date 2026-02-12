@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH7: Question[] = [
   {
-    id: 'CISA2-153',
+    id: 'cisa2-153',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Digital ethics considerations for organizations include:',
     options: [
       'Only legal compliance',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Digital Ethics'
   },
   {
-    id: 'CISA2-155',
+    id: 'cisa2-155',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Technology debt management requires:',
     options: [
       'Ignoring legacy systems',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Technology Debt'
   },
   {
-    id: 'CISA2-156',
+    id: 'cisa2-156',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Agile governance adapts by:',
     options: [
       'Eliminating oversight',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Agile Governance'
   },
   {
-    id: 'CISA2-157',
+    id: 'cisa2-157',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Platform governance for digital ecosystems should address:',
     options: [
       'Only technology',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Platform Governance'
   },
   {
-    id: 'CISA2-159',
+    id: 'cisa2-159',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT operating model design should align:',
     options: [
       'Only technology',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Operating Model'
   },
   {
-    id: 'CISA2-160',
+    id: 'cisa2-160',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Shared services governance requires:',
     options: [
       'No SLAs',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Shared Services'
   },
   {
-    id: 'CISA2-161',
+    id: 'cisa2-161',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Centers of excellence (CoE) provide:',
     options: [
       'Only cost savings',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Centers of Excellence'
   },
   {
-    id: 'CISA2-162',
+    id: 'cisa2-162',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT value realization requires:',
     options: [
       'Only project completion',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Value Realization'
   },
   {
-    id: 'CISA2-163',
+    id: 'cisa2-163',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT capability maturity assessment identifies:',
     options: [
       'Only gaps',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Capability Maturity'
   },
   {
-    id: 'CISA2-164',
+    id: 'cisa2-164',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Workforce transformation for digital initiatives requires:',
     options: [
       'Technology only',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Workforce Transformation'
   },
   {
-    id: 'CISA2-165',
+    id: 'cisa2-165',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise risk management integration with IT risk ensures:',
     options: [
       'Separate risk views',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'ERM Integration'
   },
   {
-    id: 'CISA2-166',
+    id: 'cisa2-166',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Operational risk events should be:',
     options: [
       'Ignored if minor',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Operational Risk'
   },
   {
-    id: 'CISA2-167',
+    id: 'cisa2-167',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Control effectiveness metrics track:',
     options: [
       'Only existence',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Control Metrics'
   },
   {
-    id: 'CISA2-168',
+    id: 'cisa2-168',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Regulatory technology (RegTech) solutions help:',
     options: [
       'Avoid regulations',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'RegTech'
   },
   {
-    id: 'CISA2-169',
+    id: 'cisa2-169',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Governance reporting to the board should be:',
     options: [
       'Highly technical',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Board Reporting'
   },
   {
-    id: 'CISA2-170',
+    id: 'cisa2-170',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Policy exception data analysis can reveal:',
     options: [
       'Nothing useful',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Exception Analysis'
   },
   {
-    id: 'CISA2-171',
+    id: 'cisa2-171',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Project portfolio prioritization should use:',
     options: [
       'First come first served',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Portfolio Prioritization'
   },
   {
-    id: 'CISA2-172',
+    id: 'cisa2-172',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT investment business cases should include:',
     options: [
       'Only costs',

@@ -12,10 +12,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-dm-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-database',
     topic: 'Database Management',
     subtopic: 'Relational Databases',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following BEST describes referential integrity in a relational database?',
     options: [
       'Ensuring that all data is encrypted at rest',
@@ -32,10 +34,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-dm-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-database',
     topic: 'Database Management',
     subtopic: 'ACID Properties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "Isolation" property of ACID database transactions ensures that:',
     options: [
       'Failed transactions are rolled back completely',
@@ -52,10 +56,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-dm-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-database',
     topic: 'Database Management',
     subtopic: 'Data Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company is evaluating database options for a new financial system. Which database type would be MOST appropriate for a general ledger requiring ACID compliance and complex queries across related tables?',
     options: [
       'Document-oriented NoSQL database',
@@ -72,10 +78,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-dm-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'ETL Processes',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In an ETL (Extract, Transform, Load) process, the "Transform" phase typically includes all of the following EXCEPT:',
     options: [
       'Data cleansing and validation',
@@ -92,10 +100,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-dm-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Data Governance',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data governance PRIMARILY focuses on:',
     options: [
       'Establishing policies and standards for data quality and usage',
@@ -117,10 +127,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Access Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which access control model assigns permissions based on job function rather than individual identity?',
     options: [
       'Discretionary Access Control (DAC)',
@@ -137,10 +149,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Authentication',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Multi-factor authentication requires verification using factors from at least two of which categories?',
     options: [
       'Something you know, something you have, something you are',
@@ -157,10 +171,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Encryption',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company transmits sensitive financial data between locations. Which encryption approach provides BOTH confidentiality during transmission AND verification that data was not altered?',
     options: [
       'Transport Layer Security (TLS) with certificate validation',
@@ -177,10 +193,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Vulnerability Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is the MOST effective control to protect against known software vulnerabilities?',
     options: [
       'Applying security patches promptly',
@@ -197,10 +215,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy and Confidentiality',
     subtopic: 'Privacy Principles',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Generally Accepted Privacy Principles (GAPP), the "Use, Retention, and Disposal" principle requires that personal information:',
     options: [
       'Be collected only with explicit written consent',
@@ -217,10 +237,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-006',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy and Confidentiality',
     subtopic: 'Data Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A data classification policy PRIMARILY helps an organization:',
     options: [
       'Reduce the total amount of data stored',
@@ -242,10 +264,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-base-soc-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
     subtopic: 'SOC Report Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SOC 2 Type 2 report differs from a SOC 2 Type 1 report in that the Type 2 report:',
     options: [
       'Tests operating effectiveness of controls over a period of time',
@@ -262,10 +286,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-base-soc-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
     subtopic: 'Trust Services Criteria',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A cloud hosting provider wants a report to provide to any prospective customer. The company wants to demonstrate controls over availability and security. Which report type is MOST appropriate?',
     options: [
       'SOC 1 Type 2',
@@ -282,10 +308,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-base-soc-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
     subtopic: 'SOC 1 vs SOC 2',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A payroll processing service organization should obtain which type of SOC report for its financial statement audit clients?',
     options: [
       'SOC 3',
@@ -302,10 +330,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-base-soc-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
     subtopic: 'Complementary User Entity Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a SOC 1 report, "Complementary User Entity Controls" (CUECs) are:',
     options: [
       'Controls that the service auditor must test',
@@ -322,10 +352,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-soc-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
     subtopic: 'Trust Services Criteria',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The five Trust Services Criteria categories used in SOC 2 engagements are:',
     options: [
       'Governance, Risk, Compliance, Security, Operations',
@@ -347,10 +379,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-base-net-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-network',
     topic: 'Network Security',
     subtopic: 'Network Architecture',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A "demilitarized zone" (DMZ) in network architecture is used to:',
     options: [
       'Store backup copies of sensitive data',
@@ -367,10 +401,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-bc-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-continuity',
     topic: 'Business Continuity',
     subtopic: 'Recovery Objectives',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Recovery Point Objective (RPO) defines:',
     options: [
       'The maximum time to restore operations after a disaster',
@@ -387,10 +423,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-change-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-itgc',
     topic: 'IT General Controls',
     subtopic: 'Change Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is the MOST critical control to prevent unauthorized changes to production financial systems?',
     options: [
       'Requiring all changes be documented in a change management system',
@@ -407,10 +445,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-audit-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Audit Trails',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective audit trails in a financial system should capture all of the following EXCEPT:',
     options: [
       'User ID performing the transaction',
@@ -427,10 +467,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-base-cloud-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Service Models',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a Software as a Service (SaaS) cloud model, which party is responsible for patching the application software?',
     options: [
       'The customer organization',
@@ -455,10 +497,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cyber-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Attack Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An attacker sends an email appearing to be from the CEO requesting an urgent wire transfer. What type of attack is this?',
     options: [
       'Ransomware',
@@ -475,10 +519,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cyber-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Malware',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which type of malware encrypts a victim\'s files and demands payment for the decryption key?',
     options: [
       'Ransomware',
@@ -495,10 +541,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cyber-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Social Engineering',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A technique where an attacker follows an authorized person through a secure door without authentication is called:',
     options: [
       'Tailgating (piggybacking)',
@@ -515,10 +563,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cyber-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Zero-Day Vulnerabilities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'What makes a zero-day vulnerability particularly dangerous?',
     options: [
       'It can only be exploited for one day',
@@ -537,10 +587,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-access-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-access',
     topic: 'Access Controls',
     subtopic: 'Authentication Factors',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Multi-factor authentication requires at least two factors from different categories. Which combination satisfies this requirement?',
     options: [
       'Password and PIN',
@@ -557,10 +609,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-access-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-access',
     topic: 'Access Controls',
     subtopic: 'Least Privilege',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The principle of least privilege means:',
     options: [
       'Users should have the minimum access necessary to perform their job functions',
@@ -577,10 +631,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-access-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-access',
     topic: 'Access Controls',
     subtopic: 'Role-Based Access Control',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In Role-Based Access Control (RBAC), permissions are assigned to:',
     options: [
       'Roles, which are then assigned to users based on job function',
@@ -597,10 +653,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-access-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-access',
     topic: 'Access Controls',
     subtopic: 'Privileged Access',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which control is MOST effective for managing privileged access accounts (e.g., system administrators)?',
     options: [
       'Requiring complex passwords changed every 30 days',
@@ -619,10 +677,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-data-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company\'s data classification scheme includes: Public, Internal, Confidential, and Restricted. Employee salary data should typically be classified as:',
     options: [
       'Public',
@@ -639,10 +699,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-data-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data',
     topic: 'Data Privacy',
     subtopic: 'Privacy Principles',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the AICPA\'s Privacy principle, which of the following is required when collecting personal information?',
     options: [
       'Encrypting all data at rest',
@@ -659,10 +721,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-data-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data',
     topic: 'Data Security',
     subtopic: 'Encryption',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company encrypts sensitive data in its database (data at rest) but transmits it unencrypted over the internal network. This creates risk because:',
     options: [
       'Encryption algorithms become obsolete quickly',
@@ -681,10 +745,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-itgc-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-itgc',
     topic: 'IT General Controls',
     subtopic: 'Logical Access',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which control BEST ensures that terminated employees cannot access systems?',
     options: [
       'Annual access reviews',
@@ -701,10 +767,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-itgc-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-itgc',
     topic: 'IT General Controls',
     subtopic: 'Program Change',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which control provides the BEST evidence that only approved changes were migrated to the production environment?',
     options: [
       'Comparison of change tickets to production migration logs',
@@ -721,10 +789,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-itgc-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-itgc',
     topic: 'IT General Controls',
     subtopic: 'Computer Operations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Job scheduling software is primarily used to:',
     options: [
       'Prevent unauthorized access to systems',
@@ -743,10 +813,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-net-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-network',
     topic: 'Network Security',
     subtopic: 'Network Segmentation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company wants to isolate its payment processing systems from its general corporate network. Which approach is MOST appropriate?',
     options: [
       'Implement antivirus on all payment systems',
@@ -763,10 +835,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-net-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-network',
     topic: 'Network Security',
     subtopic: 'VPN',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Virtual Private Network (VPN) primarily provides:',
     options: [
       'Faster internet speeds through traffic optimization',
@@ -785,10 +859,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-bcdr-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcdr',
     topic: 'Business Continuity',
     subtopic: 'BIA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of a Business Impact Analysis (BIA) is to:',
     options: [
       'Identify potential threats and vulnerabilities',
@@ -805,10 +881,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-bcdr-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcdr',
     topic: 'Disaster Recovery',
     subtopic: 'Recovery Sites',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A hot site disaster recovery facility provides:',
     options: [
       'Fully operational duplicate environment ready for immediate failover',
@@ -825,10 +903,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-bcdr-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcdr',
     topic: 'Disaster Recovery',
     subtopic: 'Backup Strategies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization performs full backups weekly and incremental backups daily. To restore Wednesday\'s data, which backups are needed?',
     options: [
       'Last full backup plus Monday, Tuesday, and Wednesday incrementals',
@@ -851,10 +931,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cloud-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Shared Responsibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the shared responsibility model for IaaS, who is responsible for patching the guest operating system?',
     options: [
       'Cloud provider only',
@@ -871,10 +953,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cloud-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Security',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Cloud Access Security Broker (CASB) provides which primary security function?',
     options: [
       'Physical security of data centers',
@@ -891,10 +975,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cloud-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Data Residency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data residency requirements are MOST relevant when:',
     options: [
       'Implementing any encryption solution',
@@ -911,10 +997,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-cloud-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Multi-Cloud',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which is a PRIMARY benefit of a multi-cloud strategy?',
     options: [
       'Simpler management and reduced complexity',
@@ -933,10 +1021,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-ai-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-ai',
     topic: 'AI/ML Governance',
     subtopic: 'AI Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which risk is MOST specific to machine learning models used in decision-making?',
     options: [
       'Data breach',
@@ -953,10 +1043,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-ai-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-ai',
     topic: 'AI/ML Governance',
     subtopic: 'Model Explainability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Model explainability in AI governance refers to:',
     options: [
       'The ability to understand and explain how a model makes predictions or decisions',
@@ -973,10 +1065,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-ai-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-ai',
     topic: 'AI/ML Governance',
     subtopic: 'Data Poisoning',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A data poisoning attack against a machine learning model involves:',
     options: [
       'Encrypting the model\'s training data with ransomware',
@@ -995,10 +1089,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-b3-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Zero Trust',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The core principle of Zero Trust Architecture is:',
     options: [
       'Trust internal network traffic by default',
@@ -1015,10 +1111,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-b3-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'SIEM',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Security Information and Event Management (SIEM) system primarily provides:',
     options: [
       'Antivirus scanning for endpoints',
@@ -1035,10 +1133,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-b3-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'DLP',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data Loss Prevention (DLP) controls are designed to:',
     options: [
       'Prevent ransomware attacks',
@@ -1055,10 +1155,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-b3-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Endpoint Detection and Response',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Endpoint Detection and Response (EDR) differs from traditional antivirus by:',
     options: [
       'Only scanning files for known signatures',
@@ -1075,10 +1177,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-sec-b3-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Penetration Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A "red team" engagement differs from a standard penetration test by:',
     options: [
       'Using only automated scanning tools',
@@ -1097,10 +1201,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-gov-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COBIT (Control Objectives for Information Technologies) is primarily a framework for:',
     options: [
       'IT governance and management',
@@ -1117,10 +1223,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-gov-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Risk Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a risk assessment, "inherent risk" is defined as:',
     options: [
       'Risk remaining after controls are applied',
@@ -1137,10 +1245,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-gov-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Third-Party Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which control is MOST important for managing third-party vendor security risk?',
     options: [
       'Conducting initial due diligence only before contract signing',
@@ -1159,10 +1269,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-ir-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-incident',
     topic: 'Incident Response',
     subtopic: 'IR Phases',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to NIST, what is the correct order of incident response phases?',
     options: [
       'Containment, Detection, Eradication, Recovery, Preparation',
@@ -1179,10 +1291,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-ir-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-incident',
     topic: 'Incident Response',
     subtopic: 'Evidence Handling',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Chain of custody in digital forensics is important because:',
     options: [
       'It reduces storage costs for evidence',
@@ -1199,10 +1313,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-ir-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-incident',
     topic: 'Incident Response',
     subtopic: 'Containment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During a ransomware incident, the FIRST containment action should typically be:',
     options: [
       'Pay the ransom to restore access quickly',
@@ -1221,10 +1337,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-priv-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy Regulations',
     subtopic: 'GDPR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GDPR, what is the maximum time allowed to report a personal data breach to supervisory authorities?',
     options: [
       '24 hours',
@@ -1241,10 +1359,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-priv-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy Regulations',
     subtopic: 'Data Subject Rights',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GDPR, the "right to be forgotten" is formally known as:',
     options: [
       'Right to erasure',
@@ -1267,10 +1387,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-appsec-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-appsec',
     topic: 'Application Security',
     subtopic: 'OWASP Top 10',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SQL injection attacks exploit:',
     options: [
       'Weak passwords',
@@ -1287,10 +1409,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-appsec-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-appsec',
     topic: 'Application Security',
     subtopic: 'Secure SDLC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a secure software development lifecycle, security requirements should be addressed:',
     options: [
       'Only during testing',
@@ -1307,10 +1431,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-appsec-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-appsec',
     topic: 'Application Security',
     subtopic: 'Cross-Site Scripting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cross-site scripting (XSS) attacks allow attackers to:',
     options: [
       'Access database directly',
@@ -1327,10 +1453,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-appsec-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-appsec',
     topic: 'Application Security',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Broken Object Level Authorization (BOLA) in APIs occurs when:',
     options: [
       'Encryption is not used for API calls',
@@ -1349,10 +1477,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-crypto-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-crypto',
     topic: 'Cryptography',
     subtopic: 'Symmetric vs Asymmetric',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key advantage of asymmetric encryption over symmetric encryption is:',
     options: [
       'Faster encryption speed',
@@ -1369,10 +1499,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-crypto-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-crypto',
     topic: 'Cryptography',
     subtopic: 'Digital Signatures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A digital signature provides:',
     options: [
       'Encryption of the message contents',
@@ -1389,10 +1521,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-crypto-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-crypto',
     topic: 'Cryptography',
     subtopic: 'Hash Functions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A cryptographic hash function provides:',
     options: [
       'Reversible encryption',
@@ -1411,10 +1545,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-net-b5-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-network',
     topic: 'Network Security',
     subtopic: 'Network Segmentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network segmentation improves security by:',
     options: [
       'Encrypting all network traffic',
@@ -1431,10 +1567,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-net-b5-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-network',
     topic: 'Network Security',
     subtopic: 'IDS/IPS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary difference between IDS and IPS is:',
     options: [
       'IDS detects and alerts, IPS actively blocks threats',
@@ -1451,10 +1589,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-net-b5-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-network',
     topic: 'Network Security',
     subtopic: 'VPN',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A VPN provides security primarily through:',
     options: [
       'Creating an encrypted tunnel between endpoints',
@@ -1473,10 +1613,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-iam-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-iam',
     topic: 'Identity Management',
     subtopic: 'SSO',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Single Sign-On (SSO) provides which security benefit?',
     options: [
       'Eliminates all authentication requirements',
@@ -1493,10 +1635,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-iam-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-iam',
     topic: 'Identity Management',
     subtopic: 'Federation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Identity federation allows:',
     options: [
       'Users to have the same password everywhere',
@@ -1513,10 +1657,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-iam-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-iam',
     topic: 'Access Management',
     subtopic: 'Least Privilege',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The principle of least privilege means:',
     options: [
       'Only administrators should have any access',
@@ -1535,10 +1681,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-assess-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-assessment',
     topic: 'Security Assessment',
     subtopic: 'Vulnerability Scanning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary difference between vulnerability scanning and penetration testing is:',
     options: [
       'Vulnerability scanning is manual, penetration testing is automated',
@@ -1555,10 +1703,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-assess-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-assessment',
     topic: 'Security Assessment',
     subtopic: 'Social Engineering Tests',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Phishing simulation tests are used to:',
     options: [
       'Install security software on employee computers',
@@ -1577,10 +1727,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-comp-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-compliance',
     topic: 'Compliance',
     subtopic: 'SOX IT Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SOX Section 404 requires management to:',
     options: [
       'Assess and report on the effectiveness of internal control over financial reporting',
@@ -1597,10 +1749,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-comp-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-compliance',
     topic: 'Compliance',
     subtopic: 'PCI DSS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'PCI DSS applies to organizations that:',
     options: [
       'Process, store, or transmit payment card data',
@@ -1617,10 +1771,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-comp-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-compliance',
     topic: 'Compliance',
     subtopic: 'HIPAA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The HIPAA Security Rule requires covered entities to:',
     options: [
       'Implement administrative, physical, and technical safeguards for ePHI',
@@ -1637,10 +1793,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-085',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Threat Intelligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Indicators of Compromise (IoCs) are used to:',
     options: [
       'Measure system performance',
@@ -1657,10 +1815,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-086',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'SIEM',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SIEM (Security Information and Event Management) system primarily:',
     options: [
       'Aggregates and analyzes log data for security monitoring and incident detection',
@@ -1677,10 +1837,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-087',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Zero Trust Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The fundamental principle of Zero Trust architecture is:',
     options: [
       'Trust internal network traffic implicitly',
@@ -1697,10 +1859,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-088',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Endpoint Detection and Response',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'EDR (Endpoint Detection and Response) tools differ from traditional antivirus by:',
     options: [
       'Providing continuous monitoring, threat detection, and incident response capabilities',
@@ -1717,10 +1881,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-089',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Change Management Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key control in change management is:',
     options: [
       'Segregation of duties between development, testing, and deployment',
@@ -1737,10 +1903,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-090',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Logical Access Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The principle of least privilege requires:',
     options: [
       'Giving users maximum access for convenience',
@@ -1757,10 +1925,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-091',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Identity and Access Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Single Sign-On (SSO) using SAML provides:',
     options: [
       'Multiple passwords for each system',
@@ -1777,10 +1947,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-092',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data quality dimensions include all EXCEPT:',
     options: [
       'Accuracy',
@@ -1797,10 +1969,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-093',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Lineage',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data lineage documentation helps organizations:',
     options: [
       'Increase data storage costs',
@@ -1817,10 +1991,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-094',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Master Data Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Master Data Management (MDM) primarily addresses:',
     options: [
       'Archiving old data',
@@ -1837,10 +2013,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-095',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Shared Responsibility Model',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the AWS shared responsibility model for IaaS, the customer is responsible for:',
     options: [
       'Physical security of data centers',
@@ -1857,10 +2035,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-096',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Security',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cloud Access Security Brokers (CASBs) provide:',
     options: [
       'Physical data center security',
@@ -1877,10 +2057,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-097',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Container Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Container image scanning should occur:',
     options: [
       'Only after deployment to production',
@@ -1897,10 +2079,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-098',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Continuous Auditing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous auditing differs from traditional auditing by:',
     options: [
       'Occurring only once per year',
@@ -1917,10 +2101,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-099',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Data Analytics in Audit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit data analytics can identify:',
     options: [
       'Anomalies, patterns, and potential fraud across full populations',
@@ -1937,10 +2123,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-100',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Robotic Process Automation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'RPA in audit is best suited for:',
     options: [
       'Complex judgmental tasks',
@@ -1957,10 +2145,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-101',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'Privacy by Design',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Privacy by Design requires:',
     options: [
       'Embedding privacy into system design from the beginning',
@@ -1977,10 +2167,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-102',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'Data Subject Rights',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GDPR, data subjects have the right to:',
     options: [
       'Access, rectify, erase, and port their personal data',
@@ -1997,10 +2189,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-103',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Artificial Intelligence Governance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'AI governance frameworks should address:',
     options: [
       'Ethics, bias, transparency, accountability, and regulatory compliance',
@@ -2017,10 +2211,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-104',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Blockchain',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key characteristic of blockchain that supports audit is:',
     options: [
       'Immutability - records cannot be altered once validated',
@@ -2037,10 +2233,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-105',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Penetration Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary difference between vulnerability scanning and penetration testing is:',
     options: [
       'Vulnerability scanning is more comprehensive',
@@ -2057,10 +2255,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-106',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Patch Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An effective patch management program includes:',
     options: [
       'Inventory, prioritization, testing, staged deployment, and verification',
@@ -2077,10 +2277,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-107',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Supply Chain Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Software supply chain attacks (like SolarWinds) target:',
     options: [
       'End users directly',
@@ -2097,10 +2299,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-108',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Retention',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data retention policy should specify:',
     options: [
       'Retention periods based on legal, regulatory, and business requirements',
@@ -2117,10 +2321,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-109',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'OWASP API Security top risks include:',
     options: [
       'Only SQL injection',
@@ -2137,10 +2343,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-110',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Security Operations Center',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Security Operations Center (SOC) primary function is:',
     options: [
       'Software development',
@@ -2157,10 +2365,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-111',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Incident Response',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The correct order of incident response phases is:',
     options: [
       'Eradication, Identification, Containment, Recovery',
@@ -2177,10 +2387,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-112',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Threat Hunting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Proactive threat hunting differs from traditional monitoring by:',
     options: [
       'Actively searching for threats using hypotheses without waiting for alerts',
@@ -2197,10 +2409,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-113',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'DDoS Protection',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Defense against DDoS attacks includes:',
     options: [
       'Only firewalls',
@@ -2217,10 +2431,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-114',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Database Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Database access controls should include:',
     options: [
       'Only password protection',
@@ -2237,10 +2453,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-115',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Network Segmentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network segmentation improves security by:',
     options: [
       'Increasing network speed',
@@ -2257,10 +2475,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-116',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Backup and Recovery',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 3-2-1 backup rule recommends:',
     options: [
       '3 backups per year, 2 locations, 1 format',
@@ -2277,10 +2497,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-117',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Privileged Access Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privileged Access Management (PAM) solutions provide:',
     options: [
       'Vaulting, session monitoring, just-in-time access, and credential rotation for privileged accounts',
@@ -2297,10 +2519,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-118',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Minimization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data minimization principle requires:',
     options: [
       'Collecting only data necessary for specified purposes',
@@ -2317,10 +2541,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-119',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Masking',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data masking is used to:',
     options: [
       'Delete all sensitive data',
@@ -2337,10 +2563,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-120',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Loss Prevention',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DLP solutions protect data by:',
     options: [
       'Only blocking USB drives',
@@ -2357,10 +2585,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-121',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Identity Federation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Federated identity management enables:',
     options: [
       'Separate accounts for each cloud service',
@@ -2377,10 +2607,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-122',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Serverless Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security considerations for serverless computing include:',
     options: [
       'Function permissions, secrets management, dependency vulnerabilities, and event injection',
@@ -2397,10 +2629,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-123',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Infrastructure as Code Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security best practices for Infrastructure as Code include:',
     options: [
       'No review needed since it\'s automated',
@@ -2417,10 +2651,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-124',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Machine Learning Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risks specific to machine learning systems include:',
     options: [
       'Adversarial attacks, model poisoning, data poisoning, and model stealing',
@@ -2437,10 +2673,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-125',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'IoT Security',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IoT security challenges include:',
     options: [
       'Excessive computing power',
@@ -2457,10 +2695,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-126',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Quantum Computing Impact',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Quantum computing poses a threat to:',
     options: [
       'Only hardware systems',
@@ -2477,10 +2717,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-127',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Computer-Assisted Audit Techniques',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'CAATs (Computer-Assisted Audit Techniques) include:',
     options: [
       'Only spreadsheet analysis',
@@ -2497,10 +2739,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-128',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Blockchain Audit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Auditing blockchain-based systems requires consideration of:',
     options: [
       'Only traditional database controls',
@@ -2517,10 +2761,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-129',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COBIT provides:',
     options: [
       'Technical security controls only',
@@ -2537,10 +2783,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-130',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Third-Party Risk Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Third-party risk management should include:',
     options: [
       'Risk assessment, due diligence, contractual requirements, ongoing monitoring, and exit planning',
@@ -2557,10 +2805,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-131',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'Cookie Consent',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GDPR, cookie consent requirements include:',
     options: [
       'Implied consent by using the website',
@@ -2577,10 +2827,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-132',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'CCPA Rights',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under CCPA, California consumers have the right to:',
     options: [
       'Only access their data',
@@ -2597,10 +2849,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-133',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Vulnerability Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An effective vulnerability management program includes:',
     options: [
       'Continuous scanning, risk-based prioritization, remediation tracking, and reporting',
@@ -2617,10 +2871,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-134',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Secure SDLC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Secure SDLC integrates security through:',
     options: [
       'Security requirements, threat modeling, secure coding, testing, and secure deployment at each phase',
@@ -2637,10 +2893,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-135',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Security Awareness Training',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective security awareness training should:',
     options: [
       'Be conducted once at hiring',
@@ -2657,10 +2915,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-136',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Penetration Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The difference between vulnerability scanning and penetration testing is:',
     options: [
       'They are the same',
@@ -2677,10 +2937,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-137',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Red Team vs Blue Team',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In security testing, a red team:',
     options: [
       'Defends against attacks',
@@ -2697,10 +2959,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-138',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Logging and Monitoring',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security logging should capture:',
     options: [
       'Only failed login attempts',
@@ -2717,10 +2981,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-139',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Patch Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An effective patch management program includes:',
     options: [
       'Installing all patches immediately',
@@ -2737,10 +3003,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-140',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Configuration Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure configuration baselines should be:',
     options: [
       'Set once and never changed',
@@ -2757,10 +3025,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-141',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Retention',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data retention policies should be based on:',
     options: [
       'Storage capacity only',
@@ -2777,10 +3047,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-142',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Privacy by Design',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privacy by Design principles include:',
     options: [
       'Proactive prevention, privacy as default, embedded into design, and full functionality',
@@ -2797,10 +3069,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-143',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Multi-Cloud Strategy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A multi-cloud strategy provides benefits including:',
     options: [
       'Simpler management',
@@ -2817,10 +3091,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-144',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Access Security Broker',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A CASB (Cloud Access Security Broker) provides:',
     options: [
       'Cloud hosting services',
@@ -2837,10 +3113,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-145',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Risk Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT risk assessment should consider:',
     options: [
       'Only technical vulnerabilities',
@@ -2857,10 +3135,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-146',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Business Impact Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A business impact analysis (BIA) identifies:',
     options: [
       'Only IT assets',
@@ -2877,10 +3157,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-147',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Test Data Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The test data method in IT auditing:',
     options: [
       'Reviews only production data',
@@ -2897,10 +3179,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-148',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Integrated Test Facility',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Integrated Test Facility (ITF):',
     options: [
       'Creates a dummy entity within the production system for ongoing transaction testing',
@@ -2917,10 +3201,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-149',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Robotic Process Automation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'RPA bots should be governed by:',
     options: [
       'Unique credentials, activity logging, change management, and periodic review',
@@ -2937,10 +3223,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-150',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Smart Contracts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Smart contract risks include:',
     options: [
       'No risks since they are automated',
@@ -2957,10 +3245,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-151',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'Cross-Border Data Transfer',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Mechanisms for lawful cross-border data transfer under GDPR include:',
     options: [
       'No restrictions exist',
@@ -2977,10 +3267,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-152',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'Data Subject Access Requests',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GDPR, organizations must respond to data subject access requests within:',
     options: [
       '7 days',
@@ -2997,10 +3289,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-153',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Secure Remote Access',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure remote access should include:',
     options: [
       'Simple password only',
@@ -3017,10 +3311,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-154',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Supply Chain Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Software supply chain security should address:',
     options: [
       'Only in-house code',
@@ -3037,10 +3333,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-155',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Compliance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Common IT compliance frameworks include:',
     options: [
       'Only GAAP',
@@ -3057,10 +3355,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-156',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Master Data Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Master data management ensures:',
     options: [
       'Data is replicated everywhere',
@@ -3077,10 +3377,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-157',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cybersecurity',
     topic: 'Cybersecurity',
     subtopic: 'Malware Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Ransomware is malware that:',
     options: [
       'Steals passwords only',
@@ -3097,10 +3399,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-158',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-system-controls',
     topic: 'System and Organization Controls',
     subtopic: 'Disaster Recovery',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A hot site disaster recovery facility provides:',
     options: [
       'Fully operational duplicate systems ready for immediate failover',
@@ -3117,10 +3421,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-159',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Continuous Monitoring',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous control monitoring enables:',
     options: [
       'Real-time or near-real-time automated testing of controls and transactions',
@@ -3138,10 +3444,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-160',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Security Operations Center',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Security Operations Center (SOC) is responsible for:',
     options: [
       'Software development only',
@@ -3158,10 +3466,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-161',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'SIEM Systems',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SIEM (Security Information and Event Management) systems:',
     options: [
       'Aggregate logs, correlate events, detect anomalies, and generate alerts',
@@ -3178,10 +3488,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-162',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Threat Intelligence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat intelligence helps organizations by:',
     options: [
       'Eliminating all threats',
@@ -3198,10 +3510,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-163',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Zero Trust Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Zero Trust security architecture is based on:',
     options: [
       'Trusting internal network traffic',
@@ -3218,10 +3532,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-164',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'DLP Systems',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data Loss Prevention (DLP) systems:',
     options: [
       'Monitor, detect, and block sensitive data from leaving the organization',
@@ -3238,10 +3554,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-165',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Data Masking',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data masking differs from encryption because masking:',
     options: [
       'Creates realistic but fake data that cannot be reversed to original',
@@ -3258,10 +3576,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-166',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Tokenization',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Tokenization replaces sensitive data with:',
     options: [
       'Non-sensitive placeholder tokens with no mathematical relationship to original',
@@ -3278,10 +3598,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-167',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Data Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data classification typically includes levels such as:',
     options: [
       'Red, Yellow, Green',
@@ -3298,10 +3620,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-168',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COBIT is a framework for:',
     options: [
       'IT governance and management of enterprise IT',
@@ -3318,10 +3642,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-169',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'ITIL Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ITIL focuses primarily on:',
     options: [
       'Software development methodology',
@@ -3338,10 +3664,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-170',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Change Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT change management controls ensure:',
     options: [
       'All changes are approved by executives',
@@ -3358,10 +3686,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-171',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'GRC Platforms',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'GRC (Governance, Risk, Compliance) platforms:',
     options: [
       'Only track audit findings',
@@ -3378,10 +3708,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-172',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'CAATs Selection',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When selecting CAATs for an engagement, auditors should consider:',
     options: [
       'Cost only',
@@ -3398,10 +3730,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-173',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Incident Response Phases',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The incident response lifecycle includes:',
     options: [
       'Detect and ignore',
@@ -3418,10 +3752,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-174',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Forensic Preservation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Digital forensic evidence preservation requires:',
     options: [
       'Immediate system restart',
@@ -3438,10 +3774,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-175',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'API security best practices include:',
     options: [
       'Authentication, authorization, input validation, rate limiting, encryption',
@@ -3458,10 +3796,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-176',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Container Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Container security concerns include:',
     options: [
       'Only physical server security',
@@ -3478,10 +3818,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-177',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Backup Strategies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 3-2-1 backup rule recommends:',
     options: [
       '3 copies, 2 different media types, 1 copy offsite',
@@ -3498,10 +3840,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-178',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Recovery Point Objective',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Recovery Point Objective (RPO) defines:',
     options: [
       'Time to restore systems',
@@ -3518,10 +3862,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-179',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Vendor Risk Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Vendor risk management should include:',
     options: [
       'Only price comparison',
@@ -3538,10 +3884,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-180',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Cloud Shared Responsibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In cloud computing, the shared responsibility model means:',
     options: [
       'Security responsibilities are divided between provider and customer based on service model',
@@ -3558,10 +3906,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-181',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Blockchain Auditing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Auditing blockchain-based systems requires understanding:',
     options: [
       'Traditional database concepts only',
@@ -3578,10 +3928,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-182',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit-technology',
     topic: 'Audit Technology',
     subtopic: 'Machine Learning in Audit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Machine learning in auditing can be used for:',
     options: [
       'Replacing all auditors',
@@ -3598,10 +3950,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-183',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Privileged Access Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privileged Access Management (PAM) solutions provide:',
     options: [
       'Unlimited admin access',
@@ -3618,10 +3972,12 @@ export const ISC_QUESTIONS: Question[] = [
   {
     id: 'isc-184',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Security Metrics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective security metrics should be:',
     options: [
       'As complex as possible',

@@ -12,11 +12,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'SOC 1 vs SOC 2',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A SOC 1 report primarily addresses:',
     options: [
       'Security, availability, and confidentiality of a service organization',
@@ -31,11 +33,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Type I vs Type II',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The key difference between a SOC 2 Type I report and a SOC 2 Type II report is:',
     options: [
       'Type I covers security only; Type II covers all Trust Services Criteria',
@@ -50,11 +54,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Trust Services Criteria',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The five Trust Services Criteria used in SOC 2 engagements are:',
     options: [
       'Accuracy, completeness, timeliness, authorization, and validity',
@@ -69,11 +75,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Complementary User Entity Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Complementary user entity controls (CUECs) listed in a SOC report are:',
     options: [
       'Controls the auditor must test to issue an unqualified opinion',
@@ -88,11 +96,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'SOC 3 Reports',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A SOC 3 report differs from a SOC 2 report in that SOC 3:',
     options: [
       'Covers more controls than SOC 2',
@@ -107,11 +117,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Subservice Organizations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a service organization uses a subservice organization (e.g., a cloud hosting provider), the SOC report can present the subservice organization\'s controls using either the inclusive method or the:',
     options: [
       'Exclusive method',
@@ -126,11 +138,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'SOC for Cybersecurity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC for Cybersecurity examination report includes:',
     options: [
       'Only the organization\'s cybersecurity policies',
@@ -145,11 +159,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'SOC for Supply Chain',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The SOC for Supply Chain examination is designed to report on:',
     options: [
       'Financial reporting controls only',
@@ -168,11 +184,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Blockchain Fundamentals',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which characteristic of blockchain technology makes it particularly relevant to accounting and auditing?',
     options: [
       'Higher processing speed than traditional databases',
@@ -187,11 +205,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'AI and Machine Learning in Accounting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a primary risk of using AI/machine learning models in accounting processes?',
     options: [
       'AI models always produce incorrect results',
@@ -206,11 +226,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Service Models',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In the shared responsibility model for cloud computing, which service model places the MOST security responsibility on the cloud customer?',
     options: [
       'Software as a Service (SaaS)',
@@ -225,11 +247,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Robotic Process Automation',
     subtopic: 'RPA Governance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key control over robotic process automation (RPA) bots in accounting processes is:',
     options: [
       'Allowing bots to share user credentials for efficiency',
@@ -244,11 +268,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Smart Contracts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'From an audit perspective, a smart contract on a blockchain:',
     options: [
       'Eliminates all need for audit testing',
@@ -267,11 +293,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'CAATs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Computer-Assisted Audit Techniques (CAATs) are MOST commonly used by auditors to:',
     options: [
       'Replace the need for professional judgment',
@@ -286,11 +314,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Visualization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Benford\'s Law is a data analytics technique used in auditing primarily to:',
     options: [
       'Verify the accuracy of financial statement formatting',
@@ -305,11 +335,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before performing data analytics in an audit, the auditor should FIRST:',
     options: [
       'Run all analytics procedures and interpret results',
@@ -328,11 +360,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-it-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The COBIT framework is primarily designed to:',
     options: [
       'Replace COSO for financial reporting',
@@ -347,11 +381,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-it-governance',
     topic: 'IT General Controls',
     subtopic: 'Segregation of Duties in IT',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Proper segregation of duties in an IT environment requires separating which functions?',
     options: [
       'Sales and marketing',
@@ -370,11 +406,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Zero Trust Architecture',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A zero trust security architecture operates on the principle of:',
     options: [
       'Trusting all devices within the corporate network',
@@ -389,11 +427,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Incident Response',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The correct order of phases in a cybersecurity incident response plan is:',
     options: [
       'Response → Detection → Recovery → Prevention',
@@ -412,11 +452,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Database Controls',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a relational database, referential integrity ensures that:',
     options: [
       'All data is encrypted at rest',
@@ -431,11 +473,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Data Governance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data governance framework should define all of the following EXCEPT:',
     options: [
       'Data ownership and stewardship roles',
@@ -454,11 +498,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'GDPR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the General Data Protection Regulation (GDPR), a data controller must report a personal data breach to the supervisory authority within:',
     options: [
       '24 hours of discovery',
@@ -473,11 +519,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Encryption',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary purpose of encryption in transit (TLS/SSL) is to:',
     options: [
       'Prevent unauthorized access to stored data',
@@ -492,11 +540,13 @@ export const ISC_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'isc-d1-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Continuous Auditing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Continuous auditing differs from traditional periodic auditing primarily because:',
     options: [
       'It uses different auditing standards',

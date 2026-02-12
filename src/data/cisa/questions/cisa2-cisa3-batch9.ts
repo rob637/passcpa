@@ -7,10 +7,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH9: Question[] = [
   {
-    id: 'CISA2-210',
+    id: 'cisa2-210',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY role of IT governance is to ensure IT:',
     options: [
       'Minimizes costs',
@@ -24,10 +26,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Governance Objectives'
   },
   {
-    id: 'CISA2-211',
+    id: 'cisa2-211',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COBIT 2019 is primarily a framework for:',
     options: [
       'Software development methodology',
@@ -41,10 +45,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'COBIT'
   },
   {
-    id: 'CISA2-212',
+    id: 'cisa2-212',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise architecture is MOST valuable for:',
     options: [
       'Daily operations management',
@@ -58,10 +64,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Enterprise Architecture'
   },
   {
-    id: 'CISA2-213',
+    id: 'cisa2-213',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT steering committees should include:',
     options: [
       'IT staff only',
@@ -75,10 +83,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Governance Structures'
   },
   {
-    id: 'CISA2-214',
+    id: 'cisa2-214',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Quantitative risk analysis differs from qualitative in that it:',
     options: [
       'Is always faster',
@@ -92,10 +102,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Risk Analysis'
   },
   {
-    id: 'CISA2-215',
+    id: 'cisa2-215',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Risk appetite is defined by:',
     options: [
       'IT management alone',
@@ -109,10 +121,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Risk Appetite'
   },
   {
-    id: 'CISA2-216',
+    id: 'cisa2-216',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key Risk Indicators (KRIs) are used to:',
     options: [
       'Measure past incidents only',
@@ -126,10 +140,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'KRIs'
   },
   {
-    id: 'CISA2-217',
+    id: 'cisa2-217',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT investment portfolio management ensures:',
     options: [
       'All projects use same technology',
@@ -143,10 +159,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Portfolio Management'
   },
   {
-    id: 'CISA2-218',
+    id: 'cisa2-218',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT policies should be reviewed:',
     options: [
       'Only when incidents occur',
@@ -160,10 +178,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Policy Management'
   },
   {
-    id: 'CISA2-219',
+    id: 'cisa2-219',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third-party vendor risk management should begin:',
     options: [
       'After contract signing',
@@ -177,10 +197,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Third-Party Risk'
   },
   {
-    id: 'CISA2-220',
+    id: 'cisa2-220',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Performance measurement in IT governance should include:',
     options: [
       'Technical metrics only',
@@ -194,10 +216,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Performance Measurement'
   },
   {
-    id: 'CISA2-221',
+    id: 'cisa2-221',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT resource management includes managing:',
     options: [
       'Hardware only',
@@ -211,10 +235,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Resource Management'
   },
   {
-    id: 'CISA2-222',
+    id: 'cisa2-222',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT value delivery should be measured by:',
     options: [
       'Project costs only',
@@ -228,10 +254,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Value Delivery'
   },
   {
-    id: 'CISA2-223',
+    id: 'cisa2-223',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control self-assessment (CSA) involves:',
     options: [
       'External auditor testing only',
@@ -245,10 +273,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'CSA'
   },
   {
-    id: 'CISA2-224',
+    id: 'cisa2-224',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Strategic IT planning horizon typically covers:',
     options: [
       'Current year only',
@@ -265,10 +295,12 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
 
 export const CISA3_QUESTIONS_BATCH9: Question[] = [
   {
-    id: 'CISA3-210',
+    id: 'cisa3-210',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Agile development treats security requirements as:',
     options: [
       'Optional nice-to-haves',
@@ -282,10 +314,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Agile Security'
   },
   {
-    id: 'CISA3-211',
+    id: 'cisa3-211',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Code review is MOST effective when performed:',
     options: [
       'Only after production deployment',
@@ -299,10 +333,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Code Review'
   },
   {
-    id: 'CISA3-212',
+    id: 'cisa3-212',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Shift-left security means:',
     options: [
       'Delaying security to the end',
@@ -316,10 +352,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'DevSecOps'
   },
   {
-    id: 'CISA3-213',
+    id: 'cisa3-213',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'User acceptance testing (UAT) should be performed by:',
     options: [
       'Developers',
@@ -333,10 +371,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Testing'
   },
   {
-    id: 'CISA3-214',
+    id: 'cisa3-214',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'CI/CD pipeline security should include:',
     options: [
       'Manual security review at the end only',
@@ -350,10 +390,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'CI/CD Security'
   },
   {
-    id: 'CISA3-215',
+    id: 'cisa3-215',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Software Composition Analysis (SCA) identifies:',
     options: [
       'Code formatting issues',
@@ -367,10 +409,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Testing'
   },
   {
-    id: 'CISA3-216',
+    id: 'cisa3-216',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Requirements traceability ensures:',
     options: [
       'All code is documented',
@@ -384,10 +428,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Requirements Management'
   },
   {
-    id: 'CISA3-217',
+    id: 'cisa3-217',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Change control boards (CCB) should:',
     options: [
       'Automatically approve all changes',
@@ -401,10 +447,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'CCB'
   },
   {
-    id: 'CISA3-218',
+    id: 'cisa3-218',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Technical debt in software development refers to:',
     options: [
       'Financial cost of development',
@@ -418,10 +466,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Technical Debt'
   },
   {
-    id: 'CISA3-219',
+    id: 'cisa3-219',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Post-implementation review should assess:',
     options: [
       'Project budget only',
@@ -435,10 +485,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Post-Implementation'
   },
   {
-    id: 'CISA3-220',
+    id: 'cisa3-220',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Infrastructure as Code (IaC) provides security benefits by:',
     options: [
       'Eliminating all security controls',
@@ -452,10 +504,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Infrastructure as Code'
   },
   {
-    id: 'CISA3-221',
+    id: 'cisa3-221',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Secure Software Development Framework (SSDF) provides:',
     options: [
       'Programming language specification',
@@ -469,10 +523,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Framework'
   },
   {
-    id: 'CISA3-222',
+    id: 'cisa3-222',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing system acquisition, the MOST important control is:',
     options: [
       'Lowest price selection',
@@ -486,10 +542,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Vendor Evaluation'
   },
   {
-    id: 'CISA3-223',
+    id: 'cisa3-223',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Configuration management in development ensures:',
     options: [
       'All configurations are identical',
@@ -503,10 +561,12 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Configuration Management'
   },
   {
-    id: 'CISA3-224',
+    id: 'cisa3-224',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Container image security requires:',
     options: [
       'Using any available image',

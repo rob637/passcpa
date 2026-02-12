@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'far-wc-203',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lease Modifications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A lease modification that grants an additional right of use not in the original lease and increases consideration commensurate with standalone price is accounted for as:',
     options: [
       'Catch-up adjustment',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'far-wc-204',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-debt',
     topic: 'Debt',
     subtopic: 'Troubled Debt Restructuring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current GAAP (post-ASU 2022-02), troubled debt restructuring as a separate recognition model:',
     options: [
       'Still applies',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'far-wc-205',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-government',
     topic: 'Government-Wide Statements',
     subtopic: 'Net Position Components',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Government-wide Statement of Net Position reports net position in three categories:',
     options: [
       'Assets, liabilities, equity',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'far-wc-206',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nonprofit',
     topic: 'Non-Profit Accounting',
     subtopic: 'Conditional Grants',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A conditional contribution is recognized as revenue when:',
     options: [
       'Upon receipt',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'aud-wc-203',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-special',
     topic: 'Special Reports',
     subtopic: 'Compliance Audits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A compliance audit under Government Auditing Standards (Yellow Book) requires:',
     options: [
       'Only financial audit',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'aud-wc-204',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-documentation',
     topic: 'Documentation',
     subtopic: 'Superseded Documents',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Superseded audit documentation should be:',
     options: [
       'Destroyed immediately',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'aud-wc-205',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-revenue',
     topic: 'Revenue Audit',
     subtopic: 'Cutoff Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Revenue cutoff testing procedures include:',
     options: [
       'Only reviewing sales invoices',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'aud-wc-206',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-peer',
     topic: 'Peer Review',
     subtopic: 'System Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A system review (peer review) evaluates:',
     options: [
       'Only one engagement',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'reg-wc-203',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-c-corp',
     topic: 'C Corporation',
     subtopic: 'Earnings and Profits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The corporate earnings and profits (E&P) calculation differs from taxable income by:',
     options: [
       'No differences',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'reg-wc-204',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Section 83 Restricted Stock',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Section 83, restricted property is taxed when:',
     options: [
       'Upon grant only',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'reg-wc-205',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-sales',
     topic: 'Sales Law',
     subtopic: 'Express Warranties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An express warranty under UCC Article 2 is created by:',
     options: [
       'Only written contract',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'reg-wc-206',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-cost-recovery',
     topic: 'Cost Recovery',
     subtopic: 'Qualified Improvement Property',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Qualified improvement property (QIP) is:',
     options: [
       '39-year property',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'bar-wc-242',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Segment Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Analyzing segment information helps investors:',
     options: [
       'Only simplify analysis',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'bar-wc-243',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Capitalization Rate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The capitalization rate in income capitalization valuation represents:',
     options: [
       'Only discount rate',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'bar-wc-244',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Software Revenue Recognition',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Revenue from software as a service (SaaS) arrangements is typically recognized:',
     options: [
       'Upon contract signing',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'bar-wc-245',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Strategic Cost Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Strategic cost management integrates:',
     options: [
       'Only operational costing',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'bar-wc-246',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Financial Flexibility',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Financial flexibility refers to:',
     options: [
       'Only debt capacity',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'isc-wc-203',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Vendor Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT vendor management lifecycle includes:',
     options: [
       'Only contract negotiation',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'isc-wc-204',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Security Automation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security Orchestration, Automation and Response (SOAR) enables:',
     options: [
       'Only alerting',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'isc-wc-205',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Data Lake vs Data Warehouse',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A data lake differs from a data warehouse in that it:',
     options: [
       'Uses structured data only',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'isc-wc-206',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'SOC for Cybersecurity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC for Cybersecurity examination differs from SOC 2 in that it:',
     options: [
       'Only covers financial controls',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'tcp-wc-203',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Personal Holding Company Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The personal holding company (PHC) tax applies when:',
     options: [
       'Any corporation',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'tcp-wc-204',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Investment Interest Expense',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Investment interest expense is deductible to the extent of:',
     options: [
       'All amounts paid',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'tcp-wc-205',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Irrevocable Life Insurance Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Irrevocable Life Insurance Trust (ILIT) removes life insurance proceeds from the estate by:',
     options: [
       'Making insurance non-taxable',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_42: Question[] = [
   {
     id: 'tcp-wc-206',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'IRS Appeals Process',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The IRS Independent Office of Appeals:',
     options: [
       'Only handles criminal cases',

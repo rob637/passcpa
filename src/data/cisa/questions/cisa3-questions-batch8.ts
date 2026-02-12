@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA3_QUESTIONS_BATCH8: Question[] = [
   {
-    id: 'CISA3-173',
+    id: 'cisa3-173',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST critical phase for security controls assessments in system development is:',
     options: [
       'Testing phase',
@@ -25,10 +27,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Security by Design'
   },
   {
-    id: 'CISA3-175',
+    id: 'cisa3-175',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During post-implementation review, the IS auditor should PRIMARILY verify that:',
     options: [
       'The project was completed under budget',
@@ -42,10 +46,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Post-Implementation Review'
   },
   {
-    id: 'CISA3-176',
+    id: 'cisa3-176',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Configuration management is MOST important for:',
     options: [
       'Tracking hardware purchases',
@@ -59,10 +65,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Configuration Control'
   },
   {
-    id: 'CISA3-177',
+    id: 'cisa3-177',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The BEST approach for testing an application upgrade is:',
     options: [
       'Installing directly in production with rollback capability',
@@ -76,10 +84,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Test Environment'
   },
   {
-    id: 'CISA3-179',
+    id: 'cisa3-179',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When implementing a packaged application, the GREATEST risk is:',
     options: [
       'Vendor support availability',
@@ -93,10 +103,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Customization Risk'
   },
   {
-    id: 'CISA3-180',
+    id: 'cisa3-180',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An escrow agreement for software source code is important because it:',
     options: [
       'Reduces license costs',
@@ -110,10 +122,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Escrow Agreements'
   },
   {
-    id: 'CISA3-181',
+    id: 'cisa3-181',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Agile development methodology is characterized by:',
     options: [
       'Complete requirements before development starts',
@@ -127,10 +141,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Agile Development'
   },
   {
-    id: 'CISA3-182',
+    id: 'cisa3-182',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of code reviews is to:',
     options: [
       'Evaluate developer performance',
@@ -144,10 +160,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Code Reviews'
   },
   {
-    id: 'CISA3-183',
+    id: 'cisa3-183',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data migration to a new system should include:',
     options: [
       'Direct copy without validation',
@@ -161,10 +179,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Data Migration'
   },
   {
-    id: 'CISA3-184',
+    id: 'cisa3-184',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Regression testing is performed to ensure:',
     options: [
       'New functionality works correctly',
@@ -178,10 +198,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Regression Testing'
   },
   {
-    id: 'CISA3-185',
+    id: 'cisa3-185',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DevOps practices should include:',
     options: [
       'Bypassing security reviews for faster deployment',
@@ -195,10 +217,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'DevSecOps'
   },
   {
-    id: 'CISA3-186',
+    id: 'cisa3-186',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Version control systems are important for:',
     options: [
       'Tracking user access',
@@ -212,10 +236,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Version Control'
   },
   {
-    id: 'CISA3-187',
+    id: 'cisa3-187',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing software development, the IS auditor should be MOST concerned if:',
     options: [
       'Developers document their code',
@@ -229,10 +255,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Segregation of Duties'
   },
   {
-    id: 'CISA3-188',
+    id: 'cisa3-188',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A project charter should define:',
     options: [
       'Detailed technical specifications',
@@ -246,10 +274,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Project Charter'
   },
   {
-    id: 'CISA3-189',
+    id: 'cisa3-189',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Application interface controls should ensure:',
     options: [
       'Fast data transfer',
@@ -263,10 +293,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Interface Controls'
   },
   {
-    id: 'CISA3-190',
+    id: 'cisa3-190',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The purpose of a proof of concept (POC) is to:',
     options: [
       'Replace detailed requirements',
@@ -280,10 +312,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Proof of Concept'
   },
   {
-    id: 'CISA3-191',
+    id: 'cisa3-191',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Static application security testing (SAST) is performed:',
     options: [
       'In production with live data',
@@ -297,10 +331,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'SAST'
   },
   {
-    id: 'CISA3-192',
+    id: 'cisa3-192',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Emergency changes should be:',
     options: [
       'Exempt from change management',
@@ -314,10 +350,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Emergency Changes'
   },
   {
-    id: 'CISA3-193',
+    id: 'cisa3-193',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When implementing containerized applications, the IS auditor should verify:',
     options: [
       'Containers are never updated',
@@ -331,10 +369,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Container Security'
   },
   {
-    id: 'CISA3-194',
+    id: 'cisa3-194',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Project scope creep refers to:',
     options: [
       'Completing the project early',
@@ -348,10 +388,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Scope Management'
   },
   {
-    id: 'CISA3-195',
+    id: 'cisa3-195',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Dynamic application security testing (DAST) differs from SAST in that DAST:',
     options: [
       'Analyzes source code directly',
@@ -365,10 +407,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'DAST'
   },
   {
-    id: 'CISA3-196',
+    id: 'cisa3-196',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Parallel conversion involves:',
     options: [
       'Immediate cutover to the new system',
@@ -382,10 +426,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Conversion Strategies'
   },
   {
-    id: 'CISA3-198',
+    id: 'cisa3-198',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A systems integrator is PRIMARILY responsible for:',
     options: [
       'Operating systems after deployment',
@@ -399,10 +445,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Systems Integration'
   },
   {
-    id: 'CISA3-199',
+    id: 'cisa3-199',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating low-code/no-code development platforms, the IS auditor should be MOST concerned about:',
     options: [
       'Reduced development time',
@@ -416,10 +464,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Low-Code Development'
   },
   {
-    id: 'CISA3-200',
+    id: 'cisa3-200',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Software licensing compliance is important to:',
     options: [
       'Reduce training requirements',
@@ -433,10 +483,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'License Management'
   },
   {
-    id: 'CISA3-201',
+    id: 'cisa3-201',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Infrastructure as Code (IaC) provides benefits including:',
     options: [
       'Manual configuration of each server',
@@ -450,10 +502,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Infrastructure as Code'
   },
   {
-    id: 'CISA3-202',
+    id: 'cisa3-202',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Release management should ensure:',
     options: [
       'All releases happen immediately',

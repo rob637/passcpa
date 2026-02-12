@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'far-wc-187',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Hedge Effectiveness',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a cash flow hedge to qualify for hedge accounting, the hedge must be:',
     options: [
       'Perfectly effective',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'far-wc-188',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-current',
     topic: 'Current Assets',
     subtopic: 'Restricted Cash',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Restricted cash should be:',
     options: [
       'Always current',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'far-wc-189',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-interim',
     topic: 'Interim Reporting',
     subtopic: 'Discrete vs Integral',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the integral approach to interim reporting:',
     options: [
       'Each quarter is discrete',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'far-wc-190',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Derived Tax Revenue',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Derived tax revenues (like sales tax) are recognized when:',
     options: [
       'Cash received',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'aud-wc-187',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-opinions',
     topic: 'Reporting',
     subtopic: 'Emphasis of Matter',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An emphasis-of-matter paragraph is included in the audit report to:',
     options: [
       'Modify the opinion',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'aud-wc-188',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Tolerable Misstatement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Tolerable misstatement in audit sampling represents:',
     options: [
       'Total materiality',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'aud-wc-189',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-litigation',
     topic: 'Litigation',
     subtopic: 'Lawyer Letter',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The auditor\'s letter of inquiry to client\'s legal counsel requests:',
     options: [
       'Only pending litigation',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'aud-wc-190',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-engagement',
     topic: 'Engagement',
     subtopic: 'Engagement Letter Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An audit engagement letter should include:',
     options: [
       'Only fee',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'reg-wc-187',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hot assets in a partnership include:',
     options: [
       'All assets',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'reg-wc-188',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alimony Tax Treatment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For divorce agreements executed after December 31, 2018:',
     options: [
       'Alimony is deductible by payer and taxable to recipient',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'reg-wc-189',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-bankruptcy',
     topic: 'Bankruptcy Law',
     subtopic: 'Automatic Stay',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The automatic stay in bankruptcy:',
     options: [
       'Only stops foreclosures',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'reg-wc-190',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-amortization',
     topic: 'Cost Recovery',
     subtopic: 'Section 197 Intangibles',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 197 intangibles acquired in business acquisition are amortized over:',
     options: [
       'Their useful life',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'bar-wc-222',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Quality of Financial Reporting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Red flags indicating potential financial statement manipulation include:',
     options: [
       'Only declining revenue',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'bar-wc-223',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Adjusted Present Value',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Adjusted Present Value (APV) valuation separates:',
     options: [
       'Assets and liabilities',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'bar-wc-224',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Push-Down Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Push-down accounting requires:',
     options: [
       'No change to subsidiary books',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'bar-wc-225',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Throughput Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In throughput accounting, the key performance measure is:',
     options: [
       'Gross margin',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'bar-wc-226',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Sustainable Growth Rate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The sustainable growth rate (SGR) represents:',
     options: [
       'Maximum possible growth',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'isc-wc-187',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Balanced Scorecard',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IT balanced scorecard includes perspectives such as:',
     options: [
       'Only financial',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'isc-wc-188',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Security Incident Metrics',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key security incident response metrics include:',
     options: [
       'Only number of incidents',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'isc-wc-189',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Infrastructure as Code',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Infrastructure as Code (IaC) provides:',
     options: [
       'Only documentation',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'isc-wc-190',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Penetration Testing Scope',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Penetration testing scope definition should include:',
     options: [
       'Only target systems',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'tcp-wc-187',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'REIT Requirements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To qualify as a REIT, an entity must distribute:',
     options: [
       'All income',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'tcp-wc-188',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'HSA Excess Contributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Excess contributions to an HSA are subject to:',
     options: [
       'Income tax only',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'tcp-wc-189',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Installment Sale to Related Party',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an installment sale is made to a related party who resells within 2 years:',
     options: [
       'No special rules apply',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_38: Question[] = [
   {
     id: 'tcp-wc-190',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Penalty Abatement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'First-time penalty abatement (FTA) is available when:',
     options: [
       'Any taxpayer requests',

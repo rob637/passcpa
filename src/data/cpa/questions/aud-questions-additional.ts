@@ -12,6 +12,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-001',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Independence',
@@ -32,6 +33,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-002',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Confidentiality',
@@ -52,6 +54,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-003',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Quality Management',
     subtopic: 'SQMS',
@@ -77,6 +80,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-004',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Audit Risk Model',
@@ -97,6 +101,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-005',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Understanding the Entity',
@@ -117,6 +122,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-006',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Planning',
     subtopic: 'Materiality',
@@ -142,6 +148,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-007',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Relevance and Reliability',
@@ -162,6 +169,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-008',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Confirmation',
@@ -182,6 +190,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-009',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Substantive Procedures',
     subtopic: 'Substantive Analytics',
@@ -207,6 +216,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-010',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'COSO Framework',
@@ -227,6 +237,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-011',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Control Deficiencies',
@@ -247,6 +258,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-012',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Tests of Controls',
     subtopic: 'Dual-Purpose Tests',
@@ -272,6 +284,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-013',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Unmodified Opinion',
@@ -292,6 +305,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-014',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
@@ -312,6 +326,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-015',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
@@ -337,6 +352,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-016',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Sampling',
     subtopic: 'Attribute Sampling',
@@ -357,6 +373,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-017',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Sampling',
     subtopic: 'Nonstatistical Sampling',
@@ -377,6 +394,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-018',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Risk Factors',
@@ -397,6 +415,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-019',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Revenue Recognition',
@@ -417,6 +436,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-020',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Related Parties',
@@ -437,6 +457,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-021',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Estimates',
@@ -457,6 +478,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-022',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Using Specialists',
@@ -477,6 +499,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-023',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Other Reporting',
     subtopic: 'Review Engagements',
@@ -497,6 +520,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-024',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Other Reporting',
     subtopic: 'Compilation Engagements',
@@ -517,6 +541,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-025',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Other Reporting',
     subtopic: 'Attestation',
@@ -539,6 +564,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-026',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Planning',
     subtopic: 'Engagement Quality',
@@ -559,6 +585,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-027',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'IT Controls',
     subtopic: 'General Controls',
@@ -579,6 +606,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-028',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Documentation',
     subtopic: 'Audit Documentation',
@@ -599,6 +627,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-029',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Group Audits',
     subtopic: 'Component Auditors',
@@ -619,6 +648,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-030',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
@@ -641,6 +671,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-031',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmation',
@@ -661,6 +692,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-032',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Non-Audit Services',
@@ -681,6 +713,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-033',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Communications',
     subtopic: 'Management Letter',
@@ -701,6 +734,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-034',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Communications',
     subtopic: 'Audit Committee',
@@ -721,6 +755,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-035',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Service Organizations',
@@ -743,6 +778,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-036',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
@@ -763,6 +799,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-037',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Substantive Procedures',
     subtopic: 'Inventory Observation',
@@ -783,6 +820,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-038',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
@@ -803,6 +841,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-039',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Subsequent Events',
@@ -823,6 +862,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'aud-add-040',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',

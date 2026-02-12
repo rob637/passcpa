@@ -8,6 +8,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Z-Score Model',
@@ -28,6 +29,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Operating Leverage',
@@ -48,6 +50,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Economic Value Added',
@@ -68,6 +71,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'DCF Assumptions',
@@ -88,6 +92,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-adjustments',
     topic: 'Financial Statement Adjustments',
     subtopic: 'LIFO to FIFO',
@@ -108,6 +113,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-006',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Licensing IP',
@@ -128,6 +134,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-007',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Principal vs Agent',
@@ -148,6 +155,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-008',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Reassessment',
@@ -168,6 +176,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-009',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Variable Lease Payments',
@@ -188,6 +197,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-010',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-taxes',
     topic: 'Income Taxes',
     subtopic: 'Tax Rate Reconciliation',
@@ -208,6 +218,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-011',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-taxes',
     topic: 'Income Taxes',
     subtopic: 'Uncertain Tax Positions',
@@ -228,6 +239,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-012',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-combinations',
     topic: 'Business Combinations',
     subtopic: 'Pushdown Accounting',
@@ -248,6 +260,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-013',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-combinations',
     topic: 'Business Combinations',
     subtopic: 'Step Acquisition',
@@ -268,6 +281,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-014',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Intercompany Transactions',
@@ -288,6 +302,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-015',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
@@ -308,6 +323,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-016',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing',
@@ -328,6 +344,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-017',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
@@ -348,6 +365,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-018',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance',
     topic: 'Variance Analysis',
     subtopic: 'Sales Mix Variance',
@@ -368,6 +386,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-019',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Beyond Budgeting',
@@ -388,6 +407,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-020',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Value at Risk',
@@ -408,6 +428,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-021',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-forex',
     topic: 'Foreign Currency',
     subtopic: 'Remeasurement vs Translation',
@@ -428,6 +449,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-022',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Cash Flow Hedge Effectiveness',
@@ -448,6 +470,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-023',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analytics',
     topic: 'Data Analytics',
     subtopic: 'Regression Analysis',
@@ -468,6 +491,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-024',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-segment',
     topic: 'Segment Reporting',
     subtopic: 'Quantitative Thresholds',
@@ -488,6 +512,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'bar-comp-025',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-accounting',
     topic: 'Special Accounting',
     subtopic: 'Asset Retirement Obligations',

@@ -10,11 +10,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Federal Tax Lien',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A federal tax lien arises automatically when:',
     options: [
       'A taxpayer files a return showing tax due',
@@ -29,11 +31,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'IRS Levy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IRS levy differs from a lien in that a levy:',
     options: [
       'Creates a claim against property',
@@ -48,11 +52,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Information Returns & Penalties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The penalty for failure to file correct information returns (e.g., Form 1099) by the due date is:',
     options: [
       'No penalty for information returns',
@@ -69,11 +75,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Bankruptcy — Automatic Stay',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The automatic stay in bankruptcy:',
     options: [
       'Only applies to secured creditors',
@@ -88,11 +96,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Bankruptcy — Discharge',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a Chapter 7 bankruptcy, which of the following debts is NOT dischargeable?',
     options: [
       'Credit card debt',
@@ -107,11 +117,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property-law',
     topic: 'Business Law',
     subtopic: 'Real Property — Recording Acts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under a "race-notice" recording statute, a subsequent purchaser of real property prevails over a prior unrecorded interest if the subsequent purchaser:',
     options: [
       'Simply records first, regardless of knowledge',
@@ -128,11 +140,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Formation — §721',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §721, the general rule for contributions of property to a partnership is:',
     options: [
       'Gain or loss is recognized by the contributing partner',
@@ -147,11 +161,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Guaranteed payments to a partner (IRC §707(c)) are:',
     options: [
       'Taxed as capital gains to the partner',
@@ -166,11 +182,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Complete Liquidation — §331',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a C corporation completely liquidates and distributes assets to shareholders, the shareholders generally:',
     options: [
       'Treat the distribution as a dividend',
@@ -187,11 +205,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status — Head of Household',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To qualify for head of household filing status, a taxpayer must:',
     options: [
       'Be married and file separately',
@@ -206,11 +226,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Qualified Business Income Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The §199A Qualified Business Income (QBI) deduction for a taxpayer below the income threshold is:',
     options: [
       '10% of qualified business income',
@@ -227,11 +249,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 — Sanctions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sanctions available for Circular 230 violations include all of the following EXCEPT:',
     options: [
       'Censure (public reprimand)',
@@ -246,11 +270,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 — Tax Return Standards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner must not sign a return that takes a position unless:',
     options: [
       'The position is certain to be sustained',
@@ -267,11 +293,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Business Law',
     subtopic: 'LLC vs Partnership vs Corporation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A limited liability company (LLC) provides its members with:',
     options: [
       'Unlimited personal liability like a general partnership',
@@ -286,11 +314,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Business Law',
     subtopic: 'Corporate Veil Piercing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Courts will "pierce the corporate veil" and hold shareholders personally liable when:',
     options: [
       'The corporation files late tax returns',
@@ -307,11 +337,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The self-employment tax rate applied to net self-employment income (after the 92.35% adjustment) is:',
     options: [
       '7.65%',
@@ -326,11 +358,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Social Security Taxation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Social Security benefits may be partially taxable if the taxpayer\'s "provisional income" exceeds certain thresholds. Up to what maximum percentage of benefits may be included in gross income?',
     options: [
       '50%',
@@ -347,11 +381,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-018',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Net Operating Losses — Corporate',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the TCJA rules (for losses arising after 2017), corporate NOLs:',
     options: [
       'Can be carried back 2 years and forward 20 years',
@@ -368,11 +404,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-019',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 179 Expensing',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §179, a taxpayer may immediately expense the cost of qualifying business assets up to:',
     options: [
       '$500,000',
@@ -387,11 +425,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-020',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Bonus Depreciation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For assets placed in service in 2024, the first-year bonus depreciation rate under §168(k) is:',
     options: [
       '100%',
@@ -408,11 +448,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-021',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-commercial',
     topic: 'Business Law',
     subtopic: 'UCC — Warranties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The implied warranty of merchantability under UCC Article 2 requires that goods be:',
     options: [
       'Perfect in every way',
@@ -427,11 +469,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-022',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-commercial',
     topic: 'Business Law',
     subtopic: 'UCC — Battle of the Forms',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under UCC §2-207 (Battle of the Forms), when a buyer\'s purchase order and a seller\'s acknowledgment contain different terms:',
     options: [
       'No contract is formed',
@@ -448,11 +492,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-023',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Traditional vs Roth IRA',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary tax difference between a Traditional IRA and a Roth IRA is:',
     options: [
       'Traditional contributions come from after-tax money; Roth from pre-tax',
@@ -467,11 +513,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-024',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Early Distribution Penalty',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The additional tax on early distributions from a Traditional IRA (before age 59½) is:',
     options: [
       '25%',
@@ -486,11 +534,13 @@ export const REG_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'reg-d3-025',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Formation — §351',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §351, a transfer of property to a corporation in exchange for stock is tax-free if:',
     options: [
       'Any shareholder transfers property to the corporation',

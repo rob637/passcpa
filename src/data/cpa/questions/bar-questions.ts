@@ -12,10 +12,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Ratio Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has current assets of $500,000 including inventory of $150,000, and current liabilities of $250,000. What is the quick (acid-test) ratio?',
     options: [
       '2.0',
@@ -32,10 +34,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Profitability Ratios',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company reports net income of $120,000, interest expense of $30,000, and taxes of $50,000. Total assets averaged $1,000,000. What is the Return on Assets (ROA)?',
     options: [
       '20%',
@@ -52,10 +56,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Leverage Ratios',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Company X has EBIT of $200,000, interest expense of $50,000, and depreciation of $30,000. What is the Times Interest Earned (TIE) ratio?',
     options: [
       '5.0',
@@ -72,10 +78,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Discounted Cash Flow',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A project is expected to generate cash flows of $10,000 per year for 5 years. If the discount rate is 10%, what is the present value of these cash flows? (PV annuity factor for 5 years at 10% = 3.791)',
     options: [
       '$37,910',
@@ -92,10 +100,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Cost of Capital',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has $400,000 of debt at 6% interest and $600,000 of equity with a required return of 12%. The tax rate is 25%. What is the weighted average cost of capital (WACC)?',
     options: [
       '9.0%',
@@ -112,10 +122,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-006',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Planning and Budgeting',
     subtopic: 'Variance Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company budgeted to produce 1,000 units using 2 hours of labor per unit at $15/hour. Actual production was 1,100 units using 2,100 hours at $16/hour. What is the labor efficiency variance?',
     options: [
       '$1,500 Unfavorable',
@@ -132,10 +144,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-007',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Planning and Budgeting',
     subtopic: 'Flexible Budgets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary advantage of a flexible budget over a static budget is that it:',
     options: [
       'Is easier to prepare',
@@ -152,10 +166,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ba-008',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-economics',
     topic: 'Economic Concepts',
     subtopic: 'Demand and Supply',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When the price of a good increases and quantity demanded decreases, this movement along the demand curve is called:',
     options: [
       'A shift in demand',
@@ -177,10 +193,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ta-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'ASC 606 Five-Step Model',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 606, when should revenue be recognized?',
     options: [
       'When control of goods or services transfers to the customer',
@@ -197,10 +215,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ta-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company sells software with a "most favored nation" clause allowing price adjustments. Under ASC 606, variable consideration should be:',
     options: [
       'Ignored until the adjustment occurs',
@@ -217,10 +237,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ta-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Lease Classification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 842, a lessee classifies a lease as a finance lease if any ONE of which criteria is met?',
     options: [
       'The lease term is greater than 50% of the asset\'s useful life',
@@ -237,10 +259,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ta-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Right-of-Use Asset',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 842, a lessee\'s initial measurement of the right-of-use asset includes all of the following EXCEPT:',
     options: [
       'Initial direct costs',
@@ -257,10 +281,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ta-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 805, acquisition-related costs such as finder\'s fees and due diligence costs should be:',
     options: [
       'Capitalized as part of goodwill',
@@ -277,10 +303,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ta-006',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Goodwill',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Goodwill arising from a business combination is:',
     options: [
       'Tested annually for impairment, not amortized',
@@ -302,10 +330,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-base-gov-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-government',
     topic: 'Government Accounting',
     subtopic: 'Fund Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The General Fund of a state or local government uses which basis of accounting?',
     options: [
       'Accrual basis',
@@ -322,10 +352,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-base-gov-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-government',
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city operates a water utility that charges user fees intended to cover the cost of services. This activity should be reported in which fund type?',
     options: [
       'General Fund',
@@ -342,10 +374,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-base-gov-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-government',
     topic: 'Government Accounting',
     subtopic: 'Budgetary Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a government records an encumbrance for a purchase order, the entry debits:',
     options: [
       'Expenditures and credits Cash',
@@ -362,10 +396,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-base-gov-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-government',
     topic: 'Government Accounting',
     subtopic: 'Government-Wide Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Government-wide financial statements use which basis of accounting?',
     options: [
       'Modified accrual',
@@ -387,10 +423,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cg-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-corporate-governance',
     topic: 'Corporate Governance',
     subtopic: 'Internal Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which COSO internal control component addresses the tone at the top of an organization?',
     options: [
       'Risk Assessment',
@@ -407,10 +445,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cg-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-corporate-governance',
     topic: 'Corporate Governance',
     subtopic: 'Enterprise Risk Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under COSO ERM, "risk appetite" refers to:',
     options: [
       'The types of risks an organization faces',
@@ -427,10 +467,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cap-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-capital-budgeting',
     topic: 'Capital Budgeting',
     subtopic: 'NPV vs IRR',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating mutually exclusive projects with different scales, which capital budgeting technique is generally preferred?',
     options: [
       'Net Present Value (NPV)',
@@ -453,10 +495,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cvp-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cvp-analysis',
     topic: 'Cost-Volume-Profit Analysis',
     subtopic: 'Breakeven Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company sells a product for $50 per unit with variable costs of $30 per unit and fixed costs of $100,000 per year. How many units must be sold to break even?',
     options: [
       '2,000 units',
@@ -473,10 +517,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cvp-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cvp-analysis',
     topic: 'Cost-Volume-Profit Analysis',
     subtopic: 'Target Profit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Using the same data (selling price $50, variable cost $30, fixed costs $100,000), how many units must be sold to achieve a target profit of $60,000?',
     options: [
       '6,000 units',
@@ -493,10 +539,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cvp-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cvp-analysis',
     topic: 'Cost-Volume-Profit Analysis',
     subtopic: 'Margin of Safety',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has budgeted sales of 8,000 units and a breakeven point of 5,000 units. What is the margin of safety percentage?',
     options: [
       '25%',
@@ -513,10 +561,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cvp-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cvp-analysis',
     topic: 'Cost-Volume-Profit Analysis',
     subtopic: 'Operating Leverage',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Company A has a contribution margin of $400,000 and net operating income of $100,000. What is the degree of operating leverage?',
     options: [
       '4.0',
@@ -535,10 +585,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-var-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance-analysis',
     topic: 'Variance Analysis',
     subtopic: 'Direct Materials Variance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Standard: 2 lbs @ $5/lb. Actual: 2,100 lbs purchased and used @ $5.20/lb for 1,000 units. What is the materials price variance?',
     options: [
       '$500 Unfavorable',
@@ -555,10 +607,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-var-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance-analysis',
     topic: 'Variance Analysis',
     subtopic: 'Direct Materials Variance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using the same data, what is the materials quantity (efficiency) variance?',
     options: [
       '$100 Unfavorable',
@@ -575,10 +629,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-var-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance-analysis',
     topic: 'Variance Analysis',
     subtopic: 'Direct Labor Variance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Standard: 3 hours @ $20/hour. Actual: 2,900 hours @ $21/hour for 1,000 units. What is the labor rate variance?',
     options: [
       '$2,000 Favorable',
@@ -595,10 +651,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-var-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance-analysis',
     topic: 'Variance Analysis',
     subtopic: 'Direct Labor Variance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using the same data, what is the labor efficiency variance?',
     options: [
       '$2,900 Unfavorable',
@@ -617,10 +675,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cons-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidations',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent Co. acquires 100% of Sub Co. for $500,000. Sub\'s identifiable net assets have fair value of $400,000. How should the $100,000 difference be reported?',
     options: [
       'Amortized over 15 years as an intangible asset',
@@ -637,10 +697,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cons-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidations',
     topic: 'Business Combinations',
     subtopic: 'Bargain Purchase',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent Co. acquires 100% of Sub Co. for $350,000. Sub\'s identifiable net assets have fair value of $400,000. How should the $50,000 difference be reported?',
     options: [
       'Recorded as negative goodwill on the balance sheet',
@@ -657,10 +719,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cons-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidations',
     topic: 'Consolidation Procedures',
     subtopic: 'Intercompany Eliminations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent sells inventory to Sub for $80,000 (cost $60,000). At year-end, 25% remains in Sub\'s inventory. What intercompany profit must be eliminated in consolidation?',
     options: [
       '$20,000',
@@ -679,10 +743,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-deriv-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-derivatives',
     topic: 'Derivatives and Hedging',
     subtopic: 'Fair Value Hedge',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company hedges a firm commitment to purchase inventory using a forward contract designated as a fair value hedge. How are gains/losses on the derivative reported?',
     options: [
       'In Other Comprehensive Income until the inventory is sold',
@@ -699,10 +765,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-deriv-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-derivatives',
     topic: 'Derivatives and Hedging',
     subtopic: 'Cash Flow Hedge',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company uses an interest rate swap designated as a cash flow hedge of variable-rate debt. Where are the effective portions of gains/losses initially recorded?',
     options: [
       'Directly in earnings',
@@ -721,10 +789,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-lease-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Lessee Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 842, which criterion would classify a lease as a finance lease for the lessee?',
     options: [
       'Lease term is 50% of the asset\'s remaining economic life',
@@ -741,10 +811,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-lease-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Operating Lease - Lessee',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For an operating lease, how does the lessee recognize expense over the lease term?',
     options: [
       'Interest expense declining over time, plus amortization',
@@ -761,10 +833,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-lease-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Finance Lease - Lessee',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For a finance lease, how does the lessee recognize total expense over the lease term?',
     options: [
       'Straight-line single lease expense',
@@ -783,10 +857,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-gov-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-government',
     topic: 'Government Accounting',
     subtopic: 'Enterprise Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city water utility charges fees to customers for services. What fund type should be used?',
     options: [
       'Enterprise Fund',
@@ -805,10 +881,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-management',
     topic: 'Working Capital Management',
     subtopic: 'Cash Conversion Cycle',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has: Inventory Turnover = 8x, Receivables Turnover = 12x, Payables Turnover = 10x. What is the cash conversion cycle (in days)?',
     options: [
       '40.62 days',
@@ -825,10 +903,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-management',
     topic: 'Capital Structure',
     subtopic: 'WACC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has: 60% equity (cost 12%), 40% debt (cost 8%, tax rate 25%). What is the weighted average cost of capital (WACC)?',
     options: [
       '9.60%',
@@ -845,10 +925,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-management',
     topic: 'Capital Budgeting',
     subtopic: 'NPV Calculation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Project requires $100,000 initial investment and generates cash flows of $35,000 per year for 4 years. At 10% discount rate, what is the NPV? (PV factor for 4-year annuity at 10% = 3.170)',
     options: [
       '$40,000',
@@ -865,10 +947,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Revenue Recognition',
     subtopic: 'Five-Step Model',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 606, what is the correct sequence of the five-step revenue recognition model?',
     options: [
       'Identify contract, Identify obligations, Determine price, Recognize revenue, Allocate price',
@@ -885,10 +969,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Stock Compensation',
     subtopic: 'Stock Options',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company grants 10,000 stock options with fair value of $8 each, vesting over 4 years. What is the annual compensation expense?',
     options: [
       '$80,000',
@@ -911,10 +997,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-da-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Descriptive Analytics',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which type of analytics answers the question "What happened?"',
     options: [
       'Predictive analytics',
@@ -931,10 +1019,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-da-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Regression Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a regression analysis, an R-squared value of 0.85 indicates:',
     options: [
       '85% of the variation in the dependent variable is explained by the independent variables',
@@ -951,10 +1041,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-da-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Visualization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which visualization is BEST for showing composition as a percentage of a whole?',
     options: [
       'Line chart',
@@ -971,10 +1063,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-da-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is NOT a characteristic of data quality?',
     options: [
       'Complexity',
@@ -991,10 +1085,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-da-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Benford\'s Law',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Benford\'s Law is used in data analytics to:',
     options: [
       'Calculate the mean and median of large datasets',
@@ -1011,10 +1107,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-da-006',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Outlier Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data point that is more than three standard deviations from the mean is typically considered:',
     options: [
       'A median value',
@@ -1033,10 +1131,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cost-b3-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company uses ABC and has a setup activity with total costs of $100,000 and 500 setups performed. Product A requires 150 setups and Product B requires 350 setups. What is the setup cost allocated to Product A?',
     options: [
       '$30,000',
@@ -1053,10 +1153,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cost-b3-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Standard Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Standard direct labor is 2 hours at $25/hour. Actual was 2,100 hours at $24/hour for 1,000 units. What is the labor rate variance?',
     options: [
       '$2,100 Unfavorable',
@@ -1073,10 +1175,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cost-b3-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Job Order Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company applies overhead using direct labor hours. Estimated overhead is $300,000 and estimated DLH is 20,000. Job 101 used 500 DLH. What overhead is applied to Job 101?',
     options: [
       '$7,500',
@@ -1093,10 +1197,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cost-b3-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Process Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using FIFO, beginning WIP is 1,000 units (60% complete), 5,000 units started, and 4,500 units completed. Ending WIP is 40% complete. What are the equivalent units for conversion (FIFO)?',
     options: [
       '4,500',
@@ -1113,10 +1219,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-cost-b3-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Division A can sell externally at $100 with variable costs of $60. Division B wants to buy 1,000 units. What is the minimum transfer price Division A should accept if operating at full capacity?',
     options: [
       '$60',
@@ -1135,10 +1243,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-b3-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-mgmt',
     topic: 'Financial Management',
     subtopic: 'Capital Budgeting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project requires $500,000 initial investment and generates annual cash flows of $150,000 for 5 years. At 10% discount rate, what is the profitability index?',
     options: [
       '0.87',
@@ -1155,10 +1265,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-b3-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-mgmt',
     topic: 'Financial Management',
     subtopic: 'IRR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If a project\'s IRR is 15% and the company\'s cost of capital is 12%, the project should be:',
     options: [
       'Rejected because IRR exceeds cost of capital',
@@ -1175,10 +1287,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-b3-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-mgmt',
     topic: 'Financial Management',
     subtopic: 'Working Capital',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has current assets of $500,000 and current liabilities of $300,000. If inventory is $150,000, what is the quick ratio?',
     options: [
       '0.83',
@@ -1195,10 +1309,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-b3-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-mgmt',
     topic: 'Financial Management',
     subtopic: 'Operating Leverage',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has contribution margin of $200,000 and operating income of $50,000. What is the degree of operating leverage?',
     options: [
       '0.25',
@@ -1215,10 +1331,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-fm-b3-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-mgmt',
     topic: 'Financial Management',
     subtopic: 'Economic Value Added',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A division has operating income of $2,000,000, invested capital of $10,000,000, and cost of capital of 12%. What is the Economic Value Added (EVA)?',
     options: [
       '$1,200,000',
@@ -1237,10 +1355,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-val-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'DCF Valuation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has free cash flow of $1,000,000, expected to grow at 3% perpetually. If the discount rate is 10%, what is the enterprise value using the Gordon Growth Model?',
     options: [
       '$10,000,000',
@@ -1257,10 +1377,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-val-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Market Multiples',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Comparable companies trade at an average EV/EBITDA multiple of 8x. Target company has EBITDA of $5,000,000, debt of $10,000,000, and cash of $2,000,000. What is the implied equity value?',
     options: [
       '$32,000,000',
@@ -1277,10 +1399,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-val-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Discount for Lack of Marketability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A privately held company is valued at $10,000,000 on a marketable basis. If a 25% discount for lack of marketability is applied, what is the value?',
     options: [
       '$2,500,000',
@@ -1299,10 +1423,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b3-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Troubled Debt Restructuring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current GAAP, a debtor restructures debt in a troubled debt restructuring. The carrying amount is $1,000,000 and the total future cash flows are $900,000. What gain does the debtor recognize?',
     options: [
       '$0',
@@ -1319,10 +1445,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b3-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An asset retirement obligation (ARO) should be recognized when:',
     options: [
       'The asset is fully depreciated',
@@ -1339,10 +1467,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b3-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Impairment - Indefinite-Lived Intangibles',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A trademark with indefinite life has a carrying value of $500,000 and fair value of $450,000. What impairment loss is recognized?',
     options: [
       '$0',
@@ -1365,10 +1495,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-budget-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Master Budget',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The FIRST budget typically prepared in a master budget is:',
     options: [
       'Production budget',
@@ -1385,10 +1517,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-budget-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Flexible Budget',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A flexible budget adjusts budgeted amounts based on:',
     options: [
       'Actual activity level achieved',
@@ -1405,10 +1539,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-budget-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Zero-Based Budgeting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Zero-based budgeting requires:',
     options: [
       'Targeting zero variances',
@@ -1425,10 +1561,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-budget-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Forecasting',
     subtopic: 'Rolling Forecasts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A rolling forecast differs from a traditional budget by:',
     options: [
       'Being prepared less frequently',
@@ -1447,10 +1585,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-perf-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The balanced scorecard includes all of the following perspectives EXCEPT:',
     options: [
       'Financial',
@@ -1467,10 +1607,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-perf-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'ROI',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A division has operating income of $400,000 and average operating assets of $2,000,000. What is the return on investment?',
     options: [
       '20%',
@@ -1487,10 +1629,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-perf-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Residual Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A division has operating income of $500,000, operating assets of $3,000,000, and cost of capital of 12%. What is the residual income?',
     options: [
       '$60,000',
@@ -1509,10 +1653,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-risk-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'ERM',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Enterprise Risk Management (ERM) is BEST described as:',
     options: [
       'A process to identify, assess, and manage risks across the entire organization',
@@ -1529,10 +1675,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-risk-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Risk Response',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company purchases insurance to cover potential fire damage. This is an example of:',
     options: [
       'Risk transfer',
@@ -1549,10 +1697,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-risk-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Sensitivity Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sensitivity analysis helps managers understand:',
     options: [
       'Historical performance trends',
@@ -1571,10 +1721,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ratio-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-ratios',
     topic: 'Financial Ratios',
     subtopic: 'Liquidity Ratios',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has current assets of $800,000 (including inventory of $300,000) and current liabilities of $400,000. What is the quick ratio?',
     options: [
       '0.75',
@@ -1591,10 +1743,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ratio-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-ratios',
     topic: 'Financial Ratios',
     subtopic: 'Leverage Ratios',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has total debt of $600,000 and total equity of $400,000. What is the debt-to-equity ratio?',
     options: [
       '0.67',
@@ -1611,10 +1765,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-ratio-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-ratios',
     topic: 'Financial Ratios',
     subtopic: 'Profitability Ratios',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has net income of $150,000, sales of $1,000,000, and average total assets of $750,000. What is the asset turnover?',
     options: [
       '0.15',
@@ -1633,10 +1789,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b5-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Segment Reporting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 280, an operating segment must report separately if it meets which quantitative threshold?',
     options: [
       'Revenue, profit/loss, or assets ≥10% of combined totals',
@@ -1653,10 +1811,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b5-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Related Party Disclosures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Related party transactions must be disclosed even if:',
     options: [
       'The amounts are immaterial',
@@ -1673,10 +1833,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b5-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Interim Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the integral view of interim reporting:',
     options: [
       'Each interim period is a separate accounting period',
@@ -1693,10 +1855,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b5-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Variable Interest Entities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A variable interest entity (VIE) must be consolidated by:',
     options: [
       'The entity with the largest ownership percentage',
@@ -1713,10 +1877,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-tech-b5-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Accounting Estimates',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When developing accounting estimates, management should consider:',
     options: [
       'Only the most likely outcome',
@@ -1733,10 +1899,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-088',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Joint and By-Product Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In joint cost allocation, the net realizable value method allocates costs based on:',
     options: [
       'Physical units produced',
@@ -1753,10 +1921,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-089',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary advantage of ABC over traditional costing is:',
     options: [
       'Lower implementation costs',
@@ -1773,10 +1943,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-090',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Target Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Target cost is calculated as:',
     options: [
       'Market price minus desired profit margin',
@@ -1793,10 +1965,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-091',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the Theory of Constraints, throughput is defined as:',
     options: [
       'Total revenue minus all costs',
@@ -1813,10 +1987,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-092',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Regression Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In linear regression, the coefficient of determination (R²) represents:',
     options: [
       'The slope of the regression line',
@@ -1833,10 +2009,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-093',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Time Series Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A moving average forecast technique is most appropriate when:',
     options: [
       'Data shows strong trend',
@@ -1853,10 +2031,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-094',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Visualization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A Pareto chart is used to:',
     options: [
       'Show trends over time',
@@ -1873,10 +2053,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-095',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Predictive Analytics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a decision tree, the expected value at a decision node is calculated by:',
     options: [
       'Taking the average of all branches',
@@ -1893,10 +2075,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-096',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Working Capital Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle equals:',
     options: [
       'Days inventory + Days receivables + Days payables',
@@ -1913,10 +2097,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-097',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Capital Structure',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'According to the Modigliani-Miller theorem with taxes, the value of a levered firm equals:',
     options: [
       'Value of unlevered firm minus tax shield',
@@ -1933,10 +2119,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-098',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Dividend Policy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The residual dividend policy determines dividends by:',
     options: [
       'Maintaining a constant payout ratio',
@@ -1953,10 +2141,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-099',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Risk Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Value at Risk (VaR) measures:',
     options: [
       'The expected return on a portfolio',
@@ -1973,10 +2163,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-100',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'DCF Valuation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Free cash flow to the firm (FCFF) equals:',
     options: [
       'Net income + Depreciation - CapEx - Change in NWC',
@@ -1993,10 +2185,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-101',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Comparable Company Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Enterprise Value (EV) equals:',
     options: [
       'Market cap only',
@@ -2013,10 +2207,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-102',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Terminal Value',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Gordon Growth Model terminal value assumes:',
     options: [
       'Zero growth after the explicit forecast period',
@@ -2033,10 +2229,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-103',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Balanced Scorecard',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The balanced scorecard includes all of the following perspectives EXCEPT:',
     options: [
       'Financial',
@@ -2053,10 +2251,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-104',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'From a company-wide perspective, the optimal transfer price when no external market exists is:',
     options: [
       'Full cost plus markup',
@@ -2073,10 +2273,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-105',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Performance Measurement',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Economic Value Added (EVA) is calculated as:',
     options: [
       'Net income - Dividends',
@@ -2093,10 +2295,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-106',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Kaizen Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Kaizen costing focuses on:',
     options: [
       'Setting costs during product design',
@@ -2113,10 +2317,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-107',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Benford\'s Law',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Benford\'s Law is used in data analytics to:',
     options: [
       'Predict future sales',
@@ -2133,10 +2339,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-108',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Process Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under FIFO process costing, equivalent units for materials include:',
     options: [
       'All units completed plus ending WIP percentage',
@@ -2153,10 +2361,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-109',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Leverage Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Degree of combined leverage (DCL) equals:',
     options: [
       'DOL + DFL',
@@ -2173,10 +2383,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-110',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Precedent Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Precedent transaction analysis typically yields values that are:',
     options: [
       'Lower than comparable company analysis',
@@ -2193,10 +2405,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-111',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Standard Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A favorable labor efficiency variance indicates:',
     options: [
       'Actual hours exceeded standard hours',
@@ -2213,10 +2427,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-112',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Sensitivity Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sensitivity analysis in financial modeling:',
     options: [
       'Changes all variables simultaneously',
@@ -2233,10 +2449,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-113',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Correlation vs Causation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A high correlation between two variables indicates:',
     options: [
       'That one variable causes changes in the other',
@@ -2253,10 +2471,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-114',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Standard Deviation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Standard deviation measures:',
     options: [
       'The dispersion or spread of data around the mean',
@@ -2273,10 +2493,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-115',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Monte Carlo Simulation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Monte Carlo simulation is used to:',
     options: [
       'Model probability distributions of outcomes using random sampling',
@@ -2293,10 +2515,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-116',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Spoilage Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Normal spoilage in a process costing system is:',
     options: [
       'Charged to the period as a loss',
@@ -2313,10 +2537,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-117',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Learning Curve',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An 80% learning curve means that when cumulative output doubles, cumulative average time:',
     options: [
       'Decreases to 80% of its previous level',
@@ -2333,10 +2559,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-118',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Throughput Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In throughput accounting, the throughput contribution per constraint minute is calculated as:',
     options: [
       'Selling price minus all costs',
@@ -2353,10 +2581,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-119',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Life Cycle Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Life cycle costing considers:',
     options: [
       'All costs from design through disposal',
@@ -2373,10 +2603,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-120',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Internal Rate of Return',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The IRR is the discount rate at which:',
     options: [
       'Profit is maximized',
@@ -2393,10 +2625,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-121',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Modified IRR',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'MIRR improves on IRR by:',
     options: [
       'Ignoring the time value of money',
@@ -2413,10 +2647,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-122',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Profitability Index',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The profitability index is calculated as:',
     options: [
       'NPV ÷ Initial investment',
@@ -2433,10 +2669,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-123',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Real Options',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Real options analysis recognizes value in:',
     options: [
       'Managerial flexibility to expand, abandon, or delay projects',
@@ -2453,10 +2691,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-124',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk-management',
     topic: 'Risk Management',
     subtopic: 'Beta Coefficient',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A stock with beta of 1.5 is expected to:',
     options: [
       'Move opposite to the market',
@@ -2473,10 +2713,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-125',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk-management',
     topic: 'Risk Management',
     subtopic: 'CAPM',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under CAPM, the required return on an equity security equals:',
     options: [
       'Risk-free rate only',
@@ -2493,10 +2735,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-126',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk-management',
     topic: 'Risk Management',
     subtopic: 'Diversification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Portfolio diversification reduces:',
     options: [
       'Unsystematic (company-specific) risk',
@@ -2513,10 +2757,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-127',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Discount for Lack of Control',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A discount for lack of control (DLOC) applies when valuing:',
     options: [
       'A 100% controlling interest',
@@ -2533,10 +2779,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-128',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Market Approach',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The guideline public company method values a company by:',
     options: [
       'Applying trading multiples from comparable public companies',
@@ -2553,10 +2801,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-129',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Asset Approach',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The asset-based approach to valuation is most appropriate for:',
     options: [
       'Fast-growing tech companies',
@@ -2573,10 +2823,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-130',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Responsibility Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A profit center manager is responsible for:',
     options: [
       'Costs only',
@@ -2593,10 +2845,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-131',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Residual Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Residual income is calculated as:',
     options: [
       'Operating income minus (Required return × Invested capital)',
@@ -2613,10 +2867,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-132',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'ROI Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Return on Investment (ROI) can be decomposed into:',
     options: [
       'Revenue minus expenses',
@@ -2633,10 +2889,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-133',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Sustainable Growth Rate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The sustainable growth rate equals:',
     options: [
       'ROE × Dividend payout ratio',
@@ -2653,10 +2911,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-134',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Confidence Intervals',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A 95% confidence interval means:',
     options: [
       'There is a 95% chance the true parameter is in this specific interval',
@@ -2673,10 +2933,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-135',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Relevant Costs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In decision making, relevant costs are:',
     options: [
       'Future costs that differ between alternatives',
@@ -2693,10 +2955,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-136',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Make or Buy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a make-or-buy decision with excess capacity, the company should buy if:',
     options: [
       'Purchase price is less than total manufacturing cost',
@@ -2713,10 +2977,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-137',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Cost of Debt',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The after-tax cost of debt equals:',
     options: [
       'Interest rate',
@@ -2733,10 +2999,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-138',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Cost of Equity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using the dividend growth model, cost of equity equals:',
     options: [
       'Dividend yield only',
@@ -2753,10 +3021,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-139',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'WACC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'WACC is used to discount:',
     options: [
       'Only debt cash flows',
@@ -2773,10 +3043,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-140',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Coefficient of Determination',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An R² of 0.85 means:',
     options: [
       '85% probability the model is correct',
@@ -2793,10 +3065,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-141',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Time Series Components',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The four components of time series data are:',
     options: [
       'Mean, median, mode, range',
@@ -2813,10 +3087,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-142',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Moving Averages',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A moving average smooths data by:',
     options: [
       'Increasing sample size',
@@ -2833,10 +3109,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-143',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Cost Behavior',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A semi-variable (mixed) cost contains:',
     options: [
       'Both fixed and variable components',
@@ -2853,10 +3131,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-144',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'High-Low Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The high-low method calculates variable cost per unit by:',
     options: [
       'Averaging all costs',
@@ -2873,10 +3153,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-145',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Operating Leverage',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High operating leverage indicates:',
     options: [
       'Low fixed costs relative to variable costs',
@@ -2893,10 +3175,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-146',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Equivalent Annual Cost',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Equivalent annual cost is used to compare:',
     options: [
       'Projects with different risk levels',
@@ -2913,10 +3197,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-147',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Terminal Value',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a DCF valuation, terminal value typically represents:',
     options: [
       'Less than 10% of total value',
@@ -2933,10 +3219,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-148',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk-management',
     topic: 'Risk Management',
     subtopic: 'Value at Risk',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Value at Risk (VaR) represents:',
     options: [
       'Maximum expected loss over a period at a given confidence level',
@@ -2953,10 +3241,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-149',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk-management',
     topic: 'Risk Management',
     subtopic: 'Interest Rate Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Duration measures a bond\'s sensitivity to:',
     options: [
       'Interest rate changes',
@@ -2973,10 +3263,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-150',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Key Performance Indicators',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective KPIs should be:',
     options: [
       'As numerous as possible',
@@ -2993,10 +3285,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-151',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Benchmarking',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'External benchmarking compares company performance to:',
     options: [
       'Internal historical data only',
@@ -3013,10 +3307,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-152',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Outlier Detection',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In data analysis, an outlier is typically defined as:',
     options: [
       'Any data point above average',
@@ -3033,10 +3329,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-153',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Segment Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Segment margin is calculated as:',
     options: [
       'Revenue minus all costs',
@@ -3053,10 +3351,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-154',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Leverage Ratios',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The debt-to-equity ratio measures:',
     options: [
       'The proportion of debt versus equity financing',
@@ -3073,10 +3373,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-155',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'EV/EBITDA Multiple',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise Value / EBITDA is preferred over P/E ratio because:',
     options: [
       'It is capital structure neutral and unaffected by non-cash depreciation',
@@ -3093,10 +3395,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-156',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Free Cash Flow',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Free cash flow to firm (FCFF) equals:',
     options: [
       'EBIT(1-T) + D&A - CapEx - Change in NWC',
@@ -3113,10 +3417,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-157',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-management-accounting',
     topic: 'Management Accounting',
     subtopic: 'Flexible Budgets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A flexible budget:',
     options: [
       'Never changes once set',
@@ -3133,10 +3439,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-158',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Process Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under FIFO process costing, beginning WIP costs are:',
     options: [
       'Combined with current period costs',
@@ -3153,10 +3461,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-159',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Visualization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A scatter plot is most useful for showing:',
     options: [
       'Parts of a whole',
@@ -3173,10 +3483,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-160',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk-management',
     topic: 'Risk Management',
     subtopic: 'Currency Hedging',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company expecting to receive foreign currency in 90 days can hedge by:',
     options: [
       'Buying a call option on the currency',
@@ -3193,10 +3505,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-161',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-planning',
     topic: 'Financial Planning',
     subtopic: 'Working Capital Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle equals:',
     options: [
       'Days inventory + Days receivables - Days payables',
@@ -3213,10 +3527,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-162',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Cost Allocation Bases',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An appropriate cost allocation base should:',
     options: [
       'Be easy to measure regardless of relationship',
@@ -3234,10 +3550,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-163',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Sustainable Growth Rate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The sustainable growth rate is calculated as:',
     options: [
       'ROE x Retention Ratio',
@@ -3254,10 +3572,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-164',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Economic Value Added',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Economic Value Added (EVA) is calculated as:',
     options: [
       'Net Income - Preferred Dividends',
@@ -3274,10 +3594,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-165',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Price-to-Book Ratio',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The price-to-book (P/B) ratio compares:',
     options: [
       'Stock price to earnings per share',
@@ -3294,10 +3616,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-166',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Correlation vs Causation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Correlation between two variables:',
     options: [
       'Proves causation',
@@ -3314,10 +3638,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-167',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Confidence Intervals',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A 95% confidence interval means:',
     options: [
       'If we repeated sampling many times, 95% of intervals would contain the true parameter',
@@ -3334,10 +3660,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-168',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Visualization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A heat map is most useful for:',
     options: [
       'Showing trends over time',
@@ -3354,10 +3682,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-169',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Joint Cost Allocation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The sales value at split-off method allocates joint costs based on:',
     options: [
       'Physical units produced',
@@ -3374,10 +3704,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-170',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Spoilage Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Normal spoilage in process costing is:',
     options: [
       'Charged to a loss account',
@@ -3394,10 +3726,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-171',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Transfer prices should ideally:',
     options: [
       'Always equal market price',
@@ -3414,10 +3748,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-172',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-planning',
     topic: 'Planning and Budgeting',
     subtopic: 'Rolling Budgets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A rolling (continuous) budget:',
     options: [
       'Continuously adds a new period as the current period ends',
@@ -3434,10 +3770,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-173',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-planning',
     topic: 'Planning and Budgeting',
     subtopic: 'Participative Budgeting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Participative budgeting involves:',
     options: [
       'Top management setting all targets',
@@ -3454,10 +3792,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-174',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-planning',
     topic: 'Planning and Budgeting',
     subtopic: 'Capital Rationing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When capital is limited, projects should be ranked by:',
     options: [
       'Profitability Index or NPV per dollar of constrained resource',
@@ -3474,10 +3814,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-175',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Quality of Earnings',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High quality of earnings is indicated by:',
     options: [
       'Large one-time gains',
@@ -3494,10 +3836,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-176',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Horizontal Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Horizontal analysis compares:',
     options: [
       'Line items within same period as percentages',
@@ -3514,10 +3858,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-177',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Regression Assumptions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Linear regression assumptions include:',
     options: [
       'Dependent variable must be categorical',
@@ -3534,10 +3880,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-178',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'P-Value Interpretation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A p-value of 0.03 in hypothesis testing means:',
     options: [
       'There is a 3% chance the alternative hypothesis is true',
@@ -3554,10 +3902,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-179',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Throughput Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In Theory of Constraints, throughput is defined as:',
     options: [
       'Sales revenue minus totally variable costs (direct materials)',
@@ -3574,10 +3924,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-180',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Backflush Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Backflush costing is most appropriate when:',
     options: [
       'Inventory levels are high',
@@ -3594,10 +3946,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-181',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-planning',
     topic: 'Planning and Budgeting',
     subtopic: 'Sensitivity Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sensitivity analysis in capital budgeting:',
     options: [
       'Tests all variables simultaneously',
@@ -3614,10 +3968,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-182',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-planning',
     topic: 'Planning and Budgeting',
     subtopic: 'Decision Trees',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Decision tree analysis incorporates:',
     options: [
       'Only certain outcomes',
@@ -3634,10 +3990,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-183',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data quality dimensions include:',
     options: [
       'Size only',
@@ -3654,10 +4012,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-184',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'ETL Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ETL stands for:',
     options: [
       'Evaluate, Transform, Load',
@@ -3674,10 +4034,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-185',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Working Capital Policy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An aggressive working capital policy:',
     options: [
       'Maintains high current assets',
@@ -3694,10 +4056,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-186',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Cash Flow Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Operating cash flow is most useful for assessing:',
     options: [
       'Ability to generate cash from core business operations',
@@ -3714,10 +4078,12 @@ export const BAR_QUESTIONS: Question[] = [
   {
     id: 'bar-187',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Life Cycle Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Life cycle costing considers:',
     options: [
       'All costs from R&D through disposal including operating and support costs',

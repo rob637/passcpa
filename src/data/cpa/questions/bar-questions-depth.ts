@@ -12,11 +12,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The balanced scorecard evaluates organizational performance across how many perspectives?',
     options: [
       'Two: financial and customer',
@@ -31,11 +33,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Return on Investment',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Return on Investment (ROI) for a division is calculated as:',
     options: [
       'Revenue divided by total assets',
@@ -50,11 +54,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Residual Income',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A division has operating income of $500,000, average invested capital of $2,000,000, and a required rate of return of 12%. What is the residual income?',
     options: [
       '$500,000',
@@ -69,11 +75,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Economic Value Added',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Economic Value Added (EVA) is calculated as:',
     options: [
       'Revenue minus all expenses',
@@ -88,11 +96,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Key Performance Indicators',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a leading (predictive) indicator rather than a lagging indicator?',
     options: [
       'Last quarter\'s revenue',
@@ -107,11 +117,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a selling division has excess capacity and no external market, the optimal transfer price should be set at:',
     options: [
       'Full absorption cost plus a profit markup',
@@ -126,11 +138,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Responsibility Accounting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In responsibility accounting, a profit center manager is evaluated based on:',
     options: [
       'Only the center\'s revenue',
@@ -149,11 +163,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Relevant Costs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a special order decision, which costs are relevant?',
     options: [
       'All fixed and variable costs',
@@ -168,11 +184,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Make or Buy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company currently manufactures a part at a variable cost of $12/unit and allocates $8/unit of fixed overhead. An outside supplier offers the part at $15/unit. If fixed costs continue regardless, the company should:',
     options: [
       'Buy — $15 is less than the $20 total cost',
@@ -187,11 +205,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Product Mix — Constraint',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company makes Products A and B. Product A has a contribution margin of $20/unit and requires 4 machine hours. Product B has a contribution margin of $15/unit and requires 2 machine hours. With limited machine hours, which product should be prioritized?',
     options: [
       'Product A because it has the higher CM per unit',
@@ -206,11 +226,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-011',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Keep or Drop a Segment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company is considering eliminating a product line that shows a net loss of $50,000 after allocating $120,000 of fixed costs ($80,000 avoidable, $40,000 unavoidable). The segment\'s contribution margin is $70,000. Should the segment be dropped?',
     options: [
       'Yes — it shows a $50,000 net loss',
@@ -225,11 +247,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-012',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Capital Budgeting — NPV',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project requires an initial investment of $100,000 and generates annual cash flows of $30,000 for 5 years. At a 10% discount rate, the project\'s Net Present Value (NPV) is approximately:',
     options: [
       '$50,000',
@@ -244,11 +268,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-013',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Capital Budgeting — IRR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal rate of return (IRR) is the discount rate at which:',
     options: [
       'Total cash inflows equal total cash outflows (undiscounted)',
@@ -267,11 +293,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-014',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Deferred Tax Assets',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A deferred tax asset (DTA) arises when:',
     options: [
       'Taxable income is less than financial income permanently',
@@ -286,11 +314,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-015',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Deferred Tax Liabilities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A deferred tax liability (DTL) typically arises from:',
     options: [
       'Permanent differences between book and tax income',
@@ -305,11 +335,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-016',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Valuation Allowance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 740, a valuation allowance must be established against a deferred tax asset when:',
     options: [
       'The DTA exceeds $1 million',
@@ -324,11 +356,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-017',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Permanent vs Temporary Differences',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a permanent difference between book and tax income?',
     options: [
       'Depreciation differences (MACRS vs. straight-line)',
@@ -347,11 +381,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-018',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Job Order vs Process Costing',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Process costing is most appropriate when:',
     options: [
       'Each product is unique and custom-made',
@@ -366,11 +402,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-019',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Activity-Based Costing (ABC) improves cost accuracy over traditional costing by:',
     options: [
       'Using a single plantwide overhead rate',
@@ -385,11 +423,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-020',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Standard Costing — Material Variance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has a standard of 3 pounds of material at $5/pound per unit. Actual production required 3,200 pounds at $4.80/pound for 1,000 units. The material price variance is:',
     options: [
       '$640 favorable',
@@ -408,11 +448,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-021',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Ratio Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The current ratio is calculated as:',
     options: [
       'Total assets / Total liabilities',
@@ -427,11 +469,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-022',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Profitability Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The gross profit margin ratio is calculated as:',
     options: [
       'Net income / Revenue',
@@ -450,11 +494,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-023',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Intercompany Eliminations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In preparing consolidated financial statements, intercompany transactions must be eliminated to prevent:',
     options: [
       'Understating total revenue',
@@ -469,11 +515,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-024',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Noncontrolling Interest',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 810, noncontrolling interest (NCI) in a subsidiary is presented in the consolidated financial statements as:',
     options: [
       'A liability on the balance sheet',
@@ -488,11 +536,13 @@ export const BAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'bar-d1-025',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Uncertain Tax Positions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 740-10 (FIN 48), a tax position can be recognized in financial statements only if it is:',
     options: [
       'Certain to be sustained on examination',

@@ -11,6 +11,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Database Architecture',
@@ -31,6 +32,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Data Warehousing',
@@ -51,6 +53,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'ERP Systems',
@@ -71,6 +74,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'SDLC',
@@ -95,6 +99,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Access Controls',
@@ -115,6 +120,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-006',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Encryption',
@@ -135,6 +141,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-007',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Network Security',
@@ -155,6 +162,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-008',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Intrusion Detection',
@@ -175,6 +183,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-009',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'GDPR Rights',
@@ -195,6 +204,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-010',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Data Breach Response',
@@ -219,6 +229,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-011',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'SOC 2 Trust Services',
@@ -239,6 +250,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-012',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Complementary Controls',
@@ -259,6 +271,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-013',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Management Assertions',
@@ -283,6 +296,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-014',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-blockchain',
     topic: 'Blockchain Technology',
     subtopic: 'Consensus Mechanisms',
@@ -303,6 +317,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-015',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-blockchain',
     topic: 'Blockchain Technology',
     subtopic: 'Smart Contracts',
@@ -323,6 +338,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-016',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-ai',
     topic: 'Artificial Intelligence',
     subtopic: 'Machine Learning Types',
@@ -343,6 +359,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-017',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-ai',
     topic: 'Artificial Intelligence',
     subtopic: 'AI Governance',
@@ -363,6 +380,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-018',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Shared Responsibility',
@@ -383,6 +401,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-019',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Risks',
@@ -403,6 +422,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-020',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-rpa',
     topic: 'Robotic Process Automation',
     subtopic: 'RPA Controls',
@@ -425,6 +445,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-021',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT General Controls',
     subtopic: 'Change Management',
@@ -445,6 +466,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-022',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT General Controls',
     subtopic: 'Segregation of Duties',
@@ -465,6 +487,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-023',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'Application Controls',
     subtopic: 'Input Controls',
@@ -485,6 +508,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-024',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'Application Controls',
     subtopic: 'Processing Controls',
@@ -505,6 +529,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-025',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcp',
     topic: 'Business Continuity',
     subtopic: 'Recovery Strategies',
@@ -525,6 +550,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-026',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcp',
     topic: 'Business Continuity',
     subtopic: 'RTO and RPO',
@@ -545,6 +571,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-027',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Data Analytics',
@@ -565,6 +592,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-028',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Continuous Auditing',
@@ -585,6 +613,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-029',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT Framework',
@@ -605,6 +634,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-030',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Risk Management',
@@ -625,6 +655,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-031',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Security Awareness',
@@ -645,6 +676,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-032',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Vulnerability Management',
@@ -665,6 +697,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-033',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Privacy by Design',
@@ -685,6 +718,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-034',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Data Minimization',
@@ -705,6 +739,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-035',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Report Limitations',
@@ -725,6 +760,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-036',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'SOC for Supply Chain',
@@ -745,6 +781,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-037',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'IoT Security',
@@ -765,6 +802,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-038',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Quantum Computing',
@@ -785,6 +823,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-039',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'DevSecOps',
@@ -805,6 +844,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'isc-exp-040',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Zero Trust Architecture',

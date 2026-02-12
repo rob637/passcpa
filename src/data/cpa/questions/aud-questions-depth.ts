@@ -9,11 +9,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'Accounting and Review Services',
     subtopic: 'Compilation Engagements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a compilation engagement under SSARS, the accountant:',
     options: [
       'Expresses an opinion on the financial statements',
@@ -28,11 +30,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'Accounting and Review Services',
     subtopic: 'Independence in Compilations',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For a compilation engagement, if the accountant is not independent of the entity:',
     options: [
       'The accountant cannot perform the compilation',
@@ -47,11 +51,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'Accounting and Review Services',
     subtopic: 'Review Engagements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a review engagement under SSARS, the accountant provides:',
     options: [
       'Reasonable assurance (same as an audit)',
@@ -68,11 +74,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'Accounting and Review Services',
     subtopic: 'Preparation of Financial Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under SSARS, a preparation engagement (AR-C §70):',
     options: [
       'Requires the accountant to issue a report',
@@ -89,11 +97,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'Yellow Book — Overview',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Government Auditing Standards (the "Yellow Book") are issued by:',
     options: [
       'The AICPA',
@@ -108,11 +118,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'Yellow Book — Additional Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Government Auditing Standards, a financial statement audit requires the auditor to issue a report on:',
     options: [
       'Only the financial statements (same as a GAAS audit)',
@@ -129,11 +141,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-single',
     topic: 'Single Audit',
     subtopic: 'Uniform Guidance Threshold',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the Uniform Guidance (2 CFR Part 200), a single audit is required for non-federal entities that expend:',
     options: [
       '$500,000 or more in federal awards in a fiscal year',
@@ -148,11 +162,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-single',
     topic: 'Single Audit',
     subtopic: 'Major Program Determination',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a single audit, the auditor must identify "major programs" for testing. Which is a key step in determining major programs?',
     options: [
       'Test every federal program regardless of size',
@@ -169,11 +185,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-prof',
     topic: 'Professional Responsibilities',
     subtopic: 'AICPA Code — Integrity and Objectivity',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the AICPA Code of Professional Conduct, the principle of integrity requires a CPA to:',
     options: [
       'Always agree with the client',
@@ -188,11 +206,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-prof',
     topic: 'Professional Responsibilities',
     subtopic: 'Confidential Client Information',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A CPA may disclose confidential client information without the client\'s consent when:',
     options: [
       'The CPA wants to discuss interesting cases with friends',
@@ -209,11 +229,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-compliance',
     topic: 'Single Audit',
     subtopic: 'Compliance Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a single audit, the auditor tests compliance with requirements for major federal programs. The types of compliance requirements include:',
     options: [
       'Only financial reporting requirements',
@@ -230,11 +252,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-aup',
     topic: 'Accounting and Review Services',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In an agreed-upon procedures (AUP) engagement under SSAE, the practitioner:',
     options: [
       'Expresses an opinion on the financial statements',
@@ -251,11 +275,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-sox',
     topic: 'Professional Responsibilities',
     subtopic: 'SOX — Key Provisions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the Sarbanes-Oxley Act of 2002, the CEO and CFO of a public company must:',
     options: [
       'Only sign the annual report',
@@ -270,11 +296,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-sox',
     topic: 'Professional Responsibilities',
     subtopic: 'PCAOB',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PCAOB (Public Company Accounting Oversight Board) was created by SOX to:',
     options: [
       'Audit all public companies directly',
@@ -291,11 +319,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Emphasis-of-Matter Paragraphs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An emphasis-of-matter paragraph in an auditor\'s report:',
     options: [
       'Modifies the audit opinion',
@@ -312,11 +342,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-attest',
     topic: 'Accounting and Review Services',
     subtopic: 'Attestation Standards — Examination vs. Review',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the Statements on Standards for Attestation Engagements (SSAE), an examination engagement provides:',
     options: [
       'No assurance',
@@ -333,11 +365,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-single',
     topic: 'Single Audit',
     subtopic: 'Schedule of Expenditures of Federal Awards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a single audit, the Schedule of Expenditures of Federal Awards (SEFA) must include:',
     options: [
       'Only the total amount of federal awards',
@@ -354,11 +388,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-qm',
     topic: 'Professional Responsibilities',
     subtopic: 'System of Quality Management (SQMS)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SQMS No. 1 (replacing QC §10), a CPA firm\'s system of quality management must include:',
     options: [
       'Only a peer review every three years',
@@ -375,11 +411,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Going Concern',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When the auditor concludes there is substantial doubt about an entity\'s ability to continue as a going concern and the doubt is adequately disclosed, the auditor:',
     options: [
       'Must issue an adverse opinion',
@@ -396,11 +434,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-prospective',
     topic: 'Accounting and Review Services',
     subtopic: 'Forecast vs. Projection',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The difference between a financial forecast and a financial projection is:',
     options: [
       'There is no difference',
@@ -417,11 +457,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-021',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-group',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Group Audits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the group engagement partner decides to make reference to a component auditor in the group audit report:',
     options: [
       'The group opinion is modified',
@@ -438,11 +480,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-022',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-tax',
     topic: 'Professional Responsibilities',
     subtopic: 'Statements on Standards for Tax Services',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the AICPA Statements on Standards for Tax Services (SSTS), a CPA may sign a tax return as preparer when:',
     options: [
       'The CPA has personally verified every number',
@@ -459,11 +503,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-023',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-single',
     topic: 'Single Audit',
     subtopic: 'Sub-Recipient Monitoring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the Uniform Guidance, a pass-through entity that provides federal award funds to a sub-recipient must:',
     options: [
       'Simply distribute the funds with no further responsibility',
@@ -480,11 +526,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-024',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Subsequent Events — Type I vs Type II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Type I subsequent event (recognized event) is one that:',
     options: [
       'Occurs after the report date and requires no action',
@@ -501,11 +549,13 @@ export const AUD_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'aud-d1-025',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-soc',
     topic: 'Accounting and Review Services',
     subtopic: 'SOC 1 vs SOC 2 Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SOC 1 report differs from a SOC 2 report in that SOC 1:',
     options: [
       'Covers cybersecurity only',

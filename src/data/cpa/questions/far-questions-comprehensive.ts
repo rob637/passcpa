@@ -8,6 +8,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-001',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Measurement Bases',
@@ -28,6 +29,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-002',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-presentation',
     topic: 'Financial Statements',
     subtopic: 'Going Concern',
@@ -48,6 +50,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-003',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Pledging vs Factoring',
@@ -68,6 +71,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-004',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Dollar-Value LIFO',
@@ -88,6 +92,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-005',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Interest Capitalization',
@@ -108,6 +113,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-006',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Internal-Use Software',
@@ -128,6 +134,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-007',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-liabilities',
     topic: 'Exit/Disposal Activities',
     subtopic: 'Restructuring',
@@ -148,6 +155,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-008',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-bonds',
     topic: 'Bonds Payable',
     subtopic: 'Troubled Debt Restructuring',
@@ -168,6 +176,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-009',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Convertible Debt',
@@ -188,6 +197,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-010',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Quasi-Reorganization',
@@ -208,6 +218,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-011',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Net Position',
@@ -228,6 +239,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-012',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Fiduciary Funds',
@@ -248,6 +260,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-013',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Endowments',
@@ -268,6 +281,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-014',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Split-Interest Agreements',
@@ -288,6 +302,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-015',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Variable Interest Entities',
@@ -308,6 +323,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-016',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Modifications',
@@ -328,6 +344,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-017',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
@@ -348,6 +365,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-018',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-pension',
     topic: 'Pensions',
     subtopic: 'Net Periodic Cost',
@@ -368,6 +386,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-019',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-pension',
     topic: 'Pensions',
     subtopic: 'Corridor Method',
@@ -388,6 +407,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-020',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-leases',
     topic: 'Lease Accounting',
     subtopic: 'Lessor - Sales-Type',
@@ -408,6 +428,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-021',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-forex',
     topic: 'Foreign Currency',
     subtopic: 'Hedging Forecasted Transactions',
@@ -428,6 +449,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-022',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-errors',
     topic: 'Accounting Changes',
     subtopic: 'Change in Principle',
@@ -448,6 +470,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-023',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-fair-value',
     topic: 'Fair Value',
     subtopic: 'Level 3 Inputs',
@@ -468,6 +491,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-024',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Contingently Issuable Shares',
@@ -488,6 +512,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'far-comp-025',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nonmonetary',
     topic: 'Nonmonetary Transactions',
     subtopic: 'Exchange Measurement',

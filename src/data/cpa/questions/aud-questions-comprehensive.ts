@@ -8,6 +8,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-001',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Independence Threats',
@@ -28,6 +29,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-002',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-planning',
     topic: 'Engagement Planning',
     subtopic: 'Group Audits',
@@ -48,6 +50,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-003',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
@@ -68,6 +71,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-004',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmations',
@@ -88,6 +92,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-005',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Substantive Procedures',
     subtopic: 'Substantive Analytics',
@@ -108,6 +113,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-006',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Control Deficiencies',
@@ -128,6 +134,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-007',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Tests of Controls',
     subtopic: 'Sample Size',
@@ -148,6 +155,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-008',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
@@ -168,6 +176,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-009',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
@@ -188,6 +197,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-010',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Review Engagements',
     subtopic: 'Review Report',
@@ -208,6 +218,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-011',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-estimates',
     topic: 'Auditing Estimates',
     subtopic: 'Methods',
@@ -228,6 +239,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-012',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-sampling',
     topic: 'Sampling',
     subtopic: 'Monetary Unit Sampling',
@@ -248,6 +260,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-013',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-it',
     topic: 'IT Considerations',
     subtopic: 'IT General Controls',
@@ -268,6 +281,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-014',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-quality',
     topic: 'Quality Management',
     subtopic: 'Engagement Quality Review',
@@ -288,6 +302,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-015',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Special Reports',
     subtopic: 'Letters for Underwriters',
@@ -308,6 +323,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-016',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-communications',
     topic: 'Communications',
     subtopic: 'Deficiency Communication',
@@ -328,6 +344,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-017',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-assertions',
     topic: 'Revenue Testing',
     subtopic: 'Completeness',
@@ -348,6 +365,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-018',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-inventory',
     topic: 'Inventory',
     subtopic: 'Observation Timing',
@@ -368,6 +386,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-019',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Triangle',
@@ -388,6 +407,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-020',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-documentation',
     topic: 'Documentation',
     subtopic: 'Experienced Auditor Standard',
@@ -408,6 +428,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-021',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-related',
     topic: 'Related Parties',
     subtopic: 'Audit Procedures',
@@ -428,6 +449,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-022',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Dual Dating',
@@ -448,6 +470,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-023',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Compilation Engagements',
     subtopic: 'Requirements',
@@ -468,6 +491,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-024',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-attestation',
     topic: 'Attestation',
     subtopic: 'SOC 1 Reports',
@@ -488,6 +512,7 @@ export const AUD_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'aud-comp-025',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Non-Attest Services',

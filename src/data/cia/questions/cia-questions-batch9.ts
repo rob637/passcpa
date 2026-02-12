@@ -12,10 +12,12 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CIA1-B9-001',
+    id: 'cia1-b9-001',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Global Internal Audit Standards provide:',
     options: [
       'Optional guidelines for practitioners',
@@ -26,13 +28,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The Global Internal Audit Standards are mandatory for internal audit professionals and organizations, providing principles and requirements for professional practice.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Standards'
+    subtopic: 'Standards',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-002',
+    id: 'cia1-b9-002',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The CAE must have direct and unrestricted access to:',
     options: [
       'Only the CEO',
@@ -43,13 +48,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The CAE must have direct and unrestricted access to senior management and the board to ensure effective communication and independence.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Access'
+    subtopic: 'Access',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-003',
+    id: 'cia1-b9-003',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Self-interest threats to objectivity may arise when:',
     options: [
       'An auditor has no stake in the outcome',
@@ -60,13 +68,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Self-interest threats occur when auditors have financial interests, career advancement opportunities, or other personal stakes that could bias judgment.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Threats'
+    subtopic: 'Threats',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-004',
+    id: 'cia1-b9-004',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Familiarity threats to objectivity arise when:',
     options: [
       'Auditors are unfamiliar with the audit area',
@@ -77,13 +88,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Familiarity threats occur when close relationships with auditees (personal or professional) may make auditors too sympathetic or uncritical.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Threats'
+    subtopic: 'Threats',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-005',
+    id: 'cia1-b9-005',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Intimidation threats to objectivity may include:',
     options: [
       'Friendly discussions with management',
@@ -94,13 +108,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Intimidation threats occur when auditors are pressured through threats to their position, compensation, career advancement, or professional reputation.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Threats'
+    subtopic: 'Threats',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-006',
+    id: 'cia1-b9-006',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Safeguards against objectivity threats include:',
     options: [
       'Ignoring the threats',
@@ -111,13 +128,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Safeguards include rotation of audit assignments, thorough supervision, quality assurance reviews, and appropriate organizational policies.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Safeguards'
+    subtopic: 'Safeguards',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-007',
+    id: 'cia1-b9-007',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal audit provides value by:',
     options: [
       'Maximizing shareholder dividends',
@@ -128,13 +148,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Internal audit adds value by providing objective assurance and consulting services that improve governance, risk management, and control processes.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Value Proposition'
+    subtopic: 'Value Proposition',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-008',
+    id: 'cia1-b9-008',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The board\'s responsibilities regarding internal audit include:',
     options: [
       'Only budget approval',
@@ -145,13 +168,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The board approves the charter, audit plan, and budget; appoints/removes the CAE; ensures independence; and provides overall oversight of internal audit.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Board Responsibilities'
+    subtopic: 'Board Responsibilities',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-009',
+    id: 'cia1-b9-009',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control risk is the risk that:',
     options: [
       'Auditors fail to detect errors',
@@ -162,13 +188,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Control risk is the risk that internal controls fail to prevent or detect material misstatements or errors on a timely basis.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Concepts'
+    subtopic: 'Risk Concepts',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-010',
+    id: 'cia1-b9-010',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Monitoring activities ensure that:',
     options: [
       'All controls are eliminated',
@@ -179,13 +208,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Monitoring activities assess whether internal control components continue to be present and functioning over time through ongoing evaluations and separate assessments.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'COSO Components'
+    subtopic: 'COSO Components',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-011',
+    id: 'cia1-b9-011',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Information and communication in control frameworks ensures:',
     options: [
       'Only external reporting',
@@ -196,13 +228,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The Information and Communication component ensures relevant quality information is identified, captured, and communicated to enable people to carry out responsibilities.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'COSO Components'
+    subtopic: 'COSO Components',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-012',
+    id: 'cia1-b9-012',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk identification should consider:',
     options: [
       'Only financial risks',
@@ -213,13 +248,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Risk identification should consider all internal and external factors that could affect the organization\'s ability to achieve its objectives.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Assessment'
+    subtopic: 'Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-013',
+    id: 'cia1-b9-013',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Entity-level controls differ from process-level controls because:',
     options: [
       'They are less important',
@@ -230,13 +268,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Entity-level controls (tone at the top, governance, risk management philosophy) apply organization-wide and set the foundation for process-level controls.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Levels'
+    subtopic: 'Control Levels',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-014',
+    id: 'cia1-b9-014',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Periodic internal quality assessments should be performed:',
     options: [
       'Only when external assessments occur',
@@ -247,13 +288,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Periodic self-assessments validate ongoing quality and are conducted at predetermined intervals by persons with sufficient knowledge of internal audit practices.',
     topic: 'Quality Assurance',
-    subtopic: 'Internal Assessments'
+    subtopic: 'Internal Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-015',
+    id: 'cia1-b9-015',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Results of the QAIP should be communicated to the board to ensure:',
     options: [
       'Budget increases',
@@ -264,13 +308,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'QAIP results communicated to the board enable appropriate oversight of internal audit quality, conformance with standards, and continuous improvement.',
     topic: 'Quality Assurance',
-    subtopic: 'Communication'
+    subtopic: 'Communication',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-016',
+    id: 'cia1-b9-016',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Professional skepticism requires auditors to:',
     options: [
       'Accept all explanations without question',
@@ -281,13 +328,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Professional skepticism is a questioning mind that critically evaluates evidence, considers contradictory information, and does not accept explanations without corroboration.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Professional Skepticism'
+    subtopic: 'Professional Skepticism',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-017',
+    id: 'cia1-b9-017',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE should ensure that audit resources are:',
     options: [
       'Maximized regardless of cost',
@@ -298,13 +348,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The CAE must ensure resources are appropriate (right skills), sufficient (adequate quantity), and effectively deployed to achieve the audit plan.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Resource Management'
+    subtopic: 'Resource Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-018',
+    id: 'cia1-b9-018',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the organization does not have an effective risk management process, internal audit:',
     options: [
       'Should create and manage the process',
@@ -315,13 +368,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Internal audit may facilitate risk discussions and assessments but should not assume management responsibility for owning the risk management process.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Facilitation'
+    subtopic: 'Risk Facilitation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-019',
+    id: 'cia1-b9-019',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Assurance provided by internal audit is:',
     options: [
       'Guaranteed',
@@ -332,13 +388,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Internal audit provides reasonable assurance based on systematic, disciplined evaluation. It is not absolute assurance, as limitations exist.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Assurance Concept'
+    subtopic: 'Assurance Concept',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B9-020',
+    id: 'cia1-b9-020',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Advocacy threats occur when:',
     options: [
       'Auditors oppose management views',
@@ -349,7 +408,8 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Advocacy threats arise when auditors promote a client\'s or organization\'s position to the point where objectivity is or may be perceived to be compromised.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Threats'
+    subtopic: 'Threats',
+  reference: 'IIA Standards'
   },
 
   // ===========================================================================
@@ -357,10 +417,12 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CIA2-B9-021',
+    id: 'cia2-b9-021',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk-based audit planning allocates resources to:',
     options: [
       'All areas equally',
@@ -371,13 +433,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Risk-based planning prioritizes audit resources toward areas with the highest risk to achieving organizational objectives, ensuring efficient resource use.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Risk-Based Planning'
+    subtopic: 'Risk-Based Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-022',
+    id: 'cia2-b9-022',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The audit plan should be flexible to:',
     options: [
       'Avoid any structure',
@@ -388,13 +453,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Plan flexibility allows internal audit to respond to changing organizational risks, emerging issues, and management requests while maintaining risk-based prioritization.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Plan Flexibility'
+    subtopic: 'Plan Flexibility',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-023',
+    id: 'cia2-b9-023',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Engagement objectives for consulting services should:',
     options: [
       'Be identical to assurance objectives',
@@ -405,13 +473,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Consulting engagement objectives are agreed upon with the client and should address risk, control, and governance concerns consistent with organizational values.',
     topic: 'Planning the Engagement',
-    subtopic: 'Consulting Objectives'
+    subtopic: 'Consulting Objectives',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-024',
+    id: 'cia2-b9-024',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Resource allocation for engagements considers:',
     options: [
       'Only auditor availability',
@@ -422,13 +493,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Resource allocation considers required knowledge and skills, engagement complexity, time constraints, and availability of resources.',
     topic: 'Planning the Engagement',
-    subtopic: 'Resource Allocation'
+    subtopic: 'Resource Allocation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-025',
+    id: 'cia2-b9-025',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When identifying relevant controls, auditors should consider:',
     options: [
       'Only automated controls',
@@ -439,13 +513,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Auditors should identify all relevant controls (preventive, detective, corrective; manual and automated) that address risks to achieving engagement objectives.',
     topic: 'Planning the Engagement',
-    subtopic: 'Control Identification'
+    subtopic: 'Control Identification',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-026',
+    id: 'cia2-b9-026',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Testing control design evaluates whether:',
     options: [
       'Controls are operating effectively',
@@ -456,13 +533,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Design testing evaluates whether controls are properly designed to mitigate identified risks if they operate as intended.',
     topic: 'Performing the Engagement',
-    subtopic: 'Control Testing'
+    subtopic: 'Control Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-027',
+    id: 'cia2-b9-027',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Testing control operating effectiveness verifies that:',
     options: [
       'Controls exist',
@@ -473,13 +553,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Operating effectiveness testing verifies that controls are actually functioning as designed and consistently applied over the relevant time period.',
     topic: 'Performing the Engagement',
-    subtopic: 'Control Testing'
+    subtopic: 'Control Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-028',
+    id: 'cia2-b9-028',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Confirmation procedures involve:',
     options: [
       'Internal review only',
@@ -490,13 +573,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Confirmation obtains direct written response from third parties (banks, customers, suppliers) verifying information in the organization\'s records.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Procedures'
+    subtopic: 'Audit Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-029',
+    id: 'cia2-b9-029',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Vouching traces transactions:',
     options: [
       'From source documents to recorded entries',
@@ -507,13 +593,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Vouching traces recorded transactions backward to source documents to verify they occurred and are properly supported (testing existence/occurrence).',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Procedures'
+    subtopic: 'Audit Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-030',
+    id: 'cia2-b9-030',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Tracing as an audit procedure:',
     options: [
       'Tests for overstatement',
@@ -524,13 +613,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Tracing follows transactions forward from source documents to recorded entries to verify all transactions are properly recorded (testing completeness).',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Procedures'
+    subtopic: 'Audit Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-031',
+    id: 'cia2-b9-031',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cross-referencing in working papers:',
     options: [
       'Is unnecessary if electronic',
@@ -541,13 +633,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Cross-referencing links related working papers, enabling reviewers to trace evidence to conclusions and follow the logic of the audit.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation'
+    subtopic: 'Documentation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-032',
+    id: 'cia2-b9-032',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Review notes or coaching points are used to:',
     options: [
       'Criticize audit staff',
@@ -558,13 +653,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Review notes document reviewer questions, concerns, and suggestions for the preparer to address, ensuring quality and providing coaching.',
     topic: 'Performing the Engagement',
-    subtopic: 'Supervision'
+    subtopic: 'Supervision',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-033',
+    id: 'cia2-b9-033',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit communication should be:',
     options: [
       'As long as possible',
@@ -575,13 +673,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Engagement communications must be accurate, objective, clear, concise, constructive, complete, and timely to be effective.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Quality'
+    subtopic: 'Communication Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-034',
+    id: 'cia2-b9-034',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When findings contradict prior management assertions, the auditor should:',
     options: [
       'Accept management\'s version',
@@ -592,13 +693,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Contradictions require additional investigation and evidence gathering to determine the facts and support the appropriate conclusion.',
     topic: 'Performing the Engagement',
-    subtopic: 'Evidence Evaluation'
+    subtopic: 'Evidence Evaluation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-035',
+    id: 'cia2-b9-035',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The executive summary in an audit report should:',
     options: [
       'Include all detailed findings',
@@ -609,13 +713,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The executive summary provides a concise overview of key findings, conclusions, and recommendations for senior management and board members.',
     topic: 'Communicating Results',
-    subtopic: 'Report Structure'
+    subtopic: 'Report Structure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-036',
+    id: 'cia2-b9-036',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Action plans in response to audit findings should include:',
     options: [
       'Only the finding description',
@@ -626,13 +733,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Action plans should specify what will be done, who is responsible, and when actions will be completed to address audit findings.',
     topic: 'Communicating Results',
-    subtopic: 'Action Plans'
+    subtopic: 'Action Plans',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-037',
+    id: 'cia2-b9-037',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Disseminating results outside the organization requires:',
     options: [
       'No additional considerations',
@@ -643,13 +753,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'External distribution requires assessing risks to the organization, consulting with legal counsel, and obtaining appropriate approvals.',
     topic: 'Communicating Results',
-    subtopic: 'External Communication'
+    subtopic: 'External Communication',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-038',
+    id: 'cia2-b9-038',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Follow-up engagement should verify:',
     options: [
       'Only that management responded',
@@ -660,13 +773,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Follow-up evaluates whether corrective actions were implemented and are effective in addressing the underlying risks identified in the original finding.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Follow-Up'
+    subtopic: 'Follow-Up',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-039',
+    id: 'cia2-b9-039',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Escalation of unresolved audit matters should occur when:',
     options: [
       'Any disagreement exists',
@@ -677,13 +793,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Escalation is appropriate when management\'s risk acceptance or corrective actions are not adequate for significant risks, requiring board or senior management attention.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Escalation'
+    subtopic: 'Escalation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B9-040',
+    id: 'cia2-b9-040',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Knowledge sharing among audit team members helps to:',
     options: [
       'Reduce independence',
@@ -694,7 +813,8 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Knowledge sharing improves efficiency, helps develop staff skills, ensures consistent practices, and captures institutional knowledge.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Knowledge Management'
+    subtopic: 'Knowledge Management',
+  reference: 'IIA Standards'
   },
 
   // ===========================================================================
@@ -702,10 +822,12 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CIA3-B9-041',
+    id: 'cia3-b9-041',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Fixed costs per unit:',
     options: [
       'Remain constant at all production levels',
@@ -716,13 +838,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Total fixed costs remain constant, but fixed cost per unit decreases as production volume increases because the same costs are spread over more units.',
     topic: 'Business Acumen',
-    subtopic: 'Cost Behavior'
+    subtopic: 'Cost Behavior',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-042',
+    id: 'cia3-b9-042',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company\'s price-earnings (P/E) ratio indicates:',
     options: [
       'Profitability only',
@@ -733,13 +858,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The P/E ratio (Stock Price / Earnings per Share) shows how much investors pay for each dollar of earnings, reflecting growth expectations and market confidence.',
     topic: 'Business Acumen',
-    subtopic: 'Valuation'
+    subtopic: 'Valuation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-043',
+    id: 'cia3-b9-043',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle measures:',
     options: [
       'Total cash available',
@@ -750,13 +878,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'The cash conversion cycle measures the time between paying for inventory and collecting cash from sales, indicating working capital efficiency.',
     topic: 'Business Acumen',
-    subtopic: 'Working Capital'
+    subtopic: 'Working Capital',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-044',
+    id: 'cia3-b9-044',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Outsourcing decisions should consider:',
     options: [
       'Only cost savings',
@@ -767,13 +898,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Outsourcing analysis considers total cost, quality impacts, loss of control, risks (security, continuity), and strategic implications for core competencies.',
     topic: 'Business Acumen',
-    subtopic: 'Operations Management'
+    subtopic: 'Operations Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-045',
+    id: 'cia3-b9-045',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Business process reengineering (BPR) involves:',
     options: [
       'Incremental improvements only',
@@ -784,13 +918,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'BPR involves fundamental rethinking and radical redesign of business processes to achieve dramatic improvements in cost, quality, service, and speed.',
     topic: 'Business Acumen',
-    subtopic: 'Process Improvement'
+    subtopic: 'Process Improvement',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-046',
+    id: 'cia3-b9-046',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Key controls in the revenue cycle include:',
     options: [
       'Only credit approval',
@@ -801,13 +938,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Revenue cycle controls include credit approval, segregation of duties, shipping verification, billing accuracy, and receivables/collection monitoring.',
     topic: 'Business Acumen',
-    subtopic: 'Business Cycles'
+    subtopic: 'Business Cycles',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-047',
+    id: 'cia3-b9-047',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Three-way matching in accounts payable involves:',
     options: [
       'Matching three invoices',
@@ -818,13 +958,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Three-way matching compares the purchase order, receiving report, and vendor invoice to verify quantities, prices, and terms before authorizing payment.',
     topic: 'Business Acumen',
-    subtopic: 'Business Cycles'
+    subtopic: 'Business Cycles',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-048',
+    id: 'cia3-b9-048',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A zero-day vulnerability is:',
     options: [
       'A vulnerability that has been patched',
@@ -835,13 +978,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'A zero-day vulnerability is a security flaw unknown to the software vendor, with no patch available, making it particularly dangerous.',
     topic: 'Information Security',
-    subtopic: 'Threats'
+    subtopic: 'Threats',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-049',
+    id: 'cia3-b9-049',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A man-in-the-middle attack involves:',
     options: [
       'Physical break-in',
@@ -852,13 +998,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Man-in-the-middle attacks intercept and potentially alter communications between two parties who believe they are communicating directly with each other.',
     topic: 'Information Security',
-    subtopic: 'Cyber Attacks'
+    subtopic: 'Cyber Attacks',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-050',
+    id: 'cia3-b9-050',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SQL injection attacks exploit:',
     options: [
       'Physical security weaknesses',
@@ -869,13 +1018,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'SQL injection attacks insert malicious SQL code through improperly validated user inputs to access, modify, or delete database information.',
     topic: 'Information Security',
-    subtopic: 'Application Security'
+    subtopic: 'Application Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-051',
+    id: 'cia3-b9-051',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cross-site scripting (XSS) attacks:',
     options: [
       'Attack network routers',
@@ -886,13 +1038,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'XSS attacks inject malicious scripts into web pages that execute in victims\' browsers, potentially stealing session information or credentials.',
     topic: 'Information Security',
-    subtopic: 'Application Security'
+    subtopic: 'Application Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-052',
+    id: 'cia3-b9-052',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data masking is used to:',
     options: [
       'Encrypt all data',
@@ -903,13 +1058,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Data masking replaces sensitive data with realistic but fictitious data for use in development, testing, or training while protecting actual data.',
     topic: 'Information Security',
-    subtopic: 'Data Protection'
+    subtopic: 'Data Protection',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-053',
+    id: 'cia3-b9-053',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Incident response plans should include:',
     options: [
       'Only detection procedures',
@@ -920,13 +1078,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Incident response includes preparation, detection/analysis, containment, eradication, recovery, and post-incident lessons learned activities.',
     topic: 'Information Security',
-    subtopic: 'Incident Response'
+    subtopic: 'Incident Response',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-054',
+    id: 'cia3-b9-054',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A tabletop exercise is used to:',
     options: [
       'Replace all testing',
@@ -937,13 +1098,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Tabletop exercises walk through scenarios verbally to test response plans, identify gaps, and practice decision-making without fully activating systems.',
     topic: 'Information Security',
-    subtopic: 'Business Continuity Testing'
+    subtopic: 'Business Continuity Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-055',
+    id: 'cia3-b9-055',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The COBIT framework is primarily used for:',
     options: [
       'Financial reporting only',
@@ -954,13 +1118,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'COBIT (Control Objectives for Information and Related Technology) is a framework for IT governance and management, aligning IT with business objectives.',
     topic: 'Information Technology',
-    subtopic: 'IT Governance'
+    subtopic: 'IT Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-056',
+    id: 'cia3-b9-056',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ITIL focuses on:',
     options: [
       'IT security only',
@@ -971,13 +1138,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'ITIL (Information Technology Infrastructure Library) provides best practices for IT service management, focusing on aligning IT services with business needs.',
     topic: 'Information Technology',
-    subtopic: 'IT Service Management'
+    subtopic: 'IT Service Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-057',
+    id: 'cia3-b9-057',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A billing scheme fraud typically involves:',
     options: [
       'Payroll manipulation',
@@ -988,13 +1158,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Billing schemes submit false invoices (fictitious vendors, inflated prices, personal purchases) to obtain unauthorized payments from the organization.',
     topic: 'Fraud',
-    subtopic: 'Asset Misappropriation'
+    subtopic: 'Asset Misappropriation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-058',
+    id: 'cia3-b9-058',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cookie jar reserves is a technique where:',
     options: [
       'Physical cookies are hidden',
@@ -1005,13 +1178,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Cookie jar reserves manipulate earnings by over-reserving in profitable periods and releasing reserves in less profitable periods to smooth reported results.',
     topic: 'Fraud',
-    subtopic: 'Financial Statement Fraud'
+    subtopic: 'Financial Statement Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-059',
+    id: 'cia3-b9-059',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Time and attendance fraud includes:',
     options: [
       'Proper timekeeping',
@@ -1022,13 +1198,16 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Time fraud includes falsifying time records, buddy punching (having others clock in/out), unauthorized overtime, and approving hours not worked.',
     topic: 'Fraud',
-    subtopic: 'Payroll Fraud'
+    subtopic: 'Payroll Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B9-060',
+    id: 'cia3-b9-060',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data analytics red flags for fraud include:',
     options: [
       'Normal transaction patterns',
@@ -1039,6 +1218,7 @@ export const CIA_QUESTIONS_BATCH9: Question[] = [
     correctAnswer: 1,
     explanation: 'Analytics red flags include transactions at unusual times, round-dollar amounts, duplicate payments, vendor addresses matching employees, and unusual trends.',
     topic: 'Fraud',
-    subtopic: 'Data Analytics'
+    subtopic: 'Data Analytics',
+  reference: 'IIA Standards'
   }
 ];

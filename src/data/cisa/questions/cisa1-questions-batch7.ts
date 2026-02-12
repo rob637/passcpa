@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA1_QUESTIONS_BATCH7: Question[] = [
   {
-    id: 'CISA1-153',
+    id: 'cisa1-153',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT general controls, the IS auditor should FIRST:',
     options: [
       'Test access controls',
@@ -25,10 +27,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Control Environment'
   },
   {
-    id: 'CISA1-154',
+    id: 'cisa1-154',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of an audit trail is:',
     options: [
       'Performance monitoring',
@@ -42,10 +46,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Audit Trail Purpose'
   },
   {
-    id: 'CISA1-155',
+    id: 'cisa1-155',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Negative assurance in attestation means:',
     options: [
       'Issues were found',
@@ -59,10 +65,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Negative Assurance'
   },
   {
-    id: 'CISA1-156',
+    id: 'cisa1-156',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit evidence sufficiency refers to:',
     options: [
       'Quality of evidence',
@@ -76,10 +84,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Sufficiency'
   },
   {
-    id: 'CISA1-157',
+    id: 'cisa1-157',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When the auditor uses the work of others:',
     options: [
       'No review is needed',
@@ -93,10 +103,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Using Others Work'
   },
   {
-    id: 'CISA1-158',
+    id: 'cisa1-158',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Post-audit surveys help:',
     options: [
       'Only satisfy management',
@@ -110,10 +122,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Feedback'
   },
   {
-    id: 'CISA1-159',
+    id: 'cisa1-159',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Inherent limitations of IT auditing include:',
     options: [
       'Perfect assurance',
@@ -127,10 +141,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Limitations'
   },
   {
-    id: 'CISA1-160',
+    id: 'cisa1-160',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit process optimization should focus on:',
     options: [
       'Speed only',
@@ -144,10 +160,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Optimization'
   },
   {
-    id: 'CISA1-161',
+    id: 'cisa1-161',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Coordination between internal and external audit:',
     options: [
       'Is prohibited',
@@ -161,10 +179,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Coordination'
   },
   {
-    id: 'CISA1-162',
+    id: 'cisa1-162',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit technology enablement should consider:',
     options: [
       'Latest technology only',
@@ -178,10 +198,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Technology Enablement'
   },
   {
-    id: 'CISA1-163',
+    id: 'cisa1-163',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk-based audit planning allocates resources based on:',
     options: [
       'Available time',
@@ -195,10 +217,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Risk-Based Planning'
   },
   {
-    id: 'CISA1-164',
+    id: 'cisa1-164',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit standardization benefits include:',
     options: [
       'Reduced flexibility',
@@ -212,10 +236,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Standardization'
   },
   {
-    id: 'CISA1-165',
+    id: 'cisa1-165',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Emerging risk identification for audit planning uses:',
     options: [
       'Only historical data',
@@ -229,10 +255,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Emerging Risks'
   },
   {
-    id: 'CISA1-166',
+    id: 'cisa1-166',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit report executive summary should include:',
     options: [
       'All technical details',
@@ -246,10 +274,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Executive Summary'
   },
   {
-    id: 'CISA1-167',
+    id: 'cisa1-167',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Engagement letters for audits should specify:',
     options: [
       'Only start date',
@@ -263,10 +293,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Engagement Letter'
   },
   {
-    id: 'CISA1-168',
+    id: 'cisa1-168',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Control objectives in audit are:',
     options: [
       'Management goals',
@@ -280,10 +312,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Control Objectives'
   },
   {
-    id: 'CISA1-169',
+    id: 'cisa1-169',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit notification to auditees should be:',
     options: [
       'As short as possible',
@@ -297,10 +331,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Notification'
   },
   {
-    id: 'CISA1-170',
+    id: 'cisa1-170',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Status reporting during audits should communicate:',
     options: [
       'Only positive news',
@@ -314,10 +350,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Status Reporting'
   },
   {
-    id: 'CISA1-171',
+    id: 'cisa1-171',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit evidence reliability hierarchy from most to least reliable:',
     options: [
       'Inquiry, observation, inspection',
@@ -331,10 +369,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Reliability Hierarchy'
   },
   {
-    id: 'CISA1-172',
+    id: 'cisa1-172',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Surprise audit techniques are appropriate when:',
     options: [
       'Management requests',

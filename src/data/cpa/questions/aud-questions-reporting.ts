@@ -8,12 +8,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-A',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Unmodified Opinion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An unmodified audit opinion indicates that the financial statements:',
     options: [
       'Are free from all errors',
@@ -29,12 +31,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-A',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor issues a qualified opinion when:',
     options: [
       'The auditor lacks independence',
@@ -50,12 +54,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-A',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An adverse audit opinion indicates that the financial statements:',
     options: [
       'Cannot be audited due to scope limitations',
@@ -71,12 +77,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-A',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Disclaimer of Opinion',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When should an auditor issue a disclaimer of opinion?',
     options: [
       'When detected misstatements are material and pervasive',
@@ -92,12 +100,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-B',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An Emphasis of Matter paragraph in an audit report is used to:',
     options: [
       'Modify the auditor\'s opinion',
@@ -113,12 +123,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-B',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Other Matter Paragraph',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An Other Matter paragraph differs from an Emphasis of Matter paragraph because it:',
     options: [
       'Always modifies the opinion',
@@ -134,12 +146,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-C',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When substantial doubt exists about an entity\'s ability to continue as a going concern but adequate disclosure is made, the auditor should:',
     options: [
       'Issue a qualified opinion',
@@ -155,12 +169,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-D',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a predecessor auditor\'s report is not presented with comparative financial statements, the successor auditor should:',
     options: [
       'Reissue the predecessor\'s report',
@@ -176,12 +192,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-A',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Key Audit Matters (KAMs) are required in the audit report for:',
     options: [
       'All private company audits',
@@ -197,12 +215,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-E',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Subsequent Events',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor discovers a material subsequent event after the audit report date but before the financial statements are issued. If the financial statements are revised, the auditor should:',
     options: [
       'Issue a new report dated as of the new information date only',
@@ -219,12 +239,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-A',
     topicId: 'aud-arsc',
     topic: 'Review Engagements',
     subtopic: 'Review Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A review engagement provides what level of assurance?',
     options: [
       'Reasonable assurance',
@@ -240,12 +262,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-A',
     topicId: 'aud-arsc',
     topic: 'Review Engagements',
     subtopic: 'Review Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary procedures performed in a review engagement are:',
     options: [
       'Tests of controls and substantive testing',
@@ -261,12 +285,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-B',
     topicId: 'aud-arsc',
     topic: 'Compilation Engagements',
     subtopic: 'Compilation Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A compilation engagement provides:',
     options: [
       'Reasonable assurance',
@@ -282,12 +308,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-B',
     topicId: 'aud-arsc',
     topic: 'Compilation Engagements',
     subtopic: 'Independence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a compilation engagement, if the accountant is not independent:',
     options: [
       'The engagement must be declined',
@@ -303,12 +331,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-A',
     topicId: 'aud-arsc',
     topic: 'Review Engagements',
     subtopic: 'Review Report',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The conclusion paragraph of a review report typically states:',
     options: [
       'The financial statements present fairly in all material respects',
@@ -324,12 +354,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-C',
     topicId: 'aud-arsc',
     topic: 'Preparation Engagements',
     subtopic: 'Preparation Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a preparation of financial statements engagement under SSARS:',
     options: [
       'A report is always required',
@@ -345,12 +377,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-F',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Internal Control Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When performing an integrated audit, the auditor reports on internal control over financial reporting (ICFR). A material weakness in ICFR would result in:',
     options: [
       'An unmodified opinion on ICFR with an explanatory paragraph',
@@ -366,12 +400,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-G',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Compliance Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a compliance audit under Government Auditing Standards (Yellow Book), the auditor reports on:',
     options: [
       'Only the financial statements',
@@ -387,12 +423,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     blueprintGroup: 'AUD-VI-A',
     topicId: 'aud-report',
     topic: 'Audit Reports',
     subtopic: 'Report Elements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a required element of an auditor\'s report?',
     options: [
       'Detailed list of all audit procedures performed',
@@ -408,12 +446,14 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
   {
     id: 'aud-report-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'AUD-VII-A',
     topicId: 'aud-arsc',
     topic: 'Review Engagements',
     subtopic: 'Known Departures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During a review engagement, the accountant becomes aware of a material departure from the applicable financial reporting framework. If management refuses to revise the financial statements, the accountant should:',
     options: [
       'Disclaim an opinion',

@@ -8,6 +8,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-001',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Component Auditor',
@@ -28,6 +29,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-002',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Using the Work of Specialists',
@@ -48,6 +50,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-003',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'IT General Controls',
@@ -68,6 +71,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-004',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Tolerable Rate of Deviation',
@@ -88,6 +92,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-005',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Subsequent Events Procedures',
@@ -108,6 +113,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-006',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Critical Audit Matters',
@@ -128,6 +134,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-007',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Quality Management',
@@ -148,6 +155,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-008',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Related Party Transactions',
@@ -168,6 +176,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-009',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmation Exceptions',
@@ -188,6 +197,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-010',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Other Information',
@@ -208,6 +218,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-011',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Monitoring Activities',
@@ -228,6 +239,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-012',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Fraud Risk Factors',
@@ -248,6 +260,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-013',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Management Representations',
@@ -268,6 +281,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-014',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Agreed-Upon Procedures',
@@ -288,6 +302,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-015',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
@@ -308,6 +323,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-016',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Audit Documentation Retention',
@@ -328,6 +344,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-017',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Monetary Unit Sampling',
@@ -348,6 +365,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-018',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Service Organization Controls',
@@ -368,6 +386,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-019',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Analytical Procedures as Substantive',
@@ -388,6 +407,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-020',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Comparative Financial Statements',
@@ -408,6 +428,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-021',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Communication with Those Charged with Governance',
@@ -428,6 +449,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-022',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Estimates Audit Procedures',
@@ -448,6 +470,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-023',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
@@ -468,6 +491,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-024',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Examination vs. Review',
@@ -488,6 +512,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-025',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
@@ -508,6 +533,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-026',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Reliability of Evidence',
@@ -528,6 +554,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-027',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Material Weakness',
@@ -548,6 +575,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-028',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Revenue Recognition Procedures',
@@ -568,6 +596,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-029',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Noncompliance with Laws',
@@ -588,6 +617,7 @@ export const AUD_QUESTIONS_ELITE: Question[] = [
   {
     id: 'aud-elite-030',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Evaluation of Results',

@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH8: Question[] = [
   {
-    id: 'CISA2-173',
+    id: 'cisa2-173',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST important factor in ensuring IT strategic alignment is:',
     options: [
       'Modern technology infrastructure',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Strategic Alignment'
   },
   {
-    id: 'CISA2-174',
+    id: 'cisa2-174',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key performance indicator (KPI) for IT service delivery should be:',
     options: [
       'Number of servers deployed',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'KPIs'
   },
   {
-    id: 'CISA2-175',
+    id: 'cisa2-175',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization has outsourced its data center operations. Which of the following BEST ensures control over the outsourced function?',
     options: [
       'Detailed contract with SLAs and right-to-audit clause',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Outsourcing Governance'
   },
   {
-    id: 'CISA2-177',
+    id: 'cisa2-177',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT resource management, the IS auditor should be MOST concerned if:',
     options: [
       'Skills training is provided annually',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Capacity Planning'
   },
   {
-    id: 'CISA2-178',
+    id: 'cisa2-178',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk appetite is BEST described as:',
     options: [
       'The total amount of risk an organization holds',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk Appetite'
   },
   {
-    id: 'CISA2-179',
+    id: 'cisa2-179',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The COBIT framework enables organizations to:',
     options: [
       'Eliminate all IT risks',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'COBIT Framework'
   },
   {
-    id: 'CISA2-180',
+    id: 'cisa2-180',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IT balanced scorecard includes perspectives EXCEPT:',
     options: [
       'Customer satisfaction',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Balanced Scorecard'
   },
   {
-    id: 'CISA2-181',
+    id: 'cisa2-181',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers that IT policies are approved by the CIO only. This is MOST concerning because:',
     options: [
       'Policies should be approved by the security team',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Policy Approval'
   },
   {
-    id: 'CISA2-182',
+    id: 'cisa2-182',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An organization\'s IT risk register should be:',
     options: [
       'Reviewed annually by external auditors only',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk Register'
   },
   {
-    id: 'CISA2-183',
+    id: 'cisa2-183',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key risk indicators (KRIs) differ from KPIs in that KRIs:',
     options: [
       'Measure past performance',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Key Risk Indicators'
   },
   {
-    id: 'CISA2-184',
+    id: 'cisa2-184',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY reason for maintaining an IT asset inventory is:',
     options: [
       'To calculate depreciation',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Asset Management'
   },
   {
-    id: 'CISA2-185',
+    id: 'cisa2-185',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT human resource management, the MOST significant risk is:',
     options: [
       'High turnover requiring frequent recruitment',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Succession Planning'
   },
   {
-    id: 'CISA2-186',
+    id: 'cisa2-186',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An enterprise architecture should PRIMARILY:',
     options: [
       'Document all current systems',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Enterprise Architecture'
   },
   {
-    id: 'CISA2-187',
+    id: 'cisa2-187',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT investment decisions should be based PRIMARILY on:',
     options: [
       'Available budget',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Business Case'
   },
   {
-    id: 'CISA2-188',
+    id: 'cisa2-188',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A service level agreement (SLA) should include all of the following EXCEPT:',
     options: [
       'Service availability targets',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'SLA Components'
   },
   {
-    id: 'CISA2-189',
+    id: 'cisa2-189',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY benefit of implementing ITIL is:',
     options: [
       'Reduced IT headcount',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'ITIL'
   },
   {
-    id: 'CISA2-190',
+    id: 'cisa2-190',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IS auditor reviewing IT project management should be MOST concerned if:',
     options: [
       'Project managers report to a PMO',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Business Case Requirement'
   },
   {
-    id: 'CISA2-191',
+    id: 'cisa2-191',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Segregation of duties in IT is MOST critical between:',
     options: [
       'Helpdesk and network operations',
@@ -314,10 +350,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Segregation of Duties'
   },
   {
-    id: 'CISA2-192',
+    id: 'cisa2-192',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of an IT policy exception process is to:',
     options: [
       'Avoid following policies',
@@ -331,10 +369,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Exception Process'
   },
   {
-    id: 'CISA2-193',
+    id: 'cisa2-193',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization is considering cloud adoption. The IS auditor should ensure that:',
     options: [
       'All data is migrated immediately',
@@ -348,10 +388,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Cloud Adoption'
   },
   {
-    id: 'CISA2-194',
+    id: 'cisa2-194',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT governance is PRIMARILY the responsibility of:',
     options: [
       'The Chief Information Officer',
@@ -365,10 +407,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Governance Responsibility'
   },
   {
-    id: 'CISA2-195',
+    id: 'cisa2-195',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When IT services are delivered by multiple providers, the GREATEST challenge is:',
     options: [
       'Cost management',
@@ -382,10 +426,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Multi-Sourcing'
   },
   {
-    id: 'CISA2-196',
+    id: 'cisa2-196',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT compliance management should ensure:',
     options: [
       'All regulations are followed by IT only',
@@ -399,10 +445,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Compliance Management'
   },
   {
-    id: 'CISA2-197',
+    id: 'cisa2-197',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization\'s IT risk management should be:',
     options: [
       'Separate from enterprise risk management',
@@ -416,10 +464,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'ERM Integration'
   },
   {
-    id: 'CISA2-198',
+    id: 'cisa2-198',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of IT policies is to:',
     options: [
       'Provide technical procedures',
@@ -433,10 +483,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Policy Purpose'
   },
   {
-    id: 'CISA2-199',
+    id: 'cisa2-199',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization reports IT performance to the board quarterly. This practice:',
     options: [
       'Is excessive and should be annual',
@@ -450,10 +502,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Board Reporting'
   },
   {
-    id: 'CISA2-200',
+    id: 'cisa2-200',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT value delivery is BEST demonstrated through:',
     options: [
       'Large IT budget allocations',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Value Delivery'
   },
   {
-    id: 'CISA2-201',
+    id: 'cisa2-201',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing vendor management, the IS auditor should be MOST concerned if:',
     options: [
       'Vendor performance is reviewed annually',
@@ -484,10 +540,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Exit Strategy'
   },
   {
-    id: 'CISA2-202',
+    id: 'cisa2-202',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT organizational structure should support:',
     options: [
       'Maximum outsourcing',

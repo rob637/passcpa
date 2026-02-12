@@ -11,11 +11,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-sox',
     topic: 'SOX Compliance',
     subtopic: 'IT Controls in SOX',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Section 404 of the Sarbanes-Oxley Act, management\'s assessment of internal control over financial reporting (ICFR) must include evaluation of:',
     options: [
       'Only manual controls',
@@ -30,11 +32,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-sox',
     topic: 'SOX Compliance',
     subtopic: 'Key Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IT-dependent manual control is a control where:',
     options: [
       'The entire control is automated',
@@ -53,11 +57,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-crypto',
     topic: 'Cryptography',
     subtopic: 'Symmetric vs Asymmetric',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The key difference between symmetric and asymmetric encryption is:',
     options: [
       'Symmetric encryption is always more secure',
@@ -72,11 +78,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-crypto',
     topic: 'Cryptography',
     subtopic: 'Hashing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A cryptographic hash function (such as SHA-256) takes input data and produces:',
     options: [
       'An encrypted version of the original data that can be decrypted',
@@ -91,11 +99,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-crypto',
     topic: 'Cryptography',
     subtopic: 'Digital Certificates',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A digital certificate (X.509) issued by a Certificate Authority (CA) binds:',
     options: [
       'A username to a password',
@@ -114,11 +124,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-compliance',
     topic: 'Software Asset Management',
     subtopic: 'License Compliance',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Software asset management (SAM) helps organizations:',
     options: [
       'Write better software code',
@@ -137,11 +149,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-automation',
     topic: 'Process Automation',
     subtopic: 'Straight-Through Processing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Straight-through processing (STP) in financial services refers to:',
     options: [
       'Manual processing of all transactions',
@@ -160,11 +174,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-network',
     topic: 'Network Architecture',
     subtopic: 'VPN',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A Virtual Private Network (VPN) provides security by:',
     options: [
       'Replacing the need for internet service providers',
@@ -183,11 +199,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-access',
     topic: 'Access Control',
     subtopic: 'Least Privilege',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The principle of least privilege requires that:',
     options: [
       'All users receive maximum access to perform any task',
@@ -202,11 +220,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-access',
     topic: 'Access Control',
     subtopic: 'User Access Reviews',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Periodic user access reviews (recertification) are important because they:',
     options: [
       'Are a one-time activity during system implementation',
@@ -225,11 +245,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Audit Considerations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing a client\'s cloud computing environment, the auditor should evaluate:',
     options: [
       'Only the client\'s on-premises systems',
@@ -248,11 +270,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-project',
     topic: 'IT Project Management',
     subtopic: 'Project Governance',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT project governance controls should include:',
     options: [
       'No oversight — developers should work independently',
@@ -271,11 +295,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-regulatory',
     topic: 'Regulatory Compliance',
     subtopic: 'HIPAA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The HIPAA Security Rule requires covered entities to implement which types of safeguards for electronic protected health information (ePHI)?',
     options: [
       'Physical safeguards only',
@@ -290,11 +316,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'CCPA/CPRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The California Consumer Privacy Act (CCPA/CPRA) gives California residents the right to:',
     options: [
       'Access, delete, and opt out of the sale/sharing of their personal information, and not be discriminated against for exercising these rights',
@@ -313,11 +341,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'Systems Architecture',
     subtopic: 'Middleware',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Middleware in an enterprise IT architecture serves as:',
     options: [
       'The physical server hardware',
@@ -336,11 +366,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-vendor',
     topic: 'Third-Party Risk Management',
     subtopic: 'Vendor Due Diligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A comprehensive third-party risk management program should include:',
     options: [
       'A one-time vendor assessment at contract signing',
@@ -359,11 +391,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-awareness',
     topic: 'Security Awareness',
     subtopic: 'Training Programs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An effective security awareness training program should include:',
     options: [
       'A one-time presentation during employee onboarding only',
@@ -382,11 +416,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-assurance',
     topic: 'IT Assurance',
     subtopic: 'Penetration Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A penetration test differs from a vulnerability scan in that:',
     options: [
       'Penetration tests are less thorough than vulnerability scans',
@@ -405,11 +441,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'Operating Systems',
     subtopic: 'System Hardening',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'System hardening involves:',
     options: [
       'Adding more software to a server',
@@ -428,11 +466,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Text Mining in Audit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Natural language processing (NLP) and text mining in auditing can be used to:',
     options: [
       'Replace the entire audit team',
@@ -451,11 +491,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-devops',
     topic: 'DevOps',
     subtopic: 'CI/CD Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a CI/CD (Continuous Integration/Continuous Deployment) pipeline, security controls (DevSecOps) should include:',
     options: [
       'No security testing — speed is the priority',
@@ -474,11 +516,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-itsm',
     topic: 'IT Service Management',
     subtopic: 'ITIL Service Desk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary purpose of an IT service desk (help desk) in the context of IT controls is to:',
     options: [
       'Develop new software applications',
@@ -497,11 +541,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-monitoring',
     topic: 'Security Monitoring',
     subtopic: 'Audit Logging',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security audit logs should capture, at minimum:',
     options: [
       'Only failed login attempts',
@@ -520,11 +566,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-availability',
     topic: 'System Availability',
     subtopic: 'High Availability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'High availability (HA) is typically achieved through:',
     options: [
       'Running a single server with maximum processing power',
@@ -543,11 +591,13 @@ export const ISC_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'isc-d4-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-internal-audit',
     topic: 'IT Assurance',
     subtopic: 'ISACA Standards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to ISACA standards, an IS auditor\'s primary objective when evaluating IT controls is to:',
     options: [
       'Implement new security controls',

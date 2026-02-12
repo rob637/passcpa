@@ -15,10 +15,12 @@ import { COBIT_2019_QUESTIONS } from './cisa-cobit-privacy-batch15';
 
 const CISA2_QUESTIONS_BATCH1: Question[] = [
   {
-    id: 'CISA2-001',
+    id: 'cisa2-001',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective IT governance is MAINLY the responsibility of:',
     options: [
       'The Chief Information Officer (CIO)',
@@ -32,10 +34,12 @@ const CISA2_QUESTIONS_BATCH1: Question[] = [
     subtopic: 'Roles and Responsibilities'
   },
   {
-    id: 'CISA2-002',
+    id: 'cisa2-002',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following creates the GREATEST risk in a segregation of duties (SoD) conflict?',
     options: [
       'A database administrator who backs up the database',

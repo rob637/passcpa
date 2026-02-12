@@ -5,11 +5,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'far-wc-207',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'State and Local Governments',
     topicId: 'fiduciary-funds',
     topic: 'Fiduciary Funds',
     subtopic: 'Custodial Funds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A county government collects sales taxes on behalf of various municipalities within its boundaries. During the fiscal year, the county collected $5,000,000 and distributed $4,700,000 to the municipalities. The county retains a 2% administrative fee on all collections. At year-end, how should the county report the undistributed amount in its custodial fund?',
     options: [
       'Liability of $300,000 only',
@@ -24,11 +26,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'far-wc-208',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'State and Local Governments',
     topicId: 'fiduciary-funds',
     topic: 'Fiduciary Funds',
     subtopic: 'Investment Trust Funds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A state government operates an external investment pool for participating local governments. During the year, the pool earned $8,000,000 in investment income and incurred $200,000 in administrative costs. Participating governments\' equity increased from $150,000,000 to $162,000,000. What amount should be reported as additions in the investment trust fund?',
     options: [
       '$7,800,000',
@@ -43,11 +47,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'far-wc-209',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'State and Local Governments',
     topicId: 'fiduciary-funds',
     topic: 'Fiduciary Funds',
     subtopic: 'Pension Trust Funds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A city\'s pension trust fund reports the following: beginning net position $500,000,000; employer contributions $40,000,000; employee contributions $25,000,000; benefit payments $55,000,000; investment gain $35,000,000; administrative expenses $2,000,000. What is the ending net position?',
     options: [
       '$543,000,000',
@@ -62,11 +68,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'far-wc-210',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'State and Local Governments',
     topicId: 'fiduciary-funds',
     topic: 'Fiduciary Funds',
     subtopic: 'Private-Purpose Trust Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city receives a donation of $2,000,000 to establish a scholarship fund for local students attending college. The donor specifies that only investment income may be used for scholarships, while the principal must remain intact. In which fund should the city report this activity?',
     options: [
       'Special revenue fund',
@@ -82,11 +90,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'aud-wc-207',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Forming Conclusions and Reporting',
     topicId: 'laws-regulations',
     topic: 'Consideration of Laws and Regulations',
     subtopic: 'Direct and Material Effect Laws',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During a financial statement audit, the auditor discovers that the client has been systematically underreporting payroll taxes. The underreported amount is material to the financial statements. Which of the following best describes the auditor\'s responsibility?',
     options: [
       'Report the noncompliance to the appropriate governmental agency',
@@ -101,11 +111,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'aud-wc-208',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Forming Conclusions and Reporting',
     topicId: 'laws-regulations',
     topic: 'Consideration of Laws and Regulations',
     subtopic: 'Illegal Acts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor suspects that management has engaged in bribery of foreign officials to secure contracts. This activity is material to the financial statements but management denies the allegation and refuses to permit further investigation. What is the auditor\'s most appropriate course of action?',
     options: [
       'Issue an unmodified opinion with an emphasis-of-matter paragraph',
@@ -120,11 +132,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'aud-wc-209',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Performing Further Procedures',
     topicId: 'subsequent-events',
     topic: 'Subsequent Events',
     subtopic: 'Type II Subsequent Events',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'On March 15 (after year-end but before the audit report date), a major customer that owed the client $5,000,000 at December 31 filed for bankruptcy. Investigation reveals the customer was financially sound at year-end but deteriorated rapidly due to fraud discovered in February. How should this be treated?',
     options: [
       'Adjust the financial statements to write off the receivable',
@@ -139,11 +153,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'aud-wc-210',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Performing Further Procedures',
     topicId: 'subsequent-events',
     topic: 'Subsequent Events',
     subtopic: 'Dual Dating',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'After issuing the audit report dated March 10, the auditor becomes aware on March 25 of a significant event that occurred on March 20. The client agrees to revise the financial statements to disclose this event. If the auditor dual-dates the revised report, what dates should appear?',
     options: [
       'March 10, except for Note X which is dated March 25',
@@ -159,11 +175,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'reg-wc-207',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Federal Taxation of Property Transactions',
     topicId: 'estate-gift-tax',
     topic: 'Estate and Gift Tax',
     subtopic: 'Generation-Skipping Transfer Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A grandmother establishes an irrevocable trust with $5,000,000 for the benefit of her grandchildren (skipping generation). The trust provides income to the grandchildren for life, then principal to great-grandchildren. For generation-skipping transfer tax purposes, when does a taxable distribution occur?',
     options: [
       'When the trust is established',
@@ -178,11 +196,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'reg-wc-208',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Federal Taxation of Property Transactions',
     topicId: 'estate-gift-tax',
     topic: 'Estate and Gift Tax',
     subtopic: 'Qualified Personal Residence Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer aged 60 transfers her primary residence valued at $2,000,000 to a Qualified Personal Residence Trust (QPRT), retaining the right to live in the residence for 15 years. Using IRS valuation tables, the remainder interest is valued at $800,000. If the taxpayer survives the 15-year term, what is the estate tax consequence?',
     options: [
       'The full $2,000,000 is included in the gross estate',
@@ -197,11 +217,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'reg-wc-209',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Federal Taxation of Property Transactions',
     topicId: 'estate-gift-tax',
     topic: 'Estate and Gift Tax',
     subtopic: 'Portability of Unified Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A husband dies in 2025 with a gross estate of $8,000,000. After deductions and use of the marital deduction, his taxable estate is $0. His Deceased Spousal Unused Exclusion (DSUE) amount is $5,000,000. To allow the surviving wife to use this DSUE, what action must be taken?',
     options: [
       'No action required; DSUE transfers automatically',
@@ -216,11 +238,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'reg-wc-210',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Federal Taxation of Property Transactions',
     topicId: 'estate-gift-tax',
     topic: 'Estate and Gift Tax',
     subtopic: 'Annual Exclusion Planning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A married couple wants to make gifts to their three adult children and their spouses (6 donees) using the annual exclusion and gift-splitting. Assuming the 2025 annual exclusion is $18,000, what is the maximum total that can be given without reducing the unified credit?',
     options: [
       '$108,000',
@@ -236,11 +260,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'bar-wc-247',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Bargain Purchases',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Company A acquires 100% of Company B for $50,000,000 cash. The fair values of identifiable assets acquired and liabilities assumed are $75,000,000 and $15,000,000, respectively. After reassessing all fair values and confirming no errors, what is the proper accounting treatment?',
     options: [
       'Record goodwill of $10,000,000',
@@ -255,11 +281,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'bar-wc-248',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Contingent Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a business combination, the acquirer agrees to pay additional consideration of $5,000,000 if the acquired company achieves certain EBITDA targets over the next three years. At acquisition date, the fair value of this contingent consideration is estimated at $3,500,000. One year later, based on revised projections, the fair value is re-estimated at $4,200,000. How is the $700,000 change accounted for?',
     options: [
       'Adjustment to goodwill',
@@ -274,11 +302,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'bar-wc-249',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Step Acquisitions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Company P owns a 30% equity investment in Company S with a carrying value of $15,000,000 and fair value of $21,000,000. Company P acquires an additional 40% of Company S for $28,000,000 cash, obtaining control. What amount is recognized in earnings from this transaction?',
     options: [
       '$0',
@@ -293,11 +323,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'bar-wc-250',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Measurement Period Adjustments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An acquisition closed on October 1, Year 1. In preparing Year 1 financial statements (issued March 15, Year 2), management provisionally recorded inventory at $10,000,000. In July Year 2, new information indicates the acquisition-date fair value should have been $8,500,000. How should this be treated?',
     options: [
       'Prospective adjustment beginning July Year 2',
@@ -312,11 +344,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'bar-wc-251',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Noncontrolling Interests',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent acquires 80% of Subsidiary for $800,000 when Subsidiary\'s identifiable net assets have a fair value of $900,000. The fair value of the noncontrolling interest is independently determined to be $180,000. What amount of goodwill is recorded?',
     options: [
       '$0 - this is a bargain purchase',
@@ -332,11 +366,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'isc-wc-207',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'cloud-computing',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company using IaaS (Infrastructure as a Service) experiences a data breach due to misconfigured security groups that allowed unauthorized external access. Under the shared responsibility model, who is primarily responsible for this security failure?',
     options: [
       'The cloud service provider exclusively',
@@ -351,11 +387,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'isc-wc-208',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'cloud-computing',
     topic: 'Cloud Computing',
     subtopic: 'Multi-Tenancy Risks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A financial services company is evaluating cloud providers. Their security team is concerned about "noisy neighbor" and "side-channel" attacks in multi-tenant environments. Which cloud deployment model would best address these concerns while maintaining cost efficiency?',
     options: [
       'Public cloud with enhanced encryption',
@@ -370,11 +408,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'isc-wc-209',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'virtualization',
     topic: 'Virtualization',
     subtopic: 'VM Escape Attacks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which control is MOST effective in preventing a virtual machine (VM) escape attack where malicious code on a guest VM attempts to gain access to the hypervisor or other VMs?',
     options: [
       'Network segmentation between VMs',
@@ -389,11 +429,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'isc-wc-210',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'cloud-computing',
     topic: 'Cloud Computing',
     subtopic: 'Data Residency and Sovereignty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A multinational corporation stores customer data in a cloud environment. European customers\' data must comply with GDPR requirements for data residency. Which cloud architecture feature BEST supports this requirement?',
     options: [
       'Data encryption at rest with customer-managed keys',
@@ -409,11 +451,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'tcp-wc-207',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 'partnership-taxation',
     topic: 'Partnership Taxation',
     subtopic: 'Substantial Economic Effect',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partnership agreement allocates 90% of depreciation deductions to Partner A (a high-income individual) and 10% to Partner B. Partner A has no other economic interest beyond the depreciation allocation. For this allocation to have substantial economic effect, which requirement is essential?',
     options: [
       'Partner A must contribute at least 90% of partnership capital',
@@ -428,11 +472,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'tcp-wc-208',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 'partnership-taxation',
     topic: 'Partnership Taxation',
     subtopic: 'Disguised Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Partner A contributes property with FMV of $1,000,000 and adjusted basis of $200,000 to a partnership. Within 30 days, the partnership distributes $800,000 cash to Partner A as a "distribution." How will this transaction likely be characterized for tax purposes?',
     options: [
       'Tax-free contribution followed by tax-free distribution',
@@ -447,11 +493,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'tcp-wc-209',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 'partnership-taxation',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets - Section 751',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Partner sells her 25% partnership interest for $500,000. Her outside basis is $300,000. The partnership has the following assets: cash $400,000; inventory (FMV $800,000, basis $500,000); and land (FMV $800,000, basis $700,000). What is the character of her $200,000 gain?',
     options: [
       '$200,000 long-term capital gain',
@@ -466,11 +514,13 @@ export const WORLD_CLASS_BATCH_43: Question[] = [
   {
     id: 'tcp-wc-210',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 'partnership-taxation',
     topic: 'Partnership Taxation',
     subtopic: 'Technical Terminations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'On March 1, Partner A sells her 45% partnership interest to new Partner C. On September 1 of the same year, Partner B sells his 40% interest to new Partner D. The partnership uses a calendar year. When does the partnership\'s tax year end for purposes of the selling partners?',
     options: [
       'December 31, as partnerships cannot be terminated mid-year',

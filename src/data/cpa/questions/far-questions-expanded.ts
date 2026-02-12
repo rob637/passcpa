@@ -11,6 +11,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-001',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Qualitative Characteristics',
@@ -31,6 +32,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-002',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Recognition',
@@ -51,6 +53,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-003',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Elements',
@@ -75,6 +78,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-004',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-presentation',
     topic: 'Balance Sheet',
     subtopic: 'Current Assets',
@@ -95,6 +99,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-005',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-presentation',
     topic: 'Income Statement',
     subtopic: 'Discontinued Operations',
@@ -115,6 +120,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-006',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-presentation',
     topic: 'Cash Flow Statement',
     subtopic: 'Classification',
@@ -135,6 +141,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-007',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-presentation',
     topic: 'Cash Flow Statement',
     subtopic: 'Indirect Method',
@@ -159,6 +166,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-008',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Impairment - CECL',
@@ -179,6 +187,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-009',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Factoring',
@@ -199,6 +208,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-010',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Lower of Cost or Net Realizable Value',
@@ -219,6 +229,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-011',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'LIFO Reserve',
@@ -239,6 +250,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-012',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Capitalized Costs',
@@ -259,6 +271,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-013',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Asset Retirement Obligations',
@@ -279,6 +292,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-014',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Goodwill Impairment',
@@ -299,6 +313,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-015',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'R&D Costs',
@@ -323,6 +338,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-016',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-liabilities',
     topic: 'Contingencies',
     subtopic: 'Loss Contingencies',
@@ -343,6 +359,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-017',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-liabilities',
     topic: 'Contingencies',
     subtopic: 'Gain Contingencies',
@@ -363,6 +380,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-018',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-bonds',
     topic: 'Bonds Payable',
     subtopic: 'Effective Interest Method',
@@ -383,6 +401,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-019',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-bonds',
     topic: 'Bonds Payable',
     subtopic: 'Debt Extinguishment',
@@ -407,6 +426,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-020',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Treasury Stock',
@@ -427,6 +447,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-021',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Stock Splits',
@@ -447,6 +468,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-022',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Comprehensive Income',
@@ -471,6 +493,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-023',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
@@ -491,6 +514,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-024',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
@@ -511,6 +535,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-025',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Budgetary Accounting',
@@ -531,6 +556,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-026',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Net Asset Classes',
@@ -551,6 +577,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-027',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributions',
@@ -571,6 +598,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-028',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Functional Expenses',
@@ -593,6 +621,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-029',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Bill-and-Hold',
@@ -613,6 +642,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-030',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Principal vs Agent',
@@ -633,6 +663,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-031',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Securities',
@@ -653,6 +684,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-032',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Debt Securities',
@@ -673,6 +705,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-033',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-leases',
     topic: 'Lease Accounting',
     subtopic: 'Short-Term Leases',
@@ -693,6 +726,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-034',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-leases',
     topic: 'Lease Accounting',
     subtopic: 'Operating Lease - Lessee',
@@ -713,6 +747,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-035',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-errors',
     topic: 'Accounting Changes',
     subtopic: 'Prior Period Errors',
@@ -733,6 +768,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-036',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-errors',
     topic: 'Accounting Changes',
     subtopic: 'Change in Estimate',
@@ -753,6 +789,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-037',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-forex',
     topic: 'Foreign Currency',
     subtopic: 'Remeasurement',
@@ -773,6 +810,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-038',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-related',
     topic: 'Related Parties',
     subtopic: 'Disclosure',
@@ -793,6 +831,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-039',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Types',
@@ -813,6 +852,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'far-exp-040',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-segment',
     topic: 'Segment Reporting',
     subtopic: 'Aggregation',

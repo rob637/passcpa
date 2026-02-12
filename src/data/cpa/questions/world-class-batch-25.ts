@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'far-wc-135',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-deferred-tax',
     topic: 'Deferred Taxes',
     subtopic: 'Valuation Allowance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A valuation allowance is recorded for deferred tax assets when:',
     options: [
       'Deferred tax liabilities exist',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'far-wc-136',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-balance-sheet',
     topic: 'Balance Sheet',
     subtopic: 'Current vs Noncurrent',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A liability should be classified as current if it:',
     options: [
       'Will be refinanced after year-end',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'far-wc-137',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign',
     topic: 'Foreign Operations',
     subtopic: 'Translation vs Remeasurement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Foreign currency translation (vs remeasurement) applies when:',
     options: [
       'The functional currency is the US dollar',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'far-wc-138',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Derived Tax Revenues',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Derived tax revenues (e.g., sales taxes) are recognized when:',
     options: [
       'Cash is received',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'aud-wc-135',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Threats and Safeguards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The conceptual framework approach to independence requires:',
     options: [
       'Following specific rules without exception',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'aud-wc-136',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Audit Evidence Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The relevance of audit evidence refers to:',
     options: [
       'The amount of evidence obtained',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'aud-wc-137',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'ICFR Opinion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An integrated audit of a public company requires:',
     options: [
       'Only an opinion on the financial statements',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'aud-wc-138',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A significant risk is an identified risk that:',
     options: [
       'Has an immaterial potential effect',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'reg-wc-135',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Basis of Inherited Property',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The basis of property inherited from a decedent is generally:',
     options: [
       'The decedent\'s original cost',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'reg-wc-136',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'PHC Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Personal holding company income includes all EXCEPT:',
     options: [
       'Dividends received',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'reg-wc-137',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Suretyship',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A surety is primarily liable for the debt, while a guarantor is:',
     options: [
       'Also primarily liable',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'reg-wc-138',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Qualified Small Business Stock',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1202 qualified small business stock exclusion allows:',
     options: [
       'Exclusion of 50% of gain',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'bar-wc-157',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Minority Discount',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A minority interest discount reflects:',
     options: [
       'The premium for controlling shareholders',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'bar-wc-158',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'ASC 842 Lease Modification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A lease modification that grants an additional right-of-use not in the original lease is accounted for as:',
     options: [
       'A continuation of the existing lease in all cases',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'bar-wc-159',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Standard Cost Variances',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A favorable direct labor efficiency variance indicates:',
     options: [
       'Actual hours exceeded standard hours allowed',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'bar-wc-160',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Interest Coverage',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The times interest earned ratio is calculated as:',
     options: [
       'Net income / Interest expense',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'bar-wc-161',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Asset-Based Valuation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Asset-based valuation is most appropriate for:',
     options: [
       'High-growth technology companies',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'isc-wc-135',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'NIST Framework',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The NIST Cybersecurity Framework core functions are:',
     options: [
       'Plan, Build, Run, Monitor',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'isc-wc-136',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Tokenization',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Tokenization differs from encryption in that:',
     options: [
       'It is less secure than encryption',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'isc-wc-137',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key API security concerns include:',
     options: [
       'Physical access to servers only',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'isc-wc-138',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'ITGCs Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When testing IT general controls, auditors should:',
     options: [
       'Only review documentation',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'tcp-wc-135',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Nanny Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Household employment taxes (Nanny Tax) apply when cash wages paid to a household employee exceed:',
     options: [
       '$600 in a year',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'tcp-wc-136',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'GILTI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Global Intangible Low-Taxed Income (GILTI) requires US shareholders of CFCs to:',
     options: [
       'Defer income until repatriation',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'tcp-wc-137',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Cost Segregation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cost segregation studies benefit taxpayers by:',
     options: [
       'Eliminating depreciation entirely',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_25: Question[] = [
   {
     id: 'tcp-wc-138',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'IRS Audit Selection',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The IRS selects returns for audit based on:',
     options: [
       'Random selection only',

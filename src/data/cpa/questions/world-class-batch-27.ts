@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'far-wc-143',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Bargain Purchase',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A bargain purchase in a business combination results when:',
     options: [
       'The acquirer pays more than fair value',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'far-wc-144',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Lower of Cost or NRV',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GAAP, inventory is written down to net realizable value when:',
     options: [
       'NRV exceeds cost',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'far-wc-145',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Antidilutive Securities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Potential common shares are excluded from diluted EPS when:',
     options: [
       'They are convertible preferred stock',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'far-wc-146',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Infrastructure Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Government infrastructure assets using the modified approach:',
     options: [
       'Must be depreciated',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'aud-wc-143',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Confidentiality Exceptions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Confidential client information may be disclosed when:',
     options: [
       'The client requests it in writing',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'aud-wc-144',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Inquiry Effectiveness',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Inquiry alone is insufficient for testing controls because:',
     options: [
       'It is too expensive',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'aud-wc-145',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Dating the Report',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The auditor\'s report should be dated:',
     options: [
       'As of the balance sheet date',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'aud-wc-146',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Triangle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The fraud triangle consists of:',
     options: [
       'Error, irregularity, illegal acts',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'reg-wc-143',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Loss Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the hobby loss rules, activities not engaged in for profit:',
     options: [
       'Generate fully deductible losses',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'reg-wc-144',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax applies to:',
     options: [
       'All corporations',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'reg-wc-145',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Accord and Satisfaction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An accord and satisfaction occurs when:',
     options: [
       'A contract is void ab initio',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'reg-wc-146',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the installment method, the gross profit percentage is applied to:',
     options: [
       'Total selling price',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'bar-wc-167',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Free Cash Flow',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Free cash flow to the firm (FCFF) is calculated as:',
     options: [
       'Net income minus dividends',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'bar-wc-168',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Multiple Selection',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When selecting valuation multiples, consider:',
     options: [
       'Only P/E ratio',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'bar-wc-169',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Hedge Effectiveness',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For hedge accounting, a hedging relationship must be:',
     options: [
       'Perfect in economic terms',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'bar-wc-170',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing Methods',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The market-based transfer price is most appropriate when:',
     options: [
       'No external market exists',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'bar-wc-171',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Quality of Earnings',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Indicators of low earnings quality include:',
     options: [
       'Consistent GAAP application',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'isc-wc-143',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Risk Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT risk treatment options include:',
     options: [
       'Only accepting risk',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'isc-wc-144',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'DLP Solutions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data Loss Prevention (DLP) solutions protect data by:',
     options: [
       'Only encrypting emails',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'isc-wc-145',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Database Replication',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Synchronous database replication ensures:',
     options: [
       'Eventual consistency',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'isc-wc-146',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Penetration Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Penetration testing differs from vulnerability scanning in that it:',
     options: [
       'Only identifies vulnerabilities',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'tcp-wc-143',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Premium Tax Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Premium Tax Credit (PTC) for health insurance is available to taxpayers who:',
     options: [
       'Have employer coverage',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'tcp-wc-144',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'S Corp Built-In Gains',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Built-In Gains (BIG) tax applies to S corporations that:',
     options: [
       'Were always S corps',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'tcp-wc-145',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Charitable Remainder Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A charitable remainder trust provides:',
     options: [
       'Immediate full deduction',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_27: Question[] = [
   {
     id: 'tcp-wc-146',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Statute of Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general statute of limitations for IRS assessment is:',
     options: [
       'One year',

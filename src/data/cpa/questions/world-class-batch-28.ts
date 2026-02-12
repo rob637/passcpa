@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'far-wc-147',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Embedded Derivatives',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An embedded derivative must be separated from the host contract when:',
     options: [
       'The host is a debt instrument',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'far-wc-148',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash',
     topic: 'Cash and Cash Equivalents',
     subtopic: 'Bank Reconciliation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a bank reconciliation, deposits in transit:',
     options: [
       'Are subtracted from the book balance',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'far-wc-149',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-segment',
     topic: 'Segment Reporting',
     subtopic: 'Quantitative Thresholds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An operating segment is reportable if it meets any of the following 10% tests:',
     options: [
       'Assets only',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'far-wc-150',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Net Asset Classes',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Not-for-profit entities report net assets in how many classes?',
     options: [
       'Four classes',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'aud-wc-147',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Sampling Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sampling risk includes:',
     options: [
       'Only nonsampling risk',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'aud-wc-148',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Compensating Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a control deficiency exists, compensating controls:',
     options: [
       'Eliminate the deficiency',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'aud-wc-149',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Other Matters Paragraph',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Other Matter paragraph in the auditor\'s report is used for:',
     options: [
       'Known departures from GAAP',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'aud-wc-150',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Cutoff Tests',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cutoff testing primarily addresses:',
     options: [
       'The valuation assertion',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'reg-wc-147',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-s-corp',
     topic: 'S Corporation',
     subtopic: 'Basis Ordering Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'S corporation basis is reduced by distributions and losses in this order:',
     options: [
       'All items simultaneously',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'reg-wc-148',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Common AMT preference items include:',
     options: [
       'Standard deduction',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'reg-wc-149',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Agency Law',
     subtopic: 'Duty of Loyalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agent\'s duty of loyalty requires:',
     options: [
       'Only performing assigned tasks',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'reg-wc-150',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Losses on sales between related parties:',
     options: [
       'Are fully deductible',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'bar-wc-172',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Weighted Average Cost of Capital',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The weighted average cost of capital (WACC) represents:',
     options: [
       'Only cost of equity',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'bar-wc-173',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An asset retirement obligation is initially recorded at:',
     options: [
       'Zero until retirement',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'bar-wc-174',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Capital Structure Theory',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The tradeoff theory of capital structure suggests firms balance:',
     options: [
       'Only tax benefits',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'bar-wc-175',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Altman Z-Score',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Altman Z-Score is used to predict:',
     options: [
       'Stock price appreciation',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'bar-wc-176',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Terminal Value',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In DCF valuation, terminal value represents:',
     options: [
       'Only the last year cash flow',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'isc-wc-147',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT Framework',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'COBIT provides:',
     options: [
       'Only technical specifications',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'isc-wc-148',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Network Segmentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network segmentation improves security by:',
     options: [
       'Increasing network speed only',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'isc-wc-149',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Cloud Service Models',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In Infrastructure as a Service (IaaS), the cloud provider manages:',
     options: [
       'Applications and data',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'isc-wc-150',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'CAAT Tools',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Computer-assisted audit techniques (CAATs) include:',
     options: [
       'Only manual procedures',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'tcp-wc-147',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Estimated Tax Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Corporations avoid the estimated tax penalty by paying:',
     options: [
       'Nothing quarterly',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'tcp-wc-148',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Kiddie Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The kiddie tax applies to unearned income of:',
     options: [
       'All children regardless of age',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'tcp-wc-149',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Grantor Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A grantor trust is one where:',
     options: [
       'The trust is always irrevocable',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_28: Question[] = [
   {
     id: 'tcp-wc-150',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Offer in Compromise',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An offer in compromise (OIC) may be accepted when:',
     options: [
       'The taxpayer refuses to pay',

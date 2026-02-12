@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'far-wc-163',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Principal vs Agent',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An entity is acting as a principal (vs agent) if it:',
     options: [
       'Never takes inventory risk',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'far-wc-164',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-accounting-changes',
     topic: 'Accounting Changes',
     subtopic: 'Change in Estimate Prospectively',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A change in accounting estimate is accounted for:',
     options: [
       'Retrospectively with restatement',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'far-wc-165',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-discontinued',
     topic: 'Discontinued Operations',
     subtopic: 'Held for Sale Criteria',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A component is classified as held for sale when:',
     options: [
       'Management considers selling',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'far-wc-166',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Encumbrances',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Encumbrances in governmental accounting represent:',
     options: [
       'Actual expenditures',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'aud-wc-163',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-analytical',
     topic: 'Analytical Procedures',
     subtopic: 'Substantive Analytics',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For substantive analytical procedures to be effective, the auditor needs:',
     options: [
       'Any trend data',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'aud-wc-164',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-it',
     topic: 'IT Considerations',
     subtopic: 'Application Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Application controls include:',
     options: [
       'Only physical access controls',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'aud-wc-165',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Qualified Opinion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A qualified opinion is appropriate when:',
     options: [
       'All departures from GAAP',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'aud-wc-166',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Management Representations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Written management representations:',
     options: [
       'Replace other audit evidence',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'reg-wc-163',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Tax Basis Capital Accounts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Tax basis capital accounts report:',
     options: [
       'Book capital per GAAP',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'reg-wc-164',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Dependent Care Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The dependent care credit is a:',
     options: [
       'Deduction from gross income',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'reg-wc-165',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professionalethics',
     topic: 'Professional Responsibility',
     subtopic: 'Tax Return Positions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A tax return position must have at least:',
     options: [
       'Any legal support',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'reg-wc-166',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Gain from involuntary conversion may be deferred when:',
     options: [
       'Any property is purchased',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'bar-wc-192',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'DuPont Analysis Extended',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The extended DuPont formula decomposes ROE into:',
     options: [
       'Only profit margin',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'bar-wc-193',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Dividend Discount Model',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Gordon Growth Model calculates equity value as:',
     options: [
       'Dividends × P/E ratio',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'bar-wc-194',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Noncontrolling Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Noncontrolling interest in consolidated financial statements is:',
     options: [
       'Reported as a liability',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'bar-wc-195',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Absorption vs Variable Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under absorption costing, fixed manufacturing overhead is:',
     options: [
       'Expensed as incurred',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'bar-wc-196',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Cash Flow Quality',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High-quality cash flows are characterized by:',
     options: [
       'Large one-time gains',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'isc-wc-163',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Steering Committee',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IT steering committee should include:',
     options: [
       'Only IT staff',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'isc-wc-164',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Intrusion Prevention',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Intrusion Prevention System (IPS) differs from IDS in that it:',
     options: [
       'Only logs events',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'isc-wc-165',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Blockchain',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Blockchain technology provides:',
     options: [
       'Centralized control',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'isc-wc-166',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Access Review',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Periodic user access reviews should:',
     options: [
       'Only check new users',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'tcp-wc-163',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Check-the-Box Regulations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under check-the-box regulations, an eligible entity may elect to be taxed as:',
     options: [
       'Only its legal form',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'tcp-wc-164',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Social Security Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Social Security benefits are taxable when:',
     options: [
       'Always 100% taxable',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'tcp-wc-165',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Loss Harvesting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tax-loss harvesting involves:',
     options: [
       'Selling only winners',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_32: Question[] = [
   {
     id: 'tcp-wc-166',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Taxpayer Bill of Rights',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Taxpayer Bill of Rights includes the right to:',
     options: [
       'Ignore IRS notices',

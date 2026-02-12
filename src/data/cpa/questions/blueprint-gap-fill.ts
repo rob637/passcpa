@@ -12,12 +12,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'qm-standards',
     topic: 'Quality Management',
     subtopic: 'SQMS 1 Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SQMS 1, which component addresses the firm\'s policies for client acceptance and continuance?',
     options: [
       'Risk assessment process',
@@ -33,12 +35,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'qm-standards',
     topic: 'Quality Management',
     subtopic: 'Engagement Quality Review',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For which types of engagements is an engagement quality review (EQR) always required?',
     options: [
       'All compilation engagements',
@@ -54,12 +58,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'qm-monitoring',
     topic: 'Quality Management',
     subtopic: 'Monitoring and Remediation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under SQMS 1, when a deficiency in the system of quality management is identified, the firm must:',
     options: [
       'Report the deficiency to the PCAOB within 30 days',
@@ -75,12 +81,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'aicpa-enforcement',
     topic: 'Professional Ethics',
     subtopic: 'AICPA Disciplinary Actions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which AICPA committee has the authority to investigate potential ethics violations and recommend disciplinary action?',
     options: [
       'Auditing Standards Board',
@@ -96,12 +104,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'joint-trial-board',
     topic: 'Professional Ethics',
     subtopic: 'Joint Trial Board',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the AICPA Joint Ethics Enforcement Program, automatic expulsion from membership occurs when a CPA:',
     options: [
       'Fails to complete required CPE hours for two consecutive years',
@@ -117,12 +127,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'peer-review',
     topic: 'Quality Management',
     subtopic: 'Peer Review Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For a CPA firm performing audits, how often must the firm undergo a peer review?',
     options: [
       'Annually',
@@ -138,12 +150,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'peer-review-types',
     topic: 'Quality Management',
     subtopic: 'Types of Peer Reviews',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A firm that only performs compilation engagements (no audit or review engagements) would receive which type of peer review?',
     options: [
       'System review',
@@ -159,12 +173,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'state-board-actions',
     topic: 'Professional Ethics',
     subtopic: 'State Board Enforcement',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'What is the relationship between state board of accountancy disciplinary actions and AICPA membership?',
     options: [
       'State board actions have no effect on AICPA membership',
@@ -180,12 +196,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'eqr-completion',
     topic: 'Quality Management',
     subtopic: 'Engagement Quality Review Timing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The engagement quality reviewer must complete the review before:',
     options: [
       'The audit planning phase is finalized',
@@ -201,12 +219,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'sec-sanctions',
     topic: 'Professional Ethics',
     subtopic: 'SEC Enforcement Actions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under SEC Rule 102(e), the Commission may temporarily or permanently deny an accountant the privilege of appearing or practicing before it for all of the following reasons EXCEPT:',
     options: [
       'Lacking the requisite qualifications to represent others',
@@ -223,12 +243,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'independence-policies',
     topic: 'Quality Management',
     subtopic: 'Firm Independence Policies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A firm\'s system of quality management must include policies requiring personnel to promptly notify the firm when they become aware of:',
     options: [
       'Any changes in audit client management',
@@ -244,12 +266,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'documentation-retention',
     topic: 'Quality Management',
     subtopic: 'Documentation Retention',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under auditing standards, the minimum retention period for audit documentation after the report release date is:',
     options: [
       '3 years',
@@ -265,12 +289,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'pcaob-sanctions',
     topic: 'Professional Ethics',
     subtopic: 'PCAOB Enforcement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PCAOB has authority to impose sanctions on registered firms and associated persons. Which of the following is NOT a sanction the PCAOB can impose?',
     options: [
       'Civil monetary penalties',
@@ -286,12 +312,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'hot-review',
     topic: 'Quality Management',
     subtopic: 'Concurring Partner Review',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For non-issuer audits, a firm determines the criteria for requiring an engagement quality review. Which factor would most likely indicate the need for such a review?',
     options: [
       'The engagement has been performed for more than three consecutive years',
@@ -307,12 +335,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'reporting-violations',
     topic: 'Professional Ethics',
     subtopic: 'Reporting Ethics Violations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the AICPA Code of Professional Conduct, a CPA who becomes aware that another CPA may have committed an act discreditable to the profession should:',
     options: [
       'Immediately report the violation to the AICPA ethics division',
@@ -329,12 +359,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'qm-basics',
     topic: 'Quality Management',
     subtopic: 'SQMS Overview',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'What does SQMS stand for in the context of quality management standards?',
     options: [
       'Standard Quality Measurement System',
@@ -350,12 +382,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'cpe-requirements',
     topic: 'Professional Ethics',
     subtopic: 'Continuing Education',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of mandatory CPE requirements for CPAs is to:',
     options: [
       'Generate revenue for state boards',
@@ -371,12 +405,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'engagement-partner',
     topic: 'Quality Management',
     subtopic: 'Engagement Partner Responsibilities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The engagement partner is ultimately responsible for:',
     options: [
       'Preparing all audit documentation',
@@ -392,12 +428,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Ethics Enforcement',
     topicId: 'independence-basics',
     topic: 'Professional Ethics',
     subtopic: 'Independence Requirement',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Independence in auditing consists of:',
     options: [
       'Independence in fact only',
@@ -413,12 +451,14 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
   {
     id: 'aud-gap-vii-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     blueprintGroup: 'Quality Management',
     topicId: 'supervision-basics',
     topic: 'Quality Management',
     subtopic: 'Supervision Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Proper supervision during an audit includes:',
     options: [
       'Only reviewing workpapers after the audit is complete',
@@ -441,12 +481,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc1-purpose',
     topic: 'SOC Reports',
     subtopic: 'SOC 1 Purpose',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SOC 1® report is primarily designed to address controls at a service organization that are relevant to:',
     options: [
       'User entities\' internal control over financial reporting',
@@ -462,12 +504,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc1-types',
     topic: 'SOC Reports',
     subtopic: 'Type 1 vs Type 2',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The key difference between a SOC 1 Type 1 and Type 2 report is:',
     options: [
       'Type 1 is for financial services; Type 2 is for technology companies',
@@ -483,12 +527,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc2-criteria',
     topic: 'SOC Reports',
     subtopic: 'SOC 2 Trust Services Criteria',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is NOT one of the Trust Services Criteria categories used in SOC 2 examinations?',
     options: [
       'Security',
@@ -504,12 +550,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc2-security',
     topic: 'SOC Reports',
     subtopic: 'Security Criteria',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Security principle (also known as Common Criteria) in a SOC 2 report addresses:',
     options: [
       'Only access controls to prevent unauthorized access',
@@ -525,12 +573,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-carve-out',
     topic: 'SOC Reports',
     subtopic: 'Subservice Organizations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a SOC 1 report, when a service organization uses the "carve-out" method for a subservice organization:',
     options: [
       'The subservice organization\'s controls are included in the service organization\'s description and testing',
@@ -546,12 +596,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-inclusive',
     topic: 'SOC Reports',
     subtopic: 'Inclusive Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a service organization uses the "inclusive" method for a subservice organization in a SOC report:',
     options: [
       'Only the subservice organization\'s controls are tested',
@@ -567,12 +619,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'itgc-categories',
     topic: 'IT General Controls',
     subtopic: 'ITGC Categories',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT General Controls (ITGCs) typically include all of the following categories EXCEPT:',
     options: [
       'Access to programs and data',
@@ -588,12 +642,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'access-controls',
     topic: 'IT General Controls',
     subtopic: 'Access Control Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When testing access controls during an IT audit, the auditor would most likely:',
     options: [
       'Only review the access control policy document',
@@ -609,12 +665,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc3-use',
     topic: 'SOC Reports',
     subtopic: 'SOC 3 General Use',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SOC 3 report differs from a SOC 2 report primarily because SOC 3:',
     options: [
       'Covers a longer time period',
@@ -630,12 +688,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'change-management',
     topic: 'IT General Controls',
     subtopic: 'Change Management Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When testing IT change management controls, an auditor would be most concerned if:',
     options: [
       'All changes were documented in a ticketing system',
@@ -651,12 +711,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'complementary-controls',
     topic: 'SOC Reports',
     subtopic: 'Complementary User Entity Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Complementary user entity controls (CUECs) in a SOC report are:',
     options: [
       'Controls at the service organization that complement its primary controls',
@@ -672,12 +734,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'backup-recovery',
     topic: 'IT General Controls',
     subtopic: 'Backup and Recovery',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Testing backup and recovery controls would most likely include:',
     options: [
       'Only verifying that backups are performed automatically',
@@ -693,12 +757,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-opinion',
     topic: 'SOC Reports',
     subtopic: 'SOC Report Opinions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a SOC 2 Type 2 report, a qualified opinion would most likely be issued when:',
     options: [
       'The service organization uses a subservice organization',
@@ -714,12 +780,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'segregation-duties',
     topic: 'IT General Controls',
     subtopic: 'Segregation of Duties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In IT environments, which combination of duties should be segregated?',
     options: [
       'Help desk support and user training',
@@ -735,12 +803,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-for-cybersecurity',
     topic: 'SOC Reports',
     subtopic: 'SOC for Cybersecurity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC for Cybersecurity examination differs from a SOC 2 examination in that SOC for Cybersecurity:',
     options: [
       'Is only available as a Type 1 report',
@@ -757,12 +827,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-basics',
     topic: 'SOC Reports',
     subtopic: 'SOC Report Overview',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'What does "SOC" stand for in SOC 1, SOC 2, and SOC 3 reports?',
     options: [
       'Security Operations Center',
@@ -778,12 +850,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-users',
     topic: 'SOC Reports',
     subtopic: 'SOC Report Users',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Who are the primary users of a SOC 1 report?',
     options: [
       'The general public',
@@ -799,12 +873,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'itgc-overview',
     topic: 'IT General Controls',
     subtopic: 'ITGC Purpose',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary purpose of IT General Controls (ITGCs) is to:',
     options: [
       'Replace all manual controls',
@@ -820,12 +896,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'IT Audit',
     topicId: 'testing-basics',
     topic: 'IT General Controls',
     subtopic: 'Control Testing Basics',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When testing IT controls, auditors select a sample of transactions to:',
     options: [
       'Avoid looking at all transactions because it takes too long',
@@ -841,12 +919,14 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
   {
     id: 'isc-gap-v-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'SOC Engagements',
     topicId: 'soc-period',
     topic: 'SOC Reports',
     subtopic: 'Report Period',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A SOC 2 Type 2 report typically covers a period of:',
     options: [
       'A single point in time',

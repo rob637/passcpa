@@ -13,6 +13,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-001',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230',
@@ -33,6 +34,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-002',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Due Diligence',
@@ -53,6 +55,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-003',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations',
@@ -73,6 +76,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-004',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Penalties',
@@ -93,6 +97,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-005',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'IRS Examination',
@@ -119,6 +124,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-006',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Contracts',
     subtopic: 'Contract Formation',
@@ -139,6 +145,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-007',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Contracts',
     subtopic: 'Statute of Frauds',
@@ -159,6 +166,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-008',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Agency',
     subtopic: 'Agent Authority',
@@ -179,6 +187,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-009',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Entities',
     subtopic: 'Partnership Formation',
@@ -199,6 +208,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-010',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Entities',
     subtopic: 'Limited Liability',
@@ -219,6 +229,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-011',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Secured Transactions',
     subtopic: 'Perfection',
@@ -239,6 +250,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-012',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Debtor/Creditor',
     subtopic: 'Bankruptcy',
@@ -264,6 +276,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-013',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
@@ -284,6 +297,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-014',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains',
@@ -304,6 +318,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-015',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activities',
@@ -324,6 +339,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-016',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership Distributions',
@@ -344,6 +360,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-017',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corp Distributions',
@@ -364,6 +381,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-018',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corp Distributions',
@@ -384,6 +402,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-019',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sales',
@@ -404,6 +423,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-020',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
@@ -426,6 +446,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-021',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Education Credits',
@@ -446,6 +467,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-022',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Business Expenses',
@@ -466,6 +488,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-023',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Entities',
     subtopic: 'Corporate Formation',
@@ -486,6 +509,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-024',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Contracts',
     subtopic: 'Breach Remedies',
@@ -506,6 +530,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-025',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Formation',
@@ -528,6 +553,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-026',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Innocent Spouse Relief',
@@ -548,6 +574,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-027',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Home Office Deduction',
@@ -568,6 +595,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-028',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Property',
     subtopic: 'Real Property',
@@ -588,6 +616,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-029',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Estimated Taxes',
@@ -608,6 +637,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-030',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversions',
@@ -630,6 +660,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-031',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Offers in Compromise',
@@ -650,6 +681,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-032',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'HSA Contributions',
@@ -670,6 +702,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-033',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Negotiable Instruments',
     subtopic: 'Holder in Due Course',
@@ -690,6 +723,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-034',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Taxable Income',
@@ -710,6 +744,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-035',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis Rules',
@@ -732,6 +767,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-036',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'AICPA Standards',
@@ -752,6 +788,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-037',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Dependency Exemptions',
@@ -772,6 +809,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-038',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Securities Regulation',
     subtopic: 'Registration Exemptions',
@@ -792,6 +830,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-039',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Charitable Contributions',
@@ -812,6 +851,7 @@ export const REG_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'reg-add-040',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'At-Risk Rules',

@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA4_QUESTIONS_BATCH5: Question[] = [
   {
-    id: 'CISA4-093',
+    id: 'cisa4-093',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Crisis management differs from incident management by:',
     options: [
       'Only addressing IT issues',
@@ -25,10 +27,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Crisis vs Incident'
   },
   {
-    id: 'CISA4-095',
+    id: 'cisa4-095',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Command center activation occurs when:',
     options: [
       'For all incidents',
@@ -42,10 +46,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Command Center'
   },
   {
-    id: 'CISA4-096',
+    id: 'cisa4-096',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cyber resilience differs from cybersecurity by:',
     options: [
       'Focusing only on prevention',
@@ -59,10 +65,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Cyber Resilience'
   },
   {
-    id: 'CISA4-097',
+    id: 'cisa4-097',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Playbook documentation for incident response:',
     options: [
       'Is optional',
@@ -76,10 +84,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Playbooks'
   },
   {
-    id: 'CISA4-098',
+    id: 'cisa4-098',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Runbook automation:',
     options: [
       'Eliminates all operators',
@@ -93,10 +103,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Runbook Automation'
   },
   {
-    id: 'CISA4-099',
+    id: 'cisa4-099',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Self-healing systems:',
     options: [
       'Never fail',
@@ -110,10 +122,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Self-Healing'
   },
   {
-    id: 'CISA4-100',
+    id: 'cisa4-100',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT asset management lifecycle includes:',
     options: [
       'Only acquisition',
@@ -127,10 +141,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Asset Lifecycle'
   },
   {
-    id: 'CISA4-101',
+    id: 'cisa4-101',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Software Asset Management (SAM) ensures:',
     options: [
       'Only cost tracking',
@@ -144,10 +160,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'SAM'
   },
   {
-    id: 'CISA4-102',
+    id: 'cisa4-102',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Configuration Management Database (CMDB) accuracy requires:',
     options: [
       'One-time population',
@@ -161,10 +179,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'CMDB'
   },
   {
-    id: 'CISA4-103',
+    id: 'cisa4-103',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Service catalog provides:',
     options: [
       'Only technical specifications',
@@ -178,10 +198,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Service Catalog'
   },
   {
-    id: 'CISA4-104',
+    id: 'cisa4-104',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Service request fulfillment:',
     options: [
       'Is same as incident management',
@@ -195,10 +217,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Request Fulfillment'
   },
   {
-    id: 'CISA4-105',
+    id: 'cisa4-105',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Problem management investigates:',
     options: [
       'Single incidents',
@@ -212,10 +236,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Problem Management'
   },
   {
-    id: 'CISA4-106',
+    id: 'cisa4-106',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Known error database (KEDB) contains:',
     options: [
       'All incidents',
@@ -229,10 +255,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'KEDB'
   },
   {
-    id: 'CISA4-107',
+    id: 'cisa4-107',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Change Advisory Board (CAB) membership should include:',
     options: [
       'Only IT management',
@@ -246,10 +274,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'CAB'
   },
   {
-    id: 'CISA4-108',
+    id: 'cisa4-108',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Emergency change procedures should:',
     options: [
       'Skip all approvals',
@@ -263,10 +293,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Emergency Change'
   },
   {
-    id: 'CISA4-109',
+    id: 'cisa4-109',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Change success rate metrics indicate:',
     options: [
       'Only volume',
@@ -280,10 +312,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Change Metrics'
   },
   {
-    id: 'CISA4-110',
+    id: 'cisa4-110',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Release management coordinates:',
     options: [
       'Only code deployment',
@@ -297,10 +331,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Release Process'
   },
   {
-    id: 'CISA4-111',
+    id: 'cisa4-111',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Immutable infrastructure means:',
     options: [
       'Never updating',
@@ -314,10 +350,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Immutable Infrastructure'
   },
   {
-    id: 'CISA4-112',
+    id: 'cisa4-112',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Deployment pipelines:',
     options: [
       'Are only for code',
@@ -331,10 +369,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Deployment Pipeline'
   },
   {
-    id: 'CISA4-113',
+    id: 'cisa4-113',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Environment parity means:',
     options: [
       'Different environments',
@@ -348,10 +388,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Environment Parity'
   },
   {
-    id: 'CISA4-114',
+    id: 'cisa4-114',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Database replication lag monitoring:',
     options: [
       'Is unnecessary for synchronous replication',
@@ -365,10 +407,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Replication'
   },
   {
-    id: 'CISA4-115',
+    id: 'cisa4-115',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Storage tiering optimizes:',
     options: [
       'Only speed',
@@ -382,10 +426,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Storage Tiering'
   },
   {
-    id: 'CISA4-116',
+    id: 'cisa4-116',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data archiving differs from backup by:',
     options: [
       'Being faster',
@@ -399,10 +445,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Archiving'
   },
   {
-    id: 'CISA4-117',
+    id: 'cisa4-117',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data retention policies should consider:',
     options: [
       'Only storage cost',
@@ -416,10 +464,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Retention'
   },
   {
-    id: 'CISA4-118',
+    id: 'cisa4-118',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network performance monitoring should track:',
     options: [
       'Only bandwidth',
@@ -433,10 +483,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Performance Monitoring'
   },
   {
-    id: 'CISA4-119',
+    id: 'cisa4-119',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network segmentation in operations helps:',
     options: [
       'Only security',
@@ -450,10 +502,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Segmentation'
   },
   {
-    id: 'CISA4-120',
+    id: 'cisa4-120',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SD-WAN (Software-Defined WAN) provides:',
     options: [
       'Only cost reduction',
@@ -467,10 +521,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'SD-WAN'
   },
   {
-    id: 'CISA4-121',
+    id: 'cisa4-121',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cloud operations require:',
     options: [
       'No monitoring',
@@ -484,10 +540,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Cloud Ops'
   },
   {
-    id: 'CISA4-122',
+    id: 'cisa4-122',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'FinOps (Cloud Financial Operations) focuses on:',
     options: [
       'Only security',

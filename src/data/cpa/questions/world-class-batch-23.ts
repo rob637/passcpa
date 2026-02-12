@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'far-wc-127',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-ppe',
     topic: 'Property, Plant & Equipment',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An asset retirement obligation is initially measured at:',
     options: [
       'Historical cost of the asset',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'far-wc-128',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-comprehensive-income',
     topic: 'Comprehensive Income',
     subtopic: 'Components',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Other comprehensive income includes all EXCEPT:',
     options: [
       'Foreign currency translation adjustments',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'far-wc-129',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Budgetary Comparison',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Budgetary comparison schedules are required for:',
     options: [
       'All governmental funds',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'far-wc-130',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-interim',
     topic: 'Interim Reporting',
     subtopic: 'Integral Approach',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the integral approach to interim reporting:',
     options: [
       'Each interim period is a discrete period',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'aud-wc-127',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-engagement',
     topic: 'Engagement Planning',
     subtopic: 'Overall Audit Strategy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The overall audit strategy includes decisions about:',
     options: [
       'Detailed tests of transactions only',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'aud-wc-128',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An emphasis-of-matter paragraph is used when:',
     options: [
       'The auditor disagrees with management',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'aud-wc-129',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Related Parties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing related party transactions, the auditor should:',
     options: [
       'Accept management representations without further testing',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'aud-wc-130',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-it',
     topic: 'IT Considerations',
     subtopic: 'IT General Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT general controls typically include:',
     options: [
       'Edit checks and validation routines',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'reg-wc-127',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gambling',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gambling losses are deductible:',
     options: [
       'Without limitation',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'reg-wc-128',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Earnings and Profits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Earnings and profits (E&P) differ from taxable income because E&P:',
     options: [
       'Always equals net income under GAAP',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'reg-wc-129',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Employment Law',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Fair Labor Standards Act requires:',
     options: [
       'That all employees receive a salary',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'reg-wc-130',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Section 1033, gain from involuntary conversion is deferred if:',
     options: [
       'Any property is purchased with the proceeds',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'bar-wc-147',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Gordon Growth Model',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Gordon Growth Model values equity as:',
     options: [
       'Last year dividend × Growth rate',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'bar-wc-148',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Pushdown Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pushdown accounting results in:',
     options: [
       'The acquired company recording assets at the acquirer\'s cost basis',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'bar-wc-149',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Throughput Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Throughput accounting focuses on:',
     options: [
       'Allocating all costs to products',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'bar-wc-150',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Free Cash Flow',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Free cash flow to equity (FCFE) represents:',
     options: [
       'Cash available to all capital providers',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'bar-wc-151',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Precedent Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Precedent transaction analysis uses:',
     options: [
       'Current trading multiples of comparable companies',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'isc-wc-127',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'DDoS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Distributed Denial of Service (DDoS) attack:',
     options: [
       'Steals data from databases',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'isc-wc-128',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Blockchain',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A blockchain provides data integrity through:',
     options: [
       'Centralized database management',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'isc-wc-129',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'SDLC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The system development life cycle (SDLC) phases typically include:',
     options: [
       'Planning, analysis, design, implementation, and maintenance',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'isc-wc-130',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Test Data Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The test data method of IT auditing:',
     options: [
       'Reviews source code manually',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'tcp-wc-127',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The foreign tax credit is:',
     options: [
       'Always a deduction',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'tcp-wc-128',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Personal Holding Company',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A personal holding company tax applies when:',
     options: [
       'Any corporation has investment income',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'tcp-wc-129',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Net Operating Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current law (post-TCJA), net operating losses can:',
     options: [
       'Be carried back 2 years and forward 20 years',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_23: Question[] = [
   {
     id: 'tcp-wc-130',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Enrolled Agent',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An Enrolled Agent is authorized to:',
     options: [
       'Only prepare tax returns',

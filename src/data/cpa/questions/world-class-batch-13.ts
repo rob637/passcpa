@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'far-wc-087',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-cash-flow',
     topic: 'Statement of Cash Flows',
     subtopic: 'Direct Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company reports sales of $800,000. Accounts receivable increased by $50,000. Using the direct method, cash collected from customers is:',
     options: [
       '$850,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'far-wc-088',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-bonds',
     topic: 'Bonds',
     subtopic: 'Bond Issuance Costs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under current GAAP, bond issuance costs are:',
     options: [
       'Expensed immediately when incurred',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'far-wc-089',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Budgetary Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the annual budget is recorded in a governmental fund, the entry includes:',
     options: [
       'Debit Revenue, Credit Expense',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'far-wc-090',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-concepts',
     topic: 'Conceptual Framework',
     subtopic: 'Consistency',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The accounting principle of consistency requires:',
     options: [
       'All companies use the same accounting methods',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'aud-wc-087',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Understanding the Entity',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Understanding the entity and its environment is required primarily to:',
     options: [
       'Document the audit plan',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'aud-wc-088',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Inventory Observation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The auditor\'s primary objective when observing the client\'s inventory count is to:',
     options: [
       'Count all inventory items',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'aud-wc-089',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a predecessor auditor\'s report on prior year statements is not reissued, the successor auditor\'s report should:',
     options: [
       'Express an opinion on both years',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'aud-wc-090',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Control',
     subtopic: 'Hot Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A consultation with a specialist during an audit is most appropriate when the auditor:',
     options: [
       'Wants to reduce audit time',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'reg-wc-087',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The 3.8% Net Investment Income Tax applies to the lesser of:',
     options: [
       'Total adjusted gross income or $250,000',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'reg-wc-088',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Shareholder Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder\'s stock basis is increased by:',
     options: [
       'Their share of the S corp\'s ordinary income',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'reg-wc-089',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To perfect a security interest in goods by filing, the secured party must file a:',
     options: [
       'Copy of the original contract',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'reg-wc-090',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer donates appreciated stock (held over 1 year) to a public charity. The deduction is generally:',
     options: [
       'Limited to the cost basis',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'bar-wc-097',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Segment Reporting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The 75% test in segment reporting requires:',
     options: [
       'At least 75% of assets be included in reportable segments',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'bar-wc-098',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Relevant Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a make-or-buy decision, which cost is most likely irrelevant?',
     options: [
       'Direct materials of making the product',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'bar-wc-099',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Leverage Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The debt-to-equity ratio is calculated as:',
     options: [
       'Total assets / Total equity',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'bar-wc-100',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'WACC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When calculating WACC, the cost of debt is:',
     options: [
       'The coupon rate on outstanding bonds',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'bar-wc-101',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Pushdown Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pushdown accounting refers to:',
     options: [
       'Allocating parent company costs to subsidiaries',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'isc-wc-087',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Data Loss Prevention',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data Loss Prevention (DLP) systems primarily protect against:',
     options: [
       'Hardware failures',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'isc-wc-088',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'DevOps',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key principle of DevOps is:',
     options: [
       'Strict separation between development and operations teams',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'isc-wc-089',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Application Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An input validation control that ensures a field contains only numeric values is a:',
     options: [
       'Reasonableness check',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'isc-wc-090',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-analytics',
     topic: 'Data Analytics',
     subtopic: 'ETL Process',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'ETL stands for:',
     options: [
       'Execute, Test, Launch',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'tcp-wc-087',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'AMT Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'AMT paid due to deferral items (such as ISO exercise) generates:',
     options: [
       'No credit',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'tcp-wc-088',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Controlled Groups',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Members of a controlled group of corporations must:',
     options: [
       'File a consolidated return',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'tcp-wc-089',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Qualified Business Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Section 199A qualified business income deduction is limited for specified service trades or businesses (SSTBs) when taxable income exceeds:',
     options: [
       '$157,500 (single) / $315,000 (MFJ)',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   {
     id: 'tcp-wc-090',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Innocent Spouse Relief',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Innocent spouse relief under IRC Section 6015 requires the requesting spouse to demonstrate:',
     options: [
       'They signed the return under duress',

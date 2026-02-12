@@ -11,11 +11,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Management Assertions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a SOC 2 Type II engagement, management\'s assertion includes a statement that:',
     options: [
       'The entity has never experienced a security breach',
@@ -30,11 +32,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Report Users',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A SOC 1 report is primarily intended for use by:',
     options: [
       'The general public',
@@ -49,11 +53,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Monitoring Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating a SOC 2 report, a user entity auditor identifies a control exception. The MOST appropriate response is to:',
     options: [
       'Disregard the SOC report entirely',
@@ -72,11 +78,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-bcdr',
     topic: 'Business Continuity',
     subtopic: 'RTO and RPO',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Recovery Time Objective (RTO) measures:',
     options: [
       'The maximum amount of data loss an organization can tolerate',
@@ -91,11 +99,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-bcdr',
     topic: 'Business Continuity',
     subtopic: 'Hot, Warm, Cold Sites',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A hot site disaster recovery facility is characterized by:',
     options: [
       'An empty building with power and HVAC only',
@@ -110,11 +120,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-bcdr',
     topic: 'Business Continuity',
     subtopic: 'BCP Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The MOST comprehensive type of business continuity plan (BCP) test is a:',
     options: [
       'Checklist review',
@@ -129,11 +141,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-bcdr',
     topic: 'Business Continuity',
     subtopic: 'Business Impact Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Business Impact Analysis (BIA) is used to:',
     options: [
       'Test the effectiveness of security controls',
@@ -152,11 +166,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-change-mgmt',
     topic: 'Change Management',
     subtopic: 'Change Control Process',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In an IT change management process, the purpose of a Change Advisory Board (CAB) is to:',
     options: [
       'Write program code for changes',
@@ -171,11 +187,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-change-mgmt',
     topic: 'Systems Development',
     subtopic: 'SDLC Phases',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The correct sequence of traditional SDLC (Systems Development Life Cycle) phases is:',
     options: [
       'Design → Planning → Testing → Implementation → Maintenance',
@@ -190,11 +208,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-change-mgmt',
     topic: 'Change Management',
     subtopic: 'Segregation of Environments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A critical IT general control is the separation of development, testing, and production environments. This separation primarily prevents:',
     options: [
       'Hardware failures in production',
@@ -213,11 +233,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Network Security',
     subtopic: 'Firewall Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A next-generation firewall (NGFW) differs from a traditional packet-filtering firewall in that it:',
     options: [
       'Can only filter by IP address',
@@ -232,11 +254,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Access Control',
     subtopic: 'Multi-Factor Authentication',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Multi-factor authentication (MFA) requires at least two of which three factor categories?',
     options: [
       'Username, password, and security question',
@@ -251,11 +275,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Access Control',
     subtopic: 'Privileged Access Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privileged Access Management (PAM) controls should include all of the following EXCEPT:',
     options: [
       'Session recording for administrative activities',
@@ -274,11 +300,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Privacy by Design',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "privacy by design" principle requires that:',
     options: [
       'Privacy settings are configured only after a data breach occurs',
@@ -293,11 +321,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Data Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of data classification is to:',
     options: [
       'Eliminate the need for access controls',
@@ -316,11 +346,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Deployment Models',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A hybrid cloud deployment model combines:',
     options: [
       'Two or more private clouds',
@@ -335,11 +367,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Digital Twins',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In the context of enterprise systems, a digital twin is:',
     options: [
       'A backup copy of a database',
@@ -358,11 +392,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Operations',
     subtopic: 'SIEM',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Security Information and Event Management (SIEM) system primarily provides:',
     options: [
       'Antivirus scanning for all endpoints',
@@ -377,11 +413,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Operations',
     subtopic: 'Vulnerability Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An organization\'s vulnerability management program should include:',
     options: [
       'Scanning for vulnerabilities once per year',
@@ -400,11 +438,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-processing',
     topic: 'System Processing Controls',
     subtopic: 'Input Controls',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a detective input control?',
     options: [
       'Data entry field validation (e.g., numeric-only fields)',
@@ -419,11 +459,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-processing',
     topic: 'System Processing Controls',
     subtopic: 'Processing Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A hash total is different from a financial total because:',
     options: [
       'Hash totals are always larger numbers',
@@ -442,11 +484,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-risk',
     topic: 'IT Risk Management',
     subtopic: 'Risk Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In IT risk management, residual risk is defined as:',
     options: [
       'The total risk before any controls are applied',
@@ -461,11 +505,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-risk',
     topic: 'IT Risk Management',
     subtopic: 'Risk Treatment',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The four fundamental risk treatment options are:',
     options: [
       'Accept, reject, delay, and eliminate',
@@ -484,11 +530,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-digital',
     topic: 'Digital Transformation',
     subtopic: 'ERP Systems',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key audit consideration for enterprise resource planning (ERP) systems is:',
     options: [
       'ERP systems eliminate the need for internal controls',
@@ -503,11 +551,13 @@ export const ISC_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'isc-d2-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-digital',
     topic: 'Digital Transformation',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating controls over Application Programming Interfaces (APIs) used for financial data exchange, an auditor should verify:',
     options: [
       'That APIs use only GET requests',

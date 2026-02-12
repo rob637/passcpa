@@ -10,11 +10,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Ratio Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has a current ratio of 2.5 and a quick ratio of 1.2. If current liabilities are $400,000, what is the approximate value of inventory?',
     options: [
       '$280,000',
@@ -29,11 +31,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial-analysis',
     topic: 'Financial Analysis',
     subtopic: 'DuPont Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using the DuPont identity, if a company has a net profit margin of 8%, asset turnover of 1.5, and equity multiplier of 2.0, what is the Return on Equity (ROE)?',
     options: [
       '12%',
@@ -48,11 +52,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Flexible Budgets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A flexible budget differs from a static budget in that it:',
     options: [
       'Uses only fixed costs',
@@ -67,11 +73,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-variance',
     topic: 'Variance Analysis',
     subtopic: 'Material Variances',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Standard: 2 lbs @ $5/lb per unit. Actual: 2,100 lbs purchased and used @ $5.20/lb for 1,000 units. What is the material price variance?',
     options: [
       '$420 Unfavorable',
@@ -86,11 +94,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-variance',
     topic: 'Variance Analysis',
     subtopic: 'Labor Variances',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Standard: 3 hours @ $20/hr per unit. Actual: 2,800 hours @ $21/hr for 1,000 units. What is the labor efficiency variance?',
     options: [
       '$4,000 Favorable',
@@ -105,11 +115,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-cost-behavior',
     topic: 'Cost Behavior',
     subtopic: 'High-Low Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Using the high-low method with data: High (10,000 units, $75,000 cost) and Low (6,000 units, $51,000 cost), what is the variable cost per unit?',
     options: [
       '$5.00',
@@ -124,11 +136,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-cvp',
     topic: 'CVP Analysis',
     subtopic: 'Breakeven',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Fixed costs are $180,000, selling price is $45, and variable cost is $27 per unit. What is the breakeven point in units?',
     options: [
       '4,000 units',
@@ -143,11 +157,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-cvp',
     topic: 'CVP Analysis',
     subtopic: 'Target Profit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Fixed costs $200,000, CM per unit $25. How many units must be sold to achieve an after-tax profit of $120,000 if the tax rate is 40%?',
     options: [
       '12,800 units',
@@ -162,11 +178,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-decision-analysis',
     topic: 'Decision Analysis',
     subtopic: 'Make or Buy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Currently making 10,000 units with: DM $15, DL $10, Variable OH $5, Fixed OH $8 (30% avoidable). Buy price $32. What is the cost advantage of making?',
     options: [
       '$36,000 advantage of making',
@@ -181,11 +199,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-decision-analysis',
     topic: 'Decision Analysis',
     subtopic: 'Special Orders',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Regular price $50, variable cost $30. Special order for 5,000 units at $35. Capacity available. Should the order be accepted?',
     options: [
       'Yes, because contribution margin is positive',
@@ -203,11 +223,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-011',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the acquisition method for business combinations, which is correct regarding goodwill?',
     options: [
       'Goodwill is amortized over 40 years',
@@ -222,11 +244,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-012',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-consolidations',
     topic: 'Consolidations',
     subtopic: 'Intercompany Eliminations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent sold inventory to Subsidiary (downstream sale) for $100,000 that cost $70,000. At year-end, 40% remains unsold. What is the unrealized profit to eliminate?',
     options: [
       '$30,000',
@@ -241,11 +265,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-013',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-consolidations',
     topic: 'Consolidations',
     subtopic: 'Noncontrolling Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent owns 80% of Subsidiary. Subsidiary has net income of $100,000. How much net income is attributed to noncontrolling interest?',
     options: [
       '$80,000',
@@ -260,11 +286,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-014',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Fair Value Hedge',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a fair value hedge, changes in the fair value of the derivative are:',
     options: [
       'Recorded in OCI until the hedged item is sold',
@@ -279,11 +307,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-015',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Cash Flow Hedge',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The effective portion of changes in fair value of a cash flow hedge is recorded in:',
     options: [
       'Net income immediately',
@@ -298,11 +328,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-016',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-foreign-currency',
     topic: 'Foreign Currency',
     subtopic: 'Functional Currency',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A foreign subsidiary\'s functional currency is the local currency. Translation of the subsidiary\'s financial statements to the parent\'s currency results in:',
     options: [
       'All translation adjustments in net income',
@@ -317,11 +349,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-017',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-segment',
     topic: 'Segment Reporting',
     subtopic: 'Quantitative Thresholds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A segment is reportable if it meets any of the following tests EXCEPT:',
     options: [
       'Revenue ≥ 10% of combined revenue of all segments',
@@ -336,11 +370,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-018',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-interim',
     topic: 'Interim Reporting',
     subtopic: 'Integral View',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the integral approach to interim reporting:',
     options: [
       'Each interim period is a standalone reporting period',
@@ -355,11 +391,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-019',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-financial-instruments',
     topic: 'Financial Instruments',
     subtopic: 'CECL',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the Current Expected Credit Loss (CECL) model, the allowance for credit losses is based on:',
     options: [
       'Only losses that are probable',
@@ -374,11 +412,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-020',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-stock-compensation',
     topic: 'Stock Compensation',
     subtopic: 'Fair Value',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The fair value of stock options granted to employees is typically measured using:',
     options: [
       'Intrinsic value at grant date',
@@ -394,11 +434,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-021',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-capital-budgeting',
     topic: 'Capital Budgeting',
     subtopic: 'NPV',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Project A: Investment $100,000, annual cash flows $35,000 for 4 years. At 10% discount rate, what is approximately the NPV?',
     options: [
       '$10,945',
@@ -413,11 +455,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-022',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-capital-budgeting',
     topic: 'Capital Budgeting',
     subtopic: 'IRR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal rate of return (IRR) is the discount rate at which:',
     options: [
       'Net present value equals zero',
@@ -432,11 +476,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-023',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-leases',
     topic: 'Leases',
     subtopic: 'Lessee Classification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 842, a lessee classifies a lease as a finance lease if any of the following criteria are met EXCEPT:',
     options: [
       'Lease term is ≥ 75% of asset\'s remaining economic life',
@@ -451,11 +497,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-024',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Performance Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 606, a good or service is "distinct" if:',
     options: [
       'It is separately invoiced',
@@ -470,11 +518,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-025',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-transfer-pricing',
     topic: 'Transfer Pricing',
     subtopic: 'Methods',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which transfer pricing method uses an arm\'s length price based on comparable uncontrolled transactions?',
     options: [
       'Cost plus method',
@@ -489,11 +539,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-026',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-income-taxes',
     topic: 'Income Taxes',
     subtopic: 'Deferred Taxes',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has taxable temporary differences of $500,000 and a 21% tax rate. The deferred tax liability is:',
     options: [
       '$500,000',
@@ -508,11 +560,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-027',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Activity-based costing differs from traditional costing by:',
     options: [
       'Using only direct labor as the allocation base',
@@ -527,11 +581,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-028',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-cost-accounting',
     topic: 'Cost Accounting',
     subtopic: 'Joint Products',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Joint costs are allocated to joint products using all of the following methods EXCEPT:',
     options: [
       'Sales value at split-off method',
@@ -546,11 +602,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-029',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-fair-value',
     topic: 'Fair Value',
     subtopic: 'Hierarchy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Fair value measurements using inputs that are observable but require adjustment are classified as:',
     options: [
       'Level 1',
@@ -565,11 +623,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-030',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-forecasting',
     topic: 'Forecasting',
     subtopic: 'Regression Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In regression analysis, an R-squared of 0.85 indicates that:',
     options: [
       '85% of the variation in the dependent variable is explained by the independent variable(s)',
@@ -584,11 +644,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-031',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Diluted EPS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When computing diluted EPS, convertible bonds are included using:',
     options: [
       'Only the shares that would be issued upon conversion',
@@ -603,11 +665,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-032',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-working-capital',
     topic: 'Working Capital',
     subtopic: 'Cash Conversion Cycle',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has days inventory outstanding of 45, days sales outstanding of 30, and days payable outstanding of 25. What is the cash conversion cycle?',
     options: [
       '100 days',
@@ -622,11 +686,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-033',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-pension',
     topic: 'Pensions',
     subtopic: 'Pension Expense',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which component is NOT part of net pension cost under ASC 715?',
     options: [
       'Service cost',
@@ -641,11 +707,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-034',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-responsibility',
     topic: 'Responsibility Accounting',
     subtopic: 'ROI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A division has operating income of $400,000 and average operating assets of $2,000,000. What is the Return on Investment (ROI)?',
     options: [
       '5%',
@@ -660,11 +728,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-035',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-responsibility',
     topic: 'Responsibility Accounting',
     subtopic: 'Residual Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A division has operating income of $500,000, operating assets of $4,000,000, and required rate of return of 10%. What is residual income?',
     options: [
       '$100,000',
@@ -679,11 +749,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-036',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-statement-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Indirect Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the indirect method, depreciation expense is:',
     options: [
       'Subtracted from net income',
@@ -698,11 +770,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-037',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-process-costing',
     topic: 'Process Costing',
     subtopic: 'Equivalent Units',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Beginning WIP: 10,000 units (40% complete). Started: 50,000 units. Completed and transferred: 45,000 units. Ending WIP: 15,000 units (60% complete). What are equivalent units for conversion using FIFO?',
     options: [
       '45,000',
@@ -717,11 +791,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-038',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-contingencies',
     topic: 'Contingencies',
     subtopic: 'Loss Contingencies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A loss contingency is accrued when it is:',
     options: [
       'Reasonably possible and estimable',
@@ -736,11 +812,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-039',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-wacc',
     topic: 'Cost of Capital',
     subtopic: 'WACC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has 40% debt at 6% interest (35% tax rate) and 60% equity with 12% cost. What is the WACC?',
     options: [
       '7.56%',
@@ -755,11 +833,13 @@ export const BAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'bar-wc-040',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-discontinued-ops',
     topic: 'Discontinued Operations',
     subtopic: 'Presentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Discontinued operations are reported:',
     options: [
       'As part of income from continuing operations',

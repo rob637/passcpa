@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'far-wc-063',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-cash-flow',
     topic: 'Statement of Cash Flows',
     subtopic: 'Direct Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sales revenue is $800,000. Opening A/R is $60,000 and closing A/R is $75,000. What is cash collected from customers under the direct method?',
     options: [
       '$800,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'far-wc-064',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Investor Co. acquires 30% of Investee for $1,000,000. Investee\'s book value is $2,500,000 at acquisition. The excess over book value is attributable to equipment with a 10-year remaining life. In Year 1, Investee reports income of $400,000 and pays dividends of $100,000. What is Investor\'s Year 1 investment income?',
     options: [
       '$120,000',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'far-wc-065',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Fair Value Hedges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company uses an interest rate swap designated as a fair value hedge of fixed-rate debt. The swap increases in value by $50,000, and the debt\'s fair value decreases by $48,000. What is the net income effect?',
     options: [
       '$0 - perfectly effective hedge',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'far-wc-066',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-governmental',
     topic: 'Governmental Accounting',
     subtopic: 'Interfund Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general fund provides a loan to the water utility enterprise fund. How should this be reported?',
     options: [
       'As a transfer out in the general fund',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'aud-wc-063',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Written Representations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Management\'s written representation letter is dated:',
     options: [
       'The date of the auditor\'s report',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'aud-wc-064',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Inherent Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which factor would DECREASE inherent risk for the accounts receivable balance?',
     options: [
       'High volume of year-end sales transactions',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'aud-wc-065',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Other-Matter Paragraphs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor adds an other-matter paragraph to describe a matter not presented in the financial statements that is relevant to users\' understanding. This is most likely used when:',
     options: [
       'Going concern uncertainty exists',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'aud-wc-066',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Control Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor plans to rely on controls and sets planned control reliance at 90%. After testing, the auditor concludes controls are operating effectively. How does this affect substantive testing?',
     options: [
       'Substantive testing can be eliminated',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'reg-wc-063',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Education Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Morgan pays $8,000 in qualified higher education expenses using $529 plan distributions. The $529 distribution includes $2,000 of earnings. What amount is taxable to Morgan?',
     options: [
       '$0',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'reg-wc-064',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation accumulates earnings beyond reasonable business needs. The accumulated earnings tax is:',
     options: [
       '15% of accumulated taxable income',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'reg-wc-065',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Bankruptcy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Chapter 7 bankruptcy, which of the following claims has the HIGHEST priority?',
     options: [
       'Secured claims',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'reg-wc-066',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer\'s building (basis $200,000) is destroyed by fire. Insurance proceeds are $350,000. The taxpayer purchases a replacement building for $320,000 within the required period. What gain is recognized?',
     options: [
       '$0',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'bar-wc-067',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Return on Assets',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has net income of $150,000 and average total assets of $1,000,000. Interest expense is $50,000 and the tax rate is 25%. What is the return on assets (basic calculation)?',
     options: [
       '15%',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'bar-wc-068',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Internal Rate of Return',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project has an initial investment of $100,000 and generates cash flows of $40,000 for each of the next 3 years. Which statement about the IRR is correct?',
     options: [
       'IRR is less than 10% because total returns are only $120,000',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'bar-wc-069',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Fair Value Measurement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 820, which fair value input is considered Level 2?',
     options: [
       'Quoted prices for identical assets in active markets',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'bar-wc-070',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Days Sales Outstanding',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has average accounts receivable of $150,000 and annual credit sales of $1,800,000. What is the days sales outstanding (DSO)?',
     options: [
       '30 days',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'bar-wc-071',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-budgeting',
     topic: 'Budgeting and Forecasting',
     subtopic: 'Master Budget',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In preparing a master budget, which budget is typically prepared FIRST?',
     options: [
       'Production budget',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'isc-wc-063',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Penetration Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A penetration test where testers have no prior knowledge of systems, networks, or applications is called:',
     options: [
       'White box testing',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'isc-wc-064',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'SDLC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the Systems Development Life Cycle (SDLC), user acceptance testing occurs during which phase?',
     options: [
       'Planning/feasibility',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'isc-wc-065',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Database Design',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Normalization to third normal form (3NF) eliminates:',
     options: [
       'Repeating groups only',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'isc-wc-066',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-audit',
     topic: 'Business Continuity',
     subtopic: 'Risk Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Business Impact Analysis (BIA) is conducted to:',
     options: [
       'Identify potential threats to the organization',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'tcp-wc-063',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Filing Status',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer\'s spouse died in the current year. The taxpayer has a dependent child living at home. What is the taxpayer\'s most favorable filing status for the current year?',
     options: [
       'Single',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'tcp-wc-064',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Guaranteed Payments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Partner A receives a guaranteed payment of $60,000 for services. The partnership reports ordinary income of $200,000 (before deducting the guaranteed payment). Partner A has a 25% interest. What is Partner A\'s total ordinary income from the partnership?',
     options: [
       '$60,000',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'tcp-wc-065',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Depreciation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A business purchases machinery for $100,000 on January 1. Under MACRS, 7-year property uses the 200% declining balance method. What is the first-year depreciation (full year, ignoring bonus depreciation and Section 179)?',
     options: [
       '$20,000',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
   {
     id: 'tcp-wc-066',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Home Sale Exclusion',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A married couple sells their primary residence for a $600,000 gain. They have owned and lived in the home for 4 years. What amount of gain is taxable?',
     options: [
       '$0',

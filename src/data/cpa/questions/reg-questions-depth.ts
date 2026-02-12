@@ -11,11 +11,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations — Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general statute of limitations for the IRS to assess additional tax is:',
     options: [
       '1 year from the filing date',
@@ -30,11 +32,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Penalties — Accuracy Related',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accuracy-related penalty under IRC §6662 for a substantial understatement of income tax is:',
     options: [
       '10% of the underpayment',
@@ -49,11 +53,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Fraud Penalty',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The civil fraud penalty under IRC §6663 is:',
     options: [
       '20% of the underpayment',
@@ -68,11 +74,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'IRS Audit Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If a taxpayer disagrees with the IRS\'s proposed adjustments after an audit, the first appeal option before going to court is:',
     options: [
       'File a lawsuit in District Court immediately',
@@ -87,11 +95,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Tax Court vs District Court',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key advantage of filing a petition in US Tax Court is:',
     options: [
       'A jury trial is available',
@@ -106,11 +116,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Estimated Tax Payments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To avoid the estimated tax penalty, individual taxpayers generally must pay at least:',
     options: [
       '80% of the current year\'s tax liability through withholding and estimated payments',
@@ -125,11 +137,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Failure to File vs Failure to Pay',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The penalty for failure to file a tax return by the due date (without extension) is:',
     options: [
       '0.5% per month of the unpaid tax',
@@ -148,11 +162,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 — Due Diligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Treasury Circular 230, a tax practitioner must exercise due diligence in all of the following EXCEPT:',
     options: [
       'Preparing tax returns and documents',
@@ -167,11 +183,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 — Competence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, if a practitioner discovers an error on a client\'s previously filed return, the practitioner must:',
     options: [
       'File an amended return without the client\'s permission',
@@ -186,11 +204,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'AICPA SSTS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the AICPA Statements on Standards for Tax Services (SSTS), a CPA may sign a return that takes a tax position if:',
     options: [
       'The position has a 100% chance of being sustained',
@@ -209,11 +229,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Contract Formation — Consideration',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For a valid contract, consideration must be:',
     options: [
       'Equal in value between both parties',
@@ -228,11 +250,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Statute of Frauds requires a written agreement for all of the following EXCEPT:',
     options: [
       'Sale of goods for $500 or more under UCC',
@@ -247,11 +271,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Parol Evidence Rule',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The parol evidence rule prevents parties from introducing:',
     options: [
       'Any evidence in a lawsuit',
@@ -270,11 +296,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-ucc',
     topic: 'Business Law',
     subtopic: 'UCC — Risk of Loss',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under UCC Article 2, when goods are shipped FOB shipping point (seller\'s location), risk of loss passes to the buyer:',
     options: [
       'When the buyer inspects the goods',
@@ -289,11 +317,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-ucc',
     topic: 'Business Law',
     subtopic: 'UCC — Buyer Remedies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under UCC Article 2, if a seller delivers nonconforming goods, the buyer may:',
     options: [
       'Only accept the entire shipment without recourse',
@@ -312,11 +342,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange — Boot',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a §1031 like-kind exchange, if the taxpayer receives $20,000 cash (boot) in addition to like-kind property, the gain recognized is:',
     options: [
       'Zero — all gain is deferred',
@@ -331,11 +363,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the installment method (IRC §453), the gross profit percentage is calculated as:',
     options: [
       'Selling price / Cost',
@@ -354,11 +388,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-018',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax (§531) is imposed on C corporations that:',
     options: [
       'Distribute excessive dividends',
@@ -373,11 +409,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-019',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a partnership\'s special allocation of income or deduction to be respected for tax purposes, it must:',
     options: [
       'Be approved by the IRS in advance',
@@ -396,11 +434,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-020',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activity Loss Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the passive activity loss rules (§469), a rental real estate activity loss can be deducted up to $25,000 if:',
     options: [
       'The taxpayer has any rental income',
@@ -415,11 +455,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-021',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Net Investment Income Tax (NIIT) under IRC §1411 imposes a tax of:',
     options: [
       '3.8% on the lesser of net investment income or the amount by which MAGI exceeds the threshold ($200,000 single / $250,000 MFJ)',
@@ -434,11 +476,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-022',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Alternative Minimum Tax (AMT) is triggered when:',
     options: [
       'Taxable income exceeds $1 million',
@@ -457,11 +501,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-023',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-secured',
     topic: 'Business Law',
     subtopic: 'Secured Transactions — Perfection',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under UCC Article 9, the most common method for perfecting a security interest in goods is:',
     options: [
       'Oral agreement between the parties',
@@ -476,11 +522,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-024',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Bankruptcy — Chapter 7 vs 11',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Chapter 7 of the US Bankruptcy Code provides for:',
     options: [
       'Reorganization of the debtor\'s business',
@@ -495,11 +543,13 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'reg-d1-025',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Taxpayer Rights — Collection',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The IRS generally has how many years from the date of tax assessment to collect a tax debt?',
     options: [
       '3 years',

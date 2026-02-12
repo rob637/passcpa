@@ -9,11 +9,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Threats to Independence',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the AICPA conceptual framework for independence, which of the following is a category of threat to independence?',
     options: [
       'Timing threat',
@@ -28,11 +30,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-independence',
     topic: 'Ethics and Independence',
     subtopic: 'Direct Financial Interest',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A CPA who has a direct financial interest in an audit client (e.g., owns stock in the client):',
     options: [
       'May still perform the audit if the amount is small',
@@ -47,11 +51,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-independence',
     topic: 'Ethics and Independence',
     subtopic: 'Immediate Family — Employment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If a covered member\'s immediate family member (spouse) is employed by the audit client in a key position (e.g., CFO), the CPA:',
     options: [
       'May still be independent if a safeguard is applied',
@@ -68,11 +74,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Professional Skepticism',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Professional skepticism in auditing means:',
     options: [
       'Assuming management is always dishonest',
@@ -89,11 +97,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Due Professional Care',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Due professional care requires the auditor to:',
     options: [
       'Guarantee the absence of material misstatement',
@@ -110,11 +120,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Other Information in Annual Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the audited financial statements are included in a document (e.g., annual report) containing other information, the auditor should:',
     options: [
       'Audit the other information as well',
@@ -131,11 +143,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Reporting on Condensed Financial Statements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the auditor reports on condensed financial statements derived from audited financial statements (AU-C §810):',
     options: [
       'The condensed statements are considered audited',
@@ -152,11 +166,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'Accounting and Review Services',
     subtopic: 'Compilation vs. Review — Key Differences',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The most fundamental difference between a compilation and a review under SSARS is:',
     options: [
       'Compilations take longer than reviews',
@@ -173,11 +189,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-single',
     topic: 'Single Audit',
     subtopic: 'Questioned Costs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a single audit, "questioned costs" are reported when:',
     options: [
       'Any federal spending occurs',
@@ -194,11 +212,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Contingent Fees',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the AICPA Code, a CPA may NOT charge a contingent fee for:',
     options: [
       'Consulting services for a non-audit client',
@@ -215,11 +235,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-qm',
     topic: 'Ethics and Independence',
     subtopic: 'Client Acceptance and Continuance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before accepting a new audit client, a CPA firm should:',
     options: [
       'Only consider the fee',
@@ -236,11 +258,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Audit Procedures — Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The audit procedure of "recalculation" involves:',
     options: [
       'Physically examining an asset',
@@ -257,11 +281,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Change in Accounting Principle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a client makes a justified change in accounting principle with proper disclosure, the auditor should:',
     options: [
       'Issue a qualified opinion',
@@ -278,11 +304,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-international',
     topic: 'Accounting and Review Services',
     subtopic: 'ISA vs. GAAS Differences',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A key difference between International Standards on Auditing (ISAs) and US GAAS is that ISAs:',
     options: [
       'Are identical to GAAS in every respect',
@@ -299,11 +327,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-prof',
     topic: 'Professional Responsibilities',
     subtopic: 'Communication of Internal Control Deficiencies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under GAAS, the auditor must communicate significant deficiencies and material weaknesses in internal control to:',
     options: [
       'The local newspaper',
@@ -320,11 +350,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-standards',
     topic: 'Ethics and Independence',
     subtopic: 'Generally Accepted Auditing Standards',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'GAAS are organized into which three groups of standards?',
     options: [
       'Planning, fieldwork, closing',
@@ -341,11 +373,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Dual Dating',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Dual dating the auditor\'s report means:',
     options: [
       'Using two different report templates',
@@ -362,11 +396,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'Independence — Government Auditors',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Government Auditing Standards, independence for government auditors requires:',
     options: [
       'Only independence in appearance',
@@ -383,11 +419,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Tests of Controls vs. Substantive Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Tests of controls are designed to evaluate:',
     options: [
       'The dollar amount of misstatements in account balances',
@@ -404,11 +442,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Unmodified Report Elements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The standard unmodified audit report (AU-C §700) includes all of the following sections EXCEPT:',
     options: [
       'Opinion paragraph',
@@ -425,11 +465,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-021',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Professional Competence — General Standard',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'If a CPA is asked to accept an engagement in an industry the CPA is not familiar with, the CPA should:',
     options: [
       'Always decline the engagement',
@@ -446,11 +488,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-022',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'Accounting and Review Services',
     subtopic: 'Going Concern in a Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a review engagement under SSARS, if the CPA becomes aware of substantial doubt about the entity\'s ability to continue as a going concern:',
     options: [
       'The CPA should ignore it — going concern is only for audits',
@@ -467,11 +511,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-023',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-sox',
     topic: 'Professional Responsibilities',
     subtopic: 'SOX — Whistleblower Protections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Sarbanes-Oxley Act provides whistleblower protections that:',
     options: [
       'Only protect external auditors',
@@ -488,11 +534,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-024',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Alert — Restricted Use',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor\'s report that includes an "alert that restricts the use of the report" is used when:',
     options: [
       'The financial statements are for general public use',
@@ -509,11 +557,13 @@ export const AUD_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'aud-d4-025',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Scope and Nature of Services',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the AICPA Code of Professional Conduct, the "scope and nature of services" principle requires that:',
     options: [
       'CPAs can perform any service without restriction',

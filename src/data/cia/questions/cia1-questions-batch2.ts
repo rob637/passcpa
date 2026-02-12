@@ -19,10 +19,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   
   
   {
-    id: 'CIA1-072',
+    id: 'cia1-072',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor is asked to review policies before implementation rather than after. This service is best described as:',
     options: [
       'Assurance service',
@@ -33,13 +35,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Reviewing policies before implementation is an advisory activity with scope agreed upon with the client, which is the definition of a consulting service. It adds value without the three-party structure of assurance services.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Types of Services'
+    subtopic: 'Types of Services',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-073',
+    id: 'cia1-073',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to the IIA Code of Ethics, internal auditors shall be prudent in the use and protection of information acquired in the course of their duties. This relates to which principle?',
     options: [
       'Integrity',
@@ -50,14 +55,17 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Confidentiality requires internal auditors to be prudent in the use and protection of information and not use information for personal gain or in ways contrary to law or detrimental to the organization.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-075',
+    id: 'cia1-075',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which statement best describes the difference between the Mission of Internal Audit and the Definition of Internal Auditing?',
     options: [
       'There is no difference; they are the same',
@@ -68,13 +76,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The Mission is an aspirational statement about the purpose of internal audit (to enhance and protect organizational value). The Definition of Internal Auditing is the formal, mandatory statement defining what internal auditing is as a profession.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Mission and Definition'
+    subtopic: 'Mission and Definition',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-076',
+    id: 'cia1-076',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During an audit, the CAE receives a request from management to immediately cease work on a particular area. The CAE should:',
     options: [
       'Comply immediately since management directs administrative activities',
@@ -85,13 +96,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The CAE should evaluate whether this represents a scope limitation. Standard 1110 indicates that the CAE should communicate with the board about scope limitations. The matter should be documented regardless of the outcome.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Independence and Authority'
+    subtopic: 'Independence and Authority',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-077',
+    id: 'cia1-077',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which Core Principle emphasizes that internal audit should focus on future risks and not just current issues?',
     options: [
       'Provides risk-based assurance',
@@ -102,13 +116,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The Core Principle "Is insightful, proactive, and future-focused" emphasizes that internal auditors should consider future impact and emerging issues, not just historical or current matters.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Core Principles'
+    subtopic: 'Core Principles',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-078',
+    id: 'cia1-078',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The internal audit activity should be positioned to:',
     options: [
       'Report directly to operations management',
@@ -119,13 +136,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The internal audit activity must be positioned within the organization to allow independence. This means the CAE reports functionally to the board and has sufficient organizational status to accomplish objectives.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Organizational Positioning'
+    subtopic: 'Organizational Positioning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-079',
+    id: 'cia1-079',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An internal auditor conducts research and training but never audits areas where they previously worked. This principle BEST supports:',
     options: [
       'Proficiency',
@@ -136,13 +156,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Avoiding auditing areas where one previously worked supports individual objectivity by preventing conflicts of interest and bias from prior responsibilities in that area.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Individual Objectivity'
+    subtopic: 'Individual Objectivity',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-080',
+    id: 'cia1-080',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'According to Standard 1000, the internal audit charter must include all of the following EXCEPT:',
     options: [
       'The purpose of the internal audit activity',
@@ -153,7 +176,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The charter defines purpose, authority, and responsibility (Standard 1000). It does not include specific audit procedures, which are determined at the engagement level based on risk assessment and engagement objectives.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Internal Audit Charter'
+    subtopic: 'Internal Audit Charter',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -161,10 +185,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-081',
+    id: 'cia1-081',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An internal auditor who recently transferred from the treasury department is assigned to audit treasury operations. Which statement is most appropriate?',
     options: [
       'The auditor should proceed since they have relevant expertise',
@@ -175,13 +201,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1130 indicates that if objectivity is impaired in fact or appearance, the details must be disclosed. Having recently worked in treasury creates a potential impairment that should be disclosed to appropriate parties.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Impairment'
+    subtopic: 'Impairment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-082',
+    id: 'cia1-082',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Functional reporting of the CAE to the board includes all of the following EXCEPT:',
     options: [
       'Approving the internal audit charter',
@@ -192,13 +221,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Day-to-day operations are an administrative matter, handled through reporting to senior management (e.g., CEO). Functional reporting to the board includes approving charter, plan, budget, and CAE appointment/removal.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Organizational Independence'
+    subtopic: 'Organizational Independence',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-083',
+    id: 'cia1-083',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The CAE has been asked to assume responsibility for the compliance function in addition to internal audit. According to the Standards, the CAE should:',
     options: [
       'Decline because this impairs independence',
@@ -209,13 +241,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1112 allows the CAE to have roles beyond internal auditing but requires safeguards to limit impairments. The CAE should accept with appropriate safeguards (like independent review of compliance) and disclose to the board.',
     topic: 'Independence and Objectivity',
-    subtopic: 'CAE Roles Beyond IA'
+    subtopic: 'CAE Roles Beyond IA',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-084',
+    id: 'cia1-084',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An internal auditor receives a holiday gift valued at $500 from a department that was recently audited. The auditor should:',
     options: [
       'Accept the gift as it is customary during holidays',
@@ -226,13 +261,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The Code of Ethics requires internal auditors to not accept anything that may impair or appear to impair professional judgment. A $500 gift could create the appearance of impairment and should be declined or disclosed.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Conflict of Interest'
+    subtopic: 'Conflict of Interest',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-085',
+    id: 'cia1-085',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following best distinguishes independence from objectivity?',
     options: [
       'Independence is individual; objectivity is organizational',
@@ -243,13 +281,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Independence refers to the freedom from conditions that threaten the internal audit ACTIVITY (organizational). Objectivity is an unbiased mental attitude of the INDIVIDUAL auditor. This distinction is critical to understand.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Independence vs Objectivity'
+    subtopic: 'Independence vs Objectivity',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-086',
+    id: 'cia1-086',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'According to Standard 1111, the CAE must:',
     options: [
       'Report all findings directly to external auditors',
@@ -260,13 +301,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1111 requires direct interaction between the CAE and the board. This supports independence by ensuring the CAE can communicate without filtering through management.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Direct Interaction with Board'
+    subtopic: 'Direct Interaction with Board',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-087',
+    id: 'cia1-087',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Internal auditors may provide assurance services where they previously performed consulting services if:',
     options: [
       'Never - this is always prohibited',
@@ -277,13 +321,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Internal auditors may provide assurance services in an area where they previously provided consulting if the nature of the consulting did not impair their objectivity. The key consideration is whether objectivity is actually impaired.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Consulting and Assurance'
+    subtopic: 'Consulting and Assurance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-088',
+    id: 'cia1-088',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If resource limitations prevent the internal audit activity from completing the approved audit plan, the CAE should:',
     options: [
       'Simply skip lower-priority audits',
@@ -294,13 +341,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2020 requires the CAE to communicate the impact of resource limitations to senior management and the board. This allows appropriate oversight and informed decision-making about audit coverage.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Resource Limitations'
+    subtopic: 'Resource Limitations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-089',
+    id: 'cia1-089',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An impairment to objectivity includes:',
     options: [
       'Auditing an area where the auditor has never worked',
@@ -311,13 +361,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Restrictions on access to records, personnel, or properties represent an impairment that must be disclosed (Standard 1130). The other options do not represent impairments to objectivity.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Impairment'
+    subtopic: 'Impairment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-090',
+    id: 'cia1-090',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The CAE must confirm organizational independence to the board at least:',
     options: [
       'Monthly',
@@ -328,7 +381,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1110 requires the CAE to confirm the organizational independence of the internal audit activity to the board at least annually.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Organizational Independence'
+    subtopic: 'Organizational Independence',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -336,10 +390,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-091',
+    id: 'cia1-091',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to Standard 1210, internal auditors must possess knowledge, skills, and competencies. If an engagement requires expertise the internal audit activity does not possess, the CAE should:',
     options: [
       'Decline the engagement',
@@ -350,13 +406,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1210 states that the internal audit activity collectively must possess or obtain the knowledge, skills, and competencies needed. If expertise is lacking, the CAE should obtain competent advice and assistance.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Proficiency'
+    subtopic: 'Proficiency',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-092',
+    id: 'cia1-092',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following best describes due professional care?',
     options: [
       'Absolute assurance that all errors and fraud will be detected',
@@ -367,13 +426,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1220 defines due professional care as the care and skill expected of a reasonably prudent and competent internal auditor. It explicitly states that due professional care does not imply infallibility.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-093',
+    id: 'cia1-093',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Standard 1210.A1 requires internal auditors to have sufficient knowledge to evaluate the risk of fraud and:',
     options: [
       'Detect all instances of fraud',
@@ -384,13 +446,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1210.A1 requires internal auditors to have sufficient knowledge to evaluate fraud risk AND the manner in which it is managed by the organization. It does not require detecting all fraud or conducting investigations.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Fraud Knowledge'
+    subtopic: 'Fraud Knowledge',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-094',
+    id: 'cia1-094',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Continuing professional development is:',
     options: [
       'Recommended but not required',
@@ -401,13 +466,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1230 requires internal auditors to enhance their knowledge, skills, and competencies through continuing professional development. This is mandatory, not optional.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'CPD'
+    subtopic: 'CPD',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-095',
+    id: 'cia1-095',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When exercising due professional care, internal auditors should consider all of the following EXCEPT:',
     options: [
       'Extent of work needed to achieve engagement objectives',
@@ -418,13 +486,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Due professional care does not guarantee all risks will be identified. Internal auditors consider extent of work, complexity, materiality, probability of errors, and cost-benefit ratios when exercising due care.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-096',
+    id: 'cia1-096',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor without IT expertise is assigned to audit cybersecurity. The auditor should:',
     options: [
       'Decline the assignment',
@@ -435,13 +506,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The auditor should seek assistance from someone with IT expertise or obtain training. Standard 1210 requires having the necessary competencies, but allows obtaining them through assistance if the auditor lacks them personally.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Proficiency'
+    subtopic: 'Proficiency',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-097',
+    id: 'cia1-097',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Professional certifications such as CIA demonstrate:',
     options: [
       'Complete mastery of all audit topics',
@@ -452,13 +526,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Professional certifications like CIA demonstrate proficiency and commitment to the profession. They do not guarantee complete mastery of all topics or ensure competence in every specific area.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Professional Certifications'
+    subtopic: 'Professional Certifications',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-098',
+    id: 'cia1-098',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The probability of significant errors, fraud, or noncompliance should be considered when:',
     options: [
       'Writing the final audit report',
@@ -469,13 +546,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1220.A1 requires internal auditors to consider the probability of significant errors, fraud, noncompliance, and other exposures when exercising due professional care.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-099',
+    id: 'cia1-099',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal auditors must have sufficient knowledge to identify indicators of fraud but are NOT expected to:',
     options: [
       'Evaluate how fraud risk is managed',
@@ -486,13 +566,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1210.A2 clarifies that internal auditors are not expected to have the expertise of those whose primary responsibility is fraud detection and investigation. They should recognize indicators but need not be fraud specialists.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Fraud Knowledge'
+    subtopic: 'Fraud Knowledge',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-100',
+    id: 'cia1-100',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT controls, internal auditors must:',
     options: [
       'Be certified in IT auditing',
@@ -503,7 +586,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1210.A3 requires internal auditors to have sufficient knowledge of key IT risks and controls and available technology-based audit techniques. Certification or prior IT management is not required.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'IT Knowledge'
+    subtopic: 'IT Knowledge',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -511,10 +595,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-101',
+    id: 'cia1-101',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Quality Assurance and Improvement Program (QAIP) must include:',
     options: [
       'Only internal assessments',
@@ -525,13 +611,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1310 requires the QAIP to include both internal assessments (ongoing monitoring and periodic self-assessments) and external assessments.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'QAIP Requirements'
+    subtopic: 'QAIP Requirements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-102',
+    id: 'cia1-102',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'External assessments of the internal audit activity must be conducted at least every:',
     options: [
       'Year',
@@ -542,13 +631,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1312 requires external assessments to be conducted at least once every five years by a qualified, independent assessor or assessment team from outside the organization.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-103',
+    id: 'cia1-103',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal assessments of the internal audit activity include:',
     options: [
       'Only ongoing monitoring',
@@ -559,13 +651,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1311 states that internal assessments must include ongoing monitoring of performance AND periodic self-assessments or assessments by others with sufficient knowledge of internal audit practices.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Internal Assessments'
+    subtopic: 'Internal Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-104',
+    id: 'cia1-104',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A self-assessment with independent external validation (SAIV) is acceptable as an external assessment if:',
     options: [
       'It is never acceptable; only full external assessments are allowed',
@@ -576,13 +671,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1312 interpretation indicates that external assessments may be accomplished through a self-assessment with independent external validation. The key is that a qualified, independent external assessor validates the results.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-105',
+    id: 'cia1-105',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE should discuss all of the following with the board regarding external assessments EXCEPT:',
     options: [
       'The form of the external assessment',
@@ -593,13 +691,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1312 requires the CAE to discuss form, frequency, and assessor qualifications/independence with the board. The specific methodology is determined by the assessor, not discussed with the board.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-106',
+    id: 'cia1-106',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Ongoing monitoring in the context of internal assessments refers to:',
     options: [
       'Annual reviews of the internal audit department',
@@ -610,14 +711,17 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Ongoing monitoring is an integral part of day-to-day supervision, review, and measurement of the internal audit activity. It uses processes and tools incorporated into routine management practices.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Internal Assessments'
+    subtopic: 'Internal Assessments',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-108',
+    id: 'cia1-108',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal audit activity may claim conformance with the Standards only if:',
     options: [
       'The CAE has CIA certification',
@@ -628,13 +732,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1321 states that claiming conformance with the Standards is appropriate only if QAIP results support this claim. The QAIP provides the evidence needed to justify conformance statements.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Conformance Statements'
+    subtopic: 'Conformance Statements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-109',
+    id: 'cia1-109',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When nonconformance with the Standards impacts the internal audit activity, the CAE must:',
     options: [
       'Immediately notify regulators',
@@ -645,13 +752,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1322 requires the CAE to disclose nonconformance and its impact to senior management and the board when nonconformance impacts the overall scope or operation of the internal audit activity.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Nonconformance'
+    subtopic: 'Nonconformance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-110',
+    id: 'cia1-110',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A qualified external assessor must demonstrate competence in:',
     options: [
       'Only the professional practice of internal auditing',
@@ -662,7 +772,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1312 interpretation states that a qualified assessor demonstrates competence in two areas: the professional practice of internal auditing AND the external assessment process.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -670,10 +781,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-111',
+    id: 'cia1-111',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to Standard 2110, the internal audit activity should assess governance processes for:',
     options: [
       'Profitability and market share',
@@ -684,13 +797,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2110 requires assessing governance for making strategic/operational decisions, overseeing risk and control, promoting ethics and values, ensuring accountability, and communicating risk/control information.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Governance'
+    subtopic: 'Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-112',
+    id: 'cia1-112',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risk management processes are effective when:',
     options: [
       'All risks are eliminated',
@@ -701,13 +817,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 2120 interpretation states risk management is effective when: objectives align with mission, significant risks are identified and assessed, appropriate risk responses align with risk appetite, and relevant risk information is communicated.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-113',
+    id: 'cia1-113',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When evaluating controls, internal audit should assess adequacy and effectiveness in achieving the organization\'s:',
     options: [
       'Profitability goals only',
@@ -718,13 +837,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2130 interpretation identifies five control objectives: achievement of strategic objectives, reliability of information, effectiveness of operations, safeguarding of assets, and compliance with laws and regulations.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Control'
+    subtopic: 'Control',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-114',
+    id: 'cia1-114',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The COSO Internal Control Framework identifies how many components of internal control?',
     options: [
       'Three',
@@ -735,13 +857,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'COSO identifies five components: Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring Activities.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Control Frameworks'
+    subtopic: 'Control Frameworks',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-115',
+    id: 'cia1-115',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The foundation of all other internal control components is the:',
     options: [
       'Control Activities',
@@ -752,13 +877,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The Control Environment is the foundation that sets the tone of the organization, including integrity, ethical values, commitment to competence, management philosophy, organizational structure, and board oversight.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Control Environment'
+    subtopic: 'Control Environment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-116',
+    id: 'cia1-116',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which element is NOT part of the fraud triangle?',
     options: [
       'Pressure/Incentive',
@@ -769,13 +897,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 3,
     explanation: 'The fraud triangle consists of Pressure/Incentive (motivation), Opportunity (ability to commit), and Rationalization (justification). Detection is not part of the fraud triangle framework.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Fraud'
+    subtopic: 'Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-117',
+    id: 'cia1-117',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Three Lines Model designates internal audit as:',
     options: [
       'First line - operational management',
@@ -786,13 +917,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The Three Lines Model positions internal audit as the third line, providing independent assurance. First line is operational management; second line is risk and compliance functions.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Three Lines Model'
+    subtopic: 'Three Lines Model',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-118',
+    id: 'cia1-118',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk appetite represents:',
     options: [
       'The level of risk that an organization is willing to accept',
@@ -803,16 +937,19 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 0,
     explanation: 'Risk appetite is the level of risk that an organization is willing to accept in pursuit of its objectives. It guides decision-making about risk responses and tolerance levels.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   
   
   
   {
-    id: 'CIA1-122',
+    id: 'cia1-122',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Inherent risk is:',
     options: [
       'Risk after all controls are applied',
@@ -823,13 +960,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Inherent risk is the risk to an entity in the absence of any actions management might take to alter the risk\'s likelihood or impact. It represents the raw or gross risk before controls.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Assessment'
+    subtopic: 'Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-123',
+    id: 'cia1-123',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Corporate governance involves:',
     options: [
       'Only financial oversight',
@@ -840,13 +980,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Governance encompasses the processes and structures implemented by the board to inform, direct, manage, and monitor activities toward achieving organizational objectives.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Corporate Governance'
+    subtopic: 'Corporate Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-124',
+    id: 'cia1-124',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of segregation of duties is to:',
     options: [
       'Reduce workload per employee',
@@ -857,13 +1000,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Segregation of duties ensures that no single individual has control over all phases of a transaction, reducing the risk of errors and fraud going undetected.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Control Activities'
+    subtopic: 'Control Activities',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-125',
+    id: 'cia1-125',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When management has implemented a control but the internal auditor believes residual risk still exceeds risk appetite, the auditor should:',
     options: [
       'Accept management\'s decision without comment',
@@ -874,14 +1020,17 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'According to Standard 2600, when the CAE concludes management has accepted risk that may be unacceptable, they must discuss with senior management. If unresolved, the matter must be communicated to the board.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Acceptance'
+    subtopic: 'Risk Acceptance',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-127',
+    id: 'cia1-127',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Risk response strategies include all of the following EXCEPT:',
     options: [
       'Accept',
@@ -892,13 +1041,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Common risk responses include Accept (tolerate the risk), Avoid (exit the activity), Mitigate/Reduce (implement controls), and Transfer/Share (insurance, outsourcing). Complete elimination of all risk is generally not achievable.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Response'
+    subtopic: 'Risk Response',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-128',
+    id: 'cia1-128',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The purpose of the internal audit activity evaluating governance is to assess whether:',
     options: [
       'The organization is profitable',
@@ -909,13 +1061,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Internal audit assesses whether governance processes promote transparency, accountability, ethical behavior, and effective oversight of risk and control. It is not about profitability or employee satisfaction.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Governance Assessment'
+    subtopic: 'Governance Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-129',
+    id: 'cia1-129',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'According to COSO, which component involves setting objectives and identifying events that may affect their achievement?',
     options: [
       'Control Environment',
@@ -926,13 +1081,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Risk Assessment involves identifying and analyzing risks to achieving objectives. It includes setting objectives and identifying events (both risks and opportunities) that may affect achievement.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'COSO Framework'
+    subtopic: 'COSO Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-130',
+    id: 'cia1-130',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Compensating controls are:',
     options: [
       'Controls that detect errors after they occur',
@@ -943,7 +1101,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Compensating controls are alternative controls that serve as substitutes when primary or direct controls cannot be used. They reduce risk to an acceptable level through different means.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Types of Controls'
+    subtopic: 'Types of Controls',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -951,10 +1110,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-131',
+    id: 'cia1-131',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit charter should be reviewed:',
     options: [
       'Only when problems arise',
@@ -965,13 +1126,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1000 requires the CAE to periodically review the internal audit charter and present it to senior management and the board for approval.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Internal Audit Charter'
+    subtopic: 'Internal Audit Charter',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-132',
+    id: 'cia1-132',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When providing consulting services, internal auditors should maintain objectivity and not assume:',
     options: [
       'Any advisory role',
@@ -982,13 +1146,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'When providing consulting services, internal auditors should maintain objectivity and not assume management responsibility. They can advise and facilitate, but decisions and implementation rest with management.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Consulting Services'
+    subtopic: 'Consulting Services',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-133',
+    id: 'cia1-133',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The rule of conduct stating that internal auditors shall "continually improve their proficiency" relates to which Code of Ethics principle?',
     options: [
       'Integrity',
@@ -999,13 +1166,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 3,
     explanation: 'The rule about continually improving proficiency and effectiveness relates to Competency. Internal auditors must apply and continuously develop their knowledge, skills, and experience.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-134',
+    id: 'cia1-134',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is NOT a Core Principle for the Professional Practice of Internal Auditing?',
     options: [
       'Demonstrates integrity',
@@ -1016,13 +1186,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Maximizing profits is not a Core Principle. The ten Core Principles include: integrity, competence, objectivity, alignment with strategies, positioning, quality, effective communication, risk-based assurance, being insightful, and promoting improvement.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Core Principles'
+    subtopic: 'Core Principles',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-135',
+    id: 'cia1-135',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Definition of Internal Auditing describes it as a "systematic, disciplined approach." This means:',
     options: [
       'Following rigid procedures without deviation',
@@ -1033,14 +1206,17 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'A systematic, disciplined approach means using a methodical, planned, and structured methodology. It requires professional judgment while following standards and established processes.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Definition of Internal Auditing'
+    subtopic: 'Definition of Internal Auditing',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-137',
+    id: 'cia1-137',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An internal auditor who violates the Code of Ethics may be subject to:',
     options: [
       'Criminal prosecution only',
@@ -1051,13 +1227,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Violations of the Code of Ethics may be subject to evaluation and administration according to disciplinary procedures that may result in disciplinary action by The IIA and/or the employing organization.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-138',
+    id: 'cia1-138',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IPPF was developed by:',
     options: [
       'The Securities and Exchange Commission',
@@ -1068,13 +1247,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The International Professional Practices Framework (IPPF) was developed by The Institute of Internal Auditors (IIA) to provide authoritative guidance for the internal audit profession.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'IPPF Framework'
+    subtopic: 'IPPF Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-139',
+    id: 'cia1-139',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Implementation Guidance in the IPPF:',
     options: [
       'Is mandatory for all internal auditors',
@@ -1085,13 +1267,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Implementation Guidance is recommended (not mandatory) guidance that assists internal auditors in applying the Standards. It addresses approach, methodologies, and considerations.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'IPPF Framework'
+    subtopic: 'IPPF Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-140',
+    id: 'cia1-140',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The internal audit charter must recognize which mandatory elements of the IPPF?',
     options: [
       'Only the Standards',
@@ -1102,7 +1287,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1010 requires the charter to recognize the mandatory nature of the Core Principles, Code of Ethics, Standards, and Definition of Internal Auditing.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Internal Audit Charter'
+    subtopic: 'Internal Audit Charter',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1110,10 +1296,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-141',
+    id: 'cia1-141',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Administrative reporting of the CAE typically includes:',
     options: [
       'Approving the internal audit charter',
@@ -1124,13 +1312,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Administrative reporting to senior management includes day-to-day operations, budget management, and human resource administration. Functional matters like charter and plan approval go to the board.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Dual Reporting'
+    subtopic: 'Dual Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-142',
+    id: 'cia1-142',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor is rotated to audit a department they managed two years ago. The most appropriate action is:',
     options: [
       'Proceed normally since two years have passed',
@@ -1141,13 +1332,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The auditor should disclose the prior management responsibility. Whether objectivity is impaired depends on various factors including the nature of former duties and time elapsed. Disclosure allows proper assessment.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Impairment'
+    subtopic: 'Impairment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-143',
+    id: 'cia1-143',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Threats to independence must be managed at which level(s)?',
     options: [
       'Only the individual auditor level',
@@ -1158,13 +1352,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1100 interpretation indicates threats to independence must be managed at the individual auditor, engagement, functional, and organizational levels.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Managing Threats'
+    subtopic: 'Managing Threats',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-144',
+    id: 'cia1-144',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following would most likely impair an internal auditor\'s objectivity?',
     options: [
       'Using computer-assisted audit techniques',
@@ -1175,13 +1372,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Having previously managed a function creates a potential impairment to objectivity due to prior responsibility for that area\'s controls and processes.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Impairment'
+    subtopic: 'Impairment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-145',
+    id: 'cia1-145',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the CAE has responsibilities beyond internal audit (e.g., compliance), appropriate safeguards include:',
     options: [
       'The CAE auditing all areas personally',
@@ -1192,7 +1392,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1112 interpretation suggests safeguards such as board oversight, periodic evaluation of reporting lines, and developing alternative processes to obtain assurance for areas of additional responsibility.',
     topic: 'Independence and Objectivity',
-    subtopic: 'CAE Roles Beyond IA'
+    subtopic: 'CAE Roles Beyond IA',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1200,10 +1401,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-146',
+    id: 'cia1-146',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Proficiency in the context of the Standards means:',
     options: [
       'Having every possible certification',
@@ -1214,13 +1417,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Proficiency refers to the knowledge, skills, and other competencies required to effectively carry out professional responsibilities. It does not require specific certifications or experience levels.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Proficiency'
+    subtopic: 'Proficiency',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-147',
+    id: 'cia1-147',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The internal audit activity as a whole needs expertise in IT risks and controls. If no staff member possesses this expertise, the CAE should:',
     options: [
       'Avoid all IT audits',
@@ -1231,13 +1437,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1210 requires the internal audit activity collectively to possess or OBTAIN needed competencies. If expertise is lacking internally, the CAE should obtain competent advice and assistance from appropriate sources.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Collective Proficiency'
+    subtopic: 'Collective Proficiency',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-148',
+    id: 'cia1-148',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Due professional care in consulting engagements includes considering:',
     options: [
       'Only time and budget constraints',
@@ -1248,13 +1457,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1220.C1 requires considering the needs and expectations of clients (including nature, timing, and communication), the relative complexity, and the extent of work needed to achieve objectives.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-149',
+    id: 'cia1-149',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal auditors should enhance their competencies through:',
     options: [
       'Only formal education programs',
@@ -1265,13 +1477,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1230 requires enhancing knowledge, skills, and competencies through continuing professional development, which encompasses various forms of learning including formal education, training, conferences, and self-study.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'CPD'
+    subtopic: 'CPD',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-150',
+    id: 'cia1-150',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using technology-based audit techniques, internal auditors must:',
     options: [
       'Be certified in IT auditing',
@@ -1282,7 +1497,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1210.A3 requires internal auditors to have sufficient knowledge of key information technology risks and controls and available technology-based audit techniques. Certification or programming is not required.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'IT Knowledge'
+    subtopic: 'IT Knowledge',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1290,10 +1506,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-151',
+    id: 'cia1-151',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The purpose of the QAIP is to evaluate:',
     options: [
       'Only conformance with the Standards',
@@ -1304,13 +1522,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The QAIP evaluates conformance with Standards and Code of Ethics, assesses efficiency and effectiveness of the internal audit activity, and identifies improvement opportunities.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'QAIP Purpose'
+    subtopic: 'QAIP Purpose',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-152',
+    id: 'cia1-152',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When communicating QAIP results, the CAE should include:',
     options: [
       'Only positive findings',
@@ -1321,13 +1542,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1320 requires disclosure of scope and frequency of assessments, assessor qualifications and independence, conclusions reached, and corrective action plans.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Reporting on QAIP'
+    subtopic: 'Reporting on QAIP',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-153',
+    id: 'cia1-153',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Results of ongoing monitoring should be communicated:',
     options: [
       'Only when problems are found',
@@ -1338,13 +1562,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1320 interpretation indicates results of ongoing monitoring should be communicated at least annually, while external and periodic internal assessment results are communicated upon completion.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Reporting on QAIP'
+    subtopic: 'Reporting on QAIP',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-154',
+    id: 'cia1-154',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Periodic internal assessments may be performed by:',
     options: [
       'Only external assessors',
@@ -1355,13 +1582,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 1311 indicates periodic assessments may be self-assessments or assessments by other persons within the organization with sufficient knowledge of internal audit practices.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Internal Assessments'
+    subtopic: 'Internal Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-155',
+    id: 'cia1-155',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The board should be involved in QAIP activities by:',
     options: [
       'Conducting all assessments directly',
@@ -1372,7 +1602,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 1300 interpretation indicates the CAE should encourage board oversight in the QAIP. The board provides oversight rather than conducting assessments or writing procedures.',
     topic: 'Quality Assurance and Improvement Program',
-    subtopic: 'Board Oversight'
+    subtopic: 'Board Oversight',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1380,10 +1611,12 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-156',
+    id: 'cia1-156',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal audit must evaluate and contribute to improvement of:',
     options: [
       'Only financial controls',
@@ -1394,13 +1627,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2100 requires the internal audit activity to evaluate and contribute to the improvement of governance, risk management, and control processes using a systematic, disciplined approach.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Nature of Work'
+    subtopic: 'Nature of Work',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-157',
+    id: 'cia1-157',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'According to the COSO ERM Framework, risk appetite and risk tolerance differ in that:',
     options: [
       'They are the same concept',
@@ -1411,13 +1647,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Risk appetite is the amount of risk an organization is willing to accept in pursuit of value. Risk tolerance is the acceptable level of variation around specific objectives. Appetite is broader; tolerance is more specific.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-158',
+    id: 'cia1-158',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The COSO component "Information and Communication" involves:',
     options: [
       'Only external financial reporting',
@@ -1428,13 +1667,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Information and Communication encompasses identifying, capturing, and communicating relevant information in a form and timeframe that enables people to carry out their responsibilities.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'COSO Framework'
+    subtopic: 'COSO Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-159',
+    id: 'cia1-159',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Monitoring Activities in the COSO framework include:',
     options: [
       'Only external audits',
@@ -1445,13 +1687,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Monitoring Activities include ongoing evaluations (built into business processes) and separate (periodic) evaluations to ascertain whether internal control components are present and functioning.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'COSO Framework'
+    subtopic: 'COSO Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-160',
+    id: 'cia1-160',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control Activities in the COSO framework are actions that:',
     options: [
       'Replace the need for risk assessment',
@@ -1462,13 +1707,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Control Activities are actions established through policies and procedures that help ensure management\'s directives to mitigate risks to achievement of objectives are carried out.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'COSO Framework'
+    subtopic: 'COSO Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-161',
+    id: 'cia1-161',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When internal audit identifies that management has accepted an unacceptable level of risk, Standard 2600 requires the CAE to first:',
     options: [
       'Report directly to regulators',
@@ -1479,13 +1727,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2600 requires the CAE to first discuss the matter with senior management. If the CAE determines the matter has not been resolved, then it must be communicated to the board.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Acceptance'
+    subtopic: 'Risk Acceptance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-162',
+    id: 'cia1-162',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The first line of defense in the Three Lines Model is:',
     options: [
       'Internal audit',
@@ -1496,13 +1747,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The first line is operational management, which owns and manages risks. The second line is risk management and compliance functions. The third line is internal audit.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Three Lines Model'
+    subtopic: 'Three Lines Model',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-163',
+    id: 'cia1-163',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Physical controls include:',
     options: [
       'Management review of reports',
@@ -1513,13 +1767,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Physical controls are tangible controls such as locks, safes, fences, security cameras, and access cards that protect assets from unauthorized access or use.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Types of Controls'
+    subtopic: 'Types of Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-164',
+    id: 'cia1-164',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Reasonable assurance means:',
     options: [
       'Absolute certainty of achieving objectives',
@@ -1530,13 +1787,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Reasonable assurance recognizes that internal control can never guarantee achievement of objectives due to inherent limitations including human error, management override, and cost-benefit considerations.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Control Concepts'
+    subtopic: 'Control Concepts',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-165',
+    id: 'cia1-165',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise Risk Management (ERM) differs from traditional risk management primarily in that ERM:',
     options: [
       'Focuses only on financial risks',
@@ -1547,13 +1807,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'ERM takes a holistic, portfolio view of risks across the entire enterprise, considering how risks interrelate and affect the organization\'s strategy. Traditional approaches often address risks in silos.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-166',
+    id: 'cia1-166',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Controls that mitigate risk when segregation of duties is not practical are called:',
     options: [
       'Preventive controls',
@@ -1564,13 +1827,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Compensating controls serve as alternative controls when ideal controls like full segregation of duties cannot be implemented. Examples include management oversight and independent review.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Types of Controls'
+    subtopic: 'Types of Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-167',
+    id: 'cia1-167',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The risk response "transfer" involves:',
     options: [
       'Accepting the risk as is',
@@ -1581,13 +1847,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Transfer (or share) involves shifting some or all of the risk to another party, such as through insurance, outsourcing, or partnerships. The risk still exists but is shared with others.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Risk Response'
+    subtopic: 'Risk Response',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-168',
+    id: 'cia1-168',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Governance assessment by internal audit includes evaluating:',
     options: [
       'Only the composition of the board',
@@ -1598,13 +1867,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2110 requires assessing governance including promoting ethics, ensuring accountability, communicating risk and control information, and coordinating activities among various oversight functions.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Governance Assessment'
+    subtopic: 'Governance Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-169',
+    id: 'cia1-169',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Internal audit should be "proactive" in its evaluation according to Standard 2100. This means:',
     options: [
       'Waiting for management requests before acting',
@@ -1615,13 +1887,16 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Standard 2100 interpretation states internal audit credibility and value are enhanced when auditors are proactive and their evaluations offer new insights and consider future impact.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Nature of Work'
+    subtopic: 'Nature of Work',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-170',
+    id: 'cia1-170',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When assessing an organization\'s ethics program, internal auditors should consider:',
     options: [
       'Only whether a code of ethics exists',
@@ -1632,7 +1907,8 @@ export const CIA1_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2110 includes assessing whether appropriate ethics and values are promoted within the organization. This goes beyond having a code to examining whether ethics are truly embedded in the culture.',
     topic: 'Governance, Risk Management, and Control',
-    subtopic: 'Governance Assessment'
+    subtopic: 'Governance Assessment',
+  reference: 'IIA Standards'
   },
 ];
 

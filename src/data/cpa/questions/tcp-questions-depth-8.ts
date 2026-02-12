@@ -8,11 +8,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'NOL for Individuals',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under post-TCJA rules, a net operating loss (NOL) for individuals may:',
     options: [
       'Be carried back 2 years and forward 20 years',
@@ -27,11 +29,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership Distributions — §731',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a partnership makes a current (nonliquidating) distribution of cash to a partner, gain is recognized by the partner:',
     options: [
       'On all cash distributions',
@@ -46,11 +50,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Qualified Opportunity Zone (QOZ) — §1400Z-2',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the QOZ program (§1400Z-2), which benefit remains available for investments made after 2026?',
     options: [
       'Basis step-up after 5 years',
@@ -65,11 +71,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status — Head of Household',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To qualify for Head of Household filing status, a taxpayer must:',
     options: [
       'Simply be unmarried',
@@ -84,11 +92,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corp — Eligibility Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To qualify as an S corporation, the entity must satisfy all eligibility requirements INCLUDING:',
     options: [
       'Having unlimited shareholders of any type',
@@ -103,11 +113,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Capital Loss Limitations',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For individual taxpayers, net capital losses are deductible against ordinary income up to:',
     options: [
       'Unlimited amount',
@@ -122,11 +134,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Educator Expense Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An eligible educator may deduct, as an above-the-line deduction, unreimbursed classroom expenses up to:',
     options: [
       '$100',
@@ -141,11 +155,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Special Allocations §704(b)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Partnership special allocations under §704(b) will be respected for tax purposes only if they:',
     options: [
       'Are approved by the IRS',
@@ -160,11 +176,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Original Issue Discount (OID) — §1272',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Original issue discount (OID) on a bond must be:',
     options: [
       'Recognized only when the bond is sold or matures',
@@ -179,11 +197,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Accuracy-Related Penalties — §6662',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accuracy-related penalty under §6662 is:',
     options: [
       '10% of the underpayment',
@@ -198,11 +218,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Claiming Dependents — Qualifying Relative',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To claim a person as a "qualifying relative" dependent under §152(d), the person must:',
     options: [
       'Be under age 19',
@@ -217,11 +239,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corp — Charitable Contribution Carryover',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a C corporation\'s charitable contributions exceed the 10% of taxable income limitation:',
     options: [
       'The excess is permanently lost',
@@ -236,11 +260,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Boot in §351 Corporate Formations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a §351 exchange, if the transferor receives both stock and "boot" (cash or other property), the transferor recognizes gain:',
     options: [
       'Equal to the FMV of all property received',
@@ -255,11 +281,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'IRS Audit Selection',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IRS selects returns for examination (audit) using:',
     options: [
       'Random selection only',
@@ -274,11 +302,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions — SALT Cap',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under TCJA (2018-2025), the state and local tax (SALT) deduction for individuals is:',
     options: [
       'Unlimited',
@@ -293,11 +323,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Basis of Partnership Interest',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A partner\'s outside basis in their partnership interest is increased by:',
     options: [
       'Only initial contributions',
@@ -312,11 +344,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversion — Condemnation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When business property is involuntarily converted through government condemnation (eminent domain), the replacement period is:',
     options: [
       '1 year from the conversion',
@@ -331,11 +365,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Reportable Transactions — §6011',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A "reportable transaction" that must be disclosed to the IRS includes:',
     options: [
       'Any transaction over $10,000',
@@ -350,11 +386,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The self-employment tax for 2025 consists of:',
     options: [
       'Only a 15.3% tax on all self-employment income',
@@ -369,11 +407,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Corporation — §1244 Stock',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §1244, a loss on the sale or worthlessness of "small business stock" is treated as:',
     options: [
       'A capital loss only',
@@ -388,11 +428,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Nonrecognition — §1041 Transfers Between Spouses',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under §1041, transfers of property between spouses (or incident to divorce) are:',
     options: [
       'Taxable events',
@@ -407,11 +449,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Privilege and Confidentiality — §7525',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The federally authorized tax practitioner privilege under §7525:',
     options: [
       'Is identical to attorney-client privilege in all respects',
@@ -426,11 +470,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Qualified Charitable Distributions (QCD)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A qualified charitable distribution (QCD) from an IRA allows individuals age 70½ or older to:',
     options: [
       'Deduct IRA contributions as charitable deductions',
@@ -445,11 +491,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Guaranteed Payments for Capital',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Guaranteed payments for the use of capital under §707(c) are:',
     options: [
       'Treated identically to distributions',
@@ -464,11 +512,13 @@ export const TCP_QUESTIONS_DEPTH_8: Question[] = [
   {
     id: 'tcp-d8-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Tax-Free Reorganizations — §368',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A tax-free corporate reorganization under §368 requires:',
     options: [
       'Only IRS approval',

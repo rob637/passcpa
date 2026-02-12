@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'far-wc-199',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-impairment',
     topic: 'Impairment',
     subtopic: 'Indefinite-Lived Intangibles',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Indefinite-lived intangible assets (excluding goodwill) are tested for impairment:',
     options: [
       'Never',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'far-wc-200',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Consignment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Goods held on consignment are reported in the inventory of:',
     options: [
       'The consignee',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'far-wc-201',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-gaap',
     topic: 'GAAP Concepts',
     subtopic: 'Going Concern',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Management\'s responsibility for going concern evaluation extends to events:',
     options: [
       '3 months from balance sheet date',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'far-wc-202',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Proprietary Fund Types',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Proprietary funds include:',
     options: [
       'Only general fund',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'aud-wc-199',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-review',
     topic: 'Reporting',
     subtopic: 'Review Engagement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a review engagement, the accountant provides:',
     options: [
       'Reasonable assurance',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'aud-wc-200',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-control-risk',
     topic: 'Control Risk',
     subtopic: 'Tests of Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor performs tests of controls when:',
     options: [
       'Never',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'aud-wc-201',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-analytical',
     topic: 'Analytical Procedures',
     subtopic: 'Expectation Precision',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The precision of an expectation in analytical procedures is affected by:',
     options: [
       'Only the procedure type',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'aud-wc-202',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-accept',
     topic: 'Engagement Acceptance',
     subtopic: 'Change in Engagement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a client requests a change from audit to compilation, the auditor should consider:',
     options: [
       'Always accept',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'reg-wc-199',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distribution of Marketable Securities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Distribution of marketable securities by a partnership to a partner is generally treated as:',
     options: [
       'Like any property distribution',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'reg-wc-200',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'AMT Preference Items',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Common AMT preference items include:',
     options: [
       'Wages',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'reg-wc-201',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-fiduciary',
     topic: 'Fiduciary Duties',
     subtopic: 'Duty of Loyalty',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A fiduciary\'s duty of loyalty requires:',
     options: [
       'Only honesty',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'reg-wc-202',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-like-kind',
     topic: 'Property Transactions',
     subtopic: 'Reverse Like-Kind Exchange',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a reverse like-kind exchange:',
     options: [
       'Only old property transfers',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'bar-wc-237',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Quality of Revenue',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Indicators of revenue quality issues include:',
     options: [
       'Strong cash conversion',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'bar-wc-238',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'EV/Sales Multiple',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The EV/Sales multiple is most useful when:',
     options: [
       'Company is highly profitable',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'bar-wc-239',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Customer Concentration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Disclosure of major customer concentration is required when:',
     options: [
       'Any customer exists',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'bar-wc-240',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Process Costing FIFO vs Weighted Average',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'FIFO process costing differs from weighted average in that:',
     options: [
       'Only ending inventory differs',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'bar-wc-241',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Statement of Cash Flows Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A sustainable business typically shows positive cash flow from:',
     options: [
       'Financing activities',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'isc-wc-199',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Value Delivery',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT value delivery ensures:',
     options: [
       'Only cost reduction',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'isc-wc-200',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'API security controls should include:',
     options: [
       'Only authentication',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'isc-wc-201',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Master Data Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Master Data Management (MDM) provides:',
     options: [
       'Only backup',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'isc-wc-202',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Audit Universe and Planning',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The IT audit universe should include:',
     options: [
       'Only financial systems',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'tcp-wc-199',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Estimated Tax for Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Large corporations must pay estimated tax based on:',
     options: [
       'Prior year tax',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'tcp-wc-200',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Form 8949 Categories',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Form 8949 is used to report:',
     options: [
       'Only dividends',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'tcp-wc-201',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Qualified Small Business Stock',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1202 QSBS exclusion allows:',
     options: [
       '50% exclusion',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_41: Question[] = [
   {
     id: 'tcp-wc-202',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Tax Court Jurisdiction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The US Tax Court has jurisdiction over:',
     options: [
       'Only criminal tax cases',

@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH3: Question[] = [
   {
-    id: 'CISA2-033',
+    id: 'cisa2-033',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST important factor in IT governance success is:',
     options: [
       'Advanced technology',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Success Factors'
   },
   {
-    id: 'CISA2-034',
+    id: 'cisa2-034',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT strategy should be reviewed:',
     options: [
       'Only when technology changes',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Strategy Review'
   },
   {
-    id: 'CISA2-035',
+    id: 'cisa2-035',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT portfolio management helps organizations:',
     options: [
       'Avoid all IT projects',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Portfolio Management'
   },
   {
-    id: 'CISA2-036',
+    id: 'cisa2-036',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Benefit realization management ensures that:',
     options: [
       'Projects are completed on budget',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Benefit Realization'
   },
   {
-    id: 'CISA2-037',
+    id: 'cisa2-037',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT policies provide:',
     options: [
       'Detailed procedures',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Policy Framework'
   },
   {
-    id: 'CISA2-038',
+    id: 'cisa2-038',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT standards differ from guidelines in that standards:',
     options: [
       'Are optional',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Standards vs Guidelines'
   },
   {
-    id: 'CISA2-039',
+    id: 'cisa2-039',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Exception management for IT policies should include:',
     options: [
       'Automatic approval of all exceptions',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Exception Management'
   },
   {
-    id: 'CISA2-040',
+    id: 'cisa2-040',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT organizational structure should ensure:',
     options: [
       'Maximum centralization',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Structure'
   },
   {
-    id: 'CISA2-041',
+    id: 'cisa2-041',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Chief Information Officer (CIO) is primarily responsible for:',
     options: [
       'Technical support only',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'CIO Role'
   },
   {
-    id: 'CISA2-042',
+    id: 'cisa2-042',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risk appetite represents:',
     options: [
       'The amount of risk that has occurred',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Risk Appetite'
   },
   {
-    id: 'CISA2-043',
+    id: 'cisa2-043',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk tolerance differs from risk appetite in that tolerance:',
     options: [
       'Applies to the whole organization',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Risk Tolerance'
   },
   {
-    id: 'CISA2-044',
+    id: 'cisa2-044',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Key risk indicators (KRIs) provide:',
     options: [
       'Retrospective analysis only',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'KRIs'
   },
   {
-    id: 'CISA2-045',
+    id: 'cisa2-045',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risk transfer through insurance is MOST appropriate for:',
     options: [
       'All types of risks',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Risk Transfer'
   },
   {
-    id: 'CISA2-046',
+    id: 'cisa2-046',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT service level management ensures:',
     options: [
       'Minimum service delivery',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'SLM'
   },
   {
-    id: 'CISA2-047',
+    id: 'cisa2-047',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Operational level agreements (OLAs) differ from SLAs in that OLAs:',
     options: [
       'Are external agreements',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'OLA'
   },
   {
-    id: 'CISA2-048',
+    id: 'cisa2-048',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When outsourcing IT services, the MOST important consideration is:',
     options: [
       'Cost savings',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Outsourcing Decisions'
   },
   {
-    id: 'CISA2-049',
+    id: 'cisa2-049',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third-party risk management should include:',
     options: [
       'Only initial due diligence',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Third-Party Risk'
   },
   {
-    id: 'CISA2-050',
+    id: 'cisa2-050',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Right-to-audit clauses in contracts allow:',
     options: [
       'Vendors to audit customers',
@@ -314,10 +350,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Contract Terms'
   },
   {
-    id: 'CISA2-051',
+    id: 'cisa2-051',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Succession planning for key IT positions should:',
     options: [
       'Be confidential from all staff',
@@ -331,10 +369,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Succession Planning'
   },
   {
-    id: 'CISA2-052',
+    id: 'cisa2-052',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Mandatory vacation policies help:',
     options: [
       'Reduce payroll costs',
@@ -348,10 +388,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Fraud Prevention'
   },
   {
-    id: 'CISA2-053',
+    id: 'cisa2-053',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Project scope management ensures:',
     options: [
       'Projects include all possible features',
@@ -365,10 +407,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Scope Management'
   },
   {
-    id: 'CISA2-054',
+    id: 'cisa2-054',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Earned value management (EVM) provides:',
     options: [
       'Only cost tracking',
@@ -382,10 +426,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'EVM'
   },
   {
-    id: 'CISA2-055',
+    id: 'cisa2-055',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Project risk management should:',
     options: [
       'Occur only at project start',
@@ -399,10 +445,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Risk Management'
   },
   {
-    id: 'CISA2-056',
+    id: 'cisa2-056',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ITIL is BEST described as:',
     options: [
       'A mandatory regulatory requirement',
@@ -416,10 +464,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'ITIL'
   },
   {
-    id: 'CISA2-057',
+    id: 'cisa2-057',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ISO 27001 is a standard for:',
     options: [
       'Quality management',
@@ -433,10 +483,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'ISO 27001'
   },
   {
-    id: 'CISA2-058',
+    id: 'cisa2-058',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Compliance management in IT should:',
     options: [
       'Focus only on one regulation',
@@ -450,10 +502,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Compliance Management'
   },
   {
-    id: 'CISA2-059',
+    id: 'cisa2-059',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT asset lifecycle management covers:',
     options: [
       'Only procurement',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Asset Lifecycle'
   },
   {
-    id: 'CISA2-060',
+    id: 'cisa2-060',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Software licensing compliance is important because:',
     options: [
       'It reduces software costs',
@@ -484,10 +540,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'License Compliance'
   },
   {
-    id: 'CISA2-061',
+    id: 'cisa2-061',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Configuration management database (CMDB) contains:',
     options: [
       'Only hardware information',
@@ -501,10 +559,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'CMDB'
   },
   {
-    id: 'CISA2-062',
+    id: 'cisa2-062',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Total cost of ownership (TCO) analysis should include:',
     options: [
       'Only initial purchase price',

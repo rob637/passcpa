@@ -11,11 +11,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-gross-income',
     topic: 'Gross Income',
     subtopic: 'Exclusions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is excluded from gross income?',
     options: [
       'Unemployment compensation',
@@ -30,11 +32,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-gross-income',
     topic: 'Gross Income',
     subtopic: 'Fringe Benefits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An employer provides an employee with a $300/month transit pass. For 2025, the monthly exclusion for qualified transportation fringe benefits is $325. How much of the benefit is taxable to the employee?',
     options: [
       '$300',
@@ -49,11 +53,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-deductions',
     topic: 'Individual Tax Planning',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer donates publicly traded stock held for 13 months with a basis of $5,000 and FMV of $20,000 to a public charity. What is the charitable deduction?',
     options: [
       '$5,000 (basis)',
@@ -68,11 +74,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Child Tax Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the maximum child tax credit per qualifying child under age 17 is:',
     options: [
       '$1,000',
@@ -87,11 +95,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Earned Income Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is a requirement for claiming the Earned Income Tax Credit (EITC)?',
     options: [
       'The taxpayer must have investment income exceeding $11,600',
@@ -106,11 +116,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchanges',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §1031, which of the following properties qualifies for like-kind exchange treatment?',
     options: [
       'Exchange of corporate stock for partnership interests',
@@ -125,11 +137,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Section 121 Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §121, how much gain can a married couple filing jointly exclude from the sale of their principal residence?',
     options: [
       '$250,000',
@@ -148,11 +162,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Basis Adjustments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A partner\'s basis in a partnership interest is increased by all of the following EXCEPT:',
     options: [
       'The partner\'s distributive share of partnership taxable income',
@@ -167,11 +183,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Partner A receives guaranteed payments of $60,000 for services and a 30% distributive share of remaining partnership ordinary income of $200,000. What is Partner A\'s total income from the partnership?',
     options: [
       '$60,000',
@@ -186,11 +204,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Liquidating Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a complete liquidation of a partner\'s interest, the partnership distributes only cash of $30,000 and inventory with a basis of $10,000 (FMV $25,000). The partner\'s outside basis is $50,000. What is the result?',
     options: [
       '$10,000 capital loss recognized; inventory basis $10,000',
@@ -209,11 +229,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation shareholder\'s stock basis is adjusted for all of the following EXCEPT:',
     options: [
       'Pro rata share of ordinary business income',
@@ -228,11 +250,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation with appreciated assets elects S status. The built-in gains (BIG) tax applies to recognized built-in gains during what recognition period?',
     options: [
       '3 years',
@@ -251,11 +275,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate-planning',
     topic: 'Estate and Gift Planning',
     subtopic: 'Unified Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The unified credit exemption equivalent for estate and gift tax purposes for 2025 is approximately:',
     options: [
       '$5.49 million',
@@ -270,11 +296,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate-planning',
     topic: 'Estate and Gift Planning',
     subtopic: 'Portability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the first spouse dies with an estate of $5 million and a $13.99 million exemption, portability allows:',
     options: [
       'The unused exemption ($8.99 million) to transfer to any surviving family member',
@@ -289,11 +317,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate-planning',
     topic: 'Estate and Gift Planning',
     subtopic: 'Generation-Skipping Transfer Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The generation-skipping transfer (GST) tax is imposed in addition to the estate or gift tax when a transfer is made to a "skip person." Which of the following is a skip person?',
     options: [
       'The transferor\'s child',
@@ -312,11 +342,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-passive-activity',
     topic: 'Individual Tax Planning',
     subtopic: 'Passive Activity Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the passive activity loss rules, a taxpayer who actively participates in a rental real estate activity may deduct up to how much in rental losses against nonpassive income?',
     options: [
       '$10,000',
@@ -331,11 +363,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-passive-activity',
     topic: 'Individual Tax Planning',
     subtopic: 'Real Estate Professional',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To qualify as a real estate professional and avoid passive activity treatment of rental activities, a taxpayer must meet which of the following tests?',
     options: [
       'Spend 50+ hours per year in real estate activities',
@@ -354,11 +388,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-reorganization',
     topic: 'Corporate Taxation',
     subtopic: 'Tax-Free Reorganizations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Target Corp merges into Acquiring Corp with Target shareholders receiving solely Acquiring Corp voting stock. This qualifies as which type of reorganization?',
     options: [
       'Type A — statutory merger',
@@ -373,11 +409,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-reorganization',
     topic: 'Corporate Taxation',
     subtopic: 'Section 332 Liquidation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a complete liquidation of a subsidiary under IRC §332, the parent corporation recognizes:',
     options: [
       'Gain but not loss on the distributed assets',
@@ -396,11 +434,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Penalty Abatement',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer may request abatement of the failure-to-file penalty by demonstrating:',
     options: [
       'That the penalty amount exceeds $500',
@@ -415,11 +455,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations — Fraud',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'What is the statute of limitations for the IRS to assess tax when a taxpayer files a fraudulent return?',
     options: [
       '3 years',
@@ -434,11 +476,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Power of Attorney',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which form authorizes a practitioner to represent a taxpayer before the IRS?',
     options: [
       'Form 2848 (Power of Attorney and Declaration of Representative)',
@@ -457,11 +501,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Contingent Fees',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner may charge a contingent fee for:',
     options: [
       'Preparing an original tax return',
@@ -476,11 +522,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Client Records',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under Circular 230, a practitioner must return a client\'s records upon request:',
     options: [
       'Only after all outstanding fees are paid',
@@ -495,11 +543,13 @@ export const TCP_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'tcp-d2-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Preparer Penalties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §6694, the penalty for a tax return preparer who takes an unreasonable position on a return (not willful or reckless) is:',
     options: [
       '$250 or 50% of preparer income from the return',

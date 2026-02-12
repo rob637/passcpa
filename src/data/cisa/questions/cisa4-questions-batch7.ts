@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA4_QUESTIONS_BATCH7: Question[] = [
   {
-    id: 'CISA4-153',
+    id: 'cisa4-153',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Digital twin technology for operations enables:',
     options: [
       'Only visualization',
@@ -25,10 +27,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Digital Twin'
   },
   {
-    id: 'CISA4-154',
+    id: 'cisa4-154',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Edge computing operations require consideration of:',
     options: [
       'Only centralized management',
@@ -42,10 +46,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Edge Computing'
   },
   {
-    id: 'CISA4-155',
+    id: 'cisa4-155',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sustainability in IT operations addresses:',
     options: [
       'Only cost reduction',
@@ -59,10 +65,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Sustainability'
   },
   {
-    id: 'CISA4-156',
+    id: 'cisa4-156',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Predictive operations (AIOps) uses:',
     options: [
       'Only manual analysis',
@@ -76,10 +84,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'AIOps'
   },
   {
-    id: 'CISA4-157',
+    id: 'cisa4-157',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Immutable logging ensures:',
     options: [
       'Log deletion capability',
@@ -93,10 +103,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Logging'
   },
   {
-    id: 'CISA4-158',
+    id: 'cisa4-158',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Geo-redundancy planning considers:',
     options: [
       'Only cost savings',
@@ -110,10 +122,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Geo-Redundancy'
   },
   {
-    id: 'CISA4-159',
+    id: 'cisa4-159',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Ransomware resilience strategies include:',
     options: [
       'Only payment preparation',
@@ -127,10 +141,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Ransomware Resilience'
   },
   {
-    id: 'CISA4-160',
+    id: 'cisa4-160',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Service reliability engineering (SRE) balances:',
     options: [
       'Only availability',
@@ -144,10 +160,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'SRE'
   },
   {
-    id: 'CISA4-161',
+    id: 'cisa4-161',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT asset disposition (ITAD) must ensure:',
     options: [
       'Only cost recovery',
@@ -161,10 +179,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Asset Disposition'
   },
   {
-    id: 'CISA4-162',
+    id: 'cisa4-162',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Operational technology (OT) security differs from IT by:',
     options: [
       'No difference',
@@ -178,10 +198,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'OT Security'
   },
   {
-    id: 'CISA4-163',
+    id: 'cisa4-163',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Real-time data replication for DR should monitor:',
     options: [
       'Only storage usage',
@@ -195,10 +217,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Data Replication'
   },
   {
-    id: 'CISA4-164',
+    id: 'cisa4-164',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Event correlation in SIEM helps identify:',
     options: [
       'Only single events',
@@ -212,10 +236,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'SIEM'
   },
   {
-    id: 'CISA4-165',
+    id: 'cisa4-165',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Operational resilience differs from DR by focusing on:',
     options: [
       'Only technology recovery',
@@ -229,10 +255,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Operational Resilience'
   },
   {
-    id: 'CISA4-166',
+    id: 'cisa4-166',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Chaos testing in production should:',
     options: [
       'Never be done',
@@ -246,10 +274,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Chaos Testing'
   },
   {
-    id: 'CISA4-167',
+    id: 'cisa4-167',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Multi-region cloud deployment for resilience must address:',
     options: [
       'Only cost allocation',
@@ -263,10 +293,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Multi-Region Architecture'
   },
   {
-    id: 'CISA4-168',
+    id: 'cisa4-168',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cyber insurance claims require:',
     options: [
       'Minimal documentation',
@@ -280,10 +312,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Cyber Insurance'
   },
   {
-    id: 'CISA4-169',
+    id: 'cisa4-169',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Runbook automation reduces:',
     options: [
       'Only documentation',
@@ -297,10 +331,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Runbook Automation'
   },
   {
-    id: 'CISA4-170',
+    id: 'cisa4-170',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Post-incident reviews should focus on:',
     options: [
       'Blame assignment',
@@ -314,10 +350,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Post-Incident Review'
   },
   {
-    id: 'CISA4-171',
+    id: 'cisa4-171',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Third-party operational dependencies should be:',
     options: [
       'Ignored after contract signing',
@@ -331,10 +369,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Third-Party Resilience'
   },
   {
-    id: 'CISA4-172',
+    id: 'cisa4-172',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Capacity planning for cloud resources should consider:',
     options: [
       'Only current usage',

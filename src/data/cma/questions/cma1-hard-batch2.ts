@@ -158,7 +158,7 @@ export const CMA1_HARD_BATCH2: Question[] = [
     subtopic: 'Absorption vs Variable Costing',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'A company produced 12,000 units and sold 10,000 units. Fixed manufacturing OH is $240,000. Variable cost per unit is $30. Selling price is $60. Under absorption costing, income is $20,000 higher than variable costing income. What is the fixed OH rate per unit?',
+    question: 'A company produced 12,000 units and sold 10,000 units. Fixed manufacturing OH is $120,000. Variable cost per unit is $30. Selling price is $60. Under absorption costing, income is $20,000 higher than variable costing income. What is the fixed OH rate per unit?',
     options: [
       '$10 per unit',
       '$20 per unit',
@@ -166,7 +166,7 @@ export const CMA1_HARD_BATCH2: Question[] = [
       '$24 per unit'
     ],
     correctAnswer: 0,
-    explanation: 'The income difference between absorption and variable costing = Change in inventory × Fixed OH rate per unit. Inventory increase = 12,000 produced - 10,000 sold = 2,000 units. $20,000 = 2,000 units × Fixed OH rate. Fixed OH rate = $20,000 / 2,000 = $10 per unit. Verification: $240,000 / 12,000 units = $20. But wait, $240,000/12,000 = $20. And 2,000 × $20 = $40,000 difference. So $10/unit would require $120,000 total fixed OH. The problem states $240,000 fixed OH, giving a rate of $20/unit and difference of $40,000. With the given $20,000 difference: rate = $10/unit.',
+    explanation: 'The income difference between absorption and variable costing = Change in inventory × Fixed OH rate per unit. Inventory increase = 12,000 produced - 10,000 sold = 2,000 units. $20,000 = 2,000 units × Fixed OH rate. Fixed OH rate = $20,000 / 2,000 = $10 per unit. Verification: $120,000 total fixed OH / 12,000 units = $10 per unit. This matches our answer.',
     reference: 'Absorption vs Variable Costing Income Reconciliation',
   },
   {

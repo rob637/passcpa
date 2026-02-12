@@ -10,11 +10,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Qualitative Characteristics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to FASB Concepts Statement No. 8, which of the following is a fundamental qualitative characteristic of useful financial information?',
     options: [
       'Comparability',
@@ -29,11 +31,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Recognition Criteria',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the FASB conceptual framework, an item should be recognized in financial statements when all of the following criteria are met EXCEPT:',
     options: [
       'The item meets the definition of an element',
@@ -48,11 +52,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Financial Statement Elements',
     subtopic: 'Comprehensive Income',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following items is included in other comprehensive income (OCI) rather than net income?',
     options: [
       'Gain on sale of equipment',
@@ -70,11 +76,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'CECL Model',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 326 (CECL), how should a company measure the allowance for credit losses on trade receivables?',
     options: [
       'Based on incurred losses that are probable and reasonably estimable',
@@ -89,11 +97,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Factoring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Maple Corp. sold $500,000 of receivables to a factor. The factor charged a 3% fee and withheld 5% as a reserve. The receivables had an allowance of $8,000. What is the loss on factoring?',
     options: [
       '$15,000',
@@ -108,11 +118,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'LIFO Liquidation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During a period of rising prices, Oak Corp. experienced a LIFO liquidation when it sold units from prior-year inventory layers. What effect does this have?',
     options: [
       'Lower cost of goods sold and higher gross profit',
@@ -127,11 +139,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Dollar-Value LIFO',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Reed Co. uses dollar-value LIFO. The base-year cost of ending inventory is $120,000, the current-year cost is $150,000, and the price index is 1.25. What is the dollar-value LIFO inventory?',
     options: [
       '$120,000',
@@ -146,11 +160,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-fixed-assets',
     topic: 'Fixed Assets',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Lark Corp. has a legal obligation to remove equipment at the end of its 10-year lease. The estimated removal cost is $100,000, and the credit-adjusted risk-free rate is 6%. How should Lark initially record the asset retirement obligation?',
     options: [
       'Debit Asset Retirement Cost $100,000; Credit ARO Liability $100,000',
@@ -165,11 +181,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-fixed-assets',
     topic: 'Fixed Assets',
     subtopic: 'Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Wren Corp. has equipment with a carrying value of $500,000, undiscounted future cash flows of $450,000, and fair value of $380,000. What impairment loss should be recognized?',
     options: [
       '$0',
@@ -184,11 +202,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Pine Corp. acquired 30% of Oak Corp. for $900,000. Oak reported net income of $200,000 and paid dividends of $50,000. What is Pine\'s investment balance at year-end?',
     options: [
       '$900,000',
@@ -203,11 +223,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Securities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 321, how should equity securities without readily determinable fair values be measured?',
     options: [
       'At cost',
@@ -222,11 +244,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Research and Development',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During the year, Grant Corp. incurred the following costs: materials used in R&D $150,000, R&D equipment with alternative future use $400,000, and personnel costs for R&D $200,000. What amount should be expensed as R&D?',
     options: [
       '$350,000',
@@ -241,11 +265,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Goodwill Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 350, how is goodwill impairment measured?',
     options: [
       'Carrying amount of reporting unit less fair value of reporting unit, not to exceed goodwill balance',
@@ -263,11 +289,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Nash Corp. sells equipment for $100,000, with a volume rebate of $5,000 if the customer purchases additional products within 90 days. Nash estimates a 70% probability the customer will earn the rebate. Under ASC 606, what transaction price should Nash recognize?',
     options: [
       '$100,000',
@@ -282,11 +310,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Costs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Jolt Corp. incurred $25,000 in sales commissions to obtain a 3-year service contract. How should these costs be accounted for under ASC 606?',
     options: [
       'Expense immediately as incurred',
@@ -301,11 +331,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lease Classification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Vista Corp. leases equipment with a fair value of $200,000. The lease term is 5 years, estimated useful life is 8 years, and the present value of lease payments is $165,000. The lease has no bargain purchase option and ownership doesn\'t transfer. How should Vista classify this lease?',
     options: [
       'Finance lease because PV is 82.5% of fair value',
@@ -320,11 +352,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lease Modification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A lessee remeasures a lease liability when there is a modification that is not accounted for as a separate contract. Which discount rate should be used?',
     options: [
       'Original discount rate',
@@ -339,11 +373,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-income-taxes',
     topic: 'Income Taxes',
     subtopic: 'Deferred Tax Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'At year-end, Volt Corp. has a deferred tax asset of $100,000 and believes it is more likely than not that only $60,000 will be realized. What entry should Volt record?',
     options: [
       'Debit Valuation Allowance $40,000; Credit DTA $40,000',
@@ -358,11 +394,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-income-taxes',
     topic: 'Income Taxes',
     subtopic: 'Uncertain Tax Positions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 740, what threshold must be met before a tax benefit from an uncertain tax position can be recognized?',
     options: [
       'Probable (greater than 70%)',
@@ -377,11 +415,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-contingencies',
     topic: 'Contingencies',
     subtopic: 'Loss Contingencies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Lake Corp. is a defendant in a lawsuit. Legal counsel advises that an unfavorable outcome is probable, and the loss could range from $500,000 to $900,000 with no amount more likely than another. What amount should Lake accrue?',
     options: [
       '$0',
@@ -396,11 +436,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-021',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Treasury Stock',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Crow Corp. purchased 1,000 shares of its $10 par common stock for $45,000. Later, it reissued 500 shares for $26,000. Using the cost method, what is the additional paid-in capital from treasury stock transactions?',
     options: [
       '$0',
@@ -415,11 +457,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-022',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-equity',
     topic: 'Stock Compensation',
     subtopic: 'Stock Options',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'On January 1, Year 1, Bell Corp. granted 10,000 stock options with a grant-date fair value of $8 per option. The options vest over 4 years. In Year 1, what compensation expense should Bell recognize?',
     options: [
       '$0',
@@ -434,11 +478,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-023',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Diluted EPS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hart Corp. has 100,000 common shares outstanding and 10,000 call options (exercise price $20) outstanding. The average stock price is $25. Net income is $250,000. What is diluted EPS?',
     options: [
       '$2.50',
@@ -456,11 +502,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-024',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Fund Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city receives a grant to be used exclusively for improving parks. In which fund should this grant be recorded?',
     options: [
       'General Fund',
@@ -475,11 +523,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-025',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Budgetary Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a governmental unit records its annual budget, which entry is correct?',
     options: [
       'Debit Estimated Revenues; Credit Appropriations; Debit or Credit Budgetary Fund Balance',
@@ -494,11 +544,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-026',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under modified accrual accounting, when are property taxes recognized as revenue?',
     options: [
       'When levied',
@@ -513,11 +565,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-027',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Government-Wide Statements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which measurement focus and basis of accounting are used in government-wide financial statements?',
     options: [
       'Current financial resources and modified accrual',
@@ -535,11 +589,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-028',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A donor contributes $100,000 to a not-for-profit with the condition that the NFP must raise $50,000 in matching funds within one year. How should the NFP initially record this contribution?',
     options: [
       'Revenue of $100,000 with donor restrictions',
@@ -554,11 +610,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-029',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Net Asset Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A donor contributes $50,000 to an NFP and specifies it must be used for educational programs. How should this be classified?',
     options: [
       'Net assets without donor restrictions',
@@ -573,11 +631,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-030',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An NFP must present expenses by both nature and function. Which of the following is an example of an expense presented by function?',
     options: [
       'Salaries and wages',
@@ -593,11 +653,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-031',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-bonds',
     topic: 'Bonds Payable',
     subtopic: 'Effective Interest Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'March Corp. issued $1,000,000 of 5-year, 8% bonds at 92 when the market rate was 10%. Using effective interest, what is the interest expense for Year 1?',
     options: [
       '$80,000',
@@ -612,11 +674,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-032',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Indirect Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the indirect method, which item is added back to net income to arrive at cash from operations?',
     options: [
       'Increase in accounts receivable',
@@ -631,11 +695,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-033',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Hedge Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Grove Corp. designates a derivative as a cash flow hedge of a forecasted transaction. Where are changes in the derivative\'s fair value recorded?',
     options: [
       'Net income immediately',
@@ -650,11 +716,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-034',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Apex Corp. acquires 100% of Base Corp. for $2,000,000. Base\'s identifiable net assets have a fair value of $1,700,000 and a book value of $1,400,000. What amount of goodwill results from this acquisition?',
     options: [
       '$0',
@@ -669,11 +737,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-035',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Noncontrolling Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent Co. owns 80% of Sub Co. In Year 1, Sub reported net income of $500,000 and paid dividends of $100,000. What is the noncontrolling interest\'s share of Sub\'s net income?',
     options: [
       '$20,000',
@@ -688,11 +758,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-036',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-errors',
     topic: 'Accounting Changes',
     subtopic: 'Error Correction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During Year 3, Blake Corp. discovered that depreciation expense of $40,000 was not recorded in Year 1. The tax rate is 25%. What is the adjustment to beginning retained earnings in Year 3?',
     options: [
       '$40,000 decrease',
@@ -707,11 +779,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-037',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-pensions',
     topic: 'Pensions',
     subtopic: 'Net Periodic Pension Cost',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which component of net periodic pension cost is reported in other comprehensive income rather than in net income?',
     options: [
       'Service cost',
@@ -726,11 +800,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-038',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign',
     topic: 'Foreign Currency',
     subtopic: 'Translation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When translating the financial statements of a foreign subsidiary whose functional currency is the local currency, at what rate are fixed assets translated?',
     options: [
       'Current exchange rate at balance sheet date',
@@ -745,11 +821,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-039',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign',
     topic: 'Foreign Currency',
     subtopic: 'Remeasurement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If a foreign subsidiary\'s functional currency is the U.S. dollar, how are nonmonetary assets translated?',
     options: [
       'Current rate',
@@ -764,11 +842,13 @@ export const FAR_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'far-wc-040',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-fair-value',
     topic: 'Fair Value',
     subtopic: 'Level Hierarchy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An entity values a financial asset using a pricing model with observable inputs from active markets for similar assets. What level in the fair value hierarchy is this?',
     options: [
       'Level 1',

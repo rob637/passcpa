@@ -35,6 +35,7 @@ import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, TBS } from '../../types';
 import TBSRenderer from '../exam/TBSRenderer';
+import { getShuffledIndices } from '../../utils/questionShuffle';
 import { 
   getExamConfig, 
   getMiniExamConfig, 
@@ -73,6 +74,9 @@ const ExamSimulator: React.FC = () => {
   const [showCalculator, setShowCalculator] = useState(false);
   const [startTime, setStartTime] = useState<number | null>(null);
   const [blueprintScores, setBlueprintScores] = useState<Record<string, { correct: number; total: number }>>({});
+
+  // Session ID for deterministic option shuffling
+  const [sessionId] = useState(() => `cpa-exam-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timerRef = useRef<any>(null);
@@ -303,6 +307,20 @@ const ExamSimulator: React.FC = () => {
   const currentQuestion = currentTestletType === 'mcq' ? testletQuestions[currentIndex] : null;
   const currentTBS = currentTestletType === 'tbs' ? testletTBS[currentIndex] : null;
 
+  // Shuffled options for current MCQ question
+  const shuffledCurrentQuestion = useMemo(() => {
+    if (!currentQuestion) return null;
+    const options = currentQuestion.options || [];
+    if (options.length < 2) {
+      return { shuffledOptions: options, reverseMap: options.map((_, i) => i), shuffledCorrectAnswer: currentQuestion.correctAnswer };
+    }
+    const seed = `${currentQuestion.id}-${sessionId}`;
+    const shuffledIndices = getShuffledIndices(options.length, seed);
+    const shuffledOptions = shuffledIndices.map(i => options[i]);
+    const shuffledCorrectAnswer = shuffledIndices.indexOf(currentQuestion.correctAnswer);
+    return { shuffledOptions, reverseMap: shuffledIndices, shuffledCorrectAnswer };
+  }, [currentQuestion, sessionId]);
+
   const formatTime = (seconds: number) => {
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
@@ -313,11 +331,13 @@ const ExamSimulator: React.FC = () => {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const handleSelectAnswer = useCallback((index: number) => {
-    if (!currentQuestion) return;
-    setAnswers((prev) => ({ ...prev, [currentQuestion.id]: index }));
+  const handleSelectAnswer = useCallback((shuffledIndex: number) => {
+    if (!currentQuestion || !shuffledCurrentQuestion) return;
+    // Translate shuffled index back to original index for storage
+    const originalIndex = shuffledCurrentQuestion.reverseMap[shuffledIndex];
+    setAnswers((prev) => ({ ...prev, [currentQuestion.id]: originalIndex }));
     feedback.tap();
-  }, [currentQuestion]);
+  }, [currentQuestion, shuffledCurrentQuestion]);
 
   // Handle TBS answer changes
   const handleTBSAnswerChange = useCallback((tbsId: string, requirementId: string, value: unknown) => {
@@ -1303,14 +1323,16 @@ const ExamSimulator: React.FC = () => {
 
                   <div className="prometric-options">
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                    {(currentQuestion?.options || (currentQuestion as any)?.choices || []).map(
-                      (option: string, idx: number) => (
+                    {(shuffledCurrentQuestion?.shuffledOptions || []).map(
+                      (option: string, idx: number) => {
+                        const originalIdx = shuffledCurrentQuestion?.reverseMap[idx];
+                        return (
                         <button
                           key={idx}
                           onClick={() => handleSelectAnswer(idx)}
                           className={clsx(
                             'prometric-option',
-                            currentQuestion?.id && answers[currentQuestion.id] === idx && 'selected'
+                            currentQuestion?.id && answers[currentQuestion.id] === originalIdx && 'selected'
                           )}
                         >
                           <span className="prometric-option-letter">
@@ -1318,7 +1340,8 @@ const ExamSimulator: React.FC = () => {
                           </span>
                           <span className="prometric-option-text">{option}</span>
                         </button>
-                      )
+                        );
+                      }
                     )}
                   </div>
                 </div>
@@ -1534,14 +1557,16 @@ const ExamSimulator: React.FC = () => {
                 <div className="p-6 bg-slate-50 dark:bg-slate-900 flex-1">
                   <div className="space-y-3">
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                    {(currentQuestion?.options || (currentQuestion as any)?.choices || []).map(
-                      (option: string, idx: number) => (
+                    {(shuffledCurrentQuestion?.shuffledOptions || []).map(
+                      (option: string, idx: number) => {
+                        const originalIdx = shuffledCurrentQuestion?.reverseMap[idx];
+                        return (
                         <button
                           key={idx}
                           onClick={() => handleSelectAnswer(idx)}
                           className={clsx(
                             'w-full p-4 rounded border text-left transition-all flex items-start gap-4 group',
-                            currentQuestion?.id && answers[currentQuestion.id] === idx
+                            currentQuestion?.id && answers[currentQuestion.id] === originalIdx
                               ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/30 ring-1 ring-primary-600'
                               : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 hover:border-primary-400 dark:hover:border-primary-400 hover:shadow-sm'
                           )}
@@ -1549,7 +1574,7 @@ const ExamSimulator: React.FC = () => {
                           <span
                             className={clsx(
                               'w-6 h-6 rounded-full border flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5 transition-colors',
-                              currentQuestion?.id && answers[currentQuestion.id] === idx
+                              currentQuestion?.id && answers[currentQuestion.id] === originalIdx
                                 ? 'border-primary-600 bg-primary-600 text-white'
                                 : 'border-slate-300 dark:border-slate-500 text-slate-600 dark:text-slate-300 group-hover:border-primary-400 group-hover:text-primary-600'
                             )}
@@ -1558,7 +1583,8 @@ const ExamSimulator: React.FC = () => {
                           </span>
                           <span className="text-slate-800 dark:text-slate-100 pt-0.5">{option}</span>
                         </button>
-                      )
+                        );
+                      }
                     )}
                   </div>
                 </div>

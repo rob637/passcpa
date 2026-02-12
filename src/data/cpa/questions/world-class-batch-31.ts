@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'far-wc-159',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-debt',
     topic: 'Debt',
     subtopic: 'Debt Modification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A debt modification is accounted for as an extinguishment when:',
     options: [
       'Interest rate changes',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'far-wc-160',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-property',
     topic: 'Property, Plant & Equipment',
     subtopic: 'Capitalization Policy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Costs capitalized for self-constructed assets include:',
     options: [
       'Only materials',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'far-wc-161',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-stockholders-equity',
     topic: 'Stockholders Equity',
     subtopic: 'Treasury Stock Methods',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the cost method of treasury stock, reissuance below cost:',
     options: [
       'Creates a gain',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'far-wc-162',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Fiduciary Funds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Fiduciary funds are used to report:',
     options: [
       'General government operations',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'aud-wc-159',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-engagement',
     topic: 'Engagement Acceptance',
     subtopic: 'Client Evaluation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before accepting a new audit engagement, the auditor should:',
     options: [
       'Complete the audit planning',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'aud-wc-160',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Inventory Observation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Physical inventory observation is performed to test:',
     options: [
       'Ownership only',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'aud-wc-161',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-attestation',
     topic: 'Attestation',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In an agreed-upon procedures engagement:',
     options: [
       'The practitioner provides an opinion',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'aud-wc-162',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal',
     topic: 'Internal Audit',
     subtopic: 'Using Internal Auditors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'External auditors assess internal auditors\' competence and objectivity to:',
     options: [
       'Replace external audit entirely',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'reg-wc-159',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To file as Head of Household, the taxpayer must:',
     options: [
       'Be married',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'reg-wc-160',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-s-corp',
     topic: 'S Corporation',
     subtopic: 'Eligible Shareholders',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Eligible S corporation shareholders include:',
     options: [
       'C corporations',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'reg-wc-161',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-debtor',
     topic: 'Debtor-Creditor',
     subtopic: 'Automatic Stay',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The automatic stay in bankruptcy:',
     options: [
       'Only applies to secured creditors',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'reg-wc-162',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Casualty Loss',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Personal casualty losses are deductible only if:',
     options: [
       'From any cause',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'bar-wc-187',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Cost of Equity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Capital Asset Pricing Model (CAPM) estimates cost of equity as:',
     options: [
       'Risk-free rate only',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'bar-wc-188',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Guarantees',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A guarantee liability is initially measured at:',
     options: [
       'Zero',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'bar-wc-189',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Altman Z-Score',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The five ratios in Altman\'s Z-Score for public manufacturing companies include working capital/TA, retained earnings/TA, EBIT/TA, market value equity/book value debt, and:',
     options: [
       'Net income/sales',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'bar-wc-190',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Capital Rationing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under capital rationing, projects are selected by:',
     options: [
       'Choosing all positive NPV projects',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'bar-wc-191',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Variable Interest Consolidation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company consolidates a VIE when it is the primary beneficiary, meaning:',
     options: [
       'It owns 50%+ voting stock',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'isc-wc-159',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Incident Response Phases',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The incident response lifecycle includes:',
     options: [
       'Only detection and recovery',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'isc-wc-160',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Strategic Alignment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT strategic alignment ensures:',
     options: [
       'IT operates independently',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'isc-wc-161',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'RPO and RTO',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Recovery Point Objective (RPO) defines:',
     options: [
       'Time to restore systems',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'isc-wc-162',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Database Controls Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Database controls testing should include:',
     options: [
       'Only backup procedures',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'tcp-wc-159',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Alimony',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Alimony payments under pre-2019 divorce agreements are:',
     options: [
       'Never deductible',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'tcp-wc-160',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Tax Year',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'S corporations must generally use:',
     options: [
       'Any fiscal year',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'tcp-wc-161',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Family Limited Partnerships',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Family limited partnerships are used in estate planning to:',
     options: [
       'Avoid all taxes',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_31: Question[] = [
   {
     id: 'tcp-wc-162',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Form 2848',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Form 2848 Power of Attorney:',
     options: [
       'Allows representation before any agency',

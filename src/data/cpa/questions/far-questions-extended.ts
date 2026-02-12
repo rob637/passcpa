@@ -10,11 +10,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Five-Step Model',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 606, the five steps of revenue recognition are performed in which order?',
     options: [
       'Identify performance obligations → Identify contract → Determine price → Recognize revenue → Allocate price',
@@ -30,11 +32,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Performance Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A software company sells a software license ($800) with 2 years of technical support ($200). These are deemed to be distinct. Using relative standalone selling prices (license $900, support $300 total), how much revenue is recognized at contract inception?',
     options: [
@@ -51,11 +55,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A company sells goods for $100,000 with a right of return. Based on history, 5% of sales are returned. Using the expected value method, what revenue is recognized?',
     options: ['$95,000', '$100,000', '$97,500', '$90,000'],
@@ -67,11 +73,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Over Time Recognition',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Revenue is recognized over time if which criterion is met?',
     options: [
       'Payment terms exceed 12 months',
@@ -87,11 +95,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Modifications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A contract modification adds distinct goods at standalone selling price. This modification is treated as:',
     options: [
@@ -112,11 +122,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-lease-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 842, a lease is classified as a finance lease if:',
     options: [
       "The lease term is at least 50% of the asset's economic life",
@@ -132,11 +144,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-lease-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lessee Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A lessee enters a 5-year lease with annual payments of $10,000 at year-end. The incremental borrowing rate is 6%. PV factor for ordinary annuity = 4.2124. What is the initial right-of-use asset?',
     options: [
@@ -153,11 +167,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-lease-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lessee Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For an operating lease, the lessee recognizes on the income statement:',
     options: [
       'A single lease expense on a straight-line basis',
@@ -173,11 +189,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-lease-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lessor Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A lessor classifies a lease as a sales-type lease. At lease commencement, the lessor recognizes:',
     options: [
@@ -194,11 +212,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-lease-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Sale-Leaseback',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'In a sale-leaseback qualifying as a sale under ASC 606, the seller-lessee recognizes:',
     options: [
@@ -219,11 +239,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fi-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Financial Instruments',
     subtopic: 'Debt Securities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A company purchases bonds intending to hold them to collect contractual cash flows. How are these classified?',
     options: [
@@ -240,11 +262,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fi-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Financial Instruments',
     subtopic: 'Debt Securities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Available-for-sale debt securities are measured at:',
     options: [
       'Amortized cost',
@@ -260,11 +284,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fi-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Financial Instruments',
     subtopic: 'Equity Investments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Under ASC 321, equity investments without readily determinable fair values can be measured at:',
     options: [
@@ -281,11 +307,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fi-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Financial Instruments',
     subtopic: 'Equity Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'An investor owns 30% of an investee acquired for $500,000. The investee reports net income of $100,000 and pays dividends of $40,000. What is the investment balance at year-end?',
     options: [
@@ -302,11 +330,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fi-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Financial Instruments',
     subtopic: 'Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 326 (CECL), expected credit losses on held-to-maturity securities are:',
     options: [
       'Recognized only when incurred',
@@ -326,11 +356,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-inv-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Cost Flow Assumptions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'During a period of rising prices, which inventory method results in the highest net income?',
     options: [
@@ -347,11 +379,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-inv-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Lower of Cost or NRV',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Inventory with cost of $50,000 has a net realizable value of $45,000. What is the journal entry?',
     options: [
@@ -368,11 +402,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-inv-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Retail Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A retailer uses the conventional retail method. Which items are included in the cost-to-retail ratio calculation?',
     options: [
@@ -389,11 +425,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-inv-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Dollar-Value LIFO',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A company uses dollar-value LIFO. The base year inventory was $100,000. Current year inventory at current prices is $132,000 and the price index is 1.10. What is the LIFO layer added in the current year?',
     options: ['$32,000', '$20,000', '$22,000', '$12,000'],
@@ -405,11 +443,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-inv-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Consignment',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Goods on consignment are included in the inventory of:',
     options: [
       'The consignee (holder of goods)',
@@ -429,11 +469,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-fa-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Capitalization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Which of the following costs should be capitalized for equipment purchased and installed?',
     options: [
@@ -450,11 +492,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-fa-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Depreciation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Equipment costs $100,000 with $10,000 salvage value and 10-year life. Using double-declining balance, what is Year 1 depreciation?',
     options: [
@@ -471,11 +515,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-fa-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'An asset with carrying value of $500,000 has undiscounted future cash flows of $450,000 and fair value of $400,000. What impairment loss is recognized?',
     options: [
@@ -492,11 +538,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fa-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A company installs equipment with a legal obligation to remove it in 10 years at an estimated cost of $50,000. The credit-adjusted risk-free rate is 6%. The PV factor is 0.5584. What is the initial ARO liability?',
     options: [
@@ -513,11 +561,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-fa-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Nonmonetary Exchanges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'In a nonmonetary exchange with commercial substance, the asset received is recorded at:',
     options: [
@@ -538,11 +588,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-int-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Goodwill',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'How is goodwill tested for impairment under ASC 350?',
     options: [
       'Compared to undiscounted cash flows annually',
@@ -558,11 +610,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-int-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Research and Development',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under U.S. GAAP, research and development costs are:',
     options: [
       'Capitalized and amortized over useful life',
@@ -578,11 +632,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-int-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Software Development',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'Costs incurred to develop software for sale to others after technological feasibility are:',
     options: [
@@ -599,11 +655,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-int-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Internally Developed Intangibles',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company internally develops a patent. Legal fees to obtain the patent are:',
     options: [
       'Expensed as incurred',
@@ -619,11 +677,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-int-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Finite-Life Intangibles',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An acquired customer list has a useful life of 8 years. It should be:',
     options: [
       'Tested for impairment annually but not amortized',
@@ -643,11 +703,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-liab-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Contingencies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A loss contingency should be accrued when the loss is:',
     options: [
       'Possible and reasonably estimable',
@@ -663,11 +725,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-liab-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Warranties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A company sells products with 2-year warranties. Sales are $1,000,000 and estimated warranty costs are 3% of sales. Actual warranty repairs in Year 1 were $15,000. What is the warranty liability at year-end?',
     options: [
@@ -684,11 +748,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-liab-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Bonds Payable',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A $100,000, 10% bond is issued at 103 when market rate is 9%. The premium is:',
     options: [
       'Amortized to decrease interest expense',
@@ -704,11 +770,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-liab-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Troubled Debt',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'In a troubled debt restructuring, a debtor settles a $500,000 debt by transferring land with FMV of $400,000 and book value of $350,000. What gain does the debtor recognize?',
     options: [
@@ -725,11 +793,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-liab-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Deferred Revenue',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question:
       'A company receives $12,000 on January 1 for a 12-month service contract. What is the liability balance on March 31?',
     options: [
@@ -750,11 +820,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-eq-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: 'Equity',
     subtopic: 'Treasury Stock',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A company reacquires 1,000 shares at $50/share using the cost method. The par value is $10. The treasury stock is reported at:',
     options: [
@@ -771,11 +843,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-eq-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: 'Equity',
     subtopic: 'Stock Dividends',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A company declares a 5% stock dividend when 100,000 shares are outstanding, market price is $30, and par value is $1. What amount is transferred to common stock?',
     options: [
@@ -792,11 +866,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-eq-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: 'Equity',
     subtopic: 'Stock Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A company grants 10,000 options with fair value of $5 each. They vest over 4 years (cliff vesting). What is Year 1 compensation expense?',
     options: [
@@ -813,11 +889,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-eq-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: 'Equity',
     subtopic: 'EPS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'Net income is $1,000,000. Preferred dividends are $100,000. Weighted-average common shares are 200,000, and 50,000 dilutive shares exist from stock options. What is diluted EPS?',
     options: ['$4.50',
@@ -832,11 +910,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-eq-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: 'Equity',
     subtopic: 'Retained Earnings',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following does NOT affect retained earnings?',
     options: [
       'Net income',
@@ -856,11 +936,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-cf-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Operating Activities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Under the indirect method, which adjustment is made for a gain on sale of equipment?',
     options: [
@@ -877,11 +959,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-cf-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Investing Activities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is an investing activity?',
     options: [
       'Payment of dividends',
@@ -897,11 +981,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-cf-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Financing Activities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a financing activity?',
     options: [
       'Interest received on investments',
@@ -917,11 +1003,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-cf-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Non-Cash Activities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A company issues stock to acquire land. How is this reported on the statement of cash flows?',
     options: [
@@ -938,11 +1026,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-cf-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Operating - Indirect',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A company's net income is $50,000. Depreciation is $10,000. Accounts receivable increased $5,000. Accounts payable decreased $3,000. What is cash from operating activities?",
     options: ['$68,000',
@@ -961,11 +1051,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-gov-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Fund Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The General Fund uses which measurement focus and basis of accounting?',
     options: [
       'Economic resources, accrual',
@@ -981,11 +1073,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-gov-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which fund type would account for a toll bridge financed by user fees?',
     options: [
       'General Fund',
@@ -1001,11 +1095,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-gov-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under modified accrual, revenues are recognized when:',
     options: ['Earned',
       'Measurable and available',
@@ -1019,11 +1115,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-gov-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Encumbrances',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a purchase order is issued by a governmental fund, the entry is:',
     options: [
       'Debit Encumbrances; Credit Reserve for Encumbrances',
@@ -1039,11 +1137,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-gov-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Government-Wide Statements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Government-wide financial statements include:',
     options: [
       'Statement of Cash Flows and Income Statement',
@@ -1063,11 +1163,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-nfp-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Net Asset Classifications',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 958, net assets of NFPs are classified as:',
     options: [
       'Without donor restrictions and with donor restrictions',
@@ -1083,11 +1185,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-nfp-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A donor gives $100,000 stipulating that only the earnings may be used for scholarships. This is reported as:',
     options: [
@@ -1104,11 +1208,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-nfp-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a time restriction on a contribution is met, the NFP:',
     options: [
       'Reclassifies from restricted to unrestricted net assets',
@@ -1124,11 +1230,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-nfp-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'NFPs must present expenses by:',
     options: [
       'Natural classification only',
@@ -1144,11 +1252,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-nfp-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributed Services',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Contributed services are recognized as revenue if they:',
     options: [
       'Have any fair value',

@@ -11,6 +11,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-001',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'AICPA Standards',
@@ -31,6 +32,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-002',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Tax Practice',
@@ -51,6 +53,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-003',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Privileged Communication',
@@ -75,6 +78,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-004',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Formation',
@@ -95,6 +99,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-005',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Statute of Frauds',
@@ -115,6 +120,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-006',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Remedies',
@@ -135,6 +141,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-007',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ucc',
     topic: 'UCC Article 2',
     subtopic: 'Risk of Loss',
@@ -155,6 +162,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-008',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-agency',
     topic: 'Agency Law',
     subtopic: 'Authority',
@@ -175,6 +183,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-009',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-agency',
     topic: 'Agency Law',
     subtopic: 'Liability',
@@ -195,6 +204,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-010',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Law',
     subtopic: 'Real Property',
@@ -219,6 +229,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-011',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alimony',
@@ -239,6 +250,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-012',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Home Sale Exclusion',
@@ -259,6 +271,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-013',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Losses',
@@ -279,6 +292,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-014',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-basis',
     topic: 'Property Basis',
     subtopic: 'Inherited Property',
@@ -299,6 +313,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-015',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-basis',
     topic: 'Property Basis',
     subtopic: 'Gifted Property',
@@ -319,6 +334,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-016',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Stock Redemptions',
@@ -339,6 +355,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-017',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company',
@@ -359,6 +376,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-018',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Debt Basis',
@@ -379,6 +397,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-019',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
@@ -399,6 +418,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-020',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Partner Losses',
@@ -421,6 +441,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-021',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-employment',
     topic: 'Employment Tax',
     subtopic: 'FICA',
@@ -441,6 +462,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-022',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-employment',
     topic: 'Employment Tax',
     subtopic: 'Self-Employment Tax',
@@ -461,6 +483,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-023',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sales',
@@ -481,6 +504,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-024',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
@@ -501,6 +525,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-025',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations',
@@ -521,6 +546,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-026',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'IRS Collections',
@@ -541,6 +567,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-027',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business',
     topic: 'Business Entities',
     subtopic: 'LLCs',
@@ -561,6 +588,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-028',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business',
     topic: 'Business Entities',
     subtopic: 'Limited Partnerships',
@@ -581,6 +609,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-029',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-secured',
     topic: 'Secured Transactions',
     subtopic: 'Perfection',
@@ -601,6 +630,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-030',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-bankruptcy',
     topic: 'Bankruptcy',
     subtopic: 'Priority Claims',
@@ -621,6 +651,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-031',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'HSA',
@@ -641,6 +672,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-032',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Kiddie Tax',
@@ -661,6 +693,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-033',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Casualty Losses',
@@ -681,6 +714,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-034',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'E&P',
@@ -701,6 +735,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-035',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Constructive Dividends',
@@ -721,6 +756,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-036',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'AAA',
@@ -741,6 +777,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-037',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Passive Investment Income',
@@ -761,6 +798,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-038',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
@@ -781,6 +819,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-039',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Family Partnerships',
@@ -801,6 +840,7 @@ export const REG_QUESTIONS_EXPANDED: Question[] = [
   {
     id: 'reg-exp-040',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'SSTS',

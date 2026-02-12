@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH6: Question[] = [
   {
-    id: 'CISA2-123',
+    id: 'cisa2-123',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT strategy alignment with business strategy is BEST evaluated by:',
     options: [
       'Reviewing IT budgets',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Strategic Alignment'
   },
   {
-    id: 'CISA2-124',
+    id: 'cisa2-124',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Board-level IT oversight focuses on:',
     options: [
       'Technical operations',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Board Oversight'
   },
   {
-    id: 'CISA2-125',
+    id: 'cisa2-125',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT organizational structure should:',
     options: [
       'Be identical across all organizations',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Structure'
   },
   {
-    id: 'CISA2-126',
+    id: 'cisa2-126',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'CIO reporting to the CEO rather than CFO:',
     options: [
       'Has no impact',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Reporting Structure'
   },
   {
-    id: 'CISA2-127',
+    id: 'cisa2-127',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT performance measurement framework should include:',
     options: [
       'Only financial metrics',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Performance Framework'
   },
   {
-    id: 'CISA2-128',
+    id: 'cisa2-128',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Technology refresh planning should consider:',
     options: [
       'Only age of equipment',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Technology Refresh'
   },
   {
-    id: 'CISA2-129',
+    id: 'cisa2-129',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Build vs buy decisions should evaluate:',
     options: [
       'Only initial cost',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Build vs Buy'
   },
   {
-    id: 'CISA2-130',
+    id: 'cisa2-130',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT chargeback models:',
     options: [
       'Eliminate IT costs',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Chargeback'
   },
   {
-    id: 'CISA2-131',
+    id: 'cisa2-131',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT demand management helps:',
     options: [
       'Deny all requests',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Demand Management'
   },
   {
-    id: 'CISA2-132',
+    id: 'cisa2-132',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Business capability modeling in IT strategy:',
     options: [
       'Maps only technology',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Capability Modeling'
   },
   {
-    id: 'CISA2-133',
+    id: 'cisa2-133',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT standards and guidelines:',
     options: [
       'Are optional',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Standards'
   },
   {
-    id: 'CISA2-134',
+    id: 'cisa2-134',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Exception management processes should:',
     options: [
       'Automatically approve all requests',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Exception Management'
   },
   {
-    id: 'CISA2-135',
+    id: 'cisa2-135',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Multi-cloud strategy governance requires:',
     options: [
       'Treating each cloud separately',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Multi-Cloud'
   },
   {
-    id: 'CISA2-136',
+    id: 'cisa2-136',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cloud exit strategy should address:',
     options: [
       'Only cost',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Exit Strategy'
   },
   {
-    id: 'CISA2-137',
+    id: 'cisa2-137',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SLA management effectiveness requires:',
     options: [
       'Setting SLAs once',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'SLA Management'
   },
   {
-    id: 'CISA2-138',
+    id: 'cisa2-138',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Vendor concentration risk occurs when:',
     options: [
       'Many vendors are used',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Concentration Risk'
   },
   {
-    id: 'CISA2-139',
+    id: 'cisa2-139',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Due diligence for vendor selection should include:',
     options: [
       'Only financial review',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Due Diligence'
   },
   {
-    id: 'CISA2-140',
+    id: 'cisa2-140',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Software escrow arrangements protect against:',
     options: [
       'All vendor risks',
@@ -314,10 +350,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Software Escrow'
   },
   {
-    id: 'CISA2-141',
+    id: 'cisa2-141',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT integration during mergers and acquisitions:',
     options: [
       'Should be deferred',
@@ -331,10 +369,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'M&A Integration'
   },
   {
-    id: 'CISA2-142',
+    id: 'cisa2-142',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT risk tolerance levels should be:',
     options: [
       'Set by IT only',
@@ -348,10 +388,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Risk Tolerance'
   },
   {
-    id: 'CISA2-143',
+    id: 'cisa2-143',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk scenario analysis helps:',
     options: [
       'Only identify threats',
@@ -365,10 +407,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Scenario Analysis'
   },
   {
-    id: 'CISA2-144',
+    id: 'cisa2-144',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Residual risk after control implementation:',
     options: [
       'Is always zero',
@@ -382,10 +426,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Residual Risk'
   },
   {
-    id: 'CISA2-145',
+    id: 'cisa2-145',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT disaster recovery capabilities should be:',
     options: [
       'Only documented',
@@ -399,10 +445,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'DR Testing'
   },
   {
-    id: 'CISA2-146',
+    id: 'cisa2-146',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT audit committee reporting should include:',
     options: [
       'Only positive results',
@@ -416,10 +464,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Audit Reporting'
   },
   {
-    id: 'CISA2-147',
+    id: 'cisa2-147',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data governance responsibilities include:',
     options: [
       'Only IT duties',
@@ -433,10 +483,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Responsibilities'
   },
   {
-    id: 'CISA2-148',
+    id: 'cisa2-148',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data stewards are responsible for:',
     options: [
       'Only technical management',
@@ -450,10 +502,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Data Stewardship'
   },
   {
-    id: 'CISA2-149',
+    id: 'cisa2-149',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Ethics in IT decision-making should consider:',
     options: [
       'Only legal requirements',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Ethics'
   },
   {
-    id: 'CISA2-150',
+    id: 'cisa2-150',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Digital transformation governance requires:',
     options: [
       'Traditional approaches only',
@@ -484,10 +540,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Digital Transformation'
   },
   {
-    id: 'CISA2-151',
+    id: 'cisa2-151',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sustainability considerations in IT include:',
     options: [
       'Only energy efficiency',
@@ -501,10 +559,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Sustainability'
   },
   {
-    id: 'CISA2-152',
+    id: 'cisa2-152',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Regulatory horizon scanning ensures:',
     options: [
       'Regulatory avoidance',

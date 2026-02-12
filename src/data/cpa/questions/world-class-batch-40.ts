@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'far-wc-195',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Noncontrolling Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'At acquisition, noncontrolling interest in a business combination is measured at:',
     options: [
       'Zero',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'far-wc-196',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Exit Activities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Costs to terminate an operating lease as part of exit activities are recognized when:',
     options: [
       'Plan is announced',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'far-wc-197',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign',
     topic: 'Foreign Currency',
     subtopic: 'Remeasurement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When remeasuring foreign currency financial statements into the functional currency:',
     options: [
       'All accounts use current rate',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'far-wc-198',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Compensated Absences',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In governmental accounting, compensated absences that will be liquidated from governmental funds are:',
     options: [
       'Fully accrued',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'aud-wc-195',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-comparative',
     topic: 'Reporting',
     subtopic: 'Comparative Financial Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When comparative financial statements are presented and a different auditor reported on prior period:',
     options: [
       'Only current auditor reports',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'aud-wc-196',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-it',
     topic: 'IT Controls',
     subtopic: 'Automated Application Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Automated application controls are generally:',
     options: [
       'Less reliable than manual',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'aud-wc-197',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-related',
     topic: 'Related Parties',
     subtopic: 'Substantive Procedures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit procedures for related party transactions include:',
     options: [
       'Only inquiry',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'aud-wc-198',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Independence Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Direct financial interest in an audit client by an immediate family member of the audit engagement partner:',
     options: [
       'Is not an independence issue',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'reg-wc-195',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-c-corp',
     topic: 'C Corporation',
     subtopic: 'Organizational Expenditures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A corporation may immediately expense up to how much of organizational expenditures?',
     options: [
       '$10,000',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'reg-wc-196',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Medical Expense Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Medical expenses are deductible to the extent they exceed:',
     options: [
       '5% of AGI',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'reg-wc-197',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-negotiable',
     topic: 'Negotiable Instruments',
     subtopic: 'Requirements for Negotiability',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To be a negotiable instrument under UCC Article 3, the instrument must:',
     options: [
       'Only be signed',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'reg-wc-198',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-basis',
     topic: 'Property Transactions',
     subtopic: 'Carryover Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A donee\'s basis in gifted property for loss purposes is:',
     options: [
       'Always donor\'s basis',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'bar-wc-232',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Beneish M-Score',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Beneish M-Score is used to:',
     options: [
       'Calculate equity value',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'bar-wc-233',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Discounts for Lack of Marketability',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A discount for lack of marketability (DLOM) reflects:',
     options: [
       'Market risk premium',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'bar-wc-234',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'SEC Comment Letters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SEC comment letters typically address:',
     options: [
       'Only typos',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'bar-wc-235',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Backflush Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Backflush costing is appropriate for:',
     options: [
       'Traditional manufacturing',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'bar-wc-236',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Peer Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When selecting peer companies for comparison, analysts should consider:',
     options: [
       'Only market cap',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'isc-wc-195',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Digital Risk',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Digital risk management addresses:',
     options: [
       'Only cyber threats',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'isc-wc-196',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'CASB Solutions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cloud Access Security Brokers (CASBs) provide:',
     options: [
       'Only encryption',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'isc-wc-197',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Event-Driven Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Event-driven architecture (EDA) is characterized by:',
     options: [
       'Synchronous calls only',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'isc-wc-198',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Third Party Risk Assessment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Third party/vendor IT risk assessments should evaluate:',
     options: [
       'Only pricing',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'tcp-wc-195',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Tax-Exempt Organizations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Unrelated business taxable income (UBTI) for exempt organizations includes:',
     options: [
       'All revenue',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'tcp-wc-196',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Gambling Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gambling losses are deductible:',
     options: [
       'Without limit',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'tcp-wc-197',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Donor Advised Fund',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A donor advised fund (DAF) allows donors to:',
     options: [
       'Retain control of assets',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_40: Question[] = [
   {
     id: 'tcp-wc-198',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Closing Agreements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IRS closing agreement (Form 906):',
     options: [
       'Can be reopened anytime',

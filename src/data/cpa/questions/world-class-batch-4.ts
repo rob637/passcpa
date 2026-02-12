@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'far-wc-051',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-pensions',
     topic: 'Pensions',
     subtopic: 'Pension Expense Components',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cedar Corp. has the following pension data: Service cost $80,000, Interest cost $50,000, Expected return on plan assets $40,000, Amortization of prior service cost $12,000, Amortization of net loss $8,000. What is pension expense for the year?',
     options: [
       '$110,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'far-wc-052',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-income-taxes',
     topic: 'Income Taxes',
     subtopic: 'Deferred Tax Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Ash Corp. has a deferred tax asset of $200,000 related to warranty liabilities. Based on available evidence, management estimates that $150,000 of the DTA will more likely than not be realized. What amount should Ash report as a net deferred tax asset?',
     options: [
       '$200,000',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'far-wc-053',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributed Services',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A not-for-profit receives volunteer services from a licensed electrician who rewires the organization\'s building. The fair value of the services is $15,000. How should this be recorded?',
     options: [
       'No recognition because volunteer services are never recorded',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'far-wc-054',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign-currency',
     topic: 'Foreign Currency',
     subtopic: 'Translation Adjustments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A US parent has a foreign subsidiary whose functional currency is the local currency. When translating the subsidiary\'s financial statements, where is the translation adjustment reported?',
     options: [
       'In the income statement as a gain or loss',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'aud-wc-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When auditing accounts receivable, an auditor sends positive confirmations. If 30% of confirmations are not returned, the auditor should:',
     options: [
       'Issue a qualified opinion due to scope limitation',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'aud-wc-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In an agreed-upon procedures engagement, the practitioner\'s report contains:',
     options: [
       'An opinion on the subject matter',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'aud-wc-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Control',
     subtopic: 'Engagement Quality Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under PCAOB standards, which of the following audits requires an engagement quality review?',
     options: [
       'All audits performed by the firm',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'aud-wc-054',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Comparative Financial Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A continuing auditor reissues the prior-year report with the current-year financial statements. Since the prior year, a subsequently discovered error was corrected through restatement. What should the auditor do?',
     options: [
       'Issue the same opinion as the prior year',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'reg-wc-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Thompson has a horse breeding activity with gross income of $10,000 and expenses of $25,000. The IRS determines this is a hobby, not a business. What amount of the expenses can Thompson deduct?',
     options: [
       '$25,000',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'reg-wc-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Kim is a 50% S corp shareholder with a $30,000 stock basis and $10,000 debt basis (loan to corporation). The S corp reports a $90,000 loss. How much loss can Kim deduct, and what are the remaining bases?',
     options: [
       '$45,000 loss; $0 stock basis; $5,000 debt basis',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'reg-wc-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Tax Preparer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A tax return preparer takes a position that has a realistic possibility of being sustained on its merits but fails to disclose it on the return. What penalty may apply under IRC Section 6694?',
     options: [
       'No penalty because realistic possibility standard is met',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'reg-wc-054',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distribution of Property',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner receives a current distribution of property with a FMV of $50,000 and a partnership basis of $30,000. The partner\'s outside basis is $20,000. What is the partner\'s basis in the distributed property?',
     options: [
       '$50,000 (FMV)',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'bar-wc-052',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Leverage Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has total debt of $400,000, total equity of $600,000, and total assets of $1,000,000. What is the debt-to-equity ratio?',
     options: [
       '0.40',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'bar-wc-053',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-cost-capital',
     topic: 'Valuation',
     subtopic: 'Cost of Equity - CAPM',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Using CAPM, calculate the cost of equity given: risk-free rate 3%, market risk premium 6%, company beta 1.5.',
     options: [
       '9%',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'bar-wc-054',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Stock Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company grants 10,000 stock options with a grant-date fair value of $8 each. The options vest over 4 years (cliff vesting). At grant date, management estimates 10% forfeitures. What is Year 1 compensation expense?',
     options: [
       '$20,000',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'bar-wc-055',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Working Capital',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following actions would improve (increase) a company\'s current ratio while also improving its quick ratio?',
     options: [
       'Purchasing inventory on account',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'bar-wc-056',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-budgeting',
     topic: 'Budgeting and Forecasting',
     subtopic: 'Variance Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Standard cost is $10/unit for 1,000 units budgeted. Actual results: 1,200 units produced at $9.50/unit. What is the spending (price) variance?',
     options: [
       '$600 favorable',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'isc-wc-051',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Malware Protection',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Ransomware is a type of malware that:',
     options: [
       'Monitors user keystrokes to capture passwords',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'isc-wc-052',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Audit Evidence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When auditing an application system, an auditor uses test data containing both valid and invalid transactions to verify processing controls. This technique is called:',
     options: [
       'Parallel simulation',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'isc-wc-053',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Change Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a mature SDLC change management process, which control is MOST critical to prevent unauthorized program modifications?',
     options: [
       'User acceptance testing',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'isc-wc-054',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Backup Strategies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company performs full backups every Sunday and incremental backups Monday through Saturday. To restore data to Friday\'s state, which backups are needed?',
     options: [
       'Only Friday\'s incremental backup',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'tcp-wc-051',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Returns',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A calendar-year partnership must file its Form 1065 by:',
     options: [
       'April 15 (3½ months after year-end)',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'tcp-wc-052',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Installment Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Rodriguez sells land (basis $100,000) for $400,000, receiving $80,000 down and $320,000 in equal annual installments over 4 years. What gross profit percentage is applied to each payment?',
     options: [
       '25%',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'tcp-wc-053',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Social Security Benefits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A married couple filing jointly has modified AGI of $50,000 and receives $20,000 in Social Security benefits. What portion of their benefits is taxable?',
     options: [
       '$0',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_4: Question[] = [
   {
     id: 'tcp-wc-054',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-corporate',
     topic: 'Entity Tax Compliance',
     subtopic: 'NOL Carryforward',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation has a net operating loss of $500,000 in Year 1 and taxable income of $300,000 in Year 2 (before NOL deduction). Under post-2020 rules, what is the Year 2 taxable income after applying the NOL?',
     options: [
       '$0',

@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'far-wc-123',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Net Realizable Value',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 330 (post-2017), inventory is measured at:',
     options: [
       'Historical cost only',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'far-wc-124',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Factoring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A transfer of receivables qualifies as a sale if the transferor:',
     options: [
       'Retains servicing rights',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'far-wc-125',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-intangibles',
     topic: 'Intangibles',
     subtopic: 'Goodwill Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the simplified goodwill impairment test (ASU 2017-04), impairment loss equals:',
     options: [
       'Carrying amount minus implied fair value of goodwill',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'far-wc-126',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Statement Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Not-for-profit entities must present which financial statements?',
     options: [
       'Balance sheet, income statement, and statement of cash flows only',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'aud-wc-123',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Audit Documentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit documentation should be sufficient to enable:',
     options: [
       'Only the engagement partner to understand the work',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'aud-wc-124',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-inventories',
     topic: 'Inventories',
     subtopic: 'Observation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When inventory is material, the auditor must:',
     options: [
       'Always take complete physical count',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'aud-wc-125',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Triangle',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The fraud triangle consists of:',
     options: [
       'Management, employees, and third parties',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'aud-wc-126',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-attest',
     topic: 'Attestation',
     subtopic: 'Compliance Attestation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An examination of compliance with laws and regulations results in:',
     options: [
       'A guarantee of no violations',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'reg-wc-123',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Self-employment tax applies to net self-employment income exceeding:',
     options: [
       '$500',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'reg-wc-124',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 751 "hot assets" include:',
     options: [
       'Cash and marketable securities',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'reg-wc-125',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Insurance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The concept of insurable interest requires:',
     options: [
       'That insurance be purchased for speculative purposes',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'reg-wc-126',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Hobby Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Hobby loss rules limit deductions to:',
     options: [
       'Unlimited losses against other income',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'bar-wc-142',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Trend Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Horizontal analysis compares:',
     options: [
       'Each item to a base amount within the same period',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'bar-wc-143',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Enterprise Value',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Enterprise value (EV) is calculated as:',
     options: [
       'Market cap only',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'bar-wc-144',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Revenue Variable Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Variable consideration in revenue recognition is estimated using:',
     options: [
       'Historical cost only',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'bar-wc-145',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Process Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Process costing differs from job costing in that:',
     options: [
       'Costs are accumulated for individual jobs',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'bar-wc-146',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key limitation of financial statement analysis is:',
     options: [
       'Too much information is provided',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'isc-wc-123',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Risk Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Qualitative risk assessment differs from quantitative in that it:',
     options: [
       'Uses precise dollar amounts for all risks',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'isc-wc-124',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'SIEM',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security Information and Event Management (SIEM) systems provide:',
     options: [
       'Physical access control only',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'isc-wc-125',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Containerization',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Containers differ from virtual machines in that containers:',
     options: [
       'Require more resources than VMs',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'isc-wc-126',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Input Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A check digit verification is an example of:',
     options: [
       'Output control',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'tcp-wc-123',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Moving Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For tax years 2018-2025, moving expense deductions are:',
     options: [
       'Available to all taxpayers meeting distance and time tests',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'tcp-wc-124',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'C Corp vs S Corp',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key disadvantage of C corporation status compared to S corporation is:',
     options: [
       'Limited liability protection',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'tcp-wc-125',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Roth Conversions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When converting a traditional IRA to Roth IRA:',
     options: [
       'No taxes are ever due',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_22: Question[] = [
   {
     id: 'tcp-wc-126',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Accuracy-Related Penalties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accuracy-related penalty under IRC Section 6662 is:',
     options: [
       '10% of the underpayment',

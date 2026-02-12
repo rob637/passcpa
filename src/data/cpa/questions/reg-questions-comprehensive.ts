@@ -8,6 +8,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-001',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Tax Return Positions',
@@ -28,6 +29,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-002',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Promissory Estoppel',
@@ -48,6 +50,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-003',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ucc',
     topic: 'UCC Article 2',
     subtopic: 'Perfect Tender',
@@ -68,6 +71,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-004',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Dependency Exemption',
@@ -88,6 +92,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-005',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Education Credits',
@@ -108,6 +113,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-006',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-basis',
     topic: 'Property Basis',
     subtopic: 'Boot in Corporate Formation',
@@ -128,6 +134,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-007',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Section 382 Limitation',
@@ -148,6 +155,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-008',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'ESBT',
@@ -168,6 +176,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-009',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Mixing Bowl Transactions',
@@ -188,6 +197,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-010',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Innocent Spouse Relief',
@@ -208,6 +218,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-011',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-agency',
     topic: 'Agency Law',
     subtopic: 'Termination',
@@ -228,6 +239,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-012',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-bankruptcy',
     topic: 'Bankruptcy',
     subtopic: 'Automatic Stay',
@@ -248,6 +260,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-013',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-secured',
     topic: 'Secured Transactions',
     subtopic: 'PMSI Priority',
@@ -268,6 +281,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-014',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gambling Income',
@@ -288,6 +302,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-015',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Section 1244 Stock',
@@ -308,6 +323,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-016',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversions',
@@ -328,6 +344,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-017',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-employment',
     topic: 'Employment Tax',
     subtopic: 'Independent Contractor',
@@ -348,6 +365,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-018',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Accuracy Penalties',
@@ -368,6 +386,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-019',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Tax Preparer Penalties',
@@ -388,6 +407,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-020',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Termination Events',
@@ -408,6 +428,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-021',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Technical Termination',
@@ -428,6 +449,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-022',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Health Insurance Mandate',
@@ -448,6 +470,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-023',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business',
     topic: 'Business Entities',
     subtopic: 'Partnership vs Joint Venture',
@@ -468,6 +491,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-024',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Charitable Remainder Trust',
@@ -488,6 +512,7 @@ export const REG_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'reg-comp-025',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Offer in Compromise',

@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'far-wc-103',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Hedge Effectiveness',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 815, a derivative qualifies for hedge accounting only if:',
     options: [
       'It generates immediate income',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'far-wc-104',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Encumbrances',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In governmental accounting, encumbrances are:',
     options: [
       'Actual expenditures recorded when incurred',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'far-wc-105',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Contingently Issuable Shares',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Contingently issuable shares are included in diluted EPS when:',
     options: [
       'The contingency has been resolved and shares will be issued',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'far-wc-106',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Collections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A museum that does not capitalize its collection items must:',
     options: [
       'Record them at estimated fair value',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'aud-wc-103',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Quality Control',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under QC standards, engagement quality control review is required for:',
     options: [
       'All assurance engagements',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'aud-wc-104',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-sampling',
     topic: 'Sampling',
     subtopic: 'Nonsampling Risk',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Nonsampling risk arises from:',
     options: [
       'Using a sample that is too small',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'aud-wc-105',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Management Override',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The audit response to the risk of management override of controls includes:',
     options: [
       'Testing journal entries and reviewing accounting estimates',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'aud-wc-106',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key Audit Matters (Critical Audit Matters in the US) must be communicated:',
     options: [
       'Only when the opinion is modified',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'reg-wc-103',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Education Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The American Opportunity Tax Credit maximum per eligible student is:',
     options: [
       '$1,500',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'reg-wc-104',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Organizational Costs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A corporation may currently deduct organizational costs up to:',
     options: [
       '$500',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'reg-wc-105',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under UCC Article 9, a purchase money security interest (PMSI) in inventory has priority over earlier perfected interests if the PMSI holder:',
     options: [
       'Files a financing statement first',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'reg-wc-106',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Passive Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The $25,000 rental real estate exception to passive loss rules requires:',
     options: [
       'Material participation in the rental',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'bar-wc-117',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'WACC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In calculating WACC, the cost of debt is:',
     options: [
       'The coupon rate on existing bonds',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'bar-wc-118',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Derivatives',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A fair value hedge adjusts:',
     options: [
       'The derivative only',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'bar-wc-119',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Relevant Costs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sunk costs are:',
     options: [
       'Relevant to current decisions',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'bar-wc-120',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Quality of Earnings',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High quality of earnings is indicated by:',
     options: [
       'High non-recurring income items',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'bar-wc-121',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Terminal Value',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In DCF valuation, the terminal value represents:',
     options: [
       'The initial investment',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'isc-wc-103',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'SLA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Service Level Agreement (SLA) primarily defines:',
     options: [
       'Employee compensation',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'isc-wc-104',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Zero Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Zero Trust security architecture assumes:',
     options: [
       'The network perimeter is secure',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'isc-wc-105',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'NoSQL Databases',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'NoSQL databases are best suited for:',
     options: [
       'Complex joins and ACID transactions',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'isc-wc-106',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'CAATs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Computer-Assisted Audit Techniques (CAATs) include:',
     options: [
       'Manual inspection of physical documents',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'tcp-wc-103',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The 3.8% Net Investment Income Tax applies to:',
     options: [
       'All wages and salaries',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'tcp-wc-104',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'S Corporation Election',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Form 2553, S Corporation election, must generally be filed:',
     options: [
       'Within 75 days after the effective date or the entire preceding year',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'tcp-wc-105',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Grantor Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a grantor trust, income is taxed to:',
     options: [
       'The trust itself',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_17: Question[] = [
   {
     id: 'tcp-wc-106',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Authorization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Form 2848, Power of Attorney, authorizes a representative to:',
     options: [
       'Sign tax returns without taxpayer authorization',

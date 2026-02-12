@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'far-wc-067',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Lower of Cost or NRV',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has inventory with a cost of $50,000, replacement cost of $42,000, selling price of $55,000, normal profit margin of $8,000, and costs to complete and sell of $7,000. Under GAAP, what is the inventory value?',
     options: [
       '$42,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'far-wc-068',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-ppe',
     topic: 'Property, Plant and Equipment',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company installs equipment with a legal obligation to remove it in 10 years at an estimated cost of $500,000. The credit-adjusted risk-free rate is 6%. PV factor for 10 years at 6% is 0.5584. What is the initial asset retirement obligation?',
     options: [
       '$500,000',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'far-wc-069',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-consolidations',
     topic: 'Consolidations',
     subtopic: 'Intercompany Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parent sells inventory to Subsidiary for $80,000 (cost $60,000). At year-end, Subsidiary has 25% of this inventory remaining. What is the unrealized intercompany profit to be eliminated in consolidation?',
     options: [
       '$20,000',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'far-wc-070',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Conditional vs Unconditional Promises',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A foundation promises to give a university $1,000,000 if the university raises matching funds within 2 years. At the promise date, the university has not yet raised matching funds. How should the university record this?',
     options: [
       'Contribution revenue of $1,000,000',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'aud-wc-067',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Revenue Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor is testing for overstatement of revenue. The most effective procedure is to:',
     options: [
       'Select recorded sales and vouch to shipping documents',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'aud-wc-068',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Engagement Letters',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary purpose of an engagement letter for an audit is to:',
     options: [
       'Document the audit plan',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'aud-wc-069',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Pro Forma Financial Information',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When reporting on pro forma financial information, the practitioner should:',
     options: [
       'Express an opinion on the pro forma adjustments',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'aud-wc-070',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Due Professional Care',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Due professional care in an audit requires the auditor to:',
     options: [
       'Guarantee detection of all fraud',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'reg-wc-067',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Roth IRA Conversions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer converts $100,000 from a traditional IRA (all deductible contributions) to a Roth IRA. The taxpayer is 45 years old. What are the tax consequences?',
     options: [
       '$100,000 taxable income plus 10% early withdrawal penalty',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'reg-wc-068',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'AAA Account',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation has AAA of $50,000 and accumulated E&P (from C corp years) of $30,000. The S corp distributes $70,000 to its sole shareholder (basis $100,000). How is the distribution taxed?',
     options: [
       '$70,000 return of basis',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'reg-wc-069',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Suretyship',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A surety has the right of subrogation. This means the surety:',
     options: [
       'Can require the creditor to first pursue the debtor',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'reg-wc-070',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A sole proprietor sells business equipment for $40,000. The equipment had an original cost of $50,000 and accumulated depreciation of $30,000 (all ordinary depreciation). What is the character of the gain?',
     options: [
       '$20,000 Section 1231 gain',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'bar-wc-072',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Asset Turnover',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Net sales are $2,400,000 and average total assets are $800,000. What is the asset turnover ratio?',
     options: [
       '2.0 times',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'bar-wc-073',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Payback Period',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A project requires an initial investment of $200,000 and generates annual cash flows of $50,000. What is the payback period?',
     options: [
       '2 years',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'bar-wc-074',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Goodwill Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A reporting unit has a carrying amount of $500,000 (including $100,000 goodwill) and a fair value of $420,000. What is the goodwill impairment loss?',
     options: [
       '$0',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'bar-wc-075',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Operating Cycle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has days inventory outstanding of 45 days and days sales outstanding of 30 days. What is the operating cycle?',
     options: [
       '15 days',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'bar-wc-076',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Break-Even Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Fixed costs are $120,000, unit selling price is $40, and unit variable cost is $25. How many units must be sold to break even?',
     options: [
       '3,000 units',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'isc-wc-067',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Incident Response',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The FIRST step in incident response when a security breach is detected is:',
     options: [
       'Eradication of the threat',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'isc-wc-068',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Compliance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SOX Section 404 requires:',
     options: [
       'Annual financial statement audit by external auditors',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'isc-wc-069',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Big Data',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The "3 Vs" of big data are commonly described as:',
     options: [
       'Validation, Verification, Value',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'isc-wc-070',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Change Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing IT change management controls, an auditor would be MOST concerned if:',
     options: [
       'Changes require management approval before implementation',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'tcp-wc-067',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Health Savings Accounts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is required to be eligible to contribute to a Health Savings Account (HSA)?',
     options: [
       'Coverage under any health insurance plan',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'tcp-wc-068',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'LLC Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A single-member LLC does not elect corporate treatment. How is it taxed for federal income tax purposes?',
     options: [
       'As a partnership',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'tcp-wc-069',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Tax Loss Harvesting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An investor sells a stock at a $10,000 loss and immediately purchases a call option on the same stock. Under the wash sale rules:',
     options: [
       'Loss is fully deductible because options are not substantially identical',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_8: Question[] = [
   {
     id: 'tcp-wc-070',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Alimony',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For divorce agreements executed after December 31, 2018, alimony payments are:',
     options: [
       'Deductible by payor, taxable to recipient',

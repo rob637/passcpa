@@ -10,11 +10,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A taxpayer received the following in the current year: Salary $80,000; Jury duty pay $300; Municipal bond interest $2,000; Life insurance proceeds from deceased spouse $100,000. What is the taxpayer's gross income?",
     options: [
@@ -31,11 +33,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "An employee received $5,000 of employer-provided educational assistance for an MBA program. The employee's AGI is $70,000. How much is taxable?",
     options: [
@@ -52,11 +56,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A cash-basis taxpayer received a $10,000 check from a client on December 29, Year 1, but did not deposit it until January 3, Year 2. When is the income recognized?',
     options: [
@@ -73,11 +79,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is included in gross income?',
     options: [
       "Workers' compensation benefits",
@@ -93,11 +101,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A taxpayer purchased an annuity for $72,000. The annuity pays $12,000 per year for 10 years. How much of the first year's payment is taxable?",
     options: [
@@ -114,11 +124,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A taxpayer won a car valued at $25,000 in a radio contest. The taxpayer's tax bracket is 24%. What is included in gross income?",
     options: [
@@ -135,11 +147,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Exclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'An employee receives free parking in an employer-owned lot. The monthly fair market value is $300. The 2024 excludable limit for qualified parking is $315/month. How much is taxable annually?',
     options: [
@@ -156,11 +170,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer sold their principal residence for $600,000. They paid $350,000 for it 8 years ago and made $50,000 in capital improvements. The taxpayer is single. What is the taxable gain?',
     options: [
@@ -177,11 +193,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A divorced taxpayer receives $2,000/month from their ex-spouse under a divorce agreement executed in 2015: $1,200 designated as alimony and $800 as child support. What is the annual taxable income from these payments?',
     options: ['$0',
@@ -196,11 +214,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gi-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following fringe benefits is NOT excludable from gross income?',
     options: [
       'Employer-provided group term life insurance coverage up to $50,000',
@@ -220,11 +240,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ded-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions for AGI',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A self-employed individual paid $8,000 for health insurance for themselves and their family. Their net self-employment income was $50,000. What is the deduction for AGI?',
     options: [
@@ -241,11 +263,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ded-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions for AGI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer contributed $7,000 to a traditional IRA. Their AGI is $85,000, they are 45 years old, single, and covered by an employer retirement plan. The 2024 phase-out range for single filers is $77,000-$87,000. What is the deductible IRA contribution?',
     options: ['$1,400',
@@ -260,11 +284,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ded-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions for AGI',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer paid $4,500 in student loan interest during the year. Their modified AGI is $75,000 and they file as single. The phase-out range begins at $75,000. What is the maximum deduction?',
     options: [
@@ -281,11 +307,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ded-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions for AGI',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a deduction FOR adjusted gross income (above-the-line)?',
     options: [
       'Home mortgage interest',
@@ -301,11 +329,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ded-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions for AGI',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A teacher spent $400 on classroom supplies. What is the maximum educator expense deduction for AGI?',
     options: [
@@ -326,11 +356,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-item-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A taxpayer's AGI is $100,000. They paid $12,000 in medical expenses, $6,000 in prescription drugs, and received $3,000 insurance reimbursement. What is the medical expense deduction?",
     options: [
@@ -347,11 +379,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-item-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The SALT deduction (state and local taxes) is limited to:',
     options: [
       '$10,000',
@@ -367,11 +401,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-item-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer donated stock with FMV of $20,000 and basis of $5,000 to a public charity. Their AGI is $100,000. What is the maximum charitable deduction this year?',
     options: [
@@ -388,11 +424,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-item-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following mortgage interest is deductible?',
     options: [
       'Interest on a $1,500,000 acquisition mortgage obtained in 2019',
@@ -408,11 +446,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-item-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer paid $5,000 in points to obtain a mortgage to purchase their principal residence. The loan is for 30 years. How much can be deducted in Year 1?',
     options: [
@@ -433,11 +473,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-cred-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer paid $8,000 in child care expenses for their 4-year-old while working. Their AGI is $35,000. What is the maximum child care credit?',
     options: [
@@ -454,11 +496,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-cred-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Child Tax Credit for a qualifying child under age 17 is:',
     options: [
       '$500',
@@ -474,11 +518,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-cred-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A taxpayer paid $5,000 in qualified tuition for their dependent child's freshman year of college. Their MAGI is $75,000 (single). What is the American Opportunity Tax Credit?",
     options: [
@@ -495,11 +541,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-cred-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is a refundable tax credit?',
     options: [
       'Foreign tax credit',
@@ -515,11 +563,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-cred-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer adopted a child with special needs. They incurred $20,000 in qualified adoption expenses. What is the maximum adoption credit for 2024?',
     options: ['$16,810',
@@ -538,11 +588,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-prop-ext-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis Determination',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A taxpayer received stock as a gift. The donor's basis was $10,000 and FMV at date of gift was $8,000. If sold for $7,000, what is the loss?",
     options: [
@@ -559,11 +611,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-prop-ext-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis Determination',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A taxpayer inherited stock that the decedent bought for $20,000. FMV was $50,000 at date of death and $55,000 six months later. The estate did not elect alternate valuation. What is the heir's basis?",
     options: ['$20,000',
@@ -578,11 +632,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-prop-ext-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Capital Gains',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer in the 24% bracket sold stock held for 14 months at a $10,000 gain. What is the tax on this gain?',
     options: [
@@ -599,11 +655,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-prop-ext-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Capital Gains',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer has: LTCG $20,000; LTCL $5,000; STCG $3,000; STCL $10,000. What is the net capital gain/loss?',
     options: [
@@ -620,11 +678,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-prop-ext-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'Equipment used in a business was sold for $30,000. Original cost was $50,000, accumulated depreciation was $35,000. What is the character of the gain?',
     options: [
@@ -641,11 +701,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-prop-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A commercial building (not residential) was sold for $400,000. Original cost was $300,000, straight-line depreciation taken was $80,000. What is the §1250 unrecaptured gain taxed at 25%?',
     options: [
@@ -666,11 +728,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-part-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A partner contributes property with FMV of $100,000 and basis of $60,000 for a 25% partnership interest. What is the partner's basis in the partnership interest?",
     options: [
@@ -687,11 +751,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-part-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Basis Adjustments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A partner's beginning basis is $50,000. Partnership results: ordinary income $30,000 (partner's share); tax-exempt income $5,000; distributions $20,000; nondeductible expenses $3,000. What is ending basis?",
     options: ['$62,000',
@@ -706,11 +772,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-part-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A partner receives a liquidating distribution of $40,000 cash when their basis is $50,000. What is the result?',
     options: [
@@ -727,11 +795,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-part-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A partnership allocates 80% of depreciation deductions to Partner A and 20% to Partner B. For this allocation to be respected, it must:',
     options: [
@@ -748,11 +818,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-part-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Basis Adjustments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: "A 50% partner's share of partnership recourse debt is:",
     options: [
       'Zero - only nonrecourse debt affects basis',
@@ -772,11 +844,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-scorp-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Eligibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following would terminate an S election?',
     options: [
       'Having 100 shareholders',
@@ -792,11 +866,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-scorp-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Stock Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "An S corporation shareholder's beginning stock basis is $30,000. Their share of: ordinary income $20,000; separately stated deductions $8,000; distributions $25,000. What is ending stock basis?",
     options: [
@@ -813,11 +889,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-scorp-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'AAA',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "An S corporation's AAA balance is $50,000 and it has $30,000 of accumulated E&P from C corporation years. It distributes $70,000 to its sole shareholder (basis $100,000). How is the distribution taxed?",
     options: [
@@ -834,11 +912,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-scorp-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-in Gains',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A C corporation with appreciated assets ($100,000 built-in gain) elects S status. In Year 2 after the election, it sells the assets recognizing the $100,000 gain. The recognition period is 5 years. What tax is owed at the corporate level?',
     options: [
@@ -855,11 +935,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-scorp-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Compensation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A 100% S corporation shareholder takes no salary but receives $200,000 in distributions. The IRS would most likely:',
     options: [
@@ -880,11 +962,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-corp-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "Two individuals form a corporation. Person A contributes property (FMV $80,000, basis $50,000) for 80 shares. Person B contributes services valued at $20,000 for 20 shares. What is Person B's taxable income?",
     options: [
@@ -901,11 +985,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-corp-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "Corporation A owns 25% of Corporation B's stock and receives $100,000 in dividends. What is the dividends received deduction?",
     options: [
@@ -922,11 +1008,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-corp-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'NOL',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A corporation has taxable income of $200,000 and a net operating loss carryforward of $300,000. What is the maximum NOL deduction?',
     options: [
@@ -943,11 +1031,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-corp-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A corporation has taxable income of $500,000 before charitable contributions. It contributed $75,000 to charity. What is the deductible amount this year?',
     options: [
@@ -964,11 +1054,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-corp-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A corporation accumulates $300,000 beyond reasonable business needs. The accumulated earnings credit is $250,000. What is the accumulated earnings tax base?',
     options: [
@@ -989,11 +1081,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gift-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Annual Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In 2024, what is the annual gift tax exclusion per donee?',
     options: [
       '$15,000',
@@ -1009,11 +1103,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gift-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Taxable Gifts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A taxpayer pays $50,000 directly to a university for their grandchild's tuition. This payment is:",
     options: [
@@ -1030,11 +1126,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gift-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Taxable Gifts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A donor gives property worth $100,000 with a basis of $40,000 to a trust. The trust pays income to donor's spouse for life, remainder to children. What is the taxable gift?",
     options: [
@@ -1051,11 +1149,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gift-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Gross Estate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'Decedent owned life insurance on their own life with face value of $500,000. The policy named a revocable trust as beneficiary. Is this included in the gross estate?',
     options: [
@@ -1072,11 +1172,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-gift-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Estate Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is NOT deductible from the gross estate?',
     options: [
       'Funeral expenses',
@@ -1096,11 +1198,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-law-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Contracts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For a contract to be enforceable, which of the following must exist?',
     options: [
       'Written documentation',
@@ -1116,11 +1220,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-law-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the Statute of Frauds, which contract must be in writing to be enforceable?',
     options: [
       'A contract to sell goods for $400',
@@ -1136,11 +1242,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-law-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'An agent exceeds their authority and signs a contract on behalf of the principal. The principal later accepts the benefits of the contract. This is known as:',
     options: [
@@ -1157,11 +1265,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-law-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       "A third party deals with an agent believing the agent has authority based on the principal's representations. This is:",
     options: [
@@ -1178,11 +1288,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-law-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'UCC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Under UCC Article 2, if a contract for the sale of goods does not specify a place for delivery, delivery is:',
     options: [
@@ -1203,11 +1315,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-at-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-amt',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is an AMT preference item?',
     options: [
       'Standard deduction',
@@ -1223,11 +1337,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-at-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-amt',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In calculating AMT, which item is added back (adjustment)?',
     options: [
       'State income taxes paid',
@@ -1243,11 +1359,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-tax-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedure',
     topic: 'Federal Tax Procedures',
     subtopic: 'Statute of Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general statute of limitations for the IRS to assess additional tax is:',
     options: [
       '2 years from filing',
@@ -1263,11 +1381,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-tax-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedure',
     topic: 'Federal Tax Procedures',
     subtopic: 'Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The penalty for failure to file a return by the due date (without extension) is:',
     options: [
       '0.5% per month up to 25%',
@@ -1283,11 +1403,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-tax-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedure',
     topic: 'Federal Tax Procedures',
     subtopic: 'Penalties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The penalty for failure to pay tax by the due date is:',
     options: [
       '1% per month up to 50%',
@@ -1303,11 +1425,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-tax-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedure',
     topic: 'Federal Tax Procedures',
     subtopic: 'IRS Collections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: "Before the IRS can levy a taxpayer's property, it must:",
     options: [
       'Obtain a court order',
@@ -1323,11 +1447,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-tax-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedure',
     topic: 'Federal Tax Procedures',
     subtopic: 'Appeals',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer receives a Notice of Deficiency (90-day letter). To petition the Tax Court:',
     options: [
@@ -1348,11 +1474,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-qbi-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'QBI Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer with taxable income of $150,000 (single) has QBI of $80,000 from a consulting business (not SSTB). The W-2 wage limit does not apply at this income level. What is the QBI deduction?',
     options: ['$0', '$16,000', '$20,000', '$30,000'],
@@ -1364,11 +1492,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-qbi-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'QBI Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'Which of the following is a Specified Service Trade or Business (SSTB) for §199A purposes?',
     options: ['Architecture', 'Engineering', 'Law', 'Manufacturing'],
@@ -1380,11 +1510,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-se-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A sole proprietor has net self-employment income of $150,000. What is the self-employment tax (Social Security wage base for 2024 is $168,600)?',
     options: [
@@ -1401,11 +1533,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-dep-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status & Dependents',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To claim a qualifying child, which test does NOT need to be met?',
     options: [
       'Income test (gross income limit)',
@@ -1421,11 +1555,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-dep-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status & Dependents',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A single taxpayer provides 100% support for their 30-year-old child who lives with them but earned $6,000 in wages. Can the taxpayer claim the child as a dependent in 2024?',
     options: [
@@ -1442,11 +1578,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-69',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains Rates',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For 2024, the 0% long-term capital gains rate applies to taxpayers with taxable income up to:',
     options: [
       '$89,250 for single filers',
@@ -1461,11 +1599,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-70',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 3.8% Net Investment Income Tax applies when modified AGI exceeds:',
     options: [
       '$200,000 for single, $250,000 for MFJ',
@@ -1480,11 +1620,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-71',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Qualified Business Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The QBI deduction is limited to the greater of 50% of W-2 wages OR 25% of W-2 wages plus 2.5% of:',
     options: [
       'Total assets',
@@ -1499,11 +1641,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-72',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Loss Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the hobby loss rules, an activity is presumed to be for profit if it produces a profit in:',
     options: [
       '2 of the last 5 years',
@@ -1518,11 +1662,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-73',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-property-transactions',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The gross profit percentage in an installment sale equals:',
     options: [
       'Gain ÷ Adjusted basis',
@@ -1537,11 +1683,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-74',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-property-transactions',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If you sell property at a loss to a related party, the loss is:',
     options: [
       'Disallowed but may reduce gain on subsequent sale by related party',
@@ -1556,11 +1704,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-75',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-property-transactions',
     topic: 'Property Transactions',
     subtopic: 'Wash Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A wash sale occurs when substantially identical securities are purchased within:',
     options: [
       '15 days before or after the sale',
@@ -1575,11 +1725,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-76',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax is imposed at a rate of:',
     options: [
       '15%',
@@ -1594,11 +1746,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-77',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A corporation is a personal holding company if more than 50% owned by 5 or fewer individuals AND:',
     options: [
       'Has passive income exceeding 60% of adjusted ordinary gross income',
@@ -1613,11 +1767,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-78',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A C corporation\'s charitable contribution deduction is limited to:',
     options: [
       '25% of taxable income',
@@ -1632,11 +1788,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-79',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The built-in gains tax applies when an S corp that was formerly a C corp sells appreciated assets within:',
     options: [
       '3 years of S election',
@@ -1651,11 +1809,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-80',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Passive Investment Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If an S corp has accumulated C corp E&P and passive investment income exceeds 25% of gross receipts for 3 consecutive years:',
     options: [
       'A penalty tax is imposed',
@@ -1670,11 +1830,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-81',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hot assets in a partnership include all EXCEPT:',
     options: [
       'Unrealized receivables',
@@ -1689,11 +1851,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-82',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Liquidating Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a complete liquidation of a partner\'s interest, loss is recognized only if the distribution consists solely of:',
     options: [
       'Any property',
@@ -1708,11 +1872,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-83',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Disguised Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A disguised sale is presumed when a partner contributes property and receives a distribution within:',
     options: [
       '1 year',
@@ -1727,11 +1893,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-84',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Generation-Skipping Transfer Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The generation-skipping transfer tax exemption for 2024 is:',
     options: [
       '$13.61 million',
@@ -1746,11 +1914,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-85',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Qualified Personal Residence Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A QPRT allows a grantor to transfer a residence while:',
     options: [
       'Retaining ownership forever',
@@ -1765,11 +1935,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-86',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professional-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, the IRS may impose a monetary penalty up to:',
     options: [
       '$1,000 per violation',
@@ -1784,11 +1956,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-87',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professional-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Tax Return Preparer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The penalty for a tax return preparer understating liability due to an unreasonable position is:',
     options: [
       '$250 or 50% of income from the return',
@@ -1803,11 +1977,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-88',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'UCC Article 2',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under UCC Article 2, the statute of frauds requires a writing for sales of goods priced at or above:',
     options: [
       '$500',
@@ -1822,11 +1998,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-89',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency Law',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agent\'s apparent authority exists when:',
     options: [
       'The principal\'s conduct causes a third party to reasonably believe agent has authority',
@@ -1841,11 +2019,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-90',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A security interest attaches when all of the following occur EXCEPT:',
     options: [
       'Value is given',
@@ -1860,11 +2040,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-91',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Bankruptcy Priority',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Chapter 7 bankruptcy, which claim has the LOWEST priority?',
     options: [
       'Equity security holders',
@@ -1879,11 +2061,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-92',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Negotiable Instruments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To be negotiable under UCC Article 3, an instrument must contain:',
     options: [
       'A conditional promise to pay',
@@ -1898,11 +2082,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-93',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Student Loan Interest',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The maximum deduction for student loan interest is:',
     options: [
       '$1,500',
@@ -1917,11 +2103,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-94',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-property-transactions',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange Requirements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §1031, like-kind exchange treatment for real property requires the replacement property to be identified within:',
     options: [
       '45 days',
@@ -1936,11 +2124,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-95',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-property-transactions',
     topic: 'Property Transactions',
     subtopic: 'Boot in Like-Kind Exchange',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a like-kind exchange, gain is recognized to the extent of:',
     options: [
       'Total gain realized',
@@ -1955,11 +2145,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-96',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-at-risk',
     topic: 'At-Risk Rules',
     subtopic: 'Amount at Risk',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer\'s amount at risk includes all EXCEPT:',
     options: [
       'Cash invested',
@@ -1974,11 +2166,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-97',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-passive-activity',
     topic: 'Passive Activity Rules',
     subtopic: 'Material Participation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Material participation requires the taxpayer to meet one of seven tests, including participation of more than:',
     options: [
       '500 hours',
@@ -1993,11 +2187,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-98',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-passive-activity',
     topic: 'Passive Activity Rules',
     subtopic: 'Real Estate Professional',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To qualify as a real estate professional, the taxpayer must:',
     options: [
       'Own any rental property',
@@ -2012,11 +2208,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-99',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-amt',
     topic: 'Alternative Minimum Tax',
     subtopic: 'AMT Adjustments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Common AMT preference items and adjustments include all EXCEPT:',
     options: [
       'Incentive stock option bargain element',
@@ -2031,11 +2229,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-100',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-amt',
     topic: 'Alternative Minimum Tax',
     subtopic: 'AMT Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'AMT paid due to timing differences (not exclusions) generates:',
     options: [
       'A permanent tax increase',
@@ -2050,11 +2250,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-101',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-penalties',
     topic: 'Tax Penalties',
     subtopic: 'Accuracy-Related Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accuracy-related penalty under §6662 is:',
     options: [
       '10% of underpayment',
@@ -2069,11 +2271,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-102',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-penalties',
     topic: 'Tax Penalties',
     subtopic: 'Fraud Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The civil fraud penalty under §6663 is:',
     options: [
       '20% of underpayment',
@@ -2088,11 +2292,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-103',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-penalties',
     topic: 'Tax Penalties',
     subtopic: 'Failure to File Penalty',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The failure to file penalty is:',
     options: [
       '0.5% per month up to 25%',
@@ -2107,11 +2313,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-104',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'NOL Carryforward',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under TCJA, corporate NOLs arising after 2017 can offset:',
     options: [
       '100% of taxable income',
@@ -2126,11 +2334,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-105',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Section 382 Limitation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 382 limits NOL usage after an ownership change. The annual limit equals:',
     options: [
       '50% of pre-change NOLs',
@@ -2145,11 +2355,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-106',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Estimated Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Large corporations must base estimated tax payments on:',
     options: [
       'Prior year tax only',
@@ -2164,11 +2376,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-107',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Basis Ordering Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'S corporation basis is increased/decreased in the following order:',
     options: [
       'Losses, distributions, income',
@@ -2183,11 +2397,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-108',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'AAA Account',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Accumulated Adjustments Account (AAA) is used to:',
     options: [
       'Determine if distributions are from S corp earnings or C corp E&P',
@@ -2202,11 +2418,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-109',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: '§754 Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A §754 election allows:',
     options: [
       'The partnership to become an S corporation',
@@ -2221,11 +2439,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-110',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Self-Employment Income',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'General partner income from a partnership is subject to self-employment tax:',
     options: [
       'Never',
@@ -2240,11 +2460,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-111',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contract Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A valid contract requires all of the following EXCEPT:',
     options: [
       'Offer and acceptance',
@@ -2259,11 +2481,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-112',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contract Remedies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Specific performance is a remedy typically available for:',
     options: [
       'Unique goods or real property where money damages are inadequate',
@@ -2278,11 +2502,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-113',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'LLC Liability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Members of an LLC have liability that is:',
     options: [
       'Unlimited for all debts',
@@ -2297,11 +2523,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-114',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Holder in Due Course',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To be a holder in due course, one must take a negotiable instrument:',
     options: [
       'From the original payee only',
@@ -2316,11 +2544,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-115',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professional-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Due Diligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner must exercise due diligence in:',
     options: [
       'Preparing returns, determining correctness, and advising clients',
@@ -2335,11 +2565,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-116',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professional-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Client Records',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A CPA must return client records upon request:',
     options: [
       'Only if all fees are paid',
@@ -2354,11 +2586,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-117',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professional-ethics',
     topic: 'Professional Ethics',
     subtopic: 'PTIN Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A paid tax return preparer must have:',
     options: [
       'A CPA license',
@@ -2373,11 +2607,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-118',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Estimated Tax Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Individual estimated tax penalty is avoided if payments equal at least:',
     options: [
       '80% of current year tax',
@@ -2392,10 +2628,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-119',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Medical Expense Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Medical expenses are deductible to the extent they exceed:',
     options: [
       '5% of AGI',
@@ -2412,10 +2650,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-120',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Gambling Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gambling losses are deductible:',
     options: [
       'Without limitation',
@@ -2432,10 +2672,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-121',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Home Office Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The simplified home office deduction is:',
     options: [
       'Unlimited based on expenses',
@@ -2452,10 +2694,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-122',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Educator Expense Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The educator expense deduction for 2024 is:',
     options: [
       '$100',
@@ -2472,10 +2716,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-123',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax applies to:',
     options: [
       'C corporations accumulating earnings beyond reasonable business needs to avoid shareholder tax',
@@ -2492,10 +2738,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-124',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A corporation is a personal holding company if:',
     options: [
       'It has any passive income',
@@ -2512,10 +2760,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-125',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Worthless Securities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A loss on worthless securities is treated as:',
     options: [
       'Long-term capital loss (deemed sold on last day of year)',
@@ -2532,10 +2782,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-126',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Guaranteed payments to partners are:',
     options: [
       'Deductible by partnership, ordinary income to partner regardless of partnership profit',
@@ -2552,10 +2804,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-127',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hot assets in partnership sales include:',
     options: [
       'Cash and securities',
@@ -2572,10 +2826,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-128',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Basis Sequence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The order of adjustments to S corporation shareholder basis is:',
     options: [
       'Distributions, losses, income',
@@ -2592,10 +2848,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-129',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'AAA Account',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Accumulated Adjustments Account (AAA):',
     options: [
       'Is required for all S corporations',
@@ -2612,10 +2870,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-130',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'GSTT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Generation-Skipping Transfer Tax (GSTT) applies to:',
     options: [
       'All gifts',
@@ -2632,10 +2892,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-131',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Marital Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The estate tax marital deduction:',
     options: [
       'Is limited to $1 million',
@@ -2652,10 +2914,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-132',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Valuation Discounts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Discounts for lack of marketability and lack of control:',
     options: [
       'Are prohibited for estate/gift tax',
@@ -2672,10 +2936,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-133',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the statute of frauds, which contracts must be in writing?',
     options: [
       'Contracts for sale of goods $500+, land, and contracts not performable within one year',
@@ -2692,10 +2958,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-134',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Parol Evidence Rule',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The parol evidence rule:',
     options: [
       'Prohibits all oral agreements',
@@ -2712,10 +2980,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-135',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency Termination',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agency relationship terminates by operation of law upon:',
     options: [
       'Any disagreement',
@@ -2732,10 +3002,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-136',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Holder in Due Course',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To be a holder in due course, a holder must take the instrument:',
     options: [
       'With notice of claims',
@@ -2752,10 +3024,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-137',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'AICPA Conceptual Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The AICPA conceptual framework approach to ethics requires:',
     options: [
       'Identifying threats, evaluating significance, and applying safeguards',
@@ -2772,10 +3046,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-138',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Tax Return Positions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under SSTS No. 1, a CPA may take a tax return position if:',
     options: [
       'The position will definitely be sustained',
@@ -2792,10 +3068,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-139',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Sale of Principal Residence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The §121 exclusion for sale of principal residence provides:',
     options: [
       '$250,000 exclusion ($500,000 MFJ) if owned and used as principal residence 2 of last 5 years',
@@ -2812,10 +3090,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-140',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Alimony Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For divorce agreements executed after December 31, 2018:',
     options: [
       'Alimony is deductible by payer and taxable to recipient',
@@ -2832,10 +3112,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-141',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Organizational Costs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A corporation may immediately expense organizational costs up to:',
     options: [
       '$5,000 (reduced by costs over $50,000)',
@@ -2852,10 +3134,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-142',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate-tax',
     topic: 'Corporate Taxation',
     subtopic: 'Related Party Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §267, losses on sales between related parties are:',
     options: [
       'Fully deductible',
@@ -2872,10 +3156,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-143',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general statute of limitations for IRS assessment is:',
     options: [
       '2 years from filing',
@@ -2893,10 +3179,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-144',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Social Security Benefits Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Social Security benefits may be taxable up to:',
     options: [
       '50% of benefits',
@@ -2913,10 +3201,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-145',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Child Tax Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The child tax credit for 2024 is:',
     options: [
       '$1,000 per qualifying child',
@@ -2933,10 +3223,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-146',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Foreign Earned Income Exclusion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To qualify for the foreign earned income exclusion, the taxpayer must meet:',
     options: [
       'Only the physical presence test',
@@ -2953,10 +3245,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-147',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Kiddie Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The kiddie tax applies to:',
     options: [
       'All children under 18',
@@ -2973,10 +3267,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-148',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sale Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In an installment sale, if stated interest is below the applicable federal rate:',
     options: [
       'No adjustment needed',
@@ -2993,10 +3289,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-149',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1245 Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1245 recapture as ordinary income is limited to:',
     options: [
       'The total gain on sale',
@@ -3013,10 +3311,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-150',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1250 Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current law, Section 1250 recapture for real property typically results in:',
     options: [
       'Full recapture as ordinary income',
@@ -3033,10 +3333,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-151',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Personal holding company (PHC) income includes:',
     options: [
       'Only dividends',
@@ -3053,10 +3355,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-152',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Net Operating Loss Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Corporate NOLs arising after 2017 are:',
     options: [
       'Carried forward indefinitely but limited to 80% of taxable income',
@@ -3073,10 +3377,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-153',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Substantial Economic Effect',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For special allocations to be respected, they must have:',
     options: [
       'IRS pre-approval',
@@ -3093,10 +3399,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-154',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Section 754 Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Section 754 election allows:',
     options: [
       'Adjustment to inside basis upon transfer of partnership interest or distribution',
@@ -3113,10 +3421,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-155',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-in Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The built-in gains tax applies when an S corporation:',
     options: [
       'Makes any asset sale',
@@ -3133,10 +3443,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-156',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'LIFO Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a C corporation using LIFO converts to S corporation:',
     options: [
       'No adjustment needed',
@@ -3153,10 +3465,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-157',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Taxation',
     subtopic: 'Portability Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The portability election allows:',
     options: [
       'Transfer of unused gift tax exclusion',
@@ -3173,10 +3487,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-158',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-estate-gift',
     topic: 'Estate and Gift Taxation',
     subtopic: 'Qualified Terminable Interest Property',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'QTIP property qualifies for the marital deduction if:',
     options: [
       'It passes outright to the surviving spouse',
@@ -3193,10 +3509,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-159',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Holder in Due Course',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To be a holder in due course, one must take an instrument:',
     options: [
       'For value, in good faith, without notice of claims or defenses',
@@ -3213,10 +3531,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-160',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Article 9 Secured Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Attachment of a security interest requires:',
     options: [
       'Filing a financing statement only',
@@ -3233,10 +3553,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-161',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Priority of Security Interests',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Between two perfected security interests in the same collateral:',
     options: [
       'The larger creditor wins',
@@ -3253,10 +3575,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-162',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Written Advice Standards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, written tax advice must:',
     options: [
       'Consider all relevant facts, not rely on unreasonable assumptions',
@@ -3273,10 +3597,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-163',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Due Diligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A tax preparer\'s due diligence requirement includes:',
     options: [
       'Auditing the client\'s books',
@@ -3293,10 +3619,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-164',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Audit Selection Methods',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IRS audit selection includes:',
     options: [
       'Random selection only',
@@ -3313,10 +3641,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-165',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Offer in Compromise',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An offer in compromise may be accepted based on:',
     options: [
       'Doubt as to collectibility, doubt as to liability, or effective tax administration',
@@ -3333,10 +3663,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-166',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Innocent Spouse Relief',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Innocent spouse relief under §6015 requires showing:',
     options: [
       'Divorce from the spouse',
@@ -3353,10 +3685,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-167',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Moving Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Moving expenses for 2024 are:',
     options: [
       'Deductible for all taxpayers who relocate for work',
@@ -3373,10 +3707,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'reg-ext-168',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For individual AMT, common adjustments include:',
     options: [
       'Adding back standard deduction only',

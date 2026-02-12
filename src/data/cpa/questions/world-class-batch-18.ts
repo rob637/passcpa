@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'far-wc-107',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-cash-flow',
     topic: 'Statement of Cash Flows',
     subtopic: 'Direct Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the direct method, cash paid to suppliers is calculated as:',
     options: [
       'Cost of goods sold + Increase in inventory + Decrease in accounts payable',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'far-wc-108',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-contingencies',
     topic: 'Contingencies',
     subtopic: 'Gain Contingencies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gain contingencies should be:',
     options: [
       'Recognized when probable and estimable',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'far-wc-109',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Major Funds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A governmental fund is reported as a major fund if its revenues or expenditures are:',
     options: [
       'At least 5% of category totals for all governmental funds',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'far-wc-110',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Variable Interest Entities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The primary beneficiary of a Variable Interest Entity (VIE) is the entity that has:',
     options: [
       'More than 50% voting interest',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'aud-wc-107',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Confirmation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Positive confirmations request the respondent to:',
     options: [
       'Reply only if the stated balance is incorrect',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'aud-wc-108',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-sampling',
     topic: 'Sampling',
     subtopic: 'Stratification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Stratified sampling is used primarily to:',
     options: [
       'Eliminate all sampling risk',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'aud-wc-109',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'COSO',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COSO\'s internal control framework includes how many components?',
     options: [
       'Three',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'aud-wc-110',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agreed-upon procedures engagement results in:',
     options: [
       'An opinion on fair presentation',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'reg-wc-107',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Estimated Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To avoid the underpayment penalty, taxpayers generally must pay estimated taxes equal to at least:',
     options: [
       '80% of current year tax',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'reg-wc-108',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax is designed to:',
     options: [
       'Tax all corporate retained earnings',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'reg-wc-109',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agency relationship requires:',
     options: [
       'A written contract in all cases',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'reg-wc-110',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1245',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1245 recapture provisions require:',
     options: [
       'Recognizing gain on sale of personal property as ordinary income to the extent of depreciation',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'bar-wc-122',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Dupont Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The DuPont formula decomposes ROE into:',
     options: [
       'Profit margin × Total asset turnover × Financial leverage',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'bar-wc-123',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Beta',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A beta greater than 1.0 indicates:',
     options: [
       'The stock is less volatile than the market',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'bar-wc-124',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Stock-Based Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Stock options granted to employees are measured at:',
     options: [
       'Intrinsic value at grant date',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'bar-wc-125',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The transfer price that motivates optimal decisions in a decentralized firm is typically:',
     options: [
       'Full cost',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'bar-wc-126',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Operating Leverage',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'High operating leverage indicates:',
     options: [
       'Large proportion of variable costs',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'isc-wc-107',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COBIT',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COBIT is primarily a framework for:',
     options: [
       'Financial reporting only',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'isc-wc-108',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Incident Response',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The correct order of incident response phases is:',
     options: [
       'Recovery, Detection, Containment, Eradication',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'isc-wc-109',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'CI/CD',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous Integration/Continuous Deployment (CI/CD) enables:',
     options: [
       'Manual testing only',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'isc-wc-110',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Penetration Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Penetration testing differs from vulnerability scanning in that it:',
     options: [
       'Only identifies potential vulnerabilities',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'tcp-wc-107',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'HSA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Health Savings Account contributions are:',
     options: [
       'Not deductible',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'tcp-wc-108',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'LLC Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A multi-member LLC is treated by default as:',
     options: [
       'A C corporation',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'tcp-wc-109',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Section 199A',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The qualified business income (QBI) deduction under Section 199A is limited for specified service trades or businesses (SSTBs) when:',
     options: [
       'QBI exceeds $100,000',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_18: Question[] = [
   {
     id: 'tcp-wc-110',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Statute of Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The general statute of limitations for IRS assessment of additional tax is:',
     options: [
       '1 year from filing',

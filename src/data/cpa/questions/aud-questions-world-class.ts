@@ -10,11 +10,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Independence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A CPA firm provides audit services to Client A. The CPA firm also provides bookkeeping services and prepares financial statements for Client A. Under AICPA rules, what safeguard is required to maintain independence?',
     options: [
       'Obtain written consent from the client',
@@ -29,11 +31,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Independence Threats',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following creates a self-interest threat to independence?',
     options: [
       'Providing litigation support services to an audit client',
@@ -48,11 +52,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Covered Members',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following individuals is NOT generally considered a "covered member" under AICPA independence rules?',
     options: [
       'The engagement partner',
@@ -67,11 +73,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Conduct',
     subtopic: 'PCAOB Independence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under PCAOB rules for audits of issuers, what is the cooling-off period for a former audit engagement team member before they can accept employment at an audit client in a financial reporting oversight role?',
     options: [
       'No cooling-off period required',
@@ -86,11 +94,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Management',
     subtopic: 'SQMS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SQMS No. 1, what is the firm required to establish to address quality risks?',
     options: [
       'A single quality control partner',
@@ -108,11 +118,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Planning',
     subtopic: 'Materiality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When establishing performance materiality, the auditor should set it at an amount:',
     options: [
       'Equal to overall materiality',
@@ -127,11 +139,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is automatically considered a significant risk requiring special audit consideration?',
     options: [
       'Accounts receivable balances',
@@ -146,11 +160,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is an inherent limitation of internal control?',
     options: [
       'Lack of written policies',
@@ -165,11 +181,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Deficiencies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A significant deficiency in internal control is one that:',
     options: [
       'Results in a material misstatement in the financial statements',
@@ -184,11 +202,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Triangle',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a component of the fraud triangle?',
     options: [
       'Competence',
@@ -203,11 +223,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Response',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the auditor suspects fraud involving senior management, the auditor should:',
     options: [
       'Immediately resign from the engagement',
@@ -225,11 +247,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Reliability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following provides the most reliable audit evidence?',
     options: [
       'Oral inquiry of management',
@@ -244,11 +268,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Assertions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Testing whether all inventory that should be recorded has been recorded addresses which assertion?',
     options: [
       'Existence',
@@ -263,11 +289,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Procedures',
     subtopic: 'Tests of Details',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which audit procedure would be most effective for testing the completeness assertion for accounts payable?',
     options: [
       'Confirm selected payables with vendors',
@@ -282,11 +310,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Sample Size',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In an attributes sampling plan, which factor, if increased, would result in a larger required sample size?',
     options: [
       'Expected population deviation rate',
@@ -301,11 +331,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Substantive Sampling',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In monetary-unit sampling (MUS), what is the primary advantage?',
     options: [
       'It always results in smaller sample sizes',
@@ -320,11 +352,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Inventory',
     subtopic: 'Observation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of observing inventory counts is to:',
     options: [
       'Detect inventory shortages and shrinkage',
@@ -339,11 +373,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Receivables',
     subtopic: 'Confirmations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a client refuses to allow the auditor to confirm receivables, and alternative procedures cannot provide sufficient appropriate evidence, the auditor should:',
     options: [
       'Accept the client\'s explanation and proceed',
@@ -358,11 +394,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-analytical',
     topic: 'Analytical Procedures',
     subtopic: 'Substantive Analytics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following conditions must be met for analytical procedures to be used as the principal substantive test for an assertion?',
     options: [
       'The relationship being analyzed must be precise and predictable',
@@ -377,11 +415,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-written-rep',
     topic: 'Written Representations',
     subtopic: 'Required Representations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Management\'s written representations are obtained to:',
     options: [
       'Replace other audit evidence',
@@ -396,11 +436,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-021',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-related-parties',
     topic: 'Related Parties',
     subtopic: 'Procedures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the auditor identifies a related party transaction that was not previously disclosed by management, the auditor should:',
     options: [
       'Immediately issue an adverse opinion',
@@ -418,11 +460,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-022',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Opinion Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor should express a qualified opinion when:',
     options: [
       'There is a material and pervasive departure from GAAP',
@@ -437,11 +481,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-023',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When issuing an adverse opinion, where does the auditor describe the reasons for the adverse opinion?',
     options: [
       'In the opinion paragraph only',
@@ -456,11 +502,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-024',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Group Audits',
     subtopic: 'Component Auditors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a group engagement team uses the work of a component auditor, the group auditor:',
     options: [
       'Can disclaim responsibility for the component auditor\'s work',
@@ -475,11 +523,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-025',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Subsequent Events',
     subtopic: 'Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A customer who was a defendant in a lawsuit settled the case for a significant amount after year-end but the lawsuit was filed before year-end. This is:',
     options: [
       'A Type II subsequent event—disclose only',
@@ -494,11 +544,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-026',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Going Concern',
     subtopic: 'Substantial Doubt',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If management\'s plans are expected to mitigate substantial doubt about going concern, but a material uncertainty remains, what should the auditor do?',
     options: [
       'Issue an unmodified opinion with no additional paragraphs',
@@ -513,11 +565,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-027',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-other',
     topic: 'Review Engagements',
     subtopic: 'Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a review of financial statements, the accountant\'s primary procedures consist of:',
     options: [
       'Tests of controls and substantive tests',
@@ -532,11 +586,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-028',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-other',
     topic: 'Compilation',
     subtopic: 'Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a compilation engagement, the accountant:',
     options: [
       'Expresses limited assurance on the financial statements',
@@ -551,11 +607,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-029',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-attestation',
     topic: 'Attestation',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In an agreed-upon procedures (AUP) engagement, the practitioner:',
     options: [
       'Expresses an opinion on the subject matter',
@@ -570,11 +628,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-030',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-attestation',
     topic: 'SOC Reports',
     subtopic: 'SOC 1 Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 1 Type 2 report includes:',
     options: [
       'Description of controls and opinion on design only',
@@ -590,11 +650,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-031',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-it',
     topic: 'IT Auditing',
     subtopic: 'IT General Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is an example of an IT general control?',
     options: [
       'Three-way match for accounts payable',
@@ -609,11 +671,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-032',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-estimates',
     topic: 'Accounting Estimates',
     subtopic: 'Auditing Estimates',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing an accounting estimate, which approach does NOT specifically address estimation uncertainty?',
     options: [
       'Evaluating management\'s estimate and the methods, assumptions, and data used',
@@ -628,11 +692,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-033',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-communication',
     topic: 'Communications',
     subtopic: 'TCWG',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which matter is the auditor required to communicate to those charged with governance?',
     options: [
       'Minor control deficiencies',
@@ -647,11 +713,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-034',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Skepticism',
     subtopic: 'Application',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Professional skepticism requires the auditor to:',
     options: [
       'Assume management is dishonest',
@@ -666,11 +734,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-035',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Documentation',
     subtopic: 'Assembly',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SAS requirements, the auditor must assemble the final audit documentation file within:',
     options: [
       '30 days after the report release date',
@@ -685,11 +755,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-036',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Engagement Acceptance',
     subtopic: 'Predecessor Auditor',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before accepting an engagement, the successor auditor should:',
     options: [
       'Obtain all predecessor work papers',
@@ -704,11 +776,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-037',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Comparative Statements',
     subtopic: 'Different Auditors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When prior period comparative financial statements were audited by a predecessor auditor whose report is not reissued, what should the current auditor do?',
     options: [
       'Re-audit the prior period statements',
@@ -723,11 +797,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-038',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Legal Letters',
     subtopic: 'Attorney Letters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an attorney refuses to respond to an inquiry letter for a litigation, claims, and assessments audit inquiry, the auditor should:',
     options: [
       'Accept management\'s representations as sufficient',
@@ -742,11 +818,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-039',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Tests of Controls',
     subtopic: 'Nature',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tests of controls are performed to:',
     options: [
       'Detect material misstatements in account balances',
@@ -761,11 +839,13 @@ export const AUD_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'aud-wc-040',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Risk of Material Misstatement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The auditor assesses the risk of material misstatement (RMM) at the financial statement level when:',
     options: [
       'The risk relates to a specific account balance',

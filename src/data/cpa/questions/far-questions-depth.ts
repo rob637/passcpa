@@ -9,11 +9,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Fund Categories',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The three broad categories of funds in governmental accounting are:',
     options: [
       'Operating, investing, and financing',
@@ -28,11 +30,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Modified Accrual Basis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the modified accrual basis of accounting used by governmental funds, revenues are recognized when:',
     options: [
       'Earned regardless of collection',
@@ -49,11 +53,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Net Asset Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 958, not-for-profit organizations classify net assets into:',
     options: [
       'Unrestricted, temporarily restricted, permanently restricted',
@@ -68,11 +74,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributions — Conditional vs. Unconditional',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An unconditional promise to give (pledge) by a donor to a not-for-profit is recognized as:',
     options: [
       'Revenue when cash is received',
@@ -89,11 +97,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-revenue',
     topic: 'Transactions',
     subtopic: 'ASC 606 — Five-Step Model',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The five-step revenue recognition model under ASC 606 begins with:',
     options: [
       'Recognizing revenue when cash is collected',
@@ -108,11 +118,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-revenue',
     topic: 'Transactions',
     subtopic: 'Performance Obligation Satisfied Over Time',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 606, a performance obligation is satisfied over time if one of three criteria is met. Which is one of those criteria?',
     options: [
       'The customer pays in installments',
@@ -129,11 +141,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Government-Wide Financial Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Government-wide financial statements include:',
     options: [
       'A balance sheet and income statement',
@@ -148,11 +162,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB — Deferred Outflows/Inflows',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GASB, deferred outflows of resources represent:',
     options: [
       'Current assets that will be consumed next year',
@@ -169,11 +185,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Encumbrances',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In governmental fund accounting, encumbrances represent:',
     options: [
       'Actual expenditures',
@@ -190,11 +208,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-leases',
     topic: 'Transactions',
     subtopic: 'ASC 842 — Lessee Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 842, a lessee classifies all leases (except short-term) as either:',
     options: [
       'Capital or operating',
@@ -211,11 +231,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-pension',
     topic: 'State and Local Government',
     subtopic: 'GASB 68 — Pension Liability',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 68, a state/local government employer participating in a defined benefit pension plan reports:',
     options: [
       'Only the annual pension contribution as an expenditure',
@@ -232,11 +254,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-stock-comp',
     topic: 'Transactions',
     subtopic: 'ASC 718 — Stock-Based Compensation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 718, employee stock options are measured at:',
     options: [
       'Intrinsic value at exercise date',
@@ -253,11 +277,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Statement of Functional Expenses',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Not-for-profit organizations must report expenses by:',
     options: [
       'Only natural classification (salaries, rent, supplies)',
@@ -274,11 +300,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Capital Assets — Government-Wide',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In the government-wide financial statements, capital assets of governmental activities are:',
     options: [
       'Not reported',
@@ -295,11 +323,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-tax',
     topic: 'Transactions',
     subtopic: 'ASC 740 — Deferred Tax Assets and Liabilities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A deferred tax liability (DTL) arises when:',
     options: [
       'Taxable income exceeds book income permanently',
@@ -316,11 +346,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Budgetary Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the annual budget is adopted for the General Fund, the budgetary journal entry is:',
     options: [
       'No journal entry is made for the budget',
@@ -337,11 +369,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-consolidation',
     topic: 'Transactions',
     subtopic: 'Consolidation — Intercompany Elimination',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In preparing consolidated financial statements, intercompany transactions must be eliminated because:',
     options: [
       'They increase total revenue',
@@ -358,11 +392,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Interfund Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In governmental accounting, a transfer of resources from the General Fund to the Debt Service Fund is classified as a(n):',
     options: [
       'Revenue to the Debt Service Fund',
@@ -379,11 +415,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-foreign',
     topic: 'Transactions',
     subtopic: 'ASC 830 — Foreign Currency Translation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 830, when translating a foreign subsidiary\'s financial statements (functional currency ≠ reporting currency), the translation adjustment is reported in:',
     options: [
       'Net income',
@@ -400,11 +438,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Endowments and UPMIFA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under UPMIFA (Uniform Prudent Management of Institutional Funds Act), an NFP can appropriate for spending from a donor-restricted endowment:',
     options: [
       'Only the original gift amount',
@@ -421,11 +461,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-021',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Major Fund Reporting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 34, a governmental fund qualifies as a major fund if:',
     options: [
       'It is the largest fund',
@@ -442,11 +484,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-022',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-contingencies',
     topic: 'Transactions',
     subtopic: 'ASC 450 — Loss Contingencies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 450, a loss contingency is accrued (recorded as a liability) when:',
     options: [
       'Any lawsuit is filed against the company',
@@ -463,11 +507,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-023',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Enterprise Funds vs. Internal Service Funds',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Proprietary funds use the same measurement focus and basis of accounting as:',
     options: [
       'Governmental funds (modified accrual)',
@@ -484,11 +530,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-024',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-stock-comp',
     topic: 'Transactions',
     subtopic: 'Restricted Stock Units',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Restricted stock units (RSUs) under ASC 718 are measured at:',
     options: [
       'Exercise price',
@@ -505,11 +553,13 @@ export const FAR_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'far-d1-025',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 87 — Leases',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 87, a government lessee recognizes:',
     options: [
       'Only rent expense each period',

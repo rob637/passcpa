@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA4_QUESTIONS_BATCH4: Question[] = [
   {
-    id: 'CISA4-063',
+    id: 'cisa4-063',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Chaos engineering:',
     options: [
       'Creates random problems',
@@ -25,10 +27,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Chaos Engineering'
   },
   {
-    id: 'CISA4-064',
+    id: 'cisa4-064',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Service degradation strategies enable:',
     options: [
       'Complete failure',
@@ -42,10 +46,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Graceful Degradation'
   },
   {
-    id: 'CISA4-065',
+    id: 'cisa4-065',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Circuit breaker pattern prevents:',
     options: [
       'All requests',
@@ -59,10 +65,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Circuit Breaker'
   },
   {
-    id: 'CISA4-066',
+    id: 'cisa4-066',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Auto-scaling provides:',
     options: [
       'Fixed capacity',
@@ -76,10 +84,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Auto-Scaling'
   },
   {
-    id: 'CISA4-067',
+    id: 'cisa4-067',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Geographic redundancy protects against:',
     options: [
       'Only server failures',
@@ -93,10 +103,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Geographic Redundancy'
   },
   {
-    id: 'CISA4-068',
+    id: 'cisa4-068',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Active-active configurations:',
     options: [
       'Have one active site',
@@ -110,10 +122,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Active-Active'
   },
   {
-    id: 'CISA4-069',
+    id: 'cisa4-069',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Split-brain scenarios in clustering occur when:',
     options: [
       'All nodes agree',
@@ -127,10 +141,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Split-Brain'
   },
   {
-    id: 'CISA4-070',
+    id: 'cisa4-070',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Observability in IT operations encompasses:',
     options: [
       'Only monitoring',
@@ -144,10 +160,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Observability'
   },
   {
-    id: 'CISA4-071',
+    id: 'cisa4-071',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Distributed tracing enables:',
     options: [
       'Code review',
@@ -161,10 +179,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Tracing'
   },
   {
-    id: 'CISA4-072',
+    id: 'cisa4-072',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SRE (Site Reliability Engineering) focuses on:',
     options: [
       'Only development',
@@ -178,10 +198,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'SRE'
   },
   {
-    id: 'CISA4-073',
+    id: 'cisa4-073',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Error budgets in SRE define:',
     options: [
       'Development costs',
@@ -195,10 +217,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Error Budgets'
   },
   {
-    id: 'CISA4-074',
+    id: 'cisa4-074',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Service Level Objectives (SLOs) define:',
     options: [
       'Only availability',
@@ -212,10 +236,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'SLO'
   },
   {
-    id: 'CISA4-075',
+    id: 'cisa4-075',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Blameless post-mortems focus on:',
     options: [
       'Identifying individuals to blame',
@@ -229,10 +255,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Post-Mortems'
   },
   {
-    id: 'CISA4-076',
+    id: 'cisa4-076',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Mean time to detect (MTTD) measures:',
     options: [
       'Time to fix issues',
@@ -246,10 +274,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'MTTD'
   },
   {
-    id: 'CISA4-077',
+    id: 'cisa4-077',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Mean time to repair (MTTR) measures:',
     options: [
       'Time to detect',
@@ -263,10 +293,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'MTTR'
   },
   {
-    id: 'CISA4-078',
+    id: 'cisa4-078',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'AIOps (AI for IT Operations) uses:',
     options: [
       'Only manual analysis',
@@ -280,10 +312,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'AIOps'
   },
   {
-    id: 'CISA4-079',
+    id: 'cisa4-079',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Configuration drift occurs when:',
     options: [
       'Configurations are standardized',
@@ -297,10 +331,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Configuration Drift'
   },
   {
-    id: 'CISA4-080',
+    id: 'cisa4-080',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Infrastructure monitoring should include:',
     options: [
       'Only CPU usage',
@@ -314,10 +350,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Infrastructure Monitoring'
   },
   {
-    id: 'CISA4-081',
+    id: 'cisa4-081',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Synthetic monitoring:',
     options: [
       'Uses only real user data',
@@ -331,10 +369,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Synthetic Monitoring'
   },
   {
-    id: 'CISA4-082',
+    id: 'cisa4-082',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Real user monitoring (RUM) captures:',
     options: [
       'Simulated transactions',
@@ -348,10 +388,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'RUM'
   },
   {
-    id: 'CISA4-083',
+    id: 'cisa4-083',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Capacity planning should consider:',
     options: [
       'Only current usage',
@@ -365,10 +407,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Capacity Planning'
   },
   {
-    id: 'CISA4-084',
+    id: 'cisa4-084',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data center tier classifications indicate:',
     options: [
       'Cost only',
@@ -382,10 +426,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Tier Classification'
   },
   {
-    id: 'CISA4-085',
+    id: 'cisa4-085',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Power Usage Effectiveness (PUE) measures:',
     options: [
       'Server performance',
@@ -399,10 +445,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Energy Efficiency'
   },
   {
-    id: 'CISA4-086',
+    id: 'cisa4-086',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Preventive maintenance schedules help:',
     options: [
       'Increase failures',
@@ -416,10 +464,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Preventive Maintenance'
   },
   {
-    id: 'CISA4-087',
+    id: 'cisa4-087',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Disaster recovery plan testing frequency should be:',
     options: [
       'Once ever',
@@ -433,10 +483,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Test Frequency'
   },
   {
-    id: 'CISA4-088',
+    id: 'cisa4-088',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Parallel DR tests:',
     options: [
       'Disrupt production',
@@ -450,10 +502,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Parallel Testing'
   },
   {
-    id: 'CISA4-089',
+    id: 'cisa4-089',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Full interruption DR tests:',
     options: [
       'Have no risk',
@@ -467,10 +521,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Full Interruption'
   },
   {
-    id: 'CISA4-090',
+    id: 'cisa4-090',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'BC/DR plan maintenance should trigger when:',
     options: [
       'Only after disasters',
@@ -484,10 +540,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Plan Maintenance'
   },
   {
-    id: 'CISA4-091',
+    id: 'cisa4-091',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Evacuation procedures should include:',
     options: [
       'Only exit routes',
@@ -501,10 +559,12 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Evacuation'
   },
   {
-    id: 'CISA4-092',
+    id: 'cisa4-092',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Pandemic planning differs from traditional DRP by focusing on:',
     options: [
       'Technology recovery only',

@@ -9,11 +9,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Inherent Risk vs. Control Risk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Inherent risk is the susceptibility of an assertion to a misstatement that could be material, assuming:',
     options: [
       'Internal controls are effective',
@@ -28,11 +30,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Understanding Internal Control',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'COSO identifies five components of internal control. They are:',
     options: [
       'Planning, executing, monitoring, reporting, concluding',
@@ -47,11 +51,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Fraud Risk Factors',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under AU-C §240, the "fraud triangle" consists of three conditions generally present when fraud occurs:',
     options: [
       'Greed, opportunity, rationalization',
@@ -66,11 +72,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Materiality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Performance materiality is set by the auditor:',
     options: [
       'Equal to overall materiality',
@@ -87,11 +95,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Sufficiency and Appropriateness',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The two dimensions of audit evidence are:',
     options: [
       'Cost and benefit',
@@ -106,11 +116,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Confirmation Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A positive confirmation request asks the respondent to:',
     options: [
       'Respond only if they disagree with the balance',
@@ -125,11 +137,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Analytical Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Analytical procedures are REQUIRED during which phases of the audit?',
     options: [
       'Only during fieldwork',
@@ -146,11 +160,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Evidence',
     subtopic: 'Inventory Observation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For inventory, the auditor is required to:',
     options: [
       'Count all inventory items personally',
@@ -165,11 +181,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Evidence',
     subtopic: 'Related Parties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'AU-C §550 requires the auditor to:',
     options: [
       'Ignore related-party transactions if management says they are immaterial',
@@ -186,11 +204,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-it',
     topic: 'Risk Assessment',
     subtopic: 'IT General Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT general controls (ITGCs) typically include controls over:',
     options: [
       'Only payroll processing',
@@ -207,11 +227,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-sampling',
     topic: 'Audit Evidence',
     subtopic: 'Statistical vs. Non-Statistical Sampling',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The key difference between statistical and non-statistical sampling in auditing is that statistical sampling:',
     options: [
       'Always provides better results',
@@ -226,11 +248,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-sampling',
     topic: 'Audit Evidence',
     subtopic: 'Attribute Sampling',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In tests of controls, attribute sampling is used to estimate:',
     options: [
       'The dollar amount of misstatements in a population',
@@ -247,11 +271,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Risk Assessment',
     subtopic: 'Engagement Letter',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An audit engagement letter should include:',
     options: [
       'Only the fee',
@@ -268,11 +294,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-specialist',
     topic: 'Audit Evidence',
     subtopic: 'Using the Work of a Specialist',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the auditor uses the work of an auditor\'s specialist (AU-C §620), the auditor should:',
     options: [
       'Blindly accept the specialist\'s findings',
@@ -289,11 +317,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A significant risk is an identified risk of material misstatement that:',
     options: [
       'Is always quantitatively material',
@@ -310,11 +340,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-fraud',
     topic: 'Audit Evidence',
     subtopic: 'Testing Journal Entries',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To address the presumed risk of management override of controls, the auditor must:',
     options: [
       'Only review the trial balance',
@@ -331,11 +363,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-assertions',
     topic: 'Audit Evidence',
     subtopic: 'Financial Statement Assertions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The assertion of "completeness" means that:',
     options: [
       'All disclosures are exactly correct',
@@ -352,11 +386,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Risk Assessment',
     subtopic: 'Communication with Predecessor Auditor',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Before accepting a new audit engagement, the successor auditor is required to:',
     options: [
       'Review all prior workpapers',
@@ -373,11 +409,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-subsequent',
     topic: 'Audit Evidence',
     subtopic: 'Procedures for Subsequent Events',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To identify subsequent events, the auditor should perform which procedures through the date of the auditor\'s report?',
     options: [
       'No specific procedures are required',
@@ -394,11 +432,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Risk Assessment',
     subtopic: 'Overall Audit Strategy vs. Audit Plan',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The overall audit strategy differs from the audit plan in that the strategy:',
     options: [
       'Contains all detailed testing procedures',
@@ -415,11 +455,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-021',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Directional Testing — Existence vs. Completeness',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To test the existence/occurrence assertion for accounts receivable, the auditor would:',
     options: [
       'Trace from shipping documents to the sales journal',
@@ -436,11 +478,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-022',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-compliance',
     topic: 'Risk Assessment',
     subtopic: 'Consideration of Laws and Regulations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under AU-C §250, when the auditor becomes aware of noncompliance with laws and regulations, the auditor must:',
     options: [
       'Immediately report to law enforcement',
@@ -457,11 +501,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-023',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-documentation',
     topic: 'Audit Evidence',
     subtopic: 'Audit Documentation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit documentation (working papers) should be sufficient to enable:',
     options: [
       'Only the engagement partner to understand the work',
@@ -478,11 +524,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-024',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal',
     topic: 'Risk Assessment',
     subtopic: 'Using the Work of Internal Auditors',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the external auditor plans to use the work of internal auditors, the external auditor should evaluate:',
     options: [
       'Nothing — internal auditor work can always be used',
@@ -499,11 +547,13 @@ export const AUD_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'aud-d3-025',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Evidence',
     subtopic: 'Search for Unrecorded Liabilities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A "search for unrecorded liabilities" is an audit procedure that tests the _____ assertion for accounts payable:',
     options: [
       'Existence',

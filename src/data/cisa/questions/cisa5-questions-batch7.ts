@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA5_QUESTIONS_BATCH7: Question[] = [
   {
-    id: 'CISA5-153',
+    id: 'cisa5-153',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Post-quantum cryptography preparation should include:',
     options: [
       'Waiting for standards',
@@ -25,10 +27,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Post-Quantum Cryptography'
   },
   {
-    id: 'CISA5-154',
+    id: 'cisa5-154',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Zero-trust network access (ZTNA) replaces:',
     options: [
       'All firewalls',
@@ -42,10 +46,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'ZTNA'
   },
   {
-    id: 'CISA5-155',
+    id: 'cisa5-155',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Behavioral analytics for threat detection identifies:',
     options: [
       'Only known threats',
@@ -59,10 +65,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Behavioral Analytics'
   },
   {
-    id: 'CISA5-156',
+    id: 'cisa5-156',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Secure access service edge (SASE) combines:',
     options: [
       'Only networking',
@@ -76,10 +84,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'SASE'
   },
   {
-    id: 'CISA5-158',
+    id: 'cisa5-158',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data loss prevention (DLP) in cloud environments requires:',
     options: [
       'Only on-premise tools',
@@ -93,10 +103,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Cloud DLP'
   },
   {
-    id: 'CISA5-159',
+    id: 'cisa5-159',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Extended detection and response (XDR) provides:',
     options: [
       'Only endpoint detection',
@@ -110,10 +122,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'XDR'
   },
   {
-    id: 'CISA5-160',
+    id: 'cisa5-160',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'API security testing should include:',
     options: [
       'Only functional testing',
@@ -127,10 +141,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'API Security Testing'
   },
   {
-    id: 'CISA5-161',
+    id: 'cisa5-161',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Digital identity verification for remote onboarding uses:',
     options: [
       'Only passwords',
@@ -144,10 +160,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Identity Verification'
   },
   {
-    id: 'CISA5-162',
+    id: 'cisa5-162',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Confidential computing protects:',
     options: [
       'Data at rest only',
@@ -161,10 +179,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Confidential Computing'
   },
   {
-    id: 'CISA5-163',
+    id: 'cisa5-163',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security orchestration, automation, and response (SOAR) enables:',
     options: [
       'Only manual workflows',
@@ -178,10 +198,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'SOAR'
   },
   {
-    id: 'CISA5-164',
+    id: 'cisa5-164',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Attack surface management (ASM) continuously:',
     options: [
       'Only scans internal systems',
@@ -195,10 +217,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Attack Surface Management'
   },
   {
-    id: 'CISA5-165',
+    id: 'cisa5-165',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privacy enhancing technologies (PETs) include:',
     options: [
       'Only encryption',
@@ -212,10 +236,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Privacy Enhancing Technologies'
   },
   {
-    id: 'CISA5-166',
+    id: 'cisa5-166',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Supply chain security frameworks like SLSA focus on:',
     options: [
       'Only vendor contracts',
@@ -229,10 +255,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Supply Chain Security'
   },
   {
-    id: 'CISA5-167',
+    id: 'cisa5-167',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Workload identity management in cloud addresses:',
     options: [
       'Only human identities',
@@ -246,10 +274,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Workload Identity'
   },
   {
-    id: 'CISA5-168',
+    id: 'cisa5-168',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Deception technology (honeypots, honeytokens) provides:',
     options: [
       'Production services',
@@ -263,10 +293,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Deception Technology'
   },
   {
-    id: 'CISA5-169',
+    id: 'cisa5-169',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security data lakes aggregate:',
     options: [
       'Only SIEM data',
@@ -280,10 +312,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Security Data Lake'
   },
   {
-    id: 'CISA5-170',
+    id: 'cisa5-170',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Runtime application self-protection (RASP) provides:',
     options: [
       'Only static analysis',
@@ -297,10 +331,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'RASP'
   },
   {
-    id: 'CISA5-171',
+    id: 'cisa5-171',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat intelligence platforms (TIP) enable:',
     options: [
       'Only threat feeds',
@@ -314,10 +350,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Threat Intelligence Platform'
   },
   {
-    id: 'CISA5-172',
+    id: 'cisa5-172',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Continuous control monitoring (CCM) automates:',
     options: [
       'Only annual testing',

@@ -677,8 +677,8 @@ export const CMA1_MCQ_BATCH9: Question[] = [
       'No, because it decreases ROI below the current level',
       'No, because it has negative EVA'
     ],
-    correctAnswer: 0,
-    explanation: 'Current ROI: $200,000/$1,600,000 = 12.5%. New project ROI: $30,000/$200,000 = 15%. New combined ROI: $230,000/$1,800,000 = 12.78%. ROI decreases from 12.5% to 12.78%... wait, 12.78% > 12.5%, so ROI increases! Project EVA: $30,000 - (12% × $200,000) = $30,000 - $24,000 = $6,000 positive. Accept: increases both ROI and EVA. Answer is B.',
+    correctAnswer: 1,
+    explanation: 'Current ROI: $200,000/$1,600,000 = 12.5%. New project ROI: $30,000/$200,000 = 15%. New combined ROI: $230,000/$1,800,000 = 12.78%. Since 12.78% > 12.5%, ROI increases. Project EVA: $30,000 - (12% × $200,000) = $30,000 - $24,000 = $6,000 positive. The project should be accepted because it increases both ROI and EVA.',
     reference: 'IMA CMA Content Specification',
   },
   {

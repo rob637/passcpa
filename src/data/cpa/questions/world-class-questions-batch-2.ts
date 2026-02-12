@@ -12,11 +12,13 @@ export const FAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'far-wc-041',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lease Classification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Willow Corp. enters into a lease for equipment with a fair value of $500,000. The lease term is 8 years, and the equipment has an economic life of 10 years. Annual lease payments are $70,000 at the end of each year. The lessee\'s incremental borrowing rate is 6%. The present value of the lease payments is $438,000. How should the lessee classify this lease?',
     options: [
       'Operating lease because the present value is less than 90% of fair value',
@@ -31,11 +33,13 @@ export const FAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'far-wc-042',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lease Modifications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A lessee has an existing operating lease with 4 years remaining and a right-of-use asset of $200,000 and lease liability of $220,000. The lease is modified to extend the term by 2 years with an additional $50,000 annual payment. How should the lessee account for this modification?',
     options: [
       'Recognize a new right-of-use asset and write off the existing one',
@@ -50,11 +54,13 @@ export const FAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'far-wc-043',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-consolidations',
     topic: 'Consolidations',
     subtopic: 'Noncontrolling Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pine Inc. owns 80% of Spruce Corp. During the year, Spruce reported net income of $500,000 and declared dividends of $100,000. At acquisition, Spruce had identifiable net assets with a fair value of $2,000,000 and a book value of $1,800,000. The excess was attributable to equipment with a 5-year remaining life. What is the noncontrolling interest share of Spruce\'s net income for the year?',
     options: [
       '$100,000',
@@ -69,11 +75,13 @@ export const FAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'far-wc-044',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'State and Local Governments',
     subtopic: 'Modified Accrual',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following statements about modified accrual accounting in governmental funds is correct?',
     options: [
       'Revenues are recognized when earned regardless of when cash is received',
@@ -88,11 +96,13 @@ export const FAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'far-wc-045',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Net Asset Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A not-for-profit organization receives a contribution of $100,000 with donor stipulation that the principal must be held in perpetuity while the income can be used for scholarships. How should this be classified?',
     options: [
       'Net assets without donor restrictions',
@@ -107,11 +117,13 @@ export const FAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'far-wc-046',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Birch Co. sells product for $1,000 with a right of return. Historical data shows 5% of products are returned. Using the expected value approach, what amount of revenue should Birch recognize at the time of sale?',
     options: [
       '$1,000 with a $50 refund liability',
@@ -133,11 +145,13 @@ export const AUD_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'aud-wc-041',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Analytical Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During planning, an auditor performs analytical procedures and finds that the client\'s gross profit margin is 45% compared to 38% in the prior year and an industry average of 35%. What should the auditor do?',
     options: [
       'Accept management\'s explanation without further testing',
@@ -152,11 +166,13 @@ export const AUD_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'aud-wc-042',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under PCAOB standards, which of the following matters would most likely be communicated as a critical audit matter (CAM) in the auditor\'s report?',
     options: [
       'A disagreement with management that was resolved during the audit',
@@ -171,11 +187,13 @@ export const AUD_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'aud-wc-043',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Deficiencies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During testing, an auditor discovers that a single individual can initiate, approve, and record vendor payments without independent review. This individual processed $5 million in payments during the year. Total payments were $50 million. What type of deficiency exists?',
     options: [
       'Control deficiency only, because no actual misstatement was found',
@@ -190,11 +208,13 @@ export const AUD_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'aud-wc-044',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is automatically presumed to be a significant risk under auditing standards?',
     options: [
       'Accounts with high transaction volume',
@@ -209,11 +229,13 @@ export const AUD_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'aud-wc-045',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-compilations',
     topic: 'SSARS Engagements',
     subtopic: 'Compilation Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During a compilation engagement, an accountant becomes aware that the financial statements contain a material departure from GAAP. Management refuses to revise the statements. What should the accountant do?',
     options: [
       'Withdraw from the engagement immediately',
@@ -228,11 +250,13 @@ export const AUD_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'aud-wc-046',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Independence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A member of the audit engagement team discovers that his spouse accepted a position as controller at the audit client after the audit commenced. Fieldwork is substantially complete. What action is required?',
     options: [
       'No action needed if the spouse was not involved in accounting matters',
@@ -254,11 +278,13 @@ export const REG_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'reg-wc-041',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Qualified Business Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Lopez, a single taxpayer with taxable income of $180,000, has qualified business income of $100,000 from her sole proprietorship (accounting services). W-2 wages paid by the business are $30,000 and the unadjusted basis of qualified property is $50,000. What is Lopez\'s QBI deduction?',
     options: [
       '$20,000',
@@ -273,11 +299,13 @@ export const REG_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'reg-wc-042',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activity Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Chen materially participates in Business A (income of $40,000) and has a passive interest in Business B (loss of $60,000). Chen also has $25,000 of portfolio income. What is the net effect on Chen\'s taxable income?',
     options: [
       '$65,000 income with no suspended loss',
@@ -292,11 +320,13 @@ export const REG_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'reg-wc-043',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Section 351 Transfers',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Adams transfers property with a basis of $40,000 and fair value of $100,000 to newly formed Corp in exchange for 80% of Corp\'s stock and $15,000 cash. What gain does Adams recognize?',
     options: [
       '$0 because the 80% control requirement is met',
@@ -311,11 +341,13 @@ export const REG_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'reg-wc-044',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Built-in Gains',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Baker contributes property with a basis of $20,000 and FMV of $50,000 to ABC Partnership. Two years later, the partnership sells the property for $55,000. How is the $35,000 total gain allocated?',
     options: [
       'One-third to each partner',
@@ -330,11 +362,13 @@ export const REG_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'reg-wc-045',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Responsibilities',
     subtopic: 'Circular 230',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, which of the following statements about covered opinions is correct?',
     options: [
       'All tax opinions must comply with covered opinion requirements',
@@ -349,11 +383,13 @@ export const REG_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'reg-wc-046',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-in Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'XYZ Corp was a C corporation that elected S status on January 1. At election, it had assets with FMV of $500,000 and a tax basis of $200,000. In Year 2, XYZ sells an asset with built-in gain of $80,000. XYZ\'s taxable income (before the built-in gains tax) is $60,000. What is the built-in gains tax?',
     options: [
       '$21,000 (21% × $100,000)',
@@ -375,11 +411,13 @@ export const BAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'bar-wc-041',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'DuPont Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Company A has a 5-factor DuPont ROE of 15%. If the company increases its debt-to-equity ratio while maintaining the same operating profit margin and asset turnover, what is the most likely effect on ROE?',
     options: [
       'ROE will decrease due to higher interest expense',
@@ -394,11 +432,13 @@ export const BAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'bar-wc-042',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Discounted Cash Flow',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has free cash flow of $10 million expected to grow at 4% perpetually. The WACC is 10% and cost of equity is 14%. What is the enterprise value using the Gordon Growth Model?',
     options: [
       '$100 million',
@@ -413,11 +453,13 @@ export const BAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'bar-wc-043',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-planning',
     topic: 'Technical Accounting',
     subtopic: 'Business Combinations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Acquirer pays $800 million for Target. Target\'s identifiable net assets have a book value of $500 million and fair value of $650 million. The noncontrolling interest (20%) is measured at fair value of $180 million. What amount of goodwill should Acquirer record?',
     options: [
       '$150 million',
@@ -432,11 +474,13 @@ export const BAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'bar-wc-044',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-prospective',
     topic: 'Prospective Financial Information',
     subtopic: 'Pro Forma Adjustments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When preparing pro forma financial information for a business combination, which of the following adjustments is most appropriate?',
     options: [
       'Include expected cost synergies from workforce reductions',
@@ -451,11 +495,13 @@ export const BAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'bar-wc-045',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-ratios',
     topic: 'Financial Statement Analysis',
     subtopic: 'Liquidity Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has current assets of $400,000 (including inventory of $120,000 and prepaid expenses of $30,000) and current liabilities of $250,000. What is the quick ratio?',
     options: [
       '1.60',
@@ -470,11 +516,13 @@ export const BAR_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'bar-wc-046',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-cost-of-capital',
     topic: 'Valuation',
     subtopic: 'WACC Calculation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has the following capital structure: $600 million debt at 5% interest, $400 million preferred stock with a 7% dividend, and $1,000 million common equity with a required return of 12%. The tax rate is 25%. What is the WACC?',
     options: [
       '8.35%',
@@ -496,11 +544,13 @@ export const ISC_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'isc-wc-041',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Frameworks',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which IT governance framework is specifically designed to help organizations create value through effective use of IT resources?',
     options: [
       'COSO Internal Control Framework',
@@ -515,11 +565,13 @@ export const ISC_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'isc-wc-042',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Access Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company implements a policy requiring users to authenticate with something they know (password), something they have (smart card), and something they are (fingerprint). This is an example of:',
     options: [
       'Single sign-on (SSO)',
@@ -534,11 +586,13 @@ export const ISC_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'isc-wc-043',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-continuity',
     topic: 'Business Continuity',
     subtopic: 'Recovery Objectives',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company\'s business continuity plan specifies that critical financial systems must be restored within 4 hours of a disaster and that no more than 1 hour of data can be lost. These specifications define:',
     options: [
       'Recovery Point Objective of 4 hours and Recovery Time Objective of 1 hour',
@@ -553,11 +607,13 @@ export const ISC_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'isc-wc-044',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'System and Organization Controls',
     subtopic: 'SOC Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A CPA firm is engaged to perform a SOC 2 Type 2 examination for a cloud service provider. What does the Type 2 report include that a Type 1 does not?',
     options: [
       'A description of the service organization\'s system',
@@ -572,11 +628,13 @@ export const ISC_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'isc-wc-045',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Database Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A database constraint that ensures every row in a child table has a corresponding row in the parent table is called:',
     options: [
       'Entity integrity constraint',
@@ -591,11 +649,13 @@ export const ISC_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'isc-wc-046',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-network',
     topic: 'Security Controls',
     subtopic: 'Network Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization wants to detect and analyze malicious activity by deploying a system that appears to be a legitimate target but is actually isolated and monitored. This security mechanism is called:',
     options: [
       'Intrusion detection system (IDS)',
@@ -617,11 +677,13 @@ export const TCP_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'tcp-wc-041',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For 2024, a single taxpayer has regular taxable income of $200,000 and claims the following: $15,000 state income taxes (within the SALT cap), $8,000 in miscellaneous itemized deductions disallowed for regular tax, and $20,000 in incentive stock option spread. What is the starting point for calculating AMTI?',
     options: [
       'Regular taxable income of $200,000',
@@ -636,11 +698,13 @@ export const TCP_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'tcp-wc-042',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ABC Partnership allocates 60% of profits to Partner A and 40% to Partner B. However, the partnership agreement allocates all depreciation deductions to Partner A. For this allocation to have substantial economic effect:',
     options: [
       'It must simply be stated in the partnership agreement',
@@ -655,11 +719,13 @@ export const TCP_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'tcp-wc-043',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Like-Kind Exchanges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Davidson exchanges a rental property (adjusted basis $300,000, FMV $500,000, mortgage $100,000) for a replacement property (FMV $450,000, mortgage assumed $50,000). How much gain must Davidson recognize?',
     options: [
       '$0 because it qualifies as a like-kind exchange',
@@ -674,11 +740,13 @@ export const TCP_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'tcp-wc-044',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-gifts',
     topic: 'Individual Tax Compliance',
     subtopic: 'Gift and Estate Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In 2024, Martinez makes the following gifts: $20,000 to his son, $100,000 directly to a hospital for his grandson\'s medical bills, and $30,000 to a qualified 529 plan for his niece. What is his total taxable gifts (before the unified credit)?',
     options: [
       '$150,000',
@@ -693,11 +761,13 @@ export const TCP_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'tcp-wc-045',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-corporate',
     topic: 'Entity Tax Compliance',
     subtopic: 'Corporate Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Mega Corp has E&P of $300,000 and makes a distribution of property (basis $80,000, FMV $120,000) to its sole shareholder. What are the tax consequences to Mega Corp?',
     options: [
       'No gain recognition; E&P reduced by $80,000',
@@ -712,11 +782,13 @@ export const TCP_WORLD_CLASS_BATCH_2: Question[] = [
   {
     id: 'tcp-wc-046',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-international',
     topic: 'Tax Planning',
     subtopic: 'International Taxation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'US Corp owns 100% of Foreign Sub, which has $1 million of Subpart F income. US Corp has no other income and has foreign tax credits of $150,000 available. What is US Corp\'s US tax liability (assume a 21% rate)?',
     options: [
       '$210,000 with no credit limitation',

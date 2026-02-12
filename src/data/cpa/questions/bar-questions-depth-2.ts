@@ -13,11 +13,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Master Budget Components',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The master budget process typically begins with:',
     options: [
       'The cash budget',
@@ -32,11 +34,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Flexible Budget',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A flexible budget adjusts budgeted amounts based on:',
     options: [
       'Last year\'s actual results',
@@ -51,11 +55,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Zero-Based Budgeting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Zero-based budgeting (ZBB) differs from incremental budgeting in that:',
     options: [
       'It starts from a zero base — every expense must be justified for each new period, regardless of prior budgets',
@@ -70,11 +76,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Beyond Budgeting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The "Beyond Budgeting" management model advocates replacing traditional budgets with:',
     options: [
       'More detailed annual budgets with quarterly updates',
@@ -93,11 +101,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Payback Period',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A project requires a $60,000 investment and generates annual cash flows of $15,000. The simple payback period is:',
     options: [
       '2 years',
@@ -112,11 +122,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Profitability Index',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project has a present value of future cash flows of $150,000 and requires an initial investment of $120,000. The profitability index (PI) is:',
     options: [
       '0.80',
@@ -131,11 +143,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Sell or Process Further',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'At a split-off point, Product X can be sold for $40,000 or processed further at an additional cost of $12,000 and sold for $55,000. The company should:',
     options: [
       'Sell at split-off — revenue is $40,000 vs. processing cost of $12,000',
@@ -154,11 +168,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Joint Cost Allocation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the relative sales value at split-off method, joint costs are allocated based on:',
     options: [
       'The physical weight or volume of each product',
@@ -173,11 +189,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Target Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In target costing, the target cost is determined by:',
     options: [
       'Adding a profit margin to the estimated production cost',
@@ -192,11 +210,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Kaizen Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Kaizen costing differs from standard costing in that it:',
     options: [
       'Sets static cost standards at the beginning of the year',
@@ -211,11 +231,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-011',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the Theory of Constraints (TOC), throughput is defined as:',
     options: [
       'Total revenue minus total expenses',
@@ -230,11 +252,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-012',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Equivalent Units — FIFO',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the FIFO method of process costing, equivalent units of production include:',
     options: [
       'All units completed and ending WIP, regardless of beginning WIP',
@@ -253,11 +277,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-013',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 805, what method is required for accounting for business combinations?',
     options: [
       'Pooling-of-interests method',
@@ -272,11 +298,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-014',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Goodwill Calculation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Company A acquires 100% of Company B for $500,000. Company B\'s identifiable net assets have a fair value of $420,000. The goodwill recognized is:',
     options: [
       '$500,000',
@@ -291,11 +319,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-015',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Goodwill Impairment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the current GAAP simplified impairment test (ASU 2017-04), goodwill is impaired when:',
     options: [
       'The fair value of the reporting unit exceeds its carrying amount',
@@ -314,11 +344,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-016',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'DuPont Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The extended DuPont formula decomposes Return on Equity (ROE) into:',
     options: [
       'Net income / Total assets',
@@ -333,11 +365,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-017',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Debt-to-Equity Ratio',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has total liabilities of $600,000 and total equity of $400,000. Its debt-to-equity ratio is:',
     options: [
       '0.67',
@@ -352,11 +386,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-018',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Cash Conversion Cycle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle (CCC) is calculated as:',
     options: [
       'Days inventory outstanding + Days sales outstanding − Days payable outstanding',
@@ -375,11 +411,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-019',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Segment Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 280, an operating segment must be separately reported if it meets which quantitative threshold?',
     options: [
       'Revenue, assets, or profit/loss is 5% or more of the combined total',
@@ -394,11 +432,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-020',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Earnings Per Share',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Basic earnings per share (EPS) is calculated as:',
     options: [
       '(Net income − Preferred dividends) / Weighted-average common shares outstanding',
@@ -413,11 +453,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-021',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Fair Value Hierarchy',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 820, Level 1 inputs in the fair value hierarchy are:',
     options: [
       'Unobservable inputs based on management assumptions',
@@ -436,11 +478,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-022',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Benchmarking',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Competitive benchmarking involves:',
     options: [
       'Comparing internal departments with each other',
@@ -455,11 +499,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-023',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Production Budget',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company expects to sell 10,000 units. Beginning finished goods inventory is 1,500 units and desired ending inventory is 2,000 units. How many units must be produced?',
     options: [
       '10,000 units',
@@ -478,11 +524,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-024',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Labor Variance Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Standard labor: 2 hours at $20/hour per unit. Actual: 2,100 hours at $21/hour for 1,000 units. The labor rate variance is:',
     options: [
       '$2,100 unfavorable',
@@ -497,11 +545,13 @@ export const BAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'bar-d2-025',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Overhead Variance Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The fixed overhead volume variance measures:',
     options: [
       'The difference between actual and budgeted fixed overhead spending',

@@ -41,6 +41,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-A',
     blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
@@ -65,6 +66,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-A',
     blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
@@ -89,6 +91,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-A',
     blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
@@ -112,6 +115,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-A',
     blueprintTopic: 'REG-I-A-3', // Tax preparer penalties
@@ -136,11 +140,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Professional Responsibility',
     subtopic: 'Preparer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'The penalty for willful or reckless conduct by a tax return preparer under IRC §6694(b) is:',
     options: [
@@ -157,11 +163,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Professional Responsibility',
     subtopic: 'Taxpayer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer files their return 50 days late with tax due of $10,000. No reasonable cause exists. What is the failure-to-file penalty?',
     options: [
@@ -178,11 +186,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Professional Responsibility',
     subtopic: 'Taxpayer Penalties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'The accuracy-related penalty under IRC §6662 applies to underpayments due to all of the following EXCEPT:',
     options: [
@@ -199,11 +209,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Professional Responsibility',
     subtopic: 'IRS Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Generally, the IRS must assess tax within how many years after a return is filed?',
     options: [
       'Two years',
@@ -219,11 +231,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-eth-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Professional Responsibility',
     subtopic: 'IRS Procedures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The statute of limitations for assessment extends to six years when:',
     options: [
       'The taxpayer claims excessive deductions',
@@ -245,11 +259,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts - Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is required for a valid contract under common law?',
     options: [
       'Consideration by both parties',
@@ -265,11 +281,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts - Formation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the UCC, an acceptance that contains additional terms:',
     options: [
       'Is effective as an acceptance between merchants, with additional terms becoming part of the contract unless they materially alter it',
@@ -285,11 +303,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts - Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A merchant's written offer to buy or sell goods, signed and stating it will be held open, is irrevocable for:",
     options: [
@@ -306,11 +326,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts - Statute of Frauds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the Statute of Frauds, which contract must be in writing to be enforceable?',
     options: [
       'A contract for services to be completed in 8 months',
@@ -326,11 +348,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts - Performance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the UCC, the "perfect tender rule" allows a buyer to:',
     options: [
       'Accept goods even if they do not conform to the contract',
@@ -346,11 +370,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts - Remedies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Compensatory damages for breach of contract are designed to:',
     options: [
       'Put the non-breaching party in the position they would have been in had the contract been performed',
@@ -368,11 +394,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agency relationship requires all of the following EXCEPT:',
     options: [
       'Consent of both parties',
@@ -388,11 +416,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A principal is liable for the torts of an agent when:',
     options: [
       'The agent commits any tort while employed',
@@ -408,11 +438,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: "An agent's apparent authority is created by:",
     options: [
       "The principal's manifestations to third parties",
@@ -428,11 +460,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following terminates an agency by operation of law?',
     options: [
       'Death of the principal',
@@ -450,11 +484,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Debtor-Creditor Relationships',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a Chapter 7 bankruptcy, which of the following claims has the highest priority?',
     options: [
       'Unsecured creditors',
@@ -470,11 +506,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Debtor-Creditor Relationships',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To perfect a security interest in goods, a creditor must:',
     options: [
       'Obtain a court judgment',
@@ -490,11 +528,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Debtor-Creditor Relationships',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A surety who pays a creditor has the right of:',
     options: [
       "Attachment - seizing the debtor's property",
@@ -512,11 +552,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Federal Securities Regulation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Under the Securities Act of 1933, which of the following is exempt from registration?',
     options: [
@@ -533,11 +575,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-law-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Federal Securities Regulation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'Under Section 10(b) of the Securities Exchange Act of 1934 and Rule 10b-5, a plaintiff must prove all of the following EXCEPT:',
     options: [
@@ -560,11 +604,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income - Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is included in gross income?',
     options: [
       'Unemployment compensation',
@@ -580,11 +626,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income - Inclusions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer receives $50,000 in salary plus employer-paid health insurance premiums of $8,000. What amount is included in gross income?',
     options: [
@@ -601,11 +649,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income - Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the constructive receipt doctrine, income is taxable when:',
     options: [
       'Cash is actually received',
@@ -621,11 +671,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income - Exclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A taxpayer receives a $5,000 scholarship. $3,500 is for tuition and $1,500 is for room and board. What amount is excluded from gross income?',
     options: [
@@ -642,11 +694,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income - Exclusions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer sells their principal residence for $600,000. They purchased it 5 years ago for $350,000 and have lived in it continuously. What is the recognized gain if single?',
     options: ['$250,000',
@@ -661,11 +715,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Above-the-Line Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is an above-the-line deduction (adjustment to gross income)?',
     options: [
       'Home mortgage interest',
@@ -681,11 +737,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Above-the-Line Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'A self-employed individual pays $12,000 for health insurance for themselves and their family. How much can they deduct as an adjustment to income?',
     options: ['$12,000',
@@ -700,11 +758,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The SALT deduction (state and local taxes) for 2024 is limited to:',
     options: ['$5,000',
       '$15,000',
@@ -718,11 +778,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Home mortgage interest is deductible on acquisition debt up to:',
     options: [
       '$500,000',
@@ -738,11 +800,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Medical expenses are deductible to the extent they exceed what percentage of AGI?',
     options: ['2%',
       '12.5%',
@@ -758,11 +822,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains and Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To qualify for long-term capital gain treatment, property must be held for:',
     options: [
       'At least 6 months',
@@ -778,11 +844,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains and Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'A taxpayer has $20,000 LTCG, $8,000 STCL, and $5,000 LTCL. What is the net capital gain?',
     options: [
@@ -799,11 +867,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains and Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Collectibles held more than one year are taxed at a maximum rate of:',
     options: [
       '20%',
@@ -819,11 +889,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains and Losses',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The maximum capital loss deduction against ordinary income for individuals is:',
     options: ['$1,000', '$3,000 ($1,500 if married filing separately)', '$5,000', 'Unlimited'],
     correctAnswer: 1,
@@ -836,11 +908,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Child Tax Credit for 2024 is:',
     options: [
       '$1,000 per qualifying child',
@@ -856,11 +930,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Earned Income Tax Credit (EITC) is:',
     options: [
       'A nonrefundable credit',
@@ -876,11 +952,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The American Opportunity Credit provides a maximum benefit of:',
     options: [
       '$1,000 per student',
@@ -902,11 +980,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'C Corporations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The corporate tax rate for C corporations is:',
     options: [
       '21%',
@@ -922,11 +1002,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'C Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'The dividends received deduction for a corporation owning less than 20% of another corporation is:',
     options: ['80%',
@@ -941,11 +1023,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'C Corporations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A distribution from a C corporation is treated as a dividend to the extent of:',
     options: [
       'Cash distributed',
@@ -961,11 +1045,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'C Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To qualify for a tax-free incorporation under IRC §351, the transferors must have:',
     options: [
       'At least 50% control after the exchange',
@@ -981,11 +1067,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'C Corporations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accumulated earnings tax applies when a corporation:',
     options: [
       'Has retained earnings exceeding $100,000',
@@ -1003,11 +1091,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'S Corporations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation may have a maximum of:',
     options: [
       '35 shareholders',
@@ -1023,11 +1113,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'S Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following would terminate an S corporation election?',
     options: [
       'Issuing preferred stock',
@@ -1043,11 +1135,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'S Corporations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'S corporation income, deductions, and credits pass through to shareholders:',
     options: [
       'Based on daily ownership percentage',
@@ -1063,11 +1157,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'S Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "An S corporation shareholder's basis is increased by:",
     options: [
       'Corporate-level taxes paid',
@@ -1085,11 +1181,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'Partnership Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: "A partner's outside basis includes:",
     options: [
       'Cash plus property contributions plus share of partnership liabilities',
@@ -1105,11 +1203,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'Partnership Taxation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "A partnership's inside basis in contributed property is generally:",
     options: [
       "The contributing partner's adjusted basis (carryover basis)",
@@ -1125,11 +1225,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'Partnership Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Guaranteed payments to a partner are:',
     options: [
       'Deductible by the partnership and ordinary income to the partner',
@@ -1145,11 +1247,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'Partnership Taxation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A distribution of cash to a partner in excess of their basis results in:',
     options: [
       'Capital gain',
@@ -1167,11 +1271,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Property Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'In a like-kind exchange under IRC §1031, which of the following is NOT qualifying property?',
     options: [
@@ -1188,11 +1294,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'Property Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When depreciable business property is sold at a gain, IRC §1245 requires:',
     options: [
       'Recapture of depreciation as ordinary income',
@@ -1208,11 +1316,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual-tax',
     topic: 'Individual Taxation',
     subtopic: 'AMT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is a preference item for individual AMT purposes?',
     options: [
       'Standard deduction',
@@ -1228,11 +1338,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-tax',
     topic: 'Business Taxation',
     subtopic: 'Qualified Business Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Section 199A qualified business income deduction is generally equal to:',
     options: [
       '20% of qualified business income, subject to limitations',
@@ -1248,11 +1360,13 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics and Professional Responsibility',
     subtopic: 'AICPA Standards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under AICPA Standards for Tax Services, a CPA may recommend a tax position if:',
     options: [
       'The client insists on taking the position',
@@ -1274,6 +1388,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-hr1-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-A',
     blueprintTopic: 'REG-III-A-3',
@@ -1300,6 +1415,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-hr1-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     blueprintTopic: 'REG-III-B-4',
@@ -1326,6 +1442,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-hr1-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-D',
     blueprintTopic: 'REG-III-D-4',
@@ -1352,6 +1469,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-hr1-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-A',
     blueprintTopic: 'REG-III-A-3',
@@ -1378,6 +1496,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-hr1-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     blueprintTopic: 'REG-III-B-4',
@@ -1408,6 +1527,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-b3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-C',
     topicId: 'reg-partnership',
@@ -1429,6 +1549,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-b3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-C',
     topicId: 'reg-partnership',
@@ -1450,6 +1571,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-b3-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-C',
     topicId: 'reg-partnership',
@@ -1471,6 +1593,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-b3-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-C',
     topicId: 'reg-partnership',
@@ -1492,6 +1615,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-part-b3-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-C',
     topicId: 'reg-partnership',
@@ -1515,6 +1639,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-b3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-D',
     topicId: 'reg-scorp',
@@ -1536,6 +1661,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-b3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-D',
     topicId: 'reg-scorp',
@@ -1557,6 +1683,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-scorp-b3-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-D',
     topicId: 'reg-scorp',
@@ -1580,6 +1707,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-intl-b3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-E',
     topicId: 'reg-international',
@@ -1601,6 +1729,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-intl-b3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-E',
     topicId: 'reg-international',
@@ -1622,6 +1751,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-intl-b3-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-E',
     topicId: 'reg-international',
@@ -1645,6 +1775,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-b3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-C',
     topicId: 'reg-property',
@@ -1666,6 +1797,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-b3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-C',
     topicId: 'reg-property',
@@ -1687,6 +1819,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-b3-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-C',
     topicId: 'reg-property',
@@ -1708,6 +1841,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-prop-b3-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-C',
     topicId: 'reg-property',
@@ -1731,6 +1865,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-proc-b3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-B',
     topicId: 'reg-procedure',
@@ -1752,6 +1887,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-proc-b3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-B',
     topicId: 'reg-procedure',
@@ -1773,6 +1909,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-proc-b3-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-B',
     topicId: 'reg-procedure',
@@ -1794,6 +1931,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-proc-b3-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-B',
     topicId: 'reg-procedure',
@@ -1817,6 +1955,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-b3-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     topicId: 'reg-individual-tax',
@@ -1838,6 +1977,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-b3-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     topicId: 'reg-individual-tax',
@@ -1865,6 +2005,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-cont-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -1885,6 +2026,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-cont-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -1905,6 +2047,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-cont-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -1927,6 +2070,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-agency-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -1947,6 +2091,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-agency-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -1969,6 +2114,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-debt-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -1989,6 +2135,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-debt-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -2009,6 +2156,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-bl-debt-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-business-law',
     topic: 'Business Law',
@@ -2031,6 +2179,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-b6-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-B',
     topicId: 'reg-corporate-tax',
@@ -2052,6 +2201,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-b6-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-B',
     topicId: 'reg-corporate-tax',
@@ -2073,6 +2223,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-corp-b6-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-B',
     topicId: 'reg-corporate-tax',
@@ -2096,6 +2247,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-b6-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     topicId: 'reg-individual-tax',
@@ -2117,6 +2269,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-b6-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     topicId: 'reg-individual-tax',
@@ -2138,6 +2291,7 @@ export const REG_QUESTIONS: Question[] = [
   {
     id: 'reg-ind-b6-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     topicId: 'reg-individual-tax',

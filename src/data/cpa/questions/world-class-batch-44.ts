@@ -5,11 +5,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'far-wc-211',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'Not-for-Profit Entities',
     topicId: 'nfp-accounting',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Split-Interest Agreements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A donor establishes a charitable remainder annuity trust (CRAT) naming a not-for-profit as the remainder beneficiary. The trust assets have a fair value of $1,000,000, and actuarial calculations determine the NPO\'s remainder interest at $650,000. The annuity payments to the income beneficiary begin immediately. How should the NPO record this arrangement?',
     options: [
       'Contribution revenue of $1,000,000 with donor restriction',
@@ -24,11 +26,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'far-wc-212',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'Not-for-Profit Entities',
     topicId: 'nfp-accounting',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Functional Expense Allocation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A not-for-profit incurs $500,000 in total occupancy costs. Building space is used as follows: 60% for program services, 25% for general administration, and 15% for fundraising. Which allocation method is appropriate under GAAP?',
     options: [
       'Allocate 100% to program services to maximize the program service ratio',
@@ -43,11 +47,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'far-wc-213',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'Not-for-Profit Entities',
     topicId: 'nfp-accounting',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributed Services',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An attorney donates 50 hours of legal services (normally billed at $400/hour) to help a not-for-profit with contract negotiations. The NPO would have purchased these services if not donated. How should this be recorded?',
     options: [
       'No journal entry; volunteer services are not recorded',
@@ -62,11 +68,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'far-wc-214',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'Not-for-Profit Entities',
     topicId: 'nfp-accounting',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Endowment Spending Policies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A university\'s endowment fund has a beginning balance of $50,000,000. The board-approved spending policy allows expenditure of 5% of a 12-quarter moving average. Investment returns for the year were -8% ($4,000,000 loss). Under UPMIFA, can the university spend from this endowment?',
     options: [
       'No, spending is prohibited when returns are negative',
@@ -82,11 +90,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'aud-wc-211',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Risk Assessment Procedures',
     topicId: 'service-organizations',
     topic: 'Service Organization Reports',
     subtopic: 'Type 1 vs Type 2 Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A user auditor is auditing a company that uses a third-party payroll processor. The auditor obtains a SOC 1 Type 1 report dated September 30 covering payroll processing controls. The fiscal year-end is December 31. Which statement is correct?',
     options: [
       'The Type 1 report provides sufficient evidence about operating effectiveness throughout the year',
@@ -101,11 +111,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'aud-wc-212',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Risk Assessment Procedures',
     topicId: 'service-organizations',
     topic: 'Service Organization Reports',
     subtopic: 'Complementary User Entity Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 1 Type 2 report on a cloud-based accounting system includes "complementary user entity controls" (CUECs) that must be in place for the service organization\'s controls to operate effectively. The user entity has NOT implemented several of these CUECs. What is the user auditor\'s responsibility?',
     options: [
       'Disclaim an opinion due to scope limitation',
@@ -120,11 +132,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'aud-wc-213',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Risk Assessment Procedures',
     topicId: 'service-organizations',
     topic: 'Service Organization Reports',
     subtopic: 'Subservice Organizations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SOC 1 report for a payroll service organization uses the "carve-out" method for a subservice organization that provides data hosting. What does this mean for the user auditor?',
     options: [
       'The subservice organization\'s controls are included in the scope and tested',
@@ -139,11 +153,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'aud-wc-214',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'Risk Assessment Procedures',
     topicId: 'service-organizations',
     topic: 'Service Organization Reports',
     subtopic: 'SOC 2 vs SOC 1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company outsources its customer relationship management (CRM) system to a cloud provider. The company wants assurance over data security and system availability. Which SOC report is most appropriate?',
     options: [
       'SOC 1 Type 2, as it covers all IT controls',
@@ -159,11 +175,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'reg-wc-211',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
     topicId: 'tax-procedure',
     topic: 'Tax Procedure',
     subtopic: 'IRS Collections - Innocent Spouse Relief',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer filed joint returns with her now-ex-spouse who understated income by $50,000 from an unreported side business. The taxpayer had no knowledge of or benefit from this income. She is seeking innocent spouse relief. Which requirement is NOT necessary for relief under IRC Section 6015(b)?',
     options: [
       'The understatement is attributable to erroneous items of the other spouse',
@@ -178,11 +196,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'reg-wc-212',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
     topicId: 'tax-procedure',
     topic: 'Tax Procedure',
     subtopic: 'Offer in Compromise',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer owes $100,000 in back taxes. She has assets with quick sale value of $30,000 and can pay $500 monthly from remaining income over 24 months. What is the minimum offer amount the IRS would likely accept under the "doubt as to collectibility" basis?',
     options: [
       '$12,000 (24 × $500)',
@@ -197,11 +217,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'reg-wc-213',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
     topicId: 'tax-procedure',
     topic: 'Tax Procedure',
     subtopic: 'Statute of Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer filed a 2022 return on March 15, 2023, reporting $50,000 of income. The IRS later discovers the taxpayer omitted $40,000 of gross income. What is the statute of limitations for assessment?',
     options: [
       '3 years from March 15, 2023',
@@ -216,11 +238,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'reg-wc-214',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
     topicId: 'circular-230',
     topic: 'Circular 230',
     subtopic: 'Written Advice Standards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Treasury Circular 230, which of the following is a practitioner prohibited from doing when providing written tax advice?',
     options: [
       'Relying on representations of the client without verification',
@@ -236,11 +260,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'bar-wc-252',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'derivatives-hedging',
     topic: 'Derivatives and Hedging',
     subtopic: 'Fair Value Hedges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has a $10,000,000 fixed-rate bond payable with a carrying value of $10,000,000. It enters into an interest rate swap to convert to floating rate, designating it as a fair value hedge. At year-end, interest rates have decreased, causing the swap\'s fair value to be negative $300,000. How is this recorded?',
     options: [
       'Swap liability $300,000, loss in OCI $300,000',
@@ -255,11 +281,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'bar-wc-253',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'derivatives-hedging',
     topic: 'Derivatives and Hedging',
     subtopic: 'Cash Flow Hedges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A U.S. company expects to purchase inventory from a European supplier for €5,000,000 in 6 months. It enters into a forward contract to buy euros and designates it as a cash flow hedge. At year-end (before settlement), the forward contract has a fair value gain of $200,000. Where is this gain reported?',
     options: [
       'Current earnings as foreign exchange gain',
@@ -274,11 +302,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'bar-wc-254',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'derivatives-hedging',
     topic: 'Derivatives and Hedging',
     subtopic: 'Embedded Derivatives',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company issues a $1,000,000 convertible bond with a conversion feature allowing holders to convert into common stock. The bond is issued at par. Under GAAP, how should the conversion feature be accounted for?',
     options: [
       'Bifurcate and record conversion option at fair value as a separate derivative',
@@ -293,11 +323,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'bar-wc-255',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'derivatives-hedging',
     topic: 'Derivatives and Hedging',
     subtopic: 'Net Investment Hedges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A U.S. parent company has a net investment of $50,000,000 in a foreign subsidiary. It designates foreign currency debt as a hedge of this net investment. The functional currency of the subsidiary weakens against USD, causing a $3,000,000 translation loss on the subsidiary. The debt generates a $2,500,000 gain. Where is the $500,000 difference reported?',
     options: [
       'Net $500,000 loss in current earnings',
@@ -312,11 +344,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'bar-wc-256',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'Financial Statement Analysis',
     topicId: 'derivatives-hedging',
     topic: 'Derivatives and Hedging',
     subtopic: 'Hedge Effectiveness',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 815, which of the following would cause a hedging relationship to be discontinued prospectively?',
     options: [
       'The derivative\'s fair value decreases below zero',
@@ -332,11 +366,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'isc-wc-211',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'database-security',
     topic: 'Database Security',
     subtopic: 'SQL Injection Prevention',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company\'s web application is vulnerable to SQL injection attacks. Which control provides the MOST effective protection against SQL injection?',
     options: [
       'Firewall rules blocking port 1433',
@@ -351,11 +387,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'isc-wc-212',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'database-security',
     topic: 'Database Security',
     subtopic: 'Data Masking',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company needs to provide production database copies to developers for testing. The database contains sensitive customer PII. Which technique should be used to protect PII while maintaining data utility?',
     options: [
       'Full disk encryption',
@@ -370,11 +408,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'isc-wc-213',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company is implementing a data classification scheme. Which approach is MOST effective for ensuring sensitive data is properly classified?',
     options: [
       'Classify all data as confidential by default',
@@ -389,11 +429,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'isc-wc-214',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'Information Systems and Data Management',
     topicId: 'data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Retention and Destruction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company subject to multiple regulations (SOX, HIPAA, industry-specific) has conflicting data retention requirements. Which approach should the company take?',
     options: [
       'Follow the shortest retention period to minimize data exposure',
@@ -409,11 +451,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'tcp-wc-211',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 's-corp-taxation',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation converted from C corporation status five years ago. At conversion, it held land with FMV of $2,000,000 and basis of $500,000. This year, the land is sold for $2,500,000. What is the built-in gains tax consequence?',
     options: [
       'No built-in gains tax; the 5-year recognition period has expired',
@@ -428,11 +472,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'tcp-wc-212',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 's-corp-taxation',
     topic: 'S Corporation Taxation',
     subtopic: 'Accumulated Adjustments Account',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation has the following: beginning AAA $100,000; ordinary income $80,000; separately stated deduction (charitable contribution) $10,000; distribution to shareholder $120,000. There is no E&P from C corporation years. What is the ending AAA?',
     options: [
       '$50,000',
@@ -447,11 +493,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'tcp-wc-213',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 's-corp-taxation',
     topic: 'S Corporation Taxation',
     subtopic: 'Second Class of Stock',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation has various debt instruments outstanding. Which of the following would most likely be recharacterized as a second class of stock, potentially terminating the S election?',
     options: [
       'A bank loan with standard commercial terms',
@@ -466,11 +514,13 @@ export const WORLD_CLASS_BATCH_44: Question[] = [
   {
     id: 'tcp-wc-214',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'Entity Tax Planning',
     topicId: 's-corp-taxation',
     topic: 'S Corporation Taxation',
     subtopic: 'Inadvertent Termination Relief',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation unknowingly issues stock to a partnership (ineligible shareholder), which is discovered 18 months later. The company immediately redeems the shares. What should the company do to preserve S status?',
     options: [
       'S status is permanently terminated; no relief is available',

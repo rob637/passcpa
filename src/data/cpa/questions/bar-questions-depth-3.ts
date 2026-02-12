@@ -12,11 +12,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Transfer Pricing — Negotiated',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the selling division operates at full capacity with an external market, the minimum transfer price should be:',
     options: [
       'Variable cost only',
@@ -31,11 +33,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Transfer Pricing — International',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Multinational companies may manipulate transfer prices between divisions in different countries primarily to:',
     options: [
       'Increase revenue for each division equally',
@@ -54,11 +58,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Cost-Volume-Profit Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The breakeven point in units is calculated as:',
     options: [
       'Total fixed costs / Selling price per unit',
@@ -73,11 +79,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Margin of Safety',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has actual sales of $500,000 and breakeven sales of $350,000. The margin of safety ratio is:',
     options: [
       '70%',
@@ -92,11 +100,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Operating Leverage',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company with high fixed costs and low variable costs relative to a competitor will have:',
     options: [
       'Lower operating leverage and lower risk',
@@ -111,11 +121,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Expected Value',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project has a 60% probability of earning $100,000 and a 40% probability of losing $30,000. The expected value of the project is:',
     options: [
       '$70,000',
@@ -134,11 +146,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Absorption vs Variable Costing',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under variable (direct) costing, fixed manufacturing overhead is treated as:',
     options: [
       'A product cost included in inventory',
@@ -153,11 +167,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Absorption vs Variable — Income Difference',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company produced 10,000 units and sold 8,000 units. Fixed manufacturing overhead is $200,000. Under absorption costing compared to variable costing, net income will be:',
     options: [
       '$200,000 higher',
@@ -172,11 +188,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Spoilage',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Normal spoilage in a production process is treated as:',
     options: [
       'An abnormal loss expensed immediately',
@@ -195,11 +213,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Intraperiod Tax Allocation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Intraperiod tax allocation requires income tax expense to be allocated to:',
     options: [
       'Only continuing operations',
@@ -214,11 +234,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-011',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Rate Change Impact',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the enacted tax rate changes, existing deferred tax assets and liabilities must be:',
     options: [
       'Left unchanged until they reverse',
@@ -237,11 +259,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-012',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Cash Flows — Operating Activities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the indirect method, which item is added back to net income when calculating cash from operating activities?',
     options: [
       'Increase in accounts receivable',
@@ -256,11 +280,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-013',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Cash Flows — Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Interest paid by a company is classified in the statement of cash flows under US GAAP as:',
     options: [
       'Investing activities',
@@ -279,11 +305,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-014',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Derivative Characteristics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 815, a derivative instrument has all of the following characteristics EXCEPT:',
     options: [
       'Has one or more underlyings and one or more notional amounts',
@@ -298,11 +326,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-015',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Cash Flow Hedge',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a cash flow hedge that qualifies for hedge accounting under ASC 815, the effective portion of the gain or loss on the hedging instrument is reported in:',
     options: [
       'Net income immediately',
@@ -321,11 +351,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-016',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard — Strategy Map',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a strategy map linked to the balanced scorecard, the financial perspective is typically at the top because:',
     options: [
       'Financial metrics are always the most important',
@@ -344,11 +376,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-017',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Cost Behavior — Mixed Costs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A mixed (semi-variable) cost has both a fixed and variable component. Which method separates these components using the highest and lowest activity levels?',
     options: [
       'Least-squares regression',
@@ -363,11 +397,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-018',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Cost of Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is an external failure cost in a cost of quality (COQ) framework?',
     options: [
       'Employee training on quality procedures',
@@ -386,11 +422,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-019',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Inventory Turnover',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has COGS of $600,000 and average inventory of $100,000. The inventory turnover ratio is:',
     options: [
       '6.0 times',
@@ -405,11 +443,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-020',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Receivable Turnover',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Accounts receivable turnover is calculated as:',
     options: [
       'Average receivables / Total revenue',
@@ -428,11 +468,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-021',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-consolidation',
     topic: 'Business Combinations',
     subtopic: 'Contingent Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 805, contingent consideration in a business combination is initially measured at:',
     options: [
       'Zero until the contingency is resolved',
@@ -447,11 +489,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-022',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Variable Interest Entities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 810-10, a Variable Interest Entity (VIE) must be consolidated by:',
     options: [
       'The entity that created it',
@@ -470,11 +514,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-023',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Discontinued Operations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 205-20, a component of an entity qualifies as a discontinued operation when:',
     options: [
       'Any division is sold at a loss',
@@ -489,11 +535,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-024',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Subsequent Events',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 855, a recognized subsequent event is one that:',
     options: [
       'Occurs after the financial statements are issued',
@@ -508,11 +556,13 @@ export const BAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'bar-d3-025',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Regression Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a simple linear regression equation Y = a + bX, the coefficient "b" represents:',
     options: [
       'The fixed component of cost',

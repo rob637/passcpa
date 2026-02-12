@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA1_QUESTIONS_BATCH5: Question[] = [
   {
-    id: 'CISA1-093',
+    id: 'cisa1-093',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit evidence obtained directly by the auditor is considered:',
     options: [
       'Less reliable than inquiry',
@@ -25,10 +27,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Evidence Reliability'
   },
   {
-    id: 'CISA1-094',
+    id: 'cisa1-094',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Documentary evidence from third parties is:',
     options: [
       'Less reliable than internal documents',
@@ -42,10 +46,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Documentary Evidence'
   },
   {
-    id: 'CISA1-096',
+    id: 'cisa1-096',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the auditor discovers fraud indicators:',
     options: [
       'Ignore if immaterial',
@@ -59,10 +65,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Fraud Indicators'
   },
   {
-    id: 'CISA1-097',
+    id: 'cisa1-097',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit scope limitations should be:',
     options: [
       'Hidden in the report',
@@ -76,10 +84,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Scope Limitations'
   },
   {
-    id: 'CISA1-098',
+    id: 'cisa1-098',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An audit finding consists of:',
     options: [
       'Only the condition',
@@ -93,10 +103,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Finding Components'
   },
   {
-    id: 'CISA1-099',
+    id: 'cisa1-099',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Root cause analysis in audit findings:',
     options: [
       'Is optional',
@@ -110,10 +122,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Root Cause Analysis'
   },
   {
-    id: 'CISA1-100',
+    id: 'cisa1-100',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When management disagrees with audit findings:',
     options: [
       'Remove the finding',
@@ -127,10 +141,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Management Response'
   },
   {
-    id: 'CISA1-101',
+    id: 'cisa1-101',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Exit conference benefits include:',
     options: [
       'Surprising management',
@@ -144,10 +160,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Exit Conference'
   },
   {
-    id: 'CISA1-102',
+    id: 'cisa1-102',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit rating systems should be:',
     options: [
       'Completely subjective',
@@ -161,10 +179,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Rating Criteria'
   },
   {
-    id: 'CISA1-103',
+    id: 'cisa1-103',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit report distribution should be:',
     options: [
       'Unlimited',
@@ -178,10 +198,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Report Distribution'
   },
   {
-    id: 'CISA1-104',
+    id: 'cisa1-104',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Follow-up audits verify:',
     options: [
       'New areas only',
@@ -195,10 +217,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Remediation Verification'
   },
   {
-    id: 'CISA1-105',
+    id: 'cisa1-105',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Issue tracking systems for audit findings should:',
     options: [
       'Be manual only',
@@ -212,10 +236,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Issue Tracking'
   },
   {
-    id: 'CISA1-106',
+    id: 'cisa1-106',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Management accepting risk rather than remediating:',
     options: [
       'Is never acceptable',
@@ -229,10 +255,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Risk Acceptance'
   },
   {
-    id: 'CISA1-107',
+    id: 'cisa1-107',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Quality assurance review of audit work:',
     options: [
       'Is optional',
@@ -246,10 +274,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Quality Assurance'
   },
   {
-    id: 'CISA1-108',
+    id: 'cisa1-108',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'External quality assessment of the audit function:',
     options: [
       'Is never required',
@@ -263,10 +293,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'External Assessment'
   },
   {
-    id: 'CISA1-109',
+    id: 'cisa1-109',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous improvement in audit includes:',
     options: [
       'Only cost reduction',
@@ -280,10 +312,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Continuous Improvement'
   },
   {
-    id: 'CISA1-110',
+    id: 'cisa1-110',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data analytics in auditing enables:',
     options: [
       'Smaller samples',
@@ -297,10 +331,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Data Analytics'
   },
   {
-    id: 'CISA1-111',
+    id: 'cisa1-111',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Robotic Process Automation (RPA) in auditing:',
     options: [
       'Replaces all auditors',
@@ -314,10 +350,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'RPA in Audit'
   },
   {
-    id: 'CISA1-112',
+    id: 'cisa1-112',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit dashboards provide:',
     options: [
       'Only historical data',
@@ -331,10 +369,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Dashboards'
   },
   {
-    id: 'CISA1-113',
+    id: 'cisa1-113',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Integrated auditing combines:',
     options: [
       'Only IT and financial audit',
@@ -348,10 +388,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Integrated Audit'
   },
   {
-    id: 'CISA1-114',
+    id: 'cisa1-114',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit metadata and indexing:',
     options: [
       'Is unnecessary overhead',
@@ -365,10 +407,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Metadata'
   },
   {
-    id: 'CISA1-115',
+    id: 'cisa1-115',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Remote auditing challenges include:',
     options: [
       'Lower costs',
@@ -382,10 +426,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Remote Audit'
   },
   {
-    id: 'CISA1-116',
+    id: 'cisa1-116',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Agile audit methodologies:',
     options: [
       'Avoid planning',
@@ -399,10 +445,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Agile Audit'
   },
   {
-    id: 'CISA1-117',
+    id: 'cisa1-117',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Co-sourcing of audit activities:',
     options: [
       'Replaces internal audit',
@@ -416,10 +464,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Co-sourcing'
   },
   {
-    id: 'CISA1-118',
+    id: 'cisa1-118',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit client relationship management:',
     options: [
       'Compromises independence',
@@ -433,10 +483,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Client Relations'
   },
   {
-    id: 'CISA1-119',
+    id: 'cisa1-119',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Stakeholder expectations management requires:',
     options: [
       'Promising all deliverables',
@@ -450,10 +502,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Expectation Management'
   },
   {
-    id: 'CISA1-120',
+    id: 'cisa1-120',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit strategy alignment with organizational strategy:',
     options: [
       'Is optional',
@@ -467,10 +521,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Strategic Alignment'
   },
   {
-    id: 'CISA1-121',
+    id: 'cisa1-121',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The audit charter should be reviewed:',
     options: [
       'Never',
@@ -484,10 +540,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Charter Review'
   },
   {
-    id: 'CISA1-122',
+    id: 'cisa1-122',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Knowledge management in audit supports:',
     options: [
       'Only documentation',

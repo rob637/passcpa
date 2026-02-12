@@ -8,11 +8,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Social Engineering Attacks',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Social engineering attacks exploit:',
     options: [
       'Software vulnerabilities only',
@@ -27,11 +29,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Trust Services Criteria — Processing Integrity',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "Processing Integrity" criterion in a SOC 2 report relates to:',
     options: [
       'Data encryption only',
@@ -46,11 +50,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Big Data Analytics',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Big data is commonly characterized by the "3 Vs":',
     options: [
       'Value, Virtue, Vision',
@@ -65,11 +71,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'Change Management Controls',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT change management controls ensure that:',
     options: [
       'Changes are made immediately without documentation',
@@ -84,11 +92,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Data Loss Prevention (DLP)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data Loss Prevention (DLP) solutions protect against:',
     options: [
       'Only physical theft of hardware',
@@ -103,11 +113,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Relational Database Concepts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a relational database, a "primary key" is:',
     options: [
       'A password for database access',
@@ -122,11 +134,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Subservice Organizations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a service organization uses a subservice organization, the SOC report can present the subservice organization\'s services using:',
     options: [
       'Only the inclusive method',
@@ -141,11 +155,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Internet of Things (IoT)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Internet of Things (IoT) presents accounting and auditing challenges because:',
     options: [
       'IoT devices are too expensive',
@@ -160,11 +176,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'Third-Party Risk Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third-party risk management (TPRM) for IT vendors requires:',
     options: [
       'Only reviewing vendor marketing materials',
@@ -179,11 +197,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Encryption — Symmetric vs. Asymmetric',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The key difference between symmetric and asymmetric encryption is:',
     options: [
       'Symmetric encryption uses two keys',
@@ -198,11 +218,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Warehouse vs. Data Lake',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data warehouse differs from a data lake in that:',
     options: [
       'A data warehouse stores only unstructured data',
@@ -217,11 +239,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'IT Risk Response Strategies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The four primary risk response strategies for IT risks are:',
     options: [
       'Detect, Correct, Prevent, Monitor',
@@ -236,11 +260,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Identity and Access Management (IAM)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Identity and Access Management (IAM) encompasses:',
     options: [
       'Only password reset procedures',
@@ -255,11 +281,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'SOC for Cybersecurity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC for Cybersecurity examination provides:',
     options: [
       'The same report as a SOC 2',
@@ -274,11 +302,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'API Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'API (Application Programming Interface) security is critical in modern financial systems because:',
     options: [
       'APIs are never used in financial systems',
@@ -293,11 +323,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'COSO and IT Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The COSO Internal Control — Integrated Framework applies to IT controls through:',
     options: [
       'A separate IT-specific framework only',
@@ -312,11 +344,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Penetration Testing vs. Vulnerability Scanning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Penetration testing differs from vulnerability scanning because:',
     options: [
       'They are the same activity',
@@ -331,11 +365,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Masking and Anonymization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data masking (or data obfuscation) is used to:',
     options: [
       'Delete all sensitive data',
@@ -350,11 +386,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Control Exceptions in SOC Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a SOC report identifies control exceptions (deviations), the user entity auditor should:',
     options: [
       'Ignore the exceptions completely',
@@ -369,11 +407,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Cloud Security — Shared Responsibility',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The "shared responsibility model" in cloud computing means:',
     options: [
       'The cloud provider is responsible for everything',
@@ -388,11 +428,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'IT Audit Planning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When planning the IT portion of a financial statement audit, the auditor should:',
     options: [
       'Test all IT controls regardless of relevance',
@@ -407,11 +449,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Security Information and Event Management (SIEM)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SIEM (Security Information and Event Management) system:',
     options: [
       'Only stores backup data',
@@ -426,11 +470,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Master Data Management (MDM)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Master Data Management (MDM) ensures:',
     options: [
       'All data is stored in one database',
@@ -445,11 +491,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Bridge Letters / Gap Periods',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a SOC report\'s coverage period does not align with the user entity\'s audit period (a "gap" exists), the user entity auditor should:',
     options: [
       'Ignore the gap entirely',
@@ -464,11 +512,13 @@ export const ISC_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'isc-d6-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Digital Twin Technology',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A "digital twin" in the context of enterprise systems is:',
     options: [
       'A backup server only',

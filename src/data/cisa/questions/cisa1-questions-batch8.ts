@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA1_QUESTIONS_BATCH8: Question[] = [
   {
-    id: 'CISA1-173',
+    id: 'cisa1-173',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers that the audit client has implemented a compensating control for an identified weakness. The auditor should FIRST:',
     options: [
       'Accept the compensating control as adequate',
@@ -25,10 +27,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Compensating Controls'
   },
   {
-    id: 'CISA1-174',
+    id: 'cisa1-174',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When using Computer Assisted Audit Techniques (CAATs), which of the following is MOST important to ensure?',
     options: [
       'The software is from a reputable vendor',
@@ -42,10 +46,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Data Integrity'
   },
   {
-    id: 'CISA1-175',
+    id: 'cisa1-175',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor is reviewing an organization\'s risk assessment methodology. Which of the following findings would be MOST concerning?',
     options: [
       'Risk assessments are performed annually',
@@ -59,10 +65,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk Ownership'
   },
   {
-    id: 'CISA1-176',
+    id: 'cisa1-176',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY reason for an IS auditor to maintain professional skepticism is to:',
     options: [
       'Demonstrate expertise to the audit committee',
@@ -76,10 +84,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Professional Skepticism'
   },
   {
-    id: 'CISA1-177',
+    id: 'cisa1-177',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor notes that management has accepted a significant IT risk without implementing controls. What should the auditor do FIRST?',
     options: [
       'Report to the audit committee immediately',
@@ -93,10 +103,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk Acceptance'
   },
   {
-    id: 'CISA1-178',
+    id: 'cisa1-178',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which sampling method is MOST appropriate when the IS auditor wants to ensure representation of all significant transaction types?',
     options: [
       'Random sampling',
@@ -110,10 +122,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Stratified Sampling'
   },
   {
-    id: 'CISA1-179',
+    id: 'cisa1-179',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During a continuous auditing engagement, the IS auditor detects an anomaly that requires immediate investigation. The BEST approach is to:',
     options: [
       'Wait until the next scheduled audit to investigate',
@@ -127,10 +141,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Anomaly Response'
   },
   {
-    id: 'CISA1-180',
+    id: 'cisa1-180',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IS auditor discovers that IT personnel have been asked to perform self-assessments of controls they operate. This situation represents:',
     options: [
       'An efficient use of resources',
@@ -144,10 +160,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Independence'
   },
   {
-    id: 'CISA1-181',
+    id: 'cisa1-181',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating the reliability of audit evidence obtained from a third-party service organization, the IS auditor should PRIMARILY consider:',
     options: [
       'The reputation of the service organization',
@@ -161,10 +179,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Third-Party Evidence'
   },
   {
-    id: 'CISA1-182',
+    id: 'cisa1-182',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The IS auditor is asked to provide consulting services on a new system implementation. Before accepting, the auditor should FIRST consider:',
     options: [
       'Whether the fee is sufficient',
@@ -178,10 +198,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Independence and Consulting'
   },
   {
-    id: 'CISA1-183',
+    id: 'cisa1-183',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers that an organization\'s IT control framework is based on COBIT but has been significantly customized. The auditor should:',
     options: [
       'Insist on full COBIT compliance',
@@ -195,10 +217,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Framework Customization'
   },
   {
-    id: 'CISA1-184',
+    id: 'cisa1-184',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When documenting audit workpapers, which of the following is MOST important?',
     options: [
       'Using standardized templates for all audits',
@@ -212,10 +236,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Workpaper Standards'
   },
   {
-    id: 'CISA1-185',
+    id: 'cisa1-185',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor identifies that an automated control was operating effectively for 10 of 12 months. For this finding, the auditor should:',
     options: [
       'Report the control as operating effectively',
@@ -229,10 +255,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Control Gaps'
   },
   {
-    id: 'CISA1-186',
+    id: 'cisa1-186',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of an audit charter is to:',
     options: [
       'Define the audit methodology',
@@ -246,10 +274,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Audit Charter'
   },
   {
-    id: 'CISA1-187',
+    id: 'cisa1-187',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the IS auditor disagrees with management\'s response to an audit finding, the BEST course of action is to:',
     options: [
       'Accept management\'s response and close the finding',
@@ -263,10 +293,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Disagreements'
   },
   {
-    id: 'CISA1-188',
+    id: 'cisa1-188',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Before relying on work performed by another auditor, an IS auditor should:',
     options: [
       'Assume the work is accurate if from a reputable firm',
@@ -280,10 +312,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Reliance on Other Auditors'
   },
   {
-    id: 'CISA1-189',
+    id: 'cisa1-189',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization has implemented automated continuous monitoring of IT controls. This would PRIMARILY impact the IS auditor\'s work by:',
     options: [
       'Eliminating the need for periodic audits',
@@ -297,10 +331,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Continuous Monitoring'
   },
   {
-    id: 'CISA1-190',
+    id: 'cisa1-190',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IS auditor is planning an audit of a cloud-based application. Which of the following is MOST important to include in the audit scope?',
     options: [
       'Physical security of the cloud provider\'s data center',
@@ -314,10 +350,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Shared Responsibility'
   },
   {
-    id: 'CISA1-191',
+    id: 'cisa1-191',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor notes that key controls are monitored by the first line of defense. For governance to be effective, the auditor should also verify:',
     options: [
       'Management periodically self-certifies control effectiveness',
@@ -331,10 +369,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Three Lines Model'
   },
   {
-    id: 'CISA1-192',
+    id: 'cisa1-192',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During fieldwork, an IS auditor discovers evidence of potential fraud. The FIRST action should be to:',
     options: [
       'Confront the suspected individual',
@@ -348,10 +388,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Fraud Response'
   },
   {
-    id: 'CISA1-193',
+    id: 'cisa1-193',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When assessing IT general controls (ITGCs), the IS auditor should understand that ITGCs:',
     options: [
       'Only apply to financial reporting systems',
@@ -365,10 +407,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'ITGC Purpose'
   },
   {
-    id: 'CISA1-194',
+    id: 'cisa1-194',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IS auditor is testing logical access controls. Which of the following tests would provide the MOST assurance?',
     options: [
       'Reviewing the access control policy',
@@ -382,10 +426,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Test of Controls'
   },
   {
-    id: 'CISA1-195',
+    id: 'cisa1-195',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The IS auditor discovers that management has not remediated a finding from two years ago citing budget constraints. The auditor should:',
     options: [
       'Accept the explanation and close the finding',
@@ -399,10 +445,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Aging Findings'
   },
   {
-    id: 'CISA1-196',
+    id: 'cisa1-196',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit planning should be risk-based primarily to ensure:',
     options: [
       'Compliance with audit standards',
@@ -416,10 +464,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk-Based Planning'
   },
   {
-    id: 'CISA1-197',
+    id: 'cisa1-197',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization uses agile development with frequent releases. The IS auditor should recommend:',
     options: [
       'Reverting to waterfall methodology for better control',
@@ -433,10 +483,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Continuous Auditing in Agile'
   },
   {
-    id: 'CISA1-198',
+    id: 'cisa1-198',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The BEST way for an IS auditor to verify management assertions about automated controls is to:',
     options: [
       'Obtain written representations from management',
@@ -450,10 +502,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Testing Automated Controls'
   },
   {
-    id: 'CISA1-199',
+    id: 'cisa1-199',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor is asked to participate in a system acquisition project from inception. The MOST appropriate role for the auditor is:',
     options: [
       'Project manager',
@@ -467,10 +521,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Advisory in Projects'
   },
   {
-    id: 'CISA1-200',
+    id: 'cisa1-200',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Quality assurance and improvement programs for internal audit are required to:',
     options: [
       'Ensure audit reports are approved by management',
@@ -484,10 +540,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'QAIP'
   },
   {
-    id: 'CISA1-201',
+    id: 'cisa1-201',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an IS auditor identifies that a key control relies heavily on one individual, this finding relates to:',
     options: [
       'Control effectiveness',
@@ -501,10 +559,12 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Key Person Dependency'
   },
   {
-    id: 'CISA1-202',
+    id: 'cisa1-202',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IS auditor notes that a control is described differently in the policy and procedure documents. The auditor should FIRST:',
     options: [
       'Report an inconsistency finding',

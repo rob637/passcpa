@@ -10,11 +10,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Sufficient Appropriate Evidence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Which of the following types of audit evidence is generally considered most reliable?',
     options: [
@@ -31,11 +33,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Analytical Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Analytical procedures are required during which phases of an audit?',
     options: [
       'Planning phase only',
@@ -51,11 +55,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Confirmations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'When using negative confirmations for accounts receivable, which condition is NOT required?',
     options: [
@@ -72,11 +78,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Sampling',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sampling risk is the risk that:',
     options: [
       'The auditor fails to recognize errors in the sample',
@@ -92,11 +100,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-054',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Sampling',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In attribute sampling, which factor would result in a larger sample size?',
     options: [
       'Higher tolerable rate of deviation',
@@ -116,11 +126,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ic-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'COSO Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'The COSO Internal Control Framework includes five components. Which is NOT one of them?',
     options: [
@@ -137,11 +149,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ic-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Activities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Segregation of duties requires separating all of the following EXCEPT:',
     options: [
       'Preparation of financial statements',
@@ -157,11 +171,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ic-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'IT Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'General IT controls include all of the following EXCEPT:',
     options: [
       'Input validation checks',
@@ -177,11 +193,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ic-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Tests of Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'An auditor decides to increase the assessed level of control risk. The auditor should:',
     options: [
@@ -198,11 +216,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ic-054',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Deficiencies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A significant deficiency is:',
     options: [
       'A deficiency that results in a material misstatement',
@@ -222,11 +242,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-rep-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Unmodified Opinion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An unmodified audit opinion indicates that:',
     options: [
       'The financial statements are fraud-free',
@@ -242,11 +264,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-rep-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor should issue a qualified opinion when:',
     options: [
       'Misstatements are material but not pervasive',
@@ -262,11 +286,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-rep-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'When management refuses to provide a required representation letter, the auditor should:',
     options: [
@@ -283,11 +309,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-rep-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'When substantial doubt exists about going concern but adequate disclosure is made, the auditor should:',
     options: [
@@ -304,11 +332,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-rep-054',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'When the prior period statements were audited by a predecessor auditor whose report is not reissued, the current auditor should:',
     options: [
@@ -329,11 +359,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-fraud-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Risk Factors',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The fraud triangle consists of:',
     options: [
       'Motive, means, and opportunity',
@@ -349,11 +381,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-fraud-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Auditor Responsibility',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which statement about auditor responsibility for fraud is correct?',
     options: [
       'The auditor must detect all fraud',
@@ -369,11 +403,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-fraud-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Required Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which fraud-related risk is always presumed to exist?',
     options: [
       'Risk of management override of controls',
@@ -389,11 +425,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-fraud-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Communication',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question:
       'When fraud is detected that involves senior management, the auditor should communicate the matter to:',
     options: [
@@ -414,11 +452,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-prof-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Engagement Letters',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An engagement letter is required for:',
     options: [
       'New clients only',
@@ -434,11 +474,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-prof-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Quality Control',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An engagement quality control review is required for:',
     options: [
       'Audits of public companies and certain high-risk engagements',
@@ -454,11 +496,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-prof-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Working Papers',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Audit documentation should be sufficient to enable an experienced auditor, having no previous connection with the audit, to understand:',
     options: [
@@ -475,11 +519,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-prof-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Subsequent Events',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question:
       'For subsequent events discovered after the audit report date but before issuance, the auditor should:',
     options: [
@@ -496,11 +542,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-prof-054',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Communication',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Required communications with those charged with governance include all EXCEPT:',
     options: [
       'Planned scope and timing of the audit',
@@ -520,11 +568,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-spec-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Group Audits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a group audit, the group engagement partner is responsible for:',
     options: [
       'Only the work performed by the group engagement team',
@@ -540,11 +590,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-spec-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Related Parties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Related party transactions require:',
     options: [
       'No special consideration',
@@ -560,11 +612,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-spec-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Estimates',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "When evaluating management's point estimate, the auditor should:",
     options: [
       'Consider whether the estimate is reasonable and indicators of possible management bias',
@@ -580,11 +634,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-spec-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Using Specialists',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: "When using an auditor's specialist, the auditor should:",
     options: [
       "Accept the specialist's findings without evaluation",
@@ -600,11 +656,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-spec-054',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Special Considerations',
     subtopic: 'Service Organizations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Type 2 SOC 1 report differs from a Type 1 report because it:',
     options: [
       'Covers a shorter time period',
@@ -624,11 +682,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-055',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Management refuses to allow the auditor to send accounts receivable confirmations. The auditor should:',
     options: [
@@ -645,11 +705,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-056',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Inventory Observation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary reason for observing inventory counts is to:',
     options: [
       'Detect obsolete inventory',
@@ -665,11 +727,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-evid-057',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Substantive Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Dual-purpose tests allow the auditor to:',
     options: [
       'Test two different account balances simultaneously',
@@ -689,11 +753,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ssars-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Compilation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a compilation engagement, the accountant:',
     options: [
       'Provides limited assurance',
@@ -709,11 +775,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ssars-051',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Review',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A review engagement provides:',
     options: [
       'No assurance',
@@ -729,11 +797,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ssars-052',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In an agreed-upon procedures engagement:',
     options: [
       'The auditor determines appropriate procedures',
@@ -749,11 +819,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'aud-ssars-053',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Preparation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A preparation engagement differs from a compilation because:',
     options: [
       'Preparation requires analytical procedures',

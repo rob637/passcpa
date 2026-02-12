@@ -46,6 +46,7 @@ import clsx from 'clsx';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
 import { formatDistanceToNow } from 'date-fns';
+import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionShuffle';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
@@ -696,7 +697,18 @@ const Practice: React.FC = () => {
   // Track weak topics for targeted practice
   const [, setWeakTopicsFromSession] = useState<string[]>([]);
 
+  // Session ID for deterministic option shuffling (prevents answer pattern gaming)
+  const [sessionId] = useState(() => `session-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
+
   const currentQuestion: Question | undefined = questions[currentIndex];
+  
+  // Shuffle options for the current question to prevent B-bias gaming
+  // Uses question ID + user ID + session ID for deterministic shuffling
+  const shuffledQuestion: ShuffledQuestion | undefined = useMemo(() => {
+    if (!currentQuestion) return undefined;
+    return shuffleQuestionOptions(currentQuestion, user?.uid, sessionId);
+  }, [currentQuestion, user?.uid, sessionId]);
+  
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : undefined;
   const isAnswered = currentAnswer !== undefined;
@@ -989,9 +1001,13 @@ const Practice: React.FC = () => {
 
   // Submit answer
   const handleSubmitAnswer = useCallback(async () => {
-    if (selectedAnswer === null || isAnswered || !currentQuestion) return;
+    if (selectedAnswer === null || isAnswered || !currentQuestion || !shuffledQuestion) return;
 
-    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+    // Compare with shuffled correct answer (user sees shuffled options)
+    const isCorrect = selectedAnswer === shuffledQuestion.shuffledCorrectAnswer;
+    
+    // Translate user's shuffled selection back to original index for tracking
+    const originalAnswerIndex = shuffledQuestion.shuffleMap[selectedAnswer];
 
     // Provide feedback
     if (isCorrect) {
@@ -1005,14 +1021,14 @@ const Practice: React.FC = () => {
     setAnswers((prev) => ({
       ...prev,
       [currentQuestion.id]: {
-        selected: selectedAnswer,
+        selected: selectedAnswer,  // Store shuffled index for UI consistency
         correct: isCorrect,
         time: elapsed,
       },
     }));
     setShowExplanation(true);
 
-    // Record in study provider
+    // Record in study provider using ORIGINAL answer index for accurate analytics
     if (recordMCQAnswer) {
       await recordMCQAnswer(
         currentQuestion.id,
@@ -1024,7 +1040,7 @@ const Practice: React.FC = () => {
         currentQuestion.section // Pass section for section-specific tracking
       );
     }
-  }, [selectedAnswer, isAnswered, currentQuestion, elapsed, recordMCQAnswer]);
+  }, [selectedAnswer, isAnswered, currentQuestion, shuffledQuestion, elapsed, recordMCQAnswer]);
 
   // Navigation
   const goToQuestion = useCallback((index: number) => {
@@ -1439,12 +1455,14 @@ const Practice: React.FC = () => {
               {currentQuestion.question}
             </p>
 
-            {/* Answer Choices */}
+            {/* Answer Choices - Using shuffled options to prevent answer pattern gaming */}
             <div className="space-y-3">
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              {(currentQuestion.options || (currentQuestion as any).choices || []).map((choice: string, index: number) => {
+              {(shuffledQuestion?.shuffledOptions || currentQuestion.options || []).map((choice: string, index: number) => {
                 const isSelected = selectedAnswer === index;
-                const isCorrect = index === currentQuestion.correctAnswer;
+                // Use shuffled correct answer for display
+                const isCorrect = shuffledQuestion 
+                  ? index === shuffledQuestion.shuffledCorrectAnswer 
+                  : index === currentQuestion.correctAnswer;
                 const showResult = isAnswered;
 
                 return (

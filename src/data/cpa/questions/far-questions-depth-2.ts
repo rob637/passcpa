@@ -9,11 +9,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Measurement Focus — Current Financial Resources',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Governmental funds use the current financial resources measurement focus. This means the financial statements report:',
     options: [
       'All economic resources including capital assets and long-term debt',
@@ -28,11 +30,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Fund Balance Classifications',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under GASB 54, the hierarchy of fund balance classifications from most to least constrained is:',
     options: [
       'Reserved, designated, undesignated',
@@ -49,11 +53,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Fiduciary Funds — GASB 84',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GASB 84, a custodial fund (replacing the former agency fund) is used when:',
     options: [
       'The government operates a business',
@@ -70,11 +76,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributed Services Recognition',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An NFP recognizes contributed services (volunteer time) as revenue and expense when:',
     options: [
       'All volunteer services are recognized',
@@ -91,11 +99,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Revenue Classification — GASB 33',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 33, nonexchange revenue transactions are classified into four categories. Property taxes are classified as:',
     options: [
       'Derived tax revenues',
@@ -112,11 +122,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Cash Flow Statement — Proprietary Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Statement of Cash Flows for proprietary funds (GASB) has four categories. The categories are:',
     options: [
       'Operating, investing, and financing (three categories, same as commercial)',
@@ -133,11 +145,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'NFP Health Care — Net Patient Revenue',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An NFP hospital reports net patient service revenue as:',
     options: [
       'Gross charges minus charity care (deducted from revenue)',
@@ -154,11 +168,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Component Units — GASB 14/39/61',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A legally separate entity is a component unit of a primary government if:',
     options: [
       'It shares the same geographic area',
@@ -175,11 +191,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Infrastructure — Modified Approach',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A government using the modified approach for eligible infrastructure assets:',
     options: [
       'Does not report the assets at all',
@@ -196,11 +214,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Special Revenue Funds',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A special revenue fund is used to:',
     options: [
       'Account for business-type activities',
@@ -217,11 +237,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-bonds',
     topic: 'Transactions',
     subtopic: 'Bonds: Premium and Discount Amortization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A bond is issued at a premium when:',
     options: [
       'The bond is sold below face value',
@@ -238,11 +260,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Basic Financial Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The minimum required components of a government\'s basic financial statements include:',
     options: [
       'Only a balance sheet',
@@ -259,11 +283,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 75 — OPEB Liability',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 75, a government employer participating in a defined benefit OPEB plan reports:',
     options: [
       'Only the annual OPEB contribution as an expenditure',
@@ -280,11 +306,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Split-Interest Agreements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A charitable remainder trust (a split-interest agreement) where the NFP is the remainderman is recorded by the NFP at inception as:',
     options: [
       'Revenue equal to the full fair value of assets donated',
@@ -301,11 +329,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Net Position Components',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'On the government-wide Statement of Net Position, net position is reported in three categories:',
     options: [
       'Fund balance, retained earnings, and equity',
@@ -322,11 +352,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'Fund-to-Government-Wide Reconciliation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A reconciliation between the governmental fund financial statements and governance-wide statements is required. A typical reconciling item is:',
     options: [
       'Cash receipts',
@@ -343,11 +375,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Debt Service Fund',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A debt service fund is used to:',
     options: [
       'Acquire capital assets',
@@ -364,11 +398,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-pensions',
     topic: 'Transactions',
     subtopic: 'ASC 715 — Defined Benefit Pension',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 715, a company with a defined benefit pension plan reports on the balance sheet:',
     options: [
       'No pension-related amounts',
@@ -385,11 +421,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Private College/University Revenue',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A private (NFP) university reports tuition revenue on its Statement of Activities as:',
     options: [
       'Gross tuition only',
@@ -406,11 +444,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 77 — Tax Abatement Disclosures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GASB 77, a government that enters into a tax abatement agreement must:',
     options: [
       'Record a liability for the foregone revenue',
@@ -427,11 +467,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-021',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'GASB Hierarchy — GASB 76',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The hierarchy of GAAP for state and local governments (GASB 76) places which source as the highest authority?',
     options: [
       'AICPA guidance',
@@ -448,11 +490,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-022',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-eps',
     topic: 'Transactions',
     subtopic: 'Earnings Per Share — Basic',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Basic earnings per share (EPS) is calculated as:',
     options: [
       'Net income divided by total shares issued',
@@ -469,11 +513,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-023',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Capital Projects Fund',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A capital projects fund is used to:',
     options: [
       'Record depreciation on government buildings',
@@ -490,11 +536,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-024',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-segment',
     topic: 'Transactions',
     subtopic: 'ASC 280 — Operating Segments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 280, a reportable operating segment must meet at least one quantitative threshold. Which is one of those thresholds?',
     options: [
       'The segment must have at least 100 employees',
@@ -511,11 +559,13 @@ export const FAR_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'far-d2-025',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 10 — Risk Management Activities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a government uses an internal service fund for self-insurance (risk management), unpaid claims liabilities are:',
     options: [
       'Not recorded until paid',

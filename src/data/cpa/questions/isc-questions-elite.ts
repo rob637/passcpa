@@ -8,6 +8,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Database Normalization',
@@ -28,6 +29,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Microservices Architecture',
@@ -48,6 +50,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Cybersecurity',
     subtopic: 'Penetration Testing',
@@ -68,6 +71,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Cryptography',
     subtopic: 'Digital Certificates',
@@ -88,6 +92,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT Controls',
     subtopic: 'Segregation of Duties in IT',
@@ -108,6 +113,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-006',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT General Controls',
     subtopic: 'Change Management',
@@ -128,6 +134,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-007',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Data Subject Rights',
@@ -148,6 +155,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-008',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Trust Services Criteria',
@@ -168,6 +176,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-009',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'AI/ML in Accounting',
@@ -188,6 +197,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-010',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Cloud Computing',
     subtopic: 'Cloud Shared Responsibility',
@@ -208,6 +218,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-011',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Operations',
     subtopic: 'SIEM Systems',
@@ -228,6 +239,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-012',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Network Security',
     subtopic: 'Network Segmentation',
@@ -248,6 +260,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-013',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcp',
     topic: 'Business Continuity',
     subtopic: 'Recovery Strategies',
@@ -268,6 +281,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-014',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-sdlc',
     topic: 'Systems Development',
     subtopic: 'DevSecOps',
@@ -288,6 +302,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-015',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Continuous Auditing',
@@ -308,6 +323,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-016',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Quality Dimensions',
@@ -328,6 +344,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-017',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-frameworks',
     topic: 'Control Frameworks',
     subtopic: 'NIST Cybersecurity Framework',
@@ -348,6 +365,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-018',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Application Security',
     subtopic: 'OWASP Top 10',
@@ -368,6 +386,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-019',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT Controls',
     subtopic: 'Input Validation',
@@ -388,6 +407,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-020',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Blockchain Consensus',
@@ -408,6 +428,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-021',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Privacy by Design',
@@ -428,6 +449,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-022',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Identity Management',
     subtopic: 'Federated Identity',
@@ -448,6 +470,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-023',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'GRC Platforms',
@@ -468,6 +491,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-024',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Incident Response',
     subtopic: 'CIRT/CSIRT',
@@ -488,6 +512,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-025',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'Application Controls',
     subtopic: 'Three-Way Match',
@@ -508,6 +533,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-026',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Edge Computing',
@@ -528,6 +554,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-027',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Bridge Letter',
@@ -548,6 +575,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-028',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Lineage',
@@ -568,6 +596,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-029',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'ERP Integration',
@@ -588,6 +617,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
   {
     id: 'isc-elite-030',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Cybersecurity',
     subtopic: 'Threat Intelligence',

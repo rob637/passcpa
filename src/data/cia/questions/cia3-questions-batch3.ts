@@ -17,10 +17,12 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-171',
+    id: 'cia3-171',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A differentiation strategy focuses on:',
     options: [
       'Being the lowest cost producer',
@@ -31,13 +33,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Differentiation strategy creates unique value through quality, features, service, innovation, or brand that justifies premium pricing.',
     topic: 'Business Acumen',
-    subtopic: 'Competitive Strategy'
+    subtopic: 'Competitive Strategy',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-172',
+    id: 'cia3-172',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Blue ocean strategy involves:',
     options: [
       'Competing aggressively in existing markets',
@@ -48,13 +53,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Blue ocean strategy creates new market space (blue oceans) rather than competing in crowded existing markets (red oceans).',
     topic: 'Business Acumen',
-    subtopic: 'Strategic Management'
+    subtopic: 'Strategic Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-173',
+    id: 'cia3-173',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The product life cycle includes stages of:',
     options: [
       'Only growth and decline',
@@ -65,13 +73,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Products typically move through introduction (launch), growth (increasing sales), maturity (peak sales), and decline (decreasing sales) stages.',
     topic: 'Business Acumen',
-    subtopic: 'Product Management'
+    subtopic: 'Product Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-174',
+    id: 'cia3-174',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Mergers and acquisitions (M&A) risks include:',
     options: [
       'Only legal issues',
@@ -82,13 +93,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'M&A risks include integration difficulties, cultural misalignment, overvaluation, hidden liabilities, and failure to achieve synergies.',
     topic: 'Business Acumen',
-    subtopic: 'Corporate Strategy'
+    subtopic: 'Corporate Strategy',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-175',
+    id: 'cia3-175',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Strategic alliances differ from acquisitions in that:',
     options: [
       'They always involve equity investments',
@@ -99,13 +113,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Strategic alliances involve collaborative arrangements where partners maintain independence while working together for mutual benefit.',
     topic: 'Business Acumen',
-    subtopic: 'Corporate Strategy'
+    subtopic: 'Corporate Strategy',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-176',
+    id: 'cia3-176',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Organizational design considers:',
     options: [
       'Only physical office layout',
@@ -116,13 +133,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Organizational design aligns structure, processes, people, rewards, and systems with strategic objectives.',
     topic: 'Business Acumen',
-    subtopic: 'Organizational Structure'
+    subtopic: 'Organizational Structure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-177',
+    id: 'cia3-177',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Matrix organizational structure features:',
     options: [
       'Only functional reporting',
@@ -133,13 +153,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Matrix structure creates dual reporting lines, typically combining functional expertise with project or product focus.',
     topic: 'Business Acumen',
-    subtopic: 'Organizational Structure'
+    subtopic: 'Organizational Structure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-178',
+    id: 'cia3-178',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Talent management includes:',
     options: [
       'Only recruitment',
@@ -150,13 +173,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Talent management encompasses the full employee lifecycle: recruiting, developing, engaging, promoting, and managing transitions.',
     topic: 'Business Acumen',
-    subtopic: 'Human Resources'
+    subtopic: 'Human Resources',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-179',
+    id: 'cia3-179',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Succession planning ensures:',
     options: [
       'Only CEO replacement',
@@ -167,13 +193,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Succession planning identifies and develops internal talent to fill key positions, ensuring leadership continuity.',
     topic: 'Business Acumen',
-    subtopic: 'Human Resources'
+    subtopic: 'Human Resources',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-180',
+    id: 'cia3-180',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Disruptive innovation typically:',
     options: [
       'Improves existing products marginally',
@@ -184,13 +213,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Disruptive innovations often start as simpler, cheaper alternatives serving overlooked segments before eventually disrupting mainstream markets.',
     topic: 'Business Acumen',
-    subtopic: 'Innovation'
+    subtopic: 'Innovation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-181',
+    id: 'cia3-181',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Intellectual property protection includes:',
     options: [
       'Only patents',
@@ -201,13 +233,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'IP protection encompasses various legal mechanisms: patents (inventions), trademarks (brands), copyrights (creative works), and trade secrets.',
     topic: 'Business Acumen',
-    subtopic: 'Intellectual Property'
+    subtopic: 'Intellectual Property',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-182',
+    id: 'cia3-182',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Customer relationship management (CRM) systems:',
     options: [
       'Only store contact information',
@@ -218,13 +253,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'CRM systems consolidate customer data and interactions to support sales, service, and marketing relationship management.',
     topic: 'Business Acumen',
-    subtopic: 'Customer Management'
+    subtopic: 'Customer Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-183',
+    id: 'cia3-183',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Quality management systems like ISO 9001 focus on:',
     options: [
       'Only manufacturing quality',
@@ -235,13 +273,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'ISO 9001 provides a framework for quality management systems that consistently meet customer needs through process control and continuous improvement.',
     topic: 'Business Acumen',
-    subtopic: 'Quality Management'
+    subtopic: 'Quality Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-184',
+    id: 'cia3-184',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risk culture reflects:',
     options: [
       'Only written policies',
@@ -252,13 +293,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Risk culture comprises the shared values, beliefs, and attitudes that influence how people identify, discuss, and respond to risk.',
     topic: 'Business Acumen',
-    subtopic: 'Enterprise Risk Management'
+    subtopic: 'Enterprise Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-185',
+    id: 'cia3-185',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Crisis management differs from business continuity in that it:',
     options: [
       'Is the same thing',
@@ -269,7 +313,8 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Crisis management addresses real-time response to events including decision-making, communication, and reputation management during the crisis.',
     topic: 'Business Acumen',
-    subtopic: 'Crisis Management'
+    subtopic: 'Crisis Management',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -277,10 +322,12 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-186',
+    id: 'cia3-186',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SQL injection attacks exploit:',
     options: [
       'Hardware vulnerabilities',
@@ -291,13 +338,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SQL injection inserts malicious SQL code through improperly validated input fields, potentially accessing or modifying database data.',
     topic: 'Information Security',
-    subtopic: 'Application Security'
+    subtopic: 'Application Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-187',
+    id: 'cia3-187',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cross-site scripting (XSS) attacks:',
     options: [
       'Target only servers',
@@ -308,13 +358,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'XSS injects malicious scripts into trusted websites, which then execute in victims\' browsers, potentially stealing credentials or session data.',
     topic: 'Information Security',
-    subtopic: 'Application Security'
+    subtopic: 'Application Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-188',
+    id: 'cia3-188',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security Information and Event Management (SIEM) provides:',
     options: [
       'Only antivirus protection',
@@ -325,13 +378,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SIEM aggregates security log data from multiple sources, correlates events to detect threats, and supports incident response and compliance.',
     topic: 'Information Security',
-    subtopic: 'Security Operations'
+    subtopic: 'Security Operations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-189',
+    id: 'cia3-189',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Endpoint security protects:',
     options: [
       'Only servers',
@@ -342,13 +398,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Endpoint security protects end-user devices from threats through antivirus, encryption, patch management, and device control.',
     topic: 'Information Security',
-    subtopic: 'Endpoint Protection'
+    subtopic: 'Endpoint Protection',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-190',
+    id: 'cia3-190',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security baselines establish:',
     options: [
       'Maximum security requirements',
@@ -359,13 +418,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Security baselines define minimum security configuration standards for systems, ensuring consistent basic protection levels.',
     topic: 'Information Security',
-    subtopic: 'Security Configuration'
+    subtopic: 'Security Configuration',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-191',
+    id: 'cia3-191',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privileged access management (PAM) controls:',
     options: [
       'All user passwords',
@@ -376,13 +438,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'PAM secures, monitors, and audits privileged accounts and access, reducing risks from powerful administrative capabilities.',
     topic: 'Information Security',
-    subtopic: 'Access Control'
+    subtopic: 'Access Control',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-192',
+    id: 'cia3-192',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Threat intelligence provides:',
     options: [
       'Only historical attack data',
@@ -393,13 +458,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Threat intelligence provides actionable information about threats, threat actors, and vulnerabilities to inform security decisions.',
     topic: 'Information Security',
-    subtopic: 'Threat Management'
+    subtopic: 'Threat Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-193',
+    id: 'cia3-193',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Secure coding practices include:',
     options: [
       'Only fast development',
@@ -410,13 +478,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Secure coding practices prevent common vulnerabilities through input validation, output encoding, proper error handling, and authentication/authorization.',
     topic: 'Information Security',
-    subtopic: 'Application Security'
+    subtopic: 'Application Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-194',
+    id: 'cia3-194',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Business email compromise (BEC) attacks typically:',
     options: [
       'Only spread malware',
@@ -427,13 +498,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'BEC attacks impersonate trusted individuals (often executives) to deceive employees into unauthorized wire transfers or data disclosure.',
     topic: 'Information Security',
-    subtopic: 'Email Security'
+    subtopic: 'Email Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-195',
+    id: 'cia3-195',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Supply chain attacks target:',
     options: [
       'Only physical shipments',
@@ -444,13 +518,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Supply chain attacks compromise third-party products or services (software, updates, hardware) to infiltrate organizations using them.',
     topic: 'Information Security',
-    subtopic: 'Third-Party Risk'
+    subtopic: 'Third-Party Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-196',
+    id: 'cia3-196',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cyber insurance:',
     options: [
       'Eliminates all cyber risk',
@@ -461,13 +538,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Cyber insurance transfers financial risk from covered cyber incidents to insurers but doesn\'t replace security controls or eliminate all risk.',
     topic: 'Information Security',
-    subtopic: 'Risk Transfer'
+    subtopic: 'Risk Transfer',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-197',
+    id: 'cia3-197',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Mobile device management (MDM) enables:',
     options: [
       'Only tracking device location',
@@ -478,13 +558,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'MDM provides centralized management of mobile devices including configuration, security policies, app management, and remote wipe capabilities.',
     topic: 'Information Security',
-    subtopic: 'Mobile Security'
+    subtopic: 'Mobile Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-198',
+    id: 'cia3-198',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Identity and access management (IAM) encompasses:',
     options: [
       'Only password management',
@@ -495,13 +578,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'IAM includes identity lifecycle management, authentication, authorization, and access governance across the organization.',
     topic: 'Information Security',
-    subtopic: 'Identity Management'
+    subtopic: 'Identity Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-199',
+    id: 'cia3-199',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security orchestration, automation, and response (SOAR) platforms:',
     options: [
       'Only generate alerts',
@@ -512,13 +598,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SOAR platforms automate routine security tasks, orchestrate tool integration, and accelerate incident response through playbooks.',
     topic: 'Information Security',
-    subtopic: 'Security Operations'
+    subtopic: 'Security Operations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-200',
+    id: 'cia3-200',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Red team exercises:',
     options: [
       'Are the same as vulnerability scans',
@@ -529,7 +618,8 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Red team exercises simulate real-world adversary techniques to test detection and response capabilities in realistic attack scenarios.',
     topic: 'Information Security',
-    subtopic: 'Security Testing'
+    subtopic: 'Security Testing',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -537,10 +627,12 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-201',
+    id: 'cia3-201',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT asset management tracks:',
     options: [
       'Only physical equipment',
@@ -551,13 +643,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'IT asset management maintains inventory and status of hardware, software, and related assets from acquisition through disposal.',
     topic: 'Information Technology',
-    subtopic: 'IT Operations'
+    subtopic: 'IT Operations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-202',
+    id: 'cia3-202',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Containerization technology:',
     options: [
       'Only applies to physical shipping',
@@ -568,13 +663,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Containers package applications with their dependencies, enabling consistent operation across different computing environments.',
     topic: 'Information Technology',
-    subtopic: 'Infrastructure'
+    subtopic: 'Infrastructure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-203',
+    id: 'cia3-203',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Microservices architecture:',
     options: [
       'Uses single monolithic applications',
@@ -585,13 +683,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Microservices decompose applications into loosely coupled services that can be developed, deployed, and scaled independently.',
     topic: 'Information Technology',
-    subtopic: 'Application Architecture'
+    subtopic: 'Application Architecture',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-204',
+    id: 'cia3-204',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Software as a Service (SaaS) provides:',
     options: [
       'Only infrastructure',
@@ -602,13 +703,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SaaS delivers complete software applications over the internet, with the provider managing all underlying infrastructure and platforms.',
     topic: 'Information Technology',
-    subtopic: 'Cloud Computing'
+    subtopic: 'Cloud Computing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-205',
+    id: 'cia3-205',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data quality dimensions include:',
     options: [
       'Only accuracy',
@@ -619,13 +723,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Data quality is multidimensional: accuracy, completeness, consistency, timeliness, validity, and uniqueness are key quality dimensions.',
     topic: 'Information Technology',
-    subtopic: 'Data Management'
+    subtopic: 'Data Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-206',
+    id: 'cia3-206',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data governance establishes:',
     options: [
       'Only data backup procedures',
@@ -636,13 +743,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Data governance provides the framework of policies, roles, responsibilities, and processes for managing data as a strategic asset.',
     topic: 'Information Technology',
-    subtopic: 'Data Management'
+    subtopic: 'Data Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-207',
+    id: 'cia3-207',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT service level agreements (SLAs) define:',
     options: [
       'Only pricing',
@@ -653,13 +763,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SLAs document agreed service levels, performance metrics, responsibilities, and remedies for failures between providers and customers.',
     topic: 'Information Technology',
-    subtopic: 'IT Service Management'
+    subtopic: 'IT Service Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-208',
+    id: 'cia3-208',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'System integration testing verifies:',
     options: [
       'Only individual component function',
@@ -670,13 +783,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Integration testing verifies that different system components, modules, or services work correctly when combined.',
     topic: 'Information Technology',
-    subtopic: 'Testing'
+    subtopic: 'Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-209',
+    id: 'cia3-209',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'User acceptance testing (UAT):',
     options: [
       'Is performed by developers only',
@@ -687,13 +803,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'UAT is performed by business users to validate that the system meets requirements and is ready for production use.',
     topic: 'Information Technology',
-    subtopic: 'Testing'
+    subtopic: 'Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-210',
+    id: 'cia3-210',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Continuous integration/continuous deployment (CI/CD):',
     options: [
       'Eliminates all testing',
@@ -704,13 +823,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'CI/CD automates code integration, testing, and deployment, enabling faster, more reliable software delivery.',
     topic: 'Information Technology',
-    subtopic: 'DevOps'
+    subtopic: 'DevOps',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-211',
+    id: 'cia3-211',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Technical debt refers to:',
     options: [
       'IT budget deficits',
@@ -721,13 +843,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Technical debt accumulates when expedient solutions create future work, like poor code quality requiring eventual refactoring.',
     topic: 'Information Technology',
-    subtopic: 'Development'
+    subtopic: 'Development',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-212',
+    id: 'cia3-212',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT project post-implementation reviews assess:',
     options: [
       'Only project costs',
@@ -738,13 +863,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Post-implementation reviews evaluate project success versus objectives, benefit realization, and lessons for future projects.',
     topic: 'Information Technology',
-    subtopic: 'Project Management'
+    subtopic: 'Project Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-213',
+    id: 'cia3-213',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network protocols like TCP/IP:',
     options: [
       'Only apply to internal networks',
@@ -755,13 +883,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'TCP/IP and other protocols define how data is formatted, transmitted, routed, and received across networks.',
     topic: 'Information Technology',
-    subtopic: 'Networking'
+    subtopic: 'Networking',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-214',
+    id: 'cia3-214',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Software-defined networking (SDN) separates:',
     options: [
       'Hardware from software completely',
@@ -772,13 +903,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SDN separates the control plane (network logic) from the data plane (packet forwarding), enabling centralized, programmable network management.',
     topic: 'Information Technology',
-    subtopic: 'Networking'
+    subtopic: 'Networking',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-215',
+    id: 'cia3-215',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internet of Things (IoT) risks include:',
     options: [
       'Only power consumption',
@@ -789,7 +923,8 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'IoT expands the attack surface with devices that often have weak security, challenging patch management, and privacy concerns.',
     topic: 'Information Technology',
-    subtopic: 'Emerging Technology'
+    subtopic: 'Emerging Technology',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -797,10 +932,12 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-216',
+    id: 'cia3-216',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The income statement shows:',
     options: [
       'Financial position at a point in time',
@@ -811,13 +948,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'The income statement reports revenues earned and expenses incurred over a period, resulting in net income or loss.',
     topic: 'Financial Management',
-    subtopic: 'Financial Statements'
+    subtopic: 'Financial Statements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-217',
+    id: 'cia3-217',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The DuPont analysis decomposes ROE into:',
     options: [
       'Only profit margin',
@@ -828,13 +968,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'DuPont analysis breaks down ROE into three drivers: profit margin (profitability), asset turnover (efficiency), and financial leverage.',
     topic: 'Financial Management',
-    subtopic: 'Financial Analysis'
+    subtopic: 'Financial Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-218',
+    id: 'cia3-218',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle measures:',
     options: [
       'Only inventory days',
@@ -845,13 +988,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Cash conversion cycle = Days Inventory + Days Receivables - Days Payables; measures how quickly cash invested returns as cash.',
     topic: 'Financial Management',
-    subtopic: 'Working Capital'
+    subtopic: 'Working Capital',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-219',
+    id: 'cia3-219',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Depreciation represents:',
     options: [
       'Cash paid for assets',
@@ -862,13 +1008,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Depreciation systematically allocates the cost of tangible assets over their useful lives, matching expense with benefit periods.',
     topic: 'Financial Management',
-    subtopic: 'Accounting'
+    subtopic: 'Accounting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-220',
+    id: 'cia3-220',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Capital structure decisions involve:',
     options: [
       'Only equity financing',
@@ -879,13 +1028,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Capital structure determines the proportion of debt versus equity financing, balancing cost of capital with financial risk.',
     topic: 'Financial Management',
-    subtopic: 'Corporate Finance'
+    subtopic: 'Corporate Finance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-221',
+    id: 'cia3-221',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Interest rate risk affects:',
     options: [
       'Only short-term investments',
@@ -896,13 +1048,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Interest rate risk impacts bond prices (inversely), variable rate borrowing costs, and investment returns.',
     topic: 'Financial Management',
-    subtopic: 'Financial Risk'
+    subtopic: 'Financial Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-222',
+    id: 'cia3-222',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Credit risk refers to:',
     options: [
       'Currency fluctuation risk',
@@ -913,13 +1068,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Credit risk is the potential that borrowers or counterparties will not fulfill their financial obligations.',
     topic: 'Financial Management',
-    subtopic: 'Financial Risk'
+    subtopic: 'Financial Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-223',
+    id: 'cia3-223',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Standard costing establishes:',
     options: [
       'Only actual costs',
@@ -930,13 +1088,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard costing sets predetermined costs (material, labor, overhead) as benchmarks for measuring actual performance and analyzing variances.',
     topic: 'Financial Management',
-    subtopic: 'Cost Accounting'
+    subtopic: 'Cost Accounting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-224',
+    id: 'cia3-224',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Overhead allocation methods affect:',
     options: [
       'Only direct costs',
@@ -947,13 +1108,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Overhead allocation methods determine how indirect costs are assigned to products, affecting product costs and profitability analysis.',
     topic: 'Financial Management',
-    subtopic: 'Cost Accounting'
+    subtopic: 'Cost Accounting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-225',
+    id: 'cia3-225',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sensitivity analysis in financial modeling:',
     options: [
       'Uses only single scenarios',
@@ -964,14 +1128,17 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Sensitivity analysis tests how changes in key assumptions (revenue growth, costs, rates) impact financial projections and decisions.',
     topic: 'Financial Management',
-    subtopic: 'Financial Modeling'
+    subtopic: 'Financial Modeling',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-227',
+    id: 'cia3-227',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Rolling forecasts:',
     options: [
       'Are created only annually',
@@ -982,13 +1149,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Rolling forecasts continuously extend the forecast horizon, typically adding a new period as each period ends, maintaining a constant planning horizon.',
     topic: 'Financial Management',
-    subtopic: 'Planning'
+    subtopic: 'Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-228',
+    id: 'cia3-228',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Profitability index (PI) is useful for:',
     options: [
       'Only rejecting projects',
@@ -999,13 +1169,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Profitability index (NPV/Initial Investment) helps rank projects by value created per investment dollar when capital is constrained.',
     topic: 'Financial Management',
-    subtopic: 'Capital Budgeting'
+    subtopic: 'Capital Budgeting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-229',
+    id: 'cia3-229',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Economic Value Added (EVA) measures:',
     options: [
       'Only revenue growth',
@@ -1016,13 +1189,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'EVA = Net Operating Profit After Taxes minus (Capital × Cost of Capital); measures value creation above capital costs.',
     topic: 'Financial Management',
-    subtopic: 'Performance Metrics'
+    subtopic: 'Performance Metrics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-230',
+    id: 'cia3-230',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Fraud in financial statements often involves:',
     options: [
       'Only cash theft',
@@ -1033,7 +1209,8 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Financial statement fraud includes improper revenue recognition, expense manipulation, and asset/liability misstatement to deceive users.',
     topic: 'Financial Management',
-    subtopic: 'Fraud Risk'
+    subtopic: 'Fraud Risk',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1041,10 +1218,12 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-231',
+    id: 'cia3-231',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Globalization risk factors include:',
     options: [
       'Only currency fluctuation',
@@ -1055,13 +1234,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Global operations face diverse risks including political instability, regulatory variations, cultural differences, and economic conditions.',
     topic: 'Business Acumen',
-    subtopic: 'International Business'
+    subtopic: 'International Business',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-232',
+    id: 'cia3-232',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Regulatory compliance programs should include:',
     options: [
       'Only legal review',
@@ -1072,13 +1254,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Effective compliance programs include policies, training, monitoring, reporting, investigation, and remediation elements.',
     topic: 'Business Acumen',
-    subtopic: 'Compliance'
+    subtopic: 'Compliance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-233',
+    id: 'cia3-233',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Anti-money laundering (AML) controls include:',
     options: [
       'Only large transaction review',
@@ -1089,13 +1274,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'AML programs include know-your-customer procedures, transaction monitoring, suspicious activity reporting, and sanctions screening.',
     topic: 'Business Acumen',
-    subtopic: 'Regulatory Compliance'
+    subtopic: 'Regulatory Compliance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-234',
+    id: 'cia3-234',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Vendor risk management assesses:',
     options: [
       'Only price comparisons',
@@ -1106,13 +1294,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Vendor risk management evaluates third parties for security, financial stability, operational capability, compliance, and continuity risks.',
     topic: 'Business Acumen',
-    subtopic: 'Third-Party Risk'
+    subtopic: 'Third-Party Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-235',
+    id: 'cia3-235',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Key risk indicators (KRIs) differ from KPIs in that KRIs:',
     options: [
       'Measure historical performance',
@@ -1123,13 +1314,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'KRIs are forward-looking metrics that signal changes in risk exposure, enabling proactive response before risks materialize.',
     topic: 'Business Acumen',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-236',
+    id: 'cia3-236',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Model risk arises from:',
     options: [
       'Only physical asset models',
@@ -1140,13 +1334,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Model risk stems from models that are incorrectly specified, improperly implemented, or inappropriately used for decision-making.',
     topic: 'Information Technology',
-    subtopic: 'Model Risk'
+    subtopic: 'Model Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-237',
+    id: 'cia3-237',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Ethical considerations in AI development include:',
     options: [
       'Only cost optimization',
@@ -1157,13 +1354,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'AI ethics address fairness (avoiding bias), transparency (explainability), accountability (responsibility), and privacy (data protection).',
     topic: 'Information Technology',
-    subtopic: 'AI Ethics'
+    subtopic: 'AI Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-238',
+    id: 'cia3-238',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Disaster recovery focuses on:',
     options: [
       'Preventing all disasters',
@@ -1174,13 +1374,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Disaster recovery focuses on restoring IT infrastructure and data to resume technology operations after disruption.',
     topic: 'Information Technology',
-    subtopic: 'Disaster Recovery'
+    subtopic: 'Disaster Recovery',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-239',
+    id: 'cia3-239',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Hot sites versus cold sites differ primarily in:',
     options: [
       'Geographic location only',
@@ -1191,13 +1394,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Hot sites are fully operational recovery facilities enabling rapid failover; cold sites are basic facilities requiring setup before use.',
     topic: 'Information Technology',
-    subtopic: 'Disaster Recovery'
+    subtopic: 'Disaster Recovery',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-240',
+    id: 'cia3-240',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SOC (System and Organization Controls) reports provide:',
     options: [
       'Only financial statements',
@@ -1208,13 +1414,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC reports provide independent assurance on service organization controls relevant to security, availability, processing integrity, confidentiality, and privacy.',
     topic: 'Information Technology',
-    subtopic: 'Third-Party Assurance'
+    subtopic: 'Third-Party Assurance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-241',
+    id: 'cia3-241',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Lease versus buy analysis considers:',
     options: [
       'Only initial cost',
@@ -1225,13 +1434,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Lease-buy analysis compares total costs, cash flow impacts, flexibility, tax effects, and strategic factors to determine optimal approach.',
     topic: 'Financial Management',
-    subtopic: 'Capital Decisions'
+    subtopic: 'Capital Decisions',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-242',
+    id: 'cia3-242',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Accounts payable turnover indicates:',
     options: [
       'Collection efficiency',
@@ -1242,13 +1454,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Payables turnover (Purchases / Average Payables) indicates how frequently the company pays suppliers; lower may indicate cash management or distress.',
     topic: 'Financial Management',
-    subtopic: 'Financial Ratios'
+    subtopic: 'Financial Ratios',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-243',
+    id: 'cia3-243',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sunk costs should be:',
     options: [
       'Always included in decisions',
@@ -1259,13 +1474,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Sunk costs are past costs that cannot be recovered and should not influence forward-looking decisions; only future costs matter.',
     topic: 'Financial Management',
-    subtopic: 'Decision Making'
+    subtopic: 'Decision Making',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-244',
+    id: 'cia3-244',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Opportunity cost represents:',
     options: [
       'Direct cash outlays',
@@ -1276,13 +1494,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Opportunity cost is the value of the next best alternative foregone when making a choice; relevant for resource allocation decisions.',
     topic: 'Financial Management',
-    subtopic: 'Decision Making'
+    subtopic: 'Decision Making',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-245',
+    id: 'cia3-245',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Segment reporting discloses:',
     options: [
       'Only total company results',
@@ -1293,13 +1514,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Segment reporting provides disaggregated financial information about operating segments to help users understand business components.',
     topic: 'Financial Management',
-    subtopic: 'Financial Reporting'
+    subtopic: 'Financial Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-246',
+    id: 'cia3-246',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Related party transactions require:',
     options: [
       'No special treatment',
@@ -1310,13 +1534,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Related party transactions require disclosure and evaluation to ensure they are conducted at arm\'s length and not for improper purposes.',
     topic: 'Financial Management',
-    subtopic: 'Financial Reporting'
+    subtopic: 'Financial Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-247',
+    id: 'cia3-247',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Whistleblower programs provide:',
     options: [
       'Only complaint logging',
@@ -1327,13 +1554,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Whistleblower programs enable confidential reporting of concerns with protections against retaliation, supporting ethics and compliance.',
     topic: 'Business Acumen',
-    subtopic: 'Ethics'
+    subtopic: 'Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-248',
+    id: 'cia3-248',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Conflicts of interest:',
     options: [
       'Only apply to executives',
@@ -1344,13 +1574,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Conflicts of interest arise when personal, financial, or other interests could improperly influence judgment in business matters.',
     topic: 'Business Acumen',
-    subtopic: 'Ethics'
+    subtopic: 'Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-249',
+    id: 'cia3-249',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cybersecurity frameworks like NIST provide:',
     options: [
       'Only legal requirements',
@@ -1361,13 +1594,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Frameworks like NIST Cybersecurity Framework provide voluntary standards and best practices for managing cybersecurity risk.',
     topic: 'Information Security',
-    subtopic: 'Security Frameworks'
+    subtopic: 'Security Frameworks',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-250',
+    id: 'cia3-250',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Backup strategies consider:',
     options: [
       'Only storage cost',
@@ -1378,13 +1614,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Backup strategies balance recovery time objectives, recovery point objectives, data criticality, retention requirements, and cost.',
     topic: 'Information Technology',
-    subtopic: 'Data Protection'
+    subtopic: 'Data Protection',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-251',
+    id: 'cia3-251',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Process documentation serves to:',
     options: [
       'Only create paperwork',
@@ -1395,13 +1634,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Process documentation ensures consistent execution, enables effective training, supports control evaluation, and facilitates improvement.',
     topic: 'Business Acumen',
-    subtopic: 'Process Management'
+    subtopic: 'Process Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-252',
+    id: 'cia3-252',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A culture of continuous improvement:',
     options: [
       'Focuses only on major initiatives',
@@ -1412,13 +1654,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Continuous improvement (kaizen) culture encourages all employees to identify and implement incremental improvements consistently over time.',
     topic: 'Business Acumen',
-    subtopic: 'Organizational Culture'
+    subtopic: 'Organizational Culture',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-253',
+    id: 'cia3-253',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Service level objectives (SLOs) define:',
     options: [
       'Only maximum costs',
@@ -1429,13 +1674,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'SLOs specify target performance levels (response time, availability, throughput) that services should achieve.',
     topic: 'Information Technology',
-    subtopic: 'IT Service Management'
+    subtopic: 'IT Service Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-254',
+    id: 'cia3-254',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Capacity planning ensures:',
     options: [
       'Maximum utilization always',
@@ -1446,13 +1694,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Capacity planning forecasts resource needs and ensures adequate capacity (computing, storage, network, people) to meet anticipated demand.',
     topic: 'Information Technology',
-    subtopic: 'IT Operations'
+    subtopic: 'IT Operations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-255',
+    id: 'cia3-255',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The difference between gross margin and operating margin:',
     options: [
       'They are the same',
@@ -1463,13 +1714,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Gross margin is revenue minus COGS; operating margin further deducts operating expenses (SG&A, R&D) from gross profit.',
     topic: 'Financial Management',
-    subtopic: 'Financial Ratios'
+    subtopic: 'Financial Ratios',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-256',
+    id: 'cia3-256',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Free cash flow represents:',
     options: [
       'Only operating cash flow',
@@ -1480,13 +1734,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Free cash flow = Operating Cash Flow minus Capital Expenditures; represents cash available for debt, dividends, or growth.',
     topic: 'Financial Management',
-    subtopic: 'Cash Flow Analysis'
+    subtopic: 'Cash Flow Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-257',
+    id: 'cia3-257',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Scenario planning differs from forecasting in that it:',
     options: [
       'Predicts single outcomes',
@@ -1497,13 +1754,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Scenario planning explores multiple possible futures rather than single-point forecasts, testing strategy robustness under different conditions.',
     topic: 'Business Acumen',
-    subtopic: 'Strategic Planning'
+    subtopic: 'Strategic Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-258',
+    id: 'cia3-258',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Customer lifetime value (CLV) estimates:',
     options: [
       'Only single transaction value',
@@ -1514,13 +1774,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'CLV estimates the total value a customer will bring over the entire relationship, guiding acquisition spending and retention investment decisions.',
     topic: 'Business Acumen',
-    subtopic: 'Customer Analytics'
+    subtopic: 'Customer Analytics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-259',
+    id: 'cia3-259',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Operational risk includes:',
     options: [
       'Only market price risk',
@@ -1531,13 +1794,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Operational risk encompasses potential losses from inadequate or failed processes, people, systems, or from external events.',
     topic: 'Business Acumen',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-260',
+    id: 'cia3-260',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Stress testing in risk management:',
     options: [
       'Only tests employee performance',
@@ -1548,13 +1814,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Stress testing evaluates how the organization would withstand severe adverse scenarios, informing risk management and capital planning.',
     topic: 'Business Acumen',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-261',
+    id: 'cia3-261',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Performance attribution analysis identifies:',
     options: [
       'Only total returns',
@@ -1565,13 +1834,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Attribution analysis decomposes investment returns to identify contributions from different decisions (allocation, selection, timing).',
     topic: 'Financial Management',
-    subtopic: 'Investment Analysis'
+    subtopic: 'Investment Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-262',
+    id: 'cia3-262',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Accounts receivable aging reports:',
     options: [
       'Show only total receivables',
@@ -1582,13 +1854,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Aging reports categorize receivables by time outstanding (current, 30 days, 60 days, etc.), helping identify collection issues.',
     topic: 'Financial Management',
-    subtopic: 'Working Capital'
+    subtopic: 'Working Capital',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-263',
+    id: 'cia3-263',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal controls over financial reporting (ICFR):',
     options: [
       'Only apply to public companies',
@@ -1599,13 +1874,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'ICFR provides reasonable assurance that financial statements are prepared accurately in conformity with applicable standards.',
     topic: 'Financial Management',
-    subtopic: 'Internal Controls'
+    subtopic: 'Internal Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-264',
+    id: 'cia3-264',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Material weaknesses in ICFR:',
     options: [
       'Are minor deficiencies',
@@ -1616,13 +1894,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'A material weakness is a deficiency creating reasonable possibility that a material misstatement will not be prevented or detected timely.',
     topic: 'Financial Management',
-    subtopic: 'Internal Controls'
+    subtopic: 'Internal Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-265',
+    id: 'cia3-265',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Consolidated financial statements:',
     options: [
       'Report only parent company',
@@ -1633,13 +1914,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Consolidated statements present the parent and subsidiaries as one economic entity, eliminating intercompany transactions.',
     topic: 'Financial Management',
-    subtopic: 'Financial Reporting'
+    subtopic: 'Financial Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-266',
+    id: 'cia3-266',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Liquidity risk refers to:',
     options: [
       'Market price volatility',
@@ -1650,13 +1934,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Liquidity risk is the risk of being unable to meet financial obligations when due or convert assets to cash without significant loss.',
     topic: 'Financial Management',
-    subtopic: 'Financial Risk'
+    subtopic: 'Financial Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-267',
+    id: 'cia3-267',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Fair value measurement requires:',
     options: [
       'Only historical cost',
@@ -1667,13 +1954,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Fair value is the price receivable or payable in an orderly transaction between market participants at the measurement date.',
     topic: 'Financial Management',
-    subtopic: 'Valuation'
+    subtopic: 'Valuation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-268',
+    id: 'cia3-268',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Earnings management differs from fraud in that it:',
     options: [
       'Is equally illegal',
@@ -1684,13 +1974,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Earnings management uses judgment within accounting rules to influence reported results; fraud intentionally violates standards or conceals information.',
     topic: 'Financial Management',
-    subtopic: 'Financial Reporting'
+    subtopic: 'Financial Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-269',
+    id: 'cia3-269',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Board diversity considerations include:',
     options: [
       'Only family relationships',
@@ -1701,13 +1994,16 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Board diversity encompasses multiple dimensions including skills, experience, gender, ethnicity, and viewpoints to improve governance.',
     topic: 'Business Acumen',
-    subtopic: 'Corporate Governance'
+    subtopic: 'Corporate Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-270',
+    id: 'cia3-270',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Executive compensation should be:',
     options: [
       'Only fixed salary',
@@ -1718,7 +2014,8 @@ export const CIA3_QUESTIONS_BATCH3: Question[] = [
     correctAnswer: 1,
     explanation: 'Executive compensation should align incentives with organizational performance and long-term value creation, with appropriate board oversight.',
     topic: 'Business Acumen',
-    subtopic: 'Corporate Governance'
+    subtopic: 'Corporate Governance',
+  reference: 'IIA Standards'
   },
 ];
 

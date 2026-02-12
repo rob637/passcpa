@@ -10,11 +10,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-databases',
     topic: 'Data Management',
     subtopic: 'Relational Databases',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a relational database, referential integrity ensures that:',
     options: [
       'All tables have a unique name',
@@ -29,11 +31,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-databases',
     topic: 'Data Management',
     subtopic: 'Normalization',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A table is in Third Normal Form (3NF) when:',
     options: [
       'It only contains atomic values',
@@ -48,11 +52,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'ETL Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the ETL process, what does "Transform" involve?',
     options: [
       'Copying data from source to target unchanged',
@@ -67,11 +73,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Big Data',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "3 Vs" commonly used to describe Big Data are:',
     options: [
       'Value, Validity, Verification',
@@ -86,11 +94,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'ERP Systems',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key advantage of an Enterprise Resource Planning (ERP) system is:',
     options: [
       'Each department maintains separate databases',
@@ -105,11 +115,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Cloud Computing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Software-as-a-Service (SaaS) cloud model, the customer is responsible for:',
     options: [
       'Operating system maintenance',
@@ -124,11 +136,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data quality dimensions include all of the following EXCEPT:',
     options: [
       'Accuracy',
@@ -143,11 +157,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'System Development',
     subtopic: 'SDLC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the system development life cycle (SDLC), which phase involves creating detailed specifications for the new system?',
     options: [
       'Planning',
@@ -165,11 +181,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security-controls',
     topic: 'Security Controls',
     subtopic: 'Access Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The principle of least privilege states that:',
     options: [
       'Users should have the minimum access rights necessary to perform their job functions',
@@ -184,11 +202,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security-controls',
     topic: 'Security Controls',
     subtopic: 'Authentication',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Multi-factor authentication (MFA) requires verification using factors from:',
     options: [
       'Two different passwords',
@@ -203,11 +223,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-encryption',
     topic: 'Encryption',
     subtopic: 'Symmetric vs Asymmetric',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A key difference between symmetric and asymmetric encryption is:',
     options: [
       'Symmetric encryption is more secure',
@@ -222,11 +244,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-encryption',
     topic: 'Encryption',
     subtopic: 'Hashing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A cryptographic hash function:',
     options: [
       'Can be reversed to recover the original data',
@@ -241,11 +265,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-network-security',
     topic: 'Network Security',
     subtopic: 'Firewalls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A firewall that examines packet contents and maintains connection state information is called:',
     options: [
       'Packet filtering firewall',
@@ -260,11 +286,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Security Threats',
     subtopic: 'Malware',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Ransomware is a type of malware that:',
     options: [
       'Steals banking credentials',
@@ -279,11 +307,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Security Threats',
     subtopic: 'Social Engineering',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Phishing attacks primarily target:',
     options: [
       'Network infrastructure',
@@ -298,11 +328,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-privacy',
     topic: 'Privacy',
     subtopic: 'Data Privacy Regulations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GDPR, the "right to be forgotten" allows individuals to:',
     options: [
       'Hide their browsing history from employers',
@@ -317,11 +349,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Frameworks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The NIST Cybersecurity Framework core functions are:',
     options: [
       'Plan, Do, Check, Act',
@@ -336,11 +370,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-incident',
     topic: 'Incident Response',
     subtopic: 'IR Process',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The first step in incident response after detecting a potential security incident is typically to:',
     options: [
       'Eradicate the threat immediately',
@@ -358,11 +394,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-input-controls',
     topic: 'Processing Controls',
     subtopic: 'Input Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A validity check verifies that:',
     options: [
       'Input data matches predetermined valid values or format',
@@ -377,11 +415,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-processing-controls',
     topic: 'Processing Controls',
     subtopic: 'Batch Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A hash total control is:',
     options: [
       'An encrypted checksum of the data',
@@ -396,11 +436,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-output-controls',
     topic: 'Processing Controls',
     subtopic: 'Output Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Output controls focus on:',
     options: [
       'Verifying input data accuracy',
@@ -415,11 +457,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-segregation',
     topic: 'Control Design',
     subtopic: 'Segregation of Duties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Proper segregation of duties in IT separates which functions?',
     options: [
       'User training and help desk support',
@@ -434,11 +478,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-change-mgmt',
     topic: 'Change Management',
     subtopic: 'Change Control',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A key control in IT change management is:',
     options: [
       'Allowing developers direct access to production for faster fixes',
@@ -453,11 +499,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-audit-trails',
     topic: 'Audit Trails',
     subtopic: 'Logging',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit logs should capture:',
     options: [
       'Only failed login attempts',
@@ -473,11 +521,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-bcp-dr',
     topic: 'Business Continuity',
     subtopic: 'Disaster Recovery',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A hot site is:',
     options: [
       'A site with basic infrastructure but no systems',
@@ -492,11 +542,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-026',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-bcp-dr',
     topic: 'Business Continuity',
     subtopic: 'RTO and RPO',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If a company has an RPO of 4 hours, this means:',
     options: [
       'Systems must be restored within 4 hours',
@@ -511,11 +563,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-027',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technology',
     subtopic: 'Blockchain',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A key characteristic of blockchain technology is:',
     options: [
       'Centralized data storage for efficiency',
@@ -530,11 +584,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-028',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technology',
     subtopic: 'AI and ML',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Machine learning differs from traditional programming in that:',
     options: [
       'It runs faster than traditional code',
@@ -549,11 +605,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-029',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security-controls',
     topic: 'Security Controls',
     subtopic: 'Defense in Depth',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Defense in depth is a security strategy that:',
     options: [
       'Relies on a single strong perimeter firewall',
@@ -568,11 +626,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-030',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-testing',
     topic: 'System Testing',
     subtopic: 'Testing Types',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Penetration testing differs from vulnerability scanning in that:',
     options: [
       'Penetration testing only identifies vulnerabilities without exploiting them',
@@ -587,11 +647,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-031',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Visualization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective data visualization should:',
     options: [
       'Include as many data points as possible',
@@ -606,11 +668,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-032',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-network-security',
     topic: 'Network Security',
     subtopic: 'VPN',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Virtual Private Network (VPN) provides:',
     options: [
       'Faster internet speeds',
@@ -625,11 +689,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-033',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-databases',
     topic: 'Data Management',
     subtopic: 'Data Warehouse',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A data warehouse differs from an operational database in that it:',
     options: [
       'Supports real-time transaction processing',
@@ -644,11 +710,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-034',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Security Threats',
     subtopic: 'SQL Injection',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SQL injection attacks exploit:',
     options: [
       'Weak passwords',
@@ -663,11 +731,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-035',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'SOC 2',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 2 Type 2 report:',
     options: [
       'Reports on controls at a service organization relevant to user entities\' ICFR',
@@ -682,11 +752,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-036',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'System Development',
     subtopic: 'Agile',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Agile software development methodology emphasizes:',
     options: [
       'Comprehensive documentation before coding begins',
@@ -701,11 +773,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-037',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-risk',
     topic: 'Risk Management',
     subtopic: 'Risk Assessment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In IT risk assessment, risk is typically evaluated as:',
     options: [
       'Cost of security controls',
@@ -720,11 +794,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-038',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security-controls',
     topic: 'Security Controls',
     subtopic: 'Control Types',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A detective control:',
     options: [
       'Prevents security incidents from occurring',
@@ -739,11 +815,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-039',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-processing-controls',
     topic: 'Processing Controls',
     subtopic: 'Edit Checks',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A check digit verification control:',
     options: [
       'Counts the number of characters in a field',
@@ -758,11 +836,13 @@ export const ISC_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'isc-wc-040',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-governance',
     topic: 'Data Governance',
     subtopic: 'Data Lifecycle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data lifecycle management includes all of the following stages EXCEPT:',
     options: [
       'Creation and capture',

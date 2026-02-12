@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'far-wc-139',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-stock-comp',
     topic: 'Stock Compensation',
     subtopic: 'RSU Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Restricted stock units (RSUs) are measured at grant-date fair value and recognized:',
     options: [
       'Immediately at grant',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'far-wc-140',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Variable Interest Entities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An entity is a variable interest entity (VIE) if:',
     options: [
       'It is publicly traded',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'far-wc-141',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-rev-rec',
     topic: 'Revenue Recognition',
     subtopic: 'Right of Return',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a customer has a right of return, the seller should:',
     options: [
       'Delay all revenue recognition until return period expires',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'far-wc-142',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Conditional vs Unconditional Contributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A conditional contribution is one that:',
     options: [
       'Has a donor-specified purpose',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'aud-wc-139',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Attributes vs Variables',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Attribute sampling is used to:',
     options: [
       'Estimate dollar amounts',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'aud-wc-140',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Environment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The control environment includes:',
     options: [
       'Only IT controls',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'aud-wc-141',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reporting on comparative financial statements where the prior period was audited by a predecessor:',
     options: [
       'The current auditor must re-audit the prior period',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'aud-wc-142',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Related Parties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit procedures for related party transactions should focus on:',
     options: [
       'Ensuring transactions occurred',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'reg-wc-139',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Partnership Termination',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partnership terminates for tax purposes when:',
     options: [
       'Any partner withdraws',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'reg-wc-140',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The 3.8% Net Investment Income Tax (NIIT) applies to:',
     options: [
       'All taxpayers',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'reg-wc-141',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ucc',
     topic: 'Commercial Law',
     subtopic: 'Secured Transactions Priority',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Between perfected secured creditors, priority is generally determined by:',
     options: [
       'The size of the claim',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'reg-wc-142',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 179 Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Section 179 expense deduction is limited by:',
     options: [
       'Only the dollar limit',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'bar-wc-162',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Contingent Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Contingent consideration in a business combination is:',
     options: [
       'Never recorded until paid',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'bar-wc-163',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Sustainable Growth Rate',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The sustainable growth rate represents:',
     options: [
       'Historical revenue growth',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'bar-wc-164',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Control Premium',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A control premium in M&A valuations reflects:',
     options: [
       'A discount for minority interests',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'bar-wc-165',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Scenario Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Scenario analysis differs from sensitivity analysis in that it:',
     options: [
       'Changes one variable at a time',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'bar-wc-166',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Pushdown Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pushdown accounting allows the acquired entity to:',
     options: [
       'Maintain historical cost basis',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'isc-wc-139',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'PKI Components',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Public Key Infrastructure (PKI) includes:',
     options: [
       'Only passwords',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'isc-wc-140',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'DevSecOps',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DevSecOps integrates security by:',
     options: [
       'Adding security testing only at the end',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'isc-wc-141',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Data Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data classification frameworks typically categorize information based on:',
     options: [
       'File size only',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'isc-wc-142',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'SOC 2 Trust Services Criteria',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SOC 2 reports evaluate controls based on Trust Services Criteria, which include:',
     options: [
       'Only financial statement assertions',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'tcp-wc-139',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Corporate Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Corporate distributions are characterized in this order:',
     options: [
       'Return of capital first',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'tcp-wc-140',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Self-employment tax consists of:',
     options: [
       'Only income tax',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'tcp-wc-141',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Entity Selection Factors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key factors in choosing between C corp and S corp include:',
     options: [
       'Only state of incorporation',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_26: Question[] = [
   {
     id: 'tcp-wc-142',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Penalties Abatement',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'First-time penalty abatement (FTA) is available when the taxpayer:',
     options: [
       'Has prior penalty history',

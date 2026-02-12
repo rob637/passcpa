@@ -115,11 +115,9 @@ describe('Pricing Structure', () => {
     expect(SUBSCRIPTION_PLANS.monthly.price).toBeLessThan(50);
   });
 
-  it('quarterly tier saves money vs monthly', () => {
-    const monthlyFor3 = SUBSCRIPTION_PLANS.monthly.price * 3;
-    const quarterly = SUBSCRIPTION_PLANS.quarterly.price;
-    
-    expect(quarterly).toBeLessThan(monthlyFor3);
+  it('quarterly tier is legacy plan (no longer offered)', () => {
+    expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(0);
+    expect(SUBSCRIPTION_PLANS.quarterly.interval).toBe('quarter');
   });
 
   it('annual tier saves money vs monthly', () => {

@@ -93,8 +93,8 @@ export interface ExamLandingConfig {
   pricing: {
     annual: number;           // Regular annual price
     monthly: number;          // Regular monthly price
-    founderAnnual: number;    // Founder annual price (50% off)
-    founderMonthly: number;   // Founder monthly price (50% off)
+    founderAnnual: number;    // Founder annual price (~40-44% off)
+    founderMonthly: number;   // Founder monthly price (~40-44% off)
   };
   
   // Footer links specific to this exam
@@ -115,8 +115,8 @@ export const SHARED_WHY_VORAPREP = [
   {
     icon: DollarSign,
     title: 'Affordable Pricing',
-    description: 'Founder pricing: 50% off for our first users. Quality prep at a fraction of what others charge.',
-    stat: 'Save 50%',
+    description: 'Founding member rates save over 40%. Quality prep at a fraction of what others charge.',
+    stat: 'Save 40%+',
   },
   {
     icon: Brain,
@@ -174,10 +174,10 @@ export const CPA_CONFIG: ExamLandingConfig = {
   loginPath: '/login?course=cpa',
   
   pricing: {
-    annual: 199,
-    monthly: 29,
-    founderAnnual: 99,
-    founderMonthly: 14,
+    annual: 449,
+    monthly: 49,
+    founderAnnual: 249,
+    founderMonthly: 21,
   },
   
   notices: [
@@ -206,7 +206,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
-      { feature: 'Annual Price', voraprep: '$14/mo*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Annual Price', voraprep: '$21/mo*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
       { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -246,10 +246,10 @@ export const EA_CONFIG: ExamLandingConfig = {
   loginPath: '/login?course=ea',
   
   pricing: {
-    annual: 59,
-    monthly: 9,
-    founderAnnual: 29,
-    founderMonthly: 5,
+    annual: 249,
+    monthly: 29,
+    founderAnnual: 149,
+    founderMonthly: 12,
   },
   
   examParts: [
@@ -268,7 +268,7 @@ export const EA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: '$5/mo*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
+      { feature: 'Price', voraprep: '$12/mo*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -310,10 +310,10 @@ export const CMA_CONFIG: ExamLandingConfig = {
   loginPath: '/login?course=cma',
   
   pricing: {
-    annual: 99,
-    monthly: 14,
-    founderAnnual: 49,
-    founderMonthly: 7,
+    annual: 349,
+    monthly: 39,
+    founderAnnual: 199,
+    founderMonthly: 17,
   },
   
   examParts: [
@@ -331,7 +331,7 @@ export const CMA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
-      { feature: 'Price', voraprep: '$7/mo*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: '$17/mo*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -374,10 +374,10 @@ export const CIA_CONFIG: ExamLandingConfig = {
   loginPath: '/login?course=cia',
   
   pricing: {
-    annual: 99,
-    monthly: 14,
-    founderAnnual: 49,
-    founderMonthly: 7,
+    annual: 249,
+    monthly: 29,
+    founderAnnual: 149,
+    founderMonthly: 12,
   },
   
   examParts: [
@@ -396,7 +396,7 @@ export const CIA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: '$7/mo*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
+      { feature: 'Price', voraprep: '$12/mo*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -438,10 +438,10 @@ export const CFP_CONFIG: ExamLandingConfig = {
   loginPath: '/login?course=cfp',
   
   pricing: {
-    annual: 149,
-    monthly: 19,
-    founderAnnual: 74,
-    founderMonthly: 10,
+    annual: 349,
+    monthly: 39,
+    founderAnnual: 199,
+    founderMonthly: 17,
   },
   
   examParts: [
@@ -465,7 +465,7 @@ export const CFP_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
-      { feature: 'Price', voraprep: '$10/mo*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: '$17/mo*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -508,10 +508,10 @@ export const CISA_CONFIG: ExamLandingConfig = {
   loginPath: '/login?course=cisa',
   
   pricing: {
-    annual: 79,
-    monthly: 12,
-    founderAnnual: 39,
-    founderMonthly: 6,
+    annual: 349,
+    monthly: 39,
+    founderAnnual: 199,
+    founderMonthly: 17,
   },
   
   examParts: [
@@ -532,7 +532,7 @@ export const CISA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['ISACA', 'Hemang Doshi'],
     data: [
-      { feature: 'Price', voraprep: '$6/mo*', competitor1: '$795', competitor2: '$299', highlight: true },
+      { feature: 'Price', voraprep: '$17/mo*', competitor1: '$795', competitor2: '$299', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },

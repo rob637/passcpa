@@ -252,7 +252,7 @@ interface UserDocument {
     status?: string;
     currentPeriodEnd?: { seconds: number };
     trialEnd?: { seconds: number };
-    isFounderPricing?: boolean; // Locked in founder 50% off rate
+    isFounderPricing?: boolean; // Locked in founder rate (2-year lock)
   };
 }
 
@@ -654,7 +654,7 @@ const AdminCMS: React.FC = () => {
       `This will update ${betaTransitionResults.toUpdate.length} subscriptions:\n` +
       `• Set trialEnd to March 1, 2026\n` +
       `• Mark as isBetaUser: true\n` +
-      `• Mark as isFounder: true (50% off eligible)\n\n` +
+      `• Mark as isFounder: true (founder rate eligible)\n\n` +
       `${betaTransitionResults.skipped.length} paid subscribers will be skipped.\n\n` +
       `This cannot be easily undone. Continue?`
     );
@@ -2329,7 +2329,7 @@ const AdminCMS: React.FC = () => {
                         <div className="text-2xl font-bold text-purple-600">
                           {revenueMetrics.founderCount}
                         </div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">Founder Members (50% off)</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Founder Members (discounted rate)</div>
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
@@ -2390,7 +2390,7 @@ const AdminCMS: React.FC = () => {
 
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
                       Per-exam pricing: CPA $199/yr ($29/mo), CFP $149/yr ($19/mo), CMA/CIA $99/yr ($14/mo), CISA $79/yr ($12/mo), EA $59/yr ($9/mo). 
-                      Founder pricing (50% off) available through May 31, 2026. No lifetime plans offered.
+                      Founder pricing (40-44% off) available through August 31, 2026. No lifetime plans offered.
                     </p>
                   </Card>
                 )}
@@ -3176,7 +3176,7 @@ const AdminCMS: React.FC = () => {
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-4">
                 Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
-                Paid subscribers will be skipped. Users will be marked as Founders (50% off eligible).
+                Paid subscribers will be skipped. Users will be marked as Founders (founder rate eligible).
               </p>
               
               <div className="flex gap-3 mb-4">
@@ -3264,7 +3264,7 @@ const AdminCMS: React.FC = () => {
                   Status: <strong>LIVE</strong>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Paid subscriptions are active. Founder pricing (50% off) available until May 31, 2026.
+                  Paid subscriptions are active. Founder pricing (40-44% off) available until August 31, 2026.
                 </p>
               </div>
             </div>

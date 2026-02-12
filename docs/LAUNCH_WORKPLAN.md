@@ -14,7 +14,7 @@
 | Testing Period | February 17-18, 2026 | ⬜ |
 | **LAUNCH** | February 19, 2026 | ⬜ |
 | First Trial Expirations | ~March 5, 2026 | ⬜ |
-| Founder Window Closes | May 31, 2026 | ⬜ |
+| Founder Window Closes | August 31, 2026 | ⬜ |
 
 ---
 
@@ -26,12 +26,12 @@
 |------|----------|------------|-------|
 | Create Stripe account (if not done) | P0 | 0.5 | |
 | Create products in Stripe Dashboard | P0 | 1 | |
-| - CPA: $199/yr, $99/yr (founder), $29/mo | | | |
-| - EA: $59/yr, $29/yr (founder), $9/mo | | | |
-| - CMA: $99/yr, $49/yr (founder), $15/mo | | | |
-| - CIA: $99/yr, $49/yr (founder), $15/mo | | | |
-| - CFP: $149/yr, $75/yr (founder), $19/mo | | | |
-| - CISA: $79/yr, $39/yr (founder), $12/mo | | | |
+| - CPA: $449/yr, $249/yr (founder), $49/mo | | | |
+| - EA: $249/yr, $149/yr (founder), $29/mo | | | |
+| - CMA: $349/yr, $199/yr (founder), $39/mo | | | |
+| - CIA: $249/yr, $149/yr (founder), $29/mo | | | |
+| - CFP: $349/yr, $199/yr (founder), $39/mo | | | |
+| - CISA: $349/yr, $199/yr (founder), $39/mo | | | |
 | Set up Stripe test mode | P0 | 0.5 | |
 | Install Stripe SDK (npm install stripe @stripe/stripe-js) | P0 | 0.5 | |
 | Create Stripe checkout endpoint (Cloud Function) | P0 | 3 | |
@@ -218,7 +218,7 @@ const isBetaUser = user.createdAt < LAUNCH_DATE;
 | Benefit | Value |
 |---------|-------|
 | **14-day trial starting Feb 19** | Full access to see paid features |
-| **Founder pricing eligibility** | 50% off if they subscribe by May 31 |
+| **Founder pricing eligibility** | ~40-44% off if they subscribe by August 31 |
 | **Appreciation email** | "Thank you for being a beta user" |
 | **No interruption** | Trial starts, they keep studying |
 
@@ -267,12 +267,12 @@ Thank you for being part of the VoraPrep beta! Your feedback has been invaluable
 Today we're officially launching paid plans. Here's what this means for you:
 
 ✅ **You have 14 more days of full access** — no interruption
-✅ **You're eligible for Founding Member pricing** — 50% off forever
-✅ **Lock in $99/year** (instead of $199) for CPA — as long as you stay subscribed
+✅ **You're eligible for Founding Member pricing** — save over 40% for 2 years
+✅ **Lock in $249/year** (instead of $449) for CPA — rate guaranteed through August 2028
 
 Your trial ends: [DATE]
 
-[Subscribe Now — Lock in 50% Off]
+[Subscribe Now — Lock in Founder Rate]
 
 After your trial, you'll still have access to:
 - 20% of practice questions
@@ -280,7 +280,7 @@ After your trial, you'll still have access to:
 - Progress tracking
 
 To unlock everything (AI tutor, all questions, TBS, exam simulator):
-→ Subscribe before May 31 at founding member rates
+→ Subscribe before August 31 at founding member rates
 
 Thank you for believing in us early. Let's get you to 75+.
 
@@ -293,14 +293,14 @@ Thank you for believing in us early. Let's get you to 75+.
 
 ### Who qualifies?
 
-- Anyone who subscribes between Feb 19 and May 31, 2026
+- Anyone who subscribes between Feb 19 and August 31, 2026
 - Beta users who convert during this window
 
 ### What do they get?
 
 | Benefit | Details |
 |---------|---------|
-| **50% off pricing** | Locked as long as subscription stays active |
+| **~40-44% off pricing** | Locked for 2 years from subscription start |
 | **"Founding Member" badge** | Displayed in profile and app header |
 | **Priority support** | Faster response times |
 | **Roadmap input** | Access to founder feedback channel |
@@ -309,7 +309,7 @@ Thank you for believing in us early. Let's get you to 75+.
 
 ```javascript
 // When creating subscription
-const isFounderWindow = new Date() < new Date('2026-05-31');
+const isFounderWindow = new Date() < new Date('2026-08-31');
 const subscription = {
   tier: 'annual',
   isFounder: isFounderWindow,

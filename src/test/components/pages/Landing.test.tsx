@@ -174,7 +174,7 @@ describe('Landing', () => {
       renderWithRouter(<Landing />);
 
       // Should show price comparison or feature highlights
-      const priceElements = screen.queryAllByText(/\$99|\$8\.25|97%/);
+      const priceElements = screen.queryAllByText(/\$249|\$21|97%/);
       expect(priceElements.length).toBeGreaterThanOrEqual(0);
     });
   });

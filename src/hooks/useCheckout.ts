@@ -75,13 +75,13 @@ export function useCheckout(): UseCheckoutReturn {
 
 // Helper to check if we're in founder pricing window
 export function isFounderPricingActive(): boolean {
-  const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+  const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
   return new Date() < FOUNDER_DEADLINE;
 }
 
 // Days remaining in founder pricing
 export function founderDaysRemaining(): number {
-  const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+  const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
   const now = new Date();
   const diff = FOUNDER_DEADLINE.getTime() - now.getTime();
   return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));

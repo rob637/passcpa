@@ -476,7 +476,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </table>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
-                *Founders pricing available through May 31, 2026. Lock in 50% off forever.
+                *Founding member pricing available through August 31, 2026. Rate guaranteed for 2 years.
               </p>
             </div>
           </section>
@@ -587,8 +587,8 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
   const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   
-  // Founder pricing is active until May 31, 2026
-  const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+  // Founder pricing is active until August 31, 2026
+  const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
   const isFounderWindow = new Date() < FOUNDER_DEADLINE;
   
   // Calculate days remaining
@@ -642,7 +642,7 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               <div>
                 <span className="font-bold text-lg">Founding Member Pricing</span>
                 <span className="mx-2">•</span>
-                <span>50% off locked forever when you subscribe by May 31</span>
+                <span>Save over 40% — rate guaranteed for 2 years</span>
               </div>
               <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold">
                 {daysRemaining} days left
@@ -709,7 +709,7 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               {isFounderWindow && (
                 <div className="mt-3 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
                   <span>🏆</span>
-                  <span>Founder pricing locked forever</span>
+                  <span>Founder rate guaranteed through August 2028</span>
                 </div>
               )}
             </div>

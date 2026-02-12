@@ -1,9 +1,9 @@
 # VoraPrep Pricing Strategy
 
-**Date:** February 10, 2026  
+**Date:** Updated June 2025  
 **Status:** DECIDED  
 **Launch Date:** February 19, 2026  
-**Purpose:** Establish sustainable, fair pricing that balances accessibility with business viability
+**Purpose:** Per-exam subscription pricing with founder program
 
 ---
 
@@ -12,381 +12,172 @@
 | Decision | Choice |
 |----------|--------|
 | **Launch Date** | February 19, 2026 |
-| **Founder Window** | February 19 - May 31, 2026 (50% off, locked forever) |
-| **Primary Plan** | Annual subscription (no lifetime) |
+| **Founder Window** | February 19 – August 31, 2026 |
+| **Founder Lock** | 2 years (rate guaranteed through August 2028) |
+| **Founder Seats** | 300 per exam |
+| **Primary Plan** | Annual subscription |
 | **Trial** | 14 days full access, no credit card |
 | **Pass Guarantee** | Free extension until you pass |
-| **Monthly Option** | Available (for commitment-shy users) |
-| **Lifetime Option** | NOT offered (login sharing risk) |
+| **Monthly Option** | Available |
+| **All-Access Bundle** | NOT offered — per-exam pricing only |
+| **Lifetime Option** | NOT offered |
+| **Feature Gates** | NONE — every paying user gets everything |
 
 ---
 
-## Final Pricing Matrix
+## Pricing Matrix
 
-### Annual Plans (Primary Offering)
+### 3 Price Bands
 
-| Exam | Regular | Founder (Apr 1 - May 31) | Monthly | Savings vs Competitors |
-|------|---------|--------------------------|---------|------------------------|
-| **CPA** | $199/yr | $99/yr | $29/mo | 87-92% cheaper |
-| **CFP** | $149/yr | $75/yr | $19/mo | 90-93% cheaper |
-| **CMA** | $99/yr | $49/yr | $15/mo | 85-92% cheaper |
-| **CIA** | $99/yr | $49/yr | $15/mo | 83-90% cheaper |
-| **CISA** | $79/yr | $39/yr | $12/mo | 80-87% cheaper |
-| **EA** | $59/yr | $29/yr | $9/mo | 85-90% cheaper |
+| Band | Exams | Monthly | Annual | Founder Annual | Founder Monthly* |
+|------|-------|---------|--------|----------------|------------------|
+| **Band 1** | CPA | $49/mo | $449/yr | $249/yr | ~$21/mo |
+| **Band 2** | CMA, CFP, CISA | $39/mo | $349/yr | $199/yr | ~$17/mo |
+| **Band 3** | EA, CIA | $29/mo | $249/yr | $149/yr | ~$12/mo |
+
+*Founder monthly = founder annual / 12, rounded.
+
+### Founder Savings
+
+| Exam | Regular Annual | Founder Annual | Savings |
+|------|----------------|----------------|---------|
+| CPA | $449 | $249 | 44% off |
+| CMA | $349 | $199 | 43% off |
+| CFP | $349 | $199 | 43% off |
+| CISA | $349 | $199 | 43% off |
+| CIA | $249 | $149 | 40% off |
+| EA | $249 | $149 | 40% off |
 
 ### Why This Pricing?
 
-- **CPA at $199:** Flagship product, 7 sections, 2,900+ questions, most content
-- **CFP at $149:** 8 domains, comprehensive case studies, high-value credential
-- **CMA/CIA at $99:** 2-3 parts each, professional credentials, mid-tier complexity
-- **CISA at $79:** Single exam, IT audit niche
-- **EA at $59:** 3 parts, aggressive pricing to drive volume
+- **CPA at $449:** Flagship product, 7 sections, 3,200+ questions, most content
+- **Band 2 at $349:** Mid-tier exams — CMA (2 parts), CFP (8 domains), CISA (5 domains)
+- **Band 3 at $249:** EA (3 parts, tax-focused) and CIA (3 parts, audit-focused) — aggressive pricing to drive volume
+
+### Why No All-Access Bundle?
+
+- Each exam is a separate study journey — users don't cross-shop
+- Per-exam pricing is simpler and more honest
+- Avoids the "gym membership" problem of paying for unused content
+- Easier to market each exam to its target audience
 
 ---
 
-## Why No Lifetime Pricing
+## Founder Program
 
-**Decision: Lifetime plans are NOT offered.**
+### Terms
 
-| Risk | Impact |
-|------|--------|
-| **Login sharing** | One person pays $299, shares with 5 friends forever |
-| **Revenue leak** | They study for 18 months, pass, we never see them again |
-| **Content updates** | We keep updating; they pay nothing |
-| **No recurring relationship** | Harder to build long-term business |
+| Parameter | Value |
+|-----------|-------|
+| **Window** | Feb 19 – August 31, 2026 |
+| **Seats** | 300 per exam (1,800 total across 6 exams) |
+| **Rate Lock** | 2 years from subscription start |
+| **Discount** | 40–44% off regular price |
+| **Features** | Same as regular — no feature gates |
 
-**If we reconsider later:** Add significant friction (single device, $499+, re-verify every 90 days).
+### Rationale
 
----
+- **300 seats per exam:** Creates real scarcity (not fake urgency)
+- **2-year lock (not forever):** Sustainable for the business, still compelling for users
+- **August 31 deadline:** Gives 6+ months from launch to fill seats
+- **No feature gates:** Simplifies codebase and avoids frustrating paying users
 
-## Pass Guarantee: "Pass or Study Free Until You Do"
+### After Founder Window
 
-### Why NOT Money-Back Refunds
-
-| Problem | Impact |
-|---------|--------|
-| Abuse potential | Sign up, do nothing, fail, demand refund |
-| Administratively complex | Legal, accounting, disputes |
-| Cash leaves business | Hurts cash flow |
-| Hard to verify | Did they really try? |
-
-### Our Guarantee: Extended Subscription
-
-> **"Pass or Study Free Until You Do"**
->
-> If you don't pass, we'll extend your subscription at no cost until you do.
-
-**Requirements to claim (MUST complete ALL before exam):**
-
-| Requirement | Threshold | Rationale |
-|-------------|-----------|-----------|
-| Minimum paid subscription | 3+ consecutive months | Prevents sign-up-fail-extend gaming |
-| Complete lessons | 80%+ of lessons read | Proves engagement |
-| Answer practice questions | 80%+ of questions attempted | Can't just skim |
-| Average practice score | 70%+ on practice questions | Shows genuine effort |
-| Mock exams | Complete all available mocks | Simulated exam experience |
-| Final mock score | 75%+ on final mock | Demonstrates readiness |
-| Review flashcards | 80%+ of flashcards reviewed | Comprehensive prep |
-| Submit score report | Within 30 days of exam | Proof of attempt |
-
-**Extension terms:**
-- 3-month extension per claim
-- Up to 2 extensions per section/part (6 months total free per section)
-- After that, re-subscribe at 50% off
-
-**Why this works:**
-- Costs us almost nothing (marginal hosting cost is pennies)
-- Keeps them in our ecosystem (they don't switch to competitor)
-- Eventually they pass → testimonial
-- Filters out abuse (must actually engage with content for 3+ months)
-- Low admin burden (verify score report, update date in database)
+- Founder rate holders keep their rate for 2 years from their subscription start date
+- After 2 years, they auto-convert to regular pricing
+- New subscribers pay regular rates
+- No new founder seats available after August 31, 2026 (or when 300 seats per exam are filled)
 
 ---
 
-## Trial Period
+## Subscription Details
 
-**Decision: 14 days full access, no credit card required**
+### What Every Subscriber Gets (No Tiers)
 
-| Day | Access Level |
-|-----|--------------|
-| Days 1-14 | Full access to everything |
-| Day 15+ (not subscribed) | Limited: 20% of questions, 30% of lessons, no AI tutor |
-| Subscribed | Full access restored |
+- Unlimited practice questions
+- Unlimited Vory AI tutor access
+- Unlimited TBS / simulation practice
+- Full exam simulations (Prometric-style)
+- SM-2 spaced repetition
+- Real-time adaptive engine
+- Progress analytics
+- Offline mode (PWA)
+- Study plans
+- Flashcards
+- Pass Guarantee (after 3 months)
 
-**Why 14 days (not 7 or 30):**
-- 7 days: Too short to see value, creates pressure
-- 30 days: Too long, may not convert
-- 14 days: Enough to try several study sessions, feel the quality
+### 14-Day Free Trial
 
----
+- Full access to everything (no feature restrictions)
+- No credit card required to start
+- Email reminders at days 3, 7, and 12
+- Converts to paid or expires after 14 days
 
-## Founder Pricing Details
+### Pass Guarantee
 
-### The Offer
-
-> "Subscribe before June 1, 2026 and lock in 50% off forever.
-> As long as you stay subscribed, you keep the founder rate."
-
-### Timeline
-
-| Date | Event |
-|------|-------|
-| **April 1, 2026** | Paid plans go live |
-| **April 1 - May 31** | Founder pricing window (50% off) |
-| **June 1, 2026** | Regular pricing starts |
-
-### Founder Benefits
-
-- 50% off (locked as long as they stay subscribed)
-- "Founding Member" badge in app
-- Priority support
-- Input on roadmap (via founder Discord/group)
-
-### Edge Cases
-
-| Scenario | Policy |
-|----------|--------|
-| Founder cancels, then returns | Founder rate restored if within 90 days of cancellation |
-| Founder cancels, returns after 90 days | Regular rate applies |
-| Founder wants to upgrade to different exam | Founder rate applies to new exam too |
+- Available to subscribers who have been active for 3+ months
+- If you don't pass after meeting study requirements, subscription extended free
+- See terms at /pass-guarantee
 
 ---
 
-## Competitive Analysis
+## Implementation
 
-### VoraPrep vs. Budget Competitors (CPA)
+### Canonical Pricing Source
 
-| Feature | VoraPrep | Ninja CPA | UWorld Roger | Gleim |
-|---------|----------|-----------|--------------|-------|
-| **Annual Price** | **$199/yr** | $804/yr ($67×12) | $599-1,299 | $1,000-1,800 |
-| **Monthly Option** | $29/mo | $67/mo | N/A | N/A |
-| **Questions** | 2,900+ | 3,000+ | 2,500+ | 9,000+ |
-| **Video Content** | ❌ No | ✅ Yes | ✅ Yes | ✅ Yes |
-| **AI Tutor** | ✅ **Unlimited** | ❌ No | ❌ No | ❌ No |
-| **Modern UI** | ✅ Yes | Decent | ✅ Yes | ❌ Dated |
-| **TBS/Simulations** | ✅ 30+ | Limited | ✅ Yes | ✅ Yes |
-| **Spaced Repetition** | ✅ SM-2 | ❌ | ❌ | ❌ |
-| **Pass Guarantee** | ✅ Extension | ❌ | ✅ Refund | ✅ Until pass |
+All pricing is defined in `src/services/subscription.ts` → `EXAM_PRICING`:
 
-### Price Advantage by Exam
+```typescript
+export const EXAM_PRICING = {
+  cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 21 },
+  ea:  { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  cma: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
+  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  cfp: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
+  cisa:{ annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
+};
+```
 
-| vs. Competitor | Our Price | Their Price | Savings |
-|----------------|-----------|-------------|---------|
-| **CPA vs. Ninja** | $199/yr | $804/yr | **75% cheaper** |
-| **CPA vs. UWorld** | $199/yr | $599+ | **67%+ cheaper** |
-| **CPA vs. Gleim** | $199/yr | $1,000+ | **80% cheaper** |
-| **EA vs. Gleim EA** | $59/yr | $429 | **86% cheaper** |
-| **CMA vs. Gleim CMA** | $99/yr | $999 | **90% cheaper** |
-| **CIA vs. Gleim CIA** | $99/yr | $999 | **90% cheaper** |
+### Stripe Integration
 
----
+- Per-exam lookup keys: `{exam}_{interval}` and `{exam}_founder_{interval}`
+- Example: `cpa_annual`, `cpa_founder_annual`, `ea_monthly`, `ea_founder_monthly`
+- Stripe prices must match the amounts in `EXAM_PRICING`
+- Cloud Function `createCheckoutSession` selects lookup key based on courseId + interval + founder status
 
-## Honest Competitive Assessment
+### Key Files
 
-### Where We Genuinely Win
+| File | What It Contains |
+|------|-----------------|
+| `src/services/subscription.ts` | `EXAM_PRICING`, `SUBSCRIPTION_PLANS`, `isFounderPricingActive()` |
+| `src/components/pages/landing/ExamLandingData.ts` | Per-exam pricing blocks for landing pages |
+| `src/components/pages/landing/ExamLandingTemplate.tsx` | Pricing section UI (annual/monthly toggle) |
+| `src/hooks/useCheckout.ts` | Checkout flow, `isFounderPricingActive()` |
+| `src/components/common/SubscriptionGate.tsx` | Paywall/upgrade prompts |
+| `functions/index.js` | `FOUNDER_DEADLINE`, `PRICE_LOOKUP_KEYS`, Stripe checkout |
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| **Price** | Crushing victory | 80-95% cheaper than market |
-| **AI Tutor (Vory)** | Clear differentiator | Nobody else has this |
-| **Modern UI/UX** | Significant advantage | Mobile-first, clean design |
-| **2025 + 2026 Blueprint** | Competitive moat | Both covered with transition logic |
-| **Spaced Repetition (SM-2)** | Differentiated | Rare in exam prep |
-| **Speed of Updates** | Advantage | AI-assisted, agile |
+### FOUNDER_DEADLINE Locations
 
-### Where We're Competitive But Not Dominant
+The deadline `2026-08-31T23:59:59Z` appears in 4 files:
+1. `src/services/subscription.ts`
+2. `src/hooks/useCheckout.ts` (2 instances)
+3. `src/components/pages/landing/ExamLandingTemplate.tsx`
+4. `functions/index.js`
 
-| Feature | Our Position | Reality Check |
-|---------|--------------|---------------|
-| **Question Bank** | 2,900 (CPA) | Gleim has 9,000+; we're solid but not largest |
-| **TBS Simulations** | 30+ | Competitors have 100+; theirs more extensive |
-| **Explanations** | Good | Theirs polished by decades of iteration |
-
-### Where We're Honestly Behind
-
-| Feature | Gap | Mitigation |
-|---------|-----|------------|
-| **Video Content** | Major | AI tutor explains on demand; some learners need video though |
-| **Brand Trust** | Real | Time + testimonials will fix; we're new |
-| **Pass Rate Data** | Critical | Need beta users to pass and share results |
-| **Employer Recognition** | Unknown | "My firm uses Becker" — we're not on HR lists yet |
-| **Question Volume** | Behind | 2,900 vs 7,000+ (Wiley/Gleim) — expand over time |
-
-### The Video Question
-
-**Honest take:** Lack of video is a limitation but not dealbreaker for most candidates.
-
-- Video-first learners (visual, auditory) will miss it
-- Roger Philipp built a cult following being entertaining
-- BUT: Active recall beats passive video for retention
-- Our AI tutor can explain anything on demand, personalized
-- Many candidates skip videos anyway, go straight to practice
-
-**Our target market:** Price-conscious, self-motivated candidates who prefer active learning over passive watching and value AI assistance. That's a big market.
+All must stay in sync.
 
 ---
 
-## App Store & Distribution Strategy
+## Competitor Pricing (For Context)
 
-### The Apple/Google Tax Problem
+| Exam | Competitors | Their Prices |
+|------|-------------|-------------|
+| CPA | Becker, Roger, Surgent | $1,799 – $3,499 |
+| EA | Gleim, Passkey, Surgent | $447 – $629 |
+| CMA | Gleim, Hock, Wiley | $1,199 – $1,599 |
+| CIA | Gleim, IIA Learning, Surgent | $999 – $1,400 |
+| CFP | Kaplan, Dalton, Zahn | $1,299 – $1,895 |
+| CISA | ISACA, Hemang Doshi | $299 – $795 |
 
-| Purchase Location | Platform Cut | Your Revenue (on $199) |
-|-------------------|--------------|------------------------|
-| **Web (voraprep.com)** | Stripe 3% | $193 |
-| **Android app** | Google 15% | $169 |
-| **iOS app (year 1)** | Apple 30% | $139 |
-| **iOS app (year 2+)** | Apple 15% | $169 |
-
-### Strategy: Web-First
-
-| Date | Action |
-|------|--------|
-| **April 1, 2026** | Launch paid plans on **web only** (voraprep.com, Stripe) |
-| **April 1** | Apps remain in stores, free to download |
-| **April 1** | Apps check subscription status, gate premium content |
-| **May/June** | Consider adding in-app purchase (accept the tax) |
-
-### How Apps Work
-
-| User Status | App Experience |
-|-------------|----------------|
-| Logged in + subscribed (via web) | Full access |
-| Logged in + not subscribed | Limited content, no explicit paywall (they figure out web) |
-| Not logged in | "Sign in to access" |
-
-**Key insight:** Don't show pricing in iOS app. Don't link to website for purchase. App is for studying, not buying. This avoids Apple's rules while keeping full revenue on web purchases.
-
-### PWA Reality
-
-| User Behavior | Percentage |
-|---------------|------------|
-| Knows how to install PWA | ~10-15% |
-| Will install if prompted | ~20-30% |
-| Uses browser, never installs | ~50-60% |
-| Prefers native apps only | ~20% |
-
-**PWA in browser (without install) looks less professional** — URL bar visible, not full-screen.
-
-**Mitigation:**
-1. Show iOS "Add to Home Screen" tutorial after 2-3 sessions
-2. Keep apps in stores as credibility signal
-3. Accept that some users will buy via app store (cost of business)
-4. Focus web as primary acquisition channel (ads → web → email → purchase)
-
-### The 30% Tax Is Annoying But Not Fatal
-
-At $199/year, margins are healthy enough to absorb it:
-- Web purchase: $193 net
-- iOS purchase: $139 net (year 1) → $169 (year 2+)
-
-A customer who pays via Apple is still a customer. Don't overthink it.
-
----
-
-## Login Sharing Prevention
-
-| Method | Effort | Effectiveness |
-|--------|--------|---------------|
-| **Single active session** | Low | Medium — logs out other device |
-| **Device limit (3 max)** | Medium | Good — reasonable limit |
-| **Email re-verify every 90 days** | Low | Medium — friction for sharers |
-
-**Launch with:** Single active session + 3 device limit. Add more if abuse detected.
-
----
-
-## Revenue Projections
-
-### Year 1 Scenarios (2026)
-
-| Scenario | Paying Users | Mix | Annual Revenue |
-|----------|--------------|-----|----------------|
-| **Conservative** | 500 | 60% founder, 40% regular | ~$85,000 |
-| **Moderate** | 2,000 | 50% founder, 50% regular | ~$300,000 |
-| **Optimistic** | 5,000 | 40% founder, 60% regular | ~$700,000 |
-
-### Unit Economics
-
-| Metric | Value |
-|--------|-------|
-| **Average Revenue Per User (ARPU)** | ~$150/year (blended) |
-| **Target CAC** | <$50 |
-| **Target LTV:CAC** | >3:1 |
-| **Breakeven users** | ~200-300 (before ad spend) |
-
-### Cost Structure
-
-| Cost Category | Monthly Estimate |
-|---------------|------------------|
-| Firebase (hosting, auth, Firestore) | $200-500 |
-| Gemini AI API (Vory) | $100-500 (scales with usage) |
-| Stripe fees | ~3% of revenue |
-| Domain, email, tools | ~$100 |
-| **Variable: Advertising** | TBD |
-
----
-
-## Implementation Checklist
-
-### Before February 19, 2026
-
-- [ ] Stripe integration (subscriptions, webhooks)
-- [ ] Subscription status in Firebase user profile
-- [ ] Content gating logic (trial → limited → paid)
-- [ ] Pricing page redesign with new prices
-- [ ] Founder badge/status system
-- [ ] Email sequences (trial ending, founder deadline)
-- [ ] Pass Guarantee terms page
-- [ ] Update app to check subscription status
-
-### February 19 Launch
-
-- [ ] Enable Stripe checkout
-- [ ] Transition existing beta users to 14-day trial
-- [ ] Announce founder pricing
-- [ ] Begin advertising (web landing pages)
-- [ ] Monitor conversion rates
-
-### May 31 Deadline
-
-- [ ] Final "last chance" founder emails
-- [ ] Switch to regular pricing June 1
-- [ ] Grandfather existing founders
-
----
-
-## Open Questions (Future Decisions)
-
-| Question | Current Thinking |
-|----------|------------------|
-| **Group/Corporate pricing?** | Not for launch; revisit when firms ask |
-| **Student discount?** | Already very cheap; maybe .edu = 20% off later |
-| **Referral program?** | Yes, but post-launch; "Give 1 month, get 1 month" |
-| **In-app purchase?** | Not for launch; add May/June if demand |
-| **CFA course?** | If added: $149/level or $349/all 3 levels |
-
----
-
-## Discussion Log
-
-### February 10, 2026 — Pricing Finalized
-
-**Decisions made:**
-- Launch date: February 19, 2026
-- Founder window: February 19 - May 31 (50% off, locked forever)
-- Pricing by exam: CPA $199, CFP $149, CMA $99, CIA $99, CISA $79, EA $59
-- No lifetime plans (login sharing risk)
-- Pass guarantee: Free extension, not refund
-- Trial: 14 days full access
-- Web-first purchase strategy (apps for studying, not buying)
-
-**Key insights from discussion:**
-- We beat competitors 80-95% on price
-- AI tutor is genuine differentiator
-- Video gap is real but not fatal for our target market
-- Brand trust will come with time + testimonials
-- Apple tax is annoying but survivable
-- No reason to wait until April — launch when Stripe is ready
-
----
-
+VoraPrep is 70–95% cheaper than traditional review courses, even at regular prices.

@@ -95,12 +95,12 @@ COORDS = {
 
 
 def calibrate_quick():
-    """Quick recalibration for specific elements (5-second countdown)."""
+    """Quick recalibration for specific elements (8-second countdown)."""
     print("\n" + "="*60)
-    print("QUICK RECALIBRATION: Background Elements")
+    print("QUICK RECALIBRATION: Layout Elements")
     print("="*60)
     print("\nYou have 8 seconds per element. Watch the live cursor position.")
-    print("The script will AUTO-CLICK between steps to open panels.\n")
+    print("The script will AUTO-CLICK between steps.\n")
     
     # Load existing coords
     coords_file = Path("coords.json")
@@ -110,67 +110,40 @@ def calibrate_quick():
     else:
         results = {}
     
-    # Step 1: Customize button
+    # Step 1: Layouts button (in right sidebar)
     print("\n" + "-"*40)
-    print("STEP 1: CUSTOMIZE BUTTON")
+    print("STEP 1: LAYOUTS BUTTON")
     print("-"*40)
-    print("Look at RIGHT panel > 'Avatar Background' section")
-    print("Point at 'Customize' (paint brush icon)")
+    print("Look at the FAR RIGHT sidebar icons")
+    print("Find the 'Layouts' icon (looks like rectangles/grid)")
     print("\nMove mouse there NOW! 8 seconds...")
     for i in range(8, 0, -1):
         x, y = pyautogui.position()
         print(f"  {i}... (cursor at {x}, {y})", flush=True)
         time.sleep(1)
     x, y = pyautogui.position()
-    results["customize_bg"] = [x, y]
-    print(f"  ✓ Saved: customize_bg = ({x}, {y})")
+    results["layouts_button"] = [x, y]
+    print(f"  ✓ Saved: layouts_button = ({x}, {y})")
     
-    # Auto-click to open the panel
-    print("\n>>> Auto-clicking Customize to open panel...")
+    # Auto-click to open the layouts panel
+    print("\n>>> Auto-clicking Layouts to open panel...")
     pyautogui.click(x, y)
     time.sleep(2)  # Wait for panel to open
     
-    # Step 2: Uploads tab
+    # Step 2: Portrait 9:16 option
     print("\n" + "-"*40)
-    print("STEP 2: UPLOADS TAB")
+    print("STEP 2: PORTRAIT 9:16")
     print("-"*40)
-    print("Panel should be open with tabs: [All] [AI Generated] [Uploads]")
-    print("Point at 'Uploads' tab")
+    print("Panel should show layout options")
+    print("Find and point at 'Portrait 9:16' (tall rectangle)")
     print("\nMove mouse there NOW! 8 seconds...")
     for i in range(8, 0, -1):
         x, y = pyautogui.position()
         print(f"  {i}... (cursor at {x}, {y})", flush=True)
         time.sleep(1)
     x, y = pyautogui.position()
-    results["uploads_tab"] = [x, y]
-    print(f"  ✓ Saved: uploads_tab = ({x}, {y})")
-    
-    # Auto-click Uploads tab
-    print("\n>>> Auto-clicking Uploads tab...")
-    pyautogui.click(x, y)
-    time.sleep(2)  # Wait for uploads to load
-    
-    # Step 3-6: Background grid
-    bg_items = [
-        ("bg_row1_col1", "TOP-LEFT (DARK NAVY)"),
-        ("bg_row1_col2", "TOP-MIDDLE (GRAY)"),  
-        ("bg_row1_col3", "TOP-RIGHT (TEAL)"),
-        ("bg_row2_col1", "2ND ROW LEFT (BLUE GRADIENT)"),
-    ]
-    
-    for i, (key, desc) in enumerate(bg_items, 3):
-        print(f"\n" + "-"*40)
-        print(f"STEP {i}: {desc}")
-        print("-"*40)
-        print(f"Point at the {desc} thumbnail")
-        print(f"\nMove mouse there NOW! 8 seconds...")
-        for j in range(8, 0, -1):
-            x, y = pyautogui.position()
-            print(f"  {j}... (cursor at {x}, {y})", flush=True)
-            time.sleep(1)
-        x, y = pyautogui.position()
-        results[key] = [x, y]
-        print(f"  ✓ Saved: {key} = ({x}, {y})")
+    results["portrait_9_16"] = [x, y]
+    print(f"  ✓ Saved: portrait_9_16 = ({x}, {y})")
     
     with open("coords.json", "w") as f:
         json.dump(results, f, indent=2)

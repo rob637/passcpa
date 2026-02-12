@@ -110,10 +110,8 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("bg_row1_col1", "BG TOP-LEFT: DARK NAVY background (1st row, 1st column)"),
-        ("bg_row1_col2", "BG TOP-MIDDLE: GRAY background (1st row, 2nd column)"),  
-        ("bg_row1_col3", "BG TOP-RIGHT: TEAL background (1st row, 3rd column)"),
-        ("bg_row2_col1", "BG 2ND ROW LEFT: BLUE GRADIENT background (2nd row, 1st column)"),
+        ("motion_engine", "MOTION ENGINE dropdown - scroll down in avatar panel, it's BELOW the outfits. Look for dropdown saying 'Avatar III' or 'Avatar IV'"),
+        ("avatar_iii", "AVATAR III option - click on 'Avatar III' in the dropdown menu that just opened"),
     ]
     
     for key, description in coords_to_find:
@@ -310,19 +308,9 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     logger.info("[STEP 3] Setting Motion Engine to Avatar III...")
     coords = load_coords()
     
-    # First, we need to scroll down in the avatar panel to see Motion Engine
-    # Click somewhere in the avatar panel area first
+    # Click the motion engine dropdown
     x, y = coords.get("motion_engine", COORDS.get("motion_engine"))
     logger.info(f"  Motion engine coords: ({x}, {y})")
-    
-    # Scroll down in the panel to ensure Motion Engine is visible
-    pyautogui.click(x, y - 100)  # Click above motion engine to focus panel
-    time.sleep(0.3)
-    pyautogui.scroll(-3)  # Scroll down a bit
-    time.sleep(0.5)
-    
-    # Now click the motion engine dropdown
-    logger.info(f"  Clicking motion_engine at ({x}, {y})")
     pyautogui.click(x, y)
     time.sleep(1)
     

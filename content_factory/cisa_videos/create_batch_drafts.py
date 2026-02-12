@@ -66,9 +66,10 @@ def main():
             'script_text': script_text,
             'title': f"CISA - {v['topic']}",
             'avatar_name': v['avatar_id'],
+            'avatar_look': v.get('avatar_look'),
             'background_name': v['background'].replace('.png', ''),
         })
-        print(f"  {v['num']:2}. {v['topic']} -> {v['avatar_id']} + {v['background']}")
+        print(f"  {v['num']:2}. {v['topic']} -> {v['avatar_id']} ({v.get('avatar_look', 'default')}) + {v['background']}")
     
     print("-" * 60)
     print(f"\nReady to create {len(video_data)} drafts.")

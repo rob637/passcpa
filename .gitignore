@@ -5,8 +5,12 @@ node_modules/
 
 # Build outputs
 dist/
+dev-dist/
 build/
 .next/
+
+# Python virtual environments
+.venv/
 
 # Environment variables (keep examples, ignore actual secrets)
 .env

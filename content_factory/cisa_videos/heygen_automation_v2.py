@@ -520,7 +520,7 @@ class HeyGenAutomationV2:
         Create multiple video drafts.
         
         Args:
-            videos: List of dicts with keys: script_text, title, avatar_name, background_name
+            videos: List of dicts with keys: script_text, title, avatar_name, avatar_look, background_name
             limit: Max number to create
         """
         if limit:
@@ -537,6 +537,7 @@ class HeyGenAutomationV2:
                 script_text=video['script_text'],
                 title=video['title'],
                 avatar_name=video['avatar_name'],
+                avatar_look=video.get('avatar_look'),
                 background_name=video.get('background_name'),
                 save_draft=True
             )

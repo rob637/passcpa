@@ -48,14 +48,13 @@ export const CFP_INV_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C.** Systematic risk (Market Risk) is inherent to the entire market or economy (e.g., inflation, interest rate changes, war). It cannot be eliminated through diversification.\n\n**Incorrect Options:**\n* **A, B, D:** These are examples of Unsystematic Risk (idiosyncratic), which applies to specific companies or sectors and CAN be mitigated by holding a diverse portfolio.",
     topic: "Risk Management",
     subtopic: "Systematic Risk",
-    difficulty: "easy"
+    difficulty: "easy",
     skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'CFP-INV-003',
     courseId: 'cfp',
     section: 'CFP-INV',
-    courseId: 'cfp',
     blueprintArea: 'INV-1',
     question: "A bond has a duration of 7 years. If interest rates rise by 1%, what is the expected approximate change in the bond's price?",
     options: [
@@ -68,7 +67,7 @@ export const CFP_INV_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: D.** Duration measures a bond's sensitivity to interest rate changes. The relationship is inverse: if rates rise, prices fall. \n\nFormula: `% Price Change ≈ -Duration * ΔYield`.\nChange ≈ -7 * (+1%) = -7%.",
     topic: "Bond Analysis",
     subtopic: "Duration",
-    difficulty: "medium"
+    difficulty: "medium",
     skillLevel: 'Application',
   },
   {

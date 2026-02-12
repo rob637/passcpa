@@ -465,9 +465,11 @@ export const subscriptionService = new SubscriptionService();
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '../providers/AuthProvider';
+import { useCourse } from '../providers/CourseProvider';
 
 export function useSubscription() {
   const { user } = useAuth();
+  const { courseId: activeCourseId } = useCourse();
   const [subscription, setSubscription] = useState<UserSubscription | null>(null);
   const [limits, setLimits] = useState<PlanLimits>(SUBSCRIPTION_PLANS.free.limits);
   const [loading, setLoading] = useState(true);
@@ -537,8 +539,14 @@ export function useSubscription() {
     fetchSubscription();
   }, [user]);
 
-  // User has full access if premium OR in active trial
-  const hasFullAccess = isPremium || isTrialing;
+  // User has full access if:
+  // - In active trial (trial grants access to ALL courses for exploration)
+  // - OR has paid subscription for the CURRENT active course
+  const subscribedCourseId = subscription?.courseId;
+  const paidForThisCourse = isPremium && (
+    !subscribedCourseId || subscribedCourseId === activeCourseId
+  );
+  const hasFullAccess = paidForThisCourse || isTrialing;
 
   return {
     subscription,
@@ -548,6 +556,7 @@ export function useSubscription() {
     trialDaysRemaining,
     trialExpired,
     hasFullAccess,
+    subscribedCourseId: subscribedCourseId || null,
     loading,
     plan: subscription ? SUBSCRIPTION_PLANS[subscription.tier] : SUBSCRIPTION_PLANS.free,
     checkFeature: (feature: keyof PlanLimits) => {

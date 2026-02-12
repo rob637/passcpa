@@ -1,9 +1,9 @@
-Data classification.get this right, and you’re one step closer to SIS-uh certification. It's a critical concept that eye-SAH-kah loves to test.
+Data classification.get this right, and you're one step closer to SIS-uh certification. It's a critical concept that eye-SAH-kah loves to test.
 
 Data classification is the process of categorizing data based on its sensitivity and impact if disclosed, altered, or destroyed. Auditors care because proper classification dictates the security controls required to protect information assets. Without it, we can't assess if controls are adequate and cost-effective. We need classification to determine if the right safeguards are in place.
 
-The trap is. thinking that I-T is solely responsible for data classification. That’s wrong. The correct answer is the data owner, usually a business unit leader. They understand the data's value, sensitivity, and legal requirements far better than I-T. I-T implements the controls, but the business owns the classification decision. Remember, data owners classify, I-T protects.
+The trap is. thinking that I-T is solely responsible for data classification. That's wrong. The correct answer is the data owner, usually a business unit leader. They understand the data's value, sensitivity, and legal requirements far better than I-T. I-T implements the controls, but the business owns the classification decision. Remember, data owners classify, I-T protects.
 
 For example, when auditing a marketing database containing customer information, you'd expect the Marketing Director to have classified it as "Confidential" or "Restricted" due to privacy regulations. If you find it's classified as "Public," that's a major finding. The data owner hasn't fulfilled their responsibility.
 
-The key takeaway: Data classification is the data owner’s responsibility, not I-T’s. Master this, and you'll ace the exam!
+The key takeaway: Data classification is the data owner's responsibility, not I-T's. Master this, and you'll ace the exam!

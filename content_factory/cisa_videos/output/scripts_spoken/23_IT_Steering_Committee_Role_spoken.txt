@@ -1,8 +1,8 @@
-Hey SIS-uh candidates, ready to tackle the I-T Steering Committee? Nail this, and you’ll boost your exam score.
+Hey SIS-uh candidates, ready to tackle the I-T Steering Committee? Nail this, and you'll boost your exam score.
 
-What is the I-T Steering Committee? It’s a high-level group responsible for aligning I-T strategy with business objectives. ensuring I-T investments deliver value. Auditors care deeply, because a well-functioning committee means stronger I-T governance and risk management. Think about it.a weak committee equals weak controls and potential audit findings.
+What is the I-T Steering Committee? It's a high-level group responsible for aligning I-T strategy with business objectives. ensuring I-T investments deliver value. Auditors care deeply, because a well-functioning committee means stronger I-T governance and risk management. Think about it.a weak committee equals weak controls and potential audit findings.
 
-Now, here’s the exam trap. eye-SAH-kah loves to present options focusing solely on technical expertise when defining committee composition. The trap is thinking it’s all about CIOs and tech leads. The correct answer is. a diverse group including business stakeholders, senior management, and then I-T representatives. Remember, it’s about business alignment FIRST. eye-SAH-kah also likes to blur lines on responsibilities. making it seem like the committee implements I-T projects. No! They oversee and prioritize.
+Now, here's the exam trap. eye-SAH-kah loves to present options focusing solely on technical expertise when defining committee composition. The trap is thinking it's all about CIOs and tech leads. The correct answer is. a diverse group including business stakeholders, senior management, and then I-T representatives. Remember, it's about business alignment FIRST. eye-SAH-kah also likes to blur lines on responsibilities. making it seem like the committee implements I-T projects. No! They oversee and prioritize.
 
 For example, when auditing a new ERP system implementation, check if the I-T Steering Committee approved the project charter, reviewed progress reports, and ensured business units were actively involved. This demonstrates effective oversight, not just I-T pushing a project.
 

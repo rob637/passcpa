@@ -6,4 +6,4 @@ Now, here's the trap. eye-SAH-kah loves to test your understanding of specific r
 
 For example, when auditing a publicly traded company's financial reporting systems, you MUST verify compliance with sox Section 404. This section focuses on internal controls over financial reporting. You're looking for evidence that management has assessed and documented these controls... and that they're effective in preventing material misstatements. Ignore HIP-ah or G-D-P-R concerns in this scenario... unless specifically mentioned in the question. Focus on the regulation at hand.
 
-Remember this: Know the core purpose of each regulation. sox protects investors. HIP-ah protects health information. G-D-P-R protects personal data of EU citizens. Get those straight, and you’ve got this! Go ace that exam!
+Remember this: Know the core purpose of each regulation. sox protects investors. HIP-ah protects health information. G-D-P-R protects personal data of EU citizens. Get those straight, and you've got this! Go ace that exam!

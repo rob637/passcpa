@@ -1,9 +1,9 @@
-Outsourcing I-T? It’s a minefield if you’re not careful... and a prime target for SIS-uh exam questions! Get this right, and you’re one step closer to passing.
+Outsourcing I-T? It's a minefield if you're not careful... and a prime target for SIS-uh exam questions! Get this right, and you're one step closer to passing.
 
 So, what is outsourcing and third-party management? Simply put, it's entrusting business functions... or I-T processes... to external providers. Auditors care because it introduces significant risk. We need to ensure those providers meet security... compliance... and performance standards... as if they were part of our own organization. Think data breaches, regulatory violations, or simply... system downtime. That's why vendor management and S-L-A monitoring are crucial.
 
-Now, here's the trap eye-SAH-kah sets. They love to present multiple “good” answers... focusing on cost savings... or innovation... or access to specialized skills. The trap is... choosing the OPTION that doesn’t prioritize risk management. The correct answer is always... the one that emphasizes due diligence... security controls... and continuous monitoring of the third-party’s performance... particularly against agreed-upon Service Level Agreements or S-L-As. Don’t get distracted by the shiny objects!
+Now, here's the trap eye-SAH-kah sets. They love to present multiple "good" answers... focusing on cost savings... or innovation... or access to specialized skills. The trap is... choosing the OPTION that doesn't prioritize risk management. The correct answer is always... the one that emphasizes due diligence... security controls... and continuous monitoring of the third-party's performance... particularly against agreed-upon Service Level Agreements or S-L-As. Don't get distracted by the shiny objects!
 
 For example, when auditing a cloud provider... you might find an S-L-A promising 99.99% uptime. But... are they actually achieving it? What are the penalties if they fail? And... most importantly... are their security practices aligned with your organization's policies? Dig deep... verify the evidence... don't just take their word for it. Look for independent audit reports like sock 2.
 
-Remember this: Outsourcing doesn't outsource responsibility. You are still accountable. Nail that concept... and you’ll ace those SIS-uh questions!
+Remember this: Outsourcing doesn't outsource responsibility. You are still accountable. Nail that concept... and you'll ace those SIS-uh questions!

@@ -304,11 +304,12 @@ OUTFIT_COORDS = {
     "Zosia Look 5": "outfit_row2_col2",
     # Bruce outfits (1 look)
     "Bruce Look 1": "outfit_row1_col1",
-    # Esmond outfits (4 looks)
-    "Esmond Look 1": "outfit_row1_col1",
-    "Esmond Look 2": "outfit_row1_col2",
-    "Esmond Look 3": "outfit_row1_col3",
-    "Esmond Look 4": "outfit_row2_col1",
+    # Jinwoo outfits (5 looks)
+    "Jinwoo Look 1": "outfit_row1_col1",
+    "Jinwoo Look 2": "outfit_row1_col2",
+    "Jinwoo Look 3": "outfit_row1_col3",
+    "Jinwoo Look 4": "outfit_row2_col1",
+    "Jinwoo Look 5": "outfit_row2_col2",
 }
 
 

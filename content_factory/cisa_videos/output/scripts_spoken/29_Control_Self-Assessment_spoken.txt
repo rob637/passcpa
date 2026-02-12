@@ -1,4 +1,4 @@
-Control self-assessment. is a SIS-uh exam topic that can make or break your score. Let's nail it down in the next few minutes.
+Control self-assessment. is a sissa exam topic that can make or break your score. Let's nail it down in the next few minutes.
 
 Control self-assessment, or C-S-A, is a process where management evaluates the effectiveness of their own internal controls. ...It's not about external auditors doing the work. ...Instead, it's about empowering business units to identify and manage risks themselves. ...Why do auditors care? ...Because a well-implemented C-S-A program provides reasonable assurance... allowing auditors to focus on higher-risk areas... and rely, in part, on management's own assessments.
 
@@ -6,4 +6,4 @@ The trap is... eye-SAH-kah loves to test you on who's actually doing the assessm
 
 For example, when auditing a change management process... a C-S-A could involve the development team reviewing their own adherence to change control procedures... identifying weaknesses... and proposing improvements. ...The auditor then reviews the documentation... interviews team members... and tests a sample of changes to validate the C-S-A's findings and identify any gaps. ...The auditor is validating management's work... not re-doing it.
 
-The one thing you MUST remember for the exam... C-S-A is MOST effective when it's integrated into the organization's culture... and owned by management. ...Master this concept, and you'll be one step closer to passing the SIS-uh exam.
+The one thing you MUST remember for the exam... C-S-A is MOST effective when it's integrated into the organization's culture... and owned by management. ...Master this concept, and you'll be one step closer to passing the sissa exam.

@@ -6,4 +6,4 @@ Now, here's the exam trap. eye-SAH-kah loves to present scenarios where multiple
 
 For example, when auditing access controls, reviewing logs (documentary evidence) is good... but re-performing the access control testing yourself (direct evidence) provides far more reliable insight into its effectiveness. You're seeing it work. or not. firsthand.
 
-So, remember this: Direct, firsthand evidence is generally the MOST reliable. Master this, and you're one step closer to SIS-uh success! You got this!
+So, remember this: Direct, firsthand evidence is generally the MOST reliable. Master this, and you're one step closer to sissa success! You got this!

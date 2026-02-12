@@ -1,6 +1,6 @@
 Okay, here's the script:
 
-Hey SIS-uh candidates... understanding Key Risk Indicators, or K-R-Is, is crucial... because eye-SAH-kah loves to test your ability to differentiate them from Key Performance Indicators. Master this, and you'll grab easy points.
+Hey sissa candidates... understanding Key Risk Indicators, or K-R-Is, is crucial... because eye-SAH-kah loves to test your ability to differentiate them from Key Performance Indicators. Master this, and you'll grab easy points.
 
 So, what are K-R-Is? They're metrics... that signal an increased probability of a risk event occurring. Think of them as early warning signs. As IS auditors, we care because K-R-Is allow us to proactively identify... and mitigate... potential problems before they impact the organization. We use them to assess the effectiveness of controls. and to determine if additional audit procedures are needed. This helps us provide assurance that risk management processes are working... before a major incident.
 
@@ -8,4 +8,4 @@ Now, here's the trap... eye-SAH-kah will try to trick you by presenting scenario
 
 For example, when auditing a company's data security... a low number of customer complaints about data breaches... could be a K-P-I indicating good performance. But... a high number of unpatched vulnerabilities... identified during regular scans... that's a K-R-I... signaling increased risk of a data breach. We need to focus on that K-R-I... and investigate the patching process.
 
-Your takeaway? Remember... K-R-Is are about risk, not just performance. Focus on identifying those leading indicators... and you'll ace those K-R-I questions on the SIS-uh exam! You got this!
+Your takeaway? Remember... K-R-Is are about risk, not just performance. Focus on identifying those leading indicators... and you'll ace those K-R-I questions on the sissa exam! You got this!

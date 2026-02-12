@@ -4,6 +4,6 @@ Incident Response is the organized approach to addressing and managing the after
 
 The trap is. eye-SAH-kah loves to throw out answer options that sound good but are out of order. For example, they might list "eradication" or "recovery" as the first step. The correct answer is ALWAYS preparation. You can't respond effectively if you haven't planned and prepared beforehand. Think about it... testing, training, creating playbooks - all BEFORE an incident occurs. Don't fall for the tempting "quick fix" answers.
 
-For example, when auditing a company's incident response plan, you might find a detailed recovery plan but no evidence of regular training or simulations. This would be a major finding. Containment is also often misunderstood. Incident containment means isolating the affected systems to prevent further spread of the incident. It’s not eradication... It’s not full recovery... It’s about damage control and preventing the attacker from moving laterally.
+For example, when auditing a company's incident response plan, you might find a detailed recovery plan but no evidence of regular training or simulations. This would be a major finding. Containment is also often misunderstood. Incident containment means isolating the affected systems to prevent further spread of the incident. It's not eradication... It's not full recovery... It's about damage control and preventing the attacker from moving laterally.
 
 Remember this: Preparation is always the FIRST step in incident response. Get that right, and you're one step closer to passing the SIS-uh!

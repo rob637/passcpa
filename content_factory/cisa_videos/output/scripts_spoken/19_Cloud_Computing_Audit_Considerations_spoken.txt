@@ -1,13 +1,13 @@
-Cloud auditing... can be a nightmare on the SIS-uh exam. But nail this, and you’ll be golden.
+Cloud auditing... can be a nightmare on the SIS-uh exam. But nail this, and you'll be golden.
 
-So, what is cloud computing? It’s on-demand access to computing resources - servers, storage, databases - over the internet. Think of it like renting, instead of buying, your I-T infrastructure. As an auditor, you care because traditional, on-premise security controls often don't translate directly to the cloud. You need to understand who’s responsible for what.
+So, what is cloud computing? It's on-demand access to computing resources - servers, storage, databases - over the internet. Think of it like renting, instead of buying, your I-T infrastructure. As an auditor, you care because traditional, on-premise security controls often don't translate directly to the cloud. You need to understand who's responsible for what.
 
 That brings us to the shared responsibility model. It's critical. The cloud provider handles the security of the cloud, like the physical infrastructure. You, the customer, are responsible for security in the cloud. This includes your data, applications, identity management, and operating systems, depending on the cloud service model.
 
-Now, here’s the eye-SAH-kah trap. They love to blur the lines between I-as-a-Service, P-as-a-Service, and S-as-a-Service. For example, a common question asks: "In I-as-a-Service, the customer is responsible for..." The trap answer is often something vague like "overall security." The correct answer is more specific: "managing the operating system." I-as-a-Service gives you the most control, so you're responsible for more. Remember: I-as-a-Service = You manage the OS. P-as-a-Service = you manage the applications. S-as-a-Service = the provider manages almost everything.
+Now, here's the eye-SAH-kah trap. They love to blur the lines between I-as-a-Service, P-as-a-Service, and S-as-a-Service. For example, a common question asks: "In I-as-a-Service, the customer is responsible for..." The trap answer is often something vague like "overall security." The correct answer is more specific: "managing the operating system." I-as-a-Service gives you the most control, so you're responsible for more. Remember: I-as-a-Service = You manage the OS. P-as-a-Service = you manage the applications. S-as-a-Service = the provider manages almost everything.
 
 Cloud audit challenges also come up frequently. They'll ask about things like data residency, vendor lock-in, and regulatory compliance. The trick is to remember the cloud provider may be located in a different jurisdiction with different laws. The trap is focusing only on your organization's compliance requirements.
 
-For example, when auditing a S-as-a-Service application like Salesforce, you need to verify their security certifications, like sock 2, and confirm that their data privacy policies align with regulations like G-D-P-R if you’re processing EU citizen data. You also need to audit your own configuration of Salesforce.
+For example, when auditing a S-as-a-Service application like Salesforce, you need to verify their security certifications, like sock 2, and confirm that their data privacy policies align with regulations like G-D-P-R if you're processing EU citizen data. You also need to audit your own configuration of Salesforce.
 
-The one thing you must remember? Shared responsibility. Understand who is responsible for what in each cloud model. Nail that, and you’re one step closer to passing the SIS-uh exam. You got this!
+The one thing you must remember? Shared responsibility. Understand who is responsible for what in each cloud model. Nail that, and you're one step closer to passing the SIS-uh exam. You got this!

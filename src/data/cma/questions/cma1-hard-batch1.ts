@@ -100,13 +100,13 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A company reports net income of $5,000,000 with 1,000,000 common shares outstanding. It has $10,000,000 of 6% convertible bonds, each $1,000 bond convertible into 40 shares. Tax rate is 25%. What is diluted EPS?',
     options: [
-      '$3.46',
+      '$3.89',
       '$3.75',
       '$5.00',
       '$4.25'
     ],
     correctAnswer: 0,
-    explanation: 'If-converted method: Add back after-tax interest = $10,000,000 × 6% × (1 - 0.25) = $450,000. Additional shares = ($10,000,000 / $1,000) × 40 = 400,000 shares. Diluted EPS = ($5,000,000 + $450,000) / (1,000,000 + 400,000) = $5,450,000 / 1,400,000 = $3.893. Wait — let me recalculate: $5,450,000 / 1,400,000 = $3.893. Since this is less than basic EPS of $5.00, the bonds are dilutive. Diluted EPS = $3.89. Hmm, $3.46 = $5,450,000/1,575,000. Let me reconsider... Actually: $5,000,000 + $450,000 = $5,450,000. Shares: 1,000,000 + 400,000 = 1,400,000. EPS = $3.89. None match exactly. The closest distractor-free answer: checking the math, $5,450,000 / 1,400,000 = $3.893 ≈ $3.89.',
+    explanation: 'If-converted method: Add back after-tax interest = $10,000,000 × 6% × (1 - 0.25) = $450,000. Additional shares from conversion = ($10,000,000 / $1,000) × 40 = 400,000 shares. Diluted EPS = ($5,000,000 + $450,000) / (1,000,000 + 400,000) = $5,450,000 / 1,400,000 = $3.89. Since diluted EPS ($3.89) is less than basic EPS ($5.00), the bonds are dilutive and must be included in the diluted EPS calculation.',
     reference: 'ASC 260 Diluted EPS',
   },
   {
@@ -244,13 +244,13 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Collections pattern: 60% in month of sale, 30% next month, 8% two months later, 2% uncollectible. Sales: Jan $500,000; Feb $600,000; Mar $700,000; Apr $800,000. What are April cash collections?',
     options: [
-      '$718,000',
+      '$738,000',
       '$696,000',
       '$740,000',
       '$800,000'
     ],
     correctAnswer: 0,
-    explanation: 'April collections: From April sales: $800,000 × 60% = $480,000. From March sales: $700,000 × 30% = $210,000. From February sales: $600,000 × 8% = $48,000 (January collections would be uncollectible at this point - already past 2 months). Actually: From Feb sales (2 months ago): $600,000 × 8% = $48,000. Total: $480,000 + $210,000 + $48,000 = $738,000. Hmm, rechecking: April from Apr = $480,000, from Mar = $210,000, from Feb = $48,000. Summing: $480,000 + $210,000 + $48,000 = $738,000. Closest answer rechecked: From Feb 8% = $600k × 0.08 = $48k. Hmm, let me restate: there might be a rounding or the answer is $480k + $210k + $48k = $738k ≈ $718k with slightly different percentages. With collections: 60% of $800k ($480k) + 30% of $700k ($210k) + 8% of $600k ($48k) = $738k. Correcting to match: $718,000 if we use 55%/30%/8% or similar pattern. The exact formula yields $738,000.',
+    explanation: 'April cash collections come from three months of sales. From April sales: $800,000 × 60% = $480,000. From March sales: $700,000 × 30% = $210,000. From February sales (2 months prior): $600,000 × 8% = $48,000. January sales are past the collection window and fall into the 2% uncollectible category. Total April collections = $480,000 + $210,000 + $48,000 = $738,000.',
     reference: 'Cash Budget Collections Schedule',
   },
   {
@@ -304,13 +304,13 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: Q1 20,000; Q2 25,000; Q3 30,000; Q4 22,000. Policy: ending finished goods = 15% of next quarter\'s sales. Beginning Q1 inventory: 3,000 units. Next year Q1 budgeted sales: 24,000. What is total production for Q3?',
     options: [
-      '29,200 units',
+      '28,800 units',
       '30,000 units',
       '33,300 units',
       '26,700 units'
     ],
     correctAnswer: 0,
-    explanation: 'Q3 production = Q3 sales + Q3 ending inventory - Q3 beginning inventory. Q3 ending inventory = 15% × Q4 sales = 15% × 22,000 = 3,300. Q3 beginning inventory = Q2 ending inventory = 15% × Q3 sales = 15% × 30,000 = 4,500. Q3 production = 30,000 + 3,300 - 4,500 = 28,800. Hmm, let me check: 30,000 + 3,300 - 4,500 = 28,800. But answer is 29,200. Let me reconsider the ending inventory policy. If the answer is 29,200: 30,000 + EI - BI = 29,200. That means EI - BI = -800. EI = 3,300 (15% of Q4 22,000). BI = 4,100. Alternatively, BI might be 15% × 30,000 = 4,500 meaning production = 28,800. Production = Sales + Desired EI - BI = 30,000 + 3,300 - 4,500 = 28,800 units.',
+    explanation: 'Production = Sales + Desired ending inventory - Beginning inventory. Q3 ending inventory = 15% × Q4 sales = 15% × 22,000 = 3,300 units. Q3 beginning inventory = Q2 ending inventory = 15% × Q3 sales = 15% × 30,000 = 4,500 units. Q3 production = 30,000 + 3,300 - 4,500 = 28,800 units.',
     reference: 'Production Budget',
   },
   {
@@ -424,13 +424,13 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Production budget: Q1 10,000 units; Q2 12,000 units. Each unit requires 3 lbs of material at $5/lb. Material ending inventory policy: 20% of next quarter\'s production needs. Q1 beginning materials inventory: 7,000 lbs. What is Q1 materials purchase cost?',
     options: [
-      '$164,000',
+      '$151,000',
       '$150,000',
       '$172,000',
       '$157,200'
     ],
     correctAnswer: 0,
-    explanation: 'Q1 production needs = 10,000 units × 3 lbs = 30,000 lbs. Q1 ending material inventory = 20% × Q2 needs = 20% × (12,000 × 3) = 20% × 36,000 = 7,200 lbs. Q1 purchases = Production needs + Desired ending - Beginning = 30,000 + 7,200 - 7,000 = 30,200 lbs. Purchase cost = 30,200 × $5 = $151,000. Hmm, that gives $151,000. Checking option A: $164,000 / $5 = 32,800 lbs. That would mean beginning inventory was different or different ending inventory policy. With the given numbers: 30,200 × $5 = $151,000.',
+    explanation: 'Q1 production material needs = 10,000 units × 3 lbs = 30,000 lbs. Q1 desired ending material inventory = 20% × Q2 production needs = 20% × (12,000 × 3) = 7,200 lbs. Q1 material purchases = Production needs + Desired ending - Beginning inventory = 30,000 + 7,200 - 7,000 = 30,200 lbs. Purchase cost = 30,200 lbs × $5/lb = $151,000.',
     reference: 'Direct Materials Purchase Budget',
   },
   {
@@ -628,13 +628,13 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A product requires a standard mix of: Material X: 6 lbs at $4/lb; Material Y: 4 lbs at $7/lb for 10 lbs input yielding 9 lbs output. Actual: 6,500 lbs of X and 4,200 lbs of Y used to produce 9,400 lbs output. What is the total material mix variance?',
     options: [
-      '$600 Unfavorable',
+      '$240 Favorable',
       '$600 Favorable',
       '$1,200 Unfavorable',
       '$300 Unfavorable'
     ],
     correctAnswer: 0,
-    explanation: 'Total actual input = 6,500 + 4,200 = 10,700 lbs. Standard mix: X = 60%, Y = 40%. At standard mix: X should be 10,700 × 60% = 6,420 lbs; Y should be 10,700 × 40% = 4,280 lbs. Actual: X = 6,500 (80 more); Y = 4,200 (80 less). Mix variance = (Actual qty - Std mix qty) × (Individual price - Weighted avg price). Weighted avg = (6×$4 + 4×$7)/10 = $52/10 = $5.20. X variance = (6,500 - 6,420) × ($4 - $5.20) = 80 × (-$1.20) = -$96 (F). Y variance = (4,200 - 4,280) × ($7 - $5.20) = (-80) × $1.80 = -$144 (F). Hmm, both favorable. Total mix = -$240 (F). Let me re-examine: actually, using more of cheaper X and less of expensive Y should be favorable. $600 U could arise from a different calculation method.',
+    explanation: 'Total actual input = 6,500 + 4,200 = 10,700 lbs. Standard mix: X = 60%, Y = 40%. At standard mix for 10,700 lbs: X should be 6,420 lbs; Y should be 4,280 lbs. Mix variance per input = (Actual qty - Standard mix qty) × Standard price. X: (6,500 - 6,420) × $4 = $320 U. Y: (4,200 - 4,280) × $7 = $560 F. Net mix variance = $320 U - $560 F = $240 Favorable. Using more of cheaper Material X and less of expensive Material Y produced a favorable mix variance.',
     reference: 'Material Mix and Yield Variances',
   },
   {
@@ -748,13 +748,13 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Standard: 3 DLH per unit at $22/hr. Actual: 9,800 units produced, 30,100 DLH at $23.50/hr total cost $707,350. What are the labor rate and efficiency variances?',
     options: [
-      'Rate $45,150 U; Efficiency $13,200 U',
-      'Rate $45,150 U; Efficiency $13,200 F',
+      'Rate $45,150 U; Efficiency $15,400 U',
+      'Rate $45,150 U; Efficiency $15,400 F',
       'Rate $14,700 U; Efficiency $45,150 U',
       'Rate $30,100 U; Efficiency $22,000 U'
     ],
     correctAnswer: 0,
-    explanation: 'Labor rate variance = (Actual rate - Standard rate) × Actual hours = ($23.50 - $22.00) × 30,100 = $1.50 × 30,100 = $45,150 Unfavorable. Standard hours allowed = 9,800 × 3 = 29,400 DLH. Efficiency variance = (Actual hours - Standard hours) × Standard rate = (30,100 - 29,400) × $22 = 700 × $22 = $15,400 U. Hmm, $15,400 doesn\'t match $13,200. Checking: 600 × $22 = $13,200 (which would mean 30,000 actual hours). With 30,100 actual hrs: (30,100 - 29,400) × $22 = $15,400. The formula is exact; the closest matching option pair is A.',
+    explanation: 'Labor rate variance = (Actual rate - Standard rate) × Actual hours = ($23.50 - $22.00) × 30,100 = $1.50 × 30,100 = $45,150 Unfavorable. Standard hours allowed = 9,800 units × 3 DLH = 29,400 DLH. Efficiency variance = (Actual hours - Standard hours) × Standard rate = (30,100 - 29,400) × $22 = 700 × $22 = $15,400 Unfavorable. Workers were paid more than standard ($23.50 vs $22.00) and used more hours than allowed (30,100 vs 29,400), so both variances are unfavorable.',
     reference: 'DL Rate and Efficiency Variances',
   },
 ];

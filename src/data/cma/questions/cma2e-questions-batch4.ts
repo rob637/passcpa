@@ -250,8 +250,8 @@ export const CMA2E_QUESTIONS_BATCH4: Question[] = [
       '$80,000',
       '$90,500',
     ],
-    correctAnswer: 1,
-    explanation: 'Sale of old machine: $25,000. Loss on sale = $40,000 - $25,000 = $15,000. Tax savings from loss = $15,000 × 30% = $4,500. After-tax proceeds = $25,000 + $4,500 = $29,500. Net initial outlay = $120,000 - $29,500 = $90,500. Wait—let me recalculate: After-tax proceeds from old = $25,000 + $4,500 = $29,500. Net outlay = $120,000 - $29,500 = $90,500. Closest answer is $99,500? Re-check: The tax savings come from the book loss. Net cash from selling old = $25,000 + ($40,000 - $25,000) × 0.30 = $25,000 + $4,500 = $29,500. Net initial outlay = $120,000 - $29,500 = $90,500.',
+    correctAnswer: 3,
+    explanation: 'Sale of old machine for $25,000 creates a loss of $40,000 - $25,000 = $15,000. Tax savings from the loss = $15,000 × 30% = $4,500. After-tax proceeds from old machine = $25,000 + $4,500 = $29,500. Net initial outlay = Cost of new machine - After-tax proceeds from old = $120,000 - $29,500 = $90,500. The tax savings from the loss on disposal reduces the effective cost of the replacement.',
     reference: 'Replacement Decision Calculations',
   },
   // ==========================================

@@ -6,4 +6,4 @@ Now, here's the trap... eye-SAH-kah loves to mix up when R-T-O and R-P-O are det
 
 For example, when auditing a hospital... the B-I-A would identify that patient records are critical. The R-T-O might be minutes... meaning records must be available almost immediately after an outage. The R-P-O might be near zero... meaning minimal data loss is acceptable. This drives the recovery strategy... and the resources needed.
 
-The single most important thing to remember? B-I-A identifies impact... and determines R-T-O and R-P-O... before an incident. Get that straight... and you're one step closer to passing the SIS-uh.
+The single most important thing to remember? B-I-A identifies impact... and determines R-T-O and R-P-O... before an incident. Get that straight... and you're one step closer to passing the sissa.

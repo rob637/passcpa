@@ -309,20 +309,27 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     # Step 3: Set Motion Engine to Avatar III
     logger.info("[STEP 3] Setting Motion Engine to Avatar III...")
     coords = load_coords()
-    # Try clicking motion engine multiple ways
+    
+    # First, we need to scroll down in the avatar panel to see Motion Engine
+    # Click somewhere in the avatar panel area first
     x, y = coords.get("motion_engine", COORDS.get("motion_engine"))
+    logger.info(f"  Motion engine coords: ({x}, {y})")
+    
+    # Scroll down in the panel to ensure Motion Engine is visible
+    pyautogui.click(x, y - 100)  # Click above motion engine to focus panel
+    time.sleep(0.3)
+    pyautogui.scroll(-3)  # Scroll down a bit
+    time.sleep(0.5)
+    
+    # Now click the motion engine dropdown
     logger.info(f"  Clicking motion_engine at ({x}, {y})")
     pyautogui.click(x, y)
-    time.sleep(0.5)
-    pyautogui.click(x, y)  # Click again to ensure
     time.sleep(1)
     
-    # Try keyboard navigation: Arrow down to find Avatar III, then Enter
-    pyautogui.press('down')
-    time.sleep(0.2)
-    pyautogui.press('down')
-    time.sleep(0.2)
-    pyautogui.press('enter')
+    # Click Avatar III option directly
+    x3, y3 = coords.get("avatar_iii", COORDS.get("avatar_iii"))
+    logger.info(f"  Clicking avatar_iii at ({x3}, {y3})")
+    pyautogui.click(x3, y3)
     time.sleep(1)
     
     # Step 4: Set background
@@ -335,7 +342,15 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
         
         # Get background coordinate key
         bg_coord_key = BACKGROUND_COORDS.get(background_name, "bg_row1_col1")
-        logger.info(f"  Selecting background using coord: {bg_coord_key}")
+        logger.info(f"  Background file: {background_name}")
+        logger.info(f"  Mapped to coord key: {bg_coord_key}")
+        
+        # Get actual coordinates
+        coord = coords.get(bg_coord_key) or COORDS.get(bg_coord_key)
+        if coord:
+            logger.info(f"  Coordinates: {coord}")
+        else:
+            logger.error(f"  ERROR: No coordinates for {bg_coord_key}!")
         
         # Double-click the specific background
         click(bg_coord_key, double=True)

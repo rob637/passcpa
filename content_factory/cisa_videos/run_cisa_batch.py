@@ -24,7 +24,7 @@ from datetime import datetime
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-HEYGEN_SCRIPT = SCRIPT_DIR.parent / "heygen_automation_v2.py"
+HEYGEN_SCRIPT = SCRIPT_DIR / "heygen_automation_v2.py"
 OUTPUT_DIR = SCRIPT_DIR / "output"
 LOG_DIR = SCRIPT_DIR / "logs"
 STATUS_FILE = SCRIPT_DIR / "batch_status.json"

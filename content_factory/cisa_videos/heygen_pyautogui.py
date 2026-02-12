@@ -495,7 +495,7 @@ def run_batch(limit=None):
         
         # Create the video using pyautogui
         create_video(
-            title=video['topic'],
+            title=f"{video['num']} - {video['topic']}",
             script_text=script_text,
             avatar_name=video['avatar_id'],
             avatar_look=video.get('avatar_look'),
@@ -548,7 +548,7 @@ def test_single(count=1):
         
         # Create video
         create_video(
-            title=video['topic'],
+            title=f"{video['num']} - {video['topic']}",
             script_text=script_text,
             avatar_name=video['avatar_id'],
             avatar_look=video.get('avatar_look'),

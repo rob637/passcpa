@@ -1,9 +1,9 @@
 Hey future CISAs! Knowing the audit evidence hierarchy. is CRUCIAL for passing the exam. Trust me.
 
-What is the audit evidence hierarchy? Simply put, it's a ranking of evidence types based on reliability. Auditors care… because reliable evidence leads to stronger audit conclusions, reducing risk and ensuring compliance. It's the bedrock of a solid audit opinion.
+What is the audit evidence hierarchy? Simply put, it's a ranking of evidence types based on reliability. Auditors care... because reliable evidence leads to stronger audit conclusions, reducing risk and ensuring compliance. It's the bedrock of a solid audit opinion.
 
-Now, here’s the exam trap. eye-SAH-kah loves to present scenarios where multiple evidence types seem valid. The trap is. focusing solely on the volume of evidence. They might give you a scenario with tons of documentary evidence. The correct answer is. always prioritize evidence obtained directly by the auditor, over indirect or third-party evidence. Think: personal observation, re-performance, and recalculation… These are usually at the top of the hierarchy.
+Now, here’s the exam trap. eye-SAH-kah loves to present scenarios where multiple evidence types seem valid. The trap is. focusing solely on the volume of evidence. They might give you a scenario with tons of documentary evidence. The correct answer is. always prioritize evidence obtained directly by the auditor, over indirect or third-party evidence. Think: personal observation, re-performance, and recalculation... These are usually at the top of the hierarchy.
 
-For example, when auditing access controls, reviewing logs (documentary evidence) is good… but re-performing the access control testing yourself (direct evidence) provides far more reliable insight into its effectiveness. You're seeing it work. or not. firsthand.
+For example, when auditing access controls, reviewing logs (documentary evidence) is good... but re-performing the access control testing yourself (direct evidence) provides far more reliable insight into its effectiveness. You're seeing it work. or not. firsthand.
 
 So, remember this: Direct, firsthand evidence is generally the MOST reliable. Master this, and you're one step closer to sisa success! You got this!

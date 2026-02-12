@@ -123,12 +123,15 @@ def calibrate_quick():
         print("Move mouse there now! 5 seconds...")
         
         for i in range(5, 0, -1):
-            print(f"  {i}...", end=" ", flush=True)
+            x, y = pyautogui.position()
+            print(f"  {i}... (cursor at {x}, {y})", flush=True)
             time.sleep(1)
         
         x, y = pyautogui.position()
+        if x < 0:
+            print(f"  WARNING: X is negative ({x})! Mouse is on LEFT monitor. Try again.")
         results[key] = [x, y]
-        print(f"\n  ✓ Saved: {key} = ({x}, {y})")
+        print(f"  ✓ Saved: {key} = ({x}, {y})")
     
     with open("coords.json", "w") as f:
         json.dump(results, f, indent=2)

@@ -25,6 +25,7 @@ import {
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
 import { isFounderPricingActive, founderDaysRemaining } from '../../../services/subscription';
 import { DemoQuestion } from '../../common/DemoQuestion';
+import { useAuth } from '../../../hooks/useAuth';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -621,6 +622,7 @@ interface PricingSectionProps {
 const PricingSection = ({ config, colors }: PricingSectionProps) => {
   const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const { user } = useAuth();
   
   // Founder pricing — single source of truth in subscription.ts
   const isFounderWindow = isFounderPricingActive();
@@ -649,8 +651,12 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
 
   const handleCheckout = async () => {
     setIsCheckingOut(true);
-    // Navigate to register with checkout params - actual checkout happens after auth
-    window.location.href = `/register?course=${config.id}&redirect=checkout&interval=${billingInterval}`;
+    // Logged-in users go directly to checkout, others to registration
+    if (user) {
+      window.location.href = `/start-checkout?course=${config.id}&interval=${billingInterval}`;
+    } else {
+      window.location.href = `/register?course=${config.id}&redirect=checkout&interval=${billingInterval}`;
+    }
   };
 
   return (

@@ -12,6 +12,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSubscription, isFounderPricingActive, EXAM_PRICING } from '../../services/subscription';
 import { useCourse } from '../../providers/CourseProvider';
+import { useAuth } from '../../hooks/useAuth';
 import { Lock, Clock, Sparkles, ArrowRight } from 'lucide-react';
 
 interface SubscriptionGateProps {
@@ -29,6 +30,7 @@ export function SubscriptionGate({
 }: SubscriptionGateProps) {
   const { hasFullAccess, trialDaysRemaining, trialExpired, loading, subscribedCourseId, isPremium } = useSubscription();
   const { courseId, course } = useCourse();
+  const { user } = useAuth();
 
   // Show loading state
   if (loading) {
@@ -54,7 +56,10 @@ export function SubscriptionGate({
   const displayPrice = isFounder ? pricing.founderAnnual : pricing.annual;
   const originalPrice = pricing.annual;
 
-  const upgradeUrl = `/${courseId}?scroll=pricing`;
+  // Logged-in users go directly to checkout, others see landing page pricing
+  const upgradeUrl = user 
+    ? `/start-checkout?course=${courseId}&interval=annual`
+    : `/${courseId}?scroll=pricing`;
 
   if (inline) {
     // Inline banner style

@@ -29,7 +29,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Quick ratio = (Current Assets - Inventory) / Current Liabilities = ($500,000 - $150,000) / $250,000 = $350,000 / $250,000 = 1.4. The quick ratio excludes inventory because it may not be quickly convertible to cash.',
     reference: 'Financial Statement Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ba-002',
@@ -51,7 +50,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ROA = Net Income / Average Total Assets = $120,000 / $1,000,000 = 12%. ROA measures how efficiently a company uses its assets to generate profit.',
     reference: 'Profitability Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ba-003',
@@ -73,7 +71,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'TIE = EBIT / Interest Expense = $200,000 / $50,000 = 4.0. Depreciation is not added back for TIE (unlike EBITDA coverage). TIE measures ability to meet interest obligations from operating earnings.',
     reference: 'Leverage Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ba-004',
@@ -95,7 +92,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'PV = Annual Cash Flow × PV Annuity Factor = $10,000 × 3.791 = $37,910. DCF analysis discounts future cash flows to their present value using the appropriate discount rate.',
     reference: 'Time Value of Money',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ba-005',
@@ -117,7 +113,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'WACC = (D/V × Rd × (1-T)) + (E/V × Re). Total value = $400,000 + $600,000 = $1,000,000. Debt weight = 40%, Equity weight = 60%. After-tax cost of debt = 6% × (1 - 0.25) = 4.5%. WACC = (0.4 × 4.5%) + (0.6 × 12%) = 1.8% + 7.2% = 9.0%.',
     reference: 'Cost of Capital',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ba-006',
@@ -139,7 +134,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Labor Efficiency Variance = (Standard Hours - Actual Hours) × Standard Rate. Standard hours for actual output = 1,100 × 2 = 2,200 hours. Variance = (2,200 - 2,100) × $15 = 100 × $15 = $1,500 Favorable (used fewer hours than standard).',
     reference: 'Variance Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ba-007',
@@ -161,7 +155,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Flexible budgets adjust budgeted amounts based on actual activity levels, enabling meaningful variance analysis. A static budget is based on one assumed level and becomes less useful when actual activity differs significantly.',
     reference: 'Flexible Budgeting',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-ba-008',
@@ -183,7 +176,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Movement along a demand curve due to price changes is a "change in quantity demanded." A "shift in demand" occurs when non-price factors (income, preferences, etc.) change the entire demand curve.',
     reference: 'Microeconomics Fundamentals',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -210,7 +202,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ASC 606 requires revenue recognition when (or as) control transfers to the customer. The five steps: identify contract, identify performance obligations, determine transaction price, allocate price, recognize when control transfers.',
     reference: 'ASC 606-10-25',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-ta-002',
@@ -232,7 +223,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Variable consideration is estimated (expected value or most likely amount) and included in the transaction price only to the extent it is probable that a significant revenue reversal will not occur (constraint).',
     reference: 'ASC 606-10-32',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ta-003',
@@ -254,7 +244,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ASC 842 finance lease criteria: (1) ownership transfers, (2) purchase option reasonably certain, (3) lease term is major part (≥75%) of useful life, (4) PV of payments is substantially all (≥90%) of fair value, (5) specialized asset.',
     reference: 'ASC 842-10-25',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-ta-004',
@@ -276,7 +265,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'The ROU asset includes: lease liability amount, payments before commencement, initial direct costs, minus lease incentives received. Variable payments based on usage (not index/rate) are expensed as incurred.',
     reference: 'ASC 842-20-30',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ta-005',
@@ -298,7 +286,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Acquisition-related costs (finder\'s fees, advisory, legal, accounting, valuation, other professional fees) are expensed in the period incurred under ASC 805. They are NOT part of the consideration transferred.',
     reference: 'ASC 805-10-25',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-ta-006',
@@ -320,7 +307,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Under ASC 350, goodwill is NOT amortized. Instead, it is tested for impairment at least annually at the reporting unit level. If fair value < carrying amount, impairment is recognized.',
     reference: 'ASC 350-20-35',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -347,7 +333,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Governmental funds (General, Special Revenue, Capital Projects, Debt Service, Permanent) use modified accrual basis: revenues recognized when measurable and available; expenditures recognized when liability is incurred.',
     reference: 'GASB Statement 34',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-base-gov-002',
@@ -369,7 +354,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Enterprise Funds account for business-type activities that charge fees to external users (utilities, airports, transit). Internal Service Funds charge other government departments. Both are proprietary funds using full accrual.',
     reference: 'GASB Fund Classifications',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-base-gov-003',
@@ -391,7 +375,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Encumbrances reserve budget authority for commitments. Entry: Debit Encumbrances, Credit Reserve for Encumbrances. When goods arrive, reverse the encumbrance and record the actual expenditure.',
     reference: 'Governmental Budgetary Accounting',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-base-gov-004',
@@ -413,7 +396,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Government-wide financial statements (Statement of Net Position, Statement of Activities) use full accrual basis, similar to commercial enterprises, to show the government\'s overall financial position.',
     reference: 'GASB Statement 34',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -440,7 +422,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Control Environment is the foundation that sets the organization\'s tone regarding integrity, ethical values, and competence. It includes board oversight, management philosophy, and organizational structure.',
     reference: 'COSO Framework 2013',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-cg-002',
@@ -462,7 +443,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Risk appetite is the amount and type of risk an organization is willing to accept in pursuit of its objectives. Risk tolerance is the acceptable variation in outcomes related to specific performance measures.',
     reference: 'COSO ERM Framework',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-cap-001',
@@ -484,7 +464,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'NPV is preferred for mutually exclusive projects because it measures absolute dollar value created. IRR can mislead when comparing projects of different sizes since a small project can have higher IRR but lower total value.',
     reference: 'Capital Budgeting Decisions',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
 
   // ==========================================
@@ -512,7 +491,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Breakeven units = Fixed Costs / Contribution Margin per Unit = $100,000 / ($50 - $30) = $100,000 / $20 = 5,000 units. At 5,000 units, total revenue equals total costs.',
     reference: 'Cost-Volume-Profit Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cvp-002',
@@ -534,7 +512,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Units for target profit = (Fixed Costs + Target Profit) / Contribution Margin = ($100,000 + $60,000) / $20 = 8,000 units.',
     reference: 'Cost-Volume-Profit Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cvp-003',
@@ -556,7 +533,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Margin of Safety % = (Budgeted Sales - Breakeven Sales) / Budgeted Sales = (8,000 - 5,000) / 8,000 = 37.5%. This represents how much sales can drop before the company incurs a loss.',
     reference: 'Cost-Volume-Profit Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cvp-004',
@@ -578,7 +554,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Degree of Operating Leverage = Contribution Margin / Net Operating Income = $400,000 / $100,000 = 4.0. This means a 10% increase in sales would result in a 40% increase in operating income.',
     reference: 'Operating Leverage',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Business Analysis - Variance Analysis
@@ -602,7 +577,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Materials Price Variance = (Actual Price - Standard Price) × Actual Quantity = ($5.20 - $5.00) × 2,100 = $420 Unfavorable. The actual price exceeded the standard, hence unfavorable.',
     reference: 'Standard Costing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-var-002',
@@ -624,7 +598,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Materials Quantity Variance = (Actual Qty - Standard Qty) × Standard Price = (2,100 - 2,000) × $5.00 = $500 Unfavorable. Standard qty = 1,000 units × 2 lbs = 2,000 lbs. More materials were used than standard.',
     reference: 'Standard Costing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-var-003',
@@ -646,7 +619,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Labor Rate Variance = (Actual Rate - Standard Rate) × Actual Hours = ($21 - $20) × 2,900 = $2,900 Unfavorable.',
     reference: 'Standard Costing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-var-004',
@@ -668,7 +640,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Labor Efficiency Variance = (Actual Hours - Standard Hours) × Standard Rate = (2,900 - 3,000) × $20 = -$2,000 = $2,000 Favorable. Standard hours = 1,000 units × 3 hrs = 3,000 hrs. Fewer hours were used.',
     reference: 'Standard Costing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Technical Accounting - Consolidations
@@ -692,7 +663,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Under ASC 805, the excess of purchase price over fair value of identifiable net assets is recorded as goodwill. Goodwill is not amortized but is tested annually for impairment.',
     reference: 'ASC 805 Business Combinations',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cons-002',
@@ -714,7 +684,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'A bargain purchase (acquisition price < fair value of net assets) results in recognition of a gain in the period of acquisition after reassessing the fair values of all assets acquired and liabilities assumed.',
     reference: 'ASC 805 Business Combinations',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cons-003',
@@ -736,7 +705,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Unrealized intercompany profit = (Selling Price - Cost) × % remaining = ($80,000 - $60,000) × 25% = $5,000. Only the profit in unsold inventory must be eliminated.',
     reference: 'Consolidation Procedures',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
 
   // Technical Accounting - Derivatives & Hedging
@@ -760,7 +728,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'In a fair value hedge, both the derivative gains/losses and the offsetting gains/losses on the hedged item are recognized in current period earnings. This creates earnings offset.',
     reference: 'ASC 815 Derivatives and Hedging',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-deriv-002',
@@ -782,7 +749,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'In a cash flow hedge, the effective portion of gains/losses on the derivative is recorded in OCI and later reclassified to earnings when the hedged transaction affects earnings.',
     reference: 'ASC 815 Derivatives and Hedging',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
 
   // Technical Accounting - Leases
@@ -806,7 +772,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Transfer of ownership is one of the five criteria for finance lease classification. The 75% of economic life and 90% of fair value thresholds are the actual thresholds (not 50% or 85%).',
     reference: 'ASC 842 Leases',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-lease-002',
@@ -828,7 +793,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Under ASC 842, operating leases for lessees result in straight-line lease expense over the lease term, even though the actual cash payments may vary.',
     reference: 'ASC 842 Leases',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-lease-003',
@@ -850,7 +814,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Finance leases result in two expense components: amortization of the right-of-use asset (typically straight-line) plus interest expense on the lease liability (front-loaded). This creates higher total expense in early years.',
     reference: 'ASC 842 Leases',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // State & Local Government - Fund Accounting
@@ -874,7 +837,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Enterprise Funds account for activities that provide goods or services to the general public for a fee. Water utilities, airports, and parking facilities are common examples.',
     reference: 'GASB Fund Types',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
 
   // Additional Business Analysis Questions
@@ -898,7 +860,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Cash Conversion Cycle = Days Inventory + Days Receivables - Days Payables = (365/8) + (365/12) - (365/10) = 45.63 + 30.42 - 36.50 = 39.55 ≈ 40.62 days.',
     reference: 'Working Capital Management',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-fm-002',
@@ -920,7 +881,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'WACC = (E/V × Re) + (D/V × Rd × (1-T)) = (0.60 × 12%) + (0.40 × 8% × 0.75) = 7.2% + 2.4% = 9.60%.',
     reference: 'Cost of Capital',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-fm-003',
@@ -942,7 +902,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'NPV = (Annual Cash Flow × PV Annuity Factor) - Initial Investment = ($35,000 × 3.170) - $100,000 = $110,950 - $100,000 = $10,950.',
     reference: 'Capital Budgeting',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-tech-001',
@@ -964,7 +923,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ASC 606\'s five steps are: (1) Identify contract, (2) Identify performance obligations, (3) Determine transaction price, (4) Allocate price to obligations, (5) Recognize revenue when obligations satisfied.',
     reference: 'ASC 606 Revenue Recognition',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-tech-002',
@@ -986,7 +944,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Total compensation = 10,000 options × $8 = $80,000. Recognized over 4-year vesting period = $80,000 / 4 = $20,000 per year.',
     reference: 'ASC 718 Stock Compensation',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -1014,7 +971,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Descriptive analytics summarizes historical data to answer "what happened." Diagnostic explains "why," predictive forecasts "what will happen," and prescriptive recommends "what should we do."',
     reference: 'Data Analytics Framework',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-da-002',
@@ -1036,7 +992,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'R-squared (coefficient of determination) measures the proportion of variance in the dependent variable explained by the independent variables. 0.85 means 85% of variation is explained.',
     reference: 'Regression Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-da-003',
@@ -1058,7 +1013,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Pie charts display parts of a whole as percentages. Line charts show trends over time, scatter plots show relationships between variables, and histograms show frequency distributions.',
     reference: 'Data Visualization',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-da-004',
@@ -1080,7 +1034,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Data quality dimensions include accuracy, completeness, timeliness, consistency, validity, and uniqueness. Complexity is not a quality characteristic; data can be high quality regardless of complexity.',
     reference: 'Data Quality Management',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-da-005',
@@ -1102,7 +1055,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Benford\'s Law predicts the frequency of leading digits in naturally occurring datasets. Deviations from expected frequencies may indicate data manipulation or fraud.',
     reference: 'Benford\'s Law in Auditing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-da-006',
@@ -1124,7 +1076,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Using the empirical rule (68-95-99.7), 99.7% of data falls within 3 standard deviations. Points beyond this are statistical outliers warranting investigation.',
     reference: 'Statistical Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Cost Accounting
@@ -1148,7 +1099,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Cost per setup = $100,000 / 500 = $200 per setup. Product A allocation = 150 setups × $200 = $30,000.',
     reference: 'Activity-Based Costing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cost-b3-002',
@@ -1170,7 +1120,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Rate variance = (Standard rate - Actual rate) × Actual hours = ($25 - $24) × 2,100 = $2,100 Favorable (paid less than standard).',
     reference: 'Standard Cost Variances',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cost-b3-003',
@@ -1192,7 +1141,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Predetermined overhead rate = $300,000 / 20,000 DLH = $15/DLH. Applied overhead for Job 101 = 500 DLH × $15 = $7,500.',
     reference: 'Job Order Costing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cost-b3-004',
@@ -1214,7 +1162,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Under FIFO, equivalent units = Work to complete beginning WIP + Units started and completed + Work on ending WIP. Beginning WIP needs 40% more work (1,000 × 40% = 400). Started and completed = 4,500 - 1,000 = 3,500 units (100% complete). Ending WIP = 1,000 + 5,000 - 4,500 = 1,500 units × 40% = 600 EU. Total EU = 400 + 3,500 + 600 = 4,500. However, the correct answer is 4,100 because the question states beginning is 60% complete, so only 40% remains: 400 + 3,500 + (1,500 × 40%) = 400 + 3,500 + 600 = 4,500. With correct interpretation: 4,100.',
     reference: 'Process Costing FIFO',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-cost-b3-005',
@@ -1236,7 +1183,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'At full capacity, the minimum transfer price equals the market price ($100) because Division A would forgo external sales. The opportunity cost is the contribution margin lost.',
     reference: 'Transfer Pricing',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
 
   // Financial Management
@@ -1260,7 +1206,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'PV of cash flows = $150,000 × PVIFA(10%, 5) = $150,000 × 3.791 = $568,650. Profitability Index = PV / Initial Investment = $568,650 / $500,000 = 1.14.',
     reference: 'Capital Budgeting',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-fm-b3-002',
@@ -1282,7 +1227,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'When IRR > cost of capital, the project generates returns above the required rate, implying positive NPV. Accept projects where IRR exceeds the hurdle rate.',
     reference: 'Internal Rate of Return',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-fm-b3-003',
@@ -1304,7 +1248,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Quick ratio = (Current assets - Inventory) / Current liabilities = ($500,000 - $150,000) / $300,000 = $350,000 / $300,000 = 1.17.',
     reference: 'Liquidity Ratios',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-fm-b3-004',
@@ -1326,7 +1269,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Degree of Operating Leverage = Contribution Margin / Operating Income = $200,000 / $50,000 = 4.0. A 1% change in sales would result in a 4% change in operating income.',
     reference: 'Operating Leverage',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-fm-b3-005',
@@ -1348,7 +1290,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'EVA = Operating Income - (Invested Capital × Cost of Capital) = $2,000,000 - ($10,000,000 × 12%) = $2,000,000 - $1,200,000 = $800,000.',
     reference: 'Economic Value Added',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Valuation
@@ -1372,7 +1313,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Terminal Value = FCF × (1 + g) / (r - g) = $1,000,000 × 1.03 / (0.10 - 0.03) = $1,030,000 / 0.07 = $14,714,286 ≈ $14,285,714.',
     reference: 'Gordon Growth Model',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-val-002',
@@ -1394,7 +1334,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Enterprise Value = 8 × $5,000,000 = $40,000,000. Equity Value = EV - Debt + Cash = $40,000,000 - $10,000,000 + $2,000,000 = $32,000,000.',
     reference: 'Comparable Company Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-val-003',
@@ -1416,7 +1355,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'DLOM reduces value for illiquidity of private company shares. Value = $10,000,000 × (1 - 25%) = $10,000,000 × 0.75 = $7,500,000.',
     reference: 'Valuation Discounts',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Technical Accounting - Additional
@@ -1440,7 +1378,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'When total future cash flows are less than the carrying amount, the debtor recognizes a gain equal to the difference: $1,000,000 - $900,000 = $100,000.',
     reference: 'ASC 470-60 Troubled Debt Restructuring',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-tech-b3-002',
@@ -1462,7 +1399,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Under ASC 410, an ARO is recognized when a legal obligation exists from acquisition, construction, development, or normal operation, and the fair value can be reasonably estimated.',
     reference: 'ASC 410 Asset Retirement Obligations',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-tech-b3-003',
@@ -1484,7 +1420,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Indefinite-lived intangibles are tested by comparing fair value to carrying value. Impairment loss = Carrying value - Fair value = $500,000 - $450,000 = $50,000.',
     reference: 'ASC 350 Intangibles',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -1512,7 +1447,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'The sales budget drives all other budgets. Production is based on sales plus desired ending inventory. Materials, labor, and overhead are based on production. Cash budget integrates all others.',
     reference: 'Master Budget Process',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-budget-002',
@@ -1534,7 +1468,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Flexible budgets adjust for actual activity level, enabling comparison of actual costs to what costs should have been at actual volume. This separates volume variance from spending variance.',
     reference: 'Flexible Budgeting',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-budget-003',
@@ -1556,7 +1489,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ZBB requires justifying all expenditures from scratch each period, not using prior budgets as a baseline. This identifies low-value activities and prioritizes resources but is more time-consuming.',
     reference: 'Zero-Based Budgeting',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-budget-004',
@@ -1578,7 +1510,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Rolling forecasts add a new period as each period ends, maintaining a constant horizon (e.g., always 12 months ahead). This keeps forecasts current versus annual budgets becoming stale.',
     reference: 'Rolling Forecasts',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Performance Measurement
@@ -1602,7 +1533,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'The four BSC perspectives are: Financial, Customer, Internal Business Processes, and Learning & Growth. Legal compliance is not a standard perspective, though some organizations add custom perspectives.',
     reference: 'Balanced Scorecard',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-perf-002',
@@ -1624,7 +1554,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ROI = Operating Income / Average Operating Assets = $400,000 / $2,000,000 = 20%. ROI measures how efficiently a division uses its assets to generate income.',
     reference: 'Return on Investment',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-perf-003',
@@ -1646,7 +1575,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Residual Income = Operating Income - (Operating Assets × Cost of Capital) = $500,000 - ($3,000,000 × 12%) = $500,000 - $360,000 = $140,000. Positive RI means exceeding required return.',
     reference: 'Residual Income',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Risk Management
@@ -1670,7 +1598,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ERM is a holistic, organization-wide approach to identifying, assessing, prioritizing, and managing risks. It goes beyond traditional risk management silos to consider enterprise-wide risk interactions.',
     reference: 'COSO ERM Framework',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-risk-002',
@@ -1692,7 +1619,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Insurance transfers risk to a third party (insurer). Avoidance eliminates the activity. Reduction implements controls. Acceptance retains the risk without action.',
     reference: 'Risk Response Strategies',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-risk-003',
@@ -1714,7 +1640,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Sensitivity analysis shows how changes in key variables (price, volume, costs) affect outcomes (profit, NPV). It identifies which variables have the greatest impact on results.',
     reference: 'Sensitivity Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
 
   // Ratio Analysis
@@ -1738,7 +1663,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Quick ratio = (Current assets - Inventory) / Current liabilities = ($800,000 - $300,000) / $400,000 = $500,000 / $400,000 = 1.25.',
     reference: 'Liquidity Ratios',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ratio-002',
@@ -1760,7 +1684,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Debt-to-Equity = Total Debt / Total Equity = $600,000 / $400,000 = 1.50. A ratio >1 indicates more debt than equity financing.',
     reference: 'Leverage Ratios',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-ratio-003',
@@ -1782,7 +1705,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Asset Turnover = Sales / Average Total Assets = $1,000,000 / $750,000 = 1.33. This measures how efficiently assets generate sales.',
     reference: 'Efficiency Ratios',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
 
   // Additional Technical Accounting
@@ -1806,7 +1728,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'An operating segment is reportable if: revenue ≥10% of combined revenue, OR profit/loss ≥10% of greater of combined profit/loss, OR assets ≥10% of combined assets.',
     reference: 'ASC 280 Segment Reporting',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-tech-b5-002',
@@ -1828,7 +1749,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Related party transactions must be disclosed regardless of whether terms are at market rates. The relationship itself creates potential for non-arm\'s length dealings that users need to evaluate.',
     reference: 'ASC 850 Related Party Disclosures',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-tech-b5-003',
@@ -1850,7 +1770,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'The integral view treats each interim period as part of the annual period. Costs benefiting the full year may be allocated. This differs from the discrete view where each quarter stands alone.',
     reference: 'ASC 270 Interim Reporting',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-tech-b5-004',
@@ -1872,7 +1791,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'The primary beneficiary consolidates a VIE. Primary beneficiary has: (1) power to direct activities most significantly impacting VIE\'s economic performance, AND (2) obligation to absorb losses or right to receive benefits.',
     reference: 'ASC 810-10 Consolidation',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-tech-b5-005',
@@ -1894,7 +1812,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Accounting estimates should consider ranges of outcomes and probabilities, using all relevant information including historical data and forward-looking factors. Single-point estimates may not capture uncertainty.',
     reference: 'ASC 275 Risks and Uncertainties',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-088',
@@ -1916,7 +1833,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'NRV method allocates joint costs based on final sales value minus separable processing costs after split-off. This better matches costs to products\' revenue-generating ability.',
     reference: 'Cost Accounting Standards',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-089',
@@ -1938,7 +1854,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ABC uses multiple cost drivers based on activities, providing more accurate product costs. Traditional costing uses volume-based allocation (DLH, machine hours) which may distort product costs.',
     reference: 'Activity-Based Costing Principles',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-090',
@@ -1960,7 +1875,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Target costing works backward from market: Target Cost = Target Price - Desired Profit. Design and production then work to achieve this cost. Used extensively in competitive markets.',
     reference: 'Target Costing Methodology',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-091',
@@ -1982,7 +1896,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'TOC throughput = Sales revenue - Truly variable costs (typically direct materials only). Labor and overhead are operating expenses. Focus is maximizing throughput through constraints.',
     reference: 'Theory of Constraints - Goldratt',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-092',
@@ -2004,7 +1917,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'R² ranges from 0 to 1 and indicates how well independent variables explain the dependent variable. R²=0.85 means 85% of variance is explained. Higher R² indicates better predictive power.',
     reference: 'Statistical Analysis Principles',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-093',
@@ -2026,7 +1938,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Moving averages smooth random fluctuations in stable data. For trends, use regression or exponential smoothing with trend. For seasonality, use seasonal decomposition methods.',
     reference: 'Forecasting Methods',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-094',
@@ -2048,7 +1959,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Pareto charts display categories in descending order with cumulative percentage line. Based on 80/20 rule - 80% of problems from 20% of causes. Helps prioritize improvement efforts.',
     reference: 'Quality Management Tools',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-095',
@@ -2070,7 +1980,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Decision nodes (squares) use max/min of branches based on objective. Chance nodes (circles) use expected values (probability × payoff). Work backward from end to calculate optimal decisions.',
     reference: 'Decision Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-096',
@@ -2092,7 +2001,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'CCC = Days Inventory Outstanding + Days Sales Outstanding - Days Payables Outstanding. Lower CCC means faster cash generation. Negative CCC (like Amazon) means collecting before paying suppliers.',
     reference: 'Working Capital Analysis',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-097',
@@ -2114,7 +2022,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'With taxes, VL = VU + PV(Tax Shield). Interest is tax-deductible, creating value from debt. Tax shield = TC × D (corporate rate × debt). This explains why firms use leverage.',
     reference: 'M&M Proposition with Taxes',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-098',
@@ -2136,7 +2043,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Residual policy: dividends = earnings - capital needed for positive NPV projects. Prioritizes investment over dividends. Results in variable dividends based on investment opportunities.',
     reference: 'Dividend Policy Theory',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-099',
@@ -2158,7 +2064,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'VaR estimates potential loss at a confidence level (e.g., 95% VaR of $1M = 5% chance of losing more than $1M in the period). Used in risk management and regulatory capital requirements.',
     reference: 'Risk Measurement',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-100',
@@ -2180,7 +2085,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'FCFF = EBIT(1-T) + Depreciation - CapEx - ΔNWC. It represents cash available to all capital providers (debt and equity). FCFE is FCFF less interest(1-T) plus net borrowing.',
     reference: 'DCF Valuation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-101',
@@ -2202,7 +2106,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'EV = Market Cap + Total Debt + Preferred Stock + Minority Interest - Cash. EV represents the total value of the business, useful for comparing firms with different capital structures.',
     reference: 'Valuation Multiples',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-102',
@@ -2224,7 +2127,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Gordon Growth: TV = FCF(1+g)/(r-g). Growth rate g must be less than discount rate r for formula to work. Typically g = long-term GDP growth (2-3%). TV often represents majority of DCF value.',
     reference: 'Terminal Value Calculation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-103',
@@ -2246,7 +2148,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Balanced scorecard has four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth. It links strategy to metrics across these dimensions, not competitor focus.',
     reference: 'Balanced Scorecard - Kaplan & Norton',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-104',
@@ -2268,7 +2169,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Without an external market, marginal (variable) cost transfer pricing leads to optimal company-wide decisions. Full cost may lead to suboptimal decisions. Market price works when external market exists.',
     reference: 'Transfer Pricing Theory',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-105',
@@ -2290,7 +2190,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'EVA = NOPAT - (Invested Capital × WACC). Positive EVA means the firm earns more than its cost of capital. EVA aligns management incentives with shareholder value creation.',
     reference: 'Economic Value Added',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-106',
@@ -2312,7 +2211,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Kaizen costing seeks continuous, incremental improvement during production. Target costing is during design. Together they provide lifecycle cost management from design through production.',
     reference: 'Japanese Cost Management',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-107',
@@ -2334,7 +2232,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Benford\'s Law states leading digits follow a predictable pattern (1 appears ~30%, 2 appears ~17.6%, etc.). Deviations may indicate manipulation. Used in fraud detection and auditing.',
     reference: 'Forensic Data Analytics',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-108',
@@ -2356,7 +2253,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'FIFO equivalent units = work done this period only. Excludes work done in prior period (beginning WIP completion). EU = To complete BWIP + Started & completed + EWIP work this period.',
     reference: 'Process Costing Methods',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-109',
@@ -2378,7 +2274,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'DCL = DOL × DFL = (% change in EPS) / (% change in Sales). Combines operating and financial leverage. Higher DCL means greater earnings volatility for given sales change.',
     reference: 'Leverage Analysis',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-110',
@@ -2400,7 +2295,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Precedent transactions include control premiums paid by acquirers (typically 20-40% over market). This makes transaction multiples higher than trading multiples from comparable company analysis.',
     reference: 'M&A Valuation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-111',
@@ -2422,7 +2316,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Labor efficiency variance = (SH - AH) × SR. Favorable when actual hours < standard hours for production achieved. Indicates efficient use of labor. Unfavorable if more hours used than standard.',
     reference: 'Standard Cost Variances',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-112',
@@ -2444,7 +2337,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Sensitivity analysis varies one input at a time to see impact on output. Scenario analysis changes multiple inputs together. Sensitivity identifies which variables most affect results.',
     reference: 'Financial Modeling Best Practices',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-113',
@@ -2466,7 +2358,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Correlation measures strength of linear relationship (-1 to +1) but does not prove causation. Causation requires experimental evidence or theory. Spurious correlations are common in large datasets.',
     reference: 'Statistical Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-114',
@@ -2488,7 +2379,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Standard deviation quantifies variability around the mean. Higher SD = more spread. Used in risk analysis, quality control, and financial analysis. Square of SD is variance.',
     reference: 'Descriptive Statistics',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-115',
@@ -2510,7 +2400,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Monte Carlo runs thousands of simulations with random inputs to generate probability distributions of outcomes. Shows range of possibilities and their likelihoods. Used in risk analysis and valuation.',
     reference: 'Simulation Techniques',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-116',
@@ -2532,7 +2421,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Normal spoilage (expected in efficient production) is a product cost allocated to good units. Abnormal spoilage (unexpected) is a period cost reported separately as a loss.',
     reference: 'Process Costing',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-117',
@@ -2554,7 +2442,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Learning curve: cumulative average time = 80% of previous when output doubles. First unit 100 hours, 2 units avg 80 hrs, 4 units avg 64 hrs. Used for labor-intensive production costing and bidding.',
     reference: 'Learning Curve Analysis',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-118',
@@ -2576,7 +2463,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Throughput contribution per constraint = (Price - Truly variable costs) / Constraint time. Maximize throughput per constraint unit. Products ranked by this measure to optimize constrained resource.',
     reference: 'Theory of Constraints',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-119',
@@ -2598,7 +2484,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Life cycle costing: R&D, design, production, marketing, distribution, customer service, and disposal. Recognizes that design decisions commit majority of total life cycle costs.',
     reference: 'Strategic Cost Management',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-120',
@@ -2620,7 +2505,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'IRR = discount rate where NPV = 0 (PV of inflows = PV of outflows). Accept if IRR > cost of capital. IRR has limitations with unconventional cash flows and mutually exclusive projects.',
     reference: 'Capital Budgeting',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-121',
@@ -2642,7 +2526,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'MIRR addresses IRR\'s implicit reinvestment assumption. MIRR compounds positive flows at cost of capital (or other rate), discounts negatives at financing rate. More realistic assumption.',
     reference: 'Capital Budgeting Refinements',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-122',
@@ -2664,7 +2547,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'PI = PV of cash inflows / Initial investment. Accept if PI > 1. Useful for capital rationing to rank projects. PI = 1.2 means $1.20 PV per $1 invested.',
     reference: 'Capital Budgeting',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-123',
@@ -2686,7 +2568,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Real options: value of flexibility (option to expand, contract, abandon, defer, switch). Traditional NPV may undervalue projects with significant optionality. Uses option pricing theory.',
     reference: 'Real Options Valuation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-124',
@@ -2708,7 +2589,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Beta measures systematic risk relative to market. Beta 1.5: if market rises 10%, stock expected to rise 15%. Beta < 1 = less volatile. Beta > 1 = more volatile. Beta < 0 = inverse.',
     reference: 'CAPM and Beta',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-125',
@@ -2730,7 +2610,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'CAPM: Rs = Rf + β(Rm - Rf). Required return = risk-free rate + beta times market premium. Assumes only systematic risk is compensated; diversifiable risk is not priced.',
     reference: 'Capital Asset Pricing Model',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-126',
@@ -2752,7 +2631,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Diversification eliminates unsystematic (diversifiable) risk through combining uncorrelated assets. Systematic (market) risk cannot be diversified away. Efficient portfolios hold only systematic risk.',
     reference: 'Portfolio Theory',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-127',
@@ -2774,7 +2652,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'DLOC reduces value for minority positions lacking control (cannot force dividends, liquidation, etc.). Typical discounts 15-40%. Applies when using control-based multiples to value minority stakes.',
     reference: 'Valuation Discounts',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-128',
@@ -2796,7 +2673,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Guideline public company method: identify comparable public companies, calculate multiples (EV/EBITDA, P/E), apply to subject company. Adjust for size, growth, profitability differences.',
     reference: 'Market Approach Valuation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-129',
@@ -2818,7 +2694,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Asset approach values company based on fair value of assets minus liabilities. Best for holding companies, real estate, asset-intensive firms, or liquidation scenarios. May undervalue operating businesses.',
     reference: 'Asset-Based Valuation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-130',
@@ -2840,7 +2715,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Profit center: responsible for revenues and costs (profit). Cost center: costs only. Investment center: profit and invested capital. Revenue center: revenues only.',
     reference: 'Responsibility Centers',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-131',
@@ -2862,7 +2736,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'RI = Operating income - (Required return % × Invested capital). Positive RI = created value above required return. Unlike ROI, RI encourages accepting all positive NPV projects.',
     reference: 'Performance Measurement',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-132',
@@ -2884,7 +2757,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ROI = (Net income/Sales) × (Sales/Assets) = Profit margin × Asset turnover. DuPont analysis. Can improve ROI by increasing margin or turnover or both.',
     reference: 'DuPont Analysis',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-133',
@@ -2906,7 +2778,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'SGR = ROE × (1 - Dividend payout) = ROE × Retention ratio. Maximum growth without external equity or changing leverage/efficiency. Exceeding SGR requires new equity or more debt.',
     reference: 'Financial Planning Models',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-134',
@@ -2928,7 +2799,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Confidence interval interpretation: with repeated sampling, 95% of constructed intervals would contain the true population parameter. Does not mean 95% probability for any single interval.',
     reference: 'Inferential Statistics',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-135',
@@ -2950,7 +2820,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Relevant costs: future costs that differ between alternatives. Sunk costs (already incurred) are irrelevant. Opportunity costs are relevant. Focus on incremental/differential analysis.',
     reference: 'Decision Making',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-136',
@@ -2972,7 +2841,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'With excess capacity, compare purchase price to avoidable (incremental) costs of making. Fixed costs often unavoidable. Also consider qualitative factors: quality, reliability, strategic importance.',
     reference: 'Incremental Analysis',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-137',
@@ -2994,7 +2862,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'After-tax cost of debt = rd × (1 - T). Interest is tax-deductible, reducing effective cost. Used in WACC calculation. Use marginal cost of new debt, not historical rates.',
     reference: 'Cost of Capital',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-138',
@@ -3016,7 +2883,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Gordon growth model: ke = (D1/P0) + g. D1 = next year dividend. Assumes constant dividend growth. Alternative to CAPM for estimating equity cost. Requires stable dividend policy.',
     reference: 'Cost of Capital',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-139',
@@ -3038,7 +2904,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'WACC: discount rate for FCF to firm (FCFF). Reflects blended cost of all capital sources. Use market value weights. After-tax cost of debt. Appropriate for DCF enterprise valuation.',
     reference: 'Valuation Methods',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-140',
@@ -3060,7 +2925,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'R² (coefficient of determination): proportion of variance in dependent variable explained by independent variable(s). R² = 0.85 means 85% of Y variance explained. Remaining 15% unexplained.',
     reference: 'Regression Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-141',
@@ -3082,7 +2946,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Time series components: trend (long-term direction), seasonal (recurring patterns within year), cyclical (business cycle fluctuations), irregular/random (unpredictable noise).',
     reference: 'Time Series Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-142',
@@ -3104,7 +2967,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Moving average: average of n consecutive periods, updated each period. Smooths random fluctuations, reveals trend. Longer periods = more smoothing but more lag. Simple vs weighted vs exponential.',
     reference: 'Forecasting Techniques',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-143',
@@ -3126,7 +2988,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Semi-variable (mixed): fixed base + variable component (e.g., utilities with base charge + usage). Use high-low method or regression to separate. Important for CVP and flexible budgeting.',
     reference: 'Cost Behavior Analysis',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-144',
@@ -3148,7 +3009,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'High-low method: Variable rate = (High cost - Low cost) / (High activity - Low activity). Then Fixed cost = Total cost - (Variable rate × Activity). Simple but uses only two data points.',
     reference: 'Cost Estimation',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-145',
@@ -3170,7 +3030,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Operating leverage: sensitivity of operating income to sales changes. High fixed costs = high leverage = profits change faster than sales. DOL = Contribution margin / Operating income. Risk and reward amplified.',
     reference: 'Operating Leverage',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-146',
@@ -3192,7 +3051,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'EAC: converts NPV to equivalent annual amount. Useful for comparing projects with different lives (machine replacement). EAC = NPV / PV annuity factor. Lower EAC preferred for costs.',
     reference: 'Capital Budgeting',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-147',
@@ -3214,7 +3072,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Terminal value: value at end of explicit forecast period. Often 50-80% of total DCF value. Calculate using Gordon growth (perpetuity) or exit multiple. Critical assumption requiring sensitivity analysis.',
     reference: 'DCF Valuation',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-148',
@@ -3236,7 +3093,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'VaR: maximum loss expected at confidence level (e.g., 95% VaR = 5% chance of losing more than VaR amount). Used in financial risk management. Does not indicate loss beyond VaR.',
     reference: 'Risk Management',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-149',
@@ -3258,7 +3114,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Duration: weighted average time to receive cash flows. Also measures price sensitivity to interest rates. Higher duration = more sensitive. Modified duration estimates % price change for 1% rate change.',
     reference: 'Fixed Income Risk',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-150',
@@ -3280,7 +3135,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'KPI criteria: specific, measurable, achievable, relevant, time-bound (SMART). Balance leading/lagging indicators. Align with strategy. Mix of financial and operational. Regular review and update.',
     reference: 'Performance Management',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-151',
@@ -3302,7 +3156,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'External benchmarking: compare to peers, competitors, best practices. Identifies performance gaps and improvement opportunities. Types: competitive, functional, generic. Complement to internal analysis.',
     reference: 'Benchmarking',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-152',
@@ -3324,7 +3177,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Outliers: unusually extreme values. Detection methods: >1.5× IQR beyond quartiles, >3 standard deviations from mean, visual inspection. May indicate errors, fraud, or genuine unusual events.',
     reference: 'Data Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-153',
@@ -3346,7 +3198,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Segment margin: revenue - variable costs - traceable (direct) fixed costs. Does not include common costs allocated to segments. Better for segment evaluation than fully allocated profit.',
     reference: 'Segment Analysis',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-154',
@@ -3368,7 +3219,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'D/E ratio: Total debt / Total equity. Higher ratio = more leveraged = more financial risk. Varies by industry. Related ratios: debt ratio (debt/assets), equity multiplier (assets/equity).',
     reference: 'Financial Ratios',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-155',
@@ -3390,7 +3240,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'EV/EBITDA: capital structure neutral (compares enterprise to pre-financing earnings). Removes depreciation differences. Better for comparing companies with different leverage or D&A policies.',
     reference: 'Valuation Multiples',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-156',
@@ -3412,7 +3261,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'FCFF: cash available to all capital providers. Start with NOPAT (EBIT(1-T)), add back non-cash (D&A), subtract investments (CapEx, NWC increases). Discount at WACC for enterprise value.',
     reference: 'Free Cash Flow',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-157',
@@ -3434,7 +3282,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Flexible budget: adjusts for actual volume. Enables meaningful variance analysis (separate volume and spending variances). Budget formula: Fixed + (Variable rate × Actual activity).',
     reference: 'Flexible Budgeting',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-158',
@@ -3456,7 +3303,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'FIFO: beginning WIP costs stay with beginning units. Current costs apply only to current period work. Provides better current period cost information. More complex than weighted average.',
     reference: 'Process Costing',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-159',
@@ -3478,7 +3324,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Scatter plot: shows relationship (correlation) between two variables. Each point represents one observation. Reveals patterns, clusters, outliers, and direction/strength of relationship.',
     reference: 'Data Visualization',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-160',
@@ -3500,7 +3345,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Receiving FC: risk is FC depreciation. Hedge by selling FC forward (locks rate) or buying put (floor price with upside). Natural hedge if also have FC payables. Evaluate cost vs benefit.',
     reference: 'FX Risk Management',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-161',
@@ -3522,7 +3366,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'CCC = DIO + DSO - DPO. Days to convert inventory to cash after paying suppliers. Lower CCC = faster cash cycle. Negative CCC means paid by customers before paying suppliers.',
     reference: 'Working Capital Management',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-162',
@@ -3544,7 +3387,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Allocation base: should reflect cause-and-effect relationship with cost. Traditional: DLH, DL$, machine hours. ABC uses multiple drivers. Better bases lead to more accurate product costs.',
     reference: 'Cost Allocation',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   // Batch 13 - Additional BAR Questions
   {
@@ -3567,7 +3409,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Sustainable growth = ROE x (1 - dividend payout ratio) = ROE x retention ratio. Maximum growth without increasing leverage or issuing equity.',
     reference: 'Growth Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-164',
@@ -3589,7 +3430,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'EVA = NOPAT - (Invested Capital x WACC). Measures value created above cost of capital. Positive EVA creates shareholder value.',
     reference: 'Value-Based Management',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-165',
@@ -3611,7 +3451,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'P/B = Market price per share / Book value per share. High P/B suggests market expects growth or has intangibles not on balance sheet.',
     reference: 'Market Ratios',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-166',
@@ -3633,7 +3472,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Correlation indicates relationship strength and direction but not causation. Confounding variables may exist.',
     reference: 'Statistical Analysis',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-167',
@@ -3655,7 +3493,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Frequentist interpretation: 95% of similarly constructed intervals would contain true parameter. NOT 95% probability for specific interval.',
     reference: 'Statistical Inference',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-168',
@@ -3677,7 +3514,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Heat maps visualize magnitude using color intensity. Useful for correlation matrices, risk assessments, large data tables.',
     reference: 'Data Visualization',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-169',
@@ -3699,7 +3535,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Sales value at split-off: allocate joint costs proportionally to sales value at split-off point. Simple, objective.',
     reference: 'Joint Cost Allocation',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-170',
@@ -3721,7 +3556,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Normal spoilage: inherent in production, included in cost of good output. Abnormal spoilage: charged to loss account.',
     reference: 'Spoilage Accounting',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-171',
@@ -3743,7 +3577,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Transfer price objectives: goal congruence, motivation, autonomy preservation, fair performance evaluation. Methods: market, cost-plus, negotiated.',
     reference: 'Transfer Pricing',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-172',
@@ -3765,7 +3598,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Rolling budget: always covers fixed future period. When one month ends, add new month. More current than static annual budget.',
     reference: 'Budgeting Methods',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-173',
@@ -3787,7 +3619,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Participative/bottom-up budgeting: subordinates help develop budgets. Benefits: better information, increased buy-in, motivation.',
     reference: 'Budgeting Process',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-174',
@@ -3809,7 +3640,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Capital rationing: limited funds. Rank by PI (NPV/Investment) or NPV per constrained dollar. Maximize total NPV within budget.',
     reference: 'Capital Budgeting',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-175',
@@ -3831,7 +3661,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Quality earnings: CFO > NI, recurring vs one-time, conservative accounting, transparent disclosures.',
     reference: 'Earnings Quality',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-176',
@@ -3853,7 +3682,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Horizontal analysis: compare over time (year-over-year changes). Calculate dollar change and percent change. Identify trends.',
     reference: 'Financial Statement Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-177',
@@ -3875,7 +3703,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'OLS assumptions: linearity, independence, homoscedasticity (constant variance), normality of residuals, no perfect multicollinearity.',
     reference: 'Regression Analysis',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-178',
@@ -3897,7 +3724,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'P-value: probability of observing result at least as extreme, assuming null hypothesis true. Lower p-value = stronger evidence against null.',
     reference: 'Hypothesis Testing',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-179',
@@ -3919,7 +3745,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'TOC throughput = Sales - Totally Variable Costs. Focus on bottleneck optimization. Different from contribution margin.',
     reference: 'Theory of Constraints',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-180',
@@ -3941,7 +3766,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Backflush: delay recording costs until completion. Appropriate for JIT (minimal WIP, short cycle). Simplifies accounting.',
     reference: 'JIT and Lean Accounting',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-181',
@@ -3963,7 +3787,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Sensitivity: vary one input, hold others constant, observe output change. Identify key drivers. Scenario analysis changes multiple.',
     reference: 'Risk Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-182',
@@ -3985,7 +3808,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Decision trees: map sequential decisions and chance events. Calculate expected value at each node. Work backward from endpoints.',
     reference: 'Decision Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-183',
@@ -4007,7 +3829,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Data quality: accuracy, completeness, consistency, timeliness, validity. Poor data quality leads to poor decisions.',
     reference: 'Data Governance',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-184',
@@ -4029,7 +3850,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'ETL: Extract (pull from sources), Transform (clean, standardize), Load (into data warehouse). Critical for data integration.',
     reference: 'Data Management',
     blueprintArea: 'BAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-185',
@@ -4051,7 +3871,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Aggressive: low current assets, more ST financing. Higher returns but higher risk. Conservative: opposite.',
     reference: 'Working Capital Policy',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'bar-186',
@@ -4073,7 +3892,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Operating CF: cash from core business. Key indicator of sustainability. Compare to net income for quality of earnings.',
     reference: 'Cash Flow Analysis',
     blueprintArea: 'BAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-187',
@@ -4095,7 +3913,6 @@ export const BAR_QUESTIONS: Question[] = [
     explanation: 'Life cycle costing: R&D, design, manufacturing, distribution, customer service, disposal. Total cost of ownership perspective.',
     reference: 'Strategic Cost Management',
     blueprintArea: 'BAR-II',
-    skillLevel: 'Analysis',
   },
 
 ];

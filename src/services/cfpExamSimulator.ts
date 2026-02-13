@@ -569,9 +569,9 @@ export function getQuestionStatus(
  * Check if break is available
  */
 export function isBreakAvailable(state: ExamState): boolean {
-  const currentQ = state.currentQuestionIndex + 1;
+  const currentSubsection = Math.floor(state.currentQuestionIndex / CFP_EXAM_CONFIG.questionsPerSubsection) + 1;
   return (
-    currentQ >= CFP_EXAM_CONFIG.breakAfterQuestion &&
+    currentSubsection >= CFP_EXAM_CONFIG.breakAfterSubsection &&
     state.breaksTaken === 0 &&
     state.status === 'in-progress'
   );

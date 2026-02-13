@@ -30,7 +30,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'SQMS 1 includes a specific component for "Acceptance and Continuance of Client Relationships and Specific Engagements" which requires firms to establish policies and procedures for evaluating prospective clients and engagements.',
     reference: 'SQMS 1.30-.33',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-gap-vii-002',
@@ -53,7 +52,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'An engagement quality review is required for all audit engagements of public entities (issuers). For non-issuers, the firm determines criteria based on its risk assessment.',
     reference: 'SQMS 2, AS 1220',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-003',
@@ -76,7 +74,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SQMS 1 requires firms to investigate identified deficiencies, evaluate root causes, design and implement remedial actions, and evaluate whether similar deficiencies exist or could occur elsewhere.',
     reference: 'SQMS 1.49-.51',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-gap-vii-004',
@@ -99,7 +96,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The Professional Ethics Executive Committee (PEEC) is responsible for investigating potential ethics violations, issuing ethics interpretations, and recommending disciplinary actions against members.',
     reference: 'AICPA Bylaws Section 7',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-005',
@@ -122,7 +118,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Under AICPA Bylaws Section 7.3, automatic expulsion occurs when a member is convicted of a crime punishable by imprisonment for more than one year, including tax fraud, embezzlement, or other financial crimes.',
     reference: 'AICPA Bylaws Section 7.3',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-006',
@@ -145,7 +140,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Firms enrolled in the AICPA Peer Review Program that perform audit, review, or certain attestation engagements must have a peer review at least once every three years.',
     reference: 'AICPA Peer Review Standards',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-007',
@@ -168,7 +162,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Firms performing only compilation engagements undergo an Engagement Review. Firms performing audits, reviews, or examinations undergo a System Review which evaluates the firm\'s system of quality control.',
     reference: 'AICPA Peer Review Standards',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-gap-vii-008',
@@ -191,7 +184,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Under the Joint Ethics Enforcement Program, the AICPA can impose discipline based on state board findings without a separate investigation, as long as the state board\'s proceedings provided due process.',
     reference: 'AICPA/State CPA Society Joint Ethics Enforcement Program',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-gap-vii-009',
@@ -214,7 +206,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'The engagement quality review must be completed, and all questions resolved, before the auditor\'s report is dated. This ensures the review is completed before the report is released.',
     reference: 'SQMS 2.27, AS 1220',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-gap-vii-010',
@@ -237,7 +228,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'SEC Rule 102(e) allows denial of practice privileges for lack of qualifications, lack of character or integrity, unethical conduct, or willful violations of securities laws. Suspension for non-payment of dues is not a grounds for SEC sanction.',
     reference: 'SEC Rule 102(e), SOX Section 602',
-    skillLevel: 'Remembering and Understanding',
   },
   // Additional Quality Control questions
   {
@@ -261,7 +251,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SQMS 1 requires firms to have policies for personnel to promptly notify the firm of independence breaches so appropriate action can be taken, including evaluating the significance and impact on engagements.',
     reference: 'SQMS 1.29',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-gap-vii-012',
@@ -284,7 +273,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'AU-C 230 requires audit documentation to be retained for at least 5 years after the report release date. For SEC audits, documentation must be retained for 7 years under PCAOB rules.',
     reference: 'AU-C 230, AS 1215',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-013',
@@ -307,7 +295,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'The PCAOB can impose civil monetary penalties, revoke registration, suspend individuals, and require remedial measures. Criminal prosecution authority rests with the Department of Justice, not the PCAOB.',
     reference: 'SOX Section 105(c)',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-gap-vii-014',
@@ -330,7 +317,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'First-year audits, high-risk industries, and entities of public interest are factors that would typically indicate the need for an engagement quality review under firm policies.',
     reference: 'SQMS 2.25-.26',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-gap-vii-015',
@@ -353,7 +339,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'CPAs may have reporting obligations under state accountancy laws and should consider consulting with legal counsel. The Code encourages ethical behavior but specific reporting requirements vary by jurisdiction.',
     reference: 'AICPA Code of Professional Conduct 1.700',
-    skillLevel: 'Application',
   },
   // Easy questions for AUD-VII
   {
@@ -377,7 +362,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SQMS stands for Statements on Quality Management Standards, issued by the AICPA to establish standards for firms providing audit, review, and attestation services.',
     reference: 'SQMS 1',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-017',
@@ -400,7 +384,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'CPE requirements ensure that CPAs maintain and improve their professional competence, staying current with changes in standards, regulations, and best practices.',
     reference: 'AICPA Code 1.400',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-gap-vii-018',
@@ -423,7 +406,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The engagement partner has overall responsibility for managing and achieving quality on the engagement, including direction and supervision of the engagement team.',
     reference: 'AU-C 220.14',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-019',
@@ -446,7 +428,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Auditors must maintain both independence in fact (actual objectivity) and independence in appearance (others\' perception of objectivity) to serve the public interest.',
     reference: 'AICPA Code ET 1.200',
-    skillLevel: 'Remembering',
   },
   {
     id: 'aud-gap-vii-020',
@@ -469,7 +450,6 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'AU-C 220 requires the engagement partner to direct, supervise, and review the work performed by engagement team members on a timely basis throughout the engagement.',
     reference: 'AU-C 220.16',
-    skillLevel: 'Remembering and Understanding',
   },
 ];
 
@@ -499,7 +479,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'SOC 1 reports are designed for user entities and their auditors to evaluate controls at a service organization that are relevant to user entities\' internal control over financial reporting (ICFR).',
     reference: 'SSAE 18, AT-C 320',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-002',
@@ -522,7 +501,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Type 1 reports cover the description of controls and their suitability of design at a specific point in time. Type 2 reports also include testing of operating effectiveness over a specified period (typically 6-12 months).',
     reference: 'AT-C 320',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-003',
@@ -545,7 +523,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'The five Trust Services Criteria categories are: Security (required), Availability, Processing Integrity, Confidentiality, and Privacy. Auditability is not a TSC category.',
     reference: 'AICPA Trust Services Criteria',
-    skillLevel: 'Remembering',
   },
   {
     id: 'isc-gap-v-004',
@@ -568,7 +545,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The Security criteria address protection against unauthorized access, unauthorized disclosure, and damage that could compromise availability, integrity, confidentiality, and privacy of information.',
     reference: 'TSC CC1.0-CC9.0',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-005',
@@ -591,7 +567,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Under the carve-out method, the service organization\'s description excludes the subservice organization\'s controls. User entities and their auditors must obtain and evaluate a separate report from the subservice organization.',
     reference: 'AT-C 320.A14-.A16',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-gap-v-006',
@@ -614,7 +589,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Under the inclusive method, the service organization includes the subservice organization\'s description and controls in the system description. The service auditor tests both organizations\' relevant controls.',
     reference: 'AT-C 320.A14-.A16',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-007',
@@ -637,7 +611,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'ITGCs typically include: Access to programs and data, Program development, Program change management, and Computer operations. Customer relationship management is a business process, not an ITGC.',
     reference: 'PCAOB AS 2110, COSO',
-    skillLevel: 'Remembering',
   },
   {
     id: 'isc-gap-v-008',
@@ -660,7 +633,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Testing access controls includes reviewing timely removal of terminated employee access, periodic user access reviews, appropriate segregation of duties, and ensuring access is commensurate with job responsibilities.',
     reference: 'COBIT, COSO',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-gap-v-009',
@@ -683,7 +655,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC 3 reports are general use reports that can be freely distributed. They contain the same information as SOC 2 but without detailed descriptions of tests and results, making them suitable for marketing purposes.',
     reference: 'AT-C 205',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-010',
@@ -706,7 +677,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'While emergency changes may occasionally bypass normal processes, they should be subject to subsequent review and documentation. Lack of any review of emergency changes represents a control deficiency.',
     reference: 'COBIT, ITIL',
-    skillLevel: 'Evaluation',
   },
   {
     id: 'isc-gap-v-011',
@@ -729,7 +699,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'CUECs are controls that user entities must implement for the service organization\'s control objectives to be achieved. The service organization\'s controls alone may not be sufficient without these complementary controls.',
     reference: 'AT-C 320',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-012',
@@ -752,7 +721,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Complete testing includes reviewing backup schedules, storage locations (offsite/cloud), retention policies, encryption of backup media, and most importantly, periodic testing of restore procedures.',
     reference: 'COBIT DS11',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-gap-v-013',
@@ -775,7 +743,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'A qualified opinion is issued when management\'s description is not fairly presented in all material respects, or the controls were not suitably designed. Control exceptions result in listing in Section IV but typically not a qualified opinion.',
     reference: 'AT-C 320.A43',
-    skillLevel: 'Evaluation',
   },
   {
     id: 'isc-gap-v-014',
@@ -798,7 +765,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'A key IT segregation of duties is between application development and production migration. Developers should not have the ability to move their own code to production without independent review and approval.',
     reference: 'COSO, COBIT',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-gap-v-015',
@@ -821,7 +787,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC for Cybersecurity examines an entity\'s cybersecurity risk management program at an entity-wide level, evaluating it against descriptive criteria rather than specific controls as in SOC 2.',
     reference: 'AICPA SOC for Cybersecurity',
-    skillLevel: 'Remembering and Understanding',
   },
   // Easy questions for ISC-V
   {
@@ -845,7 +810,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC stands for System and Organization Controls. These reports are examination reports performed by independent CPAs that assess controls at service organizations.',
     reference: 'AICPA SOC Suite of Services',
-    skillLevel: 'Remembering',
   },
   {
     id: 'isc-gap-v-017',
@@ -868,7 +832,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC 1 reports are restricted use reports intended for user entities (customers of the service organization) and their auditors who need to understand and rely on controls at the service organization.',
     reference: 'AT-C 320.08',
-    skillLevel: 'Remembering',
   },
   {
     id: 'isc-gap-v-018',
@@ -891,7 +854,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'ITGCs support the effective operation of application controls. If ITGCs are weak, application controls may not be reliable even if designed correctly.',
     reference: 'COSO, AS 2110',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-019',
@@ -914,7 +876,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Auditors test samples to obtain sufficient appropriate evidence about whether controls operated effectively throughout the audit period. Sample size depends on assessed risk and control frequency.',
     reference: 'AU-C 330, AS 2301',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gap-v-020',
@@ -937,7 +898,6 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC 2 Type 2 reports cover a period of time (typically 6 to 12 months) during which controls are tested for operating effectiveness. Type 1 reports cover a single point in time.',
     reference: 'AT-C 205',
-    skillLevel: 'Remembering',
   },
 ];
 

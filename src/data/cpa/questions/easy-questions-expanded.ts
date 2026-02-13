@@ -31,7 +31,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Relevance and faithful representation are the two fundamental qualitative characteristics. Information is relevant if it can make a difference in decisions. Comparability, timeliness, and understandability are enhancing characteristics.',
     reference: 'FASB Concepts Statement No. 8',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-002',
@@ -54,7 +53,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Equity (or net assets) is defined as the residual interest in the assets of an entity that remains after deducting its liabilities.',
     reference: 'FASB Concepts Statement No. 6',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-003',
@@ -77,7 +75,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Accrual accounting recognizes revenue when it is earned (typically when goods are delivered or services are performed), regardless of when cash is received.',
     reference: 'ASC 606',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // FAR-II: Financial Statement Accounts
@@ -102,7 +99,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'A deposit in transit is a deposit recorded in the company\'s books but not yet shown on the bank statement. It is ADDED to the bank balance to reconcile.',
     reference: 'Bank Reconciliation',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-005',
@@ -125,7 +121,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 3,
     explanation: 'An outstanding check is a check written by the company but not yet cleared by the bank. It is SUBTRACTED from the bank balance to reconcile.',
     reference: 'Bank Reconciliation',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-006',
@@ -148,7 +143,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Writing off a specific account (Dr. Allowance, Cr. A/R) reduces both gross A/R and the allowance. Net A/R remains the same, so total assets are unchanged.',
     reference: 'ASC 310',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-007',
@@ -171,7 +165,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'FIFO (First-In, First-Out) leaves the most recent (highest cost) purchases in ending inventory during rising prices, resulting in the highest ending inventory value.',
     reference: 'ASC 330',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-008',
@@ -194,7 +187,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 0,
     explanation: 'LIFO (Last-In, First-Out) allocates the most recent (highest) costs to COGS, resulting in higher COGS and lower net income during rising prices.',
     reference: 'ASC 330',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-009',
@@ -217,7 +209,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Installation costs are necessary to get the equipment ready for its intended use and are capitalized. Routine maintenance, ongoing insurance, and training are period expenses.',
     reference: 'ASC 360',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-010',
@@ -240,7 +231,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Land has an indefinite useful life and is not depreciated. Land improvements (parking lots, fencing) ARE depreciated.',
     reference: 'ASC 360',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-011',
@@ -263,7 +253,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 0,
     explanation: 'Straight-line depreciation = (Cost - Salvage) / Life = ($50,000 - $5,000) / 9 = $5,000 per year.',
     reference: 'ASC 360',
-    skillLevel: 'Application',
   },
   {
     id: 'far-easy-exp-012',
@@ -286,7 +275,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Under GAAP, goodwill has an indefinite life and is NOT amortized. It is tested for impairment annually or when triggering events occur.',
     reference: 'ASC 350',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-013',
@@ -309,7 +297,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A liability due within one year (or the operating cycle if longer) is classified as a current liability.',
     reference: 'ASC 210',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-014',
@@ -332,7 +319,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Bonds sell at a premium when the stated (coupon) rate exceeds the market rate. Investors pay more for the higher interest payments.',
     reference: 'ASC 470',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-015',
@@ -355,7 +341,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Treasury stock is a company\'s own stock that has been repurchased. It reduces total stockholders\' equity.',
     reference: 'ASC 505',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-016',
@@ -378,7 +363,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'When a cash dividend is declared: Dr. Retained Earnings, Cr. Dividends Payable. This decreases equity and increases liabilities.',
     reference: 'ASC 505',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-017',
@@ -401,7 +385,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A 2-for-1 stock split doubles the number of shares and halves the par value per share. Total equity remains unchanged.',
     reference: 'ASC 505',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // FAR-III: Transactions
@@ -426,7 +409,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'The five steps of ASC 606 are: (1) Identify the contract, (2) Identify performance obligations, (3) Determine transaction price, (4) Allocate price, (5) Recognize revenue.',
     reference: 'ASC 606-10-25',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-019',
@@ -449,7 +431,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Under ASC 842, LESSEES recognize both a right-of-use asset and lease liability for all leases over 12 months. Short-term lease exception available.',
     reference: 'ASC 842',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-020',
@@ -472,7 +453,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A DTL arises when book income > taxable income temporarily (e.g., accelerated tax depreciation). More tax will be paid in the future.',
     reference: 'ASC 740',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // FAR-IV: Government
@@ -497,7 +477,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'The General Fund is a governmental fund type. Other governmental funds include Special Revenue, Capital Projects, Debt Service, and Permanent funds.',
     reference: 'GASB 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-022',
@@ -520,7 +499,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Governmental funds use current financial resources measurement focus and modified accrual accounting. Proprietary funds use economic resources and accrual.',
     reference: 'GASB 34',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // FAR-V: Not-for-Profit
@@ -545,7 +523,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Under ASU 2016-14, NFPs report two classes: net assets WITH donor restrictions and net assets WITHOUT donor restrictions.',
     reference: 'ASC 958-205',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-exp-024',
@@ -568,7 +545,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A purpose restriction limits the use of contributed assets to a specific activity or program (e.g., scholarships, research).',
     reference: 'ASC 958-605',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // ============================================
@@ -596,7 +572,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Independence in appearance means that a reasonable observer would consider the auditor to be independent. Independence in fact means actually being independent mentally.',
     reference: 'AICPA Code of Professional Conduct',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-002',
@@ -619,7 +594,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Under the AICPA Code of Professional Conduct, CPAs have a primary obligation to serve the public interest, which takes precedence over client interests.',
     reference: 'AICPA Code - Public Interest Principle',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-003',
@@ -642,7 +616,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'An audit provides REASONABLE assurance (high but not absolute) that financial statements are free of material misstatement.',
     reference: 'AU-C 200',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-004',
@@ -665,7 +638,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A review provides LIMITED (or moderate) assurance, primarily through inquiry and analytical procedures. Less extensive than an audit.',
     reference: 'AR-C 90',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-005',
@@ -688,7 +660,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 3,
     explanation: 'A compilation provides NO assurance. The accountant merely assists in preparing financial statements without verifying the information.',
     reference: 'AR-C 80',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-006',
@@ -711,7 +682,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Inherent risk is the susceptibility of an assertion to material misstatement, assuming there are no related controls. Some accounts are inherently riskier (e.g., estimates, complex transactions).',
     reference: 'AU-C 200',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-007',
@@ -734,7 +704,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Control risk is the risk that a material misstatement will not be prevented or detected on a timely basis by the entity\'s internal controls.',
     reference: 'AU-C 200',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-008',
@@ -757,7 +726,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Detection risk is the risk that audit procedures will not detect a material misstatement. It is the only component of audit risk that the auditor can directly control.',
     reference: 'AU-C 200',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-009',
@@ -780,7 +748,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A misstatement is material if it could reasonably be expected to influence the economic decisions of users taken on the basis of the financial statements.',
     reference: 'AU-C 320',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-010',
@@ -803,7 +770,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'The five COSO components are: Control Environment, Risk Assessment, Control Activities, Information & Communication, and Monitoring. External audit is not a component.',
     reference: 'COSO Framework',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-011',
@@ -826,7 +792,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'The control environment sets the "tone at the top" - management\'s and the board\'s attitude toward internal control, ethics, and integrity.',
     reference: 'COSO Framework',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-012',
@@ -849,7 +814,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Evidence from external, independent sources (e.g., bank confirmations) is generally more reliable than evidence generated internally.',
     reference: 'AU-C 500',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-013',
@@ -872,7 +836,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 3,
     explanation: 'External confirmation (e.g., bank confirmation, A/R confirmation) provides strong evidence for existence from an independent third party.',
     reference: 'AU-C 500',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-014',
@@ -895,7 +858,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Existence assertion addresses whether assets, liabilities, and equity interests exist as of a given date.',
     reference: 'AU-C 315',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-015',
@@ -918,7 +880,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Completeness assertion addresses whether all transactions and accounts that should be recorded have been recorded.',
     reference: 'AU-C 315',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-016',
@@ -941,7 +902,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Statistical sampling uses probability theory to measure sampling risk mathematically. Both methods can be effective if properly applied.',
     reference: 'AU-C 530',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-017',
@@ -964,7 +924,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'An unmodified (clean) opinion states that the financial statements are fairly presented in all material respects in accordance with the applicable framework.',
     reference: 'AU-C 700',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-018',
@@ -987,7 +946,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A qualified opinion is issued when there is a material misstatement or scope limitation that is NOT pervasive to the financial statements as a whole.',
     reference: 'AU-C 705',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-019',
@@ -1010,7 +968,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'An adverse opinion is issued when misstatements are both material AND pervasive to the financial statements as a whole.',
     reference: 'AU-C 705',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-exp-020',
@@ -1033,7 +990,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A disclaimer is issued when the auditor cannot obtain sufficient appropriate evidence and possible misstatements could be both material and pervasive.',
     reference: 'AU-C 705',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // ============================================
@@ -1061,7 +1017,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Circular 230 regulates practice before the IRS, including CPAs, enrolled agents, and attorneys who prepare tax returns or represent clients.',
     reference: 'Circular 230',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-002',
@@ -1084,7 +1039,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Individual federal income tax returns (Form 1040) are due April 15 following the tax year (or the next business day if April 15 falls on a weekend/holiday).',
     reference: 'IRC §6072',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-003',
@@ -1107,7 +1061,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Form 4868 provides an automatic 6-month extension to FILE (until October 15), but does NOT extend the time to PAY. Taxes are still due April 15.',
     reference: 'IRC §6081',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-004',
@@ -1130,7 +1083,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A valid contract requires: (1) Offer, (2) Acceptance, (3) Consideration, (4) Capacity, and (5) Legality. Writing is NOT always required.',
     reference: 'Contract Law',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-005',
@@ -1153,7 +1105,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'The Statute of Frauds requires certain contracts to be in writing, including contracts for the sale of land. Sale of goods requires writing only if $500 or more.',
     reference: 'Statute of Frauds',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-006',
@@ -1176,7 +1127,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'A principal is bound by acts within the agent\'s express authority (stated), implied authority (reasonably necessary), and apparent authority (reasonable third-party belief).',
     reference: 'Agency Law',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-007',
@@ -1199,7 +1149,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Salary and wages are taxable gross income. Municipal bond interest, gifts, and life insurance death proceeds are generally excluded from gross income.',
     reference: 'IRC §61',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-008',
@@ -1222,7 +1171,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Interest on state and local municipal bonds is excluded from federal gross income. It may be subject to state taxes or AMT for certain private activity bonds.',
     reference: 'IRC §103',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-009',
@@ -1245,7 +1193,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Adjustments to income (e.g., student loan interest, IRA contributions) are "above-the-line" deductions subtracted from gross income to arrive at AGI.',
     reference: 'IRC §62',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-010',
@@ -1268,7 +1215,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'AGI (Adjusted Gross Income) = Gross Income - Adjustments. AGI is important because many deductions and credits are based on AGI limitations.',
     reference: 'IRC §62',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-011',
@@ -1291,7 +1237,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A taxpayer should itemize when total itemized deductions (SALT, mortgage interest, charitable, medical) exceed the standard deduction.',
     reference: 'IRC §63',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-012',
@@ -1314,7 +1259,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'The SALT deduction (state/local income or sales tax plus property tax) is limited to $10,000 ($5,000 MFS) through 2025.',
     reference: 'IRC §164',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-013',
@@ -1337,7 +1281,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 2,
     explanation: 'Married Filing Jointly generally provides the most favorable rates and highest standard deduction. MFS is usually the least favorable.',
     reference: 'IRC §1',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-014',
@@ -1360,7 +1303,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'A tax credit directly reduces tax liability dollar-for-dollar. A $1,000 credit saves $1,000 in taxes. Deductions only reduce taxable income.',
     reference: 'Tax Credits',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-015',
@@ -1383,7 +1325,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'The Child Tax Credit is $2,000 per qualifying child under age 17, with up to $1,600 refundable (2024). Subject to income phase-outs.',
     reference: 'IRC §24',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-016',
@@ -1406,7 +1347,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Partnerships are pass-through entities. The partnership files Form 1065 for information purposes, but partners report their share of income on their personal returns.',
     reference: 'IRC §701',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-017',
@@ -1429,7 +1369,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'Under IRC §721, no gain or loss is recognized on contribution of property to a partnership in exchange for a partnership interest.',
     reference: 'IRC §721',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-018',
@@ -1452,7 +1391,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'S corporations are pass-through entities. Income passes through to shareholders who pay tax on their personal returns. Limited to 100 shareholders, all individuals/estates/certain trusts.',
     reference: 'IRC §1361',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-019',
@@ -1475,7 +1413,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'The Tax Cuts and Jobs Act set a flat 21% corporate tax rate for C corporations, effective for tax years beginning after December 31, 2017.',
     reference: 'IRC §11',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-exp-020',
@@ -1498,7 +1435,6 @@ export const EASY_QUESTIONS_EXPANDED: Question[] = [
     correctAnswer: 1,
     explanation: 'C corporation earnings are taxed first at the corporate level (21%), then again when distributed to shareholders as dividends (qualified dividend rate up to 20%).',
     reference: 'Corporate Taxation',
-    skillLevel: 'Remembering and Understanding',
   },
 ];
 

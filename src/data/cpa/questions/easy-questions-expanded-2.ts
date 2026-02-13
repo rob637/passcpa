@@ -29,7 +29,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Current Ratio = Current Assets ÷ Current Liabilities. It measures the ability to pay short-term obligations.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-002',
@@ -52,7 +51,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'Quick Ratio (Acid Test) = (Cash + Marketable Securities + A/R) ÷ Current Liabilities. Inventory is excluded because it is the least liquid current asset.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-003',
@@ -75,7 +73,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'ROE = Net Income ÷ Average Stockholders\' Equity. It measures the return generated for shareholders.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-004',
@@ -98,7 +95,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Gross Profit Margin = (Revenue - COGS) ÷ Revenue = Gross Profit ÷ Revenue. It measures production efficiency.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-005',
@@ -121,7 +117,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Debt-to-Equity = Total Debt ÷ Total Equity. It measures financial leverage - how much debt is used relative to equity financing.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-006',
@@ -144,7 +139,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Contribution Margin = Sales - Variable Costs. It represents the amount available to cover fixed costs and provide profit.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-007',
@@ -167,7 +161,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'At breakeven, Revenue = Total Costs (Fixed + Variable), so profit = $0. Contribution margin exactly covers fixed costs.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-008',
@@ -190,7 +183,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'BEP (units) = Fixed Costs ÷ Contribution Margin per Unit. This formula calculates how many units must be sold to cover all fixed costs.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-009',
@@ -213,7 +205,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'The sales budget is typically the starting point because all other budgets (production, purchasing, labor, etc.) depend on expected sales volume.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-010',
@@ -236,7 +227,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A flexible budget adjusts budgeted amounts for different activity levels, allowing meaningful comparison with actual results at actual volume.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-011',
@@ -259,7 +249,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A cost variance is unfavorable when actual costs exceed budgeted/standard costs. A revenue variance is unfavorable when actual revenue is less than budgeted.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-012',
@@ -282,7 +271,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Consolidation is required when a parent has control, generally presumed when owning >50% of voting shares.',
     reference: 'ASC 810',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-013',
@@ -305,7 +293,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Goodwill = Purchase Price - Fair Value of Net Identifiable Assets. It represents synergies and other unidentifiable intangible value.',
     reference: 'ASC 805',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-014',
@@ -328,7 +315,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: '20-50% ownership with significant influence typically requires the equity method. >50% requires consolidation. <20% usually uses fair value.',
     reference: 'ASC 323',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-015',
@@ -351,7 +337,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 3,
     explanation: 'When investee earns income: Dr. Investment, Cr. Equity in Earnings of Investee. Dividends DECREASE the investment (Dr. Cash, Cr. Investment).',
     reference: 'ASC 323',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-016',
@@ -374,7 +359,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Enterprise funds (like utilities, airports) are proprietary funds. They use economic resources measurement focus and accrual accounting.',
     reference: 'GASB 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-017',
@@ -397,7 +381,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'GASB (Governmental Accounting Standards Board) sets standards for state and local governments. FASAB covers federal government. FASB covers nongovernmental entities.',
     reference: 'GASB',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-018',
@@ -420,7 +403,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'A positive NPV means the project returns more than the required rate of return (cost of capital). Such projects should generally be accepted.',
     reference: 'Finance',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-019',
@@ -443,7 +425,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Payback period = time required to recover the initial investment from project cash flows. Simple but ignores time value of money.',
     reference: 'Finance',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-exp-020',
@@ -466,7 +447,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Factory rent is a fixed cost - it remains constant regardless of production volume within the relevant range.',
     reference: 'Managerial Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // ============================================
@@ -494,7 +474,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'COBIT (Control Objectives for Information and Related Technologies) is a framework for enterprise IT governance and management.',
     reference: 'COBIT',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-002',
@@ -517,7 +496,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The CISO is responsible for developing and implementing information security strategy, policies, and ensuring the organization\'s data is protected.',
     reference: 'IT Governance',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-003',
@@ -540,7 +518,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A primary key uniquely identifies each record in a table. It cannot be null or duplicated.',
     reference: 'Database Design',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-004',
@@ -563,7 +540,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A foreign key is a field in one table that references the primary key in another table, establishing a relationship between the tables.',
     reference: 'Database Design',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-005',
@@ -586,7 +562,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'ERP (Enterprise Resource Planning) is an integrated system that manages core business processes including finance, HR, manufacturing, and supply chain.',
     reference: 'Information Systems',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-006',
@@ -609,7 +584,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The CIA triad - Confidentiality, Integrity, and Availability - are the three core objectives of information security.',
     reference: 'Information Security',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-007',
@@ -632,7 +606,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'Confidentiality ensures that information is only accessible to authorized individuals. Encryption and access controls support confidentiality.',
     reference: 'Information Security',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-008',
@@ -655,7 +628,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Integrity ensures that data has not been altered or corrupted, either accidentally or intentionally, without authorization.',
     reference: 'Information Security',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-009',
@@ -678,7 +650,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Authentication verifies identity (who you are). Authorization determines what you can access. Accounting tracks what you did.',
     reference: 'Access Controls',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-010',
@@ -701,7 +672,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'MFA uses multiple authentication factors: something you know (password), something you have (token/phone), something you are (biometrics).',
     reference: 'Access Controls',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-011',
@@ -724,7 +694,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Symmetric encryption uses the same secret key for both encryption and decryption. It\'s faster but key distribution is challenging.',
     reference: 'Cryptography',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-012',
@@ -747,7 +716,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Asymmetric (public key) encryption uses a key pair. The public key encrypts, and only the corresponding private key can decrypt.',
     reference: 'Cryptography',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-013',
@@ -770,7 +738,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A virus attaches itself to legitimate programs or files and spreads when those programs are executed. Worms spread independently.',
     reference: 'Malware',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-014',
@@ -793,7 +760,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Phishing uses deceptive emails, websites, or messages to trick people into revealing sensitive information like passwords or credit card numbers.',
     reference: 'Social Engineering',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-015',
@@ -816,7 +782,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC 1 reports focus on internal controls over financial reporting (ICFR) at a service organization relevant to user entities\' financial statements.',
     reference: 'SOC Reports',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-016',
@@ -839,7 +804,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC 2 reports are based on the Trust Services Criteria covering security, availability, processing integrity, confidentiality, and privacy.',
     reference: 'SOC Reports',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-017',
@@ -862,7 +826,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'RTO is the maximum acceptable time to restore systems and resume operations after a disruption. RPO is the maximum acceptable data loss.',
     reference: 'Business Continuity',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-018',
@@ -885,7 +848,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'RPO is the maximum acceptable data loss measured in time. An RPO of 1 hour means you can afford to lose at most 1 hour of data.',
     reference: 'Business Continuity',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-019',
@@ -908,7 +870,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Change management ensures that changes to IT systems are properly authorized, tested, and documented to minimize disruption and errors.',
     reference: 'IT Controls',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-exp-020',
@@ -931,7 +892,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'SaaS (Software as a Service) provides complete applications over the internet. Examples include Salesforce, Google Workspace, and Microsoft 365.',
     reference: 'Cloud Computing',
-    skillLevel: 'Remembering and Understanding',
   },
   
   // ============================================
@@ -959,7 +919,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Tax avoidance is the legal use of tax laws to minimize tax liability. Tax evasion is the illegal underpayment of taxes.',
     reference: 'Tax Planning',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-002',
@@ -982,7 +941,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Marginal tax rate is the rate applied to the next (additional) dollar of taxable income. It\'s important for decision-making about additional income.',
     reference: 'Tax Planning',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-003',
@@ -1005,7 +963,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The QBI deduction allows eligible taxpayers to deduct up to 20% of qualified business income from pass-through entities.',
     reference: 'IRC §199A',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-004',
@@ -1028,7 +985,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'SSTBs include professional services like law, accounting, health, consulting, and financial services. SSTBs face limitations on QBI deduction at higher incomes.',
     reference: 'IRC §199A',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-005',
@@ -1051,7 +1007,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'Traditional IRA deductibility depends on whether you\'re covered by an employer plan and your income level. May be fully, partially, or not deductible.',
     reference: 'IRC §219',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-006',
@@ -1074,7 +1029,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Roth IRA contributions are NOT deductible (made with after-tax dollars), but qualified distributions are tax-free. No RMDs during owner\'s lifetime.',
     reference: 'IRC §408A',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-007',
@@ -1097,7 +1051,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'Under SECURE 2.0, RMDs begin at age 73 (for those born 1951-1959) or 75 (born 1960 or later). Previously 70½ or 72.',
     reference: 'IRC §401(a)(9)',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-008',
@@ -1120,7 +1073,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A 401(k) is an employer-sponsored retirement plan allowing employees to defer salary on a pre-tax (or Roth) basis.',
     reference: 'IRC §401(k)',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-009',
@@ -1143,7 +1095,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'C corporations are subject to double taxation - income is taxed at the corporate level, and dividends are taxed again to shareholders.',
     reference: 'Entity Taxation',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-010',
@@ -1166,7 +1117,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'An LLC provides limited liability protection (like a corporation) with tax flexibility - can elect to be taxed as partnership, S corp, or C corp.',
     reference: 'Entity Taxation',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-011',
@@ -1189,7 +1139,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The basis of purchased property is generally its cost, including the purchase price plus incidental costs of acquisition.',
     reference: 'IRC §1012',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-012',
@@ -1212,7 +1161,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Inherited property receives a stepped-up (or stepped-down) basis to fair market value at the decedent\'s date of death.',
     reference: 'IRC §1014',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-013',
@@ -1235,7 +1183,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'For gain purposes, the donee generally takes the donor\'s carryover basis. For loss, it may be limited to FMV if lower than basis.',
     reference: 'IRC §1015',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-014',
@@ -1258,7 +1205,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Long-term capital gain treatment requires a holding period of MORE than one year (12 months). One year or less is short-term.',
     reference: 'IRC §1222',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-015',
@@ -1281,7 +1227,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 2,
     explanation: 'The maximum LTCG rate is 20% (for highest income taxpayers). Lower rates of 0% and 15% apply to lower income levels. Short-term gains are taxed at ordinary rates.',
     reference: 'IRC §1(h)',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-016',
@@ -1304,7 +1249,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The gift tax is a transfer tax paid by the DONOR, not the recipient. The annual exclusion allows tax-free gifts up to a certain amount per donee.',
     reference: 'IRC §2501',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-017',
@@ -1327,7 +1271,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'Annual exclusion gifts ($18,000/donee in 2024) do not count against the lifetime gift/estate tax exemption and generally don\'t require filing.',
     reference: 'IRC §2503',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-018',
@@ -1350,7 +1293,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The estate tax is a transfer tax on the value of a decedent\'s estate transferred at death (exceeding the exemption amount).',
     reference: 'IRC §2001',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-019',
@@ -1373,7 +1315,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'The unlimited marital deduction allows spouses to transfer unlimited assets to a US citizen spouse without gift or estate tax.',
     reference: 'IRC §2056',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-exp-020',
@@ -1396,7 +1337,6 @@ export const EASY_QUESTIONS_EXPANDED_2: Question[] = [
     correctAnswer: 1,
     explanation: 'A passive activity is generally a trade or business in which the taxpayer does not materially participate. Rental activities are generally passive by definition.',
     reference: 'IRC §469',
-    skillLevel: 'Remembering and Understanding',
   },
 ];
 

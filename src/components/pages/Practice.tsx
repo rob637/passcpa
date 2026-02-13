@@ -1005,9 +1005,6 @@ const Practice: React.FC = () => {
 
     // Compare with shuffled correct answer (user sees shuffled options)
     const isCorrect = selectedAnswer === shuffledQuestion.shuffledCorrectAnswer;
-    
-    // Translate user's shuffled selection back to original index for tracking
-    const originalAnswerIndex = shuffledQuestion.shuffleMap[selectedAnswer];
 
     // Provide feedback
     if (isCorrect) {

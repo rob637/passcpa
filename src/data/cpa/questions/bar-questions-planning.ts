@@ -26,7 +26,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'NPV discounts all future cash flows to their present value using a required rate of return (discount rate), then subtracts the initial investment. A positive NPV indicates the project adds value.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-002',
@@ -49,7 +48,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'NPV = -$100,000 + $30,000 × PVIFA(10%, 5 years). PVIFA = 3.7908. NPV = -$100,000 + ($30,000 × 3.7908) = -$100,000 + $113,724 = $13,724. Positive NPV means accept the project.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-plan-003',
@@ -72,7 +70,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'IRR is the discount rate at which the present value of cash inflows equals the present value of cash outflows (NPV = 0). Accept projects where IRR exceeds the required rate of return.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-004',
@@ -95,7 +92,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'The simple payback period ignores the time value of money—it treats $1 received in Year 5 the same as $1 received in Year 1. It also ignores cash flows after the payback period.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-005',
@@ -118,7 +114,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'Profitability Index (PI) = PV of cash inflows ÷ Initial investment = $150,000 ÷ $120,000 = 1.25. A PI > 1.0 indicates the project adds value and should be accepted.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Application',
   },
   // Working Capital Management
   {
@@ -142,7 +137,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'Working capital = Current assets - Current liabilities. It measures short-term liquidity and the company\'s ability to meet obligations within one year.',
     reference: 'Working Capital Management',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-007',
@@ -165,7 +159,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'Cash Conversion Cycle = Days Inventory Outstanding + Days Sales Outstanding - Days Payables Outstanding. It measures how long cash is tied up in the operating cycle before being recovered.',
     reference: 'Working Capital Management',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-008',
@@ -188,7 +181,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 2,
     explanation: 'Longer payment terms increase Days Payables Outstanding (DPO), which reduces the cash conversion cycle. The formula subtracts DPO, so increasing it shortens the cycle.',
     reference: 'Working Capital Management',
-    skillLevel: 'Application',
   },
   // Budgeting
   {
@@ -212,7 +204,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'A flexible budget adjusts for actual activity levels, allowing meaningful variance analysis. A static budget is prepared for one expected activity level and does not adjust.',
     reference: 'Budgeting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-010',
@@ -235,7 +226,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 2,
     explanation: 'The sales budget is the starting point for the master budget. All other budgets (production, direct materials, direct labor, manufacturing overhead, etc.) are derived from expected sales.',
     reference: 'Budgeting',
-    skillLevel: 'Remembering and Understanding',
   },
   // Risk Management
   {
@@ -259,7 +249,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'If receiving euros in the future, the company faces risk that euros will depreciate. Selling euros forward locks in the exchange rate, eliminating the risk. They are selling what they will receive.',
     reference: 'Risk Management',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-plan-012',
@@ -282,7 +271,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'To hedge floating-rate debt against rising rates, pay fixed and receive floating in the swap. The floating rate received offsets the floating debt payment, leaving a fixed rate overall.',
     reference: 'Risk Management',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-plan-013',
@@ -305,7 +293,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'Buying fuel futures or call options protects against rising prices. If prices rise, the futures/options gain value, offsetting higher spot prices. This locks in maximum fuel costs.',
     reference: 'Risk Management',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-plan-014',
@@ -328,7 +315,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'ERM takes a holistic, integrated view of all risks across the organization (strategic, operational, financial, compliance) rather than managing risks in silos.',
     reference: 'COSO ERM Framework',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-015',
@@ -351,7 +337,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 2,
     explanation: 'For mutually exclusive projects with different lives, use EAA (converts NPV to annual equivalent) or Replacement Chain (extends projects to a common life). Direct NPV comparison is unfair when lives differ.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Application',
   },
   // Forecasting
   {
@@ -375,7 +360,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'The percentage-of-sales method assumes certain items (accounts receivable, inventory, accounts payable) vary proportionally with sales. It projects these items as a percentage of forecasted sales.',
     reference: 'Financial Planning',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-017',
@@ -398,7 +382,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 0,
     explanation: 'AFN = (A/S × ΔS) - (L/S × ΔS) - (M × S₁ × RR). Assuming L/S = 0 for simplicity: AFN = (0.60 × $200,000) - (0.05 × $1,200,000 × 0.60) = $120,000 - $36,000 = $84,000 (approximately, depending on spontaneous liabilities assumed).',
     reference: 'Financial Planning',
-    skillLevel: 'Application',
   },
   {
     id: 'bar-plan-018',
@@ -421,7 +404,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'EOQ balances ordering costs (which decrease with larger orders) and carrying costs (which increase with larger orders) to find the order quantity that minimizes total inventory costs.',
     reference: 'Inventory Management',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-019',
@@ -444,7 +426,6 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'VaR estimates the maximum potential loss that could occur at a specified confidence level (e.g., 95% or 99%) over a defined time horizon. It is a widely used market risk metric.',
     reference: 'Risk Management',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-plan-020',
@@ -467,6 +448,5 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
     correctAnswer: 1,
     explanation: 'Sensitivity analysis examines how changes in key assumptions (sales volume, price, costs, discount rate) affect project NPV or IRR. It identifies which variables most impact project value.',
     reference: 'Capital Budgeting',
-    skillLevel: 'Remembering and Understanding',
   },
 ];

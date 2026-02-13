@@ -26,7 +26,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Governmental fund types are: General, Special Revenue, Capital Projects, Debt Service, and Permanent funds. Enterprise and Internal Service are proprietary funds. Pension trust is a fiduciary fund.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-002',
@@ -49,7 +48,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Governmental funds use current financial resources measurement focus and modified accrual basis. Proprietary and fiduciary funds use economic resources focus and accrual basis.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-003',
@@ -72,7 +70,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 2,
     explanation: 'Under modified accrual, revenues are recognized when measurable and available. "Available" means collectible within the current period or soon enough thereafter to pay current liabilities (typically 60 days for property taxes).',
     reference: 'GASB Statement No. 33',
-    skillLevel: 'Application',
   },
   {
     id: 'far-govt-004',
@@ -95,7 +92,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 3,
     explanation: 'Fund balance classifications from most to least constrained: Nonspendable (physically cannot be spent), Restricted (external constraints), Committed (internal constraints by highest authority), Assigned (intended use), Unassigned (residual).',
     reference: 'GASB Statement No. 54',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-005',
@@ -118,7 +114,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Budget entry: Debit Estimated Revenues (for anticipated inflows), Credit Appropriations (for authorized spending), with the difference to Budgetary Fund Balance. Estimated revenues is a debit because it represents expected resource inflows.',
     reference: 'GASB Budgetary Integration',
-    skillLevel: 'Application',
   },
   {
     id: 'far-govt-006',
@@ -141,7 +136,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Encumbrances represent commitments related to unperformed contracts for goods or services. They reserve a portion of the appropriation and are not actual expenditures until goods/services are received.',
     reference: 'GASB Codification Section 1700',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-007',
@@ -164,7 +158,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 0,
     explanation: 'Enterprise funds are used for activities financed substantially by user charges (water, sewer, parking). They use accrual accounting and are designed to recover costs through fees rather than taxes.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-008',
@@ -187,7 +180,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Internal service funds account for goods/services provided by one government department to other departments on a cost-reimbursement basis (motor pool, IT services, printing, etc.).',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Application',
   },
   {
     id: 'far-govt-009',
@@ -210,7 +202,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 2,
     explanation: 'GASB 34 requires capitalization of infrastructure assets. Governments may either depreciate them or use the "modified approach" which requires maintaining assets at a specified condition level and reporting maintenance costs.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-010',
@@ -233,7 +224,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 2,
     explanation: 'The Statement of Net Position is similar to a balance sheet, presenting assets, deferred outflows, liabilities, deferred inflows, and net position (the government equivalent of equity).',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-011',
@@ -256,7 +246,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Government net position has three components: (1) Net investment in capital assets, (2) Restricted (by creditors, grantors, or law), and (3) Unrestricted. The FASB not-for-profit categories do not apply.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-012',
@@ -279,7 +268,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Derived tax revenues (income taxes, sales taxes) are recognized when the underlying exchange transaction occurs (when the sale takes place), provided the resources will be available within 60 days. The December sales create December revenue.',
     reference: 'GASB Statement No. 33',
-    skillLevel: 'Application',
   },
   {
     id: 'far-govt-013',
@@ -302,7 +290,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 2,
     explanation: 'Expenditure-driven grants (most federal grants) are recognized as revenue when qualifying expenditures are made. This matches the $400,000 grant revenue to the $400,000 of eligible spending in Year 1.',
     reference: 'GASB Statement No. 33',
-    skillLevel: 'Application',
   },
   {
     id: 'far-govt-014',
@@ -325,7 +312,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'MD&A is required supplementary information (RSI) that must precede the basic financial statements. It provides an overview and analysis of financial activities in plain language.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-015',
@@ -348,7 +334,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 2,
     explanation: 'Pension trust funds are fiduciary funds used to account for resources held in trust for pension plan participants. Other fiduciary fund types include investment trust funds, private-purpose trust funds, and custodial funds.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-016',
@@ -371,7 +356,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'The Governmental Accounting Standards Board (GASB) sets standards for state and local governments. FASB sets standards for private companies and not-for-profits. The federal government follows FASAB standards.',
     reference: 'GASB Authority',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-017',
@@ -394,7 +378,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Debt service funds accumulate resources and pay principal and interest on general long-term debt. They are governmental funds using modified accrual accounting. Enterprise fund debt is accounted for in the enterprise fund itself.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-govt-018',
@@ -417,7 +400,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Capital projects funds account for financial resources used for major capital acquisitions or construction, typically financed by bonds, grants, or special assessments. Routine operations go in the general fund.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Application',
   },
   {
     id: 'far-govt-019',
@@ -440,7 +422,6 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'A major reconciling item is that capital assets are reported in government-wide statements (accrual basis) but not in governmental fund statements (current financial resources focus). This typically causes government-wide net position to exceed fund balance.',
     reference: 'GASB Statement No. 34',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-govt-020',
@@ -463,6 +444,5 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
     correctAnswer: 1,
     explanation: 'Under modified accrual, expenditures are generally recognized when a liability is incurred. For inventory, this is typically when goods are received (purchases method). Some governments use the consumption method, recognizing when used.',
     reference: 'GASB Codification Section 1600',
-    skillLevel: 'Application',
   },
 ];

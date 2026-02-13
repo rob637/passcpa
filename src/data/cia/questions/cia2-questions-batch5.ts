@@ -22,7 +22,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'During preliminary survey for an engagement, the internal auditor should perform all of the following EXCEPT:',
     options: [
       'Understanding the auditee\'s business processes and objectives',
@@ -42,7 +41,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-II',
     question: 'When developing engagement objectives, the internal auditor should consider all of the following EXCEPT:',
     options: [
       'Preliminary assessment of risks relevant to the activity under review',
@@ -62,7 +60,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'According to Standard 2220, engagement scope must be sufficient to satisfy the engagement objectives. Which of the following should be considered when determining scope?',
     options: [
       'Only areas with known deficiencies from prior audits',
@@ -82,7 +79,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-II',
     question: 'The work program for an internal audit engagement should include:',
     options: [
       'Only the budget and timeline',
@@ -102,7 +98,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-II',
     question: 'An engagement client requests that the internal audit team expand the scope of an ongoing assurance engagement to include an advisory review of a new system. How should the CAE respond?',
     options: [
       'Decline because scope cannot change once approved',
@@ -122,7 +117,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'During engagement planning, the internal auditor identifies that significant IT changes have occurred since the last audit. What is the MOST appropriate step?',
     options: [
       'Exclude IT from the engagement scope',
@@ -142,7 +136,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'Standard 2230 requires that internal auditors allocate appropriate resources for the engagement. Which factor is LEAST relevant when determining resource allocation?',
     options: [
       'Nature and complexity of each engagement',
@@ -162,7 +155,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-II',
     question: 'What is the PRIMARY purpose of a preliminary survey (planning phase)?',
     options: [
       'To issue the final audit report',
@@ -182,7 +174,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-II',
     question: 'In planning a compliance engagement, the internal auditor should:',
     options: [
       'Focus only on financial regulations',
@@ -202,7 +193,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'Which of the following is the BEST approach for setting engagement objectives?',
     options: [
       'Copy objectives from the previous year\'s engagement',
@@ -222,7 +212,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'An internal auditor is planning an engagement and discovers that the auditee has recently implemented a new ERP system. Which planning tool would be MOST helpful?',
     options: [
       'Process flowcharting to understand the new workflows',
@@ -242,7 +231,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-II',
     question: 'During engagement planning, reviewing prior engagement reports helps the auditor to:',
     options: [
       'Determine the final opinion for the current engagement',
@@ -262,7 +250,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-II',
     question: 'When planning an engagement, the internal auditor identified that the auditee\'s objectives are not clearly defined. What is the BEST course of action?',
     options: [
       'Cancel the engagement until objectives are defined',
@@ -282,7 +269,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'Which of the following sources of information is MOST useful during engagement planning for understanding the risk environment?',
     options: [
       'The organization\'s annual report',
@@ -302,7 +288,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-II',
     question: 'What is the purpose of an engagement letter or notification memo sent to the engagement client before fieldwork begins?',
     options: [
       'To present preliminary findings',
@@ -327,7 +312,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'A risk and control matrix maps risks to their corresponding controls. What is the PRIMARY benefit of this tool during engagement planning?',
     options: [
       'It eliminates the need for testing',
@@ -347,7 +331,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-II',
     question: 'When building a risk and control matrix, the auditor identifies a risk with no corresponding control. What is the MOST appropriate action?',
     options: [
       'Ignore the risk since there is no control to test',
@@ -367,7 +350,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-II',
     question: 'In a risk and control matrix, "residual risk" refers to:',
     options: [
       'Risk before any controls are applied',
@@ -387,7 +369,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-II',
     question: 'A risk and control matrix typically includes all of the following EXCEPT:',
     options: [
       'Identified risks',
@@ -407,7 +388,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-II',
     question: 'An auditor is developing a risk and control matrix for a procurement process. Which approach BEST ensures comprehensive coverage?',
     options: [
       'Map controls to the organizational chart',
@@ -432,7 +412,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-I',
     question: 'The CAE is developing the annual risk-based audit plan. Which of the following should have the GREATEST influence on audit priorities?',
     options: [
       'Management\'s preferences for which areas to audit',
@@ -452,7 +431,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'The CAE must communicate the internal audit activity\'s plans and resource requirements. To whom must this be communicated for review and approval?',
     options: [
       'The CEO only',
@@ -472,7 +450,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-I',
     question: 'The board requests the CAE to take on responsibility for managing the organization\'s ethics hotline. What concern should the CAE raise?',
     options: [
       'It requires too many resources',
@@ -492,7 +469,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'Which of the following is a key responsibility of the CAE regarding coordination with external auditors?',
     options: [
       'Replacing external audit work with internal audit coverage',
@@ -512,7 +488,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'What is the PRIMARY purpose of the internal audit charter?',
     options: [
       'To document the results of audit engagements',
@@ -532,7 +507,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-I',
     question: 'How often should the internal audit charter be reviewed and updated?',
     options: [
       'Only when a new CAE is appointed',
@@ -552,7 +526,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-I',
     question: 'The CAE discovers that internal audit resources are insufficient to complete the approved audit plan. What is the MOST appropriate action?',
     options: [
       'Complete only the assignments that can be performed with current resources without notification',
@@ -572,7 +545,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'The audit universe maintained by the CAE should include:',
     options: [
       'Only areas with prior audit findings',
@@ -597,7 +569,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'Internal audit policies and procedures should be established to guide the audit staff. Which of the following is the BEST reason for maintaining these policies?',
     options: [
       'To limit auditor discretion and creativity',
@@ -617,7 +588,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-I',
     question: 'In determining resources needed, the CAE should consider all of the following EXCEPT:',
     options: [
       'Knowledge, skills, and competencies of the audit staff',
@@ -637,7 +607,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-I',
     question: 'The CAE has been asked to provide assurance on an area where the internal audit team lacks expertise. What is the MOST appropriate response?',
     options: [
       'Decline the engagement entirely',
@@ -657,7 +626,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'Which performance measurement is MOST useful for assessing the value of internal audit to the organization?',
     options: [
       'Number of audits completed per year',
@@ -677,7 +645,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA2-I',
     question: 'Which statement about co-sourcing internal audit activities is CORRECT?',
     options: [
       'Co-sourcing eliminates the need for quality assurance',
@@ -697,7 +664,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA2-I',
     question: 'What is the audit universe?',
     options: [
       'The total number of auditors in the organization',
@@ -717,7 +683,6 @@ export const CIA2_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA2',
     blueprintArea: 'CIA2-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA2-I',
     question: 'The CAE presented the annual report to the board. Which of the following should be included in this report?',
     options: [
       'Only completed engagements with satisfactory ratings',

@@ -2645,7 +2645,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Medical expense floor is 7.5% of AGI (made permanent). Only expenses above threshold are deductible. Includes medical, dental, long-term care premiums (limited), transportation for medical care.',
     reference: 'IRC §213',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-120',
@@ -2667,7 +2666,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Gambling losses: deductible as itemized deduction only to extent of gambling winnings. No net gambling loss deduction. Must keep adequate records of both wins and losses.',
     reference: 'IRC §165(d)',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-121',
@@ -2689,7 +2687,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Simplified method: $5/sq ft up to 300 sq ft max ($1,500). Alternative to regular method (actual expenses). Must be regular and exclusive use. Employees cannot deduct post-TCJA.',
     reference: 'Rev. Proc. 2013-13',
     blueprintArea: 'REG-I',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-122',
@@ -2711,7 +2708,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Educator expense: $300 above-the-line deduction for K-12 teachers for classroom supplies, professional development. Eligible educators work 900+ hours in school year.',
     reference: 'IRC §62(a)(2)(D)',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-123',
@@ -2733,7 +2729,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'AET: penalty tax (20%) on C corps accumulating earnings to avoid shareholder dividend tax. Exemption: first $250K ($150K for PSCs). Must demonstrate reasonable business needs for retention.',
     reference: 'IRC §531-537',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-124',
@@ -2755,7 +2750,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'PHC: (1) 50% owned (directly/indirectly) by 5 or fewer individuals, AND (2) 60%+ adjusted ordinary gross income is PHC income (dividends, interest, rents, royalties). 20% penalty tax.',
     reference: 'IRC §541-547',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-125',
@@ -2777,7 +2771,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Worthless securities: deemed sold on last day of tax year for zero. Capital loss (LTCL if held >1 year, regardless of actual holding start). Exception: ordinary loss if §1244 stock qualifies.',
     reference: 'IRC §165(g)',
     blueprintArea: 'REG-II',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-126',
@@ -2799,7 +2792,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Guaranteed payments: for services or capital use, paid regardless of income. Partnership deducts (reduces ordinary income). Partner reports as ordinary income. Subject to SE tax.',
     reference: 'IRC §707(c)',
     blueprintArea: 'REG-II',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-127',
@@ -2821,7 +2813,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Hot assets (§751): unrealized receivables (including depreciation recapture) and substantially appreciated inventory (FMV >120% of basis). Gain on these = ordinary income, not capital.',
     reference: 'IRC §751',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-128',
@@ -2843,7 +2834,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'S corp basis order: (1) increase for income, (2) decrease for distributions (nontaxable to extent of basis), (3) decrease for nondeductible expenses, (4) decrease for losses/deductions.',
     reference: 'IRC §1368, Reg §1.1367-1',
     blueprintArea: 'REG-II',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-129',
@@ -2865,7 +2855,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'AAA: tracks S corp undistributed net income (accumulated during S years). Distributions come from AAA first (tax-free to extent of basis), then AE&P (if any), then return of capital.',
     reference: 'IRC §1368(e)',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-130',
@@ -2887,7 +2876,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'GSTT: flat 40% tax on transfers skipping a generation (grandchildren, etc.). Separate exemption ($13.61M in 2024). Types: direct skip, taxable termination, taxable distribution.',
     reference: 'IRC §2601-2663',
     blueprintArea: 'REG-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-131',
@@ -2909,7 +2897,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Unlimited marital deduction for US citizen spouse. Defers tax until surviving spouse dies. Non-citizen spouse: QDOT required for marital deduction. QTIP trusts qualify with proper election.',
     reference: 'IRC §2056',
     blueprintArea: 'REG-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-132',
@@ -2931,7 +2918,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'DLOM and DLOC may reduce FMV for estate/gift purposes. Apply to minority interests in closely held businesses. IRS scrutinizes; must be supportable. Combined discounts often 25-40%.',
     reference: 'Estate Valuation Standards',
     blueprintArea: 'REG-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-133',
@@ -2953,7 +2939,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Statute of frauds: requires writing for sale of goods $500+ (UCC), land interests, cannot be performed within 1 year, suretyship, marriage consideration. Writing must be signed.',
     reference: 'UCC §2-201, Restatement Contracts',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-134',
@@ -2975,7 +2960,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Parol evidence: cannot use prior/contemporaneous oral statements to contradict final written agreement. Exceptions: fraud, mistake, ambiguity, conditions precedent, subsequent modifications.',
     reference: 'Contract Law',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-135',
@@ -2997,7 +2981,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Agency termination by operation of law: death, incapacity, bankruptcy of principal or agent. Also: subject matter destruction, illegality, war between nations. No notice required.',
     reference: 'Agency Law',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-136',
@@ -3019,7 +3002,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'HDC requirements: (1) for value, (2) in good faith, (3) without notice of overdue/dishonored, (4) without notice of claims/defenses, (5) without notice of unauthorized signature/alteration.',
     reference: 'UCC §3-302',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-137',
@@ -3041,7 +3023,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Conceptual framework: identify threats (self-interest, self-review, advocacy, familiarity, undue influence), evaluate significance, apply safeguards. Used when specific rules don\'t cover situation.',
     reference: 'AICPA Code ET 1.000',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-138',
@@ -3063,7 +3044,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'SSTS No. 1: realistic possibility (1 in 3 chance) of success on merits, OR disclose position if not frivolous. Circular 230: must have reasonable basis and disclose non-substantial authority positions.',
     reference: 'SSTS No. 1',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-139',
@@ -3085,7 +3065,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: '§121: exclude $250K gain ($500K MFJ if both spouses meet test). Must own and use as principal residence 2 of 5 years before sale. Generally once every 2 years. Partial exclusion for unforeseen circumstances.',
     reference: 'IRC §121',
     blueprintArea: 'REG-I',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-140',
@@ -3107,7 +3086,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'TCJA changed alimony: for agreements post-2018, no deduction for payer, no income to recipient. Child support was always nondeductible/nontaxable. Pre-2019 agreements follow old rules.',
     reference: 'IRC §71, §215',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-141',
@@ -3129,7 +3107,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Organizational costs: expense up to $5,000 (reduced dollar-for-dollar by costs exceeding $50,000). Remainder amortized over 180 months. Same rules for start-up costs.',
     reference: 'IRC §248',
     blueprintArea: 'REG-II',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-142',
@@ -3151,7 +3128,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: '§267: no loss deduction on sales to related parties (>50% ownership, family). Buyer takes seller\'s basis for loss calculation. On resale, buyer\'s gain reduced (not below zero) by previously disallowed loss.',
     reference: 'IRC §267',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-143',
@@ -3173,7 +3149,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'General SOL: 3 years from later of filing or due date. Extended to 6 years if >25% gross income omission. No limit for fraud or failure to file. Claims for refund: later of 3 years from filing or 2 years from payment.',
     reference: 'IRC §6501',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   // Batch 12 - Additional REG Questions
   {
@@ -3196,7 +3171,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Social Security taxation: based on provisional income (AGI + tax-exempt interest + 50% benefits). Up to 50% taxable at lower thresholds, up to 85% at higher thresholds. Never 100% taxable.',
     reference: 'IRC §86',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-145',
@@ -3218,7 +3192,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Child tax credit 2024: $2,000 per qualifying child under 17. Up to $1,700 refundable (additional child tax credit). Phases out at $400K MFJ, $200K other. Income limits for refundable portion.',
     reference: 'IRC §24',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-146',
@@ -3240,7 +3213,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'FEIE: requires tax home in foreign country AND either bona fide residence test (full tax year) OR physical presence test (330 days in 12-month period). 2024 exclusion approximately $126,500.',
     reference: 'IRC §911',
     blueprintArea: 'REG-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-147',
@@ -3262,7 +3234,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Kiddie tax: unearned income above threshold taxed at parent\'s marginal rate. Applies to children under 19, or under 24 if full-time student (unless self-supporting). Purpose: prevent income shifting.',
     reference: 'IRC §1(g)',
     blueprintArea: 'REG-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-148',
@@ -3284,7 +3255,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Imputed interest: if stated rate < AFR, recharacterize portion of principal as interest. Reduces selling price and installment gain. Buyer amortizes OID. §1274 and §483 rules apply.',
     reference: 'IRC §1274',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-149',
@@ -3306,7 +3276,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: '§1245 recapture: ordinary income = lesser of gain realized or depreciation allowed/allowable. Any excess is §1231 gain. Applies to tangible personal property, amortizable §197 intangibles.',
     reference: 'IRC §1245',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-150',
@@ -3328,7 +3297,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Real property (post-1986): straight-line depreciation only. §1250 recapture limited. Unrecaptured §1250 gain (accumulated depreciation) taxed at maximum 25%. Excess is regular LTCG.',
     reference: 'IRC §1250',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-151',
@@ -3350,7 +3318,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'PHC income: passive income including dividends, interest, royalties, annuities, rents (if <50% gross income). PHC tax = 20% on undistributed PHC income. Avoid by distributing income.',
     reference: 'IRC §543',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-152',
@@ -3372,7 +3339,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Post-2017 NOLs: no carryback (with exceptions), carry forward indefinitely, limited to 80% of taxable income. CARES Act allowed some carrybacks for 2018-2020 NOLs.',
     reference: 'IRC §172',
     blueprintArea: 'REG-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-153',
@@ -3394,7 +3360,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Special allocations: must have substantial economic effect (affect capital accounts, liquidation follows capital accounts, deficit restoration or QIO). Otherwise, allocate per partners\' interest in partnership.',
     reference: 'IRC §704(b)',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-154',
@@ -3416,7 +3381,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: '§754 election: adjust inside basis to reflect outside basis upon sale/exchange (§743(b)) or distribution (§734(b)). Eliminates disparities between inside and outside basis. Irrevocable once made.',
     reference: 'IRC §754',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-155',
@@ -3438,7 +3402,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'BIG tax: 21% on net recognized built-in gains during 5-year recognition period. Applies to former C corps converting to S. Built-in gain = FMV minus basis at conversion. Prevents avoidance of corporate-level tax.',
     reference: 'IRC §1374',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-156',
@@ -3460,7 +3423,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'LIFO recapture: C corp using LIFO must include LIFO reserve in income in last C corp year. Tax paid over 4 years. Prevents avoiding corporate tax on inventory appreciation.',
     reference: 'IRC §1363(d)',
     blueprintArea: 'REG-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-157',
@@ -3482,7 +3444,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Portability: surviving spouse can use deceased spouse\'s unused exemption. Must file estate return electing portability. DSUE amount carried to survivor. Only last deceased spouse\'s DSUE available.',
     reference: 'IRC §2010(c)',
     blueprintArea: 'REG-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-158',
@@ -3504,7 +3465,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'QTIP: qualifies for marital deduction with election. Spouse must receive all income at least annually for life. No one else can receive corpus during spouse\'s life. Included in surviving spouse\'s estate.',
     reference: 'IRC §2056(b)(7)',
     blueprintArea: 'REG-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-159',
@@ -3526,7 +3486,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'HDC requirements: holder, took for value, good faith, without notice (overdue, dishonored, claims, defenses, unauthorized signature). HDC takes free of personal defenses, subject to real defenses.',
     reference: 'UCC 3-302',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-160',
@@ -3548,7 +3507,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Attachment: (1) value given by secured party, (2) debtor has rights in collateral, (3) security agreement authenticated describing collateral. Creates enforceable security interest. Perfection is separate step.',
     reference: 'UCC 9-203',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-161',
@@ -3570,7 +3528,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Priority: first to file OR perfect. PMSI in inventory: must perfect before delivery and notify prior secured parties. PMSI in non-inventory: 20-day grace period. Buyers in ordinary course take free.',
     reference: 'UCC 9-322',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-162',
@@ -3592,7 +3549,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Written advice: must consider relevant facts, relate law to facts, not rely on unreasonable factual assumptions or unreasonable legal assumptions. Higher standards for marketed opinions.',
     reference: 'Circular 230 §10.37',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-163',
@@ -3614,7 +3570,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Due diligence: cannot ignore implications of information furnished. Make reasonable inquiries if information appears incorrect, inconsistent, or incomplete. Increased diligence for certain credits (EITC, CTC, AOTC).',
     reference: 'Circular 230 §10.22',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-164',
@@ -3636,7 +3591,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Audit selection: DIF (discriminant function) scoring, document matching (information returns vs tax return), related examinations (partnership/S corp items), random selection, informants.',
     reference: 'IRM 4.10',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-165',
@@ -3658,7 +3612,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'OIC grounds: (1) doubt as to liability, (2) doubt as to collectibility (cannot pay full amount), (3) effective tax administration (hardship, equity). Must be current on filings. Application fee required.',
     reference: 'IRC §7122',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'reg-ext-166',
@@ -3680,7 +3633,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Innocent spouse (§6015(b)): understatement from other spouse\'s erroneous item, didn\'t know/no reason to know of understatement, inequitable to hold liable. Also separation of liability (§6015(c)) and equitable relief (§6015(f)).',
     reference: 'IRC §6015',
     blueprintArea: 'REG-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'reg-ext-167',
@@ -3702,7 +3654,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Moving expenses: suspended for non-military 2018-2025 (TCJA). Active duty military moving pursuant to orders may still deduct reasonable moving expenses. Above-the-line deduction when available.',
     reference: 'IRC §217',
     blueprintArea: 'REG-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-ext-168',
@@ -3724,7 +3675,6 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'AMT adjustments: add back SALT deduction, miscellaneous itemized deductions, difference in depreciation, exercise of ISOs. AMT exemption phases out at higher incomes. Compare regular tax to tentative minimum tax.',
     reference: 'IRC §55-59',
     blueprintArea: 'REG-I',
-    skillLevel: 'Analysis',
   },
 ];
 

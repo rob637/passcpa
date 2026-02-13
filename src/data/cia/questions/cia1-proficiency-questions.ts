@@ -14,7 +14,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA1-III',
     question: 'Standard 1210 states that internal auditors must possess the knowledge, skills, and other competencies needed to perform their responsibilities. Which type of knowledge is specifically mentioned as necessary even for non-IT audit staff?',
     options: [
       'Advanced programming languages',
@@ -34,7 +33,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA1-III',
     question: 'An internal auditor suspects fraud during an engagement but is not a Certified Fraud Examiner. According to the Standards, what is the appropriate action?',
     options: [
       'Ignore the fraud indicators and continue with the planned scope',
@@ -54,7 +52,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA1-III',
     question: 'Due professional care requires the internal auditor to consider all of the following EXCEPT:',
     options: [
       'The extent of work needed to achieve engagement objectives',
@@ -74,7 +71,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA1-III',
     question: 'Standard 1230 addresses continuing professional development. Which statement about CPD is CORRECT?',
     options: [
       'CPD requirements apply only to the CAE',
@@ -94,7 +90,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA1-III',
     question: 'An internal auditor is assigned to audit the treasury function but has limited knowledge of financial instruments. Which action BEST demonstrates proficiency?',
     options: [
       'Decline the engagement and recommend an external auditor',
@@ -114,7 +109,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA1-III',
     question: 'Which of the following BEST demonstrates the exercise of due professional care in a consulting engagement?',
     options: [
       'Ensuring the engagement is completed under budget',
@@ -134,7 +128,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
-    blueprintArea: 'CIA1-III',
     question: 'The internal audit activity collectively must possess or obtain which of the following?',
     options: [
       'Certification as CPAs',
@@ -154,7 +147,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
-    blueprintArea: 'CIA1-III',
     question: 'During an engagement, an internal auditor notices a pattern of transactions that could indicate money laundering but is unsure. Exercising due professional care, the auditor should:',
     options: [
       'Dismiss the observation since money laundering investigation is beyond audit scope',
@@ -174,7 +166,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA1-III',
     question: 'Which of the following is an example of appropriate CPD activity for an internal auditor?',
     options: [
       'Only passing the CIA exam',
@@ -194,7 +185,6 @@ export const CIA1_PROFICIENCY_QUESTIONS: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
-    blueprintArea: 'CIA1-III',
     question: 'The concept of exercising "due professional care" means that the internal auditor:',
     options: [
       'Guarantees the absence of errors or fraud',

@@ -3036,7 +3036,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Completeness for liabilities: search for unrecorded items. Examine subsequent disbursements, open invoice files, receiving reports without invoices, loan agreements. Tracing starts outside records.',
     reference: 'AU-C 500',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-152',
@@ -3058,7 +3057,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Rights and obligations: entity owns or controls assets, liabilities are entity\'s obligations. For inventory: examine purchase invoices, consignment agreements, title documents, collateral agreements.',
     reference: 'AU-C 500',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-153',
@@ -3080,7 +3078,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Cutoff: transactions recorded in proper period. For sales: compare shipping dates (FOB terms) to invoice dates near year-end. Test several days before and after cutoff. Proper transfer of title timing.',
     reference: 'AU-C 500',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-154',
@@ -3102,7 +3099,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Tolerable misstatement: application of performance materiality to a sampling procedure. Maximum error auditor will accept in population. Used to determine sample size and evaluate sample results.',
     reference: 'AU-C 530',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-155',
@@ -3124,7 +3120,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'MUS: probability proportional to size. Each dollar is a sampling unit. Larger items more likely selected. Best for overstatement testing (existence). Less effective for understatement (zero-balance items).',
     reference: 'AU-C 530',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-156',
@@ -3146,7 +3141,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Dual-purpose test: simultaneously tests control operating effectiveness and provides substantive evidence. Efficient when control test supports reduced substantive testing. Different evaluation for each purpose.',
     reference: 'AU-C 330',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-157',
@@ -3168,7 +3162,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Preventive: stop errors/fraud before occurring (segregation of duties, authorization, access controls). Detective: identify after occurrence (reconciliations, reviews, audits). Both needed for effective control.',
     reference: 'AU-C 315',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-158',
@@ -3190,7 +3183,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'KAMs: matters of most significance from current period audit, communicated to TCWG, required for listed entities. Describes why considered KAM and how addressed. Not required for non-issuers.',
     reference: 'ISA 701 / AS 3101',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-159',
@@ -3212,7 +3204,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Predecessor not reissuing: successor makes reference in report (prior period audited by other auditor, report date, opinion type, reasons for modification if any). No responsibility taken.',
     reference: 'AU-C 700',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-160',
@@ -3234,7 +3225,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Other Matter: relevant to understanding (1) the audit, (2) auditor\'s responsibilities, or (3) auditor\'s report. Not presented/disclosed in F/S. Differs from Emphasis of Matter (F/S item).',
     reference: 'AU-C 706',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-161',
@@ -3256,7 +3246,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Confidentiality exceptions: court order/subpoena, peer review, ethics investigation, AICPA Professional Ethics Division, state CPA society, state board. Also for suspected illegal acts in some cases.',
     reference: 'AICPA Code ET 1.700',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-162',
@@ -3278,7 +3267,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Advocacy threat: promoting client position (legal/regulatory proceedings, securities offerings) to extent objectivity compromised. Safeguards: separate personnel, quality review, legal counsel review.',
     reference: 'AICPA Code ET 1.210',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-163',
@@ -3300,7 +3288,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Fraud triangle: (1) Incentive/pressure (financial need, targets), (2) Opportunity (weak controls, access), (3) Rationalization (justification). All three typically present for fraud.',
     reference: 'AU-C 240',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-164',
@@ -3322,7 +3309,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Focus on: entries near period-end, unusual amounts, unusual accounts, prepared by unexpected personnel, round amounts, recurring pattern, little/no explanation. Revenue recognition fraud often via JEs.',
     reference: 'AU-C 240',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-165',
@@ -3344,7 +3330,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Using specialists: auditor responsible for conclusions. Evaluate specialist competence/objectivity, understand nature of work, evaluate adequacy for audit purposes. No reduced responsibility.',
     reference: 'AU-C 620',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-166',
@@ -3366,7 +3351,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Automated controls: inherent consistency (programmed = consistent). If ITGCs effective (change management, access), less retesting needed. If ITGC deficiencies, more app control testing required.',
     reference: 'AU-C 330',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-167',
@@ -3388,7 +3372,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Expectation precision: (1) reliability of data used, (2) plausibility/predictability of relationship, (3) availability of data, (4) level of disaggregation. More precise = lower threshold.',
     reference: 'AU-C 520',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-168',
@@ -3410,7 +3393,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Management refusal: evaluate reasonableness, consider fraud implications, perform alternative procedures. If alternatives insufficient and refusal unreasonable, may be scope limitation (qualified/disclaimer).',
     reference: 'AU-C 505',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-169',
@@ -3432,7 +3414,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Review: limited assurance (negative form). "Nothing came to attention causing belief that F/S not in accordance with GAAP." Less than audit (reasonable assurance), more than compilation (no assurance).',
     reference: 'AR-C 90',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-170',
@@ -3454,7 +3435,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Review procedures: primarily inquiry and analytical procedures. May also include reading F/S, obtaining management representations. No tests of controls, detailed substantive tests, or confirmations required.',
     reference: 'AR-C 90',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-171',
@@ -3476,7 +3456,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Compilation: no assurance provided. Accountant assists in presenting F/S in proper form. Report states did not audit or review, no opinion or assurance. Management responsible for F/S.',
     reference: 'AR-C 80',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-172',
@@ -3498,7 +3477,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'AUP: perform procedures agreed to by specified parties, report factual findings. No opinion or assurance. Users responsible for determining sufficiency of procedures and drawing conclusions.',
     reference: 'AT-C 215',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-173',
@@ -3520,7 +3498,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'SOC 2: trust services criteria (TSC). Security always included; availability, processing integrity, confidentiality, privacy optional based on scope. Type I = design; Type II = design + operating effectiveness.',
     reference: 'SOC 2 Guide',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-174',
@@ -3542,7 +3519,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'EQR: required for all PCAOB audits (issuers). For non-issuers, firm determines criteria (public interest entities, significant risk, complex). Objective evaluation by partner not on engagement team.',
     reference: 'QC 10 / PCAOB QC 1000',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-175',
@@ -3564,7 +3540,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Root cause analysis: investigate why deficiencies occurred (training, supervision, methodology, tone). Implement remediation (policies, training, technology). Monitor effectiveness. Required by QC standards.',
     reference: 'QC 1000',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Analysis',
   },
   // Batch 12 - Additional AUD Questions
   {
@@ -3587,7 +3562,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Prior period evidence may be relevant if conditions unchanged (internal controls, nature of transactions). Auditor must assess continued relevance, perform procedures to determine if still valid.',
     reference: 'AU-C 500.09',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-177',
@@ -3609,7 +3583,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Inquiry provides useful information but insufficient alone for material balances/disclosures. Corroborate with other procedures (inspection, observation, confirmation). Inquiry important for understanding business.',
     reference: 'AU-C 500.A2',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-178',
@@ -3631,7 +3604,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Nonstatistical: auditor judgment for sample size and evaluation. Can still be effective if properly applied. Must project results to population. No precision or confidence level calculated.',
     reference: 'AU-C 530.05',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-179',
@@ -3653,7 +3625,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Sampling risk: risk sample not representative. Allowance = difference between sample result and unknown true value. Statistical sampling measures this precisely. Nonstatistical uses judgment.',
     reference: 'AU-C 530.A1',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-180',
@@ -3675,7 +3646,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Document ALL control deficiencies identified. Evaluate severity to determine if significant deficiency or material weakness. Communication requirements differ by severity. Documentation supports conclusions.',
     reference: 'AU-C 265.A8',
     blueprintArea: 'AUD-I',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-181',
@@ -3697,7 +3667,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Effective entity-level controls (monitoring, management review of financials) may reduce extent of lower-level testing. Must operate at sufficient precision. Cannot completely replace transaction-level testing.',
     reference: 'AU-C 315.A60',
     blueprintArea: 'AUD-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-182',
@@ -3719,7 +3688,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Revenue fraud presumption: rebuttable. Document specific reasons (simple, low-risk transactions; no incentives). If rebutted, document basis. Still required to consider all significant fraud risks including revenue.',
     reference: 'AU-C 240.27',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-183',
@@ -3741,7 +3709,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Brainstorming: discuss how/where fraud could occur, incentives/pressures, opportunities to commit/conceal, rationalization. Include all team members. Set aside professional skepticism assumptions. Document discussion.',
     reference: 'AU-C 240.16',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-184',
@@ -3763,7 +3730,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Client-imposed scope limitation: more serious than circumstantial. Consider withdrawing if pervasive. If cannot withdraw, disclaim or qualify based on pervasiveness. Communicate with TCWG.',
     reference: 'AU-C 705.13',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-185',
@@ -3785,7 +3751,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Options: predecessor reissues report (with engagement letter, consider subsequent events), or current auditor refers to predecessor report (identify predecessor, type of opinion, date). Read predecessor report.',
     reference: 'AU-C 700.42',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-186',
@@ -3807,7 +3772,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Supplementary info: other-matter paragraph (in relation to opinion) or separate report. State procedures performed, whether info fairly stated. If material misstatement, modify the report on supplementary information.',
     reference: 'AU-C 725',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-187',
@@ -3829,7 +3793,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Contingent fees: prohibited for attestation engagements (audit, review, examination). Creates self-interest threat. Permitted for non-attestation (tax, consulting with limits). Independence impairment if contingent.',
     reference: 'ET 1.510.001',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-188',
@@ -3851,7 +3814,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Close relative (parent, sibling, nondependent child) in key position at client: impairs independence for covered member. Key position = significant influence over accounting/financial reporting.',
     reference: 'ET 1.270',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-189',
@@ -3873,7 +3835,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'GITCs: pervasive controls over IT environment. Include access security, program change controls, computer operations, program development. Weakness can affect all applications. Test before relying on application controls.',
     reference: 'AU-C 315.A91',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-190',
@@ -3895,7 +3856,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'IT audit trail: may be electronic only, available for limited period. Plan timing of tests. Consider need for CAATs. Data retention policies affect evidence availability. May require tests at interim dates.',
     reference: 'AU-C 315.A94',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-191',
@@ -3917,7 +3877,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Preparation: prepare financials using client records. No independence required. No report required (but legend required on each page). No assurance provided. Lowest level of service.',
     reference: 'AR-C 70',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-192',
@@ -3939,7 +3898,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Compilation with known departures: disclose departure and effects if known (or state cannot determine). Separate paragraph after responsibilities paragraph. May complete engagement with disclosure.',
     reference: 'AR-C 80.35',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-193',
@@ -3961,7 +3919,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Forecast: based on expected conditions. Projection: hypothetical assumptions (what if). Projections limited use (parties who understand assumptions). Forecasts may be general or limited use.',
     reference: 'AT-C 305',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-194',
@@ -3983,7 +3940,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Compliance attestation: examine (opinion) or review (limited assurance) entity compliance with laws, regulations, contracts, grants. Use AT-C 315. Responsible party assertion required.',
     reference: 'AT-C 315',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-195',
@@ -4005,7 +3961,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Single audit threshold: $750,000 or more in federal expenditures. Below threshold: may need program-specific audit or no audit. Uniform Guidance sets requirements. Annual threshold review.',
     reference: '2 CFR 200.501',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-196',
@@ -4027,7 +3982,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Type A: larger programs (generally >$750K or 3% of total awards, whichever larger). Type B: smaller programs. Must test all high-risk Type A. Select some Type B as major programs. Risk-based approach.',
     reference: '2 CFR 200.518',
     blueprintArea: 'AUD-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-197',
@@ -4049,7 +4003,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Tone at the top: firm leadership demonstrates commitment to quality over commercial interests. Communicates importance of ethics, professional skepticism, compliance. Foundation of quality control system.',
     reference: 'QC 10.07',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-ext-198',
@@ -4071,7 +4024,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Hot review: review work timely as completed. Allows corrections before concluding. More effective than cold review (after completion). Supervision and review integral to quality control.',
     reference: 'AU-C 220.17',
     blueprintArea: 'AUD-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'aud-ext-199',
@@ -4093,7 +4045,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Related party: identify parties, assess risk, evaluate substance over form, scrutinize terms (arm\'s length?), verify approval and disclosure. Higher risk of misstatement. Inquire management and TCWG.',
     reference: 'AU-C 550',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'aud-ext-200',
@@ -4115,7 +4066,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     explanation: 'Segment disclosures: understand management\'s segment determination, test classification consistency, verify allocation methods, test mathematical accuracy, evaluate completeness of disclosure.',
     reference: 'AU-C 501.A12',
     blueprintArea: 'AUD-II',
-    skillLevel: 'Application',
   },
 ];
 

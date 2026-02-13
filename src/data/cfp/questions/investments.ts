@@ -35,7 +35,6 @@ export const CFP_INV_QUESTIONS: Question[] = [
     id: 'CFP-INV-002',
     courseId: 'cfp',
     section: 'CFP-INV',
-    courseId: 'cfp',
     blueprintArea: 'INV-1',
     question: "Which of the following risks cannot be diversified away?",
     options: [

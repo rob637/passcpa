@@ -29,7 +29,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Qualifying Surviving Spouse status is available for 2 years after spouse\'s death if taxpayer maintains a home for a dependent child. It provides the same tax brackets and standard deduction as MFJ.',
     reference: 'IRC §2(a)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-base-ind-002',
@@ -51,7 +50,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Unemployment compensation is fully taxable as ordinary income. Life insurance death benefits, municipal bond interest, and gifts are excluded from gross income under IRC §101, §103, and §102.',
     reference: 'IRC §85',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-base-ind-003',
@@ -73,7 +71,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Self-employed health insurance is deducted "for AGI" on Schedule 1, Line 17. It cannot exceed net self-employment income. This is more beneficial than itemized deductions since it reduces AGI.',
     reference: 'IRC §162(l)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-base-ind-004',
@@ -95,7 +92,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'The SALT (State and Local Tax) deduction is capped at $10,000 ($5,000 MFS). This includes state/local income taxes (or sales taxes), property taxes, and personal property taxes combined.',
     reference: 'IRC §164(b)(6)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-ind-005',
@@ -117,7 +113,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Long-term capital gains require a holding period of MORE than one year (not "one year or more"). Assets held one year or less produce short-term gains taxed at ordinary rates.',
     reference: 'IRC §1222',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-ind-006',
@@ -139,7 +134,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Roth IRA contributions are NOT deductible (after-tax), but qualified distributions are tax-free. Traditional IRA contributions may be deductible, but distributions are taxable. Roth IRAs have no RMDs during owner\'s lifetime.',
     reference: 'IRC §408A',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -166,7 +160,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S Corporations provide limited liability (corporate form) while passing income through to shareholders (avoiding entity-level tax). C Corps have double taxation; partnerships/sole props lack liability protection.',
     reference: 'IRC §1361-1379',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-ent-002',
@@ -188,7 +181,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S Corp requirements: domestic corporation, ≤100 shareholders (family members count as one), only eligible shareholders (individuals, estates, certain trusts - not corporations), one class of stock. No income limit.',
     reference: 'IRC §1361(b)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-ent-003',
@@ -210,7 +202,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S Corp basis increases: income (ordinary and separately stated), additional contributions. Decreases: distributions, losses, nondeductible expenses. Unlike partnerships, S Corp shareholders do not get basis for entity debt.',
     reference: 'IRC §1367',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-ent-004',
@@ -232,7 +223,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'DRD is 50% for <20% ownership, 65% for 20-79% ownership, 100% for 80%+ ownership (affiliates). At 25% ownership: $100,000 × 65% = $65,000 DRD.',
     reference: 'IRC §243',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -259,7 +249,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'When gifted property FMV ≥ donor\'s basis, the donee takes carryover basis (donor\'s adjusted basis). If FMV < donor\'s basis, there\'s a dual basis: carryover for gain, FMV for loss.',
     reference: 'IRC §1015',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-base-prop-002',
@@ -281,7 +270,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Post-2017, §1031 applies ONLY to real property held for productive use in trade/business or investment. Personal property, inventory, stock, partnership interests, and property held primarily for sale are excluded.',
     reference: 'IRC §1031(a)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-base-prop-003',
@@ -303,7 +291,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Net §1231 gains are treated as long-term capital gains (favorable rates). Net §1231 losses are ordinary losses (fully deductible against ordinary income). This "best of both worlds" treatment makes §1231 property attractive.',
     reference: 'IRC §1231',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-base-prop-004',
@@ -325,7 +312,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§1245 recapture requires gain to be recognized as ordinary income to the extent of depreciation previously taken. Any gain exceeding depreciation is §1231 gain (potentially capital). §1250 has different rules for real property.',
     reference: 'IRC §1245',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -352,7 +338,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Under §721, contribution of property to a partnership is generally tax-free. Partner\'s basis in partnership interest = adjusted basis of contributed property = $30,000 (carryover basis).',
     reference: 'IRC §722',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-pship-002',
@@ -374,7 +359,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Partners in general partnerships have unlimited personal liability for partnership debts. Since they\'re personally at risk, partnership liabilities increase their basis, enabling larger loss deductions.',
     reference: 'IRC §752',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-pship-003',
@@ -396,7 +380,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Current distributions: Cash reduces basis first (but not below zero). Remaining basis to allocate = $40,000 - $25,000 = $15,000. Property takes carryover basis limited to remaining basis. Partner\'s ending basis = $15,000.',
     reference: 'IRC §733',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -423,7 +406,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§351 nonrecognition requires: (1) property transferred for stock, (2) transferors control corporation (80% voting + 80% each class) immediately after exchange. Services don\'t count; boot triggers gain recognition.',
     reference: 'IRC §351',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-base-corp-002',
@@ -445,7 +427,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'The accumulated earnings tax (currently 20%) penalizes corporations that accumulate earnings beyond reasonable business needs to help shareholders avoid dividend taxes. The $250,000 is just a safe harbor, not a trigger.',
     reference: 'IRC §531-537',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-base-corp-003',
@@ -467,7 +448,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Built-in gains tax applies when a C corp converts to S corp and sells appreciated assets within 5 years. The tax (21% corporate rate) applies to the lesser of recognized gain or built-in gain at conversion.',
     reference: 'IRC §1374',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -494,7 +474,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Basic tax planning: defer income to years with higher brackets, accelerate deductions to years with higher brackets. If next year\'s income will be higher, push income forward and pull deductions into this year.',
     reference: 'Tax Planning Fundamentals',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-plan-002',
@@ -516,7 +495,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§199A provides up to 20% deduction on QBI from pass-through businesses (partnerships, S corps, sole proprietorships). Subject to W-2 wage/property limits and Specified Service Trade limitations at higher incomes.',
     reference: 'IRC §199A',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -546,7 +524,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Each spouse can give $19,000 per donee = $38,000 per child. With gift splitting: $38,000 × 3 children = $114,000. Each spouse can independently gift to each donee using their own annual exclusion.',
     reference: 'Gift Tax Planning',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-est-002',
@@ -568,7 +545,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'The unified credit exempts approximately $13.6 million (2026, indexed) per individual from estate/gift tax. A married couple can pass approximately $27.2 million using portability of the deceased spouse\'s unused exemption.',
     reference: 'Estate Tax Planning',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-est-003',
@@ -590,7 +566,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Property acquired from a decedent generally receives a stepped-up basis equal to FMV at date of death. The daughter\'s basis is $200,000; the $150,000 of appreciation during father\'s lifetime escapes income tax.',
     reference: 'IRC §1014 Step-Up in Basis',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-est-004',
@@ -612,7 +587,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'GSTT applies to transfers to "skip persons" - generally individuals 2 or more generations below the transferor (grandchildren) or non-relatives more than 37.5 years younger. It prevents avoiding estate tax at each generation.',
     reference: 'Generation-Skipping Transfer Tax',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Business Entity Tax Planning
@@ -636,7 +610,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'C corps pay 21% federal tax on income. When dividends are distributed, shareholders pay tax again (typically 15-20% qualified dividend rate). S corps avoid double taxation through pass-through treatment.',
     reference: 'Entity Selection',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-bus-002',
@@ -658,7 +631,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S corps cannot have partnerships, corporations, or non-resident aliens as shareholders. They can have up to 100 shareholders, but only one class of stock (differing voting rights are permitted).',
     reference: 'S Corporation Requirements',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-bus-003',
@@ -680,7 +652,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Guaranteed payments are deductible by the partnership (reducing partnership income) and taxable to the receiving partner as ordinary income. They\'re similar to salary but partner remains self-employed.',
     reference: 'Partnership Guaranteed Payments',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-bus-004',
@@ -702,7 +673,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Outside basis is increased by capital contributions, share of income, and share of liabilities. It\'s decreased by distributions, share of losses, and liability decreases. Liabilities increase basis because they represent future economic outflow.',
     reference: 'Partnership Basis',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
 
   // Property Transactions
@@ -730,7 +700,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Safe harbor: Pay 90% of current year tax OR 100% of prior year tax (110% if prior year AGI exceeded $150,000 MFJ). Meeting either threshold avoids underpayment penalty regardless of actual tax.',
     reference: 'Estimated Tax Requirements',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-prac-002',
@@ -752,7 +721,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'General rule is 3 years from the later of filing date or due date. Extended to 6 years if >25% gross income omitted, and unlimited for fraud or failure to file.',
     reference: 'Statute of Limitations',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-prac-003',
@@ -774,7 +742,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'IRC §6694(a) imposes a penalty of the greater of $1,000 or 50% of the preparer\'s income from the return for unreasonable positions. Willful/reckless conduct penalty under §6694(b) is the greater of $5,000 or 75%.',
     reference: 'Tax Preparer Penalties',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-prac-004',
@@ -796,7 +763,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Excess business loss rules (§461(l), made permanent by H.R. 1) limit noncorporate taxpayers\' aggregate business losses to ~$305,000 single / ~$610,000 MFJ (indexed). Disallowed losses become NOL carryforwards.',
     reference: 'Excess Business Loss Limitation',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -824,7 +790,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'GST tax applies to transfers to skip persons (2+ generations below transferor). Each person has a lifetime GST exemption equal to the estate tax exemption (~$13M). Rate is flat 40%.',
     reference: 'IRC §2601',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-est-b4-002',
@@ -846,7 +811,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Portability (DSUE - deceased spousal unused exclusion) allows surviving spouse to add deceased spouse\'s unused exemption to their own. Must file estate return to elect, even if not otherwise required.',
     reference: 'IRC §2010(c)(4)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-est-b4-003',
@@ -868,7 +832,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Minority discount reflects that a non-controlling interest lacks ability to direct entity actions, liquidate, or force distributions. Combined with marketability discount, can significantly reduce estate value.',
     reference: 'Estate Valuation Principles',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-est-b4-004',
@@ -890,7 +853,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Gift splitting election treats each gift as made 50% by each spouse. A $36,000 gift split = $18,000 from each, using each spouse\'s $18,000 (2024) annual exclusion. Requires consent of both spouses.',
     reference: 'IRC §2513',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
 
   // Entity Taxation Advanced
@@ -914,7 +876,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'AET (20% rate) applies to C corps that accumulate earnings beyond reasonable business needs to avoid shareholder dividend tax. $250,000 credit available ($150,000 for professional service corps).',
     reference: 'IRC §531',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-ent-b4-002',
@@ -936,7 +897,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'PHC = (1) 5 or fewer individuals own >50% of stock (constructive ownership applies) AND (2) 60%+ of adjusted ordinary gross income is PHC income (passive income). PHC tax = 20% of undistributed PHC income.',
     reference: 'IRC §541',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-ent-b4-003',
@@ -958,7 +918,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Special allocations must have substantial economic effect under §704(b). This means: economic effect (affects capital accounts/liquidation) AND substantiality (reasonable possibility of affecting dollar amounts independent of tax).',
     reference: 'IRC §704(b)',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-ent-b4-004',
@@ -980,7 +939,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'IRC §704(e) allows IRS to reallocate income if donor partner\'s services aren\'t reasonably compensated or donee\'s capital is the primary income-producing factor without adequate capital allocation.',
     reference: 'IRC §704(e)',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-ent-b4-005',
@@ -1002,7 +960,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'QSSS is a domestic corporation 100% owned by an S corp parent that elects QSSS status. The QSSS is disregarded for tax purposes - its income/loss flows to parent S corp as if one entity.',
     reference: 'IRC §1361(b)(3)',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Individual Tax Planning
@@ -1026,7 +983,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Kiddie tax applies to children under 19 (or under 24 if full-time student and not self-supporting) with unearned income above $2,500 (indexed). Excess is taxed at parents\' marginal rate.',
     reference: 'IRC §1(g)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-ind-b4-002',
@@ -1048,7 +1004,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Real estate professional exception requires: (1) >50% of personal services in real property trades/businesses AND (2) >750 hours in such activities. Each rental is then tested separately for material participation.',
     reference: 'IRC §469(c)(7)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-ind-b4-003',
@@ -1070,7 +1025,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'At-risk includes cash, adjusted basis of property contributed, and qualified nonrecourse financing (for real estate only). Excludes nonrecourse loans from related parties or those with equity interest in activity.',
     reference: 'IRC §465',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
 
   // Business Tax Planning
@@ -1094,7 +1048,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SSTBs (health, law, accounting, etc.) have full QBI deduction below threshold, phase out over next $50K/$100K, and NO deduction above $232,100/$464,200. Non-SSTBs have W-2/property limits but no complete disallowance.',
     reference: 'IRC §199A(d)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-bus-b4-002',
@@ -1116,7 +1069,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§162(m) limits deduction for compensation to covered employees (CEO, CFO, top 3 others) of public companies to $1M. No exceptions for performance-based comp post-2017. Once covered, always covered.',
     reference: 'IRC §162(m)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-bus-b4-003',
@@ -1138,7 +1090,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'R&D credit is 20% of qualified research expenses exceeding a base amount (based on historical research ratio). Alternative simplified credit is 14% of QRE exceeding 50% of average QRE for prior 3 years.',
     reference: 'IRC §41',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
 
   // Tax Credits
@@ -1162,7 +1113,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FTC is limited by category (baskets): general and passive. This prevents using excess credits from high-tax passive income to offset low-tax active business income.',
     reference: 'IRC §904',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-cred-002',
@@ -1184,7 +1134,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'WOTC provides credit for hiring from targeted groups: qualified veterans, SNAP recipients, ex-felons, designated community residents, summer youth, SSI recipients, and long-term family assistance recipients.',
     reference: 'IRC §51',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-cred-003',
@@ -1206,7 +1155,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Credit = 50% of eligible access expenditures between $250 and $10,250 (max $5,000 credit). Available to eligible small businesses: ≤$1M revenue or ≤30 full-time employees in prior year.',
     reference: 'IRC §44',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // International Tax
@@ -1230,7 +1178,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FDII deduction = 37.5% of FDII, resulting in 21% × (1 - 0.375) = 13.125% effective rate on export income exceeding deemed tangible income return. Encourages domestic production for export.',
     reference: 'IRC §250',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-intl-002',
@@ -1252,7 +1199,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'BEAT applies to corps with ≥$500M 3-year average gross receipts AND base erosion percentage ≥3% (2% for banks/dealers). It\'s a minimum tax on deductible payments to foreign related parties.',
     reference: 'IRC §59A',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -1280,7 +1226,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'The 2025 401(k) elective deferral limit is $23,500 ($31,000 with catch-up for age 50+). Under H.R. 1, ages 60-63 get enhanced catch-up of $11,250.',
     reference: 'IRC §402(g)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-ret-002',
@@ -1302,7 +1247,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 increased RMD age to 73 for those turning 72 after 2022. It increases to 75 starting in 2033. This delays required distributions and their associated taxation.',
     reference: 'SECURE Act 2.0',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-ret-003',
@@ -1324,7 +1268,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Qualified Roth distributions require: 5-year holding period AND one of: age 59½, death, disability, or first-time home purchase (up to $10,000 lifetime). Otherwise, earnings may be taxable/penalized.',
     reference: 'IRC §408A',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-ret-004',
@@ -1346,7 +1289,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SEP contributions are limited to 25% of compensation (20% of net self-employment income) up to $69,000 (2024, indexed). No employee elective deferrals; employer-funded only.',
     reference: 'IRC §408(k)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Compensation and Benefits
@@ -1370,7 +1312,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§409A requires: initial deferral election before services are performed, distribution only upon specified events (separation, disability, etc.), and prohibition on acceleration. Violations result in immediate taxation plus 20% penalty.',
     reference: 'IRC §409A',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-comp-002',
@@ -1392,7 +1333,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'ISOs have no regular tax at grant or exercise (but AMT applies at exercise on bargain element). Regular income is recognized at sale. If holding period met (2 yrs from grant, 1 yr from exercise), gain is LTCG.',
     reference: 'IRC §422',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-comp-003',
@@ -1414,7 +1354,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Employer-paid group term life up to $50,000 is excludable under §79. Cost of coverage over $50,000 is taxable to employee. Other options are taxable fringe benefits.',
     reference: 'IRC §79',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
 
   // Trust Taxation
@@ -1438,7 +1377,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Simple trust: (1) must distribute all income currently, (2) makes no charitable contributions, (3) doesn\'t distribute principal. All others are complex trusts. DNI rules allocate income between trust and beneficiaries.',
     reference: 'IRC §651',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-trust-002',
@@ -1460,7 +1398,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Grantor trust rules (§§671-679) treat the grantor as owner for income tax if they retain: reversionary interest >5%, power to control beneficial enjoyment, administrative powers, etc. Income taxed to grantor.',
     reference: 'IRC §671-679',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-trust-003',
@@ -1482,7 +1419,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Trusts have compressed tax brackets - reaching 37% at ~$14,450 (2024) versus $539,900 for individuals. This encourages distributing income to beneficiaries who may be in lower brackets.',
     reference: 'Trust Tax Rates',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Business Succession
@@ -1506,7 +1442,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§303 allows estate/heirs to redeem stock to pay death taxes and expenses without dividend treatment, if stock is >35% of adjusted gross estate. Amount redeemed up to taxes/expenses is exchange, not dividend.',
     reference: 'IRC §303',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-succ-002',
@@ -1528,7 +1463,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§6166 allows deferral/installment payment of estate tax attributable to closely held business if business value >35% of adjusted gross estate. Interest-only for 5 years, then principal over 10 years.',
     reference: 'IRC §6166',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-succ-003',
@@ -1550,7 +1484,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Cross-purchase: each owner buys insurance on other owners. At death, surviving owners buy deceased\'s interest. Gets stepped-up basis. Redemption: entity owns policies and redeems interest.',
     reference: 'Buy-Sell Agreements',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // State and Local Tax
@@ -1574,7 +1507,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Wayfair (2018) overturned physical presence requirement. States can require collection based on economic nexus (e.g., $100,000 sales or 200 transactions in state). Each state sets its own thresholds.',
     reference: 'South Dakota v. Wayfair',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-salt-002',
@@ -1596,7 +1528,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'PTE elections shift state tax from individual level (subject to $10,000 SALT cap) to entity level. Entity deducts state taxes; individuals receive reduced K-1 income or credit. IRS approved via Notice 2020-75.',
     reference: 'PTE Tax Elections',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-081',
@@ -1618,7 +1549,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Bunching concentrates deductible expenses (charitable, medical, taxes) in one year to exceed standard deduction, then use standard deduction in other years. Maximizes total tax benefit.',
     reference: 'Itemized Deduction Strategies',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-082',
@@ -1640,7 +1570,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'QOZ benefits: (1) defer original gain until 2026 or sale, (2) 10% basis increase after 5 years (expired), (3) exclude appreciation on QOF investment if held 10+ years.',
     reference: 'IRC §1400Z-2',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-083',
@@ -1662,7 +1591,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Kiddie tax applies to: under 19, or under 24 if full-time student with earned income not exceeding half of support. Unearned income over threshold taxed at parents\' marginal rate.',
     reference: 'IRC §1(g)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-084',
@@ -1684,7 +1612,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Multi-member LLC defaults to partnership taxation. Single-member defaults to disregarded entity. Can elect corporate treatment via Form 8832. S corp election requires Form 2553 after corporate election.',
     reference: 'Treas. Reg. §301.7701-3',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-085',
@@ -1706,7 +1633,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S corp: single level of tax (pass-through), but limited to 100 shareholders, one class of stock, US individuals/certain trusts only. C corp: double tax but no ownership restrictions.',
     reference: 'IRC §1361-1368',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-086',
@@ -1728,7 +1654,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S corp distributions to shareholder-employees are not subject to self-employment tax (only FICA on reasonable salary). IRS scrutinizes unreasonably low salaries. Must pay reasonable compensation.',
     reference: 'S Corp Employment Tax Planning',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-087',
@@ -1750,7 +1675,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'DB plan max benefit is lesser of 100% of average compensation for 3 highest years or $275,000 (2024). Benefit is annual retirement amount, not contribution. Funding is actuarially determined.',
     reference: 'IRC §415(b)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-088',
@@ -1772,7 +1696,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 raised RMD age to 73 (for those turning 72 after 2022). Increases to 75 in 2033. First RMD by April 1 following year reaching RMD age; subsequent RMDs by December 31.',
     reference: 'SECURE 2.0 Act',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-089',
@@ -1794,7 +1717,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Backdoor Roth: make nondeductible traditional IRA contribution (no income limit), then convert to Roth. Pro-rata rule applies if other traditional IRA balances exist, causing partial taxation.',
     reference: 'Roth Conversion Strategies',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-090',
@@ -1816,7 +1738,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'NUA: employer stock distributed in-kind from qualified plan. Cost basis taxed as ordinary income at distribution. NUA (appreciation) taxed as LTCG when stock is sold, regardless of holding period.',
     reference: 'IRC §402(e)(4)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-091',
@@ -1838,7 +1759,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§409A requires: elections to defer must be made in year before compensation is earned (or within 30 days of eligibility for new plans). Distribution timing is restricted. Violations trigger 20% penalty plus interest.',
     reference: 'IRC §409A',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-092',
@@ -1860,7 +1780,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'ISO holding requirements: 1 year from exercise AND 2 years from grant date. Meeting both = LTCG on sale. Disqualifying disposition (fail either) = ordinary income on bargain element.',
     reference: 'IRC §422',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-093',
@@ -1882,7 +1801,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§83(b) election: file within 30 days of receiving restricted property. Includes current value in income at grant (possibly $0 for startup stock). Future appreciation is capital gain. No refund if forfeited.',
     reference: 'IRC §83(b)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-094',
@@ -1904,7 +1822,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'GILTI = CFC tested income - (10% × QBAI). US shareholders include GILTI currently. 50% deduction available to C corps (effective 10.5% rate). Designed to tax excess returns from intangibles.',
     reference: 'IRC §951A',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-095',
@@ -1926,7 +1843,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FTC limited to US tax attributable to foreign income. Formula: US tax liability × (foreign source taxable income ÷ worldwide taxable income). Excess credits can carry back 1 year, forward 10.',
     reference: 'IRC §904',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-096',
@@ -1948,7 +1864,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Treaties: reduce double taxation, lower withholding rates on dividends/interest/royalties, allocate taxing rights between countries, provide tie-breaker rules for residency, and enable information exchange.',
     reference: 'US Tax Treaties',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-097',
@@ -1970,7 +1885,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'GRAT success depends on assets outperforming the §7520 rate (IRS assumed rate). Excess appreciation passes gift-tax-free to remaindermen. If grantor dies during term, assets included in estate.',
     reference: 'IRC §2702',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-098',
@@ -1992,7 +1906,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'IDGT: grantor pays income tax (reducing estate), but trust is separate for estate/gift purposes. Trust grows without tax burden. Sale to IDGT not recognized for income tax (grantor trust rules).',
     reference: 'Grantor Trust Planning',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-099',
@@ -2014,7 +1927,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FLP interests may qualify for discounts: lack of marketability (no ready market), lack of control (LP interests have no management rights). Combined discounts often 25-40%. IRS scrutinizes aggressively.',
     reference: 'FLP Valuation',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-100',
@@ -2036,7 +1948,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Practitioner cannot sign return with frivolous position or position lacking reasonable basis. Non-disclosed positions need substantial authority. Disclosed positions need reasonable basis.',
     reference: 'Circular 230 §10.34',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-101',
@@ -2058,7 +1969,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Listed transactions (identified by IRS as abusive) require Form 8886 disclosure. Material advisors must report. Penalties: 75% of tax benefit if not disclosed. Statute of limitations extended.',
     reference: 'IRC §6707A',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-102',
@@ -2080,7 +1990,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'HSA triple tax benefit: (1) above-the-line deduction for contributions, (2) tax-free investment growth, (3) tax-free distributions for qualified medical expenses. 2024 limits: $4,150 self, $8,300 family.',
     reference: 'IRC §223',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-103',
@@ -2102,7 +2011,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§1202 QSBS: exclude up to greater of $10M or 10× basis if stock held 5+ years, acquired at original issuance, and corporation has <$50M gross assets. 100% exclusion for stock acquired after 9/27/2010.',
     reference: 'IRC §1202',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-104',
@@ -2124,7 +2032,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '72(t) SEPP: penalty-free if payments continue for longer of 5 years or until age 59½. Three IRS-approved methods: life expectancy, amortization, annuitization. Modification triggers retroactive 10% penalty.',
     reference: 'IRC §72(t)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-105',
@@ -2146,7 +2053,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'CLAT: charity receives annuity payments for a term; remainder passes to family. Gift tax based on present value of remainder. If assets appreciate faster than §7520 rate, excess passes transfer-tax-free.',
     reference: 'IRC §2055',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-106',
@@ -2168,7 +2074,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'DAF: immediate charitable deduction when contributed (FMV for appreciated property held >1 year), then recommend grants to charities over time. No additional deduction when grants made.',
     reference: 'IRC §170(f)(18)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-107',
@@ -2190,7 +2095,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'QCD: direct transfer from IRA to charity (up to $105,000 in 2024). Excluded from income, counts toward RMD, no deduction but reduces AGI. Better than deduction for many taxpayers.',
     reference: 'IRC §408(d)(8)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-108',
@@ -2212,7 +2116,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Assignment of income doctrine prevents assigning earned income (must be taxed to earner). Can shift investment income via gifts of property, employ family at reasonable wages, use legitimate family partnerships.',
     reference: 'Assignment of Income Doctrine',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-109',
@@ -2234,7 +2137,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '529 plans: no federal deduction (some states offer), tax-free growth, tax-free withdrawals for qualified expenses (tuition, room, board, K-12 up to $10K). SECURE 2.0 allows Roth rollover of unused funds.',
     reference: 'IRC §529',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-110',
@@ -2256,7 +2158,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Partnerships allow special allocations (economic substance), flexible basis rules, tax-free property distributions. S corps: single class of stock, no special allocations, but SE tax savings on distributions.',
     reference: 'Entity Comparison',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-111',
@@ -2278,7 +2179,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Series LLC: single entity with separate series, each with liability shield from other series and parent. Useful for real estate portfolios. Tax treatment varies; IRS proposed regulations pending.',
     reference: 'Series LLC Law',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-112',
@@ -2300,7 +2200,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'PC: provides liability protection except professionals remain liable for own malpractice/negligence. Can elect S corp status. Required for licensed professionals (doctors, lawyers, CPAs) in many states.',
     reference: 'Professional Corporation Law',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-113',
@@ -2322,7 +2221,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Solo 401(k): employee deferrals ($23,000 in 2024, +$7,500 catch-up if 50+) plus employer contribution (up to 25% of compensation), total $69,000 (or $76,500 with catch-up).',
     reference: 'IRC §401(k)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-114',
@@ -2344,7 +2242,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Cash balance: DB plan with individual hypothetical accounts. Pay credits (% of salary) plus interest credits. Benefit is account balance. Allows high contributions for older owners. Portable like DC plan.',
     reference: 'IRC §401(a)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-115',
@@ -2366,7 +2263,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SIMPLE: employers with ≤100 employees earning $5,000+. Employee deferrals up to $16,000 (2024), catch-up $3,500. Employer matches 1-3% or contributes 2% nonelective.',
     reference: 'IRC §408(p)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-116',
@@ -2388,7 +2284,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'RSUs: no property received at grant, so no 83(b) election available. Taxed as ordinary income at vesting/delivery (FMV). Subsequent appreciation is capital gain. Withholding required at vesting.',
     reference: 'IRC §83',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-117',
@@ -2410,7 +2305,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'ESPP: up to 15% discount, no tax at purchase if qualified. Holding period: 2 years from grant, 1 year from purchase. Qualifying disposition: discount is ordinary income, rest is LTCG.',
     reference: 'IRC §423',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-118',
@@ -2432,7 +2326,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§280G: parachute payment if contingent on change in control and ≥3x base amount. Excess = payment - 1x base amount. No deduction for excess; 20% excise tax on recipient (§4999). Small corp exemption.',
     reference: 'IRC §280G',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-119',
@@ -2454,7 +2347,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Subpart F: certain income of CFCs taxed currently to US shareholders. Includes: passive (FPHCI), foreign base company sales (related party sales), foreign base company services. Anti-deferral regime.',
     reference: 'IRC §951-964',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-120',
@@ -2476,7 +2368,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'BEAT: applies to corps with ≥$500M gross receipts and ≥3% base erosion percentage. Minimum tax on modified taxable income (adds back certain payments to foreign affiliates). Currently 10% rate.',
     reference: 'IRC §59A',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-121',
@@ -2498,7 +2389,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FDII: 37.5% deduction for C corps on income serving foreign markets (export incentive). Effective rate: 21% × 62.5% = 13.125%. Counterpart to GILTI for encouraging US location. Calculation similar to GILTI.',
     reference: 'IRC §250',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-122',
@@ -2520,7 +2410,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Portability: surviving spouse can use DSUE amount if executor elects on timely filed estate return. Provides nearly $27M exemption for married couples. Election required even if no tax due.',
     reference: 'IRC §2010(c)(4)',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-123',
@@ -2542,7 +2431,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Annual exclusion: $18,000 per donee (2024). Married couples can gift $36,000/donee ($18K each or split gifts). Present interest required. No limit on number of donees. No return if within exclusion.',
     reference: 'IRC §2503(b)',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-124',
@@ -2564,7 +2452,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Crummey: beneficiary has limited time to withdraw contribution (usually 30 days). Creates present interest, qualifying for annual exclusion. Power typically lapses, keeping funds in trust.',
     reference: 'Crummey v. Commissioner',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-125',
@@ -2586,7 +2473,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SLAT: grantor gifts to irrevocable trust with spouse as beneficiary. Uses exemption, removes appreciation from estate. Indirect access via spouse. Popular before potential exemption reduction.',
     reference: 'Estate Planning Trusts',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-126',
@@ -2608,7 +2494,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Written advice: no unreasonable factual/legal assumptions, consider all relevant facts known, no reliance on representations of likelihood if reason to know incorrect. Higher standards for tax shelters.',
     reference: 'Circular 230 §10.37',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-127',
@@ -2630,7 +2515,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Best practices: clear engagement terms, communicate clearly, establish relevant facts, advise on compliance opportunities, advise on potential penalties, act fairly and with integrity.',
     reference: 'Circular 230 §10.33',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-128',
@@ -2652,7 +2536,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'AMT planning: time ISO exercises, accelerate income in AMT years (not regular years), defer deductions to non-AMT years. Accelerating income helps when already in AMT (lower effective rate).',
     reference: 'AMT Planning Strategies',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-129',
@@ -2674,7 +2557,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'C to S conversion: built-in gains tax applies if assets with built-in gain at conversion sold within 5 years. C corp NOLs suspended (can\'t use as S corp but may use if revoke). E&P retained.',
     reference: 'IRC §1374',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-130',
@@ -2696,7 +2578,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Roth conversion favorable when: current rate < future rate, low-income years (job loss, early retirement), long time horizon for tax-free growth, paying tax from non-retirement funds.',
     reference: 'Roth Conversion Analysis',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-131',
@@ -2718,7 +2599,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'HSA triple tax advantage: deductible contribution, tax-free growth, tax-free withdrawal for qualified medical. Requires HDHP. 2024 limits: $4,150 individual, $8,300 family. +$1,000 catch-up if 55+.',
     reference: 'IRC §223',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-132',
@@ -2740,7 +2620,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Estimated tax required if expected tax (after withholding/credits) is $1,000+. Quarterly: 4/15, 6/15, 9/15, 1/15. Safe harbors: 90% current or 100%/110% prior year to avoid penalty.',
     reference: 'IRC §6654',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-133',
@@ -2762,7 +2641,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Multi-member LLC: default partnership taxation. Single-member: disregarded (Schedule C). Can elect corporate (Form 8832) or S corp (Form 2553). Flexibility is key LLC advantage.',
     reference: 'Check-the-Box Regulations',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-134',
@@ -2784,7 +2662,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'S corp must pay reasonable compensation to shareholder-employees for services. Compensation subject to payroll taxes; excess profits as distributions avoid SE tax. IRS scrutinizes too-low compensation.',
     reference: 'S Corporation Compensation',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-135',
@@ -2806,7 +2683,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SEP: employer contributions only (no employee deferrals). Up to 25% of compensation, max $69,000 (2024). Self-employed: 25% of net SE income after SE tax deduction (~20% effective). Simple to administer.',
     reference: 'IRC §408(k)',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-136',
@@ -2828,7 +2704,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'DB plans: benefit based on formula (salary, years). Contributions actuarially determined. Older owners can contribute more (shorter funding period). Deduction up to actuarial limit. Complex, costly to administer.',
     reference: 'Defined Benefit Plans',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-137',
@@ -2850,7 +2725,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'NQDC: employee is unsecured creditor. If employer insolvent, employee may lose deferred amounts. Rabbi trusts offer some protection but still subject to creditors. Trade-off for tax deferral benefit.',
     reference: 'IRC §409A',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-138',
@@ -2872,7 +2746,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Phantom stock: notional units tracking stock value. Pays cash on vesting/termination. No actual ownership, voting rights, or dilution. Taxed as ordinary income when paid. Good for LLCs, private companies.',
     reference: 'Phantom Stock Plans',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-139',
@@ -2894,7 +2767,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Transfer pricing: related party transactions must be arm\'s length. Methods: CUP, resale price, cost plus, CPM, profit split. Documentation required. Prevents shifting income to low-tax jurisdictions.',
     reference: 'IRC §482',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-140',
@@ -2916,7 +2788,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'PFIC: 75% gross income passive OR 50% assets passive-producing. Punitive tax regime: excess distributions taxed at highest rate plus interest. QEF or MTM election can mitigate. Common with foreign mutual funds.',
     reference: 'IRC §1291-1298',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-141',
@@ -2938,7 +2809,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FLP: transfer limited partnership interests to family (valuation discounts for lack of control/marketability). Asset protection, centralized management. IRS scrutinizes; must have legitimate business purpose.',
     reference: 'Family Limited Partnerships',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-142',
@@ -2960,7 +2830,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§2032A: value qualifying real property at current use (farm/business) vs highest and best use. Max reduction: ~$1.38M (2024). Requirements: 50% of estate, 25% real property, qualified heir, material participation.',
     reference: 'IRC §2032A',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-143',
@@ -2982,7 +2851,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§6166: defer estate tax on closely held business if >35% of adjusted gross estate. 4-year deferral, then 10 annual installments. Interest only during deferral. Special 2% rate on first $1.75M of deferred tax.',
     reference: 'IRC §6166',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-144',
@@ -3004,7 +2872,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§6694: preparer penalty $1,000 for unreasonable position (no substantial authority). $5,000 for willful/reckless disregard. Adequate disclosure with reasonable basis can avoid. Per return.',
     reference: 'IRC §6694',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-145',
@@ -3026,7 +2893,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SSTS No. 3: CPA may rely on client information unless it appears incorrect, incomplete, or inconsistent. No audit required. Must make reasonable inquiries if information seems questionable.',
     reference: 'SSTS No. 3',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-146',
@@ -3048,7 +2914,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'NIIT (§1411): 3.8% on lesser of NII or MAGI over threshold ($200K single, $250K MFJ). NII includes interest, dividends, capital gains, rental income, passive income. Not wages, SE income, or active business.',
     reference: 'IRC §1411',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-147',
@@ -3070,7 +2935,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Additional Medicare tax: 0.9% on wages/SE income over $200K single, $250K MFJ. Employee portion only (no employer match). Employers withhold on wages >$200K regardless of filing status.',
     reference: 'IRC §3101(b)(2)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-148',
@@ -3092,7 +2956,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '§1202: 100% exclusion (for stock acquired after 9/27/10) on QSBS gain. Requirements: original issue, C corp, qualified small business (<$50M assets), active business, 5-year hold. Max $10M or 10x basis.',
     reference: 'IRC §1202',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-149',
@@ -3114,7 +2977,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SECURE Act: non-spouse beneficiaries must deplete inherited IRA within 10 years (post-2019 deaths). Exceptions: eligible designated beneficiaries (spouse, minor child, disabled, chronically ill, <10 years younger).',
     reference: 'SECURE Act',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-150',
@@ -3136,7 +2998,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Tax-favored benefits: group health (excludable), retirement plans (deferred), FSA/HSA (pre-tax), dependent care (up to $5K), educational assistance ($5,250), group-term life ($50K), and more.',
     reference: 'Employee Benefits',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-151',
@@ -3158,7 +3019,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FBAR (FinCEN 114): required if aggregate foreign financial accounts exceed $10,000 at any time. Due April 15 (auto extension to October 15). Willful failure: severe penalties. Separate from FATCA.',
     reference: 'BSA/FBAR',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-152',
@@ -3180,7 +3040,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Passive losses offset only passive income. Exceptions: $25K rental real estate allowance for active participants (phased out), real estate professionals, disposition releases suspended losses, material participation.',
     reference: 'IRC §469',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-153',
@@ -3202,7 +3061,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Corporate AMT (IRA 2022): 15% on adjusted financial statement income for corporations averaging $1B+ over 3 years. Uses book income as base. Reduces tax benefit of accelerated depreciation, etc.',
     reference: 'IRC §55',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-154',
@@ -3224,7 +3082,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Gift splitting: elect on Form 709 to treat gift by one spouse as made 50% by each. Doubles annual exclusion ($36K combined per donee). Both must consent. Both must file return even if split under exclusion.',
     reference: 'IRC §2513',
     blueprintArea: 'TCP-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-155',
@@ -3246,7 +3103,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Circular 230 sanctions: private reprimand, censure (public), suspension from practice, disbarment, monetary penalties. OPR (Office of Professional Responsibility) administers. Can appeal to ALJ.',
     reference: 'Circular 230 Subpart C',
     blueprintArea: 'TCP-V',
-    skillLevel: 'Remembering and Understanding',
   },
   // Batch 13 - Additional TCP Questions
   {
@@ -3269,7 +3125,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Roth conversion: taxable event. Consider current vs future rates, years to grow tax-free, estate planning, pay tax externally.',
     reference: 'IRC Section 408A',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-157',
@@ -3291,7 +3146,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Tax loss harvesting: sell losers, offset gains, repurchase similar (not substantially identical within 30 days - wash sale).',
     reference: 'IRC Section 1091',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-158',
@@ -3313,7 +3167,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'CRT: income to non-charitable beneficiary, remainder to charity. Partial deduction. Avoid capital gains on appreciated assets.',
     reference: 'IRC Section 664',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-159',
@@ -3335,7 +3188,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'QOZ: defer gains by investing in QOF, step-up after 5 years, exclude QOF appreciation if held 10+ years.',
     reference: 'IRC Section 1400Z-2',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-160',
@@ -3357,7 +3209,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '199A: 20% deduction. Phase-out limits based on W-2 wages and UBIA. SSTB limitations at higher income.',
     reference: 'IRC Section 199A',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-161',
@@ -3379,7 +3230,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '163(j): limit = 30% ATI + business interest income + floor plan financing. Disallowed interest carries forward.',
     reference: 'IRC Section 163(j)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-162',
@@ -3401,7 +3251,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Bonus depreciation: 100% (2022), 80% (2023), 60% (2024), 40% (2025), 20% (2026). Qualified property, new or used.',
     reference: 'IRC Section 168(k)',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-163',
@@ -3423,7 +3272,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'R&D credit: qualified research expenses. Small business can offset AMT and payroll tax. Regular or simplified method.',
     reference: 'IRC Section 41',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-164',
@@ -3445,7 +3293,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'ISO: no regular tax at exercise (AMT adjustment). Capital gains if holding requirements met. $100K annual limit.',
     reference: 'IRC Section 422',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-165',
@@ -3467,7 +3314,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '409A: strict rules for NQDC. Deferral elections, distribution timing, document requirements. 20% penalty for violations.',
     reference: 'IRC Section 409A',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-166',
@@ -3489,7 +3335,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: '83(b): elect to include FMV at grant in income. Future appreciation taxed as capital gain. Risk: forfeiture means no deduction.',
     reference: 'IRC Section 83(b)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-167',
@@ -3511,7 +3356,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Multi-member LLC: default partnership taxation. Can elect C or S corporation treatment. Check-the-box regulations.',
     reference: 'Treasury Reg. 301.7701-3',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-168',
@@ -3533,7 +3377,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Check-the-box: Form 8832. Choose classification. Cannot change for 60 months. Domestic eligible entities: default varies by members.',
     reference: 'Treasury Reg. 301.7701-3',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-169',
@@ -3555,7 +3398,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'ILIT: trust owns policy, proceeds excluded from estate. Crummey powers for gift tax exclusion. 3-year rule if existing policy transferred.',
     reference: 'IRC Section 2042',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-170',
@@ -3577,7 +3419,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'GRAT: grantor receives annuity, remainder to beneficiaries. If assets appreciate above Section 7520 rate, transfer tax-free.',
     reference: 'IRC Section 2702',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-171',
@@ -3599,7 +3440,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'IDGT: grantor pays income tax (additional tax-free gift), completed gift for transfer tax. Often used with installment sales.',
     reference: 'Grantor Trust Rules',
     blueprintArea: 'TCP-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-172',
@@ -3621,7 +3461,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'GILTI: CFC income above 10% QBAI return included currently. 50% deduction for C corps. High-tax exclusion available.',
     reference: 'IRC Section 951A',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-173',
@@ -3643,7 +3482,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FDII: 37.5% deduction on deemed intangible income from foreign sales. Incentive to keep IP and operations in US.',
     reference: 'IRC Section 250',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'tcp-174',
@@ -3665,7 +3503,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Treaties: reduced withholding, permanent establishment rules, tie-breakers for residency. LOB prevents treaty shopping.',
     reference: 'Tax Treaties',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-175',
@@ -3687,7 +3524,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'SSTS: realistic possibility standard, proper disclosure of positions, advise client of errors, maintain integrity.',
     reference: 'AICPA SSTS',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-176',
@@ -3709,7 +3545,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Error discovered: advise client, recommend amendment, document advice given. Cannot file amended return without client consent.',
     reference: 'SSTS No. 6',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-177',
@@ -3731,7 +3566,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'Section 6662: 20% penalty. Negligence, substantial understatement (greater of $5,000 or 10%), valuation misstatement.',
     reference: 'IRC Section 6662',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-178',
@@ -3753,7 +3587,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'CDP: request hearing within 30 days of notice. Consider liability, alternatives (OIC, installment), collection actions.',
     reference: 'IRC Section 6320/6330',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-179',
@@ -3775,7 +3608,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'FTA: no penalties in prior 3 years, all returns filed, current compliance. Administrative waiver, different from reasonable cause.',
     reference: 'IRS Penalty Relief',
     blueprintArea: 'TCP-I',
-    skillLevel: 'Application',
   },
   {
     id: 'tcp-180',
@@ -3797,7 +3629,6 @@ export const TCP_QUESTIONS: Question[] = [
     explanation: 'NUA: distribute employer stock in-kind from qualified plan. Cost basis taxed as ordinary income, NUA as LTCG when sold.',
     reference: 'IRC Section 402(e)(4)',
     blueprintArea: 'TCP-II',
-    skillLevel: 'Analysis',
   },
 
 ];

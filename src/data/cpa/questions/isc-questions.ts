@@ -29,7 +29,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Referential integrity ensures that relationships between tables remain consistent. A foreign key in one table must reference a valid primary key in another table, or be null. This prevents orphaned records.',
     reference: 'Database Fundamentals - ITGC',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-dm-002',
@@ -51,7 +50,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Isolation ensures that concurrent transactions execute as if they were running sequentially. This prevents issues like dirty reads (reading uncommitted data) and phantom reads.',
     reference: 'ASC 718-10-30',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-dm-003',
@@ -73,7 +71,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RDBMS (like Oracle, SQL Server, PostgreSQL) is ideal for financial systems requiring ACID compliance, referential integrity, and complex joins across related data. NoSQL databases sacrifice consistency for scalability.',
     reference: 'Database Architecture - ITGC',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-dm-004',
@@ -95,7 +92,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Creating indexes is a database administration task performed after data is loaded, not during transformation. ETL Transform includes cleansing, format conversion, business rule application, and data standardization.',
     reference: 'Data Warehouse Concepts',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-dm-005',
@@ -117,7 +113,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data governance establishes the policies, standards, and procedures for managing data as an organizational asset. It addresses data quality, security, privacy, and regulatory compliance.',
     reference: 'Data Governance Framework',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -144,7 +139,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RBAC assigns permissions to roles (e.g., "Accounts Payable Clerk"), and users are assigned to roles. This simplifies administration and enforces segregation of duties more effectively than user-level permissions.',
     reference: 'NIST Access Control Guidelines',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-002',
@@ -166,7 +160,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'MFA requires factors from different categories: Knowledge (passwords, PINs), Possession (tokens, phones), and Inherence (biometrics). Two passwords are both "something you know" - single factor.',
     reference: 'NIST SP 800-63B',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-003',
@@ -188,7 +181,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'TLS provides confidentiality (encryption), integrity (message authentication codes), and authentication (certificates). Digital signatures alone verify integrity and sender but don\'t encrypt the payload.',
     reference: 'NIST Cryptographic Standards',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-sec-004',
@@ -210,7 +202,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Patch management addresses known vulnerabilities at their source. Firewalls and antivirus provide defense-in-depth but cannot protect against vulnerabilities in unpatched software that bypasses those controls.',
     reference: 'NIST Vulnerability Management',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-sec-005',
@@ -232,7 +223,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GAPP\'s Use principle limits use of personal information to disclosed purposes. Retention requires keeping data only as long as needed. Disposal requires secure destruction when no longer required.',
     reference: 'AICPA GAPP',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-006',
@@ -254,7 +244,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data classification (e.g., Public, Internal, Confidential, Restricted) enables risk-based security. More sensitive data receives stronger controls, optimizing security investment while ensuring adequate protection.',
     reference: 'Data Classification Standards',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -281,7 +270,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Type 1 reports on control design at a point in time. Type 2 tests operating effectiveness over a period (typically 6-12 months), providing greater assurance that controls function consistently.',
     reference: 'AICPA SOC Guidance',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-base-soc-002',
@@ -303,7 +291,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SOC 3 is a general-use report (unrestricted distribution) that provides a summary opinion on Trust Services Criteria. SOC 2 has the detail but is restricted use. SOC 1 focuses on financial reporting controls.',
     reference: 'AICPA SOC Suite',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-base-soc-003',
@@ -325,7 +312,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SOC 1 reports address controls relevant to user entities\' internal control over financial reporting (ICFR). Payroll affects financial statements, so auditors need SOC 1. SOC 2 covers broader operational controls.',
     reference: 'SSAE 18',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-base-soc-004',
@@ -347,7 +333,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CUECs are controls that the service organization\'s system design assumes user entities will implement. For example, a payroll service may assume clients review output reports. User auditors must verify these are in place.',
     reference: 'SSAE 18 - CUECs',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-soc-005',
@@ -369,7 +354,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'The TSC categories are Security (common criteria), Availability, Processing Integrity, Confidentiality, and Privacy. Security is required; others are included based on the service and user needs.',
     reference: 'AICPA Trust Services Criteria',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -396,7 +380,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'A DMZ is a network segment between the internet and internal network, hosting servers that need external access (web servers, email) while keeping them isolated from sensitive internal systems.',
     reference: 'Network Security Architecture',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-bc-001',
@@ -418,7 +401,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RPO is the maximum age of data that must be recovered. An RPO of 4 hours means backups must occur at least every 4 hours to limit data loss. RTO (Recovery Time Objective) is the time to restore operations.',
     reference: 'Business Continuity Planning',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-change-001',
@@ -440,7 +422,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Environment segregation with access controls ensures developers cannot directly modify production systems. Documentation, training, and code reviews are important but rely on compliance; environment controls enforce separation.',
     reference: 'ITGC - Change Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-audit-001',
@@ -462,7 +443,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Audit trails should capture who, what, when, and the change details. Storing passwords (even hashed) in audit logs is a security risk and unnecessary - the user ID proves identity was authenticated.',
     reference: 'Audit Trail Requirements',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-base-cloud-001',
@@ -484,7 +464,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'In SaaS, the provider manages everything including applications, middleware, OS, and infrastructure. Customers are responsible only for their data and user access. IaaS shifts more responsibility to customers.',
     reference: 'Cloud Computing Models',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -514,7 +493,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Business Email Compromise (BEC) involves attackers impersonating executives or trusted parties to trick employees into transferring funds or revealing sensitive information. It\'s also called CEO fraud.',
     reference: 'Cybersecurity Threats',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-cyber-002',
@@ -536,7 +514,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Ransomware encrypts files and demands payment (typically cryptocurrency) for the decryption key. Notable examples include WannaCry, NotPetya, and REvil.',
     reference: 'Malware Types',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-cyber-003',
@@ -558,7 +535,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Tailgating (also called piggybacking) is when an unauthorized person follows an authorized person through a secure entrance. Physical controls like mantraps and security awareness training help prevent this.',
     reference: 'Physical Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-cyber-004',
@@ -580,7 +556,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'A zero-day vulnerability is unknown to the vendor, so no patch exists. Attackers can exploit it before defenders know to protect against it. "Zero-day" refers to zero days since the vendor became aware.',
     reference: 'Vulnerability Management',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Access Controls & Identity Management
@@ -604,7 +579,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'The three authentication factor categories are: something you know (password), something you have (token), something you are (biometric). Password + token combines two different categories.',
     reference: 'Authentication Controls',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-access-002',
@@ -626,7 +600,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Least privilege grants users only the minimum access necessary to perform their job functions, reducing the attack surface and limiting potential damage from compromised accounts.',
     reference: 'Access Control Principles',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-access-003',
@@ -648,7 +621,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RBAC assigns permissions to roles (e.g., "Accounts Payable Clerk") rather than individuals. Users are assigned to roles based on job function, simplifying access management.',
     reference: 'Access Control Models',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-access-004',
@@ -670,7 +642,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'PAM solutions provide secure vault storage for privileged credentials, just-in-time access, session monitoring and recording, and audit trails. This provides detective and preventive controls beyond password policies.',
     reference: 'Privileged Access Management',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
 
   // Data Management & Privacy
@@ -694,7 +665,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Employee salary data is personally identifiable and sensitive, typically classified as Confidential. Public = no impact if disclosed, Internal = minor impact, Confidential = significant impact, Restricted = severe impact.',
     reference: 'Data Classification',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-data-002',
@@ -716,7 +686,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'The Privacy principle requires notice to individuals about data collection purposes, collection limited to stated purposes, and consent where required. Encryption and retention are separate technical and operational controls.',
     reference: 'AICPA Privacy Principle',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-data-003',
@@ -738,7 +707,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data must be protected at rest AND in transit. Encrypting only stored data leaves it vulnerable to interception during network transmission, even on internal networks (insider threat, compromised systems).',
     reference: 'Data Encryption',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
 
   // IT General Controls
@@ -762,7 +730,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Automated provisioning/deprovisioning linked to HR systems ensures immediate account disablement upon termination. Annual reviews are too infrequent; other controls don\'t address termination timeliness.',
     reference: 'Access Control Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-itgc-002',
@@ -784,7 +751,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Comparing approved change tickets to migration logs verifies that only approved changes were deployed and all approved changes were implemented. Other controls verify quality but not that only approved changes migrated.',
     reference: 'Change Management Controls',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-itgc-003',
@@ -806,7 +772,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Job scheduling software automates batch processes (reports, data transfers, backups) ensuring they run in proper sequence at scheduled times. It provides control over computer operations.',
     reference: 'Computer Operations',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Network & Infrastructure Security
@@ -830,7 +795,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Network segmentation using VLANs and firewalls isolates sensitive systems, limiting lateral movement if the corporate network is compromised. This is a key PCI DSS requirement for cardholder data environments.',
     reference: 'Network Segmentation',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-net-003',
@@ -852,7 +816,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'VPNs create encrypted tunnels over public networks (like the internet), enabling secure remote access as if the user were on the private network. It protects data confidentiality during transmission.',
     reference: 'VPN Technology',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Business Continuity & Disaster Recovery
@@ -876,7 +839,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'BIA identifies critical business processes and determines the impact of disruption, establishing RTO (Recovery Time Objective) and RPO (Recovery Point Objective) for each. This drives BC/DR planning.',
     reference: 'Business Impact Analysis',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-bcdr-002',
@@ -898,7 +860,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'A hot site is fully equipped with hardware, software, and current data, ready for immediate operation. Cold sites have space only; warm sites have equipment but require data restoration.',
     reference: 'Disaster Recovery Sites',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-bcdr-003',
@@ -920,7 +881,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Incremental backups contain only changes since the last backup (full or incremental). Restoration requires the full backup plus each incremental in sequence: Full → Monday → Tuesday → Wednesday.',
     reference: 'Backup Strategies',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
 
   // ==========================================
@@ -948,7 +908,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'In IaaS, the customer is responsible for everything "in" the cloud: OS, applications, data, and configurations. The provider manages "of" the cloud: physical infrastructure, hypervisor, network.',
     reference: 'Shared Responsibility Model',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-cloud-003',
@@ -970,7 +929,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CASBs sit between users and cloud services, providing visibility into shadow IT, enforcing security policies, DLP, and compliance monitoring across multiple cloud services.',
     reference: 'CASB',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-cloud-004',
@@ -992,7 +950,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data residency involves storing data in specific geographic locations to comply with regulations like GDPR, which may require EU citizen data to remain in the EU.',
     reference: 'Data Residency',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-cloud-005',
@@ -1014,7 +971,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Multi-cloud reduces dependency on a single provider (vendor lock-in) and increases resilience by distributing workloads. However, it adds management complexity and may increase costs.',
     reference: 'Multi-Cloud Strategy',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
 
   // AI/ML Governance
@@ -1038,7 +994,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'AI/ML models can perpetuate or amplify biases present in training data, leading to discriminatory outcomes in lending, hiring, or other decisions. This is a unique AI risk requiring specific governance.',
     reference: 'AI Risk Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-ai-002',
@@ -1060,7 +1015,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Explainability (or interpretability) means being able to understand and communicate why an AI model made a specific decision, crucial for compliance, trust, and accountability.',
     reference: 'Explainable AI',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-ai-003',
@@ -1082,7 +1036,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data poisoning manipulates training data to cause the model to learn incorrect patterns, producing wrong outputs or creating backdoors. This can compromise model integrity and reliability.',
     reference: 'AI Security Threats',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Advanced Security Controls
@@ -1106,7 +1059,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Zero Trust assumes no implicit trust based on network location or prior authentication. Every access request must be verified, regardless of where it originates.',
     reference: 'Zero Trust Architecture',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-b3-002',
@@ -1128,7 +1080,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SIEM aggregates logs from multiple sources, correlates events to detect threats, provides alerts, and supports incident investigation and compliance reporting.',
     reference: 'SIEM',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-b3-003',
@@ -1150,7 +1101,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'DLP monitors and controls data movement, detecting sensitive data (PII, financial data) being transmitted or stored in unauthorized ways, and can block or alert on violations.',
     reference: 'Data Loss Prevention',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-b3-004',
@@ -1172,7 +1122,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'EDR goes beyond signature-based detection, using behavioral analysis to detect anomalies, recording endpoint activity for investigation, and enabling response actions like isolation.',
     reference: 'EDR',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-sec-b3-005',
@@ -1194,7 +1143,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Red team exercises simulate real-world adversaries, testing people, process, and technology over extended periods. Pen tests are typically shorter with defined scope; red teams test detection and response.',
     reference: 'Red Team vs Penetration Testing',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Governance and Compliance
@@ -1218,7 +1166,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'COBIT provides a comprehensive framework for governance and management of enterprise IT, aligning IT goals with business objectives and providing control objectives and maturity models.',
     reference: 'COBIT Framework',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gov-002',
@@ -1240,7 +1187,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Inherent risk is the baseline risk before controls. Residual risk is what remains after applying controls. Risk management aims to reduce inherent risk to acceptable residual levels.',
     reference: 'Risk Assessment',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-gov-003',
@@ -1262,7 +1208,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Third-party risk management requires continuous oversight, not just initial due diligence. Periodic assessments, right-to-audit clauses, and monitoring ensure ongoing compliance.',
     reference: 'Third-Party Risk Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
 
   // Incident Response
@@ -1286,7 +1231,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'NIST SP 800-61 defines four phases: (1) Preparation, (2) Detection & Analysis, (3) Containment, Eradication, and Recovery, (4) Post-Incident Activity (lessons learned).',
     reference: 'NIST SP 800-61 Incident Response',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-ir-002',
@@ -1308,7 +1252,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Chain of custody documents who handled evidence, when, and what actions were taken. This proves evidence integrity and is required for legal admissibility.',
     reference: 'Digital Forensics',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-ir-003',
@@ -1330,7 +1273,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Network isolation prevents ransomware from spreading to other systems. This should be done before eradication or recovery to contain the blast radius.',
     reference: 'Ransomware Response',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
 
   // Privacy and Compliance
@@ -1354,7 +1296,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GDPR Article 33 requires breach notification to supervisory authorities within 72 hours of becoming aware of a breach that poses risk to individuals\' rights and freedoms.',
     reference: 'GDPR Breach Notification',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-priv-002',
@@ -1376,7 +1317,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GDPR Article 17 establishes the "right to erasure" (commonly called right to be forgotten), allowing individuals to request deletion of their personal data under certain conditions.',
     reference: 'GDPR Data Subject Rights',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ==========================================
@@ -1404,7 +1344,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SQL injection occurs when user input is not properly validated and is included in database queries. Attackers can inject malicious SQL to access, modify, or delete data.',
     reference: 'OWASP Top 10',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-appsec-002',
@@ -1426,7 +1365,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Security should be integrated throughout SDLC: requirements (security requirements), design (threat modeling), development (secure coding), testing (security testing), deployment (hardening), and maintenance.',
     reference: 'Secure SDLC',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-appsec-003',
@@ -1448,7 +1386,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'XSS injects malicious scripts into web pages viewed by other users. When the script executes in victims\' browsers, it can steal session cookies, deface websites, or redirect to malicious sites.',
     reference: 'OWASP XSS',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-appsec-004',
@@ -1470,7 +1407,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'BOLA (OWASP API #1) occurs when APIs don\'t properly check authorization for each object accessed. Attackers manipulate object IDs to access unauthorized data belonging to other users.',
     reference: 'OWASP API Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
 
   // Cryptography
@@ -1494,7 +1430,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Asymmetric encryption uses public/private key pairs, solving key distribution (public keys can be shared openly). Symmetric encryption requires secure key exchange. However, asymmetric is slower and uses longer keys.',
     reference: 'Cryptographic Algorithms',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-crypto-002',
@@ -1516,7 +1451,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Digital signatures prove sender identity (authentication), detect tampering (integrity), and prevent denial of sending (non-repudiation). They don\'t encrypt the message itself.',
     reference: 'Digital Signatures',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-crypto-003',
@@ -1538,7 +1472,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Hash functions produce a fixed-length digest (hash) from any input. They are one-way (irreversible), deterministic (same input = same hash), and collision-resistant (hard to find two inputs with same hash).',
     reference: 'Cryptographic Hash Functions',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Network Security
@@ -1562,7 +1495,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Segmentation divides networks into zones (e.g., DMZ, internal, sensitive). If one segment is breached, attackers are contained and cannot easily access other segments. Supports defense in depth.',
     reference: 'Network Segmentation',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-net-b5-002',
@@ -1584,7 +1516,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Intrusion Detection Systems (IDS) monitor and alert on suspicious activity. Intrusion Prevention Systems (IPS) actively block or prevent detected threats. IPS is inline; IDS can be passive.',
     reference: 'IDS/IPS',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-net-b5-003',
@@ -1606,7 +1537,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'VPNs create encrypted tunnels for data transmission, protecting confidentiality and integrity of traffic over untrusted networks. They authenticate endpoints and encrypt the communication channel.',
     reference: 'Virtual Private Networks',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Identity and Access Management
@@ -1630,7 +1560,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SSO reduces the number of passwords users must remember, leading to stronger passwords and better compliance. However, it concentrates risk - SSO credential compromise grants access to multiple systems.',
     reference: 'Single Sign-On',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-iam-002',
@@ -1652,7 +1581,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Federation enables trust relationships between identity providers (IdPs). Users authenticate with their home IdP, which asserts their identity to relying parties in other organizations (e.g., SAML, OIDC).',
     reference: 'Identity Federation',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-iam-003',
@@ -1674,7 +1602,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Least privilege restricts access to only what\'s necessary for job functions, limiting damage from compromised accounts or malicious insiders. Access should be regularly reviewed and revoked when no longer needed.',
     reference: 'Least Privilege',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // Security Assessments
@@ -1698,7 +1625,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Vulnerability scanning (usually automated) identifies known vulnerabilities. Penetration testing goes further by attempting to exploit vulnerabilities to determine actual impact and risk.',
     reference: 'Security Assessments',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-assess-002',
@@ -1720,7 +1646,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Phishing simulations send fake phishing emails to employees to measure susceptibility. Results identify training needs and track improvement over time. Users who click receive immediate training.',
     reference: 'Security Awareness Testing',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
 
   // Compliance and Frameworks
@@ -1744,7 +1669,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SOX 404 requires management\'s annual assessment of ICFR effectiveness, including IT general controls that support financial reporting. External auditor must attest to this assessment for larger companies.',
     reference: 'SOX Compliance',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-comp-002',
@@ -1766,7 +1690,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'PCI DSS applies to all entities that store, process, or transmit cardholder data. Requirements scale with transaction volume. Non-compliance can result in fines and loss of card processing privileges.',
     reference: 'PCI DSS',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-comp-003',
@@ -1788,7 +1711,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'HIPAA Security Rule requires administrative safeguards (policies, training), physical safeguards (facility access), and technical safeguards (access controls, encryption) to protect electronic protected health information.',
     reference: 'HIPAA Security Rule',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-085',
@@ -1810,7 +1732,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'IoCs are artifacts or evidence (IP addresses, file hashes, URLs, patterns) indicating a system may be compromised. Security tools use IoCs to detect threats and trigger alerts.',
     reference: 'Threat Intelligence Framework',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-086',
@@ -1832,7 +1753,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SIEM collects logs from various sources, correlates events, applies rules and analytics to detect threats, generates alerts, and provides dashboards for security monitoring.',
     reference: 'SIEM Architecture',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-087',
@@ -1854,7 +1774,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Zero Trust assumes no implicit trust based on network location. Every access request is verified regardless of origin. Principles: verify explicitly, least privilege access, assume breach.',
     reference: 'NIST Zero Trust Architecture',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-088',
@@ -1876,7 +1795,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'EDR provides continuous endpoint monitoring, behavioral analysis, threat hunting, and automated response. Traditional AV relies primarily on signature-based detection of known malware.',
     reference: 'EDR Technology',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-089',
@@ -1898,7 +1816,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Segregation of duties prevents unauthorized changes. Developers should not have production access. Changes should go through testing, approval, and controlled deployment processes.',
     reference: 'ITGC Standards',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-090',
@@ -1920,7 +1837,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Least privilege limits access rights to the minimum needed for job functions. Reduces attack surface and impact of compromised accounts. Regularly review and remove unneeded access.',
     reference: 'Access Control Principles',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-091',
@@ -1942,7 +1858,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SAML-based SSO enables users to authenticate once and access multiple applications. Identity Provider (IdP) authenticates user; Service Providers trust IdP assertions. Improves security and user experience.',
     reference: 'SAML 2.0 Federation',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-092',
@@ -1964,7 +1879,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data quality dimensions: Accuracy, Completeness, Timeliness, Consistency, Validity, Uniqueness. Profitability is a business metric, not a data quality dimension.',
     reference: 'Data Quality Framework',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-093',
@@ -1986,7 +1900,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data lineage tracks where data comes from, how it moves and transforms. Supports data quality, regulatory compliance, impact analysis, and troubleshooting data issues.',
     reference: 'Data Governance Practices',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-094',
@@ -2008,7 +1921,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'MDM creates a single "golden record" for critical entities (customers, products, locations). Ensures consistency across systems, improves data quality, and supports analytics and compliance.',
     reference: 'MDM Principles',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-095',
@@ -2030,7 +1942,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'In IaaS, customer manages OS, applications, data, and access. Provider manages physical security, hardware, and virtualization layer. "Security OF the cloud" vs "Security IN the cloud."',
     reference: 'Cloud Shared Responsibility',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-096',
@@ -2052,7 +1963,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CASBs sit between users and cloud services, providing visibility into shadow IT, data loss prevention, access control, threat protection, and compliance monitoring for cloud usage.',
     reference: 'CASB Technology',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-097',
@@ -2074,7 +1984,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Shift-left security: scan during build (CI/CD), in container registry, and at runtime. Detects vulnerabilities in base images, dependencies, and misconfigurations throughout lifecycle.',
     reference: 'Container Security Best Practices',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-098',
@@ -2096,7 +2005,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Continuous auditing uses automated tests on transactions as they occur or shortly after. Provides timely detection of control failures or anomalies vs. periodic sampling approaches.',
     reference: 'Continuous Audit Framework',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-099',
@@ -2118,7 +2026,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Audit analytics enables testing 100% of transactions, identifying outliers, unusual patterns, duplicate payments, segregation of duties violations, and potential fraud indicators.',
     reference: 'Audit Analytics',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-100',
@@ -2140,7 +2047,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RPA automates repetitive, rule-based tasks: data extraction, reconciliations, report generation, testing standard transactions. Frees auditors for judgmental work requiring professional skepticism.',
     reference: 'RPA in Accounting',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-101',
@@ -2162,7 +2068,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Privacy by Design embeds privacy into technology and processes from inception. Principles: proactive, default privacy, embedded in design, full functionality, end-to-end security, visibility, user-centric.',
     reference: 'Privacy by Design Framework',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-102',
@@ -2184,7 +2089,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GDPR grants rights: access, rectification, erasure (right to be forgotten), restrict processing, data portability, object to processing, not be subject to automated decisions.',
     reference: 'GDPR Articles 15-22',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-103',
@@ -2206,7 +2110,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'AI governance covers: ethical use, bias detection/mitigation, explainability, accountability, data privacy, security, regulatory compliance, model risk management, and human oversight.',
     reference: 'AI Governance Principles',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-104',
@@ -2228,7 +2131,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Blockchain immutability means validated transactions cannot be altered. Provides tamper-evident audit trail. Supports financial record integrity, supply chain tracking, smart contracts.',
     reference: 'Blockchain for Audit',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-105',
@@ -2250,7 +2152,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Vulnerability scanning identifies potential weaknesses. Penetration testing goes further by attempting to exploit vulnerabilities, demonstrating actual risk and impact. Pen tests require explicit authorization.',
     reference: 'Security Testing Methodologies',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-106',
@@ -2272,7 +2173,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Patch management: maintain asset inventory, assess and prioritize patches, test before deployment, stage rollout, verify successful application, document and report. Balance security vs. stability.',
     reference: 'Patch Management Best Practices',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-107',
@@ -2294,7 +2194,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Supply chain attacks compromise trusted vendors or their update mechanisms. Malicious code distributed through legitimate channels affects all downstream customers. Requires vendor risk management.',
     reference: 'Supply Chain Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-108',
@@ -2316,7 +2215,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Retention policies define how long to keep data based on legal requirements, regulations, litigation holds, and business needs. Include secure disposal procedures when retention period expires.',
     reference: 'Data Retention Standards',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-109',
@@ -2338,7 +2236,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'OWASP API Security Top 10: Broken Object Level Authorization, Broken Authentication, Excessive Data Exposure, Lack of Resources/Rate Limiting, Broken Function Level Authorization, Mass Assignment, and more.',
     reference: 'OWASP API Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-110',
@@ -2360,7 +2257,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SOC provides 24/7 monitoring of security events, threat detection, incident response, and coordination. Staffed by security analysts using SIEM, EDR, threat intelligence tools.',
     reference: 'SOC Operations',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-111',
@@ -2382,7 +2278,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'NIST incident response: Preparation (plan, train), Identification (detect, analyze), Containment (limit damage), Eradication (remove threat), Recovery (restore), Lessons Learned (improve).',
     reference: 'NIST Incident Response',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-112',
@@ -2404,7 +2299,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Threat hunting: proactive search for threats that evade automated detection. Uses hypotheses, intelligence, anomaly analysis. Assumes adversary may already be present. Complements reactive monitoring.',
     reference: 'Threat Hunting Methodology',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-113',
@@ -2426,7 +2320,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'DDoS defense: traffic scrubbing (filtering malicious traffic), rate limiting, CDN distribution, redundant infrastructure, ISP cooperation, DDoS mitigation services. Layered approach needed.',
     reference: 'DDoS Mitigation',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-114',
@@ -2448,7 +2341,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Database security: RBAC for least privilege, encryption at rest and in transit, comprehensive audit logging, parameterized queries to prevent SQL injection, regular patching.',
     reference: 'Database Security',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-115',
@@ -2470,7 +2362,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Segmentation: isolates sensitive systems, limits attacker lateral movement, contains breaches to affected segments. Use VLANs, firewalls, micro-segmentation. Critical for PCI-DSS, HIPAA compliance.',
     reference: 'Network Security Architecture',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-116',
@@ -2492,7 +2383,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: '3-2-1 rule: maintain 3 copies of data, on 2 different media types (disk, tape, cloud), with 1 copy offsite. Protects against various failure scenarios including site disasters.',
     reference: 'Backup Best Practices',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-117',
@@ -2514,7 +2404,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'PAM: secure vault for privileged credentials, session recording/monitoring, just-in-time elevated access, automatic credential rotation, approval workflows. Critical for protecting high-value accounts.',
     reference: 'Privileged Access Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-118',
@@ -2536,7 +2425,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data minimization: collect only necessary data, retain only as long as needed, delete when purpose fulfilled. GDPR principle. Reduces risk, storage costs, and compliance burden.',
     reference: 'Privacy Principles',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-119',
@@ -2558,7 +2446,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Data masking: replaces sensitive data with realistic fake data. Used for test/dev environments, training, analytics. Static masking for copies, dynamic masking for real-time protection.',
     reference: 'Data Protection Techniques',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-120',
@@ -2580,7 +2467,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'DLP monitors data at rest (storage), in motion (network), in use (endpoints). Detects/blocks unauthorized transmission based on content inspection, patterns, policies. Prevents data exfiltration.',
     reference: 'Data Loss Prevention',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-121',
@@ -2602,7 +2488,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Federation: trust relationships between identity providers and service providers. Users authenticate to IdP, receive tokens accepted by SPs. Enables SSO across organizations. Uses SAML, OAuth, OpenID Connect.',
     reference: 'Identity Federation',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-122',
@@ -2624,7 +2509,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Serverless security: least privilege function permissions, secure secrets management, dependency scanning, input validation against event injection, monitoring/logging, cold start security.',
     reference: 'Serverless Security',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-123',
@@ -2646,7 +2530,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'IaC security: version control for audit trail, scan templates for misconfigurations, detect hardcoded secrets, implement policy guardrails, use secure defaults, review changes.',
     reference: 'DevSecOps',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-124',
@@ -2668,7 +2551,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'ML-specific risks: adversarial examples (crafted inputs to fool models), model poisoning (corrupting training), data poisoning, model extraction/stealing, bias, lack of explainability.',
     reference: 'AI Security',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-125',
@@ -2690,7 +2572,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'IoT challenges: constrained devices can\'t run full security, default passwords common, difficult to patch, huge scale creates attack surface, legacy protocols, physical access risks.',
     reference: 'IoT Security Framework',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-126',
@@ -2712,7 +2593,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Quantum computers could break RSA, ECC using Shor\'s algorithm. Organizations must plan crypto agility, inventory cryptographic assets, prepare for post-quantum cryptography (PQC) transition.',
     reference: 'Post-Quantum Cryptography',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-127',
@@ -2734,7 +2614,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CAATs: data extraction/analysis (ACL, IDEA), test data, parallel simulation, embedded audit modules, generalized audit software. Enable efficient testing of large electronic populations.',
     reference: 'IT Audit Techniques',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-128',
@@ -2756,7 +2635,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Blockchain audit: evaluate consensus mechanism security, smart contract code review, private key management, governance model, oracle reliability, transaction validation, regulatory compliance.',
     reference: 'Blockchain Audit Considerations',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-129',
@@ -2778,7 +2656,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'COBIT: framework for enterprise IT governance. Links business goals to IT goals, defines processes and controls. Covers governance (EDM) and management (APO, BAI, DSS, MEA) domains.',
     reference: 'COBIT 2019',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-130',
@@ -2800,7 +2677,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'TPRM lifecycle: inherent risk assessment, due diligence, contractual controls (SLAs, audit rights), ongoing monitoring, periodic reassessment, exit strategy. Covers security, privacy, operational risk.',
     reference: 'Vendor Risk Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-131',
@@ -2822,7 +2698,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GDPR cookie consent: explicit opt-in required before setting non-essential cookies, clear information about cookies, easy withdrawal, granular choices. Strictly necessary cookies exempt.',
     reference: 'ePrivacy Directive',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-132',
@@ -2844,7 +2719,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CCPA rights: know (what data collected/shared), delete, opt-out of sale, non-discrimination for exercising rights. CPRA enhanced with correction rights and sensitive data protections.',
     reference: 'CCPA/CPRA',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-133',
@@ -2866,7 +2740,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Vulnerability management: continuous asset discovery, regular scanning, risk-based prioritization (CVSS, asset criticality, exploitability), remediation workflows, metrics, reporting to management.',
     reference: 'Vulnerability Management',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-134',
@@ -2888,7 +2761,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Secure SDLC: requirements (security requirements, abuse cases), design (threat modeling, security architecture), coding (secure standards, code review), testing (SAST, DAST), deployment (hardening).',
     reference: 'Secure Development Lifecycle',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-135',
@@ -2910,7 +2782,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Security awareness: ongoing (not one-time), role-based content, regular phishing simulations, metrics tracking, engaging delivery. Humans are often weakest link; training reduces risk.',
     reference: 'Security Awareness Programs',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-136',
@@ -2932,7 +2803,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Vulnerability scan: automated identification of potential weaknesses. Penetration test: manual exploitation attempts to prove vulnerabilities are exploitable and assess impact. Both needed; different purposes.',
     reference: 'Security Testing',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-137',
@@ -2954,7 +2824,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Red team: simulates adversaries (offense). Blue team: defends. Purple team: collaboration between red and blue. Red team exercises test detection and response capabilities against realistic threats.',
     reference: 'Security Operations',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-138',
@@ -2976,7 +2845,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Comprehensive logging: authentication (success/failure), authorization, data access, configuration changes, security events. Centralize in SIEM. Establish retention periods. Protect log integrity.',
     reference: 'Security Logging',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-139',
@@ -2998,7 +2866,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Patch management: maintain inventory, assess patch criticality/risk, test in non-production, staged rollout, verify successful deployment, document exceptions. Balance security and stability.',
     reference: 'Patch Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-140',
@@ -3020,7 +2887,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Configuration baseline: standardized secure settings. Document, automate enforcement, monitor for drift, remediate deviations, update for new threats. Use CIS benchmarks, STIG guidelines.',
     reference: 'Configuration Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-141',
@@ -3042,7 +2908,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Retention policies: legal/regulatory requirements, litigation holds, business operational needs, data minimization (delete when no longer needed). Document rationale, implement automated deletion.',
     reference: 'Data Lifecycle Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-142',
@@ -3064,7 +2929,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Privacy by Design: proactive not reactive, privacy as default, embedded in design, full functionality (not zero-sum), end-to-end security, visibility/transparency, user-centric. Build privacy in from start.',
     reference: 'Privacy by Design Framework',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-143',
@@ -3086,7 +2950,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Multi-cloud benefits: avoid vendor lock-in, best-of-breed services, geographic reach, negotiating leverage, resilience. Challenges: complexity, skills, consistent security, data movement costs.',
     reference: 'Cloud Strategy',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-144',
@@ -3108,7 +2971,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CASB: intermediary between users and cloud. Four pillars: visibility (shadow IT discovery), compliance, data security (DLP, encryption), threat protection. Deploy inline, API, or proxy mode.',
     reference: 'Cloud Security',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-145',
@@ -3130,7 +2992,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'IT risk assessment: identify assets, threats, vulnerabilities. Risk = Likelihood × Impact. Consider inherent and residual risk. Prioritize controls based on risk. Update regularly.',
     reference: 'IT Risk Management',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-146',
@@ -3152,7 +3013,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'BIA: identifies critical business functions, dependencies, acceptable downtime (RTO), data loss tolerance (RPO), financial/operational/reputational impact. Basis for BC/DR planning.',
     reference: 'Business Continuity',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-147',
@@ -3174,7 +3034,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Test data: auditor-created transactions processed through client system. Tests programmed controls. Concerns: contaminating production data (remove test records), point-in-time test. Use carefully.',
     reference: 'IT Audit Techniques',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-148',
@@ -3196,7 +3055,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'ITF: dummy entity (fictitious department/subsidiary) within live system. Process test transactions alongside real ones. Enables ongoing/continuous testing. Must isolate and remove effects.',
     reference: 'IT Audit Techniques',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-149',
@@ -3218,7 +3076,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RPA governance: unique bot credentials (not shared), comprehensive logging, change control for bot logic, secure credential vaults, periodic review of bot activities, segregation of duties.',
     reference: 'RPA Governance',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-150',
@@ -3240,7 +3097,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Smart contract risks: bugs in code (can\'t easily fix once deployed), reliance on external data (oracles), legal enforceability unclear, complexity, gas costs, upgrade mechanisms needed.',
     reference: 'Blockchain Risks',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-151',
@@ -3262,7 +3118,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GDPR transfer mechanisms: EU adequacy decisions (approved countries), SCCs, BCRs (intra-group), explicit consent, necessary for contract. Schrems II invalidated Privacy Shield; SCCs require supplementary measures.',
     reference: 'GDPR Chapter V',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-152',
@@ -3284,7 +3139,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'DSAR response: without undue delay, within one month. May extend by two months for complex requests (must inform). Generally free. Must verify identity. Can refuse manifestly unfounded requests.',
     reference: 'GDPR Article 12',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-153',
@@ -3306,7 +3160,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Secure remote access: VPN/ZTNA, multi-factor authentication, endpoint health checks (patched, AV), network segmentation, session timeouts, logging, split vs full tunneling decisions.',
     reference: 'Remote Access Security',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-154',
@@ -3328,7 +3181,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Supply chain security: vet third-party components, dependency scanning, secure build pipelines, code signing, SBOM for visibility, vendor security assessments. SolarWinds attack highlighted importance.',
     reference: 'Supply Chain Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-155',
@@ -3350,7 +3202,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'IT compliance frameworks: SOX (IT controls for financial reporting), PCI-DSS (payment cards), HIPAA (healthcare), ISO 27001, NIST CSF, GDPR, SOC reports. Multiple may apply.',
     reference: 'IT Compliance',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-156',
@@ -3372,7 +3223,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'MDM: single source of truth for master data (customers, products, vendors). Ensures consistency, accuracy across systems. Data stewardship, quality rules, governance. Critical for analytics and reporting.',
     reference: 'Data Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-157',
@@ -3394,7 +3244,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Ransomware: encrypts victim files, demands payment (usually cryptocurrency) for decryption. Modern variants also exfiltrate data (double extortion). Prevention: backups, patching, awareness, endpoint protection.',
     reference: 'Malware Types',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-158',
@@ -3416,7 +3265,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Hot site: fully equipped, operational, real-time data replication. RTO: minutes/hours. Cold site: space/power only. Warm site: equipment but not current data. Cost vs. recovery time tradeoff.',
     reference: 'Disaster Recovery',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-159',
@@ -3438,7 +3286,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Continuous monitoring: automated, ongoing evaluation of controls and transactions. Identifies issues faster than periodic testing. Complements but doesn\'t replace periodic audits. Technology-enabled.',
     reference: 'Continuous Auditing',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   // Batch 13 - Additional ISC Questions
   {
@@ -3461,7 +3308,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SOC: centralized function for continuous security monitoring, threat detection, incident analysis and response. Uses SIEM tools.',
     reference: 'Security Operations',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-161',
@@ -3483,7 +3329,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'SIEM: collect and aggregate logs from multiple sources, correlate events, detect patterns and anomalies, alert on threats.',
     reference: 'Security Monitoring',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-162',
@@ -3505,7 +3350,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Threat intelligence: information about threats, actors, TTPs, IOCs. Enables proactive defense and prioritization.',
     reference: 'Threat Intelligence',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-163',
@@ -3527,7 +3371,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Zero Trust: assume breach, verify explicitly, least privilege access. No implicit trust based on network location.',
     reference: 'NIST SP 800-207',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-164',
@@ -3549,7 +3392,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'DLP: identify sensitive data, monitor movement, prevent unauthorized transfer. Endpoints, network, cloud.',
     reference: 'Data Protection',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-165',
@@ -3571,7 +3413,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Masking: irreversible transformation creating realistic fake data. Used for testing, development, analytics.',
     reference: 'Data Protection Techniques',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-166',
@@ -3593,7 +3434,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Tokenization: replace sensitive data with tokens. Token vault maps tokens to original. Reduces PCI scope.',
     reference: 'Data Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-167',
@@ -3615,7 +3455,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Classification levels: Public, Internal, Confidential, Restricted. Determines handling requirements and controls.',
     reference: 'Data Governance',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-168',
@@ -3637,7 +3476,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'COBIT: comprehensive IT governance framework. Aligns IT with business goals. Widely used for IT audit and compliance.',
     reference: 'COBIT',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-169',
@@ -3659,7 +3497,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'ITIL: IT service management framework. Service lifecycle: strategy, design, transition, operation, improvement.',
     reference: 'ITIL',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-170',
@@ -3681,7 +3518,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Change management: request, assess impact, test, approve (CAB), schedule, implement, verify. Prevents unauthorized changes.',
     reference: 'ITIL Change Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-171',
@@ -3703,7 +3539,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'GRC platforms: centralize risk assessment, policy management, compliance tracking, audit management. Single source of truth.',
     reference: 'GRC Technology',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-172',
@@ -3725,7 +3560,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'CAAT selection: data accessibility, technical skills needed, audit objectives, time, cost-benefit, reliability.',
     reference: 'CAAT Implementation',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-173',
@@ -3747,7 +3581,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'IR lifecycle: Preparation, Detection/Analysis, Containment/Eradication/Recovery, Post-Incident (lessons learned).',
     reference: 'NIST SP 800-61',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-174',
@@ -3769,7 +3602,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Forensic preservation: chain of custody, forensic images (bit-by-bit), hash verification. Prevents evidence spoliation.',
     reference: 'Digital Forensics',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-175',
@@ -3791,7 +3623,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'API security: authentication (OAuth, API keys), authorization, input validation, rate limiting, encryption (TLS).',
     reference: 'OWASP API Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-176',
@@ -3813,7 +3644,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Container security: scan images, secure base images, runtime protection, Kubernetes security, secrets management.',
     reference: 'Container Security',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-177',
@@ -3835,7 +3665,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: '3-2-1 rule: 3 copies, 2 different media types, 1 offsite. Protects against various failure scenarios.',
     reference: 'Backup Best Practices',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-178',
@@ -3857,7 +3686,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'RPO: maximum tolerable data loss. Drives backup frequency. Lower RPO = more frequent backups or replication.',
     reference: 'Business Continuity',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-179',
@@ -3879,7 +3707,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Vendor risk: due diligence, risk-based tiering, contract security requirements, ongoing monitoring, exit planning.',
     reference: 'Third-Party Risk Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-180',
@@ -3901,7 +3728,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Shared responsibility: provider secures infrastructure. Customer secures data, access, configurations. Division varies by IaaS/PaaS/SaaS.',
     reference: 'Cloud Security',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
   {
     id: 'isc-181',
@@ -3923,7 +3749,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Blockchain audit: understand consensus, smart contract vulnerabilities, private key management, immutability implications.',
     reference: 'Blockchain Technology',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-182',
@@ -3945,7 +3770,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'ML in audit: anomaly detection, fraud prediction, document review (NLP), risk assessment. Enhances efficiency.',
     reference: 'Audit Analytics',
     blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-183',
@@ -3967,7 +3791,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'PAM: vault credentials, enforce check-out/check-in, session recording, just-in-time access, least privilege.',
     reference: 'Identity and Access Management',
     blueprintArea: 'ISC-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'isc-184',
@@ -3989,7 +3812,6 @@ export const ISC_QUESTIONS: Question[] = [
     explanation: 'Security metrics: SMART criteria. Examples: mean time to detect/respond, patching cadence, phishing click rates.',
     reference: 'Security Management',
     blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
   },
 
 ];

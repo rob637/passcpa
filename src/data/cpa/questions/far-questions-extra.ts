@@ -3084,7 +3084,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Software to be sold: costs before technological feasibility are R&D (expensed). After technological feasibility, capitalize until available for release. Amortize greater of straight-line or revenue ratio.',
     reference: 'ASC 985-20-25',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-142',
@@ -3106,7 +3105,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Dollar-value LIFO: ending inventory at current prices, convert to base-year dollars using price index, compare to prior base-year amount, apply LIFO to base-year layers, convert back to acquisition cost.',
     reference: 'ASC 330-10',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-143',
@@ -3128,7 +3126,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Conventional retail (LCM): include markups in ratio, exclude markdowns. Results in lower ratio, lower ending inventory (conservative). LIFO retail includes both markups and markdowns.',
     reference: 'ASC 330-10-30',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-144',
@@ -3150,7 +3147,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Composite depreciation: group assets together, use weighted-average life. On retirement, remove cost, credit cash/proceeds, plug accumulated depreciation. No gain/loss (absorbed in accumulated depreciation).',
     reference: 'ASC 360-10-35',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-145',
@@ -3172,7 +3168,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Commercial substance: configuration of cash flows (risk, timing, amount) changes significantly. If commercial substance, recognize full gain/loss. Without commercial substance, defer gain unless boot received.',
     reference: 'ASC 845-10-30',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-146',
@@ -3194,7 +3189,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'ARO initially at fair value (PV of expected cash flows). Debit asset retirement cost (capitalize as part of asset), credit ARO liability. Subsequently: accrete liability, depreciate asset cost.',
     reference: 'ASC 410-20-25',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-147',
@@ -3216,7 +3210,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'ASU 2022-02 eliminated TDR accounting for creditors. Now evaluate if modification or new loan using existing modification/derecognition guidance. Still measure using present value of expected cash flows.',
     reference: 'ASU 2022-02',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-148',
@@ -3238,7 +3231,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Retire treasury stock: remove common stock at par, charge APIC from original issuance first, excess to retained earnings. Credit treasury stock. If below original issuance price, credit APIC.',
     reference: 'ASC 505-30-30',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-149',
@@ -3260,7 +3252,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Small stock dividend (<20-25%): transfer FMV from retained earnings. Large stock dividend (>20-25%): transfer par/stated value. The presumption is small dividends affect market price minimally.',
     reference: 'ASC 505-20-30',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-150',
@@ -3282,7 +3273,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Bill-and-hold: recognize revenue even though entity retains possession IF: customer requested, substantive business reason, product separately identified as customer\'s, currently ready for transfer, cannot be used by entity.',
     reference: 'ASC 606-10-55',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-151',
@@ -3304,7 +3294,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Principal: controls goods/services before transfer (obtains them from supplier and directs use). Indicators: primary responsibility, inventory risk, pricing discretion. Agent: arranges for another to provide.',
     reference: 'ASC 606-10-55',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-152',
@@ -3326,7 +3315,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Sale-leaseback: must meet ASC 606 sale criteria (control transferred). If not a sale (repurchase option, etc.), account as financing. If sale, derecognize asset, recognize lease, adjust gain/loss for off-market terms.',
     reference: 'ASC 842-40-25',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-153',
@@ -3348,7 +3336,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Modification = separate lease if: grants additional right-of-use AND consideration increases commensurate with standalone price. Otherwise, remeasure lease liability with revised discount rate, adjust ROU asset.',
     reference: 'ASC 842-10-25',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-154',
@@ -3370,7 +3357,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Primary beneficiary has both: (1) power to direct activities most significantly impacting VIE\'s economic performance, AND (2) obligation to absorb losses or right to receive benefits that could be significant.',
     reference: 'ASC 810-10-25',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-155',
@@ -3392,7 +3378,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Push-down: acquired entity\'s separate statements reflect acquirer\'s cost basis (new basis accounting). Elective when change-in-control event occurs. Establishes new accounting and reporting basis.',
     reference: 'ASC 805-50',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-156',
@@ -3414,7 +3399,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Fund balance hierarchy (most to least restricted): nonspendable (not in spendable form), restricted (external constraints), committed (government action), assigned (intended use), unassigned (residual).',
     reference: 'GASB 54',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-157',
@@ -3436,7 +3420,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Major fund: (1) 10% of total governmental or enterprise fund assets, liabilities, revenues, or expenditures, AND (2) 5% of total governmental plus enterprise funds for same element. General fund always major.',
     reference: 'GASB 34',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-158',
@@ -3458,7 +3441,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Total OPEB liability: PV of projected benefits attributed to past periods of service using entry-age normal cost method. Similar to GASB 68 pension standards. Report net OPEB liability on statement of net position.',
     reference: 'GASB 75',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-159',
@@ -3480,7 +3462,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'ASU 2020-07: present contributed nonfinancial assets (gifts-in-kind) as separate line in statement of activities. Disclose: valuation techniques, donor restrictions, utilization policies.',
     reference: 'ASU 2020-07',
     blueprintArea: 'FAR-III',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-160',
@@ -3502,7 +3483,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Split-interest agreements: nonprofit records assets at FV, liability to beneficiaries at PV of expected payments. Contribution revenue = difference. Remeasure annually; changes in PV affect contribution or liability.',
     reference: 'ASC 958-30',
     blueprintArea: 'FAR-III',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-161',
@@ -3524,7 +3504,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Two-step process: (1) Recognition - more likely than not (>50%) to be sustained. (2) Measurement - largest amount >50% likely to be realized. Disclose unrecognized tax benefits in notes.',
     reference: 'ASC 740-10-25',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-162',
@@ -3546,7 +3525,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Intraperiod allocation: allocate total tax to continuing operations, discontinued operations, OCI, prior period adjustments, capital transactions. Each item reported net of its tax effect.',
     reference: 'ASC 740-20',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-163',
@@ -3568,7 +3546,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Bargain purchase: FV of net assets > consideration. First reassess all assets/liabilities for completeness and measurement. If bargain remains, recognize gain in earnings immediately.',
     reference: 'ASC 805-30-25',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-164',
@@ -3590,7 +3567,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Contingent consideration: include at FV as part of acquisition cost. Subsequently: if classified as liability, remeasure at FV with changes in earnings. If classified as equity, no remeasurement.',
     reference: 'ASC 805-30-25',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-165',
@@ -3612,7 +3588,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Direct method: adjust accrual expenses to cash. Increase in prepaid = more cash paid. Increase in accrued liability = less cash paid. Remove non-cash items (depreciation, amortization).',
     reference: 'ASC 230-10-45',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-166',
@@ -3634,7 +3609,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Noncash transactions (debt conversion to equity, assets acquired via finance lease, stock dividends): disclose separately. Do not include in cash flow statement. Required supplemental disclosure.',
     reference: 'ASC 230-10-50',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   // Batch 12 - Additional FAR Questions
   {
@@ -3657,7 +3631,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'ASC 330 requires inventory valued at lower of cost or NRV. NRV = estimated selling price - costs to complete and sell. Simpler than old LCM rule. Write-down recognized immediately as loss.',
     reference: 'ASC 330-10-35',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-168',
@@ -3679,7 +3652,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Consignor retains ownership until sale to ultimate customer. Consignor records as inventory (cost + shipping). Consignee has no inventory or liability. Revenue recognized when consignee sells to customer.',
     reference: 'ASC 606-10-55',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-169',
@@ -3701,7 +3673,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Capitalize interest during acquisition/construction period for: assets built for own use, discrete projects for sale/lease. Not for inventory routinely produced. Cap = lesser of actual or avoidable interest.',
     reference: 'ASC 835-20',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-170',
@@ -3723,7 +3694,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Involuntary conversion: recognize gain/loss immediately = insurance proceeds minus carrying value. GAAP requires immediate recognition. Tax treatment differs (potential deferral under IRC 1033).',
     reference: 'ASC 610-30',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-171',
@@ -3745,7 +3715,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Internal-use software: expense preliminary stage costs. Capitalize application development costs (coding, testing, installation). Expense post-implementation costs (training, maintenance). Amortize over useful life.',
     reference: 'ASC 350-40',
     blueprintArea: 'FAR-I',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-172',
@@ -3767,7 +3736,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Customer relationships acquired in business combination: recognize separately from goodwill if identifiable (arise from contractual rights or separable). Finite life, amortize. Test for impairment.',
     reference: 'ASC 805-20-25',
     blueprintArea: 'FAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-173',
@@ -3789,7 +3757,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Variable consideration constraint: include in transaction price only to extent that significant revenue reversal is not probable. Consider likelihood and magnitude. Update each period.',
     reference: 'ASC 606-10-32',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-174',
@@ -3811,7 +3778,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Licenses: functional (point in time) vs symbolic (over time). Functional = IP has significant standalone functionality (software). Symbolic = value derives from ongoing activities (brand). Determine nature at inception.',
     reference: 'ASC 606-10-55',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-175',
@@ -3833,7 +3799,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Variable payments based on index/rate: include in lease liability using rate at commencement. Remeasure only when lease liability is remeasured. Variable payments based on usage/performance: expense as incurred.',
     reference: 'ASC 842-10-30',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-176',
@@ -3855,7 +3820,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Lease incentives (tenant improvement allowances, rent holidays): reduce ROU asset. Include in measurement of lease liability if not yet received. Effect: lower depreciation expense over lease term.',
     reference: 'ASC 842-10-30',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-177',
@@ -3877,7 +3841,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'If-converted method: add back interest expense (net of tax) to numerator. Add shares that would be issued upon conversion to denominator. Use if dilutive. Reflects conversion as if occurred at beginning.',
     reference: 'ASC 260-10-45',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-178',
@@ -3899,7 +3862,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'RSUs: measure at grant-date fair value (stock price for non-market conditions). Recognize expense over requisite service period (usually vesting period). Credit to APIC. Similar to restricted stock.',
     reference: 'ASC 718-10-35',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-179',
@@ -3921,7 +3883,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'ESOP: employer guarantees debt, records liability. Contra-equity (unearned ESOP shares) = deferred compensation. As shares allocated to employees, release from suspense, recognize compensation expense.',
     reference: 'ASC 718-40',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-180',
@@ -3943,7 +3904,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Downstream sale (parent to sub): eliminate profit against parent 100%. Upstream sale (sub to parent): eliminate proportionally (parent share and NCI share). Reflects who initiated the intercompany transaction.',
     reference: 'ASC 810-10-45',
     blueprintArea: 'FAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-181',
@@ -3965,7 +3925,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Intercompany bond acquisition: constructive retirement. Eliminate investment and liability. Difference = constructive gain/loss (reported in consolidation). Attribute to purchaser entity (subsidiary here).',
     reference: 'ASC 810-10-45',
     blueprintArea: 'FAR-III',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-182',
@@ -3987,7 +3946,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Governmental funds: current financial resources focus. Measure current assets, liabilities, fund balance. Capital assets and long-term debt reported at government-wide level. Proprietary funds use economic resources focus.',
     reference: 'GASB 34',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-183',
@@ -4009,7 +3967,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Derived taxes: recognize when underlying exchange occurs (sale, earning income) AND resources available (collected within 60 days). Imposed taxes: recognize when enforceable claim exists. Different recognition rules.',
     reference: 'GASB 33',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-184',
@@ -4031,7 +3988,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Infrastructure (roads, bridges, water systems): report in government-wide statement of net position. Depreciate unless using modified approach. Not reported in governmental fund statements (different measurement focus).',
     reference: 'GASB 34',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-185',
@@ -4053,7 +4009,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Conditional promise: recognize when barrier overcome (conditions met) and right of return/release lapses. Before met: no receivable or revenue. Unconditional: recognize when promised based on fair value.',
     reference: 'ASC 958-605',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Application',
   },
   {
     id: 'far-extra-186',
@@ -4075,7 +4030,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Collections (art, historical treasures): may capitalize, not capitalize, or capitalize prospectively. If not capitalized, must disclose policy, describe collection, and present separately in statement of activities.',
     reference: 'ASC 958-360',
     blueprintArea: 'FAR-IV',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-187',
@@ -4097,7 +4051,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Release VA in same category as original charge. If VA was charged to continuing operations, release to continuing operations. Maintains consistency and proper tax rate reconciliation.',
     reference: 'ASC 740-10-45',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-188',
@@ -4119,7 +4072,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Deduction: reduces taxable income (benefit = marginal rate x deduction). Credit: reduces tax liability directly (dollar-for-dollar). Credits more valuable. May be nonrefundable (limited to tax liability) or refundable.',
     reference: 'ASC 740-10',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-extra-189',
@@ -4141,7 +4093,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Prior service cost: debit OCI (loss), credit PBO. Amortize to pension expense over remaining service period of active participants (or life expectancy if most inactive). Straight-line method common.',
     reference: 'ASC 715-30-35',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-190',
@@ -4163,7 +4114,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Asset gain/loss: actual return minus expected return. Record in OCI. If cumulative gains/losses in AOCI exceed corridor (10% of greater of PBO or plan assets), amortize excess over average remaining service.',
     reference: 'ASC 715-30-35',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
   {
     id: 'far-extra-191',
@@ -4185,7 +4135,6 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     explanation: 'Free cash flow = CFO - CapEx. Measures cash available after maintaining productive capacity. Useful for valuation, dividend capacity, debt repayment. Not a GAAP measure but widely used by analysts.',
     reference: 'N/A - Analytical Concept',
     blueprintArea: 'FAR-II',
-    skillLevel: 'Analysis',
   },
 ];
 

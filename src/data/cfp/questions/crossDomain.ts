@@ -19,6 +19,7 @@ export interface CrossDomainQuestion {
   integrationLevel: 'moderate' | 'high';
   conceptsTested: string[];
   difficulty: 'easy' | 'medium' | 'hard';
+  skillLevel?: string;
   question: string;
   options: QuestionOption[];
   correctOptionId: string;

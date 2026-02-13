@@ -26,7 +26,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'Accounts receivable is an asset (amounts owed to the company). Accounts payable is a liability. Common stock and retained earnings are equity accounts.',
     reference: 'FASB Concepts Statement No. 6',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-002',
@@ -49,7 +48,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'The balance sheet (statement of financial position) reports assets, liabilities, and stockholders\' equity at a specific point in time. It is a snapshot of financial position.',
     reference: 'Basic Financial Statements',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-003',
@@ -72,7 +70,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Restricted money market funds with withdrawal limitations may be classified as investments rather than cash. Unrestricted currency, checking accounts, and petty cash are included in cash.',
     reference: 'Cash Classification',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-004',
@@ -95,7 +92,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Revenue is recognized when (or as) performance obligations are satisfied by transferring control of goods or services to the customer. This may occur at a point in time or over time.',
     reference: 'ASC 606',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-005',
@@ -118,7 +114,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'LIFO (Last-In, First-Out) assigns the most recent (highest) costs to COGS during inflation. This results in higher COGS and lower taxable income compared to FIFO.',
     reference: 'Inventory Costing',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-006',
@@ -141,7 +136,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Straight-line depreciation = (Cost - Salvage Value) ÷ Useful Life. This allocates the depreciable base evenly over the asset\'s useful life.',
     reference: 'ASC 360',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-007',
@@ -164,7 +158,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'Current liabilities are obligations expected to be settled within one year or the operating cycle, whichever is longer. Everything else is a long-term liability.',
     reference: 'ASC 210',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-008',
@@ -187,7 +180,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Treasury stock is a company\'s own issued stock that has been reacquired but not retired. It reduces stockholders\' equity and is presented as a contra-equity account.',
     reference: 'ASC 505',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-009',
@@ -210,7 +202,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'Under U.S. GAAP, interest paid is classified as an operating activity. Interest received is also operating. (Note: Under IFRS, there is more flexibility in classification.)',
     reference: 'ASC 230',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'far-easy-010',
@@ -233,7 +224,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Investing activities include buying/selling long-term assets (equipment, investments, loans to others). Issuing stock and paying dividends are financing. Employee payments are operating.',
     reference: 'ASC 230',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ============ AUD Easy Questions ============
@@ -258,7 +248,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Direct financial interests (like stock ownership) in an audit client impair independence in fact and appearance. Independence is fundamental to the audit profession.',
     reference: 'AICPA Code of Conduct',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-002',
@@ -281,7 +270,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Materiality is determined by auditor judgment about the magnitude of misstatements that could influence the economic decisions of users. It varies based on entity size and circumstances.',
     reference: 'AU-C Section 320',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-003',
@@ -304,7 +292,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Audit risk is the risk that the auditor expresses an inappropriate audit opinion when the financial statements are materially misstated. AR = IR × CR × DR.',
     reference: 'AU-C Section 200',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-004',
@@ -327,7 +314,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Bank confirmations verify cash balances, outstanding loans, and other bank relationships directly with the financial institution. This provides reliable external evidence.',
     reference: 'AU-C Section 330',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-005',
@@ -350,7 +336,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Evidence from independent external sources (like bank or customer confirmations) is more reliable than evidence generated internally or from management assertions.',
     reference: 'AU-C Section 500',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-006',
@@ -373,7 +358,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Sampling risk is the risk that the auditor\'s conclusion based on a sample may differ from the conclusion if the entire population were tested. It exists whenever sampling is used.',
     reference: 'AU-C Section 530',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-007',
@@ -396,7 +380,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'The control environment is the foundation of internal control and includes management\'s integrity, ethical values, commitment to competence, governance oversight, and organizational structure.',
     reference: 'COSO Framework',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-008',
@@ -419,7 +402,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Observation means watching a process or procedure being performed by others (e.g., observing physical inventory count). It provides evidence that a procedure was performed at that point in time.',
     reference: 'AU-C Section 500',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-009',
@@ -442,7 +424,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'An engagement letter documenting the terms of the audit engagement should be prepared for every audit. It establishes the responsibilities of both auditor and client.',
     reference: 'AU-C Section 210',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'aud-easy-010',
@@ -465,7 +446,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Analytical procedures are required during planning (to understand the entity and identify risk areas) and overall review (to assess conclusions). They are optional as substantive procedures.',
     reference: 'AU-C Section 520',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ============ REG Easy Questions ============
@@ -490,7 +470,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Treasury Circular 230 sets rules for practitioners (CPAs, attorneys, enrolled agents) representing taxpayers before the IRS. It covers duties, restrictions, and disciplinary procedures.',
     reference: 'Circular 230',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-002',
@@ -513,7 +492,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'A valid contract requires offer, acceptance, consideration, legal capacity, and legal purpose. Most contracts do not need to be in writing—only those covered by the Statute of Frauds.',
     reference: 'Contract Law',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-003',
@@ -536,7 +514,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Married Filing Jointly generally provides the most favorable tax brackets and highest standard deduction. Married Filing Separately often results in the highest rates.',
     reference: 'IRC §1',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-004',
@@ -559,7 +536,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Taxpayers choose between the standard deduction and itemizing. They should itemize only if total itemized deductions exceed the standard deduction amount for their filing status.',
     reference: 'IRC §63',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-005',
@@ -582,7 +558,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'AGI = Gross Income - Above-the-line deductions (like IRA contributions, student loan interest, HSA contributions). Itemized/standard deductions are subtracted from AGI to get taxable income.',
     reference: 'IRC §62',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-006',
@@ -605,7 +580,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'C corporations pay corporate income tax on profits. When profits are distributed as dividends, shareholders pay tax again. This is "double taxation" unique to C corps.',
     reference: 'IRC Subchapter C',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-007',
@@ -628,7 +602,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'S corporations are pass-through entities—they generally pay no entity-level tax. Income, deductions, and credits flow through to shareholders who report them on personal returns.',
     reference: 'IRC Subchapter S',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-008',
@@ -651,7 +624,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Partnerships file Form 1065 (U.S. Return of Partnership Income). They also issue Schedule K-1s to partners reporting each partner\'s share of income, deductions, and credits.',
     reference: 'IRC Subchapter K',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-009',
@@ -674,7 +646,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The principal authorizes the agent to act on the principal\'s behalf. The agent is the one who performs actions for the principal. Both can be individuals or entities.',
     reference: 'Agency Law',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'reg-easy-010',
@@ -697,7 +668,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Long-term capital gains apply to assets held MORE than 12 months (one year and one day or longer). They receive preferential tax rates (0%, 15%, or 20% depending on income).',
     reference: 'IRC §1222',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ============ BAR Easy Questions ============
@@ -722,7 +692,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Current ratio = Current Assets ÷ Current Liabilities. It measures short-term liquidity and the ability to pay obligations due within one year.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-002',
@@ -745,7 +714,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'ROE = Net Income ÷ Average Stockholders\' Equity. It measures how effectively the company uses shareholder investment to generate profits.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-003',
@@ -768,7 +736,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Direct labor is a product cost (inventoriable cost) along with direct materials and manufacturing overhead. Period costs (selling and admin) are expensed when incurred.',
     reference: 'Cost Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-004',
@@ -791,7 +758,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Fixed costs remain constant in total within the relevant range regardless of activity level. Fixed cost per unit decreases as volume increases.',
     reference: 'Cost Behavior',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-005',
@@ -814,7 +780,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Contribution margin = Sales - Variable Costs. It represents the amount available to cover fixed costs and generate profit.',
     reference: 'CVP Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-006',
@@ -837,7 +802,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Data analytics allows accountants to analyze 100% of transactions rather than relying solely on sampling. It enhances but does not replace professional judgment.',
     reference: 'Data Analytics',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-007',
@@ -860,7 +824,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Passwords are access controls (logical access controls) that restrict unauthorized users from entering systems. They are a basic security measure for authentication.',
     reference: 'IT Controls',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-008',
@@ -883,7 +846,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Horizontal (trend) analysis compares financial statement items over multiple periods to identify trends. Vertical analysis compares items on the same statement to a base amount.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-009',
@@ -906,7 +868,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Applied overhead uses a predetermined overhead rate (estimated overhead ÷ estimated activity base) multiplied by actual activity. This allocates overhead to products during production.',
     reference: 'Cost Accounting',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'bar-easy-010',
@@ -929,7 +890,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Debt-to-Equity = Total Liabilities ÷ Stockholders\' Equity. It measures financial leverage—how much the company relies on debt versus equity financing.',
     reference: 'Financial Analysis',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ============ ISC Easy Questions ============
@@ -954,7 +914,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'IT governance aligns IT strategy with business objectives, ensures IT delivers value, manages IT risks appropriately, and measures IT performance.',
     reference: 'COBIT Framework',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-002',
@@ -977,7 +936,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The CIA triad represents the three core objectives of information security: Confidentiality (keeping data private), Integrity (maintaining accuracy), and Availability (ensuring access when needed).',
     reference: 'Information Security',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-003',
@@ -1000,7 +958,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Multi-factor authentication requires two or more factors from different categories: something you know (password), something you have (phone/token), or something you are (biometrics).',
     reference: 'Access Control',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-004',
@@ -1023,7 +980,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Backups are corrective controls—they help restore systems after a problem occurs. Preventive controls stop problems. Detective controls identify problems.',
     reference: 'IT Controls',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-005',
@@ -1046,7 +1002,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Encryption transforms data into an unreadable format using algorithms and keys. Only those with the correct key can decrypt and read the data, protecting confidentiality.',
     reference: 'Cryptography',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-006',
@@ -1069,7 +1024,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'SDLC starts with planning and requirements analysis to understand what the system should do. Then comes design, development (coding), testing, implementation, and maintenance.',
     reference: 'SDLC',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-007',
@@ -1092,7 +1046,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Segregation of duties separates incompatible functions (like programming and operating systems, or authorizing transactions and recording them) to reduce fraud and error risk.',
     reference: 'IT Controls',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-008',
@@ -1115,7 +1068,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Phishing is a social engineering attack where attackers send fraudulent communications (often emails) pretending to be legitimate entities to trick users into revealing sensitive information.',
     reference: 'Cybersecurity Threats',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-009',
@@ -1138,7 +1090,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Relational databases organize data in tables (relations) with rows (records) and columns (fields). Tables can be linked through relationships using keys.',
     reference: 'Database Management',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'isc-easy-010',
@@ -1161,7 +1112,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'A disaster recovery plan documents procedures to restore critical IT systems and data after a major disruption, minimizing downtime and business impact.',
     reference: 'Business Continuity',
-    skillLevel: 'Remembering and Understanding',
   },
 
   // ============ TCP Easy Questions ============
@@ -1186,7 +1136,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Tax avoidance uses legal methods to minimize taxes (deductions, credits, timing). Tax evasion is illegal (hiding income, false deductions). Avoidance is good tax planning; evasion is fraud.',
     reference: 'Tax Ethics',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-002',
@@ -1209,7 +1158,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Tax credits directly reduce tax liability dollar-for-dollar. A $1,000 credit saves $1,000 in taxes. Deductions reduce taxable income, with tax savings depending on the tax rate.',
     reference: 'Tax Fundamentals',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-003',
@@ -1232,7 +1180,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Traditional IRA contributions may be tax-deductible (subject to limits). Earnings grow tax-deferred. Distributions in retirement are taxed as ordinary income.',
     reference: 'IRC §219',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-004',
@@ -1255,7 +1202,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Roth IRA contributions are made with after-tax dollars (no deduction). In exchange, qualified distributions in retirement are completely tax-free, including earnings.',
     reference: 'IRC §408A',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-005',
@@ -1278,7 +1224,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'S corporations, partnerships, and LLCs (taxed as partnerships) are pass-through entities that avoid double taxation. Income passes to owners and is taxed once at the individual level.',
     reference: 'Entity Selection',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-006',
@@ -1301,7 +1246,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'S corporations are limited to 100 shareholders (family members can count as one). All shareholders must be U.S. citizens or residents, and there can only be one class of stock.',
     reference: 'IRC §1361',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-007',
@@ -1324,7 +1268,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Initial basis is typically cost, including purchase price plus any costs necessary to acquire and prepare the asset for use (closing costs, installation, etc.).',
     reference: 'IRC §1012',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-008',
@@ -1347,7 +1290,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'After 2017 tax reform, Section 1031 like-kind exchanges are limited to real property (real estate). Personal property exchanges no longer qualify for tax deferral.',
     reference: 'IRC §1031',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-009',
@@ -1370,7 +1312,6 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'The annual gift tax exclusion allows gifts up to $18,000 per recipient (2024, indexed for inflation) without using any of the lifetime gift/estate tax exemption.',
     reference: 'IRC §2503',
-    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'tcp-easy-010',
@@ -1393,6 +1334,5 @@ export const EASY_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Estimated taxes are paid quarterly (April 15, June 15, September 15, January 15) for income not subject to withholding (self-employment, investments, etc.).',
     reference: 'IRC §6654',
-    skillLevel: 'Remembering and Understanding',
   },
 ];

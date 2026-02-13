@@ -19,6 +19,7 @@ export interface Question {
   options: QuestionOption[];
   explanation: string;
   difficulty: 'easy' | 'medium' | 'hard';
+  skillLevel?: string;
   educationalObjective?: string;
   cfpTopicArea?: string;
   bloomLevel?: 'knowledge' | 'comprehension' | 'application' | 'analysis' | 'synthesis' | 'evaluation';

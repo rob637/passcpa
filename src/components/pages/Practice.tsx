@@ -697,17 +697,16 @@ const Practice: React.FC = () => {
   // Track weak topics for targeted practice
   const [, setWeakTopicsFromSession] = useState<string[]>([]);
 
-  // Session ID for deterministic option shuffling (prevents answer pattern gaming)
-  const [sessionId] = useState(() => `session-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
+  // Note: sessionId removed - using 'practice' mode shuffle which is stable per user
 
   const currentQuestion: Question | undefined = questions[currentIndex];
   
   // Shuffle options for the current question to prevent B-bias gaming
-  // Uses question ID + user ID + session ID for deterministic shuffling
+  // Uses 'practice' mode: same user always sees same order for consistent learning
   const shuffledQuestion: ShuffledQuestion | undefined = useMemo(() => {
     if (!currentQuestion) return undefined;
-    return shuffleQuestionOptions(currentQuestion, user?.uid, sessionId);
-  }, [currentQuestion, user?.uid, sessionId]);
+    return shuffleQuestionOptions(currentQuestion, { userId: user?.uid, mode: 'practice' });
+  }, [currentQuestion, user?.uid]);
   
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : undefined;

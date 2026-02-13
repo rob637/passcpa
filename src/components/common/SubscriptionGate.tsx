@@ -148,7 +148,7 @@ export function SubscriptionGate({
               <span className="font-semibold">Founding Member Pricing</span>
             </div>
             <p className="text-sm text-amber-700 dark:text-amber-400">
-              Lock in your founder rate through August 2028. Subscribe before August 31, 2026.
+              Lock in your founder rate through April 2028. Subscribe before April 30, 2026.
             </p>
           </div>
         )}

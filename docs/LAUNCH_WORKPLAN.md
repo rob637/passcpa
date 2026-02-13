@@ -14,7 +14,7 @@
 | Testing Period | February 17-18, 2026 | ⬜ |
 | **LAUNCH** | February 19, 2026 | ⬜ |
 | First Trial Expirations | ~March 5, 2026 | ⬜ |
-| Founder Window Closes | August 31, 2026 | ⬜ |
+| Founder Window Closes | April 30, 2026 | ⬜ |
 
 ---
 
@@ -218,7 +218,7 @@ const isBetaUser = user.createdAt < LAUNCH_DATE;
 | Benefit | Value |
 |---------|-------|
 | **14-day trial starting Feb 19** | Full access to see paid features |
-| **Founder pricing eligibility** | ~40-44% off if they subscribe by August 31 |
+| **Founder pricing eligibility** | ~40-44% off if they subscribe by April 30 |
 | **Appreciation email** | "Thank you for being a beta user" |
 | **No interruption** | Trial starts, they keep studying |
 
@@ -309,7 +309,7 @@ Thank you for believing in us early. Let's get you to 75+.
 
 ```javascript
 // When creating subscription
-const isFounderWindow = new Date() < new Date('2026-08-31');
+const isFounderWindow = new Date() < new Date('2026-04-30');
 const subscription = {
   tier: 'annual',
   isFounder: isFounderWindow,

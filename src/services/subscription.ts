@@ -65,9 +65,9 @@ export interface UserSubscription {
 // Launch Date: Feb 19, 2026 - No longer beta, paid subscriptions active
 const IS_BETA = false;
 
-// Founder pricing deadline - August 31, 2026
+// Founder pricing deadline - April 30, 2026
 // Single source of truth — imported by useCheckout.ts, ExamLandingTemplate.tsx, etc.
-export const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
+export const FOUNDER_DEADLINE = new Date('2026-04-30T23:59:59Z');
 
 // Check if founder pricing is active
 export const isFounderPricingActive = (): boolean => new Date() < FOUNDER_DEADLINE;
@@ -82,7 +82,7 @@ export const founderDaysRemaining = (): number => {
 // Band 1 (CPA): $49/mo, $449/yr — Founder: $249/yr (~$21/mo)
 // Band 2 (CMA, CFP, CISA): $39/mo, $349/yr — Founder: $199/yr (~$17/mo)
 // Band 3 (EA, CIA): $29/mo, $249/yr — Founder: $149/yr (~$12/mo)
-// Founder: 300 seats per exam, 2-year rate lock, window closes Aug 31, 2026
+// Founder: 300 seats per exam, 2-year rate lock, window closes Apr 30, 2026
 export const EXAM_PRICING = {
   cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 21 },
   ea: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },

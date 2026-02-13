@@ -512,7 +512,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </table>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
-                *Founding member pricing available through August 31, 2026. Rate guaranteed for 2 years.
+                *Founding member pricing available through April 30, 2026. Rate guaranteed for 2 years.
               </p>
             </div>
           </section>

@@ -37,7 +37,7 @@ if (STRIPE_SECRET_KEY) {
 }
 
 // Founder pricing window - users who subscribe before this date get founder rates (~40-44% off, locked 2 years)
-const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
+const FOUNDER_DEADLINE = new Date('2026-04-30T23:59:59Z');
 
 // Price lookup keys - maps our internal keys to what we'll use in checkout
 // The lookup keys should match what you set in Stripe dashboard

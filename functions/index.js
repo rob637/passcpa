@@ -145,7 +145,8 @@ if (RESEND_API_KEY) {
 // ============================================================================
 
 exports.sendCustomPasswordReset = onCall({
-  cors: true, // Allow all origins for this public function
+  cors: true,
+  invoker: 'public', // Required for Gen 2 callable functions
   enforceAppCheck: false, // Not requiring app check for password reset
   secrets: ['RESEND_API_KEY'],
 }, async (request) => {
@@ -1328,6 +1329,7 @@ function generateWaitlistEmail(email) {
 
 exports.createCheckoutSession = onCall({
   cors: true,
+  invoker: 'public', // Required for Gen 2 callable functions - auth handled via request.auth
   enforceAppCheck: false,
   secrets: ['STRIPE_SECRET_KEY'],
 }, async (request) => {
@@ -1681,6 +1683,7 @@ async function handlePaymentFailed(invoice) {
 
 exports.createCustomerPortalSession = onCall({
   cors: true,
+  invoker: 'public', // Required for Gen 2 callable functions - auth handled via request.auth
   enforceAppCheck: false,
   secrets: ['STRIPE_SECRET_KEY'],
 }, async (request) => {

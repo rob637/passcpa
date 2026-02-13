@@ -159,7 +159,7 @@ export const EXAM_PRICING = {
 
 ### FOUNDER_DEADLINE Locations
 
-The deadline `2026-08-31T23:59:59Z` appears in 4 files:
+The deadline `2026-04-30T23:59:59Z` appears in 4 files:
 1. `src/services/subscription.ts`
 2. `src/hooks/useCheckout.ts` (2 instances)
 3. `src/components/pages/landing/ExamLandingTemplate.tsx`

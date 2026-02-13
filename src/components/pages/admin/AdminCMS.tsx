@@ -2390,7 +2390,7 @@ const AdminCMS: React.FC = () => {
 
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
                       Per-exam pricing: CPA $199/yr ($29/mo), CFP $149/yr ($19/mo), CMA/CIA $99/yr ($14/mo), CISA $79/yr ($12/mo), EA $59/yr ($9/mo). 
-                      Founder pricing (40-44% off) available through August 31, 2026. No lifetime plans offered.
+                      Founder pricing (40-44% off) available through April 30, 2026. No lifetime plans offered.
                     </p>
                   </Card>
                 )}
@@ -3264,7 +3264,7 @@ const AdminCMS: React.FC = () => {
                   Status: <strong>LIVE</strong>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Paid subscriptions are active. Founder pricing (40-44% off) available until August 31, 2026.
+                  Paid subscriptions are active. Founder pricing (40-44% off) available until April 30, 2026.
                 </p>
               </div>
             </div>

@@ -62,7 +62,7 @@ const AI_ARTIFACT_PATTERNS = [
 ];
 
 const OUTDATED_REFERENCES = [
-  { pattern: /\bBEC\b/, message: 'References BEC section (retired Dec 2023)', context: 'CPA' },
+  { pattern: /\bBEC\s+(?:section|exam|test|score|blueprint|area)/i, message: 'References BEC section (retired Dec 2023)', context: 'CPA' },
   { pattern: /\bSection 179D\b.*\$1\.80/i, message: 'Old §179D deduction amount ($1.80 → check current rates)', context: 'tax' },
   { pattern: /\b401\(k\).*\$20,500\b/, message: 'Old 401(k) limit ($20,500 was 2022)', context: 'retirement' },
   { pattern: /\b401\(k\).*\$22,500\b/, message: 'Old 401(k) limit ($22,500 was 2023, now $23,500 for 2025)', context: 'retirement' },
@@ -239,7 +239,7 @@ function auditQuestion(q, fileContent) {
   
   // 5. ID format
   if (q.id !== q.id.toLowerCase()) {
-    issues.push({ severity: 'warning', check: 'id-format', message: `ID not lowercase: ${q.id}` });
+    issues.push({ severity: 'info', check: 'id-format', message: `ID not lowercase: ${q.id}` });
   }
   
   // 6. Difficulty validation
@@ -271,12 +271,20 @@ function auditQuestion(q, fileContent) {
   }
   
   // 9. Outdated references
-  const questionBlock = fileContent.substring(
-    fileContent.indexOf(`'${q.id}'`) || 0,
-    fileContent.indexOf(`'${q.id}'`) > 0 ? fileContent.indexOf(`'${q.id}'`) + 3000 : 0
-  );
+  // Extract just this question's block (up to the next question's id: or end-of-array)
+  const idPos = fileContent.indexOf(`'${q.id}'`);
+  let questionBlock = '';
+  if (idPos > 0) {
+    const afterId = fileContent.substring(idPos + q.id.length + 2);
+    // Find the next question by looking for the next id: field
+    const nextIdMatch = afterId.match(/\n\s+id:\s*['"]/);
+    const blockEnd = nextIdMatch ? nextIdMatch.index : Math.min(afterId.length, 3000);
+    questionBlock = afterId.substring(0, blockEnd);
+  }
   if (questionBlock) {
     for (const ref of OUTDATED_REFERENCES) {
+      // Skip CPA-specific checks (like BEC) for non-CPA courses
+      if (ref.context === 'CPA' && q.courseId && q.courseId !== 'cpa') continue;
       if (ref.pattern.test(questionBlock)) {
         issues.push({ severity: 'warning', check: 'outdated-ref', message: ref.message });
       }
@@ -284,12 +292,11 @@ function auditQuestion(q, fileContent) {
   }
   
   // 10. Old-format fields
-  if (fileContent.includes(`'${q.id}'`)) {
-    const block = questionBlock || '';
-    if (block.includes('correctOptionId:')) {
+  if (questionBlock) {
+    if (questionBlock.includes('correctOptionId:')) {
       issues.push({ severity: 'critical', check: 'old-format', message: 'Uses correctOptionId instead of correctAnswer' });
     }
-    if (/\btext:\s*['"]/.test(block) && !/\bquestion:\s*['"]/.test(block) && block.indexOf(q.id) < block.indexOf('text:')) {
+    if (/\btext:\s*['"]/.test(questionBlock) && !/\bquestion:\s*['"]/.test(questionBlock)) {
       issues.push({ severity: 'critical', check: 'old-format', message: 'Uses text instead of question field' });
     }
   }

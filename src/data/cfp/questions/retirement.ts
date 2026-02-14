@@ -1296,35 +1296,35 @@ $2,800 × 1.24 = $3,472
     subtopic: 'IRA Basis Tracking',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Janet made non-deductible IRA contributions of $6,000/year for 10 years ($60,000 total). Her traditional IRA is now worth $150,000. If she takes a $30,000 distribution, how much is taxable?`,
+    question: `Janet made non-deductible IRA contributions of $7,000/year for 10 years ($70,000 total). Her traditional IRA is now worth $175,000. If she takes a $35,000 distribution, how much is taxable?`,
     options: [
-      'B) $18,000',
-      'A) $30,000 (fully taxable)',
-      'C) $12,000',
+      'B) $21,000',
+      'A) $35,000 (fully taxable)',
+      'C) $14,000',
       'D) $0 (return of basis first)',
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: B ($18,000)**
+    explanation: `**Correct Answer: B ($21,000)**
 
 **Pro-Rata Rule for IRA Distributions:**
 Non-deductible contributions create "basis" in the IRA, but you can't withdraw basis first.
 
 **Calculation:**
-- Total IRA value: $150,000
-- After-tax basis: $60,000
-- Pre-tax portion: $90,000
+- Total IRA value: $175,000
+- After-tax basis: $70,000
+- Pre-tax portion: $105,000
 
-After-tax ratio: $60,000 ÷ $150,000 = 40%
-Pre-tax ratio: $90,000 ÷ $150,000 = 60%
+After-tax ratio: $70,000 ÷ $175,000 = 40%
+Pre-tax ratio: $105,000 ÷ $175,000 = 60%
 
-**$30,000 distribution:**
-- Tax-free (return of basis): $30,000 × 40% = $12,000
-- Taxable (earnings + deductible): $30,000 × 60% = $18,000
+**$35,000 distribution:**
+- Tax-free (return of basis): $35,000 × 40% = $14,000
+- Taxable (earnings + deductible): $35,000 × 60% = $21,000
 
 **Form 8606** tracks non-deductible contributions and calculates taxable portion.
 
 **Why other answers are wrong:**
-- **A)** Ignores the $60,000 basis
+- **A)** Ignores the $70,000 basis
 - **C)** Reversed the taxable and tax-free portions
 - **D)** IRS requires pro-rata treatment; can't withdraw basis first`
   },

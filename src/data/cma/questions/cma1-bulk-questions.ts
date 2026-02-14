@@ -4,6 +4,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   // --- A. External Financial Reporting Decisions ---
   {
     id: 'cma1-bulk-a-001',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'Which of the following financial statements provides information about a company\'s financial position at a specific point in time?',
@@ -21,6 +22,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   },
   {
     id: 'cma1-bulk-a-002',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'According to US GAAP, how should Research and Development (R&D) costs generally be treated?',
@@ -40,6 +42,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   // --- B. Planning, Budgeting, and Forecasting ---
   {
     id: 'cma1-bulk-b-001',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'Which budgeting approach involves adding a new month to the end of the budget as the current month expires?',
@@ -57,6 +60,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   },
   {
     id: 'cma1-bulk-b-002',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'When using regression analysis to forecast costs, the "R-squared" value represents:',
@@ -76,6 +80,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   // --- C. Performance Management ---
   {
     id: 'cma1-bulk-c-001',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'A responsibility center where the manager is held accountable for both revenues and costs is called a:',
@@ -95,6 +100,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   // --- D. Cost Management ---
   {
     id: 'cma1-bulk-d-001',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'In Activity-Based Costing (ABC), a "cost driver" is:',
@@ -114,6 +120,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   // --- E. Internal Controls ---
   {
     id: 'cma1-bulk-e-001',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'Which of the following is NOT a component of the COSO Internal Control Framework?',
@@ -133,6 +140,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
   // --- F. Technology and Analytics ---
   {
     id: 'cma1-bulk-f-001',
+    courseId: 'cma',
     section: 'CMA1',
     subtopic: 'General',
     question: 'Which type of data analytics answers the question "What is likely to happen in the future?"',

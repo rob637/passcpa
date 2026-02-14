@@ -13,6 +13,7 @@ export const REG_QUESTIONS: Question[] = [
   // Circular 230 - REG-I-A: Ethics and Responsibilities in Tax Practice
   {
     id: 'reg-eth-001',
+    courseId: 'cpa',
     section: 'REG',
     // NEW: Blueprint tagging per 2026 AICPA structure
     blueprintArea: 'REG-I',

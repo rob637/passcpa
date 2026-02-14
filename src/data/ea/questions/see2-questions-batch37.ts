@@ -18,15 +18,15 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     subtopic: 'SE Tax Rate',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'The self-employment tax rate for 2024 is:',
+    question: 'A sole proprietor reported $182,000 in net self-employment earnings for 2024 and had no W-2 wages. What is the total Social Security and Medicare tax portion of the self-employment tax? (Wage base: $168,600.)',
     options: [
-      '7.65%',
-      '12.4%',
-      '15.3%',
-      '22.4%'
+      '$25,574',
+      '$27,846',
+      '$22,752',
+      '$20,866',
     ],
-    correctAnswer: 2,
-    explanation: 'Self-employment tax is 15.3% (12.4% for Social Security on earnings up to the wage base plus 2.9% for Medicare on all earnings). This represents both employer and employee portions.',
+    correctAnswer: 0,
+    explanation: 'SE tax base = 92.35% × $182,000 = $168,077. Since $168,077 is below the $168,600 wage base, the full amount is subject to both portions. Social Security: 12.4% × $168,077 = $20,842. Medicare: 2.9% × $168,077 = $4,874. Total SE tax = $25,716. Note: at 92.35% × $182,000 = $168,077, the full 15.3% applies: $168,077 × 15.3% = $25,716.',
     reference: 'IRC §1401',
   },
   {
@@ -38,15 +38,15 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     subtopic: 'Net Earnings Calculation',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Self-employment tax is calculated on:',
+    question: 'Self-employed consultant Nakamura had net earnings from self-employment of $148,000 in 2024 and no other wages. What is Nakamura\'s self-employment tax? (Social Security wage base: $168,600.)',
     options: [
-      'Gross receipts',
-      '100% of net self-employment income',
-      '92.35% of net self-employment income',
-      '50% of net self-employment income'
+      '$20,912',
+      '$22,644',
+      '$11,322',
+      '$18,612',
     ],
-    correctAnswer: 2,
-    explanation: 'SE tax is calculated on 92.35% of net self-employment income, which approximates the reduction an employee would have from employer-paid FICA (100% - 7.65% = 92.35%).',
+    correctAnswer: 0,
+    explanation: 'SE tax is calculated on 92.35% of net SE earnings. 92.35% × $148,000 = $136,678. The SE tax rate is 15.3% (12.4% Social Security + 2.9% Medicare). Since $136,678 is below the $168,600 wage base, both portions apply in full: $136,678 × 15.3% = $20,912. The taxpayer may deduct 50% of SE tax as an adjustment to income.',
     reference: 'IRC §1402(a)',
   },
   {
@@ -61,11 +61,11 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     question: 'A self-employed individual may deduct what portion of self-employment tax on Form 1040?',
     options: [
       '100% on Schedule C',
+      'None - SE tax is not deductible',
       '50% as an adjustment to income',
       '7.65% on Schedule A',
-      'None - SE tax is not deductible'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: '50% of self-employment tax is deductible as an adjustment to income (above-the-line) on Schedule 1 of Form 1040. This represents the employer-equivalent portion of FICA.',
     reference: 'IRC §164(f)',
   },
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Self-employment tax is NOT required if net self-employment earnings are less than:',
     options: [
+      '$1,000',
       '$100',
       '$400',
       '$600',
-      '$1,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'No self-employment tax is due if net earnings from self-employment are less than $400 for the year. Above $400, the entire amount (×92.35%) is subject to SE tax.',
     reference: 'IRC §1402(b)',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A general partner\'s distributive share of partnership income is:',
     options: [
+      'Subject to SE tax only if the partner is retired',
       'Never subject to self-employment tax',
       'Subject to self-employment tax if from an active trade or business',
       'Only subject to employment tax, not SE tax',
-      'Subject to SE tax only if the partner is retired'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A general partner\'s distributive share of partnership ordinary income is generally subject to self-employment tax as earnings from self-employment. Limited partners are generally exempt except for guaranteed payments.',
     reference: 'IRC §1402(a)(13)',
   },
@@ -122,8 +122,8 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     options: [
       'Subject to SE tax',
       'Subject to FICA tax (not SE tax)',
+      'Subject to FUTA only',
       'Exempt from all payroll taxes',
-      'Subject to FUTA only'
     ],
     correctAnswer: 1,
     explanation: 'S corporation shareholder-employees receive wages subject to FICA (employee and employer portions), not SE tax. Their distributive share of S corp income is generally not subject to SE tax.',
@@ -142,8 +142,8 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     options: [
       'All $300,000',
       'Earnings over $200,000 ($100,000)',
+      'Nothing - Additional Medicare only applies to employees',
       'Earnings over $250,000 ($50,000)',
-      'Nothing - Additional Medicare only applies to employees'
     ],
     correctAnswer: 1,
     explanation: 'Self-employed individuals owe 0.9% Additional Medicare Tax on SE earnings over $200,000 (single). With $300,000 SE income, Additional Medicare applies to $100,000.',
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     skillLevel: 'Analysis',
     question: 'Rental income from real estate is generally:',
     options: [
-      'Always subject to self-employment tax',
       'Not subject to self-employment tax unless the taxpayer is a real estate dealer',
+      'Exempt only for retirees',
+      'Always subject to self-employment tax',
       'Subject to 50% SE tax',
-      'Exempt only for retirees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Rental income from real estate is generally excluded from SE tax under IRC §1402(a)(1), unless the taxpayer is a real estate dealer or provides substantial services along with the rental.',
     reference: 'IRC §1402(a)(1)',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     skillLevel: 'Application',
     question: 'A taxpayer has $150,000 in wages and $50,000 in net SE income. How does the Social Security wage base apply?',
     options: [
-      'SE income is fully subject to SS portion of SE tax',
       'Only $18,600 of SE income is subject to SS portion ($168,600 - $150,000)',
+      'The wage base applies separately to wages and SE income',
+      'SE income is fully subject to SS portion of SE tax',
       'All SE income is exempt from SS tax',
-      'The wage base applies separately to wages and SE income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Social Security wage base ($168,600 for 2024) applies to combined wages and SE income. With $150,000 wages, only $18,600 of SE income is subject to the SS portion (12.4%×92.35%).',
     reference: 'IRC §1402(b)(1)',
   },
@@ -200,10 +200,10 @@ export const SEE2_QUESTIONS_BATCH37: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Self-employment tax is calculated and reported on:',
     options: [
-      'Schedule C',
+      'Form 941',
       'Schedule SE',
+      'Schedule C',
       'Schedule E',
-      'Form 941'
     ],
     correctAnswer: 1,
     explanation: 'Schedule SE (Form 1040), Self-Employment Tax, is used to calculate SE tax. The SE tax is then entered on Schedule 2 of Form 1040.',

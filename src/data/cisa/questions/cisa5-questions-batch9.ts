@@ -16,12 +16,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'The MOST effective control against insider threats is:',
     options: [
-      'Strong perimeter firewalls',
-      'Combination of monitoring, access controls, and behavioral analytics',
       'Antivirus software',
-      'Annual security training only'
+      'Strong perimeter firewalls',
+      'Annual security training only',
+      'Combination of monitoring, access controls, and behavioral analytics',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Insider threats require layered controls including access restrictions, activity monitoring, and behavioral analytics to detect anomalies.',
     topic: 'Information Security',
     subtopic: 'Insider Threats'
@@ -35,12 +35,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Defense in depth strategy means:',
     options: [
+      'Relying on user awareness alone',
       'Having one very strong security control',
-      'Implementing multiple layers of security controls',
       'Focusing only on network perimeter',
-      'Relying on user awareness alone'
+      'Implementing multiple layers of security controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Defense in depth uses multiple overlapping security layers so if one control fails, others still provide protection.',
     topic: 'Information Security',
     subtopic: 'Security Architecture'
@@ -55,11 +55,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Network segmentation PRIMARILY reduces risk by:',
     options: [
       'Increasing network speed',
-      'Limiting lateral movement and containing breaches',
+      'Simplifying management',
       'Reducing hardware costs',
-      'Simplifying management'
+      'Limiting lateral movement and containing breaches',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Segmentation limits attacker movement between network zones and contains breaches to smaller areas.',
     topic: 'Network Security',
     subtopic: 'Segmentation'
@@ -74,11 +74,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Role-based access control (RBAC) assigns permissions based on:',
     options: [
       'Individual user preferences',
-      'Job function/role within the organization',
+      'Department budget',
       'Seniority level only',
-      'Department budget'
+      'Job function/role within the organization',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'RBAC assigns access based on roles aligned to job functions, simplifying administration and enforcing least privilege.',
     topic: 'Access Control',
     subtopic: 'RBAC'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing encryption controls, the auditor should be MOST concerned about:',
     options: [
+      'Encryption policy publication',
+      'Vendor certifications display',
       'Algorithm choice documentation',
       'Key management practices and procedures',
-      'Encryption policy publication',
-      'Vendor certifications display'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Key management is often the weakest link. Poor key practices can undermine even strong algorithms.',
     topic: 'Cryptography',
     subtopic: 'Key Management'
@@ -111,12 +111,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Digital certificates are used to:',
     options: [
+      'Store private keys securely',
+      'Replace passwords completely',
       'Encrypt all network traffic automatically',
       'Bind public keys to identities for verification',
-      'Replace passwords completely',
-      'Store private keys securely'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Digital certificates link public keys to verified identities, enabling authentication and secure communications.',
     topic: 'Cryptography',
     subtopic: 'PKI'
@@ -130,12 +130,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Perfect forward secrecy in TLS ensures:',
     options: [
-      'Connections are never broken',
-      'Compromise of long-term keys cannot decrypt past sessions',
       'All certificates are validated',
-      'Connections are faster'
+      'Connections are never broken',
+      'Connections are faster',
+      'Compromise of long-term keys cannot decrypt past sessions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Perfect forward secrecy uses ephemeral session keys, so compromising the server\'s private key cannot decrypt recorded past traffic.',
     topic: 'Cryptography',
     subtopic: 'TLS Security'
@@ -145,19 +145,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Information Security',
+    subtopic: 'Security Awareness',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Security awareness training should be:',
+    question: 'An IS auditor finds that the organization\'s security awareness program has not been updated in three years. Which risk does this PRIMARILY create?',
     options: [
-      'Optional for senior executives',
-      'Mandatory, ongoing, and tailored to roles',
-      'One-time during onboarding only',
-      'Technical training only'
+      'Employees may not recognize current social engineering techniques such as spear phishing and vishing',
+      'The organization\'s firewall rules may be outdated',
+      'Physical security guards may not be properly trained',
+      'The organization\'s backup procedures may fail',
     ],
-    correctAnswer: 1,
-    explanation: 'Effective awareness programs are mandatory for all, delivered regularly, and customized to different roles and risk exposures.',
-    topic: 'Information Security',
-    subtopic: 'Security Awareness'
+    correctAnswer: 0,
+    explanation: 'An outdated security awareness program leaves employees unaware of evolving threats such as sophisticated phishing campaigns, social engineering tactics, and new attack vectors. Since employees are often the weakest link in security, regular updates to awareness training are critical for maintaining an effective human firewall.',
   },
   {
     id: 'cisa5-218',
@@ -169,11 +169,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Phishing simulation exercises are valuable because they:',
     options: [
       'Punish employees who click',
-      'Identify training needs and measure awareness improvement',
       'Replace all other training',
-      'Guarantee phishing prevention'
+      'Guarantee phishing prevention',
+      'Identify training needs and measure awareness improvement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Simulations provide metrics on susceptibility and identify individuals/groups needing additional training.',
     topic: 'Information Security',
     subtopic: 'Phishing Defense'
@@ -183,19 +183,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Network Security',
+    subtopic: 'WAF',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Web Application Firewalls (WAF) protect against:',
+    question: 'An IS auditor evaluating web application security finds that the organization relies solely on a network firewall to protect web applications. Why should the auditor recommend implementing a Web Application Firewall (WAF)?',
     options: [
-      'All network attacks',
-      'Application-layer attacks like SQL injection and XSS',
-      'Physical security threats',
-      'DDoS only'
+      'Network firewalls provide identical protection to WAFs',
+      'WAFs inspect HTTP/HTTPS application-layer traffic and can block application-specific attacks like SQL injection, XSS, and CSRF that network firewalls cannot detect at Layer 3/4',
+      'WAFs are less expensive than network firewalls',
+      'WAFs replace the need for secure coding practices',
     ],
     correctAnswer: 1,
-    explanation: 'WAFs inspect HTTP/HTTPS traffic and protect against application-layer attacks including injection, XSS, and CSRF.',
-    topic: 'Network Security',
-    subtopic: 'WAF'
+    explanation: 'Network firewalls operate at Layers 3-4 (IP/port) and cannot inspect application-layer content. WAFs operate at Layer 7, analyzing HTTP/HTTPS traffic content to detect and block application-specific attacks (SQL injection, XSS, CSRF) based on OWASP rules. Both are needed for defense-in-depth.',
   },
   {
     id: 'cisa5-220',
@@ -207,11 +207,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Endpoint Detection and Response (EDR) differs from traditional antivirus by:',
     options: [
       'Using signature-only detection',
-      'Providing continuous monitoring, behavioral analysis, and response capabilities',
+      'Requiring no updates',
       'Being less expensive',
-      'Requiring no updates'
+      'Providing continuous monitoring, behavioral analysis, and response capabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'EDR provides continuous endpoint visibility, behavioral detection beyond signatures, and automated response capabilities.',
     topic: 'Information Security',
     subtopic: 'EDR'
@@ -226,11 +226,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Data classification should be performed by:',
     options: [
       'IT department only',
-      'Data owners based on sensitivity and regulatory requirements',
+      'Security vendor',
       'External auditors',
-      'Security vendor'
+      'Data owners based on sensitivity and regulatory requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Data owners understand the business value and sensitivity of their data and are accountable for classification decisions.',
     topic: 'Data Protection',
     subtopic: 'Data Classification'
@@ -244,12 +244,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security event correlation in SIEM helps by:',
     options: [
+      'Eliminating false positives',
       'Reducing log storage',
-      'Identifying attack patterns across multiple data sources',
       'Replacing manual investigation',
-      'Eliminating false positives'
+      'Identifying attack patterns across multiple data sources',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Correlation connects related events from different sources to identify attack patterns that individual logs wouldn\'t reveal.',
     topic: 'Security Operations',
     subtopic: 'SIEM'
@@ -259,19 +259,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Access Control',
+    subtopic: 'PAM',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Privileged Access Management (PAM) controls:',
+    question: 'An IS auditor reviewing privileged access management (PAM) controls discovers that privileged session recordings are retained for only 7 days. What is the PRIMARY risk of this short retention period?',
     options: [
-      'Standard user accounts',
-      'Administrative and elevated access accounts',
-      'Guest access only',
-      'Public website access'
+      'It violates the principle of least privilege',
+      'It may prevent forensic investigation of privileged user activities if incidents are discovered after the retention window',
+      'It increases the cost of storage infrastructure',
+      'It causes performance degradation in the PAM system',
     ],
     correctAnswer: 1,
-    explanation: 'PAM specifically manages high-risk privileged accounts with additional controls like session recording and password vaulting.',
-    topic: 'Access Control',
-    subtopic: 'PAM'
+    explanation: 'Short retention of privileged session recordings limits the organization\'s ability to investigate security incidents that are discovered after the retention period. Many breaches are not detected for weeks or months, so inadequate log retention prevents forensic analysis of potentially malicious privileged activities.',
   },
   {
     id: 'cisa5-224',
@@ -282,12 +282,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Vulnerability assessment differs from penetration testing in that:',
     options: [
+      'Penetration testing is automated only',
+      'Vulnerability assessment is more thorough',
       'They are identical',
       'Vulnerability assessment identifies weaknesses; penetration testing actively exploits them',
-      'Penetration testing is automated only',
-      'Vulnerability assessment is more thorough'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Vulnerability assessment scans for weaknesses; penetration testing actively attempts exploitation to prove real-world risk.',
     topic: 'Information Security',
     subtopic: 'Security Testing'
@@ -301,12 +301,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Data Loss Prevention (DLP) monitors:',
     options: [
+      'Hardware failures',
+      'User login times',
       'Network performance only',
       'Data movement to prevent unauthorized exfiltration',
-      'Hardware failures',
-      'User login times'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DLP inspects data in motion, at rest, and in use to detect and prevent unauthorized data transfers.',
     topic: 'Data Protection',
     subtopic: 'DLP'
@@ -316,19 +316,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Information Security',
+    subtopic: 'Security Metrics',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Security metrics should be:',
+    question: 'An IS auditor reviewing security metrics finds that management reports on the number of security incidents per month but not the mean time to detect (MTTD) or respond (MTTR). Why is this metric set insufficient?',
     options: [
-      'As technical as possible',
-      'Aligned to risk, actionable, and meaningful to stakeholders',
-      'Static and unchanging',
-      'Focused on quantity over quality'
+      'The number of incidents is not a relevant security metric',
+      'Incident count alone does not measure the organization\'s ability to detect and respond quickly — MTTD and MTTR indicate whether the security team can identify and contain threats before significant damage occurs',
+      'MTTD and MTTR are only relevant for physical security',
+      'Incident count is the only metric that matters for compliance',
     ],
     correctAnswer: 1,
-    explanation: 'Effective metrics align to risk, drive actions, and are understandable by their intended audience.',
-    topic: 'Information Security',
-    subtopic: 'Security Metrics'
+    explanation: 'Incident count measures volume but not capability. An organization experiencing 10 incidents with an average 200-day detection time is far more vulnerable than one with 50 incidents detected in 2 hours. MTTD and MTTR measure the security team\'s effectiveness and the organization\'s actual risk exposure.',
   },
   {
     id: 'cisa5-227',
@@ -339,12 +339,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Biometric authentication provides:',
     options: [
-      'Something you know',
-      'Something you are',
       'Something you have',
-      'Somewhere you are'
+      'Something you know',
+      'Somewhere you are',
+      'Something you are',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Biometrics (fingerprint, face, iris) represent "something you are" - inherent physical characteristics.',
     topic: 'Access Control',
     subtopic: 'Biometrics'
@@ -359,11 +359,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Supply chain security for software should include:',
     options: [
       'Only using well-known vendors',
-      'SBOM, code signing, and dependency vulnerability management',
+      'Monthly vendor reviews only',
       'Avoiding all third-party code',
-      'Monthly vendor reviews only'
+      'SBOM, code signing, and dependency vulnerability management',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Modern supply chain security requires software bill of materials, code signing verification, and active dependency management.',
     topic: 'Information Security',
     subtopic: 'Supply Chain Security'
@@ -378,11 +378,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Privacy by Design means:',
     options: [
       'Adding privacy settings after development',
-      'Embedding privacy throughout the system development lifecycle',
+      'External privacy audits',
       'Creating privacy policies only',
-      'External privacy audits'
+      'Embedding privacy throughout the system development lifecycle',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Privacy by Design embeds privacy considerations into system design from inception rather than adding privacy controls afterward.',
     topic: 'Privacy',
     subtopic: 'Privacy by Design'
@@ -396,12 +396,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'GDPR data breach notification requires:',
     options: [
+      'No notification if data was encrypted',
       'Annual notification only',
-      'Notification to supervisory authority within 72 hours of awareness',
       'Public announcement within 30 days',
-      'No notification if data was encrypted'
+      'Notification to supervisory authority within 72 hours of awareness',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'GDPR requires breach notification to the supervisory authority within 72 hours unless the breach is unlikely to result in risk.',
     topic: 'Privacy',
     subtopic: 'GDPR'
@@ -411,19 +411,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Information Security',
+    subtopic: 'Secure Coding',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Secure coding practices include:',
+    question: 'An organization\'s code review process identifies that developers frequently use string concatenation to build SQL queries. What secure coding practice should the IS auditor recommend?',
     options: [
-      'Minimal documentation',
-      'Input validation, output encoding, and parameterized queries',
-      'Fastest possible development',
-      'Avoiding all external libraries'
+      'Adding comments to the SQL queries for documentation',
+      'Replacing string concatenation with parameterized queries (prepared statements) to prevent SQL injection',
+      'Increasing the complexity of database passwords',
+      'Moving the database to a different server',
     ],
     correctAnswer: 1,
-    explanation: 'Secure coding includes input validation, proper output encoding, parameterized queries, and error handling.',
-    topic: 'Information Security',
-    subtopic: 'Secure Coding'
+    explanation: 'Parameterized queries (prepared statements) separate SQL code from user-supplied data, preventing SQL injection attacks. String concatenation allows user input to be interpreted as SQL commands. This is a OWASP-recommended secure coding practice for all database interactions.',
   },
   {
     id: 'cisa5-232',
@@ -434,12 +434,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security architecture review should occur:',
     options: [
+      'During annual audits only',
+      'Never for agile projects',
       'Only after implementation',
       'During design phase before significant development investment',
-      'During annual audits only',
-      'Never for agile projects'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Architecture review during design is most cost-effective - fixing security issues later is exponentially more expensive.',
     topic: 'Information Security',
     subtopic: 'Security Architecture'
@@ -449,19 +449,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Network Security',
+    subtopic: 'NAC',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Network access control (NAC) ensures:',
+    question: 'An IS auditor discovers that the organization\'s NAC solution only checks whether devices have valid certificates but does not assess security posture (patch level, antivirus status). What risk does this limited implementation create?',
     options: [
-      'Faster network speeds',
-      'Only authorized and compliant devices connect to the network',
-      'All devices are identical',
-      'Unlimited network access'
+      'Unauthorized devices will bypass all network controls',
+      'Authenticated but compromised or unpatched devices can connect to the network and spread malware or be exploited as attack vectors',
+      'The NAC solution will consume excessive network bandwidth',
+      'Certificate management will become unnecessarily complex',
     ],
     correctAnswer: 1,
-    explanation: 'NAC verifies device authorization and security compliance before allowing network access.',
-    topic: 'Network Security',
-    subtopic: 'NAC'
+    explanation: 'NAC that only validates device identity without assessing security posture allows authenticated devices with missing patches, disabled antivirus, or active malware infections to access the network. Comprehensive NAC should evaluate device health and enforce compliance with security policies before granting full network access.',
   },
   {
     id: 'cisa5-234',
@@ -472,12 +472,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Threat hunting is:',
     options: [
+      'Reactive incident response',
+      'Annual penetration testing',
       'Automated malware scanning',
       'Proactive search for threats that evade existing controls',
-      'Annual penetration testing',
-      'Reactive incident response'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Threat hunting proactively searches for indicators of compromise that automated tools may miss.',
     topic: 'Security Operations',
     subtopic: 'Threat Hunting'
@@ -491,12 +491,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Security exception management should include:',
     options: [
-      'Automatic approval',
-      'Risk assessment, approval authority, expiration, and compensating controls',
       'Permanent exceptions by default',
-      'No documentation'
+      'Automatic approval',
+      'No documentation',
+      'Risk assessment, approval authority, expiration, and compensating controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Exceptions require documented risk assessment, appropriate approval, defined expiration, and compensating controls.',
     topic: 'Information Security',
     subtopic: 'Exception Management'
@@ -511,11 +511,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Third-party security assessments should be based on:',
     options: [
       'Vendor reputation only',
-      'Risk level of the relationship and data involved',
       'Contract value alone',
-      'Geographic location'
+      'Geographic location',
+      'Risk level of the relationship and data involved',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Assessment rigor should be proportionate to the risk - higher risk third parties require more thorough assessment.',
     topic: 'Information Security',
     subtopic: 'Third-Party Risk'
@@ -530,11 +530,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Secure configuration management includes:',
     options: [
       'Default vendor configurations',
-      'Hardening baselines, change control, and compliance monitoring',
+      'Ad hoc changes',
       'No documentation needed',
-      'Ad hoc changes'
+      'Hardening baselines, change control, and compliance monitoring',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Secure configuration includes defined hardening baselines, controlled changes, and ongoing compliance verification.',
     topic: 'Information Security',
     subtopic: 'Configuration Management'
@@ -544,19 +544,19 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Information Security',
+    subtopic: 'Red Team',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Red team exercises simulate:',
+    question: 'How do red team exercises differ from standard penetration testing in scope and methodology?',
     options: [
-      'IT help desk operations',
-      'Real-world adversary attacks to test defenses',
-      'Security awareness training',
-      'Backup recovery procedures'
+      'Red team exercises only test network perimeter defenses',
+      'Red team exercises simulate realistic advanced adversary behavior across all attack surfaces — including social engineering, physical intrusion, and technical exploitation — to test the organization\'s detection and response capabilities',
+      'Red team exercises are automated scans performed monthly',
+      'Red team exercises are less comprehensive than penetration tests',
     ],
     correctAnswer: 1,
-    explanation: 'Red teams simulate sophisticated adversary tactics to test detection and response capabilities realistically.',
-    topic: 'Information Security',
-    subtopic: 'Red Team'
+    explanation: 'Red team exercises go beyond standard penetration testing by emulating realistic advanced persistent threat (APT) tactics, techniques, and procedures (TTPs) across multiple attack vectors including technical, social engineering, and physical. The primary goal is testing the organization\'s detection, response, and resilience capabilities.',
   },
   {
     id: 'cisa5-239',
@@ -567,12 +567,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Tokenization differs from encryption in that:',
     options: [
+      'Tokenization works only for text',
       'They are identical',
-      'Tokenization replaces data with non-reversible substitutes maintained in a secure vault',
       'Encryption is not secure',
-      'Tokenization works only for text'
+      'Tokenization replaces data with non-reversible substitutes maintained in a secure vault',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Tokenization substitutes sensitive data with tokens that have no mathematical relationship to the original data.',
     topic: 'Data Protection',
     subtopic: 'Tokenization'
@@ -587,11 +587,11 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     question: 'Security Operations Center (SOC) maturity can be measured by:',
     options: [
       'Building size only',
-      'Detection capabilities, mean time to respond, and threat coverage',
+      'Staff headcount alone',
       'Number of monitors displayed',
-      'Staff headcount alone'
+      'Detection capabilities, mean time to respond, and threat coverage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SOC maturity is measured by operational metrics: detection rates, response times, and coverage of threat landscape.',
     topic: 'Security Operations',
     subtopic: 'SOC Maturity'

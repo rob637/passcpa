@@ -3,6 +3,7 @@ import DOMPurify from 'dompurify';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
+import { TOTAL_DISPLAY } from '../../config/contentStats';
 import {
   Search as SearchIcon,
   X,
@@ -567,7 +568,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               <div className="py-8 text-center">
                 <div className="text-slate-500 dark:text-slate-400 mb-4">Start typing to search...</div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 space-y-1">
-                  <div>Search across <strong>2,500+</strong> questions</div>
+                  <div>Search across <strong>{TOTAL_DISPLAY.questions}</strong> questions</div>
                   <div>Filter by section, type, or difficulty</div>
                 </div>
               </div>

@@ -23,12 +23,12 @@ export const CFP_GEN_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: `A client's personal balance sheet shows: Primary residence $650,000, mortgage $420,000, investment portfolio $285,000, auto loan $18,000, retirement accounts $340,000, credit cards $12,000, personal property $45,000. What is the client's net worth?`,
     options: [
+      'C) $900,000',
       'A) $870,000',
       'B) $1,320,000',
-      'C) $900,000',
-      'D) $450,000'
+      'D) $450,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($870,000)**
 
 **Net Worth Calculation:**
@@ -52,12 +52,12 @@ Net Worth: $1,320,000 - $450,000 = $870,000
     skillLevel: 'Application',
     question: `Marcus and Sarah have combined gross income of $185,000. Their annual expenses include: taxes $42,000, housing costs $36,000, food $12,000, transportation $9,600, insurance $7,200, discretionary $18,000, and debt payments $14,400. What is their annual savings rate?`,
     options: [
-      'A) 18.5%',
       'B) 24.8%',
+      'A) 18.5%',
       'C) 12.3%',
-      'D) 31.2%'
+      'D) 31.2%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (24.8%)**
 
 **Cash Flow Calculation:**
@@ -143,12 +143,12 @@ Both ratios fall within conventional mortgage guidelines.
     skillLevel: 'Analysis',
     question: `A client has the following profile: Gross income $150,000, total assets $890,000, total liabilities $340,000, annual debt payments $42,000. Which statement accurately describes their financial position?`,
     options: [
-      'A) Debt-to-income of 28% and solvency ratio of 162% indicate strong position',
       'B) Debt-to-asset ratio of 38% suggests moderate leverage risk',
       'C) Debt service ratio of 28% is concerning but solvency ratio of 262% is healthy',
-      'D) All ratios indicate the client is over-leveraged'
+      'A) Debt-to-income of 28% and solvency ratio of 162% indicate strong position',
+      'D) All ratios indicate the client is over-leveraged',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Debt-to-asset ratio of 38% suggests moderate leverage risk)**
 
 **Ratio Calculations:**
@@ -177,12 +177,12 @@ A debt-to-asset ratio of 38% indicates moderate leverage - not dangerous but war
     skillLevel: 'Application',
     question: `Alex needs $50,000 in 8 years for a down payment. If he can earn 6% annually, how much must he invest today as a lump sum?`,
     options: [
-      'A) $31,370',
       'B) $33,500',
       'C) $29,750',
-      'D) $37,280'
+      'A) $31,370',
+      'D) $37,280',
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: `**Correct Answer: A ($31,370)**
 
 **Present Value Calculation:**
@@ -209,11 +209,11 @@ FV = 50,000; N = 8; I/Y = 6; PMT = 0; Solve PV = -31,370
     question: `Megan contributes $500 at the beginning of each month to her investment account earning 7% annually. What will be the account value after 15 years?`,
     options: [
       'A) $158,723',
-      'B) $162,447',
       'C) $90,000',
-      'D) $145,925'
+      'B) $162,447',
+      'D) $145,925',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($162,447)**
 
 **Future Value of Annuity Due Calculation:**
@@ -242,11 +242,11 @@ FV ≈ $162,447
     question: `The Smiths take out a $320,000 mortgage at 6.5% for 30 years. After making 60 payments, approximately how much principal have they paid off?`,
     options: [
       'A) $53,333',
-      'B) $27,840',
       'C) $18,720',
-      'D) $24,150'
+      'B) $27,840',
+      'D) $24,150',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($18,720)**
 
 **Amortization Analysis:**
@@ -274,12 +274,12 @@ Early in a mortgage, most payment goes to interest. After 5 years of a 30-year m
     skillLevel: 'Analysis',
     question: `An investment offers the following year-end cash flows: Year 1: $5,000, Year 2: $7,500, Year 3: $10,000, Year 4: $12,500. Using a 9% discount rate, what is the present value of this cash flow stream?`,
     options: [
+      'C) $27,135',
       'A) $35,000',
       'B) $28,450',
-      'C) $27,135',
-      'D) $30,890'
+      'D) $30,890',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C ($27,135)**
 
 **Present Value of Uneven Cash Flows:**
@@ -304,11 +304,11 @@ PV = $27,477 ≈ $27,135 (with rounding)
     question: `An investor pays $25,000 for an investment that will pay $8,000 per year for 4 years. What is the approximate internal rate of return (IRR)?`,
     options: [
       'A) 8%',
-      'B) 12%',
       'C) 10.5%',
-      'D) 15%'
+      'B) 12%',
+      'D) 15%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (12%)**
 
 **IRR Calculation:**
@@ -339,11 +339,11 @@ Testing at 12%: $8,000 × 3.037 = $24,296 ≈ $25,000
     question: `Grandparents want to superfund a 529 plan for their newborn grandson. They are married filing jointly in 2026. What is the maximum they can contribute without using any lifetime gift tax exemption or filing a gift tax return?`,
     options: [
       'A) $38,000',
-      'B) $95,000',
       'C) $190,000',
-      'D) $19,000'
+      'B) $95,000',
+      'D) $19,000',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($190,000)**
 
 **529 Superfunding Rule:**
@@ -369,10 +369,10 @@ This avoids gift tax and uses no lifetime exemption if they file the election on
     skillLevel: 'Remembering and Understanding',
     question: `Which statement about Coverdell Education Savings Accounts (ESAs) is CORRECT?`,
     options: [
-      'A) Maximum annual contribution is $5,000 per beneficiary',
       'B) Contributions may be made until the beneficiary reaches age 30',
+      'A) Maximum annual contribution is $5,000 per beneficiary',
       'C) Funds can be used for K-12 expenses as well as college',
-      'D) There are no income limits for contributors'
+      'D) There are no income limits for contributors',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C (Funds can be used for K-12 expenses as well as college)**
@@ -398,12 +398,12 @@ Coverdell ESAs can fund qualified education expenses including:
     skillLevel: 'Analysis',
     question: `When evaluating financial aid impact for a dependent student, which asset ownership would have the LEAST impact on Expected Family Contribution (EFC)?`,
     options: [
-      'A) UTMA account in student\'s name',
       'B) 529 plan owned by parent',
+      'A) UTMA account in student\'s name',
       'C) 529 plan owned by grandparent',
-      'D) Savings account in student\'s name'
+      'D) Savings account in student\'s name',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (529 plan owned by parent)**
 
 **Asset Assessment Rates for FAFSA:**
@@ -428,10 +428,10 @@ The parent-owned 529 has the lowest impact at only up to 5.64% assessment.
     skillLevel: 'Application',
     question: `A client paid $6,000 in qualified education expenses for their dependent child's second year of college. What is the maximum American Opportunity Tax Credit (AOTC) they can claim if they meet all eligibility requirements?`,
     options: [
-      'A) $2,000',
-      'B) $2,500',
       'C) $4,000',
-      'D) $6,000'
+      'B) $2,500',
+      'A) $2,000',
+      'D) $6,000',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($2,500)**
@@ -459,12 +459,12 @@ The AOTC is calculated as 100% of the first $2,000 plus 25% of the next $2,000, 
     skillLevel: 'Analysis',
     question: `A client is comparing education savings options. Which combination of features is ONLY available with a 529 plan?`,
     options: [
-      'A) Tax-free growth and use for K-12 expenses',
-      'B) State tax deduction and ability to change beneficiaries',
       'C) Superfunding and rollover to Roth IRA (after 15 years)',
-      'D) No income limits and tax-deductible contributions'
+      'B) State tax deduction and ability to change beneficiaries',
+      'A) Tax-free growth and use for K-12 expenses',
+      'D) No income limits and tax-deductible contributions',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (Superfunding and rollover to Roth IRA after 15 years)**
 
 Under SECURE 2.0, 529 plans can now:
@@ -490,12 +490,12 @@ Under SECURE 2.0, 529 plans can now:
     skillLevel: 'Application',
     question: `A client's current expenses are $72,000 annually. Assuming 3.5% annual inflation, what will their expenses be in 20 years in nominal dollars?`,
     options: [
-      'A) $97,200',
       'B) $122,400',
       'C) $143,150',
-      'D) $168,450'
+      'A) $97,200',
+      'D) $168,450',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($143,150)**
 
 **Inflation Growth Calculation:**
@@ -520,12 +520,12 @@ FV = $143,265 ≈ $143,150
     skillLevel: 'Remembering and Understanding',
     question: `The nominal interest rate on a bond is 6.5%. If expected inflation is 2.5% and the real risk-free rate is 1.5%, what is the approximate risk premium embedded in this rate?`,
     options: [
+      'C) 3.0%',
       'A) 1.0%',
       'B) 2.5%',
-      'C) 3.0%',
-      'D) 4.0%'
+      'D) 4.0%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (2.5%)**
 
 **Fisher Equation (approximation):**
@@ -548,12 +548,12 @@ Risk Premium = 6.5% - 1.5% - 2.5% = 2.5%
     skillLevel: 'Remembering and Understanding',
     question: `Which economic indicator is considered a LEADING indicator of economic activity?`,
     options: [
+      'C) Building permits issued',
       'A) GDP growth rate',
       'B) Unemployment rate',
-      'C) Building permits issued',
-      'D) Consumer spending'
+      'D) Consumer spending',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (Building permits issued)**
 
 Building permits are a leading indicator because they signal future construction activity before it occurs.
@@ -608,12 +608,12 @@ Increasing the discount rate makes borrowing more expensive, slowing economic ac
     skillLevel: 'Analysis',
     question: `Which yield curve shape and its typical interpretation is CORRECTLY stated?`,
     options: [
+      'C) Normal (upward sloping) curve signals potential recession',
       'A) Inverted curve signals strong future economic growth',
       'B) Flat curve indicates expectations of stable interest rates',
-      'C) Normal (upward sloping) curve signals potential recession',
-      'D) Humped curve indicates certainty about Fed policy'
+      'D) Humped curve indicates certainty about Fed policy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Flat curve indicates expectations of stable interest rates)**
 
 **Yield Curve Interpretations:**
@@ -641,12 +641,12 @@ Increasing the discount rate makes borrowing more expensive, slowing economic ac
     skillLevel: 'Application',
     question: `A client refuses to sell a losing stock position, saying "I'll sell once I get back to even." This behavior BEST demonstrates which cognitive bias?`,
     options: [
-      'A) Confirmation bias',
       'B) Loss aversion and anchoring',
+      'A) Confirmation bias',
       'C) Overconfidence bias',
-      'D) Availability heuristic'
+      'D) Availability heuristic',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Loss aversion and anchoring)**
 
 The client is:
@@ -700,10 +700,10 @@ Rationally, paying off the 22% debt produces higher returns than any investment.
     skillLevel: 'Remembering and Understanding',
     question: `During the data gathering phase, which type of information is considered QUALITATIVE rather than quantitative?`,
     options: [
-      'A) Account statements and balances',
-      'B) Client\'s risk tolerance and values',
       'C) Insurance policy face amounts',
-      'D) Tax return information'
+      'B) Client\'s risk tolerance and values',
+      'A) Account statements and balances',
+      'D) Tax return information',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Client's risk tolerance and values)**
@@ -726,12 +726,12 @@ Rationally, paying off the 22% debt produces higher returns than any investment.
     skillLevel: 'Application',
     question: `A CFP® professional has developed recommendations for a client but learns the client wants to implement only some of the recommendations. What is the MOST appropriate course of action?`,
     options: [
-      'A) Refuse to implement any recommendations unless all are adopted',
       'B) Document the client\'s decision and implement the selected recommendations',
       'C) Terminate the engagement due to client non-compliance',
-      'D) Proceed with all recommendations without client consent'
+      'A) Refuse to implement any recommendations unless all are adopted',
+      'D) Proceed with all recommendations without client consent',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Document the client's decision and implement selected recommendations)**
 
 CFP® professionals must respect client autonomy. When a client chooses partial implementation:
@@ -756,12 +756,12 @@ CFP® professionals must respect client autonomy. When a client chooses partial 
     skillLevel: 'Application',
     question: `Which life event would MOST likely trigger an immediate need to review and potentially update a client's financial plan?`,
     options: [
-      'A) Minor fluctuation in portfolio value',
       'B) Annual increase in cost of living',
       'C) Birth of a child or grandchild',
-      'D) Change in marginal tax bracket by 2%'
+      'A) Minor fluctuation in portfolio value',
+      'D) Change in marginal tax bracket by 2%',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C (Birth of a child or grandchild)**
 
 Major life events requiring immediate plan review include:

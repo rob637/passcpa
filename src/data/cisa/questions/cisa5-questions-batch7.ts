@@ -16,12 +16,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Post-quantum cryptography preparation should include:',
     options: [
+      'Ignoring quantum threats',
       'Waiting for standards',
-      'Crypto inventory, algorithm agility assessment, and migration planning',
       'Only key lengthening',
-      'Ignoring quantum threats'
+      'Crypto inventory, algorithm agility assessment, and migration planning',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Post-quantum preparation requires inventory, agility assessment, and migration planning.',
     topic: 'Cryptography',
     subtopic: 'Post-Quantum Cryptography'
@@ -35,12 +35,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Zero-trust network access (ZTNA) replaces:',
     options: [
+      'Only authentication',
+      'All security controls',
       'All firewalls',
       'Traditional VPN with identity-aware, context-based access',
-      'All security controls',
-      'Only authentication'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'ZTNA provides identity-aware, context-based access as an alternative to traditional VPN.',
     topic: 'Network Security',
     subtopic: 'ZTNA'
@@ -54,12 +54,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Behavioral analytics for threat detection identifies:',
     options: [
+      'Only malware signatures',
+      'Only policy violations',
       'Only known threats',
       'Anomalies in user and entity behavior indicating threats',
-      'Only malware signatures',
-      'Only policy violations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Behavioral analytics identifies anomalies in user and entity behavior indicating threats.',
     topic: 'Security Operations',
     subtopic: 'Behavioral Analytics'
@@ -73,12 +73,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Secure access service edge (SASE) combines:',
     options: [
+      'Only security',
+      'Only SD-WAN',
       'Only networking',
       'Network and security services in a cloud-delivered model',
-      'Only security',
-      'Only SD-WAN'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SASE combines network (SD-WAN) and security services in a cloud-delivered model.',
     topic: 'Network Security',
     subtopic: 'SASE'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Data loss prevention (DLP) in cloud environments requires:',
     options: [
-      'Only on-premise tools',
-      'Cloud-native DLP capabilities and API integration',
       'Only network monitoring',
-      'Only endpoint agents'
+      'Only on-premise tools',
+      'Only endpoint agents',
+      'Cloud-native DLP capabilities and API integration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Cloud DLP requires cloud-native capabilities and API integration for visibility.',
     topic: 'Data Security',
     subtopic: 'Cloud DLP'
@@ -112,11 +112,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Extended detection and response (XDR) provides:',
     options: [
       'Only endpoint detection',
-      'Unified threat detection across endpoints, network, and cloud',
+      'Only incident response',
       'Only log aggregation',
-      'Only incident response'
+      'Unified threat detection across endpoints, network, and cloud',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'XDR provides unified threat detection and response across endpoints, network, and cloud.',
     topic: 'Security Operations',
     subtopic: 'XDR'
@@ -130,12 +130,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'API security testing should include:',
     options: [
-      'Only functional testing',
-      'Authentication bypass, injection, and authorization testing',
       'Only load testing',
-      'Only documentation review'
+      'Only functional testing',
+      'Only documentation review',
+      'Authentication bypass, injection, and authorization testing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'API security testing covers authentication, injection, authorization, and rate limiting.',
     topic: 'Application Security',
     subtopic: 'API Security Testing'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Digital identity verification for remote onboarding uses:',
     options: [
+      'Only email verification',
       'Only passwords',
-      'Document verification, biometrics, and liveness detection',
       'Only knowledge questions',
-      'Only email verification'
+      'Document verification, biometrics, and liveness detection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Remote identity verification uses documents, biometrics, and liveness detection.',
     topic: 'Identity Management',
     subtopic: 'Identity Verification'
@@ -169,11 +169,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Confidential computing protects:',
     options: [
       'Data at rest only',
-      'Data in use through hardware-based trusted execution environments',
+      'Only storage encryption',
       'Data in transit only',
-      'Only storage encryption'
+      'Data in use through hardware-based trusted execution environments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Confidential computing protects data in use through hardware-based TEEs.',
     topic: 'Data Security',
     subtopic: 'Confidential Computing'
@@ -188,11 +188,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Security orchestration, automation, and response (SOAR) enables:',
     options: [
       'Only manual workflows',
-      'Automated incident response playbooks and workflow integration',
+      'Only reporting',
       'Only ticketing',
-      'Only reporting'
+      'Automated incident response playbooks and workflow integration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SOAR enables automated incident response playbooks and security tool integration.',
     topic: 'Security Operations',
     subtopic: 'SOAR'
@@ -206,12 +206,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Attack surface management (ASM) continuously:',
     options: [
+      'Only tests applications',
+      'Only reviews policies',
       'Only scans internal systems',
       'Discovers and monitors external-facing assets and exposures',
-      'Only reviews policies',
-      'Only tests applications'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'ASM continuously discovers and monitors external-facing assets and potential exposures.',
     topic: 'Security Operations',
     subtopic: 'Attack Surface Management'
@@ -225,12 +225,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Privacy enhancing technologies (PETs) include:',
     options: [
+      'Only access controls',
+      'Only anonymization',
       'Only encryption',
       'Differential privacy, homomorphic encryption, and secure computation',
-      'Only anonymization',
-      'Only access controls'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PETs include differential privacy, homomorphic encryption, and secure multi-party computation.',
     topic: 'Data Security',
     subtopic: 'Privacy Enhancing Technologies'
@@ -245,11 +245,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Supply chain security frameworks like SLSA focus on:',
     options: [
       'Only vendor contracts',
-      'Source integrity, build process security, and provenance',
       'Only code quality',
-      'Only licensing'
+      'Only licensing',
+      'Source integrity, build process security, and provenance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SLSA focuses on source integrity, secure build processes, and software provenance.',
     topic: 'Security Management',
     subtopic: 'Supply Chain Security'
@@ -264,11 +264,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Workload identity management in cloud addresses:',
     options: [
       'Only human identities',
-      'Non-human identities for services, containers, and automation',
       'Only service accounts',
-      'Only API keys'
+      'Only API keys',
+      'Non-human identities for services, containers, and automation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Workload identity manages non-human identities for services, containers, and automation.',
     topic: 'Identity Management',
     subtopic: 'Workload Identity'
@@ -283,11 +283,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Deception technology (honeypots, honeytokens) provides:',
     options: [
       'Production services',
-      'Early attack detection and threat intelligence',
       'Only distraction',
-      'Only compliance evidence'
+      'Only compliance evidence',
+      'Early attack detection and threat intelligence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Deception technology provides early attack detection and valuable threat intelligence.',
     topic: 'Security Operations',
     subtopic: 'Deception Technology'
@@ -301,12 +301,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Security data lakes aggregate:',
     options: [
+      'Only log data',
       'Only SIEM data',
-      'Security data from multiple sources for advanced analytics',
       'Only compliance data',
-      'Only log data'
+      'Security data from multiple sources for advanced analytics',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security data lakes aggregate data from multiple sources for advanced analytics and hunting.',
     topic: 'Security Operations',
     subtopic: 'Security Data Lake'
@@ -321,11 +321,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Runtime application self-protection (RASP) provides:',
     options: [
       'Only static analysis',
-      'Real-time attack detection and blocking within applications',
       'Only logging',
-      'Only network protection'
+      'Only network protection',
+      'Real-time attack detection and blocking within applications',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'RASP provides real-time attack detection and blocking from within the application runtime.',
     topic: 'Application Security',
     subtopic: 'RASP'
@@ -340,11 +340,11 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     question: 'Threat intelligence platforms (TIP) enable:',
     options: [
       'Only threat feeds',
-      'Aggregation, analysis, and operationalization of threat intelligence',
+      'Only reporting',
       'Only IOC storage',
-      'Only reporting'
+      'Aggregation, analysis, and operationalization of threat intelligence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'TIPs enable aggregation, analysis, and operationalization of threat intelligence.',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence Platform'
@@ -358,12 +358,12 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Continuous control monitoring (CCM) automates:',
     options: [
+      'Only reporting',
       'Only annual testing',
-      'Real-time assessment of control effectiveness',
       'Only documentation',
-      'Only reporting'
+      'Real-time assessment of control effectiveness',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CCM automates real-time assessment of control effectiveness replacing point-in-time testing.',
     topic: 'Security Management',
     subtopic: 'Continuous Control Monitoring'

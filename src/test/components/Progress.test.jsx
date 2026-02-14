@@ -79,6 +79,87 @@ vi.mock('date-fns', () => ({
   addDays: vi.fn(() => new Date()),
 }));
 
+// Mock CourseProvider
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      name: 'CPA',
+      shortName: 'CPA',
+      hasTBS: true,
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR', blueprintAreas: [] },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD', blueprintAreas: [] },
+        { id: 'REG', name: 'Regulation', shortName: 'REG', blueprintAreas: [] },
+      ],
+    },
+  }),
+}));
+
+// Mock sectionUtils
+vi.mock('../../utils/sectionUtils', () => ({
+  getSectionDisplayInfo: vi.fn(() => ({ name: 'Regulation', shortName: 'REG', color: 'blue' })),
+  getCurrentSectionForCourse: vi.fn(() => 'REG'),
+  getDefaultSection: vi.fn(() => 'REG'),
+}));
+
+// Mock profileHelpers
+vi.mock('../../utils/profileHelpers', () => ({
+  getExamDate: vi.fn(() => new Date('2025-06-01')),
+}));
+
+// Mock lessonService
+vi.mock('../../services/lessonService', () => ({
+  fetchAllLessons: vi.fn(() => Promise.resolve([])),
+}));
+
+// Mock questionHistoryService
+vi.mock('../../services/questionHistoryService', () => ({
+  getTBSHistory: vi.fn(() => Promise.resolve([])),
+}));
+
+// Mock studyPlanner
+vi.mock('../../utils/studyPlanner', () => ({
+  generateStudyPlan: vi.fn(() => null),
+  calculatePaceStatus: vi.fn(() => 'on-track'),
+}));
+
+// Mock examReadiness
+vi.mock('../../utils/examReadiness', () => ({
+  calculateExamReadiness: vi.fn(() => ({
+    overallScore: 70,
+    status: 'On Track',
+    sections: [],
+  })),
+  getStatusColor: vi.fn(() => 'text-green-500'),
+  getStatusText: vi.fn(() => 'On Track'),
+}));
+
+// Mock blueprintAnalytics
+vi.mock('../../utils/blueprintAnalytics', () => ({
+  calculateBlueprintAnalytics: vi.fn(() => ({
+    totalQuestions: 0,
+    overallAccuracy: 0,
+    areas: [],
+  })),
+}));
+
+// Mock PageHeader (navigation component)
+vi.mock('../../components/navigation', () => ({
+  PageHeader: ({ title, subtitle }) => (
+    <div>
+      <h1>{title}</h1>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+  ),
+}));
+
+// Mock Leaderboard component
+vi.mock('../../components/Leaderboard', () => ({
+  default: () => <div data-testid="leaderboard">Leaderboard</div>,
+}));
+
 const renderProgress = () => {
   return render(
     <BrowserRouter>

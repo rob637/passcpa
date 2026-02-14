@@ -16,10 +16,10 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'MLOps (Machine Learning Operations) practices ensure:',
     options: [
-      'Only model training',
-      'Continuous integration, deployment, and monitoring of ML models',
       'Only data collection',
-      'Only algorithm selection'
+      'Continuous integration, deployment, and monitoring of ML models',
+      'Only model training',
+      'Only algorithm selection',
     ],
     correctAnswer: 1,
     explanation: 'MLOps provides CI/CD, versioning, monitoring, and governance for machine learning models.',
@@ -35,12 +35,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Model bias testing should occur:',
     options: [
-      'Only after deployment',
       'Throughout the ML lifecycle from training through production',
       'Only during training',
-      'Never'
+      'Only after deployment',
+      'Never',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Bias testing should occur throughout the ML lifecycle, not just during initial development.',
     topic: 'AI/ML Development',
     subtopic: 'AI Fairness'
@@ -54,12 +54,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Feature engineering governance ensures:',
     options: [
+      'Only speed',
       'Only performance',
       'Appropriate data usage and feature transparency',
-      'Only speed',
-      'Only accuracy'
+      'Only accuracy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Feature engineering governance ensures appropriate data usage and feature transparency.',
     topic: 'AI/ML Development',
     subtopic: 'Feature Engineering'
@@ -74,11 +74,11 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     question: 'Data lineage in development environments tracks:',
     options: [
       'Only storage location',
-      'Origin, transformations, and usage of data throughout systems',
       'Only access',
-      'Only cost'
+      'Origin, transformations, and usage of data throughout systems',
+      'Only cost',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data lineage tracks data origin, transformations, and usage for governance and compliance.',
     topic: 'Data Management',
     subtopic: 'Data Lineage'
@@ -93,11 +93,11 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     question: 'Event-driven architecture testing should verify:',
     options: [
       'Only latency',
-      'Event ordering, idempotency, and eventual consistency',
       'Only throughput',
-      'Only security'
+      'Event ordering, idempotency, and eventual consistency',
+      'Only security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Event-driven testing verifies ordering, idempotency, delivery guarantees, and consistency.',
     topic: 'System Architecture',
     subtopic: 'Event-Driven Architecture'
@@ -111,12 +111,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Contract testing in microservices:',
     options: [
-      'Tests legal contracts',
       'Validates API compatibility between services',
+      'Tests legal contracts',
       'Only tests UI',
-      'Replaces integration testing'
+      'Replaces integration testing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Contract testing validates API compatibility between service consumers and providers.',
     topic: 'Testing',
     subtopic: 'Contract Testing'
@@ -130,12 +130,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Chaos engineering practices involve:',
     options: [
-      'Random destruction',
       'Controlled experiments to test system resilience',
+      'Random destruction',
       'Only production outages',
-      'Avoiding all failures'
+      'Avoiding all failures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Chaos engineering uses controlled experiments to test and improve system resilience.',
     topic: 'Testing',
     subtopic: 'Chaos Engineering'
@@ -168,12 +168,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Service mesh implementation provides:',
     options: [
-      'Only networking',
       'Traffic management, security, and observability for microservices',
+      'Only networking',
       'Only load balancing',
-      'Only encryption'
+      'Only encryption',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Service mesh provides traffic management, mTLS security, and observability for microservices.',
     topic: 'System Architecture',
     subtopic: 'Service Mesh'
@@ -187,12 +187,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Zero-trust architecture in development requires:',
     options: [
-      'No security controls',
       'Authentication and authorization at every service interaction',
       'Perimeter security only',
-      'Trust all internal traffic'
+      'No security controls',
+      'Trust all internal traffic',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Zero-trust requires authentication and authorization at every service interaction point.',
     topic: 'Security Architecture',
     subtopic: 'Zero Trust'
@@ -206,10 +206,10 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Database performance tuning during development should address:',
     options: [
-      'Only storage',
-      'Query optimization, indexing, and connection pooling',
       'Only backup',
-      'Only security'
+      'Query optimization, indexing, and connection pooling',
+      'Only storage',
+      'Only security',
     ],
     correctAnswer: 1,
     explanation: 'Performance tuning addresses query optimization, indexing strategies, and connection pooling.',
@@ -225,10 +225,10 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Observability implementation goes beyond monitoring by providing:',
     options: [
-      'Same as monitoring',
-      'Metrics, logs, and traces for system understanding',
       'Only alerts',
-      'Only dashboards'
+      'Metrics, logs, and traces for system understanding',
+      'Same as monitoring',
+      'Only dashboards',
     ],
     correctAnswer: 1,
     explanation: 'Observability provides metrics, logs, and distributed traces for deep system understanding.',
@@ -244,12 +244,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data mesh architecture decentralizes:',
     options: [
+      'Infrastructure only',
       'Security only',
       'Data ownership and governance to domain teams',
-      'Infrastructure only',
-      'Nothing'
+      'Nothing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data mesh decentralizes data ownership to domain teams while maintaining federated governance.',
     topic: 'Data Architecture',
     subtopic: 'Data Mesh'
@@ -263,12 +263,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'GraphQL API development considerations include:',
     options: [
+      'Only mutations',
       'Only query types',
       'Query complexity limits, authorization, and rate limiting',
-      'Only mutations',
-      'Only subscriptions'
+      'Only subscriptions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'GraphQL development requires query complexity limits, authorization, and rate limiting controls.',
     topic: 'API Development',
     subtopic: 'GraphQL'
@@ -301,12 +301,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Progressive delivery strategies include:',
     options: [
-      'Big bang only',
       'Canary releases, feature flags, and ring deployments',
+      'Big bang only',
       'Manual rollouts only',
-      'No testing'
+      'No testing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Progressive delivery uses canary releases, feature flags, and ring deployments for safe rollouts.',
     topic: 'SDLC',
     subtopic: 'Progressive Delivery'
@@ -320,12 +320,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'API gateway security functions include:',
     options: [
-      'Routing only',
       'Authentication, rate limiting, and request validation',
+      'Routing only',
       'Load balancing only',
-      'Caching only'
+      'Caching only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'API gateways provide authentication, rate limiting, validation, and other security controls.',
     topic: 'API Development',
     subtopic: 'API Gateway'
@@ -354,19 +354,19 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'Security Development',
+    subtopic: 'SBOM',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Software bill of materials (SBOM) provides:',
+    question: 'An IS auditor discovers that the development team does not maintain a Software Bill of Materials (SBOM) for their applications. What specific risk does this create?',
     options: [
-      'Cost information',
-      'Inventory of components and dependencies in software',
-      'Only licensing data',
-      'Only version numbers'
+      'The team cannot track the total lines of code',
+      'The organization cannot quickly identify whether its applications use components affected by newly discovered vulnerabilities like Log4Shell',
+      'Developers cannot deploy applications to production',
+      'The testing team cannot perform unit tests',
     ],
     correctAnswer: 1,
-    explanation: 'SBOM provides comprehensive inventory of components and dependencies for security analysis.',
-    topic: 'Security Development',
-    subtopic: 'SBOM'
+    explanation: 'Without an SBOM, organizations cannot quickly identify all third-party and open-source components in their software. When vulnerabilities are disclosed (e.g., Log4j/Log4Shell), the lack of a component inventory prevents rapid impact assessment and targeted remediation across all affected applications.',
   },
 ];
 

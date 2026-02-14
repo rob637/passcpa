@@ -19,12 +19,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the semi-strong form of the Efficient Market Hypothesis (EMH), which investment strategy would be LEAST likely to generate excess returns?',
     options: [
+      'D) Both A and B',
       'A) Technical analysis using price charts',
-      'B) Fundamental analysis of financial statements',
       'C) Insider trading using nonpublic information',
-      'D) Both A and B'
+      'B) Fundamental analysis of financial statements',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Semi-strong EMH states that stock prices reflect all publicly available information. This means both technical analysis (which uses historical prices) and fundamental analysis (which uses public financial data) cannot consistently generate excess returns. Only insider trading using nonpublic information could theoretically beat the market, but it is illegal.'
   },
   {
@@ -39,9 +39,9 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'According to Modern Portfolio Theory, which factor primarily determines the risk-return characteristics of a well-diversified portfolio?',
     options: [
       'A) Individual security selection',
-      'B) Market timing decisions',
+      'D) Security trading frequency',
       'C) Asset allocation',
-      'D) Security trading frequency'
+      'B) Market timing decisions',
     ],
     correctAnswer: 2,
     explanation: 'Studies show that asset allocation explains approximately 90% of a portfolio\'s return variability over time. In a well-diversified portfolio, unsystematic risk is minimized, leaving systematic (market) risk as the primary driver of portfolio performance. Individual security selection matters far less than the overall asset mix.'
@@ -57,12 +57,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A stock has a beta of 1.4. If the market rises 10%, this stock would be expected to:',
     options: [
+      'C) Rise 4%',
+      'D) Rise 11.4%',
       'A) Rise 10%',
       'B) Rise 14%',
-      'C) Rise 4%',
-      'D) Rise 11.4%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Beta measures a stock\'s sensitivity to market movements. A beta of 1.4 means the stock is expected to move 1.4 times the market movement. Market up 10% × 1.4 beta = 14% expected stock increase. Stocks with beta > 1 are more volatile than the market; beta < 1 are less volatile.'
   },
   {
@@ -76,12 +76,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Standard deviation in investment analysis measures:',
     options: [
+      'C) The correlation between two assets',
+      'D) Expected return of an asset',
       'A) Only downside risk',
       'B) Total volatility of returns from the mean',
-      'C) The correlation between two assets',
-      'D) Expected return of an asset'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Standard deviation measures the dispersion of returns around the mean—both above and below. It represents total risk (volatility). A higher standard deviation indicates greater variability in returns. Unlike semi-variance or downside deviation, it treats upside and downside deviations equally.'
   },
   // INV-2: Fixed Income
@@ -96,12 +96,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A bond portfolio has a duration of 6 years. If interest rates rise by 1%, the portfolio value would be expected to:',
     options: [
-      'A) Decrease by 6%',
-      'B) Decrease by 1%',
       'C) Increase by 6%',
-      'D) Remain unchanged'
+      'A) Decrease by 6%',
+      'D) Remain unchanged',
+      'B) Decrease by 1%',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Duration measures a bond\'s price sensitivity to interest rate changes. A duration of 6 means approximately a 6% price change for each 1% change in rates. Bond prices move inversely to interest rates, so a 1% rate increase causes approximately a 6% decrease in value. This is known as the modified duration approximation.'
   },
   {
@@ -113,15 +113,15 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     subtopic: 'Yield Curve',
     difficulty: 'medium',
     skillLevel: 'Analysis',
-    question: 'An inverted yield curve typically signals:',
+    question: 'When the yield curve becomes inverted, a bond portfolio manager should consider which strategic response?',
     options: [
-      'A) Strong economic growth ahead',
-      'B) Potential recession and economic slowdown',
-      'C) Rising inflation expectations',
-      'D) No meaningful economic prediction'
+      'Extending duration to maximize capital gains if rates fall during recession',
+      'Moving entirely to equities to avoid bond market volatility',
+      'Maintaining a barbell strategy regardless of yield curve shape',
+      'Selling all fixed-income holdings immediately',
     ],
-    correctAnswer: 1,
-    explanation: 'An inverted yield curve occurs when short-term rates exceed long-term rates. This has historically been a reliable predictor of economic recession, typically occurring 6-24 months before a downturn. It suggests investors expect rates to fall in the future due to economic weakening.'
+    correctAnswer: 0,
+    explanation: 'An inverted yield curve historically signals potential economic slowdown or recession, often followed by falling interest rates as the Fed eases monetary policy. Extending duration positions the portfolio for capital appreciation when rates decline, as longer-duration bonds benefit most from falling rates.',
   },
   {
     id: 'CFP-INV-B5-007',
@@ -135,11 +135,11 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'A $1,000 par value bond with a 5% coupon is trading at $1,050. The bond is trading:',
     options: [
       'A) At par',
-      'B) At a premium because market rates are lower than 5%',
       'C) At a discount because market rates are higher than 5%',
-      'D) At a premium because market rates are higher than 5%'
+      'D) At a premium because market rates are higher than 5%',
+      'B) At a premium because market rates are lower than 5%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'When a bond trades above par value, it trades at a premium. This occurs when the coupon rate exceeds current market rates for similar bonds. Investors pay more for the higher coupon payments. Conversely, bonds trade at a discount when market rates exceed the coupon rate.'
   },
   {
@@ -154,9 +154,9 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'Which type of bond adjusts its principal value based on inflation?',
     options: [
       'A) Zero-coupon bond',
-      'B) Callable bond',
+      'D) Convertible bond',
       'C) Treasury Inflation-Protected Securities (TIPS)',
-      'D) Convertible bond'
+      'B) Callable bond',
     ],
     correctAnswer: 2,
     explanation: 'TIPS are U.S. Treasury securities whose principal adjusts based on changes in the Consumer Price Index (CPI). The coupon rate is fixed, but applied to the inflation-adjusted principal, providing protection against inflation. At maturity, investors receive the greater of the original or adjusted principal.'
@@ -173,10 +173,10 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A stock pays a $2 annual dividend expected to grow at 5% indefinitely. The required return is 12%. Using the constant growth dividend discount model, the intrinsic value is:',
     options: [
+      'D) $40.00',
       'A) $16.67',
-      'B) $28.57',
       'C) $30.00',
-      'D) $40.00'
+      'B) $28.57',
     ],
     correctAnswer: 2,
     explanation: 'The Gordon Growth Model (constant growth DDM) values a stock as: D₁ / (r - g) where D₁ is next year\'s dividend. D₁ = $2 × 1.05 = $2.10. Value = $2.10 / (0.12 - 0.05) = $2.10 / 0.07 = $30.00. The model requires r > g for a positive value.'
@@ -193,9 +193,9 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'A stock trades at $80 per share and has earnings per share of $4. Its P/E ratio is:',
     options: [
       'A) 5',
-      'B) 15',
+      'D) 320',
       'C) 20',
-      'D) 320'
+      'B) 15',
     ],
     correctAnswer: 2,
     explanation: 'P/E ratio = Price per share / Earnings per share = $80 / $4 = 20. This means investors are willing to pay $20 for each $1 of earnings. A higher P/E may indicate growth expectations or overvaluation; a lower P/E may suggest value opportunity or concerns about future earnings.'
@@ -212,11 +212,11 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'Value stocks are typically characterized by:',
     options: [
       'A) High P/E ratios and rapid earnings growth',
-      'B) Low P/E ratios and high dividend yields',
+      'D) High beta and high volatility',
       'C) No earnings and high growth potential',
-      'D) High beta and high volatility'
+      'B) Low P/E ratios and high dividend yields',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Value stocks typically have low P/E ratios, low price-to-book ratios, and higher dividend yields. They are often mature companies trading below their intrinsic value. Growth stocks, conversely, have high P/E ratios reflecting expectations of rapid earnings growth, often with low or no dividends.'
   },
   // INV-4: Options and Derivatives
@@ -231,12 +231,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An investor buys a call option with a $50 strike price for a $3 premium. At expiration, the stock is at $58. The investor\'s profit is:',
     options: [
+      'D) $11',
+      'C) $8',
       'A) $3',
       'B) $5',
-      'C) $8',
-      'D) $11'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Call option profit = Intrinsic value - Premium paid. Intrinsic value = Stock price - Strike price = $58 - $50 = $8. Profit = $8 - $3 premium = $5 per share. The breakeven price is $53 ($50 strike + $3 premium). Max loss is limited to the premium paid.'
   },
   {
@@ -250,12 +250,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'An investor owns 100 shares of XYZ at $45 and writes a covered call with a $50 strike for a $2 premium. The maximum profit potential is:',
     options: [
+      'D) Unlimited',
+      'C) $7 per share',
       'A) $2 per share',
       'B) $5 per share',
-      'C) $7 per share',
-      'D) Unlimited'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Covered call maximum profit = (Strike - Stock purchase price) + Premium = ($50 - $45) + $2 = $7 per share. If the stock rises above $50, shares are called away at $50. The premium provides income and limited downside protection but caps upside at $7 per share.'
   },
   {
@@ -269,12 +269,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A protective put strategy is used to:',
     options: [
+      'C) Profit from a decline in stock prices',
+      'D) Reduce the cost basis of stock positions',
       'A) Generate income on existing stock positions',
       'B) Limit downside risk while maintaining upside potential',
-      'C) Profit from a decline in stock prices',
-      'D) Reduce the cost basis of stock positions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A protective put (also called a married put) involves buying a put option on stock you own. This creates a floor price equal to the strike price, limiting downside losses while allowing unlimited upside potential minus the premium cost. It\'s like buying insurance on your stock position.'
   },
   // INV-5: Alternative Investments
@@ -290,11 +290,11 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'For a REIT to maintain its tax-advantaged status, it must distribute at least what percentage of taxable income as dividends?',
     options: [
       'A) 50%',
-      'B) 75%',
       'C) 90%',
-      'D) 100%'
+      'D) 100%',
+      'B) 75%',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'REITs must distribute at least 90% of taxable income as dividends to shareholders. This allows REITs to avoid corporate-level taxation, passing income directly to investors. Additionally, at least 75% of assets must be in real estate, and 75% of income must come from real estate-related sources.'
   },
   {
@@ -308,12 +308,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Hedge funds differ from mutual funds primarily in that hedge funds:',
     options: [
-      'A) Are available to all investors regardless of income',
-      'B) Are more liquid with daily redemption rights',
       'C) Can use leverage, short selling, and derivatives more freely',
-      'D) Must be registered with the SEC and provide daily pricing'
+      'A) Are available to all investors regardless of income',
+      'D) Must be registered with the SEC and provide daily pricing',
+      'B) Are more liquid with daily redemption rights',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Hedge funds have fewer regulatory restrictions than mutual funds, allowing them to employ strategies like short selling, leverage, derivatives, and concentrated positions. They are typically available only to accredited investors and have longer lock-up periods with limited liquidity. They are not required to register with the SEC under the same rules as mutual funds.'
   },
   {
@@ -327,12 +327,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Adding commodities to a stock and bond portfolio may benefit investors primarily because commodities:',
     options: [
+      'D) Have no storage or rollover costs',
       'A) Always provide positive returns',
-      'B) Have low or negative correlation with stocks and bonds',
       'C) Are guaranteed to outperform during recessions',
-      'D) Have no storage or rollover costs'
+      'B) Have low or negative correlation with stocks and bonds',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Commodities historically have low or negative correlation with traditional stock and bond portfolios. This diversification benefit can reduce overall portfolio volatility without necessarily sacrificing returns. Commodities may also provide inflation protection as their prices often rise with inflation.'
   },
   // INV-1: Additional Theory
@@ -348,9 +348,9 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'Fund A has a return of 12%, standard deviation of 15%, and the risk-free rate is 3%. What is Fund A\'s Sharpe ratio?',
     options: [
       'A) 0.60',
-      'B) 0.80',
+      'D) 1.25',
       'C) 1.00',
-      'D) 1.25'
+      'B) 0.80',
     ],
     correctAnswer: 0,
     explanation: 'Sharpe ratio = (Return - Risk-free rate) / Standard deviation = (12% - 3%) / 15% = 9% / 15% = 0.60. The Sharpe ratio measures risk-adjusted return—higher is better. It indicates 0.60% excess return per unit of risk taken. Compare to benchmark or similar funds.'
@@ -367,11 +367,11 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     question: 'A positive alpha indicates that a portfolio manager:',
     options: [
       'A) Took more risk than the benchmark',
-      'B) Generated returns above what was expected given the risk taken',
+      'D) Underperformed on a risk-adjusted basis',
       'C) Has a beta greater than 1.0',
-      'D) Underperformed on a risk-adjusted basis'
+      'B) Generated returns above what was expected given the risk taken',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Alpha measures the excess return of an investment relative to its expected return based on beta (systematic risk). Positive alpha means the manager added value beyond what was expected for the level of market risk taken. Alpha is a key measure of manager skill.'
   },
   {
@@ -385,12 +385,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Using CAPM: Risk-free rate is 4%, expected market return is 10%, and a stock\'s beta is 1.5. What is the stock\'s expected return?',
     options: [
+      'D) 19%',
       'A) 10%',
-      'B) 13%',
       'C) 15%',
-      'D) 19%'
+      'B) 13%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CAPM: Expected Return = Risk-free rate + Beta × (Market return - Risk-free rate). Expected Return = 4% + 1.5 × (10% - 4%) = 4% + 1.5 × 6% = 4% + 9% = 13%. CAPM determines the theoretically appropriate required return given systematic risk (beta).'
   },
   // INV-2: Additional Fixed Income
@@ -405,12 +405,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which bond has the HIGHEST reinvestment risk?',
     options: [
+      'D) A 10-year bond with a 5% coupon',
+      'C) A 5-year bond with a 4% coupon',
       'A) A zero-coupon bond maturing in 10 years',
       'B) A 10-year bond with a 8% coupon',
-      'C) A 5-year bond with a 4% coupon',
-      'D) A 10-year bond with a 5% coupon'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Reinvestment risk is the risk that coupon payments will be reinvested at lower rates. Higher coupons = more cash flow to reinvest = more reinvestment risk. The 8% coupon bond generates the most cash flow to reinvest. Zero-coupon bonds have no reinvestment risk because there are no interim payments.'
   },
   {
@@ -424,12 +424,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Callable bonds typically offer higher coupon rates than non-callable bonds because:',
     options: [
+      'C) They have higher credit risk',
+      'D) They are always issued at a discount',
       'A) They have longer maturities',
       'B) Investors bear call risk and demand compensation',
-      'C) They have higher credit risk',
-      'D) They are always issued at a discount'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Callable bonds give the issuer the right to redeem the bond before maturity, usually when rates fall. This benefits issuers but hurts investors who must reinvest at lower rates. To compensate investors for this call risk, callable bonds offer higher coupon rates than comparable non-callable bonds.'
   },
   {
@@ -443,12 +443,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A bond ladder strategy involves:',
     options: [
+      'C) Investing only in zero-coupon bonds',
+      'D) Frequent trading of bonds based on interest rate predictions',
       'A) Concentrating all investments in long-term bonds',
       'B) Buying bonds with staggered maturity dates',
-      'C) Investing only in zero-coupon bonds',
-      'D) Frequent trading of bonds based on interest rate predictions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A bond ladder spreads investments across bonds with different maturity dates (e.g., 1, 2, 3, 4, 5 years). As each bond matures, proceeds are reinvested at the longest maturity. This balances reinvestment risk, provides regular liquidity, and averages interest rate exposure over time.'
   },
   // INV-3: Additional Equity
@@ -463,12 +463,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The "small-cap effect" refers to the historical tendency for:',
     options: [
-      'A) Large-cap stocks to outperform small-cap stocks',
-      'B) Small-cap stocks to provide higher long-term returns with higher volatility',
       'C) Small-cap stocks to be less risky than large-cap stocks',
-      'D) Both size categories to perform identically over time'
+      'A) Large-cap stocks to outperform small-cap stocks',
+      'D) Both size categories to perform identically over time',
+      'B) Small-cap stocks to provide higher long-term returns with higher volatility',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The small-cap effect describes the historical observation that small-capitalization stocks have tended to outperform large-cap stocks over long periods, though with significantly higher volatility. This is one of the Fama-French factors explaining stock returns beyond market beta alone.'
   },
   {
@@ -482,12 +482,12 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'An investor holding international stocks unhedged is exposed to:',
     options: [
-      'A) Only stock market risk',
-      'B) Only currency risk',
       'C) Both stock market risk and currency risk',
-      'D) Neither stock market risk nor currency risk'
+      'A) Only stock market risk',
+      'D) Neither stock market risk nor currency risk',
+      'B) Only currency risk',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Unhedged international investments expose investors to both the performance of foreign stocks AND changes in currency exchange rates. A strong foreign market can still result in losses for a US investor if the foreign currency weakens against the dollar. Hedging can reduce currency risk but adds cost.'
   }
 ];

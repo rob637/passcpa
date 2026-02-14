@@ -22,8 +22,8 @@ export const CMA1_HARD_BATCH2: Question[] = [
     options: [
       '$12.00 per unit — nearly double the traditional rate',
       '$7.20 per unit — same as traditional',
+      '$18.00 per unit — triple the traditional rate',
       '$4.50 per unit — lower than traditional',
-      '$18.00 per unit — triple the traditional rate'
     ],
     correctAnswer: 0,
     explanation: 'ABC allocation: Product A setup cost = (100/600) × $360,000 = $60,000. Per unit = $60,000 / 5,000 = $12.00. Traditional (DLH): Product A = (10,000/40,000) × $360,000 = $90,000. Per unit = $90,000 / 5,000 = $18.00. Wait — traditional gives $18 and ABC gives $12. So ABC is actually lower. Under ABC: $12/unit. Under traditional: A gets 25% of $360k = $90k / 5k = $18. The key insight is ABC reveals the true cost driver (setups not DLH). Product A with fewer setups per unit benefits from ABC.',
@@ -41,9 +41,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'Budgeted overhead: $900,000. Budgeted machine hours: 60,000. Actual overhead: $920,000. Actual machine hours: 58,000. Job #247 used 500 machine hours. What overhead is applied to Job #247, and is overall overhead over- or under-applied?',
     options: [
       '$7,500 applied to the job; $50,000 underapplied overall',
+      '$7,931 applied to the job; $50,000 underapplied overall',
       '$7,667 applied to the job; $50,000 overapplied overall',
       '$7,500 applied to the job; $20,000 underapplied overall',
-      '$7,931 applied to the job; $50,000 underapplied overall'
     ],
     correctAnswer: 0,
     explanation: 'Predetermined OH rate = $900,000 / 60,000 MH = $15/MH. Job #247 applied OH = 500 × $15 = $7,500. Total applied OH = 58,000 × $15 = $870,000. Actual OH = $920,000. Under/over = $920,000 - $870,000 = $50,000 underapplied (actual > applied). Underapplied overhead increases COGS when closed.',
@@ -60,12 +60,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Beginning WIP: 2,000 units (60% complete for conversion). Started: 18,000 units. Completed: 16,000 units. Ending WIP: 4,000 units (40% complete for conversion). Under FIFO, what are the equivalent units for conversion?',
     options: [
-      '16,400 units',
       '17,600 units',
+      '16,400 units',
+      '16,800 units',
       '16,000 units',
-      '16,800 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'FIFO equivalent units for conversion: To complete beginning WIP = 2,000 × (1 - 60%) = 800 units. Started and completed = 16,000 - 2,000 = 14,000 units. Ending WIP = 4,000 × 40% = 1,600 units. Total FIFO equivalent units = 800 + 14,000 + 1,600 = 16,400 units. FIFO excludes prior-period work already in beginning WIP, unlike weighted average which would give 16,000 + 1,600 = 17,600 units.',
     reference: 'Process Costing — FIFO Method',
   },
@@ -80,12 +80,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Joint costs of $500,000 produce three products at split-off. Product X: 10,000 units, sells at split-off for $30/unit. Product Y: 8,000 units, further processed for $40,000 then sold for $45/unit. Product Z: 5,000 units, sells at split-off for $20/unit. Using NRV method, what joint cost is allocated to Product Y?',
     options: [
+      '$160,000',
       '$200,000',
       '$250,000',
       '$180,000',
-      '$160,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'NRV at split-off: X = 10,000 × $30 = $300,000. Y = (8,000 × $45) - $40,000 = $360,000 - $40,000 = $320,000. Z = 5,000 × $20 = $100,000. Total NRV = $300,000 + $320,000 + $100,000 = $720,000. Product Y allocation = ($320,000 / $720,000) × $500,000 = 0.4444 × $500,000 = $222,222. Closest: $200,000 if using slightly different assumptions. The NRV method allocates joint costs proportional to each product\'s net realizable value at the split-off point.',
     reference: 'Joint Cost Allocation — NRV Method',
   },
@@ -101,9 +101,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'Maintenance cost data: January 8,000 MH, $98,000 cost; March 12,000 MH, $130,000 cost; July 6,000 MH, $82,000 cost; November 15,000 MH, $155,000 cost. Using the high-low method, what is the estimated cost at 10,000 machine hours?',
     options: [
       '$114,444',
+      '$125,000',
       '$120,000',
       '$110,000',
-      '$125,000'
     ],
     correctAnswer: 0,
     explanation: 'High-low method uses the highest and lowest activity points. High: Nov 15,000 MH, $155,000. Low: Jul 6,000 MH, $82,000. Variable rate = ($155,000 - $82,000) / (15,000 - 6,000) = $73,000 / 9,000 = $8.111/MH. Fixed cost = $155,000 - ($8.111 × 15,000) = $155,000 - $121,667 = $33,333. Estimated cost at 10,000 MH = $33,333 + ($8.111 × 10,000) = $33,333 + $81,111 = $114,444.',
@@ -120,12 +120,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Market research indicates customers will pay $85 for a new product. The company requires a 20% return on sales. Current estimated cost is $75. What is the target cost, and what cost reduction (value engineering) is needed?',
     options: [
-      'Target cost $68; cost reduction of $7 needed',
+      'Target cost $75; no gap exists',
       'Target cost $65; cost reduction of $10 needed',
+      'Target cost $68; cost reduction of $7 needed',
       'Target cost $80; cost reduction of $0 (already profitable)',
-      'Target cost $75; no gap exists'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Target cost = Target price - Required profit. Required profit = 20% × $85 = $17. Target cost = $85 - $17 = $68. Current estimated cost = $75. Cost gap = $75 - $68 = $7 per unit. Value engineering must find $7 of cost reduction. This is the essence of target costing: the market sets the price, the company sets the margin, and engineers must achieve the resulting cost target.',
     reference: 'Target Costing — Value Engineering',
   },
@@ -140,12 +140,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Service department S1 provides 20% of its services to S2 and 80% to production. S2 provides 10% to S1 and 90% to production. S1 costs: $100,000; S2 costs: $200,000. The reciprocal method differs from the direct method because it:',
     options: [
-      'Recognizes mutual services between S1 and S2, using simultaneous equations to capture full costs',
       'Allocates S1 first then S2 in a step-down sequence',
+      'Uses a single allocation base for both departments',
+      'Recognizes mutual services between S1 and S2, using simultaneous equations to capture full costs',
       'Ignores interdepartmental services and allocates only to production',
-      'Uses a single allocation base for both departments'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The reciprocal (algebraic) method is the most accurate because it fully recognizes mutual/reciprocal services between service departments using simultaneous equations. The direct method ignores inter-service costs entirely. The step-down method partially recognizes them (one direction only). Reciprocal: S1 = $100,000 + 0.10×S2; S2 = $200,000 + 0.20×S1. Solving these simultaneously yields the true full cost of each department before allocation to production.',
     reference: 'Reciprocal Cost Allocation Method',
   },
@@ -160,12 +160,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company produced 12,000 units and sold 10,000 units. Fixed manufacturing OH is $120,000. Variable cost per unit is $30. Selling price is $60. Under absorption costing, income is $20,000 higher than variable costing income. What is the fixed OH rate per unit?',
     options: [
-      '$10 per unit',
       '$20 per unit',
+      '$24 per unit',
+      '$10 per unit',
       '$12 per unit',
-      '$24 per unit'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The income difference between absorption and variable costing = Change in inventory × Fixed OH rate per unit. Inventory increase = 12,000 produced - 10,000 sold = 2,000 units. $20,000 = 2,000 units × Fixed OH rate. Fixed OH rate = $20,000 / 2,000 = $10 per unit. Verification: $120,000 total fixed OH / 12,000 units = $10 per unit. This matches our answer.',
     reference: 'Absorption vs Variable Costing Income Reconciliation',
   },
@@ -182,8 +182,8 @@ export const CMA1_HARD_BATCH2: Question[] = [
     options: [
       'Accept — incremental profit of $85,000 ($105,000 contribution minus $20,000 tooling)',
       'Reject — the $52 price is below the $60 full cost per unit',
+      'Reject — accepting would reduce profit by $120,000',
       'Accept — incremental profit of $180,000',
-      'Reject — accepting would reduce profit by $120,000'
     ],
     correctAnswer: 0,
     explanation: 'Current production: 80,000 units. Excess capacity: 20,000 units. Special order: 15,000 units fits within excess capacity (no displaced sales). Relevant cost = variable cost only (fixed costs are sunk): $45/unit. Contribution per unit = $52 - $45 = $7. Total contribution = $7 × 15,000 = $105,000. Less tooling = $105,000 - $20,000 = $85,000 net incremental profit. The $60 full cost is irrelevant — fixed OH is already being incurred regardless.',
@@ -202,8 +202,8 @@ export const CMA1_HARD_BATCH2: Question[] = [
     options: [
       'It captures upstream (R&D, design) and downstream (warranty, disposal) costs that committed costs reveal are largely locked in during the design phase',
       'It spreads all costs evenly across the product life to smooth income',
+      'It ignores sunk costs by focusing only on future cash flows',
       'It eliminates the need for period-end cost allocations',
-      'It ignores sunk costs by focusing only on future cash flows'
     ],
     correctAnswer: 0,
     explanation: 'Life-cycle costing tracks all costs from inception (R&D, design) through production to post-sale (warranty, support, disposal). The key insight: 80-90% of a product\'s total life-cycle cost is COMMITTED during the design phase, even though only 10-20% is actually INCURRED at that point. Traditional period costing misses this because it only reports costs as incurred in each period. LCC supports better design decisions by revealing the full cost consequences of design choices.',
@@ -224,12 +224,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the 2013 COSO Internal Control Framework, which scenario represents a deficiency in the "Information and Communication" component?',
     options: [
+      'The company has not updated its risk assessment in two years',
       'Employees lack access to timely, relevant data needed to carry out their control responsibilities',
       'Management overrides a preventive control to process a transaction',
       'The audit committee does not meet quarterly',
-      'The company has not updated its risk assessment in two years'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'The Information and Communication component requires that relevant, quality information is identified, captured, and communicated in a timely manner to enable people to carry out their responsibilities. If employees lack access to data needed for their control activities, this is a direct deficiency in this component. Management override relates to Control Environment. Audit committee frequency relates to Monitoring. Outdated risk assessment relates to Risk Assessment.',
     reference: 'COSO 2013 Framework — Information and Communication',
   },
@@ -244,12 +244,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'An internal auditor discovers that the VP of Operations has been approving vendor payments to a company owned by the VP\'s spouse. According to IIA Standards, the auditor\'s FIRST action should be:',
     options: [
+      'Notify external auditors immediately before investigating further',
       'Report the finding to the audit committee chair, bypassing the VP and line management',
       'Confront the VP directly and request an explanation',
       'Include the finding in the regular quarterly audit report',
-      'Notify external auditors immediately before investigating further'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'IIA Standards require internal auditors to communicate significant findings to appropriate levels of management. However, when the finding involves potential fraud by a senior executive, the auditor should report directly to the audit committee (or board) to maintain independence and avoid the implicated executive suppressing the finding. Confronting the VP risks evidence destruction. Waiting for the quarterly report delays action on a significant issue. External auditor notification may follow but is not the first step.',
     reference: 'IIA Standards — Reporting and Fraud',
   },
@@ -265,9 +265,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'During the SOX 404 assessment, the following control deficiencies are identified: (1) Revenue cutoff procedures were not consistently followed, potentially misstating revenue by $5M (materiality threshold: $3M); (2) Petty cash reconciliations were performed monthly instead of weekly. How should these be classified?',
     options: [
       '(1) is a material weakness; (2) is a control deficiency (not significant)',
+      'Both are significant deficiencies but not material weaknesses',
       'Both are material weaknesses requiring disclosure',
       '(1) is a significant deficiency; (2) is a material weakness',
-      'Both are significant deficiencies but not material weaknesses'
     ],
     correctAnswer: 0,
     explanation: 'A material weakness is a deficiency where there is a reasonable possibility that a material misstatement will not be prevented or detected on a timely basis. Revenue cutoff errors potentially causing a $5M misstatement (above $3M materiality) constitute a material weakness — it must be disclosed. Petty cash reconciliation timing is a minor control deficiency that would not result in material misstatement. It is not even a significant deficiency given the typically small dollar amounts involved. Material weaknesses require reporting in the company\'s 10-K filing.',
@@ -284,12 +284,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company\'s board sets a risk appetite statement: "We accept moderate risk in pursuit of 15% revenue growth." The CFO establishes that operating margin must stay between 8-12%. In COSO ERM terminology, which is which?',
     options: [
+      'Both statements define risk tolerance at different specificity levels',
       'The board statement defines risk appetite (broad willingness); the 8-12% range defines risk tolerance (acceptable variation)',
       'The board statement defines risk tolerance; the 8-12% range defines risk appetite',
       'Both statements define risk appetite at different organizational levels',
-      'Both statements define risk tolerance at different specificity levels'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Risk appetite is the broad-based description of the desired level of risk an entity is willing to accept in pursuit of its mission/vision — set by the board. Risk tolerance is the acceptable level of variation around specific objectives — the quantified boundaries set by management. The board\'s "moderate risk for 15% growth" = appetite (qualitative, strategic). The CFO\'s "8-12% margin" = tolerance (quantitative, operational). This distinction is a core COSO ERM concept on the CMA exam.',
     reference: 'COSO ERM — Risk Appetite and Tolerance',
   },
@@ -304,12 +304,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'In an IT environment, which combination of duties creates the HIGHEST risk if performed by the same person?',
     options: [
+      'Testing new software AND documenting test results',
       'Programming changes to financial applications AND migrating those changes to the production environment',
       'Entering transactions AND generating reports from the same system',
       'Monitoring system logs AND reviewing backup schedules',
-      'Testing new software AND documenting test results'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'The highest-risk IT segregation failure is combining development (programming) with operations (production migration). A programmer who can both write code changes and move them into production can insert unauthorized changes (backdoors, fraudulent logic) without independent review. This is ITGC 101 — separation of development and operations. Transaction entry + reporting is a lesser risk if application controls exist. Log monitoring + backup review are both operational. Testing + documenting are both within the QA function.',
     reference: 'IT General Controls — Segregation of Duties',
   },
@@ -324,12 +324,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A division manager facing termination if quarterly targets are missed has authority to adjust inventory valuations without independent verification. Which element of the fraud triangle does each factor primarily address?',
     options: [
-      'Facing termination = Pressure/Incentive; Ability to adjust without verification = Opportunity',
+      'Both factors represent Opportunity',
       'Facing termination = Opportunity; Ability to adjust = Rationalization',
+      'Facing termination = Pressure/Incentive; Ability to adjust without verification = Opportunity',
       'Facing termination = Rationalization; Ability to adjust = Pressure',
-      'Both factors represent Opportunity'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The fraud triangle has three elements: Pressure/Incentive (motivation to commit fraud), Opportunity (ability to carry out and conceal fraud), and Rationalization (justifying the behavior). The risk of termination creates PRESSURE — the manager is motivated to misstate results. The ability to adjust inventory without verification provides OPPORTUNITY — weak controls allow the fraud. The missing piece is Rationalization (e.g., "I\'ll fix it next quarter"). Strong internal controls primarily address the Opportunity element.',
     reference: 'Fraud Triangle — Cressey',
   },
@@ -344,12 +344,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A small company cannot fully segregate duties due to limited staff. The accounts payable clerk also signs checks. Which compensating control is MOST effective?',
     options: [
-      'Require dual signatures on checks above a threshold and have the owner review bank reconciliations independently',
+      'Increase the AP clerk\'s bond insurance coverage',
       'Require the AP clerk to take annual vacation',
+      'Require dual signatures on checks above a threshold and have the owner review bank reconciliations independently',
       'Install security cameras in the accounting office',
-      'Increase the AP clerk\'s bond insurance coverage'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'When ideal segregation of duties is not possible (common in small businesses), compensating controls must address the same risk. The primary risk is the clerk creating fictitious vendors and paying themselves. Dual signatures add a second check on disbursements. Independent bank reconciliation review by the owner detects unauthorized payments after the fact. Together these provide both preventive and detective compensating controls. Mandatory vacation is detective but weak. Cameras don\'t prevent fraudulent transactions. Bond insurance compensates losses but doesn\'t prevent fraud.',
     reference: 'Compensating Controls for Small Entities',
   },
@@ -364,12 +364,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under NYSE listing standards and SOX requirements, which statement about audit committee composition is correct?',
     options: [
-      'All members must be independent directors, with at least one qualifying as a "financial expert" as defined by the SEC',
       'A majority of members must be independent, with the CFO required to serve as chair',
+      'All members must be independent directors, with at least one qualifying as a "financial expert" as defined by the SEC',
+      'The committee must include at least one member of management for operational insight',
       'All members must be financial experts with CPA licenses',
-      'The committee must include at least one member of management for operational insight'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'SOX Section 301 and NYSE rules require that ALL audit committee members be independent (no material relationship with the company). SEC rules require disclosure of whether at least one member is a "financial expert" (understanding of GAAP, financial statements, internal controls, and audit committee functions). The financial expert need not be a CPA. No management members are permitted — independence is paramount. The audit committee oversees financial reporting, external/internal auditors, and whistleblower procedures.',
     reference: 'SOX 301 / NYSE Audit Committee Requirements',
   },
@@ -384,12 +384,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'An internal auditor tests a control that requires management approval for all purchases over $10,000. Out of 50 sampled transactions, 3 lacked documented approval. What should the auditor conclude?',
     options: [
-      'The control is not operating effectively (6% exception rate); recommend enhanced monitoring and potential redesign',
       'The control is effective because 94% compliance is acceptable',
+      'The control is not operating effectively (6% exception rate); recommend enhanced monitoring and potential redesign',
+      'The control is effective because 3 exceptions could be data entry errors',
       'The auditor cannot reach a conclusion without testing 100% of transactions',
-      'The control is effective because 3 exceptions could be data entry errors'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'A 6% exception rate (3/50) in a key authorization control is significant. For controls relied upon for financial reporting, even a small number of exceptions can indicate the control is not operating effectively, requiring a finding in the audit report. The nature of the exceptions matters — missing approval on purchases could lead to unauthorized spending, fraud, or misstatement. The auditor should investigate the root cause, recommend remediation, and consider expanding testing. Statistical sampling at 50 items is an accepted methodology — 100% testing is not required.',
     reference: 'Internal Audit — Control Testing and Evaluation',
   },
@@ -406,8 +406,8 @@ export const CMA1_HARD_BATCH2: Question[] = [
     options: [
       'Automated three-way matching of purchase orders, receiving reports, and vendor invoices before payment processing',
       'Annual internal audit of the revenue recognition process',
+      'External auditor walkthrough testing performed during the annual audit',
       'Quarterly management self-assessment questionnaires',
-      'External auditor walkthrough testing performed during the annual audit'
     ],
     correctAnswer: 0,
     explanation: 'Ongoing monitoring is built into routine operations and occurs in real-time. Automated three-way matching happens continuously as part of the normal purchasing/payment process — it is an ongoing monitoring activity. Annual internal audits, quarterly self-assessments, and external auditor walkthroughs are all separate evaluations — they occur periodically, not as part of normal operations. COSO recommends a combination of both, but ongoing monitoring provides more timely detection of control failures.',
@@ -425,9 +425,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'Which of the following is classified as an entity-level control rather than a transaction-level control?',
     options: [
       'The company\'s code of ethics policy and related training program',
+      'Supervisor approval of employee timesheets',
       'A credit limit check before order entry',
       'Three-way matching before accounts payable processing',
-      'Supervisor approval of employee timesheets'
     ],
     correctAnswer: 0,
     explanation: 'Entity-level controls operate at the organizational level and affect the overall control environment. They include: tone at the top, code of ethics, risk assessment processes, IT general controls, and monitoring programs. A code of ethics policy and training represents the Control Environment component at the entity level. Credit limits, three-way matching, and timesheet approvals are transaction-level controls that operate within specific business processes. Entity-level controls create the foundation upon which transaction-level controls operate.',
@@ -444,12 +444,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company identifies a risk of material misstatement in revenue recognition with an inherent risk rating of "High." After implementing controls (automated cutoff procedures, authorization requirements, and reconciliations), the residual risk is rated "Medium." Management wants residual risk at "Low." What is the MOST appropriate next step?',
     options: [
+      'Transfer the risk through insurance to reduce it to Low',
       'Perform a cost-benefit analysis of additional controls before implementing them, as reducing risk from Medium to Low may not justify the cost',
       'Accept the Medium residual risk since controls are already in place',
       'Implement every possible additional control regardless of cost to achieve Low risk',
-      'Transfer the risk through insurance to reduce it to Low'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Internal controls must be economically justified — the cost of additional controls should not exceed the expected benefit of risk reduction. Moving from Medium to Low residual risk requires additional control investment. Management should conduct a cost-benefit analysis to determine if the marginal cost of additional controls (design, implementation, ongoing operation) is justified by the marginal risk reduction. Blindly adding controls is not economical. Simply accepting Medium risk ignores the stated objective. Revenue recognition risk generally cannot be transferred via insurance.',
     reference: 'Risk Management — Cost-Benefit of Controls',
   },
@@ -468,12 +468,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A CFO wants to use analytics to optimize working capital. The team proposes: (1) a dashboard showing current A/R aging and DSO trends, (2) a model predicting which customers will pay late, (3) an algorithm recommending optimal credit terms for each customer segment. Which levels of analytics are these?',
     options: [
+      'All three are forms of predictive analytics',
       '(1) Descriptive; (2) Predictive; (3) Prescriptive',
       '(1) Diagnostic; (2) Descriptive; (3) Predictive',
       '(1) Predictive; (2) Prescriptive; (3) Diagnostic',
-      'All three are forms of predictive analytics'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'The four levels of analytics: Descriptive (what happened — dashboards, reports, KPIs). Diagnostic (why it happened — drill-down analysis). Predictive (what will happen — forecasting models, ML). Prescriptive (what should we do — optimization algorithms, recommendations). The A/R dashboard is descriptive (shows current state). The late-payment prediction model is predictive. The credit term optimizer is prescriptive (recommends specific actions). Each level builds on the previous and adds more value.',
     reference: 'Analytics Maturity Model',
   },
@@ -489,9 +489,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'During a data quality assessment, the finance team finds: (1) Customer addresses updated in CRM but not in the billing system; (2) Revenue figures reported in different currencies without conversion; (3) Historical data older than 3 years deleted per policy but still referenced in trend analysis. These represent deficiencies in which data quality dimensions?',
     options: [
       '(1) Consistency; (2) Accuracy; (3) Completeness',
+      'All three represent accuracy deficiencies',
       '(1) Completeness; (2) Consistency; (3) Accuracy',
       '(1) Accuracy; (2) Completeness; (3) Timeliness',
-      'All three represent accuracy deficiencies'
     ],
     correctAnswer: 0,
     explanation: 'Data quality dimensions: (1) Consistency — same data should match across systems. Address mismatch between CRM and billing = inconsistency. (2) Accuracy — data should correctly represent reality. Unconverted currency figures distort the true revenue amounts = inaccuracy. (3) Completeness — all necessary data should be present. Deleted historical data needed for trend analysis = incompleteness. Other dimensions include timeliness, validity, and uniqueness. Strong data governance ensures all dimensions are maintained.',
@@ -508,12 +508,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A mid-size company is implementing a new ERP system. Which risk is MOST likely to cause the project to fail?',
     options: [
-      'Insufficient change management leading to user resistance and low adoption rates',
+      'Over-investing in user training before go-live',
       'Selecting an ERP vendor with too many features',
+      'Insufficient change management leading to user resistance and low adoption rates',
       'Running the legacy and new systems in parallel during transition',
-      'Over-investing in user training before go-live'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Research consistently shows that ERP implementation failures are primarily caused by organizational and change management issues — not technical problems. User resistance, inadequate executive sponsorship, and failure to redesign business processes account for the majority of failed implementations. Having too many features is manageable through phased rollout. Parallel running is a best practice that reduces risk. Over-training (if it were possible) would reduce risk. Change management must address people, processes, and technology together.',
     reference: 'ERP Implementation — Critical Success Factors',
   },
@@ -528,12 +528,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'An employee in accounts payable receives an email from what appears to be the CEO requesting an urgent wire transfer of $500,000 to a new vendor. The email address is slightly different from the CEO\'s actual address. This attack is known as:',
     options: [
-      'Business Email Compromise (BEC) — a targeted spear-phishing attack exploiting authority and urgency',
       'Ransomware — encrypting files and demanding payment',
+      'SQL injection — exploiting database vulnerabilities',
+      'Business Email Compromise (BEC) — a targeted spear-phishing attack exploiting authority and urgency',
       'Denial of service — overwhelming the email server',
-      'SQL injection — exploiting database vulnerabilities'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Business Email Compromise (BEC) is a form of spear-phishing where attackers impersonate executives to trick employees into making unauthorized payments. It exploits authority bias (CEO request) and urgency (immediate wire). BEC is the #1 financial loss category in FBI cybercrime reports. Controls include: verifying requests through a separate communication channel, dual authorization for wire transfers, employee security awareness training, and email authentication protocols (DMARC/DKIM/SPF). Ransomware, DoS, and SQL injection are different attack types.',
     reference: 'Cybersecurity — Business Email Compromise',
   },
@@ -548,12 +548,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company implements RPA for bank reconciliation. The bot matches 95% of transactions automatically. Which statement about the remaining 5% is MOST accurate from a controls perspective?',
     options: [
-      'Unmatched items require human investigation and approval — the RPA bot should escalate exceptions with documentation for review',
       'The 5% can be auto-resolved by expanding the matching tolerance',
+      'The bot should repeatedly attempt matching until all items are resolved',
+      'Unmatched items require human investigation and approval — the RPA bot should escalate exceptions with documentation for review',
       'Unmatched items should be written off automatically to maintain efficiency',
-      'The bot should repeatedly attempt matching until all items are resolved'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'RPA bots handle rule-based, repetitive tasks effectively but cannot exercise judgment. The 5% of unmatched transactions likely involve exceptions (timing differences, errors, unusual items) requiring human investigation. From a controls perspective: the bot should flag and escalate exceptions with supporting documentation, maintain an audit trail, and route to authorized personnel for investigation and resolution. Expanding tolerance introduces risk. Auto-writing off is a control violation. Infinite retry loops are inefficient and wrong. Human-in-the-loop is essential for exceptions.',
     reference: 'RPA in Finance — Exception Handling Controls',
   },
@@ -570,8 +570,8 @@ export const CMA1_HARD_BATCH2: Question[] = [
     options: [
       'Continuous monitoring using automated business rules to identify anomalous transactions for investigation',
       'Continuous auditing to replace the external audit function',
+      'Artificial intelligence learning fraud patterns over time',
       'Predictive analytics to forecast future fraud',
-      'Artificial intelligence learning fraud patterns over time'
     ],
     correctAnswer: 0,
     explanation: 'Continuous monitoring applies automated business rules (filters, thresholds, pattern matching) to transaction data in real-time or near-real-time to identify anomalies. Weekend entries, large amounts, and unusual accounts are common red flags programmed as business rules. This is detective in nature — it identifies items for human investigation, not a replacement for external audit. It differs from predictive analytics (which would forecast likelihood) and AI (which learns patterns autonomously). Continuous monitoring is a key component of modern internal control systems.',
@@ -590,8 +590,8 @@ export const CMA1_HARD_BATCH2: Question[] = [
     options: [
       'A dual-axis line chart showing revenue and A/R trends on the same timeline with DSO as a secondary metric',
       'A single bar chart showing total revenue for the period',
+      'A table of monthly numbers for management to analyze',
       'A pie chart comparing revenue to A/R',
-      'A table of monthly numbers for management to analyze'
     ],
     correctAnswer: 0,
     explanation: 'A dual-axis line chart effectively shows the diverging trends of two related metrics over time. Revenue growing at one rate while A/R grows faster creates a visual "scissors" pattern that immediately communicates the risk. Adding DSO (Days Sales Outstanding) as a secondary metric contextualizes the divergence. Bar charts lose the trend comparison. Pie charts are inappropriate for time-series data. Raw tables require cognitive effort and may not reveal the pattern to busy executives. Effective visualization is a critical finance skill for communicating insights.',
@@ -608,12 +608,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company migrates its financial reporting system to a cloud-based SaaS platform. Under the shared responsibility model, which security control remains the company\'s responsibility?',
     options: [
+      'Maintaining network firewalls at the infrastructure level',
       'User access management — controlling who can access financial data and what they can do within the application',
       'Physical security of the data center hosting the servers',
       'Patching the underlying operating system and hypervisor',
-      'Maintaining network firewalls at the infrastructure level'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'In the cloud shared responsibility model for SaaS: the cloud provider manages physical security, infrastructure, OS patching, and network security. The customer retains responsibility for: user access management (identity, authentication, authorization), data classification, data governance, and compliance monitoring. For a financial system, controlling who can access, view, modify, or approve financial data is critical and remains the company\'s obligation regardless of where the system is hosted. SOC 2 reports from the provider cover their portion.',
     reference: 'Cloud Security — Shared Responsibility Model',
   },
@@ -628,12 +628,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which potential blockchain application would provide the MOST significant benefit to the financial reporting process?',
     options: [
+      'Removing the need for management estimates and judgments',
       'Smart contracts automating revenue recognition triggers with immutable transaction records reducing audit evidence collection time',
       'Replacing all accounting standards with blockchain-based rules',
       'Eliminating the need for internal controls over financial reporting',
-      'Removing the need for management estimates and judgments'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Blockchain\'s immutable, distributed ledger combined with smart contracts can automate transaction recording based on pre-defined rules (e.g., recognizing revenue when delivery is confirmed on the blockchain). This creates a tamper-proof audit trail that significantly reduces evidence collection time. However, blockchain does NOT eliminate the need for accounting standards (GAAP still governs recognition/measurement), internal controls (data input quality still matters), or management judgment (estimates like fair value, useful lives, impairment still require human assessment).',
     reference: 'Blockchain in Accounting and Auditing',
   },
@@ -649,9 +649,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'An auditor applies Benford\'s Law to accounts payable transactions and finds that the digit "5" appears as the leading digit in 25% of transactions (expected: 7.9%). This anomaly MOST likely suggests:',
     options: [
       'Potential manipulation — transactions may be structured just below a $500 or $5,000 approval threshold requiring investigation',
+      'The data follows a uniform distribution which is normal for financial data',
       'The dataset is too small for Benford\'s Law to apply',
       'Random variation that requires no further action',
-      'The data follows a uniform distribution which is normal for financial data'
     ],
     correctAnswer: 0,
     explanation: 'Benford\'s Law predicts that in naturally occurring datasets, the digit 1 appears as a leading digit ~30.1% of the time, declining to digit 9 at ~4.6%. Digit 5 should appear ~7.9%. A 25% frequency (3× expected) is a significant anomaly suggesting unnatural data patterns. A common cause: employees structuring transactions just below approval thresholds (e.g., $499, $4,999) to avoid oversight. This is a red flag for potential fraud or control circumvention requiring detailed investigation. Benford\'s Law is a powerful continuous auditing tool.',
@@ -669,9 +669,9 @@ export const CMA1_HARD_BATCH2: Question[] = [
     question: 'A company deploys a machine learning model to forecast monthly revenue. The model achieves 97% accuracy on training data but only 65% on new data. This problem is called:',
     options: [
       'Overfitting — the model memorized historical patterns including noise rather than learning generalizable relationships',
+      'Concept drift — the underlying pattern has changed',
       'Underfitting — the model is too simple to capture the patterns',
       'Data leakage — future data was included in training',
-      'Concept drift — the underlying pattern has changed'
     ],
     correctAnswer: 0,
     explanation: 'Overfitting occurs when a model performs exceptionally well on training data (97%) but poorly on new/unseen data (65%). The model has memorized the training set\'s specific patterns (including noise and anomalies) rather than learning the underlying relationship. Solutions include: cross-validation, regularization, pruning (for decision trees), gathering more training data, and reducing model complexity. Underfitting shows poor performance on both training and test data. Data leakage shows artificially high test performance. Concept drift occurs when the real-world pattern changes over time.',
@@ -688,12 +688,12 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'When developing a business case for automating the month-end close process using technology, which metric is MOST relevant for measuring success?',
     options: [
+      'Server uptime percentage for the accounting system',
       'Close cycle time reduction (days to close) combined with error rate reduction and analyst time redeployed to value-added analysis',
       'Total IT spending as a percentage of revenue',
       'Number of software licenses purchased',
-      'Server uptime percentage for the accounting system'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'The business case for close automation should measure outcomes that directly impact finance effectiveness: (1) Close cycle time — faster close means earlier insights for decision-making. (2) Error reduction — automation reduces manual errors and rework. (3) Redeployment of analyst time from mechanical reconciliation to value-added analysis (variance investigation, forecasting, business partnering). These three metrics together capture the speed, quality, and value dimensions. IT spending, licenses, and uptime are input/infrastructure metrics that don\'t measure the business value of automation.',
     reference: 'Finance Transformation — Close Automation',
   },

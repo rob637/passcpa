@@ -33,9 +33,22 @@ import {
   getCourseEssayPath,
   getCourseCBQPath,
 } from '../../utils/courseNavigation';
+import { CourseId } from '../../types/course';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
 import { BottomSheet } from '../common/BottomSheet';
+
+// Derive courseId from exam section name
+const getCourseFromSection = (section: string): CourseId => {
+  const upper = section.toUpperCase();
+  if (['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'].includes(upper)) return 'cpa';
+  if (upper.startsWith('SEE')) return 'ea';
+  if (upper.startsWith('CMA')) return 'cma';
+  if (upper.startsWith('CIA')) return 'cia';
+  if (upper.startsWith('CISA')) return 'cisa';
+  if (upper.startsWith('CFP')) return 'cfp';
+  return 'cpa';
+};
 
 // Tutor messages based on context
 const getTutorMessage = (streak: number, readiness: number, timeOfDay: string): string => {
@@ -74,7 +87,7 @@ const getGreeting = (): string => {
 const Home = () => {
   const { userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
-  const { courseId, course } = useCourse();
+  const { courseId, course, setCourse } = useCourse();
   
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [_loading, setLoading] = useState(true);
@@ -174,8 +187,16 @@ const Home = () => {
     setChangingSection(true);
     
     try {
-      // Persist to Firebase
-      await updateUserProfile({ examSection: newSection });
+      // Derive courseId from section and sync both to Firebase + local state
+      const derivedCourse = getCourseFromSection(newSection);
+      
+      // Persist examSection AND activeCourse to Firebase together
+      await updateUserProfile({ examSection: newSection, activeCourse: derivedCourse } as any);
+      
+      // Also update CourseProvider's local state (saves to localStorage)
+      if (derivedCourse !== courseId) {
+        setCourse(derivedCourse);
+      }
       
       // Refresh study stats for new section
       if (refreshStats) {

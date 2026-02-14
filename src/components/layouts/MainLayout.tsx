@@ -207,6 +207,7 @@ const MainLayout = () => {
               <NavLink
                 key={item.navType}
                 to={item.path}
+                data-testid={`nav-desktop-${item.navType}`}
                 className={() =>
                   clsx(
                     'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium',
@@ -312,6 +313,7 @@ const MainLayout = () => {
               key={item.navType}
               to={item.path}
               aria-label={item.label}
+              data-testid={`nav-mobile-${item.navType}`}
               onClick={() => feedback.tap()}
               className={() =>
                 clsx(

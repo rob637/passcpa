@@ -16,12 +16,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Identity and Access Management (IAM) lifecycle includes:',
     options: [
-      'Only account creation',
-      'Provisioning, review, modification, and de-provisioning',
       'Only password management',
-      'Only authentication'
+      'Only account creation',
+      'Only authentication',
+      'Provisioning, review, modification, and de-provisioning',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IAM lifecycle includes provisioning, periodic review, modification based on changes, and de-provisioning.',
     topic: 'Access Management',
     subtopic: 'IAM Lifecycle'
@@ -36,11 +36,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Access certification reviews should:',
     options: [
       'Be IT-owned',
-      'Be performed by business managers who understand access needs',
+      'Be annual only',
       'Only review privileged access',
-      'Be annual only'
+      'Be performed by business managers who understand access needs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Certification reviews should be performed by managers who understand business needs for access.',
     topic: 'Access Management',
     subtopic: 'Certification'
@@ -55,11 +55,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Birthright access refers to:',
     options: [
       'Inherited permissions',
-      'Base access automatically granted based on role or position',
+      'Emergency access',
       'Temporary access',
-      'Emergency access'
+      'Base access automatically granted based on role or position',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Birthright access is base access automatically granted when someone joins based on their role.',
     topic: 'Access Management',
     subtopic: 'Birthright Access'
@@ -73,12 +73,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Access request approval workflow should require:',
     options: [
+      'Self-approval',
+      'Automatic approval',
       'IT approval only',
       'Data owner and manager approval with documented justification',
-      'Automatic approval',
-      'Self-approval'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Access requests should require appropriate approvals (manager, data owner) with documented justification.',
     topic: 'Access Management',
     subtopic: 'Approval Workflow'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Emergency access procedures should include:',
     options: [
+      'No documentation',
+      'Permanent elevation',
       'Unlimited access',
       'Time-limited access with monitoring and post-review',
-      'Permanent elevation',
-      'No documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Emergency access should be time-limited, logged, monitored, and reviewed after the emergency.',
     topic: 'Access Management',
     subtopic: 'Emergency Access'
@@ -111,12 +111,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Service accounts should have:',
     options: [
+      'Shared passwords',
+      'No expiration',
       'Interactive login enabled',
       'Minimum required privileges and documented ownership',
-      'Shared passwords',
-      'No expiration'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Service accounts should have minimum privileges, documented ownership, and controlled credentials.',
     topic: 'Access Management',
     subtopic: 'Service Accounts'
@@ -131,11 +131,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Privileged access management (PAM) solutions provide:',
     options: [
       'Only password storage',
-      'Session recording, credential vaulting, and access control',
       'Only authentication',
-      'Only reporting'
+      'Only reporting',
+      'Session recording, credential vaulting, and access control',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PAM solutions provide credential vaulting, session recording, access control, and monitoring.',
     topic: 'Access Management',
     subtopic: 'PAM'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Biometric authentication advantages include:',
     options: [
-      'Cannot be bypassed',
-      'Difficulty of sharing or forgetting credentials',
       'Complete security',
-      'Zero false positives'
+      'Cannot be bypassed',
+      'Zero false positives',
+      'Difficulty of sharing or forgetting credentials',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Biometrics are difficult to share or forget, providing something you are authentication.',
     topic: 'Authentication',
     subtopic: 'Biometrics'
@@ -169,11 +169,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'False acceptance rate (FAR) in biometrics:',
     options: [
       'Should be high',
-      'Measures incorrectly accepting unauthorized users',
       'Measures rejecting authorized users',
-      'Is not important'
+      'Is not important',
+      'Measures incorrectly accepting unauthorized users',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'FAR measures the rate of incorrectly accepting unauthorized users and should be minimized.',
     topic: 'Authentication',
     subtopic: 'FAR'
@@ -188,11 +188,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'FIDO2/WebAuthn authentication:',
     options: [
       'Uses passwords',
-      'Provides passwordless authentication using public key cryptography',
       'Requires shared secrets',
-      'Only works on mobile'
+      'Only works on mobile',
+      'Provides passwordless authentication using public key cryptography',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'FIDO2/WebAuthn enables passwordless authentication using public key cryptography and hardware tokens.',
     topic: 'Authentication',
     subtopic: 'FIDO2'
@@ -206,12 +206,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Context-aware authentication considers:',
     options: [
+      'Only IP address',
       'Only password',
-      'Location, device, time, and behavior patterns',
       'Only username',
-      'Only IP address'
+      'Location, device, time, and behavior patterns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Context-aware authentication considers multiple factors like location, device, time, and behavior.',
     topic: 'Authentication',
     subtopic: 'Contextual'
@@ -225,12 +225,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Step-up authentication requires:',
     options: [
+      'Always the same authentication',
       'Lower authentication for all access',
-      'Additional authentication for higher-risk transactions',
       'Multiple passwords',
-      'Always the same authentication'
+      'Additional authentication for higher-risk transactions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Step-up authentication requires additional verification for higher-risk transactions or sensitive access.',
     topic: 'Authentication',
     subtopic: 'Step-Up'
@@ -244,12 +244,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Encryption key hierarchy typically includes:',
     options: [
+      'Only data keys',
+      'Only master keys',
       'Single key for all data',
       'Master keys, key encryption keys, and data encryption keys',
-      'Only data keys',
-      'Only master keys'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Key hierarchies include master keys protecting key encryption keys which protect data encryption keys.',
     topic: 'Cryptography',
     subtopic: 'Key Hierarchy'
@@ -263,12 +263,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Encryption at rest protects:',
     options: [
+      'Only databases',
+      'Only backups',
       'Network traffic',
       'Stored data from unauthorized physical or logical access',
-      'Only databases',
-      'Only backups'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Encryption at rest protects stored data from unauthorized access to storage media.',
     topic: 'Cryptography',
     subtopic: 'Encryption at Rest'
@@ -282,12 +282,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Transport Layer Security (TLS) provides:',
     options: [
+      'Only integrity',
+      'Only authentication',
       'Only encryption',
       'Encryption, authentication, and integrity for communications',
-      'Only authentication',
-      'Only integrity'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'TLS provides encryption, server authentication, and data integrity for network communications.',
     topic: 'Cryptography',
     subtopic: 'TLS'
@@ -302,11 +302,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Firewall rule review should verify:',
     options: [
       'Only syntax',
-      'Business justification, currency, and least privilege',
       'Only performance',
-      'Only logging'
+      'Only logging',
+      'Business justification, currency, and least privilege',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Firewall rule reviews should verify business justification, currency, and least privilege principle.',
     topic: 'Network Security',
     subtopic: 'Firewall Review'
@@ -321,11 +321,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Intrusion Detection Systems (IDS) detect:',
     options: [
       'All attacks',
-      'Potential security incidents through signature or behavior analysis',
       'Only known attacks',
-      'Only internal attacks'
+      'Only internal attacks',
+      'Potential security incidents through signature or behavior analysis',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IDS detects potential incidents through signature matching and behavioral analysis.',
     topic: 'Network Security',
     subtopic: 'IDS'
@@ -339,12 +339,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Next-generation firewalls (NGFW) add:',
     options: [
-      'Only speed',
-      'Application awareness, user identity, and threat intelligence',
       'Only logging',
-      'Only VPN'
+      'Only speed',
+      'Only VPN',
+      'Application awareness, user identity, and threat intelligence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'NGFW adds application awareness, user identity integration, and threat intelligence to traditional firewalls.',
     topic: 'Network Security',
     subtopic: 'NGFW'
@@ -358,12 +358,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Web Application Firewalls (WAF) protect against:',
     options: [
+      'Social engineering',
       'Network attacks only',
-      'Application-layer attacks targeting web applications',
       'Physical attacks',
-      'Social engineering'
+      'Application-layer attacks targeting web applications',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'WAF protects against application-layer attacks like SQL injection and XSS.',
     topic: 'Application Security',
     subtopic: 'WAF'
@@ -378,11 +378,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'VPN split tunneling:',
     options: [
       'Increases security',
-      'Allows some traffic to bypass VPN, creating potential risk',
+      'Improves encryption',
       'Is always recommended',
-      'Improves encryption'
+      'Allows some traffic to bypass VPN, creating potential risk',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Split tunneling allows some traffic to bypass VPN, potentially exposing the network to risk.',
     topic: 'Network Security',
     subtopic: 'VPN'
@@ -397,11 +397,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'DNS security extensions (DNSSEC):',
     options: [
       'Encrypt DNS queries',
-      'Authenticate DNS responses to prevent spoofing',
+      'Block malicious domains',
       'Hide DNS servers',
-      'Block malicious domains'
+      'Authenticate DNS responses to prevent spoofing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DNSSEC authenticates DNS responses using digital signatures to prevent DNS spoofing.',
     topic: 'Network Security',
     subtopic: 'DNSSEC'
@@ -415,12 +415,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network Access Control (NAC) verifies:',
     options: [
+      'Only time of access',
+      'Only location',
       'Only identity',
       'Device health and compliance before granting network access',
-      'Only location',
-      'Only time of access'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'NAC verifies device identity, health, and policy compliance before allowing network access.',
     topic: 'Network Security',
     subtopic: 'NAC'
@@ -434,12 +434,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Wireless security requires:',
     options: [
+      'Only MAC filtering',
+      'Only physical controls',
       'Only passwords',
       'Strong encryption, authentication, and rogue AP detection',
-      'Only physical controls',
-      'Only MAC filtering'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Wireless security requires strong encryption (WPA3), authentication, and monitoring for rogue access points.',
     topic: 'Network Security',
     subtopic: 'Wireless'
@@ -454,11 +454,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Supply chain security for software should verify:',
     options: [
       'Only vendor reputation',
-      'Component integrity, provenance, and vendor security practices',
       'Only pricing',
-      'Only functionality'
+      'Only functionality',
+      'Component integrity, provenance, and vendor security practices',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Supply chain security verifies component integrity, provenance, and vendor security practices.',
     topic: 'Security Management',
     subtopic: 'Supply Chain'
@@ -473,11 +473,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Security metrics should be:',
     options: [
       'As numerous as possible',
-      'Meaningful, measurable, and actionable',
       'Technical only',
-      'Complex'
+      'Complex',
+      'Meaningful, measurable, and actionable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security metrics should be meaningful to stakeholders, measurable, and drive actionable decisions.',
     topic: 'Security Management',
     subtopic: 'Metrics'
@@ -491,12 +491,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Security control framework mapping:',
     options: [
-      'Is unnecessary',
-      'Helps demonstrate compliance with multiple requirements efficiently',
       'Increases complexity',
-      'Only applies to large organizations'
+      'Is unnecessary',
+      'Only applies to large organizations',
+      'Helps demonstrate compliance with multiple requirements efficiently',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Framework mapping enables efficient demonstration of compliance with multiple regulatory requirements.',
     topic: 'Security Management',
     subtopic: 'Framework Mapping'
@@ -510,12 +510,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security by obscurity:',
     options: [
-      'Is sufficient for protection',
-      'Should not be relied upon as the only protection',
       'Is recommended practice',
-      'Replaces other controls'
+      'Is sufficient for protection',
+      'Replaces other controls',
+      'Should not be relied upon as the only protection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security by obscurity should not be relied upon alone; defense in depth with multiple controls is required.',
     topic: 'Security Principles',
     subtopic: 'Security by Obscurity'
@@ -530,11 +530,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Insider threat programs should include:',
     options: [
       'Only monitoring',
-      'Prevention, detection, training, and response capabilities',
       'Only termination procedures',
-      'Only background checks'
+      'Only background checks',
+      'Prevention, detection, training, and response capabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Insider threat programs require prevention, detection, awareness training, and response capabilities.',
     topic: 'Security Management',
     subtopic: 'Insider Threat'
@@ -549,11 +549,11 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     question: 'Security culture development requires:',
     options: [
       'Policies only',
-      'Leadership commitment, training, and positive reinforcement',
+      'Technology solutions only',
       'Punishment only',
-      'Technology solutions only'
+      'Leadership commitment, training, and positive reinforcement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security culture requires leadership commitment, ongoing training, and positive reinforcement.',
     topic: 'Security Management',
     subtopic: 'Security Culture'

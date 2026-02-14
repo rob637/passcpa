@@ -20,12 +20,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Continuous monitoring differs from periodic auditing because:',
     options: [
+      'It replaces all testing',
       'It only occurs once',
       'It provides ongoing, real-time visibility into control effectiveness',
-      'It replaces all testing',
-      'It uses no technology'
+      'It uses no technology',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Continuous monitoring provides ongoing, often automated assessment rather than point-in-time evaluations.',
     topic: 'Audit Approach',
     subtopic: 'Continuous Monitoring'
@@ -54,19 +54,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA1',
     blueprintArea: 'CISA1-1',
+    topic: 'CAATs',
+    subtopic: 'GAS',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Generalized audit software (GAS) is most useful for:',
+    question: 'An IS auditor wants to verify that all employee terminations processed in HR are properly reflected in the access management system. Which CAAT approach is MOST effective?',
     options: [
-      'Hardware testing only',
-      'Querying and analyzing data from various sources without programming',
-      'Physical inspections',
-      'Interviewing technique'
+      'Using a test data approach to process fictitious terminations',
+      'Using generalized audit software to match terminated employee lists against active user accounts and identify discrepancies',
+      'Reviewing a sample of five termination records manually',
+      'Interviewing the HR manager about the termination process',
     ],
     correctAnswer: 1,
-    explanation: 'GAS provides pre-built functions for data extraction, analysis, and reporting without custom programming.',
-    topic: 'CAATs',
-    subtopic: 'GAS'
+    explanation: 'Generalized audit software can perform comprehensive data matching between the HR termination records and active system user accounts, identifying any terminated employees who still have active access. This approach tests 100% of the population rather than relying on sampling.',
   },
   {
     id: 'cisa1-b13-004',
@@ -77,12 +77,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Embedded audit modules in applications:',
     options: [
-      'Are installed separately',
       'Capture transactions meeting predefined criteria during processing',
       'Only test after system shutdown',
-      'Replace external audits'
+      'Are installed separately',
+      'Replace external audits',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Embedded audit modules are built into applications to capture and report on transactions meeting audit criteria.',
     topic: 'CAATs',
     subtopic: 'Embedded Audit Modules'
@@ -96,12 +96,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Stratification in sampling divides:',
     options: [
-      'All items equally',
       'Population into subgroups with similar characteristics',
       'Only high-value items',
-      'Only by date'
+      'All items equally',
+      'Only by date',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Stratification creates homogeneous subgroups from which samples are selected, improving efficiency.',
     topic: 'Execution',
     subtopic: 'Sampling'
@@ -115,10 +115,10 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Variable sampling is appropriate when:',
     options: [
-      'Testing attribute presence',
-      'Estimating monetary values or quantities',
       'Testing yes/no conditions',
-      'Checking compliance rates'
+      'Estimating monetary values or quantities',
+      'Testing attribute presence',
+      'Checking compliance rates',
     ],
     correctAnswer: 1,
     explanation: 'Variable sampling estimates monetary amounts or quantities, while attribute sampling tests presence/absence of characteristics.',
@@ -130,19 +130,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA1',
     blueprintArea: 'CISA1-1',
+    topic: 'CAATs',
+    subtopic: 'Parallel Simulation',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Parallel simulation involves:',
+    question: 'When conducting a parallel simulation of a loan interest calculation system, what is the MOST critical factor for the IS auditor to ensure?',
     options: [
-      'Copying the entire production system',
-      'Using audit programs to reprocess production data to verify results',
-      'Only testing new systems',
-      'Avoiding production data'
+      'The simulation runs on the same hardware as the production system',
+      'The simulation program uses identical business rules, interest rates, and calculation logic as the production application',
+      'Management approves the simulation before execution',
+      'The simulation is performed by the IT department rather than the audit team',
     ],
     correctAnswer: 1,
-    explanation: 'Parallel simulation uses auditor-controlled programs to reprocess production data and compare to production results.',
-    topic: 'CAATs',
-    subtopic: 'Parallel Simulation'
+    explanation: 'For parallel simulation to produce valid comparative results, the auditor\'s program must replicate the exact business rules, rates, and calculation logic of the production system. Any deviation in logic would produce false discrepancies, leading to incorrect conclusions about the production system\'s accuracy.',
   },
   {
     id: 'cisa1-b13-008',
@@ -153,12 +153,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Integrated test facility (ITF) uses:',
     options: [
+      'Only offline testing',
       'Separate test systems',
       'Fictitious entities in production to test processing without affecting real data',
-      'Only offline testing',
-      'Only historical data'
+      'Only historical data',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'ITF creates dummy entities (like fake departments) in production to test processing controls with real transactions.',
     topic: 'CAATs',
     subtopic: 'ITF'
@@ -172,12 +172,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Working paper review by supervisors ensures:',
     options: [
-      'Faster completion',
       'Quality, completeness, and proper conclusions from evidence',
+      'Faster completion',
       'Lower costs',
-      'Fewer working papers'
+      'Fewer working papers',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Supervisory review verifies that work is complete, properly documented, and conclusions are supported.',
     topic: 'Documentation',
     subtopic: 'Working Paper Review'
@@ -192,11 +192,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Working paper retention should consider:',
     options: [
       'Only audit department preferences',
-      'Legal, regulatory, and organizational requirements',
       'Only storage costs',
-      'Only paper volume'
+      'Legal, regulatory, and organizational requirements',
+      'Only paper volume',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Retention policies must address legal requirements, regulatory mandates, and organizational policies.',
     topic: 'Documentation',
     subtopic: 'Retention'
@@ -229,12 +229,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Opinion or conclusion in audit reports should be:',
     options: [
-      'Vague and general',
       'Clearly stated and supported by sufficient appropriate evidence',
+      'Vague and general',
       'Omitted entirely',
-      'Only positive'
+      'Only positive',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Audit opinions must be clearly stated and based on sufficient appropriate evidence gathered during the audit.',
     topic: 'Reporting',
     subtopic: 'Audit Opinion'
@@ -248,12 +248,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Self-assessment by management:',
     options: [
-      'Replaces all audit activities',
       'Can be used by auditors but requires independent verification',
       'Is never useful',
-      'Has no reliability issues'
+      'Replaces all audit activities',
+      'Has no reliability issues',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Control self-assessments provide useful information but should be verified through independent audit procedures.',
     topic: 'Audit Techniques',
     subtopic: 'Self-Assessment'
@@ -267,10 +267,10 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Materiality thresholds help auditors:',
     options: [
-      'Ignore all small items',
-      'Focus resources on items that could significantly impact conclusions',
       'Test everything equally',
-      'Avoid quantitative analysis'
+      'Focus resources on items that could significantly impact conclusions',
+      'Ignore all small items',
+      'Avoid quantitative analysis',
     ],
     correctAnswer: 1,
     explanation: 'Materiality helps focus audit efforts on items whose misstatement could affect users\' decisions.',
@@ -282,19 +282,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA1',
     blueprintArea: 'CISA1-1',
+    topic: 'Standards and Ethics',
+    subtopic: 'Professional Skepticism',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Professional skepticism requires auditors to:',
+    question: 'During an IS audit, management provides an explanation for a control exception that appears plausible. How should the auditor apply professional skepticism in this situation?',
     options: [
-      'Trust all information',
-      'Question and critically assess evidence rather than accept at face value',
-      'Ignore management assertions',
-      'Be confrontational'
+      'Accept management\'s explanation at face value to maintain a positive relationship',
+      'Obtain independent corroborating evidence to verify management\'s explanation before accepting it',
+      'Reject the explanation automatically and report a finding',
+      'Document the explanation without any follow-up and move to the next audit area',
     ],
     correctAnswer: 1,
-    explanation: 'Professional skepticism means questioning information, recognizing potential for error or fraud, and evaluating evidence critically.',
-    topic: 'Standards and Ethics',
-    subtopic: 'Professional Skepticism'
+    explanation: 'Professional skepticism requires auditors to critically evaluate all evidence and not accept explanations without independent verification. The auditor should corroborate management\'s explanation through additional testing, alternative evidence sources, or third-party confirmation rather than accepting or rejecting it at face value.',
   },
   {
     id: 'cisa1-b13-016',
@@ -305,12 +305,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Conflicts of interest must be:',
     options: [
+      'Kept confidential',
       'Ignored',
       'Disclosed and managed appropriately to maintain objectivity',
-      'Kept confidential',
-      'Reported only externally'
+      'Reported only externally',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Conflicts must be disclosed to appropriate parties and managed to prevent impairment of objectivity.',
     topic: 'Standards and Ethics',
     subtopic: 'Conflicts of Interest'
@@ -348,12 +348,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Technology radar helps organizations:',
     options: [
+      'Only monitor competitors',
       'Only track current systems',
       'Assess and plan adoption of emerging technologies',
-      'Only monitor competitors',
-      'Only manage incidents'
+      'Only manage incidents',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Technology radars help evaluate emerging technologies and plan adoption based on business value and maturity.',
     topic: 'IT Governance',
     subtopic: 'Emerging Technology'
@@ -367,12 +367,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'IT financial management includes:',
     options: [
+      'Only procurement',
       'Only budgeting',
       'Budgeting, cost accounting, cost allocation, and chargeback',
-      'Only procurement',
-      'Only capital expenses'
+      'Only capital expenses',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT financial management encompasses budgeting, cost tracking, allocation methods, and chargeback mechanisms.',
     topic: 'IT Management',
     subtopic: 'IT Finance'
@@ -387,11 +387,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Benefit realization management ensures:',
     options: [
       'Only cost tracking',
-      'Expected benefits from IT investments are actually achieved',
       'Only project completion',
-      'Only budget adherence'
+      'Expected benefits from IT investments are actually achieved',
+      'Only budget adherence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Benefit realization tracks and manages achievement of planned benefits from IT investments over time.',
     topic: 'IT Governance',
     subtopic: 'Benefit Realization'
@@ -406,11 +406,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Control environment includes:',
     options: [
       'Only IT controls',
-      'Organizational culture, structure, ethics, and management philosophy',
       'Only technical controls',
-      'Only policies'
+      'Organizational culture, structure, ethics, and management philosophy',
+      'Only policies',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Control environment encompasses organizational culture, ethical values, structure, and management\'s attitude toward controls.',
     topic: 'IT Governance',
     subtopic: 'Control Environment'
@@ -424,12 +424,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'KPIs vs KRIs differ because:',
     options: [
-      'They are identical',
       'KPIs measure performance achievement; KRIs measure risk exposure',
       'KRIs measure past events only',
-      'KPIs are not quantifiable'
+      'They are identical',
+      'KPIs are not quantifiable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'KPIs measure performance against objectives; KRIs (Key Risk Indicators) measure risk exposure and trends.',
     topic: 'IT Governance',
     subtopic: 'Metrics'
@@ -443,12 +443,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT portfolio management:',
     options: [
-      'Only tracks new projects',
       'Manages all IT investments as a portfolio to optimize value',
       'Only approves budget',
-      'Only reviews proposals'
+      'Only tracks new projects',
+      'Only reviews proposals',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Portfolio management treats all IT investments as a portfolio to balance risk, value, and resource allocation.',
     topic: 'IT Governance',
     subtopic: 'Portfolio Management'
@@ -462,10 +462,10 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Subservice organization reports (SOC reports) address:',
     options: [
-      'Only primary service provider',
-      'Controls at organizations that subservice providers use',
       'Only internal controls',
-      'Only financial controls'
+      'Controls at organizations that subservice providers use',
+      'Only primary service provider',
+      'Only financial controls',
     ],
     correctAnswer: 1,
     explanation: 'Subservice organization reports cover controls at vendors that the primary service provider relies on.',
@@ -496,19 +496,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA2',
     blueprintArea: 'CISA2-1',
+    topic: 'IT Governance',
+    subtopic: 'Shadow IT',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Shadow IT refers to:',
+    question: 'An IS auditor discovers that business units are procuring and implementing SaaS applications without IT approval or security assessment. What is the GREATEST risk associated with this shadow IT?',
     options: [
-      'Backup systems',
-      'IT systems and solutions used without IT department knowledge or approval',
-      'Disaster recovery sites',
-      'Development environments'
+      'The applications may use a different user interface than standard corporate tools',
+      'Sensitive corporate data may be processed and stored in unapproved environments without adequate security controls or data governance',
+      'The applications may have lower licensing costs than IT-approved alternatives',
+      'Business unit managers may receive recognition for their initiative',
     ],
     correctAnswer: 1,
-    explanation: 'Shadow IT includes technology deployed by business units without formal IT knowledge, governance, or support.',
-    topic: 'IT Governance',
-    subtopic: 'Shadow IT'
+    explanation: 'Shadow IT\'s greatest risk is uncontrolled data exposure — corporate data flows into unapproved applications without security assessment, data classification, encryption, access controls, or regulatory compliance verification. This creates blind spots in governance, incident response, and data protection obligations.',
   },
   {
     id: 'cisa2-b13-027',
@@ -519,12 +519,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'IT demand management:',
     options: [
+      'Only tracks costs',
       'Only limits requests',
       'Prioritizes and manages requests for IT services and resources',
-      'Only tracks costs',
-      'Only approves projects'
+      'Only approves projects',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Demand management prioritizes requests for IT services, balancing demands against available capacity.',
     topic: 'IT Management',
     subtopic: 'Demand Management'
@@ -534,19 +534,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA2',
     blueprintArea: 'CISA2-1',
+    topic: 'IT Management',
+    subtopic: 'HR Management',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Succession planning for IT ensures:',
+    question: 'An IS auditor discovers that the organization has no succession plan for its sole database administrator who manages all critical production databases. What is the MOST significant risk?',
     options: [
-      'Only management changes',
-      'Continuity of critical IT capabilities through people transitions',
-      'Only retention',
-      'Only recruitment'
+      'The DBA may request a salary increase',
+      'A single point of failure exists — if the DBA becomes unavailable, no one has the knowledge or access to maintain critical database operations',
+      'The DBA\'s performance cannot be objectively evaluated',
+      'Other IT staff may be demotivated by the DBA\'s specialized role',
     ],
     correctAnswer: 1,
-    explanation: 'Succession planning ensures critical IT roles can be filled when departures occur to maintain capabilities.',
-    topic: 'IT Management',
-    subtopic: 'HR Management'
+    explanation: 'Without succession planning, the departure, disability, or unavailability of a sole DBA creates a critical single point of failure. No other staff member has the knowledge, credentials, or documented procedures to manage production databases, potentially causing extended outages of critical business systems.',
   },
   {
     id: 'cisa2-b13-029',
@@ -558,11 +558,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Balanced scorecard for IT measures:',
     options: [
       'Only financial metrics',
-      'Financial, customer, internal process, and learning/growth perspectives',
       'Only technical metrics',
-      'Only efficiency'
+      'Financial, customer, internal process, and learning/growth perspectives',
+      'Only efficiency',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Balanced scorecard provides a holistic view across financial, customer, process, and learning dimensions.',
     topic: 'IT Governance',
     subtopic: 'Performance Measurement'
@@ -577,19 +577,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'SDLC',
+    subtopic: 'Requirements Management',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Requirements traceability ensures:',
+    question: 'An IS auditor reviewing a large development project discovers that there is no requirements traceability matrix (RTM). What specific audit concern does this raise?',
     options: [
-      'Fewer requirements',
-      'Requirements can be tracked through design, development, and testing',
-      'Only high-level tracking',
-      'Only change tracking'
+      'The project budget may be exceeded',
+      'There is no documented link between business requirements, design specifications, test cases, and deliverables, making it impossible to verify complete coverage',
+      'The development language may not be appropriate for the project',
+      'The project manager lacks appropriate certification',
     ],
     correctAnswer: 1,
-    explanation: 'Traceability links requirements through all project phases to ensure complete implementation and testing.',
-    topic: 'SDLC',
-    subtopic: 'Requirements Management'
+    explanation: 'A requirements traceability matrix links each business requirement to its corresponding design element, test case, and deliverable. Without an RTM, the auditor cannot verify that all requirements were implemented, tested, and delivered — nor can the team identify which features are affected when requirements change.',
   },
   {
     id: 'cisa3-b13-031',
@@ -600,12 +600,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Design patterns in software development:',
     options: [
+      'Increase complexity unnecessarily',
       'Are unique to each project',
-      'Provide reusable solutions to common design problems',
       'Only apply to user interfaces',
-      'Increase complexity unnecessarily'
+      'Provide reusable solutions to common design problems',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Design patterns are proven, reusable solutions to common software design problems.',
     topic: 'Development',
     subtopic: 'Design Patterns'
@@ -620,11 +620,11 @@ const ALL_BATCH13: Question[] = [
     question: 'API versioning helps:',
     options: [
       'Eliminate all changes',
-      'Manage changes while maintaining backward compatibility',
+      'Only documentation',
       'Only internal systems',
-      'Only documentation'
+      'Manage changes while maintaining backward compatibility',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'API versioning allows changes to be made while maintaining support for existing consumers.',
     topic: 'Development',
     subtopic: 'API Management'
@@ -634,19 +634,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'SDLC',
+    subtopic: 'Deployment Strategies',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Blue-green deployment strategy:',
+    question: 'An organization uses blue-green deployment for its e-commerce platform. What is the PRIMARY advantage over a traditional rolling deployment?',
     options: [
-      'Deploys gradually',
-      'Maintains two identical environments to enable zero-downtime deployment',
-      'Only uses one environment',
-      'Requires manual switchover'
+      'Blue-green deployment eliminates the need for testing before release',
+      'Blue-green deployment enables instant rollback to the previous version by switching traffic back to the standby environment',
+      'Blue-green deployment requires fewer servers than rolling deployment',
+      'Blue-green deployment automatically fixes production bugs',
     ],
     correctAnswer: 1,
-    explanation: 'Blue-green has two identical environments; traffic switches from one to the other for zero-downtime releases.',
-    topic: 'SDLC',
-    subtopic: 'Deployment Strategies'
+    explanation: 'Blue-green deployment maintains two identical production environments — one active (serving traffic) and one standby (with the new version). If the new version fails, traffic is instantly switched back to the previous environment, providing near-zero-downtime rollback capability that rolling deployments cannot match.',
   },
   {
     id: 'cisa3-b13-034',
@@ -657,12 +657,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Canary releases:',
     options: [
+      'Never reach production',
+      'Only test internally',
       'Deploy to all users immediately',
       'Deploy to a small subset first to validate before full rollout',
-      'Only test internally',
-      'Never reach production'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Canary releases deploy changes to a small user subset first to detect issues before broad deployment.',
     topic: 'SDLC',
     subtopic: 'Deployment Strategies'
@@ -676,12 +676,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Feature toggles enable:',
     options: [
+      'Only documentation',
+      'Only testing',
       'Only security controls',
       'Releasing code with features that can be enabled/disabled without deployment',
-      'Only testing',
-      'Only documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Feature toggles allow deploying code with features that can be enabled or disabled without redeployment.',
     topic: 'Development',
     subtopic: 'Feature Toggles'
@@ -696,11 +696,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Infrastructure as code (IaC):',
     options: [
       'Only documents infrastructure',
-      'Manages infrastructure through code for automation and consistency',
       'Only monitors systems',
-      'Only tracks costs'
+      'Only tracks costs',
+      'Manages infrastructure through code for automation and consistency',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IaC manages infrastructure provisioning through version-controlled code for consistency and automation.',
     topic: 'Development',
     subtopic: 'IaC'
@@ -715,11 +715,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Immutable infrastructure means:',
     options: [
       'Systems are frequently patched',
-      'Servers are replaced rather than modified when changes are needed',
       'Systems never change',
-      'Only physical servers'
+      'Only physical servers',
+      'Servers are replaced rather than modified when changes are needed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Immutable infrastructure replaces instances rather than modifying them, ensuring consistent, known states.',
     topic: 'Development',
     subtopic: 'Immutable Infrastructure'
@@ -731,14 +731,14 @@ const ALL_BATCH13: Question[] = [
     blueprintArea: 'CISA3-1',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Fuzz testing:',
+    question: 'Which of the following best describes fuzz testing as a security testing technique?',
     options: [
-      'Uses structured inputs',
-      'Provides random or malformed inputs to discover vulnerabilities',
       'Only tests happy paths',
-      'Only tests performance'
+      'Uses structured inputs',
+      'Only tests performance',
+      'Provides random or malformed inputs to discover vulnerabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Fuzz testing provides random, invalid, or unexpected data as input to discover security vulnerabilities.',
     topic: 'Testing',
     subtopic: 'Security Testing'
@@ -752,12 +752,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Contract testing for microservices verifies:',
     options: [
+      'Only security',
       'Legal contracts',
-      'Service interfaces conform to agreed expectations between consumers and providers',
       'Only internal calls',
-      'Only security'
+      'Service interfaces conform to agreed expectations between consumers and providers',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Contract testing verifies that service interfaces conform to expectations defined between service providers and consumers.',
     topic: 'Testing',
     subtopic: 'Contract Testing'
@@ -772,11 +772,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Chaos engineering:',
     options: [
       'Creates system disorder',
-      'Intentionally introduces failures to test resilience',
       'Only applies to testing',
-      'Avoids production'
+      'Avoids production',
+      'Intentionally introduces failures to test resilience',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Chaos engineering deliberately introduces failures to discover weaknesses and improve system resilience.',
     topic: 'Testing',
     subtopic: 'Resilience Testing'
@@ -791,11 +791,11 @@ const ALL_BATCH13: Question[] = [
     question: 'DevSecOps integrates security by:',
     options: [
       'Adding security at the end',
-      'Embedding security practices throughout the development lifecycle',
+      'Only training developers',
       'Only using security tools',
-      'Only training developers'
+      'Embedding security practices throughout the development lifecycle',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DevSecOps embeds security practices, tools, and responsibilities throughout the entire development lifecycle.',
     topic: 'Secure Development',
     subtopic: 'DevSecOps'
@@ -809,12 +809,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Secrets management in CI/CD:',
     options: [
+      'Only applies to production',
       'Stores secrets in code',
-      'Securely handles credentials and keys used in deployment pipelines',
       'Only uses environment variables',
-      'Only applies to production'
+      'Securely handles credentials and keys used in deployment pipelines',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Secrets management securely stores and injects credentials, keys, and tokens used by deployment pipelines.',
     topic: 'Secure Development',
     subtopic: 'Secrets Management'
@@ -828,12 +828,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Container security scanning should check:',
     options: [
+      'Only resource usage',
+      'Only network traffic',
       'Only running containers',
       'Base images, dependencies, and configurations for vulnerabilities',
-      'Only network traffic',
-      'Only resource usage'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Container scanning examines images, dependencies, and configurations for vulnerabilities and misconfigurations.',
     topic: 'Secure Development',
     subtopic: 'Container Security'
@@ -847,12 +847,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Data migration testing should verify:',
     options: [
+      'Only new features',
+      'Only user acceptance',
       'Only speed',
       'Completeness, accuracy, and integrity of migrated data',
-      'Only new features',
-      'Only user acceptance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Migration testing verifies data is completely and accurately transferred with integrity maintained.',
     topic: 'Implementation',
     subtopic: 'Data Migration'
@@ -862,19 +862,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'Implementation',
+    subtopic: 'Post-Implementation Review',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Post-implementation review should assess:',
+    question: 'During a post-implementation review, stakeholders report that the new system meets all functional requirements but response times are three times slower than the legacy system. What type of requirement was inadequately addressed?',
     options: [
-      'Only cost overruns',
-      'Achievement of objectives, lessons learned, and benefits realization',
-      'Only technical issues',
-      'Only schedule variance'
+      'Functional requirements',
+      'Non-functional requirements, specifically performance and response time specifications',
+      'Business continuity requirements',
+      'Regulatory compliance requirements',
     ],
     correctAnswer: 1,
-    explanation: 'PIR evaluates objective achievement, captures lessons learned, and begins tracking benefit realization.',
-    topic: 'Implementation',
-    subtopic: 'Post-Implementation Review'
+    explanation: 'Non-functional requirements specify how a system should perform — including response time, throughput, scalability, and availability — rather than what it should do. Slow response times despite meeting functional requirements indicate that performance non-functional requirements were inadequately defined, tested, or enforced.',
   },
   {
     id: 'cisa3-b13-046',
@@ -885,12 +885,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Technical documentation should be:',
     options: [
-      'Created only at project end',
-      'Maintained throughout the lifecycle and kept current',
       'Optional for small projects',
-      'Only for developers'
+      'Created only at project end',
+      'Only for developers',
+      'Maintained throughout the lifecycle and kept current',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Technical documentation should be created during development and maintained current throughout the system lifecycle.',
     topic: 'SDLC',
     subtopic: 'Documentation'
@@ -905,19 +905,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA4',
     blueprintArea: 'CISA4-1',
+    topic: 'IT Service Management',
+    subtopic: 'Problem Management',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Known error database (KEDB) contains:',
+    question: 'What information should a Known Error Database (KEDB) entry contain to be most useful for incident resolution?',
     options: [
-      'Only open incidents',
-      'Documented problems with known workarounds or solutions',
-      'Only new issues',
-      'Only closed tickets'
+      'Only the error code and date it was first reported',
+      'The root cause analysis, symptoms, documented workaround, affected systems, and status of the permanent fix',
+      'The name of the technician who first reported the error',
+      'A link to the vendor\'s general support page',
     ],
     correctAnswer: 1,
-    explanation: 'KEDB contains documented known errors with their workarounds or solutions to speed resolution.',
-    topic: 'IT Service Management',
-    subtopic: 'Problem Management'
+    explanation: 'An effective KEDB entry should include the root cause, recognizable symptoms, a tested workaround that service desk staff can apply, the systems and configurations affected, and the status of any permanent fix being developed. This enables rapid incident resolution and consistent service quality.',
   },
   {
     id: 'cisa4-b13-048',
@@ -929,11 +929,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Standard changes differ from normal changes because:',
     options: [
       'They require more approval',
+      'They skip testing',
       'They are pre-approved, low-risk changes following defined procedures',
       'They are more complex',
-      'They skip testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Standard changes are pre-approved, routine changes with known, low risk executed via established procedures.',
     topic: 'IT Service Management',
     subtopic: 'Change Management'
@@ -947,12 +947,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Configuration baseline captures:',
     options: [
+      'Only network settings',
       'Only hardware',
       'Approved configuration state at a point in time for comparison',
       'Only software versions',
-      'Only network settings'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Configuration baselines document the approved state to detect unauthorized changes or drift.',
     topic: 'IT Service Management',
     subtopic: 'Configuration Management'
@@ -967,11 +967,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Release and deployment management ensures:',
     options: [
       'Only fast deployment',
+      'Only documentation',
       'Controlled, repeatable deployment while protecting service quality',
       'Only rollback capability',
-      'Only documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Release management provides controlled, repeatable deployment processes that protect live service quality.',
     topic: 'IT Service Management',
     subtopic: 'Release Management'
@@ -986,11 +986,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Knowledge management in IT operations:',
     options: [
       'Only stores documents',
+      'Only uses databases',
       'Captures, organizes, and shares operational knowledge for efficiency',
       'Only applies to support',
-      'Only uses databases'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Knowledge management captures and shares operational knowledge to improve efficiency and consistency.',
     topic: 'IT Service Management',
     subtopic: 'Knowledge Management'
@@ -1004,12 +1004,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Capacity on demand provides:',
     options: [
-      'Fixed capacity always',
       'Ability to quickly scale resources when needed',
+      'Only cost reduction',
+      'Fixed capacity always',
       'Only annual planning',
-      'Only cost reduction'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Capacity on demand enables rapid scaling of resources to meet changing requirements.',
     topic: 'IT Operations',
     subtopic: 'Capacity Management'
@@ -1023,12 +1023,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Performance trending analysis:',
     options: [
-      'Only shows current state',
       'Identifies patterns to predict future capacity needs',
+      'Only measures availability',
+      'Only shows current state',
       'Only tracks incidents',
-      'Only measures availability'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Trending analysis identifies patterns in performance data to anticipate future capacity requirements.',
     topic: 'IT Operations',
     subtopic: 'Performance Management'
@@ -1038,19 +1038,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA4',
     blueprintArea: 'CISA4-1',
+    topic: 'IT Operations',
+    subtopic: 'Reliability Metrics',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Mean time between failures (MTBF) measures:',
+    question: 'An organization uses MTBF and MTTR together to calculate system availability. If a server has an MTBF of 990 hours and an MTTR of 10 hours, what is the expected availability?',
     options: [
-      'Recovery time',
-      'Average operational time between component failures',
-      'Detection time',
-      'Repair time'
+      '90.0%',
+      '99.0%',
+      '99.9%',
+      '95.0%',
     ],
     correctAnswer: 1,
-    explanation: 'MTBF measures the average time a component operates before failing, indicating reliability.',
-    topic: 'IT Operations',
-    subtopic: 'Reliability Metrics'
+    explanation: 'System availability = MTBF / (MTBF + MTTR) = 990 / (990 + 10) = 990/1000 = 99.0%. This means the system is expected to be operational 99% of the time. To improve availability, the organization can increase MTBF (better hardware) or decrease MTTR (faster repairs, hot swappable components).',
   },
   {
     id: 'cisa4-b13-055',
@@ -1063,8 +1063,8 @@ const ALL_BATCH13: Question[] = [
     options: [
       'Only storage reduction',
       'Centralized collection and analysis of logs from multiple sources',
+      'Only backup',
       'Only compliance',
-      'Only backup'
     ],
     correctAnswer: 1,
     explanation: 'Log aggregation centralizes logs from multiple sources for unified analysis, correlation, and retention.',
@@ -1080,12 +1080,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Geographic redundancy for DR should consider:',
     options: [
-      'Only distance',
       'Distance, common risks, latency, and legal/regulatory requirements',
+      'Only distance',
+      'Only network speed',
       'Only cost',
-      'Only network speed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Geographic redundancy planning considers distance, shared risk factors, latency, and jurisdictional requirements.',
     topic: 'Business Continuity',
     subtopic: 'Geographic Redundancy'
@@ -1095,19 +1095,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA4',
     blueprintArea: 'CISA4-1',
+    topic: 'Business Continuity',
+    subtopic: 'Crisis Communications',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Crisis communication plans should:',
+    question: 'An IS auditor reviewing crisis communication during a recent data breach discovers that the organization notified affected customers 90 days after discovery. What compliance risk does this timing create?',
     options: [
-      'Only address media',
-      'Define stakeholders, messages, channels, and responsibilities during crises',
-      'Only use email',
-      'Only cover internal staff'
+      '90 days is considered best practice for breach notification',
+      'Regulations such as GDPR (72 hours) and many US state laws (30-60 days) require breach notification within specific timeframes, and 90 days likely violates these requirements',
+      'Customer notification is not required for data breaches',
+      'The organization should wait longer to gather complete information',
     ],
     correctAnswer: 1,
-    explanation: 'Crisis communication plans define who communicates what, to whom, through which channels during disruptions.',
-    topic: 'Business Continuity',
-    subtopic: 'Crisis Communications'
+    explanation: 'Most data breach notification regulations mandate notification within specific timeframes: GDPR requires notifying authorities within 72 hours, and many US state laws require customer notification within 30-60 days. A 90-day delay likely violates multiple regulatory requirements, exposing the organization to fines and legal liability.',
   },
   {
     id: 'cisa4-b13-058',
@@ -1119,11 +1119,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Third-party BC/DR assessment verifies:',
     options: [
       'Only SLA compliance',
+      'Only technical capabilities',
       'Vendors can support organization continuity requirements',
       'Only financial stability',
-      'Only technical capabilities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Third-party BC/DR assessment ensures vendors have adequate continuity capabilities to support your requirements.',
     topic: 'Business Continuity',
     subtopic: 'Vendor BC'
@@ -1138,11 +1138,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Data replication methods include:',
     options: [
       'Only backup tape',
+      'Only manual copying',
       'Synchronous, asynchronous, and semi-synchronous options',
       'Only cloud backup',
-      'Only manual copying'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Replication options include synchronous (immediate), asynchronous (delayed), and semi-synchronous approaches.',
     topic: 'Business Continuity',
     subtopic: 'Data Replication'
@@ -1156,12 +1156,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Backup verification testing should:',
     options: [
+      'Only check storage',
       'Only check file existence',
       'Perform actual data restores to confirm recoverability',
       'Only verify checksums',
-      'Only check storage'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Backup testing should include actual restores to confirm data can be successfully recovered when needed.',
     topic: 'Business Continuity',
     subtopic: 'Backup Testing'
@@ -1175,12 +1175,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Environmental monitoring in data centers tracks:',
     options: [
-      'Only temperature',
       'Temperature, humidity, water, power, and other conditions',
+      'Only security',
+      'Only temperature',
       'Only personnel',
-      'Only security'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Environmental monitoring tracks temperature, humidity, water detection, power quality, and other conditions.',
     topic: 'IT Operations',
     subtopic: 'Environmental Controls'
@@ -1190,19 +1190,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA4',
     blueprintArea: 'CISA4-1',
+    topic: 'IT Operations',
+    subtopic: 'Maintenance',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Scheduled maintenance windows should be:',
+    question: 'An IS auditor finds that scheduled maintenance windows for critical systems are not communicated to business stakeholders in advance. What is the PRIMARY concern?',
     options: [
-      'Whenever convenient',
-      'Planned during low-impact periods with appropriate communication',
-      'During business hours',
-      'Without notification'
+      'IT staff may be unavailable during maintenance windows',
+      'Business operations may be disrupted unexpectedly because users and dependent systems are not prepared for the scheduled downtime',
+      'Maintenance windows will take longer than planned',
+      'Change advisory board meetings will be cancelled',
     ],
     correctAnswer: 1,
-    explanation: 'Maintenance windows should be scheduled for minimal business impact with advance stakeholder notification.',
-    topic: 'IT Operations',
-    subtopic: 'Maintenance'
+    explanation: 'Failure to communicate scheduled maintenance windows to business stakeholders can result in unexpected service disruptions, data loss from unsaved work, failed batch processing jobs, and frustrated users. Advance communication allows business units to plan around the downtime and prepare contingencies.',
   },
   {
     id: 'cisa4-b13-063',
@@ -1213,10 +1213,10 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Patch management prioritization should consider:',
     options: [
-      'Only vendor release date',
+      'Only ease of deployment',
       'Criticality, exploitability, business impact, and exposure',
+      'Only vendor release date',
       'Only system type',
-      'Only ease of deployment'
     ],
     correctAnswer: 1,
     explanation: 'Patch prioritization considers vulnerability severity, exploitability, business criticality, and system exposure.',
@@ -1237,12 +1237,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Defense in depth provides:',
     options: [
-      'Single strong control',
       'Multiple layers of protection so failure of one does not compromise security',
+      'Only perimeter defense',
+      'Single strong control',
       'Only network security',
-      'Only perimeter defense'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Defense in depth uses multiple layers of controls so no single failure compromises overall security.',
     topic: 'Security Management',
     subtopic: 'Defense in Depth'
@@ -1256,12 +1256,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security control testing should:',
     options: [
-      'Occur only during audits',
       'Be ongoing to verify controls remain effective',
+      'Occur only after incidents',
+      'Occur only during audits',
       'Test only technical controls',
-      'Occur only after incidents'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Control testing should be ongoing to provide assurance that controls continue to operate effectively.',
     topic: 'Security Management',
     subtopic: 'Control Testing'
@@ -1271,19 +1271,19 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Access Control',
+    subtopic: 'Privileged Access',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Privileged access management (PAM) controls:',
+    question: 'Which PAM control is MOST effective at preventing privileged credential abuse by reducing the window of opportunity for attackers?',
     options: [
-      'Only user accounts',
-      'Access to sensitive systems and elevated privileges',
-      'Only group memberships',
-      'Only password resets'
+      'Requiring complex passwords for privileged accounts',
+      'Implementing automated password rotation and vaulting so privileged credentials are checked out for single use and changed after each session',
+      'Assigning permanent privileged passwords to senior IT staff',
+      'Publishing privileged passwords on a restricted SharePoint site',
     ],
     correctAnswer: 1,
-    explanation: 'PAM manages and monitors privileged access to protect sensitive systems and data.',
-    topic: 'Access Control',
-    subtopic: 'Privileged Access'
+    explanation: 'Automated credential vaulting with session-based checkout and automatic rotation after use minimizes the window during which stolen credentials remain valid. This PAM approach ensures that even if an attacker obtains a privileged password, it becomes invalid after a single use or short time period.',
   },
   {
     id: 'cisa5-b13-067',
@@ -1295,11 +1295,11 @@ const ALL_BATCH13: Question[] = [
     question: 'Just-in-time (JIT) access:',
     options: [
       'Provides permanent privileges',
+      'Only uses service accounts',
       'Grants access only when needed and revokes when no longer required',
       'Only applies to administrators',
-      'Only uses service accounts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'JIT access provides privileges only when needed for a specific task and removes them after completion.',
     topic: 'Access Control',
     subtopic: 'JIT Access'
@@ -1309,57 +1309,57 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Security Operations',
+    subtopic: 'SIEM',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Security information and event management (SIEM) provides:',
+    question: 'An organization\'s SIEM system generates 10,000 alerts daily, but the security team can only investigate 200. What should the IS auditor recommend to improve SIEM effectiveness?',
     options: [
-      'Only log storage',
-      'Collection, correlation, and analysis of security events across sources',
-      'Only alerting',
-      'Only reporting'
+      'Disabling the SIEM system until additional staff are hired',
+      'Tuning correlation rules and implementing alert prioritization to reduce false positives and focus on high-risk events',
+      'Forwarding all alerts to executive management for review',
+      'Reducing the number of log sources to decrease alert volume',
     ],
     correctAnswer: 1,
-    explanation: 'SIEM collects, correlates, and analyzes security events from multiple sources for detection and response.',
-    topic: 'Security Operations',
-    subtopic: 'SIEM'
+    explanation: 'SIEM effectiveness depends on properly tuned correlation rules and alert prioritization. Excessive false positives cause alert fatigue. The auditor should recommend refining detection rules, implementing risk-based alert scoring, and using automation (SOAR) to handle routine alerts, allowing analysts to focus on genuine threats.',
   },
   {
     id: 'cisa5-b13-069',
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Security Operations',
+    subtopic: 'SOAR',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Security orchestration, automation, and response (SOAR):',
+    question: 'An organization implements a SOAR platform alongside its SIEM. What is the PRIMARY benefit that SOAR provides beyond SIEM capabilities?',
     options: [
-      'Only automates alerts',
-      'Automates security operations and incident response workflows',
-      'Only manages tickets',
-      'Only reports metrics'
+      'SOAR replaces the need for a SIEM entirely',
+      'SOAR automates repetitive incident response workflows — such as threat enrichment, containment, and remediation playbooks — reducing response time and analyst workload',
+      'SOAR provides better log storage than SIEM',
+      'SOAR eliminates the need for a security operations team',
     ],
     correctAnswer: 1,
-    explanation: 'SOAR automates and orchestrates security operations and incident response for faster, consistent handling.',
-    topic: 'Security Operations',
-    subtopic: 'SOAR'
+    explanation: 'SOAR (Security Orchestration, Automation, and Response) extends SIEM by automating incident response workflows. While SIEM detects and correlates events, SOAR executes predefined playbooks to automatically enrich alerts with threat intelligence, contain threats, and perform initial remediation steps, dramatically reducing mean time to respond.',
   },
   {
     id: 'cisa5-b13-070',
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Security Operations',
+    subtopic: 'Threat Intelligence',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Threat intelligence provides:',
+    question: 'A CISO wants to enhance the organization\'s threat intelligence capability. Which type of threat intelligence would be MOST useful for strategic decision-making by executive leadership?',
     options: [
-      'Only technical indicators',
-      'Contextual information about threats to inform security decisions',
-      'Only vulnerability data',
-      'Only compliance data'
+      'Technical indicators of compromise (IOCs) such as malicious IP addresses and file hashes',
+      'Strategic threat intelligence covering threat actor motivations, industry targeting trends, and geopolitical risk factors',
+      'Tactical intelligence on specific malware signatures for firewall rules',
+      'Operational intelligence on active command-and-control servers',
     ],
     correctAnswer: 1,
-    explanation: 'Threat intelligence provides context about threats, actors, and tactics to inform security decisions.',
-    topic: 'Security Operations',
-    subtopic: 'Threat Intelligence'
+    explanation: 'Strategic threat intelligence provides high-level analysis of threat landscapes, actor motivations, industry trends, and geopolitical factors. This supports executive decision-making on security investments, risk appetite, and organizational strategy. Technical and tactical intelligence serves operational security teams for immediate response.',
   },
   {
     id: 'cisa5-b13-071',
@@ -1372,8 +1372,8 @@ const ALL_BATCH13: Question[] = [
     options: [
       'Replace real systems',
       'Attract and detect attackers while gathering intelligence',
+      'Only train users',
       'Only test defenses',
-      'Only train users'
     ],
     correctAnswer: 1,
     explanation: 'Deception technologies lure attackers to decoy systems to detect intrusions and gather intelligence.',
@@ -1389,12 +1389,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Application',
     question: 'Endpoint detection and response (EDR):',
     options: [
-      'Only prevents malware',
       'Monitors endpoints and provides investigation and response capabilities',
+      'Only prevents malware',
+      'Only encrypts data',
       'Only manages patches',
-      'Only encrypts data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'EDR monitors endpoint activity and provides detection, investigation, and response capabilities.',
     topic: 'Security Operations',
     subtopic: 'EDR'
@@ -1408,12 +1408,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Zero-day vulnerabilities:',
     options: [
-      'Are always patched immediately',
       'Have no vendor patch available when first exploited',
+      'Only affect old systems',
+      'Are always patched immediately',
       'Are not serious',
-      'Only affect old systems'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Zero-days are vulnerabilities without patches when initially discovered or exploited.',
     topic: 'Security Threats',
     subtopic: 'Zero-Day'
@@ -1427,10 +1427,10 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Man-in-the-middle attacks intercept:',
     options: [
-      'Only email',
+      'Only files',
       'Communications between parties without their knowledge',
+      'Only email',
       'Only passwords',
-      'Only files'
     ],
     correctAnswer: 1,
     explanation: 'MITM attacks intercept and potentially modify communications between parties without their awareness.',
@@ -1446,10 +1446,10 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Credential stuffing uses:',
     options: [
-      'Random passwords',
+      'Only admin accounts',
       'Breached credentials from one site to attack other accounts',
+      'Random passwords',
       'Only weak passwords',
-      'Only admin accounts'
     ],
     correctAnswer: 1,
     explanation: 'Credential stuffing uses stolen username/password combinations from breaches to attempt access on other sites.',
@@ -1461,38 +1461,38 @@ const ALL_BATCH13: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Security Management',
+    subtopic: 'Awareness',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Security awareness training should:',
+    question: 'An IS auditor evaluates the organization\'s security awareness program and finds that training metrics focus only on completion rates. What additional metric would BETTER measure program effectiveness?',
     options: [
-      'Occur once at hire',
-      'Be ongoing and tailored to current threats and roles',
-      'Only cover policies',
-      'Only use videos'
+      'The total budget allocated to the training program',
+      'Phishing simulation click rates and the rate of employee reporting of suspicious emails before and after training',
+      'The number of compliance certifications held by the training manager',
+      'The length of each training session in minutes',
     ],
     correctAnswer: 1,
-    explanation: 'Awareness training should be ongoing, address current threats, and be relevant to user roles.',
-    topic: 'Security Management',
-    subtopic: 'Awareness'
+    explanation: 'Effectiveness metrics such as phishing simulation results (click rates, reporting rates) measure actual behavioral change rather than mere participation. A decline in click rates and increase in reporting post-training demonstrates that employees are applying security awareness, which is the program\'s true objective.',
   },
   {
     id: 'cisa5-b13-077',
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Security Management',
+    subtopic: 'Phishing Tests',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Phishing simulations:',
+    question: 'An organization conducts quarterly phishing simulations. The most recent simulation shows that 35% of employees clicked the phishing link, down from 45% the previous quarter. What should the IS auditor recommend?',
     options: [
-      'Are unethical',
-      'Test and reinforce user awareness through controlled exercises',
-      'Only track success rates',
-      'Only punish failures'
+      'The program is successful and no further action is needed',
+      'Continue the program while implementing targeted training for the 35% who clicked, analyzing which departments and role types are most susceptible',
+      'Suspend the simulation program since it is causing employee stress',
+      'Increase the difficulty of simulations to achieve higher click rates',
     ],
     correctAnswer: 1,
-    explanation: 'Phishing simulations test user awareness and provide training opportunities through controlled exercises.',
-    topic: 'Security Management',
-    subtopic: 'Phishing Tests'
+    explanation: 'While the improvement trend is positive, a 35% click rate still represents significant organizational risk. The auditor should recommend targeted remedial training for susceptible employees, analysis by department and role to identify patterns, and continued simulations with progressive difficulty to build resilience.',
   },
   {
     id: 'cisa5-b13-078',
@@ -1505,8 +1505,8 @@ const ALL_BATCH13: Question[] = [
     options: [
       'Only encrypt data',
       'Detect and prevent unauthorized data transfer',
+      'Only block email',
       'Only monitor traffic',
-      'Only block email'
     ],
     correctAnswer: 1,
     explanation: 'DLP identifies, monitors, and prevents unauthorized transmission or disclosure of sensitive data.',
@@ -1524,8 +1524,8 @@ const ALL_BATCH13: Question[] = [
     options: [
       'Only file access',
       'Usage controls on content regardless of location',
+      'Only viewing time',
       'Only printing restrictions',
-      'Only viewing time'
     ],
     correctAnswer: 1,
     explanation: 'Rights management enforces usage restrictions on content (view, edit, print, forward) wherever it travels.',
@@ -1541,12 +1541,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Privacy impact assessments (PIA) evaluate:',
     options: [
-      'Only compliance',
       'Privacy risks of processing personal data and mitigation measures',
+      'Only compliance',
+      'Only policy compliance',
       'Only technical controls',
-      'Only policy compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'PIAs assess privacy risks associated with personal data processing and identify mitigation measures.',
     topic: 'Privacy',
     subtopic: 'Privacy Assessment'
@@ -1560,12 +1560,12 @@ const ALL_BATCH13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data subject access requests (DSAR) require:',
     options: [
-      'Denial by default',
       'Providing individuals access to their personal data upon request',
+      'Denial by default',
+      'Only legal review',
       'Only administrative approval',
-      'Only legal review'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'DSARs give individuals the right to obtain copies of their personal data held by organizations.',
     topic: 'Privacy',
     subtopic: 'Data Subject Rights'

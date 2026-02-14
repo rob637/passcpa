@@ -29,11 +29,11 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     question: 'Form 2848, Power of Attorney and Declaration of Representative, is used to:',
     options: [
       'Request a tax refund',
+      'Request penalty abatement',
       'Authorize a representative to act on behalf of a taxpayer before the IRS',
       'File an amended return',
-      'Request penalty abatement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 2848 authorizes an individual to represent a taxpayer before the IRS. It allows the representative to receive confidential tax information, sign agreements, and take other actions on behalf of the taxpayer.',
     reference: 'Form 2848 Instructions',
   },
@@ -48,12 +48,12 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 8821, Tax Information Authorization, allows an individual to:',
     options: [
+      'Negotiate offers in compromise',
       'Represent the taxpayer in an audit',
       'Receive and inspect confidential tax information but not represent the taxpayer',
       'Sign returns on behalf of the taxpayer',
-      'Negotiate offers in compromise'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 8821 allows a designee to receive and inspect confidential tax information. Unlike Form 2848, it does not authorize the designee to represent the taxpayer or perform other actions before the IRS.',
     reference: 'Form 8821 Instructions',
   },
@@ -68,12 +68,12 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Centralized Authorization File (CAF) is:',
     options: [
+      'A filing system for paper returns',
       'A list of all tax preparers',
       'A computer database containing representative authorization information',
       'The IRS criminal investigations database',
-      'A filing system for paper returns'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The CAF is an IRS computer database that contains information about representative authorizations. When Form 2848 or 8821 is processed, the authorization is recorded in the CAF system.',
     reference: 'IRS Publication 947',
   },
@@ -90,8 +90,8 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     options: [
       'The tax return is filed',
       'The taxpayer files a new Form 2848 for the same matters without checking the box to add representative',
+      'The representative changes addresses',
       'The tax year ends',
-      'The representative changes addresses'
     ],
     correctAnswer: 1,
     explanation: 'A new Form 2848 for the same tax matters revokes prior powers of attorney unless the taxpayer specifically indicates they want to add the new representative without revoking the existing ones.',
@@ -110,8 +110,8 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     options: [
       'No special requirements beyond normal preparation',
       'Completing Form 8867 and retaining documentation',
+      'Notifying the IRS within 30 days of preparing the return',
       'Obtaining IRS approval before claiming these credits',
-      'Notifying the IRS within 30 days of preparing the return'
     ],
     correctAnswer: 1,
     explanation: 'Paid preparers must complete Form 8867 (Paid Preparer\'s Due Diligence Checklist), retain required documentation, and meet knowledge and inquiry requirements when claiming EITC, CTC, AOTC, or HOH status.',
@@ -132,12 +132,12 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following individuals may practice before the IRS without restriction?',
     options: [
-      'Any college graduate',
       'Attorneys, CPAs, and Enrolled Agents',
+      'Any tax return preparer',
+      'Any college graduate',
       'Only attorneys',
-      'Any tax return preparer'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Attorneys, CPAs, and Enrolled Agents have unlimited practice rights before the IRS. They can represent clients on any tax matter before any IRS office. Other practitioners have limited rights.',
     reference: 'Circular 230 §10.3',
   },
@@ -152,12 +152,12 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An Enrolled Agent earns their status by:',
     options: [
-      'Passing the CPA Exam',
       'Passing the Special Enrollment Examination (SEE) or having relevant IRS experience',
+      'Working for a tax preparation company for 5 years',
+      'Passing the CPA Exam',
       'Graduating from law school',
-      'Working for a tax preparation company for 5 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Individuals become Enrolled Agents by passing the three-part SEE or by having at least 5 years of past IRS employment that qualifies them for enrollment. EAs must also pass a background check.',
     reference: 'Circular 230 §10.4',
   },
@@ -172,10 +172,10 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Circular 230 governs:',
     options: [
-      'Only Enrolled Agents',
+      'Tax court procedures',
       'Practice before the IRS by attorneys, CPAs, EAs, and other practitioners',
+      'Only Enrolled Agents',
       'Only IRS employees',
-      'Tax court procedures'
     ],
     correctAnswer: 1,
     explanation: 'Circular 230 (31 CFR Part 10) contains the rules governing the practice of attorneys, CPAs, Enrolled Agents, enrolled retirement plan agents, and other persons before the IRS.',
@@ -193,11 +193,11 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     question: 'An Annual Filing Season Program (AFSP) participant may:',
     options: [
       'Represent clients in all IRS matters',
+      'Practice without any restrictions',
       'Represent clients only before revenue agents, customer service, and the Taxpayer Advocate',
       'Represent clients before IRS Appeals',
-      'Practice without any restrictions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'AFSP participants have limited representation rights. They can represent clients before IRS revenue agents, customer service representatives, and the Taxpayer Advocate Service. They cannot represent clients in Appeals or Collections.',
     reference: 'Circular 230 §10.7',
   },
@@ -212,12 +212,12 @@ export const SEE3_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A practitioner may represent clients with conflicting interests if:',
     options: [
-      'Representation is never allowed when conflicts exist',
       'The practitioner reasonably believes they can provide competent representation and obtains written consent',
+      'The representation is limited to 6 months',
+      'Representation is never allowed when conflicts exist',
       'The fee is disclosed to both parties',
-      'The representation is limited to 6 months'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Practitioners may represent conflicting interests if they reasonably believe competent representation is possible and each affected client gives informed written consent within 30 days.',
     reference: 'Circular 230 §10.29',
   },

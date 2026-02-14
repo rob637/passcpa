@@ -24,12 +24,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Jordan Manufacturing purchased 10,000 pounds of direct materials at $5.20 per pound. The standard price is $5.00 per pound. What is the materials price variance?',
     options: [
+      '$1,000 Favorable',
       '$2,000 Unfavorable',
       '$2,000 Favorable',
       '$1,000 Unfavorable',
-      '$1,000 Favorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Materials Price Variance = (Actual Price - Standard Price) × Actual Quantity Purchased\nMPV = ($5.20 - $5.00) × 10,000 = $0.20 × 10,000 = $2,000\nSince actual price exceeds standard, the variance is Unfavorable.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -45,12 +45,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Apex Corp produced 2,000 units. The standard allows 3 pounds per unit at $4 per pound. Actual usage was 6,400 pounds. What is the materials quantity variance?',
     options: [
+      '$2,400 Unfavorable',
       '$1,600 Unfavorable',
       '$1,600 Favorable',
       '$1,200 Unfavorable',
-      '$2,400 Unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Standard Quantity Allowed = 2,000 units × 3 lbs = 6,000 lbs\nMaterials Quantity Variance = (Actual Qty Used - Standard Qty Allowed) × Standard Price\nMQV = (6,400 - 6,000) × $4 = 400 × $4 = $1,600 Unfavorable\nUsed more materials than standard allows.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -66,12 +66,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Workers were paid $18.50 per hour for 4,200 actual hours worked. The standard labor rate is $18.00 per hour. What is the labor rate variance?',
     options: [
-      '$2,100 Unfavorable',
+      '$900 Favorable',
       '$2,100 Favorable',
+      '$2,100 Unfavorable',
       '$900 Unfavorable',
-      '$900 Favorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Labor Rate Variance = (Actual Rate - Standard Rate) × Actual Hours\nLRV = ($18.50 - $18.00) × 4,200 = $0.50 × 4,200 = $2,100 Unfavorable\nPaid more per hour than standard.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -87,10 +87,10 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'A company produced 1,500 units. Standard is 2 hours per unit at $20/hour. Actual hours worked: 2,850. What is the labor efficiency variance?',
     options: [
-      '$3,000 Unfavorable',
+      '$1,500 Unfavorable',
       '$3,000 Favorable',
+      '$3,000 Unfavorable',
       '$2,850 Unfavorable',
-      '$1,500 Unfavorable'
     ],
     correctAnswer: 1,
     explanation: 'Standard Hours Allowed = 1,500 units × 2 hours = 3,000 hours\nLabor Efficiency Variance = (Actual Hours − Standard Hours Allowed) × Standard Rate\nLEV = (2,850 − 3,000) × $20 = −150 × $20 = −$3,000\nSince actual hours (2,850) are fewer than standard hours allowed (3,000), the company used fewer labor hours than expected. A negative LEV (or fewer hours used) indicates a Favorable variance of $3,000.',
@@ -108,12 +108,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Actual variable overhead: $45,000. Actual hours: 9,000. Standard variable overhead rate: $4.50 per hour. What is the variable overhead spending variance?',
     options: [
-      '$4,500 Unfavorable',
       '$4,500 Favorable',
+      '$5,000 Favorable',
+      '$4,500 Unfavorable',
       '$5,000 Unfavorable',
-      '$5,000 Favorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Variable OH Spending Variance = Actual VOH - (Actual Hours × Standard VOH Rate)\nVOH Spending = $45,000 - (9,000 × $4.50) = $45,000 - $40,500 = $4,500 Unfavorable\nSpent more on variable overhead than expected for actual hours worked.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -129,12 +129,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Standard hours allowed: 8,500. Actual hours: 9,000. Standard variable overhead rate: $4.50 per hour. What is the variable overhead efficiency variance?',
     options: [
-      '$2,250 Unfavorable',
       '$2,250 Favorable',
+      '$2,250 Unfavorable',
+      '$2,500 Unfavorable',
       '$2,000 Unfavorable',
-      '$2,500 Unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Variable OH Efficiency Variance = (Actual Hours - Standard Hours Allowed) × Standard VOH Rate\nVOH Efficiency = (9,000 - 8,500) × $4.50 = 500 × $4.50 = $2,250 Unfavorable\nUsed more hours than standard, causing higher variable overhead.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -152,8 +152,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$5,000 Unfavorable',
       '$5,000 Favorable',
+      '$0',
       '$125,000 Unfavorable',
-      '$0'
     ],
     correctAnswer: 0,
     explanation: 'Fixed OH Budget Variance = Actual Fixed OH - Budgeted Fixed OH\nFOH Budget = $125,000 - $120,000 = $5,000 Unfavorable\nSpent more on fixed overhead than budgeted.',
@@ -172,9 +172,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Budgeted fixed OH: $100,000. Normal capacity: 10,000 units (20,000 DLH). Actual production: 9,000 units (standard 2 DLH each). What is the fixed overhead volume variance?',
     options: [
       '$10,000 Unfavorable',
+      '$0',
       '$10,000 Favorable',
       '$5,000 Unfavorable',
-      '$0'
     ],
     correctAnswer: 0,
     explanation: 'FOH Rate = $100,000 / 20,000 DLH = $5 per DLH\nStandard Hours Allowed = 9,000 units × 2 DLH = 18,000 DLH\nApplied FOH = 18,000 × $5 = $90,000\nFOH Volume Variance = Budgeted FOH - Applied FOH\n= $100,000 - $90,000 = $10,000 Unfavorable\nProduced below capacity, so fixed costs not fully absorbed.',
@@ -192,12 +192,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Standard cost per unit: DM $15, DL $24, VOH $8, FOH $12. Actual costs for 1,000 units: DM $16,200, DL $23,000, VOH $8,400, FOH $12,500. What is the total variance?',
     options: [
+      '$2,100 Unfavorable',
       '$1,100 Unfavorable',
       '$1,100 Favorable',
       '$900 Favorable',
-      '$2,100 Unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Standard Total = 1,000 × ($15 + $24 + $8 + $12) = 1,000 × $59 = $59,000\nActual Total = $16,200 + $23,000 + $8,400 + $12,500 = $60,100\nTotal Variance = Actual - Standard = $60,100 - $59,000 = $1,100 Unfavorable\nActual costs exceeded standard by $1,100.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -214,9 +214,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Budgeted sales: 5,000 units at CM of $40 each. Actual sales: 4,800 units. What is the sales volume variance?',
     options: [
       '$8,000 Unfavorable',
+      '$40,000 Unfavorable',
       '$8,000 Favorable',
       '$200 Unfavorable',
-      '$40,000 Unfavorable'
     ],
     correctAnswer: 0,
     explanation: 'Sales Volume Variance = (Actual Units - Budgeted Units) × Budgeted CM per unit\n= (4,800 - 5,000) × $40 = -200 × $40 = -$8,000\nUnfavorable because fewer units sold than budgeted.',
@@ -235,9 +235,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Budgeted selling price: $100. Actual selling price: $95. Actual units sold: 4,800. What is the sales price variance?',
     options: [
       '$24,000 Unfavorable',
+      '$480,000 Unfavorable',
       '$24,000 Favorable',
       '$5 Unfavorable',
-      '$480,000 Unfavorable'
     ],
     correctAnswer: 0,
     explanation: 'Sales Price Variance = (Actual Price - Budgeted Price) × Actual Units Sold\n= ($95 - $100) × 4,800 = -$5 × 4,800 = -$24,000 Unfavorable\nSold at lower price than budgeted.',
@@ -255,12 +255,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company uses two materials. Standard mix: 60% A at $5, 40% B at $8. Actual usage for 10,000 total lbs: 5,500 lbs A, 4,500 lbs B. What is the materials mix variance?',
     options: [
+      '$3,000 Unfavorable',
       '$1,500 Unfavorable',
       '$1,500 Favorable',
       '$500 Unfavorable',
-      '$3,000 Unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Standard mix for 10,000 lbs: A = 6,000 lbs, B = 4,000 lbs\nActual: A = 5,500 lbs, B = 4,500 lbs\nMix Variance = Σ(Actual Qty - Standard Qty at Actual Total) × Standard Price\nA: (5,500 - 6,000) × $5 = -$2,500 (Favorable - used less of cheap material)\nB: (4,500 - 4,000) × $8 = +$4,000 (Unfavorable - used more of expensive material)\nTotal Mix Variance = -$2,500 + $4,000 = $1,500 Unfavorable',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -276,12 +276,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Static budget: 10,000 units, variable costs $50,000. Actual: 12,000 units produced, actual variable costs $62,000. What is the flexible budget variance for variable costs?',
     options: [
-      '$2,000 Unfavorable',
       '$2,000 Favorable',
+      '$10,000 Unfavorable',
+      '$2,000 Unfavorable',
       '$12,000 Unfavorable',
-      '$10,000 Unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Variable cost per unit = $50,000 / 10,000 = $5 per unit\nFlexible budget for 12,000 units = 12,000 × $5 = $60,000\nFlexible Budget Variance = Actual - Flexible Budget\n= $62,000 - $60,000 = $2,000 Unfavorable',
     reference: 'IMA CMA LOS 1C2',
     calculationType: 'variance-analysis',
@@ -297,12 +297,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Budgeted FOH: $80,000 at 8,000 DLH. Actual FOH: $82,000. Actual DLH: 7,800. Standard DLH allowed: 7,500. Under the 3-way analysis, what is the spending variance?',
     options: [
-      '$2,000 Unfavorable',
+      '$3,000 Unfavorable',
       '$2,000 Favorable',
+      '$2,000 Unfavorable',
       '$5,000 Unfavorable',
-      '$3,000 Unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'In 3-way analysis:\nSpending Variance = Actual FOH - Budgeted FOH\n= $82,000 - $80,000 = $2,000 Unfavorable\n(Note: This is the budget/spending variance, separate from efficiency and volume)',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
@@ -320,8 +320,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$4,800 Unfavorable',
       '$4,800 Favorable',
+      '$2,400 Unfavorable',
       '$4,000 Unfavorable',
-      '$2,400 Unfavorable'
     ],
     correctAnswer: 0,
     explanation: 'Expected output from 12,000 lbs = 12,000 / 1.2 = 10,000 units\nActual output = 9,600 units\nLost output = 10,000 - 9,600 = 400 units\nYield Variance = Lost output × Standard cost per unit (input)\nStandard input cost per unit = 1.2 lbs × $10 = $12\nYield Variance = 400 units × $12 = $4,800 Unfavorable',
@@ -343,12 +343,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: 50,000 units. Beginning inventory: 4,000 units. Desired ending inventory: 6,000 units. How many units must be produced?',
     options: [
-      '52,000 units',
       '48,000 units',
+      '52,000 units',
+      '54,000 units',
       '50,000 units',
-      '54,000 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Production = Sales + Ending Inventory - Beginning Inventory\nProduction = 50,000 + 6,000 - 4,000 = 52,000 units\nMust produce more than sales to build inventory.',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -364,12 +364,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Production requires 3 lbs of material per unit. Planned production: 20,000 units. Beginning materials: 8,000 lbs. Desired ending materials: 10,000 lbs. Material cost: $2/lb. What is the direct materials purchases budget?',
     options: [
-      '$124,000',
       '$120,000',
+      '$124,000',
+      '$116,000',
       '$132,000',
-      '$116,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Materials needed for production = 20,000 × 3 = 60,000 lbs\nPurchases = Needed + Ending - Beginning\nPurchases = 60,000 + 10,000 - 8,000 = 62,000 lbs\nPurchases budget = 62,000 × $2 = $124,000',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -386,9 +386,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Planned production: 15,000 units. Each unit requires 0.5 direct labor hours at $22 per hour. What is the direct labor budget?',
     options: [
       '$165,000',
+      '$75,000',
       '$330,000',
       '$150,000',
-      '$75,000'
     ],
     correctAnswer: 0,
     explanation: 'Direct Labor Hours = 15,000 units × 0.5 hours = 7,500 hours\nDirect Labor Budget = 7,500 hours × $22 = $165,000',
@@ -407,9 +407,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Sales: January $100,000, February $120,000. Collections: 60% in month of sale, 35% next month, 5% uncollectible. What are March collections if March sales are $140,000?',
     options: [
       '$126,000',
+      '$119,000',
       '$84,000',
       '$42,000',
-      '$119,000'
     ],
     correctAnswer: 0,
     explanation: 'March collections:\nFrom March sales: $140,000 × 60% = $84,000\nFrom February sales: $120,000 × 35% = $42,000\nTotal March collections = $84,000 + $42,000 = $126,000',
@@ -427,12 +427,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Beginning cash: $25,000. Collections: $180,000. Disbursements: $195,000. Minimum cash balance: $20,000. How much must be borrowed?',
     options: [
+      '$0',
       '$10,000',
       '$15,000',
       '$5,000',
-      '$0'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Cash before borrowing = Beginning + Collections - Disbursements\n= $25,000 + $180,000 - $195,000 = $10,000\nShortfall = Minimum required - Cash before borrowing\n= $20,000 - $10,000 = $10,000 must be borrowed',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -448,12 +448,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Variable OH: $3 per DLH. Fixed OH: $50,000 (includes $8,000 depreciation). Budgeted DLH: 12,000. What is the cash outflow for manufacturing overhead?',
     options: [
+      '$92,000',
       '$78,000',
       '$86,000',
       '$42,000',
-      '$92,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Total OH = Variable + Fixed\nVariable OH = 12,000 × $3 = $36,000\nFixed OH = $50,000\nTotal OH = $86,000\nCash outflow = Total - Depreciation = $86,000 - $8,000 = $78,000\nDepreciation is non-cash.',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -469,12 +469,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Q1 projected unit sales: 10,000. Q2: 12,000. Q3: 15,000. Q4: 13,000. Selling price: $25 per unit. What is the annual sales budget?',
     options: [
-      '$1,250,000',
+      '$1,500,000',
       '$50,000',
+      '$1,250,000',
       '$1,000,000',
-      '$1,500,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Total units = 10,000 + 12,000 + 15,000 + 13,000 = 50,000 units\nSales budget = 50,000 × $25 = $1,250,000',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -490,12 +490,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Fixed S&A expenses: $40,000/month. Variable S&A: 5% of sales. Monthly sales: $200,000. What is the monthly S&A budget?',
     options: [
-      '$50,000',
+      '$60,000',
       '$40,000',
+      '$50,000',
       '$10,000',
-      '$60,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Variable S&A = $200,000 × 5% = $10,000\nFixed S&A = $40,000\nTotal S&A budget = $10,000 + $40,000 = $50,000',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -511,12 +511,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Sales: $500,000. COGS: 60% of sales. S&A: $80,000. Interest: $15,000. Tax rate: 25%. What is budgeted net income?',
     options: [
-      '$78,750',
       '$105,000',
+      '$78,750',
+      '$93,750',
       '$120,000',
-      '$93,750'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Sales: $500,000\nCOGS: $500,000 × 60% = $300,000\nGross Profit: $200,000\nS&A: $80,000\nOperating Income: $120,000\nInterest: $15,000\nEBT: $105,000\nTax: $105,000 × 25% = $26,250\nNet Income: $105,000 - $26,250 = $78,750',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -532,12 +532,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cost equation from regression: Y = $15,000 + $3.50X. R² = 0.92. If activity level is 8,000 units, what is the predicted cost?',
     options: [
-      '$43,000',
       '$28,000',
+      '$43,000',
+      '$31,500',
       '$15,000',
-      '$31,500'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Y = $15,000 + $3.50(8,000)\nY = $15,000 + $28,000\nY = $43,000\nThe R² of 0.92 indicates 92% of cost variation is explained by this model.',
     reference: 'IMA CMA LOS 1F3',
     calculationType: 'regression',
@@ -559,8 +559,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$15 per DLH',
       '$150 per DLH',
+      '$45 per DLH',
       '$1.50 per DLH',
-      '$45 per DLH'
     ],
     correctAnswer: 0,
     explanation: 'POHR = Estimated OH / Estimated Allocation Base\nPOHR = $450,000 / 30,000 DLH = $15 per DLH',
@@ -579,9 +579,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'POHR: $12 per machine hour. Job #101 used 350 machine hours. What is the overhead applied to Job #101?',
     options: [
       '$4,200',
+      '$2,400',
       '$3,500',
       '$4,800',
-      '$2,400'
     ],
     correctAnswer: 0,
     explanation: 'Applied OH = POHR × Actual base used\nApplied OH = $12 × 350 = $4,200',
@@ -599,12 +599,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Actual overhead: $485,000. Applied overhead: $462,000. Is overhead over- or underapplied, and by how much?',
     options: [
+      '$462,000 Overapplied',
       '$23,000 Underapplied',
       '$23,000 Overapplied',
       '$485,000 Underapplied',
-      '$462,000 Overapplied'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Underapplied = Actual > Applied\n$485,000 - $462,000 = $23,000 Underapplied\nNot enough overhead was charged to jobs.',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'overhead',
@@ -620,12 +620,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Activity: Machine setups. Cost pool: $60,000. Total setups: 200. Product A: 50 setups, Product B: 150 setups. What OH is allocated to Product A?',
     options: [
+      '$12,000',
       '$15,000',
       '$45,000',
       '$30,000',
-      '$12,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Activity rate = $60,000 / 200 setups = $300 per setup\nProduct A allocation = 50 setups × $300 = $15,000',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'abc',
@@ -642,11 +642,11 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Traditional rate: $20/DLH. Product X: 1,000 DLH. ABC rates: Setup $500/setup (X uses 5), Inspection $100/unit (X has 200 units). What is the difference in allocated OH?',
     options: [
       '$2,500 less under ABC',
+      '$0 difference',
       '$2,500 more under ABC',
       '$20,000 less under ABC',
-      '$0 difference'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Traditional overhead: 1,000 DLH × $20 = $20,000\nABC overhead: Setup: 5 setups × $500 = $2,500; Inspection: 200 units × $100 = $20,000\nTotal ABC = $2,500 + $20,000 = $22,500\nDifference = ABC − Traditional = $22,500 − $20,000 = $2,500 more under ABC.\nProduct X is allocated $2,500 more overhead under ABC than under the traditional system, revealing that X consumes more resources than the volume-based rate suggests.',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'abc',
@@ -662,12 +662,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Beginning WIP: 2,000 units (60% complete). Started: 18,000. Completed: 17,000. Ending WIP: 3,000 (40% complete). Using weighted average, what are the equivalent units for conversion?',
     options: [
-      '18,200',
+      '20,000',
       '17,000',
+      '18,200',
       '19,600',
-      '20,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Weighted Average EU = Units completed + (Ending WIP × % complete)\nEU = 17,000 + (3,000 × 40%) = 17,000 + 1,200 = 18,200',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'process-costing',
@@ -683,12 +683,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Beginning WIP: 2,000 units (60% complete). Started and completed: 15,000. Ending WIP: 3,000 (40% complete). Using FIFO, what are the equivalent units for conversion?',
     options: [
-      '17,000',
       '18,200',
+      '16,800',
+      '17,000',
       '15,000',
-      '16,800'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'FIFO EU = (Beg WIP × % to complete) + Started & Completed + (End WIP × % complete)\nFIFO EU = (2,000 × 40%) + 15,000 + (3,000 × 40%)\n= 800 + 15,000 + 1,200 = 17,000',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'process-costing',
@@ -704,12 +704,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Total conversion costs: $182,000. Equivalent units (conversion): 18,200. What is the cost per equivalent unit for conversion?',
     options: [
-      '$10.00',
       '$18.20',
+      '$1.82',
+      '$10.00',
       '$9.10',
-      '$1.82'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Cost per EU = Total costs / Equivalent units\nCost per EU = $182,000 / 18,200 = $10.00 per equivalent unit',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'process-costing',
@@ -727,8 +727,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$17,100',
       '$13,500',
+      '$21,100',
       '$8,500',
-      '$21,100'
     ],
     correctAnswer: 0,
     explanation: 'Direct Materials: $8,500\nDirect Labor: $5,000\nApplied OH: 200 hours × $18 = $3,600\nTotal Job Cost = $8,500 + $5,000 + $3,600 = $17,100',
@@ -748,8 +748,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$6 per unit',
       '$8.50 per unit',
+      '$5 per unit',
       '$10 per unit',
-      '$5 per unit'
     ],
     correctAnswer: 0,
     explanation: 'Variable cost = Change in cost / Change in activity\nVariable = ($68,000 - $50,000) / (8,000 - 5,000)\n= $18,000 / 3,000 = $6 per unit',
@@ -771,12 +771,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Division operating income: $450,000. Average invested capital: $3,000,000. What is the division\'s ROI?',
     options: [
+      '150%',
       '15%',
       '6.67%',
       '1.5%',
-      '150%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'ROI = Operating Income / Average Invested Capital\nROI = $450,000 / $3,000,000 = 0.15 = 15%',
     reference: 'IMA CMA LOS 1C1',
     calculationType: 'performance',
@@ -792,12 +792,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Division operating income: $450,000. Invested capital: $3,000,000. Required rate of return: 12%. What is residual income?',
     options: [
+      '$450,000',
       '$90,000',
       '$360,000',
       '$54,000',
-      '$450,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'RI = Operating Income - (Required Rate × Invested Capital)\nRI = $450,000 - (12% × $3,000,000)\nRI = $450,000 - $360,000 = $90,000',
     reference: 'IMA CMA LOS 1C1',
     calculationType: 'performance',
@@ -814,9 +814,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'NOPAT: $800,000. Total capital: $5,000,000. WACC: 10%. What is Economic Value Added (EVA)?',
     options: [
       '$300,000',
+      '$80,000',
       '$500,000',
       '$800,000',
-      '$80,000'
     ],
     correctAnswer: 0,
     explanation: 'EVA = NOPAT - (WACC × Total Capital)\nEVA = $800,000 - (10% × $5,000,000)\nEVA = $800,000 - $500,000 = $300,000',
@@ -834,12 +834,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Sales: $2,000,000. Operating income: $200,000. Invested capital: $1,600,000. Calculate ROI using DuPont formula.',
     options: [
-      '12.5%',
+      '20.0%',
       '10.0%',
+      '12.5%',
       '8.0%',
-      '20.0%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'DuPont ROI = Profit Margin × Asset Turnover\nProfit Margin = $200,000 / $2,000,000 = 10%\nAsset Turnover = $2,000,000 / $1,600,000 = 1.25\nROI = 10% × 1.25 = 12.5%',
     reference: 'IMA CMA LOS 1C1',
     calculationType: 'performance',
@@ -855,12 +855,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Division ROI: 18%. Required rate: 12%. New project ROI: 15%. Investment: $500,000. Should the manager accept if evaluated on RI?',
     options: [
+      'No, project has negative RI',
       'Yes, project adds $15,000 RI',
       'No, project reduces division ROI',
       'Yes, project adds $30,000 RI',
-      'No, project has negative RI'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Project RI = (15% × $500,000) - (12% × $500,000)\n= $75,000 - $60,000 = $15,000 positive\nWith RI evaluation, any project earning above required rate adds value.\nEven though project ROI (15%) < current ROI (18%), it still creates positive RI.',
     reference: 'IMA CMA LOS 1C1',
     calculationType: 'performance',
@@ -876,12 +876,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Selling division: Variable cost $30, full cost $45, market price $60. Division is at full capacity. What is the minimum transfer price?',
     options: [
-      '$60',
+      '$50',
       '$30',
+      '$60',
       '$45',
-      '$50'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Minimum transfer price = Variable cost + Opportunity cost\nAt full capacity, opportunity cost = Lost contribution margin\nLost CM = Market price - Variable cost = $60 - $30 = $30\nMinimum = $30 + $30 = $60 (equals market price)\nAt capacity, should not sell internally for less than external price.',
     reference: 'IMA CMA LOS 1C3',
     calculationType: 'transfer-pricing',
@@ -897,12 +897,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Selling division: Variable cost $25, excess capacity. Buying division: Can buy externally for $40. What is the negotiation range for transfer price?',
     options: [
-      '$25 to $40',
+      '$30 to $45',
       '$40 to $50',
+      '$25 to $40',
       '$25 to $35',
-      '$30 to $45'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Minimum (seller): Variable cost = $25 (no opportunity cost with excess capacity)\nMaximum (buyer): External price = $40\nNegotiation range = $25 to $40\nAny price in this range benefits both divisions.',
     reference: 'IMA CMA LOS 1C3',
     calculationType: 'transfer-pricing',
@@ -918,12 +918,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Segment revenue: $800,000. Variable costs: $480,000. Traceable fixed costs: $180,000. Common fixed costs allocated: $60,000. What is segment margin?',
     options: [
-      '$140,000',
       '$80,000',
+      '$140,000',
+      '$200,000',
       '$320,000',
-      '$200,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Contribution Margin = Revenue - Variable = $800,000 - $480,000 = $320,000\nSegment Margin = CM - Traceable fixed costs\n= $320,000 - $180,000 = $140,000\n(Common fixed costs are NOT deducted for segment margin)',
     reference: 'IMA CMA LOS 1C1',
     calculationType: 'performance',
@@ -939,12 +939,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Output: 50,000 units. Labor hours: 10,000. Materials: 25,000 lbs. What is labor productivity?',
     options: [
-      '5 units per labor hour',
       '2 units per lb',
+      '5 units per labor hour',
+      '2 labor hours per unit',
       '0.5 lbs per unit',
-      '2 labor hours per unit'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Labor productivity = Output / Labor input\n= 50,000 units / 10,000 hours = 5 units per labor hour',
     reference: 'IMA CMA LOS 1C4',
     calculationType: 'performance',
@@ -962,8 +962,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$20,000',
       '$80,000',
+      '$10,000',
       '$100,000',
-      '$10,000'
     ],
     correctAnswer: 0,
     explanation: 'Fixed OH per unit = $100,000 / 10,000 = $10/unit\nEnding inventory = Production - Sales = 10,000 - 8,000 = 2,000 units\nFixed OH in ending inventory = 2,000 × $10 = $20,000',
@@ -986,9 +986,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'First unit: 100 hours. 80% learning curve. What is the cumulative average time per unit after 4 units?',
     options: [
       '64 hours',
+      '32 hours',
       '80 hours',
       '51.2 hours',
-      '32 hours'
     ],
     correctAnswer: 0,
     explanation: 'With 80% learning curve, each doubling reduces cumulative average to 80%\nUnit 1: 100 hours\nUnits 1-2: 100 × 80% = 80 hours avg\nUnits 1-4: 80 × 80% = 64 hours avg\nAfter 4 units (two doublings), cumulative average is 64 hours.',
@@ -1006,12 +1006,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Asset cost: $120,000. Salvage value: $20,000. Useful life: 5 years. Using straight-line, what is annual depreciation?',
     options: [
+      '$25,000',
       '$20,000',
       '$24,000',
       '$100,000',
-      '$25,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Straight-line depreciation = (Cost - Salvage) / Useful life\n= ($120,000 - $20,000) / 5 = $100,000 / 5 = $20,000 per year',
     reference: 'ASC 360',
     calculationType: 'depreciation',
@@ -1027,12 +1027,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Asset cost: $80,000. Salvage: $8,000. Life: 4 years. Using DDB, what is Year 2 depreciation?',
     options: [
-      '$20,000',
       '$40,000',
+      '$16,000',
+      '$20,000',
       '$10,000',
-      '$16,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'DDB rate = 2/4 = 50%\nYear 1: $80,000 × 50% = $40,000 (BV = $40,000)\nYear 2: $40,000 × 50% = $20,000 (BV = $20,000)\nNote: Book value of $20,000 > Salvage of $8,000, so full DDB allowed.',
     reference: 'ASC 360',
     calculationType: 'depreciation',
@@ -1048,12 +1048,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Inventory cost: $50,000. Net realizable value: $42,000. Replacement cost: $40,000. Under LCNRV, what is the inventory value?',
     options: [
-      '$42,000',
+      '$46,000',
       '$50,000',
+      '$42,000',
       '$40,000',
-      '$46,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Lower of Cost or NRV:\nCost = $50,000\nNRV = $42,000\nSince NRV < Cost, inventory is written down to $42,000.\n(Replacement cost is not used under current GAAP LCNRV)',
     reference: 'ASC 330',
     calculationType: 'inventory',
@@ -1069,12 +1069,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Joint costs: $90,000. Product A: 6,000 lbs at $8/lb. Product B: 4,000 lbs at $12/lb. Using sales value method, what cost is allocated to A?',
     options: [
-      '$45,000',
+      '$48,000',
       '$54,000',
+      '$45,000',
       '$36,000',
-      '$48,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Sales value A = 6,000 × $8 = $48,000\nSales value B = 4,000 × $12 = $48,000\nTotal sales value = $96,000\nA\'s proportion = $48,000 / $96,000 = 50%\nA\'s allocation = $90,000 × 50% = $45,000',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'joint-cost',
@@ -1090,12 +1090,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Service dept S1 costs: $80,000. S1 provides 25% service to S2 and 75% to Production. Using direct method, how much is allocated to Production?',
     options: [
-      '$80,000',
       '$60,000',
+      '$75,000',
+      '$80,000',
       '$20,000',
-      '$75,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Under the direct method, inter-service department usage is ignored. S1\'s costs are allocated only to operating departments. Since Production is the only operating department receiving S1\'s services, it receives 100% of S1\'s costs. Calculation: S1 provides 75% to Production and 25% to S2, but ignoring S2: Production share = 75% ÷ 75% = 100%. Allocation to Production = $80,000 × 100% = $80,000.',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'service-allocation',
@@ -1111,12 +1111,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Target selling price: $150. Required profit margin: 20% of selling price. What is the target cost?',
     options: [
-      '$120',
       '$130',
+      '$30',
+      '$120',
       '$150',
-      '$30'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Target Profit = $150 × 20% = $30\nTarget Cost = Target Price - Target Profit\n= $150 - $30 = $120',
     reference: 'IMA CMA LOS 1D4',
     calculationType: 'target-costing',
@@ -1134,8 +1134,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '3.2%',
       '5.0%',
+      '3.0%',
       '1.0%',
-      '3.0%'
     ],
     correctAnswer: 0,
     explanation: 'Sample deviation rate = Deviations found / Sample size\n= 3 / 93 = 0.0323 = 3.2%\nThis is within the tolerable rate of 5%.',
@@ -1155,8 +1155,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '340,000',
       '60,000',
+      '85,000',
       '400,000',
-      '85,000'
     ],
     correctAnswer: 0,
     explanation: 'R² = SSR / SST\n0.85 = SSR / 400,000\nSSR = 0.85 × 400,000 = 340,000\n(340,000 of the total variation is explained by the regression)',
@@ -1174,12 +1174,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Normal spoilage: 500 units (2% of good output). Abnormal spoilage: 200 units. Cost per unit: $15. What is the abnormal spoilage cost charged to expense?',
     options: [
+      '$750',
       '$3,000',
       '$7,500',
       '$10,500',
-      '$750'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Abnormal spoilage is charged to expense (Loss from Abnormal Spoilage)\nAbnormal spoilage cost = 200 units × $15 = $3,000\n(Normal spoilage is added to cost of good units)',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'spoilage',
@@ -1195,12 +1195,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: Product X 10,000 @ $50, Product Y 8,000 @ $80. Variable costs: X 60%, Y 50%. What is budgeted total contribution margin?',
     options: [
+      '$300,000',
       '$520,000',
       '$1,140,000',
       '$620,000',
-      '$300,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Product X: 10,000 × $50 × (1 - 0.60) = $500,000 × 40% = $200,000 CM\nProduct Y: 8,000 × $80 × (1 - 0.50) = $640,000 × 50% = $320,000 CM\nTotal CM = $200,000 + $320,000 = $520,000',
     reference: 'IMA CMA LOS 1B2',
     calculationType: 'budgeting',
@@ -1217,9 +1217,9 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     question: 'Selling price: $100. Totally variable cost (materials): $40. Product requires 20 minutes at bottleneck. What is throughput per minute at the constraint?',
     options: [
       '$3.00 per minute',
+      '$60 per minute',
       '$5.00 per minute',
       '$2.00 per minute',
-      '$60 per minute'
     ],
     correctAnswer: 0,
     explanation: 'Throughput = Selling price - Totally variable costs\n= $100 - $40 = $60 per unit\nThroughput per constraint minute = $60 / 20 minutes = $3.00 per minute',
@@ -1237,12 +1237,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Service cost: $120,000. Interest cost: $80,000. Expected return on plan assets: $60,000. Amortization of prior service cost: $15,000. What is pension expense?',
     options: [
-      '$155,000',
+      '$275,000',
       '$200,000',
+      '$155,000',
       '$140,000',
-      '$275,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Pension Expense = Service cost + Interest cost - Expected return + Amortization\n= $120,000 + $80,000 - $60,000 + $15,000 = $155,000',
     reference: 'ASC 715',
     calculationType: 'pension',
@@ -1258,12 +1258,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Sales for months 1-4: $100K, $120K, $90K, $130K. Using a 3-month moving average, what is the forecast for month 5?',
     options: [
-      '$113,333',
       '$110,000',
+      '$103,333',
+      '$113,333',
       '$130,000',
-      '$103,333'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: '3-month moving average uses last 3 months: 2, 3, 4\n= ($120K + $90K + $130K) / 3\n= $340K / 3 = $113,333',
     reference: 'IMA CMA LOS 1F3',
     calculationType: 'forecasting',
@@ -1279,12 +1279,12 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Current cost: $50 per unit. Kaizen target: 5% reduction per quarter. What is the target cost after 2 quarters?',
     options: [
-      '$45.13',
       '$45.00',
+      '$40.00',
+      '$45.13',
       '$47.50',
-      '$40.00'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'After Q1: $50 × (1 - 0.05) = $47.50\nAfter Q2: $47.50 × (1 - 0.05) = $45.125, rounded to $45.13\nKaizen applies the reduction to the new base each period.',
     reference: 'IMA CMA LOS 1D4',
     calculationType: 'kaizen',

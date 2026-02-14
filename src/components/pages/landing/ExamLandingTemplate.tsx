@@ -24,7 +24,6 @@ import {
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
 import { isFounderPricingActive, founderDaysRemaining } from '../../../services/subscription';
-import { DemoQuestion } from '../../common/DemoQuestion';
 import { useAuth } from '../../../hooks/useAuth';
 
 interface ExamLandingTemplateProps {
@@ -391,34 +390,6 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         </section>
 
         {/* ================================================================
-            DEMO QUESTION SECTION (interactive preview)
-            ================================================================ */}
-        {config.demoQuestion && (
-          <section id="try-it" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                  Try a Sample Question
-                </h2>
-                <p className="text-slate-600 dark:text-slate-300">
-                  Experience our question interface — no signup required.
-                </p>
-              </div>
-              <DemoQuestion
-                question={config.demoQuestion.question}
-                options={config.demoQuestion.options}
-                correctAnswer={config.demoQuestion.correctAnswer}
-                explanation={config.demoQuestion.explanation}
-                section={config.demoQuestion.section}
-                topic={config.demoQuestion.topic}
-                registerPath={config.registerPath}
-                primaryColor={config.primaryColor}
-              />
-            </div>
-          </section>
-        )}
-
-        {/* ================================================================
             WHY VORAPREP SECTION (shared across all exams)
             ================================================================ */}
         <section id="features" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
@@ -512,7 +483,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </table>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
-                *Founding member pricing available through April 30, 2026. Rate guaranteed for 2 years.
+                *Founding member annual rate — sign up by April 30, 2026, rate locked for 2 years. Regular annual pricing shown for competitors.
               </p>
             </div>
           </section>
@@ -780,14 +751,14 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
                   </>
                 ) : (
                   <>
-                    Start 14-Day Free Trial
+                    Subscribe Now
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
               </button>
               
               <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
-                No charge until trial ends • Cancel anytime
+                Cancel anytime • Pass guarantee included
               </p>
             </div>
 

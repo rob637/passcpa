@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The maximum number of shareholders an S corporation can have is:',
     options: [
-      '35',
       '75',
+      '500',
+      '35',
       '100',
-      '500'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §1361(b)(1)(A), an S corporation cannot have more than 100 shareholders. Members of a family can be treated as a single shareholder for this limit.',
     reference: 'IRC §1361(b)(1)(A)',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following can be a shareholder of an S corporation?',
     options: [
-      'A C corporation',
+      'A partnership',
       'A nonresident alien individual',
+      'A C corporation',
       'An estate of a deceased individual',
-      'A partnership'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §1361(b)(1)(B), eligible S corporation shareholders include individuals, estates, and certain trusts. Corporations, partnerships, and nonresident aliens cannot be shareholders.',
     reference: 'IRC §1361(b)(1)(B)',
   },
@@ -61,11 +61,11 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     question: 'Which type of trust can be an S corporation shareholder?',
     options: [
       'Complex trust distributing at trustee\'s discretion',
+      'Foreign trust',
       'Electing Small Business Trust (ESBT)',
       'Charitable remainder trust',
-      'Foreign trust'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §1361(c)(2), eligible trust shareholders include grantor trusts, qualified subchapter S trusts (QSSTs), and electing small business trusts (ESBTs). Complex trusts, charitable trusts, and foreign trusts cannot be shareholders.',
     reference: 'IRC §1361(c)(2); IRC §1361(e)',
   },
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Application',
     question: 'An S corporation issues common stock to all shareholders but pays shareholder-employees different levels of reasonable compensation. This arrangement:',
     options: [
+      'Causes immediate termination of S status',
       'Creates a prohibited second class of stock',
       'Is permitted and does not violate the one class requirement',
       'Requires IRS approval',
-      'Causes immediate termination of S status'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The one class of stock requirement looks at the rights of shareholders as shareholders, not as employees. Differences in compensation do not create a second class of stock as long as stock rights are identical.',
     reference: 'Treas. Reg. §1.1361-1(l)',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following entities is ineligible to elect S corporation status?',
     options: [
-      'A domestic corporation owned by one individual',
       'An insurance company',
+      'A domestic corporation owned by one individual',
+      'A corporation that was previously a C corporation',
       'A corporation that uses the cash method of accounting',
-      'A corporation that was previously a C corporation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §1361(b)(2), certain corporations cannot elect S status, including insurance companies, certain financial institutions, DISCs, and corporations that have elected §936 (possessions tax credit).',
     reference: 'IRC §1361(b)(2)',
   },
@@ -122,10 +122,10 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     options: [
       'By the 15th day of the 3rd month of the tax year',
       'By December 31 of the prior year',
+      'Within 75 days after incorporation',
       'By the 15th day of the 3rd month of the tax year OR anytime in the prior year',
-      'Within 75 days after incorporation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §1362(b), an S election is effective for the current year if made by the 15th day of the 3rd month (March 15 for calendar year) or anytime during the preceding tax year.',
     reference: 'IRC §1362(b)',
   },
@@ -142,10 +142,10 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     options: [
       'Shareholders owning more than 50% of stock',
       'Shareholders owning at least two-thirds of stock',
+      'Only shareholders who are U.S. citizens',
       'All shareholders',
-      'Only shareholders who are U.S. citizens'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §1362(a)(2), all shareholders, including non-voting shareholders, must consent to the S election for it to be valid. There is no majority vote option.',
     reference: 'IRC §1362(a)(2)',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If an S election is filed late, the corporation may obtain relief if:',
     options: [
-      'The IRS grants permission after an examination',
       'It files under Rev. Proc. 2013-30 and meets reasonable cause requirements',
+      'Late elections cannot be validated under any circumstances',
+      'The IRS grants permission after an examination',
       'It pays a late filing penalty',
-      'Late elections cannot be validated under any circumstances'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Rev. Proc. 2013-30 provides relief for late S elections if the taxpayer meets certain requirements including reasonable cause and having intended to file on time. The election can be made effective retroactively.',
     reference: 'Rev. Proc. 2013-30',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Application',
     question: 'An S corporation\'s election can be voluntarily revoked with consent from shareholders holding:',
     options: [
-      'A unanimous vote',
       'More than 50% of the shares',
+      'At least 75% of the shares',
+      'A unanimous vote',
       'At least two-thirds of the shares',
-      'At least 75% of the shares'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §1362(d)(1), an S election can be revoked with the consent of shareholders holding more than 50% of the outstanding shares (both voting and nonvoting).',
     reference: 'IRC §1362(d)(1)(B)',
   },
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An S corporation election automatically terminates if:',
     options: [
-      'The corporation has losses for 3 consecutive years',
+      'The corporation fails to file Form 1120-S',
       'Any shareholder sells their stock',
+      'The corporation has losses for 3 consecutive years',
       'Stock is transferred to an ineligible shareholder',
-      'The corporation fails to file Form 1120-S'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §1362(d)(2), an S election automatically terminates when the corporation ceases to meet eligibility requirements, such as when stock is transferred to an ineligible shareholder (corporation, partnership, or nonresident alien).',
     reference: 'IRC §1362(d)(2)',
   },

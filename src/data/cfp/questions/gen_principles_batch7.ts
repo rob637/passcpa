@@ -19,12 +19,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The monitoring phase of financial planning involves:',
     options: [
-      'A) Creating the initial plan only',
       'B) Reviewing progress, updating for life changes, adjusting for market conditions, and ensuring the plan remains aligned with goals',
       'C) Terminating the relationship',
-      'D) Only checking accounts annually'
+      'D) Only checking accounts annually',
+      'A) Creating the initial plan only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Monitoring is ongoing—not one-time. It includes tracking progress toward goals, updating assumptions, responding to life changes (marriage, job change, children), adjusting for market/tax law changes, and rebalancing. The frequency depends on client needs and engagement terms.'
   },
   {
@@ -38,10 +38,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Quantitative data gathered for financial planning includes:',
     options: [
-      'A) Only client attitudes about money',
-      'B) Income, expenses, assets, liabilities, insurance coverage, and tax returns—numerical financial facts',
       'C) Goals and dreams only',
-      'D) Family history only'
+      'B) Income, expenses, assets, liabilities, insurance coverage, and tax returns—numerical financial facts',
+      'D) Family history only',
+      'A) Only client attitudes about money',
     ],
     correctAnswer: 1,
     explanation: 'Quantitative data is numerical: income/expenses, account values, debts, policy details, tax information. Qualitative data includes goals, values, risk tolerance, family dynamics. Both are essential—numbers without context and goals without data don\'t enable effective planning.'
@@ -57,12 +57,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'When client goals conflict (e.g., early retirement vs. college funding), the planner should:',
     options: [
-      'A) Choose the more important goal for the client',
-      'B) Help the client understand trade-offs and priorities to make informed decisions about which goals to emphasize',
+      'D) Recommend taking more risk',
       'C) Ignore the conflict',
-      'D) Recommend taking more risk'
+      'B) Help the client understand trade-offs and priorities to make informed decisions about which goals to emphasize',
+      'A) Choose the more important goal for the client',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Comprehensive planning addresses goal interactions. Limited resources mean trade-offs. Planners quantify implications of different choices, but clients decide priorities. This may involve adjusting timelines, amounts, or expectations. The planner\'s role is illuminating trade-offs, not making value judgments.'
   },
   // GEN-2: Time Value of Money
@@ -77,12 +77,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A credit card with 18% APR compounded monthly has an Effective Annual Rate (EAR) of approximately:',
     options: [
-      'A) 18.00%',
-      'B) 19.56%',
       'C) 17.50%',
-      'D) 20.00%'
+      'D) 20.00%',
+      'B) 19.56%',
+      'A) 18.00%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EAR = (1 + r/n)^n - 1 = (1 + 0.18/12)^12 - 1 = (1.015)^12 - 1 = 1.1956 - 1 = 19.56%. Monthly compounding increases effective rate above stated APR. Understanding EAR helps compare loans/investments with different compounding frequencies.'
   },
   {
@@ -94,15 +94,15 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Loan Amortization',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'In an amortizing loan, early payments consist primarily of:',
+    question: 'A client has a $300,000, 30-year fixed-rate mortgage at 6% annual interest. After making payments for 10 years, approximately what portion of the original principal has been repaid?',
     options: [
-      'A) Principal',
-      'B) Interest, with the principal portion increasing over time as the balance decreases',
-      'C) Equal amounts of principal and interest',
-      'D) Fees'
+      'Approximately one-third of the original principal',
+      'Less than 20% of the original principal due to the amortization structure',
+      'Approximately 50% of the original principal',
+      'More than 60% of the original principal',
     ],
     correctAnswer: 1,
-    explanation: 'With constant payments on a declining balance, early payments are mostly interest (larger balance = more interest). Each payment reduces principal slightly, reducing next period\'s interest, allowing more of subsequent payments toward principal. This is why extra payments early have outsized impact on total interest.'
+    explanation: 'In a standard amortizing mortgage, early payments are heavily weighted toward interest. After 10 years of a 30-year mortgage at 6%, only about 16-18% of the original principal has been repaid because the majority of each payment goes toward interest in the early years.',
   },
   {
     id: 'CFP-GEN-B7-006',
@@ -115,10 +115,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An annuity due differs from an ordinary annuity in that:',
     options: [
-      'A) They are identical',
+      'D) There are fewer payments',
       'B) Payments occur at the beginning of each period rather than the end, resulting in higher present and future values',
       'C) Payments are variable',
-      'D) There are fewer payments'
+      'A) They are identical',
     ],
     correctAnswer: 1,
     explanation: 'Annuity due: payments at period start (rent, insurance premiums). Ordinary annuity: payments at period end (most loan payments). An annuity due has one more period of compounding/discounting, making FV higher and PV higher than otherwise identical ordinary annuity.'
@@ -135,10 +135,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Phillips Curve traditionally suggests:',
     options: [
-      'A) No relationship between inflation and unemployment',
+      'D) Only supply affects prices',
       'B) An inverse relationship between inflation and unemployment in the short run',
       'C) Inflation and unemployment move together',
-      'D) Only supply affects prices'
+      'A) No relationship between inflation and unemployment',
     ],
     correctAnswer: 1,
     explanation: 'The Phillips Curve shows trade-off between inflation and unemployment: lower unemployment often coincides with higher inflation (tight labor markets = wage pressure = price increases). The relationship has been less stable in recent decades. It informs Fed policy balancing employment mandate with inflation control.'
@@ -152,15 +152,15 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Gross Domestic Product',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Gross Domestic Product (GDP) measures:',
+    question: 'A CFP professional needs to explain to a client why their investment returns may be affected by overall economic conditions. Which GDP component typically has the LARGEST impact on GDP in the United States?',
     options: [
-      'A) Only government spending',
-      'B) The total market value of all finished goods and services produced within a country in a given period',
-      'C) Stock market returns',
-      'D) Personal income only'
+      'Government spending',
+      'Net exports',
+      'Business investment (gross private domestic investment)',
+      'Personal consumption expenditures',
     ],
-    correctAnswer: 1,
-    explanation: 'GDP = Consumption + Investment + Government Spending + Net Exports. It measures economic output—a growing GDP generally indicates economic expansion. Real GDP (inflation-adjusted) is compared over time. GDP growth rates indicate economic health; negative growth for two quarters typically defines recession.'
+    correctAnswer: 3,
+    explanation: 'Personal consumption expenditures (consumer spending) account for approximately 68-70% of U.S. GDP, making it the largest component. Changes in consumer spending have the greatest impact on overall economic growth and, consequently, investment returns.',
   },
   {
     id: 'CFP-GEN-B7-009',
@@ -173,12 +173,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The distinction between monetary and fiscal policy is:',
     options: [
-      'A) They are the same',
       'B) Monetary policy is Fed action on money supply/interest rates; fiscal policy is government taxation and spending',
       'C) Monetary policy is state-level; fiscal is federal',
-      'D) Fiscal policy controls inflation only'
+      'D) Fiscal policy controls inflation only',
+      'A) They are the same',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Monetary policy (Federal Reserve): adjusting interest rates and money supply to influence inflation and employment. Fiscal policy (Congress/President): taxing and spending decisions affecting economic demand. They work differently—monetary policy is more nimble while fiscal changes require legislation.'
   },
   // GEN-4: Financial Statements
@@ -193,10 +193,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A personal cash flow statement shows:',
     options: [
-      'A) Net worth at a point in time',
-      'B) Income sources and expenses over a period, revealing savings rate and spending patterns',
       'C) Only investment returns',
-      'D) Credit scores'
+      'B) Income sources and expenses over a period, revealing savings rate and spending patterns',
+      'D) Credit scores',
+      'A) Net worth at a point in time',
     ],
     correctAnswer: 1,
     explanation: 'Cash flow statements track money in (wages, dividends, interest) and out (living expenses, debt payments, savings) over time (monthly/annually). The difference is savings or deficit. This reveals spending patterns, savings rates, and opportunities for improvement. It complements the balance sheet\'s point-in-time view.'
@@ -212,10 +212,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A housing expense ratio (front-end ratio) of 28% means:',
     options: [
-      'A) 28% of net worth is in housing',
-      'B) Housing costs (principal, interest, taxes, insurance) represent 28% of gross monthly income',
       'C) 28% down payment was made',
-      'D) Home value decreased 28%'
+      'B) Housing costs (principal, interest, taxes, insurance) represent 28% of gross monthly income',
+      'D) Home value decreased 28%',
+      'A) 28% of net worth is in housing',
     ],
     correctAnswer: 1,
     explanation: 'Housing ratio = PITI ÷ Gross Monthly Income. Conventional guidelines suggest ≤28% front-end (housing only) and ≤36% back-end (housing plus all debt). Higher ratios indicate potential cash flow stress. Lenders use these for qualification; planners use them for affordability analysis.'
@@ -231,12 +231,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Liquidity in personal finance refers to:',
     options: [
-      'A) Home equity only',
-      'B) How quickly assets can be converted to cash without significant loss of value',
       'C) Total net worth',
-      'D) Retirement account balances'
+      'D) Retirement account balances',
+      'B) How quickly assets can be converted to cash without significant loss of value',
+      'A) Home equity only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Liquid assets (cash, money market, stocks) convert to cash quickly at fair value. Illiquid assets (real estate, limited partnerships) take time or may sell at discounts. Emergency funds require liquidity. Retirement accounts are liquid but may have tax/penalty consequences for early access.'
   },
   // GEN-5: Client Education
@@ -251,12 +251,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Improving clients\' financial literacy helps them:',
     options: [
-      'A) Eliminate the need for professional advice',
-      'B) Make more informed decisions, understand recommendations, and engage more productively in the planning process',
       'C) Perform their own tax returns',
-      'D) Replace the financial planner'
+      'D) Replace the financial planner',
+      'B) Make more informed decisions, understand recommendations, and engage more productively in the planning process',
+      'A) Eliminate the need for professional advice',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Educated clients understand recommendations, ask better questions, and are more committed to plans they understand. Education doesn\'t replace professional advice—it enhances the relationship. Planners should explain "why" not just "what." Client capacity to understand varies; adjust communication accordingly.'
   },
   {
@@ -270,12 +270,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When explaining complex financial concepts:',
     options: [
-      'A) Use as much jargon as possible to demonstrate expertise',
-      'B) Use analogies, visuals, and plain language appropriate to the client\'s level of understanding',
+      'D) Provide written materials only',
       'C) Assume clients understand technical terms',
-      'D) Provide written materials only'
+      'B) Use analogies, visuals, and plain language appropriate to the client\'s level of understanding',
+      'A) Use as much jargon as possible to demonstrate expertise',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Effective communication adapts to the audience. Analogies relate unfamiliar concepts to familiar ones. Visuals (charts, graphs) can clarify relationships. Avoid or define jargon. Check understanding—clients may nod without comprehending. The goal is informed decision-making, not impressive presentations.'
   },
   // Additional Topics
@@ -290,10 +290,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Proper documentation in financial planning:',
     options: [
-      'A) Is only for regulatory compliance',
+      'D) Should be minimized to reduce liability',
       'B) Protects both client and planner, supports recommendations, creates continuity, and demonstrates due diligence',
       'C) Is optional for trusted clients',
-      'D) Should be minimized to reduce liability'
+      'A) Is only for regulatory compliance',
     ],
     correctAnswer: 1,
     explanation: 'Documentation creates records of client information gathered, analysis performed, recommendations made, and decisions taken. It protects against disputes, enables continuity if the planner changes, demonstrates appropriate care, and satisfies regulatory requirements. "If it isn\'t documented, it didn\'t happen."'
@@ -309,12 +309,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Serial payments (payments that grow at a constant rate) are used in retirement planning to:',
     options: [
-      'A) Simplify calculations only',
       'B) Model income needs that increase with inflation or lifestyle expectations over time',
+      'D) Avoid time value calculations',
       'C) Decrease retirement needs',
-      'D) Avoid time value calculations'
+      'A) Simplify calculations only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Serial payments recognize that retirement expenses typically grow with inflation. A $50,000 need today might be $100,000 in 20 years. Serial payment calculations account for this growth, creating more accurate projections than assuming constant (nominal) payments.'
   },
   {
@@ -328,12 +328,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'When the Federal Reserve raises interest rates:',
     options: [
-      'A) Bond prices increase',
       'B) Bond prices fall, borrowing costs increase, savings yields improve, and economic growth may slow',
+      'D) Inflation accelerates',
       'C) Stock prices always increase',
-      'D) Inflation accelerates'
+      'A) Bond prices increase',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Higher rates: existing bond prices fall (new bonds offer better yields), mortgages and loans cost more (reducing spending/housing), savings accounts pay more (encouraging saving over spending). Intent is often cooling inflation or overheating economy. Effects ripple through all asset classes.'
   },
   {
@@ -347,10 +347,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A common guideline for emergency fund sizing is:',
     options: [
-      'A) 1 month of expenses',
-      'B) 3-6 months of essential expenses, with more for variable income or less job security',
       'C) Equal to total debt',
-      'D) 10% of annual income'
+      'B) 3-6 months of essential expenses, with more for variable income or less job security',
+      'D) 10% of annual income',
+      'A) 1 month of expenses',
     ],
     correctAnswer: 1,
     explanation: '3-6 months of essential expenses is standard guidance. More stable income, good insurance, and high job security may justify lower amounts. Variable income, single earner, narrow job markets, or higher expenses suggest more. The fund should be liquid (savings, money market) and separate from investment accounts.'
@@ -366,10 +366,10 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Educating clients about investment risk should include:',
     options: [
-      'A) Only past returns',
-      'B) Historical volatility, potential for loss, relationship between risk and return, and how time horizon affects risk',
       'C) Guaranteeing no losses',
-      'D) Avoiding the topic to prevent anxiety'
+      'B) Historical volatility, potential for loss, relationship between risk and return, and how time horizon affects risk',
+      'D) Avoiding the topic to prevent anxiety',
+      'A) Only past returns',
     ],
     correctAnswer: 1,
     explanation: 'Risk education prevents unrealistic expectations. Show historical ranges, not just averages. Explain that short-term volatility typically decreases over long periods. Discuss different risks (market, inflation, longevity). Connect risk tolerance to capacity and required return. Educated clients handle volatility better.'
@@ -385,12 +385,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Defining the scope of a financial planning engagement:',
     options: [
-      'A) Is unnecessary for comprehensive planning',
       'B) Clarifies what services will be provided, responsibilities of each party, and limitations of the engagement',
       'C) Should always be comprehensive',
-      'D) Only benefits the planner'
+      'D) Only benefits the planner',
+      'A) Is unnecessary for comprehensive planning',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scope defines boundaries: comprehensive or focused (retirement only, etc.), planner and client responsibilities, what\'s included/excluded, fees, and update frequency. This manages expectations, prevents misunderstandings, and ensures appropriate service. Scope can be expanded over time.'
   },
   {
@@ -404,12 +404,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'To value a series of uneven cash flows, you would:',
     options: [
-      'A) Use the ordinary annuity formula',
       'B) Calculate the present value of each cash flow individually and sum them',
       'C) Average the cash flows',
-      'D) Use only the largest cash flow'
+      'D) Use only the largest cash flow',
+      'A) Use the ordinary annuity formula',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Uneven cash flows (different amounts each period) can\'t use standard annuity formulas. Discount each cash flow to present value individually using PV = FV/(1+r)^n, then sum. Financial calculators have CF (cash flow) functions for this. This is essential for valuing investments with variable returns.'
   },
   {
@@ -423,12 +423,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Examples of economic leading indicators include:',
     options: [
-      'A) Unemployment rate (lagging)',
-      'B) Stock market, building permits, average weekly hours worked, and consumer confidence',
+      'D) CPI (lagging)',
       'C) GDP (coincident)',
-      'D) CPI (lagging)'
+      'B) Stock market, building permits, average weekly hours worked, and consumer confidence',
+      'A) Unemployment rate (lagging)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Leading indicators predict future economic activity: stock prices (expectations), building permits (future construction), manufacturing orders, consumer confidence, yield curve. Coincident indicators move with the economy (GDP, employment). Lagging indicators follow (unemployment, inflation). Planners monitor these for economic outlook.'
   },
   {
@@ -440,15 +440,15 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Net Worth Calculation',
     difficulty: 'easy',
     skillLevel: 'Application',
-    question: 'Net worth is calculated as:',
+    question: 'A client\'s personal balance sheet shows total assets of $850,000 and total liabilities of $320,000. If they pay off a $50,000 car loan using funds from their savings account, what happens to their net worth?',
     options: [
-      'A) Income minus expenses',
-      'B) Total assets minus total liabilities',
-      'C) Savings rate times income',
-      'D) Investment gains only'
+      'Net worth increases by $50,000',
+      'Net worth decreases by $50,000',
+      'Net worth remains unchanged at $530,000',
+      'Net worth changes to $480,000',
     ],
-    correctAnswer: 1,
-    explanation: 'Net Worth = Assets (what you own: cash, investments, property, retirement accounts) - Liabilities (what you owe: mortgage, loans, credit cards). It\'s a point-in-time snapshot of wealth. Growing net worth indicates progress; it\'s tracked over time as a key financial health metric.'
+    correctAnswer: 2,
+    explanation: 'Net worth (assets minus liabilities) remains unchanged when paying off debt with existing assets. Assets decrease by $50,000 (savings) and liabilities decrease by $50,000 (car loan), resulting in the same net worth of $530,000 ($800,000 - $270,000 = $530,000).',
   },
   {
     id: 'CFP-GEN-B7-024',
@@ -461,12 +461,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Ongoing client education throughout the relationship:',
     options: [
-      'A) Is only needed at the start',
       'B) Helps clients adapt to changes, understand new strategies, and remain engaged with their financial plan',
+      'D) Should only cover investments',
       'C) Reduces client retention',
-      'D) Should only cover investments'
+      'A) Is only needed at the start',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Education is continuous: new planning topics as life changes, market events requiring context, tax law updates, product explanations. Regular touchpoints educate while demonstrating value. Newsletters, webinars, and review meetings all provide education. Engaged, educated clients are more likely to follow plans.'
   },
   {
@@ -480,12 +480,12 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When presenting financial planning recommendations:',
     options: [
-      'A) Present as many alternatives as possible',
       'B) Clearly explain the recommendation, rationale, alternatives considered, and expected outcomes to enable informed decisions',
+      'D) Make decisions for the client',
       'C) Use technical language to demonstrate expertise',
-      'D) Make decisions for the client'
+      'A) Present as many alternatives as possible',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Presentations should be clear and client-focused: what you recommend, why (connected to their goals), what alternatives were considered and rejected, expected outcomes, and risks. Use visuals for complex concepts. Allow time for questions. The client decides—the planner informs that decision.'
   }
 ];

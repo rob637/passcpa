@@ -1,13 +1,15 @@
 /**
  * Exam Service
- * 
- * Multi-course exam simulation service that dynamically loads exam configurations
- * for any supported exam (CPA, EA, CMA, CIA, CISA, CFP).
+ *
+ * Multi-course exam simulation service. Exam format configs are stored in a
+ * Record lookup (not switch/case), and TBS loading uses the generic
+ * courseDataLoader.
  */
 
 import { CourseId } from '../types/course';
 import { getCourse } from '../courses';
 import { TBS } from '../types';
+import { loadCourseData } from './courseDataLoader';
 
 export interface TestletConfig {
   type: 'mcq' | 'tbs' | 'wc';
@@ -44,32 +46,12 @@ export function getExamConfig(courseId: CourseId, sectionId: string): ExamConfig
   const section = course.sections.find(s => s.id === sectionId);
   void section; // May be used for section-specific time in future
   const passingScore = course.passingScore || 75;
-  
-  let config: ExamConfig;
-  
-  switch (courseId) {
-    case 'cpa':
-      config = getCPAExamConfig(sectionId, passingScore);
-      break;
-    case 'ea':
-      config = getEAExamConfig(sectionId, passingScore);
-      break;
-    case 'cma':
-      config = getCMAExamConfig(sectionId, passingScore);
-      break;
-    case 'cia':
-      config = getCIAExamConfig(sectionId, passingScore);
-      break;
-    case 'cisa':
-      config = getCISAExamConfig(sectionId, passingScore);
-      break;
-    case 'cfp':
-      config = getCFPExamConfig(sectionId, passingScore);
-      break;
-    default:
-      config = getDefaultExamConfig(passingScore);
-  }
-  
+
+  const builder = examConfigBuilders[courseId];
+  const config = builder
+    ? builder(sectionId, passingScore)
+    : getDefaultExamConfig(passingScore);
+
   examConfigCache[cacheKey] = config;
   return config;
 }
@@ -234,21 +216,28 @@ function getDefaultExamConfig(passingScore: number): ExamConfig {
 }
 
 /**
- * Load TBS questions for a course section
+ * Exam config builders by course.
+ * New courses: add an entry here or get getDefaultExamConfig automatically.
+ */
+const examConfigBuilders: Partial<Record<CourseId, (sectionId: string, passingScore: number) => ExamConfig>> = {
+  cpa: getCPAExamConfig,
+  ea: getEAExamConfig,
+  cma: getCMAExamConfig,
+  cia: getCIAExamConfig,
+  cisa: getCISAExamConfig,
+  cfp: getCFPExamConfig,
+};
+
+/**
+ * Load TBS questions for a course section.
+ * Uses COURSE_DATA.tbs — works for any course that provides TBS content.
  */
 export async function loadExamTBS(courseId: CourseId, sectionId: string, count: number): Promise<TBS[]> {
   try {
-    switch (courseId) {
-      case 'cpa': {
-        const { getTBSBySection } = await import('../data/cpa/tbs');
-        const allTbs = getTBSBySection(sectionId as import('../types').ExamSection);
-        return allTbs.slice(0, count);
-      }
-      // Other courses that don't have TBS yet return empty
-      // CMA, CIA, CISA, CFP exams are MCQ-only or use different simulation types
-      default:
-        return [];
-    }
+    const courseData = await loadCourseData(courseId);
+    const allTbs = (courseData.tbs || []) as TBS[];
+    const sectionTbs = allTbs.filter(t => t.section === sectionId);
+    return sectionTbs.slice(0, count);
   } catch (error) {
     console.error(`Failed to load TBS for ${courseId}/${sectionId}:`, error);
     return [];

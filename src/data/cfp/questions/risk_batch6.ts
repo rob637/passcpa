@@ -19,12 +19,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Risk mapping in personal financial planning involves:',
     options: [
-      'A) Only looking at insurance policies',
       'B) Identifying and assessing all significant risks by probability and potential impact, then determining appropriate mitigation strategies',
       'C) Avoiding all risks',
-      'D) Purchasing maximum insurance'
+      'A) Only looking at insurance policies',
+      'D) Purchasing maximum insurance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Risk mapping uses a matrix: probability of occurrence vs. severity of impact. High probability/high impact risks demand immediate attention (transfer or reduce). Low probability/low impact may be retained. This systematic approach ensures resources focus on the most significant risks first.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Pure risk differs from speculative risk in that pure risk:',
     options: [
-      'A) Offers potential for gain',
       'B) Involves only the possibility of loss or no loss, with no chance of gain',
       'C) Cannot be insured',
-      'D) Only affects businesses'
+      'A) Offers potential for gain',
+      'D) Only affects businesses',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Pure risk: only loss or no loss possible (fire, death, liability). Speculative risk: potential for gain, loss, or no change (investments, gambling, business ventures). Insurance typically covers pure risks—insurers can price based on loss probability without considering gain.'
   },
   {
@@ -57,12 +57,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Maximum probable loss (MPL) refers to:',
     options: [
-      'A) Total value of all assets',
       'B) The most likely loss amount in a worst-case scenario that could realistically occur, used to determine appropriate coverage levels',
       'C) Average claim experience',
-      'D) Deductible amounts'
+      'A) Total value of all assets',
+      'D) Deductible amounts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'MPL is the largest loss that would probably result from a single event—not the absolute maximum (which might be astronomical) but a realistic worst-case. It helps size insurance limits appropriately. For example, MPL for a home might be replacement cost less salvage value, not including the land.'
   },
   // RIS-2: Life Insurance
@@ -115,12 +115,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The corridor or guideline premium tests for life insurance exist to:',
     options: [
+      'C) Limit premiums',
       'A) Maximize investment returns',
       'B) Ensure policies maintain sufficient death benefit relative to cash value to qualify as life insurance rather than an investment',
-      'C) Limit premiums',
-      'D) Avoid all taxation'
+      'D) Avoid all taxation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRC 7702 defines life insurance through cash value accumulation test (CVAT) or guideline premium/corridor test (GPT). Both ensure death benefit remains meaningfully greater than cash value. Without these limits, policies become investment vehicles without insurance taxation benefits. The corridor requires minimum death benefit relative to cash value.'
   },
   // RIS-3: Disability Insurance
@@ -133,15 +133,15 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     subtopic: 'Residual Disability',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'Residual disability benefits:',
+    question: 'A physician with a disability insurance policy containing a residual disability rider returns to work part-time earning 60% of their pre-disability income. How is the residual benefit typically calculated?',
     options: [
-      'A) Only pay if totally disabled',
-      'B) Provide partial benefits when the insured can work but earns less due to disability',
-      'C) End after 30 days',
-      'D) Are not available in individual policies'
+      'The full monthly benefit is paid regardless of current earnings',
+      'The benefit is proportional to the income loss — approximately 40% of the full monthly benefit reflecting the 40% earnings reduction',
+      'The benefit equals the difference between pre-disability income and SSDI benefits',
+      'No benefit is paid because the insured has returned to work',
     ],
     correctAnswer: 1,
-    explanation: 'Residual benefits pay proportionally when the insured returns to work at reduced capacity/income. Example: if earnings drop 40%, receive 40% of benefit. This encourages return to work and provides ongoing support during recovery. Most quality individual policies include residual provisions.'
+    explanation: 'Residual disability benefits are typically proportional to the income loss. If the insured earns 60% of pre-disability income (40% loss), the benefit equals approximately 40% of the full monthly benefit. This encourages rehabilitation and return-to-work while providing income support during the transition.',
   },
   {
     id: 'CFP-RIS-B6-008',
@@ -155,11 +155,11 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     question: 'A Social Insurance Supplement/Offset rider on disability insurance:',
     options: [
       'A) Eliminates Social Security',
-      'B) Reduces policy benefits by Social Security disability received, or provides additional benefit if SSDI is denied',
       'C) Is mandatory',
-      'D) Only applies to group plans'
+      'B) Reduces policy benefits by Social Security disability received, or provides additional benefit if SSDI is denied',
+      'D) Only applies to group plans',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Social Insurance Supplement (SIS) provides extra benefit if SSDI is denied or delayed. Social Insurance Offset reduces the base benefit by SSDI received. The combination ensures adequate coverage while avoiding over-insurance. SSDI is difficult to obtain (strict definition), so SIS provides needed interim/permanent protection.'
   },
   {
@@ -173,10 +173,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Business overhead expense (BOE) disability insurance covers:',
     options: [
-      'A) The owner\'s salary',
-      'B) Business operating expenses (rent, utilities, employee salaries, loan payments) while the owner is disabled',
       'C) Business start-up costs',
-      'D) Only equipment purchases'
+      'B) Business operating expenses (rent, utilities, employee salaries, loan payments) while the owner is disabled',
+      'A) The owner\'s salary',
+      'D) Only equipment purchases',
     ],
     correctAnswer: 1,
     explanation: 'BOE policies reimburse normal operating expenses when a business owner is disabled, keeping the business viable during recovery. They don\'t cover the owner\'s income (that\'s individual disability). Benefits typically last 12-24 months. Premiums are tax-deductible as business expense; benefits are taxable.'
@@ -193,12 +193,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Actual cash value (ACV) coverage differs from replacement cost in that ACV:',
     options: [
+      'C) Only applies to vehicles',
       'A) Pays more',
       'B) Deducts depreciation from replacement cost, resulting in lower claim payments for older items',
-      'C) Only applies to vehicles',
-      'D) Is not available in homeowners policies'
+      'D) Is not available in homeowners policies',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'ACV = Replacement Cost - Depreciation. A 10-year-old roof destroyed might only receive 30-40% of replacement cost under ACV. Replacement cost coverage pays to replace/repair with new materials. The premium difference is usually worth it for significant protection against depreciation.'
   },
   {
@@ -212,10 +212,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An inflation guard endorsement on homeowners insurance:',
     options: [
-      'A) Freezes coverage amounts',
-      'B) Automatically increases coverage limits periodically to keep pace with construction cost increases',
       'C) Reduces premiums',
-      'D) Is included in all policies'
+      'B) Automatically increases coverage limits periodically to keep pace with construction cost increases',
+      'A) Freezes coverage amounts',
+      'D) Is included in all policies',
     ],
     correctAnswer: 1,
     explanation: 'Inflation guard automatically increases dwelling coverage (typically quarterly) to match rising construction costs. Without it, a home insured at $300K five years ago might be underinsured as replacement costs rose. The premium increases proportionally. Most advisers recommend this endorsement.'
@@ -231,10 +231,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Ordinance or law coverage in homeowners insurance pays for:',
     options: [
-      'A) Legal fees only',
-      'B) Increased costs to rebuild to current building codes when they exceed original construction standards',
       'C) Property taxes',
-      'D) Zoning variances'
+      'B) Increased costs to rebuild to current building codes when they exceed original construction standards',
+      'A) Legal fees only',
+      'D) Zoning variances',
     ],
     correctAnswer: 1,
     explanation: 'After a loss, rebuilding must meet current codes, which may exceed original construction. Standard policies may not cover this gap. Ordinance coverage pays: 1) demolition of undamaged portions if required, 2) increased building costs for code compliance, and 3) loss of undamaged portions that must be demolished.'
@@ -251,12 +251,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A personal umbrella liability policy provides:',
     options: [
-      'A) Coverage for business activities',
       'B) Excess liability protection above home and auto limits, plus broader coverage for some claims not covered by underlying policies',
+      'A) Coverage for business activities',
       'C) Only auto liability',
-      'D) Property coverage'
+      'D) Property coverage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Umbrellas provide: 1) excess liability above auto/homeowners limits (e.g., $1M-$10M), 2) broader coverage (some personal injury claims, liability abroad), 3) relatively inexpensive protection for catastrophic claims. They require maintaining specified underlying auto/home limits and typically exclude business/professional liability.'
   },
   {
@@ -270,12 +270,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Professional liability (E&O) insurance covers:',
     options: [
-      'A) Only bodily injury',
       'B) Claims arising from professional negligence, errors, or omissions in providing professional services',
+      'A) Only bodily injury',
       'C) General business liability',
-      'D) Product defects'
+      'D) Product defects',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Professional liability (errors & omissions) covers claims from professional service failures—negligent advice, missed deadlines, errors in work product. It\'s essential for CFP® professionals. Policies are claims-made (covering claims made during policy period regardless of when error occurred), unlike occurrence-based general liability.'
   },
   {
@@ -310,11 +310,11 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     question: 'A High Deductible Health Plan (HDHP) combined with an HSA offers:',
     options: [
       'A) Only lower premiums',
-      'B) Lower premiums, tax-deductible HSA contributions, tax-free growth, and tax-free withdrawals for qualified medical expenses',
       'C) Coverage without deductibles',
-      'D) Employer-only contributions'
+      'B) Lower premiums, tax-deductible HSA contributions, tax-free growth, and tax-free withdrawals for qualified medical expenses',
+      'D) Employer-only contributions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'HDHP + HSA: triple tax advantage (deduction, tax-free growth, tax-free qualified withdrawals). HDHPs have minimum deductibles ($1,600 individual/$3,200 family in 2024) and maximum out-of-pocket limits. HSA contributions for 2024: $4,150/$8,300 + $1,000 catch-up (55+). HSA funds roll over and can be invested for retirement.'
   },
   {
@@ -328,12 +328,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'COBRA allows continuation of employer health coverage for:',
     options: [
+      'C) Only employees, not family',
       'A) Unlimited time',
       'B) Generally 18 months after job loss (36 months for some events) at full premium plus 2% administrative fee',
-      'C) Only employees, not family',
-      'D) Free coverage'
+      'D) Free coverage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'COBRA applies to employers with 20+ employees. Qualifying events: job loss (18 months), hours reduction (18 months), divorce/legal separation (36 months), death (36 months for dependents), Medicare eligibility (36 months for spouse), dependent aging out (36 months). Premium is full cost plus 2% admin fee.'
   },
   {
@@ -347,12 +347,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The four parts of Medicare cover:',
     options: [
-      'A) Only hospital stays',
       'B) A: Hospital, B: Medical/outpatient, C: Medicare Advantage (private plans), D: Prescription drugs',
       'C) Only prescriptions',
-      'D) Long-term care'
+      'A) Only hospital stays',
+      'D) Long-term care',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Medicare: Part A (hospital—generally premium-free), Part B (medical/outpatient—premium required), Part C (Medicare Advantage—private plans combining A, B, usually D), Part D (prescription drugs—separate or with Advantage). Original Medicare (A+B) can add Medigap and standalone Part D. Medicare doesn\'t cover long-term care.'
   },
   // Additional Topics
@@ -367,10 +367,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Loss prevention differs from loss reduction in that prevention:',
     options: [
-      'A) Minimizes loss severity',
-      'B) Aims to avoid losses from occurring, while reduction minimizes loss severity once an event happens',
       'C) Is more expensive',
-      'D) Only applies to health risks'
+      'B) Aims to avoid losses from occurring, while reduction minimizes loss severity once an event happens',
+      'A) Minimizes loss severity',
+      'D) Only applies to health risks',
     ],
     correctAnswer: 1,
     explanation: 'Loss prevention stops losses (smoke alarms, safe driving, exercise). Loss reduction minimizes severity (sprinklers limit fire damage, seatbelts reduce injury severity, first aid). Both are risk control techniques that complement insurance. Prevention is proactive; reduction is reactive planning.'
@@ -386,10 +386,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A guaranteed insurability rider allows:',
     options: [
-      'A) Coverage on family members',
-      'B) Purchase of additional coverage at specific future dates or events without evidence of insurability',
       'C) Lower premiums',
-      'D) Conversion to term insurance'
+      'B) Purchase of additional coverage at specific future dates or events without evidence of insurability',
+      'A) Coverage on family members',
+      'D) Conversion to term insurance',
     ],
     correctAnswer: 1,
     explanation: 'Guaranteed insurability (or purchase option) lets policyholders buy additional coverage at specific dates (policy anniversaries) or life events (marriage, birth) without medical underwriting. Lock in insurability while young/healthy for future needs. Coverage is at attained age rates, but without health requirements.'
@@ -405,12 +405,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A recovery benefit in disability insurance:',
     options: [
-      'A) Is the same as residual disability',
       'B) Provides benefits after total disability ends even if the insured has returned to full earnings, to help with recovery expenses',
       'C) Only applies during disability',
-      'D) Reduces premiums'
+      'A) Is the same as residual disability',
+      'D) Reduces premiums',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Recovery benefits continue for a period after total disability ends, even at full earning capacity. They help with transition expenses—new clothing after weight change, work equipment, training, deferred personal expenses. Typically 12-24 months, decreasing monthly. Different from residual (which requires ongoing income loss).'
   },
   {
@@ -424,12 +424,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Open peril (all-risk) coverage differs from named peril in that open peril:',
     options: [
-      'A) Lists every possible loss',
       'B) Covers all losses except those specifically excluded, while named peril only covers losses specifically listed',
+      'A) Lists every possible loss',
       'C) Is always cheaper',
-      'D) Doesn\'t include exclusions'
+      'D) Doesn\'t include exclusions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Named peril: only listed causes of loss covered (fire, lightning, windstorm, etc.). Open peril: covers any cause of loss unless specifically excluded (nuclear, war, intentional, etc.). Open peril is broader—unexpected events not listed as exclusions are covered. Standard homeowners policies vary: dwelling is often open peril; contents may be named peril.'
   },
   {
@@ -460,15 +460,15 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     subtopic: 'Medigap',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Medigap (Medicare Supplement) policies:',
+    question: 'A Medicare beneficiary wants to know the key difference between Medigap plans and Medicare Advantage plans. Which statement is MOST accurate?',
     options: [
-      'A) Replace Original Medicare',
-      'B) Fill gaps in Original Medicare coverage, paying costs like deductibles, coinsurance, and excess charges',
-      'C) Include prescription coverage',
-      'D) Are available with Medicare Advantage'
+      'Medigap plans replace Original Medicare, while Medicare Advantage supplements it',
+      'Medigap plans supplement Original Medicare by covering cost-sharing gaps, while Medicare Advantage plans replace Original Medicare with an alternative delivery system',
+      'Both Medigap and Medicare Advantage plans are identical in structure and coverage',
+      'Medigap plans are only available to those under age 65',
     ],
     correctAnswer: 1,
-    explanation: 'Medigap supplements Original Medicare (Parts A and B), covering deductibles, coinsurance, copays, and excess charges. Standardized plans (A through N) offer different coverage levels. Cannot be used with Medicare Advantage. Best time to buy is 6-month open enrollment at 65—guaranteed issue, no health questions.'
+    explanation: 'Medigap (Medicare Supplement) plans work alongside Original Medicare to cover deductibles, copayments, and coinsurance. Medicare Advantage (Part C) plans replace Original Medicare with managed care plans (HMO/PPO) that provide all Part A and B benefits plus often Part D and additional benefits.',
   },
   {
     id: 'CFP-RIS-B6-025',
@@ -481,12 +481,12 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Property insurance coinsurance clauses penalize underinsurance by:',
     options: [
+      'C) Increasing premiums automatically',
       'A) Canceling the policy',
       'B) Reducing claim payments proportionally if coverage is below the required percentage (typically 80%) of property value',
-      'C) Increasing premiums automatically',
-      'D) Voiding coverage for major claims'
+      'D) Voiding coverage for major claims',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Coinsurance: if coverage is less than the required % of value (usually 80%), claims are reduced proportionally. Formula: (Coverage carried / Coverage required) × Loss = Payment. Example: $160K coverage on $250K home (64% vs. 80% required), $50K loss: (160/200) × 50K = $40K payment (20% penalty). Ensures adequate coverage for premium calculations.'
   }
 ];

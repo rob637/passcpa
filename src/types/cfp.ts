@@ -76,59 +76,37 @@ export interface CFPPracticeProblem {
 }
 
 /**
- * CFP Lesson structure
+ * CFP Lesson — DEPRECATED
+ * CFP lessons now use the shared Lesson type from src/types/index.ts.
+ * This interface is kept temporarily for reference only.
+ * @deprecated Use Lesson from '../types' instead
+ */
+/**
+ * CFP Lesson type
+ * 
+ * CFP lessons use a different shape from the shared Lesson type:
+ * - `domain` instead of `section`
+ * - `objectives` instead of `topics`
+ * - `content` as raw markdown string instead of LessonContent
  */
 export interface CFPLesson {
-  /** Unique lesson identifier (e.g., 'TAX-L001') */
   id: string;
-  
-  /** Domain this lesson belongs to */
   domain: string;
-  
-  /** Blueprint area within the domain */
-  blueprintArea: string;
-  
-  /** Lesson title */
+  blueprintArea?: string;
   title: string;
-  
-  /** Order within the domain/area for sequencing */
   order: number;
-  
-  /** Estimated duration in minutes */
   duration: number;
-  
-  /** Learning objectives for this lesson */
   objectives: string[];
-  
-  /** Main lesson content in Markdown format */
   content: string;
-  
-  /** Key points students should remember */
+  difficulty?: string;
+  keyTerms?: (string | { term: string; definition: string })[];
   keyTakeaways?: string[];
-  
-  /** Key terminology definitions for this lesson */
-  keyTerms?: { term: string; definition: string }[];
-  
-  /** Important formulas covered in this lesson */
-  keyFormulas?: CFPFormulaInput[];
-  
-  /** Memory aids and mnemonics */
-  mnemonics?: CFPMnemonicInput[];
-  
-  /** Practice problems with solutions */
+  keyFormulas?: (string | { name: string; formula: string; variables?: Record<string, string> })[];
+  mnemonics?: (string | CFPMnemonic)[];
+  formulas?: (string | CFPFormula)[];
   practiceProblems?: CFPPracticeProblem[];
-  
-  /** IDs of related lessons for cross-referencing */
-  relatedLessons?: string[];
-  
-  /** IDs of related questions for this lesson */
   relatedQuestionIds?: string[];
-  
-  /** Video explanation URL if available */
-  videoUrl?: string;
-  
-  /** Additional resources and references */
-  references?: string[];
+  relatedLessons?: string[];
 }
 
 /**

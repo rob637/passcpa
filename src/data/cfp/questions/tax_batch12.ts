@@ -19,12 +19,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer\'s "basis" in property typically represents:',
     options: [
-      'A) Current market value',
       'B) The taxpayer\'s investment in the property, used to calculate gain or loss upon sale',
+      'A) Current market value',
       'C) Assessed value',
-      'D) Insurance value'
+      'D) Insurance value',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Basis: cost of investment for tax purposes. Original basis: usually cost (plus acquisition costs). Adjustments: + improvements, - depreciation, - returns of capital. At sale: FMV - adjusted basis = gain/loss. Different acquisition methods = different basis rules (gift: carryover, inheritance: stepped up/down). Tracking basis essential for accurate tax reporting.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The assignment of income doctrine prevents:',
     options: [
-      'A) All income shifting',
       'B) Taxpayers from avoiding tax by directing earned income to lower-bracket taxpayers while retaining control or benefit',
       'C) Charitable giving',
-      'D) Business deductions'
+      'A) All income shifting',
+      'D) Business deductions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Assignment of income: "fruit and tree" doctrine—can\'t give fruit (income) and keep tree (source). Earned income: taxed to earner. Investment income: may be assigned with property. Prevents: earning income, gifting to children to reduce taxes. Examples: Lucas v. Earl (can\'t assign wages to spouse). Legitimate alternatives: family employment (reasonable wages), gifts of income-producing property.'
   },
   {
@@ -57,10 +57,10 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Head of Household filing status requires the taxpayer to:',
     options: [
-      'A) Be divorced',
-      'B) Be unmarried (or considered unmarried), pay more than half household costs, and have a qualifying dependent',
       'C) Own a home',
-      'D) Have children only'
+      'B) Be unmarried (or considered unmarried), pay more than half household costs, and have a qualifying dependent',
+      'A) Be divorced',
+      'D) Have children only',
     ],
     correctAnswer: 1,
     explanation: 'Head of Household: unmarried on Dec 31 (or meet separated spouse rules), pay >50% of keeping up home for year, have qualifying person living with you (exceptions for dependent parents). Benefits: larger standard deduction than single, more favorable brackets. Qualifying persons: children, relatives (specific rules). Marriage test: look at whole year, status on 12/31 generally controls.'
@@ -77,10 +77,10 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When debt is forgiven, the general rule is that the forgiven amount:',
     options: [
-      'A) Is never taxable',
-      'B) Is taxable income, with exceptions for insolvency, bankruptcy, and certain qualifying situations',
       'C) Is always a gift',
-      'D) Reduces only net worth'
+      'B) Is taxable income, with exceptions for insolvency, bankruptcy, and certain qualifying situations',
+      'A) Is never taxable',
+      'D) Reduces only net worth',
     ],
     correctAnswer: 1,
     explanation: 'Cancellation of debt income: generally taxable—you received benefit of borrowed funds. Exclusions: bankruptcy (Chapter 7/11), insolvency (to extent of insolvency), qualified principal residence debt (expired, sometimes extended), qualified farm debt, qualified real property business debt. Excluded COD income may reduce tax attributes. Form 1099-C reporting. Consult tax advisor—exclusions have requirements.'
@@ -96,12 +96,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Partnership income is taxed:',
     options: [
+      'C) Only when distributed',
       'A) Only at partnership level',
       'B) At the partner level on their individual returns, regardless of whether distributed, based on Schedule K-1',
-      'C) Only when distributed',
-      'D) At lower capital gains rates'
+      'D) At lower capital gains rates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Partnership taxation: flow-through entity—no entity-level tax. Income allocated to partners per partnership agreement. Partners taxed on share of income even if not distributed. Schedule K-1: reports partner\'s share of income, deductions, credits. Character flows through (capital gains, ordinary, etc.). Quarterly estimated payments may be needed. Complexity: basis tracking, self-employment tax, passive activity rules.'
   },
   {
@@ -115,12 +115,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Gambling winnings are:',
     options: [
+      'C) Taxable only over $600',
       'A) Tax-free',
       'B) Fully taxable income, with losses deductible only to the extent of winnings and only if itemizing',
-      'C) Taxable only over $600',
-      'D) Deductible if losses exceed winnings'
+      'D) Deductible if losses exceed winnings',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Gambling tax rules: all winnings taxable (including non-cash prizes at FMV). Losses: deductible only up to winnings, only if itemizing (miscellaneous deduction). Track: must have records of both wins and losses. Withholding: required on certain large wins. Professional gamblers: may deduct business expenses. For most: can\'t deduct net losses, only offset wins. Report all winnings even if no W-2G.'
   },
   // TAX-3: Deductions
@@ -173,12 +173,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Moving expenses for work relocation are deductible:',
     options: [
-      'A) For all taxpayers meeting distance test',
       'B) Only for active-duty military members moving due to military orders (2018-2025)',
+      'A) For all taxpayers meeting distance test',
       'C) For any job change',
-      'D) Never'
+      'D) Never',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Moving expense deduction: suspended for most taxpayers 2018-2025 (TCJA). Exception: active-duty military moving due to permanent change of station. Deductible expenses: moving household goods, travel to new home. Not: meals, house-hunting, temporary housing. Above-the-line deduction for qualifying military. May return after 2025. Employer reimbursements: may be taxable to non-military.'
   },
   // TAX-4: Credits
@@ -212,10 +212,10 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The Retirement Savings Contributions Credit (Saver\'s Credit) provides:',
     options: [
-      'A) Credit for all savings',
-      'B) Nonrefundable credit up to 50% of retirement contributions for low-to-moderate income taxpayers',
       'C) Only for IRA contributions',
-      'D) Refundable credit'
+      'B) Nonrefundable credit up to 50% of retirement contributions for low-to-moderate income taxpayers',
+      'A) Credit for all savings',
+      'D) Refundable credit',
     ],
     correctAnswer: 1,
     explanation: 'Saver\'s Credit: encourages low/moderate income retirement savings. Credit: 50%, 20%, or 10% of up to $2,000 contributed ($4,000 married). Based on AGI. 2024 limits approx: 50% if AGI <$23K single, <$46K married. Contributions: IRA, 401(k), 403(b), etc. Nonrefundable—only reduces tax to zero. Age 18+, not dependent, not student. Stacks with deduction for traditional contributions.'
@@ -231,12 +231,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The foreign tax credit is limited by:',
     options: [
-      'A) No limitations',
       'B) The U.S. tax attributable to foreign-source income, preventing credit from offsetting U.S. tax on U.S. income',
       'C) $500 annually',
-      'D) Only dividend income'
+      'A) No limitations',
+      'D) Only dividend income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Foreign tax credit limitation: can\'t exceed U.S. tax on foreign income. Formula: (Foreign income / Total income) × U.S. tax = limit. Excess credits: carryback 1 year, forward 10 years. Separate baskets for different income types. For small amounts (under $300 single/$600 married): simplified method, no Form 1116 needed. Generally better than deduction—dollar-for-dollar vs. marginal rate reduction.'
   },
   // TAX-5: Planning
@@ -251,12 +251,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When selecting a business entity for tax purposes, considerations include:',
     options: [
-      'A) Only liability protection',
       'B) Self-employment tax, qualified business income deduction, fringe benefits, and state tax treatment',
       'C) Only federal taxes',
-      'D) Size of business only'
+      'A) Only liability protection',
+      'D) Size of business only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Entity selection factors: self-employment tax (sole prop/partnership pays on all earnings, S-corp on reasonable wages only), QBI deduction (199A—20% for pass-throughs, limitations apply), employment taxes, fringe benefits (C-corp can provide tax-free), state taxes (some tax differently), exit strategies, complexity, cost. No one-size-fits-all—model different structures. Revisit as circumstances change.'
   },
   {
@@ -270,12 +270,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Passive activity losses generally can only offset:',
     options: [
+      'C) Capital gains',
       'A) Any income',
       'B) Passive activity income, with exceptions for real estate professionals and active participation rental activities',
-      'C) Capital gains',
-      'D) Wages only'
+      'D) Wages only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Passive activity loss rules: passive losses offset only passive income. Suspended losses carry forward, released at disposition. Exceptions: $25,000 rental real estate allowance (active participation, phase-out above $100K MAGI), real estate professional (750 hours+, material participation). Passive: limited partner, rental (generally), not meeting material participation tests. Complex rules—proper classification important.'
   },
   {
@@ -290,11 +290,11 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     question: 'A Section 1031 like-kind exchange for real estate requires:',
     options: [
       'A) Identical property types',
-      'B) Exchange of real property held for business or investment, with strict timing requirements and qualified intermediary',
       'C) Only residential for residential',
-      'D) IRS pre-approval'
+      'B) Exchange of real property held for business or investment, with strict timing requirements and qualified intermediary',
+      'D) IRS pre-approval',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: '1031 exchange: defer gain on like-kind real property exchange. Requirements: real property for real property (held for business/investment, not personal), qualified intermediary (can\'t touch funds), identify replacement within 45 days, close within 180 days. Boot (cash or debt relief) is taxable. Basis carries over. Post-TCJA: only real property (no personal property). Powerful deferral—can chain forever, step-up at death.'
   },
   // Additional Topics
@@ -310,11 +310,11 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     question: 'Under the claim of right doctrine:',
     options: [
       'A) Income is taxed only when earned',
-      'B) Income received under a claim of right is taxable when received, even if later required to be repaid',
       'C) Expenses are always deductible',
-      'D) Cash basis is required'
+      'B) Income received under a claim of right is taxable when received, even if later required to be repaid',
+      'D) Cash basis is required',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Claim of right: if receive funds you believe you\'re entitled to, taxable that year—even if later determined you must return them. If repay: deduction in repayment year, or special Section 1341 treatment (greater of: deduction at current rate or credit for prior year tax). Protects taxpayer from timing mismatch. Example: bonus received, later found to be overpayment and returned.'
   },
   {
@@ -328,12 +328,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When a life insurance policy is sold to a third party (life settlement):',
     options: [
-      'A) All proceeds are tax-free',
       'B) Gain up to cash surrender value is ordinary income, and excess is capital gain',
+      'A) All proceeds are tax-free',
       'C) All capital gain',
-      'D) No tax consequences'
+      'D) No tax consequences',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Life settlement taxation: Amount > basis = gain. Gain is split: ordinary income portion (cash surrender value minus basis), capital gain portion (sale price minus CSV). Basis = premiums paid (reduced by any dividends/withdrawals). Transfer for value rules don\'t apply to life settlements themselves, but buyer has issues. Report on Form 1099-LS. Complex—consult tax advisor.'
   },
   {
@@ -347,12 +347,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Net operating loss (NOL) rules for individuals currently provide:',
     options: [
-      'A) Unlimited carryback and carryforward',
       'B) Indefinite carryforward limited to 80% of taxable income, with no carryback (post-CARES)',
+      'A) Unlimited carryback and carryforward',
       'C) No carryforward',
-      'D) Full offset of any income'
+      'D) Full offset of any income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'NOL rules (post-2020): carryforward indefinitely, but limited to 80% of taxable income. No carryback (except farming). CARES Act temporarily allowed 5-year carryback for 2018-2020 losses at 100%. Excess business loss limitation applies first (Section 461(l))—losses in excess treated as NOL. Complex interaction of rules. Planning: timing of income/deductions, utilization strategies.'
   },
   {
@@ -366,10 +366,10 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Residential clean energy credits under the Inflation Reduction Act include:',
     options: [
-      'A) Only solar panels',
-      'B) Solar, wind, geothermal, battery storage, and fuel cells for home use, with credits through 2034',
       'C) Only commercial properties',
-      'D) Credits expired in 2022'
+      'B) Solar, wind, geothermal, battery storage, and fuel cells for home use, with credits through 2034',
+      'A) Only solar panels',
+      'D) Credits expired in 2022',
     ],
     correctAnswer: 1,
     explanation: 'Residential clean energy credit (25D): 30% of costs through 2032, then phases down. Covers: solar electric, solar water heating, wind, geothermal heat pumps, fuel cells, battery storage (3+ kWh). No upper limit. Carry forward unused credit. Primary or second home (not rental). Energy efficient home improvement credit (25C) separate: windows, doors, HVAC, heat pumps—more limited amounts.'
@@ -385,12 +385,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The installment method of reporting gain:',
     options: [
-      'A) Eliminates tax on gains',
       'B) Spreads gain recognition as payments are received, with each payment containing proportionate gain',
+      'A) Eliminates tax on gains',
       'C) Only applies to real estate',
-      'D) Requires IRS approval'
+      'D) Requires IRS approval',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Installment method: report gain as payments received. Gross profit percentage: (Gross profit / Contract price) × Payment = Gain recognized. Spreads tax over payment period. Automatic for qualifying sales. Not available: dealer property, publicly traded securities, inventory, recapture (reported immediately). Interest charged on deferred tax over $5M. Planning: manage cash flow, lower bracket years, estate planning.'
   },
   {
@@ -404,12 +404,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An amended tax return (Form 1040-X) must generally be filed within:',
     options: [
-      'A) 1 year of filing',
       'B) 3 years from original due date or 2 years from tax payment, whichever is later, to claim a refund',
       'C) 6 months of filing',
-      'D) No deadline'
+      'A) 1 year of filing',
+      'D) No deadline',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Amendment deadline for refund: later of 3 years from original due date (including extensions) OR 2 years from date tax paid. No deadline to pay additional tax (but penalties/interest accrue). Wait for original to process before amending. Certain items have special rules. Can now e-file 1040-X. Note: opens return to full IRS review. Document reasons for amendment.'
   },
   {
@@ -423,10 +423,10 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Restricted Stock Units (RSUs) are generally taxed:',
     options: [
-      'A) At grant',
-      'B) At vesting as ordinary income based on fair market value, with that value becoming the tax basis',
       'C) Only at sale',
-      'D) As capital gains'
+      'B) At vesting as ordinary income based on fair market value, with that value becoming the tax basis',
+      'A) At grant',
+      'D) As capital gains',
     ],
     correctAnswer: 1,
     explanation: 'RSU taxation: at vesting—FMV is ordinary income (W-2), subject to withholding. No Section 83(b) election available (unlike restricted stock—no property received until vesting). Basis: FMV at vesting. Subsequent sale: capital gain/loss from vesting value. Withholding: often net shares (sell shares to cover tax). Can create large taxable income in vesting year. Plan for tax impact.'
@@ -443,11 +443,11 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     question: 'Section 179 expensing allows businesses to:',
     options: [
       'A) Only depreciate over asset life',
-      'B) Immediately deduct the cost of qualifying business assets rather than depreciating over time, subject to limits',
       'C) Expense only vehicles',
-      'D) Expense any purchase'
+      'B) Immediately deduct the cost of qualifying business assets rather than depreciating over time, subject to limits',
+      'D) Expense any purchase',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Section 179: elect to expense (deduct immediately) qualifying assets instead of capitalizing and depreciating. 2024 limit: ~$1.16M, phases out when purchases exceed ~$2.89M. Qualifying: tangible personal property, qualified real property improvements. Limits: can\'t exceed business income. Vehicles: additional limitations. Alternative: bonus depreciation (100% through 2026, then phases down). Powerful planning tool.'
   },
   {
@@ -461,12 +461,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The adoption credit provides:',
     options: [
+      'C) Credit only for foreign adoptions',
       'A) Only deduction',
       'B) Nonrefundable credit for qualified adoption expenses up to per-child limit, with income phase-out',
-      'C) Credit only for foreign adoptions',
-      'D) Unlimited credit'
+      'D) Unlimited credit',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Adoption credit: 2024 max ~$16,810 per child for qualified expenses. Expenses: adoption fees, legal costs, travel. Phase-out: begins at MAGI ~$252,000. Special needs adoption: credit for max amount even if expenses lower. Timing: credit in year finalized (domestic) or expenses paid (foreign). Nonrefundable but 5-year carryforward. Employer adoption assistance may be excluded from income (same limits).'
   },
   {
@@ -480,12 +480,12 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Tax planning for retirement timing should consider:',
     options: [
+      'C) Current year only',
       'A) Only Social Security',
       'B) Years with lower projected income before RMDs, Roth conversions, capital gains harvesting, and ACA subsidy cliffs',
-      'C) Current year only',
-      'D) Estate taxes only'
+      'D) Estate taxes only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Retirement tax timing: early retirement years often lowest income—before Social Security, RMDs. Opportunities: Roth conversions at lower rates, capital gains harvesting (0% bracket), accelerate income to fill lower brackets. Watch: ACA premium cliff around 400% FPL, Medicare IRMAA (income from 2 years prior). Long-term: project taxes, model different scenarios. Window of opportunity—plan proactively.'
   }
 ];

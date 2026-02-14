@@ -16,10 +16,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'The PRIMARY purpose of IT operations management is to:',
     options: [
-      'Develop new applications',
-      'Ensure reliable delivery of IT services',
       'Reduce IT staff',
-      'Approve IT projects'
+      'Ensure reliable delivery of IT services',
+      'Approve IT projects',
+      'Develop new applications',
     ],
     correctAnswer: 1,
     explanation: 'IT operations management ensures reliable, consistent delivery of IT services that meet business requirements and service level agreements.',
@@ -35,12 +35,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Job scheduling controls are important to ensure:',
     options: [
-      'Staff are properly trained',
       'Batch processes run in the correct sequence',
       'Hardware is up to date',
-      'Users have proper access'
+      'Users have proper access',
+      'Staff are properly trained',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Job scheduling controls ensure batch processes run in the correct sequence, at appropriate times, with proper dependencies maintained.',
     topic: 'IT Operations',
     subtopic: 'Job Scheduling'
@@ -54,12 +54,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing data center operations, an IS auditor should be MOST concerned if:',
     options: [
-      'Operators follow documented procedures',
-      'Console logs are reviewed regularly',
       'Operators have unlimited system access',
-      'Backup schedules are automated'
+      'Backup schedules are automated',
+      'Console logs are reviewed regularly',
+      'Operators follow documented procedures',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Operators with unlimited system access can bypass controls and make unauthorized changes. Access should be limited to what is necessary for operations.',
     topic: 'Data Center',
     subtopic: 'Access Control'
@@ -73,12 +73,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Problem management differs from incident management in that it:',
     options: [
-      'Focuses on quick restoration of service',
-      'Identifies and addresses root causes',
+      'Does not require documentation',
       'Only involves operations staff',
-      'Does not require documentation'
+      'Identifies and addresses root causes',
+      'Focuses on quick restoration of service',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Problem management focuses on identifying root causes and preventing recurrence, while incident management focuses on quick service restoration.',
     topic: 'IT Service Management',
     subtopic: 'Problem Management'
@@ -92,10 +92,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Incident management primarily aims to:',
     options: [
-      'Identify root causes',
+      'Implement permanent solutions',
       'Restore normal service operation as quickly as possible',
       'Prevent all future incidents',
-      'Implement permanent solutions'
+      'Identify root causes',
     ],
     correctAnswer: 1,
     explanation: 'Incident management aims to restore normal service operation as quickly as possible, minimizing impact on business operations.',
@@ -111,12 +111,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'The PRIMARY purpose of capacity management is to:',
     options: [
-      'Reduce costs',
       'Ensure IT resources meet current and future needs',
+      'Document system configurations',
       'Limit user access',
-      'Document system configurations'
+      'Reduce costs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Capacity management ensures IT infrastructure has adequate capacity to meet current demands and planned future growth.',
     topic: 'IT Operations',
     subtopic: 'Capacity Management'
@@ -130,12 +130,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Monitoring of system resources is important because it:',
     options: [
-      'Replaces the need for backups',
       'Enables proactive identification of potential issues',
+      'Reduces documentation requirements',
       'Eliminates security threats',
-      'Reduces documentation requirements'
+      'Replaces the need for backups',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Resource monitoring enables proactive identification of potential issues before they impact service, allowing preventive action.',
     topic: 'IT Operations',
     subtopic: 'Monitoring'
@@ -149,10 +149,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The purpose of a help desk is to:',
     options: [
-      'Develop applications',
+      'Perform security audits',
       'Provide single point of contact for user support',
       'Manage IT projects',
-      'Perform security audits'
+      'Develop applications',
     ],
     correctAnswer: 1,
     explanation: 'The help desk provides a single point of contact for users to report issues, request services, and receive support.',
@@ -168,10 +168,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Backup types that only copy data changed since the last full backup are called:',
     options: [
-      'Full backups',
-      'Incremental or differential backups',
       'Mirror backups',
-      'Archive backups'
+      'Incremental or differential backups',
+      'Archive backups',
+      'Full backups',
     ],
     correctAnswer: 1,
     explanation: 'Incremental and differential backups only copy data changed since the last full backup (differential) or last backup of any type (incremental), reducing backup time.',
@@ -187,12 +187,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'The MOST important factor when storing backup media offsite is:',
     options: [
-      'Cost of the storage facility',
       'Environmental protection and accessibility',
       'Distance from the primary data center',
-      'Size of the storage area'
+      'Size of the storage area',
+      'Cost of the storage facility',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Offsite storage must provide environmental protection (temperature, humidity, fire protection) and timely accessibility to meet recovery objectives.',
     topic: 'Data Management',
     subtopic: 'Offsite Storage'
@@ -206,12 +206,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Backup testing should verify that:',
     options: [
-      'Backups complete on schedule',
       'Data can be successfully restored',
       'Backup media is inexpensive',
-      'Backups are automated'
+      'Backups are automated',
+      'Backups complete on schedule',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Backup testing must verify that data can be successfully restored. A backup that cannot be restored is useless for recovery purposes.',
     topic: 'Data Management',
     subtopic: 'Backup Testing'
@@ -225,12 +225,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Data retention policies should be based on:',
     options: [
-      'Available storage capacity',
-      'Legal, regulatory, and business requirements',
+      'Backup software capabilities',
       'IT preferences',
-      'Backup software capabilities'
+      'Legal, regulatory, and business requirements',
+      'Available storage capacity',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data retention policies must consider legal, regulatory, and business requirements to ensure data is kept long enough but not longer than necessary.',
     topic: 'Data Management',
     subtopic: 'Data Retention'
@@ -244,12 +244,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Environmental controls in a data center include:',
     options: [
-      'Only fire suppression',
-      'HVAC, fire suppression, and humidity control',
+      'Only backup power',
       'Only access controls',
-      'Only backup power'
+      'HVAC, fire suppression, and humidity control',
+      'Only fire suppression',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data center environmental controls include HVAC for cooling, fire suppression systems, humidity control, and water detection to protect equipment.',
     topic: 'Data Center',
     subtopic: 'Environmental Controls'
@@ -263,12 +263,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'An uninterruptible power supply (UPS) provides:',
     options: [
-      'Long-term backup power',
-      'Short-term power to bridge until generator starts',
       'Power for the entire building',
-      'Cooling for servers'
+      'Cooling for servers',
+      'Short-term power to bridge until generator starts',
+      'Long-term backup power',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A UPS provides short-term battery backup power to bridge the gap until a generator can start and take over during a power outage.',
     topic: 'Data Center',
     subtopic: 'Power Management'
@@ -282,12 +282,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Physical access to the data center should be:',
     options: [
-      'Open to all IT staff',
       'Restricted and logged',
+      'Controlled by developers',
       'Available to management only',
-      'Controlled by developers'
+      'Open to all IT staff',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data center physical access should be restricted to authorized personnel, logged for accountability, and regularly reviewed.',
     topic: 'Data Center',
     subtopic: 'Physical Security'
@@ -301,10 +301,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network monitoring tools are used to:',
     options: [
-      'Develop applications',
+      'Store user data',
       'Detect and diagnose network issues',
       'Replace firewalls',
-      'Store user data'
+      'Develop applications',
     ],
     correctAnswer: 1,
     explanation: 'Network monitoring tools detect network issues, measure performance, and help diagnose problems to maintain network availability and performance.',
@@ -320,10 +320,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing IT asset management, an IS auditor should be MOST concerned if:',
     options: [
-      'Assets are tagged with identifiers',
-      'There is no complete inventory of IT assets',
       'Depreciation schedules are followed',
-      'Assets are disposed of when obsolete'
+      'There is no complete inventory of IT assets',
+      'Assets are disposed of when obsolete',
+      'Assets are tagged with identifiers',
     ],
     correctAnswer: 1,
     explanation: 'Without a complete inventory, the organization cannot properly manage, secure, or account for all IT assets, increasing risk of loss and security gaps.',
@@ -339,12 +339,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'End-of-life hardware should be:',
     options: [
-      'Disposed of immediately',
       'Properly sanitized before disposal or reuse',
+      'Given to employees',
       'Stored indefinitely',
-      'Given to employees'
+      'Disposed of immediately',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'End-of-life hardware must be properly sanitized to remove all data before disposal or reuse to prevent unauthorized data disclosure.',
     topic: 'IT Operations',
     subtopic: 'Asset Disposal'
@@ -358,12 +358,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'A business continuity plan should be:',
     options: [
-      'Developed by IT only',
       'Organization-wide and business-driven',
       'Focused on IT recovery only',
-      'Kept confidential from employees'
+      'Kept confidential from employees',
+      'Developed by IT only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Business continuity planning is an organization-wide effort driven by business requirements, not just IT. It addresses all critical business functions.',
     topic: 'Business Continuity',
     subtopic: 'BCP Scope'
@@ -377,10 +377,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'The FIRST step in business continuity planning is:',
     options: [
-      'Developing recovery procedures',
-      'Conducting a business impact analysis',
       'Purchasing recovery infrastructure',
-      'Training staff'
+      'Conducting a business impact analysis',
+      'Training staff',
+      'Developing recovery procedures',
     ],
     correctAnswer: 1,
     explanation: 'BIA is the first step as it identifies critical functions and acceptable downtime, which drives all subsequent planning and investment decisions.',
@@ -396,12 +396,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Crisis communication plans should include:',
     options: [
-      'Technical recovery procedures',
-      'Designated spokespersons and message templates',
+      'IT vendor contacts only',
       'Backup locations only',
-      'IT vendor contacts only'
+      'Designated spokespersons and message templates',
+      'Technical recovery procedures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Crisis communication plans should designate spokespersons, provide message templates, and establish procedures for communicating with stakeholders during a crisis.',
     topic: 'Business Continuity',
     subtopic: 'Crisis Communication'
@@ -415,12 +415,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'A tabletop disaster recovery exercise:',
     options: [
-      'Fully tests all recovery capabilities',
-      'Walks through scenarios without actually recovering systems',
       'Is only for IT staff',
-      'Replaces the need for full tests'
+      'Replaces the need for full tests',
+      'Walks through scenarios without actually recovering systems',
+      'Fully tests all recovery capabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tabletop exercises walk through disaster scenarios in a discussion format without actually recovering systems, testing plan completeness and team coordination.',
     topic: 'Disaster Recovery',
     subtopic: 'DR Testing'
@@ -434,12 +434,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'The PRIMARY objective of disaster recovery planning is to:',
     options: [
-      'Prevent all disasters',
-      'Minimize business impact and enable timely recovery',
       'Eliminate the need for backups',
-      'Reduce IT costs'
+      'Reduce IT costs',
+      'Minimize business impact and enable timely recovery',
+      'Prevent all disasters',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Disaster recovery planning aims to minimize business impact when disasters occur and enable timely recovery of critical IT systems.',
     topic: 'Disaster Recovery',
     subtopic: 'DR Objectives'
@@ -453,10 +453,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A cold site provides:',
     options: [
-      'Fully operational systems',
+      'Immediate switchover capability',
       'Basic infrastructure requiring significant setup time',
       'Real-time data replication',
-      'Immediate switchover capability'
+      'Fully operational systems',
     ],
     correctAnswer: 1,
     explanation: 'A cold site provides basic infrastructure (space, power, connectivity) but requires significant time to install equipment and restore systems.',
@@ -472,10 +472,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A warm site provides:',
     options: [
-      'No infrastructure',
+      'Only backup storage',
       'Partial equipment and connectivity with moderate setup time',
       'Immediate failover',
-      'Only backup storage'
+      'No infrastructure',
     ],
     correctAnswer: 1,
     explanation: 'A warm site has partial equipment and connectivity already in place, requiring moderate time to become fully operational.',
@@ -491,12 +491,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data replication provides protection by:',
     options: [
-      'Encrypting data',
       'Maintaining copies of data at alternate locations',
       'Compressing storage',
-      'Automating backups'
+      'Automating backups',
+      'Encrypting data',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data replication maintains copies of data at alternate locations, providing protection against data loss at the primary site and enabling faster recovery.',
     topic: 'Disaster Recovery',
     subtopic: 'Data Replication'
@@ -510,12 +510,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Virtualization in disaster recovery provides benefits including:',
     options: [
-      'Elimination of hardware requirements',
       'Faster recovery through hardware independence',
       'Reduced need for testing',
-      'Permanent data protection'
+      'Permanent data protection',
+      'Elimination of hardware requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Virtualization enables faster recovery by abstracting systems from specific hardware, allowing recovery on different physical equipment.',
     topic: 'Disaster Recovery',
     subtopic: 'Virtualization'
@@ -529,10 +529,10 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Cloud computing disaster recovery advantages include:',
     options: [
-      'Elimination of all costs',
-      'Scalable resources and geographic distribution',
       'No need for planning',
-      'Automatic compliance'
+      'Scalable resources and geographic distribution',
+      'Automatic compliance',
+      'Elimination of all costs',
     ],
     correctAnswer: 1,
     explanation: 'Cloud DR offers scalable resources, geographic distribution, and pay-as-you-use pricing, reducing the cost of maintaining standby infrastructure.',
@@ -548,12 +548,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing business continuity plans, an IS auditor should be MOST concerned if:',
     options: [
-      'Plans are tested annually',
       'Plans do not address all critical business functions',
       'Plans are documented electronically',
-      'IT is involved in planning'
+      'IT is involved in planning',
+      'Plans are tested annually',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'BCP that does not address all critical business functions leaves the organization vulnerable. All critical functions must have continuity provisions.',
     topic: 'Business Continuity',
     subtopic: 'BCP Review'
@@ -567,12 +567,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Lessons learned from DR tests should be:',
     options: [
-      'Kept confidential',
       'Used to improve plans and procedures',
       'Shared only with management',
-      'Discarded after the test'
+      'Discarded after the test',
+      'Kept confidential',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Lessons learned from DR tests should be documented and used to improve plans, procedures, and address gaps identified during testing.',
     topic: 'Disaster Recovery',
     subtopic: 'Continuous Improvement'

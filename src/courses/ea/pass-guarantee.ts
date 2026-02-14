@@ -5,6 +5,8 @@
  * EA exam has 3 parts, each scored 40-130, passing is 105.
  */
 
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
+
 export interface PassGuaranteeConfig {
   enabled: boolean;
   name: string;
@@ -58,7 +60,7 @@ export const EA_PASS_GUARANTEE: PassGuaranteeConfig = {
     {
       id: 'pg-req-002',
       title: 'Complete 80% of Practice Questions',
-      description: 'Answer at least 80% of the practice questions for that part (500+ each)',
+      description: `Answer at least 80% of the practice questions for that part (${COURSE_DISPLAY_STATS.ea.questions} total)`,
       metric: 'question_completion',
       threshold: 80,
       icon: 'CheckCircle'

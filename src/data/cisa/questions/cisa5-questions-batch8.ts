@@ -16,12 +16,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'The MOST effective control against social engineering attacks is:',
     options: [
+      'Complex password requirements',
+      'Intrusion detection systems',
       'Strong firewall rules',
       'Security awareness training for all employees',
-      'Intrusion detection systems',
-      'Complex password requirements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Social engineering targets people, so awareness training is the most effective control.',
     topic: 'Information Security',
     subtopic: 'Social Engineering'
@@ -35,12 +35,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Multi-factor authentication requires:',
     options: [
+      'Fingerprint and retina scan',
+      'Username and password',
       'Two passwords',
       'Something you know and something you have or are',
-      'Fingerprint and retina scan',
-      'Username and password'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MFA requires factors from different categories: knowledge, possession, or biometric.',
     topic: 'Access Control',
     subtopic: 'Multi-Factor Authentication'
@@ -54,12 +54,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing encryption key management, the IS auditor should be MOST concerned if:',
     options: [
+      'Key rotation is performed quarterly',
+      'Dual control is used for key generation',
       'Keys are stored in a hardware security module',
       'Encryption keys are stored alongside encrypted data',
-      'Key rotation is performed quarterly',
-      'Dual control is used for key generation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Storing keys with encrypted data defeats the purpose of encryption if both are compromised together.',
     topic: 'Cryptography',
     subtopic: 'Key Management'
@@ -73,12 +73,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'The purpose of a security information and event management (SIEM) system is to:',
     options: [
-      'Prevent all security incidents',
-      'Collect, correlate, and analyze security events for detection and response',
       'Replace firewalls and IDS',
-      'Encrypt network traffic'
+      'Prevent all security incidents',
+      'Encrypt network traffic',
+      'Collect, correlate, and analyze security events for detection and response',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SIEM systems collect and correlate security events to enable detection and response to threats.',
     topic: 'Security Operations',
     subtopic: 'SIEM'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Zero trust architecture is based on the principle of:',
     options: [
-      'Trusting all internal network traffic',
-      'Never trust, always verify regardless of location',
       'Trusting users after initial authentication',
-      'Blocking all external connections'
+      'Trusting all internal network traffic',
+      'Blocking all external connections',
+      'Never trust, always verify regardless of location',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Zero trust assumes no implicit trust and requires verification of all access regardless of network location.',
     topic: 'Network Security',
     subtopic: 'Zero Trust'
@@ -112,11 +112,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Data loss prevention (DLP) controls should:',
     options: [
       'Focus only on external threats',
-      'Detect and prevent unauthorized data exfiltration',
+      'Monitor network traffic only',
       'Replace encryption',
-      'Monitor network traffic only'
+      'Detect and prevent unauthorized data exfiltration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DLP detects and prevents unauthorized transmission or storage of sensitive data.',
     topic: 'Data Protection',
     subtopic: 'Data Loss Prevention'
@@ -131,11 +131,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'The PRIMARY purpose of network segmentation is to:',
     options: [
       'Improve network speed',
-      'Limit the scope and impact of security breaches',
+      'Simplify network management',
       'Reduce hardware costs',
-      'Simplify network management'
+      'Limit the scope and impact of security breaches',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Segmentation limits lateral movement and contains the impact of security breaches.',
     topic: 'Network Security',
     subtopic: 'Network Segmentation'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Mobile device management (MDM) should include:',
     options: [
+      'Personal device exclusion',
       'Only device tracking',
-      'Policy enforcement, encryption, and remote wipe capabilities',
       'App store access only',
-      'Personal device exclusion'
+      'Policy enforcement, encryption, and remote wipe capabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MDM should enforce security policies, encryption, and enable remote wipe of lost/stolen devices.',
     topic: 'Endpoint Security',
     subtopic: 'Mobile Device Management'
@@ -168,12 +168,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing cloud security, the IS auditor should verify that:',
     options: [
+      'No security controls are needed for SaaS',
       'The cloud provider handles all security',
-      'Responsibilities under the shared responsibility model are understood and addressed',
       'Cloud is always more secure than on-premises',
-      'No security controls are needed for SaaS'
+      'Responsibilities under the shared responsibility model are understood and addressed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The shared responsibility model requires the organization to address security for its areas of responsibility.',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility'
@@ -188,11 +188,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Vulnerability scanning should be performed:',
     options: [
       'Only after a security incident',
-      'Regularly and after significant changes',
+      'Only by external parties',
       'Once during initial deployment',
-      'Only by external parties'
+      'Regularly and after significant changes',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Vulnerability scanning should be regular and triggered by significant system changes.',
     topic: 'Vulnerability Management',
     subtopic: 'Scanning Frequency'
@@ -206,12 +206,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Penetration testing differs from vulnerability scanning in that penetration testing:',
     options: [
+      'Only identifies vulnerabilities',
+      'Requires no authorization',
       'Is fully automated',
       'Attempts to exploit vulnerabilities to demonstrate real-world impact',
-      'Only identifies vulnerabilities',
-      'Requires no authorization'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Penetration testing goes beyond identification to attempt exploitation, demonstrating actual risk.',
     topic: 'Security Testing',
     subtopic: 'Penetration Testing'
@@ -225,12 +225,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The purpose of a web application firewall (WAF) is to:',
     options: [
+      'Block all web access',
+      'Encrypt web traffic only',
       'Replace network firewalls',
       'Protect web applications from application-layer attacks',
-      'Encrypt web traffic only',
-      'Block all web access'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'WAFs protect web applications from application-layer attacks like SQL injection and XSS.',
     topic: 'Application Security',
     subtopic: 'Web Application Firewall'
@@ -244,12 +244,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating privileged access management, the IS auditor should verify:',
     options: [
-      'All users have admin access for convenience',
-      'Just-in-time access with session recording and approval workflows',
       'Permanent privileged access for IT staff',
-      'No monitoring of admin activities'
+      'All users have admin access for convenience',
+      'No monitoring of admin activities',
+      'Just-in-time access with session recording and approval workflows',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PAM should provide just-in-time access with approval workflows and session recording.',
     topic: 'Access Control',
     subtopic: 'Privileged Access Management'
@@ -264,11 +264,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Data classification should be based on:',
     options: [
       'Storage location',
-      'Sensitivity and the impact of unauthorized disclosure',
       'File size',
-      'Department ownership'
+      'Department ownership',
+      'Sensitivity and the impact of unauthorized disclosure',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Classification should reflect data sensitivity and potential impact of unauthorized disclosure.',
     topic: 'Data Protection',
     subtopic: 'Data Classification'
@@ -283,11 +283,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'The MOST significant risk with IoT devices in an enterprise environment is:',
     options: [
       'High power consumption',
-      'Inadequate security controls and difficulty patching',
       'Limited functionality',
-      'Compatibility issues'
+      'Compatibility issues',
+      'Inadequate security controls and difficulty patching',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IoT devices often have weak security and are difficult to patch, creating significant risk.',
     topic: 'Endpoint Security',
     subtopic: 'IoT Security'
@@ -301,12 +301,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'End-to-end encryption ensures:',
     options: [
+      'Encryption keys are shared',
       'Data is only encrypted at rest',
-      'Data is encrypted between sender and recipient with decryption only at endpoints',
       'Network boundaries are protected',
-      'Encryption keys are shared'
+      'Data is encrypted between sender and recipient with decryption only at endpoints',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'End-to-end encryption protects data so only endpoints can decrypt, not intermediaries.',
     topic: 'Cryptography',
     subtopic: 'End-to-End Encryption'
@@ -320,12 +320,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'An IS auditor discovers that database activity monitoring is not implemented. This is MOST concerning for:',
     options: [
+      'Query optimization',
       'Performance optimization',
-      'Detection of unauthorized data access or exfiltration',
       'Capacity planning',
-      'Query optimization'
+      'Detection of unauthorized data access or exfiltration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Database activity monitoring is critical for detecting unauthorized access and data exfiltration.',
     topic: 'Data Protection',
     subtopic: 'Database Monitoring'
@@ -340,11 +340,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Security patches should be:',
     options: [
       'Applied immediately without testing',
-      'Risk assessed, tested, and applied within defined timeframes',
+      'Handled by vendors only',
       'Applied only annually',
-      'Handled by vendors only'
+      'Risk assessed, tested, and applied within defined timeframes',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Patches should be assessed for risk, tested, and applied within timeframes based on severity.',
     topic: 'Vulnerability Management',
     subtopic: 'Patch Management'
@@ -358,12 +358,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating email security, the IS auditor should verify implementation of:',
     options: [
+      'No email filtering to prevent delays',
       'Largest mailbox sizes',
-      'SPF, DKIM, and DMARC to prevent email spoofing',
       'Unlimited attachment sizes',
-      'No email filtering to prevent delays'
+      'SPF, DKIM, and DMARC to prevent email spoofing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SPF, DKIM, and DMARC are essential email authentication controls to prevent spoofing.',
     topic: 'Email Security',
     subtopic: 'Email Authentication'
@@ -377,12 +377,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'A security operations center (SOC) should have:',
     options: [
+      'No escalation procedures',
+      'Focus only on external threats',
       '24/7 staffing only during business hours',
       'Continuous monitoring, detection, and response capabilities',
-      'Focus only on external threats',
-      'No escalation procedures'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'An effective SOC provides continuous monitoring, detection, and response to security events.',
     topic: 'Security Operations',
     subtopic: 'Security Operations Center'
@@ -397,11 +397,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Identity and access management (IAM) should ensure:',
     options: [
       'All users have the same access',
-      'Users have appropriate access based on role and least privilege',
       'Access is never revoked',
-      'Authentication is optional for low-risk systems'
+      'Authentication is optional for low-risk systems',
+      'Users have appropriate access based on role and least privilege',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IAM ensures appropriate access based on role, applying least privilege principles.',
     topic: 'Access Control',
     subtopic: 'Identity Management'
@@ -416,11 +416,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'When evaluating third-party risk management for security, the IS auditor should verify:',
     options: [
       'Vendors are selected based on lowest cost',
-      'Security assessments and ongoing monitoring of critical vendors',
       'All vendor access is unrestricted',
-      'Vendor security is the vendor\'s responsibility only'
+      'Vendor security is the vendor\'s responsibility only',
+      'Security assessments and ongoing monitoring of critical vendors',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Third-party risk management requires security assessment and ongoing monitoring of vendors.',
     topic: 'Third-Party Security',
     subtopic: 'Vendor Security'
@@ -434,12 +434,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Secure data destruction should ensure:',
     options: [
-      'Data is deleted from primary storage',
-      'Data cannot be recovered through any means',
       'Only digital data is addressed',
-      'Destruction is performed by data owners'
+      'Data is deleted from primary storage',
+      'Destruction is performed by data owners',
+      'Data cannot be recovered through any means',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Secure destruction must ensure data cannot be recovered, using appropriate techniques for the media type.',
     topic: 'Data Protection',
     subtopic: 'Data Destruction'
@@ -453,12 +453,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Threat intelligence should be:',
     options: [
+      'Purchased from one source only',
       'Collected but not acted upon',
-      'Integrated into security operations to inform detection and response',
       'Focused only on historical threats',
-      'Purchased from one source only'
+      'Integrated into security operations to inform detection and response',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Threat intelligence should inform and improve detection and response capabilities.',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence'
@@ -473,11 +473,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Biometric authentication is based on:',
     options: [
       'Something you know',
-      'Something you are (physical characteristics)',
+      'Somewhere you are',
       'Something you have',
-      'Somewhere you are'
+      'Something you are (physical characteristics)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Biometrics authenticate based on physical or behavioral characteristics (something you are).',
     topic: 'Access Control',
     subtopic: 'Biometric Authentication'
@@ -492,11 +492,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'When reviewing data privacy controls, the IS auditor should verify:',
     options: [
       'All personal data is public',
-      'Privacy requirements are identified and appropriate controls are implemented',
+      'Consent is never required',
       'Privacy is IT\'s responsibility only',
-      'Consent is never required'
+      'Privacy requirements are identified and appropriate controls are implemented',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Privacy controls require identifying applicable requirements and implementing appropriate controls.',
     topic: 'Privacy',
     subtopic: 'Privacy Controls'
@@ -510,12 +510,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An intrusion prevention system (IPS) differs from an IDS in that IPS:',
     options: [
-      'Only logs attacks',
-      'Can automatically block detected attacks',
       'Is installed on endpoints only',
-      'Does not require signatures'
+      'Only logs attacks',
+      'Does not require signatures',
+      'Can automatically block detected attacks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IPS can automatically block attacks, while IDS only detects and alerts.',
     topic: 'Network Security',
     subtopic: 'Intrusion Prevention'
@@ -530,11 +530,11 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Physical access controls should include:',
     options: [
       'Open access during business hours',
-      'Visitor logging, badge access, and security monitoring',
+      'No cameras for privacy',
       'Keys only for executives',
-      'No cameras for privacy'
+      'Visitor logging, badge access, and security monitoring',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Physical access controls include visitor management, badge access, and security monitoring.',
     topic: 'Physical Security',
     subtopic: 'Physical Access Controls'

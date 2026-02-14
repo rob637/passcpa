@@ -16,10 +16,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Digital twin technology for operations enables:',
     options: [
-      'Only visualization',
+      'Only documentation',
       'Simulation, prediction, and optimization of physical systems',
       'Only monitoring',
-      'Only documentation'
+      'Only visualization',
     ],
     correctAnswer: 1,
     explanation: 'Digital twins enable simulation, predictive analysis, and optimization of physical systems.',
@@ -35,10 +35,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Edge computing operations require consideration of:',
     options: [
-      'Only centralized management',
-      'Latency requirements, connectivity, and distributed security',
       'Only cloud integration',
-      'Only cost'
+      'Latency requirements, connectivity, and distributed security',
+      'Only cost',
+      'Only centralized management',
     ],
     correctAnswer: 1,
     explanation: 'Edge computing requires managing latency, connectivity challenges, and distributed security.',
@@ -54,12 +54,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Sustainability in IT operations addresses:',
     options: [
-      'Only cost reduction',
       'Energy efficiency, carbon footprint, and e-waste management',
       'Only compliance',
-      'Only performance'
+      'Only performance',
+      'Only cost reduction',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT sustainability addresses energy efficiency, carbon footprint reduction, and e-waste.',
     topic: 'IT Operations',
     subtopic: 'Sustainability'
@@ -73,12 +73,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Predictive operations (AIOps) uses:',
     options: [
-      'Only manual analysis',
-      'Machine learning to predict and prevent operational issues',
       'Only historical data',
-      'Only alerts'
+      'Only alerts',
+      'Machine learning to predict and prevent operational issues',
+      'Only manual analysis',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'AIOps uses ML to predict operational issues and enable proactive remediation.',
     topic: 'IT Operations',
     subtopic: 'AIOps'
@@ -92,12 +92,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Immutable logging ensures:',
     options: [
-      'Log deletion capability',
-      'Tamper-evident log storage for forensic integrity',
+      'Only retention',
       'Only compression',
-      'Only retention'
+      'Tamper-evident log storage for forensic integrity',
+      'Log deletion capability',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Immutable logging provides tamper-evident storage essential for forensic integrity.',
     topic: 'IT Operations',
     subtopic: 'Logging'
@@ -111,12 +111,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Geo-redundancy planning considers:',
     options: [
-      'Only cost savings',
-      'Data residency, latency, and regional failure scenarios',
+      'Only compliance',
       'Only performance',
-      'Only compliance'
+      'Data residency, latency, and regional failure scenarios',
+      'Only cost savings',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Geo-redundancy planning considers data residency, latency, and regional failure scenarios.',
     topic: 'Business Resilience',
     subtopic: 'Geo-Redundancy'
@@ -130,12 +130,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Ransomware resilience strategies include:',
     options: [
-      'Only payment preparation',
       'Immutable backups, network segmentation, and detection capabilities',
+      'Only user training',
       'Only insurance',
-      'Only user training'
+      'Only payment preparation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Ransomware resilience requires immutable backups, segmentation, and detection capabilities.',
     topic: 'Business Resilience',
     subtopic: 'Ransomware Resilience'
@@ -149,12 +149,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Service reliability engineering (SRE) balances:',
     options: [
-      'Only availability',
       'Reliability targets with innovation velocity',
+      'Only performance',
       'Only cost',
-      'Only performance'
+      'Only availability',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SRE balances reliability targets (error budgets) with innovation and feature development.',
     topic: 'IT Operations',
     subtopic: 'SRE'
@@ -168,10 +168,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT asset disposition (ITAD) must ensure:',
     options: [
-      'Only cost recovery',
+      'Only resale',
       'Secure data destruction and environmental compliance',
       'Only recycling',
-      'Only resale'
+      'Only cost recovery',
     ],
     correctAnswer: 1,
     explanation: 'ITAD must ensure secure data destruction and environmental/regulatory compliance.',
@@ -187,10 +187,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Operational technology (OT) security differs from IT by:',
     options: [
-      'No difference',
+      'Only using older systems',
       'Prioritizing availability and safety over confidentiality',
       'Only using different vendors',
-      'Only using older systems'
+      'No difference',
     ],
     correctAnswer: 1,
     explanation: 'OT security prioritizes availability and safety, whereas IT typically prioritizes confidentiality.',
@@ -206,12 +206,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Real-time data replication for DR should monitor:',
     options: [
-      'Only storage usage',
       'Replication lag, data integrity, and failover readiness',
       'Only network bandwidth',
-      'Only cost'
+      'Only cost',
+      'Only storage usage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'DR replication monitoring covers lag, integrity verification, and failover readiness.',
     topic: 'Business Resilience',
     subtopic: 'Data Replication'
@@ -225,12 +225,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Event correlation in SIEM helps identify:',
     options: [
-      'Only single events',
       'Patterns and relationships indicating security incidents',
       'Only log volume',
-      'Only compliance gaps'
+      'Only compliance gaps',
+      'Only single events',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SIEM correlation identifies patterns and relationships that indicate security incidents.',
     topic: 'IT Operations',
     subtopic: 'SIEM'
@@ -244,10 +244,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Operational resilience differs from DR by focusing on:',
     options: [
-      'Only technology recovery',
-      'End-to-end service continuity across people, process, and technology',
       'Only backup operations',
-      'Only compliance'
+      'End-to-end service continuity across people, process, and technology',
+      'Only compliance',
+      'Only technology recovery',
     ],
     correctAnswer: 1,
     explanation: 'Operational resilience focuses on end-to-end service continuity, not just technology.',
@@ -263,12 +263,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Chaos testing in production should:',
     options: [
-      'Never be done',
-      'Be carefully controlled with rollback capabilities',
+      'Bypass all approvals',
       'Cause maximum disruption',
-      'Bypass all approvals'
+      'Be carefully controlled with rollback capabilities',
+      'Never be done',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Production chaos testing requires careful controls, monitoring, and rollback capabilities.',
     topic: 'IT Operations',
     subtopic: 'Chaos Testing'
@@ -282,12 +282,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Multi-region cloud deployment for resilience must address:',
     options: [
-      'Only cost allocation',
-      'Data sovereignty, synchronization, and traffic routing',
       'Only vendor lock-in',
-      'Only performance'
+      'Only performance',
+      'Data sovereignty, synchronization, and traffic routing',
+      'Only cost allocation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Multi-region deployment addresses data sovereignty, synchronization, and traffic routing.',
     topic: 'Business Resilience',
     subtopic: 'Multi-Region Architecture'
@@ -301,12 +301,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cyber insurance claims require:',
     options: [
-      'Minimal documentation',
       'Comprehensive incident documentation and forensic evidence',
+      'Only policy numbers',
       'Only financial statements',
-      'Only policy numbers'
+      'Minimal documentation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cyber insurance claims require comprehensive incident documentation and forensic evidence.',
     topic: 'Business Resilience',
     subtopic: 'Cyber Insurance'
@@ -320,10 +320,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Runbook automation reduces:',
     options: [
-      'Only documentation',
+      'Only staffing',
       'Human error and response time for operational procedures',
       'Only training needs',
-      'Only staffing'
+      'Only documentation',
     ],
     correctAnswer: 1,
     explanation: 'Runbook automation reduces human error and improves response times for operations.',
@@ -339,10 +339,10 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Post-incident reviews should focus on:',
     options: [
-      'Blame assignment',
+      'Only compliance reporting',
       'System improvement and learning without blame',
       'Only cost recovery',
-      'Only compliance reporting'
+      'Blame assignment',
     ],
     correctAnswer: 1,
     explanation: 'Post-incident reviews focus on blameless learning and system improvement.',
@@ -358,12 +358,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Third-party operational dependencies should be:',
     options: [
-      'Ignored after contract signing',
       'Continuously monitored and included in resilience testing',
+      'Only assessed initially',
       'Only reviewed annually',
-      'Only assessed initially'
+      'Ignored after contract signing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Third-party dependencies require continuous monitoring and inclusion in resilience testing.',
     topic: 'Business Resilience',
     subtopic: 'Third-Party Resilience'
@@ -377,12 +377,12 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Capacity planning for cloud resources should consider:',
     options: [
-      'Only current usage',
       'Growth projections, burst capacity, and cost optimization',
       'Only peak loads',
-      'Only average usage'
+      'Only average usage',
+      'Only current usage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cloud capacity planning considers growth, burst needs, and cost optimization strategies.',
     topic: 'IT Operations',
     subtopic: 'Capacity Planning'

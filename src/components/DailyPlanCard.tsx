@@ -40,6 +40,7 @@ import { DailyActivity, UserStudyState } from '../services/dailyPlanService';
 import { 
   getOrCreateTodaysPlan, 
   markActivityCompleted,
+  markActivityStarted,
   PersistedDailyPlan,
 } from '../services/dailyPlanPersistence';
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
@@ -166,6 +167,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         // NEW: Enable curriculum-aware learning - only quiz on covered topics
         enableCurriculumFilter: userProfile.enableCurriculumFilter ?? true, // Default to enabled
         enablePreviewMode: userProfile.enablePreviewMode ?? false, // Optional 10% lookahead
+        // Phase 4: Study day preferences (e.g., [1,2,3,4,5] = weekdays only)
+        studyDayPreferences: userProfile.studyDayPreferences,
       };
       
       // Use the persistence layer to get/create today's plan
@@ -217,9 +220,17 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // If returning from dailyplan activity AND it was marked completed
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
+      // Find the activity in the plan to get metadata for duration tracking
+      const matchedActivity = plan?.activities.find(a => a.id === activityId);
       // Mark the activity as complete - pass section for correct cache key
       const section = plan?.section || currentSection;
-      markActivityCompleted(user.uid, activityId, section).then(() => {
+      markActivityCompleted(
+        user.uid,
+        activityId,
+        section,
+        matchedActivity?.estimatedMinutes,
+        matchedActivity?.type
+      ).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);
           updated.add(activityId);
@@ -258,6 +269,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // Start a daily plan session so back buttons return here
     startDailyPlanSession(activity.id, activity.title);
+    
+    // Record start time for duration tracking
+    markActivityStarted(activity.id);
     
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;

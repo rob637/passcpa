@@ -19,12 +19,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'For 2026, what is the maximum elective deferral contribution to a 401(k) plan for an employee under age 50?',
     options: [
-      'A) $20,500',
-      'B) $22,500',
       'C) $23,500',
-      'D) $24,500'
+      'B) $22,500',
+      'D) $24,500',
+      'A) $20,500',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'For 2026, the maximum elective deferral contribution to a 401(k) plan is $23,500 for participants under age 50. Those age 50 and over can contribute an additional $7,500 catch-up contribution for a total of $31,000.'
   },
   {
@@ -38,10 +38,10 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which type of employer-sponsored retirement plan guarantees a specific retirement benefit regardless of investment performance?',
     options: [
-      'A) 401(k) plan',
+      'D) SEP IRA',
       'B) Profit-sharing plan',
       'C) Defined benefit pension plan',
-      'D) SEP IRA'
+      'A) 401(k) plan',
     ],
     correctAnswer: 2,
     explanation: 'Defined benefit pension plans promise a specific monthly benefit at retirement, typically based on salary history and years of service. The employer bears the investment risk and must fund the plan to meet the benefit obligation. All other options are defined contribution plans where the benefit depends on contributions and investment performance.'
@@ -57,10 +57,10 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'ABC Company has 75 employees. Which retirement plan can the company NOT establish?',
     options: [
-      'A) 401(k) plan',
       'B) SEP IRA',
+      'D) Profit-sharing plan',
       'C) SIMPLE IRA',
-      'D) Profit-sharing plan'
+      'A) 401(k) plan',
     ],
     correctAnswer: 2,
     explanation: 'SIMPLE IRA plans are only available to employers with 100 or fewer employees who earned $5,000 or more in the preceding year. However, there is an additional requirement: the employer cannot maintain any other qualified retirement plan. ABC Company can establish any of the other plans; SIMPLE IRA has this unique size restriction but at 75 employees they still qualify - the issue is if they have another plan.'
@@ -76,12 +76,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An employee has 4 years of service in a 401(k) plan with 6-year graded vesting. The employer matching account balance is $24,000. How much is the employee entitled to if they leave the company?',
     options: [
-      'A) $12,000',
       'B) $16,000',
+      'D) $24,000',
       'C) $18,000',
-      'D) $24,000'
+      'A) $12,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under 6-year graded vesting, employees vest 20% after year 2, 40% after year 3, 60% after year 4, 80% after year 5, and 100% after year 6. With 4 years of service, the employee is 60% vested. However, 3-year cliff or 2-6 year graded is the standard. At 4 years in 2-6 graded vesting: 60% × $24,000 = $14,400. If using typical schedule of 20% per year after year 2: Year 4 = 60%. But checking the math: $24,000 × 2/3 = $16,000 suggests 66.67% which is 4/6. The answer B ($16,000) represents 4 years out of 6 proportionally.'
   },
   {
@@ -95,12 +95,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The primary advantage of a Safe Harbor 401(k) plan is that it:',
     options: [
-      'A) Allows higher contribution limits than traditional 401(k) plans',
-      'B) Automatically satisfies ADP/ACP nondiscrimination testing',
+      'D) Allows employers to avoid making any contributions',
       'C) Eliminates the need for annual Form 5500 filing',
-      'D) Allows employers to avoid making any contributions'
+      'B) Automatically satisfies ADP/ACP nondiscrimination testing',
+      'A) Allows higher contribution limits than traditional 401(k) plans',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Safe Harbor 401(k) plans automatically satisfy the ADP (Actual Deferral Percentage) and ACP (Actual Contribution Percentage) nondiscrimination tests in exchange for mandatory employer contributions that are immediately 100% vested. This allows highly compensated employees to maximize their contributions without being limited by the deferral patterns of non-highly compensated employees.'
   },
   // RET-3: IRAs and Individual Retirement Plans
@@ -115,12 +115,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Mark, age 45, is single and covered by an employer retirement plan. His MAGI is $85,000. His maximum IRA contribution for 2026 is $7,000. How much of this contribution is deductible?',
     options: [
-      'A) $0',
-      'B) $3,500',
+      'D) $7,000',
       'C) $5,600',
-      'D) $7,000'
+      'B) $3,500',
+      'A) $0',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'For 2026, single filers covered by an employer plan can deduct Traditional IRA contributions if MAGI is below $79,000. The deduction phases out between $79,000 and $89,000. At $85,000 MAGI, Mark is in the phase-out range. The calculation: ($89,000 - $85,000) / $10,000 = 40% deductible. $7,000 × 40% = $2,800. However, if the phase-out limits have changed, at $85,000 with phase-out starting at $77,000 and ending at $87,000, he would be mostly phased out. Given the answer options, $0 indicates he is above the full phase-out threshold for the year in question.'
   },
   {
@@ -134,12 +134,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which client would benefit MOST from a Roth IRA conversion?',
     options: [
-      'A) A retiree in the 35% tax bracket expecting to remain in that bracket',
       'B) Someone age 25 in the 12% bracket expecting to be in the 24% bracket at retirement',
       'C) A 60-year-old who needs the converted funds for living expenses next year',
-      'D) An investor whose primary goal is to reduce current year taxes'
+      'D) An investor whose primary goal is to reduce current year taxes',
+      'A) A retiree in the 35% tax bracket expecting to remain in that bracket',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Roth conversions are most beneficial when current tax rates are lower than expected future rates. The 25-year-old in the 12% bracket who expects to be in the 24% bracket at retirement would pay taxes now at 12% and enjoy tax-free growth and withdrawals for 35+ years. The long time horizon maximizes the benefit of tax-free growth.'
   },
   {
@@ -153,12 +153,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A high-income earner wants to contribute to a Roth IRA but exceeds the income limits. They make a non-deductible Traditional IRA contribution and immediately convert. What is the primary tax concern?',
     options: [
-      'A) The conversion is prohibited for high-income earners',
       'B) The pro-rata rule may create taxes if they have other Traditional IRA assets',
       'C) A 10% penalty applies to all backdoor Roth conversions',
-      'D) They must wait 5 years before converting'
+      'D) They must wait 5 years before converting',
+      'A) The conversion is prohibited for high-income earners',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The pro-rata rule requires that conversions from Traditional IRAs include a proportional amount of pre-tax and after-tax (non-deductible) money based on ALL Traditional IRA assets. If the investor has $93,000 in pre-tax IRAs and contributes $7,000 non-deductible, only 7% of any conversion is tax-free. The other 93% is taxable, defeating the backdoor Roth strategy.'
   },
   {
@@ -172,10 +172,10 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Mike earns $200,000 and his wife Sarah has no earned income. For 2026, what is the maximum combined IRA contribution they can make?',
     options: [
-      'A) $7,000 (only Mike can contribute)',
-      'B) $14,000',
       'C) $15,500',
-      'D) $16,000'
+      'B) $14,000',
+      'D) $16,000',
+      'A) $7,000 (only Mike can contribute)',
     ],
     correctAnswer: 1,
     explanation: 'A spousal IRA allows a non-working spouse to contribute to an IRA based on the working spouse\'s income. For 2026, each spouse can contribute up to $7,000 (or $8,000 if age 50+). Assuming both are under 50, the maximum combined contribution is $7,000 + $7,000 = $14,000.'
@@ -192,10 +192,10 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is NOT an exception to the 10% early withdrawal penalty for qualified retirement plans?',
     options: [
-      'A) Distributions after separation from service at age 55 or older',
-      'B) Distributions for first-time home purchase up to $10,000',
       'C) Distributions for unreimbursed medical expenses exceeding 7.5% of AGI',
-      'D) Distributions due to IRS levy'
+      'B) Distributions for first-time home purchase up to $10,000',
+      'D) Distributions due to IRS levy',
+      'A) Distributions after separation from service at age 55 or older',
     ],
     correctAnswer: 1,
     explanation: 'The first-time home purchase exception ($10,000 lifetime limit) applies to IRAs only, not to qualified employer plans like 401(k)s. The age 55 separation from service exception, medical expense exception, and IRS levy exception all apply to qualified plans. This is a common exam trap—knowing which exceptions apply to which account types.'
@@ -211,12 +211,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Patricia turned 73 in 2026. Her Traditional IRA balance on December 31, 2025 was $500,000. Using the Uniform Lifetime Table factor of 26.5, what is her RMD for 2026?',
     options: [
-      'A) $18,519',
       'B) $18,868',
       'C) $19,231',
-      'D) $20,000'
+      'D) $20,000',
+      'A) $18,519',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'RMD = Prior year-end account balance ÷ Life expectancy factor. $500,000 ÷ 26.5 = $18,867.92, rounded to $18,868. RMDs for the year you turn 73 can be delayed until April 1 of the following year, but doing so requires taking two RMDs in that year.'
   },
   {
@@ -230,12 +230,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A 50-year-old wants to take penalty-free distributions from their IRA using Substantially Equal Periodic Payments (SEPP). Which statement is TRUE?',
     options: [
-      'A) Payments must continue for 5 years or until age 59½, whichever is shorter',
       'B) Payments must continue for 5 years or until age 59½, whichever is longer',
+      'D) Only the fixed amortization method can be used',
       'C) Payments can be modified at any time without penalty',
-      'D) Only the fixed amortization method can be used'
+      'A) Payments must continue for 5 years or until age 59½, whichever is shorter',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SEPP (72(t)) distributions must continue for 5 years OR until the participant reaches age 59½, whichever is LONGER. For a 50-year-old, this means payments must continue until age 59½ (9.5 years). If modified before then, all previous distributions become subject to the 10% penalty plus interest.'
   },
   {
@@ -249,10 +249,10 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A 55-year-old widow inherits her deceased husband\'s Traditional IRA. Which option provides the MOST flexibility?',
     options: [
-      'A) Remain as beneficiary and take distributions over her life expectancy',
+      'D) Disclaim the inheritance',
       'B) Roll the inherited IRA into her own IRA',
       'C) Take a lump-sum distribution',
-      'D) Disclaim the inheritance'
+      'A) Remain as beneficiary and take distributions over her life expectancy',
     ],
     correctAnswer: 1,
     explanation: 'Spousal beneficiaries have a unique option to roll an inherited IRA into their own IRA. This provides maximum flexibility: no RMDs until the surviving spouse reaches age 73, full access to early withdrawal exceptions, and the ability to name new beneficiaries. Remaining as beneficiary limits options and a lump sum triggers immediate taxation.'
@@ -268,12 +268,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the SECURE Act 2.0, most non-spouse beneficiaries who inherit an IRA must:',
     options: [
-      'A) Take RMDs based on their own life expectancy',
-      'B) Distribute the entire account within 10 years with annual RMDs if deceased was taking them',
+      'D) Roll the inherited IRA into their own IRA',
       'C) Take a lump sum distribution within 5 years',
-      'D) Roll the inherited IRA into their own IRA'
+      'B) Distribute the entire account within 10 years with annual RMDs if deceased was taking them',
+      'A) Take RMDs based on their own life expectancy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The SECURE Act 2.0 clarified that most non-spouse beneficiaries must both deplete inherited IRAs within 10 years AND take annual RMDs if the original account owner had already begun taking them (died after their required beginning date). Eligible designated beneficiaries (EDBs) like minor children, disabled individuals, or those not more than 10 years younger than the deceased have different rules.'
   },
   // RET-5: Social Security
@@ -288,12 +288,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'At what age can a worker receive unreduced Social Security retirement benefits based on their full retirement age (FRA)?',
     options: [
-      'A) 62',
-      'B) 65',
       'C) 66-67, depending on birth year',
-      'D) 70'
+      'D) 70',
+      'B) 65',
+      'A) 62',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Full Retirement Age (FRA) varies based on birth year: age 66 for those born 1943-1954, gradually increasing to 67 for those born 1960 or later. Benefits taken before FRA are reduced; benefits delayed past FRA until age 70 receive delayed retirement credits of 8% per year.'
   },
   {
@@ -307,12 +307,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Janet\'s husband\'s Social Security benefit at FRA is $3,000/month. Janet has limited work history with a benefit of $800/month at her FRA. What is Janet\'s maximum spousal benefit at her FRA?',
     options: [
-      'A) $800',
-      'B) $1,200',
       'C) $1,500',
-      'D) $2,200'
+      'D) $2,200',
+      'B) $1,200',
+      'A) $800',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Spousal benefits are the higher of the spouse\'s own benefit or 50% of the worker\'s PIA (Primary Insurance Amount). 50% of $3,000 = $1,500, which exceeds Janet\'s own $800 benefit. Janet would receive $1,500 at her FRA. Note: She does not add her own benefit to the spousal benefit—she receives the higher of the two.'
   },
   {
@@ -326,12 +326,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'In 2026, Bob claims Social Security at age 63. He earns $60,000 from a part-time job, and the exempt amount is $22,320. How much will his Social Security benefits be reduced?',
     options: [
-      'A) $18,840',
-      'B) $22,320',
       'C) $37,680',
-      'D) $60,000'
+      'B) $22,320',
+      'D) $60,000',
+      'A) $18,840',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'For beneficiaries under FRA the entire year, $1 in benefits is withheld for every $2 earned above the exempt amount. Excess earnings: $60,000 - $22,320 = $37,680. Benefit reduction: $37,680 ÷ 2 = $18,840. Note: These withheld benefits are not lost forever—they are credited back after reaching FRA through an adjustment to future benefits.'
   },
   {
@@ -345,12 +345,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Combined income for Social Security taxation purposes includes:',
     options: [
-      'A) AGI + tax-exempt interest + 50% of Social Security benefits',
-      'B) Gross income + 100% of Social Security benefits',
       'C) AGI only',
-      'D) Taxable income + 25% of Social Security benefits'
+      'B) Gross income + 100% of Social Security benefits',
+      'D) Taxable income + 25% of Social Security benefits',
+      'A) AGI + tax-exempt interest + 50% of Social Security benefits',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'Combined (provisional) income = AGI + tax-exempt interest + 50% of Social Security benefits. This formula determines whether 0%, 50%, or 85% of Social Security benefits are taxable. Tax-exempt interest is included even though it\'s not otherwise taxable, making municipal bond income a planning consideration for retirees.'
   },
   {
@@ -364,12 +364,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A widow may claim survivor benefits as early as age:',
     options: [
-      'A) 50 (if disabled)',
       'B) 60 (reduced) or FRA (unreduced)',
+      'D) Both A and B are correct',
       'C) 62 (reduced) or 65 (unreduced)',
-      'D) Both A and B are correct'
+      'A) 50 (if disabled)',
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Widows/widowers can claim survivor benefits at age 60 (reduced) or at their FRA (unreduced). Additionally, disabled widow(er)s can claim as early as age 50. The benefit equals 100% of the deceased spouse\'s benefit at the survivor\'s FRA, reduced for early claiming. This differs from spousal benefits, which top out at 50%.'
   },
   // RET-2: Additional Employer Plan Topics
@@ -384,12 +384,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A self-employed consultant has net self-employment income of $100,000. What is the maximum SEP IRA contribution for 2026?',
     options: [
-      'A) $20,000',
-      'B) $23,500',
       'C) $25,000',
-      'D) $18,587'
+      'B) $23,500',
+      'D) $18,587',
+      'A) $20,000',
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: 'For self-employed individuals, the SEP contribution is limited to 25% of net self-employment income reduced by the self-employment tax deduction. The effective rate is approximately 20% of net SE income (25% ÷ 1.25 = 20%). Calculation: $100,000 × 0.9235 (after 1/2 SE tax deduction) × 20% ≈ $18,587. The maximum for 2026 is the lesser of 25% of compensation or $69,000.'
   },
   {
@@ -403,10 +403,10 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A cash balance plan is best described as:',
     options: [
-      'A) A defined contribution plan with guaranteed minimum returns',
+      'D) A profit-sharing plan with fixed employer contributions',
       'B) A defined benefit plan that looks like a defined contribution plan',
       'C) An IRA maintained by an employer',
-      'D) A profit-sharing plan with fixed employer contributions'
+      'A) A defined contribution plan with guaranteed minimum returns',
     ],
     correctAnswer: 1,
     explanation: 'Cash balance plans are legally defined benefit plans but appear to function like defined contribution plans. Each participant has a hypothetical "account" that receives pay credits and interest credits. The employer bears the investment risk and guarantees a specified interest credit rate. They allow larger contributions for older, higher-paid employees than traditional 401(k) plans.'
@@ -422,12 +422,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: '403(b) plans are available to employees of:',
     options: [
-      'A) For-profit corporations only',
       'B) Public schools and 501(c)(3) organizations',
+      'D) State and local government employees only',
       'C) Any small business with under 100 employees',
-      'D) State and local government employees only'
+      'A) For-profit corporations only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: '403(b) plans (tax-sheltered annuities) are available to employees of public schools, churches, and 501(c)(3) tax-exempt organizations. State and local government employees use 457(b) plans. For-profit corporations typically offer 401(k) plans.'
   },
   // RET-1: Additional Retirement Needs Topics
@@ -442,12 +442,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Monte Carlo simulation in retirement planning is used to:',
     options: [
-      'A) Determine the exact amount needed for retirement',
-      'B) Model probability of success across thousands of market scenarios',
       'C) Calculate the optimal asset allocation',
-      'D) Predict exact future investment returns'
+      'D) Predict exact future investment returns',
+      'B) Model probability of success across thousands of market scenarios',
+      'A) Determine the exact amount needed for retirement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Monte Carlo simulation runs thousands of randomized scenarios using historical return and volatility data to estimate the probability that a retirement plan will succeed. Unlike deterministic models using average returns, it accounts for sequence of returns risk and provides probability-based confidence levels (e.g., 85% success rate).'
   },
   {
@@ -461,12 +461,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Sequence of returns risk is MOST important to consider:',
     options: [
-      'A) During the accumulation phase 30 years before retirement',
-      'B) In the years immediately before and after retirement',
+      'D) When investing in guaranteed annuities',
       'C) Only if investing in fixed income securities',
-      'D) When investing in guaranteed annuities'
+      'B) In the years immediately before and after retirement',
+      'A) During the accumulation phase 30 years before retirement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Sequence of returns risk—the risk that poor returns early in retirement depletes the portfolio before it can recover—is most critical in the years immediately before and after retirement (the "fragile decade"). During accumulation, dollar-cost averaging can offset poor early returns, and there\'s time to recover. Guaranteed annuities eliminate the risk entirely.'
   },
   {
@@ -480,12 +480,12 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The "4% rule" for retirement withdrawals suggests:',
     options: [
-      'A) Withdraw 4% of the original portfolio annually, adjusted for inflation',
-      'B) Always withdraw exactly 4% of the current portfolio value',
+      'D) Expect 4% annual portfolio growth',
       'C) Keep 4% of assets in cash reserves',
-      'D) Expect 4% annual portfolio growth'
+      'B) Always withdraw exactly 4% of the current portfolio value',
+      'A) Withdraw 4% of the original portfolio annually, adjusted for inflation',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'The 4% rule, based on the Trinity Study, suggests withdrawing 4% of the initial portfolio in year one, then adjusting that dollar amount for inflation each subsequent year. This approach historically provided a high probability of the portfolio lasting 30 years. It uses the original balance, not the current value, as the baseline.'
   }
 ];

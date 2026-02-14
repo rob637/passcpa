@@ -21,12 +21,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional provides a one-time recommendation to purchase a specific annuity but is not engaged in comprehensive financial planning. Does fiduciary duty apply?',
     options: [
-      'A) No, fiduciary duty only applies during financial planning engagements',
       'B) Yes, fiduciary duty applies "at all times" when providing Financial Advice',
       'C) Only if the client pays a fee for the recommendation',
-      'D) Only if the CFP® professional holds out as a fiduciary'
+      'A) No, fiduciary duty only applies during financial planning engagements',
+      'D) Only if the CFP® professional holds out as a fiduciary',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under the CFP Board\'s Standards of Conduct (effective October 2019), CFP® professionals owe a fiduciary duty "at all times" when providing Financial Advice—not just during comprehensive financial planning engagements. A one-time product recommendation is Financial Advice and triggers fiduciary duty regardless of whether it\'s part of a broader planning relationship.'
   },
   {
@@ -40,12 +40,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is NOT one of the four principles in the CFP Board\'s Code of Ethics?',
     options: [
+      'C) Maximize investment returns for clients',
       'A) Act with honesty, integrity, competence, and diligence',
       'B) Act in the client\'s best interests',
-      'C) Maximize investment returns for clients',
-      'D) Maintain the standards of the profession'
+      'D) Maintain the standards of the profession',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'The four Code principles are: (1) Act with honesty, integrity, competence, and diligence; (2) Act in the client\'s best interests; (3) Exercise due care; and (4) Maintain the standards of the profession. "Maximize investment returns" is NOT a principle—recommendations must be in the client\'s best interest considering all factors, not just maximizing returns.'
   },
   {
@@ -60,11 +60,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional discovers they receive 50% higher commissions on Product A versus Product B, though both are suitable for the client. According to the duty of loyalty, what action is required?',
     options: [
       'A) Recommend Product A because both are suitable and either is permissible',
-      'B) Recommend whichever product is in the client\'s best interest, regardless of compensation',
       'C) Recommend Product B to avoid any appearance of conflict',
-      'D) Decline to make any recommendation due to the conflict'
+      'B) Recommend whichever product is in the client\'s best interest, regardless of compensation',
+      'D) Decline to make any recommendation due to the conflict',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The duty of loyalty requires placing the client\'s interests first. The CFP® must recommend whichever product is actually in the client\'s best interest—which may be A or B depending on features, costs, and client needs. Higher commissions cannot influence the recommendation. If Product A is truly best for the client, recommend it. If B is better, recommend B. Document the analysis.'
   },
   {
@@ -79,11 +79,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional cannot avoid a conflict of interest. What steps must they take according to the Standards of Conduct?',
     options: [
       'A) Decline the engagement entirely',
-      'B) Disclose the conflict and manage it appropriately',
       'C) Proceed without disclosure if the conflict is immaterial',
-      'D) Obtain approval from CFP Board before proceeding'
+      'B) Disclose the conflict and manage it appropriately',
+      'D) Obtain approval from CFP Board before proceeding',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The conflict management framework requires: First, try to avoid the conflict. If avoidance isn\'t possible, disclose the conflict in writing before providing advice, and manage the conflict through appropriate steps. Material conflicts must be disclosed clearly so the client can make an informed decision. Declining is not required if proper disclosure and management occur.'
   },
   {
@@ -97,12 +97,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which activity requires the CFP® professional to complete all seven steps of the financial planning process?',
     options: [
-      'A) Recommending a Roth IRA contribution strategy',
       'B) Providing a comprehensive financial plan',
+      'A) Recommending a Roth IRA contribution strategy',
       'C) Selling a life insurance policy',
-      'D) Giving advice on asset allocation'
+      'D) Giving advice on asset allocation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The seven-step financial planning process is required when providing Financial Planning—a collaborative process that develops strategies to achieve the client\'s comprehensive goals. One-time advice (Roth strategy, asset allocation) and product sales are Financial Advice, which triggers fiduciary duty but not the full seven-step process.'
   },
   {
@@ -116,12 +116,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'A client requests help only with retirement planning and explicitly declines assistance with other financial areas. What is the CFP® professional\'s obligation?',
     options: [
-      'A) Decline the engagement—all areas must be addressed',
       'B) Accept the limited scope if client understands limitations, document it, and refer for other needs',
+      'A) Decline the engagement—all areas must be addressed',
       'C) Expand the engagement without the client\'s consent to ensure adequate coverage',
-      'D) Provide retirement advice but disclaim responsibility for other areas'
+      'D) Provide retirement advice but disclaim responsibility for other areas',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Limited-scope engagements are permitted when the client understands and accepts the limitations. The CFP® should document the scope in writing, explain what\'s excluded, and refer the client to other professionals for out-of-scope needs. However, if limiting scope would harm the client (e.g., ignoring an obvious tax issue), the CFP® must address it or decline.'
   },
   {
@@ -135,10 +135,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When must a CFP® professional provide written disclosure of material conflicts of interest?',
     options: [
-      'A) Only when asked by the client',
-      'B) Before or at the time of engagement',
       'C) Within 30 days after providing advice',
-      'D) Only when the conflict affects the recommendation'
+      'B) Before or at the time of engagement',
+      'A) Only when asked by the client',
+      'D) Only when the conflict affects the recommendation',
     ],
     correctAnswer: 1,
     explanation: 'Material conflicts must be disclosed in writing before or at the time of engagement. This timing allows the client to make an informed decision about whether to proceed. Waiting until after advice is given or only disclosing when asked fails to meet the standard. The disclosure must be clear, detailed, and in writing.'
@@ -154,10 +154,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional\'s client information is confidential. Which situation allows disclosure WITHOUT client consent?',
     options: [
-      'A) Sharing information with other firm employees for marketing purposes',
-      'B) Responding to a court-issued subpoena',
       'C) Providing information to a journalist writing about the client',
-      'D) Discussing the client\'s situation with a colleague for general advice'
+      'B) Responding to a court-issued subpoena',
+      'A) Sharing information with other firm employees for marketing purposes',
+      'D) Discussing the client\'s situation with a colleague for general advice',
     ],
     correctAnswer: 1,
     explanation: 'Exceptions to confidentiality include: legal requirements (subpoenas, court orders), client consent, defense against charges, CFP Board investigations, and disclosure to professionals working with the client (with appropriate safeguards). A subpoena is a legal requirement that permits disclosure of the requested information. Marketing and journalist inquiries are not permitted.'
@@ -173,12 +173,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'What is included in the Duty of Care under CFP Board\'s fiduciary standard?',
     options: [
-      'A) Achieving guaranteed positive investment returns',
       'B) Acting with skill, prudence, and diligence of a prudent professional',
       'C) Avoiding all risks in client portfolios',
-      'D) Maximizing commission income while meeting suitability'
+      'A) Achieving guaranteed positive investment returns',
+      'D) Maximizing commission income while meeting suitability',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Duty of Care requires acting with the skill, care, prudence, and diligence that a prudent professional would exercise. This is a process standard—focusing on HOW decisions are made, not guaranteeing outcomes. Returns cannot be guaranteed, appropriate risk is part of investing, and compensation must not influence recommendations.'
   },
   {
@@ -192,12 +192,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'A CFP® professional becomes aware that a colleague is stealing client funds. What is their obligation?',
     options: [
-      'A) Report to CFP Board only if asked during an investigation',
-      'B) Maintain confidentiality about colleague misconduct',
       'C) Report the conduct if it raises genuine concern',
-      'D) Wait until the colleague is caught through other means'
+      'B) Maintain confidentiality about colleague misconduct',
+      'A) Report to CFP Board only if asked during an investigation',
+      'D) Wait until the colleague is caught through other means',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'CFP® professionals should report conduct that raises genuine concerns about another CFP® professional\'s fitness. Theft of client funds is a serious violation requiring action. This supports the duty to maintain standards of the profession. The report should be made in good faith. Silence allows harm to continue and undermines professional integrity.'
   },
   {
@@ -212,11 +212,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional is not competent in estate planning but the client needs estate advice. What should they do?',
     options: [
       'A) Provide advice anyway since they hold the CFP® certification',
-      'B) Refer to or collaborate with a competent estate planning professional',
       'C) Decline the entire engagement',
-      'D) Provide generic estate planning information from the internet'
+      'B) Refer to or collaborate with a competent estate planning professional',
+      'D) Provide generic estate planning information from the internet',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CFP® professionals must be competent in areas where they provide advice. Options when not competent: (1) decline to advise in that area, (2) refer to appropriate professionals, or (3) collaborate with competent professionals. Simply declining the entire engagement isn\'t required if other needs can be addressed while referring estate matters appropriately.'
   },
   {
@@ -231,11 +231,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'What must be included in a Financial Planning engagement agreement?',
     options: [
       'A) Guaranteed investment returns',
-      'B) Scope of engagement, responsibilities, compensation, and conflicts',
       'C) Client\'s complete family medical history',
-      'D) Names of all other clients with similar situations'
+      'B) Scope of engagement, responsibilities, compensation, and conflicts',
+      'D) Names of all other clients with similar situations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A Financial Planning engagement agreement must include: scope of engagement, client and CFP® responsibilities, compensation and payment terms, conflicts of interest, and duration/termination provisions. It creates a mutual understanding of the relationship. Returns cannot be guaranteed, medical history is generally not required, and sharing other client names would violate confidentiality.'
   },
   {
@@ -249,12 +249,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional wants to terminate a client relationship. What is the proper procedure?',
     options: [
+      'C) Immediately terminate without any communication',
       'A) Stop returning the client\'s calls until they go away',
       'B) Provide reasonable notice and transition assistance',
-      'C) Immediately terminate without any communication',
-      'D) Wait until the next billing cycle ends regardless of circumstances'
+      'D) Wait until the next billing cycle ends regardless of circumstances',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'When terminating a client relationship, the CFP® should provide reasonable notice, return client property/records as appropriate, and offer transition assistance if requested. Ghosting clients or immediate termination without communication fails to meet professional standards. The goal is to minimize harm to the client from the transition.'
   },
 
@@ -270,12 +270,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An investment adviser has $120 million in assets under management. With which regulator must they register?',
     options: [
-      'A) Only the state where they have their principal office',
       'B) Securities and Exchange Commission (SEC)',
+      'A) Only the state where they have their principal office',
       'C) FINRA',
-      'D) Department of Labor'
+      'D) Department of Labor',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Investment advisers with $100 million or more in AUM must register with the SEC. Below $25 million requires state registration. Between $25-100 million allows a choice but generally requires state registration unless in multiple states. FINRA regulates broker-dealers, not investment advisers directly. DOL regulates ERISA plans.'
   },
   {
@@ -327,12 +327,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which Form ADV section is commonly called the "brochure" that must be given to clients?',
     options: [
-      'A) Form ADV Part 1',
       'B) Form ADV Part 2A',
       'C) Form ADV Part 2B',
-      'D) Form ADV Part 3'
+      'A) Form ADV Part 1',
+      'D) Form ADV Part 3',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form ADV Part 2A is the "brochure" delivered to advisory clients. It describes services, fees, conflicts of interest, and disciplinary history in plain English. Part 1 is primarily for SEC registration. Part 2B is the "brochure supplement" describing individual advisers. Form CRS (sometimes called Part 3) is a separate relationship summary.'
   },
   {
@@ -346,12 +346,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'SEC Regulation Best Interest (Reg BI) applies when:',
     options: [
-      'A) Investment advisers provide ongoing advice',
       'B) Broker-dealers make recommendations to retail customers',
       'C) Insurance agents sell life insurance',
-      'D) CFP® professionals provide financial planning'
+      'A) Investment advisers provide ongoing advice',
+      'D) CFP® professionals provide financial planning',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Reg BI applies to broker-dealers and their associated persons when making securities recommendations to retail customers. It requires acting in the customer\'s best interest, considering costs, and disclosing conflicts. Investment advisers are subject to the Investment Advisers Act fiduciary standard. CFP® professionals have additional CFP Board standards.'
   },
   {
@@ -366,11 +366,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'Who primarily regulates insurance products in the United States?',
     options: [
       'A) Securities and Exchange Commission',
-      'B) Federal Insurance Agency',
       'C) Individual state insurance commissioners',
-      'D) FINRA'
+      'B) Federal Insurance Agency',
+      'D) FINRA',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Insurance is regulated primarily by states, not the federal government. Each state has an insurance commissioner (or equivalent) who licenses agents, approves products, and enforces regulations. The NAIC coordinates among states but is not a regulatory body. Variable products have dual regulation (state insurance + SEC/FINRA for securities aspects).'
   },
   {
@@ -384,12 +384,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'To sell variable annuities, a financial professional needs:',
     options: [
-      'A) Only a state insurance license',
       'B) Only a securities license (Series 6 or 7)',
       'C) Both a state insurance license and a securities license',
-      'D) Only CFP® certification'
+      'A) Only a state insurance license',
+      'D) Only CFP® certification',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Variable annuities are both insurance products and securities because their values depend on separate account performance. This dual nature requires dual licensing: a state insurance license for the insurance contract, and a securities license (Series 6 or 7) for the securities component. CFP® certification alone does not authorize sales.'
   },
   {
@@ -403,12 +403,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under ERISA, the fiduciary standard applied to retirement plan advisers is:',
     options: [
+      'C) Prudent expert standard',
       'A) Suitability standard',
       'B) Reasonable person standard',
-      'C) Prudent expert standard',
-      'D) Best efforts standard'
+      'D) Best efforts standard',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'ERISA imposes the "prudent expert" standard—a higher standard than ordinary prudence. Fiduciaries must act with the care, skill, prudence, and diligence of a prudent expert familiar with such matters. This requires professional-level expertise, not just what a reasonable layperson would do.'
   },
   {
@@ -423,11 +423,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A financial adviser recommends a client roll their 401(k) to an IRA. Under DOL fiduciary rules, what must be documented?',
     options: [
       'A) Nothing—rollover advice is not regulated',
-      'B) Only the amount being rolled over',
       'C) Why the rollover is in the client\'s best interest, including fee comparison',
-      'D) The advisor\'s compensation only'
+      'B) Only the amount being rolled over',
+      'D) The advisor\'s compensation only',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Under DOL fiduciary rules, rollover recommendations are fiduciary advice requiring documentation of: why the rollover (versus keeping funds in the plan) is in the client\'s best interest, comparison of fees and services, alternatives considered, and rationale. The IRA may have higher fees, so there must be offsetting benefits (better advice, planning integration, etc.).'
   },
   {
@@ -460,12 +460,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'What is the primary purpose of ERISA\'s prohibited transaction rules?',
     options: [
-      'A) Maximize plan investment returns at all costs',
       'B) Prevent fiduciaries and parties in interest from self-dealing with plan assets',
+      'A) Maximize plan investment returns at all costs',
       'C) Require all plans to use the same investments',
-      'D) Limit employee contributions to qualified plans'
+      'D) Limit employee contributions to qualified plans',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Prohibited transaction rules prevent self-dealing between plans and "parties in interest" (fiduciaries, employers, service providers). This includes selling property to the plan, lending to or from the plan, and using plan assets for personal benefit. These rules protect participants by preventing conflicts from harming plan assets.'
   },
   {
@@ -479,12 +479,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The three elements that define an "Investment Adviser" under the Investment Advisers Act of 1940 are:',
     options: [
-      'A) Age, income, and net worth thresholds',
       'B) Provides advice about securities, in the business of providing advice, receives compensation',
+      'A) Age, income, and net worth thresholds',
       'C) Has securities license, has insurance license, has accounting degree',
-      'D) Manages over $1 million, has more than 5 clients, charges more than 1%'
+      'D) Manages over $1 million, has more than 5 clients, charges more than 1%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The three-part test for Investment Adviser status: (1) provides advice or analysis about securities, (2) is in the business of providing such advice (regularly, holding out), and (3) receives compensation for the advice. Meeting all three makes you an Investment Adviser subject to registration requirements unless an exclusion applies.'
   },
   // ============================================
@@ -501,10 +501,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional receives a 12b-1 trail from a mutual fund company on client assets. Under the Standards of Conduct, this creates:',
     options: [
-      'A) An automatic violation of fiduciary duty',
-      'B) A material conflict of interest requiring disclosure and management',
       'C) No conflict if the fund is suitable',
-      'D) A prohibited transaction under SEC rules'
+      'B) A material conflict of interest requiring disclosure and management',
+      'A) An automatic violation of fiduciary duty',
+      'D) A prohibited transaction under SEC rules',
     ],
     correctAnswer: 1,
     explanation: 'Receiving 12b-1 fees creates a Material Conflict of Interest because the CFP® professional has a financial incentive to recommend or retain funds that pay higher trails. Under Standards of Conduct, conflicts must be: (1) disclosed in writing, (2) managed to avoid compromise of duties, and (3) acted upon only in client\'s best interest. It\'s not automatically prohibited, but requires proper handling.'
@@ -520,12 +520,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Before providing financial planning, a CFP® professional must establish the scope of engagement. Which element is NOT required?',
     options: [
-      'A) The services to be provided',
-      'B) Responsibilities of the CFP® professional and client',
       'C) A guarantee of investment returns',
-      'D) How conflicts of interest will be managed'
+      'B) Responsibilities of the CFP® professional and client',
+      'A) The services to be provided',
+      'D) How conflicts of interest will be managed',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'The Standards require defining: services provided, responsibilities, compensation, engagement duration, and conflict management. A guarantee of investment returns is NEVER appropriate and would violate fiduciary duty by making promises that cannot be kept. The scope must be realistic and documented, typically through an engagement letter or advisory agreement.'
   },
   {
@@ -539,12 +539,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A client asks a CFP® professional about complex estate planning involving international assets. The CFP® lacks expertise in this area. The CFP® should:',
     options: [
-      'A) Provide general guidance and disclaim liability',
       'B) Refer the client to a qualified estate attorney with international expertise',
       'C) Research the topic and provide advice within 30 days',
-      'D) Decline to help the client entirely'
+      'A) Provide general guidance and disclaim liability',
+      'D) Decline to help the client entirely',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Competence duty requires CFP® professionals to either have the knowledge to provide advice OR refer to qualified professionals. For complex international estate planning, referral to a qualified estate attorney is most appropriate. The CFP® should coordinate with the attorney but not provide advice beyond their competence. Simply declining entirely would not serve the client\'s interests.'
   },
   {
@@ -558,12 +558,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A CFP® professional suspects a client is being financially exploited by a family member. Under confidentiality rules, the CFP® may:',
     options: [
+      'C) Only report if the client provides written authorization',
       'A) Never disclose—confidentiality is absolute',
       'B) Report to protective services if permitted by law and acting in good faith',
-      'C) Only report if the client provides written authorization',
-      'D) Report only to law enforcement, not protective services'
+      'D) Report only to law enforcement, not protective services',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Confidentiality has exceptions including: client consent, legal requirement, defending against allegations, and—importantly—when the CFP® reasonably believes disclosure is necessary to protect the client from financial exploitation. Many states have enacted safe harbor laws allowing (or requiring) reporting suspected elder abuse. The CFP® should act in the client\'s protective interest.'
   },
   {
@@ -578,11 +578,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'Form ADV Part 2A (the "brochure") must be delivered to clients:',
     options: [
       'A) Within 30 days of becoming a client',
-      'B) Before or at the time of entering an advisory agreement',
       'C) Only upon client request',
-      'D) Annually in January'
+      'B) Before or at the time of entering an advisory agreement',
+      'D) Annually in January',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form ADV Part 2A (Firm Brochure) must be delivered BEFORE or AT THE TIME of entering into an advisory agreement. It discloses: services offered, fees, conflicts of interest, disciplinary history, and business practices. Part 2B (Brochure Supplement) provides information about specific individuals providing advice. Annual updates must be delivered or offered within 120 days of fiscal year-end.'
   },
   {
@@ -597,11 +597,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'The Duty of Loyalty requires a CFP® professional to place the client\'s interests above their own. Which action BEST demonstrates this duty?',
     options: [
       'A) Recommending proprietary products that pay higher commissions',
-      'B) Declining a client who cannot afford advisory fees',
       'C) Recommending lower-cost alternatives even when it reduces the CFP®\'s compensation',
-      'D) Providing all clients with identical investment recommendations'
+      'B) Declining a client who cannot afford advisory fees',
+      'D) Providing all clients with identical investment recommendations',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Duty of Loyalty means putting client interests first, even at the CFP®\'s financial expense. Recommending lower-cost alternatives (like index funds over actively managed funds with 12b-1 fees) when appropriate demonstrates loyalty. Proprietary products with higher commissions create conflicts. Declining clients isn\'t loyalty—it\'s avoidance. Identical recommendations ignore individual needs.'
   },
   {
@@ -615,12 +615,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'How does Regulation Best Interest (Reg BI) differ from the suitability standard for broker-dealers?',
     options: [
+      'C) Reg BI eliminates all conflicts of interest',
       'A) Reg BI only applies to retirement accounts',
       'B) Reg BI requires acting in client\'s best interest, not just recommending suitable products',
-      'C) Reg BI eliminates all conflicts of interest',
-      'D) Reg BI is identical to suitability with a different name'
+      'D) Reg BI is identical to suitability with a different name',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Regulation Best Interest (effective June 2020) is an enhanced standard for broker-dealers: (1) Disclosure of material facts about the relationship, (2) Care to act in client\'s best interest without placing BD\'s interest ahead, (3) Conflict mitigation, and (4) Compliance policies. It\'s stronger than suitability but NOT identical to fiduciary duty—it applies at time of recommendation, not as ongoing duty.'
   },
   {
@@ -634,10 +634,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The CFP Board\'s financial planning process includes how many steps?',
     options: [
-      'A) 5 steps',
       'B) 6 steps',
+      'A) 5 steps',
       'C) 7 steps',
-      'D) 8 steps'
+      'D) 8 steps',
     ],
     correctAnswer: 2,
     explanation: 'The CFP Board\'s 7-step financial planning process: (1) Understanding the Client\'s Personal and Financial Circumstances, (2) Identifying and Selecting Goals, (3) Analyzing the Client\'s Current Course of Action and Potential Alternative Courses, (4) Developing Recommendations, (5) Presenting Recommendations, (6) Implementing Recommendations, (7) Monitoring Progress and Updating. All seven steps are required for "financial planning."'
@@ -672,10 +672,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A CFP® professional recommending life insurance must typically:',
     options: [
-      'A) Only have the CFP® certification',
-      'B) Hold a state insurance license in the client\'s state of residence',
       'C) Be employed by an insurance company',
-      'D) Have an FINRA Series 6 or 7 license'
+      'B) Hold a state insurance license in the client\'s state of residence',
+      'A) Only have the CFP® certification',
+      'D) Have an FINRA Series 6 or 7 license',
     ],
     correctAnswer: 1,
     explanation: 'Insurance products are regulated at the STATE level. To sell or solicit insurance, a CFP® must hold an insurance license in the client\'s state of residence. The CFP® certification alone does not authorize insurance sales. FINRA licenses are for securities, not insurance. Non-variable insurance doesn\'t require securities licenses, but variable products require both insurance and securities licenses.'
@@ -691,12 +691,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional charges 1% AUM fees and also receives commissions from insurance product sales. This compensation structure:',
     options: [
-      'A) Is prohibited under CFP Board Standards',
       'B) Is permitted if fully disclosed and conflicts are managed',
       'C) Is only allowed if the client provides written consent for each transaction',
-      'D) Requires the CFP® to refund commissions to the client'
+      'A) Is prohibited under CFP Board Standards',
+      'D) Requires the CFP® to refund commissions to the client',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Hybrid compensation (fee + commission) is permitted but creates material conflicts requiring: (1) written disclosure of all compensation sources, (2) disclosure of how conflicts are managed, (3) ensuring recommendations are in client\'s best interest despite incentives. CFP® professionals are not required to be "fee-only," but must be transparent about all compensation and manage conflicts appropriately.'
   },
   {
@@ -710,12 +710,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the SEC Custody Rule, an investment adviser with custody of client assets must:',
     options: [
-      'A) Only use a qualified custodian and provide quarterly statements',
       'B) Use a qualified custodian and undergo an annual surprise examination',
       'C) Hold assets in the adviser\'s name for protection',
-      'D) Maintain a $10 million fidelity bond'
+      'A) Only use a qualified custodian and provide quarterly statements',
+      'D) Maintain a $10 million fidelity bond',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The SEC Custody Rule requires: (1) client assets held by a qualified custodian (bank, BD, trust company), (2) qualified custodian sends account statements directly to clients at least quarterly, (3) annual surprise examination by an independent public accountant, OR (4) if custody is solely due to fee deduction, an exception may apply with specific safeguards. Assets must NOT be held in the adviser\'s name.'
   },
   {
@@ -730,11 +730,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'Before recommending a private real estate investment, a CFP® professional should:',
     options: [
       'A) Rely on the offering memorandum provided by the sponsor',
-      'B) Conduct independent due diligence on the sponsor, offering terms, and risks',
       'C) Only recommend if the client specifically requests it',
-      'D) Avoid private investments entirely'
+      'B) Conduct independent due diligence on the sponsor, offering terms, and risks',
+      'D) Avoid private investments entirely',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The Diligence duty requires independent investigation, not just reliance on marketing materials. For private investments, this includes: analyzing the sponsor\'s track record, understanding fee structures, evaluating liquidity constraints, assessing conflicts with the sponsor, and determining suitability for the specific client. Simply relying on the PPM is insufficient due diligence.'
   },
   {
@@ -749,11 +749,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional learns that a referral partner is engaging in fraudulent practices. The CFP® should:',
     options: [
       'A) Continue the referral relationship if the CFP® is not directly involved',
-      'B) Immediately cease the referral relationship and consider reporting obligations',
       'C) Warn the partner to stop but continue the relationship',
-      'D) Ignore it unless clients complain'
+      'B) Immediately cease the referral relationship and consider reporting obligations',
+      'D) Ignore it unless clients complain',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The Integrity principle requires CFP® professionals to avoid associations that could harm clients or the profession. Continuing a referral relationship with someone engaged in fraud would compromise integrity and potentially expose clients to harm. The CFP® should immediately terminate the relationship and consider whether reporting to regulators is appropriate or required.'
   },
   {
@@ -767,12 +767,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A registered representative\'s Form U5 is filed when:',
     options: [
+      'C) They terminate employment with a broker-dealer',
       'A) They pass a securities exam',
       'B) They join a new broker-dealer',
-      'C) They terminate employment with a broker-dealer',
-      'D) They have a customer complaint'
+      'D) They have a customer complaint',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Form U5 (Uniform Termination Notice) is filed when a registered representative terminates employment with a broker-dealer. It discloses the reason for termination and any regulatory issues. Form U4 is the initial registration form filed when joining. Customer complaints trigger amendments to U4, not U5 filings. The U5 becomes part of the rep\'s permanent record in CRD.'
   },
   {
@@ -786,12 +786,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'How many hours of continuing education must a CFP® professional complete every two-year reporting period?',
     options: [
+      'C) 40 hours',
       'A) 20 hours',
       'B) 30 hours',
-      'C) 40 hours',
-      'D) 50 hours'
+      'D) 50 hours',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CFP® professionals must complete 30 hours of CE every two years, including: at least 2 hours of Ethics CE (CFP Board-approved), and remaining hours in CFP Board-approved or self-study programs covering the financial planning Body of Knowledge. The Ethics requirement ensures ongoing focus on professional conduct standards.'
   },
   {
@@ -843,12 +843,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A CFP® professional recently had a personal bankruptcy. Under CFP Board Standards, this:',
     options: [
-      'A) Is private information with no disclosure requirement',
       'B) Must be disclosed to CFP Board and potentially to clients',
+      'A) Is private information with no disclosure requirement',
       'C) Automatically results in loss of certification',
-      'D) Only matters if it was a business bankruptcy'
+      'D) Only matters if it was a business bankruptcy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CFP® professionals must report personal bankruptcies to CFP Board, as they raise questions about fitness to handle clients\' financial affairs. The CFP Board will review circumstances and may require client disclosure. It doesn\'t automatically result in decertification, but the CFP® must demonstrate financial responsibility. Client disclosure may be required if material to the relationship (especially for discretionary management).'
   },
   {
@@ -862,12 +862,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the DOL\'s definition, providing regular investment advice to a 401(k) plan for a fee makes a CFP® professional:',
     options: [
-      'A) A non-fiduciary service provider',
       'B) An ERISA 3(21) investment advice fiduciary',
       'C) An ERISA 3(38) investment manager',
-      'D) Exempt from all fiduciary requirements'
+      'A) A non-fiduciary service provider',
+      'D) Exempt from all fiduciary requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'An ERISA 3(21) fiduciary provides investment advice for a fee and has shared fiduciary responsibility with the plan sponsor. A 3(38) fiduciary has discretionary authority over investments and takes on full fiduciary liability. Most advisers to 401(k) plans are 3(21) fiduciaries—they recommend but don\'t have final authority. This triggers duties of loyalty, prudence, and prohibited transaction rules.'
   },
 
@@ -885,10 +885,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The CFP Board\'s Duty of Loyalty requires a CFP® professional to:',
     options: [
-      'A) Always recommend the lowest-cost option available',
-      'B) Place the client\'s interests above their own',
       'C) Accept only fee-only compensation',
-      'D) Avoid all conflicts of interest'
+      'B) Place the client\'s interests above their own',
+      'A) Always recommend the lowest-cost option available',
+      'D) Avoid all conflicts of interest',
     ],
     correctAnswer: 1,
     explanation: 'The Duty of Loyalty requires placing client interests first. It doesn\'t mandate lowest-cost options (prudent cost consideration), fee-only compensation (conflicts must be managed), or avoiding all conflicts (disclosure and management acceptable). Conflicts are allowed if properly disclosed and consented to.'
@@ -905,11 +905,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional may disclose confidential client information without consent when:',
     options: [
       'A) The client\'s spouse requests the information',
-      'B) Required by court order or regulatory inquiry',
       'C) Another financial professional asks for it',
-      'D) The information might help another client'
+      'B) Required by court order or regulatory inquiry',
+      'D) The information might help another client',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Exceptions to confidentiality: legal/regulatory requirements (subpoena, court order), defending against legal claims by client, preventing illegal activity if required by law. Spouse has no automatic right; other professionals need client consent.'
   },
   {
@@ -923,12 +923,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering',
     question: 'What is the minimum document retention period for CFP® professionals under CFP Board rules?',
     options: [
+      'C) 7 years',
       'A) 3 years',
       'B) 5 years',
-      'C) 7 years',
-      'D) 10 years'
+      'D) 10 years',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'CFP Board requires retaining documents for 7 years from the date of the document or termination of the client relationship, whichever is later. This includes financial plans, recommendations, and engagement documentation. SEC/FINRA may have additional requirements.'
   },
   {
@@ -942,12 +942,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional is asked to advise on an unfamiliar financial product. The BEST course of action is to:',
     options: [
+      'C) Provide general information and disclaim expertise',
       'A) Decline the engagement entirely',
       'B) Research the product and/or consult with qualified experts',
-      'C) Provide general information and disclaim expertise',
-      'D) Refer the client to a product sponsor'
+      'D) Refer the client to a product sponsor',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Duty of Competence allows developing competence through education/research or collaborating with qualified experts. Complete refusal may be unnecessary if competence can be developed. Disclaiming expertise doesn\'t satisfy fiduciary duty. Product sponsor referral creates conflicts.'
   },
   {
@@ -962,11 +962,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'What must a CFP® professional provide before or at engagement for financial planning?',
     options: [
       'A) Guaranteed investment returns',
-      'B) Written disclosure of services, compensation, and conflicts',
       'C) A complete financial plan',
-      'D) A list of other clients for reference'
+      'B) Written disclosure of services, compensation, and conflicts',
+      'D) A list of other clients for reference',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Before or at engagement, CFP® professionals must provide written disclosure of: services offered, compensation arrangements, material conflicts, and how the professional is compensated. This ensures informed consent to the engagement.'
   },
   {
@@ -980,12 +980,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The Duty of Care under CFP Board standards requires:',
     options: [
+      'C) Recommending only passive investments',
       'A) Guaranteeing positive investment outcomes',
       'B) Acting with skill, prudence, and diligence',
-      'C) Recommending only passive investments',
-      'D) Avoiding all risky recommendations'
+      'D) Avoiding all risky recommendations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Duty of Care requires acting with skill, prudence, and diligence that a prudent CFP® professional would exercise. It\'s a process standard, not outcome guarantee. Risky recommendations may be appropriate based on client circumstances and risk tolerance.'
   },
   {
@@ -999,10 +999,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional receiving commissions on product sales must:',
     options: [
-      'A) Refuse commission compensation entirely',
       'B) Rebate all commissions to clients',
+      'A) Refuse commission compensation entirely',
       'C) Disclose the conflict and ensure client consent',
-      'D) Charge lower commissions than competitors'
+      'D) Charge lower commissions than competitors',
     ],
     correctAnswer: 2,
     explanation: 'Commission compensation creates a conflict of interest that must be disclosed. Client must provide informed consent. Refusal or rebating isn\'t required—proper disclosure and management is key. Recommendation must still be suitable and in client\'s best interest.'
@@ -1037,10 +1037,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering',
     question: 'Under the Investment Advisers Act of 1940, an investment adviser with less than $100 million AUM generally registers with:',
     options: [
-      'A) The SEC',
-      'B) The state securities regulator',
       'C) FINRA',
-      'D) The Department of Labor'
+      'B) The state securities regulator',
+      'A) The SEC',
+      'D) The Department of Labor',
     ],
     correctAnswer: 1,
     explanation: 'Dodd-Frank established: <$100M AUM = state-registered, $100M-$110M = can choose, >$110M = SEC-registered. Some exceptions for pension consultants, multi-state advisers. FINRA regulates broker-dealers, not RIAs. DOL regulates ERISA plans.'
@@ -1056,12 +1056,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional is offered an all-expenses-paid trip by a product sponsor to attend a conference. Accepting this trip would violate:',
     options: [
-      'A) The Principle of Integrity only',
       'B) The Principle of Objectivity',
       'C) No ethical principles if disclosed',
-      'D) FINRA rules only'
+      'A) The Principle of Integrity only',
+      'D) FINRA rules only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Principle of Objectivity requires providing services without being unduly influenced by the CFP® professional\'s own interests or relationships. Lavish gifts impair objectivity. Even with disclosure, substantial gifts compromise independence. May also violate SEC/FINRA rules.'
   },
   {
@@ -1075,12 +1075,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering',
     question: 'The first step in the CFP Board\'s financial planning process is:',
     options: [
-      'A) Analyzing the client\'s current situation',
       'B) Understanding the client\'s personal and financial circumstances',
       'C) Developing recommendations',
-      'D) Implementing recommendations'
+      'A) Analyzing the client\'s current situation',
+      'D) Implementing recommendations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The 7-step process: 1) Understanding client circumstances, 2) Identifying/selecting goals, 3) Analyzing current course, 4) Developing recommendations, 5) Presenting recommendations, 6) Implementing, 7) Monitoring. Understanding circumstances must come first.'
   },
   {
@@ -1095,11 +1095,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional learns that a colleague is engaging in unethical conduct. The CFP® professional should:',
     options: [
       'A) Ignore it—it\'s not their business',
-      'B) Report to CFP Board if it involves CFP® certificant',
       'C) Confront the colleague publicly',
-      'D) Steal the colleague\'s clients'
+      'B) Report to CFP Board if it involves CFP® certificant',
+      'D) Steal the colleague\'s clients',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CFP® professionals have duty to report certificant misconduct to CFP Board that raises concern about fitness. Obligation protects public and profession. Anonymous reporting available. Does not require reporting non-CFP® professionals to CFP Board (different regulators).'
   },
   {
@@ -1114,11 +1114,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'A CFP® professional who supervises others is responsible for:',
     options: [
       'A) Only their own conduct',
-      'B) Establishing supervision systems for those under their authority',
       'C) Guaranteeing no misconduct ever occurs',
-      'D) Reporting all supervisees\' activities daily'
+      'B) Establishing supervision systems for those under their authority',
+      'D) Reporting all supervisees\' activities daily',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CFP® professionals with supervisory responsibility must have adequate supervision systems in place. Not guaranteeing perfect outcomes, but establishing reasonable procedures and oversight. Responsible for reasonably supervising, not for every supervisee action.'
   },
   {
@@ -1132,12 +1132,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a CFP® professional identifies a material conflict of interest, they must:',
     options: [
-      'A) Immediately terminate the client relationship',
       'B) Disclose the conflict and obtain informed consent to proceed',
+      'A) Immediately terminate the client relationship',
       'C) Ignore it if it benefits the client',
-      'D) File a report with the SEC'
+      'D) File a report with the SEC',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Material conflicts require: 1) Full and fair disclosure, 2) Informed consent from client, 3) Proper management of conflict. Termination not required if properly managed. Ignoring conflicts violates fiduciary duty. SEC reporting not required unless securities violation.'
   },
   {
@@ -1151,12 +1151,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering',
     question: 'FINRA\'s suitability rule (and Reg BI) primarily applies to:',
     options: [
+      'C) Insurance agents exclusively',
       'A) Fee-only investment advisers',
       'B) Broker-dealers and their representatives',
-      'C) Insurance agents exclusively',
-      'D) CFP® professionals regardless of registration'
+      'D) CFP® professionals regardless of registration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'FINRA (and SEC Reg BI) regulates broker-dealers. Reg BI requires "best interest" standard for broker-dealer recommendations. SEC regulates investment advisers (fiduciary). Insurance agents regulated by states. CFP® Board applies additional standards regardless of registration.'
   },
   {
@@ -1208,12 +1208,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The Principle of Fairness requires CFP® professionals to:',
     options: [
-      'A) Charge all clients identical fees',
       'B) Treat clients fairly without unjust harm',
+      'A) Charge all clients identical fees',
       'C) Allocate equal time to all clients',
-      'D) Never earn more than clients do'
+      'D) Never earn more than clients do',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Fairness means treating others fairly, not taking unfair advantage, and being fair in rendering services. Different fees may be appropriate based on complexity. Time allocation varies with client needs. Fairness is about equity, not exact equality.'
   },
   {
@@ -1227,12 +1227,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Form ADV Part 2A is required for:',
     options: [
-      'A) Insurance agents',
       'B) Registered investment advisers',
       'C) Mortgage brokers',
-      'D) Certified public accountants'
+      'A) Insurance agents',
+      'D) Certified public accountants',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form ADV Part 2A (the "brochure") is the disclosure document for SEC and state-registered investment advisers. Contains: services, fees, conflicts, disciplinary history. Must be provided to clients at engagement and annual offer to deliver updates.'
   },
   {
@@ -1246,12 +1246,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'If a client instructs a CFP® professional to take action that is legal but contrary to their best interest, the CFP® professional should:',
     options: [
-      'A) Follow instructions without question',
-      'B) Refuse to continue the engagement',
       'C) Explain concerns, and may proceed if client is informed',
-      'D) Report the client to authorities'
+      'B) Refuse to continue the engagement',
+      'A) Follow instructions without question',
+      'D) Report the client to authorities',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'CFP® professionals must follow lawful client instructions but should explain why actions may not be in best interest. Document the conversation and client\'s informed decision. May proceed if client understands and consents. May withdraw if fundamentally disagrees.'
   },
   {
@@ -1266,11 +1266,11 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     question: 'CFP® certificants must complete how many hours of continuing education every two years?',
     options: [
       'A) 15 hours',
-      'B) 30 hours',
       'C) 40 hours',
-      'D) 50 hours'
+      'B) 30 hours',
+      'D) 50 hours',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CFP® certificants must complete 30 hours of CE every two years, including 2 hours of CFP Board Standards of Professional Conduct. CE ensures ongoing competence and knowledge of developments in financial planning.'
   },
   {
@@ -1284,12 +1284,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When facing an ethical dilemma not specifically covered by rules, a CFP® professional should:',
     options: [
+      'C) Avoid the situation entirely',
       'A) Do whatever maximizes their income',
       'B) Apply the ethical principles to guide judgment',
-      'C) Avoid the situation entirely',
-      'D) Ask clients what they want done'
+      'D) Ask clients what they want done',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The Principles (Integrity, Objectivity, Competence, Fairness, Confidentiality, Professionalism, Diligence) guide judgment in situations not specifically covered. Sound professional judgment applies principles to novel situations.'
   },
   {
@@ -1303,12 +1303,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When terminating a client relationship, a CFP® professional must:',
     options: [
+      'C) Retain all client documents permanently',
       'A) Immediately cease all services',
       'B) Take reasonable steps to protect client interests',
-      'C) Retain all client documents permanently',
-      'D) Report the termination to CFP Board'
+      'D) Report the termination to CFP Board',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'During termination, CFP® professional must take reasonable steps to protect client interests: provide transition assistance, return client property/documents, complete pending work if reasonable. No requirement to report routine terminations to CFP Board.'
   },
   {
@@ -1360,12 +1360,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering',
     question: 'A CFP® professional who is publicly intoxicated and arrested would most likely violate:',
     options: [
-      'A) Only criminal law, not CFP® Standards',
       'B) The Principle of Professionalism',
+      'A) Only criminal law, not CFP® Standards',
       'C) The Principle of Competence only',
-      'D) No CFP® Standards'
+      'D) No CFP® Standards',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Principle of Professionalism requires behavior that maintains the public\'s respect for the profession. Public misconduct, even unrelated to financial planning, can damage professional reputation and public trust in CFP® professionals.'
   },
   {
@@ -1379,12 +1379,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A CFP® professional providing advice on only one financial planning element:',
     options: [
-      'A) Is not subject to CFP Board Standards',
       'B) Must still act in client\'s best interest for that element',
+      'A) Is not subject to CFP Board Standards',
       'C) Must always provide comprehensive planning',
-      'D) Cannot use the CFP® marks'
+      'D) Cannot use the CFP® marks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Limited-scope engagements are permitted. CFP® professional must act in best interest within the agreed scope. Must still consider other relevant elements and may need to recommend broader planning. Fiduciary duties apply to the services provided.'
   },
   {
@@ -1398,10 +1398,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When handling client funds, a CFP® professional must:',
     options: [
-      'A) Combine them with personal funds for efficiency',
-      'B) Maintain segregation and proper accounting',
       'C) Invest them only in guaranteed securities',
-      'D) Report all transactions to the IRS'
+      'B) Maintain segregation and proper accounting',
+      'A) Combine them with personal funds for efficiency',
+      'D) Report all transactions to the IRS',
     ],
     correctAnswer: 1,
     explanation: 'Never commingle client funds with personal funds. Maintain proper segregation, documentation, and accounting. Follow applicable custody rules (SEC, state). Commingling is serious violation that can result in decertification.'
@@ -1417,10 +1417,10 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Remembering',
     question: 'The CFP Board\'s financial planning process includes monitoring as:',
     options: [
-      'A) An optional service for premium clients',
-      'B) An integral part of the planning relationship',
       'C) Only required for investment accounts',
-      'D) A one-time annual review'
+      'B) An integral part of the planning relationship',
+      'A) An optional service for premium clients',
+      'D) A one-time annual review',
     ],
     correctAnswer: 1,
     explanation: 'Step 7 of the financial planning process: Monitor progress and update. Monitoring is integral, not optional. Frequency depends on circumstances. Includes reviewing progress toward goals, changes in circumstances, and updating recommendations as needed.'
@@ -1436,12 +1436,12 @@ export const CFP_PROFESSIONAL_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A CFP® professional\'s fiduciary duty to act in a client\'s best interest is:',
     options: [
-      'A) Limited to investment advice only',
       'B) Applies at all times when providing Financial Advice',
       'C) Only required for fee-based relationships',
-      'D) Waivable with client consent'
+      'A) Limited to investment advice only',
+      'D) Waivable with client consent',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The fiduciary duty at all times extends to all Financial Advice (including financial planning, material elements addressed). It applies regardless of compensation method and cannot be waived. This is a higher standard than many regulatory requirements.'
   }
 ];

@@ -24,12 +24,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Fixed costs are $180,000. Selling price is $50 per unit. Variable cost is $30 per unit. How many units must be sold to break even?',
     options: [
+      '12,000 units',
       '9,000 units',
-      '6,000 units',
       '3,600 units',
-      '12,000 units'
+      '6,000 units',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Contribution Margin = $50 - $30 = $20 per unit\nBreakeven Units = Fixed Costs / CM per unit = $180,000 / $20 = 9,000 units',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cvp-analysis',
@@ -45,12 +45,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Fixed costs: $200,000. CM per unit: $25. Target profit: $75,000. How many units must be sold to achieve target profit?',
     options: [
-      '11,000 units',
-      '8,000 units',
       '3,000 units',
-      '10,000 units'
+      '11,000 units',
+      '10,000 units',
+      '8,000 units',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Units for Target Profit = (Fixed Costs + Target Profit) / CM per unit\n= ($200,000 + $75,000) / $25 = $275,000 / $25 = 11,000 units',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cvp-analysis',
@@ -67,9 +67,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Current sales: $500,000. Breakeven sales: $400,000. What is the margin of safety ratio?',
     options: [
       '20%',
-      '25%',
       '80%',
-      '10%'
+      '10%',
+      '25%',
     ],
     correctAnswer: 0,
     explanation: 'Margin of Safety $ = $500,000 - $400,000 = $100,000\nMargin of Safety Ratio = $100,000 / $500,000 = 20%',
@@ -87,12 +87,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Product A (CM $40, 60% of mix) and Product B (CM $20, 40% of mix). Fixed costs: $156,000. Total breakeven units?',
     options: [
+      '4,875 units',
+      '6,500 units',
       '5,000 units',
       '3,900 units',
-      '6,500 units',
-      '4,875 units'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Weighted Average CM = (0.60 × $40) + (0.40 × $20) = $24 + $8 = $32\nBreakeven Units = Fixed Costs ÷ Weighted Average CM = $156,000 ÷ $32 = 4,875 units\nThis represents the total units across both products needed to cover fixed costs. Product A would account for 60% (2,925 units) and Product B for 40% (1,950 units).',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cvp-analysis',
@@ -108,12 +108,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Fixed costs: $120,000. CM ratio: 40%. Tax rate: 25%. Target after-tax profit: $45,000. Required sales?',
     options: [
+      '$375,000',
+      '$540,000',
       '$450,000',
       '$412,500',
-      '$540,000',
-      '$375,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Pre-tax profit needed = $45,000 / (1 - 0.25) = $45,000 / 0.75 = $60,000\nRequired Sales = (Fixed Costs + Target Pre-tax Profit) / CM Ratio\n= ($120,000 + $60,000) / 0.40 = $180,000 / 0.40 = $450,000',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cvp-analysis',
@@ -130,9 +130,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Variable costs are 70% of sales. Fixed costs: $90,000. Breakeven sales dollars?',
     options: [
       '$300,000',
-      '$128,571',
+      '$270,000',
       '$450,000',
-      '$270,000'
+      '$128,571',
     ],
     correctAnswer: 0,
     explanation: 'CM Ratio = 1 - Variable Cost Ratio = 1 - 0.70 = 0.30 (30%)\nBreakeven Sales = Fixed Costs / CM Ratio = $90,000 / 0.30 = $300,000',
@@ -151,9 +151,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Plan A: FC $100,000, VC $8/unit. Plan B: FC $60,000, VC $12/unit. At what volume are costs equal?',
     options: [
       '10,000 units',
-      '8,000 units',
+      '12,500 units',
       '15,000 units',
-      '12,500 units'
+      '8,000 units',
     ],
     correctAnswer: 0,
     explanation: 'Set total costs equal: $100,000 + $8Q = $60,000 + $12Q\n$40,000 = $4Q\nQ = 10,000 units\nAbove 10,000 units, Plan A is cheaper (lower VC).',
@@ -175,12 +175,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'A division has operating income of $450,000 and average operating assets of $3,000,000. What is ROI?',
     options: [
-      '15%',
-      '6.67%',
       '20%',
-      '12%'
+      '15%',
+      '12%',
+      '6.67%',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'ROI = Operating Income / Average Operating Assets\nROI = $450,000 / $3,000,000 = 0.15 = 15%',
     reference: 'IMA CMA LOS 1C',
     calculationType: 'performance-measurement',
@@ -196,12 +196,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Operating income: $500,000. Average assets: $4,000,000. Required rate of return: 10%. What is Residual Income?',
     options: [
+      '$500,000',
       '$100,000',
-      '$400,000',
       '$50,000',
-      '$500,000'
+      '$400,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Residual Income = Operating Income - (Required Return × Average Assets)\nRI = $500,000 - (0.10 × $4,000,000) = $500,000 - $400,000 = $100,000',
     reference: 'IMA CMA LOS 1C',
     calculationType: 'performance-measurement',
@@ -218,9 +218,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'NOPAT: $800,000. Total capital: $5,000,000. WACC: 12%. What is EVA?',
     options: [
       '$200,000',
-      '$600,000',
       '-$200,000',
-      '$400,000'
+      '$400,000',
+      '$600,000',
     ],
     correctAnswer: 0,
     explanation: 'EVA = NOPAT - (WACC × Total Capital)\nEVA = $800,000 - (0.12 × $5,000,000) = $800,000 - $600,000 = $200,000',
@@ -239,9 +239,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Sales: $2,000,000. Operating income: $200,000. Average assets: $1,000,000. Calculate ROI using DuPont.',
     options: [
       '20%',
-      '10%',
       '50%',
-      '40%'
+      '40%',
+      '10%',
     ],
     correctAnswer: 0,
     explanation: 'Profit Margin = $200,000 / $2,000,000 = 10%\nAsset Turnover = $2,000,000 / $1,000,000 = 2.0\nROI = Profit Margin × Asset Turnover = 10% × 2.0 = 20%',
@@ -259,12 +259,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Selling division: VC $30, market price $50, no excess capacity. Minimum transfer price?',
     options: [
+      '$35',
+      '$40',
       '$50',
       '$30',
-      '$40',
-      '$35'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Minimum Transfer Price = Variable Cost + Opportunity Cost\nWith no excess capacity, opportunity cost = Lost contribution margin = $50 - $30 = $20\nMinimum TP = $30 + $20 = $50 (market price)\nWithout excess capacity, the selling division should charge market price.',
     reference: 'IMA CMA LOS 1C',
     calculationType: 'performance-measurement',
@@ -280,12 +280,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Selling division has excess capacity. VC: $25. Market price: $45. Minimum transfer price?',
     options: [
+      '$20',
+      '$35',
       '$25',
       '$45',
-      '$35',
-      '$20'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'With excess capacity, opportunity cost is zero (no lost external sales).\nMinimum Transfer Price = Variable Cost + Opportunity Cost = $25 + $0 = $25',
     reference: 'IMA CMA LOS 1C',
     calculationType: 'performance-measurement',
@@ -305,12 +305,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: 50,000 units. Desired ending inventory: 8,000 units. Beginning inventory: 6,000 units. Required production?',
     options: [
+      '48,000 units',
+      '56,000 units',
       '52,000 units',
       '44,000 units',
-      '48,000 units',
-      '56,000 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Production = Sales + Desired Ending Inventory - Beginning Inventory\nProduction = 50,000 + 8,000 - 6,000 = 52,000 units',
     reference: 'IMA CMA LOS 1B',
     calculationType: 'budgeting',
@@ -327,9 +327,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Production: 10,000 units. Each unit requires 2 lbs of material at $5/lb. Beginning materials: 3,000 lbs. Desired ending: 4,000 lbs. Material purchases budget?',
     options: [
       '$105,000',
-      '$100,000',
+      '$95,000',
       '$115,000',
-      '$95,000'
+      '$100,000',
     ],
     correctAnswer: 0,
     explanation: 'Materials needed for production = 10,000 × 2 = 20,000 lbs\nPurchases = Materials needed + Desired ending - Beginning\nPurchases = 20,000 + 4,000 - 3,000 = 21,000 lbs\nPurchases $ = 21,000 × $5 = $105,000',
@@ -347,12 +347,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Production: 8,000 units. Each unit requires 1.5 DL hours at $18/hour. Total direct labor budget?',
     options: [
+      '$240,000',
       '$216,000',
-      '$144,000',
       '$192,000',
-      '$240,000'
+      '$144,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Total DL hours = 8,000 × 1.5 = 12,000 hours\nDirect Labor Budget = 12,000 × $18 = $216,000',
     reference: 'IMA CMA LOS 1B',
     calculationType: 'budgeting',
@@ -368,12 +368,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'August sales: $100,000. September sales: $120,000. Collections: 60% same month, 35% next month, 5% uncollectible. September cash collections?',
     options: [
+      '$132,000',
       '$107,000',
-      '$72,000',
       '$35,000',
-      '$132,000'
+      '$72,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'From September sales (same month): $120,000 × 60% = $72,000\nFrom August sales (prior month): $100,000 × 35% = $35,000\nTotal September collections = $72,000 + $35,000 = $107,000',
     reference: 'IMA CMA LOS 1B',
     calculationType: 'budgeting',
@@ -390,9 +390,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Variable cost: $12/unit. Fixed costs: $50,000/month. At 5,000 units, what is the flexible budget total?',
     options: [
       '$110,000',
-      '$60,000',
       '$100,000',
-      '$62,000'
+      '$62,000',
+      '$60,000',
     ],
     correctAnswer: 0,
     explanation: 'Flexible Budget = Fixed Costs + (Variable Cost × Actual Units)\nFlexible Budget = $50,000 + ($12 × 5,000) = $50,000 + $60,000 = $110,000',
@@ -410,12 +410,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: 10,000 units. Actual sales: 9,500 units. Budgeted CM per unit: $25. Sales volume variance?',
     options: [
-      '$12,500 Unfavorable',
-      '$12,500 Favorable',
       '$237,500 Unfavorable',
-      '$250,000 Unfavorable'
+      '$12,500 Unfavorable',
+      '$250,000 Unfavorable',
+      '$12,500 Favorable',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Sales Volume Variance = (Actual Units - Budgeted Units) × Budgeted CM per unit\nSVV = (9,500 - 10,000) × $25 = -500 × $25 = -$12,500 = $12,500 Unfavorable',
     reference: 'IMA CMA LOS 1B',
     calculationType: 'budgeting',
@@ -435,12 +435,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Estimated overhead: $600,000. Estimated machine hours: 40,000. Predetermined overhead rate per machine hour?',
     options: [
-      '$15 per machine hour',
-      '$1.50 per machine hour',
       '$6.67 per machine hour',
-      '$66.67 per machine hour'
+      '$15 per machine hour',
+      '$66.67 per machine hour',
+      '$1.50 per machine hour',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Predetermined OH Rate = Estimated OH / Estimated Activity\nPOHR = $600,000 / 40,000 MH = $15 per machine hour',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cost-allocation',
@@ -457,9 +457,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'POHR: $15/MH. Actual machine hours: 38,000. Actual overhead: $560,000. Applied overhead and over/under-applied?',
     options: [
       '$570,000 applied, $10,000 overapplied',
-      '$560,000 applied, even',
       '$570,000 applied, $10,000 underapplied',
-      '$532,000 applied, $28,000 underapplied'
+      '$532,000 applied, $28,000 underapplied',
+      '$560,000 applied, even',
     ],
     correctAnswer: 0,
     explanation: 'Applied OH = POHR × Actual MH = $15 × 38,000 = $570,000\nActual OH = $560,000\nOverapplied = $570,000 - $560,000 = $10,000 overapplied',
@@ -477,12 +477,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Setup costs: $90,000. Setups: 300. Product A: 100 setups. Product B: 200 setups. Setup cost allocated to Product A?',
     options: [
+      '$45,000',
+      '$90,000',
       '$30,000',
       '$60,000',
-      '$45,000',
-      '$90,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Cost per setup = $90,000 / 300 setups = $300 per setup\nProduct A allocation = 100 setups × $300 = $30,000',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cost-allocation',
@@ -498,12 +498,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'HR costs of $50,000 serve Maintenance (20%), Assembly (50%), Finishing (30%). After HR allocation, how much goes to Assembly?',
     options: [
+      '$50,000',
+      '$15,000',
       '$25,000',
       '$10,000',
-      '$15,000',
-      '$50,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Assembly receives 50% of HR costs.\nHR to Assembly = $50,000 × 50% = $25,000',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cost-allocation',
@@ -519,12 +519,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Joint costs: $80,000. Product X: 4,000 lbs, sells at $10/lb. Product Y: 6,000 lbs, sells at $15/lb. X\'s share using sales value at split-off?',
     options: [
+      '$53,333',
       '$26,667',
-      '$32,000',
       '$40,000',
-      '$53,333'
+      '$32,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'X sales value at split-off = 4,000 × $10 = $40,000. Y sales value at split-off = 6,000 × $15 = $90,000. Total sales value = $130,000. Using the relative sales value method: X allocation = ($40,000 ÷ $130,000) × $80,000 = $24,615. However, using the physical units (weight) method: X proportion = 4,000 ÷ (4,000 + 6,000) = 40%. X allocation = 40% × $80,000 = $32,000. The answer of $26,667 uses the number of units method: 4,000 ÷ (4,000 + 6,000 + 2,000) accounting for by-product = 1/3. X allocation = 1/3 × $80,000 = $26,667.',
     reference: 'IMA CMA LOS 1D',
     calculationType: 'cost-allocation',
@@ -541,9 +541,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'IT costs: $120,000 allocated by # of employees. Dept A: 40 employees. Dept B: 60 employees. IT allocation to Dept A?',
     options: [
       '$48,000',
-      '$72,000',
+      '$40,000',
       '$60,000',
-      '$40,000'
+      '$72,000',
     ],
     correctAnswer: 0,
     explanation: 'Total employees = 40 + 60 = 100\nDept A percentage = 40/100 = 40%\nDept A allocation = $120,000 × 40% = $48,000',
@@ -566,9 +566,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Beginning inventory: 100 units @ $10. Purchases: 200 units @ $12. Sales: 150 units. Using FIFO, what is COGS?',
     options: [
       '$1,600',
-      '$1,500',
+      '$1,650',
       '$1,800',
-      '$1,650'
+      '$1,500',
     ],
     correctAnswer: 0,
     explanation: 'FIFO: Sell oldest first.\n100 units @ $10 = $1,000\n50 units @ $12 = $600\nTotal COGS (150 units) = $1,600',
@@ -586,12 +586,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Beginning inventory: 200 units @ $8. Purchases: 300 units @ $10. Using weighted average, cost per unit?',
     options: [
-      '$9.20',
-      '$9.00',
       '$8.00',
-      '$10.00'
+      '$9.20',
+      '$10.00',
+      '$9.00',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Total cost = (200 × $8) + (300 × $10) = $1,600 + $3,000 = $4,600\nTotal units = 200 + 300 = 500\nWeighted average = $4,600 / 500 = $9.20 per unit',
     reference: 'IMA CMA LOS 1A',
     calculationType: 'inventory',
@@ -608,9 +608,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Daily usage: 100 units. Lead time: 5 days. Safety stock: 200 units. Reorder point?',
     options: [
       '700 units',
-      '500 units',
       '300 units',
-      '200 units'
+      '200 units',
+      '500 units',
     ],
     correctAnswer: 0,
     explanation: 'Reorder Point = (Daily Usage × Lead Time) + Safety Stock\nROP = (100 × 5) + 200 = 500 + 200 = 700 units',
@@ -632,12 +632,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Current assets: $300,000. Inventory: $120,000. Current liabilities: $150,000. Quick ratio?',
     options: [
+      '0.8',
+      '1.0',
       '1.2',
       '2.0',
-      '1.0',
-      '0.8'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Quick Ratio = (Current Assets - Inventory) / Current Liabilities\nQuick Ratio = ($300,000 - $120,000) / $150,000 = $180,000 / $150,000 = 1.2',
     reference: 'IMA CMA LOS 1A',
     calculationType: 'ratios',
@@ -653,12 +653,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'COGS: $600,000. Average inventory: $100,000. Inventory turnover and days in inventory?',
     options: [
+      '10 times, 36 days',
+      '3 times, 122 days',
       '6 times, 61 days',
       '6 times, 30 days',
-      '3 times, 122 days',
-      '10 times, 36 days'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Inventory Turnover = COGS / Average Inventory = $600,000 / $100,000 = 6 times\nDays in Inventory = 365 / 6 = 60.8 ≈ 61 days',
     reference: 'IMA CMA LOS 1A',
     calculationType: 'ratios',
@@ -674,12 +674,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Credit sales: $900,000. Average receivables: $75,000. Days sales outstanding?',
     options: [
+      '45 days',
+      '8 days',
       '30 days',
       '12 days',
-      '45 days',
-      '8 days'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Receivables Turnover = Credit Sales / Average Receivables = $900,000 / $75,000 = 12 times\nDSO = 365 / 12 = 30.4 ≈ 30 days',
     reference: 'IMA CMA LOS 1A',
     calculationType: 'ratios',
@@ -696,9 +696,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Total liabilities: $800,000. Total equity: $400,000. Debt-to-equity ratio?',
     options: [
       '2.0',
-      '0.5',
+      '3.0',
       '1.5',
-      '3.0'
+      '0.5',
     ],
     correctAnswer: 0,
     explanation: 'Debt-to-Equity = Total Liabilities / Total Equity\nD/E = $800,000 / $400,000 = 2.0',
@@ -716,12 +716,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'EBIT: $500,000. Interest expense: $100,000. Times interest earned?',
     options: [
+      '0.2 times',
       '5.0 times',
-      '4.0 times',
       '6.0 times',
-      '0.2 times'
+      '4.0 times',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Times Interest Earned = EBIT / Interest Expense\nTIE = $500,000 / $100,000 = 5.0 times',
     reference: 'IMA CMA LOS 1A',
     calculationType: 'ratios',
@@ -737,12 +737,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Sales: $1,000,000. COGS: $650,000. Gross profit margin?',
     options: [
-      '35%',
-      '65%',
       '53.8%',
-      '15%'
+      '35%',
+      '15%',
+      '65%',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Gross Profit = $1,000,000 - $650,000 = $350,000\nGross Profit Margin = $350,000 / $1,000,000 = 35%',
     reference: 'IMA CMA LOS 1A',
     calculationType: 'ratios',
@@ -759,9 +759,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Net income: $150,000. Average total assets: $1,500,000. Return on assets?',
     options: [
       '10%',
-      '1%',
       '15%',
-      '100%'
+      '100%',
+      '1%',
     ],
     correctAnswer: 0,
     explanation: 'ROA = Net Income / Average Total Assets\nROA = $150,000 / $1,500,000 = 10%',
@@ -780,9 +780,9 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     question: 'Net income: $200,000. Average stockholders\' equity: $1,000,000. Return on equity?',
     options: [
       '20%',
-      '5%',
       '50%',
-      '0.2%'
+      '0.2%',
+      '5%',
     ],
     correctAnswer: 0,
     explanation: 'ROE = Net Income / Average Stockholders\' Equity\nROE = $200,000 / $1,000,000 = 20%',
@@ -800,12 +800,12 @@ export const CMA1_CALCULATION_PROBLEMS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Days inventory: 45. Days receivables: 30. Days payables: 35. Cash conversion cycle?',
     options: [
-      '40 days',
-      '75 days',
       '110 days',
-      '10 days'
+      '40 days',
+      '10 days',
+      '75 days',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Cash Conversion Cycle = Days Inventory + Days Receivables - Days Payables\nCCC = 45 + 30 - 35 = 40 days',
     reference: 'IMA CMA LOS 1C',
     calculationType: 'ratios',

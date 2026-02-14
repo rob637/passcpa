@@ -16,12 +16,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'The MOST critical phase for security controls assessments in system development is:',
     options: [
-      'Testing phase',
       'Requirements and design phase',
       'Implementation phase',
-      'Maintenance phase'
+      'Testing phase',
+      'Maintenance phase',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Security should be addressed in requirements and design where it is most cost-effective. Retrofitting security later is expensive and less effective.',
     topic: 'SDLC Security',
     subtopic: 'Security by Design'
@@ -36,11 +36,11 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     question: 'During post-implementation review, the IS auditor should PRIMARILY verify that:',
     options: [
       'The project was completed under budget',
-      'Expected business benefits are being realized',
       'All documentation is complete',
-      'The system has no bugs'
+      'Expected business benefits are being realized',
+      'The system has no bugs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Post-implementation review should assess whether the expected business benefits that justified the project are being achieved.',
     topic: 'Project Management',
     subtopic: 'Post-Implementation Review'
@@ -55,11 +55,11 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     question: 'Configuration management is MOST important for:',
     options: [
       'Tracking hardware purchases',
-      'Ensuring system integrity by controlling changes to system components',
       'Managing user accounts',
-      'Backup scheduling'
+      'Ensuring system integrity by controlling changes to system components',
+      'Backup scheduling',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Configuration management ensures system integrity by controlling changes to system components and maintaining accurate records.',
     topic: 'Configuration Management',
     subtopic: 'Configuration Control'
@@ -73,12 +73,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'The BEST approach for testing an application upgrade is:',
     options: [
-      'Installing directly in production with rollback capability',
       'Testing in an environment that mirrors production',
+      'Installing directly in production with rollback capability',
       'Testing on developer workstations',
-      'Relying on vendor testing assurances'
+      'Relying on vendor testing assurances',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Testing should occur in an environment that mirrors production to identify issues before deployment.',
     topic: 'Testing',
     subtopic: 'Test Environment'
@@ -92,10 +92,10 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When implementing a packaged application, the GREATEST risk is:',
     options: [
-      'Vendor support availability',
-      'Excessive customization that complicates future upgrades',
       'Training requirements',
-      'License costs'
+      'Excessive customization that complicates future upgrades',
+      'Vendor support availability',
+      'License costs',
     ],
     correctAnswer: 1,
     explanation: 'Excessive customization creates complexity and can make future upgrades difficult or impossible.',
@@ -130,12 +130,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Agile development methodology is characterized by:',
     options: [
-      'Complete requirements before development starts',
       'Iterative development with frequent stakeholder feedback',
       'Separate testing phase at the end',
-      'Minimal documentation is always preferred'
+      'Complete requirements before development starts',
+      'Minimal documentation is always preferred',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Agile uses iterative development with frequent releases and stakeholder feedback to adapt to changing requirements.',
     topic: 'Development Methodologies',
     subtopic: 'Agile Development'
@@ -149,12 +149,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of code reviews is to:',
     options: [
-      'Evaluate developer performance',
       'Identify defects and improve code quality',
       'Approve code for production',
-      'Document programming standards'
+      'Evaluate developer performance',
+      'Document programming standards',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Code reviews identify defects and improve quality before testing, when fixes are less costly.',
     topic: 'Quality Assurance',
     subtopic: 'Code Reviews'
@@ -168,10 +168,10 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data migration to a new system should include:',
     options: [
-      'Direct copy without validation',
-      'Verification of data completeness, accuracy, and integrity',
       'Migration of all data regardless of quality',
-      'Migration performed only by IT'
+      'Verification of data completeness, accuracy, and integrity',
+      'Direct copy without validation',
+      'Migration performed only by IT',
     ],
     correctAnswer: 1,
     explanation: 'Data migration must include verification of completeness, accuracy, and integrity to ensure data quality in the new system.',
@@ -188,11 +188,11 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     question: 'Regression testing is performed to ensure:',
     options: [
       'New functionality works correctly',
-      'Changes have not adversely affected existing functionality',
       'Performance meets requirements',
-      'Security controls are effective'
+      'Changes have not adversely affected existing functionality',
+      'Security controls are effective',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Regression testing verifies that changes have not broken or adversely affected existing functionality.',
     topic: 'Testing',
     subtopic: 'Regression Testing'
@@ -206,12 +206,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'DevOps practices should include:',
     options: [
+      'Manual deployment processes',
       'Bypassing security reviews for faster deployment',
       'Automated testing and security controls integrated into the pipeline',
-      'Manual deployment processes',
-      'Separate development and operations silos'
+      'Separate development and operations silos',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DevOps should integrate automated testing and security (DevSecOps) into the CI/CD pipeline.',
     topic: 'DevOps',
     subtopic: 'DevSecOps'
@@ -225,12 +225,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Version control systems are important for:',
     options: [
-      'Tracking user access',
       'Managing changes to source code and documentation',
+      'Tracking user access',
       'Performance monitoring',
-      'Database backups'
+      'Database backups',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Version control manages changes to source code and documentation, enabling tracking, rollback, and collaboration.',
     topic: 'Configuration Management',
     subtopic: 'Version Control'
@@ -282,12 +282,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Application interface controls should ensure:',
     options: [
-      'Fast data transfer',
       'Complete and accurate data transmission between systems',
       'Maximum bandwidth usage',
-      'Minimum documentation'
+      'Fast data transfer',
+      'Minimum documentation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Interface controls ensure data is transmitted completely and accurately between systems.',
     topic: 'Application Controls',
     subtopic: 'Interface Controls'
@@ -320,10 +320,10 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Static application security testing (SAST) is performed:',
     options: [
-      'In production with live data',
-      'By analyzing source code without executing it',
       'After deployment only',
-      'By penetration testers'
+      'By analyzing source code without executing it',
+      'In production with live data',
+      'By penetration testers',
     ],
     correctAnswer: 1,
     explanation: 'SAST analyzes source code without executing it to identify potential security vulnerabilities.',
@@ -339,12 +339,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Emergency changes should be:',
     options: [
-      'Exempt from change management',
       'Documented and reviewed retrospectively',
       'Approved only by developers',
-      'Not tested before implementation'
+      'Exempt from change management',
+      'Not tested before implementation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Emergency changes may bypass normal approval but must be documented and reviewed after implementation.',
     topic: 'Change Management',
     subtopic: 'Emergency Changes'
@@ -358,12 +358,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When implementing containerized applications, the IS auditor should verify:',
     options: [
+      'All containers run with root privileges',
       'Containers are never updated',
       'Container images are scanned for vulnerabilities and properly maintained',
-      'All containers run with root privileges',
-      'Containers share network access freely'
+      'Containers share network access freely',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Container images should be scanned for vulnerabilities and properly maintained with security patches.',
     topic: 'Modern Development',
     subtopic: 'Container Security'
@@ -378,11 +378,11 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     question: 'Project scope creep refers to:',
     options: [
       'Completing the project early',
-      'Uncontrolled expansion of project scope',
       'Reducing project budget',
-      'Adding more team members'
+      'Uncontrolled expansion of project scope',
+      'Adding more team members',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Scope creep is uncontrolled expansion of project scope without corresponding adjustments to budget and timeline.',
     topic: 'Project Management',
     subtopic: 'Scope Management'
@@ -397,11 +397,11 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     question: 'Dynamic application security testing (DAST) differs from SAST in that DAST:',
     options: [
       'Analyzes source code directly',
-      'Tests the running application from the outside',
       'Is performed during design',
-      'Cannot find security vulnerabilities'
+      'Tests the running application from the outside',
+      'Cannot find security vulnerabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DAST tests the running application from the outside (black-box testing) to identify vulnerabilities.',
     topic: 'Security Testing',
     subtopic: 'DAST'
@@ -434,12 +434,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'A systems integrator is PRIMARILY responsible for:',
     options: [
-      'Operating systems after deployment',
       'Ensuring different components work together effectively',
       'Providing ongoing maintenance',
-      'Training end users'
+      'Operating systems after deployment',
+      'Training end users',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A systems integrator ensures different components and systems work together effectively.',
     topic: 'Implementation',
     subtopic: 'Systems Integration'
@@ -453,10 +453,10 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating low-code/no-code development platforms, the IS auditor should be MOST concerned about:',
     options: [
-      'Reduced development time',
-      'Security, governance, and shadow IT risks',
       'Lower infrastructure costs',
-      'User-friendly interfaces'
+      'Security, governance, and shadow IT risks',
+      'Reduced development time',
+      'User-friendly interfaces',
     ],
     correctAnswer: 1,
     explanation: 'Low-code platforms can introduce security gaps, governance challenges, and shadow IT if not properly controlled.',
@@ -472,12 +472,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Software licensing compliance is important to:',
     options: [
-      'Reduce training requirements',
       'Avoid legal and financial penalties',
+      'Reduce training requirements',
       'Improve system performance',
-      'Simplify deployments'
+      'Simplify deployments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Non-compliance with software licensing can result in significant legal and financial penalties.',
     topic: 'Compliance',
     subtopic: 'License Management'
@@ -491,12 +491,12 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Infrastructure as Code (IaC) provides benefits including:',
     options: [
-      'Manual configuration of each server',
       'Consistent, repeatable, and auditable infrastructure deployment',
+      'Manual configuration of each server',
       'Elimination of security requirements',
-      'Reduced need for version control'
+      'Reduced need for version control',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IaC enables consistent, repeatable, and auditable infrastructure deployment through code-defined configurations.',
     topic: 'Modern Development',
     subtopic: 'Infrastructure as Code'

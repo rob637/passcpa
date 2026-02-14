@@ -16,12 +16,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'The MOST important factor in IT governance success is:',
     options: [
+      'Number of IT staff',
       'Advanced technology',
       'Board and executive commitment',
       'Large IT budget',
-      'Number of IT staff'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT governance success depends most on commitment from the board and executives, who set the tone, provide resources, and hold management accountable.',
     topic: 'IT Governance',
     subtopic: 'Success Factors'
@@ -37,8 +37,8 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Only when technology changes',
       'Regularly and when business conditions change',
+      'Only at budget time',
       'Every five years',
-      'Only at budget time'
     ],
     correctAnswer: 1,
     explanation: 'IT strategy should be reviewed regularly and whenever significant changes in business conditions, technology, or competitive environment occur.',
@@ -56,8 +56,8 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Avoid all IT projects',
       'Prioritize and optimize IT investments',
+      'Reduce IT staff',
       'Eliminate IT risk',
-      'Reduce IT staff'
     ],
     correctAnswer: 1,
     explanation: 'IT portfolio management provides a structured approach to prioritize, select, and optimize IT investments to maximize value and align with strategy.',
@@ -73,12 +73,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Benefit realization management ensures that:',
     options: [
-      'Projects are completed on budget',
       'Expected benefits from IT investments are actually achieved',
+      'Projects are completed on budget',
+      'Technology is current',
       'Vendors are paid on time',
-      'Technology is current'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Benefit realization management tracks and ensures that expected benefits from IT investments are actually achieved, not just that projects are completed.',
     topic: 'IT Investment',
     subtopic: 'Benefit Realization'
@@ -92,12 +92,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT policies provide:',
     options: [
-      'Detailed procedures',
       'High-level direction and expectations',
+      'Job descriptions',
+      'Detailed procedures',
       'Technical specifications',
-      'Job descriptions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Policies provide high-level statements of management\'s intent, direction, and expectations. Procedures and standards provide detailed implementation guidance.',
     topic: 'IT Policies',
     subtopic: 'Policy Framework'
@@ -111,10 +111,10 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT standards differ from guidelines in that standards:',
     options: [
-      'Are optional',
+      'Are less formal',
       'Are mandatory requirements',
+      'Are optional',
       'Provide recommendations only',
-      'Are less formal'
     ],
     correctAnswer: 1,
     explanation: 'Standards are mandatory requirements that must be followed, while guidelines provide recommendations that may be adapted based on circumstances.',
@@ -131,11 +131,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'Exception management for IT policies should include:',
     options: [
       'Automatic approval of all exceptions',
+      'Verbal approval only',
       'Formal approval, documentation, and time limits',
       'No exceptions ever',
-      'Verbal approval only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Exception management should include formal approval by appropriate authority, documentation of justification, compensating controls, and time limits.',
     topic: 'IT Policies',
     subtopic: 'Exception Management'
@@ -149,12 +149,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'IT organizational structure should ensure:',
     options: [
-      'Maximum centralization',
       'Clear roles, responsibilities, and accountability',
+      'No oversight',
+      'Maximum centralization',
       'Minimum staff',
-      'No oversight'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT organizational structure should clearly define roles, responsibilities, and accountability to ensure effective operations and governance.',
     topic: 'IT Organization',
     subtopic: 'Structure'
@@ -168,12 +168,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Chief Information Officer (CIO) is primarily responsible for:',
     options: [
+      'Hardware procurement only',
       'Technical support only',
       'Strategic IT leadership aligned with business objectives',
       'Software development only',
-      'Hardware procurement only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The CIO provides strategic IT leadership, ensuring IT strategy aligns with business objectives and IT delivers value to the organization.',
     topic: 'IT Organization',
     subtopic: 'CIO Role'
@@ -188,11 +188,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'Risk appetite represents:',
     options: [
       'The amount of risk that has occurred',
+      'Maximum possible risk',
       'The amount and type of risk an organization is willing to accept',
       'Zero risk',
-      'Maximum possible risk'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Risk appetite is the amount and type of risk an organization is willing to accept in pursuit of its objectives, set by governance.',
     topic: 'Risk Management',
     subtopic: 'Risk Appetite'
@@ -208,8 +208,8 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Applies to the whole organization',
       'Is the acceptable variance from risk appetite',
+      'Is set by the board only',
       'Is always higher',
-      'Is set by the board only'
     ],
     correctAnswer: 1,
     explanation: 'Risk tolerance is the acceptable variance from risk appetite for specific objectives or processes, providing operational boundaries.',
@@ -225,12 +225,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Key risk indicators (KRIs) provide:',
     options: [
-      'Retrospective analysis only',
       'Early warning of increasing risk levels',
+      'Retrospective analysis only',
+      'Budget forecasts',
       'Compliance reporting',
-      'Budget forecasts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'KRIs are metrics that provide early warning when risk levels are increasing, enabling proactive response before issues materialize.',
     topic: 'Risk Management',
     subtopic: 'KRIs'
@@ -244,12 +244,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Risk transfer through insurance is MOST appropriate for:',
     options: [
-      'All types of risks',
       'Financial impact of risks that cannot be eliminated',
+      'All types of risks',
+      'Day-to-day operational risks',
       'Reputational risks',
-      'Day-to-day operational risks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Insurance is appropriate for transferring the financial impact of risks that cannot be eliminated and where the cost of insurance is reasonable.',
     topic: 'Risk Management',
     subtopic: 'Risk Transfer'
@@ -263,10 +263,10 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT service level management ensures:',
     options: [
-      'Minimum service delivery',
+      'Vendor selection',
       'Agreed-upon service levels are documented, measured, and achieved',
+      'Minimum service delivery',
       'Reduced IT costs only',
-      'Vendor selection'
     ],
     correctAnswer: 1,
     explanation: 'Service level management ensures service expectations are documented in SLAs, performance is measured, and agreed-upon levels are achieved.',
@@ -282,10 +282,10 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Operational level agreements (OLAs) differ from SLAs in that OLAs:',
     options: [
-      'Are external agreements',
+      'Cover only financial terms',
       'Define internal support relationships',
+      'Are external agreements',
       'Are more formal',
-      'Cover only financial terms'
     ],
     correctAnswer: 1,
     explanation: 'OLAs define internal support relationships between IT groups that underpin the SLAs provided to business customers.',
@@ -301,12 +301,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'When outsourcing IT services, the MOST important consideration is:',
     options: [
+      'Geographic location',
       'Cost savings',
       'Alignment with business requirements and adequate controls',
       'Vendor reputation only',
-      'Geographic location'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Outsourcing must align with business requirements with adequate controls. Cost savings alone should not drive the decision.',
     topic: 'Outsourcing',
     subtopic: 'Outsourcing Decisions'
@@ -320,12 +320,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Third-party risk management should include:',
     options: [
+      'Annual surveys',
       'Only initial due diligence',
       'Due diligence, ongoing monitoring, and exit planning',
       'Only contract review',
-      'Annual surveys'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Third-party risk management includes initial due diligence, ongoing monitoring of performance and risks, and exit planning if the relationship ends.',
     topic: 'Vendor Management',
     subtopic: 'Third-Party Risk'
@@ -340,11 +340,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'Right-to-audit clauses in contracts allow:',
     options: [
       'Vendors to audit customers',
+      'Automatic contract termination',
       'The organization to audit or assess vendor controls',
       'Regulators to bypass audits',
-      'Automatic contract termination'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Right-to-audit clauses allow the organization (or their auditors) to assess the vendor\'s controls to ensure they meet requirements.',
     topic: 'Vendor Management',
     subtopic: 'Contract Terms'
@@ -359,11 +359,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'Succession planning for key IT positions should:',
     options: [
       'Be confidential from all staff',
+      'Be reviewed only during turnover',
       'Identify and develop potential successors',
       'Apply only to executives',
-      'Be reviewed only during turnover'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Succession planning identifies potential successors and provides development opportunities to ensure continuity when key personnel depart.',
     topic: 'IT HR Management',
     subtopic: 'Succession Planning'
@@ -377,12 +377,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Mandatory vacation policies help:',
     options: [
+      'Reduce IT workload',
       'Reduce payroll costs',
       'Detect fraud through rotation of duties',
       'Improve employee skills',
-      'Reduce IT workload'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Mandatory vacations force rotation of duties which may expose fraudulent activities that depend on continuous involvement of one person.',
     topic: 'IT HR Management',
     subtopic: 'Fraud Prevention'
@@ -396,12 +396,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Project scope management ensures:',
     options: [
-      'Projects include all possible features',
       'Project delivers agreed-upon scope without unauthorized additions',
+      'Projects include all possible features',
+      'Timelines are flexible',
       'Budgets are unlimited',
-      'Timelines are flexible'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scope management ensures the project includes all required work and only required work, preventing scope creep that increases cost and risk.',
     topic: 'Project Management',
     subtopic: 'Scope Management'
@@ -417,8 +417,8 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Only cost tracking',
       'Integrated view of scope, schedule, and cost performance',
+      'Quality metrics only',
       'Risk assessment only',
-      'Quality metrics only'
     ],
     correctAnswer: 1,
     explanation: 'EVM integrates scope, schedule, and cost to provide objective measures of project performance and status.',
@@ -434,10 +434,10 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Project risk management should:',
     options: [
-      'Occur only at project start',
+      'Be delegated to vendors',
       'Be continuous throughout the project lifecycle',
+      'Occur only at project start',
       'Focus only on negative risks',
-      'Be delegated to vendors'
     ],
     correctAnswer: 1,
     explanation: 'Project risk management is continuous throughout the project lifecycle, identifying, assessing, and responding to risks as they evolve.',
@@ -453,12 +453,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'ITIL is BEST described as:',
     options: [
-      'A mandatory regulatory requirement',
       'A framework of best practices for IT service management',
+      'A software development methodology',
+      'A mandatory regulatory requirement',
       'A security standard',
-      'A software development methodology'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ITIL (Information Technology Infrastructure Library) is a framework of best practices for delivering IT services efficiently and effectively.',
     topic: 'Frameworks',
     subtopic: 'ITIL'
@@ -472,12 +472,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'ISO 27001 is a standard for:',
     options: [
-      'Quality management',
       'Information security management systems',
+      'Software development',
+      'Quality management',
       'IT service management',
-      'Software development'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ISO 27001 is an international standard specifying requirements for establishing, implementing, maintaining, and improving an information security management system.',
     topic: 'Frameworks',
     subtopic: 'ISO 27001'
@@ -492,11 +492,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'Compliance management in IT should:',
     options: [
       'Focus only on one regulation',
+      'Ignore internal policies',
       'Address all applicable legal, regulatory, and contractual requirements',
       'Be handled by legal only',
-      'Ignore internal policies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT compliance management must address all applicable requirements: laws, regulations, industry standards, contractual obligations, and internal policies.',
     topic: 'Compliance',
     subtopic: 'Compliance Management'
@@ -511,11 +511,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'IT asset lifecycle management covers:',
     options: [
       'Only procurement',
+      'Only disposal',
       'Acquisition through disposition',
       'Only maintenance',
-      'Only disposal'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Asset lifecycle management covers the entire life of an asset: planning, acquisition, deployment, operation, maintenance, and secure disposal.',
     topic: 'IT Management',
     subtopic: 'Asset Lifecycle'
@@ -529,12 +529,12 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Software licensing compliance is important because:',
     options: [
+      'It eliminates the need for updates',
       'It reduces software costs',
       'Non-compliance can result in legal liability and financial penalties',
       'It improves performance',
-      'It eliminates the need for updates'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Non-compliance with software licenses can result in significant legal liability, financial penalties, and reputational damage during audits.',
     topic: 'IT Management',
     subtopic: 'License Compliance'
@@ -549,11 +549,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     question: 'Configuration management database (CMDB) contains:',
     options: [
       'Only hardware information',
+      'Only user data',
       'Information about configuration items and their relationships',
       'Only software licenses',
-      'Only user data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A CMDB contains information about configuration items (CIs) including IT assets and their relationships, supporting change and incident management.',
     topic: 'IT Service Management',
     subtopic: 'CMDB'
@@ -569,8 +569,8 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Only initial purchase price',
       'All costs over the asset lifecycle',
+      'Only labor costs',
       'Only maintenance costs',
-      'Only labor costs'
     ],
     correctAnswer: 1,
     explanation: 'TCO includes all costs over the asset lifecycle: acquisition, implementation, operation, maintenance, training, support, and disposal.',

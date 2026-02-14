@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Of the required CE hours, Enrolled Agents must complete:',
     options: [
-      '10 hours of ethics total',
       '2 hours of ethics or professional conduct per year (6 total per cycle)',
       '4 hours of ethics per year',
-      'No ethics requirement'
+      '10 hours of ethics total',
+      'No ethics requirement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'EAs must complete 2 hours of ethics/professional conduct CE each calendar year. This is part of the 16-hour annual minimum and 72-hour total cycle requirement.',
     reference: 'Circular 230 §10.6(e)',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'CE credit for enrolled practitioners must be earned from:',
     options: [
-      'Any organization',
       'IRS-approved continuing education providers',
       'Only the IRS directly',
-      'State-approved providers only'
+      'Any organization',
+      'State-approved providers only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CE credits must be obtained from IRS-approved CE providers. The IRS maintains a directory of approved providers on its website.',
     reference: 'Circular 230 §10.6(f)',
   },
@@ -80,10 +80,10 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'EAs must retain CE records for:',
     options: [
-      '1 year',
-      '4 years from the date of renewal',
       '3 years',
-      '10 years'
+      '4 years from the date of renewal',
+      '1 year',
+      '10 years',
     ],
     correctAnswer: 1,
     explanation: 'Circular 230 requires enrolled practitioners to retain CE records for 4 years after renewal. The IRS may request verification of CE completion.',
@@ -101,11 +101,11 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     question: 'To become an Enrolled Agent by examination, an applicant must:',
     options: [
       'Only pay a fee',
-      'Pass all three parts of the SEE, pass a suitability check, and apply for enrollment',
       'Have 5 years of IRS experience',
-      'Be a CPA first'
+      'Pass all three parts of the SEE, pass a suitability check, and apply for enrollment',
+      'Be a CPA first',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Candidates must pass all three parts of the Special Enrollment Examination (SEE), pass a tax compliance check and suitability/background review, obtain a PTIN, and apply using Form 23.',
     reference: 'Circular 230 §10.4',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Former IRS employees may become enrolled agents:',
     options: [
+      'Automatically upon leaving the IRS',
       'Never',
       'By demonstrating technical experience and applying within a certain timeframe (or by passing SEE)',
-      'Automatically upon leaving the IRS',
-      'Only after 10 years'
+      'Only after 10 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Former IRS employees may qualify for enrollment without exam if they have qualifying technical experience and apply within specified timeframes. Otherwise, they must pass the SEE like other candidates.',
     reference: 'Circular 230 §10.4(b)',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An enrolled agent\'s valid enrollment card shows:',
     options: [
+      'Social Security number',
       'Only the EA\'s name',
       'Name, enrollment number, and effective dates of enrollment',
-      'Social Security number',
-      'Personal address'
+      'Personal address',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The EA enrollment card displays the practitioner\'s name, enrollment number, and the period for which enrollment is effective. It serves as proof of enrolled status.',
     reference: 'Circular 230 §10.4',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Only individuals enrolled as enrolled agents may:',
     options: [
+      'Represent taxpayers in court',
       'Prepare tax returns',
       'Use the designation "EA" or "E.A." or identify themselves as enrolled agents',
-      'Represent taxpayers in court',
-      'Sign refund checks'
+      'Sign refund checks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Only individuals who are properly enrolled may use the designation "EA" or "Enrolled Agent." Misrepresenting EA status is a violation of Circular 230.',
     reference: 'Circular 230 §10.30',
   },

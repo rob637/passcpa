@@ -7,6 +7,9 @@ import { trackEvent } from '../../../services/analytics';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
 import { captureReferralFromUrl } from '../../../services/referral';
+import { saveCoursePreference } from '../../../utils/courseDetection';
+import { isValidCourseId } from '../../../types/course';
+import type { CourseId } from '../../../types/course';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -26,6 +29,11 @@ const Register = () => {
     
     if (course) {
       localStorage.setItem('pendingCourse', course);
+      // Also save as course preference so detectCourse() picks it up
+      // after auth flow (prevents defaulting to CPA on /home)
+      if (isValidCourseId(course)) {
+        saveCoursePreference(course as CourseId);
+      }
     }
     // Store checkout params for post-onboarding redirect
     if (redirect === 'checkout' && course && interval) {
@@ -234,17 +242,14 @@ const Register = () => {
               required
               autoComplete="new-password"
             />
-            <div className="absolute right-3.5 top-1/2 -translate-y-1/2">
-              <Button
-                variant="ghost"
-                size="icon"
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? 'Hide password' : 'Show password'}
-              >
-                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-              </Button>
-            </div>
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 transition-colors"
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+            >
+              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+            </button>
           </div>
 
           {/* Password Strength */}

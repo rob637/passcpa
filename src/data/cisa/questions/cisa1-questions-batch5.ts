@@ -16,12 +16,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit evidence obtained directly by the auditor is considered:',
     options: [
-      'Less reliable than inquiry',
       'More reliable than evidence provided by auditee',
+      'Only useful for compliance',
+      'Less reliable than inquiry',
       'Unreliable',
-      'Only useful for compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Evidence obtained directly by the auditor (observation, testing) is more reliable than evidence provided by the auditee.',
     topic: 'Audit Evidence',
     subtopic: 'Evidence Reliability'
@@ -35,12 +35,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Documentary evidence from third parties is:',
     options: [
-      'Less reliable than internal documents',
       'More reliable than internal documents',
+      'Only for financial audits',
+      'Less reliable than internal documents',
       'Never acceptable',
-      'Only for financial audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'External documentary evidence (confirmations, third-party reports) is generally more reliable than internal documentation.',
     topic: 'Audit Evidence',
     subtopic: 'Documentary Evidence'
@@ -55,11 +55,11 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     question: 'When the auditor discovers fraud indicators:',
     options: [
       'Ignore if immaterial',
+      'Stop the audit immediately',
       'Evaluate impact and report appropriately regardless of materiality',
       'Only report if material',
-      'Stop the audit immediately'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Fraud indicators should be evaluated and reported appropriately regardless of materiality due to their nature.',
     topic: 'Audit Findings',
     subtopic: 'Fraud Indicators'
@@ -73,12 +73,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Audit scope limitations should be:',
     options: [
-      'Hidden in the report',
       'Clearly disclosed in the audit report',
+      'Hidden in the report',
+      'Only reported verbally',
       'Ignored',
-      'Only reported verbally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scope limitations must be clearly disclosed in the audit report so readers understand the boundaries of the audit.',
     topic: 'Audit Reporting',
     subtopic: 'Scope Limitations'
@@ -92,12 +92,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An audit finding consists of:',
     options: [
-      'Only the condition',
       'Criteria, condition, cause, and effect',
+      'Only the condition',
+      'Only risk rating',
       'Only recommendation',
-      'Only risk rating'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A complete finding includes criteria (what should be), condition (what is), cause (why), and effect (risk/impact).',
     topic: 'Audit Findings',
     subtopic: 'Finding Components'
@@ -113,8 +113,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Is optional',
       'Helps develop effective recommendations that address underlying issues',
+      'Is not the auditor\'s responsibility',
       'Only identifies symptoms',
-      'Is not the auditor\'s responsibility'
     ],
     correctAnswer: 1,
     explanation: 'Root cause analysis identifies underlying issues, enabling recommendations that address problems rather than symptoms.',
@@ -130,12 +130,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When management disagrees with audit findings:',
     options: [
+      'Escalate immediately',
       'Remove the finding',
       'Document both the finding and management response',
       'Change the finding',
-      'Escalate immediately'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Management disagreement should be documented along with the finding, allowing readers to understand both perspectives.',
     topic: 'Audit Reporting',
     subtopic: 'Management Response'
@@ -149,12 +149,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Exit conference benefits include:',
     options: [
+      'Reducing report content',
       'Surprising management',
       'Validating findings and obtaining management commitment',
       'Avoiding documentation',
-      'Reducing report content'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Exit conferences validate findings for accuracy and obtain management commitment to remediation actions.',
     topic: 'Audit Communication',
     subtopic: 'Exit Conference'
@@ -170,8 +170,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Completely subjective',
       'Consistently applied with defined criteria',
+      'Secret from management',
       'Changed for each audit',
-      'Secret from management'
     ],
     correctAnswer: 1,
     explanation: 'Rating systems should have defined, documented criteria applied consistently across audits for comparability.',
@@ -189,8 +189,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Unlimited',
       'Based on need-to-know and organizational policy',
+      'Only to auditors',
       'Public',
-      'Only to auditors'
     ],
     correctAnswer: 1,
     explanation: 'Report distribution should follow need-to-know principles and organizational policies regarding sensitive findings.',
@@ -206,12 +206,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Follow-up audits verify:',
     options: [
-      'New areas only',
       'Implementation of agreed remediation actions',
+      'New areas only',
+      'Financial statements',
       'Only new findings',
-      'Financial statements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Follow-up audits verify that management has implemented agreed remediation actions for prior findings.',
     topic: 'Audit Follow-up',
     subtopic: 'Remediation Verification'
@@ -225,12 +225,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Issue tracking systems for audit findings should:',
     options: [
-      'Be manual only',
       'Track status, ownership, and target dates with escalation',
+      'Be accessible to everyone',
+      'Be manual only',
       'Hide overdue items',
-      'Be accessible to everyone'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Issue tracking should track status, ownership, target dates, and include escalation for overdue items.',
     topic: 'Audit Follow-up',
     subtopic: 'Issue Tracking'
@@ -244,10 +244,10 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Management accepting risk rather than remediating:',
     options: [
-      'Is never acceptable',
+      'Removes auditor responsibility',
       'May be appropriate if properly documented and authorized',
+      'Is never acceptable',
       'Closes the finding automatically',
-      'Removes auditor responsibility'
     ],
     correctAnswer: 1,
     explanation: 'Risk acceptance may be appropriate for certain findings if properly documented and authorized at the appropriate level.',
@@ -264,11 +264,11 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     question: 'Quality assurance review of audit work:',
     options: [
       'Is optional',
+      'Only reviews final report',
       'Ensures audit quality and compliance with standards',
       'Replaces supervision',
-      'Only reviews final report'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'QA reviews ensure audit work meets quality standards and complies with professional and organizational requirements.',
     topic: 'Audit Quality',
     subtopic: 'Quality Assurance'
@@ -282,12 +282,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'External quality assessment of the audit function:',
     options: [
+      'Is only for financial audits',
       'Is never required',
       'Should be conducted periodically by independent parties',
       'Can be self-performed',
-      'Is only for financial audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'External quality assessments by independent parties should be conducted periodically per IIA standards (at least every 5 years).',
     topic: 'Audit Quality',
     subtopic: 'External Assessment'
@@ -301,12 +301,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Continuous improvement in audit includes:',
     options: [
+      'Only staffing changes',
       'Only cost reduction',
       'Lessons learned, methodology updates, and skill development',
       'Only technology updates',
-      'Only staffing changes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Continuous improvement encompasses lessons learned, methodology enhancements, skill development, and technology adoption.',
     topic: 'Audit Quality',
     subtopic: 'Continuous Improvement'
@@ -321,11 +321,11 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     question: 'Data analytics in auditing enables:',
     options: [
       'Smaller samples',
+      'Faster audits only',
       'Analysis of entire populations rather than samples',
       'Less evidence',
-      'Faster audits only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data analytics enables analysis of entire data populations, providing more comprehensive coverage than traditional sampling.',
     topic: 'Audit Techniques',
     subtopic: 'Data Analytics'
@@ -341,8 +341,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Replaces all auditors',
       'Automates repetitive audit tasks to increase efficiency',
+      'Only performs data extraction',
       'Reduces audit quality',
-      'Only performs data extraction'
     ],
     correctAnswer: 1,
     explanation: 'RPA automates repetitive audit tasks like data extraction and validation, improving efficiency and allowing focus on judgment areas.',
@@ -358,12 +358,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Audit dashboards provide:',
     options: [
-      'Only historical data',
       'Real-time visibility into audit status and metrics',
+      'Only historical data',
+      'Only compliance status',
       'Only financial data',
-      'Only compliance status'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Audit dashboards provide real-time visibility into audit status, findings, metrics, and performance indicators.',
     topic: 'Audit Reporting',
     subtopic: 'Dashboards'
@@ -377,12 +377,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Integrated auditing combines:',
     options: [
-      'Only IT and financial audit',
       'Multiple audit types (IT, operational, compliance) for efficiency',
+      'Only IT and financial audit',
+      'Only risk and compliance',
       'Only internal and external audit',
-      'Only risk and compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Integrated auditing combines multiple audit types (IT, operational, compliance, financial) for efficiency and comprehensive coverage.',
     topic: 'Audit Planning',
     subtopic: 'Integrated Audit'
@@ -396,10 +396,10 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit metadata and indexing:',
     options: [
-      'Is unnecessary overhead',
+      'Is only for large audits',
       'Facilitates efficient review and retrieval of work papers',
+      'Is unnecessary overhead',
       'Slows down audits',
-      'Is only for large audits'
     ],
     correctAnswer: 1,
     explanation: 'Proper metadata and indexing enables efficient review, retrieval, and cross-referencing of audit documentation.',
@@ -415,10 +415,10 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Remote auditing challenges include:',
     options: [
-      'Lower costs',
+      'Faster completion',
       'Limited observation capabilities and evidence verification',
+      'Lower costs',
       'Better communication',
-      'Faster completion'
     ],
     correctAnswer: 1,
     explanation: 'Remote auditing presents challenges including limited observation, difficulty verifying physical evidence, and communication barriers.',
@@ -434,12 +434,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Agile audit methodologies:',
     options: [
+      'Skip testing',
       'Avoid planning',
       'Use iterative approaches with flexibility in scope',
       'Have no documentation',
-      'Skip testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Agile audit methods use iterative approaches, allowing scope flexibility while maintaining audit quality and documentation.',
     topic: 'Audit Methodology',
     subtopic: 'Agile Audit'
@@ -453,12 +453,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Co-sourcing of audit activities:',
     options: [
+      'Is not allowed',
       'Replaces internal audit',
       'Supplements internal audit with external expertise',
       'Reduces independence',
-      'Is not allowed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Co-sourcing supplements internal audit capabilities with external expertise for specialized areas while maintaining independence.',
     topic: 'Audit Resources',
     subtopic: 'Co-sourcing'
@@ -473,11 +473,11 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     question: 'Audit client relationship management:',
     options: [
       'Compromises independence',
+      'Reduces audit quality',
       'Facilitates cooperation while maintaining independence',
       'Is inappropriate',
-      'Reduces audit quality'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Good client relationships facilitate cooperation and communication while maintaining professional independence and objectivity.',
     topic: 'Audit Communication',
     subtopic: 'Client Relations'
@@ -493,8 +493,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Promising all deliverables',
       'Clear communication of scope, timeline, and limitations',
+      'Over-committing',
       'Avoiding difficult conversations',
-      'Over-committing'
     ],
     correctAnswer: 1,
     explanation: 'Managing expectations requires clear communication about scope, timeline, deliverables, and any limitations.',
@@ -510,12 +510,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit strategy alignment with organizational strategy:',
     options: [
+      'Reduces coverage',
       'Is optional',
       'Ensures audit adds value by focusing on strategic priorities',
       'Compromises independence',
-      'Reduces coverage'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Aligning audit strategy with organizational strategy ensures audits focus on strategic priorities and add maximum value.',
     topic: 'Audit Planning',
     subtopic: 'Strategic Alignment'
@@ -531,8 +531,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Never',
       'Periodically to ensure it remains appropriate',
+      'Only by external auditors',
       'Only when issues arise',
-      'Only by external auditors'
     ],
     correctAnswer: 1,
     explanation: 'The audit charter should be reviewed periodically to ensure it remains appropriate and aligned with organizational needs.',
@@ -550,8 +550,8 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Only documentation',
       'Retention and sharing of audit expertise and lessons learned',
+      'Only succession planning',
       'Only training',
-      'Only succession planning'
     ],
     correctAnswer: 1,
     explanation: 'Knowledge management supports retention and sharing of audit expertise, lessons learned, and best practices.',

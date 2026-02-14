@@ -43,7 +43,7 @@ import {
   ExamConfig,
 } from '../../services/examService';
 // Keep mock exam imports for blueprint weights and configurations
-import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mockExams';
+import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mock-exams';
 import { getTBSBySection } from '../../data/cpa/tbs';
 
 type ExamState = 'intro' | 'mock-selection' | 'exam' | 'break' | 'review' | 'complete';

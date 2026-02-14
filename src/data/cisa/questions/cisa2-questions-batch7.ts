@@ -16,12 +16,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Digital ethics considerations for organizations include:',
     options: [
-      'Only legal compliance',
       'AI fairness, data privacy, algorithmic transparency, and societal impact',
+      'Only efficiency',
+      'Only legal compliance',
       'Only security',
-      'Only efficiency'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Digital ethics encompasses AI fairness, privacy, algorithmic transparency, and societal impacts.',
     topic: 'IT Governance',
     subtopic: 'Digital Ethics'
@@ -36,11 +36,11 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     question: 'Technology debt management requires:',
     options: [
       'Ignoring legacy systems',
+      'No documentation',
       'Inventory, prioritization, and remediation planning',
       'Only new investments',
-      'No documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tech debt management requires inventory, risk-based prioritization, and planned remediation.',
     topic: 'IT Strategy',
     subtopic: 'Technology Debt'
@@ -54,12 +54,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Agile governance adapts by:',
     options: [
+      'Removing approvals',
       'Eliminating oversight',
       'Providing guardrails and checkpoints while enabling team autonomy',
       'Increasing bureaucracy',
-      'Removing approvals'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Agile governance provides guardrails and checkpoints while enabling team autonomy and speed.',
     topic: 'IT Governance',
     subtopic: 'Agile Governance'
@@ -73,12 +73,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Platform governance for digital ecosystems should address:',
     options: [
-      'Only technology',
       'Partner management, API governance, and ecosystem security',
+      'Only technology',
+      'Only costs',
       'Only internal systems',
-      'Only costs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Platform governance addresses partner management, API governance, and ecosystem security.',
     topic: 'IT Governance',
     subtopic: 'Platform Governance'
@@ -94,8 +94,8 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Only technology',
       'People, process, technology, and governance',
+      'Only automation',
       'Only structure',
-      'Only automation'
     ],
     correctAnswer: 1,
     explanation: 'Operating model design aligns people, processes, technology, and governance with business needs.',
@@ -111,12 +111,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Shared services governance requires:',
     options: [
-      'No SLAs',
       'Clear service definitions, SLAs, and chargeback mechanisms',
+      'No SLAs',
+      'No accountability',
       'Only cost allocation',
-      'No accountability'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Shared services require clear definitions, SLAs, chargeback, and governance mechanisms.',
     topic: 'IT Organization',
     subtopic: 'Shared Services'
@@ -130,12 +130,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Centers of excellence (CoE) provide:',
     options: [
-      'Only cost savings',
       'Specialized expertise, standards, and best practice guidance',
+      'Only cost savings',
+      'Only project delivery',
       'Only training',
-      'Only project delivery'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CoEs provide specialized expertise, standards development, and best practice guidance.',
     topic: 'IT Organization',
     subtopic: 'Centers of Excellence'
@@ -149,10 +149,10 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'IT value realization requires:',
     options: [
-      'Only project completion',
+      'Only technical delivery',
       'Benefits tracking and measurement against business case',
+      'Only project completion',
       'Only cost tracking',
-      'Only technical delivery'
     ],
     correctAnswer: 1,
     explanation: 'Value realization requires tracking and measuring benefits against the original business case.',
@@ -168,10 +168,10 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'IT capability maturity assessment identifies:',
     options: [
-      'Only gaps',
+      'Only costs',
       'Current state, target state, and improvement roadmap',
+      'Only gaps',
       'Only compliance status',
-      'Only costs'
     ],
     correctAnswer: 1,
     explanation: 'Maturity assessment identifies current capabilities, target state, and improvement roadmap.',
@@ -187,12 +187,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Workforce transformation for digital initiatives requires:',
     options: [
+      'Outsourcing only',
       'Technology only',
       'Skills development, culture change, and organizational alignment',
       'Hiring only',
-      'Outsourcing only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Workforce transformation requires skills development, culture change, and organizational alignment.',
     topic: 'IT Resource Management',
     subtopic: 'Workforce Transformation'
@@ -206,12 +206,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Enterprise risk management integration with IT risk ensures:',
     options: [
+      'Reduced reporting',
       'Separate risk views',
       'Consistent risk appetite and holistic risk perspective',
       'IT autonomy',
-      'Reduced reporting'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'ERM integration ensures consistent risk appetite and holistic perspective across the enterprise.',
     topic: 'IT Risk Management',
     subtopic: 'ERM Integration'
@@ -226,11 +226,11 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     question: 'Operational risk events should be:',
     options: [
       'Ignored if minor',
+      'Only reported annually',
       'Captured, analyzed, and used to improve processes',
       'Hidden from management',
-      'Only reported annually'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Operational risk events should be captured and analyzed to enable process improvement.',
     topic: 'IT Risk Management',
     subtopic: 'Operational Risk'
@@ -246,8 +246,8 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Only existence',
       'Whether controls achieve their intended objectives',
+      'Only compliance',
       'Only cost',
-      'Only compliance'
     ],
     correctAnswer: 1,
     explanation: 'Control effectiveness metrics measure whether controls achieve their intended risk reduction.',
@@ -263,12 +263,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Regulatory technology (RegTech) solutions help:',
     options: [
-      'Avoid regulations',
       'Automate compliance monitoring and reporting',
+      'Avoid regulations',
+      'Eliminate audits',
       'Reduce security',
-      'Eliminate audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'RegTech solutions automate compliance monitoring, reporting, and regulatory requirement management.',
     topic: 'IT Governance',
     subtopic: 'RegTech'
@@ -282,12 +282,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Governance reporting to the board should be:',
     options: [
-      'Highly technical',
       'Risk-focused and at appropriate level for board understanding',
+      'Only positive',
+      'Highly technical',
       'Detailed operational',
-      'Only positive'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Board reporting should be risk-focused and at a level appropriate for board understanding.',
     topic: 'IT Governance',
     subtopic: 'Board Reporting'
@@ -303,8 +303,8 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Nothing useful',
       'Policy gaps or implementation issues needing attention',
+      'Only costs',
       'Only non-compliance',
-      'Only costs'
     ],
     correctAnswer: 1,
     explanation: 'Exception analysis can reveal policy gaps, implementation issues, or changing business needs.',
@@ -320,12 +320,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Project portfolio prioritization should use:',
     options: [
-      'First come first served',
       'Multi-criteria analysis considering value, risk, and strategic fit',
+      'Only executive preference',
+      'First come first served',
       'Only cost',
-      'Only executive preference'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Portfolio prioritization uses multi-criteria analysis considering value, risk, strategy, and resources.',
     topic: 'IT Strategy',
     subtopic: 'Portfolio Prioritization'
@@ -339,12 +339,12 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'IT investment business cases should include:',
     options: [
-      'Only costs',
       'Benefits, costs, risks, and alternatives analysis',
+      'Only technical requirements',
+      'Only costs',
       'Only timeline',
-      'Only technical requirements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Business cases should include expected benefits, costs, risks, alternatives, and assumptions.',
     topic: 'IT Strategy',
     subtopic: 'Business Case'

@@ -12,7 +12,7 @@ import {
   Book,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { IRS_FORM_GUIDE } from '../../data/ea/reference/irs-form-guide';
+import { IRS_FORM_GUIDE } from '../../data/ea/reference-data/irs-form-guide';
 
 type FormEntry = {
   form: string;

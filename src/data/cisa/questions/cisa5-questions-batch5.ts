@@ -17,11 +17,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Security architecture design should be:',
     options: [
       'Reactive',
-      'Based on defense-in-depth principles',
+      'Technology-focused only',
       'Single layer only',
-      'Technology-focused only'
+      'Based on defense-in-depth principles',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security architecture should follow defense-in-depth with multiple layers of complementary controls.',
     topic: 'Security Architecture',
     subtopic: 'Defense in Depth'
@@ -36,11 +36,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Security baseline configurations should be:',
     options: [
       'Static forever',
-      'Documented, maintained, and periodically reviewed',
+      'Undefined',
       'Vendor defaults only',
-      'Undefined'
+      'Documented, maintained, and periodically reviewed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security baselines should be documented, consistently applied, and periodically reviewed for appropriateness.',
     topic: 'Security Management',
     subtopic: 'Baselines'
@@ -54,12 +54,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Hardening standards address:',
     options: [
+      'Only encryption',
+      'Only network settings',
       'Only passwords',
       'Removing unnecessary services, patching, and secure configuration',
-      'Only network settings',
-      'Only encryption'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Hardening includes removing unnecessary services, applying patches, disabling defaults, and secure configuration.',
     topic: 'Security Management',
     subtopic: 'Hardening'
@@ -73,12 +73,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Vulnerability scoring (CVSS) considers:',
     options: [
+      'Only asset value',
+      'Only exploitability',
       'Only severity',
       'Base, temporal, and environmental factors',
-      'Only exploitability',
-      'Only asset value'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CVSS scores consider base vulnerability characteristics, temporal factors, and environmental context.',
     topic: 'Vulnerability Management',
     subtopic: 'CVSS'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Vulnerability remediation should be prioritized by:',
     options: [
+      'Vendor severity only',
+      'Random selection',
       'Discovery date only',
       'Risk based on exploitability and asset criticality',
-      'Vendor severity only',
-      'Random selection'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Remediation prioritization should consider exploitability, asset criticality, and potential business impact.',
     topic: 'Vulnerability Management',
     subtopic: 'Prioritization'
@@ -112,11 +112,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Patch management processes should include:',
     options: [
       'Immediate production deployment',
-      'Testing, approval, deployment, and verification',
       'Only critical patches',
-      'Annual patching only'
+      'Annual patching only',
+      'Testing, approval, deployment, and verification',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Patch management should include testing, change approval, controlled deployment, and verification.',
     topic: 'Vulnerability Management',
     subtopic: 'Patch Management'
@@ -130,12 +130,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Virtual patching:',
     options: [
-      'Replaces real patches',
-      'Provides temporary protection when patches cannot be immediately applied',
       'Eliminates vulnerabilities',
-      'Is permanent'
+      'Replaces real patches',
+      'Is permanent',
+      'Provides temporary protection when patches cannot be immediately applied',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Virtual patching provides compensating controls (like WAF rules) when patches cannot be immediately applied.',
     topic: 'Vulnerability Management',
     subtopic: 'Virtual Patching'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Penetration testing rules of engagement should:',
     options: [
+      'Be verbal only',
+      'Give unlimited access',
       'Not exist',
       'Define scope, method, timing, and escalation procedures',
-      'Be verbal only',
-      'Give unlimited access'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Rules of engagement should clearly define scope, testing methods, timing, notification, and escalation procedures.',
     topic: 'Security Testing',
     subtopic: 'Rules of Engagement'
@@ -168,12 +168,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Red team exercises simulate:',
     options: [
+      'Only vulnerability scanning',
+      'Only phishing',
       'Compliance audits',
       'Real-world adversary tactics to test defenses',
-      'Only vulnerability scanning',
-      'Only phishing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Red team exercises simulate real-world adversary tactics and techniques to test detection and response.',
     topic: 'Security Testing',
     subtopic: 'Red Team'
@@ -187,12 +187,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Purple team activities:',
     options: [
-      'Replace red and blue teams',
-      'Facilitate collaboration between offensive and defensive teams',
       'Only perform testing',
-      'Only review results'
+      'Replace red and blue teams',
+      'Only review results',
+      'Facilitate collaboration between offensive and defensive teams',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Purple team activities facilitate collaboration between red and blue teams to improve both attack simulation and defense.',
     topic: 'Security Testing',
     subtopic: 'Purple Team'
@@ -206,12 +206,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Bug bounty programs:',
     options: [
-      'Replace internal security',
-      'Incentivize external researchers to report vulnerabilities',
       'Only find bugs',
-      'Guarantee security'
+      'Replace internal security',
+      'Guarantee security',
+      'Incentivize external researchers to report vulnerabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Bug bounty programs incentivize external security researchers to responsibly report vulnerabilities.',
     topic: 'Security Testing',
     subtopic: 'Bug Bounty'
@@ -226,11 +226,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Security Information and Event Management (SIEM):',
     options: [
       'Replaces all other security tools',
-      'Aggregates and correlates security events for detection',
       'Only stores logs',
-      'Only generates alerts'
+      'Only generates alerts',
+      'Aggregates and correlates security events for detection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SIEM aggregates logs, correlates events, and provides detection and alerting for security events.',
     topic: 'Security Operations',
     subtopic: 'SIEM'
@@ -245,11 +245,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'SOAR (Security Orchestration, Automation and Response):',
     options: [
       'Only performs automation',
-      'Integrates tools, automates workflows, and orchestrates response',
+      'Only creates reports',
       'Replaces analysts',
-      'Only creates reports'
+      'Integrates tools, automates workflows, and orchestrates response',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SOAR integrates security tools, automates repetitive tasks, and orchestrates incident response workflows.',
     topic: 'Security Operations',
     subtopic: 'SOAR'
@@ -263,12 +263,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'User and Entity Behavior Analytics (UEBA):',
     options: [
+      'Only generates baselines',
       'Replaces access control',
-      'Detects anomalous behavior indicating potential threats',
       'Only monitors privileged users',
-      'Only generates baselines'
+      'Detects anomalous behavior indicating potential threats',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'UEBA uses machine learning to detect anomalous behavior that may indicate insider threats or compromised accounts.',
     topic: 'Security Operations',
     subtopic: 'UEBA'
@@ -282,12 +282,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Network Detection and Response (NDR):',
     options: [
+      'Only logs connections',
+      'Only blocks traffic',
       'Replaces firewalls',
       'Monitors network traffic for threats and anomalies',
-      'Only blocks traffic',
-      'Only logs connections'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'NDR monitors network traffic patterns to detect threats and anomalies that may evade other controls.',
     topic: 'Network Security',
     subtopic: 'NDR'
@@ -301,12 +301,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Extended Detection and Response (XDR):',
     options: [
+      'Replaces all security tools',
+      'Only does response',
       'Only endpoint focused',
       'Correlates detections across multiple security layers',
-      'Replaces all security tools',
-      'Only does response'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'XDR correlates detections across endpoints, network, cloud, and other layers for comprehensive threat detection.',
     topic: 'Security Operations',
     subtopic: 'XDR'
@@ -320,12 +320,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Digital forensics maintains:',
     options: [
+      'Only reports',
+      'Only timelines',
       'Only data',
       'Evidence integrity through documented procedures',
-      'Only reports',
-      'Only timelines'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Digital forensics maintains evidence integrity through documented procedures and chain of custody.',
     topic: 'Incident Response',
     subtopic: 'Forensics'
@@ -339,12 +339,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Memory forensics can recover:',
     options: [
+      'Only network data',
+      'Only logs',
       'Only files',
       'Volatile data including running processes and encryption keys',
-      'Only logs',
-      'Only network data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Memory forensics can recover volatile data including running processes, network connections, and encryption keys.',
     topic: 'Incident Response',
     subtopic: 'Memory Forensics'
@@ -358,12 +358,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Threat hunting differs from detection by:',
     options: [
+      'Only reviewing logs',
+      'Waiting for alerts',
       'Being automated only',
       'Proactively searching for undetected threats',
-      'Waiting for alerts',
-      'Only reviewing logs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Threat hunting proactively searches for threats that may have evaded automated detection controls.',
     topic: 'Security Operations',
     subtopic: 'Threat Hunting'
@@ -378,11 +378,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Indicators of Compromise (IOCs):',
     options: [
       'Only identify known threats',
-      'Provide artifacts indicating potential breach activity',
       'Replace investigation',
-      'Guarantee detection'
+      'Guarantee detection',
+      'Provide artifacts indicating potential breach activity',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IOCs are artifacts (hashes, IPs, behaviors) that indicate potential malicious activity or breach.',
     topic: 'Security Operations',
     subtopic: 'IOCs'
@@ -396,12 +396,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data subject access requests (DSARs) require:',
     options: [
+      'Automatic denial',
       'Immediate response',
-      'Verified identity and timely response per regulations',
       'No verification',
-      'Automatic denial'
+      'Verified identity and timely response per regulations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DSARs require identity verification and timely response within regulatory timeframes (e.g., 30 days for GDPR).',
     topic: 'Privacy',
     subtopic: 'DSAR'
@@ -415,12 +415,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Right to be forgotten (erasure):',
     options: [
+      'Is immediate',
       'Is absolute',
-      'Must be balanced against other legal obligations',
       'Applies to all data',
-      'Is immediate'
+      'Must be balanced against other legal obligations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Right to erasure must be balanced against legal retention requirements and other legitimate interests.',
     topic: 'Privacy',
     subtopic: 'Erasure'
@@ -435,11 +435,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Privacy Impact Assessments (PIAs):',
     options: [
       'Are optional',
-      'Identify and mitigate privacy risks before implementation',
+      'Are only for GDPR',
       'Only document compliance',
-      'Are only for GDPR'
+      'Identify and mitigate privacy risks before implementation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PIAs systematically identify and mitigate privacy risks before implementing systems processing personal data.',
     topic: 'Privacy',
     subtopic: 'PIA'
@@ -453,12 +453,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Physical security layers should include:',
     options: [
+      'Only cameras',
+      'Only guards',
       'Only perimeter security',
       'Perimeter, building, floor, room, and equipment protection',
-      'Only guards',
-      'Only cameras'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Physical security should use multiple layers from perimeter to building to room to equipment.',
     topic: 'Physical Security',
     subtopic: 'Defense Layers'
@@ -472,12 +472,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Visitor management controls should:',
     options: [
-      'Allow unrestricted access',
-      'Verify identity, log visits, and require escorts where appropriate',
       'Only log entry',
-      'Only check for weapons'
+      'Allow unrestricted access',
+      'Only check for weapons',
+      'Verify identity, log visits, and require escorts where appropriate',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Visitor management should verify identity, log visits, provide temporary badges, and require escorts in sensitive areas.',
     topic: 'Physical Security',
     subtopic: 'Visitor Management'
@@ -491,12 +491,12 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Media sanitization methods should match:',
     options: [
+      'Cost only',
+      'Speed requirements',
       'Convenience',
       'Data classification and intended media disposition',
-      'Cost only',
-      'Speed requirements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Sanitization methods (clear, purge, destroy) should match data classification and whether media will be reused.',
     topic: 'Data Security',
     subtopic: 'Media Sanitization'
@@ -511,11 +511,11 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     question: 'Environmental controls for data centers include:',
     options: [
       'Only cooling',
-      'Temperature, humidity, fire suppression, and water detection',
       'Only fire suppression',
-      'Only power'
+      'Only power',
+      'Temperature, humidity, fire suppression, and water detection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Environmental controls include HVAC, humidity control, fire detection/suppression, and water detection.',
     topic: 'Physical Security',
     subtopic: 'Environmental'

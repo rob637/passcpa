@@ -19,10 +19,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A call option gives the holder the right to:',
     options: [
-      'A) Sell the underlying asset at the strike price',
+      'D) Exchange one security for another',
       'B) Buy the underlying asset at the strike price',
       'C) Receive dividends from the underlying stock',
-      'D) Exchange one security for another'
+      'A) Sell the underlying asset at the strike price',
     ],
     correctAnswer: 1,
     explanation: 'A call option gives the holder (buyer) the RIGHT to BUY the underlying asset at the strike price on or before expiration. The call seller (writer) has the OBLIGATION to sell if the option is exercised. Puts give the right to sell.'
@@ -38,12 +38,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An investor owns 100 shares of XYZ at $50 and writes a covered call with a $55 strike for $3 premium. What is the maximum profit?',
     options: [
-      'A) $300',
-      'B) $500',
       'C) $800',
-      'D) Unlimited'
+      'B) $500',
+      'D) Unlimited',
+      'A) $300',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Maximum profit = stock appreciation to strike + premium = ($55 - $50) × 100 + $300 = $500 + $300 = $800. Above $55, the stock is called away. The call writer sacrifices unlimited upside for immediate premium income.'
   },
   {
@@ -57,12 +57,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'What is the strategic purpose of a protective put?',
     options: [
-      'A) Generate income from an existing position',
       'B) Speculate on price decline',
       'C) Limit downside risk while preserving upside potential',
-      'D) Create a leveraged long position'
+      'D) Create a leveraged long position',
+      'A) Generate income from an existing position',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'A protective put (put + stock) acts as portfolio insurance. The put limits losses below the strike price while allowing unlimited upside (minus the premium cost). It\'s the opposite of covered calls, which generate income but cap upside.'
   },
   {
@@ -76,12 +76,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A $100 stock has an $95 call trading at $12. What is the time value of the option?',
     options: [
-      'A) $5',
-      'B) $7',
       'C) $12',
-      'D) $0'
+      'D) $0',
+      'B) $7',
+      'A) $5',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Option value = intrinsic value + time value. Intrinsic value of the call = MAX(stock price - strike, 0) = MAX($100 - $95, 0) = $5. Premium = $12. Time value = $12 - $5 = $7. Time value decays as expiration approaches (theta decay).'
   },
   {
@@ -95,12 +95,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'How does margin in futures differ from margin in equities?',
     options: [
-      'A) Futures margin is a loan; equity margin is a deposit',
-      'B) Futures margin is a performance bond; equity margin is a partial payment',
+      'D) There is no margin in futures trading',
       'C) Futures margin is always higher than equity margin',
-      'D) There is no margin in futures trading'
+      'B) Futures margin is a performance bond; equity margin is a partial payment',
+      'A) Futures margin is a loan; equity margin is a deposit',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Futures margin is a good-faith deposit (performance bond) to ensure both parties perform, typically 5-15% of contract value. Equity margin is a partial payment (loan) where the broker lends money to buy securities—typically 50% initial margin under Regulation T.'
   },
   {
@@ -114,12 +114,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What is the typical "2 and 20" fee structure in hedge funds?',
     options: [
-      'A) 2% entry fee and 20% exit fee',
-      'B) 2% management fee and 20% performance fee',
+      'D) 2% of gains, 20% of assets',
       'C) 2% annual fee paid quarterly, 20% paid annually',
-      'D) 2% of gains, 20% of assets'
+      'B) 2% management fee and 20% performance fee',
+      'A) 2% entry fee and 20% exit fee',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: '"2 and 20" refers to a 2% annual management fee on assets under management PLUS a 20% performance fee (incentive fee) on profits above a hurdle rate. This fee structure aligns manager incentives with performance but has been criticized for being expensive.'
   },
   {
@@ -133,12 +133,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'What causes the "J-curve" in private equity fund returns?',
     options: [
-      'A) Regulatory requirements for return reporting',
       'B) Early management fees and write-downs before investments mature',
+      'D) Currency fluctuations',
       'C) Tax timing differences',
-      'D) Currency fluctuations'
+      'A) Regulatory requirements for return reporting',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The J-curve describes the typical pattern where PE funds show negative returns in early years (due to fees and investment write-downs) before turning positive as investments mature and are realized at gains. Investors must understand this illiquidity pattern.'
   },
   {
@@ -152,10 +152,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What percentage of income must a REIT distribute to shareholders to maintain its tax-advantaged status?',
     options: [
-      'A) 50%',
       'B) 75%',
+      'D) 100%',
       'C) 90%',
-      'D) 100%'
+      'A) 50%',
     ],
     correctAnswer: 2,
     explanation: 'REITs must distribute at least 90% of taxable income to shareholders annually to avoid corporate-level taxation. Most REITs distribute close to 100%. Dividends are generally taxed as ordinary income (qualified dividend treatment does not apply).'
@@ -171,10 +171,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A commodity futures market is in "contango" when:',
     options: [
-      'A) Spot prices exceed futures prices',
-      'B) Futures prices exceed spot prices',
       'C) Prices are stable over time',
-      'D) Supply exceeds demand'
+      'B) Futures prices exceed spot prices',
+      'D) Supply exceeds demand',
+      'A) Spot prices exceed futures prices',
     ],
     correctAnswer: 1,
     explanation: 'Contango occurs when futures prices are higher than spot prices (upward-sloping curve), typically due to storage costs. Backwardation is the opposite (downward-sloping). Contango creates negative "roll yield" for long futures investors who must sell low and buy high when rolling contracts.'
@@ -190,10 +190,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An at-the-money call option typically has a delta of approximately:',
     options: [
-      'A) 0',
+      'D) 1.00',
       'B) 0.25',
       'C) 0.50',
-      'D) 1.00'
+      'A) 0',
     ],
     correctAnswer: 2,
     explanation: 'Delta measures the option price change per $1 change in the underlying. At-the-money calls have delta near 0.50 (50% chance of expiring in-the-money). Deep in-the-money → delta approaches 1.0. Deep out-of-the-money → delta approaches 0.'
@@ -209,12 +209,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which qualifies as an accredited investor under SEC rules?',
     options: [
-      'A) Income over $100,000 for each of the past two years',
       'B) Net worth over $1 million excluding primary residence',
       'C) Net worth over $1 million including primary residence',
-      'D) 5 years of investment experience'
+      'D) 5 years of investment experience',
+      'A) Income over $100,000 for each of the past two years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Accredited investor status requires: (1) income over $200,000 annually ($300,000 joint) for past 2 years with expectation of same, OR (2) net worth over $1 million excluding primary residence. Recent changes added professional certifications (Series 65, etc.) as qualification pathways.'
   },
   {
@@ -228,12 +228,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'What is the primary risk of a principal-protected note (PPN)?',
     options: [
-      'A) Market risk from the reference asset',
       'B) Credit risk of the issuing institution',
       'C) Interest rate risk',
-      'D) Currency risk'
+      'D) Currency risk',
+      'A) Market risk from the reference asset',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'PPNs promise return of principal, but this guarantee is only as good as the issuer. Investors bear credit risk of the issuing bank. During the 2008 crisis, Lehman Brothers PPNs became worthless despite "principal protection." There is also opportunity cost and complexity risk.'
   },
   // INV-5: Investment Performance & Tax Efficiency
@@ -248,10 +248,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Why is time-weighted return (TWR) preferred for evaluating investment manager performance?',
     options: [
-      'A) It is simpler to calculate than dollar-weighted return',
-      'B) It eliminates the impact of cash flows controlled by the investor',
       'C) It always produces higher returns',
-      'D) It is required by the IRS'
+      'B) It eliminates the impact of cash flows controlled by the investor',
+      'D) It is required by the IRS',
+      'A) It is simpler to calculate than dollar-weighted return',
     ],
     correctAnswer: 1,
     explanation: 'TWR removes the effect of external cash flows (deposits/withdrawals) that the manager does not control. This allows fair comparison between managers. Dollar-weighted return (IRR) reflects the investor\'s experience but is affected by timing of cash flows.'
@@ -267,12 +267,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A portfolio has a return of 12%, risk-free rate is 2%, and standard deviation is 20%. What is the Sharpe ratio?',
     options: [
-      'A) 0.10',
-      'B) 0.50',
+      'D) 1.00',
       'C) 0.60',
-      'D) 1.00'
+      'B) 0.50',
+      'A) 0.10',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Sharpe ratio = (Portfolio return - Risk-free rate) / Standard deviation = (12% - 2%) / 20% = 10% / 20% = 0.50. Higher Sharpe ratios indicate better risk-adjusted returns. A Sharpe ratio over 1.0 is generally considered good.'
   },
   {
@@ -286,12 +286,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The Treynor ratio differs from the Sharpe ratio by using which risk measure?',
     options: [
-      'A) Standard deviation',
-      'B) Beta (systematic risk)',
       'C) Semi-variance',
-      'D) Maximum drawdown'
+      'D) Maximum drawdown',
+      'B) Beta (systematic risk)',
+      'A) Standard deviation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Treynor ratio = (Return - Rf) / Beta. It uses beta (systematic risk) rather than standard deviation (total risk). Treynor is appropriate for well-diversified portfolios where unsystematic risk has been eliminated, leaving only market risk.'
   },
   {
@@ -305,10 +305,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A portfolio with beta of 1.2, actual return of 15%, when the risk-free rate is 3% and market return is 10%, has an alpha of:',
     options: [
-      'A) 0%',
       'B) 2%',
+      'D) 5%',
       'C) 3.6%',
-      'D) 5%'
+      'A) 0%',
     ],
     correctAnswer: 2,
     explanation: 'Jensen\'s Alpha = Actual Return - [Rf + β(Rm - Rf)] = 15% - [3% + 1.2(10% - 3%)] = 15% - [3% + 8.4%] = 15% - 11.4% = 3.6%. Positive alpha indicates outperformance relative to CAPM-expected return.'
@@ -324,10 +324,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'What is the primary benefit of tax-loss harvesting?',
     options: [
-      'A) Eliminating investment losses permanently',
+      'D) Increasing investment returns before tax',
       'B) Converting ordinary income to capital gains',
       'C) Deferring capital gains taxes through loss offsets',
-      'D) Increasing investment returns before tax'
+      'A) Eliminating investment losses permanently',
     ],
     correctAnswer: 2,
     explanation: 'Tax-loss harvesting realizes losses to offset current gains, deferring taxes. The investor maintains market exposure by purchasing similar (not identical) securities. While losses are eventually recaptured through lower basis, deferral has time-value benefits.'
@@ -343,10 +343,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'Which asset type is generally BEST held in a taxable account rather than a tax-advantaged account?',
     options: [
-      'A) High-turnover actively managed funds',
+      'D) Taxable bonds',
       'B) REITs',
       'C) Tax-managed index funds',
-      'D) Taxable bonds'
+      'A) High-turnover actively managed funds',
     ],
     correctAnswer: 2,
     explanation: 'Tax-managed index funds are designed for taxable accounts—low turnover, tax-loss harvesting, avoiding short-term gains. Tax-inefficient assets (high turnover funds, REITs, taxable bonds) should go in tax-advantaged accounts where gains and dividends are sheltered.'
@@ -362,12 +362,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'What is the most appropriate benchmark for a small-cap value fund?',
     options: [
-      'A) S&P 500',
       'B) Russell 2000 Value',
       'C) MSCI EAFE',
-      'D) Barclays Aggregate Bond Index'
+      'D) Barclays Aggregate Bond Index',
+      'A) S&P 500',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Benchmarks should match the investment\'s style and market cap. Russell 2000 Value tracks small-cap value stocks, matching the fund\'s strategy. S&P 500 is large-cap blend, MSCI EAFE is international developed, Barclays Aggregate is bonds—all inappropriate comparisons.'
   },
   {
@@ -381,10 +381,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The information ratio measures:',
     options: [
-      'A) Absolute return relative to cash',
+      'D) Return relative to maximum drawdown',
       'B) Return per unit of total risk',
       'C) Active return relative to tracking error',
-      'D) Return relative to maximum drawdown'
+      'A) Absolute return relative to cash',
     ],
     correctAnswer: 2,
     explanation: 'Information Ratio = (Portfolio Return - Benchmark Return) / Tracking Error. It measures active return per unit of active risk (tracking error). Higher IR indicates more consistent alpha generation. An IR above 0.50 is generally considered good for active managers.'
@@ -400,10 +400,10 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Why are ETFs generally more tax-efficient than mutual funds?',
     options: [
-      'A) ETFs pay no management fees',
-      'B) ETF in-kind creation/redemption minimizes capital gains distributions',
       'C) ETFs invest only in tax-exempt securities',
-      'D) ETF shareholders receive only qualified dividends'
+      'B) ETF in-kind creation/redemption minimizes capital gains distributions',
+      'D) ETF shareholders receive only qualified dividends',
+      'A) ETFs pay no management fees',
     ],
     correctAnswer: 1,
     explanation: 'ETFs use in-kind creation/redemption with authorized participants, allowing them to transfer low-basis shares out of the fund without triggering taxable gains. Mutual funds must sell securities to meet redemptions, creating capital gains distributions to all shareholders.'
@@ -419,12 +419,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Performance attribution analysis decomposes returns into which components?',
     options: [
-      'A) Past returns vs. future returns',
       'B) Allocation, selection, and interaction effects',
       'C) Growth vs. value factors',
-      'D) Domestic vs. international sources'
+      'D) Domestic vs. international sources',
+      'A) Past returns vs. future returns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Performance attribution breaks down active return into: (1) allocation effect (over/underweighting sectors), (2) selection effect (stock picks within sectors), and (3) interaction effect (combination of allocation and selection decisions). This identifies sources of relative performance.'
   },
   {
@@ -438,12 +438,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What does "after-tax return (pre-liquidation)" represent in mutual fund reporting?',
     options: [
-      'A) Return after capital gains distributions but before selling shares',
-      'B) Return after all taxes including sale of shares',
       'C) Return before any tax considerations',
-      'D) Return after dividend taxes only'
+      'D) Return after dividend taxes only',
+      'B) Return after all taxes including sale of shares',
+      'A) Return after capital gains distributions but before selling shares',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'Pre-liquidation after-tax return reflects the impact of taxable distributions (dividends, capital gains) while still holding the investment. Post-liquidation return also includes the tax impact of selling shares. SEC requires mutual funds to report both.'
   },
   {
@@ -457,12 +457,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Which cost basis method typically results in the lowest current capital gains tax when selling appreciated securities?',
     options: [
-      'A) FIFO (First-In, First-Out)',
-      'B) LIFO (Last-In, First-Out)',
+      'D) Specific identification (highest cost lots)',
       'C) Average cost',
-      'D) Specific identification (highest cost lots)'
+      'B) LIFO (Last-In, First-Out)',
+      'A) FIFO (First-In, First-Out)',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Specific identification allows selling the highest-cost lots first, minimizing current gain (or maximizing loss). FIFO sells oldest (often lowest-cost) shares first. LIFO is not allowed for securities. Average cost is available for mutual funds but not optimal for tax management.'
   },
   {
@@ -476,12 +476,12 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'For an index fund, a lower tracking error indicates:',
     options: [
-      'A) Better risk-adjusted returns',
-      'B) More closely replicates the benchmark',
+      'D) Lower expense ratio',
       'C) Higher potential for outperformance',
-      'D) Lower expense ratio'
+      'B) More closely replicates the benchmark',
+      'A) Better risk-adjusted returns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tracking error measures the standard deviation of the difference between fund and benchmark returns. For index funds, lower is better—it means the fund closely tracks its benchmark. Active funds expect higher tracking error from their active bets.'
   }
 ];

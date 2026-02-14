@@ -17,11 +17,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'Function point analysis is used to:',
     options: [
       'Test application functionality',
-      'Estimate software size and effort based on functionality',
       'Debug applications',
-      'Design user interfaces'
+      'Estimate software size and effort based on functionality',
+      'Design user interfaces',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Function point analysis estimates software size based on the functionality it provides to users, helping estimate development effort and cost.',
     topic: 'Estimation',
     subtopic: 'Function Points'
@@ -35,12 +35,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Use cases describe:',
     options: [
+      'Database structure',
       'Technical architecture',
       'How actors interact with the system to achieve goals',
-      'Database structure',
-      'Network topology'
+      'Network topology',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Use cases describe how actors (users or systems) interact with the system to achieve specific goals, capturing functional requirements.',
     topic: 'Requirements',
     subtopic: 'Use Cases'
@@ -54,12 +54,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Entity-relationship diagrams (ERDs) model:',
     options: [
-      'Business processes',
       'Data entities and their relationships',
+      'Business processes',
       'System architecture',
-      'Network flows'
+      'Network flows',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ERDs model data entities, their attributes, and the relationships between them, forming the basis for database design.',
     topic: 'Data Modeling',
     subtopic: 'ERD'
@@ -92,10 +92,10 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Prototyping is useful when:',
     options: [
-      'Requirements are completely defined',
-      'Requirements are unclear and need user feedback',
       'No user involvement is possible',
-      'Time is unlimited'
+      'Requirements are unclear and need user feedback',
+      'Requirements are completely defined',
+      'Time is unlimited',
     ],
     correctAnswer: 1,
     explanation: 'Prototyping is valuable when requirements are unclear, allowing users to interact with a working model and provide feedback.',
@@ -111,12 +111,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Spiral model combines elements of:',
     options: [
-      'Only waterfall',
       'Waterfall and prototyping with risk analysis',
       'Only agile',
-      'Only testing'
+      'Only waterfall',
+      'Only testing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The spiral model combines waterfall\'s sequential phases with prototyping and iterative risk analysis at each phase.',
     topic: 'Development Methodologies',
     subtopic: 'Spiral Model'
@@ -130,12 +130,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Scrum framework uses sprints that typically last:',
     options: [
-      'Six months',
       'One to four weeks',
       'One day',
-      'One year'
+      'Six months',
+      'One year',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scrum sprints are time-boxed iterations typically lasting one to four weeks, during which a potentially shippable product increment is created.',
     topic: 'Development Methodologies',
     subtopic: 'Scrum'
@@ -149,10 +149,10 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Test-driven development (TDD) requires:',
     options: [
-      'Testing after development is complete',
-      'Writing tests before writing code',
       'No testing',
-      'Only manual testing'
+      'Writing tests before writing code',
+      'Testing after development is complete',
+      'Only manual testing',
     ],
     correctAnswer: 1,
     explanation: 'TDD requires writing automated tests before writing the code that will make those tests pass, ensuring code meets requirements.',
@@ -168,12 +168,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Code refactoring involves:',
     options: [
-      'Adding new features',
       'Restructuring code without changing its behavior',
       'Removing all comments',
-      'Converting to a new language'
+      'Adding new features',
+      'Converting to a new language',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Refactoring restructures existing code to improve its internal structure without changing its external behavior, improving maintainability.',
     topic: 'Development Practices',
     subtopic: 'Refactoring'
@@ -187,12 +187,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Static application security testing (SAST) analyzes:',
     options: [
+      'Network traffic',
       'Running applications',
       'Source code or binaries without executing them',
-      'Network traffic',
-      'User behavior'
+      'User behavior',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SAST analyzes source code or compiled binaries without executing them, identifying vulnerabilities through code review.',
     topic: 'Security Testing',
     subtopic: 'SAST'
@@ -207,11 +207,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'Dynamic application security testing (DAST) tests:',
     options: [
       'Source code only',
-      'Running applications from an external perspective',
       'Database schemas',
-      'Network configurations'
+      'Running applications from an external perspective',
+      'Network configurations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DAST tests running applications from an external perspective, simulating attacks to identify runtime vulnerabilities.',
     topic: 'Security Testing',
     subtopic: 'DAST'
@@ -244,12 +244,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Secure coding practices include:',
     options: [
-      'Only encryption',
       'Input validation, output encoding, and proper error handling',
+      'Only encryption',
       'Only authentication',
-      'Only logging'
+      'Only logging',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Secure coding includes input validation, output encoding, proper error handling, access controls, and protection against common vulnerabilities.',
     topic: 'Application Security',
     subtopic: 'Secure Coding'
@@ -263,12 +263,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Cross-site scripting (XSS) attacks can be prevented by:',
     options: [
-      'Using firewalls only',
       'Validating input and encoding output',
+      'Using firewalls only',
       'Encrypting databases',
-      'Using strong passwords'
+      'Using strong passwords',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'XSS prevention requires validating and sanitizing user input and properly encoding output before rendering in browsers.',
     topic: 'Application Security',
     subtopic: 'XSS Prevention'
@@ -282,12 +282,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Cross-site request forgery (CSRF) attacks exploit:',
     options: [
-      'Weak passwords',
       'Trust a website has in a user\'s browser',
       'Network vulnerabilities',
-      'Physical access'
+      'Weak passwords',
+      'Physical access',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CSRF exploits the trust that a website has in an authenticated user\'s browser to perform unauthorized actions.',
     topic: 'Application Security',
     subtopic: 'CSRF'
@@ -301,10 +301,10 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'OWASP Top 10 is:',
     options: [
-      'A testing tool',
-      'A list of critical web application security risks',
       'A development methodology',
-      'A compliance standard'
+      'A list of critical web application security risks',
+      'A testing tool',
+      'A compliance standard',
     ],
     correctAnswer: 1,
     explanation: 'OWASP Top 10 is a regularly updated list of the most critical security risks to web applications, serving as awareness and guidance.',
@@ -321,11 +321,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'Software composition analysis identifies:',
     options: [
       'Code quality issues',
-      'Vulnerabilities in third-party components',
       'Performance problems',
-      'User interface issues'
+      'Vulnerabilities in third-party components',
+      'User interface issues',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Software composition analysis identifies vulnerabilities and license issues in third-party and open-source components used in applications.',
     topic: 'Application Security',
     subtopic: 'SCA'
@@ -339,12 +339,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Infrastructure as Code (IaC) provides:',
     options: [
-      'Only cost savings',
       'Automated, repeatable infrastructure provisioning',
       'Manual configuration',
-      'Physical hardware management'
+      'Only cost savings',
+      'Physical hardware management',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IaC enables automated, repeatable infrastructure provisioning through code, improving consistency and reducing manual errors.',
     topic: 'Development Practices',
     subtopic: 'IaC'
@@ -359,11 +359,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'Blue-green deployment strategy:',
     options: [
       'Eliminates the need for testing',
-      'Maintains two identical environments for zero-downtime releases',
       'Uses only one environment',
-      'Requires no automation'
+      'Maintains two identical environments for zero-downtime releases',
+      'Requires no automation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Blue-green deployment maintains two identical production environments, allowing instant switching between them for zero-downtime releases and easy rollback.',
     topic: 'Deployment',
     subtopic: 'Deployment Strategies'
@@ -378,11 +378,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'Canary releases involve:',
     options: [
       'Full deployment to all users',
-      'Gradual rollout to a small subset of users',
       'No production deployment',
-      'Only testing environments'
+      'Gradual rollout to a small subset of users',
+      'Only testing environments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Canary releases gradually roll out changes to a small subset of users, monitoring for issues before full deployment.',
     topic: 'Deployment',
     subtopic: 'Canary Releases'
@@ -396,12 +396,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Feature flags (feature toggles) allow:',
     options: [
+      'Only database changes',
       'Only code deletion',
       'Enabling or disabling features without deployment',
-      'Only database changes',
-      'Only security updates'
+      'Only security updates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Feature flags allow enabling or disabling features at runtime without code deployment, enabling controlled rollouts and quick rollbacks.',
     topic: 'Development Practices',
     subtopic: 'Feature Flags'
@@ -415,12 +415,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Microservices architecture offers:',
     options: [
-      'Simpler deployments always',
       'Independent deployability and scalability of components',
+      'Simpler deployments always',
       'Reduced complexity always',
-      'No need for API management'
+      'No need for API management',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Microservices enable independent development, deployment, and scaling of application components, though they add operational complexity.',
     topic: 'Architecture',
     subtopic: 'Microservices'
@@ -453,10 +453,10 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Kubernetes is primarily used for:',
     options: [
-      'Code compilation',
-      'Container orchestration and management',
       'Database administration',
-      'User authentication'
+      'Container orchestration and management',
+      'Code compilation',
+      'User authentication',
     ],
     correctAnswer: 1,
     explanation: 'Kubernetes orchestrates and manages containerized applications, handling deployment, scaling, and operational tasks.',
@@ -472,12 +472,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Technical debt refers to:',
     options: [
-      'IT budget deficits',
       'Future cost of addressing shortcuts in development',
       'Hardware loans',
-      'Training expenses'
+      'IT budget deficits',
+      'Training expenses',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Technical debt is the implied cost of additional rework caused by choosing quick solutions instead of better approaches that take longer.',
     topic: 'Development Quality',
     subtopic: 'Technical Debt'
@@ -491,12 +491,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Code coverage metrics indicate:',
     options: [
-      'How fast code runs',
       'Percentage of code executed during testing',
       'Number of developers',
-      'Lines of code'
+      'How fast code runs',
+      'Lines of code',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Code coverage measures what percentage of code is executed during testing, indicating how thorough the test suite is.',
     topic: 'Quality Assurance',
     subtopic: 'Code Coverage'
@@ -511,11 +511,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'End-to-end testing validates:',
     options: [
       'Individual functions',
-      'Complete business flows from start to finish',
       'Only database operations',
-      'Only API responses'
+      'Complete business flows from start to finish',
+      'Only API responses',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'End-to-end testing validates complete business flows, testing the entire application from the user\'s perspective.',
     topic: 'Testing',
     subtopic: 'E2E Testing'
@@ -530,11 +530,11 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     question: 'When reviewing mobile application development, an IS auditor should focus on:',
     options: [
       'Only screen size',
-      'Data storage security, API security, and device-specific risks',
       'Only battery usage',
-      'Only download speeds'
+      'Data storage security, API security, and device-specific risks',
+      'Only download speeds',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Mobile app audits should focus on secure data storage, secure API communications, authentication, and device-specific security risks.',
     topic: 'Mobile Development',
     subtopic: 'Mobile Security'
@@ -548,12 +548,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Low-code/no-code platforms require attention to:',
     options: [
+      'Only user interface design',
       'No security concerns',
       'Security, governance, and vendor lock-in risks',
-      'Only user interface design',
-      'Only training'
+      'Only training',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Low-code platforms introduce security concerns, governance challenges for citizen development, and potential vendor lock-in risks.',
     topic: 'Development Practices',
     subtopic: 'Low-Code'
@@ -567,12 +567,12 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Release management controls ensure:',
     options: [
+      'No testing required',
       'Immediate deployment of all changes',
       'Coordinated, authorized, and successful deployments',
-      'No testing required',
-      'Unlimited releases'
+      'Unlimited releases',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Release management controls ensure deployments are coordinated, authorized, tested, and successfully implemented with minimal disruption.',
     topic: 'Deployment',
     subtopic: 'Release Management'

@@ -19,12 +19,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The internal rate of return (IRR) represents:',
     options: [
+      'C) Risk-free rate',
+      'D) Simple interest rate',
       'A) Average annual return',
       'B) The discount rate that makes the net present value of all cash flows equal to zero',
-      'C) Risk-free rate',
-      'D) Simple interest rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IRR is the rate that discounts future cash flows to equal the initial investment (NPV = 0). It\'s an inherent yield measure. When comparing investments, higher IRR is better if projects are similar. IRR assumes reinvestment at the IRR rate—modified IRR (MIRR) addresses this potentially unrealistic assumption.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Holistic financial planning considers:',
     options: [
+      'D) Tax planning exclusively',
+      'C) Single transactions only',
       'A) Only investments',
       'B) All aspects of a client\'s financial life and how they interact—investments, taxes, insurance, estate, retirement as an integrated whole',
-      'C) Single transactions only',
-      'D) Tax planning exclusively'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Holistic planning views financial decisions as interconnected. An investment decision affects taxes, estate planning, and retirement projections. Insurance gaps affect financial security. This comprehensive approach avoids siloed advice that might optimize one area while harming another. It\'s the CFP® professional\'s standard approach.'
   },
   {
@@ -57,12 +57,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A positive net present value (NPV) indicates:',
     options: [
+      'D) Only interest is earned',
+      'C) The investment breaks even',
       'A) The investment should be rejected',
       'B) The present value of expected cash inflows exceeds the present value of outflows—the investment adds value',
-      'C) The investment breaks even',
-      'D) Only interest is earned'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'NPV = PV of inflows - PV of outflows. Positive NPV means expected returns exceed the required rate of return (discount rate)—value is created. Negative NPV: reject. When choosing between mutually exclusive projects, select the highest positive NPV. NPV directly measures wealth creation in current dollars.'
   },
   // GEN-2: Time Value of Money
@@ -78,11 +78,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'A perpetuity providing $10,000 annually with a 5% discount rate has a present value of:',
     options: [
       'A) $50,000',
-      'B) $200,000',
       'C) $100,000',
-      'D) Infinity'
+      'D) Infinity',
+      'B) $200,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Perpetuity PV = Payment / Rate = $10,000 / 0.05 = $200,000. A perpetuity is an infinite stream of equal payments. Examples: certain endowments, preferred stock dividends (approximately). Growing perpetuity: PV = Payment / (Rate - Growth Rate). Useful for valuing infinite income streams or approximating very long-term cash flows.'
   },
   {
@@ -97,11 +97,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'Real return differs from nominal return in that:',
     options: [
       'A) They are identical',
-      'B) Real return adjusts for inflation, showing purchasing power change rather than just dollar amounts',
       'C) Real return is always higher',
-      'D) Nominal return includes fees'
+      'D) Nominal return includes fees',
+      'B) Real return adjusts for inflation, showing purchasing power change rather than just dollar amounts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Nominal return: stated dollar return. Real return: inflation-adjusted, measuring purchasing power change. Approximation: Real ≈ Nominal - Inflation. Precise: (1 + Nominal)/(1 + Inflation) - 1. For retirement planning, real returns are more meaningful—a 7% nominal return with 3% inflation is only 4% real wealth gain.'
   },
   {
@@ -115,12 +115,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'More frequent compounding results in:',
     options: [
+      'D) Lower nominal rates',
       'A) Lower effective annual returns',
-      'B) Higher effective annual returns because interest earns interest more frequently',
       'C) No difference in returns',
-      'D) Lower nominal rates'
+      'B) Higher effective annual returns because interest earns interest more frequently',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'More frequent compounding = higher effective rate. 6% compounded monthly = 6.17% effective annual. Daily compounding adds slightly more. Continuous compounding is the theoretical maximum. The difference between annual and monthly matters more at higher rates and longer periods. APY (annual percentage yield) standardizes comparison.'
   },
   // GEN-3: Economic Concepts
@@ -135,12 +135,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An inverted yield curve (short-term rates above long-term) often indicates:',
     options: [
+      'D) Normal market conditions',
       'A) Economic expansion',
-      'B) Expectations of economic slowdown or recession, as markets anticipate Fed rate cuts',
       'C) High inflation ahead',
-      'D) Normal market conditions'
+      'B) Expectations of economic slowdown or recession, as markets anticipate Fed rate cuts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Normal yield curve: upward sloping (longer terms = higher rates for time/uncertainty premium). Inverted: short-term rates exceed long-term—often precedes recessions. The market expects rates to fall (Fed easing due to economic weakness). Flat curves indicate transition. The 2-year/10-year spread is closely watched as a recession indicator.'
   },
   {
@@ -155,11 +155,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'Consumer confidence indices measure:',
     options: [
       'A) Only stock market performance',
-      'B) Consumer attitudes about current and future economic conditions, which influence spending and saving behavior',
+      'D) Manufacturing output',
       'C) Government budget deficits',
-      'D) Manufacturing output'
+      'B) Consumer attitudes about current and future economic conditions, which influence spending and saving behavior',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Consumer confidence (Conference Board, Michigan) surveys attitudes about current conditions and expectations. High confidence = more spending, less saving, economic expansion. Low confidence = reduced spending, potential contraction. It\'s a leading indicator—sentiment changes precede actual spending changes. Planners monitor for economic forecasting.'
   },
   {
@@ -173,12 +173,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Stagflation describes an economy with:',
     options: [
+      'C) Low unemployment and low prices',
+      'D) Normal conditions',
       'A) High growth and low inflation',
       'B) Slow growth/recession combined with high inflation—a challenging combination for policy and investing',
-      'C) Low unemployment and low prices',
-      'D) Normal conditions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Stagflation: stagnant economy + inflation (1970s is classic example). It\'s problematic because traditional remedies conflict: fighting inflation (raise rates) hurts growth further; stimulating growth (lower rates) worsens inflation. Investments must balance inflation protection with recession resilience—challenging for traditional portfolios.'
   },
   // GEN-4: Financial Statements
@@ -193,12 +193,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The savings rate is calculated as:',
     options: [
+      'D) Debt divided by income',
       'A) Net worth divided by income',
-      'B) Amount saved divided by gross or net income, expressed as a percentage',
       'C) Income minus assets',
-      'D) Debt divided by income'
+      'B) Amount saved divided by gross or net income, expressed as a percentage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Savings rate = Savings / Income × 100. Can use gross or net income (be consistent). Common benchmarks: 10-15% minimum, 20%+ for aggressive goals. Includes retirement contributions, taxable savings, debt principal payments (building equity). Higher rates accelerate wealth building and provide flexibility.'
   },
   {
@@ -212,12 +212,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The financial independence ratio measures:',
     options: [
+      'D) Credit score',
+      'C) Net worth growth rate',
       'A) Debt payments to income',
       'B) Investment income (passive) as a percentage of expenses—100% indicates ability to live without working',
-      'C) Net worth growth rate',
-      'D) Credit score'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Financial independence ratio = Investment Income / Expenses. At 100%, passive income covers all expenses—work becomes optional. At 50%, half of expenses are covered by investments. This ratio tracks progress toward financial independence/early retirement. It focuses on income-generating assets and sustainable withdrawal rates.'
   },
   {
@@ -231,12 +231,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The debt-to-income (DTI) ratio measures:',
     options: [
+      'C) Net worth to income',
+      'D) Savings to debt',
       'A) Total assets to total debt',
       'B) Monthly debt payments (including housing) as a percentage of gross monthly income',
-      'C) Net worth to income',
-      'D) Savings to debt'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DTI = Monthly Debt Payments / Gross Monthly Income. Lenders use it for qualification (typically max 36-43% for mortgages). Higher DTI indicates potential cash flow stress. It differs from debt-to-asset ratio (balance sheet measure). Lower DTI provides more financial flexibility and borrowing capacity.'
   },
   // GEN-5: Ethics and Regulation
@@ -252,11 +252,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'The fiduciary standard for CFP® professionals requires:',
     options: [
       'A) Only suitable recommendations',
-      'B) Acting in the client\'s best interests at all times when providing financial advice',
       'C) Maximizing advisor compensation',
-      'D) Following employer policies only'
+      'D) Following employer policies only',
+      'B) Acting in the client\'s best interests at all times when providing financial advice',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CFP® fiduciary duty means acting in the client\'s best interest when providing financial advice. This differs from suitability (which only requires recommendations be appropriate, not necessarily best). Fiduciary duty includes: duty of loyalty (client\'s interests first), duty of care (competent advice), and duty to follow client instructions.'
   },
   {
@@ -270,12 +270,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Series 65 license is typically required for:',
     options: [
-      'A) Selling variable annuities',
-      'B) Acting as an investment adviser representative providing advice for compensation',
       'C) Selling insurance only',
-      'D) Bank employees exclusively'
+      'A) Selling variable annuities',
+      'D) Bank employees exclusively',
+      'B) Acting as an investment adviser representative providing advice for compensation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Series 65 (Uniform Investment Adviser Law Exam) qualifies individuals as investment adviser representatives (IARs). Required for providing investment advice for compensation. Differs from Series 7 (selling securities) and Series 66 (combines 63 + 65 for those with Series 7). CFP® certification can substitute for Series 65 in some states.'
   },
   {
@@ -289,12 +289,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'CFP® professionals must disclose to clients:',
     options: [
-      'A) Personal financial details',
-      'B) Material conflicts of interest, compensation arrangements, and the services being provided',
       'C) Other clients\' information',
-      'D) Only written complaints'
+      'A) Personal financial details',
+      'D) Only written complaints',
+      'B) Material conflicts of interest, compensation arrangements, and the services being provided',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CFP® professionals must disclose: material conflicts of interest, how compensation is received (fees, commissions, salary), services to be provided, relationships with third parties, and any disciplinary history. Disclosure enables informed client decisions. Written disclosure is best practice; oral disclosure may suffice in some situations.'
   },
   // Additional Topics
@@ -310,11 +310,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'Goals-based financial planning:',
     options: [
       'A) Ignores client objectives',
-      'B) Organizes planning around specific client goals, assigning assets and strategies to each goal based on priority and timeline',
+      'D) Uses only generic benchmarks',
       'C) Only focuses on investment returns',
-      'D) Uses only generic benchmarks'
+      'B) Organizes planning around specific client goals, assigning assets and strategies to each goal based on priority and timeline',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Goals-based planning prioritizes client objectives over abstract metrics. Each goal (retirement, education, travel) has its own time horizon, priority, and funding strategy. This approach is more intuitive for clients than traditional portfolio focus. Mental accounting, while technically "irrational," can help clients stay committed to plans.'
   },
   {
@@ -329,11 +329,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'A deferred annuity\'s present value is calculated by:',
     options: [
       'A) Simple annuity formula',
-      'B) Finding the present value of the ordinary annuity, then discounting that amount back to today',
+      'D) Ignoring the deferral period',
       'C) Adding deferral period to payment',
-      'D) Ignoring the deferral period'
+      'B) Finding the present value of the ordinary annuity, then discounting that amount back to today',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Deferred annuity: payments begin in the future. Step 1: Calculate PV of annuity at start of payments. Step 2: Discount that value back to today. Example: annuity starting in 5 years—find PV as of year 5, then discount 5 more years. Time diagram helps visualize the two-step process.'
   },
   {
@@ -347,12 +347,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Purchasing power refers to:',
     options: [
+      'D) Credit limits',
+      'C) Investment returns only',
       'A) Borrowing capacity',
       'B) The quantity of goods and services a unit of currency can buy, which inflation erodes over time',
-      'C) Investment returns only',
-      'D) Credit limits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Purchasing power: what money can actually buy. With 3% inflation, $100 buys 3% less next year. Over 24 years at 3% inflation, purchasing power roughly halves. Protecting purchasing power is a key planning goal—investments must outpace inflation for real wealth growth. TIPS, I-Bonds, and equities provide inflation protection.'
   },
   {
@@ -366,12 +366,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Personal balance sheet analysis should include:',
     options: [
+      'D) Social Security estimates only',
+      'C) Market timing signals',
       'A) Only retirement accounts',
       'B) Asset allocation across all holdings, concentration risks, liquidity assessment, and liability structure',
-      'C) Market timing signals',
-      'D) Social Security estimates only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Balance sheet analysis: asset allocation (stocks, bonds, cash, real estate across all accounts), concentration risks (single stock, employer exposure), liquidity (emergency access), liability structure (rates, terms, secured/unsecured), and how assets relate to goals and liabilities. Holistic view prevents siloed thinking about individual accounts.'
   },
   {
@@ -385,12 +385,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The CFP Board\'s competence requirement means:',
     options: [
+      'C) Having the most certifications',
+      'D) Never referring clients',
       'A) Knowing everything about finance',
       'B) Providing services only in areas where you have necessary knowledge, skills, and ability, or bringing in qualified experts',
-      'C) Having the most certifications',
-      'D) Never referring clients'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Competence requires knowing your limits. If a situation exceeds your expertise, you must: obtain necessary knowledge, bring in qualified experts, or decline the engagement. Continuing education maintains competence over time. Referral to specialists (attorneys, CPAs, insurance experts) is often appropriate and expected.'
   },
   {
@@ -404,12 +404,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Effective data gathering in financial planning includes:',
     options: [
+      'D) Single meeting approach',
+      'C) Estimates only',
       'A) Only verbal conversations',
       'B) Questionnaires, document collection, interviews, and observation to gather both quantitative and qualitative information',
-      'C) Estimates only',
-      'D) Single meeting approach'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Comprehensive data gathering uses multiple methods: questionnaires (structured, can complete in advance), document collection (statements, returns, policies), interviews (open-ended exploration, understanding goals/concerns), and observation (family dynamics, communication styles). Quantitative data needs qualitative context for meaningful planning.'
   },
   {
@@ -423,12 +423,12 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A bond\'s price is calculated as:',
     options: [
+      'D) Average of market prices',
+      'C) Coupon rate times face value',
       'A) Face value only',
       'B) The present value of all future coupon payments plus the present value of the face value at maturity',
-      'C) Coupon rate times face value',
-      'D) Average of market prices'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Bond price = PV of coupon annuity + PV of face value. If market rates exceed coupon rate, the bond trades at a discount (price < face). If market rates are below coupon rate, it trades at a premium. At maturity, price converges to face value. Duration measures price sensitivity to rate changes.'
   },
   {
@@ -443,11 +443,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'Quantitative easing (QE) is a monetary policy tool that:',
     options: [
       'A) Raises interest rates',
-      'B) Involves central bank purchases of securities to increase money supply and lower long-term interest rates',
       'C) Reduces government spending',
-      'D) Increases bank reserve requirements'
+      'D) Increases bank reserve requirements',
+      'B) Involves central bank purchases of securities to increase money supply and lower long-term interest rates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'QE: Fed buys bonds (Treasuries, MBS) to inject money into the economy when rates are already near zero. Goals: lower long-term rates, increase liquidity, stimulate lending and spending. Used extensively in 2008-2014 and 2020-2022. Quantitative tightening (QT) reverses this by reducing Fed holdings.'
   },
   {
@@ -462,11 +462,11 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     question: 'Insolvency exists when:',
     options: [
       'A) Net worth exceeds debts',
-      'B) Total liabilities exceed total assets, resulting in negative net worth',
       'C) Income exceeds expenses',
-      'D) Credit score drops'
+      'D) Credit score drops',
+      'B) Total liabilities exceed total assets, resulting in negative net worth',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Insolvency: liabilities > assets (negative net worth). This differs from illiquidity (having assets but not cash to meet obligations). Insolvency matters for: debt cancellation income exclusion, bankruptcy considerations, and overall financial health assessment. Many young professionals with student loans are technically insolvent early in careers.'
   },
   {
@@ -478,14 +478,14 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     subtopic: 'Form ADV',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'Form ADV is:',
+    question: 'Which of the following best describes the purpose and use of Form ADV?',
     options: [
+      'D) An account application',
       'A) A tax form',
-      'B) The registration document for investment advisers required by the SEC and states, including firm brochure for clients',
       'C) A client agreement',
-      'D) An account application'
+      'B) The registration document for investment advisers required by the SEC and states, including firm brochure for clients',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Form ADV: investment adviser registration and disclosure. Part 1: regulatory information (filed with SEC/state). Part 2A (brochure): plain English disclosure to clients about services, fees, conflicts, disciplinary history. Part 2B: brochure supplement for specific persons providing advice. Clients must receive Part 2A/2B initially and annually.'
   }
 ];

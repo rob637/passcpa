@@ -18,8 +18,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Reviewing IT budgets',
       'Assessing how IT initiatives support business objectives',
+      'Measuring uptime',
       'Counting IT projects',
-      'Measuring uptime'
     ],
     correctAnswer: 1,
     explanation: 'Alignment is best evaluated by assessing how IT initiatives directly support and enable business objectives.',
@@ -35,10 +35,10 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Board-level IT oversight focuses on:',
     options: [
-      'Technical operations',
+      'Help desk metrics',
       'Strategic direction, major investments, and significant risks',
+      'Technical operations',
       'Daily incidents',
-      'Help desk metrics'
     ],
     correctAnswer: 1,
     explanation: 'Board oversight focuses on strategic direction, major investment decisions, and significant risk oversight.',
@@ -54,12 +54,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'IT organizational structure should:',
     options: [
-      'Be identical across all organizations',
       'Reflect business needs, strategy, and regulatory requirements',
+      'Report only to CFO',
+      'Be identical across all organizations',
       'Minimize IT headcount',
-      'Report only to CFO'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT structure should reflect business needs, strategic objectives, and applicable regulatory requirements.',
     topic: 'IT Organization',
     subtopic: 'Structure'
@@ -73,12 +73,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'CIO reporting to the CEO rather than CFO:',
     options: [
-      'Has no impact',
       'May indicate IT is viewed as strategic rather than cost center',
+      'Reduces IT effectiveness',
+      'Has no impact',
       'Is always required',
-      'Reduces IT effectiveness'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CIO reporting to CEO often indicates IT is viewed as a strategic business partner rather than just a cost center.',
     topic: 'IT Organization',
     subtopic: 'Reporting Structure'
@@ -93,11 +93,11 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     question: 'IT performance measurement framework should include:',
     options: [
       'Only financial metrics',
+      'Only customer satisfaction',
       'Balanced metrics covering operational, financial, and strategic areas',
       'Only technical metrics',
-      'Only customer satisfaction'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT performance should be measured using balanced metrics across operational, financial, customer, and strategic dimensions.',
     topic: 'IT Governance',
     subtopic: 'Performance Framework'
@@ -112,11 +112,11 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     question: 'Technology refresh planning should consider:',
     options: [
       'Only age of equipment',
+      'Only budget availability',
       'Support status, performance, security, and business requirements',
       'Only vendor recommendations',
-      'Only budget availability'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Refresh planning considers support status, performance needs, security requirements, and business drivers.',
     topic: 'IT Resource Management',
     subtopic: 'Technology Refresh'
@@ -130,12 +130,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Build vs buy decisions should evaluate:',
     options: [
-      'Only initial cost',
       'Total cost, strategic fit, capability, risk, and time to value',
+      'Only initial cost',
+      'Only vendor reputation',
       'Only technical requirements',
-      'Only vendor reputation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Build vs buy requires evaluating total cost, strategic fit, capabilities, risks, and time to value.',
     topic: 'IT Strategy',
     subtopic: 'Build vs Buy'
@@ -149,12 +149,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'IT chargeback models:',
     options: [
+      'Replace budgeting',
       'Eliminate IT costs',
       'Allocate IT costs to business units for accountability',
       'Are always fair',
-      'Replace budgeting'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Chargeback allocates IT costs to business units, promoting accountability and informed consumption.',
     topic: 'IT Resource Management',
     subtopic: 'Chargeback'
@@ -170,8 +170,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Deny all requests',
       'Prioritize and manage IT resource requests against capacity',
+      'Eliminate backlogs',
       'Increase all budgets',
-      'Eliminate backlogs'
     ],
     correctAnswer: 1,
     explanation: 'Demand management helps prioritize and manage IT resource requests against available capacity.',
@@ -189,8 +189,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Maps only technology',
       'Links business capabilities to supporting IT capabilities',
+      'Is only for large organizations',
       'Replaces enterprise architecture',
-      'Is only for large organizations'
     ],
     correctAnswer: 1,
     explanation: 'Capability modeling links business capabilities to supporting IT capabilities for alignment.',
@@ -206,12 +206,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'IT standards and guidelines:',
     options: [
-      'Are optional',
       'Provide detailed implementation guidance for policies',
+      'Are only for developers',
+      'Are optional',
       'Replace policies',
-      'Are only for developers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Standards and guidelines provide detailed implementation guidance for achieving policy objectives.',
     topic: 'IT Governance',
     subtopic: 'Standards'
@@ -225,12 +225,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Exception management processes should:',
     options: [
-      'Automatically approve all requests',
       'Document, review, approve, and track policy exceptions',
+      'Only involve IT',
+      'Automatically approve all requests',
       'Never allow exceptions',
-      'Only involve IT'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Exception processes should document, review, approve with conditions, and track policy exceptions.',
     topic: 'IT Governance',
     subtopic: 'Exception Management'
@@ -244,10 +244,10 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Multi-cloud strategy governance requires:',
     options: [
-      'Treating each cloud separately',
+      'Single vendor control',
       'Consistent controls with provider-specific implementation',
+      'Treating each cloud separately',
       'No additional governance',
-      'Single vendor control'
     ],
     correctAnswer: 1,
     explanation: 'Multi-cloud governance requires consistent control objectives with provider-specific implementations.',
@@ -264,11 +264,11 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     question: 'Cloud exit strategy should address:',
     options: [
       'Only cost',
+      'Only vendor notification',
       'Data extraction, transition timeline, and contractual terms',
       'Only technical migration',
-      'Only vendor notification'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Exit strategy should address data extraction, transition timeline, continuity, and contractual provisions.',
     topic: 'Cloud Governance',
     subtopic: 'Exit Strategy'
@@ -282,12 +282,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'SLA management effectiveness requires:',
     options: [
+      'Annual review only',
       'Setting SLAs once',
       'Regular measurement, reporting, and service review meetings',
       'Only measuring uptime',
-      'Annual review only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Effective SLA management requires ongoing measurement, reporting, and regular service review meetings.',
     topic: 'Third-Party Management',
     subtopic: 'SLA Management'
@@ -301,12 +301,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Vendor concentration risk occurs when:',
     options: [
-      'Many vendors are used',
       'Critical dependence on few vendors creates single points of failure',
+      'Many vendors are used',
+      'Contracts are short-term',
       'Vendors are too small',
-      'Contracts are short-term'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Concentration risk arises when critical dependence on few vendors creates potential single points of failure.',
     topic: 'Third-Party Management',
     subtopic: 'Concentration Risk'
@@ -322,8 +322,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Only financial review',
       'Financial stability, security practices, references, and capability assessment',
+      'Only price comparison',
       'Only technical evaluation',
-      'Only price comparison'
     ],
     correctAnswer: 1,
     explanation: 'Due diligence should cover financial stability, security practices, references, and capability assessment.',
@@ -339,12 +339,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Software escrow arrangements protect against:',
     options: [
-      'All vendor risks',
       'Vendor failure by ensuring source code availability',
+      'All vendor risks',
+      'Performance issues',
       'Only pricing disputes',
-      'Performance issues'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Escrow protects against vendor failure by ensuring access to source code under defined conditions.',
     topic: 'Third-Party Management',
     subtopic: 'Software Escrow'
@@ -358,12 +358,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'IT integration during mergers and acquisitions:',
     options: [
-      'Should be deferred',
       'Requires early planning and due diligence on IT environments',
+      'Should be deferred',
+      'Does not require governance',
       'Is only technical',
-      'Does not require governance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'M&A IT integration requires early planning, due diligence on IT environments, and governance.',
     topic: 'IT Strategy',
     subtopic: 'M&A Integration'
@@ -379,8 +379,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Set by IT only',
       'Defined by business leadership aligned with enterprise risk appetite',
+      'Minimum always',
       'Maximum always',
-      'Minimum always'
     ],
     correctAnswer: 1,
     explanation: 'Risk tolerance should be set by business leadership in alignment with enterprise risk appetite.',
@@ -396,10 +396,10 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Risk scenario analysis helps:',
     options: [
-      'Only identify threats',
+      'Avoid all risks',
       'Understand potential risk events and their business impact',
+      'Only identify threats',
       'Only comply with regulations',
-      'Avoid all risks'
     ],
     correctAnswer: 1,
     explanation: 'Scenario analysis helps understand potential risk events, their likelihood, and business impact.',
@@ -415,12 +415,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Residual risk after control implementation:',
     options: [
-      'Is always zero',
       'Should be accepted, transferred, or further mitigated based on tolerance',
+      'Is ignored',
+      'Is always zero',
       'Requires no documentation',
-      'Is ignored'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Residual risk should be evaluated and addressed through acceptance, transfer, or further mitigation.',
     topic: 'IT Risk Management',
     subtopic: 'Residual Risk'
@@ -434,12 +434,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT disaster recovery capabilities should be:',
     options: [
+      'Optional for cloud services',
       'Only documented',
       'Regularly tested to validate recovery objectives can be met',
       'Implemented once',
-      'Optional for cloud services'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DR capabilities should be regularly tested to validate RTO/RPO objectives can be achieved.',
     topic: 'Business Continuity',
     subtopic: 'DR Testing'
@@ -453,12 +453,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'IT audit committee reporting should include:',
     options: [
+      'Only compliance status',
       'Only positive results',
       'Significant findings, risk trends, and audit plan completion',
       'All technical details',
-      'Only compliance status'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Audit committee reports should cover significant findings, risk trends, and audit plan execution.',
     topic: 'IT Governance',
     subtopic: 'Audit Reporting'
@@ -473,11 +473,11 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     question: 'Data governance responsibilities include:',
     options: [
       'Only IT duties',
+      'Only backup',
       'Data quality, privacy, lifecycle management, and business ownership',
       'Only storage management',
-      'Only backup'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data governance covers data quality, privacy, classification, lifecycle management, and business ownership.',
     topic: 'Data Governance',
     subtopic: 'Responsibilities'
@@ -493,8 +493,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Only technical management',
       'Ensuring data quality and appropriate use within their domain',
+      'Only compliance reporting',
       'Only access control',
-      'Only compliance reporting'
     ],
     correctAnswer: 1,
     explanation: 'Data stewards ensure data quality, appropriate use, and governance within their assigned domain.',
@@ -510,12 +510,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Ethics in IT decision-making should consider:',
     options: [
-      'Only legal requirements',
       'Broader impacts on stakeholders, privacy, and society',
+      'Only legal requirements',
+      'Only shareholder interests',
       'Only cost implications',
-      'Only shareholder interests'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Ethical IT decisions should consider broader impacts on stakeholders, privacy, and societal implications.',
     topic: 'IT Governance',
     subtopic: 'Ethics'
@@ -531,8 +531,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Traditional approaches only',
       'Adaptive governance balancing speed with appropriate controls',
+      'IT-only decision making',
       'No governance',
-      'IT-only decision making'
     ],
     correctAnswer: 1,
     explanation: 'Digital transformation requires adaptive governance that balances speed to value with appropriate controls.',
@@ -550,8 +550,8 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Only energy efficiency',
       'Energy consumption, e-waste, social responsibility, and supply chain',
+      'Only regulatory compliance',
       'Only cost reduction',
-      'Only regulatory compliance'
     ],
     correctAnswer: 1,
     explanation: 'IT sustainability covers energy efficiency, e-waste, social responsibility, and sustainable supply chain.',
@@ -567,12 +567,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Regulatory horizon scanning ensures:',
     options: [
-      'Regulatory avoidance',
       'Early awareness of emerging regulatory requirements',
+      'Reduced compliance costs',
+      'Regulatory avoidance',
       'Only current compliance',
-      'Reduced compliance costs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Horizon scanning provides early awareness of emerging regulations for proactive compliance planning.',
     topic: 'IT Governance',
     subtopic: 'Regulatory Awareness'

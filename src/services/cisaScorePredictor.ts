@@ -20,11 +20,11 @@ const MIN_SCORE = 200;
 
 // Domain weights from ISACA
 const DOMAIN_WEIGHTS: Record<CISASectionId, number> = {
-  CISA1: 18,
-  CISA2: 18,
-  CISA3: 12,
-  CISA4: 26,
-  CISA5: 26,
+  CISA1: 21,
+  CISA2: 16,
+  CISA3: 18,
+  CISA4: 20,
+  CISA5: 25,
 };
 
 export interface PredictionInput {

@@ -19,12 +19,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'An IS auditor reviewing an AI-based fraud detection system should be MOST concerned if:',
     options: [
+      'Business users cannot explain individual predictions',
+      'Multiple models are used in an ensemble approach',
       'The model is retrained quarterly with new data',
       'Training data sources are undocumented with no lineage tracking',
-      'Multiple models are used in an ensemble approach',
-      'Business users cannot explain individual predictions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Undocumented training data creates risks of bias, data quality issues, and compliance problems. Data lineage is critical for AI governance.',
     topic: 'AI Security',
     subtopic: 'AI Governance'
@@ -38,12 +38,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which attack involves manipulating inputs to cause an AI model to misclassify data?',
     options: [
+      'Membership inference',
+      'Model extraction',
       'Data poisoning',
       'Evasion attack',
-      'Model extraction',
-      'Membership inference'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Evasion attacks manipulate inputs at inference time to cause misclassification. Data poisoning attacks training data instead.',
     topic: 'AI Security',
     subtopic: 'Adversarial Attacks'
@@ -58,11 +58,11 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     question: 'Prompt injection attacks against large language models (LLMs) primarily target:',
     options: [
       'Network infrastructure',
-      'Database encryption',
       'The model\'s instruction following behavior',
-      'User authentication systems'
+      'User authentication systems',
+      'Database encryption',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Prompt injection crafts inputs that override or manipulate the LLM\'s instructions, potentially exposing sensitive data or bypassing controls.',
     topic: 'AI Security',
     subtopic: 'LLM Security'
@@ -77,11 +77,11 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     question: 'The PRIMARY purpose of AI model monitoring is to:',
     options: [
       'Increase prediction speed',
-      'Detect model drift and degradation over time',
       'Reduce training costs',
-      'Eliminate the need for retraining'
+      'Eliminate the need for retraining',
+      'Detect model drift and degradation over time',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Model monitoring detects drift where performance degrades as real-world data diverges from training data, requiring intervention.',
     topic: 'AI Security',
     subtopic: 'Model Monitoring'
@@ -95,12 +95,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'When auditing AI systems, explainability is MOST important for:',
     options: [
-      'Internal batch processing systems',
-      'Systems making decisions affecting individuals',
       'Data warehouse analytics',
-      'Internal reporting dashboards'
+      'Internal batch processing systems',
+      'Internal reporting dashboards',
+      'Systems making decisions affecting individuals',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Explainability is critical when AI makes decisions affecting individuals due to regulatory requirements (like GDPR) and ethical considerations.',
     topic: 'AI Security',
     subtopic: 'AI Ethics'
@@ -118,12 +118,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Cloud Security Posture Management (CSPM) tools primarily help organizations:',
     options: [
+      'Manage user passwords',
       'Encrypt all cloud data',
-      'Continuously monitor for misconfigurations and compliance violations',
       'Replace cloud-native security tools',
-      'Manage user passwords'
+      'Continuously monitor for misconfigurations and compliance violations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CSPM continuously scans cloud environments for misconfigurations, compliance violations, and security risks.',
     topic: 'Cloud Security',
     subtopic: 'CSPM'
@@ -137,12 +137,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'In container security, the MOST critical layer to secure is:',
     options: [
+      'End user devices',
       'The container registry',
-      'The container image before deployment',
       'The network only',
-      'End user devices'
+      'The container image before deployment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Image security is foundational - vulnerable or malicious images propagate to all deployments. Shifting security left to images prevents issues at scale.',
     topic: 'Cloud Security',
     subtopic: 'Container Security'
@@ -156,12 +156,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Kubernetes Network Policies are used to:',
     options: [
+      'Encrypt data at rest',
+      'Schedule container deployments',
       'Manage user authentication',
       'Control pod-to-pod communication',
-      'Encrypt data at rest',
-      'Schedule container deployments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Network policies control which pods can communicate with each other, implementing network segmentation within the cluster.',
     topic: 'Cloud Security',
     subtopic: 'Kubernetes Security'
@@ -175,12 +175,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'The PRIMARY security challenge with serverless computing is:',
     options: [
+      'High infrastructure costs',
+      'Lack of programming language support',
       'Managing server patches',
       'Limited visibility and ephemeral nature of functions',
-      'High infrastructure costs',
-      'Lack of programming language support'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Serverless functions are ephemeral and traditional monitoring tools may not capture their short-lived execution, creating visibility challenges.',
     topic: 'Cloud Security',
     subtopic: 'Serverless Security'
@@ -194,12 +194,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Application',
     question: 'In multi-cloud environments, the GREATEST security challenge is:',
     options: [
+      'Better vendor relationships',
+      'Increased performance',
       'Lower costs',
       'Maintaining consistent security policies across platforms',
-      'Increased performance',
-      'Better vendor relationships'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Different clouds have different native controls, making consistent security policy implementation and monitoring challenging.',
     topic: 'Cloud Security',
     subtopic: 'Multi-Cloud Security'
@@ -217,12 +217,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In OT/ICS environments, the PRIMARY security priority differs from IT because:',
     options: [
+      'OT systems are always air-gapped',
+      'OT does not process sensitive data',
       'OT has lower budgets',
       'Availability and safety take precedence over confidentiality',
-      'OT systems are always air-gapped',
-      'OT does not process sensitive data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'OT prioritizes availability and safety (AIC) because failures can cause physical harm, while IT prioritizes confidentiality (CIA).',
     topic: 'OT Security',
     subtopic: 'IT/OT Differences'
@@ -236,12 +236,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'The Purdue Model is used in industrial environments to:',
     options: [
+      'Manage user identities',
+      'Encrypt industrial protocols',
       'Classify data sensitivity levels',
       'Define network segmentation between OT levels',
-      'Manage user identities',
-      'Encrypt industrial protocols'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The Purdue Model defines hierarchical network zones from field devices (level 0) to enterprise (level 5) for ICS segmentation.',
     topic: 'OT Security',
     subtopic: 'ICS Architecture'
@@ -255,12 +255,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Application',
     question: 'Shadow IoT devices pose a significant risk because they:',
     options: [
-      'Are too expensive',
-      'Connect to networks without IT knowledge or security controls',
       'Always use strong encryption',
-      'Are regularly updated'
+      'Are too expensive',
+      'Are regularly updated',
+      'Connect to networks without IT knowledge or security controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Shadow IoT devices bypass security controls and create unknown attack surface since IT is unaware of their existence.',
     topic: 'IoT Security',
     subtopic: 'Shadow IoT'
@@ -274,12 +274,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'When auditing ICS/SCADA systems, the IS auditor should understand that patching is challenging because:',
     options: [
-      'Vendors do not release patches',
-      'Systems often cannot be taken offline and require vendor testing',
       'Patches are always applied automatically',
-      'Industrial systems do not have vulnerabilities'
+      'Vendors do not release patches',
+      'Industrial systems do not have vulnerabilities',
+      'Systems often cannot be taken offline and require vendor testing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'ICS patching is difficult due to availability requirements, potential impact on operations, and need for vendor-validated patches.',
     topic: 'OT Security',
     subtopic: 'ICS Patching'
@@ -294,11 +294,11 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     question: 'A key security concern with industrial protocols like Modbus is:',
     options: [
       'They are too complex to implement',
-      'They often lack built-in authentication and encryption',
+      'They only work on modern systems',
       'They cannot transmit data quickly enough',
-      'They only work on modern systems'
+      'They often lack built-in authentication and encryption',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Many industrial protocols were designed before security was a concern and lack authentication, encryption, or integrity checking.',
     topic: 'OT Security',
     subtopic: 'Industrial Protocols'
@@ -317,11 +317,11 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     question: 'According to OWASP API Security Top 10, the most critical API vulnerability is:',
     options: [
       'SQL Injection',
-      'Broken Object Level Authorization',
+      'Missing encryption',
       'Cross-site scripting',
-      'Missing encryption'
+      'Broken Object Level Authorization',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Broken Object Level Authorization (BOLA) allows attackers to access other users\' data by manipulating object IDs in API calls.',
     topic: 'API Security',
     subtopic: 'OWASP API Top 10'
@@ -335,12 +335,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'API rate limiting is essential to prevent:',
     options: [
+      'User authentication',
       'SQL injection',
-      'Denial of service and resource exhaustion attacks',
       'Data encryption',
-      'User authentication'
+      'Denial of service and resource exhaustion attacks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Rate limiting controls request volume to prevent abuse, DoS attacks, and excessive resource consumption.',
     topic: 'API Security',
     subtopic: 'Rate Limiting'
@@ -354,12 +354,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'For service-to-service API authentication, the MOST secure approach is:',
     options: [
+      'No authentication needed internally',
+      'Username and password',
       'Shared API keys',
       'Mutual TLS (mTLS) with certificates',
-      'Username and password',
-      'No authentication needed internally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'mTLS provides strong cryptographic authentication where both parties verify each other\'s certificates.',
     topic: 'API Security',
     subtopic: 'API Authentication'
@@ -373,12 +373,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Application',
     question: 'An API gateway provides centralized:',
     options: [
+      'Code development',
+      'Hardware provisioning',
       'Database management',
       'Authentication, rate limiting, and security policy enforcement',
-      'Code development',
-      'Hardware provisioning'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'API gateways centralize security functions including authentication, authorization, rate limiting, and monitoring.',
     topic: 'API Security',
     subtopic: 'API Gateway'
@@ -392,12 +392,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'When auditing API security, the IS auditor should verify that authorization is checked at:',
     options: [
+      'User login only',
+      'Annual audits only',
       'The network perimeter only',
       'Object, property, and function levels for each request',
-      'User login only',
-      'Annual audits only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'APIs must verify authorization at multiple levels - object (whose data), property (which fields), and function (what actions) for each request.',
     topic: 'API Security',
     subtopic: 'API Authorization'
@@ -415,12 +415,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Application',
     question: 'A Software Bill of Materials (SBOM) helps organizations:',
     options: [
+      'Eliminate the need for patching',
+      'Replace software testing',
       'Speed up software development',
       'Track components for vulnerability and supply chain risk management',
-      'Replace software testing',
-      'Eliminate the need for patching'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SBOM provides inventory of software components enabling identification of vulnerable dependencies and supply chain risk management.',
     topic: 'Security Architecture',
     subtopic: 'Supply Chain Security'
@@ -434,12 +434,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a Zero Trust architecture, access decisions are based on:',
     options: [
-      'Network location only',
-      'User identity, device health, and contextual factors continuously',
       'One-time password at login',
-      'VPN connection'
+      'Network location only',
+      'VPN connection',
+      'User identity, device health, and contextual factors continuously',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Zero Trust evaluates multiple factors continuously - identity, device posture, location, behavior - not just network position.',
     topic: 'Security Architecture',
     subtopic: 'Zero Trust'
@@ -454,11 +454,11 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     question: 'DevSecOps integrates security into:',
     options: [
       'Post-deployment monitoring only',
-      'Every phase of the software development lifecycle',
       'Annual security audits',
-      'End-user training only'
+      'End-user training only',
+      'Every phase of the software development lifecycle',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DevSecOps shifts security left, embedding it throughout development, testing, deployment, and operations phases.',
     topic: 'Security Architecture',
     subtopic: 'DevSecOps'
@@ -473,11 +473,11 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     question: 'Infrastructure as Code (IaC) security scanning helps prevent:',
     options: [
       'All malware',
-      'Misconfigurations before cloud resources are deployed',
       'Network latency',
-      'User password issues'
+      'User password issues',
+      'Misconfigurations before cloud resources are deployed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IaC scanning identifies misconfigurations in templates before deployment, preventing vulnerable infrastructure from being created.',
     topic: 'Security Architecture',
     subtopic: 'IaC Security'
@@ -491,12 +491,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The shared responsibility model in cloud computing means:',
     options: [
+      'No one is responsible for security',
       'The cloud provider handles all security',
-      'Security responsibilities are divided between provider and customer',
       'The customer handles all security',
-      'No one is responsible for security'
+      'Security responsibilities are divided between provider and customer',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Cloud security is shared - providers secure infrastructure, customers secure their data, applications, and configurations.',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility'

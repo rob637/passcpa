@@ -5,7 +5,7 @@
  * Designed to work with Stripe (when configured) or in freemium mode.
  */
 
-import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, deleteField, serverTimestamp } from 'firebase/firestore';
 import logger from '../utils/logger';
 import { db } from '../config/firebase.js';
 
@@ -36,19 +36,44 @@ export interface PlanLimits {
   studyPlans: boolean;
 }
 
+/**
+ * Per-exam trial tracking
+ */
+export interface ExamTrial {
+  startDate: Date;
+  endDate: Date;
+}
+
+/**
+ * Per-exam paid subscription tracking
+ */
+export interface ExamPaidSubscription {
+  stripeSubscriptionId: string;
+  status: SubscriptionStatus;
+  tier: SubscriptionTier;
+  currentPeriodStart?: Date;
+  currentPeriodEnd?: Date;
+  cancelAtPeriodEnd?: boolean;
+  isFounder?: boolean;
+}
+
 export interface UserSubscription {
   tier: SubscriptionTier;
   status: SubscriptionStatus;
-  courseId?: string; // Which exam/course this subscription is for
+  courseId?: string; // Legacy: single course (kept for backward compat)
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
   currentPeriodStart?: Date;
   currentPeriodEnd?: Date;
   cancelAtPeriodEnd?: boolean;
-  trialEnd?: Date;
+  trialEnd?: Date; // Legacy: single trial end (kept for backward compat)
   isFounderPricing?: boolean; // Locked in founder pricing
   createdAt: Date;
   updatedAt: Date;
+
+  // === Per-exam trial & subscription tracking (new) ===
+  trials?: Record<string, ExamTrial>; // { cpa: { startDate, endDate }, ea: { ... } }
+  paidExams?: Record<string, ExamPaidSubscription>; // { cpa: { ... }, ea: { ... } }
 }
 
 // ============================================================================
@@ -218,6 +243,62 @@ class SubscriptionService {
       const subDoc = await getDoc(doc(db, 'subscriptions', userId));
       if (subDoc.exists()) {
         const data = subDoc.data();
+
+        // Deserialize per-exam trials map
+        const trials: Record<string, ExamTrial> = {};
+        if (data.trials) {
+          for (const [key, val] of Object.entries(data.trials)) {
+            const t = val as { startDate?: { toDate?: () => Date }; endDate?: { toDate?: () => Date } };
+            trials[key] = {
+              startDate: t.startDate?.toDate?.() || new Date(0),
+              endDate: t.endDate?.toDate?.() || new Date(0),
+            };
+          }
+        }
+
+        // Repair: detect corrupted flat keys like "trials.ea" created by setDoc bug
+        // and migrate them into the proper nested trials map
+        const corruptedKeys: string[] = [];
+        for (const key of Object.keys(data)) {
+          if (key.startsWith('trials.')) {
+            const examId = key.replace('trials.', '');
+            const val = data[key] as { startDate?: { toDate?: () => Date }; endDate?: { toDate?: () => Date } };
+            if (val && !trials[examId]) {
+              trials[examId] = {
+                startDate: val.startDate?.toDate?.() || new Date(0),
+                endDate: val.endDate?.toDate?.() || new Date(0),
+              };
+            }
+            corruptedKeys.push(key);
+          }
+        }
+
+        // If corrupted keys found, fix them in Firestore (fire-and-forget)
+        if (corruptedKeys.length > 0) {
+          const fixUpdate: Record<string, unknown> = { trials };
+          for (const key of corruptedKeys) {
+            fixUpdate[key] = deleteField();
+          }
+          updateDoc(doc(db, 'subscriptions', userId), fixUpdate).catch(() => {});
+        }
+
+        // Deserialize per-exam paid subscriptions map
+        const paidExams: Record<string, ExamPaidSubscription> = {};
+        if (data.paidExams) {
+          for (const [key, val] of Object.entries(data.paidExams)) {
+            const p = val as Record<string, unknown>;
+            paidExams[key] = {
+              stripeSubscriptionId: (p.stripeSubscriptionId as string) || '',
+              status: (p.status as SubscriptionStatus) || 'expired',
+              tier: (p.tier as SubscriptionTier) || 'free',
+              currentPeriodStart: (p.currentPeriodStart as { toDate?: () => Date })?.toDate?.(),
+              currentPeriodEnd: (p.currentPeriodEnd as { toDate?: () => Date })?.toDate?.(),
+              cancelAtPeriodEnd: (p.cancelAtPeriodEnd as boolean) || false,
+              isFounder: (p.isFounder as boolean) || false,
+            };
+          }
+        }
+
         return {
           ...data,
           currentPeriodStart: data.currentPeriodStart?.toDate(),
@@ -225,6 +306,8 @@ class SubscriptionService {
           trialEnd: data.trialEnd?.toDate(),
           createdAt: data.createdAt?.toDate(),
           updatedAt: data.updatedAt?.toDate(),
+          trials,
+          paidExams,
         } as UserSubscription;
       }
       return null;
@@ -235,25 +318,36 @@ class SubscriptionService {
   }
 
   /**
-   * Create default free subscription with 14-day trial for new users
+   * Create default free subscription with 14-day trial for new users.
+   * Trial is started for the specified courseId (per-exam trials).
    */
   async createFreeSubscription(userId: string, courseId?: string): Promise<UserSubscription> {
     const now = new Date();
     const trialEnd = new Date(now);
     trialEnd.setDate(trialEnd.getDate() + 14); // 14-day trial
 
+    const examId = courseId || 'cpa';
+
+    // Build per-exam trials map
+    const trials: Record<string, ExamTrial> = {
+      [examId]: { startDate: now, endDate: trialEnd },
+    };
+
     const subscription: UserSubscription = {
       tier: 'free',
       status: 'trialing',
-      trialEnd,
+      trialEnd, // Legacy field
       createdAt: now,
       updatedAt: now,
-      courseId, // Track which exam they're studying for
+      courseId: examId,
+      trials,
     };
 
     await setDoc(doc(db, 'subscriptions', userId), {
       ...subscription,
-      trialEnd,
+      trials: {
+        [examId]: { startDate: now, endDate: trialEnd },
+      },
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
@@ -262,40 +356,171 @@ class SubscriptionService {
   }
 
   /**
-   * Grant or renew trial for existing user who hasn't had one
-   * This handles users created before the trial system was added
+   * Grant or renew trial for existing user who hasn't had one.
+   * Handles users created before the per-exam trial system was added.
+   * Now creates a per-exam trial entry.
    */
-  async grantTrialIfEligible(userId: string): Promise<UserSubscription | null> {
+  async grantTrialIfEligible(userId: string, courseId?: string): Promise<UserSubscription | null> {
     const subscription = await this.getUserSubscription(userId);
     if (!subscription) return null;
     
-    // Don't grant trial if user:
-    // - Has an active PAID subscription (tier is not 'free')
-    // - Already has/had a trial (trialEnd is set, regardless of expiry)
-    if (subscription.tier !== 'free') return subscription;
-    if (subscription.trialEnd) return subscription;
+    const examId = courseId || subscription.courseId || 'cpa';
     
-    // User is on free tier with no trial history - grant them a trial
+    // Don't grant trial if user has a paid subscription for this exam
+    const paidExam = subscription.paidExams?.[examId];
+    if (paidExam && (paidExam.status === 'active' || paidExam.status === 'trialing')) {
+      return subscription;
+    }
     
-    // User is eligible for trial - grant it
+    // Also check legacy paid status
+    if (subscription.tier !== 'free' && subscription.courseId === examId && subscription.status === 'active') {
+      return subscription;
+    }
+    
+    // Check if user already has a per-exam trial for this course
+    if (subscription.trials?.[examId]) return subscription;
+    
+    // Legacy check: if they have a trialEnd and courseId matches, create trials map entry
+    if (subscription.trialEnd && subscription.courseId === examId) {
+      // Migrate legacy trial to trials map
+      const trials = { ...subscription.trials, [examId]: { startDate: subscription.createdAt || new Date(), endDate: subscription.trialEnd } };
+      await setDoc(doc(db, 'subscriptions', userId), {
+        trials,
+        updatedAt: serverTimestamp(),
+      }, { merge: true });
+      return { ...subscription, trials };
+    }
+    
+    // No trial ever for this exam — grant one
     const now = new Date();
     const trialEnd = new Date(now);
-    trialEnd.setDate(trialEnd.getDate() + 14); // 14-day trial
+    trialEnd.setDate(trialEnd.getDate() + 14);
     
-    const updatedSubscription: UserSubscription = {
-      ...subscription,
-      status: 'trialing',
-      trialEnd,
-      updatedAt: now,
-    };
+    const trials = { ...subscription.trials, [examId]: { startDate: now, endDate: trialEnd } };
     
-    await setDoc(doc(db, 'subscriptions', userId), {
-      ...updatedSubscription,
-      trialEnd,
+    // Use updateDoc for dot-notation paths (interprets them as nested field paths)
+    await updateDoc(doc(db, 'subscriptions', userId), {
+      [`trials.${examId}`]: { startDate: now, endDate: trialEnd },
+      // Also set legacy fields if no trial existed before
+      ...(!subscription.trialEnd ? { trialEnd, status: 'trialing' } : {}),
       updatedAt: serverTimestamp(),
-    }, { merge: true });
+    });
     
-    return updatedSubscription;
+    return { ...subscription, trials, updatedAt: now };
+  }
+
+  /**
+   * Start a per-exam trial for a user.
+   * Each exam gets its own independent 14-day trial.
+   * Returns null if user already had a trial for this exam.
+   */
+  async startExamTrial(userId: string, courseId: string): Promise<ExamTrial | null> {
+    const subscription = await this.getUserSubscription(userId);
+    
+    // Check if trial already exists for this exam
+    if (subscription?.trials?.[courseId]) {
+      logger.info(`User ${userId} already had a trial for ${courseId}`);
+      return null;
+    }
+    
+    // Legacy check
+    if (subscription?.trialEnd && subscription?.courseId === courseId) {
+      logger.info(`User ${userId} already had a legacy trial for ${courseId}`);
+      return null;
+    }
+    
+    const now = new Date();
+    const endDate = new Date(now);
+    endDate.setDate(endDate.getDate() + 14);
+    
+    const trial: ExamTrial = { startDate: now, endDate };
+    
+    if (subscription) {
+      // Doc exists — use updateDoc which interprets dot notation as nested field paths
+      await updateDoc(doc(db, 'subscriptions', userId), {
+        [`trials.${courseId}`]: { startDate: now, endDate },
+        updatedAt: serverTimestamp(),
+      });
+    } else {
+      // No subscription doc yet — create with setDoc using nested object structure
+      await setDoc(doc(db, 'subscriptions', userId), {
+        trials: { [courseId]: { startDate: now, endDate } },
+        tier: 'free',
+        status: 'active',
+        updatedAt: serverTimestamp(),
+        createdAt: serverTimestamp(),
+      }, { merge: true });
+    }
+    
+    logger.info(`Started 14-day trial for ${courseId} for user ${userId}`);
+    return trial;
+  }
+
+  /**
+   * Get trial status for a specific exam.
+   * Checks the per-exam trials map first, then falls back to legacy trialEnd field.
+   */
+  getExamTrialStatus(subscription: UserSubscription | null, courseId: string): {
+    hasTrial: boolean;
+    isActive: boolean;
+    daysRemaining: number;
+    endDate: Date | null;
+    canStartTrial: boolean;
+  } {
+    if (!subscription) {
+      return { hasTrial: false, isActive: false, daysRemaining: 0, endDate: null, canStartTrial: true };
+    }
+    
+    const now = new Date();
+    
+    // Check per-exam trials map first
+    const trial = subscription.trials?.[courseId];
+    if (trial) {
+      const isActive = now < trial.endDate;
+      const daysRemaining = Math.max(0, Math.ceil((trial.endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
+      return {
+        hasTrial: true,
+        isActive,
+        daysRemaining,
+        endDate: trial.endDate,
+        canStartTrial: false, // Already had a trial
+      };
+    }
+    
+    // Fall back to legacy trialEnd if courseId matches
+    if (subscription.courseId === courseId && subscription.trialEnd) {
+      const isActive = now < subscription.trialEnd;
+      const daysRemaining = Math.max(0, Math.ceil((subscription.trialEnd.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
+      return {
+        hasTrial: true,
+        isActive,
+        daysRemaining,
+        endDate: subscription.trialEnd,
+        canStartTrial: false,
+      };
+    }
+    
+    // No trial for this exam — user can start one
+    return { hasTrial: false, isActive: false, daysRemaining: 0, endDate: null, canStartTrial: true };
+  }
+
+  /**
+   * Check if user has paid access to a specific exam.
+   * Checks paidExams map first, then legacy single-course fields.
+   */
+  hasExamPaidAccess(subscription: UserSubscription | null, courseId: string): boolean {
+    if (!subscription) return false;
+    
+    // Check per-exam paid subs map
+    const paidExam = subscription.paidExams?.[courseId];
+    if (paidExam && paidExam.status === 'active') return true;
+    
+    // Legacy: single courseId + paid tier
+    if (subscription.courseId === courseId && subscription.tier !== 'free' && subscription.status === 'active') {
+      return true;
+    }
+    
+    return false;
   }
 
   /**
@@ -522,6 +747,10 @@ export function useSubscription() {
   const [isTrialing, setIsTrialing] = useState(false);
   const [trialDaysRemaining, setTrialDaysRemaining] = useState(0);
   const [trialExpired, setTrialExpired] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  // Force a refresh of subscription data (e.g., after starting a trial)
+  const refreshSubscription = () => setRefreshKey(k => k + 1);
 
   useEffect(() => {
     async function fetchSubscription() {
@@ -542,11 +771,10 @@ export function useSubscription() {
         
         // Create free subscription with trial if none exists
         if (!sub) {
-          sub = await subscriptionService.createFreeSubscription(user.uid);
+          sub = await subscriptionService.createFreeSubscription(user.uid, activeCourseId);
         } else {
-          // Grant trial to existing users who haven't had one yet
-          // (handles users created before the trial system was added)
-          const upgraded = await subscriptionService.grantTrialIfEligible(user.uid);
+          // Grant trial for the active course if user hasn't had one for it
+          const upgraded = await subscriptionService.grantTrialIfEligible(user.uid, activeCourseId);
           if (upgraded) {
             sub = upgraded;
           }
@@ -554,27 +782,19 @@ export function useSubscription() {
         
         setSubscription(sub);
         
-        // Calculate trial status
-        const now = new Date();
-        const inTrial = sub.status === 'trialing' && sub.trialEnd && now < sub.trialEnd;
-        const expired = sub.status === 'trialing' && sub.trialEnd && now >= sub.trialEnd;
+        // === Per-exam trial status for the ACTIVE course ===
+        const examTrialStatus = subscriptionService.getExamTrialStatus(sub, activeCourseId);
         
-        let daysRemaining = 0;
-        if (sub.trialEnd && inTrial) {
-          const diff = sub.trialEnd.getTime() - now.getTime();
-          daysRemaining = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
-        }
+        setIsTrialing(examTrialStatus.isActive);
+        setTrialExpired(examTrialStatus.hasTrial && !examTrialStatus.isActive);
+        setTrialDaysRemaining(examTrialStatus.daysRemaining);
         
-        setIsTrialing(inTrial || false);
-        setTrialExpired(expired || false);
-        setTrialDaysRemaining(daysRemaining);
-        
-        // User has access if paid OR in active trial
-        const hasPaidAccess = sub.tier !== 'free' && sub.status === 'active';
+        // === Per-exam paid access for the ACTIVE course ===
+        const hasPaidAccess = subscriptionService.hasExamPaidAccess(sub, activeCourseId);
         setIsPremium(hasPaidAccess);
         
-        // During trial, give full access
-        if (inTrial || hasPaidAccess) {
+        // Set plan limits: full access if paid or trialing
+        if (examTrialStatus.isActive || hasPaidAccess) {
           setLimits(SUBSCRIPTION_PLANS[sub.tier === 'free' ? 'annual' : sub.tier].limits);
         } else {
           // Trial expired and not paid - restricted access
@@ -589,16 +809,49 @@ export function useSubscription() {
     }
 
     fetchSubscription();
-  }, [user]);
+  }, [user, activeCourseId, refreshKey]);
 
-  // User has full access if:
-  // - In active trial (trial grants access to ALL courses for exploration)
-  // - OR has paid subscription for the CURRENT active course
+  // === Computed access for the ACTIVE course ===
   const subscribedCourseId = subscription?.courseId;
-  const paidForThisCourse = isPremium && (
-    !subscribedCourseId || subscribedCourseId === activeCourseId
-  );
-  const hasFullAccess = paidForThisCourse || isTrialing;
+  const hasFullAccess = isPremium || isTrialing;
+
+  /**
+   * Get access status for a specific exam (used by CourseSelector)
+   */
+  const getExamAccess = (courseId: string) => {
+    const trialStatus = subscriptionService.getExamTrialStatus(subscription, courseId);
+    const hasPaid = subscriptionService.hasExamPaidAccess(subscription, courseId);
+    
+    // Get per-exam paid subscription details
+    const paidExam = subscription?.paidExams?.[courseId];
+    const cancelAtPeriodEnd = paidExam?.cancelAtPeriodEnd || false;
+    const currentPeriodEnd = paidExam?.currentPeriodEnd || subscription?.currentPeriodEnd;
+    
+    return {
+      hasAccess: hasPaid || trialStatus.isActive,
+      isPaid: hasPaid,
+      isTrialing: trialStatus.isActive,
+      trialDaysRemaining: trialStatus.daysRemaining,
+      trialExpired: trialStatus.hasTrial && !trialStatus.isActive,
+      canStartTrial: trialStatus.canStartTrial,
+      trialEndDate: trialStatus.endDate,
+      cancelAtPeriodEnd,
+      currentPeriodEnd,
+    };
+  };
+
+  /**
+   * Start a per-exam trial (used by CourseSelector when switching to new exam)
+   */
+  const startExamTrial = async (courseId: string): Promise<boolean> => {
+    if (!user) return false;
+    const result = await subscriptionService.startExamTrial(user.uid, courseId);
+    if (result) {
+      refreshSubscription();
+      return true;
+    }
+    return false;
+  };
 
   return {
     subscription,
@@ -611,6 +864,9 @@ export function useSubscription() {
     subscribedCourseId: subscribedCourseId || null,
     loading,
     plan: subscription ? SUBSCRIPTION_PLANS[subscription.tier] : SUBSCRIPTION_PLANS.free,
+    getExamAccess,
+    startExamTrial,
+    refreshSubscription,
     checkFeature: (feature: keyof PlanLimits) => {
       const value = limits[feature];
       if (typeof value === 'boolean') return value;

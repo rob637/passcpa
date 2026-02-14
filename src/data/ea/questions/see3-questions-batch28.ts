@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'To apply for or renew a PTIN, preparers use:',
     options: [
-      'Form 8821',
       'The IRS online Tax Professional PTIN System or Form W-12',
+      'Form 8821',
       'Form 2848',
-      'Form 1040'
+      'Form 1040',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Preparers apply for or renew PTINs online through the IRS Tax Professional PTIN System at IRS.gov or by filing paper Form W-12.',
     reference: 'IRS PTIN Application',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Tax return preparers who prepare more than how many returns must e-file:',
     options: [
-      '100 returns',
       '10 returns covered by the mandate',
       '50 returns',
-      '25 returns'
+      '100 returns',
+      '25 returns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Preparers who anticipate preparing and filing 11 or more covered returns in a calendar year must e-file. The threshold was lowered from 50 to 10+ returns (meaning 11 or more).',
     reference: 'IRC §6011(e)(3)',
   },
@@ -100,10 +100,10 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An EFIN (Electronic Filing Identification Number):',
     options: [
-      'Is the same as a PTIN',
-      'Is required for tax professionals to e-file returns as an Electronic Return Originator',
       'Is only for software companies',
-      'Is optional'
+      'Is required for tax professionals to e-file returns as an Electronic Return Originator',
+      'Is the same as a PTIN',
+      'Is optional',
     ],
     correctAnswer: 1,
     explanation: 'An EFIN is required for authorized IRS e-file providers (Electronic Return Originators). Preparers must apply for an EFIN through the IRS e-Services program to electronically file returns.',
@@ -121,11 +121,11 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     question: 'If a taxpayer chooses not to have their return e-filed:',
     options: [
       'The preparer must e-file anyway',
-      'The preparer must obtain a signed statement or document the preference',
       'No documentation is required',
-      'The preparer faces automatic penalties'
+      'The preparer must obtain a signed statement or document the preference',
+      'The preparer faces automatic penalties',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If a taxpayer chooses not to e-file, the preparer should have the taxpayer sign Form 8948 (Preparer Explanation for Not Filing Electronically) or document the reason for the exception.',
     reference: 'IRS Form 8948',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'To become an Authorized IRS e-file Provider, an applicant must:',
     options: [
+      'Only have a PTIN',
       'Simply request an EFIN',
       'Pass a suitability check including tax compliance, criminal background, and credit history',
-      'Only have a PTIN',
-      'Be an enrolled agent'
+      'Be an enrolled agent',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRS e-file applications require suitability checks including verification of tax compliance history, criminal background check, and credit history review for principals and responsible officials.',
     reference: 'IRS Publication 3112',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 8879 (IRS e-file Signature Authorization):',
     options: [
+      'Replaces the taxpayer signature on Form 1040',
       'Is filed with the IRS',
       'Is signed by the taxpayer to authorize the ERO to enter the PIN and transmit the return',
-      'Replaces the taxpayer signature on Form 1040',
-      'Is optional'
+      'Is optional',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 8879 authorizes the Electronic Return Originator (ERO) to enter the taxpayer\'s PIN and transmit the return. It is retained by the ERO, not submitted to the IRS.',
     reference: 'IRS Form 8879',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH28: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'EROs must retain e-file records (Form 8879, etc.) for:',
     options: [
+      '7 years',
       '1 year',
       '3 years from the return due date or the date the return was filed, whichever is later',
-      '7 years',
-      '10 years'
+      '10 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EROs must retain e-file records (including Form 8879) for 3 years from the return due date or the IRS received date, whichever is later.',
     reference: 'IRS Publication 3112',
   },

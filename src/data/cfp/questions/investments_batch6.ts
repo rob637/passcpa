@@ -21,8 +21,8 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     options: [
       'A) Mental accounting',
       'B) The disposition effect',
+      'D) Herd mentality',
       'C) Anchoring bias',
-      'D) Herd mentality'
     ],
     correctAnswer: 1,
     explanation: 'The disposition effect describes investors\' tendency to sell appreciated securities (locking in gains) while holding depreciated securities (avoiding loss realization). This is driven by loss aversion and can lead to suboptimal tax outcomes and portfolio allocation.'
@@ -38,12 +38,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Arbitrage Pricing Theory (APT) differs from CAPM primarily because APT:',
     options: [
-      'A) Uses only one systematic risk factor',
       'B) Identifies multiple systematic risk factors that affect returns',
+      'A) Uses only one systematic risk factor',
+      'D) Requires a risk-free asset',
       'C) Only applies to individual stocks',
-      'D) Requires a risk-free asset'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'APT uses multiple factors (inflation, GDP growth, interest rates, etc.) to explain returns, unlike CAPM\'s single market factor. APT is more flexible but requires identifying the relevant factors. Both models assume systematic risk matters and unsystematic risk is diversified away.'
   },
   {
@@ -55,15 +55,15 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     subtopic: 'Information Ratio',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: 'The information ratio measures:',
+    question: 'An actively managed fund has an information ratio of 0.6. What does this metric indicate about the manager\'s performance?',
     options: [
-      'A) Total return divided by standard deviation',
-      'B) Excess return over benchmark divided by tracking error',
-      'C) The correlation between a security and the market',
-      'D) The percentage of return attributable to the manager'
+      'The fund\'s total return exceeds the risk-free rate by 60 basis points',
+      'The manager generates 0.6 units of active return per unit of tracking error (active risk)',
+      'The fund\'s beta-adjusted return exceeds the benchmark by 0.6%',
+      '60% of the fund\'s return comes from active management decisions',
     ],
     correctAnswer: 1,
-    explanation: 'The information ratio = (Portfolio return - Benchmark return) / Tracking error. It measures the consistency of a manager\'s outperformance—high IR indicates skillful active management with consistent excess returns relative to the variability of those excess returns.'
+    explanation: 'The information ratio measures active return (excess return over the benchmark) divided by tracking error (standard deviation of active returns). An IR of 0.6 means the manager generates 0.6 units of active return per unit of active risk taken, indicating reasonably skilled active management.',
   },
   {
     id: 'CFP-INV-B6-004',
@@ -76,10 +76,10 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Monte Carlo simulation in financial planning:',
     options: [
-      'A) Provides a guaranteed outcome for retirement portfolios',
+      'D) Only applies to single-period investment analysis',
       'B) Models thousands of scenarios using randomized variables to assess probability of success',
+      'A) Provides a guaranteed outcome for retirement portfolios',
       'C) Uses only historical returns without variation',
-      'D) Only applies to single-period investment analysis'
     ],
     correctAnswer: 1,
     explanation: 'Monte Carlo simulation runs thousands of trials with randomized returns, inflation, and other variables to generate probability distributions of outcomes. It provides probability of success (e.g., 85% chance of not running out of money) rather than single-point estimates, helping clients understand range of possibilities.'
@@ -96,10 +96,10 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Convexity measures:',
     options: [
-      'A) The linear relationship between price and yield',
+      'D) The issuer\'s credit quality',
       'B) The curvature in the price-yield relationship, refining duration\'s estimate',
+      'A) The linear relationship between price and yield',
       'C) The bond\'s default probability',
-      'D) The issuer\'s credit quality'
     ],
     correctAnswer: 1,
     explanation: 'Convexity measures the curvature of the price-yield relationship. Duration gives a linear approximation of price change, but actual price changes follow a curve. Positive convexity means prices rise more than duration predicts when yields fall, and fall less when yields rise—a desirable characteristic.'
@@ -115,12 +115,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A bond portfolio is immunized when:',
     options: [
+      'D) Duration is set to zero',
       'A) All bonds are investment grade',
       'B) Duration matches the investment time horizon',
       'C) The portfolio contains only Treasury securities',
-      'D) Duration is set to zero'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Immunization protects against interest rate risk by matching portfolio duration to the liability time horizon. When matched, reinvestment risk and price risk offset each other. If rates rise, lower bond prices are offset by higher reinvestment income; if rates fall, lower reinvestment is offset by higher prices.'
   },
   {
@@ -134,12 +134,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A barbell bond strategy involves:',
     options: [
+      'D) Evenly distributing across all maturities',
       'A) Concentrating investments in intermediate-term bonds',
       'B) Holding both short-term and long-term bonds with minimal intermediate maturities',
       'C) Buying only high-yield bonds',
-      'D) Evenly distributing across all maturities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A barbell strategy holds bonds at both ends of the maturity spectrum—short-term for liquidity and reinvestment flexibility, long-term for yield. This contrasts with a bullet strategy (concentrated around target maturity) or ladder strategy (evenly distributed maturities).'
   },
   {
@@ -155,8 +155,8 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     options: [
       'A) Taxable accounts seeking maximum current income',
       'B) Tax-advantaged accounts seeking inflation protection',
+      'D) High-risk aggressive portfolios',
       'C) Short-term emergency funds',
-      'D) High-risk aggressive portfolios'
     ],
     correctAnswer: 1,
     explanation: 'TIPS adjust principal for inflation, protecting real purchasing power. However, the "phantom income" from inflation adjustments is taxable annually even though not received. Thus, TIPS are most tax-efficient in tax-advantaged accounts (IRAs, 401(k)s) where this phantom income isn\'t taxed currently.'
@@ -175,8 +175,8 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     options: [
       'A) 0.67',
       'B) 1.50',
+      'D) 50',
       'C) 10',
-      'D) 50'
     ],
     correctAnswer: 1,
     explanation: 'PEG ratio = P/E ÷ Earnings Growth Rate = 30 ÷ 20 = 1.5. PEG ratios below 1.0 may indicate undervaluation relative to growth; above 1.0 may indicate overvaluation. This metric helps compare valuations of companies with different growth rates, though it has limitations.'
@@ -192,12 +192,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Free cash flow to equity (FCFE) represents:',
     options: [
-      'A) Operating cash flow only',
       'B) Cash available to equity shareholders after all capital expenditures and debt payments',
+      'A) Operating cash flow only',
+      'D) Net income before depreciation',
       'C) Total revenue minus operating expenses',
-      'D) Net income before depreciation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'FCFE = Operating cash flow - Capital expenditures - Debt repayments + New debt issued. It represents the cash actually available to distribute to equity shareholders after maintaining operations and meeting debt obligations. It\'s used in discounted cash flow valuation models.'
   },
   {
@@ -211,12 +211,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Factor investing focuses on:',
     options: [
-      'A) Individual stock selection based on management quality',
       'B) Systematic exposure to factors like value, size, momentum, and quality that drive returns',
+      'A) Individual stock selection based on management quality',
+      'D) Exclusive use of index funds',
       'C) Market timing based on economic indicators',
-      'D) Exclusive use of index funds'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Factor investing (smart beta) systematically targets factors historically associated with excess returns: value (low P/B, P/E), size (small cap premium), momentum (recent winners), quality (profitability, stability), and low volatility. It\'s between passive indexing and active stock picking.'
   },
   {
@@ -232,8 +232,8 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     options: [
       'A) Only earnings, sales, and growth metrics',
       'B) Environmental, Social, and Governance factors alongside financial analysis',
+      'D) Emergency fund, savings, and general investment',
       'C) European stock geographic allocation',
-      'D) Emergency fund, savings, and general investment'
     ],
     correctAnswer: 1,
     explanation: 'ESG investing incorporates Environmental (climate, pollution), Social (labor practices, diversity, community), and Governance (board independence, executive pay, transparency) factors into investment analysis. It can be implemented through exclusion, integration, or impact approaches.'
@@ -250,10 +250,10 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An option\'s delta of 0.60 indicates:',
     options: [
-      'A) The option will expire worthless 60% of the time',
+      'D) The option has 60 days to expiration',
       'B) The option price will change approximately $0.60 for a $1 change in the underlying stock',
+      'A) The option will expire worthless 60% of the time',
       'C) 60% of the option\'s value is intrinsic',
-      'D) The option has 60 days to expiration'
     ],
     correctAnswer: 1,
     explanation: 'Delta measures the option price sensitivity to changes in the underlying asset. A delta of 0.60 means the call option gains (or loses) $0.60 for each $1 the stock moves. Delta also roughly approximates the probability the option expires in-the-money. Puts have negative deltas.'
@@ -269,12 +269,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A protective collar strategy involves:',
     options: [
-      'A) Buying both a call and put on a stock you don\'t own',
       'B) Owning stock, buying a put for protection, and selling a call to offset the put cost',
+      'D) Buying deep in-the-money LEAPS',
+      'A) Buying both a call and put on a stock you don\'t own',
       'C) Selling covered calls on multiple positions',
-      'D) Buying deep in-the-money LEAPS'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A collar combines stock ownership with a protective put (downside protection) and a covered call (generates premium). The call premium offsets the put cost, often creating a zero-cost collar. Tradeoff: limited upside (above call strike) in exchange for limited downside (above put strike).'
   },
   {
@@ -288,12 +288,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Selling a cash-secured put is appropriate when an investor:',
     options: [
+      'D) Needs to hedge currency exposure',
       'A) Is very bearish on the underlying stock',
       'B) Is neutral to bullish and willing to buy the stock at the strike price',
       'C) Wants to protect against loss on shares already owned',
-      'D) Needs to hedge currency exposure'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Selling cash-secured puts generates income while potentially acquiring stock at a lower price. If the stock stays above the strike, the seller keeps the premium. If it falls below, the seller buys at the strike (minus premium received). It\'s bullish/neutral with defined risk (buy at strike).'
   },
   {
@@ -308,11 +308,11 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     question: 'Theta measures:',
     options: [
       'A) The option\'s sensitivity to interest rate changes',
+      'D) The leverage ratio of the option',
       'B) The rate of time value decay per day',
       'C) The option\'s sensitivity to volatility changes',
-      'D) The leverage ratio of the option'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Theta measures time decay—how much option value decreases each day. Options are wasting assets; time value erodes as expiration approaches. At-the-money options have the highest theta. Theta accelerates as expiration nears. Sellers benefit from theta; buyers fight it.'
   },
   // INV-5: Advanced Alternative Investments
@@ -328,11 +328,11 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     question: 'Private equity J-curve effect refers to:',
     options: [
       'A) Consistent positive returns throughout the investment period',
+      'D) The timing of dividend distributions',
       'B) Negative returns in early years (fees, capital calls) followed by positive returns as investments mature',
       'C) The correlation between private and public equity',
-      'D) The timing of dividend distributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The J-curve describes typical private equity cash flow pattern: negative returns initially (management fees, deal costs) while capital is deployed. As investments mature and are sold (typically years 4-8+), returns turn positive and accelerate, creating a J-shaped return pattern over the fund life.'
   },
   {
@@ -346,12 +346,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The traditional hedge fund fee structure "2 and 20" means:',
     options: [
-      'A) 2% of assets under management plus 20% of profits above a hurdle',
       'B) 2% of profits plus 20% of assets',
+      'A) 2% of assets under management plus 20% of profits above a hurdle',
+      'D) 2% annual expense ratio paid over 20 years',
       'C) Minimum 2-year lockup with 20-day redemption notice',
-      'D) 2% annual expense ratio paid over 20 years'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: '2 and 20 refers to a 2% annual management fee on AUM plus a 20% performance fee (carried interest) on profits. Some funds include a hurdle rate (minimum return before performance fees apply) and high-water mark (fees only on new gains above previous high).'
   },
   {
@@ -365,12 +365,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Commodities in a diversified portfolio may provide:',
     options: [
-      'A) Guaranteed positive returns',
       'B) Inflation hedge and low correlation to stocks and bonds',
+      'A) Guaranteed positive returns',
+      'D) Income through regular dividend payments',
       'C) Tax advantages similar to municipal bonds',
-      'D) Income through regular dividend payments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Commodities often move with inflation (many commodities\' prices are components of inflation measures) and have historically had low correlation with traditional assets, providing diversification benefits. However, commodities don\'t generate income, have high volatility, and may experience extended periods of negative returns.'
   },
   {
@@ -386,10 +386,10 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     options: [
       'A) Offer superior liquidity',
       'B) Have higher price transparency',
+      'D) Are regulated more strictly',
       'C) Typically have higher fees and limited liquidity',
-      'D) Are regulated more strictly'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Non-traded REITs lack daily pricing and liquidity of exchange-traded REITs. They often have high upfront fees, limited redemption opportunities, and may require lengthy holding periods. While they may offer lower reported volatility (due to illiquidity), this comes at the cost of accessibility and transparency.'
   },
   // INV-1: Portfolio Management
@@ -404,12 +404,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A calendar rebalancing approach involves:',
     options: [
-      'A) Rebalancing whenever allocations drift by a set percentage',
       'B) Rebalancing at set intervals regardless of allocation drift',
+      'A) Rebalancing whenever allocations drift by a set percentage',
+      'D) Rebalancing only when the market declines',
       'C) Never rebalancing but adding new money to underweight assets',
-      'D) Rebalancing only when the market declines'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Calendar rebalancing resets allocations at fixed intervals (monthly, quarterly, annually). This is simpler than percentage-of-portfolio rebalancing (trigger-based) but may miss opportunities during volatile periods or incur unnecessary transactions when drift is minimal.'
   },
   {
@@ -423,12 +423,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Tax-loss harvesting should consider:',
     options: [
-      'A) Only short-term gains for offset',
       'B) Wash sale rules prohibiting repurchase of substantially identical securities within 30 days',
+      'D) That all losses must be realized by age 65',
+      'A) Only short-term gains for offset',
       'C) That losses can only offset gains in the same calendar year',
-      'D) That all losses must be realized by age 65'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Tax-loss harvesting realizes losses to offset gains and up to $3,000 of ordinary income. However, wash sale rules disallow losses if substantially identical securities are purchased within 30 days before or after the sale. Unused losses carry forward indefinitely. Strategic harvesting considers current and expected future tax rates.'
   },
   {
@@ -442,12 +442,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'An executive with highly concentrated company stock should consider all of the following EXCEPT:',
     options: [
-      'A) 10b5-1 plan for systematic diversification',
+      'D) Immediate sale regardless of tax cost',
       'B) Exchange fund for tax-deferred diversification',
+      'A) 10b5-1 plan for systematic diversification',
       'C) Protective puts or collars for downside protection',
-      'D) Immediate sale regardless of tax cost'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Several strategies address concentrated stock risk: 10b5-1 plans allow systematic selling; exchange funds (partnerships) provide diversification without immediate tax; collars and puts hedge downside. Immediate full sale may trigger large capital gains taxes. A balanced approach considers risk tolerance, tax cost, and timeframe.'
   },
   {
@@ -461,10 +461,10 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Active share measures:',
     options: [
-      'A) The portfolio\'s beta relative to the benchmark',
+      'D) The expense ratio relative to passive alternatives',
       'B) The percentage of portfolio holdings that differ from the benchmark',
+      'A) The portfolio\'s beta relative to the benchmark',
       'C) How often the portfolio is traded',
-      'D) The expense ratio relative to passive alternatives'
     ],
     correctAnswer: 1,
     explanation: 'Active share measures the percentage of a portfolio that differs from its benchmark. An active share of 0% means identical to the benchmark; 100% means completely different. High active share indicates a truly active manager (versus a "closet indexer"). Research shows high active share can predict outperformance among skilled managers.'
@@ -480,12 +480,12 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Direct indexing differs from traditional index funds by:',
     options: [
+      'D) Guaranteeing benchmark-beating returns',
       'A) Using derivatives instead of stocks',
       'B) Owning individual securities directly, enabling tax-loss harvesting and customization',
       'C) Focusing only on small-cap stocks',
-      'D) Guaranteeing benchmark-beating returns'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Direct indexing involves owning the individual securities that comprise an index (or a representative sample) rather than an index fund. Benefits include tax-loss harvesting at the individual security level, ESG customization (excluding specific companies), and factor tilts. Technology has made this accessible at lower minimums.'
   }
 ];

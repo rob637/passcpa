@@ -2,97 +2,31 @@
  * Lesson Service - Local-first approach
  * Lessons are stored in TypeScript files for fast loading and offline support.
  * Firebase is used only for user progress tracking, not lesson content.
+ *
+ * Uses the generic courseDataLoader — no per-course switches needed.
  */
 
 import { Lesson, CourseId } from '../types';
 import { DEFAULT_COURSE_ID } from '../types/course';
 import logger from '../utils/logger';
+import { loadCourseData } from './courseDataLoader';
 
 // Cache for lessons per course (in-memory)
 const lessonsCacheByCore: Map<CourseId, Lesson[]> = new Map();
 
 /**
- * Load lessons for a specific course from local data (with caching)
+ * Load lessons for a specific course from local data (with caching).
+ * Uses COURSE_DATA — no per-course switch/case needed.
+ * All courses (including CFP) now export standard Lesson[] from their data files.
  */
 async function loadLessonsForCourse(courseId: CourseId): Promise<Lesson[]> {
-  // Check cache first
   const cached = lessonsCacheByCore.get(courseId);
-  if (cached) {
-    return cached;
-  }
+  if (cached) return cached;
 
   try {
-    let lessons: Lesson[] = [];
-    
-    switch (courseId) {
-      case 'cpa': {
-        const { getAllLessons } = await import('../data/cpa/lessons');
-        lessons = getAllLessons();
-        break;
-      }
-      case 'cma': {
-        const { cmaLessons } = await import('../data/cma/lessons');
-        lessons = cmaLessons;
-        break;
-      }
-      case 'ea': {
-        const [see1, see2, see3] = await Promise.all([
-          import('../data/ea/lessons/see1'),
-          import('../data/ea/lessons/see2'),
-          import('../data/ea/lessons/see3'),
-        ]);
-        lessons = [
-          ...see1.eaPart1Lessons,
-          ...see2.eaPart2Lessons,
-          ...see3.eaPart3Lessons,
-        ];
-        break;
-      }
-      case 'cia': {
-        const { ALL_CIA_LESSONS } = await import('../data/cia/lessons');
-        lessons = ALL_CIA_LESSONS;
-        break;
-      }
-      case 'cisa': {
-        const { allCisaLessons } = await import('../data/cisa/lessons');
-        lessons = allCisaLessons;
-        break;
-      }
-      case 'cfp': {
-        const { ALL_CFP_LESSONS } = await import('../data/cfp/lessons');
-        // CFP lessons use 'domain' instead of 'section', and content is markdown string
-        // Transform to match Lesson interface
-        lessons = ALL_CFP_LESSONS.map(cfpLesson => {
-          const lesson = cfpLesson as { domain?: string; content?: string; objectives?: string[]; keyTakeaways?: string[]; keyTerms?: { term: string; definition: string }[]; keyFormulas?: unknown[]; mnemonics?: unknown[]; practiceProblems?: unknown[] };
-          return {
-            ...cfpLesson,
-            section: lesson.domain || 'CFP-GEN',
-            courseId: 'cfp' as CourseId,
-            description: lesson.objectives?.slice(0, 2).join('. ') || '',
-            difficulty: 'intermediate' as const,
-            topics: lesson.objectives?.slice(0, 3) || [],
-            // Transform markdown content string to content object with markdown field
-            content: {
-              sections: [],
-              markdown: typeof lesson.content === 'string' ? lesson.content : undefined,
-              // Preserve additional content like keyTakeaways, keyTerms, etc.
-              keyTakeaways: lesson.keyTakeaways,
-              keyTerms: lesson.keyTerms,
-              keyFormulas: lesson.keyFormulas,
-              mnemonics: lesson.mnemonics,
-              practiceProblems: lesson.practiceProblems,
-            },
-          };
-        }) as unknown as Lesson[];
-        break;
-      }
-      default:
-        logger.warn(`Unknown course: ${courseId}, defaulting to CPA`);
-        const { getAllLessons: getCpaLessons } = await import('../data/cpa/lessons');
-        lessons = getCpaLessons();
-    }
-    
-    // Cache the lessons
+    const courseData = await loadCourseData(courseId);
+    const lessons = courseData.lessons as Lesson[];
+
     lessonsCacheByCore.set(courseId, lessons);
     return lessons;
   } catch (error) {
@@ -160,7 +94,8 @@ export async function fetchLessonById(lessonId: string, courseId?: CourseId): Pr
     }
     
     // Search all courses if not found or no courseId provided
-    const allCourses: CourseId[] = ['cpa', 'cma', 'ea', 'cia', 'cisa', 'cfp'];
+    const { COURSES } = await import('../courses');
+    const allCourses = Object.keys(COURSES) as CourseId[];
     for (const course of allCourses) {
       if (course === courseId) continue; // Already searched
       const lessons = await loadLessonsForCourse(course);

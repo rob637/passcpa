@@ -16,12 +16,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'System development life cycle (SDLC) phase gates ensure:',
     options: [
-      'Faster development',
       'Proper review and approval before proceeding to next phase',
+      'Faster development',
       'Reduced documentation',
-      'Developer autonomy'
+      'Developer autonomy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Phase gates ensure proper review, approval, and quality verification before proceeding.',
     topic: 'SDLC',
     subtopic: 'Phase Gates'
@@ -35,12 +35,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Requirements traceability matrix (RTM) links:',
     options: [
-      'Only code to tests',
       'Requirements to design, code, and test cases',
+      'Only code to tests',
       'Only documents',
-      'Only team members'
+      'Only team members',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'RTM traces requirements through design, implementation, and testing for completeness verification.',
     topic: 'Requirements',
     subtopic: 'Traceability'
@@ -54,10 +54,10 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Prototyping benefits include:',
     options: [
-      'Replacing requirements',
-      'Early visualization and user feedback before full development',
       'Avoiding user involvement',
-      'Reducing testing'
+      'Early visualization and user feedback before full development',
+      'Replacing requirements',
+      'Reducing testing',
     ],
     correctAnswer: 1,
     explanation: 'Prototyping enables early visualization and user feedback to refine requirements before full development.',
@@ -73,10 +73,10 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Proof of concept (POC) differs from prototype by:',
     options: [
-      'Being more detailed',
-      'Focusing on technical feasibility rather than user interface',
       'Having full functionality',
-      'Being production-ready'
+      'Focusing on technical feasibility rather than user interface',
+      'Being more detailed',
+      'Being production-ready',
     ],
     correctAnswer: 1,
     explanation: 'POC validates technical feasibility while prototypes focus on user interface and experience.',
@@ -92,12 +92,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'User story format typically includes:',
     options: [
+      'Only acceptance criteria',
       'Technical specifications only',
       'Who (role), what (functionality), and why (benefit)',
-      'Only acceptance criteria',
-      'Only priority'
+      'Only priority',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'User stories follow "As a [role], I want [functionality] so that [benefit]" format.',
     topic: 'Agile',
     subtopic: 'User Stories'
@@ -111,12 +111,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Definition of Done (DoD) ensures:',
     options: [
+      'Fast delivery only',
       'Code compilation only',
       'Consistent quality criteria for completed work',
-      'Fast delivery only',
-      'Developer discretion'
+      'Developer discretion',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DoD defines consistent quality criteria that must be met before work is considered complete.',
     topic: 'Agile',
     subtopic: 'Definition of Done'
@@ -131,11 +131,11 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     question: 'Technical spikes in Agile are used to:',
     options: [
       'Add features',
-      'Research and reduce technical uncertainty',
       'Fix bugs',
-      'Skip planning'
+      'Research and reduce technical uncertainty',
+      'Skip planning',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Spikes are time-boxed research activities to reduce technical uncertainty before committing to implementation.',
     topic: 'Agile',
     subtopic: 'Spikes'
@@ -149,12 +149,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Code branching strategies support:',
     options: [
+      'Avoiding version control',
       'Only backup',
       'Parallel development and controlled integration',
-      'Avoiding version control',
-      'Unlimited changes'
+      'Unlimited changes',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Branching strategies enable parallel development while controlling how changes are integrated.',
     topic: 'Version Control',
     subtopic: 'Branching'
@@ -168,12 +168,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Trunk-based development emphasizes:',
     options: [
+      'No branching',
       'Long-lived branches',
       'Frequent integration to main branch with short-lived branches',
-      'No branching',
-      'Monthly merges'
+      'Monthly merges',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Trunk-based development emphasizes frequent integration to main branch with short-lived feature branches.',
     topic: 'Version Control',
     subtopic: 'Trunk-Based'
@@ -225,12 +225,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Output encoding prevents:',
     options: [
-      'Performance issues',
       'Injection attacks by ensuring data is treated as data not code',
       'Authentication bypass',
-      'Network vulnerabilities'
+      'Performance issues',
+      'Network vulnerabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Output encoding prevents injection by ensuring user-provided data is treated as data, not executable code.',
     topic: 'Secure Development',
     subtopic: 'Output Encoding'
@@ -244,12 +244,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Parameterized queries prevent:',
     options: [
-      'All attacks',
       'SQL injection by separating code from data',
       'XSS attacks only',
-      'Authentication attacks'
+      'All attacks',
+      'Authentication attacks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Parameterized queries prevent SQL injection by treating user input as data, never as executable SQL.',
     topic: 'Secure Development',
     subtopic: 'SQL Injection Prevention'
@@ -263,10 +263,10 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Error handling should avoid:',
     options: [
-      'Logging errors',
-      'Exposing sensitive information in error messages',
       'Catching exceptions',
-      'User notification'
+      'Exposing sensitive information in error messages',
+      'Logging errors',
+      'User notification',
     ],
     correctAnswer: 1,
     explanation: 'Error handling should avoid exposing sensitive information like stack traces or database details to users.',
@@ -283,11 +283,11 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     question: 'Session management controls should include:',
     options: [
       'Only login',
-      'Secure generation, timeout, and proper invalidation',
       'Only cookies',
-      'Only encryption'
+      'Secure generation, timeout, and proper invalidation',
+      'Only encryption',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Session management requires secure generation, appropriate timeout, and proper invalidation on logout.',
     topic: 'Secure Development',
     subtopic: 'Session Management'
@@ -301,12 +301,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'CSRF (Cross-Site Request Forgery) is prevented by:',
     options: [
+      'Encryption only',
       'Input validation only',
       'Implementing anti-CSRF tokens and SameSite cookie attributes',
-      'Encryption only',
-      'Strong passwords'
+      'Strong passwords',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CSRF prevention requires anti-CSRF tokens validating request origin and SameSite cookie attributes.',
     topic: 'Secure Development',
     subtopic: 'CSRF'
@@ -320,12 +320,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Dependency scanning in CI/CD:',
     options: [
-      'Only checks syntax',
       'Identifies known vulnerabilities in third-party libraries',
+      'Only checks syntax',
       'Replaces code review',
-      'Only checks performance'
+      'Only checks performance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Dependency scanning identifies known vulnerabilities in third-party libraries and components.',
     topic: 'Secure Development',
     subtopic: 'Dependency Scanning'
@@ -340,11 +340,11 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     question: 'License compliance scanning ensures:',
     options: [
       'Only security',
-      'Open source components comply with license requirements',
       'Only performance',
-      'Only quality'
+      'Open source components comply with license requirements',
+      'Only quality',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'License scanning ensures open source component usage complies with license terms and restrictions.',
     topic: 'Software Composition',
     subtopic: 'License Compliance'
@@ -377,12 +377,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Container image scanning should check for:',
     options: [
-      'Only size',
       'Vulnerabilities, malware, and compliance with security policies',
+      'Only size',
       'Only base image',
-      'Only configuration'
+      'Only configuration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Container scanning should check for vulnerabilities, malware, secrets, and policy compliance.',
     topic: 'DevSecOps',
     subtopic: 'Container Security'
@@ -396,12 +396,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Signed container images ensure:',
     options: [
-      'Performance',
       'Image integrity and authenticity verification',
+      'Performance',
       'Only storage',
-      'Only compatibility'
+      'Only compatibility',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Image signing enables verification of image integrity and authenticity before deployment.',
     topic: 'DevSecOps',
     subtopic: 'Image Signing'
@@ -415,10 +415,10 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security champions in development teams:',
     options: [
-      'Replace security team',
-      'Promote security awareness and practices within their teams',
       'Only perform testing',
-      'Only approve releases'
+      'Promote security awareness and practices within their teams',
+      'Replace security team',
+      'Only approve releases',
     ],
     correctAnswer: 1,
     explanation: 'Security champions promote security awareness and practices within development teams as local advocates.',
@@ -434,10 +434,10 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Smoke testing verifies:',
     options: [
-      'All functionality',
-      'Basic functionality works after deployment',
       'Performance only',
-      'Security only'
+      'Basic functionality works after deployment',
+      'All functionality',
+      'Security only',
     ],
     correctAnswer: 1,
     explanation: 'Smoke testing verifies basic functionality works before proceeding with more extensive testing.',
@@ -453,12 +453,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Regression testing ensures:',
     options: [
+      'Only performance',
       'New features work',
       'Changes do not break existing functionality',
-      'Only performance',
-      'Only security'
+      'Only security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Regression testing verifies that changes have not broken existing functionality.',
     topic: 'Testing',
     subtopic: 'Regression'
@@ -473,11 +473,11 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     question: 'Test environment management should ensure:',
     options: [
       'Identical to production always',
-      'Representative configurations with appropriate data protection',
       'Minimal resources',
-      'No access controls'
+      'Representative configurations with appropriate data protection',
+      'No access controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Test environments should be representative of production with appropriate data protection controls.',
     topic: 'Testing',
     subtopic: 'Test Environment'
@@ -510,12 +510,12 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Production support transition requires:',
     options: [
-      'Only documentation',
       'Knowledge transfer, documentation, and operational readiness',
+      'Only documentation',
       'Only training',
-      'Only access'
+      'Only access',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Transition requires knowledge transfer, documentation, operational procedures, and support readiness.',
     topic: 'Implementation',
     subtopic: 'Support Transition'

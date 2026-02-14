@@ -1080,6 +1080,7 @@ const TBSSimulator: React.FC = () => {
                       <button
                         key={task.id}
                         onClick={() => setCurrentTaskIndex(index)}
+                        data-testid={`tbs-task-tab-${index}`}
                         className={clsx(
                           'flex items-center gap-2 px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium border-b-2 transition-colors whitespace-nowrap flex-shrink-0',
                           isActive
@@ -1294,6 +1295,7 @@ const TBSSimulator: React.FC = () => {
                         rightIcon={submitted ? CheckCircle : Send}
                         onClick={handleSubmit}
                         disabled={submitted}
+                        data-testid="tbs-submit"
                         className={submitted ? 'bg-green-600 cursor-default' : ''}
                       >
                         {submitted ? 'Submitted' : 'Submit All'}

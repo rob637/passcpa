@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Section 338 election allows a qualified stock purchase to be treated as:',
     options: [
-      'A tax-free reorganization',
       'An asset acquisition with stepped-up basis',
+      'A tax-free reorganization',
+      'A partnership formation',
       'A Section 351 transfer',
-      'A partnership formation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A §338 election treats a qualified stock purchase (80%+ acquisition within 12 months) as if target sold its assets, allowing a stepped-up basis in assets. Target recognizes gain on deemed sale.',
     reference: 'IRC §338',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Section 338(h)(10) election differs from a regular 338 election because:',
     options: [
-      'It is irrevocable',
       'Both buyer and seller must jointly elect, and only target recognizes gain',
+      'It is irrevocable',
+      'No step-up is available',
       'Only buyer makes the election',
-      'No step-up is available'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A §338(h)(10) election requires a joint election. Old target is treated as selling assets to new target and immediately liquidating. Only one level of tax applies (no shareholder-level gain).',
     reference: 'IRC §338(h)(10); Treas. Reg. §1.338(h)(10)',
   },
@@ -60,10 +60,10 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Application',
     question: 'Section 382 limits the use of NOLs after an ownership change to:',
     options: [
-      'Zero - NOLs are completely eliminated',
+      'Only NOLs generated in the past 3 years',
       'The value of the loss corporation times the long-term tax-exempt rate',
+      'Zero - NOLs are completely eliminated',
       'The greater of $1 million or 10% of NOLs',
-      'Only NOLs generated in the past 3 years'
     ],
     correctAnswer: 1,
     explanation: 'After >50% ownership change, §382 limits annual NOL usage to the §382 limitation: target FMV × long-term tax-exempt rate (published monthly by IRS). Excess carries forward.',
@@ -80,10 +80,10 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §332, a parent receiving property in liquidation of an 80%-owned subsidiary:',
     options: [
-      'Recognizes gain on all property received',
+      'Must use fair market value for all assets',
       'Recognizes no gain or loss',
+      'Recognizes gain on all property received',
       'Recognizes loss only',
-      'Must use fair market value for all assets'
     ],
     correctAnswer: 1,
     explanation: 'Under §332, a parent recognizing an 80%-owned subsidiary generally recognizes no gain or loss. The parent takes a carryover basis and succeeds to tax attributes under §334(b)(1) and §381.',
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Application',
     question: 'When an 80%-owned subsidiary liquidates, the minority (20%) shareholders:',
     options: [
+      'Convert their stock to parent stock tax-free',
       'Also receive nonrecognition treatment',
       'Recognize gain or loss under regular §331 rules',
       'Must defer their gain until the parent sells assets',
-      'Convert their stock to parent stock tax-free'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Minority shareholders not meeting the 80% control test are treated as receiving a liquidating distribution under §331, recognizing capital gain or loss equal to FMV received minus stock basis.',
     reference: 'IRC §331',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In a forward triangular merger:',
     options: [
+      'No stock is exchanged',
       'The parent merges into target',
       'Target merges into parent\'s subsidiary, with parent stock used as consideration',
       'The subsidiary merges into target',
-      'No stock is exchanged'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'In a forward triangular merger (Type A variant), target merges into acquiring subsidiary, with target shareholders receiving parent stock. Target disappears; subsidiary survives with target assets.',
     reference: 'IRC §368(a)(2)(D)',
   },
@@ -141,9 +141,9 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     question: 'In a reverse triangular merger:',
     options: [
       'Target survives after acquiring subsidiary merges into it',
+      'Target becomes unrelated to acquiring corporation',
       'Target disappears',
       'Parent disappears',
-      'Target becomes unrelated to acquiring corporation'
     ],
     correctAnswer: 0,
     explanation: 'In a reverse triangular merger under §368(a)(2)(E), the subsidiary merges into target, with target surviving as a subsidiary of the parent. Target shareholders receive parent stock.',
@@ -162,8 +162,8 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     options: [
       'Always treated separately',
       'Collapsed and tested as a single transaction for tax purposes',
+      'Accelerated into the current year',
       'Ignored for tax purposes',
-      'Accelerated into the current year'
     ],
     correctAnswer: 1,
     explanation: 'The step transaction doctrine may collapse multiple related steps into one transaction, potentially disqualifying what appears to be a tax-free reorganization if prearranged to result in a taxable disposition.',
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Type E reorganization (recapitalization) involves:',
     options: [
-      'Merger with another corporation',
       'An internal restructuring of a corporation\'s capital structure',
+      'Merger with another corporation',
+      'Liquidation of the corporation',
       'Acquisition of another company\'s assets',
-      'Liquidation of the corporation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A Type E reorganization is a single-corporation internal restructuring including exchange of stock for stock, bonds for stock, or stock for bonds within the same corporation.',
     reference: 'IRC §368(a)(1)(E)',
   },
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH33: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Type F reorganization is primarily:',
     options: [
-      'A merger between competing corporations',
       'A mere change in form, identity, or place of organization',
+      'A merger between competing corporations',
+      'A divisive reorganization',
       'An acquisition of substantially all assets',
-      'A divisive reorganization'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A Type F reorganization under §368(a)(1)(F) involves a mere change in identity, form, or place of organization of one corporation (e.g., reincorporating in a different state).',
     reference: 'IRC §368(a)(1)(F)',
   },

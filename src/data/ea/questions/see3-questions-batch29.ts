@@ -20,12 +20,12 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Preparer due diligence requirements under IRC §6695(g) apply to:',
     options: [
-      'All deductions',
       'EITC, CTC/ACTC/ODC, AOTC, and Head of Household filing status',
+      'All deductions',
       'Only EITC',
-      'Itemized deductions only'
+      'Itemized deductions only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The due diligence requirements apply to (1) Earned Income Tax Credit, (2) Child Tax Credit/Additional CTC/Other Dependent Credit, (3) American Opportunity Tax Credit, and (4) Head of Household filing status.',
     reference: 'IRC §6695(g)',
   },
@@ -60,10 +60,10 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The four due diligence requirements for preparers include:',
     options: [
-      'Only completing Form 8867',
-      'Knowledge, computation worksheet, reasonable inquiry, and record retention',
       'Only document signing',
-      'Only identity verification'
+      'Knowledge, computation worksheet, reasonable inquiry, and record retention',
+      'Only completing Form 8867',
+      'Only identity verification',
     ],
     correctAnswer: 1,
     explanation: 'The four requirements are: (1) Complete Form 8867, (2) Complete applicable worksheets, (3) Make reasonable inquiries to determine eligibility, and (4) Retain records for 3 years.',
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The due diligence "knowledge" requirement means a preparer:',
     options: [
-      'Must know tax law perfectly',
       'Cannot ignore information that affects eligibility and must not know or have reason to know information is incorrect',
       'Only needs to ask if the taxpayer qualifies',
-      'Is responsible only if they have actual knowledge of fraud'
+      'Must know tax law perfectly',
+      'Is responsible only if they have actual knowledge of fraud',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Preparers cannot ignore implications of information furnished, must not know or have reason to know that information is incorrect or incomplete, and must make reasonable inquiries when warranted.',
     reference: 'Treas. Reg. §1.6695-2(b)(3)',
   },
@@ -100,12 +100,12 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Due diligence documentation must be retained for:',
     options: [
-      '1 year',
       '3 years from the later of the return due date or filing date',
       '7 years',
-      'Only until the refund is issued'
+      '1 year',
+      'Only until the refund is issued',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Preparers must retain records including Form 8867, worksheets, and documentation of inquiries for 3 years from the later of the return due date (with extensions) or the date filed.',
     reference: 'Treas. Reg. §1.6695-2(b)(4)',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The due diligence penalty for each failure is:',
     options: [
+      '$50 per failure',
       '$100 per return',
       '$560 (for 2024) per failure for each credit/HOH status claimed',
-      '$50 per failure',
-      '$1,000 per return'
+      '$1,000 per return',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The penalty is $560 (2024 indexed amount) per failure for each credit or HOH status on a return. A return claiming all four items could face up to $2,240 in penalties.',
     reference: 'IRC §6695(g)',
   },
@@ -141,11 +141,11 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     question: 'If a taxpayer\'s information seems inconsistent (e.g., claiming three children but only one W-2 dependent):',
     options: [
       'The preparer should file as presented',
-      'The preparer must make additional inquiries and document the responses',
       'The preparer should refuse the client',
-      'No additional action is needed'
+      'The preparer must make additional inquiries and document the responses',
+      'No additional action is needed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'When information appears incorrect, inconsistent, or incomplete, the preparer must make additional inquiries, document the questions and responses, and not rely on the taxpayer\'s word alone.',
     reference: 'Treas. Reg. §1.6695-2(b)(3)',
   },
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A supervising preparer or firm:',
     options: [
-      'Has no responsibility for employees\' due diligence',
       'May be subject to penalties if they fail to ensure compliance with due diligence requirements',
+      'Has no responsibility for employees\' due diligence',
       'Is only liable for signing returns',
-      'Cannot be penalized'
+      'Cannot be penalized',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Employers and supervising preparers have responsibility for ensuring that due diligence requirements are met. Penalties can apply to individuals who fail to comply and to those who fail to ensure compliance.',
     reference: 'IRC §6695(g)',
   },

@@ -20,13 +20,32 @@ const messaging = admin.messaging();
 // ============================================================================
 // STRIPE CONFIGURATION
 // ============================================================================
-const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
-const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY?.trim();
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET?.trim();
 // Publishable key is not secret but varies per environment (test vs live)
 const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_51SzK1cQ9jgQM2iI4Iy1B5iRE5mi17YHRIS1R24vJRX9Cyrvc8W1Q0fjpJMFAfI1DSO3OziMXWFjQ8umbQZhxvFK300AKFvcEJb';
 
 // Base URL for redirects — defaults to production, override via env for dev/staging
 const APP_BASE_URL = process.env.APP_BASE_URL || 'https://voraprep.com';
+
+// Allowed origins for Stripe redirect URLs (prevents open redirect)
+const ALLOWED_ORIGINS = [
+  'https://voraprep.com',
+  'https://www.voraprep.com',
+  'https://passcpa-dev.web.app',
+  'https://passcpa-dev.firebaseapp.com',
+  'https://voraprep-staging.web.app',
+  'https://voraprep-staging.firebaseapp.com',
+  'http://localhost:5173',
+  'http://localhost:3000',
+];
+
+function getBaseUrl(clientOrigin) {
+  if (clientOrigin && ALLOWED_ORIGINS.includes(clientOrigin)) {
+    return clientOrigin;
+  }
+  return APP_BASE_URL;
+}
 
 let stripe = null;
 if (STRIPE_SECRET_KEY) {
@@ -129,7 +148,7 @@ function getCourseConfig(courseId) {
 // Email configuration using Resend (3,000 free emails/month)
 // Set via: firebase functions:secrets:set RESEND_API_KEY
 // Get API key from: https://resend.com/api-keys
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim();
 const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
 // Email to receive admin notifications (e.g. new signups)
 const ADMIN_EMAIL = 'rob@sagecg.com';
@@ -146,8 +165,8 @@ if (RESEND_API_KEY) {
 
 exports.sendCustomPasswordReset = onCall({
   cors: true,
-  invoker: 'public', // Required for Gen 2 callable functions
-  enforceAppCheck: false, // Not requiring app check for password reset
+  invoker: 'public',
+  enforceAppCheck: false,
   secrets: ['RESEND_API_KEY'],
 }, async (request) => {
   const { email } = request.data;
@@ -1160,8 +1179,8 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
         You now have access to <strong>all premium features</strong>:
       </div>
       <ul style="margin: 15px 0 0 0; padding-left: 20px;">
-        <li>2,500+ practice questions</li>
-        <li>300+ lessons</li>
+        <li>14,400+ practice questions</li>
+        <li>1,100+ lessons</li>
         <li>AI Tutor assistance</li>
         <li>Exam simulator</li>
         <li>Progress analytics</li>
@@ -1329,7 +1348,7 @@ function generateWaitlistEmail(email) {
 
 exports.createCheckoutSession = onCall({
   cors: true,
-  invoker: 'public', // Required for Gen 2 callable functions - auth handled via request.auth
+  invoker: 'public',
   enforceAppCheck: false,
   secrets: ['STRIPE_SECRET_KEY'],
 }, async (request) => {
@@ -1338,7 +1357,8 @@ exports.createCheckoutSession = onCall({
     throw new HttpsError('unauthenticated', 'You must be logged in to subscribe.');
   }
 
-  const { courseId, interval } = request.data; // courseId: 'cpa', interval: 'annual' or 'monthly'
+  const { courseId, interval, origin } = request.data; // courseId: 'cpa', interval: 'annual' or 'monthly'
+  const baseUrl = getBaseUrl(origin);
   const userId = request.auth.uid;
   const userEmail = request.auth.token.email;
 
@@ -1411,8 +1431,8 @@ exports.createCheckoutSession = onCall({
           quantity: 1,
         },
       ],
-      success_url: `${APP_BASE_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${APP_BASE_URL}/pricing`,
+      success_url: `${baseUrl}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/pricing`,
       subscription_data: {
         metadata: {
           firebaseUserId: userId,
@@ -1502,6 +1522,12 @@ exports.stripeWebhook = onRequest({
         await handlePaymentFailed(invoice);
         break;
       }
+
+      case 'invoice.paid': {
+        const invoice = event.data.object;
+        await handleInvoicePaid(invoice);
+        break;
+      }
       
       default:
         console.log(`Unhandled event type: ${event.type}`);
@@ -1576,35 +1602,59 @@ async function handleSubscriptionUpdate(subscription) {
 }
 
 // Update user's subscription in Firestore
+// Supports multi-exam: writes to paidExams map AND legacy flat fields
 async function updateUserSubscription(userId, subscription, courseId) {
   const status = subscription.status; // 'active', 'past_due', 'canceled', 'trialing'
   const isFounder = subscription.metadata?.isFounder === 'true';
+  const examId = courseId || subscription.metadata?.courseId || 'cpa';
+  const interval = subscription.items.data[0]?.price.recurring?.interval;
+  const tier = interval === 'year' ? 'annual' : 'monthly';
   
   const subscriptionData = {
     stripeSubscriptionId: subscription.id,
     stripeCustomerId: subscription.customer,
     status: status,
-    courseId: courseId || subscription.metadata?.courseId,
+    courseId: examId,
     isFounder: isFounder,
     currentPeriodStart: new Date(subscription.current_period_start * 1000),
     currentPeriodEnd: new Date(subscription.current_period_end * 1000),
     cancelAtPeriodEnd: subscription.cancel_at_period_end,
     priceId: subscription.items.data[0]?.price.id,
-    interval: subscription.items.data[0]?.price.recurring?.interval,
+    interval: interval,
     updatedAt: admin.firestore.FieldValue.serverTimestamp(),
   };
 
-  // Store in subscriptions collection
-  await db.collection('subscriptions').doc(userId).set(subscriptionData, { merge: true });
+  // Write to paidExams map (supports multiple exams per user)
+  const paidExamData = {
+    stripeSubscriptionId: subscription.id,
+    status: status,
+    tier: tier,
+    currentPeriodStart: new Date(subscription.current_period_start * 1000),
+    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+    cancelAtPeriodEnd: subscription.cancel_at_period_end,
+    isFounder: isFounder,
+  };
 
-  // Also update the tier in the subscription doc
+  // Merge: preserves other exam subscriptions and trials
+  // Use set+merge for top-level fields, then update() for nested paidExams path
+  // (update() correctly interprets dot-notation as nested field paths)
+  await db.collection('subscriptions').doc(userId).set({
+    ...subscriptionData,
+  }, { merge: true });
+
+  // Write to paidExams map using update() which handles dot-notation as nested paths
+  await db.collection('subscriptions').doc(userId).update({
+    [`paidExams.${examId}`]: paidExamData,
+  });
+
+  // Update tier on root level for legacy compat
   if (status === 'active' || status === 'trialing') {
     await db.collection('subscriptions').doc(userId).update({
-      tier: subscriptionData.interval === 'year' ? 'annual' : 'monthly',
+      tier: tier,
     });
   }
 
-  console.log(`Updated subscription for user ${userId}: ${status}`);
+  console.log(`Updated subscription for user ${userId}, exam ${examId}: ${status}`);
 }
 
 // Handle subscription canceled
@@ -1623,7 +1673,9 @@ async function handleSubscriptionCanceled(subscription) {
   }
   
   const userId = usersSnapshot.docs[0].id;
+  const courseId = subscription.metadata?.courseId;
   
+  // Update legacy fields
   await db.collection('subscriptions').doc(userId).update({
     status: 'canceled',
     tier: 'free',
@@ -1631,7 +1683,14 @@ async function handleSubscriptionCanceled(subscription) {
     updatedAt: admin.firestore.FieldValue.serverTimestamp(),
   });
 
-  console.log(`Subscription canceled for user ${userId}`);
+  // Also update paidExams map if we know which exam
+  if (courseId) {
+    await db.collection('subscriptions').doc(userId).update({
+      [`paidExams.${courseId}.status`]: 'canceled',
+    });
+  }
+
+  console.log(`Subscription canceled for user ${userId}, exam ${courseId || 'unknown'}`);
 }
 
 // Handle payment failure
@@ -1676,6 +1735,41 @@ async function handlePaymentFailed(invoice) {
   console.log(`Payment failed for user ${userId}`);
 }
 
+// Handle successful invoice payment (renewals, initial payments)
+async function handleInvoicePaid(invoice) {
+  const customerId = invoice.customer;
+  const subscriptionId = invoice.subscription;
+
+  // Skip if not a subscription invoice
+  if (!subscriptionId) {
+    console.log('Invoice paid but no subscription attached, skipping');
+    return;
+  }
+
+  // Find user by customer ID
+  const usersSnapshot = await db.collection('users')
+    .where('stripeCustomerId', '==', customerId)
+    .limit(1)
+    .get();
+
+  if (usersSnapshot.empty) {
+    console.log('No user found for paid invoice, subscription.updated will handle it');
+    return;
+  }
+
+  const userId = usersSnapshot.docs[0].id;
+
+  // Ensure status is active and clear any past_due state
+  // (customer.subscription.updated also does this, but invoice.paid
+  //  is the canonical payment confirmation)
+  await db.collection('subscriptions').doc(userId).update({
+    status: 'active',
+    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  console.log(`Invoice paid for user ${userId}, subscription ${subscriptionId}, amount: ${invoice.amount_paid / 100}`);
+}
+
 // ============================================================================
 // STRIPE: CUSTOMER PORTAL SESSION
 // Allows users to manage their subscription (cancel, update payment, etc.)
@@ -1683,7 +1777,7 @@ async function handlePaymentFailed(invoice) {
 
 exports.createCustomerPortalSession = onCall({
   cors: true,
-  invoker: 'public', // Required for Gen 2 callable functions - auth handled via request.auth
+  invoker: 'public',
   enforceAppCheck: false,
   secrets: ['STRIPE_SECRET_KEY'],
 }, async (request) => {
@@ -1696,6 +1790,7 @@ exports.createCustomerPortalSession = onCall({
   }
 
   const userId = request.auth.uid;
+  const { returnUrl } = request.data || {};
 
   try {
     const userDoc = await db.collection('users').doc(userId).get();
@@ -1705,9 +1800,20 @@ exports.createCustomerPortalSession = onCall({
       throw new HttpsError('not-found', 'No subscription found');
     }
 
+    // Use client-provided returnUrl origin if allowed, otherwise default
+    let portalReturnUrl = `${APP_BASE_URL}/settings`;
+    if (returnUrl) {
+      try {
+        const parsedOrigin = new URL(returnUrl).origin;
+        if (ALLOWED_ORIGINS.includes(parsedOrigin)) {
+          portalReturnUrl = returnUrl;
+        }
+      } catch (_) { /* invalid URL, use default */ }
+    }
+
     const session = await stripe.billingPortal.sessions.create({
       customer: stripeCustomerId,
-      return_url: `${APP_BASE_URL}/settings`,
+      return_url: portalReturnUrl,
     });
 
     return { url: session.url };

@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An Offer in Compromise may be submitted based on:',
     options: [
-      'Financial hardship only',
+      'Any reason the taxpayer chooses',
       'Doubt as to collectibility, doubt as to liability, or effective tax administration',
+      'Financial hardship only',
       'Only doubt as to collectibility',
-      'Any reason the taxpayer chooses'
     ],
     correctAnswer: 1,
     explanation: 'OICs may be based on: (1) doubt as to liability (legitimate dispute about tax owed), (2) doubt as to collectibility (cannot pay full amount), or (3) effective tax administration (collection would cause hardship/unfair).',
@@ -40,10 +40,10 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 656 is used to:',
     options: [
-      'Request an extension to file',
+      'File an appeal',
       'Submit an Offer in Compromise',
+      'Request an extension to file',
       'Request penalty abatement',
-      'File an appeal'
     ],
     correctAnswer: 1,
     explanation: 'Form 656 (Offer in Compromise) is the primary form for submitting an OIC based on doubt as to collectibility or effective tax administration. Form 656-L is used for doubt as to liability.',
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The OIC application fee is:',
     options: [
-      'Waived for all taxpayers',
       '$205, plus 20% of the offer amount (or first monthly payment for periodic offers)',
+      '10% of the total tax liability',
+      'Waived for all taxpayers',
       '$500 flat fee',
-      '10% of the total tax liability'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The OIC fee is $205 plus 20% of offer (lump sum) or first monthly payment (periodic). Low-income taxpayers (at/below 250% of poverty guidelines) are exempt from fee and initial payment.',
     reference: 'IRS Form 656 Instructions',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The IRS determines an acceptable OIC amount based on:',
     options: [
+      'Prior tax payments',
       'What the taxpayer offers to pay',
       'Reasonable Collection Potential (RCP) - equity in assets plus future income',
       'A percentage of total liability',
-      'Prior tax payments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'RCP = equity in assets (quick sale value minus encumbrances) + future income (based on remaining CSED). The offer must generally equal or exceed RCP for acceptance.',
     reference: 'IRM 5.8.5',
   },
@@ -101,11 +101,11 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     question: 'OIC payment options include:',
     options: [
       'Only lump sum',
+      'Only monthly payments',
       'Lump sum (paid within 5 months) or periodic payment (paid within 24 months)',
       'Any payment over any time period',
-      'Only monthly payments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Lump Sum Cash offers require 20% with application and balance within 5 months of acceptance. Periodic Payment offers require first payment with application and remaining payments within 6-24 months.',
     reference: 'IRC §7122(c)',
   },
@@ -121,11 +121,11 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     question: 'After an OIC is accepted, the taxpayer must remain in filing and payment compliance for:',
     options: [
       '3 years',
+      'No compliance period required',
       '5 years from acceptance',
       '10 years',
-      'No compliance period required'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Accepted OIC terms require 5 years of tax compliance (file all returns, pay all taxes). Noncompliance during this period can reinstate the original liability minus payments made.',
     reference: 'IRC §7122(c)(1)',
   },
@@ -142,8 +142,8 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     options: [
       'Refunds are issued normally',
       'The IRS will apply refunds to the tax liability covered by the OIC',
+      'Refunds are doubled',
       'Refunds are placed in escrow',
-      'Refunds are doubled'
     ],
     correctAnswer: 1,
     explanation: 'Any refunds due during OIC consideration and for the tax year of acceptance are applied to the tax liability. Taxpayers should adjust withholding to avoid generating refunds.',
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If an OIC is rejected, the taxpayer may:',
     options: [
-      'Only file in Tax Court',
       'Request an appeal to the IRS Office of Appeals within 30 days',
+      'Only file in Tax Court',
+      'Not appeal - rejection is final',
       'Sue in District Court immediately',
-      'Not appeal - rejection is final'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Taxpayers may appeal an OIC rejection to the IRS Office of Appeals within 30 days of the rejection letter. This is an administrative appeal, not a court action.',
     reference: 'IRM 5.8.9.4',
   },
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'During OIC consideration:',
     options: [
-      'The CSED continues to run',
       'The collection statute is suspended plus 30 additional days',
+      'Only interest is suspended',
+      'The CSED continues to run',
       'The statute expires immediately',
-      'Only interest is suspended'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The 10-year Collection Statute Expiration Date (CSED) is suspended while an OIC is pending, plus 30 days after rejection or withdrawal. This prevents using OICs to run out the clock.',
     reference: 'IRC §6331(k)',
   },
@@ -202,8 +202,8 @@ export const SEE3_QUESTIONS_BATCH14: Question[] = [
     options: [
       'The OIC is automatically rejected',
       'The OIC is deemed accepted',
+      'The OIC is transferred to Appeals',
       'The taxpayer must resubmit',
-      'The OIC is transferred to Appeals'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §7122(f), if the IRS fails to make a determination within 24 months, the OIC is deemed accepted. The 24 months excludes any periods the OIC is returned to taxpayer.',

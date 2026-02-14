@@ -23,12 +23,12 @@ export const CFP_TAX_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: `A client's spouse died in January 2025. They have a dependent child. For tax year 2026, what is the most favorable filing status available?`,
     options: [
-      'A) Single',
-      'B) Married Filing Jointly',
       'C) Qualifying Surviving Spouse',
-      'D) Head of Household'
+      'B) Married Filing Jointly',
+      'D) Head of Household',
+      'A) Single',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (Qualifying Surviving Spouse)**
 
 **Qualifying Surviving Spouse Status:**
@@ -55,12 +55,12 @@ Timeline: Spouse died 2025, so 2026 and 2027 qualify for QSS status.
     skillLevel: 'Application',
     question: `A single taxpayer has taxable income of $95,000 in 2026. Their tax liability is $15,200. What is their approximate effective tax rate?`,
     options: [
-      'A) 16.0%',
-      'B) 22.0%',
       'C) 24.0%',
-      'D) 12.0%'
+      'B) 22.0%',
+      'D) 12.0%',
+      'A) 16.0%',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: `**Correct Answer: A (16.0%)**
 
 **Effective Tax Rate Calculation:**
@@ -85,12 +85,12 @@ The effective rate is lower than the marginal rate (22% bracket) because lower b
     skillLevel: 'Remembering and Understanding',
     question: `A taxpayer in the 24% bracket receives a $2,000 tax credit. What is the tax savings compared to a $2,000 tax deduction?`,
     options: [
-      'A) Same tax savings for both',
-      'B) Credit saves $2,000; deduction saves $480',
       'C) Credit saves $480; deduction saves $2,000',
-      'D) Credit saves $1,520; deduction saves $480'
+      'D) Credit saves $1,520; deduction saves $480',
+      'B) Credit saves $2,000; deduction saves $480',
+      'A) Same tax savings for both',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Credit: $2,000; Deduction: $480)**
 
 **Tax Credits:** Dollar-for-dollar reduction in tax liability
@@ -115,12 +115,12 @@ Credits are more valuable than deductions of the same dollar amount.
     skillLevel: 'Remembering and Understanding',
     question: `Which item is an AMT preference item or adjustment that increases Alternative Minimum Taxable Income (AMTI)?`,
     options: [
-      'A) Charitable contributions',
-      'B) Private activity bond interest',
       'C) Mortgage interest on primary residence',
-      'D) State income taxes paid'
+      'D) State income taxes paid',
+      'B) Private activity bond interest',
+      'A) Charitable contributions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Private activity bond interest)**
 
 **AMT Preference Items/Adjustments:**
@@ -145,10 +145,10 @@ Credits are more valuable than deductions of the same dollar amount.
     skillLevel: 'Application',
     question: `In 2026, what is the standard deduction for a married couple filing jointly where both spouses are over age 65?`,
     options: [
-      'A) $30,750',
+      'D) $35,000',
       'B) $32,250',
       'C) $33,750',
-      'D) $35,000'
+      'A) $30,750',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C ($33,750)**
@@ -179,10 +179,10 @@ Each spouse over 65 adds an extra deduction amount.
     skillLevel: 'Application',
     question: `A taxpayer in the 32% ordinary income bracket sells stock held for 15 months with a $20,000 gain. What is the tax on this gain?`,
     options: [
-      'A) $6,400',
+      'D) $2,400',
       'B) $3,000',
       'C) $4,000',
-      'D) $2,400'
+      'A) $6,400',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($3,000)**
@@ -212,10 +212,10 @@ Tax = $20,000 × 15% = $3,000
     skillLevel: 'Application',
     question: `A married couple has MAGI of $290,000, including $40,000 of net investment income. What is their Net Investment Income Tax (NIIT)?`,
     options: [
-      'A) $0',
       'B) $1,520',
+      'D) $3,040',
       'C) $1,596',
-      'D) $3,040'
+      'A) $0',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C ($1,596)**
@@ -245,12 +245,12 @@ $40,000 × 3.8% = $1,520 (closest is C at $1,596 accounting for rounding)
     skillLevel: 'Remembering and Understanding',
     question: `Which dividend would NOT qualify for the lower qualified dividend tax rate?`,
     options: [
-      'A) Dividend from a domestic corporation held for 65 days',
       'B) Dividend from an eligible foreign corporation',
       'C) Dividend from a REIT',
-      'D) Dividend from a stock held for 120 days'
+      'D) Dividend from a stock held for 120 days',
+      'A) Dividend from a domestic corporation held for 65 days',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C (Dividend from a REIT)**
 
 **REIT Dividends:**
@@ -278,12 +278,12 @@ $40,000 × 3.8% = $1,520 (closest is C at $1,596 accounting for rounding)
     skillLevel: 'Application',
     question: `A taxpayer with $180,000 AGI has a $15,000 rental property loss. How much can they deduct?`,
     options: [
-      'A) $0',
-      'B) $7,500',
       'C) $15,000',
-      'D) $25,000'
+      'B) $7,500',
+      'D) $25,000',
+      'A) $0',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: `**Correct Answer: A ($0)**
 
 **Passive Activity Loss Rules:**
@@ -307,12 +307,12 @@ At $180,000 AGI, the $25,000 allowance is fully phased out. The $15,000 loss is 
     skillLevel: 'Application',
     question: `A single taxpayer with $140,000 taxable income has $80,000 of qualified business income from a consulting practice (SSTB). What is their tentative QBI deduction before applying any limitations?`,
     options: [
-      'A) $16,000',
-      'B) $0',
       'C) $28,000',
-      'D) $8,000'
+      'B) $0',
+      'D) $8,000',
+      'A) $16,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: `**Correct Answer: A ($16,000)**
 
 **Section 199A QBI Deduction:**
@@ -340,12 +340,12 @@ The 20% deduction is available before phase-out limits apply.
     skillLevel: 'Application',
     question: `A married couple has: mortgage interest $14,000, state income taxes $18,000, property taxes $6,000, and charitable contributions $5,000. What is their total itemized deduction?`,
     options: [
-      'A) $43,000',
       'B) $29,000',
       'C) $33,000',
-      'D) $37,000'
+      'D) $37,000',
+      'A) $43,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($29,000)**
 
 **Itemized Deduction Calculation:**
@@ -373,12 +373,12 @@ The SALT cap limits combined state income and property taxes to $10,000.
     skillLevel: 'Application',
     question: `A taxpayer with AGI of $200,000 donates appreciated stock worth $70,000 (basis $20,000) held for 2 years to a public charity. What is the maximum current-year deduction?`,
     options: [
-      'A) $20,000',
-      'B) $60,000',
       'C) $70,000',
-      'D) $100,000'
+      'D) $100,000',
+      'B) $60,000',
+      'A) $20,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($60,000)**
 
 **Charitable Contribution Limits:**
@@ -408,12 +408,12 @@ The donor still avoids capital gains on the $50,000 appreciation.
     skillLevel: 'Application',
     question: `A taxpayer with AGI of $80,000 has $8,500 in unreimbursed medical expenses. How much can they deduct if they itemize?`,
     options: [
-      'A) $8,500',
-      'B) $2,500',
+      'D) $0',
       'C) $1,400',
-      'D) $0'
+      'B) $2,500',
+      'A) $8,500',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($1,400 - closest approximation)**
 
 **Medical Expense Deduction:**
@@ -440,12 +440,12 @@ Correcting: Answer should be B ($2,500).
     skillLevel: 'Remembering and Understanding',
     question: `A self-employed individual can deduct which of the following "above-the-line"?`,
     options: [
-      'A) Home mortgage interest',
-      'B) Self-employed health insurance premiums',
+      'D) Charitable contributions',
       'C) State income taxes',
-      'D) Charitable contributions'
+      'B) Self-employed health insurance premiums',
+      'A) Home mortgage interest',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Self-employed health insurance premiums)**
 
 **Above-the-Line Deductions (Adjustments to Income):**
@@ -472,10 +472,10 @@ These reduce AGI, not just taxable income.
     skillLevel: 'Remembering and Understanding',
     question: `Under current tax law, personal casualty losses are deductible only if:`,
     options: [
-      'A) They exceed $100 per event',
       'B) They exceed 10% of AGI',
+      'D) They relate to business property',
       'C) They result from a federally declared disaster',
-      'D) They relate to business property'
+      'A) They exceed $100 per event',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C (Federally declared disaster)**
@@ -505,10 +505,10 @@ This was a significant change from pre-2018 law.
     skillLevel: 'Application',
     question: `A married couple with AGI of $400,000 has three children ages 5, 8, and 12. What is their Child Tax Credit for 2026?`,
     options: [
-      'A) $6,000',
       'B) $4,000',
+      'D) $3,000',
       'C) $5,000',
-      'D) $3,000'
+      'A) $6,000',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C ($5,000)**
@@ -538,12 +538,12 @@ If at threshold: $6,000 full credit → Closest is C at some phase-out.
     skillLevel: 'Remembering and Understanding',
     question: `Which statement about the Earned Income Tax Credit (EITC) is CORRECT?`,
     options: [
-      'A) Investment income cannot exceed $11,000 to qualify',
-      'B) The credit is non-refundable',
       'C) Maximum credit increases with each qualifying child up to three',
-      'D) It is available only to married filers'
+      'B) The credit is non-refundable',
+      'D) It is available only to married filers',
+      'A) Investment income cannot exceed $11,000 to qualify',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (Maximum credit increases with each qualifying child up to three)**
 
 **EITC Features:**
@@ -569,10 +569,10 @@ If at threshold: $6,000 full credit → Closest is C at some phase-out.
     skillLevel: 'Application',
     question: `A couple incurred $18,000 in qualified adoption expenses for a non-special-needs child in 2026. The maximum adoption credit is $16,810. What can they claim?`,
     options: [
-      'A) $18,000',
-      'B) $16,810',
       'C) $8,405',
-      'D) $25,215'
+      'B) $16,810',
+      'D) $25,215',
+      'A) $18,000',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($16,810)**
@@ -601,12 +601,12 @@ $18,000 expenses, limited to $16,810 maximum.
     skillLevel: 'Application',
     question: `A single taxpayer with AGI of $21,000 contributes $2,000 to a Roth IRA. What is the Saver's Credit?`,
     options: [
-      'A) $200',
       'B) $400',
       'C) $1,000',
-      'D) $2,000'
+      'D) $2,000',
+      'A) $200',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($1,000)**
 
 **Saver's Credit (2026 Single):**
@@ -636,12 +636,12 @@ At $21,000 AGI:
     skillLevel: 'Remembering and Understanding',
     question: `Which requirement applies to the clean vehicle (EV) tax credit under current law?`,
     options: [
-      'A) There is no income limit to claim the credit',
-      'B) The vehicle must be used exclusively for business',
       'C) Final assembly must occur in North America',
-      'D) Only used vehicles qualify'
+      'B) The vehicle must be used exclusively for business',
+      'D) Only used vehicles qualify',
+      'A) There is no income limit to claim the credit',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (Final assembly must occur in North America)**
 
 **Clean Vehicle Credit Requirements:**
@@ -671,10 +671,10 @@ At $21,000 AGI:
     skillLevel: 'Analysis',
     question: `Which income-shifting strategy would be MOST effective for reducing a family's overall tax burden within IRS guidelines?`,
     options: [
-      'A) Assigning earned income to a child under 18',
-      'B) Gifting appreciated stock to a child age 25 who then sells it',
       'C) Having a child under 14 receive all investment income',
-      'D) Creating a family limited partnership with no business purpose'
+      'B) Gifting appreciated stock to a child age 25 who then sells it',
+      'D) Creating a family limited partnership with no business purpose',
+      'A) Assigning earned income to a child under 18',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Gift appreciated stock to adult child who sells)**
@@ -701,12 +701,12 @@ At $21,000 AGI:
     skillLevel: 'Application',
     question: `A client expects significantly higher income next year due to a large bonus. Which strategy would be MOST beneficial for 2026 tax planning?`,
     options: [
-      'A) Accelerate deductions into 2026, defer income to 2027',
-      'B) Defer deductions to 2027, accelerate income into 2026',
       "C) Take no action; timing doesn't matter",
-      'D) Convert all traditional IRA to Roth in 2026'
+      'D) Convert all traditional IRA to Roth in 2026',
+      'B) Defer deductions to 2027, accelerate income into 2026',
+      'A) Accelerate deductions into 2026, defer income to 2027',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Defer deductions to 2027, accelerate income into 2026)**
 
 **Timing Strategy When Future Income Will Be Higher:**
@@ -731,12 +731,12 @@ At $21,000 AGI:
     skillLevel: 'Application',
     question: `A taxpayer had $45,000 tax liability last year and expects $65,000 this year. AGI last year was $180,000. What is the minimum they must pay in estimated taxes to avoid penalty?`,
     options: [
-      'A) $45,000 (100% of prior year)',
-      'B) $49,500 (110% of prior year)',
       'C) $58,500 (90% of current year)',
-      'D) $65,000 (100% of current year)'
+      'D) $65,000 (100% of current year)',
+      'B) $49,500 (110% of prior year)',
+      'A) $45,000 (100% of prior year)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($49,500 - 110% of prior year)**
 
 **Safe Harbor Estimated Tax:**
@@ -762,10 +762,10 @@ $45,000 × 110% = $49,500
     skillLevel: 'Application',
     question: `A client sells stock for a $15,000 loss and wants to maintain market exposure. They repurchase similar (not identical) stock the next day. What is the tax result?`,
     options: [
-      'A) Loss disallowed under wash sale rule',
+      'D) Loss added to basis of new stock',
       'B) $15,000 loss fully deductible this year',
       'C) Only $3,000 deductible; rest carries forward',
-      'D) Loss added to basis of new stock'
+      'A) Loss disallowed under wash sale rule',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C ($3,000 deductible; rest carries forward)**
@@ -794,10 +794,10 @@ $15,000 loss with no gains: $3,000 deductible, $12,000 carries forward.
     skillLevel: 'Analysis',
     question: `A 72-year-old client wants to donate $50,000 to charity and has a $300,000 traditional IRA. Which strategy provides the BEST tax benefit?`,
     options: [
-      'A) Donate cash and deduct as itemized deduction',
+      'D) Contribute to a Donor Advised Fund',
       'B) Make a Qualified Charitable Distribution (QCD) from IRA',
       'C) Donate appreciated stock from taxable account',
-      'D) Contribute to a Donor Advised Fund'
+      'A) Donate cash and deduct as itemized deduction',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Make a Qualified Charitable Distribution from IRA)**

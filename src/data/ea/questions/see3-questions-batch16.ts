@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Penalty abatement for reasonable cause may be granted when:',
     options: [
-      'The taxpayer cannot afford to pay the penalty',
-      'The taxpayer exercised ordinary business care and prudence but still could not comply',
       'The taxpayer was unaware of the law',
-      'It is the taxpayer\'s first offense for any reason'
+      'The taxpayer exercised ordinary business care and prudence but still could not comply',
+      'The taxpayer cannot afford to pay the penalty',
+      'It is the taxpayer\'s first offense for any reason',
     ],
     correctAnswer: 1,
     explanation: 'Reasonable cause exists when the taxpayer exercised ordinary business care and prudence in determining tax obligations but was unable to comply. Circumstances beyond their control must have prevented compliance.',
@@ -40,10 +40,10 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'First Time Abatement (FTA) may be granted if the taxpayer:',
     options: [
-      'Files an extension',
-      'Has no penalties for the prior 3 years, is current with filing and payments',
       'Requests it in writing only',
-      'Has total penalties under $500'
+      'Has no penalties for the prior 3 years, is current with filing and payments',
+      'Files an extension',
+      'Has total penalties under $500',
     ],
     correctAnswer: 1,
     explanation: 'FTA is an administrative waiver for taxpayers with clean compliance history for 3 prior years (no penalties or abated penalties), have filed or filed valid extension for current return, and have paid or arranged to pay any tax due.',
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which form is used to formally request penalty abatement from the IRS?',
     options: [
+      'Form 656',
       'Form 9465',
       'Form 843',
-      'Form 656',
-      'Form 1040-X'
+      'Form 1040-X',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 843 (Claim for Refund and Request for Abatement) is used to request penalty and/or interest abatement. However, requests can also be made by phone or letter.',
     reference: 'IRS Form 843',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which is considered a statutory exception to penalties (not requiring reasonable cause)?',
     options: [
+      'Forgetting the due date',
       'General financial hardship',
       'Death, serious illness, or unavoidable absence of the taxpayer or immediate family',
-      'Forgetting the due date',
-      'Reliance on free tax preparation'
+      'Reliance on free tax preparation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Death, serious illness, or unavoidable absence affecting the taxpayer\'s ability to obtain records or file are statutory exceptions that automatically constitute reasonable cause for penalty relief.',
     reference: 'Treas. Reg. §301.6651-1(c)(1)',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The failure to file penalty (FTF) is:',
     options: [
-      'Equal to the failure to pay penalty',
       'Generally more severe than the failure to pay penalty',
+      'Equal to the failure to pay penalty',
       'Less than the failure to pay penalty',
-      'Only applied to businesses'
+      'Only applied to businesses',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'FTF is 5% per month up to 25% (or 100% if over 60 days late, minimum $510). FTP is 0.5% per month up to 25%. FTF is reduced by FTP when both apply concurrently.',
     reference: 'IRC §6651(a)(1), (a)(2)',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Interest on tax liabilities may be abated:',
     options: [
-      'Anytime the taxpayer requests',
       'Only when attributable to IRS errors or delays in performing ministerial or managerial acts',
       'Always with penalty abatement',
-      'By the taxpayer paying the principal'
+      'Anytime the taxpayer requests',
+      'By the taxpayer paying the principal',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §6404(e), interest may be abated only when it was caused by IRS errors or unreasonable delays in performing ministerial or managerial acts. Standard interest on tax debt is not abatable.',
     reference: 'IRC §6404(e)',
   },
@@ -180,10 +180,10 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The estimated tax penalty (IRC §6654) may be waived if:',
     options: [
-      'The taxpayer files on time',
-      'The underpayment was due to casualty, disaster, or other unusual circumstances',
       'The taxpayer makes a payment in April',
-      'The liability is under $10,000'
+      'The underpayment was due to casualty, disaster, or other unusual circumstances',
+      'The taxpayer files on time',
+      'The liability is under $10,000',
     ],
     correctAnswer: 1,
     explanation: 'The estimated tax penalty may be waived if the underpayment was due to casualty, disaster, or unusual circumstances, or if the taxpayer retired after age 62 or became disabled in the year or prior year.',
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH16: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If a penalty abatement request is denied, the taxpayer may:',
     options: [
-      'Only accept the decision',
       'Request an appeal to the IRS Office of Appeals',
       'Immediately file in Tax Court',
-      'Request a new examination'
+      'Only accept the decision',
+      'Request a new examination',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Taxpayers may appeal denied penalty abatement requests to the IRS Office of Appeals. If paying and claiming a refund, they may also pursue claims through the refund litigation process.',
     reference: 'IRM 20.1.1.4',
   },

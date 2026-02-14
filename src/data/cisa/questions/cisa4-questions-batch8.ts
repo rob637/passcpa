@@ -16,10 +16,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'The MOST important factor when determining RTO for a critical business process is:',
     options: [
-      'Technology recovery capability',
-      'Maximum tolerable downtime before unacceptable business impact',
       'Available IT budget',
-      'Vendor support response time'
+      'Maximum tolerable downtime before unacceptable business impact',
+      'Vendor support response time',
+      'Technology recovery capability',
     ],
     correctAnswer: 1,
     explanation: 'RTO should be based on the maximum tolerable downtime before the business impact becomes unacceptable.',
@@ -35,10 +35,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Hot site is characterized by:',
     options: [
-      'Empty facility with power and cooling',
-      'Fully equipped and operational recovery site',
       'Mobile recovery trailer',
-      'Cloud-only backup'
+      'Fully equipped and operational recovery site',
+      'Cloud-only backup',
+      'Empty facility with power and cooling',
     ],
     correctAnswer: 1,
     explanation: 'A hot site is a fully equipped and operational recovery site that can assume operations quickly.',
@@ -54,12 +54,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'An IS auditor discovers that DR tests are performed annually. The auditor should be MOST concerned if:',
     options: [
-      'Tests are scheduled in advance',
-      'All critical systems are not included in testing',
       'External vendors participate',
-      'Test results are documented'
+      'Test results are documented',
+      'All critical systems are not included in testing',
+      'Tests are scheduled in advance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If critical systems are excluded from DR testing, there is no assurance they can be recovered when needed.',
     topic: 'Disaster Recovery',
     subtopic: 'DR Testing'
@@ -73,12 +73,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Incident response procedures should include:',
     options: [
-      'Only technical team contacts',
-      'Detection, containment, eradication, recovery, and lessons learned',
       'Automatic resolution without investigation',
-      'External reporting only for major breaches'
+      'External reporting only for major breaches',
+      'Detection, containment, eradication, recovery, and lessons learned',
+      'Only technical team contacts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Incident response should follow a structured process including detection, containment, eradication, recovery, and lessons learned.',
     topic: 'Incident Management',
     subtopic: 'Incident Response Process'
@@ -92,12 +92,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating backup procedures, the IS auditor should be MOST concerned if:',
     options: [
-      'Backups are encrypted',
-      'Backup restoration is never tested',
+      'Different media types are used',
       'Backups are stored offsite',
-      'Different media types are used'
+      'Backup restoration is never tested',
+      'Backups are encrypted',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If restoration is never tested, there is no assurance that backups can actually be restored when needed.',
     topic: 'Data Management',
     subtopic: 'Backup Verification'
@@ -111,10 +111,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Change management should ensure all changes are:',
     options: [
-      'Approved by developers only',
+      'Limited to emergency situations',
       'Requested, analyzed, approved, tested, and documented',
       'Implemented immediately without testing',
-      'Limited to emergency situations'
+      'Approved by developers only',
     ],
     correctAnswer: 1,
     explanation: 'Change management ensures changes are properly requested, analyzed, approved, tested, and documented.',
@@ -130,12 +130,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'An organization uses a third party for IT operations. The PRIMARY control to ensure data protection is:',
     options: [
-      'Vendor reputation',
       'Contractual provisions with security requirements and right-to-audit',
+      'Reference calls',
       'Cost negotiations',
-      'Reference calls'
+      'Vendor reputation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Contractual provisions establish enforceable security requirements and audit rights for third-party operations.',
     topic: 'Third-Party Management',
     subtopic: 'Contractual Controls'
@@ -149,10 +149,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Problem management differs from incident management in that problem management:',
     options: [
-      'Focuses on immediate service restoration',
+      'Is performed by help desk only',
       'Investigates root causes to prevent recurrence',
       'Handles only major incidents',
-      'Is performed by help desk only'
+      'Focuses on immediate service restoration',
     ],
     correctAnswer: 1,
     explanation: 'Problem management focuses on identifying root causes and implementing solutions to prevent incident recurrence.',
@@ -168,10 +168,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'The GREATEST risk with database replication for disaster recovery is:',
     options: [
-      'Network bandwidth requirements',
+      'Configuration complexity',
       'Corrupted data being replicated to the recovery site',
       'Hardware costs',
-      'Configuration complexity'
+      'Network bandwidth requirements',
     ],
     correctAnswer: 1,
     explanation: 'Replication can propagate corrupted or erroneous data to the recovery site, making both sites unusable.',
@@ -187,12 +187,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Capacity management should ensure:',
     options: [
-      'Maximum utilization at all times',
       'Resources are available to meet current and future demands',
       'Minimum hardware purchases',
-      'Reduced IT headcount'
+      'Reduced IT headcount',
+      'Maximum utilization at all times',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Capacity management ensures resources are adequate for current and anticipated future demands.',
     topic: 'Service Management',
     subtopic: 'Capacity Management'
@@ -206,12 +206,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing network operations, the IS auditor should be MOST concerned if:',
     options: [
-      'Network diagrams are maintained',
       'Network monitoring alerts are not reviewed or actioned',
       'Redundant links exist',
-      'Traffic is encrypted'
+      'Traffic is encrypted',
+      'Network diagrams are maintained',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Unreviewed alerts mean security and availability issues may not be detected or addressed timely.',
     topic: 'Network Operations',
     subtopic: 'Monitoring'
@@ -225,12 +225,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The purpose of a business impact analysis (BIA) is to:',
     options: [
-      'Select disaster recovery technology',
-      'Identify critical processes and the impact of disruption',
+      'Test disaster recovery plans',
       'Create backup schedules',
-      'Test disaster recovery plans'
+      'Identify critical processes and the impact of disruption',
+      'Select disaster recovery technology',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A BIA identifies critical business processes and assesses the impact of their disruption over time.',
     topic: 'Business Continuity',
     subtopic: 'BIA Purpose'
@@ -244,12 +244,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'An organization relies heavily on one cloud provider. The PRIMARY risk is:',
     options: [
-      'Reduced costs',
-      'Vendor lock-in and concentration risk',
+      'Better integration',
       'Simplified management',
-      'Better integration'
+      'Vendor lock-in and concentration risk',
+      'Reduced costs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Single cloud dependency creates vendor lock-in and concentration risk if the provider experiences issues.',
     topic: 'Cloud Operations',
     subtopic: 'Vendor Concentration'
@@ -263,12 +263,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Scheduled maintenance windows should be:',
     options: [
-      'Avoided entirely',
-      'Planned with business stakeholders and communicated in advance',
       'Performed without notice to test resilience',
-      'Limited to overnight hours only'
+      'Limited to overnight hours only',
+      'Planned with business stakeholders and communicated in advance',
+      'Avoided entirely',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Maintenance windows should be planned with business input and communicated to minimize impact.',
     topic: 'Operations Management',
     subtopic: 'Maintenance Planning'
@@ -282,12 +282,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'The IS auditor discovers that the organization has no plan to recover from ransomware. This indicates:',
     options: [
-      'Adequate reliance on prevention controls',
       'Insufficient cyber resilience planning',
+      'Low ransomware risk',
       'Confidence in existing backups',
-      'Low ransomware risk'
+      'Adequate reliance on prevention controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Lack of ransomware recovery planning indicates insufficient cyber resilience given the prevalence of ransomware threats.',
     topic: 'Cyber Resilience',
     subtopic: 'Ransomware Planning'
@@ -301,10 +301,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'SLA monitoring should include:',
     options: [
-      'Only annual reviews',
+      'Customer satisfaction surveys only',
       'Regular measurement and reporting against defined metrics',
       'Informal discussions with vendors',
-      'Customer satisfaction surveys only'
+      'Only annual reviews',
     ],
     correctAnswer: 1,
     explanation: 'SLA monitoring requires regular measurement and reporting against defined service level metrics.',
@@ -320,10 +320,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating job scheduling, the IS auditor should verify that:',
     options: [
-      'Jobs are scheduled manually',
-      'Failed jobs are detected, logged, and resolved with appropriate escalation',
       'All jobs run overnight',
-      'Job schedules are not documented'
+      'Failed jobs are detected, logged, and resolved with appropriate escalation',
+      'Job schedules are not documented',
+      'Jobs are scheduled manually',
     ],
     correctAnswer: 1,
     explanation: 'Job scheduling control includes detection, logging, and resolution of failed jobs with appropriate escalation.',
@@ -339,12 +339,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The 3-2-1 backup rule recommends:',
     options: [
-      'Three copies on two media with one offsite',
       'Three backup jobs daily',
+      'One backup server per department',
       'Two-year retention minimum',
-      'One backup server per department'
+      'Three copies on two media with one offsite',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'The 3-2-1 rule: three copies of data on two different media types with one copy offsite.',
     topic: 'Data Management',
     subtopic: 'Backup Strategy'
@@ -358,12 +358,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'An IS auditor notes that the BCP was last reviewed two years ago. The MAIN concern is:',
     options: [
-      'Reduced staff training',
       'The plan may not reflect current business processes and technology',
       'Increased documentation burden',
-      'Budget constraints'
+      'Budget constraints',
+      'Reduced staff training',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'BCPs must be regularly reviewed to reflect current business processes, technology, and organizational changes.',
     topic: 'Business Continuity',
     subtopic: 'BCP Maintenance'
@@ -377,10 +377,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'End-of-life (EOL) software should be:',
     options: [
-      'Continued without concern',
-      'Identified, risk assessed, and addressed through upgrade or compensating controls',
       'Immediately removed from production',
-      'Ignored until budget is available'
+      'Identified, risk assessed, and addressed through upgrade or compensating controls',
+      'Ignored until budget is available',
+      'Continued without concern',
     ],
     correctAnswer: 1,
     explanation: 'EOL software should be identified, risk assessed, and addressed through upgrade, replacement, or compensating controls.',
@@ -396,10 +396,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Crisis communication during an incident should:',
     options: [
-      'Be delayed until full resolution',
-      'Be coordinated through designated spokespersons with consistent messaging',
       'Include all technical details',
-      'Be handled by whoever is available'
+      'Be coordinated through designated spokespersons with consistent messaging',
+      'Be handled by whoever is available',
+      'Be delayed until full resolution',
     ],
     correctAnswer: 1,
     explanation: 'Crisis communication requires designated spokespersons with consistent, appropriate messaging.',
@@ -415,12 +415,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Help desk performance should be measured by:',
     options: [
-      'Number of tickets created',
-      'Resolution time, first-call resolution rate, and customer satisfaction',
       'Number of staff employed',
-      'Hours of operation only'
+      'Hours of operation only',
+      'Resolution time, first-call resolution rate, and customer satisfaction',
+      'Number of tickets created',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Help desk metrics should include resolution time, first-call resolution rate, and customer satisfaction.',
     topic: 'Service Management',
     subtopic: 'Help Desk Metrics'
@@ -434,12 +434,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When assessing data center physical security, the IS auditor should be MOST concerned if:',
     options: [
-      'Visitors are logged and escorted',
-      'Former employees still have active access badges',
       'Access requires badge and PIN',
-      'Cameras record entry points'
+      'Cameras record entry points',
+      'Former employees still have active access badges',
+      'Visitors are logged and escorted',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Former employees with active access creates immediate unauthorized access risk.',
     topic: 'Physical Security',
     subtopic: 'Access Control'
@@ -453,10 +453,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The purpose of configuration item (CI) records is to:',
     options: [
-      'Track software licenses only',
+      'Store backup media location',
       'Maintain accurate information about IT assets and their relationships',
       'Document user requests',
-      'Store backup media location'
+      'Track software licenses only',
     ],
     correctAnswer: 1,
     explanation: 'CI records maintain accurate information about IT assets, configurations, and their relationships.',
@@ -472,10 +472,10 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'An organization has RPO of 4 hours. This means:',
     options: [
-      'Systems must be recovered within 4 hours',
+      'Incidents must be resolved in 4 hours',
       'Maximum 4 hours of data loss is acceptable',
       'Backups run every 4 hours',
-      'Incidents must be resolved in 4 hours'
+      'Systems must be recovered within 4 hours',
     ],
     correctAnswer: 1,
     explanation: 'RPO (Recovery Point Objective) defines the maximum acceptable data loss, measured in time.',
@@ -491,12 +491,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Operations runbooks should include:',
     options: [
-      'Only emergency procedures',
       'Step-by-step procedures for routine and exception handling',
+      'Financial information',
       'Developer notes',
-      'Financial information'
+      'Only emergency procedures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Runbooks document step-by-step procedures for routine operations and exception handling.',
     topic: 'Operations Management',
     subtopic: 'Runbooks'
@@ -510,12 +510,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'When cloud services are used for disaster recovery, the IS auditor should verify:',
     options: [
-      'Cloud costs are minimized',
       'Recovery procedures are tested and data can be accessed as needed',
       'Cloud provider has more data centers',
-      'Cloud subscription is annual'
+      'Cloud subscription is annual',
+      'Cloud costs are minimized',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cloud-based DR must be tested to verify recoverability and data accessibility.',
     topic: 'Cloud Operations',
     subtopic: 'Cloud DR'
@@ -529,12 +529,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Batch processing controls should include:',
     options: [
-      'Real-time validation only',
-      'Input/output reconciliation and completeness checks',
+      'User presence during processing',
       'Manual verification of each record',
-      'User presence during processing'
+      'Input/output reconciliation and completeness checks',
+      'Real-time validation only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Batch controls include reconciliation of input to output and completeness checks.',
     topic: 'Operations Controls',
     subtopic: 'Batch Controls'
@@ -548,12 +548,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Environmental controls for data centers should include:',
     options: [
-      'Windows for natural lighting',
       'Temperature monitoring, fire suppression, and water detection',
+      'Open access for maintenance',
       'Minimal redundancy to reduce costs',
-      'Open access for maintenance'
+      'Windows for natural lighting',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Environmental controls protect against temperature, fire, and water threats to equipment.',
     topic: 'Physical Security',
     subtopic: 'Environmental Controls'
@@ -567,12 +567,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Incident lessons learned should:',
     options: [
-      'Be kept confidential from all staff',
       'Be used to improve processes and prevent similar incidents',
+      'Be documented and filed without action',
       'Focus only on blame assignment',
-      'Be documented and filed without action'
+      'Be kept confidential from all staff',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Lessons learned should drive process improvements to prevent recurrence of similar incidents.',
     topic: 'Incident Management',
     subtopic: 'Lessons Learned'

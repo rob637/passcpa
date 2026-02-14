@@ -1,8 +1,10 @@
 import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
+import { saveCoursePreference } from './utils/courseDetection';
+import type { CourseId } from './types/course';
 
 // Layouts (always loaded - part of shell)
 import MainLayout from './components/layouts/MainLayout';
@@ -163,7 +165,10 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     if (!isOnboarded) {
       // Preserve the course context by storing it before redirect
       // This allows Onboarding to pick up the correct course
-      localStorage.setItem('pendingCourse', activeCourse);
+      // Only set if not already present (don't overwrite registration-flow pendingCourse)
+      if (!localStorage.getItem('pendingCourse')) {
+        localStorage.setItem('pendingCourse', activeCourse);
+      }
       return <Navigate to="/onboarding" replace />;
     }
   }
@@ -197,12 +202,26 @@ const AdminRoute = ({ children }: RouteProps) => {
 // Public Route (redirect to home if logged in)
 const PublicRoute = ({ children }: RouteProps) => {
   const { user, loading } = useAuth();
+  const [searchParams] = useSearchParams();
 
   if (loading) {
     return <FullPageLoader />;
   }
 
   if (user) {
+    // If user is already logged in and came from an exam-specific page
+    // (e.g., /register?course=ea), redirect to that course's dashboard
+    const courseParam = searchParams.get('course')?.toLowerCase();
+    if (courseParam && ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'].includes(courseParam)) {
+      // Save course preference so CourseProvider picks it up
+      saveCoursePreference(courseParam as CourseId);
+      localStorage.setItem('pendingCourse', courseParam);
+      const dashboardMap: Record<string, string> = {
+        cpa: '/home', ea: '/ea/home', cma: '/cma/home',
+        cia: '/cia/home', cfp: '/cfp/home', cisa: '/cisa/home',
+      };
+      return <Navigate to={dashboardMap[courseParam] || '/home'} replace />;
+    }
     return <Navigate to="/home" replace />;
   }
 

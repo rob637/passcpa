@@ -44,8 +44,13 @@ export const savePracticeSession = async (
     const sessionId = `practice-${Date.now()}`;
     const sessionRef = doc(db, 'users', userId, 'practice_sessions', sessionId);
     
+    // Strip undefined values — Firestore rejects them
+    const cleanData = Object.fromEntries(
+      Object.entries(sessionData).filter(([, v]) => v !== undefined)
+    );
+
     await setDoc(sessionRef, {
-      ...sessionData,
+      ...cleanData,
       id: sessionId,
       userId,
       completedAt: Timestamp.now(),

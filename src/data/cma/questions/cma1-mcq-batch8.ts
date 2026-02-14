@@ -27,12 +27,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'A contract modification that adds distinct goods at standalone selling price should be:',
     options: [
-      'Accounted for as a separate contract',
       'Combined with the original contract retrospectively',
+      'Accounted for as a separate contract',
+      'Deferred until all goods are delivered',
       'Recognized immediately as revenue',
-      'Deferred until all goods are delivered'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'When a modification adds distinct goods/services at standalone prices, it is treated as a separate contract. Non-distinct modifications are treated as continuation of the original contract.',
     reference: 'ASC 606; Contract Modifications',
   },
@@ -47,12 +47,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'An intangible asset with an indefinite useful life should be:',
     options: [
-      'Amortized over 40 years',
       'Amortized over 15 years',
+      'Amortized over 40 years',
+      'Expensed immediately',
       'Not amortized but tested annually for impairment',
-      'Expensed immediately'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Indefinite-life intangibles (like certain trademarks) are not amortized but are tested for impairment at least annually. Finite-life intangibles are amortized over their useful lives.',
     reference: 'Intangible Assets; ASC 350',
   },
@@ -67,12 +67,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which item creates a PERMANENT difference between book and tax income?',
     options: [
-      'Depreciation method differences',
+      'Warranty expense accruals',
       'Prepaid expenses',
+      'Depreciation method differences',
       'Tax-exempt municipal bond interest',
-      'Warranty expense accruals'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Municipal bond interest is never taxable, creating a permanent difference. Depreciation, prepaids, and warranty accruals create timing (temporary) differences that reverse over time.',
     reference: 'Permanent vs Temporary Differences',
   },
@@ -87,10 +87,10 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Under the current rate method, where is the cumulative translation adjustment reported?',
     options: [
-      'In the income statement',
+      'Directly in retained earnings',
       'In accumulated other comprehensive income (AOCI)',
+      'In the income statement',
       'As a liability',
-      'Directly in retained earnings'
     ],
     correctAnswer: 1,
     explanation: 'Under the current rate method, translation gains/losses from remeasuring foreign subsidiaries are reported in AOCI, a component of equity. They do not affect net income.',
@@ -111,12 +111,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Variable OH: $6/machine hour. Fixed OH: $120,000. At 25,000 machine hours, what is total budgeted overhead?',
     options: [
-      '$150,000',
       '$270,000',
+      '$370,000',
+      '$150,000',
       '$240,000',
-      '$370,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Total OH = Fixed OH + (Variable Rate × MH) = $120,000 + ($6 × 25,000) = $120,000 + $150,000 = $270,000.',
     reference: 'Flexible Overhead Budget',
   },
@@ -131,12 +131,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Credit sales: Jan $100K, Feb $120K, Mar $140K. Collection pattern: 30% in month of sale, 60% next month, 10% in 2nd month. What are March cash collections?',
     options: [
+      '$96,000',
       '$108,000',
       '$114,000',
       '$82,000',
-      '$96,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'March collections come from three months of credit sales:\n• From March sales (30%): $140,000 × 30% = $42,000\n• From February sales (60%): $120,000 × 60% = $72,000\n• From January sales (10%): $100,000 × 10% = $10,000\nTotal March collections = $42,000 + $72,000 + $10,000 = $124,000. Adjusting for the actual collection timing within the month yields $114,000.',
     reference: 'Cash Collection Forecasting',
   },
@@ -152,11 +152,11 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     question: 'The Delphi forecasting method:',
     options: [
       'Uses regression analysis on historical data',
+      'Projects sales based on leading economic indicators',
       'Gathers expert opinions anonymously through iterative rounds',
       'Analyzes seasonal patterns',
-      'Projects sales based on leading economic indicators'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Delphi uses anonymous expert input collected in multiple rounds, with feedback between rounds. It aims to reach consensus while avoiding groupthink or dominance by vocal participants.',
     reference: 'Delphi Method; Qualitative Forecasting',
   },
@@ -173,8 +173,8 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     options: [
       'Set very aggressive targets',
       'Underestimate revenues or overestimate costs to make targets easier',
+      'Use last year\'s budget without adjustment',
       'Ignore fixed costs in planning',
-      'Use last year\'s budget without adjustment'
     ],
     correctAnswer: 1,
     explanation: 'Slack builds in a cushion—understating expected revenues or overstating expected costs. This makes actual results look better relative to budget but wastes resources and distorts planning.',
@@ -191,12 +191,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'The Beyond Budgeting model emphasizes:',
     options: [
-      'More detailed annual budgets',
       'Decentralized decision-making with rolling forecasts',
+      'More detailed annual budgets',
+      'Annual bonus tied to budget achievement',
       'Strict variance analysis against fixed targets',
-      'Annual bonus tied to budget achievement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Beyond Budgeting replaces fixed annual budgets with rolling forecasts, relative targets, and empowered frontline decision-making. It aims for adaptability over rigid annual planning.',
     reference: 'Beyond Budgeting',
   },
@@ -217,8 +217,8 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     options: [
       '$50',
       '$42',
+      '$58',
       '$55',
-      '$58'
     ],
     correctAnswer: 1,
     explanation: 'Modified market price = External price - Avoided costs = $50 - $5 - $3 = $42. This reflects the true economic benefit of the internal transfer while sharing cost savings.',
@@ -237,10 +237,10 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     options: [
       '$140,000',
       '$164,000',
+      '$160,000',
       '$136,000',
-      '$160,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Operating capital = Total capital - Non-operating = $3,000,000 - $200,000 = $2,800,000. EVA = NOPAT - (Capital × WACC) = $500,000 - ($2,800,000 × 12%) = $500,000 - $336,000 = $164,000. Note: If using total capital: EVA = $500,000 - ($3,000,000 × 12%) = $140,000.',
     reference: 'Economic Value Added',
   },
@@ -255,12 +255,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'In SWOT analysis, opportunities and threats represent:',
     options: [
-      'Internal factors under management control',
       'External factors in the competitive environment',
+      'Budget variance explanations',
+      'Internal factors under management control',
       'Historical performance data',
-      'Budget variance explanations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SWOT: Strengths and Weaknesses are internal; Opportunities and Threats are external environmental factors (competitors, regulations, technology, economy). Strategy matches internal capabilities to external conditions.',
     reference: 'SWOT Analysis; Strategic Analysis',
   },
@@ -275,12 +275,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Functional benchmarking involves comparing:',
     options: [
-      'Different departments within the same company',
       'Similar functions across different industries',
+      'Current performance to past performance',
+      'Different departments within the same company',
       'Only direct competitors',
-      'Current performance to past performance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Functional benchmarking compares similar processes/functions across different industries (e.g., warehousing practices across retail, manufacturing, distribution). It brings fresh perspectives beyond competitive benchmarking.',
     reference: 'Functional Benchmarking',
   },
@@ -295,10 +295,10 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Goal congruence is achieved when:',
     options: [
-      'All employees receive the same salary',
+      'All decisions are made by top management',
       'Individual goals align with organizational objectives',
+      'All employees receive the same salary',
       'Budgets are set without employee input',
-      'All decisions are made by top management'
     ],
     correctAnswer: 1,
     explanation: 'Goal congruence exists when employees pursuing their own interests simultaneously further organizational goals. Performance systems, incentives, and culture should align individual and corporate objectives.',
@@ -320,9 +320,9 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     question: 'Normal spoilage is 3% of good output. Production: 10,000 units. Actual spoilage: 400 units. Good output: 9,600 units. What is abnormal spoilage?',
     options: [
       '112 units',
+      '400 units',
       '288 units',
       '100 units',
-      '400 units'
     ],
     correctAnswer: 0,
     explanation: 'Normal spoilage = 3% × 9,600 good units = 288 units. Abnormal spoilage = Actual - Normal = 400 - 288 = 112 units. Abnormal spoilage is expensed; normal spoilage is part of product cost.',
@@ -339,12 +339,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted mix: A 60%, B 40%. Actual units sold: A 400, B 600. Budget CM: A $10, B $15. What is sales mix variance?',
     options: [
+      '$200 unfavorable',
       '$300 unfavorable',
       '$300 favorable',
       '$500 unfavorable',
-      '$200 unfavorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Total actual units = 1,000. Budgeted mix applied to actual total: A = 600 (60%), B = 400 (40%). Actual mix: A = 400, B = 600. Sales mix variance uses the difference from standard mix weighted by the CM differential from the weighted average CM. Weighted average CM = (0.6 × $10) + (0.4 × $15) = $12. A: (400 − 600) × ($10 − $12) = −200 × −$2 = $400 F. B: (600 − 400) × ($15 − $12) = 200 × $3 = $600 F. However, selling fewer of A and more of B shifts mix, yielding a $300 Unfavorable mix variance after proper standard weighting.',
     reference: 'Sales Mix Variance',
   },
@@ -361,8 +361,8 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     options: [
       'Cost reduction at the design stage',
       'Continuous small improvements during production',
+      'Increasing selling prices',
       'One-time major cost cuts',
-      'Increasing selling prices'
     ],
     correctAnswer: 1,
     explanation: 'Kaizen costing seeks continuous, incremental cost reductions during production (manufacturing phase). Target costing focuses on design stage costs; kaizen applies throughout product life.',
@@ -381,8 +381,8 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     options: [
       'Physical inventory units',
       'Jobs, projects, customers, or service engagements',
+      'Work-in-process batches',
       'Raw materials only',
-      'Work-in-process batches'
     ],
     correctAnswer: 1,
     explanation: 'Services lack physical inventory but still need cost objects: client engagements, projects, customer segments, service lines. This enables profitability analysis and pricing decisions.',
@@ -403,12 +403,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Tests of controls are designed to evaluate:',
     options: [
-      'Whether account balances are correct',
       'Whether controls are operating effectively',
+      'Whether account balances are correct',
+      'Tax compliance',
       'The accuracy of financial statement amounts',
-      'Tax compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Tests of controls assess whether internal controls are properly designed and operating effectively. Substantive tests evaluate whether balances and transactions are correct.',
     reference: 'Tests of Controls; Audit Procedures',
   },
@@ -423,12 +423,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Inherent risk represents:',
     options: [
-      'Risk that controls will fail to detect errors',
       'Risk that errors will go undetected by auditors',
+      'Risk that controls will fail to detect errors',
+      'Risk of management override',
       'Susceptibility to material misstatement before considering controls',
-      'Risk of management override'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Inherent risk is the susceptibility of an assertion to material misstatement assuming no related controls exist. Control risk is the risk controls fail; detection risk is audit procedure failure.',
     reference: 'Inherent Risk; Audit Risk Model',
   },
@@ -443,12 +443,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Physical controls over assets include:',
     options: [
-      'Monthly bank reconciliations',
+      'Segregation of accounting duties',
       'Approval requirements for transactions',
+      'Monthly bank reconciliations',
       'Locks, safes, and secure facilities',
-      'Segregation of accounting duties'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Physical controls protect assets from theft or damage: locks, safes, security cameras, restricted access areas, fire suppression. These are distinct from procedural or authorization controls.',
     reference: 'Physical Controls',
   },
@@ -467,10 +467,10 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Process mining uses:',
     options: [
-      'Manual observation of processes',
+      'Theoretical process models only',
       'Event logs from IT systems to discover and analyze actual process flows',
+      'Manual observation of processes',
       'Employee surveys about workflow',
-      'Theoretical process models only'
     ],
     correctAnswer: 1,
     explanation: 'Process mining extracts knowledge from event logs recorded by information systems. It discovers actual process flows, identifies deviations from intended processes, and finds bottlenecks.',
@@ -487,12 +487,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Prescriptive analytics differs from predictive analytics by:',
     options: [
+      'Describing what happened',
       'Using historical data only',
       'Recommending specific actions to optimize outcomes',
       'Simply forecasting future trends',
-      'Describing what happened'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Prescriptive analytics goes beyond prediction to recommend optimal actions. It uses optimization, simulation, and decision analysis to advise "what should we do?" versus just "what will happen?"',
     reference: 'Prescriptive Analytics',
   },
@@ -507,12 +507,12 @@ export const CMA1_MCQ_BATCH8: Question[] = [
     skillLevel: 'Remembering',
     question: 'Digital transformation in finance primarily aims to:',
     options: [
+      'Outsource all accounting functions',
       'Eliminate all human involvement',
       'Reduce costs by eliminating finance staff',
       'Enhance analytics, automate routine tasks, and enable strategic insight',
-      'Outsource all accounting functions'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Digital transformation in finance uses technology (AI, RPA, analytics) to automate routine tasks, improve data quality, and enable finance professionals to focus on strategic analysis and business partnership.',
     reference: 'Digital Transformation; Finance',
   },

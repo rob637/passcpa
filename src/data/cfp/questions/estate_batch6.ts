@@ -19,12 +19,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A living will (advance directive) typically:',
     options: [
-      'A) Distributes assets after death',
       'B) States wishes regarding life-sustaining medical treatment if incapacitated and unable to communicate',
+      'D) Creates a trust',
       'C) Names a guardian for minor children',
-      'D) Creates a trust'
+      'A) Distributes assets after death',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A living will addresses end-of-life medical decisions—whether to continue life support, feeding tubes, resuscitation preferences. It speaks when the person cannot. Often combined with healthcare power of attorney (for decisions not addressed) into an advance directive.'
   },
   {
@@ -36,15 +36,15 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     subtopic: 'HIPAA Authorization',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'A HIPAA authorization in estate planning:',
+    question: 'A client asks about the relationship between HIPAA authorizations and advance healthcare directives. Which statement is MOST accurate?',
     options: [
-      'A) Is required for all medical treatment',
-      'B) Allows designated individuals to access protected health information',
-      'C) Replaces the need for healthcare power of attorney',
-      'D) Only applies to Medicare patients'
+      'A HIPAA authorization completely replaces the need for a healthcare power of attorney',
+      'A HIPAA authorization allows designated individuals to access the client\'s protected health information, complementing but not replacing healthcare directive documents',
+      'HIPAA regulations prohibit sharing medical information under any circumstances',
+      'A HIPAA authorization is only valid in the state where it was signed',
     ],
     correctAnswer: 1,
-    explanation: 'HIPAA authorization allows named individuals to receive medical information. Without it, providers may not share health information even with family. Often included with advance directives to ensure healthcare agents and family can access necessary information for decisions.'
+    explanation: 'A HIPAA authorization permits designated individuals to access the client\'s protected health information under federal privacy rules. It complements healthcare directives (living will, healthcare power of attorney) but serves a different purpose — information access rather than decision-making authority.',
   },
   {
     id: 'CFP-EST-B6-003',
@@ -57,10 +57,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A pour-over will is used to:',
     options: [
-      'A) Avoid probate entirely',
+      'D) Distribute assets outside of any trust',
       'B) Transfer assets not already in a revocable trust into the trust at death',
       'C) Create a new trust at death',
-      'D) Distribute assets outside of any trust'
+      'A) Avoid probate entirely',
     ],
     correctAnswer: 1,
     explanation: 'A pour-over will catches assets not transferred to the revocable trust during life and "pours" them into the trust at death. These assets still go through probate, but then follow the trust\'s distribution terms. It serves as a safety net for unfunded trust assets.'
@@ -77,12 +77,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Beneficiary designations on retirement accounts and life insurance:',
     options: [
-      'A) Can be overridden by a will',
-      'B) Generally override the will and pass assets directly to named beneficiaries',
+      'D) Have no legal effect',
       'C) Must match the will exactly',
-      'D) Have no legal effect'
+      'B) Generally override the will and pass assets directly to named beneficiaries',
+      'A) Can be overridden by a will',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Beneficiary designations control distribution regardless of what the will states—they\'re contractual. Many estate plans fail because beneficiary designations weren\'t updated after divorce, death, or changed intentions. Regular beneficiary review is essential.'
   },
   {
@@ -96,12 +96,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Transfer on Death (TOD) registration for securities:',
     options: [
-      'A) Transfers ownership immediately',
-      'B) Allows assets to pass directly to designated beneficiaries at death, avoiding probate',
       'C) Creates a trust',
-      'D) Is only available for bank accounts'
+      'D) Is only available for bank accounts',
+      'B) Allows assets to pass directly to designated beneficiaries at death, avoiding probate',
+      'A) Transfers ownership immediately',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'TOD registration (Payable on Death for bank accounts) names beneficiaries who receive assets at death without probate. The owner maintains full control during life from The beneficiary has no rights until death. Simple, cost-effective probate avoidance for appropriate situations.'
   },
   {
@@ -115,12 +115,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Community property with right of survivorship (CPWROS):',
     options: [
-      'A) Requires probate at first death',
       'B) Passes to survivor automatically at death while providing full step-up in basis for both halves',
       'C) Is available in all states',
-      'D) Has no tax advantages'
+      'D) Has no tax advantages',
+      'A) Requires probate at first death',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CPWROS combines survivorship (avoiding probate) with community property\'s full basis step-up at first death. Available in some community property states. Both halves get new FMV basis at first death—unlike JTWROS where only the decedent\'s half gets stepped-up basis.'
   },
   // EST-3: Gift and Estate Tax
@@ -135,10 +135,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Payments for tuition directly to an educational institution:',
     options: [
-      'A) Count toward the annual gift exclusion',
-      'B) Are unlimited and excluded from gift tax in addition to the annual exclusion',
       'C) Must be for the donor\'s children only',
-      'D) Are limited to $20,000 per year'
+      'B) Are unlimited and excluded from gift tax in addition to the annual exclusion',
+      'D) Are limited to $20,000 per year',
+      'A) Count toward the annual gift exclusion',
     ],
     correctAnswer: 1,
     explanation: 'Direct payments to educational institutions for tuition (not room/board/books) and to medical providers for medical care are unlimited exclusions separate from the $18,000 annual exclusion. This allows wealthy individuals to transfer substantial amounts for education and healthcare without gift tax consequences.'
@@ -154,10 +154,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Compared to federal estate tax, state death taxes:',
     options: [
-      'A) Don\'t exist in any state',
-      'B) May have lower exemption amounts, affecting estates that owe no federal tax',
       'C) Always match federal thresholds',
-      'D) Only apply to real estate'
+      'B) May have lower exemption amounts, affecting estates that owe no federal tax',
+      'D) Only apply to real estate',
+      'A) Don\'t exist in any state',
     ],
     correctAnswer: 1,
     explanation: 'About 12 states plus DC have estate taxes with exemptions often lower than federal ($1M-$6M varies). Six states have inheritance taxes on recipients. State taxes can apply even when no federal tax is due. Planning must consider state residence and property location.'
@@ -173,12 +173,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Minority interest and lack of marketability discounts in estate valuation:',
     options: [
-      'A) Are automatically applied by the IRS',
       'B) Reduce the taxable value of closely-held business interests and FLP interests due to lack of control and liquidity',
+      'D) Have been eliminated by recent legislation',
       'C) Only apply to public securities',
-      'D) Have been eliminated by recent legislation'
+      'A) Are automatically applied by the IRS',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Minority interests lack control; private interests lack marketability. Combined discounts of 20-40% are common, reducing transfer tax. The IRS scrutinizes aggressive discounts, especially for FLPs holding marketable securities. Substantiated appraisals are essential.'
   },
   // EST-4: Trust Types
@@ -193,12 +193,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A grantor trust for income tax purposes:',
     options: [
-      'A) Always files a separate tax return',
       'B) Has income taxed to the grantor personally, which can be advantageous for wealth transfer',
       'C) Cannot hold assets',
-      'D) Must be irrevocable'
+      'D) Must be irrevocable',
+      'A) Always files a separate tax return',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Grantor trusts are "defective" for income tax—the grantor pays tax on trust income. This allows assets to grow without trust-level tax, effectively a tax-free gift. Combined with an IDGT (Intentionally Defective Grantor Trust), this maximizes wealth transfer by having the grantor pay taxes on trust earnings.'
   },
   {
@@ -212,10 +212,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A properly structured Special Needs Trust (supplemental needs trust):',
     options: [
-      'A) Disqualifies the beneficiary from government benefits',
+      'D) Must distribute income annually',
       'B) Supplements government benefits without affecting eligibility for SSI and Medicaid',
       'C) Can only be funded at death',
-      'D) Must distribute income annually'
+      'A) Disqualifies the beneficiary from government benefits',
     ],
     correctAnswer: 1,
     explanation: 'Special Needs Trusts provide supplemental support (vacations, equipment, entertainment) without disqualifying disabled beneficiaries from need-based programs. Third-party SNTs (funded by others) have more flexibility than first-party SNTs (funded with beneficiary\'s assets, which require Medicaid payback).'
@@ -231,10 +231,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A dynasty trust is designed to:',
     options: [
-      'A) Terminate after 21 years',
+      'D) Hold only real estate',
       'B) Transfer wealth across multiple generations while minimizing or avoiding transfer taxes at each generation',
       'C) Provide income only to the grantor',
-      'D) Hold only real estate'
+      'A) Terminate after 21 years',
     ],
     correctAnswer: 1,
     explanation: 'Dynasty trusts span multiple generations, avoiding estate tax at each generational transfer. They use GST exemption and may last perpetually in states without rule against perpetuities. Combined with IDGT planning, significant wealth can compound outside the transfer tax system.'
@@ -251,12 +251,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An executor or personal representative is responsible for:',
     options: [
-      'A) Only distributing assets',
-      'B) Inventorying assets, paying debts and taxes, filing returns, and distributing assets according to the will',
       'C) Making medical decisions',
-      'D) Managing investments indefinitely'
+      'D) Managing investments indefinitely',
+      'B) Inventorying assets, paying debts and taxes, filing returns, and distributing assets according to the will',
+      'A) Only distributing assets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Executors gather and protect assets, notify creditors, pay valid claims and taxes, file final income tax and estate tax returns if required, and distribute remaining assets per the will. They\'re fiduciaries who must act prudently and in beneficiaries\' interests. The role typically lasts 1-2 years.'
   },
   {
@@ -270,12 +270,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'IRS Form 706 (estate tax return) must be filed:',
     options: [
-      'A) For all estates',
-      'B) For estates exceeding the filing threshold, typically within 9 months of death (extendable to 15 months)',
       'C) Only if tax is owed',
-      'D) Within 30 days of death'
+      'D) Within 30 days of death',
+      'B) For estates exceeding the filing threshold, typically within 9 months of death (extendable to 15 months)',
+      'A) For all estates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 706 is required when the gross estate plus adjusted taxable gifts exceeds the exemption amount (about $13.6M in 2024). Filing is also required to elect portability even if no tax is owed. Due 9 months after death with automatic 6-month extension available. Payment is due at 9 months without extension.'
   },
   {
@@ -289,12 +289,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Income in Respect of a Decedent (IRD):',
     options: [
-      'A) Is never taxable',
-      'B) Is income the decedent earned but didn\'t receive before death, taxable to the recipient when received',
+      'D) Only applies to business owners',
       'C) Receives a step-up in basis',
-      'D) Only applies to business owners'
+      'B) Is income the decedent earned but didn\'t receive before death, taxable to the recipient when received',
+      'A) Is never taxable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRD includes income earned but unreceived at death: IRA distributions, unpaid salary, accrued interest, installment payments. It doesn\'t get a basis step-up—recipients pay income tax when received. With IRAs, this creates "double taxation" (estate tax plus income tax), partially offset by the IRD income tax deduction.'
   },
   // Additional Topics
@@ -309,10 +309,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A no-contest (in terrorem) clause in a will:',
     options: [
-      'A) Is unenforceable in all states',
-      'B) Disinherits beneficiaries who unsuccessfully challenge the will',
       'C) Prevents all legal challenges',
-      'D) Applies only to minor beneficiaries'
+      'B) Disinherits beneficiaries who unsuccessfully challenge the will',
+      'D) Applies only to minor beneficiaries',
+      'A) Is unenforceable in all states',
     ],
     correctAnswer: 1,
     explanation: 'No-contest clauses penalize beneficiaries who challenge the will by forfeiting their inheritance if unsuccessful. Effectiveness varies by state—some won\'t enforce against challenges made in good faith or with probable cause. They deter frivolous contests but don\'t prevent all challenges.'
@@ -328,12 +328,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Tenancy by the entirety is a form of ownership:',
     options: [
-      'A) Available to any two people',
       'B) Available only to married couples, providing creditor protection from individual creditors in many states',
       'C) That requires probate',
-      'D) That divides ownership 50/50 with no survivorship'
+      'D) That divides ownership 50/50 with no survivorship',
+      'A) Available to any two people',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Tenancy by the entirety is only for married couples, treating them as one unit. It includes survivorship and, in many states, protects assets from individual (not joint) creditors. Divorce converts it to tenancy in common. Available in about half of U.S. states, primarily for real estate.'
   },
   {
@@ -347,12 +347,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Form 709 (gift tax return) must generally be filed when:',
     options: [
-      'A) Any gift is made',
       'B) Gifts to any one person exceed the annual exclusion, gifts to a non-citizen spouse exceed the special limit, or gifts require reporting like gift-splitting',
+      'D) Only for gifts of real estate',
       'C) Only if gift tax is owed',
-      'D) Only for gifts of real estate'
+      'A) Any gift is made',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 709 is required when annual exclusion is exceeded, gifts to non-citizen spouses exceed the enhanced exclusion ($185K in 2024), couples elect gift-splitting, gifts of future interests are made, or GST tax may apply. Filing tracks lifetime exemption usage even when no tax is due.'
   },
   {
@@ -364,12 +364,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     subtopic: 'Pet Trust',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'A pet trust:',
+    question: 'Which of the following best describes a pet trust in estate planning?',
     options: [
-      'A) Is recognized in all 50 states',
+      'D) Is limited to dogs and cats',
       'B) Provides for the care of animals after the owner\'s death or incapacity',
       'C) Can only hold cash',
-      'D) Is limited to dogs and cats'
+      'A) Is recognized in all 50 states',
     ],
     correctAnswer: 1,
     explanation: 'Pet trusts (recognized in all states) designate a caretaker and funds for pet care. They name a trustee to manage funds and can specify care standards. Without a trust, pets are property with no guaranteed care. Funding should consider animal\'s lifespan and care costs.'
@@ -385,10 +385,10 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Small estate procedures (affidavit or summary administration):',
     options: [
-      'A) Apply to all estates regardless of size',
+      'D) Only apply if there\'s no will',
       'B) Allow simplified transfer of assets below state thresholds without full probate',
       'C) Require court supervision',
-      'D) Only apply if there\'s no will'
+      'A) Apply to all estates regardless of size',
     ],
     correctAnswer: 1,
     explanation: 'Most states allow simplified procedures for small estates—often using affidavits for very small amounts or summary administration for moderate estates. Thresholds vary widely ($25K to $200K+). This avoids full probate costs and delays for qualifying estates.'
@@ -404,12 +404,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A trust protector is a:',
     options: [
-      'A) Type of insurance for trusts',
       'B) Third party given specific powers to modify trust terms, change trustees, or adapt to changing circumstances',
+      'D) Always the same person as the trustee',
       'C) Government official',
-      'D) Always the same person as the trustee'
+      'A) Type of insurance for trusts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Trust protectors provide flexibility for irrevocable trusts. They may have powers to modify distribution terms, change trustees, move trust situs, or respond to tax law changes. Common in dynasty trusts and asset protection trusts. Powers should be carefully defined to avoid grantor trust issues.'
   },
   {
@@ -423,12 +423,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A Qualified Domestic Trust (QDOT) is used when:',
     options: [
-      'A) Both spouses are U.S. citizens',
       'B) The surviving spouse is not a U.S. citizen, allowing estate tax deferral until distributions or death',
+      'D) Only for charitable transfers',
       'C) The estate is less than the exemption',
-      'D) Only for charitable transfers'
+      'A) Both spouses are U.S. citizens',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The unlimited marital deduction doesn\'t apply to non-citizen surviving spouses (concern they\'ll leave the U.S. with assets). QDOT allows deferral: a U.S. trustee controls distributions, and estate tax applies to distributions (except hardship) and remaining assets at surviving spouse\'s death.'
   },
   {
@@ -442,12 +442,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An ascertainable standard in trust distribution (HEMS) refers to:',
     options: [
-      'A) Unlimited discretion for distributions',
-      'B) Distributions for health, education, maintenance, and support—limiting trustee discretion to avoid estate inclusion',
+      'D) Distributions only for emergencies',
       'C) Fixed annual distributions',
-      'D) Distributions only for emergencies'
+      'B) Distributions for health, education, maintenance, and support—limiting trustee discretion to avoid estate inclusion',
+      'A) Unlimited discretion for distributions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'HEMS (Health, Education, Maintenance, Support) is a recognized ascertainable standard limiting distributions to specific purposes. It allows beneficiaries to serve as trustees without the trust being included in their estates. Without HEMS, a beneficiary-trustee\'s unlimited discretion causes estate inclusion.'
   },
   {
@@ -461,12 +461,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When property is held in joint tenancy with right of survivorship (JTWROS):',
     options: [
-      'A) It goes through probate at the first owner\'s death',
-      'B) The surviving owner automatically receives the deceased owner\'s share outside of probate',
+      'D) A court must approve the transfer',
       'C) Each owner can will their share to anyone',
-      'D) A court must approve the transfer'
+      'B) The surviving owner automatically receives the deceased owner\'s share outside of probate',
+      'A) It goes through probate at the first owner\'s death',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'JTWROS provides automatic transfer to the survivor(s) at death, bypassing probate. Ownership is equal among joint tenants. Severing the joint tenancy (by sale or transfer) converts it to tenancy in common. For non-spouses, only the decedent\'s portion receives a step-up in basis.'
   },
   {
@@ -480,12 +480,12 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Ancillary probate is required when:',
     options: [
-      'A) There are multiple beneficiaries',
       'B) The decedent owned real property in a state different from their state of residence',
       'C) The estate is large',
-      'D) A trust is involved'
+      'D) A trust is involved',
+      'A) There are multiple beneficiaries',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Real property is governed by the state where it\'s located. If a decedent owns real estate in multiple states, probate must occur in each state (ancillary probate) in addition to domiciliary probate. This adds cost and complexity. Revocable trusts or LLCs can avoid ancillary probate.'
   }
 ];

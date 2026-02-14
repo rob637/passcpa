@@ -19,12 +19,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Generation-Skipping Transfer Tax (GSTT) is designed to:',
     options: [
+      'D) Eliminate all estate taxes for grandchildren',
       'A) Reduce estate taxes for all generations',
-      'B) Prevent families from avoiding estate taxes by skipping generations',
       'C) Encourage gifts to grandchildren',
-      'D) Eliminate all estate taxes for grandchildren'
+      'B) Prevent families from avoiding estate taxes by skipping generations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'GSTT is an additional tax (at the highest estate tax rate) on transfers to "skip persons" (typically grandchildren or those 37.5+ years younger). It prevents avoiding one layer of estate tax by skipping the children\'s generation. Each person has a GST exemption equal to the basic exclusion amount.'
   },
   {
@@ -36,15 +36,15 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     subtopic: 'Alternate Valuation',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'The alternate valuation date for estate tax purposes is:',
+    question: 'An estate owns commercial real estate valued at $3 million at the date of death. At the alternate valuation date (6 months later), the property is worth $2.5 million. However, the property was sold to a third party 4 months after death for $2.7 million. At what value should this property be included in the gross estate if the alternate valuation date is elected?',
     options: [
-      'A) One year after death',
-      'B) Six months after death (or date of disposition if earlier)',
-      'C) Date of the funeral',
-      'D) Date the estate is closed'
+      '$3 million — the date of death value',
+      '$2.5 million — the alternate valuation date value',
+      '$2.7 million — the value at the date of sale or distribution',
+      '$2.85 million — the average of date of death and six-month values',
     ],
-    correctAnswer: 1,
-    explanation: 'Executors can elect alternate valuation (6 months after death or disposition date) if it reduces both gross estate AND estate tax liability. This is beneficial when assets decline in value after death. Once elected, it applies to all estate assets, not just selected ones.'
+    correctAnswer: 2,
+    explanation: 'When the alternate valuation date is elected, assets sold, distributed, or otherwise disposed of within six months are valued at the date of sale/distribution, not the six-month date. Since the property was sold at month 4 for $2.7 million, that is the value included in the gross estate.',
   },
   {
     id: 'CFP-EST-B5-003',
@@ -58,11 +58,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'Section 2032A special use valuation allows:',
     options: [
       'A) Valuation of any real estate at a discount',
-      'B) Valuation of qualified family farms and closely held businesses based on actual use rather than highest and best use',
       'C) Complete exclusion of farm property from the estate',
-      'D) Unlimited valuation discounts'
+      'D) Unlimited valuation discounts',
+      'B) Valuation of qualified family farms and closely held businesses based on actual use rather than highest and best use',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Special use valuation allows qualifying real property used in farming or closely held businesses to be valued at current use (e.g., farmland value) rather than highest and best use (e.g., development value). Requirements include material participation and continued use. The reduction is capped (about $1.31M in 2024).'
   },
   // EST-2: Advanced Trust Topics
@@ -77,12 +77,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Crummey powers in an irrevocable trust allow:',
     options: [
-      'A) The trustee to make discretionary distributions',
-      'B) Beneficiaries a temporary right to withdraw contributions, qualifying them as present interests for gift tax exclusion',
       'C) The grantor to revoke the trust',
-      'D) Unlimited annual gift tax exclusions'
+      'A) The trustee to make discretionary distributions',
+      'D) Unlimited annual gift tax exclusions',
+      'B) Beneficiaries a temporary right to withdraw contributions, qualifying them as present interests for gift tax exclusion',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Crummey powers give beneficiaries a temporary right (typically 30-60 days) to withdraw contributions. This converts gifts to the trust into present interests, qualifying for the annual exclusion. Proper notification procedures are critical. Powers typically lapse if not exercised.'
   },
   {
@@ -96,12 +96,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A Qualified Personal Residence Trust (QPRT) provides estate tax benefits by:',
     options: [
-      'A) Eliminating property taxes on the residence',
-      'B) Transferring a residence at a discounted gift tax value while allowing the grantor to live there for a term of years',
       'C) Converting the residence to rental property',
-      'D) Allowing unlimited residence value transfers'
+      'A) Eliminating property taxes on the residence',
+      'D) Allowing unlimited residence value transfers',
+      'B) Transferring a residence at a discounted gift tax value while allowing the grantor to live there for a term of years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'QPRTs transfer a residence to beneficiaries with the grantor retaining the right to live there for a specified term. The gift value is discounted based on the retained interest. If the grantor survives the term, the residence is excluded from their estate. Risk: dying during the term returns the full value to the estate.'
   },
   {
@@ -115,12 +115,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Spousal Lifetime Access Trust (SLAT) allows:',
     options: [
+      'C) Revocation by either spouse at any time',
+      'D) Automatic QTIP treatment',
       'A) The grantor to access trust assets directly',
       'B) Removal of assets from the grantor\'s estate while providing indirect access through distributions to a spouse beneficiary',
-      'C) Revocation by either spouse at any time',
-      'D) Automatic QTIP treatment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SLATs are irrevocable trusts where one spouse gifts assets (using gift/estate exemption) and the other spouse can receive distributions. This removes assets from the grantor\'s estate while maintaining indirect family access through the beneficiary spouse. Reciprocal trust doctrine must be avoided.'
   },
   // EST-3: Advanced Gift Topics
@@ -135,12 +135,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'In a "net gift" arrangement:',
     options: [
+      'C) No gift tax is ever owed',
+      'D) The gift must be in cash only',
       'A) The donor pays all gift taxes',
       'B) The donee agrees to pay any gift tax, reducing the taxable gift amount',
-      'C) No gift tax is ever owed',
-      'D) The gift must be in cash only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A net gift requires the donee to pay any resulting gift tax. This reduces the taxable gift (since the donor\'s obligation is reduced by the tax payment). It can be effective for large transfers when the donor wants to minimize out-of-pocket gift tax. The calculation is circular and requires solving for the net gift value.'
   },
   {
@@ -152,15 +152,15 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     subtopic: 'Split Gifts',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Gift splitting allows married couples to:',
+    question: 'Which IRS form must be filed to elect gift splitting for a gift made entirely by one spouse?',
     options: [
-      'A) Avoid all gift taxes regardless of amount',
-      'B) Treat one spouse\'s gift as made half by each spouse, doubling the annual exclusion',
-      'C) Split gifts only to their own children',
-      'D) Make unlimited gifts without filing returns'
+      'Form 1040 Schedule A',
+      'Form 709, United States Gift (and Generation-Skipping Transfer) Tax Return',
+      'Form 706, United States Estate Tax Return',
+      'Form 8283, Noncash Charitable Contributions',
     ],
     correctAnswer: 1,
-    explanation: 'Gift splitting allows one spouse\'s gift to be treated as half from each spouse, effectively doubling the annual exclusion ($36,000 vs. $18,000 for 2024). Both spouses must consent, and a gift tax return must be filed even if no tax is due. This also doubles the lifetime exemption if used.'
+    explanation: 'Form 709 must be filed by both spouses (or at least the donor spouse with the other spouse\'s consent) to elect gift splitting under IRC Section 2513. The return must be filed even if no taxable gift results after applying the annual exclusion and split-gift election.',
   },
   {
     id: 'CFP-EST-B5-009',
@@ -173,12 +173,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A gift is considered incomplete for gift tax purposes when:',
     options: [
+      'D) The donee is a minor',
       'A) The gift is made to a trust',
-      'B) The donor retains certain powers over the transferred property',
       'C) The gift exceeds the annual exclusion',
-      'D) The donee is a minor'
+      'B) The donor retains certain powers over the transferred property',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A gift is incomplete when the donor retains the power to revoke, change beneficiaries, or control enjoyment. Incomplete gifts are not taxable gift events until the power terminates. Intentionally incomplete gift strategies (ING/NING trusts) may provide state income tax benefits in certain situations.'
   },
   // EST-4: Business Succession
@@ -194,11 +194,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'Family Limited Partnerships (FLPs) can provide estate planning benefits through:',
     options: [
       'A) Complete exclusion of business assets from the estate',
-      'B) Valuation discounts for lack of marketability and minority interest when transferring limited partnership interests',
+      'D) Eliminating the need for succession planning',
       'C) Avoiding all income taxes on business operations',
-      'D) Eliminating the need for succession planning'
+      'B) Valuation discounts for lack of marketability and minority interest when transferring limited partnership interests',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'FLPs allow transfers of limited partnership interests at discounted values (typically 20-40% combined discount) due to lack of marketability and lack of control. The general partner maintains control while reducing the taxable transfer value. Proper structure and legitimate business purpose are critical to IRS scrutiny.'
   },
   {
@@ -212,12 +212,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Section 6166 allows qualifying estates to:',
     options: [
+      'D) Transfer businesses gift-tax-free',
       'A) Avoid all estate taxes on business interests',
-      'B) Defer payment of estate taxes attributable to closely held businesses over up to 14 years with favorable interest rates',
       'C) Sell business interests without capital gains tax',
-      'D) Transfer businesses gift-tax-free'
+      'B) Defer payment of estate taxes attributable to closely held businesses over up to 14 years with favorable interest rates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Section 6166 allows deferral of estate taxes attributable to closely held businesses exceeding 35% of the adjusted gross estate. Payments can be deferred for 5 years (interest only), then paid over 10 years at reduced interest rates. This provides liquidity relief for estates with illiquid business interests.'
   },
   {
@@ -231,12 +231,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An installment sale to an intentionally defective grantor trust (IDGT) achieves:',
     options: [
-      'A) Immediate income tax deduction',
-      'B) Estate freeze by transferring appreciation potential while grantor pays income taxes on trust income',
       'C) Complete gift tax exclusion',
-      'D) Elimination of all death taxes'
+      'A) Immediate income tax deduction',
+      'D) Elimination of all death taxes',
+      'B) Estate freeze by transferring appreciation potential while grantor pays income taxes on trust income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Installment sales to IDGTs freeze the estate value (at sale price plus AFR interest) while future appreciation occurs outside the estate. The grantor pays income tax on trust earnings without additional gift consequences, effectively making tax-free gifts. Requires careful structuring with adequate consideration.'
   },
   // EST-5: Estate Documents
@@ -252,11 +252,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'A pour-over will:',
     options: [
       'A) Creates a new trust at death',
-      'B) Transfers probate assets to an existing trust',
       'C) Avoids all probate',
-      'D) Is only valid in community property states'
+      'D) Is only valid in community property states',
+      'B) Transfers probate assets to an existing trust',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A pour-over will transfers any assets that were not titled in the trust during life into the trust at death. While these assets go through probate (unlike properly funded trust assets), they ultimately distribute according to trust terms. It serves as a safety net for assets not transferred to the trust.'
   },
   {
@@ -271,11 +271,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'A healthcare proxy (healthcare power of attorney) allows:',
     options: [
       'A) Someone to make financial decisions',
-      'B) An appointed agent to make medical decisions if the principal becomes incapacitated',
       'C) Automatic organ donation',
-      'D) Early inheritance distribution'
+      'D) Early inheritance distribution',
+      'B) An appointed agent to make medical decisions if the principal becomes incapacitated',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A healthcare proxy designates someone to make medical decisions when the principal cannot. Unlike a living will (which states preferences), the proxy agent has flexibility to respond to actual circumstances. It\'s essential for medical emergencies and differs from a financial power of attorney.'
   },
   {
@@ -289,12 +289,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A HIPAA authorization in estate planning:',
     options: [
+      'C) Replaces the need for a healthcare proxy',
+      'D) Is only needed for hospital stays',
       'A) Is included automatically in all powers of attorney',
       'B) Allows designated individuals to access protected health information',
-      'C) Replaces the need for a healthcare proxy',
-      'D) Is only needed for hospital stays'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'HIPAA authorization grants permission to access protected health information. Without it, family members and agents may be denied medical information even with a healthcare proxy. It\'s often included in healthcare documents or as a separate authorization. Both spouses should have authorizations naming each other and backup agents.'
   },
   // EST-1: More Transfer Tax
@@ -309,12 +309,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A trust with a GST inclusion ratio of zero:',
     options: [
+      'D) Must be terminated within 21 years',
+      'C) Cannot make distributions to grandchildren',
       'A) Is subject to maximum GST tax on all distributions',
       'B) Is exempt from GST tax because GST exemption has been allocated',
-      'C) Cannot make distributions to grandchildren',
-      'D) Must be terminated within 21 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'An inclusion ratio of zero means GST exemption has been fully allocated to the trust, making it entirely GST exempt. Distributions and terminations to skip persons incur no GST tax. Careful allocation of GST exemption is essential for dynasty trusts and generation-skipping planning.'
   },
   {
@@ -328,12 +328,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'State estate tax planning is important because:',
     options: [
+      'D) State taxes only apply to real property',
       'A) All states have identical estate tax rules',
-      'B) Some states have lower exemptions than federal and may tax estates that owe no federal tax',
       'C) State estate taxes eliminate federal estate taxes',
-      'D) State taxes only apply to real property'
+      'B) Some states have lower exemptions than federal and may tax estates that owe no federal tax',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'About a dozen states have estate or inheritance taxes with exemptions often much lower than federal ($1M-$6M vs. $13.61M federal). State-level planning may include credit shelter trusts specifically for state exemption amounts, domicile planning, or qualification for state-specific exclusions.'
   },
   // EST-2: More Trusts
@@ -349,11 +349,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'Trust decanting allows:',
     options: [
       'A) Termination of any trust by beneficiaries',
-      'B) A trustee to distribute assets from one trust into another trust with different terms',
+      'D) Removal of all trust restrictions',
       'C) Conversion of irrevocable trusts to revocable trusts',
-      'D) Removal of all trust restrictions'
+      'B) A trustee to distribute assets from one trust into another trust with different terms',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Decanting allows trustees in states with decanting statutes to "pour" assets from one irrevocable trust into another with modified terms. Uses include fixing drafting errors, changing situs, updating for tax law changes, or adding flexibility. State law and trust terms govern what changes are permissible.'
   },
   {
@@ -368,11 +368,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'A charitable lead trust (CLT) differs from a charitable remainder trust (CRT) in that:',
     options: [
       'A) The charity receives the remainder interest in a CLT',
-      'B) The charity receives current income in a CLT, with remainder passing to non-charitable beneficiaries',
+      'D) CLTs have no minimum payout requirements',
       'C) CLTs cannot hold appreciated assets',
-      'D) CLTs have no minimum payout requirements'
+      'B) The charity receives current income in a CLT, with remainder passing to non-charitable beneficiaries',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CLTs provide income to charity for a term, then remainder passes to family or other beneficiaries. CRTs are the opposite—income to individuals, remainder to charity. CLTs are effective when interest rates are low (lower remainder value = lower gift), and can \"zero out\" the gift if structured properly.'
   },
   {
@@ -386,12 +386,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Domestic Asset Protection Trust (DAPT):',
     options: [
+      'D) Requires offshore administration',
       'A) Is available in all 50 states',
-      'B) May allow a grantor to be a discretionary beneficiary while providing creditor protection in certain states',
       'C) Provides absolute protection from all creditors',
-      'D) Requires offshore administration'
+      'B) May allow a grantor to be a discretionary beneficiary while providing creditor protection in certain states',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'About 20 states permit DAPTs where the grantor can be a discretionary beneficiary while achieving some creditor protection. Protection levels, waiting periods, and requirements vary by state. DAPTs are not absolute protection—fraudulent transfer laws, federal claims, and divorce may penetrate the trust.'
   },
   // EST-3: More Gifts
@@ -407,11 +407,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'When inherited property is sold, the basis is generally:',
     options: [
       'A) The decedent\'s original cost basis',
-      'B) Fair market value at date of death (stepped-up or stepped-down basis)',
+      'D) The beneficiary\'s cost to receive the property',
       'C) Zero',
-      'D) The beneficiary\'s cost to receive the property'
+      'B) Fair market value at date of death (stepped-up or stepped-down basis)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Inherited property receives a stepped-up (or down) basis to fair market value at death. This eliminates built-in capital gains, a significant tax benefit. Some strategies involve holding appreciated assets until death rather than gifting (which carries over the donor\'s basis). Community property may receive double step-up.'
   },
   {
@@ -426,11 +426,11 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     question: 'Assigning income to donees is generally ineffective for income tax purposes because:',
     options: [
       'A) Only cash can be gifted',
-      'B) The assignment of income doctrine attributes income to whoever earned it or owns the income-producing property',
       'C) Gift tax always exceeds the income tax benefit',
-      'D) The IRS prohibits all family gifts'
+      'D) The IRS prohibits all family gifts',
+      'B) The assignment of income doctrine attributes income to whoever earned it or owns the income-producing property',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The assignment of income doctrine prevents taxpayers from avoiding income tax by directing income to others. Income is taxed to the earner (for services) or property owner (for property income). Simply assigning the right to receive income doesn\'t shift the tax burden. The income-producing property itself must be transferred.'
   },
   // EST-4: More Business
@@ -445,12 +445,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Key person life insurance in business succession planning:',
     options: [
-      'A) Provides benefits to the key employee\'s family',
-      'B) Provides funds to the business to recover from the loss of a crucial employee',
       'C) Is owned by the key employee',
-      'D) Must be term insurance only'
+      'A) Provides benefits to the key employee\'s family',
+      'D) Must be term insurance only',
+      'B) Provides funds to the business to recover from the loss of a crucial employee',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Key person insurance is owned by and payable to the business. It provides liquidity to replace a crucial employee, pay debts, fund buyouts, or maintain operations during transition. Premiums are not deductible but proceeds are generally income-tax-free. Notice and consent requirements apply.'
   },
   {
@@ -464,12 +464,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A cross-purchase buy-sell agreement is generally preferred over an entity purchase when:',
     options: [
+      'D) Equal ownership exists',
+      'C) The entity has significant cash reserves',
       'A) There are many shareholders',
       'B) A stepped-up basis for surviving owners is important',
-      'C) The entity has significant cash reserves',
-      'D) Equal ownership exists'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Cross-purchase agreements (owners buy from deceased\'s estate) provide surviving owners with a basis equal to the purchase price. Entity purchases (company buys) don\'t increase survivor\'s basis. With many owners, cross-purchase requires many policies. Trusteed arrangements can simplify multi-party cross-purchases.'
   },
   {
@@ -483,12 +483,12 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Regular review of revocable trust funding is important because:',
     options: [
+      'C) Beneficiary designations override trust terms always',
+      'D) Trust funding is a one-time event',
       'A) Trust terms change automatically',
       'B) Newly acquired assets may not be titled in the trust, defeating probate avoidance',
-      'C) Beneficiary designations override trust terms always',
-      'D) Trust funding is a one-time event'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Trusts only control assets properly funded into them. New purchases (real estate, bank accounts, investments) may default to individual ownership. Regular reviews ensure new assets are titled correctly. Major life events (inheritance, home purchase) particularly warrant funding reviews.'
   }
 ];

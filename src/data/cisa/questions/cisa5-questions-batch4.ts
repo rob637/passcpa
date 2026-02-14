@@ -12,19 +12,19 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Cryptography',
+    subtopic: 'HSM',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Hardware Security Modules (HSMs) provide:',
+    question: 'An IS auditor evaluating cryptographic key management finds that encryption keys for production databases are stored in a software-based key store. What is the PRIMARY advantage of recommending migration to a Hardware Security Module (HSM)?',
     options: [
-      'Only storage',
-      'Tamper-resistant cryptographic key protection and operations',
-      'Only network security',
-      'Only authentication'
+      'HSMs provide faster encryption processing for all data types',
+      'HSMs provide tamper-resistant, dedicated hardware protection for cryptographic keys, preventing software-based extraction attacks',
+      'HSMs eliminate the need for key rotation',
+      'HSMs are less expensive than software-based key management',
     ],
     correctAnswer: 1,
-    explanation: 'HSMs provide tamper-resistant hardware for cryptographic key storage and performing cryptographic operations securely.',
-    topic: 'Cryptography',
-    subtopic: 'HSM'
+    explanation: 'HSMs provide dedicated, tamper-resistant hardware specifically designed to protect cryptographic keys. Unlike software key stores, HSMs resist physical and logical extraction attempts, perform cryptographic operations within the secure boundary, and provide FIPS 140-2 Level 3+ certified protection.',
   },
   {
     id: 'cisa5-064',
@@ -33,14 +33,14 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     blueprintArea: 'CISA5-1',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Key escrow:',
+    question: 'In cryptographic key management, which of the following best describes key escrow?',
     options: [
+      'Rotates keys automatically',
       'Destroys keys',
-      'Stores copies of keys with trusted third parties',
       'Generates keys',
-      'Rotates keys automatically'
+      'Stores copies of keys with trusted third parties',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Key escrow stores copies of cryptographic keys with trusted third parties for recovery or lawful access purposes.',
     topic: 'Cryptography',
     subtopic: 'Key Escrow'
@@ -54,12 +54,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Perfect forward secrecy ensures:',
     options: [
+      'Single key for all sessions',
       'Key reuse',
-      'Past sessions remain secure even if long-term keys are compromised',
       'Permanent keys',
-      'Single key for all sessions'
+      'Past sessions remain secure even if long-term keys are compromised',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Perfect forward secrecy uses ephemeral keys so that compromise of long-term keys does not compromise past session data.',
     topic: 'Cryptography',
     subtopic: 'Forward Secrecy'
@@ -74,11 +74,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Certificate transparency logs help detect:',
     options: [
       'Performance issues',
-      'Misissued or fraudulent SSL/TLS certificates',
+      'Storage problems',
       'Network latency',
-      'Storage problems'
+      'Misissued or fraudulent SSL/TLS certificates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Certificate transparency logs provide public, auditable records of issued certificates, helping detect misissued or fraudulent certificates.',
     topic: 'Cryptography',
     subtopic: 'Certificate Transparency'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'API security should include:',
     options: [
+      'Public access',
+      'No logging',
       'No authentication',
       'Authentication, authorization, rate limiting, and input validation',
-      'Public access',
-      'No logging'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'API security requires authentication, authorization, rate limiting, input validation, and monitoring for abuse.',
     topic: 'Application Security',
     subtopic: 'API Security'
@@ -111,12 +111,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'OAuth 2.0 provides:',
     options: [
+      'File sharing',
+      'Database access',
       'Integration',
       'Delegated authorization for third-party application access',
-      'Database access',
-      'File sharing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'OAuth 2.0 enables delegated authorization, allowing users to grant third-party applications limited access to resources.',
     topic: 'Access Control',
     subtopic: 'OAuth'
@@ -130,12 +130,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'SAML assertions contain:',
     options: [
-      'Only passwords',
-      'Authentication, authorization, and attribute information',
       'Only usernames',
-      'Only timestamps'
+      'Only passwords',
+      'Only timestamps',
+      'Authentication, authorization, and attribute information',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SAML assertions contain authentication status, authorization decisions, and user attributes for federated identity.',
     topic: 'Access Control',
     subtopic: 'SAML'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Just-In-Time (JIT) provisioning:',
     options: [
+      'Deletes accounts immediately',
+      'Disables access',
       'Pre-creates all accounts',
       'Creates accounts automatically at first login',
-      'Deletes accounts immediately',
-      'Disables access'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'JIT provisioning automatically creates user accounts in applications at the time of first login based on identity provider data.',
     topic: 'Access Management',
     subtopic: 'JIT Provisioning'
@@ -169,11 +169,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Privileged Access Workstations (PAWs):',
     options: [
       'Allow all activities',
-      'Are dedicated systems for privileged administration tasks',
       'Are shared workstations',
-      'Have no restrictions'
+      'Have no restrictions',
+      'Are dedicated systems for privileged administration tasks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PAWs are hardened, dedicated systems used exclusively for privileged administrative tasks, reducing attack surface.',
     topic: 'Access Control',
     subtopic: 'PAW'
@@ -187,12 +187,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'Credential stuffing attacks use:',
     options: [
-      'Random passwords',
-      'Breached credentials from other sites to gain unauthorized access',
       'Brute force only',
-      'Social engineering only'
+      'Random passwords',
+      'Social engineering only',
+      'Breached credentials from other sites to gain unauthorized access',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Credential stuffing uses breached username/password combinations from other sites, exploiting password reuse.',
     topic: 'Information Security',
     subtopic: 'Credential Stuffing'
@@ -206,12 +206,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Security awareness training should cover:',
     options: [
-      'Only technical staff',
-      'All employees with role-appropriate content',
       'Only management',
-      'Only IT security'
+      'Only technical staff',
+      'Only IT security',
+      'All employees with role-appropriate content',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security awareness training should reach all employees with content appropriate to their roles and responsibilities.',
     topic: 'Security Management',
     subtopic: 'Security Awareness'
@@ -226,11 +226,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Phishing simulations:',
     options: [
       'Punish users',
-      'Test and improve employee awareness of phishing threats',
+      'Only count failures',
       'Replace training',
-      'Only count failures'
+      'Test and improve employee awareness of phishing threats',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Phishing simulations test employee awareness and provide learning opportunities, not to punish but to improve awareness.',
     topic: 'Security Management',
     subtopic: 'Phishing Simulations'
@@ -245,11 +245,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Deception technology (honeypots/honeynets):',
     options: [
       'Provides production services',
-      'Attracts attackers to detect and study their methods',
+      'Stores sensitive data',
       'Replaces firewalls',
-      'Stores sensitive data'
+      'Attracts attackers to detect and study their methods',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Deception technology uses decoys to attract attackers, enabling detection and analysis of attack methods.',
     topic: 'Security Controls',
     subtopic: 'Deception'
@@ -263,12 +263,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network segmentation reduces risk by:',
     options: [
+      'Allowing all traffic',
+      'Removing firewalls',
       'Increasing connectivity',
       'Limiting lateral movement and containing breaches',
-      'Removing firewalls',
-      'Allowing all traffic'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Network segmentation limits lateral movement by attackers and contains breaches to smaller network segments.',
     topic: 'Network Security',
     subtopic: 'Segmentation'
@@ -282,12 +282,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Micro-segmentation extends segmentation to:',
     options: [
+      'Only cloud',
+      'Only data centers',
       'Only network perimeter',
       'Individual workloads and applications',
-      'Only data centers',
-      'Only cloud'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Micro-segmentation provides granular security by segmenting at the individual workload or application level.',
     topic: 'Network Security',
     subtopic: 'Micro-segmentation'
@@ -297,19 +297,19 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Cloud Security',
+    subtopic: 'CASB',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Cloud Access Security Brokers (CASBs) provide:',
+    question: 'An organization using multiple cloud services deploys a CASB in API mode. What is a significant limitation of this deployment compared to proxy (inline) mode?',
     options: [
-      'Only authentication',
-      'Visibility and control over cloud service usage',
-      'Only encryption',
-      'Only storage'
+      'API mode cannot integrate with the cloud provider\'s APIs',
+      'API mode cannot inspect traffic in real-time to block unauthorized data transfers before they occur',
+      'API mode requires installing agents on all user devices',
+      'API mode is incompatible with SaaS applications',
     ],
     correctAnswer: 1,
-    explanation: 'CASBs provide visibility, compliance, data security, and threat protection for cloud service usage.',
-    topic: 'Cloud Security',
-    subtopic: 'CASB'
+    explanation: 'API-mode CASB connects directly to cloud service APIs to monitor activity after it occurs, enabling policy enforcement through remediation rather than prevention. Unlike proxy (inline) mode, it cannot inspect and block data in transit in real-time, making it less effective for preventing unauthorized data exfiltration.',
   },
   {
     id: 'cisa5-079',
@@ -321,11 +321,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Data Loss Prevention (DLP) systems:',
     options: [
       'Only encrypt data',
-      'Detect and prevent unauthorized data transmission',
       'Only backup data',
-      'Only classify data'
+      'Only classify data',
+      'Detect and prevent unauthorized data transmission',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DLP systems detect sensitive data and prevent unauthorized transmission through monitoring, detection, and blocking.',
     topic: 'Data Security',
     subtopic: 'DLP'
@@ -339,12 +339,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Email security gateways should provide:',
     options: [
+      'Only archiving',
+      'Only routing',
       'Only spam filtering',
       'Anti-malware, anti-phishing, and content filtering',
-      'Only routing',
-      'Only archiving'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Email security gateways should provide comprehensive protection including anti-malware, anti-phishing, and content filtering.',
     topic: 'Network Security',
     subtopic: 'Email Security'
@@ -359,11 +359,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'DMARC (Domain-based Message Authentication):',
     options: [
       'Encrypts emails',
-      'Helps prevent email spoofing using SPF and DKIM',
       'Filters spam',
-      'Archives emails'
+      'Archives emails',
+      'Helps prevent email spoofing using SPF and DKIM',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DMARC builds on SPF and DKIM to help prevent email spoofing by defining how receivers should handle authentication failures.',
     topic: 'Network Security',
     subtopic: 'DMARC'
@@ -378,11 +378,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Secure file transfer should use:',
     options: [
       'FTP only',
-      'Encrypted protocols like SFTP or FTPS',
       'Unencrypted channels',
-      'Email attachments only'
+      'Email attachments only',
+      'Encrypted protocols like SFTP or FTPS',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Secure file transfer should use encrypted protocols like SFTP or FTPS to protect data in transit.',
     topic: 'Data Security',
     subtopic: 'Secure Transfer'
@@ -396,12 +396,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Database activity monitoring (DAM):',
     options: [
+      'Only manages schemas',
       'Only backs up data',
-      'Monitors and analyzes database activity for security',
       'Only optimizes queries',
-      'Only manages schemas'
+      'Monitors and analyzes database activity for security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DAM monitors database activity in real-time to detect unauthorized access, policy violations, and anomalies.',
     topic: 'Data Security',
     subtopic: 'DAM'
@@ -413,14 +413,14 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     blueprintArea: 'CISA5-1',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Data masking:',
+    question: 'Which of the following best describes data masking as a data protection technique?',
     options: [
+      'Compresses data',
       'Deletes data',
-      'Obscures sensitive data while preserving format for testing',
       'Encrypts in transit',
-      'Compresses data'
+      'Obscures sensitive data while preserving format for testing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Data masking obscures sensitive data while maintaining realistic format, enabling safe use in non-production environments.',
     topic: 'Data Security',
     subtopic: 'Data Masking'
@@ -432,14 +432,14 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     blueprintArea: 'CISA5-1',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Tokenization:',
+    question: 'Which of the following best describes tokenization as a method of protecting sensitive data?',
     options: [
       'Encrypts data symmetrically',
-      'Replaces sensitive data with non-sensitive tokens',
+      'Compresses data',
       'Hashes data irreversibly',
-      'Compresses data'
+      'Replaces sensitive data with non-sensitive tokens',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Tokenization replaces sensitive data with non-sensitive tokens, with mapping stored securely in a token vault.',
     topic: 'Data Security',
     subtopic: 'Tokenization'
@@ -453,12 +453,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Mobile device management (MDM) enables:',
     options: [
+      'Only email access',
+      'Only call management',
       'Only device tracking',
       'Policy enforcement, remote wipe, and application management',
-      'Only email access',
-      'Only call management'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MDM enables policy enforcement, remote wipe, application management, and secure configuration of mobile devices.',
     topic: 'Endpoint Security',
     subtopic: 'MDM'
@@ -472,12 +472,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'Containerization on mobile devices:',
     options: [
+      'Allows unrestricted access',
+      'Removes all security',
       'Mixes personal and work data',
       'Separates work data in a secure container',
-      'Removes all security',
-      'Allows unrestricted access'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Mobile containerization separates work data in a secure, encrypted container, enabling BYOD while protecting corporate data.',
     topic: 'Endpoint Security',
     subtopic: 'Containerization'
@@ -491,12 +491,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Security Operations Center (SOC) primary function is:',
     options: [
-      'Development',
-      'Monitoring, detecting, and responding to security incidents',
       'Sales support',
-      'Hardware maintenance'
+      'Development',
+      'Hardware maintenance',
+      'Monitoring, detecting, and responding to security incidents',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SOCs provide centralized security monitoring, detection, analysis, and response to security incidents.',
     topic: 'Security Operations',
     subtopic: 'SOC'
@@ -511,11 +511,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'Threat intelligence feeds provide:',
     options: [
       'Only historical data',
-      'Indicators of compromise and threat context',
       'Only vendor marketing',
-      'Only compliance information'
+      'Only compliance information',
+      'Indicators of compromise and threat context',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Threat intelligence feeds provide indicators of compromise, threat actor information, and context for proactive defense.',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence'
@@ -530,11 +530,11 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     question: 'MITRE ATT&CK framework:',
     options: [
       'Is a compliance standard',
-      'Documents adversary tactics, techniques, and procedures',
       'Is a vulnerability database',
-      'Is a policy framework'
+      'Is a policy framework',
+      'Documents adversary tactics, techniques, and procedures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MITRE ATT&CK documents adversary TTPs, providing a knowledge base for understanding and defending against threats.',
     topic: 'Security Operations',
     subtopic: 'MITRE ATT&CK'
@@ -548,12 +548,12 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Evidence preservation in incident response requires:',
     options: [
-      'Immediate deletion',
-      'Chain of custody documentation and forensic imaging',
       'Quick recovery only',
-      'No documentation'
+      'Immediate deletion',
+      'No documentation',
+      'Chain of custody documentation and forensic imaging',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Evidence preservation requires proper chain of custody documentation, forensic imaging, and secure storage for potential legal proceedings.',
     topic: 'Incident Response',
     subtopic: 'Evidence Preservation'

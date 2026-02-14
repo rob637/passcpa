@@ -15,9 +15,9 @@ import {
 import { Question } from '../../types';
 import { CIASectionId } from '../../courses/cia/config';
 import { 
-  CIA1_QUESTIONS, 
-  CIA2_QUESTIONS, 
-  CIA3_QUESTIONS 
+  ALL_CIA1_QUESTIONS as CIA1_QUESTIONS, 
+  ALL_CIA2_QUESTIONS as CIA2_QUESTIONS, 
+  ALL_CIA3_QUESTIONS as CIA3_QUESTIONS 
 } from '../../data/cia/questions';
 
 // ============================================

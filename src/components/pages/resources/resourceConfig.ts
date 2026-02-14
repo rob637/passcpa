@@ -1060,7 +1060,7 @@ const CISA_RESOURCES: CourseResourceConfig = {
       colorLight: 'cyan-50',
       colorDark: 'cyan-900/30',
       items: [
-        { id: 'cisa-ref-domains', type: 'reference', title: 'Domain Weight Chart', description: 'Domain weights: D1 18%, D2 18%, D3 12%, D4 26%, D5 26%' },
+        { id: 'cisa-ref-domains', type: 'reference', title: 'Domain Weight Chart', description: 'Domain weights: D1 21%, D2 16%, D3 18%, D4 20%, D5 25%' },
         { id: 'cisa-ref-acronyms', type: 'reference', title: 'Key Acronyms', description: 'RTO, RPO, MTPD, BIA, SDLC, COBIT, ITIL definitions' },
         { id: 'cisa-ref-testing', type: 'reference', title: 'CISA Testing Info', description: 'PSI testing, scheduling, and retake policies' },
         { id: 'cisa-ref-frameworks', type: 'reference', title: 'Framework Comparison', description: 'COBIT vs ITIL vs ISO 27001 quick comparison' },

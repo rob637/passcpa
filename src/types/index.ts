@@ -7,6 +7,7 @@ import type { CourseId as CourseIdType } from './course';
 export * from './course';
 export type { CourseId } from './course';
 export type { CourseId as CourseIdType } from './course';
+export type { CourseData } from './courseData';
 
 /**
  * Normalized Difficulty Levels
@@ -221,7 +222,7 @@ export interface Question {
   courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
   section: AllExamSections;      // Updated: supports all course sections
   topic: string;
-  subtopic: string; // Made required to match existing data
+  subtopic?: string; // Optional — many questions omit this
   topicId?: string; // Legacy
   difficulty: Difficulty;
   question: string;
@@ -469,6 +470,10 @@ export interface UserProfile {
   // Curriculum filtering (smart study)
   enableCurriculumFilter?: boolean; // Filter to covered topics only
   enablePreviewMode?: boolean;      // Allow 10% lookahead for next topics
+  
+  // Study schedule — which days the user intends to study (0=Sun, 1=Mon, ..., 6=Sat)
+  // If omitted, all 7 days are assumed.
+  studyDayPreferences?: number[];
   
   // Timestamps (FieldValue allowed for serverTimestamp() during writes)
   createdAt?: Date | { seconds: number; nanoseconds: number } | { isEqual: (other: unknown) => boolean };

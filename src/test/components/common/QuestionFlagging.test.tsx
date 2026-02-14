@@ -12,6 +12,7 @@ vi.mock('firebase/firestore', () => ({
   setDoc: vi.fn(() => Promise.resolve()),
   deleteDoc: vi.fn(() => Promise.resolve()),
   serverTimestamp: vi.fn(() => new Date()),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 vi.mock('../../../config/firebase', () => ({

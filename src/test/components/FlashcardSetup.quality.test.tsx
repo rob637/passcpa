@@ -43,6 +43,7 @@ vi.mock('firebase/firestore', () => ({
     exists: () => false,
     data: () => ({}),
   }),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 vi.mock('../../data/cpa/flashcards', () => ({

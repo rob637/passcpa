@@ -5,7 +5,7 @@
  * Designed to work with Stripe (when configured) or in freemium mode.
  */
 
-import { doc, getDoc, setDoc, updateDoc, deleteField, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, deleteField, serverTimestamp, onSnapshot } from 'firebase/firestore';
 import logger from '../utils/logger';
 import { db } from '../config/firebase.js';
 
@@ -733,7 +733,7 @@ export const subscriptionService = new SubscriptionService();
 // React Hook for Subscription
 // ============================================================================
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../providers/AuthProvider';
 import { useCourse } from '../providers/CourseProvider';
 
@@ -810,6 +810,39 @@ export function useSubscription() {
 
     fetchSubscription();
   }, [user, activeCourseId, refreshKey]);
+
+  // Realtime listener: pick up Stripe webhook updates to the subscription document
+  const isFirstSnapshotRef = useRef(true);
+  useEffect(() => {
+    if (!user) {
+      isFirstSnapshotRef.current = true;
+      return;
+    }
+
+    const unsubscribe = onSnapshot(
+      doc(db, 'subscriptions', user.uid),
+      () => {
+        // Skip the very first snapshot — the initial fetch already has this data
+        if (isFirstSnapshotRef.current) {
+          isFirstSnapshotRef.current = false;
+          return;
+        }
+        // Document changed (e.g., Stripe webhook wrote paidExams) — re-fetch
+        logger.info('Subscription document updated, refreshing…');
+        refreshSubscription();
+      },
+      (error) => {
+        logger.error('Subscription listener error:', error);
+      }
+    );
+
+    return () => {
+      unsubscribe();
+      isFirstSnapshotRef.current = true;
+    };
+  // refreshSubscription is stable (setState updater), safe to omit from deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   // === Computed access for the ACTIVE course ===
   const subscribedCourseId = subscription?.courseId;

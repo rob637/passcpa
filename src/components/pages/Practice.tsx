@@ -723,6 +723,7 @@ const Practice: React.FC = () => {
     if (!inSession || questions.length === 0) return;
     
     const sessionState = {
+      courseId, // Track which course this session belongs to
       questions,
       currentIndex,
       answers,
@@ -738,7 +739,7 @@ const Practice: React.FC = () => {
     } catch (e) {
       logger.error('Error saving practice session:', e);
     }
-  }, [inSession, questions, currentIndex, answers, flagged, startTime, elapsed, sessionConfig]);
+  }, [inSession, questions, currentIndex, answers, flagged, startTime, elapsed, sessionConfig, courseId]);
 
   // Restore session state from sessionStorage
   const restoreSessionState = useCallback(() => {
@@ -747,6 +748,13 @@ const Practice: React.FC = () => {
       if (!saved) return false;
       
       const sessionState = JSON.parse(saved);
+      
+      // Check if session belongs to the current course
+      if (sessionState.courseId && sessionState.courseId !== courseId) {
+        // Don't restore sessions from a different course
+        logger.info(`Skipping session restore: saved for ${sessionState.courseId}, current is ${courseId}`);
+        return false;
+      }
       
       // Check if session is still valid (less than 30 minutes old)
       const MAX_AGE = 30 * 60 * 1000; // 30 minutes
@@ -781,7 +789,8 @@ const Practice: React.FC = () => {
       logger.error('Error restoring practice session:', e);
       return false;
     }
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [courseId]);
 
   // Check if there's a valid saved session (without consuming it)
   const hasSavedSession = useMemo(() => {
@@ -789,12 +798,15 @@ const Practice: React.FC = () => {
       const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
       if (!saved) return false;
       const sessionState = JSON.parse(saved);
+      // Must match current course
+      if (sessionState.courseId && sessionState.courseId !== courseId) return false;
       const MAX_AGE = 30 * 60 * 1000; // 30 minutes
       return Date.now() - sessionState.savedAt <= MAX_AGE;
     } catch {
       return false;
     }
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [courseId]);
 
   // Handler for manual resume from UI
   const handleManualResume = useCallback(() => {
@@ -803,6 +815,26 @@ const Practice: React.FC = () => {
       scrollToTop();
     }
   }, [restoreSessionState]);
+
+  // Reset active session when course changes (prevent cross-course contamination)
+  const prevCourseRef = useRef(courseId);
+  useEffect(() => {
+    if (prevCourseRef.current !== courseId) {
+      prevCourseRef.current = courseId;
+      if (inSession) {
+        // End the in-progress session — it belongs to a different course
+        setInSession(false);
+        setQuestions([]);
+        setAnswers({});
+        setCurrentIndex(0);
+        setShowResults(false);
+        setSelectedAnswer(null);
+        setShowExplanation(false);
+        setFlagged(new Set());
+        logger.info(`Practice session reset: course changed to ${courseId}`);
+      }
+    }
+  }, [courseId, inSession]);
 
   // Try to restore session on mount or navigation
   useEffect(() => {

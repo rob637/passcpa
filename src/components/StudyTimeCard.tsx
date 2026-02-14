@@ -77,25 +77,45 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
   // TBS is only for CPA exam
   const hasTBS = courseId === 'cpa';
   
-  // Calculate time breakdown from todayLog activities or estimate from stats
-  // In a real implementation, you'd track time per activity type
-  // For now, we'll estimate based on question counts
+  // Calculate real time breakdown from todayLog activities
   const todayMinutes = todayLog?.studyTimeMinutes || 0;
   const weeklyMinutes = weeklyStats?.totalMinutes || 0;
   
-  // Estimate breakdown (in real app, track this explicitly)
-  // Adjust percentages based on whether TBS is available
-  const lessonsTime = Math.round(todayMinutes * (hasTBS ? 0.3 : 0.35));
-  const mcqsTime = Math.round(todayMinutes * (hasTBS ? 0.4 : 0.5));
-  const tbsTime = hasTBS ? Math.round(todayMinutes * 0.2) : 0;
-  const flashcardsTime = Math.round(todayMinutes * (hasTBS ? 0.1 : 0.15));
+  // Sum actual time per activity type from today's activities
+  let lessonsTime = 0;
+  let mcqsTime = 0;
+  let tbsTime = 0;
+  
+  if (todayLog?.activities && Array.isArray(todayLog.activities)) {
+    for (const activity of todayLog.activities) {
+      if (activity.type === 'lesson') {
+        // Lessons record timeSpent in minutes
+        lessonsTime += activity.timeSpent || 0;
+      } else if (activity.type === 'mcq') {
+        // MCQs record timeSpentSeconds
+        mcqsTime += (activity.timeSpentSeconds || 0) / 60;
+      } else if (activity.type === 'simulation') {
+        // Simulations record timeSpent in minutes
+        tbsTime += activity.timeSpent || 0;
+      }
+    }
+  }
+  
+  // Round to nearest integer
+  lessonsTime = Math.round(lessonsTime);
+  mcqsTime = Math.round(mcqsTime);
+  tbsTime = Math.round(tbsTime);
+  
+  // Any remaining time not tracked per-activity goes to "Other"
+  const trackedTime = lessonsTime + mcqsTime + tbsTime;
+  const otherTime = Math.max(0, Math.round(todayMinutes - trackedTime));
   
   // Build segments dynamically based on course
   const allSegments = [
     { value: lessonsTime, color: ACTIVITY_COLORS.lessons, label: 'Lessons' },
     { value: mcqsTime, color: ACTIVITY_COLORS.mcqs, label: 'MCQs' },
     ...(hasTBS ? [{ value: tbsTime, color: ACTIVITY_COLORS.tbs, label: 'TBS' }] : []),
-    { value: flashcardsTime, color: ACTIVITY_COLORS.flashcards, label: 'Flashcards' },
+    { value: otherTime, color: ACTIVITY_COLORS.other, label: 'Other' },
   ];
   
   const segments = allSegments.filter(s => s.value > 0);
@@ -144,7 +164,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
             { label: 'Lessons', color: ACTIVITY_COLORS.lessons, time: lessonsTime },
             { label: 'MCQs', color: ACTIVITY_COLORS.mcqs, time: mcqsTime },
             ...(hasTBS ? [{ label: 'TBS', color: ACTIVITY_COLORS.tbs, time: tbsTime }] : []),
-            { label: 'Flashcards', color: ACTIVITY_COLORS.flashcards, time: flashcardsTime },
+            { label: 'Other', color: ACTIVITY_COLORS.other, time: otherTime },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-1.5">
               <div 

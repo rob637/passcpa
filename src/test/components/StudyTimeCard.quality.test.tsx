@@ -11,7 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 vi.mock('../../hooks/useStudy', () => ({
   useStudy: vi.fn(() => ({
     weeklyStats: { totalMinutes: 300 },
-    todayLog: { studyTimeMinutes: 60 },
+    todayLog: { studyTimeMinutes: 60, activities: [] },
   })),
 }));
 
@@ -32,7 +32,7 @@ describe('StudyTimeCard', () => {
     
     (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
       weeklyStats: { totalMinutes: 300 },
-      todayLog: { studyTimeMinutes: 60 },
+      todayLog: { studyTimeMinutes: 60, activities: [] },
     });
   });
 
@@ -55,12 +55,26 @@ describe('StudyTimeCard', () => {
     });
 
     it('should display activity legends', () => {
+      // Provide activities so multiple categories show
+      (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
+        weeklyStats: { totalMinutes: 300 },
+        todayLog: {
+          studyTimeMinutes: 60,
+          activities: [
+            { type: 'lesson', timeSpent: 20 },
+            { type: 'mcq', timeSpentSeconds: 1200 },
+            { type: 'simulation', timeSpent: 10 },
+          ],
+        },
+      });
+
       renderComponent();
 
       expect(screen.getByText('Lessons')).toBeInTheDocument();
       expect(screen.getByText('MCQs')).toBeInTheDocument();
       expect(screen.getByText('TBS')).toBeInTheDocument();
-      expect(screen.getByText('Flashcards')).toBeInTheDocument();
+      // Remaining untracked time shows as 'Other' (not 'Flashcards')
+      expect(screen.getByText('Other')).toBeInTheDocument();
     });
 
     it('should display weekly total', () => {
@@ -82,12 +96,14 @@ describe('StudyTimeCard', () => {
     it('should format minutes under an hour', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 45 },
-        todayLog: { studyTimeMinutes: 30 },
+        todayLog: { studyTimeMinutes: 30, activities: [] },
       });
 
       renderComponent();
 
-      expect(screen.getByText('30m')).toBeInTheDocument();
+      // '30m' appears for today time and as Other breakdown
+      const matches = screen.getAllByText('30m');
+      expect(matches.length).toBeGreaterThanOrEqual(1);
     });
 
     it('should format exactly one hour', () => {
@@ -167,52 +183,75 @@ describe('StudyTimeCard', () => {
   });
 
   describe('activity breakdown', () => {
-    it('should show estimated lesson time', () => {
+    it('should show lesson time from activities', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 100 },
-        todayLog: { studyTimeMinutes: 100 },
+        todayLog: {
+          studyTimeMinutes: 100,
+          activities: [
+            { type: 'lesson', timeSpent: 30 },
+          ],
+        },
       });
 
       renderComponent();
 
-      // 30% of 100 = 30m for lessons
-      expect(screen.getByText('30m')).toBeInTheDocument();
+      // 30m from lesson activity (may appear with Other too)
+      const matches = screen.getAllByText('30m');
+      expect(matches.length).toBeGreaterThanOrEqual(1);
     });
 
-    it('should show estimated MCQ time', () => {
+    it('should show MCQ time from activities', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 100 },
-        todayLog: { studyTimeMinutes: 100 },
+        todayLog: {
+          studyTimeMinutes: 100,
+          activities: [
+            { type: 'mcq', timeSpentSeconds: 2400 }, // 40 minutes
+          ],
+        },
       });
 
       renderComponent();
 
-      // 40% of 100 = 40m for MCQs
+      // 2400s / 60 = 40m for MCQs
       expect(screen.getByText('40m')).toBeInTheDocument();
     });
 
-    it('should show estimated TBS time', () => {
+    it('should show TBS time from simulation activities', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 100 },
-        todayLog: { studyTimeMinutes: 100 },
+        todayLog: {
+          studyTimeMinutes: 100,
+          activities: [
+            { type: 'simulation', timeSpent: 20 },
+          ],
+        },
       });
 
       renderComponent();
 
-      // 20% of 100 = 20m for TBS
+      // 20m from simulation activity
       expect(screen.getByText('20m')).toBeInTheDocument();
     });
 
-    it('should show estimated flashcard time', () => {
+    it('should show Other for untracked time', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 100 },
-        todayLog: { studyTimeMinutes: 100 },
+        todayLog: {
+          studyTimeMinutes: 100,
+          activities: [
+            { type: 'lesson', timeSpent: 30 },
+            { type: 'mcq', timeSpentSeconds: 1800 }, // 30 minutes
+          ],
+        },
       });
 
       renderComponent();
 
-      // 10% of 100 = 10m for flashcards
-      expect(screen.getByText('10m')).toBeInTheDocument();
+      // 100 - 30 - 30 = 40m untracked = Other
+      expect(screen.getByText('Other')).toBeInTheDocument();
+      expect(screen.getByText('40m')).toBeInTheDocument();
     });
   });
 
@@ -327,18 +366,20 @@ describe('StudyTimeCard', () => {
     it('should handle very small study time', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 5 },
-        todayLog: { studyTimeMinutes: 1 },
+        todayLog: { studyTimeMinutes: 1, activities: [] },
       });
 
       renderComponent();
 
-      expect(screen.getByText('1m')).toBeInTheDocument();
+      // '1m' may appear multiple times (today + Other breakdown)
+      const matches = screen.getAllByText('1m');
+      expect(matches.length).toBeGreaterThanOrEqual(1);
     });
 
     it('should handle very large study time', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 1200 },
-        todayLog: { studyTimeMinutes: 600 },
+        todayLog: { studyTimeMinutes: 600, activities: [] },
       });
 
       renderComponent();
@@ -349,13 +390,14 @@ describe('StudyTimeCard', () => {
     it('should round decimal minutes', () => {
       (useStudy as ReturnType<typeof vi.fn>).mockReturnValue({
         weeklyStats: { totalMinutes: 100 },
-        todayLog: { studyTimeMinutes: 37.8 },
+        todayLog: { studyTimeMinutes: 37.8, activities: [] },
       });
 
       renderComponent();
 
-      // Should round to 38m
-      expect(screen.getByText('38m')).toBeInTheDocument();
+      // Should round to 38m (may appear in today + breakdown)
+      const matches = screen.getAllByText('38m');
+      expect(matches.length).toBeGreaterThanOrEqual(1);
     });
   });
 });

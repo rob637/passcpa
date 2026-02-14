@@ -231,6 +231,13 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           
           // Skip if this log is for a different course (for backwards compatibility)
           if (data.courseId && data.courseId !== activeCourse) return;
+
+          // Use the top-level studyTimeMinutes field (same source as todayLog)
+          // to avoid discrepancy between today and weekly totals
+          if (data.studyTimeMinutes) {
+            totalMinutes += data.studyTimeMinutes;
+          }
+
           // Count course-specific stats from activities
           if (data.activities && Array.isArray(data.activities)) {
             data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean; timeSpentSeconds?: number; timeSpent?: number }) => {
@@ -238,13 +245,6 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               const belongsToCourse = courseSections.includes(activitySection);
               
               if (belongsToCourse) {
-                // Add time: MCQs use timeSpentSeconds, lessons/sims use timeSpent (minutes)
-                if (activity.type === 'mcq' && activity.timeSpentSeconds) {
-                  totalMinutes += Math.max(0.1, Math.round((activity.timeSpentSeconds / 60) * 10) / 10);
-                } else if ((activity.type === 'lesson' || activity.type === 'simulation') && activity.timeSpent) {
-                  totalMinutes += activity.timeSpent;
-                }
-                
                 if (activity.type === 'mcq') {
                   totalQuestions++;
                   if (activity.isCorrect) totalCorrect++;

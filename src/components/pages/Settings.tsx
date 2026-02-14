@@ -55,15 +55,6 @@ import { Timestamp } from 'firebase/firestore';
 import { clearTodaysPlan } from '../../services/dailyPlanPersistence';
 import clsx from 'clsx';
 
-interface UserProfile {
-  displayName?: string;
-  photoURL?: string;
-  examSection?: string;
-  dailyGoal?: number;
-  examDate?: Timestamp | Date | string;
-  [key: string]: any;
-}
-
 // Helper to convert various date formats to YYYY-MM-DD string
 const formatDateForInput = (date: Timestamp | Date | string | null | undefined): string => {
   if (!date) return '';
@@ -112,8 +103,8 @@ const Settings: React.FC = () => {
   const [isManagingSubscription, setIsManagingSubscription] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Cast profile
-  const profile = userProfile as UserProfile | null;
+  // Profile from auth
+  const profile = userProfile;
 
   // Form states
   const [displayName, setDisplayName] = useState(profile?.displayName || '');
@@ -121,8 +112,7 @@ const Settings: React.FC = () => {
   const [examSection, setExamSection] = useState(getCurrentSectionForCourse(profile?.examSection, courseId));
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
   // Use getExamDate for multi-course support (handles single-exam courses like CISA/CFP)
-  // Cast to any since our local UserProfile type is compatible with what getExamDate needs
-  const [examDate, setExamDate] = useState(formatDateForInput(getExamDate(profile as any, examSection, courseId)));
+  const [examDate, setExamDate] = useState(formatDateForInput(getExamDate(profile, examSection, courseId)));
 
   // Sync form state when profile changes (e.g., after reset) or courseId changes
   useEffect(() => {
@@ -191,7 +181,7 @@ const Settings: React.FC = () => {
 
     // Load notification preferences from profile
     if (profile?.weeklyReportEnabled !== undefined) {
-      setNotifications((prev) => ({ ...prev, weeklyReport: profile.weeklyReportEnabled }));
+      setNotifications((prev) => ({ ...prev, weeklyReport: profile.weeklyReportEnabled ?? false }));
     }
     
     // Load timezone from profile or auto-detect

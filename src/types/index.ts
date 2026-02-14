@@ -3,6 +3,11 @@
 // Import CourseId for use in this file
 import type { CourseId as CourseIdType } from './course';
 
+// Firestore-compatible timestamp type (accepts Date, Firestore Timestamp, FieldValue from serverTimestamp())
+// Using structural types to avoid importing Firebase in the types layer
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type FirestoreTimestamp = Date | { seconds: number; nanoseconds: number } | { isEqual: (other: any) => boolean };
+
 // Re-export course types for convenience
 export * from './course';
 export type { CourseId } from './course';
@@ -476,7 +481,7 @@ export interface UserProfile {
   studyDayPreferences?: number[];
   
   // Timestamps (FieldValue allowed for serverTimestamp() during writes)
-  createdAt?: Date | { seconds: number; nanoseconds: number } | { isEqual: (other: unknown) => boolean };
-  updatedAt?: Date | { seconds: number; nanoseconds: number } | { isEqual: (other: unknown) => boolean };
+  createdAt?: FirestoreTimestamp;
+  updatedAt?: FirestoreTimestamp;
 }
 

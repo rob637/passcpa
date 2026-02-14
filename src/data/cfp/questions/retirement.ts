@@ -13,7 +13,7 @@ export const CFP_RET_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   // ============================================
   {
-    id: 'CFP-RET-001',
+    id: 'cfp-ret-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -48,7 +48,7 @@ export const CFP_RET_QUESTIONS: Question[] = [
 - **D) $91,800:** Over-reduces by applying incorrect tax differential`
   },
   {
-    id: 'CFP-RET-002',
+    id: 'cfp-ret-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -81,7 +81,7 @@ export const CFP_RET_QUESTIONS: Question[] = [
 - **D:** Uses nominal rates incorrectly, overstating need`
   },
   {
-    id: 'CFP-RET-003',
+    id: 'cfp-ret-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -113,7 +113,7 @@ export const CFP_RET_QUESTIONS: Question[] = [
 - **D) $2,380:** Uses 15% reduction (incorrect)`
   },
   {
-    id: 'CFP-RET-004',
+    id: 'cfp-ret-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -150,7 +150,7 @@ export const CFP_RET_QUESTIONS: Question[] = [
 - **D)** Complex and doesn't maximize as effectively`
   },
   {
-    id: 'CFP-RET-005',
+    id: 'cfp-ret-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -179,7 +179,7 @@ IRMAA (Income-Related Monthly Adjustment Amount) surcharges are added to Medicar
   // RET-2: Employer-Sponsored Plans
   // ============================================
   {
-    id: 'CFP-RET-006',
+    id: 'cfp-ret-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -221,7 +221,7 @@ Wait - the question asks for maximum total. Employer can contribute more:
 - **C)** Section 415(c) limit without catch-up`
   },
   {
-    id: 'CFP-RET-007',
+    id: 'cfp-ret-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -254,7 +254,7 @@ Employees with 15+ years of service at educational organizations, hospitals, or 
 - **D)** Incorrectly combines 15-Year Rule and catch-up`
   },
   {
-    id: 'CFP-RET-008',
+    id: 'cfp-ret-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -283,7 +283,7 @@ Employees with 15+ years of service at educational organizations, hospitals, or 
 - **D)** Uses total of 3 years instead of average`
   },
   {
-    id: 'CFP-RET-009',
+    id: 'cfp-ret-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -314,7 +314,7 @@ The "Rule of 55" exception (separation from service at age 55+) applies ONLY to 
   // RET-3: Individual Retirement Arrangements
   // ============================================
   {
-    id: 'CFP-RET-010',
+    id: 'cfp-ret-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -349,7 +349,7 @@ When one spouse IS covered by an employer plan and the other IS NOT:
 - **D)** Misunderstands spousal IRA rules`
   },
   {
-    id: 'CFP-RET-011',
+    id: 'cfp-ret-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -385,7 +385,7 @@ The conventional wisdom of "convert when you're in a lower bracket" is oversimpl
 - **C)** Ignores the value of tax-free growth and RMD management`
   },
   {
-    id: 'CFP-RET-012',
+    id: 'cfp-ret-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -418,7 +418,7 @@ The conventional wisdom of "convert when you're in a lower bracket" is oversimpl
 - **D)** This is the Section 415(c) maximum, not her personal calculation`
   },
   {
-    id: 'CFP-RET-013',
+    id: 'cfp-ret-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -449,7 +449,7 @@ Roth 401(k) balances CAN be rolled to a Traditional IRA—they would just be sub
   // RET-4: Executive/Business Owner Plans
   // ============================================
   {
-    id: 'CFP-RET-014',
+    id: 'cfp-ret-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -480,7 +480,7 @@ NQDC plans are "unfunded" for tax purposes—the executive's benefit is merely a
 - **D)** Earnings in a properly structured NQDC are tax-deferred, not annually taxed`
   },
   {
-    id: 'CFP-RET-015',
+    id: 'cfp-ret-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -516,7 +516,7 @@ NQDC plans are "unfunded" for tax purposes—the executive's benefit is merely a
 - **D)** Ignores AMT implications—this is a common exam mistake`
   },
   {
-    id: 'CFP-RET-016',
+    id: 'cfp-ret-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -558,7 +558,7 @@ Dr. Chen's profile is ideal for a defined benefit plan:
   // RET-5: Special Topics
   // ============================================
   {
-    id: 'CFP-RET-017',
+    id: 'cfp-ret-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -592,7 +592,7 @@ When the original owner died AFTER their Required Beginning Date (age 73+), the 
 - **D)** Ignores annual RMD requirement when owner died after RBD`
   },
   {
-    id: 'CFP-RET-018',
+    id: 'cfp-ret-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -631,7 +631,7 @@ When taking a lump-sum distribution of employer stock:
 - **D)** Ignores that cost basis is immediately taxable`
   },
   {
-    id: 'CFP-RET-019',
+    id: 'cfp-ret-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -661,7 +661,7 @@ A QDRO must include specific requirements:
 - **D)** QDROs can be issued after divorce is finalized; timing is not restricted`
   },
   {
-    id: 'CFP-RET-020',
+    id: 'cfp-ret-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -703,7 +703,7 @@ A QDRO must include specific requirements:
 - **D)** Not optimized; ignores tax bracket management`
   },
   {
-    id: 'CFP-RET-021',
+    id: 'cfp-ret-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -738,7 +738,7 @@ A QDRO must include specific requirements:
 - **D)** That's a different approach ("4% of current balance" = floor rule)`
   },
   {
-    id: 'CFP-RET-022',
+    id: 'cfp-ret-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -771,7 +771,7 @@ A QDRO must include specific requirements:
 **SIMPLE wins on simplicity and low administrative requirements.**`
   },
   {
-    id: 'CFP-RET-023',
+    id: 'cfp-ret-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -812,7 +812,7 @@ This is why the "backdoor Roth" is problematic when you have existing pre-tax IR
 - **D)** Would only be correct if no pre-tax IRA existed`
   },
   {
-    id: 'CFP-RET-024',
+    id: 'cfp-ret-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -846,7 +846,7 @@ This is why the "backdoor Roth" is problematic when you have existing pre-tax IR
 - **D)** ISOs DO have holding requirements (2 years from grant, 1 year from exercise for qualifying disposition)`
   },
   {
-    id: 'CFP-RET-025',
+    id: 'cfp-ret-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -885,7 +885,7 @@ Since Social Security is a form of employer-provided retirement benefit (employe
   // Additional RET Questions (026-045)
   // ============================================
   {
-    id: 'CFP-RET-026',
+    id: 'cfp-ret-026',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -919,7 +919,7 @@ Since Social Security is a form of employer-provided retirement benefit (employe
 - **D)** Safe harbor hardship can include employee contributions, employer contributions (if vested), and earnings`
   },
   {
-    id: 'CFP-RET-027',
+    id: 'cfp-ret-027',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -954,7 +954,7 @@ The IRS aggregates ALL traditional IRA balances (including SEP, SIMPLE after 2 y
 Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the conversion to avoid the pro-rata issue.`
   },
   {
-    id: 'CFP-RET-028',
+    id: 'cfp-ret-028',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -995,7 +995,7 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
 - **D)** Double-counts Social Security or uses wrong rate`
   },
   {
-    id: 'CFP-RET-029',
+    id: 'cfp-ret-029',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1030,7 +1030,7 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
 - **D)** Maximum waiting period is 60 days, not 6 months`
   },
   {
-    id: 'CFP-RET-030',
+    id: 'cfp-ret-030',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -1071,7 +1071,7 @@ Government and tax-exempt employees can dramatically accelerate retirement savin
 - **D)** Confuses with 415(c) annual addition limit`
   },
   {
-    id: 'CFP-RET-031',
+    id: 'cfp-ret-031',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -1109,7 +1109,7 @@ RMDs are always calculated using the prior year-end account balance.
 - **D)** Uses incorrect balance or divisor`
   },
   {
-    id: 'CFP-RET-032',
+    id: 'cfp-ret-032',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -1145,7 +1145,7 @@ RMDs are always calculated using the prior year-end account balance.
 - **D) Patricia:** Already in highest bracket and taking RMDs; limited time horizon and no bracket arbitrage`
   },
   {
-    id: 'CFP-RET-033',
+    id: 'cfp-ret-033',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1179,7 +1179,7 @@ RMDs are always calculated using the prior year-end account balance.
 - **D)** Profit sharing is NOT a safe harbor contribution formula`
   },
   {
-    id: 'CFP-RET-034',
+    id: 'cfp-ret-034',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -1213,7 +1213,7 @@ RMDs are always calculated using the prior year-end account balance.
 - **D)** Probability of success ≠ expected return`
   },
   {
-    id: 'CFP-RET-035',
+    id: 'cfp-ret-035',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -1249,7 +1249,7 @@ $2,800 × 1.24 = $3,472
 - **D)** 30% increase (doesn't exist—max is 24% at age 70)`
   },
   {
-    id: 'CFP-RET-036',
+    id: 'cfp-ret-036',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1288,7 +1288,7 @@ $2,800 × 1.24 = $3,472
 - Combined with 401(k) for additional deferrals`
   },
   {
-    id: 'CFP-RET-037',
+    id: 'cfp-ret-037',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -1296,40 +1296,40 @@ $2,800 × 1.24 = $3,472
     subtopic: 'IRA Basis Tracking',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Janet made non-deductible IRA contributions of $6,000/year for 10 years ($60,000 total). Her traditional IRA is now worth $150,000. If she takes a $30,000 distribution, how much is taxable?`,
+    question: `Janet made non-deductible IRA contributions of $7,000/year for 10 years ($70,000 total). Her traditional IRA is now worth $175,000. If she takes a $35,000 distribution, how much is taxable?`,
     options: [
-      'B) $18,000',
-      'A) $30,000 (fully taxable)',
-      'C) $12,000',
+      'B) $21,000',
+      'A) $35,000 (fully taxable)',
+      'C) $14,000',
       'D) $0 (return of basis first)',
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: B ($18,000)**
+    explanation: `**Correct Answer: B ($21,000)**
 
 **Pro-Rata Rule for IRA Distributions:**
 Non-deductible contributions create "basis" in the IRA, but you can't withdraw basis first.
 
 **Calculation:**
-- Total IRA value: $150,000
-- After-tax basis: $60,000
-- Pre-tax portion: $90,000
+- Total IRA value: $175,000
+- After-tax basis: $70,000
+- Pre-tax portion: $105,000
 
-After-tax ratio: $60,000 ÷ $150,000 = 40%
-Pre-tax ratio: $90,000 ÷ $150,000 = 60%
+After-tax ratio: $70,000 ÷ $175,000 = 40%
+Pre-tax ratio: $105,000 ÷ $175,000 = 60%
 
-**$30,000 distribution:**
-- Tax-free (return of basis): $30,000 × 40% = $12,000
-- Taxable (earnings + deductible): $30,000 × 60% = $18,000
+**$35,000 distribution:**
+- Tax-free (return of basis): $35,000 × 40% = $14,000
+- Taxable (earnings + deductible): $35,000 × 60% = $21,000
 
 **Form 8606** tracks non-deductible contributions and calculates taxable portion.
 
 **Why other answers are wrong:**
-- **A)** Ignores the $60,000 basis
+- **A)** Ignores the $70,000 basis
 - **C)** Reversed the taxable and tax-free portions
 - **D)** IRS requires pro-rata treatment; can't withdraw basis first`
   },
   {
-    id: 'CFP-RET-038',
+    id: 'cfp-ret-038',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -1367,7 +1367,7 @@ Some NQDC plans use rabbi trusts, but these do NOT protect against employer inso
 - **D)** There's no "bankruptcy penalty"—it's simply a loss`
   },
   {
-    id: 'CFP-RET-039',
+    id: 'cfp-ret-039',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -1406,7 +1406,7 @@ This method calculates payments as if the IRA were a loan being paid out over th
 - **D)** Uses wrong factor or interest rate`
   },
   {
-    id: 'CFP-RET-040',
+    id: 'cfp-ret-040',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1448,7 +1448,7 @@ $37,174 + $30,500 = $67,674
 At $200,000 income, Greg can contribute close to the maximum.`
   },
   {
-    id: 'CFP-RET-041',
+    id: 'cfp-ret-041',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -1490,7 +1490,7 @@ During retirement (distribution phase), the ORDER of returns matters significant
 - **D)** Sequence risk is MORE important during distribution phase`
   },
   {
-    id: 'CFP-RET-042',
+    id: 'cfp-ret-042',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -1526,7 +1526,7 @@ May be limited if Kevin has workplace retirement plan (AGI phase-outs apply to s
 - **D)** This is the combined family amount, not Emily's individual limit`
   },
   {
-    id: 'CFP-RET-043',
+    id: 'cfp-ret-043',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -1564,7 +1564,7 @@ If Janet needs immediate access (under 59½), take distribution BEFORE rolling t
 - **D)** No 60-day requirement; she can leave in plan or roll over when ready`
   },
   {
-    id: 'CFP-RET-044',
+    id: 'cfp-ret-044',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1601,7 +1601,7 @@ $50,000 × 40% = $20,000
 - **D)** Would be at year 6 (80%)`
   },
   {
-    id: 'CFP-RET-045',
+    id: 'cfp-ret-045',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -1644,7 +1644,7 @@ $50,000 × 40% = $20,000
   // ADDITIONAL RETIREMENT QUESTIONS (46-75)
   // ============================================
   {
-    id: 'CFP-RET-046',
+    id: 'cfp-ret-046',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -1674,7 +1674,7 @@ Delaying retirement by 2 years provides multiple benefits:
 - **D)** Changing confidence interval doesn't change actual success probability`
   },
   {
-    id: 'CFP-RET-047',
+    id: 'cfp-ret-047',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1708,7 +1708,7 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
 - **D)** Mary cannot receive Tom's full benefit`
   },
   {
-    id: 'CFP-RET-048',
+    id: 'cfp-ret-048',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -1737,7 +1737,7 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
 - **D)** Earnings test applies until FRA, not age 62`
   },
   {
-    id: 'CFP-RET-049',
+    id: 'cfp-ret-049',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -1763,7 +1763,7 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
 **Why B would be wrong:** Using highest year only ($105,000) instead of 3-year average.`
   },
   {
-    id: 'CFP-RET-050',
+    id: 'cfp-ret-050',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -1795,7 +1795,7 @@ Cross-tested plans allocate contributions based on the PROJECTED BENEFIT at reti
 - **D)** 1099 contractors are not eligible employees`
   },
   {
-    id: 'CFP-RET-051',
+    id: 'cfp-ret-051',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -1825,7 +1825,7 @@ New comparability plans:
 - **D)** Age-weighted favors older employees automatically, not defined groups`
   },
   {
-    id: 'CFP-RET-052',
+    id: 'cfp-ret-052',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -1855,7 +1855,7 @@ Recharacterization allows:
 - **D)** SEP-IRA is employer plan, not applicable here`
   },
   {
-    id: 'CFP-RET-053',
+    id: 'cfp-ret-053',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -1884,7 +1884,7 @@ To avoid the 6% excess contribution penalty:
 - **D)** 6% penalty continues EVERY YEAR until corrected`
   },
   {
-    id: 'CFP-RET-054',
+    id: 'cfp-ret-054',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -1915,7 +1915,7 @@ To avoid the 6% excess contribution penalty:
 - **D)** Confuses the tax-free portion with taxable portion`
   },
   {
-    id: 'CFP-RET-055',
+    id: 'cfp-ret-055',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -1944,7 +1944,7 @@ Roth conversions increase MAGI, which can trigger:
 - **D)** Conversions are ordinary income, not capital gains`
   },
   {
-    id: 'CFP-RET-056',
+    id: 'cfp-ret-056',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -1975,7 +1975,7 @@ By having immediate needs in safe assets, you avoid selling equities during mark
 - **D)** Interest rate risk is secondary consideration`
   },
   {
-    id: 'CFP-RET-057',
+    id: 'cfp-ret-057',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -2006,7 +2006,7 @@ This sequence maximizes tax-advantaged growth and manages bracket filling.
 - **D)** Inefficient—doesn't optimize growth or brackets`
   },
   {
-    id: 'CFP-RET-058',
+    id: 'cfp-ret-058',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -2036,7 +2036,7 @@ QCD Benefits:
 - **D)** QCDs must be from Traditional IRA, not Roth`
   },
   {
-    id: 'CFP-RET-059',
+    id: 'cfp-ret-059',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -2064,7 +2064,7 @@ SIMPLE IRA Employer Options:
 - **D)** SIMPLE is for employers with 100 or fewer employees`
   },
   {
-    id: 'CFP-RET-060',
+    id: 'cfp-ret-060',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -2094,7 +2094,7 @@ SEP-IRA advantages for self-employed:
 - **D)** SIMPLE has lower limits ($16,000 + 3% = less than SEP potential)`
   },
   {
-    id: 'CFP-RET-061',
+    id: 'cfp-ret-061',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -2125,7 +2125,7 @@ Cash balance plans:
 - **D)** Cash balance plans ARE subject to ERISA`
   },
   {
-    id: 'CFP-RET-062',
+    id: 'cfp-ret-062',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -2154,7 +2154,7 @@ Safe Harbor Options:
 - **D)** Discretionary contributions don't satisfy safe harbor`
   },
   {
-    id: 'CFP-RET-063',
+    id: 'cfp-ret-063',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -2188,7 +2188,7 @@ PV = PMT × [(1 - ((1+g)/(1+r))^n) / (r-g)]
 - **D)** Calculation error`
   },
   {
-    id: 'CFP-RET-064',
+    id: 'cfp-ret-064',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -2218,7 +2218,7 @@ PV = PMT × [(1 - ((1+g)/(1+r))^n) / (r-g)]
 - **D)** 15 years doesn't eliminate WEP; needs 30 years`
   },
   {
-    id: 'CFP-RET-065',
+    id: 'cfp-ret-065',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -2249,7 +2249,7 @@ With $60,000 combined income (well above $44,000):
 - **A, B, C)** All below maximum taxation level`
   },
   {
-    id: 'CFP-RET-066',
+    id: 'cfp-ret-066',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -2278,7 +2278,7 @@ HCE Definition:
 - **C)** Tenure is not an HCE factor`
   },
   {
-    id: 'CFP-RET-067',
+    id: 'cfp-ret-067',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -2308,7 +2308,7 @@ Spousal IRA Rules:
 - **D)** Each spouse has their own limit`
   },
   {
-    id: 'CFP-RET-068',
+    id: 'cfp-ret-068',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -2340,7 +2340,7 @@ This does NOT apply to 401(k)s—each must satisfy its own RMD.
 - **D)** Can take from any combination`
   },
   {
-    id: 'CFP-RET-069',
+    id: 'cfp-ret-069',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -2369,7 +2369,7 @@ SECURE 2.0 Act Changes (2023):
 - **D)** Not a daily penalty structure`
   },
   {
-    id: 'CFP-RET-070',
+    id: 'cfp-ret-070',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -2401,7 +2401,7 @@ Maximum total annual addition with catch-up = $76,500
 - **C)** Limit without catch-up provision`
   },
   {
-    id: 'CFP-RET-071',
+    id: 'cfp-ret-071',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -2433,7 +2433,7 @@ Indirect Rollover Challenge:
 - **D)** Cannot designate withholding as Roth conversion`
   },
   {
-    id: 'CFP-RET-072',
+    id: 'cfp-ret-072',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -2463,7 +2463,7 @@ QLAC Rules (SECURE 2.0):
 - **D)** Available in multiple qualified plan types`
   },
   {
-    id: 'CFP-RET-073',
+    id: 'cfp-ret-073',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -2492,7 +2492,7 @@ Both can be used with qualified or non-qualified money and can include death ben
 - **D)** Death benefits are optional on both`
   },
   {
-    id: 'CFP-RET-074',
+    id: 'cfp-ret-074',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -2521,7 +2521,7 @@ Social Security provides annual Cost-of-Living Adjustments (COLA):
 - **D)** Bond coupons are fixed (except TIPS)`
   },
   {
-    id: 'CFP-RET-075',
+    id: 'cfp-ret-075',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',

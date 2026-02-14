@@ -495,7 +495,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'The General Fund is classified as a:',
     options: [
@@ -516,7 +516,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'Under modified accrual accounting for governmental funds, revenues are recognized when:',
     options: [
@@ -537,7 +537,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Budgetary Accounting',
     difficulty: 'medium',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'The budgetary entry for estimated revenues in governmental accounting:',
     options: [
@@ -554,7 +554,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
     id: 'far-exp-026',
     courseId: 'cpa',
     section: 'FAR',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Net Asset Classes',
     difficulty: 'medium',
@@ -578,7 +578,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributions',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'An unconditional promise to give (pledge) is recognized as:',
     options: [
@@ -599,7 +599,7 @@ export const FAR_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'NFPs must report expenses by:',
     options: [

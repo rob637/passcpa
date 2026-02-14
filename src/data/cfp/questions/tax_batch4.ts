@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
   // TAX-3: Capital Gains Taxation
   {
-    id: 'CFP-TAX-B4-001',
+    id: 'cfp-tax-b4-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The 0% capital gains bracket ends around $94,050 for MFJ in 2026. Ordinary income of $65,000 plus $20,000 gains = $85,000 total. Some gains fall in the 0% bracket (up to ~$94,050), remainder at 15%. The $20,000 stacks on top of ordinary income, creating a blended rate.'
   },
   {
-    id: 'CFP-TAX-B4-002',
+    id: 'cfp-tax-b4-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The holding period begins the day after purchase (March 16, 2026). To be long-term, the asset must be held MORE than one year. Sold on March 16, 2027 = held from March 16, 2026 to March 16, 2027 = exactly 1 year and 1 day = long-term capital gain.'
   },
   {
-    id: 'CFP-TAX-B4-003',
+    id: 'cfp-tax-b4-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -66,7 +66,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'NIIT = 3.8% on the lesser of (1) net investment income or (2) MAGI above threshold. Single threshold is $200,000. MAGI above threshold = $250,000 - $200,000 = $50,000. NII = $60,000. Lesser amount = $50,000. NIIT = $50,000 × 3.8% = $1,900.'
   },
   {
-    id: 'CFP-TAX-B4-004',
+    id: 'cfp-tax-b4-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -85,7 +85,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'QSBS acquired after September 27, 2010 qualifies for 100% exclusion of gain (up to $10 million or 10x basis). Earlier acquisition dates have lower exclusions (50% or 75%). The excluded gain is not subject to AMT preference for 100% exclusion stock.'
   },
   {
-    id: 'CFP-TAX-B4-005',
+    id: 'cfp-tax-b4-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -104,7 +104,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The wash sale rule disallows a loss if substantially identical securities are purchased within 30 days before or after the sale. December 15 + 30 days = January 14. Purchase on January 10 is within the window. Loss is disallowed but added to the basis of the new shares.'
   },
   {
-    id: 'CFP-TAX-B4-006',
+    id: 'cfp-tax-b4-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -123,7 +123,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'After TCJA (2018+), Section 1031 applies only to real property held for productive use in trade/business or for investment. Personal property (vehicles, equipment, artwork) no longer qualifies. This was a significant limitation from prior law.'
   },
   {
-    id: 'CFP-TAX-B4-007',
+    id: 'cfp-tax-b4-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -142,7 +142,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'If a QOF investment is held 10+ years, any appreciation in the QOF itself is permanently excludable from income. The original deferred gain is recognized in 2026 (or earlier sale). The 10% and 15% basis step-ups for 5-7 year holds expired after 2026 for gains already invested.'
   },
   {
-    id: 'CFP-TAX-B4-008',
+    id: 'cfp-tax-b4-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -161,7 +161,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Long-term capital gains on collectibles (art, antiques, coins, stamps, precious metals) are taxed at a maximum rate of 28%, higher than the standard 15%/20% rates. Short-term gains are taxed as ordinary income. Plus, NIIT may apply.'
   },
   {
-    id: 'CFP-TAX-B4-009',
+    id: 'cfp-tax-b4-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -180,7 +180,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Adjusted basis = $400,000 - $50,000 depreciation = $350,000. Total gain = $500,000 - $350,000 = $150,000. Unrecaptured Section 1250 gain = accumulated depreciation = $50,000, taxed at max 25%. Remaining $100,000 is Section 1231 gain (typically long-term capital gain rates).'
   },
   {
-    id: 'CFP-TAX-B4-010',
+    id: 'cfp-tax-b4-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -199,7 +199,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Net capital losses can offset up to $3,000 of ordinary income annually ($1,500 for married filing separately). Excess losses carry forward indefinitely. Capital losses first offset capital gains (short against short, then short against long, etc.).'
   },
   {
-    id: 'CFP-TAX-B4-011',
+    id: 'cfp-tax-b4-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -218,7 +218,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Gross profit = $400,000 - $100,000 = $300,000. Gross profit percentage = $300,000 / $400,000 = 75%. Each $80,000 payment × 75% = $60,000 taxable gain, $20,000 return of basis. This applies to each of the five payments ($80,000 down + 4 installments).'
   },
   {
-    id: 'CFP-TAX-B4-012',
+    id: 'cfp-tax-b4-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -238,7 +238,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
   },
   // TAX-4: Charitable/Gift Taxation
   {
-    id: 'CFP-TAX-B4-013',
+    id: 'cfp-tax-b4-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -257,7 +257,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The annual gift exclusion is indexed for inflation in $1,000 increments. For 2024 it is $18,000. By 2026, projecting modest inflation, it is expected to be approximately $19,000 per donee per year. Gifts within this amount require no gift tax return.'
   },
   {
-    id: 'CFP-TAX-B4-014',
+    id: 'cfp-tax-b4-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -276,7 +276,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'With gift splitting, each spouse can give $19,000 (2026) to each donee using annual exclusions = $38,000 total. $70,000 - $38,000 = $32,000 uses lifetime exemption. A gift tax return (Form 709) is required to elect splitting even though no tax is due.'
   },
   {
-    id: 'CFP-TAX-B4-015',
+    id: 'cfp-tax-b4-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -295,7 +295,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Cash contributions to public charities (churches, schools, hospitals, public foundations) are deductible up to 60% of AGI. Appreciated property is limited to 30% of AGI at FMV. Private foundation limits are lower (30% cash, 20% property).'
   },
   {
-    id: 'CFP-TAX-B4-016',
+    id: 'cfp-tax-b4-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -314,7 +314,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'When gifted property has FMV below basis, dual-basis rules apply. For gain: use donor\'s basis ($50,000). For loss: use FMV at gift ($30,000). Sale at $45,000 is below $50,000 (no gain) but above $30,000 (no loss). Result: no gain, no loss.'
   },
   {
-    id: 'CFP-TAX-B4-017',
+    id: 'cfp-tax-b4-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -333,7 +333,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Form 709 is required for gifts exceeding the annual exclusion ($19,000 in 2026). Direct tuition payments are excluded regardless of amount. Unlimited marital deduction applies to citizen spouses. Only the $25,000 gift to the child exceeds the exclusion and requires a return.'
   },
   {
-    id: 'CFP-TAX-B4-018',
+    id: 'cfp-tax-b4-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -352,7 +352,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The TCJA doubled the exemption through 2025. After sunset, it reverts to the pre-TCJA amount (approximately $5.49 million in 2017) adjusted for inflation, estimated at approximately $7 million for 2026. This creates urgency for large estate planning before 2026.'
   },
   {
-    id: 'CFP-TAX-B4-019',
+    id: 'cfp-tax-b4-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -371,7 +371,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Annual gift exclusion requires a present interest (immediate right to use/possess). Trust contributions are future interests (no exclusion). Crummey powers give beneficiaries a temporary right to withdraw contributions, creating a present interest and qualifying for the annual exclusion.'
   },
   {
-    id: 'CFP-TAX-B4-020',
+    id: 'cfp-tax-b4-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -390,7 +390,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Donations of property (other than cash and publicly traded securities) worth more than $5,000 require a qualified appraisal by a qualified appraiser. Publicly traded securities never require an appraisal regardless of value. Property over $500 requires Form 8283.'
   },
   {
-    id: 'CFP-TAX-B4-021',
+    id: 'cfp-tax-b4-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -409,7 +409,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'A completed gift requires the donor to relinquish dominion and control. Revocable trusts allow the grantor to reclaim property, so transfers are incomplete. The gift becomes complete when the trust becomes irrevocable (by amendment, death, or release of revocation power).'
   },
   {
-    id: 'CFP-TAX-B4-022',
+    id: 'cfp-tax-b4-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -428,7 +428,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'GST tax is a flat 40% on transfers to skip persons (grandchildren or below). The GST exemption mirrors the gift/estate exemption (approximately $7 million in 2026 post-TCJA sunset). Exempt transfers multiply through generations without additional transfer tax.'
   },
   {
-    id: 'CFP-TAX-B4-023',
+    id: 'cfp-tax-b4-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -447,7 +447,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'In a grantor CLT, the grantor gets an upfront income tax deduction for the present value of the charitable interest. In exchange, the grantor reports all trust income during the term (even amounts paid to charity). A non-grantor CLT provides no upfront deduction but trust income is taxed to the trust.'
   },
   {
-    id: 'CFP-TAX-B4-024',
+    id: 'cfp-tax-b4-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -466,7 +466,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Cash to public charity limit = 60% × $200,000 = $120,000 current year deduction. The excess $30,000 ($150,000 - $120,000) carries forward up to 5 years, subject to the same AGI limits in future years.'
   },
   {
-    id: 'CFP-TAX-B4-025',
+    id: 'cfp-tax-b4-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',

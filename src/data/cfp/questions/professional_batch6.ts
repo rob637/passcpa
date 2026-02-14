@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
   // PCR-1: CFP Board Standards
   {
-    id: 'CFP-PCR-B6-001',
+    id: 'cfp-pcr-b6-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'CFP Board\'s Code and Standards require written disclosure of fiduciary duties before or at engagement. Clients must understand their CFP® professional\'s loyalty obligation, care standard, and duty to follow instructions. This disclosure establishes the foundation of the fiduciary relationship.'
   },
   {
-    id: 'CFP-PCR-B6-002',
+    id: 'cfp-pcr-b6-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Material conflicts require written disclosure AND obtaining informed client consent. Materiality is assessed from the client\'s perspective. This includes conflicts arising from compensation arrangements, business relationships, and interests that could affect judgment or impartiality.'
   },
   {
-    id: 'CFP-PCR-B6-003',
+    id: 'cfp-pcr-b6-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -67,7 +67,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
   },
   // PCR-2: Regulatory Framework
   {
-    id: 'CFP-PCR-B6-004',
+    id: 'cfp-pcr-b6-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -86,7 +86,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'IAR registration follows state-specific rules. Generally, registration is required in states where the IAR has a place of business and may be required after meeting a de minimis threshold (often 5 clients) in other states. Multi-state IARs may need multiple registrations.'
   },
   {
-    id: 'CFP-PCR-B6-005',
+    id: 'cfp-pcr-b6-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The SEC\'s Form CRS (2-page max for each registration type) covers: services offered, fees and costs, conflicts of interest, legal standards, disciplinary history, and conversation starters for clients. It must be delivered to retail investors at or before the first recommendation and updated regularly.'
   },
   {
-    id: 'CFP-PCR-B6-006',
+    id: 'cfp-pcr-b6-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -125,7 +125,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
   },
   // PCR-3: Ethics
   {
-    id: 'CFP-PCR-B6-007',
+    id: 'cfp-pcr-b6-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -144,7 +144,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Borrowing from clients creates significant conflict of interest. It\'s prohibited unless: the client is a lending institution in the business of lending (fair market terms), or the client is an immediate family member. Even then, conflicts must be managed. This protects clients from potential exploitation.'
   },
   {
-    id: 'CFP-PCR-B6-008',
+    id: 'cfp-pcr-b6-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -163,7 +163,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Gifts and entertainment from product sponsors create potential bias toward recommending their products. CFP® professionals must ensure gifts don\'t improperly influence recommendations and may need to disclose material gifts as conflicts. Firms often have policies limiting gifts and requiring reporting.'
   },
   {
-    id: 'CFP-PCR-B6-009',
+    id: 'cfp-pcr-b6-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -183,7 +183,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PCR-B6-010',
+    id: 'cfp-pcr-b6-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -202,7 +202,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The Duty of Care requires reasonable basis for recommendations through investigation and analysis. Products must be suitable for the specific client\'s situation. While cost matters, best interest considers multiple factors including goals, risk tolerance, and preferences.'
   },
   {
-    id: 'CFP-PCR-B6-011',
+    id: 'cfp-pcr-b6-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -221,7 +221,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'AML programs require: Customer Identification Program (CIP), Customer Due Diligence (CDD), ongoing monitoring, suspicious activity reporting (SARs), and BSA compliance. Financial advisers must identify customers, verify identity, and be alert to red flags like unexplained wealth or unusual transactions.'
   },
   {
-    id: 'CFP-PCR-B6-012',
+    id: 'cfp-pcr-b6-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -240,7 +240,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Referral fees create conflicts of interest—advisers may be motivated by payment rather than client fit. Disclosure is required. Under the SEC\'s marketing rule, referral arrangements must be disclosed, payments documented, and arrangements must not create unreasonable compensation or materially mislead investors.'
   },
   {
-    id: 'CFP-PCR-B6-013',
+    id: 'cfp-pcr-b6-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -259,7 +259,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The Practice Standards outline the financial planning process: 1) Understanding circumstances, 2) Identifying goals, 3) Analyzing current course, 4) Developing recommendations, 5) Presenting recommendations, 6) Implementing, 7) Monitoring. Scope determines which steps are applicable.'
   },
   {
-    id: 'CFP-PCR-B6-014',
+    id: 'cfp-pcr-b6-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -278,7 +278,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'SEC Rule 204-2 requires most records be kept 5 years (first 2 in an accessible place). Some partnership records require 6 years; written agreements and advertising must be kept for the relationship plus 5 years. Records must be maintained in a way that allows SEC examination.'
   },
   {
-    id: 'CFP-PCR-B6-015',
+    id: 'cfp-pcr-b6-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -297,7 +297,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'CFP® CE: 30 hours per 2-year cycle, including 2 hours of ethics (CFP Board\'s Standards). This ensures ongoing competence in a changing field. CE must relate to financial planning topics. CFP Board verifies compliance and may audit. Failure to complete CE can result in suspension.'
   },
   {
-    id: 'CFP-PCR-B6-016',
+    id: 'cfp-pcr-b6-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -316,7 +316,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Termination should be professional: notify client, return documents and property, assist with transition, and maintain records. Avoid abandoning clients abruptly during critical periods. Termination can be mutual or initiated by either party based on engagement terms.'
   },
   {
-    id: 'CFP-PCR-B6-017',
+    id: 'cfp-pcr-b6-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -335,7 +335,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Pay-to-play rules prevent advisers from using political contributions to secure government contracts. A covered contribution triggers a 2-year "time out" from receiving compensation for advising that government entity. De minimis exceptions exist for contributions under $350/$150 depending on whether the giver can vote for the official.'
   },
   {
-    id: 'CFP-PCR-B6-018',
+    id: 'cfp-pcr-b6-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -354,7 +354,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The SEC\'s amended marketing rule (2022) permits testimonials and endorsements with proper disclosures: whether the promoter is a client, compensation paid, conflicts of interest, and material facts. Materiality is key. Advisers must have reasonable basis to believe testimonials won\'t be misleading.'
   },
   {
-    id: 'CFP-PCR-B6-019',
+    id: 'cfp-pcr-b6-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -373,7 +373,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Documentation demonstrates the basis for recommendations, compliance with duties, and the planning process followed. While no specific format is required, records should be sufficient to reconstruct the analysis and show the recommendation was in the client\'s best interest.'
   },
   {
-    id: 'CFP-PCR-B6-020',
+    id: 'cfp-pcr-b6-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -392,7 +392,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Advisers with proxy voting authority must: adopt written policies (disclosed to clients), vote in clients\' best interests, describe policies upon request, disclose how clients can obtain voting records, and maintain voting records for 5 years. Conflicts (e.g., voting on affiliated issuers) must be addressed.'
   },
   {
-    id: 'CFP-PCR-B6-021',
+    id: 'cfp-pcr-b6-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -411,7 +411,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'E&O insurance covers professional liability claims—negligent advice, errors in analysis, omissions in recommendations. While CFP Board doesn\'t require it, many employers and professional associations do. It doesn\'t cover intentional misconduct. Coverage limits and exclusions vary by policy.'
   },
   {
-    id: 'CFP-PCR-B6-022',
+    id: 'cfp-pcr-b6-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -430,7 +430,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The duty to inform means providing information relevant to decision-making: scope of engagement, material changes, risks, costs, and progress toward goals. Communication frequency and method should match engagement terms and client preferences. Clients need adequate information to make informed choices.'
   },
   {
-    id: 'CFP-PCR-B6-023',
+    id: 'cfp-pcr-b6-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -449,7 +449,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Series 65 (Uniform Investment Adviser Law Exam) qualifies individuals as IARs. It covers federal/state laws, ethics, economics, investment analysis, and investment strategies. FINRA administered. Passing Series 66 (combined with Series 7) is an alternative. CFP® certificants may have exemptions in some states.'
   },
   {
-    id: 'CFP-PCR-B6-024',
+    id: 'cfp-pcr-b6-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -468,7 +468,7 @@ export const CFP_PROFESSIONAL_BATCH6_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires disclosure of criminal matters (not just convictions), civil actions, regulatory proceedings, bankruptcy, customer complaints, and other matters bearing on fitness. Requirements include timing obligations (often 30 days). Failure to report is itself a violation.'
   },
   {
-    id: 'CFP-PCR-B6-025',
+    id: 'cfp-pcr-b6-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',

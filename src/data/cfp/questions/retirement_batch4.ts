@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
   // RET-2: Employer-Sponsored Plans
   {
-    id: 'CFP-RET-B4-001',
+    id: 'cfp-ret-b4-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'For 2026, the maximum elective deferral contribution to a 401(k) plan is $23,500 for participants under age 50. Those age 50 and over can contribute an additional $7,500 catch-up contribution for a total of $31,000.'
   },
   {
-    id: 'CFP-RET-B4-002',
+    id: 'cfp-ret-b4-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Defined benefit pension plans promise a specific monthly benefit at retirement, typically based on salary history and years of service. The employer bears the investment risk and must fund the plan to meet the benefit obligation. All other options are defined contribution plans where the benefit depends on contributions and investment performance.'
   },
   {
-    id: 'CFP-RET-B4-003',
+    id: 'cfp-ret-b4-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -66,7 +66,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'SIMPLE IRA plans are only available to employers with 100 or fewer employees who earned $5,000 or more in the preceding year. However, there is an additional requirement: the employer cannot maintain any other qualified retirement plan. ABC Company can establish any of the other plans; SIMPLE IRA has this unique size restriction but at 75 employees they still qualify - the issue is if they have another plan.'
   },
   {
-    id: 'CFP-RET-B4-004',
+    id: 'cfp-ret-b4-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -85,7 +85,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Under 6-year graded vesting, employees vest 20% after year 2, 40% after year 3, 60% after year 4, 80% after year 5, and 100% after year 6. With 4 years of service, the employee is 60% vested. However, 3-year cliff or 2-6 year graded is the standard. At 4 years in 2-6 graded vesting: 60% × $24,000 = $14,400. If using typical schedule of 20% per year after year 2: Year 4 = 60%. But checking the math: $24,000 × 2/3 = $16,000 suggests 66.67% which is 4/6. The answer B ($16,000) represents 4 years out of 6 proportionally.'
   },
   {
-    id: 'CFP-RET-B4-005',
+    id: 'cfp-ret-b4-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
   },
   // RET-3: IRAs and Individual Retirement Plans
   {
-    id: 'CFP-RET-B4-006',
+    id: 'cfp-ret-b4-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -124,7 +124,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'For 2026, single filers covered by an employer plan can deduct Traditional IRA contributions if MAGI is below $79,000. The deduction phases out between $79,000 and $89,000. At $85,000 MAGI, Mark is in the phase-out range. The calculation: ($89,000 - $85,000) / $10,000 = 40% deductible. $7,000 × 40% = $2,800. However, if the phase-out limits have changed, at $85,000 with phase-out starting at $77,000 and ending at $87,000, he would be mostly phased out. Given the answer options, $0 indicates he is above the full phase-out threshold for the year in question.'
   },
   {
-    id: 'CFP-RET-B4-007',
+    id: 'cfp-ret-b4-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -143,7 +143,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Roth conversions are most beneficial when current tax rates are lower than expected future rates. The 25-year-old in the 12% bracket who expects to be in the 24% bracket at retirement would pay taxes now at 12% and enjoy tax-free growth and withdrawals for 35+ years. The long time horizon maximizes the benefit of tax-free growth.'
   },
   {
-    id: 'CFP-RET-B4-008',
+    id: 'cfp-ret-b4-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -162,7 +162,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The pro-rata rule requires that conversions from Traditional IRAs include a proportional amount of pre-tax and after-tax (non-deductible) money based on ALL Traditional IRA assets. If the investor has $93,000 in pre-tax IRAs and contributes $7,000 non-deductible, only 7% of any conversion is tax-free. The other 93% is taxable, defeating the backdoor Roth strategy.'
   },
   {
-    id: 'CFP-RET-B4-009',
+    id: 'cfp-ret-b4-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -182,7 +182,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
   },
   // RET-4: Distribution Rules
   {
-    id: 'CFP-RET-B4-010',
+    id: 'cfp-ret-b4-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -201,7 +201,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The first-time home purchase exception ($10,000 lifetime limit) applies to IRAs only, not to qualified employer plans like 401(k)s. The age 55 separation from service exception, medical expense exception, and IRS levy exception all apply to qualified plans. This is a common exam trap—knowing which exceptions apply to which account types.'
   },
   {
-    id: 'CFP-RET-B4-011',
+    id: 'cfp-ret-b4-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -220,7 +220,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'RMD = Prior year-end account balance ÷ Life expectancy factor. $500,000 ÷ 26.5 = $18,867.92, rounded to $18,868. RMDs for the year you turn 73 can be delayed until April 1 of the following year, but doing so requires taking two RMDs in that year.'
   },
   {
-    id: 'CFP-RET-B4-012',
+    id: 'cfp-ret-b4-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -239,7 +239,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'SEPP (72(t)) distributions must continue for 5 years OR until the participant reaches age 59½, whichever is LONGER. For a 50-year-old, this means payments must continue until age 59½ (9.5 years). If modified before then, all previous distributions become subject to the 10% penalty plus interest.'
   },
   {
-    id: 'CFP-RET-B4-013',
+    id: 'cfp-ret-b4-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -258,7 +258,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Spousal beneficiaries have a unique option to roll an inherited IRA into their own IRA. This provides maximum flexibility: no RMDs until the surviving spouse reaches age 73, full access to early withdrawal exceptions, and the ability to name new beneficiaries. Remaining as beneficiary limits options and a lump sum triggers immediate taxation.'
   },
   {
-    id: 'CFP-RET-B4-014',
+    id: 'cfp-ret-b4-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -278,7 +278,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
   },
   // RET-5: Social Security
   {
-    id: 'CFP-RET-B4-015',
+    id: 'cfp-ret-b4-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -297,7 +297,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Full Retirement Age (FRA) varies based on birth year: age 66 for those born 1943-1954, gradually increasing to 67 for those born 1960 or later. Benefits taken before FRA are reduced; benefits delayed past FRA until age 70 receive delayed retirement credits of 8% per year.'
   },
   {
-    id: 'CFP-RET-B4-016',
+    id: 'cfp-ret-b4-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -316,7 +316,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Spousal benefits are the higher of the spouse\'s own benefit or 50% of the worker\'s PIA (Primary Insurance Amount). 50% of $3,000 = $1,500, which exceeds Janet\'s own $800 benefit. Janet would receive $1,500 at her FRA. Note: She does not add her own benefit to the spousal benefit—she receives the higher of the two.'
   },
   {
-    id: 'CFP-RET-B4-017',
+    id: 'cfp-ret-b4-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -335,7 +335,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'For beneficiaries under FRA the entire year, $1 in benefits is withheld for every $2 earned above the exempt amount. Excess earnings: $60,000 - $22,320 = $37,680. Benefit reduction: $37,680 ÷ 2 = $18,840. Note: These withheld benefits are not lost forever—they are credited back after reaching FRA through an adjustment to future benefits.'
   },
   {
-    id: 'CFP-RET-B4-018',
+    id: 'cfp-ret-b4-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -354,7 +354,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Combined (provisional) income = AGI + tax-exempt interest + 50% of Social Security benefits. This formula determines whether 0%, 50%, or 85% of Social Security benefits are taxable. Tax-exempt interest is included even though it\'s not otherwise taxable, making municipal bond income a planning consideration for retirees.'
   },
   {
-    id: 'CFP-RET-B4-019',
+    id: 'cfp-ret-b4-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -374,7 +374,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
   },
   // RET-2: Additional Employer Plan Topics
   {
-    id: 'CFP-RET-B4-020',
+    id: 'cfp-ret-b4-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -393,7 +393,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'For self-employed individuals, the SEP contribution is limited to 25% of net self-employment income reduced by the self-employment tax deduction. The effective rate is approximately 20% of net SE income (25% ÷ 1.25 = 20%). Calculation: $100,000 × 0.9235 (after 1/2 SE tax deduction) × 20% ≈ $18,587. The maximum for 2026 is the lesser of 25% of compensation or $69,000.'
   },
   {
-    id: 'CFP-RET-B4-021',
+    id: 'cfp-ret-b4-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -412,7 +412,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Cash balance plans are legally defined benefit plans but appear to function like defined contribution plans. Each participant has a hypothetical "account" that receives pay credits and interest credits. The employer bears the investment risk and guarantees a specified interest credit rate. They allow larger contributions for older, higher-paid employees than traditional 401(k) plans.'
   },
   {
-    id: 'CFP-RET-B4-022',
+    id: 'cfp-ret-b4-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,7 +432,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
   },
   // RET-1: Additional Retirement Needs Topics
   {
-    id: 'CFP-RET-B4-023',
+    id: 'cfp-ret-b4-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -451,7 +451,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Monte Carlo simulation runs thousands of randomized scenarios using historical return and volatility data to estimate the probability that a retirement plan will succeed. Unlike deterministic models using average returns, it accounts for sequence of returns risk and provides probability-based confidence levels (e.g., 85% success rate).'
   },
   {
-    id: 'CFP-RET-B4-024',
+    id: 'cfp-ret-b4-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -470,7 +470,7 @@ export const CFP_RETIREMENT_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Sequence of returns risk—the risk that poor returns early in retirement depletes the portfolio before it can recover—is most critical in the years immediately before and after retirement (the "fragile decade"). During accumulation, dollar-cost averaging can offset poor early returns, and there\'s time to recover. Guaranteed annuities eliminate the risk entirely.'
   },
   {
-    id: 'CFP-RET-B4-025',
+    id: 'cfp-ret-b4-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',

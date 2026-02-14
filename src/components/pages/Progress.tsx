@@ -352,15 +352,15 @@ const Progress: React.FC = () => {
     totalTbs: 20,
   });
   const [loading, setLoading] = useState(true);
-
-  // Study Plan - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, userProfile?.examSection as string, courseId) || new Date();
-  const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
-
   // Use getCurrentSectionForCourse to ensure section is valid for this course
   // This handles cases where user switches courses but profile still has old section
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
+  
+  // Study Plan - use getExamDate helper for multi-course support
+  const examDate = getExamDate(userProfile, currentSection, courseId);
+  // Only show study plan if we have a valid exam date for THIS course
+  const studyPlan = examDate ? generateStudyPlan(currentSection, examDate) : null;
 
   // Load real data from Firestore
   useEffect(() => {
@@ -453,9 +453,15 @@ const Progress: React.FC = () => {
         let lessonsCompletedCount = 0;
         if (getLessonProgress) {
           const lessonProgress = await getLessonProgress();
-          // Only count lessons for the current section
+          // Only count lessons for the current course AND section
           lessonsCompletedCount = Object.values(lessonProgress).filter(
-            (lesson: any) => lesson.section === currentSection
+            (lesson: any) => {
+              // Must match current section
+              if (lesson.section !== currentSection) return false;
+              // If courseId is stored, it must match current course
+              if (lesson.courseId && lesson.courseId !== courseId) return false;
+              return true;
+            }
           ).length;
         }
 
@@ -692,13 +698,13 @@ const Progress: React.FC = () => {
                 <Target className="w-6 h-6 text-primary-400" />
                 Study Plan: {sectionInfo?.name ?? currentSection}
               </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+              <p className="text-slate-400 text-sm mt-1">
                 Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
               </p>
             </div>
             <div className="text-right hidden sm:block">
               <div className="text-3xl font-bold text-primary-400">{studyPlan.modulesPerDay}</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400">Modules / Day</div>
+              <div className="text-xs text-slate-400">Modules / Day</div>
             </div>
           </div>
           
@@ -707,7 +713,7 @@ const Progress: React.FC = () => {
             <span>{style.icon}</span>
             <span className={`text-sm font-medium ${style.text}`}>{paceInfo.message}</span>
             {paceInfo.status !== 'on-track' && paceInfo.status !== 'ahead' && (
-              <span className="text-xs text-slate-600 dark:text-slate-400 ml-1">
+              <span className="text-xs text-slate-400 ml-1">
                 ({paceInfo.adjustedPace}/day needed)
               </span>
             )}
@@ -728,7 +734,7 @@ const Progress: React.FC = () => {
               {studyPlan.milestones.map((m, i) => (
                 <div 
                   key={i} 
-                  className="absolute flex flex-col items-center text-xs text-slate-600 dark:text-slate-400"
+                  className="absolute flex flex-col items-center text-xs text-slate-400"
                   style={{ 
                     left: `${m.position}%`,
                     transform: i === 0 ? 'translateX(0)' : i === studyPlan.milestones.length - 1 ? 'translateX(-100%)' : 'translateX(-50%)'
@@ -736,7 +742,7 @@ const Progress: React.FC = () => {
                 >
                   <div className="w-2 h-2 rounded-full bg-slate-600 mb-2 ring-4 ring-slate-900" />
                   <span className="font-medium text-slate-300 whitespace-nowrap">{m.label}</span>
-                  <span>{m.date}</span>
+                  <span className="text-slate-400">{m.date}</span>
                 </div>
               ))}
             </div>

@@ -13,6 +13,7 @@ export const REG_QUESTIONS: Question[] = [
   // Circular 230 - REG-I-A: Ethics and Responsibilities in Tax Practice
   {
     id: 'reg-eth-001',
+    courseId: 'cpa',
     section: 'REG',
     // NEW: Blueprint tagging per 2026 AICPA structure
     blueprintArea: 'REG-I',
@@ -1827,28 +1828,6 @@ export const REG_QUESTIONS: Question[] = [
     reference: 'IRC §1231(c)',
   },
   {
-    id: 'reg-prop-b3-003',
-    section: 'REG',
-    courseId: 'cpa',
-    blueprintArea: 'REG-III',
-    blueprintGroup: 'REG-III-C',
-    topicId: 'reg-property',
-    topic: 'Property Transactions',
-    subtopic: 'Section 1245',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'Equipment with an original cost of $100,000 and accumulated depreciation of $60,000 is sold for $85,000. What is the §1245 ordinary income recapture?',
-    options: [
-      '$85,000',
-      '$45,000',
-      '$0',
-      '$60,000',
-    ],
-    correctAnswer: 1,
-    explanation: 'Adjusted basis = $100,000 - $60,000 = $40,000. Gain = $85,000 - $40,000 = $45,000. §1245 recapture = lesser of gain ($45,000) or depreciation taken ($60,000) = $45,000 ordinary income.',
-    reference: 'IRC §1245',
-  },
-  {
     id: 'reg-prop-b3-004',
     section: 'REG',
     courseId: 'cpa',
@@ -2097,28 +2076,6 @@ export const REG_QUESTIONS: Question[] = [
     explanation: 'Agency can arise by: express agreement (written/oral), implied from conduct, estoppel (third party reasonably believes), or ratification (principal approves unauthorized act). No formal requirements unless for sealed instruments.',
     reference: 'Agency Law',
   },
-  {
-    id: 'reg-bl-agency-002',
-    section: 'REG',
-    courseId: 'cpa',
-    blueprintArea: 'REG-IV',
-    topicId: 'reg-business-law',
-    topic: 'Business Law',
-    subtopic: 'Principal Liability',
-    difficulty: 'hard',
-    skillLevel: 'Analysis',
-    question: 'A principal is liable for an agent\'s torts committed within the scope of employment under:',
-    options: [
-      'Respondeat superior',
-      'Statute of Frauds',
-      'Promissory estoppel',
-      'Caveat emptor',
-    ],
-    correctAnswer: 0,
-    explanation: 'Respondeat superior holds employers/principals liable for employee/agent torts committed within scope of employment. This includes negligence and intentional torts if authorized or serving employer interests.',
-    reference: 'Agency - Vicarious Liability',
-  },
-
   // Business Law - Debtor-Creditor
   {
     id: 'reg-bl-debt-001',

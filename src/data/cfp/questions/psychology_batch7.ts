@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
   // PSY-1: Behavioral Finance
   {
-    id: 'CFP-PSY-B7-001',
+    id: 'cfp-psy-b7-001',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -28,7 +28,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Sunk cost fallacy: letting irrecoverable past costs influence future decisions. Money already lost shouldn\'t affect whether to sell now—only future prospects matter. Common with losing investments, ongoing projects, or bad relationships. Help clients focus on: "What\'s the best use of this money going forward?" Past is irrelevant.'
   },
   {
-    id: 'CFP-PSY-B7-002',
+    id: 'cfp-psy-b7-002',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -47,7 +47,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'House money effect (from gambling): treating gains/windfalls differently than earned money. "It\'s not my money anyway." Leads to excessive risk-taking with inheritances, bonuses, investment gains. Money is fungible—all dollars should be valued equally. Help clients integrate windfalls into overall financial plan rather than treating them as play money.'
   },
   {
-    id: 'CFP-PSY-B7-003',
+    id: 'cfp-psy-b7-003',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -66,7 +66,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Status quo bias: preference for current state over change. "I\'ve always done it this way." Keeps people in unsuitable investments, with wrong insurance, at the same bank. Change requires effort and feels risky. Use defaults wisely (auto-enrollment exploits this positively). Demonstrate clear benefit to overcome inertia.'
   },
   {
-    id: 'CFP-PSY-B7-004',
+    id: 'cfp-psy-b7-004',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -86,7 +86,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
   },
   // PSY-2: Client Communication
   {
-    id: 'CFP-PSY-B7-005',
+    id: 'cfp-psy-b7-005',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -105,7 +105,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Motivational interviewing: client-centered approach. Express empathy, develop discrepancy between goals and behavior, roll with resistance (don\'t argue), support self-efficacy. Uses open questions, affirmations, reflections, summaries (OARS). People more likely to change when they articulate their own reasons rather than being told.'
   },
   {
-    id: 'CFP-PSY-B7-006',
+    id: 'cfp-psy-b7-006',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -124,7 +124,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Active listening: full attention, suspend judgment, use nonverbal cues (eye contact, nodding), reflect back what you hear, ask clarifying questions, remember details. Not passive—requires engagement. Clients feel heard and understood. Reveals important information that surface-level listening misses. Foundation of effective advising.'
   },
   {
-    id: 'CFP-PSY-B7-007',
+    id: 'cfp-psy-b7-007',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -144,26 +144,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
   },
   // PSY-3: Financial Psychology
   {
-    id: 'CFP-PSY-B7-008',
-    courseId: 'cfp',
-    section: 'CFP-PSY',
-    blueprintArea: 'PSY-3',
-    topic: 'Financial Psychology',
-    subtopic: 'Money Scripts',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Money scripts are:',
-    options: [
-      'D) Tax documents',
-      'B) Unconscious beliefs about money typically developed in childhood that drive financial behaviors',
-      'A) Written financial plans',
-      'C) Investment strategies',
-    ],
-    correctAnswer: 1,
-    explanation: 'Money scripts (Klontz): unconscious beliefs from childhood experiences/family messages. Categories: avoidance ("money is bad"), worship ("more money solves everything"), status ("success = possessions"), vigilance ("saving above all"). Scripts drive behavior without awareness. Identifying them helps understand client decisions and resistance to advice.'
-  },
-  {
-    id: 'CFP-PSY-B7-009',
+    id: 'cfp-psy-b7-009',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -182,7 +163,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Financial anxiety management: acknowledge the anxiety is real, start with small manageable tasks, avoid overwhelming with information, celebrate progress, use simple clear language, provide reassurance about the process. Build confidence gradually. If severe, may need referral to financial therapist. Don\'t dismiss—anxiety blocks engagement.'
   },
   {
-    id: 'CFP-PSY-B7-010',
+    id: 'cfp-psy-b7-010',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -202,7 +183,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
   },
   // PSY-4: Client Assessment
   {
-    id: 'CFP-PSY-B7-011',
+    id: 'cfp-psy-b7-011',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -221,7 +202,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Comprehensive risk assessment: questionnaires (standardized comparison), conversation (past behavior, emotional responses, understanding), hypothetical scenarios ("how would you feel if the portfolio dropped 30%"), observe behavior during volatile periods. One method isn\'t enough. Revisit when circumstances change. Risk tolerance vs. risk capacity differ.'
   },
   {
-    id: 'CFP-PSY-B7-012',
+    id: 'cfp-psy-b7-012',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -240,7 +221,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Life stage assessment: young adult (education debt, career building), family formation (housing, children costs, insurance), mid-career (wealth accumulation, sandwich generation), pre-retirement (catch-up, planning transition), retirement (income, healthcare, legacy). Same age doesn\'t mean same stage—consider actual circumstances not just demographics.'
   },
   {
-    id: 'CFP-PSY-B7-013',
+    id: 'cfp-psy-b7-013',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -260,7 +241,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PSY-B7-014',
+    id: 'cfp-psy-b7-014',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -279,7 +260,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The endowment effect causes people to overvalue assets they own, especially when combined with emotional or sentimental attachment. The client values the stock beyond its market price because of the personal connection to their grandmother, making them reluctant to sell even when financially prudent.',
   },
   {
-    id: 'CFP-PSY-B7-015',
+    id: 'cfp-psy-b7-015',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -298,7 +279,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Familiarity bias: preferring the known over unknown. Home country bias (overweight domestic stocks), employer stock overconcentration, industry concentraction (tech workers in tech stocks). Familiarity feels safer but isn\'t—it\'s concentration risk. Help clients understand that knowing a company doesn\'t mean knowing its stock will outperform.'
   },
   {
-    id: 'CFP-PSY-B7-016',
+    id: 'cfp-psy-b7-016',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -317,7 +298,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Difficult conversations: prepare what you\'ll say, be honest but compassionate, allow time for reaction, don\'t defend or make excuses, acknowledge feelings ("I know this is hard to hear"), pivot to solutions and next steps when ready. Avoiding bad news erodes trust. Delivering it well builds trust even when news is negative.'
   },
   {
-    id: 'CFP-PSY-B7-017',
+    id: 'cfp-psy-b7-017',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -336,7 +317,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Nonverbal communication: body language, facial expressions, tone, posture. May reveal: confusion (furrowed brow), discomfort (crossed arms), disagreement (looking away), engagement (leaning in). Your nonverbal signals matter too—project confidence, openness, attention. Much of communication is nonverbal—observe and respond.'
   },
   {
-    id: 'CFP-PSY-B7-018',
+    id: 'cfp-psy-b7-018',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -355,7 +336,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Financial shame: embarrassment about financial situation, past decisions, or lack of knowledge. Signs: incomplete disclosure, avoiding topics, defensiveness, missed meetings. Create safe environment: normalize struggles, avoid judgment, focus on future rather than past mistakes, celebrate any progress. Shame keeps people from getting help they need.'
   },
   {
-    id: 'CFP-PSY-B7-019',
+    id: 'cfp-psy-b7-019',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -374,7 +355,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Financial trauma: severe financial events can have lasting psychological effects. May manifest as: excessive fear/anxiety, inability to engage with finances, hoarding or extreme frugality, overcaution preventing reasonable risk-taking. Past experiences shape current behaviors. May need gentle approach, patience, possibly referral to therapist specializing in financial issues.'
   },
   {
-    id: 'CFP-PSY-B7-020',
+    id: 'cfp-psy-b7-020',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -393,7 +374,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Knowledge assessment: understand baseline to communicate appropriately. Some clients have sophisticated knowledge; others are beginners. Avoid: talking over heads (confusing) or talking down (condescending). Identify gaps for education. Ask questions, observe reactions, invite questions. Different knowledge levels need different approaches.'
   },
   {
-    id: 'CFP-PSY-B7-021',
+    id: 'cfp-psy-b7-021',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -412,7 +393,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Choice overload (paradox of choice): too many options leads to paralysis, worse decisions, or choosing defaults/doing nothing. In 401(k)s, too many funds reduces participation. Planners help by: curating options, providing clear recommendations, simplifying where possible. Guidance through choices adds value beyond just presenting options.'
   },
   {
-    id: 'CFP-PSY-B7-022',
+    id: 'cfp-psy-b7-022',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -431,7 +412,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Storytelling in planning: abstract concepts become tangible. "Inflation means what costs $1 today will cost $2.40 in 30 years." Anonymized examples: "I worked with a couple in similar situation who..." Stories are memorable and relatable. Use appropriately—support, don\'t replace, data. Powerful teaching and persuasion tool.'
   },
   {
-    id: 'CFP-PSY-B7-023',
+    id: 'cfp-psy-b7-023',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -450,7 +431,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Delayed gratification challenges: future self feels abstract. Strategies: visualize future goals concretely, use photos of older self, automate savings (pre-commitment), create mental accounting for future, balance—allow some present enjoyment. People vary in natural ability to delay—work with their tendencies, not against them.'
   },
   {
-    id: 'CFP-PSY-B7-024',
+    id: 'cfp-psy-b7-024',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -469,7 +450,7 @@ export const CFP_PSYCHOLOGY_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Decision styles: Analytical: wants data, details, time, logical sequences. Intuitive: trusts feelings, wants big picture, decides quickly. Directive: decisive, efficiency-focused. Conceptual: creative, risk-tolerant. Match your approach—don\'t give data-lovers bullet points, don\'t overwhelm quick-deciders with analysis. Flexibility is key.'
   },
   {
-    id: 'CFP-PSY-B7-025',
+    id: 'cfp-psy-b7-025',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',

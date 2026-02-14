@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
   // PCR-2: Fiduciary Duty
   {
-    id: 'CFP-PCR-B3-001',
+    id: 'cfp-pcr-b3-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The duty of loyalty requires disclosure of material conflicts of interest. The $5,000 bonus is a material conflict that could influence recommendations. While disclosure and consent can address the conflict, the CFP® must ensure the recommendation remains in the client\'s best interest.'
   },
   {
-    id: 'CFP-PCR-B3-002',
+    id: 'cfp-pcr-b3-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The duty of care requires competence. A CFP® must either acquire the necessary competence through education/research or refer the client to another professional with the required expertise. Simply disclaiming is insufficient.'
   },
   {
-    id: 'CFP-PCR-B3-003',
+    id: 'cfp-pcr-b3-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -66,7 +66,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Best interest analysis focuses on the client\'s current needs, goals, risk tolerance, costs, and any conflicts (like planner compensation). Past satisfaction with OTHER advisors\' recommendations is not relevant to determining if a current recommendation is in the client\'s best interest.'
   },
   {
-    id: 'CFP-PCR-B3-004',
+    id: 'cfp-pcr-b3-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -85,7 +85,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: '12b-1 fees create a material conflict because the planner receives ongoing compensation from fund companies, which could influence recommendations. A regular salary, holding similar investments, or using common software are not material conflicts requiring disclosure.'
   },
   {
-    id: 'CFP-PCR-B3-005',
+    id: 'cfp-pcr-b3-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
   },
   // PCR-3: Practice Standards
   {
-    id: 'CFP-PCR-B3-006',
+    id: 'cfp-pcr-b3-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -124,7 +124,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP Board Standards require written documentation of the scope of engagement, how the professional will be compensated, and any material conflicts of interest before providing financial planning services.'
   },
   {
-    id: 'CFP-PCR-B3-007',
+    id: 'cfp-pcr-b3-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -143,7 +143,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The CFP® must gather sufficient information to provide competent advice. When information is incomplete, the professional should ask clarifying questions. Proceeding with incomplete data or excessive assumptions violates the duty of care.'
   },
   {
-    id: 'CFP-PCR-B3-008',
+    id: 'cfp-pcr-b3-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -162,7 +162,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The CFP® has an ongoing duty to clients that includes reasonable follow-up as defined by the engagement. Simply closing the file without follow-up or implementing without consent would violate practice standards.'
   },
   {
-    id: 'CFP-PCR-B3-009',
+    id: 'cfp-pcr-b3-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -181,7 +181,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'While confidentiality is paramount, a valid legal subpoena must be honored. The CFP® should notify the client of the subpoena and comply with the legal process. Destroying records or refusing a valid subpoena could result in legal consequences.'
   },
   {
-    id: 'CFP-PCR-B3-010',
+    id: 'cfp-pcr-b3-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -201,7 +201,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
   },
   // PCR-1: Code of Ethics & Standards
   {
-    id: 'CFP-PCR-B3-011',
+    id: 'cfp-pcr-b3-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -220,7 +220,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP Board Standards prohibit misleading communications. Guaranteeing investment returns is inherently misleading since future returns cannot be guaranteed. This violates both CFP Standards and securities regulations.'
   },
   {
-    id: 'CFP-PCR-B3-012',
+    id: 'cfp-pcr-b3-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -239,7 +239,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The proper use is "CFP®" with the registration mark following the individual\'s name. The marks should include ® to indicate registered certification marks owned by CFP Board.'
   },
   {
-    id: 'CFP-PCR-B3-013',
+    id: 'cfp-pcr-b3-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -258,7 +258,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The duty of integrity requires honesty. A CFP® must promptly disclose errors to clients, even when disclosure may reflect poorly on the professional. Hiding or delaying disclosure violates the Code of Ethics.'
   },
   {
-    id: 'CFP-PCR-B3-014',
+    id: 'cfp-pcr-b3-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -277,7 +277,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The duty of fairness requires handling disputes reasonably. The CFP® should discuss the situation with the client and seek a fair resolution, which might include a prorated fee for work completed or an agreement to finish remaining work.'
   },
   {
-    id: 'CFP-PCR-B3-015',
+    id: 'cfp-pcr-b3-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -297,7 +297,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
   },
   // Disciplinary Process
   {
-    id: 'CFP-PCR-B3-016',
+    id: 'cfp-pcr-b3-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -316,7 +316,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires self-reporting of certain matters including being charged with (not just convicted of) crimes involving dishonesty. The reporting deadline is generally 30 calendar days.'
   },
   {
-    id: 'CFP-PCR-B3-017',
+    id: 'cfp-pcr-b3-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -335,7 +335,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP Board is a private certification organization with authority over the CFP® marks. It can impose private censure, suspension, or revocation. Criminal prosecution is the domain of government authorities, not CFP Board.'
   },
   {
-    id: 'CFP-PCR-B3-018',
+    id: 'cfp-pcr-b3-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -355,7 +355,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
   },
   // Client Communication
   {
-    id: 'CFP-PCR-B3-019',
+    id: 'cfp-pcr-b3-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -374,7 +374,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP standards require communications that are clear and understandable to the client. Technical jargon should be explained, risks discussed, and clients should be encouraged to ask questions.'
   },
   {
-    id: 'CFP-PCR-B3-020',
+    id: 'cfp-pcr-b3-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -394,7 +394,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
   },
   // Competence & Experience
   {
-    id: 'CFP-PCR-B3-021',
+    id: 'cfp-pcr-b3-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -413,7 +413,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires 30 hours of continuing education every two-year reporting period. This includes 2 hours of CFP Board-approved ethics CE.'
   },
   {
-    id: 'CFP-PCR-B3-022',
+    id: 'cfp-pcr-b3-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -432,7 +432,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP certificants must complete at least 2 hours of CFP Board-approved ethics CE within each two-year reporting period as part of the 30-hour requirement.'
   },
   {
-    id: 'CFP-PCR-B3-023',
+    id: 'cfp-pcr-b3-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -451,7 +451,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Even in limited-scope engagements, a CFP® must act in the client\'s best interest. This includes informing the client of significant issues in other areas, even if those areas are outside the engagement scope. The client can then decide how to address them.'
   },
   {
-    id: 'CFP-PCR-B3-024',
+    id: 'cfp-pcr-b3-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -470,7 +470,7 @@ export const CFP_PROFESSIONAL_BATCH3_QUESTIONS: Question[] = [
     explanation: 'While cost is a significant factor in fiduciary analysis, it is not the only factor. The CFP® must consider all relevant factors (tax treatment, platform availability, client preferences, etc.). However, with similar holdings and performance, lower costs would typically favor Fund A unless other factors justify the higher-cost option.'
   },
   {
-    id: 'CFP-PCR-B3-025',
+    id: 'cfp-pcr-b3-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',

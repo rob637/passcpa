@@ -444,7 +444,7 @@ Does NOT modify the opinion`,
     type: 'concept',
     topic: 'Compilation',
     subtopic: 'Review vs Compilation',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     front: 'What is the difference between compilation and review?',
     back: `**Compilation (SSARS):**
 • Assurance: NONE
@@ -1035,7 +1035,7 @@ Applied = Standard rate × Actual hours allowed for output
     type: 'concept',
     topic: 'NFP',
     subtopic: 'Statement Requirements',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     front: 'What financial statements are required for NFPs?',
     back: `**NFP Required Statements (ASU 2016-14):**
 

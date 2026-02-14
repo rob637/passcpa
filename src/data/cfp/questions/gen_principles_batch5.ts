@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   // GEN-1: Advanced Financial Statements
   {
-    id: 'CFP-GEN-B5-001',
+    id: 'cfp-gen-b5-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The front-end ratio (PITI ÷ gross income) typically should not exceed 28% by conventional lending standards. This measures the portion of income dedicated to housing costs only. The back-end ratio (36% guideline) includes all debt payments. These are guidelines—actual approval depends on creditworthiness and compensating factors.'
   },
   {
-    id: 'CFP-GEN-B5-002',
+    id: 'cfp-gen-b5-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Single-income households and those in volatile industries (cyclical, commission-based, or unstable employment) need larger emergency reserves—typically 6-12 months of expenses. The 3-6 month guideline applies to dual-income, stable-employment households. Individual circumstances determine the appropriate level.'
   },
   {
-    id: 'CFP-GEN-B5-003',
+    id: 'cfp-gen-b5-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +67,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-2: Advanced Time Value of Money
   {
-    id: 'CFP-GEN-B5-004',
+    id: 'cfp-gen-b5-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The real rate of return = Nominal rate - Inflation rate ≈ 8% - 3% = 5% (simplified). The exact formula is (1 + nominal)/(1 + inflation) - 1 = 1.08/1.03 - 1 = 4.85%. Real returns represent purchasing power growth. Financial planning projections should consider real returns for goal attainment.'
   },
   {
-    id: 'CFP-GEN-B5-005',
+    id: 'cfp-gen-b5-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +105,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Serial payments are annuities that increase at a constant rate (often inflation) each period. Unlike level payments, they maintain purchasing power over time. The PV/FV calculations are more complex. Common in retirement planning where withdrawals may increase 2-3% annually to match inflation.'
   },
   {
-    id: 'CFP-GEN-B5-006',
+    id: 'cfp-gen-b5-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -125,7 +125,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-3: Advanced Education Planning
   {
-    id: 'CFP-GEN-B5-007',
+    id: 'cfp-gen-b5-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +144,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'ABLE accounts allow tax-free growth and withdrawals for qualified disability expenses for individuals whose disability onset was before age 26. Annual contributions are limited (currently $18,000, with additional amounts for working beneficiaries). Balances up to $100,000 are disregarded for SSI eligibility.'
   },
   {
-    id: 'CFP-GEN-B5-008',
+    id: 'cfp-gen-b5-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +163,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Prepaid plans purchase future tuition at today\'s prices at specific colleges or state systems, hedging against tuition inflation. Savings plans offer investment options for any qualified education expense at any institution. Prepaid plans have residency and institution restrictions; fewer states offer them now.'
   },
   {
-    id: 'CFP-GEN-B5-009',
+    id: 'cfp-gen-b5-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,7 +183,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-4: Financial Planning Process
   {
-    id: 'CFP-GEN-B5-010',
+    id: 'cfp-gen-b5-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -202,7 +202,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Monitoring is the final ongoing step in the financial planning process. It includes tracking progress, reviewing assumptions, adjusting for life changes (job, family, health), responding to market/tax law changes, and rebalancing as needed. Regular scheduled reviews plus ad-hoc updates maintain plan relevance.'
   },
   {
-    id: 'CFP-GEN-B5-011',
+    id: 'cfp-gen-b5-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -222,7 +222,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-1: More Financial Analysis
   {
-    id: 'CFP-GEN-B5-012',
+    id: 'cfp-gen-b5-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -241,7 +241,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Negative cash flow means expenses exceed income, funded by withdrawing from assets or adding debt. This erodes net worth over time. While temporarily acceptable (during education, retirement drawdown phase), chronic negative cash flow is unsustainable. Identifying the cause and adjusting spending or income is essential.'
   },
   {
-    id: 'CFP-GEN-B5-013',
+    id: 'cfp-gen-b5-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -261,7 +261,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-2: More TVM
   {
-    id: 'CFP-GEN-B5-014',
+    id: 'cfp-gen-b5-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -280,7 +280,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Annuity due payments occur at the start of each period (like rent), while ordinary annuity payments occur at period end. Beginning-of-period payments are received/paid one period earlier, making annuity due worth more (higher PV, higher FV) by a factor of (1 + r). Many retirement contributions are annuity due.'
   },
   {
-    id: 'CFP-GEN-B5-015',
+    id: 'cfp-gen-b5-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -300,7 +300,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-3: More Education
   {
-    id: 'CFP-GEN-B5-016',
+    id: 'cfp-gen-b5-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -319,7 +319,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'EFC (Expected Family Contribution) counts 20% of student assets annually but only about 5.64% of parent assets above an asset protection allowance. This makes parent-owned accounts and 529s (counted as parent assets) more favorable for financial aid than accounts in the student\'s name (UGMA/UTMA).'
   },
   {
-    id: 'CFP-GEN-B5-017',
+    id: 'cfp-gen-b5-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -339,7 +339,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // GEN-4: More Planning
   {
-    id: 'CFP-GEN-B5-018',
+    id: 'cfp-gen-b5-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -358,7 +358,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Scenario analysis tests financial plans against multiple possible futures—varying returns, inflation, lifespan, health events, market crashes. It reveals vulnerabilities and helps clients understand that plans aren\'t predictions. Common scenarios: early retirement, market crash at retirement, longevity, disability.'
   },
   {
-    id: 'CFP-GEN-B5-019',
+    id: 'cfp-gen-b5-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -377,7 +377,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Special Needs Trusts (SNTs) hold assets for beneficiaries with disabilities without counting toward resource limits for SSI, Medicaid, and other means-tested benefits. First-party SNTs hold the beneficiary\'s own assets; third-party SNTs hold others\' gifts/inheritance. Proper drafting is essential for benefit preservation.'
   },
   {
-    id: 'CFP-GEN-B5-020',
+    id: 'cfp-gen-b5-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -397,7 +397,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-GEN-B5-021',
+    id: 'cfp-gen-b5-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -416,7 +416,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Personal balance sheets list assets by liquidity: cash and cash equivalents first, then marketable securities, retirement accounts, real estate, and personal use assets. This shows financial flexibility and emergency fund adequacy at a glance. Liabilities are typically listed by due date, short-term first.'
   },
   {
-    id: 'CFP-GEN-B5-022',
+    id: 'cfp-gen-b5-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -435,7 +435,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'YTM is the internal rate of return of a bond held to maturity, considering purchase price, coupon payments, and principal return. It assumes coupons are reinvested at the YTM rate. YTM differs from current yield (annual coupon ÷ price) and coupon rate (annual coupon ÷ face value).'
   },
   {
-    id: 'CFP-GEN-B5-023',
+    id: 'cfp-gen-b5-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -454,7 +454,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The Tax Cuts and Jobs Act expanded 529 use to include up to $10,000 per year per beneficiary for K-12 tuition (private, public, or religious schools). This is federal law; some states don\'t conform and may recapture deductions or tax earnings on K-12 use. Room, board, and supplies remain college-only qualified expenses.'
   },
   {
-    id: 'CFP-GEN-B5-024',
+    id: 'cfp-gen-b5-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -473,7 +473,7 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Limited resources require prioritization. The CFP® professional helps clients understand trade-offs: earlier retirement vs. more spending, college funding vs. retirement, etc. Modeling alternatives shows consequences of choices. Clients make informed decisions; the planner doesn\'t impose values but ensures understanding.'
   },
   {
-    id: 'CFP-GEN-B5-025',
+    id: 'cfp-gen-b5-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
   // INV-4: Derivatives & Alternative Investments
   {
-    id: 'CFP-INV-B4-001',
+    id: 'cfp-inv-b4-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'A call option gives the holder (buyer) the RIGHT to BUY the underlying asset at the strike price on or before expiration. The call seller (writer) has the OBLIGATION to sell if the option is exercised. Puts give the right to sell.'
   },
   {
-    id: 'CFP-INV-B4-002',
+    id: 'cfp-inv-b4-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Maximum profit = stock appreciation to strike + premium = ($55 - $50) × 100 + $300 = $500 + $300 = $800. Above $55, the stock is called away. The call writer sacrifices unlimited upside for immediate premium income.'
   },
   {
-    id: 'CFP-INV-B4-003',
+    id: 'cfp-inv-b4-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -66,7 +66,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'A protective put (put + stock) acts as portfolio insurance. The put limits losses below the strike price while allowing unlimited upside (minus the premium cost). It\'s the opposite of covered calls, which generate income but cap upside.'
   },
   {
-    id: 'CFP-INV-B4-004',
+    id: 'cfp-inv-b4-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -85,7 +85,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Option value = intrinsic value + time value. Intrinsic value of the call = MAX(stock price - strike, 0) = MAX($100 - $95, 0) = $5. Premium = $12. Time value = $12 - $5 = $7. Time value decays as expiration approaches (theta decay).'
   },
   {
-    id: 'CFP-INV-B4-005',
+    id: 'cfp-inv-b4-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -104,7 +104,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Futures margin is a good-faith deposit (performance bond) to ensure both parties perform, typically 5-15% of contract value. Equity margin is a partial payment (loan) where the broker lends money to buy securities—typically 50% initial margin under Regulation T.'
   },
   {
-    id: 'CFP-INV-B4-006',
+    id: 'cfp-inv-b4-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -123,7 +123,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: '"2 and 20" refers to a 2% annual management fee on assets under management PLUS a 20% performance fee (incentive fee) on profits above a hurdle rate. This fee structure aligns manager incentives with performance but has been criticized for being expensive.'
   },
   {
-    id: 'CFP-INV-B4-007',
+    id: 'cfp-inv-b4-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -142,7 +142,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The J-curve describes the typical pattern where PE funds show negative returns in early years (due to fees and investment write-downs) before turning positive as investments mature and are realized at gains. Investors must understand this illiquidity pattern.'
   },
   {
-    id: 'CFP-INV-B4-008',
+    id: 'cfp-inv-b4-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -161,7 +161,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'REITs must distribute at least 90% of taxable income to shareholders annually to avoid corporate-level taxation. Most REITs distribute close to 100%. Dividends are generally taxed as ordinary income (qualified dividend treatment does not apply).'
   },
   {
-    id: 'CFP-INV-B4-009',
+    id: 'cfp-inv-b4-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -180,7 +180,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Contango occurs when futures prices are higher than spot prices (upward-sloping curve), typically due to storage costs. Backwardation is the opposite (downward-sloping). Contango creates negative "roll yield" for long futures investors who must sell low and buy high when rolling contracts.'
   },
   {
-    id: 'CFP-INV-B4-010',
+    id: 'cfp-inv-b4-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -199,7 +199,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Delta measures the option price change per $1 change in the underlying. At-the-money calls have delta near 0.50 (50% chance of expiring in-the-money). Deep in-the-money → delta approaches 1.0. Deep out-of-the-money → delta approaches 0.'
   },
   {
-    id: 'CFP-INV-B4-011',
+    id: 'cfp-inv-b4-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -218,7 +218,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Accredited investor status requires: (1) income over $200,000 annually ($300,000 joint) for past 2 years with expectation of same, OR (2) net worth over $1 million excluding primary residence. Recent changes added professional certifications (Series 65, etc.) as qualification pathways.'
   },
   {
-    id: 'CFP-INV-B4-012',
+    id: 'cfp-inv-b4-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -238,7 +238,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
   },
   // INV-5: Investment Performance & Tax Efficiency
   {
-    id: 'CFP-INV-B4-013',
+    id: 'cfp-inv-b4-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -257,7 +257,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'TWR removes the effect of external cash flows (deposits/withdrawals) that the manager does not control. This allows fair comparison between managers. Dollar-weighted return (IRR) reflects the investor\'s experience but is affected by timing of cash flows.'
   },
   {
-    id: 'CFP-INV-B4-014',
+    id: 'cfp-inv-b4-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -276,7 +276,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Sharpe ratio = (Portfolio return - Risk-free rate) / Standard deviation = (12% - 2%) / 20% = 10% / 20% = 0.50. Higher Sharpe ratios indicate better risk-adjusted returns. A Sharpe ratio over 1.0 is generally considered good.'
   },
   {
-    id: 'CFP-INV-B4-015',
+    id: 'cfp-inv-b4-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -295,7 +295,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Treynor ratio = (Return - Rf) / Beta. It uses beta (systematic risk) rather than standard deviation (total risk). Treynor is appropriate for well-diversified portfolios where unsystematic risk has been eliminated, leaving only market risk.'
   },
   {
-    id: 'CFP-INV-B4-016',
+    id: 'cfp-inv-b4-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -314,7 +314,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Jensen\'s Alpha = Actual Return - [Rf + β(Rm - Rf)] = 15% - [3% + 1.2(10% - 3%)] = 15% - [3% + 8.4%] = 15% - 11.4% = 3.6%. Positive alpha indicates outperformance relative to CAPM-expected return.'
   },
   {
-    id: 'CFP-INV-B4-017',
+    id: 'cfp-inv-b4-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -333,7 +333,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Tax-loss harvesting realizes losses to offset current gains, deferring taxes. The investor maintains market exposure by purchasing similar (not identical) securities. While losses are eventually recaptured through lower basis, deferral has time-value benefits.'
   },
   {
-    id: 'CFP-INV-B4-018',
+    id: 'cfp-inv-b4-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -352,7 +352,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Tax-managed index funds are designed for taxable accounts—low turnover, tax-loss harvesting, avoiding short-term gains. Tax-inefficient assets (high turnover funds, REITs, taxable bonds) should go in tax-advantaged accounts where gains and dividends are sheltered.'
   },
   {
-    id: 'CFP-INV-B4-019',
+    id: 'cfp-inv-b4-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -371,26 +371,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Benchmarks should match the investment\'s style and market cap. Russell 2000 Value tracks small-cap value stocks, matching the fund\'s strategy. S&P 500 is large-cap blend, MSCI EAFE is international developed, Barclays Aggregate is bonds—all inappropriate comparisons.'
   },
   {
-    id: 'CFP-INV-B4-020',
-    courseId: 'cfp',
-    section: 'CFP-INV',
-    blueprintArea: 'INV-5',
-    topic: 'Information Ratio',
-    subtopic: 'Active Management Skill',
-    difficulty: 'hard',
-    skillLevel: 'Analysis',
-    question: 'The information ratio measures:',
-    options: [
-      'D) Return relative to maximum drawdown',
-      'B) Return per unit of total risk',
-      'C) Active return relative to tracking error',
-      'A) Absolute return relative to cash',
-    ],
-    correctAnswer: 2,
-    explanation: 'Information Ratio = (Portfolio Return - Benchmark Return) / Tracking Error. It measures active return per unit of active risk (tracking error). Higher IR indicates more consistent alpha generation. An IR above 0.50 is generally considered good for active managers.'
-  },
-  {
-    id: 'CFP-INV-B4-021',
+    id: 'cfp-inv-b4-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -409,7 +390,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'ETFs use in-kind creation/redemption with authorized participants, allowing them to transfer low-basis shares out of the fund without triggering taxable gains. Mutual funds must sell securities to meet redemptions, creating capital gains distributions to all shareholders.'
   },
   {
-    id: 'CFP-INV-B4-022',
+    id: 'cfp-inv-b4-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -428,7 +409,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Performance attribution breaks down active return into: (1) allocation effect (over/underweighting sectors), (2) selection effect (stock picks within sectors), and (3) interaction effect (combination of allocation and selection decisions). This identifies sources of relative performance.'
   },
   {
-    id: 'CFP-INV-B4-023',
+    id: 'cfp-inv-b4-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -447,7 +428,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Pre-liquidation after-tax return reflects the impact of taxable distributions (dividends, capital gains) while still holding the investment. Post-liquidation return also includes the tax impact of selling shares. SEC requires mutual funds to report both.'
   },
   {
-    id: 'CFP-INV-B4-024',
+    id: 'cfp-inv-b4-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -466,7 +447,7 @@ export const CFP_INVESTMENTS_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Specific identification allows selling the highest-cost lots first, minimizing current gain (or maximizing loss). FIFO sells oldest (often lowest-cost) shares first. LIFO is not allowed for securities. Average cost is available for mutual funds but not optimal for tax management.'
   },
   {
-    id: 'CFP-INV-B4-025',
+    id: 'cfp-inv-b4-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',

@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
   // RIS-1: Risk Assessment
   {
-    id: 'CFP-RIS-B8-001',
+    id: 'cfp-ris-b8-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Risk Retention',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Risk retention suitable when: loss small and affordable (high deductibles), frequent losses make insurance expensive (claims experience), premium exceeds expected loss value, or loss is uninsurable. Requires adequate reserves. Not appropriate for catastrophic risks. Conscious decision, not just lack of coverage. Many businesses retain smaller risks strategically.'
   },
   {
-    id: 'CFP-RIS-B8-002',
+    id: 'cfp-ris-b8-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Risk Control',
     difficulty: 'easy',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Risk control: actions affecting the risk itself (vs. financial consequences). Avoidance: don\'t engage in risky activity. Loss prevention: reduce probability (smoke detectors, security systems). Loss reduction: minimize severity after event (fire extinguishers, sprinklers, seat belts). Often combined with risk transfer (insurance) for comprehensive protection.'
   },
   {
-    id: 'CFP-RIS-B8-003',
+    id: 'cfp-ris-b8-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Exposures Analysis',
     difficulty: 'medium',
@@ -67,10 +67,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
   },
   // RIS-2: Life Insurance
   {
-    id: 'CFP-RIS-B8-004',
+    id: 'cfp-ris-b8-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Return of Premium',
     difficulty: 'medium',
@@ -86,10 +86,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'ROP term: get premiums back if you outlive the term. Sounds attractive but: premiums much higher (50-200%+), opportunity cost of extra premium, may not be refunded if lapsed early or die. Alternative: buy regular term, invest the difference. May work for those who won\'t invest otherwise. Analyze: would investing the difference produce better results?'
   },
   {
-    id: 'CFP-RIS-B8-005',
+    id: 'cfp-ris-b8-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Survivorship Life Insurance',
     difficulty: 'medium',
@@ -105,10 +105,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Survivorship life: pays at second death of two insureds (usually spouses). Uses: estate tax liquidity (tax typically deferred until second death via marital deduction), equalizing inheritances, charitable giving. Advantages: lower premium than separate policies (insures two lives), one unhealthy spouse may qualify. Typically placed in ILIT to exclude from estate.'
   },
   {
-    id: 'CFP-RIS-B8-006',
+    id: 'cfp-ris-b8-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Policy Review',
     difficulty: 'easy',
@@ -125,10 +125,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
   },
   // RIS-3: Health Insurance
   {
-    id: 'CFP-RIS-B8-007',
+    id: 'cfp-ris-b8-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'TRICARE',
     difficulty: 'medium',
@@ -144,10 +144,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'TRICARE: military health program. Active duty get TRICARE Prime (no cost). Retirees and dependents have options: Prime, Select, For Life (Medicare supplement). Different rules for active duty, guard/reserve, retired. Low cost compared to civilian plans. Covers medical, prescription, dental (separate program). Understand when advising military families.'
   },
   {
-    id: 'CFP-RIS-B8-008',
+    id: 'cfp-ris-b8-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Health Reimbursement Arrangement',
     difficulty: 'medium',
@@ -163,10 +163,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'HRA: employer-funded account for employee medical expenses. Employer contributes (tax-deductible), employee receives reimbursements tax-free. Employer sets eligible expenses, maximum reimbursement, carryover rules. Different from HSA (employee owns) and FSA (employee contributes). Various types: integrated with group plan, QSEHRA for small employers, ICHRA for individual coverage.'
   },
   {
-    id: 'CFP-RIS-B8-009',
+    id: 'cfp-ris-b8-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Medicare Open Enrollment',
     difficulty: 'easy',
@@ -183,10 +183,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
   },
   // RIS-4: Disability Insurance
   {
-    id: 'CFP-RIS-B8-010',
+    id: 'cfp-ris-b8-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Key Person Disability',
     difficulty: 'hard',
@@ -202,10 +202,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Key person disability: protects business from financial impact of key employee\'s disability. Covers: lost revenue, replacement search/training, recovery of business. Business owns policy, pays premiums (not deductible), receives benefits (not taxable). Different from personal DI—protects business, not employee\'s income. Often overlooked protection for small businesses.'
   },
   {
-    id: 'CFP-RIS-B8-011',
+    id: 'cfp-ris-b8-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Social Security Disability',
     difficulty: 'medium',
@@ -221,10 +221,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'SSDI\'s Trial Work Period allows beneficiaries to test their ability to work for up to 9 months (not necessarily consecutive) within a 60-month rolling period while receiving full SSDI benefits. During this period, there is no limit on earnings, enabling beneficiaries to evaluate their work capacity.',
   },
   {
-    id: 'CFP-RIS-B8-012',
+    id: 'cfp-ris-b8-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Premium Structure',
     difficulty: 'easy',
@@ -241,10 +241,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
   },
   // RIS-5: Property and Casualty
   {
-    id: 'CFP-RIS-B8-013',
+    id: 'cfp-ris-b8-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Flood Insurance',
     difficulty: 'medium',
@@ -260,10 +260,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'NFIP: separate federal program (private options exist too). Maximum coverage: $250K dwelling, $100K contents. Required if federally-backed mortgage in Special Flood Hazard Area. 30-day waiting period typically. Doesn\'t cover: basement contents, living expenses. High-value homes may need excess flood. Rising premiums as Risk Rating 2.0 implemented.'
   },
   {
-    id: 'CFP-RIS-B8-014',
+    id: 'cfp-ris-b8-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Business Interruption',
     difficulty: 'hard',
@@ -279,10 +279,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Business interruption: replaces lost income and covers continuing expenses when business stops due to covered property loss. Covers: net profit that would have been earned, ongoing expenses (rent, salaries, utilities). Requires physical damage triggering closure. Extra expense coverage for costs to resume faster. Contingent BI covers supplier/customer disruptions. Critical for business owners.'
   },
   {
-    id: 'CFP-RIS-B8-015',
+    id: 'cfp-ris-b8-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Excess Liability',
     difficulty: 'medium',
@@ -299,10 +299,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RIS-B8-016',
+    id: 'cfp-ris-b8-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Insurance Needs Analysis',
     difficulty: 'medium',
@@ -318,10 +318,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Comprehensive insurance analysis: identify all exposures, review current coverage for each, identify gaps and excess, evaluate limits vs. needs, consider deductibles/premiums trade-offs, prioritize by severity of exposure. Holistic approach—property, liability, life, health, disability, LTC, umbrella. Regular reviews as circumstances change.'
   },
   {
-    id: 'CFP-RIS-B8-017',
+    id: 'cfp-ris-b8-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Assignment',
     difficulty: 'medium',
@@ -337,10 +337,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Absolute assignment: full ownership transfer—all rights (change beneficiary, borrow, surrender). Used for: ILIT funding (remove from estate), sale, charitable gift. Irrevocable once completed. Collateral assignment is different—limited, temporary transfer as loan security. Policy owner can assign; insurer notified but doesn\'t need to approve.'
   },
   {
-    id: 'CFP-RIS-B8-018',
+    id: 'cfp-ris-b8-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Special Enrollment Period',
     difficulty: 'easy',
@@ -356,10 +356,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Special Enrollment Period (SEP): window to enroll outside Open Enrollment due to qualifying life events. Events: marriage, divorce, birth/adoption, loss of other coverage, moving, Medicaid/CHIP eligibility changes. Typically 60 days to enroll. Don\'t miss—next opportunity is Open Enrollment. Documentation may be required. ACA marketplace and employer plans both have SEP rules.'
   },
   {
-    id: 'CFP-RIS-B8-019',
+    id: 'cfp-ris-b8-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Benefit Calculation',
     difficulty: 'medium',
@@ -375,10 +375,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'DI benefit limits: insurers cap at 60-70% of pre-disability income. Reasons: maintain incentive to return to work, prevent moral hazard. High earners may face lower replacement ratios. Calculate after-tax replacement—if premiums paid with after-tax dollars, benefits are tax-free so 60% may replace more than 60% of take-home pay.'
   },
   {
-    id: 'CFP-RIS-B8-020',
+    id: 'cfp-ris-b8-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Insurance Score',
     difficulty: 'easy',
@@ -394,10 +394,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Insurance score: credit-based score predicting likelihood of filing claims. Not same as credit score—different weighting. Factors: payment history, outstanding debt, credit history length, new credit, credit mix. Higher score = lower premiums typically. Some states restrict use. Improving credit can reduce insurance costs. Different companies use different scoring models.'
   },
   {
-    id: 'CFP-RIS-B8-021',
+    id: 'cfp-ris-b8-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Captive Insurance',
     difficulty: 'hard',
@@ -413,10 +413,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Captive insurance: company-owned insurer covering parent\'s risks. Types: pure captive (one owner), group captive (multiple companies). Potential benefits: control coverage terms, potential tax advantages, access reinsurance markets, reduce costs. Drawbacks: setup costs, regulation, capital requirements, IRS scrutiny of tax motivation. Used by larger corporations; micro-captives under scrutiny.'
   },
   {
-    id: 'CFP-RIS-B8-022',
+    id: 'cfp-ris-b8-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Premium Financing',
     difficulty: 'hard',
@@ -432,10 +432,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Premium financing: borrow from third-party lender to pay premiums on large life insurance policy. Policy cash value and death benefit as collateral. Strategy for wealthy clients who prefer not to liquidate investments. Risks: interest rate changes, policy performance, exit strategy. Complex—need proper planning. IRS watches for abusive arrangements.'
   },
   {
-    id: 'CFP-RIS-B8-023',
+    id: 'cfp-ris-b8-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Preventive Care',
     difficulty: 'easy',
@@ -451,10 +451,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'ACA preventive care: must be covered at no cost (no copay, coinsurance, deductible) when in-network. Includes: recommended immunizations, screenings (cancer, diabetes), wellness visits, contraception, counselings. List from USPSTF recommendations. Out-of-network may have cost. Diagnostic follow-up not covered same way. Know what qualifies as preventive.'
   },
   {
-    id: 'CFP-RIS-B8-024',
+    id: 'cfp-ris-b8-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Mental Health Coverage',
     difficulty: 'medium',
@@ -470,10 +470,10 @@ export const CFP_RISK_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Mental health DI limitations: many policies limit mental/nervous condition benefits to 2 years (vs. age 65). Self-reported conditions (pain, fatigue) may have similar limits. Read policy carefully—limitations may surprise claimants. Some premium policies offer longer mental health benefits. Important consideration for those in high-stress professions.'
   },
   {
-    id: 'CFP-RIS-B8-025',
+    id: 'cfp-ris-b8-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Contractual Liability',
     difficulty: 'medium',

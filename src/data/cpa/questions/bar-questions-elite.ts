@@ -91,7 +91,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     id: 'bar-elite-005',
     courseId: 'cpa',
     section: 'BAR',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     topic: 'Cost Accounting',
     subtopic: 'Kaizen Costing',
     difficulty: 'hard',
@@ -115,7 +115,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Variance Analysis',
     subtopic: 'Sales Mix Variance',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Sales mix variance measures:',
     options: [
@@ -136,7 +136,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Decision Analysis',
     subtopic: 'Make or Buy Analysis',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'A company makes 20,000 units of Part G at a per-unit cost of: DM $4, DL $6, variable OH $3, and allocated fixed OH $5 (total $18). A supplier offers to sell Part G for $14/unit. If the company buys, 60% of fixed overhead will continue. What is the net advantage of making vs. buying?',
     options: [
@@ -199,7 +199,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Income Taxes',
     subtopic: 'Tax Planning Strategies',
     difficulty: 'hard',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Evaluation',
     question: 'Tax planning strategies considered for valuation allowance assessment include:',
     options: [
@@ -220,7 +220,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Business Combinations',
     subtopic: 'Step Acquisition',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'In a step acquisition achieving control:',
     options: [
@@ -241,7 +241,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Consolidation',
     subtopic: 'NCI Presentation',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Application',
     question: 'Noncontrolling interest in consolidated financial statements is presented:',
     options: [
@@ -321,7 +321,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     id: 'bar-elite-016',
     courseId: 'cpa',
     section: 'BAR',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     topic: 'Budgeting',
     subtopic: 'Zero-Based Budgeting',
     difficulty: 'hard',
@@ -345,7 +345,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'The balanced scorecard measures performance across:',
     options: [
@@ -471,7 +471,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'The Theory of Constraints (TOC) focuses on:',
     options: [
@@ -576,7 +576,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Consolidation',
     subtopic: 'Attribution of Net Income',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Consolidated net income is attributed between parent and NCI:',
     options: [
@@ -597,7 +597,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Income Taxes',
     subtopic: 'Indefinite Reversal',
     difficulty: 'hard',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Evaluation',
     question: 'The indefinite reversal exception allows no deferred tax on:',
     options: [

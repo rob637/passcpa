@@ -403,7 +403,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: '§351 nonrecognition requires: (1) property transferred for stock, (2) transferors control corporation (80% voting + 80% each class) immediately after exchange. Services don\'t count; boot triggers gain recognition.',
     reference: 'IRC §351',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-base-corp-002',
@@ -424,7 +424,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The accumulated earnings tax (currently 20%) penalizes corporations that accumulate earnings beyond reasonable business needs to help shareholders avoid dividend taxes. The $250,000 is just a safe harbor, not a trigger.',
     reference: 'IRC §531-537',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-base-corp-003',
@@ -445,7 +445,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'C corporation earnings face double taxation: first at the corporate level (21% × $250,000 = $52,500), then at the shareholder level when distributed as dividends. The $100,000 dividend is taxed to shareholders at the qualified dividend rate of 15%: $100,000 × 15% = $15,000. Total tax on the distributed earnings = $52,500 + $15,000 = $67,500. This double taxation is the primary disadvantage of C corporation status.',
     reference: 'IRC §1374',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
 
   // ==========================================
@@ -1110,7 +1110,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'FTC is limited by category (baskets): general and passive. This prevents using excess credits from high-tax passive income to offset low-tax active business income.',
     reference: 'IRC §904',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-cred-002',
@@ -1131,7 +1131,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'WOTC provides credit for hiring from targeted groups: qualified veterans, SNAP recipients, ex-felons, designated community residents, summer youth, SSI recipients, and long-term family assistance recipients.',
     reference: 'IRC §51',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-cred-003',
@@ -1152,7 +1152,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'Credit = 50% of eligible access expenditures between $250 and $10,250 (max $5,000 credit). Available to eligible small businesses: ≤$1M revenue or ≤30 full-time employees in prior year.',
     reference: 'IRC §44',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
 
   // International Tax
@@ -1175,7 +1175,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'FDII deduction = 37.5% of FDII, resulting in 21% × (1 - 0.375) = 13.125% effective rate on export income exceeding deemed tangible income return. Encourages domestic production for export.',
     reference: 'IRC §250',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-intl-002',
@@ -1196,7 +1196,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'BEAT applies to corps with ≥$500M 3-year average gross receipts AND base erosion percentage ≥3% (2% for banks/dealers). It\'s a minimum tax on deductible payments to foreign related parties.',
     reference: 'IRC §59A',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
 
   // ==========================================
@@ -1504,7 +1504,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'Wayfair (2018) overturned physical presence requirement. States can require collection based on economic nexus (e.g., $100,000 sales or 200 transactions in state). Each state sets its own thresholds.',
     reference: 'South Dakota v. Wayfair',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-salt-002',
@@ -1525,7 +1525,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'PTE elections shift state tax from individual level (subject to $10,000 SALT cap) to entity level. Entity deducts state taxes; individuals receive reduced K-1 income or credit. IRS approved via Notice 2020-75.',
     reference: 'PTE Tax Elections',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-081',
@@ -1819,7 +1819,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'GILTI = CFC tested income - (10% × QBAI). US shareholders include GILTI currently. 50% deduction available to C corps (effective 10.5% rate). Designed to tax excess returns from intangibles.',
     reference: 'IRC §951A',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-095',
@@ -1840,7 +1840,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'U.S. citizens are taxed on worldwide income but may exclude up to $126,500 (2024) of foreign earned income under IRC §911. Foreign wages: $130,000 − $126,500 exclusion = $3,500 taxable. U.S.-source interest is not foreign earned income and cannot be excluded. Gross income = $3,500 + $10,000 = $13,500. The FEIE only applies to earned income (wages, self-employment) — investment income is always taxable.',
     reference: 'IRC §911',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-096',
@@ -1861,7 +1861,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Treaties: reduce double taxation, lower withholding rates on dividends/interest/royalties, allocate taxing rights between countries, provide tie-breaker rules for residency, and enable information exchange.',
     reference: 'US Tax Treaties',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-097',
@@ -1945,7 +1945,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Practitioner cannot sign return with frivolous position or position lacking reasonable basis. Non-disclosed positions need substantial authority. Disclosed positions need reasonable basis.',
     reference: 'Circular 230 §10.34',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-101',
@@ -1966,7 +1966,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Listed transactions (identified by IRS as abusive) require Form 8886 disclosure. Material advisors must report. Penalties: 75% of tax benefit if not disclosed. Statute of limitations extended.',
     reference: 'IRC §6707A',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-102',
@@ -2344,7 +2344,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'Subpart F: certain income of CFCs taxed currently to US shareholders. Includes: passive (FPHCI), foreign base company sales (related party sales), foreign base company services. Anti-deferral regime.',
     reference: 'IRC §951-964',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-120',
@@ -2365,7 +2365,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'BEAT: applies to corps with ≥$500M gross receipts and ≥3% base erosion percentage. Minimum tax on modified taxable income (adds back certain payments to foreign affiliates). Currently 10% rate.',
     reference: 'IRC §59A',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-121',
@@ -2386,7 +2386,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'FDII: 37.5% deduction for C corps on income serving foreign markets (export incentive). Effective rate: 21% × 62.5% = 13.125%. Counterpart to GILTI for encouraging US location. Calculation similar to GILTI.',
     reference: 'IRC §250',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-122',
@@ -2476,7 +2476,7 @@ export const TCP_QUESTIONS: Question[] = [
     id: 'tcp-126',
     courseId: 'cpa',
     section: 'TCP',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     topic: 'Tax Practice Ethics',
     subtopic: 'Written Tax Advice',
     difficulty: 'hard',
@@ -2511,7 +2511,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'Best practices: clear engagement terms, communicate clearly, establish relevant facts, advise on compliance opportunities, advise on potential penalties, act fairly and with integrity.',
     reference: 'Circular 230 §10.33',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-128',
@@ -2763,7 +2763,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Transfer pricing: related party transactions must be arm\'s length. Methods: CUP, resale price, cost plus, CPM, profit split. Documentation required. Prevents shifting income to low-tax jurisdictions.',
     reference: 'IRC §482',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-140',
@@ -2784,7 +2784,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'PFIC: 75% gross income passive OR 50% assets passive-producing. Punitive tax regime: excess distributions taxed at highest rate plus interest. QEF or MTM election can mitigate. Common with foreign mutual funds.',
     reference: 'IRC §1291-1298',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-141',
@@ -2868,7 +2868,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: '§6694: preparer penalty $1,000 for unreasonable position (no substantial authority). $5,000 for willful/reckless disregard. Adequate disclosure with reasonable basis can avoid. Per return.',
     reference: 'IRC §6694',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-145',
@@ -2889,7 +2889,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'SSTS No. 3: CPA may rely on client information unless it appears incorrect, incomplete, or inconsistent. No audit required. Must make reasonable inquiries if information seems questionable.',
     reference: 'SSTS No. 3',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-146',
@@ -3015,7 +3015,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'FBAR (FinCEN 114): required if aggregate foreign financial accounts exceed $10,000 at any time. Due April 15 (auto extension to October 15). Willful failure: severe penalties. Separate from FATCA.',
     reference: 'BSA/FBAR',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   {
     id: 'tcp-152',
@@ -3099,7 +3099,7 @@ export const TCP_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: 'Circular 230 sanctions: private reprimand, censure (public), suspension from practice, disbarment, monetary penalties. OPR (Office of Professional Responsibility) administers. Can appeal to ALJ.',
     reference: 'Circular 230 Subpart C',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
   },
   // Batch 13 - Additional TCP Questions
   {

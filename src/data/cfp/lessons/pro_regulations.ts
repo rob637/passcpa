@@ -12,7 +12,7 @@ export const CFP_PRO2_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-PRO-L005',
     domain: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     title: 'Federal Securities Laws and Regulations',
     order: 5,
     duration: 35,
@@ -215,7 +215,7 @@ Broker-dealers and associated persons
   {
     id: 'CFP-PRO-L006',
     domain: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     title: 'FINRA and Insurance Regulation',
     order: 6,
     duration: 30,
@@ -391,7 +391,7 @@ Financial institutions must:
   {
     id: 'CFP-PRO-L007',
     domain: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     title: 'ERISA and Qualified Plan Fiduciary Standards',
     order: 7,
     duration: 30,
@@ -573,7 +573,7 @@ Fiduciaries personally liable for:
   {
     id: 'CFP-PRO-L008',
     domain: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     title: 'Consumer Protection and Suitability',
     order: 8,
     duration: 25,

@@ -12,7 +12,7 @@ export const CFP_RIS2_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L004',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     title: 'Life Insurance Needs Analysis',
     order: 4,
     duration: 30,
@@ -191,7 +191,7 @@ Cover both spouses proportionally
   {
     id: 'CFP-RIS-L005',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     title: 'Types of Life Insurance',
     order: 5,
     duration: 35,
@@ -405,7 +405,7 @@ Combines variable investing with UL flexibility
   {
     id: 'CFP-RIS-L006',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     title: 'Life Insurance Policy Provisions',
     order: 6,
     duration: 30,
@@ -587,7 +587,7 @@ Proceeds included in estate if:
   {
     id: 'CFP-RIS-L007',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     title: 'Business Uses of Life Insurance',
     order: 7,
     duration: 25,

@@ -561,7 +561,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Tax Practice',
     subtopic: 'Circular 230',
     difficulty: 'medium',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Application',
     question: 'Under Circular 230, a tax practitioner must:',
     options: [
@@ -578,7 +578,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
     id: 'tcp-add-027',
     courseId: 'cpa',
     section: 'TCP',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     topic: 'Tax Practice',
     subtopic: 'Penalties',
     difficulty: 'hard',
@@ -602,7 +602,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Tax Research',
     subtopic: 'Primary Sources',
     difficulty: 'medium',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Application',
     question: 'Primary sources of tax law include:',
     options: [

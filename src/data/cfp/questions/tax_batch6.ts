@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   // TAX-1: Advanced Fundamentals
   {
-    id: 'CFP-TAX-B6-001',
+    id: 'cfp-tax-b6-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'AMT adds back certain "preference items" including state and local tax deductions, the spread on ISO exercise, certain mortgage interest, and investment interest. TCJA reduced AMT impact by increasing exemption amounts and limiting SALT deductions to $10,000, which reduced the AMT preference.'
   },
   {
-    id: 'CFP-TAX-B6-002',
+    id: 'cfp-tax-b6-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The kiddie tax applies to children under 19 (or under 24 if full-time students). Unearned income above the threshold is taxed at the parents\' marginal rate. This prevents shifting investment income to children to take advantage of their lower tax brackets. Applies to interest, dividends, capital gains, etc.'
   },
   {
-    id: 'CFP-TAX-B6-003',
+    id: 'cfp-tax-b6-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-2: Advanced Deductions and Credits
   {
-    id: 'CFP-TAX-B6-004',
+    id: 'cfp-tax-b6-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'CRTs allow donors to transfer appreciated assets, receive an income stream, get a partial charitable deduction (PV of remainder), and avoid immediate capital gains tax. The trust is tax-exempt, but distributions to the donor are taxed based on trust income (WIFO ordering rules).'
   },
   {
-    id: 'CFP-TAX-B6-005',
+    id: 'cfp-tax-b6-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'DAFs provide an immediate tax deduction when funds are contributed (cash or appreciated securities). The donor then recommends grants to charities over time. This separates the tax benefit from the charitable timing, useful for bunching deductions or having a high-income year.'
   },
   {
-    id: 'CFP-TAX-B6-006',
+    id: 'cfp-tax-b6-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,7 +125,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-3: Advanced Planning Strategies
   {
-    id: 'CFP-TAX-B6-007',
+    id: 'cfp-tax-b6-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -144,7 +144,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Installment sales spread gain recognition over the payment period using the gross profit percentage applied to each payment. This defers taxes but requires interest charges on the deferred balance. Depreciation recapture and inventory are ineligible. Related party sales have special rules.'
   },
   {
-    id: 'CFP-TAX-B6-008',
+    id: 'cfp-tax-b6-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'TCJA limited §1031 to real property only, eliminating like-kind treatment for personal property. Real estate held for business or investment qualifies for tax deferral. The 45-day identification and 180-day closing deadlines must be followed. Boot received triggers gain recognition.'
   },
   {
-    id: 'CFP-TAX-B6-009',
+    id: 'cfp-tax-b6-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +183,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-4: Business Taxation
   {
-    id: 'CFP-TAX-B6-010',
+    id: 'cfp-tax-b6-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +202,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'S corps must have 100 or fewer shareholders (certain family members counted as one), one class of stock, domestic corporation, eligible shareholders (individuals, certain trusts, estates—not partnerships or corporations). There is no revenue requirement. S election avoids double taxation at the entity level.'
   },
   {
-    id: 'CFP-TAX-B6-011',
+    id: 'cfp-tax-b6-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -221,7 +221,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Self-employed individuals pay 15.3% SE tax (equivalent to both employer and employee FICA shares) on 92.35% of net self-employment income. Social Security applies up to the wage base ($168,600 in 2024); Medicare has no cap plus 0.9% surtax on high earners. Half of SE tax is deductible for income tax purposes.'
   },
   {
-    id: 'CFP-TAX-B6-012',
+    id: 'cfp-tax-b6-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -241,7 +241,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-1: More Fundamentals
   {
-    id: 'CFP-TAX-B6-013',
+    id: 'cfp-tax-b6-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -260,7 +260,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Safe harbor requires paying 90% of current year liability OR 100% of prior year liability. Higher income taxpayers (AGI over $150,000 prior year) must pay 110% of prior year. Payments can be made via withholding or quarterly estimates. Withholding is treated as paid ratably throughout the year.'
   },
   {
-    id: 'CFP-TAX-B6-014',
+    id: 'cfp-tax-b6-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -279,7 +279,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: '"Filling the bracket" involves recognizing income (Roth conversions, capital gains, etc.) up to the top of a favorable bracket. If income will be higher in future years, paying 22% now on Roth conversions may be better than 24%+ later. This is especially valuable if tax rates are expected to increase.'
   },
   {
-    id: 'CFP-TAX-B6-015',
+    id: 'cfp-tax-b6-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -299,7 +299,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-2: Credits Focus
   {
-    id: 'CFP-TAX-B6-016',
+    id: 'cfp-tax-b6-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -318,7 +318,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The adoption credit offsets tax liability dollar-for-dollar for qualified expenses up to $16,810 (2024). It\'s nonrefundable (no refund if credit exceeds tax) but any unused credit carries forward 5 years. Income phaseout applies. The credit applies to domestic, international, and special needs adoptions.'
   },
   {
-    id: 'CFP-TAX-B6-017',
+    id: 'cfp-tax-b6-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -337,7 +337,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The residential clean energy credit is 30% of costs for solar panels, solar water heaters, wind energy, geothermal, fuel cells, and battery storage through 2032 (phasing down thereafter). There\'s no annual cap, and unused credits carry forward. The credit is nonrefundable.'
   },
   {
-    id: 'CFP-TAX-B6-018',
+    id: 'cfp-tax-b6-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -357,7 +357,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-3: More Strategies
   {
-    id: 'CFP-TAX-B6-019',
+    id: 'cfp-tax-b6-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -376,7 +376,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Bunching concentrates deductible expenses into alternate years to exceed the standard deduction in bunching years while taking the standard deduction in other years. This is most valuable for those near the standard deduction threshold, applied to charitable contributions, medical expenses, or state taxes.'
   },
   {
-    id: 'CFP-TAX-B6-020',
+    id: 'cfp-tax-b6-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -395,7 +395,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'QSBS allows exclusion of up to 100% of gain (the greater of $10 million or 10× adjusted basis) on stock acquired at original issuance from qualifying C corporations with <$50M gross assets, held for 5+ years. This is one of the most valuable tax benefits for founders and early investors.'
   },
   {
-    id: 'CFP-TAX-B6-021',
+    id: 'cfp-tax-b6-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -415,7 +415,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
   },
   // TAX-4: More Business
   {
-    id: 'CFP-TAX-B6-022',
+    id: 'cfp-tax-b6-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -434,7 +434,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The simplified method allows $5/sq ft up to 300 sq ft = $1,500 maximum deduction. Regular method tracks actual expenses (mortgage interest, utilities, depreciation) allocated by office percentage. Both require exclusive and regular use. Employees cannot deduct home office under TCJA (through 2025).'
   },
   {
-    id: 'CFP-TAX-B6-023',
+    id: 'cfp-tax-b6-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -453,7 +453,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'S corp owners can receive both salary (subject to payroll taxes) and distributions (not subject to payroll tax). The IRS requires reasonable compensation before taking distributions to prevent avoiding FICA taxes. What\'s "reasonable" depends on industry, role, company performance, and comparable wages.'
   },
   {
-    id: 'CFP-TAX-B6-024',
+    id: 'cfp-tax-b6-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -472,7 +472,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The safe harbor presumes profit motive if the activity is profitable 3 of 5 years (2 of 7 for horses). Without profit motive, hobby expenses are not deductible. Nine factors determine profit intent: manner of operation, expertise, time invested, income/assets, success record, history, and personal pleasure element.'
   },
   {
-    id: 'CFP-TAX-B6-025',
+    id: 'cfp-tax-b6-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',

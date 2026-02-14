@@ -514,7 +514,7 @@ export const TCP_QUESTIONS_EXPANDED: Question[] = [
     topic: 'International Taxation',
     subtopic: 'GILTI',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'Global Intangible Low-Taxed Income (GILTI) requires U.S. shareholders to:',
     options: [
@@ -531,7 +531,7 @@ export const TCP_QUESTIONS_EXPANDED: Question[] = [
     id: 'tcp-exp-025',
     courseId: 'cpa',
     section: 'TCP',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     topic: 'International Taxation',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'hard',
@@ -788,7 +788,7 @@ export const TCP_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Gift and Estate Tax',
     subtopic: 'Annual Exclusion',
     difficulty: 'medium',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Application',
     question: 'The annual gift tax exclusion for 2024 is:',
     options: [
@@ -809,7 +809,7 @@ export const TCP_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Gift and Estate Tax',
     subtopic: 'Unified Credit',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'The unified gift and estate tax exemption for 2024 is approximately:',
     options: [
@@ -830,7 +830,7 @@ export const TCP_QUESTIONS_EXPANDED: Question[] = [
     topic: 'International Taxation',
     subtopic: 'Foreign Tax Credit Limitation',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'A U.S. individual taxpayer paid $15,000 in foreign income taxes on $80,000 of foreign-source income. The taxpayer\'s worldwide income is $200,000 and U.S. tax liability (before credits) is $40,000. What is the foreign tax credit limitation?',
     options: [
@@ -851,7 +851,7 @@ export const TCP_QUESTIONS_EXPANDED: Question[] = [
     topic: 'International Taxation',
     subtopic: 'FBAR Reporting',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Application',
     question: 'FBAR reporting (FinCEN 114) is required when:',
     options: [

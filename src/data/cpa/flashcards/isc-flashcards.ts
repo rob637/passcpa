@@ -287,7 +287,7 @@ Security is REQUIRED; others are optional`,
     section: 'ISC',
     type: 'definition',
     topic: 'Data Management',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     front: 'What is DATA GOVERNANCE?',
     back: `**Data Governance:**
 Framework for managing data as an organizational asset
@@ -310,7 +310,7 @@ Data Owner, Data Steward, Data Custodian`,
     section: 'ISC',
     type: 'definition',
     topic: 'Data Management',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     front: 'What is the difference between BACKUP and DISASTER RECOVERY?',
     back: `**Backup:**
 Copies of data stored separately for recovery
@@ -334,7 +334,7 @@ Plans and procedures to restore IT systems after major disruption
     section: 'ISC',
     type: 'formula',
     topic: 'Disaster Recovery',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     front: 'What are RTO and RPO?',
     back: `**RTO = Recovery Time Objective**
 Maximum acceptable downtime after disaster
@@ -542,7 +542,7 @@ Process for controlling changes to IT systems
     section: 'ISC',
     type: 'definition',
     topic: 'Database',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     front: 'What is a RELATIONAL DATABASE?',
     back: `**Relational Database:**
 Organizes data in tables with rows and columns
@@ -565,7 +565,7 @@ Organizes data in tables with rows and columns
     section: 'ISC',
     type: 'mnemonic',
     topic: 'Database',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     front: 'What does ACID mean for database transactions?',
     back: `**ACID Properties:**
 
@@ -592,7 +592,7 @@ ACID ensures reliable transaction processing`,
     section: 'ISC',
     type: 'definition',
     topic: 'Cloud Computing',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     front: 'What are the CLOUD SERVICE MODELS (IaaS, PaaS, SaaS)?',
     back: `**Cloud Service Models:**
 
@@ -619,7 +619,7 @@ ACID ensures reliable transaction processing`,
     section: 'ISC',
     type: 'definition',
     topic: 'Cloud Computing',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     front: 'What are the CLOUD DEPLOYMENT MODELS?',
     back: `**Cloud Deployment Models:**
 
@@ -650,7 +650,7 @@ ACID ensures reliable transaction processing`,
     section: 'ISC',
     type: 'concept',
     topic: 'IT Governance',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     front: 'What is COBIT?',
     back: `**COBIT (Control Objectives for IT)**
 IT governance and management framework
@@ -757,7 +757,7 @@ Users have minimum access needed to perform job
     section: 'ISC',
     type: 'rule',
     topic: 'Compliance',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     front: 'What is the NIST Cybersecurity Framework?',
     back: `**NIST CSF - Five Core Functions:**
 
@@ -786,7 +786,7 @@ Tiers: Partial → Risk Informed → Repeatable → Adaptive`,
     section: 'ISC',
     type: 'definition',
     topic: 'Data Privacy',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     front: 'What is GDPR?',
     back: `**GDPR - General Data Protection Regulation**
 EU data privacy law (effective May 2018)

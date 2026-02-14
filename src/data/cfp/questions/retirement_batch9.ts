@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   {
-    id: 'CFP-RET-B9-001',
+    id: 'cfp-ret-b9-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Retirement spending inflation varies by category. Healthcare historically rises faster than CPI (5-6% vs 2-3%). Housing costs may stabilize if mortgage is paid. Food and utilities track general inflation. Some expenses decrease (work-related, some travel) while others increase (healthcare, home maintenance). Personalized projections beat single inflation rate.'
   },
   {
-    id: 'CFP-RET-B9-002',
+    id: 'cfp-ret-b9-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Retirement spending phases: Go-go (65-75): active lifestyle, travel, high discretionary spending. Slow-go (75-85): reduced activity, fewer trips, declining spending. No-go (85+): limited activity, but healthcare costs rise. This U-shaped real spending pattern (declining then rising for healthcare) should inform withdrawal strategies.'
   },
   {
-    id: 'CFP-RET-B9-003',
+    id: 'cfp-ret-b9-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
   },
   // RET-2: Qualified Plan Rules
   {
-    id: 'CFP-RET-B9-004',
+    id: 'cfp-ret-b9-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Employer contributions can be made until the tax return due date, including extensions. For calendar-year corporations, this extends to October 15 with extension. The contribution can be deducted in the prior year if deposited by this deadline. Employee deferrals have earlier deposit deadlines (generally as soon as administratively feasible).'
   },
   {
-    id: 'CFP-RET-B9-005',
+    id: 'cfp-ret-b9-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Cash balance: hybrid DB plan with individual "accounts" showing balance (not actual segregated funds). Employers credit annual pay credit (e.g., 5% of salary) plus interest credit (guaranteed rate). At retirement, receive balance as annuity or lump sum. More portable than traditional DB, easier to understand, but employer still bears investment risk on actual assets.'
   },
   {
-    id: 'CFP-RET-B9-006',
+    id: 'cfp-ret-b9-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
   },
   // RET-3: Distribution Rules
   {
-    id: 'CFP-RET-B9-007',
+    id: 'cfp-ret-b9-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: '60-day indirect rollover: receive distribution, redeposit to eligible plan within 60 days. Limited to one per person per 12 months (not per account). 20% mandatory withholding from distributions complicates rollover of full amount. Missed deadline = taxable distribution plus potential penalty. Direct trustee-to-trustee transfers avoid these issues.'
   },
   {
-    id: 'CFP-RET-B9-008',
+    id: 'cfp-ret-b9-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'SEPP: penalty-free early withdrawals using IRS-approved methods (RMD, amortization, annuitization). Must continue for 5 years or until 59½, whichever is longer. Any modification triggers retroactive 10% penalty on all prior distributions plus interest. Careful calculation and commitment required—not easily reversible.'
   },
   {
-    id: 'CFP-RET-B9-009',
+    id: 'cfp-ret-b9-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
   },
   // RET-4: Investment Considerations
   {
-    id: 'CFP-RET-B9-010',
+    id: 'cfp-ret-b9-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Asset location: put tax-inefficient assets (taxable bonds—ordinary income, REITs—non-qualified dividends) in tax-deferred accounts. Tax-efficient assets (stocks—qualified divs/LTCG, munis—tax-exempt) go in taxable accounts. Roth accounts (never taxed) suit high-growth assets. Proper location can add 0.25-0.50% annual after-tax return.'
   },
   {
-    id: 'CFP-RET-B9-011',
+    id: 'cfp-ret-b9-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Sequence risk: poor returns early in retirement devastate portfolios since withdrawals lock in losses. The "retirement red zone" (5 years before to 5-10 years after retirement) is highest risk period. Mitigate with: diversification, reduced equity allocation as retirement approaches, cash reserves for 1-2 years expenses, flexibility to reduce spending in down markets.'
   },
   {
-    id: 'CFP-RET-B9-012',
+    id: 'cfp-ret-b9-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
   },
   // RET-5: Social Security
   {
-    id: 'CFP-RET-B9-013',
+    id: 'cfp-ret-b9-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,26 +260,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Earnings test: if collecting before FRA and working, benefits reduced $1 per $2 above limit ($21,240 in 2023). In FRA year, $1 per $3 above higher limit, counting only pre-FRA earnings. After FRA, no limit. Withheld benefits aren\'t lost—they increase future benefits. Only earned income counts, not investment/pension income.'
   },
   {
-    id: 'CFP-RET-B9-014',
-    courseId: 'cfp',
-    section: 'CFP-RET',
-    blueprintArea: 'RET-5',
-    topic: 'Social Security',
-    subtopic: 'Divorced Spouse Benefits',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A divorced spouse can claim Social Security benefits on an ex-spouse\'s record if:',
-    options: [
-      'B) Marriage lasted at least 10 years, currently unmarried (or subsequent marriage ended), and both are at least 62',
-      'C) The ex-spouse has died',
-      'D) Currently living together',
-      'A) Married at least 5 years and divorced at least 1 year',
-    ],
-    correctAnswer: 0,
-    explanation: 'Divorced spouse benefits require: marriage of at least 10 years, currently unmarried (or subsequent marriage ended in divorce/death/annulment), both at least 62, divorced at least 2 years (waived if ex is already collecting). Benefit: up to 50% of ex\'s PIA at FRA. Doesn\'t reduce ex\'s or current spouse\'s benefits.'
-  },
-  {
-    id: 'CFP-RET-B9-015',
+    id: 'cfp-ret-b9-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +280,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RET-B9-016',
+    id: 'cfp-ret-b9-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +299,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Bengen\'s research (1994): 4% initial withdrawal, inflation-adjusted annually, survived all historical 30-year periods using 50-75% stocks. Limitations: based on U.S. market, historical returns, fixed allocation. Criticisms: future returns may differ, sequence risk not fully addressed, ignores flexibility. Still useful as starting point, not rigid rule.'
   },
   {
-    id: 'CFP-RET-B9-017',
+    id: 'cfp-ret-b9-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -337,7 +318,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Plan loans (if plan permits): max 50% of vested balance up to $50,000, repaid within 5 years (except principal residence—longer allowed), level amortization at least quarterly, reasonable interest rate. Failure to repay: treated as distribution with taxes/penalties. Risk: leaving employment accelerates repayment. Opportunity cost of missing market gains.'
   },
   {
-    id: 'CFP-RET-B9-018',
+    id: 'cfp-ret-b9-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -356,7 +337,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'In-plan Roth conversion: shift pre-tax money to designated Roth account within same 401(k). Converted amount is taxable. Unlike Roth IRA conversion, funds stay in 401(k) (creditor protection, different RMD rules). Strategy: convert in low-income years. 2024 SECURE 2.0: employer matches can go directly to Roth.'
   },
   {
-    id: 'CFP-RET-B9-019',
+    id: 'cfp-ret-b9-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -375,7 +356,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Covered calls: own stock, sell calls against it. Collect premium income, but give up gains above strike price. Reduces (doesn\'t eliminate) downside via premium. Appropriate for: income-focused investors, stocks with limited expected upside, tax-deferred accounts. Trade-off: steady income vs. forgone big rallies. Popular in retirement for income enhancement.'
   },
   {
-    id: 'CFP-RET-B9-020',
+    id: 'cfp-ret-b9-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -394,7 +375,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'SSA automatically recalculates annually if continued earnings exceed one of the 35 years in the calculation. Higher current earnings replace lower or zero years, increasing future benefits. This is why working while collecting can increase benefits (beyond just reduced earnings test withholding). Recalculation is automatic—no action required.'
   },
   {
-    id: 'CFP-RET-B9-021',
+    id: 'cfp-ret-b9-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -413,7 +394,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Monte Carlo interpretation: 80% success may be appropriate if client can reduce spending. 95% may sacrifice current lifestyle unnecessarily. "Failure" in the model (running out at 95) may not equal actual failure (clients adjust, work part-time, reduce spending). Discuss what probability is acceptable given flexibility and consequences.'
   },
   {
-    id: 'CFP-RET-B9-022',
+    id: 'cfp-ret-b9-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,7 +413,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Automatic enrollment: employees are enrolled unless they actively opt out. Dramatically increases participation (from ~60% to 85%+). SECURE 2.0 mandates it for new 401(k)/403(b) plans (some exemptions). Typically starts at 3% with auto-escalation. Employees can still opt out or change rate. Uses inertia to improve outcomes.'
   },
   {
-    id: 'CFP-RET-B9-023',
+    id: 'cfp-ret-b9-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -451,7 +432,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Trust as IRA beneficiary: "see-through" (valid, irrevocable at death, identifiable beneficiaries, documentation provided) can use beneficiary rules. Conduit trust: distributes all RMDs to beneficiaries (their life expectancies used). Accumulation trust: can retain distributions (oldest beneficiary\'s life expectancy). Non-see-through trusts: 5-year rule. Complex—requires careful drafting.'
   },
   {
-    id: 'CFP-RET-B9-024',
+    id: 'cfp-ret-b9-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -470,7 +451,7 @@ export const CFP_RETIREMENT_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Annuitization analysis: do you need guaranteed income beyond Social Security/pension? Health/longevity expectations (longer life = more annuity value)? Bequest goals (annuity dies with you unless options purchased)? Interest rates (higher = better annuity payouts)? Risk tolerance (annuity removes investment risk)? Partial annuitization often makes sense.'
   },
   {
-    id: 'CFP-RET-B9-025',
+    id: 'cfp-ret-b9-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

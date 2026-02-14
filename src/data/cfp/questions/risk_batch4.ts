@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   // RIS-1: Advanced Life Insurance
   {
-    id: 'CFP-RIS-B4-001',
+    id: 'cfp-ris-b4-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Indexed Universal Life',
     difficulty: 'hard',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'IUL credits interest based on index performance (S&P 500, etc.) but doesn\'t directly invest in the index. Returns are subject to caps (maximum credited) and floors (minimum, often 0%). This provides upside potential with downside protection, but illustrations may use assumptions that are rarely achieved.'
   },
   {
-    id: 'CFP-RIS-B4-002',
+    id: 'cfp-ris-b4-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Policy Loans',
     difficulty: 'medium',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Policy loans reduce the death benefit dollar-for-dollar plus accumulated interest. They don\'t require repayment during life but will reduce proceeds to beneficiaries. If loans plus interest exceed cash value, the policy may lapse, potentially creating taxable income if there\'s gain in the policy.'
   },
   {
-    id: 'CFP-RIS-B4-003',
+    id: 'cfp-ris-b4-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Modified Endowment Contract',
     difficulty: 'hard',
@@ -66,10 +66,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'A policy becomes a MEC if cumulative premiums in the first 7 years exceed what would be needed to pay up the policy in 7 level payments. MECs lose favorable loan treatment—loans and withdrawals are taxed on a LIFO basis (earnings first) and may be subject to 10% penalty before age 59½.'
   },
   {
-    id: 'CFP-RIS-B4-004',
+    id: 'cfp-ris-b4-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Section 1035 Exchange',
     difficulty: 'medium',
@@ -86,10 +86,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-2: Advanced Health Insurance
   {
-    id: 'CFP-RIS-B4-005',
+    id: 'cfp-ris-b4-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'Continuation Coverage',
     difficulty: 'medium',
@@ -105,10 +105,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'COBRA provides 18 months for job loss/reduced hours (29 months if disabled), 36 months for divorce, death of employee, Medicare eligibility, or dependent aging out. Premiums are 100% of cost plus 2% admin fee. It provides continuity but is expensive compared to employer-subsidized coverage or marketplace plans.'
   },
   {
-    id: 'CFP-RIS-B4-006',
+    id: 'cfp-ris-b4-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'HSA Estate Planning',
     difficulty: 'hard',
@@ -124,10 +124,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'If a spouse is beneficiary, the HSA becomes theirs (same tax treatment continues). Non-spouse beneficiaries receive the FMV as taxable income in the year of death. Medical expenses of the deceased incurred before death can be paid tax-free. HSA beneficiary designations are important estate planning considerations.'
   },
   {
-    id: 'CFP-RIS-B4-007',
+    id: 'cfp-ris-b4-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'Medicare Surcharges',
     difficulty: 'medium',
@@ -144,10 +144,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-3: Advanced Disability
   {
-    id: 'CFP-RIS-B4-008',
+    id: 'cfp-ris-b4-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability',
     subtopic: 'Residual Disability',
     difficulty: 'hard',
@@ -163,10 +163,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Residual disability provisions pay partial benefits when the insured can work but earns less due to disability. Benefits are typically proportional to income loss (e.g., 40% income loss = 40% of benefit). This encourages return to work while providing financial support. It\'s a valuable rider for professionals.'
   },
   {
-    id: 'CFP-RIS-B4-009',
+    id: 'cfp-ris-b4-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability',
     subtopic: 'Future Insurability',
     difficulty: 'medium',
@@ -182,10 +182,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'FPO riders allow purchasing additional coverage at predetermined intervals (often birthdays or income milestones) without new underwriting. This protects insurability if health changes. It\'s valuable for young professionals expecting income growth. Premiums for additional coverage are based on attained age.'
   },
   {
-    id: 'CFP-RIS-B4-010',
+    id: 'cfp-ris-b4-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability',
     subtopic: 'COLA Rider',
     difficulty: 'medium',
@@ -202,10 +202,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-4: Advanced Property/Casualty
   {
-    id: 'CFP-RIS-B4-011',
+    id: 'cfp-ris-b4-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Agreed Value',
     difficulty: 'medium',
@@ -221,10 +221,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Agreed value policies set a predetermined value for covered property. In a total loss, this amount is paid without depreciation or coinsurance calculations. It\'s common for high-value homes, collectibles, and unique properties where replacement cost is difficult to estimate. Regular reappraisals are needed.'
   },
   {
-    id: 'CFP-RIS-B4-012',
+    id: 'cfp-ris-b4-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Liability Insurance',
     subtopic: 'Personal Liability',
     difficulty: 'medium',
@@ -240,10 +240,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Homeowner\'s personal liability (Coverage E) is broad, covering bodily injury and property damage liability anywhere in the world, not just at home. Exclusions include auto accidents, business activities, and intentional acts. Standard limits ($100K-$500K) are often inadequate for affluent clients—umbrella coverage is recommended.'
   },
   {
-    id: 'CFP-RIS-B4-013',
+    id: 'cfp-ris-b4-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Auto Insurance',
     subtopic: 'Uninsured/Underinsured',
     difficulty: 'medium',
@@ -260,10 +260,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-5: Advanced LTC
   {
-    id: 'CFP-RIS-B4-014',
+    id: 'cfp-ris-b4-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Hybrid Products',
     difficulty: 'hard',
@@ -279,10 +279,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Hybrids combine life insurance (or annuities) with LTC riders. If LTC is needed, benefits are accessed (often accelerating the death benefit). If not, beneficiaries receive the death benefit. This addresses concerns about paying premiums for coverage never used. Tradeoffs include complexity and potentially higher cost per dollar of coverage.'
   },
   {
-    id: 'CFP-RIS-B4-015',
+    id: 'cfp-ris-b4-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Benefit Triggers',
     difficulty: 'medium',
@@ -298,10 +298,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Tax-qualified LTC policies trigger benefits when the insured cannot perform at least 2 of 6 Activities of Daily Living (bathing, dressing, eating, toileting, transferring, continence) expected to last 90+ days, or has severe cognitive impairment requiring substantial supervision. A licensed healthcare practitioner must certify.'
   },
   {
-    id: 'CFP-RIS-B4-016',
+    id: 'cfp-ris-b4-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Partnership Programs',
     difficulty: 'hard',
@@ -318,10 +318,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-1: More Life Insurance
   {
-    id: 'CFP-RIS-B4-017',
+    id: 'cfp-ris-b4-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Accelerated Death Benefits',
     difficulty: 'medium',
@@ -337,10 +337,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Accelerated death benefit riders provide early access to death benefits for terminal illness (typically 12-24 month life expectancy), chronic illness (similar to LTC triggers), or critical illness (specific diagnoses). Benefits received reduce the ultimate death benefit. Tax treatment depends on the qualifying event and policy structure.'
   },
   {
-    id: 'CFP-RIS-B4-018',
+    id: 'cfp-ris-b4-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Premium Financing',
     difficulty: 'hard',
@@ -357,10 +357,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-2: More Health
   {
-    id: 'CFP-RIS-B4-019',
+    id: 'cfp-ris-b4-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'Short-Term Medical',
     difficulty: 'medium',
@@ -376,10 +376,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Short-term medical insurance provides temporary coverage (often up to 12 months, renewable in some states). It\'s less expensive but has limitations: pre-existing condition exclusions, no essential health benefits requirements, coverage caps, and doesn\'t satisfy ACA individual mandate where applicable.'
   },
   {
-    id: 'CFP-RIS-B4-020',
+    id: 'cfp-ris-b4-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'Medigap',
     difficulty: 'medium',
@@ -396,10 +396,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // RIS-4: More P&C
   {
-    id: 'CFP-RIS-B4-021',
+    id: 'cfp-ris-b4-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Flood Insurance',
     difficulty: 'medium',
@@ -415,10 +415,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'NFIP flood insurance must be purchased separately—homeowners policies exclude flood. NFIP limits are $250K for structure and $100K for contents, often insufficient for higher-value homes. Private excess flood is available. A 30-day waiting period applies. Mandatory in designated flood zones with federally-backed mortgages.'
   },
   {
-    id: 'CFP-RIS-B4-022',
+    id: 'cfp-ris-b4-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Liability Insurance',
     subtopic: 'Professional Liability',
     difficulty: 'medium',
@@ -435,10 +435,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   },
   // Risk Management Concepts
   {
-    id: 'CFP-RIS-B4-023',
+    id: 'cfp-ris-b4-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Management',
     subtopic: 'Risk Retention',
     difficulty: 'medium',
@@ -454,10 +454,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Higher deductibles reduce premiums by retaining smaller losses. This is appropriate for financially stable clients who can absorb deductible amounts and prefer lower premiums. It\'s inappropriate for catastrophic risks or when clients cannot afford deductible levels. The "premium savings vs. retention" analysis guides decisions.'
   },
   {
-    id: 'CFP-RIS-B4-024',
+    id: 'cfp-ris-b4-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Management',
     subtopic: 'Risk Transfer',
     difficulty: 'easy',
@@ -473,10 +473,10 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Insurance transfers risk from individuals to insurers who pool many exposures. The law of large numbers allows insurers to predict aggregate losses and charge premiums accordingly. Individuals exchange uncertain large losses for certain small premiums. Insurance doesn\'t eliminate risk—it transfers the financial consequences.'
   },
   {
-    id: 'CFP-RIS-B4-025',
+    id: 'cfp-ris-b4-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Management',
     subtopic: 'Needs Analysis',
     difficulty: 'medium',

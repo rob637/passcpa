@@ -21,6 +21,7 @@ import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
 import { CourseProvider, useCourse } from './providers/CourseProvider';
+import { StudyProvider } from './providers/StudyProvider';
 import { NavigationProvider } from './components/navigation';
 // import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
@@ -285,6 +286,7 @@ function App() {
     <ErrorBoundary variant="page">
       <ThemeProvider>
         <CourseProvider>
+          <StudyProvider>
           <NavigationProvider>
             <TourProvider>
               <ToastProvider>
@@ -1086,6 +1088,7 @@ function App() {
           </ToastProvider>
         </TourProvider>
       </NavigationProvider>
+    </StudyProvider>
     </CourseProvider>
   </ThemeProvider>
 </ErrorBoundary>

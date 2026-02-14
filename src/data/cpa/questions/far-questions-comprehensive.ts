@@ -223,7 +223,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Net Position',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'Government-wide statement of net position classifies net position as:',
     options: [
@@ -244,7 +244,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Fiduciary Funds',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'Fiduciary funds report:',
     options: [
@@ -265,7 +265,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Not-for-Profit',
     subtopic: 'Endowments',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'Under UPMIFA, a NFP institution can appropriate for spending from an endowment:',
     options: [
@@ -286,7 +286,7 @@ export const FAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Not-for-Profit',
     subtopic: 'Split-Interest Agreements',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'A charitable gift annuity requires the NFP to record:',
     options: [

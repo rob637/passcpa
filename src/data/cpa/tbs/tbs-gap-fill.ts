@@ -15,7 +15,7 @@ export const TBS_GAP_FILL: TBS[] = [
     difficulty: 'hard',
     timeEstimate: 20,
     topic: 'Statement of Cash Flows',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     blueprintTopic: 'FAR-VI-A-1',
     scenario: `
 Riverside Corporation needs to prepare its statement of cash flows for the year ended December 31, Year 1, using the indirect method. The following information is available:
@@ -106,7 +106,7 @@ Additional Information:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Statement of Cash Flows',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     blueprintTopic: 'FAR-VI-A-2',
     scenario: `
 Metro Services Inc. is preparing its operating cash flows using the direct method. The following information is available:
@@ -190,7 +190,7 @@ Balance Sheet Changes:
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Government Accounting',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     blueprintTopic: 'FAR-VII-A-1',
     scenario: `
 The City of Oakville adopted its General Fund budget for fiscal year ending June 30, Year 1:
@@ -265,7 +265,7 @@ During the year, the following transactions occurred:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Government Accounting',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     blueprintTopic: 'FAR-VII-B-1',
     scenario: `
 The City of Riverside reports the following in its governmental funds:
@@ -337,7 +337,7 @@ The city needs to prepare the reconciliation from fund balance to net position.
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Review Engagements (SSARS)',
-    blueprintArea: 'AUD-VII',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-VII-A-1',
     scenario: `
 You are performing a review engagement for Smith Manufacturing, Inc. for the year ended December 31, Year 1. During the engagement, you performed the following procedures:
@@ -425,7 +425,7 @@ Management explained that they changed suppliers mid-year, resulting in higher c
     difficulty: 'easy',
     timeEstimate: 12,
     topic: 'Compilation Engagements (SSARS)',
-    blueprintArea: 'AUD-VII',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-VII-B-1',
     scenario: `
 You have been engaged to compile the financial statements of Johnson Plumbing, a sole proprietorship. During the engagement:
@@ -512,7 +512,7 @@ The owner wants to understand what the compilation engagement involves.
     difficulty: 'hard',
     timeEstimate: 20,
     topic: 'Gift Tax Planning',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     blueprintTopic: 'TCP-V-A-1',
     scenario: `
 Margaret Johnson made the following gifts during 2025:
@@ -594,7 +594,7 @@ Assume:
     difficulty: 'hard',
     timeEstimate: 22,
     topic: 'Estate Tax Planning',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     blueprintTopic: 'TCP-V-B-1',
     scenario: `
 Robert Williams died on June 15, 2025. His estate includes the following:
@@ -678,7 +678,7 @@ Assume:
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'SOC Engagements',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-V-A-1',
     scenario: `
 Your company is evaluating two cloud service vendors:
@@ -787,7 +787,7 @@ Your company's fiscal year ends December 31, Year 1.
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Prospective Financial Information',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-V-A-1',
     scenario: `
 TechMerge Corp. is preparing pro forma financial statements for a proposed acquisition. The transaction details:

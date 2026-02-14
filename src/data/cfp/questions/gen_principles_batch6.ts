@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   // GEN-1: Financial Planning Process
   {
-    id: 'CFP-GEN-B6-001',
+    id: 'cfp-gen-b6-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Understanding the client requires both quantitative data (income, assets, liabilities, cash flows) and qualitative factors (goals, values, risk tolerance, family dynamics, concerns, expectations). The depth of discovery should match the engagement scope but always ensures sufficient information for recommendations.'
   },
   {
-    id: 'CFP-GEN-B6-002',
+    id: 'cfp-gen-b6-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Analysis goes beyond data compilation to evaluate current trajectory, identify shortfalls, test assumptions through scenarios, and determine what changes would help achieve goals. It integrates all planning domains and applies professional judgment beyond software outputs.'
   },
   {
-    id: 'CFP-GEN-B6-003',
+    id: 'cfp-gen-b6-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +67,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-2: Time Value of Money Applications
   {
-    id: 'CFP-GEN-B6-004',
+    id: 'cfp-gen-b6-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'A perpetuity PV = Payment / Rate. $50,000 / 0.05 = $1,000,000. This amount invested at 5% generates $50,000 annually forever without depleting principal. This assumes constant returns and no inflation adjustment (inflation would require higher endowment or growing perpetuity formula).'
   },
   {
-    id: 'CFP-GEN-B6-005',
+    id: 'cfp-gen-b6-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +105,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Real return ≈ Nominal return - Inflation. 7% - 3% = 4%. More precisely: (1.07/1.03) - 1 = 3.88%. Real returns measure purchasing power growth. Financial planning should use consistent assumptions—either nominal returns with nominal spending needs, or real returns with constant-dollar spending.'
   },
   {
-    id: 'CFP-GEN-B6-006',
+    id: 'cfp-gen-b6-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -125,7 +125,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-3: Financial Statements
   {
-    id: 'CFP-GEN-B6-007',
+    id: 'cfp-gen-b6-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +144,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Cash flow statements track money movement—income sources and amounts, fixed and variable expenses, and resulting surplus or deficit. This identifies where money goes, supports realistic budgeting, reveals savings capacity, and helps prioritize expense reduction or income enhancement.'
   },
   {
-    id: 'CFP-GEN-B6-008',
+    id: 'cfp-gen-b6-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +163,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Debt-to-income (DTI) = Monthly debt payments / Gross monthly income. Lenders use this for mortgage qualification (typically <43% for QM). It measures debt burden relative to income capacity. Front-end ratio focuses on housing costs; back-end includes all debt payments.'
   },
   {
-    id: 'CFP-GEN-B6-009',
+    id: 'cfp-gen-b6-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,7 +183,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-4: Economics and Environment
   {
-    id: 'CFP-GEN-B6-010',
+    id: 'cfp-gen-b6-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -202,7 +202,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'An inverted yield curve often precedes recessions—it indicates markets expect future rate cuts due to economic weakness. Normally, yields rise with maturity (upward slope). Inversion suggests near-term uncertainty exceeds long-term, often reflecting Fed tightening slowing the economy.'
   },
   {
-    id: 'CFP-GEN-B6-011',
+    id: 'cfp-gen-b6-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -221,7 +221,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The Fed\'s dual mandate (from the Federal Reserve Act as amended) targets maximum sustainable employment and stable prices (2% inflation target). It uses tools like the federal funds rate, quantitative easing, and reserve requirements to pursue these goals, often facing trade-offs between them.'
   },
   {
-    id: 'CFP-GEN-B6-012',
+    id: 'cfp-gen-b6-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -241,7 +241,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-1: More Process
   {
-    id: 'CFP-GEN-B6-013',
+    id: 'cfp-gen-b6-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -260,7 +260,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Implementation translates recommendations into action. It may involve the planner directly (investment allocation), coordination with others (attorney for documents, CPA for tax strategies), and client action items (updating beneficiaries, insurance applications). Clear timelines and accountability improve follow-through.'
   },
   {
-    id: 'CFP-GEN-B6-014',
+    id: 'cfp-gen-b6-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -280,7 +280,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-2: More TVM
   {
-    id: 'CFP-GEN-B6-015',
+    id: 'cfp-gen-b6-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -299,7 +299,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Annuity due pays at period start (rent, lease payments); ordinary annuity pays at period end (most loans). Beginning-of-period payments earn one more period of interest, making annuity due values higher by a factor of (1 + r). Most financial calculators have BEGIN/END mode for this.'
   },
   {
-    id: 'CFP-GEN-B6-016',
+    id: 'cfp-gen-b6-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -319,7 +319,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-3: More Statements
   {
-    id: 'CFP-GEN-B6-017',
+    id: 'cfp-gen-b6-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -338,7 +338,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Concentration (in company stock, real estate, or other single assets) creates risk if that asset declines. Analysis should identify concentration and evaluate whether it\'s appropriate given client risk capacity. Diversification strategies (staged selling, hedging, exchange funds) may be recommended.'
   },
   {
-    id: 'CFP-GEN-B6-018',
+    id: 'cfp-gen-b6-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -358,7 +358,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // GEN-4: More Economics
   {
-    id: 'CFP-GEN-B6-019',
+    id: 'cfp-gen-b6-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -377,7 +377,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Business cycles move through expansion (growth, rising employment), peak (maximum activity), contraction/recession (declining output, rising unemployment), and trough (minimum activity) before expanding again. Duration and intensity vary. Understanding cycles helps with investment positioning and client expectations.'
   },
   {
-    id: 'CFP-GEN-B6-020',
+    id: 'cfp-gen-b6-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -397,7 +397,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-GEN-B6-021',
+    id: 'cfp-gen-b6-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -416,7 +416,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Comprehensive plans document the engagement, current situation summary, stated goals, recommendations across relevant domains (investment, insurance, tax, retirement, estate), rationale, projections/scenarios, and action items. The format should match client preferences and engagement scope.'
   },
   {
-    id: 'CFP-GEN-B6-022',
+    id: 'cfp-gen-b6-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -435,7 +435,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'IRR is the discount rate where NPV = 0—the "break-even" return rate. It\'s used to evaluate investments and compare opportunities. Limitations include multiple IRRs with non-conventional cash flows, reinvestment rate assumptions, and scale ignorance (NPV often preferred for mutually exclusive projects).'
   },
   {
-    id: 'CFP-GEN-B6-023',
+    id: 'cfp-gen-b6-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -454,7 +454,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'True savings rate includes all net worth increases from income: retirement contributions (including employer match), after-tax savings, and principal portion of debt payments. Investment returns aren\'t savings—they\'re returns on savings. Target rates depend on age, goals, and timeline.'
   },
   {
-    id: 'CFP-GEN-B6-024',
+    id: 'cfp-gen-b6-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -473,7 +473,7 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     explanation: 'DCA invests fixed amounts regularly, buying more shares when prices are low, fewer when high. It averages purchase prices and removes timing decisions. Research shows lump-sum usually outperforms (markets rise more than fall), but DCA reduces regret risk and suits regular income.'
   },
   {
-    id: 'CFP-GEN-B6-025',
+    id: 'cfp-gen-b6-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',

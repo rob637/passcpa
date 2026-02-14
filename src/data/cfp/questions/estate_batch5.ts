@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   // EST-1: Advanced Transfer Tax
   {
-    id: 'CFP-EST-B5-001',
+    id: 'cfp-est-b5-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -28,7 +28,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'GSTT is an additional tax (at the highest estate tax rate) on transfers to "skip persons" (typically grandchildren or those 37.5+ years younger). It prevents avoiding one layer of estate tax by skipping the children\'s generation. Each person has a GST exemption equal to the basic exclusion amount.'
   },
   {
-    id: 'CFP-EST-B5-002',
+    id: 'cfp-est-b5-002',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'When the alternate valuation date is elected, assets sold, distributed, or otherwise disposed of within six months are valued at the date of sale/distribution, not the six-month date. Since the property was sold at month 4 for $2.7 million, that is the value included in the gross estate.',
   },
   {
-    id: 'CFP-EST-B5-003',
+    id: 'cfp-est-b5-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -67,7 +67,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-2: Advanced Trust Topics
   {
-    id: 'CFP-EST-B5-004',
+    id: 'cfp-est-b5-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -86,7 +86,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Crummey powers give beneficiaries a temporary right (typically 30-60 days) to withdraw contributions. This converts gifts to the trust into present interests, qualifying for the annual exclusion. Proper notification procedures are critical. Powers typically lapse if not exercised.'
   },
   {
-    id: 'CFP-EST-B5-005',
+    id: 'cfp-est-b5-005',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -105,7 +105,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'QPRTs transfer a residence to beneficiaries with the grantor retaining the right to live there for a specified term. The gift value is discounted based on the retained interest. If the grantor survives the term, the residence is excluded from their estate. Risk: dying during the term returns the full value to the estate.'
   },
   {
-    id: 'CFP-EST-B5-006',
+    id: 'cfp-est-b5-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -125,7 +125,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-3: Advanced Gift Topics
   {
-    id: 'CFP-EST-B5-007',
+    id: 'cfp-est-b5-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -144,7 +144,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'A net gift requires the donee to pay any resulting gift tax. This reduces the taxable gift (since the donor\'s obligation is reduced by the tax payment). It can be effective for large transfers when the donor wants to minimize out-of-pocket gift tax. The calculation is circular and requires solving for the net gift value.'
   },
   {
-    id: 'CFP-EST-B5-008',
+    id: 'cfp-est-b5-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -163,7 +163,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Form 709 must be filed by both spouses (or at least the donor spouse with the other spouse\'s consent) to elect gift splitting under IRC Section 2513. The return must be filed even if no taxable gift results after applying the annual exclusion and split-gift election.',
   },
   {
-    id: 'CFP-EST-B5-009',
+    id: 'cfp-est-b5-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -183,7 +183,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-4: Business Succession
   {
-    id: 'CFP-EST-B5-010',
+    id: 'cfp-est-b5-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -202,7 +202,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'FLPs allow transfers of limited partnership interests at discounted values (typically 20-40% combined discount) due to lack of marketability and lack of control. The general partner maintains control while reducing the taxable transfer value. Proper structure and legitimate business purpose are critical to IRS scrutiny.'
   },
   {
-    id: 'CFP-EST-B5-011',
+    id: 'cfp-est-b5-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -221,7 +221,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Section 6166 allows deferral of estate taxes attributable to closely held businesses exceeding 35% of the adjusted gross estate. Payments can be deferred for 5 years (interest only), then paid over 10 years at reduced interest rates. This provides liquidity relief for estates with illiquid business interests.'
   },
   {
-    id: 'CFP-EST-B5-012',
+    id: 'cfp-est-b5-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -241,7 +241,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-5: Estate Documents
   {
-    id: 'CFP-EST-B5-013',
+    id: 'cfp-est-b5-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -260,7 +260,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'A pour-over will transfers any assets that were not titled in the trust during life into the trust at death. While these assets go through probate (unlike properly funded trust assets), they ultimately distribute according to trust terms. It serves as a safety net for assets not transferred to the trust.'
   },
   {
-    id: 'CFP-EST-B5-014',
+    id: 'cfp-est-b5-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -279,7 +279,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'A healthcare proxy designates someone to make medical decisions when the principal cannot. Unlike a living will (which states preferences), the proxy agent has flexibility to respond to actual circumstances. It\'s essential for medical emergencies and differs from a financial power of attorney.'
   },
   {
-    id: 'CFP-EST-B5-015',
+    id: 'cfp-est-b5-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -299,7 +299,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-1: More Transfer Tax
   {
-    id: 'CFP-EST-B5-016',
+    id: 'cfp-est-b5-016',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -318,7 +318,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'An inclusion ratio of zero means GST exemption has been fully allocated to the trust, making it entirely GST exempt. Distributions and terminations to skip persons incur no GST tax. Careful allocation of GST exemption is essential for dynasty trusts and generation-skipping planning.'
   },
   {
-    id: 'CFP-EST-B5-017',
+    id: 'cfp-est-b5-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -338,7 +338,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-2: More Trusts
   {
-    id: 'CFP-EST-B5-018',
+    id: 'cfp-est-b5-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -357,7 +357,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Decanting allows trustees in states with decanting statutes to "pour" assets from one irrevocable trust into another with modified terms. Uses include fixing drafting errors, changing situs, updating for tax law changes, or adding flexibility. State law and trust terms govern what changes are permissible.'
   },
   {
-    id: 'CFP-EST-B5-019',
+    id: 'cfp-est-b5-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -376,7 +376,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'CLTs provide income to charity for a term, then remainder passes to family or other beneficiaries. CRTs are the opposite—income to individuals, remainder to charity. CLTs are effective when interest rates are low (lower remainder value = lower gift), and can \"zero out\" the gift if structured properly.'
   },
   {
-    id: 'CFP-EST-B5-020',
+    id: 'cfp-est-b5-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -396,7 +396,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-3: More Gifts
   {
-    id: 'CFP-EST-B5-021',
+    id: 'cfp-est-b5-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -415,7 +415,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Inherited property receives a stepped-up (or down) basis to fair market value at death. This eliminates built-in capital gains, a significant tax benefit. Some strategies involve holding appreciated assets until death rather than gifting (which carries over the donor\'s basis). Community property may receive double step-up.'
   },
   {
-    id: 'CFP-EST-B5-022',
+    id: 'cfp-est-b5-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -435,7 +435,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
   },
   // EST-4: More Business
   {
-    id: 'CFP-EST-B5-023',
+    id: 'cfp-est-b5-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -454,7 +454,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Key person insurance is owned by and payable to the business. It provides liquidity to replace a crucial employee, pay debts, fund buyouts, or maintain operations during transition. Premiums are not deductible but proceeds are generally income-tax-free. Notice and consent requirements apply.'
   },
   {
-    id: 'CFP-EST-B5-024',
+    id: 'cfp-est-b5-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -473,7 +473,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Cross-purchase agreements (owners buy from deceased\'s estate) provide surviving owners with a basis equal to the purchase price. Entity purchases (company buys) don\'t increase survivor\'s basis. With many owners, cross-purchase requires many policies. Trusteed arrangements can simplify multi-party cross-purchases.'
   },
   {
-    id: 'CFP-EST-B5-025',
+    id: 'cfp-est-b5-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',

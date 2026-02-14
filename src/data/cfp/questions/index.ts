@@ -80,6 +80,7 @@ import { CFP_RETIREMENT_BATCH10_QUESTIONS } from './retirement_batch10';
 import { CFP_SECURE_2_0_QUESTIONS } from './retirement_secure2_batch';
 import { CFP_ESTATE_BATCH9_QUESTIONS } from './estate_batch9';
 import { CFP_RISK_BATCH8_QUESTIONS } from './risk_batch8';
+import { CFP_CROSS_DOMAIN_QUESTIONS } from './crossDomain';
 
 // Export individual question banks
 export { CFP_GEN_QUESTIONS } from './gen_principles';
@@ -170,6 +171,7 @@ export const CFP_QUESTIONS_ALL: AnyQuestion[] = [
   ...CFP_RISK_BATCH6_QUESTIONS,
   ...CFP_RISK_BATCH7_QUESTIONS,
   ...CFP_RISK_BATCH8_QUESTIONS,
+  ...CFP_CROSS_DOMAIN_QUESTIONS,
 ];
 
 // Helper to get questions by specific section

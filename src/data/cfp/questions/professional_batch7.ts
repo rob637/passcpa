@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
   // PCR-1: CFP Board Standards
   {
-    id: 'CFP-PCR-B7-001',
+    id: 'cfp-pcr-b7-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The Code of Ethics establishes eight principles: Client-First (act in client\'s best interest), Integrity, Objectivity, Fairness, Professionalism, Competence, Confidentiality, and Diligence. These aren\'t just goals—they\'re enforceable standards. Violations can result in discipline including certification revocation.'
   },
   {
-    id: 'CFP-PCR-B7-002',
+    id: 'cfp-pcr-b7-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Duty of Loyalty: place client interests above your own and your firm\'s. This includes: avoiding conflicts (or disclosing and obtaining informed consent), not recommending products for higher commission, and not steering clients to benefit affiliated entities. It\'s part of the fiduciary duty applying when providing financial advice.'
   },
   {
-    id: 'CFP-PCR-B7-003',
+    id: 'cfp-pcr-b7-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -67,7 +67,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
   },
   // PCR-2: Regulatory Environment
   {
-    id: 'CFP-PCR-B7-004',
+    id: 'cfp-pcr-b7-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -86,7 +86,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The \'40 Act regulates investment companies—entities that invest in securities on behalf of shareholders. It requires registration, imposes governance requirements (independent directors), limits leverage and affiliated transactions, and mandates disclosure. Mutual funds, closed-end funds, and ETFs are registered investment companies.'
   },
   {
-    id: 'CFP-PCR-B7-005',
+    id: 'cfp-pcr-b7-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'FINRA suitability (Rule 2111) has three components: reasonable-basis (product understanding), customer-specific (appropriate for this customer), and quantitative (not excessive trading). Reg BI enhanced this to "best interest" standard. Representatives must know-your-customer and have reasonable basis for recommendations.'
   },
   {
-    id: 'CFP-PCR-B7-006',
+    id: 'cfp-pcr-b7-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -125,7 +125,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
   },
   // PCR-3: Fiduciary Responsibility
   {
-    id: 'CFP-PCR-B7-007',
+    id: 'cfp-pcr-b7-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -144,7 +144,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Duty of Care (part of fiduciary standard): act as a competent, prudent professional would. This includes: understanding products before recommending, conducting appropriate analysis, maintaining current knowledge, developing recommendations carefully, and not being negligent. It\'s about professional competence and diligence.'
   },
   {
-    id: 'CFP-PCR-B7-008',
+    id: 'cfp-pcr-b7-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -163,7 +163,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Conflict management: 1) Avoid if possible, 2) Disclose the nature of the conflict and how addressed, 3) Obtain informed client consent, 4) Manage to prioritize client interests. Some conflicts may be irreconcilable and require declining the engagement. Documentation is essential. Best interest doesn\'t mean no conflicts—it means managed conflicts.'
   },
   {
-    id: 'CFP-PCR-B7-009',
+    id: 'cfp-pcr-b7-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -183,7 +183,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
   },
   // PCR-4: Practice Management
   {
-    id: 'CFP-PCR-B7-010',
+    id: 'cfp-pcr-b7-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -202,7 +202,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Engagement letters define the relationship: scope of services (comprehensive or limited), compensation (amount, timing, method), client and planner responsibilities, duration and termination terms, and conflict disclosures. Written agreements prevent misunderstandings and demonstrate professionalism. Required for CFP® financial planning engagements.'
   },
   {
-    id: 'CFP-PCR-B7-011',
+    id: 'cfp-pcr-b7-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -221,7 +221,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Record retention: SEC/state advisers typically 5 years minimum (some records longer). FINRA: 3-6 years depending on record type. Records must be accessible and reproducible. Includes: correspondence, recommendations, account records, complaints, advertising. Proper retention protects against regulatory issues and client disputes.'
   },
   {
-    id: 'CFP-PCR-B7-012',
+    id: 'cfp-pcr-b7-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -241,7 +241,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PCR-B7-013',
+    id: 'cfp-pcr-b7-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -260,7 +260,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Objectivity means intellectual honesty and impartiality. Recommendations should be based on client circumstances, not personal opinions about products, company relationships, or compensation incentives. Being objective doesn\'t mean not having views—it means ensuring views don\'t compromise advice quality.'
   },
   {
-    id: 'CFP-PCR-B7-014',
+    id: 'cfp-pcr-b7-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -279,7 +279,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'De minimis: advisers with an office in one state can generally advise up to 5 clients in another state without registering there (during preceding 12 months). Rules vary by state. Some states have stricter rules or no de minimis. This exemption facilitates interstate advice for advisers with few out-of-state clients.'
   },
   {
-    id: 'CFP-PCR-B7-015',
+    id: 'cfp-pcr-b7-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -298,7 +298,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Principal trading (adviser buys from or sells to client for its own account) creates significant conflicts—the adviser is on both sides. Advisers Act 206(3) requires disclosure and transaction-by-transaction consent. Many advisers prohibit principal trading entirely. It differs from agency trading (executing client orders through markets).'
   },
   {
-    id: 'CFP-PCR-B7-016',
+    id: 'cfp-pcr-b7-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -317,7 +317,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Supervision requires: written supervisory procedures, reasonable measures to detect violations, proper delegation (supervisors must be qualified), regular review of activities, and corrective action for problems. Firms are liable for supervisory failures. Strong supervision culture protects clients, firms, and individual professionals.'
   },
   {
-    id: 'CFP-PCR-B7-017',
+    id: 'cfp-pcr-b7-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -336,7 +336,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Confidentiality protects client information, with exceptions: 1) Client consent, 2) Legal requirements (court orders, regulatory examinations, mandatory reporting), 3) Defending against allegations (but disclose only what\'s necessary). Even within exceptions, minimize disclosure. Confidentiality continues after the relationship ends.'
   },
   {
-    id: 'CFP-PCR-B7-018',
+    id: 'cfp-pcr-b7-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -355,7 +355,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'AML programs include: Customer Identification Program (CIP) verifying identity, Customer Due Diligence (CDD) understanding the customer, monitoring for suspicious activity, Suspicious Activity Reports (SAR) when warranted, Currency Transaction Reports (CTR) for cash over $10,000, and training. Bank Secrecy Act and USA PATRIOT Act govern requirements.'
   },
   {
-    id: 'CFP-PCR-B7-019',
+    id: 'cfp-pcr-b7-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -374,7 +374,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Best execution considers: price, speed, likelihood of execution, research and services, confidentiality, and commission costs together—not just lowest commission. Soft dollar arrangements (receiving research for directing trades) must be disclosed and provide genuine benefit. Advisers should periodically review and compare execution quality.'
   },
   {
-    id: 'CFP-PCR-B7-020',
+    id: 'cfp-pcr-b7-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -393,7 +393,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Regulation S-P (privacy of consumer financial information): initial and annual privacy notices, opt-out rights for sharing with non-affiliates, and safeguards for customer information. Many states have additional requirements. Data security includes physical, administrative, and technical safeguards. Increasingly, cybersecurity is a regulatory focus.'
   },
   {
-    id: 'CFP-PCR-B7-021',
+    id: 'cfp-pcr-b7-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -412,7 +412,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Discipline grounds: Standards of Conduct violations, crimes (felonies, financial crimes, crimes of moral turpitude), professional discipline by other regulators, bankruptcy/civil judgments in certain cases, false statements to Board, failure to respond to inquiries, and unauthorized use of CFP marks. Sanctions range from private censure to permanent revocation.'
   },
   {
-    id: 'CFP-PCR-B7-022',
+    id: 'cfp-pcr-b7-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -431,7 +431,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Accredited investors can access private placements. Individual standards: income ($200K/$300K joint for two years, expected to continue) or net worth ($1M excluding primary residence). Entities have their own standards. Recent additions: knowledgeable employees, professionals with certain licenses (Series 7, 65, 82). Accredited status reduces investor protections.'
   },
   {
-    id: 'CFP-PCR-B7-023',
+    id: 'cfp-pcr-b7-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -450,7 +450,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Informed consent means the client truly understands what they\'re consenting to. This requires: clear disclosure in understandable terms, opportunity for questions, verification of understanding, and documentation. A client signing a disclosure they don\'t understand hasn\'t given "informed" consent. Complexity requires extra care.'
   },
   {
-    id: 'CFP-PCR-B7-024',
+    id: 'cfp-pcr-b7-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -469,7 +469,7 @@ export const CFP_PROFESSIONAL_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Business continuity planning: data backup and recovery, alternative communication methods, key person succession, client notification procedures, regulatory requirements, and testing. For solo practitioners, having an agreement with another planner to serve clients if incapacitated is essential for client protection.'
   },
   {
-    id: 'CFP-PCR-B7-025',
+    id: 'cfp-pcr-b7-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',

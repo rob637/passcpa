@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
   // PSY-2: Behavioral Finance Biases
   {
-    id: 'CFP-PSY-B2-001',
+    id: 'cfp-psy-b2-001',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -28,7 +28,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Loss aversion describes the tendency for losses to feel psychologically twice as powerful as equivalent gains. Clients experiencing loss aversion often hold losing positions hoping to "get back to even" rather than rationally evaluating current prospects.'
   },
   {
-    id: 'CFP-PSY-B2-002',
+    id: 'cfp-psy-b2-002',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -47,7 +47,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Anchoring occurs when decisions are unduly influenced by an initial reference point. The purchase price serves as an anchor that affects the client\'s selling decision, even when current market conditions suggest a different value.'
   },
   {
-    id: 'CFP-PSY-B2-003',
+    id: 'cfp-psy-b2-003',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -66,7 +66,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Overconfidence bias leads people to overestimate their knowledge, skills, or the precision of their predictions. This client believes in their abilities despite evidence to the contrary, which can lead to excessive trading and poor diversification.'
   },
   {
-    id: 'CFP-PSY-B2-004',
+    id: 'cfp-psy-b2-004',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -85,7 +85,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Recency bias occurs when recent events are given disproportionate weight in decision-making. The client is extrapolating recent strong returns into future expectations, ignoring longer-term patterns and the value of diversification.'
   },
   {
-    id: 'CFP-PSY-B2-005',
+    id: 'cfp-psy-b2-005',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -104,7 +104,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Confirmation bias leads people to seek, interpret, and remember information that confirms their existing beliefs while ignoring contradictory evidence. This can result in poorly diversified portfolios and failure to recognize investment risks.'
   },
   {
-    id: 'CFP-PSY-B2-006',
+    id: 'cfp-psy-b2-006',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -123,7 +123,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Mental accounting involves treating money differently based on subjective criteria like source or intended use, rather than recognizing all money is fungible. Financially, paying off 18% debt would provide a guaranteed "return" higher than typical savings.'
   },
   {
-    id: 'CFP-PSY-B2-007',
+    id: 'cfp-psy-b2-007',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -142,7 +142,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Status quo bias describes the preference for the current state of affairs. Even when change would be beneficial, people tend to stick with existing choices. This can manifest as failure to rebalance, update beneficiaries, or change inappropriate investment allocations.'
   },
   {
-    id: 'CFP-PSY-B2-008',
+    id: 'cfp-psy-b2-008',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -162,7 +162,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
   },
   // PSY-3: Family Dynamics
   {
-    id: 'CFP-PSY-B2-009',
+    id: 'cfp-psy-b2-009',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -181,7 +181,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Money scripts are unconscious beliefs about money formed in childhood, often from family experiences. Growing up in scarcity can create scripts around safety and hoarding that persist even when circumstances change dramatically.'
   },
   {
-    id: 'CFP-PSY-B2-010',
+    id: 'cfp-psy-b2-010',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -200,7 +200,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'A skilled planner acts as a neutral facilitator, helping couples find common ground. Both spending and saving have value—the plan should incorporate both immediate enjoyment and future security in a way both partners can accept.'
   },
   {
-    id: 'CFP-PSY-B2-011',
+    id: 'cfp-psy-b2-011',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -219,7 +219,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Effective intergenerational planning requires understanding family dynamics, values, and the parents\' goals. Equal distributions aren\'t always optimal (different needs, contributions, or family circumstances), and communication about plans often reduces rather than increases conflict.'
   },
   {
-    id: 'CFP-PSY-B2-012',
+    id: 'cfp-psy-b2-012',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -239,7 +239,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
   },
   // PSY-4: Client Psychology & Counseling
   {
-    id: 'CFP-PSY-B2-013',
+    id: 'cfp-psy-b2-013',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -258,7 +258,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals should recognize when issues exceed their expertise. Clinical depression requires mental health professionals. The planner should sensitively suggest professional help while continuing to support the client\'s financial needs within their scope.'
   },
   {
-    id: 'CFP-PSY-B2-014',
+    id: 'cfp-psy-b2-014',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -277,7 +277,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Motivational interviewing focuses on drawing out the client\'s own motivation rather than imposing external pressure. Exploring their reasons for change is more likely to create lasting behavior change than fear tactics or imposed solutions.'
   },
   {
-    id: 'CFP-PSY-B2-015',
+    id: 'cfp-psy-b2-015',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -296,7 +296,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Resistance often signals that the planner hasn\'t fully understood the client\'s situation or concerns. Exploring objections shows respect, builds trust, and often reveals important information that can lead to better recommendations.'
   },
   {
-    id: 'CFP-PSY-B2-016',
+    id: 'cfp-psy-b2-016',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -316,7 +316,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
   },
   // PSY-1: Additional Communication
   {
-    id: 'CFP-PSY-B2-017',
+    id: 'cfp-psy-b2-017',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -335,7 +335,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'When verbal and nonverbal communication conflict, it warrants exploration. The planner should gently probe to understand the discrepancy: "I notice some hesitation—tell me more about your feelings on this." This ensures recommendations match the client\'s true comfort level.'
   },
   {
-    id: 'CFP-PSY-B2-018',
+    id: 'cfp-psy-b2-018',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -354,7 +354,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Trust is built primarily through reliability and follow-through. When planners do what they say they will do, clients develop confidence in the relationship. Promising high returns is unethical, and complexity/decor are superficial.'
   },
   {
-    id: 'CFP-PSY-B2-019',
+    id: 'cfp-psy-b2-019',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -373,7 +373,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Empathetic response acknowledges the client\'s emotion without rushing past it or abandoning the conversation. A brief pause and acknowledgment ("This is understandably difficult") validates their feelings while maintaining a professional relationship.'
   },
   {
-    id: 'CFP-PSY-B2-020',
+    id: 'cfp-psy-b2-020',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -393,7 +393,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
   },
   // PSY-2: Additional Biases
   {
-    id: 'CFP-PSY-B2-021',
+    id: 'cfp-psy-b2-021',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -412,7 +412,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The endowment effect causes people to value things they own more than equivalent things they don\'t own. This makes clients reluctant to sell or diversify concentrated positions, even when financially advisable.'
   },
   {
-    id: 'CFP-PSY-B2-022',
+    id: 'cfp-psy-b2-022',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -431,7 +431,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Herding (or social proof bias) is the tendency to follow what others are doing, assuming the crowd has information or knowledge. This can lead to buying overvalued assets or panic selling during downturns.'
   },
   {
-    id: 'CFP-PSY-B2-023',
+    id: 'cfp-psy-b2-023',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -450,7 +450,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'A nudge is a design change that predictably influences behavior without restricting choices or significantly changing incentives. Examples include auto-enrollment in 401(k)s or making the default option the desired behavior.'
   },
   {
-    id: 'CFP-PSY-B2-024',
+    id: 'cfp-psy-b2-024',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -469,7 +469,7 @@ export const CFP_PSYCHOLOGY_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The framing effect shows that how information is presented affects decisions, even when the underlying facts are identical. In finance, framing returns as gains vs. avoiding losses can significantly affect client choices.'
   },
   {
-    id: 'CFP-PSY-B2-025',
+    id: 'cfp-psy-b2-025',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',

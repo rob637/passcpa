@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
   // RIS-1: Risk Management Concepts
   {
-    id: 'CFP-RIS-B5-001',
+    id: 'cfp-ris-b5-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Concepts',
     subtopic: 'Risk Tolerance vs Capacity',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Risk tolerance is subjective—how comfortable someone feels with uncertainty. Risk capacity is objective—the financial ability to survive losses without jeopardizing goals. Insurance plans should address gaps between the two, transferring risks the client can\'t afford regardless of comfort level.'
   },
   {
-    id: 'CFP-RIS-B5-002',
+    id: 'cfp-ris-b5-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Concepts',
     subtopic: 'Self-Insurance',
     difficulty: 'medium',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Self-insurance (retention) makes sense for small, manageable losses where insurance administrative costs exceed expected claims. High deductibles accomplish partial self-insurance. It\'s inappropriate for catastrophic risks where a single loss could cause financial ruin.'
   },
   {
-    id: 'CFP-RIS-B5-003',
+    id: 'cfp-ris-b5-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Concepts',
     subtopic: 'Adverse Selection',
     difficulty: 'hard',
@@ -67,10 +67,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
   },
   // RIS-2: Life Insurance
   {
-    id: 'CFP-RIS-B5-004',
+    id: 'cfp-ris-b5-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Loan Provisions',
     difficulty: 'medium',
@@ -86,10 +86,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Policy loans access cash value without immediate tax (they\'re loans, not distributions). Interest accrues on loans. Outstanding loans reduce the death benefit paid to beneficiaries. If the policy lapses with loans exceeding basis, taxes and potentially surrender charges apply.'
   },
   {
-    id: 'CFP-RIS-B5-005',
+    id: 'cfp-ris-b5-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Waiver of Premium',
     difficulty: 'easy',
@@ -105,10 +105,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'A waiver of premium rider waives future premium payments when the insured becomes totally disabled as defined in the policy, typically after a 6-month elimination (waiting) period. The policy remains in force with all benefits intact while premiums are waived during the disability.',
   },
   {
-    id: 'CFP-RIS-B5-006',
+    id: 'cfp-ris-b5-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Incontestability',
     difficulty: 'medium',
@@ -125,10 +125,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
   },
   // RIS-3: Health Insurance
   {
-    id: 'CFP-RIS-B5-007',
+    id: 'cfp-ris-b5-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Marketplace Coverage',
     difficulty: 'medium',
@@ -144,10 +144,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Premium subsidies limit marketplace plan costs to a percentage of income (sliding scale based on Federal Poverty Level). Subsidies equal the difference between the benchmark Silver plan cost and the expected contribution. Enhanced subsidies through 2025 expanded eligibility and lowered contribution percentages.'
   },
   {
-    id: 'CFP-RIS-B5-008',
+    id: 'cfp-ris-b5-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Short-Term Plans',
     difficulty: 'medium',
@@ -163,10 +163,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Short-term plans fill gaps between coverage but aren\'t ACA-compliant. They can exclude pre-existing conditions, have lifetime/annual limits, and limited benefits. Duration varies by state (up to 3 years). They\'re cheaper but provide less comprehensive protection; appropriate for healthy individuals needing temporary coverage.'
   },
   {
-    id: 'CFP-RIS-B5-009',
+    id: 'cfp-ris-b5-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Health Care Sharing Ministries',
     difficulty: 'hard',
@@ -183,10 +183,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
   },
   // RIS-4: Disability
   {
-    id: 'CFP-RIS-B5-010',
+    id: 'cfp-ris-b5-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Cost of Living',
     difficulty: 'medium',
@@ -202,10 +202,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'COLA riders increase disability benefits annually (typically tied to CPI or a fixed percentage) during a continuing claim. For long-term disabilities, this is crucial—a 20-year claim without COLA would see purchasing power erode significantly. The rider adds cost but provides inflation protection.'
   },
   {
-    id: 'CFP-RIS-B5-011',
+    id: 'cfp-ris-b5-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Integration',
     difficulty: 'hard',
@@ -221,10 +221,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Integration provisions reduce policy benefits by amounts from other disability sources to prevent "profiting" from disability. Group LTD policies often integrate with Social Security. "Non-integrated" or "pure" policies pay regardless of other benefits—they cost more but provide predictable coverage.'
   },
   {
-    id: 'CFP-RIS-B5-012',
+    id: 'cfp-ris-b5-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Business Overhead',
     difficulty: 'medium',
@@ -241,10 +241,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
   },
   // RIS-5: Long-Term Care
   {
-    id: 'CFP-RIS-B5-013',
+    id: 'cfp-ris-b5-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'ADLs and Cognitive Impairment',
     difficulty: 'medium',
@@ -260,10 +260,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The standard 6 ADLs are bathing, dressing, eating, toileting, transferring (moving between bed/chair), and continence. Most policies require inability to perform 2+ ADLs or cognitive impairment (like Alzheimer\'s) to trigger benefits. Tax-qualified plans must meet these criteria.'
   },
   {
-    id: 'CFP-RIS-B5-014',
+    id: 'cfp-ris-b5-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Shared Care',
     difficulty: 'hard',
@@ -279,10 +279,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Shared care lets couples pool benefits—if one spouse exhausts their benefit pool, they can draw from the other\'s. This provides flexibility for couples where one may need more care. Some versions add a shared pool beyond individual benefits. It costs more but provides valuable protection.'
   },
   {
-    id: 'CFP-RIS-B5-015',
+    id: 'cfp-ris-b5-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Rate Increases',
     difficulty: 'hard',
@@ -299,10 +299,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RIS-B5-016',
+    id: 'cfp-ris-b5-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Concepts',
     subtopic: 'Moral Hazard',
     difficulty: 'medium',
@@ -318,10 +318,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Moral hazard is increased risk-taking because someone else bears the cost. With auto insurance, people may drive less carefully; with health insurance, they may overuse services. Insurers counter with deductibles, copays, and coinsurance to maintain "skin in the game."'
   },
   {
-    id: 'CFP-RIS-B5-017',
+    id: 'cfp-ris-b5-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Key Person Insurance',
     difficulty: 'medium',
@@ -337,10 +337,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Key person insurance compensates businesses for economic loss when essential employees die. The business owns the policy, pays premiums (non-deductible), and receives tax-free proceeds. It helps cover replacement costs, lost revenue, and business stabilization. Common for founders, sales leads, and specialized talent.'
   },
   {
-    id: 'CFP-RIS-B5-018',
+    id: 'cfp-ris-b5-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Medicare Advantage',
     difficulty: 'medium',
@@ -356,10 +356,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Medicare Advantage replaces Original Medicare with private plans that must cover Part A and B benefits. Many include Part D, plus extras like dental, vision, hearing, and fitness. Trade-offs include network restrictions and prior authorization requirements. They can\'t be combined with Medigap.'
   },
   {
-    id: 'CFP-RIS-B5-019',
+    id: 'cfp-ris-b5-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Presumptive Disability',
     difficulty: 'hard',
@@ -375,10 +375,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Presumptive disability automatically qualifies claims for total disability upon specific losses (e.g., loss of sight in both eyes, use of both hands/feet, speech, hearing) without requiring proof of occupational disability. Benefits may begin immediately, waiving the elimination period.'
   },
   {
-    id: 'CFP-RIS-B5-020',
+    id: 'cfp-ris-b5-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Tax-Qualified Plans',
     difficulty: 'hard',
@@ -394,10 +394,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Tax-qualified LTC policies meet HIPAA standards. Premiums are deductible as medical expenses (with age-based limits, subject to 7.5% AGI floor). Benefits are tax-free when triggered by ADL/cognitive criteria. Non-TQ policies may have easier triggers but uncertain tax treatment.'
   },
   {
-    id: 'CFP-RIS-B5-021',
+    id: 'cfp-ris-b5-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Concepts',
     subtopic: 'Coinsurance',
     difficulty: 'medium',
@@ -413,10 +413,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: '80/20 coinsurance means the insurer pays 80% of covered costs and the insured pays 20%, applied after the deductible. Cost-sharing continues until the annual out-of-pocket maximum is reached, after which the insurer pays 100%. It creates incentives to be cost-conscious about care.'
   },
   {
-    id: 'CFP-RIS-B5-022',
+    id: 'cfp-ris-b5-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Charitable Life Insurance',
     difficulty: 'medium',
@@ -432,10 +432,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Charitable life insurance strategies include: (1) naming charity as beneficiary (no current deduction, but estate deduction), (2) gifting existing policy to charity (deduct interpolated terminal reserve), (3) charity owns and is beneficiary (deduct premiums as gifts). Charity gets larger gift than direct cash donation of same amount.'
   },
   {
-    id: 'CFP-RIS-B5-023',
+    id: 'cfp-ris-b5-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'FSA vs HSA',
     difficulty: 'medium',
@@ -451,10 +451,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'HSAs are owned by individuals, roll over indefinitely (no use-it-or-lose-it), have higher limits ($4,150/$8,300 in 2024), and offer triple tax benefits (deductible, grow tax-free, tax-free withdrawals for medical). They require HDHP enrollment. FSAs are employer accounts with limited rollover.'
   },
   {
-    id: 'CFP-RIS-B5-024',
+    id: 'cfp-ris-b5-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Future Increase Option',
     difficulty: 'medium',
@@ -470,10 +470,10 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
     explanation: 'This rider allows increasing coverage as income grows without new medical exams (proof of income required). Usually exercise at policy anniversaries or life events. It protects insurability if health declines. Premiums for increases reflect age at time of exercise.'
   },
   {
-    id: 'CFP-RIS-B5-025',
+    id: 'cfp-ris-b5-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Care Coordination',
     difficulty: 'medium',

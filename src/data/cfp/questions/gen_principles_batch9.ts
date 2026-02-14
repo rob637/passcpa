@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
   // GEN-1: Financial Planning Process
   {
-    id: 'CFP-GEN-B9-001',
+    id: 'cfp-gen-b9-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Engagement letter establishes the professional relationship. Must include: services provided (and excluded), how planner is compensated, material conflicts, engagement duration/termination, client vs. planner responsibilities. Required under CFP Board Standards of Conduct. Protects both parties by setting clear expectations.'
   },
   {
-    id: 'CFP-GEN-B9-002',
+    id: 'cfp-gen-b9-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Monitoring is ongoing: review progress, evaluate whether strategies are working, update for life changes (marriage, job change, inheritance), adjust for market conditions and tax law changes. Financial planning is not one-time—it\'s a continuous process. Regular reviews (typically annual or triggered by events) are essential.'
   },
   {
-    id: 'CFP-GEN-B9-003',
+    id: 'cfp-gen-b9-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +67,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
   },
   // GEN-2: Financial Statement Analysis
   {
-    id: 'CFP-GEN-B9-004',
+    id: 'cfp-gen-b9-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Personal balance sheet assets include: monetary (cash, checking), investment (brokerage, retirement), and personal use (home, vehicles). 401(k) is an investment asset—specifically retirement/long-term. Some classify separately as retirement assets. Liabilities shown separately. Net worth = Assets - Liabilities.'
   },
   {
-    id: 'CFP-GEN-B9-005',
+    id: 'cfp-gen-b9-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +105,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Financial independence ratio: investment income ÷ living expenses. 100% means investment income covers all expenses (traditional retirement goal). Higher = more independence. Tracks progress toward retirement readiness. Related to FIRE (Financial Independence, Retire Early) concepts. Consider: what income sources, how reliable, inflation adjustments.'
   },
   {
-    id: 'CFP-GEN-B9-006',
+    id: 'cfp-gen-b9-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -125,7 +125,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
   },
   // GEN-3: Time Value of Money
   {
-    id: 'CFP-GEN-B9-007',
+    id: 'cfp-gen-b9-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +144,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Account A\'s EAR = (1 + 0.06/12)^12 - 1 = 6.17%, which exceeds Account B\'s EAR of 6.1% (already annual). More frequent compounding increases the effective rate, so 6% compounded monthly actually yields more than 6.1% compounded annually.',
   },
   {
-    id: 'CFP-GEN-B9-008',
+    id: 'cfp-gen-b9-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +163,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Annuity due: payments at beginning of period (rent, lease payments). Ordinary: payments at end (most loan payments). Annuity due values are higher by factor of (1 + i). PV_AD = PV_OA × (1 + i). FV_AD = FV_OA × (1 + i). Each payment earns interest for one more period in an annuity due.'
   },
   {
-    id: 'CFP-GEN-B9-009',
+    id: 'cfp-gen-b9-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,26 +183,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
   },
   // GEN-4: Economics Concepts
   {
-    id: 'CFP-GEN-B9-010',
-    courseId: 'cfp',
-    section: 'CFP-GEN',
-    blueprintArea: 'GEN-4',
-    topic: 'Economics',
-    subtopic: 'Leading Indicators',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Leading economic indicators include:',
-    options: [
-      'A) Unemployment rate and GDP',
-      'B) Stock market performance, building permits, and initial unemployment claims because they predict future activity',
-      'D) Historical tax receipts',
-      'C) Inflation only',
-    ],
-    correctAnswer: 1,
-    explanation: 'Leading indicators predict future economic direction: stock prices, building permits, manufacturing orders, consumer expectations, initial jobless claims. Lagging: unemployment rate, CPI, business lending. Coincident: industrial production, personal income, GDP. Leading indicators help anticipate turns in business cycles.'
-  },
-  {
-    id: 'CFP-GEN-B9-011',
+    id: 'cfp-gen-b9-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -221,7 +202,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Higher rates impact planning: mortgage/loan costs increase (buy homes earlier or less debt), bond prices fall (longer duration hurts more), stocks may decline (higher discount rates, competition from bonds), savings yields improve. Planning implications: review debt strategy, bond duration, asset allocation, retirement income sources.'
   },
   {
-    id: 'CFP-GEN-B9-012',
+    id: 'cfp-gen-b9-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -241,7 +222,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
   },
   // GEN-5: Financial Planning Concepts
   {
-    id: 'CFP-GEN-B9-013',
+    id: 'cfp-gen-b9-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -260,7 +241,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Goal prioritization process: identify all goals, quantify costs and timing, determine which are needs vs. wants, analyze trade-offs (delay retirement vs. full college funding), adjust variables (goal cost, timeline, risk level). Transparent discussion helps clients understand constraints and make informed choices.'
   },
   {
-    id: 'CFP-GEN-B9-014',
+    id: 'cfp-gen-b9-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -279,7 +260,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Life cycle approach: planning changes with life stage. Early career: build emergency fund, start retirement savings, manage student debt. Mid-career: maximize savings, education funding, insurance. Pre-retirement: catch-up contributions, assess readiness. Retirement: income planning, healthcare, estate. Priorities shift systematically.'
   },
   {
-    id: 'CFP-GEN-B9-015',
+    id: 'cfp-gen-b9-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -299,7 +280,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-GEN-B9-016',
+    id: 'cfp-gen-b9-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -318,7 +299,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Discovery goes beyond data collection. Essential: understand why (values driving goals), family dynamics, risk attitudes, past experiences with money, fears and concerns, what success looks like. Use open-ended questions. Listen actively. Quantitative data shows what; qualitative reveals why—both essential for comprehensive planning.'
   },
   {
-    id: 'CFP-GEN-B9-017',
+    id: 'cfp-gen-b9-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -337,7 +318,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Back-end DTI: all monthly debt payments ÷ gross monthly income. QM loans typically require ≤43%. FHA may allow up to 50% with compensating factors. Front-end (housing only): typically ≤28%. Lower DTI = more financial cushion. High DTI signals difficulty handling additional debt or expenses. Planning should aim to keep ratios manageable.'
   },
   {
-    id: 'CFP-GEN-B9-018',
+    id: 'cfp-gen-b9-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -356,7 +337,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'IRR limitations: assumes reinvestment at IRR (may be unrealistic), unconventional cash flows can produce multiple IRRs, can\'t compare projects of different sizes. NPV advantages: uses consistent required rate, additive (can compare different projects), no reinvestment rate assumptions. Use both—IRR for rate comparison, NPV for absolute value.'
   },
   {
-    id: 'CFP-GEN-B9-019',
+    id: 'cfp-gen-b9-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -375,7 +356,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Fed monetary policy tools: Open market operations (buying/selling Treasuries—most used), discount rate (rate Fed charges banks), reserve requirements (how much banks must hold), interest on reserves, quantitative easing. Fiscal policy (taxes, spending) is Congress. Fed tools affect interest rates which flows through to planning decisions.'
   },
   {
-    id: 'CFP-GEN-B9-020',
+    id: 'cfp-gen-b9-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -394,7 +375,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: '4% rule (Bengen study): year one withdraw 4% of portfolio, subsequent years adjust for inflation. Based on historical returns, provided ~30-year sustainability. Limitations: based on specific period, single-country data, doesn\'t adapt to conditions. Modern views: consider flexibility, dynamic spending, CAPE-based rules. Useful starting point, not rigid rule.'
   },
   {
-    id: 'CFP-GEN-B9-021',
+    id: 'cfp-gen-b9-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -413,7 +394,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Effective presentation: use clear language (avoid jargon), explain why each recommendation helps achieve stated goals, discuss alternatives and why chosen approach fits, be transparent about limitations and trade-offs, provide clear action steps with responsibilities. Clients should understand and agree before implementing.'
   },
   {
-    id: 'CFP-GEN-B9-022',
+    id: 'cfp-gen-b9-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -432,7 +413,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Investment assets-to-net worth: investment/income-producing assets ÷ total net worth. Higher ratio means wealth is in productive assets generating returns or income. Lower ratio may indicate too much in personal use (home, cars) that don\'t generate income. Important for retirement readiness—need investment assets to provide retirement income.'
   },
   {
-    id: 'CFP-GEN-B9-023',
+    id: 'cfp-gen-b9-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -451,7 +432,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Growing annuity: payment grows at constant rate g. PV formula: PMT × [(1 - ((1+g)/(1+r))^n) / (r - g)]. Applications: retirement spending rising with inflation, salary savings increasing with raises, tuition growing each year. Requires different formula than level annuity. Important for realistic projections when payments aren\'t constant.'
   },
   {
-    id: 'CFP-GEN-B9-024',
+    id: 'cfp-gen-b9-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -470,7 +451,7 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Contraction (recession) planning: increase liquidity, build emergency fund, reduce variable debt, evaluate job security (update skills, network), cut discretionary spending, possibly find investment opportunities (if employed/secure). Counter-cyclical: add to investments when others sell (dollar-cost averaging works better in down markets).'
   },
   {
-    id: 'CFP-GEN-B9-025',
+    id: 'cfp-gen-b9-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',

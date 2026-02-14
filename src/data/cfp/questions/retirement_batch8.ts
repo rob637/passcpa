@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   {
-    id: 'CFP-RET-B8-001',
+    id: 'cfp-ret-b8-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The required rate is solved mathematically: given current savings, planned contributions, time to retirement, and needed retirement fund, what growth rate is needed? If the required rate exceeds reasonable expectations, adjustments are needed (save more, retire later, spend less). This reality check prevents unrealistic plans.'
   },
   {
-    id: 'CFP-RET-B8-002',
+    id: 'cfp-ret-b8-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Life expectancy is an average—half live longer. Planning to "average" risks running out of money. For a healthy 65-year-old couple, there\'s a 50% chance one survives to 92+. Plan for extended longevity (90-95) or use products like annuities to insure against outliving assets.'
   },
   {
-    id: 'CFP-RET-B8-003',
+    id: 'cfp-ret-b8-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
   },
   // RET-2: Employer Plans
   {
-    id: 'CFP-RET-B8-004',
+    id: 'cfp-ret-b8-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'DB plans promise specific benefits (e.g., 2% × years × final average salary). The employer funds and invests to meet this obligation, bearing investment risk. Employees accrue benefits by formula. These plans are declining in private sector but common in government/union settings.'
   },
   {
-    id: 'CFP-RET-B8-005',
+    id: 'cfp-ret-b8-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Cash balance plans are technically DB (employer-funded, promised benefit) but look like DC—each employee has a hypothetical account with annual pay credits (% of salary) and interest credits (guaranteed rate). Benefits are portable as lump sums. They favor younger employees relative to traditional DB.'
   },
   {
-    id: 'CFP-RET-B8-006',
+    id: 'cfp-ret-b8-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
   },
   // RET-3: IRAs
   {
-    id: 'CFP-RET-B8-007',
+    id: 'cfp-ret-b8-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'SECURE Act\'s 10-year rule applies to Roth IRAs for most non-spouse beneficiaries. The 10-year rule is the same, but Roth distributions are tax-free (if 5-year holding was met). This allows strategic timing within the 10 years—there are no annual RMDs, so all can be taken at once or spread.'
   },
   {
-    id: 'CFP-RET-B8-008',
+    id: 'cfp-ret-b8-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Prohibited transactions (IRC 4975) include: borrowing from IRA, selling property to it, using IRA assets as loan security, or receiving compensation from IRA investments. Disqualified persons (owner, family, fiduciaries) cannot engage in these. Penalty is severe: entire IRA becomes taxable.'
   },
   {
-    id: 'CFP-RET-B8-009',
+    id: 'cfp-ret-b8-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
   },
   // RET-4: Distribution Planning
   {
-    id: 'CFP-RET-B8-010',
+    id: 'cfp-ret-b8-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'QLACs allow up to $200,000 (SECURE 2.0 increased limit) to be used for deferred annuities starting by age 85. The QLAC amount is excluded from RMD calculations, reducing required distributions. This provides pure longevity insurance—if you die before payments start, benefits are limited (often to spouse or return of premium).'
   },
   {
-    id: 'CFP-RET-B8-011',
+    id: 'cfp-ret-b8-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'NUA strategy: instead of rolling employer stock to IRA, distribute in-kind to taxable account. Ordinary income tax applies only to cost basis; the appreciation (NUA) is taxed at long-term capital gains rates when sold. This works best with large NUA (low basis, high current value) and lower capital gains rates.'
   },
   {
-    id: 'CFP-RET-B8-012',
+    id: 'cfp-ret-b8-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
   },
   // RET-5: Social Security
   {
-    id: 'CFP-RET-B8-013',
+    id: 'cfp-ret-b8-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,7 +260,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'SSDI is social insurance (not need-based) for workers with enough credits who become disabled. Disability definition is strict: unable to perform substantial gainful activity for 12+ months or terminal. Benefits based on earnings record (like retirement). After 24 months of SSDI, Medicare eligibility begins.'
   },
   {
-    id: 'CFP-RET-B8-014',
+    id: 'cfp-ret-b8-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -279,7 +279,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The retirement earnings test (before FRA) reduces benefits—$1 per $2 over limit (around $22K). In FRA year, reduction is $1 per $3 over higher limit. At FRA, no reduction. Importantly, reduced benefits aren\'t lost—they\'re restored through higher benefits after FRA. After FRA, earnings don\'t affect benefits.'
   },
   {
-    id: 'CFP-RET-B8-015',
+    id: 'cfp-ret-b8-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +299,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RET-B8-016',
+    id: 'cfp-ret-b8-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +318,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The "retirement spending smile" shows: higher discretionary spending in early "go-go" years (travel, activities), reduced spending in "slow-go" years (less activity), and potential increase in "no-go" years (healthcare/long-term care). This non-linear pattern affects planning assumptions.'
   },
   {
-    id: 'CFP-RET-B8-017',
+    id: 'cfp-ret-b8-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -337,7 +337,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Stock bonus plans are DC plans distributing employer stock. They\'re related to ESOPs but without all ESOP rules (like put option, diversification). Benefits vary with employer contribution and stock performance. They align employee and employer interests but concentrate risk. Diversification is important after receiving distributions.'
   },
   {
-    id: 'CFP-RET-B8-018',
+    id: 'cfp-ret-b8-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -356,7 +356,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'All traditional IRAs (including SEP and SIMPLE) are treated as one for determining the pro-rata tax on conversions or non-deductible withdrawals. If you have any pre-tax IRA money, you can\'t convert just after-tax portions tax-free—the pro-rata rule applies. Strategies include rolling pre-tax amounts to 401(k).'
   },
   {
-    id: 'CFP-RET-B8-019',
+    id: 'cfp-ret-b8-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -375,7 +375,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'QCDs transfer IRA funds directly to charity (not donor-advised funds or private foundations). They satisfy RMDs without increasing AGI—beneficial for those not itemizing or subject to phase-outs. 2024 limit is $105,000 (indexed). SECURE 2.0 added one-time $53,000 gift to charitable trusts/annuities.'
   },
   {
-    id: 'CFP-RET-B8-020',
+    id: 'cfp-ret-b8-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -394,7 +394,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'When multiple people receive benefits on one worker\'s record (spouse, children, ex-spouse doesn\'t reduce), the family maximum applies—typically 150-180% of PIA for retirement, 85-150% for disability. Benefits are proportionally reduced to stay within limits. The ex-spouse\'s benefit doesn\'t count toward family maximum.'
   },
   {
-    id: 'CFP-RET-B8-021',
+    id: 'cfp-ret-b8-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -413,7 +413,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The "traditional" order: taxable (often lowest tax cost, preserves tax-deferred growth), then tax-deferred (ordinary income), then Roth (tax-free). But sophisticated strategies consider filling lower tax brackets, Roth conversion opportunities, and ACA subsidies. There\'s no one-size-fits-all sequence.'
   },
   {
-    id: 'CFP-RET-B8-022',
+    id: 'cfp-ret-b8-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,7 +432,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Age-50+ can contribute extra: $7,500 for 401(k)/403(b) in 2024. SECURE 2.0 adds higher catch-up for ages 60-63 starting 2025. IRA catch-up is $1,000. This allows accelerated saving for those behind, those with higher income later in career, or those who simply can save more as kids leave home.'
   },
   {
-    id: 'CFP-RET-B8-023',
+    id: 'cfp-ret-b8-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -451,7 +451,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'SIMPLE IRAs have lower limits than 401(k)s: $16,000 employee deferral in 2024 (vs $23,000 for 401(k)), $3,500 catch-up (vs $7,500). Employer must match 1-3% or provide 2% non-elective. They\'re simpler to administer but have lower contribution potential for higher earners.'
   },
   {
-    id: 'CFP-RET-B8-024',
+    id: 'cfp-ret-b8-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -470,7 +470,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Calculate RMD for each IRA separately, but the total can be withdrawn from any one or combination. This allows keeping accounts with better investments/terms while satisfying RMDs from others. 401(k)s differ: each 401(k) must satisfy its own RMD (no aggregation across employer plans).'
   },
   {
-    id: 'CFP-RET-B8-025',
+    id: 'cfp-ret-b8-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

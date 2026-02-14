@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
   // TAX-1: Tax Fundamentals
   {
-    id: 'CFP-TAX-B12-001',
+    id: 'cfp-tax-b12-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Basis: cost of investment for tax purposes. Original basis: usually cost (plus acquisition costs). Adjustments: + improvements, - depreciation, - returns of capital. At sale: FMV - adjusted basis = gain/loss. Different acquisition methods = different basis rules (gift: carryover, inheritance: stepped up/down). Tracking basis essential for accurate tax reporting.'
   },
   {
-    id: 'CFP-TAX-B12-002',
+    id: 'cfp-tax-b12-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Assignment of income: "fruit and tree" doctrine—can\'t give fruit (income) and keep tree (source). Earned income: taxed to earner. Investment income: may be assigned with property. Prevents: earning income, gifting to children to reduce taxes. Examples: Lucas v. Earl (can\'t assign wages to spouse). Legitimate alternatives: family employment (reasonable wages), gifts of income-producing property.'
   },
   {
-    id: 'CFP-TAX-B12-003',
+    id: 'cfp-tax-b12-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
   },
   // TAX-2: Income
   {
-    id: 'CFP-TAX-B12-004',
+    id: 'cfp-tax-b12-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Cancellation of debt income: generally taxable—you received benefit of borrowed funds. Exclusions: bankruptcy (Chapter 7/11), insolvency (to extent of insolvency), qualified principal residence debt (expired, sometimes extended), qualified farm debt, qualified real property business debt. Excluded COD income may reduce tax attributes. Form 1099-C reporting. Consult tax advisor—exclusions have requirements.'
   },
   {
-    id: 'CFP-TAX-B12-005',
+    id: 'cfp-tax-b12-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Partnership taxation: flow-through entity—no entity-level tax. Income allocated to partners per partnership agreement. Partners taxed on share of income even if not distributed. Schedule K-1: reports partner\'s share of income, deductions, credits. Character flows through (capital gains, ordinary, etc.). Quarterly estimated payments may be needed. Complexity: basis tracking, self-employment tax, passive activity rules.'
   },
   {
-    id: 'CFP-TAX-B12-006',
+    id: 'cfp-tax-b12-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,7 +125,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
   },
   // TAX-3: Deductions
   {
-    id: 'CFP-TAX-B12-007',
+    id: 'cfp-tax-b12-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -144,7 +144,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Home office requirements: regular and exclusive business use, plus either: principal place of business, place to meet clients, or separate structure. Exclusive: can\'t double as guest room. Two methods: regular (actual expenses × business percentage) or simplified ($5/sq ft, max 300 sq ft = $1,500). Self-employed: Schedule C. Employees: generally not deductible post-TCJA.'
   },
   {
-    id: 'CFP-TAX-B12-008',
+    id: 'cfp-tax-b12-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Self-employed health insurance: above-the-line deduction for premiums paid for self, spouse, dependents. Limit: net self-employment income. Can\'t take if eligible for subsidized employer plan. Includes: medical, dental, vision, long-term care (age-based limits). Not subject to 7.5% AGI floor. Also reduces AGI—helps with other phase-outs. Significant benefit for self-employed.'
   },
   {
-    id: 'CFP-TAX-B12-009',
+    id: 'cfp-tax-b12-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +183,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
   },
   // TAX-4: Credits
   {
-    id: 'CFP-TAX-B12-010',
+    id: 'cfp-tax-b12-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +202,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Child/Dependent Care Credit: for care enabling work. Qualifying: children under 13, disabled spouse, disabled dependent. Expense limits: $3,000 one qualifying person, $6,000 two or more. Credit: 20-35% of expenses based on AGI (20% over $43K). Reduced by dependent care FSA use. Both spouses must work (or student/disabled exception). Nonrefundable. Can use FSA—compare which benefits more.'
   },
   {
-    id: 'CFP-TAX-B12-011',
+    id: 'cfp-tax-b12-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -221,7 +221,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Saver\'s Credit: encourages low/moderate income retirement savings. Credit: 50%, 20%, or 10% of up to $2,000 contributed ($4,000 married). Based on AGI. 2024 limits approx: 50% if AGI <$23K single, <$46K married. Contributions: IRA, 401(k), 403(b), etc. Nonrefundable—only reduces tax to zero. Age 18+, not dependent, not student. Stacks with deduction for traditional contributions.'
   },
   {
-    id: 'CFP-TAX-B12-012',
+    id: 'cfp-tax-b12-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -241,7 +241,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
   },
   // TAX-5: Planning
   {
-    id: 'CFP-TAX-B12-013',
+    id: 'cfp-tax-b12-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -260,7 +260,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Entity selection factors: self-employment tax (sole prop/partnership pays on all earnings, S-corp on reasonable wages only), QBI deduction (199A—20% for pass-throughs, limitations apply), employment taxes, fringe benefits (C-corp can provide tax-free), state taxes (some tax differently), exit strategies, complexity, cost. No one-size-fits-all—model different structures. Revisit as circumstances change.'
   },
   {
-    id: 'CFP-TAX-B12-014',
+    id: 'cfp-tax-b12-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -279,7 +279,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Passive activity loss rules: passive losses offset only passive income. Suspended losses carry forward, released at disposition. Exceptions: $25,000 rental real estate allowance (active participation, phase-out above $100K MAGI), real estate professional (750 hours+, material participation). Passive: limited partner, rental (generally), not meeting material participation tests. Complex rules—proper classification important.'
   },
   {
-    id: 'CFP-TAX-B12-015',
+    id: 'cfp-tax-b12-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -299,7 +299,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-TAX-B12-016',
+    id: 'cfp-tax-b12-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -318,7 +318,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Claim of right: if receive funds you believe you\'re entitled to, taxable that year—even if later determined you must return them. If repay: deduction in repayment year, or special Section 1341 treatment (greater of: deduction at current rate or credit for prior year tax). Protects taxpayer from timing mismatch. Example: bonus received, later found to be overpayment and returned.'
   },
   {
-    id: 'CFP-TAX-B12-017',
+    id: 'cfp-tax-b12-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -337,7 +337,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Life settlement taxation: Amount > basis = gain. Gain is split: ordinary income portion (cash surrender value minus basis), capital gain portion (sale price minus CSV). Basis = premiums paid (reduced by any dividends/withdrawals). Transfer for value rules don\'t apply to life settlements themselves, but buyer has issues. Report on Form 1099-LS. Complex—consult tax advisor.'
   },
   {
-    id: 'CFP-TAX-B12-018',
+    id: 'cfp-tax-b12-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -356,7 +356,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'NOL rules (post-2020): carryforward indefinitely, but limited to 80% of taxable income. No carryback (except farming). CARES Act temporarily allowed 5-year carryback for 2018-2020 losses at 100%. Excess business loss limitation applies first (Section 461(l))—losses in excess treated as NOL. Complex interaction of rules. Planning: timing of income/deductions, utilization strategies.'
   },
   {
-    id: 'CFP-TAX-B12-019',
+    id: 'cfp-tax-b12-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -375,7 +375,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Residential clean energy credit (25D): 30% of costs through 2032, then phases down. Covers: solar electric, solar water heating, wind, geothermal heat pumps, fuel cells, battery storage (3+ kWh). No upper limit. Carry forward unused credit. Primary or second home (not rental). Energy efficient home improvement credit (25C) separate: windows, doors, HVAC, heat pumps—more limited amounts.'
   },
   {
-    id: 'CFP-TAX-B12-020',
+    id: 'cfp-tax-b12-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -394,7 +394,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Installment method: report gain as payments received. Gross profit percentage: (Gross profit / Contract price) × Payment = Gain recognized. Spreads tax over payment period. Automatic for qualifying sales. Not available: dealer property, publicly traded securities, inventory, recapture (reported immediately). Interest charged on deferred tax over $5M. Planning: manage cash flow, lower bracket years, estate planning.'
   },
   {
-    id: 'CFP-TAX-B12-021',
+    id: 'cfp-tax-b12-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -413,7 +413,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Amendment deadline for refund: later of 3 years from original due date (including extensions) OR 2 years from date tax paid. No deadline to pay additional tax (but penalties/interest accrue). Wait for original to process before amending. Certain items have special rules. Can now e-file 1040-X. Note: opens return to full IRS review. Document reasons for amendment.'
   },
   {
-    id: 'CFP-TAX-B12-022',
+    id: 'cfp-tax-b12-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -432,7 +432,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'RSU taxation: at vesting—FMV is ordinary income (W-2), subject to withholding. No Section 83(b) election available (unlike restricted stock—no property received until vesting). Basis: FMV at vesting. Subsequent sale: capital gain/loss from vesting value. Withholding: often net shares (sell shares to cover tax). Can create large taxable income in vesting year. Plan for tax impact.'
   },
   {
-    id: 'CFP-TAX-B12-023',
+    id: 'cfp-tax-b12-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -451,26 +451,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Section 179: elect to expense (deduct immediately) qualifying assets instead of capitalizing and depreciating. 2024 limit: ~$1.16M, phases out when purchases exceed ~$2.89M. Qualifying: tangible personal property, qualified real property improvements. Limits: can\'t exceed business income. Vehicles: additional limitations. Alternative: bonus depreciation (100% through 2026, then phases down). Powerful planning tool.'
   },
   {
-    id: 'CFP-TAX-B12-024',
-    courseId: 'cfp',
-    section: 'CFP-TAX',
-    blueprintArea: 'TAX-4',
-    topic: 'Tax Credits',
-    subtopic: 'Adoption Credit',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'The adoption credit provides:',
-    options: [
-      'C) Credit only for foreign adoptions',
-      'A) Only deduction',
-      'B) Nonrefundable credit for qualified adoption expenses up to per-child limit, with income phase-out',
-      'D) Unlimited credit',
-    ],
-    correctAnswer: 2,
-    explanation: 'Adoption credit: 2024 max ~$16,810 per child for qualified expenses. Expenses: adoption fees, legal costs, travel. Phase-out: begins at MAGI ~$252,000. Special needs adoption: credit for max amount even if expenses lower. Timing: credit in year finalized (domestic) or expenses paid (foreign). Nonrefundable but 5-year carryforward. Employer adoption assistance may be excluded from income (same limits).'
-  },
-  {
-    id: 'CFP-TAX-B12-025',
+    id: 'cfp-tax-b12-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',

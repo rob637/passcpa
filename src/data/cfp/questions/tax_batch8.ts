@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
   // TAX-1: Fundamentals
   {
-    id: 'CFP-TAX-B8-001',
+    id: 'cfp-tax-b8-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Cash method reports income when actually or constructively received and expenses when paid. It\'s available to most individuals and small businesses. Accrual method (income when earned/expenses when incurred) is required for larger C corporations and businesses with inventory exceeding $25M average gross receipts.'
   },
   {
-    id: 'CFP-TAX-B8-002',
+    id: 'cfp-tax-b8-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The 3-of-5 presumption (2-of-7 for horses) helps establish profit motive. If classified as a hobby, losses cannot offset other income (after TCJA). Nine factors are considered including time/effort, manner conducted, expertise, and history of income. The presumption can be rebutted by the IRS.'
   },
   {
-    id: 'CFP-TAX-B8-003',
+    id: 'cfp-tax-b8-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
   },
   // TAX-2: Income Recognition
   {
-    id: 'CFP-TAX-B8-004',
+    id: 'cfp-tax-b8-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'TCJA eliminated the alimony deduction for agreements executed after 12/31/2018. The payer gets no deduction; the recipient pays no tax. Pre-2019 agreements retain the old deductible/taxable treatment unless modified to specify otherwise. Child support was never deductible/taxable.'
   },
   {
-    id: 'CFP-TAX-B8-005',
+    id: 'cfp-tax-b8-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Economic benefit triggers taxation when the taxpayer has a right to property or services that has ascertainable value, even without actual receipt. Examples include employer-purchased life insurance over $50,000 and certain funded deferred compensation. It prevents deferral when economic value is received.'
   },
   {
-    id: 'CFP-TAX-B8-006',
+    id: 'cfp-tax-b8-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,7 +125,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
   },
   // TAX-3: Deductions
   {
-    id: 'CFP-TAX-B8-007',
+    id: 'cfp-tax-b8-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -144,7 +144,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Excess business loss rules limit the net business loss deduction for non-corporate taxpayers (amounts adjusted annually for inflation). Disallowed losses become NOL carryforwards. This applies after at-risk and passive loss limitations. CARES Act suspended then reinstated the rules.'
   },
   {
-    id: 'CFP-TAX-B8-008',
+    id: 'cfp-tax-b8-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Section 1244 provides significant tax benefits for investing in small businesses. Losses are ordinary (fully deductible against ordinary income) rather than capital ($3,000 annual limit). The stock must be issued for money or property to an individual, with corporate capitalization under $1 million. Gains remain capital.'
   },
   {
-    id: 'CFP-TAX-B8-009',
+    id: 'cfp-tax-b8-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +183,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
   },
   // TAX-4: Tax Credits
   {
-    id: 'CFP-TAX-B8-010',
+    id: 'cfp-tax-b8-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +202,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The IRA enhanced the credit to 30% through 2032, then 26% in 2033, 22% in 2034. It covers solar electric, solar water heating, fuel cells, small wind, geothermal heat pumps, and battery storage (new for 2023+). No dollar limit for most technologies. The credit is nonrefundable but carries forward.'
   },
   {
-    id: 'CFP-TAX-B8-011',
+    id: 'cfp-tax-b8-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -220,28 +220,9 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'FTC limitation = U.S. Tax × (Foreign Income ÷ Worldwide Income) = $20,000 × ($20,000 ÷ $100,000) = $4,000. Though $5,000 was paid, only $4,000 can be claimed this year. The excess $1,000 can carry back 1 year or forward 10 years. The credit prevents double taxation of foreign income.'
   },
-  {
-    id: 'CFP-TAX-B8-012',
-    courseId: 'cfp',
-    section: 'CFP-TAX',
-    blueprintArea: 'TAX-4',
-    topic: 'Tax Credits',
-    subtopic: 'Saver\'s Credit',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'The Retirement Savings Contributions Credit (Saver\'s Credit) provides:',
-    options: [
-      'D) No income limits',
-      'A) A refundable credit for all taxpayers',
-      'C) Credit only for IRA contributions',
-      'B) A nonrefundable credit of 10-50% of retirement contributions (up to $2,000) for low-to-moderate income taxpayers',
-    ],
-    correctAnswer: 3,
-    explanation: 'The Saver\'s Credit provides 50%, 20%, or 10% credit on up to $2,000 of retirement plan contributions based on AGI. Maximum credit is $1,000 ($2,000 MFJ). Phaseout varies by filing status. Must be 18+, not a full-time student or dependent. It\'s in addition to any deduction for contributions.'
-  },
   // TAX-5: Special Topics
   {
-    id: 'CFP-TAX-B8-013',
+    id: 'cfp-tax-b8-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -260,7 +241,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'QPRTs freeze the home\'s value for estate tax purposes. The grantor gifts the home but retains occupancy for a term. The gift value is discounted based on term length and interest rates. If the grantor survives the term, the home passes to beneficiaries outside the estate. Early death nullifies the benefit.'
   },
   {
-    id: 'CFP-TAX-B8-014',
+    id: 'cfp-tax-b8-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -279,7 +260,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Private foundations face: 1.39% excise tax on net investment income, 5% minimum annual distributions, prohibitions on self-dealing with substantial contributors, excess business holding limits, and jeopardy investment restrictions. Donors get 30% AGI limit for cash (vs 60% for public charities). Form 990-PF filing is required.'
   },
   {
-    id: 'CFP-TAX-B8-015',
+    id: 'cfp-tax-b8-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -299,7 +280,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-TAX-B8-016',
+    id: 'cfp-tax-b8-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -318,7 +299,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'If you deducted an expense (getting a tax benefit) and later recover that amount, the recovery is taxable income. Examples: deducted bad debt later recovered, state tax refund after itemizing in prior year. If the original deduction provided no benefit (standard deduction used), recovery isn\'t taxable.'
   },
   {
-    id: 'CFP-TAX-B8-017',
+    id: 'cfp-tax-b8-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -337,7 +318,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Debt discharged in bankruptcy is excluded. Insolvency excludes debt forgiveness to the extent of insolvency. Qualified principal residence debt exclusion has been extended. Certain student loan forgiveness is excluded through 2025. Otherwise, Form 1099-C cancellation amounts are taxable ordinary income.'
   },
   {
-    id: 'CFP-TAX-B8-018',
+    id: 'cfp-tax-b8-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -356,7 +337,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'CRTs provide current deduction based on present value of future charitable gift, income stream from trust assets, and removal of assets from estate. When funded with appreciated property, capital gains are avoided at contribution. Remainder (minimum 10% of initial value) goes to charity. Income is taxed to beneficiary under tier rules.'
   },
   {
-    id: 'CFP-TAX-B8-019',
+    id: 'cfp-tax-b8-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -375,7 +356,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The adoption credit covers qualified expenses (adoption fees, legal costs, court costs, travel) up to $16,810 (2024). Special needs adoptions get the full credit regardless of actual expenses. Income phaseout applies. The credit is nonrefundable but carryforward is available for 5 years.'
   },
   {
-    id: 'CFP-TAX-B8-020',
+    id: 'cfp-tax-b8-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -394,26 +375,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Investing capital gains in a Qualified Opportunity Fund within 180 days defers recognition until 2026 or earlier sale. Gains from the QOZ investment itself are excluded if held 10+ years. Original gain is eventually taxable but appreciation during QOZ holding period can be tax-free.'
   },
   {
-    id: 'CFP-TAX-B8-021',
-    courseId: 'cfp',
-    section: 'CFP-TAX',
-    blueprintArea: 'TAX-1',
-    topic: 'Tax Fundamentals',
-    subtopic: 'Assignment of Income',
-    difficulty: 'hard',
-    skillLevel: 'Remembering and Understanding',
-    question: 'The assignment of income doctrine prevents:',
-    options: [
-      'A) All gift-giving',
-      'D) Capital gain treatment',
-      'C) Business deductions',
-      'B) Taxpayers from shifting income to others in lower brackets by assigning the right to receive income that was already earned',
-    ],
-    correctAnswer: 3,
-    explanation: 'Income is taxed to the person who earns it, not someone they assign it to. You can\'t give away salary you\'ve earned to a child to be taxed at their rate. The fruit (income) is taxed to the tree (earner/owner). Legitimate transfers of income-producing property are distinguished from mere assignments of income.'
-  },
-  {
-    id: 'CFP-TAX-B8-022',
+    id: 'cfp-tax-b8-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -432,7 +394,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'All gambling winnings are taxable income. Losses are deductible only if itemizing and only up to the amount of winnings—you can\'t create a net gambling loss. Professional gamblers report on Schedule C and can deduct more expenses. W-2G is issued for certain large winnings.'
   },
   {
-    id: 'CFP-TAX-B8-023',
+    id: 'cfp-tax-b8-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -451,7 +413,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Self-employment income subject to self-employment tax is excluded from NIIT. The 3.8% surtax applies to investment income including interest, dividends, capital gains, rental and royalty income for taxpayers with modified AGI exceeding $200,000 (single) or $250,000 (MFJ).',
   },
   {
-    id: 'CFP-TAX-B8-024',
+    id: 'cfp-tax-b8-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -470,7 +432,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The GBC combines work opportunity, research, disabled access, low-income housing, and other credits. It\'s limited to net income tax minus 25% of tax exceeding $25,000. Unused credits generally carry back 1 year and forward 20 years (varies by component). Different ordering rules apply to components.'
   },
   {
-    id: 'CFP-TAX-B8-025',
+    id: 'cfp-tax-b8-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',

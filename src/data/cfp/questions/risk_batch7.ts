@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
   // RIS-1: Risk Assessment
   {
-    id: 'CFP-RIS-B7-001',
+    id: 'cfp-ris-b7-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Risk Matrix',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Risk matrix: plots probability (likelihood) vs. severity (impact). High probability/high severity: priority for risk transfer (insurance). Low probability/high severity: catastrophic—insurance essential. High probability/low severity: may self-insure with reserves. Low/low: accept the risk. Helps allocate limited risk management resources effectively.'
   },
   {
-    id: 'CFP-RIS-B7-002',
+    id: 'cfp-ris-b7-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Pure vs Speculative Risk',
     difficulty: 'easy',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Pure risk involves only the possibility of loss or no loss — there is no potential gain. Property damage from a hurricane is a pure risk because the only outcomes are loss (damage occurs) or no loss (no damage). Speculative risks like investing or starting a business include the possibility of gain.',
   },
   {
-    id: 'CFP-RIS-B7-003',
+    id: 'cfp-ris-b7-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Personal Risk Profile',
     difficulty: 'medium',
@@ -67,10 +67,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
   },
   // RIS-2: Life Insurance
   {
-    id: 'CFP-RIS-B7-004',
+    id: 'cfp-ris-b7-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Term Conversion',
     difficulty: 'medium',
@@ -86,10 +86,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Conversion privilege: term policyholders can convert to permanent insurance without new medical underwriting. Valuable if health declines. Limitations: must exercise before attainment age (typically 65-70) or within certain years, limited permanent policy choices. Premiums based on attained age at conversion. Key feature when evaluating term policies.'
   },
   {
-    id: 'CFP-RIS-B7-005',
+    id: 'cfp-ris-b7-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Accelerated Death Benefit',
     difficulty: 'easy',
@@ -105,10 +105,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Accelerated death benefit (ADB): access portion of death benefit early upon qualifying event (terminal illness with 6-24 month life expectancy, chronic illness requiring care, or critical illness like cancer). Amount received reduces death benefit. Often included at no cost. Provides living benefits from life insurance when needed most.'
   },
   {
-    id: 'CFP-RIS-B7-006',
+    id: 'cfp-ris-b7-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Key Person Insurance',
     difficulty: 'medium',
@@ -125,10 +125,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
   },
   // RIS-3: Health Insurance
   {
-    id: 'CFP-RIS-B7-007',
+    id: 'cfp-ris-b7-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'HSA Eligibility',
     difficulty: 'medium',
@@ -144,10 +144,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'HSA eligibility: must have HDHP (2024: individual deductible ≥$1,600, family ≥$3,200), cannot have other health coverage (including Medicare), cannot be claimed as dependent. Common disqualifiers: spouse\'s FSA, enrollment in Medicare. Once eligible, can contribute (2024: $4,150 individual, $8,300 family, plus $1,000 catch-up at 55+).'
   },
   {
-    id: 'CFP-RIS-B7-008',
+    id: 'cfp-ris-b7-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'ACA Cost-Sharing Reductions',
     difficulty: 'hard',
@@ -163,10 +163,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'CSRs reduce out-of-pocket costs (deductibles, copays, coinsurance, max out-of-pocket), not premiums. Only available: on marketplace Silver plans, income 100-250% FPL, Native Americans to 300%. Creates "enhanced Silver" with better cost-sharing. Premium tax credits reduce premiums; CSR reduces what you pay when using care. Different benefits, both income-based.'
   },
   {
-    id: 'CFP-RIS-B7-009',
+    id: 'cfp-ris-b7-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'CHIP',
     difficulty: 'easy',
@@ -183,10 +183,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
   },
   // RIS-4: Disability Insurance
   {
-    id: 'CFP-RIS-B7-010',
+    id: 'cfp-ris-b7-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Partial Disability',
     difficulty: 'medium',
@@ -202,10 +202,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Partial/residual disability: pays proportional benefit when earning capacity is reduced (typically 20%+ income loss). Formula often: (Pre-disability income - Current income) / Pre-disability income × Full benefit. Encourages return to work without losing all benefits. Some policies require initial total disability; others cover partial from onset.'
   },
   {
-    id: 'CFP-RIS-B7-011',
+    id: 'cfp-ris-b7-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'COLA Rider',
     difficulty: 'medium',
@@ -221,10 +221,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'A COLA rider on disability insurance increases the benefit amount after the first anniversary of a disability claim, typically adjusting for CPI inflation. The increases continue each year the insured remains disabled, protecting the purchasing power of long-term disability benefits against inflation.',
   },
   {
-    id: 'CFP-RIS-B7-012',
+    id: 'cfp-ris-b7-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Social Insurance Substitute',
     difficulty: 'hard',
@@ -241,10 +241,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
   },
   // RIS-5: Property and Casualty
   {
-    id: 'CFP-RIS-B7-013',
+    id: 'cfp-ris-b7-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Ordinance or Law Coverage',
     difficulty: 'hard',
@@ -260,10 +260,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Ordinance/law coverage: when repairing damaged buildings, current codes may require upgrades (undamaged portions must comply). Standard policies don\'t cover code upgrades or demolishing undamaged portions. Coverage includes: undamaged portion loss, demolition costs, increased construction costs. Essential for older buildings; standard policies explicitly exclude.'
   },
   {
-    id: 'CFP-RIS-B7-014',
+    id: 'cfp-ris-b7-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Scheduled Personal Property',
     difficulty: 'easy',
@@ -279,10 +279,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Scheduling: lists specific items with appraised values. Benefits: higher limits than policy sub-limits (jewelry often capped at $1,500), broader perils (typically all-risk), agreed value (no depreciation disputes), often no deductible. Requires current appraisals. Items: jewelry, fine art, antiques, collectibles, musical instruments, camera equipment.'
   },
   {
-    id: 'CFP-RIS-B7-015',
+    id: 'cfp-ris-b7-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Medical Payments Coverage',
     difficulty: 'easy',
@@ -299,10 +299,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RIS-B7-016',
+    id: 'cfp-ris-b7-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Moral Hazard',
     difficulty: 'medium',
@@ -318,10 +318,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Morale hazard (distinct from moral hazard) involves carelessness or indifference about preventing losses because insurance coverage exists. Failing to inform the insurer about increased risk reflects morale hazard. Moral hazard involves intentional actions to cause losses, while adverse selection involves concealing known risks at application.',
   },
   {
-    id: 'CFP-RIS-B7-017',
+    id: 'cfp-ris-b7-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Guaranteed Issue',
     difficulty: 'medium',
@@ -337,10 +337,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Guaranteed issue: no medical questions or exams—everyone accepted. Trade-offs: low face amounts ($5K-$25K typically), high premiums (company assumes high-risk pool), graded benefits (limited or no benefit for natural death in first 2-3 years). Designed for final expenses when uninsurable elsewhere. Last resort—explore other options first.'
   },
   {
-    id: 'CFP-RIS-B7-018',
+    id: 'cfp-ris-b7-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Short-Term Health Insurance',
     difficulty: 'medium',
@@ -356,10 +356,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Short-term medical insurance: temporary coverage (3-12 months, sometimes renewable). Not ACA-compliant: can exclude pre-existing conditions, impose limits, offer limited benefits. May exclude maternity, mental health, preventive care. Lower premiums than ACA plans but significant protection gaps. Bridge coverage only—not long-term substitute.'
   },
   {
-    id: 'CFP-RIS-B7-019',
+    id: 'cfp-ris-b7-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Integration with Employer Coverage',
     difficulty: 'hard',
@@ -375,10 +375,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Coordination considerations: employer-paid STD/LTD benefits are taxable; employee-paid are tax-free. Total replacement should target 60-70% of gross (80%+ of net). Employer policies may have weak disability definitions. Personal policies supplement with own-occupation coverage, portable protection. Insurers cap total coverage around 60-70% of income.'
   },
   {
-    id: 'CFP-RIS-B7-020',
+    id: 'cfp-ris-b7-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Loss of Use Coverage',
     difficulty: 'easy',
@@ -394,10 +394,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Loss of use (Coverage D): pays additional living expenses when home is uninhabitable due to covered peril. Includes: hotel/rental costs, restaurant meals above normal food costs, laundry, storage. Pays difference between normal expenses and actual costs incurred. Limit typically 20-30% of dwelling coverage. Critical for maintaining lifestyle during repairs.'
   },
   {
-    id: 'CFP-RIS-B7-021',
+    id: 'cfp-ris-b7-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Assessment',
     subtopic: 'Self-Insurance Calculation',
     difficulty: 'hard',
@@ -413,10 +413,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Self-insurance analysis: premium saved vs. expected claims (actuarial value), ability to absorb maximum possible loss (capital adequacy), opportunity cost of held reserves (could invest elsewhere), administrative costs, and risk tolerance. Self-insure: high frequency/low severity. Transfer to insurer: low frequency/high severity catastrophes.'
   },
   {
-    id: 'CFP-RIS-B7-022',
+    id: 'cfp-ris-b7-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Policy Loan Interest',
     difficulty: 'medium',
@@ -432,10 +432,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Policy loan interest: typically not deductible (personal loan). Interest accrues and adds to loan balance. If total loan exceeds cash value, policy lapses. On lapse: if gains exist (total premiums paid < cash value + loan), gain is taxable income even though no cash received. Must monitor loan balance vs. cash value to prevent unintended lapse.'
   },
   {
-    id: 'CFP-RIS-B7-023',
+    id: 'cfp-ris-b7-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Mental Health Parity',
     difficulty: 'medium',
@@ -451,10 +451,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Mental Health Parity Act: if a plan covers mental health/substance use, it must be comparable to medical benefits—can\'t have stricter financial requirements (copays, deductibles) or treatment limitations (visit caps). Applies to group plans with 50+ employees and ACA individual plans. Doesn\'t require coverage but ensures parity if offered.'
   },
   {
-    id: 'CFP-RIS-B7-024',
+    id: 'cfp-ris-b7-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Overhead Expense Insurance',
     difficulty: 'medium',
@@ -470,10 +470,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     explanation: 'BOE insurance covers fixed monthly business expenses such as rent, utilities, employee salaries, insurance premiums, and equipment leases during the owner\'s disability. It does not cover the owner\'s salary, profit distributions, or personal expenses. Benefits are tax-deductible as a business expense.',
   },
   {
-    id: 'CFP-RIS-B7-025',
+    id: 'cfp-ris-b7-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Personal Injury Liability',
     difficulty: 'medium',

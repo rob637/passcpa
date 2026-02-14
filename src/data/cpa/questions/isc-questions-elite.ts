@@ -134,7 +134,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     id: 'isc-elite-007',
     courseId: 'cpa',
     section: 'ISC',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     topic: 'Data Privacy',
     subtopic: 'Data Subject Rights',
     difficulty: 'hard',
@@ -158,7 +158,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'SOC Reporting',
     subtopic: 'Trust Services Criteria',
     difficulty: 'hard',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'The Trust Services Criteria used in SOC 2 reports include:',
     options: [
@@ -179,7 +179,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'AI/ML in Accounting',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'AI/ML applications in accounting include:',
     options: [
@@ -200,7 +200,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'Cloud Computing',
     subtopic: 'Cloud Shared Responsibility',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'An organization implements a cloud access security broker (CASB) to monitor and control access to cloud-based financial applications. The CASB identifies that employees are using 47 unsanctioned cloud applications (shadow IT) to store and share financial data, including customer account information and internal financial reports. The IT department was unaware of these applications. What should the auditor assess?',
     options: [
@@ -321,7 +321,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     id: 'isc-elite-016',
     courseId: 'cpa',
     section: 'ISC',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     topic: 'Data Management',
     subtopic: 'Data Quality Dimensions',
     difficulty: 'hard',
@@ -408,7 +408,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'Blockchain Consensus',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Proof of Work (PoW) and Proof of Stake (PoS) are:',
     options: [
@@ -429,7 +429,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'Data Privacy',
     subtopic: 'Privacy by Design',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'An organization\'s privacy impact assessment (PIA) reveals that its customer analytics platform profiles individuals using data from multiple sources including purchase history, browsing behavior, and third-party data brokers. The platform was deployed without approval from the data protection officer (DPO). Under GDPR Article 35, what compliance issue exists?',
     options: [
@@ -534,7 +534,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'Edge Computing',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Edge computing processes data:',
     options: [
@@ -555,7 +555,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'SOC Reporting',
     subtopic: 'Bridge Letter',
     difficulty: 'hard',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Application',
     question: 'A SOC report bridge letter:',
     options: [
@@ -576,7 +576,7 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     topic: 'Data Management',
     subtopic: 'Data Lineage',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Data lineage tracks:',
     options: [

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
   // PSY-1: Client Communication (Questions 1-8)
   {
-    id: 'CFP-PSY-001',
+    id: 'cfp-psy-001',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -28,7 +28,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Response B reflects the client\'s concern back to them, demonstrating understanding before moving forward. This builds trust and ensures you understand the client correctly. A dismisses the concern, C jumps to data gathering without acknowledging emotion, and D minimizes the feeling.'
   },
   {
-    id: 'CFP-PSY-002',
+    id: 'cfp-psy-002',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -47,7 +47,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'The Conscientiousness style is characterized by analytical thinking, desire for accuracy and detail, and methodical decision-making. These clients want data, calculations, and time to analyze. Dominance wants bottom-line results quickly, Influence prefers relationship and enthusiasm, and Steadiness values stability and support.'
   },
   {
-    id: 'CFP-PSY-003',
+    id: 'cfp-psy-003',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -66,7 +66,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Open-ended questions cannot be answered with a simple yes/no and encourage clients to elaborate. "What does financial success mean to you?" invites exploration of values and goals. The other options are closed-ended questions useful for data gathering but not for exploring feelings or values.'
   },
   {
-    id: 'CFP-PSY-004',
+    id: 'cfp-psy-004',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -85,7 +85,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Dominant-style clients value efficiency, directness, and results. They want the bottom line without extensive preamble. Adapt by being concise, focusing on outcomes, and avoiding excessive detail. They can ask for more detail if needed—start with the conclusion.'
   },
   {
-    id: 'CFP-PSY-005',
+    id: 'cfp-psy-005',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -104,7 +104,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'The term "comfortable" is subjective and means different things to different clients. Before making any recommendations, clarify what the client means. This exploration builds understanding and ensures recommendations align with the client\'s actual vision, not your assumptions.'
   },
   {
-    id: 'CFP-PSY-006',
+    id: 'cfp-psy-006',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -123,7 +123,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Closed body language often signals discomfort, disagreement, or confusion. The best approach is to gently acknowledge this and invite the client to share what\'s on their mind. This demonstrates emotional intelligence and prevents moving forward without addressing underlying concerns.'
   },
   {
-    id: 'CFP-PSY-007',
+    id: 'cfp-psy-007',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -142,7 +142,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Scaling questions (e.g., "On a scale of 1-10, how important is X?") help quantify priorities and make trade-offs visible. This is especially useful when clients have multiple goals that may compete for resources. Open-ended questions explore but don\'t quantify; closed-ended gather facts.'
   },
   {
-    id: 'CFP-PSY-008',
+    id: 'cfp-psy-008',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -163,7 +163,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
   
   // PSY-2: Behavioral Finance (Questions 9-18)
   {
-    id: 'CFP-PSY-009',
+    id: 'cfp-psy-009',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -182,7 +182,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Anchoring bias occurs when a client fixates on an irrelevant reference point—in this case, the purchase price. The purchase price is economically irrelevant to the future prospects of the stock, but the client is "anchored" to it. While loss aversion may also be present, the specific fixation on the purchase price is anchoring.'
   },
   {
-    id: 'CFP-PSY-010',
+    id: 'cfp-psy-010',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -201,7 +201,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Confirmation bias leads people to seek information that confirms existing beliefs while ignoring contradictory evidence. This client actively selects information sources that support their view and dismisses opposing views without analysis.'
   },
   {
-    id: 'CFP-PSY-011',
+    id: 'cfp-psy-011',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -220,7 +220,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Prospect Theory (Kahneman & Tversky) demonstrates that losses loom larger than gains—typically about 2:1. A $1,000 loss causes approximately twice the emotional pain as the pleasure from a $1,000 gain. This explains why clients often make irrational decisions to avoid losses.'
   },
   {
-    id: 'CFP-PSY-012',
+    id: 'cfp-psy-012',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -239,7 +239,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Recency bias leads clients to extrapolate recent trends indefinitely into the future. After a strong market year, clients may expect continued gains and want more equity exposure. The client\'s fundamental risk tolerance hasn\'t changed—they\'re being influenced by recent performance.'
   },
   {
-    id: 'CFP-PSY-013',
+    id: 'cfp-psy-013',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -258,7 +258,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Herding occurs when investors follow the crowd rather than making independent analysis. When "everyone" is buying or talking about something, the herd instinct kicks in. Herding often peaks near market tops (euphoria) and bottoms (panic).'
   },
   {
-    id: 'CFP-PSY-014',
+    id: 'cfp-psy-014',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -277,7 +277,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'The endowment effect causes people to value what they own more highly than its objective market value. This is especially strong with inherited or sentimental assets. The client assigns emotional value beyond market value because they possess it.'
   },
   {
-    id: 'CFP-PSY-015',
+    id: 'cfp-psy-015',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -296,7 +296,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Mental accounting causes people to treat money differently based on its source or intended purpose, even when fungibility suggests otherwise. The savings is mentally "earmarked" for emergencies despite the mathematical logic of paying down high-interest debt.'
   },
   {
-    id: 'CFP-PSY-016',
+    id: 'cfp-psy-016',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -315,7 +315,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'A written IPS with automatic rebalancing removes emotion from decisions. It addresses loss aversion (predetermined rules), recency bias (stick to allocation), and status quo bias (automatic rebalancing). Systematic approaches work better than relying on willpower to overcome biases.'
   },
   {
-    id: 'CFP-PSY-017',
+    id: 'cfp-psy-017',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -334,7 +334,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Regret aversion causes people to avoid decisions that might cause regret later. The client fears the regret of investing "at the wrong time" more than they value the potential gains. This often leads to paralysis and missed opportunities.'
   },
   {
-    id: 'CFP-PSY-018',
+    id: 'cfp-psy-018',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -355,7 +355,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
   
   // PSY-3: Money Scripts and Counseling (Questions 19-25)
   {
-    id: 'CFP-PSY-019',
+    id: 'cfp-psy-019',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -374,7 +374,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Money Avoidance is characterized by beliefs that money is bad or unimportant, leading to under-earning, not paying attention to finances, or giving money away excessively. Despite high earnings, this client\'s avoidant behavior undermines wealth building.'
   },
   {
-    id: 'CFP-PSY-020',
+    id: 'cfp-psy-020',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -393,7 +393,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Money Vigilance involves alertness, concern about finances, and discretion about money. While it\'s associated with positive financial behaviors like saving, it can also cause excessive anxiety about spending, difficulty enjoying money, and reluctance to discuss finances even when helpful.'
   },
   {
-    id: 'CFP-PSY-021',
+    id: 'cfp-psy-021',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -412,7 +412,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'After the death of a spouse, clients should generally avoid major financial decisions for 6-12 months. Grief impairs decision-making, and decisions made in acute grief are often regretted later. The planner should ensure liquidity for immediate needs while encouraging delay of major, irreversible decisions.'
   },
   {
-    id: 'CFP-PSY-022',
+    id: 'cfp-psy-022',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -431,7 +431,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals should recognize the limits of their competence. Signs of depression or other mental health issues warrant referral to appropriate professionals. While planners can provide emotional support, they are not qualified to provide mental health treatment.'
   },
   {
-    id: 'CFP-PSY-023',
+    id: 'cfp-psy-023',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -450,7 +450,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'Money Status associates self-worth with net worth and external displays of wealth. These clients often overspend on luxury items to project an image, sometimes at the expense of building actual wealth. They believe others evaluate them based on possessions.'
   },
   {
-    id: 'CFP-PSY-024',
+    id: 'cfp-psy-024',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -469,7 +469,7 @@ export const CFP_PSYCHOLOGY_QUESTIONS: Question[] = [
     explanation: 'In the Contemplation stage, individuals are aware they should change and may be weighing pros and cons, but haven\'t committed to action. They acknowledge the problem but haven\'t moved to preparation. The planner should explore ambivalence without pushing prematurely.'
   },
   {
-    id: 'CFP-PSY-025',
+    id: 'cfp-psy-025',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',

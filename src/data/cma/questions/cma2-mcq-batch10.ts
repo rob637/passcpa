@@ -1029,8 +1029,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
       '$250,000',
       '$290,000',
     ],
-    correctAnswer: 2,
-    explanation: 'EV = (0.70 × $500,000) + (0.30 × -$200,000) - $50,000 = $350,000 - $60,000 - $50,000 = $240,000. Wait: The launch cost is separate. Better: EV of outcomes = 0.70(500,000) + 0.30(-200,000) = 350,000 - 60,000 = 290,000. Minus launch cost: 290,000 - 50,000 = 240,000. That\'s option A. Let me reconsider if the $500,000 is net of launch. If net: 0.70(500,000) + 0.30(-200,000) = 350,000 - 60,000 = $290,000 which is C.',
+    correctAnswer: 1,
+    explanation: 'Expected value of outcomes = (0.70 × $500,000) + (0.30 × −$200,000) = $350,000 − $60,000 = $290,000. Subtract the $50,000 launch cost: EV = $290,000 − $50,000 = $240,000. The launch is worthwhile since EV is positive.',
     reference: 'IMA CMA Content Specification',
   },
 ];

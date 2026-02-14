@@ -40,11 +40,11 @@ export const WORLD_CLASS_BATCH_7: Question[] = [
     options: [
       '$90,000',
       '$112,500',
-      '$117,500',
+      '$95,000',
       '$120,000',
     ],
     correctAnswer: 2,
-    explanation: 'Investment cost = $1,000,000. 30% of book value = 30% × $2,500,000 = $750,000. Excess = $250,000 (attributable to equipment). Annual amortization = $250,000 ÷ 10 = $25,000. Income: 30% × $400,000 = $120,000 - $25,000 amortization × 30% = $120,000 - $7,500 = $112,500. Let me recalculate: The $25,000 annual amortization reduces investment income directly. Investment income = $120,000 - $25,000 = $95,000. Actually, the excess of $250,000 is Investor\'s share, so amortization = $25,000 per year. Income = $120,000 - $25,000 = $95,000. Checking option B: $117,500 suggests different calc. The standard approach: Income recognized = (Investee income × ownership %) - FV amortization = ($400,000 × 30%) - $25,000 = $95,000.',
+    explanation: 'Under the equity method, Investor recognizes 30% of Investee\'s income less amortization of excess cost. Investment cost $1,000,000 − 30% of book value ($750,000) = $250,000 excess attributable to equipment. Annual amortization = $250,000 ÷ 10 years = $25,000. Investment income = (30% × $400,000) − $25,000 = $120,000 − $25,000 = $95,000. Dividends received ($30,000 = 30% × $100,000) reduce the investment account but do not affect income recognition.',
     reference: 'ASC 323-10-35',
   },
   {

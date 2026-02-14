@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
   // TAX-1: Income Tax Fundamentals
   {
-    id: 'CFP-TAX-B9-001',
+    id: 'cfp-tax-b9-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Assignment of income prevents tax avoidance through income shifting. You can\'t assign earned income to a lower-bracket family member—it\'s taxed to the earner. Property income is taxed to the owner. To shift income, you must transfer the underlying property. Lucas v. Earl and Helvering v. Horst are landmark cases.'
   },
   {
-    id: 'CFP-TAX-B9-002',
+    id: 'cfp-tax-b9-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Community property states (CA, TX, WA, etc.): earnings and property acquired during marriage are owned 50/50. This affects taxation (especially on MFS returns), estate planning (automatic 50% ownership), and divorce (equal division). Separate property (pre-marriage, inheritance, gifts) remains individually owned.'
   },
   {
-    id: 'CFP-TAX-B9-003',
+    id: 'cfp-tax-b9-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
   },
   // TAX-2: Deductions and Credits
   {
-    id: 'CFP-TAX-B9-004',
+    id: 'cfp-tax-b9-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'TCJA eliminated the employee home office deduction through 2025 (unreimbursed employee expenses formerly under miscellaneous itemized deductions). Self-employed can still deduct using simplified method ($5/sq ft, max 300 sq ft) or actual expense proration. Space must be exclusively and regularly used for business.'
   },
   {
-    id: 'CFP-TAX-B9-005',
+    id: 'cfp-tax-b9-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Business meals: 50% deductible (temporary 100% for restaurant meals 2021-2022 has expired). Requirements: ordinary and necessary expense, not lavish, taxpayer or employee present, substantiation (amount, date, place, business purpose, relationship). Entertainment expenses are generally not deductible post-TCJA.'
   },
   {
-    id: 'CFP-TAX-B9-006',
+    id: 'cfp-tax-b9-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,7 +125,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
   },
   // TAX-3: Investment Taxation
   {
-    id: 'CFP-TAX-B9-007',
+    id: 'cfp-tax-b9-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -144,7 +144,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Collectibles gains: maximum 28% (vs. 0/15/20% for most LTCG). This includes art, antiques, gems, stamps, coins, precious metals, and most importantly for planning—gains on gold/precious metals ETFs holding physical metals. Some collectibles in self-directed IRAs trigger UBIT. Higher rate reduces after-tax returns.'
   },
   {
-    id: 'CFP-TAX-B9-008',
+    id: 'cfp-tax-b9-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Straddle rules prevent recognizing losses on one leg while continuing to hold offsetting gain positions. If positions substantially diminish risk (opposite market directions, same underlying), losses may be deferred, holding period suspended, and interest/carrying costs capitalized. Complex rules affect options, commodities, and some equity strategies.'
   },
   {
-    id: 'CFP-TAX-B9-009',
+    id: 'cfp-tax-b9-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +183,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
   },
   // TAX-4: Business Taxation
   {
-    id: 'CFP-TAX-B9-010',
+    id: 'cfp-tax-b9-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +202,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Section 179: expense qualifying property (equipment, some software, qualified improvements) instead of depreciating. 2024 limit: $1,160,000, phasing out when purchases exceed $2.89M. Limited to taxable income from active business. Can be combined with bonus depreciation. Enables significant first-year deductions for capital purchases.'
   },
   {
-    id: 'CFP-TAX-B9-011',
+    id: 'cfp-tax-b9-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -221,7 +221,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'SSTBs (health, law, accounting, actuarial, performing arts, consulting, athletics, financial services, brokerage) have stricter limits. Above thresholds ($191,950 single/$383,900 MFJ in 2024), the QBI deduction phases out completely—no W-2/capital limitation helps. Non-SSTB businesses can still qualify using W-2 wages or property limits above thresholds.'
   },
   {
-    id: 'CFP-TAX-B9-012',
+    id: 'cfp-tax-b9-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -241,7 +241,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
   },
   // TAX-5: Estate and Gift Tax
   {
-    id: 'CFP-TAX-B9-013',
+    id: 'cfp-tax-b9-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -260,26 +260,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'GST prevents avoiding estate tax by skipping generations. Skip persons: those two or more generations below (grandchildren unless parent deceased). Three types: direct skip (outright gift), taxable termination (trust interest ends), taxable distribution (distribution from trust). 40% flat rate, with exemption equal to estate exemption ($13.61M in 2024).'
   },
   {
-    id: 'CFP-TAX-B9-014',
-    courseId: 'cfp',
-    section: 'CFP-TAX',
-    blueprintArea: 'TAX-5',
-    topic: 'Estate/Gift Tax',
-    subtopic: 'Disclaimers',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'A qualified disclaimer allows a beneficiary to:',
-    options: [
-      'B) Refuse an inheritance without gift tax consequences, redirecting property to the next beneficiary',
-      'A) Accept and then give away property',
-      'D) Change the will',
-      'C) Delay taking property indefinitely',
-    ],
-    correctAnswer: 0,
-    explanation: 'Qualified disclaimers (IRC 2518): beneficiary refuses property within 9 months without accepting any benefits. Property passes as if disclaimant predeceased—no gift from disclaimant. Uses: redirect to lower tax bracket/younger generation, avoid increasing disclaimant\'s estate, post-mortem estate planning. Can\'t direct where property goes.'
-  },
-  {
-    id: 'CFP-TAX-B9-015',
+    id: 'cfp-tax-b9-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -299,7 +280,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-TAX-B9-016',
+    id: 'cfp-tax-b9-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -318,7 +299,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Debt forgiveness = income (you received cash/benefit, now don\'t have to repay). Exceptions: discharge in bankruptcy (Title 11), insolvency (to extent insolvent), qualified farm/business debt, qualified principal residence debt (extended through 2025). Excluded amounts may reduce tax attributes (losses, basis). Form 1099-C reports cancellations over $600.'
   },
   {
-    id: 'CFP-TAX-B9-017',
+    id: 'cfp-tax-b9-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -337,7 +318,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Self-employed health insurance deduction is above-the-line (reducing AGI regardless of itemizing). Limited to net self-employment income. Covers self, spouse, dependents, and children under 27. Cannot use if eligible for employer-subsidized plan. Does NOT reduce self-employment tax base—only income tax. Important distinction from business expense.'
   },
   {
-    id: 'CFP-TAX-B9-018',
+    id: 'cfp-tax-b9-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -356,7 +337,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Section 1256 contracts: mark-to-market at year-end (even if position is open), with gains/losses treated 60% LTCG, 40% STCG regardless of actual holding period. Applies to regulated futures, forex contracts, nonequity options, dealer equity options. Blended rate is favorable vs. short-term ordinary rates. Losses can be carried back 3 years.'
   },
   {
-    id: 'CFP-TAX-B9-019',
+    id: 'cfp-tax-b9-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -375,7 +356,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Start-up costs (investigating, creating a business before it begins): $5,000 immediate deduction, reduced dollar-for-dollar for costs over $50,000. Remaining costs amortize over 180 months starting with business month. Organizational costs (legal/state fees for entity) have same treatment. Election required; costs must meet capital expenditure tests.'
   },
   {
-    id: 'CFP-TAX-B9-020',
+    id: 'cfp-tax-b9-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -394,7 +375,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'State death taxes vary widely. Estate taxes (about 12 states + DC) often have lower exemptions than federal ($1M-$6M). Inheritance taxes (about 6 states) tax recipients based on relationship. Some states have both. Many have no death tax. Planning must consider residence and property location. State taxes aren\'t eliminated by federal exemption.'
   },
   {
-    id: 'CFP-TAX-B9-021',
+    id: 'cfp-tax-b9-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -413,7 +394,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Kiddie tax prevents income shifting via gifts of income-producing property to children in lower brackets. Applies: under 19, or under 24 if full-time student, with unearned income over $2,500 (2024). Excess taxed at parents\' marginal rate. Reduces benefit of UGMA/UTMA accounts for tax purposes. Planning: use growth/deferred investments before child ages out.'
   },
   {
-    id: 'CFP-TAX-B9-022',
+    id: 'cfp-tax-b9-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -432,7 +413,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Saver\'s Credit: nonrefundable credit for retirement contributions (IRA, 401k, etc.). Credit rate: 50%/20%/10% based on AGI. 2024 limits: 50% rate for AGI up to $23K single. Max credit: $1,000 ($2,000 MFJ). Must be 18+, not student or dependent. Stacks with retirement contribution deduction—double benefit for eligible savers.'
   },
   {
-    id: 'CFP-TAX-B9-023',
+    id: 'cfp-tax-b9-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -451,7 +432,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Installment sales (at least one payment after sale year) spread gain as payments are received. Gross profit ratio determines taxable portion of each principal payment. Interest is separately taxable. Not available for inventory, stocks traded on exchanges, or depreciation recapture. Can elect out. Useful for managing income/bracket.'
   },
   {
-    id: 'CFP-TAX-B9-024',
+    id: 'cfp-tax-b9-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -470,7 +451,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     explanation: 'C corp double taxation: profits taxed at 21% corporate rate, then dividends taxed to shareholders (qualified dividend rates 0/15/20% + possibly NIIT). Combined rate can exceed 50% with some high-earners. S corps, partnerships avoid this with pass-through. C corps may still be preferable for: high retention, equity compensation, or certain benefits.'
   },
   {
-    id: 'CFP-TAX-B9-025',
+    id: 'cfp-tax-b9-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',

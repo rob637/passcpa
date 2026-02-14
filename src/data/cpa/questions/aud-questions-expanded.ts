@@ -184,26 +184,6 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     reference: 'AU-C 580',
   },
   {
-    id: 'aud-exp-009',
-    courseId: 'cpa',
-    section: 'AUD',
-    blueprintArea: 'AUD-III',
-    topic: 'Audit Evidence',
-    subtopic: 'Inquiry Limitations',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'An auditor is evaluating a client\'s allowance for doubtful accounts. Which combination of procedures would provide the most relevant evidence?',
-    options: [
-    'Confirming all receivable balances and adding a standard percentage',
-    'Aging the receivables, reviewing subsequent collections, analyzing historical loss rates, and evaluating specific identified problem accounts',
-    'Accepting management\'s estimate without additional testing',
-    'Comparing the current year allowance to the prior year without further analysis',
-    ],
-    correctAnswer: 1,
-    explanation: 'Evaluating the allowance for doubtful accounts requires a multi-faceted approach: (1) aging analysis to identify past-due amounts, (2) subsequent collections testing to see which balances were actually collected, (3) historical loss rate analysis for trend evaluation, and (4) specific identification of known problem accounts. This combination provides comprehensive evidence for the estimation.',
-    reference: 'AU-C 500.A24',
-  },
-  {
     id: 'aud-exp-010',
     section: 'AUD',
     courseId: 'cpa',
@@ -345,7 +325,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Report Elements',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'The auditor\'s report must include:',
     options: [
@@ -366,7 +346,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'An adverse opinion is expressed when:',
     options: [
@@ -387,7 +367,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Disclaimer of Opinion',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'A disclaimer of opinion is issued when:',
     options: [
@@ -408,7 +388,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Special Reports',
     subtopic: 'Compliance Audits',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'A compliance audit under Government Auditing Standards requires:',
     options: [
@@ -425,7 +405,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     id: 'aud-exp-020',
     courseId: 'cpa',
     section: 'AUD',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     topic: 'Other Reports',
     subtopic: 'Agreed-Upon Procedures',
     difficulty: 'medium',
@@ -786,7 +766,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Special Purpose Frameworks',
     subtopic: 'Types',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'Special purpose frameworks include:',
     options: [
@@ -807,7 +787,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Single Audits',
     subtopic: 'Major Programs',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'In a Single Audit, major programs are:',
     options: [
@@ -828,7 +808,7 @@ export const AUD_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Communications',
     subtopic: 'Significant Matters',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'The auditor must communicate to governance significant matters including:',
     options: [

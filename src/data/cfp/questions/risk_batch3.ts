@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   // RIS-1: Life Insurance
   {
-    id: 'CFP-RIS-B3-001',
+    id: 'cfp-ris-b3-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Needs Analysis',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The human life value approach calculates the present value of the insured\'s future income stream that would be lost upon death. It considers factors like current income, expected raises, years until retirement, and an appropriate discount rate. This approach often results in higher insurance needs than the needs analysis approach.'
   },
   {
-    id: 'CFP-RIS-B3-002',
+    id: 'cfp-ris-b3-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Term vs. Permanent',
     difficulty: 'easy',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Term insurance provides death benefit protection for a specified period (term) without cash value accumulation. It has lower initial premiums but no coverage beyond the term. Permanent insurance (whole life, universal life) provides lifetime coverage with cash value accumulation at higher initial premiums.'
   },
   {
-    id: 'CFP-RIS-B3-003',
+    id: 'cfp-ris-b3-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Whole Life',
     difficulty: 'medium',
@@ -66,10 +66,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Traditional whole life insurance features fixed premiums, guaranteed death benefits, and guaranteed cash value accumulation. The insurer invests in its general account and bears the investment risk. This differs from universal life (flexible premiums) and variable life (separate accounts with investment risk on the owner).'
   },
   {
-    id: 'CFP-RIS-B3-004',
+    id: 'cfp-ris-b3-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Universal Life',
     difficulty: 'medium',
@@ -85,10 +85,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Universal life offers premium flexibility (within limits), adjustable death benefits, and transparent cost structure showing mortality charges, expense charges, and interest credits. The policyholder can increase or decrease premiums and coverage as needs change, within policy guidelines.'
   },
   {
-    id: 'CFP-RIS-B3-005',
+    id: 'cfp-ris-b3-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Policy Loans',
     difficulty: 'medium',
@@ -105,10 +105,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-2: Health Insurance
   {
-    id: 'CFP-RIS-B3-006',
+    id: 'cfp-ris-b3-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'HSA Eligibility',
     difficulty: 'medium',
@@ -124,10 +124,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'HSA eligibility requires enrollment in a qualifying High Deductible Health Plan (HDHP) with minimum deductibles and maximum out-of-pocket limits set by IRS. The individual cannot be enrolled in Medicare, covered by a non-HDHP, or claimed as a dependent on someone else\'s tax return.'
   },
   {
-    id: 'CFP-RIS-B3-007',
+    id: 'cfp-ris-b3-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'HSA Benefits',
     difficulty: 'easy',
@@ -143,10 +143,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'HSAs provide: (1) tax-deductible contributions (or pre-tax if through payroll), (2) tax-free growth on earnings, and (3) tax-free withdrawals for qualified medical expenses. No other account offers this triple tax benefit. Unused balances carry forward indefinitely.'
   },
   {
-    id: 'CFP-RIS-B3-008',
+    id: 'cfp-ris-b3-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'Medicare',
     difficulty: 'medium',
@@ -162,10 +162,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Medicare Part B covers outpatient services including physician visits, diagnostic tests, outpatient surgery, durable medical equipment, and preventive services. After meeting the annual deductible, beneficiaries typically pay 20% coinsurance for covered services. Part A covers inpatient hospital care, and Part D covers prescriptions.',
   },
   {
-    id: 'CFP-RIS-B3-009',
+    id: 'cfp-ris-b3-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'COBRA',
     difficulty: 'easy',
@@ -182,10 +182,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-3: Disability Insurance
   {
-    id: 'CFP-RIS-B3-010',
+    id: 'cfp-ris-b3-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Own-Occupation Definition',
     difficulty: 'medium',
@@ -201,10 +201,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Own-occupation is the most liberal definition—you are disabled if you cannot perform the duties of your specific occupation, even if you could work in another field. "Any-occupation" policies (less favorable) require inability to work in any job for which you are reasonably suited by education and experience.'
   },
   {
-    id: 'CFP-RIS-B3-011',
+    id: 'cfp-ris-b3-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Elimination Period',
     difficulty: 'easy',
@@ -220,10 +220,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The elimination period (waiting period) is the time after disability begins before benefits are payable—similar to a deductible, but measured in time rather than dollars. Longer elimination periods (90 days vs. 30 days) result in lower premiums. Emergency funds should cover this waiting period.'
   },
   {
-    id: 'CFP-RIS-B3-012',
+    id: 'cfp-ris-b3-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Taxation of Benefits',
     difficulty: 'medium',
@@ -240,10 +240,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-4: Property and Liability Insurance
   {
-    id: 'CFP-RIS-B3-013',
+    id: 'cfp-ris-b3-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Replacement Cost vs. ACV',
     difficulty: 'easy',
@@ -259,10 +259,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Replacement cost coverage pays to replace damaged property with similar new property without deducting depreciation. Actual Cash Value (ACV) = Replacement cost minus depreciation. Replacement cost coverage provides better protection but has higher premiums.'
   },
   {
-    id: 'CFP-RIS-B3-014',
+    id: 'cfp-ris-b3-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Coinsurance',
     difficulty: 'hard',
@@ -278,10 +278,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Coinsurance formula: (Insurance carried ÷ Insurance required) × Loss = Payment. Required: $400,000 × 80% = $320,000. Carried: $280,000. Payment: ($280,000 ÷ $320,000) × $100,000 = 87.5% × $100,000 = $87,500. Underinsurance results in the policyholder sharing the loss.'
   },
   {
-    id: 'CFP-RIS-B3-015',
+    id: 'cfp-ris-b3-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Liability Insurance',
     subtopic: 'Umbrella Policy',
     difficulty: 'medium',
@@ -297,10 +297,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Umbrella policies provide excess liability coverage (typically $1-5 million or more) above auto, homeowners, and other primary policies. They also provide broader coverage for some claims not covered by underlying policies. Underlying policies with minimum limits are usually required.'
   },
   {
-    id: 'CFP-RIS-B3-016',
+    id: 'cfp-ris-b3-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Auto Insurance',
     subtopic: 'Liability Coverage',
     difficulty: 'easy',
@@ -317,10 +317,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-5: Long-Term Care
   {
-    id: 'CFP-RIS-B3-017',
+    id: 'cfp-ris-b3-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'LTC Triggers',
     difficulty: 'medium',
@@ -336,10 +336,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Tax-qualified LTC policies require inability to perform at least 2 of 6 ADLs (bathing, dressing, eating, toileting, transferring, continence) for 90+ days, or cognitive impairment requiring substantial supervision. This is the benefit trigger that starts policy payments.'
   },
   {
-    id: 'CFP-RIS-B3-018',
+    id: 'cfp-ris-b3-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Long-Term Care',
     subtopic: 'Inflation Protection',
     difficulty: 'medium',
@@ -356,10 +356,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-1: Additional Life Insurance Topics
   {
-    id: 'CFP-RIS-B3-019',
+    id: 'cfp-ris-b3-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Taxation of Proceeds',
     difficulty: 'medium',
@@ -375,10 +375,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Life insurance death benefits are generally income tax-free to beneficiaries under IRC Section 101. However, proceeds may be included in the insured\'s taxable estate if the insured owned the policy or had "incidents of ownership." Interest earned on proceeds held by the insurer is taxable.'
   },
   {
-    id: 'CFP-RIS-B3-020',
+    id: 'cfp-ris-b3-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Settlement Options',
     difficulty: 'medium',
@@ -394,10 +394,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Life income settlement converts the death benefit into an annuity paying for the beneficiary\'s lifetime. Variations include life only (no payments after death), life with period certain (guaranteed minimum payment period), and life with refund. This can provide guaranteed income and creditor protection in some states.'
   },
   {
-    id: 'CFP-RIS-B3-021',
+    id: 'cfp-ris-b3-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Life Insurance',
     subtopic: 'Riders',
     difficulty: 'easy',
@@ -414,10 +414,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-2: Additional Health Insurance Topics
   {
-    id: 'CFP-RIS-B3-022',
+    id: 'cfp-ris-b3-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'Medigap',
     difficulty: 'medium',
@@ -433,10 +433,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Medigap policies fill the "gaps" in Original Medicare, covering costs like Part A and B deductibles, copayments, and coinsurance. Standardized plans (A through N) have defined benefits. Medigap cannot be used with Medicare Advantage plans and does not cover Part D (prescriptions).'
   },
   {
-    id: 'CFP-RIS-B3-023',
+    id: 'cfp-ris-b3-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Health Insurance',
     subtopic: 'FSA vs. HSA',
     difficulty: 'easy',
@@ -453,10 +453,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   },
   // RIS-4: Additional Property/Liability Topics
   {
-    id: 'CFP-RIS-B3-024',
+    id: 'cfp-ris-b3-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'HO-3 Policy',
     difficulty: 'medium',
@@ -472,10 +472,10 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
     explanation: 'HO-3 (Special Form) provides open perils coverage on the dwelling (covers all risks except exclusions) and named perils coverage on personal property (only covers listed perils). Flood and earthquake require separate policies or endorsements. HO-5 provides open perils on both dwelling and contents.'
   },
   {
-    id: 'CFP-RIS-B3-025',
+    id: 'cfp-ris-b3-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Liability Insurance',
     subtopic: 'Professional Liability',
     difficulty: 'medium',

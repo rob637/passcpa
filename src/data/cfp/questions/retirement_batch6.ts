@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   // RET-1: Retirement Planning Analysis
   {
-    id: 'CFP-RET-B6-001',
+    id: 'cfp-ret-b6-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Sequence risk matters most when withdrawals occur during market downturns, especially near retirement when the portfolio is largest. Poor returns early in retirement deplete assets faster, leaving less to benefit from later recovery. Mitigation strategies include bucket approaches, guardrails, and maintaining adequate cash reserves.'
   },
   {
-    id: 'CFP-RET-B6-002',
+    id: 'cfp-ret-b6-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Guardrails strategies (like Guyton-Klinger or dynamic spending rules) adjust withdrawals based on portfolio performance. If the portfolio drops significantly, spending decreases; if it grows substantially, spending may increase. This flexibility reduces sequence risk compared to fixed withdrawal approaches.'
   },
   {
-    id: 'CFP-RET-B6-003',
+    id: 'cfp-ret-b6-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-2: More Employer Plans
   {
-    id: 'CFP-RET-B6-004',
+    id: 'cfp-ret-b6-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Auto-escalation automatically increases employee contribution rates annually (typically 1% per year) until reaching a target rate (often 10-15%). Combined with auto-enrollment, this addresses inertia and helps employees save adequately. Employees can opt out or change rates but many don\'t, benefiting from the defaults.'
   },
   {
-    id: 'CFP-RET-B6-005',
+    id: 'cfp-ret-b6-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Most 401(k) plans allow in-service distributions after age 59½. Some plans permit earlier distributions under specific circumstances (hardship, disability, after-tax contributions). In-service distributions enable rollover to IRAs for more investment options or Roth conversions while still employed.'
   },
   {
-    id: 'CFP-RET-B6-006',
+    id: 'cfp-ret-b6-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-3: More IRA Topics
   {
-    id: 'CFP-RET-B6-007',
+    id: 'cfp-ret-b6-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Spousal IRAs allow a non-working or low-earning spouse to contribute up to the annual limit ($7,000 for 2024, plus $1,000 catch-up if 50+) as long as the couple files jointly and the working spouse has sufficient earned income to cover both contributions. This maintains retirement savings for caregivers and non-working spouses.'
   },
   {
-    id: 'CFP-RET-B6-008',
+    id: 'cfp-ret-b6-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'IRAs prohibit investments in life insurance (except some exceptions for qualified plans) and collectibles (art, antiques, gems, stamps, coins except certain U.S. coins, alcoholic beverages). Most other investments are permitted, including stocks, bonds, mutual funds, ETFs, and real estate (though real estate requires a self-directed IRA).'
   },
   {
-    id: 'CFP-RET-B6-009',
+    id: 'cfp-ret-b6-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-4: More Distribution Topics
   {
-    id: 'CFP-RET-B6-010',
+    id: 'cfp-ret-b6-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Most IRA owners use the Uniform Lifetime Table for RMD calculations. The Joint Life and Last Survivor Table is only used when the sole beneficiary is a spouse more than 10 years younger, resulting in smaller RMDs. The Single Life Expectancy Table is used for inherited IRAs.'
   },
   {
-    id: 'CFP-RET-B6-011',
+    id: 'cfp-ret-b6-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The still-working exception allows employees who are not 5% owners to delay RMDs from their current employer\'s retirement plan until they actually retire. It does NOT apply to IRAs or plans from prior employers. This allows continued tax-deferred growth while working past the RMD age.'
   },
   {
-    id: 'CFP-RET-B6-012',
+    id: 'cfp-ret-b6-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-5: More Social Security
   {
-    id: 'CFP-RET-B6-013',
+    id: 'cfp-ret-b6-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,7 +260,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The Bipartisan Budget Act of 2015 eliminated restricted applications for those born after January 1, 1954. Now, filing for any benefit automatically files for all eligible benefits. Those born before January 2, 1954 can still file a restricted application for spousal benefits at FRA while delaying their own benefit to earn delayed credits.'
   },
   {
-    id: 'CFP-RET-B6-014',
+    id: 'cfp-ret-b6-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -279,7 +279,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Surviving spouses can claim reduced survivor benefits as early as age 60 (50 if disabled). Benefits increase up to survivor FRA. A widow(er) can strategically claim one benefit (own or survivor) early and switch to the larger benefit later. Remarriage before age 60 typically ends eligibility for deceased spouse\'s benefits.'
   },
   {
-    id: 'CFP-RET-B6-015',
+    id: 'cfp-ret-b6-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +299,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-1: More Planning Concepts
   {
-    id: 'CFP-RET-B6-016',
+    id: 'cfp-ret-b6-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +318,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Replacement ratios estimate needed retirement income as a percentage of pre-retirement income, typically 70-80%. The reduction accounts for eliminated work expenses, taxes, and savings. The expense method is more precise but replacement ratios provide a useful quick estimate. Higher earners often need lower ratios.'
   },
   {
-    id: 'CFP-RET-B6-017',
+    id: 'cfp-ret-b6-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -338,7 +338,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-2: More Plan Types
   {
-    id: 'CFP-RET-B6-018',
+    id: 'cfp-ret-b6-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -357,7 +357,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Cash balance plans are defined benefit plans where participants have hypothetical account balances. Each year they receive pay credits (often percentage of salary) and interest credits. The employer bears investment risk. Benefits are typically portable as lump sums. Often paired with 401(k) for high-employer contribution strategies.'
   },
   {
-    id: 'CFP-RET-B6-019',
+    id: 'cfp-ret-b6-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -376,7 +376,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The universal availability requirement mandates that 403(b) plans must be offered to virtually all employees if offered to any, with limited exclusions (e.g., employees working fewer than 20 hours/week). This is more restrictive than 401(k) plans, which have more flexibility in setting eligibility criteria.',
   },
   {
-    id: 'CFP-RET-B6-020',
+    id: 'cfp-ret-b6-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -396,7 +396,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-3/4: More IRA and Distribution
   {
-    id: 'CFP-RET-B6-021',
+    id: 'cfp-ret-b6-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -415,7 +415,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'SEP contributions can be made up to the tax filing deadline including extensions. For self-employed individuals, this often means October 15 if extended. This provides flexibility to assess income and profit before determining contributions. Contributions are employer-only, up to 25% of compensation (20% of net SE income).'
   },
   {
-    id: 'CFP-RET-B6-022',
+    id: 'cfp-ret-b6-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -434,7 +434,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 raised the RMD age to 73 for those reaching age 72 after 2022, and will raise it to 75 for those reaching 74 after 2032. This provides additional years of tax-deferred growth. SECURE 1.0 had raised it from 70½ to 72. The RMD penalty was also reduced from 50% to 25% (10% if corrected quickly).'
   },
   {
-    id: 'CFP-RET-B6-023',
+    id: 'cfp-ret-b6-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -454,7 +454,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
   },
   // RET-5: More Social Security
   {
-    id: 'CFP-RET-B6-024',
+    id: 'cfp-ret-b6-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -472,23 +472,4 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'The family maximum caps total benefits payable on one worker\'s record at 150-180% of the worker\'s PIA. When combined benefits exceed this, dependent and spousal benefits are proportionally reduced (the worker\'s benefit is not reduced). This affects families with multiple dependents claiming on one record.'
   },
-  {
-    id: 'CFP-RET-B6-025',
-    courseId: 'cfp',
-    section: 'CFP-RET',
-    blueprintArea: 'RET-5',
-    topic: 'Social Security',
-    subtopic: 'Disability Conversion',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Social Security Disability Insurance (SSDI) benefits:',
-    options: [
-      'A) End at age 62',
-      'D) Are always higher than retirement benefits',
-      'B) Automatically convert to retirement benefits at FRA with no change in amount',
-      'C) Must be reapplied for at retirement',
-    ],
-    correctAnswer: 2,
-    explanation: 'SSDI benefits automatically convert to retirement benefits at FRA, typically at the same amount (SSDI pays the FRA amount). The transition is seamless. Medicare eligibility earned through SSDI continues. This prevents benefit reduction that would occur if claiming early retirement instead of SSDI.'
-  }
 ];

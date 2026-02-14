@@ -202,26 +202,6 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     explanation: 'Incremental revenue = 1,000 × $50 = $50,000. Incremental variable costs = 1,000 × $30 = $30,000. Incremental contribution margin = $20,000. The campaign cost of $20,000 equals the incremental CM, making it breakeven on a purely financial basis. However, the $20,000 incremental contribution margin covers the campaign cost while also generating brand awareness and customer acquisition value, making it a worthwhile investment.',
     reference: 'Incremental Analysis; Advertising Decisions',
   },
-  {
-    id: 'cma2-c-010',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-C',
-    topic: 'Marginal Analysis',
-    subtopic: 'Sunk Costs',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A sunk cost is:',
-    options: [
-      'An opportunity cost of a decision',
-      'A cost already incurred that cannot be recovered',
-      'A future cost that can be avoided',
-      'A variable cost of production',
-    ],
-    correctAnswer: 1,
-    explanation: 'Sunk costs are past costs that have already been incurred and cannot be recovered regardless of future decisions. They are irrelevant to current decision-making.',
-    reference: 'Sunk Costs; Irrelevant Costs',
-  },
 
   // ==========================================
   // Pricing Decisions

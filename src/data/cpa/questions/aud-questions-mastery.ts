@@ -160,7 +160,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Critical Audit Matters',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Evaluation',
     question: 'Critical Audit Matters (CAMs) are communicated to governance and:',
     options: [
@@ -177,7 +177,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     id: 'aud-mast-009',
     courseId: 'cpa',
     section: 'AUD',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
     difficulty: 'hard',
@@ -201,7 +201,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Other Information',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'When reading other information in documents containing audited F/S, the auditor should:',
     options: [
@@ -306,7 +306,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Special Reports',
     subtopic: 'Special Purpose Frameworks',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'Special purpose framework financial statements include:',
     options: [
@@ -327,7 +327,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Communications',
     subtopic: 'Required Communications Timing',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'The auditor must communicate significant deficiencies to governance:',
     options: [
@@ -453,7 +453,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Preparation Engagements',
     subtopic: 'Requirements',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'In a financial statement preparation engagement:',
     options: [
@@ -474,7 +474,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Attestation',
     subtopic: 'Examination vs Agreed-Upon',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'The key difference between examination and agreed-upon procedures is:',
     options: [
@@ -516,7 +516,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
     topic: 'Reports on Controls',
     subtopic: 'ICFR Opinion',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'An adverse opinion on ICFR is required when:',
     options: [

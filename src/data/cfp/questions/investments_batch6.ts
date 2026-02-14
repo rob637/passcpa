@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
   // INV-1: Advanced Theory Topics
   {
-    id: 'CFP-INV-B6-001',
+    id: 'cfp-inv-b6-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The disposition effect describes investors\' tendency to sell appreciated securities (locking in gains) while holding depreciated securities (avoiding loss realization). This is driven by loss aversion and can lead to suboptimal tax outcomes and portfolio allocation.'
   },
   {
-    id: 'CFP-INV-B6-002',
+    id: 'cfp-inv-b6-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'APT uses multiple factors (inflation, GDP growth, interest rates, etc.) to explain returns, unlike CAPM\'s single market factor. APT is more flexible but requires identifying the relevant factors. Both models assume systematic risk matters and unsystematic risk is diversified away.'
   },
   {
-    id: 'CFP-INV-B6-003',
+    id: 'cfp-inv-b6-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -66,7 +66,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The information ratio measures active return (excess return over the benchmark) divided by tracking error (standard deviation of active returns). An IR of 0.6 means the manager generates 0.6 units of active return per unit of active risk taken, indicating reasonably skilled active management.',
   },
   {
-    id: 'CFP-INV-B6-004',
+    id: 'cfp-inv-b6-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
   },
   // INV-2: Advanced Fixed Income
   {
-    id: 'CFP-INV-B6-005',
+    id: 'cfp-inv-b6-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +105,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Convexity measures the curvature of the price-yield relationship. Duration gives a linear approximation of price change, but actual price changes follow a curve. Positive convexity means prices rise more than duration predicts when yields fall, and fall less when yields rise—a desirable characteristic.'
   },
   {
-    id: 'CFP-INV-B6-006',
+    id: 'cfp-inv-b6-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -124,7 +124,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Immunization protects against interest rate risk by matching portfolio duration to the liability time horizon. When matched, reinvestment risk and price risk offset each other. If rates rise, lower bond prices are offset by higher reinvestment income; if rates fall, lower reinvestment is offset by higher prices.'
   },
   {
-    id: 'CFP-INV-B6-007',
+    id: 'cfp-inv-b6-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -143,7 +143,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'A barbell strategy holds bonds at both ends of the maturity spectrum—short-term for liquidity and reinvestment flexibility, long-term for yield. This contrasts with a bullet strategy (concentrated around target maturity) or ladder strategy (evenly distributed maturities).'
   },
   {
-    id: 'CFP-INV-B6-008',
+    id: 'cfp-inv-b6-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -163,7 +163,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
   },
   // INV-3: Advanced Equity Analysis
   {
-    id: 'CFP-INV-B6-009',
+    id: 'cfp-inv-b6-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -182,7 +182,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'PEG ratio = P/E ÷ Earnings Growth Rate = 30 ÷ 20 = 1.5. PEG ratios below 1.0 may indicate undervaluation relative to growth; above 1.0 may indicate overvaluation. This metric helps compare valuations of companies with different growth rates, though it has limitations.'
   },
   {
-    id: 'CFP-INV-B6-010',
+    id: 'cfp-inv-b6-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -201,7 +201,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'FCFE = Operating cash flow - Capital expenditures - Debt repayments + New debt issued. It represents the cash actually available to distribute to equity shareholders after maintaining operations and meeting debt obligations. It\'s used in discounted cash flow valuation models.'
   },
   {
-    id: 'CFP-INV-B6-011',
+    id: 'cfp-inv-b6-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -220,7 +220,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Factor investing (smart beta) systematically targets factors historically associated with excess returns: value (low P/B, P/E), size (small cap premium), momentum (recent winners), quality (profitability, stability), and low volatility. It\'s between passive indexing and active stock picking.'
   },
   {
-    id: 'CFP-INV-B6-012',
+    id: 'cfp-inv-b6-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -240,7 +240,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
   },
   // INV-4: Advanced Options and Derivatives
   {
-    id: 'CFP-INV-B6-013',
+    id: 'cfp-inv-b6-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -259,7 +259,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Delta measures the option price sensitivity to changes in the underlying asset. A delta of 0.60 means the call option gains (or loses) $0.60 for each $1 the stock moves. Delta also roughly approximates the probability the option expires in-the-money. Puts have negative deltas.'
   },
   {
-    id: 'CFP-INV-B6-014',
+    id: 'cfp-inv-b6-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -278,7 +278,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'A collar combines stock ownership with a protective put (downside protection) and a covered call (generates premium). The call premium offsets the put cost, often creating a zero-cost collar. Tradeoff: limited upside (above call strike) in exchange for limited downside (above put strike).'
   },
   {
-    id: 'CFP-INV-B6-015',
+    id: 'cfp-inv-b6-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -297,7 +297,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Selling cash-secured puts generates income while potentially acquiring stock at a lower price. If the stock stays above the strike, the seller keeps the premium. If it falls below, the seller buys at the strike (minus premium received). It\'s bullish/neutral with defined risk (buy at strike).'
   },
   {
-    id: 'CFP-INV-B6-016',
+    id: 'cfp-inv-b6-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -317,7 +317,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
   },
   // INV-5: Advanced Alternative Investments
   {
-    id: 'CFP-INV-B6-017',
+    id: 'cfp-inv-b6-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -336,7 +336,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The J-curve describes typical private equity cash flow pattern: negative returns initially (management fees, deal costs) while capital is deployed. As investments mature and are sold (typically years 4-8+), returns turn positive and accelerate, creating a J-shaped return pattern over the fund life.'
   },
   {
-    id: 'CFP-INV-B6-018',
+    id: 'cfp-inv-b6-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -355,7 +355,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: '2 and 20 refers to a 2% annual management fee on AUM plus a 20% performance fee (carried interest) on profits. Some funds include a hurdle rate (minimum return before performance fees apply) and high-water mark (fees only on new gains above previous high).'
   },
   {
-    id: 'CFP-INV-B6-019',
+    id: 'cfp-inv-b6-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -374,7 +374,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Commodities often move with inflation (many commodities\' prices are components of inflation measures) and have historically had low correlation with traditional assets, providing diversification benefits. However, commodities don\'t generate income, have high volatility, and may experience extended periods of negative returns.'
   },
   {
-    id: 'CFP-INV-B6-020',
+    id: 'cfp-inv-b6-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -394,7 +394,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
   },
   // INV-1: Portfolio Management
   {
-    id: 'CFP-INV-B6-021',
+    id: 'cfp-inv-b6-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -413,7 +413,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Calendar rebalancing resets allocations at fixed intervals (monthly, quarterly, annually). This is simpler than percentage-of-portfolio rebalancing (trigger-based) but may miss opportunities during volatile periods or incur unnecessary transactions when drift is minimal.'
   },
   {
-    id: 'CFP-INV-B6-022',
+    id: 'cfp-inv-b6-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -432,7 +432,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Tax-loss harvesting realizes losses to offset gains and up to $3,000 of ordinary income. However, wash sale rules disallow losses if substantially identical securities are purchased within 30 days before or after the sale. Unused losses carry forward indefinitely. Strategic harvesting considers current and expected future tax rates.'
   },
   {
-    id: 'CFP-INV-B6-023',
+    id: 'cfp-inv-b6-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -451,7 +451,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Several strategies address concentrated stock risk: 10b5-1 plans allow systematic selling; exchange funds (partnerships) provide diversification without immediate tax; collars and puts hedge downside. Immediate full sale may trigger large capital gains taxes. A balanced approach considers risk tolerance, tax cost, and timeframe.'
   },
   {
-    id: 'CFP-INV-B6-024',
+    id: 'cfp-inv-b6-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -470,7 +470,7 @@ export const CFP_INVESTMENTS_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Active share measures the percentage of a portfolio that differs from its benchmark. An active share of 0% means identical to the benchmark; 100% means completely different. High active share indicates a truly active manager (versus a "closet indexer"). Research shows high active share can predict outperformance among skilled managers.'
   },
   {
-    id: 'CFP-INV-B6-025',
+    id: 'cfp-inv-b6-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',

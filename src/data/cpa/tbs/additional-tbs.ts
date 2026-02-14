@@ -1627,7 +1627,7 @@ Manager Jessica joined the firm 6 months ago. Before joining, she was the Contro
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Reporting',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-V-B-1',
     scenario: `
 You are reviewing the following situations to determine the appropriate audit report modification:
@@ -2061,7 +2061,7 @@ Using the Internal Revenue Code and Treasury Regulations, locate the relevant gu
     difficulty: 'medium',
     timeEstimate: 12,
     topic: 'Subsequent Events - AU-C 560',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-V-B-1',
     scenario: `
 You are the senior auditor on the engagement for Precision Manufacturing Inc. The audit report date is February 15, Year 2, covering the year ended December 31, Year 1.
@@ -2144,7 +2144,7 @@ export const WRITTEN_COMM_TBS: TBS[] = [
     difficulty: 'medium',
     timeEstimate: 20,
     topic: 'Communication with Those Charged with Governance',
-    blueprintArea: 'AUD-VI',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-VI-A-2',
     scenario: `
 You are the senior auditor for GlobalTech Industries, a publicly traded company. During your audit of the year ended December 31, Year 1, you identified the following internal control deficiency:
@@ -2723,7 +2723,7 @@ H. Recalculate depreciation expense
     difficulty: 'easy',
     timeEstimate: 8,
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-V-A-1',
     scenario: `
 Review the following excerpts from audit reports and identify the type of opinion and any modifications:

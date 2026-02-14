@@ -5027,7 +5027,7 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Data Analytics", "Visualization", "Audit"],
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-A-1',
     content: {
       sections: [
@@ -5675,7 +5675,7 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Emerging Technology", "AI", "Machine Learning", "Governance"],
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-A-1',
     content: {
       sections: [
@@ -5751,7 +5751,7 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Emerging Technology", "Blockchain", "Distributed Ledger", "Smart Contracts"],
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-A-2',
     content: {
       sections: [
@@ -5820,7 +5820,7 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Emerging Technology", "RPA", "Automation", "Controls"],
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-A-3',
     content: {
       sections: [
@@ -5896,7 +5896,7 @@ export const iscLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Emerging Technology", "Quantum Computing", "Cryptography", "Future"],
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-B-1',
     content: {
       sections: [

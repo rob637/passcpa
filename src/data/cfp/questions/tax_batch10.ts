@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
   // TAX-1: Income Tax Fundamentals
   {
-    id: 'CFP-TAX-B10-001',
+    id: 'cfp-tax-b10-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Tax home: your regular place of business (main work location), not necessarily where you live. Travel expenses are deductible when away from tax home overnight for business. If no regular place of business, tax home may be personal residence. Transient workers may have no tax home, making travel expenses non-deductible.'
   },
   {
-    id: 'CFP-TAX-B10-002',
+    id: 'cfp-tax-b10-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Dependent Care FSA: pre-tax contribution for care of qualifying persons (child under 13, disabled spouse/dependent) enabling work. Max: $5,000/year ($2,500 MFS). Use-it-or-lose-it (some employers allow grace period or carryover up to $500). Reduces AGI. Coordinates with child care credit—can\'t use same expenses for both.'
   },
   {
-    id: 'CFP-TAX-B10-003',
+    id: 'cfp-tax-b10-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
   },
   // TAX-2: Deductions and Credits
   {
-    id: 'CFP-TAX-B10-004',
+    id: 'cfp-tax-b10-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Charitable deduction limits depend on charity type and gift type. Public charities—cash: 60% of AGI; appreciated property: 30% (or 50% at basis). Private foundations: lower limits (30% cash, 20% property). Excess carries forward 5 years. Must itemize to deduct. Substantiation requirements increase with gift size ($250+ requires acknowledgment).'
   },
   {
-    id: 'CFP-TAX-B10-005',
+    id: 'cfp-tax-b10-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'AOTC: 100% of first $2,000 + 25% of next $2,000 = max $2,500. First four years of college only. 40% ($1,000) refundable. Half-time enrollment minimum. Income phaseout: $80K-$90K single, $160K-$180K MFJ. Qualified expenses: tuition, fees, books, supplies. Better than Lifetime Learning Credit for most undergraduates.'
   },
   {
-    id: 'CFP-TAX-B10-006',
+    id: 'cfp-tax-b10-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,26 +125,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
   },
   // TAX-3: Investment Taxation
   {
-    id: 'CFP-TAX-B10-007',
-    courseId: 'cfp',
-    section: 'CFP-TAX',
-    blueprintArea: 'TAX-3',
-    topic: 'Investment Tax',
-    subtopic: 'Bond Premium Amortization',
-    difficulty: 'hard',
-    skillLevel: 'Application',
-    question: 'When a taxable bond is purchased at a premium:',
-    options: [
-      'B) Taxpayers may elect to amortize the premium annually, reducing interest income and basis',
-      'A) The premium is deductible at sale',
-      'D) Premium increases at maturity',
-      'C) No adjustment is needed',
-    ],
-    correctAnswer: 0,
-    explanation: 'Bond premium (cost > par): can elect to amortize annually. Reduces interest income (prefer for taxable bonds) and reduces basis. Tax-exempt bond premium must be amortized (no election) with basis reduction but no deduction. Method: yield-to-maturity or constant yield. Without amortization, lose premium as capital loss at maturity. Election is permanent.'
-  },
-  {
-    id: 'CFP-TAX-B10-008',
+    id: 'cfp-tax-b10-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +144,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Market discount: buy existing bond below adjusted issue price. At sale/maturity, accrued market discount is ordinary income (not capital gain). Can elect to include discount annually instead. If not elected, interest expense allocable to market discount bonds may be deferred. Differs from OID which accrues to original buyer. Complex rules—track carefully.'
   },
   {
-    id: 'CFP-TAX-B10-009',
+    id: 'cfp-tax-b10-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +164,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
   },
   // TAX-4: Business Taxation
   {
-    id: 'CFP-TAX-B10-010',
+    id: 'cfp-tax-b10-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +183,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'LLC tax classification (check-the-box): Single-member: disregarded entity—reported on owner\'s return (Schedule C if individual). Multi-member: partnership. Either can elect corporate (C or S) treatment. LLC provides liability protection regardless of tax classification. Flexibility to choose tax treatment is an LLC advantage.'
   },
   {
-    id: 'CFP-TAX-B10-011',
+    id: 'cfp-tax-b10-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -221,7 +202,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Estimated tax required if expecting to owe $1,000+ after withholding/credits. Safe harbors: pay 100% of prior year tax (110% if AGI > $150K) or 90% of current year tax. Quarterly: April 15, June 15, September 15, January 15. Penalties for underpayment. Self-employed must cover both income tax and self-employment tax. Withholding from other sources counts.'
   },
   {
-    id: 'CFP-TAX-B10-012',
+    id: 'cfp-tax-b10-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -241,7 +222,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
   },
   // TAX-5: Estate and Gift Tax
   {
-    id: 'CFP-TAX-B10-013',
+    id: 'cfp-tax-b10-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -260,7 +241,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'IRC 2032: elect to value estate assets 6 months after death (or earlier disposition date). Only available if it reduces BOTH estate value and estate tax. Benefit: if assets declined in value, pay tax on lower value. Downside: beneficiaries get lower stepped-up basis. Must be elected by executor. Evaluate trade-off between estate tax savings and income tax basis.'
   },
   {
-    id: 'CFP-TAX-B10-014',
+    id: 'cfp-tax-b10-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -279,7 +260,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'QTIP: spouse gets all income at least annually, trust assets in spouse\'s estate at death, but first-to-die controls who receives remainder. Marital deduction available with QTIP election. Uses: blended families (income to surviving spouse, remainder to first spouse\'s children), protect from new spouse, manage assets for spouse. Common estate planning tool.'
   },
   {
-    id: 'CFP-TAX-B10-015',
+    id: 'cfp-tax-b10-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -299,7 +280,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-TAX-B10-016',
+    id: 'cfp-tax-b10-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -318,7 +299,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Claim of right: if you receive income under a claim you\'re entitled to it (without restriction), it\'s taxable in year received—even if later returned. If later repaid: deduction in repayment year, or if over $3,000, special Section 1341 relief (deduct or credit, whichever is better). Prevents deferral through disputed income claims.'
   },
   {
-    id: 'CFP-TAX-B10-017',
+    id: 'cfp-tax-b10-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -337,7 +318,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'QBI deduction limitations above threshold ($191,950 single/$383,900 MFJ): for non-SSTBs, limited to greater of 50% of W-2 wages OR 25% of W-2 wages + 2.5% of qualified property (unadjusted basis of depreciable property). Phases in between thresholds. Capital-intensive businesses use property; labor-intensive use wages. Complex planning for business structure.'
   },
   {
-    id: 'CFP-TAX-B10-018',
+    id: 'cfp-tax-b10-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -356,7 +337,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Section 1244: losses on qualifying small business stock treated as ordinary losses (deductible against ordinary income) up to $50K single/$100K MFJ annually. Excess is capital loss. Requirements: issued directly by domestic small corporation for money/property, total capital ≤ $1M at issuance. No special treatment for gains. Valuable for startup investors.'
   },
   {
-    id: 'CFP-TAX-B10-019',
+    id: 'cfp-tax-b10-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -375,7 +356,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'SE tax: covers Social Security (12.4%) + Medicare (2.9%) for self-employed. Social Security portion: wages + SE income up to cap ($168,600 in 2024). Medicare: no cap, plus 0.9% additional Medicare tax on high earners. Calculated on 92.35% of net SE income. Half of SE tax is above-the-line deduction. Partners and LLC members also pay.'
   },
   {
-    id: 'CFP-TAX-B10-020',
+    id: 'cfp-tax-b10-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -394,7 +375,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'IRD: income decedent earned but didn\'t receive before death (unpaid salary, retirement accounts, installment sale payments). Double taxation: included in estate value AND taxable as income when received by beneficiary. No stepped-up basis. Partial relief: beneficiary can deduct estate tax attributable to IRD (Section 691(c) deduction). IRA distributions are IRD.'
   },
   {
-    id: 'CFP-TAX-B10-021',
+    id: 'cfp-tax-b10-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -413,7 +394,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'SS taxation based on "provisional income": AGI + tax-exempt interest + 50% of benefits. Thresholds: single $25K-$34K (up to 50% taxable), above $34K (up to 85%); MFJ $32K-$44K (50%), above $44K (85%). Planning: manage income to stay below thresholds. Roth conversions, timing of IRA withdrawals, municipal bonds affect taxation.'
   },
   {
-    id: 'CFP-TAX-B10-022',
+    id: 'cfp-tax-b10-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -432,7 +413,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'The FTC limitation equals ($40,000 / $200,000) × $42,000 = $8,400. Since the actual foreign taxes paid ($8,000) are less than the limit ($8,400), the taxpayer can claim the full $8,000 as a credit. The credit is limited to the lesser of foreign taxes paid or the calculated limit.',
   },
   {
-    id: 'CFP-TAX-B10-023',
+    id: 'cfp-tax-b10-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -451,7 +432,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Section 1202 QSBS: stock in qualified C corp, held 5+ years, acquired at original issuance. 100% gain exclusion (post-9/27/2010; earlier acquisitions 50-75%). Limit: greater of $10M or 10× adjusted basis. Corporation must be domestic, under $50M assets at issuance, active business (not services, banking, etc.). Powerful incentive for startup founders and investors.'
   },
   {
-    id: 'CFP-TAX-B10-024',
+    id: 'cfp-tax-b10-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -470,7 +451,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Hobby classification: income is taxable, but post-TCJA hobby expenses aren\'t deductible at all (previously limited to hobby income as misc itemized). Business intent factors: profit motive, time/effort, expertise, success history, income compared to losses, expectation of appreciation. Presumption of business if profitable 3 of 5 years (2 of 7 for horses).'
   },
   {
-    id: 'CFP-TAX-B10-025',
+    id: 'cfp-tax-b10-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',

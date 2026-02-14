@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
   // SEC/FINRA Regulation Questions
   {
-    id: 'CFP-PRO-076',
+    id: 'cfp-pro-076',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'SEC Regulation',
     subtopic: 'Investment Adviser Registration',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Investment advisers with less than $100 million in AUM are generally state-registered unless they meet an SEC registration exception. This adviser falls below the $100M threshold and operates in one state, so state registration applies. At $100-110M, the adviser is in the "buffer zone" and can choose. Above $110M, SEC registration is required.'
   },
   {
-    id: 'CFP-PRO-077',
+    id: 'cfp-pro-077',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'FINRA Regulation',
     subtopic: 'Broker-Dealer Requirements',
     difficulty: 'medium',
@@ -47,10 +47,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Commission-based compensation, including trailing commissions (12b-1 fees), indicates a broker-dealer function. The professional is acting as a broker-dealer representative when receiving transaction-based or trailing compensation. If the same client also pays an AUM fee for ongoing advice, the professional may wear both hats with that client.'
   },
   {
-    id: 'CFP-PRO-078',
+    id: 'cfp-pro-078',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'SEC Regulation',
     subtopic: 'Form ADV',
     difficulty: 'easy',
@@ -66,10 +66,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'SEC rules require delivery of Form ADV Part 2A (the firm brochure) and Part 2B (the brochure supplement about the specific adviser) before or at the time of entering into an advisory contract. Part 1A contains regulatory information filed with the SEC but is not required to be delivered to clients. Form CRS must also be delivered to retail investors.'
   },
   {
-    id: 'CFP-PRO-079',
+    id: 'cfp-pro-079',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'FINRA Regulation',
     subtopic: 'Suitability',
     difficulty: 'hard',
@@ -85,10 +85,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Reg BI requires broker-dealers to act in the client\'s best interest at the time of a recommendation. The CFP Board\'s fiduciary standard is broader: it applies "at all times" when providing Financial Advice—including ongoing duties of loyalty and care. Additionally, CFP Board standards require client-first prioritization, not just disclosure-based conflict management.'
   },
   {
-    id: 'CFP-PRO-080',
+    id: 'cfp-pro-080',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Practice Standards',
     subtopic: 'Scope of Engagement',
     difficulty: 'medium',
@@ -104,10 +104,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals may provide limited-scope (focused) Financial Advice if: (1) the scope is in the client\'s best interest, (2) the client agrees to the limited scope, and (3) the scope is documented in writing. The professional should explain what is excluded and document the client\'s informed consent to proceed with limited engagement.'
   },
   {
-    id: 'CFP-PRO-081',
+    id: 'cfp-pro-081',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Fiduciary Duty',
     subtopic: 'Duty of Care',
     difficulty: 'medium',
@@ -123,10 +123,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The duty of care requires CFP® professionals to act with competence and diligence. Recommending a product without fully understanding it violates the duty of care—professionals must have the knowledge and competency to evaluate recommendations. Relying on marketing materials without independent analysis fails to meet "reasonable care" standards.'
   },
   {
-    id: 'CFP-PRO-082',
+    id: 'cfp-pro-082',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Disciplinary Process',
     subtopic: 'Grounds for Discipline',
     difficulty: 'hard',
@@ -142,10 +142,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires reporting of the professional\'s own bankruptcy or compromised debts, not a spouse\'s independent bankruptcy. However, if the CFP® professional was jointly liable on the debts included in the spouse\'s bankruptcy, those compromised debts become reportable. The focus is on the professional\'s own financial conduct.'
   },
   {
-    id: 'CFP-PRO-083',
+    id: 'cfp-pro-083',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Code of Ethics',
     subtopic: 'Professionalism',
     difficulty: 'easy',
@@ -161,10 +161,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires record retention for at least 7 years after the client relationship ends. This includes engagement agreements, planning documents, work products, and client communications. Note: SEC/FINRA may have different retention requirements that could also apply to dually registered professionals.'
   },
   {
-    id: 'CFP-PRO-084',
+    id: 'cfp-pro-084',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Conflicts of Interest',
     subtopic: 'Referral Arrangements',
     difficulty: 'medium',
@@ -180,10 +180,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Referral fee arrangements create a conflict of interest that must be disclosed in writing before making the referral. The client must understand that the CFP® professional has a financial incentive to refer to this particular attorney. The referral must still be in the client\'s best interest regardless of the fee arrangement.'
   },
   {
-    id: 'CFP-PRO-085',
+    id: 'cfp-pro-085',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'State Regulation',
     subtopic: 'RIA Registration Exemptions',
     difficulty: 'hard',
@@ -199,10 +199,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Advisers who provide investment advice solely to ERISA plans and their participants may qualify for an exemption from state registration in some states. However, this varies by state. Additionally, such advisers may need to register with the DOL or meet ERISA fiduciary requirements. The federal Investment Advisers Act has a specific exemption for certain retirement plan advisers.'
   },
   {
-    id: 'CFP-PRO-086',
+    id: 'cfp-pro-086',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Client Termination',
     subtopic: 'Termination Procedures',
     difficulty: 'medium',
@@ -218,10 +218,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'When terminating a client relationship, CFP® professionals must provide reasonable notice and take steps to protect the client\'s interests during the transition. This may include providing copies of documents, assisting with transfer to a new adviser, and completing any pending work that would leave the client harmed if abandoned.'
   },
   {
-    id: 'CFP-PRO-087',
+    id: 'cfp-pro-087',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Fiduciary Duty',
     subtopic: 'Prospective Clients',
     difficulty: 'hard',
@@ -237,10 +237,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP Board\'s fiduciary duty attaches whenever a CFP® professional provides Financial Advice—which can occur before any formal engagement. Even in a discovery meeting, if substantive investment or planning advice is given, fiduciary duty applies. The key trigger is providing Financial Advice, not the formal engagement or fee payment.'
   },
   {
-    id: 'CFP-PRO-088',
+    id: 'cfp-pro-088',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Practice Standards',
     subtopic: 'Informed Consent',
     difficulty: 'medium',
@@ -256,10 +256,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'A product with a 7-year surrender charge conflicts with the client\'s stated 2-year liquidity need. Even with disclosure, recommending this product would not be in the client\'s best interest. The CFP® professional should either recommend an alternative product or help the client clarify their actual liquidity needs before proceeding.'
   },
   {
-    id: 'CFP-PRO-089',
+    id: 'cfp-pro-089',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'SEC Regulation',
     subtopic: 'Custody Rules',
     difficulty: 'hard',
@@ -275,10 +275,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Under SEC custody rules, the ability to deduct advisory fees directly from client accounts is considered a form of custody. Even with assets at an independent custodian, this fee deduction authority requires compliance with custody rules, including quarterly statements from the custodian and potentially a surprise examination.'
   },
   {
-    id: 'CFP-PRO-090',
+    id: 'cfp-pro-090',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Confidentiality',
     subtopic: 'Information Sharing',
     difficulty: 'medium',
@@ -294,10 +294,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'This creates an irreconcilable conflict when advising both spouses. The CFP® professional should explain that keeping secrets from one joint client violates disclosure duties to the other. Options include: the secretive spouse agreeing to disclose, the professional serving only one spouse, or terminating the engagement. Keeping material secrets while advising both is not permitted.'
   },
   {
-    id: 'CFP-PRO-091',
+    id: 'cfp-pro-091',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Competence',
     subtopic: 'Continuing Education',
     difficulty: 'easy',
@@ -313,10 +313,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals must complete 30 CE hours every two-year reporting period. This includes 2 hours of CFP Board-approved ethics CE and 28 hours of other CE. CE helps maintain competence in the evolving financial planning profession.'
   },
   {
-    id: 'CFP-PRO-092',
+    id: 'cfp-pro-092',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'FINRA Regulation',
     subtopic: 'Variable Products',
     difficulty: 'medium',
@@ -332,10 +332,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Variable annuities have two components: (1) the insurance contract features (death benefit, annuitization options) regulated by state insurance laws, and (2) the securities subaccounts regulated under federal securities laws. Selling them requires: a FINRA license (Series 6 or 7), state insurance license, and typically a state securities registration.'
   },
   {
-    id: 'CFP-PRO-093',
+    id: 'cfp-pro-093',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Duty to Follow Instructions',
     subtopic: 'Scope Limitations',
     difficulty: 'hard',
@@ -351,10 +351,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'When clients impose legitimate constraints on recommendations (like ESG/SRI preferences), documented informed consent about potential trade-offs provides protection. The professional should explain that limiting the investment universe may affect diversification or returns, document the client\'s informed choice, and then honor those preferences. This is a valid scope limitation.'
   },
   {
-    id: 'CFP-PRO-094',
+    id: 'cfp-pro-094',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Supervision',
     subtopic: 'Supervisory Responsibilities',
     difficulty: 'medium',
@@ -370,10 +370,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals who supervise others have a duty to establish and enforce reasonable supervisory procedures. If a supervised individual makes errors that reasonable supervision should have prevented, the supervisor may share responsibility. This includes ensuring proper training, review procedures, and competency verification for supervised activities.'
   },
   {
-    id: 'CFP-PRO-095',
+    id: 'cfp-pro-095',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'SEC Regulation',
     subtopic: 'Advertisement Rules',
     difficulty: 'medium',
@@ -389,10 +389,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The SEC Marketing Rule (updated 2020, effective 2022) prohibits materially untrue or misleading statements in all advertisements. It does allow past performance (with disclosures), testimonials (with disclosures), and benchmark comparisons (with methodology). The rule modernized advertising regulations but maintained core anti-fraud principles.'
   },
   {
-    id: 'CFP-PRO-096',
+    id: 'cfp-pro-096',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Disclosure',
     subtopic: 'Material Information',
     difficulty: 'medium',
@@ -408,10 +408,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'A material conflict is one that a reasonable client would consider important in deciding whether to engage the professional or follow the recommendation. Materiality is determined from the client\'s perspective, not a bright-line dollar threshold. If the information could reasonably affect the client\'s decision, it\'s material and requires written disclosure.'
   },
   {
-    id: 'CFP-PRO-097',
+    id: 'cfp-pro-097',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Ethical Judgment',
     subtopic: 'Gray Areas',
     difficulty: 'hard',
@@ -427,10 +427,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The Code of Ethics serves as interpretive guidance for situations not explicitly addressed. When facing gray areas, the professional should consider: Would this action serve the client\'s best interest? Does it demonstrate integrity and competence? Would a reasonable professional make this choice? The Code principles provide the ethical framework for judgment calls.'
   },
   {
-    id: 'CFP-PRO-098',
+    id: 'cfp-pro-098',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-2',
+    blueprintArea: 'PCR-2',
     topic: 'Privacy Regulation',
     subtopic: 'Regulation S-P',
     difficulty: 'medium',
@@ -446,10 +446,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Regulation S-P (Privacy of Consumer Financial Information) requires: (1) initial privacy notice when relationships begin, (2) annual notices thereafter, (3) explanation of information-sharing practices, and (4) opt-out opportunity for certain third-party sharing. The Gramm-Leach-Bliley Act established the underlying privacy framework.'
   },
   {
-    id: 'CFP-PRO-099',
+    id: 'cfp-pro-099',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Business Practices',
     subtopic: 'Fees and Compensation',
     difficulty: 'medium',
@@ -465,10 +465,10 @@ export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals must disclose all forms of compensation, including AUM fees, commissions, 12b-1 fees, referral fees, and any other economic benefit received in connection with client engagements. Complete disclosure ensures clients understand total costs and potential conflicts. The 12b-1 fees, though paid by the fund, compensate the adviser and must be disclosed.'
   },
   {
-    id: 'CFP-PRO-100',
+    id: 'cfp-pro-100',
     courseId: 'cfp',
     section: 'CFP-PCR',
-    blueprintArea: 'PRO-1',
+    blueprintArea: 'PCR-1',
     topic: 'Financial Planning Process',
     subtopic: 'Monitoring',
     difficulty: 'medium',

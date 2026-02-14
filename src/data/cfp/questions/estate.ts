@@ -11,7 +11,7 @@ import type { Question } from '../../../types';
 export const CFP_ESTATE_QUESTIONS: Question[] = [
   // EST-1: Estate Documents and Trusts (Questions 1-8)
   {
-    id: 'CFP-EST-001',
+    id: 'cfp-est-001',
     question: 'Thomas dies intestate in a state with separate property law. He is survived by his spouse and two adult children from a prior marriage. His estate consists of $600,000 in assets. Under typical intestacy statutes, which distribution is MOST likely?',
     options: [
       'Spouse receives entire estate',
@@ -29,7 +29,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-002',
+    id: 'cfp-est-002',
     question: 'Patricia creates a revocable living trust and funds it with her investment accounts worth $2.5 million. Upon her death at age 78, which statement is CORRECT regarding this trust?',
     options: [
       'Assets avoid probate but are included in her gross estate at stepped-up basis',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-003',
+    id: 'cfp-est-003',
     question: 'Margaret wants to provide for her disabled adult daughter who receives SSI and Medicaid benefits. Which trust structure is MOST appropriate?',
     options: [
       'Revocable living trust with daughter as beneficiary',
@@ -65,7 +65,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-004',
+    id: 'cfp-est-004',
     question: 'David designates his wife as agent under a durable power of attorney for finances. Two years later, David is diagnosed with Alzheimer\'s and gradually loses capacity. What is the effect on the power of attorney?',
     options: [
       'It terminates immediately upon diagnosis',
@@ -83,7 +83,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-005',
+    id: 'cfp-est-005',
     question: 'Janet creates an irrevocable life insurance trust (ILIT) and transfers an existing $2 million policy to the trust. She dies 18 months later. How are the life insurance proceeds treated for estate tax purposes?',
     options: [
       'Excluded from the gross estate',
@@ -101,7 +101,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-006',
+    id: 'cfp-est-006',
     question: 'A credit shelter trust is funded with $5 million at the first spouse\'s death in 2024. The applicable exclusion amount is $13.61 million. At the surviving spouse\'s death 10 years later, the credit shelter trust assets have appreciated to $8 million. What are the estate tax consequences?',
     options: [
       '$8 million is included in the surviving spouse\'s estate',
@@ -119,7 +119,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-007',
+    id: 'cfp-est-007',
     question: 'George creates a charitable remainder unitrust (CRUT) with $1 million of appreciated stock (basis $200,000). The trust sells the stock and invests in a diversified portfolio. What is the income tax consequence of the sale?',
     options: [
       'George recognizes $800,000 capital gain immediately',
@@ -137,7 +137,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-008',
+    id: 'cfp-est-008',
     question: 'A properly drafted pour-over will directs that residuary estate assets be transferred to which arrangement?',
     options: [
       'A newly created testamentary trust',
@@ -157,7 +157,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
 
   // EST-2: Gift, Estate, and GST Tax (Questions 9-17)
   {
-    id: 'CFP-EST-009',
+    id: 'cfp-est-009',
     question: 'In 2024, Michael makes a $75,000 gift to his nephew and a $500,000 gift to his alma mater for a new scholarship fund. What is Michael\'s total taxable gift for the year?',
     options: [
       '$0',
@@ -175,7 +175,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-010',
+    id: 'cfp-est-010',
     question: 'Barbara gifts $100,000 to her daughter. Her husband Bruce agrees to gift splitting. Neither has made prior taxable gifts. What is the impact on each spouse\'s lifetime exemption?',
     options: [
       'Barbara uses $82,000 exemption; Bruce uses $0',
@@ -193,7 +193,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-011',
+    id: 'cfp-est-011',
     question: 'Harold pays his grandson\'s $45,000 medical school tuition directly to the university and also gives him $25,000 cash. What is Harold\'s taxable gift for the year?',
     options: [
       '$0',
@@ -211,7 +211,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-012',
+    id: 'cfp-est-012',
     question: 'Calculate the tentative estate tax for a decedent with a taxable estate of $15 million in 2024. The 2024 applicable exclusion amount is $13.61 million and the estate tax rate is 40%.',
     options: [
       '$0',
@@ -229,7 +229,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-013',
+    id: 'cfp-est-013',
     question: 'Roger dies in 2024 with a gross estate of $18 million. His estate includes a $5 million bequest to his wife and $1 million to charity. He made no lifetime taxable gifts. Calculate the taxable estate.',
     options: [
       '$12,000,000',
@@ -247,7 +247,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-014',
+    id: 'cfp-est-014',
     question: 'Ellen\'s husband died in 2020 with a taxable estate of $5 million, using only that portion of his $11.58 million exemption. Ellen dies in 2024 when the exemption is $13.61 million. If Ellen properly elected portability, what is her available exemption?',
     options: [
       '$13.61 million',
@@ -265,7 +265,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-015',
+    id: 'cfp-est-015',
     question: 'William makes a direct skip transfer of $3 million to his grandchildren. His GST exemption is fully intact. What is the GST tax owed?',
     options: [
       '$0',
@@ -283,7 +283,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-016',
+    id: 'cfp-est-016',
     question: 'A trust is created for the benefit of a grantor\'s child with remainder to grandchildren. At the child\'s death, the trust corpus is distributed to the grandchildren. This transaction is classified as which type of GST?',
     options: [
       'Direct skip',
@@ -301,7 +301,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-017',
+    id: 'cfp-est-017',
     question: 'Jackson\'s closely-held business accounts for 45% of his adjusted gross estate. His estate uses alternate valuation for the business which has declined in value. Which statement is CORRECT?',
     options: [
       'Alternate valuation can only be used for the business, not other assets',
@@ -321,7 +321,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
 
   // EST-3: Wealth Transfer and Business Succession (Questions 18-25)
   {
-    id: 'CFP-EST-018',
+    id: 'cfp-est-018',
     question: 'Samantha creates a 5-year zeroed-out GRAT, transferring $4 million in stock. The §7520 rate is 5.2% and the stock appreciates at 12% annually. Approximately how much value passes to her children at the GRAT\'s termination, assuming she survives?',
     options: [
       'Zero - all appreciation returns to Samantha',
@@ -339,7 +339,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-019',
+    id: 'cfp-est-019',
     question: 'Susan, age 62, transfers her $1.8 million vacation home to a 12-year QPRT. The present value of her retained interest is $900,000. What is the taxable gift?',
     options: [
       '$0',
@@ -357,7 +357,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-020',
+    id: 'cfp-est-020',
     question: 'A family limited partnership holds $10 million of marketable securities. Individual limited partner interests are valued at a 35% combined discount for lack of control and marketability. What is the gift tax value of a 25% LP interest?',
     options: [
       '$2,500,000',
@@ -375,7 +375,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-021',
+    id: 'cfp-est-021',
     question: 'ABC Corporation has 4 equal shareholders with a cross-purchase buy-sell agreement funded by life insurance. How many insurance policies are required to fully fund the agreement?',
     options: [
       '4 policies',
@@ -393,7 +393,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-022',
+    id: 'cfp-est-022',
     question: 'James\' estate includes closely-held stock valued at $8 million in an adjusted gross estate of $14 million. Estate taxes and administrative expenses total $1.5 million. How much can the estate redeem under IRC §303 without dividend treatment?',
     options: [
       '$1,500,000',
@@ -411,7 +411,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-023',
+    id: 'cfp-est-023',
     question: 'Which estate planning technique would most effectively freeze the value of a closely-held business interest in the owner\'s estate while transferring future appreciation to the next generation?',
     options: [
       'Outright gift of stock',
@@ -429,7 +429,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation' as const
   },
   {
-    id: 'CFP-EST-024',
+    id: 'cfp-est-024',
     question: 'Peter, a US citizen, is married to Maria, a non-citizen legal resident. Peter dies with a $12 million estate, all left to Maria. Without additional planning, what is the estate tax consequence?',
     options: [
       'Unlimited marital deduction applies - no estate tax',
@@ -447,7 +447,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-025',
+    id: 'cfp-est-025',
     question: 'Richard has three children: one active in the family business, two not. The business represents 60% of his estate. He wants to treat all children fairly while ensuring business continuity. Which strategy BEST accomplishes both objectives?',
     options: [
       'Leave business equally to all three children',
@@ -468,7 +468,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   // Additional EST Questions (026-045)
   // ============================================
   {
-    id: 'CFP-EST-026',
+    id: 'cfp-est-026',
     question: 'Samuel dies in 2024 with a gross estate of $15 million. He made $500,000 in taxable lifetime gifts. What is his taxable estate after applying the unified credit exemption of $13.61 million?',
     options: [
       '$0 - fully sheltered by exemption',
@@ -486,7 +486,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-027',
+    id: 'cfp-est-027',
     question: 'Catherine wants to make gifts to 10 grandchildren and their spouses (20 total recipients) in 2024. Her husband agrees to gift-split. What is the maximum they can give tax-free using only annual exclusions?',
     options: [
       '$360,000',
@@ -504,7 +504,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-028',
+    id: 'cfp-est-028',
     question: 'David creates an irrevocable trust for his daughter, retaining the power to substitute assets of equivalent value. Which power did David retain?',
     options: [
       'General power of appointment',
@@ -522,7 +522,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-029',
+    id: 'cfp-est-029',
     question: 'Eleanor creates a Charitable Remainder Annuity Trust (CRAT) with $1,000,000, paying herself 6% annually for 20 years, remainder to charity. Which statement is CORRECT?',
     options: [
       'She receives a current income tax deduction for the full $1,000,000',
@@ -540,7 +540,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-030',
+    id: 'cfp-est-030',
     question: 'Frank owns a $5 million life insurance policy on his life payable to his estate. If he dies owning the policy, which statement is CORRECT?',
     options: [
       'The death benefit is income tax-free but included in his gross estate',
@@ -558,7 +558,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-031',
+    id: 'cfp-est-031',
     question: 'Gloria dies owning property as joint tenants with right of survivorship with her non-spouse sister. Gloria contributed 100% of the purchase price. How much is included in Gloria estate?',
     options: [
       '50% of the property value',
@@ -576,7 +576,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-032',
+    id: 'cfp-est-032',
     question: 'Harold wants to benefit his grandchildren but minimize Generation-Skipping Transfer Tax (GSTT). Which amount represents his 2024 GST exemption?',
     options: [
       '$6.12 million',
@@ -594,7 +594,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-EST-033',
+    id: 'cfp-est-033',
     question: 'Irene durable power of attorney for property was executed in 2019. She becomes incapacitated in 2024. Which statement about the POA is CORRECT?',
     options: [
       'The POA terminates upon her incapacity',
@@ -612,7 +612,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-EST-034',
+    id: 'cfp-est-034',
     question: 'James creates a Crummey trust for his minor children, contributing $54,000 annually ($18,000 per child × 3 children). What is required for the gifts to qualify for the annual exclusion?',
     options: [
       'The children must be at least 18 years old',
@@ -630,7 +630,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-035',
+    id: 'cfp-est-035',
     question: 'Karen husband Jack died in 2020 without using his $11.58 million exemption. Karen files a timely estate tax return electing portability. Jack estate was $3 million. In 2024, Karen dies with a $20 million estate. What is her available exemption?',
     options: [
       '$13.61 million (her exemption only)',
@@ -648,7 +648,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-036',
+    id: 'cfp-est-036',
     question: 'Larry health care directive includes a POLST (Physician Orders for Life-Sustaining Treatment). How does a POLST differ from a standard advance directive?',
     options: [
       'POLST is only valid in hospital settings',
@@ -666,7 +666,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-EST-037',
+    id: 'cfp-est-037',
     question: 'Maria creates a Grantor Retained Annuity Trust (GRAT) with $2,000,000, receiving annuity payments of 8% for 5 years. If she survives the term and the IRC 7520 rate is 5%, what result is MOST likely?',
     options: [
       'The entire $2,000,000 is included in her estate',
@@ -684,7 +684,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation' as const
   },
   {
-    id: 'CFP-EST-038',
+    id: 'cfp-est-038',
     question: 'Nathan receives a $500,000 inheritance from his deceased father. Which statement about the income tax treatment is CORRECT?',
     options: [
       'Nathan must include $500,000 in gross income',
@@ -702,7 +702,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-EST-039',
+    id: 'cfp-est-039',
     question: 'Olivia dies owning community property with her husband in California. Her half is worth $1,000,000 with an original basis of $200,000. Her husband half has the same values. What is the husband basis in the community property after her death?',
     options: [
       '$200,000 (original basis preserved)',
@@ -720,7 +720,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-040',
+    id: 'cfp-est-040',
     question: 'Paul wants to make a gift of stock worth $100,000 (basis $30,000) to his grandson. If Paul pays the $37,000 in gift tax on the transfer, what is the grandson basis in the stock?',
     options: [
       '$30,000 (donor basis)',
@@ -738,7 +738,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-041',
+    id: 'cfp-est-041',
     question: 'Quinn creates a pour-over will. What is the PRIMARY function of this document?',
     options: [
       'To create a trust upon Quinn death',
@@ -756,7 +756,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-EST-042',
+    id: 'cfp-est-042',
     question: 'Rachel establishes a Family Limited Partnership (FLP), transferring $5,000,000 in assets in exchange for a 99% limited partnership interest. She later gifts limited partnership interests to her children. What valuation discount might apply?',
     options: [
       'No discounts available for family transfers',
@@ -774,7 +774,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-043',
+    id: 'cfp-est-043',
     question: 'Steve receives a bequest from his grandfather conditioned on Steve "graduating from college." Under trust law, this is what type of gift?',
     options: [
       'Absolute gift',
@@ -792,7 +792,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-EST-044',
+    id: 'cfp-est-044',
     question: 'Thomas creates an irrevocable trust and transfers $2 million. Three years later, he dies. What amount is included in his gross estate under Section 2035?',
     options: [
       '$0 - the gift was completed more than 3 years ago',
@@ -810,7 +810,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-045',
+    id: 'cfp-est-045',
     question: 'Ursula has a $10 million estate and wants to maximize the amount passing to her children while minimizing estate taxes. She is charitably inclined but wants income during her lifetime. Which strategy BEST meets her objectives?',
     options: [
       'Outright charitable bequest in will',
@@ -832,7 +832,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   // ADDITIONAL ESTATE QUESTIONS (46-75)
   // ============================================
   {
-    id: 'CFP-EST-046',
+    id: 'cfp-est-046',
     question: 'What is the primary estate planning advantage of a Qualified Personal Residence Trust (QPRT)?',
     options: [
       'Eliminates all gift tax on residence transfer',
@@ -850,7 +850,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-047',
+    id: 'cfp-est-047',
     question: 'Which document should a CFP® recommend for a client who wants to designate someone to make healthcare decisions if incapacitated?',
     options: [
       'Living will',
@@ -868,7 +868,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-048',
+    id: 'cfp-est-048',
     question: 'A client wants to leave assets to grandchildren but avoid GST tax. What is the maximum amount they can transfer using the GST exemption in 2024?',
     options: [
       '$17,000 per grandchild',
@@ -886,7 +886,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-049',
+    id: 'cfp-est-049',
     question: 'Under the unlimited marital deduction, which transfer will NOT qualify?',
     options: [
       'Outright bequest to U.S. citizen spouse',
@@ -904,7 +904,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-050',
+    id: 'cfp-est-050',
     question: 'A single client dies with a $15 million estate in 2024. Approximately how much federal estate tax is due?',
     options: [
       '$0',
@@ -922,7 +922,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-051',
+    id: 'cfp-est-051',
     question: 'What is portability in the context of estate planning?',
     options: [
       'Ability to transfer assets between states without probate',
@@ -940,7 +940,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-052',
+    id: 'cfp-est-052',
     question: 'A Grantor Retained Annuity Trust (GRAT) is MOST effective when:',
     options: [
       'Asset values are expected to decline',
@@ -958,7 +958,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-053',
+    id: 'cfp-est-053',
     question: 'Which is an advantage of a revocable living trust over a will?',
     options: [
       'Assets in the trust receive a step-up in basis at death',
@@ -976,7 +976,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-054',
+    id: 'cfp-est-054',
     question: 'What is the "5 and 5" power in trust terms?',
     options: [
       'Ability to distribute 5% of trust income and 5% of corpus annually',
@@ -994,7 +994,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-055',
+    id: 'cfp-est-055',
     question: 'A client names their estate as IRA beneficiary. The consequence is:',
     options: [
       'Spouse receives automatic rollover rights',
@@ -1012,7 +1012,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-056',
+    id: 'cfp-est-056',
     question: 'Under SECURE Act rules, most non-spouse designated beneficiaries must distribute an inherited IRA within:',
     options: [
       'Their single life expectancy',
@@ -1030,7 +1030,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-057',
+    id: 'cfp-est-057',
     question: 'What is a "pourover" will?',
     options: [
       'Will that divides assets equally among children',
@@ -1048,7 +1048,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-058',
+    id: 'cfp-est-058',
     question: 'Which asset does NOT avoid probate?',
     options: [
       'Life insurance with named beneficiary',
@@ -1066,7 +1066,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-059',
+    id: 'cfp-est-059',
     question: 'An Intentionally Defective Grantor Trust (IDGT) provides what benefit?',
     options: [
       'Trust income taxed to grantor; assets removed from estate',
@@ -1084,7 +1084,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-060',
+    id: 'cfp-est-060',
     question: 'Section 6166 allows estate tax deferral when:',
     options: [
       'Estate includes a closely held business representing >35% of adjusted gross estate',
@@ -1102,7 +1102,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-061',
+    id: 'cfp-est-061',
     question: 'What is the IRC Section 303 redemption?',
     options: [
       'Redemption of estate stock to pay estate taxes treated as sale, not dividend',
@@ -1120,7 +1120,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-062',
+    id: 'cfp-est-062',
     question: 'A Family Limited Partnership (FLP) may provide estate planning benefits through:',
     options: [
       'Eliminating all gift and estate taxes',
@@ -1138,7 +1138,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-063',
+    id: 'cfp-est-063',
     question: 'Which trust is used to provide for a disabled beneficiary without disqualifying them from government benefits?',
     options: [
       'Bypass trust',
@@ -1156,7 +1156,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-064',
+    id: 'cfp-est-064',
     question: 'The "gift-splitting" election allows married couples to:',
     options: [
       'Split gifts between children equally',
@@ -1174,7 +1174,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-065',
+    id: 'cfp-est-065',
     question: 'What is unique about a Charitable Lead Trust (CLT)?',
     options: [
       'Charity receives income stream; remainder to family',
@@ -1192,7 +1192,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-066',
+    id: 'cfp-est-066',
     question: 'Crummey powers are used in irrevocable trusts primarily to:',
     options: [
       'Allow trustee discretion over distributions',
@@ -1210,7 +1210,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-067',
+    id: 'cfp-est-067',
     question: 'The annual gift tax exclusion amount for 2024 is:',
     options: [
       '$15,000',
@@ -1228,7 +1228,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-068',
+    id: 'cfp-est-068',
     question: 'Which is NOT a benefit of using an Irrevocable Life Insurance Trust (ILIT)?',
     options: [
       'Death benefit excluded from insured\'s estate',
@@ -1246,7 +1246,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-069',
+    id: 'cfp-est-069',
     question: 'A bypass trust (credit shelter trust) is designed to:',
     options: [
       'Qualify for the marital deduction',
@@ -1264,7 +1264,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-EST-070',
+    id: 'cfp-est-070',
     question: 'What is the consequence of dying intestate?',
     options: [
       'All assets pass to the state',
@@ -1282,7 +1282,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-071',
+    id: 'cfp-est-071',
     question: 'The alternate valuation date for estate tax purposes is:',
     options: [
       '3 months after death',
@@ -1300,7 +1300,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-072',
+    id: 'cfp-est-072',
     question: 'A Qualified Domestic Trust (QDOT) is required when:',
     options: [
       'Estate exceeds unified credit',
@@ -1318,7 +1318,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-073',
+    id: 'cfp-est-073',
     question: 'What is the result of a qualified disclaimer?',
     options: [
       'Disclaimant chooses who receives the property',
@@ -1336,7 +1336,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-EST-074',
+    id: 'cfp-est-074',
     question: 'A generation-skipping transfer occurs when assets pass to:',
     options: [
       'Any minor beneficiary',
@@ -1354,7 +1354,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-EST-075',
+    id: 'cfp-est-075',
     question: 'Under current law, what happens to the estate tax exemption after 2025?',
     options: [
       'Remains at current level permanently',

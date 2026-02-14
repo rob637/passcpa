@@ -22,6 +22,7 @@ import { getStudyPlanId, getCurrentSection } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { COURSES } from '../courses';
 import { CourseId } from '../types/course';
+import { useCourse } from './CourseProvider';
 
 export interface StudyPlan {
   id?: string;
@@ -91,8 +92,7 @@ interface StudyProviderProps {
 
 export const StudyProvider = ({ children }: StudyProviderProps) => {
   const { user, userProfile } = useAuth();
-
-  // Core study state
+  const { courseId: activeCourse } = useCourse();
   const [studyPlan, setStudyPlan] = useState<StudyPlan | null>(null);
   const [todayLog, setTodayLog] = useState<DailyLog | null>(null);
   const [currentStreak, setCurrentStreak] = useState(0);
@@ -109,8 +109,6 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
   const today = format(new Date(), 'yyyy-MM-dd');
   
-  // Get current section from userProfile - course-aware (not just CPA 'FAR')
-  const activeCourse = userProfile?.activeCourse || 'cpa';
   
   // Course-specific daily log ID to keep progress separate per course
   const dailyLogId = `${activeCourse}_${today}`;
@@ -493,6 +491,12 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       
       logsSnapshot.forEach((doc) => {
         const data = doc.data();
+        
+        // Skip logs from other courses
+        if (data.courseId && data.courseId !== activeCourse) return;
+        // Also check doc ID prefix for course-specific logs (format: {course}_{date})
+        if (doc.id.includes('_') && !doc.id.startsWith(`${activeCourse}_`)) return;
+        
         if (data.activities && Array.isArray(data.activities)) {
           data.activities.forEach((activity: { type: string; topic?: string; isCorrect?: boolean; section?: string }) => {
             // Filter by section if provided

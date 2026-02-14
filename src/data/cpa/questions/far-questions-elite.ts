@@ -179,7 +179,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Conditional Contributions',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'A conditional contribution is recognized as revenue when:',
     options: [
@@ -283,7 +283,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Segment Reporting',
     subtopic: 'Quantitative Thresholds',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'An operating segment is reportable if it meets any of the following tests:',
     options: [
@@ -300,7 +300,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
     id: 'far-elite-015',
     courseId: 'cpa',
     section: 'FAR',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     topic: 'Earnings Per Share',
     subtopic: 'Contingently Issuable Shares',
     difficulty: 'hard',
@@ -387,7 +387,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Functional Expenses',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'Not-for-profit entities must present expenses by:',
     options: [
@@ -429,7 +429,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Subsequent Events',
     subtopic: 'Type I vs Type II',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'Recognized subsequent events (Type I) require:',
     options: [
@@ -596,7 +596,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Board-Designated Net Assets',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'Board-designated net assets are classified as:',
     options: [

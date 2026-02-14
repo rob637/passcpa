@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   // INV-1: Advanced Theory and Analysis
   {
-    id: 'CFP-INV-B7-001',
+    id: 'cfp-inv-b7-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,26 +28,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Jensen\'s Alpha = Actual return - [Risk-free rate + Beta × (Market return - Risk-free rate)]. Positive alpha indicates the manager added value beyond what beta exposure would predict. It\'s a key measure of manager skill, though persistence of alpha is debated.'
   },
   {
-    id: 'CFP-INV-B7-002',
-    courseId: 'cfp',
-    section: 'CFP-INV',
-    blueprintArea: 'INV-1',
-    topic: 'Investment Theory',
-    subtopic: 'Sortino Ratio',
-    difficulty: 'hard',
-    skillLevel: 'Remembering and Understanding',
-    question: 'The Sortino ratio differs from the Sharpe ratio by:',
-    options: [
-      'A) Using total return instead of excess return',
-      'B) Using downside deviation instead of total standard deviation in the denominator',
-      'C) Ignoring the risk-free rate',
-      'D) Measuring only positive returns'
-    ],
-    correctAnswer: 1,
-    explanation: 'The Sortino ratio uses downside deviation (volatility of negative returns only) rather than total standard deviation. This better reflects investor concerns about downside risk rather than all volatility. Higher Sortino ratios indicate better risk-adjusted returns relative to downside risk specifically.'
-  },
-  {
-    id: 'CFP-INV-B7-003',
+    id: 'cfp-inv-b7-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -67,7 +48,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   },
   // INV-2: More Fixed Income
   {
-    id: 'CFP-INV-B7-004',
+    id: 'cfp-inv-b7-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -86,7 +67,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Credit spreads measure the yield difference between corporate bonds and Treasuries of similar maturity. Widening spreads indicate increasing risk aversion and credit concerns—investors demand more compensation for default risk. Spreads typically widen during recessions and financial stress, narrowing during expansions.'
   },
   {
-    id: 'CFP-INV-B7-005',
+    id: 'cfp-inv-b7-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Callable bonds offer higher yields because investors face reinvestment risk—the issuer can call (redeem) bonds when rates fall, forcing investors to reinvest at lower rates. The yield premium compensates for this disadvantage. Analysis should consider yield-to-call and yield-to-worst.'
   },
   {
-    id: 'CFP-INV-B7-006',
+    id: 'cfp-inv-b7-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -125,26 +106,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   },
   // INV-3: More Equity Analysis
   {
-    id: 'CFP-INV-B7-007',
-    courseId: 'cfp',
-    section: 'CFP-INV',
-    blueprintArea: 'INV-3',
-    topic: 'Equity',
-    subtopic: 'Enterprise Value',
-    difficulty: 'hard',
-    skillLevel: 'Application',
-    question: 'Enterprise Value (EV) is calculated as:',
-    options: [
-      'A) Total assets minus total liabilities',
-      'C) Net income times a multiple',
-      'B) Market capitalization plus debt minus cash',
-      'D) Revenue minus expenses',
-    ],
-    correctAnswer: 2,
-    explanation: 'EV = Market Cap + Total Debt - Cash and Equivalents. It represents the total price to acquire a company, including the debt an acquirer would assume. EV/EBITDA is a common valuation multiple that\'s more comparable across capital structures than P/E ratios.'
-  },
-  {
-    id: 'CFP-INV-B7-008',
+    id: 'cfp-inv-b7-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -163,7 +125,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Sustainable growth rate = ROE × (1 - Payout ratio) = 18% × (1 - 0.40) = 18% × 0.60 = 10.8%. This is the earnings/dividend growth rate sustainable without external financing. It\'s a key input for dividend discount models and assessing growth expectations.'
   },
   {
-    id: 'CFP-INV-B7-009',
+    id: 'cfp-inv-b7-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -183,7 +145,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   },
   // INV-4: More Options and Derivatives
   {
-    id: 'CFP-INV-B7-010',
+    id: 'cfp-inv-b7-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -202,7 +164,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Vega measures how much an option\'s price changes for a 1% change in implied volatility. Higher volatility increases option values (more chance of profitable moves). Long options have positive vega (benefit from rising volatility); short options have negative vega. Vega is highest for at-the-money options.'
   },
   {
-    id: 'CFP-INV-B7-011',
+    id: 'cfp-inv-b7-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -221,7 +183,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'A long straddle buys an ATM call and ATM put with the same strike and expiration. It profits if the stock moves significantly in either direction beyond the combined premium cost. Maximum loss is the total premium paid. Used when expecting large moves but uncertain of direction (before earnings, FDA decisions, etc.).'
   },
   {
-    id: 'CFP-INV-B7-012',
+    id: 'cfp-inv-b7-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -241,7 +203,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   },
   // INV-5: More Alternative Investments
   {
-    id: 'CFP-INV-B7-013',
+    id: 'cfp-inv-b7-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -260,7 +222,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Venture capital invests in early-stage private companies with high growth potential. Most VC investments fail (a "power law" distribution where most returns come from few winners). Illiquidity, long holding periods (5-10+ years), high minimums, and accreditation requirements limit access. Diversification across many investments is essential.'
   },
   {
-    id: 'CFP-INV-B7-014',
+    id: 'cfp-inv-b7-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -279,7 +241,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Managed futures (CTAs) trade futures and options on commodities, currencies, interest rates, and equity indices using systematic strategies (often trend-following). They can go long or short and may provide positive returns in both up and down markets. Low correlation with traditional assets makes them diversifiers, especially in crises.'
   },
   {
-    id: 'CFP-INV-B7-015',
+    id: 'cfp-inv-b7-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -299,7 +261,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   },
   // INV-1: More Portfolio Management
   {
-    id: 'CFP-INV-B7-016',
+    id: 'cfp-inv-b7-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -318,26 +280,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Core-satellite allocates the majority (core) to low-cost passive funds for broad market exposure, while satellites are actively managed or alternative investments seeking alpha or specific factor exposures. This balances cost efficiency with opportunities for outperformance or diversification.'
   },
   {
-    id: 'CFP-INV-B7-017',
-    courseId: 'cfp',
-    section: 'CFP-INV',
-    blueprintArea: 'INV-1',
-    topic: 'Portfolio Management',
-    subtopic: 'Liability-Driven Investing',
-    difficulty: 'hard',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Liability-driven investing (LDI) focuses on:',
-    options: [
-      'A) Maximizing returns regardless of liabilities',
-      'C) Only investing in equities',
-      'B) Matching asset characteristics to future liability cash flows or duration',
-      'D) Ignoring inflation risk',
-    ],
-    correctAnswer: 2,
-    explanation: 'LDI structures the portfolio to match future liabilities (pension obligations, retirement income needs). By matching duration, cash flows, or both, interest rate movements affect assets and liabilities similarly. Used by pension funds and increasingly by individuals to ensure future obligations can be met.'
-  },
-  {
-    id: 'CFP-INV-B7-018',
+    id: 'cfp-inv-b7-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -357,7 +300,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-INV-B7-019',
+    id: 'cfp-inv-b7-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -376,7 +319,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'I-Bonds combine a fixed rate (set at purchase) with an inflation rate component (adjusted semi-annually). They\'re purchased through TreasuryDirect (up to $10,000/year electronically). Interest is tax-deferred and exempt from state/local tax. Early redemption penalty (3 months interest) after 1 year, full redemption after 5 years.'
   },
   {
-    id: 'CFP-INV-B7-020',
+    id: 'cfp-inv-b7-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -395,7 +338,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Stock splits increase shares and reduce price proportionally, leaving total value unchanged. A 2-for-1 split doubles shares while halving price. Companies split to improve liquidity and marketability (lower prices seem more accessible). Splits are not taxable events. Reverse splits consolidate shares at higher prices.'
   },
   {
-    id: 'CFP-INV-B7-021',
+    id: 'cfp-inv-b7-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -414,7 +357,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'DCA invests fixed amounts at regular intervals. When prices are low, more shares are purchased; when high, fewer shares. This may reduce average cost and provides discipline. Research shows lump-sum investing typically outperforms DCA (markets rise more often than fall), but DCA reduces regret risk and suits regular income.'
   },
   {
-    id: 'CFP-INV-B7-022',
+    id: 'cfp-inv-b7-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -433,7 +376,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'VaR estimates the maximum expected loss over a specified time at a given confidence level. A 95% VaR of $100,000 means there\'s a 5% chance losses could exceed $100,000. VaR limitations include not measuring tail risk (how bad losses beyond VaR could be) and assumptions about normal distributions.'
   },
   {
-    id: 'CFP-INV-B7-023',
+    id: 'cfp-inv-b7-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -452,7 +395,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'BABs were taxable municipal bonds issued under ARRA (2009-2010) where the federal government subsidized interest costs to municipalities. Unlike tax-exempt munis, BAB interest is fully taxable to investors but yields were higher. The program expired; existing BABs trade but new issuance stopped.'
   },
   {
-    id: 'CFP-INV-B7-024',
+    id: 'cfp-inv-b7-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -471,7 +414,7 @@ export const CFP_INVESTMENTS_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Infrastructure (utilities, toll roads, airports, pipelines) often provides stable, regulated cash flows tied to usage and inflation-adjustment provisions. Low correlation with stocks/bonds offers diversification. Direct infrastructure is illiquid with large minimums; publicly traded infrastructure REITs and MLPs provide more accessible exposure.'
   },
   {
-    id: 'CFP-INV-B7-025',
+    id: 'cfp-inv-b7-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',

@@ -17,7 +17,7 @@ import { Question } from '../../../types';
 export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   // 529→Roth IRA Rollovers
   {
-    id: 'CFP-RET-SEC2-001',
+    id: 'cfp-ret-sec2-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -36,7 +36,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 529→Roth rollover (effective 2024): 529 must be open 15+ years. Annual limit: normal Roth IRA contribution limit ($7,000 in 2024). Lifetime cap: $35,000. Rollover is tax-free. Cannot include contributions/earnings from last 5 years. Beneficiary must have earned income ≥ rollover amount. Phase-out rules don\'t apply. Great for over-funded 529s.'
   },
   {
-    id: 'CFP-RET-SEC2-002',
+    id: 'cfp-ret-sec2-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -57,7 +57,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Emergency Savings Linked Retirement Accounts
   {
-    id: 'CFP-RET-SEC2-003',
+    id: 'cfp-ret-sec2-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -76,7 +76,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
     explanation: 'Pension-linked emergency savings accounts (PLESAs) under SECURE 2.0 (effective 2024): Employer-sponsored, linked to DC plans. Employee after-tax contributions up to $2,500. First 4 withdrawals/year penalty-free, no reason required. Available to non-highly compensated. Invested in "principal preservation" vehicles (stable value). Aim: reduce retirement plan leakage from early withdrawals.'
   },
   {
-    id: 'CFP-RET-SEC2-004',
+    id: 'cfp-ret-sec2-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -97,7 +97,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Enhanced Catch-up Contributions (Ages 60-63)
   {
-    id: 'CFP-RET-SEC2-005',
+    id: 'cfp-ret-sec2-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -116,7 +116,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 "super catch-up" (effective 2025): Ages 60-63 can contribute the greater of $10,000 OR 150% of the regular catch-up ($7,500 × 150% = $11,250). This $10,000/$11,250 limit will be indexed for inflation starting 2026. Example: 2025 regular limit $23,500 + $11,250 = $34,750 max for ages 60-63. Returns to standard catch-up at 64. Helps late savers accelerate.'
   },
   {
-    id: 'CFP-RET-SEC2-006',
+    id: 'cfp-ret-sec2-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -137,7 +137,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Roth Employer Contributions
   {
-    id: 'CFP-RET-SEC2-007',
+    id: 'cfp-ret-sec2-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -156,7 +156,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
     explanation: 'Roth employer match (effective 2023): Employee can elect for employer match/nonelective contributions to go to designated Roth account. Employer still deducts; employee includes in current income (W-2). Benefit: growth is tax-free. 100% immediately vested when Roth (employer contribution vesting still applies for forfeiture). Must be fully vested if Roth. Good for those expecting higher future tax rates.'
   },
   {
-    id: 'CFP-RET-SEC2-008',
+    id: 'cfp-ret-sec2-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -177,7 +177,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Student Loan Matching
   {
-    id: 'CFP-RET-SEC2-009',
+    id: 'cfp-ret-sec2-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -198,7 +198,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Automatic Enrollment Mandates
   {
-    id: 'CFP-RET-SEC2-010',
+    id: 'cfp-ret-sec2-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -219,7 +219,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Penalty-Free Emergency Withdrawals
   {
-    id: 'CFP-RET-SEC2-011',
+    id: 'cfp-ret-sec2-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -238,7 +238,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 emergency expense withdrawal (effective 2024): One per calendar year. Up to $1,000. Self-certification of emergency expense. No 10% penalty. Still subject to income tax. Can repay within 3 years (no new withdrawal until repaid or 3 years pass). No employer approval needed. Aims to reduce hardship withdrawals which have more restrictions.'
   },
   {
-    id: 'CFP-RET-SEC2-012',
+    id: 'cfp-ret-sec2-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -259,7 +259,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // RMD Changes
   {
-    id: 'CFP-RET-SEC2-013',
+    id: 'cfp-ret-sec2-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -278,7 +278,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 RMD ages: Born 1951-1959: Age 73. Born 1960+: Age 75 (effective 2033). Individual born 1965 reaches 75 in 2040, so RMDs begin in 2040. Note: SECURE Act 1.0 raised to 72, SECURE 2.0 raised further. Roth 401(k) RMDs eliminated starting 2024. Traditional IRA/401(k) still have RMDs. Planning: longer deferral = more growth, but larger RMDs later.'
   },
   {
-    id: 'CFP-RET-SEC2-014',
+    id: 'cfp-ret-sec2-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -299,7 +299,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
   
   // Reduced RMD Penalty
   {
-    id: 'CFP-RET-SEC2-015',
+    id: 'cfp-ret-sec2-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',

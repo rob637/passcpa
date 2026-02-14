@@ -19,8 +19,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-001',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The NIST Cybersecurity Framework (CSF) organizes cybersecurity outcomes into five core functions. Which of the following correctly lists all five?',
     options: [
       'Identify, Protect, Detect, Respond, Recover',
@@ -38,8 +39,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-002',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ISO 27001 is an international standard for information security management systems (ISMS). What is the PRIMARY purpose of ISO 27001 certification?',
     options: [
       'To provide a systematic approach to managing sensitive information through risk management',
@@ -57,8 +59,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-003',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which NIST CSF function includes activities for understanding the organization\'s cybersecurity risk to systems, people, assets, and data?',
     options: [
       'Identify',
@@ -76,8 +79,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-004',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor is evaluating an organization\'s ISMS against ISO 27001. Which of the following would be the MOST significant finding?',
     options: [
       'The IT department has not updated all systems to the latest patch level',
@@ -95,8 +99,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-005',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'What is the relationship between NIST CSF and ISO 27001?',
     options: [
       'ISO 27001 is for private sector only; NIST CSF is for government only',
@@ -114,8 +119,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-006',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When auditing information security governance, which of the following is the MOST important element to verify?',
     options: [
       'All employees have strong passwords',
@@ -133,8 +139,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-007',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which element of the NIST CSF "Protect" function addresses the need to manage access permissions and authorizations?',
     options: [
       'Data Security (PR.DS)',
@@ -152,8 +159,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-008',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An organization wants to implement a security framework but has limited resources. Which approach is MOST appropriate?',
     options: [
       'Purchase the most expensive security tools available',
@@ -176,8 +184,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-009',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The General Data Protection Regulation (GDPR) applies to organizations that:',
     options: [
       'Have more than 250 employees within the EU',
@@ -195,8 +204,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-010',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GDPR, which of the following is NOT a lawful basis for processing personal data?',
     options: [
       'Interest of a competitor in obtaining market intelligence',
@@ -214,8 +224,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-011',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A "Zero Trust" security architecture is based on which fundamental principle?',
     options: [
       'Trust all authenticated users with full network access',
@@ -233,8 +244,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-012',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which type of cyberattack involves deceiving individuals into revealing sensitive information through fake emails or websites?',
     options: [
       'SQL Injection',
@@ -252,8 +264,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-013',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing IoT (Internet of Things) security, which risk is MOST unique to IoT environments compared to traditional IT?',
     options: [
       'Large attack surface due to numerous connected devices with limited built-in security',
@@ -271,8 +284,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-014',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A ransomware attack encrypts an organization\'s critical data. Which element of the NIST CSF addresses the organization\'s ability to restore operations?',
     options: [
       'Protect',
@@ -290,8 +304,9 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     id: 'cia3-b5-015',
     courseId: 'cia',
     section: 'CIA3',
-    blueprintArea: 'CIA3-I',
+    blueprintArea: 'CIA3-II',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An internal auditor reviewing security awareness should verify that the training program covers all of the following EXCEPT:',
     options: [
       'Physical security awareness (tailgating, clean desk)',
@@ -316,6 +331,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Porter\'s Five Forces framework is used to analyze which aspect of an organization\'s environment?',
     options: [
       'Financial statement accuracy',
@@ -335,6 +351,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A SWOT analysis examines which four areas?',
     options: [
       'Strategy, Worth, Operations, Tactics',
@@ -354,6 +371,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During a due diligence review for a potential acquisition, the internal auditor should focus on all of the following EXCEPT:',
     options: [
       'Key contractual obligations and potential liabilities',
@@ -373,6 +391,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which organizational structure BEST supports rapid decision-making and flexibility in a dynamic business environment?',
     options: [
       'Matrix structure with multiple reporting lines',
@@ -392,6 +411,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Balanced Scorecard approach to strategic performance measurement includes four perspectives. Which of the following is NOT one of the four perspectives?',
     options: [
       'Competitor perspective',
@@ -411,6 +431,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor is reviewing the organization\'s change management process. Which of the following findings would be the MOST significant concern?',
     options: [
       'Changes are not tested in a staging environment before production deployment',
@@ -432,6 +453,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     topic: 'Business Acumen',
     subtopic: 'Corporate Governance',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a key indicator of strong corporate governance in an organization?',
     options: [
       'The CEO also serves as the chairman of the board of directors',
@@ -449,6 +471,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating executive compensation, the internal auditor should PRIMARILY focus on:',
     options: [
       'Whether executives receive more than other employees',
@@ -468,6 +491,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Kotter\'s 8-Step Change Model begins with which critical step?',
     options: [
       'Empowering broad-based action',
@@ -487,6 +511,7 @@ export const CIA3_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA3',
     blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A competitive advantage that is difficult for competitors to duplicate is known as a:',
     options: [
       'Cost advantage',

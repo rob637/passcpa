@@ -13,7 +13,7 @@ export const CFP_GEN_BATCH2_QUESTIONS: Question[] = [
   // Financial Statements & Analysis
   // ============================================
   {
-    id: 'CFP-GEN-B2-001',
+    id: 'cfp-gen-b2-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -42,7 +42,7 @@ Net Worth: $1,320,000 - $450,000 = $870,000
 - **D) $450,000:** Total liabilities, not net worth`
   },
   {
-    id: 'CFP-GEN-B2-002',
+    id: 'cfp-gen-b2-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -71,7 +71,7 @@ Savings Rate: $45,800 / $185,000 = 24.76% ≈ 24.8%
 - **D) 31.2%:** Excludes some expenses from calculation`
   },
   {
-    id: 'CFP-GEN-B2-003',
+    id: 'cfp-gen-b2-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -105,7 +105,7 @@ While 6 months meets the general 3-6 month guideline, Marcus has multiple risk f
 - **D)** Current ratio is 6 months, not 4 months`
   },
   {
-    id: 'CFP-GEN-B2-004',
+    id: 'cfp-gen-b2-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -133,7 +133,7 @@ Both ratios fall within conventional mortgage guidelines.
 - **B, C, D:** Both ratios are actually within limits`
   },
   {
-    id: 'CFP-GEN-B2-005',
+    id: 'cfp-gen-b2-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -167,7 +167,7 @@ A debt-to-asset ratio of 38% indicates moderate leverage - not dangerous but war
   // Time Value of Money
   // ============================================
   {
-    id: 'CFP-GEN-B2-006',
+    id: 'cfp-gen-b2-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -198,7 +198,7 @@ FV = 50,000; N = 8; I/Y = 6; PMT = 0; Solve PV = -31,370
 - Other options result from incorrect rate or period assumptions`
   },
   {
-    id: 'CFP-GEN-B2-007',
+    id: 'cfp-gen-b2-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -231,7 +231,7 @@ FV ≈ $162,447
 - **D) $145,925:** Calculation error or wrong rate`
   },
   {
-    id: 'CFP-GEN-B2-008',
+    id: 'cfp-gen-b2-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -264,7 +264,7 @@ Early in a mortgage, most payment goes to interest. After 5 years of a 30-year m
 - **D) $24,150:** Calculation error`
   },
   {
-    id: 'CFP-GEN-B2-009',
+    id: 'cfp-gen-b2-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -293,7 +293,7 @@ PV = $27,477 ≈ $27,135 (with rounding)
 - **D) $30,890:** Used lower discount rate`
   },
   {
-    id: 'CFP-GEN-B2-010',
+    id: 'cfp-gen-b2-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -328,7 +328,7 @@ Testing at 12%: $8,000 × 3.037 = $24,296 ≈ $25,000
   // Education Planning
   // ============================================
   {
-    id: 'CFP-GEN-B2-011',
+    id: 'cfp-gen-b2-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -359,7 +359,7 @@ This avoids gift tax and uses no lifetime exemption if they file the election on
 - **D) $19,000:** One year, one grandparent`
   },
   {
-    id: 'CFP-GEN-B2-012',
+    id: 'cfp-gen-b2-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -388,7 +388,7 @@ Coverdell ESAs can fund qualified education expenses including:
 - **D)** There are income phaseouts ($110K single, $220K MFJ)`
   },
   {
-    id: 'CFP-GEN-B2-013',
+    id: 'cfp-gen-b2-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -418,7 +418,7 @@ The parent-owned 529 has the lowest impact at only up to 5.64% assessment.
 - **C)** Grandparent distributions count as untaxed income to student`
   },
   {
-    id: 'CFP-GEN-B2-014',
+    id: 'cfp-gen-b2-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -449,7 +449,7 @@ The AOTC is calculated as 100% of the first $2,000 plus 25% of the next $2,000, 
 - **D) $6,000:** This is the expense, not the credit`
   },
   {
-    id: 'CFP-GEN-B2-015',
+    id: 'cfp-gen-b2-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -480,7 +480,7 @@ Under SECURE 2.0, 529 plans can now:
   // Economic Concepts
   // ============================================
   {
-    id: 'CFP-GEN-B2-016',
+    id: 'cfp-gen-b2-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -510,7 +510,7 @@ FV = $143,265 ≈ $143,150
 - **D) $168,450:** Uses higher inflation rate`
   },
   {
-    id: 'CFP-GEN-B2-017',
+    id: 'cfp-gen-b2-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -538,7 +538,7 @@ Risk Premium = 6.5% - 1.5% - 2.5% = 2.5%
 - Other answers result from incorrect component identification`
   },
   {
-    id: 'CFP-GEN-B2-018',
+    id: 'cfp-gen-b2-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -569,7 +569,7 @@ Building permits are a leading indicator because they signal future construction
 - **D)** Consumer spending is a coincident indicator`
   },
   {
-    id: 'CFP-GEN-B2-019',
+    id: 'cfp-gen-b2-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -598,7 +598,7 @@ Increasing the discount rate makes borrowing more expensive, slowing economic ac
 - **A, B, D)** These are all expansionary policy tools that would increase inflation`
   },
   {
-    id: 'CFP-GEN-B2-020',
+    id: 'cfp-gen-b2-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -631,7 +631,7 @@ Increasing the discount rate makes borrowing more expensive, slowing economic ac
   // Client Communication & Behavior
   // ============================================
   {
-    id: 'CFP-GEN-B2-021',
+    id: 'cfp-gen-b2-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -661,7 +661,7 @@ This classic behavior leads investors to hold losers too long, hoping to break e
 - **D)** Availability heuristic is overweighting recent/memorable events`
   },
   {
-    id: 'CFP-GEN-B2-022',
+    id: 'cfp-gen-b2-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -690,7 +690,7 @@ Rationally, paying off the 22% debt produces higher returns than any investment.
 - **A, C, D)** None describe the irrational segregation of fungible money`
   },
   {
-    id: 'CFP-GEN-B2-023',
+    id: 'cfp-gen-b2-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -716,7 +716,7 @@ Rationally, paying off the 22% debt produces higher returns than any investment.
 - **A, C, D)** All are numerical/quantitative data sources`
   },
   {
-    id: 'CFP-GEN-B2-024',
+    id: 'cfp-gen-b2-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -746,7 +746,7 @@ CFP® professionals must respect client autonomy. When a client chooses partial 
 - **D)** Violates client consent requirements`
   },
   {
-    id: 'CFP-GEN-B2-025',
+    id: 'cfp-gen-b2-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
   // INV-1: Investment Theory
   {
-    id: 'CFP-INV-B10-001',
+    id: 'cfp-inv-b10-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Efficient frontier: the set of optimal portfolios offering highest expected return for each level of risk (or lowest risk for each return). Portfolios below the frontier are suboptimal—can achieve better return at same risk or same return at lower risk. Modern Portfolio Theory uses the frontier to guide asset allocation decisions.'
   },
   {
-    id: 'CFP-INV-B10-002',
+    id: 'cfp-inv-b10-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'MVO limitations: small changes in expected returns dramatically alter allocations (estimation error sensitivity), assumes normal distributions (ignores fat tails), produces extreme allocations, uses historical data that may not predict future, ignores transaction costs and taxes. Practitioners use constraints, Black-Litterman model, or robust optimization to address.'
   },
   {
-    id: 'CFP-INV-B10-003',
+    id: 'cfp-inv-b10-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -67,7 +67,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
   },
   // INV-2: Asset Classes
   {
-    id: 'CFP-INV-B10-004',
+    id: 'cfp-inv-b10-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'The convertible bond trades at $1,100 vs. its conversion value of $950 (25 × $38). The $150 premium exists because the bond provides current income (coupon payments) exceeding stock dividends plus the option value of conversion if the stock price rises, providing downside protection with upside participation.',
   },
   {
-    id: 'CFP-INV-B10-005',
+    id: 'cfp-inv-b10-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +105,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'STRIPS: Separate Trading of Registered Interest and Principal Securities. Treasury breaks apart a T-bond/note into individual cash flows (each coupon + principal = separate zero-coupon security). Benefits: known value at maturity, no reinvestment risk, useful for immunization. Drawback: phantom income taxed annually though no cash received—best in tax-deferred accounts.'
   },
   {
-    id: 'CFP-INV-B10-006',
+    id: 'cfp-inv-b10-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -125,7 +125,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
   },
   // INV-3: Analysis and Valuation
   {
-    id: 'CFP-INV-B10-007',
+    id: 'cfp-inv-b10-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -144,7 +144,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'P/B = Market price / Book value per share. Low P/B: stock may be undervalued relative to assets OR company has problems (poor earnings, obsolete assets). High P/B: market expects above-book returns or intangible assets create value. Particularly relevant for financial and industrial companies. Less useful for service or tech companies with few tangible assets.'
   },
   {
-    id: 'CFP-INV-B10-008',
+    id: 'cfp-inv-b10-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -163,7 +163,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'DCF valuation: intrinsic value = PV of projected future free cash flows. Requires: FCF projections (typically 5-10 years), terminal value (perpetuity growth or exit multiple), and discount rate (WACC or required return). Highly sensitive to assumptions—small changes in growth or discount rate dramatically affect value. Theoretically sound but practically challenging.'
   },
   {
-    id: 'CFP-INV-B10-009',
+    id: 'cfp-inv-b10-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -183,7 +183,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
   },
   // INV-4: Portfolio Management
   {
-    id: 'CFP-INV-B10-010',
+    id: 'cfp-inv-b10-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -202,7 +202,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Tactical allocation: temporary deviations from strategic (long-term) allocation to capitalize on perceived opportunities or avoid risks. Examples: overweighting stocks when undervalued, reducing bonds before expected rate increases. Balances active management with strategic discipline. Success depends on accurate market timing—often difficult to achieve consistently.'
   },
   {
-    id: 'CFP-INV-B10-011',
+    id: 'cfp-inv-b10-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -221,7 +221,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Diversification reduces portfolio risk when assets don\'t move together. Optimal: low or negative correlation—when one zigs, another zags. Perfect correlation (+1): no diversification benefit. Negative correlation (-1): volatility reduction is dramatic. In practice, correlations often increase during crises when diversification is needed most.'
   },
   {
-    id: 'CFP-INV-B10-012',
+    id: 'cfp-inv-b10-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -241,7 +241,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
   },
   // INV-5: Trading and Reporting
   {
-    id: 'CFP-INV-B10-013',
+    id: 'cfp-inv-b10-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -260,7 +260,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Bid-ask spread: difference between highest price buyers offer (bid) and lowest price sellers accept (ask). It\'s an implicit transaction cost—buy at ask, sell at bid, lose the spread. Narrower spreads for liquid securities (large-cap stocks, Treasuries). Wider for illiquid (small-caps, some bonds, thinly traded). Matters especially for frequent trading.'
   },
   {
-    id: 'CFP-INV-B10-014',
+    id: 'cfp-inv-b10-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -279,7 +279,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'GIPS: voluntary global standards promoting fair representation and full disclosure in performance reporting. Administered by CFA Institute. Requirements include: time-weighted returns, composites of all discretionary portfolios, specific disclosure standards, verification requirements. Claiming GIPS compliance signals commitment to transparent, comparable reporting.'
   },
   {
-    id: 'CFP-INV-B10-015',
+    id: 'cfp-inv-b10-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -299,7 +299,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-INV-B10-016',
+    id: 'cfp-inv-b10-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -318,7 +318,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Unsystematic/company-specific risk: factors unique to individual companies (management, products, competition). Diversifiable—holding more securities reduces this risk toward zero. Systematic/market risk: affects all securities (interest rates, recessions, inflation)—can\'t be diversified away. Investors are compensated only for systematic risk.'
   },
   {
-    id: 'CFP-INV-B10-017',
+    id: 'cfp-inv-b10-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -337,7 +337,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'High-yield bonds (below BBB-/Baa3): higher interest rates (spread over Treasuries) compensating for default risk. Behave more like stocks in stressed markets—correlations increase with equities. Can enhance returns but provide less diversification from stocks than investment-grade bonds. Defaults rise in recessions. Spread analysis helps assess relative value.'
   },
   {
-    id: 'CFP-INV-B10-018',
+    id: 'cfp-inv-b10-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -356,7 +356,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'FCF = Operating cash flow - Capital expenditures. It\'s the cash available for: dividends, share buybacks, debt repayment, acquisitions. Unlike earnings, FCF is harder to manipulate and represents actual cash generation. Positive FCF: company can reinvest, return capital, or pay down debt. Negative FCF: may need external financing. Key metric for DCF valuation.'
   },
   {
-    id: 'CFP-INV-B10-019',
+    id: 'cfp-inv-b10-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -375,7 +375,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Risk parity: balance portfolio by risk contribution, not dollar amount. Since stocks are more volatile than bonds, equal risk contribution requires more bonds. Often uses leverage on bonds to achieve desired return. Result: more diversified risk profile, potentially smoother returns. Popular after 2008 when stock-heavy portfolios suffered. Bridgewater\'s All Weather is famous example.'
   },
   {
-    id: 'CFP-INV-B10-020',
+    id: 'cfp-inv-b10-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -394,7 +394,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'SEC requires mutual funds to report: pre-tax returns, after-tax returns on distributions (assuming you hold), after-tax returns on distributions and sale (assuming you sell). Uses highest marginal tax rates. Helps compare tax efficiency across funds. Important because taxes are often largest cost for taxable investors—even beyond expense ratios.'
   },
   {
-    id: 'CFP-INV-B10-021',
+    id: 'cfp-inv-b10-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -413,7 +413,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Behavioral finance: investors aren\'t always rational—cognitive biases (overconfidence, loss aversion, herding) create predictable patterns. Anomalies (momentum, value, size effects) persist despite being known—suggesting limits to arbitrage. Doesn\'t mean markets are easily beaten, but challenges the pure EMH view. Practical implication: behavior management matters as much as portfolio optimization.'
   },
   {
-    id: 'CFP-INV-B10-022',
+    id: 'cfp-inv-b10-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -432,7 +432,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Preferred stock: hybrid—fixed dividend like bonds, equity treatment for issuers. Priority over common for dividends and liquidation, but subordinate to all debt. Usually no voting rights. Cumulative: missed dividends accumulate. Callable often. Interest rate sensitive like bonds. Qualified dividends for individuals in taxable accounts.'
   },
   {
-    id: 'CFP-INV-B10-023',
+    id: 'cfp-inv-b10-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -451,7 +451,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'DuPont ROE decomposition: (Net Income/Sales) × (Sales/Assets) × (Assets/Equity). Shows whether high ROE comes from: operational profitability (margin), asset utilization (turnover), or leverage. Same ROE can result from very different business models. Helps identify sources of return and analyze quality of earnings.'
   },
   {
-    id: 'CFP-INV-B10-024',
+    id: 'cfp-inv-b10-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -470,7 +470,7 @@ export const CFP_INVESTMENTS_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Glide path: how asset allocation shifts over time in target-date funds. Typically reduces equities as retirement approaches (e.g., 90% stocks at 30 years out → 40% at retirement). "To" funds stop at target, "through" funds continue de-risking past retirement. Glide paths vary significantly between fund families—compare carefully.'
   },
   {
-    id: 'CFP-INV-B10-025',
+    id: 'cfp-inv-b10-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',

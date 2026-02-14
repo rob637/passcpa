@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
   // EST-1: Estate Planning Documents
   {
-    id: 'CFP-EST-B10-001',
+    id: 'cfp-est-b10-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -28,7 +28,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Trust modification: Amendment—specific changes while keeping original intact; good for minor updates. Restatement—replaces entire trust document; better for major changes, avoids confusion from multiple amendments. Both require grantor capacity and proper execution. Restatement often preferred after several amendments for clarity. Irrevocable trusts: different modification rules.'
   },
   {
-    id: 'CFP-EST-B10-002',
+    id: 'cfp-est-b10-002',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Pour-over will: "catches" assets not titled to trust and pours them in at death. Provides backup—assets acquired but not transferred go to trust. Still requires probate for those assets. Ensures consistent distribution per trust terms. Doesn\'t avoid probate—just directs probate assets to trust. Should fund trust during life to minimize probate.'
   },
   {
-    id: 'CFP-EST-B10-003',
+    id: 'cfp-est-b10-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -67,7 +67,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
   },
   // EST-2: Trust Types
   {
-    id: 'CFP-EST-B10-004',
+    id: 'cfp-est-b10-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -86,7 +86,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Credit shelter/bypass trusts: post-portability (2010+), estate tax utility reduced for most. Still valuable for: using GST exemption (not portable), protecting assets for surviving spouse, preserving appreciation within exempt trust, state estate tax planning (many states without portability). Not needed purely for federal estate tax for most due to portability.'
   },
   {
-    id: 'CFP-EST-B10-005',
+    id: 'cfp-est-b10-005',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -105,7 +105,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'QPRT: transfer home to irrevocable trust, retain right to live there for term (10-15 years typical). Gift value discounted—present value of remainder interest. If survive term: home out of estate at discounted value. If die during term: home included in estate (but no worse than not doing it). Best for: appreciating property, long life expectancy. Must pay rent after term ends.'
   },
   {
-    id: 'CFP-EST-B10-006',
+    id: 'cfp-est-b10-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -125,7 +125,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
   },
   // EST-3: Estate Tax Planning
   {
-    id: 'CFP-EST-B10-007',
+    id: 'cfp-est-b10-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -144,7 +144,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Valuation discounts: reflect economic reality—minority, non-marketable interest worth less than proportionate share. Lack of marketability: can\'t easily sell on market (10-35% typical). Lack of control: minority can\'t control distributions, management (15-25%). Combined: significant reduction. IRS scrutinizes—must have legitimate business purpose, qualified appraisal. FLPs, LLCs often used.'
   },
   {
-    id: 'CFP-EST-B10-008',
+    id: 'cfp-est-b10-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -163,7 +163,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Section 6166: estate tax installment payments for closely-held business. Requirements: business value >35% of adjusted gross estate. Terms: defer principal 5 years (interest only), then 10 annual installments. Favorable interest rate on portion. Benefit: pay tax over time, business generates cash for payments. Acceleration events exist. Valuable for liquidity-constrained business estates.'
   },
   {
-    id: 'CFP-EST-B10-009',
+    id: 'cfp-est-b10-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -183,7 +183,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
   },
   // EST-4: Title and Beneficiaries
   {
-    id: 'CFP-EST-B10-010',
+    id: 'cfp-est-b10-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -202,7 +202,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'TOD deeds: property transfer at death without probate. Owner retains: full ownership, control, right to sell, ability to revoke. Beneficiary gets no rights until death. About 30 states allow. Simple, low cost alternative to trust for real estate. Limitations: may not work for complex situations, beneficiary issues (minor, predeceasing). State-specific rules and forms.'
   },
   {
-    id: 'CFP-EST-B10-011',
+    id: 'cfp-est-b10-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -221,7 +221,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Community property step-up: both halves get new basis at first death (not just deceased\'s half). Common law: only deceased\'s half stepped up. Potentially significant capital gains tax benefit. Community property states: AZ, CA, ID, LA, NV, NM, TX, WA, WI. Some allow community property trusts for non-CP state residents. Consider titling for tax efficiency.'
   },
   {
-    id: 'CFP-EST-B10-012',
+    id: 'cfp-est-b10-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -241,7 +241,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-EST-B10-013',
+    id: 'cfp-est-b10-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -260,7 +260,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Trustee selection factors: competence (investment, tax, recordkeeping), impartiality (family dynamics), availability, longevity (corporate trustee outlasts individuals), cost (professional fees 0.5-1.5% annually), geographic convenience. Options: family member, trusted advisor, corporate trustee, combination (co-trustees). Successor trustees essential. Match complexity to capability.'
   },
   {
-    id: 'CFP-EST-B10-014',
+    id: 'cfp-est-b10-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -279,7 +279,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Pet trusts: recognized in all 50 states. Enforceable: court can require trustee compliance. Fund: care expenses during pet\'s life. Name: caregiver, trustee (can be different), successor caregiver. Include: care instructions, vet information, funds for expenses. Excess at death: can specify remainder beneficiary. Better than informal arrangements.'
   },
   {
-    id: 'CFP-EST-B10-015',
+    id: 'cfp-est-b10-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -298,7 +298,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Form 706 filing: required when gross estate + adjusted taxable gifts > exemption (~$13M in 2024). Also: elect to port unused exclusion to surviving spouse (regardless of value). Due: 9 months from death (6-month extension available). Portability election: even if no tax owed, file to preserve DSUE for surviving spouse. Many file solely for portability.'
   },
   {
-    id: 'CFP-EST-B10-016',
+    id: 'cfp-est-b10-016',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -317,7 +317,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'POD/TOD designations: simple probate avoidance. Bank accounts: POD. Investment accounts: TOD. Owner: full control during life, can change beneficiary anytime, no beneficiary rights until death. At death: beneficiary claims with death certificate. Simple, free, effective for straightforward situations. Limitations: no contingent planning, may not override will.'
   },
   {
-    id: 'CFP-EST-B10-017',
+    id: 'cfp-est-b10-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -336,7 +336,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Document storage: originals important—many courts require original will. Options: fireproof safe at home, with attorney, some court filing (few states). Safety deposit box: may be sealed at death, require court order. Copies: agents should have, keep with important papers. Inform: successor trustees, agents, executor of locations. Review accessibility periodically.'
   },
   {
-    id: 'CFP-EST-B10-018',
+    id: 'cfp-est-b10-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -355,7 +355,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Testamentary trust: created by will, comes into existence at death. Assets pass through probate, then into trust. Living trust: created during life, funded now, avoids probate. Both: can have ongoing management, beneficiary protections. Testamentary: simpler to create, court oversight, no probate avoidance. Living: more administration now, probate avoidance. Choose based on goals.'
   },
   {
-    id: 'CFP-EST-B10-019',
+    id: 'cfp-est-b10-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -374,7 +374,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Over-exclusion gifts: File Form 709 (gift tax return) by April 15. Gift reduces lifetime exemption (currently ~$13M). Rarely results in current tax payment due to high exemption. Cumulative: all taxable gifts accumulate over lifetime. If exceed exemption: 40% gift tax. Strategy: many plan to use exemption during life. Track lifetime gifts—estate uses remaining exemption.'
   },
   {
-    id: 'CFP-EST-B10-020',
+    id: 'cfp-est-b10-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -393,7 +393,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Minor as beneficiary: can\'t legally manage funds. Results: court-appointed guardian (costly, cumbersome), UGMA/UTMA custodianship. Better alternatives: name trust as beneficiary, use UTMA provision in beneficiary designation ("to John as custodian for Minor under [State] UTMA"). Trust allows: continued management past 18, controlled distributions. Plan for minors specifically.'
   },
   {
-    id: 'CFP-EST-B10-021',
+    id: 'cfp-est-b10-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -412,7 +412,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Codicil: formal amendment to will. Must be executed with same formalities as will. Use: minor changes (specific bequest, executor change). For major changes: new will often better (clearer, less confusion). Multiple codicils: becomes confusing. Modern practice: complete new will common even for minor changes (computers make easy). Original will + all codicils needed for probate.'
   },
   {
-    id: 'CFP-EST-B10-022',
+    id: 'cfp-est-b10-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -431,7 +431,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Declaration of trust: grantor declares they hold property as trustee—one person, one document. Trust agreement: grantor and trustee are different parties, agreement between them. Revocable living trusts: often declarations (grantor is own trustee). Irrevocable trusts often agreements (independent trustee). Functional differences minimal—form follows structure.'
   },
   {
-    id: 'CFP-EST-B10-023',
+    id: 'cfp-est-b10-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -450,7 +450,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Qualified disclaimer: refuse inheritance—no gift tax (IRS treats as never received). Requirements: written, within 9 months of death, no benefit accepted, no direction of property. Property passes per governing instrument (as if disclaimant predeceased). Uses: estate tax planning, generation skipping, let assets pass to more appropriate beneficiary. Can\'t direct where it goes—must follow documents.'
   },
   {
-    id: 'CFP-EST-B10-024',
+    id: 'cfp-est-b10-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -469,7 +469,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Trust funding: the essential but often neglected step. Real estate: new deed to trust. Financial accounts: change title to trust. Vehicles: may or may not transfer (state-specific). Beneficiary designations: to trust or individuals. Ongoing: new assets to trust. Unfunded trust: assets still probate. Common mistake: sign trust, never transfer assets. Professional help often needed for proper funding.'
   },
   {
-    id: 'CFP-EST-B10-025',
+    id: 'cfp-est-b10-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',

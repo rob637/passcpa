@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   {
-    id: 'CFP-RET-B12-001',
+    id: 'cfp-ret-b12-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Healthcare projection realistic: Medicare Part B/D premiums (income-based IRMAA), Medigap or Advantage costs, out-of-pocket (copays, dental, vision, hearing), long-term care. Healthcare inflation: historically 5-7% vs. 2-3% general. Fidelity estimates ~$315K for couple retiring at 65 (2023). Major retirement expense—model carefully, consider health status, family history.'
   },
   {
-    id: 'CFP-RET-B12-002',
+    id: 'cfp-ret-b12-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Retirement income "flooring": cover essential expenses with guaranteed sources—Social Security, pensions, possibly income annuities. Discretionary: supported by portfolio, part-time work, flexible. Benefits: peace of mind (essentials covered regardless of markets), flexibility for wants. Essential income floor: reduces sequence risk impact on lifestyle. Balance: enough guaranteed, enough flexibility.'
   },
   {
-    id: 'CFP-RET-B12-003',
+    id: 'cfp-ret-b12-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
   },
   // RET-2: Qualified Plans
   {
-    id: 'CFP-RET-B12-004',
+    id: 'cfp-ret-b12-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Controlled/affiliated groups: related businesses (80%+ common ownership or specific relationships) treated as one employer. Impacts: coverage testing, nondiscrimination, contribution limits applied across group. Example: owner of two 100%-owned businesses—both employees count for testing, limits shared. Complex family attribution rules. Affects plan design, compliance. Essential for business owners with multiple entities.'
   },
   {
-    id: 'CFP-RET-B12-005',
+    id: 'cfp-ret-b12-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Solo 401(k) advantages: employee deferrals (~$23K, +$7.5K if 50+) + employer contributions (up to 25% of comp or 20% of SE income). Total: up to ~$69K (2024). Optional: Roth elective deferrals, loans. Better than SEP for many self-employed (can save more with same income). Requirement: no employees (except spouse). More administration than SEP but more flexibility.'
   },
   {
-    id: 'CFP-RET-B12-006',
+    id: 'cfp-ret-b12-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
   },
   // RET-3: Distribution Rules
   {
-    id: 'CFP-RET-B12-007',
+    id: 'cfp-ret-b12-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Inherited 401(k) post-SECURE: most designated beneficiaries—10-year rule. EDBs (spouse, minor child, disabled, close in age, certain trusts) may stretch. 401(k) difference from IRA: plan terms control options, may restrict (some plans require 5-year or lump sum). Rollover to inherited IRA often provides more flexibility. Check plan document. Annual RMDs may be required during 10-year period if owner died after RBD.'
   },
   {
-    id: 'CFP-RET-B12-008',
+    id: 'cfp-ret-b12-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'NUA: net unrealized appreciation on employer stock. Lump-sum distribution in-kind: pay ordinary income on cost basis only, NUA taxed as LTCG when sold. Requirements: lump sum, trigger event (separation, 59½, disability, death), employer securities. Strategy: significant appreciation, high ordinary rate. Trade-offs: lose tax-deferred growth, concentration risk. Analysis needed—not always beneficial. Must be lump sum distribution.'
   },
   {
-    id: 'CFP-RET-B12-009',
+    id: 'cfp-ret-b12-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
   },
   // RET-4: Social Security
   {
-    id: 'CFP-RET-B12-010',
+    id: 'cfp-ret-b12-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'PIA formula: progressive—replaces higher percentage of lower earnings. 2024 bend points example: 90% of first $1,174 AIME + 32% of AIME between $1,174-$7,078 + 15% above $7,078. Result: lower earners get higher replacement rate. COLA applied to PIA. Bend points adjust with wage growth. Understanding: why higher earners get lower replacement, why spousal benefit may be attractive for lower earner.'
   },
   {
-    id: 'CFP-RET-B12-011',
+    id: 'cfp-ret-b12-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'my Social Security (ssa.gov): access your actual earnings record, personalized benefit estimates at different claiming ages. More accurate than calculators using estimates. Check: earnings record accuracy (important—errors reduce benefits). Shows: retirement, disability, survivor estimates. Planning: use for projections, spouse access for both records. Free, essential planning tool.'
   },
   {
-    id: 'CFP-RET-B12-012',
+    id: 'cfp-ret-b12-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
   },
   // RET-5: Investment Considerations
   {
-    id: 'CFP-RET-B12-013',
+    id: 'cfp-ret-b12-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,7 +260,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Sequence risk mitigation: cash buffer (1-3 years expenses in stable assets), flexible withdrawals (reduce in down markets), income floor (Social Security, pensions—not affected by sequence), part-time income, dynamic allocation (rising equity glide path theory), bond tent. Goal: avoid selling equities in down markets for income. Early retirement years most vulnerable. Plan before entering retirement.'
   },
   {
-    id: 'CFP-RET-B12-014',
+    id: 'cfp-ret-b12-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -279,7 +279,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Conventional withdrawal order: taxable (capital gains rates, step-up possible), tax-deferred (ordinary income), Roth (tax-free, best growth preservation). But: not absolute—consider bracket management, RMD avoidance via Roth conversions, ACA subsidies. Goal: minimize lifetime taxes, not just current year. Dynamic approach often better than rigid ordering. Model different scenarios.'
   },
   {
-    id: 'CFP-RET-B12-015',
+    id: 'cfp-ret-b12-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +299,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RET-B12-016',
+    id: 'cfp-ret-b12-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +318,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Retirement timeline elements: income start dates (SS, pension, annuity), major expense changes (mortgage payoff, healthcare), Medicare enrollment (65—don\'t miss!), RMD beginning (73/75), tax milestones, planned spending changes (travel early, slow later). Visual timeline: helps clients understand sequencing, identifies gaps or overlaps. Basis for cash flow and tax planning.'
   },
   {
-    id: 'CFP-RET-B12-017',
+    id: 'cfp-ret-b12-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -337,7 +337,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Auto-enrollment: new employees automatically enrolled at default rate (often 3-6%) unless they opt out. Auto-escalation: contribution rate automatically increases each year (often 1% until reaching 10-15%). SECURE 2.0: requires auto-enrollment for new plans (with exceptions). Research: dramatically increases participation and savings rates. Opt-out: employees can always change or stop.'
   },
   {
-    id: 'CFP-RET-B12-018',
+    id: 'cfp-ret-b12-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -356,7 +356,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Form 8606: tracks nondeductible IRA contributions (basis), calculates taxable portion of distributions using pro-rata rule, reports Roth conversions and backdoor Roth. Pro-rata: distributions from all traditional IRAs combined, proportionate basis comes out tax-free. Critical: file every year you make nondeductible contributions. Lost Form 8606 records create tax headaches—maintain copies.'
   },
   {
-    id: 'CFP-RET-B12-019',
+    id: 'cfp-ret-b12-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -375,7 +375,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Pension/SS coordination: Consider: pension survivorship options (affects survivor income), SS delay credits (8%/year to 70), combined income for tax (SS taxation thresholds), replacement rates together. Strategies: bridge with pension while delaying SS, evaluate lump sum vs. annuity (compare to SS delay value), survivor protection (pension survivor + SS survivor). Integrated analysis—not separate decisions.'
   },
   {
-    id: 'CFP-RET-B12-020',
+    id: 'cfp-ret-b12-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -394,7 +394,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Fee impact: $100K at 7% for 30 years = $761K. At 6% (1% fee impact) = $574K. Difference: $187K (25% less). Fees to monitor: fund expense ratios, advisory fees, plan fees, trading costs. Low-cost options: increase by percentage points of return. Fiduciary duty: include cost consideration. Compare: total cost of ownership. Small percentages = big dollars over time.'
   },
   {
-    id: 'CFP-RET-B12-021',
+    id: 'cfp-ret-b12-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -413,26 +413,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Retirement readiness beyond money: Healthcare (coverage until Medicare, expected costs), lifestyle plan (what will you do with time?), emotional preparation (identity beyond work, purpose), housing decisions, family considerations. Financial: funded ratio for goals, sustainable income, emergency reserves. Many retirees unprepared emotionally even if financially ready. Holistic assessment important.'
   },
   {
-    id: 'CFP-RET-B12-022',
-    courseId: 'cfp',
-    section: 'CFP-RET',
-    blueprintArea: 'RET-2',
-    topic: 'Qualified Plans',
-    subtopic: 'Hardship Withdrawals',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Hardship withdrawals from 401(k) plans:',
-    options: [
-      'D) Have no limitations',
-      'A) Are tax-free',
-      'B) Require immediate and heavy financial need, are subject to income tax and potentially early withdrawal penalty',
-      'C) Can be repaid',
-    ],
-    correctAnswer: 2,
-    explanation: 'Hardship withdrawals: must be for immediate, heavy financial need (medical, education, eviction prevention, funeral, home repair). Limited to amount of need. Taxable as ordinary income + 10% penalty if under 59½ (unless exception). Not loans—can\'t be repaid. May limit contributions temporarily. Last resort—explore loans, other sources first. Plan must allow. Document need.'
-  },
-  {
-    id: 'CFP-RET-B12-023',
+    id: 'cfp-ret-b12-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -451,7 +432,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Still-working exception: delay RMDs from current employer\'s 401(k) while still working after RMD age. Requirements: employed by that employer, not a 5%+ owner. Doesn\'t apply to: IRAs (must take RMDs regardless of employment), prior employer 401(k)s. Strategy: if still working, may leave/consolidate funds in current 401(k) to delay all RMDs. Terminates when employment ends.'
   },
   {
-    id: 'CFP-RET-B12-024',
+    id: 'cfp-ret-b12-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -470,7 +451,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
     explanation: 'SSDI: for workers with qualifying disability. Eligibility: work credits (varies by age), inability to perform substantial gainful activity, condition lasting 12+ months or terminal. Benefit: based on earnings record (like retirement). 5-month waiting period. At FRA: converts to retirement benefit (same amount). Medicare: after 24 months on SSDI. Application: complex process, often denied initially. Can work alongside planning.'
   },
   {
-    id: 'CFP-RET-B12-025',
+    id: 'cfp-ret-b12-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

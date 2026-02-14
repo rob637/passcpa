@@ -646,7 +646,7 @@ Research the QBI deduction rules to determine each partner's deduction.
     difficulty: 'medium',
     timeEstimate: 12,
     topic: 'AU-C Section 570 Research',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     scenario: `
 You are auditing the financial statements of TechStart Corporation for the year ended December 31, 2024. During your audit, you discover the following conditions:
 

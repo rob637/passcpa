@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   // PCR-1: Code of Ethics Deep Dive
   {
-    id: 'CFP-PCR-B5-001',
+    id: 'cfp-pcr-b5-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals must act in clients\' best interests but clients retain autonomy. The professional should document concerns, explain potential issues, offer better alternatives, and ensure informed consent. If the client still wants to proceed after understanding the implications, implementation with documentation is appropriate.'
   },
   {
-    id: 'CFP-PCR-B5-002',
+    id: 'cfp-pcr-b5-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Competence requires attaining and maintaining knowledge and skill needed to provide services competently. When facing unfamiliar areas, professionals should seek additional education, consult experts, or decline/refer the engagement. Continuing education helps maintain competence, but it must go beyond minimum requirements when needed.'
   },
   {
-    id: 'CFP-PCR-B5-003',
+    id: 'cfp-pcr-b5-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -67,7 +67,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   },
   // PCR-2: Practice Standards
   {
-    id: 'CFP-PCR-B5-004',
+    id: 'cfp-pcr-b5-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -86,7 +86,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals can provide limited-scope (modular) advice when appropriate. The professional must ensure the limited scope is suitable for client needs and doesn\'t ignore obvious problems requiring attention. This must be clearly communicated and agreed upon in the engagement terms.'
   },
   {
-    id: 'CFP-PCR-B5-005',
+    id: 'cfp-pcr-b5-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Major life events can significantly impact financial plans. CFP® professionals in ongoing relationships should proactively reach out when aware of material changes. This demonstrates duty of care and ensures recommendations remain appropriate given changed circumstances.'
   },
   {
-    id: 'CFP-PCR-B5-006',
+    id: 'cfp-pcr-b5-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -125,7 +125,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   },
   // PCR-3: Fiduciary Duty
   {
-    id: 'CFP-PCR-B5-007',
+    id: 'cfp-pcr-b5-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -144,7 +144,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Duty to inquire means following up when something doesn\'t add up—inconsistent information, unrealistic assumptions, apparent misunderstanding. Professionals can\'t blindly accept information that appears problematic. The inquiry should be reasonable and proportionate to the concern.'
   },
   {
-    id: 'CFP-PCR-B5-008',
+    id: 'cfp-pcr-b5-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -163,7 +163,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Under the 2019 Standards, CFP® professionals owe fiduciary duty at all times when providing Financial Advice, not just when performing comprehensive financial planning. This expanded the duty beyond the traditional scope. It cannot be waived or circumvented through engagement letters.'
   },
   {
-    id: 'CFP-PCR-B5-009',
+    id: 'cfp-pcr-b5-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -183,7 +183,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   },
   // PCR-4: Regulation
   {
-    id: 'CFP-PCR-B5-010',
+    id: 'cfp-pcr-b5-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -202,7 +202,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Broker-dealers must establish, maintain, and enforce written supervisory procedures (WSPs) tailored to their business. FINRA Rule 3110 requires supervision of registered representatives, review of customer accounts, and procedures to ensure compliance. Supervisors must be qualified and training documented.'
   },
   {
-    id: 'CFP-PCR-B5-011',
+    id: 'cfp-pcr-b5-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -221,7 +221,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Regulation S-P requires financial institutions to provide initial privacy notices at relationship establishment and annual notices thereafter. Notices must describe information collection, sharing practices, and consumer rights to opt out of certain sharing. Changes to practices require new notices.'
   },
   {
-    id: 'CFP-PCR-B5-012',
+    id: 'cfp-pcr-b5-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -241,7 +241,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   },
   // PCR-1: More Ethics
   {
-    id: 'CFP-PCR-B5-013',
+    id: 'cfp-pcr-b5-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -260,7 +260,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Ethical dilemmas often involve balancing competing principles. Sound judgment considers all relevant facts, potential consequences, stakeholder interests, and professional obligations. There\'s rarely a formula—thoughtful analysis, documentation, and sometimes consultation are the best approaches.'
   },
   {
-    id: 'CFP-PCR-B5-014',
+    id: 'cfp-pcr-b5-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -279,7 +279,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Fairness doesn\'t mean identical treatment—it means equitable treatment based on circumstances. Different clients may receive different service levels based on engagement terms, but decisions shouldn\'t be based on discriminatory factors. Fairness applies to clients, colleagues, and other professionals.'
   },
   {
-    id: 'CFP-PCR-B5-015',
+    id: 'cfp-pcr-b5-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -299,7 +299,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   },
   // PCR-2: More Practice Standards
   {
-    id: 'CFP-PCR-B5-016',
+    id: 'cfp-pcr-b5-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -318,7 +318,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Technology is a tool, not a replacement for professional judgment. CFP® professionals must understand software assumptions and limitations, verify inputs are accurate, critically evaluate outputs, and tailor recommendations to client circumstances. "The computer said so" is never a valid defense.'
   },
   {
-    id: 'CFP-PCR-B5-017',
+    id: 'cfp-pcr-b5-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -337,7 +337,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Full fee disclosure must occur before engagement, allowing clients to make informed decisions. This includes all compensation (fees, commissions, trails, bonuses), how fees are calculated, when charged, and product costs (expense ratios, surrender charges). Regular disclosure of ongoing fees is also expected.'
   },
   {
-    id: 'CFP-PCR-B5-018',
+    id: 'cfp-pcr-b5-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -357,7 +357,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PCR-B5-019',
+    id: 'cfp-pcr-b5-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -376,7 +376,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Reasonable compensation considers value provided, complexity, and market rates. The key is full disclosure and alignment of incentives. Compensation structures shouldn\'t drive recommendations that aren\'t in client interest. Neither fee-only nor commission-based is inherently more "fiduciary"—transparency and alignment matter.'
   },
   {
-    id: 'CFP-PCR-B5-020',
+    id: 'cfp-pcr-b5-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -395,7 +395,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Advertising is heavily regulated. SEC Marketing Rule allows testimonials with disclosures. Performance advertising has specific requirements (net of fees, appropriate timeframes, comparison to benchmarks). FINRA reviews communication categories differently. All must be fair, balanced, and not misleading.'
   },
   {
-    id: 'CFP-PCR-B5-021',
+    id: 'cfp-pcr-b5-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -414,7 +414,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Diligence means timely and thorough service delivery. This includes meeting deadlines, following up on action items, conducting adequate research, and maintaining ongoing attention to client needs. It doesn\'t mean instant response but rather reliable, consistent professional service.'
   },
   {
-    id: 'CFP-PCR-B5-022',
+    id: 'cfp-pcr-b5-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -433,7 +433,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Professional termination protects all parties. Written notice, reasonable transition period, transfer of records, and clear documentation of the termination reason are appropriate. Sudden abandonment, especially during critical periods, may violate duties. Engagement terms should address termination procedures.'
   },
   {
-    id: 'CFP-PCR-B5-023',
+    id: 'cfp-pcr-b5-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -452,7 +452,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Principal trades create conflicts because the firm is on both sides. Fiduciaries must obtain informed consent, ensure fair pricing, and manage conflicts appropriately. Section 206(3) of the Investment Advisers Act requires written disclosure and client consent before each principal trade.'
   },
   {
-    id: 'CFP-PCR-B5-024',
+    id: 'cfp-pcr-b5-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -471,7 +471,7 @@ export const CFP_PROFESSIONAL_BATCH5_QUESTIONS: Question[] = [
     explanation: 'SEC registration requires $100M+ AUM (with exceptions). Smaller advisers register with state(s) where they maintain a place of business or have clients, subject to de minimis exemptions. This creates "mid-sized adviser" category ($100-110M) with SEC registration option. State rules vary significantly.'
   },
   {
-    id: 'CFP-PCR-B5-025',
+    id: 'cfp-pcr-b5-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',

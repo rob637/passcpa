@@ -11,7 +11,7 @@ import type { Question } from '../../../types';
 export const CFP_INSURANCE_QUESTIONS: Question[] = [
   // RIS-1: Risk Management Concepts (Questions 1-4)
   {
-    id: 'CFP-RIS-001',
+    id: 'cfp-ris-001',
     question: 'A client faces a risk that could cause a loss of $500,000 but has only a 0.1% probability of occurring. Which risk management technique is MOST appropriate?',
     options: [
       'Retention through an emergency fund',
@@ -25,11 +25,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-002',
+    id: 'cfp-ris-002',
     question: 'A building valued at $800,000 is insured for $500,000 under a policy with an 80% coinsurance clause. A fire causes $200,000 in damage. The deductible is $2,500. How much will the insurance pay?',
     options: [
       '$153,125',
@@ -43,11 +43,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-003',
+    id: 'cfp-ris-003',
     question: 'Which of the following is NOT a requirement for an insurable risk?',
     options: [
       'Loss must be accidental and unintentional',
@@ -61,11 +61,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-004',
+    id: 'cfp-ris-004',
     question: 'After a car accident, the at-fault driver pays $10,000 in damages to the injured party. The injured party\'s auto insurer had already paid $10,000 for the same damages. The at-fault driver\'s payment should go to:',
     options: [
       'The injured party',
@@ -79,13 +79,13 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Application' as const
   },
 
   // RIS-2: Life Insurance (Questions 5-12)
   {
-    id: 'CFP-RIS-005',
+    id: 'cfp-ris-005',
     question: 'Robert, age 35, earns $90,000 annually. He expects to work until age 65 and allocates 30% to personal expenses. Using a 5% discount rate and PV annuity factor of 15.372, what is his human life value?',
     options: [
       '$968,436',
@@ -99,11 +99,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-006',
+    id: 'cfp-ris-006',
     question: 'Linda has a whole life policy with a $300,000 face amount. She paid $60,000 in premiums. The current cash value is $75,000. If she surrenders the policy, what is the tax consequence?',
     options: [
       '$75,000 tax-free',
@@ -117,11 +117,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-007',
+    id: 'cfp-ris-007',
     question: 'Michael, age 45, needs $1 million coverage for 20 years until his children are independent. He also wants the option to continue coverage if his health changes. Which policy type is MOST appropriate?',
     options: [
       'Annual renewable term',
@@ -135,11 +135,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Evaluation' as const
   },
   {
-    id: 'CFP-RIS-008',
+    id: 'cfp-ris-008',
     question: 'Which statement about Modified Endowment Contracts (MECs) is CORRECT?',
     options: [
       'Withdrawals are tax-free up to the cost basis',
@@ -153,11 +153,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-009',
+    id: 'cfp-ris-009',
     question: 'A corporation has 5 equal shareholders with a cross-purchase buy-sell agreement. If shareholder A dies, how many insurance policies pay out, and who receives the proceeds?',
     options: [
       '5 policies; corporation receives proceeds',
@@ -171,11 +171,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-010',
+    id: 'cfp-ris-010',
     question: 'Sandra names her estate as the beneficiary of her $2 million life insurance policy. What are the consequences compared to naming individuals directly?',
     options: [
       'No difference in tax or distribution',
@@ -189,11 +189,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-011',
+    id: 'cfp-ris-011',
     question: 'At policy inception, the insured stated his age as 45 when he was actually 47. He dies with a $500,000 policy. The premium paid would have purchased $450,000 at the correct age. What does the beneficiary receive?',
     options: [
       '$0 due to misrepresentation',
@@ -207,11 +207,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-012',
+    id: 'cfp-ris-012',
     question: 'Tom transfers an existing $1M life insurance policy to an ILIT. He dies 2.5 years later. What is the estate tax consequence?',
     options: [
       '$0 included in estate—ILIT succeeded',
@@ -225,13 +225,13 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
 
   // RIS-3: Health, Disability, LTC (Questions 13-19)
   {
-    id: 'CFP-RIS-013',
+    id: 'cfp-ris-013',
     question: 'Mark, age 56, is enrolled in an HDHP with family coverage. His HSA contribution limit for 2024 is:',
     options: [
       '$4,150',
@@ -245,11 +245,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-014',
+    id: 'cfp-ris-014',
     question: 'Which health plan type requires a primary care physician referral for specialist visits AND does not cover out-of-network care?',
     options: [
       'PPO',
@@ -263,11 +263,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-015',
+    id: 'cfp-ris-015',
     question: 'Janet has a disability income policy with a $6,000 monthly benefit. Her prior income was $10,000/month; after a partial disability, she earns $3,000/month. Her residual disability benefit is:',
     options: [
       '$3,600',
@@ -281,11 +281,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-016',
+    id: 'cfp-ris-016',
     question: 'An employer pays 100% of disability insurance premiums for employees and does not include the premium as taxable income. If an employee becomes disabled and receives benefits, how are the benefits taxed?',
     options: [
       'Completely tax-free',
@@ -299,11 +299,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-017',
+    id: 'cfp-ris-017',
     question: 'Joan, age 70, needs long-term care. Her policy has a 90-day elimination period and $200/day benefit. After 90 qualifying days, she enters a nursing home at $280/day. Her monthly benefit payment is:',
     options: [
       '$280 × 30 = $8,400',
@@ -317,11 +317,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-018',
+    id: 'cfp-ris-018',
     question: 'Ralph purchases a $400,000 state-approved LTC Partnership policy. After using all benefits, he applies for Medicaid. Under partnership rules, how much can he protect from Medicaid spend-down (beyond the normal $2,000 limit)?',
     options: [
       '$0 additional',
@@ -335,11 +335,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-019',
+    id: 'cfp-ris-019',
     question: 'Which feature is MOST important for a 45-year-old professional purchasing disability income insurance?',
     options: [
       'Any-occupation definition of disability',
@@ -353,13 +353,13 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Evaluation' as const
   },
 
   // RIS-4: Property and Liability (Questions 20-25)
   {
-    id: 'CFP-RIS-020',
+    id: 'cfp-ris-020',
     question: 'A homeowner has an HO-3 policy. Which of the following losses would be covered?',
     options: [
       'Flood damage to the dwelling',
@@ -373,11 +373,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-021',
+    id: 'cfp-ris-021',
     question: 'John has auto insurance with 100/300/50 liability limits. He causes an accident injuring 4 people. Damages: Person A: $120,000, Person B: $60,000, Person C: $40,000, Person D: $35,000. How much does his insurance pay for bodily injury?',
     options: [
       '$255,000',
@@ -391,11 +391,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-022',
+    id: 'cfp-ris-022',
     question: 'Maria\'s car is stolen. Her policy has comprehensive coverage with $500 deductible. The car was worth $18,000 (ACV). She finds a comparable replacement for $19,500. How much does insurance pay?',
     options: [
       '$19,000',
@@ -409,11 +409,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-023',
+    id: 'cfp-ris-023',
     question: 'Steven has underlying auto liability of $300,000 and homeowners liability of $300,000, plus a $1 million umbrella policy. A lawsuit results in a $1.4 million judgment for an auto accident. How much does the umbrella pay?',
     options: [
       '$1,000,000',
@@ -427,11 +427,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-024',
+    id: 'cfp-ris-024',
     question: 'A guest slips on ice at a homeowner\'s property and suffers minor injuries with $4,000 in medical bills. The homeowner has HO-3 with $5,000 Medical Payments (Coverage F) and $300,000 liability (Coverage E). How is this claim handled?',
     options: [
       'Coverage E pays $4,000 after determining fault',
@@ -445,11 +445,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-025',
+    id: 'cfp-ris-025',
     question: 'A client owns a liability-producing asset (rental property, boat, dog). They have limited assets now but expect significant wealth in 5 years. What is the BEST liability protection strategy?',
     options: [
       'Minimum state-required liability insurance',
@@ -463,14 +463,14 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Evaluation' as const
   },
   // ============================================
   // Additional RISK Questions (026-045)
   // ============================================
   {
-    id: 'CFP-RIS-026',
+    id: 'cfp-ris-026',
     question: 'A client is diagnosed with Type 2 diabetes and is concerned about insurability. Which policy feature would BEST protect their ability to maintain coverage?',
     options: [
       'Waiver of premium rider',
@@ -484,11 +484,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-027',
+    id: 'cfp-ris-027',
     question: 'A 35-year-old executive earns $250,000 annually. Using the human life value approach with 3% inflation, 6% discount rate, and 30 years to retirement, the approximate income replacement value is:',
     options: [
       'Approximately $5.8 million',
@@ -502,11 +502,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-028',
+    id: 'cfp-ris-028',
     question: 'A long-term care policy has a 90-day elimination period and pays $200/day for 3 years. If nursing home costs average $280/day, what is the total out-of-pocket cost assuming full 3-year utilization?',
     options: [
       '$25,200 for the elimination period only',
@@ -520,11 +520,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-029',
+    id: 'cfp-ris-029',
     question: 'An employee has group life insurance of 2x salary ($120,000) and wants to determine if additional coverage is needed. Their spouse earns $80,000, they have a $400,000 mortgage, $50,000 in savings, and two children. Using the needs approach, the approximate additional coverage needed is:',
     options: [
       'No additional coverage needed',
@@ -538,11 +538,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-030',
+    id: 'cfp-ris-030',
     question: 'A life insurance applicant has a hazardous hobby (skydiving). The insurance company will most likely:',
     options: [
       'Decline all coverage',
@@ -556,11 +556,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-RIS-031',
+    id: 'cfp-ris-031',
     question: 'The "own occupation" definition of disability in a disability income policy means:',
     options: [
       'The insured cannot perform ANY occupation',
@@ -574,11 +574,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-RIS-032',
+    id: 'cfp-ris-032',
     question: 'A universal life policy with a declining secondary guarantee is purchased at age 45. If premiums are paid exactly per the guarantee schedule, what happens if the guarantee expires at age 85 and the insured lives to 95?',
     options: [
       'Coverage continues at the same premium',
@@ -592,11 +592,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-033',
+    id: 'cfp-ris-033',
     question: 'A client receives a $100,000 inheritance and wants to purchase a life insurance policy with a single premium. The MOST significant tax disadvantage of a single premium policy is:',
     options: [
       'The death benefit is taxable income',
@@ -610,11 +610,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-034',
+    id: 'cfp-ris-034',
     question: 'An insured dies holding a term life policy. The beneficiary is the insured\'s estate. For estate planning purposes, this results in:',
     options: [
       'Income tax on the death benefit',
@@ -628,11 +628,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-035',
+    id: 'cfp-ris-035',
     question: 'An insured has a $300,000 whole life policy with $75,000 cash value. They want to stop paying premiums. Which non-forfeiture option provides the longest coverage period?',
     options: [
       'Extended term insurance',
@@ -646,11 +646,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-036',
+    id: 'cfp-ris-036',
     question: 'A client is comparing disability insurance quotes. Policy A has a 30-day elimination period and costs $2,400/year. Policy B has a 90-day elimination period and costs $1,800/year. If the monthly benefit is $6,000, the break-even point where Policy A\'s extra cost equals the additional benefits received is:',
     options: [
       'After 2 claims',
@@ -664,11 +664,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-037',
+    id: 'cfp-ris-037',
     question: 'For a healthy 40-year-old seeking $1,000,000 of 20-year level term coverage, the MOST cost-effective approach is typically:',
     options: [
       'Group term insurance through employer',
@@ -682,11 +682,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Evaluation' as const
   },
   {
-    id: 'CFP-RIS-038',
+    id: 'cfp-ris-038',
     question: 'A client\'s homeowners policy has Replacement Cost coverage on the dwelling but Actual Cash Value on contents. Their 5-year-old laptop (original cost $1,500, current replacement $1,200, useful life 7 years) is stolen. The claim payment will be approximately:',
     options: [
       '$1,500',
@@ -700,11 +700,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-039',
+    id: 'cfp-ris-039',
     question: 'An employed physician age 55 is planning for retirement and considering disability income insurance options. Her employer-provided group LTD has a 5-year benefit period. The MOST important gap to address is:',
     options: [
       'The 90-day elimination period',
@@ -718,11 +718,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Evaluation' as const
   },
   {
-    id: 'CFP-RIS-040',
+    id: 'cfp-ris-040',
     question: 'A business owner wants to protect against the death of a key executive. Key person life insurance proceeds are:',
     options: [
       'Tax-free death benefit to the business',
@@ -736,11 +736,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-RIS-041',
+    id: 'cfp-ris-041',
     question: 'The "partnership approach" in long-term care planning typically involves:',
     options: [
       'Two individuals sharing one LTC policy',
@@ -754,11 +754,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-RIS-042',
+    id: 'cfp-ris-042',
     question: 'A variable universal life (VUL) policyholder experiences poor subaccount performance. Unlike traditional universal life, the primary risk to the policy is:',
     options: [
       'The death benefit will decrease below the original face amount',
@@ -772,11 +772,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-043',
+    id: 'cfp-ris-043',
     question: 'A 1035 exchange from a life insurance policy to an annuity:',
     options: [
       'Is a taxable event for any gain',
@@ -790,11 +790,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-044',
+    id: 'cfp-ris-044',
     question: 'A married couple wants to ensure both are covered for long-term care. A shared care rider on linked LTC policies allows:',
     options: [
       'Both spouses to use the combined benefit pool',
@@ -808,11 +808,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering and Understanding' as const
   },
   {
-    id: 'CFP-RIS-045',
+    id: 'cfp-ris-045',
     question: 'A client is sued after a dinner party guest becomes ill from food poisoning. Their HO-3 policy will MOST likely:',
     options: [
       'Deny coverage—food preparation is excluded',
@@ -826,7 +826,7 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
 
@@ -834,7 +834,7 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
   // ADDITIONAL INSURANCE QUESTIONS (46-75)
   // ============================================
   {
-    id: 'CFP-RIS-046',
+    id: 'cfp-ris-046',
     question: 'What is the primary purpose of the incontestability clause in a life insurance policy?',
     options: [
       'Allow insurer to cancel for any reason',
@@ -848,11 +848,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-047',
+    id: 'cfp-ris-047',
     question: 'A viatical settlement differs from a life settlement primarily in that:',
     options: [
       'Viatical involves terminally ill individuals',
@@ -866,11 +866,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-048',
+    id: 'cfp-ris-048',
     question: 'Which type of life insurance provides both death benefit and cash value accumulation?',
     options: [
       'Annual renewable term',
@@ -884,11 +884,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-049',
+    id: 'cfp-ris-049',
     question: 'The elimination period in a disability insurance policy:',
     options: [
       'Refers to pre-existing condition limitations',
@@ -902,11 +902,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-050',
+    id: 'cfp-ris-050',
     question: 'Own-occupation disability coverage means:',
     options: [
       'Disability from occupational hazards only',
@@ -920,11 +920,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-051',
+    id: 'cfp-ris-051',
     question: 'What is a key advantage of a guaranteed renewable disability policy?',
     options: [
       'Premiums never increase',
@@ -938,11 +938,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-052',
+    id: 'cfp-ris-052',
     question: 'A client has an umbrella policy with $1 million limit. Their auto policy has $300,000 liability. In a $500,000 auto lawsuit, how much does the umbrella pay?',
     options: [
       '$0',
@@ -956,11 +956,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-053',
+    id: 'cfp-ris-053',
     question: 'Which homeowners policy form provides the MOST comprehensive coverage?',
     options: [
       'HO-1 Basic Form',
@@ -974,11 +974,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-054',
+    id: 'cfp-ris-054',
     question: 'What does coinsurance in a property insurance policy require?',
     options: [
       'Multiple insurers share every loss',
@@ -992,11 +992,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-055',
+    id: 'cfp-ris-055',
     question: 'Which is NOT covered under standard homeowners Section II liability?',
     options: [
       'Dog bite on premises',
@@ -1010,11 +1010,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-056',
+    id: 'cfp-ris-056',
     question: 'A Modified Endowment Contract (MEC) results from:',
     options: [
       'Policy lapse due to nonpayment',
@@ -1028,11 +1028,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-057',
+    id: 'cfp-ris-057',
     question: 'The Cost of Living Adjustment (COLA) rider in disability insurance:',
     options: [
       'Reduces premiums over time',
@@ -1046,11 +1046,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-058',
+    id: 'cfp-ris-058',
     question: 'What is the tax treatment of employer-paid disability insurance premiums and benefits?',
     options: [
       'Premiums are taxable; benefits are tax-free',
@@ -1064,11 +1064,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-059',
+    id: 'cfp-ris-059',
     question: 'Which life insurance rider allows the insured to purchase additional coverage without evidence of insurability?',
     options: [
       'Waiver of premium',
@@ -1082,11 +1082,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-060',
+    id: 'cfp-ris-060',
     question: 'Section 1035 exchange allows tax-free exchange of:',
     options: [
       'Life insurance for real estate',
@@ -1100,11 +1100,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-061',
+    id: 'cfp-ris-061',
     question: 'The needs approach to life insurance determines coverage based on:',
     options: [
       'Multiples of annual income',
@@ -1118,11 +1118,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-062',
+    id: 'cfp-ris-062',
     question: 'What is risk retention?',
     options: [
       'Purchasing insurance for all risks',
@@ -1136,11 +1136,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-063',
+    id: 'cfp-ris-063',
     question: 'A "pure" risk is characterized by:',
     options: [
       'Possibility of gain or loss',
@@ -1154,11 +1154,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-064',
+    id: 'cfp-ris-064',
     question: 'Long-term care insurance benefit triggers require:',
     options: [
       'Hospitalization for 30 days',
@@ -1172,11 +1172,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-065',
+    id: 'cfp-ris-065',
     question: 'Which factor would INCREASE life insurance premiums?',
     options: [
       'Non-smoker status',
@@ -1190,11 +1190,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-066',
+    id: 'cfp-ris-066',
     question: 'The principle of indemnity in insurance means:',
     options: [
       'Insured can profit from a loss',
@@ -1208,11 +1208,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-067',
+    id: 'cfp-ris-067',
     question: 'Subrogation allows the insurer to:',
     options: [
       'Cancel the policy at any time',
@@ -1226,11 +1226,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-068',
+    id: 'cfp-ris-068',
     question: 'A variable universal life (VUL) policy differs from universal life in that VUL:',
     options: [
       'Has no cash value component',
@@ -1244,11 +1244,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-069',
+    id: 'cfp-ris-069',
     question: 'Which is a characteristic of term life insurance?',
     options: [
       'Builds cash value over time',
@@ -1262,11 +1262,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-070',
+    id: 'cfp-ris-070',
     question: 'Personal Auto Policy (PAP) Part A provides:',
     options: [
       'Collision coverage',
@@ -1280,11 +1280,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-071',
+    id: 'cfp-ris-071',
     question: 'Which health insurance cost-sharing arrangement typically has lowest premiums?',
     options: [
       'PPO with low deductible',
@@ -1298,11 +1298,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Application' as const
   },
   {
-    id: 'CFP-RIS-072',
+    id: 'cfp-ris-072',
     question: 'The "transfer for value" rule affects life insurance by:',
     options: [
       'Eliminating the death benefit',
@@ -1316,11 +1316,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Analysis' as const
   },
   {
-    id: 'CFP-RIS-073',
+    id: 'cfp-ris-073',
     question: 'An insurable interest in life insurance:',
     options: [
       'Is required at time of death',
@@ -1334,11 +1334,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-074',
+    id: 'cfp-ris-074',
     question: 'Medicare Part B covers:',
     options: [
       'Hospital inpatient services',
@@ -1352,11 +1352,11 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     skillLevel: 'Remembering' as const
   },
   {
-    id: 'CFP-RIS-075',
+    id: 'cfp-ris-075',
     question: 'Which best describes the human life value approach to life insurance needs?',
     options: [
       'Present value of future earnings potential',
@@ -1370,7 +1370,7 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
     difficulty: 'medium',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     skillLevel: 'Application' as const
   }
 ];

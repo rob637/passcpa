@@ -671,7 +671,7 @@ Deferred outflows/inflows related to pensions:
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Financial Analysis',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-1',
     scenario: `
 Apex Industries presents the following financial data for Year 1:
@@ -771,7 +771,7 @@ Additional Information:
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Cost Accounting and Planning',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-1',
     scenario: `
 Precision Manufacturing produces a single product with the following cost structure:
@@ -859,7 +859,7 @@ Management is considering several alternatives:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Variance Analysis',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-3',
     scenario: `
 Standard Manufacturing uses a standard cost system. The following standards were established for direct materials and direct labor:

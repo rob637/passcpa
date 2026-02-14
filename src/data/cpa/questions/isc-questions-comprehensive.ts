@@ -218,7 +218,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     id: 'isc-comp-011',
     courseId: 'cpa',
     section: 'ISC',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     topic: 'Data Privacy',
     subtopic: 'Data Subject Rights',
     difficulty: 'hard',
@@ -242,7 +242,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Data Privacy',
     subtopic: 'Data Minimization',
     difficulty: 'medium',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Application',
     question: 'An organization\'s IT department implements database activity monitoring (DAM) for all financial databases. The DAM system detects that a privileged user executed a query that extracted all customer Social Security numbers, account numbers, and balances from the production financial database at 11:45 PM on a Friday. The query was not related to any authorized business process. The DAM generated an alert, but no one investigated because the security team does not monitor alerts on weekends. What control gap exists?',
     options: [
@@ -263,7 +263,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'SOC Reporting',
     subtopic: 'SOC 2 Trust Services Criteria',
     difficulty: 'hard',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'The SOC 2 Trust Services Criteria include:',
     options: [
@@ -284,7 +284,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'SOC Reporting',
     subtopic: 'SOC 3',
     difficulty: 'medium',
-    blueprintArea: 'ISC-V',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Application',
     question: 'A SOC 3 report differs from SOC 2 by:',
     options: [
@@ -305,7 +305,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'Smart Contracts',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Smart contracts on blockchain:',
     options: [
@@ -326,7 +326,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'Machine Learning Governance',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'AI/ML governance should address:',
     options: [
@@ -347,7 +347,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Cloud Computing',
     subtopic: 'Cloud Security',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'In the cloud shared responsibility model, the customer is always responsible for:',
     options: [
@@ -475,7 +475,7 @@ export const ISC_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Process Automation',
     subtopic: 'RPA Controls',
     difficulty: 'hard',
-    blueprintArea: 'ISC-VI',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Robotic Process Automation (RPA) introduces risks including:',
     options: [

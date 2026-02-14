@@ -17,10 +17,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company reports sales of $800,000. Accounts receivable increased by $50,000. Using the direct method, cash collected from customers is:',
     options: [
-      '$850,000',
+      '$700,000',
       '$800,000',
       '$750,000',
-      '$700,000'
+      '$850,000',
     ],
     correctAnswer: 2,
     explanation: 'Cash collected = Sales - Increase in AR (or + Decrease in AR). $800,000 - $50,000 = $750,000. An increase in AR means some sales weren\'t collected yet. A decrease would mean collections exceeded current period sales.',
@@ -38,10 +38,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'Under current GAAP, bond issuance costs are:',
     options: [
-      'Expensed immediately when incurred',
+      'Added to interest expense only at maturity',
       'Recorded as a deferred asset and amortized',
       'Deducted from the carrying value of the bond and amortized',
-      'Added to interest expense only at maturity'
+      'Expensed immediately when incurred',
     ],
     correctAnswer: 2,
     explanation: 'ASC 835-30 requires bond issuance costs to be presented as a direct deduction from the carrying amount of the debt (like a discount). They are amortized using the effective interest method over the bond term.',
@@ -59,12 +59,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'When the annual budget is recorded in a governmental fund, the entry includes:',
     options: [
-      'Debit Revenue, Credit Expense',
-      'Debit Estimated Revenues, Credit Appropriations, Debit/Credit Budgetary Fund Balance',
+      'No entry—budgets are memorandum only',
       'Debit Cash, Credit Deferred Revenue',
-      'No entry—budgets are memorandum only'
+      'Debit Estimated Revenues, Credit Appropriations, Debit/Credit Budgetary Fund Balance',
+      'Debit Revenue, Credit Expense',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Budget entry: Dr. Estimated Revenues (expected inflows), Cr. Appropriations (authorized spending), plug to Budgetary Fund Balance. This integrates the budget into the accounting system for control purposes.',
     reference: 'GASB Codification 1700',
   },
@@ -80,12 +80,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The accounting principle of consistency requires:',
     options: [
-      'All companies use the same accounting methods',
       'A company use the same methods from period to period',
+      'Only GAAP methods be used',
       'Methods be changed annually to reflect best practices',
-      'Only GAAP methods be used'
+      'All companies use the same accounting methods',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Consistency means an entity uses the same accounting methods from period to period, enhancing comparability over time. Changes are permitted but must be justified and disclosed with retrospective application if possible.',
     reference: 'ASC 250-10-45',
   },
@@ -104,11 +104,11 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     question: 'Understanding the entity and its environment is required primarily to:',
     options: [
       'Document the audit plan',
-      'Assess risks of material misstatement',
       'Determine audit fees',
-      'Train new audit staff'
+      'Train new audit staff',
+      'Assess risks of material misstatement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Understanding the entity\'s business, industry, and accounting enables the auditor to identify and assess risks of material misstatement. This risk assessment drives the nature, timing, and extent of audit procedures.',
     reference: 'AU-C 315.05',
   },
@@ -125,11 +125,11 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     question: 'The auditor\'s primary objective when observing the client\'s inventory count is to:',
     options: [
       'Count all inventory items',
-      'Evaluate whether count procedures are being followed',
       'Correct any counting errors immediately',
-      'Take custody of inventory records'
+      'Take custody of inventory records',
+      'Evaluate whether count procedures are being followed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Observation evaluates whether management\'s count procedures are properly followed and whether the count is reliable. The auditor performs test counts but doesn\'t count all items. The auditor doesn\'t correct errors—they note exceptions.',
     reference: 'AU-C 501.04',
   },
@@ -145,12 +145,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a predecessor auditor\'s report on prior year statements is not reissued, the successor auditor\'s report should:',
     options: [
-      'Express an opinion on both years',
-      'Include reference to the predecessor in an other-matter paragraph',
       'Disclaim on the prior period',
-      'Refuse to report on comparative statements'
+      'Express an opinion on both years',
+      'Refuse to report on comparative statements',
+      'Include reference to the predecessor in an other-matter paragraph',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The successor includes an other-matter paragraph describing: the priors were audited by another auditor, the date and type of their opinion, and any modifications. The successor doesn\'t express an opinion on the prior period.',
     reference: 'AU-C 700.54',
   },
@@ -167,11 +167,11 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     question: 'A consultation with a specialist during an audit is most appropriate when the auditor:',
     options: [
       'Wants to reduce audit time',
-      'Encounters matters requiring expertise beyond the auditor\'s competence',
       'Needs to increase detection risk',
-      'Wants to delegate all testing'
+      'Wants to delegate all testing',
+      'Encounters matters requiring expertise beyond the auditor\'s competence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Auditors use specialists (actuaries, appraisers, IT experts, etc.) when the subject matter requires specialized skills or knowledge beyond the audit team\'s competence. The auditor remains responsible for conclusions.',
     reference: 'AU-C 620.03',
   },
@@ -189,10 +189,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'The 3.8% Net Investment Income Tax applies to the lesser of:',
     options: [
-      'Total adjusted gross income or $250,000',
+      'Net investment income alone regardless of income level',
       'Net investment income or MAGI exceeding threshold',
       'Total passive income or total wages',
-      'Net investment income alone regardless of income level'
+      'Total adjusted gross income or $250,000',
     ],
     correctAnswer: 1,
     explanation: 'NIIT (3.8%) applies to lesser of: (1) net investment income (interest, dividends, capital gains, passive income, etc.) or (2) MAGI exceeding threshold ($250,000 MFJ, $200,000 single). It\'s an "additional" Medicare tax.',
@@ -200,23 +200,22 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
   },
   {
     id: 'reg-wc-088',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-III',
-    topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Shareholder Basis',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'An S corporation shareholder\'s stock basis is increased by:',
+    question: 'An S corporation shareholder has stock basis of $25,000 and no debt basis at the start of the year. The shareholder\'s pro-rata share of ordinary income is $8,000 and ordinary losses are $40,000 for the current year. What amount of loss is deductible in the current year?',
     options: [
-      'Their share of the S corp\'s ordinary income',
-      'Distributions received',
-      'Nondeductible expenses of the corporation',
-      'Their share of separately stated losses'
+      '$33,000 — basis is increased by income first, then losses are limited to available basis',
+      '$40,000',
+      '$25,000',
+      '$35,000',
     ],
     correctAnswer: 0,
-    explanation: 'Stock basis increases: income (ordinary + separately stated), capital contributions, excess depletion. Decreases: distributions, losses, nondeductible expenses, noncapital nondeductible expenses. Losses can\'t reduce basis below zero.',
+    explanation: 'Per IRC §1366(d), S corporation losses are deductible only to the extent of basis. Basis adjustments follow a specific order: first increase for income, then decrease for losses. Stock basis: $25,000 + $8,000 income = $33,000. Losses of $40,000 are limited to the $33,000 basis. Deductible loss = $33,000, and $7,000 is suspended and carries forward indefinitely until the shareholder has sufficient basis.',
     reference: 'IRC Section 1367',
   },
   {
@@ -231,12 +230,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'To perfect a security interest in goods by filing, the secured party must file a:',
     options: [
-      'Copy of the original contract',
       'Financing statement (UCC-1)',
+      'Notarized security agreement',
       'Court order',
-      'Notarized security agreement'
+      'Copy of the original contract',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Perfection by filing requires a UCC-1 financing statement filed with the Secretary of State. It must include debtor name, secured party name, and collateral description. Filing provides public notice of the security interest.',
     reference: 'UCC Article 9',
   },
@@ -252,10 +251,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'A taxpayer donates appreciated stock (held over 1 year) to a public charity. The deduction is generally:',
     options: [
-      'Limited to the cost basis',
+      'Fair market value with no AGI limitation',
       'Fair market value, limited to 30% of AGI',
       'Fair market value, limited to 50% of AGI',
-      'Fair market value with no AGI limitation'
+      'Limited to the cost basis',
     ],
     correctAnswer: 1,
     explanation: 'Capital gain property (LTCG) to public charities: FMV deduction limited to 30% AGI. Ordinary income property: basis deduction limited to 50% AGI. Cash to public charities: 60% AGI. Five-year carryforward for excess.',
@@ -275,10 +274,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'The 75% test in segment reporting requires:',
     options: [
-      'At least 75% of assets be included in reportable segments',
-      'At least 75% of consolidated revenue from external customers be included in reportable segments',
       'At least 75% of operating segments be reported',
-      'At least 75% of profits be disclosed'
+      'At least 75% of consolidated revenue from external customers be included in reportable segments',
+      'At least 75% of assets be included in reportable segments',
+      'At least 75% of profits be disclosed',
     ],
     correctAnswer: 1,
     explanation: 'After applying the 10% tests, check if reportable segments include at least 75% of total consolidated revenue from external customers. If not, additional segments must be identified as reportable until threshold is met.',
@@ -297,11 +296,11 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     question: 'In a make-or-buy decision, which cost is most likely irrelevant?',
     options: [
       'Direct materials of making the product',
-      'Variable manufacturing overhead',
       'Allocated fixed factory overhead',
-      'Direct labor to produce internally'
+      'Variable manufacturing overhead',
+      'Direct labor to produce internally',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Relevant costs are future costs that differ between alternatives. Allocated fixed overhead typically continues regardless of the make-or-buy decision (unless capacity can be redeployed). Only avoidable costs are relevant.',
     reference: 'Relevant Cost Analysis',
   },
@@ -317,12 +316,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The debt-to-equity ratio is calculated as:',
     options: [
+      'Long-term debt / Total assets',
       'Total assets / Total equity',
       'Total liabilities / Total equity',
-      'Long-term debt / Total assets',
-      'Total debt / Total assets'
+      'Total debt / Total assets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Debt-to-equity = Total liabilities / Total shareholders\' equity. It measures financial leverage—how much debt financing vs. equity financing. Higher ratios indicate greater leverage and potentially higher risk.',
     reference: 'Financial Ratio Analysis',
   },
@@ -338,10 +337,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'When calculating WACC, the cost of debt is:',
     options: [
-      'The coupon rate on outstanding bonds',
-      'The yield to maturity adjusted for the tax benefit',
       'The prime rate plus a spread',
-      'The same as the cost of equity'
+      'The yield to maturity adjusted for the tax benefit',
+      'The coupon rate on outstanding bonds',
+      'The same as the cost of equity',
     ],
     correctAnswer: 1,
     explanation: 'WACC uses after-tax cost of debt: YTM × (1 - tax rate). Interest is tax-deductible, creating a tax shield. The coupon rate is historical; YTM reflects current market conditions. Cost of equity is typically higher due to greater risk.',
@@ -359,10 +358,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Pushdown accounting refers to:',
     options: [
-      'Allocating parent company costs to subsidiaries',
-      'Reflecting acquisition adjustments in the subsidiary\'s standalone financial statements',
       'Eliminating intercompany transactions',
-      'Recording minority interest at historical cost'
+      'Reflecting acquisition adjustments in the subsidiary\'s standalone financial statements',
+      'Allocating parent company costs to subsidiaries',
+      'Recording minority interest at historical cost',
     ],
     correctAnswer: 1,
     explanation: 'Pushdown accounting records the acquirer\'s accounting basis (fair values, goodwill) in the acquired entity\'s separate financial statements. Required by SEC for substantially wholly-owned subsidiaries; optional under ASC 805-50.',
@@ -382,10 +381,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'Data Loss Prevention (DLP) systems primarily protect against:',
     options: [
-      'Hardware failures',
+      'Software bugs',
       'Unauthorized data exfiltration',
       'Network performance issues',
-      'Software bugs'
+      'Hardware failures',
     ],
     correctAnswer: 1,
     explanation: 'DLP monitors and controls data in use, in motion, and at rest to prevent unauthorized transmission of sensitive information outside the organization. It can block, quarantine, or alert on policy violations.',
@@ -403,12 +402,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'A key principle of DevOps is:',
     options: [
-      'Strict separation between development and operations teams',
       'Continuous integration and continuous deployment (CI/CD)',
       'Manual code reviews replacing automated testing',
-      'Waterfall development methodology'
+      'Waterfall development methodology',
+      'Strict separation between development and operations teams',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'DevOps integrates development and operations through continuous integration (frequent code merges, automated testing) and continuous deployment (automated releases). This accelerates delivery while maintaining quality through automation.',
     reference: 'DevOps Principles',
   },
@@ -424,12 +423,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'An input validation control that ensures a field contains only numeric values is a:',
     options: [
-      'Reasonableness check',
       'Format check',
       'Range check',
-      'Check digit verification'
+      'Check digit verification',
+      'Reasonableness check',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Format checks verify data is in the correct format (numeric-only, alphanumeric, date format). Reasonableness checks test if values are logical. Range checks verify values are within acceptable limits. Check digits detect transposition errors.',
     reference: 'Application Control Types',
   },
@@ -445,10 +444,10 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'ETL stands for:',
     options: [
-      'Execute, Test, Launch',
-      'Extract, Transform, Load',
       'Evaluate, Transfer, Log',
-      'Enter, Track, List'
+      'Extract, Transform, Load',
+      'Enter, Track, List',
+      'Execute, Test, Launch',
     ],
     correctAnswer: 1,
     explanation: 'ETL: Extract data from sources, Transform it (clean, format, calculate), Load it into the target system (data warehouse). It\'s fundamental to data integration and business intelligence.',
@@ -468,12 +467,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'AMT paid due to deferral items (such as ISO exercise) generates:',
     options: [
+      'A credit only if the stock is sold at a loss',
+      'An immediate refund',
       'No credit',
       'A minimum tax credit usable against regular tax in future years',
-      'An immediate refund',
-      'A credit only if the stock is sold at a loss'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'AMT attributable to deferral items (timing differences) creates a minimum tax credit (MTC) for future years. The MTC can offset regular tax exceeding tentative minimum tax. Exclusion items (state tax deduction) don\'t generate MTC.',
     reference: 'IRC Section 53',
   },
@@ -489,12 +488,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Analysis',
     question: 'Members of a controlled group of corporations must:',
     options: [
+      'Have identical fiscal years',
+      'Be in the same industry',
       'File a consolidated return',
       'Share certain tax benefits (graduated rates, exemption amounts)',
-      'Have identical fiscal years',
-      'Be in the same industry'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Controlled groups share tax brackets, accumulated earnings credit, Section 179 expensing, and other benefits—preventing multiplication by splitting businesses. They don\'t have to file consolidated (different from affiliated groups).',
     reference: 'IRC Section 1561',
   },
@@ -511,9 +510,9 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     question: 'The Section 199A qualified business income deduction is limited for specified service trades or businesses (SSTBs) when taxable income exceeds:',
     options: [
       '$157,500 (single) / $315,000 (MFJ)',
-      '$200,000 (single) / $400,000 (MFJ)',
+      'SSTBs never qualify for the deduction',
       '$100,000 (single) / $200,000 (MFJ)',
-      'SSTBs never qualify for the deduction'
+      '$200,000 (single) / $400,000 (MFJ)',
     ],
     correctAnswer: 0,
     explanation: 'SSTBs (health, law, accounting, consulting, etc.) can claim QBI deduction if taxable income is below thresholds. Phase-out begins at $157,500/$315,000, complete at $207,500/$415,000. Above complete phase-out, SSTBs get no deduction.',
@@ -531,12 +530,12 @@ export const WORLD_CLASS_BATCH_13: Question[] = [
     skillLevel: 'Application',
     question: 'Innocent spouse relief under IRC Section 6015 requires the requesting spouse to demonstrate:',
     options: [
+      'They have no income of their own',
       'They signed the return under duress',
-      'An understatement attributable to the other spouse\'s erroneous item, with no knowledge of the understatement',
       'The couple filed separately',
-      'They have no income of their own'
+      'An understatement attributable to the other spouse\'s erroneous item, with no knowledge of the understatement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Innocent spouse relief: (1) joint return, (2) understatement due to other spouse\'s erroneous item, (3) didn\'t know and had no reason to know of understatement, (4) inequitable to hold liable. Also available: separation of liability and equitable relief.',
     reference: 'IRC Section 6015',
   },

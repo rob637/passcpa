@@ -18,12 +18,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An unmodified audit opinion indicates that the financial statements:',
     options: [
-      'Are free from all errors',
       'Are presented fairly in all material respects in accordance with the applicable framework',
+      'Guarantee the entity will remain a going concern',
       'Have been verified to be 100% accurate',
-      'Guarantee the entity will remain a going concern'
+      'Are free from all errors',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'An unmodified (clean) opinion means the auditor believes the financial statements are presented fairly in all material respects. It does not guarantee accuracy or freedom from all errors, only that statements are materially correct.',
     reference: 'AU-C Section 700',
   },
@@ -40,12 +40,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'An auditor issues a qualified opinion when:',
     options: [
-      'The auditor lacks independence',
       'Misstatements are material but not pervasive to the financial statements',
       'The auditor cannot obtain sufficient evidence on any accounts',
-      'The company has committed fraud'
+      'The company has committed fraud',
+      'The auditor lacks independence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A qualified opinion is appropriate when misstatements are material but not pervasive, or when the auditor cannot obtain sufficient evidence but the effects are not pervasive. "Except for" language is used.',
     reference: 'AU-C Section 705',
   },
@@ -62,10 +62,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An adverse audit opinion indicates that the financial statements:',
     options: [
-      'Cannot be audited due to scope limitations',
-      'Are materially and pervasively misstated',
       'Have minor errors that do not affect the overall presentation',
-      'Are presented fairly with some exceptions'
+      'Are materially and pervasively misstated',
+      'Are presented fairly with some exceptions',
+      'Cannot be audited due to scope limitations',
     ],
     correctAnswer: 1,
     explanation: 'An adverse opinion is the most severe modification. It is issued when misstatements are both material and pervasive to the financial statements, meaning the statements do not present fairly.',
@@ -84,12 +84,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'When should an auditor issue a disclaimer of opinion?',
     options: [
-      'When detected misstatements are material and pervasive',
-      'When the auditor lacks independence',
+      'When there is a going concern issue',
       'When the auditor cannot obtain sufficient appropriate evidence and possible effects could be pervasive',
-      'When there is a going concern issue'
+      'When the auditor lacks independence',
+      'When detected misstatements are material and pervasive',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'A disclaimer is issued when the auditor cannot obtain sufficient appropriate audit evidence and the possible effects of undetected misstatements could be both material and pervasive. The auditor disclaims an opinion entirely.',
     reference: 'AU-C Section 705',
   },
@@ -106,12 +106,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'An Emphasis of Matter paragraph in an audit report is used to:',
     options: [
-      'Modify the auditor\'s opinion',
-      'Draw attention to a matter already disclosed in the financial statements',
       'Describe a scope limitation',
-      'Report internal control deficiencies'
+      'Report internal control deficiencies',
+      'Draw attention to a matter already disclosed in the financial statements',
+      'Modify the auditor\'s opinion',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'An Emphasis of Matter paragraph draws attention to a matter appropriately presented or disclosed in the financial statements that is of such importance that it is fundamental to users\' understanding. It does not modify the opinion.',
     reference: 'AU-C Section 706',
   },
@@ -128,12 +128,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'An Other Matter paragraph differs from an Emphasis of Matter paragraph because it:',
     options: [
-      'Always modifies the opinion',
-      'Refers to matters not presented or disclosed in the financial statements',
       'Is required for every audit',
-      'Appears before the opinion paragraph'
+      'Appears before the opinion paragraph',
+      'Refers to matters not presented or disclosed in the financial statements',
+      'Always modifies the opinion',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'An Other Matter paragraph refers to matters other than those presented or disclosed in the financial statements (e.g., prior period was reviewed, not audited). An Emphasis of Matter highlights something already in the statements.',
     reference: 'AU-C Section 706',
   },
@@ -150,10 +150,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'When substantial doubt exists about an entity\'s ability to continue as a going concern but adequate disclosure is made, the auditor should:',
     options: [
-      'Issue a qualified opinion',
       'Issue an adverse opinion',
+      'Disclaim an opinion',
       'Issue an unmodified opinion with an Emphasis of Matter paragraph',
-      'Disclaim an opinion'
+      'Issue a qualified opinion',
     ],
     correctAnswer: 2,
     explanation: 'When there is substantial doubt about going concern but management\'s plans are adequate and disclosure is appropriate, the auditor issues an unmodified opinion with a separate Emphasis of Matter paragraph.',
@@ -172,10 +172,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a predecessor auditor\'s report is not presented with comparative financial statements, the successor auditor should:',
     options: [
-      'Reissue the predecessor\'s report',
+      'Issue a disclaimer on the prior year',
       'Make reference to the predecessor\'s report in an Other Matter paragraph',
       'Assume responsibility for the prior year audit',
-      'Issue a disclaimer on the prior year'
+      'Reissue the predecessor\'s report',
     ],
     correctAnswer: 1,
     explanation: 'When the predecessor\'s report is not reissued, the successor auditor should include an Other Matter paragraph indicating that prior period was audited by another auditor, the type of opinion, and the date of the report.',
@@ -194,10 +194,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'Key Audit Matters (KAMs) are required in the audit report for:',
     options: [
-      'All private company audits',
-      'Listed entities under PCAOB standards (as Critical Audit Matters)',
       'Compilation engagements',
-      'Review engagements'
+      'Listed entities under PCAOB standards (as Critical Audit Matters)',
+      'Review engagements',
+      'All private company audits',
     ],
     correctAnswer: 1,
     explanation: 'Under PCAOB standards, Critical Audit Matters (CAMs) are required for audits of listed entities. Under AICPA standards, Key Audit Matters are optional. They describe matters that required significant auditor attention.',
@@ -216,12 +216,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Analysis',
     question: 'An auditor discovers a material subsequent event after the audit report date but before the financial statements are issued. If the financial statements are revised, the auditor should:',
     options: [
-      'Issue a new report dated as of the new information date only',
       'Dual-date the report or date as of the later date',
+      'Include the event in the next year\'s audit',
       'Withdraw the original report without issuing a new one',
-      'Include the event in the next year\'s audit'
+      'Issue a new report dated as of the new information date only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'When financial statements are revised for a subsequent event discovered after the report date but before issuance, the auditor may dual-date (original date, except for Note X, dated later) or use a single later date for the entire report.',
     reference: 'AU-C Section 560',
   },
@@ -239,10 +239,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A review engagement provides what level of assurance?',
     options: [
-      'Reasonable assurance',
-      'Limited (moderate) assurance',
       'Absolute assurance',
-      'No assurance'
+      'Limited (moderate) assurance',
+      'No assurance',
+      'Reasonable assurance',
     ],
     correctAnswer: 1,
     explanation: 'A review provides limited (sometimes called moderate or negative) assurance. The accountant states that nothing came to their attention indicating material modifications are needed. This is less than an audit\'s reasonable assurance.',
@@ -261,10 +261,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'The primary procedures performed in a review engagement are:',
     options: [
-      'Tests of controls and substantive testing',
-      'Inquiry and analytical procedures',
       'Physical inspection and confirmation',
-      'Reperformance and recalculation'
+      'Inquiry and analytical procedures',
+      'Reperformance and recalculation',
+      'Tests of controls and substantive testing',
     ],
     correctAnswer: 1,
     explanation: 'Review procedures consist primarily of inquiries of management and analytical procedures. Unlike an audit, a review does not include testing of internal controls, obtaining external confirmations, or examining detailed evidence.',
@@ -283,12 +283,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A compilation engagement provides:',
     options: [
-      'Reasonable assurance',
       'Limited assurance',
       'No assurance',
-      'Negative assurance'
+      'Negative assurance',
+      'Reasonable assurance',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'A compilation provides no assurance. The accountant merely assists management in presenting financial information in the form of financial statements without undertaking to obtain any assurance.',
     reference: 'AR-C Section 80',
   },
@@ -305,12 +305,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'In a compilation engagement, if the accountant is not independent:',
     options: [
-      'The engagement must be declined',
-      'Independence must be disclosed in the compilation report',
       'The report must be withdrawn',
-      'A disclaimer of opinion is required'
+      'A disclaimer of opinion is required',
+      'Independence must be disclosed in the compilation report',
+      'The engagement must be declined',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Unlike audits and reviews, compilations may be performed when the accountant lacks independence. However, the lack of independence must be disclosed in the compilation report, though the reason need not be disclosed.',
     reference: 'AR-C Section 80',
   },
@@ -327,12 +327,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'The conclusion paragraph of a review report typically states:',
     options: [
-      'The financial statements present fairly in all material respects',
-      'Nothing came to our attention indicating modifications are needed',
+      'We have examined the financial statements',
       'The financial statements are free from material misstatement',
-      'We have examined the financial statements'
+      'Nothing came to our attention indicating modifications are needed',
+      'The financial statements present fairly in all material respects',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A review conclusion uses negative assurance language: "Based on our review, we are not aware of any material modifications that should be made for the financial statements to be in accordance with [framework]."',
     reference: 'AR-C Section 90',
   },
@@ -349,10 +349,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In a preparation of financial statements engagement under SSARS:',
     options: [
-      'A report is always required',
+      'Analytical procedures must be performed',
       'No report is required, but a legend is required on each page',
       'Independence is required',
-      'Analytical procedures must be performed'
+      'A report is always required',
     ],
     correctAnswer: 1,
     explanation: 'In a preparation engagement, no report is issued. Instead, either a legend must appear on each page (e.g., "No assurance is provided") or the engagement letter must document management\'s understanding that no report will be issued.',
@@ -371,12 +371,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Analysis',
     question: 'When performing an integrated audit, the auditor reports on internal control over financial reporting (ICFR). A material weakness in ICFR would result in:',
     options: [
-      'An unmodified opinion on ICFR with an explanatory paragraph',
       'An adverse opinion on the effectiveness of ICFR',
+      'A disclaimer on ICFR',
       'A qualified opinion on the financial statements',
-      'A disclaimer on ICFR'
+      'An unmodified opinion on ICFR with an explanatory paragraph',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'If a material weakness exists, the auditor must express an adverse opinion on the effectiveness of ICFR. This is true even if the financial statement audit opinion is unmodified (because the misstatement was detected and corrected).',
     reference: 'AS 2201 (PCAOB)',
   },
@@ -393,12 +393,12 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Application',
     question: 'In a compliance audit under Government Auditing Standards (Yellow Book), the auditor reports on:',
     options: [
-      'Only the financial statements',
       'Internal control and compliance with laws and regulations',
+      'Management\'s strategic planning',
       'Economy and efficiency only',
-      'Management\'s strategic planning'
+      'Only the financial statements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Yellow Book audits include reporting on internal control over financial reporting and compliance with laws, regulations, and provisions of contracts or grant agreements that may have a direct and material effect on financial statements.',
     reference: 'Government Auditing Standards',
   },
@@ -415,10 +415,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a required element of an auditor\'s report?',
     options: [
-      'Detailed list of all audit procedures performed',
-      'Auditor\'s responsibility section describing nature of an audit',
       'Guarantee of financial statement accuracy',
-      'Recommendation for the company\'s future strategy'
+      'Auditor\'s responsibility section describing nature of an audit',
+      'Recommendation for the company\'s future strategy',
+      'Detailed list of all audit procedures performed',
     ],
     correctAnswer: 1,
     explanation: 'The auditor\'s report includes required elements such as: title, addressee, opinion, basis for opinion, auditor\'s responsibilities section (describing audit nature, inherent limitations, professional skepticism), and signature with date.',
@@ -437,10 +437,10 @@ export const AUD_QUESTIONS_REPORTING: Question[] = [
     skillLevel: 'Analysis',
     question: 'During a review engagement, the accountant becomes aware of a material departure from the applicable financial reporting framework. If management refuses to revise the financial statements, the accountant should:',
     options: [
-      'Disclaim an opinion',
+      'Convert the engagement to a compilation',
       'Issue a modified conclusion describing the departure',
       'Complete the review without modification',
-      'Convert the engagement to a compilation'
+      'Disclaim an opinion',
     ],
     correctAnswer: 1,
     explanation: 'If material departures are not corrected, the accountant should modify the review conclusion to describe the departure and its effects. Unlike audits which have qualified/adverse opinions, reviews use modified conclusions.',

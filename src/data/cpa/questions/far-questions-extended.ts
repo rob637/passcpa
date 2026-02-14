@@ -42,12 +42,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A software company sells a software license ($800) with 2 years of technical support ($200). These are deemed to be distinct. Using relative standalone selling prices (license $900, support $300 total), how much revenue is recognized at contract inception?',
     options: [
-      '$750',
       '$800',
+      '$750',
       '$667',
-      '$900'
+      '$900',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'Total SSP = $900 + $300 = $1,200. Contract price = $1,000. License allocation = $1,000 × ($900/$1,200) = $750 recognized at inception. Support = $250 recognized over 2 years.',
     reference: 'ASC 606-10-32',
@@ -64,8 +64,8 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question:
       'A company sells goods for $100,000 with a right of return. Based on history, 5% of sales are returned. Using the expected value method, what revenue is recognized?',
-    options: ['$95,000', '$100,000', '$97,500', '$90,000'],
-    correctAnswer: 0,
+    options: ['$100,000', '$95,000', '$97,500', '$90,000'],
+    correctAnswer: 1,
     explanation:
       'Variable consideration (expected returns) reduces revenue. Revenue = $100,000 × 95% = $95,000. A refund liability of $5,000 is recorded. An asset is recorded for expected returned goods.',
     reference: 'ASC 606-10-32-5',
@@ -83,11 +83,11 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question: 'Revenue is recognized over time if which criterion is met?',
     options: [
       'Payment terms exceed 12 months',
-      'The asset has an alternative use to the seller',
       'Customer receives and consumes benefits simultaneously',
-      'The contract contains variable consideration'
+      'The asset has an alternative use to the seller',
+      'The contract contains variable consideration',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Revenue is recognized over time if: (1) customer simultaneously receives/consumes benefits, (2) entity creates/enhances asset controlled by customer, or (3) asset has no alternative use and entity has right to payment. Otherwise, recognize at a point in time.',
     reference: 'ASC 606-10-25-27',
@@ -106,9 +106,9 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
       'A contract modification adds distinct goods at standalone selling price. This modification is treated as:',
     options: [
       'A separate contract',
-      'A termination of the old contract and creation of new contract',
       'A prospective adjustment to the existing contract',
-      'A cumulative catch-up adjustment'
+      'A termination of the old contract and creation of new contract',
+      'A cumulative catch-up adjustment',
     ],
     correctAnswer: 0,
     explanation:
@@ -131,12 +131,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'Under ASC 842, a lease is classified as a finance lease if:',
     options: [
-      "The lease term is at least 50% of the asset's economic life",
-      'Any of the five criteria are met',
       'Ownership transfers to lessee at end of lease term',
-      'Present value of lease payments is at least 75% of fair value'
+      'Present value of lease payments is at least 75% of fair value',
+      'Any of the five criteria are met',
+      "The lease term is at least 50% of the asset's economic life",
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Finance lease criteria (any one triggers finance lease): (1) ownership transfer, (2) purchase option reasonably certain, (3) lease term ≥ 75% of economic life, (4) PV payments ≥ 90% of FV, (5) specialized asset.',
     reference: 'ASC 842-10-25-2',
@@ -154,12 +154,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A lessee enters a 5-year lease with annual payments of $10,000 at year-end. The incremental borrowing rate is 6%. PV factor for ordinary annuity = 4.2124. What is the initial right-of-use asset?',
     options: [
-      '$42,124',
-      '$50,000',
+      '$40,000',
       '$47,170',
-      '$40,000'
+      '$50,000',
+      '$42,124',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'ROU asset = PV of lease payments = $10,000 × 4.2124 = $42,124. The lease liability is also $42,124 initially (assuming no initial direct costs, prepaid rent, or lease incentives).',
     reference: 'ASC 842-20-30-1',
@@ -176,12 +176,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question: 'For an operating lease, the lessee recognizes on the income statement:',
     options: [
-      'A single lease expense on a straight-line basis',
-      'Interest expense and amortization expense separately',
+      'Depreciation expense only',
       'Only cash payments as rent expense',
-      'Depreciation expense only'
+      'Interest expense and amortization expense separately',
+      'A single lease expense on a straight-line basis',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Operating lease lessees recognize a single lease expense typically on a straight-line basis (unless another systematic basis is more representative). The expense combines interest on liability and amortization of ROU asset.',
     reference: 'ASC 842-20-25-6',
@@ -199,12 +199,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A lessor classifies a lease as a sales-type lease. At lease commencement, the lessor recognizes:',
     options: [
-      'Lease receivable and deferred profit',
       'Rental income over the lease term',
       'Lease receivable only',
-      'Net investment in lease and selling profit/loss'
+      'Net investment in lease and selling profit/loss',
+      'Lease receivable and deferred profit',
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'For sales-type leases, the lessor derecognizes the asset, records a net investment in lease (receivable + unguaranteed residual), and recognizes selling profit or loss at commencement.',
     reference: 'ASC 842-30-25-1',
@@ -222,12 +222,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'In a sale-leaseback qualifying as a sale under ASC 606, the seller-lessee recognizes:',
     options: [
-      'Gain proportionate to the rights transferred',
       'No gain - defer until lease ends',
       'Full gain on sale immediately',
-      'Financing transaction only'
+      'Financing transaction only',
+      'Gain proportionate to the rights transferred',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'If the transfer qualifies as a sale, the seller-lessee recognizes gain/loss only for the amount relating to rights transferred. Gain on the retained portion (leaseback) is not recognized.',
     reference: 'ASC 842-40-25',
@@ -249,10 +249,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company purchases bonds intending to hold them to collect contractual cash flows. How are these classified?',
     options: [
-      'Trading securities',
-      'Available-for-sale securities',
       'Fair value through profit or loss',
-      'Held-to-maturity securities'
+      'Available-for-sale securities',
+      'Trading securities',
+      'Held-to-maturity securities',
     ],
     correctAnswer: 3,
     explanation:
@@ -271,12 +271,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question: 'Available-for-sale debt securities are measured at:',
     options: [
-      'Amortized cost',
       'Fair value with changes in OCI',
       'Lower of cost or market',
-      'Fair value with changes in net income'
+      'Amortized cost',
+      'Fair value with changes in net income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'AFS debt securities are measured at fair value. Unrealized holding gains/losses are reported in OCI (accumulated OCI in equity) until sold, when they are reclassified to earnings.',
     reference: 'ASC 320-10-35',
@@ -294,10 +294,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Under ASC 321, equity investments without readily determinable fair values can be measured at:',
     options: [
-      'Cost only',
       'Fair value only',
+      'Cost only',
       'Lower of cost or market',
-      'Cost minus impairment, plus/minus observable price changes'
+      'Cost minus impairment, plus/minus observable price changes',
     ],
     correctAnswer: 3,
     explanation:
@@ -355,25 +355,22 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   // ==========================================
   {
     id: 'far-ext-inv-001',
-    section: 'FAR',
     courseId: 'cpa',
+    section: 'FAR',
     blueprintArea: 'FAR-II',
-    topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Cost Flow Assumptions',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question:
-      'During a period of rising prices, which inventory method results in the highest net income?',
+    question: 'Elwood Corp. uses periodic LIFO for inventory valuation. Beginning inventory consisted of 200 units at $10 each. During the year, the company purchased 300 units at $12 and 150 units at $14. If 400 units were sold, what is the cost of ending inventory?',
     options: [
-      'LIFO',
-      'FIFO',
-      'Weighted average',
-      'Specific identification'
+      '$2,000',
+      '$2,600',
+      '$3,100',
+      '$3,500',
     ],
     correctAnswer: 1,
-    explanation:
-      'FIFO (first-in, first-out) allocates older, lower costs to COGS, resulting in lower COGS and higher net income during inflation. LIFO results in higher COGS and lower net income.',
+    explanation: 'Under periodic LIFO, COGS uses the most recent costs first. Total units available = 200 + 300 + 150 = 650. Sold 400, ending inventory = 250 units. LIFO COGS: 150 units @ $14 = $2,100 + 250 units @ $12 = $3,000 = $5,100. Ending inventory consists of oldest layers: 200 units @ $10 = $2,000 + 50 units @ $12 = $600 = $2,600.',
     reference: 'ASC 330-10-30',
   },
   {
@@ -389,12 +386,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Inventory with cost of $50,000 has a net realizable value of $45,000. What is the journal entry?',
     options: [
-      'Debit Loss on Inventory $5,000; Credit Inventory $5,000',
-      'Debit COGS $5,000; Credit Allowance for Inventory $5,000',
-      'No entry required',
       'Debit Inventory Expense $5,000; Credit Cash $5,000',
+      'Debit Loss on Inventory $5,000; Credit Inventory $5,000',
+      'No entry required',
+      'Debit COGS $5,000; Credit Allowance for Inventory $5,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'Inventory must be written down to lower of cost or NRV. The $5,000 loss is recognized immediately. Entry: Debit Loss (or COGS) $5,000; Credit Inventory (or Allowance) $5,000.',
     reference: 'ASC 330-10-35-1B',
@@ -412,12 +409,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A retailer uses the conventional retail method. Which items are included in the cost-to-retail ratio calculation?',
     options: [
+      'Beginning inventory, purchases, and net markups',
+      'Beginning inventory, purchases, net markups, and net markdowns',
       'Beginning inventory, purchases, and markdowns',
       'Purchases, markups, and markdowns',
-      'Beginning inventory, purchases, and net markups',
-      'Beginning inventory, purchases, net markups, and net markdowns'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Conventional (LCM) retail method includes beginning inventory at cost/retail plus purchases and net markups in the cost ratio. Markdowns are excluded from ratio (only deducted from goods available at retail).',
     reference: 'ASC 330-10-30-8',
@@ -434,8 +431,8 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question:
       'A company uses dollar-value LIFO. The base year inventory was $100,000. Current year inventory at current prices is $132,000 and the price index is 1.10. What is the LIFO layer added in the current year?',
-    options: ['$32,000', '$20,000', '$22,000', '$12,000'],
-    correctAnswer: 2,
+    options: ['$22,000', '$12,000', '$32,000', '$20,000'],
+    correctAnswer: 0,
     explanation:
       'Current inventory at base-year prices: $132,000 ÷ 1.10 = $120,000. Layer added at base = $120,000 - $100,000 = $20,000. Layer at current prices = $20,000 × 1.10 = $22,000.',
     reference: 'ASC 330-10-30',
@@ -452,12 +449,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Goods on consignment are included in the inventory of:',
     options: [
-      'The consignee (holder of goods)',
-      'Neither - consigned goods are expensed',
       'Both consignor and consignee',
-      'The consignor (owner of goods)'
+      'The consignee (holder of goods)',
+      'The consignor (owner of goods)',
+      'Neither - consigned goods are expensed',
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'Consigned goods remain the property of the consignor until sold. The consignor includes them in inventory. The consignee does not own the goods and does not include them in inventory.',
     reference: 'ASC 330-10-30',
@@ -479,12 +476,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Which of the following costs should be capitalized for equipment purchased and installed?',
     options: [
-      'Annual maintenance costs',
       'Property taxes after the asset is in use',
+      'Annual maintenance costs',
+      'Insurance after the asset is in use',
       'Installation and testing costs',
-      'Insurance after the asset is in use'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Capitalizable costs for equipment include purchase price, freight, installation, testing, and any costs necessary to bring the asset to its intended use. Operating costs after the asset is ready are expensed.',
     reference: 'ASC 360-10-30',
@@ -504,10 +501,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '$9,000',
       '$18,000',
+      '$10,000',
       '$20,000',
-      '$10,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'DDB rate = 2 × (1/10) = 20%. Year 1 depreciation = $100,000 × 20% = $20,000. Note: Salvage value is ignored in DDB calculation until book value approaches salvage.',
     reference: 'ASC 360-10-35',
@@ -527,10 +524,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '$0 - no impairment',
       '$50,000',
+      '$450,000',
       '$100,000',
-      '$450,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Step 1: Recoverability test - undiscounted cash flows ($450,000) < carrying value ($500,000), so impairment exists. Step 2: Measure loss = carrying value - fair value = $500,000 - $400,000 = $100,000.',
     reference: 'ASC 360-10-35-17',
@@ -548,12 +545,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company installs equipment with a legal obligation to remove it in 10 years at an estimated cost of $50,000. The credit-adjusted risk-free rate is 6%. The PV factor is 0.5584. What is the initial ARO liability?',
     options: [
-      '$5,000',
+      '$27,920',
       '$50,000',
+      '$5,000',
       '$30,000',
-      '$27,920'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'Initial ARO = PV of future removal cost = $50,000 × 0.5584 = $27,920. The asset is also increased by $27,920. Each year, accretion expense increases the liability.',
     reference: 'ASC 410-20-25',
@@ -571,12 +568,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'In a nonmonetary exchange with commercial substance, the asset received is recorded at:',
     options: [
-      'Book value of asset given up',
+      'Average of book value and fair value',
       'Lower of cost or fair value',
+      'Book value of asset given up',
       'Fair value of asset received (or given up if more clearly evident)',
-      'Average of book value and fair value'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'When an exchange has commercial substance, the asset received is recorded at fair value (usually of asset given up). Gain or loss equals FV of asset given up minus book value of asset given up.',
     reference: 'ASC 845-10-30',
@@ -597,10 +594,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'How is goodwill tested for impairment under ASC 350?',
     options: [
-      'Compared to undiscounted cash flows annually',
-      'Reporting unit fair value compared to carrying amount',
       'Written down systematically over 10 years',
-      'Compared to original purchase price'
+      'Reporting unit fair value compared to carrying amount',
+      'Compared to undiscounted cash flows annually',
+      'Compared to original purchase price',
     ],
     correctAnswer: 1,
     explanation:
@@ -619,12 +616,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under U.S. GAAP, research and development costs are:',
     options: [
-      'Capitalized and amortized over useful life',
       'Capitalized only if technological feasibility is achieved',
       'Expensed as incurred',
-      'Deferred until product is sold'
+      'Capitalized and amortized over useful life',
+      'Deferred until product is sold',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'R&D costs are expensed as incurred under U.S. GAAP. Exception: Software development costs are capitalized after technological feasibility is established.',
     reference: 'ASC 730-10-25',
@@ -642,10 +639,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Costs incurred to develop software for sale to others after technological feasibility are:',
     options: [
-      'Expensed as R&D',
       'Deferred and recognized when software is sold',
       'Capitalized only if expected revenues exceed costs',
-      'Capitalized and amortized based on greater of revenue ratio or straight-line'
+      'Expensed as R&D',
+      'Capitalized and amortized based on greater of revenue ratio or straight-line',
     ],
     correctAnswer: 3,
     explanation:
@@ -665,11 +662,11 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question: 'A company internally develops a patent. Legal fees to obtain the patent are:',
     options: [
       'Expensed as incurred',
-      'Capitalized as part of patent cost',
       'Reported as a reduction of equity',
+      'Capitalized as part of patent cost',
       'Deferred and amortized separately',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "Legal fees to obtain a patent (registration, documentation) are capitalized as part of the patent's cost. However, internal R&D costs to develop the underlying invention are expensed.",
     reference: 'ASC 350-30-25',
@@ -687,9 +684,9 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question: 'An acquired customer list has a useful life of 8 years. It should be:',
     options: [
       'Tested for impairment annually but not amortized',
-      'Amortized over 15 years maximum',
       'Written off immediately',
-      'Amortized over 8 years and tested for impairment when indicators exist'
+      'Amortized over 15 years maximum',
+      'Amortized over 8 years and tested for impairment when indicators exist',
     ],
     correctAnswer: 3,
     explanation:
@@ -712,12 +709,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'A loss contingency should be accrued when the loss is:',
     options: [
-      'Possible and reasonably estimable',
       'Probable and reasonably estimable',
+      'Probable regardless of estimability',
       'Remote and reasonably estimable',
-      'Probable regardless of estimability'
+      'Possible and reasonably estimable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Under ASC 450, a loss contingency is accrued when (1) it is probable that a liability has been incurred and (2) the amount can be reasonably estimated. Both conditions must be met.',
     reference: 'ASC 450-20-25',
@@ -735,12 +732,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company sells products with 2-year warranties. Sales are $1,000,000 and estimated warranty costs are 3% of sales. Actual warranty repairs in Year 1 were $15,000. What is the warranty liability at year-end?',
     options: [
-      '$30,000',
       '$15,000',
+      '$45,000',
       '$10,000',
-      '$45,000'
+      '$30,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Warranty expense accrued = $1,000,000 × 3% = $30,000. Actual repairs reduce liability by $15,000. Ending liability = $30,000 - $15,000 = $15,000.',
     reference: 'ASC 460-10-25',
@@ -757,12 +754,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question: 'A $100,000, 10% bond is issued at 103 when market rate is 9%. The premium is:',
     options: [
-      'Amortized to decrease interest expense',
-      'Amortized to increase interest expense',
       'Reported as a separate liability',
-      'Recognized as revenue at issuance'
+      'Amortized to increase interest expense',
+      'Recognized as revenue at issuance',
+      'Amortized to decrease interest expense',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       "Bond premium (issued above face) is amortized over the bond's life, reducing interest expense each period. Effective interest = carrying value × market rate. Cash interest = face × stated rate.",
     reference: 'ASC 835-30-35',
@@ -780,12 +777,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'In a troubled debt restructuring, a debtor settles a $500,000 debt by transferring land with FMV of $400,000 and book value of $350,000. What gain does the debtor recognize?',
     options: [
-      '$100,000 gain on debt restructuring; $50,000 gain on asset separately',
-      '$100,000 gain on debt restructuring only',
       '$150,000 total gain',
-      '$50,000 gain on asset transfer only'
+      '$100,000 gain on debt restructuring only',
+      '$50,000 gain on asset transfer only',
+      '$100,000 gain on debt restructuring; $50,000 gain on asset separately',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Two separate gains: (1) Gain on asset disposal = $400,000 FMV - $350,000 BV = $50,000. (2) Gain on debt restructuring = $500,000 debt - $400,000 FMV of asset = $100,000.',
     reference: 'ASC 470-60',
@@ -803,12 +800,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company receives $12,000 on January 1 for a 12-month service contract. What is the liability balance on March 31?',
     options: [
-      '$12,000',
       '$3,000',
       '$0',
-      '$9,000'
+      '$9,000',
+      '$12,000',
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'Monthly revenue = $12,000 ÷ 12 = $1,000. After 3 months (Jan-Mar), $3,000 is earned and $9,000 remains as deferred revenue (liability).',
     reference: 'ASC 606-10-45',
@@ -830,12 +827,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company reacquires 1,000 shares at $50/share using the cost method. The par value is $10. The treasury stock is reported at:',
     options: [
-      '$10,000 (par value)',
-      '$40,000 (cost minus par)',
       '$50,000 (cost)',
-      '$0 (treasury stock is retired)'
+      '$0 (treasury stock is retired)',
+      '$40,000 (cost minus par)',
+      '$10,000 (par value)',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       "Under the cost method, treasury stock is recorded at reacquisition cost ($50,000). It is reported as a deduction from total stockholders' equity.",
     reference: 'ASC 505-30-30',
@@ -853,12 +850,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company declares a 5% stock dividend when 100,000 shares are outstanding, market price is $30, and par value is $1. What amount is transferred to common stock?',
     options: [
-      '$150,000',
-      '$145,000',
       '$5,000',
-      '$50,000'
+      '$50,000',
+      '$145,000',
+      '$150,000',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Small stock dividend (< 20-25%): Record at FMV. New shares = 100,000 × 5% = 5,000. Transfer to common stock at par = 5,000 × $1 = $5,000. APIC increases by ($30-$1) × 5,000 = $145,000.',
     reference: 'ASC 505-20-30',
@@ -876,12 +873,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A company grants 10,000 options with fair value of $5 each. They vest over 4 years (cliff vesting). What is Year 1 compensation expense?',
     options: [
-      '$12,500',
-      '$50,000',
+      '$25,000',
       '$0',
-      '$25,000'
+      '$50,000',
+      '$12,500',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Total compensation = 10,000 × $5 = $50,000. Recognized over 4-year service period. Year 1 expense = $50,000 ÷ 4 = $12,500.',
     reference: 'ASC 718-10-35',
@@ -898,11 +895,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question:
       'Net income is $1,000,000. Preferred dividends are $100,000. Weighted-average common shares are 200,000, and 50,000 dilutive shares exist from stock options. What is diluted EPS?',
-    options: ['$4.50',
-      '$5.00',
+    options: [
       '$4.00',
-      '$3.60'],
-    correctAnswer: 3,
+      '$5.00',
+      '$3.60',
+      '$4.50',
+    ],
+    correctAnswer: 2,
     explanation:
       'Diluted EPS numerator = $1,000,000 - $100,000 = $900,000 (same as basic for options). Denominator = 200,000 + 50,000 = 250,000. Diluted EPS = $900,000 ÷ 250,000 = $3.60.',
     reference: 'ASC 260-10-45',
@@ -919,12 +918,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following does NOT affect retained earnings?',
     options: [
-      'Net income',
       'Unrealized gains on AFS securities',
       'Prior period adjustments',
-      'Cash dividends declared'
+      'Cash dividends declared',
+      'Net income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Unrealized gains/losses on AFS securities are reported in OCI (accumulated OCI), not retained earnings. Net income, dividends, and prior period adjustments directly affect retained earnings.',
     reference: 'ASC 320-10-35, ASC 220-10-45',
@@ -946,12 +945,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Under the indirect method, which adjustment is made for a gain on sale of equipment?',
     options: [
-      'Subtracted from net income',
       'Added to net income',
+      'Reported in financing activities',
+      'Subtracted from net income',
       'Reported in investing activities only',
-      'Reported in financing activities'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation:
       'Gains on sale of equipment are subtracted from net income in operating activities because: (1) they are non-operating, and (2) the full cash proceeds are reported in investing activities.',
     reference: 'ASC 230-10-45',
@@ -968,12 +967,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is an investing activity?',
     options: [
-      'Payment of dividends',
       'Proceeds from issuing bonds',
+      'Payment of dividends',
+      'Purchase of equipment',
       'Interest paid on debt',
-      'Purchase of equipment'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'Purchase of equipment (long-lived assets) is an investing activity. Dividends and bond proceeds are financing. Interest paid is operating (U.S. GAAP).',
     reference: 'ASC 230-10-45-13',
@@ -992,10 +991,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Interest received on investments',
       'Payment to suppliers',
+      'Purchase of treasury stock',
       'Collection of accounts receivable',
-      'Purchase of treasury stock'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'Purchase of treasury stock is a financing activity (transaction with owners). Interest received and collections/payments are operating activities.',
     reference: 'ASC 230-10-45-15',
@@ -1014,11 +1013,11 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
       'A company issues stock to acquire land. How is this reported on the statement of cash flows?',
     options: [
       'Investing cash outflow',
+      'Not reported',
       'Financing cash inflow and investing cash outflow',
       'Disclosed in supplemental schedule (non-cash)',
-      'Not reported',
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Non-cash investing and financing activities (like exchanging stock for assets) are disclosed in a supplemental schedule or notes, not within the body of the cash flow statement.',
     reference: 'ASC 230-10-50',
@@ -1035,11 +1034,13 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question:
       "A company's net income is $50,000. Depreciation is $10,000. Accounts receivable increased $5,000. Accounts payable decreased $3,000. What is cash from operating activities?",
-    options: ['$68,000',
+    options: [
+      '$68,000',
+      '$52,000',
       '$58,000',
       '$42,000',
-      '$52,000'],
-    correctAnswer: 3,
+    ],
+    correctAnswer: 1,
     explanation:
       'Cash from operations = $50,000 + $10,000 (add depreciation) - $5,000 (subtract A/R increase) - $3,000 (subtract A/P decrease) = $52,000.',
     reference: 'ASC 230-10-45-28',
@@ -1060,12 +1061,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'The General Fund uses which measurement focus and basis of accounting?',
     options: [
+      'Economic resources, modified accrual',
+      'Current financial resources, modified accrual',
       'Economic resources, accrual',
       'Current financial resources, accrual',
-      'Current financial resources, modified accrual',
-      'Economic resources, modified accrual'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Governmental funds (including General Fund) use current financial resources measurement focus and modified accrual basis. Government-wide statements use economic resources/accrual.',
     reference: 'GASB Statement 34',
@@ -1082,34 +1083,34 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'Which fund type would account for a toll bridge financed by user fees?',
     options: [
+      'Enterprise Fund',
+      'Capital Projects Fund',
       'General Fund',
       'Special Revenue Fund',
-      'Enterprise Fund',
-      'Capital Projects Fund'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Enterprise funds (proprietary funds) account for activities financed primarily through user charges (like toll bridges, utilities, airports). They operate like businesses.',
     reference: 'GASB Statement 34',
   },
   {
     id: 'far-ext-gov-003',
-    section: 'FAR',
     courseId: 'cpa',
+    section: 'FAR',
     blueprintArea: 'FAR-VI',
-    topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Under modified accrual, revenues are recognized when:',
-    options: ['Earned',
-      'Measurable and available',
-      'Collected',
-      'Budgeted'],
-    correctAnswer: 1,
-    explanation:
-      'Under modified accrual basis, revenues are recognized when measurable (amount determinable) and available (collectible within current period or soon enough to pay current liabilities, typically 60 days).',
+    question: 'In government-wide financial statements, capital assets used in governmental activities are:',
+    options: [
+      'Not reported because governmental funds do not capitalize assets',
+      'Reported at fair value with changes in OCI',
+      'Reported at historical cost less accumulated depreciation',
+      'Expensed in the period acquired',
+    ],
+    correctAnswer: 2,
+    explanation: 'Government-wide financial statements use the economic resources measurement focus and accrual basis of accounting. Under GASB 34, capital assets (including infrastructure) used by governmental activities are reported at historical cost less accumulated depreciation (unless they are inexhaustible, like land). This contrasts with governmental fund statements, where capital asset purchases are expenditures of the current period.',
     reference: 'GASB Statement 33',
   },
   {
@@ -1124,12 +1125,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a purchase order is issued by a governmental fund, the entry is:',
     options: [
+      'No entry until goods received',
       'Debit Encumbrances; Credit Reserve for Encumbrances',
-      'Debit Expenditures; Credit Vouchers Payable',
       'Debit Supplies; Credit Cash',
-      'No entry until goods received'
+      'Debit Expenditures; Credit Vouchers Payable',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'Encumbrance accounting reserves budget for outstanding commitments. Entry: Debit Encumbrances (budgetary account); Credit Reserve/Fund Balance-Encumbrances. Reversed when goods received.',
     reference: 'GASB Statement 54',
@@ -1146,10 +1147,10 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'Government-wide financial statements include:',
     options: [
+      'Budgetary Comparison Schedule',
       'Statement of Cash Flows and Income Statement',
-      'Balance Sheet and Statement of Revenues, Expenditures, and Changes in Fund Balance',
       'Statement of Net Position and Statement of Activities',
-      'Budgetary Comparison Schedule'
+      'Balance Sheet and Statement of Revenues, Expenditures, and Changes in Fund Balance',
     ],
     correctAnswer: 2,
     explanation:
@@ -1172,12 +1173,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'Under ASC 958, net assets of NFPs are classified as:',
     options: [
-      'Without donor restrictions and with donor restrictions',
-      'Unrestricted, temporarily restricted, permanently restricted',
+      'Current and noncurrent',
       'Operating, investing, and financing',
-      'Current and noncurrent'
+      'Unrestricted, temporarily restricted, permanently restricted',
+      'Without donor restrictions and with donor restrictions',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'ASU 2016-14 simplified classifications to two: net assets without donor restrictions and net assets with donor restrictions (combining former temp and permanent categories).',
     reference: 'ASC 958-210-45',
@@ -1195,12 +1196,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A donor gives $100,000 stipulating that only the earnings may be used for scholarships. This is reported as:',
     options: [
-      'Revenue without donor restrictions',
-      'Revenue with donor restrictions (time)',
+      'Revenue with donor restrictions (purpose and perpetual)',
       'Deferred revenue',
-      'Revenue with donor restrictions (purpose and perpetual)'
+      'Revenue with donor restrictions (time)',
+      'Revenue without donor restrictions',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'This is an endowment with perpetual restriction on principal and purpose restriction on earnings (scholarships). Reported as revenue with donor restrictions.',
     reference: 'ASC 958-605-25',
@@ -1217,36 +1218,34 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Application',
     question: 'When a time restriction on a contribution is met, the NFP:',
     options: [
-      'Reclassifies from restricted to unrestricted net assets',
-      'Recognizes revenue at that time',
       'Returns the contribution',
-      'Records a deferred inflow'
+      'Records a deferred inflow',
+      'Recognizes revenue at that time',
+      'Reclassifies from restricted to unrestricted net assets',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'When restrictions are satisfied (time passes or purpose fulfilled), net assets are reclassified from with donor restrictions to without donor restrictions. This is shown as "Net assets released from restrictions."',
     reference: 'ASC 958-205-45',
   },
   {
     id: 'far-ext-nfp-004',
-    section: 'FAR',
     courseId: 'cpa',
+    section: 'FAR',
     blueprintArea: 'FAR-VI',
-    topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'NFPs must present expenses by:',
+    question: 'Under ASC 958, a not-for-profit entity receives a multi-year pledge of $300,000 ($100,000/year for 3 years). An appropriate discount rate is 5%. How should the pledge be initially recorded?',
     options: [
-      'Natural classification only',
-      'Functional classification only',
-      'Neither - expenses shown in total only',
-      'Both natural and functional classifications'
+      'At $300,000 as contribution revenue with donor restrictions',
+      'At the present value of $300,000 as contribution revenue with donor restrictions',
+      'At $100,000 as contribution revenue in the first year only',
+      'As a contingent asset disclosed in the notes',
     ],
-    correctAnswer: 3,
-    explanation:
-      'ASU 2016-14 requires NFPs to present expenses by both function (program services, management, fundraising) and nature (salaries, rent, etc.) either on the face of statements or in notes.',
+    correctAnswer: 1,
+    explanation: 'Under ASC 958-605-30, unconditional promises to give (pledges) that will be received in future periods are measured at the present value of estimated future cash flows using an appropriate discount rate. The full present value is recognized as contribution revenue with donor restrictions (time restriction). As time passes, accretion of the discount is recognized as additional contribution revenue.',
     reference: 'ASC 958-720-45',
   },
   {
@@ -1261,12 +1260,12 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     skillLevel: 'Analysis',
     question: 'Contributed services are recognized as revenue if they:',
     options: [
-      'Have any fair value',
+      'Create or enhance nonfinancial assets or require specialized skills',
       'Exceed $5,000 in value',
       'Are provided by licensed professionals only',
-      'Create or enhance nonfinancial assets or require specialized skills'
+      'Have any fair value',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'Contributed services are recognized if they: (1) create or enhance nonfinancial assets, or (2) require specialized skills, are provided by persons with those skills, and would typically need to be purchased.',
     reference: 'ASC 958-605-25-16',

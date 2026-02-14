@@ -19,12 +19,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'To qualify for Head of Household status, all of the following are required EXCEPT:',
     options: [
-      'Being unmarried or considered unmarried at year end',
-      'Paying more than half the cost of maintaining a home',
-      'Having a qualifying person live with you for the entire year',
       'Being a US citizen or resident alien',
+      'Having a qualifying person live with you for the entire year',
+      'Paying more than half the cost of maintaining a home',
+      'Being unmarried or considered unmarried at year end',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'A qualifying child must live with you for more than half the year (not entire year). A qualifying parent does not need to live with you at all if you pay more than half their support.',
     reference: 'IRC §2(b)',
@@ -41,12 +41,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is excluded from gross income?',
     options: [
-      'Gambling winnings',
-      'Unemployment compensation',
+      'Life insurance proceeds paid by reason of death',
       'Punitive damages in a lawsuit',
-      'Life insurance proceeds paid by reason of death'
+      'Unemployment compensation',
+      'Gambling winnings',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'Life insurance proceeds paid by reason of death are excluded from gross income under IRC §101. Gambling winnings, unemployment, and punitive damages are all taxable.',
     reference: 'IRC §101',
@@ -63,36 +63,34 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'The standard deduction for 2024 for a single taxpayer is:',
     options: [
-      '$12,950',
       '$13,850',
+      '$14,600',
       '$27,700',
-      '$14,600'
+      '$12,950',
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'For 2024, the standard deduction is $14,600 for single filers, $29,200 for MFJ, $21,900 for HOH. Additional amounts for blind/elderly.',
     reference: 'IRC §63(c)',
   },
   {
     id: 'reg-ind-053',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-III',
-    topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Credits',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'The Child Tax Credit for 2024 is:',
+    question: 'A taxpayer earned $45,000 in wages and paid $6,000 for child care for a 4-year-old while working. The taxpayer files as single. What is the maximum child and dependent care credit?',
     options: [
-      '$1,000 per child, fully refundable',
-      '$3,600 per child under 6',
-      '$3,000 per child under 18',
-      '$2,000 per child, with up to $1,700 refundable'
+      '$600',
+      '$1,050',
+      '$2,100',
+      '$3,000',
     ],
-    correctAnswer: 3,
-    explanation:
-      'For 2024, the Child Tax Credit is $2,000 per qualifying child under 17. Up to $1,700 is refundable as the Additional Child Tax Credit. Subject to income phaseouts.',
+    correctAnswer: 0,
+    explanation: 'The child and dependent care credit is based on qualifying expenses up to $3,000 for one dependent (or $6,000 for two+). At AGI of $45,000, the credit percentage is 20% (the minimum rate for income over $43,000). Maximum credit = 20% × $3,000 = $600. The expenses cannot exceed the taxpayer\'s earned income, and the credit is nonrefundable.',
     reference: 'IRC §24',
   },
   {
@@ -107,8 +105,8 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question:
       'Long-term capital gains are taxed at preferential rates. The holding period for long-term treatment is:',
-    options: ['6 months', '12 months', 'More than 12 months', '18 months'],
-    correctAnswer: 2,
+    options: ['More than 12 months', '12 months', '18 months', '6 months'],
+    correctAnswer: 0,
     explanation:
       'To qualify for long-term capital gain rates, the asset must be held for more than 12 months (more than one year). The day of acquisition is excluded.',
     reference: 'IRC §1222',
@@ -125,10 +123,10 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which is an adjustment for individual AMT purposes?',
     options: [
-      'Charitable contributions',
-      'State and local taxes paid',
       'Home mortgage interest on acquisition debt',
+      'State and local taxes paid',
       'Investment interest expense',
+      'Charitable contributions',
     ],
     correctAnswer: 1,
     explanation:
@@ -151,12 +149,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'Property received as a gift takes what basis?',
     options: [
-      "Donor's adjusted basis (carryover basis) for gain purposes",
-      'Fair market value at date of gift',
       'Zero basis',
-      'The amount of gift tax paid'
+      'The amount of gift tax paid',
+      'Fair market value at date of gift',
+      "Donor's adjusted basis (carryover basis) for gain purposes",
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       "For gain purposes, gift property takes the donor's carryover basis. For loss, if FMV at gift date is lower, the FMV is used. This prevents transferring losses via gifts.",
     reference: 'IRC §1015',
@@ -173,12 +171,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'Property inherited from a decedent receives:',
     options: [
-      'Carryover basis from the decedent',
       "The decedent's original cost",
+      'Stepped-up (or down) basis to FMV at date of death',
       'Zero basis',
-      'Stepped-up (or down) basis to FMV at date of death'
+      'Carryover basis from the decedent',
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'Inherited property receives a stepped-up (or stepped-down) basis to fair market value at the date of death (or alternate valuation date if elected).',
     reference: 'IRC §1014',
@@ -195,12 +193,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under IRC §1031, like-kind exchange treatment applies to:',
     options: [
-      'Any business property exchange',
+      'Real property held for investment or business use',
       'Inventory and dealer property',
       'Real and personal property held for investment',
-      'Real property held for investment or business use'
+      'Any business property exchange',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'Post-TCJA, §1031 applies only to real property held for productive use in trade/business or investment. Personal property, inventory, and stock are excluded.',
     reference: 'IRC §1031',
@@ -217,12 +215,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a like-kind exchange, boot received:',
     options: [
-      'Is never taxable',
-      'Causes the entire gain to be recognized',
       'Causes gain to be recognized to the extent of boot received',
+      'Causes the entire gain to be recognized',
       'Creates additional basis in the new property',
+      'Is never taxable',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Boot (cash or non-like-kind property received) triggers gain recognition, but only to the extent of the lesser of boot received or realized gain.',
     reference: 'IRC §1031(b)',
@@ -239,12 +237,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'Net §1231 gains are treated as:',
     options: [
-      'Ordinary income',
       'Long-term capital gains',
       'Short-term capital gains',
       'Tax-exempt income',
+      'Ordinary income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       '§1231 provides best of both worlds: net gains are long-term capital gains (preferential rates), but net losses are ordinary losses (fully deductible).',
     reference: 'IRC §1231',
@@ -261,12 +259,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: '§1245 depreciation recapture applies to:',
     options: [
-      'All depreciable property',
       'Buildings only',
       'Land only',
-      'Depreciable personal property and certain real property'
+      'Depreciable personal property and certain real property',
+      'All depreciable property',
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       '§1245 recapture applies to depreciable personal property (and some real property like §1245 property) and treats gain as ordinary to the extent of depreciation taken.',
     reference: 'IRC §1245',
@@ -287,12 +285,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'For §351 nonrecognition treatment, transferors must receive:',
     options: [
-      'Any stock',
       'At least 80% control immediately after exchange',
       'At least 50% control immediately after exchange',
-      '100% of all stock'
+      '100% of all stock',
+      'Any stock',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'For §351 tax-free incorporation, transferors as a group must control 80% or more of the corporation immediately after the exchange. Control means 80% voting and 80% of each class.',
     reference: 'IRC §351',
@@ -309,12 +307,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'Corporate distributions are taxable dividends to the extent of:',
     options: [
-      'Current and accumulated E&P',
-      'Amount received',
       'Current E&P only',
-      'Accumulated E&P only'
+      'Accumulated E&P only',
+      'Amount received',
+      'Current and accumulated E&P',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Distributions are dividends (taxable) to extent of E&P (current plus accumulated). Excess is return of capital (reduces basis), then capital gain.',
     reference: 'IRC §301',
@@ -331,11 +329,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question:
       "A corporation owning 25% of another corporation's stock may deduct what percentage of dividends received?",
-    options: ['50%',
-      '80%',
+    options: [
+      '100%',
       '65%',
-      '100%'],
-    correctAnswer: 2,
+      '80%',
+      '50%',
+    ],
+    correctAnswer: 1,
     explanation:
       'DRD rates: <20% ownership = 50%, 20-79% ownership = 65%, 80%+ ownership = 100%. Subject to taxable income limitations.',
     reference: 'IRC §243',
@@ -352,12 +352,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'For exchange treatment under §302, a stock redemption must:',
     options: [
-      'Be for all shareholders equally',
-      'Involve only preferred stock',
+      'Meet one of the tests: substantially disproportionate, complete termination, or not essentially equivalent to dividend',
       'Be approved by the IRS',
-      'Meet one of the tests: substantially disproportionate, complete termination, or not essentially equivalent to dividend'
+      'Involve only preferred stock',
+      'Be for all shareholders equally',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'Exchange treatment (capital gain) requires meeting: substantially disproportionate, complete termination, not essentially equivalent to dividend, or partial liquidation (corporate shareholders).',
     reference: 'IRC §302',
@@ -374,12 +374,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a complete liquidation, the liquidating corporation:',
     options: [
-      'Never recognizes gain or loss',
       'Defers all gain to shareholders',
+      'Recognizes gain and loss as if property were sold at FMV',
       'Recognizes only gains, not losses',
-      'Recognizes gain and loss as if property were sold at FMV'
+      'Never recognizes gain or loss',
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'In complete liquidation under §336, the corporation recognizes gain/loss as if it sold property at FMV. Exceptions for related parties and certain tax-avoidance situations.',
     reference: 'IRC §336',
@@ -400,12 +400,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'A partner contributing property to a partnership in exchange for an interest:',
     options: [
-      'Always recognizes gain',
       'Recognizes gain if FMV exceeds basis',
+      'Generally recognizes no gain (tax-free)',
+      'Always recognizes gain',
       'Recognizes gain only if receiving a controlling interest',
-      'Generally recognizes no gain (tax-free)'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'Under §721, no gain or loss is recognized on contribution of property for a partnership interest. Exceptions: contribution of services, certain disguised sales.',
     reference: 'IRC §721',
@@ -422,12 +422,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: "A partner's outside basis in their partnership interest is increased by:",
     options: [
-      'Partnership losses allocated',
       'Share of partnership liabilities',
+      'Guaranteed payments received',
+      'Partnership losses allocated',
       'Distributions received',
-      'Guaranteed payments received'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Outside basis increases by: contributions, share of income, share of liabilities. Decreases by: distributions, share of losses, decrease in liability share.',
     reference: 'IRC §752',
@@ -446,8 +446,8 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Is always taxable',
       'Reduces basis, with gain only if cash exceeds basis',
-      'Is never taxable',
       'Creates ordinary income',
+      'Is never taxable',
     ],
     correctAnswer: 1,
     explanation:
@@ -464,16 +464,16 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Guaranteed Payments',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Guaranteed payments to partners are:',
+    question: 'Partner Torres receives a guaranteed payment of $100,000 from the XYZ partnership for managing the partnership. Torres also receives a $40,000 cash distribution during the year. Torres\' beginning basis in the partnership is $60,000, and the distributive share of ordinary income (excluding guaranteed payment) is $25,000. What is Torres\' ending basis?',
     options: [
-      'Treated as distributions',
-      'Not deductible by the partnership',
-      'Capital gains to the partner',
-      'Ordinary income to the partner, deductible by partnership'
+      '$45,000',
+      '$85,000',
+      '$145,000',
+      '$60,000',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
-      'Guaranteed payments are for services or capital without regard to income. Ordinary income to partner, deductible by partnership in determining ordinary income.',
+      'Guaranteed payments do NOT increase partner basis (they are deducted by the partnership, reducing overall income). Basis calculation: Beginning basis $60,000 + distributive share of ordinary income $25,000 = $85,000 − cash distribution $40,000 = $45,000. The guaranteed payment is taxable income to Torres but does not separately affect basis.',
     reference: 'IRC §707(c)',
   },
   {
@@ -488,12 +488,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'For a special allocation to be respected for tax purposes, it must:',
     options: [
-      'Be approved by IRS',
       'Be made in writing',
+      'Be approved by IRS',
+      'Have substantial economic effect',
       'Benefit all partners equally',
-      'Have substantial economic effect'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'Special allocations must have substantial economic effect to be respected. This generally requires capital account maintenance and liquidation per capital accounts.',
     reference: 'IRC §704(b)',
@@ -504,41 +504,42 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   // ==========================================
   {
     id: 'reg-scorp-050',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-I',
-    topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Eligibility',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'An S corporation may have a maximum of:',
-    options: ['75 shareholders', '100 shareholders', '500 shareholders', 'Unlimited shareholders'],
-    correctAnswer: 1,
-    explanation:
-      'S corps are limited to 100 shareholders. Family members can elect to be treated as one shareholder. Only individuals, estates, and certain trusts can be shareholders.',
+    question: 'An S corporation has 85 individual shareholders, all U.S. citizens. The corporation issues a second class of preferred stock to attract new investors. What is the effect on the S election?',
+    options: [
+      'The S election is automatically terminated because S corporations may have only one class of stock',
+      'The S election continues if the preferred stock has no voting rights',
+      'The S election is unaffected because the shareholder limit has not been exceeded',
+      'The S election continues as long as total shareholders remain under 100',
+    ],
+    correctAnswer: 0,
+    explanation: 'One of the requirements for S corporation status under IRC §1361(b)(1)(D) is that the corporation may have only one class of stock. Issuing preferred stock creates a second class, automatically terminating the S election. Differences in voting rights alone do not create a second class, but differences in distribution or liquidation rights do. The corporation reverts to C corporation status effective on the date the second class is issued.',
     reference: 'IRC §1361',
   },
   {
     id: 'reg-scorp-051',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-I',
-    topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Basis',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: "An S corporation shareholder's basis is increased by:",
+    question: 'An S corporation shareholder has a stock basis of $30,000 and a debt basis of $15,000 at the beginning of the year. The shareholder\'s distributive share of the S corporation\'s ordinary loss is $38,000. How much of the loss is deductible, and what are the ending basis amounts?',
     options: [
-      'Corporate-level debt',
-      'Distributions received',
-      'Share of separately stated income and non-separately stated income',
-      'Share of corporate expenses'
+      '$38,000 is deductible, reducing stock basis to $0 and debt basis to $7,000',
+      '$30,000 is deductible, limited to stock basis only',
+      '$45,000 is deductible against combined stock and debt basis',
+      '$38,000 is deductible, reducing stock basis to $0 and creating a $8,000 carryforward',
     ],
-    correctAnswer: 2,
-    explanation:
-      'S corp stock basis increases by income items (separately and non-separately stated), decreases by distributions, losses, and non-deductible expenses. Unlike partnerships, corporate debt does not increase shareholder basis.',
+    correctAnswer: 0,
+    explanation: 'S corporation losses are deductible to the extent of the shareholder\'s stock basis plus debt basis (combined $45,000). The $38,000 loss first reduces stock basis from $30,000 to $0 ($30,000 applied). The remaining $8,000 loss then reduces debt basis from $15,000 to $7,000. Losses reduce stock basis first, then debt basis. When income is later allocated, debt basis must be restored before stock basis increases.',
     reference: 'IRC §1367',
   },
   {
@@ -553,12 +554,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'S corporation distributions to shareholders are:',
     options: [
+      'Tax-free to extent of stock basis, then capital gain',
+      'Ordinary income',
       'Always taxable as dividends',
       'Always tax-free',
-      'Tax-free to extent of stock basis, then capital gain',
-      'Ordinary income'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'For S corps with no C corp E&P, distributions are tax-free return of basis, then capital gain. AAA ordering rules apply if C corp E&P exists.',
     reference: 'IRC §1368',
@@ -575,12 +576,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Analysis',
     question: 'The built-in gains tax applies when:',
     options: [
+      'Shareholders sell their stock',
+      'An S corp has passive income',
       'Any S corp sells assets',
       'A C corp converts to S corp and sells appreciated assets within recognition period',
-      'An S corp has passive income',
-      'Shareholders sell their stock',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Built-in gains tax applies when a former C corp (now S corp) sells assets with built-in gain within the recognition period. Tax is at highest corporate rate.',
     reference: 'IRC §1374',
@@ -591,22 +592,22 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   // ==========================================
   {
     id: 'reg-law-050',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-I',
-    topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Contract Formation',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'A valid contract requires all of the following EXCEPT:',
-    options: ['Offer and acceptance',
-      'A written document',
-      'Consideration',
-      'Legal capacity'],
-    correctAnswer: 1,
-    explanation:
-      'Contracts require: offer, acceptance, consideration, capacity, and legality. Writing is only required for certain contracts under Statute of Frauds.',
+    question: 'A contractor offers to build a deck for a homeowner for $8,000. The homeowner responds by saying, \'I accept your offer, but the price must be $7,000.\' Under contract law, what is the legal effect of the homeowner\'s response?',
+    options: [
+      'The response is a counteroffer that terminates the original offer',
+      'The response is an acceptance with an additional term',
+      'The response is an acceptance of the $8,000 offer',
+      'The response creates a binding contract at $7,500 (the midpoint)',
+    ],
+    correctAnswer: 0,
+    explanation: 'Under the mirror image rule of common law contracts, an acceptance must match the offer exactly. The homeowner\'s response changes a material term (price), making it a counteroffer rather than an acceptance. A counteroffer operates as a rejection of the original offer and terminates it. The contractor is now free to accept or reject the $7,000 counteroffer. Under the UCC (goods), different terms may not terminate the offer, but this is a services contract governed by common law.',
     reference: 'Restatement (Second) of Contracts',
   },
   {
@@ -621,36 +622,34 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'Under the Statute of Frauds, which contract must be in writing?',
     options: [
+      'A contract for personal services',
       'A contract for sale of goods for $600',
       'A contract for services worth $400',
       'A contract performed within one month',
-      'A contract for personal services'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'UCC requires writing for sale of goods ≥$500. Also: real property, contracts not performed within 1 year, suretyship, marriage, executor promises.',
     reference: 'UCC §2-201',
   },
   {
     id: 'reg-law-052',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-I',
-    topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'A principal is liable for the torts of an agent when:',
+    question: 'An agent, authorized only to negotiate contracts on behalf of a principal, enters into a binding contract with a third party. The principal did not ratify the contract. What is the principal\'s liability?',
     options: [
-      'The tort is intentional',
-      'The principal has deep pockets',
-      'The agent is independent',
-      'The agent acts within the scope of employment'
+      'The principal is not liable because the agent exceeded the scope of actual authority',
+      'The principal is liable because negotiation authority implies contracting authority',
+      'The principal is liable only if the agent received no compensation',
+      'Both the principal and agent are equally liable on the contract',
     ],
-    correctAnswer: 3,
-    explanation:
-      'Under respondeat superior, a principal/employer is vicariously liable for agent/employee torts committed within the scope of employment.',
+    correctAnswer: 0,
+    explanation: 'An agent binds a principal only when acting within the scope of actual or apparent authority. If the agent was authorized only to negotiate (not execute contracts), the agent exceeded their authority. The principal is not bound unless they ratify the contract. However, the agent may be personally liable to the third party for breach of implied warranty of authority.',
     reference: 'Restatement (Third) of Agency',
   },
   {
@@ -665,36 +664,34 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'Apparent authority arises from:',
     options: [
-      'Express grant by principal',
+      'Implied necessity',
       "Agent's own statements",
+      'Express grant by principal',
       "Reasonable belief of third party based on principal's conduct",
-      'Implied necessity'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       "Apparent authority exists when a third party reasonably believes the agent has authority based on the principal's manifestations (not agent's statements).",
     reference: 'Restatement (Third) of Agency §2.03',
   },
   {
     id: 'reg-law-054',
-    section: 'REG',
     courseId: 'cpa',
+    section: 'REG',
     blueprintArea: 'REG-I',
-    topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'To perfect a security interest in goods, a creditor must:',
+    question: 'A debtor defaults on a loan secured by equipment under Article 9 of the UCC. The secured creditor repossesses and sells the equipment at a commercially reasonable public sale for $35,000. The remaining debt after applying proceeds is $12,000. What is the debtor\'s obligation?',
     options: [
-      'Have a written security agreement only',
-      'Take possession of the collateral only',
-      'File a financing statement with the appropriate office',
-      'Notify the debtor'
+      'The debtor owes a deficiency judgment of $12,000 — the difference between the debt and sale proceeds',
+      'The debtor owes nothing further since the creditor accepted the collateral',
+      'The debtor owes $12,000 plus twice the credit service charge as a penalty',
+      'The debtor owes the full original debt because the sale was involuntary',
     ],
-    correctAnswer: 2,
-    explanation:
-      'Perfection typically requires filing a UCC-1 financing statement. Alternative methods include possession (for tangible collateral) or control (for certain intangibles).',
+    correctAnswer: 0,
+    explanation: 'Under UCC Article 9, when a secured creditor disposes of collateral in a commercially reasonable manner, the proceeds are applied to the debt. If proceeds are insufficient, the debtor is liable for the deficiency — the remaining $12,000. The sale must be commercially reasonable, conducted after proper notice to the debtor. If the sale is not commercially reasonable, the debtor may challenge the deficiency amount.',
     reference: 'UCC §9-310',
   },
   {
@@ -709,12 +706,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     skillLevel: 'Application',
     question: 'In Chapter 7 bankruptcy, which debt is NOT dischargeable?',
     options: [
-      'Credit card debt',
       'Medical bills',
+      'Credit card debt',
+      'Student loans (absent undue hardship)',
       'Personal loans',
-      'Student loans (absent undue hardship)'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'Student loans are generally non-dischargeable unless the debtor proves undue hardship. Also non-dischargeable: taxes within 3 years, child support, fraud debts.',
     reference: '11 USC §523',

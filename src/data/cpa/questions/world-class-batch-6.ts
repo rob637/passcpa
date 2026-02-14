@@ -17,12 +17,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Maple Co. has a contract to deliver 100 units for $10,000 ($100/unit). After delivering 40 units, the contract is modified to add 30 more units at $85 each (standalone price is $100). How should Maple account for the modification?',
     options: [
-      'As a prospective adjustment to the original contract',
       'As a separate contract for the 30 additional units',
+      'No change until all units are delivered',
       'Cumulative catch-up adjustment with contract restart',
-      'No change until all units are delivered'
+      'As a prospective adjustment to the original contract',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'The additional 30 units at $85 are NOT at standalone selling price ($100), so they don\'t qualify as a separate contract. Since the remaining goods are not distinct from those already delivered, treat as part of the original contract. This creates a prospective adjustment—reallocate remaining consideration over remaining units.',
     reference: 'ASC 606-10-25-13',
   },
@@ -38,10 +38,10 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'A debtor owes $500,000 on a note. The creditor agrees to accept land with a carrying value of $350,000 and FMV of $400,000 in full settlement. What gain does the debtor recognize?',
     options: [
-      '$50,000 gain on asset transfer only',
+      '$100,000 total gain',
       '$100,000 gain on debt restructuring only',
       '$150,000 total gain ($50,000 on asset + $100,000 on restructuring)',
-      '$100,000 total gain'
+      '$50,000 gain on asset transfer only',
     ],
     correctAnswer: 2,
     explanation: 'Gain on asset transfer = FMV - Carrying value = $400,000 - $350,000 = $50,000. Gain on restructuring = Debt relieved - FMV of consideration given = $500,000 - $400,000 = $100,000. Total gain = $150,000. Report separately: asset gain is non-operating, restructuring gain may be extraordinary.',
@@ -59,10 +59,10 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'A city collects property taxes on behalf of the county and school district. These collections should be reported in which fund?',
     options: [
-      'General fund',
+      'Agency fund',
       'Special revenue fund',
       'Custodial fund',
-      'Agency fund'
+      'General fund',
     ],
     correctAnswer: 2,
     explanation: 'Under GASB 84, collections held on behalf of others are reported in custodial funds (formerly agency funds). The city is acting as an agent, collecting taxes that belong to other governments. These are not the city\'s resources and should not be in governmental funds.',
@@ -80,10 +80,10 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'A not-for-profit must present expenses by function and nature. Which expenses must be allocated across program and supporting services?',
     options: [
-      'Only salaries and wages',
       'Only occupancy costs',
+      'All expenses regardless of direct benefit',
       'Expenses that benefit multiple functions',
-      'All expenses regardless of direct benefit'
+      'Only salaries and wages',
     ],
     correctAnswer: 2,
     explanation: 'Under ASC 958-720, expenses that benefit more than one function must be allocated. Common examples include occupancy, depreciation, and salaries of staff working across functions. Direct costs are assigned directly; indirect costs serving multiple functions require allocation using a reasonable basis.',
@@ -103,12 +103,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'An auditor is unable to observe the client\'s physical inventory count, which is material. Alternative procedures provide sufficient evidence about quantities. What type of opinion is appropriate?',
     options: [
-      'Unmodified opinion',
-      'Qualified opinion due to scope limitation',
       'Adverse opinion',
-      'Disclaimer of opinion'
+      'Unmodified opinion',
+      'Disclaimer of opinion',
+      'Qualified opinion due to scope limitation',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'If alternative procedures provide sufficient appropriate evidence about inventory quantities, an unmodified opinion is appropriate. A scope limitation exists only when the auditor cannot obtain sufficient evidence. Successful alternative procedures eliminate the scope limitation.',
     reference: 'AU-C 501.11',
   },
@@ -124,12 +124,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a group audit, the group engagement partner decides to assume responsibility for the work of a component auditor. The group auditor\'s report should:',
     options: [
+      'Include an emphasis-of-matter paragraph about the component',
+      'Issue a qualified opinion',
       'Reference the component auditor and divide responsibility',
       'Make no reference to the component auditor',
-      'Include an emphasis-of-matter paragraph about the component',
-      'Issue a qualified opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'When the group auditor assumes responsibility for the component auditor\'s work (through direction, supervision, and review), no reference should be made to the component auditor. The group auditor takes full responsibility as if they performed all the work directly.',
     reference: 'AU-C 600.22',
   },
@@ -145,12 +145,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'Which of the following situations would NOT permit an auditor to disclose confidential client information without the client\'s consent?',
     options: [
-      'In response to a valid subpoena',
-      'To comply with AICPA quality review requirements',
       'To alert a potential buyer of problems discovered during due diligence',
-      'In response to a validly issued summons'
+      'In response to a valid subpoena',
+      'In response to a validly issued summons',
+      'To comply with AICPA quality review requirements',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Confidential information may be disclosed without consent for: (1) legal process (subpoena, summons), (2) AICPA quality/ethics requirements, (3) other CPAs\' ethics investigations. Disclosing to a potential buyer requires client consent—the auditor has no right to independently warn third parties.',
     reference: 'AICPA Code ET Section 1.700',
   },
@@ -166,12 +166,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'Under the COSO Internal Control Framework, which component addresses the entity\'s commitment to integrity and ethical values?',
     options: [
-      'Risk Assessment',
-      'Control Environment',
       'Control Activities',
-      'Monitoring Activities'
+      'Risk Assessment',
+      'Monitoring Activities',
+      'Control Environment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Control Environment is the foundation of internal control and includes: commitment to integrity and ethical values, board independence and oversight, organizational structure, commitment to competence, and accountability. It sets the "tone at the top" for the entire organization.',
     reference: 'COSO Internal Control Framework',
   },
@@ -189,10 +189,10 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Chen, a single taxpayer with MAGI of $280,000, has net investment income of $50,000. What is Chen\'s Net Investment Income Tax?',
     options: [
-      '$0',
+      '$3,800',
       '$1,900',
       '$2,660',
-      '$3,800'
+      '$0',
     ],
     correctAnswer: 2,
     explanation: 'NIIT = 3.8% × lesser of: (1) Net investment income ($50,000), or (2) MAGI over threshold ($280,000 - $200,000 single threshold = $80,000). Lesser amount = $50,000. NIIT = $50,000 × 3.8% = $1,900. However, checking the calculation: The $80,000 excess is greater than $50,000 NII, so tax = $50,000 × 3.8% = $1,900. Let me verify option C ($2,660 ÷ 3.8% = $70,000), which would need different facts. Answer B appears correct.',
@@ -210,12 +210,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Three individuals form a corporation. A contributes property (basis $30,000, FMV $50,000) for 40% stock. B contributes services for 30% stock. C contributes cash of $30,000 for 30% stock. Does Section 351 apply?',
     options: [
-      'Yes, to all three transferors',
-      'Yes, but only to A and C; B recognizes income',
+      'No, because services were contributed',
       'No, because the control requirement is not met',
-      'No, because services were contributed'
+      'Yes, but only to A and C; B recognizes income',
+      'Yes, to all three transferors',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Section 351 requires transferors of property to have 80% control immediately after exchange. A and C transfer property; B provides services (not property). A + C = 40% + 30% = 70% < 80%, so Section 351 does NOT apply. Actually, let\'s reconsider: B\'s stock is counted for control if B also transfers property. Since B contributes ONLY services, A and C get 70%, failing the 80% test. Therefore 351 doesn\'t apply to anyone, but A and C may still have gain, and B has ordinary income. Answer C seems most accurate.',
     reference: 'IRC Section 351',
   },
@@ -231,12 +231,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'Under UCC Article 9, a security interest is perfected when:',
     options: [
-      'The debtor signs the security agreement',
       'The creditor files a financing statement and the security interest has attached',
+      'The collateral is delivered to the creditor',
       'The debt is incurred',
-      'The collateral is delivered to the creditor'
+      'The debtor signs the security agreement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Perfection requires: (1) attachment (value given, debtor has rights, authenticated agreement OR possession), AND (2) a perfection step (usually filing a financing statement, but possession or control works for some collateral). Both attachment and the perfection step must be complete.',
     reference: 'UCC 9-308',
   },
@@ -252,12 +252,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'A decedent dies owning stock with a basis of $20,000 and FMV of $75,000 at date of death. The executor does not elect the alternate valuation date. What basis does the beneficiary receive?',
     options: [
-      '$20,000 (carryover basis)',
       '$75,000 (stepped-up basis)',
+      '$95,000 (basis plus FMV)',
       '$47,500 (average of the two)',
-      '$95,000 (basis plus FMV)'
+      '$20,000 (carryover basis)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under Section 1014, property acquired from a decedent receives a basis equal to fair market value at date of death (stepped-up basis). This eliminates the unrealized appreciation from the heir\'s perspective. The original $20,000 basis is irrelevant.',
     reference: 'IRC Section 1014',
   },
@@ -276,11 +276,11 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     question: 'A company has EBIT of $500,000 and interest expense of $100,000. What is the times interest earned ratio?',
     options: [
       '4.0 times',
-      '5.0 times',
       '6.0 times',
-      '4.5 times'
+      '5.0 times',
+      '4.5 times',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Times interest earned = EBIT / Interest expense = $500,000 / $100,000 = 5.0 times. This coverage ratio measures the company\'s ability to meet interest obligations from operating earnings. Higher ratios indicate better debt-servicing capacity.',
     reference: 'Financial Ratio Analysis',
   },
@@ -297,9 +297,9 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     question: 'A division has operating income of $500,000, average operating assets of $2,000,000, and a required return of 18%. What is the residual income?',
     options: [
       '$140,000',
-      '$200,000',
       '$360,000',
-      '$500,000'
+      '$200,000',
+      '$500,000',
     ],
     correctAnswer: 0,
     explanation: 'Residual income = Operating income - (Required return × Average operating assets) = $500,000 - (18% × $2,000,000) = $500,000 - $360,000 = $140,000. Positive residual income indicates the division is generating returns above the required rate.',
@@ -317,12 +317,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'Under ASC 205-20, a component disposal qualifies as discontinued operations if it represents:',
     options: [
-      'Any sale of a business segment',
       'A strategic shift with a major effect on operations and financial results',
+      'Any sale of a business segment',
       'A disposal generating a loss',
-      'A sale of more than 10% of total assets'
+      'A sale of more than 10% of total assets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Discontinued operations treatment requires the disposal to represent a strategic shift that has (or will have) a major effect on the entity\'s operations and financial results. Examples include disposal of a major geographic area, line of business, or equity method investment.',
     reference: 'ASC 205-20-45-1B',
   },
@@ -338,12 +338,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'A company has ROE of 15% and a dividend payout ratio of 40%. What is the sustainable growth rate?',
     options: [
-      '6%',
       '9%',
+      '6%',
       '15%',
-      '21%'
+      '21%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Sustainable growth rate = ROE × Retention ratio. Retention ratio = 1 - Payout ratio = 1 - 40% = 60%. SGR = 15% × 60% = 9%. This represents the maximum growth rate achievable without changing capital structure or issuing new equity.',
     reference: 'Sustainable Growth Analysis',
   },
@@ -382,10 +382,10 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'A firewall operating at the application layer (Layer 7) can:',
     options: [
-      'Only filter traffic based on IP addresses',
+      'Only encrypt network traffic',
       'Inspect packet contents and make decisions based on application protocols',
       'Only route packets between networks',
-      'Only encrypt network traffic'
+      'Only filter traffic based on IP addresses',
     ],
     correctAnswer: 1,
     explanation: 'Application layer firewalls (Layer 7) can inspect actual packet contents, understand application protocols (HTTP, FTP, etc.), and make filtering decisions based on application-specific data. They provide deeper inspection than packet-filtering firewalls that only examine headers.',
@@ -403,10 +403,10 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An acceptable use policy (AUP) primarily addresses:',
     options: [
-      'System backup procedures',
+      'Vendor management requirements',
       'Employee use of organizational IT resources',
       'Software development standards',
-      'Vendor management requirements'
+      'System backup procedures',
     ],
     correctAnswer: 1,
     explanation: 'An Acceptable Use Policy defines what employees may and may not do when using organizational IT resources (computers, networks, email, internet). It covers authorized uses, prohibited activities, monitoring disclosures, and consequences for violations.',
@@ -424,12 +424,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'An auditor uses generalized audit software (GAS) to recalculate depreciation for all fixed assets and compare to client records. This is an example of:',
     options: [
-      'Test data approach',
       'Parallel simulation',
+      'Embedded audit module',
       'Integrated test facility',
-      'Embedded audit module'
+      'Test data approach',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Parallel simulation uses auditor software to reprocess client data using the same logic as the client\'s system. The auditor compares results to identify discrepancies. Recalculating depreciation with GAS and comparing to client records is parallel simulation.',
     reference: 'CAAT Methodology',
   },
@@ -445,12 +445,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'The Maximum Tolerable Downtime (MTD) is used to determine:',
     options: [
-      'The frequency of data backups',
       'The Recovery Time Objective (RTO) for critical systems',
       'Employee training requirements',
-      'Insurance coverage amounts'
+      'Insurance coverage amounts',
+      'The frequency of data backups',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'MTD is the maximum time an organization can survive without a particular business function. RTO must be less than MTD to ensure recovery before the organization suffers unacceptable damage. MTD drives RTO targets, which in turn drive recovery strategy decisions.',
     reference: 'NIST SP 800-34',
   },
@@ -468,12 +468,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Application',
     question: 'Jordan, age 45, takes a $50,000 distribution from a traditional IRA. Jordan has no exceptions to the early withdrawal penalty. What is the total tax on this distribution if Jordan is in the 24% bracket?',
     options: [
+      '$14,000',
+      '$5,000',
       '$12,000',
       '$17,000',
-      '$5,000',
-      '$14,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Traditional IRA distributions are fully taxable as ordinary income: $50,000 × 24% = $12,000. Early withdrawal penalty (before age 59½) = 10%: $50,000 × 10% = $5,000. Total = $12,000 + $5,000 = $17,000.',
     reference: 'IRC Sections 72 and 72(t)',
   },
@@ -489,12 +489,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'A C corporation expects tax liability of $1,000,000 for the current year. Last year\'s tax was $800,000. To avoid estimated tax penalty, the corporation must pay estimated taxes of at least:',
     options: [
+      '$1,000,000 (100% of current year)',
+      'The lesser of $800,000 or $900,000',
       '$800,000 (100% of prior year)',
       '$900,000 (90% of current year)',
-      'The lesser of $800,000 or $900,000',
-      '$1,000,000 (100% of current year)'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Corporations avoid underpayment penalty by paying the lesser of: (1) 100% of prior year tax ($800,000), or (2) 100% of current year tax ($1,000,000). Unlike individuals, there\'s no 90% rule. For large corporations (prior year > $1M), the prior-year option is limited to the first quarter.',
     reference: 'IRC Section 6655',
   },
@@ -510,12 +510,12 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     skillLevel: 'Analysis',
     question: 'A corporation paid Alternative Minimum Tax in prior years due to timing differences. In the current year, regular tax exceeds tentative minimum tax by $40,000. The corporation has a minimum tax credit carryforward of $60,000. How much credit can be used?',
     options: [
+      '$60,000',
+      '$20,000',
       '$0',
       '$40,000',
-      '$60,000',
-      '$20,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The minimum tax credit can reduce regular tax liability, but only to the extent regular tax exceeds the tentative minimum tax. Current year "cushion" = Regular tax - TMT = $40,000. Credit usable = lesser of carryforward ($60,000) or cushion ($40,000) = $40,000. Remaining $20,000 carries forward.',
     reference: 'IRC Section 53',
   },
@@ -532,9 +532,9 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
     question: 'A taxpayer\'s personal residence is damaged in a federally declared disaster. The loss before insurance is $40,000, insurance reimbursement is $25,000, and AGI is $100,000. What is the deductible casualty loss?',
     options: [
       '$4,900',
-      '$14,900',
+      '$0',
       '$15,000',
-      '$0'
+      '$14,900',
     ],
     correctAnswer: 0,
     explanation: 'Personal casualty losses (for 2018-2025) are deductible only if attributable to federally declared disasters. Loss = $40,000 - $25,000 insurance = $15,000. Reduce by $100 per event = $14,900. Reduce by 10% of AGI ($10,000) = $4,900. The deduction requires itemizing.',

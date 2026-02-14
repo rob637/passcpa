@@ -518,39 +518,44 @@ const You: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <span className="text-sm font-bold text-slate-700 dark:text-slate-300 w-10">{examName}</span>
                   <div>
-                    {access.isPaid && (
-                      <span className={`flex items-center gap-1 text-xs font-semibold ${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'}`}>
-                        <CheckCircle className="w-3.5 h-3.5" />
-                        {access.cancelAtPeriodEnd
-                          ? `Cancels${access.currentPeriodEnd ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}` : ''}`
-                          : 'Active Subscription'
-                        }
-                      </span>
-                    )}
-                    {access.isTrialing && (
-                      <span className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
-                        <Clock className="w-3.5 h-3.5" />
-                        Trial: {access.trialDaysRemaining} days remaining
-                      </span>
-                    )}
-                    {access.trialExpired && (
+                    {access.isPaid ? (
+                      <>
+                        <span className={`flex items-center gap-1 text-xs font-semibold ${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'}`}>
+                          <CheckCircle className="w-3.5 h-3.5" />
+                          {access.cancelAtPeriodEnd
+                            ? `Cancels${access.currentPeriodEnd ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}` : ''}`
+                            : 'Subscribed'
+                          }
+                        </span>
+                        {!access.cancelAtPeriodEnd && access.currentPeriodEnd && (
+                          <span className="text-[10px] text-slate-500 dark:text-slate-400">
+                            Through {new Date(access.currentPeriodEnd).toLocaleDateString()}
+                          </span>
+                        )}
+                      </>
+                    ) : access.isTrialing ? (
+                      <>
+                        <span className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                          <Clock className="w-3.5 h-3.5" />
+                          Trial: {access.trialDaysRemaining} days remaining
+                        </span>
+                        {access.trialEndDate && (
+                          <span className="text-[10px] text-slate-500 dark:text-slate-400">
+                            Ends {access.trialEndDate.toLocaleDateString()}
+                          </span>
+                        )}
+                      </>
+                    ) : access.trialExpired ? (
                       <span className="flex items-center gap-1 text-xs font-semibold text-red-500 dark:text-red-400">
                         <Clock className="w-3.5 h-3.5" />
                         Trial expired
                       </span>
-                    )}
-                    {access.canStartTrial && (
+                    ) : access.canStartTrial ? (
                       <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                         <Play className="w-3.5 h-3.5" />
                         14-day free trial available
                       </span>
-                    )}
-                    {/* Show trial end date if trialing */}
-                    {access.isTrialing && access.trialEndDate && (
-                      <span className="text-[10px] text-slate-500 dark:text-slate-400">
-                        Ends {access.trialEndDate.toLocaleDateString()}
-                      </span>
-                    )}
+                    ) : null}
                   </div>
                 </div>
 

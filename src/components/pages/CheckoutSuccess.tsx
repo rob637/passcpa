@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Sparkles, BookOpen, Trophy } from 'lucide-react';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
-import { isFounderPricingActive } from '../../services/subscription';
+import { isFounderPricingActive, useSubscription } from '../../services/subscription';
 
 const CheckoutSuccess = () => {
   useDocumentTitle('Welcome to VoraPrep!');
@@ -15,6 +15,16 @@ const CheckoutSuccess = () => {
   const [searchParams] = useSearchParams();
   // Show founder badge if the checkout happened during the founder window
   const isFounder = searchParams.get('founder') === 'true' || isFounderPricingActive();
+
+  // Force a subscription refresh so the realtime listener picks up the Stripe webhook update
+  const { refreshSubscription } = useSubscription();
+  useEffect(() => {
+    // Webhook may take a moment — poll a couple of times
+    const t1 = setTimeout(refreshSubscription, 2000);
+    const t2 = setTimeout(refreshSubscription, 5000);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     // Hide confetti after animation

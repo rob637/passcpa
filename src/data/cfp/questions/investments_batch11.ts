@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
   // INV-1: Investment Concepts
   {
-    id: 'CFP-INV-B11-001',
+    id: 'cfp-inv-b11-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Information ratio = (Portfolio return - Benchmark return) / Tracking error. Higher is better—more excess return per unit of active risk taken. Used for evaluating active managers against their benchmark. Unlike Sharpe (uses total risk), IR isolates active management skill. IR > 0.5 considered good; > 1.0 excellent.'
   },
   {
-    id: 'CFP-INV-B11-002',
+    id: 'cfp-inv-b11-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'HPR = (Ending value - Beginning value + Income) / Beginning value. Total return over any holding period. Includes: price appreciation/depreciation, dividends, interest. Not annualized—if held 6 months, HPR is 6-month return. To compare different periods, must annualize. Simple but fundamental return calculation.'
   },
   {
-    id: 'CFP-INV-B11-003',
+    id: 'cfp-inv-b11-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -67,7 +67,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
   },
   // INV-2: Asset Types
   {
-    id: 'CFP-INV-B11-004',
+    id: 'cfp-inv-b11-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Covered call: own stock, sell call option against it. Receive premium income (lowers cost basis). Trade-off: if stock rises above strike, shares called away—miss upside beyond that. Downside: still exposed to decline minus premium received. Best in: flat or slightly bullish markets, when willing to sell at strike. Income strategy, not growth.'
   },
   {
-    id: 'CFP-INV-B11-005',
+    id: 'cfp-inv-b11-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +105,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Protective put: own stock, buy put option. Creates floor—maximum loss = stock price - strike + premium paid. Keep all upside above purchase cost + premium. Like insurance: pay premium for protection. Cost is the premium (reduces return if market doesn\'t decline). Useful for concentrated positions or before uncertain events.'
   },
   {
-    id: 'CFP-INV-B11-006',
+    id: 'cfp-inv-b11-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -125,7 +125,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
   },
   // INV-3: Portfolio Management
   {
-    id: 'CFP-INV-B11-007',
+    id: 'cfp-inv-b11-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -144,7 +144,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Core-satellite: index funds in core (70-80%—low cost, market exposure) + active/alternative satellites (20-30%—seeking alpha). Core provides: market return, diversification, low cost. Satellites may add: potential outperformance, tactical tilts, alternatives. Balances passive efficiency with active opportunities. Manage cost/expectations for satellite portion.'
   },
   {
-    id: 'CFP-INV-B11-008',
+    id: 'cfp-inv-b11-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -163,7 +163,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Factor investing: target specific return drivers beyond market beta. Common factors: value (cheap stocks), momentum (recent winners), quality (profitable, stable), low volatility (less volatile stocks), size (small cap). Academic research shows factor premiums over time. Can implement via smart beta ETFs. Factors can underperform for extended periods—requires patience.'
   },
   {
-    id: 'CFP-INV-B11-009',
+    id: 'cfp-inv-b11-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -183,7 +183,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
   },
   // INV-4: Valuation
   {
-    id: 'CFP-INV-B11-010',
+    id: 'cfp-inv-b11-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -202,7 +202,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'EV = Market cap + Total debt - Cash. Acquirer pays for equity, assumes debt, gets cash. More complete valuation than market cap—reflects capital structure. EV/EBITDA: common valuation metric for comparing companies with different leverage. Lower EV/EBITDA may signal value. Use with other metrics for complete analysis.'
   },
   {
-    id: 'CFP-INV-B11-011',
+    id: 'cfp-inv-b11-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -221,7 +221,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'PEG = P/E ÷ Expected earnings growth rate. Adjusts for growth—high P/E may be justified if growth is high. PEG < 1: potentially undervalued relative to growth. PEG > 1: may be overvalued. Limitations: growth assumptions may be wrong, doesn\'t work for low/negative growth. Complement with other analysis. Peter Lynch popularized this metric.'
   },
   {
-    id: 'CFP-INV-B11-012',
+    id: 'cfp-inv-b11-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -241,7 +241,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
   },
   // INV-5: Investment Vehicles
   {
-    id: 'CFP-INV-B11-013',
+    id: 'cfp-inv-b11-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -260,7 +260,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Interval funds: closed-end structure but registered under 1940 Act. Quarterly/semi-annual redemption windows (typically 5-25% of shares). Can invest in illiquid assets (private credit, real estate) without daily liquidity pressure. Lower liquidity than mutual funds. May offer higher yields from illiquidity premium. Understand redemption limits before investing.'
   },
   {
-    id: 'CFP-INV-B11-014',
+    id: 'cfp-inv-b11-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -279,7 +279,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Fund of funds: invests in underlying funds rather than securities. Benefits: instant diversification, professional manager selection, access to otherwise inaccessible funds. Drawbacks: double layer of fees (fund + underlying), tax inefficiency, may overdiversify. Common in: hedge funds, target-date funds, some alternatives. Evaluate fees carefully.'
   },
   {
-    id: 'CFP-INV-B11-015',
+    id: 'cfp-inv-b11-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -299,7 +299,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-INV-B11-016',
+    id: 'cfp-inv-b11-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -318,7 +318,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Convexity: second derivative of price-yield relationship. Duration is linear approximation—convexity is the curve. Positive convexity: price rises more when rates fall than it falls when rates rise. Greater convexity = better for investor. Callable bonds have negative convexity at low rates. More important for larger rate changes. Adds precision to duration analysis.'
   },
   {
-    id: 'CFP-INV-B11-017',
+    id: 'cfp-inv-b11-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -337,7 +337,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Preferred stock: hybrid security. Bond-like: fixed dividend rate, priority over common, prices sensitive to interest rates. Stock-like: equity on balance sheet, no maturity (usually), dividends not guaranteed. Usually no voting rights. Types: cumulative, convertible, callable. Qualified dividend treatment possible. Higher yield than common, less appreciation potential.'
   },
   {
-    id: 'CFP-INV-B11-018',
+    id: 'cfp-inv-b11-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -356,7 +356,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Monte Carlo: simulates thousands of possible future paths using randomized returns based on assumed distributions. Shows probability of success—e.g., 85% chance of not running out of money. Better than deterministic projections—incorporates uncertainty. Limitations: assumptions matter, false precision, may not capture extreme events. Tool for understanding range of outcomes.'
   },
   {
-    id: 'CFP-INV-B11-019',
+    id: 'cfp-inv-b11-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -375,7 +375,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Relative valuation: compare to peers, sector, history, or market. Common metrics: P/E, P/B, P/S, EV/EBITDA. Lower than peers may indicate: value opportunity, or lower quality/growth. Advantages: simple, widely used. Limitations: entire sector could be over/undervalued, doesn\'t determine intrinsic value. Complement with absolute valuation methods.'
   },
   {
-    id: 'CFP-INV-B11-020',
+    id: 'cfp-inv-b11-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -394,7 +394,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Creation/redemption: APs (large institutions) can exchange ETF shares for underlying securities (in-kind). Arbitrage mechanism: if ETF trades at premium, APs create shares; at discount, they redeem. Keeps price near NAV. Tax efficiency: in-kind redemptions avoid selling securities (no capital gains). Key ETF advantage over mutual funds. Retail investors buy/sell on exchange.'
   },
   {
-    id: 'CFP-INV-B11-021',
+    id: 'cfp-inv-b11-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -413,7 +413,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Maximum drawdown: largest percentage decline from peak to subsequent trough. Shows: How much you could have lost at the worst time. Important for: risk-averse investors, retirees, understanding strategy risk. S&P 500: ~50% max drawdown in 2007-2009. Recovery time matters too. More intuitive risk measure than standard deviation for many clients.'
   },
   {
-    id: 'CFP-INV-B11-022',
+    id: 'cfp-inv-b11-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -432,7 +432,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Structured notes: debt obligation + derivatives. Examples: principal-protected notes, equity-linked notes, barrier notes. Can create: downside protection, enhanced yield, leveraged exposure. Risks: issuer credit risk, complexity, illiquidity, high fees, may have caps/barriers. Often sold by banks. Understand payoff structure fully—not simple investments.'
   },
   {
-    id: 'CFP-INV-B11-023',
+    id: 'cfp-inv-b11-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -451,7 +451,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Currency hedging: reduces impact of exchange rate movements on returns. Methods: forward contracts, currency ETFs. Considerations: costs (interest rate differentials, transaction costs), perfect hedging difficult, may reduce diversification benefit. Short-term: currency adds volatility. Long-term: may mean-revert. Partial hedging common. Bond portfolios often hedged; equities debatable.'
   },
   {
-    id: 'CFP-INV-B11-024',
+    id: 'cfp-inv-b11-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -470,7 +470,7 @@ export const CFP_INVESTMENTS_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Sum-of-the-parts (SOTP): value each business segment separately, then sum. Used for: conglomerates, companies with diverse segments, potential breakup targets. May reveal: conglomerate discount (whole worth less than parts), hidden value. Apply appropriate valuation method to each segment. If SOTP > market cap, may be undervalued or breakup candidate.'
   },
   {
-    id: 'CFP-INV-B11-025',
+    id: 'cfp-inv-b11-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',

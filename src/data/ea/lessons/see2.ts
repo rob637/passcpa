@@ -2067,7 +2067,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Section 351', 'Corporate income', 'Flat tax rate'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2132,7 +2132,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['E&P', 'Dividend vs return of capital', 'Constructive dividends'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2186,7 +2186,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ['Section 302', 'Attribution rules', 'Sale treatment'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2252,7 +2252,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ['Section 331', 'Section 332', 'Section 336'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2316,7 +2316,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['AET', 'Reasonable needs', 'Accumulated earnings credit'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2391,7 +2391,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['PHC', 'PHC income', '20% tax'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2452,7 +2452,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Section 267', 'Related parties', 'Loss disallowance'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2519,7 +2519,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ['Type A', 'Type B', 'Type C', 'Type D reorganizations'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2583,7 +2583,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Research credit', 'Work opportunity credit', 'General business credit'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2649,7 +2649,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ['CAMT', 'Book income', 'Applicable corporations'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2703,7 +2703,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 40,
     difficulty: 'beginner',
     topics: ['Form 1120', 'Due dates', 'Extensions', 'Schedules'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2761,7 +2761,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ['DRD percentages', 'Ownership thresholds', 'Taxable income limitation'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2827,7 +2827,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ['10% limitation', 'Property contributions', 'Carryover'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2887,7 +2887,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 35,
     difficulty: 'intermediate',
     topics: ['Capital loss carryback', 'Carryforward', 'No offset against ordinary'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -2947,7 +2947,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['NOL deduction', '80% limitation', 'Carryforward'],
-    blueprintArea: 'SEE2-4',
+    blueprintArea: 'SEE2-1',
     content: {
       sections: [
         {
@@ -3005,7 +3005,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ['FICA', 'FUTA', 'Withholding', 'Deposit requirements'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3078,7 +3078,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ['SEP IRA', 'SIMPLE IRA', '401(k)', 'Defined benefit plans'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3144,7 +3144,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Employee vs IC', 'Common law test', 'Form SS-8'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3221,7 +3221,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ['501(c)(3)', 'Exempt purposes', 'Form 990', 'UBIT'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3293,7 +3293,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Excludable fringes', 'Working condition', 'De minimis'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3360,7 +3360,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Regular and exclusive use', 'Principal place of business', 'Simplified method'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3423,7 +3423,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ['Schedule E', 'Depreciation', 'Passive activity rules'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3491,7 +3491,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Standard mileage', 'Actual expenses', 'Luxury auto limits'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3560,7 +3560,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Away from home', 'Meal deductions', 'Per diem'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3625,7 +3625,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 35,
     difficulty: 'intermediate',
     topics: ['Section 1244', 'Ordinary loss', 'Qualification requirements'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3691,7 +3691,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ['Section 1202', 'QSBS', 'Gain exclusion'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3762,7 +3762,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Profit motive', 'Section 183', 'Nine-factor test'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3826,7 +3826,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ['Section 1031', 'Qualified intermediary', 'Boot', 'Basis rules'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3892,7 +3892,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Section 453', 'Gross profit ratio', 'Related party sales'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -3956,7 +3956,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Schedule SE', 'SE tax rate', 'Deduction for employer portion'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -4021,7 +4021,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Quarterly payments', 'Safe harbors', 'Form 1040-ES'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {
@@ -4086,7 +4086,7 @@ export const eaPart2Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Information returns', '1099 reporting', 'Backup withholding'],
-    blueprintArea: 'SEE2-5',
+    blueprintArea: 'SEE2-2',
     content: {
       sections: [
         {

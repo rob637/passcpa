@@ -442,7 +442,7 @@ Where:
     section: 'BAR',
     type: 'comparison',
     topic: 'Financial Projections',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     front: 'Compare FINANCIAL FORECAST vs. FINANCIAL PROJECTION',
     back: `**Financial Forecast:**
 • Based on expected conditions
@@ -471,7 +471,7 @@ Both require CPA attestation if issued to third parties`,
     section: 'BAR',
     type: 'concept',
     topic: 'Budgeting',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     front: 'What is a MASTER BUDGET?',
     back: `**Master Budget Components:**
 
@@ -500,7 +500,7 @@ Sales forecast drives all other budgets`,
     section: 'BAR',
     type: 'definition',
     topic: 'Budgeting',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     front: 'What is FLEXIBLE BUDGETING?',
     back: `**Flexible Budget:**
 Adjusts budgeted amounts for actual activity level
@@ -698,7 +698,7 @@ Applied OH = Standard rate × Standard hours allowed`,
     section: 'BAR',
     type: 'definition',
     topic: 'Performance Measures',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     front: 'What is the BALANCED SCORECARD?',
     back: `**Balanced Scorecard - Four Perspectives:**
 
@@ -720,7 +720,7 @@ Applied OH = Standard rate × Standard hours allowed`,
     section: 'BAR',
     type: 'formula',
     topic: 'Performance Measures',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     front: 'What is ECONOMIC VALUE ADDED (EVA)?',
     back: `**EVA = NOPAT - (Capital × Cost of Capital)**
 

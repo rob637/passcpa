@@ -257,7 +257,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
         correctOptionId: 'C',
         explanation: 'Monthly need: $9,500. Disability benefit: $6,000. Spouse income: $35,000/12 = $2,917/month net (assume ~$2,500 after taxes). Total income: $6,000 + $2,500 = $8,500. Gap: $9,500 - $8,500 = ~$1,000, or closer to $500 with expense adjustments. The family can likely manage with minor lifestyle changes.',
         courseId: 'cfp',
-        blueprintArea: 'RIS-3',
+        blueprintArea: 'RISK-3',
         skillLevel: 'Application' as const
       },
       {
@@ -272,7 +272,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
         correctOptionId: 'B',
         explanation: 'True own-occupation means Marcus is disabled if he cannot perform the material duties of HIS specific occupation (financial analyst), even if he could work in another capacity. This is the most favorable definition. He could theoretically teach or do something else and still collect full benefits if he cannot analyze finances.',
         courseId: 'cfp',
-        blueprintArea: 'RIS-3',
+        blueprintArea: 'RISK-3',
         skillLevel: 'Remembering and Understanding' as const
       },
       {
@@ -287,7 +287,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
         correctOptionId: 'B',
         explanation: 'The elimination period is a waiting period (like a deductible measured in time). Marcus receives $0 for the first 90 days. Cost during elimination: 3 months × $9,500 = $28,500. His $40,000 emergency fund covers this with room to spare. After 90 days, benefits begin.',
         courseId: 'cfp',
-        blueprintArea: 'RIS-3',
+        blueprintArea: 'RISK-3',
         skillLevel: 'Remembering and Understanding' as const
       },
       {
@@ -302,7 +302,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
         correctOptionId: 'B',
         explanation: 'His income has grown from possibly $144,000 (when $6,000 = 50% coverage) to $180,000. If his policy has a guaranteed insurability rider, he can add coverage without new underwriting—valuable since 5 years have passed and health may have changed. He should increase to ~$7,500-$9,000/month (50-60% of income) if permitted.',
         courseId: 'cfp',
-        blueprintArea: 'RIS-3',
+        blueprintArea: 'RISK-3',
         skillLevel: 'Evaluation' as const
       }
     ]

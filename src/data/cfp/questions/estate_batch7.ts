@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
   // EST-1: Estate Planning Documents
   {
-    id: 'CFP-EST-B7-001',
+    id: 'cfp-est-b7-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -28,7 +28,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'A certificate of trust (or trust certification/abstract) summarizes key information (existence, trustees, powers) allowing third parties like banks to deal with the trust without seeing private details like beneficiaries or asset distributions. It protects privacy while facilitating transactions.'
   },
   {
-    id: 'CFP-EST-B7-002',
+    id: 'cfp-est-b7-002',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Amendments change specific provisions while keeping the original document. After multiple amendments, the trust becomes hard to read. A restatement replaces the entire document with a current, consolidated version while the original trust continues—no re-funding needed. Both require the settlor\'s capacity.'
   },
   {
-    id: 'CFP-EST-B7-003',
+    id: 'cfp-est-b7-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -67,7 +67,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
   },
   // EST-2: Trusts
   {
-    id: 'CFP-EST-B7-004',
+    id: 'cfp-est-b7-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -86,7 +86,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Directed trusts bifurcate traditional trustee duties. An investment director handles investments; a distribution committee (or advisor) decides discretionary distributions; an administrative trustee handles custody and tax filings. This allows expertise in each area and may provide liability protection in states with directed trust statutes.'
   },
   {
-    id: 'CFP-EST-B7-005',
+    id: 'cfp-est-b7-005',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -105,7 +105,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Trust situs determines governing law. Some states have favorable trust features: no state income tax (Nevada, South Dakota, Delaware), abolished perpetuities rules (allowing dynasty trusts), strong asset protection (spendthrift provisions), and modern trust statutes. Trusts can be moved to more favorable jurisdictions.'
   },
   {
-    id: 'CFP-EST-B7-006',
+    id: 'cfp-est-b7-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -125,7 +125,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
   },
   // EST-3: Estate Tax
   {
-    id: 'CFP-EST-B7-007',
+    id: 'cfp-est-b7-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -144,7 +144,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'IRC Section 2032 permits the alternate valuation date election only if it results in a decrease in both the value of the gross estate AND the amount of estate tax. The election cannot be used solely to increase the basis of inherited assets for income tax purposes.',
   },
   {
-    id: 'CFP-EST-B7-008',
+    id: 'cfp-est-b7-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -163,7 +163,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Section 6166 helps estates with illiquid business interests. If the business exceeds 35% of adjusted gross estate, estate tax attributable to it can be paid in installments: interest-only for 4 years, then principal plus interest over 10 years. Provides liquidity relief for family businesses.'
   },
   {
-    id: 'CFP-EST-B7-009',
+    id: 'cfp-est-b7-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -183,7 +183,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
   },
   // EST-4: Gifting Strategies
   {
-    id: 'CFP-EST-B7-010',
+    id: 'cfp-est-b7-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -202,7 +202,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Net gifts: the recipient pays the gift tax. This reduces the gift\'s value (it\'s worth less if one must pay tax on it). Circular calculation: gift value minus recipient\'s tax obligation. Useful for large gifts when donor lacks cash for tax. The recipient\'s tax payment isn\'t income to the donor if it doesn\'t exceed gift tax.'
   },
   {
-    id: 'CFP-EST-B7-011',
+    id: 'cfp-est-b7-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -221,7 +221,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The annual exclusion requires a present interest—immediate right to use, possess, or enjoy. Future interests (remainder after a life estate, distributions at trustee discretion) don\'t qualify. Crummey powers convert future interests to present interests by giving withdrawal rights, enabling exclusion use.'
   },
   {
-    id: 'CFP-EST-B7-012',
+    id: 'cfp-est-b7-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -241,7 +241,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
   },
   // EST-5: Estate Planning for Special Situations
   {
-    id: 'CFP-EST-B7-013',
+    id: 'cfp-est-b7-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -260,7 +260,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Minors cannot manage significant assets directly. Options: UTMA/UGMA (simple, terminates at 18-21), trusts (flexible, can extend past majority with staged distributions), guardianship nominations (for care of child), and proper beneficiary designations avoiding direct minor inheritance which requires court supervision.'
   },
   {
-    id: 'CFP-EST-B7-014',
+    id: 'cfp-est-b7-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -279,7 +279,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'ABLE accounts require that the beneficiary\'s qualifying disability must have occurred before age 26. Recent legislation (ABLE Age Adjustment Act) increased this to age 46 starting in 2026. The accounts allow tax-advantaged savings without affecting means-tested benefits like SSI and Medicaid.',
   },
   {
-    id: 'CFP-EST-B7-015',
+    id: 'cfp-est-b7-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -299,26 +299,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-EST-B7-016',
-    courseId: 'cfp',
-    section: 'CFP-EST',
-    blueprintArea: 'EST-1',
-    topic: 'Estate Documents',
-    subtopic: 'Self-Proving Affidavit',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A self-proving affidavit attached to a will:',
-    options: [
-      'B) Contains sworn statements from witnesses, eliminating the need to locate them for probate court testimony',
-      'C) Replaces witnesses',
-      'A) Proves the will is valid',
-      'D) Is required in all states',
-    ],
-    correctAnswer: 0,
-    explanation: 'Self-proving affidavits are notarized statements by witnesses confirming proper execution. They streamline probate—courts accept the affidavit without requiring witnesses to appear. Most estates benefit from this added step at signing. Some states integrate self-proving language into the will itself.'
-  },
-  {
-    id: 'CFP-EST-B7-017',
+    id: 'cfp-est-b7-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -337,7 +318,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Silent trust (or quiet trust) provisions delay or limit beneficiary notice. Parents may want children to develop independently without expecting inheritance. Most states allow some limitation on information, but core duties (account regularly, respond to reasonable requests) often cannot be fully eliminated.'
   },
   {
-    id: 'CFP-EST-B7-018',
+    id: 'cfp-est-b7-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -356,7 +337,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'QPRT: grantor gifts home to irrevocable trust but retains residence rights for a term. Gift value is discounted (present value of remainder interest). If grantor outlives the term, home transfers estate-tax-free. If not, home returns to estate (no harm, but no benefit). Lower interest rates increase QPRT benefits.'
   },
   {
-    id: 'CFP-EST-B7-019',
+    id: 'cfp-est-b7-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -375,7 +356,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Reverse gift: give low-basis assets to elderly family member; at their death, you inherit with stepped-up basis. However, IRC 1014(e) prevents this if property is acquired within one year of death and passes back to the original donor or spouse. Strategy requires the relative to survive at least one year.'
   },
   {
-    id: 'CFP-EST-B7-020',
+    id: 'cfp-est-b7-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -394,7 +375,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Digital assets include: financial accounts, cryptocurrency, email, social media, cloud storage, domain names, loyalty points. Planning includes: inventory, secure password storage, terms of service review, state digital access laws, and naming someone with authority to access. The Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA) governs in most states.'
   },
   {
-    id: 'CFP-EST-B7-021',
+    id: 'cfp-est-b7-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -413,7 +394,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Wills are often not read until after funeral arrangements are made. Burial/cremation wishes should be communicated to family directly, in a separate letter, or designated on a specific form. Some states have designated agent statutes. Pre-planning with funeral homes documents and funds these wishes.'
   },
   {
-    id: 'CFP-EST-B7-022',
+    id: 'cfp-est-b7-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -432,7 +413,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Totten trusts are simple "in trust for" or POD bank accounts. The owner maintains full control during life; at death, funds transfer to the beneficiary outside probate. Easy to establish, but provide no ongoing management—the beneficiary receives outright. Named for the case that validated them.'
   },
   {
-    id: 'CFP-EST-B7-023',
+    id: 'cfp-est-b7-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -451,7 +432,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Graegin loans (from the case name): estate borrows from family entity to pay estate tax/expenses. The interest is an administrative expense deduction. Loans must have legitimate terms—fixed rate, no prepayment—per the case. Useful when estate is illiquid but has ownership in cash-generating entities.'
   },
   {
-    id: 'CFP-EST-B7-024',
+    id: 'cfp-est-b7-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -470,7 +451,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Selling property below FMV to family creates a gift of the difference. For income tax, basis is allocated between sale and gift portions. Example: $100K property (basis $40K) sold for $60K = $40K sale, $60K gift. Sale portion recognizes gain; gift portion transfers with carryover basis. Both gift and income tax consequences apply.'
   },
   {
-    id: 'CFP-EST-B7-025',
+    id: 'cfp-est-b7-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   {
-    id: 'CFP-RET-B7-001',
+    id: 'cfp-ret-b7-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Monte Carlo simulation uses randomized return sequences across many trials (often 1,000+) to model various market environments. It provides probability of success (e.g., 85% chance of not running out of money) rather than single-point projections, capturing sequence of returns risk and return variability.'
   },
   {
-    id: 'CFP-RET-B7-002',
+    id: 'cfp-ret-b7-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Early retirees face healthcare coverage gaps before Medicare at 65. Options include COBRA (expensive, limited duration), marketplace plans (with possible subsidies), spouse\'s employer plan, or short-term plans. Healthcare costs are major early retirement expenses and must be planned.'
   },
   {
-    id: 'CFP-RET-B7-003',
+    id: 'cfp-ret-b7-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
   },
   // RET-2: Employer Plans
   {
-    id: 'CFP-RET-B7-004',
+    id: 'cfp-ret-b7-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Safe Harbor plans bypass ADP/ACP discrimination testing by providing: (1) 100% match on 3% + 50% match on next 2% of deferrals, OR (2) 3-4% non-elective contribution to all eligible employees. Contributions must be immediately vested. This allows HCEs to maximize contributions without testing failure risk.'
   },
   {
-    id: 'CFP-RET-B7-005',
+    id: 'cfp-ret-b7-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Top-heavy plans (>60% assets belonging to key employees—officers, 5%+ owners, 1%+ owners earning $200K+) must provide minimum contributions (typically 3% of compensation) to non-key employees. This prevents plans from disproportionately benefiting owners. Safe Harbor plans are exempt from top-heavy minimums.'
   },
   {
-    id: 'CFP-RET-B7-006',
+    id: 'cfp-ret-b7-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
   },
   // RET-3: IRAs
   {
-    id: 'CFP-RET-B7-007',
+    id: 'cfp-ret-b7-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Direct transfers move assets custodian-to-custodian without the owner receiving funds—no 60-day limit, no once-per-year restriction, not reportable as distributions. Rollovers involve receiving funds and must be completed within 60 days; the once-per-year rule (for indirect rollovers) limits frequency.'
   },
   {
-    id: 'CFP-RET-B7-008',
+    id: 'cfp-ret-b7-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Reservists called to active duty for 180+ days can take penalty-free IRA distributions (though still taxable). They can repay these distributions within 2 years of active duty end, effectively restoring retirement savings. This accommodates the financial disruption of military activation.'
   },
   {
-    id: 'CFP-RET-B7-009',
+    id: 'cfp-ret-b7-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
   },
   // RET-4: Distribution Planning
   {
-    id: 'CFP-RET-B7-010',
+    id: 'cfp-ret-b7-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The first RMD must be taken by April 1 of the year following the year turning 73 (SECURE 2.0 age). Subsequent RMDs are due by December 31. Using the April 1 extension means two RMDs in the second year (higher taxes). For employer plans with the still-working exception, RBD is later.'
   },
   {
-    id: 'CFP-RET-B7-011',
+    id: 'cfp-ret-b7-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'SEPP payments must continue for 5 years OR until 59½, whichever is LONGER. Modifying payments before this period ends triggers retroactive 10% penalties on all prior distributions plus interest. A 50-year-old starting SEPP must continue until 59½ (9.5 years); a 57-year-old must continue until 62 (5 years).'
   },
   {
-    id: 'CFP-RET-B7-012',
+    id: 'cfp-ret-b7-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
   },
   // RET-5: Social Security
   {
-    id: 'CFP-RET-B7-013',
+    id: 'cfp-ret-b7-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,7 +260,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'AIME (Average Indexed Monthly Earnings) uses the highest 35 years of wage-indexed earnings. Years without earnings count as zero, lowering the average. The PIA (Primary Insurance Amount) formula applies progressive bend points to AIME. Working additional high-earning years can replace earlier low or zero years.'
   },
   {
-    id: 'CFP-RET-B7-014',
+    id: 'cfp-ret-b7-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -279,7 +279,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Ex-spouse benefits require: (1) marriage lasting 10+ years, (2) divorced at least 2 years (if ex hasn\'t filed), (3) currently unmarried, (4) age 62+, and (5) entitled amount exceeds own benefit. The ex\'s benefits are unaffected by the claim. There\'s no limit on number of ex-spouses claiming.'
   },
   {
-    id: 'CFP-RET-B7-015',
+    id: 'cfp-ret-b7-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +299,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RET-B7-016',
+    id: 'cfp-ret-b7-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +318,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Bucket strategies divide portfolios by time horizon: bucket 1 (1-2 years expenses in safe assets), bucket 2 (3-7 years in balanced investments), bucket 3 (7+ years in growth assets). This provides psychological comfort during downturns (knowing near-term needs are secure) while maintaining long-term growth potential.'
   },
   {
-    id: 'CFP-RET-B7-017',
+    id: 'cfp-ret-b7-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -337,7 +337,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Cross-tested plans allow different contribution rates for different employee groups (often higher for older owners). They pass non-discrimination by testing projected benefits at retirement (rather than current contributions). This allows significant contributions to older, higher-paid employees while meeting minimum requirements for others.'
   },
   {
-    id: 'CFP-RET-B7-018',
+    id: 'cfp-ret-b7-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -356,7 +356,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Self-directed IRAs hold alternative assets beyond traditional securities. Investments can include real estate, private companies, precious metals (certain types), and more. They require specialized custodians, have prohibited transaction risks (can\'t benefit personally from IRA assets), and demand more due diligence.'
   },
   {
-    id: 'CFP-RET-B7-019',
+    id: 'cfp-ret-b7-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -375,7 +375,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'In-plan Roth conversions (if the plan allows) convert pre-tax 401(k) money to Roth 401(k) without leaving the plan. The conversion is taxable. This provides Roth conversion opportunity while maintaining plan benefits (creditor protection, loan availability). SECURE 2.0 expanded this to include employer matches.'
   },
   {
-    id: 'CFP-RET-B7-020',
+    id: 'cfp-ret-b7-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -394,7 +394,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Social Security COLAs are automatic, based on CPI-W changes from Q3 to Q3. If there\'s no increase in CPI-W, there\'s no COLA (happened in 2010, 2011, 2016). Recent COLAs have varied from 0% to 8.7% (2023). COLAs apply to all beneficiaries, including disability and survivor benefits.'
   },
   {
-    id: 'CFP-RET-B7-021',
+    id: 'cfp-ret-b7-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -413,7 +413,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Phased retirement reduces hours or responsibility before full retirement. Benefits include continued income (reducing portfolio withdrawals), healthcare coverage, purpose and social connection, and gradual adjustment. Some employers offer formal programs; others accommodate informal arrangements.'
   },
   {
-    id: 'CFP-RET-B7-022',
+    id: 'cfp-ret-b7-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,26 +432,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Hardship distributions address immediate, heavy financial needs (medical, tuition, funeral, home purchase, eviction prevention). They\'re taxable; SECURE 2.0 added penalty-exemption for certain emergencies. They can\'t be repaid (unlike loans). Plans may limit amount to demonstrated need. The 6-month contribution suspension was eliminated.'
   },
   {
-    id: 'CFP-RET-B7-023',
-    courseId: 'cfp',
-    section: 'CFP-RET',
-    blueprintArea: 'RET-3',
-    topic: 'IRAs',
-    subtopic: 'First-Time Homebuyer',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'The first-time homebuyer exception for IRA early withdrawals:',
-    options: [
-      'B) Allows up to $10,000 lifetime penalty-free for acquiring a first home (includes someone who hasn\'t owned for 2+ years)',
-      'A) Allows unlimited penalty-free withdrawals',
-      'D) Requires the home to be paid in full',
-      'C) Applies only to Roth IRAs',
-    ],
-    correctAnswer: 0,
-    explanation: '$10,000 lifetime IRA penalty exception for first home acquisition costs (acquisition, construction, closing costs). "First-time" includes anyone who hasn\'t owned a principal residence in 2 years. Spouse can also use $10,000 ($20,000 couple). SECURE 2.0 didn\'t increase this limit. Distribution is still taxable (if traditional).'
-  },
-  {
-    id: 'CFP-RET-B7-024',
+    id: 'cfp-ret-b7-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -470,7 +451,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Annuitization converts assets to guaranteed lifetime income, addressing longevity risk. Trade-offs include loss of liquidity, loss of legacy (unless period-certain/refund options), and locking in rates. Partial annuitization can create an income floor while maintaining portfolio flexibility.'
   },
   {
-    id: 'CFP-RET-B7-025',
+    id: 'cfp-ret-b7-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

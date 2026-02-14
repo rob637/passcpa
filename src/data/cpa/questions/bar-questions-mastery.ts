@@ -177,7 +177,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     id: 'bar-mast-009',
     courseId: 'cpa',
     section: 'BAR',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     topic: 'Income Taxes',
     subtopic: 'Change in Tax Rate',
     difficulty: 'hard',
@@ -201,7 +201,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Income Taxes',
     subtopic: 'Intraperiod Allocation',
     difficulty: 'hard',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Intraperiod tax allocation requires:',
     options: [
@@ -222,7 +222,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Business Combinations',
     subtopic: 'Reverse Acquisition',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Evaluation',
     question: 'In a reverse acquisition:',
     options: [
@@ -243,7 +243,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Business Combinations',
     subtopic: 'Bargain Purchase',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'A bargain purchase (negative goodwill) results when:',
     options: [
@@ -264,7 +264,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Consolidation',
     subtopic: 'Push-Down Accounting',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Push-down accounting election may be made when:',
     options: [
@@ -285,7 +285,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Consolidation',
     subtopic: 'Deconsolidation',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Upon deconsolidation due to loss of control:',
     options: [
@@ -306,7 +306,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Cost Accounting',
     subtopic: 'Joint Cost Allocation',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Joint costs should be allocated using:',
     options: [
@@ -327,7 +327,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Cost Accounting',
     subtopic: 'Target Costing',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Target costing starts with:',
     options: [
@@ -348,7 +348,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Variance Analysis',
     subtopic: 'Fixed Overhead Variances',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'The fixed overhead volume variance represents:',
     options: [
@@ -365,7 +365,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
     id: 'bar-mast-018',
     courseId: 'cpa',
     section: 'BAR',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     topic: 'Budgeting',
     subtopic: 'Flexible Budget',
     difficulty: 'hard',

@@ -13,7 +13,7 @@ export const CFP_INV_BATCH2_QUESTIONS: Question[] = [
   // Portfolio Theory & Modern Portfolio Theory
   // ============================================
   {
-    id: 'CFP-INV-B2-001',
+    id: 'cfp-inv-b2-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -39,7 +39,7 @@ An efficient portfolio offers the maximum expected return for a given level of r
 - **D)** Asset composition doesn't define efficiency`
   },
   {
-    id: 'CFP-INV-B2-002',
+    id: 'cfp-inv-b2-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -72,7 +72,7 @@ Diversification reduced risk from 20% to 16.7% because correlation < 1.
 - **D) 10.0%:** Would require negative correlation`
   },
   {
-    id: 'CFP-INV-B2-003',
+    id: 'cfp-inv-b2-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -102,7 +102,7 @@ Beta measures systematic risk relative to the market. A beta > 1 indicates highe
 - **D) 9.3%:** Calculation error`
   },
   {
-    id: 'CFP-INV-B2-004',
+    id: 'cfp-inv-b2-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -133,7 +133,7 @@ E(R) = 11.2%
 - **D) 14.4%:** Uses beta × market return incorrectly`
   },
   {
-    id: 'CFP-INV-B2-005',
+    id: 'cfp-inv-b2-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -167,7 +167,7 @@ Positive alpha indicates outperformance relative to risk-adjusted expectations.
   // Fixed Income Securities
   // ============================================
   {
-    id: 'CFP-INV-B2-006',
+    id: 'cfp-inv-b2-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -198,7 +198,7 @@ Investors require a lower price to achieve the higher market rate.
 - **D)** Sufficient information provided`
   },
   {
-    id: 'CFP-INV-B2-007',
+    id: 'cfp-inv-b2-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -229,7 +229,7 @@ When rates rise, bond prices fall. Duration quantifies this inverse relationship
 - **D)** Uses Δr of 0.1%`
   },
   {
-    id: 'CFP-INV-B2-008',
+    id: 'cfp-inv-b2-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -259,7 +259,7 @@ During economic stress or recessions:
 - **C)** Even AAA-rated bonds have some spread above Treasuries`
   },
   {
-    id: 'CFP-INV-B2-009',
+    id: 'cfp-inv-b2-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -291,7 +291,7 @@ The investor would need a 5.15% taxable yield to match the 3.5% municipal yield.
 - **D) 2.38%:** Uses muni yield × (1 - tax rate)`
   },
   {
-    id: 'CFP-INV-B2-010',
+    id: 'cfp-inv-b2-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -324,7 +324,7 @@ For a hold-to-maturity investor in Treasury bonds:
   // Equity Securities
   // ============================================
   {
-    id: 'CFP-INV-B2-011',
+    id: 'cfp-inv-b2-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -356,7 +356,7 @@ P = $41.60
 - **D) $48.00:** Calculation error`
   },
   {
-    id: 'CFP-INV-B2-012',
+    id: 'cfp-inv-b2-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -387,7 +387,7 @@ Current price = $4.50 × 18 = $81.00, suggesting undervaluation.
 - **D) $108.00:** Calculation error`
   },
   {
-    id: 'CFP-INV-B2-013',
+    id: 'cfp-inv-b2-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -420,7 +420,7 @@ Current price = $4.50 × 18 = $81.00, suggesting undervaluation.
 - **A, B, D)** These describe growth stocks, not value stocks`
   },
   {
-    id: 'CFP-INV-B2-014',
+    id: 'cfp-inv-b2-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -451,7 +451,7 @@ Stock splits don't change total value, just the number of shares and price per s
 - **D)** Describes a reverse split`
   },
   {
-    id: 'CFP-INV-B2-015',
+    id: 'cfp-inv-b2-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -486,7 +486,7 @@ Only insider information (strong form) could provide an edge.
   // Investment Vehicles
   // ============================================
   {
-    id: 'CFP-INV-B2-016',
+    id: 'cfp-inv-b2-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -515,7 +515,7 @@ Only insider information (strong form) could provide an edge.
 - **D)** Total costs vary significantly by holding period`
   },
   {
-    id: 'CFP-INV-B2-017',
+    id: 'cfp-inv-b2-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -545,7 +545,7 @@ Only insider information (strong form) could provide an edge.
 - **D)** ETFs are more tax-efficient, with fewer distributions`
   },
   {
-    id: 'CFP-INV-B2-018',
+    id: 'cfp-inv-b2-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -576,7 +576,7 @@ Only insider information (strong form) could provide an edge.
 - **D)** REITs are typically publicly traded`
   },
   {
-    id: 'CFP-INV-B2-019',
+    id: 'cfp-inv-b2-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -607,7 +607,7 @@ The option is in-the-money by $8, minus the $4 cost = $4 profit.
 - **D) $6:** Calculation error`
   },
   {
-    id: 'CFP-INV-B2-020',
+    id: 'cfp-inv-b2-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -641,7 +641,7 @@ The option is in-the-money by $8, minus the $4 cost = $4 profit.
   // Performance Measurement
   // ============================================
   {
-    id: 'CFP-INV-B2-021',
+    id: 'cfp-inv-b2-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -671,7 +671,7 @@ Higher Sharpe ratios indicate better risk-adjusted performance.
 - Other values result from calculation errors`
   },
   {
-    id: 'CFP-INV-B2-022',
+    id: 'cfp-inv-b2-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -702,7 +702,7 @@ Treynor measures excess return per unit of systematic risk (beta).
 - **C, D)** These show the percentage form; A is correct in decimal form`
   },
   {
-    id: 'CFP-INV-B2-023',
+    id: 'cfp-inv-b2-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -734,7 +734,7 @@ Russell 2000 Value is the standard benchmark for US small-cap value strategies.
 - **D)** Fixed income benchmark`
   },
   {
-    id: 'CFP-INV-B2-024',
+    id: 'cfp-inv-b2-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -766,7 +766,7 @@ Russell 2000 Value is the standard benchmark for US small-cap value strategies.
 - Other combinations incorrectly assign the metrics`
   },
   {
-    id: 'CFP-INV-B2-025',
+    id: 'cfp-inv-b2-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',

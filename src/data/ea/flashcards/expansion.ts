@@ -486,7 +486,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'MACRS Life - 3 Years',
     back: 'Tractor units, racehorses > 2yo, specialized handling devices',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-015',
@@ -496,7 +496,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'MACRS Life - 5 Years',
     back: 'Autos, taxis, computers, office machinery, appliances (residential rental)',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-016',
@@ -506,7 +506,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'MACRS Life - 7 Years',
     back: 'Office furniture/fixtures, agricultural machinery, equipment not otherwise classified',
     difficulty: 'easy',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-017',
@@ -516,7 +516,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'MACRS Life - 27.5 Years',
     back: 'Residential Rental Property',
     difficulty: 'easy',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-018',
@@ -526,7 +526,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'MACRS Life - 39 Years',
     back: 'Non-residential Real Property',
     difficulty: 'easy',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-019',
@@ -536,7 +536,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Bonus Depreciation (2024)',
     back: '60% deduction allowed for qualified property (down from 80% in 2023).',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-020',
@@ -546,7 +546,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Section 179 Limit (2024)',
     back: 'Max deduction approx $1.22M, phaseout starts at $3.05M investment.',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-021',
@@ -556,7 +556,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Section 179 Restrictions',
     back: 'Limited to taxable income from trade/business (cannot create loss); tangible personal property only (generally).',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-022',
@@ -566,7 +566,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Mid-Quarter Convention',
     back: 'Required if >40% of tangible personal property placed in service during Q4.',
     difficulty: 'hard',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-023',
@@ -576,7 +576,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Business Meals Deduction',
     back: '50% deductible (was 100% temporary for 2021-2022 restaurants). Entertainment is 0% deductible.',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-024',
@@ -586,7 +586,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Start-up Costs Deduction',
     back: 'Deduct up to $5,000 immediately (reduced if total >$50k), amortize remainder over 180 months.',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-025',
@@ -596,7 +596,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'UNICAP (Section 263A)',
     back: 'Small business exception: Avg annual gross receipts <= $30M (inflation adj) last 3 years exempt from UNICAP.',
     difficulty: 'hard',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-026',
@@ -606,7 +606,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Form 941 Due Dates',
     back: 'Last day of month following quarter end (Apr 30, Jul 31, Oct 31, Jan 31).',
     difficulty: 'easy',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-027',
@@ -616,7 +616,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'FUTA Rate and Wage Base',
     back: '6.0% on first $7,000 wages. (Max credit of 5.4% usually results in 0.6% effective rate).',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-028',
@@ -626,7 +626,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'SEP IRA Deadline',
     back: 'Due date of return + extensions.',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-029',
@@ -636,7 +636,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'SIMPLE IRA Employee Contribution',
     back: 'Employees can contribute up to $16,000 (2024).',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-4'
+    blueprintArea: 'SEE2-1'
   },
   {
     id: 'SEE2-EXP-030',
@@ -646,7 +646,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Form 1041 Filing Requirement',
     back: 'Required if gross income >= $600 or any non-resident alien beneficiary.',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-5'
+    blueprintArea: 'SEE2-2'
   },
   {
     id: 'SEE2-EXP-031',
@@ -656,7 +656,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Simple Trust Characteristics',
     back: '1. Distributes all income currently\n2. Makes no charitable contributions\n3. Does not distribute corpus',
     difficulty: 'medium',
-    blueprintArea: 'SEE2-5'
+    blueprintArea: 'SEE2-2'
   },
   {
     id: 'SEE2-EXP-032',
@@ -666,7 +666,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Estate Tax Filing Threshold (2024)',
     back: '$13.61 Million gross estate',
     difficulty: 'easy',
-    blueprintArea: 'SEE2-5'
+    blueprintArea: 'SEE2-2'
   },
   {
     id: 'SEE2-EXP-033',
@@ -676,7 +676,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Annual Gift Exclusion (2024)',
     back: '$18,000 per donee',
     difficulty: 'easy',
-    blueprintArea: 'SEE2-5'
+    blueprintArea: 'SEE2-2'
   },
 
   // ==========================
@@ -1000,7 +1000,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Record Retention - General Rule',
     back: '3 years from return due date or filing date (whichever later).',
     difficulty: 'easy',
-    blueprintArea: 'SEE3-5'
+    blueprintArea: 'SEE3-3'
   },
   {
     id: 'SEE3-EXP-033',
@@ -1010,6 +1010,6 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     front: 'Electronic Storage Requirements',
     back: 'Must ensure integrity, reliability, and readability. Must be able to retrieve and print.',
     difficulty: 'medium',
-    blueprintArea: 'SEE3-5'
+    blueprintArea: 'SEE3-3'
   }
 ];

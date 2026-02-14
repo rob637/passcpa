@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   {
-    id: 'CFP-RET-B10-001',
+    id: 'cfp-ret-b10-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Replacement ratio: target percentage of pre-retirement income (commonly 70-80%). Lower needed because: no longer saving for retirement, reduced taxes, no work expenses, potentially no mortgage. May underestimate: healthcare costs, travel in early retirement. Best as starting point—detailed expense analysis is more accurate for individual planning.'
   },
   {
-    id: 'CFP-RET-B10-002',
+    id: 'cfp-ret-b10-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Capital preservation: live on investment earnings, preserve principal. Benefits: assets to leave heirs, cushion for longevity, psychological security. Drawbacks: requires larger portfolio, may underspend in retirement. Alternative: capital utilization (planned spending of principal). Choice depends on goals—legacy vs. maximizing retirement lifestyle.'
   },
   {
-    id: 'CFP-RET-B10-003',
+    id: 'cfp-ret-b10-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
   },
   // RET-2: Qualified Plans
   {
-    id: 'CFP-RET-B10-004',
+    id: 'cfp-ret-b10-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Safe Harbor 401(k): avoid nondiscrimination testing (ADP/ACP) by providing: 3% nonelective contribution to all eligible OR 4% matching (100% first 3% + 50% next 2%). Must be immediately 100% vested. Provides certainty for HCEs about contribution limits. Trade-off: guaranteed cost vs. testing risk.'
   },
   {
-    id: 'CFP-RET-B10-005',
+    id: 'cfp-ret-b10-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Age-weighted profit sharing: allocates considering age/time to retirement. Older employees receive larger current contributions because less time for compound growth. Must still pass nondiscrimination testing (cross-testing). Useful when owners/key employees are older than staff. New comparability/cross-tested plans are related approach for flexibility.'
   },
   {
-    id: 'CFP-RET-B10-006',
+    id: 'cfp-ret-b10-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
   },
   // RET-3: Distribution Rules
   {
-    id: 'CFP-RET-B10-007',
+    id: 'cfp-ret-b10-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'NUA: distribute employer stock in-kind rather than rolling to IRA. Pay ordinary income on cost basis at distribution. NUA (growth in plan) taxed as LTCG when stock sold. Benefits: LTCG rates vs. ordinary rates, no 10-year rule for heirs. Requirements: lump-sum distribution, must be employer securities. Analyze: enough NUA to make worthwhile?'
   },
   {
-    id: 'CFP-RET-B10-008',
+    id: 'cfp-ret-b10-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'SECURE Act changed inherited IRA rules: most non-spouse beneficiaries subject to 10-year rule (account emptied by 12/31 of year containing 10th anniversary). No annual RMDs for most. Exceptions (EDBs): surviving spouse, minor children (until majority), disabled/chronically ill, those not more than 10 years younger. Tax planning around withdrawal timing important.'
   },
   {
-    id: 'CFP-RET-B10-009',
+    id: 'cfp-ret-b10-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
   },
   // RET-4: Social Security
   {
-    id: 'CFP-RET-B10-010',
+    id: 'cfp-ret-b10-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'PIA: monthly benefit at Full Retirement Age (FRA). Calculated from AIME using bend points formula (progressive—replaces higher percentage of lower earnings). Early claiming reduces PIA; delayed claiming increases it. Knowing PIA helps calculate benefits at different ages. Based on highest 35 years of indexed earnings.'
   },
   {
-    id: 'CFP-RET-B10-011',
+    id: 'cfp-ret-b10-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Couple claiming strategy: higher earner delay (maximizes survivor benefit for longer-living spouse), lower earner may claim earlier (provides income while waiting), age difference matters (survivor benefits), relative health/life expectancy, break-even analysis. Survivor benefit = higher of own or deceased spouse\'s. Maximize lifetime household benefit, not individual.'
   },
   {
-    id: 'CFP-RET-B10-012',
+    id: 'cfp-ret-b10-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
   },
   // RET-5: Investment Considerations
   {
-    id: 'CFP-RET-B10-013',
+    id: 'cfp-ret-b10-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,7 +260,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Liability-driven investing (LDI): structure assets to meet specific future liabilities. Time-segment (bucket) approach: near-term (0-5 years) in conservative assets, mid-term in balanced, long-term in growth. Essential expenses may be covered by guaranteed income (annuities, pensions, SS). Match durations. Reduces sequence-of-returns risk for near-term needs.'
   },
   {
-    id: 'CFP-RET-B10-014',
+    id: 'cfp-ret-b10-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -279,7 +279,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Rising equity glide path: counter-intuitive but research-supported. Lower equity at retirement (vulnerable to sequence risk), increase over time. If early poor returns occur, portfolio is protected. If good early returns, later can take more risk with cushion. Historical analysis suggests may reduce failure rates. Contrasts with traditional declining glide path.'
   },
   {
-    id: 'CFP-RET-B10-015',
+    id: 'cfp-ret-b10-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +299,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RET-B10-016',
+    id: 'cfp-ret-b10-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +318,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Healthcare in retirement: Medicare premiums (A, B, D—means-tested), Medigap or Advantage costs, dental/vision/hearing (not covered), prescription copays, long-term care (major gap), pre-65 coverage if retiring early. Estimates: couples may need $300K+ just for healthcare. Often underestimated—plan specifically for this major expense.'
   },
   {
-    id: 'CFP-RET-B10-017',
+    id: 'cfp-ret-b10-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -337,7 +337,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Defined benefit: promises specific retirement benefit (formula based on years of service x salary factor). Employer funds and invests, bears investment risk. PBGC insures private plans. Becoming rare—cost and risk shifted employers to DC plans. If offered, understand: vesting, formula, COLA, survivor options, lump sum vs. annuity choice.'
   },
   {
-    id: 'CFP-RET-B10-018',
+    id: 'cfp-ret-b10-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -356,7 +356,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'The pro-rata rule aggregates all traditional, SEP, and SIMPLE IRA balances when determining the taxable portion of a conversion. With $200,000 pre-tax and $50,000 after-tax ($250,000 total), 80% of any conversion is taxable. The client cannot selectively convert only the after-tax portion.',
   },
   {
-    id: 'CFP-RET-B10-019',
+    id: 'cfp-ret-b10-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -375,7 +375,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'SSDI: automatically converts to retirement benefits at FRA at same amount. Medicare starts 24 months after SSDI begins (exception: ALS immediate). No reduction for early claiming—disability waives that. Important: SSDI recipients don\'t have to decide about early vs. delayed claiming. Disability benefit equals unreduced FRA amount.'
   },
   {
-    id: 'CFP-RET-B10-020',
+    id: 'cfp-ret-b10-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -394,7 +394,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Income floor strategy: secure essential expenses with guaranteed income (Social Security, pensions, SPIA annuities), invest remaining assets for growth/discretionary spending. Psychological benefit: basic needs always covered regardless of market. Allows more aggressive investing with remaining portfolio. Addresses longevity risk for essentials.'
   },
   {
-    id: 'CFP-RET-B10-021',
+    id: 'cfp-ret-b10-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -413,7 +413,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Early retirement challenges: health insurance until Medicare (expensive—COBRA, ACA, private), longer withdrawal period (maybe 30-40 years), reduced SS if claiming early, 10% penalty on retirement accounts unless exception (Rule of 55, 72(t)), no RMDs yet but may need assets. Must have careful planning—traditional rules assume age 65.'
   },
   {
-    id: 'CFP-RET-B10-022',
+    id: 'cfp-ret-b10-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,7 +432,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: '403(b) and 457(b) plans have separate elective deferral limits, allowing participants in both to contribute the maximum to each. This effectively doubles the tax-deferred contribution capacity, providing a significant tax planning advantage for eligible employees of schools and governments.',
   },
   {
-    id: 'CFP-RET-B10-023',
+    id: 'cfp-ret-b10-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -451,7 +451,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'In-service distributions: some plans allow withdrawals while still employed. Age 59½ common trigger (avoid 10% penalty). May allow rollover to IRA for broader investment options or Roth conversion. Not all plans allow—check plan document. Useful for tax planning (Roth conversions), accessing better investments, or estate planning.'
   },
   {
-    id: 'CFP-RET-B10-024',
+    id: 'cfp-ret-b10-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -470,7 +470,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Social Security eligibility: 40 credits required (fully insured). Earn up to 4 credits/year based on earnings (2024: $1,730 per credit). About 10 years of covered work. Fewer credits for disability (recently insured test) or survivors benefits. 40 credits gets eligibility—benefit amount depends on earnings history. Check Social Security statement for credits.'
   },
   {
-    id: 'CFP-RET-B10-025',
+    id: 'cfp-ret-b10-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
   // INV-1: Investment Theory
   {
-    id: 'CFP-INV-B9-001',
+    id: 'cfp-inv-b9-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'The disposition effect, rooted in prospect theory, describes investors\' tendency to sell winning investments too quickly (to lock in gains) while holding losing investments too long (to avoid realizing losses). This behavior is tax-inefficient and often leads to suboptimal portfolio performance.',
   },
   {
-    id: 'CFP-INV-B9-002',
+    id: 'cfp-inv-b9-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'The risk-free rate is the theoretical return of an investment with zero risk. U.S. Treasury bills (or similar government securities) are used as proxies—minimal default risk (full faith and credit) and short maturities minimize inflation/interest rate risk. It anchors the expected return calculation for risky assets.'
   },
   {
-    id: 'CFP-INV-B9-003',
+    id: 'cfp-inv-b9-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -67,7 +67,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
   },
   // INV-2: Portfolio Theory
   {
-    id: 'CFP-INV-B9-004',
+    id: 'cfp-inv-b9-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'The CML plots expected return vs. total risk (standard deviation) for combinations of the risk-free asset and market portfolio. It\'s the most efficient set of portfolios—any point below the line is suboptimal. Slope = (Market Return - Risk-Free Rate) / Market Std Dev = Sharpe Ratio of market portfolio.'
   },
   {
-    id: 'CFP-INV-B9-005',
+    id: 'cfp-inv-b9-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -104,28 +104,9 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'SML uses beta (systematic risk), not total risk. It plots individual securities and portfolios: Expected Return = Risk-Free + β(Market Risk Premium). Securities above the SML are undervalued (return exceeds what beta implies); below are overvalued. CAPM generates the SML relationship.'
   },
-  {
-    id: 'CFP-INV-B9-006',
-    courseId: 'cfp',
-    section: 'CFP-INV',
-    blueprintArea: 'INV-2',
-    topic: 'Portfolio Theory',
-    subtopic: 'Tracking Error',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Tracking error measures:',
-    options: [
-      'C) Average market return',
-      'D) Individual stock volatility',
-      'A) Total portfolio return',
-      'B) The standard deviation of the difference between portfolio returns and benchmark returns',
-    ],
-    correctAnswer: 3,
-    explanation: 'Tracking error quantifies how closely a portfolio follows its benchmark. High tracking error = significant deviation (active management). Low tracking error = close benchmark replication (index funds). Index funds target very low tracking error; active managers accept higher tracking error seeking alpha.'
-  },
   // INV-3: Asset Classes
   {
-    id: 'CFP-INV-B9-007',
+    id: 'cfp-inv-b9-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -144,7 +125,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'While TIPS protect against inflation, they typically offer lower real yields than nominal bonds when inflation remains stable. Additionally, the inflation adjustment to principal is taxable as ordinary income each year (phantom income), even though the investor doesn\'t receive it until maturity or sale.',
   },
   {
-    id: 'CFP-INV-B9-008',
+    id: 'cfp-inv-b9-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -163,7 +144,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Private equity: investing in non-public companies. Structures include buyouts (acquiring existing companies), venture capital (early-stage), growth equity, and distressed investments. Characteristics: illiquid (10+ year lockups typical), high minimums, limited to accredited/qualified investors, capital calls, potential high returns with substantial risk.'
   },
   {
-    id: 'CFP-INV-B9-009',
+    id: 'cfp-inv-b9-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -183,7 +164,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
   },
   // INV-4: Investment Strategies
   {
-    id: 'CFP-INV-B9-010',
+    id: 'cfp-inv-b9-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -202,7 +183,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Strategic allocation sets long-term targets based on goals and risk tolerance. Tactical makes temporary deviations—overweighting/underweighting based on perceived opportunities or risks. Example: reducing equity exposure if markets seem overvalued. Success requires skill in timing; many advisers stick to strategic-only.'
   },
   {
-    id: 'CFP-INV-B9-011',
+    id: 'cfp-inv-b9-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -221,7 +202,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Immunization matches duration to time horizon. If rates rise, price losses are offset by higher reinvestment returns; if rates fall, lower reinvestment is offset by price gains. The portfolio value at horizon is preserved regardless of rate changes. Requires periodic rebalancing as duration shifts with time and rate changes.'
   },
   {
-    id: 'CFP-INV-B9-012',
+    id: 'cfp-inv-b9-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -241,7 +222,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
   },
   // INV-5: Performance Measurement
   {
-    id: 'CFP-INV-B9-013',
+    id: 'cfp-inv-b9-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -260,7 +241,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Jensen\'s alpha measures the difference between a portfolio\'s actual return and its expected return based on the Capital Asset Pricing Model (CAPM). A negative alpha of -0.5% means the manager underperformed the CAPM-expected return by 50 basis points, suggesting the manager did not add value through active management.',
   },
   {
-    id: 'CFP-INV-B9-014',
+    id: 'cfp-inv-b9-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -279,7 +260,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'The Sortino ratio replaces total standard deviation with downside deviation, making it more appropriate when returns are asymmetrically distributed (negatively skewed) or when the investor is primarily concerned about downside risk. Unlike the Sharpe ratio, it does not penalize upside volatility.',
   },
   {
-    id: 'CFP-INV-B9-015',
+    id: 'cfp-inv-b9-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -299,7 +280,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-INV-B9-016',
+    id: 'cfp-inv-b9-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -318,7 +299,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Mean reversion: extremes tend to normalize over time. High P/E ratios suggest lower future returns; low valuations suggest higher returns. This underlies contrarian strategies. It doesn\'t mean timing is easy—deviation from mean can persist for years. Also applies to individual securities, sectors, and even volatility.'
   },
   {
-    id: 'CFP-INV-B9-017',
+    id: 'cfp-inv-b9-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -337,7 +318,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Correlation instability is crucial for planning: correlations measured in normal times may increase during crises. "Flight to quality" means risky assets decline together while safe havens rise. This reduces diversification precisely when it\'s most needed. Stress testing should assume higher crisis correlations.'
   },
   {
-    id: 'CFP-INV-B9-018',
+    id: 'cfp-inv-b9-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -356,7 +337,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'GSE bonds (Fannie Mae, Freddie Mac, Federal Home Loan Banks) have implicit—not explicit—government backing. During 2008 crisis, government did support GSEs. They typically yield slightly more than Treasuries due to the technical lack of guarantee. Some agency securities (Government National Mortgage Association) are explicitly backed.'
   },
   {
-    id: 'CFP-INV-B9-019',
+    id: 'cfp-inv-b9-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -375,7 +356,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Dividend capture: buy before ex-dividend, sell after. Theoretically, stock price drops by dividend amount on ex-date, so profit comes from the price not falling by the full amount. High transaction costs, tax implications (short-term vs. qualified dividends), and price volatility make this strategy difficult to execute profitably.'
   },
   {
-    id: 'CFP-INV-B9-020',
+    id: 'cfp-inv-b9-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -394,7 +375,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Time-weighted: geometrically links sub-period returns, neutralizing cash flow timing. Dollar-weighted (IRR) includes cash flow timing effects. A manager receiving large inflows before a down period would show lower dollar-weighted returns despite the same investment skill. GIPS standards require time-weighted for performance reporting.'
   },
   {
-    id: 'CFP-INV-B9-021',
+    id: 'cfp-inv-b9-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -413,7 +394,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Monte Carlo runs thousands of simulations with randomized returns within assumed parameters. Instead of a single deterministic projection, it produces a probability distribution of outcomes (e.g., 85% probability of not running out of money). It captures return sequence risk and helps stress-test plans, though results depend on input assumptions.'
   },
   {
-    id: 'CFP-INV-B9-022',
+    id: 'cfp-inv-b9-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -432,7 +413,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Factors are characteristics explaining returns beyond market exposure. Common factors: value (cheap vs. expensive), size (small vs. large), momentum (recent performance), quality (profitability, low leverage), low volatility. Factor investing systematically tilts toward these characteristics, often through smart beta funds. Premiums aren\'t guaranteed and may underperform for extended periods.'
   },
   {
-    id: 'CFP-INV-B9-023',
+    id: 'cfp-inv-b9-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -451,7 +432,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Structured products package derivatives with traditional securities for specific payoffs: principal protection, enhanced income, leveraged returns. Common types: equity-linked notes, structured CDs, principal-protected notes. Complexity, embedded costs, issuer credit risk, illiquidity, and cap on returns are concerns. Suitable only for investors understanding the trade-offs.'
   },
   {
-    id: 'CFP-INV-B9-024',
+    id: 'cfp-inv-b9-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -470,7 +451,7 @@ export const CFP_INVESTMENTS_BATCH9_QUESTIONS: Question[] = [
     explanation: 'CPPI: Cushion = Portfolio Value - Floor. Equity exposure = Multiplier × Cushion. As portfolio grows above floor, equity allocation increases; as it approaches floor, allocation decreases to protect principal. It\'s a dynamic strategy providing downside protection with upside participation. Can underperform in volatile, range-bound markets.'
   },
   {
-    id: 'CFP-INV-B9-025',
+    id: 'cfp-inv-b9-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',

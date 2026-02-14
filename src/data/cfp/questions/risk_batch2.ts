@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
   // RIS-5: Annuities & Business Insurance
   {
-    id: 'CFP-RIS-B2-001',
+    id: 'cfp-ris-b2-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Fixed Annuities',
     subtopic: 'Characteristics',
     difficulty: 'easy',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'In a fixed annuity, the insurance company bears the investment risk and guarantees a minimum interest rate. The owner has no market risk but does have inflation risk (fixed payments may lose purchasing power) and the credit risk of the insurer.'
   },
   {
-    id: 'CFP-RIS-B2-002',
+    id: 'cfp-ris-b2-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Variable Annuities',
     subtopic: 'Separate Accounts',
     difficulty: 'medium',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Variable annuity premiums go into "separate accounts" that are segregated from the insurer\'s general account. The owner selects from investment options (subaccounts) and bears the investment risk. This is why variable annuities are securities regulated by the SEC.'
   },
   {
-    id: 'CFP-RIS-B2-003',
+    id: 'cfp-ris-b2-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Taxation',
     subtopic: 'Exclusion Ratio',
     difficulty: 'hard',
@@ -66,10 +66,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The exclusion ratio = Investment / Expected Return. Investment = $200,000. Expected return = $15,000 × 20 = $300,000. Ratio = $200,000 / $300,000 = 66.67%. Annual exclusion = $15,000 × 66.67% = $10,000 tax-free return of principal. The remaining $5,000 is taxable.'
   },
   {
-    id: 'CFP-RIS-B2-004',
+    id: 'cfp-ris-b2-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Taxation',
     subtopic: 'LIFO Taxation',
     difficulty: 'medium',
@@ -85,10 +85,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Deferred annuity withdrawals use "earnings-first" LIFO treatment. Earnings are taxed as ordinary income (not capital gains). Once all earnings are withdrawn, remaining amounts are tax-free return of principal. A 10% penalty may apply before age 59½.'
   },
   {
-    id: 'CFP-RIS-B2-005',
+    id: 'cfp-ris-b2-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Indexed Annuities',
     subtopic: 'Participation Rates',
     difficulty: 'medium',
@@ -104,10 +104,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The participation rate of 80% × 10% gain = 8% potential credit. However, the 6% cap limits the credit. The annuity is credited 6% (the cap). Caps, participation rates, and spreads are common features that limit upside in indexed annuities.'
   },
   {
-    id: 'CFP-RIS-B2-006',
+    id: 'cfp-ris-b2-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Riders',
     subtopic: 'GMWB',
     difficulty: 'hard',
@@ -123,10 +123,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'GMWB riders guarantee a minimum withdrawal amount (typically 4-5% of the "benefit base") for life or a period of years, regardless of how the underlying investments perform. The account value can still decline, but withdrawals continue. This is valuable protection that comes with an ongoing fee.'
   },
   {
-    id: 'CFP-RIS-B2-007',
+    id: 'cfp-ris-b2-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Key Person Insurance',
     subtopic: 'Purpose and Ownership',
     difficulty: 'medium',
@@ -142,10 +142,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Key person insurance is owned by and payable to the business. The purpose is to compensate the business for economic loss if a key employee dies—lost profits, recruitment costs, and debt repayment. The key person has no ownership rights.'
   },
   {
-    id: 'CFP-RIS-B2-008',
+    id: 'cfp-ris-b2-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Buy-Sell Agreements',
     subtopic: 'Cross-Purchase',
     difficulty: 'medium',
@@ -161,10 +161,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'In a cross-purchase agreement, each owner insures the other owners. With 3 partners, the formula is n × (n-1) = 3 × 2 = 6 policies. Each partner owns 2 policies on the lives of the other two partners. This becomes unwieldy with more owners.'
   },
   {
-    id: 'CFP-RIS-B2-009',
+    id: 'cfp-ris-b2-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Buy-Sell Agreements',
     subtopic: 'Entity Purchase',
     difficulty: 'medium',
@@ -180,10 +180,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Entity purchase agreements require only n policies (one per owner), compared to n × (n-1) for cross-purchase. The entity owns and is beneficiary of each policy. However, cross-purchase has the advantage of basis step-up for survivors. C is wrong—corporate AMT and transfer-for-value rules may create taxes.'
   },
   {
-    id: 'CFP-RIS-B2-010',
+    id: 'cfp-ris-b2-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Business Overhead Expense',
     subtopic: 'Coverage Features',
     difficulty: 'medium',
@@ -199,10 +199,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'BOE insurance reimburses the business for normal operating expenses (rent, utilities, employee salaries, insurance premiums) while the owner is disabled. It does not replace the owner\'s income (that requires individual disability insurance) or pay for a replacement.'
   },
   {
-    id: 'CFP-RIS-B2-011',
+    id: 'cfp-ris-b2-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Split-Dollar Insurance',
     subtopic: 'Endorsement Method',
     difficulty: 'hard',
@@ -218,10 +218,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'In endorsement split-dollar, the employer owns the policy and endorses (assigns) a portion of the death benefit to the employee\'s beneficiary. The employee recognizes income for the economic benefit. In collateral assignment split-dollar, the employee or trust owns the policy.'
   },
   {
-    id: 'CFP-RIS-B2-012',
+    id: 'cfp-ris-b2-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Deferred Compensation',
     subtopic: 'COLI Funding',
     difficulty: 'hard',
@@ -237,10 +237,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'COLI cash value grows tax-deferred, and death benefits are generally tax-free. This creates a tax-efficient source to recover costs of deferred compensation payments. Premiums are not deductible, benefits are general assets (creditors can access), and nonqualified plans are exempt from ERISA.'
   },
   {
-    id: 'CFP-RIS-B2-013',
+    id: 'cfp-ris-b2-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Settlement Options',
     subtopic: 'Life with Period Certain',
     difficulty: 'medium',
@@ -256,10 +256,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Life with period certain guarantees payments for the greater of life or the certain period. If the annuitant dies within the period (6 years < 10 years), the beneficiary receives payments for the remaining 4 years. If she had lived past 10 years, payments would continue for life.'
   },
   {
-    id: 'CFP-RIS-B2-014',
+    id: 'cfp-ris-b2-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Qualified Longevity Annuity Contracts',
     subtopic: 'QLAC Rules',
     difficulty: 'hard',
@@ -275,10 +275,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'SECURE 2.0 increased the QLAC limit to $200,000 (from $145,000) and eliminated the 25% of account balance limit. QLACs are deferred income annuities that begin payments at age 85, and the amount used is excluded from RMD calculations.'
   },
   {
-    id: 'CFP-RIS-B2-015',
+    id: 'cfp-ris-b2-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Disability Buy-Out Insurance',
     subtopic: 'Purpose',
     difficulty: 'medium',
@@ -294,10 +294,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Disability buy-out insurance funds the buyout of a disabled owner\'s business interest per a buy-sell agreement. It typically has a long elimination period (1-2 years) to ensure permanent disability before triggering. This is separate from individual DI (income replacement) and BOE (overhead expenses).'
   },
   {
-    id: 'CFP-RIS-B2-016',
+    id: 'cfp-ris-b2-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Suitability',
     subtopic: 'Suitable Situations',
     difficulty: 'medium',
@@ -313,10 +313,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Variable annuities are suitable when (1) tax-advantaged accounts are maxed, (2) the investor has a long time horizon, (3) tax deferral is valuable (higher current bracket than expected in retirement), and (4) liquidity is not needed. The 55-year-old meets these criteria.'
   },
   {
-    id: 'CFP-RIS-B2-017',
+    id: 'cfp-ris-b2-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Section 1035 Exchanges',
     subtopic: 'Annuity Exchanges',
     difficulty: 'medium',
@@ -332,10 +332,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Section 1035 allows tax-free exchanges of like or like-to-unlike in one direction: life insurance → life insurance, life insurance → annuity, annuity → annuity. You cannot go from annuity to life insurance tax-free. Surrender and repurchase is taxable.'
   },
   {
-    id: 'CFP-RIS-B2-018',
+    id: 'cfp-ris-b2-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Riders',
     subtopic: 'Death Benefit Options',
     difficulty: 'medium',
@@ -351,10 +351,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The stepped-up death benefit rider guarantees a minimum death benefit (often the highest anniversary value). Beneficiaries receive the greater of account value or guaranteed amount—$100,000. Taxes are owed on gains above basis, but the full $100,000 is paid.'
   },
   {
-    id: 'CFP-RIS-B2-019',
+    id: 'cfp-ris-b2-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Executive Bonus Plans',
     subtopic: '162 Bonus',
     difficulty: 'medium',
@@ -370,10 +370,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'In a 162 bonus plan, the employer gives the employee a bonus to pay life insurance premiums. The employee owns the policy outright. The bonus is tax-deductible to the employer and taxable income to the employee. This is simple and provides the employee with full ownership.'
   },
   {
-    id: 'CFP-RIS-B2-020',
+    id: 'cfp-ris-b2-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Taxation',
     subtopic: '10% Penalty Exceptions',
     difficulty: 'medium',
@@ -389,10 +389,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The 10% penalty on nonqualified annuity withdrawals before 59½ has exceptions including death, disability, and 72(q) substantially equal periodic payments. Unlike IRAs, there are no exceptions for first-time home purchase or education—those apply only to qualified plans.'
   },
   {
-    id: 'CFP-RIS-B2-021',
+    id: 'cfp-ris-b2-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Immediate Annuities',
     subtopic: 'SPIA Features',
     difficulty: 'easy',
@@ -408,10 +408,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Immediate annuities begin payments within one year of purchase, typically within 30-90 days. There is no accumulation phase. SPIAs are purchased with a single lump sum and immediately converted to an income stream.'
   },
   {
-    id: 'CFP-RIS-B2-022',
+    id: 'cfp-ris-b2-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Buy-Sell Agreements',
     subtopic: 'Valuation Methods',
     difficulty: 'hard',
@@ -427,10 +427,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'Annual independent appraisal provides current fair market value and avoids disputes common with fixed prices (quickly outdated) or formulas (may not reflect true value). While more expensive, it provides defensible valuations for estate tax purposes and reduces conflict among owners.'
   },
   {
-    id: 'CFP-RIS-B2-023',
+    id: 'cfp-ris-b2-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Variable Annuities',
     subtopic: 'Fee Structures',
     difficulty: 'medium',
@@ -446,10 +446,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'The M&E charge (typically 1.0-1.5% annually) compensates the insurer for guaranteeing death benefits and for administrative expenses. This is in addition to subaccount fees (investment management), surrender charges (early withdrawal), and optional rider fees.'
   },
   {
-    id: 'CFP-RIS-B2-024',
+    id: 'cfp-ris-b2-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Business Continuation',
     subtopic: 'Sole Proprietor Planning',
     difficulty: 'hard',
@@ -465,10 +465,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     explanation: 'With no successor, the business may have little going-concern value. Life insurance on the owner (family as beneficiary) provides immediate liquidity. A plan for orderly sale of assets or to a competitor maximizes value. Key person insurance serves no purpose when the business ends with the owner.'
   },
   {
-    id: 'CFP-RIS-B2-025',
+    id: 'cfp-ris-b2-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Annuity Surrender Charges',
     subtopic: 'CDSC Schedules',
     difficulty: 'easy',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
   // GEN-1: Financial Planning Process
   {
-    id: 'CFP-GEN-B7-001',
+    id: 'cfp-gen-b7-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Monitoring is ongoing—not one-time. It includes tracking progress toward goals, updating assumptions, responding to life changes (marriage, job change, children), adjusting for market/tax law changes, and rebalancing. The frequency depends on client needs and engagement terms.'
   },
   {
-    id: 'CFP-GEN-B7-002',
+    id: 'cfp-gen-b7-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Quantitative data is numerical: income/expenses, account values, debts, policy details, tax information. Qualitative data includes goals, values, risk tolerance, family dynamics. Both are essential—numbers without context and goals without data don\'t enable effective planning.'
   },
   {
-    id: 'CFP-GEN-B7-003',
+    id: 'cfp-gen-b7-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +67,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
   },
   // GEN-2: Time Value of Money
   {
-    id: 'CFP-GEN-B7-004',
+    id: 'cfp-gen-b7-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'EAR = (1 + r/n)^n - 1 = (1 + 0.18/12)^12 - 1 = (1.015)^12 - 1 = 1.1956 - 1 = 19.56%. Monthly compounding increases effective rate above stated APR. Understanding EAR helps compare loans/investments with different compounding frequencies.'
   },
   {
-    id: 'CFP-GEN-B7-005',
+    id: 'cfp-gen-b7-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -104,28 +104,9 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'In a standard amortizing mortgage, early payments are heavily weighted toward interest. After 10 years of a 30-year mortgage at 6%, only about 16-18% of the original principal has been repaid because the majority of each payment goes toward interest in the early years.',
   },
-  {
-    id: 'CFP-GEN-B7-006',
-    courseId: 'cfp',
-    section: 'CFP-GEN',
-    blueprintArea: 'GEN-2',
-    topic: 'Time Value of Money',
-    subtopic: 'Annuity Due',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'An annuity due differs from an ordinary annuity in that:',
-    options: [
-      'D) There are fewer payments',
-      'B) Payments occur at the beginning of each period rather than the end, resulting in higher present and future values',
-      'C) Payments are variable',
-      'A) They are identical',
-    ],
-    correctAnswer: 1,
-    explanation: 'Annuity due: payments at period start (rent, insurance premiums). Ordinary annuity: payments at period end (most loan payments). An annuity due has one more period of compounding/discounting, making FV higher and PV higher than otherwise identical ordinary annuity.'
-  },
   // GEN-3: Economic Concepts
   {
-    id: 'CFP-GEN-B7-007',
+    id: 'cfp-gen-b7-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +125,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The Phillips Curve shows trade-off between inflation and unemployment: lower unemployment often coincides with higher inflation (tight labor markets = wage pressure = price increases). The relationship has been less stable in recent decades. It informs Fed policy balancing employment mandate with inflation control.'
   },
   {
-    id: 'CFP-GEN-B7-008',
+    id: 'cfp-gen-b7-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +144,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Personal consumption expenditures (consumer spending) account for approximately 68-70% of U.S. GDP, making it the largest component. Changes in consumer spending have the greatest impact on overall economic growth and, consequently, investment returns.',
   },
   {
-    id: 'CFP-GEN-B7-009',
+    id: 'cfp-gen-b7-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,7 +164,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
   },
   // GEN-4: Financial Statements
   {
-    id: 'CFP-GEN-B7-010',
+    id: 'cfp-gen-b7-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -202,7 +183,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Cash flow statements track money in (wages, dividends, interest) and out (living expenses, debt payments, savings) over time (monthly/annually). The difference is savings or deficit. This reveals spending patterns, savings rates, and opportunities for improvement. It complements the balance sheet\'s point-in-time view.'
   },
   {
-    id: 'CFP-GEN-B7-011',
+    id: 'cfp-gen-b7-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -221,7 +202,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Housing ratio = PITI ÷ Gross Monthly Income. Conventional guidelines suggest ≤28% front-end (housing only) and ≤36% back-end (housing plus all debt). Higher ratios indicate potential cash flow stress. Lenders use these for qualification; planners use them for affordability analysis.'
   },
   {
-    id: 'CFP-GEN-B7-012',
+    id: 'cfp-gen-b7-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -241,7 +222,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
   },
   // GEN-5: Client Education
   {
-    id: 'CFP-GEN-B7-013',
+    id: 'cfp-gen-b7-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -260,7 +241,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Educated clients understand recommendations, ask better questions, and are more committed to plans they understand. Education doesn\'t replace professional advice—it enhances the relationship. Planners should explain "why" not just "what." Client capacity to understand varies; adjust communication accordingly.'
   },
   {
-    id: 'CFP-GEN-B7-014',
+    id: 'cfp-gen-b7-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -280,7 +261,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-GEN-B7-015',
+    id: 'cfp-gen-b7-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -299,7 +280,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Documentation creates records of client information gathered, analysis performed, recommendations made, and decisions taken. It protects against disputes, enables continuity if the planner changes, demonstrates appropriate care, and satisfies regulatory requirements. "If it isn\'t documented, it didn\'t happen."'
   },
   {
-    id: 'CFP-GEN-B7-016',
+    id: 'cfp-gen-b7-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -318,7 +299,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Serial payments recognize that retirement expenses typically grow with inflation. A $50,000 need today might be $100,000 in 20 years. Serial payment calculations account for this growth, creating more accurate projections than assuming constant (nominal) payments.'
   },
   {
-    id: 'CFP-GEN-B7-017',
+    id: 'cfp-gen-b7-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -337,7 +318,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Higher rates: existing bond prices fall (new bonds offer better yields), mortgages and loans cost more (reducing spending/housing), savings accounts pay more (encouraging saving over spending). Intent is often cooling inflation or overheating economy. Effects ripple through all asset classes.'
   },
   {
-    id: 'CFP-GEN-B7-018',
+    id: 'cfp-gen-b7-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -356,7 +337,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: '3-6 months of essential expenses is standard guidance. More stable income, good insurance, and high job security may justify lower amounts. Variable income, single earner, narrow job markets, or higher expenses suggest more. The fund should be liquid (savings, money market) and separate from investment accounts.'
   },
   {
-    id: 'CFP-GEN-B7-019',
+    id: 'cfp-gen-b7-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -375,7 +356,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Risk education prevents unrealistic expectations. Show historical ranges, not just averages. Explain that short-term volatility typically decreases over long periods. Discuss different risks (market, inflation, longevity). Connect risk tolerance to capacity and required return. Educated clients handle volatility better.'
   },
   {
-    id: 'CFP-GEN-B7-020',
+    id: 'cfp-gen-b7-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -394,7 +375,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Scope defines boundaries: comprehensive or focused (retirement only, etc.), planner and client responsibilities, what\'s included/excluded, fees, and update frequency. This manages expectations, prevents misunderstandings, and ensures appropriate service. Scope can be expanded over time.'
   },
   {
-    id: 'CFP-GEN-B7-021',
+    id: 'cfp-gen-b7-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -413,7 +394,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Uneven cash flows (different amounts each period) can\'t use standard annuity formulas. Discount each cash flow to present value individually using PV = FV/(1+r)^n, then sum. Financial calculators have CF (cash flow) functions for this. This is essential for valuing investments with variable returns.'
   },
   {
-    id: 'CFP-GEN-B7-022',
+    id: 'cfp-gen-b7-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -432,7 +413,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Leading indicators predict future economic activity: stock prices (expectations), building permits (future construction), manufacturing orders, consumer confidence, yield curve. Coincident indicators move with the economy (GDP, employment). Lagging indicators follow (unemployment, inflation). Planners monitor these for economic outlook.'
   },
   {
-    id: 'CFP-GEN-B7-023',
+    id: 'cfp-gen-b7-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -451,7 +432,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Net worth (assets minus liabilities) remains unchanged when paying off debt with existing assets. Assets decrease by $50,000 (savings) and liabilities decrease by $50,000 (car loan), resulting in the same net worth of $530,000 ($800,000 - $270,000 = $530,000).',
   },
   {
-    id: 'CFP-GEN-B7-024',
+    id: 'cfp-gen-b7-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -470,7 +451,7 @@ export const CFP_GEN_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Education is continuous: new planning topics as life changes, market events requiring context, tax law updates, product explanations. Regular touchpoints educate while demonstrating value. Newsletters, webinars, and review meetings all provide education. Engaged, educated clients are more likely to follow plans.'
   },
   {
-    id: 'CFP-GEN-B7-025',
+    id: 'cfp-gen-b7-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',

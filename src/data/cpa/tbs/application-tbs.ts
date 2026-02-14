@@ -177,7 +177,7 @@ Determine how Metro should account for this modification under ASC 842.
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Subsequent Events Application',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-V-B-1',
     scenario: `
 You are the senior auditor on the audit of Franklin Manufacturing, Inc. The financial statements are dated December 31, Year 1. Your firm's audit report is expected to be dated February 15, Year 2.

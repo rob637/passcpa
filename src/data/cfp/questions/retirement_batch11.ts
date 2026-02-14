@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
   // RET-1: Retirement Needs Analysis
   {
-    id: 'CFP-RET-B11-001',
+    id: 'cfp-ret-b11-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Retirement spending phases: Go-go (60s-70s): active, travel, hobbies—higher discretionary. Slow-go (mid-70s-80s): slower pace, less travel—lower discretionary. No-go (80s+): less active but possibly higher healthcare. Implications: may not need level inflation-adjusted spending; front-load experiences; plan for healthcare later. More realistic than straight-line assumptions.'
   },
   {
-    id: 'CFP-RET-B11-002',
+    id: 'cfp-ret-b11-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Funded ratio: Assets / PV(Liabilities). If 100%, fully funded. Under 100%, shortfall exists. Over 100%, surplus. Borrowed from pension accounting. Useful for: tracking progress, setting priorities, determining if can retire. Liabilities include: essential spending, discretionary goals. Can calculate total or category-by-category. More precise than simple net worth comparison.'
   },
   {
-    id: 'CFP-RET-B11-003',
+    id: 'cfp-ret-b11-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -67,7 +67,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
   },
   // RET-2: Qualified Plans
   {
-    id: 'CFP-RET-B11-004',
+    id: 'cfp-ret-b11-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -86,7 +86,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Cash balance: hybrid DB plan. Technically defined benefit (employer bears investment risk, PBGC covered), but looks like DC (individual account balance). Credits: pay credits (percentage of salary) + interest credits (guaranteed rate). Benefits: more portable than traditional DB, easier to understand. Still must follow DB rules—can be complex to administer. Growing in popularity.'
   },
   {
-    id: 'CFP-RET-B11-005',
+    id: 'cfp-ret-b11-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: '457(b) advantage: no 10% early withdrawal penalty at any age. Still owe income tax, but no penalty. Unique among employer retirement plans. Other differences: can contribute to both 457 and 401(k)/403(b) (separate limits), catch-up contributions different structure. 457(f) (non-governmental) has different rules—deferred compensation, substantial risk of forfeiture required.'
   },
   {
-    id: 'CFP-RET-B11-006',
+    id: 'cfp-ret-b11-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
   },
   // RET-3: Distribution Rules
   {
-    id: 'CFP-RET-B11-007',
+    id: 'cfp-ret-b11-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -144,7 +144,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'RMD aggregation: calculate separately for each IRA, but can take total from any IRA(s). 403(b)s also aggregate. 401(k)s: must calculate AND withdraw from each separately. Strategy: take from least tax-efficient IRA, or one you\'re closing. Simplifies multiple IRAs. Inherited IRAs: separate from your own, each decedent\'s separate. Understanding enables tax-efficient withdrawal strategies.'
   },
   {
-    id: 'CFP-RET-B11-008',
+    id: 'cfp-ret-b11-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'SEPP/72(t): avoid 10% penalty before 59½ by taking substantially equal payments. Methods: life expectancy, amortization, annuitization. Must continue: longer of 5 years or until 59½. Modification penalty if broken. Complex calculations—small errors costly. Last resort usually—locks in withdrawal pattern. Early retirees may find useful. Get professional help calculating.'
   },
   {
-    id: 'CFP-RET-B11-009',
+    id: 'cfp-ret-b11-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -183,7 +183,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
   },
   // RET-4: Social Security
   {
-    id: 'CFP-RET-B11-010',
+    id: 'cfp-ret-b11-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -202,7 +202,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'WEP: reduces Social Security benefits for those with pensions from non-SS covered work (some state/local government jobs). Affects own benefit calculation. GPO: reduces spousal/survivor benefits by 2/3 of non-covered pension. Affects: teachers, police, firefighters in some states, some federal employees. Planning: understand impact, may affect spousal claiming strategies. Calculator on SSA.gov.'
   },
   {
-    id: 'CFP-RET-B11-011',
+    id: 'cfp-ret-b11-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -221,7 +221,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Children\'s benefits: available when parent retires, disabled, or dies. Child must be: unmarried, under 18 (19 if full-time high school student), or disabled (if disability began before 22). Amount: up to 50% of parent\'s benefit (retirement/disability) or 75% (death). Family maximum applies. Older parents with young children: valuable benefit. Often overlooked in planning.'
   },
   {
-    id: 'CFP-RET-B11-012',
+    id: 'cfp-ret-b11-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -241,7 +241,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
   },
   // RET-5: Investment Considerations
   {
-    id: 'CFP-RET-B11-013',
+    id: 'cfp-ret-b11-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -260,7 +260,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Bucket strategy: Bucket 1 (1-3 years): cash, short bonds—spend from here, peace of mind in downturns. Bucket 2 (4-10 years): bonds, balanced funds—refills Bucket 1. Bucket 3 (10+ years): stocks—growth, not touched in downturn. Psychological: easier to stay invested when near-term needs are secure. Mechanics: can be mental accounting or actual accounts. Replenish periodically.'
   },
   {
-    id: 'CFP-RET-B11-014',
+    id: 'cfp-ret-b11-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -279,7 +279,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'TIPS: principal adjusts with CPI, interest paid on adjusted principal. Protects against inflation—real yield is guaranteed. Lower nominal yield than regular Treasuries (giving up inflation uncertainty). Tax consideration: inflation adjustment taxable annually (phantom income)—better in tax-deferred. For retirement: can ladder to match spending needs, immunize against inflation risk on essentials.'
   },
   {
-    id: 'CFP-RET-B11-015',
+    id: 'cfp-ret-b11-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -299,7 +299,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RET-B11-016',
+    id: 'cfp-ret-b11-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -318,7 +318,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Part-time work benefits: income reduces portfolio draw (significant if early retirement), structure/purpose, social connections, may provide health insurance (critical pre-Medicare), enables Social Security delay. Considerations: earnings test if claiming early SS, continued saving possible, tax bracket impact. Many retirees prefer gradual transition. "Semi-retirement" increasingly common and beneficial.'
   },
   {
-    id: 'CFP-RET-B11-017',
+    id: 'cfp-ret-b11-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -337,7 +337,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'NQDC: no ERISA protection (just unsecured creditor), no contribution limits, no early withdrawal penalty (but must follow Section 409A). Typically: unfunded promise (employer just owes you), subject to employer bankruptcy risk, only for highly compensated. Must elect deferral before earning. Distribution timing elected in advance. Common: SERPs, excess benefit plans and deferred compensation for executives.'
   },
   {
-    id: 'CFP-RET-B11-018',
+    id: 'cfp-ret-b11-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -356,7 +356,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Rule of 55: 401(k)/403(b) only, not IRAs. If separate from service in year you turn 55 (50 for public safety), can withdraw penalty-free from THAT employer\'s plan. Can\'t roll to IRA and use exception. Leaves employer before 55? Doesn\'t apply to that plan. Strategy: keep at least some in 401(k) if planning early retirement. Each plan separately considered.'
   },
   {
-    id: 'CFP-RET-B11-019',
+    id: 'cfp-ret-b11-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -375,7 +375,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'AIME calculation: take each year\'s earnings (up to max taxable), adjust for wage inflation to current dollars, take highest 35 years, average, divide by 12 for monthly. Zeros count for years under 35! Implications: additional years of work can increase AIME (replace zeros or low years), high earnings late in career especially valuable if replacing zeros. Check Social Security statement for earnings history.'
   },
   {
-    id: 'CFP-RET-B11-020',
+    id: 'cfp-ret-b11-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -394,7 +394,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Extending portfolio longevity: flexible withdrawals (guardrails—reduce in bad years), tax-efficient withdrawal ordering, minimize investment costs (compound benefit), delay Social Security (bridge with portfolio, then higher guaranteed), part-time income (reduce draws), downsize/reduce expenses. Every dollar not withdrawn continues compounding. Small adjustments have big long-term impact.'
   },
   {
-    id: 'CFP-RET-B11-021',
+    id: 'cfp-ret-b11-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -413,7 +413,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'LTC in retirement planning: average need 3+ years, costs $100K+/year depending on care type. Medicare covers very limited. Options: self-insure (high assets), traditional LTC insurance, hybrid (life/LTC), annuity with LTC, Medicaid planning. Decision factors: age, health, family history, assets, preferences. Procrastination costly—premiums rise, health changes. Part of comprehensive retirement plan.'
   },
   {
-    id: 'CFP-RET-B11-022',
+    id: 'cfp-ret-b11-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,7 +432,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Mega backdoor Roth: some plans allow after-tax contributions (up to overall 415 limit ~$69K total), then in-service conversion to Roth (either in-plan Roth or Roth IRA). Result: additional Roth savings beyond normal limits. Requirements: plan must allow after-tax AND in-service conversion. Valuable for high earners maxing regular options. Check plan documents carefully.'
   },
   {
-    id: 'CFP-RET-B11-023',
+    id: 'cfp-ret-b11-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -451,7 +451,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'First-time homebuyer exception: up to $10,000 lifetime, penalty-free (still owe income tax on traditional). "First-time": haven\'t owned in past 2 years. Can be for yourself, spouse, child, grandchild, parent. Must use within 120 days. Applies to IRA only (not 401(k)). $10,000 lifetime limit modest for today\'s home prices. Roth: 5-year contribution basis comes out first tax-free anyway.'
   },
   {
-    id: 'CFP-RET-B11-024',
+    id: 'cfp-ret-b11-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -470,7 +470,7 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Divorced spouse benefits: marriage lasted 10+ years, divorced at least 2 years (if ex hasn\'t claimed), currently unmarried, age 62+. Benefit: up to 50% of ex\'s PIA (same as married spouse). Doesn\'t affect ex\'s benefit. If divorced and remarry, lose benefit (unless that marriage ends). Multiple ex-spouses can claim on same worker. Survivor benefits also available if 10+ year marriage.'
   },
   {
-    id: 'CFP-RET-B11-025',
+    id: 'cfp-ret-b11-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

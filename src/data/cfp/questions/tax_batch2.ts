@@ -13,7 +13,7 @@ export const CFP_TAX_BATCH2_QUESTIONS: Question[] = [
   // Tax Fundamentals
   // ============================================
   {
-    id: 'CFP-TAX-B2-001',
+    id: 'cfp-tax-b2-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -45,7 +45,7 @@ Timeline: Spouse died 2025, so 2026 and 2027 qualify for QSS status.
 - **D)** QSS provides better tax treatment than HoH`
   },
   {
-    id: 'CFP-TAX-B2-002',
+    id: 'cfp-tax-b2-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -75,7 +75,7 @@ The effective rate is lower than the marginal rate (22% bracket) because lower b
 - **D) 12.0%:** Too low`
   },
   {
-    id: 'CFP-TAX-B2-003',
+    id: 'cfp-tax-b2-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -105,7 +105,7 @@ Credits are more valuable than deductions of the same dollar amount.
 - Other options miscalculate the relationship between credits and deductions`
   },
   {
-    id: 'CFP-TAX-B2-004',
+    id: 'cfp-tax-b2-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -135,7 +135,7 @@ Credits are more valuable than deductions of the same dollar amount.
 - **D)** SALT is disallowed, but it's an adjustment, not preference; B is more direct`
   },
   {
-    id: 'CFP-TAX-B2-005',
+    id: 'cfp-tax-b2-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -169,7 +169,7 @@ Each spouse over 65 adds an extra deduction amount.
   // Income Taxation
   // ============================================
   {
-    id: 'CFP-TAX-B2-006',
+    id: 'cfp-tax-b2-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -202,7 +202,7 @@ Tax = $20,000 × 15% = $3,000
 - **D) $2,400:** Uses 12% rate`
   },
   {
-    id: 'CFP-TAX-B2-007',
+    id: 'cfp-tax-b2-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -235,7 +235,7 @@ $40,000 × 3.8% = $1,520 (closest is C at $1,596 accounting for rounding)
 - **D)** Double-counts calculation`
   },
   {
-    id: 'CFP-TAX-B2-008',
+    id: 'cfp-tax-b2-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -268,7 +268,7 @@ $40,000 × 3.8% = $1,520 (closest is C at $1,596 accounting for rounding)
 - **B)** Eligible foreign corporations qualify`
   },
   {
-    id: 'CFP-TAX-B2-009',
+    id: 'cfp-tax-b2-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -297,7 +297,7 @@ At $180,000 AGI, the $25,000 allowance is fully phased out. The $15,000 loss is 
 - **B, C, D)** AGI exceeds phaseout threshold`
   },
   {
-    id: 'CFP-TAX-B2-010',
+    id: 'cfp-tax-b2-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -330,7 +330,7 @@ The 20% deduction is available before phase-out limits apply.
   // Deductions
   // ============================================
   {
-    id: 'CFP-TAX-B2-011',
+    id: 'cfp-tax-b2-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -363,7 +363,7 @@ The SALT cap limits combined state income and property taxes to $10,000.
 - **D) $37,000:** Incorrect calculation`
   },
   {
-    id: 'CFP-TAX-B2-012',
+    id: 'cfp-tax-b2-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -398,7 +398,7 @@ The donor still avoids capital gains on the $50,000 appreciation.
 - **D) $100,000:** Wrong limit`
   },
   {
-    id: 'CFP-TAX-B2-013',
+    id: 'cfp-tax-b2-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -430,7 +430,7 @@ Correcting: Answer should be B ($2,500).
 - **D)** Expenses do exceed threshold`
   },
   {
-    id: 'CFP-TAX-B2-014',
+    id: 'cfp-tax-b2-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -462,7 +462,7 @@ These reduce AGI, not just taxable income.
 - **A, C, D)** These are itemized deductions (below-the-line)`
   },
   {
-    id: 'CFP-TAX-B2-015',
+    id: 'cfp-tax-b2-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -495,7 +495,7 @@ This was a significant change from pre-2018 law.
   // Tax Credits
   // ============================================
   {
-    id: 'CFP-TAX-B2-016',
+    id: 'cfp-tax-b2-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -528,7 +528,7 @@ If at threshold: $6,000 full credit → Closest is C at some phase-out.
 - Depends on precise income and 2026 limits`
   },
   {
-    id: 'CFP-TAX-B2-017',
+    id: 'cfp-tax-b2-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -559,7 +559,7 @@ If at threshold: $6,000 full credit → Closest is C at some phase-out.
 - **D)** Available to single, HoH, and MFJ filers`
   },
   {
-    id: 'CFP-TAX-B2-018',
+    id: 'cfp-tax-b2-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -591,7 +591,7 @@ $18,000 expenses, limited to $16,810 maximum.
 - **D)** Far exceeds allowable credit`
   },
   {
-    id: 'CFP-TAX-B2-019',
+    id: 'cfp-tax-b2-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -626,7 +626,7 @@ At $21,000 AGI:
 - **D) $2,000:** Would be 100% rate (doesn't exist)`
   },
   {
-    id: 'CFP-TAX-B2-020',
+    id: 'cfp-tax-b2-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -661,7 +661,7 @@ At $21,000 AGI:
   // Tax Planning Strategies
   // ============================================
   {
-    id: 'CFP-TAX-B2-021',
+    id: 'cfp-tax-b2-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -691,7 +691,7 @@ At $21,000 AGI:
 - **D)** Lacks economic substance; may be disregarded`
   },
   {
-    id: 'CFP-TAX-B2-022',
+    id: 'cfp-tax-b2-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -721,7 +721,7 @@ At $21,000 AGI:
 - **D)** Conversion in lower-income year might make sense`
   },
   {
-    id: 'CFP-TAX-B2-023',
+    id: 'cfp-tax-b2-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -752,7 +752,7 @@ $45,000 × 110% = $49,500
 - **C, D)** 110% of prior year is sufficient`
   },
   {
-    id: 'CFP-TAX-B2-024',
+    id: 'cfp-tax-b2-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -784,7 +784,7 @@ $15,000 loss with no gains: $3,000 deductible, $12,000 carries forward.
 - **D)** Applies only to wash sales`
   },
   {
-    id: 'CFP-TAX-B2-025',
+    id: 'cfp-tax-b2-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',

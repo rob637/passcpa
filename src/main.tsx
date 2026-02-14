@@ -6,7 +6,7 @@ import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import './styles/globals.css';
 import { AuthProvider } from './providers/AuthProvider';
-import { StudyProvider } from './providers/StudyProvider';
+// StudyProvider moved inside App.tsx (inside CourseProvider) for course-aware study tracking
 import { initWebVitals } from './services/performance';
 import { initErrorTracking } from './services/errorTracking';
 import { initSkipLinks } from './utils/accessibility';
@@ -80,9 +80,7 @@ if (rootElement) {
         }}
       >
         <AuthProvider>
-          <StudyProvider>
             <App />
-          </StudyProvider>
         </AuthProvider>
       </BrowserRouter>
     </React.StrictMode>

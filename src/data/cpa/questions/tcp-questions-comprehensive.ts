@@ -199,7 +199,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Property Transactions',
     subtopic: 'Installment Sales Limitations',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'Installment sale treatment is NOT available for:',
     options: [
@@ -220,7 +220,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Property Transactions',
     subtopic: 'Opportunity Zones',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'A Qualified Opportunity Zone investment provides:',
     options: [
@@ -241,7 +241,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'International Taxation',
     subtopic: 'Subpart F CFC Income',
     difficulty: 'hard',
-    blueprintArea: 'TCP-VI',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'A U.S. individual owns 25% of a controlled foreign corporation. The CFC has $400,000 of Subpart F income consisting entirely of foreign personal holding company income. What is the U.S. shareholder\'s inclusion?',
     options: [
@@ -262,7 +262,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'International Taxation',
     subtopic: 'Participation Exemption',
     difficulty: 'hard',
-    blueprintArea: 'TCP-VI',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'A U.S. corporation receives a $1,000,000 dividend from a 100%-owned foreign subsidiary. Under the TCJA participation exemption, what is the tax treatment?',
     options: [
@@ -472,7 +472,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'International Taxation',
     subtopic: 'GILTI No QBAI',
     difficulty: 'hard',
-    blueprintArea: 'TCP-VI',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'A U.S. corporation has a 100%-owned CFC in a low-tax jurisdiction. The CFC earns $5,000,000 in sales income with no tangible assets (QBAI = $0). The CFC pays $50,000 in local taxes. What is the GILTI inclusion?',
     options: [
@@ -493,7 +493,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'Losses on sales between related parties are:',
     options: [

@@ -1367,7 +1367,7 @@ export const eaPart3Lessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Assessment statute', 'Refund statute', 'Collection statute'],
-    blueprintArea: 'SEE3-5',
+    blueprintArea: 'SEE3-3',
     content: {
       sections: [
         {
@@ -1731,7 +1731,7 @@ export const eaPart3Lessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ['Appeals conference', 'Protest requirements', 'Settlement strategies'],
-    blueprintArea: 'SEE3-6',
+    blueprintArea: 'SEE3-3',
     content: {
       sections: [
         {
@@ -2091,7 +2091,7 @@ export const eaPart3Lessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Failure to file', 'Failure to pay', 'Accuracy penalties', 'Abatement'],
-    blueprintArea: 'SEE3-5',
+    blueprintArea: 'SEE3-3',
     content: {
       sections: [
         {
@@ -2488,7 +2488,7 @@ export const eaPart3Lessons: Lesson[] = [
     duration: 25,
     difficulty: 'easy',
     topics: ['Statute of Limitations', 'Employment Tax Records', 'Asset Records'],
-    blueprintArea: 'SEE3-5',
+    blueprintArea: 'SEE3-3',
     content: {
       sections: [
         {

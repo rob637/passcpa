@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
   // EST-4: Charitable Estate Planning
   {
-    id: 'CFP-EST-B3-001',
+    id: 'cfp-est-b3-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -28,7 +28,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'A Charitable Remainder Annuity Trust (CRAT) pays a fixed dollar amount each year based on the initial contribution. A Charitable Remainder Unitrust (CRUT) pays a fixed percentage of trust assets revalued annually. Only CRUTs allow additional contributions after inception.'
   },
   {
-    id: 'CFP-EST-B3-002',
+    id: 'cfp-est-b3-002',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Charitable remainder trusts must pay at least 5% but not more than 50% of the initial value (CRAT) or annually revalued assets (CRUT) to the non-charitable beneficiaries. Additionally, the charity must receive at least 10% of the initial value.'
   },
   {
-    id: 'CFP-EST-B3-003',
+    id: 'cfp-est-b3-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -66,7 +66,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'A CLAT pays a fixed amount to charity for a term of years, then remainder passes to non-charitable beneficiaries (children). In a low-interest-rate environment, properly structured CLATs can pass substantial wealth with minimal gift tax. The CRT variations pay to individual first, then charity—opposite of the goal.'
   },
   {
-    id: 'CFP-EST-B3-004',
+    id: 'cfp-est-b3-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -85,7 +85,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Private foundations must distribute at least 5% of the average fair market value of their investment assets annually for charitable purposes. This is designed to prevent foundations from simply accumulating wealth without serving charitable purposes.'
   },
   {
-    id: 'CFP-EST-B3-005',
+    id: 'cfp-est-b3-005',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -104,7 +104,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Donor-advised funds offer simplicity (no annual filings, no 5% minimum distribution requirement), immediate tax deduction, and grant advisory privileges. Private foundations offer more control but require annual filings, 5% distributions, and are subject to excise taxes. The client\'s simplicity preference points to DAF.'
   },
   {
-    id: 'CFP-EST-B3-006',
+    id: 'cfp-est-b3-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -123,7 +123,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Appreciated long-term capital gain property donated to a public charity is deductible at FMV but limited to 30% of AGI. 30% × $500,000 = $150,000 current year deduction. The remaining $50,000 can be carried forward up to 5 years.'
   },
   {
-    id: 'CFP-EST-B3-007',
+    id: 'cfp-est-b3-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -142,7 +142,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Qualified Charitable Distributions from IRAs are excluded from gross income entirely (not included and then deducted). This is particularly valuable for people who take the standard deduction, as QCDs achieve tax-free treatment of the distribution regardless of itemizing.'
   },
   {
-    id: 'CFP-EST-B3-008',
+    id: 'cfp-est-b3-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -161,7 +161,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The annual QCD limit is $105,000 per person for 2024 (indexed for inflation). SECURE 2.0 added a one-time $53,000 transfer to certain split-interest entities (CRATs, CRUTs, charitable gift annuities), also indexed. For 2026 the base limit is approximately $108,000.'
   },
   {
-    id: 'CFP-EST-B3-009',
+    id: 'cfp-est-b3-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -180,7 +180,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Pooled income funds distribute to beneficiaries based on actual trust income (like a CRUT conceptually, but based on income not total return). Tax-exempt securities cannot be held by PIFs. Multiple donors contribute to the pool. PIFs are maintained by charities, not individuals.'
   },
   {
-    id: 'CFP-EST-B3-010',
+    id: 'cfp-est-b3-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -199,7 +199,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'A charitable gift annuity is a contract where the charity agrees to pay a fixed annuity backed by its general assets. A CRAT is a separate trust with assets held by a trustee. CGAs are simpler but the donor bears the risk of the charity\'s financial health.'
   },
   {
-    id: 'CFP-EST-B3-011',
+    id: 'cfp-est-b3-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -218,7 +218,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Self-dealing rules for private foundations are strict. Leasing between disqualified persons (including founders and their families) and the foundation is prohibited regardless of whether the terms are favorable. The intent to prevent abuse overrides any economic benefit.'
   },
   {
-    id: 'CFP-EST-B3-012',
+    id: 'cfp-est-b3-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -237,7 +237,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'For cash contributions of any amount, the donor must have a bank record (cancelled check, credit card statement) OR written receipt from the charity. Written acknowledgment is required for contributions of $250 or more. Qualified appraisals are for non-cash gifts over $5,000.'
   },
   {
-    id: 'CFP-EST-B3-013',
+    id: 'cfp-est-b3-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -256,7 +256,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Type III non-functionally integrated supporting organizations historically offered the most donor control, which led to abuse concerns and stricter rules. Type I and II are more closely connected to the public charity. Type III functionally integrated must conduct activities directly benefiting the supported organization.'
   },
   {
-    id: 'CFP-EST-B3-014',
+    id: 'cfp-est-b3-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -275,7 +275,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'A NIMCRUT distributes the lesser of trust accounting income or the unitrust percentage. By investing in growth (low-dividend) assets initially, distributions are deferred. A "makeup" account tracks deficiencies that can be distributed in later years when the investment shifts to income-producing assets—often useful for retirement planning.'
   },
   {
-    id: 'CFP-EST-B3-015',
+    id: 'cfp-est-b3-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -294,7 +294,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Short-term capital gain property (held ≤1 year) donated to charity is deductible only at basis, not FMV. Only long-term capital gain property qualifies for FMV deduction. The client would be better served waiting 4 more months to complete the 1-year holding period.'
   },
   {
-    id: 'CFP-EST-B3-016',
+    id: 'cfp-est-b3-016',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -313,7 +313,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'DAFs allow an immediate charitable deduction in the year of contribution, while grants to charities can be made over future years. This "bunching" strategy is valuable for itemizing in high-income years then taking the standard deduction in other years.'
   },
   {
-    id: 'CFP-EST-B3-017',
+    id: 'cfp-est-b3-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -332,7 +332,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Private foundations pay a 1.39% excise tax on net investment income (reduced from 2% by the Taxpayer First Act of 2019). This is a cost of the increased control that private foundations offer compared to public charities.'
   },
   {
-    id: 'CFP-EST-B3-018',
+    id: 'cfp-est-b3-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -351,7 +351,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CRTs must pass the "10% remainder test"—the present value of the charitable remainder must be at least 10% of the initial contribution. High payout rates, long payout periods, and older beneficiaries can cause failure. At age 75 with 10% payout, the expected remainder may be below 10%.'
   },
   {
-    id: 'CFP-EST-B3-019',
+    id: 'cfp-est-b3-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -370,7 +370,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Qualified conservation easements are an exception to the general rule against partial interest deductions. The deduction equals the reduction in property value caused by the restriction (before and after appraisal). The landowner retains ownership but uses are limited.'
   },
   {
-    id: 'CFP-EST-B3-020',
+    id: 'cfp-est-b3-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -389,7 +389,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Unlike the income tax charitable deduction (which has AGI limits), the estate tax charitable deduction is unlimited. An estate can leave everything to charity and owe zero estate tax. This makes charitable planning very powerful in estate planning.'
   },
   {
-    id: 'CFP-EST-B3-021',
+    id: 'cfp-est-b3-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -408,7 +408,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'A "zeroed-out" CLAT is structured so the present value of the charitable annuity equals the full contribution, leaving zero (or minimal) taxable gift to the remainder beneficiaries. If the trust earns more than the Section 7520 rate, excess passes gift-tax-free to heirs.'
   },
   {
-    id: 'CFP-EST-B3-022',
+    id: 'cfp-est-b3-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -427,7 +427,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Cash donations to private foundations are limited to 30% of AGI (compared to 60% for public charities). Appreciated property to private foundations is limited to 20% of AGI and deductible at basis only (not FMV). This difference encourages donations to public charities.'
   },
   {
-    id: 'CFP-EST-B3-023',
+    id: 'cfp-est-b3-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -446,7 +446,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CRT distributions follow a "worst-first" four-tier system: (1) ordinary income, (2) capital gains, (3) other income (tax-exempt), (4) return of corpus. This ensures the highest-taxed income is distributed first until each tier is exhausted.'
   },
   {
-    id: 'CFP-EST-B3-024',
+    id: 'cfp-est-b3-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -465,7 +465,7 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Contributing the company to a CRUT before sale avoids immediate capital gains tax. The trust sells the stock tax-free (CRTs are tax-exempt), reinvests proceeds, and pays income to the client for life. Remaining assets go to charity. This accomplishes all four goals: diversification, income, charitable gift, and tax efficiency.'
   },
   {
-    id: 'CFP-EST-B3-025',
+    id: 'cfp-est-b3-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
   // EST-1: Documents and Trusts
   {
-    id: 'CFP-EST-B9-001',
+    id: 'cfp-est-b9-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -28,7 +28,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'A self-proving affidavit is a notarized statement by the witnesses and testator attached to the will at execution time. It eliminates the need for witnesses to appear in probate court to verify their signatures, significantly streamlining and expediting the probate process.',
   },
   {
-    id: 'CFP-EST-B9-002',
+    id: 'cfp-est-b9-002',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Totten trust (POD—payable on death): bank account with beneficiary designation. During life, depositor has complete control. At death, beneficiary becomes owner—no probate. Simple transfer mechanism. Similar: TOD for securities. Not actually a trust—just a contractual transfer mechanism. Useful for simple estate planning but no management features of actual trusts.'
   },
   {
-    id: 'CFP-EST-B9-003',
+    id: 'cfp-est-b9-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -67,7 +67,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
   },
   // EST-2: Transfer Techniques
   {
-    id: 'CFP-EST-B9-004',
+    id: 'cfp-est-b9-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -86,7 +86,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Private foundation vs. DAF: Foundation offers more control (choose investments, hire family, set grant policies) but: 5% annual distribution required, Form 990-PF public, excise tax on net investment income, lower deduction limits (30% vs 60% for cash), higher administrative costs. DAFs simpler but less control. Foundation for larger amounts, family involvement.'
   },
   {
-    id: 'CFP-EST-B9-005',
+    id: 'cfp-est-b9-005',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -105,7 +105,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Gift of remainder interest: retain right to live in property for life, gift remainder to heirs or charity. Current gift/charitable deduction for PV of remainder (calculated using IRS tables). Continue living there. At death, full ownership passes. Charity version: if to charity, income tax deduction now, continue residence. For heirs: gift tax on remainder value.'
   },
   {
-    id: 'CFP-EST-B9-006',
+    id: 'cfp-est-b9-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -125,7 +125,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
   },
   // EST-3: Beneficiary Planning
   {
-    id: 'CFP-EST-B9-007',
+    id: 'cfp-est-b9-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -144,7 +144,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Simultaneous death: if impossible to determine who died first, each treated as surviving the other for purposes of their own estate. Result: assets go to contingent beneficiaries, not to primary beneficiary\'s estate. Many states require 120-hour survival requirement. Wills/trusts should address with specific survival clauses. Prevents double estate taxation.'
   },
   {
-    id: 'CFP-EST-B9-008',
+    id: 'cfp-est-b9-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -163,7 +163,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Personal property memorandum: separate document listing specific items and intended recipients. Many states allow will to reference this document. Advantages: can update without new will (just new memo), detail without cluttering will, flexibility. Document should be dated and signed. Reduces family conflict over sentimental items. Will must authorize this approach.'
   },
   {
-    id: 'CFP-EST-B9-009',
+    id: 'cfp-est-b9-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -183,7 +183,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
   },
   // EST-4: Estate Tax
   {
-    id: 'CFP-EST-B9-010',
+    id: 'cfp-est-b9-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -202,7 +202,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'State estate/inheritance taxes: ~12 states plus DC have estate tax, often with lower exemptions than federal ($1-6M vs. $13M federal). ~6 states have inheritance tax (rate depends on beneficiary relationship). Some have both. Can\'t assume federal planning is sufficient. State of residence and property location both matter. May affect domicile decisions.'
   },
   {
-    id: 'CFP-EST-B9-011',
+    id: 'cfp-est-b9-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -221,7 +221,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Estate tax charitable deduction: unlimited for qualifying charitable transfers. Full value of property passing to qualified charities deducted from gross estate. Can be: outright bequests, charitable remainder or lead trusts, charitable bequests of retirement accounts. No percentage limit like income tax. Major estate planning tool—reduces taxable estate.'
   },
   {
-    id: 'CFP-EST-B9-012',
+    id: 'cfp-est-b9-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -241,7 +241,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
   },
   // EST-5: Advanced Topics
   {
-    id: 'CFP-EST-B9-013',
+    id: 'cfp-est-b9-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -260,7 +260,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Minority discount: minority ownership stake worth less than proportional share because can\'t control distributions, management, or sale. Combined with lack of marketability discount (no ready market for private interests). Combined discounts often 25-45%. IRS scrutinizes—need qualified appraisal, legitimate business purpose. Commonly used with FLPs, LLCs for estate planning.'
   },
   {
-    id: 'CFP-EST-B9-014',
+    id: 'cfp-est-b9-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -279,7 +279,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'A dynasty trust can last indefinitely in states without a Rule Against Perpetuities, allowing assets to compound and pass through multiple generations without additional estate or GST taxes. The initial GST exemption allocation shelters growth from generation-skipping taxes in perpetuity.',
   },
   {
-    id: 'CFP-EST-B9-015',
+    id: 'cfp-est-b9-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -299,7 +299,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-EST-B9-016',
+    id: 'cfp-est-b9-016',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -318,7 +318,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Letter of intent: non-binding document sharing information about special needs person. Contents: medical history, daily routines, likes/dislikes, therapy information, behavior management, relationships, future objectives. Extremely helpful for future caregivers/trustees who don\'t know the individual intimately. Should be updated regularly. Complements legal documents.'
   },
   {
-    id: 'CFP-EST-B9-017',
+    id: 'cfp-est-b9-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -337,7 +337,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Zeroed-out CLAT: set annuity payments so PV of remainder (going to heirs) equals approximately zero for gift tax. Charity receives payments for term, remainder to family. If trust growth exceeds IRS assumed rate, excess passes to heirs gift-tax-free. Leverage strategy. Works best: low interest rate environment, high-growth assets. Complex but powerful technique.'
   },
   {
-    id: 'CFP-EST-B9-018',
+    id: 'cfp-est-b9-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -356,7 +356,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Digital estate planning: cryptocurrency (access keys critical—if lost, assets gone), online banking/investment accounts, digital photo/file storage, domains, intellectual property, social media, loyalty points. Provide: inventory, access information (secure location), instructions for each type. RUFADAA (Uniform Fiduciary Access to Digital Assets Act) addresses fiduciary access rights.'
   },
   {
-    id: 'CFP-EST-B9-019',
+    id: 'cfp-est-b9-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -375,7 +375,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Basis consistency (IRC 1014(f)): if property reported on estate return, beneficiary\'s basis can\'t exceed estate value reported. Prevents: reporting low value for estate tax but high basis for beneficiary\'s income tax. Form 8971 reports values to beneficiaries. Applies to taxable estates. Statute of limitations: can\'t adjust if return statute expires.'
   },
   {
-    id: 'CFP-EST-B9-020',
+    id: 'cfp-est-b9-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -394,7 +394,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'PPLI: life insurance with customized investment options (hedge funds, private equity), tax-deferred growth, income-tax-free death benefit, estate tax-free if in ILIT. For high-net-worth clients with large amounts to invest. Investment diversification requirements apply. Lower insurance costs than retail products. Minimum premiums typically $1M+. Complex but powerful for right clients.'
   },
   {
-    id: 'CFP-EST-B9-021',
+    id: 'cfp-est-b9-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -413,7 +413,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Blind trust: beneficiary has no knowledge of or control over investments. Trustee makes all investment decisions independently. Purpose: avoid conflicts of interest (elected officials, executives). Beneficiary knows total value but not specific holdings. Prevents: insider trading issues, policy decisions influenced by investments. Not for tax benefits—for ethical compliance.'
   },
   {
-    id: 'CFP-EST-B9-022',
+    id: 'cfp-est-b9-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -432,7 +432,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Bargain sale: sell to charity for less than FMV. Part sale, part gift. Basis must be allocated proportionally between sale and gift portions. If appreciated property: recognize gain on sale portion, get deduction for gift portion. Example: $100K property, $60K sale = $40K gift. Complex calculations required. Alternative to outright gift when cash needed.'
   },
   {
-    id: 'CFP-EST-B9-023',
+    id: 'cfp-est-b9-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -451,7 +451,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Spendthrift provision: beneficiary cannot voluntarily transfer (assign) trust interest, and creditors cannot reach trust principal before distribution. Once distributed, no protection. Exceptions: child support, alimony, IRS, sometimes tort claims. Standard in most trusts. Protects beneficiaries from themselves and others. Enforceability varies by state.'
   },
   {
-    id: 'CFP-EST-B9-024',
+    id: 'cfp-est-b9-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -470,7 +470,7 @@ export const CFP_ESTATE_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Retained life estate (IRC 2036): if you transfer property but keep right to income or use for life, FULL FMV included in gross estate. Not just life estate value—full property. Exception: adequate consideration. Affects: life estate deeds, some trusts. Intentional QRT planning uses this. Unintentional inclusion can be surprise. Step-up basis benefit.'
   },
   {
-    id: 'CFP-EST-B9-025',
+    id: 'cfp-est-b9-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',

@@ -1155,7 +1155,7 @@ const Settings: React.FC = () => {
                                     {access.isPaid ? (
                                       <span className={`${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'} flex items-center gap-1`}>
                                         <CheckCircle className="w-3.5 h-3.5" />
-                                        {access.cancelAtPeriodEnd ? 'Cancels' : 'Active Subscription'}
+                                        {access.cancelAtPeriodEnd ? 'Cancels' : 'Subscribed'}
                                         {access.currentPeriodEnd && (
                                           <span className="text-slate-500">
                                             {access.cancelAtPeriodEnd

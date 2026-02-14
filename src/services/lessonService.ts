@@ -68,11 +68,15 @@ export async function fetchLessonsBySection(section: string, courseId: CourseId 
     const lessons = await loadLessonsForCourse(courseId);
     const upperSection = section.toUpperCase();
     
-    // Filter by section (check both section field and blueprintArea)
-    return lessons.filter(lesson => 
-      lesson.section?.toUpperCase() === upperSection ||
-      lesson.blueprintArea?.toUpperCase().startsWith(upperSection)
-    );
+    // Filter by section, domain (CFP uses domain instead of section), or blueprintArea prefix
+    return lessons.filter(lesson => {
+      const l = lesson as Lesson & { domain?: string };
+      return (
+        l.section?.toUpperCase() === upperSection ||
+        l.domain?.toUpperCase() === upperSection ||
+        l.blueprintArea?.toUpperCase().startsWith(upperSection)
+      );
+    });
   } catch (error) {
     logger.error(`Error fetching lessons for section ${section}:`, error);
     return [];

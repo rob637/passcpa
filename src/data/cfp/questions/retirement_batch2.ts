@@ -13,7 +13,7 @@ export const CFP_RET_BATCH2_QUESTIONS: Question[] = [
   // Employer Retirement Plans
   // ============================================
   {
-    id: 'CFP-RET-B2-001',
+    id: 'cfp-ret-b2-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -44,7 +44,7 @@ At age 53, the employee qualifies for catch-up contributions.
 - **D) $30,500:** Incorrect catch-up amount`
   },
   {
-    id: 'CFP-RET-B2-002',
+    id: 'cfp-ret-b2-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -63,7 +63,7 @@ At age 53, the employee qualifies for catch-up contributions.
     explanation: 'SIMPLE IRAs do not require annual nondiscrimination testing (ADP/ACP tests) and have significantly lower administrative costs and filing requirements than 401(k) plans. However, they have lower contribution limits and employers must make either a 3% match or 2% non-elective contribution.',
   },
   {
-    id: 'CFP-RET-B2-003',
+    id: 'cfp-ret-b2-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -95,7 +95,7 @@ More accurately: $180,000 × 20% = $36,000, reduced by SE tax = ~$33,408
 - **D) $69,000:** Exceeds the annual limit`
   },
   {
-    id: 'CFP-RET-B2-004',
+    id: 'cfp-ret-b2-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -125,7 +125,7 @@ New comparability (cross-tested) plans provide the most flexibility to benefit o
 - Other methods provide some benefit but not as dramatically as cross-tested plans`
   },
   {
-    id: 'CFP-RET-B2-005',
+    id: 'cfp-ret-b2-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -157,7 +157,7 @@ Annual Benefit = 0.02 × 28 × $125,000 = $70,000
   // Individual Retirement Plans
   // ============================================
   {
-    id: 'CFP-RET-B2-006',
+    id: 'cfp-ret-b2-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -187,7 +187,7 @@ Annual Benefit = 0.02 × 28 × $125,000 = $70,000
 - A, B, D are all positive factors supporting conversion`
   },
   {
-    id: 'CFP-RET-B2-007',
+    id: 'cfp-ret-b2-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -218,7 +218,7 @@ At $245,000 MAGI, they're in the phaseout range and can make a partial contribut
 - **D)** Full contribution would require lower MAGI`
   },
   {
-    id: 'CFP-RET-B2-008',
+    id: 'cfp-ret-b2-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -253,7 +253,7 @@ Converting $7,000 would be 93.5% taxable!
 - **D)** Non-deductibility is expected for high earners`
   },
   {
-    id: 'CFP-RET-B2-009',
+    id: 'cfp-ret-b2-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -284,7 +284,7 @@ Someone born in 1962 must begin RMDs at age 73.
 - **D) 70½:** Original pre-SECURE Act rule`
   },
   {
-    id: 'CFP-RET-B2-010',
+    id: 'cfp-ret-b2-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -318,7 +318,7 @@ Someone born in 1962 must begin RMDs at age 73.
   // Social Security
   // ============================================
   {
-    id: 'CFP-RET-B2-011',
+    id: 'cfp-ret-b2-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -353,7 +353,7 @@ Reduced benefit: $2,400 × 0.75 = $1,800
 - **D) $1,920:** Uses 20% reduction only`
   },
   {
-    id: 'CFP-RET-B2-012',
+    id: 'cfp-ret-b2-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -384,7 +384,7 @@ Delaying from 67 to 70 provides a 24% permanent increase in benefits.
 - **D) 32%:** Would require delaying from FRA 66 to 70`
   },
   {
-    id: 'CFP-RET-B2-013',
+    id: 'cfp-ret-b2-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -415,7 +415,7 @@ Maximum spousal benefit is 50% of worker's PIA at FRA.
 - **D)** Non-working spouse has no earnings record`
   },
   {
-    id: 'CFP-RET-B2-014',
+    id: 'cfp-ret-b2-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -449,7 +449,7 @@ At $57,500 combined income, up to 85% of Social Security is taxable.
 - **D)** Maximum is 85%, never 100%`
   },
   {
-    id: 'CFP-RET-B2-015',
+    id: 'cfp-ret-b2-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -484,7 +484,7 @@ Benefit reduction: $25,680 / 2 = $12,840
   // Retirement Income Planning
   // ============================================
   {
-    id: 'CFP-RET-B2-016',
+    id: 'cfp-ret-b2-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -515,7 +515,7 @@ This allows Roth assets to grow tax-free longest while using lower brackets earl
 - **D)** Does not optimize tax efficiency`
   },
   {
-    id: 'CFP-RET-B2-017',
+    id: 'cfp-ret-b2-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -547,7 +547,7 @@ This rule was designed for a 30-year retirement with a 50/50 stock/bond allocati
 - **D) $75,000:** Uses 5%`
   },
   {
-    id: 'CFP-RET-B2-018',
+    id: 'cfp-ret-b2-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -579,7 +579,7 @@ Poor returns late in retirement or during accumulation have less impact.
 - **D)** Average returns don't create sequence risk`
   },
   {
-    id: 'CFP-RET-B2-019',
+    id: 'cfp-ret-b2-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -608,7 +608,7 @@ The near-term bucket provides liquidity and prevents forced selling during marke
 - **A, C, D)** These are appropriate for medium and long-term buckets`
   },
   {
-    id: 'CFP-RET-B2-020',
+    id: 'cfp-ret-b2-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -643,7 +643,7 @@ Annuities provide lifetime income guarantee, addressing outliving money concern.
   // Additional Retirement Planning Topics
   // ============================================
   {
-    id: 'CFP-RET-B2-021',
+    id: 'cfp-ret-b2-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -673,7 +673,7 @@ For-profit companies use 401(k) plans instead.
 - **A, C, D)** These are for-profit entities that must use 401(k) plans`
   },
   {
-    id: 'CFP-RET-B2-022',
+    id: 'cfp-ret-b2-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -704,7 +704,7 @@ For-profit companies use 401(k) plans instead.
 - **D) $54,500:** Excludes both catch-up contributions`
   },
   {
-    id: 'CFP-RET-B2-023',
+    id: 'cfp-ret-b2-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -735,7 +735,7 @@ For-profit companies use 401(k) plans instead.
 - **D)** Non-qualified distributions may include taxable earnings`
   },
   {
-    id: 'CFP-RET-B2-024',
+    id: 'cfp-ret-b2-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -766,7 +766,7 @@ Note: IRMAA is based on MAGI from two years prior and thresholds adjust annually
 - **D)** IRMAA affects cost, not coverage`
   },
   {
-    id: 'CFP-RET-B2-025',
+    id: 'cfp-ret-b2-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',

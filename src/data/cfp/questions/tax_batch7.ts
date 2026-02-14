@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   // TAX-1: Advanced Income Types
   {
-    id: 'CFP-TAX-B7-001',
+    id: 'cfp-tax-b7-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Constructive receipt taxes income when the taxpayer has an unrestricted right to receive it, regardless of actual receipt. Deferral elections (like 401(k) contributions) must occur before the income is earned. A year-end bonus available but not cashed until January is still taxable in the prior year.'
   },
   {
-    id: 'CFP-TAX-B7-002',
+    id: 'cfp-tax-b7-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'OID is the difference between a bond\'s issue price and face value when issued below par. For taxable bonds, OID is treated as interest income accruing over the bond\'s life (phantom income). This creates tax on unreceived income. The basis increases by accrued OID. Tax-exempt OID on municipal bonds is not currently taxable.'
   },
   {
-    id: 'CFP-TAX-B7-003',
+    id: 'cfp-tax-b7-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-2: Advanced Deduction Topics
   {
-    id: 'CFP-TAX-B7-004',
+    id: 'cfp-tax-b7-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Unreimbursed medical expenses exceeding 7.5% of AGI are deductible as an itemized deduction. Qualifying expenses include doctors, hospitals, prescriptions, dental, vision, insurance premiums (not pre-tax), long-term care (limited), travel for medical care (at standard mileage rate), and medically necessary equipment.'
   },
   {
-    id: 'CFP-TAX-B7-005',
+    id: 'cfp-tax-b7-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Investment interest (like margin interest) is deductible against net investment income (interest, non-qualified dividends, net short-term gains). Excess carries forward indefinitely. Taxpayers may elect to include qualified dividends and LTCG in investment income (making them ordinary for tax purposes) to deduct more interest.'
   },
   {
-    id: 'CFP-TAX-B7-006',
+    id: 'cfp-tax-b7-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,7 +125,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-3: Advanced Tax Strategies
   {
-    id: 'CFP-TAX-B7-007',
+    id: 'cfp-tax-b7-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -144,7 +144,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Income shifting requires transferring the income-producing property, not just the income (assignment of income doctrine). The kiddie tax limits shifting unearned income to children under 19 (24 if students). Gifts to adults in lower brackets can work, but gift/estate tax implications must be considered.'
   },
   {
-    id: 'CFP-TAX-B7-008',
+    id: 'cfp-tax-b7-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'NQDC defers income taxes until payment (no dollar limit). However, amounts are unsecured creditor claims, meaning employees bear employer bankruptcy risk. FICA applies when vested (even if unpaid). Employers can\'t deduct until employees recognize income. Section 409A governs deferral elections and distributions.'
   },
   {
-    id: 'CFP-TAX-B7-009',
+    id: 'cfp-tax-b7-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +183,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-4: More Business Taxation
   {
-    id: 'CFP-TAX-B7-010',
+    id: 'cfp-tax-b7-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +202,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Pass-through entities don\'t pay federal income tax at the entity level. Income, deductions, and credits flow through to owners\' personal returns via Schedule K-1. This avoids double taxation (unlike C corps) but creates complexity with distribution rules, basis tracking, and the QBI deduction.'
   },
   {
-    id: 'CFP-TAX-B7-011',
+    id: 'cfp-tax-b7-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -221,7 +221,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Section 1244 allows individual shareholders in qualifying small businesses to treat losses on stock as ordinary losses (deductible against ordinary income) up to $50,000 ($100,000 MFJ) annually. Excess is capital loss. Gains are still capital. The corporation must meet capitalization and active business requirements.'
   },
   {
-    id: 'CFP-TAX-B7-012',
+    id: 'cfp-tax-b7-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -241,7 +241,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-1: More Fundamental Concepts
   {
-    id: 'CFP-TAX-B7-013',
+    id: 'cfp-tax-b7-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -260,7 +260,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The standard statute of limitations is 3 years from filing or due date (whichever is later). It extends to 6 years if income is understated by more than 25%. No limit applies for fraud or failure to file. The IRS has 10 years to collect assessed taxes. Keeping records for 7 years is generally recommended.'
   },
   {
-    id: 'CFP-TAX-B7-014',
+    id: 'cfp-tax-b7-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -279,7 +279,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'In community property states (AZ, CA, ID, LA, NV, NM, TX, WA, WI), income and property acquired during marriage is owned 50/50. If filing separately, each spouse reports half of community income. This affects basis calculations, estate planning (full step-up at first death), and divorce settlements.'
   },
   {
-    id: 'CFP-TAX-B7-015',
+    id: 'cfp-tax-b7-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -299,7 +299,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-2: More Credits
   {
-    id: 'CFP-TAX-B7-016',
+    id: 'cfp-tax-b7-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -318,7 +318,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The R&D credit incentivizes research activities. Qualifying activities must meet a four-part test: technological uncertainty, process of experimentation, technological in nature, and for permitted purpose. Small businesses (under $5M revenue, ≤5 years old) can use credits against payroll tax.'
   },
   {
-    id: 'CFP-TAX-B7-017',
+    id: 'cfp-tax-b7-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -338,7 +338,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-3: More Strategies
   {
-    id: 'CFP-TAX-B7-018',
+    id: 'cfp-tax-b7-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -357,7 +357,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'CLTs work best when interest rates are low—the remainder to heirs is valued at a discount (since charity gets the annuity). This can "zero out" the gift if structured properly. CRTs benefit the donor with current income and partial deduction. CLTs are estate/gift reduction tools; CRTs are income with charitable intent.'
   },
   {
-    id: 'CFP-TAX-B7-019',
+    id: 'cfp-tax-b7-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -377,7 +377,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // TAX-4: More Business
   {
-    id: 'CFP-TAX-B7-020',
+    id: 'cfp-tax-b7-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -396,7 +396,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The BIG tax prevents avoidance of C corp taxes by converting to S status and immediately selling appreciated assets. It taxes gains attributable to C corp period at the corporate rate (21%) if sold within 5 years of S election. Basis is stepped-up as of conversion date. Assets acquired after the election are not subject to BIG.'
   },
   {
-    id: 'CFP-TAX-B7-021',
+    id: 'cfp-tax-b7-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -416,7 +416,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-TAX-B7-022',
+    id: 'cfp-tax-b7-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -435,7 +435,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'ISO exercise creates no regular income tax on the bargain element if holding periods are met (2 years from grant, 1 year from exercise). However, the spread is an AMT preference item, potentially triggering AMT. Disqualifying dispositions convert the income to ordinary. NSOs are taxed at exercise as ordinary income.'
   },
   {
-    id: 'CFP-TAX-B7-023',
+    id: 'cfp-tax-b7-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -454,7 +454,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'The Saver\'s Credit (Retirement Savings Contributions Credit) provides 10-50% credit on up to $2,000 ($4,000 MFJ) of retirement contributions for AGI below thresholds. The percentage increases as income decreases. It\'s nonrefundable (can\'t exceed tax liability). SECURE 2.0 added matching contributions for low-income savers.'
   },
   {
-    id: 'CFP-TAX-B7-024',
+    id: 'cfp-tax-b7-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -473,7 +473,7 @@ export const CFP_TAX_BATCH7_QUESTIONS: Question[] = [
     explanation: 'Accelerating income makes sense if expecting higher future rates (pay tax now at lower rate) or if current income is below bracket thresholds (Roth conversions to "fill the bracket"). Deferring deductions maximizes their value when rates increase. Mirror strategies (defer income, accelerate deductions) apply when expecting lower future rates.'
   },
   {
-    id: 'CFP-TAX-B7-025',
+    id: 'cfp-tax-b7-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',

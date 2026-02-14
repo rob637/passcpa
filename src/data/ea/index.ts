@@ -8,10 +8,21 @@
  * - Part 3: Representation, Practices, and Procedures (SEE3)
  */
 
+import type { CourseData } from '../../types/courseData';
+
 // Lesson imports
 import { eaPart1Lessons, getSEE1Lessons, getSEE1LessonById, getSEE1LessonCount } from './lessons/see1';
 import { eaPart2Lessons, getSEE2Lessons, getSEE2LessonById, getSEE2LessonCount } from './lessons/see2';
 import { eaPart3Lessons, getSEE3Lessons, getSEE3LessonById, getSEE3LessonCount } from './lessons/see3';
+
+// Questions
+import { EA_ALL_QUESTIONS } from './questions';
+
+// Flashcards
+import { ALL_EA_FLASHCARDS } from './flashcards';
+
+// Cheatsheets
+import { EA_CHEATSHEETS } from './cheatsheets';
 
 // Lesson matrix import
 import { 
@@ -144,6 +155,15 @@ export const EA_EXAM_WEIGHTS = {
     'Specific Areas of Practice': '25%',
     'Completion of Filing Process': '25%',
   },
+};
+
+/** Standard course data export — required by courseDataLoader */
+export const COURSE_DATA: CourseData = {
+  courseId: 'ea',
+  questions: EA_ALL_QUESTIONS,
+  flashcards: ALL_EA_FLASHCARDS,
+  lessons: allEALessons,
+  cheatsheets: EA_CHEATSHEETS,
 };
 
 export default {

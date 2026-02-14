@@ -22,6 +22,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The mission of internal audit states that internal audit enhances and protects organizational value by providing risk-based and objective assurance, advice, and insight. Which of the following activities BEST demonstrates the "protect" aspect of this mission?',
     options: [
       'Providing training to management on best practices',
@@ -41,6 +42,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal audit activity has been asked by management to conduct a review of the new ERP implementation. The CAE wants to ensure the engagement aligns with the definition of internal auditing. Which element of the definition is MOST important to address first?',
     options: [
       'Whether internal audit has the competency to evaluate the ERP system',
@@ -60,6 +62,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to the definition of internal auditing, internal audit helps organizations accomplish their objectives by bringing a systematic, disciplined approach to evaluate and improve the effectiveness of which three processes?',
     options: [
       'Risk management, control, and governance',
@@ -79,6 +82,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The phrase "risk-based" in the mission of internal audit means that:',
     options: [
       'Internal audit only reviews high-risk areas',
@@ -98,6 +102,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization is considering outsourcing its internal audit function entirely to an external firm. According to the IIA guidance, which statement is MOST accurate?',
     options: [
       'Outsourcing is prohibited as it violates independence requirements',
@@ -117,6 +122,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following scenarios BEST illustrates internal audit providing "insight" as mentioned in the mission statement?',
     options: [
       'Completing an audit within the budgeted time',
@@ -136,6 +142,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'How does the definition of internal auditing distinguish between assurance and consulting services?',
     options: [
       'Assurance services focus on finances; consulting focuses on operations',
@@ -155,6 +162,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The mission of internal audit emphasizes providing "objective" assurance. What does objectivity require from internal auditors?',
     options: [
       'Always agreeing with management\'s conclusions',
@@ -174,6 +182,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The CEO has asked internal audit to assist in developing a new fraud prevention program. According to the definition of internal auditing, this would MOST likely be classified as:',
     options: [
       'Neither, because developing programs is outside internal audit\'s scope',
@@ -193,6 +202,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The phrase "enhance organizational value" in the mission of internal audit is BEST achieved when internal audit:',
     options: [
       'Provides recommendations that improve operations and help achieve objectives',
@@ -217,6 +227,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which Core Principle is demonstrated when an internal auditor declines to audit a department where they previously worked as a manager?',
     options: [
       'Demonstrates integrity',
@@ -236,6 +247,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal audit team uses data analytics to identify unusual transactions for further investigation. This approach BEST demonstrates which Core Principle?',
     options: [
       'Is appropriately positioned and adequately resourced',
@@ -255,6 +267,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE presents the annual audit plan to the Audit Committee, explaining how each audit relates to the organization\'s strategic risks. This demonstrates which Core Principle?',
     options: [
       'Demonstrates integrity',
@@ -274,6 +287,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An internal auditor refuses a gift from a vendor whose contract is being audited. Which Core Principle is being upheld?',
     options: [
       'Demonstrates integrity',
@@ -293,6 +307,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The internal audit function benchmarks its practices against the IIA Standards and implements improvements based on external quality assessment recommendations. This BEST demonstrates which Core Principle?',
     options: [
       'Is insightful, proactive, and future-focused',
@@ -312,6 +327,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal audit identifies a significant control gap during a routine engagement and immediately alerts management to prevent potential losses. Which Core Principle is MOST applicable?',
     options: [
       'Aligns with the strategies of the organization',
@@ -331,6 +347,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE ensures all internal auditors complete required CPE hours and maintain professional certifications. This demonstrates which Core Principle?',
     options: [
       'Demonstrates competence and due professional care',
@@ -350,6 +367,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal audit activity uses risk assessments to dynamically adjust the audit plan throughout the year based on emerging risks. This approach BEST demonstrates which combination of Core Principles?',
     options: [
       'Alignment with strategies AND Insightful and proactive',
@@ -369,6 +387,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Audit Committee has approved direct access between the CAE and the committee chair, allowing unfiltered communication. This supports which Core Principle?',
     options: [
       'Is appropriately positioned and adequately resourced',
@@ -388,6 +407,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'After identifying a control weakness, internal audit works with management to develop practical improvement recommendations. This demonstrates which Core Principle?',
     options: [
       'Promotes organizational improvement',
@@ -407,6 +427,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For internal auditing to be considered effective, how many of the 10 Core Principles must be present and operating effectively?',
     options: [
       'All 10 principles - partial achievement means internal audit is not fully effective',
@@ -426,6 +447,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor uses professional skepticism when evaluating management assertions, even when documentation appears complete. This behavior BEST reflects which Core Principle?',
     options: [
       'Demonstrates competence and due professional care',
@@ -445,6 +467,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE reports to the board that the internal audit function lacks sufficient IT auditors to address cybersecurity risks adequately. Which Core Principle is the CAE invoking?',
     options: [
       'Demonstrates competence and due professional care',
@@ -464,6 +487,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which Core Principle is MOST directly supported by the requirement for an external quality assessment at least once every five years?',
     options: [
       'Demonstrates integrity',
@@ -483,6 +507,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which Core Principle requires internal auditors to be truthful, courageous, and to act with the best interests of the organization in mind?',
     options: [
       'Demonstrates competence and due professional care',
@@ -507,6 +532,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The International Professional Practices Framework (IPPF) consists of mandatory and recommended guidance. Which of the following is considered MANDATORY guidance?',
     options: [
       'The Definition of Internal Auditing',
@@ -526,6 +552,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor claims conformance with the IIA Standards but has not complied with one Standard due to local regulations. How should this be addressed?',
     options: [
       'Disclosure must be made of the non-conformance and its impact',
@@ -545,6 +572,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IIA Standards are organized into which two main categories?',
     options: [
       'Mandatory Standards and Optional Standards',
@@ -564,6 +592,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Implementation Standards in the IPPF are designated with an "A" or "C" following the standard number. What do these letters indicate?',
     options: [
       '"A" for Attribute standards; "C" for Control standards',
@@ -583,6 +612,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which element of the IPPF provides the most specific, detailed guidance for applying the Standards in practice?',
     options: [
       'The Core Principles',
@@ -602,6 +632,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Standard 1000 (Purpose, Authority, and Responsibility) requires that these be defined in which document?',
     options: [
       'The quality assurance improvement program',
@@ -621,6 +652,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The 2000 series of IIA Standards covers which aspect of internal auditing?',
     options: [
       'The characteristics and qualities of audit organizations and individuals',
@@ -640,6 +672,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following statements about the IPPF is CORRECT?',
     options: [
       'Compliance with recommended guidance is required to claim conformance with Standards',
@@ -659,6 +692,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the Standards refer to the "board," this term includes:',
     options: [
       'Only the audit committee',
@@ -678,6 +712,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'What is the PRIMARY purpose of the IPPF?',
     options: [
       'To establish legal requirements for internal auditors',
@@ -702,6 +737,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor discovers evidence suggesting their supervisor may be involved in fraud. According to the Code of Ethics, what should the auditor do?',
     options: [
       'Confront the supervisor directly before taking any action',
@@ -721,6 +757,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Code of Ethics applies to which of the following?',
     options: [
       'All individuals and entities providing internal audit services',
@@ -740,6 +777,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor is offered a job by a client department during an ongoing audit. According to the Code of Ethics, the auditor should:',
     options: [
       'Continue the audit and accept the position after completion',
@@ -759,6 +797,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Code of Ethics consists of the Principles and Rules of Conduct. Which of the following is one of the four principles?',
     options: [
       'Profitability',
@@ -778,6 +817,7 @@ export const CIA1_QUESTIONS_BATCH5: Question[] = [
     section: 'CIA1',
     blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor inadvertently discloses confidential information about a pending acquisition to a friend who works for a competitor. The friend uses this information for personal stock trading. Which Code of Ethics principle has the auditor PRIMARILY violated?',
     options: [
       'Confidentiality',

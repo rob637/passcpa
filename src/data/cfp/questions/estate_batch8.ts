@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
   // EST-1: Estate Planning Documents
   {
-    id: 'CFP-EST-B8-001',
+    id: 'cfp-est-b8-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -28,26 +28,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Living will: written declaration of wishes about life-sustaining treatment in terminal conditions (specific instructions—no ventilator, no artificial nutrition). Healthcare proxy/POA: names an agent to make medical decisions when you cannot. Best practice: have both—proxy backed by living will guidance. Without proxy, living will provides direction but no decision-maker.'
   },
   {
-    id: 'CFP-EST-B8-002',
-    courseId: 'cfp',
-    section: 'CFP-EST',
-    blueprintArea: 'EST-1',
-    topic: 'Documents',
-    subtopic: 'Codicil',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A codicil is used to:',
-    options: [
-      'D) Name a guardian',
-      'B) Make minor amendments to an existing will without executing a completely new will',
-      'A) Replace a will entirely',
-      'C) Revoke all prior documents',
-    ],
-    correctAnswer: 1,
-    explanation: 'Codicil: formal amendment to existing will. Must meet same formality requirements (witnessed, signed). Used for minor changes (updating executor, changing specific bequest). Multiple codicils become confusing—if significant changes needed, execute new will. Modern practice often favors new wills over codicils because drafting costs have decreased.'
-  },
-  {
-    id: 'CFP-EST-B8-003',
+    id: 'cfp-est-b8-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -67,7 +48,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
   },
   // EST-2: Trust Types
   {
-    id: 'CFP-EST-B8-004',
+    id: 'cfp-est-b8-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -86,26 +67,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'DAPTs: about 20 states allow trusts where the grantor is a beneficiary yet assets have some creditor protection. Requirements typically: independent trustee, irrevocable, discretionary distributions, statutory waiting period. Limitations: not respected in all courts, may not protect against existing creditors or certain claims, transfer may be fraudulent conveyance.'
   },
   {
-    id: 'CFP-EST-B8-005',
-    courseId: 'cfp',
-    section: 'CFP-EST',
-    blueprintArea: 'EST-2',
-    topic: 'Trusts',
-    subtopic: 'Pet Trust',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A pet trust provides:',
-    options: [
-      'D) Only informal arrangements',
-      'A) Income to pets',
-      'B) Legally enforceable arrangements for pet care with funds designated for their benefit and a trustee to oversee',
-      'C) Tax deductions for pet expenses',
-    ],
-    correctAnswer: 2,
-    explanation: 'Pet trusts: recognized in all 50 states. Fund care for pets after owner\'s death or incapacity. Name caregiver (receives stipend), trustee (manages funds), and remainder beneficiary. Define care standards, vet care level, and living arrangements. Amount should be reasonable—courts can reduce excessive funding. Without trust, no legal enforcement.'
-  },
-  {
-    id: 'CFP-EST-B8-006',
+    id: 'cfp-est-b8-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -125,7 +87,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
   },
   // EST-3: Transfer Techniques
   {
-    id: 'CFP-EST-B8-007',
+    id: 'cfp-est-b8-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -144,7 +106,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Installment sale to IDGT: sell appreciated asset to grantor trust for installment note. No gain on sale (grantor trust = you\'re selling to yourself for income tax). Interest paid comes back to grantor. Asset growth transfers tax-free. Estate frozen at note value. Complex—requires seed gift, reasonable interest rate, and proper structuring.'
   },
   {
-    id: 'CFP-EST-B8-008',
+    id: 'cfp-est-b8-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -163,7 +125,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Private annuity: transfer property for unsecured lifetime payments from buyer (often family member). Was used to spread gain and remove appreciation. 2006 IRS regulations eliminated tax deferral benefits. Risks: buyer default (no security), seller outlives expectancy, buyer\'s other creditors. Largely replaced by SCINs and installment sales to GRATs/IDGTs.'
   },
   {
-    id: 'CFP-EST-B8-009',
+    id: 'cfp-est-b8-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -183,7 +145,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
   },
   // EST-4: Beneficiary Designations
   {
-    id: 'CFP-EST-B8-010',
+    id: 'cfp-est-b8-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -202,7 +164,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Per stirpes ("by roots"): if beneficiary predeceases, their share goes to their descendants. Example: leave to 3 children per stirpes—if one dies, their children split that 1/3. Per capita: deceased beneficiary\'s share goes to other living beneficiaries. "Per capita at each generation" divides at each level. Specify desired outcome clearly in designations.'
   },
   {
-    id: 'CFP-EST-B8-011',
+    id: 'cfp-est-b8-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -221,7 +183,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Review beneficiary designations after: marriage/divorce (ex may still be named), new child/grandchild, beneficiary death, moving to new state (community property implications), estate plan changes, income/asset changes affecting strategy. Annual reviews are best practice. Outdated designations are common and cause unintended results.'
   },
   {
-    id: 'CFP-EST-B8-012',
+    id: 'cfp-est-b8-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -241,7 +203,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
   },
   // EST-5: Advanced Topics
   {
-    id: 'CFP-EST-B8-013',
+    id: 'cfp-est-b8-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -260,7 +222,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Portability: surviving spouse can use deceased spouse\'s unused exemption (DSUE). Must file estate tax return within 9 months (or with extension) electing portability—even if no tax due. Only last deceased spouse\'s DSUE available. Simpler than credit shelter trust but doesn\'t protect growth or multiple remarriages. Often used with trusts together.'
   },
   {
-    id: 'CFP-EST-B8-014',
+    id: 'cfp-est-b8-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -279,7 +241,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'IRC Section 6166 allows estates with closely held business interests exceeding 35% of the adjusted gross estate to defer the estate tax attributable to the business over up to 14 years (4 years interest-only, then 10 years of principal and interest). This prevents forced liquidation of family businesses.',
   },
   {
-    id: 'CFP-EST-B8-015',
+    id: 'cfp-est-b8-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -299,7 +261,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-EST-B8-016',
+    id: 'cfp-est-b8-016',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -318,7 +280,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Trust protector: third party with powers beyond trustee, often including: removing/replacing trustees, modifying terms for tax law changes, changing situs, converting to grantor trust, adjusting distributions. Useful for long-term trusts that must adapt over decades. Powers should be carefully defined. Common in dynasty trusts and offshore planning.'
   },
   {
-    id: 'CFP-EST-B8-017',
+    id: 'cfp-est-b8-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -337,7 +299,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Spendthrift clause: beneficiary cannot voluntarily transfer interest, and creditors cannot reach trust assets before distribution. Once distributed to beneficiary, protection ends. Exceptions may exist: child support, alimony, IRS claims, self-settled trusts. Standard in most trusts. Doesn\'t protect against beneficiary\'s own actions with distributed funds.'
   },
   {
-    id: 'CFP-EST-B8-018',
+    id: 'cfp-est-b8-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -356,7 +318,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Net gift: donee agrees to pay gift tax. Gift value is property FMV minus tax. If tax paid exceeds donor\'s basis in property, donor recognizes gain (Diedrich v. Commissioner). Strategy: reduces gift value (net of tax), useful when donor is cash-poor. Complex calculation—tax on net gift requires iterative calculation since tax depends on net value.'
   },
   {
-    id: 'CFP-EST-B8-019',
+    id: 'cfp-est-b8-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -375,7 +337,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'TOD (securities, real estate in some states) and POD (bank accounts) transfer directly to named beneficiaries at death—no probate. Advantage: simplicity, speed. Risk: may not reflect current wishes if not updated, doesn\'t provide control (lump sum to beneficiary), may contradict will or trust planning. Must be coordinated with overall plan.'
   },
   {
-    id: 'CFP-EST-B8-020',
+    id: 'cfp-est-b8-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -394,7 +356,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Anti-clawback rules (final regs 2019): if you use the higher exemption (through 2025) for lifetime gifts, and exemption is lower at death, you won\'t be penalized. Example: gift using $12M exemption, die with $6M exemption—estate tax calculation uses higher of exemption used or available. Creates "use it or lose it" planning opportunity before sunset.'
   },
   {
-    id: 'CFP-EST-B8-021',
+    id: 'cfp-est-b8-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -413,7 +375,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'No-contest clause: beneficiary who challenges the document risks losing their bequest. Effectiveness varies by state—some enforce strictly, others allow challenges with "probable cause." Most effective when challenger has significant bequest at risk. May deter frivolous challenges but doesn\'t eliminate legitimate ones. One of many tools to reduce litigation.'
   },
   {
-    id: 'CFP-EST-B8-022',
+    id: 'cfp-est-b8-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -432,7 +394,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Directed trusts: split fiduciary duties. Investment direction trust: family advisor directs investments, trust company handles administration. Distribution advisor: family member or committee decides distributions. Directed trustee follows instructions and is relieved of liability for those decisions. Allows expertise/family control where appropriate. Delaware, South Dakota popular jurisdictions.'
   },
   {
-    id: 'CFP-EST-B8-023',
+    id: 'cfp-est-b8-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -451,7 +413,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: '529 superfunding: elect to treat gift as made over 5 years. 5 × $18K = $90K per donor ($180K married). File gift return electing 5-year treatment. If donor dies within 5 years, pro-rata portion returns to estate. Removes growth from estate immediately. Additional gifts to same beneficiary during 5 years use exemption. Powerful for grandparent planning.'
   },
   {
-    id: 'CFP-EST-B8-024',
+    id: 'cfp-est-b8-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -470,7 +432,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Simultaneous death: if order of death can\'t be determined, Uniform Simultaneous Death Act typically treats owner as surviving beneficiary. Assets pass to contingent beneficiary (if named) or estate (if not). Some designation forms allow specifying survival period (survive by 30 days). Without contingent, assets may pass unintentionally.'
   },
   {
-    id: 'CFP-EST-B8-025',
+    id: 'cfp-est-b8-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',

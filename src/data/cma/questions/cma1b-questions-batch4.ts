@@ -118,11 +118,11 @@ export const CMA1B_QUESTIONS_BATCH4: Question[] = [
     options: [
       '$660,000',
       '$624,000',
-      '$648,000',
+      '$644,000',
       '$636,000',
     ],
     correctAnswer: 2,
-    explanation: 'Materials needed for production = 52,000 × 3 = 156,000 lbs. Purchases = Production needs + Desired ending RM - Beginning RM = 156,000 + 25,000 - 20,000 = 161,000 lbs. But wait: 161,000 × $4 = $644,000. Let me recalculate: 156,000 + 25,000 - 20,000 = 161,000 lbs × $4 = $644,000. Closest to $648,000 with slight rounding in some problems.',
+    explanation: 'Materials needed for production = 52,000 units × 3 lbs/unit = 156,000 lbs. Purchases = Production needs + Desired ending RM − Beginning RM = 156,000 + 25,000 − 20,000 = 161,000 lbs. Total cost = 161,000 × $4/lb = $644,000.',
     reference: 'Direct Materials Budget',
   },
   // ==========================================

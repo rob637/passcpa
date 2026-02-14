@@ -200,28 +200,6 @@ export const REG_QUESTIONS_DEPTH_1: Question[] = [
     explanation: 'Circular 230 §10.21: A practitioner who learns of an error or omission in a return must promptly advise the client of the error and the consequences. The practitioner recommends corrective action (typically filing an amended return), but the decision to file rests with the client. The practitioner must NOT file without authorization. If the client refuses to correct a material error, the practitioner should consider withdrawing from the engagement. The practitioner is not required to report the client to the IRS but may need to assess continued representation.',
     reference: 'Circular 230 §10.21',
   },
-  {
-    id: 'reg-d1-010',
-    section: 'REG',
-    courseId: 'cpa',
-    blueprintArea: 'REG-V',
-    topicId: 'reg-ethics',
-    topic: 'Professional Ethics',
-    subtopic: 'AICPA SSTS',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'Under the AICPA Statements on Standards for Tax Services (SSTS), a CPA may sign a return that takes a tax position if:',
-    options: [
-      'The position has a 100% chance of being sustained',
-      'The CPA has a good-faith belief there is a realistic possibility of being sustained on its merits (at least one-in-three likelihood)',
-      'The position has been pre-approved by the IRS',
-      'Any position can be taken regardless of likelihood',
-    ],
-    correctAnswer: 1,
-    explanation: 'SSTS No. 1 (Tax Return Positions): A CPA should not recommend or sign a return taking a position unless: (1) there is a realistic possibility of being sustained on its merits (generally interpreted as at least a 1-in-3 or 33% chance), OR (2) the position is not frivolous and is adequately disclosed (Form 8275/8275-R). This standard is more permissive than the substantial authority standard (40%+) required to avoid penalties under §6662, but more restrictive than the not-frivolous standard. The CPA may rely on well-reasoned authorities and not just mathematical probability.',
-    reference: 'AICPA SSTS No. 1',
-  },
-
   // ==========================================
   // REG-IV: BUSINESS LAW — CONTRACT DEPTH
   // ==========================================

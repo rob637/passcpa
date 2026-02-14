@@ -197,7 +197,7 @@ Net pension cost = Service + Interest - Expected Return + Amortizations`,
     type: 'concept',
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     front: 'What are the 11 fund types in governmental accounting?',
     back: `**Governmental Funds (5) - Modified Accrual:**
 1. General Fund

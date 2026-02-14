@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
   // RIS-1: Insurance Fundamentals
   {
-    id: 'CFP-RIS-B9-001',
+    id: 'cfp-ris-b9-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Insurance Fundamentals',
     subtopic: 'Subrogation',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Subrogation: after paying claim, insurer assumes insured\'s right to sue responsible party. Purpose: prevents double recovery by insured, recovers costs for insurer. Example: insurer pays auto damage, then pursues at-fault driver. Insured must cooperate, not prejudice subrogation rights. Any recovery beyond claim may go to insured.'
   },
   {
-    id: 'CFP-RIS-B9-002',
+    id: 'cfp-ris-b9-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Insurance Fundamentals',
     subtopic: 'Valued vs Indemnity Policies',
     difficulty: 'medium',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Valued policy: pre-agreed amount payable regardless of actual loss (common: life insurance, some property). Indemnity: pays actual loss up to limit (most property/casualty). Valued advantage: no dispute at claim time. Challenge: potential moral hazard if value exceeds actual. Used where value hard to determine at loss (art, life).'
   },
   {
-    id: 'CFP-RIS-B9-003',
+    id: 'cfp-ris-b9-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Insurance Fundamentals',
     subtopic: 'Assignment',
     difficulty: 'easy',
@@ -67,10 +67,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
   },
   // RIS-2: Life Insurance
   {
-    id: 'CFP-RIS-B9-004',
+    id: 'cfp-ris-b9-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Joint and Survivor Policies',
     difficulty: 'medium',
@@ -85,50 +85,12 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation: 'Second-to-die: pays at second death of two insureds (typically spouses). Uses: estate tax liquidity (marital deduction delays tax), wealth transfer, charitable giving. Lower premiums than two individual policies. One unhealthy spouse may still get coverage. Considerations: divorce complications, portability limited.'
   },
-  {
-    id: 'CFP-RIS-B9-005',
-    courseId: 'cfp',
-    section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
-    topic: 'Life Insurance',
-    subtopic: 'Premium Financing',
-    difficulty: 'hard',
-    skillLevel: 'Application',
-    question: 'Life insurance premium financing involves:',
-    options: [
-      'C) Government subsidies',
-      'B) Borrowing funds to pay premiums, typically for large policies where expected cash value growth exceeds borrowing costs',
-      'D) Only term insurance',
-      'A) Free insurance',
-    ],
-    correctAnswer: 1,
-    explanation: 'Premium financing: sophisticated strategy—borrow to pay premiums, policy cash value as collateral. Bet: cash value growth > borrowing cost. Risks: interest rate changes, policy underperformance, lender calls loan, exit strategy complexity. Not appropriate for all—high net worth, complex situation, understand risks. Requires careful analysis of assumptions.'
-  },
-  {
-    id: 'CFP-RIS-B9-006',
-    courseId: 'cfp',
-    section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
-    topic: 'Life Insurance',
-    subtopic: '1035 Exchange',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A 1035 exchange allows:',
-    options: [
-      'B) Tax-free exchange of one life insurance policy for another, or life to annuity (but not annuity to life)',
-      'D) Taxable exchanges only',
-      'C) Any insurance product swap',
-      'A) Only term to term exchanges',
-    ],
-    correctAnswer: 0,
-    explanation: 'Section 1035: tax-free exchanges. Allowed: life to life, life to annuity, annuity to annuity (same annuitant). NOT: annuity to life. Must be direct transfer (not cash then buy). Basis carries over. Use: better product, lower costs, different features. Consider: surrender charges, new contestability, commission to agent.'
-  },
   // RIS-3: Health Insurance
   {
-    id: 'CFP-RIS-B9-007',
+    id: 'cfp-ris-b9-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'ACA Subsidies',
     difficulty: 'medium',
@@ -144,10 +106,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'ACA premium subsidies: income 100-400% FPL (temporarily expanded). Must buy through marketplace, not eligible for employer coverage or government programs. Based on second-lowest cost silver plan. Can take in advance or at tax time. Over 400%: enhanced credits through 2025 (American Rescue Plan extension). Income changes may require repayment or additional credit.'
   },
   {
-    id: 'CFP-RIS-B9-008',
+    id: 'cfp-ris-b9-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'COBRA Alternatives',
     difficulty: 'medium',
@@ -163,10 +125,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'COBRA alternatives: ACA marketplace (possible subsidies, comprehensive), spouse\'s plan (job loss is qualifying event), short-term (cheaper but limited coverage, pre-existing exclusions). Compare: premiums (COBRA often expensive—full premium + admin), coverage scope, subsidy eligibility. Job loss triggers ACA special enrollment. Don\'t assume COBRA is best—evaluate options.'
   },
   {
-    id: 'CFP-RIS-B9-009',
+    id: 'cfp-ris-b9-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'FSA Rules',
     difficulty: 'easy',
@@ -183,10 +145,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
   },
   // RIS-4: Disability Insurance
   {
-    id: 'CFP-RIS-B9-010',
+    id: 'cfp-ris-b9-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Cost of Living Adjustments',
     difficulty: 'medium',
@@ -202,10 +164,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'COLA rider: after claim, benefits increase annually (often 3-6% simple or compound, or CPI-linked). Protects against inflation during long disability. Cost: higher premiums. Value: significant for younger workers with long potential claim duration. Compound vs simple: compound better for long claims. Worthwhile for comprehensive coverage.'
   },
   {
-    id: 'CFP-RIS-B9-011',
+    id: 'cfp-ris-b9-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Elimination Period',
     difficulty: 'easy',
@@ -220,31 +182,12 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Elimination period: days before benefits start (30, 60, 90, 180, 365 common). Longer = lower premiums (significant savings). Trade-off: must self-fund that period. Strategy: match to sick leave, savings, emergency fund. 90 days common balance. Ensure emergency reserves cover elimination period. Premium savings may be substantial—compare quotes.'
   },
-  {
-    id: 'CFP-RIS-B9-012',
-    courseId: 'cfp',
-    section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
-    topic: 'Disability Insurance',
-    subtopic: 'Business Overhead Expense',
-    difficulty: 'hard',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Business Overhead Expense (BOE) disability insurance covers:',
-    options: [
-      'D) Equipment purchases',
-      'C) Lost profits only',
-      'B) Business operating expenses like rent, utilities, and employee salaries during the owner\'s disability',
-      'A) Personal living expenses',
-    ],
-    correctAnswer: 2,
-    explanation: 'BOE coverage: pays business fixed expenses during owner\'s disability. Covers: rent, utilities, employee salaries, loan payments, insurance premiums. NOT: owner\'s salary, profits, capital expenditures. Tax treatment: premiums deductible, benefits taxable. Shorter benefit period (1-2 years typically). Essential for small business owners—lets business survive during recovery.'
-  },
   // RIS-5: Property and Casualty
   {
-    id: 'CFP-RIS-B9-013',
+    id: 'cfp-ris-b9-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Ordinance or Law Coverage',
     difficulty: 'medium',
@@ -260,10 +203,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Ordinance/law coverage: older homes may not meet current codes. After loss, rebuilding requires code compliance—can add substantial cost. Standard policies may limit or exclude. Important for: older homes, designated historic properties, areas with stricter modern codes. Coverage typically percentage of dwelling limit. Essential endorsement for older properties.'
   },
   {
-    id: 'CFP-RIS-B9-014',
+    id: 'cfp-ris-b9-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Loss of Use',
     difficulty: 'easy',
@@ -279,10 +222,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Loss of use (Coverage D): pays additional living expenses when home uninhabitable from covered loss. Covers: temporary housing, restaurant meals (above normal food cost), storage, other reasonable expenses. Limit typically 20-30% of dwelling coverage. "Additional" = above normal—subtract regular expenses. Continues until habitable or limit exhausted.'
   },
   {
-    id: 'CFP-RIS-B9-015',
+    id: 'cfp-ris-b9-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Umbrella Deductibles',
     difficulty: 'medium',
@@ -299,10 +242,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RIS-B9-016',
+    id: 'cfp-ris-b9-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Insurance Fundamentals',
     subtopic: 'Policy Period',
     difficulty: 'easy',
@@ -318,10 +261,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Occurrence: coverage if event occurred during policy period—even if claim years later. Claims-made: coverage only if claim made during policy period. Occurrence: simpler, no tail coverage needed. Claims-made: cheaper initially, but need tail coverage when policy ends to cover past events. Professional liability often claims-made. Understand which applies to coverage.'
   },
   {
-    id: 'CFP-RIS-B9-017',
+    id: 'cfp-ris-b9-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Policy Loans',
     difficulty: 'medium',
@@ -337,29 +280,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Policy loans: borrow against cash value, not required to repay. If unpaid at death: outstanding balance + interest deducted from death benefit. Interest compounds—can grow significantly. If loan exceeds cash value: policy lapses (potential tax if gain). No credit check—guaranteed access. Tax-free if policy stays in force. Manage carefully—monitor loan balance.'
   },
   {
-    id: 'CFP-RIS-B9-018',
+    id: 'cfp-ris-b9-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
-    topic: 'Health Insurance',
-    subtopic: 'Medicare Advantage',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Medicare Advantage (Part C) plans:',
-    options: [
-      'C) Don\'t cover hospital stays',
-      'D) Are available before age 65',
-      'B) Are private plans that include Part A and B, often with extra benefits, but typically have networks',
-      'A) Are always more expensive than Original Medicare',
-    ],
-    correctAnswer: 2,
-    explanation: 'Medicare Advantage: private alternative to Original Medicare. Must include Part A and B coverage. Often adds: dental, vision, hearing, fitness. Trade-offs: network restrictions (HMO/PPO), prior authorization, may not need Medigap. Premiums may be lower (some $0). Drug coverage usually included. Different from Medigap. Compare: total costs, provider access, coverage needs.'
-  },
-  {
-    id: 'CFP-RIS-B9-019',
-    courseId: 'cfp',
-    section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Policy Provisions',
     difficulty: 'hard',
@@ -375,10 +299,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Recurrent disability: if recover then same/related disability recurs within specified time (often 6 months), no new elimination period—benefits resume. Non-pro rata: doesn\'t reduce benefit period previously used. Important for conditions with remission/relapse patterns. Pro rata would reduce remaining benefits. Better policies have non-pro rata provision. Review when comparing policies.'
   },
   {
-    id: 'CFP-RIS-B9-020',
+    id: 'cfp-ris-b9-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Auto Liability',
     difficulty: 'easy',
@@ -394,29 +318,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Split limits format: bodily injury per person / bodily injury per accident / property damage. 100/300/100: up to $100K for any one injured person, $300K maximum for all injured in accident, $100K for others\' property. Alternative: combined single limit (CSL)—one limit for all. Higher limits recommended—assets at stake. Umbrella for additional protection.'
   },
   {
-    id: 'CFP-RIS-B9-021',
+    id: 'cfp-ris-b9-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
-    topic: 'Insurance Fundamentals',
-    subtopic: 'Moral Hazard',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Moral hazard in insurance refers to:',
-    options: [
-      'C) Pre-existing conditions',
-      'D) Policy cancellation',
-      'B) Increased risk-taking or carelessness because someone is insured, knowing insurance will pay losses',
-      'A) Unethical insurance agents',
-    ],
-    correctAnswer: 2,
-    explanation: 'Moral hazard: behavior change due to insurance. Knowing covered, people may: take more risks, be less careful, exaggerate claims. Insurers manage through: deductibles (skin in game), copays, coverage limits, investigations. Different from adverse selection (who buys). Both affect insurance pricing and availability.'
-  },
-  {
-    id: 'CFP-RIS-B9-022',
-    courseId: 'cfp',
-    section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Key Person Insurance',
     difficulty: 'medium',
@@ -432,10 +337,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Key person coverage: business owns policy on essential person (owner, executive, salesperson). Death benefit to business covers: lost revenue, finding/training replacement, debt payment, business continuation. Insurable interest: business has stake in person\'s life. Premiums not deductible, death benefit tax-free. Valuation: often multiple of salary or contribution. Essential for small businesses.'
   },
   {
-    id: 'CFP-RIS-B9-023',
+    id: 'cfp-ris-b9-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Health Insurance',
     subtopic: 'Healthcare Sharing Ministries',
     difficulty: 'hard',
@@ -451,10 +356,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Healthcare sharing: NOT insurance—voluntary cost-sharing among members with shared beliefs. No guarantee of payment, not regulated as insurance. May exclude: pre-existing conditions, certain lifestyle choices, specific procedures. Lower cost than insurance. Risks: no coverage guarantee, limited appeals. Know difference—may be appropriate for some, but understand limitations.'
   },
   {
-    id: 'CFP-RIS-B9-024',
+    id: 'cfp-ris-b9-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Disability Insurance',
     subtopic: 'Mental Health Limitations',
     difficulty: 'medium',
@@ -470,10 +375,10 @@ export const CFP_RISK_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Mental/nervous limitations: common in disability policies—24 months typical (some less). Physical conditions may have to-65 or longer benefit period. Impact: depression, anxiety, stress-related claims limited. Some exclude entirely. Growing issue—many claims have mental health component. Better policies: longer or no limitation. Review carefully, especially for high-stress professions.'
   },
   {
-    id: 'CFP-RIS-B9-025',
+    id: 'cfp-ris-b9-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Property Insurance',
     subtopic: 'Vacant Property',
     difficulty: 'medium',

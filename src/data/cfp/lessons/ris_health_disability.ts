@@ -12,7 +12,7 @@ export const CFP_RIS3_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L008',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     title: 'Health Insurance Fundamentals',
     order: 8,
     duration: 30,
@@ -194,7 +194,7 @@ All ACA plans must cover:
   {
     id: 'CFP-RIS-L009',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     title: 'Disability Income Insurance',
     order: 9,
     duration: 30,
@@ -365,7 +365,7 @@ $$\\text{Residual Benefit} = \\frac{\\text{Prior Income} - \\text{Current Income
   {
     id: 'CFP-RIS-L010',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     title: 'Long-Term Care Insurance',
     order: 10,
     duration: 30,
@@ -548,7 +548,7 @@ Protect assets from Medicaid spend-down
   {
     id: 'CFP-RIS-L014',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     title: 'Medicare and Social Security Health Benefits',
     order: 11,
     duration: 45,

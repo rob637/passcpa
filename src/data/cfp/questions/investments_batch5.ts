@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   // INV-1: Investment Theory
   {
-    id: 'CFP-INV-B5-001',
+    id: 'cfp-inv-b5-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Semi-strong EMH states that stock prices reflect all publicly available information. This means both technical analysis (which uses historical prices) and fundamental analysis (which uses public financial data) cannot consistently generate excess returns. Only insider trading using nonpublic information could theoretically beat the market, but it is illegal.'
   },
   {
-    id: 'CFP-INV-B5-002',
+    id: 'cfp-inv-b5-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Studies show that asset allocation explains approximately 90% of a portfolio\'s return variability over time. In a well-diversified portfolio, unsystematic risk is minimized, leaving systematic (market) risk as the primary driver of portfolio performance. Individual security selection matters far less than the overall asset mix.'
   },
   {
-    id: 'CFP-INV-B5-003',
+    id: 'cfp-inv-b5-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -66,7 +66,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Beta measures a stock\'s sensitivity to market movements. A beta of 1.4 means the stock is expected to move 1.4 times the market movement. Market up 10% × 1.4 beta = 14% expected stock increase. Stocks with beta > 1 are more volatile than the market; beta < 1 are less volatile.'
   },
   {
-    id: 'CFP-INV-B5-004',
+    id: 'cfp-inv-b5-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-2: Fixed Income
   {
-    id: 'CFP-INV-B5-005',
+    id: 'cfp-inv-b5-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +105,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Duration measures a bond\'s price sensitivity to interest rate changes. A duration of 6 means approximately a 6% price change for each 1% change in rates. Bond prices move inversely to interest rates, so a 1% rate increase causes approximately a 6% decrease in value. This is known as the modified duration approximation.'
   },
   {
-    id: 'CFP-INV-B5-006',
+    id: 'cfp-inv-b5-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -124,7 +124,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'An inverted yield curve historically signals potential economic slowdown or recession, often followed by falling interest rates as the Fed eases monetary policy. Extending duration positions the portfolio for capital appreciation when rates decline, as longer-duration bonds benefit most from falling rates.',
   },
   {
-    id: 'CFP-INV-B5-007',
+    id: 'cfp-inv-b5-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -143,7 +143,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'When a bond trades above par value, it trades at a premium. This occurs when the coupon rate exceeds current market rates for similar bonds. Investors pay more for the higher coupon payments. Conversely, bonds trade at a discount when market rates exceed the coupon rate.'
   },
   {
-    id: 'CFP-INV-B5-008',
+    id: 'cfp-inv-b5-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -163,7 +163,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-3: Equity
   {
-    id: 'CFP-INV-B5-009',
+    id: 'cfp-inv-b5-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -182,7 +182,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The Gordon Growth Model (constant growth DDM) values a stock as: D₁ / (r - g) where D₁ is next year\'s dividend. D₁ = $2 × 1.05 = $2.10. Value = $2.10 / (0.12 - 0.05) = $2.10 / 0.07 = $30.00. The model requires r > g for a positive value.'
   },
   {
-    id: 'CFP-INV-B5-010',
+    id: 'cfp-inv-b5-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -201,7 +201,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'P/E ratio = Price per share / Earnings per share = $80 / $4 = 20. This means investors are willing to pay $20 for each $1 of earnings. A higher P/E may indicate growth expectations or overvaluation; a lower P/E may suggest value opportunity or concerns about future earnings.'
   },
   {
-    id: 'CFP-INV-B5-011',
+    id: 'cfp-inv-b5-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -221,7 +221,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-4: Options and Derivatives
   {
-    id: 'CFP-INV-B5-012',
+    id: 'cfp-inv-b5-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -240,7 +240,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Call option profit = Intrinsic value - Premium paid. Intrinsic value = Stock price - Strike price = $58 - $50 = $8. Profit = $8 - $3 premium = $5 per share. The breakeven price is $53 ($50 strike + $3 premium). Max loss is limited to the premium paid.'
   },
   {
-    id: 'CFP-INV-B5-013',
+    id: 'cfp-inv-b5-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -259,7 +259,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Covered call maximum profit = (Strike - Stock purchase price) + Premium = ($50 - $45) + $2 = $7 per share. If the stock rises above $50, shares are called away at $50. The premium provides income and limited downside protection but caps upside at $7 per share.'
   },
   {
-    id: 'CFP-INV-B5-014',
+    id: 'cfp-inv-b5-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -279,7 +279,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-5: Alternative Investments
   {
-    id: 'CFP-INV-B5-015',
+    id: 'cfp-inv-b5-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -298,7 +298,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'REITs must distribute at least 90% of taxable income as dividends to shareholders. This allows REITs to avoid corporate-level taxation, passing income directly to investors. Additionally, at least 75% of assets must be in real estate, and 75% of income must come from real estate-related sources.'
   },
   {
-    id: 'CFP-INV-B5-016',
+    id: 'cfp-inv-b5-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -317,7 +317,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Hedge funds have fewer regulatory restrictions than mutual funds, allowing them to employ strategies like short selling, leverage, derivatives, and concentrated positions. They are typically available only to accredited investors and have longer lock-up periods with limited liquidity. They are not required to register with the SEC under the same rules as mutual funds.'
   },
   {
-    id: 'CFP-INV-B5-017',
+    id: 'cfp-inv-b5-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -337,7 +337,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-1: Additional Theory
   {
-    id: 'CFP-INV-B5-018',
+    id: 'cfp-inv-b5-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -356,7 +356,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Sharpe ratio = (Return - Risk-free rate) / Standard deviation = (12% - 3%) / 15% = 9% / 15% = 0.60. The Sharpe ratio measures risk-adjusted return—higher is better. It indicates 0.60% excess return per unit of risk taken. Compare to benchmark or similar funds.'
   },
   {
-    id: 'CFP-INV-B5-019',
+    id: 'cfp-inv-b5-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -375,7 +375,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Alpha measures the excess return of an investment relative to its expected return based on beta (systematic risk). Positive alpha means the manager added value beyond what was expected for the level of market risk taken. Alpha is a key measure of manager skill.'
   },
   {
-    id: 'CFP-INV-B5-020',
+    id: 'cfp-inv-b5-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -395,7 +395,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-2: Additional Fixed Income
   {
-    id: 'CFP-INV-B5-021',
+    id: 'cfp-inv-b5-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -414,7 +414,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Reinvestment risk is the risk that coupon payments will be reinvested at lower rates. Higher coupons = more cash flow to reinvest = more reinvestment risk. The 8% coupon bond generates the most cash flow to reinvest. Zero-coupon bonds have no reinvestment risk because there are no interim payments.'
   },
   {
-    id: 'CFP-INV-B5-022',
+    id: 'cfp-inv-b5-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -433,7 +433,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Callable bonds give the issuer the right to redeem the bond before maturity, usually when rates fall. This benefits issuers but hurts investors who must reinvest at lower rates. To compensate investors for this call risk, callable bonds offer higher coupon rates than comparable non-callable bonds.'
   },
   {
-    id: 'CFP-INV-B5-023',
+    id: 'cfp-inv-b5-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -453,7 +453,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
   },
   // INV-3: Additional Equity
   {
-    id: 'CFP-INV-B5-024',
+    id: 'cfp-inv-b5-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -472,7 +472,7 @@ export const CFP_INVESTMENTS_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The small-cap effect describes the historical observation that small-capitalization stocks have tended to outperform large-cap stocks over long periods, though with significantly higher volatility. This is one of the Fama-French factors explaining stock returns beyond market beta alone.'
   },
   {
-    id: 'CFP-INV-B5-025',
+    id: 'cfp-inv-b5-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',

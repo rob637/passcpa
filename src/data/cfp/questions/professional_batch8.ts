@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
   // PCR-1: Fiduciary Duties
   {
-    id: 'CFP-PCR-B8-001',
+    id: 'cfp-pcr-b8-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Duty of Care: act with skill, care, prudence, and diligence. Components: have reasonable basis for recommendations, understand client circumstances and goals, conduct thorough analysis, make suitable recommendations, review periodically. Not about guarantees—about process and diligence. Malpractice may occur when this duty is breached.'
   },
   {
-    id: 'CFP-PCR-B8-002',
+    id: 'cfp-pcr-b8-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Duty of Loyalty: place client\'s interests first. Cannot: subordinate client interests to your own or third parties, use client information for personal benefit, receive undisclosed compensation affecting recommendations. Can still earn fair compensation—the duty is about whose interests prevail when conflicts exist.'
   },
   {
-    id: 'CFP-PCR-B8-003',
+    id: 'cfp-pcr-b8-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -67,7 +67,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
   },
   // PCR-2: Client Relationships
   {
-    id: 'CFP-PCR-B8-004',
+    id: 'cfp-pcr-b8-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -86,7 +86,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Clear communication: adapt to client\'s knowledge level, avoid unnecessary jargon, confirm understanding, document key points. Clients can\'t make informed decisions if they don\'t understand. Ask questions to gauge comprehension. Written and oral explanations both important. Communication failure is a common source of complaints.'
   },
   {
-    id: 'CFP-PCR-B8-005',
+    id: 'cfp-pcr-b8-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Expectation management: be realistic about outcomes, discuss what could go wrong, explain assumptions (returns, inflation, longevity), update projections when conditions change. Overpromising leads to disappointment and complaints. Better to exceed modest expectations than fail ambitious ones. Document disclosed assumptions.'
   },
   {
-    id: 'CFP-PCR-B8-006',
+    id: 'cfp-pcr-b8-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -125,7 +125,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
   },
   // PCR-3: Conflicts of Interest
   {
-    id: 'CFP-PCR-B8-007',
+    id: 'cfp-pcr-b8-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -144,7 +144,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Material conflicts include: compensation arrangements (commissions, fees, revenue sharing), proprietary products, brokerage affiliations, referral compensation, personal trading that affects recommendations, outside business activities, family relationships. Ask: could this influence my recommendation? If yes, it\'s likely a conflict requiring disclosure.'
   },
   {
-    id: 'CFP-PCR-B8-008',
+    id: 'cfp-pcr-b8-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -163,7 +163,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Conflict management process: identify all material conflicts, disclose to client in clear terms, for significant conflicts obtain informed written consent, implement controls to prevent conflicts from affecting advice, if unmanageable decline to act. Disclosure alone may not be sufficient for serious conflicts.'
   },
   {
-    id: 'CFP-PCR-B8-009',
+    id: 'cfp-pcr-b8-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -183,7 +183,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
   },
   // PCR-4: Regulation
   {
-    id: 'CFP-PCR-B8-010',
+    id: 'cfp-pcr-b8-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -202,7 +202,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Investment Advisers Act fiduciary duty (per SEC v. Capital Gains): advisers have affirmative duty to act in utmost good faith, disclose all material facts, employ reasonable care to avoid misleading clients. This is a federal standard. CFP Board\'s fiduciary duty may exceed regulatory requirements in some areas.'
   },
   {
-    id: 'CFP-PCR-B8-011',
+    id: 'cfp-pcr-b8-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -221,7 +221,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Reg BI (2020): broker-dealers must satisfy disclosure, care, conflict of interest, and compliance obligations. Must act in best interest at time of recommendation. Different from ongoing fiduciary—point-in-time standard. No prohibition on commissions. CFP Board standard often exceeds Reg BI requirements. Know which standard applies when.'
   },
   {
-    id: 'CFP-PCR-B8-012',
+    id: 'cfp-pcr-b8-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -241,7 +241,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
   },
   // PCR-5: Practice Standards
   {
-    id: 'CFP-PCR-B8-013',
+    id: 'cfp-pcr-b8-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-5',
@@ -260,7 +260,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Documentation requirements: client data gathered, analysis performed, recommendations made and rationale, disclosures provided, client acknowledgments, ongoing communications. Supports: regulatory compliance, continuity if planner changes, defense against complaints. Electronic records acceptable. Retention periods vary by regulation (typically 5-7 years minimum).'
   },
   {
-    id: 'CFP-PCR-B8-014',
+    id: 'cfp-pcr-b8-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-5',
@@ -279,7 +279,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Competence standard: don\'t provide services you\'re not qualified to provide. Options: refer to specialist, collaborate with qualified professional, acquire necessary competence through education/training before advising. Acknowledge limitations—clients respect honesty. Build referral network for areas outside expertise.'
   },
   {
-    id: 'CFP-PCR-B8-015',
+    id: 'cfp-pcr-b8-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-5',
@@ -299,7 +299,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PCR-B8-016',
+    id: 'cfp-pcr-b8-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -318,7 +318,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Duty to Follow Instructions: comply with reasonable, lawful client directives within engagement scope. Can decline: illegal instructions, unreasonable requests outside scope, instructions requiring unethical conduct. If fundamental disagreement, may need to terminate relationship. Balance fiduciary judgment with respecting client autonomy.'
   },
   {
-    id: 'CFP-PCR-B8-017',
+    id: 'cfp-pcr-b8-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -337,7 +337,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Diminished capacity protocols: document observations, limit risky transactions, contact designated trusted contact if appropriate, follow firm procedures, consult compliance, consider Adult Protective Services if exploitation suspected. Some states allow temporary holds. Protect client while respecting dignity. Challenging balance—plan in advance.'
   },
   {
-    id: 'CFP-PCR-B8-018',
+    id: 'cfp-pcr-b8-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -356,7 +356,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'OBAs: business activities outside your primary role. Broker-dealers require advance notice and approval. RIAs must disclose. CFP Board requires disclosure of conflicts. Consider: does OBA create conflicts with clients? Take time from client service? Create appearance problems? Disclose and manage appropriately.'
   },
   {
-    id: 'CFP-PCR-B8-019',
+    id: 'cfp-pcr-b8-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -375,7 +375,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'IAR registration: state-by-state for state-registered advisers, states can require registration for SEC RIA personnel too. Must pass exams (Series 65 or 66 typically). Some states accept CFP as substitute for exam. Background checks, disclosure of disciplinary history. Know and follow your state\'s requirements.'
   },
   {
-    id: 'CFP-PCR-B8-020',
+    id: 'cfp-pcr-b8-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-5',
@@ -394,7 +394,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Error handling: disclose promptly to client, take corrective action if possible, document what happened and response, notify E&O carrier if applicable, consider firm compliance notification. Covering up errors magnifies problems. Timely disclosure often preserves relationships and limits liability. Integrity includes owning mistakes.'
   },
   {
-    id: 'CFP-PCR-B8-021',
+    id: 'cfp-pcr-b8-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -413,7 +413,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Prudent investment process: understand client objectives and constraints, analyze options against those criteria, select appropriate investments, document rationale, monitor and review periodically, rebalance and adjust as needed. Process, not outcome, is evaluated. Good faith errors in a prudent process differ from negligence.'
   },
   {
-    id: 'CFP-PCR-B8-022',
+    id: 'cfp-pcr-b8-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -432,7 +432,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Proper termination: written notice with effective date, summarize pending matters requiring attention, assist with transition if appropriate, return client documents and property, provide account transfer assistance. Can\'t abandon clients in critical situations. Document reasons for termination. Professional exit maintains reputation.'
   },
   {
-    id: 'CFP-PCR-B8-023',
+    id: 'cfp-pcr-b8-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -451,7 +451,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Gifts/entertainment: firms typically have policies limiting value, requiring approval, and documenting. Even modest gifts can create subtle bias. Ask: would I recommend this product without the relationship? Would clients be concerned if they knew? FINRA limits, firm policies, and professional judgment all apply. When in doubt, decline.'
   },
   {
-    id: 'CFP-PCR-B8-024',
+    id: 'cfp-pcr-b8-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -470,7 +470,7 @@ export const CFP_PROFESSIONAL_BATCH8_QUESTIONS: Question[] = [
     explanation: 'BSA/AML for financial institutions: Customer Identification Program (verify identity), Customer Due Diligence (understand relationship), suspicious activity monitoring and reporting (SAR), Currency Transaction Reports over $10K. Broker-dealers and RIAs have obligations. SARs are confidential—don\'t tip off subjects. Know your firm\'s program.'
   },
   {
-    id: 'CFP-PCR-B8-025',
+    id: 'cfp-pcr-b8-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-5',

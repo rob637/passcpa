@@ -2011,7 +2011,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
@@ -2071,7 +2071,7 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-2',
     content: {
       sections: [
@@ -2129,7 +2129,7 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
@@ -2188,7 +2188,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-1',
     content: {
       sections: [
@@ -2248,7 +2248,7 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-2',
     content: {
       sections: [
@@ -2308,7 +2308,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-3',
     content: {
       sections: [
@@ -2368,7 +2368,7 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
@@ -2427,7 +2427,7 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
@@ -2486,7 +2486,7 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Financial Analysis"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-2',
     content: {
       sections: [
@@ -3141,7 +3141,7 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "IFRS"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
@@ -3212,7 +3212,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Revenue"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-A-2',
     content: {
       sections: [
@@ -3276,7 +3276,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Leases"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-1',
     content: {
       sections: [
@@ -3340,7 +3340,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Equity"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-B-2',
     content: {
       sections: [
@@ -3404,7 +3404,7 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "International"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-C-1',
     content: {
       sections: [
@@ -3467,7 +3467,7 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Taxes"],
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     blueprintTopic: 'BAR-IV-C-2',
     content: {
       sections: [

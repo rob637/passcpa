@@ -995,7 +995,7 @@ export const AUD_TBS: TBS[] = [
     difficulty: 'hard',
     timeEstimate: 15,
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-VI',
+    blueprintArea: 'AUD-IV',
     blueprintTopic: 'AUD-VI-B-1',
     scenario: `
 You are reviewing the following independent situations for year-end audits. For each situation, determine the appropriate audit report modification.

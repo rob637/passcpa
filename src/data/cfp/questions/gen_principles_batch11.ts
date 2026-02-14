@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
   // GEN-1: Planning Process
   {
-    id: 'CFP-GEN-B11-001',
+    id: 'cfp-gen-b11-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Recommendation development: analyze multiple approaches, consider trade-offs (cost, complexity, risk), align with client\'s specific goals, values, and constraints. Not one-size-fits-all—tailor to individual. Present rationale, discuss alternatives considered. Document analysis. Allow client input. Iterative process—may refine based on client feedback.'
   },
   {
-    id: 'CFP-GEN-B11-002',
+    id: 'cfp-gen-b11-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Team approach: financial planner often coordinates—attorneys (estate docs, business), CPAs (tax compliance, planning), insurance specialists. Benefits: consistent advice, appropriate expertise, efficient process. Planner: may quarterback, ensure communication, follow up. Clear roles, authorized information sharing. Reduces errors, comprehensive service.'
   },
   {
-    id: 'CFP-GEN-B11-003',
+    id: 'cfp-gen-b11-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +67,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
   },
   // GEN-2: Financial Statements
   {
-    id: 'CFP-GEN-B11-004',
+    id: 'cfp-gen-b11-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Savings rate: (Total new savings) / (Gross income) × 100. Include: 401(k) employee + employer contributions, IRA, taxable savings, debt principal reduction (some methods). Target: 15-20%+ for retirement. Higher if starting late or early retirement goal. Key progress metric. Track consistently over time. Consider separate rates for different goals.'
   },
   {
-    id: 'CFP-GEN-B11-005',
+    id: 'cfp-gen-b11-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +105,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Liquidity ratio: liquid assets (cash, money market, easily accessible) / monthly expenses. Target: 3-6 months standard, higher for: unstable job, self-employed, variable income, single income, health issues. Lower acceptable if: very stable employment, strong family support, excellent credit access. Balance: enough security without excessive low-yield assets.'
   },
   {
-    id: 'CFP-GEN-B11-006',
+    id: 'cfp-gen-b11-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -125,7 +125,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
   },
   // GEN-3: Time Value of Money
   {
-    id: 'CFP-GEN-B11-007',
+    id: 'cfp-gen-b11-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +144,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'IRR: rate where NPV = 0. Measures: return on invested capital considering all cash flows and timing. Calculation: iterative (calculators/software). Uses: compare investments with different cash flow patterns. Limitations: assumes reinvestment at IRR (may be unrealistic), multiple solutions possible with unconventional cash flows. Compare to opportunity cost or required return.'
   },
   {
-    id: 'CFP-GEN-B11-008',
+    id: 'cfp-gen-b11-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +163,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'EAR: true annual rate accounting for compounding. Formula: EAR = (1 + i/n)^n - 1, where i = nominal rate, n = compounding periods. Example: 12% compounded monthly = (1 + 0.12/12)^12 - 1 = 12.68% EAR. Use: comparing accounts/loans with different compounding. APR vs. APY: APY is essentially EAR. More compounding = higher effective rate.'
   },
   {
-    id: 'CFP-GEN-B11-009',
+    id: 'cfp-gen-b11-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,7 +183,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
   },
   // GEN-4: Economics
   {
-    id: 'CFP-GEN-B11-010',
+    id: 'cfp-gen-b11-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -202,7 +202,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Leading indicators: change before economy. Examples: building permits, stock market, manufacturing new orders, consumer expectations, jobless claims, credit conditions. Coincident: change with economy (employment, production). Lagging: change after (unemployment rate, loan delinquencies). Conference Board publishes composite index. Use: anticipate economic turns, not perfect prediction.'
   },
   {
-    id: 'CFP-GEN-B11-011',
+    id: 'cfp-gen-b11-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -221,7 +221,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Normal yield curve: longer maturities = higher yields. Reasons: interest rate risk (longer duration = more price sensitivity), liquidity preference (investors prefer shorter, demand premium for longer), inflation uncertainty. Inverted curve: short > long (often signals recession). Flat: similar across maturities. Shape: has predictive value for economy and rate expectations.'
   },
   {
-    id: 'CFP-GEN-B11-012',
+    id: 'cfp-gen-b11-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -241,7 +241,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
   },
   // GEN-5: Planning Concepts
   {
-    id: 'CFP-GEN-B11-013',
+    id: 'cfp-gen-b11-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -260,7 +260,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Emergency fund characteristics: liquid (access within days), stable (no market risk), accessible (no penalty). Options: high-yield savings, money market accounts, short-term CDs with no-penalty option, I-Bonds (after 1-year holding). Not stocks (volatile), not retirement accounts (penalties/taxes). Balance: enough return to maintain purchasing power, primary goal is availability.'
   },
   {
-    id: 'CFP-GEN-B11-014',
+    id: 'cfp-gen-b11-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -278,28 +278,9 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation: 'Prioritization factors: time sensitivity (can\'t defer some), flexibility (can adjust some goals), impact of not meeting (essential vs. nice-to-have), foundational nature (emergency fund enables other goals). Framework: needs (essentials) → wants (lifestyle) → wishes (nice if possible). Client values matter—not just planner preference. Iterative—revisit as circumstances change.'
   },
-  {
-    id: 'CFP-GEN-B11-015',
-    courseId: 'cfp',
-    section: 'CFP-GEN',
-    blueprintArea: 'GEN-5',
-    topic: 'Planning Concepts',
-    subtopic: 'Financial Independence',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'Financial independence is typically defined as:',
-    options: [
-      'D) Having no debt',
-      'A) Having any income',
-      'C) Receiving Social Security',
-      'B) Having sufficient assets to cover living expenses indefinitely without requiring employment income',
-    ],
-    correctAnswer: 3,
-    explanation: 'Financial independence (FI): investment income/assets can sustain expenses indefinitely. Calculate: annual expenses × 25 (4% rule). FI ≠ retirement (may choose to work). FIRE movement: Financial Independence, Retire Early. Steps: define expenses, calculate target, determine savings needed. Allows: work optional, choices based on want vs. need. Partial FI: valuable milestone.'
-  },
   // Additional Topics
   {
-    id: 'CFP-GEN-B11-016',
+    id: 'cfp-gen-b11-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -318,7 +299,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Client feedback value: confirms understanding, surfaces concerns, improves recommendations, builds buy-in. When to seek: after presenting options, during implementation planning, in ongoing monitoring. Methods: direct questions, satisfaction surveys, review meetings. Act on feedback—clients want to be heard. Iterative process leads to better outcomes. Builds relationship.'
   },
   {
-    id: 'CFP-GEN-B11-017',
+    id: 'cfp-gen-b11-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -337,7 +318,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Net worth tracking: snapshot → trend. Reveals: accumulation rate, debt reduction progress, investment growth, spending pattern impact. Calculate: at least annually, ideally quarterly. Components: what\'s growing/declining? Benchmarks: age-based targets, goal-based requirements. More meaningful than income alone. Motivating when heading right direction.'
   },
   {
-    id: 'CFP-GEN-B11-018',
+    id: 'cfp-gen-b11-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -356,7 +337,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Growing (serial) payments: increase each period at fixed rate. Example: retirement income increasing 3% for inflation. Formula: involves relationship between growth rate (g) and discount rate (r). PV = PMT / (r - g) for simple growing perpetuity. Finite: more complex. Financial calculators: may not have built-in; use spreadsheets. Common in retirement planning with inflation adjustments.'
   },
   {
-    id: 'CFP-GEN-B11-019',
+    id: 'cfp-gen-b11-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -375,7 +356,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Consumer confidence: survey-based measure of household sentiment. Key surveys: Conference Board (Consumer Confidence Index), University of Michigan (Consumer Sentiment). Components: current conditions, expectations. Why it matters: consumer spending ~70% of GDP. High confidence → more spending, lower saving. Useful for: economic forecasting, retail sector analysis. Monthly data with market impact.'
   },
   {
-    id: 'CFP-GEN-B11-020',
+    id: 'cfp-gen-b11-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -394,7 +375,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Avalanche method: order by interest rate (highest first). Mathematically optimal—minimizes total interest. Compare to snowball: order by balance (smallest first)—psychological wins motivate. Avalanche: better for disciplined, motivated. Snowball: better if need quick wins for motivation. Hybrid approaches exist. Both: make minimums on all, extra to target debt.'
   },
   {
-    id: 'CFP-GEN-B11-021',
+    id: 'cfp-gen-b11-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -413,7 +394,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Review cadence: varies by client complexity and engagement. Common: annual comprehensive review. Triggers for interim: major life events (marriage, divorce, job change, inheritance), significant market moves, tax law changes, approaching milestones. Investment-focused: may be quarterly. Comprehensive planning: often annual sufficient unless triggers. Define in engagement. Some clients need more touch points.'
   },
   {
-    id: 'CFP-GEN-B11-022',
+    id: 'cfp-gen-b11-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -432,7 +413,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Balance sheet analysis: beyond totals. Asset mix: liquid vs. illiquid, investment vs. personal use. Tax: taxable, tax-deferred, tax-free. Diversification: asset class, sector, geography. Concentration: single stock, real estate heavy? Alignment: matches goals timeline and risk capacity? Debt: interest rates, tax-deductible? Regular review catches drift, maintains appropriate positioning.'
   },
   {
-    id: 'CFP-GEN-B11-023',
+    id: 'cfp-gen-b11-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -451,7 +432,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Rule of 72: Years to double = 72 / Interest rate(%). Example: at 6%, doubles in 12 years. Quick mental math—not exact but close. Variations: 70 slightly more accurate for simple interest, 72 for compound. Use in client meetings for quick illustrations. Works backward: what rate to double in X years? Rate = 72/Years. Educational tool.'
   },
   {
-    id: 'CFP-GEN-B11-024',
+    id: 'cfp-gen-b11-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -470,7 +451,7 @@ export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Expansion characteristics: GDP growth, falling unemployment, rising corporate profits, increasing consumer spending, rising asset prices, often accompanied by moderate inflation. Duration: varies widely (recent 2009-2020 was exceptionally long). Implications for planning: good time to build reserves for next contraction, rebalancing opportunities, evaluate risk posture. Doesn\'t last forever—prepare for cycle.'
   },
   {
-    id: 'CFP-GEN-B11-025',
+    id: 'cfp-gen-b11-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',

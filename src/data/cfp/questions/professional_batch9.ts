@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
   // PCR-1: Standards of Conduct
   {
-    id: 'CFP-PCR-B9-001',
+    id: 'cfp-pcr-b9-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Client autonomy with informed consent: CFP professionals provide advice, but competent clients make decisions. Process: clearly explain recommendation and rationale, discuss risks of client\'s preference, ensure understanding. If legal and client insists with full understanding, respect decision. Document the discussion. Only refuse if clearly illegal or against Standards.'
   },
   {
-    id: 'CFP-PCR-B9-002',
+    id: 'cfp-pcr-b9-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Duty of care: act with skill, diligence, competence, and good judgment. Not perfection—reasonable professional standard. Consider: expertise, thorough analysis, appropriate recommendations, proper follow-through. Process matters—documented, thoughtful approach. Bad outcome doesn\'t mean breach if process was sound. Continuing education maintains competence.'
   },
   {
-    id: 'CFP-PCR-B9-003',
+    id: 'cfp-pcr-b9-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -67,7 +67,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
   },
   // PCR-2: Fiduciary Duty
   {
-    id: 'CFP-PCR-B9-004',
+    id: 'cfp-pcr-b9-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -86,7 +86,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Material disclosure required: conflicts of interest (all types), compensation (all sources), limitations of services, relationship with third parties, any factor that could affect client\'s decision or the advice. Written disclosure preferred. Ongoing duty—disclose new conflicts as they arise. Client must understand to give informed consent. Err on side of over-disclosure.'
   },
   {
-    id: 'CFP-PCR-B9-005',
+    id: 'cfp-pcr-b9-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Loyalty breaches: recommending products primarily for compensation benefit, steering to affiliated entities without disclosure, using client opportunities for personal gain, competing directly with client. Not necessarily prohibited—requires disclosure and client consent. Conflicts managed through: avoid if possible, disclose fully, obtain informed consent. Prioritize client interest.'
   },
   {
-    id: 'CFP-PCR-B9-006',
+    id: 'cfp-pcr-b9-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -125,7 +125,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
   },
   // PCR-3: Regulation
   {
-    id: 'CFP-PCR-B9-007',
+    id: 'cfp-pcr-b9-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -144,7 +144,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'BD supervision: FINRA Rule 3110 requires written supervisory procedures (WSPs), designated supervisors for each office, review of transactions/correspondence, branch office oversight. Principal review of trades. Compliance staffing requirements. Failure is serious violation. Affects CFPs in BD environment—must work within supervisory structure, escalate issues appropriately.'
   },
   {
-    id: 'CFP-PCR-B9-008',
+    id: 'cfp-pcr-b9-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -163,7 +163,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'IA registration: <$100M AUM generally state-registered (exceptions: Wyoming-only, certain advisers). $100M-$110M can choose. >$110M must be SEC-registered. Multi-state advisers with 15+ states can switch to SEC. States enforce via state securities administrators. Know your registration status and applicable state requirements. CFPs must maintain required registrations.'
   },
   {
-    id: 'CFP-PCR-B9-009',
+    id: 'cfp-pcr-b9-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -183,7 +183,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
   },
   // PCR-4: Practice Standards
   {
-    id: 'CFP-PCR-B9-010',
+    id: 'cfp-pcr-b9-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -202,7 +202,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Informed consent: more than signature. Client must: receive material information, understand it (confirmed), have opportunity for questions, freely agree. Planner must: disclose in understandable language, confirm understanding, document. For complex matters, allow reflection time. Consent to one thing isn\'t consent to all. Ongoing as new issues arise. Process, not just paperwork.'
   },
   {
-    id: 'CFP-PCR-B9-011',
+    id: 'cfp-pcr-b9-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -221,7 +221,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Implementation duties: depends on engagement scope. If agreed: select products/services, coordinate with other professionals, submit applications, complete paperwork. Track: what\'s implemented, what\'s pending, who\'s responsible. Document recommendations, implementation status, reasons for changes. Some engagements advice-only—client implements. Clarify expectations upfront.'
   },
   {
-    id: 'CFP-PCR-B9-012',
+    id: 'cfp-pcr-b9-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -241,7 +241,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PCR-B9-013',
+    id: 'cfp-pcr-b9-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -260,7 +260,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Professionalism: treat clients, colleagues, and regulators with respect. Uphold profession\'s reputation. Meet all applicable ethical standards and laws. Continuing education requirement. Don\'t engage in conduct reflecting negatively on profession. Cooperative with CFP Board investigations. Model behavior for others. Extends beyond client interactions to all professional conduct.'
   },
   {
-    id: 'CFP-PCR-B9-014',
+    id: 'cfp-pcr-b9-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -279,7 +279,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Conflict management hierarchy: 1) Avoid—eliminate conflict if practicable. 2) If unavoidable—full disclosure of nature, extent, and potential impact. 3) Obtain informed client consent. 4) Manage—mitigate impact, monitor ongoing. Some conflicts cannot be managed even with consent—too severe. Document all steps. Prevention best—design business to minimize conflicts.'
   },
   {
-    id: 'CFP-PCR-B9-015',
+    id: 'cfp-pcr-b9-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -298,7 +298,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'AML program requirements (Bank Secrecy Act/USA PATRIOT Act): Customer Identification Program (CIP—verify identity), Customer Due Diligence (CDD—understand relationships), Suspicious Activity Reports (SARs—file when warranted), employee training, independent testing, designated compliance officer. CTRs for cash >$10K. CFPs at covered institutions must understand and follow AML obligations.'
   },
   {
-    id: 'CFP-PCR-B9-016',
+    id: 'cfp-pcr-b9-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -317,7 +317,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Presentation best practices: adapt to client\'s communication style, avoid jargon (or explain it), use visuals if helpful, allow questions, confirm understanding. Present rationale—why recommendation fits goals. Written summary often useful. Alternative approaches may be discussed. Client should have time to consider. Goal: informed decision-making, not just acceptance.'
   },
   {
-    id: 'CFP-PCR-B9-017',
+    id: 'cfp-pcr-b9-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -336,7 +336,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Competence gaps: options include gaining expertise (education, research), referring to specialists, collaborative approach with other professionals. Don\'t practice beyond competence without support. Continuing education addresses many gaps over time. Complex areas (estate law, tax): work with attorneys, CPAs. Maintain competence through ongoing education. Know limitations.'
   },
   {
-    id: 'CFP-PCR-B9-018',
+    id: 'cfp-pcr-b9-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -355,7 +355,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Investment fiduciary standards: prudent process more important than specific outcome. Consider: client\'s goals, risk tolerance, time horizon, overall portfolio, costs (expense ratios, loads), tax efficiency, diversification. No requirement to pick "best" performer—that\'s not knowable. Reasonable selection with documented rationale. Monitor ongoing. Compare similar products fairly.'
   },
   {
-    id: 'CFP-PCR-B9-019',
+    id: 'cfp-pcr-b9-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -374,7 +374,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'IA advertising rules (Marketing Rule): no untrue statements or omissions, testimonials allowed with disclosures, performance must not be misleading, specific requirements for hypothetical and composite performance. CFP Board also regulates—no misleading claims about CFP certification. Social media is advertising. Substantiate claims. Pre-approval often required at firms.'
   },
   {
-    id: 'CFP-PCR-B9-020',
+    id: 'cfp-pcr-b9-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -393,7 +393,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Documentation benefits: client reference (what was agreed, why), planner protection (demonstrate compliance), regulatory evidence. Document: engagement terms, client information, analysis, recommendations, disclosures, client decisions, implementation, updates. Retention per requirements (typically 5+ years). Contemporaneous notes most credible. "If it\'s not documented, it didn\'t happen."'
   },
   {
-    id: 'CFP-PCR-B9-021',
+    id: 'cfp-pcr-b9-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -412,7 +412,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Fairness duty: don\'t exploit client vulnerabilities (limited knowledge, age-related concerns, emotional state). Act reasonably in all aspects of relationship. Doesn\'t mean identical service—may charge/serve differently based on client needs. But disclosures must be fair, advice appropriate, fees reasonable. Enhanced care for vulnerable clients. Fair dealing with colleagues too.'
   },
   {
-    id: 'CFP-PCR-B9-022',
+    id: 'cfp-pcr-b9-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -431,7 +431,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Cost disclosure: client must understand total cost. Includes: advisory fees (how calculated), fund expense ratios, commissions, loads, platform/custody fees, transaction costs, any revenue sharing. Aggregate impact on returns. Comparison of cost differences between alternatives. Written disclosure, confirmed understanding. Hiding costs = breach of fiduciary duty.'
   },
   {
-    id: 'CFP-PCR-B9-023',
+    id: 'cfp-pcr-b9-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -450,7 +450,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Reg S-P (Privacy of Consumer Financial Information): initial and annual privacy notices required. Must describe: what information collected, how used, how protected. Customer opt-out rights for sharing with non-affiliated third parties. Safeguards rule: protect customer records. Applies to SEC-registered advisers, BDs. GLBA is underlying statute. State laws may be stricter.'
   },
   {
-    id: 'CFP-PCR-B9-024',
+    id: 'cfp-pcr-b9-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -469,7 +469,7 @@ export const CFP_PROFESSIONAL_BATCH9_QUESTIONS: Question[] = [
     explanation: 'Referral best practices: refer to qualified, competent professionals. Disclose: any referral compensation received, conflicts of interest. Consider: reputation, expertise, cost. Follow up on critical matters. Not responsible for others\' work but should monitor for client\'s benefit. Referral relationships should be based on quality, not just compensation. Document referrals made.'
   },
   {
-    id: 'CFP-PCR-B9-025',
+    id: 'cfp-pcr-b9-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',

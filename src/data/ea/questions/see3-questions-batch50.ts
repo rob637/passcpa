@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Centralized Authorization File (CAF) number:',
     options: [
-      'Is the same as a PTIN',
       'Is assigned by IRS to track practitioner authorizations and powers of attorney on file',
+      'Is the same as a PTIN',
       'Is only for attorneys',
-      'Expires annually'
+      'Expires annually',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The CAF number is assigned by IRS when a POA (Form 2848) or Tax Information Authorization (Form 8821) is first filed. It tracks all authorizations on file for the practitioner and expedites processing.',
     reference: 'IRM 21.3.7; Form 2848 Instructions',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 8821 differs from Form 2848 because Form 8821:',
     options: [
-      'Grants power of attorney',
       'Only authorizes IRS to disclose information to the designee but grants no representation rights',
       'Is for businesses only',
-      'Never expires'
+      'Grants power of attorney',
+      'Never expires',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 8821 is Tax Information Authorization - allows designee to receive confidential tax information but not represent the taxpayer. Form 2848 grants power of attorney with full representation rights.',
     reference: 'Form 8821; Form 2848',
   },
@@ -100,10 +100,10 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When a tax return due date falls on a Saturday, Sunday, or legal holiday:',
     options: [
-      'The return is late',
-      'The due date is extended to the next business day',
       'Weekend filing is required',
-      'An extension must be filed'
+      'The due date is extended to the next business day',
+      'The return is late',
+      'An extension must be filed',
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §7503, when the last day for performing any act (filing, payment) falls on Saturday, Sunday, or legal holiday, the deadline moves to the next succeeding day that is not such a day.',
@@ -121,11 +121,11 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     question: 'The collection statute of limitations is suspended (tolled) during:',
     options: [
       'Only weekends',
-      'Pending OIC, installment agreement request, CDP hearing, military deferment, and certain other events',
       'Never - it always runs',
-      'Only during Tax Court case'
+      'Pending OIC, installment agreement request, CDP hearing, military deferment, and certain other events',
+      'Only during Tax Court case',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The 10-year collection statute is suspended during: pending OIC (plus 30 days), IA request, CDP period, bankruptcy automatic stay, overseas absence (6+ months continuous), military service collection holds, and taxpayer living outside U.S.',
     reference: 'IRC §6503',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Best practices under Circular 230 §10.33 include:',
     options: [
+      'Minimizing fees',
       'Only returning client calls',
       'Communicating clearly with clients, establishing appropriate procedures, and advising on penalties and proper disclosure',
-      'Minimizing fees',
-      'Guaranteeing results'
+      'Guaranteeing results',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Best practices include: clear engagement terms, proper fact development, client communication on positions and penalties, firm procedures for Circular 230 compliance, and proper ethical conduct.',
     reference: 'Circular 230 §10.33',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Enrolled agents must renew their enrollment:',
     options: [
+      'Every 5 years',
       'Annually',
       'Every 3 years based on the last digit of their SSN, with 72 hours of CE (16/year min)',
-      'Every 5 years',
-      'Never - enrollment is permanent'
+      'Never - enrollment is permanent',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EA enrollment must be renewed every 3 years. The renewal cycle is based on SSN last digit. 72 CE hours required (24/year minimum, 16 credits/year minimum), including 6 hours of ethics during the cycle.',
     reference: 'Circular 230 §10.6',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The primary purpose of Circular 230 is to:',
     options: [
-      'Generate revenue for Treasury',
       'Establish ethical standards and rules governing practice before the IRS to protect the tax system and taxpayers',
       'Create jobs for attorneys',
-      'Simplify tax law'
+      'Generate revenue for Treasury',
+      'Simplify tax law',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Circular 230 (31 CFR Part 10) establishes standards of practice and professional responsibility for those representing taxpayers before the IRS. It protects both taxpayers and the integrity of the tax administration system.',
     reference: 'Circular 230; 31 CFR Part 10',
   },

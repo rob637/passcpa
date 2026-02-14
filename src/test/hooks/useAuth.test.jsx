@@ -1,5 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { renderHook, act, waitFor } from '@testing-library/react';
+
+// Unmock AuthProvider since we're testing the actual implementation
+vi.unmock('../../providers/AuthProvider');
+
 import { AuthProvider, useAuth } from '../../providers/AuthProvider';
 import {
   signInWithEmailAndPassword,

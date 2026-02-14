@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In criminal tax cases, the government must prove its case:',
     options: [
-      'By a preponderance of the evidence',
-      'Beyond a reasonable doubt',
       'By clear and convincing evidence',
-      'By probable cause'
+      'Beyond a reasonable doubt',
+      'By a preponderance of the evidence',
+      'By probable cause',
     ],
     correctAnswer: 1,
     explanation: 'Criminal tax cases require the government to prove guilt "beyond a reasonable doubt" - the highest standard of proof. Civil cases use the lower "preponderance of the evidence" standard.',
@@ -40,10 +40,10 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Tax evasion under IRC §7201 requires proof of:',
     options: [
-      'Simple negligence',
-      'Willfulness - intentional violation of a known legal duty',
       'Any underpayment',
-      'Mathematical error'
+      'Willfulness - intentional violation of a known legal duty',
+      'Simple negligence',
+      'Mathematical error',
     ],
     correctAnswer: 1,
     explanation: 'Tax evasion is a felony requiring willfulness - the voluntary, intentional violation of a known legal duty. Mere negligence or honest mistakes do not constitute evasion.',
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The maximum penalty for tax evasion (IRC §7201) is:',
     options: [
+      '$1,000 fine only',
       '$10,000 fine and 1 year imprisonment',
       '$250,000 fine and 5 years imprisonment (per count)',
-      '$1,000 fine only',
-      'Civil penalty only'
+      'Civil penalty only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tax evasion is a felony punishable by up to $250,000 fine ($500,000 for corporations) and up to 5 years imprisonment per count, plus costs of prosecution.',
     reference: 'IRC §7201',
   },
@@ -78,15 +78,15 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     subtopic: 'Fraud Penalty',
     difficulty: 'hard',
     skillLevel: 'Remembering and Understanding',
-    question: 'The civil fraud penalty is:',
+    question: 'What is the primary distinction between civil fraud and criminal tax fraud in federal tax law?',
     options: [
-      '20% of the underpayment',
-      '75% of the underpayment attributable to fraud',
-      '50% of tax owed',
-      '100% of unpaid tax'
+      'Criminal fraud requires proof beyond a reasonable doubt while civil fraud requires clear and convincing evidence',
+      'Civil fraud carries imprisonment while criminal fraud carries only monetary penalties',
+      'Criminal fraud applies only to corporations while civil fraud applies to individuals',
+      'Civil fraud has a higher burden of proof than criminal fraud',
     ],
-    correctAnswer: 1,
-    explanation: 'The civil fraud penalty under IRC §6663 is 75% of the portion of the underpayment attributable to fraud. This is separate from and can be in addition to criminal prosecution.',
+    correctAnswer: 0,
+    explanation: 'Criminal tax fraud (e.g., tax evasion under IRC §7201) requires proof beyond a reasonable doubt, the highest standard. Civil fraud under IRC §6663 requires proof by clear and convincing evidence. Civil fraud results in a 75% penalty on the underpayment, while criminal fraud can result in imprisonment (up to 5 years for evasion) and fines. Both can be pursued for the same conduct.',
     reference: 'IRC §6663',
   },
   {
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Willful failure to file a return (IRC §7203) is:',
     options: [
-      'Not a crime',
       'A misdemeanor punishable by up to $25,000 fine and 1 year imprisonment',
+      'Not a crime',
       'A felony with 5 years imprisonment',
-      'Only a civil penalty'
+      'Only a civil penalty',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Willful failure to file is a misdemeanor under IRC §7203, punishable by up to $25,000 fine ($100,000 for corporations) and up to 1 year imprisonment, plus costs.',
     reference: 'IRC §7203',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which is considered a "badge of fraud"?',
     options: [
-      'Filing for an extension',
       'Maintaining a double set of books',
       'Taking standard deductions',
-      'Using tax preparation software'
+      'Filing for an extension',
+      'Using tax preparation software',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Badges of fraud include: double set of books, false invoices, personal expenses as business, unexplained increases in net worth, substantial understatement, destruction of records, and fictitious transactions.',
     reference: 'IRM 25.1.1.4',
   },
@@ -180,10 +180,10 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IRS Criminal Investigation (CI) differs from civil audit in that CI:',
     options: [
-      'Only reviews return accuracy',
-      'Investigates potential criminal violations with focus on prosecution',
       'Cannot recommend prosecution',
-      'Only handles collection matters'
+      'Investigates potential criminal violations with focus on prosecution',
+      'Only reviews return accuracy',
+      'Only handles collection matters',
     ],
     correctAnswer: 1,
     explanation: 'IRS Criminal Investigation (CI) investigates potential criminal tax violations. Unlike civil audits focused on assessment, CI investigations aim at criminal prosecution referrals.',
@@ -200,10 +200,10 @@ export const SEE3_QUESTIONS_BATCH21: Question[] = [
     skillLevel: 'Analysis',
     question: 'The IRS may pursue:',
     options: [
-      'Only civil or criminal proceedings, not both',
-      'Civil and criminal proceedings simultaneously or consecutively',
       'Criminal proceedings only after civil are complete',
-      'Civil proceedings only after acquittal'
+      'Civil and criminal proceedings simultaneously or consecutively',
+      'Only civil or criminal proceedings, not both',
+      'Civil proceedings only after acquittal',
     ],
     correctAnswer: 1,
     explanation: 'The IRS can pursue both civil and criminal remedies. They may run parallel investigations, or proceed civilly after criminal proceedings conclude. Criminal acquittal does not preclude civil liability.',

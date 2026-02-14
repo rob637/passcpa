@@ -9,7 +9,6 @@ import {
   CheckCircle,
   BookOpen,
   HelpCircle,
-  BarChart3,
   Calendar,
   Sparkles,
   Play,
@@ -17,12 +16,12 @@ import {
   ChevronUp,
   FileText,
 } from 'lucide-react';
+import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
-import { EXAM_BLUEPRINTS } from '../../config/examConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
@@ -35,6 +34,20 @@ import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getSt
 import { calculateBlueprintAnalytics, BlueprintAnalytics, QuestionAttempt } from '../../utils/blueprintAnalytics';
 import { BlueprintHeatMap, WeightComparisonChart, SmartRecommendations, AnalyticsSummary } from '../analytics/BlueprintAnalyticsComponents';
 import Leaderboard from '../Leaderboard';
+import type { CourseId } from '../../types';
+
+// Get the exam governing body name for each course
+const getExamBody = (courseId: CourseId): string => {
+  const examBodies: Record<CourseId, string> = {
+    cpa: 'AICPA',
+    ea: 'IRS',
+    cma: 'IMA',
+    cia: 'IIA',
+    cisa: 'ISACA',
+    cfp: 'CFP Board',
+  };
+  return examBodies[courseId] || 'Exam';
+};
 
 interface WeeklyActivity {
   date: Date;
@@ -243,128 +256,8 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
   );
 };
 
-// Blueprint areas for each section
-const BLUEPRINT_AREAS: Record<string, { id: string; name: string; shortName: string }[]> = {
-  FAR: [
-    { id: 'FAR-I', name: 'Conceptual Framework & Financial Reporting', shortName: 'Framework' },
-    { id: 'FAR-II', name: 'Select Financial Statement Accounts', shortName: 'Accounts' },
-    { id: 'FAR-III', name: 'Select Transactions', shortName: 'Transactions' },
-    { id: 'FAR-IV', name: 'State and Local Governments', shortName: 'Gov\'t' },
-    { id: 'FAR-V', name: 'Not-for-Profit Entities', shortName: 'NFP' },
-  ],
-  AUD: [
-    { id: 'AUD-I', name: 'Ethics & Professional Responsibilities', shortName: 'Ethics' },
-    { id: 'AUD-II', name: 'Assessing Risk & Developing Response', shortName: 'Risk' },
-    { id: 'AUD-III', name: 'Performing Procedures & Obtaining Evidence', shortName: 'Evidence' },
-    { id: 'AUD-IV', name: 'Forming Conclusions & Reporting', shortName: 'Reporting' },
-    { id: 'AUD-V', name: 'Accounting & Review Services', shortName: 'SSARS' },
-  ],
-  REG: [
-    { id: 'REG-I', name: 'Ethics, Professional Responsibilities & Tax Procedures', shortName: 'Ethics' },
-    { id: 'REG-II', name: 'Business Law', shortName: 'Law' },
-    { id: 'REG-III', name: 'Federal Taxation of Property Transactions', shortName: 'Property' },
-    { id: 'REG-IV', name: 'Federal Taxation of Individuals', shortName: 'Individual' },
-    { id: 'REG-V', name: 'Federal Taxation of Entities', shortName: 'Entity' },
-  ],
-  BAR: [
-    { id: 'BAR-I', name: 'Business Analysis', shortName: 'Analysis' },
-    { id: 'BAR-II', name: 'Technical Accounting & Reporting', shortName: 'Technical' },
-    { id: 'BAR-III', name: 'State & Local Government Concepts', shortName: 'Gov\'t' },
-    { id: 'BAR-IV', name: 'Not-for-Profit Concepts', shortName: 'NFP' },
-  ],
-  ISC: [
-    { id: 'ISC-I', name: 'Information Systems & Data Management', shortName: 'Systems' },
-    { id: 'ISC-II', name: 'Security, Confidentiality & Privacy', shortName: 'Security' },
-    { id: 'ISC-III', name: 'Technology-Enabled Finance Transformation', shortName: 'FinTech' },
-  ],
-  TCP: [
-    { id: 'TCP-I', name: 'Tax Compliance & Planning for Individuals', shortName: 'Individual' },
-    { id: 'TCP-II', name: 'Entity Tax Compliance', shortName: 'Compliance' },
-    { id: 'TCP-III', name: 'Entity Tax Planning', shortName: 'Planning' },
-    { id: 'TCP-IV', name: 'Property Transactions', shortName: 'Property' },
-  ],
-};
-
-// Topic Heat Map Component - Now organized by Blueprint Areas
-const TopicHeatMap: React.FC<{ topics: TopicStat[], section: string }> = ({ topics, section }) => {
-  const blueprintAreas = BLUEPRINT_AREAS[section] || [];
-  
-  const getHeatColor = (accuracy: number | undefined) => {
-    if (accuracy === undefined) return 'bg-slate-200 dark:bg-slate-700'; // Not attempted
-    if (accuracy >= 75) return 'bg-success-500';
-    if (accuracy >= 50) return 'bg-warning-500';
-    return 'bg-error-500';
-  };
-
-  // Group topics by blueprint area
-  const getAreaStats = (areaId: string) => {
-    const areaTopics = topics.filter(t => 
-      t.id?.startsWith(areaId) || t.topic?.includes(areaId)
-    );
-    if (areaTopics.length === 0) return { accuracy: undefined, questions: 0 };
-    
-    const totalQuestions = areaTopics.reduce((sum, t) => sum + t.questions, 0);
-    const weightedAccuracy = areaTopics.reduce((sum, t) => sum + (t.accuracy * t.questions), 0);
-    return {
-      accuracy: totalQuestions > 0 ? Math.round(weightedAccuracy / totalQuestions) : undefined,
-      questions: totalQuestions
-    };
-  };
-
-  return (
-    <div className="space-y-3">
-      {/* Blueprint area cards */}
-      <div className="space-y-2">
-        {blueprintAreas.map((area) => {
-          const stats = getAreaStats(area.id);
-          return (
-            <div 
-              key={area.id}
-              className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-            >
-              <div 
-                className={clsx(
-                  'w-10 h-10 rounded-md flex items-center justify-center text-white text-xs font-bold shrink-0',
-                  getHeatColor(stats.accuracy)
-                )}
-              >
-                {stats.accuracy !== undefined ? `${stats.accuracy}%` : '—'}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-                  {area.id}: {area.shortName}
-                </div>
-                <div className="text-xs text-slate-600 truncate">
-                  {stats.questions > 0 ? `${stats.questions} questions` : 'Not attempted'}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Legend */}
-      <div className="flex items-center justify-center gap-4 text-xs text-slate-600 pt-2 border-t border-slate-100 dark:border-slate-700">
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-slate-200 dark:bg-slate-700" />
-          <span>Not tried</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-error-500" />
-          <span>&lt;50%</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-warning-500" />
-          <span>50-75%</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-success-500" />
-          <span>&gt;75%</span>
-        </div>
-      </div>
-    </div>
-  );
-};
+// Blueprint areas are sourced from course config via BlueprintHeatMap component
+// This enables the Progress page to work for all 6 exams automatically
 
 // Exam Readiness Gauge
 const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Date | undefined }> = ({ readiness, examDate }) => {
@@ -461,10 +354,12 @@ const Progress: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   // Study Plan - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, userProfile?.examSection as string) || new Date();
+  const examDate = getExamDate(userProfile, userProfile?.examSection as string, courseId) || new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
-  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  // Use getCurrentSectionForCourse to ensure section is valid for this course
+  // This handles cases where user switches courses but profile still has old section
+  const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Load real data from Firestore
@@ -488,7 +383,9 @@ const Progress: React.FC = () => {
         const dailyData = await Promise.all(
           days.map(async (date) => {
             const dateKey = format(date, 'yyyy-MM-dd');
-            const logRef = doc(db, 'users', user.uid, 'daily_log', dateKey);
+            // Use course-specific daily log ID
+            const dailyLogId = `${courseId}_${dateKey}`;
+            const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
             const logSnap = await getDoc(logRef);
 
             if (logSnap.exists()) {
@@ -690,12 +587,12 @@ const Progress: React.FC = () => {
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
         {/* Header skeleton */}
         <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="h-8 bg-slate-200 dark:bg-slate-700 rounded-xl w-48 mb-2 animate-pulse" />
             <div className="h-5 bg-slate-100 dark:bg-slate-600 rounded-lg w-64 animate-pulse" />
           </div>
         </div>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
           {/* Cards skeleton */}
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[1, 2, 3, 4].map((i) => (
@@ -723,9 +620,9 @@ const Progress: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
         <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
-            <p className="text-slate-600 dark:text-slate-300">Track your journey to CPA success</p>
+            <p className="text-slate-600 dark:text-slate-300">Track your journey to {course.shortName} success</p>
           </div>
         </div>
         
@@ -734,7 +631,7 @@ const Progress: React.FC = () => {
             <Sparkles className="w-10 h-10 text-blue-600 dark:text-blue-400" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-            Start Your CPA Journey
+            Start Your {course.shortName} Journey
           </h2>
           <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Complete your first practice session or lesson to see your progress here. 
@@ -763,15 +660,12 @@ const Progress: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
-      {/* Header */}
-      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
-          <p className="text-slate-600 dark:text-slate-300">Track your journey to CPA success</p>
-        </div>
-      </div>
+      <PageHeader 
+        title="My Progress"
+        subtitle={`Track your journey to ${course.shortName} success`}
+      />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
       {/* Study Plan Overview (New Feature) */}
       {studyPlan && (() => {
@@ -875,7 +769,10 @@ const Progress: React.FC = () => {
               />
               
               {/* Weight Comparison */}
-              <WeightComparisonChart comparisons={blueprintAnalytics.weightComparison} />
+              <WeightComparisonChart 
+                comparisons={blueprintAnalytics.weightComparison} 
+                examBody={getExamBody(courseId)}
+              />
             </div>
           </div>
         )}
@@ -1022,21 +919,6 @@ const Progress: React.FC = () => {
                   <span>&lt;50%</span>
                 </div>
               </div>
-            </div>
-
-            {/* Topic Performance */}
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-primary-600" />
-                  {sectionInfo?.name || 'Exam'} Proficiency
-                </h2>
-                <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
-                  {topicPerformance.length}/{((EXAM_BLUEPRINTS as Record<string, any>)[currentSection]?.areas || []).reduce((acc: number, area: any) => acc + (area.groups?.reduce((g: number, grp: any) => g + (grp.topics?.length || 0), 0) || 0), 0) || 15} Topics
-                </div>
-              </div>
-              
-              <TopicHeatMap topics={topicPerformance} section={currentSection} />
             </div>
           </div>
 

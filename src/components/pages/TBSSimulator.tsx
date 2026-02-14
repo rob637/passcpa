@@ -20,7 +20,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
 import { Button } from '../common/Button';
@@ -527,7 +527,8 @@ const TBSSimulator: React.FC = () => {
   const [taskScores, setTaskScores] = useState<Record<string, number>>({});
   const [error, setError] = useState<string | null>(null);
 
-  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  // Use getCurrentSectionForCourse to ensure section is valid for this course
+  const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   const tbsId = searchParams.get('id');
   
@@ -1079,6 +1080,7 @@ const TBSSimulator: React.FC = () => {
                       <button
                         key={task.id}
                         onClick={() => setCurrentTaskIndex(index)}
+                        data-testid={`tbs-task-tab-${index}`}
                         className={clsx(
                           'flex items-center gap-2 px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium border-b-2 transition-colors whitespace-nowrap flex-shrink-0',
                           isActive
@@ -1293,6 +1295,7 @@ const TBSSimulator: React.FC = () => {
                         rightIcon={submitted ? CheckCircle : Send}
                         onClick={handleSubmit}
                         disabled={submitted}
+                        data-testid="tbs-submit"
                         className={submitted ? 'bg-green-600 cursor-default' : ''}
                       >
                         {submitted ? 'Submitted' : 'Submit All'}

@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Trusts and estates are generally:',
     options: [
-      'Tax-exempt entities',
       'Taxed as separate taxpaying entities using compressed brackets',
+      'Tax-exempt entities',
+      'Only taxed when terminated',
       'Taxed at a flat 21% rate',
-      'Only taxed when terminated'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Trusts and estates are separate taxpaying entities under Subchapter J. They use highly compressed tax brackets, reaching the 37% rate at only about $14,450 of taxable income in 2024.',
     reference: 'IRC §1(e)',
   },
@@ -42,8 +42,8 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     options: [
       'The minimum amount that must be distributed',
       'The maximum deduction for distributions and the maximum taxable to beneficiaries',
+      'The amount of tax-exempt income',
       'The trust\'s taxable income before exemptions',
-      'The amount of tax-exempt income'
     ],
     correctAnswer: 1,
     explanation: 'DNI is the ceiling on the distribution deduction for the fiduciary and the ceiling on the amount taxable to beneficiaries. It also determines the character of distributions to beneficiaries.',
@@ -58,15 +58,15 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     subtopic: 'Simple Trust',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'A simple trust is one that:',
+    question: 'A simple trust had: $30,000 in dividends, $15,000 in tax-exempt interest, and $5,000 in fiduciary fees allocable to all income. All income must be distributed to the sole beneficiary. What is the trust\'s distributable net income (DNI)?',
     options: [
-      'Has no beneficiaries',
-      'Distributes all income currently, makes no charitable contributions, and makes no principal distributions',
-      'Has a corpus of less than $100,000',
-      'Terminates within 3 years'
+      '$40,000',
+      '$45,000',
+      '$30,000',
+      '$25,000',
     ],
-    correctAnswer: 1,
-    explanation: 'A simple trust must distribute all income currently, cannot make distributions of principal during the year, and cannot make charitable contributions. Simple trusts get a $300 personal exemption.',
+    correctAnswer: 0,
+    explanation: 'DNI includes all trust income (taxable and tax-exempt) minus allocable deductions. Total income = $30,000 + $15,000 = $45,000. Less fiduciary fees = $5,000. DNI = $40,000. DNI caps the trust\'s distribution deduction and determines the character of amounts flowing to beneficiaries.',
     reference: 'IRC §651; IRC §642(b)',
   },
   {
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A complex trust:',
     options: [
-      'Must distribute all income currently',
       'May accumulate income, make charitable contributions, or distribute principal',
+      'Is always a grantor trust',
+      'Must distribute all income currently',
       'Cannot have more than 5 beneficiaries',
-      'Is always a grantor trust'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A complex trust is any trust that is not a simple trust. It may accumulate income, make principal distributions, or make charitable contributions. Complex trusts get a $100 personal exemption.',
     reference: 'IRC §661; IRC §642(b)',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A trust is treated as a grantor trust (income taxable to grantor) when:',
     options: [
-      'The grantor is deceased',
       'The grantor retains certain powers like the power to revoke or substitute assets',
+      'The beneficiaries are all adults',
+      'The grantor is deceased',
       'The trust has been in existence more than 10 years',
-      'The beneficiaries are all adults'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §§671-679, a trust is a grantor trust if the grantor retains substantial powers or benefits, such as power to revoke, power to substitute assets, reversionary interest, or power to control beneficial enjoyment.',
     reference: 'IRC §§671-679',
   },
@@ -121,11 +121,11 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     question: 'Income earned after a decedent\'s death on estate assets is:',
     options: [
       'Reported on the decedent\'s final 1040',
+      'Reported by the beneficiaries only',
       'Tax-exempt',
       'Reported on the estate\'s income tax return (Form 1041)',
-      'Reported by the beneficiaries only'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Income earned on estate assets after death is estate income reported on Form 1041. The estate may deduct distributions to beneficiaries, who then report their share. Pre-death income is on the final Form 1040.',
     reference: 'IRC §641',
   },
@@ -141,11 +141,11 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     question: 'A trust has DNI of $50,000 and distributes $70,000 to beneficiaries. The trust\'s distribution deduction is:',
     options: [
       '$70,000',
+      '$0',
       '$50,000',
       '$20,000',
-      '$0'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §661(a), the distribution deduction is limited to DNI. The trust deducts $50,000, and beneficiaries are taxed on $50,000. The $20,000 excess is a tax-free distribution of principal.',
     reference: 'IRC §661(a)',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the tier system for complex trusts, first-tier distributions are:',
     options: [
+      'Charitable distributions',
       'All distributions of principal',
       'Distributions of income required by the trust agreement',
       'Discretionary distributions',
-      'Charitable distributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'First-tier distributions are required income distributions (mandatory). Second-tier distributions are discretionary income or principal. First tier is allocated DNI first; second tier gets the remainder.',
     reference: 'IRC §662',
   },
@@ -178,15 +178,15 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     subtopic: 'Income in Respect of Decedent',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: 'Income in Respect of a Decedent (IRD) is:',
+    question: 'A decedent owned a traditional IRA worth $150,000 at death. The decedent had a $0 basis in the IRA (all pre-tax contributions and earnings). The beneficiary received a distribution of $150,000 from the inherited IRA. How is this income in respect of a decedent (IRD) treated?',
     options: [
-      'Exempt from both income and estate tax',
-      'Taxable to the recipient when received and may also be subject to estate tax',
-      'Taxed only at capital gains rates',
-      'Never taxable to the estate'
+      'The $150,000 is fully taxable as ordinary income to the beneficiary, with no step-up in basis',
+      'The $150,000 receives a step-up in basis and is not taxable',
+      'Only amounts exceeding the decedent\'s contributions are taxable',
+      'The beneficiary pays capital gains tax on the $150,000',
     ],
-    correctAnswer: 1,
-    explanation: 'IRD (income the decedent had a right to but hadn\'t received) is taxable to whoever receives it. It doesn\'t get stepped-up basis. If estate tax was paid on IRD, the recipient may claim an IRC §691(c) deduction.',
+    correctAnswer: 0,
+    explanation: 'IRA distributions are income in respect of a decedent (IRD) under IRC §691 and do NOT receive a stepped-up basis. The full $150,000 is taxable as ordinary income to the beneficiary. IRD items retain the same character they would have had if received by the decedent. However, the beneficiary may claim a deduction for any estate tax attributable to the IRD inclusion.',
     reference: 'IRC §691',
   },
   {
@@ -202,8 +202,8 @@ export const SEE2_QUESTIONS_BATCH27: Question[] = [
     options: [
       'Only a calendar year',
       'Any fiscal year ending within 12 months of death',
+      'A 52-53 week year',
       'Only the year of the decedent\'s death',
-      'A 52-53 week year'
     ],
     correctAnswer: 1,
     explanation: 'An estate (unlike a trust) can elect any fiscal year ending within 12 months of death. This provides flexibility for income timing. The first return may be a short period.',

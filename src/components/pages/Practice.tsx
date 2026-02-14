@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import logger from '../../utils/logger';
 import { scrollToTop } from '../../utils/scroll';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import {
@@ -37,7 +37,7 @@ import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
-import { getDefaultSection } from '../../utils/sectionUtils';
+import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -46,6 +46,7 @@ import clsx from 'clsx';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
 import { formatDistanceToNow } from 'date-fns';
+import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionShuffle';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
@@ -70,6 +71,8 @@ interface AnswerState {
 
 interface SessionSetupProps {
   onStart: (config: SessionConfig) => void;
+  onResume?: () => void;
+  hasSavedSession?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   userProfile: any;
   loading: boolean;
@@ -77,13 +80,13 @@ interface SessionSetupProps {
 }
 
 // Session Setup Component
-const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading, userId }) => {
+const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSavedSession, userProfile, loading, userId }) => {
   const { course, courseId } = useCourse();
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
   const [, setHistoryLoading] = useState(true);
   const [config, setConfig] = useState<SessionConfig>({
-    section: (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection,
+    section: getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection,
     mode: 'study', // study, timed, exam, weak
     count: 10,
     topics: [],
@@ -116,31 +119,45 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
     loadHistory();
   }, [userId]);
 
+  // Derive mode from toggles for backwards compatibility
+  const derivedMode = config.mode === 'weak' ? 'weak' : (config.mode === 'timed' ? 'timed' : 'study');
+  
+  const handleStart = () => {
+    // Map simplified UI to existing config structure
+    const finalConfig: SessionConfig = {
+      ...config,
+      mode: derivedMode,
+      // If weak areas toggle is on, filter to incorrect/unanswered
+      questionStatus: config.mode === 'weak' ? 'incorrect' : config.questionStatus,
+    };
+    onStart(finalConfig);
+  };
+
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto">
-      <div className="text-center mb-8">
-        <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <Target className="w-8 h-8 text-primary-600 dark:text-primary-400" />
-        </div>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-md mx-auto">
+      <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-          Practice Questions
+          Practice
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">Configure your practice session</p>
       </div>
 
       <div className="card">
-        <div className="card-body space-y-6">
-          {/* Section Select */}
+        <div className="card-body space-y-5">
+          {/* Section Select - Compact */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Exam Section
+              Section
             </label>
             <select
               value={config.section}
               onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection, blueprintArea: 'all' }))}
+              data-testid="section-select"
               className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
-              {course?.sections.map((s: { id: string; shortName: string; name: string }) => (
+              {course?.sections
+                .filter((s: { id: string }) => s.id !== 'PREP')
+                .map((s: { id: string; shortName: string; name: string }) => (
                 <option key={s.id} value={s.id}>
                   {s.shortName} - {s.name}
                 </option>
@@ -148,61 +165,19 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
             </select>
           </div>
 
-          {/* Practice Mode - Now 2x2 Grid like Becker */}
+          {/* Question Count - Simplified to 3 options */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Practice Mode
+              Questions
             </label>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { id: 'study', name: 'Study', desc: 'Learn at your pace', icon: BookOpen },
-                { id: 'timed', name: 'Timed', desc: '90 sec per question', icon: Clock },
-                { id: 'exam', name: 'Exam Sim', desc: 'Full exam conditions', icon: Target },
-                { id: 'weak', name: 'Weak Areas', desc: 'Focus on struggles', icon: Sparkles },
-              ].map((mode) => {
-                const Icon = mode.icon;
-                return (
-                  <button
-                    key={mode.id}
-                    onClick={() => setConfig((prev) => ({ ...prev, mode: mode.id as SessionConfig['mode'] }))}
-                    className={clsx(
-                      'p-4 rounded-xl border-2 text-left transition-all focus:ring-2 focus:ring-primary-500/50',
-                      config.mode === mode.id
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                    )}
-                    aria-pressed={config.mode === mode.id}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={clsx(
-                        'w-10 h-10 rounded-lg flex items-center justify-center',
-                        config.mode === mode.id ? 'bg-primary-500 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-600'
-                      )}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-slate-900 dark:text-slate-100">{mode.name}</div>
-                        <div className="text-xs text-slate-600 dark:text-slate-300">{mode.desc}</div>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Question Count - Now with slider + presets */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Number of Questions
-            </label>
-            <div className="flex items-center gap-3 mb-2">
-              {[5, 10, 20, 30, 50].map((count) => (
+            <div className="flex items-center gap-3">
+              {[10, 25, 50].map((count) => (
                 <button
                   key={count}
                   onClick={() => setConfig((prev) => ({ ...prev, count }))}
+                  data-testid={`question-count-${count}`}
                   className={clsx(
-                    'flex-1 py-2 rounded-lg border-2 font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
+                    'flex-1 py-3 rounded-xl border-2 font-semibold text-lg transition-all focus:ring-2 focus:ring-primary-500/50',
                     config.count === count
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
                       : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
@@ -214,63 +189,58 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 </button>
               ))}
             </div>
-            <input
-              type="range"
-              min="5"
-              max="100"
-              step="5"
-              value={config.count}
-              onChange={(e) => setConfig((prev) => ({ ...prev, count: parseInt(e.target.value) }))}
-              className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
-            />
-            <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-1">
-              <span>5</span>
-              <span className="font-medium text-primary-600">{config.count} questions</span>
-              <span>100</span>
-            </div>
           </div>
 
-          {/* Question Status Filter - Like Becker */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Question Status
+          {/* Simple Toggles */}
+          <div className="space-y-3">
+            {/* Timed Toggle */}
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <input
+                type="checkbox"
+                checked={config.mode === 'timed'}
+                onChange={(e) => setConfig((prev) => ({ 
+                  ...prev, 
+                  mode: e.target.checked ? 'timed' : 'study' 
+                }))}
+                className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+              />
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-slate-500" />
+                <div>
+                  <div className="font-medium text-slate-900 dark:text-slate-100">Timed</div>
+                  <div className="text-xs text-slate-500">90 seconds per question</div>
+                </div>
+              </div>
             </label>
-            <div className="flex flex-wrap gap-2">
-              {[
-                { id: 'all', name: 'All Questions', icon: Shuffle },
-                { id: 'unanswered', name: 'Unanswered', icon: Target },
-                { id: 'incorrect', name: 'Incorrect', icon: XCircle },
-                { id: 'correct', name: 'Correct', icon: CheckCircle },
-                { id: 'flagged', name: 'Flagged', icon: Flag },
-              ].map((status) => {
-                const Icon = status.icon;
-                return (
-                  <button
-                    key={status.id}
-                    onClick={() => setConfig((prev) => ({ ...prev, questionStatus: status.id as QuestionStatus }))}
-                    className={clsx(
-                      'flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all',
-                      config.questionStatus === status.id
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
-                        : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
-                    )}
-                    aria-pressed={config.questionStatus === status.id}
-                  >
-                    <Icon className="w-4 h-4" />
-                    {status.name}
-                  </button>
-                );
-              })}
-            </div>
+
+            {/* Weak Areas Toggle */}
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <input
+                type="checkbox"
+                checked={config.questionStatus === 'incorrect' || config.questionStatus === 'unanswered'}
+                onChange={(e) => setConfig((prev) => ({ 
+                  ...prev, 
+                  questionStatus: e.target.checked ? 'incorrect' : 'all'
+                }))}
+                className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+              />
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-slate-500" />
+                <div>
+                  <div className="font-medium text-slate-900 dark:text-slate-100">Focus on weak areas</div>
+                  <div className="text-xs text-slate-500">Questions you've missed</div>
+                </div>
+              </div>
+            </label>
           </div>
 
-          {/* Advanced Options Toggle */}
+          {/* More Options Toggle */}
           <button
             onClick={() => setShowAdvanced(!showAdvanced)}
             className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium"
           >
             {showAdvanced ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-            Advanced Options
+            More options
           </button>
 
           {/* Advanced Options Panel */}
@@ -284,7 +254,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 <select
                   value={config.blueprintArea}
                   onChange={(e) => setConfig((prev) => ({ ...prev, blueprintArea: e.target.value }))}
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
                 >
                   <option value="all">All Areas</option>
                   {blueprintAreas.map((area) => (
@@ -295,73 +265,60 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 </select>
               </div>
 
+              {/* Question Status */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Question Status
+                </label>
+                <select
+                  value={config.questionStatus}
+                  onChange={(e) => setConfig((prev) => ({ ...prev, questionStatus: e.target.value as QuestionStatus }))}
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
+                >
+                  <option value="all">All Questions</option>
+                  <option value="unanswered">Unanswered</option>
+                  <option value="incorrect">Incorrect</option>
+                  <option value="correct">Correct</option>
+                  <option value="flagged">Flagged</option>
+                </select>
+              </div>
+
               {/* Difficulty */}
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  Difficulty Level
+                  Difficulty
                 </label>
-                <div className="flex items-center gap-3">
-                  {[
-                    { id: 'all', name: 'All Levels' },
-                    { id: 'easy', name: 'Easy' },
-                    { id: 'medium', name: 'Medium' },
-                    { id: 'hard', name: 'Hard' },
-                  ].map((diff) => (
-                    <button
-                      key={diff.id}
-                      onClick={() => setConfig((prev) => ({ ...prev, difficulty: diff.id as Difficulty | 'all' }))}
-                      className={clsx(
-                        'flex-1 py-2 rounded-lg border-2 text-sm font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
-                        config.difficulty === diff.id
-                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
-                          : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
-                      )}
-                      aria-pressed={config.difficulty === diff.id}
-                    >
-                      {diff.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Scoring Mode */}
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  Scoring Mode
-                </label>
-                <div className="grid grid-cols-2 gap-3">
-                  <button
-                    onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'practice' }))}
-                    className={clsx(
-                      'p-3 rounded-xl border-2 text-left transition-all',
-                      config.scoringMode === 'practice'
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                    )}
-                  >
-                    <div className="font-medium text-slate-900 dark:text-slate-100">Practice</div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">Immediate feedback after each question</div>
-                  </button>
-                  <button
-                    onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'exam' }))}
-                    className={clsx(
-                      'p-3 rounded-xl border-2 text-left transition-all',
-                      config.scoringMode === 'exam'
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                    )}
-                  >
-                    <div className="font-medium text-slate-900 dark:text-slate-100">Exam</div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">Score revealed at end only</div>
-                  </button>
-                </div>
+                <select
+                  value={config.difficulty}
+                  onChange={(e) => setConfig((prev) => ({ ...prev, difficulty: e.target.value as Difficulty | 'all' }))}
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
+                >
+                  <option value="all">All Levels</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
               </div>
             </div>
           )}
 
+          {/* Resume Session Button - shows if there's a saved session */}
+          {hasSavedSession && onResume && (
+            <Button
+              onClick={onResume}
+              leftIcon={RotateCcw}
+              variant="outline"
+              size="lg"
+              fullWidth
+              className="py-4 text-lg border-primary-500 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30"
+            >
+              Resume Session
+            </Button>
+          )}
+
           {/* Start Button */}
           <Button
-            onClick={() => onStart(config)}
+            onClick={handleStart}
             disabled={loading}
             loading={loading}
             leftIcon={loading ? undefined : Shuffle}
@@ -369,8 +326,9 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
             size="lg"
             fullWidth
             className="py-4 text-lg"
+            data-testid="start-practice"
           >
-            {loading ? 'Loading Questions...' : 'Start Practice'}
+            {loading ? 'Loading...' : 'Start Practice'}
           </Button>
         </div>
       </div>
@@ -432,6 +390,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
@@ -695,6 +654,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
 
 const Practice: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
   const { user, userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
@@ -731,6 +691,8 @@ const Practice: React.FC = () => {
   const [reportType, setReportType] = useState<string>('');
   const [reportDetails, setReportDetails] = useState('');
   const [reportSubmitted, setReportSubmitted] = useState(false);
+  const [reportSubmitting, setReportSubmitting] = useState(false);
+  const [reportError, setReportError] = useState<string | null>(null);
   
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
@@ -738,7 +700,17 @@ const Practice: React.FC = () => {
   // Track weak topics for targeted practice
   const [, setWeakTopicsFromSession] = useState<string[]>([]);
 
+  // Note: sessionId removed - using 'practice' mode shuffle which is stable per user
+
   const currentQuestion: Question | undefined = questions[currentIndex];
+  
+  // Shuffle options for the current question to prevent B-bias gaming
+  // Uses 'practice' mode: same user always sees same order for consistent learning
+  const shuffledQuestion: ShuffledQuestion | undefined = useMemo(() => {
+    if (!currentQuestion) return undefined;
+    return shuffleQuestionOptions(currentQuestion, { userId: user?.uid, mode: 'practice' });
+  }, [currentQuestion, user?.uid]);
+  
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : undefined;
   const isAnswered = currentAnswer !== undefined;
@@ -811,7 +783,28 @@ const Practice: React.FC = () => {
     }
   }, []);
 
-  // Try to restore session on mount
+  // Check if there's a valid saved session (without consuming it)
+  const hasSavedSession = useMemo(() => {
+    try {
+      const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
+      if (!saved) return false;
+      const sessionState = JSON.parse(saved);
+      const MAX_AGE = 30 * 60 * 1000; // 30 minutes
+      return Date.now() - sessionState.savedAt <= MAX_AGE;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  // Handler for manual resume from UI
+  const handleManualResume = useCallback(() => {
+    const restored = restoreSessionState();
+    if (restored) {
+      scrollToTop();
+    }
+  }, [restoreSessionState]);
+
+  // Try to restore session on mount or navigation
   useEffect(() => {
     if (!inSession && !loading && userProfile) {
       const restored = restoreSessionState();
@@ -819,9 +812,29 @@ const Practice: React.FC = () => {
         scrollToTop();
       }
     }
-    // Only run once on mount
+    // Run on mount and whenever we navigate back to this page (location.key changes)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userProfile]);
+  }, [userProfile, location.key]);
+
+  // Auto-save session on navigation away (beforeunload + component unmount)
+  useEffect(() => {
+    if (!inSession || questions.length === 0) return;
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      // Save session state before tab/window close
+      saveSessionState();
+      // Show browser confirmation dialog
+      e.preventDefault();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      // Save session state when component unmounts (user navigates away via React Router)
+      saveSessionState();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inSession, questions.length, saveSessionState]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -903,7 +916,7 @@ const Practice: React.FC = () => {
 
       // Determine Blueprint Version based on user's exam date
       const section = userProfile?.examSection as string || getDefaultSection(courseId);
-      const examDate = getExamDate(userProfile, section) || new Date();
+      const examDate = getExamDate(userProfile, section, courseId) || new Date();
       const blueprintVersion = getBlueprintForExamDate(examDate);
       const is2026 = blueprintVersion === '2026';
 
@@ -1010,9 +1023,10 @@ const Practice: React.FC = () => {
 
   // Submit answer
   const handleSubmitAnswer = useCallback(async () => {
-    if (selectedAnswer === null || isAnswered || !currentQuestion) return;
+    if (selectedAnswer === null || isAnswered || !currentQuestion || !shuffledQuestion) return;
 
-    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+    // Compare with shuffled correct answer (user sees shuffled options)
+    const isCorrect = selectedAnswer === shuffledQuestion.shuffledCorrectAnswer;
 
     // Provide feedback
     if (isCorrect) {
@@ -1026,14 +1040,14 @@ const Practice: React.FC = () => {
     setAnswers((prev) => ({
       ...prev,
       [currentQuestion.id]: {
-        selected: selectedAnswer,
+        selected: selectedAnswer,  // Store shuffled index for UI consistency
         correct: isCorrect,
         time: elapsed,
       },
     }));
     setShowExplanation(true);
 
-    // Record in study provider
+    // Record in study provider using ORIGINAL answer index for accurate analytics
     if (recordMCQAnswer) {
       await recordMCQAnswer(
         currentQuestion.id,
@@ -1045,7 +1059,7 @@ const Practice: React.FC = () => {
         currentQuestion.section // Pass section for section-specific tracking
       );
     }
-  }, [selectedAnswer, isAnswered, currentQuestion, elapsed, recordMCQAnswer]);
+  }, [selectedAnswer, isAnswered, currentQuestion, shuffledQuestion, elapsed, recordMCQAnswer]);
 
   // Navigation
   const goToQuestion = useCallback((index: number) => {
@@ -1111,6 +1125,9 @@ const Practice: React.FC = () => {
   const handleReportIssue = useCallback(async () => {
     if (!currentQuestion || !reportType) return;
     
+    setReportSubmitting(true);
+    setReportError(null);
+    
     try {
       // Save report to Firestore for admin review
       const reportData = {
@@ -1147,6 +1164,10 @@ const Practice: React.FC = () => {
       }, 2000);
     } catch (error) {
       logger.error('Failed to submit report:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setReportError(`Failed to submit report: ${errorMessage}`);
+    } finally {
+      setReportSubmitting(false);
     }
   }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity, user?.uid, user?.email]);
 
@@ -1177,8 +1198,8 @@ const Practice: React.FC = () => {
         correctCount,
         accuracy,
         timeSpentSeconds: elapsed,
-        blueprintArea: sessionConfig.blueprintArea !== 'all' ? sessionConfig.blueprintArea : undefined,
-        difficulty: sessionConfig.difficulty !== 'all' ? sessionConfig.difficulty : undefined,
+        ...(sessionConfig.blueprintArea !== 'all' && { blueprintArea: sessionConfig.blueprintArea }),
+        ...(sessionConfig.difficulty !== 'all' && { difficulty: sessionConfig.difficulty }),
       }).catch(err => logger.error('Failed to save practice session:', err));
     }
 
@@ -1190,6 +1211,9 @@ const Practice: React.FC = () => {
     // Show results screen
     setInSession(false);
     setShowResults(true);
+    
+    // Clear any saved session — this one is complete
+    try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
   };
   
   // Reset and start new session
@@ -1201,6 +1225,7 @@ const Practice: React.FC = () => {
     setCurrentIndex(0);
     setElapsed(0);
     setWeakTopicsFromSession([]);
+    try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
   };
   
   // Back to daily plan (marks activity complete)
@@ -1271,13 +1296,22 @@ const Practice: React.FC = () => {
 
   // Session configuration screen
   if (!inSession) {
-    return <SessionSetup onStart={startSession} userProfile={userProfile} loading={loading} userId={user?.uid} />;
+    return (
+      <SessionSetup 
+        onStart={startSession} 
+        onResume={handleManualResume}
+        hasSavedSession={hasSavedSession}
+        userProfile={userProfile} 
+        loading={loading} 
+        userId={user?.uid} 
+      />
+    );
   }
 
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" data-testid="practice-loading">
         <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
       </div>
     );
@@ -1286,7 +1320,7 @@ const Practice: React.FC = () => {
   // No questions available for selected criteria
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" data-testid="practice-empty-state">
         <div className="text-center max-w-md mx-auto p-6">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
             <AlertCircle className="w-8 h-8 text-slate-600 dark:text-slate-400" />
@@ -1440,16 +1474,18 @@ const Practice: React.FC = () => {
 
           {/* Question Text */}
           <div className="card-body">
-            <p className="text-slate-900 dark:text-slate-100 text-lg leading-relaxed mb-6">
+            <p className="text-slate-900 dark:text-slate-100 text-lg leading-relaxed mb-6" data-testid="question-text">
               {currentQuestion.question}
             </p>
 
-            {/* Answer Choices */}
+            {/* Answer Choices - Using shuffled options to prevent answer pattern gaming */}
             <div className="space-y-3">
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              {(currentQuestion.options || (currentQuestion as any).choices || []).map((choice: string, index: number) => {
+              {(shuffledQuestion?.shuffledOptions || currentQuestion.options || []).map((choice: string, index: number) => {
                 const isSelected = selectedAnswer === index;
-                const isCorrect = index === currentQuestion.correctAnswer;
+                // Use shuffled correct answer for display
+                const isCorrect = shuffledQuestion 
+                  ? index === shuffledQuestion.shuffledCorrectAnswer 
+                  : index === currentQuestion.correctAnswer;
                 const showResult = isAnswered;
 
                 return (
@@ -1457,6 +1493,7 @@ const Practice: React.FC = () => {
                     key={index}
                     onClick={() => handleSelectAnswer(index)}
                     disabled={isAnswered}
+                    data-testid={`answer-option-${index}`}
                     className={clsx(
                       'mcq-option w-full text-left',
                       !showResult && isSelected && 'mcq-option-selected',
@@ -1490,6 +1527,7 @@ const Practice: React.FC = () => {
                 variant="primary"
                 fullWidth
                 className="mt-6 py-3"
+                data-testid="submit-answer"
               >
                 Submit Answer
               </Button>
@@ -1543,10 +1581,12 @@ const Practice: React.FC = () => {
                   onClick={() => {
                     // Save session state before navigating
                     saveSessionState();
-                    // Navigate in same window - state will be restored on return
-                    const lessonUrl = currentQuestion.blueprintArea 
-                      ? `/lessons/${currentQuestion.blueprintArea}-001?returnTo=/practice`
-                      : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || getDefaultSection(courseId).toLowerCase()}&topic=${encodeURIComponent(currentQuestion.topic || '')}&returnTo=/practice`;
+                    // Navigate to lesson matrix filtered by section and blueprint area
+                    // This gives users context to find the most relevant lesson
+                    const section = currentQuestion.section?.toUpperCase() || getDefaultSection(courseId).toUpperCase();
+                    const blueprintArea = currentQuestion.blueprintArea || '';
+                    // Navigate to lesson matrix with filters for better discovery
+                    const lessonUrl = `/lessons/matrix?section=${section}&blueprintArea=${blueprintArea}&returnTo=/practice`;
                     navigate(lessonUrl);
                   }}
                   variant="secondary"
@@ -1764,21 +1804,32 @@ const Practice: React.FC = () => {
                   />
                 </div>
 
+                {reportError && (
+                  <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-lg text-sm">
+                    {reportError}
+                  </div>
+                )}
+
                 <div className="flex gap-3">
                   <Button
-                    onClick={() => setShowReportModal(false)}
+                    onClick={() => {
+                      setShowReportModal(false);
+                      setReportError(null);
+                    }}
                     variant="secondary"
                     className="flex-1"
+                    disabled={reportSubmitting}
                   >
                     Cancel
                   </Button>
                   <Button
                     onClick={handleReportIssue}
-                    disabled={!reportType}
+                    disabled={!reportType || reportSubmitting}
+                    loading={reportSubmitting}
                     variant="primary"
                     className="flex-1"
                   >
-                    Submit Report
+                    {reportSubmitting ? 'Submitting...' : 'Submit Report'}
                   </Button>
                 </div>
               </>

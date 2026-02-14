@@ -28,9 +28,9 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Net income $200,000. Depreciation $40,000. Accounts receivable increased $15,000. Accounts payable decreased $10,000. What is operating cash flow (indirect method)?',
     options: [
       '$215,000',
-      '$235,000',
+      '$175,000',
       '$265,000',
-      '$175,000'
+      '$235,000',
     ],
     correctAnswer: 0,
     explanation: 'OCF = Net Income + Depreciation - Increase in A/R - Decrease in A/P = $200,000 + $40,000 - $15,000 - $10,000 = $215,000. A/R increase is a use; A/P decrease is a use.',
@@ -47,12 +47,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: '$1,000,000 bonds issued at 103 (3% premium). Over 10 years, how much is amortized per year using straight-line?',
     options: [
+      '$10,000',
+      '$100,000',
       '$3,000',
       '$30,000',
-      '$10,000',
-      '$100,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Premium = $1,000,000 × 3% = $30,000. Annual amortization = $30,000 / 10 years = $3,000/year. This reduces interest expense below the cash paid.',
     reference: 'Bond Premium Amortization',
   },
@@ -67,12 +67,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Remembering',
     question: 'A loss contingency should be accrued when outcome is:',
     options: [
+      'Possible but not estimable',
+      'Remote and estimable',
       'Possible and estimable',
       'Probable and reasonably estimable',
-      'Remote and estimable',
-      'Possible but not estimable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Under GAAP, loss contingencies are accrued (recognized) when loss is probable AND the amount can be reasonably estimated. Otherwise, disclosure may be required.',
     reference: 'Contingencies; ASC 450',
   },
@@ -87,12 +87,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'An asset has carrying value $500,000, undiscounted cash flows $480,000, fair value $400,000. What impairment loss is recorded?',
     options: [
+      '$80,000',
+      '$0',
       '$20,000',
       '$100,000',
-      '$0',
-      '$80,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Step 1: Recoverability test—undiscounted CFs ($480,000) < carrying value ($500,000), so impairment exists. Step 2: Measure as Carrying Value - Fair Value = $500,000 - $400,000 = $100,000 loss.',
     reference: 'Asset Impairment; ASC 360',
   },
@@ -112,9 +112,9 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Production budget: 8,000 units. Each unit requires 2.5 direct labor hours at $18/hour. What is budgeted direct labor cost?',
     options: [
       '$360,000',
-      '$144,000',
       '$45,000',
-      '$288,000'
+      '$288,000',
+      '$144,000',
     ],
     correctAnswer: 0,
     explanation: 'Labor hours = 8,000 × 2.5 = 20,000 hours. Labor cost = 20,000 × $18 = $360,000.',
@@ -132,11 +132,11 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Sales for last 3 months: 100, 120, 130. Weights: 0.5 (most recent), 0.3, 0.2 (oldest). What is the weighted moving average forecast?',
     options: [
       '116.7',
-      '121.0',
       '125.0',
-      '130.0'
+      '130.0',
+      '121.0',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'WMA = (0.5 × 130) + (0.3 × 120) + (0.2 × 100) = 65 + 36 + 20 = 121.0.',
     reference: 'Weighted Moving Average',
   },
@@ -151,12 +151,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Remembering',
     question: 'The capital budget typically includes:',
     options: [
+      'Variable manufacturing overhead',
       'Operating expenses for the next quarter',
-      'Long-term asset acquisitions and major investments',
       'Cash receipts from customers',
-      'Variable manufacturing overhead'
+      'Long-term asset acquisitions and major investments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Capital budgets plan for long-term investments: property, plant, equipment, major projects. Operating budgets cover day-to-day revenues and expenses. Cash budgets plan liquidity.',
     reference: 'Capital Budget',
   },
@@ -172,11 +172,11 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Management by exception involves:',
     options: [
       'Investigating all variances equally',
-      'Focusing investigation on significant deviations from standards',
+      'Setting unrealistic standards',
       'Ignoring all variances',
-      'Setting unrealistic standards'
+      'Focusing investigation on significant deviations from standards',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Management by exception focuses attention on significant variances that exceed materiality thresholds--either dollar amounts or percentages. Minor variances are not investigated, conserving management resources.',
     reference: 'Management by Exception',
   },
@@ -196,9 +196,9 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Division profit margin 15%, asset turnover 0.8. What change in asset turnover would increase ROI from 12% to 15%?',
     options: [
       'Increase to 1.0',
-      'Increase to 1.25',
+      'Stay at 0.8',
       'Decrease to 0.6',
-      'Stay at 0.8'
+      'Increase to 1.25',
     ],
     correctAnswer: 0,
     explanation: 'Current ROI = 15% × 0.8 = 12%. For ROI = 15%: Asset Turnover = 15% / 15% = 1.0. Need to increase turnover from 0.8 to 1.0.',
@@ -215,12 +215,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Remembering',
     question: 'In the Balanced Scorecard, which perspective is typically considered the foundation that drives improvements in all others?',
     options: [
+      'Learning and growth perspective',
       'Financial perspective',
-      'Customer perspective',
       'Internal process perspective',
-      'Learning and growth perspective'
+      'Customer perspective',
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Learning and growth (employee skills, technology, culture) drives process improvements, which improves customer outcomes, which ultimately drives financial results. It is the foundational "lead" perspective.',
     reference: 'Balanced Scorecard; Learning & Growth',
   },
@@ -235,12 +235,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Customer A: Revenue $100,000, product cost $60,000, 200 orders (order cost $50 each), 10 complaints (complaint cost $200 each). What is customer profit?',
     options: [
+      '$30,000',
+      '$38,000',
       '$28,000',
       '$40,000',
-      '$38,000',
-      '$30,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Customer Profit = Revenue - Product Cost - Order Cost - Complaint Cost = $100,000 - $60,000 - (200 × $50) - (10 × $200) = $100,000 - $60,000 - $10,000 - $2,000 = $28,000.',
     reference: 'Customer Profitability Analysis',
   },
@@ -253,15 +253,15 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     subtopic: 'Characteristics',
     difficulty: 'medium',
     skillLevel: 'Remembering',
-    question: 'An investment center manager is evaluated on:',
+    question: 'When computing residual income for an investment center, which component is subtracted from the division\'s operating income?',
     options: [
-      'Cost control only',
-      'Revenue generation only',
-      'Profit and the efficient use of assets',
-      'Customer satisfaction only'
+      'Depreciation expense on divisional assets',
+      'A capital charge based on the division\'s average operating assets',
+      'The corporate income tax allocated to the division',
+      'The opportunity cost of the division manager\'s compensation',
     ],
-    correctAnswer: 2,
-    explanation: 'Investment center managers control revenues, costs, AND asset investment decisions. They are evaluated on both profitability and return on invested capital (ROI or RI).',
+    correctAnswer: 1,
+    explanation: 'Residual income equals the division\'s operating income minus a capital charge (minimum required rate of return multiplied by average operating assets). This measures whether the division earned more than the cost of the capital invested in its operations.',
     reference: 'Investment Center; Responsibility Accounting',
   },
   {
@@ -276,11 +276,11 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Deferred compensation in executive pay packages helps:',
     options: [
       'Immediate cash flow for executives',
-      'Align management with long-term shareholder interests',
       'Reduce company pension costs',
-      'Simplify tax reporting'
+      'Simplify tax reporting',
+      'Align management with long-term shareholder interests',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Deferred compensation (stock options, restricted stock, deferred bonuses) ties executive wealth to long-term company performance, reducing short-term gaming and aligning interests with shareholders.',
     reference: 'Executive Compensation; Alignment',
   },
@@ -299,12 +299,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Estimated OH: $600,000. Estimated machine hours: 40,000. Job #101 used 500 machine hours, $8,000 direct materials, $3,000 direct labor. What is Job #101 total cost?',
     options: [
-      '$18,500',
-      '$11,000',
       '$16,000',
-      '$26,500'
+      '$18,500',
+      '$26,500',
+      '$11,000',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'OH rate = $600,000 / 40,000 = $15/MH. Job cost = DM + DL + OH = $8,000 + $3,000 + (500 × $15) = $8,000 + $3,000 + $7,500 = $18,500.',
     reference: 'Job Order Costing',
   },
@@ -319,12 +319,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Absorption income: $150,000. Beginning inventory: 2,000 units. Ending inventory: 3,000 units. Fixed OH per unit: $10. What is variable costing income?',
     options: [
-      '$160,000',
-      '$140,000',
       '$150,000',
-      '$130,000'
+      '$160,000',
+      '$130,000',
+      '$140,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Inventory increased by 1,000 units. Under absorption, $10,000 (1,000 × $10) fixed OH is deferred in inventory. Variable Costing Income = Absorption - Deferred FOH = $150,000 - $10,000 = $140,000.',
     reference: 'Variable vs Absorption Costing',
   },
@@ -340,9 +340,9 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'First unit: 100 hours. 80% learning curve. How many hours for the 4th unit (cumulative average model)?',
     options: [
       '64 hours',
-      '51.2 hours',
+      'Cannot determine',
       '80 hours',
-      'Cannot determine'
+      '51.2 hours',
     ],
     correctAnswer: 0,
     explanation: 'Cumulative average at 2 units = 100 × 0.8 = 80 hours. At 4 units = 80 × 0.8 = 64 hours cumulative average. This is the average per unit for all 4 units combined.',
@@ -360,11 +360,11 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Warranty repairs are classified as:',
     options: [
       'Prevention costs',
-      'Appraisal costs',
+      'External failure costs',
       'Internal failure costs',
-      'External failure costs'
+      'Appraisal costs',
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'External failure costs occur after customers receive defective products: warranty, repairs, returns, recalls, lawsuits. Internal failures are caught before shipment.',
     reference: 'Cost of Quality; External Failure',
   },
@@ -383,12 +383,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Remembering',
     question: 'Internal audit\'s consulting services differ from assurance services in that:',
     options: [
+      'They are more objective',
+      'They always result in published reports',
       'They provide greater independence',
       'They are advisory, client-requested, and without formal audit opinions',
-      'They are more objective',
-      'They always result in published reports'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Consulting services are advisory in nature, requested by management, and aimed at improving operations. Assurance services involve independent, objective evaluations with formal conclusions.',
     reference: 'Internal Audit; Consulting',
   },
@@ -403,12 +403,12 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     skillLevel: 'Remembering',
     question: 'SOX Section 404 requires management to:',
     options: [
+      'Use only cash-basis accounting',
+      'Personally approve every transaction',
       'Eliminate all financial statement errors',
       'Assess and report on the effectiveness of internal controls over financial reporting',
-      'Personally approve every transaction',
-      'Use only cash-basis accounting'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Section 404 requires management assessment of internal control effectiveness over financial reporting. For larger companies, external auditors must also attest to this assessment.',
     reference: 'SOX 404; Internal Control Assessment',
   },
@@ -428,11 +428,11 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Effective executive dashboards should:',
     options: [
       'Include as much detailed data as possible',
-      'Display key metrics with drill-down capability for details',
       'Be static and updated annually',
-      'Focus only on financial measures'
+      'Focus only on financial measures',
+      'Display key metrics with drill-down capability for details',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Good dashboards show high-level KPIs at a glance with the ability to drill down for details when needed. They balance summary information with accessibility to underlying data.',
     reference: 'Dashboard Design; Business Intelligence',
   },
@@ -448,11 +448,11 @@ export const CMA1_MCQ_BATCH7: Question[] = [
     question: 'Phishing attacks primarily target:',
     options: [
       'Network hardware vulnerabilities',
-      'Human users through deceptive communications',
       'Database encryption keys',
-      'Physical server access'
+      'Physical server access',
+      'Human users through deceptive communications',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Phishing uses deceptive emails, websites, or messages to trick users into revealing credentials, clicking malicious links, or transferring funds. It exploits human behavior rather than technical vulnerabilities.',
     reference: 'Phishing; Social Engineering',
   },

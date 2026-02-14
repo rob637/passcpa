@@ -5,8 +5,14 @@ node_modules/
 
 # Build outputs
 dist/
+dev-dist/
 build/
 .next/
+
+# Python virtual environments
+.venv/
+__pycache__/
+*.pyc
 
 # Environment variables (keep examples, ignore actual secrets)
 .env
@@ -54,6 +60,10 @@ coverage/
 # Test outputs
 playwright-report/
 test-results/
+
+# UX audit outputs
+scripts/ux-audit/reports/
+scripts/ux-audit/screenshots/
 
 # Android signing
 *.keystore

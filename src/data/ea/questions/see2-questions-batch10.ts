@@ -19,12 +19,12 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Form 8832 (Entity Classification Election) is used to:',
     options: [
-      'Elect S corporation status',
       'Change an entity\'s default tax classification (check-the-box)',
+      'Elect partnership taxation',
+      'Elect S corporation status',
       'Dissolve a corporation',
-      'Elect partnership taxation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 8832 allows eligible entities to elect their federal tax classification under the check-the-box regulations. An LLC can elect to be taxed as a corporation, or a default corporation can elect to be disregarded or taxed as a partnership.',
     reference: 'Treas. Reg. §301.7701-3',
   },
@@ -39,10 +39,10 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A professional corporation (PC) or professional association (PA):',
     options: [
-      'Is always taxed as an S corporation',
+      'Cannot provide retirement benefits to owners',
       'Can be formed only by licensed professionals and provides limited liability for malpractice of other owners',
+      'Is always taxed as an S corporation',
       'Is exempt from corporate income tax',
-      'Cannot provide retirement benefits to owners'
     ],
     correctAnswer: 1,
     explanation: 'Professional corporations can be formed by licensed professionals (doctors, lawyers, CPAs) and provide limited liability protection. However, a professional remains personally liable for their own malpractice.',
@@ -64,9 +64,9 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     question: 'A C corporation\'s charitable contribution deduction is limited to:',
     options: [
       '10% of taxable income before certain adjustments',
+      'There is no limit for corporations',
       '25% of taxable income',
       '50% of taxable income',
-      'There is no limit for corporations'
     ],
     correctAnswer: 0,
     explanation: 'Corporate charitable contributions are limited to 10% of taxable income computed before the contribution deduction, DRD, NOL carryback, and capital loss carryback. Excess contributions are carried forward 5 years.',
@@ -83,12 +83,12 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'In a Section 351 exchange, if a shareholder receives cash or other property (boot) in addition to stock:',
     options: [
+      'The boot is always treated as a dividend',
       'The entire exchange becomes taxable',
       'The shareholder recognizes gain to the extent of the boot received',
       'No gain is recognized until the stock is sold',
-      'The boot is always treated as a dividend'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'In a Section 351 exchange, gain is recognized to the extent of boot (money or other property) received, but not in excess of the realized gain. Loss is never recognized in a Section 351 exchange.',
     reference: 'IRC §351(b)',
   },
@@ -103,12 +103,12 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A stock redemption is treated as a sale rather than a dividend if it:',
     options: [
-      'Is pro-rata among all shareholders',
       'Is substantially disproportionate or completely terminates the shareholder\'s interest',
+      'Is pro-rata among all shareholders',
+      'Exceeds $25,000',
       'Occurs within 2 years of incorporation',
-      'Exceeds $25,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A redemption receives sale treatment (capital gain) if it is substantially disproportionate, completely terminates the shareholder\'s interest, or is not essentially equivalent to a dividend. Attribution rules apply.',
     reference: 'IRC §302',
   },
@@ -129,8 +129,8 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     options: [
       'Occurs when 50% or more of interests are sold within 12 months',
       'Was repealed by the TCJA; partnerships no longer terminate due to sales of interests',
+      'Requires dissolution under state law',
       'Occurs when the partnership earns no income for 2 consecutive years',
-      'Requires dissolution under state law'
     ],
     correctAnswer: 1,
     explanation: 'The TCJA repealed the technical termination rule effective for tax years after 2017. Previously, a partnership terminated if 50% or more of interests were sold within 12 months. Now, such sales do not cause termination.',
@@ -149,8 +149,8 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     options: [
       'The partnership\'s basis in assets held outside the U.S.',
       'The partner\'s basis in their partnership interest',
+      'The FMV of the partnership interest',
       'The partnership\'s basis in its assets',
-      'The FMV of the partnership interest'
     ],
     correctAnswer: 1,
     explanation: 'Outside basis is the partner\'s tax basis in their partnership interest. Inside basis refers to the partnership\'s basis in its assets. These may differ due to contributions, distributions, or Section 754 elections.',
@@ -171,12 +171,12 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'The Small Business Health Care Tax Credit is available to employers with:',
     options: [
-      'Up to 500 employees',
       'Fewer than 25 full-time equivalent employees and average wages below threshold',
+      'Only self-employed individuals',
+      'Up to 500 employees',
       'Any number of employees if they offer health insurance',
-      'Only self-employed individuals'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Small Business Health Care Tax Credit is for small employers with fewer than 25 FTE employees earning less than $59,000 average wages (2024, indexed). Maximum credit is 50% of premiums (35% for tax-exempt employers).',
     reference: 'IRC §45R',
   },
@@ -191,12 +191,12 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Section 1245 recapture applies to:',
     options: [
-      'Real property only',
       'Personal property where gain is taxed as ordinary income to the extent of depreciation taken',
+      'Goodwill and intangibles only',
+      'Real property only',
       'All capital gains',
-      'Goodwill and intangibles only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Section 1245 requires recapture of depreciation on personal property as ordinary income when the property is sold. Any gain in excess of depreciation recapture is Section 1231 gain (potentially capital gain).',
     reference: 'IRC §1245',
   },
@@ -213,8 +213,8 @@ export const SEE2_QUESTIONS_BATCH10: Question[] = [
     options: [
       'Fully deductible',
       'Disallowed entirely',
+      'Deferred until the property is sold to an unrelated party',
       'Deductible at 50%',
-      'Deferred until the property is sold to an unrelated party'
     ],
     correctAnswer: 1,
     explanation: 'Losses on sales between related parties (as defined in Section 267) are disallowed. However, the related buyer may reduce their gain on a subsequent sale to an unrelated party by the previously disallowed loss.',

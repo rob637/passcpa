@@ -19,12 +19,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A living will differs from a healthcare proxy (healthcare power of attorney) in that:',
     options: [
-      'A) They are the same document',
       'B) A living will states specific end-of-life wishes while a healthcare proxy designates a person to make medical decisions',
+      'D) Healthcare proxies express wishes',
+      'A) They are the same document',
       'C) Living wills appoint agents',
-      'D) Healthcare proxies express wishes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Living will: written declaration of wishes about life-sustaining treatment in terminal conditions (specific instructions—no ventilator, no artificial nutrition). Healthcare proxy/POA: names an agent to make medical decisions when you cannot. Best practice: have both—proxy backed by living will guidance. Without proxy, living will provides direction but no decision-maker.'
   },
   {
@@ -38,10 +38,10 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A codicil is used to:',
     options: [
-      'A) Replace a will entirely',
+      'D) Name a guardian',
       'B) Make minor amendments to an existing will without executing a completely new will',
+      'A) Replace a will entirely',
       'C) Revoke all prior documents',
-      'D) Name a guardian'
     ],
     correctAnswer: 1,
     explanation: 'Codicil: formal amendment to existing will. Must meet same formality requirements (witnessed, signed). Used for minor changes (updating executor, changing specific bequest). Multiple codicils become confusing—if significant changes needed, execute new will. Modern practice often favors new wills over codicils because drafting costs have decreased.'
@@ -59,8 +59,8 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     options: [
       'A) Federal tax benefits',
       'B) Documents are accessible when needed, even if the physical copy is unavailable in an emergency',
+      'D) Legal validity',
       'C) Automatic renewal',
-      'D) Legal validity'
     ],
     correctAnswer: 1,
     explanation: 'Advance directive registries (state or hospital-based): electronic storage accessible to medical providers. Helpful when: away from home, original documents not readily available, emergency situations. Doesn\'t replace having copies with family/agent. Some states offer official registries; hospitals may flag availability in patient records.'
@@ -77,12 +77,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A domestic asset protection trust (DAPT) allows:',
     options: [
-      'A) Complete protection from all creditors',
       'B) Self-settled trusts with some creditor protection in states that permit them, though with limitations and uncertainty',
+      'A) Complete protection from all creditors',
+      'D) Federal recognition',
       'C) Unlimited funding without transfer tax',
-      'D) Federal recognition'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'DAPTs: about 20 states allow trusts where the grantor is a beneficiary yet assets have some creditor protection. Requirements typically: independent trustee, irrevocable, discretionary distributions, statutory waiting period. Limitations: not respected in all courts, may not protect against existing creditors or certain claims, transfer may be fraudulent conveyance.'
   },
   {
@@ -96,12 +96,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A pet trust provides:',
     options: [
+      'D) Only informal arrangements',
       'A) Income to pets',
       'B) Legally enforceable arrangements for pet care with funds designated for their benefit and a trustee to oversee',
       'C) Tax deductions for pet expenses',
-      'D) Only informal arrangements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Pet trusts: recognized in all 50 states. Fund care for pets after owner\'s death or incapacity. Name caregiver (receives stipend), trustee (manages funds), and remainder beneficiary. Define care standards, vet care level, and living arrangements. Amount should be reasonable—courts can reduce excessive funding. Without trust, no legal enforcement.'
   },
   {
@@ -116,11 +116,11 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     question: 'Incentive trusts condition distributions on:',
     options: [
       'A) Age only',
+      'D) Trustee discretion only',
       'B) Beneficiaries meeting specified goals such as education completion, employment, sobriety, or matching earned income',
       'C) Investment performance',
-      'D) Trustee discretion only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Incentive trusts tie distributions to behavior: matching earned income, staying employed, graduating college, maintaining sobriety, performing community service. Concerns: may be too rigid, difficult to administer fairly, can inhibit entrepreneurship or caregiving, conditions deemed unreasonable may be unenforceable. Needs trustee discretion for flexibility.'
   },
   // EST-3: Transfer Techniques
@@ -136,11 +136,11 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     question: 'An installment sale to an intentionally defective grantor trust (IDGT):',
     options: [
       'A) Creates immediate capital gains',
+      'D) Only works with real estate',
       'B) Freezes asset value for estate tax while transferring growth, with no gain recognized due to grantor trust status',
       'C) Requires court approval',
-      'D) Only works with real estate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Installment sale to IDGT: sell appreciated asset to grantor trust for installment note. No gain on sale (grantor trust = you\'re selling to yourself for income tax). Interest paid comes back to grantor. Asset growth transfers tax-free. Estate frozen at note value. Complex—requires seed gift, reasonable interest rate, and proper structuring.'
   },
   {
@@ -154,12 +154,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A private annuity arrangement:',
     options: [
-      'A) Is commonly used for estate planning',
       'B) Transfers property for unsecured lifetime annuity payments but has fallen out of favor due to tax rule changes and risks',
+      'D) Works like commercial annuities',
+      'A) Is commonly used for estate planning',
       'C) Provides guaranteed payments',
-      'D) Works like commercial annuities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Private annuity: transfer property for unsecured lifetime payments from buyer (often family member). Was used to spread gain and remove appreciation. 2006 IRS regulations eliminated tax deferral benefits. Risks: buyer default (no security), seller outlives expectancy, buyer\'s other creditors. Largely replaced by SCINs and installment sales to GRATs/IDGTs.'
   },
   {
@@ -173,12 +173,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A self-canceling installment note (SCIN) differs from a standard installment note because:',
     options: [
-      'A) It cannot be canceled',
       'B) It cancels at seller\'s death (no remaining payments owed), but requires a risk premium—higher interest or purchase price',
+      'D) It\'s for business use only',
+      'A) It cannot be canceled',
       'C) Buyer benefits at death',
-      'D) It\'s for business use only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SCIN: installment note that terminates at seller\'s death—remaining balance is canceled, not owed. Advantage: if seller dies during note term, nothing enters estate. Cost: must have risk premium (higher interest or payment). If seller outlives note, no estate benefit. Works best when seller has reduced life expectancy (but actuarial tables used).'
   },
   // EST-4: Beneficiary Designations
@@ -193,10 +193,10 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A "per stirpes" beneficiary designation means:',
     options: [
-      'A) Equal division among all descendants',
+      'D) Spouse receives everything',
       'B) A deceased beneficiary\'s share passes to their descendants rather than being redistributed to other beneficiaries',
+      'A) Equal division among all descendants',
       'C) Only named persons receive benefits',
-      'D) Spouse receives everything'
     ],
     correctAnswer: 1,
     explanation: 'Per stirpes ("by roots"): if beneficiary predeceases, their share goes to their descendants. Example: leave to 3 children per stirpes—if one dies, their children split that 1/3. Per capita: deceased beneficiary\'s share goes to other living beneficiaries. "Per capita at each generation" divides at each level. Specify desired outcome clearly in designations.'
@@ -212,10 +212,10 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Beneficiary designations should be reviewed after:',
     options: [
-      'A) Only at retirement',
+      'D) Only with new accounts',
       'B) Marriage, divorce, birth of children, death of beneficiary, or any significant life event affecting intended disposition',
+      'A) Only at retirement',
       'C) Never once set',
-      'D) Only with new accounts'
     ],
     correctAnswer: 1,
     explanation: 'Review beneficiary designations after: marriage/divorce (ex may still be named), new child/grandchild, beneficiary death, moving to new state (community property implications), estate plan changes, income/asset changes affecting strategy. Annual reviews are best practice. Outdated designations are common and cause unintended results.'
@@ -231,12 +231,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Naming a charity as beneficiary of a retirement account:',
     options: [
-      'A) Creates taxable income',
       'B) Maximizes the gift value since neither estate nor charity pays income tax on the distribution',
+      'A) Creates taxable income',
+      'D) Requires IRS approval',
       'C) Reduces estate tax deduction',
-      'D) Requires IRS approval'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IRA/401(k) to charity: IRD (income in respect of decedent) normally taxable to beneficiaries isn\'t taxed when paid to tax-exempt charity. Estate gets charitable deduction. Leaves "tax-free" assets (Roth, step-up property) to family initially. Charity may be contingent beneficiary if family disclaims. Efficient way to fulfill charitable goals.'
   },
   // EST-5: Advanced Topics
@@ -251,12 +251,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Estate tax portability allows:',
     options: [
-      'A) Transfer tax exemption to transfer between states',
       'B) A surviving spouse to use their deceased spouse\'s unused exemption by filing a timely estate return electing portability',
+      'A) Transfer tax exemption to transfer between states',
+      'D) Avoiding all estate taxes',
       'C) Gifting between spouses during life',
-      'D) Avoiding all estate taxes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Portability: surviving spouse can use deceased spouse\'s unused exemption (DSUE). Must file estate tax return within 9 months (or with extension) electing portability—even if no tax due. Only last deceased spouse\'s DSUE available. Simpler than credit shelter trust but doesn\'t protect growth or multiple remarriages. Often used with trusts together.'
   },
   {
@@ -268,15 +268,15 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     subtopic: 'IRC 6166 Election',
     difficulty: 'hard',
     skillLevel: 'Remembering and Understanding',
-    question: 'IRC Section 6166 allows:',
+    question: 'An estate consists primarily of a closely held business valued at $5 million, with limited liquid assets. Which benefit does IRC Section 6166 provide to the executor?',
     options: [
-      'A) Avoidance of estate tax',
-      'B) Deferral of estate tax on closely held business interests through installment payments over 14 years with initial interest-only period',
-      'C) Immediate full payment required',
-      'D) Only for public companies'
+      'Complete exemption from estate tax for closely held business interests',
+      'Deferral of estate tax payments attributable to the business interest over up to 14 years, with interest-only payments for the first 4 years',
+      'Authority to sell the business interest tax-free to pay estate taxes',
+      'Permission to discount the business value by 40% for estate tax purposes',
     ],
     correctAnswer: 1,
-    explanation: 'Section 6166: if closely held business is >35% of estate, can elect to defer tax on business portion. Interest-only for 4 years, then principal+interest over 10 years. Special 2% rate on first $1.75M of tax (indexed). Lien placed on property. Acceleration triggers if business is sold or disposed. Complex rules—careful planning required.'
+    explanation: 'IRC Section 6166 allows estates with closely held business interests exceeding 35% of the adjusted gross estate to defer the estate tax attributable to the business over up to 14 years (4 years interest-only, then 10 years of principal and interest). This prevents forced liquidation of family businesses.',
   },
   {
     id: 'CFP-EST-B8-015',
@@ -290,11 +290,11 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     question: 'When federal and state estate tax exemptions differ significantly:',
     options: [
       'A) Only federal planning matters',
+      'D) Ignore state tax',
       'B) "Credit shelter" trusts must be carefully structured to avoid inadvertently triggering state tax while sheltering federal exemption',
       'C) State tax is deductible',
-      'D) Ignore state tax'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'With federal exemption at ~$13M but state exemptions often $1-6M, funding a credit shelter trust at federal exemption could trigger unnecessary state tax. Solutions: formula clauses, disclaimer funding, state-only QTIP trusts, portability for federal + trust for state. Must coordinate federal and state planning—what\'s optimal for one may be poor for another.'
   },
   // Additional Topics
@@ -309,12 +309,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A trust protector\'s role typically includes:',
     options: [
+      'D) Beneficiary distributions',
       'A) Day-to-day trust administration',
       'B) Authority to modify the trust, change trustees, or adapt to changing laws without court involvement',
       'C) Managing investments',
-      'D) Beneficiary distributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Trust protector: third party with powers beyond trustee, often including: removing/replacing trustees, modifying terms for tax law changes, changing situs, converting to grantor trust, adjusting distributions. Useful for long-term trusts that must adapt over decades. Powers should be carefully defined. Common in dynasty trusts and offshore planning.'
   },
   {
@@ -328,12 +328,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A spendthrift clause in a trust:',
     options: [
-      'A) Limits trust investments',
       'B) Prevents beneficiaries from assigning interests and protects trust assets from beneficiaries\' creditors before distribution',
+      'D) Accelerates distributions',
+      'A) Limits trust investments',
       'C) Reduces trustee fees',
-      'D) Accelerates distributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Spendthrift clause: beneficiary cannot voluntarily transfer interest, and creditors cannot reach trust assets before distribution. Once distributed to beneficiary, protection ends. Exceptions may exist: child support, alimony, IRS claims, self-settled trusts. Standard in most trusts. Doesn\'t protect against beneficiary\'s own actions with distributed funds.'
   },
   {
@@ -347,10 +347,10 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A "net gift" arrangement where the donee pays the gift tax:',
     options: [
-      'A) Eliminates gift tax',
+      'D) Is prohibited by IRS',
       'B) Reduces the net taxable gift since tax paid is deducted from value, but if gift tax exceeds donor\'s basis, there may be gain recognition',
+      'A) Eliminates gift tax',
       'C) Always creates income',
-      'D) Is prohibited by IRS'
     ],
     correctAnswer: 1,
     explanation: 'Net gift: donee agrees to pay gift tax. Gift value is property FMV minus tax. If tax paid exceeds donor\'s basis in property, donor recognizes gain (Diedrich v. Commissioner). Strategy: reduces gift value (net of tax), useful when donor is cash-poor. Complex calculation—tax on net gift requires iterative calculation since tax depends on net value.'
@@ -366,10 +366,10 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Transfer on death (TOD) and payable on death (POD) designations:',
     options: [
-      'A) Are governed by wills',
+      'D) Only apply to bank accounts',
       'B) Pass assets directly to named beneficiaries outside probate but must be coordinated with overall estate plan',
+      'A) Are governed by wills',
       'C) Require court approval',
-      'D) Only apply to bank accounts'
     ],
     correctAnswer: 1,
     explanation: 'TOD (securities, real estate in some states) and POD (bank accounts) transfer directly to named beneficiaries at death—no probate. Advantage: simplicity, speed. Risk: may not reflect current wishes if not updated, doesn\'t provide control (lump sum to beneficiary), may contradict will or trust planning. Must be coordinated with overall plan.'
@@ -385,12 +385,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The IRS "anti-clawback" regulation regarding the 2017 exemption increase provides:',
     options: [
-      'A) Gifts may be recaptured at death',
       'B) Gifts made using the higher exemption won\'t be subject to additional estate tax if exemption decreases at death',
+      'D) Exemption cannot change',
+      'A) Gifts may be recaptured at death',
       'C) All lifetime gifts are taxable at death',
-      'D) Exemption cannot change'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Anti-clawback rules (final regs 2019): if you use the higher exemption (through 2025) for lifetime gifts, and exemption is lower at death, you won\'t be penalized. Example: gift using $12M exemption, die with $6M exemption—estate tax calculation uses higher of exemption used or available. Creates "use it or lose it" planning opportunity before sunset.'
   },
   {
@@ -404,12 +404,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A no-contest (in terrorem) clause:',
     options: [
-      'A) Guarantees no challenges',
       'B) Threatens disinheritance if a beneficiary challenges the will or trust, though enforcement varies by state',
+      'A) Guarantees no challenges',
+      'D) Is always enforceable',
       'C) Eliminates all litigation',
-      'D) Is always enforceable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'No-contest clause: beneficiary who challenges the document risks losing their bequest. Effectiveness varies by state—some enforce strictly, others allow challenges with "probable cause." Most effective when challenger has significant bequest at risk. May deter frivolous challenges but doesn\'t eliminate legitimate ones. One of many tools to reduce litigation.'
   },
   {
@@ -425,8 +425,8 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     options: [
       'A) Having multiple beneficiaries',
       'B) Assigning investment, distribution, or administrative functions to different parties or advisors, with relieved liability for directed trustee',
+      'D) Limiting to one asset type',
       'C) Requiring court direction',
-      'D) Limiting to one asset type'
     ],
     correctAnswer: 1,
     explanation: 'Directed trusts: split fiduciary duties. Investment direction trust: family advisor directs investments, trust company handles administration. Distribution advisor: family member or committee decides distributions. Directed trustee follows instructions and is relieved of liability for those decisions. Allows expertise/family control where appropriate. Delaware, South Dakota popular jurisdictions.'
@@ -444,8 +444,8 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     options: [
       'A) Unlimited contributions',
       'B) Contributing up to 5 years of annual exclusions at once ($90,000/$180,000 for couples in 2024) without using lifetime exemption',
+      'D) Avoiding all gift tax',
       'C) Tax-free withdrawals for any purpose',
-      'D) Avoiding all gift tax'
     ],
     correctAnswer: 1,
     explanation: '529 superfunding: elect to treat gift as made over 5 years. 5 × $18K = $90K per donor ($180K married). File gift return electing 5-year treatment. If donor dies within 5 years, pro-rata portion returns to estate. Removes growth from estate immediately. Additional gifts to same beneficiary during 5 years use exemption. Powerful for grandparent planning.'
@@ -461,12 +461,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When beneficiary designation forms don\'t address simultaneous death:',
     options: [
+      'D) Courts decide case-by-case',
       'A) Assets go to the state',
       'B) State law or the Uniform Simultaneous Death Act typically treats the owner as surviving, passing to contingent beneficiary',
       'C) Primary beneficiary\'s estate receives assets',
-      'D) Courts decide case-by-case'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Simultaneous death: if order of death can\'t be determined, Uniform Simultaneous Death Act typically treats owner as surviving beneficiary. Assets pass to contingent beneficiary (if named) or estate (if not). Some designation forms allow specifying survival period (survive by 30 days). Without contingent, assets may pass unintentionally.'
   },
   {
@@ -480,12 +480,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Family limited partnerships (FLPs) for estate planning:',
     options: [
+      'D) Only work with real estate',
       'A) Are automatically approved by IRS',
       'B) Can provide valuation discounts for transferred interests, but require legitimate business purpose and proper operation to withstand scrutiny',
       'C) Eliminate all estate taxes',
-      'D) Only work with real estate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'FLPs: parents contribute assets, transfer LP interests to children at discounted values (lack of control, lack of marketability). Discounts of 20-35% historically. IRS challenges: must have legitimate business purpose beyond tax savings, proper formalities (meetings, separate accounts), no deathbed transfers, no personal use assets. Estate of Strangi cases provide guidance.'
   }
 ];

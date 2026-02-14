@@ -4277,7 +4277,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-II-010',
+    id: 'AUD-II-110',
     section: 'AUD',
     title: "Components of Internal Control",
     description: "Master the five COSO internal control components",
@@ -4363,7 +4363,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-II-011',
+    id: 'AUD-II-111',
     section: 'AUD',
     title: "IT General and Application Controls",
     description: "Understand IT controls in an automated environment",
@@ -4458,7 +4458,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-II-012',
+    id: 'AUD-II-112',
     section: 'AUD',
     title: "Materiality in Planning and Performing the Audit",
     description: "Determine planning and performance materiality levels",
@@ -4632,7 +4632,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-III-013',
+    id: 'AUD-III-113',
     section: 'AUD',
     title: "Audit Sampling Fundamentals",
     description: "Master statistical and non-statistical sampling methods",
@@ -4713,7 +4713,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-III-014',
+    id: 'AUD-III-114',
     section: 'AUD',
     title: "Substantive Analytical Procedures",
     description: "Use analytics as substantive evidence",
@@ -4786,7 +4786,7 @@ export const audLessons: Lesson[] = [
   // AUD: ADDITIONAL AUDIT TOPICS
   // =============================================
   {
-    id: 'AUD-IV-012',
+    id: 'AUD-IV-112',
     section: 'AUD',
     title: "Government Auditing Standards (Yellow Book)",
     description: "Understand GAGAS requirements for government audits",
@@ -4856,7 +4856,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-IV-013',
+    id: 'AUD-IV-113',
     section: 'AUD',
     title: "Single Audit (Uniform Guidance)",
     description: "Understand single audit requirements for federal award recipients",
@@ -5707,7 +5707,7 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-III-015',
+    id: 'AUD-III-115',
     section: 'AUD',
     title: "Audit Evidence Requirements",
     description: "Master sufficiency and appropriateness of evidence",

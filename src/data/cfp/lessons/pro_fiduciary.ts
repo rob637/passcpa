@@ -11,7 +11,7 @@ import { CFPLesson } from '../../../types/cfp';
 export const PRO_FIDUCIARY_LESSONS: CFPLesson[] = [
   {
     id: 'PRO-L009',
-    domain: 'Professional Conduct and Regulation',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'Fiduciary Duty in Practice',
     order: 9,
@@ -157,7 +157,7 @@ If client's need for guaranteed income outweighs cost and liquidity concerns, Pr
   },
   {
     id: 'PRO-L010',
-    domain: 'Professional Conduct and Regulation',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'Client Data Gathering and Analysis',
     order: 10,
@@ -335,7 +335,7 @@ Gap = What additional savings needed?
   },
   {
     id: 'PRO-L011',
-    domain: 'Professional Conduct and Regulation',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'Presenting Recommendations and Implementation',
     order: 11,
@@ -499,7 +499,7 @@ For significant decisions, have client acknowledge:
   },
   {
     id: 'PRO-L012',
-    domain: 'Professional Conduct and Regulation',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'Monitoring and Updating the Plan',
     order: 12,

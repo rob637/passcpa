@@ -77,8 +77,8 @@ describe('AI Service - Quality Tests', () => {
       it('should provide generic response for unknown topics', async () => {
         const response = await generateAIResponse('random accounting topic xyz', 'explain');
         
-        expect(response).toContain('Let me help you');
-        expect(response.toLowerCase()).toContain('specify');
+        expect(response).toContain('random accounting topic xyz');
+        expect(response.toLowerCase()).toContain('question');
       });
     });
 

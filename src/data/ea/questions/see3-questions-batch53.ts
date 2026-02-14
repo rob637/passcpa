@@ -20,12 +20,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'The assessment statute is extended to 6 years when:',
     options: [
-      'The return contains any error',
       'Gross income is understated by more than 25%',
+      'The return contains any error',
       'The taxpayer files late',
-      'There is a math error on the return'
+      'There is a math error on the return',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The statute extends to 6 years if there\'s an omission of gross income exceeding 25% of the gross income stated on the return. This applies to substantial omissions, not mere understatements of tax.',
     reference: 'IRC §6501(e)'
   },
@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'Under the IRS repetitive audit policy, a taxpayer can request discontinuance of an audit if:',
     options: [
-      'They have been audited at least once',
       'The same items were examined in either of the two preceding years with no change or small change',
+      'They have been audited at least once',
       'They file an extension',
-      'More than 3 years have passed since the last audit'
+      'More than 3 years have passed since the last audit',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The repetitive audit policy allows taxpayers to request discontinuance if the same issues were examined in either of the two prior years and resulted in no change or a small change. The taxpayer should notify the examiner.',
     reference: 'IRM 4.10.2.7'
   },
@@ -60,10 +60,10 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under IRC §7491, the burden of proof may shift to the IRS if the taxpayer:',
     options: [
-      'Simply files a return',
-      'Introduces credible evidence, maintains records, cooperates, and meets substantiation requirements',
       'Pays the proposed assessment',
-      'Hires an enrolled agent'
+      'Introduces credible evidence, maintains records, cooperates, and meets substantiation requirements',
+      'Simply files a return',
+      'Hires an enrolled agent',
     ],
     correctAnswer: 1,
     explanation: 'Burden shifts to IRS if taxpayer: (1) introduces credible evidence, (2) complies with substantiation and record-keeping requirements, (3) cooperates with IRS requests, (4) meets net worth limits if applicable.',
@@ -80,10 +80,10 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'The civil fraud penalty under IRC §6663 is:',
     options: [
-      '20% of the underpayment',
-      '25% of the underpayment',
       '50% of the underpayment',
-      '75% of the portion of underpayment due to fraud'
+      '25% of the underpayment',
+      '20% of the underpayment',
+      '75% of the portion of underpayment due to fraud',
     ],
     correctAnswer: 3,
     explanation: 'The civil fraud penalty is 75% of the portion of underpayment attributable to fraud. The IRS has the burden of proving fraud by clear and convincing evidence. This replaces the accuracy-related penalty.',
@@ -100,12 +100,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Remembering',
     question: 'An Identity Protection PIN (IP PIN) is:',
     options: [
-      'The taxpayer\'s Social Security Number',
       'A 6-digit number assigned by IRS to prevent fraudulent returns',
       'A password for accessing IRS online accounts',
-      'The same as an EFIN'
+      'The taxpayer\'s Social Security Number',
+      'The same as an EFIN',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'An IP PIN is a 6-digit number assigned to eligible taxpayers to prevent identity theft. It must be included on tax returns. New IP PINs are issued annually. Taxpayers can opt-in through IRS.gov.',
     reference: 'IP PIN FAQs'
   },
@@ -121,12 +121,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'A practitioner who learns their client did not file required returns for prior years must:',
     options: [
+      'Advise the client of the consequences and options for correction',
       'File the returns immediately',
       'Report the client to the IRS',
-      'Advise the client of the consequences and options for correction',
-      'Withdraw from representation'
+      'Withdraw from representation',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'The practitioner must advise the client of the failure, the consequences, and the need to correct. The practitioner cannot file without client consent and cannot report the client (confidentiality). May withdraw if client refuses to comply.',
     reference: 'Circular 230 §10.21'
   },
@@ -142,11 +142,11 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     question: 'If a practitioner discovers an error on a previously filed return, the practitioner must:',
     options: [
       'Immediately file an amended return',
-      'Notify the IRS directly',
       'Promptly advise the client of the error and its consequences',
-      'Ignore the error if not material'
+      'Notify the IRS directly',
+      'Ignore the error if not material',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Circular 230 §10.21 requires the practitioner to promptly notify the client of the error, omission, or noncompliance and the consequences. The practitioner cannot amend without client consent.',
     reference: 'Circular 230 §10.21'
   },
@@ -181,10 +181,10 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'A practitioner may charge:',
     options: [
-      'A fee based solely on findings or results',
       'Only hourly fees',
+      'A fee based solely on findings or results',
       'Contingent fees only in limited circumstances defined by Circular 230',
-      'A percentage of the refund in all cases'
+      'A percentage of the refund in all cases',
     ],
     correctAnswer: 2,
     explanation: 'Circular 230 §10.27 limits contingent fees to: (1) matters before the IRS except original return preparation, (2) IRS examination or challenge, (3) judicial proceedings. Cannot charge contingent fee for original return preparation.',
@@ -201,10 +201,10 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Remembering',
     question: 'The third-party designee checkbox on Form 1040 allows the designee to:',
     options: [
-      'Represent the taxpayer in an audit',
       'Receive refund checks',
+      'Represent the taxpayer in an audit',
       'Discuss the return with the IRS and receive account information',
-      'File amended returns'
+      'File amended returns',
     ],
     correctAnswer: 2,
     explanation: 'The third-party designee can respond to certain IRS notices and discuss the return processing but cannot represent in audits or make changes. Authority expires when the current return is processed or after the due date of the following year\'s return.',
@@ -242,10 +242,10 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'When a taxpayer files bankruptcy, the automatic stay:',
     options: [
-      'Discharges all tax debts immediately',
-      'Stops most IRS collection activity but allows assessment and demand',
       'Prevents the IRS from auditing the taxpayer',
-      'Accelerates refund processing'
+      'Stops most IRS collection activity but allows assessment and demand',
+      'Discharges all tax debts immediately',
+      'Accelerates refund processing',
     ],
     correctAnswer: 1,
     explanation: 'The automatic stay stops most collection (levy, lien filing, seizure, collection lawsuits) but IRS can still assess tax, issue deficiency notices, demand payment, and conduct audits. Stay violation can result in sanctions.',
@@ -262,12 +262,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a Trust Fund Recovery Penalty case, "responsible person" typically includes:',
     options: [
-      'All employees',
       'Officers, directors, and employees with authority over financial decisions',
       'Only the company president',
-      'Anyone on the payroll'
+      'All employees',
+      'Anyone on the payroll',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Responsible persons include those with authority to: decide which creditors to pay, sign checks, or control company finances. Multiple persons can be responsible. Willfulness is also required (knew taxes were unpaid and chose to pay others).',
     reference: 'IRC §6672'
   },
@@ -282,12 +282,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Remembering',
     question: 'The application fee for an Offer in Compromise is:',
     options: [
-      '$100',
       '$205',
       '$500',
-      'No fee if low-income'
+      '$100',
+      'No fee if low-income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The OIC application fee is $205, plus initial payment (20% lump sum or first monthly payment). Low-income taxpayers (at or below 250% of poverty) are exempt from both the fee and initial payment. Use Form 656.',
     reference: 'Form 656 Instructions'
   },
@@ -303,11 +303,11 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     question: 'A Doubt as to Liability OIC is appropriate when:',
     options: [
       'The taxpayer cannot afford to pay',
-      'There is a genuine dispute regarding the existence or amount of the correct tax',
       'The taxpayer is experiencing economic hardship',
-      'The taxpayer wants to negotiate a lower payment'
+      'There is a genuine dispute regarding the existence or amount of the correct tax',
+      'The taxpayer wants to negotiate a lower payment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Doubt as to Liability OICs are for situations where the tax liability is in question (e.g., computational errors, different legal interpretations, evidence not considered). Requires showing why the assessment may be incorrect.',
     reference: 'IRM 5.8.2'
   },
@@ -324,9 +324,9 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     question: 'Form 1040-X should be filed:',
     options: [
       'Electronically for current and up to 2 prior years',
-      'Always on paper by mail',
       'Through the IRS Online Account only',
-      'Only with a tax professional'
+      'Always on paper by mail',
+      'Only with a tax professional',
     ],
     correctAnswer: 0,
     explanation: 'Form 1040-X can be e-filed for the current year and up to 3 prior tax years. Previously paper-only, e-filing was expanded. Some amended returns still require paper filing (e.g., certain elections).',
@@ -343,12 +343,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'The penalty for failure to file a correct information return (Form 1099) is:',
     options: [
-      'A flat $100 per return',
       '$60-$330 per return depending on when corrected, with maximums',
+      'A flat $100 per return',
       '$500 per return only if intentional',
-      'No penalty for first offense'
+      'No penalty for first offense',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Penalties are tiered: $60 if corrected within 30 days, $130 if corrected by August 1, $330 after August 1. Intentional disregard is $660 with no maximum. Small business maximums apply. Penalty can be waived for reasonable cause.',
     reference: 'IRC §6721'
   },
@@ -363,12 +363,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Remembering',
     question: 'A Preparer Tax Identification Number (PTIN) must be:',
     options: [
-      'Renewed every 5 years',
       'Renewed annually',
+      'Renewed every 5 years',
       'Obtained once and never renewed',
-      'Applied for when the preparer retires'
+      'Applied for when the preparer retires',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'PTINs must be renewed annually during the renewal period. Tax return preparers must have a valid PTIN to prepare federal tax returns for compensation. The fee is currently around $36 (renewal) or $46 (new).',
     reference: 'Reg. §1.6109-2'
   },
@@ -403,12 +403,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'A penalty for promoting abusive tax shelters under IRC §6700 is:',
     options: [
-      '$1,000 per shelter',
       'The greater of $1,000 or 50% of gross income from the activity',
+      '$1,000 per shelter',
       'Only criminal penalties apply',
-      '10% of the tax benefit claimed'
+      '10% of the tax benefit claimed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The §6700 penalty for promoting abusive tax shelters is the greater of $1,000 or 50% of the gross income derived from the activity. Injunctions and criminal penalties may also apply for abusive shelter promotion.',
     reference: 'IRC §6700'
   },
@@ -423,12 +423,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'The Taxpayer Advocate Service can help when:',
     options: [
-      'The taxpayer wants a lower tax bill',
       'There is a hardship or systemic problem, or IRS procedures are not working',
+      'The taxpayer wants a lower tax bill',
       'The taxpayer wants to audit the IRS',
-      'The taxpayer needs legal representation in court'
+      'The taxpayer needs legal representation in court',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'TAS assists when: IRS processes are not working as intended, taxpayer is facing significant hardship (financial difficulty, health issues), or systemic issues affect multiple taxpayers. Form 911 is used to request assistance.',
     reference: 'IRC §7803(c)'
   },
@@ -443,10 +443,10 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'The IRS can issue a summons to:',
     options: [
-      'Only the taxpayer',
-      'Any person who may have relevant documents or testimony',
       'Only banks and financial institutions',
-      'Only after obtaining court approval'
+      'Any person who may have relevant documents or testimony',
+      'Only the taxpayer',
+      'Only after obtaining court approval',
     ],
     correctAnswer: 1,
     explanation: 'The IRS can summons any person who may have information relevant to an investigation, including third parties (banks, employers, accountants). The summons must be issued during an investigation and in good faith.',
@@ -461,16 +461,16 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     subtopic: 'Continuing Education',
     difficulty: 'medium',
     skillLevel: 'Remembering',
-    question: 'Enrolled agents must complete how many hours of continuing education per enrollment cycle?',
+    question: 'An enrolled agent must complete continuing education (CE) requirements to maintain their enrollment. What are the CE requirements for the current enrollment cycle?',
     options: [
-      '24 hours',
-      '48 hours',
-      '72 hours, including 2 hours of ethics',
-      '120 hours'
+      '72 hours of continuing education over the 3-year enrollment cycle, with a minimum of 16 hours per year including 2 hours of ethics/professional conduct each year',
+      '40 hours per year with no minimum annual requirement',
+      '24 hours total over the 3-year cycle with no specific subject requirements',
+      '120 hours per year including 30 hours of ethics',
     ],
-    correctAnswer: 2,
-    explanation: 'EAs must complete 72 hours of CE per 3-year enrollment cycle, with a minimum of 16 hours per year and 2 hours of ethics per year. CE providers must be IRS-approved.',
-    reference: 'Circular 230 §10.6'
+    correctAnswer: 0,
+    explanation: 'Under Circular 230 §10.6, enrolled agents must complete 72 hours of CE during each 3-year enrollment cycle. The minimum annual requirement is 16 hours per enrollment year, and 2 of those hours must be in ethics or professional conduct. CE must be obtained from IRS-approved providers, and records must be retained for 4 years following the renewal period.',
+    reference: 'Circular 230 §10.6',
   },
   {
     id: 'see3-624',
@@ -484,11 +484,11 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     question: 'EA enrollment must be renewed:',
     options: [
       'Every year',
-      'Every 3 years',
       'Every 5 years',
-      'Every 10 years'
+      'Every 3 years',
+      'Every 10 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Enrolled agent status must be renewed every 3 years by submitting Form 8554 and meeting the continuing education requirements. The renewal period is based on the last digit of the EA\'s SSN.',
     reference: 'Circular 230 §10.6(d)'
   },
@@ -503,12 +503,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Application',
     question: 'The first step in appealing an IRS penalty is usually to:',
     options: [
+      'Contact the Taxpayer Advocate',
       'File a lawsuit in Tax Court',
       'Request abatement from the IRS employee who assessed the penalty',
-      'Contact the Taxpayer Advocate',
-      'File Form 911'
+      'File Form 911',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Initially, request penalty abatement from the IRS through the campus or employee who assessed it (reasonable cause request). If denied, appeals are available through the Independent Office of Appeals or judicial forums.',
     reference: 'IRM 20.1.1.3'
   },
@@ -523,12 +523,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Analysis',
     question: 'An NFTL withdrawal is different from a release in that:',
     options: [
+      'A release prevents future liens',
       'They are the same thing',
       'A withdrawal removes the public record while a release certifies the lien has been satisfied',
-      'A release prevents future liens',
-      'A withdrawal extinguishes the tax debt'
+      'A withdrawal extinguishes the tax debt',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Release happens when the tax is paid or becomes legally unenforceable (removes lien). Withdrawal removes the NFTL from public record as if it was never filed (credit helps), but the underlying lien may remain.',
     reference: 'IRC §6323(j)'
   },
@@ -541,16 +541,16 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     subtopic: 'Frivolous Return Penalty',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: 'The penalty for filing a frivolous return is:',
+    question: 'A taxpayer files a return taking a position that \'taxes are voluntary\' and refuses to report income. What penalty may the IRS assess for this type of return?',
     options: [
-      '$500',
-      '$1,000',
-      '$5,000',
-      '$10,000'
+      '$5,000 frivolous return penalty under IRC §6702',
+      '$500 failure to file penalty',
+      '75% civil fraud penalty on the underpayment',
+      'No penalty — the taxpayer has a right to take any position on a return',
     ],
-    correctAnswer: 2,
-    explanation: 'The frivolous return penalty is $5,000 per return or submission. A frivolous return contains a position the IRS has identified as frivolous (e.g., wages aren\'t income, filing is voluntary) or is filed to delay or impede administration.',
-    reference: 'IRC §6702'
+    correctAnswer: 0,
+    explanation: 'IRC §6702 imposes a $5,000 penalty for filing a frivolous return. A return is frivolous if it does not contain enough information to determine tax liability or contains a position the IRS has identified as frivolous (such as claiming taxes are voluntary). This penalty is in addition to any other applicable penalties. The IRS publishes a list of known frivolous positions in Notice 2010-33.',
+    reference: 'IRC §6702',
   },
   {
     id: 'see3-628',
@@ -583,12 +583,12 @@ export const SEE3_QUESTIONS_BATCH53: Question[] = [
     skillLevel: 'Remembering',
     question: 'The Annual Filing Season Program (AFSP) provides:',
     options: [
-      'Unlimited representation rights',
       'Limited representation rights before revenue agents, customer service, and the Taxpayer Advocate',
       'The ability to represent in Tax Court',
-      'Criminal investigation privileges'
+      'Unlimited representation rights',
+      'Criminal investigation privileges',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'AFSP participants have limited representation rights - they can represent clients before revenue agents, customer service representatives, and TAS, but only for returns they prepared. Full representation requires EA/CPA/attorney status.',
     reference: 'Rev. Proc. 2014-42'
   },

@@ -89,9 +89,11 @@ describe('Exam Configuration', () => {
       expect(CPA_SECTIONS.ISC.careerFit.length).toBeGreaterThan(0);
     });
 
-    it('should have BEC discipline section (2025 Blueprint)', () => {
+    it('should have BEC marked as retired (December 15, 2023)', () => {
       expect(CPA_SECTIONS.BEC).toBeDefined();
       expect(CPA_SECTIONS.BEC.type).toBe('discipline');
+      expect(CPA_SECTIONS.BEC.retired).toBe(true);
+      expect(CPA_SECTIONS.BEC.retiredDate).toBe('2023-12-15');
     });
   });
 
@@ -130,13 +132,13 @@ describe('Exam Configuration', () => {
       expect(CORE_SECTIONS).toEqual(['AUD', 'FAR', 'REG']);
     });
 
-    it('should have correct DISCIPLINE_SECTIONS (includes BEC before July 2026)', () => {
-      // DISCIPLINE_SECTIONS is dynamic based on date
-      // Before July 1, 2026: includes BEC
-      // After July 1, 2026: only BAR, ISC, TCP
+    it('should have correct DISCIPLINE_SECTIONS (BAR, ISC, TCP only)', () => {
+      // BEC was retired December 15, 2023
+      // Only BAR, ISC, TCP are valid discipline sections
       expect(DISCIPLINE_SECTIONS).toContain('BAR');
       expect(DISCIPLINE_SECTIONS).toContain('ISC');
       expect(DISCIPLINE_SECTIONS).toContain('TCP');
+      expect(DISCIPLINE_SECTIONS).not.toContain('BEC');
     });
 
     it('should have correct STRATEGY_SECTIONS', () => {

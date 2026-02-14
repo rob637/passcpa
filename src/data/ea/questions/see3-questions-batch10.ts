@@ -19,12 +19,12 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A continuous levy applies to:',
     options: [
-      'Bank accounts only',
       'Wages, salary, and certain federal payments',
+      'Business inventory',
+      'Bank accounts only',
       'Real property only',
-      'Business inventory'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A continuous levy attaches to wages, salary, and other income and continues until the liability is satisfied or released. In contrast, bank account levies are point-in-time and seize only funds on deposit when the levy is received.',
     reference: 'IRC §6331(e)',
   },
@@ -39,12 +39,12 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'An installment agreement will be defaulted if the taxpayer:',
     options: [
-      'Makes all payments on time',
       'Fails to make timely payments or fails to file or pay current taxes',
+      'Gets married',
+      'Makes all payments on time',
       'Changes their address',
-      'Gets married'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRS may default an installment agreement if the taxpayer misses payments, incurs new tax liabilities, fails to file required returns, or provides inaccurate financial information.',
     reference: 'IRC §6159(b)',
   },
@@ -59,10 +59,10 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Analysis',
     question: 'A Partial Payment Installment Agreement (PPIA) differs from a regular installment agreement because:',
     options: [
-      'No payments are required',
+      'It requires court approval',
       'Payments are based on ability to pay and may not fully satisfy the debt before the statute expires',
+      'No payments are required',
       'Interest does not accrue',
-      'It requires court approval'
     ],
     correctAnswer: 1,
     explanation: 'A PPIA allows taxpayers to pay less than the full amount owed through agreed payments based on financial ability. The payments may not fully satisfy the debt before the collection statute expires.',
@@ -80,11 +80,11 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     question: 'A discharge of property from a federal tax lien means:',
     options: [
       'The entire tax debt is released',
+      'The lien is transferred to another taxpayer',
       'Specific property is released from the lien while the lien continues on other property',
       'The taxpayer can no longer own property',
-      'The lien is transferred to another taxpayer'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A discharge releases specific property from the lien, often to allow a sale, while the lien remains attached to other property. This is different from a release which eliminates the entire lien.',
     reference: 'IRC §6325(b)',
   },
@@ -103,12 +103,12 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'An Information Document Request (IDR) during an audit:',
     options: [
+      'Is only issued in criminal cases',
       'Can be ignored without consequence',
       'Should be responded to within the time frame specified or negotiated',
       'Automatically ends the examination',
-      'Is only issued in criminal cases'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'An IDR requests specific documents or information during an examination. Timely response is important. Ignoring IDRs can result in the examiner using best information available and potentially adverse adjustments.',
     reference: 'IRS Publication 556',
   },
@@ -123,12 +123,12 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under Circular 230, a practitioner may not:',
     options: [
-      'Work with other practitioners',
       'Knowingly associate with a person who is suspended or disbarred from practice',
+      'Work with other practitioners',
+      'Advertise their services',
       'Represent multiple clients in unrelated matters',
-      'Advertise their services'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A practitioner may not knowingly accept assistance from, or assist, a person who is suspended or disbarred in matters constituting practice before the IRS.',
     reference: 'Circular 230 §10.24',
   },
@@ -145,8 +145,8 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     options: [
       'Simply disagrees with the law',
       'Had reasonable cause for the position and acted in good faith',
+      'Is a first-time filer',
       'Was unaware of the filing deadline',
-      'Is a first-time filer'
     ],
     correctAnswer: 1,
     explanation: 'The accuracy-related penalty does not apply if there is reasonable cause for the underpayment and the taxpayer acted in good faith. This requires an honest effort to comply with the law.',
@@ -165,8 +165,8 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     options: [
       'Binding on both parties',
       'A voluntary process where a neutral party helps resolve disputes',
+      'Only available for cases over $1 million',
       'Required before going to Tax Court',
-      'Only available for cases over $1 million'
     ],
     correctAnswer: 1,
     explanation: 'IRS mediation is a non-binding, voluntary process using a neutral mediator to facilitate discussion and help resolve disputes. It is available for issues already in Appeals.',
@@ -183,12 +183,12 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'The standard of diligence for a practitioner under Circular 230 means:',
     options: [
-      'Maximum effort regardless of cost to client',
       'Using reasonable diligence in determining correctness of representations made to the IRS',
+      'Completing work as quickly as possible',
+      'Maximum effort regardless of cost to client',
       'Delegating all work to assistants',
-      'Completing work as quickly as possible'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Practitioners must use due diligence in preparing, approving, and filing returns, documents, and other matters. This includes determining correctness of representations made to the IRS and clients.',
     reference: 'Circular 230 §10.22',
   },
@@ -204,11 +204,11 @@ export const SEE3_QUESTIONS_BATCH10: Question[] = [
     question: 'After an offer in compromise is accepted, the taxpayer must:',
     options: [
       'Never file another tax return',
+      'Report to the IRS monthly',
       'Remain in full compliance with filing and payment requirements for 5 years',
       'Pay additional amounts each year',
-      'Report to the IRS monthly'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'After OIC acceptance, taxpayers must comply with all filing and payment obligations for 5 years (or until the offer is paid in full, whichever is longer). Failure to comply can result in default and reinstatement of the original liability.',
     reference: 'Form 656; IRC §7122',
   },

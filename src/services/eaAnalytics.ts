@@ -1,107 +1,97 @@
 /**
  * EA Analytics Service
- * 
+ *
  * Comprehensive analytics tracking for EA (Enrolled Agent) exam preparation.
- * Tracks question attempts, study sessions, domain mastery, and exam readiness.
- * 
+ * Delegates common logic to analyticsCore.ts.
+ *
  * IRS SEE Exam Structure:
  * - Part 1: Individuals (100 questions, 3.5 hours)
  * - Part 2: Businesses (100 questions, 3.5 hours)
  * - Part 3: Representation (100 questions, 3.5 hours)
- * 
+ *
  * Scoring: 40-130 scale, 105 passing
  */
 
 import { EASectionId } from '../courses/ea/config';
+import {
+  type MasteryLevel,
+  type TrendDirection,
+  type ReadinessLevel,
+  type PerformanceTrend,
+  type SectionMastery,
+  type SectionConfig,
+  updateOverallStats,
+  updateSectionMastery,
+  processStudySession,
+  loadFromStorage,
+  saveToStorage,
+  serializeAnalytics as coreSerialize,
+  deserializeAnalytics as coreDeserialize,
+  buildOverview,
+  getAreaWeight,
+  DEFAULT_MASTERY_THRESHOLDS,
+} from './analyticsCore';
+
+export type { MasteryLevel, TrendDirection, ReadinessLevel, PerformanceTrend };
 
 // ============================================================================
-// Types and Interfaces
+// Types
 // ============================================================================
 
 export interface QuestionAttempt {
   questionId: string;
   part: EASectionId;
-  domain?: string; // e.g., 'SEE1-1', 'SEE2-2'
+  domain?: string;
   topic?: string;
   isCorrect: boolean;
-  timeSpent: number; // seconds
+  timeSpent: number;
   attemptedAt: Date;
-  irsFormRef?: string; // IRS form reference (e.g., "Form 1040")
+  irsFormRef?: string;
 }
 
 export interface StudySession {
   sessionId: string;
   date: Date;
-  duration: number; // minutes
+  duration: number;
   type: 'practice' | 'flashcards' | 'lessons' | 'simulation' | 'review';
   part?: EASectionId;
   questionsAttempted?: number;
 }
 
-export interface PartMastery {
+export interface PartMastery extends SectionMastery {
   part: EASectionId;
   partName: string;
-  questionsAttempted: number;
-  questionsCorrect: number;
-  accuracy: number;
-  masteryLevel: 'novice' | 'developing' | 'proficient' | 'expert';
-  trend: 'improving' | 'stable' | 'declining';
-  averageTimePerQuestion: number;
-  lastPracticed: Date | null;
   weakDomains: string[];
   strongDomains: string[];
   domainAccuracy: Record<string, number>;
 }
 
-export interface PerformanceTrend {
-  date: Date;
-  accuracy: number;
-  questionsCompleted: number;
-  studyMinutes: number;
-}
-
 export interface EAAnalytics {
   userId: string;
   lastUpdated: Date;
-  
-  // Overall stats
   totalQuestionsAttempted: number;
   totalQuestionsCorrect: number;
   overallAccuracy: number;
   averageTimePerQuestion: number;
-  
-  // Study engagement
   totalStudyMinutes: number;
   currentStreak: number;
   longestStreak: number;
   studyDays: number;
   lastStudyDate: Date | null;
-  
-  // Part breakdown
   partMastery: Record<EASectionId, PartMastery>;
-  
-  // Mock exam performance
   mockExamsTaken: number;
   mockExamScores: { part: EASectionId; score: number; date: Date }[];
   scaledScores: { part: EASectionId; score: number; date: Date }[];
   partPerformance: Record<EASectionId, { average: number; best: number; attempts: number }>;
-  
-  // Predictions
   estimatedPassProbability: Record<EASectionId, number>;
   estimatedScaledScore: Record<EASectionId, number>;
-  examReadiness: Record<EASectionId, 'not-ready' | 'getting-close' | 'ready' | 'well-prepared'>;
-  
-  // Recommendations
+  examReadiness: Record<EASectionId, ReadinessLevel>;
   recommendedFocusAreas: string[];
-  
-  // Trend tracking
   weeklyTrends: PerformanceTrend[];
   dailyTrends: PerformanceTrend[];
-  
-  // EA-specific metrics
-  circular230Knowledge: number; // 0-100 (critical for SEE3)
-  irsFormProficiency: number; // 0-100
-  taxLawCurrentness: number; // 0-100
+  circular230Knowledge: number;
+  irsFormProficiency: number;
+  taxLawCurrentness: number;
 }
 
 // ============================================================================
@@ -117,83 +107,94 @@ export const EA_PART_CONFIG: Record<EASectionId, { name: string; domains: { id: 
       { id: 'SEE1-3', name: 'Deductions and Credits', weight: 20.0 },
       { id: 'SEE1-4', name: 'Taxation', weight: 17.6 },
       { id: 'SEE1-5', name: 'Advising the Individual Taxpayer', weight: 12.9 },
-      { id: 'SEE1-6', name: 'Specialized Returns', weight: 12.9 },
+      { id: 'SEE1-6', name: 'Specialized Returns for Individuals', weight: 13.0 },
     ],
   },
   SEE2: {
     name: 'Businesses',
     domains: [
-      { id: 'SEE2-1', name: 'Business Entities', weight: 28.2 },
-      { id: 'SEE2-2', name: 'Business Financial Information', weight: 38.8 },
-      { id: 'SEE2-3', name: 'Specialized Returns for Businesses', weight: 32.9 },
+      { id: 'SEE2-1', name: 'Business Financial Information', weight: 33.5 },
+      { id: 'SEE2-2', name: 'Specialized Returns and Taxpayers', weight: 33.5 },
+      { id: 'SEE2-3', name: 'Specific Types of Business Financial Activities', weight: 33.0 },
     ],
   },
   SEE3: {
-    name: 'Representation',
+    name: 'Representation, Practices, and Procedures',
     domains: [
-      { id: 'SEE3-1', name: 'Practices and Procedures', weight: 25.9 },
-      { id: 'SEE3-2', name: 'Representation Before IRS (Circular 230)', weight: 17.6 },
-      { id: 'SEE3-3', name: 'Specific Areas of Representation', weight: 23.5 },
-      { id: 'SEE3-4', name: 'Filing Process', weight: 16.5 },
+      { id: 'SEE3-1', name: 'Practices and Procedures', weight: 27.0 },
+      { id: 'SEE3-2', name: 'Representation', weight: 30.0 },
+      { id: 'SEE3-3', name: 'Specific Areas of Representation', weight: 23.0 },
+      { id: 'SEE3-4', name: 'Filing Process', weight: 20.0 },
     ],
   },
 };
 
+const EA_SECTION_CONFIGS: SectionConfig[] = Object.entries(EA_PART_CONFIG).map(([id, cfg]) => ({
+  id,
+  name: cfg.name,
+  weight: 33,
+  areas: cfg.domains,
+}));
+
+const EA_MASTERY_THRESHOLDS = DEFAULT_MASTERY_THRESHOLDS;
+
 // ============================================================================
-// IRS Score Scaling
+// Score Scaling
 // ============================================================================
 
-/**
- * Convert raw percentage score to IRS scaled score (40-130)
- * IRS SEE passing score is 105
- */
 export function rawToScaledScore(rawPercentage: number): number {
-  // IRS scoring:
-  // - 40 minimum
-  // - 105 passing (~77% raw)
-  // - 130 maximum
-  
   if (rawPercentage <= 0) return 40;
   if (rawPercentage >= 100) return 130;
-  
-  // Linear interpolation: 0% → 40, 100% → 130
   return Math.round(40 + (rawPercentage / 100) * 90);
 }
 
-/**
- * Convert scaled score to pass prediction percentage
- */
 export function scaledScoreToPassProbability(scaledScore: number): number {
-  // 105 = passing threshold (roughly 72% of 130)
-  if (scaledScore < 80) return Math.max(0, (scaledScore - 40) / 4);
-  if (scaledScore < 95) return 10 + (scaledScore - 80) * 2;
-  if (scaledScore < 105) return 40 + (scaledScore - 95) * 5;
-  if (scaledScore < 115) return 90 + (scaledScore - 105);
-  return 99;
+  if (scaledScore < 85) return Math.max(0, (scaledScore - 40) / 45 * 20);
+  if (scaledScore < 95) return 20 + ((scaledScore - 85) / 10) * 20;
+  if (scaledScore < 105) return 40 + ((scaledScore - 95) / 10) * 30;
+  if (scaledScore < 115) return 70 + ((scaledScore - 105) / 10) * 20;
+  return Math.min(99, 90 + ((scaledScore - 115) / 15) * 9);
 }
+
+// ============================================================================
+// Storage
+// ============================================================================
+
+const STORAGE_KEY = 'ea-analytics';
+
+export { coreSerialize as serializeAnalytics, coreDeserialize as deserializeAnalytics };
 
 // ============================================================================
 // Core Functions
 // ============================================================================
 
-const STORAGE_KEY = 'ea-analytics';
+let analyticsState: EAAnalytics | null = loadFromStorage<EAAnalytics>(STORAGE_KEY);
 
-/**
- * Initialize empty analytics for a user
- */
+function toPartMastery(sectionId: string, sm: SectionMastery): PartMastery {
+  return {
+    ...sm,
+    part: sectionId as EASectionId,
+    partName: sm.sectionName,
+    weakDomains: sm.weakAreas,
+    strongDomains: sm.strongAreas,
+    domainAccuracy: sm.areaAccuracy,
+  };
+}
+
 export function initializeAnalytics(userId: string): EAAnalytics {
-  const partMastery: Record<EASectionId, PartMastery> = {} as Record<EASectionId, PartMastery>;
-  const estimatedPassProbability: Record<EASectionId, number> = {} as Record<EASectionId, number>;
-  const estimatedScaledScore: Record<EASectionId, number> = {} as Record<EASectionId, number>;
-  const examReadiness: Record<EASectionId, 'not-ready' | 'getting-close' | 'ready' | 'well-prepared'> = {} as Record<EASectionId, 'not-ready' | 'getting-close' | 'ready' | 'well-prepared'>;
-  const partPerformance: Record<EASectionId, { average: number; best: number; attempts: number }> = {} as Record<EASectionId, { average: number; best: number; attempts: number }>;
-  
+  const partMastery = {} as Record<EASectionId, PartMastery>;
+  const estimatedPassProbability = {} as Record<EASectionId, number>;
+  const estimatedScaledScore = {} as Record<EASectionId, number>;
+  const examReadiness = {} as Record<EASectionId, ReadinessLevel>;
+  const partPerformance = {} as Record<EASectionId, { average: number; best: number; attempts: number }>;
+
   const parts: EASectionId[] = ['SEE1', 'SEE2', 'SEE3'];
   parts.forEach(part => {
     const config = EA_PART_CONFIG[part];
-    partMastery[part] = {
-      part,
-      partName: config.name,
+    const baseMastery: SectionMastery = {
+      sectionId: part,
+      sectionName: config.name,
+      weight: 33,
       questionsAttempted: 0,
       questionsCorrect: 0,
       accuracy: 0,
@@ -201,16 +202,17 @@ export function initializeAnalytics(userId: string): EAAnalytics {
       trend: 'stable',
       averageTimePerQuestion: 0,
       lastPracticed: null,
-      weakDomains: config.domains.map(d => d.id),
-      strongDomains: [],
-      domainAccuracy: {},
+      weakAreas: config.domains.map(d => d.id),
+      strongAreas: [],
+      areaAccuracy: {},
     };
+    partMastery[part] = toPartMastery(part, baseMastery);
     estimatedPassProbability[part] = 0;
     estimatedScaledScore[part] = 40;
     examReadiness[part] = 'not-ready';
     partPerformance[part] = { average: 0, best: 0, attempts: 0 };
   });
-  
+
   return {
     userId,
     lastUpdated: new Date(),
@@ -231,7 +233,7 @@ export function initializeAnalytics(userId: string): EAAnalytics {
     estimatedPassProbability,
     estimatedScaledScore,
     examReadiness,
-    recommendedFocusAreas: ['SEE1-2', 'SEE2-2', 'SEE3-2'], // High-weight domains
+    recommendedFocusAreas: ['SEE1-2', 'SEE1-3', 'SEE2-1'],
     weeklyTrends: [],
     dailyTrends: [],
     circular230Knowledge: 0,
@@ -240,46 +242,14 @@ export function initializeAnalytics(userId: string): EAAnalytics {
   };
 }
 
-/**
- * Load analytics from localStorage
- */
 export function loadAnalytics(): EAAnalytics | null {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      // Restore dates
-      if (parsed.lastUpdated) parsed.lastUpdated = new Date(parsed.lastUpdated);
-      if (parsed.lastStudyDate) parsed.lastStudyDate = new Date(parsed.lastStudyDate);
-      Object.values(parsed.partMastery).forEach((pm: unknown) => {
-        const partM = pm as PartMastery;
-        if (partM.lastPracticed) partM.lastPracticed = new Date(partM.lastPracticed);
-      });
-      return parsed;
-    }
-  } catch (e) {
-    console.error('Failed to load EA analytics:', e);
-  }
-  return null;
+  return loadFromStorage<EAAnalytics>(STORAGE_KEY);
 }
 
-/**
- * Save analytics to localStorage
- */
 export function saveAnalytics(analytics: EAAnalytics): void {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(analytics));
-  } catch (e) {
-    console.error('Failed to save EA analytics:', e);
-  }
+  saveToStorage(STORAGE_KEY, analytics);
 }
 
-// Module-level analytics state
-let analyticsState: EAAnalytics | null = loadAnalytics();
-
-/**
- * Get or initialize analytics
- */
 export function getAnalytics(userId: string): EAAnalytics {
   if (!analyticsState || analyticsState.userId !== userId) {
     analyticsState = loadAnalytics() || initializeAnalytics(userId);
@@ -287,254 +257,111 @@ export function getAnalytics(userId: string): EAAnalytics {
   return analyticsState;
 }
 
-/**
- * Calculate mastery level based on accuracy and question count
- */
-function calculateMasteryLevel(accuracy: number, questionCount: number): 'novice' | 'developing' | 'proficient' | 'expert' {
-  if (questionCount < 10) return 'novice';
-  if (accuracy < 60) return 'novice';
-  if (accuracy < 75) return 'developing';
-  if (accuracy < 85 || questionCount < 50) return 'proficient';
-  return 'expert';
-}
-
-/**
- * Record a question attempt
- */
 export function recordQuestionAttempt(attempt: QuestionAttempt): EAAnalytics {
-  if (!analyticsState) {
-    analyticsState = initializeAnalytics('default');
-  }
-  
+  if (!analyticsState) analyticsState = initializeAnalytics('default');
   const analytics = { ...analyticsState };
   const part = attempt.part;
-  
-  // Update overall stats
-  analytics.totalQuestionsAttempted++;
-  if (attempt.isCorrect) {
-    analytics.totalQuestionsCorrect++;
-  }
-  analytics.overallAccuracy = Math.round(
-    (analytics.totalQuestionsCorrect / analytics.totalQuestionsAttempted) * 100
-  );
-  
-  // Update average time (running average)
-  const oldTotal = (analyticsState.totalQuestionsAttempted) * analyticsState.averageTimePerQuestion;
-  analytics.averageTimePerQuestion = Math.round(
-    (oldTotal + attempt.timeSpent) / analytics.totalQuestionsAttempted
-  );
-  
-  // Update part mastery
+
+  // Core: update overall stats
+  updateOverallStats(analytics, attempt.isCorrect, attempt.timeSpent);
+
+  // Core: update part mastery
   if (analytics.partMastery[part]) {
-    const partStats = { ...analytics.partMastery[part] };
-    partStats.questionsAttempted++;
-    if (attempt.isCorrect) {
-      partStats.questionsCorrect++;
-    }
-    partStats.accuracy = Math.round(
-      (partStats.questionsCorrect / partStats.questionsAttempted) * 100
+    const updated = updateSectionMastery(
+      analytics.partMastery[part],
+      attempt.isCorrect,
+      attempt.timeSpent,
+      attempt.attemptedAt,
+      attempt.domain,
+      EA_MASTERY_THRESHOLDS,
+      70,
+      80
     );
-    partStats.lastPracticed = attempt.attemptedAt;
-    
-    // Update average time
-    const oldPartTotal = (partStats.questionsAttempted - 1) * partStats.averageTimePerQuestion;
-    partStats.averageTimePerQuestion = Math.round(
-      (oldPartTotal + attempt.timeSpent) / partStats.questionsAttempted
-    );
-    
-    // Update mastery level
-    partStats.masteryLevel = calculateMasteryLevel(partStats.accuracy, partStats.questionsAttempted);
-    
-    // Update domain accuracy if domain provided
-    if (attempt.domain) {
-      const currentDomainAccuracy = partStats.domainAccuracy[attempt.domain] || 0;
-      const domainAttempts = Object.values(partStats.domainAccuracy).length || 1;
-      // Simple running average
-      partStats.domainAccuracy[attempt.domain] = Math.round(
-        (currentDomainAccuracy * (domainAttempts - 1) + (attempt.isCorrect ? 100 : 0)) / domainAttempts
-      );
-      
-      // Update weak/strong domains
-      partStats.weakDomains = Object.entries(partStats.domainAccuracy)
-        .filter(([, acc]) => acc < 70)
-        .map(([domain]) => domain);
-      partStats.strongDomains = Object.entries(partStats.domainAccuracy)
-        .filter(([, acc]) => acc >= 80)
-        .map(([domain]) => domain);
-    }
-    
-    analytics.partMastery[part] = partStats;
+    analytics.partMastery[part] = toPartMastery(part, updated);
   }
-  
-  // Update EA-specific metrics
+
+  // EA-specific: Circular 230 knowledge
   if (part === 'SEE3' && attempt.domain === 'SEE3-2') {
-    // Circular 230 questions
     const delta = attempt.isCorrect ? 2 : -1;
-    analytics.circular230Knowledge = Math.min(100, Math.max(0, 
+    analytics.circular230Knowledge = Math.min(100, Math.max(0,
       analytics.circular230Knowledge + delta
     ));
   }
-  
+
+  // EA-specific: IRS form proficiency
   if (attempt.irsFormRef) {
     const delta = attempt.isCorrect ? 1 : -0.5;
-    analytics.irsFormProficiency = Math.min(100, Math.max(0, 
+    analytics.irsFormProficiency = Math.min(100, Math.max(0,
       analytics.irsFormProficiency + delta
     ));
   }
-  
+
   analytics.lastUpdated = new Date();
-  
-  // Recalculate predictions
   const updatedAnalytics = updatePredictions(analytics);
   analyticsState = updatedAnalytics;
   saveAnalytics(updatedAnalytics);
-  
   return updatedAnalytics;
 }
 
-/**
- * Record a study session
- */
 export function recordStudySession(session: StudySession): EAAnalytics {
-  if (!analyticsState) {
-    analyticsState = initializeAnalytics('default');
-  }
-  
+  if (!analyticsState) analyticsState = initializeAnalytics('default');
   const analytics = { ...analyticsState };
-  
-  // Update study time
-  analytics.totalStudyMinutes += session.duration;
-  
-  // Update streak
-  const today = new Date().toDateString();
-  const lastStudy = analytics.lastStudyDate?.toDateString();
-  
-  if (lastStudy !== today) {
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    
-    if (lastStudy === yesterday.toDateString()) {
-      analytics.currentStreak++;
-    } else if (lastStudy !== today) {
-      analytics.currentStreak = 1;
-    }
-    
-    if (analytics.currentStreak > analytics.longestStreak) {
-      analytics.longestStreak = analytics.currentStreak;
-    }
-    
-    analytics.studyDays++;
-  }
-  
-  analytics.lastStudyDate = session.date;
-  analytics.lastUpdated = new Date();
-  
+  Object.assign(analytics, processStudySession(analytics, session.date, session.duration));
   analyticsState = analytics;
   saveAnalytics(analytics);
-  
   return analytics;
 }
 
-/**
- * Record a mock exam result
- */
 export function recordMockExam(part: EASectionId, rawScore: number): EAAnalytics {
-  if (!analyticsState) {
-    analyticsState = initializeAnalytics('default');
-  }
-  
+  if (!analyticsState) analyticsState = initializeAnalytics('default');
   const analytics = { ...analyticsState };
   const scaledScore = rawToScaledScore(rawScore);
   const now = new Date();
-  
+
   analytics.mockExamsTaken++;
   analytics.mockExamScores.push({ part, score: rawScore, date: now });
   analytics.scaledScores.push({ part, score: scaledScore, date: now });
-  
-  // Update part performance
+
   const partPerf = analytics.partPerformance[part];
   partPerf.attempts++;
   partPerf.average = Math.round(
     (partPerf.average * (partPerf.attempts - 1) + rawScore) / partPerf.attempts
   );
-  if (rawScore > partPerf.best) {
-    partPerf.best = rawScore;
-  }
-  
+  if (rawScore > partPerf.best) partPerf.best = rawScore;
+
   analytics.lastUpdated = now;
-  
   const updatedAnalytics = updatePredictions(analytics);
   analyticsState = updatedAnalytics;
   saveAnalytics(updatedAnalytics);
-  
   return updatedAnalytics;
 }
 
-/**
- * Update predictions based on current performance
- */
 function updatePredictions(analytics: EAAnalytics): EAAnalytics {
   const parts: EASectionId[] = ['SEE1', 'SEE2', 'SEE3'];
-  
+
   parts.forEach(part => {
-    const partMastery = analytics.partMastery[part];
-    
-    // Estimate scaled score based on accuracy
-    const estimatedRaw = partMastery.accuracy;
-    analytics.estimatedScaledScore[part] = rawToScaledScore(estimatedRaw);
-    
-    // Calculate pass probability
+    const pm = analytics.partMastery[part];
+    analytics.estimatedScaledScore[part] = rawToScaledScore(pm.accuracy);
     analytics.estimatedPassProbability[part] = scaledScoreToPassProbability(
       analytics.estimatedScaledScore[part]
     );
-    
-    // Determine readiness level
     const prob = analytics.estimatedPassProbability[part];
-    const questions = partMastery.questionsAttempted;
-    
-    if (prob < 40 || questions < 100) {
-      analytics.examReadiness[part] = 'not-ready';
-    } else if (prob < 70 || questions < 300) {
-      analytics.examReadiness[part] = 'getting-close';
-    } else if (prob < 85) {
-      analytics.examReadiness[part] = 'ready';
-    } else {
-      analytics.examReadiness[part] = 'well-prepared';
-    }
+    const questions = pm.questionsAttempted;
+    if (prob < 40 || questions < 100) analytics.examReadiness[part] = 'not-ready';
+    else if (prob < 70 || questions < 300) analytics.examReadiness[part] = 'getting-close';
+    else if (prob < 85) analytics.examReadiness[part] = 'ready';
+    else analytics.examReadiness[part] = 'well-prepared';
   });
-  
-  // Update recommended focus areas
+
   const allWeakDomains: string[] = [];
-  parts.forEach(part => {
-    allWeakDomains.push(...analytics.partMastery[part].weakDomains);
-  });
-  
-  // Prioritize by exam weight
+  parts.forEach(part => allWeakDomains.push(...analytics.partMastery[part].weakDomains));
   analytics.recommendedFocusAreas = allWeakDomains
-    .sort((a, b) => {
-      const weightA = getDomainWeight(a);
-      const weightB = getDomainWeight(b);
-      return weightB - weightA;
-    })
+    .sort((a, b) => getAreaWeight(EA_SECTION_CONFIGS, b) - getAreaWeight(EA_SECTION_CONFIGS, a))
     .slice(0, 5);
-  
+
   return analytics;
 }
 
-/**
- * Get domain weight from configuration
- */
-function getDomainWeight(domainId: string): number {
-  for (const part of Object.values(EA_PART_CONFIG)) {
-    const domain = part.domains.find(d => d.id === domainId);
-    if (domain) return domain.weight;
-  }
-  return 0;
-}
-
-/**
- * Get analytics insights for dashboard
- */
 export function getInsights(): {
   overview: { accuracy: number; questionsCompleted: number; studyHours: number; streak: number };
   strengths: string[];
@@ -551,43 +378,33 @@ export function getInsights(): {
       partBreakdown: [],
     };
   }
-  
+
   const parts: EASectionId[] = ['SEE1', 'SEE2', 'SEE3'];
-  
   const partBreakdown = parts.map(part => ({
     part,
     accuracy: analyticsState!.partMastery[part].accuracy,
     readiness: analyticsState!.examReadiness[part],
     passProbability: analyticsState!.estimatedPassProbability[part],
   }));
-  
+
   const allStrong = parts.flatMap(p => analyticsState!.partMastery[p].strongDomains);
   const allWeak = parts.flatMap(p => analyticsState!.partMastery[p].weakDomains);
-  
+
   const recommendations: string[] = [];
-  
-  // Generate recommendations
   if (analyticsState.circular230Knowledge < 70) {
     recommendations.push('Focus on Circular 230 - essential for SEE3');
   }
-  
   parts.forEach(part => {
     if (analyticsState!.examReadiness[part] === 'not-ready') {
       recommendations.push(`Increase practice volume for ${part} (${EA_PART_CONFIG[part].name})`);
     }
   });
-  
   if (analyticsState.currentStreak < 7) {
     recommendations.push('Build a daily study habit - consistency is key');
   }
-  
+
   return {
-    overview: {
-      accuracy: analyticsState.overallAccuracy,
-      questionsCompleted: analyticsState.totalQuestionsAttempted,
-      studyHours: Math.round(analyticsState.totalStudyMinutes / 60),
-      streak: analyticsState.currentStreak,
-    },
+    overview: buildOverview(analyticsState),
     strengths: allStrong.slice(0, 5),
     weaknesses: allWeak.slice(0, 5),
     recommendations: recommendations.slice(0, 5),
@@ -595,9 +412,6 @@ export function getInsights(): {
   };
 }
 
-/**
- * Reset analytics (for testing)
- */
 export function resetAnalytics(userId: string): EAAnalytics {
   analyticsState = initializeAnalytics(userId);
   saveAnalytics(analyticsState);

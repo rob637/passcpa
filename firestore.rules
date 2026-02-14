@@ -88,5 +88,49 @@ service cloud.firestore {
       allow create: if isAuthenticated();
       allow read, update, delete: if isAdmin();
     }
+
+    // Question Reports - authenticated users can report issues, admin can manage
+    match /questionReports/{reportId} {
+      allow create: if isAuthenticated();
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Subscriptions - users can read their own, backend handles most writes
+    match /subscriptions/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      // Allow users to create their own subscription doc (free tier / trial start)
+      allow create: if isOwner(userId);
+      // Allow users to update only the trials and updatedAt fields (for starting per-exam trials)
+      allow update: if isOwner(userId) && 
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['trials', 'updatedAt', 'status']);
+      // Admins can fully manage subscription documents
+      allow write: if isAdmin();
+    }
+
+    // Leaderboard - community stats, daily activity, streaks
+    match /leaderboard/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+      
+      // Subcollections: daily_stats/dates, daily_stats/user_flags, user_streaks
+      match /{subcollection=**} {
+        allow read: if isAuthenticated();
+        allow write: if isAuthenticated();
+      }
+    }
+
+    // Referrals - tracking who referred whom
+    match /referrals/{referralId} {
+      // Users can read referrals they're part of
+      allow read: if isAuthenticated() && 
+        (resource.data.referrerId == request.auth.uid || 
+         resource.data.referredUserId == request.auth.uid);
+      // Users can create a referral record where they are the referred user
+      allow create: if isAuthenticated() && 
+        request.resource.data.referredUserId == request.auth.uid;
+      // No updates or deletes from client
+      allow update, delete: if isAdmin();
+    }
   }
 }

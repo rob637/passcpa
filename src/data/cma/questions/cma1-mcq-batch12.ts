@@ -20,10 +20,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A change in accounting estimate is accounted for:',
     options: [
-      'By restating prior period financial statements',
+      'By recording a cumulative effect in comprehensive income',
       'Prospectively in the current and future periods',
+      'By restating prior period financial statements',
       'As a prior period adjustment to retained earnings',
-      'By recording a cumulative effect in comprehensive income'
     ],
     correctAnswer: 1,
     explanation: 'Changes in estimates (depreciation life, bad debt allowance) are applied prospectively. No prior period restatement is required because estimates are based on new information, not errors.',
@@ -41,11 +41,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'Service cost in pension accounting represents:',
     options: [
       'Interest on the projected benefit obligation',
+      'Amortization of prior service cost',
       'The actuarial present value of benefits earned during the current period',
       'Expected return on plan assets',
-      'Amortization of prior service cost'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Service cost is the increase in PBO due to employee service during the current period—the cost of benefits earned this year. It is the only component included in operating income.',
     reference: 'ASC 715',
   },
@@ -60,12 +60,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Basic EPS: $5.00. 100,000 shares outstanding. 20,000 stock options at $30 (market price $50). Diluted EPS is approximately:',
     options: [
+      '$4.76',
       '$4.17',
       '$4.55',
       '$5.00',
-      '$4.76'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Treasury stock method: potential shares = 20,000 - (20,000 × $30/$50) = 20,000 - 12,000 = 8,000 incremental shares. Diluted EPS = $500,000 / (100,000 + 8,000) = $500,000 / 108,000 = $4.63, closest to $4.76. Using rounding: $4.76.',
     reference: 'ASC 260',
   },
@@ -80,12 +80,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 280, an operating segment is reportable if it meets:',
     options: [
+      '20% of total assets',
       '5% of combined revenue, assets, or profit/loss',
       '10% of combined revenue, assets, or absolute profit/loss',
       '15% of total company revenue',
-      '20% of total assets'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A segment is reportable if its revenue, reported profit/loss (absolute value), or assets equals or exceeds 10% of the combined totals. The test uses whichever combined profit or loss is greater.',
     reference: 'ASC 280-10-50-12',
   },
@@ -102,10 +102,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     options: [
       'Equals the purchase price',
       'Is less than the purchase price, creating goodwill',
+      'Cannot be determined',
       'Exceeds the purchase price, resulting in a gain',
-      'Cannot be determined'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'A bargain purchase occurs when FV of identifiable net assets exceeds purchase price. The excess is recognized as a gain in income after reassessing measurements. No negative goodwill is recorded.',
     reference: 'ASC 805',
   },
@@ -126,8 +126,8 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     options: [
       '94 units',
       '106 units',
+      '120 units',
       '114 units',
-      '120 units'
     ],
     correctAnswer: 1,
     explanation: 'Exponential smoothing: New Forecast = α(Actual) + (1-α)(Previous Forecast) = 0.3(120) + 0.7(100) = 36 + 70 = 106 units.',
@@ -144,12 +144,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'PESTLE analysis examines:',
     options: [
-      'Internal strengths and weaknesses',
       'Political, Economic, Social, Technological, Legal, and Environmental factors',
+      'Financial ratios',
+      'Internal strengths and weaknesses',
       'Competitor strategies only',
-      'Financial ratios'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'PESTLE is a macro-environmental analysis framework examining external factors: Political, Economic, Social, Technological, Legal, and Environmental that affect the organization.',
     reference: 'IMA CMA Content Specification',
   },
@@ -164,12 +164,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'August sales: $200,000. September sales: $250,000. 60% collected in month of sale, 35% next month, 5% uncollectible. September cash receipts from these sales are:',
     options: [
-      '$150,000',
       '$200,000',
+      '$237,500',
+      '$150,000',
       '$220,000',
-      '$237,500'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'September receipts: 60% of Sept sales + 35% of Aug sales = 0.60($250,000) + 0.35($200,000) = $150,000 + $70,000 = $220,000.',
     reference: 'IMA CMA Content Specification',
   },
@@ -184,10 +184,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The equivalent annual annuity (EAA) method is used when:',
     options: [
-      'Projects have the same life spans',
+      'Only qualitative factors matter',
       'Comparing mutually exclusive projects with unequal lives',
+      'Projects have the same life spans',
       'Projects have no cash flows',
-      'Only qualitative factors matter'
     ],
     correctAnswer: 1,
     explanation: 'EAA converts NPV into an equivalent annual amount, allowing comparison of projects with different lifespans. The project with higher EAA is preferred when projects can be repeated.',
@@ -204,10 +204,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Porter\'s value chain analysis divides activities into:',
     options: [
-      'Revenue and expense activities',
+      'Controllable and non-controllable activities',
       'Primary activities and support activities',
+      'Revenue and expense activities',
       'Short-term and long-term activities',
-      'Controllable and non-controllable activities'
     ],
     correctAnswer: 1,
     explanation: 'Value chain includes primary activities (inbound logistics, operations, outbound logistics, marketing/sales, service) and support activities (infrastructure, HR, technology, procurement).',
@@ -228,12 +228,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted fixed overhead: $180,000. Normal capacity: 12,000 hours. Actual production required 11,400 standard hours. Fixed overhead volume variance is:',
     options: [
-      '$9,000 Favorable',
       '$9,000 Unfavorable',
+      '$15,000 Unfavorable',
+      '$9,000 Favorable',
       '$15,000 Favorable',
-      '$15,000 Unfavorable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'FOH rate = $180,000 / 12,000 = $15/hour. Volume variance = (Standard hours - Normal capacity) × FOH rate = (11,400 - 12,000) × $15 = -600 × $15 = $9,000 Unfavorable (underutilized capacity).',
     reference: 'IMA CMA Content Specification',
   },
@@ -248,12 +248,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Economic Value Added (EVA) can be increased by:',
     options: [
+      'Increasing the cost of capital',
       'Increasing invested capital without improving returns',
       'Earning more on existing capital or investing in positive EVA projects',
       'Accepting all projects regardless of return',
-      'Increasing the cost of capital'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EVA improves by: (1) earning higher returns on existing capital, (2) investing in projects earning more than cost of capital, or (3) divesting capital that earns less than cost of capital.',
     reference: 'IMA CMA Content Specification',
   },
@@ -266,15 +266,15 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     subtopic: 'Strategy Maps',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'A strategy map in the Balanced Scorecard framework:',
+    question: 'In the Balanced Scorecard framework, which perspective directly measures the organization\'s ability to innovate and develop employee capabilities?',
     options: [
-      'Shows only financial metrics',
-      'Illustrates cause-and-effect relationships between strategic objectives',
-      'Replaces the need for financial statements',
-      'Is only used for competitor analysis'
+      'Financial perspective',
+      'Customer perspective',
+      'Internal business process perspective',
+      'Learning and growth perspective',
     ],
-    correctAnswer: 1,
-    explanation: 'Strategy maps visualize how objectives link across perspectives—showing how learning and growth enables internal processes, which drive customer outcomes, which deliver financial results.',
+    correctAnswer: 3,
+    explanation: 'The learning and growth perspective measures the organization\'s ability to innovate, improve, and develop employee capabilities through metrics like employee training hours, skill development, and technology adoption. This perspective forms the foundation that drives improvements in the other three perspectives.',
     reference: 'Kaplan & Norton',
   },
   {
@@ -290,10 +290,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     options: [
       '$80,000',
       '$120,000',
+      '$200,000',
       '$170,000',
-      '$200,000'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: 'Total quality costs = Prevention + Appraisal + Internal Failure + External Failure = $50,000 + $30,000 + $40,000 + $80,000 = $200,000. Optimal quality programs shift spending toward prevention.',
     reference: 'IMA CMA Content Specification',
   },
@@ -308,12 +308,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Best practice benchmarking involves:',
     options: [
-      'Comparing only to industry averages',
       'Identifying and learning from organizations that excel in specific processes, regardless of industry',
+      'Comparing only to industry averages',
+      'Focusing only on financial metrics',
       'Limiting comparison to direct competitors',
-      'Focusing only on financial metrics'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Best practice benchmarking identifies organizations that excel in specific processes or functions, regardless of industry, and adapts their practices. This often yields more innovative improvements.',
     reference: 'IMA CMA Content Specification',
   },
@@ -332,12 +332,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The FIFO method of process costing differs from weighted average by:',
     options: [
-      'Using total costs for equivalent unit calculations',
       'Separating current period work from beginning inventory costs',
+      'Using total costs for equivalent unit calculations',
+      'Not calculating equivalent units',
       'Ignoring beginning work-in-process inventory',
-      'Not calculating equivalent units'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'FIFO separates current period costs from beginning WIP costs, calculating equivalent units and costs for this period only. This provides more accurate current period performance measurement.',
     reference: 'IMA CMA Content Specification',
   },
@@ -352,10 +352,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An 80% learning curve means that:',
     options: [
-      'Labor efficiency improves by 20% with each unit',
+      'Direct labor accounts for 80% of total cost',
       'Cumulative average labor time per unit decreases to 80% when quantity doubles',
+      'Labor efficiency improves by 20% with each unit',
       'Total costs are 80% variable',
-      'Direct labor accounts for 80% of total cost'
     ],
     correctAnswer: 1,
     explanation: 'An 80% learning curve means cumulative average time per unit falls to 80% of its previous level each time output doubles. For example, if 1 unit takes 100 hours, 2 units average 80 hours each.',
@@ -372,10 +372,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Upstream costs in life cycle costing include:',
     options: [
-      'Warranty and customer service costs',
+      'Distribution and marketing costs',
       'Research, development, and design costs',
+      'Warranty and customer service costs',
       'Production labor and materials',
-      'Distribution and marketing costs'
     ],
     correctAnswer: 1,
     explanation: 'Upstream costs occur before manufacturing: R&D, design, prototyping. Downstream costs occur after: marketing, distribution, warranty, disposal. Life cycle costing captures all stages.',
@@ -392,12 +392,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Activity pool cost: $240,000. Cost driver: machine setups. Total setups: 400. Product A requires 150 setups. Cost allocated to Product A is:',
     options: [
+      '$240,000',
       '$60,000',
       '$90,000',
       '$150,000',
-      '$240,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Rate per setup = $240,000 / 400 = $600. Product A cost = 150 setups × $600 = $90,000.',
     reference: 'IMA CMA Content Specification',
   },
@@ -412,10 +412,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Just-in-Time inventory:',
     options: [
-      'Maximizes inventory levels for safety',
+      'Requires large warehouses',
       'Minimizes inventory by receiving materials only when needed for production',
+      'Maximizes inventory levels for safety',
       'Increases carrying costs',
-      'Requires large warehouses'
     ],
     correctAnswer: 1,
     explanation: 'JIT minimizes inventory by coordinating deliveries with production needs. Benefits include reduced carrying costs, less obsolescence, and identification of quality problems. Requires reliable suppliers.',
@@ -437,11 +437,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'The Monitoring component of COSO internal control includes:',
     options: [
       'Initial design of controls',
+      'Establishing the organization\'s ethical tone',
       'Ongoing evaluations and separate evaluations to assess control effectiveness',
       'Hiring qualified personnel',
-      'Establishing the organization\'s ethical tone'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Monitoring involves ongoing activities (continuous monitoring built into operations) and separate evaluations (internal audits, self-assessments) to determine if controls work effectively over time.',
     reference: 'COSO Internal Control Framework',
   },
@@ -454,15 +454,15 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     subtopic: 'Responsibilities',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'The audit committee is responsible for:',
+    question: 'Under corporate governance best practices, which characteristic is essential for audit committee members?',
     options: [
-      'Daily management of the company',
-      'Overseeing financial reporting, internal controls, and external audit',
-      'Setting executive compensation only',
-      'Product development'
+      'All members must be current or former employees of the company',
+      'At least one member must qualify as a financial expert and all members must be independent directors',
+      'The committee must include the company\'s CEO to ensure executive oversight',
+      'Members must also serve on the compensation committee for consistency',
     ],
     correctAnswer: 1,
-    explanation: 'The audit committee oversees financial reporting integrity, internal control, external audit relationship, and compliance with laws. Members must be independent directors, and SOX requires financial expertise.',
+    explanation: 'SOX and listing standards require audit committee members to be independent directors with at least one financial expert. Independence ensures objective oversight of financial reporting, external audit relationships, and internal controls.',
     reference: 'SOX Section 301',
   },
   {
@@ -476,12 +476,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An example of an input control is:',
     options: [
-      'Encrypting stored data',
       'Validating data at the point of entry to ensure accuracy and completeness',
+      'Encrypting stored data',
+      'Access log review',
       'Backup and recovery procedures',
-      'Access log review'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Input controls ensure data accuracy and completeness when entered: validation checks, range checks, format checks, check digits. They prevent errors from entering the system.',
     reference: 'IMA CMA Content Specification',
   },
@@ -498,8 +498,8 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     options: [
       'Employee satisfaction surveys',
       'Leadership\'s commitment to integrity and ethical behavior that sets the organization\'s culture',
+      'Marketing communications',
       'External audit opinions',
-      'Marketing communications'
     ],
     correctAnswer: 1,
     explanation: 'Tone at the top is management\'s demonstrated commitment to ethics, integrity, and strong internal controls. It establishes the foundation for control environment and influences organizational culture.',
@@ -518,8 +518,8 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     options: [
       'Only financial statement backup',
       'Procedures for restoring critical IT systems and operations after a disaster',
+      'Vacation schedules',
       'Marketing strategies only',
-      'Vacation schedules'
     ],
     correctAnswer: 1,
     explanation: 'Disaster recovery plans address IT system restoration: backup strategies, alternate sites, recovery procedures, communication protocols, and testing. They ensure business continuity after disruptions.',
@@ -540,12 +540,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Enterprise Resource Planning (ERP) systems provide:',
     options: [
-      'Separate databases for each department',
       'Integrated real-time information across all business functions',
+      'Elimination of all business processes',
+      'Separate databases for each department',
       'Only financial reporting capabilities',
-      'Elimination of all business processes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ERP systems integrate all business processes (finance, HR, supply chain, manufacturing) with a common database, providing real-time visibility across the organization and eliminating data silos.',
     reference: 'IMA CMA Content Specification',
   },
@@ -560,12 +560,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Machine learning differs from traditional programming because it:',
     options: [
-      'Uses only historical data',
       'Learns patterns from data rather than following explicit programmed rules',
+      'Requires no data at all',
+      'Uses only historical data',
       'Cannot handle large datasets',
-      'Requires no data at all'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Machine learning algorithms learn patterns from data and improve with experience, rather than following explicitly programmed rules. They adapt to new data without being explicitly reprogrammed.',
     reference: 'IMA CMA Content Specification',
   },
@@ -580,10 +580,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Effective data visualization:',
     options: [
-      'Uses as many colors and chart types as possible',
+      'Shows raw data only',
       'Presents data clearly with appropriate chart types for the message',
+      'Uses as many colors and chart types as possible',
       'Avoids all graphics',
-      'Shows raw data only'
     ],
     correctAnswer: 1,
     explanation: 'Effective visualization matches chart type to data (trends, comparisons, proportions), minimizes clutter, uses appropriate scales, and highlights key insights while maintaining data integrity.',
@@ -601,11 +601,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'Blockchain technology provides:',
     options: [
       'Centralized control by a single party',
+      'No need for transaction verification',
       'Immutable, transparent distributed ledger with cryptographic security',
       'Ability to easily modify historical records',
-      'No need for transaction verification'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Blockchain is a distributed ledger with immutable records, cryptographic security, and consensus mechanisms. Once recorded, transactions cannot be altered, providing transparency and trust.',
     reference: 'IMA CMA Content Specification',
   },
@@ -618,15 +618,15 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     subtopic: 'RPA Benefits',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Robotic Process Automation (RPA) is best suited for:',
+    question: 'Which business process is LEAST likely to benefit from Robotic Process Automation (RPA) implementation?',
     options: [
-      'Tasks requiring complex human judgment',
-      'High-volume, rule-based, repetitive tasks',
-      'Creative problem-solving',
-      'Strategic decision-making'
+      'Accounts payable invoice processing',
+      'Bank reconciliation matching',
+      'Developing a new corporate strategy for market expansion',
+      'Payroll data entry and validation',
     ],
-    correctAnswer: 1,
-    explanation: 'RPA excels at automating high-volume, rule-based, repetitive tasks that follow consistent logic: data entry, reconciliations, report generation. It frees humans for judgment-intensive work.',
+    correctAnswer: 2,
+    explanation: 'Developing a new corporate strategy requires creativity, judgment, and strategic thinking, which are outside RPA capabilities. RPA is designed for high-volume, repetitive, rule-based tasks such as invoice processing, bank reconciliations, and payroll data entry.',
     reference: 'IMA CMA Content Specification',
   },
 
@@ -644,12 +644,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Net income: $150,000. Depreciation: $25,000. Accounts receivable increased $15,000. Inventory decreased $10,000. Operating cash flow is:',
     options: [
+      '$200,000',
       '$140,000',
       '$160,000',
       '$170,000',
-      '$200,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Operating CF = NI + Depreciation - ΔAR + ΔInventory (decrease) = $150,000 + $25,000 - $15,000 + $10,000 = $170,000. AR increase uses cash, inventory decrease provides cash.',
     reference: 'ASC 230',
   },
@@ -665,11 +665,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'Scenario analysis in capital budgeting:',
     options: [
       'Considers only the most likely outcome',
+      'Replaces NPV analysis',
       'Evaluates project outcomes under different sets of assumptions',
       'Eliminates all project risk',
-      'Replaces NPV analysis'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Scenario analysis examines project outcomes under different assumptions (optimistic, most likely, pessimistic) to understand the range of possible outcomes and key risk factors.',
     reference: 'IMA CMA Content Specification',
   },
@@ -682,15 +682,15 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     subtopic: 'Investment Centers',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'An investment center manager is responsible for:',
+    question: 'What distinguishes an investment center from a profit center in a decentralized organization?',
     options: [
-      'Costs only',
-      'Revenues and costs only',
-      'Revenues, costs, and investment in assets',
-      'None of the above'
+      'An investment center manager controls revenues but not expenses',
+      'A profit center manager has authority over capital investment decisions',
+      'An investment center manager is accountable for the efficient use of invested capital in addition to profits',
+      'A profit center reports directly to the board of directors',
     ],
     correctAnswer: 2,
-    explanation: 'Investment center managers control revenues, costs, and investment decisions. They are evaluated on ROI, residual income, or EVA—measures that consider return relative to capital employed.',
+    explanation: 'An investment center manager is held accountable for revenues, expenses, and the return generated on invested capital. A profit center manager is responsible for revenues and expenses but does not have authority or accountability for capital investment decisions.',
     reference: 'IMA CMA Content Specification',
   },
   {
@@ -704,12 +704,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Abnormal spoilage should be:',
     options: [
-      'Included in product costs',
       'Recognized as a period loss',
+      'Included in product costs',
+      'Allocated to ending inventory',
       'Ignored in cost accounting',
-      'Allocated to ending inventory'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Abnormal spoilage (above normal levels) is a period expense, not included in product costs. Normal spoilage is part of the cost of good production. The distinction highlights inefficiencies.',
     reference: 'IMA CMA Content Specification',
   },
@@ -724,12 +724,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Internal audit independence is enhanced by:',
     options: [
-      'Reporting directly to operating management',
       'Reporting functionally to the audit committee',
+      'Limiting scope to compliance testing',
+      'Reporting directly to operating management',
       'Performing only financial audits',
-      'Limiting scope to compliance testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Internal audit independence is strengthened when the function reports functionally to the audit committee (not management) and administratively to the CEO. This ensures objectivity and authority.',
     reference: 'IIA Standards',
   },
@@ -744,10 +744,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Natural Language Processing (NLP) in accounting can be used for:',
     options: [
-      'Physical inventory counts only',
+      'Network security only',
       'Analyzing contracts, extracting data from documents, and chatbots',
+      'Physical inventory counts only',
       'Hardware installations',
-      'Network security only'
     ],
     correctAnswer: 1,
     explanation: 'NLP enables machines to understand human language, useful for contract analysis, document extraction, sentiment analysis, automated responses, and processing unstructured text data.',
@@ -764,10 +764,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'For hedge accounting to apply:',
     options: [
-      'No documentation is required',
+      'Derivatives must be speculative',
       'The hedge must be highly effective and formally documented',
+      'No documentation is required',
       'Only fair value hedges are permitted',
-      'Derivatives must be speculative'
     ],
     correctAnswer: 1,
     explanation: 'Hedge accounting requires formal documentation of the hedging relationship, risk management objective, and assessment of effectiveness. The hedge must be highly effective at offsetting risk.',
@@ -784,12 +784,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Sales: 20,000 units. Beginning FG: 3,000 units. Desired ending FG: 4,000 units. Required production is:',
     options: [
+      '27,000 units',
       '19,000 units',
       '21,000 units',
       '23,000 units',
-      '27,000 units'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Production = Sales + Desired Ending FG - Beginning FG = 20,000 + 4,000 - 3,000 = 21,000 units.',
     reference: 'IMA CMA Content Specification',
   },
@@ -804,12 +804,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Dual transfer pricing:',
     options: [
+      'Eliminates goal incongruence completely',
       'Uses the same price for buying and selling divisions',
       'Allows different transfer prices for the buying and selling divisions',
       'Is required by tax regulations',
-      'Eliminates goal incongruence completely'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Dual pricing uses different prices: seller credits at market price, buyer charges at cost. This can reduce conflict and improve motivation, though it creates accounting complications.',
     reference: 'IMA CMA Content Specification',
   },
@@ -825,11 +825,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'Joint cost: $100,000. Product X: NRV $60,000. Product Y: NRV $40,000. Joint cost allocated to X using NRV is:',
     options: [
       '$40,000',
+      '$66,667',
       '$50,000',
       '$60,000',
-      '$66,667'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'NRV allocation: Product X share = $60,000 / ($60,000 + $40,000) = 60%. Allocated cost = 60% × $100,000 = $60,000.',
     reference: 'IMA CMA Content Specification',
   },
@@ -845,11 +845,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'Mandatory vacations are a fraud control because:',
     options: [
       'Employees need rest',
+      'It improves morale only',
       'Another person temporarily performs the role and may detect fraud',
       'It reduces payroll costs',
-      'It improves morale only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Mandatory vacations (forced leave) require another person to perform duties, potentially exposing fraudulent schemes that require ongoing concealment. Job rotation serves a similar purpose.',
     reference: 'IMA CMA Content Specification',
   },
@@ -864,12 +864,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Multi-factor authentication (MFA) requires:',
     options: [
-      'Only a password',
       'Two or more verification methods from different categories',
+      'Only a password',
+      'Manager approval',
       'Physical presence only',
-      'Manager approval'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'MFA requires two or more authentication factors from different categories: something you know (password), something you have (token), something you are (biometric). It provides stronger security.',
     reference: 'IMA CMA Content Specification',
   },
@@ -884,12 +884,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Not-for-profit organizations classify net assets as:',
     options: [
-      'Stockholders\' equity and retained earnings',
       'Net assets with donor restrictions and without donor restrictions',
+      'Stockholders\' equity and retained earnings',
+      'Revenue and expenses',
       'Current and non-current assets',
-      'Revenue and expenses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'NFPs report net assets in two categories: with donor restrictions (temporary or permanent) and without donor restrictions. This differs from for-profit equity classifications.',
     reference: 'ASC 958',
   },
@@ -906,8 +906,8 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     options: [
       'A statistical regression technique',
       'A structured group forecasting process using anonymous expert input',
+      'Time series analysis',
       'A computer simulation model',
-      'Time series analysis'
     ],
     correctAnswer: 1,
     explanation: 'Delphi method uses anonymous questionnaires sent to experts, with iterative rounds of feedback to reach consensus. It avoids groupthink while pooling expert knowledge.',
@@ -924,10 +924,10 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Sales mix variance measures:',
     options: [
-      'Difference between budgeted and actual selling prices',
+      'Production efficiency',
       'Impact of selling a different proportion of products than planned',
+      'Difference between budgeted and actual selling prices',
       'Change in total sales volume',
-      'Production efficiency'
     ],
     correctAnswer: 1,
     explanation: 'Sales mix variance measures the profit impact of selling products in proportions different from budget. Even if total volume meets budget, different mix affects overall profit if margins differ.',
@@ -944,12 +944,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Ideal standards:',
     options: [
-      'Reflect expected actual performance levels',
       'Represent perfect performance under optimal conditions',
+      'Include allowances for normal spoilage',
+      'Reflect expected actual performance levels',
       'Are easily achievable by all workers',
-      'Include allowances for normal spoilage'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Ideal (theoretical) standards assume perfect efficiency with no waste, machine breakdowns, or inefficiencies. Practical (attainable) standards expect efficient operations with normal allowances.',
     reference: 'IMA CMA Content Specification',
   },
@@ -964,12 +964,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In control testing, attribute sampling is used to:',
     options: [
+      'Evaluate qualitative factors only',
       'Estimate monetary values',
       'Determine the rate of deviation from a prescribed control procedure',
       'Measure transaction amounts',
-      'Evaluate qualitative factors only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Attribute sampling tests control effectiveness by estimating the deviation rate—the percentage of transactions not complying with the control. It answers yes/no whether controls are applied.',
     reference: 'IMA CMA Content Specification',
   },
@@ -982,14 +982,14 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     subtopic: 'Descriptive Statistics',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'The median is:',
+    question: 'In descriptive statistics, which of the following best defines the median of a data set?',
     options: [
       'The average of all values',
+      'The difference between highest and lowest values',
       'The middle value when data is ordered',
       'The most frequently occurring value',
-      'The difference between highest and lowest values'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Median is the middle value in ordered data. Unlike the mean (average), it is not affected by extreme outliers. The mode is the most frequent value; range is highest minus lowest.',
     reference: 'IMA CMA Content Specification',
   },
@@ -1005,11 +1005,11 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     question: 'A bond with face value $100,000, 10% annual coupon, issued at $105,000 when market rate is 8%. What is the interest expense for year 1 using effective interest?',
     options: [
       '$8,000',
+      '$10,500',
       '$8,400',
       '$10,000',
-      '$10,500'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Interest expense = Carrying value × Market rate = $105,000 × 8% = $8,400. Cash payment is $10,000 (10% × $100,000). The $1,600 difference reduces the premium.',
     reference: 'ASC 835',
   },
@@ -1024,12 +1024,12 @@ export const CMA1_MCQ_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Project: Initial investment $200,000. PV of future cash flows $260,000. The Profitability Index is:',
     options: [
+      '1.60',
       '0.77',
       '1.00',
       '1.30',
-      '1.60'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Profitability Index = PV of Cash Flows / Initial Investment = $260,000 / $200,000 = 1.30. PI > 1 indicates a positive NPV project and should be accepted.',
     reference: 'IMA CMA Content Specification',
   },

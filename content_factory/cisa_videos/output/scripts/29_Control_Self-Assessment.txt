@@ -1,0 +1,9 @@
+Control self-assessment... is a CISA exam topic that can make or break your score. Let's nail it down in the next few minutes.
+
+Control self-assessment, or CSA, is a process where management evaluates the effectiveness of their own internal controls. …It's not about external auditors doing the work. …Instead, it's about empowering business units to identify and manage risks themselves. …Why do auditors care? …Because a well-implemented CSA program provides reasonable assurance… allowing auditors to focus on higher-risk areas… and rely, in part, on management's own assessments.
+
+The trap is… ISACA loves to test you on who's actually doing the assessment. …They'll present scenarios where auditors are heavily involved in the control testing itself… making suggestions… and even performing the tests. …That's NOT CSA. …The correct answer is the one where management… that is… the people responsible for the controls… are the ones actively evaluating and reporting on their effectiveness. …Remember, CSA is about *self*-assessment. …Auditors are there to review the CSA process and results… not *be* the process.
+
+For example, when auditing a change management process… a CSA could involve the development team reviewing their own adherence to change control procedures… identifying weaknesses… and proposing improvements. …The auditor then reviews the documentation… interviews team members… and tests a sample of changes to validate the CSA's findings and identify any gaps. …The auditor is validating management's work… not re-doing it.
+
+The one thing you MUST remember for the exam… CSA is MOST effective when it's integrated into the organization's culture… and owned by management. …Master this concept, and you'll be one step closer to passing the CISA exam.

@@ -23,12 +23,12 @@ export const CFP_RET_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: `In 2026, an employee aged 53 wants to maximize their 401(k) contributions. What is the maximum total employee deferral they can make?`,
     options: [
-      'A) $23,500',
       'B) $31,000',
+      'A) $23,500',
+      'D) $30,500',
       'C) $23,000',
-      'D) $30,500'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($31,000)**
 
 **2026 401(k) Limits:**
@@ -52,26 +52,15 @@ At age 53, the employee qualifies for catch-up contributions.
     subtopic: 'SIMPLE IRA',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: `Which statement about SIMPLE IRA plans is CORRECT?`,
+    question: 'A small business owner with 50 employees is considering a SIMPLE IRA plan. What is one operational advantage of a SIMPLE IRA compared to a traditional 401(k)?',
     options: [
-      'A) Only employers with 500+ employees can establish them',
-      'B) Employer contributions are always discretionary',
-      'C) Employees must have earned at least $5,000 in any two prior years',
-      'D) Early withdrawals within first two years of participation incur a 25% penalty'
+      'SIMPLE IRAs allow higher employee contribution limits than 401(k) plans',
+      'SIMPLE IRAs are exempt from annual nondiscrimination testing and have minimal administrative requirements',
+      'SIMPLE IRAs permit employers to make discretionary matching contributions',
+      'SIMPLE IRAs allow participants to take penalty-free loans from their account',
     ],
-    correctAnswer: 3,
-    explanation: `**Correct Answer: D (25% penalty in first two years)**
-
-**SIMPLE IRA Rules:**
-- For employers with 100 or fewer employees
-- Employer must make either 3% match OR 2% non-elective contribution
-- Early withdrawal penalty is 25% (not 10%) during first two years
-- Eligibility: $5,000 in any 2 preceding years AND expected $5,000 current year
-
-**Why other answers are wrong:**
-- **A)** SIMPLE is for small employers (≤100 employees)
-- **B)** Employer contributions are mandatory
-- **C)** Missing "expected $5,000 in current year" requirement`
+    correctAnswer: 1,
+    explanation: 'SIMPLE IRAs do not require annual nondiscrimination testing (ADP/ACP tests) and have significantly lower administrative costs and filing requirements than 401(k) plans. However, they have lower contribution limits and employers must make either a 3% match or 2% non-elective contribution.',
   },
   {
     id: 'CFP-RET-B2-003',
@@ -85,11 +74,11 @@ At age 53, the employee qualifies for catch-up contributions.
     question: `A self-employed consultant has net self-employment income of $180,000 (after SE tax deduction). What is the maximum SEP contribution for 2026?`,
     options: [
       'A) $36,000',
+      'D) $69,000',
       'B) $45,000',
       'C) $33,408',
-      'D) $69,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($33,408)**
 
 **SEP for Self-Employed:**
@@ -116,12 +105,12 @@ More accurately: $180,000 × 20% = $36,000, reduced by SE tax = ~$33,408
     skillLevel: 'Remembering and Understanding',
     question: `Which allocation formula for a profit-sharing plan would MOST favor older, higher-paid employees?`,
     options: [
+      'D) Integrated with Social Security',
       'A) Pro-rata (based on compensation)',
       'B) Age-weighted',
       'C) New comparability (cross-tested)',
-      'D) Integrated with Social Security'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (New comparability/cross-tested)**
 
 **Allocation Formulas:**
@@ -146,12 +135,12 @@ New comparability (cross-tested) plans provide the most flexibility to benefit o
     skillLevel: 'Application',
     question: `A defined benefit plan promises 2% of final average salary times years of service. An employee retires with 28 years of service and a final 3-year average salary of $125,000. What is their annual pension benefit?`,
     options: [
+      'D) $87,500',
       'A) $56,000',
       'B) $70,000',
       'C) $62,500',
-      'D) $87,500'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($70,000)**
 
 **Defined Benefit Calculation:**
@@ -178,12 +167,12 @@ Annual Benefit = 0.02 × 28 × $125,000 = $70,000
     skillLevel: 'Analysis',
     question: `A 45-year-old with a traditional IRA worth $150,000 is considering a Roth conversion. They're currently in the 24% bracket and expect to be in the 32% bracket in retirement. Which factor would LEAST support converting now?`,
     options: [
-      'A) Higher expected future tax rates',
+      'D) Desire to eliminate RMDs',
       'B) Long time horizon before retirement',
+      'A) Higher expected future tax rates',
       'C) Paying conversion taxes from IRA funds',
-      'D) Desire to eliminate RMDs'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Paying conversion taxes from IRA funds)**
 
 **Factors favoring conversion:**
@@ -208,10 +197,10 @@ Annual Benefit = 0.02 × 28 × $125,000 = $70,000
     skillLevel: 'Application',
     question: `A married couple files jointly with MAGI of $245,000 in 2026. The spouse who works has a 401(k) at work. Can the non-working spouse contribute to a Roth IRA?`,
     options: [
-      'A) Yes, a full $7,500 contribution',
+      'D) Yes, a full $7,000 contribution',
       'B) Yes, but only a reduced amount',
+      'A) Yes, a full $7,500 contribution',
       'C) No, because MAGI exceeds limits',
-      'D) Yes, a full $7,000 contribution'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Yes, but only a reduced amount)**
@@ -239,12 +228,12 @@ At $245,000 MAGI, they're in the phaseout range and can make a partial contribut
     skillLevel: 'Application',
     question: `A high-income individual wants to do a backdoor Roth IRA. They have a $100,000 traditional IRA from prior rollovers. What is the primary concern?`,
     options: [
-      'A) The contribution exceeds annual limits',
       'B) Pro-rata rule will create a taxable portion',
+      'A) The contribution exceeds annual limits',
+      'D) Traditional IRA contributions are not deductible',
       'C) The conversion must wait five years',
-      'D) Traditional IRA contributions are not deductible'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Pro-rata rule will create a taxable portion)**
 
 **Backdoor Roth & Pro-Rata Rule:**
@@ -274,12 +263,12 @@ Converting $7,000 would be 93.5% taxable!
     skillLevel: 'Application',
     question: `Under SECURE 2.0, at what age must individuals born in 1962 begin taking RMDs from their traditional IRA?`,
     options: [
-      'A) 72',
       'B) 73',
+      'A) 72',
+      'D) 70½',
       'C) 75',
-      'D) 70½'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (73)**
 
 **SECURE 2.0 RMD Ages:**
@@ -307,10 +296,10 @@ Someone born in 1962 must begin RMDs at age 73.
     options: [
       'A) Take RMDs over life expectancy',
       'B) Distribute within 5 years',
+      'D) No distributions required until age 75',
       'C) Take annual RMDs AND empty within 10 years',
-      'D) No distributions required until age 75'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Annual RMDs AND empty within 10 years)**
 
 **Post-SECURE Act Inherited IRA Rules (non-spouse, non-eligible designated beneficiary):**
@@ -341,8 +330,8 @@ Someone born in 1962 must begin RMDs at age 73.
     options: [
       'A) $1,800',
       'B) $1,680',
+      'D) $1,920',
       'C) $2,088',
-      'D) $1,920'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A ($1,800)**
@@ -374,12 +363,12 @@ Reduced benefit: $2,400 × 0.75 = $1,800
     skillLevel: 'Application',
     question: `A retiree with FRA of 67 delays claiming Social Security until age 70. What percentage increase over their PIA will they receive?`,
     options: [
-      'A) 8%',
       'B) 16%',
+      'A) 8%',
+      'D) 32%',
       'C) 24%',
-      'D) 32%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (24%)**
 
 **Delayed Retirement Credits:**
@@ -405,12 +394,12 @@ Delaying from 67 to 70 provides a 24% permanent increase in benefits.
     skillLevel: 'Application',
     question: `A non-working spouse, age 65, wants to claim spousal benefits. Their spouse (the worker) has a PIA of $3,000 but hasn't claimed yet. What can the non-working spouse receive?`,
     options: [
+      'D) $1,000 based on their own record',
       'A) $1,500 immediately',
       'B) $1,200 (reduced for early claiming)',
       'C) Nothing until the worker files',
-      'D) $1,000 based on their own record'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Nothing until the worker files)**
 
 **Spousal Benefit Rules:**
@@ -437,11 +426,11 @@ Maximum spousal benefit is 50% of worker's PIA at FRA.
     question: `A retired couple has $25,000 in Social Security benefits and $45,000 in pension and investment income. What percentage of their Social Security may be taxable?`,
     options: [
       'A) 0%',
+      'D) 100%',
       'B) 50%',
       'C) 85%',
-      'D) 100%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (85%)**
 
 **Combined Income Test (MFJ):**
@@ -470,10 +459,10 @@ At $57,500 combined income, up to 85% of Social Security is taxable.
     skillLevel: 'Application',
     question: `A 63-year-old receiving Social Security earns $48,000 from part-time work in 2026. The earnings limit is $22,320. How much will their annual benefits be reduced?`,
     options: [
-      'A) $25,680',
+      'D) $6,420',
       'B) $12,840',
+      'A) $25,680',
       'C) $51,360',
-      'D) $6,420'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($12,840)**
@@ -505,12 +494,12 @@ Benefit reduction: $25,680 / 2 = $12,840
     skillLevel: 'Analysis',
     question: `Which withdrawal sequence is generally MOST tax-efficient in the early years of retirement?`,
     options: [
-      'A) Roth IRA first, then taxable, then traditional IRA',
       'B) Traditional IRA first, then taxable, then Roth',
+      'D) Equal withdrawals from all accounts',
+      'A) Roth IRA first, then taxable, then traditional IRA',
       'C) Taxable accounts first, then traditional IRA, then Roth',
-      'D) Equal withdrawals from all accounts'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Taxable first, then traditional, then Roth)**
 
 **Tax-Efficient Withdrawal Sequence:**
@@ -536,12 +525,12 @@ This allows Roth assets to grow tax-free longest while using lower brackets earl
     skillLevel: 'Application',
     question: `A retiree has a $1,500,000 portfolio and wants a sustainable income. Using the 4% rule, what is their first-year withdrawal amount?`,
     options: [
-      'A) $45,000',
       'B) $60,000',
+      'D) $75,000',
+      'A) $45,000',
       'C) $52,500',
-      'D) $75,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($60,000)**
 
 **4% Rule (Bengen Rule):**
@@ -570,8 +559,8 @@ This rule was designed for a 30-year retirement with a 50/50 stock/bond allocati
     options: [
       'A) Poor returns in early retirement with ongoing withdrawals',
       'B) Poor returns in late retirement with ongoing withdrawals',
+      'D) Average returns throughout retirement',
       'C) Poor returns during the accumulation phase',
-      'D) Average returns throughout retirement'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A (Poor returns in early retirement with withdrawals)**
@@ -602,8 +591,8 @@ Poor returns late in retirement or during accumulation have less impact.
     options: [
       'A) Growth stocks and aggressive equity funds',
       'B) Cash equivalents and short-term bonds',
+      'D) International equity and emerging markets',
       'C) Balanced funds and REITs',
-      'D) International equity and emerging markets'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Cash equivalents and short-term bonds)**
@@ -629,12 +618,12 @@ The near-term bucket provides liquidity and prevents forced selling during marke
     skillLevel: 'Analysis',
     question: `Which client would benefit MOST from partial annuitization of their retirement assets?`,
     options: [
-      'A) Wealthy client with pension and Social Security covering all basic expenses',
       'B) Client with significant long-term care insurance and longevity concerns',
+      'A) Wealthy client with pension and Social Security covering all basic expenses',
+      'D) Client planning a bequest to children as primary goal',
       'C) Client with no pension who worries about outliving their money',
-      'D) Client planning a bequest to children as primary goal'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (No pension, worried about outliving money)**
 
 **Ideal Annuitization Candidate:**
@@ -666,8 +655,8 @@ Annuities provide lifetime income guarantee, addressing outliving money concern.
     options: [
       'A) For-profit technology company',
       'B) State university',
+      'D) Retail corporation',
       'C) Law firm partnership',
-      'D) Retail corporation'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (State university)**
@@ -695,11 +684,11 @@ For-profit companies use 401(k) plans instead.
     question: `A 62-year-old government employee participates in both a 403(b) and governmental 457(b). What is their maximum total deferral in 2026?`,
     options: [
       'A) $31,000',
+      'D) $54,500',
       'B) $46,500',
       'C) $62,000',
-      'D) $54,500'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($62,000)**
 
 **Dual Plan Contribution Limits:**
@@ -725,12 +714,12 @@ For-profit companies use 401(k) plans instead.
     skillLevel: 'Remembering and Understanding',
     question: `Which statement about Roth 401(k) plans is CORRECT?`,
     options: [
+      'D) Distributions are never taxable at any age',
       'A) Contributions are subject to income limits like Roth IRA',
       'B) Employer matching contributions go into pre-tax account',
       'C) There are no contribution limits',
-      'D) Distributions are never taxable at any age'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Employer match goes to pre-tax account)**
 
 **Roth 401(k) Features:**
@@ -756,12 +745,12 @@ For-profit companies use 401(k) plans instead.
     skillLevel: 'Application',
     question: `A retiree has MAGI of $120,000 (single filer) in 2026. How does this affect their Medicare Part B premium?`,
     options: [
+      'D) Medicare coverage is reduced',
       'A) Standard premium applies',
       'B) IRMAA surcharge increases premium by $70/month',
       'C) IRMAA surcharge increases premium by $230/month',
-      'D) Medicare coverage is reduced'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A (Standard premium applies)**
 
 **IRMAA Thresholds (2026 Single):**
@@ -787,10 +776,10 @@ Note: IRMAA is based on MAGI from two years prior and thresholds adjust annually
     skillLevel: 'Remembering and Understanding',
     question: `Which retirement income source provides guaranteed payments regardless of market performance?`,
     options: [
-      'A) 401(k) distributions',
+      'D) Taxable investment income',
       'B) Defined benefit pension',
+      'A) 401(k) distributions',
       'C) IRA withdrawals',
-      'D) Taxable investment income'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Defined benefit pension)**

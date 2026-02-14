@@ -1,0 +1,9 @@
+Business Impact Analysis… Nail this, and you’ll nail the exam. Seriously.
+
+So, what's a BIA? It's a process… to identify and evaluate the potential effects of disruptions to an organization’s critical business functions. Think of it as a financial autopsy… before the business even gets sick. Auditors care because… a solid BIA is the foundation for disaster recovery, business continuity, and overall resilience. We need to verify it’s thorough and accurate… to protect the organization's assets.
+
+Now, here’s the trap… ISACA loves to mix up *when* RTO and RPO are determined. The trap is… assuming they're only identified *after* an incident. Nope! The correct answer is… RTO and RPO are determined *during* the BIA process. This is where we analyze business needs… and decide how quickly we need to recover and how much data loss we can tolerate. The BIA *identifies* the impact… and *determines* the RTO and RPO *before* disaster strikes.
+
+For example, when auditing a hospital… the BIA would identify that patient records are critical. The RTO might be minutes… meaning records must be available almost immediately after an outage. The RPO might be near zero… meaning minimal data loss is acceptable. This drives the recovery strategy… and the resources needed.
+
+The single most important thing to remember? BIA identifies impact… and determines RTO and RPO… *before* an incident. Get that straight… and you’re one step closer to passing the CISA.

@@ -21,8 +21,8 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     options: [
       'Immediately file an amended return without client consent',
       'Advise the client of the consequences and recommend corrective action',
+      'Continue filing future returns without addressing the issue',
       'Report the client to the IRS',
-      'Continue filing future returns without addressing the issue'
     ],
     correctAnswer: 1,
     explanation: 'The practitioner must advise the client of the consequences of the error and recommend corrective action. The practitioner cannot file an amended return without client authorization but may need to withdraw if the client refuses to correct.',
@@ -39,10 +39,10 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A CAF number is:',
     options: [
-      'The same as a PTIN',
+      'The case number for an audit',
       'A unique number assigned to representatives authorized to practice before the IRS',
+      'The same as a PTIN',
       'Required only for attorneys',
-      'The case number for an audit'
     ],
     correctAnswer: 1,
     explanation: 'A CAF (Centralized Authorization File) number is a unique identification number assigned to practitioners and representatives who file Forms 2848 or 8821. It helps the IRS track authorizations.',
@@ -59,12 +59,12 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'A tax return position has a "reasonable basis" if:',
     options: [
-      'The practitioner thinks it might work',
       'It is significantly higher than not frivolous and based on one or more authorities',
+      'The IRS has issued a ruling supporting it',
+      'The practitioner thinks it might work',
       'At least 50% of practitioners would agree',
-      'The IRS has issued a ruling supporting it'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Reasonable basis is relatively high compared to "not frivolous" (roughly 20% chance of success). It requires reliance on one or more authorities. It is lower than substantial authority or more likely than not.',
     reference: 'Treas. Reg. §1.6662-3(b)(3)',
   },
@@ -79,12 +79,12 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A practitioner must not sign a return if they know the return:',
     options: [
+      'Is being filed electronically',
       'Contains any estimated figures',
       'Contains a position that lacks a reasonable basis',
       'Will result in a refund',
-      'Is being filed electronically'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A practitioner may not sign a return if any position lacks a reasonable basis (disclosed) or substantial authority (undisclosed). Estimated figures are acceptable if reasonable.',
     reference: 'Circular 230 §10.34',
   },
@@ -100,11 +100,11 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     question: 'The IRS Transcript Delivery System (TDS) allows practitioners to:',
     options: [
       'File returns electronically',
+      'Request penalty abatement',
       'Obtain client tax account and return transcripts online',
       'Represent clients in court',
-      'Request penalty abatement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'TDS is an e-Services tool that allows authorized practitioners to view and obtain tax transcripts for specific clients for specific tax years. It requires a valid power of attorney on file.',
     reference: 'IRS e-Services',
   },
@@ -124,11 +124,11 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     question: 'The penalty for filing a frivolous tax return is:',
     options: [
       '$500',
+      '$10,000',
       '$1,000',
       '$5,000',
-      '$10,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The frivolous return penalty is $5,000 for filing a return that does not include enough information to determine liability or is based on a frivolous position. Common frivolous arguments are listed by the IRS.',
     reference: 'IRC §6702',
   },
@@ -143,12 +143,12 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'The penalty for failure to file correct information returns (such as Forms W-2 or 1099) can be:',
     options: [
-      '$10 per return',
       'Up to $310 per return for 2024, with increased maximums',
+      '$10 per return',
+      'No penalty applies',
       '$1,000 flat fee',
-      'No penalty applies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The penalty for failure to file correct information returns ranges from $60 to $310 per return depending on how late corrections are made. Annual maximum limits apply, with smaller maximums for small businesses.',
     reference: 'IRC §6721',
   },
@@ -163,12 +163,12 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'For purposes of the accuracy-related penalty, negligence includes:',
     options: [
-      'Making an honest mistake',
       'Failure to make a reasonable attempt to comply with the tax laws or to keep adequate records',
+      'Making an honest mistake',
+      'Filing an extension',
       'Taking a position with substantial authority',
-      'Filing an extension'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Negligence is any failure to make a reasonable attempt to comply with tax law provisions or to exercise ordinary and reasonable care in return preparation. Carelessness and disregard of rules also constitute negligence.',
     reference: 'IRC §6662(c); Treas. Reg. §1.6662-3',
   },
@@ -187,12 +187,12 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Ex parte communications between Appeals and other IRS employees:',
     options: [
-      'Are encouraged to resolve cases quickly',
       'Are generally prohibited to ensure Appeals\' independence',
+      'Are only allowed in criminal cases',
+      'Are encouraged to resolve cases quickly',
       'Are required in all cases',
-      'Are only allowed in criminal cases'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Ex parte communications are prohibited to maintain Appeals\' independence. Appeals cannot have one-sided communications with IRS examination or collection about the merits of the case without the taxpayer present.',
     reference: 'Rev. Proc. 2012-18',
   },
@@ -209,8 +209,8 @@ export const SEE3_QUESTIONS_BATCH9: Question[] = [
     options: [
       'A request for additional documentation',
       'The IRS\'s formal determination of additional tax owed, giving the taxpayer 90 days to petition Tax Court',
+      'A confirmation of a refund',
       'A notice that an audit has begun',
-      'A confirmation of a refund'
     ],
     correctAnswer: 1,
     explanation: 'The Notice of Deficiency is the IRS\'s formal statutory notice of proposed additional tax. It gives the taxpayer 90 days (150 days if addressed outside the U.S.) to petition the Tax Court before assessment.',

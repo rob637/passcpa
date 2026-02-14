@@ -20,12 +20,12 @@ describe('Terms Page', () => {
     expect(screen.getByText(/Last updated/i)).toBeInTheDocument();
   });
 
-  it('should render back link', () => {
+  it('should render back button', () => {
     renderWithRouter(<Terms />);
     
-    // Has a link back to help page
-    const backLink = document.querySelector('a[href="/help"]');
-    expect(backLink).toBeInTheDocument();
+    // Has a back button (uses navigate(-1) instead of link)
+    const backButton = screen.getByRole('button', { name: /back/i });
+    expect(backButton).toBeInTheDocument();
   });
 
   it('should render without crashing', () => {

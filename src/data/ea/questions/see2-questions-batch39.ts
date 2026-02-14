@@ -20,10 +20,10 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the at-risk rules of IRC §465, a taxpayer may deduct losses only to the extent of:',
     options: [
-      'Total investment regardless of liability',
+      'Annual income from the activity',
       'Amount actually at risk (cash plus recourse debt)',
+      'Total investment regardless of liability',
       'Fair market value of assets',
-      'Annual income from the activity'
     ],
     correctAnswer: 1,
     explanation: 'The at-risk rules limit loss deductions to the amount the taxpayer has at risk: cash invested, adjusted basis of property contributed, and amounts borrowed for which the taxpayer is personally liable.',
@@ -41,11 +41,11 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     question: 'Which of the following increases a taxpayer\'s amount at risk?',
     options: [
       'Non-recourse financing from unrelated parties',
+      'Stop-loss agreements',
       'Recourse debt for which the taxpayer is personally liable',
       'Guarantees by related parties',
-      'Stop-loss agreements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Amounts at risk include recourse debt for which the taxpayer is personally liable. Non-recourse debt generally does not increase at-risk amount (except qualified non-recourse financing for real estate).',
     reference: 'IRC §465(b)',
   },
@@ -60,12 +60,12 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Qualified non-recourse financing for real estate:',
     options: [
+      'Only applies to partnerships',
       'Is never considered at risk',
       'Is treated as an amount at risk if secured by the real property',
       'Requires personal guarantee to be at risk',
-      'Only applies to partnerships'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Qualified non-recourse financing for real estate is treated as at risk if it\'s secured by the real property and borrowed from a qualified lender (bank, government, etc. - not related parties or sellers).',
     reference: 'IRC §465(b)(6)',
   },
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Losses exceeding the at-risk amount are:',
     options: [
-      'Permanently disallowed',
       'Carried forward and allowed when at-risk amount increases',
+      'Permanently disallowed',
+      'Deductible against passive income only',
       'Converted to capital losses',
-      'Deductible against passive income only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Losses disallowed due to at-risk limitations are suspended and carried forward indefinitely. They become deductible in future years when the at-risk amount increases.',
     reference: 'IRC §465(a)(2)',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the passive activity loss rules, passive losses can generally offset:',
     options: [
-      'Any type of income',
       'Only passive income',
+      'Any type of income',
+      'Only ordinary income',
       'Only portfolio income',
-      'Only ordinary income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under §469, passive activity losses can only offset passive activity income. Excess passive losses are suspended and carried forward (not back) to offset future passive income or until disposition.',
     reference: 'IRC §469(a)',
   },
@@ -122,8 +122,8 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     options: [
       '100 hours during the year',
       '500 hours during the year',
+      '1,000 hours during the year',
       '750 hours during the year',
-      '1,000 hours during the year'
     ],
     correctAnswer: 1,
     explanation: 'A taxpayer materially participates if they work more than 500 hours during the year. This is one of seven tests; others include participation being substantially all participation or more than 100 hours if no one else participates more.',
@@ -140,10 +140,10 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Rental real estate activities are generally:',
     options: [
-      'Always treated as active income',
+      'Only passive if owned through a partnership',
       'Treated as passive regardless of participation',
+      'Always treated as active income',
       'Exempt from all loss limitations',
-      'Only passive if owned through a partnership'
     ],
     correctAnswer: 1,
     explanation: 'Rental activities are generally treated as passive per se, regardless of material participation. Exceptions exist for real estate professionals and the $25,000 rental allowance for active participation.',
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Application',
     question: 'The $25,000 rental real estate loss allowance:',
     options: [
-      'Applies to all taxpayers regardless of income',
       'Is phased out for AGI between $100,000 and $150,000',
+      'Is available for commercial rentals only',
+      'Applies to all taxpayers regardless of income',
       'Only applies to real estate professionals',
-      'Is available for commercial rentals only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The $25,000 allowance permits active participants to deduct up to $25,000 of rental losses against non-passive income. It phases out $1 for every $2 of AGI over $100,000 (fully eliminated at $150,000).',
     reference: 'IRC §469(i)',
   },
@@ -178,15 +178,15 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     subtopic: 'Real Estate Professional',
     difficulty: 'hard',
     skillLevel: 'Remembering and Understanding',
-    question: 'To qualify as a real estate professional, a taxpayer must:',
+    question: 'A taxpayer actively participates in a rental real estate activity and has AGI of $85,000 before considering the rental loss. The rental activity generated a $20,000 loss. The taxpayer is not a real estate professional. What amount of the rental loss can the taxpayer deduct against non-passive income?',
     options: [
-      'Own at least 5 rental properties',
-      'Perform more than 750 hours of real property activities and more than half of personal services in real property trades or businesses',
-      'Have a real estate license',
-      'Only invest in residential rentals'
+      '$20,000',
+      '$25,000',
+      '$0',
+      '$12,500',
     ],
-    correctAnswer: 1,
-    explanation: 'A real estate professional must: (1) perform more than 750 hours in real property trades or businesses, AND (2) more than half of personal services must be in real property activities. Hours must also be materially participated for each property or grouped under election.',
+    correctAnswer: 0,
+    explanation: 'Under IRC §469(i), taxpayers who actively participate in rental real estate may deduct up to $25,000 of rental losses against non-passive income. This allowance phases out between AGI of $100,000–$150,000. Since the taxpayer\'s AGI of $85,000 is below the phase-out threshold, the full $20,000 loss is deductible (within the $25,000 maximum). Active participation requires making management decisions such as approving tenants and setting rent.',
     reference: 'IRC §469(c)(7)',
   },
   {
@@ -200,10 +200,10 @@ export const SEE2_QUESTIONS_BATCH39: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When a passive activity is completely disposed of in a taxable transaction:',
     options: [
-      'Suspended losses are permanently disallowed',
+      'Only 50% of suspended losses are allowed',
       'All suspended passive losses are fully deductible against any income',
+      'Suspended losses are permanently disallowed',
       'Losses are converted to capital losses',
-      'Only 50% of suspended losses are allowed'
     ],
     correctAnswer: 1,
     explanation: 'Upon complete disposition of a passive activity in a fully taxable transaction to an unrelated party, all suspended passive losses are released and fully deductible against any type of income.',

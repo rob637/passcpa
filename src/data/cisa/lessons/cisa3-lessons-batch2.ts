@@ -11,12 +11,12 @@ export const cisa3LessonsBatch2: Lesson[] = [
   // ===========================================================================
   
   {
-    id: 'CISA3-010',
+    id: 'CISA3-016',
     courseId: 'cisa',
     section: 'CISA3',
     title: 'Software Development Life Cycle Models',
     description: 'Compare SDLC methodologies including Waterfall, Agile, and DevOps',
-    order: 10,
+    order: 16,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['SDLC', 'Waterfall', 'Agile', 'DevOps', 'Methodologies'],
@@ -83,12 +83,12 @@ export const cisa3LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA3-011',
+    id: 'CISA3-017',
     courseId: 'cisa',
     section: 'CISA3',
     title: 'Requirements Management',
     description: 'Learn how to define, document, and manage system requirements',
-    order: 11,
+    order: 17,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Requirements', 'Elicitation', 'Traceability', 'Validation'],
@@ -154,12 +154,12 @@ export const cisa3LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA3-012',
+    id: 'CISA3-018',
     courseId: 'cisa',
     section: 'CISA3',
     title: 'Application Testing',
     description: 'Master testing methodologies, levels, and quality assurance practices',
-    order: 12,
+    order: 18,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Testing', 'Test Levels', 'Test Types', 'Quality Assurance'],
@@ -224,12 +224,12 @@ export const cisa3LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA3-013',
+    id: 'CISA3-019',
     courseId: 'cisa',
     section: 'CISA3',
     title: 'Change and Release Management',
     description: 'Understand controls for managing changes to production systems',
-    order: 13,
+    order: 19,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Change Management', 'Release Management', 'CAB', 'Emergency Changes'],
@@ -298,12 +298,12 @@ export const cisa3LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA3-014',
+    id: 'CISA3-020',
     courseId: 'cisa',
     section: 'CISA3',
     title: 'Project Management Fundamentals',
     description: 'Learn project management principles and audit considerations for IT projects',
-    order: 14,
+    order: 20,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Project Management', 'Project Lifecycle', 'Risk Management', 'Governance'],
@@ -373,12 +373,12 @@ export const cisa3LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA3-015',
+    id: 'CISA3-021',
     courseId: 'cisa',
     section: 'CISA3',
     title: 'Configuration Management',
     description: 'Understand configuration management and version control practices',
-    order: 15,
+    order: 21,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Configuration Management', 'Version Control', 'CMDB', 'Baselines'],

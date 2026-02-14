@@ -20,12 +20,12 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An Information Document Request (IDR) is:',
     options: [
-      'A court order',
       'A written request from the IRS examiner for documents and information during an audit',
       'A taxpayer request for records',
-      'A summons'
+      'A court order',
+      'A summons',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'An IDR is a formal written request issued by an IRS examiner during an audit to obtain specific documents, records, or information from the taxpayer.',
     reference: 'IRM 4.10.3.3',
   },
@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When responding to an IDR, a taxpayer should generally:',
     options: [
+      'Wait until the audit closing conference',
       'Ignore it until a summons is issued',
       'Respond within the timeframe specified, typically 10-30 days',
-      'Wait until the audit closing conference',
-      'Respond only in person'
+      'Respond only in person',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IDRs specify a response deadline, typically 10-30 days. Taxpayers and representatives should respond timely or request an extension if more time is needed.',
     reference: 'IRM 4.10.3.3.3',
   },
@@ -61,11 +61,11 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     question: 'If a taxpayer fails to comply with an IDR:',
     options: [
       'The audit is automatically closed',
-      'The IRS may issue a summons or disallow deductions due to lack of substantiation',
       'No consequences occur',
-      'The taxpayer receives a refund'
+      'The IRS may issue a summons or disallow deductions due to lack of substantiation',
+      'The taxpayer receives a refund',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Failure to comply with IDRs may lead to issuance of an administrative summons, adverse inference (disallowing items), or penalties. Consistent non-compliance can escalate consequences.',
     reference: 'IRM 4.10.3.3.4',
   },
@@ -81,11 +81,11 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     question: 'The IRS summons authority under IRC §7602 allows:',
     options: [
       'Only examination of taxpayer records',
-      'Examination of books, testimony under oath, and production of documents',
       'Search and seizure without warrant',
-      'Arrest of taxpayers'
+      'Examination of books, testimony under oath, and production of documents',
+      'Arrest of taxpayers',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRC §7602 authorizes the IRS to examine books/records, take testimony under oath, and compel production of papers/documents relevant to determining tax liability.',
     reference: 'IRC §7602',
   },
@@ -100,12 +100,12 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A "third-party summons" is issued to:',
     options: [
-      'The taxpayer only',
       'Someone other than the taxpayer who has relevant records',
+      'The taxpayer only',
       'The IRS for internal records',
-      'Tax Court'
+      'Tax Court',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Third-party summonses are issued to banks, employers, or other parties who possess records relevant to determining a taxpayer\'s liability. Notice must generally be given to the taxpayer.',
     reference: 'IRC §7609',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If a summons recipient refuses to comply:',
     options: [
-      'The IRS cannot enforce it',
       'The IRS may petition a federal district court to enforce the summons',
+      'The IRS cannot enforce it',
       'The matter is automatically referred to Appeals',
-      'The audit is closed'
+      'The audit is closed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRS enforces summonses by petitioning a federal district court under IRC §7604. The court may order compliance and hold non-compliant parties in contempt.',
     reference: 'IRC §7604',
   },
@@ -140,10 +140,10 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer who receives notice of a third-party summons may:',
     options: [
-      'Do nothing',
-      'File a motion to quash in federal district court within 20 days',
       'Only file in Tax Court',
-      'Request a CDP hearing'
+      'File a motion to quash in federal district court within 20 days',
+      'Do nothing',
+      'Request a CDP hearing',
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §7609(b), a taxpayer (or other noticee) may file a motion to quash a third-party summons in federal district court within 20 days of notice.',
@@ -160,10 +160,10 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the Powell case, an IRS summons is valid if:',
     options: [
-      'It is convenient for the IRS',
-      'The investigation is for legitimate purpose, the information is relevant, the IRS does not already have it, and administrative steps have been followed',
       'It is signed by the Commissioner',
-      'The taxpayer agrees'
+      'The investigation is for legitimate purpose, the information is relevant, the IRS does not already have it, and administrative steps have been followed',
+      'It is convenient for the IRS',
+      'The taxpayer agrees',
     ],
     correctAnswer: 1,
     explanation: 'United States v. Powell established four requirements: legitimate purpose, relevance to that purpose, IRS doesn\'t already possess the information, and proper administrative steps followed.',
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which privilege may protect communications from IRS summons?',
     options: [
-      'Tax return preparer privilege',
       'Attorney-client privilege',
       'Accountant privilege',
-      'All professional communications'
+      'Tax return preparer privilege',
+      'All professional communications',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Attorney-client privilege is recognized in IRS proceedings. The IRC §7525 tax practitioner-client privilege is limited and does not apply in criminal matters or to tax shelter advice.',
     reference: 'IRC §7525',
   },
@@ -200,10 +200,10 @@ export const SEE3_QUESTIONS_BATCH22: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A "John Doe" summons:',
     options: [
-      'Is addressed to a specific taxpayer',
-      'Seeks information about an unidentified class of taxpayers',
       'Is invalid',
-      'Can only be issued in criminal cases'
+      'Seeks information about an unidentified class of taxpayers',
+      'Is addressed to a specific taxpayer',
+      'Can only be issued in criminal cases',
     ],
     correctAnswer: 1,
     explanation: 'A John Doe summons is issued when the IRS does not know the identity of the taxpayers being investigated. It requires court approval and seeks information about a class of potentially non-compliant taxpayers.',

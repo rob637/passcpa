@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Type A reorganization under IRC §368(a)(1)(A) is:',
     options: [
-      'A stock-for-stock exchange',
       'A statutory merger or consolidation under state law',
+      'A stock-for-stock exchange',
+      'A divisive reorganization',
       'An acquisition of assets for stock',
-      'A divisive reorganization'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A Type A reorganization is a statutory merger or consolidation that complies with state law. It allows flexibility in consideration paid (stock, cash, property) subject to continuity requirements.',
     reference: 'IRC §368(a)(1)(A)',
   },
@@ -42,8 +42,8 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     options: [
       'Cash or property',
       'Solely voting stock',
+      'Any combination of consideration',
       'At least 80% stock',
-      'Any combination of consideration'
     ],
     correctAnswer: 1,
     explanation: 'A Type B reorganization (stock-for-stock) requires the acquiring corporation to use solely its voting stock (or parent voting stock) to acquire control of target. No boot is permitted.',
@@ -60,10 +60,10 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     skillLevel: 'Application',
     question: 'A Type C reorganization requires acquisition of substantially all target assets for:',
     options: [
-      'Any consideration',
+      'Debt securities',
       'Solely voting stock, with limited boot allowed',
+      'Any consideration',
       'Cash only',
-      'Debt securities'
     ],
     correctAnswer: 1,
     explanation: 'A Type C reorganization (asset acquisition) requires solely voting stock, though up to 20% of FMV can be boot if voting stock is at least 80% of total consideration. Target must liquidate.',
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Type D reorganization can be:',
     options: [
-      'Only acquisitive',
       'Acquisitive or divisive',
+      'A reverse merger',
+      'Only acquisitive',
       'Only a spin-off',
-      'A reverse merger'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Type D reorganizations include acquisitive D reorgs (asset transfer by controlled transferor) and divisive D reorgs (spin-offs, split-offs, split-ups under §355).',
     reference: 'IRC §368(a)(1)(D)',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In a tax-free spin-off under IRC §355:',
     options: [
-      'Shareholders must surrender stock to receive the subsidiary stock',
       'The parent distributes subsidiary stock to shareholders without surrender',
+      'Only cash can be distributed',
+      'Shareholders must surrender stock to receive the subsidiary stock',
       'The subsidiary must immediately merge with another company',
-      'Only cash can be distributed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'In a spin-off, the parent corporation distributes subsidiary stock pro-rata to its shareholders without any surrender of parent stock. Shareholders end up owning both companies.',
     reference: 'IRC §355(a)',
   },
@@ -121,11 +121,11 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     question: 'In a split-off transaction:',
     options: [
       'The company splits into multiple entities with all shareholders owning each',
+      'No stock is surrendered',
       'Some shareholders exchange parent stock for subsidiary stock',
       'The parent is liquidated',
-      'No stock is surrendered'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'In a split-off, shareholders exchange their parent stock for subsidiary stock. Unlike a spin-off, shareholders surrender parent stock and receive subsidiary stock in return.',
     reference: 'IRC §355',
   },
@@ -141,11 +141,11 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     question: 'The continuity of interest doctrine requires:',
     options: [
       'All consideration must be cash',
+      'At least 50% cash consideration',
       'A substantial portion of consideration must be equity to preserve tax-free treatment',
       'Target shareholders must hold stock for 5 years',
-      'At least 50% cash consideration'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Continuity of interest requires that a substantial portion of consideration be equity (generally 40-50% or more) to qualify as a tax-free reorganization. It ensures target shareholders maintain an ongoing interest.',
     reference: 'Treas. Reg. §1.368-1(e)',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Continuity of business enterprise requires the acquiring corporation to either:',
     options: [
-      'Immediately sell all target assets',
       'Continue the target\'s historic business or use a significant portion of target\'s historic assets',
+      'Immediately sell all target assets',
+      'Retain all target employees for 3 years',
       'Maintain the target\'s corporate name',
-      'Retain all target employees for 3 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under Treas. Reg. §1.368-1(d), COBE requires the acquirer to continue the target\'s historic business OR use a significant portion of historic business assets in a business.',
     reference: 'Treas. Reg. §1.368-1(d)',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     skillLevel: 'Application',
     question: 'In a reorganization where shareholders receive stock worth $80,000 and boot of $20,000, and their stock basis is $50,000:',
     options: [
-      'Recognize $20,000 gain',
       'Recognize $50,000 gain',
+      'Recognize $20,000 gain',
+      'Recognize $30,000 gain',
       'Recognize no gain',
-      'Recognize $30,000 gain'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Under IRC §356, gain is recognized to the extent of boot received, but not in excess of total realized gain. Realized gain = $100,000 - $50,000 = $50,000. Boot = $20,000. Recognized gain = $20,000.',
     reference: 'IRC §356(a)',
   },
@@ -202,8 +202,8 @@ export const SEE2_QUESTIONS_BATCH32: Question[] = [
     options: [
       'Cannot use any target tax attributes',
       'Succeeds to certain tax attributes of the target, including NOLs',
+      'Loses its own tax attributes',
       'Must immediately recognize all target losses',
-      'Loses its own tax attributes'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §381, the acquiring corporation succeeds to many tax attributes of the target, including NOL and capital loss carryovers, E&P, accounting methods, and credit carryovers (subject to §382/383 limitations).',

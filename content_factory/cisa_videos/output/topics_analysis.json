@@ -1,0 +1,622 @@
+{
+  "analysis_date": "2026-02-11T17:36:32.165920",
+  "total_questions": 1523,
+  "priority_video_topics": true,
+  "recommended_for_videos": [
+    {
+      "topic": "BCP vs DRP",
+      "domain": "CISA4",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "What is the PRIMARY difference between BCP and DRP?",
+        "Which plan addresses day-to-day operations recovery?"
+      ],
+      "subtopics": {
+        "Business Continuity": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Disaster Recovery": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Risk Assessment Methodology",
+      "domain": "CISA1",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "What is the FIRST step in a risk assessment?",
+        "How should risk be quantified?"
+      ],
+      "subtopics": {
+        "Risk Identification": {
+          "hard": 1,
+          "medium": 1,
+          "easy": 0
+        },
+        "Risk Analysis": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Control Types - Preventive Detective Corrective",
+      "domain": "CISA5",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Which is an example of a detective control?",
+        "Preventive controls are designed to:"
+      ],
+      "subtopics": {
+        "Control Classification": {
+          "hard": 2,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Audit Evidence Hierarchy",
+      "domain": "CISA1",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Which type of evidence is MOST reliable?",
+        "Documentary evidence is considered:"
+      ],
+      "subtopics": {
+        "Evidence Types": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Evidence Reliability": {
+          "hard": 1,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Outsourcing and Third-Party Management",
+      "domain": "CISA2",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "When outsourcing IT services, the MOST important consideration is:",
+        "Third-party audits require:"
+      ],
+      "subtopics": {
+        "Vendor Management": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "SLA Monitoring": {
+          "hard": 1,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Change Management Controls",
+      "domain": "CISA3",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "What is the PRIMARY purpose of change management?",
+        "Emergency changes should:"
+      ],
+      "subtopics": {
+        "Change Control Process": {
+          "hard": 2,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Access Control Models",
+      "domain": "CISA5",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Which access control model uses labels?",
+        "Role-based access control is BEST for:"
+      ],
+      "subtopics": {
+        "MAC DAC RBAC": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Access Provisioning": {
+          "hard": 1,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Incident Response Process",
+      "domain": "CISA4",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "What is the FIRST step in incident response?",
+        "Incident containment means:"
+      ],
+      "subtopics": {
+        "IR Phases": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Evidence Preservation": {
+          "hard": 1,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Data Classification",
+      "domain": "CISA5",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Who is responsible for data classification?",
+        "Data classification is based on:"
+      ],
+      "subtopics": {
+        "Classification Levels": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Data Ownership": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Network Security Controls",
+      "domain": "CISA5",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "A firewall is BEST described as:",
+        "Network segmentation provides:"
+      ],
+      "subtopics": {
+        "Firewalls": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "IDS IPS": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Audit Sampling Methods",
+      "domain": "CISA1",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Statistical sampling provides:",
+        "When should judgmental sampling be used?"
+      ],
+      "subtopics": {
+        "Statistical Sampling": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Sample Size": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Segregation of Duties",
+      "domain": "CISA2",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Which roles MUST be segregated?",
+        "Compensating controls for SoD include:"
+      ],
+      "subtopics": {
+        "Role Separation": {
+          "hard": 2,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "IT Governance Frameworks",
+      "domain": "CISA2",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "COBIT is PRIMARILY used for:",
+        "The IT steering committee is responsible for:"
+      ],
+      "subtopics": {
+        "COBIT": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Governance Structure": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "System Development Lifecycle",
+      "domain": "CISA3",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "At which SDLC phase should security be considered?",
+        "User acceptance testing occurs in:"
+      ],
+      "subtopics": {
+        "SDLC Phases": {
+          "hard": 2,
+          "medium": 2,
+          "easy": 0
+        },
+        "Security in SDLC": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Encryption and PKI Basics",
+      "domain": "CISA5",
+      "difficulty_score": 3.0,
+      "sample_questions": [
+        "Symmetric encryption uses:",
+        "A digital certificate contains:"
+      ],
+      "subtopics": {
+        "Symmetric vs Asymmetric": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Digital Signatures": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Audit Planning Process",
+      "domain": "CISA1",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "The audit charter should include:",
+        "Risk-based audit planning prioritizes:"
+      ],
+      "subtopics": {
+        "Audit Charter": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Planning Steps": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Physical Security Controls",
+      "domain": "CISA5",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Mantrap doors provide:",
+        "Environmental controls include:"
+      ],
+      "subtopics": {
+        "Physical Access": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Environmental Controls": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Database Controls and Security",
+      "domain": "CISA5",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Database referential integrity ensures:",
+        "The DBA should NOT have access to:"
+      ],
+      "subtopics": {
+        "Database Integrity": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "DBA Controls": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Cloud Computing Audit Considerations",
+      "domain": "CISA4",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "In IaaS, the customer is responsible for:",
+        "Cloud audit challenges include:"
+      ],
+      "subtopics": {
+        "Cloud Models": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Shared Responsibility": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Regulatory Compliance - SOX HIPAA GDPR",
+      "domain": "CISA2",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "SOX Section 404 requires:",
+        "GDPR gives individuals the right to:"
+      ],
+      "subtopics": {
+        "SOX Requirements": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Privacy Regulations": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Penetration Testing vs Vulnerability Assessment",
+      "domain": "CISA5",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Penetration testing differs from vulnerability scanning in that:",
+        "When should penetration testing be performed?"
+      ],
+      "subtopics": {
+        "Testing Types": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Testing Scope": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Business Impact Analysis",
+      "domain": "CISA4",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "BIA identifies:",
+        "RTO and RPO are determined during:"
+      ],
+      "subtopics": {
+        "BIA Process": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "RTO RPO": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "IT Steering Committee Role",
+      "domain": "CISA2",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "The IT steering committee should include:",
+        "Primary responsibility of IT steering committee:"
+      ],
+      "subtopics": {
+        "Committee Composition": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Committee Responsibilities": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Software Licensing Compliance",
+      "domain": "CISA3",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Software license audits should verify:",
+        "Unauthorized software poses risk of:"
+      ],
+      "subtopics": {
+        "License Types": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Compliance Monitoring": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Problem vs Incident Management",
+      "domain": "CISA4",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Problem management focuses on:",
+        "An incident becomes a problem when:"
+      ],
+      "subtopics": {
+        "ITIL Processes": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Root Cause Analysis": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Capacity Planning",
+      "domain": "CISA4",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Capacity planning helps prevent:",
+        "Capacity monitoring should include:"
+      ],
+      "subtopics": {
+        "Resource Planning": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Performance Monitoring": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Backup Strategies and Recovery",
+      "domain": "CISA4",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Incremental backups include:",
+        "Offsite backup storage provides:"
+      ],
+      "subtopics": {
+        "Backup Types": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Recovery Testing": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Audit Evidence Documentation",
+      "domain": "CISA1",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "Audit workpapers should:",
+        "Evidence retention requirements:"
+      ],
+      "subtopics": {
+        "Workpaper Standards": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "Documentation": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Control Self-Assessment",
+      "domain": "CISA1",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "CSA is MOST effective when:",
+        "Control self-assessment involves:"
+      ],
+      "subtopics": {
+        "CSA Process": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        },
+        "CSA Benefits": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    },
+    {
+      "topic": "Key Risk Indicators",
+      "domain": "CISA2",
+      "difficulty_score": 2.8,
+      "sample_questions": [
+        "KRIs differ from KPIs in that:",
+        "Effective KRIs should be:"
+      ],
+      "subtopics": {
+        "KRI vs KPI": {
+          "hard": 2,
+          "medium": 1,
+          "easy": 0
+        },
+        "Risk Monitoring": {
+          "hard": 1,
+          "medium": 2,
+          "easy": 0
+        }
+      }
+    }
+  ]
+}

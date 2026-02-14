@@ -11,12 +11,12 @@ export const cisa4LessonsBatch2: Lesson[] = [
   // ===========================================================================
   
   {
-    id: 'CISA4-010',
+    id: 'CISA4-017',
     courseId: 'cisa',
     section: 'CISA4',
     title: 'Security Incident Management',
     description: 'Master the incident response lifecycle and auditing of incident management processes',
-    order: 10,
+    order: 17,
     duration: 55,
     difficulty: 'intermediate',
     topics: ['Incident Response', 'NIST Framework', 'Incident Categories', 'Forensics'],
@@ -80,12 +80,12 @@ export const cisa4LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA4-011',
+    id: 'CISA4-018',
     courseId: 'cisa',
     section: 'CISA4',
     title: 'Business Continuity Planning',
     description: 'Understand how to audit BCP programs for adequate coverage and testing',
-    order: 11,
+    order: 18,
     duration: 55,
     difficulty: 'intermediate',
     topics: ['BCP', 'Business Impact Analysis', 'Recovery Strategies', 'Plan Testing'],
@@ -159,12 +159,12 @@ export const cisa4LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA4-012',
+    id: 'CISA4-019',
     courseId: 'cisa',
     section: 'CISA4',
     title: 'Data Backup and Recovery',
     description: 'Learn data protection strategies and audit considerations for backup systems',
-    order: 12,
+    order: 19,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Backup Strategies', 'Backup Types', 'Restoration', 'Offsite Storage'],
@@ -228,12 +228,12 @@ export const cisa4LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA4-013',
+    id: 'CISA4-020',
     courseId: 'cisa',
     section: 'CISA4',
     title: 'IT Service Management',
     description: 'Understand ITSM frameworks and auditing IT service delivery',
-    order: 13,
+    order: 20,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['ITSM', 'ITIL', 'Service Desk', 'Problem Management', 'Change Management'],
@@ -299,12 +299,12 @@ export const cisa4LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA4-014',
+    id: 'CISA4-021',
     courseId: 'cisa',
     section: 'CISA4',
     title: 'Capacity and Performance Management',
     description: 'Learn to evaluate IT capacity planning and performance monitoring',
-    order: 14,
+    order: 21,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Capacity Planning', 'Performance Monitoring', 'Tuning', 'Resource Optimization'],
@@ -365,12 +365,12 @@ export const cisa4LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA4-015',
+    id: 'CISA4-022',
     courseId: 'cisa',
     section: 'CISA4',
     title: 'System Resilience and High Availability',
     description: 'Understand fault tolerance, redundancy, and high availability architectures',
-    order: 15,
+    order: 22,
     duration: 50,
     difficulty: 'advanced',
     topics: ['High Availability', 'Fault Tolerance', 'Clustering', 'Load Balancing'],

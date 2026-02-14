@@ -1,0 +1,272 @@
+[
+  {
+    "id": "CISA-VIDEO-001",
+    "topic": "BCP vs DRP",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/01_BCP_vs_DRP.txt",
+    "script_preview": "Hey CISA candidates! ... BCP vs. DRP can be a HUGE stumbling block on the exam. Master this, and you'll confidently answer several questions.\n\nSo, what's the core difference? ... A Business Continuity...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-002",
+    "topic": "Risk Assessment Methodology",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/02_Risk_Assessment_Methodology.txt",
+    "script_preview": "Risk assessment methodology... this is CRITICAL for passing the CISA exam. You'll see multiple questions on it. Let's nail it down.\n\nRisk assessment is the process of identifying, analyzing, and evalu...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-003",
+    "topic": "Control Types - Preventive Detective Corrective",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/03_Control_Types_-_Preventive_Detective_Corrective.txt",
+    "script_preview": "Hey future CISAs\u2026 failing to grasp control types is a surefire way to lose points on the exam. Let's nail it down.\n\nControl types\u2026 are actions taken to mitigate risk. Simple. But auditors need to clas...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-004",
+    "topic": "Audit Evidence Hierarchy",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/04_Audit_Evidence_Hierarchy.txt",
+    "script_preview": "Hey future CISAs! Knowing the audit evidence hierarchy... is CRUCIAL for passing the exam. Trust me.\n\nWhat is the audit evidence hierarchy? Simply put, it's a ranking of evidence types based on reliab...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-005",
+    "topic": "Outsourcing and Third-Party Management",
+    "domain": "CISA2",
+    "domain_name": "Governance and Management of IT",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/05_Outsourcing_and_Third-Party_Management.txt",
+    "script_preview": "Outsourcing IT? It\u2019s a minefield if you\u2019re not careful\u2026 and a prime target for CISA exam questions! Get this right, and you\u2019re one step closer to passing.\n\nSo, what is outsourcing and third-party mana...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-006",
+    "topic": "Change Management Controls",
+    "domain": "CISA2",
+    "domain_name": "Governance and Management of IT",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/06_Change_Management_Controls.txt",
+    "script_preview": "Change management... is a CISA exam killer if you don't nail it. Let's make sure you do.\n\nChange management... is about minimizing risk when modifying IT systems. It's a formal process... ensuring cha...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-007",
+    "topic": "Access Control Models",
+    "domain": "CISA5",
+    "domain_name": "Protection of Information Assets",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/07_Access_Control_Models.txt",
+    "script_preview": "Access control models\u2026nailing this topic is crucial for passing the CISA exam. Trust me on this.\n\nSo, what are access control models? Simply put, they're the frameworks that dictate *who* can access *...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-008",
+    "topic": "Incident Response Process",
+    "domain": "CISA4",
+    "domain_name": "Information Systems Operations and Business Resilience",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/08_Incident_Response_Process.txt",
+    "script_preview": "The CISA exam loves to test your Incident Response knowledge\u2026 especially the critical first steps and how to properly contain an incident. Get these wrong, and you're leaving points on the table.\n\nInc...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-009",
+    "topic": "Data Classification",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/09_Data_Classification.txt",
+    "script_preview": "Data classification...get this right, and you\u2019re one step closer to CISA certification. It's a critical concept that ISACA loves to test.\n\nData classification is the process of categorizing data based...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-010",
+    "topic": "Network Security Controls",
+    "domain": "CISA5",
+    "domain_name": "Protection of Information Assets",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/10_Network_Security_Controls.txt",
+    "script_preview": "Firewalls and intrusion detection/prevention systems... get these wrong and kiss those CISA credentials goodbye!\n\nNetwork security controls are your first line of defense in protecting information ass...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-011",
+    "topic": "Audit Sampling Methods",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/11_Audit_Sampling_Methods.txt",
+    "script_preview": "Statistical sampling... can be the difference between passing and failing the CISA exam. Knowing it cold is key.\n\nStatistical sampling is using mathematical techniques to select a subset of data\u2026 the ...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-012",
+    "topic": "Segregation of Duties",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/12_Segregation_of_Duties.txt",
+    "script_preview": "Segregation of Duties... it's not just good practice; it's a CISA exam staple, and knowing it can be the difference between passing and failing.\n\nSegregation of Duties, or SoD, is the principle of ass...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-013",
+    "topic": "IT Governance Frameworks",
+    "domain": "CISA2",
+    "domain_name": "Governance and Management of IT",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/13_IT_Governance_Frameworks.txt",
+    "script_preview": "Alright, future CISAs, let's nail IT Governance Frameworks! Specifically, COBIT and Governance Structure. This is a crucial area, and understanding it can be the difference between passing and failing...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-014",
+    "topic": "System Development Lifecycle",
+    "domain": "CISA3",
+    "domain_name": "Information Systems Acquisition, Development, and Implementation",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/14_System_Development_Lifecycle.txt",
+    "script_preview": "Hey CISA candidates! Understanding the System Development Lifecycle\u2026 it's not just theory. It's CRITICAL for passing the exam, and specifically for Information Systems Acquisition, Development, and Im...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-015",
+    "topic": "Encryption and PKI Basics",
+    "domain": "CISA5",
+    "domain_name": "Protection of Information Assets",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/15_Encryption_and_PKI_Basics.txt",
+    "script_preview": "Encryption and PKI\u2026 it\u2019s a CISA exam must-know. Understand it, and you\u2019ll conquer questions from data protection to access control. Get it wrong, and you're leaving points on the table.\n\nSo, what\u2019s th...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-016",
+    "topic": "Audit Planning Process",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/16_Audit_Planning_Process.txt",
+    "script_preview": "Hey future CISAs! Nail the audit planning process, and you're one step closer to passing. Trust me, ISACA *loves* testing this.\n\nWhat's an audit charter? ... Think of it as the auditor's constitution....",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-017",
+    "topic": "Physical Security Controls",
+    "domain": "CISA5",
+    "domain_name": "Protection of Information Assets",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/17_Physical_Security_Controls.txt",
+    "script_preview": "Physical security controls... fail to audit them, and you fail the CISA exam.\n\nLet's focus on two key areas: physical access and environmental controls. Physical security refers to measures designed t...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-018",
+    "topic": "Database Controls and Security",
+    "domain": "CISA5",
+    "domain_name": "Protection of Information Assets",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/18_Database_Controls_and_Security.txt",
+    "script_preview": "Database controls\u2026 and security. Nail this, and you\u2019ll be closer to passing CISA. Seriously.\n\nSo, what\u2019s the core concept? We're talking database integrity, specifically referential integrity, and DBA...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-019",
+    "topic": "Cloud Computing Audit Considerations",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/19_Cloud_Computing_Audit_Considerations.txt",
+    "script_preview": "Cloud auditing\u2026 can be a nightmare on the CISA exam. But nail this, and you\u2019ll be golden.\n\nSo, what *is* cloud computing? It\u2019s on-demand access to computing resources \u2013 servers, storage, databases \u2013 o...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-020",
+    "topic": "Regulatory Compliance - SOX HIPAA GDPR",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/20_Regulatory_Compliance_-_SOX_HIPAA_GDPR.txt",
+    "script_preview": "Alright, future CISAs, let's nail regulatory compliance! This topic can be a real exam landmine\u2026 but not for you, after this!\n\nRegulatory compliance\u2026 it's the bedrock of ethical and legal IT operation...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-021",
+    "topic": "Penetration Testing vs Vulnerability Assessment",
+    "domain": "CISA3",
+    "domain_name": "Information Systems Acquisition, Development, and Implementation",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/21_Penetration_Testing_vs_Vulnerability_Assessment.txt",
+    "script_preview": "Okay, here's the video script:\n\nHey future CISAs! Knowing the difference between penetration testing and vulnerability assessments can be the difference between passing\u2026 and failing. This is a HIGHLY ...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-022",
+    "topic": "Business Impact Analysis",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/22_Business_Impact_Analysis.txt",
+    "script_preview": "Business Impact Analysis\u2026 Nail this, and you\u2019ll nail the exam. Seriously.\n\nSo, what's a BIA? It's a process\u2026 to identify and evaluate the potential effects of disruptions to an organization\u2019s critical...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-023",
+    "topic": "IT Steering Committee Role",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/23_IT_Steering_Committee_Role.txt",
+    "script_preview": "Hey CISA candidates, ready to tackle the IT Steering Committee? Nail this, and you\u2019ll boost your exam score.\n\nWhat is the IT Steering Committee? It\u2019s a high-level group responsible for aligning IT str...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-024",
+    "topic": "Software Licensing Compliance",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/24_Software_Licensing_Compliance.txt",
+    "script_preview": "Software licensing compliance\u2026 it's not just about avoiding fines; it\u2019s a critical control auditors MUST understand for the CISA exam.\n\nSo, what is software licensing compliance? \u2026 It's ensuring an or...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-025",
+    "topic": "Problem vs Incident Management",
+    "domain": "CISA2",
+    "domain_name": "Governance and Management of IT",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/25_Problem_vs_Incident_Management.txt",
+    "script_preview": "Problem vs. Incident Management \u2013 Nail it, or risk failing the CISA. This is a GUARANTEED exam topic.\n\nIncident management\u2026 it\u2019s about restoring service FAST. Getting users back online, fixing the imm...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-026",
+    "topic": "Capacity Planning",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/26_Capacity_Planning.txt",
+    "script_preview": "Capacity planning\u2026 fail to understand it and you\u2019re almost guaranteed to drop points on the CISA exam. Let\u2019s fix that.\n\nCapacity planning is proactively determining the resources needed to meet future...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-027",
+    "topic": "Backup Strategies and Recovery",
+    "domain": "CISA4",
+    "domain_name": "Information Systems Operations and Business Resilience",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/27_Backup_Strategies_and_Recovery.txt",
+    "script_preview": "Alright CISA candidates\u2026 Backups and recovery \u2013 fail this, and your audit is sunk! This is make-or-break for business resilience, so let\u2019s nail it.\n\nWhat are backups and why do auditors care? A backup...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-028",
+    "topic": "Audit Evidence Documentation",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/28_Audit_Evidence_Documentation.txt",
+    "script_preview": "Audit workpaper documentation... Get this wrong, and you're GONE on the CISA exam.\n\nAudit workpapers are the bedrock of any IS audit. Think of them as the complete record of your audit... documenting ...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-029",
+    "topic": "Control Self-Assessment",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/29_Control_Self-Assessment.txt",
+    "script_preview": "Control self-assessment... is a CISA exam topic that can make or break your score. Let's nail it down in the next few minutes.\n\nControl self-assessment, or CSA, is a process where management evaluates...",
+    "difficulty_score": 2.8
+  },
+  {
+    "id": "CISA-VIDEO-030",
+    "topic": "Key Risk Indicators",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/30_Key_Risk_Indicators.txt",
+    "script_preview": "Okay, here's the script:\n\nHey CISA candidates\u2026 understanding Key Risk Indicators, or KRIs, is crucial\u2026 because ISACA *loves* to test your ability to differentiate them from Key Performance Indicators....",
+    "difficulty_score": 2.8
+  }
+]

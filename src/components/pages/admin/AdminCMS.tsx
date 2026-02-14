@@ -1,25 +1,148 @@
 import { useState, useEffect, useCallback } from 'react';
+import { format } from 'date-fns';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
-import { Navigate } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer } from 'firebase/firestore';
+import { Navigate, Link } from 'react-router-dom';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
 import { COURSES, getActiveCourses } from '../../../courses';
+import { EXAM_PRICING, isFounderPricingActive } from '../../../services/subscription';
 
 // Dynamic imports for course-specific question data
-const loadCourseQuestionData = async (courseId: CourseId) => {
-  switch (courseId) {
-    case 'cpa': return import('../../../data/cpa/questions');
-    case 'ea': return import('../../../data/ea/questions');
-    case 'cma': return import('../../../data/cma/questions');
-    case 'cia': return import('../../../data/cia/questions');
-    case 'cisa': return import('../../../data/cisa/questions');
-    case 'cfp': return import('../../../data/cfp/questions');
-    default: return null;
+// Returns { questions: array, stats: { total, bySection, byDifficulty, topics } }
+const loadCourseQuestionData = async (courseId: CourseId): Promise<{
+  questions: unknown[];
+  stats?: { total: number; bySection?: Record<string, number>; byDifficulty?: { easy: number; medium: number; hard: number }; topics?: number };
+} | null> => {
+  try {
+    switch (courseId) {
+      case 'cpa': {
+        const m = await import('../../../data/cpa/questions');
+        const stats = m.getQuestionStats?.();
+        return { questions: m.ALL_QUESTIONS || [], stats };
+      }
+      case 'ea': {
+        const m = await import('../../../data/ea/questions');
+        const questions = m.EA_ALL_QUESTIONS || [];
+        const bySection: Record<string, number> = {
+          'SEE1': m.SEE1_ALL?.length || 0,
+          'SEE2': m.SEE2_ALL?.length || 0,
+          'SEE3': m.SEE3_ALL?.length || 0,
+        };
+        return { questions, stats: { total: questions.length, bySection } };
+      }
+      case 'cma': {
+        const m = await import('../../../data/cma/questions');
+        const stats = m.getQuestionStats?.();
+        // Flatten to bySection for display (Part 1 and Part 2)
+        const bySection: Record<string, number> = {
+          'Part 1': stats?.part1?.total || 0,
+          'Part 2': stats?.part2?.total || 0,
+        };
+        return { questions: m.CMA_ALL_QUESTIONS || [], stats: { total: stats?.total || 0, bySection, byDifficulty: stats?.byDifficulty } };
+      }
+      case 'cia': {
+        const m = await import('../../../data/cia/questions');
+        const cia1 = m.ALL_CIA1_QUESTIONS || [];
+        const cia2 = m.ALL_CIA2_QUESTIONS || [];
+        const cia3 = m.ALL_CIA3_QUESTIONS || [];
+        const questions = [...cia1, ...cia2, ...cia3];
+        const bySection: Record<string, number> = {
+          'Part 1': cia1.length,
+          'Part 2': cia2.length,
+          'Part 3': cia3.length,
+        };
+        return { questions, stats: { total: questions.length, bySection } };
+      }
+      case 'cisa': {
+        const m = await import('../../../data/cisa/questions');
+        const questions = m.CISA_QUESTIONS || [];
+        // Count by section field in questions
+        const bySection: Record<string, number> = {};
+        questions.forEach((q: { section?: string }) => {
+          const section = q.section || 'Unknown';
+          bySection[section] = (bySection[section] || 0) + 1;
+        });
+        return { questions, stats: { total: questions.length, bySection } };
+      }
+      case 'cfp': {
+        const m = await import('../../../data/cfp/questions');
+        const stats = m.CFP_QUESTION_STATS;
+        // Convert byDomain to bySection for consistent display
+        const bySection: Record<string, number> = {};
+        if (stats?.byDomain) {
+          Object.entries(stats.byDomain).forEach(([domain, count]) => {
+            // Convert CFP-PRO to PRO, etc. for cleaner display
+            const shortName = domain.replace('CFP-', '');
+            bySection[shortName] = count as number;
+          });
+        }
+        return { questions: m.CFP_QUESTIONS_ALL || [], stats: { total: stats?.total || 0, bySection, byDifficulty: stats?.byDifficulty } };
+      }
+      default: return null;
+    }
+  } catch {
+    return null;
+  }
+};
+
+// Dynamic imports for course-specific unique content
+// Returns counts for essays, CBQs, case studies, item sets, simulations, etc.
+const loadCourseUniqueContent = async (courseId: CourseId): Promise<{
+  essays?: number;
+  essaysBySection?: Record<string, number>;
+  cbqs?: number;
+  cbqsBySection?: Record<string, number>;
+  simulations?: number;
+  simulationsBySection?: Record<string, number>;
+  caseStudies?: number;
+  itemSets?: number;
+} | null> => {
+  try {
+    switch (courseId) {
+      case 'cma': {
+        const essaysModule = await import('../../../data/cma/essays/index');
+        const cbqModule = await import('../../../data/cma/cbq/index');
+        const simModule = await import('../../../data/cma/practice-simulations/index');
+        const essays = essaysModule.CMA_ESSAYS || [];
+        const cbqs = cbqModule.ALL_CMA_CBQS || [];
+        const cma1Sims = simModule.CMA1_PRACTICE_SIMULATIONS || [];
+        const cma2Sims = simModule.CMA2_PRACTICE_SIMULATIONS || [];
+        return {
+          essays: essays.length,
+          essaysBySection: {
+            'Part 1': essaysModule.CMA1_ALL_ESSAYS?.length || 0,
+            'Part 2': essaysModule.CMA2_ALL_ESSAYS?.length || 0,
+          },
+          cbqs: cbqs.length,
+          cbqsBySection: {
+            'Part 1': cbqs.filter((c: { section: string }) => c.section === 'CMA1').length,
+            'Part 2': cbqs.filter((c: { section: string }) => c.section === 'CMA2').length,
+          },
+          simulations: cma1Sims.length + cma2Sims.length,
+          simulationsBySection: {
+            'Part 1': cma1Sims.length,
+            'Part 2': cma2Sims.length,
+          },
+        };
+      }
+      case 'cfp': {
+        const caseModule = await import('../../../data/cfp/case-studies/index');
+        const itemSetModule = await import('../../../data/cfp/item-sets/index');
+        return {
+          caseStudies: caseModule.CFP_CASE_STUDIES?.length || 0,
+          itemSets: itemSetModule.CFP_ITEM_SETS?.length || 0,
+        };
+      }
+      default:
+        return null;
+    }
+  } catch {
+    return null;
   }
 };
 
@@ -66,11 +189,27 @@ const loadCourseLessonData = async (courseId: CourseId): Promise<number> => {
         const m = await import('../../../data/cpa/lessons');
         return m.getLessonStats?.()?.total || m.getAllLessons?.()?.length || 0;
       }
+      case 'ea': {
+        const m = await import('../../../data/ea/index');
+        return m.getEALessonCount?.()?.total || m.allEALessons?.length || 0;
+      }
       case 'cma': {
         const m = await import('../../../data/cma/lessons');
         return m.getCMALessonCount?.()?.total || m.cmaLessons?.length || 0;
       }
-      default: return 0; // Other courses may not have lesson indexes yet
+      case 'cia': {
+        const m = await import('../../../data/cia/lessons');
+        return m.getCIALessonCount?.() || m.ALL_CIA_LESSONS?.length || 0;
+      }
+      case 'cisa': {
+        const m = await import('../../../data/cisa/lessons');
+        return m.allCisaLessons?.length || 0;
+      }
+      case 'cfp': {
+        const m = await import('../../../data/cfp/lessons');
+        return m.ALL_CFP_LESSONS?.length || 0;
+      }
+      default: return 0;
     }
   } catch {
     return 0;
@@ -104,13 +243,19 @@ interface UserDocument {
   isAdmin?: boolean;
   createdAt?: { seconds: number; nanoseconds: number };
   examSection?: string;
+  courseId?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
   lastLogin?: string; // If you track this
+  onboardingComplete?: boolean;
+  onboardingCompleted?: Record<string, boolean>; // Per-course onboarding status
   subscription?: {
     tier?: string;
     status?: string;
     currentPeriodEnd?: { seconds: number };
     trialEnd?: { seconds: number };
+    isFounderPricing?: boolean; // Locked in founder rate (2-year lock)
   };
+  // Per-exam trials map (loaded from subscriptions collection)
+  _trials?: Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>;
 }
 
 interface UserActivityData {
@@ -203,17 +348,6 @@ interface QuestionReport {
   createdAt?: { seconds: number; nanoseconds: number };
 }
 
-interface LocalStats {
-  total: number;
-  bySection: Record<string, number>;
-  byDifficulty: {
-    easy: number;
-    medium: number;
-    hard: number;
-  };
-  topics: number;
-}
-
 interface CourseContentStats {
   courseId: CourseId;
   courseName: string;
@@ -236,6 +370,32 @@ const ADMIN_EMAILS: string[] = [
   'rob@voraprep.com',
 ];
 
+// Helper: derive courseId from examSection name
+// This avoids relying on stale courseId field in user docs
+const getCourseFromSection = (section?: string | null): CourseId => {
+  if (!section) return 'cpa';
+  const upper = section.toUpperCase();
+  // CPA sections
+  if (['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'].includes(upper)) return 'cpa';
+  // EA sections
+  if (upper.startsWith('SEE')) return 'ea';
+  // CMA sections
+  if (upper.startsWith('CMA')) return 'cma';
+  // CIA sections
+  if (upper.startsWith('CIA')) return 'cia';
+  // CISA sections
+  if (upper.startsWith('CISA')) return 'cisa';
+  // CFP sections
+  if (upper.startsWith('CFP') || ['GEN', 'TAX', 'INS', 'INV', 'RET', 'EST'].includes(upper)) return 'cfp';
+  // Fallback: check COURSES registry
+  for (const [id, course] of Object.entries(COURSES)) {
+    if (course.sections?.some(s => s.id === upper || s.shortName === upper)) {
+      return id as CourseId;
+    }
+  }
+  return 'cpa';
+};
+
 // ============================================================================
 // Component
 // ============================================================================
@@ -249,21 +409,36 @@ const AdminCMS: React.FC = () => {
   const [allCourseStats, setAllCourseStats] = useState<CourseContentStats[]>([]);
   const [isLoadingCourseStats, setIsLoadingCourseStats] = useState(false);
   
-  // Legacy single-course stats (kept for backwards compat, will remove later)
-  const [localStats, setLocalStats] = useState<LocalStats | null>(null);
-  const [lessonStats, setLessonStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
+  // Course-specific TBS stats (only CPA has TBS currently)
   const [tbsStats, setTbsStats] = useState<{ total: number; bySection: Record<string, number>; byType?: Record<string, number> } | null>(null);
-  const [wcStats, setWcStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
+
+  // Course-specific unique content stats
+  const [cmaUniqueContent, setCmaUniqueContent] = useState<{
+    essays: number;
+    essaysBySection: Record<string, number>;
+    cbqs: number;
+    cbqsBySection: Record<string, number>;
+    simulations: number;
+    simulationsBySection: Record<string, number>;
+  } | null>(null);
+  const [cfpUniqueContent, setCfpUniqueContent] = useState<{
+    caseStudies: number;
+    itemSets: number;
+  } | null>(null);
 
   // New State for Users and Errors
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<UserDocument[]>([]);
   const [userSearch, setUserSearch] = useState('');
   const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial'>('all');
+  const [editingTrialUserId, setEditingTrialUserId] = useState<string | null>(null);
   const [userCourseFilter, setUserCourseFilter] = useState<CourseId | 'all'>('all');
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
+  
+  // Reset exam selector state
+  const [resetExamSelection, setResetExamSelection] = useState<string>('cpa');
   
   // Question Reports state
   const [questionReports, setQuestionReports] = useState<QuestionReport[]>([]);
@@ -284,6 +459,39 @@ const AdminCMS: React.FC = () => {
     reportsByType: Record<string, number>;
     pendingCount: number;
   } | null>(null);
+
+  // Content Quality Audit state
+  const [contentAudit, setContentAudit] = useState<{
+    questionsWithoutExplanation: Array<{ id: string; section: string; topic?: string }>;
+    questionsWithoutBlueprint: Array<{ id: string; section: string }>;
+    totalScanned: number;
+  } | null>(null);
+  const [isLoadingAudit, setIsLoadingAudit] = useState(false);
+
+  // Revenue Dashboard state
+  const [revenueMetrics, setRevenueMetrics] = useState<{
+    monthlyMRR: number;
+    annualMRR: number;
+    totalMRR: number;
+    arrProjection: number; // Annual run rate
+    subscriberCount: number;
+    byPlan: { monthly: number; annual: number };
+    byCourse: Record<string, { count: number; revenue: number }>;
+    founderCount: number;
+    churnRisk: number; // trials ending soon
+  } | null>(null);
+
+  // Announcement History state
+  const [announcementHistory, setAnnouncementHistory] = useState<Array<{
+    id: string;
+    title: string;
+    body: string;
+    audience: string;
+    createdAt: { seconds: number };
+    createdBy: string;
+    active: boolean;
+  }>>([]);
+  const [isLoadingAnnouncements, setIsLoadingAnnouncements] = useState(false);
 
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -315,6 +523,15 @@ const AdminCMS: React.FC = () => {
   const [isLoadingStale, setIsLoadingStale] = useState(false);
   const [isDeletingStale, setIsDeletingStale] = useState(false);
 
+  // Beta user transition state
+  const [betaTransitionStatus, setBetaTransitionStatus] = useState<'idle' | 'preview' | 'executing' | 'done'>('idle');
+  const [betaTransitionResults, setBetaTransitionResults] = useState<{
+    toUpdate: { id: string; email?: string; currentTrialEnd?: string }[];
+    skipped: { id: string; email?: string; reason: string }[];
+    updated: number;
+    errors: number;
+  } | null>(null);
+
   // Check admin access
   const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
 
@@ -329,11 +546,32 @@ const AdminCMS: React.FC = () => {
     if (!isAdmin) return;
     setIsLoadingUsers(true);
     try {
-      const q = query(collection(db, 'users'), limit(200)); // Increased limit
+      const q = query(collection(db, 'users'), limit(200));
       const querySnapshot = await getDocs(q);
       const users: UserDocument[] = [];
-      querySnapshot.forEach((doc) => {
-        users.push({ id: doc.id, ...doc.data() } as UserDocument);
+      
+      // Load subscription docs in parallel for per-exam trial data
+      const userIds = querySnapshot.docs.map(d => d.id);
+      const subPromises = userIds.map(uid => 
+        getDoc(doc(db, 'subscriptions', uid)).catch(() => null)
+      );
+      const subDocs = await Promise.all(subPromises);
+      const subMap: Record<string, Record<string, unknown>> = {};
+      subDocs.forEach((subDoc, i) => {
+        if (subDoc && subDoc.exists()) {
+          subMap[userIds[i]] = subDoc.data();
+        }
+      });
+      
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const subData = subMap[docSnap.id];
+        users.push({ 
+          id: docSnap.id, 
+          ...data,
+          // Attach per-exam trials from subscription doc
+          _trials: (subData?.trials as Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>) || undefined,
+        } as UserDocument);
       });
       setUsersList(users);
       setFilteredUsers(users);
@@ -413,6 +651,102 @@ const AdminCMS: React.FC = () => {
     }
   }, [isAdmin, staleAccounts, loadUsers]);
 
+  // Beta user transition - set trial end to March 1, 2026
+  const BETA_TRIAL_END = new Date('2026-03-01T23:59:59Z');
+  const BETA_TRIAL_START = new Date('2026-02-15T00:00:00Z');
+
+  const previewBetaTransition = useCallback(async () => {
+    setBetaTransitionStatus('preview');
+    setBetaTransitionResults(null);
+    
+    try {
+      const subscriptionsRef = collection(db, 'subscriptions');
+      const snapshot = await getDocs(subscriptionsRef);
+      
+      const toUpdate: { id: string; email?: string; currentTrialEnd?: string }[] = [];
+      const skipped: { id: string; email?: string; reason: string }[] = [];
+      
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const isPaidActive = 
+          data.tier !== 'free' && 
+          (data.status === 'active' || data.stripeSubscriptionId);
+        
+        if (isPaidActive) {
+          skipped.push({
+            id: docSnap.id,
+            email: data.email,
+            reason: `Paid subscriber (tier: ${data.tier}, status: ${data.status})`
+          });
+        } else {
+          toUpdate.push({
+            id: docSnap.id,
+            email: data.email,
+            currentTrialEnd: data.trialEnd?.toDate?.()?.toISOString() || 'none'
+          });
+        }
+      });
+      
+      setBetaTransitionResults({ toUpdate, skipped, updated: 0, errors: 0 });
+      addLog(`Preview complete: ${toUpdate.length} to update, ${skipped.length} skipped`, 'info');
+    } catch (error) {
+      logger.error('Error previewing beta transition:', error);
+      addLog('Error previewing: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      setBetaTransitionStatus('idle');
+    }
+  }, []);
+
+  const executeBetaTransition = useCallback(async () => {
+    if (!betaTransitionResults || betaTransitionResults.toUpdate.length === 0) return;
+    
+    const confirmed = window.confirm(
+      `⚠️ PRODUCTION DATA MODIFICATION\n\n` +
+      `This will update ${betaTransitionResults.toUpdate.length} subscriptions:\n` +
+      `• Set trialEnd to March 1, 2026\n` +
+      `• Mark as isBetaUser: true\n` +
+      `• Mark as isFounder: true (founder rate eligible)\n\n` +
+      `${betaTransitionResults.skipped.length} paid subscribers will be skipped.\n\n` +
+      `This cannot be easily undone. Continue?`
+    );
+    
+    if (!confirmed) return;
+    
+    setBetaTransitionStatus('executing');
+    let updated = 0;
+    let errors = 0;
+    
+    try {
+      const { Timestamp } = await import('firebase/firestore');
+      
+      for (const sub of betaTransitionResults.toUpdate) {
+        try {
+          const subRef = doc(db, 'subscriptions', sub.id);
+          await updateDoc(subRef, {
+            tier: 'free',
+            status: 'trialing',
+            trialEnd: Timestamp.fromDate(BETA_TRIAL_END),
+            trialStartDate: Timestamp.fromDate(BETA_TRIAL_START),
+            isBetaUser: true,
+            isFounder: true,
+            updatedAt: Timestamp.now(),
+          });
+          updated++;
+        } catch (err) {
+          logger.error(`Error updating ${sub.id}:`, err);
+          errors++;
+        }
+      }
+      
+      setBetaTransitionResults(prev => prev ? { ...prev, updated, errors } : null);
+      setBetaTransitionStatus('done');
+      addLog(`Beta transition complete: ${updated} updated, ${errors} errors`, updated > 0 ? 'success' : 'warning');
+    } catch (error) {
+      logger.error('Error executing beta transition:', error);
+      addLog('Error executing: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      setBetaTransitionStatus('idle');
+    }
+  }, [betaTransitionResults]);
+
   // Filter users when search or filter changes
   useEffect(() => {
     let result = [...usersList];
@@ -443,7 +777,7 @@ const AdminCMS: React.FC = () => {
     // Apply course filter
     if (userCourseFilter !== 'all') {
       result = result.filter(u => {
-        const userCourse = (u as typeof u & { courseId?: string }).courseId || 'cpa';
+        const userCourse = u.courseId || 'cpa';
         return userCourse === userCourseFilter;
       });
     }
@@ -495,7 +829,7 @@ const AdminCMS: React.FC = () => {
         const createdAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
         
         // Count by course (new courseId field or default to 'cpa')
-        const courseId = (u as typeof u & { courseId?: string }).courseId || 'cpa';
+        const courseId = u.courseId || 'cpa';
         if (byCourse[courseId] !== undefined) {
           byCourse[courseId]++;
         } else {
@@ -759,6 +1093,70 @@ const AdminCMS: React.FC = () => {
     }
   };
 
+  // Set a user's trial end date for a specific exam (admin only)
+  const setTrialEndDate = async (userId: string, newDate: Date, examId?: string) => {
+    if (!isAdmin) return;
+
+    try {
+      const subRef = doc(db, 'subscriptions', userId);
+      const { Timestamp, setDoc: firestoreSetDoc } = await import('firebase/firestore');
+
+      if (examId) {
+        // Per-exam trial: update specific exam in trials map
+        // IMPORTANT: Use updateDoc (not setDoc+merge) so dot-notation keys
+        // are written as nested paths (trials.ea.endDate -> trials -> ea -> endDate)
+        // setDoc+merge treats them as literal flat field names which breaks reads.
+        try {
+          await updateDoc(subRef, {
+            [`trials.${examId}.endDate`]: Timestamp.fromDate(newDate),
+            [`trials.${examId}.startDate`]: Timestamp.now(),
+            updatedAt: Timestamp.now(),
+            modifiedBy: user?.email,
+          });
+        } catch (docErr: unknown) {
+          // If subscription doc doesn't exist yet, create it with proper nesting
+          if (docErr instanceof Error && docErr.message?.includes('No document to update')) {
+            await firestoreSetDoc(subRef, {
+              trials: {
+                [examId]: {
+                  endDate: Timestamp.fromDate(newDate),
+                  startDate: Timestamp.now(),
+                },
+              },
+              updatedAt: Timestamp.now(),
+              modifiedBy: user?.email,
+            });
+          } else {
+            throw docErr;
+          }
+        }
+        addLog(`Set ${examId.toUpperCase()} trial end to ${newDate.toLocaleDateString()} for user ${userId}`, 'success');
+      } else {
+        // Legacy: update root-level trialEnd (top-level fields, safe with setDoc+merge)
+        await firestoreSetDoc(subRef, {
+          trialEnd: Timestamp.fromDate(newDate),
+          status: 'trialing',
+          updatedAt: Timestamp.now(),
+          modifiedBy: user?.email,
+        }, { merge: true });
+        addLog(`Set trial end date to ${newDate.toLocaleDateString()} for user ${userId}`, 'success');
+      }
+
+      // Also update the user document's subscription snapshot
+      const userRef = doc(db, 'users', userId);
+      await updateDoc(userRef, {
+        'subscription.trialEnd': { seconds: Math.floor(newDate.getTime() / 1000), nanoseconds: 0 },
+        'subscription.status': 'trialing',
+      });
+
+      setEditingTrialUserId(null);
+      loadUsers();
+    } catch (error) {
+      logger.error('Error setting trial date', error);
+      addLog('Failed to set trial date: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    }
+  };
+
   // Load System Errors
   const loadSystemErrors = useCallback(async () => {
     if (!isAdmin) return;
@@ -1008,6 +1406,146 @@ const AdminCMS: React.FC = () => {
     });
   }, [questionReports]);
 
+  // Load Content Quality Audit - find questions missing explanations/blueprints
+  const loadContentAudit = useCallback(async () => {
+    setIsLoadingAudit(true);
+    try {
+      const withoutExplanation: Array<{ id: string; section: string; topic?: string }> = [];
+      const withoutBlueprint: Array<{ id: string; section: string }> = [];
+      let totalScanned = 0;
+
+      // Scan all courses' questions
+      for (const courseId of getActiveCourses().map(c => c.id)) {
+        const data = await loadCourseQuestionData(courseId);
+        if (!data?.questions) continue;
+
+        for (const q of data.questions as Array<{ id?: string; question_id?: string; explanation?: string; detailed_explanation?: string; blueprintArea?: string; section?: string; topic?: string }>) {
+          totalScanned++;
+          const qId = q.id || q.question_id || 'unknown';
+          const section = q.section || courseId.toUpperCase();
+          
+          // Check for missing explanation
+          if (!q.explanation && !q.detailed_explanation) {
+            withoutExplanation.push({ id: qId, section, topic: q.topic });
+            if (withoutExplanation.length >= 50) continue; // Limit to prevent huge lists
+          }
+          
+          // Check for missing blueprint (CPA specific)
+          if (courseId === 'cpa' && !q.blueprintArea) {
+            withoutBlueprint.push({ id: qId, section });
+            if (withoutBlueprint.length >= 50) continue;
+          }
+        }
+      }
+
+      setContentAudit({
+        questionsWithoutExplanation: withoutExplanation.slice(0, 50),
+        questionsWithoutBlueprint: withoutBlueprint.slice(0, 50),
+        totalScanned
+      });
+      addLog(`Audit complete: scanned ${totalScanned} questions`, 'success');
+    } catch (error) {
+      logger.error('Error loading content audit', error);
+      addLog('Error loading content audit', 'error');
+    } finally {
+      setIsLoadingAudit(false);
+    }
+  }, []);
+
+  // Compute Revenue Metrics from user subscription data using actual per-course pricing
+  const computeRevenueMetrics = useCallback(() => {
+    if (usersList.length === 0) return;
+
+    // Per-course pricing from subscription.ts:
+    // CPA: $199/yr or $29/mo (founder: $99/yr, $14/mo)
+    // CFP: $149/yr or $19/mo (founder: $74/yr, $10/mo)
+    // CMA: $99/yr or $14/mo (founder: $49/yr, $7/mo)
+    // CIA: $99/yr or $14/mo (founder: $49/yr, $7/mo)
+    // CISA: $79/yr or $12/mo (founder: $39/yr, $6/mo)
+    // EA: $59/yr or $9/mo (founder: $29/yr, $5/mo)
+    // Note: NO lifetime plans offered
+
+    let monthlyMRR = 0;
+    let annualMRR = 0;
+    let monthly = 0;
+    let annual = 0;
+    let founderCount = 0;
+    let churnRisk = 0;
+    const now = Date.now() / 1000;
+    const byCourse: Record<string, { count: number; revenue: number }> = {};
+
+    usersList.forEach(u => {
+      const tier = u.subscription?.tier;
+      const status = u.subscription?.status;
+      const courseId = (u.courseId || 'cpa') as keyof typeof EXAM_PRICING;
+      const isFounder = u.subscription?.isFounderPricing;
+      
+      if (status === 'active' || status === 'trialing') {
+        const pricing = EXAM_PRICING[courseId] || EXAM_PRICING.cpa;
+        
+        // Track by course
+        if (!byCourse[courseId]) byCourse[courseId] = { count: 0, revenue: 0 };
+        byCourse[courseId].count++;
+        
+        if (tier === 'monthly') {
+          monthly++;
+          const price = isFounder ? pricing.founderMonthly : pricing.monthly;
+          monthlyMRR += price;
+          byCourse[courseId].revenue += price;
+        } else if (tier === 'annual') {
+          annual++;
+          const annualPrice = isFounder ? pricing.founderAnnual : pricing.annual;
+          annualMRR += annualPrice / 12; // Amortized monthly
+          byCourse[courseId].revenue += annualPrice / 12;
+        }
+        
+        if (isFounder) founderCount++;
+        
+        // Check for trial ending in 3 days
+        const trialEnd = u.subscription?.trialEnd?.seconds;
+        if (status === 'trialing' && trialEnd && trialEnd - now < 3 * 24 * 60 * 60) {
+          churnRisk++;
+        }
+      }
+    });
+
+    const totalMRR = monthlyMRR + annualMRR;
+
+    setRevenueMetrics({
+      monthlyMRR,
+      annualMRR,
+      totalMRR,
+      arrProjection: totalMRR * 12,
+      subscriberCount: monthly + annual,
+      byPlan: { monthly, annual },
+      byCourse,
+      founderCount,
+      churnRisk
+    });
+  }, [usersList]);
+
+  // Load Announcement History
+  const loadAnnouncementHistory = useCallback(async () => {
+    setIsLoadingAnnouncements(true);
+    try {
+      const q = query(
+        collection(db, 'announcements'),
+        orderBy('createdAt', 'desc'),
+        limit(20)
+      );
+      const snapshot = await getDocs(q);
+      const announcements: typeof announcementHistory = [];
+      snapshot.forEach(doc => {
+        announcements.push({ id: doc.id, ...doc.data() } as typeof announcementHistory[0]);
+      });
+      setAnnouncementHistory(announcements);
+    } catch (error) {
+      logger.error('Error loading announcements', error);
+    } finally {
+      setIsLoadingAnnouncements(false);
+    }
+  }, []);
+
   // Effect to load tab data
   useEffect(() => {
     if (activeTab === 'users') {
@@ -1016,8 +1554,17 @@ const AdminCMS: React.FC = () => {
       loadSystemErrors();
     } else if (activeTab === 'analytics') {
       loadAnalytics();
+    } else if (activeTab === 'tools') {
+      loadAnnouncementHistory();
     }
-  }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics]);
+  }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics, loadAnnouncementHistory]);
+
+  // Compute revenue metrics when users list changes
+  useEffect(() => {
+    if (usersList.length > 0) {
+      computeRevenueMetrics();
+    }
+  }, [usersList, computeRevenueMetrics]);
 
   // Auto-compute quality metrics when reports change
   useEffect(() => {
@@ -1033,35 +1580,19 @@ const AdminCMS: React.FC = () => {
       
       for (const course of enabledCourses) {
         try {
-          const questionModule = await loadCourseQuestionData(course.id);
+          const questionData = await loadCourseQuestionData(course.id);
           const flashcardCount = await loadCourseFlashcardData(course.id);
           const lessonCount = await loadCourseLessonData(course.id);
           
-          // Type-safe check for getQuestionStats function
-          const getStatsFn = (questionModule as { getQuestionStats?: () => LocalStats })?.getQuestionStats;
-          if (getStatsFn) {
-            const qStats = getStatsFn();
-            stats.push({
-              courseId: course.id,
-              courseName: course.name,
-              questions: qStats.total || 0,
-              lessons: lessonCount,
-              simulations: 0,
-              flashcards: flashcardCount,
-              bySection: qStats.bySection || {},
-            });
-          } else {
-            // Fallback for courses without getQuestionStats - count ALL_QUESTIONS
-            const allQuestions = (questionModule as { ALL_QUESTIONS?: unknown[] })?.ALL_QUESTIONS;
-            stats.push({
-              courseId: course.id,
-              courseName: course.name,
-              questions: allQuestions?.length || 0,
-              lessons: lessonCount,
-              simulations: 0,
-              flashcards: flashcardCount,
-            });
-          }
+          stats.push({
+            courseId: course.id,
+            courseName: course.name,
+            questions: questionData?.stats?.total || questionData?.questions?.length || 0,
+            lessons: lessonCount,
+            simulations: 0,
+            flashcards: flashcardCount,
+            bySection: questionData?.stats?.bySection || {},
+          });
         } catch (error) {
           logger.error(`Error loading stats for ${course.id}:`, error);
           stats.push({
@@ -1078,27 +1609,43 @@ const AdminCMS: React.FC = () => {
       setAllCourseStats(stats);
       setIsLoadingCourseStats(false);
       
-      // Also load CPA-specific stats for backward compatibility
+      // Load TBS stats for CPA (only course with TBS currently)
       try {
-        const questionModule = await loadCourseQuestionData('cpa');
-        const getStatsFn = (questionModule as { getQuestionStats?: () => LocalStats })?.getQuestionStats;
-        if (getStatsFn) {
-          setLocalStats(getStatsFn());
-        }
-        
-        const lessonModule = await import('../../../data/cpa/lessons');
-        const lessonData = lessonModule.getLessonStats();
-        setLessonStats({ total: lessonData.total, bySection: lessonData.bySection });
-        
         const tbsModule = await import('../../../data/cpa/tbs');
         const tbsData = tbsModule.getTBSStats();
         setTbsStats({ total: tbsData.total, bySection: tbsData.bySection, byType: tbsData.byType });
-        
-        const wcModule = await import('../../../data/cpa/writtenCommunication');
-        const wcData = wcModule.getWCStats();
-        setWcStats({ total: wcData.total, bySection: wcData.bySection });
       } catch (error) {
-        logger.error('Error loading CPA content stats:', error);
+        logger.error('Error loading TBS stats:', error);
+      }
+
+      // Load unique content stats for CMA
+      try {
+        const cmaContent = await loadCourseUniqueContent('cma');
+        if (cmaContent) {
+          setCmaUniqueContent({
+            essays: cmaContent.essays || 0,
+            essaysBySection: cmaContent.essaysBySection || {},
+            cbqs: cmaContent.cbqs || 0,
+            cbqsBySection: cmaContent.cbqsBySection || {},
+            simulations: cmaContent.simulations || 0,
+            simulationsBySection: cmaContent.simulationsBySection || {},
+          });
+        }
+      } catch (error) {
+        logger.error('Error loading CMA unique content:', error);
+      }
+
+      // Load unique content stats for CFP
+      try {
+        const cfpContent = await loadCourseUniqueContent('cfp');
+        if (cfpContent) {
+          setCfpUniqueContent({
+            caseStudies: cfpContent.caseStudies || 0,
+            itemSets: cfpContent.itemSets || 0,
+          });
+        }
+      } catch (error) {
+        logger.error('Error loading CFP unique content:', error);
       }
     };
     loadAllCourseStats();
@@ -1114,11 +1661,11 @@ const AdminCMS: React.FC = () => {
 
   if (!isAdmin) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-900">
         <div className="text-center">
           <div className="text-6xl mb-4">🔒</div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Access Denied</h1>
-          <p className="text-gray-600">You don&apos;t have permission to access the admin area.</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Access Denied</h1>
+          <p className="text-gray-600 dark:text-gray-400">You don&apos;t have permission to access the admin area.</p>
         </div>
       </div>
     );
@@ -1129,31 +1676,31 @@ const AdminCMS: React.FC = () => {
   // ============================================================================
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Admin CMS</h1>
-              <p className="text-sm text-gray-600">Content Management System</p>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin CMS</h1>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Content Management System</p>
             </div>
-            <div className="text-sm text-gray-600">Logged in as: {user.email}</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Logged in as: {user.email}</div>
           </div>
         </div>
       </header>
 
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex gap-1 sm:gap-2 border-b border-gray-200 overflow-x-auto scrollbar-hide pb-px -mb-px">
+        <div className="flex gap-1 sm:gap-2 border-b border-gray-200 dark:border-slate-700 overflow-x-auto scrollbar-hide pb-px -mb-px">
           {(['content', 'users', 'analytics', 'tools', 'logs', 'settings'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                 activeTab === tab
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-600 hover:text-gray-700'
+                  ? 'text-blue-600 dark:text-blue-400 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-300'
               }`}
             >
               <span className="hidden sm:inline">
@@ -1181,6 +1728,36 @@ const AdminCMS: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 py-6">
         {activeTab === 'content' && (
           <div className="space-y-6">
+            {/* Quick Links to Editors */}
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/admin/questions"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              >
+                ❓ Question Editor
+              </Link>
+              <Link
+                to="/admin/lessons"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+              >
+                📚 Lesson Editor
+              </Link>
+              <Link
+                to="/admin/tbs"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium"
+              >
+                📊 TBS Editor
+              </Link>
+              <a
+                href="https://console.firebase.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors text-sm font-medium"
+              >
+                🔥 Firebase Console ↗
+              </a>
+            </div>
+
             {/* Aggregate Totals Header */}
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 shadow-lg text-white">
               <h3 className="text-lg font-semibold mb-3">Content Overview</h3>
@@ -1218,34 +1795,34 @@ const AdminCMS: React.FC = () => {
                 <>
                   {[1, 2, 3, 4, 5, 6].map(i => (
                     <Card key={i} className="p-6 animate-pulse">
-                      <div className="h-6 bg-gray-200 rounded w-1/2 mb-4"></div>
-                      <div className="h-10 bg-gray-200 rounded w-1/3 mb-3"></div>
-                      <div className="h-4 bg-gray-100 rounded w-full"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
+                      <div className="h-10 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
+                      <div className="h-4 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 rounded w-full"></div>
                     </Card>
                   ))}
                 </>
               ) : (
                 allCourseStats.map(course => {
-                  const colorClass = course.courseId === 'cpa' ? 'text-blue-600' :
-                                     course.courseId === 'ea' ? 'text-green-600' :
+                  const colorClass = course.courseId === 'cpa' ? 'text-blue-600 dark:text-blue-400' :
+                                     course.courseId === 'ea' ? 'text-green-600 dark:text-green-400' :
                                      course.courseId === 'cma' ? 'text-purple-600' :
                                      course.courseId === 'cia' ? 'text-orange-600' :
                                      course.courseId === 'cisa' ? 'text-teal-600' :
-                                     'text-amber-600';
+                                     'text-amber-600 dark:text-amber-400';
                   return (
                     <Card key={course.courseId} className="p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-xl">{getCourseIcon(course.courseId)}</span>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {course.courseName}
                         </h3>
                       </div>
                       <div className={`text-3xl font-bold ${colorClass} mb-3`}>
                         {course.questions.toLocaleString()}
-                        <span className="text-sm font-normal text-gray-500 ml-2">questions</span>
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">questions</span>
                       </div>
                       {/* Content metrics row */}
-                      <div className="flex gap-4 text-sm text-gray-600 mb-3">
+                      <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
                         {course.lessons > 0 && (
                           <span>📚 {course.lessons} lessons</span>
                         )}
@@ -1256,15 +1833,15 @@ const AdminCMS: React.FC = () => {
                       {course.bySection && Object.keys(course.bySection).length > 0 && (
                         <div className="grid grid-cols-2 gap-2 text-sm">
                           {Object.entries(course.bySection).slice(0, 6).map(([section, count]) => (
-                            <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                            <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
                               <span className="font-medium truncate">{section}</span>
-                              <span className="text-gray-600">{count}</span>
+                              <span className="text-gray-600 dark:text-gray-400">{count}</span>
                             </div>
                           ))}
                         </div>
                       )}
                       {course.questions === 0 && (
-                        <div className="text-sm text-amber-600 mt-2">
+                        <div className="text-sm text-amber-600 dark:text-amber-400 mt-2">
                           ⚠️ No questions loaded
                         </div>
                       )}
@@ -1274,62 +1851,235 @@ const AdminCMS: React.FC = () => {
               )}
             </div>
 
-            {/* CPA Detailed Stats (backward compatibility) */}
-            {localStats && (
+            {/* CPA Task-Based Simulations (TBS) Stats */}
+            {tbsStats && tbsStats.total > 0 && (
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">CPA Detailed Stats</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Questions */}
-                  <Card className="p-6">
-                    <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <span>❓</span> Questions (MCQ)
-                    </h4>
-                    <div className="text-3xl font-bold text-blue-600 mb-2">
-                      {localStats.total.toLocaleString()}
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📊 CPA Task-Based Simulations</h3>
+                <Card className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-3xl font-bold text-orange-600">
+                      {tbsStats.total.toLocaleString()}
                     </div>
-                    <div className="text-xs text-gray-600">
-                      {localStats.byDifficulty.easy} easy / {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
+                    <span className="text-gray-500 dark:text-gray-400">Total TBS</span>
+                  </div>
+                  {tbsStats.bySection && Object.keys(tbsStats.bySection).length > 0 && (
+                    <div className="grid grid-cols-3 md:grid-cols-6 gap-3 text-sm">
+                      {Object.entries(tbsStats.bySection).map(([section, count]) => (
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                          <span className="font-medium">{section}</span>
+                          <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                        </div>
+                      ))}
                     </div>
-                  </Card>
+                  )}
+                </Card>
+              </div>
+            )}
 
-                  {/* Lessons */}
-                  {lessonStats && (
+            {/* CMA Unique Content: Essays, CBQs, Practice Simulations */}
+            {cmaUniqueContent && (cmaUniqueContent.essays > 0 || cmaUniqueContent.cbqs > 0 || cmaUniqueContent.simulations > 0) && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">💼 CMA Unique Content</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Essays */}
+                  {cmaUniqueContent.essays > 0 && (
                     <Card className="p-6">
-                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <span>📚</span> Lessons
-                      </h4>
-                      <div className="text-3xl font-bold text-green-600">
-                        {lessonStats.total.toLocaleString()}
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">✍️</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Essay Scenarios</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-purple-600 mb-3">
+                        {cmaUniqueContent.essays}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">essays</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {Object.entries(cmaUniqueContent.essaysBySection).map(([section, count]) => (
+                          <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                            <span className="font-medium">{section}</span>
+                            <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                          </div>
+                        ))}
                       </div>
                     </Card>
                   )}
-
-                  {/* TBS */}
-                  {tbsStats && (
+                  {/* CBQs */}
+                  {cmaUniqueContent.cbqs > 0 && (
                     <Card className="p-6">
-                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <span>📊</span> Task-Based Simulations
-                      </h4>
-                      <div className="text-3xl font-bold text-orange-600">
-                        {tbsStats.total.toLocaleString()}
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">📋</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Case-Based Questions</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-3">
+                        {cmaUniqueContent.cbqs}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">CBQs</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {Object.entries(cmaUniqueContent.cbqsBySection).map(([section, count]) => (
+                          <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                            <span className="font-medium">{section}</span>
+                            <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                          </div>
+                        ))}
                       </div>
                     </Card>
                   )}
-
-                  {/* Written Communication */}
-                  {wcStats && (
+                  {/* Practice Simulations */}
+                  {cmaUniqueContent.simulations > 0 && (
                     <Card className="p-6">
-                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <span>✍️</span> Written Communication
-                      </h4>
-                      <div className="text-3xl font-bold text-primary-600">
-                        {wcStats.total.toLocaleString()}
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">🧮</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Practice Simulations</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-cyan-600 mb-3">
+                        {cmaUniqueContent.simulations}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">simulations</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {Object.entries(cmaUniqueContent.simulationsBySection).map(([section, count]) => (
+                          <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                            <span className="font-medium">{section}</span>
+                            <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                          </div>
+                        ))}
                       </div>
                     </Card>
                   )}
                 </div>
               </div>
             )}
+
+            {/* CFP Unique Content: Case Studies, Item Sets */}
+            {cfpUniqueContent && (cfpUniqueContent.caseStudies > 0 || cfpUniqueContent.itemSets > 0) && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">💰 CFP Unique Content</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Case Studies */}
+                  {cfpUniqueContent.caseStudies > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">📑</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Case Studies</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-amber-600">
+                        {cfpUniqueContent.caseStudies}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">comprehensive scenarios</span>
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                        Multi-part scenarios testing integrated planning skills
+                      </p>
+                    </Card>
+                  )}
+                  {/* Item Sets */}
+                  {cfpUniqueContent.itemSets > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">📊</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Item Sets</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-emerald-600">
+                        {cfpUniqueContent.itemSets}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">item sets</span>
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                        Related question clusters for deeper topic coverage
+                      </p>
+                    </Card>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Content Quality Audit */}
+            <div className="mt-8">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">🔍 Content Quality Audit</h3>
+                <button
+                  onClick={loadContentAudit}
+                  disabled={isLoadingAudit}
+                  className="text-sm px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                >
+                  {isLoadingAudit ? 'Scanning...' : 'Run Audit'}
+                </button>
+              </div>
+              
+              {contentAudit && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Card className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
+                      <span className={`px-2 py-1 rounded text-sm font-medium ${
+                        contentAudit.questionsWithoutExplanation.length === 0 
+                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                          : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                      }`}>
+                        {contentAudit.questionsWithoutExplanation.length}
+                        {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
+                      </span>
+                    </div>
+                    {contentAudit.questionsWithoutExplanation.length === 0 ? (
+                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have explanations!</p>
+                    ) : (
+                      <div className="space-y-2 max-h-64 overflow-y-auto">
+                        {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
+                          <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                          </div>
+                        ))}
+                        {contentAudit.questionsWithoutExplanation.length > 15 && (
+                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                            + {contentAudit.questionsWithoutExplanation.length - 15} more
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </Card>
+
+                  <Card className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
+                      <span className={`px-2 py-1 rounded text-sm font-medium ${
+                        contentAudit.questionsWithoutBlueprint.length === 0 
+                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                          : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                      }`}>
+                        {contentAudit.questionsWithoutBlueprint.length}
+                        {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
+                      </span>
+                    </div>
+                    {contentAudit.questionsWithoutBlueprint.length === 0 ? (
+                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All CPA questions have blueprint tags!</p>
+                    ) : (
+                      <div className="space-y-2 max-h-64 overflow-y-auto">
+                        {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
+                          <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
+                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                          </div>
+                        ))}
+                        {contentAudit.questionsWithoutBlueprint.length > 15 && (
+                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                            + {contentAudit.questionsWithoutBlueprint.length - 15} more
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </Card>
+                </div>
+              )}
+
+              {contentAudit && (
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                  Scanned {contentAudit.totalScanned.toLocaleString()} questions across all courses
+                </p>
+              )}
+
+              {!contentAudit && !isLoadingAudit && (
+                <Card className="p-6 text-center text-gray-500 dark:text-gray-400">
+                  Click "Run Audit" to scan all questions for missing explanations and blueprint tags
+                </Card>
+              )}
+            </div>
           </div>
         )}
 
@@ -1338,36 +2088,60 @@ const AdminCMS: React.FC = () => {
             {/* User Stats Summary */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-blue-600">{usersList.length}</div>
-                <div className="text-sm text-gray-600">Total Users</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{usersList.length}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Total Users</div>
               </Card>
               <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-primary-600">{usersList.filter(u => u.isAdmin).length}</div>
-                <div className="text-sm text-gray-600">Admins</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Admins</div>
               </Card>
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                   {usersList.filter(u => u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)).length}
                 </div>
-                <div className="text-sm text-gray-600">Premium</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Premium</div>
               </Card>
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-amber-600">
+                <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
                   {usersList.filter(u => u.subscription?.status === 'trialing').length}
                 </div>
-                <div className="text-sm text-gray-600">Trial</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Trial</div>
               </Card>
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-gray-600">
+                <div className="text-2xl font-bold text-gray-600 dark:text-gray-400">
                   {usersList.filter(u => !u.subscription?.tier || u.subscription.tier === 'free').length}
                 </div>
-                <div className="text-sm text-gray-600">Free</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Free</div>
               </Card>
             </div>
 
+            {/* Users by Course Breakdown */}
+            {usersList.length > 0 && (
+              <Card className="p-4">
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Users by Course</h4>
+                <div className="flex flex-wrap gap-3">
+                  {getActiveCourses().map(course => {
+                    const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
+                    const colorClass = course.id === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                       course.id === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                       course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
+                                       course.id === 'cia' ? 'bg-orange-100 text-orange-700' :
+                                       course.id === 'cisa' ? 'bg-teal-100 text-teal-700' :
+                                       'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300';
+                    return (
+                      <div key={course.id} className={`px-3 py-2 rounded-lg ${colorClass}`}>
+                        <span className="font-bold">{count}</span>
+                        <span className="text-sm ml-1">{course.shortName || course.id.toUpperCase()}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Card>
+            )}
+
             {/* User Lookup Tool */}
-            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <div className="bg-gradient-to-r from-primary-900/20 to-blue-900/20 dark:from-primary-900/30 dark:to-blue-900/30 rounded-xl p-6 shadow-sm border border-primary-600 dark:border-primary-700">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 🔍 User Lookup
               </h3>
               <div className="flex gap-3">
@@ -1376,7 +2150,7 @@ const AdminCMS: React.FC = () => {
                   value={lookupQuery}
                   onChange={(e) => setLookupQuery(e.target.value)}
                   placeholder="Enter email or user ID..."
-                  className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="flex-1 px-4 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400 focus:border-transparent"
                   onKeyDown={(e) => e.key === 'Enter' && lookupUser()}
                 />
                 <button
@@ -1388,12 +2162,13 @@ const AdminCMS: React.FC = () => {
                 </button>
               </div>
               {lookupResult && (
-                <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
+                <div className="mt-4 p-4 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700">
                   <div className="flex justify-between items-start">
                     <div>
-                      <p className="font-semibold text-gray-900">{lookupResult.email || 'No email'}</p>
-                      <p className="text-sm text-gray-600 font-mono">{lookupResult.id}</p>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <p className="font-semibold text-gray-900 dark:text-white">{lookupResult.email || 'No email'}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">{lookupResult.id}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        Course: {(lookupResult.courseId || 'cpa').toUpperCase()} • 
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
                         Status: {lookupResult.subscription?.status || 'N/A'}
@@ -1402,19 +2177,19 @@ const AdminCMS: React.FC = () => {
                     <div className="flex gap-2">
                       <button
                         onClick={() => loadUserActivity(lookupResult)}
-                        className="px-3 py-1 text-xs rounded bg-blue-100 text-blue-700 hover:bg-blue-200"
+                        className="px-3 py-1 text-xs rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200"
                       >
                         View Activity
                       </button>
                       <button
                         onClick={() => toggleAdminStatus(lookupResult.id, !!lookupResult.isAdmin)}
-                        className={`px-3 py-1 text-xs rounded ${lookupResult.isAdmin ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 text-gray-700'} hover:opacity-80`}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.isAdmin ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'} hover:opacity-80`}
                       >
                         {lookupResult.isAdmin ? 'Remove Admin' : 'Make Admin'}
                       </button>
                       <button
                         onClick={() => setSubscriptionTier(lookupResult.id, lookupResult.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
-                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'} hover:opacity-80`}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'} hover:opacity-80`}
                       >
                         {lookupResult.subscription?.tier === 'lifetime' ? 'Revoke Premium' : 'Grant Lifetime'}
                       </button>
@@ -1427,7 +2202,7 @@ const AdminCMS: React.FC = () => {
             {/* User Management Table */}
             <Card className="p-6">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">User Management</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">User Management</h3>
                 <div className="flex flex-wrap gap-3 items-center">
                   {/* Search */}
                   <input
@@ -1435,13 +2210,13 @@ const AdminCMS: React.FC = () => {
                     value={userSearch}
                     onChange={(e) => setUserSearch(e.target.value)}
                     placeholder="Search users..."
-                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="px-3 py-1.5 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   {/* Filter */}
                   <select
                     value={userFilter}
                     onChange={(e) => setUserFilter(e.target.value as typeof userFilter)}
-                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Users</option>
                     <option value="admin">Admins Only</option>
@@ -1453,7 +2228,7 @@ const AdminCMS: React.FC = () => {
                   <select
                     value={userCourseFilter}
                     onChange={(e) => setUserCourseFilter(e.target.value as CourseId | 'all')}
-                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Courses</option>
                     {getActiveCourses().map(course => (
@@ -1462,12 +2237,12 @@ const AdminCMS: React.FC = () => {
                       </option>
                     ))}
                   </select>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
                     Showing {filteredUsers.length} of {usersList.length}
                   </span>
                   <button
                     onClick={loadUsers}
-                    className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors"
+                    className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors"
                   >
                     Refresh
                   </button>
@@ -1477,50 +2252,56 @@ const AdminCMS: React.FC = () => {
               {isLoadingUsers ? (
                  <div className="text-center py-8">
                   <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                  <p className="text-gray-600">Loading users...</p>
+                  <p className="text-gray-600 dark:text-gray-400">Loading users...</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse">
                     <thead>
-                      <tr className="bg-gray-50 border-b border-gray-200">
-                        <th className="p-3 font-medium text-gray-600">Email</th>
-                        <th className="p-3 font-medium text-gray-600">Course</th>
-                        <th className="p-3 font-medium text-gray-600">Section</th>
-                        <th className="p-3 font-medium text-gray-600">Subscription</th>
-                        <th className="p-3 font-medium text-gray-600">Role</th>
-                        <th className="p-3 font-medium text-gray-600">Joined</th>
-                        <th className="p-3 font-medium text-gray-600">Actions</th>
+                      <tr className="bg-gray-50 dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Email</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Course</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Section</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Subscription</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Trials (per exam)</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Role</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Joined</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-gray-100 dark:divide-slate-700">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={7} className="p-4 text-center text-gray-600">
+                          <td colSpan={8} className="p-4 text-center text-gray-600 dark:text-gray-400">
                             {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
                       ) : (
                         filteredUsers.slice(0, 100).map((u) => (
-                          <tr key={u.id} className="hover:bg-gray-50">
+                          <tr key={u.id} className="hover:bg-gray-50 dark:hover:bg-slate-700 dark:bg-slate-900">
                             <td className="p-3">
                               <div className="font-medium text-sm">{u.email || '—'}</div>
-                              <div className="text-xs text-gray-600 font-mono">{u.id.slice(0, 12)}...</div>
+                              <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{u.id.slice(0, 12)}...</div>
                             </td>
                             <td className="p-3">
-                              <span className={`px-2 py-1 rounded text-xs font-medium ${
-                                ((u as typeof u & { courseId?: string }).courseId || 'cpa') === 'cpa' ? 'bg-blue-50 text-blue-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'ea' ? 'bg-green-50 text-green-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'cma' ? 'bg-purple-50 text-purple-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'cia' ? 'bg-orange-50 text-orange-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'cisa' ? 'bg-teal-50 text-teal-700' :
-                                'bg-amber-50 text-amber-700'
-                              }`}>
-                                {((u as typeof u & { courseId?: string }).courseId || 'cpa').toUpperCase()}
-                              </span>
+                              {(() => {
+                                const derivedCourse = getCourseFromSection(u.examSection);
+                                return (
+                                  <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                    derivedCourse === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                    derivedCourse === 'ea' ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                    derivedCourse === 'cma' ? 'bg-purple-50 text-purple-700' :
+                                    derivedCourse === 'cia' ? 'bg-orange-50 text-orange-700' :
+                                    derivedCourse === 'cisa' ? 'bg-teal-50 text-teal-700' :
+                                    'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                                  }`}>
+                                    {derivedCourse.toUpperCase()}
+                                  </span>
+                                );
+                              })()}
                             </td>
                             <td className="p-3">
-                              <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
+                              <span className="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-medium">
                                 {u.examSection || 'N/A'}
                               </span>
                             </td>
@@ -1528,11 +2309,11 @@ const AdminCMS: React.FC = () => {
                               <span
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.subscription?.tier === 'lifetime' ? 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800' :
-                                  u.subscription?.tier === 'annual' ? 'bg-green-100 text-green-700' :
-                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 text-blue-700' :
+                                  u.subscription?.tier === 'annual' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                   u.subscription?.tier === 'monthly' ? 'bg-primary-100 text-primary-700' :
-                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 text-amber-700' :
-                                  'bg-gray-100 text-gray-600'
+                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
+                                  'bg-gray-100 dark:bg-slate-700 text-gray-600'
                                 }`}
                               >
                                 {u.subscription?.tier || 'free'}
@@ -1540,26 +2321,147 @@ const AdminCMS: React.FC = () => {
                               </span>
                             </td>
                             <td className="p-3">
+                              {(() => {
+                                const trials = u._trials;
+                                const legacyTrialEnd = u.subscription?.trialEnd;
+                                const isEditing = editingTrialUserId === u.id;
+                                const allExams = ['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'];
+
+                                // Editing mode: show per-exam date inputs
+                                if (isEditing) {
+                                  return (
+                                    <div className="flex flex-col gap-1.5 min-w-[200px]">
+                                      {allExams.map(examId => {
+                                        const trial = trials?.[examId];
+                                        const endSec = trial?.endDate?.seconds;
+                                        const currentVal = endSec
+                                          ? new Date(endSec * 1000).toISOString().split('T')[0]
+                                          : '';
+                                        return (
+                                          <div key={examId} className="flex items-center gap-1">
+                                            <span className="text-[10px] font-bold w-8 text-gray-500 uppercase">{examId}</span>
+                                            <input
+                                              type="date"
+                                              defaultValue={currentVal}
+                                              placeholder="No trial"
+                                              className="px-1 py-0.5 text-[11px] border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-gray-900 dark:text-white w-[120px]"
+                                              id={`trial-${u.id}-${examId}`}
+                                            />
+                                            <button
+                                              onClick={() => {
+                                                const input = document.getElementById(`trial-${u.id}-${examId}`) as HTMLInputElement;
+                                                if (input?.value) {
+                                                  const newDate = new Date(input.value + 'T23:59:59');
+                                                  if (!isNaN(newDate.getTime())) {
+                                                    setTrialEndDate(u.id, newDate, examId);
+                                                  }
+                                                }
+                                              }}
+                                              className="px-1.5 py-0.5 text-[9px] bg-green-600 text-white rounded hover:bg-green-700"
+                                            >
+                                              Set
+                                            </button>
+                                          </div>
+                                        );
+                                      })}
+                                      <button
+                                        onClick={() => setEditingTrialUserId(null)}
+                                        className="px-2 py-0.5 text-[10px] bg-gray-200 dark:bg-slate-600 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-300 self-start mt-1"
+                                      >
+                                        Close
+                                      </button>
+                                    </div>
+                                  );
+                                }
+
+                                // Display mode: show active trials as compact badges
+                                const now = new Date();
+                                const activeTrials: { examId: string; endDate: Date; daysLeft: number }[] = [];
+                                const expiredTrials: string[] = [];
+
+                                if (trials) {
+                                  for (const [examId, trial] of Object.entries(trials)) {
+                                    if (trial?.endDate?.seconds) {
+                                      const endDate = new Date(trial.endDate.seconds * 1000);
+                                      const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+                                      if (daysLeft > 0) {
+                                        activeTrials.push({ examId, endDate, daysLeft });
+                                      } else {
+                                        expiredTrials.push(examId);
+                                      }
+                                    }
+                                  }
+                                } else if (legacyTrialEnd?.seconds) {
+                                  // Legacy: show single trial
+                                  const endDate = new Date(legacyTrialEnd.seconds * 1000);
+                                  const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+                                  const examId = u.courseId || 'cpa';
+                                  if (daysLeft > 0) {
+                                    activeTrials.push({ examId, endDate, daysLeft });
+                                  } else {
+                                    expiredTrials.push(examId);
+                                  }
+                                }
+
+                                if (activeTrials.length === 0 && expiredTrials.length === 0) {
+                                  return (
+                                    <button
+                                      onClick={() => setEditingTrialUserId(u.id)}
+                                      className="text-xs text-gray-400 hover:text-blue-500 hover:underline cursor-pointer"
+                                      title="Click to manage per-exam trials"
+                                    >
+                                      No trials
+                                    </button>
+                                  );
+                                }
+
+                                return (
+                                  <button
+                                    onClick={() => setEditingTrialUserId(u.id)}
+                                    className="text-left hover:opacity-80 cursor-pointer group"
+                                    title="Click to manage per-exam trials"
+                                  >
+                                    <div className="flex flex-wrap gap-1">
+                                      {activeTrials.map(t => (
+                                        <span key={t.examId} className={`inline-flex items-center gap-0.5 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${
+                                          t.daysLeft <= 3
+                                            ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                                            : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                                        }`}>
+                                          {t.examId.toUpperCase()} {t.daysLeft}d
+                                        </span>
+                                      ))}
+                                      {expiredTrials.map(examId => (
+                                        <span key={examId} className="inline-flex items-center text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+                                          {examId.toUpperCase()} exp
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </button>
+                                );
+                              })()}
+                            </td>
+                            <td className="p-3">
                               <span
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.isAdmin
                                     ? 'bg-primary-100 text-primary-700'
-                                    : 'bg-gray-100 text-gray-600'
+                                    : 'bg-gray-100 dark:bg-slate-700 text-gray-600'
                                 }`}
                               >
                                 {u.isAdmin ? 'Admin' : 'User'}
                               </span>
                             </td>
-                             <td className="p-3 text-sm text-gray-600">
+                             <td className="p-3 text-sm text-gray-600 dark:text-gray-400">
                               {u.createdAt && typeof u.createdAt === 'object' && 'seconds' in u.createdAt
                                 ? new Date((u.createdAt as { seconds: number }).seconds * 1000).toLocaleDateString()
                                 : '—'}
                             </td>
                             <td className="p-3">
-                              <div className="flex gap-1">
+                              <div className="flex gap-1 flex-wrap">
                                 <button
                                   onClick={() => loadUserActivity(u)}
-                                  className="px-2 py-1 text-xs bg-blue-50 text-blue-600 rounded hover:bg-blue-100"
+                                  className="px-2 py-1 text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100"
                                   title="View activity"
                                 >
                                   👁️
@@ -1573,11 +2475,12 @@ const AdminCMS: React.FC = () => {
                                 </button>
                                 <button
                                   onClick={() => setSubscriptionTier(u.id, u.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
-                                  className="px-2 py-1 text-xs bg-amber-50 text-amber-600 rounded hover:bg-amber-100"
+                                  className="px-2 py-1 text-xs bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded hover:bg-amber-100"
                                   title={u.subscription?.tier === 'lifetime' ? 'Revoke premium' : 'Grant lifetime'}
                                 >
                                   {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
                                 </button>
+
                               </div>
                             </td>
                           </tr>
@@ -1586,7 +2489,7 @@ const AdminCMS: React.FC = () => {
                     </tbody>
                   </table>
                   {filteredUsers.length > 100 && (
-                    <p className="text-center text-sm text-gray-600 mt-4">
+                    <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-4">
                       Showing first 100 of {filteredUsers.length} users. Use search to find specific users.
                     </p>
                   )}
@@ -1600,11 +2503,11 @@ const AdminCMS: React.FC = () => {
           <div className="space-y-6">
             {/* Analytics Header */}
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-semibold text-gray-900">📊 Analytics Dashboard</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📊 Analytics Dashboard</h3>
               <button
                 onClick={loadAnalytics}
                 disabled={isLoadingAnalytics}
-                className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+                className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
               >
                 {isLoadingAnalytics ? 'Loading...' : 'Refresh'}
               </button>
@@ -1613,7 +2516,7 @@ const AdminCMS: React.FC = () => {
             {isLoadingAnalytics ? (
               <div className="text-center py-12">
                 <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-600">Calculating analytics...</p>
+                <p className="text-gray-600 dark:text-gray-400">Calculating analytics...</p>
               </div>
             ) : analytics ? (
               <>
@@ -1637,11 +2540,113 @@ const AdminCMS: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Revenue Dashboard */}
+                {revenueMetrics && (
+                  <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 dark:border-green-800">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                      💰 Revenue Dashboard
+                      <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
+                        {revenueMetrics.subscriberCount} subscribers
+                      </span>
+                      {isFounderPricingActive() && (
+                        <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
+                          Founder pricing active
+                        </span>
+                      )}
+                    </h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                          ${revenueMetrics.totalMRR.toFixed(0)}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Monthly Recurring Revenue</div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                          ${revenueMetrics.arrProjection.toFixed(0)}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Annual Run Rate (ARR)</div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-purple-600">
+                          {revenueMetrics.founderCount}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Founder Members (discounted rate)</div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
+                          {revenueMetrics.churnRisk}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Trials Ending (3 days)</div>
+                      </div>
+                    </div>
+                    
+                    {/* Revenue by Plan Type */}
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Monthly Plans</span>
+                          <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
+                        </div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                          ${revenueMetrics.monthlyMRR.toFixed(0)}/mo MRR
+                        </div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Annual Plans</span>
+                          <span className="text-lg font-bold text-green-600 dark:text-green-400">{revenueMetrics.byPlan.annual}</span>
+                        </div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                          ${revenueMetrics.annualMRR.toFixed(0)}/mo MRR (amortized)
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Revenue by Course */}
+                    {Object.keys(revenueMetrics.byCourse).length > 0 && (
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Revenue by Course</h5>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                          {Object.entries(revenueMetrics.byCourse)
+                            .sort((a, b) => b[1].revenue - a[1].revenue)
+                            .map(([courseId, data]) => {
+                              const pricing = EXAM_PRICING[courseId as keyof typeof EXAM_PRICING];
+                              return (
+                                <div key={courseId} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
+                                  <div className="flex justify-between items-center">
+                                    <span className="font-medium">{courseId.toUpperCase()}</span>
+                                    <span className="text-green-600 dark:text-green-400 font-semibold">
+                                      ${data.revenue.toFixed(0)}/mo
+                                    </span>
+                                  </div>
+                                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                    {data.count} subs • ${pricing?.annual}/yr or ${pricing?.monthly}/mo
+                                  </div>
+                                </div>
+                              );
+                            })}
+                        </div>
+                      </div>
+                    )}
+
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
+                      Per-exam pricing: CPA $199/yr ($29/mo), CFP $149/yr ($19/mo), CMA/CIA $99/yr ($14/mo), CISA $79/yr ($12/mo), EA $59/yr ($9/mo). 
+                      Founder pricing (40-44% off) available through April 30, 2026. No lifetime plans offered.
+                    </p>
+                  </Card>
+                )}
+                {!revenueMetrics && usersList.length === 0 && (
+                  <Card className="p-6 text-center text-gray-500 dark:text-gray-400 border-dashed">
+                    Load users (Users tab) to calculate revenue metrics
+                  </Card>
+                )}
+
                 {/* Charts Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Users by Course */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">Users by Course</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Users by Course</h4>
                     <div className="space-y-3">
                       {Object.entries(analytics.byCourse || {})
                         .filter(([, count]) => count > 0)
@@ -1662,9 +2667,9 @@ const AdminCMS: React.FC = () => {
                                   <span>{getCourseIcon(courseId as CourseId)}</span>
                                   {courseConfig?.name || courseId.toUpperCase()}
                                 </span>
-                                <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
+                                <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2">
+                              <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
                                 <div 
                                   className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                   style={{ width: `${Math.min(percentage * 2, 100)}%` }}
@@ -1674,14 +2679,14 @@ const AdminCMS: React.FC = () => {
                           );
                         })}
                       {Object.entries(analytics.byCourse || {}).filter(([, count]) => count > 0).length === 0 && (
-                        <p className="text-gray-600 text-sm">No course data yet - users will have courseId tracked</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">No course data yet - users will have courseId tracked</p>
                       )}
                     </div>
                   </Card>
 
                   {/* Users by Subscription */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">Users by Subscription</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Users by Subscription</h4>
                     <div className="space-y-3">
                       {[
                         { key: 'lifetime', label: 'Lifetime', color: 'bg-gradient-to-r from-amber-400 to-yellow-500' },
@@ -1696,9 +2701,9 @@ const AdminCMS: React.FC = () => {
                           <div key={key}>
                             <div className="flex justify-between text-sm mb-1">
                               <span className="font-medium">{label}</span>
-                              <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
+                              <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                             </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
                               <div 
                                 className={`${color} h-2 rounded-full transition-all duration-500`} 
                                 style={{ width: `${percentage}%` }}
@@ -1710,8 +2715,8 @@ const AdminCMS: React.FC = () => {
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-100">
                       <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700">Premium Users</span>
-                        <span className="font-bold text-green-600">
+                        <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Premium Users</span>
+                        <span className="font-bold text-green-600 dark:text-green-400">
                           {(analytics.bySubscription.lifetime || 0) + 
                            (analytics.bySubscription.annual || 0) + 
                            (analytics.bySubscription.quarterly || 0) + 
@@ -1724,26 +2729,26 @@ const AdminCMS: React.FC = () => {
 
                 {/* Quick Stats */}
                 <Card className="p-6">
-                  <h4 className="font-semibold text-gray-900 mb-4">Quick Stats</h4>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Stats</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">{analytics.activeToday}</div>
-                      <div className="text-xs text-gray-600">Active Today</div>
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                      <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{analytics.activeToday}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Active Today</div>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
-                      <div className="text-xs text-gray-600">WAU Rate</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">WAU Rate</div>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                       <div className="text-2xl font-bold text-primary-600">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisMonth / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
-                      <div className="text-xs text-gray-600">MAU Rate</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">MAU Rate</div>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-amber-600">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                      <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
                         {((analytics.bySubscription.lifetime || 0) + 
                           (analytics.bySubscription.annual || 0) + 
                           (analytics.bySubscription.quarterly || 0) + 
@@ -1754,7 +2759,7 @@ const AdminCMS: React.FC = () => {
                               (analytics.bySubscription.monthly || 0)) / analytics.totalUsers * 100).toFixed(1)
                           : 0}%
                       </div>
-                      <div className="text-xs text-gray-600">Conversion Rate</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Conversion Rate</div>
                     </div>
                   </div>
                 </Card>
@@ -1764,34 +2769,34 @@ const AdminCMS: React.FC = () => {
                   {/* Most Active Users */}
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900">🏆 Most Active Users</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">🏆 Most Active Users</h4>
                       <button
                         onClick={loadEngagementStats}
                         disabled={isLoadingEngagement || usersList.length === 0}
-                        className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                        className="text-xs px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
                       >
                         {isLoadingEngagement ? 'Loading...' : 'Load'}
                       </button>
                     </div>
                     {engagementStats ? (
                       <div className="space-y-2">
-                        <div className="text-sm text-gray-600 mb-3">
+                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                           {engagementStats.usersWithActivity} users with activity • Avg {engagementStats.averageQuestionsPerUser} questions/user
                         </div>
                         {engagementStats.mostActive.length > 0 ? (
                           engagementStats.mostActive.map((user, i) => (
-                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
+                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <span className="font-medium truncate flex-1">{user.email}</span>
-                              <span className="text-green-600 font-semibold ml-2">{user.questionsAnswered} Q</span>
-                              <span className="text-gray-500 text-xs ml-2">{user.lastActive}</span>
+                              <span className="text-green-600 dark:text-green-400 font-semibold ml-2">{user.questionsAnswered} Q</span>
+                              <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">{user.lastActive}</span>
                             </div>
                           ))
                         ) : (
-                          <p className="text-gray-500 text-sm">No activity data found</p>
+                          <p className="text-gray-500 dark:text-gray-400 text-sm">No activity data found</p>
                         )}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">
                         {usersList.length === 0 ? 'Load users first (Users tab)' : 'Click Load to fetch engagement data'}
                       </p>
                     )}
@@ -1799,23 +2804,23 @@ const AdminCMS: React.FC = () => {
 
                   {/* Inactive Users */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">😴 Inactive Users</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">😴 Inactive Users</h4>
                     {engagementStats ? (
                       <div className="space-y-2">
                         {engagementStats.inactive.length > 0 ? (
                           engagementStats.inactive.map((user, i) => (
-                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
+                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <span className="font-medium truncate flex-1">{user.email}</span>
-                              <span className="text-amber-600 font-semibold ml-2">{user.daysSinceActive}d</span>
-                              <span className="text-gray-500 text-xs ml-2">joined {user.joinedAt}</span>
+                              <span className="text-amber-600 dark:text-amber-400 font-semibold ml-2">{user.daysSinceActive}d</span>
+                              <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">joined {user.joinedAt}</span>
                             </div>
                           ))
                         ) : (
-                          <p className="text-green-600 text-sm">🎉 No inactive users! Everyone is engaged.</p>
+                          <p className="text-green-600 dark:text-green-400 text-sm">🎉 No inactive users! Everyone is engaged.</p>
                         )}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">Load engagement data to see inactive users</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">Load engagement data to see inactive users</p>
                     )}
                   </Card>
                 </div>
@@ -1825,30 +2830,30 @@ const AdminCMS: React.FC = () => {
                   {/* Most Reported Questions */}
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900">⚠️ Most Reported Questions</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">⚠️ Most Reported Questions</h4>
                       <button
                         onClick={loadQuestionReports}
                         disabled={isLoadingReports}
-                        className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                        className="text-xs px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
                       >
                         {isLoadingReports ? 'Loading...' : 'Refresh'}
                       </button>
                     </div>
                     {qualityMetrics ? (
                       <div className="space-y-2">
-                        <div className="text-sm text-amber-600 mb-3">
+                        <div className="text-sm text-amber-600 dark:text-amber-400 mb-3">
                           {qualityMetrics.pendingCount} pending reports to review
                         </div>
                         {qualityMetrics.mostReported.length > 0 ? (
                           qualityMetrics.mostReported.slice(0, 5).map((q, i) => (
-                            <div key={i} className="p-2 bg-gray-50 rounded text-sm">
+                            <div key={i} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <div className="flex justify-between items-center">
                                 <span className="font-mono text-xs truncate flex-1">{q.questionId.slice(0, 20)}...</span>
-                                <span className="text-red-600 font-semibold ml-2">{q.reportCount}x</span>
+                                <span className="text-red-600 dark:text-red-400 font-semibold ml-2">{q.reportCount}x</span>
                               </div>
                               <div className="flex gap-1 mt-1">
                                 {q.types.map(type => (
-                                  <span key={type} className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">
+                                  <span key={type} className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded">
                                     {type.replace(/_/g, ' ')}
                                   </span>
                                 ))}
@@ -1856,17 +2861,17 @@ const AdminCMS: React.FC = () => {
                             </div>
                           ))
                         ) : (
-                          <p className="text-green-600 text-sm">🎉 No reported questions!</p>
+                          <p className="text-green-600 dark:text-green-400 text-sm">🎉 No reported questions!</p>
                         )}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">Load reports to see quality metrics</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">Load reports to see quality metrics</p>
                     )}
                   </Card>
 
                   {/* Reports by Type */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">📊 Reports by Type</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">📊 Reports by Type</h4>
                     {qualityMetrics && Object.keys(qualityMetrics.reportsByType).length > 0 ? (
                       <div className="space-y-3">
                         {Object.entries(qualityMetrics.reportsByType)
@@ -1882,9 +2887,9 @@ const AdminCMS: React.FC = () => {
                               <div key={type}>
                                 <div className="flex justify-between text-sm mb-1">
                                   <span className="font-medium">{type.replace(/_/g, ' ')}</span>
-                                  <span className="text-gray-600">{count}</span>
+                                  <span className="text-gray-600 dark:text-gray-400">{count}</span>
                                 </div>
-                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
                                   <div 
                                     className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                     style={{ width: `${percentage}%` }}
@@ -1895,13 +2900,13 @@ const AdminCMS: React.FC = () => {
                           })}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">No report data available</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">No report data available</p>
                     )}
                   </Card>
                 </div>
               </>
             ) : (
-              <div className="text-center py-12 text-gray-600">
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400">
                 Click Refresh to load analytics data
               </div>
             )}
@@ -1910,36 +2915,221 @@ const AdminCMS: React.FC = () => {
 
         {activeTab === 'tools' && (
           <div className="space-y-6">
+            {/* Broadcast Announcement */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                📢 Send Announcement
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Title</label>
+                  <input
+                    type="text"
+                    id="announcement-title"
+                    placeholder="e.g., New Feature: AI Study Plans"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Body</label>
+                  <textarea
+                    id="announcement-body"
+                    rows={3}
+                    placeholder="We've just launched AI-powered study plans..."
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
+                  />
+                </div>
+                <div className="flex items-center gap-4">
+                  <select
+                    id="announcement-audience"
+                    className="px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
+                  >
+                    <option value="all">All Users</option>
+                    {getActiveCourses().map(course => (
+                      <option key={course.id} value={course.id}>{course.name} Users</option>
+                    ))}
+                    <option value="premium">Premium Users Only</option>
+                  </select>
+                  <button
+                    onClick={async () => {
+                      const title = (document.getElementById('announcement-title') as HTMLInputElement)?.value;
+                      const body = (document.getElementById('announcement-body') as HTMLTextAreaElement)?.value;
+                      const audience = (document.getElementById('announcement-audience') as HTMLSelectElement)?.value;
+                      
+                      if (!title || !body) {
+                        alert('Please enter both title and message body');
+                        return;
+                      }
+                      
+                      if (!window.confirm(`Send announcement to ${audience === 'all' ? 'ALL users' : audience + ' users'}?\n\nTitle: ${title}\nMessage: ${body}`)) {
+                        return;
+                      }
+                      
+                      try {
+                        // Store announcement in Firestore for users to see on next login
+                        const { addDoc, collection, serverTimestamp } = await import('firebase/firestore');
+                        await addDoc(collection(db, 'announcements'), {
+                          title,
+                          body,
+                          audience,
+                          createdAt: serverTimestamp(),
+                          createdBy: user?.email,
+                          active: true,
+                        });
+                        addLog(`Announcement created for ${audience} users`, 'success');
+                        alert('Announcement saved! Users will see it on their next session.');
+                        (document.getElementById('announcement-title') as HTMLInputElement).value = '';
+                        (document.getElementById('announcement-body') as HTMLTextAreaElement).value = '';
+                      } catch (error) {
+                        logger.error('Error creating announcement:', error);
+                        addLog('Failed to create announcement', 'error');
+                      }
+                    }}
+                    className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+                  >
+                    Send Announcement
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  Announcements are stored in Firestore and shown to users on their next session. For push notifications, use Firebase Cloud Messaging directly.
+                </p>
+              </div>
+            </Card>
+
+            {/* System Health */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🩺 System Health</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="p-4 bg-green-50 dark:bg-green-900/30 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
+                  <div className="text-sm text-green-600 dark:text-green-400">Firebase</div>
+                </div>
+                <div className={`p-4 rounded-lg text-center ${import.meta.env.VITE_GEMINI_API_KEY ? 'bg-green-50 dark:bg-green-900/30' : 'bg-red-50 dark:bg-red-900/30'}`}>
+                  <div className={`text-2xl font-bold ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'}`}>
+                    {import.meta.env.VITE_GEMINI_API_KEY ? '✓' : '✗'}
+                  </div>
+                  <div className={`text-sm ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>Gemini AI</div>
+                </div>
+                <div className="p-4 bg-green-50 dark:bg-green-900/30 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
+                  <div className="text-sm text-green-600 dark:text-green-400">Auth</div>
+                </div>
+                <div className={`p-4 rounded-lg text-center ${systemErrors.length === 0 ? 'bg-green-50 dark:bg-green-900/30' : 'bg-amber-50 dark:bg-amber-900/30'}`}>
+                  <div className={`text-2xl font-bold ${systemErrors.length === 0 ? 'text-green-700 dark:text-green-300' : 'text-amber-700 dark:text-amber-300'}`}>
+                    {systemErrors.length}
+                  </div>
+                  <div className={`text-sm ${systemErrors.length === 0 ? 'text-green-600 dark:text-green-400' : 'text-amber-600 dark:text-amber-400'}`}>Errors</div>
+                </div>
+              </div>
+              <div className="mt-4 p-3 bg-gray-50 dark:bg-slate-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
+                <div className="grid grid-cols-2 gap-2">
+                  <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'development'}</div>
+                  <div><strong>Project:</strong> {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</div>
+                  <div><strong>Build:</strong> {import.meta.env.VITE_BUILD_TIME || 'Local'}</div>
+                  <div><strong>Version:</strong> {import.meta.env.VITE_APP_VERSION || '1.0.0'}</div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Announcement History */}
+            <Card className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📜 Announcement History</h3>
+                <button
+                  onClick={loadAnnouncementHistory}
+                  disabled={isLoadingAnnouncements}
+                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
+                >
+                  {isLoadingAnnouncements ? 'Loading...' : 'Refresh'}
+                </button>
+              </div>
+              
+              {announcementHistory.length > 0 ? (
+                <div className="space-y-3 max-h-80 overflow-y-auto">
+                  {announcementHistory.map(ann => (
+                    <div 
+                      key={ann.id} 
+                      className={`p-4 rounded-lg border ${ann.active ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'}`}
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{ann.title}</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{ann.body}</p>
+                        </div>
+                        <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
+                          ann.active ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
+                        }`}>
+                          {ann.active ? 'Active' : 'Inactive'}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                        <span>📤 {ann.audience === 'all' ? 'All Users' : ann.audience}</span>
+                        <span>👤 {ann.createdBy || 'Unknown'}</span>
+                        <span>📅 {ann.createdAt?.seconds 
+                          ? new Date(ann.createdAt.seconds * 1000).toLocaleDateString() 
+                          : 'Unknown date'}</span>
+                      </div>
+                      <div className="mt-2 flex gap-2">
+                        <button
+                          onClick={async () => {
+                            try {
+                              await updateDoc(doc(db, 'announcements', ann.id), { active: !ann.active });
+                              loadAnnouncementHistory();
+                              addLog(`Announcement ${ann.active ? 'deactivated' : 'activated'}`, 'success');
+                            } catch (error) {
+                              logger.error('Error toggling announcement:', error);
+                            }
+                          }}
+                          className={`text-xs px-2 py-1 rounded ${
+                            ann.active 
+                              ? 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-100' 
+                              : 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 hover:bg-green-100'
+                          }`}
+                        >
+                          {ann.active ? 'Deactivate' : 'Reactivate'}
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-500 dark:text-gray-400 text-sm text-center py-6">
+                  {isLoadingAnnouncements ? 'Loading announcements...' : 'No announcements sent yet'}
+                </p>
+              )}
+            </Card>
+
             {/* Feature Flags */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎛️ Feature Flags
-                <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Read-only Preview</span>
+                <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                These feature flags control app functionality. To change them, update <code className="bg-gray-100 px-1 rounded">featureFlags.ts</code> and redeploy.
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(featureFlags).map(([flag, enabled]) => (
                   <div 
                     key={flag} 
                     className={`flex items-center justify-between p-4 rounded-lg border ${
-                      enabled ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'
+                      enabled ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'
                     }`}
                   >
                     <div>
-                      <span className="font-medium text-gray-900">{flag}</span>
-                      <p className="text-xs text-gray-600 mt-0.5">
+                      <span className="font-medium text-gray-900 dark:text-white">{flag}</span>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
                         {flag === 'aiTutor' && 'Vory AI assistant'}
                         {flag === 'examSimulator' && 'Full exam simulation'}
                         {flag === 'flashcards' && 'Flashcard study mode'}
                         {flag === 'tbs' && 'Task-Based Simulations'}
-                        {flag === 'writtenCommunication' && 'Written Communication (BEC only)'}
+                        {flag === 'writtenCommunication' && 'Written Communication (Legacy - retired Dec 2023)'}
+                        {flag === 'offlineMode' && 'Progressive Web App offline support'}
                         {flag === 'studyPlan' && 'AI-generated study plans'}
                       </p>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      enabled ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'
+                      enabled ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
                     }`}>
                       {enabled ? 'ON' : 'OFF'}
                     </span>
@@ -1951,9 +3141,9 @@ const AdminCMS: React.FC = () => {
             {/* Question Reports */}
             <Card className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">📋 Question Reports</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📋 Question Reports</h3>
                 <div className="flex gap-2">
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
                     {questionReports.filter(r => r.status === 'pending').length} pending
                   </span>
                   <Button
@@ -1969,7 +3159,7 @@ const AdminCMS: React.FC = () => {
               </div>
               
               {questionReports.length === 0 ? (
-                <p className="text-sm text-gray-600 text-center py-8">
+                <p className="text-sm text-gray-600 dark:text-gray-400 text-center py-8">
                   No question reports yet. Click Refresh to load.
                 </p>
               ) : (
@@ -1978,45 +3168,45 @@ const AdminCMS: React.FC = () => {
                     <div 
                       key={report.id} 
                       className={`p-4 rounded-lg border ${
-                        report.status === 'pending' ? 'bg-amber-50 border-amber-200' :
-                        report.status === 'resolved' ? 'bg-green-50 border-green-200' :
-                        report.status === 'dismissed' ? 'bg-gray-50 border-gray-200' :
-                        'bg-blue-50 border-blue-200'
+                        report.status === 'pending' ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800' :
+                        report.status === 'resolved' ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' :
+                        report.status === 'dismissed' ? 'bg-gray-50 dark:bg-slate-800 border-gray-200' :
+                        'bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                              report.type === 'incorrect_answer' ? 'bg-red-100 text-red-700' :
-                              report.type === 'unclear_question' ? 'bg-amber-100 text-amber-700' :
-                              report.type === 'typo' ? 'bg-blue-100 text-blue-700' :
-                              'bg-gray-100 text-gray-700'
+                              report.type === 'incorrect_answer' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300' :
+                              report.type === 'unclear_question' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
+                              report.type === 'typo' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                              'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
                             }`}>
                               {report.type.replace(/_/g, ' ')}
                             </span>
                             <span className={`px-2 py-0.5 rounded text-xs ${
-                              report.status === 'pending' ? 'bg-amber-100 text-amber-700' :
-                              report.status === 'resolved' ? 'bg-green-100 text-green-700' :
-                              report.status === 'reviewed' ? 'bg-blue-100 text-blue-700' :
-                              'bg-gray-100 text-gray-700'
+                              report.status === 'pending' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
+                              report.status === 'resolved' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                              report.status === 'reviewed' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                              'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
                             }`}>
                               {report.status}
                             </span>
-                            <span className="text-xs text-gray-600">
+                            <span className="text-xs text-gray-600 dark:text-gray-400">
                               {report.courseId && <span className="font-medium">{report.courseId.toUpperCase()} • </span>}
                               {report.section} • {report.blueprintArea}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-900 line-clamp-2">
+                          <p className="text-sm text-gray-900 dark:text-white line-clamp-2">
                             Q: {report.questionText || report.questionId}
                           </p>
                           {report.details && (
-                            <p className="text-xs text-gray-600 mt-1">
+                            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                               Details: {report.details}
                             </p>
                           )}
-                          <p className="text-xs text-gray-600 mt-1">
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                             By: {report.reportedByEmail || report.reportedBy}
                             {report.createdAt && ` • ${new Date(report.createdAt.seconds * 1000).toLocaleDateString()}`}
                           </p>
@@ -2048,12 +3238,12 @@ const AdminCMS: React.FC = () => {
 
             {/* System Tools */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">🛠️ System Tools</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🛠️ System Tools</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Maintenance Mode Toggle */}
-                <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-200'}`}>
+                <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'}`}>
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Maintenance Mode</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Maintenance Mode</h4>
                     <button
                       onClick={() => {
                         const newState = !maintenanceMode;
@@ -2064,21 +3254,21 @@ const AdminCMS: React.FC = () => {
                       className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
                         maintenanceMode 
                           ? 'bg-red-600 text-white hover:bg-red-700' 
-                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                          : 'bg-gray-200 dark:bg-slate-600 text-gray-700 dark:text-gray-300 hover:bg-gray-300'
                       }`}
                     >
                       {maintenanceMode ? 'Disable' : 'Enable'}
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     When enabled, shows maintenance message to non-admin users.
                   </p>
                 </div>
 
                 {/* Cache Refresh */}
-                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Clear Local Cache</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Clear Local Cache</h4>
                     <Button
                       onClick={() => {
                         const keysCleared: string[] = [];
@@ -2106,15 +3296,15 @@ const AdminCMS: React.FC = () => {
                       Clear Cache
                     </Button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Clears local storage cache for study state and progress.
                   </p>
                 </div>
 
                 {/* Force Reload */}
-                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Force Hard Reload</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Force Hard Reload</h4>
                     <button
                       onClick={() => {
                         if (window.confirm('This will fully reload the app. Continue?')) {
@@ -2126,15 +3316,15 @@ const AdminCMS: React.FC = () => {
                       Hard Reload
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Forces a complete page reload bypassing cache.
                   </p>
                 </div>
 
                 {/* Export Users */}
-                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Export User List</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Export User List</h4>
                     <button
                       onClick={() => {
                         if (usersList.length === 0) {
@@ -2142,9 +3332,9 @@ const AdminCMS: React.FC = () => {
                           return;
                         }
                         const csv = [
-                          'Email,UID,Section,Subscription,IsAdmin,CreatedAt',
+                          'Email,UID,Course,Section,Subscription,IsAdmin,CreatedAt',
                           ...usersList.map(u => 
-                            `"${u.email || ''}","${u.id}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
+                            `"${u.email || ''}","${u.id}","${u.courseId || 'cpa'}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
                           )
                         ].join('\n');
                         const blob = new Blob([csv], { type: 'text/csv' });
@@ -2161,15 +3351,15 @@ const AdminCMS: React.FC = () => {
                       Export CSV
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Download user list as CSV file.
                   </p>
                 </div>
 
                 {/* Stale Account Cleanup */}
-                <div className="p-4 rounded-lg border bg-red-50 border-red-200">
+                <div className="p-4 rounded-lg border bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">🧹 Stale Account Cleanup</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">🧹 Stale Account Cleanup</h4>
                     <div className="flex gap-2">
                       <Button
                         onClick={findStaleAccounts}
@@ -2193,23 +3383,23 @@ const AdminCMS: React.FC = () => {
                       )}
                     </div>
                   </div>
-                  <p className="text-xs text-gray-600 mb-2">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
                     Find accounts with incomplete onboarding (7+ days old) and remove them.
                   </p>
                   {staleAccounts.length > 0 && (
                     <div className="mt-3 max-h-40 overflow-y-auto">
-                      <div className="text-xs text-gray-500 mb-1">Preview ({staleAccounts.length} accounts):</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">Preview ({staleAccounts.length} accounts):</div>
                       <div className="space-y-1">
                         {staleAccounts.slice(0, 10).map(acc => (
-                          <div key={acc.id} className="text-xs bg-white rounded px-2 py-1 flex justify-between">
-                            <span className="text-gray-700">{acc.email || acc.displayName || 'No email'}</span>
+                          <div key={acc.id} className="text-xs bg-white dark:bg-slate-800 rounded px-2 py-1 flex justify-between">
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
                             <span className="text-gray-400">
                               {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
                             </span>
                           </div>
                         ))}
                         {staleAccounts.length > 10 && (
-                          <div className="text-xs text-gray-500 italic">
+                          <div className="text-xs text-gray-500 dark:text-gray-400 italic">
                             ...and {staleAccounts.length - 10} more
                           </div>
                         )}
@@ -2220,21 +3410,103 @@ const AdminCMS: React.FC = () => {
               </div>
             </Card>
 
-            {/* Beta Mode Status */}
-            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                🚀 Beta Mode Status
+            {/* Beta User Trial Transition */}
+            <Card className="p-6 border-2 border-amber-300 bg-amber-50">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                🎫 Beta User Trial Transition
+                <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
+              </h3>
+              <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-4">
+                Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
+                Paid subscribers will be skipped. Users will be marked as Founders (founder rate eligible).
+              </p>
+              
+              <div className="flex gap-3 mb-4">
+                <Button
+                  onClick={previewBetaTransition}
+                  disabled={betaTransitionStatus === 'executing'}
+                  variant="primary"
+                  size="sm"
+                  loading={betaTransitionStatus === 'preview' && !betaTransitionResults}
+                >
+                  Preview Changes
+                </Button>
+                {betaTransitionResults && betaTransitionResults.toUpdate.length > 0 && betaTransitionStatus !== 'done' && (
+                  <Button
+                    onClick={executeBetaTransition}
+                    disabled={betaTransitionStatus === 'executing'}
+                    variant="danger"
+                    size="sm"
+                    loading={betaTransitionStatus === 'executing'}
+                  >
+                    Execute Transition ({betaTransitionResults.toUpdate.length} users)
+                  </Button>
+                )}
+              </div>
+
+              {betaTransitionResults && (
+                <div className="space-y-3">
+                  {betaTransitionStatus === 'done' && (
+                    <div className="p-3 bg-green-100 border border-green-300 rounded-lg">
+                      <div className="font-semibold text-green-800">✅ Transition Complete!</div>
+                      <div className="text-sm text-green-700 dark:text-green-300">
+                        Updated: {betaTransitionResults.updated} | Errors: {betaTransitionResults.errors} | Skipped: {betaTransitionResults.skipped.length}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                        ✅ Will Update ({betaTransitionResults.toUpdate.length})
+                      </div>
+                      <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
+                        {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
+                          <div key={u.id} className="flex justify-between">
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
+                          </div>
+                        ))}
+                        {betaTransitionResults.toUpdate.length > 15 && (
+                          <div className="text-gray-500 dark:text-gray-400 italic">...and {betaTransitionResults.toUpdate.length - 15} more</div>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                        ⏭️ Will Skip ({betaTransitionResults.skipped.length})
+                      </div>
+                      <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
+                        {betaTransitionResults.skipped.slice(0, 15).map(u => (
+                          <div key={u.id} className="flex justify-between">
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-amber-600 dark:text-amber-400">{u.reason}</span>
+                          </div>
+                        ))}
+                        {betaTransitionResults.skipped.length > 15 && (
+                          <div className="text-gray-500 dark:text-gray-400 italic">...and {betaTransitionResults.skipped.length - 15} more</div>
+                        )}
+                        {betaTransitionResults.skipped.length === 0 && (
+                          <div className="text-gray-400">No paid subscribers found</div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Card>
+
+            {/* Launch Status */}
+            <div className="bg-gradient-to-r from-primary-900/20 to-blue-900/20 dark:from-primary-900/30 dark:to-blue-900/30 rounded-xl p-6 shadow-sm border border-primary-600 dark:border-primary-700">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                🚀 Launch Status
               </h3>
               <div className="flex items-center gap-4">
-                <div className={`px-4 py-2 rounded-lg font-medium ${
-                  true /* IS_BETA from subscription.ts */
-                    ? 'bg-green-100 text-green-700 border border-green-200' 
-                    : 'bg-gray-100 text-gray-700 border border-gray-200'
-                }`}>
-                  Beta Mode: <strong>ACTIVE</strong>
+                <div className="px-4 py-2 rounded-lg font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                  Status: <strong>LIVE</strong>
                 </div>
-                <p className="text-sm text-gray-600">
-                  All premium features are currently free during beta. Change <code className="bg-white px-1 rounded">IS_BETA</code> in subscription.ts to disable.
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Paid subscriptions are active. Founder pricing (40-44% off) available until April 30, 2026.
                 </p>
               </div>
             </div>
@@ -2243,14 +3515,14 @@ const AdminCMS: React.FC = () => {
 
         {activeTab === 'logs' && (
           <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex justify-between items-center">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
               <span>System Error Logs</span>
               <div className="flex items-center gap-2">
                 {systemErrors.length > 0 && (
                   <button
                     onClick={clearSystemErrors}
                     disabled={isLoadingErrors}
-                    className="text-sm px-3 py-1 bg-red-50 text-red-600 rounded hover:bg-red-100 transition-colors disabled:opacity-50"
+                    className="text-sm px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded hover:bg-red-100 transition-colors disabled:opacity-50"
                   >
                     Clear All ({systemErrors.length})
                   </button>
@@ -2258,7 +3530,7 @@ const AdminCMS: React.FC = () => {
                 <button
                   onClick={loadSystemErrors}
                   disabled={isLoadingErrors}
-                  className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
                 >
                   Refresh
                 </button>
@@ -2268,17 +3540,17 @@ const AdminCMS: React.FC = () => {
             {isLoadingErrors ? (
                <div className="text-center py-8">
                 <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-600">Loading logs...</p>
+                <p className="text-gray-600 dark:text-gray-400">Loading logs...</p>
               </div>
             ) : (
               <div className="space-y-4">
                  {systemErrors.length === 0 ? (
-                    <p className="text-gray-600 text-center py-8">No errors logged in the system.</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-center py-8">No errors logged in the system.</p>
                  ) : (
                    systemErrors.map((err) => (
-                     <div key={err.id} className="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
+                     <div key={err.id} className="border-l-4 border-red-500 bg-red-50 dark:bg-red-900/30 p-4 rounded-r-lg">
                         <div className="flex justify-between items-start mb-1">
-                          <span className="font-bold text-red-700 text-sm">
+                          <span className="font-bold text-red-700 dark:text-red-300 text-sm">
                             {/* Handle Timestamp or string */}
                             {err.timestamp && typeof err.timestamp === 'object' && 'seconds' in err.timestamp
                               ? new Date((err.timestamp as any).seconds * 1000).toLocaleString()
@@ -2286,15 +3558,15 @@ const AdminCMS: React.FC = () => {
                           </span>
                           <span className="text-xs text-red-400 font-mono">{err.id}</span>
                         </div>
-                        <p className="font-medium text-gray-900 mb-2">{err.message}</p>
+                        <p className="font-medium text-gray-900 dark:text-white mb-2">{err.message}</p>
                         {err.context && (
-                          <div className="text-sm text-gray-600 mb-2">
+                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                             <strong>Context:</strong> {typeof err.context === 'object' ? JSON.stringify(err.context) : err.context} | <strong>User:</strong> {err.userId || 'Anonymous'}
                           </div>
                         )}
                         {err.stack && (
                           <details className="mt-2">
-                            <summary className="text-xs text-red-600 cursor-pointer hover:underline">View Stack Trace</summary>
+                            <summary className="text-xs text-red-600 dark:text-red-400 cursor-pointer hover:underline">View Stack Trace</summary>
                             <pre className="mt-2 p-2 bg-gray-900 text-red-200 text-xs rounded overflow-x-auto whitespace-pre-wrap">
                               {err.stack}
                             </pre>
@@ -2310,15 +3582,15 @@ const AdminCMS: React.FC = () => {
 
         {activeTab === 'settings' && (
           <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Admin Settings</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Admin Settings</h3>
             <div className="space-y-4">
               {/* AI Service Status */}
-              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <h4 className="font-medium text-blue-900 mb-2">🤖 AI Service Status (Vory)</h4>
+              <div className="p-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">🤖 AI Service Status (Vory)</h4>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-blue-700">Gemini API Key:</span>
-                    <span className={`text-sm font-medium ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600' : 'text-red-600'}`}>
+                    <span className="text-sm text-blue-700 dark:text-blue-300">Gemini API Key:</span>
+                    <span className={`text-sm font-medium ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                       {import.meta.env.VITE_GEMINI_API_KEY ? '✓ Configured' : '✗ Not Set'}
                     </span>
                   </div>
@@ -2330,7 +3602,7 @@ const AdminCMS: React.FC = () => {
                         return (
                           <div className="mt-2 p-2 bg-red-100 border border-red-300 rounded">
                             <p className="text-sm font-medium text-red-800">⚠️ Recent API Failures ({failures.length})</p>
-                            <p className="text-xs text-red-600 mt-1">
+                            <p className="text-xs text-red-600 dark:text-red-400 mt-1">
                               Last: {new Date(lastFailure.timestamp).toLocaleString()} - {lastFailure.message}
                             </p>
                             <button
@@ -2338,46 +3610,46 @@ const AdminCMS: React.FC = () => {
                                 localStorage.removeItem('ai_api_failures');
                                 window.location.reload();
                               }}
-                              className="mt-2 text-xs text-red-700 underline hover:no-underline"
+                              className="mt-2 text-xs text-red-700 dark:text-red-300 underline hover:no-underline"
                             >
                               Clear failures
                             </button>
                           </div>
                         );
                       }
-                      return <p className="text-sm text-green-600">✓ No recent failures</p>;
+                      return <p className="text-sm text-green-600 dark:text-green-400">✓ No recent failures</p>;
                     } catch {
                       return null;
                     }
                   })()}
-                  <p className="text-xs text-blue-600 mt-2">
+                  <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
                     To update the API key, add VITE_GEMINI_API_KEY to GitHub Secrets and redeploy.
                   </p>
                 </div>
               </div>
 
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-900 mb-2">Admin Access</h4>
-                <p className="text-sm text-gray-600 mb-2">Authorized admin emails:</p>
-                <ul className="text-sm text-gray-600 list-disc list-inside">
+              <div className="p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2">Admin Access</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Authorized admin emails:</p>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
                   {ADMIN_EMAILS.map((email) => (
                     <li key={email}>{email}</li>
                   ))}
                 </ul>
               </div>
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-900 mb-2">Firebase Project</h4>
-                <p className="text-sm text-gray-600">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
-                <p className="text-sm text-gray-600">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
+              <div className="p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2">Firebase Project</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
               </div>
               
               {/* Reset Account Section */}
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <h4 className="font-medium text-red-900 mb-2">🔄 Reset My Account (Testing)</h4>
-                <p className="text-sm text-red-700 mb-4">
+              <div className="p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg">
+                <h4 className="font-medium text-red-900 dark:text-red-100 mb-2">🔄 Reset My Account (Testing)</h4>
+                <p className="text-sm text-red-700 dark:text-red-300 mb-4">
                   Reset your account to test the app from the beginning. This will delete:
                 </p>
-                <ul className="text-sm text-red-600 list-disc list-inside mb-4">
+                <ul className="text-sm text-red-600 dark:text-red-400 list-disc list-inside mb-4">
                   <li>All progress data</li>
                   <li>Question history & performance</li>
                   <li>Completed lessons</li>
@@ -2386,7 +3658,27 @@ const AdminCMS: React.FC = () => {
                   <li>Bookmarks & flagged questions</li>
                   <li>Onboarding status (will show onboarding again)</li>
                 </ul>
-                <div className="flex gap-3">
+                
+                {/* Course selector for per-exam reset */}
+                <div className="mb-4 p-3 bg-white dark:bg-slate-800 rounded border border-red-200 dark:border-red-800">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                    Exam to reset (for per-exam options):
+                  </label>
+                  <select 
+                    value={resetExamSelection}
+                    onChange={(e) => setResetExamSelection(e.target.value)}
+                    className="w-full p-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white"
+                  >
+                    <option value="cpa">CPA</option>
+                    <option value="ea">EA (Enrolled Agent)</option>
+                    <option value="cma">CMA</option>
+                    <option value="cia">CIA</option>
+                    <option value="cfp">CFP</option>
+                    <option value="cisa">CISA</option>
+                  </select>
+                </div>
+                
+                <div className="flex flex-wrap gap-3">
                   <Button
                     onClick={async () => {
                       if (!user) return;
@@ -2439,6 +3731,7 @@ const AdminCMS: React.FC = () => {
                         const userRef = doc(db, 'users', userId);
                         batch.update(userRef, {
                           onboardingComplete: false,
+                          onboardingCompleted: {}, // Reset per-course onboarding
                           examSection: null,
                           currentStreak: 0,
                           longestStreak: 0,
@@ -2487,13 +3780,28 @@ const AdminCMS: React.FC = () => {
                   <button
                     onClick={async () => {
                       if (!user) return;
-                      const confirmed = window.confirm('Reset onboarding only? You\'ll see the onboarding flow again without losing progress.');
+                      
+                      // Use the selected exam from dropdown
+                      const currentCourse = resetExamSelection;
+                      
+                      const confirmed = window.confirm(`Reset onboarding for ${currentCourse.toUpperCase()} only? You'll see the onboarding flow again for this exam without losing progress.`);
                       if (!confirmed) return;
                       
                       try {
                         const userRef = doc(db, 'users', user.uid);
-                        await updateDoc(userRef, { onboardingComplete: false });
-                        addLog('✅ Onboarding reset! Redirecting...', 'success');
+                        const userDoc = await getDoc(userRef);
+                        const userData = userDoc.data();
+                        
+                        // Update per-course onboarding status
+                        const existingOnboarding = userData?.onboardingCompleted || {};
+                        const updatedOnboarding = { ...existingOnboarding, [currentCourse]: false };
+                        
+                        await updateDoc(userRef, { 
+                          onboardingCompleted: updatedOnboarding,
+                          // Keep legacy flag in sync for backwards compatibility
+                          onboardingComplete: Object.values(updatedOnboarding).some(v => v === true)
+                        });
+                        addLog(`✅ Onboarding reset for ${currentCourse.toUpperCase()}! Redirecting...`, 'success');
                         setTimeout(() => {
                           window.location.href = '/onboarding';
                         }, 1000);
@@ -2503,7 +3811,186 @@ const AdminCMS: React.FC = () => {
                     }}
                     className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
                   >
-                    🎯 Reset Onboarding Only
+                    🎯 Reset {resetExamSelection.toUpperCase()} Onboarding
+                  </button>
+                  <button
+                    onClick={async () => {
+                      if (!user) return;
+                      
+                      // Use the selected exam from dropdown
+                      const currentCourse = resetExamSelection;
+                      
+                      const confirmed = window.confirm(
+                        `⚠️ Reset ALL progress for ${currentCourse.toUpperCase()} only?\n\n` +
+                        `This will delete:\n` +
+                        `• Question history & performance for ${currentCourse.toUpperCase()}\n` +
+                        `• Completed lessons for ${currentCourse.toUpperCase()}\n` +
+                        `• Achievements & streaks for ${currentCourse.toUpperCase()}\n` +
+                        `• Bookmarks & flagged questions for ${currentCourse.toUpperCase()}\n\n` +
+                        `Other exams will NOT be affected.`
+                      );
+                      if (!confirmed) return;
+                      
+                      try {
+                        addLog(`Starting progress reset for ${currentCourse.toUpperCase()}...`, 'info');
+                        const batch = writeBatch(db);
+                        const userId = user.uid;
+                        
+                        // Get course sections to identify course-specific activities
+                        const courseSections = COURSES[currentCourse as CourseId]?.sections?.map(s => s.id) || [];
+                        
+                        // Collections that store course-specific data (with courseId field)
+                        const collectionsWithCourseId = [
+                          'lessons',
+                          'progress',
+                          'questionHistory', 
+                          'lessonProgress',
+                          'achievements',
+                          'bookmarks',
+                          'flaggedQuestions',
+                          'studySessions',
+                          'examResults',
+                          'flashcardProgress',
+                          'questionAttempts',
+                          'study_plans',
+                          'studyState',
+                        ];
+                        
+                        let totalDeleted = 0;
+                        
+                        // Delete docs where courseId matches current course
+                        for (const collName of collectionsWithCourseId) {
+                          try {
+                            const subColRef = collection(db, 'users', userId, collName);
+                            const subDocs = await getDocs(subColRef);
+                            subDocs.forEach((docSnap) => {
+                              const data = docSnap.data();
+                              const docId = docSnap.id.toLowerCase();
+                              const section = (data.section || '').toLowerCase();
+                              
+                              // Check if this doc belongs to the current course:
+                              // 1. Explicit courseId match
+                              // 2. Section matches course sections (e.g., CISA1, CISA2)
+                              // 3. Doc ID starts with course prefix (e.g., cisa1-a-1)
+                              // 4. Legacy CPA data (no courseId, currentCourse is 'cpa')
+                              const belongsToCourse = 
+                                data.courseId === currentCourse ||
+                                courseSections.some(s => section === s.toLowerCase()) ||
+                                docId.startsWith(currentCourse.toLowerCase()) ||
+                                (data.courseId === undefined && currentCourse === 'cpa' && 
+                                  !['ea', 'cma', 'cia', 'cfp', 'cisa'].some(c => docId.startsWith(c)));
+                              
+                              if (belongsToCourse) {
+                                batch.delete(docSnap.ref);
+                                totalDeleted++;
+                              }
+                            });
+                          } catch (e) {
+                            // Collection might not exist
+                          }
+                        }
+                        
+                        // Handle daily_log specially - filter by course-prefixed doc ID, activity section, or today's date
+                        // New format: daily_log docs use IDs like "cfp_2026-02-11" (courseId_date)
+                        // Legacy format: daily_log docs use IDs like "2026-02-11" with activities containing section
+                        try {
+                          const dailyLogRef = collection(db, 'users', userId, 'daily_log');
+                          const dailyLogDocs = await getDocs(dailyLogRef);
+                          dailyLogDocs.forEach((docSnap) => {
+                            const docId = docSnap.id;
+                            const data = docSnap.data();
+                            const activities = data.activities || [];
+                            
+                            // Check if doc ID starts with course prefix (new format: cfp_2026-02-11)
+                            const isCourseSpecificDoc = docId.startsWith(`${currentCourse}_`);
+                            
+                            // Check if ANY activity belongs to this course's sections (legacy format)
+                            const hasCourseActivity = activities.some((a: { section?: string }) => 
+                              a.section && courseSections.some(s => 
+                                a.section?.toLowerCase() === s.toLowerCase() ||
+                                a.section?.toLowerCase().includes(currentCourse)
+                              )
+                            );
+                            
+                            // Delete if:
+                            // 1. Doc ID matches course prefix (new format)
+                            // 2. Has activities from this course (legacy format)
+                            // 3. It's today's legacy doc (fresh start for backwards compat)
+                            const isTodayLegacyDoc = docId === format(new Date(), 'yyyy-MM-dd');
+                            
+                            if (isCourseSpecificDoc || hasCourseActivity || isTodayLegacyDoc) {
+                              batch.delete(docSnap.ref);
+                              totalDeleted++;
+                            }
+                          });
+                        } catch (e) {
+                          // Collection might not exist
+                        }
+                        
+                        // Reset onboarding for this course only
+                        const userRef = doc(db, 'users', userId);
+                        const userDoc = await getDoc(userRef);
+                        const userData = userDoc.data();
+                        const existingOnboarding = userData?.onboardingCompleted || {};
+                        
+                        // Also clear lessonProgress entries for this course
+                        // Lesson IDs are prefixed with course name (e.g., 'cisa-lesson-1', 'cpa-far-lesson-1')
+                        // and section IDs start with course prefix (e.g., 'CISA1', 'FAR')
+                        const existingLessonProgress = userData?.lessonProgress || {};
+                        const coursePrefix = currentCourse.toLowerCase();
+                        const courseConfig = COURSES[currentCourse as CourseId];
+                        const sectionPrefixes = (courseConfig?.sections || []).map(s => s.id.toLowerCase());
+                        
+                        // Filter out lesson progress entries for this course
+                        const filteredLessonProgress: Record<string, number> = {};
+                        Object.entries(existingLessonProgress).forEach(([lessonId, progress]) => {
+                          const lessonIdLower = lessonId.toLowerCase();
+                          // Keep it only if it doesn't belong to the current course
+                          const belongsToCourse = 
+                            lessonIdLower.startsWith(coursePrefix) ||
+                            sectionPrefixes.some(prefix => lessonIdLower.startsWith(prefix));
+                          if (!belongsToCourse) {
+                            filteredLessonProgress[lessonId] = progress as number;
+                          }
+                        });
+                        
+                        batch.update(userRef, {
+                          onboardingCompleted: { ...existingOnboarding, [currentCourse]: false },
+                          lessonProgress: filteredLessonProgress,
+                        });
+                        
+                        await batch.commit();
+                        addLog(`✅ Reset ${totalDeleted} records for ${currentCourse.toUpperCase()}! Redirecting...`, 'success');
+                        
+                        // Clear local storage for this course - comprehensive cleanup
+                        localStorage.removeItem(`voraprep_study_state_${currentCourse}`);
+                        localStorage.removeItem(`dailyplan_completed_${currentCourse}`);
+                        localStorage.removeItem(`${currentCourse}-cram-mode`);
+                        
+                        // Clear daily plan cache entries (match pattern: daily_plan_{userId}_{date}_{section})
+                        const keysToRemove: string[] = [];
+                        for (let i = 0; i < localStorage.length; i++) {
+                          const key = localStorage.key(i);
+                          if (key && (
+                            key.startsWith(`daily_plan_${userId}`) ||
+                            key.includes(`_${currentCourse}_`) ||
+                            key.endsWith(`_${currentCourse}`)
+                          )) {
+                            keysToRemove.push(key);
+                          }
+                        }
+                        keysToRemove.forEach(key => localStorage.removeItem(key));
+                        
+                        setTimeout(() => {
+                          window.location.href = '/onboarding';
+                        }, 1500);
+                      } catch (error) {
+                        addLog('❌ Failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      }
+                    }}
+                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                  >
+                    🗑️ Reset {resetExamSelection.toUpperCase()} Progress
                   </button>
                 </div>
               </div>
@@ -2515,7 +4002,7 @@ const AdminCMS: React.FC = () => {
       {/* User Activity Detail Modal */}
       {selectedUser && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-blue-600 to-primary-600 text-white p-6">
               <div className="flex justify-between items-start">
@@ -2523,8 +4010,9 @@ const AdminCMS: React.FC = () => {
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
                   <div className="flex gap-3 mt-2 text-sm">
-                    <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
-                    <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{(selectedUser.courseId || 'cpa').toUpperCase()}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
                     {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}
                   </div>
                 </div>
@@ -2542,23 +4030,23 @@ const AdminCMS: React.FC = () => {
               {isLoadingActivity ? (
                 <div className="flex items-center justify-center py-12">
                   <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full" />
-                  <span className="ml-3 text-gray-600">Loading activity data...</span>
+                  <span className="ml-3 text-gray-600 dark:text-gray-400">Loading activity data...</span>
                 </div>
               ) : userActivity ? (
                 <div className="space-y-6">
                   {/* Stats Summary */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-blue-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-blue-700">{userActivity.stats.totalQuestions}</div>
-                      <div className="text-sm text-blue-600">Questions Answered</div>
+                    <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{userActivity.stats.totalQuestions}</div>
+                      <div className="text-sm text-blue-600 dark:text-blue-400">Questions Answered</div>
                     </div>
-                    <div className="bg-green-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-green-700">{userActivity.stats.overallAccuracy}%</div>
-                      <div className="text-sm text-green-600">Accuracy</div>
+                    <div className="bg-green-50 dark:bg-green-900/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-green-700 dark:text-green-300">{userActivity.stats.overallAccuracy}%</div>
+                      <div className="text-sm text-green-600 dark:text-green-400">Accuracy</div>
                     </div>
-                    <div className="bg-amber-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-amber-700">{userActivity.stats.studyStreak}</div>
-                      <div className="text-sm text-amber-600">Day Streak</div>
+                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-amber-700 dark:text-amber-300">{userActivity.stats.studyStreak}</div>
+                      <div className="text-sm text-amber-600 dark:text-amber-400">Day Streak</div>
                     </div>
                     <div className="bg-primary-50 rounded-xl p-4 text-center">
                       <div className="text-2xl font-bold text-primary-700">{Math.round(userActivity.stats.totalStudyMinutes / 60)}h</div>
@@ -2568,18 +4056,18 @@ const AdminCMS: React.FC = () => {
 
                   {/* Last Active */}
                   {userActivity.stats.lastActiveDate && (
-                    <div className="text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-slate-900 rounded-lg p-3">
                       <strong>Last Active:</strong> {userActivity.stats.lastActiveDate}
                     </div>
                   )}
 
                   {/* Recent Daily Activity */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">📅 Recent Daily Activity</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📅 Recent Daily Activity</h4>
                     {userActivity.dailyLogs.length > 0 ? (
-                      <div className="bg-gray-50 rounded-lg overflow-hidden">
+                      <div className="bg-gray-50 dark:bg-slate-900 rounded-lg overflow-hidden">
                         <table className="w-full text-sm">
-                          <thead className="bg-gray-100">
+                          <thead className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700">
                             <tr>
                               <th className="p-2 text-left">Date</th>
                               <th className="p-2 text-center">Questions</th>
@@ -2590,10 +4078,10 @@ const AdminCMS: React.FC = () => {
                           </thead>
                           <tbody>
                             {userActivity.dailyLogs.slice(0, 10).map((log, i) => (
-                              <tr key={i} className="border-t border-gray-200">
+                              <tr key={i} className="border-t border-gray-200 dark:border-slate-700">
                                 <td className="p-2">{log.date}</td>
                                 <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
-                                <td className="p-2 text-center text-green-600">{log.questionsCorrect || log.correctAnswers || 0}</td>
+                                <td className="p-2 text-center text-green-600 dark:text-green-400">{log.questionsCorrect || log.correctAnswers || 0}</td>
                                 <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
                                 <td className="p-2 text-center">{log.studyTimeMinutes || log.studyMinutes || 0}</td>
                               </tr>
@@ -2602,20 +4090,20 @@ const AdminCMS: React.FC = () => {
                         </table>
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No daily activity recorded.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No daily activity recorded.</p>
                     )}
                   </div>
 
                   {/* Practice Sessions */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">📝 Recent Practice Sessions</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📝 Recent Practice Sessions</h4>
                     {userActivity.practiceSessions.length > 0 ? (
                       <div className="space-y-2">
                         {userActivity.practiceSessions.slice(0, 5).map((session) => (
-                          <div key={session.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
+                          <div key={session.id} className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 flex justify-between items-center">
                             <div>
                               <span className="font-medium">{session.section || 'Practice'}</span>
-                              <span className="text-gray-600 text-sm ml-2">
+                              <span className="text-gray-600 dark:text-gray-400 text-sm ml-2">
                                 {session.startedAt?.seconds 
                                   ? new Date(session.startedAt.seconds * 1000).toLocaleDateString()
                                   : 'Unknown date'}
@@ -2623,7 +4111,7 @@ const AdminCMS: React.FC = () => {
                             </div>
                             <div className="flex gap-4 text-sm">
                               <span>{session.questionsAnswered || 0} Q</span>
-                              <span className={session.accuracy >= 75 ? 'text-green-600' : session.accuracy >= 50 ? 'text-amber-600' : 'text-red-600'}>
+                              <span className={session.accuracy >= 75 ? 'text-green-600 dark:text-green-400' : session.accuracy >= 50 ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400'}>
                                 {session.accuracy || 0}%
                               </span>
                             </div>
@@ -2631,19 +4119,19 @@ const AdminCMS: React.FC = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No practice sessions recorded.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No practice sessions recorded.</p>
                     )}
                   </div>
 
                   {/* AI Conversations */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">🤖 Vory Conversations</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">🤖 Vory Conversations</h4>
                     {userActivity.recentConversations.length > 0 ? (
                       <div className="space-y-2">
                         {userActivity.recentConversations.map((conv) => (
-                          <div key={conv.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
+                          <div key={conv.id} className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 flex justify-between items-center">
                             <span className="font-medium">{conv.title}</span>
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-gray-600 dark:text-gray-400">
                               {conv.messageCount} messages • 
                               {conv.updatedAt?.seconds 
                                 ? new Date(conv.updatedAt.seconds * 1000).toLocaleDateString()
@@ -2653,15 +4141,15 @@ const AdminCMS: React.FC = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No AI conversations.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No AI conversations.</p>
                     )}
                   </div>
 
                   {/* Recent Question History */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">❓ Recent Questions ({userActivity.questionHistory.length})</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">❓ Recent Questions ({userActivity.questionHistory.length})</h4>
                     {userActivity.questionHistory.length > 0 ? (
-                      <div className="bg-gray-50 rounded-lg p-3 max-h-48 overflow-y-auto">
+                      <div className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 max-h-48 overflow-y-auto">
                         <div className="flex flex-wrap gap-1">
                           {userActivity.questionHistory.slice(0, 50).map((q, i) => {
                             const isCorrect = q.lastCorrect === true || (q.timesCorrect ?? 0) > 0;
@@ -2676,17 +4164,17 @@ const AdminCMS: React.FC = () => {
                             );
                           })}
                         </div>
-                        <p className="text-xs text-gray-600 mt-2">
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
                           Showing last {Math.min(50, userActivity.questionHistory.length)} of {userActivity.questionHistory.length} questions
                         </p>
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No question history.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No question history.</p>
                     )}
                   </div>
                 </div>
               ) : (
-                <p className="text-gray-600 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
+                <p className="text-gray-600 dark:text-gray-400 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
               )}
             </div>
 
@@ -2694,7 +4182,7 @@ const AdminCMS: React.FC = () => {
             <div className="border-t p-4 flex justify-end gap-3">
               <button
                 onClick={() => { setSelectedUser(null); setUserActivity(null); }}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:bg-slate-600 dark:bg-slate-600"
               >
                 Close
               </button>

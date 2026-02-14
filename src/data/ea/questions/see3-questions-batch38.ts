@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under Circular 230 §10.34, a practitioner may not sign a return position unless:',
     options: [
-      'The client insists',
-      'There is a reasonable basis for the position (and it is disclosed if not substantial authority)',
       'Any position is acceptable',
-      'It saves the most taxes'
+      'There is a reasonable basis for the position (and it is disclosed if not substantial authority)',
+      'The client insists',
+      'It saves the most taxes',
     ],
     correctAnswer: 1,
     explanation: 'Circular 230 §10.34 requires a reasonable basis for positions. Positions without substantial authority must be adequately disclosed. Frivolous positions are never acceptable.',
@@ -40,10 +40,10 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Substantial authority for a tax position:',
     options: [
-      'Means any written support',
-      'Is an objective standard based on analysis of relevant authorities that is less stringent than more likely than not but more than reasonable basis',
       'Means the taxpayer wants to take the position',
-      'Is not a recognized standard'
+      'Is an objective standard based on analysis of relevant authorities that is less stringent than more likely than not but more than reasonable basis',
+      'Means any written support',
+      'Is not a recognized standard',
     ],
     correctAnswer: 1,
     explanation: 'Substantial authority is an objective standard based on analyzing the weight of all relevant authorities. It\'s approximately a 40% likelihood of success - between reasonable basis (20-25%) and more likely than not (>50%).',
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Reasonable basis for a tax position:',
     options: [
+      'Requires court approval',
       'Means any arguable position',
       'Is a relatively high standard - more than merely arguable or colorable',
-      'Requires court approval',
-      'Is the highest standard'
+      'Is the highest standard',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Reasonable basis is a relatively high standard requiring more than just an arguable position. It must be based on one or more authorities and cannot be frivolous. It\'s approximately 20-25% likelihood.',
     reference: 'Treas. Reg. §1.6662-3(b)(3)',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Adequate disclosure of a tax position is typically made on:',
     options: [
+      'Form 1040 cover letter',
       'Any attachment',
       'Form 8275 or Form 8275-R (for positions contrary to regulations)',
-      'Form 1040 cover letter',
-      'Verbal communication'
+      'Verbal communication',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Adequate disclosure is typically made on Form 8275 (Disclosure Statement) or Form 8275-R (for positions contrary to regulations). Proper disclosure can avoid certain penalties.',
     reference: 'IRC §6662(d)(2)(B)',
   },
@@ -101,11 +101,11 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     question: 'A frivolous tax position:',
     options: [
       'Is simply aggressive',
-      'Has no basis in law, is patently improper, or is based on clearly invalid arguments',
       'Is any position the IRS disagrees with',
-      'Must be approved by Tax Court'
+      'Has no basis in law, is patently improper, or is based on clearly invalid arguments',
+      'Must be approved by Tax Court',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Frivolous positions are patently improper (e.g., claiming wages are not income, tax is voluntary). The IRS publishes a list of recognized frivolous positions. A $5,000 penalty applies.',
     reference: 'IRC §6702',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The accuracy-related penalty under IRC §6662 is:',
     options: [
-      '10% of underpayment',
       '20% of the underpayment attributable to negligence, substantial understatement, or other specified conduct',
+      '10% of underpayment',
       '50% of underpayment',
-      '5% per month'
+      '5% per month',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRC §6662 penalty is 20% of the portion of underpayment attributable to negligence, substantial understatement, substantial valuation misstatement, or certain other conduct.',
     reference: 'IRC §6662(a)',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A substantial understatement of income tax exists when the understatement exceeds:',
     options: [
-      '$1,000',
       'The greater of 10% of the tax required to be shown or $5,000 (for individuals)',
       '25% of tax',
-      'Any amount'
+      '$1,000',
+      'Any amount',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'For individuals, substantial understatement is the greater of 10% of correct tax or $5,000. For corporations, it\'s the lesser of 10% of correct tax (or $10,000 if greater) or $10 million.',
     reference: 'IRC §6662(d)(1)',
   },
@@ -180,10 +180,10 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The accuracy-related penalty may be avoided if:',
     options: [
-      'The taxpayer disagrees with the law',
-      'There was reasonable cause and the taxpayer acted in good faith',
       'The underpayment was small',
-      'It was the taxpayer\'s first offense'
+      'There was reasonable cause and the taxpayer acted in good faith',
+      'The taxpayer disagrees with the law',
+      'It was the taxpayer\'s first offense',
     ],
     correctAnswer: 1,
     explanation: 'No penalty under §6662 applies if the taxpayer shows reasonable cause and good faith. Factors include the complexity of the issue, taxpayer\'s knowledge, and whether they sought professional advice.',
@@ -200,10 +200,10 @@ export const SEE3_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Reportable transactions must be disclosed:',
     options: [
-      'Never',
-      'On Form 8886 with the return and to the IRS Office of Tax Shelter Analysis',
       'Only verbally',
-      'Only by corporations'
+      'On Form 8886 with the return and to the IRS Office of Tax Shelter Analysis',
+      'Never',
+      'Only by corporations',
     ],
     correctAnswer: 1,
     explanation: 'Participants in reportable transactions must file Form 8886 with their return and send a copy to OTSA. Failure to disclose can result in significant penalties.',

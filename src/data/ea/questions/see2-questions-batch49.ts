@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §267, related parties include:',
     options: [
-      'Only parent and child',
       'Family members (siblings, spouse, ancestors, lineal descendants) and related entities',
+      'Only parent and child',
+      'Former spouses after divorce',
       'Business associates only',
-      'Former spouses after divorce'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Section 267 defines related parties to include family (spouse, siblings, ancestors, lineal descendants) and various entity relationships (>50% owned corporations, partnerships, trusts, etc.).',
     reference: 'IRC §267(b)',
   },
@@ -42,8 +42,8 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     options: [
       '$10,000 loss is deductible',
       'The $10,000 loss is disallowed under §267',
+      'The loss is capital only',
       'The loss carries forward',
-      'The loss is capital only'
     ],
     correctAnswer: 1,
     explanation: 'Losses on sales between related parties (including siblings) are disallowed under §267. The brother may be able to use the disallowed loss to reduce gain on a subsequent sale to an unrelated party.',
@@ -62,8 +62,8 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     options: [
       'Deductions can be taken when accrued',
       'Deductions to related cash-method payees are deferred until the payee includes the income',
+      'Both parties must use accrual method',
       'No matching is required',
-      'Both parties must use accrual method'
     ],
     correctAnswer: 1,
     explanation: 'Under the §267 matching rule, an accrual-method taxpayer cannot deduct expenses owed to a related cash-method taxpayer until the payee includes the amount in income.',
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Constructive ownership rules attribute stock ownership from:',
     options: [
-      'Only direct ownership',
       'Family members, partnerships, corporations, trusts, and estates',
+      'Creditors',
+      'Only direct ownership',
       'Former employers',
-      'Creditors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Constructive ownership rules (§267(c), §318) attribute stock between family members, from/to entities in which the taxpayer has an interest, creating broader related party relationships.',
     reference: 'IRC §267(c); IRC §318',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under Section 1239, gain on sale of depreciable property to a related party is:',
     options: [
-      'Capital gain',
       'Ordinary income',
+      'Deferred',
+      'Capital gain',
       'Tax-exempt',
-      'Deferred'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Section 1239 converts what would be capital gain into ordinary income when depreciable property is sold between related parties (>50% ownership). This prevents basis step-up combined with depreciation deductions.',
     reference: 'IRC §1239',
   },
@@ -121,11 +121,11 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     question: 'Under Section 707(b), losses between a partner and a partnership in which they own more than 50% are:',
     options: [
       'Fully deductible',
+      'Deferred until partnership terminates',
       'Disallowed',
       'Treated as capital losses',
-      'Deferred until partnership terminates'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Section 707(b) disallows losses on sales between a partnership and a person who directly or indirectly owns more than 50% of the partnership\'s capital or profits interest.',
     reference: 'IRC §707(b)(1)',
   },
@@ -141,11 +141,11 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     question: 'Section 482 gives the IRS authority to:',
     options: [
       'Adjust tax year elections',
+      'Assess penalties automatically',
       'Reallocate income and deductions among related entities to clearly reflect income',
       'Eliminate all related party transactions',
-      'Assess penalties automatically'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Section 482 allows the IRS to allocate income, deductions, credits, or allowances among commonly controlled businesses to prevent manipulation and clearly reflect each entity\'s income.',
     reference: 'IRC §482',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §7872, below-market loans between related parties may result in:',
     options: [
+      'Loan forgiveness',
       'No tax consequences',
       'Imputed interest income to lender and possible gift/compensation to borrower',
       'Double taxation of interest',
-      'Loan forgiveness'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Section 7872 imputes interest on below-market loans. The lender is treated as receiving interest income, and the foregone interest is treated as transferred to the borrower (as gift, compensation, or dividend depending on relationship).',
     reference: 'IRC §7872',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The de minimis exception to imputed interest rules applies to loans:',
     options: [
-      'Of any amount between family members',
       'Of $10,000 or less between individuals (with exceptions)',
+      'Of any amount between family members',
+      'Over $100,000 only',
       'Only to corporations',
-      'Over $100,000 only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Loans of $10,000 or less between individuals may avoid imputed interest rules under the de minimis exception, unless the loan is made to purchase income-producing assets.',
     reference: 'IRC §7872(c)(2)',
   },
@@ -201,11 +201,11 @@ export const SEE2_QUESTIONS_BATCH49: Question[] = [
     question: 'The Applicable Federal Rate (AFR) used for testing below-market loans is:',
     options: [
       'A fixed 5% rate',
+      'Set by the taxpayer',
       'Published monthly by the IRS based on short-term, mid-term, and long-term rates',
       'The prime rate',
-      'Set by the taxpayer'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The IRS publishes AFRs monthly based on Treasury borrowing rates. Short-term (≤3 years), mid-term (3-9 years), and long-term (>9 years) rates are used depending on loan term.',
     reference: 'IRC §1274(d); IRC §7872',
   },

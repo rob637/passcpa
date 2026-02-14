@@ -13,352 +13,412 @@ export const CIA_QUESTIONS_BATCH7: Question[] = [
   
   // Domain I: Foundations of Internal Auditing
   {
-    id: 'CIA1-B7-001',
+    id: 'cia1-b7-001',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Mission of Internal Audit as defined by the IIA is to:',
     options: [
-      'Maximize shareholder value through cost reduction',
-      'Enhance and protect organizational value by providing risk-based and objective assurance, advice, and insight',
       'Ensure compliance with all laws and regulations',
-      'Detect and prevent all fraud'
+      'Maximize shareholder value through cost reduction',
+      'Detect and prevent all fraud',
+      'Enhance and protect organizational value by providing risk-based and objective assurance, advice, and insight',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The IIA Mission states: "To enhance and protect organizational value by providing risk-based and objective assurance, advice, and insight."',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Mission of Internal Audit'
+    subtopic: 'Mission of Internal Audit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-002',
+    id: 'cia1-b7-002',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When standards are interpreted differently across jurisdictions, internal auditors should:',
     options: [
+      'Choose whichever interpretation is most convenient',
+      'Consider applicable local laws and conform to the more restrictive professional requirement',
       'Always follow their home country interpretation',
       'Ignore local requirements and follow IIA standards exclusively',
-      'Consider applicable local laws and conform to the more restrictive professional requirement',
-      'Choose whichever interpretation is most convenient'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'When local laws or regulations differ from IIA Standards, auditors should conform to the more restrictive requirements while disclosing any limitations on conformance.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Standards Application'
+    subtopic: 'Standards Application',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-003',
+    id: 'cia1-b7-003',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Core Principles for the Professional Practice of Internal Auditing include demonstrating:',
     options: [
+      'Political neutrality',
+      'Complete risk elimination',
       'Maximum profitability',
       'Competence and due professional care',
-      'Political neutrality',
-      'Complete risk elimination'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The Core Principles include demonstrating integrity, competence and due professional care, objectivity, alignment with strategies, risk-based positioning, and continuous improvement.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Core Principles'
+    subtopic: 'Core Principles',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-004',
+    id: 'cia1-b7-004',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which principle of the IIA Code of Ethics addresses the expectation that internal auditors exhibit the highest level of professional objectivity?',
     options: [
+      'Confidentiality',
+      'Competency',
       'Integrity',
       'Objectivity',
-      'Confidentiality',
-      'Competency'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The Objectivity principle requires internal auditors to exhibit the highest level of professional objectivity in gathering, evaluating, and communicating information.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-005',
+    id: 'cia1-b7-005',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If an internal audit activity is not in conformance with the IIA Standards, the CAE must:',
     options: [
+      'Resign from the position',
       'Immediately suspend all audit activities',
-      'Disclose the nonconformance and its impact to senior management and the board',
       'Keep the nonconformance confidential until corrected',
-      'Resign from the position'
+      'Disclose the nonconformance and its impact to senior management and the board',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'When nonconformance affects the overall scope or operation of the internal audit activity, the CAE must disclose the nonconformance and its impact to senior management and the board.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Standards Conformance'
+    subtopic: 'Standards Conformance',
+  reference: 'IIA Standards'
   },
   
   // Domain II: Independence and Objectivity
   {
-    id: 'CIA1-B7-006',
+    id: 'cia1-b7-006',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE\'s functional reporting to the board enables the internal audit activity to:',
     options: [
+      'Override management decisions',
       'Avoid all reporting to management',
-      'Maintain organizational independence',
       'Set company strategy',
-      'Override management decisions'
+      'Maintain organizational independence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Functional reporting to the board allows the CAE to maintain independence from management, ensuring the internal audit activity can report objectively on all aspects of the organization.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Reporting Relationships'
+    subtopic: 'Reporting Relationships',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-007',
+    id: 'cia1-b7-007',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor holds significant stock in a division being audited. This situation represents:',
     options: [
       'No issue if properly disclosed',
-      'A financial interest impairment to objectivity that should preclude participation',
       'An advantage for understanding the business',
-      'A routine disclosure matter'
+      'A routine disclosure matter',
+      'A financial interest impairment to objectivity that should preclude participation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Financial interests (direct or significant indirect) in an audited area create an impairment to objectivity. The auditor should not participate in that engagement.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Impairments'
+    subtopic: 'Impairments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-008',
+    id: 'cia1-b7-008',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Consulting engagements may be accepted even if internal auditors previously provided assurance services for the same area:',
     options: [
       'Never',
-      'Only with board approval',
       'Yes, provided objectivity is not impaired and proper disclosure is made',
-      'Only after five years'
-    ],
-    correctAnswer: 2,
-    explanation: 'Auditors may provide consulting services after assurance engagements if objectivity is maintained and the nature of consulting is properly disclosed and does not impair objectivity.',
-    topic: 'Independence and Objectivity',
-    subtopic: 'Consulting Services'
-  },
-  {
-    id: 'CIA1-B7-009',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'medium',
-    question: 'Which of the following is NOT a threat to objectivity?',
-    options: [
-      'Self-interest threat',
-      'Self-review threat',
-      'Collaboration threat',
-      'Familiarity threat'
-    ],
-    correctAnswer: 2,
-    explanation: 'Common threats to objectivity include self-interest, self-review, familiarity, advocacy, and intimidation. Collaboration is not a recognized threat category.',
-    topic: 'Independence and Objectivity',
-    subtopic: 'Threats to Objectivity'
-  },
-  {
-    id: 'CIA1-B7-010',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'hard',
-    question: 'To enhance organizational independence, which of the following should the board approve?',
-    options: [
-      'Only the annual budget',
-      'The internal audit charter, risk-based audit plan, CAE appointment/removal, and CAE compensation',
-      'Only the internal audit charter',
-      'Only significant audit findings'
+      'Only after five years',
+      'Only with board approval',
     ],
     correctAnswer: 1,
+    explanation: 'Auditors may provide consulting services after assurance engagements if objectivity is maintained and the nature of consulting is properly disclosed and does not impair objectivity.',
+    topic: 'Independence and Objectivity',
+    subtopic: 'Consulting Services',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-b7-009',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which of the following is NOT a threat to objectivity?',
+    options: [
+      'Collaboration threat',
+      'Self-interest threat',
+      'Familiarity threat',
+      'Self-review threat',
+    ],
+    correctAnswer: 0,
+    explanation: 'Common threats to objectivity include self-interest, self-review, familiarity, advocacy, and intimidation. Collaboration is not a recognized threat category.',
+    topic: 'Independence and Objectivity',
+    subtopic: 'Threats to Objectivity',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-b7-010',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'To enhance organizational independence, which of the following should the board approve?',
+    options: [
+      'Only the internal audit charter',
+      'Only the annual budget',
+      'Only significant audit findings',
+      'The internal audit charter, risk-based audit plan, CAE appointment/removal, and CAE compensation',
+    ],
+    correctAnswer: 3,
     explanation: 'To enhance independence, the board should approve the charter, risk-based audit plan, CAE appointment and removal, and CAE remuneration/compensation.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Board Responsibilities'
+    subtopic: 'Board Responsibilities',
+  reference: 'IIA Standards'
   },
 
   // Domain III: Proficiency and Due Professional Care
   {
-    id: 'CIA1-B7-011',
+    id: 'cia1-b7-011',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuing professional development is required to:',
     options: [
       'Only meet certification requirements',
-      'Maintain and enhance competence',
       'Increase audit budget',
-      'Satisfy management preferences'
+      'Satisfy management preferences',
+      'Maintain and enhance competence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal auditors must enhance their knowledge, skills, and other competencies through continuing professional development to maintain proficiency.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Continuing Professional Development'
+    subtopic: 'Continuing Professional Development',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-012',
+    id: 'cia1-b7-012',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When exercising due professional care, internal auditors must consider:',
     options: [
+      'Only financial materiality',
+      'Management preferences exclusively',
       'Eliminating all possibility of error',
       'The cost of assurance relative to potential benefits',
-      'Only financial materiality',
-      'Management preferences exclusively'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Due professional care requires consideration of the cost of assurance relative to potential benefits, among other factors. It does not require absolute assurance (elimination of all errors).',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   
   // Domain IV: Quality Assurance  
   {
-    id: 'CIA1-B7-013',
+    id: 'cia1-b7-013',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'External quality assessments may be performed as a:',
     options: [
+      'Peer review without independent validation',
+      'Self-assessment only',
       'Full external assessment only',
       'Self-assessment with independent external validation or full external assessment',
-      'Self-assessment only',
-      'Peer review without independent validation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'External assessments may be a full external assessment or a self-assessment with independent external validation. Both approaches must meet the Standards\' requirements.',
     topic: 'Quality Assurance',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-014',
+    id: 'cia1-b7-014',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An external assessor must be:',
     options: [
+      'Appointed by the CEO',
       'A CPA only',
-      'Qualified and from outside the organization with no conflict of interest',
       'An employee of the same industry',
-      'Appointed by the CEO'
+      'Qualified and from outside the organization with no conflict of interest',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'External assessors must be qualified (knowledgeable about internal auditing) and independent from the organization, without conflicts of interest.',
     topic: 'Quality Assurance',
-    subtopic: 'Assessor Qualifications'
+    subtopic: 'Assessor Qualifications',
+  reference: 'IIA Standards'
   },
 
   // Domain V: Governance, Risk, and Control
   {
-    id: 'CIA1-B7-015',
+    id: 'cia1-b7-015',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The three lines model describes:',
     options: [
       'Only the role of external audit',
-      'How governance bodies, management, and internal audit work together in managing risk',
+      'Only financial controls',
       'A military command structure',
-      'Only financial controls'
+      'How governance bodies, management, and internal audit work together in managing risk',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The three lines model describes roles in governance: first line (management), second line (risk management, compliance functions), and third line (internal audit providing independent assurance).',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Three Lines Model'
+    subtopic: 'Three Lines Model',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-016',
+    id: 'cia1-b7-016',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Internal audit may assume ownership and management of risks when:',
     options: [
       'Requested by management for efficiency',
-      'Never; this would impair independence',
+      'When approved by external auditors',
       'Only in small organizations',
-      'When approved by external auditors'
+      'Never; this would impair independence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal audit should not assume management\'s risk ownership or make risk management decisions. Doing so would impair the independence required to provide objective assurance.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Ownership'
+    subtopic: 'Risk Ownership',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-017',
+    id: 'cia1-b7-017',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Residual risk is:',
     options: [
-      'Risk before any controls are applied',
-      'The remaining risk after management has taken action to respond to the risk',
       'The maximum possible risk',
-      'Risk that has been eliminated'
+      'Risk before any controls are applied',
+      'Risk that has been eliminated',
+      'The remaining risk after management has taken action to respond to the risk',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Residual risk is the risk remaining after management has applied risk responses (controls). Inherent risk is the risk before controls are applied.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Concepts'
+    subtopic: 'Risk Concepts',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-018',
+    id: 'cia1-b7-018',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    topic: 'Governance, Risk, and Control',
+    subtopic: 'Control Types',
     difficulty: 'medium',
-    question: 'Preventive controls are designed to:',
+    skillLevel: 'Application',
+    question: 'Which of the following is an example of a preventive control in the accounts payable process?',
     options: [
-      'Detect errors after they occur',
-      'Deter undesirable events from happening',
-      'Correct errors after detection',
-      'Compensate for control weaknesses'
+      'Monthly bank reconciliation to identify unauthorized payments',
+      'Requiring three-way matching of purchase orders, receiving reports, and invoices before payment',
+      'Annual review of paid invoices by internal audit',
+      'Exception reporting of payments exceeding normal amounts',
     ],
     correctAnswer: 1,
-    explanation: 'Preventive controls deter undesirable events from occurring. Detective controls identify events after they happen. Corrective controls fix identified problems.',
-    topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Types'
+    explanation: 'Three-way matching is a preventive control because it stops unauthorized or incorrect payments before they occur by requiring agreement among the purchase order, receiving report, and vendor invoice. Bank reconciliations, annual reviews, and exception reports are detective controls that identify issues after they occur.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA1-B7-019',
+    id: 'cia1-b7-019',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The COSO Internal Control Framework identifies five components of internal control. Which is NOT one of them?',
     options: [
+      'Strategic Planning',
+      'Monitoring Activities',
       'Control Environment',
       'Risk Assessment',
-      'Strategic Planning',
-      'Monitoring Activities'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'COSO\'s five components are: Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring Activities. Strategic Planning is not a component.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'COSO Framework'
+    subtopic: 'COSO Framework',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-020',
+    id: 'cia1-b7-020',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk appetite is best defined as:',
     options: [
-      'The specific level of variation in performance the organization is willing to accept',
-      'The amount and type of risk an organization is willing to pursue and retain',
       'The maximum loss the organization can survive',
-      'Zero tolerance for any risk'
+      'The specific level of variation in performance the organization is willing to accept',
+      'Zero tolerance for any risk',
+      'The amount and type of risk an organization is willing to pursue and retain',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Risk appetite is the amount and type of risk an organization is willing to pursue and retain. Risk tolerance is the specific acceptable variation around objectives.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Concepts'
+    subtopic: 'Risk Concepts',
+  reference: 'IIA Standards'
   },
 
   // ===========================================================================
@@ -367,348 +427,408 @@ export const CIA_QUESTIONS_BATCH7: Question[] = [
   
   // Domain I: Managing the Internal Audit Activity
   {
-    id: 'CIA2-B7-021',
+    id: 'cia2-b7-021',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The audit universe should include:',
     options: [
-      'Only high-risk areas',
       'All possible auditable activities within the organization',
+      'Areas chosen by senior management only',
+      'Only high-risk areas',
       'Only financial processes',
-      'Areas chosen by senior management only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The audit universe represents all possible auditable entities (processes, departments, systems, etc.) within the organization from which the risk-based audit plan is developed.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Audit Universe'
+    subtopic: 'Audit Universe',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-022',
+    id: 'cia2-b7-022',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When developing the risk-based audit plan, the CAE should consider:',
     options: [
+      'Audit team preferences',
       'Only prior year findings',
       'Input from senior management and the board regarding their expectations, risk assessments, and priorities',
       'Only regulatory requirements',
-      'Audit team preferences'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The CAE should consider expectations of senior management, the board, regulators, and other stakeholders, as well as organizational risk assessments and strategic priorities.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Planning Considerations'
+    subtopic: 'Planning Considerations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-023',
+    id: 'cia2-b7-023',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal audit policies and procedures should be:',
     options: [
       'Only verbal guidance from the CAE',
+      'Determined independently by each auditor',
       'Formal written documents that guide audit activities',
       'Optional for small audit departments',
-      'Determined independently by each auditor'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The CAE must establish policies and procedures to guide the internal audit activity. These should be formally documented to ensure consistency and quality.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Policies and Procedures'
+    subtopic: 'Policies and Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-024',
+    id: 'cia2-b7-024',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If internal audit resources are insufficient for the approved audit plan, the CAE should:',
     options: [
       'Reduce the scope of planned audits without notification',
       'Communicate the impact to senior management and the board',
+      'Decline all ad hoc requests',
       'Work overtime to complete all audits',
-      'Decline all ad hoc requests'
     ],
     correctAnswer: 1,
     explanation: 'Resource limitations must be communicated to senior management and the board along with the impact on coverage and potential solutions.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Resource Management'
+    subtopic: 'Resource Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-025',
+    id: 'cia2-b7-025',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Coordination with external auditors includes all of the following EXCEPT:',
     options: [
-      'Sharing audit schedules',
       'Discussing audit scope and coverage',
+      'Sharing audit schedules',
+      'Sharing audit reports and findings as appropriate',
       'External auditors directing internal audit work',
-      'Sharing audit reports and findings as appropriate'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Coordination involves sharing information and avoiding duplication, but external auditors do not direct internal audit work. Internal audit maintains independence.',
     topic: 'Managing Internal Audit',
-    subtopic: 'External Coordination'
+    subtopic: 'External Coordination',
+  reference: 'IIA Standards'
   },
 
   // Domain II: Planning the Engagement
   {
-    id: 'CIA2-B7-026',
+    id: 'cia2-b7-026',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Engagement planning should include:',
     options: [
-      'Only the audit report template',
       'Objectives, scope, resource allocation, and work program',
+      'Only the audit report template',
+      'Names of all interviewees',
       'Only budgeted hours',
-      'Names of all interviewees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Engagement planning encompasses establishing objectives, defining scope, allocating resources, developing work programs, and considering relevant risks.',
     topic: 'Planning the Engagement',
-    subtopic: 'Planning Elements'
+    subtopic: 'Planning Elements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-027',
+    id: 'cia2-b7-027',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Consulting engagement objectives should be:',
     options: [
-      'Identical to assurance engagement objectives',
+      'Limited to financial matters',
       'Consistent with the organization\'s values, strategies, and objectives',
+      'Identical to assurance engagement objectives',
       'Determined solely by the internal auditor',
-      'Limited to financial matters'
     ],
     correctAnswer: 1,
     explanation: 'Consulting engagement objectives should be consistent with the organization\'s overall values, strategies, and objectives, addressing governance, risk management, and control processes.',
     topic: 'Planning the Engagement',
-    subtopic: 'Consulting Objectives'
+    subtopic: 'Consulting Objectives',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-028',
+    id: 'cia2-b7-028',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When planning an engagement, auditors should consider all significant risks:',
     options: [
-      'Only if requested by management',
+      'Only financial risks',
       'Before completing the work program',
+      'Only if requested by management',
       'After completing fieldwork',
-      'Only financial risks'
     ],
     correctAnswer: 1,
     explanation: 'Significant risks should be identified during planning to ensure the work program addresses them appropriately. Risk assessment is a key part of engagement planning.',
     topic: 'Planning the Engagement',
-    subtopic: 'Risk Assessment'
+    subtopic: 'Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-029',
+    id: 'cia2-b7-029',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An opening meeting with the auditee typically covers:',
     options: [
+      'Staff disciplinary matters',
       'Final audit conclusions',
       'Engagement objectives, scope, timing, and lines of communication',
       'Only negative findings from prior audits',
-      'Staff disciplinary matters'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The opening meeting establishes the engagement scope, objectives, timeline, methodology, and communication protocols with the auditee.',
     topic: 'Planning the Engagement',
-    subtopic: 'Client Communication'
+    subtopic: 'Client Communication',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-030',
+    id: 'cia2-b7-030',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Scope limitations imposed by management should be:',
     options: [
-      'Accepted without question to maintain good relations',
       'Documented and the potential impact communicated to the board',
+      'Only noted in internal files',
+      'Accepted without question to maintain good relations',
       'Ignored if the auditor believes the limitation is unfair',
-      'Only noted in internal files'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scope limitations must be documented, and their potential impact on the engagement communicated to the board. Significant limitations should be elevated beyond management.',
     topic: 'Planning the Engagement',
-    subtopic: 'Scope Limitations'
+    subtopic: 'Scope Limitations',
+  reference: 'IIA Standards'
   },
 
   // Domain III: Performing the Engagement
   {
-    id: 'CIA2-B7-031',
+    id: 'cia2-b7-031',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Information is sufficient when it is:',
     options: [
       'Factual and adequate',
+      'Available electronically',
       'Persuasive to a prudent informed person',
       'Preferred by management',
-      'Available electronically'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Sufficient information is factual, adequate, and convincing enough that a prudent, informed person would reach the same conclusions as the auditor.',
     topic: 'Performing the Engagement',
-    subtopic: 'Information Standards'
+    subtopic: 'Information Standards',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-032',
+    id: 'cia2-b7-032',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which audit procedure provides the strongest evidence that internal controls are operating effectively?',
     options: [
       'Inquiry of management',
+      'Analytical review of trends',
       'Observation and reperformance',
       'Review of policy documents',
-      'Analytical review of trends'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Reperformance (independently executing the control) provides strong evidence of operating effectiveness. Observation combined with reperformance is stronger than inquiry alone.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Procedures'
+    subtopic: 'Audit Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-033',
+    id: 'cia2-b7-033',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Attribute sampling is most appropriate when testing for:',
     options: [
+      'Financial statement balances',
       'Total dollar amounts',
       'Whether a control was performed (yes/no)',
       'Average transaction size',
-      'Financial statement balances'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Attribute sampling tests for the presence or absence of a characteristic (e.g., whether a control was performed). Variables sampling tests for amounts.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-034',
+    id: 'cia2-b7-034',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Flowcharts are particularly useful for:',
     options: [
-      'Quantifying financial statement balances',
       'Documenting and understanding the flow of transactions and controls',
+      'Quantifying financial statement balances',
+      'Writing audit reports',
       'Calculating sample sizes',
-      'Writing audit reports'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Flowcharts graphically depict how transactions flow through a process and where controls are applied, helping auditors understand and evaluate the process.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation Techniques'
+    subtopic: 'Documentation Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-035',
+    id: 'cia2-b7-035',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using technology-based audit techniques, the auditor should ensure:',
     options: [
       'All testing is automated',
       'The validity of data used and proper interpretation of results',
+      'Only IT staff operate the tools',
       'No manual testing is performed',
-      'Only IT staff operate the tools'
     ],
     correctAnswer: 1,
     explanation: 'When using CAATs or other technology-based tools, auditors must ensure data integrity, understand the tools\' limitations, and properly interpret results.',
     topic: 'Performing the Engagement',
-    subtopic: 'Technology Tools'
+    subtopic: 'Technology Tools',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-036',
+    id: 'cia2-b7-036',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Engagement observations should be based on:',
     options: [
-      'Auditor opinions only',
+      'Management assertions exclusively',
       'Comparison of what is (condition) to what should be (criteria)',
+      'Auditor opinions only',
       'Historical trends only',
-      'Management assertions exclusively'
     ],
     correctAnswer: 1,
     explanation: 'Observations result from comparing conditions (what exists) to criteria (standards, policies, or expectations of what should exist).',
     topic: 'Performing the Engagement',
-    subtopic: 'Developing Findings'
+    subtopic: 'Developing Findings',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-037',
+    id: 'cia2-b7-037',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a material error is discovered after the final report is issued, the CAE should:',
     options: [
-      'Issue a corrected report to all parties who received the original',
       'Ignore it if immaterial to current operations',
+      'Wait until the next audit to address it',
+      'Issue a corrected report to all parties who received the original',
       'Only inform management if they ask',
-      'Wait until the next audit to address it'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'If a final communication contains a significant error, the CAE must communicate corrected information to all parties who received the original communication.',
     topic: 'Communicating Results',
-    subtopic: 'Report Corrections'
+    subtopic: 'Report Corrections',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-038',
+    id: 'cia2-b7-038',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit recommendations should be:',
     options: [
-      'Vague to allow management flexibility',
       'Specific, practical, and cost-effective to address root causes',
+      'Always identical to prior audit recommendations',
+      'Vague to allow management flexibility',
       'Optional in audit reports',
-      'Always identical to prior audit recommendations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Recommendations should address the root cause of the finding and be practical, specific, and cost-effective. They should enhance operations and help achieve organizational objectives.',
     topic: 'Communicating Results',
-    subtopic: 'Recommendations'
+    subtopic: 'Recommendations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-039',
+    id: 'cia2-b7-039',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
+    topic: 'Communicating Results',
+    subtopic: 'Client Communication',
     difficulty: 'medium',
-    question: 'The purpose of an exit conference is to:',
+    skillLevel: 'Application',
+    question: 'During an exit conference, the internal audit team presents a finding that the client disagrees with. What should the lead auditor do?',
     options: [
-      'Only deliver bad news',
-      'Discuss observations and recommendations with management before issuing the final report',
-      'Negotiate audit findings',
-      'Celebrate completion of fieldwork'
+      'Remove the finding from the report to maintain a good working relationship',
+      'Document the client\'s perspective and include both the finding and management\'s response in the final report',
+      'Escalate the disagreement to the board without further discussion',
+      'Delay issuing the report indefinitely until agreement is reached',
     ],
     correctAnswer: 1,
-    explanation: 'The exit conference allows discussion of findings, recommendations, and action plans with management before the final report, ensuring accuracy and gaining buy-in.',
-    topic: 'Communicating Results',
-    subtopic: 'Client Communication'
+    explanation: 'When management disagrees with audit findings, the auditor should document management\'s perspective and include both the finding and management\'s response in the final audit report. The exit conference is an opportunity to discuss findings, but disagreements should not result in suppressing valid findings.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA2-B7-040',
+    id: 'cia2-b7-040',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An overall opinion on internal controls should only be provided when:',
     options: [
+      'There are no findings to report',
       'Requested by management',
       'Sufficient work has been performed on governance, risk management, and control processes',
       'All controls have been tested',
-      'There are no findings to report'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'An overall opinion requires sufficient work covering the entire scope of governance, risk management, and control processes, and the results must support such an opinion.',
     topic: 'Communicating Results',
-    subtopic: 'Overall Opinions'
+    subtopic: 'Overall Opinions',
+  reference: 'IIA Standards'
   },
 
   // ===========================================================================
@@ -717,1035 +837,1215 @@ export const CIA_QUESTIONS_BATCH7: Question[] = [
   
   // Domain I: Business Acumen
   {
-    id: 'CIA3-B7-041',
+    id: 'cia3-b7-041',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Business Acumen',
+    subtopic: 'Financial Metrics',
     difficulty: 'medium',
-    question: 'Return on Investment (ROI) is calculated as:',
+    skillLevel: 'Application',
+    question: 'Division A generated operating income of $180,000 on an investment base of $1,200,000. Under what circumstance would the division manager be reluctant to accept a new project with a 12% return if evaluated using ROI?',
     options: [
-      'Total revenue divided by total assets',
-      'Net income divided by average investment',
-      'Gross profit divided by sales',
-      'Current assets divided by current liabilities'
+      'When the new project\'s return is below the division\'s cost of capital',
+      'When the division\'s current ROI of 15% would be diluted by the new project\'s lower ROI of 12%',
+      'When the new project requires an investment greater than $1,200,000',
+      'When the division is already exceeding its revenue targets',
     ],
     correctAnswer: 1,
-    explanation: 'ROI measures the return generated on an investment, calculated as Net Income (or gain from investment) divided by the Cost of Investment.',
-    topic: 'Business Acumen',
-    subtopic: 'Financial Metrics'
+    explanation: 'Division A\'s current ROI is 15% ($180,000/$1,200,000). A manager evaluated on ROI would reject a 12% return project because it would dilute the division\'s current 15% ROI, even if 12% exceeds the company\'s cost of capital. This is a known dysfunctional behavior associated with ROI-based evaluation.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA3-B7-042',
+    id: 'cia3-b7-042',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Internal Rate of Return (IRR) is the discount rate at which:',
     options: [
-      'Net Present Value equals zero',
+      'Cash inflows equal operating expenses',
       'Payback period equals investment cost',
+      'Net Present Value equals zero',
       'Return on assets equals the cost of capital',
-      'Cash inflows equal operating expenses'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'IRR is the discount rate that makes the NPV of all cash flows from a project equal to zero. It represents the expected rate of return from the investment.',
     topic: 'Business Acumen',
-    subtopic: 'Capital Budgeting'
+    subtopic: 'Capital Budgeting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-043',
+    id: 'cia3-b7-043',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Contribution margin is calculated as:',
     options: [
-      'Sales minus all expenses',
       'Sales minus variable costs',
+      'Sales minus all expenses',
+      'Net income plus depreciation',
       'Gross profit minus fixed costs',
-      'Net income plus depreciation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Contribution margin equals Sales minus Variable Costs. It represents the portion of sales available to cover fixed costs and generate profit.',
     topic: 'Business Acumen',
-    subtopic: 'Cost Analysis'
+    subtopic: 'Cost Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-044',
+    id: 'cia3-b7-044',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The break-even point is where:',
     options: [
-      'Total revenue equals net income',
       'Total revenue equals total costs (fixed plus variable)',
+      'Total revenue equals net income',
+      'Profit margin equals zero percent',
       'Variable costs equal fixed costs',
-      'Profit margin equals zero percent'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The break-even point is where total revenue exactly equals total costs (both fixed and variable), resulting in zero profit or loss.',
     topic: 'Business Acumen',
-    subtopic: 'Cost-Volume-Profit'
+    subtopic: 'Cost-Volume-Profit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-045',
+    id: 'cia3-b7-045',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Activity-Based Costing (ABC) is most useful when:',
     options: [
       'All products consume resources equally',
+      'Only direct costs are material',
       'Overhead costs are a small percentage of total costs',
       'Products and services consume resources differently and overhead is significant',
-      'Only direct costs are material'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'ABC is most beneficial when overhead is significant and products/services consume resources differently. It allocates costs based on activities that drive costs.',
     topic: 'Business Acumen',
-    subtopic: 'Cost Accounting'
+    subtopic: 'Cost Accounting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-046',
+    id: 'cia3-b7-046',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cash flow from operations includes:',
     options: [
       'Cash received from sale of equipment',
+      'Cash paid to repay loans',
       'Cash received from customers and paid to suppliers',
       'Cash received from issuing stock',
-      'Cash paid to repay loans'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Operating cash flow includes cash from core business activities: receipts from customers, payments to suppliers, wages paid, etc. Investing and financing activities are separate.',
     topic: 'Business Acumen',
-    subtopic: 'Cash Flow'
+    subtopic: 'Cash Flow',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-047',
+    id: 'cia3-b7-047',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SWOT analysis evaluates:',
     options: [
+      'System workflows and testing',
       'Only internal factors',
       'Strengths, Weaknesses, Opportunities, and Threats',
       'Stock values and market trends',
-      'System workflows and testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SWOT analysis evaluates internal factors (Strengths and Weaknesses) and external factors (Opportunities and Threats) to inform strategic planning.',
     topic: 'Business Acumen',
-    subtopic: 'Strategic Analysis'
+    subtopic: 'Strategic Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-048',
+    id: 'cia3-b7-048',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Porter\'s Five Forces model analyzes:',
     options: [
-      'Internal control effectiveness',
       'Industry attractiveness and competitive dynamics',
+      'Employee performance metrics',
+      'Internal control effectiveness',
       'Financial statement accuracy',
-      'Employee performance metrics'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Porter\'s Five Forces analyzes competitive intensity: threat of new entrants, bargaining power of suppliers, bargaining power of buyers, threat of substitutes, and rivalry among existing competitors.',
     topic: 'Business Acumen',
-    subtopic: 'Competitive Analysis'
+    subtopic: 'Competitive Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-049',
+    id: 'cia3-b7-049',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Business Acumen',
+    subtopic: 'Financial Analysis',
     difficulty: 'medium',
-    question: 'Accounts receivable turnover measures:',
+    skillLevel: 'Application',
+    question: 'A company\'s accounts receivable turnover decreased from 12 times to 8 times over the past year. What is the MOST likely implication?',
     options: [
-      'How quickly inventory is sold',
-      'How efficiently the company collects receivables',
-      'The percentage of bad debts',
-      'Total credit sales'
+      'The company is collecting receivables faster than in the prior year',
+      'The average collection period has increased, suggesting potential collection difficulties',
+      'The company has reduced its sales volume significantly',
+      'The company\'s credit policy has become more restrictive',
     ],
     correctAnswer: 1,
-    explanation: 'Accounts receivable turnover (Net Credit Sales / Average Accounts Receivable) measures how efficiently a company collects money from credit customers.',
-    topic: 'Business Acumen',
-    subtopic: 'Financial Analysis'
+    explanation: 'A decrease in accounts receivable turnover from 12 to 8 means the company is taking longer to collect its receivables (average collection period increased from 30 to 46 days). This may indicate deteriorating collection performance, more lenient credit terms, or customers experiencing financial difficulties.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA3-B7-050',
+    id: 'cia3-b7-050',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company\'s Weighted Average Cost of Capital (WACC) represents:',
     options: [
-      'The interest rate on short-term loans',
+      'Historical borrowing costs',
       'The average rate of return required by all providers of capital',
+      'The interest rate on short-term loans',
       'The cost of equity only',
-      'Historical borrowing costs'
     ],
     correctAnswer: 1,
     explanation: 'WACC is the weighted average of the costs of all capital sources (debt and equity), weighted by their proportion in the capital structure. It represents the minimum required return.',
     topic: 'Business Acumen',
-    subtopic: 'Financial Management'
+    subtopic: 'Financial Management',
+  reference: 'IIA Standards'
   },
 
   // Domain II: Information Security
   {
-    id: 'CIA3-B7-051',
+    id: 'cia3-b7-051',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A disaster recovery plan focuses primarily on:',
     options: [
-      'Preventing disasters',
       'Recovering IT systems and data after a disruption',
+      'Employee relations',
+      'Preventing disasters',
       'Marketing during crises',
-      'Employee relations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A disaster recovery plan focuses on restoring IT infrastructure, systems, and data following a disaster. BCP addresses broader business operations continuity.',
     topic: 'Information Security',
-    subtopic: 'Disaster Recovery'
+    subtopic: 'Disaster Recovery',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-052',
+    id: 'cia3-b7-052',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hot site, warm site, and cold site refer to:',
     options: [
-      'Temperature control in data centers',
       'Types of alternate processing facilities with varying levels of readiness',
+      'Temperature control in data centers',
+      'Network encryption protocols',
       'Security threat levels',
-      'Network encryption protocols'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'These are backup facility types: Hot site (fully operational, immediate recovery), Warm site (partially equipped, hours to recover), Cold site (basic infrastructure, days to recover).',
     topic: 'Information Security',
-    subtopic: 'Business Continuity'
+    subtopic: 'Business Continuity',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-053',
+    id: 'cia3-b7-053',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Phishing attacks typically use:',
     options: [
       'Physical break-ins',
       'Deceptive emails or websites to steal credentials or information',
+      'Power outages',
       'Hardware manipulation',
-      'Power outages'
     ],
     correctAnswer: 1,
     explanation: 'Phishing uses deceptive emails, messages, or websites that appear legitimate to trick users into revealing credentials, personal information, or installing malware.',
     topic: 'Information Security',
-    subtopic: 'Cyber Threats'
+    subtopic: 'Cyber Threats',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-054',
+    id: 'cia3-b7-054',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The principle of least privilege means:',
     options: [
       'All users have administrator access',
       'Users receive only the minimum access rights needed to perform their job functions',
+      'Everyone has read access to all data',
       'System privileges are determined by seniority',
-      'Everyone has read access to all data'
     ],
     correctAnswer: 1,
     explanation: 'Least privilege grants users the minimum level of access or permissions needed to perform their job functions, reducing the risk of unauthorized access or damage.',
     topic: 'Information Security',
-    subtopic: 'Access Control'
+    subtopic: 'Access Control',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-055',
+    id: 'cia3-b7-055',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Virtual Private Network (VPN) is used to:',
     options: [
+      'Replace antivirus software',
       'Increase internet speed',
       'Create a secure encrypted connection over a public network',
       'Eliminate the need for firewalls',
-      'Replace antivirus software'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A VPN creates a secure, encrypted tunnel over public networks (like the internet), allowing secure remote access to organization resources.',
     topic: 'Information Security',
-    subtopic: 'Network Security'
+    subtopic: 'Network Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-056',
+    id: 'cia3-b7-056',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A demilitarized zone (DMZ) in network security is:',
     options: [
+      'A type of encryption',
       'An area with no security controls',
       'A network segment that separates internal networks from untrusted external networks',
       'A backup power supply',
-      'A type of encryption'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A DMZ is a network segment between external (public) and internal (private) networks where public-facing services are placed, providing an additional security layer.',
     topic: 'Information Security',
-    subtopic: 'Network Architecture'
+    subtopic: 'Network Architecture',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-057',
+    id: 'cia3-b7-057',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data classification typically includes categories such as:',
     options: [
-      'Old, new, and current',
+      'Free, licensed, and open-source',
       'Public, internal, confidential, and restricted/secret',
+      'Old, new, and current',
       'Small, medium, and large',
-      'Free, licensed, and open-source'
     ],
     correctAnswer: 1,
     explanation: 'Data classification categorizes information by sensitivity: Public (open), Internal (company use), Confidential (limited access), and Restricted/Secret (highly sensitive).',
     topic: 'Information Security',
-    subtopic: 'Data Protection'
+    subtopic: 'Data Protection',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-058',
+    id: 'cia3-b7-058',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Logging and monitoring controls are primarily:',
     options: [
-      'Preventive controls',
+      'Directive controls',
       'Detective controls',
+      'Preventive controls',
       'Corrective controls',
-      'Directive controls'
     ],
     correctAnswer: 1,
     explanation: 'Logging and monitoring are detective controls that record activities and detect anomalies or security events. They identify issues after they occur.',
     topic: 'Information Security',
-    subtopic: 'Security Controls'
+    subtopic: 'Security Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-059',
+    id: 'cia3-b7-059',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The ISO 27001 standard provides:',
     options: [
-      'Financial reporting requirements',
       'A framework for establishing, implementing, and maintaining an information security management system',
+      'Human resources procedures',
+      'Financial reporting requirements',
       'Project management guidelines',
-      'Human resources procedures'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ISO 27001 is an international standard for information security management systems (ISMS), providing requirements for establishing, implementing, maintaining, and improving information security.',
     topic: 'Information Security',
-    subtopic: 'Security Frameworks'
+    subtopic: 'Security Frameworks',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-060',
+    id: 'cia3-b7-060',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Ransomware attacks typically:',
     options: [
-      'Slow down network performance only',
       'Encrypt victim data and demand payment for decryption keys',
+      'Only affect mobile devices',
+      'Slow down network performance only',
       'Delete all backup files immediately',
-      'Only affect mobile devices'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Ransomware encrypts victim\'s files or systems and demands payment (ransom) in exchange for decryption keys to restore access to the data.',
     topic: 'Information Security',
-    subtopic: 'Cyber Threats'
+    subtopic: 'Cyber Threats',
+  reference: 'IIA Standards'
   },
 
   // Domain III: Information Technology
   {
-    id: 'CIA3-B7-061',
+    id: 'cia3-b7-061',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Infrastructure as a Service (IaaS) provides:',
     options: [
-      'Complete software applications',
+      'Physical office equipment',
       'Virtual computing resources such as servers, storage, and networks',
+      'Complete software applications',
       'Only software development platforms',
-      'Physical office equipment'
     ],
     correctAnswer: 1,
     explanation: 'IaaS provides virtualized computing resources (servers, storage, networking) over the internet. Customers manage OS and applications; provider manages hardware.',
     topic: 'Information Technology',
-    subtopic: 'Cloud Computing'
+    subtopic: 'Cloud Computing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-062',
+    id: 'cia3-b7-062',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DevOps is a practice that:',
     options: [
       'Separates development from operations',
       'Combines development and operations to improve deployment speed and quality',
+      'Only applies to large organizations',
       'Eliminates the need for testing',
-      'Only applies to large organizations'
     ],
     correctAnswer: 1,
     explanation: 'DevOps integrates development and IT operations to shorten development cycles, increase deployment frequency, and improve software quality through automation and collaboration.',
     topic: 'Information Technology',
-    subtopic: 'Development Practices'
+    subtopic: 'Development Practices',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-063',
+    id: 'cia3-b7-063',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Input validation controls ensure:',
     options: [
-      'Output reports are formatted correctly',
       'Data entered into a system meets defined criteria before processing',
+      'Output reports are formatted correctly',
+      'User passwords are complex',
       'System backups are complete',
-      'User passwords are complex'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Input validation verifies that data entered into a system is accurate, complete, and conforms to expected formats and values before processing.',
     topic: 'Information Technology',
-    subtopic: 'Application Controls'
+    subtopic: 'Application Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-064',
+    id: 'cia3-b7-064',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A relational database organizes data into:',
     options: [
+      'Sequential files',
       'Unstructured documents',
       'Tables with rows and columns linked by relationships',
       'Hierarchical trees only',
-      'Sequential files'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Relational databases organize data into tables (relations) with rows (records) and columns (fields), linked through relationships using keys.',
     topic: 'Information Technology',
-    subtopic: 'Databases'
+    subtopic: 'Databases',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-065',
+    id: 'cia3-b7-065',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Information Technology',
+    subtopic: 'Emerging Technology',
     difficulty: 'hard',
-    question: 'Blockchain technology provides:',
+    skillLevel: 'Analysis',
+    question: 'From an internal audit perspective, what is the PRIMARY risk associated with blockchain-based smart contracts?',
     options: [
-      'Only cryptocurrency functionality',
-      'A distributed, immutable ledger for recording transactions',
-      'Centralized database management',
-      'Temporary data storage'
+      'Smart contracts require manual approval for each transaction',
+      'Once deployed, smart contracts execute automatically and errors in the code cannot be easily corrected',
+      'Blockchain technology is too slow for real-time transaction processing',
+      'Smart contracts do not create an audit trail of transactions',
     ],
     correctAnswer: 1,
-    explanation: 'Blockchain is a distributed ledger technology that records transactions across many computers in a way that makes records difficult to alter, providing transparency and immutability.',
-    topic: 'Information Technology',
-    subtopic: 'Emerging Technology'
+    explanation: 'Smart contracts execute automatically when predefined conditions are met, and once deployed on a blockchain, they are immutable. Coding errors or flawed business logic in smart contracts cannot be easily corrected, potentially causing repeated incorrect execution. Auditors should evaluate the code review and testing processes before deployment.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA3-B7-066',
+    id: 'cia3-b7-066',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Information Technology',
+    subtopic: 'IT Governance',
     difficulty: 'medium',
-    question: 'IT governance ensures:',
+    skillLevel: 'Application',
+    question: 'Which framework is MOST commonly used to assess IT governance maturity and alignment with business objectives?',
     options: [
-      'Only IT budget control',
-      'IT investments support business objectives and manage IT-related risks',
-      'All technology decisions are made by IT department',
-      'Maximum technology spending'
+      'COSO Internal Control Framework',
+      'COBIT (Control Objectives for Information and Related Technologies)',
+      'ISO 9001 Quality Management System',
+      'Basel III Banking Supervision Framework',
     ],
     correctAnswer: 1,
-    explanation: 'IT governance ensures IT investments align with business strategy, risks are managed, resources are used responsibly, and IT performance is measured.',
-    topic: 'Information Technology',
-    subtopic: 'IT Governance'
+    explanation: 'COBIT (Control Objectives for Information and Related Technologies) is the most widely recognized framework for IT governance, providing guidance on aligning IT with business goals, managing IT resources, and measuring IT performance through maturity models.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA3-B7-067',
+    id: 'cia3-b7-067',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Machine learning differs from traditional programming because:',
     options: [
-      'It requires no data',
       'Systems learn patterns from data rather than following explicit programmed rules',
+      'It eliminates the need for testing',
+      'It requires no data',
       'It only works with numbers',
-      'It eliminates the need for testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Machine learning enables systems to learn from data and improve without being explicitly programmed. Algorithms identify patterns and make predictions based on data.',
     topic: 'Information Technology',
-    subtopic: 'Emerging Technology'
+    subtopic: 'Emerging Technology',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-068',
+    id: 'cia3-b7-068',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'User Acceptance Testing (UAT) is performed:',
     options: [
-      'By developers during coding',
       'By end users to verify the system meets business requirements',
+      'Only after production implementation',
+      'By developers during coding',
       'By hardware vendors',
-      'Only after production implementation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'UAT is performed by end users or business representatives to verify the system meets business requirements and is ready for production deployment.',
     topic: 'Information Technology',
-    subtopic: 'System Development'
+    subtopic: 'System Development',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-069',
+    id: 'cia3-b7-069',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Version control systems are used to:',
     options: [
       'Control user access',
       'Track and manage changes to code and documents over time',
+      'Monitor network traffic',
       'Encrypt data at rest',
-      'Monitor network traffic'
     ],
     correctAnswer: 1,
     explanation: 'Version control systems track changes to files over time, allowing teams to collaborate, maintain history, and revert to previous versions when needed.',
     topic: 'Information Technology',
-    subtopic: 'Development Tools'
+    subtopic: 'Development Tools',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-070',
+    id: 'cia3-b7-070',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'API (Application Programming Interface) security risks include:',
     options: [
-      'Only physical access concerns',
       'Broken authentication, injection attacks, and excessive data exposure',
+      'Power supply issues',
+      'Only physical access concerns',
       'Hardware failures only',
-      'Power supply issues'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'API security risks include authentication weaknesses, injection vulnerabilities, excessive data exposure, lack of rate limiting, and broken access controls.',
     topic: 'Information Technology',
-    subtopic: 'Application Security'
+    subtopic: 'Application Security',
+  reference: 'IIA Standards'
   },
 
   // Domain IV: Fraud
   {
-    id: 'CIA3-B7-071',
+    id: 'cia3-b7-071',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Shell companies are often used in fraud schemes to:',
     options: [
-      'Improve tax efficiency legally',
       'Conceal the identity of parties involved in fraudulent transactions',
+      'Improve tax efficiency legally',
+      'Enhance customer service',
       'Increase operational efficiency',
-      'Enhance customer service'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Shell companies are entities with no real operations used to disguise fund movements, hide asset ownership, or conceal the parties involved in fraudulent schemes.',
     topic: 'Fraud',
-    subtopic: 'Fraud Schemes'
+    subtopic: 'Fraud Schemes',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-072',
+    id: 'cia3-b7-072',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Lapping is a fraud scheme involving:',
     options: [
       'Falsifying inventory records',
       'Covering shortages by applying subsequent customer payments to earlier receivables',
+      'Creating fictitious vendors',
       'Submitting fake expense reports',
-      'Creating fictitious vendors'
     ],
     correctAnswer: 1,
     explanation: 'Lapping involves stealing customer payments and covering the shortage by applying subsequent receipts from other customers to the earlier accounts, creating a cycle of theft.',
     topic: 'Fraud',
-    subtopic: 'Fraud Schemes'
+    subtopic: 'Fraud Schemes',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-073',
+    id: 'cia3-b7-073',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Kickback schemes typically involve:',
     options: [
       'Inventory theft',
       'Employees receiving payments from vendors in exchange for favorable treatment',
+      'Stealing cash from registers',
       'Falsifying time records',
-      'Stealing cash from registers'
     ],
     correctAnswer: 1,
     explanation: 'Kickbacks are payments from vendors to employees in exchange for advantages such as inflated pricing, unnecessary purchases, or preferential contract awards.',
     topic: 'Fraud',
-    subtopic: 'Corruption'
+    subtopic: 'Corruption',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-074',
+    id: 'cia3-b7-074',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The "fraud diamond" adds which element to the fraud triangle?',
     options: [
+      'Timing',
       'Greed',
       'Capability',
       'Access',
-      'Timing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The fraud diamond adds Capability (the person\'s ability to commit fraud) to the traditional fraud triangle elements of Pressure, Opportunity, and Rationalization.',
     topic: 'Fraud',
-    subtopic: 'Fraud Theory'
+    subtopic: 'Fraud Theory',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-075',
+    id: 'cia3-b7-075',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Revenue recognition fraud may involve:',
     options: [
+      'Underreporting expenses',
       'Recording sales too conservatively',
       'Recording fictitious sales or premature recognition of revenue',
       'Delaying all revenue recognition',
-      'Underreporting expenses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Revenue recognition fraud involves recording revenue improperly - either fictitious sales, premature recognition, or holding periods open to record future transactions.',
     topic: 'Fraud',
-    subtopic: 'Financial Statement Fraud'
+    subtopic: 'Financial Statement Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-076',
+    id: 'cia3-b7-076',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Ghost employees in payroll fraud are:',
     options: [
-      'Part-time workers',
+      'Employees on leave',
       'Fictitious employees added to the payroll to steal funds',
+      'Part-time workers',
       'Terminated employees receiving final pay',
-      'Employees on leave'
     ],
     correctAnswer: 1,
     explanation: 'Ghost employees are fictitious individuals added to the payroll system. Payments for non-existent employees are diverted to the fraudster.',
     topic: 'Fraud',
-    subtopic: 'Payroll Fraud'
+    subtopic: 'Payroll Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-077',
+    id: 'cia3-b7-077',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Analysis of Earnings Before Interest, Taxes, Depreciation, and Amortization (EBITDA) manipulation may reveal:',
     options: [
-      'Only positive trends',
+      'Strong liquidity',
       'Improper capitalization of expenses to inflate operating results',
+      'Only positive trends',
       'Conservative accounting only',
-      'Strong liquidity'
     ],
     correctAnswer: 1,
     explanation: 'EBITDA manipulation may involve improperly capitalizing expenses (moving them from the income statement to balance sheet) to inflate operating performance metrics.',
     topic: 'Fraud',
-    subtopic: 'Financial Statement Fraud'
+    subtopic: 'Financial Statement Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-078',
+    id: 'cia3-b7-078',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Money laundering typically occurs in which three stages?',
     options: [
-      'Transfer, deposit, withdrawal',
+      'Planning, hiding, investing',
       'Placement, layering, integration',
+      'Transfer, deposit, withdrawal',
       'Setup, execution, completion',
-      'Planning, hiding, investing'
     ],
     correctAnswer: 1,
     explanation: 'Money laundering has three stages: Placement (entering the financial system), Layering (disguising the trail through complex transactions), and Integration (legitimate-looking funds re-enter the economy).',
     topic: 'Fraud',
-    subtopic: 'Money Laundering'
+    subtopic: 'Money Laundering',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-079',
+    id: 'cia3-b7-079',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data mining for fraud detection can identify:',
     options: [
-      'Only known fraud schemes',
       'Unusual patterns, anomalies, and outliers that may indicate fraud',
+      'Only known fraud schemes',
+      'Future fraud with certainty',
       'Only financial statement fraud',
-      'Future fraud with certainty'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data mining techniques can identify unusual patterns, relationships, and anomalies in large datasets that may indicate fraudulent activity, though findings require further investigation.',
     topic: 'Fraud',
-    subtopic: 'Fraud Detection'
+    subtopic: 'Fraud Detection',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-080',
+    id: 'cia3-b7-080',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Entity-level controls that are particularly important for fraud prevention include:',
     options: [
       'Only password controls',
       'Tone at the top, ethics programs, and fraud risk assessment',
+      'IT governance exclusively',
       'Physical security only',
-      'IT governance exclusively'
     ],
     correctAnswer: 1,
     explanation: 'Entity-level controls affecting fraud prevention include management\'s ethical tone, code of conduct, fraud risk assessment, whistleblower programs, and governance structures.',
     topic: 'Fraud',
-    subtopic: 'Fraud Prevention'
+    subtopic: 'Fraud Prevention',
+  reference: 'IIA Standards'
   },
 
   // Additional Business/Financial Questions
   {
-    id: 'CIA3-B7-081',
+    id: 'cia3-b7-081',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Operating leverage refers to:',
     options: [
       'The use of debt financing',
       'The proportion of fixed costs in the cost structure affecting profit sensitivity',
+      'Employee productivity measures',
       'The ratio of current assets to current liabilities',
-      'Employee productivity measures'
     ],
     correctAnswer: 1,
     explanation: 'Operating leverage reflects the proportion of fixed costs in the cost structure. High operating leverage means profits are more sensitive to changes in sales volume.',
     topic: 'Business Acumen',
-    subtopic: 'Financial Management'
+    subtopic: 'Financial Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-082',
+    id: 'cia3-b7-082',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A horizontal merger involves:',
     options: [
-      'A company and its supplier',
       'Companies in the same industry at the same stage of production',
+      'A company and its supplier',
+      'Unrelated businesses',
       'A company and its customer',
-      'Unrelated businesses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A horizontal merger combines companies in the same industry at the same production stage (competitors). Vertical mergers involve supply chain partners.',
     topic: 'Business Acumen',
-    subtopic: 'Corporate Strategy'
+    subtopic: 'Corporate Strategy',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-083',
+    id: 'cia3-b7-083',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Just-in-Time (JIT) inventory management aims to:',
     options: [
+      'Increase storage costs',
       'Maximize inventory levels',
       'Minimize inventory by receiving goods only when needed for production',
       'Stockpile raw materials',
-      'Increase storage costs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'JIT minimizes inventory holding costs by synchronizing material deliveries with production requirements, receiving goods only when needed.',
     topic: 'Business Acumen',
-    subtopic: 'Operations Management'
+    subtopic: 'Operations Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-084',
+    id: 'cia3-b7-084',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Stakeholder theory suggests that organizations should consider:',
     options: [
       'Only shareholder interests',
+      'Only regulatory requirements',
       'The interests of all stakeholders including employees, customers, suppliers, and communities',
       'Only management interests',
-      'Only regulatory requirements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Stakeholder theory holds that organizations should consider the interests of all stakeholders, not just shareholders, including employees, customers, suppliers, and communities.',
     topic: 'Business Acumen',
-    subtopic: 'Corporate Governance'
+    subtopic: 'Corporate Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-085',
+    id: 'cia3-b7-085',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Currency hedging is used to:',
     options: [
-      'Speculate on currency movements',
+      'Avoid all international transactions',
       'Reduce exposure to foreign exchange rate fluctuations',
+      'Speculate on currency movements',
       'Maximize exposure to currency risk',
-      'Avoid all international transactions'
     ],
     correctAnswer: 1,
     explanation: 'Currency hedging uses financial instruments (forwards, options, swaps) to reduce or offset the risk of adverse foreign exchange rate movements.',
     topic: 'Business Acumen',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
 
   // Additional Audit/Control Questions
   {
-    id: 'CIA2-B7-086',
+    id: 'cia2-b7-086',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous auditing techniques are most valuable for:',
     options: [
       'Annual compliance reviews only',
+      'One-time special projects',
       'Providing ongoing assurance on high-risk, high-volume processes',
       'Replacing all traditional auditing',
-      'One-time special projects'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Continuous auditing provides ongoing monitoring of high-risk, high-volume processes, enabling timely identification of control issues and anomalies.',
     topic: 'Performing the Engagement',
-    subtopic: 'Continuous Auditing'
+    subtopic: 'Continuous Auditing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-087',
+    id: 'cia1-b7-087',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When providing consulting services, internal auditors should:',
     options: [
+      'Guarantee success of recommendations',
+      'Take ownership of recommended changes',
       'Ignore independence requirements',
       'Not assume management responsibilities that would impair independence',
-      'Take ownership of recommended changes',
-      'Guarantee success of recommendations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Even in consulting engagements, internal auditors must not assume management responsibilities. They provide advice, but management is responsible for decisions and implementation.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Consulting Services'
+    subtopic: 'Consulting Services',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-088',
+    id: 'cia2-b7-088',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk mapping visualizes risks by:',
     options: [
-      'Geographic location only',
       'Plotting risks based on likelihood and impact to prioritize responses',
+      'Geographic location only',
+      'Employee department',
       'Chronological order of occurrence',
-      'Employee department'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Risk mapping (or heat maps) plots risks on a grid based on likelihood (probability) and impact (consequence) to visualize and prioritize risks for response.',
     topic: 'Planning the Engagement',
-    subtopic: 'Risk Assessment'
+    subtopic: 'Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-089',
+    id: 'cia1-b7-089',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control objectives should be:',
     options: [
       'Vague and general',
-      'Specific, measurable, and aligned with organizational objectives',
+      'Focused only on efficiency',
       'Determined solely by auditors',
-      'Focused only on efficiency'
+      'Specific, measurable, and aligned with organizational objectives',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Control objectives should be specific, measurable, and aligned with business objectives. They define what the control is intended to achieve.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Concepts'
+    subtopic: 'Control Concepts',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-090',
+    id: 'cia2-b7-090',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
+    topic: 'Communicating Results',
+    subtopic: 'Management Responses',
     difficulty: 'hard',
-    question: 'When management disagrees with audit findings, the auditor should:',
+    skillLevel: 'Analysis',
+    question: 'After issuing a final audit report, the chief audit executive learns that a significant factual error was included in one of the findings. The MOST appropriate action is to:',
     options: [
-      'Remove the finding from the report',
-      'Document management\'s response and, if appropriate, include the auditor\'s perspective',
-      'Escalate immediately to regulators',
-      'Abandon the engagement'
+      'Take no action since the report has already been issued and distributed',
+      'Issue an amended report correcting the error and distribute it to all original recipients',
+      'Verbally inform the audit committee and take no written action',
+      'Include a correction in the next scheduled audit report for the same area',
     ],
     correctAnswer: 1,
-    explanation: 'If management disagrees, their response should be documented. If agreement cannot be reached, both positions may be included in the report with the matter escalated as appropriate.',
-    topic: 'Communicating Results',
-    subtopic: 'Management Responses'
+    explanation: 'IIA Standard 2420 requires that if a final communication contains a significant error or omission, the chief audit executive must communicate corrected information to all parties who received the original communication. This maintains the credibility and integrity of the internal audit function.',
+    reference: 'IIA Standards',
   },
 
   // Final questions
   {
-    id: 'CIA3-B7-091',
+    id: 'cia3-b7-091',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Total Quality Management (TQM) emphasizes:',
     options: [
-      'Quality inspection at the end only',
       'Continuous improvement and involvement of all employees in quality',
+      'Quality inspection at the end only',
+      'Quality only in production',
       'Maintaining status quo',
-      'Quality only in production'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'TQM is a management philosophy emphasizing continuous improvement, customer focus, and involvement of all employees in maintaining and improving quality.',
     topic: 'Business Acumen',
-    subtopic: 'Quality Management'
+    subtopic: 'Quality Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-092',
+    id: 'cia3-b7-092',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Business Acumen',
+    subtopic: 'Process Improvement',
     difficulty: 'hard',
-    question: 'Six Sigma methodology aims to:',
+    skillLevel: 'Analysis',
+    question: 'In Six Sigma methodology, what does the DMAIC acronym represent, and when is it applied?',
     options: [
-      'Accept a 50% defect rate',
-      'Reduce defects to fewer than 3.4 per million opportunities',
-      'Increase process variation',
-      'Eliminate all quality controls'
+      'Design, Manufacture, Assemble, Inspect, Certify — used for new product development',
+      'Define, Measure, Analyze, Improve, Control — used for improving existing processes',
+      'Document, Monitor, Assess, Implement, Close — used for audit engagements',
+      'Develop, Market, Acquire, Integrate, Consolidate — used for merger integration',
     ],
     correctAnswer: 1,
-    explanation: 'Six Sigma is a disciplined methodology for reducing defects to no more than 3.4 per million opportunities, using data-driven approaches like DMAIC.',
-    topic: 'Business Acumen',
-    subtopic: 'Process Improvement'
+    explanation: 'DMAIC (Define, Measure, Analyze, Improve, Control) is Six Sigma\'s methodology for improving existing processes. DMADV (Define, Measure, Analyze, Design, Verify) is used when creating new processes or products. Six Sigma targets reducing defects to fewer than 3.4 per million opportunities.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA1-B7-093',
+    id: 'cia1-b7-093',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Integrated auditing combines:',
     options: [
       'Only financial auditing',
-      'Assessment of financial, operational, compliance, and strategic aspects in a unified approach',
       'Only IT auditing',
-      'Only compliance auditing'
+      'Only compliance auditing',
+      'Assessment of financial, operational, compliance, and strategic aspects in a unified approach',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Integrated auditing takes a holistic approach, examining financial, operational, compliance, IT, and strategic aspects together rather than in isolation.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Audit Approaches'
+    subtopic: 'Audit Approaches',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-094',
+    id: 'cia2-b7-094',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Root cause analysis seeks to identify:',
     options: [
-      'Only symptoms of problems',
+      'Only immediate fixes',
       'The underlying cause that, if addressed, would prevent recurrence',
+      'Only symptoms of problems',
       'Who to blame for issues',
-      'Only immediate fixes'
     ],
     correctAnswer: 1,
     explanation: 'Root cause analysis identifies the fundamental underlying cause of a problem. Addressing the root cause prevents recurrence, unlike treating only symptoms.',
     topic: 'Performing the Engagement',
-    subtopic: 'Analysis Techniques'
+    subtopic: 'Analysis Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-095',
+    id: 'cia3-b7-095',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Environmental, Social, and Governance (ESG) factors are important because:',
     options: [
-      'They are purely optional',
       'They can affect long-term value creation and stakeholder relations',
+      'They focus only on environmental issues',
+      'They are purely optional',
       'They only matter to non-profit organizations',
-      'They focus only on environmental issues'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ESG factors increasingly affect investment decisions, stakeholder relations, regulatory requirements, and long-term organizational sustainability and value creation.',
     topic: 'Business Acumen',
-    subtopic: 'Sustainability'
+    subtopic: 'Sustainability',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-096',
+    id: 'cia1-b7-096',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When internal audit relies on the work of other assurance providers, the CAE must:',
     options: [
+      'Avoid all reliance',
+      'Only rely on external audit',
       'Accept all work without review',
       'Ensure competency, objectivity, and due professional care of those providers',
-      'Avoid all reliance',
-      'Only rely on external audit'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Before relying on others\' work, the CAE must assess their competency, objectivity, and due professional care, and consider the scope and methodology used.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Reliance on Others'
+    subtopic: 'Reliance on Others',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-097',
+    id: 'cia2-b7-097',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit efficiency can be improved through:',
     options: [
       'Reducing all testing',
+      'Skipping planning phases',
       'Leveraging technology, focusing on risks, and avoiding redundant procedures',
       'Eliminating documentation',
-      'Skipping planning phases'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Audit efficiency improves through technology use, risk-based focus, elimination of redundant procedures, effective planning, and leveraging prior work appropriately.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Audit Efficiency'
+    subtopic: 'Audit Efficiency',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-B7-098',
+    id: 'cia3-b7-098',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third-party risk management addresses:',
     options: [
-      'Only IT vendors',
       'Risks arising from relationships with vendors, contractors, and business partners',
+      'Only IT vendors',
+      'Internal employee risks',
       'Only financial institutions',
-      'Internal employee risks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Third-party risk management covers risks from all external relationships including vendors, suppliers, contractors, and business partners across all functions.',
     topic: 'Business Acumen',
-    subtopic: 'Vendor Management'
+    subtopic: 'Vendor Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-B7-099',
+    id: 'cia2-b7-099',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The concept of "combined assurance" means:',
     options: [
-      'All audit work is combined into one report',
       'Coordinating assurance activities across all assurance providers to optimize coverage and efficiency',
+      'All audit work is combined into one report',
+      'Eliminating all assurance activities',
       'Only internal and external audit working together',
-      'Eliminating all assurance activities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Combined assurance coordinates and integrates all assurance activities (internal audit, external audit, management, compliance, etc.) to optimize coverage and reduce gaps and overlaps.',
     topic: 'Managing Internal Audit',
-    subtopic: 'Assurance Coordination'
+    subtopic: 'Assurance Coordination',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-B7-100',
+    id: 'cia1-b7-100',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Adding value through internal audit means:',
     options: [
+      'Only finding problems',
+      'Replacing management decision-making',
       'Only reducing costs',
       'Improving opportunities to achieve organizational objectives and manage risks',
-      'Only finding problems',
-      'Replacing management decision-making'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal audit adds value by improving opportunities to achieve organizational objectives, identifying operational improvements, and reducing risk exposure through assurance and consulting.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Value of Internal Audit'
+    subtopic: 'Value of Internal Audit',
+  reference: 'IIA Standards'
   }
 ];

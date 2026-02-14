@@ -10,14 +10,17 @@
  * - Results analysis
  */
 
-// Exam Configuration
+// Exam Configuration - matches real CFP exam (6 hours total)
 export const CFP_EXAM_CONFIG = {
   totalQuestions: 170,
-  timeLimit: 180, // minutes (3 hours)
-  itemSetCount: 2, // Number of item sets (typically 8-12 questions each)
+  timeLimit: 360, // minutes (6 hours: 2 sessions × 3 hours)
+  questionsPerSubsection: 85, // 4 subsections of 85 questions each
+  timePerSubsection: 90, // 90 minutes per subsection
+  subsections: 4, // 4 subsections total
+  itemSetCount: 2, // Number of item sets (case studies with 8-12 questions each)
   passingScore: 0.70, // Estimated passing threshold
-  breakAfterQuestion: 85, // Optional break halfway
-  breakDuration: 15, // minutes
+  breakAfterSubsection: 2, // 40-min break after subsection 2 (end of session 1)
+  breakDuration: 40, // minutes (real exam break)
 };
 
 // Types
@@ -566,9 +569,9 @@ export function getQuestionStatus(
  * Check if break is available
  */
 export function isBreakAvailable(state: ExamState): boolean {
-  const currentQ = state.currentQuestionIndex + 1;
+  const currentSubsection = Math.floor(state.currentQuestionIndex / CFP_EXAM_CONFIG.questionsPerSubsection) + 1;
   return (
-    currentQ >= CFP_EXAM_CONFIG.breakAfterQuestion &&
+    currentSubsection >= CFP_EXAM_CONFIG.breakAfterSubsection &&
     state.breaksTaken === 0 &&
     state.status === 'in-progress'
   );

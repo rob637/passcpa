@@ -61,7 +61,7 @@ const PercentileRing: React.FC<{
             fill="none"
             stroke="currentColor"
             strokeWidth={stroke}
-            className="text-slate-200"
+            className="text-slate-200 dark:text-slate-700"
           />
           {/* Progress circle */}
           <circle
@@ -83,7 +83,7 @@ const PercentileRing: React.FC<{
           </span>
         </div>
       </div>
-      <div className="mt-2 flex items-center gap-1 text-slate-600">
+      <div className="mt-2 flex items-center gap-1 text-slate-600 dark:text-slate-400">
         {icon}
         <span className={clsx('font-medium', size === 'sm' ? 'text-xs' : 'text-sm')}>{label}</span>
       </div>
@@ -99,8 +99,8 @@ const ActivityPulse: React.FC<{ count: number; label: string }> = ({ count, labe
       <div className="absolute inset-0 w-3 h-3 bg-success-500 rounded-full animate-ping opacity-75" />
     </div>
     <div>
-      <div className="font-bold text-slate-900">{count.toLocaleString()}</div>
-      <div className="text-xs text-slate-600">{label}</div>
+      <div className="font-bold text-slate-900 dark:text-white">{count.toLocaleString()}</div>
+      <div className="text-xs text-slate-600 dark:text-slate-400">{label}</div>
     </div>
   </div>
 );
@@ -167,10 +167,10 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
         compact ? 'animate-pulse' : ''
       )}>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 bg-slate-200 rounded-lg" />
-          <div className="h-5 w-32 bg-slate-200 rounded" />
+          <div className="w-8 h-8 bg-slate-200 dark:bg-slate-700 rounded-lg" />
+          <div className="h-5 w-32 bg-slate-200 dark:bg-slate-700 rounded" />
         </div>
-        <div className="h-24 bg-slate-100 rounded-lg" />
+        <div className="h-24 bg-slate-100 dark:bg-slate-800 rounded-lg" />
       </Card>
     );
   }
@@ -204,7 +204,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
               <Trophy className="w-4 h-4 text-white" />
             </div>
-            <h3 className="font-semibold text-slate-900">Your Ranking</h3>
+            <h3 className="font-semibold text-slate-900 dark:text-white">Your Ranking</h3>
           </div>
           <a
             href="/community"
@@ -221,23 +221,23 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
         )}
 
         <div className="grid grid-cols-3 gap-2">
-          <div className="text-center p-2 bg-slate-50 rounded-lg">
-            <div className="text-lg font-bold text-slate-900">
+          <div className="text-center p-2 bg-slate-50 dark:bg-slate-800 rounded-lg">
+            <div className="text-lg font-bold text-slate-900 dark:text-white">
               {ranking?.questionsPercentile || 50}%
             </div>
-            <div className="text-xs text-slate-600">Questions</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Questions</div>
           </div>
-          <div className="text-center p-2 bg-slate-50 rounded-lg">
-            <div className="text-lg font-bold text-slate-900">
+          <div className="text-center p-2 bg-slate-50 dark:bg-slate-800 rounded-lg">
+            <div className="text-lg font-bold text-slate-900 dark:text-white">
               {ranking?.minutesPercentile || 50}%
             </div>
-            <div className="text-xs text-slate-600">Study Time</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Study Time</div>
           </div>
-          <div className="text-center p-2 bg-slate-50 rounded-lg">
-            <div className="text-lg font-bold text-slate-900">
+          <div className="text-center p-2 bg-slate-50 dark:bg-slate-800 rounded-lg">
+            <div className="text-lg font-bold text-slate-900 dark:text-white">
               {ranking?.streakPercentile || 50}%
             </div>
-            <div className="text-xs text-slate-600">Streak</div>
+            <div className="text-xs text-slate-600 dark:text-slate-400">Streak</div>
           </div>
         </div>
 
@@ -281,7 +281,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
 
       {/* Percentile Rankings */}
       <Card className="p-6">
-        <h3 className="font-semibold text-slate-900 mb-6 flex items-center gap-2">
+        <h3 className="font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
           <Award className="w-5 h-5 text-primary-600" />
           Your Percentile Rankings
         </h3>
@@ -307,8 +307,8 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
           />
         </div>
 
-        <div className="mt-6 p-4 bg-slate-50 rounded-lg">
-          <p className="text-sm text-slate-600 text-center">
+        <div className="mt-6 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+          <p className="text-sm text-slate-600 dark:text-slate-400 text-center">
             {ranking?.questionsPercentile && ranking.questionsPercentile >= 75 ? (
               <>
                 <span className="font-medium text-success-600">Outstanding!</span> You're outperforming most {section} candidates today.
@@ -328,7 +328,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
 
       {/* Community Activity */}
       <Card className="p-6">
-        <h3 className="font-semibold text-slate-900 mb-6 flex items-center gap-2">
+        <h3 className="font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
           <Users className="w-5 h-5 text-primary-600" />
           Community Activity
         </h3>
@@ -339,32 +339,32 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             label="Studying Today"
           />
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
               <Target className="w-5 h-5 text-primary-600" />
             </div>
             <div>
-              <div className="font-bold text-slate-900">{communityStats?.avgQuestionsToday || 0}</div>
-              <div className="text-xs text-slate-600">Avg Questions/Day</div>
+              <div className="font-bold text-slate-900 dark:text-white">{communityStats?.avgQuestionsToday || 0}</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Avg Questions/Day</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
               <Clock className="w-5 h-5 text-primary-600" />
             </div>
             <div>
-              <div className="font-bold text-slate-900">{communityStats?.avgMinutesToday || 0}m</div>
-              <div className="text-xs text-slate-600">Avg Study Time</div>
+              <div className="font-bold text-slate-900 dark:text-white">{communityStats?.avgMinutesToday || 0}m</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Avg Study Time</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
               <Flame className="w-5 h-5 text-amber-600" />
             </div>
             <div>
-              <div className="font-bold text-slate-900">
+              <div className="font-bold text-slate-900 dark:text-white">
                 {communityStats?.topStreaks?.[0] || 0} days
               </div>
-              <div className="text-xs text-slate-600">Top Streak</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Top Streak</div>
             </div>
           </div>
         </div>
@@ -373,7 +373,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
       {/* Section Breakdown */}
       {communityStats?.sectionBreakdown && Object.keys(communityStats.sectionBreakdown).length > 0 && (
         <Card className="p-6">
-          <h3 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
+          <h3 className="font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-primary-600" />
             Activity by Section
           </h3>
@@ -387,22 +387,22 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
                 className={clsx(
                   'p-4 rounded-lg border-2 transition-all',
                   sec === section
-                    ? 'border-primary-500 bg-primary-50'
-                    : 'border-slate-200 bg-slate-50'
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                    : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800'
                 )}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-slate-900">{sec}</span>
+                  <span className="font-bold text-slate-900 dark:text-white">{sec}</span>
                   {sec === section && (
                     <span className="text-xs bg-primary-500 text-white px-2 py-0.5 rounded-full">
                       You
                     </span>
                   )}
                 </div>
-                <div className="text-sm text-slate-600">
+                <div className="text-sm text-slate-600 dark:text-slate-400">
                   <span className="font-medium">{stats!.students}</span> students
                 </div>
-                <div className="text-xs text-slate-600">
+                <div className="text-xs text-slate-600 dark:text-slate-400">
                   {stats!.avgQuestions} avg questions
                 </div>
               </div>
@@ -412,14 +412,14 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
       )}
 
       {/* Encouragement footer */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200">
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl p-6 border border-amber-200 dark:border-amber-800">
         <div className="flex items-start gap-4">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center flex-shrink-0">
             <Zap className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h4 className="font-semibold text-slate-900 mb-1">You're Not Alone</h4>
-            <p className="text-sm text-slate-600">
+            <h4 className="font-semibold text-slate-900 dark:text-white mb-1">You're Not Alone</h4>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
               {communityStats?.todayActive || 0} other {courseName} candidates are studying right now.
               Every question you answer brings you closer to passing. The {courseName} journey is tough,
               but you're making progress every day. Keep going! 💪

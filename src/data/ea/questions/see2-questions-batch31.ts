@@ -22,8 +22,8 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     options: [
       '$21,000',
       '$31,500',
+      '$15,000',
       '$0',
-      '$15,000'
     ],
     correctAnswer: 0,
     explanation: 'The built-in gains tax is imposed at the highest corporate rate (21%) on recognized built-in gain, limited to net unrealized built-in gain remaining. Tax = $100,000 × 21% = $21,000.',
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Application',
     question: 'At year-end, an S corporation has AAA of $50,000 and makes a $60,000 distribution. If the corporation has no accumulated E&P, the distribution is:',
     options: [
-      '$60,000 dividend',
       '$50,000 tax-free (AAA), $10,000 return of capital/capital gain',
+      '$60,000 dividend',
+      'All ordinary income',
       '$50,000 capital gain, $10,000 dividend',
-      'All ordinary income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Without accumulated E&P, distributions first reduce AAA (tax-free to shareholders to extent of basis), then reduce remaining stock basis (tax-free return of capital), then capital gain if basis is exceeded.',
     reference: 'IRC §1368(b)',
   },
@@ -60,12 +60,12 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Other Adjustments Account (OAA) tracks:',
     options: [
-      'All items that increase AAA',
       'Tax-exempt income, federal taxes on built-in gains, and related expenses',
+      'All items that increase AAA',
+      'Distributions of accumulated E&P',
       'Shareholder loan balances',
-      'Distributions of accumulated E&P'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'OAA tracks items not included in AAA, primarily tax-exempt income and related expenses, and federal taxes attributable to C corporation periods (BIG tax, excess passive income tax).',
     reference: 'Treas. Reg. §1.1368-2(a)(3)',
   },
@@ -80,10 +80,10 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'During the post-termination transition period (PTTP) after S election ends:',
     options: [
-      'Distributions are all taxable as dividends',
+      'Shareholders cannot receive any distributions',
       'Cash distributions can still reduce AAA and be tax-free to extent of basis',
+      'Distributions are all taxable as dividends',
       'The corporation immediately pays all accumulated C corporation taxes',
-      'Shareholders cannot receive any distributions'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §1377(b), during the PTTP (generally one year after termination), cash distributions reduce AAA and are tax-free to extent of basis. Suspended losses can also be used against basis.',
@@ -100,10 +100,10 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Application',
     question: 'The IRS can recharacterize S corporation distributions as wages if:',
     options: [
-      'Distributions exceed $50,000',
+      'The distribution reduces AAA below zero',
       'A shareholder-employee receives distributions but inadequate or no salary',
+      'Distributions exceed $50,000',
       'The corporation has fewer than 3 shareholders',
-      'The distribution reduces AAA below zero'
     ],
     correctAnswer: 1,
     explanation: 'The IRS can recharacterize distributions as wages when shareholder-employees perform services but receive little or no compensation, collecting only distributions to avoid payroll taxes.',
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Application',
     question: 'If an S corporation has excessive passive investment income for 3 consecutive years while having accumulated E&P:',
     options: [
-      'The S election is automatically terminated',
       'The corporation must pay a penalty',
+      'Nothing happens unless reported by the IRS',
+      'The S election is automatically terminated',
       'The shareholders must reduce their distributions',
-      'Nothing happens unless reported by the IRS'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Under IRC §1362(d)(3), if an S corporation has C corporation E&P and passive investment income exceeds 25% of gross receipts for 3 consecutive years, the S election is automatically terminated.',
     reference: 'IRC §1362(d)(3)',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Qualified Subchapter S Subsidiary (QSub) is:',
     options: [
+      'Limited to 25 shareholders',
       'Taxed as a separate S corporation',
       'A disregarded entity whose assets and liabilities are treated as those of the parent S corp',
       'Subject to the built-in gains tax',
-      'Limited to 25 shareholders'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §1361(b)(3), a QSub election causes a 100%-owned subsidiary to be disregarded for federal tax purposes. Its assets, liabilities, and income are treated as belonging to the parent S corporation.',
     reference: 'IRC §1361(b)(3)',
   },
@@ -161,11 +161,11 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     question: 'Health insurance premiums paid by an S corporation for a 2% shareholder-employee are:',
     options: [
       'Tax-free to the shareholder',
+      'Not deductible by either the corporation or shareholder',
       'Included in shareholder wages, but shareholder may claim an above-the-line deduction',
       'Deductible only as itemized deductions',
-      'Not deductible by either the corporation or shareholder'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under Notice 2008-1, health premiums for 2%+ S corp shareholder-employees must be reported as W-2 wages. The shareholder may then claim the self-employed health insurance deduction (Form 1040, Schedule 1).',
     reference: 'Notice 2008-1; IRC §162(l)',
   },
@@ -182,8 +182,8 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     options: [
       'Only book value',
       'Any reasonable method including formula, appraisal, or fixed price',
+      'Only the original purchase price',
       'Only fair market value at time of sale',
-      'Only the original purchase price'
     ],
     correctAnswer: 1,
     explanation: 'Under Treas. Reg. §1.1361-1(l)(2)(iii), bona fide buy-sell agreements don\'t create a second class of stock even if they use non-FMV formulas, as long as rights are not designed to avoid the one-class requirement.',
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH31: Question[] = [
     skillLevel: 'Application',
     question: 'A shareholder with suspended S corporation losses due to basis limitations can deduct them when:',
     options: [
+      'A new shareholder buys the stock',
       'Never - suspended losses are permanently lost',
       'Basis is increased by income allocations or additional contributions',
       'The S election terminates',
-      'A new shareholder buys the stock'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Suspended losses due to basis limitations are carried forward indefinitely and can be deducted when the shareholder\'s basis increases (through income allocations, capital contributions, or additional loans to the corporation).',
     reference: 'IRC §1366(d)(2)',
   },

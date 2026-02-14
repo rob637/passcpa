@@ -23,6 +23,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { getDefaultSection } from '../../utils/sectionUtils';
+import { getCurrentSection } from '../../utils/profileHelpers';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { fetchQuestions } from '../../services/questionService';
@@ -87,6 +88,7 @@ const Flashcards: React.FC = () => {
   const [cards, setCards] = useState<Flashcard[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [selectedRating, setSelectedRating] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [sessionStats, setSessionStats] = useState<SessionStats>({
     reviewed: 0,
@@ -103,10 +105,12 @@ const Flashcards: React.FC = () => {
   const topic = searchParams.get('topic');
   const typeParam = searchParams.get('type') as FlashcardType | null;
   const sectionParam = searchParams.get('section');
+  const countParam = searchParams.get('count'); // Number of cards for daily plan sessions
+  const sessionCardLimit = countParam ? parseInt(countParam, 10) : null;
   // Support URL param for section (for EA) or fall back to user profile
   const currentSection: AllExamSections = sectionParam 
     ? (sectionParam as AllExamSections)
-    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+    : getCurrentSection(userProfile, courseId, getDefaultSection) as AllExamSections;
 
   // Scroll to top when flashcard session starts
   useEffect(() => {
@@ -214,8 +218,15 @@ const Flashcards: React.FC = () => {
 
         // Shuffle for variety
         filteredCards.sort(() => Math.random() - 0.5);
+        
+        // Apply session card limit (for daily plan sessions)
+        if (sessionCardLimit && sessionCardLimit > 0) {
+          filteredCards = filteredCards.slice(0, sessionCardLimit);
+        }
 
         setCards(filteredCards);
+        setCurrentIndex(0); // Reset to first card when cards change
+        setIsFlipped(false); // Reset flip state
         setStudyStats(getStudyStats(cardsWithSRS));
       } catch (error) {
         logger.error('Error loading flashcards:', error);
@@ -225,7 +236,7 @@ const Flashcards: React.FC = () => {
     };
 
     loadCards();
-  }, [user, courseId, currentSection, mode, topic, cardType, typeParam]);
+  }, [user, courseId, currentSection, mode, topic, cardType, typeParam, sessionCardLimit]);
 
   // Helper function to format dedicated card backs with formula/mnemonic/example
   const formatDedicatedCardBack = (card: DedicatedFlashcard): string => {
@@ -285,6 +296,7 @@ const Flashcards: React.FC = () => {
     if (currentIndex < cards.length - 1) {
       setCurrentIndex((i) => i + 1);
       setIsFlipped(false);
+      setSelectedRating(null);
       scrollToCardTop();
       feedback.tap();
     }
@@ -294,6 +306,7 @@ const Flashcards: React.FC = () => {
     if (currentIndex > 0) {
       setCurrentIndex((i) => i - 1);
       setIsFlipped(false);
+      setSelectedRating(null);
       scrollToCardTop();
       feedback.tap();
     }
@@ -305,7 +318,10 @@ const Flashcards: React.FC = () => {
   };
 
   const handleRating = async (rating: 'again' | 'hard' | 'good' | 'easy') => {
-    if (!currentCard || !user) return;
+    if (!currentCard || !user || selectedRating) return; // Prevent double-tap
+
+    // Visual feedback - highlight selected button
+    setSelectedRating(rating);
 
     // Play feedback
     if (rating === 'easy' || rating === 'good') {
@@ -334,12 +350,17 @@ const Flashcards: React.FC = () => {
       [rating]: prev[rating] + 1,
     }));
 
-    // Move to next card
-    if (currentIndex < cards.length - 1) {
-      setTimeout(() => {
+    // Move to next card (or to completion screen if this was the last card)
+    setTimeout(() => {
+      if (currentIndex < cards.length - 1) {
         nextCard();
-      }, 300);
-    }
+      } else {
+        // This was the last card - advance past end to trigger completion screen
+        setCurrentIndex(cards.length);
+        setIsFlipped(false);
+        setSelectedRating(null);
+      }
+    }, 500);
   };
 
   if (loading) {
@@ -429,7 +450,7 @@ const Flashcards: React.FC = () => {
                 navigate('/study');
               }
             }}>
-              Done
+              {fromDailyPlan ? 'Back to Daily Plan' : 'Done'}
             </Button>
           </div>
         </div>
@@ -515,8 +536,8 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'mnemonics'
-                ? 'bg-amber-100 text-amber-700 border border-amber-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
             )}
           >
             <Lightbulb className="w-3.5 h-3.5" />
@@ -541,6 +562,7 @@ const Flashcards: React.FC = () => {
           {/* Flashcard */}
           <div
             onClick={handleFlip}
+            data-testid="flashcard"
             className={clsx(
               'relative w-full min-h-[320px] sm:min-h-[400px] cursor-pointer perspective-1000',
               'transition-transform duration-500 transform-style-3d',
@@ -652,24 +674,40 @@ const Flashcards: React.FC = () => {
             <div className="mt-6 grid grid-cols-4 gap-2 animate-fade-in">
               {RATING_BUTTONS.map((btn) => {
                 const Icon = btn.icon;
+                const isSelected = selectedRating === btn.rating;
+                const isOther = selectedRating && !isSelected;
                 return (
                   <button
                     key={btn.rating}
                     onClick={() => handleRating(btn.rating)}
+                    disabled={!!selectedRating}
+                    data-testid={`rating-${btn.rating}`}
                     className={clsx(
-                      'flex flex-col items-center gap-1 py-3 px-2 rounded-xl transition-all',
+                      'flex flex-col items-center gap-1 py-3 px-2 rounded-xl transition-all duration-200',
                       'border-2 font-medium',
-                      btn.color === 'error' &&
+                      // Dim unselected buttons when one is chosen
+                      isOther && 'opacity-40 scale-95',
+                      // Selected button: bold ring + deeper fill + scale up
+                      isSelected && btn.color === 'error' &&
+                        'border-error-500 dark:border-error-400 bg-error-200 dark:bg-error-800 text-error-800 dark:text-error-100 scale-105 ring-2 ring-error-400',
+                      isSelected && btn.color === 'warning' &&
+                        'border-warning-500 dark:border-warning-400 bg-warning-200 dark:bg-warning-800 text-warning-800 dark:text-warning-100 scale-105 ring-2 ring-warning-400',
+                      isSelected && btn.color === 'primary' &&
+                        'border-primary-500 dark:border-primary-400 bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-100 scale-105 ring-2 ring-primary-400',
+                      isSelected && btn.color === 'success' &&
+                        'border-success-500 dark:border-success-400 bg-success-200 dark:bg-success-800 text-success-800 dark:text-success-100 scale-105 ring-2 ring-success-400',
+                      // Default (nothing selected yet)
+                      !selectedRating && btn.color === 'error' &&
                         'border-error-200 dark:border-error-700 bg-error-50 dark:bg-error-900/40 text-error-700 dark:text-error-300 hover:bg-error-100 dark:hover:bg-error-900/60',
-                      btn.color === 'warning' &&
+                      !selectedRating && btn.color === 'warning' &&
                         'border-warning-200 dark:border-warning-700 bg-warning-50 dark:bg-warning-900/40 text-warning-700 dark:text-warning-300 hover:bg-warning-100 dark:hover:bg-warning-900/60',
-                      btn.color === 'primary' &&
+                      !selectedRating && btn.color === 'primary' &&
                         'border-primary-200 dark:border-primary-700 bg-primary-50 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900/60',
-                      btn.color === 'success' &&
+                      !selectedRating && btn.color === 'success' &&
                         'border-success-200 dark:border-success-700 bg-success-50 dark:bg-success-900/40 text-success-700 dark:text-success-300 hover:bg-success-100 dark:hover:bg-success-900/60'
                     )}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className={clsx('w-5 h-5', isSelected && 'animate-bounce')} />
                     <span className="text-sm">{btn.label}</span>
                     <span className="text-xs opacity-60 hidden sm:block">{btn.shortcut}</span>
                   </button>

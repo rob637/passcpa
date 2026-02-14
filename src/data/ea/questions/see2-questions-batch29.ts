@@ -22,10 +22,10 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     options: [
       'Form 1120',
       'Form 1065',
+      'Form 1041',
       'Schedule C of Form 1040',
-      'Form 1041'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'A sole proprietorship is not a separate tax entity. Business income and expenses are reported on Schedule C (or Schedule F for farming) attached to the owner\'s Form 1040.',
     reference: 'IRC §1; Form 1040 Instructions',
   },
@@ -40,10 +40,10 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A single-member LLC that has not elected corporate treatment is:',
     options: [
-      'Taxed as a corporation',
+      'Tax-exempt',
       'A disregarded entity taxed as a sole proprietorship',
+      'Taxed as a corporation',
       'Taxed as a partnership',
-      'Tax-exempt'
     ],
     correctAnswer: 1,
     explanation: 'Under check-the-box regulations, a single-member LLC is a disregarded entity by default, taxed as a sole proprietorship. It may elect to be taxed as a corporation using Form 8832.',
@@ -60,12 +60,12 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A multi-member LLC that has not elected corporate treatment is taxed as:',
     options: [
-      'A C corporation',
       'An S corporation',
+      'Each member is taxed separately',
+      'A C corporation',
       'A partnership',
-      'Each member is taxed separately'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under check-the-box rules, a multi-member LLC defaults to partnership taxation. It files Form 1065 and issues Schedule K-1s to members. It may elect corporation status via Form 8832.',
     reference: 'Treas. Reg. §301.7701-3',
   },
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Double taxation primarily affects:',
     options: [
-      'Sole proprietorships',
       'Partnerships',
+      'S corporations',
+      'Sole proprietorships',
       'C corporations',
-      'S corporations'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'C corporations pay tax at the entity level (21%), and shareholders pay tax again when dividends are distributed. This results in double taxation. Pass-through entities (partnerships, S corps) avoid this.',
     reference: 'IRC §11; IRC §1(h)(11)',
   },
@@ -101,11 +101,11 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     question: 'Which business type allows the owner to minimize self-employment tax on business income?',
     options: [
       'Sole proprietorship',
+      'Single-member LLC',
       'General partnership',
       'S corporation (with reasonable salary)',
-      'Single-member LLC'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'S corporation shareholders who work in the business must receive reasonable salary (subject to FICA), but distributions above that are not subject to SE tax. Sole proprietors and partners pay SE tax on all net earnings.',
     reference: 'IRC §1402; Rev. Rul. 59-221',
   },
@@ -121,11 +121,11 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     question: 'In a limited partnership:',
     options: [
       'All partners have unlimited liability',
+      'All partners must be corporations',
       'General partners manage and have unlimited liability; limited partners have liability limited to their investment',
       'Limited partners actively manage the business',
-      'All partners must be corporations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Limited partnerships have at least one general partner (unlimited liability, manages) and limited partners (liability limited to investment, cannot participate in management without risking liability).',
     reference: 'Revised Uniform Limited Partnership Act; IRC §1402(a)(13)',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Forming which entity type is generally tax-free?',
     options: [
-      'C corporation (if Section 351 requirements met)',
       'Only sole proprietorships',
+      'C corporation (if Section 351 requirements met)',
+      'All entity formations are taxable',
       'LLCs electing S status',
-      'All entity formations are taxable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Corporation formation can be tax-free under IRC §351 if contributors control (80%) the corporation immediately after. Partnership formation under §721 is also tax-free. Sole proprietorships have no formation event.',
     reference: 'IRC §351; IRC §721',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     skillLevel: 'Application',
     question: 'Which entity allows owner-employees to receive tax-free group health insurance?',
     options: [
-      'Sole proprietorship',
       'Partnership',
+      'Sole proprietorship',
+      'S corporation',
       'C corporation',
-      'S corporation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'C corporation shareholder-employees can receive tax-free health insurance as employees. Sole proprietors, partners, and >2% S corp shareholders must include premiums in income (though they may claim an above-the-line deduction).',
     reference: 'IRC §106; IRC §162(l)',
   },
@@ -182,10 +182,10 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     options: [
       'Debt never affects basis in any entity',
       'S corporation shareholders include their share of debt in basis',
+      'C corporation shareholders include debt in stock basis',
       'Partners include their share of partnership debt in outside basis',
-      'C corporation shareholders include debt in stock basis'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Partners include their share of partnership liabilities in their outside basis (IRC §752). S corp shareholders do NOT get basis for corporate debt (only direct loans to the corporation). C corp shareholders never include debt in basis.',
     reference: 'IRC §752; IRC §1366(d)',
   },
@@ -202,8 +202,8 @@ export const SEE2_QUESTIONS_BATCH29: Question[] = [
     options: [
       'C corporation',
       'S corporation and partnership',
+      'Losses are never limited for pass-through entities',
       'Only sole proprietorships',
-      'Losses are never limited for pass-through entities'
     ],
     correctAnswer: 1,
     explanation: 'Pass-through losses from S corporations and partnerships are subject to basis limitations, at-risk rules (§465), passive activity rules (§469), and excess business loss limits (§461(l)) at the owner level.',

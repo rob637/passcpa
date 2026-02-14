@@ -543,10 +543,10 @@ Protect assets from Medicaid spend-down
         answer: '$202,000. Partnership policies allow dollar-for-dollar asset protection equal to benefits received ($200,000) plus the regular Medicaid asset limit ($2,000).'
       }
     ],
-    relatedLessons: ['CFP-RIS-L009', 'CFP-RIS-L011']
+    relatedLessons: ['CFP-RIS-L009', 'CFP-RIS-L014']
   },
   {
-    id: 'CFP-RIS-L011',
+    id: 'CFP-RIS-L014',
     domain: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     title: 'Medicare and Social Security Health Benefits',

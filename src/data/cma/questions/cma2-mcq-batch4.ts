@@ -27,12 +27,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A company has: Net Sales $8,000,000; Cost of Goods Sold $5,200,000; Operating Expenses $1,600,000; Interest $200,000; Tax Rate 25%. What is the net profit margin?',
     options: [
+      '7.5%',
       '10.0%',
       '9.375%',
       '12.5%',
-      '7.5%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Gross Profit = $8M - $5.2M = $2.8M. Operating Income = $2.8M - $1.6M = $1.2M. EBT = $1.2M - $0.2M = $1.0M. Net Income = $1.0M × (1 - 0.25) = $750,000. Net Profit Margin = $750,000 / $8,000,000 = 9.375%.',
     reference: 'Net Profit Margin',
   },
@@ -47,12 +47,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Apex Corp. has: Average Inventory $400,000; COGS $2,400,000; Average Receivables $500,000; Sales $4,000,000; Average Payables $300,000. What is the cash conversion cycle?',
     options: [
+      '106.25 days',
       '60.83 days',
       '61.83 days',
       '15.42 days',
-      '106.25 days'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Days Inventory = ($400,000 / $2,400,000) × 365 = 60.83 days. Days Receivables = ($500,000 / $4,000,000) × 365 = 45.63 days. Days Payables = ($300,000 / $2,400,000) × 365 = 45.63 days. CCC = 60.83 + 45.63 - 45.63 = 60.83 days.',
     reference: 'Cash Conversion Cycle',
   },
@@ -68,11 +68,11 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     question: 'Using the 5-factor DuPont model, if a company increases its debt-to-equity ratio while other factors remain constant, what happens to ROE?',
     options: [
       'ROE decreases',
+      'ROE increases only if cost of debt is below WACC',
       'ROE increases due to financial leverage',
       'ROE remains unchanged',
-      'ROE increases only if cost of debt is below WACC'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'In the DuPont model, the equity multiplier (Assets/Equity) increases with higher debt. Higher leverage amplifies ROE when the company earns more on its assets than it pays on its debt. The leverage effect increases ROE (assuming profitable operations).',
     reference: 'DuPont Analysis; Financial Leverage',
   },
@@ -89,10 +89,10 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     options: [
       'Growing gap between net income and operating cash flow',
       'Significant increase in days sales outstanding',
+      'Gradual decline in gross margin over several years',
       'Change in accounting method increasing current period income',
-      'Gradual decline in gross margin over several years'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: 'A gradual decline in gross margin, while concerning, represents a transparent trend visible in the financials. The other options suggest potential earnings manipulation: cash flow divergence, receivables issues, or one-time accounting changes to boost income.',
     reference: 'Earnings Quality Analysis',
   },
@@ -111,12 +111,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A company has: Market value of debt $4M (cost 6%); Preferred stock $1M (cost 8%); Common equity $5M (cost 14%). Tax rate is 25%. What is WACC?',
     options: [
-      '10.10%',
       '9.55%',
+      '10.10%',
+      '10.70%',
       '8.80%',
-      '10.70%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Total capital = $10M. Weights: Debt 40%, Preferred 10%, Equity 50%.\nWACC = (Wd × Kd × (1−t)) + (Wp × Kp) + (We × Ke)\n= (0.40 × 6% × 0.75) + (0.10 × 8%) + (0.50 × 14%)\n= 1.80% + 0.80% + 7.00% = 9.60%.\nUsing precise market-value weights yields WACC = 9.55%, as the debt/preferred/equity proportions shift slightly from book to market values.',
     reference: 'Weighted Average Cost of Capital',
   },
@@ -131,12 +131,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Remembering',
     question: 'According to the trade-off theory of capital structure, the optimal amount of debt balances:',
     options: [
-      'Interest tax shields against bankruptcy costs and financial distress',
       'Shareholder preferences against creditor preferences',
+      'Internal equity against external equity',
+      'Interest tax shields against bankruptcy costs and financial distress',
       'Short-term debt against long-term debt',
-      'Internal equity against external equity'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The trade-off theory states that firms balance the tax benefits of debt (interest tax shield) against the costs of financial distress and bankruptcy. The optimal capital structure maximizes firm value by finding this balance.',
     reference: 'Trade-Off Theory; Capital Structure',
   },
@@ -151,12 +151,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Nile Corp. has net income of $2,000,000, target capital structure of 40% debt and 60% equity, and capital budget of $2,500,000. Using the residual dividend model, what dividend should be paid?',
     options: [
-      '$500,000',
       '$1,000,000',
+      '$0',
+      '$500,000',
       '$1,500,000',
-      '$0'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Equity needed = 60% × $2,500,000 = $1,500,000. Residual Dividend = Net Income - Equity Needed = $2,000,000 - $1,500,000 = $500,000. Under the residual model, dividends are paid only after capital needs are funded.',
     reference: 'Residual Dividend Model',
   },
@@ -171,10 +171,10 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A supplier offers terms of 3/15, net 60. What is the annualized cost of not taking the discount?',
     options: [
-      '24.74%',
+      '18.25%',
       '27.84%',
+      '24.74%',
       '22.27%',
-      '18.25%'
     ],
     correctAnswer: 1,
     explanation: 'Cost of forgoing discount = [Discount ÷ (1 − Discount)] × [365 ÷ (Net period − Discount period)]\n= (0.03 ÷ 0.97) × (365 ÷ 45) = 0.030928 × 8.111 = 25.09% (simple interest basis).\nUsing the compound formula: Effective annual rate = (1 + 0.030928)^(365/45) − 1 = 27.84%. The compounding formula reflects the true cost when forgoing the discount repeatedly throughout the year.',
@@ -192,11 +192,11 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     question: 'Equipment costs $500,000 to purchase with 5-year life, no salvage. A lease option is $120,000/year for 5 years. WACC is 10%, tax rate 30%. For simplicity, depreciation = $100,000/year. Which is preferred?',
     options: [
       'Buy: PV of costs is lower',
+      'Cannot determine without after-tax discount rate',
       'Lease: PV of costs is lower',
       'Indifferent between options',
-      'Cannot determine without after-tax discount rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Buy: Net cost = Purchase price − PV of depreciation tax shield = $500,000 − ($100,000 × 0.30 × 3.791) = $500,000 − $113,730 = $386,270.\nLease: After-tax lease payment = $120,000 × (1 − 0.30) = $84,000/yr. PV = $84,000 × 3.791 = $318,444.\nSince PV of lease costs ($318,444) < PV of buy costs ($386,270), the lease is preferred by $67,826.',
     reference: 'Lease vs Buy Analysis',
   },
@@ -215,12 +215,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A company makes 10,000 units of Part A with costs: DM $5/unit, DL $8/unit, Variable OH $3/unit, Fixed OH $40,000. An outside supplier offers Part A for $18/unit. If the company buys, 60% of fixed overhead is avoidable. Should they make or buy?',
     options: [
-      'Make: saves $4,000',
       'Buy: saves $4,000',
+      'Buy: saves $20,000',
+      'Make: saves $4,000',
       'Make: saves $20,000',
-      'Buy: saves $20,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Make costs: Variable = 10,000 × ($5+$8+$3) = $160,000. Avoidable Fixed = 60% × $40,000 = $24,000. Total relevant MAKE = $184,000. Buy costs = 10,000 × $18 = $180,000. Buy saves $184,000 - $180,000 = $4,000.',
     reference: 'Make vs Buy; Relevant Costs',
   },
@@ -236,9 +236,9 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     question: 'Gamma Corp. has excess capacity and receives a special order for 5,000 units at $22 each. Normal price is $30. Variable cost is $18/unit. Accepting will require $8,000 for a special die. Should Gamma accept?',
     options: [
       'Accept: incremental profit $12,000',
+      'Reject: price is below normal selling price',
       'Reject: incremental loss $8,000',
       'Accept: incremental profit $20,000',
-      'Reject: price is below normal selling price'
     ],
     correctAnswer: 0,
     explanation: 'Incremental Revenue = 5,000 × $22 = $110,000. Incremental Costs = (5,000 × $18) + $8,000 = $90,000 + $8,000 = $98,000. Incremental Profit = $110,000 - $98,000 = $12,000. Accept the special order.',
@@ -256,11 +256,11 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     question: 'Joint products X and Y emerge at split-off. Product X can sell for $50,000 at split-off or be processed further for $15,000 to sell for $70,000. Joint costs are $80,000, allocated $45,000 to X. What should the company do?',
     options: [
       'Sell at split-off: $5,000 better off',
+      'Process further: $20,000 better off',
       'Process further: $5,000 better off',
       'Sell at split-off: $20,000 better off',
-      'Process further: $20,000 better off'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'For sell-or-process decisions, joint costs are SUNK and irrelevant. Only compare: Incremental Revenue = $70,000 - $50,000 = $20,000. Incremental Cost = $15,000. Incremental benefit of processing = $20,000 - $15,000 = $5,000. Process further.',
     reference: 'Sell or Process Further; Joint Costs',
   },
@@ -275,12 +275,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Products P and Q have CM of $40 and $50 respectively. P requires 2 machine hours, Q requires 5 machine hours. Machine capacity is 1,000 hours. Which product maximizes profit?',
     options: [
-      'Product Q: higher CM per unit',
       'Product P: higher CM per machine hour',
+      'Product Q: higher CM per unit',
+      'Need more information about demand',
       'Both equally: same total CM available',
-      'Need more information about demand'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'With a constraint, maximize CM per constraint unit. Product P: $40 / 2 hours = $20/hour. Product Q: $50 / 5 hours = $10/hour. Product P generates twice the CM per constrained resource, so prioritize P.',
     reference: 'Theory of Constraints; Product Mix',
   },
@@ -295,12 +295,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Segment C has: Sales $400,000; Variable costs $280,000; Traceable fixed costs $100,000; Allocated common costs $50,000. If Segment C is dropped, total company net income will:',
     options: [
-      'Increase by $30,000',
       'Decrease by $20,000',
+      'Increase by $30,000',
+      'Increase by $50,000',
       'Decrease by $70,000',
-      'Increase by $50,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Segment Contribution Margin = $400,000 - $280,000 = $120,000. Segment Margin = $120,000 - $100,000 = $20,000. If dropped, the company loses this $20,000 contribution (allocated costs continue). Net income decreases by $20,000.',
     reference: 'Segment Analysis; Drop/Keep',
   },
@@ -321,8 +321,8 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     options: [
       'Systematic risk only',
       'Unsystematic risk only',
+      'Neither; diversification does not reduce risk',
       'Both systematic and unsystematic risk equally',
-      'Neither; diversification does not reduce risk'
     ],
     correctAnswer: 1,
     explanation: 'Diversification eliminates unsystematic (company-specific/firm-specific) risk but cannot eliminate systematic (market) risk. A well-diversified portfolio approaches the market portfolio and has only systematic risk remaining.',
@@ -339,12 +339,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A bond portfolio has a duration of 6 years. If interest rates increase by 1%, the portfolio value will:',
     options: [
-      'Increase by approximately 6%',
       'Decrease by approximately 6%',
+      'Remain unchanged',
+      'Increase by approximately 6%',
       'Increase by exactly 6%',
-      'Remain unchanged'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Duration measures interest rate sensitivity. A duration of 6 means approximately a 6% price change for each 1% change in rates. Bond prices move inversely to rates, so a 1% rate increase causes approximately 6% price DECREASE.',
     reference: 'Duration; Interest Rate Risk',
   },
@@ -359,12 +359,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'An investor purchases a put option with a strike price of $50 for a premium of $4. At expiration, the stock price is $42. What is the investor\'s profit or loss?',
     options: [
+      'Profit of $12',
       'Profit of $8',
       'Profit of $4',
       'Loss of $4',
-      'Profit of $12'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Put payoff = Max(0, Strike - Stock Price) = Max(0, $50 - $42) = $8. Profit = Payoff - Premium = $8 - $4 = $4 profit. The put is "in the money" by $8, less the $4 premium paid.',
     reference: 'Put Option; Payoff',
   },
@@ -384,9 +384,9 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     question: 'Project A requires $100,000 investment and generates $35,000 annually for 4 years. The required return is 12%. PV factor for ordinary annuity at 12% for 4 years is 3.0373. What is the NPV?',
     options: [
       '$6,306',
+      '$35,000',
       '$40,000',
       '-$6,306',
-      '$35,000'
     ],
     correctAnswer: 0,
     explanation: 'PV of cash flows = $35,000 × 3.0373 = $106,306. NPV = $106,306 - $100,000 = $6,306. Positive NPV indicates the project exceeds the required return and should be accepted.',
@@ -404,9 +404,9 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     question: 'When evaluating mutually exclusive projects, NPV and IRR may give conflicting rankings due to:',
     options: [
       'Different project lives or reinvestment rate assumptions',
+      'Use of the same discount rate',
       'Identical cash flow patterns',
       'Both projects having positive NPV',
-      'Use of the same discount rate'
     ],
     correctAnswer: 0,
     explanation: 'NPV assumes reinvestment at the cost of capital; IRR implicitly assumes reinvestment at the IRR itself. Different project sizes, lives, or cash flow timing can cause ranking conflicts. NPV is generally preferred for mutually exclusive projects.',
@@ -423,12 +423,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Remembering',
     question: 'The primary limitation of the payback period as a capital budgeting technique is that it:',
     options: [
+      'Cannot be used with uneven cash flows',
       'Is too complex to calculate',
       'Ignores the time value of money and cash flows after payback',
       'Always conflicts with NPV',
-      'Cannot be used with uneven cash flows'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The payback period has two major limitations: (1) it ignores the time value of money (unless discounted payback is used), and (2) it ignores all cash flows that occur after the payback point, potentially rejecting profitable long-term projects.',
     reference: 'Payback Period Limitations',
   },
@@ -443,12 +443,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'When capital is rationed, which project metric is MOST useful for ranking projects?',
     options: [
+      'Payback Period',
       'Net Present Value',
       'Internal Rate of Return',
       'Profitability Index',
-      'Payback Period'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under capital rationing, the Profitability Index (PV/Investment) is most useful because it measures value per dollar invested. This allows optimal allocation of limited capital. NPV maximizes total value but doesn\'t account for investment size constraints.',
     reference: 'Capital Rationing; Profitability Index',
   },
@@ -469,10 +469,10 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     options: [
       'Immediately resign from the position',
       'Report the violation to legal authorities',
+      'Contact the IMA Ethics Hotline',
       'Follow the established policies of the organization',
-      'Contact the IMA Ethics Hotline'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The first step in IMA\'s conflict resolution process is to follow the organization\'s established policies for resolving ethical conflicts. If unresolved, escalate to successively higher levels, then consider consulting with an objective advisor or the IMA.',
     reference: 'IMA Ethics; Conflict Resolution',
   },
@@ -489,8 +489,8 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     options: [
       'Refuse to testify under any circumstances',
       'Disclose the information as required by law',
+      'Resign before the testimony date',
       'Provide misleading information to protect the company',
-      'Resign before the testimony date'
     ],
     correctAnswer: 1,
     explanation: 'The IMA confidentiality standard requires keeping information confidential EXCEPT when disclosure is authorized or legally required. A court subpoena is a legal requirement, so the CMA must comply and provide truthful testimony.',
@@ -507,12 +507,12 @@ export const CMA2_MCQ_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A CMA is asked to prepare a financial analysis for an acquisition target. The CMA owns stock in the target company. Under IMA standards, the CMA should:',
     options: [
-      'Proceed with the analysis; stock ownership is irrelevant',
       'Disclose the conflict of interest and recuse from the analysis',
+      'Complete the analysis but disclose ownership in a footnote',
+      'Proceed with the analysis; stock ownership is irrelevant',
       'Sell the stock immediately and proceed',
-      'Complete the analysis but disclose ownership in a footnote'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under the Integrity standard, CMAs must mitigate conflicts of interest that could influence judgment. Stock ownership in an acquisition target creates a clear conflict. The CMA should disclose the conflict and recuse themselves from the analysis.',
     reference: 'IMA Ethics; Integrity',
   },

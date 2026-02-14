@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A "listed transaction" is:',
     options: [
-      'Any tax shelter investment',
-      'A transaction specifically identified by IRS as a tax avoidance transaction',
       'Any investment with more than 10 investors',
-      'Any real estate syndication'
+      'A transaction specifically identified by IRS as a tax avoidance transaction',
+      'Any tax shelter investment',
+      'Any real estate syndication',
     ],
     correctAnswer: 1,
     explanation: 'A listed transaction is one that the IRS has specifically identified as a tax avoidance transaction and included in IRS Notice 2009-59 or published guidance. These carry enhanced disclosure and penalty rules.',
@@ -41,11 +41,11 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     question: 'Categories of reportable transactions include:',
     options: [
       'Only listed transactions',
-      'Listed, confidential, contractual protection, loss, and transactions of interest',
       'Any deduction over $10,000',
-      'Only foreign transactions'
+      'Listed, confidential, contractual protection, loss, and transactions of interest',
+      'Only foreign transactions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'There are five categories of reportable transactions: (1) listed transactions, (2) confidential transactions, (3) transactions with contractual protection, (4) loss transactions meeting dollar thresholds, and (5) transactions of interest.',
     reference: 'Treas. Reg. §1.6011-4(b)',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Penalties for promoting abusive tax shelters under IRC §6700:',
     options: [
+      'Are criminal only',
       'Do not exist',
       'Equal the lesser of $1,000 or 100% of gross income from the activity (for tax shelters)',
-      'Are criminal only',
-      'Only apply to attorneys'
+      'Only apply to attorneys',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRC §6700 imposes penalties on abusive tax shelter promoters. For tax shelter promotions, the penalty is the lesser of $1,000 or 100% of gross income. For gross valuation overstatements, it\'s 50% of gross income.',
     reference: 'IRC §6700',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A material advisor to a reportable transaction must:',
     options: [
-      'Do nothing special',
       'File Form 8918 with the IRS and maintain list of investors',
+      'Do nothing special',
       'Only advise clients to disclose',
-      'Report to state authorities only'
+      'Report to state authorities only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Material advisors must file Form 8918 disclosing the transaction within the time prescribed and maintain a list of advisees for potential IRS inquiry. Failure carries significant penalties under IRC §6111-6112.',
     reference: 'IRC §6111; IRC §6112',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When a client requests their records, the practitioner:',
     options: [
-      'Can keep them indefinitely as work product',
       'Must generally return client-provided records promptly upon request',
       'Can charge any amount for return',
-      'Never has to return records'
+      'Can keep them indefinitely as work product',
+      'Never has to return records',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Practitioners generally must return client records promptly upon request. While work papers may be withheld depending on state law, client-provided original documents belong to the client.',
     reference: 'Circular 230 §10.28',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A practitioner\'s ability to retain client records for unpaid fees:',
     options: [
-      'Is unlimited',
       'May be limited by state law, and generally doesn\'t apply to client-provided records',
       'Is absolute under federal law',
-      'Only applies to corporations'
+      'Is unlimited',
+      'Only applies to corporations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Retaining liens on work product vary by state law. However, client-provided original documents generally must be returned. Many states prohibit liens that prejudice clients\' interests.',
     reference: 'Circular 230 §10.28; State law',
   },
@@ -181,11 +181,11 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     question: 'Tax return information is protected under:',
     options: [
       'No laws',
-      'IRC §7216 (preparer disclosure) and §6713 (civil penalty) plus privacy laws',
       'Only HIPAA',
-      'Only state laws'
+      'IRC §7216 (preparer disclosure) and §6713 (civil penalty) plus privacy laws',
+      'Only state laws',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRC §7216 makes unauthorized disclosure or use of tax return information a crime (fine up to $1,000 and/or 1 year). IRC §6713 adds civil penalty of $250 per disclosure (up to $10,000/year).',
     reference: 'IRC §7216; IRC §6713',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH40: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A tax preparer may disclose return information to a third party:',
     options: [
-      'Anytime',
       'Only with client\s explicit written consent that meets regulatory requirements',
+      'Anytime',
       'Only to the IRS',
-      'Never under any circumstances'
+      'Never under any circumstances',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Disclosure requires written consent from the taxpayer that meets the requirements of Treas. Reg. §301.7216-3. The consent must be knowing and voluntary and identify the information to be disclosed.',
     reference: 'Treas. Reg. §301.7216-3',
   },

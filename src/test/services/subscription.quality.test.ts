@@ -11,41 +11,41 @@
 import { describe, it, expect } from 'vitest';
 import { SUBSCRIPTION_PLANS, IS_BETA_PERIOD, type SubscriptionTier } from '../../services/subscription';
 
-describe('Subscription Plans - Beta Period', () => {
+describe('Subscription Plans - Launch State', () => {
   // Document current state
-  it('confirms we are in beta period', () => {
+  it('confirms we are NOT in beta period (beta has ended)', () => {
     // This test will fail when beta ends, reminding us to update tests
-    expect(IS_BETA_PERIOD).toBe(true);
+    expect(IS_BETA_PERIOD).toBe(false);
   });
 
-  describe('Free tier during beta (all features unlocked)', () => {
+  describe('Free tier (14-day trial with full access)', () => {
     const freeLimits = SUBSCRIPTION_PLANS.free.limits;
 
-    it('has unlimited questions during beta', () => {
+    it('has unlimited questions during trial', () => {
       expect(freeLimits.questionsPerDay).toBe(Infinity);
     });
 
-    it('has unlimited AI tutor messages during beta', () => {
+    it('has unlimited AI tutor messages during trial', () => {
       expect(freeLimits.aiTutorMessages).toBe(Infinity);
     });
 
-    it('includes TBS access during beta', () => {
+    it('includes TBS access during trial', () => {
       expect(freeLimits.tbsAccess).toBe(true);
     });
 
-    it('includes offline mode during beta', () => {
+    it('includes offline mode during trial', () => {
       expect(freeLimits.offlineMode).toBe(true);
     });
 
-    it('includes progress analytics during beta', () => {
+    it('includes progress analytics during trial', () => {
       expect(freeLimits.progressAnalytics).toBe(true);
     });
 
-    it('includes study plans during beta', () => {
+    it('includes study plans during trial', () => {
       expect(freeLimits.studyPlans).toBe(true);
     });
 
-    it('has unlimited exam sections during beta', () => {
+    it('has unlimited exam sections during trial', () => {
       expect(freeLimits.examSections).toBe('unlimited');
     });
   });
@@ -115,11 +115,9 @@ describe('Pricing Structure', () => {
     expect(SUBSCRIPTION_PLANS.monthly.price).toBeLessThan(50);
   });
 
-  it('quarterly tier saves money vs monthly', () => {
-    const monthlyFor3 = SUBSCRIPTION_PLANS.monthly.price * 3;
-    const quarterly = SUBSCRIPTION_PLANS.quarterly.price;
-    
-    expect(quarterly).toBeLessThan(monthlyFor3);
+  it('quarterly tier is legacy plan (no longer offered)', () => {
+    expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(0);
+    expect(SUBSCRIPTION_PLANS.quarterly.interval).toBe('quarter');
   });
 
   it('annual tier saves money vs monthly', () => {
@@ -129,8 +127,9 @@ describe('Pricing Structure', () => {
     expect(annual).toBeLessThan(monthlyFor12);
   });
 
-  it('lifetime tier exists and is one-time payment', () => {
-    expect(SUBSCRIPTION_PLANS.lifetime.price).toBeGreaterThan(0);
+  it('lifetime tier is legacy plan (no longer offered)', () => {
+    // Lifetime tier is a legacy plan - price is 0, no longer offered for purchase
+    expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(0);
     expect(SUBSCRIPTION_PLANS.lifetime.interval).toBe('once');
   });
 });
@@ -148,9 +147,9 @@ describe('Plan Features Array', () => {
     expect(annualFeatures).toMatch(/save|%/i);
   });
 
-  it('lifetime plan mentions one-time or forever', () => {
+  it('lifetime plan mentions legacy status', () => {
     const lifetimeFeatures = SUBSCRIPTION_PLANS.lifetime.features.join(' ').toLowerCase();
-    expect(lifetimeFeatures).toMatch(/forever|one-time|lifetime/i);
+    expect(lifetimeFeatures).toMatch(/legacy|no longer/i);
   });
 
   it('beta free tier mentions all features unlocked', () => {

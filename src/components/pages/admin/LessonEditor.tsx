@@ -258,7 +258,7 @@ const LessonEditor = () => {
                 <span className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium rounded">
                   {viewingLesson.section}
                 </span>
-                <span className="text-sm text-slate-600 flex items-center gap-1">
+                <span className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Clock className="w-4 h-4" />
                   {viewingLesson.duration || 15} min
                 </span>
@@ -290,7 +290,7 @@ const LessonEditor = () => {
                     {viewingLesson.content.sections.slice(0, 5).map((section: LessonContentSection, idx: number) => (
                       <div key={idx} className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-medium text-slate-600 uppercase">{section.type}</span>
+                          <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">{section.type}</span>
                           {section.title && (
                             <span className="text-sm font-medium text-slate-900 dark:text-white">{section.title}</span>
                           )}
@@ -303,7 +303,7 @@ const LessonEditor = () => {
                       </div>
                     ))}
                     {viewingLesson.content.sections.length > 5 && (
-                      <p className="text-sm text-slate-600 text-center">
+                      <p className="text-sm text-slate-500 dark:text-slate-400 text-center">
                         + {viewingLesson.content.sections.length - 5} more sections
                       </p>
                     )}
@@ -312,7 +312,7 @@ const LessonEditor = () => {
               )}
 
               <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-xs text-slate-600">ID: {viewingLesson.id}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">ID: {viewingLesson.id}</p>
               </div>
             </div>
           </div>

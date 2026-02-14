@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Right to Be Informed means taxpayers have the right to:',
     options: [
-      'Know all IRS employee names',
       'Know what they need to do to comply and clear explanations of the law',
       'Access any taxpayer\'s records',
-      'Skip filing requirements'
+      'Know all IRS employee names',
+      'Skip filing requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'This right ensures taxpayers know what they need to do to comply with tax laws and are entitled to clear explanations of the laws, IRS procedures, and any decisions about their accounts.',
     reference: 'IRC §7803(a)(3)',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Right to Quality Service includes:',
     options: [
-      'Instant response to all inquiries',
       'Prompt, courteous, and professional assistance and speaking to a supervisor about inadequate service',
       'Free tax preparation',
-      'Tax advice from the IRS'
+      'Instant response to all inquiries',
+      'Tax advice from the IRS',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Taxpayers have the right to receive prompt, courteous, and professional assistance and to speak to a supervisor about inadequate service.',
     reference: 'IRC §7803(a)(3)',
   },
@@ -80,10 +80,10 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Right to Pay No More Than the Correct Amount means:',
     options: [
-      'Taxpayers never pay penalties',
-      'Taxpayers are entitled to pay only the amount of tax legally due, including interest and penalties',
       'Taxpayers choose what to pay',
-      'The IRS cannot collect more than assessed'
+      'Taxpayers are entitled to pay only the amount of tax legally due, including interest and penalties',
+      'Taxpayers never pay penalties',
+      'The IRS cannot collect more than assessed',
     ],
     correctAnswer: 1,
     explanation: 'This right means taxpayers have the right to pay only the amount of tax legally due, including interest and penalties, and to have the IRS apply all payments properly.',
@@ -101,11 +101,11 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     question: 'The Right to Challenge the IRS\'s Position includes:',
     options: [
       'Only accepting IRS decisions',
-      'Raising objections and providing documentation in response to IRS proposed actions',
       'Ignoring IRS notices',
-      'Filing frivolous returns'
+      'Raising objections and providing documentation in response to IRS proposed actions',
+      'Filing frivolous returns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Taxpayers have the right to raise objections and provide additional documentation in response to IRS actions or proposed actions.',
     reference: 'IRC §7803(a)(3)',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Right to Appeal means:',
     options: [
+      'Appeals are optional for the IRS',
       'Only court appeals exist',
       'Taxpayers are entitled to a fair and impartial administrative appeal of most IRS decisions',
-      'Appeals are optional for the IRS',
-      'Only criminal cases may be appealed'
+      'Only criminal cases may be appealed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Taxpayers have the right to a fair and impartial administrative appeal of most IRS decisions, including many penalties, and to receive a written response regarding the Appeals decision.',
     reference: 'IRC §7803(a)(3)',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Right to Finality means taxpayers have the right to know:',
     options: [
-      'Cases never end',
       'The maximum amount of time to challenge an IRS position and the maximum time the IRS has to audit',
+      'Cases never end',
       'When refunds will arrive',
-      'Their neighbor\'s tax status'
+      'Their neighbor\'s tax status',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'This right ensures taxpayers know the maximum time they have to challenge an IRS position and the maximum time the IRS can audit a particular tax year or collect a debt.',
     reference: 'IRC §7803(a)(3)',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH35: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Right to a Fair and Just Tax System includes:',
     options: [
-      'Flat taxes for everyone',
       'Expecting consideration of facts and circumstances that might affect underlying liabilities or ability to pay',
+      'Flat taxes for everyone',
       'No enforcement actions',
-      'Automatic refunds'
+      'Automatic refunds',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Taxpayers have the right to expect the tax system to consider facts and circumstances that might affect their underlying liabilities, ability to pay, or ability to provide information timely.',
     reference: 'IRC §7803(a)(3)',
   },

@@ -183,6 +183,32 @@ vi.mock('../providers/CourseProvider', () => ({
   CourseProvider: ({ children }) => children,
 }));
 
+// Mock AuthProvider for components that use useAuth hook
+vi.mock('../providers/AuthProvider', () => ({
+  useAuth: () => ({
+    user: null,
+    loading: false,
+    error: null,
+    signIn: vi.fn(),
+    signUp: vi.fn(),
+    signOut: vi.fn(),
+    resetPassword: vi.fn(),
+  }),
+  AuthProvider: ({ children }) => children,
+}));
+
+// Also mock the re-exported hook from hooks/useAuth
+vi.mock('../hooks/useAuth', () => ({
+  useAuth: () => ({
+    user: null,
+    loading: false,
+    error: null,
+    signIn: vi.fn(),
+    signUp: vi.fn(),
+    signOut: vi.fn(),
+    resetPassword: vi.fn(),
+  }),
+}));
+
 // Suppress console errors in tests (optional)
-// vi.spyOn(console, 'error').mockImplementation(() => {});// Suppress console errors in tests (optional)
 // vi.spyOn(console, 'error').mockImplementation(() => {});

@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The general statute of limitations for IRS assessment is:',
     options: [
-      '1 year from filing',
-      '3 years from filing or the due date, whichever is later',
       '5 years',
-      '10 years from due date'
+      '3 years from filing or the due date, whichever is later',
+      '1 year from filing',
+      '10 years from due date',
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §6501(a), taxes must generally be assessed within 3 years after the return was filed. If filed early, the period runs from the due date.',
@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The statute of limitations is extended to 6 years when:',
     options: [
+      'Any deduction is overstated',
       'The taxpayer files late',
       'There is a substantial omission of income (more than 25% of gross income)',
-      'Any deduction is overstated',
-      'The taxpayer requests an extension'
+      'The taxpayer requests an extension',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §6501(e), the 6-year statute applies when there is an omission of gross income exceeding 25% of the gross income stated on the return.',
     reference: 'IRC §6501(e)',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'There is no statute of limitations for assessment when:',
     options: [
+      'The taxpayer is audited',
       'The return is filed late',
       'A false or fraudulent return is filed with intent to evade tax, or no return is filed',
-      'The taxpayer is audited',
-      'An extension was filed'
+      'An extension was filed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §6501(c), there is no time limit for assessment if (1) a false/fraudulent return was filed with intent to evade, (2) willful attempt to evade tax, or (3) no return was filed.',
     reference: 'IRC §6501(c)',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 872 is used to:',
     options: [
-      'Claim a refund',
       'Extend the statute of limitations on assessment by mutual consent',
+      'Claim a refund',
       'Request penalty abatement',
-      'File an appeal'
+      'File an appeal',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 872 (Consent to Extend Time to Assess Tax) allows the IRS and taxpayer to agree to extend the assessment statute. This may benefit both parties by allowing more time for audit resolution.',
     reference: 'IRC §6501(c)(4)',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 872-A differs from Form 872 in that:',
     options: [
-      'It extends for a fixed period',
       'It extends indefinitely until terminated by either party',
       'It can only be signed by the IRS',
-      'It does not require taxpayer signature'
+      'It extends for a fixed period',
+      'It does not require taxpayer signature',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 872-A is an open-ended consent that extends the assessment period indefinitely until terminated by either party (using Form 872-T) or until other triggering events occur.',
     reference: 'IRC §6501(c)(4)',
   },
@@ -160,10 +160,10 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The statute of limitations for claiming a refund is:',
     options: [
-      '2 years from due date',
-      '3 years from filing or 2 years from payment, whichever is later',
       '6 years',
-      '1 year from payment'
+      '3 years from filing or 2 years from payment, whichever is later',
+      '2 years from due date',
+      '1 year from payment',
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §6511, a refund claim must be filed within 3 years from filing the return OR 2 years from the date of payment, whichever is later.',
@@ -181,11 +181,11 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     question: 'Regarding the lookback period for refunds:',
     options: [
       'All prior payments can be recovered',
-      'Refunds are limited to payments made within the lookback period',
       'There is no limitation',
-      'Only current year payments count'
+      'Refunds are limited to payments made within the lookback period',
+      'Only current year payments count',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §6511(b)(2), the refund is limited to payments made within the applicable lookback period. If the claim is filed more than 3 years after the return, only payments in the prior 2 years are recoverable.',
     reference: 'IRC §6511(b)(2)',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The statute of limitations for criminal tax prosecution is generally:',
     options: [
-      '3 years from filing',
       '6 years from the commission of the offense',
       '10 years',
-      'No limitation'
+      '3 years from filing',
+      'No limitation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §6531, most criminal tax offenses have a 6-year statute of limitations from the commission of the offense (e.g., from when the false return was filed).',
     reference: 'IRC §6531',
   },

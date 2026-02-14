@@ -1,0 +1,29 @@
+Welcome to Pass CISA <break time='0.5s' /> This video covers Backup Strategies and Recovery <break time='0.3s' /> fundamental controls for data protection and business continuity.
+
+<break time='1.0s' />
+
+Backup strategies determine what data is copied <break time='0.3s' /> how often <break time='0.3s' /> and where it's stored. The right strategy balances recovery needs against storage costs and backup windows.
+
+<break time='1.0s' />
+
+The three main backup types are <break time='0.3s' /> Full backups that copy all data <break time='0.3s' /> Incremental backups that copy only changes since the last backup <break time='0.3s' /> And differential backups that copy all changes since the last full backup.
+
+<break time='0.8s' />
+
+Full backups are simplest to restore but take the longest to create <break time='0.3s' /> Incremental backups are fastest but require all incrementals for recovery <break time='0.3s' /> Differential backups balance speed and simplicity.
+
+<break time='1.0s' />
+
+Key backup considerations include <break time='0.3s' /> Off-site storage to protect against facility disasters <break time='0.3s' /> Encryption of backup media <break time='0.3s' /> Retention periods aligned with business and regulatory needs <break time='0.3s' /> And regular testing of restore procedures.
+
+<break time='0.8s' />
+
+The three two one rule is a best practice <break time='0.3s' /> Keep three copies of data <break time='0.3s' /> on two different media types <break time='0.3s' /> with one copy off-site.
+
+<break time='0.8s' />
+
+For auditors <break time='0.3s' /> verify that backup procedures are documented <break time='0.3s' /> that backups complete successfully <break time='0.3s' /> that restores are tested regularly <break time='0.3s' /> and that recovery time objectives can be met.
+
+<break time='0.8s' />
+
+That's backup strategies <break time='0.3s' /> full versus incremental versus differential <break time='0.3s' /> off-site storage <break time='0.3s' /> and tested recovery. Good luck on exam day!

@@ -27,6 +27,8 @@ import {
   RefreshCw,
   Calendar,
   RotateCcw,
+  PenTool,
+  Briefcase,
 } from 'lucide-react';
 import { Button } from './common/Button';
 import { Card } from './common/Card';
@@ -38,6 +40,7 @@ import { DailyActivity, UserStudyState } from '../services/dailyPlanService';
 import { 
   getOrCreateTodaysPlan, 
   markActivityCompleted,
+  markActivityStarted,
   PersistedDailyPlan,
 } from '../services/dailyPlanPersistence';
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
@@ -105,8 +108,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     setError(null);
     
     try {
-      // Get topic performance data for current section
-      const section = userProfile?.examSection || undefined;
+      // Get topic performance data for current section - use course-aware section
+      const section = currentSection; // Already course-aware from getCurrentSection
       const topicStats = getTopicPerformance ? await getTopicPerformance(section) : [];
       
       // CRITICAL: Fetch actual lesson progress from Firestore subcollection
@@ -137,14 +140,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         }
       }
       
-      // Build user study state - use section from above
+      // Build user study state - use course-aware section
       const [tbsStats, questionsDue] = await Promise.all([
-          getTBSHistory(user.uid, section || 'FAR'),
-          getDueQuestions(user.uid, section || 'FAR')
+          getTBSHistory(user.uid, section),
+          getDueQuestions(user.uid, section)
       ]);
 
       const studyState: UserStudyState = {
-        section: section || 'FAR',
+        section,
         examDate: examDateStr,
         dailyGoal: userProfile.dailyGoal || 50,
         topicStats: topicStats.map((t: any) => ({
@@ -164,6 +167,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         // NEW: Enable curriculum-aware learning - only quiz on covered topics
         enableCurriculumFilter: userProfile.enableCurriculumFilter ?? true, // Default to enabled
         enablePreviewMode: userProfile.enablePreviewMode ?? false, // Optional 10% lookahead
+        // Phase 4: Study day preferences (e.g., [1,2,3,4,5] = weekdays only)
+        studyDayPreferences: userProfile.studyDayPreferences,
       };
       
       // Use the persistence layer to get/create today's plan
@@ -215,9 +220,17 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // If returning from dailyplan activity AND it was marked completed
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
+      // Find the activity in the plan to get metadata for duration tracking
+      const matchedActivity = plan?.activities.find(a => a.id === activityId);
       // Mark the activity as complete - pass section for correct cache key
       const section = plan?.section || currentSection;
-      markActivityCompleted(user.uid, activityId, section).then(() => {
+      markActivityCompleted(
+        user.uid,
+        activityId,
+        section,
+        matchedActivity?.estimatedMinutes,
+        matchedActivity?.type
+      ).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);
           updated.add(activityId);
@@ -257,6 +270,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // Start a daily plan session so back buttons return here
     startDailyPlanSession(activity.id, activity.title);
     
+    // Record start time for duration tracking
+    markActivityStarted(activity.id);
+    
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
     
@@ -276,7 +292,26 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
         break;
       case 'flashcards':
-        navigate(`${getCourseFlashcardPath(courseId)}?${fromParam}`);
+        // Pass cardCount if specified, and mode from params
+        const flashcardParams = new URLSearchParams();
+        flashcardParams.set('from', 'dailyplan');
+        flashcardParams.set('activityId', activity.id);
+        if (activity.params?.mode) flashcardParams.set('mode', activity.params.mode);
+        if (activity.params?.cardCount) flashcardParams.set('count', String(activity.params.cardCount));
+        if (activity.params?.section) flashcardParams.set('section', activity.params.section);
+        navigate(`${getCourseFlashcardPath(courseId)}?${flashcardParams.toString()}`);
+        break;
+      case 'essay':
+        // CMA Essay Simulator
+        navigate(`/cma/essay?${fromParam}`);
+        break;
+      case 'cbq':
+        // CMA CBQ (Case-Based Questions) Simulator - Sept 2026+
+        navigate(`/cma/cbq?${fromParam}`);
+        break;
+      case 'case_study':
+        // CFP Case Study - navigate to practice with case study mode
+        navigate(`/practice?mode=case_study&section=${activity.params.section || ''}&${fromParam}`);
         break;
       default:
         navigate(getCourseHomePath(courseId));
@@ -293,6 +328,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       case 'mcq': return Target;
       case 'tbs': return FileSpreadsheet;
       case 'flashcards': return Brain;
+      case 'essay': return PenTool;
+      case 'cbq': return FileSpreadsheet;
+      case 'case_study': return Briefcase;
       default: return Sparkles;
     }
   };
@@ -304,6 +342,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
       case 'tbs': return 'text-teal-500 bg-teal-100 dark:bg-teal-900/30';
       case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
+      case 'essay': return 'text-purple-500 bg-purple-100 dark:bg-purple-900/30';
+      case 'cbq': return 'text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30';
+      case 'case_study': return 'text-indigo-500 bg-indigo-100 dark:bg-indigo-900/30';
       default: return 'text-slate-600 bg-slate-100 dark:bg-slate-800';
     }
   };

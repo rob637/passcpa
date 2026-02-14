@@ -436,7 +436,7 @@ describe('ciaAnalytics', () => {
 
     it('deserializes JSON back to analytics', () => {
       const json = serializeAnalytics(analytics);
-      const restored = deserializeAnalytics(json);
+      const restored = deserializeAnalytics<CIAAnalytics>(json);
       expect(restored.userId).toBe(analytics.userId);
     });
 
@@ -450,7 +450,7 @@ describe('ciaAnalytics', () => {
         attemptedAt: new Date(),
       });
       const json = serializeAnalytics(updated);
-      const restored = deserializeAnalytics(json);
+      const restored = deserializeAnalytics<CIAAnalytics>(json);
       expect(restored.totalQuestionsAttempted).toBe(1);
       expect(restored.totalQuestionsCorrect).toBe(1);
     });

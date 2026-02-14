@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 2848 is used to:',
     options: [
-      'Request a refund',
-      'Grant power of attorney and authorize representation before the IRS',
       'File an extension',
-      'Request penalty abatement'
+      'Grant power of attorney and authorize representation before the IRS',
+      'Request a refund',
+      'Request penalty abatement',
     ],
     correctAnswer: 1,
     explanation: 'Form 2848 (Power of Attorney and Declaration of Representative) authorizes individuals to represent a taxpayer before the IRS. It grants authority to receive confidential tax information and act on behalf of the taxpayer.',
@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'On Form 2848, what must be specified?',
     options: [
+      'Only the representative\'s name',
       'Only the taxpayer\'s name',
       'The specific tax matters (type of tax, form, and years/periods)',
-      'Only the representative\'s name',
-      'The taxpayer\'s bank information'
+      'The taxpayer\'s bank information',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 2848 must specify the type of tax (income, employment, etc.), the tax form number (1040, 941, etc.), and the years or periods for which authority is granted.',
     reference: 'IRS Form 2848 Instructions',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Centralized Authorization File (CAF) number:',
     options: [
+      'Is assigned to each tax return',
       'Is the taxpayer\'s Social Security number',
       'Is a unique number assigned to tax practitioners for tracking authorizations',
-      'Is assigned to each tax return',
-      'Is the same as the PTIN'
+      'Is the same as the PTIN',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The CAF number is assigned to practitioners who file Forms 2848 or 8821. It allows the IRS to track authorization relationships and automatically send copies of taxpayer correspondence to authorized representatives.',
     reference: 'IRS CAF System',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The representative designation code "e" on Form 2848 identifies:',
     options: [
-      'An attorney',
       'An Enrolled Agent',
+      'An attorney',
       'A CPA',
-      'An Enrolled Actuary'
+      'An Enrolled Actuary',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 2848 uses letter codes to identify representative designations: a = Attorney, b = CPA, c = Enrolled Agent, d = Officer (for corporate matters), e = Full-Time Employee, etc.',
     reference: 'IRS Form 2848 Instructions',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A representative with a valid POA may NOT:',
     options: [
-      'Receive confidential tax information',
       'Sign a return on behalf of the taxpayer (without specific authorization)',
       'Attend an audit on behalf of the taxpayer',
-      'Negotiate with IRS employees'
+      'Receive confidential tax information',
+      'Negotiate with IRS employees',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A standard Form 2848 does not authorize signing returns. Specific written authorization (on the POA or separately) is required for a representative to sign returns or execute waivers.',
     reference: 'IRS Form 2848, Line 5',
   },
@@ -160,10 +160,10 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The "Third Party Designee" checkbox on Form 1040:',
     options: [
-      'Is the same as a full POA',
-      'Authorizes the IRS to discuss the return with the named person for one year',
       'Permanently authorizes representation',
-      'Grants signing authority'
+      'Authorizes the IRS to discuss the return with the named person for one year',
+      'Is the same as a full POA',
+      'Grants signing authority',
     ],
     correctAnswer: 1,
     explanation: 'The Third Party Designee checkbox authorizes the IRS to discuss the specific return with the named person. The authorization is limited and expires one year from the original due date.',
@@ -181,11 +181,11 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     question: 'Form 2848 may be submitted to the IRS:',
     options: [
       'Only by mail',
-      'By mail, fax, or online through Tax Pro Account',
       'Only in person at a TAC',
-      'Only by the taxpayer directly'
+      'By mail, fax, or online through Tax Pro Account',
+      'Only by the taxpayer directly',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 2848 may be submitted by mail, fax, or online. Tax professionals with Tax Pro Accounts can submit authorizations online, and taxpayers with IRS accounts can approve them digitally.',
     reference: 'IRS Tax Pro Account',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer may authorize:',
     options: [
-      'Only one representative at a time',
       'Multiple representatives on the same Form 2848',
       'Only representatives from the same firm',
-      'A maximum of two representatives'
+      'Only one representative at a time',
+      'A maximum of two representatives',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A taxpayer may authorize multiple representatives on the same Form 2848 and may also file additional Forms 2848 for other representatives without necessarily revoking prior authorizations.',
     reference: 'IRS Form 2848 Instructions',
   },

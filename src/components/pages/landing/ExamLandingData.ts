@@ -1,7 +1,11 @@
 /**
  * Centralized data configuration for all exam landing pages
  * Each exam follows the same uniform structure with exam-specific content
+ * 
+ * Content stats are imported from contentStats.ts — the single source of truth.
  */
+
+import { COURSE_DISPLAY_STATS } from '../../../config/contentStats';
 
 import { 
   Brain,
@@ -46,7 +50,7 @@ export interface CompetitorRow {
   voraprep: boolean | string;
   competitor1: boolean | string;
   competitor2: boolean | string;
-  competitor3: boolean | string;
+  competitor3?: boolean | string;
   highlight?: boolean;
 }
 
@@ -66,6 +70,7 @@ export interface ExamLandingConfig {
   // Stats (shown in hero)
   questionCount: string;
   lessonCount?: string;
+  flashcardCount?: string;
   passRate?: string;
   
   // URLs
@@ -78,7 +83,7 @@ export interface ExamLandingConfig {
   
   // Competitor comparison (optional - some exams may not have this yet)
   competitors?: {
-    names: [string, string, string];
+    names: string[];  // 2 or 3 competitors
     data: CompetitorRow[];
   };
   
@@ -87,6 +92,14 @@ export interface ExamLandingConfig {
     type: 'warning' | 'info';
     text: string;
   }>;
+  
+  // Pricing (used on landing page)
+  pricing: {
+    annual: number;           // Regular annual price
+    monthly: number;          // Regular monthly price
+    founderAnnual: number;    // Founder annual price (~40-44% off)
+    founderMonthly: number;   // Founder monthly price (~40-44% off)
+  };
   
   // Footer links specific to this exam
   examSpecificLinks?: Array<{
@@ -105,9 +118,9 @@ export interface ExamLandingConfig {
 export const SHARED_WHY_VORAPREP = [
   {
     icon: DollarSign,
-    title: '100% Free (Beta)',
-    description: 'Full access to all features during our public beta. No credit card required.',
-    stat: '$0/yr',
+    title: 'Affordable Pricing',
+    description: 'Founding member rates save over 40%. Quality prep at a fraction of what others charge.',
+    stat: 'Save 40%+',
   },
   {
     icon: Brain,
@@ -156,27 +169,35 @@ export const CPA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-blue-600',
   gradientTo: 'to-blue-700',
   
-  questionCount: '3,300+',
-  lessonCount: '950+',
+  questionCount: COURSE_DISPLAY_STATS.cpa.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cpa.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cpa.flashcards,
   passRate: '50%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cpa',
   loginPath: '/login?course=cpa',
+  
+  pricing: {
+    annual: 449,
+    monthly: 49,
+    founderAnnual: 249,
+    founderMonthly: 21,
+  },
   
   notices: [
     {
-      type: 'warning',
-      text: 'BEC Deadline: The BEC section is available until June 30, 2026. Plan your exam schedule accordingly.',
+      type: 'info',
+      text: '2026 Blueprint: Starting July 1, 2026, REG and TCP sections will include OBBBA tax law provisions. Our content adapts to your target exam date.',
     },
   ],
   
   examParts: [
-    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '463+', time: '4 hours' },
-    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '425+', time: '4 hours' },
-    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '460+', time: '4 hours' },
-    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '393+', time: '4 hours' },
-    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '388+', time: '4 hours' },
-    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '379+', time: '4 hours' },
+    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '850+', time: '4 hours' },
+    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '800+', time: '4 hours' },
+    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '800+', time: '4 hours' },
+    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '800+', time: '4 hours' },
+    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '800+', time: '4 hours' },
+    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '850+', time: '4 hours' },
   ],
   
   whyBecome: [
@@ -189,7 +210,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
-      { feature: 'Annual Price', voraprep: 'Free (Beta)', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
       { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -220,12 +241,20 @@ export const EA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-emerald-600',
   gradientTo: 'to-teal-600',
   
-  questionCount: '2,100+',
-  lessonCount: '400+',
+  questionCount: COURSE_DISPLAY_STATS.ea.questions,
+  lessonCount: COURSE_DISPLAY_STATS.ea.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.ea.flashcards,
   passRate: '70%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=ea',
   loginPath: '/login?course=ea',
+  
+  pricing: {
+    annual: 249,
+    monthly: 29,
+    founderAnnual: 149,
+    founderMonthly: 12,
+  },
   
   examParts: [
     { part: 'Part 1', title: 'Individuals', topics: ['Filing Requirements', 'Income & Deductions', 'Credits & Adjustments', 'Tax Calculations'], questions: '700+', time: '3.5 hours' },
@@ -243,14 +272,18 @@ export const EA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
-      { feature: 'AI Tutor', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Learning', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
-      { feature: 'Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Price', voraprep: '$149/yr*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
+      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Text-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 SEE Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Practice Questions', voraprep: '2,100+', competitor1: '2,500+', competitor2: '1,800+', competitor3: '2,000+' },
-      { feature: 'Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'No Credit Card', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.ea.questions, competitor1: '2,500+', competitor2: '1,800+', competitor3: '2,000+' },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.ea.flashcards, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.ea.lessons, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
+      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
     ],
   },
   
@@ -272,12 +305,20 @@ export const CMA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-purple-600',
   gradientTo: 'to-indigo-600',
   
-  questionCount: '1,600+',
-  lessonCount: '300+',
+  questionCount: COURSE_DISPLAY_STATS.cma.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cma.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cma.flashcards,
   passRate: '45%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cma',
   loginPath: '/login?course=cma',
+  
+  pricing: {
+    annual: 349,
+    monthly: 39,
+    founderAnnual: 199,
+    founderMonthly: 17,
+  },
   
   examParts: [
     { part: 'Part 1', title: 'Financial Planning, Performance & Analytics', topics: ['External Financial Reporting', 'Planning & Budgeting', 'Performance Management', 'Cost Management', 'Internal Controls', 'Technology & Analytics'], questions: '100 MCQs + 2 Essays', time: '4 hours' },
@@ -294,13 +335,19 @@ export const CMA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
-      { feature: 'AI Tutor', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Learning', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
-      { feature: 'Essay Practice', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
+      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'Both Parts Included', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cma.questions, competitor1: '2,000+', competitor2: '1,500+', competitor3: '2,000+' },
+      { feature: 'Essay Practice', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cma.flashcards, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cma.lessons, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
+      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
     ],
   },
   
@@ -322,12 +369,20 @@ export const CIA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-amber-500',
   gradientTo: 'to-orange-600',
   
-  questionCount: '1,100+',
-  lessonCount: '250+',
+  questionCount: COURSE_DISPLAY_STATS.cia.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cia.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cia.flashcards,
   passRate: '40%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cia',
   loginPath: '/login?course=cia',
+  
+  pricing: {
+    annual: 249,
+    monthly: 29,
+    founderAnnual: 149,
+    founderMonthly: 12,
+  },
   
   examParts: [
     { part: 'Part 1', title: 'Essentials of Internal Auditing', topics: ['Foundations of Internal Auditing', 'Independence & Objectivity', 'Proficiency & Due Care', 'Quality Assurance'], questions: '125 MCQs', time: '2.5 hours' },
@@ -345,12 +400,18 @@ export const CIA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
-      { feature: 'AI Tutor', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Learning', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Price', voraprep: '$149/yr*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
+      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cia.questions, competitor1: '1,500+', competitor2: '1,200+', competitor3: '1,000+' },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cia.flashcards, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cia.lessons, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
+      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
     ],
   },
   
@@ -372,12 +433,20 @@ export const CFP_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-green-500',
   gradientTo: 'to-emerald-600',
   
-  questionCount: '2,100+',
-  lessonCount: '350+',
+  questionCount: COURSE_DISPLAY_STATS.cfp.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cfp.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cfp.flashcards,
   passRate: '67%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cfp',
   loginPath: '/login?course=cfp',
+  
+  pricing: {
+    annual: 349,
+    monthly: 39,
+    founderAnnual: 199,
+    founderMonthly: 17,
+  },
   
   examParts: [
     { part: 'Domain 1', title: 'Professional Conduct & Regulation', topics: ['CFP Board Standards', 'Fiduciary Duty', 'Practice Standards'], questions: '7% of exam', time: '' },
@@ -400,13 +469,19 @@ export const CFP_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
-      { feature: 'AI Tutor', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Adaptive Learning', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
+      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 8 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cfp.questions, competitor1: '2,000+', competitor2: '2,500+', competitor3: '2,000+' },
       { feature: 'Case Studies', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cfp.flashcards, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cfp.lessons, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
+      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
     ],
   },
   
@@ -428,12 +503,20 @@ export const CISA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-cyan-500',
   gradientTo: 'to-blue-600',
   
-  questionCount: '1,100+',
-  lessonCount: '200+',
+  questionCount: COURSE_DISPLAY_STATS.cisa.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cisa.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cisa.flashcards,
   passRate: '50%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cisa',
   loginPath: '/login?course=cisa',
+  
+  pricing: {
+    annual: 349,
+    monthly: 39,
+    founderAnnual: 199,
+    founderMonthly: 17,
+  },
   
   examParts: [
     { part: 'Domain 1', title: 'Information Systems Auditing Process', topics: ['Audit Standards', 'Risk-Based Auditing', 'Audit Planning', 'Evidence Collection'], questions: '18% of exam', time: '' },
@@ -451,15 +534,21 @@ export const CISA_CONFIG: ExamLandingConfig = {
   ],
   
   competitors: {
-    names: ['ISACA', 'Hemang Doshi', 'Self-Study'],
+    names: ['ISACA', 'Hemang Doshi'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$795', competitor2: '$299', competitor3: '$0', highlight: true },
-      { feature: 'AI Tutor', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Adaptive Learning', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: 'Varies' },
-      { feature: 'Practice Questions', voraprep: '1,100+', competitor1: '1,000', competitor2: '500+', competitor3: 'Varies' },
-      { feature: 'Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Structured Learning Path', voraprep: true, competitor1: true, competitor2: true, competitor3: false },
+      { feature: 'Price', voraprep: '$199/yr*', competitor1: '$795', competitor2: '$299', highlight: true },
+      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, highlight: true },
+      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', highlight: true },
+      { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cisa.questions, competitor1: '1,000', competitor2: '500+' },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cisa.flashcards, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cisa.lessons, competitor1: true, competitor2: true },
+      { feature: 'Structured Learning Path', voraprep: true, competitor1: true, competitor2: true },
+      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: false, highlight: true },
+      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, highlight: true },
     ],
   },
   

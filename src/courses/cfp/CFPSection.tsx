@@ -25,26 +25,6 @@ export default function CFPSection() {
     return CFP_SECTIONS.find(s => s.id === sectionId);
   }, [sectionId]);
   
-  // Handle not found
-  if (!section && !loading) {
-    return (
-      <div className="p-8 text-center">
-        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-          Domain Not Found
-        </h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-4">
-          The requested CFP domain doesn't exist.
-        </p>
-        <button 
-          onClick={() => navigate('/cfp')}
-          className="btn-primary"
-        >
-          Back to CFP Dashboard
-        </button>
-      </div>
-    );
-  }
-  
   // Transform blueprint areas
   const blueprintAreas: BlueprintArea[] = useMemo(() => {
     if (!section?.blueprintAreas) return [];
@@ -88,6 +68,26 @@ export default function CFPSection() {
   const handleAreaPractice = useCallback((areaId: string) => {
     navigate(`/practice?course=cfp&section=${sectionId}&area=${areaId}`);
   }, [navigate, sectionId]);
+
+  // Handle not found — AFTER all hooks to satisfy Rules of Hooks
+  if (!section && !loading) {
+    return (
+      <div className="p-8 text-center">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+          Domain Not Found
+        </h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-4">
+          The requested CFP domain doesn't exist.
+        </p>
+        <button 
+          onClick={() => navigate('/cfp')}
+          className="btn-primary"
+        >
+          Back to CFP Dashboard
+        </button>
+      </div>
+    );
+  }
 
   return (
     <SectionTemplate

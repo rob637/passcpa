@@ -3527,7 +3527,7 @@ export const barLessons: Lesson[] = [
   // BAR: ADDITIONAL TECHNICAL ACCOUNTING TOPICS
   // =============================================
   {
-    id: 'BAR-IV-001',
+    id: 'BAR-I-016',
     section: 'BAR',
     title: "Fair Value Measurements (ASC 820)",
     description: "Master the fair value hierarchy and measurement techniques",
@@ -3601,7 +3601,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-002',
+    id: 'BAR-I-017',
     section: 'BAR',
     title: "Segment Reporting (ASC 280)",
     description: "Understand operating segment identification and disclosure",
@@ -3676,7 +3676,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-003',
+    id: 'BAR-I-018',
     section: 'BAR',
     title: "Earnings Per Share: Complex Structures",
     description: "Master EPS with convertibles, options, and contingent shares",
@@ -3751,7 +3751,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-004',
+    id: 'BAR-I-019',
     section: 'BAR',
     title: "Business Combinations (ASC 805)",
     description: "Master acquisition accounting and purchase price allocation",
@@ -3827,7 +3827,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-005',
+    id: 'BAR-I-020',
     section: 'BAR',
     title: "Impairment Testing (ASC 350/360)",
     description: "Understand goodwill and long-lived asset impairment",
@@ -3902,7 +3902,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-006',
+    id: 'BAR-I-021',
     section: 'BAR',
     title: "Foreign Currency Transactions (ASC 830)",
     description: "Master foreign currency remeasurement and translation",
@@ -3976,7 +3976,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-007',
+    id: 'BAR-I-022',
     section: 'BAR',
     title: "Variable Interest Entities (VIEs)",
     description: "Understand VIE identification and consolidation requirements",
@@ -4052,7 +4052,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-008',
+    id: 'BAR-I-023',
     section: 'BAR',
     title: "Stock-Based Compensation (ASC 718)",
     description: "Master accounting for stock options and restricted stock",
@@ -4128,7 +4128,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-IV-009',
+    id: 'BAR-I-024',
     section: 'BAR',
     title: "Financial Statement Analysis Ratios",
     description: "Master key ratios for liquidity, solvency, and profitability",
@@ -4429,7 +4429,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-II-010',
+    id: 'BAR-II-110',
     section: 'BAR',
     title: "Data Analytics Fundamentals",
     description: "Understand data analysis techniques for accountants",
@@ -4499,7 +4499,7 @@ export const barLessons: Lesson[] = [
     }
   },
   {
-    id: 'BAR-II-011',
+    id: 'BAR-II-111',
     section: 'BAR',
     title: "Regression Analysis",
     description: "Understand regression for financial forecasting and analysis",
@@ -4632,6 +4632,411 @@ export const barLessons: Lesson[] = [
             "Must document and prove effectiveness",
             "Discontinue hedge = Follow specific rules",
             "Documentation is critical for hedge accounting"
+          ]
+        }
+      ]
+    }
+  },
+
+  // ==========================================
+  // MANAGERIAL ACCOUNTING & FINANCIAL ANALYSIS
+  // (Migrated from retired BEC section - Dec 2023)
+  // ==========================================
+  {
+    id: 'BAR-VII-001',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-A-1',
+    title: 'Time Value of Money',
+    description: 'Master present value and future value calculations',
+    order: 71,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['Financial Management', 'Time Value of Money'],
+    content: {
+      sections: [
+        {
+          title: 'Core Concept',
+          type: 'text',
+          content: "**A dollar today is worth more than a dollar tomorrow.**\n\n**Why?**\n• Investment opportunity (earning interest)\n• Inflation erodes purchasing power\n• Risk increases with time\n\n**TVM is the foundation of all finance!**"
+        },
+        {
+          title: 'Key Formulas',
+          type: 'table',
+          headers: ['Concept', 'Formula'],
+          rows: [
+            ['Future Value', 'FV = PV × (1 + r)^n'],
+            ['Present Value', 'PV = FV / (1 + r)^n'],
+            ['FV of Annuity', 'FVA = PMT × [(1+r)^n - 1] / r'],
+            ['PV of Annuity', 'PVA = PMT × [1 - (1+r)^-n] / r']
+          ]
+        },
+        {
+          title: 'Ordinary Annuity vs Annuity Due',
+          type: 'text',
+          content: "**Ordinary Annuity:**\n• Payments at END of each period\n• Most common (loan payments, bonds)\n\n**Annuity Due:**\n• Payments at BEGINNING of period\n• Rent, lease payments\n• Worth MORE than ordinary annuity (earlier payments)"
+        },
+        {
+          title: '⚠️ Exam Trap: Annuity Due Adjustment',
+          type: 'warning',
+          content: "**Annuity Due = Ordinary Annuity × (1 + r)**\n\n**Example:** If PV of ordinary annuity = $10,000 and r = 10%\n\nPV of annuity due = $10,000 × 1.10 = **$11,000**\n\n**Annuity due is always LARGER!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "TVM: Money today > money tomorrow",
+            "Present Value discounts future cash flows",
+            "Future Value compounds current amounts",
+            "Annuity due > ordinary annuity (earlier payments)",
+            "Use tables or calculator for complex problems"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-VII-002',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-A-2',
+    title: 'Capital Budgeting Methods',
+    description: 'Evaluate investment decisions using NPV, IRR, and payback',
+    order: 72,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ['Financial Management', 'Capital Budgeting'],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Capital budgeting decisions determine which long-term investments a company makes. Understanding NPV, IRR, and payback is essential for financial decision-making!"
+        },
+        {
+          title: 'Capital Budgeting Methods',
+          type: 'table',
+          headers: ['Method', 'Formula/Approach', 'Decision Rule'],
+          rows: [
+            ['NPV', 'Sum of discounted cash flows - initial investment', 'Accept if NPV > 0'],
+            ['IRR', 'Rate where NPV = 0', 'Accept if IRR > cost of capital'],
+            ['Payback', 'Time to recover initial investment', 'Accept if < target period'],
+            ['Profitability Index', 'PV of cash flows / Initial investment', 'Accept if PI > 1']
+          ]
+        },
+        {
+          title: 'NPV vs IRR Comparison',
+          type: 'text',
+          content: "**NPV Advantages:**\n• Measures dollar value added\n• Assumes reinvestment at cost of capital (more realistic)\n• Works for all cash flow patterns\n\n**IRR Advantages:**\n• Easy to compare (percentage)\n• Doesn't require cost of capital input\n\n**When they conflict: USE NPV!**"
+        },
+        {
+          title: '🧠 Memory Aid: Decision Rules',
+          type: 'callout',
+          content: "**\"POSITIVE is GOOD\":**\n\n• NPV **> 0** = Accept\n• IRR **> Cost of Capital** = Accept\n• PI **> 1** = Accept\n\n**All three say the same thing: VALUE ADDED!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NPV is the preferred method (measures value creation)",
+            "IRR = discount rate where NPV equals zero",
+            "When NPV and IRR conflict, use NPV",
+            "Payback ignores time value (weakness)",
+            "Accept projects with NPV > 0, IRR > cost of capital, PI > 1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-VII-003',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-B-1',
+    title: 'Working Capital Management',
+    description: 'Manage current assets and liabilities effectively',
+    order: 73,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Financial Management', 'Working Capital'],
+    content: {
+      sections: [
+        {
+          title: 'Working Capital Defined',
+          type: 'text',
+          content: "**Working Capital = Current Assets - Current Liabilities**\n\n**Components:**\n• Cash and cash equivalents\n• Accounts receivable\n• Inventory\n• Accounts payable\n• Short-term debt"
+        },
+        {
+          title: 'Cash Conversion Cycle',
+          type: 'table',
+          headers: ['Component', 'Formula'],
+          rows: [
+            ['Days Inventory Outstanding (DIO)', '(Avg Inventory / COGS) × 365'],
+            ['Days Sales Outstanding (DSO)', '(Avg AR / Revenue) × 365'],
+            ['Days Payables Outstanding (DPO)', '(Avg AP / COGS) × 365'],
+            ['Cash Conversion Cycle', 'DIO + DSO - DPO']
+          ]
+        },
+        {
+          title: 'Working Capital Strategies',
+          type: 'text',
+          content: "**Aggressive (Low WC):**\n• Less cash tied up\n• Higher risk of stockouts/illiquidity\n• Lower financing costs\n\n**Conservative (High WC):**\n• More safety cushion\n• Higher carrying costs\n• Lower risk"
+        },
+        {
+          title: '⚠️ Exam Trap: Cash Cycle Interpretation',
+          type: 'warning',
+          content: "**Lower cash conversion cycle = BETTER!**\n\n**To improve (shorten) the cycle:**\n• Collect receivables faster (↓ DSO)\n• Sell inventory faster (↓ DIO)\n• Pay suppliers slower (↑ DPO)\n\n**Negative CCC is possible and GREAT!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Working capital = Current assets - Current liabilities",
+            "Cash conversion cycle = DIO + DSO - DPO",
+            "Lower CCC means faster cash generation",
+            "Balance liquidity needs against carrying costs"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-VII-004',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-C-1',
+    title: 'Cost Behavior and CVP Analysis',
+    description: 'Analyze costs and perform cost-volume-profit analysis',
+    order: 74,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['Managerial Accounting', 'Cost Accounting'],
+    content: {
+      sections: [
+        {
+          title: 'Cost Behavior Patterns',
+          type: 'table',
+          headers: ['Cost Type', 'Total Cost', 'Per-Unit Cost'],
+          rows: [
+            ['Variable', 'Changes with activity', 'Constant per unit'],
+            ['Fixed', 'Constant in total', 'Decreases per unit'],
+            ['Mixed', 'Has both components', 'Varies']
+          ]
+        },
+        {
+          title: 'CVP Analysis Formulas',
+          type: 'table',
+          headers: ['Concept', 'Formula'],
+          rows: [
+            ['Contribution Margin', 'Sales - Variable Costs'],
+            ['CM Ratio', 'CM / Sales'],
+            ['Break-even (units)', 'Fixed Costs / CM per unit'],
+            ['Break-even (dollars)', 'Fixed Costs / CM Ratio'],
+            ['Target Profit (units)', '(Fixed Costs + Target Profit) / CM per unit']
+          ]
+        },
+        {
+          title: 'Example Calculation',
+          type: 'text',
+          content: "**Given:**\n• Selling price: $50/unit\n• Variable cost: $30/unit\n• Fixed costs: $100,000\n\n**Contribution Margin = $50 - $30 = $20/unit**\n**CM Ratio = $20 / $50 = 40%**\n**Break-even = $100,000 / $20 = 5,000 units**"
+        },
+        {
+          title: '⚠️ Exam Trap: Operating Leverage',
+          type: 'warning',
+          content: "**High fixed costs = High operating leverage**\n\n**Implications:**\n• Greater profit swing with sales changes\n• More risk but more reward\n• Small sales increase → Big profit increase\n\n**DOL = Contribution Margin / Operating Income**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Variable costs change in total, fixed in per-unit",
+            "Contribution margin = Sales - Variable costs",
+            "Break-even: where CM = Fixed costs",
+            "Higher fixed costs = higher operating leverage"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-VII-005',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-C-2',
+    title: 'Budgeting and Variance Analysis',
+    description: 'Create budgets and analyze performance variances',
+    order: 75,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Managerial Accounting', 'Budgeting'],
+    content: {
+      sections: [
+        {
+          title: 'Budget Types',
+          type: 'table',
+          headers: ['Budget Type', 'Description'],
+          rows: [
+            ['Static', 'Based on one activity level'],
+            ['Flexible', 'Adjusts for actual activity level'],
+            ['Rolling', 'Continuously updated (add month as one ends)'],
+            ['Zero-based', 'Justify all expenses from scratch'],
+            ['Activity-based', 'Based on cost drivers']
+          ]
+        },
+        {
+          title: 'Variance Analysis Framework',
+          type: 'text',
+          content: "**Static Budget Variance = Actual - Static Budget**\n\n**Can be broken into:**\n• **Sales Volume Variance** - Due to activity level difference\n• **Flexible Budget Variance** - Due to prices and efficiency\n\n**Favorable (F) = better than expected**\n**Unfavorable (U) = worse than expected**"
+        },
+        {
+          title: 'Material Variances',
+          type: 'table',
+          headers: ['Variance', 'Formula'],
+          rows: [
+            ['Price Variance', '(Actual Price - Std Price) × Actual Qty'],
+            ['Quantity Variance', '(Actual Qty - Std Qty) × Std Price']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Variance Responsibility',
+          type: 'callout',
+          content: "**\"Price = Purchasing, Quantity = Production\"**\n\n**Material price variance** → Purchasing department\n**Material quantity variance** → Production department\n\n**Labor rate variance** → HR/Management\n**Labor efficiency variance** → Production"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Flexible budgets adjust for actual activity",
+            "Variances: Favorable (better) vs Unfavorable (worse)",
+            "Price variances = purchasing responsibility",
+            "Quantity/efficiency variances = production responsibility"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-VII-006',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-C-3',
+    title: 'Process Costing and Job Order Costing',
+    description: 'Apply appropriate costing methods to different production environments',
+    order: 76,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Cost Accounting', 'Process Costing', 'Job Costing'],
+    content: {
+      sections: [
+        {
+          title: 'Job Order vs Process Costing',
+          type: 'table',
+          headers: ['Feature', 'Job Order', 'Process'],
+          rows: [
+            ['Products', 'Unique, custom', 'Homogeneous, mass'],
+            ['Cost tracking', 'By job/batch', 'By department/process'],
+            ['Examples', 'Custom furniture, consulting', 'Oil refining, chemicals'],
+            ['WIP accounts', 'One per job', 'One per department']
+          ]
+        },
+        {
+          title: 'Job Order Costing Flow',
+          type: 'text',
+          content: "**Cost flow through accounts:**\n\n1. **Raw Materials** → Materials issued to jobs\n2. **Work in Process** → Accumulate DM, DL, OH per job\n3. **Finished Goods** → Job completed\n4. **COGS** → Job delivered to customer\n\n**Each job has its own job cost sheet!**"
+        },
+        {
+          title: 'Process Costing: Equivalent Units',
+          type: 'text',
+          content: "**Key concept for partially complete units:**\n\n**Equivalent Units = Physical units × % Complete**\n\n**Example:**\n• 1,000 units 40% complete\n• = 400 equivalent units\n\n**Used to allocate costs fairly**"
+        },
+        {
+          title: '🧠 Memory Aid: FIFO vs Weighted Average',
+          type: 'callout',
+          content: "**Two methods for process costing:**\n\n**Weighted Average:**\n• Blends beginning WIP with current costs\n• Simpler calculation\n• \"What's our average cost?\"\n\n**FIFO:**\n• Keeps periods separate\n• More accurate for performance evaluation\n• \"What did THIS period cost?\""
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Job order: Unique products, costs tracked by job",
+            "Process: Homogeneous products, costs by department",
+            "Equivalent units: Physical units × % complete",
+            "Weighted average: Blends costs (simpler)",
+            "FIFO: Keeps periods separate (more accurate)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-VII-007',
+    section: 'BAR',
+    blueprintArea: 'BAR-VII',
+    blueprintTopic: 'BAR-VII-D-1',
+    title: 'Ratio Analysis and Financial Metrics',
+    description: 'Calculate and interpret key financial ratios',
+    order: 77,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['Financial Analysis', 'Ratios', 'Performance Metrics'],
+    content: {
+      sections: [
+        {
+          title: 'Liquidity Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Measures'],
+          rows: [
+            ['Current Ratio', 'Current Assets / Current Liabilities', 'Short-term solvency'],
+            ['Quick Ratio', '(Cash + AR + Securities) / CL', 'Immediate liquidity'],
+            ['Cash Ratio', 'Cash / Current Liabilities', 'Most conservative']
+          ]
+        },
+        {
+          title: 'Profitability Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Measures'],
+          rows: [
+            ['Gross Margin', 'Gross Profit / Revenue', 'Production efficiency'],
+            ['Net Profit Margin', 'Net Income / Revenue', 'Overall profitability'],
+            ['ROA', 'Net Income / Total Assets', 'Asset utilization'],
+            ['ROE', 'Net Income / Equity', 'Return to shareholders']
+          ]
+        },
+        {
+          title: 'DuPont Analysis',
+          type: 'text',
+          content: "**Breaking down ROE:**\n\n**ROE = Net Margin × Asset Turnover × Equity Multiplier**\n\n• Net Margin = NI / Sales (profitability)\n• Asset Turnover = Sales / Assets (efficiency)\n• Equity Multiplier = Assets / Equity (leverage)\n\n**Identifies DRIVERS of return on equity**"
+        },
+        {
+          title: '🧠 Memory Aid: DuPont Formula',
+          type: 'callout',
+          content: "**\"PAL\" drives ROE:**\n\n**P**rofitability (Net Margin)\n**A**ctivity (Asset Turnover)\n**L**everage (Equity Multiplier)\n\n**Your PAL helps you earn returns!**\n\n**ROE = (NI/Sales) × (Sales/Assets) × (Assets/Equity)**"
+        },
+        {
+          title: 'Leverage Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Meaning'],
+          rows: [
+            ['Debt to Equity', 'Total Debt / Equity', 'Financial leverage'],
+            ['Debt to Assets', 'Total Debt / Total Assets', '% financed by debt'],
+            ['Times Interest Earned', 'EBIT / Interest Expense', 'Ability to pay interest']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: High vs Low Ratios',
+          type: 'warning',
+          content: "**Not all \"high\" is good!**\n\n**Higher is BETTER:**\n• Current ratio (more liquid)\n• Profit margins (more profitable)\n• Times interest earned (safer)\n\n**Higher may be WORSE:**\n• Debt/Equity (more risk)\n• Days in A/R (slow collection)\n• Days in inventory (overstocked)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Liquidity: Current, Quick, Cash ratios",
+            "Profitability: Margins, ROA, ROE",
+            "DuPont: ROE = Margin × Turnover × Leverage",
+            "Leverage: Debt/Equity, Times Interest Earned",
+            "Compare to industry benchmarks and trends",
+            "Context matters—high isn't always good"
           ]
         }
       ]

@@ -1,0 +1,223 @@
+{
+  "timestamp": "2026-02-14T15:41:36.875Z",
+  "viewport": "desktop",
+  "stripeCheckout": true,
+  "results": [
+    {
+      "f": "Login",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Welcome step loaded",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Progress indicator",
+      "s": "PASS",
+      "d": "Step 1 of 5"
+    },
+    {
+      "f": "Onboarding — Continue button present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Step 2 loaded",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Course selection step",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Validation works (Continue disabled)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Exam date set",
+      "s": "PASS",
+      "d": "2026-05-14"
+    },
+    {
+      "f": "Onboarding — Validation works (Continue disabled)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Section selected",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — Reached final step",
+      "s": "PASS",
+      "d": "Step 6"
+    },
+    {
+      "f": "Validation — Welcome step allows continue",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Validation — Back button present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Blueprint — Exam date step reached",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Blueprint — Date logic switches between 2025/2026",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Tour — No tour prompt appeared (user may have already seen it)",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Trial Banner — Not visible (user may have active subscription or fresh trial)",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscription Gate — Content is gated (trial expired or no access)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Gate — Status",
+      "s": "INFO",
+      "d": "3 blurred elements, locked: true"
+    },
+    {
+      "f": "Pricing — Prices displayed",
+      "s": "PASS",
+      "d": "$249, $3, $2, $1"
+    },
+    {
+      "f": "Pricing — Founder pricing indicator shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing — Founder deadline info shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing — Annual/Monthly toggle present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing — Toggle changes prices",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing — Subscribe CTA has correct link",
+      "s": "PASS",
+      "d": "//localhost:5174/register?course=cpa"
+    },
+    {
+      "f": "Checkout — Page state",
+      "s": "INFO",
+      "d": "Back\nVoraPrep sandbox\nSandbox\nSubscribe to CPA Exam Prep\n$249.00\nper\nyear\n$20.75 / month billed annu"
+    },
+    {
+      "f": "Checkout — Handles missing params gracefully",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Checkout — Rejects invalid course",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Checkout Success — Page loaded",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Checkout Success — Dashboard CTA present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Checkout Success — Start Learning CTA present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Checkout Success — Celebration animation present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing CPA — Founder annual $249 shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing EA — Founder annual $149 shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Pricing CMA — Founder annual $199 shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Stripe — Redirected to Stripe Checkout",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Stripe — URL",
+      "s": "INFO",
+      "d": "https://checkout.stripe.com/c/pay/cs_test_a1LwM9Ve67hdNhctHEFC1TqqoCtGrV7Gm4tE9r"
+    },
+    {
+      "f": "Stripe — Form filled (NOT submitting to avoid charges)",
+      "s": "INFO",
+      "d": ""
+    }
+  ],
+  "issues": [],
+  "consoleErrors": [
+    "[2026-02-14T15:39:51.295Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:39:51.295Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:39:51.295Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:39:51.296Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:39:51.314Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:39:51.403Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:24.168Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:24.168Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:24.177Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:33.095Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:33.096Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:33.127Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:33.224Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:36.100Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:36.101Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:36.101Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:40:36.196Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
+  ],
+  "summary": {
+    "PASS": 32,
+    "FAIL": 0,
+    "WARN": 0,
+    "INFO": 6
+  }
+}

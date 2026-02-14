@@ -24,9 +24,9 @@ export const CFP_TAX_QUESTIONS: Question[] = [
     question: `John has gross income of $200,000, above-the-line deductions of $15,000, itemized deductions of $35,000, and a qualified business income deduction of $8,000. The standard deduction is $29,200. What is John's taxable income?`,
     options: [
       'A) $142,000',
+      'D) $177,000',
       'B) $150,000',
       'C) $155,800',
-      'D) $177,000'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A ($142,000)**
@@ -61,11 +61,11 @@ export const CFP_TAX_QUESTIONS: Question[] = [
     question: `Sarah (single) has taxable income of $180,000 in 2024. Her total federal income tax is $35,500. What are her marginal and effective tax rates? (2024 brackets: 32% applies to income $191,951-$243,725)`,
     options: [
       'A) Marginal 32%, Effective 19.7%',
+      'D) Marginal 32%, Effective 32%',
       'B) Marginal 24%, Effective 19.7%',
       'C) Marginal 24%, Effective 24%',
-      'D) Marginal 32%, Effective 32%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Marginal 24%, Effective 19.7%)**
 
 **Analysis:**
@@ -93,12 +93,12 @@ Lower brackets (10%, 12%, 22%) apply to initial income, reducing average rate.
     skillLevel: 'Application',
     question: `Dr. Williams (AGI $280,000) has $50,000 of passive losses from a rental property in which she does NOT materially participate. She also has $30,000 of passive income from a limited partnership. How much of her rental losses can she deduct this year?`,
     options: [
-      'A) $0',
       'B) $25,000',
+      'A) $0',
+      'D) $50,000',
       'C) $30,000',
-      'D) $50,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($30,000)**
 
 **Passive Activity Loss Rules:**
@@ -132,12 +132,12 @@ Lower brackets (10%, 12%, 22%) apply to initial income, reducing average rate.
     skillLevel: 'Application',
     question: `Mark sold stock for a $40,000 gain. He purchased the stock on March 15, 2023 and sold it on March 17, 2024. His taxable income (including the gain) puts him in the 24% bracket. What tax rate applies to his gain?`,
     options: [
-      'A) 0%',
       'B) 15%',
+      'A) 0%',
+      'D) 24%',
       'C) 20%',
-      'D) 24%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (15% - Long-Term Capital Gains rate)**
 
 **Holding Period Rule:**
@@ -176,8 +176,8 @@ LTCG rates for 2024:
     options: [
       'A) All investment income regardless of taxpayer income level',
       'B) Investment income for taxpayers with MAGI exceeding $200,000 (single) or $250,000 (MFJ)',
+      'D) Only net long-term capital gains',
       'C) Only dividend income exceeding $250,000',
-      'D) Only net long-term capital gains'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -212,10 +212,10 @@ LTCG rates for 2024:
     skillLevel: 'Remembering and Understanding',
     question: `Which of the following is an AMT preference item or adjustment?`,
     options: [
-      'A) Charitable contributions of appreciated stock',
+      'D) Qualified dividends',
       'B) State and local tax (SALT) deduction',
+      'A) Charitable contributions of appreciated stock',
       'C) Home mortgage interest on acquisition debt',
-      'D) Qualified dividends'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (SALT Deduction)**
@@ -254,12 +254,12 @@ These are added back to regular taxable income to calculate AMTI:
     skillLevel: 'Application',
     question: `James, a single taxpayer, owns a consulting business (sole proprietorship) with $300,000 net income. His taxable income before QBI is $270,000. His business has no W-2 wages or qualified property. What is his QBI deduction? (2024 thresholds: phase-out begins at $191,950)`,
     options: [
-      'A) $0',
       'B) $27,000',
+      'D) $60,000',
+      'A) $0',
       'C) $54,000',
-      'D) $60,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: `**Correct Answer: A ($0)**
 
 **QBI Deduction Analysis:**
@@ -296,12 +296,12 @@ These are added back to regular taxable income to calculate AMTI:
     skillLevel: 'Evaluation',
     question: `A physician earning $500,000 wants to start a medical practice. She anticipates retaining $100,000 in the business annually for expansion. For liability protection AND to minimize total tax burden, which entity structure would likely be MOST advantageous?`,
     options: [
+      'D) General partnership',
       'A) Sole proprietorship',
       'B) C Corporation',
       'C) S Corporation',
-      'D) General partnership'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (S Corporation)**
 
 **Analysis:**
@@ -344,9 +344,9 @@ These are added back to regular taxable income to calculate AMTI:
     question: `The Martinez family paid $18,000 tuition for their daughter's first year of college. Their MAGI is $150,000 (MFJ). Which education benefit provides the LARGEST tax benefit?`,
     options: [
       'A) American Opportunity Credit: $2,500',
+      'D) Coverdell ESA distribution',
       'B) Lifetime Learning Credit: $2,000',
       'C) Tuition and fees deduction: $3,240 tax savings',
-      'D) Coverdell ESA distribution'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A (American Opportunity Credit: $2,500)**
@@ -389,11 +389,11 @@ These are added back to regular taxable income to calculate AMTI:
     question: `Under SECURE Act 2.0, which of the following is TRUE regarding 529 plan rollovers to Roth IRAs?`,
     options: [
       'A) Unlimited rollovers are permitted with no holding period requirement',
+      'D) The 529 account must have a zero balance before Roth rollover is permitted',
       'B) Up to $35,000 lifetime can be rolled over if the 529 has been open at least 15 years',
       'C) Rollovers are only permitted if the beneficiary is under age 18',
-      'D) The 529 account must have a zero balance before Roth rollover is permitted'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **529-to-Roth IRA Rollover Rules (SECURE 2.0):**
@@ -426,12 +426,12 @@ These are added back to regular taxable income to calculate AMTI:
     skillLevel: 'Application',
     question: `Tom and Lisa (MFJ) have three qualifying children ages 5, 12, and 19. Their MAGI is $380,000. What is their Child Tax Credit for 2024?`,
     options: [
+      'D) $1,000',
       'A) $6,000',
       'B) $4,000',
       'C) $3,000',
-      'D) $1,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($4,000)**
 
 **Child Tax Credit Analysis:**
@@ -469,12 +469,12 @@ These are added back to regular taxable income to calculate AMTI:
     skillLevel: 'Remembering and Understanding',
     question: `A taxpayer in the 32% marginal bracket has the choice between a $5,000 tax credit or a $15,000 tax deduction. Which provides greater tax savings?`,
     options: [
-      'A) The $5,000 credit saves $200 more',
       'B) The $15,000 deduction saves $200 more',
+      'A) The $5,000 credit saves $200 more',
+      'D) Cannot determine without knowing effective tax rate',
       'C) They provide equal tax savings',
-      'D) Cannot determine without knowing effective tax rate'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A (Credit saves $200 more)**
 
 **Tax Credit vs Deduction:**
@@ -509,10 +509,10 @@ Deduction would need to be $15,625 to equal the credit`
     options: [
       'A) Entirely at daughter\'s lower rate',
       'B) First $2,500 at daughter\'s rate, remainder at parent\'s rate',
+      'D) Entirely at parent\'s marginal rate',
       'C) First $1,300 untaxed, next $1,300 at daughter\'s rate, remainder at parent\'s rate',
-      'D) Entirely at parent\'s marginal rate'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C**
 
 **Kiddie Tax Rules (2024):**
@@ -550,8 +550,8 @@ Prevents high-income parents from shifting investment income to children in lowe
     options: [
       'A) Sell both positions to offset gain with loss',
       'B) Sell the loss position this year, wait to sell the gain next year',
+      'D) Hold both positions indefinitely',
       'C) Sell the gain position this year, wait to sell the loss next year',
-      'D) Hold both positions indefinitely'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Harvest loss now, defer gain)**
@@ -591,12 +591,12 @@ Prevents high-income parents from shifting investment income to children in lowe
     skillLevel: 'Application',
     question: `Margaret, age 68, has a Traditional IRA worth $800,000. She wants to donate $20,000 to charity. Her AGI is $120,000. Which strategy provides the BEST tax result?`,
     options: [
-      'A) Take IRA distribution, donate cash, claim itemized deduction',
       'B) Make a Qualified Charitable Distribution (QCD) directly from IRA',
+      'D) Establish a Charitable Remainder Trust',
+      'A) Take IRA distribution, donate cash, claim itemized deduction',
       'C) Donate appreciated stock from taxable account',
-      'D) Establish a Charitable Remainder Trust'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Qualified Charitable Distribution)**
 
 **QCD Advantages:**
@@ -634,12 +634,12 @@ Prevents high-income parents from shifting investment income to children in lowe
     skillLevel: 'Application',
     question: `A retiree, age 75, needs $50,000 from investments. She has: Traditional IRA ($500,000), Roth IRA ($200,000), and taxable brokerage ($300,000 with $100,000 unrealized gain). Her RMD requirement is $20,000. What is the most tax-efficient withdrawal strategy?`,
     options: [
-      'A) Take $50,000 from Traditional IRA',
       'B) Take $20,000 RMD from Traditional IRA, $30,000 from Roth IRA',
+      'D) Take $50,000 from taxable account, skip RMD',
+      'A) Take $50,000 from Traditional IRA',
       'C) Take $20,000 RMD from Traditional IRA, $30,000 from taxable account',
-      'D) Take $50,000 from taxable account, skip RMD'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (RMD from Traditional + taxable account)**
 
 **Analysis:**
@@ -678,11 +678,11 @@ Prevents high-income parents from shifting investment income to children in lowe
     question: `On December 15, John sells 100 shares of XYZ stock for a $10,000 loss. On January 5 of the following year, John buys 100 shares of XYZ. What are the tax consequences?`,
     options: [
       'A) $10,000 loss is fully deductible in the year of sale',
+      'D) $10,000 loss is disallowed but can be carried forward indefinitely',
       'B) $10,000 loss is disallowed and permanently lost',
       'C) $10,000 loss is disallowed but added to cost basis of new shares',
-      'D) $10,000 loss is disallowed but can be carried forward indefinitely'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Loss disallowed, added to basis)**
 
 **Wash Sale Rule:**
@@ -719,11 +719,11 @@ If you sell securities at a loss and buy "substantially identical" securities wi
     question: `Which method allows a taxpayer to avoid underpayment penalties for estimated taxes?`,
     options: [
       'A) Pay at least 80% of current year tax liability',
+      'D) No safe harbor exists; penalties are automatic if tax is owed',
       'B) Pay at least 90% of current year tax liability OR 100% of prior year liability',
       'C) Pay at least 100% of current year tax liability',
-      'D) No safe harbor exists; penalties are automatic if tax is owed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Safe Harbor Rules for Estimated Taxes:**
@@ -757,12 +757,12 @@ If prior year AGI exceeded $150,000:
     skillLevel: 'Application',
     question: `An executive exercises ISOs on stock with $60 strike price when FMV is $100. She exercises 2,000 shares and holds them. Her regular tax is $45,000 and tentative minimum tax (before ISO adjustment) is $40,000. The AMT rate is 26%. What is her total federal income tax?`,
     options: [
+      'D) $45,000 plus $20,800 AMT',
       'A) $45,000',
       'B) $55,800',
       'C) $65,800',
-      'D) $45,000 plus $20,800 AMT'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($55,800)**
 
 **ISO AMT Calculation:**
@@ -801,9 +801,9 @@ Note: The total tax owed equals the higher of the two calculations. Answer B ($5
     question: `An investor earns $10,000 from: (A) muni bond interest, (B) qualified dividends, (C) short-term capital gains, or (D) salary bonus. Assuming a 35% marginal bracket and 3.8% NIIT applies, which produces the highest after-tax return?`,
     options: [
       'A) Municipal bond interest: $10,000 after-tax',
+      'D) Salary bonus: $6,350 after-tax',
       'B) Qualified dividends: $7,870 after-tax',
       'C) Short-term capital gains: $6,120 after-tax',
-      'D) Salary bonus: $6,350 after-tax'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A (Muni bond: $10,000)**
@@ -848,11 +848,11 @@ Note: The total tax owed equals the higher of the two calculations. Answer B ($5
     question: `Maria gifts stock to her daughter. Maria's basis is $30,000 and the FMV at gift is $25,000. If the daughter sells for $28,000, what is the gain or loss?`,
     options: [
       'A) $3,000 gain',
+      'D) $3,000 loss',
       'B) $2,000 loss',
       'C) No gain or loss',
-      'D) $3,000 loss'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (No gain or loss)**
 
 **Dual Basis Rule for Gifts (FMV < Donor's Basis):**
@@ -883,12 +883,12 @@ When gift FMV is less than donor's basis:
     skillLevel: 'Analysis',
     question: `A taxpayer owns rental properties with $50,000 in losses. To deduct these losses against ordinary income without limitation, they must:`,
     options: [
-      'A) Have AGI below $100,000',
       'B) Qualify as a real estate professional with 750+ hours and material participation',
+      'A) Have AGI below $100,000',
+      'D) Be a licensed real estate agent',
       'C) Own at least 10 rental properties',
-      'D) Be a licensed real estate agent'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Real Estate Professional status)**
 
 **Passive Activity Loss Rules:**
@@ -921,12 +921,12 @@ When gift FMV is less than donor's basis:
     skillLevel: 'Analysis',
     question: `Which of the following is an AMT adjustment or preference item?`,
     options: [
-      'A) Municipal bond interest from public purpose bonds',
       'B) Exercise of incentive stock options (bargain element)',
+      'A) Municipal bond interest from public purpose bonds',
+      'D) Long-term capital gains',
       'C) Qualified dividends',
-      'D) Long-term capital gains'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (ISO bargain element)**
 
 **AMT Adjustments and Preferences:**
@@ -961,12 +961,12 @@ When gift FMV is less than donor's basis:
     skillLevel: 'Application',
     question: `A married-filing-jointly taxpayer has $400,000 taxable income and $200,000 of qualified business income from a consulting firm (SSTB). What is their Section 199A QBI deduction?`,
     options: [
-      'A) $40,000',
+      'D) $200,000',
       'B) $20,000',
+      'A) $40,000',
       'C) $0',
-      'D) $200,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($0)**
 
 **Section 199A QBI Deduction:**
@@ -1002,10 +1002,10 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     skillLevel: 'Evaluation',
     question: `A single taxpayer has itemized deductions of $12,000 annually (below the $14,600 standard deduction). Which strategy would MOST benefit them?`,
     options: [
-      'A) Continue itemizing each year',
+      'D) Convert to cash-basis accounting',
       'B) Bunch two years of deductions into one year, then take standard the next',
+      'A) Continue itemizing each year',
       'C) Stop making charitable contributions',
-      'D) Convert to cash-basis accounting'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Bunching deductions)**
@@ -1046,12 +1046,12 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     skillLevel: 'Application',
     question: `Emma, age 16, has $4,500 of unearned income (dividends and interest) in 2024. Her parents are in the 32% tax bracket. How is Emma's unearned income taxed under the kiddie tax rules?`,
     options: [
-      'A) All $4,500 taxed at Emma\'s rate (10%)',
       'B) First $1,300 tax-free, next $1,300 at Emma\'s rate, remainder at parents\' 32% rate',
+      'D) Taxed at a flat 24% unearned income rate',
+      'A) All $4,500 taxed at Emma\'s rate (10%)',
       'C) All $4,500 taxed at parents\' 32% rate',
-      'D) Taxed at a flat 24% unearned income rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **Kiddie Tax Rules (2024):**
@@ -1088,12 +1088,12 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     skillLevel: 'Analysis',
     question: `Marcus sold appreciated stock with a $500,000 capital gain. Within 180 days, he invested the full $500,000 in a Qualified Opportunity Zone Fund. If he holds the investment for 10+ years, what are the tax benefits?`,
     options: [
+      'D) Tax-free withdrawal of the original $500,000 investment',
       'A) Immediate exclusion of the $500,000 gain',
       'B) Deferral of $500,000 gain until 2026, plus permanent exclusion of new appreciation',
       'C) 10% reduction in the deferred gain and tax-free appreciation after 10 years',
-      'D) Tax-free withdrawal of the original $500,000 investment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Qualified Opportunity Zone Benefits:**
@@ -1131,12 +1131,12 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     skillLevel: 'Application',
     question: `Jennifer and Mark, married filing jointly, have MAGI of $320,000 including $80,000 of net investment income (dividends and capital gains). What is their Net Investment Income Tax (NIIT) liability?`,
     options: [
+      'D) $12,160',
       'A) $0 - their income is below the threshold',
       'B) $2,660',
       'C) $3,040',
-      'D) $12,160'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($2,660)**
 
 **NIIT Calculation:**
@@ -1185,8 +1185,8 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     options: [
       'A) 60% gross profit; $60,000 taxable',
       'B) 40% gross profit; $40,000 taxable',
+      'D) 40% gross profit; $100,000 taxable',
       'C) 60% gross profit; $180,000 taxable',
-      'D) 40% gross profit; $100,000 taxable'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A**
@@ -1226,12 +1226,12 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     skillLevel: 'Analysis',
     question: `Patricia breeds horses as a side business. Over 5 years, she had profits in 2 years and losses in 3 years. The IRS challenges her Schedule C deductions. Which factor would MOST support treating this as a for-profit business?`,
     options: [
+      'D) The losses provide significant tax deductions',
       'A) She enjoys working with horses',
       'B) She changed methods to improve profitability after unprofitable years',
       'C) She has substantial income from her primary job',
-      'D) The losses provide significant tax deductions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Section 183 Hobby Loss Analysis:**
@@ -1271,12 +1271,12 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
     skillLevel: 'Application',
     question: `Robert exchanges an apartment building (FMV $800,000, basis $300,000, $200,000 mortgage) for a warehouse (FMV $1,000,000, $400,000 mortgage). What is Robert's recognized gain and new basis in the warehouse?`,
     options: [
-      'A) $0 gain; $300,000 basis',
       'B) $0 gain; $500,000 basis',
+      'A) $0 gain; $300,000 basis',
+      'D) $200,000 gain; $700,000 basis',
       'C) $200,000 gain; $500,000 basis',
-      'D) $200,000 gain; $700,000 basis'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **1031 Like-Kind Exchange Analysis:**
@@ -1317,8 +1317,8 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
     options: [
       'A) Maximum credit is $3,600 per child under 6',
       'B) The credit is $2,000 per qualifying child with up to $1,700 refundable',
+      'D) Children must be under 13 to qualify',
       'C) The credit phases out at $75,000 AGI for all filing statuses',
-      'D) Children must be under 13 to qualify'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -1358,10 +1358,10 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
     options: [
       'A) William gets an immediate income tax deduction of $2,000,000',
       'B) The trust assets pass to heirs free of gift tax since charity receives income',
+      'D) William eliminates all estate taxes on the $2,000,000',
       'C) Growth above the IRS assumed rate passes to heirs free of gift/estate tax',
-      'D) William eliminates all estate taxes on the $2,000,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C**
 
 **CLAT Wealth Transfer Strategy:**
@@ -1401,12 +1401,12 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
     skillLevel: 'Analysis',
     question: `Karen exercises incentive stock options (ISOs): 1,000 shares at $20 strike when FMV is $50. She holds the shares for 14 months then sells at $60. What are her tax consequences?`,
     options: [
-      'A) $30,000 ordinary income at exercise; $10,000 capital gain at sale',
       'B) $30,000 AMT preference at exercise; $40,000 long-term capital gain at sale',
+      'D) $30,000 disqualifying disposition income; $10,000 capital gain',
+      'A) $30,000 ordinary income at exercise; $10,000 capital gain at sale',
       'C) $40,000 ordinary income at sale',
-      'D) $30,000 disqualifying disposition income; $10,000 capital gain'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **ISO Qualifying Disposition Analysis:**
@@ -1446,12 +1446,12 @@ Karen may recover AMT paid at exercise as AMT credit in future years.
     skillLevel: 'Application',
     question: `John's business had a $100,000 net operating loss (NOL) in 2024. Under current tax law, how can he use this NOL?`,
     options: [
-      'A) Carry back 2 years, then forward 20 years',
       'B) Carry forward indefinitely, limited to 80% of taxable income',
+      'D) Carry back 5 years with no limitation',
+      'A) Carry back 2 years, then forward 20 years',
       'C) Carry forward 5 years only',
-      'D) Carry back 5 years with no limitation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **Post-TCJA NOL Rules (2018+):**
@@ -1490,11 +1490,11 @@ Ensures taxpayers always pay some tax even with losses.
     question: `Maria has $150,000 net profit from her consulting business (sole proprietorship). What is her self-employment tax for 2024?`,
     options: [
       'A) $22,950',
+      'D) $11,475',
       'B) $21,194',
       'C) $19,400',
-      'D) $11,475'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($21,194)**
 
 **Self-Employment Tax Calculation:**
@@ -1532,11 +1532,11 @@ If Maria's combined SE + wages exceed $200,000 (single), additional 0.9% Medicar
     question: `Lisa plans to make a $50,000 charitable contribution. She is considering a direct cash gift versus contributing appreciated stock (FMV $50,000, basis $10,000) to a donor-advised fund. Which statement is CORRECT?`,
     options: [
       'A) Both options provide the same tax benefit',
+      'D) DAF contributions must be distributed to charity within 5 years',
       'B) The DAF with stock provides a $50,000 deduction and avoids $40,000 capital gains tax',
       'C) Direct cash gifts have a higher AGI limitation than stock gifts',
-      'D) DAF contributions must be distributed to charity within 5 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Donor-Advised Fund with Appreciated Stock:**
@@ -1575,12 +1575,12 @@ If Maria's combined SE + wages exceed $200,000 (single), additional 0.9% Medicar
     skillLevel: 'Remembering and Understanding',
     question: `To avoid an estimated tax penalty, taxpayers must generally pay the lesser of what amounts?`,
     options: [
+      'D) 100% of current year tax only',
       'A) 100% of prior year tax or 100% of current year tax',
       'B) 90% of current year tax or 100% of prior year tax (110% if high income)',
       'C) 80% of current year tax or 90% of prior year tax',
-      'D) 100% of current year tax only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Safe Harbor Rules for Estimated Tax:**
@@ -1622,12 +1622,12 @@ Pay the lesser of:
     skillLevel: 'Analysis',
     question: `Tom invested $500,000 in qualified small business stock (QSBS) at formation. After holding for 6 years, he sells for $5,500,000. How much of the gain is excludable under Section 1202?`,
     options: [
-      'A) $5,000,000 (100% exclusion)',
       'B) $2,500,000 (50% exclusion)',
+      'A) $5,000,000 (100% exclusion)',
+      'D) $0 - QSBS rules expired',
       'C) $10,000,000 maximum',
-      'D) $0 - QSBS rules expired'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($5,000,000)**
 
 **Section 1202 QSBS Exclusion:**
@@ -1668,11 +1668,11 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
     question: `For divorces finalized in 2024, how is alimony treated for tax purposes?`,
     options: [
       'A) Deductible by payer, taxable to recipient',
+      'D) Taxable to recipient only if exceeds $15,000',
       'B) Not deductible by payer, not taxable to recipient',
       'C) Deductible by payer if both parties agree',
-      'D) Taxable to recipient only if exceeds $15,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Post-TCJA Alimony Rules (Divorces After 12/31/2018):**
@@ -1712,8 +1712,8 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
     options: [
       'A) $800,000 (full loss)',
       'B) $305,000 (excess business loss limitation)',
+      'D) $0 (hobby loss rules apply)',
       'C) $200,000 (limited to wages)',
-      'D) $0 (hobby loss rules apply)'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($305,000)**
@@ -1757,12 +1757,12 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
     skillLevel: 'Application',
     question: `David has $50,000 in net capital losses this year and $60,000 ordinary income. How much can he deduct, and what happens to the excess?`,
     options: [
-      'A) All $50,000 deductible against ordinary income',
       'B) $3,000 deductible; $47,000 carries forward indefinitely',
+      'A) All $50,000 deductible against ordinary income',
+      'D) Nothing deductible; all $50,000 carries forward',
       'C) $3,000 deductible; $47,000 carries back 3 years',
-      'D) Nothing deductible; all $50,000 carries forward'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **Capital Loss Rules:**
@@ -1805,12 +1805,12 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
     skillLevel: 'Analysis',
     question: `Which statement about Health Savings Account (HSA) tax benefits is CORRECT?`,
     options: [
-      'A) Contributions are tax-deductible (or pre-tax via payroll)',
       'B) Earnings grow tax-free inside the HSA',
+      'D) All of the above - HSAs offer a triple tax advantage',
+      'A) Contributions are tax-deductible (or pre-tax via payroll)',
       'C) Qualified medical withdrawals are tax-free',
-      'D) All of the above - HSAs offer a triple tax advantage'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: `**Correct Answer: D (All of the above)**
 
 **HSA "Triple Tax Advantage":**
@@ -1853,10 +1853,10 @@ Unlike FSAs, no "use it or lose it" rule.
     skillLevel: 'Remembering and Understanding',
     question: `For 2024, at what income level does the educational credit (Lifetime Learning Credit) phase-out BEGIN for married filing jointly?`,
     options: [
-      'A) $80,000',
+      'D) $300,000',
       'B) $160,000',
+      'A) $80,000',
       'C) $180,000',
-      'D) $300,000'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($160,000)**
@@ -1897,12 +1897,12 @@ Unlike FSAs, no "use it or lose it" rule.
     skillLevel: 'Evaluation',
     question: `A client in the 24% bracket asks whether to contribute $7,000 to a traditional IRA (deductible) or Roth IRA. Assuming identical investment returns and a 24% tax rate in retirement, which analysis is CORRECT?`,
     options: [
-      'A) Traditional is better because tax savings can be invested today',
+      'D) Traditional is always better due to tax deferral',
       'B) Roth is better because future tax rates are unpredictable',
+      'A) Traditional is better because tax savings can be invested today',
       'C) Mathematically equivalent if tax rates remain the same',
-      'D) Traditional is always better due to tax deferral'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Mathematically equivalent)**
 
 **The Math of Tax Deferral:**
@@ -1952,12 +1952,12 @@ Traditional investors can also invest their $1,680 tax savings.
     skillLevel: 'Application',
     question: `Susan's husband died on March 15, 2024. She has a dependent child age 10. For tax year 2024, what is Susan's filing status and for how many years can she use it?`,
     options: [
+      'D) Qualifying Surviving Spouse for 2024-2026',
       'A) Single for 2024 only',
       'B) Married Filing Jointly for 2024, then Qualifying Surviving Spouse for 2025-2026',
       'C) Head of Household for 2024-2026',
-      'D) Qualifying Surviving Spouse for 2024-2026'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Filing Status Rules After Spouse's Death:**
@@ -1987,12 +1987,12 @@ Traditional investors can also invest their $1,680 tax savings.
     skillLevel: 'Analysis',
     question: `Emma, age 17, has $12,000 in investment income and $3,000 in earned income from a part-time job. Her parents are in the 35% bracket. How is Emma's investment income taxed?`,
     options: [
+      "D) $1,250 tax-free, $1,250 at Emma's rate, rest at parents' rate",
       "A) All $12,000 at parents' 35% rate",
       "B) First $2,500 taxed preferentially, rest at parents' rate",
       "C) All at Emma's lower rate since she has earned income",
-      "D) $1,250 tax-free, $1,250 at Emma's rate, rest at parents' rate"
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: `**Correct Answer: D**
 
 **Kiddie Tax Calculation (2024):**
@@ -2024,8 +2024,8 @@ Traditional investors can also invest their $1,680 tax savings.
     options: [
       'A) $150,000 (all taxable)',
       'B) $120,000',
+      'D) $0 until basis is recovered',
       'C) $30,000',
-      'D) $0 until basis is recovered'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($120,000)**
@@ -2056,8 +2056,8 @@ $500,000 × 80% = $400,000 taxable in year of sale
     options: [
       'A) $0',
       'B) $50,000',
+      'D) $550,000',
       'C) $300,000',
-      'D) $550,000'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($50,000)**
@@ -2088,12 +2088,12 @@ $500,000 × 80% = $400,000 taxable in year of sale
     skillLevel: 'Analysis',
     question: `Sarah exchanges a rental property (FMV $800,000, adjusted basis $300,000, $150,000 mortgage) for a property worth $1,000,000 with a $350,000 mortgage. What is her recognized gain?`,
     options: [
-      'A) $0',
       'B) $200,000',
+      'A) $0',
+      'D) $300,000',
       'C) $500,000',
-      'D) $300,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($0)**
 
 **Like-Kind Exchange Analysis:**
@@ -2125,10 +2125,10 @@ $500,000 × 80% = $400,000 taxable in year of sale
     options: [
       'A) $50,000 against any income',
       'B) $25,000 against active income',
+      'D) $50,000 only against portfolio income',
       'C) $0 currently, but carryforward to offset future passive income',
-      'D) $50,000 only against portfolio income'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($0 currently)**
 
 **Passive Activity Loss Rules:**
@@ -2161,8 +2161,8 @@ $500,000 × 80% = $400,000 taxable in year of sale
     options: [
       'A) 2-year carryback, 20-year carryforward',
       'B) No carryback, unlimited carryforward, limited to 80% of taxable income',
+      'D) No carryback, 20-year carryforward, 100% of taxable income',
       'C) 5-year carryback, unlimited carryforward',
-      'D) No carryback, 20-year carryforward, 100% of taxable income'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -2190,12 +2190,12 @@ $500,000 × 80% = $400,000 taxable in year of sale
     skillLevel: 'Application',
     question: `On December 15, Lisa sells 100 shares of XYZ stock for a $5,000 loss. On January 5, she buys 100 shares of the same stock. What is the tax consequence?`,
     options: [
-      "A) $5,000 deductible loss",
       "B) Loss disallowed entirely",
+      "D) Loss allowed because it's a new tax year",
+      "A) $5,000 deductible loss",
       "C) Loss disallowed, but added to new shares' basis",
-      "D) Loss allowed because it's a new tax year"
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C**
 
 **Wash Sale Rule (Section 1091):**
@@ -2222,12 +2222,12 @@ $500,000 × 80% = $400,000 taxable in year of sale
     skillLevel: 'Analysis',
     question: `Tom's S corporation basis is $50,000. The S corp has an ordinary loss of $80,000 (Tom's share). How much can Tom deduct, and what happens to the rest?`,
     options: [
-      "A) $80,000 deductible; creates negative basis",
       "B) $50,000 deductible; $30,000 suspended indefinitely",
+      "D) $0 deductible; losses don't pass through",
+      "A) $80,000 deductible; creates negative basis",
       "C) $50,000 deductible; $30,000 becomes capital loss",
-      "D) $0 deductible; losses don't pass through"
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **S Corp Loss Limitations:**
@@ -2262,12 +2262,12 @@ $500,000 × 80% = $400,000 taxable in year of sale
     skillLevel: 'Application',
     question: `For dividends to qualify for preferential tax rates, the stock must be held for more than:`,
     options: [
+      'D) One year',
       'A) 30 days',
       'B) 60 days during the 121-day period surrounding ex-dividend date',
       'C) 90 days',
-      'D) One year'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Qualified Dividend Requirements:**
@@ -2294,11 +2294,11 @@ $500,000 × 80% = $400,000 taxable in year of sale
     question: `A client typically gives $10,000 to charity annually and has $8,000 in other itemized deductions. The standard deduction is $14,600. Which strategy maximizes tax benefit?`,
     options: [
       'A) Deduct $10,000 charity each year',
+      'D) Convert all gifts to non-cash for better valuation',
       'B) Bundle 2 years of giving ($20,000) in one year, itemize that year',
       'C) Give only to private foundations for higher limits',
-      'D) Convert all gifts to non-cash for better valuation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Bunching)**
 
 **Standard Deduction Analysis:**
@@ -2332,11 +2332,11 @@ $500,000 × 80% = $400,000 taxable in year of sale
     question: `Which statement about Health Savings Accounts (HSAs) is CORRECT?`,
     options: [
       'A) Contributions are tax-deductible but distributions are taxable',
+      'D) Available with any health insurance plan',
       'B) Must be used by year-end or forfeit (use-it-or-lose-it)',
       'C) Triple tax advantage: deductible contributions, tax-free growth, tax-free qualified distributions',
-      'D) Available with any health insurance plan'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Triple tax advantage)**
 
 **HSA Tax Benefits:**
@@ -2365,12 +2365,12 @@ $500,000 × 80% = $400,000 taxable in year of sale
     skillLevel: 'Application',
     question: `In 2024, a married couple wants to give $50,000 to each of their 3 children. What is their total gift tax?`,
     options: [
-      'A) $0 after using lifetime exemption',
       'B) $0 with gift splitting, no exemption used',
+      'A) $0 after using lifetime exemption',
+      'D) $42,000 applied against lifetime exemption',
       'C) $6,000 gift tax on excess',
-      'D) $42,000 applied against lifetime exemption'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: `**Correct Answer: D ($42,000 against exemption)**
 
 **Gift Splitting Analysis:**
@@ -2399,12 +2399,12 @@ $500,000 × 80% = $400,000 taxable in year of sale
     skillLevel: 'Application',
     question: `A taxpayer with substantial investment income owes $25,000 in Q1 estimated taxes but only pays $20,000. When is the underpayment penalty calculated?`,
     options: [
-      'A) Only at year-end based on total underpayment',
       'B) Separately for each quarter from due date to payment or year-end',
+      'A) Only at year-end based on total underpayment',
+      'D) No penalty if taxes are 90% paid by December 31',
       'C) Only if total annual underpayment exceeds $1,000',
-      'D) No penalty if taxes are 90% paid by December 31'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **Estimated Tax Penalty Calculation:**
@@ -2433,10 +2433,10 @@ $500,000 × 80% = $400,000 taxable in year of sale
     options: [
       'A) $30,600 (15.3% of $200,000)',
       'B) $25,195',
+      'D) $22,950',
       'C) $28,332',
-      'D) $22,950'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($28,332)**
 
 **SE Tax Calculation:**
@@ -2464,12 +2464,12 @@ Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE incom
     skillLevel: 'Analysis',
     question: `Which item is an ADD-BACK (preference item) for Alternative Minimum Tax purposes?`,
     options: [
-      'A) Charitable contributions',
       'B) State and local taxes',
+      'A) Charitable contributions',
+      'D) Medical expenses exceeding 7.5% AGI',
       'C) Mortgage interest on primary residence',
-      'D) Medical expenses exceeding 7.5% AGI'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (SALT)**
 
 **AMT Add-backs (Preferences):**
@@ -2499,12 +2499,12 @@ Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE incom
     skillLevel: 'Remembering',
     question: `Which statement about Qualified Opportunity Zone investments is CORRECT?`,
     options: [
-      'A) Must sell property to qualify for deferral',
       'B) Capital gain invested is permanently excluded',
+      'D) Only available to real estate professionals',
+      'A) Must sell property to qualify for deferral',
       'C) Gain invested deferred until 2026 or earlier sale; 10+ year hold excludes appreciation',
-      'D) Only available to real estate professionals'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C**
 
 **Opportunity Zone Benefits:**
@@ -2533,12 +2533,12 @@ Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE incom
     skillLevel: 'Application',
     question: `Tom receives 100 shares of stock as a gift from his mother. Her basis was $20/share, and FMV at gift was $15/share. Tom later sells for $18/share. What is his gain or loss?`,
     options: [
-      'A) $200 loss',
+      'D) $500 loss',
       'B) $300 gain',
+      'A) $200 loss',
       'C) $0 (no gain or loss)',
-      'D) $500 loss'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($0 gain or loss)**
 
 **Dual Basis Rule for Gifts (FMV < Donor Basis):**
@@ -2566,10 +2566,10 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Application',
     question: `A self-employed consultant uses 200 sq ft of her 2,000 sq ft home exclusively for business. Home expenses total $30,000 (mortgage interest, insurance, utilities). What is the maximum regular method deduction?`,
     options: [
-      'A) $1,000',
+      'D) $30,000',
       'B) $3,000',
+      'A) $1,000',
       'C) $5,000',
-      'D) $30,000'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($3,000)**
@@ -2601,12 +2601,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Remembering',
     question: `Mark has $10,000 in short-term capital gains and $18,000 in long-term capital losses. What is his net capital loss deduction for the year?`,
     options: [
+      'D) $5,000',
       'A) $3,000',
       'B) $8,000',
       'C) $18,000',
-      'D) $5,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($3,000)**
 
 **Capital Loss Calculation:**
@@ -2632,12 +2632,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Analysis',
     question: `Dr. Patel, age 62, has $1,000,000 in a Traditional IRA and minimal taxable income this year due to a sabbatical. Which Roth conversion strategy is MOST appropriate?`,
     options: [
+      'D) Convert only after starting Social Security',
       'A) Convert entire $1M to avoid future RMDs',
       'B) Convert enough to fill up the 22% or 24% bracket',
       'C) Wait until age 73 RMDs begin',
-      'D) Convert only after starting Social Security'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Bracket filling)**
 
 **Roth Conversion Bracket Strategy:**
@@ -2669,8 +2669,8 @@ This is the "dual basis" or "split basis" rule.
     options: [
       'A) American Opportunity Credit ($2,500)',
       'B) Lifetime Learning Credit ($2,000)',
+      'D) Both credits are equal for this situation',
       'C) Tuition and Fees Deduction',
-      'D) Both credits are equal for this situation'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A (AOTC = $2,500)**
@@ -2708,10 +2708,10 @@ This is the "dual basis" or "split basis" rule.
     options: [
       'A) Sole proprietorship (no double taxation)',
       'B) S corporation (pass-through)',
+      'D) Partnership (flexibility)',
       'C) C corporation (21% flat rate)',
-      'D) Partnership (flexibility)'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (C Corporation)**
 
 **Reasoning:**
@@ -2739,12 +2739,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Application',
     question: `Tom breeds exotic birds as a side activity. Over 7 years, he has had 2 profitable years and 5 loss years. What presumption applies?`,
     options: [
-      'A) Presumption of hobby; losses limited to income',
       'B) Presumption of business; losses fully deductible',
+      'A) Presumption of hobby; losses limited to income',
+      'D) Must show profit motive in writing',
       'C) No presumption; IRS decides case-by-case',
-      'D) Must show profit motive in writing'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A (Presumption of hobby)**
 
 **Hobby vs. Business Test:**
@@ -2772,12 +2772,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Analysis',
     question: `Amy exercises ISOs when the stock is $50 (option price $20). She holds the stock for 18 months and sells at $70. What are the tax consequences at SALE?`,
     options: [
-      'A) $50 ordinary income',
       'B) $50 long-term capital gain',
+      'A) $50 ordinary income',
+      'D) $30 AMT income + $50 LTCG',
       'C) $30 ordinary income + $20 LTCG',
-      'D) $30 AMT income + $50 LTCG'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($50 LTCG)**
 
 **ISO Taxation with Qualifying Disposition:**
@@ -2806,12 +2806,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Application',
     question: `Tom and Amy's daughter Sarah, age 23, graduated college in May and started working part-time earning $6,000. She lives with her parents. Can they claim her as a dependent?`,
     options: [
-      'A) Yes, as a qualifying child',
+      'D) No, she earned too much income',
       'B) Yes, as a qualifying relative',
+      'A) Yes, as a qualifying child',
       'C) No, she is too old for qualifying child',
-      'D) No, she earned too much income'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Too old)**
 
 **Qualifying Child Requirements:**
@@ -2841,12 +2841,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Application',
     question: `A high-income client has an unusually large income year. She wants to get a large charitable deduction now but hasn't decided which charities to support. What vehicle is BEST?`,
     options: [
-      'A) Private foundation',
+      'D) Direct cash gifts to charity',
       'B) Charitable remainder trust',
+      'A) Private foundation',
       'C) Donor advised fund',
-      'D) Direct cash gifts to charity'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Donor Advised Fund)**
 
 **DAF Benefits:**
@@ -2872,12 +2872,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Application',
     question: `Which income is subject to the 3.8% Net Investment Income Tax for a taxpayer over the threshold?`,
     options: [
-      'A) Wages from employment',
       'B) Self-employment income',
+      'D) Municipal bond interest',
+      'A) Wages from employment',
       'C) Rental income from real estate',
-      'D) Municipal bond interest'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Rental income)**
 
 **Net Investment Income Includes:**
@@ -2909,12 +2909,12 @@ This is the "dual basis" or "split basis" rule.
     skillLevel: 'Evaluation',
     question: `A real estate investor wants liability protection and the ability to specially allocate losses to partners. Which entity is BEST?`,
     options: [
+      'D) Limited partnership',
       'A) S corporation',
       'B) C corporation',
       'C) Limited liability company (LLC) taxed as partnership',
-      'D) Limited partnership'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (LLC as partnership)**
 
 **LLC Taxed as Partnership:**
@@ -2940,11 +2940,11 @@ This is the "dual basis" or "split basis" rule.
     question: `An investor in the 35% federal tax bracket is comparing a 4% municipal bond to a taxable corporate bond. What taxable equivalent yield makes them equal?`,
     options: [
       'A) 4.00%',
+      'D) 7.00%',
       'B) 5.40%',
       'C) 6.15%',
-      'D) 7.00%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (6.15%)**
 
 **Taxable Equivalent Yield Formula:**

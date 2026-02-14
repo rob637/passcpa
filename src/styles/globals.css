@@ -14,6 +14,10 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
+  
+  /* Dynamic viewport height - fixes iOS 100vh issue */
+  --app-height: 100vh;
+  --app-height: 100dvh; /* Modern browsers will use this */
 
   /* Premium easing curves */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -181,12 +185,21 @@ body.dark {
    ============================================ */
 
 .safe-top {
-  padding-top: var(--safe-top);
+  padding-top: max(1rem, var(--safe-top));
 }
 
 .safe-bottom,
 .pb-safe {
-  padding-bottom: var(--safe-bottom);
+  padding-bottom: max(1.5rem, var(--safe-bottom));
+}
+
+/* Full height utility using dynamic viewport height */
+.min-h-app {
+  min-height: var(--app-height);
+}
+
+.h-app {
+  height: var(--app-height);
 }
 
 .safe-x {
@@ -422,6 +435,7 @@ body.dark {
 
 .dark .input {
   @apply bg-slate-800 border-slate-600 text-slate-100 placeholder:text-slate-500;
+  color-scheme: dark;
 }
 
 .input:hover {

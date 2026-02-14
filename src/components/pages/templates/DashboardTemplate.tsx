@@ -64,6 +64,8 @@ export interface QuickAction {
   description?: string;
   path: string;
   color: string;
+  requiresSubscription?: boolean;  // If true, shows lock icon for non-subscribers
+  isFree?: boolean;                // If true, shows "FREE" badge
 }
 
 export interface DashboardTemplateProps {
@@ -194,11 +196,19 @@ interface QuickActionCardProps {
   description?: string;
   onClick: () => void;
   color: string;
+  requiresSubscription?: boolean;
+  isFree?: boolean;
 }
 
-const QuickActionCard: React.FC<QuickActionCardProps> = ({ icon: Icon, label, description, onClick, color }) => (
+const QuickActionCard: React.FC<QuickActionCardProps> = ({ icon: Icon, label, description, onClick, color, requiresSubscription: _requiresSubscription, isFree }) => (
   <button onClick={onClick} className="text-left w-full">
-    <Card variant="interactive" className="p-4 flex flex-col items-center gap-2 text-center h-full hover:shadow-md transition-all">
+    <Card variant="interactive" className="p-4 flex flex-col items-center gap-2 text-center h-full hover:shadow-md transition-all relative">
+      {/* Free badge */}
+      {isFree && (
+        <span className="absolute -top-1 -right-1 bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+          FREE
+        </span>
+      )}
       <div style={{ color }}><Icon className="h-5 w-5" /></div>
       <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
       {description && (
@@ -413,6 +423,7 @@ export const DashboardTemplate: React.FC<DashboardTemplateProps> = ({
           icon={Award}
           title="Overall Readiness"
           value={`${stats.overallReadiness}%`}
+          subtitle={stats.overallReadiness === 0 ? "Start practicing to build readiness" : stats.overallReadiness < 50 ? "Keep going!" : stats.overallReadiness < 75 ? "Great progress!" : "Exam ready!"}
           color="amber"
           progress={stats.overallReadiness}
         />
@@ -420,7 +431,7 @@ export const DashboardTemplate: React.FC<DashboardTemplateProps> = ({
           icon={BookOpen}
           title="Questions Answered"
           value={stats.questionsAnswered}
-          subtitle="Total practice questions"
+          subtitle={stats.questionsAnswered === 0 ? "Answer your first question!" : "Total practice questions"}
           color="blue"
         />
         <StatCard
@@ -449,6 +460,8 @@ export const DashboardTemplate: React.FC<DashboardTemplateProps> = ({
             description={action.description}
             onClick={() => navigate(action.path)}
             color={action.color}
+            requiresSubscription={action.requiresSubscription}
+            isFree={action.isFree}
           />
         ))}
       </div>

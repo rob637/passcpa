@@ -21,6 +21,10 @@ import { format, addDays, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { useAuth } from '../../hooks/useAuth';
+import { setDoc, doc } from 'firebase/firestore';
+import { db } from '../../config/firebase';
+import logger from '../../utils/logger';
 
 // CFP domains aligned with blueprint weights
 const CFP_DOMAINS = [
@@ -139,6 +143,7 @@ const StudyDaysSelector: React.FC<StudyDaysSelectorProps> = ({ days, onChange })
 
 const CFPStudyPlanSetup: React.FC = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [step, setStep] = useState(1);
   const [examDate, setExamDate] = useState<Date | null>(null);
   const [hoursPerDay, setHoursPerDay] = useState(2);
@@ -170,16 +175,42 @@ const CFPStudyPlanSetup: React.FC = () => {
   };
 
   const handleGeneratePlan = async () => {
+    if (!user) {
+      navigate('/cfp/dashboard');
+      return;
+    }
+    
     setIsGenerating(true);
     
-    // In a real implementation, this would save to Firebase
-    // For now, we'll just navigate to the dashboard
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // TODO: Save study plan to user profile
-    // await saveStudyPlan({ examDate, hoursPerDay, daysPerWeek });
-    
-    navigate('/cfp/dashboard');
+    try {
+      // Generate study schedule based on exam date and study hours
+      const studyPlan = {
+        id: `cfp-plan-${Date.now()}`,
+        createdAt: new Date().toISOString(),
+        examDate: examDate?.toISOString(),
+        hoursPerDay,
+        daysPerWeek,
+        totalStudyHours,
+        weeksUntilExam,
+        domains: CFP_DOMAINS.map(d => ({
+          id: d.id,
+          name: d.name,
+          weight: d.weight,
+          allocatedHours: Math.round(totalStudyHours * (d.weight / 100)),
+        })),
+      };
+      
+      // Save to Firestore
+      await setDoc(doc(db, 'users', user.uid, 'settings', 'cfpStudyPlan'), studyPlan);
+      
+      logger.info('CFP Study plan saved', { planId: studyPlan.id });
+      navigate('/cfp/dashboard');
+    } catch (error) {
+      logger.error('Failed to save CFP study plan', error);
+      navigate('/cfp/dashboard');
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   const canProceed = () => {
@@ -234,7 +265,7 @@ const CFPStudyPlanSetup: React.FC = () => {
                 min={minDate}
                 max={maxDate}
                 onChange={(e) => setExamDate(e.target.value ? new Date(e.target.value) : null)}
-                className="input-field w-full text-lg"
+                className="input w-full text-lg"
               />
             </div>
 

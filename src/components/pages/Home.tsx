@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {
   BookOpen,
   FileSpreadsheet,
+  FileText,
   ChevronDown,
   Calendar,
   Flame,
@@ -11,7 +12,6 @@ import {
   Brain,
   TrendingUp,
   Check,
-  X,
   Sparkles,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
@@ -25,16 +25,30 @@ import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
 import { 
-  getCourseLearnPath, 
   getCoursePracticePath, 
   getCourseFlashcardPath, 
   getCourseQuizPath, 
   getCourseExamPath,
   getCourseTBSPath,
+  getCourseEssayPath,
+  getCourseCBQPath,
 } from '../../utils/courseNavigation';
+import { CourseId } from '../../types/course';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
-import { Button } from '../common/Button';
+import { BottomSheet } from '../common/BottomSheet';
+
+// Derive courseId from exam section name
+const getCourseFromSection = (section: string): CourseId => {
+  const upper = section.toUpperCase();
+  if (['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'].includes(upper)) return 'cpa';
+  if (upper.startsWith('SEE')) return 'ea';
+  if (upper.startsWith('CMA')) return 'cma';
+  if (upper.startsWith('CIA')) return 'cia';
+  if (upper.startsWith('CISA')) return 'cisa';
+  if (upper.startsWith('CFP')) return 'cfp';
+  return 'cpa';
+};
 
 // Tutor messages based on context
 const getTutorMessage = (streak: number, readiness: number, timeOfDay: string): string => {
@@ -73,7 +87,7 @@ const getGreeting = (): string => {
 const Home = () => {
   const { userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
-  const { courseId, course } = useCourse();
+  const { courseId, course, setCourse } = useCourse();
   
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [_loading, setLoading] = useState(true);
@@ -124,7 +138,7 @@ const Home = () => {
   const sectionInfo = getSectionDisplayInfo(activeSection, courseId);
   
   // Calculate days until exam - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, activeSection);
+  const examDate = getExamDate(userProfile, activeSection, courseId);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Load readiness data - depends on activeSection (local state)
@@ -173,8 +187,16 @@ const Home = () => {
     setChangingSection(true);
     
     try {
-      // Persist to Firebase
-      await updateUserProfile({ examSection: newSection });
+      // Derive courseId from section and sync both to Firebase + local state
+      const derivedCourse = getCourseFromSection(newSection);
+      
+      // Persist examSection AND activeCourse to Firebase together
+      await updateUserProfile({ examSection: newSection, activeCourse: derivedCourse } as any);
+      
+      // Also update CourseProvider's local state (saves to localStorage)
+      if (derivedCourse !== courseId) {
+        setCourse(derivedCourse);
+      }
       
       // Refresh study stats for new section
       if (refreshStats) {
@@ -196,38 +218,20 @@ const Home = () => {
   );
 
   return (
-    <div className="max-w-lg mx-auto space-y-6">
-      {/* Section Picker Modal */}
-      {showSectionPicker && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4"
-          onClick={(e) => e.target === e.currentTarget && setShowSectionPicker(false)}
-        >
-          <div 
-            className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-md max-h-[80vh] shadow-xl flex flex-col"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700 flex-shrink-0">
-              <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Change Exam Section</h2>
-              <Button 
-                onClick={() => setShowSectionPicker(false)}
-                variant="ghost"
-                size="icon"
-              >
-                <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-              </Button>
-            </div>
-            <div className="p-4 space-y-2 overflow-y-auto flex-1 overscroll-contain">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-lg mx-auto space-y-6">
+      {/* Section Picker Bottom Sheet */}
+      <BottomSheet
+        isOpen={showSectionPicker}
+        onClose={() => setShowSectionPicker(false)}
+        title="Change Exam Section"
+        maxHeight={75}
+      >
+        <div className="py-1 space-y-1">
               {courseId === 'cpa' ? (
                 // CPA-specific section picker with Core/Discipline grouping
-                (() => {
-                  const BLUEPRINT_CUTOFF = new Date('2026-07-01');
-                  const userExamDate = examDate ? new Date(examDate) : new Date();
-                  const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
-                  const disciplineSections = is2025Blueprint
-                    ? ['BEC']
-                    : DISCIPLINE_SECTIONS_2026;
-                  
+                // Note: BEC was retired December 15, 2023, only BAR/ISC/TCP available
+                (() => {                  
                   return (
                     <>
                       {/* Core Sections */}
@@ -241,72 +245,68 @@ const Home = () => {
                             onClick={() => handleSectionChange(sectionKey)}
                             disabled={changingSection}
                             className={clsx(
-                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                              'w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                                 : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                             )}
                           >
                             <div 
-                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs"
                               style={{ backgroundColor: section?.color || '#6366f1' }}
                             >
                               {section?.shortName || sectionKey}
                             </div>
-                            <div className="flex-1">
-                              <div className="font-semibold text-slate-900 dark:text-slate-100">
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-sm text-slate-900 dark:text-slate-100">
                                 {section?.name || sectionKey}
                               </div>
-                              <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
+                              <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
                                 {section?.description?.split('.')[0] || ''}
                               </div>
                             </div>
                             {isSelected && (
-                              <Check className="w-5 h-5 text-primary-600" />
+                              <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
                             )}
                           </button>
                         );
                       })}
                       
-                      {/* Discipline Sections */}
-                      <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-4 mb-2">
+                      {/* Discipline Sections - BAR, ISC, TCP only (BEC retired Dec 2023) */}
+                      <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-3 mb-2">
                         Discipline (Choose One)
-                        {is2025Blueprint && <span className="text-amber-600 ml-1">• 2025 Blueprint</span>}
                       </div>
-                      {disciplineSections.map((sectionKey) => {
+                      {DISCIPLINE_SECTIONS_2026.map((sectionKey) => {
                         const section = getSectionDisplayInfo(sectionKey, courseId);
                         const isSelected = sectionKey === activeSection;
-                        const isBEC = sectionKey === 'BEC';
                         return (
                           <button
                             key={sectionKey}
                             onClick={() => handleSectionChange(sectionKey)}
                             disabled={changingSection}
                             className={clsx(
-                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                              'w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                                : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600',
-                              isBEC && 'border-amber-300 dark:border-amber-700'
+                                : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                             )}
                           >
                             <div 
-                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs"
                               style={{ backgroundColor: section?.color || '#6366f1' }}
                             >
                               {section?.shortName || sectionKey}
                             </div>
-                            <div className="flex-1">
-                              <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-sm text-slate-900 dark:text-slate-100">
                                 {section?.name || sectionKey}
-                                {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
                               </div>
-                              <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
+                              <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
                                 {section?.description?.split('.')[0] || ''}
                               </div>
                             </div>
                             {isSelected && (
-                              <Check className="w-5 h-5 text-primary-600" />
+                              <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
                             )}
                           </button>
                         );
@@ -329,40 +329,38 @@ const Home = () => {
                         onClick={() => handleSectionChange(courseSection.id)}
                         disabled={changingSection}
                         className={clsx(
-                          'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                          'w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                           isSelected
                             ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                             : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                         )}
                       >
                         <div 
-                          className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                          className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs"
                           style={{ backgroundColor: section?.color || '#6366f1' }}
                         >
                           {courseSection.shortName}
                         </div>
-                        <div className="flex-1">
-                          <div className="font-semibold text-slate-900 dark:text-slate-100">
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-sm text-slate-900 dark:text-slate-100">
                             {courseSection.name}
                           </div>
                           {courseSection.weight && (
-                            <div className="text-xs text-slate-600 dark:text-slate-300">
+                            <div className="text-xs text-slate-500 dark:text-slate-400">
                               Weight: {courseSection.weight}
                             </div>
                           )}
                         </div>
                         {isSelected && (
-                          <Check className="w-5 h-5 text-primary-600" />
+                          <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
                         )}
                       </button>
                     );
                   })}
                 </>
               )}
-            </div>
-          </div>
         </div>
-      )}
+      </BottomSheet>
 
       {/* Header: Greeting + Stats Row */}
       <div className="space-y-3">
@@ -416,7 +414,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Exam Date Prompt - Show when no exam date set */}
+      {/* Exam Date Prompt - Show when no exam date set for this course */}
       {!examDate && (
         <Link
           to="/settings"
@@ -427,7 +425,7 @@ const Home = () => {
           </div>
           <div className="flex-1">
             <div className="font-semibold text-slate-900 dark:text-slate-100">
-              When is your {sectionInfo?.shortName || activeSection} exam?
+              When is your {course?.shortName || courseId?.toUpperCase() || 'exam'} exam?
             </div>
             <div className="text-sm text-slate-600 dark:text-slate-300">
               Set your exam date for personalized study pacing
@@ -443,7 +441,7 @@ const Home = () => {
       {/* Quick Access Buttons */}
       <div className="grid grid-cols-3 gap-3">
         <Link
-          to={getCourseLearnPath(courseId, activeSection)}
+          to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
@@ -473,12 +471,35 @@ const Home = () => {
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
         </Link>
         )}
+        
+        {/* CMA Essay/CBQ button - Essays are 25% of CMA exam */}
+        {/* Note: Essays available until Aug 2026, CBQs mandatory from Sept 2026 */}
+        {courseId === 'cma' && (
+        <>
+        <Link
+          to={getCourseEssayPath(courseId)}
+          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+        >
+          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+            <FileText className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          </div>
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Essays</span>
+        </Link>
+        <Link
+          to={getCourseCBQPath(courseId)}
+          className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all hover:shadow-md relative"
+        >
+          <span className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full">NEW</span>
+          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+            <FileSpreadsheet className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          </div>
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">CBQ</span>
+        </Link>
+        </>
+        )}
       </div>
 
-      {/* Study Time Card - Becker-style donut chart */}
-      <StudyTimeCard />
-
-      {/* More Options (collapsible feel, always visible) */}
+      {/* More Ways to Study - Action buttons above stats */}
       <div className="space-y-2">
         <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider px-1">More Ways to Study</p>
         <div className="grid grid-cols-2 gap-2">
@@ -514,6 +535,10 @@ const Home = () => {
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Ask Vory</span>
           </Link>
         </div>
+      </div>
+
+      {/* Study Time Card - At bottom since less actionable */}
+      <StudyTimeCard />
       </div>
     </div>
   );

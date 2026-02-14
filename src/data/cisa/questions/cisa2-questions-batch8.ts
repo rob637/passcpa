@@ -8,50 +8,56 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH8: Question[] = [
   {
-    id: 'CISA2-173',
+    id: 'cisa2-173',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST important factor in ensuring IT strategic alignment is:',
     options: [
-      'Modern technology infrastructure',
       'Business involvement in IT decision-making',
+      'Experienced IT staff',
+      'Modern technology infrastructure',
       'Large IT budget',
-      'Experienced IT staff'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT strategic alignment requires business involvement to ensure IT initiatives support business objectives and priorities.',
     topic: 'IT Governance',
     subtopic: 'Strategic Alignment'
   },
   {
-    id: 'CISA2-174',
+    id: 'cisa2-174',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key performance indicator (KPI) for IT service delivery should be:',
     options: [
       'Number of servers deployed',
+      'Number of IT staff',
       'IT budget variance',
       'System availability percentage',
-      'Number of IT staff'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'System availability directly measures service delivery effectiveness, which is a key IT service metric.',
     topic: 'IT Performance',
     subtopic: 'KPIs'
   },
   {
-    id: 'CISA2-175',
+    id: 'cisa2-175',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization has outsourced its data center operations. Which of the following BEST ensures control over the outsourced function?',
     options: [
       'Detailed contract with SLAs and right-to-audit clause',
+      'Trusting the vendor\'s reputation',
       'Visiting the vendor annually',
       'Reviewing the vendor\'s marketing materials',
-      'Trusting the vendor\'s reputation'
     ],
     correctAnswer: 0,
     explanation: 'Contractual controls including SLAs and right-to-audit ensure the organization can monitor and verify vendor performance.',
@@ -59,33 +65,37 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Outsourcing Governance'
   },
   {
-    id: 'CISA2-177',
+    id: 'cisa2-177',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT resource management, the IS auditor should be MOST concerned if:',
     options: [
-      'Skills training is provided annually',
       'Capacity planning does not exist',
+      'Skills training is provided annually',
+      'Some positions are vacant temporarily',
       'Contractors are used for specialized projects',
-      'Some positions are vacant temporarily'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Lack of capacity planning can lead to performance issues and inability to meet business demands.',
     topic: 'Resource Management',
     subtopic: 'Capacity Planning'
   },
   {
-    id: 'CISA2-178',
+    id: 'cisa2-178',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk appetite is BEST described as:',
     options: [
       'The total amount of risk an organization holds',
       'The amount and type of risk an organization is willing to accept',
+      'The level of risk that requires immediate action',
       'The risk that remains after controls are applied',
-      'The level of risk that requires immediate action'
     ],
     correctAnswer: 1,
     explanation: 'Risk appetite defines the amount and type of risk the organization is willing to accept in pursuit of its objectives.',
@@ -93,16 +103,18 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk Appetite'
   },
   {
-    id: 'CISA2-179',
+    id: 'cisa2-179',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The COBIT framework enables organizations to:',
     options: [
-      'Eliminate all IT risks',
+      'Automate all IT processes',
       'Govern and manage enterprise IT in a holistic manner',
+      'Eliminate all IT risks',
       'Replace the need for IT audits',
-      'Automate all IT processes'
     ],
     correctAnswer: 1,
     explanation: 'COBIT provides a framework for governance and management of enterprise IT, supporting holistic IT oversight.',
@@ -110,33 +122,37 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'COBIT Framework'
   },
   {
-    id: 'CISA2-180',
+    id: 'cisa2-180',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IT balanced scorecard includes perspectives EXCEPT:',
     options: [
-      'Customer satisfaction',
       'Internal processes',
+      'Learning and growth',
+      'Customer satisfaction',
       'Employee salary',
-      'Learning and growth'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The balanced scorecard includes financial, customer, internal processes, and learning/growth perspectives - not employee salary.',
     topic: 'IT Performance',
     subtopic: 'Balanced Scorecard'
   },
   {
-    id: 'CISA2-181',
+    id: 'cisa2-181',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers that IT policies are approved by the CIO only. This is MOST concerning because:',
     options: [
-      'Policies should be approved by the security team',
+      'Policies should be approved by IT staff',
       'Enterprise-wide policies require business stakeholder input and approval',
+      'Policies should be approved by the security team',
       'The CIO is too busy for this responsibility',
-      'Policies should be approved by IT staff'
     ],
     correctAnswer: 1,
     explanation: 'IT policies often affect the entire enterprise and should have appropriate business stakeholder input and governance approval.',
@@ -144,16 +160,18 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Policy Approval'
   },
   {
-    id: 'CISA2-182',
+    id: 'cisa2-182',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An organization\'s IT risk register should be:',
     options: [
-      'Reviewed annually by external auditors only',
+      'Confidential and not shared with management',
       'Updated continuously as risks change',
+      'Reviewed annually by external auditors only',
       'Created once during initial risk assessment',
-      'Confidential and not shared with management'
     ],
     correctAnswer: 1,
     explanation: 'The risk register is a living document that should be updated as risks emerge, change, or are mitigated.',
@@ -161,67 +179,75 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Risk Register'
   },
   {
-    id: 'CISA2-183',
+    id: 'cisa2-183',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key risk indicators (KRIs) differ from KPIs in that KRIs:',
     options: [
+      'Cannot be quantified',
       'Measure past performance',
       'Provide early warning of potential risk events',
       'Are used only for financial risks',
-      'Cannot be quantified'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'KRIs are leading indicators that provide early warning of potential risk events, while KPIs typically measure past performance.',
     topic: 'Risk Management',
     subtopic: 'Key Risk Indicators'
   },
   {
-    id: 'CISA2-184',
+    id: 'cisa2-184',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY reason for maintaining an IT asset inventory is:',
     options: [
+      'To determine IT budget',
       'To calculate depreciation',
       'To enable effective management and security of IT resources',
       'To comply with financial reporting',
-      'To determine IT budget'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'An accurate IT asset inventory enables effective management, security, and lifecycle management of IT resources.',
     topic: 'Resource Management',
     subtopic: 'Asset Management'
   },
   {
-    id: 'CISA2-185',
+    id: 'cisa2-185',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT human resource management, the MOST significant risk is:',
     options: [
       'High turnover requiring frequent recruitment',
+      'Use of performance reviews',
       'Lack of succession planning for key IT positions',
       'IT staff requesting training',
-      'Use of performance reviews'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Lack of succession planning for key positions creates critical dependency and continuity risks.',
     topic: 'Human Resources',
     subtopic: 'Succession Planning'
   },
   {
-    id: 'CISA2-186',
+    id: 'cisa2-186',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An enterprise architecture should PRIMARILY:',
     options: [
       'Document all current systems',
       'Provide a roadmap from current state to target state',
+      'List all IT vendors',
       'Replace the IT strategy',
-      'List all IT vendors'
     ],
     correctAnswer: 1,
     explanation: 'Enterprise architecture provides a structured view of current and target states with a roadmap for achieving transformation.',
@@ -229,50 +255,56 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Enterprise Architecture'
   },
   {
-    id: 'CISA2-187',
+    id: 'cisa2-187',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT investment decisions should be based PRIMARILY on:',
     options: [
-      'Available budget',
       'Business case with expected value and risks',
+      'Available budget',
+      'Latest technology trends',
       'IT department preferences',
-      'Latest technology trends'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Investment decisions should be based on business cases that articulate expected value, costs, risks, and strategic alignment.',
     topic: 'IT Investment',
     subtopic: 'Business Case'
   },
   {
-    id: 'CISA2-188',
+    id: 'cisa2-188',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A service level agreement (SLA) should include all of the following EXCEPT:',
     options: [
-      'Service availability targets',
       'Incident response times',
+      'Employee job descriptions',
+      'Service availability targets',
       'Penalty clauses',
-      'Employee job descriptions'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'SLAs define service levels, metrics, and consequences - not internal organizational matters like job descriptions.',
     topic: 'Service Management',
     subtopic: 'SLA Components'
   },
   {
-    id: 'CISA2-189',
+    id: 'cisa2-189',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY benefit of implementing ITIL is:',
     options: [
-      'Reduced IT headcount',
+      'Lower hardware costs',
       'Standardized and improved IT service management processes',
+      'Reduced IT headcount',
       'Elimination of all IT incidents',
-      'Lower hardware costs'
     ],
     correctAnswer: 1,
     explanation: 'ITIL provides best practice guidance for standardizing and improving IT service management processes.',
@@ -280,135 +312,151 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'ITIL'
   },
   {
-    id: 'CISA2-190',
+    id: 'cisa2-190',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IS auditor reviewing IT project management should be MOST concerned if:',
     options: [
-      'Project managers report to a PMO',
+      'Projects have formal kickoff meetings',
       'Projects use different methodologies based on project type',
+      'Project managers report to a PMO',
       'Business cases are not developed before project approval',
-      'Projects have formal kickoff meetings'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Projects without business cases may not be properly evaluated for value, risk, and strategic alignment before resources are committed.',
     topic: 'Project Management',
     subtopic: 'Business Case Requirement'
   },
   {
-    id: 'CISA2-191',
+    id: 'cisa2-191',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Segregation of duties in IT is MOST critical between:',
     options: [
-      'Helpdesk and network operations',
       'Development and production operations',
+      'Business analysis and testing',
+      'Helpdesk and network operations',
       'Project management and training',
-      'Business analysis and testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Separation between development and production prevents unauthorized code changes and ensures proper change control.',
     topic: 'Organization Structure',
     subtopic: 'Segregation of Duties'
   },
   {
-    id: 'CISA2-192',
+    id: 'cisa2-192',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of an IT policy exception process is to:',
     options: [
+      'Reduce the number of policies',
       'Avoid following policies',
       'Document and approve deviations with appropriate risk acceptance',
       'Allow IT staff to bypass controls',
-      'Reduce the number of policies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Exception processes ensure policy deviations are documented, approved, and include appropriate risk acceptance.',
     topic: 'Policy Management',
     subtopic: 'Exception Process'
   },
   {
-    id: 'CISA2-193',
+    id: 'cisa2-193',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization is considering cloud adoption. The IS auditor should ensure that:',
     options: [
       'All data is migrated immediately',
+      'IT staff are reduced proportionally',
       'A cloud governance framework is established addressing risks and responsibilities',
       'The cheapest cloud provider is selected',
-      'IT staff are reduced proportionally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Cloud adoption requires a governance framework addressing shared responsibilities, risks, compliance, and security.',
     topic: 'Cloud Governance',
     subtopic: 'Cloud Adoption'
   },
   {
-    id: 'CISA2-194',
+    id: 'cisa2-194',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT governance is PRIMARILY the responsibility of:',
     options: [
       'The Chief Information Officer',
+      'The internal audit function',
       'The IT department',
       'The Board of Directors and executive management',
-      'The internal audit function'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Governance is the responsibility of the board and executive management who set direction and ensure objectives are achieved.',
     topic: 'IT Governance',
     subtopic: 'Governance Responsibility'
   },
   {
-    id: 'CISA2-195',
+    id: 'cisa2-195',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When IT services are delivered by multiple providers, the GREATEST challenge is:',
     options: [
-      'Cost management',
       'End-to-end service integration and accountability',
+      'Cost management',
+      'Contract negotiation',
       'Vendor selection',
-      'Contract negotiation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Multi-sourcing creates complexity in integrating services and establishing clear accountability across providers.',
     topic: 'Service Management',
     subtopic: 'Multi-Sourcing'
   },
   {
-    id: 'CISA2-196',
+    id: 'cisa2-196',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT compliance management should ensure:',
     options: [
-      'All regulations are followed by IT only',
       'Regulatory requirements are identified, monitored, and addressed',
+      'All regulations are followed by IT only',
+      'External auditors manage compliance',
       'Compliance is delegated to legal department only',
-      'External auditors manage compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT compliance management identifies applicable requirements and ensures they are monitored and addressed.',
     topic: 'Compliance',
     subtopic: 'Compliance Management'
   },
   {
-    id: 'CISA2-197',
+    id: 'cisa2-197',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization\'s IT risk management should be:',
     options: [
-      'Separate from enterprise risk management',
+      'Focused only on technology risks',
       'Integrated with enterprise risk management',
+      'Separate from enterprise risk management',
       'Managed only by IT security',
-      'Focused only on technology risks'
     ],
     correctAnswer: 1,
     explanation: 'IT risk management should be integrated with enterprise risk management for a holistic view of organizational risks.',
@@ -416,16 +464,18 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'ERM Integration'
   },
   {
-    id: 'CISA2-198',
+    id: 'cisa2-198',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of IT policies is to:',
     options: [
-      'Provide technical procedures',
+      'Document system configurations',
       'Communicate management\'s expectations and requirements',
+      'Provide technical procedures',
       'Replace training',
-      'Document system configurations'
     ],
     correctAnswer: 1,
     explanation: 'Policies communicate management\'s expectations and requirements that guide organizational behavior.',
@@ -433,27 +483,31 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Policy Purpose'
   },
   {
-    id: 'CISA2-199',
+    id: 'cisa2-199',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization reports IT performance to the board quarterly. This practice:',
     options: [
-      'Is excessive and should be annual',
       'Enables board oversight and should include both metrics and risk information',
+      'Should be delegated to the CIO without board involvement',
+      'Is excessive and should be annual',
       'Should only include positive performance',
-      'Should be delegated to the CIO without board involvement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Quarterly reporting enables board oversight and should include balanced information on performance and risks.',
     topic: 'IT Governance',
     subtopic: 'Board Reporting'
   },
   {
-    id: 'CISA2-200',
+    id: 'cisa2-200',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    blueprintArea: 'CISA2-1',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT value delivery is BEST demonstrated through:',
     options: [
       'Large IT budget allocations',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Value Delivery'
   },
   {
-    id: 'CISA2-201',
+    id: 'cisa2-201',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing vendor management, the IS auditor should be MOST concerned if:',
     options: [
       'Vendor performance is reviewed annually',
@@ -484,18 +540,20 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Exit Strategy'
   },
   {
-    id: 'CISA2-202',
+    id: 'cisa2-202',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT organizational structure should support:',
     options: [
-      'Maximum outsourcing',
       'Effective delivery of IT services aligned with business needs',
       'Minimum IT headcount',
-      'Centralized decision-making only'
+      'Maximum outsourcing',
+      'Centralized decision-making only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT organization structure should support effective service delivery aligned with business needs and objectives.',
     topic: 'Organization Structure',
     subtopic: 'IT Organization'

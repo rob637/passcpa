@@ -103,6 +103,21 @@ export function isValidSection(sectionId: string, courseId: string = 'cpa'): boo
 }
 
 /**
+ * Get current section for a course, validating profile section against course
+ * Use this when you want a valid section for the current course, falling back to default
+ */
+export function getCurrentSectionForCourse(
+  profileSection: string | undefined | null,
+  courseId: string
+): string {
+  // Only use profile section if it's valid for the current course
+  if (profileSection && isValidSection(profileSection, courseId)) {
+    return profileSection;
+  }
+  return getDefaultSection(courseId);
+}
+
+/**
  * Get the first/default section for a course
  */
 export function getDefaultSection(courseId: string = 'cpa'): string {
@@ -210,4 +225,76 @@ export function getSectionIds(courseId: string = 'cpa'): string[] {
   const course = COURSES[courseId as keyof typeof COURSES];
   if (!course) return [];
   return course.sections.map(s => s.id);
+}
+
+/**
+ * Blueprint area with shortName for UI display
+ */
+export interface BlueprintAreaDisplay {
+  id: string;
+  name: string;
+  shortName: string;
+  weight?: string;
+  topics?: string[];
+}
+
+/**
+ * Get blueprint areas for a section from course config
+ * Single source of truth for all blueprint area data
+ */
+export function getBlueprintAreas(sectionId: string, courseId: string = 'cpa'): BlueprintAreaDisplay[] {
+  const course = COURSES[courseId as keyof typeof COURSES];
+  if (!course) return [];
+  
+  const section = course.sections.find(s => s.id === sectionId);
+  if (!section?.blueprintAreas) return [];
+  
+  return section.blueprintAreas.map(area => ({
+    id: area.id,
+    name: area.name,
+    // Generate shortName from the name (take first significant word or last part after colon)
+    shortName: generateShortName(area.name),
+    weight: area.weight,
+    topics: area.topics,
+  }));
+}
+
+/**
+ * Generate a short display name from a full blueprint area name
+ */
+function generateShortName(name: string): string {
+  // If name has a colon, take the part after it
+  if (name.includes(':')) {
+    const afterColon = name.split(':')[1].trim();
+    // Take first two words max
+    return afterColon.split(' ').slice(0, 2).join(' ');
+  }
+  
+  // Common patterns to shorten
+  const shortenings: Record<string, string> = {
+    'Ethics, Professional Responsibilities': 'Ethics',
+    'Not-for-Profit': 'NFP',
+    'State and Local Government': "Gov't",
+    'Information Systems': 'Systems',
+    'Tax Compliance': 'Compliance',
+    'Tax Planning': 'Planning',
+    'Property Transactions': 'Property',
+    'Business Entities': 'Entities',
+    'Individuals': 'Individual',
+    'Preliminary Work': 'Prelim',
+    'Income and Assets': 'Income',
+    'Deductions and Credits': 'Deductions',
+    'Specialized Returns': 'Specialized',
+    'Financial Reporting': 'Reporting',
+    'Financial Statement': 'Fin Stmt',
+    'Internal Audit': 'IA',
+  };
+  
+  for (const [pattern, short] of Object.entries(shortenings)) {
+    if (name.includes(pattern)) return short;
+  }
+  
+  // Default: take first two significant words
+  const words = name.split(' ').filter(w => w.length > 2 && !['and', 'the', 'for', 'of'].includes(w.toLowerCase()));
+  return words.slice(0, 2).join(' ') || name.substring(0, 15);
 }

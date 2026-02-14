@@ -1,0 +1,9 @@
+Hey future CISAs… failing to grasp control types is a surefire way to lose points on the exam. Let's nail it down.
+
+Control types… are actions taken to mitigate risk. Simple. But auditors need to classify them to assess their effectiveness and design. We look at whether a control prevents, detects, or corrects errors and incidents. It's about understanding how controls fit into the overall security posture… and identifying gaps.
+
+Now, here's the ISACA trap. They love to blur the lines between detective and corrective controls. The trap is… they'll give you a scenario where something is *identified* and *fixed*, but the question focuses on *identification only*. The correct answer is the detective control… even if corrective action follows. Remember, detective controls only *discover* problems… corrective controls *fix* them. Preventative controls… stop problems before they even happen.
+
+For example, when auditing access controls… you see a log monitoring system flagging unusual login attempts. That's detective. The system automatically disabling the account? That’s corrective. Requiring multi-factor authentication in the first place? That's preventative.
+
+The ONE thing to remember? Focus on the *primary* function of the control. Is it stopping, finding, or fixing? Master this… and you'll be ready to ACE those control type questions!

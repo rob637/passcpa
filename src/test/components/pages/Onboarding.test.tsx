@@ -182,7 +182,7 @@ describe('Onboarding Component', () => {
       fireEvent.click(continueButtons[continueButtons.length - 1]);
 
       await waitFor(() => {
-        expect(screen.getByText(/When's Your Exam/i)).toBeInTheDocument();
+        expect(screen.getByText(/When's Your.*Exam/i)).toBeInTheDocument();
       });
 
       // Step 3: Exam Date -> Section

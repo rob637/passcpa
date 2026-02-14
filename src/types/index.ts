@@ -7,6 +7,7 @@ import type { CourseId as CourseIdType } from './course';
 export * from './course';
 export type { CourseId } from './course';
 export type { CourseId as CourseIdType } from './course';
+export type { CourseData } from './courseData';
 
 /**
  * Normalized Difficulty Levels
@@ -56,7 +57,7 @@ export type CFPSection = 'CFP-PCR' | 'CFP-GEN' | 'CFP-RISK' | 'CFP-INV' | 'CFP-T
  */
 export type AllExamSections = ExamSection | EASection | CMASection | CIASection | CISASection | CFPSection;
 
-/** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
+/** @deprecated BEC ended December 15, 2023. Replaced by BAR/ISC/TCP in CPA Evolution. Use ExamSection instead. */
 export type LegacyExamSection = 'BEC';
 
 /** Maps various difficulty labels to normalized values */
@@ -146,6 +147,7 @@ export interface LessonContentSection {
 
 export interface LessonContent {
   sections: LessonContentSection[];
+  markdown?: string; // Alternative: raw markdown content (used by CFP, CIA, etc.)
 }
 
 export interface Lesson {
@@ -220,7 +222,7 @@ export interface Question {
   courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
   section: AllExamSections;      // Updated: supports all course sections
   topic: string;
-  subtopic: string; // Made required to match existing data
+  subtopic?: string; // Optional — many questions omit this
   topicId?: string; // Legacy
   difficulty: Difficulty;
   question: string;
@@ -297,6 +299,91 @@ export interface TBS {
   blueprintTopic?: string;
 }
 
+/**
+ * CMA Case-Based Question (CBQ) Types
+ * Replacing essays starting Sept/Oct 2026
+ * 
+ * CBQ Question Types:
+ * - numerical_entry: Type in a calculated value (e.g., NPV, variance)
+ * - drag_and_drop: Arrange items in order or match items
+ * - multiple_select: Select all that apply (checkbox)
+ * - dropdown: Select from a dropdown list
+ */
+export type CBQQuestionType = 'numerical_entry' | 'drag_and_drop' | 'multiple_select' | 'dropdown';
+
+/**
+ * Individual CBQ question within a case scenario
+ */
+export interface CBQQuestion {
+  id: string;
+  prompt: string;
+  type: CBQQuestionType;
+  
+  // For dropdown and multiple_select
+  options?: string[];
+  
+  // For drag_and_drop - items to arrange or match
+  dragItems?: string[];
+  dropZones?: string[]; // Labels for drop zones (for matching)
+  
+  // Correct answer varies by type:
+  // - numerical_entry: number
+  // - dropdown: string (selected option)
+  // - multiple_select: string[] (all correct options)
+  // - drag_and_drop: string[] (items in correct order) or Record<string, string> (for matching)
+  correctAnswer: number | string | string[] | Record<string, string>;
+  
+  // Tolerance for numerical_entry (e.g., ±0.01)
+  tolerance?: number;
+  
+  // Points for this question
+  points: number;
+  
+  explanation: string;
+  hints?: string[];
+}
+
+/**
+ * CMA Case-Based Question (CBQ) - Full scenario with multiple interactive questions
+ * 
+ * Structure:
+ * - Scenario: Business context with data/exhibits
+ * - 3-5 related questions in various formats
+ * - Total ~15-20 minutes per CBQ
+ * 
+ * CMA Exam Structure (Sept 2026+):
+ * - 100 MCQs (75% of score)
+ * - 2 CBQs (25% of score)
+ */
+export interface CBQ {
+  id: string;
+  courseId: 'cma';
+  section: CMASection;
+  title: string;
+  difficulty: NormalizedDifficulty;
+  estimatedTime: number; // Minutes (typically 15-20)
+  
+  // Business scenario with data
+  scenario: string; // Markdown-formatted scenario
+  
+  // Optional exhibits (financial statements, data tables, etc.)
+  exhibits?: TBSExhibit[];
+  
+  // Multiple interactive questions
+  questions: CBQQuestion[];
+  
+  // Blueprint mapping
+  blueprintArea: string; // e.g., 'CMA1-B', 'CMA2-C'
+  topics: string[]; // Topics covered
+  
+  // Total points for scoring
+  totalPoints: number;
+  
+  // References and hints
+  references?: string[];
+  scoringNotes?: string;
+}
+
 export interface WCRubricCategory {
   weight: number;
   criteria: string[];
@@ -358,8 +445,11 @@ export interface UserProfile {
   lessonProgress?: Record<string, number>; // Lesson completion progress by lesson ID
   
   // Onboarding
+  /** @deprecated Use onboardingCompleted instead for multi-course support */
   onboardingComplete?: boolean;
   onboardingCompletedAt?: Date | { seconds: number; nanoseconds: number } | null;
+  /** Onboarding completion status keyed by course ID (e.g., { 'cpa': true, 'ea': false }) */
+  onboardingCompleted?: Partial<Record<CourseIdType, boolean>>;
   
   // Permissions
   isAdmin?: boolean;             // Admin role for CMS access
@@ -380,6 +470,10 @@ export interface UserProfile {
   // Curriculum filtering (smart study)
   enableCurriculumFilter?: boolean; // Filter to covered topics only
   enablePreviewMode?: boolean;      // Allow 10% lookahead for next topics
+  
+  // Study schedule — which days the user intends to study (0=Sun, 1=Mon, ..., 6=Sat)
+  // If omitted, all 7 days are assumed.
+  studyDayPreferences?: number[];
   
   // Timestamps (FieldValue allowed for serverTimestamp() during writes)
   createdAt?: Date | { seconds: number; nanoseconds: number } | { isEqual: (other: unknown) => boolean };

@@ -17,114 +17,134 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-271',
+    id: 'cia3-271',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Strategic planning involves:',
     options: [
-      'Day-to-day operational decisions',
       'Defining long-term direction and allocating resources to achieve goals',
+      'Day-to-day operational decisions',
       'Processing payroll',
-      'Managing accounts receivable'
+      'Managing accounts receivable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Strategic planning involves setting long-term organizational direction, goals, and allocating resources to achieve the strategic vision.',
     topic: 'Business Acumen',
-    subtopic: 'Strategic Planning'
+    subtopic: 'Strategic Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-272',
+    id: 'cia3-272',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A balanced scorecard measures performance across:',
     options: [
-      'Financial perspective only',
       'Financial, customer, internal process, and learning/growth perspectives',
+      'Financial perspective only',
       'Customer satisfaction only',
-      'Employee metrics only'
+      'Employee metrics only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The balanced scorecard includes four perspectives: financial, customer, internal business processes, and learning/growth.',
     topic: 'Business Acumen',
-    subtopic: 'Performance Measurement'
+    subtopic: 'Performance Measurement',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-274',
+    id: 'cia3-274',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Supply chain management focuses on:',
     options: [
       'Marketing strategies',
-      'Managing flow of goods, information, and finances from source to customer',
       'Human resource policies',
-      'Legal compliance'
+      'Managing flow of goods, information, and finances from source to customer',
+      'Legal compliance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Supply chain management coordinates the flow of goods, services, information, and finances from raw materials to end customer.',
     topic: 'Business Acumen',
-    subtopic: 'Supply Chain Management'
+    subtopic: 'Supply Chain Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-275',
+    id: 'cia3-275',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Business Acumen',
+    subtopic: 'Performance Indicators',
     difficulty: 'hard',
-    question: 'Key performance indicators (KPIs) should be:',
+    skillLevel: 'Analysis',
+    question: 'An organization establishes a KPI requiring that 95% of customer complaints be resolved within 48 hours. This KPI is MOST useful when it includes which additional characteristic?',
     options: [
-      'Numerous to cover all activities',
-      'Aligned with strategic objectives and measurable',
-      'Created annually with no updates',
-      'Focused only on financial results'
+      'The KPI is measured only once per year during the annual review',
+      'The KPI is linked to a specific strategic objective and has a defined measurement methodology',
+      'The KPI is set by individual employees without management input',
+      'The KPI target is adjusted retroactively based on actual results',
     ],
     correctAnswer: 1,
-    explanation: 'Effective KPIs are aligned with strategic objectives, quantifiable, actionable, and provide timely information for decision-making.',
-    topic: 'Business Acumen',
-    subtopic: 'Performance Indicators'
+    explanation: 'Effective KPIs must be linked to strategic objectives and have clearly defined measurement methodologies including data sources, calculation methods, and reporting frequencies. A KPI without a clear connection to strategy or defined measurement criteria cannot drive meaningful performance improvement.',
+    reference: 'IIA Standards',
   },
   
   {
-    id: 'CIA3-277',
+    id: 'cia3-277',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Outsourcing decisions should consider:',
     options: [
-      'Cost savings only',
       'Risks, quality, strategic alignment, and total cost',
       'Vendor reputation only',
-      'Speed of implementation'
+      'Cost savings only',
+      'Speed of implementation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Outsourcing decisions must consider risks, quality impacts, strategic fit, vendor capabilities, and total cost including hidden costs.',
     topic: 'Business Acumen',
-    subtopic: 'Outsourcing'
+    subtopic: 'Outsourcing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-278',
+    id: 'cia3-278',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Change management in organizations requires:',
     options: [
-      'Surprise announcements',
-      'Stakeholder engagement, communication, and managing resistance',
       'Mandating changes without explanation',
-      'Technical training only'
+      'Stakeholder engagement, communication, and managing resistance',
+      'Surprise announcements',
+      'Technical training only',
     ],
     correctAnswer: 1,
     explanation: 'Effective change management involves stakeholder engagement, clear communication, training, and addressing resistance.',
     topic: 'Business Acumen',
-    subtopic: 'Change Management'
+    subtopic: 'Change Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-279',
+    id: 'cia3-279',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Quality management systems like ISO 9001:',
     options: [
       'Guarantee high quality products',
@@ -135,30 +155,36 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'ISO 9001 provides a framework for quality management systems focused on consistent processes, not guarantee of product quality.',
     topic: 'Business Acumen',
-    subtopic: 'Quality Management'
+    subtopic: 'Quality Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-280',
+    id: 'cia3-280',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Organizational structure affects:',
     options: [
-      'External market conditions',
       'Communication, decision-making, and accountability',
       'Economic factors',
-      'Regulatory requirements'
+      'External market conditions',
+      'Regulatory requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Organizational structure influences how information flows, decisions are made, responsibilities are assigned, and accountability is enforced.',
     topic: 'Business Acumen',
-    subtopic: 'Organizational Structure'
+    subtopic: 'Organizational Structure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-281',
+    id: 'cia3-281',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Value chain analysis identifies:',
     options: [
       'Competitor weaknesses',
@@ -169,13 +195,16 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'Value chain analysis examines activities to identify which create value for customers and which are candidates for improvement or elimination.',
     topic: 'Business Acumen',
-    subtopic: 'Value Chain'
+    subtopic: 'Value Chain',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-282',
+    id: 'cia3-282',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Project management includes:',
     options: [
       'Ongoing operational activities',
@@ -186,24 +215,28 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'Project management involves planning, organizing, and managing resources to achieve specific goals within defined constraints.',
     topic: 'Business Acumen',
-    subtopic: 'Project Management'
+    subtopic: 'Project Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-283',
+    id: 'cia3-283',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Lean principles focus on:',
     options: [
+      'Increasing inventory levels',
       'Reducing staff',
       'Eliminating waste and maximizing value',
-      'Increasing inventory levels',
-      'Adding process steps'
+      'Adding process steps',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Lean principles focus on eliminating waste (non-value-added activities) while maximizing value delivered to customers.',
     topic: 'Business Acumen',
-    subtopic: 'Lean Management'
+    subtopic: 'Lean Management',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -211,80 +244,94 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-284',
+    id: 'cia3-284',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CIA triad in information security refers to:',
     options: [
+      'Certified Internal Auditor requirements',
       'Central Intelligence Agency guidelines',
       'Confidentiality, Integrity, and Availability',
-      'Certified Internal Auditor requirements',
-      'Control, Inspection, and Assessment'
+      'Control, Inspection, and Assessment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The CIA triad represents the three pillars of information security: Confidentiality, Integrity, and Availability.',
     topic: 'Information Security',
-    subtopic: 'Security Fundamentals'
+    subtopic: 'Security Fundamentals',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-285',
+    id: 'cia3-285',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Defense in depth security strategy involves:',
     options: [
       'One strong security control',
-      'Multiple layers of security controls',
       'Physical security only',
-      'Perimeter protection exclusively'
+      'Multiple layers of security controls',
+      'Perimeter protection exclusively',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Defense in depth uses multiple layers of security controls so that if one fails, others provide protection.',
     topic: 'Information Security',
-    subtopic: 'Security Strategy'
+    subtopic: 'Security Strategy',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-286',
+    id: 'cia3-286',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Access control least privilege means:',
     options: [
-      'Giving everyone minimum access',
-      'Granting only access necessary to perform job functions',
       'Removing access after termination',
-      'Limiting administrator accounts'
+      'Granting only access necessary to perform job functions',
+      'Giving everyone minimum access',
+      'Limiting administrator accounts',
     ],
     correctAnswer: 1,
     explanation: 'Least privilege grants users only the minimum access rights necessary to perform their job functions.',
     topic: 'Information Security',
-    subtopic: 'Access Control'
+    subtopic: 'Access Control',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-288',
+    id: 'cia3-288',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Encryption at rest protects:',
     options: [
-      'Data during transmission',
       'Stored data on disks and databases',
+      'Data during transmission',
       'Data in memory',
-      'Network traffic'
+      'Network traffic',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Encryption at rest protects stored data on devices, databases, and backup media from unauthorized access.',
     topic: 'Information Security',
-    subtopic: 'Encryption'
+    subtopic: 'Encryption',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-290',
+    id: 'cia3-290',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A security incident response plan should:',
     options: [
       'Be developed after an incident',
@@ -295,58 +342,68 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'An incident response plan should be prepared in advance, defining roles, procedures, escalation, and communication protocols.',
     topic: 'Information Security',
-    subtopic: 'Incident Response'
+    subtopic: 'Incident Response',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-291',
+    id: 'cia3-291',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Penetration testing:',
     options: [
-      'Is unauthorized hacking',
       'Simulates attacks to identify vulnerabilities with authorization',
+      'Is unauthorized hacking',
       'Replaces vulnerability scanning',
-      'Should be done infrequently'
+      'Should be done infrequently',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Penetration testing is authorized simulated attacks to identify security weaknesses before malicious actors exploit them.',
     topic: 'Information Security',
-    subtopic: 'Security Testing'
+    subtopic: 'Security Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-292',
+    id: 'cia3-292',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data classification helps:',
     options: [
-      'Reduce storage costs only',
       'Determine appropriate handling and protection based on sensitivity',
+      'Reduce storage costs only',
       'Speed up data processing',
-      'Comply with all regulations automatically'
+      'Comply with all regulations automatically',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data classification categorizes data by sensitivity level to determine appropriate handling, protection, and access controls.',
     topic: 'Information Security',
-    subtopic: 'Data Classification'
+    subtopic: 'Data Classification',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-293',
+    id: 'cia3-293',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security awareness training should:',
     options: [
       'Be done once during onboarding',
-      'Be ongoing and address current threats',
       'Focus only on IT staff',
-      'Cover policies without practical examples'
+      'Be ongoing and address current threats',
+      'Cover policies without practical examples',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Security awareness training should be ongoing, relevant to current threats, and apply to all employees.',
     topic: 'Information Security',
-    subtopic: 'Security Awareness'
+    subtopic: 'Security Awareness',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -354,78 +411,92 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-294',
+    id: 'cia3-294',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT general controls include:',
     options: [
       'Transaction processing controls',
-      'Access security, change management, and operations controls',
       'Input validation only',
-      'Output controls exclusively'
+      'Access security, change management, and operations controls',
+      'Output controls exclusively',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'ITGCs include access security, change management, computer operations, and other controls that enable reliable IT operations.',
     topic: 'Information Technology',
-    subtopic: 'IT General Controls'
+    subtopic: 'IT General Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-295',
+    id: 'cia3-295',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SDLC (Software Development Life Cycle) phases typically include:',
     options: [
-      'Coding only',
       'Requirements, design, development, testing, and maintenance',
       'Testing and deployment only',
-      'Design and development exclusively'
+      'Coding only',
+      'Design and development exclusively',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SDLC includes planning, requirements analysis, design, development, testing, deployment, and maintenance phases.',
     topic: 'Information Technology',
-    subtopic: 'SDLC'
+    subtopic: 'SDLC',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-296',
+    id: 'cia3-296',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Database controls should ensure:',
     options: [
-      'Maximum storage capacity',
       'Data integrity, availability, and authorized access',
       'Fastest processing speed',
-      'Minimum backup requirements'
+      'Maximum storage capacity',
+      'Minimum backup requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Database controls protect data integrity, ensure availability, and restrict access to authorized users.',
     topic: 'Information Technology',
-    subtopic: 'Database Controls'
+    subtopic: 'Database Controls',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-297',
+    id: 'cia3-297',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cloud computing risks include:',
     options: [
-      'Reduced costs only',
-      'Data security, vendor dependency, and compliance challenges',
       'Improved performance only',
-      'Enhanced control'
+      'Data security, vendor dependency, and compliance challenges',
+      'Reduced costs only',
+      'Enhanced control',
     ],
     correctAnswer: 1,
     explanation: 'Cloud computing introduces risks around data security, privacy, vendor lock-in, availability, and regulatory compliance.',
     topic: 'Information Technology',
-    subtopic: 'Cloud Computing'
+    subtopic: 'Cloud Computing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-298',
+    id: 'cia3-298',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT disaster recovery planning should:',
     options: [
       'Focus on data backup only',
@@ -436,58 +507,68 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'IT DR planning addresses recovery of technology systems, including hardware, software, data, networks, and supporting infrastructure.',
     topic: 'Information Technology',
-    subtopic: 'Disaster Recovery'
+    subtopic: 'Disaster Recovery',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-299',
+    id: 'cia3-299',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data analytics in auditing can:',
     options: [
-      'Replace auditor judgment',
       'Identify patterns, anomalies, and test entire populations',
+      'Replace auditor judgment',
       'Eliminate the need for sampling',
-      'Guarantee fraud detection'
+      'Guarantee fraud detection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data analytics enables testing of entire populations, identification of patterns and anomalies, and more effective audit procedures.',
     topic: 'Information Technology',
-    subtopic: 'Data Analytics'
+    subtopic: 'Data Analytics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-300',
+    id: 'cia3-300',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Change management controls should:',
     options: [
-      'Allow emergency changes without approval',
-      'Document, test, and approve changes before implementation',
       'Focus on hardware changes only',
-      'Be waived for small changes'
+      'Document, test, and approve changes before implementation',
+      'Allow emergency changes without approval',
+      'Be waived for small changes',
     ],
     correctAnswer: 1,
     explanation: 'Change management ensures changes are properly requested, assessed, authorized, tested, and documented before implementation.',
     topic: 'Information Technology',
-    subtopic: 'Change Management'
+    subtopic: 'Change Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-301',
+    id: 'cia3-301',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Artificial intelligence in business introduces risks related to:',
     options: [
-      'Improved efficiency only',
-      'Bias, transparency, accountability, and data quality',
       'Reduced costs only',
-      'Enhanced accuracy exclusively'
+      'Bias, transparency, accountability, and data quality',
+      'Improved efficiency only',
+      'Enhanced accuracy exclusively',
     ],
     correctAnswer: 1,
     explanation: 'AI introduces risks around algorithmic bias, lack of transparency (black box), accountability questions, and dependency on data quality.',
     topic: 'Information Technology',
-    subtopic: 'Emerging Technology'
+    subtopic: 'Emerging Technology',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -495,151 +576,177 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA3-302',
+    id: 'cia3-302',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The time value of money concept states that:',
     options: [
-      'Money has no time sensitivity',
       'A dollar today is worth more than a dollar in the future',
+      'Money has no time sensitivity',
       'Future money is worth more',
-      'Interest rates don\'t affect value'
+      'Interest rates don\'t affect value',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Time value of money recognizes that money available now is worth more than the same amount in the future due to earning potential.',
     topic: 'Financial Management',
-    subtopic: 'Time Value of Money'
+    subtopic: 'Time Value of Money',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-303',
+    id: 'cia3-303',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Financial Management',
+    subtopic: 'Capital Budgeting',
     difficulty: 'hard',
-    question: 'Net Present Value (NPV) analysis:',
+    skillLevel: 'Analysis',
+    question: 'A project has an initial investment of $400,000 and expected cash flows of $120,000 per year for 5 years. Using a discount rate of 10%, which factor would make the NPV analysis MOST sensitive to changes?',
     options: [
-      'Ignores the time value of money',
-      'Discounts future cash flows to present value and compares to investment',
-      'Only considers accounting profit',
-      'Focuses on payback period'
+      'The depreciation method selected for tax purposes',
+      'The discount rate used, since small changes significantly impact the present value of future cash flows',
+      'The number of decimal places used in calculations',
+      'Whether the investment is classified as capital or operating expenditure',
     ],
     correctAnswer: 1,
-    explanation: 'NPV discounts expected future cash flows to present value using a required rate of return and compares to initial investment.',
-    topic: 'Financial Management',
-    subtopic: 'Capital Budgeting'
+    explanation: 'NPV analysis is highly sensitive to the discount rate because it affects the present value of every future cash flow. A small change in the discount rate can significantly alter the NPV, potentially changing a project from positive to negative NPV, making it the most critical assumption in the analysis.',
+    reference: 'IIA Standards',
   },
   
   {
-    id: 'CIA3-305',
+    id: 'cia3-305',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Budget variance analysis:',
     options: [
       'Creates next year\'s budget',
-      'Compares actual results to budgeted amounts and investigates differences',
       'Summarizes financial statements',
-      'Calculates break-even point'
+      'Compares actual results to budgeted amounts and investigates differences',
+      'Calculates break-even point',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Variance analysis compares actual to budgeted performance, identifies significant differences, and investigates causes.',
     topic: 'Financial Management',
-    subtopic: 'Budgeting'
+    subtopic: 'Budgeting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-306',
+    id: 'cia3-306',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The weighted average cost of capital (WACC):',
     options: [
+      'Is calculated using only equity',
       'Equals the cost of debt only',
       'Represents the blended cost of all capital sources',
-      'Is calculated using only equity',
-      'Ignores tax effects'
+      'Ignores tax effects',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'WACC is the weighted average of the cost of each capital component (debt and equity), with debt adjusted for tax benefits.',
     topic: 'Financial Management',
-    subtopic: 'Cost of Capital'
+    subtopic: 'Cost of Capital',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-308',
+    id: 'cia3-308',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Return on Investment (ROI) measures:',
     options: [
-      'Total revenue',
-      'Gain from investment relative to cost',
       'Total assets',
-      'Market share'
+      'Gain from investment relative to cost',
+      'Total revenue',
+      'Market share',
     ],
     correctAnswer: 1,
     explanation: 'ROI measures the efficiency of an investment by comparing the gain to the cost: (Gain - Cost) / Cost.',
     topic: 'Financial Management',
-    subtopic: 'Performance Metrics'
+    subtopic: 'Performance Metrics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-309',
+    id: 'cia3-309',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Transfer pricing affects:',
     options: [
-      'External customer sales only',
-      'Internal transactions between divisions and tax allocation',
       'Employee compensation',
-      'Marketing strategies'
+      'Internal transactions between divisions and tax allocation',
+      'External customer sales only',
+      'Marketing strategies',
     ],
     correctAnswer: 1,
     explanation: 'Transfer pricing sets prices for transactions between related entities, affecting profit allocation, taxation, and performance measurement.',
     topic: 'Financial Management',
-    subtopic: 'Transfer Pricing'
+    subtopic: 'Transfer Pricing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-310',
+    id: 'cia3-310',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Financial statement ratio analysis:',
     options: [
-      'Creates financial statements',
       'Evaluates relationships between financial statement items',
       'Audits financial statements',
-      'Projects future stock prices'
+      'Creates financial statements',
+      'Projects future stock prices',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Ratio analysis evaluates relationships between financial statement items to assess liquidity, profitability, and other aspects.',
     topic: 'Financial Management',
-    subtopic: 'Financial Analysis'
+    subtopic: 'Financial Analysis',
+  reference: 'IIA Standards'
   },
   
   // Additional questions to complete batch
   {
-    id: 'CIA3-311',
+    id: 'cia3-311',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SWOT analysis examines:',
     options: [
-      'Financial ratios only',
       'Strengths, Weaknesses, Opportunities, and Threats',
       'Market share data',
-      'Employee engagement'
+      'Financial ratios only',
+      'Employee engagement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SWOT analysis evaluates internal strengths and weaknesses and external opportunities and threats facing an organization.',
     topic: 'Business Acumen',
-    subtopic: 'Strategic Analysis'
+    subtopic: 'Strategic Analysis',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-313',
+    id: 'cia3-313',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Regulatory compliance programs should:',
     options: [
       'Focus on penalties only',
@@ -650,100 +757,118 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'Compliance programs proactively identify applicable requirements, implement controls, monitor compliance, and address violations.',
     topic: 'Business Acumen',
-    subtopic: 'Regulatory Compliance'
+    subtopic: 'Regulatory Compliance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-314',
+    id: 'cia3-314',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Vendor risk management includes:',
     options: [
+      'Outsourcing all risk management',
       'Selecting the lowest-cost vendor',
       'Assessing, monitoring, and managing risks associated with third parties',
-      'Outsourcing all risk management',
-      'Contract negotiation only'
+      'Contract negotiation only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Vendor risk management involves due diligence, ongoing monitoring, and managing risks throughout the vendor relationship.',
     topic: 'Business Acumen',
-    subtopic: 'Vendor Management'
+    subtopic: 'Vendor Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-315',
+    id: 'cia3-315',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Ransomware protection strategies include:',
     options: [
+      'Air-gapped networks only',
       'Paying ransoms quickly',
       'Regular backups, employee training, and patch management',
-      'Air-gapped networks only',
-      'Cyber insurance exclusively'
+      'Cyber insurance exclusively',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Ransomware protection requires multiple controls: regular tested backups, security awareness, patching, endpoint protection, and network segmentation.',
     topic: 'Information Security',
-    subtopic: 'Ransomware Protection'
+    subtopic: 'Ransomware Protection',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-317',
+    id: 'cia3-317',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Zero trust security architecture:',
     options: [
-      'Trusts internal network traffic',
-      'Verifies every user and device regardless of location',
       'Eliminates all access controls',
-      'Applies only to cloud systems'
+      'Verifies every user and device regardless of location',
+      'Trusts internal network traffic',
+      'Applies only to cloud systems',
     ],
     correctAnswer: 1,
     explanation: 'Zero trust assumes no implicit trust, requiring verification of every user, device, and transaction regardless of network location.',
     topic: 'Information Security',
-    subtopic: 'Zero Trust'
+    subtopic: 'Zero Trust',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-319',
+    id: 'cia3-319',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Robotic Process Automation (RPA) risks include:',
     options: [
-      'Increased manual processing',
       'Unauthorized changes, access control, and process errors',
+      'Increased manual processing',
       'Higher labor costs',
-      'Reduced efficiency'
+      'Reduced efficiency',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'RPA risks include unauthorized bot access, uncontrolled changes, process errors, and dependency on proper configuration.',
     topic: 'Information Technology',
-    subtopic: 'RPA Risks'
+    subtopic: 'RPA Risks',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-320',
+    id: 'cia3-320',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'API security controls should address:',
     options: [
-      'User interface design',
-      'Authentication, authorization, input validation, and rate limiting',
       'Database optimization',
-      'Network bandwidth'
+      'Authentication, authorization, input validation, and rate limiting',
+      'User interface design',
+      'Network bandwidth',
     ],
     correctAnswer: 1,
     explanation: 'API security requires authentication, authorization, input validation, encryption, rate limiting, and logging.',
     topic: 'Information Technology',
-    subtopic: 'API Security'
+    subtopic: 'API Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-321',
+    id: 'cia3-321',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DevOps security (DevSecOps) integrates:',
     options: [
       'Security testing after deployment',
@@ -754,118 +879,139 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'DevSecOps embeds security practices throughout the development pipeline rather than treating security as a final gate.',
     topic: 'Information Technology',
-    subtopic: 'DevSecOps'
+    subtopic: 'DevSecOps',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-322',
+    id: 'cia3-322',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Service Level Agreements (SLAs) should specify:',
     options: [
-      'Vendor financial details',
       'Performance metrics, responsibilities, and remedies',
+      'Vendor financial details',
       'Internal organizational goals',
-      'Competitor comparisons'
+      'Competitor comparisons',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SLAs define performance expectations, metrics, responsibilities, consequences for non-performance, and remedies.',
     topic: 'Information Technology',
-    subtopic: 'Service Management'
+    subtopic: 'Service Management',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-324',
+    id: 'cia3-324',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Activity-based costing (ABC):',
     options: [
       'Allocates costs based on volume only',
-      'Assigns costs based on activities that drive resource consumption',
       'Ignores indirect costs',
-      'Simplifies cost allocation'
+      'Assigns costs based on activities that drive resource consumption',
+      'Simplifies cost allocation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'ABC allocates overhead costs based on activities that drive costs, providing more accurate product/service costing.',
     topic: 'Financial Management',
-    subtopic: 'Cost Accounting'
+    subtopic: 'Cost Accounting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-325',
+    id: 'cia3-325',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cash flow forecasting helps:',
     options: [
       'Report past financial results',
-      'Anticipate liquidity needs and plan financing',
       'Calculate profit margins',
-      'Determine asset values'
+      'Anticipate liquidity needs and plan financing',
+      'Determine asset values',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Cash flow forecasting projects cash inflows and outflows to anticipate liquidity positions and plan financing needs.',
     topic: 'Financial Management',
-    subtopic: 'Cash Management'
+    subtopic: 'Cash Management',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-327',
+    id: 'cia3-327',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hedging strategies:',
     options: [
-      'Increase risk exposure',
       'Offset potential losses from price or rate fluctuations',
       'Guarantee profits',
-      'Eliminate all financial risk'
+      'Increase risk exposure',
+      'Eliminate all financial risk',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Hedging uses financial instruments to offset potential losses from adverse price, interest rate, or currency movements.',
     topic: 'Financial Management',
-    subtopic: 'Risk Management'
+    subtopic: 'Risk Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-328',
+    id: 'cia3-328',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Enterprise risk management (ERM):',
     options: [
-      'Focuses only on financial risks',
-      'Provides a holistic view of risks across the organization',
       'Replaces internal controls',
-      'Is required only for public companies'
+      'Provides a holistic view of risks across the organization',
+      'Focuses only on financial risks',
+      'Is required only for public companies',
     ],
     correctAnswer: 1,
     explanation: 'ERM integrates risk management across the enterprise, considering all risk types and their interrelationships.',
     topic: 'Business Acumen',
-    subtopic: 'Enterprise Risk'
+    subtopic: 'Enterprise Risk',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA3-330',
+    id: 'cia3-330',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ESG (Environmental, Social, Governance) factors:',
     options: [
-      'Are relevant only to nonprofits',
       'Influence investment decisions and organizational risk profiles',
       'Replace financial analysis',
-      'Are optional for all organizations'
+      'Are relevant only to nonprofits',
+      'Are optional for all organizations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ESG factors increasingly influence investor decisions, regulations, reputation, and overall organizational risk and value.',
     topic: 'Business Acumen',
-    subtopic: 'ESG Factors'
+    subtopic: 'ESG Factors',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-331',
+    id: 'cia3-331',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal rate of return (IRR):',
     options: [
       'Equals the cost of capital',
@@ -876,13 +1022,16 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'IRR is the discount rate at which the net present value of cash flows equals zero, representing the expected return rate.',
     topic: 'Financial Management',
-    subtopic: 'Capital Budgeting'
+    subtopic: 'Capital Budgeting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-332',
+    id: 'cia3-332',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cyber insurance coverage:',
     options: [
       'Replaces security controls',
@@ -893,115 +1042,136 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'Cyber insurance transfers financial risk from cyber incidents but does not replace the need for security controls.',
     topic: 'Information Security',
-    subtopic: 'Cyber Insurance'
+    subtopic: 'Cyber Insurance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-333',
+    id: 'cia3-333',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Modern slavery and supply chain due diligence requires:',
     options: [
+      'Domestic supplier preference',
       'Cost reduction focus only',
       'Visibility into supplier practices and labor conditions',
-      'Domestic supplier preference',
-      'Periodic contract renewal'
+      'Periodic contract renewal',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Organizations must understand and monitor supplier practices to identify and address forced labor and human trafficking risks.',
     topic: 'Business Acumen',
-    subtopic: 'Supply Chain Ethics'
+    subtopic: 'Supply Chain Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-334',
+    id: 'cia3-334',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'MFA fatigue attacks:',
     options: [
+      'Disable MFA automatically',
       'Strengthen security',
       'Overwhelm users with authentication requests until they approve',
-      'Disable MFA automatically',
-      'Are not a concern'
+      'Are not a concern',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'MFA fatigue attacks bombard users with authentication requests, hoping they approve one to stop the notifications.',
     topic: 'Information Security',
-    subtopic: 'Authentication Attacks'
+    subtopic: 'Authentication Attacks',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-335',
+    id: 'cia3-335',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IoT (Internet of Things) security challenges include:',
     options: [
       'Improved network security',
-      'Limited device security capabilities and expanded attack surface',
       'Reduced complexity',
-      'Standardized security protocols'
+      'Limited device security capabilities and expanded attack surface',
+      'Standardized security protocols',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IoT devices often have limited security capabilities, default credentials, and expand the organization\'s attack surface.',
     topic: 'Information Technology',
-    subtopic: 'IoT Security'
+    subtopic: 'IoT Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-336',
+    id: 'cia3-336',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
+    topic: 'Financial Management',
+    subtopic: 'Performance Metrics',
     difficulty: 'hard',
-    question: 'Economic value added (EVA) measures:',
+    skillLevel: 'Analysis',
+    question: 'A division has operating income of $500,000, total capital employed of $4,000,000, and the company\'s weighted average cost of capital is 10%. What is the division\'s Economic Value Added (EVA) and what does it indicate?',
     options: [
-      'Total revenue growth',
-      'Value created above the cost of capital employed',
-      'Market share gains',
-      'Customer satisfaction'
+      'EVA is $500,000, indicating the division covers its operating expenses',
+      'EVA is $100,000, indicating the division creates value above the cost of capital employed',
+      'EVA is negative $100,000, indicating the division destroys shareholder value',
+      'EVA is $400,000, indicating strong return on investment',
     ],
     correctAnswer: 1,
-    explanation: 'EVA measures economic profit by deducting the cost of capital from operating profit, showing true value creation.',
-    topic: 'Financial Management',
-    subtopic: 'Performance Metrics'
+    explanation: 'EVA = Operating Income After Tax – (Capital × WACC). Here, EVA = $500,000 – ($4,000,000 × 10%) = $500,000 – $400,000 = $100,000. A positive EVA indicates the division is generating returns above its cost of capital, thereby creating shareholder value.',
+    reference: 'IIA Standards',
   },
   {
-    id: 'CIA3-337',
+    id: 'cia3-337',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sustainability reporting frameworks like GRI:',
     options: [
-      'Replace financial reporting',
       'Provide standards for disclosing environmental and social impacts',
       'Are mandatory globally',
-      'Focus only on carbon emissions'
+      'Replace financial reporting',
+      'Focus only on carbon emissions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Frameworks like GRI provide standards for organizations to report on environmental, social, and governance impacts.',
     topic: 'Business Acumen',
-    subtopic: 'Sustainability Reporting'
+    subtopic: 'Sustainability Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-338',
+    id: 'cia3-338',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Scenario analysis in risk management:',
     options: [
-      'Predicts exact future outcomes',
       'Explores potential impacts of different future conditions',
+      'Predicts exact future outcomes',
       'Replaces other risk assessments',
-      'Uses only historical data'
+      'Uses only historical data',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scenario analysis explores how different future conditions might affect the organization, supporting strategic planning.',
     topic: 'Business Acumen',
-    subtopic: 'Risk Assessment'
+    subtopic: 'Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-339',
+    id: 'cia3-339',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Container security (e.g., Docker, Kubernetes) requires:',
     options: [
       'Traditional perimeter security only',
@@ -1012,13 +1182,16 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'Container security requires image vulnerability scanning, runtime protection, secrets management, and secure orchestration.',
     topic: 'Information Technology',
-    subtopic: 'Container Security'
+    subtopic: 'Container Security',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA3-340',
+    id: 'cia3-340',
     courseId: 'cia',
     section: 'CIA3',
+    blueprintArea: 'CIA3-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third-party SOC reports help:',
     options: [
       'Replace vendor due diligence',
@@ -1029,6 +1202,7 @@ export const CIA3_QUESTIONS_BATCH4: Question[] = [
     correctAnswer: 1,
     explanation: 'SOC reports provide assurance about service organization controls, reducing need for each customer to audit the provider.',
     topic: 'Business Acumen',
-    subtopic: 'Third-Party Assurance'
+    subtopic: 'Third-Party Assurance',
+  reference: 'IIA Standards'
   },
 ];

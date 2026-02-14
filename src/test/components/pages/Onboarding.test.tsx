@@ -21,6 +21,7 @@ vi.mock('firebase/auth', () => ({
 vi.mock('firebase/firestore', () => ({
   getFirestore: vi.fn(() => ({})),
   serverTimestamp: vi.fn(() => new Date()),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 vi.mock('firebase/storage', () => ({

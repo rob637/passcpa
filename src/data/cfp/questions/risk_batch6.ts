@@ -9,10 +9,10 @@ import { Question } from '../../../types';
 export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   // RIS-1: Risk Analysis
   {
-    id: 'CFP-RIS-B6-001',
+    id: 'cfp-ris-b6-001',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Analysis',
     subtopic: 'Risk Mapping',
     difficulty: 'medium',
@@ -28,10 +28,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Risk mapping uses a matrix: probability of occurrence vs. severity of impact. High probability/high impact risks demand immediate attention (transfer or reduce). Low probability/low impact may be retained. This systematic approach ensures resources focus on the most significant risks first.'
   },
   {
-    id: 'CFP-RIS-B6-002',
+    id: 'cfp-ris-b6-002',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Analysis',
     subtopic: 'Pure vs Speculative Risk',
     difficulty: 'easy',
@@ -47,10 +47,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Pure risk: only loss or no loss possible (fire, death, liability). Speculative risk: potential for gain, loss, or no change (investments, gambling, business ventures). Insurance typically covers pure risks—insurers can price based on loss probability without considering gain.'
   },
   {
-    id: 'CFP-RIS-B6-003',
+    id: 'cfp-ris-b6-003',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Analysis',
     subtopic: 'Maximum Probable Loss',
     difficulty: 'hard',
@@ -67,10 +67,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   },
   // RIS-2: Life Insurance
   {
-    id: 'CFP-RIS-B6-004',
+    id: 'cfp-ris-b6-004',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Survivorship Life Insurance',
     difficulty: 'medium',
@@ -86,10 +86,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Second-to-die pays at the survivor\'s death—when estate taxes (with marital deduction) are due. Premiums are lower than individual policies because two lives are covered. Often used in ILITs for estate liquidity. Also useful when one spouse is uninsurable—joint coverage may be obtainable.'
   },
   {
-    id: 'CFP-RIS-B6-005',
+    id: 'cfp-ris-b6-005',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Life Settlement',
     difficulty: 'hard',
@@ -105,10 +105,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Viatical settlements: terminally/chronically ill sell policies, often tax-free under IRC 101(g). Life settlements: seniors (typically 65+) sell unwanted policies for more than cash value but less than death benefit. Life settlement proceeds are taxable—ordinary income to extent of premium recovered, then capital gains.'
   },
   {
-    id: 'CFP-RIS-B6-006',
+    id: 'cfp-ris-b6-006',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Corridor/Guideline Requirements',
     difficulty: 'hard',
@@ -125,10 +125,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   },
   // RIS-3: Disability Insurance
   {
-    id: 'CFP-RIS-B6-007',
+    id: 'cfp-ris-b6-007',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Residual Disability',
     difficulty: 'medium',
@@ -144,10 +144,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Residual disability benefits are typically proportional to the income loss. If the insured earns 60% of pre-disability income (40% loss), the benefit equals approximately 40% of the full monthly benefit. This encourages rehabilitation and return-to-work while providing income support during the transition.',
   },
   {
-    id: 'CFP-RIS-B6-008',
+    id: 'cfp-ris-b6-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Social Insurance Offset',
     difficulty: 'hard',
@@ -163,10 +163,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Social Insurance Supplement (SIS) provides extra benefit if SSDI is denied or delayed. Social Insurance Offset reduces the base benefit by SSDI received. The combination ensures adequate coverage while avoiding over-insurance. SSDI is difficult to obtain (strict definition), so SIS provides needed interim/permanent protection.'
   },
   {
-    id: 'CFP-RIS-B6-009',
+    id: 'cfp-ris-b6-009',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Business Overhead Expense',
     difficulty: 'medium',
@@ -183,10 +183,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   },
   // RIS-4: Property Insurance
   {
-    id: 'CFP-RIS-B6-010',
+    id: 'cfp-ris-b6-010',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Actual Cash Value vs Replacement Cost',
     difficulty: 'medium',
@@ -202,10 +202,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'ACV = Replacement Cost - Depreciation. A 10-year-old roof destroyed might only receive 30-40% of replacement cost under ACV. Replacement cost coverage pays to replace/repair with new materials. The premium difference is usually worth it for significant protection against depreciation.'
   },
   {
-    id: 'CFP-RIS-B6-011',
+    id: 'cfp-ris-b6-011',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Inflation Guard',
     difficulty: 'easy',
@@ -221,10 +221,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Inflation guard automatically increases dwelling coverage (typically quarterly) to match rising construction costs. Without it, a home insured at $300K five years ago might be underinsured as replacement costs rose. The premium increases proportionally. Most advisers recommend this endorsement.'
   },
   {
-    id: 'CFP-RIS-B6-012',
+    id: 'cfp-ris-b6-012',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Ordinance or Law Coverage',
     difficulty: 'medium',
@@ -241,10 +241,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   },
   // RIS-5: Liability Insurance
   {
-    id: 'CFP-RIS-B6-013',
+    id: 'cfp-ris-b6-013',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Personal Liability Umbrella',
     difficulty: 'medium',
@@ -260,10 +260,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Umbrellas provide: 1) excess liability above auto/homeowners limits (e.g., $1M-$10M), 2) broader coverage (some personal injury claims, liability abroad), 3) relatively inexpensive protection for catastrophic claims. They require maintaining specified underlying auto/home limits and typically exclude business/professional liability.'
   },
   {
-    id: 'CFP-RIS-B6-014',
+    id: 'cfp-ris-b6-014',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Professional Liability',
     difficulty: 'hard',
@@ -279,10 +279,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Professional liability (errors & omissions) covers claims from professional service failures—negligent advice, missed deadlines, errors in work product. It\'s essential for CFP® professionals. Policies are claims-made (covering claims made during policy period regardless of when error occurred), unlike occurrence-based general liability.'
   },
   {
-    id: 'CFP-RIS-B6-015',
+    id: 'cfp-ris-b6-015',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Workers Compensation',
     difficulty: 'medium',
@@ -299,10 +299,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   },
   // RIS-6: Health Insurance
   {
-    id: 'CFP-RIS-B6-016',
+    id: 'cfp-ris-b6-016',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-6',
+    blueprintArea: 'RISK-6',
     topic: 'Health Insurance',
     subtopic: 'HDHPs and HSAs',
     difficulty: 'medium',
@@ -318,10 +318,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'HDHP + HSA: triple tax advantage (deduction, tax-free growth, tax-free qualified withdrawals). HDHPs have minimum deductibles ($1,600 individual/$3,200 family in 2024) and maximum out-of-pocket limits. HSA contributions for 2024: $4,150/$8,300 + $1,000 catch-up (55+). HSA funds roll over and can be invested for retirement.'
   },
   {
-    id: 'CFP-RIS-B6-017',
+    id: 'cfp-ris-b6-017',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-6',
+    blueprintArea: 'RISK-6',
     topic: 'Health Insurance',
     subtopic: 'COBRA Continuation',
     difficulty: 'medium',
@@ -337,10 +337,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'COBRA applies to employers with 20+ employees. Qualifying events: job loss (18 months), hours reduction (18 months), divorce/legal separation (36 months), death (36 months for dependents), Medicare eligibility (36 months for spouse), dependent aging out (36 months). Premium is full cost plus 2% admin fee.'
   },
   {
-    id: 'CFP-RIS-B6-018',
+    id: 'cfp-ris-b6-018',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-6',
+    blueprintArea: 'RISK-6',
     topic: 'Health Insurance',
     subtopic: 'Medicare Parts',
     difficulty: 'easy',
@@ -357,10 +357,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-RIS-B6-019',
+    id: 'cfp-ris-b6-019',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Analysis',
     subtopic: 'Loss Prevention vs Reduction',
     difficulty: 'easy',
@@ -376,10 +376,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Loss prevention stops losses (smoke alarms, safe driving, exercise). Loss reduction minimizes severity (sprinklers limit fire damage, seatbelts reduce injury severity, first aid). Both are risk control techniques that complement insurance. Prevention is proactive; reduction is reactive planning.'
   },
   {
-    id: 'CFP-RIS-B6-020',
+    id: 'cfp-ris-b6-020',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-2',
+    blueprintArea: 'RISK-2',
     topic: 'Life Insurance',
     subtopic: 'Guaranteed Insurability',
     difficulty: 'medium',
@@ -395,10 +395,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Guaranteed insurability (or purchase option) lets policyholders buy additional coverage at specific dates (policy anniversaries) or life events (marriage, birth) without medical underwriting. Lock in insurability while young/healthy for future needs. Coverage is at attained age rates, but without health requirements.'
   },
   {
-    id: 'CFP-RIS-B6-021',
+    id: 'cfp-ris-b6-021',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-3',
+    blueprintArea: 'RISK-3',
     topic: 'Disability Insurance',
     subtopic: 'Recovery Benefit',
     difficulty: 'medium',
@@ -414,10 +414,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Recovery benefits continue for a period after total disability ends, even at full earning capacity. They help with transition expenses—new clothing after weight change, work equipment, training, deferred personal expenses. Typically 12-24 months, decreasing monthly. Different from residual (which requires ongoing income loss).'
   },
   {
-    id: 'CFP-RIS-B6-022',
+    id: 'cfp-ris-b6-022',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     topic: 'Property Insurance',
     subtopic: 'Named Peril vs Open Peril',
     difficulty: 'medium',
@@ -433,10 +433,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Named peril: only listed causes of loss covered (fire, lightning, windstorm, etc.). Open peril: covers any cause of loss unless specifically excluded (nuclear, war, intentional, etc.). Open peril is broader—unexpected events not listed as exclusions are covered. Standard homeowners policies vary: dwelling is often open peril; contents may be named peril.'
   },
   {
-    id: 'CFP-RIS-B6-023',
+    id: 'cfp-ris-b6-023',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-5',
+    blueprintArea: 'RISK-5',
     topic: 'Liability Insurance',
     subtopic: 'Occurrence vs Claims-Made',
     difficulty: 'hard',
@@ -452,10 +452,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Occurrence: covers incidents during policy period regardless of when claim is made. Claims-made: covers claims made during policy period for incidents after the retroactive date. Claims-made requires tail coverage (extended reporting period) when policies lapse to cover future claims from past acts. Professional liability is typically claims-made.'
   },
   {
-    id: 'CFP-RIS-B6-024',
+    id: 'cfp-ris-b6-024',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-6',
+    blueprintArea: 'RISK-6',
     topic: 'Health Insurance',
     subtopic: 'Medigap',
     difficulty: 'medium',
@@ -471,10 +471,10 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Medigap (Medicare Supplement) plans work alongside Original Medicare to cover deductibles, copayments, and coinsurance. Medicare Advantage (Part C) plans replace Original Medicare with managed care plans (HMO/PPO) that provide all Part A and B benefits plus often Part D and additional benefits.',
   },
   {
-    id: 'CFP-RIS-B6-025',
+    id: 'cfp-ris-b6-025',
     courseId: 'cfp',
     section: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     topic: 'Risk Analysis',
     subtopic: 'Coinsurance Penalty',
     difficulty: 'hard',

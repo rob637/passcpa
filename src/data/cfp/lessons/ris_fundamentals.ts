@@ -12,7 +12,7 @@ export const CFP_RIS1_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L001',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     title: 'Principles of Risk Management',
     order: 1,
     duration: 25,
@@ -176,7 +176,7 @@ Distribute risk among parties
   {
     id: 'CFP-RIS-L002',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     title: 'Insurance Fundamentals',
     order: 2,
     duration: 30,
@@ -361,7 +361,7 @@ Rating agencies:
   {
     id: 'CFP-RIS-L003',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-1',
+    blueprintArea: 'RISK-1',
     title: 'Insurance Pricing and Underwriting',
     order: 3,
     duration: 25,

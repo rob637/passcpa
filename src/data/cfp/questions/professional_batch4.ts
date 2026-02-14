@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   // PCR-1: CFP Board Code and Standards
   {
-    id: 'CFP-PCR-B4-001',
+    id: 'cfp-pcr-b4-001',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -28,7 +28,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Material information is defined as information important enough to influence a Client\'s decision. CFP® professionals must disclose all Material information, including conflicts of interest, compensation arrangements, and any information that could affect the Client\'s financial planning decisions.'
   },
   {
-    id: 'CFP-PCR-B4-002',
+    id: 'cfp-pcr-b4-002',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -47,7 +47,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'CFP Board is a private certification organization and has no criminal prosecution authority. It can issue private or public sanctions, suspend or revoke certification, and require continuing education or supervision. Criminal matters are referred to appropriate legal authorities.'
   },
   {
-    id: 'CFP-PCR-B4-003',
+    id: 'cfp-pcr-b4-003',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -66,7 +66,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires self-reporting within 30 calendar days of: personal bankruptcy, civil or criminal court actions, securities or insurance regulatory sanctions, investigations by regulatory bodies, and other specified events. Failure to self-report is an independent grounds for discipline.'
   },
   {
-    id: 'CFP-PCR-B4-004',
+    id: 'cfp-pcr-b4-004',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -86,7 +86,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-2: Fiduciary Duty
   {
-    id: 'CFP-PCR-B4-005',
+    id: 'cfp-pcr-b4-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -105,7 +105,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Under CFP Board\'s fiduciary duty, CFP® professionals must place the Client\'s interests above their own and avoid placing their interests ahead of the Client\'s. Recommending a higher-commission product when an equally suitable lower-cost alternative exists likely violates this duty, regardless of suitability.'
   },
   {
-    id: 'CFP-PCR-B4-006',
+    id: 'cfp-pcr-b4-006',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -125,7 +125,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-3: Regulatory Framework
   {
-    id: 'CFP-PCR-B4-007',
+    id: 'cfp-pcr-b4-007',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -144,7 +144,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'FINRA rules require registered representatives to provide prior written notice of outside business activities to their broker-dealer. The firm may approve, disapprove, or impose conditions. This allows supervision and identifies potential conflicts of interest. Failure to disclose can result in termination and sanctions.'
   },
   {
-    id: 'CFP-PCR-B4-008',
+    id: 'cfp-pcr-b4-008',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -163,7 +163,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'IARs must register in states where they have a place of business and typically in states where they have clients, subject to de minimis exemptions. Rules vary by state, with some allowing limited out-of-state clients without registration. SEC-registered advisers have greater state flexibility but IARs still have state requirements.'
   },
   {
-    id: 'CFP-PCR-B4-009',
+    id: 'cfp-pcr-b4-009',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -182,7 +182,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Form ADV Part 2 must be delivered to prospective clients at or before entering the advisory agreement. Material changes must be delivered within 120 days of fiscal year-end (or clients notified with offer to provide). Part 2B (brochure supplement) covers individual representatives providing advice.'
   },
   {
-    id: 'CFP-PCR-B4-010',
+    id: 'cfp-pcr-b4-010',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -202,7 +202,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-4: Ethical Situations
   {
-    id: 'CFP-PCR-B4-011',
+    id: 'cfp-pcr-b4-011',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -221,7 +221,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Lavish gifts create conflicts of interest that may influence product recommendations. CFP® professionals must identify, disclose, and manage conflicts. Many firms have policies limiting acceptable gifts. Even if within firm policy, the appearance of conflict can undermine Client trust.'
   },
   {
-    id: 'CFP-PCR-B4-012',
+    id: 'cfp-pcr-b4-012',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -240,7 +240,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals must act within their competence boundaries. For matters beyond their expertise, they should acknowledge limitations, refer to appropriate specialists (CPA, attorney, etc.), and coordinate with other professionals. Providing advice outside one\'s competence violates the Duty of Care.'
   },
   {
-    id: 'CFP-PCR-B4-013',
+    id: 'cfp-pcr-b4-013',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -260,7 +260,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-1: Documentation and Records
   {
-    id: 'CFP-PCR-B4-014',
+    id: 'cfp-pcr-b4-014',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -279,7 +279,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'CFP Board requires retention of records supporting financial planning recommendations for 7 years from the date of service. Note that SEC/FINRA and state regulations may require different periods. Records should include meeting notes, analysis, recommendations, and Client communications.'
   },
   {
-    id: 'CFP-PCR-B4-015',
+    id: 'cfp-pcr-b4-015',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -299,7 +299,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-2: More Fiduciary Topics
   {
-    id: 'CFP-PCR-B4-016',
+    id: 'cfp-pcr-b4-016',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -318,7 +318,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The hierarchy for managing conflicts: (1) Avoid when possible, (2) If unavoidable, fully disclose and obtain the Client\'s informed consent, (3) Manage the conflict appropriately. Some conflicts cannot be managed through disclosure alone and should be avoided. Documentation of disclosure is essential.'
   },
   {
-    id: 'CFP-PCR-B4-017',
+    id: 'cfp-pcr-b4-017',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-2',
@@ -338,7 +338,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-3: More Regulatory Topics
   {
-    id: 'CFP-PCR-B4-018',
+    id: 'cfp-pcr-b4-018',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -357,7 +357,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Custody exists when an adviser holds client funds/securities, can obtain possession (power of attorney, authority to withdraw), or inadvertently receives client funds. Custody triggers significant regulatory requirements: qualified custodians, surprise examinations, and specific reporting. Advisers often structure to avoid custody.'
   },
   {
-    id: 'CFP-PCR-B4-019',
+    id: 'cfp-pcr-b4-019',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -376,7 +376,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'SEC Rule 204-2 requires most adviser records to be retained for 5 years from the end of the fiscal year of creation (some records require 5 years from last entry). Records must be maintained in an easily accessible place for the first 2 years. Partnership/organizational documents must be kept until 3 years after dissolution.'
   },
   {
-    id: 'CFP-PCR-B4-020',
+    id: 'cfp-pcr-b4-020',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-3',
@@ -396,7 +396,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // PCR-4: More Ethics Scenarios
   {
-    id: 'CFP-PCR-B4-021',
+    id: 'cfp-pcr-b4-021',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -415,7 +415,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Social media posts about investments are regulated communications. Requirements include firm approval (if required), appropriate disclaimers, fair and balanced content, record retention, and avoiding testimonials without proper disclosure. Static content (firm profiles) and interactive content have different rules.'
   },
   {
-    id: 'CFP-PCR-B4-022',
+    id: 'cfp-pcr-b4-022',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -434,7 +434,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Addressing diminished capacity requires sensitivity: document observations, follow firm protocols, use trusted contacts if previously designated, potentially delay transactions, and contact adult protective services if abuse is suspected. Simply ignoring or immediately closing accounts would not serve the Client\'s interests.'
   },
   {
-    id: 'CFP-PCR-B4-023',
+    id: 'cfp-pcr-b4-023',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-4',
@@ -454,7 +454,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
   },
   // More CFP Board Standards
   {
-    id: 'CFP-PCR-B4-024',
+    id: 'cfp-pcr-b4-024',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',
@@ -473,7 +473,7 @@ export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals must complete 30 hours of CE every 2 years, including 2 hours of CFP Board-approved ethics CE. Other approved topics include financial planning practice, investment, insurance, estate, retirement, and tax. CE providers must be approved or qualify for blanket approval.'
   },
   {
-    id: 'CFP-PCR-B4-025',
+    id: 'cfp-pcr-b4-025',
     courseId: 'cfp',
     section: 'CFP-PCR',
     blueprintArea: 'PCR-1',

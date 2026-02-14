@@ -13,7 +13,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // GEN-1: Financial Planning Process
   // ============================================
   {
-    id: 'CFP-GEN-001',
+    id: 'cfp-gen-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -32,7 +32,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C.** Specific investment recommendations are developed *after* data gathering and analysis. At the initial stage of establishing the relationship (Step 1 of the Financial Planning Process), the professional must disclose the scope of services, conflicts of interest, compensation methods, and privacy policies. Recommendations come in Step 4.\n\n**Incorrect Options:**\n* **A, B, D:** These are foundational disclosures required by the Code of Ethics and Standards of Conduct when entering into a financial planning engagement."
   },
   {
-    id: 'CFP-GEN-002',
+    id: 'cfp-gen-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -51,7 +51,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C.** For a short-term goal (3 years), capital preservation and liquidity are paramount. The high volatility of a tech ETF is unsuitable because a market downturn could occur just when funds are needed, with insufficient time to recover. \n\n**Incorrect Options:**\n* **A & B:** Equity assessments are too volatile for a 3-year defined liability.\n* **D:** Options are speculative and inappropriate for a primary down payment savings goal."
   },
   {
-    id: 'CFP-GEN-003',
+    id: 'cfp-gen-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -70,7 +70,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B (5.14%).** The formula for the real rate of return is `((1 + Nominal) / (1 + Inflation)) - 1`.\n\nCalculation:\n((1.085) / (1.032)) - 1 = 1.051356... - 1 = 0.051356 = 5.14%.\n\n**Common Mistake:** Simply subtracting (8.5% - 3.2% = 5.3%) is an approximation but is mathematically incorrect for precise financial planning."
   },
   {
-    id: 'CFP-GEN-004',
+    id: 'cfp-gen-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -89,7 +89,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: A.** The Standard of Conduct clearly defines the Fiduciary Duty as comprising the Duty of Loyalty (placing client interests first), the Duty of Care (prudence/competence), and the Duty to Follow Client Instructions (reasonable/lawful).\n\n**Incorrect Options:**\n* **B:** While important, these don't form the core definition.\n* **C:** Performance is never guaranteed."
   },
   {
-    id: 'CFP-GEN-005',
+    id: 'cfp-gen-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -111,7 +111,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // GEN-2: Financial Statements
   // ============================================
   {
-    id: 'CFP-GEN-006',
+    id: 'cfp-gen-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -130,7 +130,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B ($474,000)**\n\n**Net Worth = Assets - Liabilities**\n\n**Assets:**\n- Home: $450,000\n- Portfolio: $320,000\n- Car: $25,000\n- Checking: $12,000\n- **Total: $807,000**\n\n**Liabilities:**\n- Mortgage: $280,000\n- Credit Cards: $8,000\n- Student Loans: $45,000\n- **Total: $333,000**\n\n**Net Worth: $807,000 - $333,000 = $474,000**"
   },
   {
-    id: 'CFP-GEN-007',
+    id: 'cfp-gen-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -149,7 +149,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: A**\n\n**Emergency Fund Ratio:** Liquid Assets ÷ Monthly Expenses\n\n**Calculation:** $32,500 ÷ $6,500 = **5 months**\n\n**Recommendation:** Generally 3-6 months of expenses\n\n**Assessment:** Lisa's 5 months is within the recommended range, providing adequate protection against income disruption.\n\n**Considerations for higher/lower targets:**\n- 6+ months: Single income, variable income, health issues\n- 3 months: Dual income, very stable employment"
   },
   {
-    id: 'CFP-GEN-008',
+    id: 'cfp-gen-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -171,7 +171,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // GEN-3: Time Value of Money
   // ============================================
   {
-    id: 'CFP-GEN-009',
+    id: 'cfp-gen-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -190,7 +190,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B ($88,782)**\n\n**Two Components:**\n\n**1. Lump Sum FV:**\nFV = PV × (1 + r)^n\nFV = $10,000 × (1.07)^10 = $10,000 × 1.9672 = **$19,672**\n\n**2. Annuity FV (Ordinary Annuity):**\nFV = PMT × [(1+r)^n - 1] / r\nFV = $5,000 × [(1.07)^10 - 1] / 0.07\nFV = $5,000 × [0.9672 / 0.07]\nFV = $5,000 × 13.8164 = **$69,082**\n\n**Total: $19,672 + $69,082 = $88,754 ≈ $88,782**"
   },
   {
-    id: 'CFP-GEN-010',
+    id: 'cfp-gen-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -209,7 +209,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B ($573,496)**\n\n**Present Value of Ordinary Annuity:**\nPV = PMT × [(1 - (1+r)^-n) / r]\n\n**Calculation:**\nPV = $50,000 × [(1 - (1.06)^-20) / 0.06]\nPV = $50,000 × [(1 - 0.3118) / 0.06]\nPV = $50,000 × [0.6882 / 0.06]\nPV = $50,000 × 11.4699\n**PV = $573,496**\n\n**Key insight:** 20 years × $50,000 = $1,000,000 nominal, but discounting reduces this significantly."
   },
   {
-    id: 'CFP-GEN-011',
+    id: 'cfp-gen-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -231,7 +231,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // GEN-4: Education Planning
   // ============================================
   {
-    id: 'CFP-GEN-012',
+    id: 'cfp-gen-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -250,7 +250,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B**\n\n**529 K-12 Provision:**\nUnder TCJA (2017), 529 plans can fund K-12 tuition expenses, limited to $10,000 per year per beneficiary.\n\n**Why other answers are wrong:**\n- **A)** Contributions are NOT federally deductible (some states offer state deductions)\n- **C)** Investment changes limited to twice per year\n- **D)** Penalty applies only to EARNINGS portion, not entire withdrawal"
   },
   {
-    id: 'CFP-GEN-013',
+    id: 'cfp-gen-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -269,7 +269,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B (529 Plan)**\n\n**Coverdell ESA Disqualification:**\n- MAGI phase-out for MFJ: $190,000-$220,000\n- At $210,000, contribution ability is significantly phased out\n- Also limited to $2,000/year maximum\n\n**529 Plan Advantages:**\n- NO income limits for contributors\n- High contribution limits ($300,000+)\n- Tax-free growth and distributions for education\n\n**Why other options are suboptimal:**\n- **A)** Income phase-out applies\n- **C)** Counted heavily against financial aid; no tax advantages\n- **D)** Series EE has income limits for tax exclusion and lower returns"
   },
   {
-    id: 'CFP-GEN-014',
+    id: 'cfp-gen-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -291,7 +291,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // GEN-5: Economics and Debt
   // ============================================
   {
-    id: 'CFP-GEN-015',
+    id: 'cfp-gen-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -310,7 +310,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B (Bond prices decrease)**\n\n**Interest Rate Transmission:**\nWhen the Fed raises rates:\n1. Short-term rates increase immediately\n2. Bond yields rise across the curve\n3. **Existing bond prices FALL** (inverse relationship)\n4. Borrowing costs increase\n5. Economic activity may slow\n\n**Why other answers are wrong:**\n- **A)** Stocks typically pressure downward on rate hikes\n- **C)** Mortgages become MORE expensive, pressuring prices down\n- **D)** Higher rates encourage saving, not spending"
   },
   {
-    id: 'CFP-GEN-016',
+    id: 'cfp-gen-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -329,7 +329,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B (Card A, Card B, Car)**\n\n**Avalanche Method:**\nPay minimum on all debts, apply extra to HIGHEST INTEREST RATE first.\n\n**Order:**\n1. Credit Card A: 22% (highest)\n2. Credit Card B: 18%\n3. Car Loan: 5% (lowest)\n\n**Avalanche vs Snowball:**\n- **Avalanche:** Mathematically optimal, saves most interest\n- **Snowball:** Pay smallest balance first (psychological wins)\n\n**Why Avalanche wins financially:**\nPaying 22% debt first prevents expensive interest accumulation."
   },
   {
-    id: 'CFP-GEN-017',
+    id: 'cfp-gen-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -348,7 +348,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: A (15-year costs ~$800 more)**\n\n**30-Year Mortgage:**\nPMT = $400,000 × [0.065/12 × (1.005417)^360] / [(1.005417)^360 - 1]\nPMT ≈ **$2,528/month**\n\n**15-Year Mortgage:**\nPMT = $400,000 × [0.0575/12 × (1.004792)^180] / [(1.004792)^180 - 1]\nPMT ≈ **$3,326/month**\n\n**Difference: $3,326 - $2,528 = $798 ≈ $800**\n\n**Total Interest Comparison:**\n- 30-year: $510,000 total interest\n- 15-year: $199,000 total interest\n- **15-year saves $311,000 in interest**"
   },
   {
-    id: 'CFP-GEN-018',
+    id: 'cfp-gen-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -367,7 +367,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C (Step 4: Developing Recommendations)**\n\n**7-Step Financial Planning Process:**\n1. Understanding circumstances (engagement)\n2. Gathering information (data collection)\n3. Analyzing information (evaluate current situation)\n4. **Developing recommendations** (present options, pros/cons)\n5. Implementing recommendations (execute)\n6. Monitoring progress\n7. Updating the plan\n\n**Step 4 Focus:**\n- Present alternative strategies\n- Discuss trade-offs and implications\n- Make specific recommendations\n- Ensure client understands options before choosing"
   },
   {
-    id: 'CFP-GEN-019',
+    id: 'cfp-gen-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -386,7 +386,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: B (Disclose and recommend most suitable)**\n\n**Fiduciary Duty with Conflicts:**\n1. **Identify** all material conflicts\n2. **Disclose** conflicts to the client\n3. **Manage** conflicts appropriately\n4. **Act** in client's best interest despite the conflict\n\n**Why B is correct:**\n- Full disclosure of compensation\n- Recommendation based on suitability, not compensation\n- Client can make informed decision\n\n**Why other answers are wrong:**\n- **A)** May not be in client's best interest if a commissioned product is more suitable\n- **C)** Unnecessary if conflict is properly managed\n- **D)** Lowest commission ≠ best product for client"
   },
   {
-    id: 'CFP-GEN-020',
+    id: 'cfp-gen-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -405,7 +405,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C (Building permits)**\n\n**Economic Indicator Categories:**\n\n**Leading Indicators (predict future activity):**\n- Building permits ✓\n- Stock market returns\n- Consumer confidence\n- Initial unemployment claims\n- Manufacturing orders\n\n**Lagging Indicators (confirm trends):**\n- Unemployment rate\n- CPI (inflation)\n- Corporate profits\n- Labor cost per unit\n\n**Coincident Indicators (current state):**\n- GDP\n- Industrial production\n- Personal income\n\n**Building permits signal future construction activity and economic expansion.**"
   },
   {
-    id: 'CFP-GEN-021',
+    id: 'cfp-gen-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -424,7 +424,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C ($180,000)**\n\n**529 Gift Tax Averaging:**\n- Special election allows 5 years of annual exclusions in one contribution\n- 2024 exclusion: $18,000 per donor\n- Per grandparent: $18,000 × 5 = $90,000\n- Both grandparents together: $90,000 × 2 = **$180,000**\n\n**Key Rules:**\n- File Form 709 to elect averaging\n- No additional gifts to same beneficiary for 5 years\n- If donor dies during period, portion included in estate\n- Gift splitting between spouses doubles the amount"
   },
   {
-    id: 'CFP-GEN-022',
+    id: 'cfp-gen-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -443,7 +443,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C ($24,000 - $48,000)**\n\n**Emergency Fund Guidelines:**\n- General: 3-6 months of expenses\n- $8,000 × 3 = $24,000\n- $8,000 × 6 = $48,000\n\n**Factors Affecting Size:**\n| Factor | Less Needed | More Needed |\n|--------|-------------|-------------|\n| Income | Dual, stable | Single, variable |\n| Job | In-demand | Specialized |\n| Insurance | Comprehensive | Minimal |\n| Debt | Low | High |\n\n**For this stable dual-income couple:** 3-6 months is appropriate. Single-income or variable-income households should target 6-12 months."
   },
   {
-    id: 'CFP-GEN-023',
+    id: 'cfp-gen-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -462,7 +462,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: C ($1,940)**\n\n**NPV Calculation:**\n- PV of annuity = PMT × [(1 - (1+r)^-n) / r]\n- PV = $15,000 × [(1 - 1.06^-4) / 0.06]\n- PV = $15,000 × 3.4651 = $51,977\n- NPV = $51,977 - $50,000 = **$1,977 ≈ $1,940**\n\n**Decision Rule:**\n- NPV > 0: Accept (adds value)\n- NPV < 0: Reject (destroys value)\n- NPV = 0: Indifferent\n\n**This investment is acceptable** because it returns more than the required 6% rate."
   },
   {
-    id: 'CFP-GEN-024',
+    id: 'cfp-gen-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-6',
@@ -481,7 +481,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Correct Answer: A (Housing: 20%, Total: 25%)**\n\n**Debt Ratio Calculations:**\n\n**Housing Ratio (Front-End):**\n- PITI / Gross Income\n- $2,400 / $12,000 = **20%**\n\n**Total Debt Ratio (Back-End):**\n- (PITI + Other Debt) / Gross Income\n- ($2,400 + $600) / $12,000 = $3,000 / $12,000 = **25%**\n\n**Conventional Guidelines:**\n| Ratio | Guideline | This Client |\n|-------|-----------|-------------|\n| Housing | ≤28% | 20% ✓ |\n| Total | ≤36% | 25% ✓ |\n\n**This client is well within guidelines** and has room for additional debt if needed."
   },
   {
-    id: 'CFP-GEN-025',
+    id: 'cfp-gen-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -503,7 +503,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // Additional GEN Questions (026-045)
   // ============================================
   {
-    id: 'CFP-GEN-026',
+    id: 'cfp-gen-026',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -522,7 +522,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**NPV Calculation:**\n\nNPV = -$50,000 + $15,000/(1.10)¹ + $20,000/(1.10)² + $25,000/(1.10)³ + $10,000/(1.10)⁴\n\nYear-by-year present values:\n- Year 1: $15,000 / 1.10 = $13,636\n- Year 2: $20,000 / 1.21 = $16,529\n- Year 3: $25,000 / 1.331 = $18,783\n- Year 4: $10,000 / 1.4641 = $6,830\n- Sum of PVs: $55,778\n- NPV: $55,778 - $50,000 = **$5,778**\n\nAnswer C ($8,150) may reflect slightly different discount rate assumptions or rounding conventions."
   },
   {
-    id: 'CFP-GEN-027',
+    id: 'cfp-gen-027',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -541,7 +541,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Future Value Calculation:**\n\nFV = PV × (1 + inflation)^n\nFV = $80,000 × (1.03)^15\nFV = $80,000 × 1.5580 = **$124,639**\n\nThis demonstrates the significant impact of inflation over long periods. The purchasing power of $80,000 today requires $124,639 in 15 years. This is why retirement projections must account for inflation erosion."
   },
   {
-    id: 'CFP-GEN-028',
+    id: 'cfp-gen-028',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -560,7 +560,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Emergency Fund Ratio:**\n\nLiquid Assets / Monthly Expenses = $45,000 / $7,500 = **6 months**\n\nThe 6-month emergency fund is adequate by most standards (3-6 months recommended, 6+ for volatile income). The presence of debt doesn't reduce the need for an emergency fund—it makes it more important. The high-interest credit card should be paid aggressively, but emergency reserves should be maintained."
   },
   {
-    id: 'CFP-GEN-029',
+    id: 'cfp-gen-029',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -579,7 +579,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Savings Rate Calculation:**\n\nTotal Savings = $18,000 + $6,000 + $5,000 + $3,000 = **$32,000**\n\nSavings Rate = $32,000 / $180,000 = **17.8%**\n\nAll savings count toward the savings rate, including education savings (529) which is still building wealth for future expenses. A 17.8% rate is excellent—exceeding the commonly recommended 15-20% target. This rate should support their financial goals effectively."
   },
   {
-    id: 'CFP-GEN-030',
+    id: 'cfp-gen-030',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-6',
@@ -598,7 +598,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Avalanche Method:**\n\nThe debt avalanche prioritizes debts by **highest interest rate first**, regardless of balance:\n\n1. Credit Card A: 24% - Pay first\n2. Credit Card B: 18% - Pay second\n3. Personal Loan: 9% - Pay last\n\nThis minimizes total interest paid and is mathematically optimal. The snowball method (lowest balance first) provides psychological wins but costs more in interest. For a $25,000 total debt, avalanche could save $1,000+ in interest compared to snowball."
   },
   {
-    id: 'CFP-GEN-031',
+    id: 'cfp-gen-031',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -617,7 +617,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Annuity Due Present Value:**\n\nAnnuity Due PV = Ordinary Annuity PV × (1 + r)\n\nOrdinary Annuity PV = $50,000 × [(1 - (1.06)^-10) / 0.06]\n= $50,000 × 7.3601 = $368,004\n\nAnnuity Due PV = $368,004 × 1.06 = **$390,087**\n\nThe annuity due is worth more because each payment is received one period earlier, earning an extra period of interest when discounted back."
   },
   {
-    id: 'CFP-GEN-032',
+    id: 'cfp-gen-032',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -636,7 +636,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**529 Superfunding:**\n\nThe 5-year election allows one-time contributions up to 5× the annual exclusion:\n- 2024 annual exclusion: $18,000\n- Maximum superfund: $18,000 × 5 = **$90,000**\n\nThe $90,000 contribution is reported over 5 gift tax returns, using each year's exclusion. No lifetime exemption is used if the contributor survives 5 years. If the contributor dies during that period, a prorated portion is included in their estate."
   },
   {
-    id: 'CFP-GEN-033',
+    id: 'cfp-gen-033',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -655,7 +655,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Rising Rate Environment:**\n\nWhen rates increase:\n- ✓ Cash/savings yields increase - savings accounts earn more\n- ✗ Bond prices fall (inverse relationship)\n- ✗ Mortgage rates increase - refinancing becomes less attractive\n- ✗ Borrowing costs increase - margin interest rises\n\nHigh-yield savings accounts benefit directly from Fed rate increases as banks offer higher yields to depositors. This is why holding more cash can be advantageous in rising rate environments."
   },
   {
-    id: 'CFP-GEN-034',
+    id: 'cfp-gen-034',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -674,7 +674,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Balance Sheet Classification:**\n\n**Liabilities (Debts Owed):**\n- Student loans ✓\n- Mortgages\n- Credit card balances\n- Auto loans\n\n**Assets (Items of Value):**\n- Life insurance cash value\n- Home equity (asset minus mortgage = equity)\n- Retirement accounts\n\nHome equity is calculated as: Home Value (asset) - Mortgage (liability) = Equity. Equity itself is not a line item—the home value and mortgage are listed separately."
   },
   {
-    id: 'CFP-GEN-035',
+    id: 'cfp-gen-035',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -693,7 +693,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Expense Classification:**\n\n**Discretionary (Flexible):**\n- Dining out ✓\n- Entertainment\n- Vacations\n- Non-essential shopping\n\n**Non-Discretionary (Fixed/Required):**\n- Property taxes (legal obligation)\n- Health insurance (essential protection)\n- Minimum debt payments (contractual)\n- Utilities, housing, food essentials\n\nDiscretionary expenses are the first place to cut when cash flow is tight. They're also the most variable line items in most budgets."
   },
   {
-    id: 'CFP-GEN-036',
+    id: 'cfp-gen-036',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -712,7 +712,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**IRR Decision Rule:**\n\nIf IRR > Required Return: **Accept**\nIf IRR < Required Return: **Reject**\n\nHere: 12% IRR > 10% Required = **Accept**\n\nThe IRR is the discount rate that makes NPV = 0. Since the project returns 12% and only 10% is required, the project adds value. At a 10% discount rate, this investment would have a positive NPV."
   },
   {
-    id: 'CFP-GEN-037',
+    id: 'cfp-gen-037',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-6',
@@ -731,7 +731,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**FICO Score Weights:**\n\n| Factor | Weight |\n|--------|--------|\n| Payment History | **35%** |\n| Credit Utilization | 30% |\n| Length of Credit History | 15% |\n| Credit Mix | 10% |\n| New Credit | 10% |\n\nPayment history is most important—paying on time consistently is the single best thing clients can do for their scores. A single late payment can drop scores significantly, especially if credit history is otherwise thin."
   },
   {
-    id: 'CFP-GEN-038',
+    id: 'cfp-gen-038',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -750,7 +750,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Coverdell ESA Features:**\n\n- **K-12 Expenses**: Can pay for elementary and secondary school costs (529s now can too, up to $10K/year)\n- **Contribution Limit**: Only $2,000/year (much lower than 529)\n- **Income Limits**: Contributions phase out at higher incomes\n- **Investment Control**: More investment flexibility than most 529s\n\nThe key distinction is Coverdell's broader definition of qualified expenses including computers, tutoring, and uniforms for K-12."
   },
   {
-    id: 'CFP-GEN-039',
+    id: 'cfp-gen-039',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -769,7 +769,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Economic Indicator Classification:**\n\n**Leading (Predict Future):**\n- Building permits ✓\n- Stock market\n- Initial jobless claims\n- Consumer expectations\n\n**Lagging (Confirm Trends):**\n- Unemployment rate\n- CPI/Inflation\n- Corporate profits\n\n**Coincident (Current State):**\n- GDP\n- Industrial production\n\nBuilding permits signal future construction activity and economic growth. They rise before economic expansions and fall before contractions."
   },
   {
-    id: 'CFP-GEN-040',
+    id: 'cfp-gen-040',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -788,7 +788,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Financial Ratio Calculations:**\n\n**Debt-to-Asset Ratio:**\nTotal Liabilities / Total Assets = $320,000 / $800,000 = **40%**\n\n**Net Worth:**\nTotal Assets - Total Liabilities = $800,000 - $320,000 = **$480,000**\n\nA 40% debt ratio is moderate—meaning 60% of assets are owned free and clear. Generally, debt ratios below 50% indicate reasonable financial health, though context matters (age, asset types, interest rates)."
   },
   {
-    id: 'CFP-GEN-041',
+    id: 'cfp-gen-041',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -807,7 +807,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Opportunity Cost Analysis:**\n\nOpportunity cost is what you give up by making a choice.\n\nPaying off 4.5% mortgage guarantees a 4.5% return (saved interest). Investing offers expected 7% return.\n\n**Opportunity Cost = 7% - 4.5% = 2.5%**\n\nBy paying off the mortgage instead of investing, the client foregoes 2.5% annually. However, this ignores risk—the 4.5% is guaranteed while 7% is expected but uncertain. Risk-adjusted, the gap narrows."
   },
   {
-    id: 'CFP-GEN-042',
+    id: 'cfp-gen-042',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -826,7 +826,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Rule of 72:**\n\nYears to Double = 72 / Interest Rate\n\nYears = 72 / 8 = **9 years**\n\nThe Rule of 72 provides a quick approximation for doubling time. At 8%, money doubles every 9 years. This means $100,000 today becomes $200,000 in 9 years, $400,000 in 18 years, and $800,000 in 27 years—demonstrating the power of compounding."
   },
   {
-    id: 'CFP-GEN-043',
+    id: 'cfp-gen-043',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-6',
@@ -845,7 +845,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Bankruptcy Asset Protection:**\n\n**Protected (Exempt):**\n- ERISA-qualified retirement plans ✓ (unlimited federal protection)\n- IRAs (up to ~$1.5M under federal law)\n- Primary residence (varies by state homestead exemption)\n- Basic personal property\n\n**Not Protected:**\n- Vacation/investment real estate\n- Non-exempt cash/investments\n- Luxury items\n\nERISA provides federal protection for 401(k)s, pensions, and similar plans. This is why retirement accounts should generally not be invaded to pay debts."
   },
   {
-    id: 'CFP-GEN-044',
+    id: 'cfp-gen-044',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -864,7 +864,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**PSLF Requirements:**\n\n1. **120 Qualifying Payments** (10 years of monthly payments)\n2. **Full-Time Employment** at a qualifying public service employer\n3. **Qualifying Employers**: Government, 501(c)(3) nonprofits, other qualifying organizations\n4. **Direct Loans** (must consolidate FFEL/Perkins)\n5. **Qualifying Repayment Plan** (income-driven plans qualify)\n\nAfter 120 payments, remaining balance is forgiven tax-free. No income limits, no balance requirements."
   },
   {
-    id: 'CFP-GEN-045',
+    id: 'cfp-gen-045',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -887,7 +887,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
   // ADDITIONAL GENERAL PRINCIPLES QUESTIONS (46-75)
   // ============================================
   {
-    id: 'CFP-GEN-046',
+    id: 'cfp-gen-046',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -906,7 +906,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**SMART Goals:**\n- **S**pecific\n- **M**easurable\n- **A**chievable (not Arbitrary)\n- **R**ealistic/Relevant\n- **T**ime-bound\n\nArbitrary is the opposite of what SMART goals should be. Goals should be carefully defined, not random."
   },
   {
-    id: 'CFP-GEN-047',
+    id: 'cfp-gen-047',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -925,7 +925,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Present Value Calculation:**\n\nPV = FV / (1 + r)^n\nPV = $10,000 / (1.08)^5\nPV = $10,000 / 1.4693\nPV = $6,806\n\nThe $10,000 future value discounted at 8% for 5 years equals $6,806 today."
   },
   {
-    id: 'CFP-GEN-048',
+    id: 'cfp-gen-048',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -944,7 +944,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Rule of 72:**\n\nYears to double = 72 / Interest Rate\n72 / 9 = 8 years\n\nThis quick estimation tool works for compound interest. At 9%, money approximately doubles in 8 years."
   },
   {
-    id: 'CFP-GEN-049',
+    id: 'cfp-gen-049',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -963,7 +963,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Emergency Fund Guidelines:**\n\nGeneral recommendation: 3-6 months of living expenses in liquid accessible accounts.\n\n**Factors affecting amount:**\n- Job stability (more stable = less needed)\n- Income sources (single vs. dual income)\n- Health and insurance coverage\n- Age and family situation"
   },
   {
-    id: 'CFP-GEN-050',
+    id: 'cfp-gen-050',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -982,7 +982,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Debt-to-Income Ratio:**\n\nDTI = Total Monthly Debt / Gross Monthly Income\nDTI = $2,400 / $8,000 = 30%\n\nLenders typically want DTI below 36% (some allow up to 43% for qualified mortgages)."
   },
   {
-    id: 'CFP-GEN-051',
+    id: 'cfp-gen-051',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1001,7 +1001,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Inflation = General increase in prices, decrease in purchasing power.**\n\n**Measured by:**\n- Consumer Price Index (CPI)\n- Personal Consumption Expenditures (PCE)\n\n**Effects:**\n- Erodes purchasing power\n- Hurts fixed-income investments\n- Benefits debtors (repay with cheaper dollars)"
   },
   {
-    id: 'CFP-GEN-052',
+    id: 'cfp-gen-052',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1020,7 +1020,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Federal Reserve Monetary Policy Tools:**\n\n**Primary:** Federal Funds Rate target - rate banks charge each other for overnight loans\n\n**Other tools:**\n- Open market operations (buy/sell securities)\n- Reserve requirements\n- Discount rate\n- Quantitative easing\n\nThe Fed doesn't set tax rates (Congress) or directly set mortgage rates."
   },
   {
-    id: 'CFP-GEN-053',
+    id: 'cfp-gen-053',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1039,7 +1039,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Net Worth = Total Assets - Total Liabilities**\n\n**Assets include:** Cash, investments, real estate, personal property\n**Liabilities include:** Mortgages, loans, credit cards, other debts\n\nNet worth is a snapshot; cash flow (income - expenses) is ongoing."
   },
   {
-    id: 'CFP-GEN-054',
+    id: 'cfp-gen-054',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1058,7 +1058,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**FDIC Coverage: $250,000 per depositor, per insured bank, per ownership category**\n\n**Separate categories:**\n- Single accounts\n- Joint accounts\n- IRAs\n- Trust accounts\n\n**Not covered:** Securities, mutual funds, crypto. SIPC covers securities accounts."
   },
   {
-    id: 'CFP-GEN-055',
+    id: 'cfp-gen-055',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1077,7 +1077,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Confirmation Bias:** Tendency to seek, interpret, and remember information confirming pre-existing beliefs while ignoring contradictory evidence.\n\n**Other biases:**\n- Recency (A)\n- Herding (C)\n- Overconfidence (D)\n- Anchoring, loss aversion, mental accounting"
   },
   {
-    id: 'CFP-GEN-056',
+    id: 'cfp-gen-056',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1096,7 +1096,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Annuity Due has higher PV** because payments occur at the BEGINNING of each period.\n\n**Annuity Due PV = Ordinary Annuity PV × (1 + r)**\n\nReceiving money earlier means higher present value. Examples: lease payments (annuity due), loan payments (ordinary annuity)."
   },
   {
-    id: 'CFP-GEN-057',
+    id: 'cfp-gen-057',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1115,7 +1115,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Recession Characteristics:**\n- Declining GDP (two consecutive quarters)\n- Rising unemployment\n- Reduced consumer/business spending\n- Often falling interest rates (Fed stimulus)\n- Deflationary pressures\n\n**Business Cycle:** Expansion → Peak → Contraction (recession) → Trough → Recovery"
   },
   {
-    id: 'CFP-GEN-058',
+    id: 'cfp-gen-058',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1134,7 +1134,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Active Listening Techniques:**\n- Paraphrasing to confirm understanding\n- Asking open-ended clarifying questions\n- Observing non-verbal cues\n- Avoiding interruptions\n- Summarizing key points\n\nBuilds trust and ensures accurate understanding of client goals and concerns."
   },
   {
-    id: 'CFP-GEN-059',
+    id: 'cfp-gen-059',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1153,7 +1153,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Current Ratio = Current Assets / Current Liabilities**\n\nMeasures ability to pay short-term obligations. Ratio > 1 indicates more current assets than current liabilities.\n\n**For personal finance:**\n- Emergency fund ratio = Liquid assets / Monthly expenses\n- Higher is better for financial security"
   },
   {
-    id: 'CFP-GEN-060',
+    id: 'cfp-gen-060',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1172,7 +1172,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Property Ownership Forms:**\n- **Tenancy by Entirety:** Married couples only, survivorship, creditor protection\n- **Joint Tenancy:** Two or more, equal shares, survivorship\n- **Tenancy in Common:** Two or more, unequal shares allowed, no survivorship\n- **Community Property:** Married couples in 9 states"
   },
   {
-    id: 'CFP-GEN-061',
+    id: 'cfp-gen-061',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1191,7 +1191,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**529 Plan Tax Benefits:**\n- Contributions: NOT federally deductible (some states allow)\n- Growth: Tax-free\n- Qualified withdrawals: Tax-free\n- 5-year gift tax averaging available\n- Stays in donor's estate but eligible for annual exclusion\n\n**Qualified expenses:** Tuition, books, room/board, computers, K-12 tuition (up to $10K)"
   },
   {
-    id: 'CFP-GEN-062',
+    id: 'cfp-gen-062',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1210,7 +1210,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Inverted Yield Curve:** Short-term rates > long-term rates\n\n**Usually signals:**\n- Economic slowdown expectations\n- Potential recession (historically predictive)\n- Flight to long-term safety\n\n**Normal curve:** Long-term rates > short-term (reward for time risk)"
   },
   {
-    id: 'CFP-GEN-063',
+    id: 'cfp-gen-063',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1229,7 +1229,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**FICO Score Components:**\n- **Payment History: 35%** (most important)\n- Amounts Owed: 30%\n- Length of Credit History: 15%\n- New Credit: 10%\n- Credit Mix: 10%\n\nPaying on time is the single most important factor for credit scores."
   },
   {
-    id: 'CFP-GEN-064',
+    id: 'cfp-gen-064',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1248,7 +1248,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**NPV > 0:** Investment returns exceed required return (discount rate). Accept the investment.\n\n**NPV = 0:** Investment returns exactly the required return. Indifferent.\n\n**NPV < 0:** Investment returns less than required. Reject.\n\nNPV and IRR are key capital budgeting tools."
   },
   {
-    id: 'CFP-GEN-065',
+    id: 'cfp-gen-065',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1267,7 +1267,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Fiduciary vs. Suitability:**\n\n**Fiduciary:** Act in client's BEST interest (RIAs, CFP® professionals)\n\n**Suitability/Reg BI:** Recommendation must be suitable/in best interest at time made (broker-dealers)\n\nFiduciary is higher standard. Conflicts allowed if disclosed and managed, not eliminated."
   },
   {
-    id: 'CFP-GEN-066',
+    id: 'cfp-gen-066',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1286,7 +1286,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Cash Flow Statement:** Income - Expenses = Cash Flow\n\n**Positive = Surplus** (saving/investing)\n**Negative = Deficit** (spending more than earning)\n\n**Balance Sheet:** Assets - Liabilities = Net Worth\n\nCash flow is ongoing; net worth is a point-in-time snapshot."
   },
   {
-    id: 'CFP-GEN-067',
+    id: 'cfp-gen-067',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1305,7 +1305,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Fiduciary Duty:** Legal obligation to act primarily for another's benefit.\n\n**Key duties:**\n- Loyalty (client's interest first)\n- Care (prudence and diligence)\n- Good faith (honesty)\n\n**Examples:** Trustees, investment advisers, CFP® professionals, attorneys."
   },
   {
-    id: 'CFP-GEN-068',
+    id: 'cfp-gen-068',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1324,7 +1324,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Coverdell ESA:**\n- $2,000 annual contribution limit\n- Income limits apply (phaseout)\n- Tax-free growth and qualified withdrawals\n- K-12 and higher education expenses eligible\n- Must be used by age 30\n\n**Compare to 529:** No annual limit, no income limit, higher flexibility."
   },
   {
-    id: 'CFP-GEN-069',
+    id: 'cfp-gen-069',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1343,7 +1343,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**GDP = Total value of goods and services produced within a country's borders in a given period.**\n\n**Components:** C + I + G + (X-M)\n- Consumer spending\n- Investment\n- Government spending\n- Net exports (exports minus imports)\n\nKey economic indicator for measuring economic health."
   },
   {
-    id: 'CFP-GEN-070',
+    id: 'cfp-gen-070',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1362,7 +1362,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**More frequent compounding = Higher effective rate**\n\nDaily > Monthly > Quarterly > Annual\n\n**Example at 12% nominal:**\n- Annual: 12.00%\n- Quarterly: 12.55%\n- Monthly: 12.68%\n- Daily: 12.75%\n\nContinuous compounding is the theoretical limit."
   },
   {
-    id: 'CFP-GEN-071',
+    id: 'cfp-gen-071',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1381,7 +1381,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Quantitative Data:** Numbers-based, measurable\n- Income, expenses, assets, liabilities\n- Account balances, tax returns\n- Insurance policies, statements\n\n**Qualitative Data:** Values, attitudes, goals\n- Risk tolerance, priorities\n- Family relationships, health\n- Lifestyle preferences"
   },
   {
-    id: 'CFP-GEN-072',
+    id: 'cfp-gen-072',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1400,7 +1400,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Contract Elements:**\n- **Offer:** Proposal by one party\n- **Acceptance:** Agreement to terms\n- **Consideration:** Something of value exchanged\n- **Capacity:** Parties must be legally competent\n- **Legality:** Legal purpose\n\nNot all contracts require writing (though some do under Statute of Frauds)."
   },
   {
-    id: 'CFP-GEN-073',
+    id: 'cfp-gen-073',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -1419,7 +1419,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Debt Payoff Methods:**\n\n**Avalanche:** Pay highest interest rate first\n- Mathematically optimal\n- Saves most on interest\n\n**Snowball:** Pay smallest balance first\n- Psychological wins\n- Quick victories build momentum\n\nBoth keep minimum payments on other debts."
   },
   {
-    id: 'CFP-GEN-074',
+    id: 'cfp-gen-074',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -1438,7 +1438,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     explanation: "**Economic Indicators:**\n\n**Leading** (predict future): Stock prices, building permits, consumer expectations, initial jobless claims\n\n**Coincident** (current state): GDP, employment, personal income, industrial production\n\n**Lagging** (confirm trends): Unemployment rate, CPI, prime rate, business loans"
   },
   {
-    id: 'CFP-GEN-075',
+    id: 'cfp-gen-075',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',

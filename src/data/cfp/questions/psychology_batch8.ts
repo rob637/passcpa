@@ -9,45 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
   // PSY-1: Behavioral Finance
   {
-    id: 'CFP-PSY-B8-001',
-    courseId: 'cfp',
-    section: 'CFP-PSY',
-    blueprintArea: 'PSY-1',
-    topic: 'Behavioral Finance',
-    subtopic: 'Disposition Effect',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'The disposition effect causes investors to:',
-    options: [
-      'C) Never sell any investment',
-      'B) Sell winners too early and hold losers too long, due to loss aversion and desire to realize gains',
-      'A) Hold all investments equally',
-      'D) Only buy index funds',
-    ],
-    correctAnswer: 1,
-    explanation: 'Disposition effect: combination of loss aversion and mental accounting. Sell winners quickly (lock in gains, feel good), hold losers (avoid realizing loss, hope for recovery). Leads to: suboptimal tax management (should do opposite for tax efficiency), poor portfolio performance. Awareness helps—reframe: future potential matters more than purchase price.'
-  },
-  {
-    id: 'CFP-PSY-B8-002',
-    courseId: 'cfp',
-    section: 'CFP-PSY',
-    blueprintArea: 'PSY-1',
-    topic: 'Behavioral Finance',
-    subtopic: 'Familiarity Bias',
-    difficulty: 'easy',
-    skillLevel: 'Application',
-    question: 'Familiarity bias leads investors to:',
-    options: [
-      'C) Avoid all stocks',
-      'B) Overweight investments they know or recognize, such as employer stock or local companies',
-      'A) Diversify globally',
-      'D) Only use financial advisors',
-    ],
-    correctAnswer: 1,
-    explanation: 'Familiarity bias: comfort with known creates false sense of safety. Examples: overconcentration in employer stock, home country bias, investing in brands you like. Problem: familiarity ≠ good investment, reduces diversification. Counter: systematic diversification approach, education about unseen risks in familiar holdings. Particularly dangerous with employer stock (job + investment risk).'
-  },
-  {
-    id: 'CFP-PSY-B8-003',
+    id: 'cfp-psy-b8-003',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -67,7 +29,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
   },
   // PSY-2: Client Communication
   {
-    id: 'CFP-PSY-B8-004',
+    id: 'cfp-psy-b8-004',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -86,7 +48,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Open-ended questions: "What\'s most important about money to you?", "Tell me more about that concern." Encourage fuller responses, reveal values, uncover hidden concerns. Follow up with probing questions. Closed questions (yes/no) have their place for specifics, but open questions build understanding. Balance both. Active listening follows—reflect back, confirm understanding.'
   },
   {
-    id: 'CFP-PSY-B8-005',
+    id: 'cfp-psy-b8-005',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -105,7 +67,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Nonverbal cues: often communicate more than words. Watch for: crossed arms (defensiveness), lack of eye contact (discomfort), leaning in (engagement), tone changes (anxiety). Your nonverbal matters too: attentive posture, appropriate eye contact, matching energy when appropriate. Silence can be powerful—allow processing time. Virtual meetings: still visible—camera on, engaged appearance.'
   },
   {
-    id: 'CFP-PSY-B8-006',
+    id: 'cfp-psy-b8-006',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -125,7 +87,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
   },
   // PSY-3: Financial Psychology
   {
-    id: 'CFP-PSY-B8-007',
+    id: 'cfp-psy-b8-007',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -144,7 +106,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Financial denial: avoidance of financial reality. Signs: unopened statements, refusal to discuss money, "I don\'t want to know," avoiding planning. Defense mechanism against anxiety. Approach: gentle, non-judgmental, understand underlying fear. Small steps—maybe just opening statements together. May need to address anxiety before effective planning possible. Patience required.'
   },
   {
-    id: 'CFP-PSY-B8-008',
+    id: 'cfp-psy-b8-008',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -163,7 +125,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Compulsive spending: shopping/spending as emotional regulation. Temporary relief followed by guilt. Progressive—needs more to achieve same relief. Consequences: debt, relationship problems, inability to meet goals. Related to: anxiety, depression, trauma. Referral to mental health professional appropriate. Financial planning alone won\'t solve—address root cause. Support and non-judgment important.'
   },
   {
-    id: 'CFP-PSY-B8-009',
+    id: 'cfp-psy-b8-009',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -183,7 +145,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
   },
   // PSY-4: Client Assessment
   {
-    id: 'CFP-PSY-B8-010',
+    id: 'cfp-psy-b8-010',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -202,7 +164,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Multi-dimensional risk: Tolerance (emotional comfort with risk), Capacity (financial ability to take risk), Perception (how client views specific risks), Composure (behavior under stress). May conflict—high tolerance but low capacity requires conservative approach despite preferences. Questionnaires capture some; conversation reveals more. Regular reassessment as circumstances change.'
   },
   {
-    id: 'CFP-PSY-B8-011',
+    id: 'cfp-psy-b8-011',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -221,7 +183,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Financial literacy assessment: understand client\'s baseline. Determines: explanation detail needed, concepts to clarify, areas for education. Don\'t assume—wealthy clients may have little knowledge; modest clients may be sophisticated. Adjust communication style. Identify knowledge gaps that could affect decisions. Education may be needed before complex recommendations. Meet client where they are.'
   },
   {
-    id: 'CFP-PSY-B8-012',
+    id: 'cfp-psy-b8-012',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -241,7 +203,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PSY-B8-013',
+    id: 'cfp-psy-b8-013',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -260,7 +222,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Cognitive dissonance: discomfort when beliefs and reality conflict. Financial examples: "I\'m a smart investor" but performance is poor → blame market, ignore contrary info, sell to "prove" it was bad. Resolution: change belief, change behavior, or rationalize. Help clients: acknowledge discomfort, provide perspective, avoid "I told you so." Awareness helps clients accept uncomfortable truths.'
   },
   {
-    id: 'CFP-PSY-B8-014',
+    id: 'cfp-psy-b8-014',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -279,7 +241,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Rapport building: foundation for effective relationship. Techniques: small talk (genuine, not forced), find common interests, remember personal details, show curiosity about their life. Environment matters: comfortable setting, unrushed time. First impressions important. Trust builds over time but starts with feeling understood and respected. Listen more than talk initially.'
   },
   {
-    id: 'CFP-PSY-B8-015',
+    id: 'cfp-psy-b8-015',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -298,7 +260,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Inherited wealth psychology: guilt (didn\'t earn it), identity (who am I without earning?), purpose (what\'s my contribution?), relationship issues (am I loved for me or money?), family dynamics (expectations, control). Wealth doesn\'t guarantee happiness—may complicate it. Non-financial support may be needed. Address with sensitivity. Help find purpose, not just manage money.'
   },
   {
-    id: 'CFP-PSY-B8-016',
+    id: 'cfp-psy-b8-016',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -317,7 +279,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Family systems: money has meaning beyond dollars. Roles: who earns, who decides, who worries. Patterns passed down: messages about money from parents. Power dynamics: money as control. Communication: open or secret about finances? Extended family obligations. Understanding helps: address couple conflicts, prepare for wealth transfer, involve appropriate family members, recognize tensions.'
   },
   {
-    id: 'CFP-PSY-B8-017',
+    id: 'cfp-psy-b8-017',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -336,7 +298,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Choice overload: too many options cause decision paralysis. Solutions: curate to reasonable number (3-5 options), clear recommendation with rationale, decision frameworks (criteria to evaluate), staged decisions (don\'t decide everything at once). Value of advice: expertise to filter options. Some clients want more choices, most want guidance. Gauge preference and adjust.'
   },
   {
-    id: 'CFP-PSY-B8-018',
+    id: 'cfp-psy-b8-018',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -355,7 +317,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Expectation management: alignment between client hopes and realistic outcomes. Discuss: historical ranges (not promises), factors affecting outcomes, what can be controlled (saving, costs) vs. can\'t (markets, longevity). Set expectations early—harder to adjust later. Regular check-ins: still aligned? Monte Carlo can show probability ranges. Underpromise, overdeliver. Honest about uncertainty.'
   },
   {
-    id: 'CFP-PSY-B8-019',
+    id: 'cfp-psy-b8-019',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -374,7 +336,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Life transitions: divorce, death, job loss, retirement—financial and emotional components inseparable. Decisions made in emotional distress often regretted. Approach: acknowledge emotions, don\'t rush major decisions if possible, provide stability, revisit when emotions settle. Be resource: counselors, support groups. Plan for transitions: estate planning, emergency funds reduce crisis severity.'
   },
   {
-    id: 'CFP-PSY-B8-020',
+    id: 'cfp-psy-b8-020',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -393,7 +355,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Values exploration: what matters most? Family, security, experiences, legacy, freedom, helping others? Goals stem from values. Understanding values: recommendations resonate, trade-offs make sense, motivation stronger. Techniques: values cards, life planning questions, "why is that important" (dig deeper). Values-aligned planning: more meaningful to client, better implementation.'
   },
   {
-    id: 'CFP-PSY-B8-021',
+    id: 'cfp-psy-b8-021',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -412,7 +374,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Hyperbolic discounting: irrational time preferences. Would rather have $100 today than $105 tomorrow, but $100 in year vs. $105 in year+day—prefer waiting. Steeper discounting for near-term. Explains: difficulty saving, procrastination, preferring immediate gratification. Counter: automate savings (remove choice), make future concrete (visualize retirement), commitment devices.'
   },
   {
-    id: 'CFP-PSY-B8-022',
+    id: 'cfp-psy-b8-022',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -431,7 +393,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Collaboration: client brings knowledge of themselves (goals, values, concerns), planner brings technical expertise. Together: develop appropriate plan. Not advisor-directed (planner decides all) or client-directed (client knows best). Partnership. Client engagement improves: understanding, buy-in, implementation. Planner role: guide, educate, recommend. Client role: share, decide, implement.'
   },
   {
-    id: 'CFP-PSY-B8-023',
+    id: 'cfp-psy-b8-023',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -450,7 +412,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Financial abuse signs: one partner controls all money, unexplained withdrawals/changes, client fearful or deferential about finances, sudden demand for cash, isolation from financial information, accompanied to all meetings. Planner response: find way to meet individually if possible, know resources (domestic violence hotlines), document concerns, may have reporting obligations depending on situation.'
   },
   {
-    id: 'CFP-PSY-B8-024',
+    id: 'cfp-psy-b8-024',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -469,7 +431,7 @@ export const CFP_PSYCHOLOGY_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Life goals, not money goals: money is means to ends. Real goals: time freedom, experiences, security, helping family, leaving legacy. Understanding this: planning is more meaningful, trade-offs clearer, motivation stronger. Ask: "What would you do with unlimited money?" reveals true goals. Then work backward to what\'s needed. Money in service of life, not life in service of money.'
   },
   {
-    id: 'CFP-PSY-B8-025',
+    id: 'cfp-psy-b8-025',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',

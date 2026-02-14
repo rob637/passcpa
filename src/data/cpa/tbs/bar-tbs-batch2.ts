@@ -534,7 +534,7 @@ Year 1 Transactions:
     difficulty: 'medium',
     timeEstimate: 16,
     topic: 'Not-for-Profit Accounting',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     scenario: `
 Community Health Foundation (a not-for-profit) received the following during Year 1:
 

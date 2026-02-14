@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
   // EST-1: Estate Planning Documents
   {
-    id: 'CFP-EST-B6-001',
+    id: 'cfp-est-b6-001',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -28,7 +28,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'A living will addresses end-of-life medical decisions—whether to continue life support, feeding tubes, resuscitation preferences. It speaks when the person cannot. Often combined with healthcare power of attorney (for decisions not addressed) into an advance directive.'
   },
   {
-    id: 'CFP-EST-B6-002',
+    id: 'cfp-est-b6-002',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -47,7 +47,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'A HIPAA authorization permits designated individuals to access the client\'s protected health information under federal privacy rules. It complements healthcare directives (living will, healthcare power of attorney) but serves a different purpose — information access rather than decision-making authority.',
   },
   {
-    id: 'CFP-EST-B6-003',
+    id: 'cfp-est-b6-003',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -67,7 +67,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
   },
   // EST-2: Ownership and Titling
   {
-    id: 'CFP-EST-B6-004',
+    id: 'cfp-est-b6-004',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -86,7 +86,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Beneficiary designations control distribution regardless of what the will states—they\'re contractual. Many estate plans fail because beneficiary designations weren\'t updated after divorce, death, or changed intentions. Regular beneficiary review is essential.'
   },
   {
-    id: 'CFP-EST-B6-005',
+    id: 'cfp-est-b6-005',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -105,7 +105,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'TOD registration (Payable on Death for bank accounts) names beneficiaries who receive assets at death without probate. The owner maintains full control during life from The beneficiary has no rights until death. Simple, cost-effective probate avoidance for appropriate situations.'
   },
   {
-    id: 'CFP-EST-B6-006',
+    id: 'cfp-est-b6-006',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -125,7 +125,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
   },
   // EST-3: Gift and Estate Tax
   {
-    id: 'CFP-EST-B6-007',
+    id: 'cfp-est-b6-007',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -144,7 +144,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Direct payments to educational institutions for tuition (not room/board/books) and to medical providers for medical care are unlimited exclusions separate from the $18,000 annual exclusion. This allows wealthy individuals to transfer substantial amounts for education and healthcare without gift tax consequences.'
   },
   {
-    id: 'CFP-EST-B6-008',
+    id: 'cfp-est-b6-008',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -163,7 +163,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'About 12 states plus DC have estate taxes with exemptions often lower than federal ($1M-$6M varies). Six states have inheritance taxes on recipients. State taxes can apply even when no federal tax is due. Planning must consider state residence and property location.'
   },
   {
-    id: 'CFP-EST-B6-009',
+    id: 'cfp-est-b6-009',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -183,7 +183,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
   },
   // EST-4: Trust Types
   {
-    id: 'CFP-EST-B6-010',
+    id: 'cfp-est-b6-010',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -202,7 +202,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Grantor trusts are "defective" for income tax—the grantor pays tax on trust income. This allows assets to grow without trust-level tax, effectively a tax-free gift. Combined with an IDGT (Intentionally Defective Grantor Trust), this maximizes wealth transfer by having the grantor pay taxes on trust earnings.'
   },
   {
-    id: 'CFP-EST-B6-011',
+    id: 'cfp-est-b6-011',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -221,7 +221,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Special Needs Trusts provide supplemental support (vacations, equipment, entertainment) without disqualifying disabled beneficiaries from need-based programs. Third-party SNTs (funded by others) have more flexibility than first-party SNTs (funded with beneficiary\'s assets, which require Medicaid payback).'
   },
   {
-    id: 'CFP-EST-B6-012',
+    id: 'cfp-est-b6-012',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -241,7 +241,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
   },
   // EST-5: Estate Administration
   {
-    id: 'CFP-EST-B6-013',
+    id: 'cfp-est-b6-013',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -260,7 +260,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Executors gather and protect assets, notify creditors, pay valid claims and taxes, file final income tax and estate tax returns if required, and distribute remaining assets per the will. They\'re fiduciaries who must act prudently and in beneficiaries\' interests. The role typically lasts 1-2 years.'
   },
   {
-    id: 'CFP-EST-B6-014',
+    id: 'cfp-est-b6-014',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -279,7 +279,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Form 706 is required when the gross estate plus adjusted taxable gifts exceeds the exemption amount (about $13.6M in 2024). Filing is also required to elect portability even if no tax is owed. Due 9 months after death with automatic 6-month extension available. Payment is due at 9 months without extension.'
   },
   {
-    id: 'CFP-EST-B6-015',
+    id: 'cfp-est-b6-015',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -299,7 +299,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-EST-B6-016',
+    id: 'cfp-est-b6-016',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -318,7 +318,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'No-contest clauses penalize beneficiaries who challenge the will by forfeiting their inheritance if unsuccessful. Effectiveness varies by state—some won\'t enforce against challenges made in good faith or with probable cause. They deter frivolous contests but don\'t prevent all challenges.'
   },
   {
-    id: 'CFP-EST-B6-017',
+    id: 'cfp-est-b6-017',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -337,7 +337,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Tenancy by the entirety is only for married couples, treating them as one unit. It includes survivorship and, in many states, protects assets from individual (not joint) creditors. Divorce converts it to tenancy in common. Available in about half of U.S. states, primarily for real estate.'
   },
   {
-    id: 'CFP-EST-B6-018',
+    id: 'cfp-est-b6-018',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -356,7 +356,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Form 709 is required when annual exclusion is exceeded, gifts to non-citizen spouses exceed the enhanced exclusion ($185K in 2024), couples elect gift-splitting, gifts of future interests are made, or GST tax may apply. Filing tracks lifetime exemption usage even when no tax is due.'
   },
   {
-    id: 'CFP-EST-B6-019',
+    id: 'cfp-est-b6-019',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -375,7 +375,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Pet trusts (recognized in all states) designate a caretaker and funds for pet care. They name a trustee to manage funds and can specify care standards. Without a trust, pets are property with no guaranteed care. Funding should consider animal\'s lifespan and care costs.'
   },
   {
-    id: 'CFP-EST-B6-020',
+    id: 'cfp-est-b6-020',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',
@@ -394,7 +394,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Most states allow simplified procedures for small estates—often using affidavits for very small amounts or summary administration for moderate estates. Thresholds vary widely ($25K to $200K+). This avoids full probate costs and delays for qualifying estates.'
   },
   {
-    id: 'CFP-EST-B6-021',
+    id: 'cfp-est-b6-021',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-1',
@@ -413,7 +413,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Trust protectors provide flexibility for irrevocable trusts. They may have powers to modify distribution terms, change trustees, move trust situs, or respond to tax law changes. Common in dynasty trusts and asset protection trusts. Powers should be carefully defined to avoid grantor trust issues.'
   },
   {
-    id: 'CFP-EST-B6-022',
+    id: 'cfp-est-b6-022',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-3',
@@ -432,7 +432,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'The unlimited marital deduction doesn\'t apply to non-citizen surviving spouses (concern they\'ll leave the U.S. with assets). QDOT allows deferral: a U.S. trustee controls distributions, and estate tax applies to distributions (except hardship) and remaining assets at surviving spouse\'s death.'
   },
   {
-    id: 'CFP-EST-B6-023',
+    id: 'cfp-est-b6-023',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-4',
@@ -451,7 +451,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'HEMS (Health, Education, Maintenance, Support) is a recognized ascertainable standard limiting distributions to specific purposes. It allows beneficiaries to serve as trustees without the trust being included in their estates. Without HEMS, a beneficiary-trustee\'s unlimited discretion causes estate inclusion.'
   },
   {
-    id: 'CFP-EST-B6-024',
+    id: 'cfp-est-b6-024',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-2',
@@ -470,7 +470,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
     explanation: 'JTWROS provides automatic transfer to the survivor(s) at death, bypassing probate. Ownership is equal among joint tenants. Severing the joint tenancy (by sale or transfer) converts it to tenancy in common. For non-spouses, only the decedent\'s portion receives a step-up in basis.'
   },
   {
-    id: 'CFP-EST-B6-025',
+    id: 'cfp-est-b6-025',
     courseId: 'cfp',
     section: 'CFP-EST',
     blueprintArea: 'EST-5',

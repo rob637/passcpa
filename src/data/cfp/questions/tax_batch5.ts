@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   // TAX-1: Income Tax Fundamentals
   {
-    id: 'CFP-TAX-B5-001',
+    id: 'cfp-tax-b5-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Taxable income = AGI minus deductions (greater of standard or itemized). Since 2018, personal exemptions are suspended under TCJA. AGI is calculated by subtracting above-the-line deductions from gross income.'
   },
   {
-    id: 'CFP-TAX-B5-002',
+    id: 'cfp-tax-b5-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Qualifying Surviving Spouse status is available for 2 years following the year of the spouse\'s death (2025 and 2026 for a 2024 death), provided the taxpayer has not remarried and maintains a household for a dependent child. This status provides the same tax rates and standard deduction as Married Filing Jointly.'
   },
   {
-    id: 'CFP-TAX-B5-003',
+    id: 'cfp-tax-b5-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -66,7 +66,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'High-income taxpayers pay 20% on long-term capital gains plus 3.8% Net Investment Income Tax (NIIT), for a total of 23.8%. NIIT applies to taxpayers with MAGI above $200,000 (single) or $250,000 (married filing jointly). Lower brackets pay 0% or 15% on long-term gains.'
   },
   {
-    id: 'CFP-TAX-B5-004',
+    id: 'cfp-tax-b5-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   },
   // TAX-2: Deductions and Credits
   {
-    id: 'CFP-TAX-B5-005',
+    id: 'cfp-tax-b5-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The TCJA suspended the deduction for unreimbursed employee business expenses (2018-2025). Mortgage interest, SALT (capped at $10,000), and charitable contributions remain deductible for itemizers, though many taxpayers now take the larger standard deduction.'
   },
   {
-    id: 'CFP-TAX-B5-006',
+    id: 'cfp-tax-b5-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -124,7 +124,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The Child Tax Credit is $2,000 per qualifying child under age 17. Up to $1,700 is refundable as the Additional Child Tax Credit for taxpayers with earned income. The credit phases out for higher-income taxpayers ($200,000 single, $400,000 married filing jointly).'
   },
   {
-    id: 'CFP-TAX-B5-007',
+    id: 'cfp-tax-b5-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -143,7 +143,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The AOTC equals 100% of the first $2,000 + 25% of the next $2,000 = $2,000 + $500 = $2,500 maximum. It is available for the first 4 years of higher education. 40% ($1,000) is refundable. Income phase-outs apply ($80,000-$90,000 single, $160,000-$180,000 MFJ).'
   },
   {
-    id: 'CFP-TAX-B5-008',
+    id: 'cfp-tax-b5-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   },
   // TAX-3: Tax Strategies
   {
-    id: 'CFP-TAX-B5-009',
+    id: 'cfp-tax-b5-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -182,7 +182,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The wash sale rule disallows losses when substantially identical securities are purchased within 30 days before or after the sale. The disallowed loss is added to the cost basis of the newly acquired shares. The 25-day repurchase falls within the 30-day window.'
   },
   {
-    id: 'CFP-TAX-B5-010',
+    id: 'cfp-tax-b5-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -201,7 +201,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Bunching involves accelerating two years of deductions into one year (e.g., making two years of charitable contributions in one year). This allows the taxpayer to itemize in bunched years and take the standard deduction in other years, maximizing total tax benefit over time.'
   },
   {
-    id: 'CFP-TAX-B5-011',
+    id: 'cfp-tax-b5-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -220,7 +220,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Donating long-term appreciated securities provides a double tax benefit: a deduction for the fair market value ($50,000) AND avoidance of capital gains tax on the $40,000 appreciation. This is more tax-efficient than selling the stock and donating cash, which would trigger capital gains tax.'
   },
   {
-    id: 'CFP-TAX-B5-012',
+    id: 'cfp-tax-b5-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -240,7 +240,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   },
   // TAX-4: Business Taxation
   {
-    id: 'CFP-TAX-B5-013',
+    id: 'cfp-tax-b5-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -259,7 +259,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The Section 199A QBI deduction allows eligible taxpayers to deduct up to 20% of qualified business income from partnerships, S corporations, and sole proprietorships. The deduction is subject to taxable income limits, wage/capital limitations for higher-income taxpayers, and exclusions for specified services trades or businesses.'
   },
   {
-    id: 'CFP-TAX-B5-014',
+    id: 'cfp-tax-b5-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -278,7 +278,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Self-employment tax is 15.3% of net SE income (12.4% Social Security + 2.9% Medicare), but only 92.35% of net SE income is subject to the tax. $100,000 × 0.9235 × 0.153 = $14,130. The Social Security portion is capped at the wage base ($168,600 for 2024), but there is no cap on Medicare tax.'
   },
   {
-    id: 'CFP-TAX-B5-015',
+    id: 'cfp-tax-b5-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -298,7 +298,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   },
   // TAX-1: Additional Income Topics
   {
-    id: 'CFP-TAX-B5-016',
+    id: 'cfp-tax-b5-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -317,7 +317,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Interest from private activity municipal bonds (used to finance stadiums, airports, etc.) is tax-exempt for regular tax but is a preference item for AMT. Other AMT triggers include incentive stock option exercises, large state tax deductions, and depletion. The TCJA significantly reduced AMT exposure for most taxpayers by raising exemption amounts.'
   },
   {
-    id: 'CFP-TAX-B5-017',
+    id: 'cfp-tax-b5-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -335,28 +335,9 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation: 'Passive activity loss rules limit the use of losses from passive activities (businesses without material participation, rental real estate) to offsetting passive income only. Excess passive losses are suspended and carried forward. Exceptions exist for real estate professionals and $25,000 for actively-participated rental real estate.'
   },
-  {
-    id: 'CFP-TAX-B5-018',
-    courseId: 'cfp',
-    section: 'CFP-TAX',
-    blueprintArea: 'TAX-1',
-    topic: 'Income Tax',
-    subtopic: 'Net Investment Income Tax',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'The 3.8% Net Investment Income Tax applies to:',
-    options: [
-      'A) All investment income regardless of taxpayer income',
-      'B) Investment income for taxpayers with MAGI above threshold ($200K single/$250K MFJ)',
-      'C) Only capital gains, not interest or dividends',
-      'D) Only taxpayers subject to AMT'
-    ],
-    correctAnswer: 1,
-    explanation: 'The 3.8% NIIT applies to the lesser of net investment income or the amount by which MAGI exceeds $200,000 (single) or $250,000 (married filing jointly). Investment income includes interest, dividends, capital gains, rents, and royalties. It does not apply to tax-exempt income or distributions from retirement accounts.'
-  },
   // TAX-2: Additional Credits
   {
-    id: 'CFP-TAX-B5-019',
+    id: 'cfp-tax-b5-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -375,7 +356,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The Saver\'s Credit provides low- and moderate-income taxpayers a credit of up to 50% of retirement contributions up to $2,000 ($4,000 for MFJ), for a maximum $1,000 credit ($2,000 MFJ). The percentage (50%, 20%, or 10%) depends on filing status and AGI. It phases out at relatively low income levels.'
   },
   {
-    id: 'CFP-TAX-B5-020',
+    id: 'cfp-tax-b5-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -395,7 +376,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   },
   // TAX-3: Additional Strategies
   {
-    id: 'CFP-TAX-B5-021',
+    id: 'cfp-tax-b5-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -414,7 +395,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Installment sales allow sellers to recognize gain proportionally as payments are received over time (so-called gross profit ratio × payment received = gain recognized). This spreads the tax liability over the installment period. Interest must also be charged on deferred payments. Ordinary income portions and depreciation recapture are recognized in year of sale.'
   },
   {
-    id: 'CFP-TAX-B5-022',
+    id: 'cfp-tax-b5-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -433,7 +414,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Since 2018, Section 1031 like-kind exchanges are limited to real property held for productive use in a trade or business or for investment. Personal property (equipment, vehicles) no longer qualifies. To fully defer gain, the replacement property value must equal or exceed the relinquished property value.'
   },
   {
-    id: 'CFP-TAX-B5-023',
+    id: 'cfp-tax-b5-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -453,7 +434,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
   },
   // TAX-4: Additional Business Topics
   {
-    id: 'CFP-TAX-B5-024',
+    id: 'cfp-tax-b5-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -472,7 +453,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     explanation: 'S Corporations provide liability protection (as a corporation) while passing income through to shareholders, potentially qualifying for the 20% QBI deduction. C Corporations do not qualify for QBI (they pay corporate tax). Sole proprietors qualify for QBI but lack liability protection. General partnerships offer neither liability protection nor entity-level advantages.'
   },
   {
-    id: 'CFP-TAX-B5-025',
+    id: 'cfp-tax-b5-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   // PSY-1: Client Psychology
   {
-    id: 'CFP-PSY-B3-001',
+    id: 'cfp-psy-b3-001',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -28,7 +28,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Money avoidance scripts include beliefs that wealthy people are corrupt, that one does not deserve money, or that money is bad. These unconscious beliefs often lead to self-sabotaging financial behaviors like giving away money, underearning, or avoiding financial tasks.'
   },
   {
-    id: 'CFP-PSY-B3-002',
+    id: 'cfp-psy-b3-002',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -47,7 +47,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Financial trauma affects decision-making and trust. CFP® professionals should acknowledge the experience, allow space for processing, build trust incrementally, and recognize when clients may benefit from financial therapy or counseling. Dismissing or avoiding trauma history can undermine the planning relationship.'
   },
   {
-    id: 'CFP-PSY-B3-003',
+    id: 'cfp-psy-b3-003',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -67,7 +67,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-2: Behavioral Biases
   {
-    id: 'CFP-PSY-B3-004',
+    id: 'cfp-psy-b3-004',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -86,7 +86,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Overconfidence bias leads investors to overestimate their knowledge, underestimate risks, trade excessively, and hold underdiversified portfolios. It\'s especially common after periods of investment success. CFP® professionals can address it by presenting realistic projections and discussing historical market volatility.'
   },
   {
-    id: 'CFP-PSY-B3-005',
+    id: 'cfp-psy-b3-005',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -105,7 +105,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The framing effect shows that how information is presented affects decisions, even when the underlying facts are identical. In financial planning, framing affects risk tolerance questionnaires, product presentations, and retirement projections. CFP® professionals should present information in multiple frames for balanced understanding.'
   },
   {
-    id: 'CFP-PSY-B3-006',
+    id: 'cfp-psy-b3-006',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -124,7 +124,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Hindsight bias is the tendency to believe, after an event occurs, that one would have predicted or expected it. It leads to overconfidence in predicting future events and unfair criticism of past decisions that were reasonable given available information. CFP® professionals should document rationale for decisions.'
   },
   {
-    id: 'CFP-PSY-B3-007',
+    id: 'cfp-psy-b3-007',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -144,7 +144,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-3: Communication Techniques
   {
-    id: 'CFP-PSY-B3-008',
+    id: 'cfp-psy-b3-008',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -163,7 +163,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Active listening requires full attention to the speaker without simultaneously preparing a response. It includes nonverbal engagement (eye contact, nodding), verbal acknowledgment, summarizing to confirm understanding, and asking clarifying questions. Planning your response while the client speaks prevents full comprehension.'
   },
   {
-    id: 'CFP-PSY-B3-009',
+    id: 'cfp-psy-b3-009',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -182,7 +182,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Rolling with resistance is a core motivational interviewing principle. Instead of confronting or arguing, the practitioner accepts ambivalence, avoids direct opposition, and uses reflective listening to explore the client\'s perspective. This reduces defensiveness and often leads to self-generated arguments for change.'
   },
   {
-    id: 'CFP-PSY-B3-010',
+    id: 'cfp-psy-b3-010',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -202,7 +202,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-4: Counseling Concepts
   {
-    id: 'CFP-PSY-B3-011',
+    id: 'cfp-psy-b3-011',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -221,7 +221,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The Contemplation stage involves awareness of a problem and considering change but not yet committed. Precontemplation has no awareness; Preparation involves planning specific changes; Action is implementing changes. Matching interventions to stages improves effectiveness—contemplators need to explore pros and cons of change.'
   },
   {
-    id: 'CFP-PSY-B3-012',
+    id: 'cfp-psy-b3-012',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -240,7 +240,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'CFP® professionals should stay within their scope of practice—financial planning, not mental health treatment. When recognizing that underlying issues require professional help, gently suggest appropriate resources while continuing to support the financial planning process. Referral networks are valuable.'
   },
   {
-    id: 'CFP-PSY-B3-013',
+    id: 'cfp-psy-b3-013',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -260,7 +260,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-1: More Client Psychology
   {
-    id: 'CFP-PSY-B3-014',
+    id: 'cfp-psy-b3-014',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -279,7 +279,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Financial enabling involves providing money or financial support that prevents natural consequences and perpetuates unhealthy financial behaviors (similar to enabling in addiction contexts). CFP® professionals may observe this in estate planning or family financial discussions and should help clients understand these dynamics.'
   },
   {
-    id: 'CFP-PSY-B3-015',
+    id: 'cfp-psy-b3-015',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -298,7 +298,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Major life transitions often impair decision-making capacity due to stress, grief, or emotional overwhelm. CFP® professionals should recognize this, recommend delaying major irreversible decisions when possible, provide extra support, and revisit plans once the client has stabilized emotionally.'
   },
   {
-    id: 'CFP-PSY-B3-016',
+    id: 'cfp-psy-b3-016',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -318,7 +318,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-2: More Behavioral Finance
   {
-    id: 'CFP-PSY-B3-017',
+    id: 'cfp-psy-b3-017',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -337,7 +337,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The representativeness heuristic judges probability by similarity to a prototype. A \"good company\" is assumed to be a \"good stock,\" ignoring that price relative to value matters. This leads to investing in \"story stocks\" without adequate analysis of whether the price already reflects the story.'
   },
   {
-    id: 'CFP-PSY-B3-018',
+    id: 'cfp-psy-b3-018',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -356,7 +356,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'The sunk cost fallacy leads to decisions based on past irrecoverable costs rather than future value. Past losses are irrelevant to whether holding the investment makes sense going forward. CFP® professionals should help clients evaluate current holdings based on future prospects, not purchase price.'
   },
   {
-    id: 'CFP-PSY-B3-019',
+    id: 'cfp-psy-b3-019',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -376,7 +376,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-3: More Communication
   {
-    id: 'CFP-PSY-B3-020',
+    id: 'cfp-psy-b3-020',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -395,7 +395,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Cultural competence means understanding how culture shapes financial attitudes, family roles, risk perceptions, and communication styles—then adapting appropriately without stereotyping. It requires curiosity, humility, and individualized attention to each client\'s unique background and preferences.'
   },
   {
-    id: 'CFP-PSY-B3-021',
+    id: 'cfp-psy-b3-021',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -414,7 +414,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Non-verbal cues like crossed arms, avoided eye contact, or leaning away often signal discomfort or disagreement. CFP® professionals should notice these cues and address them: \"I notice you seem hesitant—what concerns do you have?\" Non-verbal communication often reveals feelings words don\'t express.'
   },
   {
-    id: 'CFP-PSY-B3-022',
+    id: 'cfp-psy-b3-022',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -434,7 +434,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
   },
   // PSY-4: More Counseling
   {
-    id: 'CFP-PSY-B3-023',
+    id: 'cfp-psy-b3-023',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -453,7 +453,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Effective goals are SMART (Specific, Measurable, Achievable, Relevant, Time-bound) and collaboratively developed. Goals tied to client values ("Why is this important?") create stronger motivation than generic targets. The CFP® professional guides the process but the client must own the goals.'
   },
   {
-    id: 'CFP-PSY-B3-024',
+    id: 'cfp-psy-b3-024',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -472,7 +472,7 @@ export const CFP_PSYCHOLOGY_BATCH3_QUESTIONS: Question[] = [
     explanation: 'Resistance often signals unexplored concerns, values conflicts, or past experiences. Before escalating or abandoning, explore the \"why\" with curiosity: \"Help me understand what concerns you about this approach.\" Understanding resistance often reveals paths forward that honor both sound planning and client concerns.'
   },
   {
-    id: 'CFP-PSY-B3-025',
+    id: 'cfp-psy-b3-025',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',

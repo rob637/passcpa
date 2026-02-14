@@ -49,10 +49,10 @@ const KNOWN_SECTIONS: Record<string, string[]> = {
   cma: ['CMA1', 'CMA2', 'CMA1A', 'CMA1B', 'CMA1C', 'CMA2A', 'CMA2B', 'CMA2C'],
   cia: ['CIA1', 'CIA2', 'CIA3'],
   cisa: ['CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'],
-  cfp: ['CFP-GEN', 'CFP-INV', 'CFP-RET', 'CFP-INS', 'CFP-TAX', 'CFP-EST', 'CFP-PSY', 'CFP-CROSS',
-        'GEN', 'INV', 'RET', 'INS', 'TAX', 'EST', 'PSY', 'CROSS',
-        'General Principles', 'Investment', 'Retirement', 'Insurance',
-        'Tax Planning', 'Estate Planning', 'Psychology', 'Cross-Domain'],
+  cfp: ['CFP-GEN', 'CFP-INV', 'CFP-RET', 'CFP-INS', 'CFP-RISK', 'CFP-TAX', 'CFP-EST', 'CFP-PSY', 'CFP-PCR', 'CFP-CROSS',
+        'GEN', 'INV', 'RET', 'INS', 'RISK', 'TAX', 'EST', 'PSY', 'PCR', 'CROSS',
+        'General Principles', 'Investment', 'Retirement', 'Insurance', 'Risk Management',
+        'Tax Planning', 'Estate Planning', 'Psychology', 'Professional Conduct', 'Cross-Domain'],
 };
 
 const VALID_DIFFICULTIES = ['easy', 'medium', 'hard', 'beginner', 'moderate', 'tough'];

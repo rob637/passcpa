@@ -497,7 +497,7 @@ Year 3: 1,000 options actually forfeited when employee leaves
     difficulty: 'hard',
     timeEstimate: 20,
     topic: 'Government Accounting',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     scenario: `
 City of Riverside General Fund data for Year 1:
 

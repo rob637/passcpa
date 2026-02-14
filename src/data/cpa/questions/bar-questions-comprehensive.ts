@@ -201,7 +201,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Income Taxes',
     subtopic: 'Tax Rate Reconciliation',
     difficulty: 'hard',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'The tax rate reconciliation explains differences between:',
     options: [
@@ -222,7 +222,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Income Taxes',
     subtopic: 'Uncertain Tax Positions',
     difficulty: 'hard',
-    blueprintArea: 'BAR-IV',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Under ASC 740, an uncertain tax position is recognized when:',
     options: [
@@ -243,7 +243,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Business Combinations',
     subtopic: 'Pushdown Accounting',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Pushdown accounting results in the acquired entity:',
     options: [
@@ -264,7 +264,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Business Combinations',
     subtopic: 'Step Acquisition',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'In a step acquisition achieving control, the acquirer:',
     options: [
@@ -285,7 +285,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Consolidation',
     subtopic: 'Intercompany Transactions',
     difficulty: 'hard',
-    blueprintArea: 'BAR-V',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Application',
     question: 'Unrealized profit on intercompany upstream inventory sales is eliminated against:',
     options: [
@@ -306,7 +306,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Activity-based costing improves upon traditional costing by:',
     options: [
@@ -327,7 +327,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'The minimum transfer price for a selling division with no excess capacity is:',
     options: [
@@ -348,7 +348,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'Under Theory of Constraints, a bottleneck should be managed by:',
     options: [
@@ -369,7 +369,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Variance Analysis',
     subtopic: 'Sales Mix Variance',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Analysis',
     question: 'The sales mix variance measures the impact of:',
     options: [
@@ -390,7 +390,7 @@ export const BAR_QUESTIONS_COMPREHENSIVE: Question[] = [
     topic: 'Budgeting',
     subtopic: 'Beyond Budgeting',
     difficulty: 'hard',
-    blueprintArea: 'BAR-VI',
+    blueprintArea: 'BAR-III',
     skillLevel: 'Evaluation',
     question: 'The Beyond Budgeting model advocates:',
     options: [

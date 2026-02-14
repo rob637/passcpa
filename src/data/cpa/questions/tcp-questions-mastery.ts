@@ -202,7 +202,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
     topic: 'Property Transactions',
     subtopic: 'Section 179 Limitations',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Application',
     question: 'Section 179 expensing is limited by:',
     options: [
@@ -219,7 +219,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
     id: 'tcp-mast-011',
     courseId: 'cpa',
     section: 'TCP',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange Boot',
     difficulty: 'hard',
@@ -239,7 +239,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
     id: 'tcp-mast-012',
     courseId: 'cpa',
     section: 'TCP',
-    blueprintArea: 'TCP-VI',
+    blueprintArea: 'TCP-IV',
     topic: 'International Taxation',
     subtopic: 'FDII Deduction',
     difficulty: 'hard',
@@ -263,7 +263,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
     topic: 'International Taxation',
     subtopic: 'Treaty Benefits',
     difficulty: 'hard',
-    blueprintArea: 'TCP-VI',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Evaluation',
     question: 'Tax treaty benefits typically provide:',
     options: [
@@ -452,7 +452,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
     topic: 'International Taxation',
     subtopic: 'PFIC Taxation',
     difficulty: 'hard',
-    blueprintArea: 'TCP-VI',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'Passive Foreign Investment Company (PFIC) default taxation results in:',
     options: [
@@ -473,7 +473,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture',
     difficulty: 'hard',
-    blueprintArea: 'TCP-V',
+    blueprintArea: 'TCP-IV',
     skillLevel: 'Analysis',
     question: 'Section 1250 unrecaptured gain on real property is taxed at:',
     options: [

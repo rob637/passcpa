@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
   // PSY-1: Behavioral Finance
   {
-    id: 'CFP-PSY-B6-001',
+    id: 'cfp-psy-b6-001',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -28,7 +28,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Hyperbolic discounting: people heavily discount future rewards compared to immediate ones, but the discount rate decreases for distant time horizons. This leads to present bias (preferring $100 today over $120 next month, but indifference between $100 in 12 months vs $120 in 13 months). Explains procrastination, undersaving, and credit card debt.'
   },
   {
-    id: 'CFP-PSY-B6-002',
+    id: 'cfp-psy-b6-002',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -47,7 +47,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Commitment devices lock in future behavior when willpower might fail. Examples: automatic 401(k) contributions (saves before spending), Roth conversion in low-income years (committed tax strategy), irrevocable trusts (cannot reclaim assets), penalty for early withdrawal (deters impulsive access). Clients often appreciate these guardrails.'
   },
   {
-    id: 'CFP-PSY-B6-003',
+    id: 'cfp-psy-b6-003',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -67,7 +67,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
   },
   // PSY-2: Client Communication
   {
-    id: 'CFP-PSY-B6-004',
+    id: 'cfp-psy-b6-004',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -86,7 +86,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Active constructive responding (from positive psychology): respond to good news with enthusiasm and curiosity—ask questions, express joy, help them relive the experience. This builds relationship and trust. Passive or destructive responses (dismissing, undermining, focusing on negatives) damage rapport. Key to client relationship building.'
   },
   {
-    id: 'CFP-PSY-B6-005',
+    id: 'cfp-psy-b6-005',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -105,7 +105,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Difficult conversations (job loss affecting plan, unrealistic goals, portfolio losses): be direct but compassionate, validate emotions, pause for response, then focus on actionable next steps. Avoiding or sugar-coating erodes trust. Written follow-up helps with information retention when stress impairs processing.'
   },
   {
-    id: 'CFP-PSY-B6-006',
+    id: 'cfp-psy-b6-006',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -125,7 +125,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
   },
   // PSY-3: Financial Psychology
   {
-    id: 'CFP-PSY-B6-007',
+    id: 'cfp-psy-b6-007',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -144,7 +144,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Financial anxiety: validate their experience (it\'s real), provide clear information to counter uncertainty, focus on controllable actions, build confidence through small wins. Avoid overwhelming with data or dismissing concerns. Creating sense of control and progress reduces anxiety. Consider if therapy referral is appropriate for severe cases.'
   },
   {
-    id: 'CFP-PSY-B6-008',
+    id: 'cfp-psy-b6-008',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -163,7 +163,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Childhood financial trauma creates lasting patterns: scarcity mindset (hoarding, extreme anxiety about spending), guilt about having more than family of origin, alternating between restriction and splurging, difficulty trusting stability. Understanding their history enables compassionate guidance and realistic expectations for behavior change.'
   },
   {
-    id: 'CFP-PSY-B6-009',
+    id: 'cfp-psy-b6-009',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -183,7 +183,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
   },
   // PSY-4: Client Assessment
   {
-    id: 'CFP-PSY-B6-010',
+    id: 'cfp-psy-b6-010',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -202,7 +202,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Life transitions (divorce, retirement, inheritance, widowhood) require holistic assessment: financial situation (immediate and long-term needs), emotional state (decision-making capacity may be compromised), support systems (who else is helping), timeline (what decisions can wait). Rushing major decisions during stress leads to regrets.'
   },
   {
-    id: 'CFP-PSY-B6-011',
+    id: 'cfp-psy-b6-011',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -221,7 +221,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Questionnaire limitations: answers change based on recent market performance (recency bias), hypothetical scenarios don\'t capture actual emotional responses, conflate tolerance (psychological) with capacity (financial ability), and may not probe deeply enough. Use as starting point, not definitive answer—follow up with discussion and observe behavior over time.'
   },
   {
-    id: 'CFP-PSY-B6-012',
+    id: 'cfp-psy-b6-012',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -241,7 +241,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-PSY-B6-013',
+    id: 'cfp-psy-b6-013',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -260,7 +260,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Regret aversion: fear of making decisions we\'ll regret leads to inaction (staying in cash) or conventional choices (buying popular investments "at least I won\'t be alone"). Anticipated regret for action is often stronger than for inaction. Counter by framing inaction as a choice and discussing regret of missed opportunities.'
   },
   {
-    id: 'CFP-PSY-B6-014',
+    id: 'cfp-psy-b6-014',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -279,7 +279,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Individualistic cultures: personal goals, individual achievement, nuclear family focus. Collectivist cultures: group identity, extended family obligations, shared resources and decisions. Planners must understand which orientation applies—a collectivist client\'s "estate plan" may center on lifelong support of extended family, not just spouse and children.'
   },
   {
-    id: 'CFP-PSY-B6-015',
+    id: 'cfp-psy-b6-015',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -298,7 +298,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Financial secrets between spouses create ethical challenges. Generally, maintain confidentiality with your client (the one who shared information), but encourage honest communication and explain how secrets undermine planning. Consider: who is actually the client? Can you effectively serve both? You may need to withdraw if serving separate interests becomes untenable.'
   },
   {
-    id: 'CFP-PSY-B6-016',
+    id: 'cfp-psy-b6-016',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -317,7 +317,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Behavioral types respond to different approaches. Avoiders: need structured accountability and simple next steps. Planners: appreciate detailed analysis and control. Spontaneous: need guardrails and commitment devices. Matching your approach to their style improves engagement and outcomes. One-size-fits-all planning ignores psychological differences.'
   },
   {
-    id: 'CFP-PSY-B6-017',
+    id: 'cfp-psy-b6-017',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -336,7 +336,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Peak-end rule (Kahneman): memories of experiences are dominated by the peak intensity and ending, not duration or average. For planning: end meetings on positive notes, ensure peak moments are positive (not anxious), and manage difficult conversations to end constructively. A great meeting can be remembered poorly if it ends badly.'
   },
   {
-    id: 'CFP-PSY-B6-018',
+    id: 'cfp-psy-b6-018',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -355,7 +355,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Silence is a powerful communication tool. After asking a meaningful question or sharing information, pause—resist filling the space. Clients often share more when given time to think. Silence after emotional moments shows respect and patience. Many planners talk too much; learning to be comfortable with silence improves client engagement.'
   },
   {
-    id: 'CFP-PSY-B6-019',
+    id: 'cfp-psy-b6-019',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -374,7 +374,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Sudden wealth syndrome: psychological adjustment takes time. Many feel guilty, confused, or pressured by others. Recommendations: park funds safely initially, avoid major decisions for 6-12 months, protect privacy, educate on new concerns (estate planning, tax), guard against others\' expectations. Many sudden-wealth recipients lose it quickly due to poor decisions.'
   },
   {
-    id: 'CFP-PSY-B6-020',
+    id: 'cfp-psy-b6-020',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -393,7 +393,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Financial socialization shapes attitudes toward money through family, culture, and early experiences. Money scripts — unconscious beliefs about money developed in childhood — influence adult financial behaviors. A family where money was taboo may produce avoidance patterns in adult financial discussions.',
   },
   {
-    id: 'CFP-PSY-B6-021',
+    id: 'cfp-psy-b6-021',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',
@@ -412,7 +412,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Too much information paradoxically impairs decision-making. People become paralyzed or use simple heuristics (defaults, familiar options) rather than analyzing all data. Planners should curate information, present key factors clearly, and avoid overwhelming clients with every available option or data point. Simplify without oversimplifying.'
   },
   {
-    id: 'CFP-PSY-B6-022',
+    id: 'cfp-psy-b6-022',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-2',
@@ -431,7 +431,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Probability communication is challenging—people misunderstand percentages and interpret them through biases. Best practices: use natural frequencies ("80 out of 100") alongside percentages, provide visual representations, give context (compared to what?), and actively check understanding. "85% success probability" means different things to different people.'
   },
   {
-    id: 'CFP-PSY-B6-023',
+    id: 'cfp-psy-b6-023',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-3',
@@ -450,7 +450,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Financial wellbeing (CFPB definition): security and freedom—control over day-to-day finances, capacity to absorb shocks, on track for long-term goals, and freedom to make choices to enjoy life. High income/wealth doesn\'t guarantee wellbeing; moderate wealth with security and values-alignment can produce greater wellbeing.'
   },
   {
-    id: 'CFP-PSY-B6-024',
+    id: 'cfp-psy-b6-024',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-4',
@@ -469,7 +469,7 @@ export const CFP_PSYCHOLOGY_BATCH6_QUESTIONS: Question[] = [
     explanation: 'Financial capability = knowledge/skills + psychological ability to act + access to resources. Someone may understand investing but be paralyzed by anxiety. Another may be motivated but lack knowledge. A third may have both but lack access to appropriate products. Effective planning addresses all three elements to improve capability.'
   },
   {
-    id: 'CFP-PSY-B6-025',
+    id: 'cfp-psy-b6-025',
     courseId: 'cfp',
     section: 'CFP-PSY',
     blueprintArea: 'PSY-1',

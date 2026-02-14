@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
   // GEN-1: Planning Process
   {
-    id: 'CFP-GEN-B10-001',
+    id: 'cfp-gen-b10-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Comprehensive data gathering: quantitative (financial statements, tax returns, insurance policies) and qualitative (goals, values, risk tolerance, health, family dynamics, attitudes toward money). Qualitative often more important for appropriate recommendations. Understanding "why" behind goals leads to better planning. Document collection is necessary but insufficient alone.'
   },
   {
-    id: 'CFP-GEN-B10-002',
+    id: 'cfp-gen-b10-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Recommendation development: analyze alternatives, consider trade-offs, align with client\'s unique situation. Must be: suitable, in client\'s interest, based on thorough analysis. Consider: cost, risk, complexity, tax implications, time horizon. Present options when appropriate—client choice matters. Document rationale for recommendations. Fiduciary standard requires acting in client\'s interest.'
   },
   {
-    id: 'CFP-GEN-B10-003',
+    id: 'cfp-gen-b10-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +67,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
   },
   // GEN-2: Financial Statements
   {
-    id: 'CFP-GEN-B10-004',
+    id: 'cfp-gen-b10-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Cash flow analysis: inflows vs. outflows, surplus (savings capacity) or deficit (problem). Identifies: discretionary vs. nondiscretionary expenses, spending patterns, potential savings areas, sustainability. Surplus funds goals. Persistent deficit indicates problems. Categories help find inefficiencies. Cash flow is foundation of financial planning—without surplus, little progress.'
   },
   {
-    id: 'CFP-GEN-B10-005',
+    id: 'cfp-gen-b10-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +105,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Front-end ratio: (Principal + Interest + Taxes + Insurance) / Gross monthly income. Target: ≤28% typically. Back-end ratio adds all debt payments, target ≤36%. Used by lenders; also good planning benchmarks. Higher ratios indicate stress. Analysis helps: affordability assessment, debt management, spending priorities. Some clients can handle more, others less—depends on total picture.'
   },
   {
-    id: 'CFP-GEN-B10-006',
+    id: 'cfp-gen-b10-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -125,7 +125,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
   },
   // GEN-3: Time Value of Money
   {
-    id: 'CFP-GEN-B10-007',
+    id: 'cfp-gen-b10-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +144,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Uneven cash flows: can\'t use standard annuity formula (which assumes equal payments). Must: discount each cash flow individually using PV = CF/(1+r)^n, then sum. Or use: calculator NPV/CFo function, Excel NPV/XNPV. Common situations: irregular income, business valuations, real estate with varying rents. Understanding this extends basic TVM to real-world applications.'
   },
   {
-    id: 'CFP-GEN-B10-008',
+    id: 'cfp-gen-b10-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +163,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Real vs. nominal: Real rate ≈ Nominal rate - Inflation. Two approaches: (1) Nominal—inflate expenses, use nominal returns. (2) Real—keep today\'s dollars, use real returns. Same answer, real often simpler. Fisher equation: (1+r) = (1+i)(1+π). Consistency key—don\'t mix real expenses with nominal returns. For retirement, real dollars often more intuitive for clients.'
   },
   {
-    id: 'CFP-GEN-B10-009',
+    id: 'cfp-gen-b10-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,7 +183,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
   },
   // GEN-4: Economics
   {
-    id: 'CFP-GEN-B10-010',
+    id: 'cfp-gen-b10-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -202,7 +202,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Business cycle phases: Expansion (growth)—increasing GDP, employment, confidence. Peak—maximum activity before downturn. Contraction/recession—declining GDP, rising unemployment. Trough—lowest point before recovery. NBER officially dates cycles. Investment implications: sectors perform differently at each phase. Planning implications: job security, income expectations, market expectations.'
   },
   {
-    id: 'CFP-GEN-B10-011',
+    id: 'cfp-gen-b10-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -221,7 +221,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Yield curve shapes: Normal (upward sloping)—longer maturities, higher yields (typical, compensation for time). Flat—similar rates across maturities (transition period). Inverted—short-term higher than long (unusual, historically preceded recessions). Markets pricing in future rate cuts due to expected weakness. Not guaranteed predictor but historically reliable. Watch 2-year vs. 10-year spread.'
   },
   {
-    id: 'CFP-GEN-B10-012',
+    id: 'cfp-gen-b10-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -241,7 +241,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
   },
   // GEN-5: Planning Concepts
   {
-    id: 'CFP-GEN-B10-013',
+    id: 'cfp-gen-b10-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -260,7 +260,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'SMART framework: Specific (clear, not vague), Measurable (quantifiable—how much, by when), Achievable (realistic given resources), Relevant (meaningful to client), Time-bound (deadline). Transforms vague wishes into actionable targets. "Save for retirement" → "Accumulate $2M by age 65." Better goals = better plans = more motivation and accountability.'
   },
   {
-    id: 'CFP-GEN-B10-014',
+    id: 'cfp-gen-b10-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -279,7 +279,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Life stage planning: Young adults—build foundation, manage debt, start saving. Mid-career—maximize accumulation, insurance needs peak. Pre-retirement—transition planning, catch-up contributions. Early retirement—Social Security, healthcare decisions. Later retirement—estate, healthcare, longevity. Priorities shift: growth to income to preservation. Tailor advice to stage.'
   },
   {
-    id: 'CFP-GEN-B10-015',
+    id: 'cfp-gen-b10-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -299,7 +299,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-GEN-B10-016',
+    id: 'cfp-gen-b10-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -318,7 +318,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Scope definition: Part of engagement letter/agreement. Clarifies: comprehensive vs. focused plan, specific areas covered, what\'s excluded, responsibilities, how recommendations delivered, ongoing vs. one-time. Prevents misunderstandings. Client knows what to expect. Planner knows limits. Required under Practice Standards. Protects both parties. Can be modified by agreement.'
   },
   {
-    id: 'CFP-GEN-B10-017',
+    id: 'cfp-gen-b10-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -337,7 +337,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Asset titling matters: Joint tenancy (JTWROS)—passes to survivor, avoids probate, but gift implications. Tenants in common—each owns share, passes by will. Community property—state-specific. Beneficiary designations—override will. Trust ownership—avoids probate, control. Wrong titling can: defeat estate plan, create unintended gifts, cause probate. Review titling during planning.'
   },
   {
-    id: 'CFP-GEN-B10-018',
+    id: 'cfp-gen-b10-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -356,7 +356,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Perpetuity: infinite stream of payments. PV = Payment / Discount rate. Example: $1,000/year forever at 5% = $1,000/0.05 = $20,000. Applications: preferred stock valuation, some endowments, simplified pension valuation. Growing perpetuity: PV = Payment / (r - g). Theoretical but useful for quick estimates. Related to sustainable withdrawal concept in retirement.'
   },
   {
-    id: 'CFP-GEN-B10-019',
+    id: 'cfp-gen-b10-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -375,7 +375,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Purchasing power risk: inflation erodes real value. $100 today buys less in 20 years. Even "safe" investments (CDs, bonds) lose purchasing power if returns < inflation. Particularly dangerous for retirees on fixed income. Mitigation: growth investments, TIPS, I-Bonds, real assets. Plan must address—most goals are in future dollars worth less than today\'s.'
   },
   {
-    id: 'CFP-GEN-B10-020',
+    id: 'cfp-gen-b10-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -394,7 +394,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Opportunity cost: what you give up by making one choice. Pay off mortgage vs. invest: opportunity cost of payoff is foregone investment returns. Buy car vs. invest: cost includes lost growth. Every dollar has alternative uses. Good decisions consider opportunity costs. Helps prioritize limited resources. Not just dollars—time, effort included. Frame choices in terms of trade-offs.'
   },
   {
-    id: 'CFP-GEN-B10-021',
+    id: 'cfp-gen-b10-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -413,7 +413,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Communication best practices: avoid jargon (or explain it), active listening, ask questions, confirm understanding, adapt to learning style (visual, verbal, written). Allow questions, check for concerns. Different clients need different approaches. Written follow-up reinforces verbal. Miscommunication leads to poor implementation. Relationship depends on clear, respectful communication.'
   },
   {
-    id: 'CFP-GEN-B10-022',
+    id: 'cfp-gen-b10-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -432,7 +432,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Debt categorization: "Good"—low rate, builds assets/income (mortgage, business loan, education). "Bad"—high rate, finances consumption (credit cards, car loans for luxury). Nuanced: car needed for work may be acceptable. Prioritize paying high-rate debt. Some low-rate debt may be kept if investing returns exceed cost. Framework helps clients prioritize and understand borrowing.'
   },
   {
-    id: 'CFP-GEN-B10-023',
+    id: 'cfp-gen-b10-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -451,7 +451,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Solving for rate: r = (FV/PV)^(1/n) - 1 = (50,000/35,000)^(1/5) - 1 = (1.4286)^0.2 - 1 = 1.0739 - 1 = 7.39%. Use: determine if goal achievable given amount and time. Compare required rate to realistic expectations. If required rate too high, need: more money, more time, or adjusted goal. Foundation for goal feasibility analysis.'
   },
   {
-    id: 'CFP-GEN-B10-024',
+    id: 'cfp-gen-b10-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -470,7 +470,7 @@ export const CFP_GEN_BATCH10_QUESTIONS: Question[] = [
     explanation: 'Strong dollar effects: foreign investment returns reduced (convert fewer dollars), imports cheaper (deflationary), exports more expensive (hurts U.S. companies selling abroad), foreign travel cheaper. Weak dollar: opposite effects. International diversification has currency component. Can hedge or accept exposure. Adds dimension to investment planning. Monitor for clients with significant international holdings.'
   },
   {
-    id: 'CFP-GEN-B10-025',
+    id: 'cfp-gen-b10-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',

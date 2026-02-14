@@ -246,27 +246,6 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     reference: 'Trust Services Criteria',
   },
   {
-    id: 'isc-exp-012',
-    section: 'ISC',
-    courseId: 'cpa',
-    topicId: 'isc-soc',
-    topic: 'SOC Reports',
-    subtopic: 'Complementary Controls',
-    difficulty: 'hard',
-    blueprintArea: 'ISC-III',
-    skillLevel: 'Analysis',
-    question: 'Complementary user entity controls (CUECs) in a SOC report are:',
-    options: [
-      'Controls assumed to be implemented by user entities necessary for effective overall control',
-      'Controls operated by the service organization',
-      'Detective controls only',
-      'Optional controls',
-    ],
-    correctAnswer: 0,
-    explanation: 'CUECs: controls user entities must implement for service organization controls to be effective. Example: user must review access reports, reconcile outputs, maintain secure credentials. Listed in SOC report.',
-    reference: 'SOC Reporting - CUECs',
-  },
-  {
     id: 'isc-exp-013',
     section: 'ISC',
     courseId: 'cpa',
@@ -299,7 +278,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Blockchain Technology',
     subtopic: 'Consensus Mechanisms',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Proof of work consensus mechanism:',
     options: [
@@ -320,7 +299,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Blockchain Technology',
     subtopic: 'Smart Contracts',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'A smart contract on blockchain:',
     options: [
@@ -341,7 +320,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Artificial Intelligence',
     subtopic: 'Machine Learning Types',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Supervised machine learning differs from unsupervised by:',
     options: [
@@ -362,7 +341,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Artificial Intelligence',
     subtopic: 'AI Governance',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'Key risks in AI systems that require governance include:',
     options: [
@@ -383,7 +362,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Cloud Computing',
     subtopic: 'Shared Responsibility',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'In the cloud shared responsibility model for IaaS:',
     options: [
@@ -404,7 +383,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Cloud Computing',
     subtopic: 'Cloud Risks',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'Significant risks in cloud computing include:',
     options: [
@@ -425,7 +404,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Robotic Process Automation',
     subtopic: 'RPA Controls',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Controls over RPA bots should include:',
     options: [
@@ -743,7 +722,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'IoT Security',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'Key security concerns with Internet of Things (IoT) devices include:',
     options: [
@@ -764,7 +743,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'Quantum Computing',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'Quantum computing poses a threat to current encryption because:',
     options: [
@@ -785,7 +764,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'DevSecOps',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'DevSecOps integrates security into development by:',
     options: [
@@ -806,7 +785,7 @@ export const ISC_QUESTIONS_EXPANDED: Question[] = [
     topic: 'Emerging Technologies',
     subtopic: 'Zero Trust Architecture',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Zero Trust security model is based on:',
     options: [

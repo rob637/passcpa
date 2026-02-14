@@ -12,7 +12,7 @@ export const CFP_RIS4_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L011',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     title: 'Homeowners Insurance',
     order: 11,
     duration: 30,
@@ -217,7 +217,7 @@ Insured pays $25,000 penalty for underinsurance
   {
     id: 'CFP-RIS-L012',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     title: 'Auto Insurance',
     order: 12,
     duration: 30,
@@ -395,7 +395,7 @@ Often inadequate (e.g., 25/50/25)
   {
     id: 'CFP-RIS-L013',
     domain: 'CFP-RISK',
-    blueprintArea: 'RIS-4',
+    blueprintArea: 'RISK-4',
     title: 'Umbrella Liability and Other Coverage',
     order: 13,
     duration: 25,

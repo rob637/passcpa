@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
   // RET-2: Advanced Employer Plan Topics
   {
-    id: 'CFP-RET-B5-001',
+    id: 'cfp-ret-b5-001',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -28,7 +28,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: '457(b) plans are deferred compensation plans for state and local government employees and employees of certain tax-exempt organizations. They have unique rules, including no 10% early withdrawal penalty (for governmental plans) and the ability to contribute to both a 457(b) and a 401(k)/403(b) in the same year.'
   },
   {
-    id: 'CFP-RET-B5-002',
+    id: 'cfp-ret-b5-002',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -47,7 +47,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Solo 401(k) allows both employee deferrals ($23,500 for 2026 + catch-up if eligible) AND employer profit-sharing contributions (up to 25% of compensation). This dual component typically allows higher total contributions than SEP IRA (employer only) or SIMPLE IRA (lower limits).'
   },
   {
-    id: 'CFP-RET-B5-003',
+    id: 'cfp-ret-b5-003',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -66,7 +66,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Hardship withdrawals are subject to ordinary income tax and generally the 10% early withdrawal penalty if under age 59½. They are available only for immediate and heavy financial needs (medical, education, housing, funeral, etc.). Unlike loans, hardship withdrawals cannot be repaid to the plan.'
   },
   {
-    id: 'CFP-RET-B5-004',
+    id: 'cfp-ret-b5-004',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -85,7 +85,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Plan loans are limited to the lesser of $50,000 or 50% of the vested account balance (with a $10,000 floor). Loans must generally be repaid within 5 years (longer for principal residence purchase). If not repaid, the balance becomes a taxable distribution.'
   },
   {
-    id: 'CFP-RET-B5-005',
+    id: 'cfp-ret-b5-005',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -105,7 +105,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
   },
   // RET-3: Advanced IRA Topics
   {
-    id: 'CFP-RET-B5-006',
+    id: 'cfp-ret-b5-006',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -124,7 +124,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'QCDs allow IRA owners age 70½+ to transfer up to $105,000 (2024, indexed) directly to qualified charities. The distribution counts toward RMDs, is excluded from taxable income, but does not provide a separate charitable deduction. This is beneficial for those who don\'t itemize or have MAGI-sensitive benefits.'
   },
   {
-    id: 'CFP-RET-B5-007',
+    id: 'cfp-ret-b5-007',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -143,7 +143,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The TCJA eliminated recharacterization of Roth conversions (no more "do-overs"). However, recharacterization of contributions remains allowed—a Traditional IRA contribution can be recharacterized as a Roth contribution (and vice versa) by the tax filing deadline plus extensions.'
   },
   {
-    id: 'CFP-RET-B5-008',
+    id: 'cfp-ret-b5-008',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-3',
@@ -163,7 +163,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
   },
   // RET-4: Advanced Distribution Topics
   {
-    id: 'CFP-RET-B5-009',
+    id: 'cfp-ret-b5-009',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -182,7 +182,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Qualified Roth distributions require the 5-year holding period AND a qualifying event: age 59½, disability, death, or first-time home purchase (up to $10K lifetime). Without both requirements, earnings may be taxable and possibly subject to the 10% penalty.'
   },
   {
-    id: 'CFP-RET-B5-010',
+    id: 'cfp-ret-b5-010',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -201,7 +201,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Death and disability exceptions apply universally to both IRAs and qualified plans. First-time home purchase and higher education expenses apply only to IRAs. Separation from service at age 55+ applies only to qualified plans (not IRAs). These distinctions are frequently tested.'
   },
   {
-    id: 'CFP-RET-B5-011',
+    id: 'cfp-ret-b5-011',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -220,7 +220,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Traditional IRA RMDs are calculated separately for each account using their individual year-end balances. However, the total RMD amount can be taken from any one IRA or any combination. This flexibility allows strategic withdrawal decisions. Note: 401(k) RMDs cannot be aggregated—each must be taken from its own plan.'
   },
   {
-    id: 'CFP-RET-B5-012',
+    id: 'cfp-ret-b5-012',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-4',
@@ -240,7 +240,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
   },
   // RET-5: Advanced Social Security Topics
   {
-    id: 'CFP-RET-B5-013',
+    id: 'cfp-ret-b5-013',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -259,7 +259,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Delayed retirement credits add 8% per year (2/3% per month) for each year benefits are delayed past FRA, up to age 70. Delaying 3 years (67 to 70) adds 24% to the benefit (3 × 8%). Combined with annual COLA increases, this can significantly increase lifetime benefits for those with longevity.'
   },
   {
-    id: 'CFP-RET-B5-014',
+    id: 'cfp-ret-b5-014',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -278,7 +278,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Breakeven analysis comparing early vs. delayed claiming typically shows breakeven around ages 78-80 for the 62 vs. 67 comparison. Those expecting to live beyond breakeven benefit from delaying; those with shorter life expectancy may benefit from early claiming. Investment of early benefits at reasonable returns can shift this analysis.'
   },
   {
-    id: 'CFP-RET-B5-015',
+    id: 'cfp-ret-b5-015',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -297,7 +297,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'WEP reduces Social Security benefits for workers who receive pensions from employment not covered by Social Security (some government jobs, foreign employment). The formula reduction can decrease benefits significantly, though it cannot exceed half the pension amount. GPO similarly affects spousal/survivor benefits.'
   },
   {
-    id: 'CFP-RET-B5-016',
+    id: 'cfp-ret-b5-016',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-5',
@@ -317,7 +317,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
   },
   // RET-1: Additional Retirement Needs Topics
   {
-    id: 'CFP-RET-B5-017',
+    id: 'cfp-ret-b5-017',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -336,7 +336,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Asset location optimizes after-tax returns by placing assets according to their tax treatment. Bond interest is taxed at ordinary rates, so sheltering it in tax-deferred accounts defers higher-taxed income. Stocks with qualified dividends and long-term gains (lower rates) are often better in taxable accounts; municipal bonds are efficient in taxable accounts.'
   },
   {
-    id: 'CFP-RET-B5-018',
+    id: 'cfp-ret-b5-018',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -355,7 +355,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'The bucket strategy creates separate buckets for different time horizons: short-term (1-2 years in cash/near-cash), medium-term (3-7 years in bonds), and long-term (8+ years in stocks). This allows equities time to recover from downturns while near-term spending is protected from market volatility.'
   },
   {
-    id: 'CFP-RET-B5-019',
+    id: 'cfp-ret-b5-019',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -374,7 +374,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'SPIAs convert a lump sum into guaranteed income payments that begin immediately (or within a year). They provide longevity protection—income that cannot be outlived. Tradeoffs include loss of liquidity and access to principal, and inflation risk unless an inflation rider is purchased.'
   },
   {
-    id: 'CFP-RET-B5-020',
+    id: 'cfp-ret-b5-020',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-1',
@@ -394,7 +394,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
   },
   // RET-2: Additional Plan Topics
   {
-    id: 'CFP-RET-B5-021',
+    id: 'cfp-ret-b5-021',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -413,7 +413,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'After-tax 401(k) contributions (up to the §415 limit including employer match) can be converted to Roth accounts in a "mega backdoor Roth" strategy. The contributions convert tax-free; only earnings are taxed. This allows high earners to add significant Roth savings beyond normal Roth IRA income limits.'
   },
   {
-    id: 'CFP-RET-B5-022',
+    id: 'cfp-ret-b5-022',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -432,7 +432,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'ESOPs are qualified defined contribution plans that invest primarily in employer stock, giving employees ownership interests. They provide tax advantages to selling shareholders and the company. Participants can diversify after age 55 with 10 years of participation. NUA treatment may apply to distributions.'
   },
   {
-    id: 'CFP-RET-B5-023',
+    id: 'cfp-ret-b5-023',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -451,7 +451,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Catch-up contributions are available to participants who turn 50 or older by year-end. For 2026, the catch-up is $7,500 for 401(k), 403(b), and 457 plans ($3,500 for SIMPLE). Under SECURE 2.0, those age 60-63 may have a higher catch-up limit starting in 2025.'
   },
   {
-    id: 'CFP-RET-B5-024',
+    id: 'cfp-ret-b5-024',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',
@@ -470,7 +470,7 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     explanation: 'Safe Harbor 401(k) plans require minimum employer contributions to avoid ADP/ACP testing: either a matching formula (100% on first 3% + 50% on next 2% = 4% effective match) or a 3% nonelective contribution to all eligible employees. These contributions must be immediately 100% vested.'
   },
   {
-    id: 'CFP-RET-B5-025',
+    id: 'cfp-ret-b5-025',
     courseId: 'cfp',
     section: 'CFP-RET',
     blueprintArea: 'RET-2',

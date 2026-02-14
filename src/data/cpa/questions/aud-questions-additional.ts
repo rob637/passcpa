@@ -287,7 +287,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Unmodified Opinion',
     difficulty: 'easy',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Remembering and Understanding',
     question: 'An unmodified audit opinion states that the financial statements are:',
     options: [
@@ -304,7 +304,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     id: 'aud-add-014',
     courseId: 'cpa',
     section: 'AUD',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
     difficulty: 'hard',
@@ -328,7 +328,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Evaluation',
     question: 'When substantial doubt about going concern exists and is adequately disclosed:',
     options: [
@@ -501,7 +501,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Other Reporting',
     subtopic: 'Review Engagements',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'An auditor observes that a client recognizes revenue from a long-term construction contract using the percentage-of-completion method. The project is 60% complete based on costs incurred. Which assertion is the auditor primarily testing when verifying the percentage of completion?',
     options: [
@@ -518,7 +518,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     id: 'aud-add-024',
     courseId: 'cpa',
     section: 'AUD',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     topic: 'Other Reporting',
     subtopic: 'Compilation Engagements',
     difficulty: 'easy',
@@ -542,7 +542,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Other Reporting',
     subtopic: 'Attestation',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'Under the attestation standards (AT-C), which service provides reasonable assurance?',
     options: [
@@ -649,7 +649,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'When comparative financial statements are presented and the prior period was audited by a predecessor:',
     options: [
@@ -714,7 +714,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Communications',
     subtopic: 'Management Letter',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'The auditor is required to communicate in writing to those charged with governance:',
     options: [
@@ -735,7 +735,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Communications',
     subtopic: 'Audit Committee',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'Required communications to those charged with governance include:',
     options: [
@@ -821,7 +821,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
     difficulty: 'hard',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Analysis',
     question: 'Key Audit Matters (KAMs) are:',
     options: [
@@ -863,7 +863,7 @@ export const AUD_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
     difficulty: 'medium',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     skillLevel: 'Application',
     question: 'An auditor issues an unmodified opinion on financial statements. Several months after the report date, a building that was fully insured was destroyed by a flood. Should the auditor modify the previously issued report?',
     options: [

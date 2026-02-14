@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
   // INV-1: Investment Concepts
   {
-    id: 'CFP-INV-B12-001',
+    id: 'cfp-inv-b12-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Tracking error: measures how closely fund follows benchmark. Low tracking error: closely tracks (index funds aim for low). High tracking error: deviates significantly (active managers). Calculated: standard deviation of return difference over time. Sources: sampling, costs, cash drag, timing. For indexers: lower is better. Active: higher indicates manager is taking different positions.'
   },
   {
-    id: 'CFP-INV-B12-002',
+    id: 'cfp-inv-b12-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Sortino ratio: (Return - Target) / Downside Deviation. Unlike Sharpe: only penalizes downside volatility. Upside volatility is good—Sortino doesn\'t penalize it. Better for: asymmetric return distributions, when clients care about downside more than volatility generally. Higher is better. Target often risk-free rate or 0%. More intuitive for many investors—downside is what hurts.'
   },
   {
-    id: 'CFP-INV-B12-003',
+    id: 'cfp-inv-b12-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -67,7 +67,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
   },
   // INV-2: Securities
   {
-    id: 'CFP-INV-B12-004',
+    id: 'cfp-inv-b12-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Prepayment risk: homeowners refinance when rates drop. MBS holder gets principal back early—must reinvest at lower rates. Return of principal, not loss. Affects: duration (contracts when rates fall), yield. CMOs allocate prepayment risk differently across tranches. Extension risk: opposite—rates rise, prepayments slow, duration extends. MBS have negative convexity—worst of both worlds.'
   },
   {
-    id: 'CFP-INV-B12-005',
+    id: 'cfp-inv-b12-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +105,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'ADRs: foreign company shares held by depositary bank, certificates trade on U.S. exchanges. Benefits: U.S. dollar pricing, familiar trading, U.S. settlement. Still subject to: currency risk, foreign withholding taxes (some), country risk. Types: Level I (OTC), Level II/III (exchange listed). GDRs: similar concept for European markets. Convenient international diversification vehicle.'
   },
   {
-    id: 'CFP-INV-B12-006',
+    id: 'cfp-inv-b12-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -125,7 +125,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
   },
   // INV-3: Portfolio Management
   {
-    id: 'CFP-INV-B12-007',
+    id: 'cfp-inv-b12-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -144,7 +144,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Factor investing: target documented premiums—value, size, momentum, quality, low volatility. Based on academic research (Fama-French, others). Premiums: not guaranteed, can underperform for extended periods. Implementation: factor funds, smart beta ETFs, stock selection. Requires: discipline through underperformance, diversification across factors. Different from market-cap indexing or traditional active.'
   },
   {
-    id: 'CFP-INV-B12-008',
+    id: 'cfp-inv-b12-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -163,7 +163,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Threshold rebalancing: rebalance when allocation drifts X% (e.g., 5% absolute or 25% relative). Benefits: responds to actual drift, may trade less in stable markets, captures mean reversion when triggered. Comparison to calendar: potentially fewer trades, more responsive. Considerations: monitoring required, execution logistics. Hybrid approach common: review periodically, rebalance if thresholds exceeded.'
   },
   {
-    id: 'CFP-INV-B12-009',
+    id: 'cfp-inv-b12-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -183,7 +183,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
   },
   // INV-4: Taxation
   {
-    id: 'CFP-INV-B12-010',
+    id: 'cfp-inv-b12-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -202,7 +202,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'NIIT: 3.8% surtax on investment income (interest, dividends, capital gains, rents, royalties, passive income). Applies when: MAGI > $200K (single) or $250K (MFJ). Tax on lesser of: net investment income OR excess MAGI over threshold. Not indexed for inflation. Planning: reduce MAGI, time income recognition, use tax-exempt investments. Adds to regular income tax and capital gains tax.'
   },
   {
-    id: 'CFP-INV-B12-011',
+    id: 'cfp-inv-b12-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -221,7 +221,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Bond premium amortization (taxable bonds): can elect to amortize annually—reduces interest income, reduces basis. Alternative: don\'t amortize, take capital loss at maturity/sale. Tax-exempt bonds: must amortize (no choice), reduces basis. Constant yield method typically used. Election affects: current income, future gain/loss. Decision factors: marginal rates now vs. later, holding period expectations.'
   },
   {
-    id: 'CFP-INV-B12-012',
+    id: 'cfp-inv-b12-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -241,7 +241,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-INV-B12-013',
+    id: 'cfp-inv-b12-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -260,7 +260,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Liquidity risk: can\'t sell quickly without price impact. Examples: real estate, private equity, small-cap stocks in volume, some bonds. Manifests as: wide bid-ask spreads, time to sell, forced selling at discount. Planning: match liquidity to needs, liquidity premium expected in less liquid assets. Matters most when need cash unexpectedly. Core holdings should be liquid.'
   },
   {
-    id: 'CFP-INV-B12-014',
+    id: 'cfp-inv-b12-014',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -279,7 +279,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Index fund selection: expense ratio (lower is better, directly impacts return), tracking difference (actual return vs. index, not just error), index methodology (what\'s included, how weighted), tax efficiency (turnover, qualified dividends). Also: fund size, bid-ask spread (for ETFs), securities lending income. Small differences compound significantly over time. Not all index funds are equal.'
   },
   {
-    id: 'CFP-INV-B12-015',
+    id: 'cfp-inv-b12-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -298,7 +298,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Glide path: planned asset allocation change over time. Target-date funds: reduce equity, increase bonds as retirement approaches. "To" retirement: reaches most conservative at target date. "Through" retirement: continues adjusting past target. Compare glide paths—significant differences between fund families. Consider: risk at target date, post-retirement allocation. Not one-size-fits-all—evaluate if appropriate.'
   },
   {
-    id: 'CFP-INV-B12-016',
+    id: 'cfp-inv-b12-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -317,7 +317,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Charitable gifts of appreciated stock: deduct FMV (up to 30% AGI for public charities), no capital gains tax on appreciation. Better than selling and donating cash—avoids tax on gain. Requirements: held >1 year, donated to qualifying charity. For depreciated stock: sell, take loss, donate cash. Donor-advised funds accept stock. Often most tax-efficient way to give for those with appreciated holdings.'
   },
   {
-    id: 'CFP-INV-B12-017',
+    id: 'cfp-inv-b12-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -336,7 +336,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'VaR: answers "What\'s the most I can lose at X% confidence?" Example: 95% 1-day VaR of $10K means 95% of days, won\'t lose more than $10K. Doesn\'t measure: tail risk (the 5% worst), maximum possible loss. Methods: historical, parametric, Monte Carlo. Limitations: assumes normal conditions, understates tail risk. Useful but not comprehensive risk measure. Often supplemented with stress testing.'
   },
   {
-    id: 'CFP-INV-B12-018',
+    id: 'cfp-inv-b12-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -355,7 +355,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'REIT requirements: 90% distribution of taxable income, 75%+ of assets in real estate, 75%+ gross income from real estate. Tax: no corporate tax if requirements met (pass-through), dividends mostly ordinary income (some may be capital gains or return of capital). QBI deduction may apply post-TCJA. Types: equity (own property), mortgage (own loans), hybrid. Publicly traded or private.'
   },
   {
-    id: 'CFP-INV-B12-019',
+    id: 'cfp-inv-b12-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -374,7 +374,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Concentrated position strategies: staged selling (spread gains over years), hedging (collars—buy puts, sell calls), exchange funds (contribute stock, get diversified exposure), charitable giving (QCDs, CRTs), qualified opportunity zones (reinvest gains, defer/reduce tax), borrowing against (no sale trigger). Each has trade-offs: costs, complexity, tax impact, restrictions. Match to specific situation and goals.'
   },
   {
-    id: 'CFP-INV-B12-020',
+    id: 'cfp-inv-b12-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -393,7 +393,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Constructive sale (Section 1259): if you eliminate substantially all risk while keeping position, treated as sale for tax purposes. Triggers: short against the box (now covered), certain collars (too tight), forward contracts locking in price. Purpose: prevent permanent tax deferral on gains while locking in economics. Planning: ensure hedges don\'t cross line—sufficient risk remains. Consult tax advisor for complex situations.'
   },
   {
-    id: 'CFP-INV-B12-021',
+    id: 'cfp-inv-b12-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -412,7 +412,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Time diversification: idea that longer horizons reduce risk (variance of annualized returns decreases). Debate: true for return rates, but absolute dollar risk may increase (larger portfolio at risk longer). Implications: argument for stocks in long-term portfolios. Critics: dollar amount at risk grows over time. Both perspectives have merit. Practical: longer horizons can tolerate more volatility, but isn\'t riskless.'
   },
   {
-    id: 'CFP-INV-B12-022',
+    id: 'cfp-inv-b12-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -431,7 +431,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'Investment grade: BBB-/Baa3 or higher. High-yield (junk): BB+/Ba1 and below. Rating agencies: S&P, Moody\'s, Fitch. Investment grade: lower default risk, lower yields. High-yield: higher default risk, higher yields. Many institutional investors: restricted to investment grade. Crossover: "fallen angels" (downgraded to HY), "rising stars" (upgraded to IG). Ratings not perfect—do due diligence.'
   },
   {
-    id: 'CFP-INV-B12-023',
+    id: 'cfp-inv-b12-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -450,7 +450,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'LDI: match assets to liabilities—duration, timing, amount. Common for: pensions, annuities, known future obligations. Techniques: immunization (match duration), cash flow matching, dedicated portfolios. Reduces: interest rate mismatch risk, reinvestment risk. Trade-off: may sacrifice return for certainty. Individual application: retirement income, education funding, known future expenses. Security over maximization.'
   },
   {
-    id: 'CFP-INV-B12-024',
+    id: 'cfp-inv-b12-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -469,7 +469,7 @@ export const CFP_INVESTMENTS_BATCH12_QUESTIONS: Question[] = [
     explanation: 'In-kind distribution: receive securities instead of cash from IRA/401(k). Tax: FMV at distribution is ordinary income (same as cash withdrawal). New basis: FMV at distribution date. Future appreciation from new basis. Uses: want to keep specific holding, NUA transaction for employer stock. Not generally advantageous vs. cash unless specific strategy (like NUA). Same tax rules apply.'
   },
   {
-    id: 'CFP-INV-B12-025',
+    id: 'cfp-inv-b12-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',

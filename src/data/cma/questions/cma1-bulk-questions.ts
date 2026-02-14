@@ -18,6 +18,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'The Balance Sheet reports assets, liabilities, and equity at a specific date (point in time), whereas other statements cover a period of time.',
     topic: 'Financial Reporting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     blueprintArea: 'CMA1-A',
   },
   {
@@ -36,6 +37,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'Unless specifically recoverable (like software development after feasibility), R&D costs must be expensed as incurred due to the uncertainty of future benefits.',
     topic: 'Financial Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     blueprintArea: 'CMA1-A',
   },
 
@@ -56,6 +58,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'A rolling or continuous budget is one that is always available for a specified future period by adding a month, quarter, or year to the period as the current one expires.',
     topic: 'Budgeting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     blueprintArea: 'CMA1-B',
   },
   {
@@ -74,6 +77,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'R-squared (coefficient of determination) measures the goodness of fit. A value closer to 1.0 means the independent variable (e.g., machine hours) explains most of the change in the dependent variable (e.g., electricity cost).',
     topic: 'Forecasting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     blueprintArea: 'CMA1-B',
   },
 
@@ -94,6 +98,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'A Profit Center manager is responsible for both inputs (costs) and outputs (revenues), but not the capital investment.',
     topic: 'Performance Management',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     blueprintArea: 'CMA1-C',
   },
 
@@ -114,6 +119,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'A cost driver is an event or activity that causes the cost to be incurred (e.g., number of setups changes the total setup cost).',
     topic: 'Cost Management',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     blueprintArea: 'CMA1-D',
   },
 
@@ -134,6 +140,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'Strategic Planning is not one of the 5 COSO Internal Control components (CRIME). The components are Control environment, Risk assessment, Information/communication, Monitoring, and Existing control activities.',
     topic: 'Internal Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     blueprintArea: 'CMA1-E',
   },
 
@@ -154,6 +161,7 @@ export const CMA1_BULK_QUESTIONS: Question[] = [
     explanation: 'Predictive analytics uses statistical models and forecasting techniques to understand the future. Descriptive looks at past; Diagnostic asks why; Prescriptive suggests actions.',
     topic: 'Technology',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     blueprintArea: 'CMA1-F',
   },
 ];

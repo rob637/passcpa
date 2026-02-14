@@ -92,28 +92,6 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     explanation: 'Data governance establishes policies, standards, roles, and accountability for managing data as an organizational asset. It covers data quality, security, privacy, compliance, and lifecycle management.',
     reference: 'Data Governance Framework',
   },
-  {
-    id: 'isc-add-005',
-    section: 'ISC',
-    courseId: 'cpa',
-    topicId: 'isc-systems',
-    topic: 'Information Systems',
-    subtopic: 'Master Data Management',
-    difficulty: 'hard',
-    blueprintArea: 'ISC-I',
-    skillLevel: 'Analysis',
-    question: 'Master Data Management (MDM) ensures:',
-    options: [
-      'Backups are performed daily',
-      'A single, consistent version of critical business data across the enterprise',
-      'All data is encrypted',
-      'User access is unrestricted',
-    ],
-    correctAnswer: 1,
-    explanation: 'MDM creates and maintains a single, authoritative source (golden record) for master data like customers, vendors, products. This ensures data consistency across all systems and processes.',
-    reference: 'Master Data Management',
-  },
-
   // ==========================================
   // AREA II: Security, Confidentiality, and Privacy
   // ==========================================
@@ -366,7 +344,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'Blockchain',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'A key characteristic of blockchain technology is:',
     options: [
@@ -387,7 +365,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'Smart Contracts',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Smart contracts are:',
     options: [
@@ -408,7 +386,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'Artificial Intelligence',
     difficulty: 'medium',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Application',
     question: 'Machine learning differs from traditional programming in that:',
     options: [
@@ -429,7 +407,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'AI Governance',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Evaluation',
     question: 'AI model governance should address:',
     options: [
@@ -450,7 +428,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'Cloud Computing',
     difficulty: 'medium',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Application',
     question: 'In Infrastructure as a Service (IaaS), the cloud provider manages:',
     options: [
@@ -471,7 +449,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'Cloud Security',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'The shared responsibility model in cloud computing means:',
     options: [
@@ -492,7 +470,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'RPA',
     difficulty: 'medium',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Application',
     question: 'Robotic Process Automation (RPA) is best suited for:',
     options: [
@@ -791,7 +769,7 @@ export const ISC_QUESTIONS_ADDITIONAL: Question[] = [
     topic: 'Emerging Technology',
     subtopic: 'IoT Security',
     difficulty: 'hard',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
     question: 'Internet of Things (IoT) devices present security challenges because:',
     options: [

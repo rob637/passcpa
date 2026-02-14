@@ -10,9 +10,10 @@ import type { Question } from '../../../types';
 export const CFP_CROSS_DOMAIN_QUESTIONS: Question[] = [
   // TAX + RETIREMENT
   {
-    id: 'CFP-CROSS-001',
+    id: 'cfp-cross-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
+    blueprintArea: 'TAX-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -49,9 +50,10 @@ This question integrates tax bracket management with retirement distribution pla
   
   // ESTATE + TAX
   {
-    id: 'CFP-CROSS-002',
+    id: 'cfp-cross-002',
     courseId: 'cfp',
     section: 'CFP-EST',
+    blueprintArea: 'EST-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -95,9 +97,10 @@ This question integrates gift/estate transfer rules with capital gains taxation.
   
   // RETIREMENT + RISK MANAGEMENT
   {
-    id: 'CFP-CROSS-003',
+    id: 'cfp-cross-003',
     courseId: 'cfp',
     section: 'CFP-RET',
+    blueprintArea: 'RET-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -136,9 +139,10 @@ This integrates retirement income planning with insurance concepts.
   
   // INVESTMENT + TAX
   {
-    id: 'CFP-CROSS-004',
+    id: 'cfp-cross-004',
     courseId: 'cfp',
     section: 'CFP-INV',
+    blueprintArea: 'INV-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -181,9 +185,10 @@ This integrates investment vehicle characteristics with tax planning.
   
   // ESTATE + PROFESSIONAL CONDUCT
   {
-    id: 'CFP-CROSS-005',
+    id: 'cfp-cross-005',
     courseId: 'cfp',
     section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -230,9 +235,10 @@ This integrates fiduciary standards with estate planning risks.
   
   // TAX + ESTATE + RETIREMENT
   {
-    id: 'CFP-CROSS-006',
+    id: 'cfp-cross-006',
     courseId: 'cfp',
     section: 'CFP-EST',
+    blueprintArea: 'EST-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -285,9 +291,10 @@ This integrates IRA distribution rules, income tax, and estate planning.
   
   // INVESTMENT + RETIREMENT
   {
-    id: 'CFP-CROSS-007',
+    id: 'cfp-cross-007',
     courseId: 'cfp',
     section: 'CFP-INV',
+    blueprintArea: 'INV-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -336,9 +343,10 @@ This integrates portfolio management with retirement withdrawal strategy.
   
   // RISK + TAX
   {
-    id: 'CFP-CROSS-008',
+    id: 'cfp-cross-008',
     courseId: 'cfp',
     section: 'CFP-RISK',
+    blueprintArea: 'RISK-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -393,9 +401,10 @@ This integrates life insurance mechanics with tax consequences.
   
   // GENERAL + INVESTMENT + TAX
   {
-    id: 'CFP-CROSS-009',
+    id: 'cfp-cross-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -444,9 +453,10 @@ This integrates education planning, investment vehicles, and tax/financial aid i
   
   // RETIREMENT + TAX + PROFESSIONAL
   {
-    id: 'CFP-CROSS-010',
+    id: 'cfp-cross-010',
     courseId: 'cfp',
     section: 'CFP-RET',
+    blueprintArea: 'RET-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -498,9 +508,10 @@ This integrates education planning, investment vehicles, and tax/financial aid i
 
   // ESTATE + INSURANCE + TAX
   {
-    id: 'CFP-CROSS-011',
+    id: 'cfp-cross-011',
     courseId: 'cfp',
     section: 'CFP-EST',
+    blueprintArea: 'EST-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',
@@ -544,9 +555,10 @@ This integrates education planning, investment vehicles, and tax/financial aid i
 
   // INVESTMENT + RISK + RETIREMENT
   {
-    id: 'CFP-CROSS-012',
+    id: 'cfp-cross-012',
     courseId: 'cfp',
     section: 'CFP-INV',
+    blueprintArea: 'INV-1',
     topic: 'Cross-Domain Integration',
     difficulty: 'hard',
     skillLevel: 'Analysis',

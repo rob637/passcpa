@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   // GEN-1: Financial Statements and Analysis
   {
-    id: 'CFP-GEN-B4-001',
+    id: 'cfp-gen-b4-001',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -28,7 +28,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Net worth = Total assets - Total liabilities. This represents what the client owns minus what they owe. It is a snapshot of financial position at a specific point in time, unlike a cash flow statement which shows flows over a period.'
   },
   {
-    id: 'CFP-GEN-B4-002',
+    id: 'cfp-gen-b4-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +47,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Emergency fund ratio = Liquid assets ÷ Monthly expenses = $25,000 ÷ $5,000 = 5 months. Financial planners typically recommend 3-6 months of expenses in liquid reserves, though self-employed individuals or those in volatile industries may need more.'
   },
   {
-    id: 'CFP-GEN-B4-003',
+    id: 'cfp-gen-b4-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -66,7 +66,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Total debt-to-income (back-end) ratio = Total debt payments ÷ Gross monthly income = ($2,000 + $500) ÷ $10,000 = 25%. Lenders typically prefer this ratio below 36%. The housing ratio (front-end) using only housing costs would be 20%.'
   },
   {
-    id: 'CFP-GEN-B4-004',
+    id: 'cfp-gen-b4-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -86,7 +86,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-2: Time Value of Money
   {
-    id: 'CFP-GEN-B4-005',
+    id: 'cfp-gen-b4-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +105,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'PV = FV ÷ (1 + r)^n = $10,000 ÷ (1.08)^5 = $10,000 ÷ 1.4693 = $6,806. Present value discounts future cash flows to today\'s value using the time value of money principle that a dollar today is worth more than a dollar in the future.'
   },
   {
-    id: 'CFP-GEN-B4-006',
+    id: 'cfp-gen-b4-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -124,7 +124,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'FV = PV × (1 + r)^n = $5,000 × (1.06)^10 = $5,000 × 1.7908 = $8,954. Compound interest allows earnings on both principal and accumulated interest, demonstrating the power of time in wealth accumulation.'
   },
   {
-    id: 'CFP-GEN-B4-007',
+    id: 'cfp-gen-b4-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -143,7 +143,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Rule of 72: Years to double = 72 ÷ Interest rate = 72 ÷ 9 = 8 years. This quick formula provides a reasonable approximation for doubling time. It can also be reversed: Required rate = 72 ÷ Years to double.'
   },
   {
-    id: 'CFP-GEN-B4-008',
+    id: 'cfp-gen-b4-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -163,7 +163,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-3: Education Planning
   {
-    id: 'CFP-GEN-B4-009',
+    id: 'cfp-gen-b4-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -182,7 +182,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Section 529 plans offer tax-free growth and tax-free withdrawals for qualified education expenses. Contributions are not federally deductible but may receive state tax deductions. Plans can be used at any accredited institution nationwide, and there is no age limit for beneficiaries.'
   },
   {
-    id: 'CFP-GEN-B4-010',
+    id: 'cfp-gen-b4-010',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -201,7 +201,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Coverdell ESAs can pay for K-12 expenses and qualified equipment like computers, offering more flexibility than 529 plans traditionally did (though 529s now cover K-12 tuition). However, Coverdells are limited to $2,000/year contributions and have income phase-outs for contributors.'
   },
   {
-    id: 'CFP-GEN-B4-011',
+    id: 'cfp-gen-b4-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -220,7 +220,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'UGMA/UTMA custodial accounts are irrevocable gifts. When the child reaches the age of majority (18 or 21 depending on state), they gain full control and can use the funds for any purpose—not just education. This lack of control is a significant planning concern.'
   },
   {
-    id: 'CFP-GEN-B4-012',
+    id: 'cfp-gen-b4-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -240,7 +240,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-4: Planning Process
   {
-    id: 'CFP-GEN-B4-013',
+    id: 'cfp-gen-b4-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -259,7 +259,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Risk tolerance and values are qualitative (subjective) data, not quantitative. Quantitative data includes measurable numerical information: income, expenses, assets, liabilities, insurance amounts, and account balances. Both types are essential for comprehensive financial planning.'
   },
   {
-    id: 'CFP-GEN-B4-014',
+    id: 'cfp-gen-b4-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -278,7 +278,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The 7-step CFP financial planning process starts with establishing and defining the client-planner relationship, including scope of engagement, responsibilities, and compensation. This comes before gathering data, analyzing the situation, or making recommendations.'
   },
   {
-    id: 'CFP-GEN-B4-015',
+    id: 'cfp-gen-b4-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -298,7 +298,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-1: Additional Financial Statement Topics
   {
-    id: 'CFP-GEN-B4-016',
+    id: 'cfp-gen-b4-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -317,7 +317,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Positive cash flow means income exceeds expenses during the period, leaving surplus for saving, investing, or debt reduction. Cash flow is a flow measure (period of time), while net worth is a stock measure (point in time). Positive cash flow does not guarantee high net worth or absence of debt.'
   },
   {
-    id: 'CFP-GEN-B4-017',
+    id: 'cfp-gen-b4-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -337,7 +337,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-2: Additional TVM Topics
   {
-    id: 'CFP-GEN-B4-018',
+    id: 'cfp-gen-b4-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -356,7 +356,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'A positive NPV means the project\'s expected return exceeds the discount rate (required rate of return). The investment adds value beyond the minimum acceptable return. NPV > 0 suggests acceptance; NPV < 0 suggests rejection. This is a key capital budgeting decision rule.'
   },
   {
-    id: 'CFP-GEN-B4-019',
+    id: 'cfp-gen-b4-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -375,7 +375,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Real rate ≈ Nominal rate - Inflation rate = 7% - 3% = 4%. The Fisher equation provides a more precise calculation: (1 + nominal) = (1 + real) × (1 + inflation), but the approximation is commonly used. Real returns reflect actual purchasing power growth.'
   },
   {
-    id: 'CFP-GEN-B4-020',
+    id: 'cfp-gen-b4-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -395,7 +395,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-3: Additional Education Planning
   {
-    id: 'CFP-GEN-B4-021',
+    id: 'cfp-gen-b4-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -414,7 +414,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Superfunding allows contributors to make 5 years of gift exclusion contributions ($19,000 × 5 = $95,000 per donor in 2025) in a single year without using lifetime gift exemption, as long as no additional gifts are made to that beneficiary for 5 years. This accelerates tax-advantaged growth.'
   },
   {
-    id: 'CFP-GEN-B4-022',
+    id: 'cfp-gen-b4-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -434,7 +434,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
   },
   // GEN-4: Additional Process Topics
   {
-    id: 'CFP-GEN-B4-023',
+    id: 'cfp-gen-b4-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -453,7 +453,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'The 7th step is monitoring progress and updating the plan. Financial planning is an ongoing process, not a one-time event. Planners review progress, note life changes, adjust recommendations, and maintain the client relationship over time. This ensures the plan remains relevant.'
   },
   {
-    id: 'CFP-GEN-B4-024',
+    id: 'cfp-gen-b4-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -472,7 +472,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
     explanation: 'Establishing the scope of engagement—including services provided, client and planner responsibilities, how compensation works, and disclosure of conflicts—must occur before any planning work begins. This protects both parties and ensures alignment of expectations.'
   },
   {
-    id: 'CFP-GEN-B4-025',
+    id: 'cfp-gen-b4-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',

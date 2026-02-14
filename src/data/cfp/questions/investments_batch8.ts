@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
   // INV-1: Investment Theory
   {
-    id: 'CFP-INV-B8-001',
+    id: 'cfp-inv-b8-001',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -28,7 +28,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The efficient frontier represents portfolios with optimal risk-return trade-offs. Moving along it requires accepting more risk for more return. Portfolios below the frontier are suboptimal (higher risk for same return). The specific point chosen depends on investor risk tolerance.'
   },
   {
-    id: 'CFP-INV-B8-002',
+    id: 'cfp-inv-b8-002',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -47,7 +47,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'A high information ratio indicates the manager consistently generates meaningful excess returns (alpha) relative to the benchmark while maintaining controlled tracking error (active risk). This demonstrates genuine security selection and/or sector allocation skill rather than simply taking more risk.',
   },
   {
-    id: 'CFP-INV-B8-003',
+    id: 'cfp-inv-b8-003',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -67,7 +67,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
   },
   // INV-2: Asset Classes
   {
-    id: 'CFP-INV-B8-004',
+    id: 'cfp-inv-b8-004',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -86,7 +86,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Taxable Equivalent Yield = Tax-Free Yield ÷ (1 - Tax Rate) = 3.5% ÷ (1 - 0.32) = 3.5% ÷ 0.68 = 5.15%. This helps compare munis to taxable bonds. The higher the tax bracket, the more attractive municipal bonds become.'
   },
   {
-    id: 'CFP-INV-B8-005',
+    id: 'cfp-inv-b8-005',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -105,7 +105,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'FRNs have coupons tied to reference rates (like SOFR) plus a spread. As rates rise, coupons increase, keeping prices stable. This gives them very low duration (interest rate sensitivity). They maintain credit risk based on issuer quality but hedge rate risk.'
   },
   {
-    id: 'CFP-INV-B8-006',
+    id: 'cfp-inv-b8-006',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -125,7 +125,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
   },
   // INV-3: Portfolio Construction
   {
-    id: 'CFP-INV-B8-007',
+    id: 'cfp-inv-b8-007',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -144,7 +144,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The core portion (typically 60-80% of the portfolio) uses low-cost, broadly diversified index funds or ETFs to provide market exposure and stable returns. The satellite portion uses active strategies, alternative investments, or tactical positions seeking alpha.',
   },
   {
-    id: 'CFP-INV-B8-008',
+    id: 'cfp-inv-b8-008',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -163,7 +163,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Rebalancing restores target allocations after market movements change portfolio composition. Without rebalancing, portfolios drift toward riskier assets during bull markets. It enforces buy-low/sell-high discipline. Frequency involves trade-offs between precision and transaction costs/taxes.'
   },
   {
-    id: 'CFP-INV-B8-009',
+    id: 'cfp-inv-b8-009',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -183,7 +183,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
   },
   // INV-4: Analysis
   {
-    id: 'CFP-INV-B8-010',
+    id: 'cfp-inv-b8-010',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -202,7 +202,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'PEG = (P/E Ratio) ÷ (Earnings Growth Rate). A stock with P/E of 20 and 20% growth has PEG of 1.0. PEG below 1 may suggest undervaluation relative to growth; above 1 may indicate overvaluation. It adjusts for the fact that high-growth stocks deserve higher P/E ratios.'
   },
   {
-    id: 'CFP-INV-B8-011',
+    id: 'cfp-inv-b8-011',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -221,7 +221,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Gordon Growth Model: Value = D₁ ÷ (r - g) = D₀(1+g) ÷ (r - g) = $2(1.05) ÷ (0.10 - 0.05) = $2.10 ÷ 0.05 = $42. The model requires growth rate less than required return and assumes constant perpetual growth.'
   },
   {
-    id: 'CFP-INV-B8-012',
+    id: 'cfp-inv-b8-012',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -241,7 +241,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
   },
   // INV-5: Risk Management
   {
-    id: 'CFP-INV-B8-013',
+    id: 'cfp-inv-b8-013',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -260,26 +260,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Downside capture below 100% indicates the fund loses less than the benchmark in down markets (defensive). A 70% downside capture means if the benchmark loses 10%, the fund loses only 7% on average. Combined with upside capture, it shows asymmetric performance characteristics.'
   },
   {
-    id: 'CFP-INV-B8-014',
-    courseId: 'cfp',
-    section: 'CFP-INV',
-    blueprintArea: 'INV-5',
-    topic: 'Risk Management',
-    subtopic: 'Maximum Drawdown',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'Maximum drawdown measures:',
-    options: [
-      'B) The largest peak-to-trough decline in portfolio value over a period',
-      'C) Standard deviation',
-      'D) Beta',
-      'A) Average annual losses',
-    ],
-    correctAnswer: 0,
-    explanation: 'Maximum drawdown is the worst decline from a peak to subsequent trough before a new peak is reached. It captures the worst-case experience an investor would have faced. For example, -50% drawdown means the portfolio lost half its value at the worst point.'
-  },
-  {
-    id: 'CFP-INV-B8-015',
+    id: 'cfp-inv-b8-015',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -299,7 +280,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-INV-B8-016',
+    id: 'cfp-inv-b8-016',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -318,7 +299,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'The disposition effect is the tendency to sell appreciated investments quickly (locking in gains) while holding losing positions (hoping to avoid realizing losses). This is tax-inefficient (realizing gains triggers taxes, losses create deductions) and can hurt returns by cutting winners and riding losers.'
   },
   {
-    id: 'CFP-INV-B8-017',
+    id: 'cfp-inv-b8-017',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -337,7 +318,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Long/short funds buy undervalued stocks and short overvalued ones. This can profit in any market direction from the manager\'s stock-picking skill. Net exposure (longs minus shorts) can vary. The approach aims to generate alpha while reducing market risk compared to long-only strategies.'
   },
   {
-    id: 'CFP-INV-B8-018',
+    id: 'cfp-inv-b8-018',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -356,7 +337,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Target date funds use a "glide path" that starts equity-heavy and gradually shifts toward bonds/cash as retirement approaches. They provide automatic rebalancing and risk adjustment, making them simple "set and forget" options. The allocation at retirement and beyond (the "landing point") varies by provider.'
   },
   {
-    id: 'CFP-INV-B8-019',
+    id: 'cfp-inv-b8-019',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -375,7 +356,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'EBITDA strips out financing decisions (interest), tax situations (which vary), and non-cash charges (depreciation/amortization). This allows comparison of operating profitability across companies regardless of debt levels or accounting choices. However, it ignores real capital needs and shouldn\'t replace cash flow analysis.'
   },
   {
-    id: 'CFP-INV-B8-020',
+    id: 'cfp-inv-b8-020',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',
@@ -394,7 +375,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Currency hedging uses forwards or futures to neutralize exchange rate movements. A U.S. investor owning European stocks would otherwise see returns affected by EUR/USD changes. Hedging focuses returns on the underlying investments. Whether to hedge is a strategic choice—currencies can hurt or help returns.'
   },
   {
-    id: 'CFP-INV-B8-021',
+    id: 'cfp-inv-b8-021',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-1',
@@ -413,7 +394,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'APT uses multiple factors (like inflation, industrial production, interest rates) rather than CAPM\'s single market factor. It doesn\'t specify which factors—they\'re empirically determined. APT is more flexible but less prescriptive than CAPM. Factor models bridge the two approaches.'
   },
   {
-    id: 'CFP-INV-B8-022',
+    id: 'cfp-inv-b8-022',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-2',
@@ -432,7 +413,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'TIPS adjust principal semi-annually based on CPI changes. Interest payments are calculated on the adjusted principal, so both principal and income keep pace with inflation. This provides real return certainty (current yield minus expected inflation). At maturity, you receive the greater of adjusted or original principal.'
   },
   {
-    id: 'CFP-INV-B8-023',
+    id: 'cfp-inv-b8-023',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-3',
@@ -451,7 +432,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'DCA spreads purchases over time with fixed dollar amounts, naturally buying more shares at lower prices. It reduces timing risk and provides psychological comfort. While lump-sum investing historically outperforms (more time in market), DCA suits regular payroll investing and reduces regret risk.'
   },
   {
-    id: 'CFP-INV-B8-024',
+    id: 'cfp-inv-b8-024',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-4',
@@ -470,7 +451,7 @@ export const CFP_INVESTMENTS_BATCH8_QUESTIONS: Question[] = [
     explanation: 'D/E of 1.5 means 60% debt financing, 40% equity (debt is 1.5× equity). Higher D/E increases financial risk—interest must be paid regardless of earnings. Appropriate leverage varies by industry. Utilities often have high D/E (stable cash flows); tech companies often lower D/E.'
   },
   {
-    id: 'CFP-INV-B8-025',
+    id: 'cfp-inv-b8-025',
     courseId: 'cfp',
     section: 'CFP-INV',
     blueprintArea: 'INV-5',

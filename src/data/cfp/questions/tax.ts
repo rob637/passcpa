@@ -13,7 +13,7 @@ export const CFP_TAX_QUESTIONS: Question[] = [
   // TAX-1: Tax Fundamentals
   // ============================================
   {
-    id: 'CFP-TAX-001',
+    id: 'cfp-tax-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -50,7 +50,7 @@ export const CFP_TAX_QUESTIONS: Question[] = [
 - **D)** Only subtracted above-the-line deductions`
   },
   {
-    id: 'CFP-TAX-002',
+    id: 'cfp-tax-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -83,7 +83,7 @@ Lower brackets (10%, 12%, 22%) apply to initial income, reducing average rate.
 - **D)** Neither rate is 32% for this income`
   },
   {
-    id: 'CFP-TAX-003',
+    id: 'cfp-tax-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -122,7 +122,7 @@ Lower brackets (10%, 12%, 22%) apply to initial income, reducing average rate.
 - **D)** Cannot deduct more than passive income available`
   },
   {
-    id: 'CFP-TAX-004',
+    id: 'cfp-tax-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -164,7 +164,7 @@ LTCG rates for 2024:
 **Exam Tip:** Count holding periods carefully - must be MORE than 12 months. March 15, 2023 to March 16, 2024 is exactly 1 year + 1 day, which qualifies for LTCG.`
   },
   {
-    id: 'CFP-TAX-005',
+    id: 'cfp-tax-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -202,7 +202,7 @@ LTCG rates for 2024:
 - **D)** Includes much more than just LTCG`
   },
   {
-    id: 'CFP-TAX-006',
+    id: 'cfp-tax-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -244,7 +244,7 @@ These are added back to regular taxable income to calculate AMTI:
   // TAX-2: Tax Strategies
   // ============================================
   {
-    id: 'CFP-TAX-007',
+    id: 'cfp-tax-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -286,7 +286,7 @@ These are added back to regular taxable income to calculate AMTI:
 - **B-D)** All assume QBI is available without considering SSTB status and/or wage limits`
   },
   {
-    id: 'CFP-TAX-008',
+    id: 'cfp-tax-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -333,7 +333,7 @@ These are added back to regular taxable income to calculate AMTI:
 - **B)** Double taxation burden on high-income professional`
   },
   {
-    id: 'CFP-TAX-009',
+    id: 'cfp-tax-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -378,7 +378,7 @@ These are added back to regular taxable income to calculate AMTI:
 - Below phase-out threshold`
   },
   {
-    id: 'CFP-TAX-010',
+    id: 'cfp-tax-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -416,7 +416,7 @@ These are added back to regular taxable income to calculate AMTI:
 - **D)** Can retain 529 balance while rolling portion to Roth`
   },
   {
-    id: 'CFP-TAX-011',
+    id: 'cfp-tax-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -459,7 +459,7 @@ These are added back to regular taxable income to calculate AMTI:
 - **D)** Incorrect calculation`
   },
   {
-    id: 'CFP-TAX-012',
+    id: 'cfp-tax-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -497,7 +497,7 @@ $5,000 credit = Deduction × 32%
 Deduction would need to be $15,625 to equal the credit`
   },
   {
-    id: 'CFP-TAX-013',
+    id: 'cfp-tax-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -538,7 +538,7 @@ Prevents high-income parents from shifting investment income to children in lowe
 - **D)** First portions receive favorable treatment`
   },
   {
-    id: 'CFP-TAX-014',
+    id: 'cfp-tax-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -581,7 +581,7 @@ Prevents high-income parents from shifting investment income to children in lowe
 - **D)** Doesn't optimize tax situation`
   },
   {
-    id: 'CFP-TAX-015',
+    id: 'cfp-tax-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -624,7 +624,7 @@ Prevents high-income parents from shifting investment income to children in lowe
 - **D)** Overkill for $20,000; complex for this situation`
   },
   {
-    id: 'CFP-TAX-016',
+    id: 'cfp-tax-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -667,7 +667,7 @@ Prevents high-income parents from shifting investment income to children in lowe
 - **D)** Cannot skip RMD - 25% penalty applies`
   },
   {
-    id: 'CFP-TAX-017',
+    id: 'cfp-tax-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -708,7 +708,7 @@ If you sell securities at a loss and buy "substantially identical" securities wi
 - **D)** It's added to basis, not carried forward as a capital loss`
   },
   {
-    id: 'CFP-TAX-018',
+    id: 'cfp-tax-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -747,7 +747,7 @@ If prior year AGI exceeded $150,000:
 - **D)** Safe harbors definitely exist`
   },
   {
-    id: 'CFP-TAX-019',
+    id: 'cfp-tax-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -790,7 +790,7 @@ Total tax owed is the GREATER of regular tax or TMT:
 Note: The total tax owed equals the higher of the two calculations. Answer B ($55,800) may reflect different base assumptions.`
   },
   {
-    id: 'CFP-TAX-020',
+    id: 'cfp-tax-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -837,7 +837,7 @@ Note: The total tax owed equals the higher of the two calculations. Answer B ($5
 
 **Key insight:** Tax-equivalent yield matters when comparing munis to taxable alternatives.`  },
   {
-    id: 'CFP-TAX-021',
+    id: 'cfp-tax-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -873,7 +873,7 @@ When gift FMV is less than donor's basis:
 **This is the "no-man's land" between the two bases.**`
   },
   {
-    id: 'CFP-TAX-022',
+    id: 'cfp-tax-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -911,7 +911,7 @@ When gift FMV is less than donor's basis:
 **Why C/D wrong:** Neither ownership count nor license matters`
   },
   {
-    id: 'CFP-TAX-023',
+    id: 'cfp-tax-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -951,7 +951,7 @@ When gift FMV is less than donor's basis:
 - Consider exercising in low-income years`
   },
   {
-    id: 'CFP-TAX-024',
+    id: 'cfp-tax-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -992,7 +992,7 @@ At $400,000 for SSTB:
 If answer is $0, the question assumes taxable income above the full phase-out threshold. **Key point: SSTBs get no 199A deduction above the upper threshold ($483,900 MFJ).**`
   },
   {
-    id: 'CFP-TAX-025',
+    id: 'cfp-tax-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1036,7 +1036,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
   // Additional TAX Questions (026-045)
   // ============================================
   {
-    id: 'CFP-TAX-026',
+    id: 'cfp-tax-026',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1078,7 +1078,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
 - **D)** No such flat rate exists`
   },
   {
-    id: 'CFP-TAX-027',
+    id: 'cfp-tax-027',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1121,7 +1121,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
 - **D)** Original gain is eventually taxed, not tax-free`
   },
   {
-    id: 'CFP-TAX-028',
+    id: 'cfp-tax-028',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1173,7 +1173,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
 - **D)** Uses wrong tax rate`
   },
   {
-    id: 'CFP-TAX-029',
+    id: 'cfp-tax-029',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1216,7 +1216,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
 - **D)** Uses all $100,000 as taxable`
   },
   {
-    id: 'CFP-TAX-030',
+    id: 'cfp-tax-030',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1261,7 +1261,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
 - **D)** Tax motivation suggests hobby, not business intent`
   },
   {
-    id: 'CFP-TAX-031',
+    id: 'cfp-tax-031',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1305,7 +1305,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
 - **D)** Adds both properties' values incorrectly`
   },
   {
-    id: 'CFP-TAX-032',
+    id: 'cfp-tax-032',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1346,7 +1346,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
 - **D)** Under 17, not 13 (13 is for Child Care Credit)`
   },
   {
-    id: 'CFP-TAX-033',
+    id: 'cfp-tax-033',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1391,7 +1391,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
 - **D)** Doesn't eliminate all estate tax, just on "excess" growth`
   },
   {
-    id: 'CFP-TAX-034',
+    id: 'cfp-tax-034',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1436,7 +1436,7 @@ Karen may recover AMT paid at exercise as AMT credit in future years.
 - **D)** Not a disqualifying disposition (met holding requirements)`
   },
   {
-    id: 'CFP-TAX-035',
+    id: 'cfp-tax-035',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1479,7 +1479,7 @@ Ensures taxpayers always pay some tax even with losses.
 - **D)** No general 5-year carryback exists`
   },
   {
-    id: 'CFP-TAX-036',
+    id: 'cfp-tax-036',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1521,7 +1521,7 @@ If Maria's combined SE + wages exceed $200,000 (single), additional 0.9% Medicar
 - **D)** Only calculates half the SE tax`
   },
   {
-    id: 'CFP-TAX-037',
+    id: 'cfp-tax-037',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1565,7 +1565,7 @@ If Maria's combined SE + wages exceed $200,000 (single), additional 0.9% Medicar
 - **D)** No distribution deadline for DAFs`
   },
   {
-    id: 'CFP-TAX-038',
+    id: 'cfp-tax-038',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1612,7 +1612,7 @@ Pay the lesser of:
 - **D)** Would cause penalty if current year much higher than prior`
   },
   {
-    id: 'CFP-TAX-039',
+    id: 'cfp-tax-039',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1657,7 +1657,7 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
 - **D)** QSBS is very much active and popular`
   },
   {
-    id: 'CFP-TAX-040',
+    id: 'cfp-tax-040',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1700,7 +1700,7 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
 - **D)** No such threshold exists`
   },
   {
-    id: 'CFP-TAX-041',
+    id: 'cfp-tax-041',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1747,7 +1747,7 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
 - **D)** This is a legitimate business, not hobby`
   },
   {
-    id: 'CFP-TAX-042',
+    id: 'cfp-tax-042',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1795,7 +1795,7 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
 - **D)** $3,000 IS deductible each year`
   },
   {
-    id: 'CFP-TAX-043',
+    id: 'cfp-tax-043',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1843,7 +1843,7 @@ Unlike FSAs, no "use it or lose it" rule.
 **All three statements (A, B, C) are correct, so D is the best answer.`
   },
   {
-    id: 'CFP-TAX-044',
+    id: 'cfp-tax-044',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1887,7 +1887,7 @@ Unlike FSAs, no "use it or lose it" rule.
 - **D)** Child Tax Credit phase-out, not education`
   },
   {
-    id: 'CFP-TAX-045',
+    id: 'cfp-tax-045',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -1942,7 +1942,7 @@ Traditional investors can also invest their $1,680 tax savings.
   // ADDITIONAL TAX QUESTIONS (46-75)
   // ============================================
   {
-    id: 'CFP-TAX-046',
+    id: 'cfp-tax-046',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -1977,7 +1977,7 @@ Traditional investors can also invest their $1,680 tax savings.
 - **D)** MFJ applies in year of death, not QSS`
   },
   {
-    id: 'CFP-TAX-047',
+    id: 'cfp-tax-047',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2012,7 +2012,7 @@ Traditional investors can also invest their $1,680 tax savings.
 - **C)** Kiddie tax applies regardless of earned income`
   },
   {
-    id: 'CFP-TAX-048',
+    id: 'cfp-tax-048',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2044,7 +2044,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Installment method doesn't defer all gain`
   },
   {
-    id: 'CFP-TAX-049',
+    id: 'cfp-tax-049',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2078,7 +2078,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Ignores the exclusion entirely`
   },
   {
-    id: 'CFP-TAX-050',
+    id: 'cfp-tax-050',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2113,7 +2113,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **B, C, D)** All assume boot that doesn't exist here`
   },
   {
-    id: 'CFP-TAX-051',
+    id: 'cfp-tax-051',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2149,7 +2149,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Cannot offset portfolio income either`
   },
   {
-    id: 'CFP-TAX-052',
+    id: 'cfp-tax-052',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2180,7 +2180,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** 80% limit applies, not 100%`
   },
   {
-    id: 'CFP-TAX-053',
+    id: 'cfp-tax-053',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2212,7 +2212,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Calendar year change irrelevant; 30-day window controls`
   },
   {
-    id: 'CFP-TAX-054',
+    id: 'cfp-tax-054',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2252,7 +2252,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Losses do pass through, subject to limits`
   },
   {
-    id: 'CFP-TAX-055',
+    id: 'cfp-tax-055',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2283,7 +2283,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** One year not required for dividends`
   },
   {
-    id: 'CFP-TAX-056',
+    id: 'cfp-tax-056',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2321,7 +2321,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Non-cash strategy separate from timing`
   },
   {
-    id: 'CFP-TAX-057',
+    id: 'cfp-tax-057',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2355,7 +2355,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** Must have High Deductible Health Plan (HDHP)`
   },
   {
-    id: 'CFP-TAX-058',
+    id: 'cfp-tax-058',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2389,7 +2389,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **C)** No tax due, just exemption reduction`
   },
   {
-    id: 'CFP-TAX-059',
+    id: 'cfp-tax-059',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2421,7 +2421,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
 - **D)** 90%/110% safe harbors avoid penalty from START`
   },
   {
-    id: 'CFP-TAX-060',
+    id: 'cfp-tax-060',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2454,7 +2454,7 @@ Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE incom
 - Other calculations have various errors in applying caps and percentages`
   },
   {
-    id: 'CFP-TAX-061',
+    id: 'cfp-tax-061',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2489,7 +2489,7 @@ Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE incom
 - **D)** Medical allowed with higher floor`
   },
   {
-    id: 'CFP-TAX-062',
+    id: 'cfp-tax-062',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2523,7 +2523,7 @@ Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE incom
 - **D)** Available to any investor with capital gains`
   },
   {
-    id: 'CFP-TAX-063',
+    id: 'cfp-tax-063',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2556,7 +2556,7 @@ This is the "dual basis" or "split basis" rule.
 - **A, B, D)** All fail to apply dual basis rule correctly`
   },
   {
-    id: 'CFP-TAX-064',
+    id: 'cfp-tax-064',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2591,7 +2591,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** Cannot deduct 100% of personal home expenses`
   },
   {
-    id: 'CFP-TAX-065',
+    id: 'cfp-tax-065',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2622,7 +2622,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** $5,000 is carryforward, not current deduction`
   },
   {
-    id: 'CFP-TAX-066',
+    id: 'cfp-tax-066',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2657,7 +2657,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** SS adds to income, making conversion costlier`
   },
   {
-    id: 'CFP-TAX-067',
+    id: 'cfp-tax-067',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2696,7 +2696,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** AOTC clearly provides more benefit`
   },
   {
-    id: 'CFP-TAX-068',
+    id: 'cfp-tax-068',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2729,7 +2729,7 @@ This is the "dual basis" or "split basis" rule.
 - **A, B, D)** All pass through to 37% bracket; higher immediate tax`
   },
   {
-    id: 'CFP-TAX-069',
+    id: 'cfp-tax-069',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2762,7 +2762,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** Not required, but helpful if audited`
   },
   {
-    id: 'CFP-TAX-070',
+    id: 'cfp-tax-070',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2796,7 +2796,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** $30 AMT was at exercise, sale is $50 LTCG only`
   },
   {
-    id: 'CFP-TAX-071',
+    id: 'cfp-tax-071',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2831,7 +2831,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** Correct fact, but answer C is more precise`
   },
   {
-    id: 'CFP-TAX-072',
+    id: 'cfp-tax-072',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2862,7 +2862,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** Requires knowing recipients now`
   },
   {
-    id: 'CFP-TAX-073',
+    id: 'cfp-tax-073',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -2899,7 +2899,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** Muni interest is tax-exempt`
   },
   {
-    id: 'CFP-TAX-074',
+    id: 'cfp-tax-074',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -2929,7 +2929,7 @@ This is the "dual basis" or "split basis" rule.
 - **D)** LP requires general partner with unlimited liability`
   },
   {
-    id: 'CFP-TAX-075',
+    id: 'cfp-tax-075',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',

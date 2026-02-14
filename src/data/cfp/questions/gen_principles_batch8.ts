@@ -9,26 +9,7 @@ import { Question } from '../../../types';
 export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
   // GEN-1: Financial Planning Process
   {
-    id: 'CFP-GEN-B8-001',
-    courseId: 'cfp',
-    section: 'CFP-GEN',
-    blueprintArea: 'GEN-1',
-    topic: 'Planning Process',
-    subtopic: 'Internal Rate of Return',
-    difficulty: 'hard',
-    skillLevel: 'Application',
-    question: 'The internal rate of return (IRR) represents:',
-    options: [
-      'C) Risk-free rate',
-      'D) Simple interest rate',
-      'A) Average annual return',
-      'B) The discount rate that makes the net present value of all cash flows equal to zero',
-    ],
-    correctAnswer: 3,
-    explanation: 'IRR is the rate that discounts future cash flows to equal the initial investment (NPV = 0). It\'s an inherent yield measure. When comparing investments, higher IRR is better if projects are similar. IRR assumes reinvestment at the IRR rate—modified IRR (MIRR) addresses this potentially unrealistic assumption.'
-  },
-  {
-    id: 'CFP-GEN-B8-002',
+    id: 'cfp-gen-b8-002',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -47,7 +28,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Holistic planning views financial decisions as interconnected. An investment decision affects taxes, estate planning, and retirement projections. Insurance gaps affect financial security. This comprehensive approach avoids siloed advice that might optimize one area while harming another. It\'s the CFP® professional\'s standard approach.'
   },
   {
-    id: 'CFP-GEN-B8-003',
+    id: 'cfp-gen-b8-003',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -67,7 +48,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
   },
   // GEN-2: Time Value of Money
   {
-    id: 'CFP-GEN-B8-004',
+    id: 'cfp-gen-b8-004',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -86,7 +67,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Perpetuity PV = Payment / Rate = $10,000 / 0.05 = $200,000. A perpetuity is an infinite stream of equal payments. Examples: certain endowments, preferred stock dividends (approximately). Growing perpetuity: PV = Payment / (Rate - Growth Rate). Useful for valuing infinite income streams or approximating very long-term cash flows.'
   },
   {
-    id: 'CFP-GEN-B8-005',
+    id: 'cfp-gen-b8-005',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -105,7 +86,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Nominal return: stated dollar return. Real return: inflation-adjusted, measuring purchasing power change. Approximation: Real ≈ Nominal - Inflation. Precise: (1 + Nominal)/(1 + Inflation) - 1. For retirement planning, real returns are more meaningful—a 7% nominal return with 3% inflation is only 4% real wealth gain.'
   },
   {
-    id: 'CFP-GEN-B8-006',
+    id: 'cfp-gen-b8-006',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -125,7 +106,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
   },
   // GEN-3: Economic Concepts
   {
-    id: 'CFP-GEN-B8-007',
+    id: 'cfp-gen-b8-007',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -144,7 +125,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Normal yield curve: upward sloping (longer terms = higher rates for time/uncertainty premium). Inverted: short-term rates exceed long-term—often precedes recessions. The market expects rates to fall (Fed easing due to economic weakness). Flat curves indicate transition. The 2-year/10-year spread is closely watched as a recession indicator.'
   },
   {
-    id: 'CFP-GEN-B8-008',
+    id: 'cfp-gen-b8-008',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -163,7 +144,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Consumer confidence (Conference Board, Michigan) surveys attitudes about current conditions and expectations. High confidence = more spending, less saving, economic expansion. Low confidence = reduced spending, potential contraction. It\'s a leading indicator—sentiment changes precede actual spending changes. Planners monitor for economic forecasting.'
   },
   {
-    id: 'CFP-GEN-B8-009',
+    id: 'cfp-gen-b8-009',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -183,26 +164,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
   },
   // GEN-4: Financial Statements
   {
-    id: 'CFP-GEN-B8-010',
-    courseId: 'cfp',
-    section: 'CFP-GEN',
-    blueprintArea: 'GEN-4',
-    topic: 'Financial Statements',
-    subtopic: 'Savings Rate',
-    difficulty: 'easy',
-    skillLevel: 'Application',
-    question: 'The savings rate is calculated as:',
-    options: [
-      'D) Debt divided by income',
-      'A) Net worth divided by income',
-      'C) Income minus assets',
-      'B) Amount saved divided by gross or net income, expressed as a percentage',
-    ],
-    correctAnswer: 3,
-    explanation: 'Savings rate = Savings / Income × 100. Can use gross or net income (be consistent). Common benchmarks: 10-15% minimum, 20%+ for aggressive goals. Includes retirement contributions, taxable savings, debt principal payments (building equity). Higher rates accelerate wealth building and provide flexibility.'
-  },
-  {
-    id: 'CFP-GEN-B8-011',
+    id: 'cfp-gen-b8-011',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -221,7 +183,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Financial independence ratio = Investment Income / Expenses. At 100%, passive income covers all expenses—work becomes optional. At 50%, half of expenses are covered by investments. This ratio tracks progress toward financial independence/early retirement. It focuses on income-generating assets and sustainable withdrawal rates.'
   },
   {
-    id: 'CFP-GEN-B8-012',
+    id: 'cfp-gen-b8-012',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -241,7 +203,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
   },
   // GEN-5: Ethics and Regulation
   {
-    id: 'CFP-GEN-B8-013',
+    id: 'cfp-gen-b8-013',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -260,7 +222,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'CFP® fiduciary duty means acting in the client\'s best interest when providing financial advice. This differs from suitability (which only requires recommendations be appropriate, not necessarily best). Fiduciary duty includes: duty of loyalty (client\'s interests first), duty of care (competent advice), and duty to follow client instructions.'
   },
   {
-    id: 'CFP-GEN-B8-014',
+    id: 'cfp-gen-b8-014',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -279,7 +241,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Series 65 (Uniform Investment Adviser Law Exam) qualifies individuals as investment adviser representatives (IARs). Required for providing investment advice for compensation. Differs from Series 7 (selling securities) and Series 66 (combines 63 + 65 for those with Series 7). CFP® certification can substitute for Series 65 in some states.'
   },
   {
-    id: 'CFP-GEN-B8-015',
+    id: 'cfp-gen-b8-015',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -299,7 +261,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-GEN-B8-016',
+    id: 'cfp-gen-b8-016',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -318,7 +280,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Goals-based planning prioritizes client objectives over abstract metrics. Each goal (retirement, education, travel) has its own time horizon, priority, and funding strategy. This approach is more intuitive for clients than traditional portfolio focus. Mental accounting, while technically "irrational," can help clients stay committed to plans.'
   },
   {
-    id: 'CFP-GEN-B8-017',
+    id: 'cfp-gen-b8-017',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -337,7 +299,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Deferred annuity: payments begin in the future. Step 1: Calculate PV of annuity at start of payments. Step 2: Discount that value back to today. Example: annuity starting in 5 years—find PV as of year 5, then discount 5 more years. Time diagram helps visualize the two-step process.'
   },
   {
-    id: 'CFP-GEN-B8-018',
+    id: 'cfp-gen-b8-018',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -356,7 +318,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Purchasing power: what money can actually buy. With 3% inflation, $100 buys 3% less next year. Over 24 years at 3% inflation, purchasing power roughly halves. Protecting purchasing power is a key planning goal—investments must outpace inflation for real wealth growth. TIPS, I-Bonds, and equities provide inflation protection.'
   },
   {
-    id: 'CFP-GEN-B8-019',
+    id: 'cfp-gen-b8-019',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -375,7 +337,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Balance sheet analysis: asset allocation (stocks, bonds, cash, real estate across all accounts), concentration risks (single stock, employer exposure), liquidity (emergency access), liability structure (rates, terms, secured/unsecured), and how assets relate to goals and liabilities. Holistic view prevents siloed thinking about individual accounts.'
   },
   {
-    id: 'CFP-GEN-B8-020',
+    id: 'cfp-gen-b8-020',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',
@@ -394,7 +356,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Competence requires knowing your limits. If a situation exceeds your expertise, you must: obtain necessary knowledge, bring in qualified experts, or decline the engagement. Continuing education maintains competence over time. Referral to specialists (attorneys, CPAs, insurance experts) is often appropriate and expected.'
   },
   {
-    id: 'CFP-GEN-B8-021',
+    id: 'cfp-gen-b8-021',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-1',
@@ -413,7 +375,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Comprehensive data gathering uses multiple methods: questionnaires (structured, can complete in advance), document collection (statements, returns, policies), interviews (open-ended exploration, understanding goals/concerns), and observation (family dynamics, communication styles). Quantitative data needs qualitative context for meaningful planning.'
   },
   {
-    id: 'CFP-GEN-B8-022',
+    id: 'cfp-gen-b8-022',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-2',
@@ -432,7 +394,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Bond price = PV of coupon annuity + PV of face value. If market rates exceed coupon rate, the bond trades at a discount (price < face). If market rates are below coupon rate, it trades at a premium. At maturity, price converges to face value. Duration measures price sensitivity to rate changes.'
   },
   {
-    id: 'CFP-GEN-B8-023',
+    id: 'cfp-gen-b8-023',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-3',
@@ -451,7 +413,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'QE: Fed buys bonds (Treasuries, MBS) to inject money into the economy when rates are already near zero. Goals: lower long-term rates, increase liquidity, stimulate lending and spending. Used extensively in 2008-2014 and 2020-2022. Quantitative tightening (QT) reverses this by reducing Fed holdings.'
   },
   {
-    id: 'CFP-GEN-B8-024',
+    id: 'cfp-gen-b8-024',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-4',
@@ -470,7 +432,7 @@ export const CFP_GEN_BATCH8_QUESTIONS: Question[] = [
     explanation: 'Insolvency: liabilities > assets (negative net worth). This differs from illiquidity (having assets but not cash to meet obligations). Insolvency matters for: debt cancellation income exclusion, bankruptcy considerations, and overall financial health assessment. Many young professionals with student loans are technically insolvent early in careers.'
   },
   {
-    id: 'CFP-GEN-B8-025',
+    id: 'cfp-gen-b8-025',
     courseId: 'cfp',
     section: 'CFP-GEN',
     blueprintArea: 'GEN-5',

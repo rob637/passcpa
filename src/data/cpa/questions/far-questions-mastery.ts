@@ -222,7 +222,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'Under modified accrual basis, revenues are recognized when:',
     options: [
@@ -243,7 +243,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Government Accounting',
     subtopic: 'Derived Tax Revenue',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VI',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'Derived tax revenue (sales tax, income tax) is recognized:',
     options: [
@@ -264,7 +264,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Application',
     question: 'Not-for-profit functional expense presentation requires:',
     options: [
@@ -285,7 +285,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
     topic: 'Not-for-Profit',
     subtopic: 'Contributed Services',
     difficulty: 'hard',
-    blueprintArea: 'FAR-VII',
+    blueprintArea: 'FAR-V',
     skillLevel: 'Analysis',
     question: 'Contributed services are recognized as revenue and expense when:',
     options: [

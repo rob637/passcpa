@@ -963,7 +963,7 @@ TESTING RESULTS:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Artificial Intelligence and Machine Learning',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-A-1',
     scenario: `
 You are assessing the AI/ML governance framework for FinServ Bank, which uses machine learning models for credit decisioning. Review the following documentation:
@@ -1093,7 +1093,7 @@ COMPLIANCE:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Blockchain and Distributed Ledger Technology',
-    blueprintArea: 'ISC-IV',
+    blueprintArea: 'ISC-III',
     blueprintTopic: 'ISC-IV-B-1',
     scenario: `
 You are assessing controls over a blockchain-based payment system implemented by SupplyChain Corp. The system uses smart contracts for automated vendor payments upon delivery confirmation.

@@ -9,7 +9,7 @@ import { Question } from '../../../types';
 export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
   // TAX-1: Tax Fundamentals
   {
-    id: 'CFP-TAX-B11-001',
+    id: 'cfp-tax-b11-001',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -28,7 +28,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Treasury Regulations: IRS interpretation of tax code. Types: legislative (given statutory authority, carry weight of law), interpretive (IRS interpretation), temporary/proposed. Published in Code of Federal Regulations (CFR). Courts generally defer to regulations. Understanding hierarchy: Code > Regulations > Revenue Rulings > Private Letter Rulings.'
   },
   {
-    id: 'CFP-TAX-B11-002',
+    id: 'cfp-tax-b11-002',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -47,7 +47,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Constructive receipt: income taxable when available to taxpayer without substantial restrictions, even if not actually received. Can\'t delay tax by refusing to pick up check. Doesn\'t apply if: genuine restriction, not yet earned, contingencies. Deferred compensation plans use restrictions to avoid constructive receipt. Important for year-end planning with bonuses, sales proceeds.'
   },
   {
-    id: 'CFP-TAX-B11-003',
+    id: 'cfp-tax-b11-003',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -67,7 +67,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
   },
   // TAX-2: Income
   {
-    id: 'CFP-TAX-B11-004',
+    id: 'cfp-tax-b11-004',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -86,7 +86,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Phantom income: taxable income without cash received. Examples: original issue discount accrual, partnership K-1 income exceeding distributions, cancellation of debt income, imputed interest, installment sale recognition. Creates cash flow mismatch—owe tax but no cash to pay. Planning needed for investments generating phantom income.'
   },
   {
-    id: 'CFP-TAX-B11-005',
+    id: 'cfp-tax-b11-005',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -105,7 +105,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Installment sale: recognize gain proportionally as payments received. Gross profit ratio = Gain / Selling price. Each payment: taxable gain × gross profit ratio. Benefits: spread income over lower brackets, defer tax. Depreciation recapture recognized in year of sale (not deferred). Not available for: inventory, securities (generally), dealer property. IRC Section 453.'
   },
   {
-    id: 'CFP-TAX-B11-006',
+    id: 'cfp-tax-b11-006',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -125,7 +125,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
   },
   // TAX-3: Deductions
   {
-    id: 'CFP-TAX-B11-007',
+    id: 'cfp-tax-b11-007',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -144,7 +144,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'QBI deduction limits: above threshold income, SSTB (law, health, consulting, etc.) phase out entirely. Non-SSTB: limited to greater of 50% of W-2 wages OR 25% of wages + 2.5% of UBIA (property). Below threshold: full 20% deduction. Thresholds: MFJ ~$340K (2024). Complex calculations—planning around thresholds, W-2 vs contractor decisions.'
   },
   {
-    id: 'CFP-TAX-B11-008',
+    id: 'cfp-tax-b11-008',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -163,7 +163,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Hobby vs. business: IRC §183. If no profit motive, expenses limited to income (no excess loss). 9 factors considered: profit intent, expertise, time/effort, asset appreciation potential, prior success, history of income/losses, occasional profits, financial status, personal pleasure. Presumption of profit motive if 3 of 5 years profitable (2 of 7 for horses).'
   },
   {
-    id: 'CFP-TAX-B11-009',
+    id: 'cfp-tax-b11-009',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -183,7 +183,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
   },
   // TAX-4: Credits
   {
-    id: 'CFP-TAX-B11-010',
+    id: 'cfp-tax-b11-010',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -202,7 +202,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Clean vehicle credit (IRC §30D): up to $7,500 for new EVs. Requirements: final assembly in North America, battery mineral/component sourcing requirements, income limits (MFJ: $300K MAGI), price caps ($55K cars, $80K trucks/SUVs). Can transfer to dealer at sale. Used EV credit also available (up to $4,000). Credits change frequently—verify current rules.'
   },
   {
-    id: 'CFP-TAX-B11-011',
+    id: 'cfp-tax-b11-011',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -221,7 +221,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Premium Tax Credit: subsidizes ACA marketplace insurance. Advance payments go directly to insurer. Income-based: historically 100-400% FPL (expanded under recent legislation). Reconciled on tax return—if income higher, repay excess; lower, get additional credit. Must use marketplace, can\'t have affordable employer coverage. Cliff effects at income thresholds—planning important.'
   },
   {
-    id: 'CFP-TAX-B11-012',
+    id: 'cfp-tax-b11-012',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -241,7 +241,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
   },
   // TAX-5: Planning Strategies
   {
-    id: 'CFP-TAX-B11-013',
+    id: 'cfp-tax-b11-013',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -260,7 +260,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Appreciated securities to charity: deduct FMV (if held >1 year), avoid recognizing capital gain. Double benefit: deduction + no tax on gain. More tax-efficient than selling, paying tax, donating cash. Must be long-term holding (>1 year). Charity must be qualified public charity (not private foundation for full FMV). One of the best charitable giving strategies.'
   },
   {
-    id: 'CFP-TAX-B11-014',
+    id: 'cfp-tax-b11-014',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -279,7 +279,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Bracket filling: intentionally recognize income to fill lower brackets. Strategies: Roth conversions (convert enough to top of current bracket), harvest capital gains at 0% rate, accelerate income in low years. Especially valuable: retirement transition years, sabbaticals, early retirement, business down years. Balance: current tax vs. future tax rate expectations.'
   },
   {
-    id: 'CFP-TAX-B11-015',
+    id: 'cfp-tax-b11-015',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -299,7 +299,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
   },
   // Additional Topics
   {
-    id: 'CFP-TAX-B11-016',
+    id: 'cfp-tax-b11-016',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -318,7 +318,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Statute of limitations: general = 3 years from later of filing or due date. Extended: 6 years if >25% gross income omitted. No limit: fraud, failure to file. Collection: 10 years from assessment. Keep records at least 3-6 years. Fraud starts the clock over. Amended returns don\'t typically extend. Understanding statute affects record retention planning.'
   },
   {
-    id: 'CFP-TAX-B11-017',
+    id: 'cfp-tax-b11-017',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -337,7 +337,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Crypto = property per IRS Notice 2014-21. Each sale/exchange is disposition—gain/loss calculated. Mining/staking rewards: ordinary income when received. Like-kind exchange doesn\'t apply. Cost basis tracking important. Information reporting expanding—brokers issuing 1099s. Airdrops, hard forks: taxable events. Complex rules—many taxpayers underreport.'
   },
   {
-    id: 'CFP-TAX-B11-018',
+    id: 'cfp-tax-b11-018',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -356,7 +356,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Medical expense deduction: amounts exceeding 7.5% of AGI. Only if itemizing (total deductions > standard deduction). Qualified expenses: medical/dental care, insurance premiums, transportation for care, certain long-term care. Planning: bunch expenses in high-expense year, accelerate elective procedures if near threshold. Often only useful in major expense years.'
   },
   {
-    id: 'CFP-TAX-B11-019',
+    id: 'cfp-tax-b11-019',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -375,7 +375,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Residential Clean Energy Credit (IRA enhanced): 30% of costs through 2032, then phasing down. Covers: solar electric, solar water heating, fuel cells, small wind, geothermal, battery storage (3+ kWh). No dollar cap. Primary and second homes. Carry forward if exceeds liability. Separate ENERGY STAR credit for efficiency improvements (insulation, windows).'
   },
   {
-    id: 'CFP-TAX-B11-020',
+    id: 'cfp-tax-b11-020',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',
@@ -394,7 +394,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Reasonable compensation: S corp shareholder-employees can\'t minimize salary to avoid FICA. IRS watches for this. Salary: subject to FICA/Medicare. Distributions: no employment tax (but still income tax). Balance: enough salary to be reasonable for services performed. Factors: duties, comparable compensation, time spent. Case law provides guidance. Common audit issue.'
   },
   {
-    id: 'CFP-TAX-B11-021',
+    id: 'cfp-tax-b11-021',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-1',
@@ -413,7 +413,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Tax home: regular place of business (primary), not personal residence. Determines if travel is "away from home" for deduction purposes. Travel expenses deductible when away from tax home overnight. If multiple regular places: where most work. If no regular place: residence. Matters for: travel deductions, per diem, employee benefits. Common misconception it\'s home address.'
   },
   {
-    id: 'CFP-TAX-B11-022',
+    id: 'cfp-tax-b11-022',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-2',
@@ -432,7 +432,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Kiddie tax (IRC §1(g)): unearned (investment) income of children taxed at parents\' marginal rate if exceeds threshold (~$2,500 for 2024). Applies: under 19, or under 24 if full-time student (with earned income < half of support). Prevents: shifting investment income to children\'s lower brackets. Earned income taxed at child\'s rate. Plan around: Roth for kids, 529s.'
   },
   {
-    id: 'CFP-TAX-B11-023',
+    id: 'cfp-tax-b11-023',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-3',
@@ -451,7 +451,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Section 163(j): limits business interest deduction to 30% of adjusted taxable income (ATI). Small business exception: average gross receipts ≤$25M. Real estate can elect out (but must use ADS depreciation). Disallowed interest carries forward indefinitely. Significant for highly leveraged businesses. Complex interaction with other provisions.'
   },
   {
-    id: 'CFP-TAX-B11-024',
+    id: 'cfp-tax-b11-024',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-4',
@@ -470,7 +470,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
     explanation: 'Adoption credit: up to ~$16,000+ (indexed) of qualified expenses per child. Expenses: legal, court costs, travel, agency fees. Special needs: get full credit regardless of actual expenses. Income phase-out for higher earners. Domestic: credit in year finalized or paid. Foreign: credit when finalized. Employer exclusion also available for employer-paid adoption assistance.'
   },
   {
-    id: 'CFP-TAX-B11-025',
+    id: 'cfp-tax-b11-025',
     courseId: 'cfp',
     section: 'CFP-TAX',
     blueprintArea: 'TAX-5',

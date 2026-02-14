@@ -325,7 +325,7 @@ Compare recorded amounts to auditor expectations
     section: 'AUD',
     type: 'rule',
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     front: 'What are the KEY ELEMENTS of the standard unmodified audit report?',
     back: `**Required Elements:**
 1. Title (including "Independent")
@@ -346,7 +346,7 @@ Compare recorded amounts to auditor expectations
     section: 'AUD',
     type: 'comparison',
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     front: 'MODIFIED opinions: Qualified, Adverse, Disclaimer?',
     back: `**Qualified ("Except for"):**
 - Material but NOT pervasive misstatement OR
@@ -369,7 +369,7 @@ Compare recorded amounts to auditor expectations
     section: 'AUD',
     type: 'definition',
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     front: 'What is an EMPHASIS-OF-MATTER paragraph?',
     back: `Paragraph referring to matter appropriately presented in F/S that is fundamental to users' understanding:
 
@@ -390,7 +390,7 @@ Compare recorded amounts to auditor expectations
     section: 'AUD',
     type: 'rule',
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     front: 'When is GOING CONCERN language required in the audit report?',
     back: `**Auditor's Responsibility:**
 - Evaluate whether substantial doubt exists about entity's ability to continue as going concern for 1 year from F/S date
@@ -412,7 +412,7 @@ Compare recorded amounts to auditor expectations
     section: 'AUD',
     type: 'rule',
     topic: 'Audit Reports',
-    blueprintArea: 'AUD-V',
+    blueprintArea: 'AUD-IV',
     front: 'What are CRITICAL AUDIT MATTERS (CAMs)?',
     back: `**PCAOB requirement for public companies:**
 

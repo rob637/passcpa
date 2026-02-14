@@ -194,8 +194,8 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
       '$2,660',
       '$0',
     ],
-    correctAnswer: 2,
-    explanation: 'NIIT = 3.8% × lesser of: (1) Net investment income ($50,000), or (2) MAGI over threshold ($280,000 - $200,000 single threshold = $80,000). Lesser amount = $50,000. NIIT = $50,000 × 3.8% = $1,900. However, checking the calculation: The $80,000 excess is greater than $50,000 NII, so tax = $50,000 × 3.8% = $1,900. Let me verify option C ($2,660 ÷ 3.8% = $70,000), which would need different facts. Answer B appears correct.',
+    correctAnswer: 1,
+    explanation: 'NIIT = 3.8% × lesser of: (1) Net investment income ($50,000), or (2) MAGI over threshold ($280,000 − $200,000 single threshold = $80,000). The lesser amount is $50,000. NIIT = $50,000 × 3.8% = $1,900.',
     reference: 'IRC Section 1411',
   },
   {

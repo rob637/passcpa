@@ -152,6 +152,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
             <select
               value={config.section}
               onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection, blueprintArea: 'all' }))}
+              data-testid="section-select"
               className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               {course?.sections
@@ -174,6 +175,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
                 <button
                   key={count}
                   onClick={() => setConfig((prev) => ({ ...prev, count }))}
+                  data-testid={`question-count-${count}`}
                   className={clsx(
                     'flex-1 py-3 rounded-xl border-2 font-semibold text-lg transition-all focus:ring-2 focus:ring-primary-500/50',
                     config.count === count
@@ -324,6 +326,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
             size="lg"
             fullWidth
             className="py-4 text-lg"
+            data-testid="start-practice"
           >
             {loading ? 'Loading...' : 'Start Practice'}
           </Button>
@@ -813,6 +816,26 @@ const Practice: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile, location.key]);
 
+  // Auto-save session on navigation away (beforeunload + component unmount)
+  useEffect(() => {
+    if (!inSession || questions.length === 0) return;
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      // Save session state before tab/window close
+      saveSessionState();
+      // Show browser confirmation dialog
+      e.preventDefault();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      // Save session state when component unmounts (user navigates away via React Router)
+      saveSessionState();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inSession, questions.length, saveSessionState]);
+
   // Keyboard shortcuts
   useEffect(() => {
     if (!inSession) return;
@@ -1175,8 +1198,8 @@ const Practice: React.FC = () => {
         correctCount,
         accuracy,
         timeSpentSeconds: elapsed,
-        blueprintArea: sessionConfig.blueprintArea !== 'all' ? sessionConfig.blueprintArea : undefined,
-        difficulty: sessionConfig.difficulty !== 'all' ? sessionConfig.difficulty : undefined,
+        ...(sessionConfig.blueprintArea !== 'all' && { blueprintArea: sessionConfig.blueprintArea }),
+        ...(sessionConfig.difficulty !== 'all' && { difficulty: sessionConfig.difficulty }),
       }).catch(err => logger.error('Failed to save practice session:', err));
     }
 
@@ -1188,6 +1211,9 @@ const Practice: React.FC = () => {
     // Show results screen
     setInSession(false);
     setShowResults(true);
+    
+    // Clear any saved session — this one is complete
+    try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
   };
   
   // Reset and start new session
@@ -1199,6 +1225,7 @@ const Practice: React.FC = () => {
     setCurrentIndex(0);
     setElapsed(0);
     setWeakTopicsFromSession([]);
+    try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
   };
   
   // Back to daily plan (marks activity complete)
@@ -1284,7 +1311,7 @@ const Practice: React.FC = () => {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" data-testid="practice-loading">
         <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
       </div>
     );
@@ -1293,7 +1320,7 @@ const Practice: React.FC = () => {
   // No questions available for selected criteria
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" data-testid="practice-empty-state">
         <div className="text-center max-w-md mx-auto p-6">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
             <AlertCircle className="w-8 h-8 text-slate-600 dark:text-slate-400" />
@@ -1447,7 +1474,7 @@ const Practice: React.FC = () => {
 
           {/* Question Text */}
           <div className="card-body">
-            <p className="text-slate-900 dark:text-slate-100 text-lg leading-relaxed mb-6">
+            <p className="text-slate-900 dark:text-slate-100 text-lg leading-relaxed mb-6" data-testid="question-text">
               {currentQuestion.question}
             </p>
 
@@ -1466,6 +1493,7 @@ const Practice: React.FC = () => {
                     key={index}
                     onClick={() => handleSelectAnswer(index)}
                     disabled={isAnswered}
+                    data-testid={`answer-option-${index}`}
                     className={clsx(
                       'mcq-option w-full text-left',
                       !showResult && isSelected && 'mcq-option-selected',
@@ -1499,6 +1527,7 @@ const Practice: React.FC = () => {
                 variant="primary"
                 fullWidth
                 className="mt-6 py-3"
+                data-testid="submit-answer"
               >
                 Submit Answer
               </Button>

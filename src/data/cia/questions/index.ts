@@ -22,6 +22,7 @@ export * from './cia-questions-batch6';
 export * from './cia-questions-batch7';
 export * from './cia-questions-batch8';
 export * from './cia-questions-batch9';
+export * from './cia-qaip-three-lines-batch10';
 
 // Combined CIA1 questions for convenience
 import { CIA1_QUESTIONS } from './cia1-questions';
@@ -35,6 +36,7 @@ import { CIA_QUESTIONS_BATCH6 } from './cia-questions-batch6';
 import { CIA_QUESTIONS_BATCH7 } from './cia-questions-batch7';
 import { CIA_QUESTIONS_BATCH8 } from './cia-questions-batch8';
 import { CIA_QUESTIONS_BATCH9 } from './cia-questions-batch9';
+import { CIA_QAIP_THREE_LINES_BATCH10 } from './cia-qaip-three-lines-batch10';
 
 // Filter batch 6 by section
 const CIA1_BATCH6 = CIA_QUESTIONS_BATCH6.filter(q => q.section === 'CIA1');
@@ -62,6 +64,7 @@ export const ALL_CIA1_QUESTIONS = [
   ...CIA1_BATCH7,                   // Cross-part batch 7 - CIA1 questions
   ...CIA1_BATCH8,                   // Cross-part batch 8 - CIA1 questions
   ...CIA1_BATCH9,                   // Cross-part batch 9 - CIA1 questions
+  ...CIA_QAIP_THREE_LINES_BATCH10,   // QAIP and Three Lines Model deep dive
 ];
 
 // Combined CIA2 questions for convenience

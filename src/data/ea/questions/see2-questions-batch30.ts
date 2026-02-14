@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'For purposes of determining partner basis, nonrecourse liabilities are allocated based on:',
     options: [
-      'Profit sharing ratio only',
       'A three-tier allocation: minimum gain, §704(c) percentage, then profit share',
+      'Profit sharing ratio only',
+      'Capital contribution percentage',
       'Equally among all partners',
-      'Capital contribution percentage'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under Treas. Reg. §1.752-3, nonrecourse liabilities are allocated: (1) first to partners with minimum gain, (2) then based on §704(c) allocations for built-in gain, (3) remaining based on profit share or other reasonable method.',
     reference: 'Treas. Reg. §1.752-3',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Application',
     question: 'A partnership owns property with a basis of $100,000 and $300,000 nonrecourse debt. The property\'s FMV is $250,000. The partnership minimum gain is:',
     options: [
-      '$0',
       '$150,000',
+      '$50,000',
+      '$0',
       '$200,000',
-      '$50,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Partnership minimum gain is the amount by which nonrecourse debt exceeds the adjusted basis of the property securing it. Here: $300,000 debt - $100,000 basis = $200,000 minimum gain.',
     reference: 'Treas. Reg. §1.704-2',
   },
@@ -60,10 +60,10 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Application',
     question: 'When a Section 754 election is in effect and a partner receives a distribution, Section 734 adjustments affect:',
     options: [
-      'The partner\'s outside basis',
+      'The fair market value of distributed property',
       'The partnership\'s basis in remaining assets',
+      'The partner\'s outside basis',
       'The partner\'s capital account',
-      'The fair market value of distributed property'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §734(b), when a 754 election is in effect, the partnership adjusts the basis of remaining partnership property for gain/loss recognized or basis shifts from distributions.',
@@ -81,11 +81,11 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     question: 'The "mixing bowl" rules under §§704(c)(1)(B) and 737 prevent:',
     options: [
       'Partners from contributing depreciated property',
+      'Use of the cash method by partnerships',
       'Tax-free shifting of built-in gain through contributions and distributions within 7 years',
       'Partnership losses exceeding partner basis',
-      'Use of the cash method by partnerships'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The mixing bowl provisions prevent tax-free shifting of gain: §704(c)(1)(B) triggers gain if contributed property is distributed to another partner within 7 years; §737 triggers gain if contributor receives different appreciated property within 7 years.',
     reference: 'IRC §704(c)(1)(B); IRC §737',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Qualified nonrecourse financing allows a partner to include debt in their at-risk amount for:',
     options: [
+      'Partnership debts guaranteed by partners',
       'Any business activity',
       'Real estate activities, if the debt is from a qualified lender',
       'Only oil and gas activities',
-      'Partnership debts guaranteed by partners'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §465(b)(6), qualified nonrecourse financing from qualified lenders (banks, government) secured by real property used in the activity is included in at-risk amount for real estate activities.',
     reference: 'IRC §465(b)(6)',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Application',
     question: 'Recourse liabilities of a partnership are allocated to partners based on:',
     options: [
+      'Equally among all partners',
       'Their profit-sharing ratio',
       'Who bears the economic risk of loss',
       'Their capital contribution ratio',
-      'Equally among all partners'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under Treas. Reg. §1.752-2, recourse liabilities are allocated to the partner who bears the economic risk of loss - generally the partner who would be obligated to pay if the partnership cannot.',
     reference: 'Treas. Reg. §1.752-2',
   },
@@ -142,8 +142,8 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     options: [
       'Each partner is audited individually',
       'The partnership pays the imputed underpayment at the highest tax rate',
+      'Only the largest partner pays the tax',
       'No adjustments can be made',
-      'Only the largest partner pays the tax'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §6221-6241, partnership adjustments result in an imputed underpayment paid by the partnership at the highest individual rate (37%), unless the partnership makes a push-out election to shift liability to partners.',
@@ -162,8 +162,8 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     options: [
       'Must be a tax matters partner as defined pre-2018',
       'Has exclusive authority to act on behalf of the partnership in IRS proceedings',
+      'Can only be a general partner',
       'Must be a CPA or attorney',
-      'Can only be a general partner'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §6223, the partnership representative has exclusive and binding authority to act on behalf of the partnership for federal tax purposes. They need not be a partner but must have substantial presence in the U.S.',
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     skillLevel: 'Analysis',
     question: 'For a special allocation to have "economic effect," the partnership agreement must provide for:',
     options: [
-      'Distributions based on positive capital accounts',
       'Capital account maintenance, liquidating distributions based on capital accounts, and deficit restoration or QIO',
+      'Annual revaluation of partnership assets',
+      'Distributions based on positive capital accounts',
       'Equal profit and loss sharing',
-      'Annual revaluation of partnership assets'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Economic effect requires: (1) proper capital account maintenance, (2) liquidating distributions based on positive capital accounts, and (3) either an obligation to restore deficit capital accounts or a qualified income offset (QIO).',
     reference: 'Treas. Reg. §1.704-1(b)(2)(ii)',
   },
@@ -201,11 +201,11 @@ export const SEE2_QUESTIONS_BATCH30: Question[] = [
     question: 'A partner who is not acting in their capacity as a partner provides services to the partnership. The transaction is treated as:',
     options: [
       'A guaranteed payment',
+      'A nontaxable distribution',
       'A distributive share allocation',
       'A transaction with an outsider under IRC §707(a)',
-      'A nontaxable distribution'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §707(a), when a partner engages in a transaction with the partnership in a capacity other than as a partner (like a third party), the transaction is treated as occurring between the partnership and a non-partner.',
     reference: 'IRC §707(a)',
   },

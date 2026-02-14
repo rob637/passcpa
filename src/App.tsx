@@ -1,8 +1,10 @@
 import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
-import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
+import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
+import { saveCoursePreference } from './utils/courseDetection';
+import type { CourseId } from './types/course';
 
 // Layouts (always loaded - part of shell)
 import MainLayout from './components/layouts/MainLayout';
@@ -11,13 +13,14 @@ import AuthLayout from './components/layouts/AuthLayout';
 // Common Components (always loaded)
 import ErrorBoundary from './components/common/ErrorBoundary';
 import { PageLoader, FullPageLoader } from './components/common/PageLoader';
+import { SubscriptionGate } from './components/common/SubscriptionGate';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider } from './components/common/Toast';
 import { UpdateBanner } from './components/common/UpdateBanner';
 import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
-import { CourseProvider } from './providers/CourseProvider';
+import { CourseProvider, useCourse } from './providers/CourseProvider';
 import { NavigationProvider } from './components/navigation';
 // import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
@@ -45,6 +48,7 @@ const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
 const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
 const CMAEssaySimulator = lazy(() => import('./components/pages/CMAEssaySimulator'));
+const CMACBQSimulator = lazy(() => import('./components/pages/CMACBQSimulator'));
 const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
 const EAFormExplorer = lazy(() => import('./components/pages/EAFormExplorer'));
 const EASection = lazy(() => import('./components/pages/EASection'));
@@ -70,6 +74,12 @@ const AITutor = lazy(() => import('./components/pages/AITutor'));
 const Achievements = lazy(() => import('./components/pages/Achievements'));
 const Community = lazy(() => import('./components/pages/Community'));
 
+// Resources Pages
+const ResourcesHub = lazy(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
+const ResourceList = lazy(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
+const ResourceViewer = lazy(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
+const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPage').then(m => ({ default: m.default })));
+
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
@@ -83,6 +93,12 @@ const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
 const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
+const PassGuarantee = lazy(() => import('./components/pages/legal/PassGuarantee'));
+
+// Checkout Pages
+const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
+const CheckoutCancel = lazy(() => import('./components/pages/CheckoutCancel'));
+const StartCheckout = lazy(() => import('./components/pages/StartCheckout'));
 
 // Business Pages
 const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
@@ -124,6 +140,7 @@ interface RouteProps {
 
 const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   const { user, userProfile, loading } = useAuth();
+  const { courseId } = useCourse();
   const location = useLocation();
 
   if (loading) {
@@ -134,10 +151,26 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     return <Navigate to="/login" replace />;
   }
 
-  // Redirect to onboarding if not complete (unless we're already on onboarding page or skipOnboarding is true)
-  // Only redirect if userProfile exists - if it's still loading/null, wait rather than redirect
-  if (!skipOnboarding && userProfile && !userProfile.onboardingComplete && location.pathname !== '/onboarding') {
-    return <Navigate to="/onboarding" replace />;
+  // Redirect to onboarding if not complete for the current course
+  // Check per-course onboarding status (with fallback to legacy global flag for existing users)
+  if (!skipOnboarding && userProfile && location.pathname !== '/onboarding') {
+    const activeCourse = courseId; // Use courseId from CourseProvider
+    const courseOnboarded = userProfile.onboardingCompleted?.[activeCourse];
+    const legacyOnboarded = userProfile.onboardingComplete; // Legacy global flag
+    
+    // If course-specific onboarding is not done, redirect
+    // Use legacy flag only if onboardingCompleted map doesn't exist yet (for migration)
+    const isOnboarded = courseOnboarded ?? (legacyOnboarded && !userProfile.onboardingCompleted);
+    
+    if (!isOnboarded) {
+      // Preserve the course context by storing it before redirect
+      // This allows Onboarding to pick up the correct course
+      // Only set if not already present (don't overwrite registration-flow pendingCourse)
+      if (!localStorage.getItem('pendingCourse')) {
+        localStorage.setItem('pendingCourse', activeCourse);
+      }
+      return <Navigate to="/onboarding" replace />;
+    }
   }
 
   return children;
@@ -169,12 +202,26 @@ const AdminRoute = ({ children }: RouteProps) => {
 // Public Route (redirect to home if logged in)
 const PublicRoute = ({ children }: RouteProps) => {
   const { user, loading } = useAuth();
+  const [searchParams] = useSearchParams();
 
   if (loading) {
     return <FullPageLoader />;
   }
 
   if (user) {
+    // If user is already logged in and came from an exam-specific page
+    // (e.g., /register?course=ea), redirect to that course's dashboard
+    const courseParam = searchParams.get('course')?.toLowerCase();
+    if (courseParam && ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'].includes(courseParam)) {
+      // Save course preference so CourseProvider picks it up
+      saveCoursePreference(courseParam as CourseId);
+      localStorage.setItem('pendingCourse', courseParam);
+      const dashboardMap: Record<string, string> = {
+        cpa: '/home', ea: '/ea/home', cma: '/cma/home',
+        cia: '/cia/home', cfp: '/cfp/home', cisa: '/cisa/home',
+      };
+      return <Navigate to={dashboardMap[courseParam] || '/home'} replace />;
+    }
     return <Navigate to="/home" replace />;
   }
 
@@ -186,6 +233,13 @@ const SuspensePage = ({ children }: { children: ReactNode }) => (
   <Suspense fallback={<PageLoader />}>
     <ErrorBoundary variant="page">{children}</ErrorBoundary>
   </Suspense>
+);
+
+// Premium content wrapper - requires subscription or active trial
+const PremiumPage = ({ children }: { children: ReactNode }) => (
+  <SuspensePage>
+    <SubscriptionGate>{children}</SubscriptionGate>
+  </SuspensePage>
 );
 
 function App() {
@@ -292,22 +346,26 @@ function App() {
                 />
 
                 {/* CPA Landing Page (public) */}
-                <Route
-                  path="/cpa"
-                  element={
-                    <SuspensePage>
-                      <CPALanding />
-                    </SuspensePage>
-                  }
-                />
-                <Route
-                  path="/cpa/info"
-                  element={
-                    <SuspensePage>
-                      <CPAInfo />
-                    </SuspensePage>
-                  }
-                />
+                {ENABLE_CPA_COURSE && (
+                  <>
+                    <Route
+                      path="/cpa"
+                      element={
+                        <SuspensePage>
+                          <CPALanding />
+                        </SuspensePage>
+                      }
+                    />
+                    <Route
+                      path="/cpa/info"
+                      element={
+                        <SuspensePage>
+                          <CPAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                  </>
+                )}
 
                 {/* EA Landing Page (public) */}
                 {ENABLE_EA_COURSE && (
@@ -424,12 +482,56 @@ function App() {
                     </SuspensePage>
                   }
                 />
+                <Route
+                  path="/pass-guarantee"
+                  element={
+                    <SuspensePage>
+                      <PassGuarantee />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/terms/pass-guarantee"
+                  element={
+                    <SuspensePage>
+                      <PassGuarantee />
+                    </SuspensePage>
+                  }
+                />
                 
                 {/* Business Pages (public) */}
                 {/* Pricing is now per-exam - redirect to home */}
                 <Route
                   path="/pricing"
                   element={<Navigate to="/" replace />}
+                />
+                
+                {/* Checkout flow pages */}
+                <Route
+                  path="/checkout-success"
+                  element={
+                    <SuspensePage>
+                      <CheckoutSuccess />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/checkout-cancel"
+                  element={
+                    <SuspensePage>
+                      <CheckoutCancel />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/start-checkout"
+                  element={
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <StartCheckout />
+                      </SuspensePage>
+                    </ProtectedRoute>
+                  }
                 />
 
                 {/* Onboarding (protected but different layout) */}
@@ -526,9 +628,9 @@ function App() {
                   <Route
                     path="/learn"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Lessons />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
@@ -554,41 +656,41 @@ function App() {
                   <Route
                     path="/practice"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Practice />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/flashcards"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <FlashcardSetup />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/flashcards/session"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Flashcards />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/quiz"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <TimedQuiz />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/exam"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <ExamSimulator />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   {ENABLE_EA_COURSE && (
@@ -596,9 +698,9 @@ function App() {
                       <Route
                         path="/ea-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <EAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -652,9 +754,9 @@ function App() {
                       <Route
                         path="/cma-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CMAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -676,9 +778,17 @@ function App() {
                       <Route
                         path="/cma/essay"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CMAEssaySimulator />
-                          </SuspensePage>
+                          </PremiumPage>
+                        }
+                      />
+                      <Route
+                        path="/cma/cbq"
+                        element={
+                          <PremiumPage>
+                            <CMACBQSimulator />
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -704,9 +814,9 @@ function App() {
                       <Route
                         path="/cia-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CIAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -746,9 +856,9 @@ function App() {
                       <Route
                         path="/cfp-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CFPExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route 
@@ -762,9 +872,9 @@ function App() {
                       <Route 
                         path="/cfp/cases" 
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CFPCaseStudy />
-                          </SuspensePage>
+                          </PremiumPage>
                         } 
                       />
                       <Route
@@ -796,9 +906,9 @@ function App() {
                       <Route
                         path="/cisa-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CISAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -842,49 +952,81 @@ function App() {
                   <Route
                     path="/tbs"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <TBSSimulator />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/written-communication"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <WrittenCommunication />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/lessons"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Lessons />
+                      </PremiumPage>
+                    }
+                  />
+                  <Route
+                    path="/resources"
+                    element={
+                      <SuspensePage>
+                        <ResourcesHub />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources/strategy"
+                    element={
+                      <SuspensePage>
+                        <StrategyPage />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources/:type"
+                    element={
+                      <SuspensePage>
+                        <ResourceList />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources/:type/:itemId"
+                    element={
+                      <SuspensePage>
+                        <ResourceViewer />
                       </SuspensePage>
                     }
                   />
                   <Route
                     path="/journey"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <StudyJourney />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/lessons/matrix"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <LessonMatrix />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/lessons/:lessonId"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <LessonViewer />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
@@ -914,17 +1056,17 @@ function App() {
                   <Route
                     path="/tutor"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <AITutor />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/ai-tutor"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <AITutor />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route

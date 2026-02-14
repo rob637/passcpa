@@ -1,19 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Shield } from 'lucide-react';
+import { useCourse } from '../../../hooks/useCourse';
+import { CourseId } from '../../../types/course';
+
+/** Course-specific disclaimer text */
+const COURSE_DISCLAIMERS: Record<CourseId, string> = {
+  cpa: 'VoraPrep is an independent educational platform not affiliated with AICPA, NASBA, Prometric, or any state board of accountancy.',
+  ea: 'VoraPrep is an independent educational platform not affiliated with the IRS, Treasury Department, or Prometric.',
+  cma: 'VoraPrep is an independent educational platform not affiliated with the Institute of Management Accountants (IMA) or Prometric.',
+  cia: 'VoraPrep is an independent educational platform not affiliated with The Institute of Internal Auditors (IIA) or Pearson VUE.',
+  cisa: 'VoraPrep is an independent educational platform not affiliated with ISACA or any certification body.',
+  cfp: 'VoraPrep is an independent educational platform not affiliated with the Certified Financial Planner Board of Standards (CFP Board).',
+};
 
 const Privacy: React.FC = () => {
+  const { courseId } = useCourse();
+  const navigate = useNavigate();
+  const disclaimer = COURSE_DISCLAIMERS[courseId] || COURSE_DISCLAIMERS.cpa;
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
       <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Link 
-            to="/help" 
+          <button 
+            onClick={() => navigate(-1)} 
+            aria-label="Back"
             className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
           >
             <ArrowLeft className="w-5 h-5" />
-          </Link>
+          </button>
           <div className="flex items-center gap-2">
             <Shield className="w-5 h-5 text-primary-600" />
             <h1 className="font-semibold text-slate-900 dark:text-slate-100">Privacy Policy</h1>
@@ -32,8 +48,7 @@ const Privacy: React.FC = () => {
             {/* Independence Disclaimer */}
             <div className="not-prose mb-6 p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
               <p className="text-xs text-slate-600 dark:text-slate-300">
-                VoraPrep is an independent educational platform not affiliated with AICPA, NASBA, 
-                Prometric, or any state board of accountancy.
+                {disclaimer}
               </p>
             </div>
 

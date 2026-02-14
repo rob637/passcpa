@@ -1,11 +1,15 @@
 /**
  * Flashcard Service
- * 
- * Multi-course flashcard service that dynamically loads flashcards for any exam.
- * Mirrors the pattern used in questionService for consistency.
+ *
+ * Multi-course flashcard service. Uses the generic courseDataLoader —
+ * no per-course switch/case statements needed. Adding a new course requires
+ * only a COURSE_DATA export with a flashcards array.
  */
 
 import { CourseId } from '../types/course';
+import { DEFAULT_COURSE_ID } from '../types/course';
+import { COURSES } from '../courses';
+import { loadCourseData } from './courseDataLoader';
 
 // Common flashcard interface that all course flashcards must conform to
 export interface Flashcard {
@@ -52,138 +56,59 @@ function normalizeFlashcards(flashcards: any[]): Flashcard[] {
 }
 
 /**
- * Load flashcards for a specific section
- */
-export async function getFlashcardsBySection(section: string, courseId?: CourseId): Promise<Flashcard[]> {
-  const cacheKey = `${courseId || 'all'}-${section}`;
-  
-  if (flashcardCache[cacheKey]) {
-    return flashcardCache[cacheKey];
-  }
-  
-  let flashcards: Flashcard[] = [];
-  
-  try {
-    // Determine course from section if not provided
-    const effectiveCourse = courseId || getCourseFromSection(section);
-    
-    switch (effectiveCourse) {
-      case 'cpa': {
-        const cpaData = await import('../data/cpa/flashcards');
-        flashcards = normalizeFlashcards(cpaData.getFlashcardsBySection(section));
-        break;
-      }
-      case 'ea': {
-        const eaData = await import('../data/ea/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const allEa = (eaData.ALL_EA_FLASHCARDS || []) as any[];
-        flashcards = normalizeFlashcards(allEa.filter(f => f.section === section));
-        break;
-      }
-      case 'cma': {
-        const cmaData = await import('../data/cma/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const allCma = (cmaData.ALL_CMA_FLASHCARDS || []) as any[];
-        flashcards = normalizeFlashcards(allCma.filter(f => f.section === section));
-        break;
-      }
-      case 'cia': {
-        const ciaData = await import('../data/cia/flashcards');
-        flashcards = normalizeFlashcards(ciaData.getCIAFlashcardsBySection(section as 'CIA1' | 'CIA2' | 'CIA3'));
-        break;
-      }
-      case 'cisa': {
-        const cisaData = await import('../data/cisa/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const allCisa = (cisaData.allCisaFlashcards || cisaData.default || []) as any[];
-        flashcards = normalizeFlashcards(allCisa.filter(f => f.section === section || f.domain === section));
-        break;
-      }
-      case 'cfp': {
-        const cfpData = await import('../data/cfp/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const allCfp = (cfpData.CFP_FLASHCARDS || cfpData.default || []) as any[];
-        // CFP uses domain-based sections like CFP-GEN, CFP-TAX, etc.
-        // Map to domain: CFP-GEN -> GEN
-        const domain = section.replace('CFP-', '');
-        flashcards = normalizeFlashcards(allCfp.filter(f => 
-          f.section === section || f.section === domain || f.domain === section || f.domain === domain
-        ));
-        break;
-      }
-      default:
-        flashcards = [];
-    }
-  } catch (error) {
-    console.error(`Failed to load flashcards for section ${section}:`, error);
-    flashcards = [];
-  }
-  
-  // Cache the result
-  flashcardCache[cacheKey] = flashcards;
-  return flashcards;
-}
-
-/**
- * Load all flashcards for a course
+ * Load all flashcards for a course (with caching + normalization).
+ * Uses COURSE_DATA — no per-course switch/case needed.
  */
 export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashcard[]> {
   const cacheKey = `${courseId}-all`;
-  
+
   if (flashcardCache[cacheKey]) {
     return flashcardCache[cacheKey];
   }
-  
-  let flashcards: Flashcard[] = [];
-  
+
   try {
-    switch (courseId) {
-      case 'cpa': {
-        const cpaData = await import('../data/cpa/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        flashcards = normalizeFlashcards((cpaData.ALL_DEDICATED_FLASHCARDS || cpaData.CPA_FLASHCARDS || []) as any[]);
-        break;
-      }
-      case 'ea': {
-        const eaData = await import('../data/ea/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        flashcards = normalizeFlashcards((eaData.ALL_EA_FLASHCARDS || []) as any[]);
-        break;
-      }
-      case 'cma': {
-        const cmaData = await import('../data/cma/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        flashcards = normalizeFlashcards((cmaData.ALL_CMA_FLASHCARDS || []) as any[]);
-        break;
-      }
-      case 'cia': {
-        const ciaData = await import('../data/cia/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        flashcards = normalizeFlashcards((ciaData.ALL_CIA_FLASHCARDS || ciaData.default || []) as any[]);
-        break;
-      }
-      case 'cisa': {
-        const cisaData = await import('../data/cisa/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        flashcards = normalizeFlashcards((cisaData.allCisaFlashcards || cisaData.default || []) as any[]);
-        break;
-      }
-      case 'cfp': {
-        const cfpData = await import('../data/cfp/flashcards');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        flashcards = normalizeFlashcards((cfpData.CFP_FLASHCARDS || cfpData.default || []) as any[]);
-        break;
-      }
-      default:
-        flashcards = [];
-    }
+    const courseData = await loadCourseData(courseId);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const flashcards = normalizeFlashcards((courseData.flashcards || []) as any[]);
+    flashcardCache[cacheKey] = flashcards;
+    return flashcards;
   } catch (error) {
     console.error(`Failed to load flashcards for course ${courseId}:`, error);
-    flashcards = [];
+    return [];
   }
-  
-  flashcardCache[cacheKey] = flashcards;
-  return flashcards;
+}
+
+/**
+ * Load flashcards for a specific section.
+ * Loads all course flashcards then filters by section.
+ */
+export async function getFlashcardsBySection(section: string, courseId?: CourseId): Promise<Flashcard[]> {
+  const effectiveCourse = courseId || getCourseFromSection(section);
+  const cacheKey = `${effectiveCourse}-${section}`;
+
+  if (flashcardCache[cacheKey]) {
+    return flashcardCache[cacheKey];
+  }
+
+  try {
+    const all = await getFlashcardsByCourse(effectiveCourse);
+
+    // Normalize section matching: CFP-GEN → GEN, etc.
+    const domain = section.replace(/^CFP-/, '');
+
+    const flashcards = all.filter(f =>
+      f.section === section ||
+      f.section === domain ||
+      f.blueprintArea === section ||
+      f.blueprintArea === domain
+    );
+
+    flashcardCache[cacheKey] = flashcards;
+    return flashcards;
+  } catch (error) {
+    console.error(`Failed to load flashcards for section ${section}:`, error);
+    return [];
+  }
 }
 
 /**
@@ -216,36 +141,31 @@ export async function getFlashcardStats(courseId: CourseId): Promise<{
 }
 
 /**
- * Determine course from section ID
+ * Determine course from section ID by looking up the course registry.
+ * Zero-touch: new courses are discovered automatically from COURSES config.
  */
 function getCourseFromSection(section: string): CourseId {
-  // CPA sections
-  if (['FAR', 'AUD', 'REG', 'BEC', 'BAR', 'ISC', 'TCP', 'PREP'].includes(section)) {
-    return 'cpa';
+  const upperSection = section.toUpperCase();
+  for (const [courseId, course] of Object.entries(COURSES)) {
+    if (course.sections?.some(s => s.id === upperSection || s.shortName === upperSection)) {
+      return courseId as CourseId;
+    }
   }
-  // EA sections
-  if (['SEE1', 'SEE2', 'SEE3'].includes(section)) {
-    return 'ea';
+  // CFP uses domain-prefixed sections (CFP-GEN, CFP-TAX) and short domains (GEN, TAX)
+  // Check if section matches a prefix pattern
+  for (const [courseId, course] of Object.entries(COURSES)) {
+    const prefix = courseId.toUpperCase();
+    if (section.toUpperCase().startsWith(`${prefix}-`)) {
+      return courseId as CourseId;
+    }
+    // Check if any blueprint area matches
+    if (course.sections?.some(s =>
+      s.blueprintAreas?.some(ba => ba.id === section || ba.id === upperSection)
+    )) {
+      return courseId as CourseId;
+    }
   }
-  // CMA sections
-  if (['CMA1', 'CMA2'].includes(section)) {
-    return 'cma';
-  }
-  // CIA sections
-  if (['CIA1', 'CIA2', 'CIA3'].includes(section)) {
-    return 'cia';
-  }
-  // CISA sections
-  if (['CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'].includes(section)) {
-    return 'cisa';
-  }
-  // CFP sections
-  if (section.startsWith('CFP-') || ['GEN', 'RET', 'TAX', 'INV', 'RISK', 'EST', 'PRO', 'PSY', 'CFP-PCR', 'CFP-GEN', 'CFP-RISK', 'CFP-INV', 'CFP-TAX', 'CFP-RET', 'CFP-EST', 'CFP-PSY'].includes(section)) {
-    return 'cfp';
-  }
-  
-  // Default to CPA
-  return 'cpa';
+  return DEFAULT_COURSE_ID;
 }
 
 /**

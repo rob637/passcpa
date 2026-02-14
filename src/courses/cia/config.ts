@@ -230,12 +230,6 @@ export const CIA_COURSE: Course = {
     },
   ],
   
-  pricing: {
-    monthly: 39,
-    annual: 349,
-    lifetime: 599,
-  },
-  
   metadata: {
     examProvider: 'Pearson VUE (IIA)',
     websiteUrl: 'https://www.theiia.org/en/certifications/cia/',

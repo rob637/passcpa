@@ -20,6 +20,33 @@ vi.mock('../../../providers/CourseProvider', () => ({
   }),
 }));
 
+// Mock useSubscription
+vi.mock('../../../services/subscription', () => ({
+  useSubscription: () => ({
+    getExamAccess: (courseId: string) => ({
+      hasAccess: courseId === 'cpa',
+      isPaid: false,
+      isTrialing: courseId === 'cpa',
+      trialDaysRemaining: 14,
+      trialExpired: false,
+      canStartTrial: courseId !== 'cpa',
+      trialEndDate: null,
+    }),
+    startExamTrial: vi.fn().mockResolvedValue(true),
+  }),
+}));
+
+// Mock useToast
+vi.mock('../../../components/common/Toast', () => ({
+  useToast: () => ({
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warning: vi.fn(),
+    show: vi.fn(),
+  }),
+}));
+
 // Mock course utilities
 vi.mock('../../../courses', () => ({
   getCourse: vi.fn((id) => ({

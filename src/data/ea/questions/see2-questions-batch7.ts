@@ -21,8 +21,8 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Exempt from self-employment tax',
       'Subject to self-employment tax',
+      'Only taxed at capital gains rates',
       'Subject to FICA tax withholding',
-      'Only taxed at capital gains rates'
     ],
     correctAnswer: 1,
     explanation: 'A general partner\'s distributive share of partnership ordinary income is subject to self-employment tax. Limited partners generally are not subject to SE tax on their distributive share (except for guaranteed payments for services).',
@@ -39,12 +39,12 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'A partnership\'s special allocation of income or deductions is respected for tax purposes if it:',
     options: [
-      'Is agreed to by all partners',
       'Has substantial economic effect',
+      'Is reported on Schedule K-1',
+      'Is agreed to by all partners',
       'Benefits the majority partner',
-      'Is reported on Schedule K-1'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Special allocations that differ from ownership percentages are respected if they have substantial economic effect. This means the allocation must affect the partners\' economic interests (capital accounts) and not just their tax liabilities.',
     reference: 'IRC §704(b); Treas. Reg. §1.704-1(b)',
   },
@@ -59,12 +59,12 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'A partner\'s share of recourse liabilities is generally allocated based on:',
     options: [
-      'Profit sharing ratios',
       'Capital contribution percentages',
+      'An equal split among all partners',
+      'Profit sharing ratios',
       'Who bears the economic risk of loss',
-      'An equal split among all partners'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Recourse liabilities are allocated to partners who bear the economic risk of loss - generally the partner who would be obligated to pay the creditor if the partnership could not. Non-recourse liabilities are allocated differently, generally based on profit shares.',
     reference: 'Treas. Reg. §1.752-2',
   },
@@ -79,10 +79,10 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Gain on the sale of a partnership interest is generally:',
     options: [
-      'Ordinary income',
+      'Taxed at a flat 21% rate',
       'Capital gain, except for certain "hot assets"',
+      'Ordinary income',
       'Tax-free',
-      'Taxed at a flat 21% rate'
     ],
     correctAnswer: 1,
     explanation: 'Gain on sale of a partnership interest is generally capital gain. However, under §751, ordinary income treatment applies to the extent of the partner\'s share of unrealized receivables and inventory (hot assets).',
@@ -100,11 +100,11 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     question: 'When a partner receives a capital interest in exchange for services:',
     options: [
       'No income is recognized',
+      'Income is deferred until the partnership is sold',
       'The FMV of the interest is taxable as ordinary income',
       'Only the profits interest is taxable',
-      'Income is deferred until the partnership is sold'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'When a partner receives a capital interest for services, they recognize ordinary income equal to the fair market value of the partnership interest received, less any amount paid. A profits interest is generally not taxable upon receipt.',
     reference: 'IRC §83; Rev. Proc. 93-27',
   },
@@ -124,11 +124,11 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     question: 'Corporate distributions are treated as taxable dividends to the extent of:',
     options: [
       'The corporation\'s cash balance',
+      'The amount declared by the board',
       'Current and accumulated earnings and profits (E&P)',
       'The shareholder\'s basis in stock',
-      'The amount declared by the board'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Distributions are dividends to the extent of current E&P and accumulated E&P. Distributions exceeding E&P reduce stock basis (tax-free return of capital), and any excess is capital gain.',
     reference: 'IRC §301, §316',
   },
@@ -143,12 +143,12 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Type A reorganization is:',
     options: [
-      'A stock-for-stock acquisition',
       'A statutory merger or consolidation',
+      'A stock-for-stock acquisition',
+      'A spin-off',
       'An asset acquisition for stock',
-      'A spin-off'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A Type A reorganization is a statutory merger or consolidation under state law. The transaction is generally tax-free if it meets continuity of interest and business enterprise requirements.',
     reference: 'IRC §368(a)(1)(A)',
   },
@@ -163,12 +163,12 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'In a complete liquidation of a C corporation, the corporation:',
     options: [
-      'Recognizes no gain or loss',
       'Generally recognizes gain or loss as if assets were sold at FMV',
+      'Recognizes no gain or loss',
+      'Only recognizes loss, not gain',
       'Defers gain until shareholders sell the assets',
-      'Only recognizes loss, not gain'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'In a complete liquidation, the corporation recognizes gain or loss as if it sold all assets at fair market value. Shareholders also recognize gain or loss on the exchange of stock for liquidating distributions.',
     reference: 'IRC §336, §331',
   },
@@ -185,8 +185,8 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     options: [
       '100% of taxable income',
       '80% of taxable income',
+      'Only the same type of income that created the loss',
       '50% of taxable income',
-      'Only the same type of income that created the loss'
     ],
     correctAnswer: 1,
     explanation: 'NOLs arising after 2020 can offset only 80% of taxable income in the carryforward year. There is no carryback for most post-2020 NOLs, but they can be carried forward indefinitely.',
@@ -203,12 +203,12 @@ export const SEE2_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Under IRC §162(m), public companies cannot deduct compensation in excess of $1 million paid to:',
     options: [
-      'Any employee',
       'The CEO only',
+      'Any employee',
+      'Only employees with stock options',
       'Covered employees including CEO, CFO, and top 3 officers',
-      'Only employees with stock options'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Section 162(m) limits the deduction for compensation paid to covered employees (CEO, CFO, and the three other most highly compensated officers) to $1 million each. The TCJA expanded this to include CFO and eliminated the performance-based pay exception.',
     reference: 'IRC §162(m)',
   },

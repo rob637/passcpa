@@ -20,11 +20,11 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     question: 'When providing written tax advice, a practitioner must:',
     options: [
       'Provide the advice in a specific format approved by the IRS',
+      'Limit the advice to one page',
       'Base the advice on reasonable factual and legal assumptions and consider all relevant facts',
       'Obtain IRS approval before providing any written advice',
-      'Limit the advice to one page'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Circular 230 requires practitioners to base written advice on reasonable factual and legal assumptions, reasonably consider all relevant facts, and use reasonable efforts to identify and ascertain relevant facts.',
     reference: 'Circular 230 §10.37',
   },
@@ -40,11 +40,11 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     question: 'A paid preparer must sign a return and include their PTIN when:',
     options: [
       'The return is for a family member',
+      'Only when the refund exceeds $5,000',
       'All or substantially all of a return is prepared for compensation',
       'Only when preparing corporate returns',
-      'Only when the refund exceeds $5,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Paid preparers who prepare all or substantially all of a tax return for compensation must sign the return and include their PTIN. The signature requirement applies regardless of the type of return.',
     reference: 'IRC §6695(b); Circular 230 §10.8',
   },
@@ -61,8 +61,8 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     options: [
       'Having the legal knowledge, skill, thoroughness, and preparation necessary',
       'Having at least 10 years of experience',
+      'Being employed by a CPA firm',
       'Holding a college degree in accounting',
-      'Being employed by a CPA firm'
     ],
     correctAnswer: 0,
     explanation: 'Competence under Circular 230 requires having the legal knowledge, skill, thoroughness, and preparation reasonably necessary to perform the tax services. This can be obtained through study, training, or association with competent practitioners.',
@@ -83,12 +83,12 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Best practices for a tax advisor include all of the following EXCEPT:',
     options: [
-      'Communicating clearly with the client about the terms of the engagement',
       'Advising the client regarding the import and consequences of conclusions reached',
+      'Communicating clearly with the client about the terms of the engagement',
+      'Establishing and following reasonable fact determination procedures',
       'Guaranteeing the IRS will accept all positions taken on a return',
-      'Establishing and following reasonable fact determination procedures'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Practitioners should never guarantee that the IRS will accept positions taken on a return. Best practices include clear communication, proper fact gathering, and advising clients of potential consequences.',
     reference: 'Circular 230 §10.33',
   },
@@ -103,12 +103,12 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Office of Professional Responsibility (OPR) may impose which of the following sanctions for Circular 230 violations?',
     options: [
-      'Criminal prosecution only',
       'Censure, suspension, or disbarment from practice before the IRS',
+      'Criminal prosecution only',
+      'Revocation of citizenship',
       'Automatic prison sentences',
-      'Revocation of citizenship'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'OPR can impose censure (public reprimand), suspension of practice privileges, or disbarment. Monetary penalties may also be imposed in certain cases. Criminal prosecution is handled separately by the Department of Justice.',
     reference: 'Circular 230 §10.60',
   },
@@ -123,10 +123,10 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'How long must a practitioner generally retain records of client information used for tax return preparation?',
     options: [
-      '1 year',
+      'Permanently',
       '3 years',
+      '1 year',
       '7 years',
-      'Permanently'
     ],
     correctAnswer: 1,
     explanation: 'Practitioners must retain records of client information for 3 years from the date of the return or claim for refund. This includes records of information furnished by the client.',
@@ -143,10 +143,10 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'If a practitioner discovers an error on a client\'s previously filed return, the practitioner must:',
     options: [
-      'File an amended return without client consent',
+      'Take no action unless the error exceeds $1,000',
       'Notify the client promptly of the error and its consequences',
+      'File an amended return without client consent',
       'Notify the IRS directly',
-      'Take no action unless the error exceeds $1,000'
     ],
     correctAnswer: 1,
     explanation: 'When a practitioner discovers an error or omission, they must advise the client promptly of the error, noncompliance, or omission and the consequences. The decision to file an amended return rests with the client.',
@@ -167,12 +167,12 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An IRS examination typically begins with:',
     options: [
+      'A summons to appear in Tax Court',
       'A phone call from a revenue agent',
       'A letter from the IRS notifying the taxpayer of the examination',
       'An unannounced visit to the taxpayer\'s home',
-      'A summons to appear in Tax Court'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRS examinations typically begin with a written notification letter informing the taxpayer that their return has been selected for examination and requesting information or scheduling an appointment.',
     reference: 'IRS Publication 556',
   },
@@ -187,12 +187,12 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A correspondence audit is conducted:',
     options: [
+      'By telephone only',
       'In person at an IRS office',
       'Through the mail for simple issues',
       'At the taxpayer\'s place of business',
-      'By telephone only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Correspondence audits are conducted through the mail and typically involve simple issues such as verification of specific deductions or credits. The IRS sends a letter requesting specific documentation.',
     reference: 'IRS Publication 556',
   },
@@ -208,11 +208,11 @@ export const SEE3_QUESTIONS_BATCH2: Question[] = [
     question: 'During an IRS examination, a taxpayer has the right to:',
     options: [
       'Ignore all IRS requests for documentation',
+      'Choose which IRS employee conducts the audit',
       'Be represented by an authorized practitioner at all meetings',
       'Receive a refund automatically',
-      'Choose which IRS employee conducts the audit'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Taxpayers have the right to representation at any IRS interview or meeting. The Taxpayer Bill of Rights includes the right to retain an authorized representative to represent them before the IRS.',
     reference: 'IRC §7521; Taxpayer Bill of Rights',
   },

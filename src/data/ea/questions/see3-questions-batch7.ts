@@ -19,12 +19,12 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner\'s fee:',
     options: [
-      'Must be approved by the IRS in advance',
       'May not be charged based on contingency for preparing an original return',
+      'Must be approved by the IRS in advance',
+      'Cannot exceed $500 per hour',
       'Must be a flat fee for all services',
-      'Cannot exceed $500 per hour'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Circular 230 prohibits charging unconscionable fees and prohibits contingent fees for preparing original tax returns. However, contingent fees are permitted for claims for refund, amended returns, and IRS examinations.',
     reference: 'Circular 230 §10.27',
   },
@@ -41,8 +41,8 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Social Security Number only',
       'Preparer Tax Identification Number (PTIN)',
+      'Centralized Authorization File (CAF) number',
       'Employer Identification Number (EIN)',
-      'Centralized Authorization File (CAF) number'
     ],
     correctAnswer: 1,
     explanation: 'All paid tax return preparers must obtain a PTIN from the IRS and include it on all returns they prepare. The PTIN must be renewed annually.',
@@ -59,10 +59,10 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Under Circular 230, practitioners may advertise their services as long as they:',
     options: [
-      'Do not use any form of advertising',
+      'Get IRS approval for each advertisement',
       'Ensure advertisements are not false, fraudulent, or misleading',
+      'Do not use any form of advertising',
       'Only advertise in legal publications',
-      'Get IRS approval for each advertisement'
     ],
     correctAnswer: 1,
     explanation: 'Practitioners may advertise their services provided the advertisements are not false, fraudulent, coercive, unduly influencing, or misleading. Professional designations must be accurately stated.',
@@ -79,12 +79,12 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'To maintain enrolled agent status, an EA must complete how many hours of continuing education every 3 years?',
     options: [
-      '36 hours',
       '52 hours',
+      '120 hours',
+      '36 hours',
       '72 hours',
-      '120 hours'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Enrolled Agents must complete 72 hours of continuing education every 3 years, with a minimum of 16 hours per year. At least 2 hours must be in ethics or professional conduct.',
     reference: 'Circular 230 §10.6(e)',
   },
@@ -99,12 +99,12 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'When a client requests return of records, the practitioner must:',
     options: [
+      'Report the client to the IRS',
       'Return all records only after full payment of fees',
       'Promptly return records necessary for the client to comply with tax obligations, regardless of fee dispute',
       'Keep records for 7 years before returning them',
-      'Report the client to the IRS'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A practitioner must promptly return any records necessary for the client to comply with their federal tax obligations, even if there is a dispute over fees. The practitioner may retain copies.',
     reference: 'Circular 230 §10.28',
   },
@@ -124,11 +124,11 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     question: 'Which of the following constitutes disreputable conduct under Circular 230?',
     options: [
       'Disagreeing with an IRS auditor\'s findings',
+      'Requesting an appeal',
       'Giving a false opinion knowingly or recklessly',
       'Filing an extension on behalf of a client',
-      'Requesting an appeal'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Disreputable conduct includes conviction of crimes, giving false opinions knowingly or recklessly, misappropriating funds, and failing to file personal tax returns. Legitimate advocacy is never disreputable.',
     reference: 'Circular 230 §10.51',
   },
@@ -144,11 +144,11 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     question: 'A paid preparer who discloses client tax return information without consent may be subject to:',
     options: [
       'No penalty if the disclosure was accidental',
+      'Criminal prosecution only',
       'A penalty of $250 per disclosure, up to $10,000 per year',
       'Automatic disbarment',
-      'Criminal prosecution only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRC §6713 imposes a penalty of $250 for each unauthorized disclosure of tax return information, with a maximum of $10,000 per year. Knowing or reckless disclosures may also result in criminal penalties under §7216.',
     reference: 'IRC §6713; IRC §7216',
   },
@@ -163,12 +163,12 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'A position on a tax return has substantial authority when:',
     options: [
-      'The practitioner believes the position will win in court',
       'There is approximately a 40% or greater likelihood the position will be sustained on its merits',
+      'The practitioner believes the position will win in court',
+      'The IRS has previously approved the position',
       'All tax advisors agree with the position',
-      'The IRS has previously approved the position'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Substantial authority is an objective standard meaning roughly a 40% chance the position will be sustained. It is more than "reasonable basis" (approximately 20%) but less than "more likely than not" (greater than 50%).',
     reference: 'Treas. Reg. §1.6662-4(d)',
   },
@@ -187,12 +187,12 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'An individual can avoid the estimated tax penalty by paying at least:',
     options: [
-      '80% of current year tax',
       '90% of current year tax or 100% of prior year tax (110% if AGI exceeds $150,000)',
+      '80% of current year tax',
+      '100% of current year tax only',
       '95% of current year tax',
-      '100% of current year tax only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The estimated tax safe harbors are 90% of the current year\'s tax or 100% of the prior year\'s tax. For taxpayers with AGI over $150,000 ($75,000 MFS), the prior year requirement is 110%.',
     reference: 'IRC §6654(d)',
   },
@@ -209,8 +209,8 @@ export const SEE3_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Any employee of a business',
       'Responsible persons who willfully fail to collect, account for, or pay withheld employment taxes',
+      'Only payroll service providers',
       'Only business owners',
-      'Only payroll service providers'
     ],
     correctAnswer: 1,
     explanation: 'IRC §6672 imposes a 100% penalty on responsible persons who willfully fail to collect, truthfully account for, or pay over withheld employment taxes. Responsibility is based on control over financial decisions.',

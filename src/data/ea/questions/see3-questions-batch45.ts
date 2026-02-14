@@ -20,10 +20,10 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The failure to pay penalty under IRC §6651(a)(2):',
     options: [
-      'Is 5% per month',
-      'Is 0.5% per month (up to 25%) of unpaid tax, increased to 1% if notice of levy issued',
       'Is never assessed',
-      'Has no maximum'
+      'Is 0.5% per month (up to 25%) of unpaid tax, increased to 1% if notice of levy issued',
+      'Is 5% per month',
+      'Has no maximum',
     ],
     correctAnswer: 1,
     explanation: 'The failure to pay penalty is 0.5% per month (or part of month) of unpaid tax, up to 25%. It increases to 1% per month if IRS issues a notice of intent to levy and the taxpayer doesn\'t pay within 10 days.',
@@ -41,11 +41,11 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     question: 'If both failure to file and failure to pay penalties apply for the same month:',
     options: [
       'Both are charged in full',
-      'The failure to file penalty is reduced by the failure to pay penalty for that month',
       'Only failure to pay applies',
-      'Penalties are averaged'
+      'The failure to file penalty is reduced by the failure to pay penalty for that month',
+      'Penalties are averaged',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'When both penalties apply, the failure to file penalty (5%) is reduced by the failure to pay penalty (0.5%), resulting in a net 4.5% FTF penalty plus 0.5% FTP penalty = 5% total per month.',
     reference: 'IRC §6651(c)(1)',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The minimum failure to file penalty for returns more than 60 days late is:',
     options: [
+      'Always $100',
       'No minimum exists',
       'The lesser of $510 (2024, adjusted annually) or 100% of the tax due',
-      'Always $100',
-      '25% of tax due only'
+      '25% of tax due only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'For returns filed more than 60 days after the due date, the minimum FTF penalty is the lesser of $510 (2024 amount, indexed annually) or 100% of the tax required to be shown on the return.',
     reference: 'IRC §6651(a)',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The penalty for underpayment of estimated tax:',
     options: [
-      'Is a flat percentage',
       'Is computed at the IRS interest rate for the period of underpayment',
+      'Is a flat percentage',
       'Only applies to corporations',
-      'Is 25% of underpayment'
+      'Is 25% of underpayment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRC §6654 (individuals) and §6655 (corporations) penalty is computed at the IRS underpayment interest rate compounded daily for the period of underpayment. It\'s technically interest on the underpayment.',
     reference: 'IRC §6654; IRC §6655',
   },
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Interest may be abated by the IRS when:',
     options: [
-      'The taxpayer asks',
       'The interest is attributable to IRS errors or delays in performing ministerial or managerial acts',
       'The amount is large',
-      'Never - interest is never abated'
+      'The taxpayer asks',
+      'Never - interest is never abated',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §6404(e), interest may be abated if attributable to IRS errors or unreasonable delays in performing ministerial or managerial acts (but not delays in exercising judgment or discretion).',
     reference: 'IRC §6404(e); Form 843',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Interest on tax overpayments (refunds):',
     options: [
-      'Is never paid',
       'Is paid at the federal short-term rate plus 3% (2% for corporations over $10,000)',
       'Is always 10%',
-      'Only runs after 90 days'
+      'Is never paid',
+      'Only runs after 90 days',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRS pays interest on refunds at the federal short-term rate plus 3% for individuals (plus 2% for corporations, zero on corporate overpayments over $10,000). No interest if refunded within 45 days of filing.',
     reference: 'IRC §6611; IRC §6621',
   },
@@ -181,11 +181,11 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     question: 'Interest netting (global interest netting) means:',
     options: [
       'Interest is never charged',
-      'Overlapping periods of underpayment and overpayment are netted to compute interest at 0% on the overlap',
       'All taxpayers get zero interest',
-      'Only corporations benefit'
+      'Overlapping periods of underpayment and overpayment are netted to compute interest at 0% on the overlap',
+      'Only corporations benefit',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §6621(d), if a taxpayer has both underpayments and overpayments for overlapping periods, they are netted so that no interest is charged/paid on the net zero amount during the overlap.',
     reference: 'IRC §6621(d)',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH45: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §6404(g), interest may be suspended if:',
     options: [
-      'The taxpayer files for bankruptcy',
       'The IRS fails to send required notice of deficiency within 36 months of filing (for individuals)',
       'The taxpayer requests it',
-      'The amount is under $1,000'
+      'The taxpayer files for bankruptcy',
+      'The amount is under $1,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'For individuals, if IRS doesn\'t send a §6303 notice within 36 months of the later of the due date or filing date, interest (and some penalties) are suspended until notice is given. Doesn\'t apply to fraud, tax shelter transactions, etc.',
     reference: 'IRC §6404(g)',
   },

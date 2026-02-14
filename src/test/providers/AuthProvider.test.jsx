@@ -2,6 +2,10 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, waitFor, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+// Unmock AuthProvider since we're testing the actual implementation
+vi.unmock('../../providers/AuthProvider');
+vi.unmock('../../hooks/useAuth');
+
 // Simplified mocks to prevent memory issues
 vi.mock('../../config/firebase', () => ({
   auth: { currentUser: null },

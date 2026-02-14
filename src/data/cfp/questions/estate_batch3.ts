@@ -19,12 +19,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which statement correctly distinguishes a CRAT from a CRUT?',
     options: [
-      'A) A CRAT pays a fixed percentage of annually revalued assets; a CRUT pays a fixed dollar amount',
       'B) A CRAT pays a fixed dollar amount annually; a CRUT pays a percentage of annually revalued assets',
+      'A) A CRAT pays a fixed percentage of annually revalued assets; a CRUT pays a fixed dollar amount',
       'C) A CRAT can receive additional contributions; a CRUT cannot',
-      'D) A CRAT requires annual revaluation; a CRUT uses original value'
+      'D) A CRAT requires annual revaluation; a CRUT uses original value',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A Charitable Remainder Annuity Trust (CRAT) pays a fixed dollar amount each year based on the initial contribution. A Charitable Remainder Unitrust (CRUT) pays a fixed percentage of trust assets revalued annually. Only CRUTs allow additional contributions after inception.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What is the minimum payout rate for a charitable remainder trust?',
     options: [
+      'C) 7%',
       'A) 3%',
       'B) 5%',
-      'C) 7%',
-      'D) 10%'
+      'D) 10%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Charitable remainder trusts must pay at least 5% but not more than 50% of the initial value (CRAT) or annually revalued assets (CRUT) to the non-charitable beneficiaries. Additionally, the charity must receive at least 10% of the initial value.'
   },
   {
@@ -58,11 +58,11 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     question: 'A grantor wants to transfer wealth to children while minimizing gift taxes. The family has a long time horizon. Which trust is MOST appropriate?',
     options: [
       'A) Charitable Remainder Unitrust (CRUT)',
-      'B) Charitable Remainder Annuity Trust (CRAT)',
       'C) Charitable Lead Annuity Trust (CLAT)',
-      'D) Charitable Lead Unitrust (CLUT)'
+      'B) Charitable Remainder Annuity Trust (CRAT)',
+      'D) Charitable Lead Unitrust (CLUT)',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'A CLAT pays a fixed amount to charity for a term of years, then remainder passes to non-charitable beneficiaries (children). In a low-interest-rate environment, properly structured CLATs can pass substantial wealth with minimal gift tax. The CRT variations pay to individual first, then charity—opposite of the goal.'
   },
   {
@@ -76,12 +76,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What is the minimum annual distribution requirement for a private foundation?',
     options: [
-      'A) No minimum requirement',
-      'B) 3% of asset value',
       'C) 5% of asset value',
-      'D) 10% of asset value'
+      'B) 3% of asset value',
+      'A) No minimum requirement',
+      'D) 10% of asset value',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Private foundations must distribute at least 5% of the average fair market value of their investment assets annually for charitable purposes. This is designed to prevent foundations from simply accumulating wealth without serving charitable purposes.'
   },
   {
@@ -95,12 +95,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client wants to make a major charitable gift but maintain some advisory role over grants. They want simplicity and don\'t need to employ family members. Which vehicle is MOST appropriate?',
     options: [
-      'A) Private foundation',
       'B) Donor-advised fund (DAF)',
       'C) Supporting organization',
-      'D) Charitable remainder trust'
+      'A) Private foundation',
+      'D) Charitable remainder trust',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Donor-advised funds offer simplicity (no annual filings, no 5% minimum distribution requirement), immediate tax deduction, and grant advisory privileges. Private foundations offer more control but require annual filings, 5% distributions, and are subject to excise taxes. The client\'s simplicity preference points to DAF.'
   },
   {
@@ -114,12 +114,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client with $500,000 AGI donates appreciated stock (held >1 year) worth $200,000 (basis $50,000) to a public charity. What is the maximum charitable deduction for the current year?',
     options: [
-      'A) $50,000 (10% of AGI)',
       'B) $150,000 (30% of AGI)',
       'C) $200,000 (full FMV)',
-      'D) $300,000 (60% of AGI)'
+      'A) $50,000 (10% of AGI)',
+      'D) $300,000 (60% of AGI)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Appreciated long-term capital gain property donated to a public charity is deductible at FMV but limited to 30% of AGI. 30% × $500,000 = $150,000 current year deduction. The remaining $50,000 can be carried forward up to 5 years.'
   },
   {
@@ -171,10 +171,10 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which statement about pooled income funds (PIFs) is correct?',
     options: [
+      'C) PIFs are typically established by individual donors',
       'A) Donors receive a fixed annuity payment like a CRAT',
       'B) Tax-exempt securities cannot be contributed to a PIF',
-      'C) PIFs are typically established by individual donors',
-      'D) Donors receive their share of actual trust income, which may vary'
+      'D) Donors receive their share of actual trust income, which may vary',
     ],
     correctAnswer: 3,
     explanation: 'Pooled income funds distribute to beneficiaries based on actual trust income (like a CRUT conceptually, but based on income not total return). Tax-exempt securities cannot be held by PIFs. Multiple donors contribute to the pool. PIFs are maintained by charities, not individuals.'
@@ -210,11 +210,11 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     question: 'A private foundation founder wants to lease office space to the foundation at below-market rates. Is this permitted?',
     options: [
       'A) Yes, below-market transactions always benefit the foundation',
-      'B) No, any lease between a disqualified person and the foundation is prohibited self-dealing',
       'C) Yes, if an independent appraisal supports the terms',
-      'D) Yes, if the board approves the transaction'
+      'B) No, any lease between a disqualified person and the foundation is prohibited self-dealing',
+      'D) Yes, if the board approves the transaction',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Self-dealing rules for private foundations are strict. Leasing between disqualified persons (including founders and their families) and the foundation is prohibited regardless of whether the terms are favorable. The intent to prevent abuse overrides any economic benefit.'
   },
   {
@@ -228,12 +228,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What documentation is required for a charitable cash contribution of $300?',
     options: [
+      'C) Written acknowledgment from the charity',
       'A) No documentation required',
       'B) Bank record or written receipt from the charity',
-      'C) Written acknowledgment from the charity',
-      'D) Qualified appraisal'
+      'D) Qualified appraisal',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'For cash contributions of any amount, the donor must have a bank record (cancelled check, credit card statement) OR written receipt from the charity. Written acknowledgment is required for contributions of $250 or more. Qualified appraisals are for non-cash gifts over $5,000.'
   },
   {
@@ -247,10 +247,10 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which type of supporting organization offers the most donor control while still qualifying as a public charity?',
     options: [
+      'C) Type III - functionally integrated',
       'A) Type I - operated, supervised, or controlled by supported organization',
       'B) Type II - supervised or controlled in connection with supported organization',
-      'C) Type III - functionally integrated',
-      'D) Type III - non-functionally integrated'
+      'D) Type III - non-functionally integrated',
     ],
     correctAnswer: 3,
     explanation: 'Type III non-functionally integrated supporting organizations historically offered the most donor control, which led to abuse concerns and stricter rules. Type I and II are more closely connected to the public charity. Type III functionally integrated must conduct activities directly benefiting the supported organization.'
@@ -266,12 +266,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A NIMCRUT (net income with makeup charitable remainder unitrust) invests primarily in growth stocks in early years. What is the planning advantage?',
     options: [
-      'A) Higher immediate income for the beneficiary',
-      'B) Larger charitable deduction',
       'C) Ability to defer income to later years when the beneficiary may need it more',
-      'D) Avoidance of minimum payout requirements'
+      'B) Larger charitable deduction',
+      'A) Higher immediate income for the beneficiary',
+      'D) Avoidance of minimum payout requirements',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'A NIMCRUT distributes the lesser of trust accounting income or the unitrust percentage. By investing in growth (low-dividend) assets initially, distributions are deferred. A "makeup" account tracks deficiencies that can be distributed in later years when the investment shifts to income-producing assets—often useful for retirement planning.'
   },
   {
@@ -285,12 +285,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client donates stock worth $50,000 (basis $10,000) held for 8 months to a public charity. What is the deductible amount?',
     options: [
-      'A) $10,000 (basis only)',
-      'B) $50,000 (full FMV)',
       'C) $40,000 (gain only)',
-      'D) $0 (short-term property not deductible)'
+      'B) $50,000 (full FMV)',
+      'A) $10,000 (basis only)',
+      'D) $0 (short-term property not deductible)',
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Short-term capital gain property (held ≤1 year) donated to charity is deductible only at basis, not FMV. Only long-term capital gain property qualifies for FMV deduction. The client would be better served waiting 4 more months to complete the 1-year holding period.'
   },
   {
@@ -304,12 +304,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client expects a large bonus this year and wants to "bunch" charitable deductions. What is an advantage of contributing to a DAF rather than directly to charities?',
     options: [
-      'A) Higher deduction limit than direct gifts',
       'B) Immediate deduction with flexible grant timing later',
+      'A) Higher deduction limit than direct gifts',
       'C) Ability to receive income from the contributed assets',
-      'D) Tax-free investment growth and withdrawals'
+      'D) Tax-free investment growth and withdrawals',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'DAFs allow an immediate charitable deduction in the year of contribution, while grants to charities can be made over future years. This "bunching" strategy is valuable for itemizing in high-income years then taking the standard deduction in other years.'
   },
   {
@@ -323,12 +323,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What excise tax do private foundations pay on net investment income?',
     options: [
-      'A) 0%',
       'B) 1.39%',
+      'A) 0%',
       'C) 2%',
-      'D) 3.8%'
+      'D) 3.8%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Private foundations pay a 1.39% excise tax on net investment income (reduced from 2% by the Taxpayer First Act of 2019). This is a cost of the increased control that private foundations offer compared to public charities.'
   },
   {
@@ -342,12 +342,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A 75-year-old establishes a CRAT with a 10% payout for her life. The applicable federal rate is 4%. Why might this trust fail to qualify?',
     options: [
-      'A) The payout rate is too high',
       'B) Life expectancy is too short for adequate charitable remainder',
+      'A) The payout rate is too high',
       'C) CRATs cannot use life contingent payouts',
-      'D) The applicable federal rate is too low'
+      'D) The applicable federal rate is too low',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CRTs must pass the "10% remainder test"—the present value of the charitable remainder must be at least 10% of the initial contribution. High payout rates, long payout periods, and older beneficiaries can cause failure. At age 75 with 10% payout, the expected remainder may be below 10%.'
   },
   {
@@ -362,11 +362,11 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     question: 'A landowner places a conservation easement on her property, permanently restricting development. What type of charitable deduction is available?',
     options: [
       'A) Fair market value of the entire property',
-      'B) Difference between property value before and after the restriction',
       'C) No deduction—partial interests are not deductible',
-      'D) Cost basis of the property'
+      'B) Difference between property value before and after the restriction',
+      'D) Cost basis of the property',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Qualified conservation easements are an exception to the general rule against partial interest deductions. The deduction equals the reduction in property value caused by the restriction (before and after appraisal). The landowner retains ownership but uses are limited.'
   },
   {
@@ -380,12 +380,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Is there a limit on the estate tax charitable deduction?',
     options: [
+      'C) No, the estate tax charitable deduction is unlimited',
       'A) Yes, 30% of the adjusted gross estate',
       'B) Yes, 50% of the adjusted gross estate',
-      'C) No, the estate tax charitable deduction is unlimited',
-      'D) Yes, $1 million maximum'
+      'D) Yes, $1 million maximum',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Unlike the income tax charitable deduction (which has AGI limits), the estate tax charitable deduction is unlimited. An estate can leave everything to charity and owe zero estate tax. This makes charitable planning very powerful in estate planning.'
   },
   {
@@ -399,12 +399,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'A "zeroed-out" CLAT is designed to have what gift tax value?',
     options: [
+      'C) Zero (or near zero) gift tax value',
       'A) The full value of the contribution',
       'B) Maximum gift tax value for optimal deduction',
-      'C) Zero (or near zero) gift tax value',
-      'D) 50% of contribution value'
+      'D) 50% of contribution value',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'A "zeroed-out" CLAT is structured so the present value of the charitable annuity equals the full contribution, leaving zero (or minimal) taxable gift to the remainder beneficiaries. If the trust earns more than the Section 7520 rate, excess passes gift-tax-free to heirs.'
   },
   {
@@ -419,11 +419,11 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     question: 'What is the AGI limitation for cash donations to a private foundation?',
     options: [
       'A) 20%',
-      'B) 30%',
       'C) 50%',
-      'D) 60%'
+      'B) 30%',
+      'D) 60%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Cash donations to private foundations are limited to 30% of AGI (compared to 60% for public charities). Appreciated property to private foundations is limited to 20% of AGI and deductible at basis only (not FMV). This difference encourages donations to public charities.'
   },
   {
@@ -437,10 +437,10 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'CRT distributions are taxed under a specific ordering system. What is the correct order?',
     options: [
-      'A) Tax-free corpus first, then capital gains, then ordinary income',
-      'B) Ordinary income first, then capital gains, then tax-free corpus',
       'C) Capital gains first, then ordinary income, then tax-free corpus',
-      'D) FIFO based on contribution dates'
+      'B) Ordinary income first, then capital gains, then tax-free corpus',
+      'A) Tax-free corpus first, then capital gains, then ordinary income',
+      'D) FIFO based on contribution dates',
     ],
     correctAnswer: 1,
     explanation: 'CRT distributions follow a "worst-first" four-tier system: (1) ordinary income, (2) capital gains, (3) other income (tax-exempt), (4) return of corpus. This ensures the highest-taxed income is distributed first until each tier is exhausted.'
@@ -456,12 +456,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'A client (age 65) owns a $2M company with $100K basis and wants to: (1) diversify, (2) receive lifetime income, (3) make a charitable gift, and (4) minimize taxes. Which strategy is MOST appropriate?',
     options: [
-      'A) Sell the company and donate proceeds to a DAF',
       'B) Contribute the company to a CRUT, then sell inside the trust',
       'C) Make a bequest in the will to charity',
-      'D) Gift to charity now and take the deduction'
+      'A) Sell the company and donate proceeds to a DAF',
+      'D) Gift to charity now and take the deduction',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Contributing the company to a CRUT before sale avoids immediate capital gains tax. The trust sells the stock tax-free (CRTs are tax-exempt), reinvests proceeds, and pays income to the client for life. Remaining assets go to charity. This accomplishes all four goals: diversification, income, charitable gift, and tax efficiency.'
   },
   {
@@ -475,12 +475,12 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A donor contributes highly appreciated stock to a DAF. What happens to the unrealized gain?',
     options: [
-      'A) Donor owes capital gains tax on the transfer',
       'B) The gain is recognized when the DAF sells the stock',
       'C) The gain is never recognized—donor gets FMV deduction, DAF sells tax-free',
-      'D) The gain carries over to the charity when grants are made'
+      'A) Donor owes capital gains tax on the transfer',
+      'D) The gain carries over to the charity when grants are made',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'When appreciated securities are donated to a DAF, the donor receives a deduction for FMV (subject to AGI limits), and the unrealized gain is never taxed. The DAF is tax-exempt, so when it sells the stock, no capital gains tax is owed. This is the same tax treatment as donating directly to a charity.'
   }
 ];

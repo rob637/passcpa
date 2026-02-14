@@ -21,8 +21,8 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     options: [
       'A) Only the fee structure',
       'B) Scope of services, compensation, conflicts of interest, duration, and parties\' responsibilities',
+      'D) Client net worth only',
       'C) Investment performance guarantees',
-      'D) Client net worth only'
     ],
     correctAnswer: 1,
     explanation: 'Engagement letter establishes the professional relationship. Must include: services provided (and excluded), how planner is compensated, material conflicts, engagement duration/termination, client vs. planner responsibilities. Required under CFP Board Standards of Conduct. Protects both parties by setting clear expectations.'
@@ -38,10 +38,10 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The monitoring step of the financial planning process involves:',
     options: [
-      'A) Initial data gathering',
+      'D) Terminating the relationship',
       'B) Tracking progress toward goals and updating recommendations when circumstances change',
+      'A) Initial data gathering',
       'C) Presenting the initial plan only',
-      'D) Terminating the relationship'
     ],
     correctAnswer: 1,
     explanation: 'Monitoring is ongoing: review progress, evaluate whether strategies are working, update for life changes (marriage, job change, inheritance), adjust for market conditions and tax law changes. Financial planning is not one-time—it\'s a continuous process. Regular reviews (typically annual or triggered by events) are essential.'
@@ -57,12 +57,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When a client requests only investment advice rather than comprehensive planning, the CFP professional:',
     options: [
-      'A) Must refuse and require comprehensive planning',
       'B) May provide limited-scope engagement with appropriate disclosure, while noting how topics may impact investing',
+      'D) Must charge the same as comprehensive planning',
+      'A) Must refuse and require comprehensive planning',
       'C) Should provide comprehensive advice anyway',
-      'D) Must charge the same as comprehensive planning'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Limited-scope engagements are permitted if: client agrees to limited scope, scope is reasonable under circumstances, planner discloses how other areas might affect the topic. Must still identify limitations where other areas materially affect advice. Document clearly what is included and excluded.'
   },
   // GEN-2: Financial Statement Analysis
@@ -77,12 +77,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'On a personal balance sheet, a 401(k) retirement account is classified as:',
     options: [
+      'D) Current income',
       'A) A liability',
       'B) An investment asset, often further categorized as a long-term or retirement asset',
       'C) A personal use asset',
-      'D) Current income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Personal balance sheet assets include: monetary (cash, checking), investment (brokerage, retirement), and personal use (home, vehicles). 401(k) is an investment asset—specifically retirement/long-term. Some classify separately as retirement assets. Liabilities shown separately. Net worth = Assets - Liabilities.'
   },
   {
@@ -97,11 +97,11 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     question: 'The financial independence ratio (investment income / living expenses) indicates:',
     options: [
       'A) Debt capacity',
+      'D) Tax efficiency',
       'B) The degree to which investment income can cover current expenses, with 100% suggesting financial independence',
       'C) Savings rate',
-      'D) Tax efficiency'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Financial independence ratio: investment income ÷ living expenses. 100% means investment income covers all expenses (traditional retirement goal). Higher = more independence. Tracks progress toward retirement readiness. Related to FIRE (Financial Independence, Retire Early) concepts. Consider: what income sources, how reliable, inflation adjustments.'
   },
   {
@@ -116,11 +116,11 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     question: 'A personal cash flow statement differs from a budget in that:',
     options: [
       'A) They are identical',
+      'D) Budgets show actual results',
       'B) Cash flow shows actual historical income and expenses while a budget projects future expectations',
       'C) Cash flow is only for businesses',
-      'D) Budgets show actual results'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Cash flow statement: historical/actual—what happened. Budget: forward-looking plan—what should happen. Compare them to evaluate: Are you spending as planned? Where are variances? Use cash flow to build realistic budgets. Both essential tools for managing finances and identifying areas for improvement.'
   },
   // GEN-3: Time Value of Money
@@ -133,15 +133,15 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     subtopic: 'Effective Annual Rate',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: 'A credit card with 18% APR compounded monthly has an effective annual rate (EAR) of approximately:',
+    question: 'A client is comparing two savings accounts: Account A pays 6% compounded monthly, and Account B pays 6.1% compounded annually. Which account provides the higher effective annual rate?',
     options: [
-      'A) 18.00%',
-      'B) 19.56%, calculated as (1 + 0.18/12)^12 - 1',
-      'C) 17.00%',
-      'D) 21.00%'
+      'Account A, because monthly compounding produces an EAR of approximately 6.17%',
+      'Account B, because 6.1% exceeds 6.0%',
+      'Both accounts produce the same effective annual rate',
+      'Neither account — the EAR cannot be determined without knowing the deposit amount',
     ],
-    correctAnswer: 1,
-    explanation: 'EAR = (1 + APR/n)^n - 1, where n = compounding periods. Monthly: (1 + 0.18/12)^12 - 1 = (1.015)^12 - 1 ≈ 0.1956 = 19.56%. More frequent compounding = higher EAR. Always use EAR to compare rates with different compounding. Important for comparing loans or investments accurately.'
+    correctAnswer: 0,
+    explanation: 'Account A\'s EAR = (1 + 0.06/12)^12 - 1 = 6.17%, which exceeds Account B\'s EAR of 6.1% (already annual). More frequent compounding increases the effective rate, so 6% compounded monthly actually yields more than 6.1% compounded annually.',
   },
   {
     id: 'CFP-GEN-B9-008',
@@ -154,12 +154,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Compared to an ordinary annuity with the same payment and rate, an annuity due:',
     options: [
-      'A) Has lower present value',
       'B) Has higher present value and future value because payments occur at the beginning of each period',
+      'A) Has lower present value',
+      'D) Has the same value',
       'C) Is always better',
-      'D) Has the same value'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Annuity due: payments at beginning of period (rent, lease payments). Ordinary: payments at end (most loan payments). Annuity due values are higher by factor of (1 + i). PV_AD = PV_OA × (1 + i). FV_AD = FV_OA × (1 + i). Each payment earns interest for one more period in an annuity due.'
   },
   {
@@ -173,12 +173,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An investment doubles in 8 years. The approximate annual return using the Rule of 72 is:',
     options: [
-      'A) 8%',
       'B) 9%, because 72 divided by years to double equals the approximate rate',
+      'D) 12%',
+      'A) 8%',
       'C) 6%',
-      'D) 12%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Rule of 72: approximate years to double = 72 / interest rate, or interest rate ≈ 72 / years. 72 / 8 = 9%. Exact calculation: (2)^(1/8) - 1 = 9.05%. Close enough for quick estimation. Rule of 72 works best for rates 6-10%. Useful shortcut for mental math in planning discussions.'
   },
   // GEN-4: Economics Concepts
@@ -195,8 +195,8 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     options: [
       'A) Unemployment rate and GDP',
       'B) Stock market performance, building permits, and initial unemployment claims because they predict future activity',
+      'D) Historical tax receipts',
       'C) Inflation only',
-      'D) Historical tax receipts'
     ],
     correctAnswer: 1,
     explanation: 'Leading indicators predict future economic direction: stock prices, building permits, manufacturing orders, consumer expectations, initial jobless claims. Lagging: unemployment rate, CPI, business lending. Coincident: industrial production, personal income, GDP. Leading indicators help anticipate turns in business cycles.'
@@ -212,12 +212,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Rising interest rates typically affect financial planning by:',
     options: [
-      'A) No effect',
       'B) Increasing borrowing costs, potentially lowering bond and stock prices, while improving savings yields',
+      'D) Reducing all asset values equally',
+      'A) No effect',
       'C) Only affecting banks',
-      'D) Reducing all asset values equally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Higher rates impact planning: mortgage/loan costs increase (buy homes earlier or less debt), bond prices fall (longer duration hurts more), stocks may decline (higher discount rates, competition from bonds), savings yields improve. Planning implications: review debt strategy, bond duration, asset allocation, retirement income sources.'
   },
   {
@@ -231,12 +231,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Purchasing power risk is particularly important for:',
     options: [
-      'A) Short-term savings only',
       'B) Fixed-income investments and long retirement horizons where inflation erodes real value',
+      'D) Variable rate instruments',
+      'A) Short-term savings only',
       'C) Equity investments',
-      'D) Variable rate instruments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Purchasing power risk (inflation risk): money loses value over time. Fixed payments (bonds, pensions, annuities) particularly vulnerable—same dollars buy less. Long time horizons amplify: 3% inflation over 30 years means a dollar buys only 41 cents of today\'s goods. Planning must grow assets faster than inflation.'
   },
   // GEN-5: Financial Planning Concepts
@@ -251,10 +251,10 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When clients have multiple financial goals with insufficient resources, the planner should:',
     options: [
-      'A) Focus only on retirement',
+      'D) Suggest they earn more income',
       'B) Help clients prioritize based on goal timing, importance, and trade-offs, adjusting other variables as needed',
+      'A) Focus only on retirement',
       'C) Recommend borrowing for all goals',
-      'D) Suggest they earn more income'
     ],
     correctAnswer: 1,
     explanation: 'Goal prioritization process: identify all goals, quantify costs and timing, determine which are needs vs. wants, analyze trade-offs (delay retirement vs. full college funding), adjust variables (goal cost, timeline, risk level). Transparent discussion helps clients understand constraints and make informed choices.'
@@ -271,11 +271,11 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     question: 'Life cycle financial planning recognizes that:',
     options: [
       'A) All clients have identical needs',
+      'D) Planning is only for older clients',
       'B) Financial needs, risk tolerance, and planning priorities change systematically through different life stages',
       'C) Only retirement matters',
-      'D) Planning is only for older clients'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Life cycle approach: planning changes with life stage. Early career: build emergency fund, start retirement savings, manage student debt. Mid-career: maximize savings, education funding, insurance. Pre-retirement: catch-up contributions, assess readiness. Retirement: income planning, healthcare, estate. Priorities shift systematically.'
   },
   {
@@ -289,12 +289,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'An appropriate emergency fund size depends on:',
     options: [
+      'D) Debt levels alone',
       'A) Only 3 months expenses for everyone',
       'B) Job security, income stability, number of earners, insurance coverage, and access to other resources',
       'C) Investment returns only',
-      'D) Debt levels alone'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Emergency fund factors: single earner (need larger), variable income (need larger), job stability, insurance deductibles, fixed expenses, access to credit/other funds. Typical: 3-6 months expenses. Self-employed or single income: 6-12 months. Consider: what emergencies are likely, how quickly could you find income, what other resources exist.'
   },
   // Additional Topics
@@ -309,12 +309,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Effective client discovery involves:',
     options: [
-      'A) Only reviewing financial documents',
       'B) Open-ended questions to understand values, goals, and concerns beyond the numbers',
+      'A) Only reviewing financial documents',
+      'D) Focusing only on investment preferences',
       'C) Immediately presenting solutions',
-      'D) Focusing only on investment preferences'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Discovery goes beyond data collection. Essential: understand why (values driving goals), family dynamics, risk attitudes, past experiences with money, fears and concerns, what success looks like. Use open-ended questions. Listen actively. Quantitative data shows what; qualitative reveals why—both essential for comprehensive planning.'
   },
   {
@@ -330,8 +330,8 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     options: [
       'A) 50% or less',
       'B) 43% or less, though some programs allow higher with compensating factors',
+      'D) No limit',
       'C) 20% or less',
-      'D) No limit'
     ],
     correctAnswer: 1,
     explanation: 'Back-end DTI: all monthly debt payments ÷ gross monthly income. QM loans typically require ≤43%. FHA may allow up to 50% with compensating factors. Front-end (housing only): typically ≤28%. Lower DTI = more financial cushion. High DTI signals difficulty handling additional debt or expenses. Planning should aim to keep ratios manageable.'
@@ -349,8 +349,8 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     options: [
       'A) NPV is always positive',
       'B) IRR may have multiple solutions or assume reinvestment at unrealistic rates, while NPV uses consistent discount rate',
+      'D) NPV ignores time value',
       'C) IRR is harder to calculate',
-      'D) NPV ignores time value'
     ],
     correctAnswer: 1,
     explanation: 'IRR limitations: assumes reinvestment at IRR (may be unrealistic), unconventional cash flows can produce multiple IRRs, can\'t compare projects of different sizes. NPV advantages: uses consistent required rate, additive (can compare different projects), no reinvestment rate assumptions. Use both—IRR for rate comparison, NPV for absolute value.'
@@ -366,12 +366,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Federal Reserve\'s primary tools for implementing monetary policy include:',
     options: [
-      'A) Tax rates and government spending',
       'B) Open market operations, discount rate, and reserve requirements',
+      'D) Trade tariffs',
+      'A) Tax rates and government spending',
       'C) Wage controls only',
-      'D) Trade tariffs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Fed monetary policy tools: Open market operations (buying/selling Treasuries—most used), discount rate (rate Fed charges banks), reserve requirements (how much banks must hold), interest on reserves, quantitative easing. Fiscal policy (taxes, spending) is Congress. Fed tools affect interest rates which flows through to planning decisions.'
   },
   {
@@ -385,12 +385,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The "4% rule" for retirement income suggests:',
     options: [
-      'A) Invest 4% in bonds',
       'B) Initially withdraw 4% of portfolio, then adjust for inflation, providing sustainable income for approximately 30 years',
+      'A) Invest 4% in bonds',
+      'D) Save 4% of income',
       'C) Returns must be 4%',
-      'D) Save 4% of income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: '4% rule (Bengen study): year one withdraw 4% of portfolio, subsequent years adjust for inflation. Based on historical returns, provided ~30-year sustainability. Limitations: based on specific period, single-country data, doesn\'t adapt to conditions. Modern views: consider flexibility, dynamic spending, CAPE-based rules. Useful starting point, not rigid rule.'
   },
   {
@@ -404,10 +404,10 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When presenting recommendations, a CFP professional should:',
     options: [
-      'A) Use as much technical jargon as possible',
+      'D) Avoid discussing trade-offs',
       'B) Explain recommendations clearly, connect to client goals, discuss alternatives considered, and identify action steps',
+      'A) Use as much technical jargon as possible',
       'C) Only provide written documents',
-      'D) Avoid discussing trade-offs'
     ],
     correctAnswer: 1,
     explanation: 'Effective presentation: use clear language (avoid jargon), explain why each recommendation helps achieve stated goals, discuss alternatives and why chosen approach fits, be transparent about limitations and trade-offs, provide clear action steps with responsibilities. Clients should understand and agree before implementing.'
@@ -423,10 +423,10 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The investment assets-to-net worth ratio helps assess:',
     options: [
-      'A) Credit score',
+      'D) Insurance needs',
       'B) What percentage of net worth is in income-producing assets versus personal use assets',
+      'A) Credit score',
       'C) Tax liability',
-      'D) Insurance needs'
     ],
     correctAnswer: 1,
     explanation: 'Investment assets-to-net worth: investment/income-producing assets ÷ total net worth. Higher ratio means wealth is in productive assets generating returns or income. Lower ratio may indicate too much in personal use (home, cars) that don\'t generate income. Important for retirement readiness—need investment assets to provide retirement income.'
@@ -442,12 +442,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A growing annuity (serial payment) calculation is needed when:',
     options: [
+      'D) Payments are random',
       'A) Payments are equal',
       'B) Payments increase at a constant rate each period, such as salary savings increasing with raises',
       'C) There are no payments',
-      'D) Payments are random'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Growing annuity: payment grows at constant rate g. PV formula: PMT × [(1 - ((1+g)/(1+r))^n) / (r - g)]. Applications: retirement spending rising with inflation, salary savings increasing with raises, tuition growing each year. Requires different formula than level annuity. Important for realistic projections when payments aren\'t constant.'
   },
   {
@@ -461,12 +461,12 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'During the contraction phase of a business cycle, appropriate financial planning adjustments might include:',
     options: [
+      'D) Ignoring market conditions',
       'A) Aggressive investing',
       'B) Building emergency reserves, reducing debt, evaluating job security, and potentially finding buying opportunities',
       'C) Increasing discretionary spending',
-      'D) Ignoring market conditions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Contraction (recession) planning: increase liquidity, build emergency fund, reduce variable debt, evaluate job security (update skills, network), cut discretionary spending, possibly find investment opportunities (if employed/secure). Counter-cyclical: add to investments when others sell (dollar-cost averaging works better in down markets).'
   },
   {
@@ -481,11 +481,11 @@ export const CFP_GEN_BATCH9_QUESTIONS: Question[] = [
     question: 'Human capital in financial planning represents:',
     options: [
       'A) Current salary only',
+      'D) Social Security benefits',
       'B) The present value of expected future earnings, which is typically the largest asset for young workers',
       'C) Investment account balance',
-      'D) Social Security benefits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Human capital: PV of future earnings potential. For young workers, often largest "asset" (millions in lifetime earnings). Implications: protect with disability insurance, invest financial capital differently (stable job = can take more investment risk), invest in education to increase human capital, decreases over career as converted to financial capital.'
   }
 ];

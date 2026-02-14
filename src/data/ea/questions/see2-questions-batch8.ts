@@ -19,12 +19,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'For the Section 199A QBI deduction, specified service trades or businesses (SSTBs) have the deduction:',
     options: [
-      'Fully available regardless of income',
       'Phased out above certain taxable income thresholds',
+      'Fully available regardless of income',
+      'Only available if the business has employees',
       'Never available',
-      'Only available if the business has employees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SSTBs (health, law, accounting, consulting, etc.) can take the QBI deduction only if taxable income is below the threshold ($191,950 single/$383,900 MFJ for 2025). The deduction phases out completely above the threshold.',
     reference: 'IRC §199A(d)',
   },
@@ -39,12 +39,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'An activity is presumed to be for profit if it shows a profit in:',
     options: [
-      '1 out of 3 years',
+      '4 out of 5 years',
       '2 out of 5 years',
+      '1 out of 3 years',
       '3 out of 5 years',
-      '4 out of 5 years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under the hobby loss rules, an activity is presumed to be engaged in for profit if it produces a profit in at least 3 of the last 5 tax years (2 out of 7 years for horse breeding and racing activities).',
     reference: 'IRC §183',
   },
@@ -59,12 +59,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Schedule C-EZ was available for sole proprietors with:',
     options: [
-      'Any amount of business expenses',
+      'This form no longer exists',
       'Business expenses of $5,000 or less and meeting other requirements',
+      'Any amount of business expenses',
       'Gross receipts over $100,000',
-      'This form no longer exists'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Schedule C-EZ was discontinued after 2018. All sole proprietors now use Schedule C regardless of the complexity of their business or amount of expenses.',
     reference: 'IRS Schedule C Instructions',
   },
@@ -83,12 +83,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'The built-in gains tax applies to S corporations that:',
     options: [
+      'Earn over $1 million in revenue',
       'Have always been S corporations',
       'Converted from C corporation status within the recognition period',
       'Have more than 50 shareholders',
-      'Earn over $1 million in revenue'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The built-in gains tax (21%) applies to S corporations that converted from C corporation status if they dispose of assets with built-in gains during the recognition period (currently 5 years). This prevents avoiding corporate-level tax through conversion.',
     reference: 'IRC §1374',
   },
@@ -103,12 +103,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'An S corporation with accumulated E&P may owe tax on excess net passive income if passive investment income exceeds:',
     options: [
+      '75% of gross receipts',
       '10% of gross receipts',
       '25% of gross receipts',
       '50% of gross receipts',
-      '75% of gross receipts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If an S corporation has accumulated E&P from C corporation years and passive investment income exceeds 25% of gross receipts, it owes tax on excess net passive income. If this occurs for 3 consecutive years, S status terminates.',
     reference: 'IRC §1375',
   },
@@ -124,11 +124,11 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     question: 'Shareholder debt basis in an S corporation is created by:',
     options: [
       'Any loan to the corporation',
+      'Loans from related parties',
       'Direct loans from the shareholder to the corporation only',
       'Bank loans guaranteed by the shareholder',
-      'Loans from related parties'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Debt basis is created only by direct loans from the shareholder to the S corporation. Guarantees of corporate debt or loans from banks do not create debt basis, even if the shareholder is personally liable.',
     reference: 'IRC §1366(d)(1)(B)',
   },
@@ -145,8 +145,8 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     options: [
       'Tax-free fringe benefits',
       'Included in the shareholder\'s W-2 wages but deductible as self-employed health insurance',
+      'Not deductible by anyone',
       'Deductible on Schedule C',
-      'Not deductible by anyone'
     ],
     correctAnswer: 1,
     explanation: '2% or more S corporation shareholder-employees are treated like partners for fringe benefit purposes. Health insurance premiums are included in W-2 wages (not subject to FICA) and can be deducted as self-employed health insurance.',
@@ -167,12 +167,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Research and Development (R&D) tax credit is:',
     options: [
-      'A deduction against income',
       'A credit against tax liability',
+      'A deduction against income',
+      'Expired after 2020',
       'Only available to pharmaceutical companies',
-      'Expired after 2020'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The R&D credit is a tax credit (not a deduction) for qualified research expenses. It was made permanent in 2015. Small businesses may also use a portion to offset payroll taxes.',
     reference: 'IRC §41',
   },
@@ -187,12 +187,12 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     skillLevel: 'Application',
     question: 'Goodwill and other Section 197 intangibles are amortized over:',
     options: [
-      '5 years',
       '7 years',
+      '39 years',
+      '5 years',
       '15 years',
-      '39 years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Section 197 intangibles, including goodwill, going concern value, covenants not to compete, franchises, and trademarks acquired in connection with a business acquisition, are amortized ratably over 15 years.',
     reference: 'IRC §197',
   },
@@ -209,8 +209,8 @@ export const SEE2_QUESTIONS_BATCH8: Question[] = [
     options: [
       '$1,000',
       '$5,000',
+      '$50,000',
       '$10,000',
-      '$50,000'
     ],
     correctAnswer: 1,
     explanation: 'A corporation can deduct up to $5,000 of organizational costs in the year it begins business. The $5,000 is reduced by the amount organizational costs exceed $50,000. Remaining costs are amortized over 180 months.',

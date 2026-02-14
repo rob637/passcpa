@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
+import { getFormattedCount, getFormattedTotal, LESSON_COUNTS, FLASHCARD_COUNTS } from '../../utils/courseStats';
+import { EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
 import { 
   BookOpen, 
   Brain, 
@@ -18,6 +20,8 @@ import {
   Search,
   Lock,
   Globe,
+  Menu,
+  X,
 } from 'lucide-react';
 
 // Course card data for the 6 certification programs
@@ -29,7 +33,9 @@ interface CourseInfo {
   icon: React.ElementType;
   color: string;
   bgGradient: string;
-  stats: { questions: string; passRate?: string };
+  stats: { questions: string; lessons: number; flashcards: number };
+  founderPrice: number;  // annual
+  regularPrice: number;  // annual
   features: string[];
   path: string;
   available: boolean;
@@ -44,7 +50,9 @@ const COURSES: CourseInfo[] = [
     icon: Calculator,
     color: 'blue',
     bgGradient: 'from-blue-500 to-blue-600',
-    stats: { questions: '3,300+', passRate: '50%' },
+    stats: { questions: getFormattedCount('cpa'), lessons: LESSON_COUNTS.cpa, flashcards: FLASHCARD_COUNTS.cpa },
+    founderPrice: EXAM_PRICING.cpa.founderAnnual,
+    regularPrice: EXAM_PRICING.cpa.annual,
     features: ['2025 & 2026 Blueprint', 'Core + Discipline Format', 'TBS Simulations', 'Written Communication'],
     path: '/cpa',
     available: true,
@@ -57,7 +65,9 @@ const COURSES: CourseInfo[] = [
     icon: FileText,
     color: 'emerald',
     bgGradient: 'from-emerald-500 to-emerald-600',
-    stats: { questions: '2,100+', passRate: '70%' },
+    stats: { questions: getFormattedCount('ea'), lessons: LESSON_COUNTS.ea, flashcards: FLASHCARD_COUNTS.ea },
+    founderPrice: EXAM_PRICING.ea.founderAnnual,
+    regularPrice: EXAM_PRICING.ea.annual,
     features: ['SEE Parts 1-3', 'Tax Code Coverage', 'IRS Procedures', 'Representation Rules'],
     path: '/ea-prep',
     available: true,
@@ -70,7 +80,9 @@ const COURSES: CourseInfo[] = [
     icon: BarChart3,
     color: 'emerald',
     bgGradient: 'from-emerald-600 to-emerald-700',
-    stats: { questions: '1,600+', passRate: '45%' },
+    stats: { questions: getFormattedCount('cma'), lessons: LESSON_COUNTS.cma, flashcards: FLASHCARD_COUNTS.cma },
+    founderPrice: EXAM_PRICING.cma.founderAnnual,
+    regularPrice: EXAM_PRICING.cma.annual,
     features: ['Financial Planning', 'Performance Management', 'Cost Management', 'Internal Controls'],
     path: '/cma',
     available: true,
@@ -83,7 +95,9 @@ const COURSES: CourseInfo[] = [
     icon: Search,
     color: 'amber',
     bgGradient: 'from-amber-500 to-amber-600',
-    stats: { questions: '1,100+', passRate: '40%' },
+    stats: { questions: getFormattedCount('cia'), lessons: LESSON_COUNTS.cia, flashcards: FLASHCARD_COUNTS.cia },
+    founderPrice: EXAM_PRICING.cia.founderAnnual,
+    regularPrice: EXAM_PRICING.cia.annual,
     features: ['Internal Audit Basics', 'Practice of Internal Auditing', 'Business Knowledge', 'Risk Management'],
     path: '/cia',
     available: true,
@@ -96,7 +110,9 @@ const COURSES: CourseInfo[] = [
     icon: TrendingUp,
     color: 'green',
     bgGradient: 'from-green-500 to-green-600',
-    stats: { questions: '2,100+', passRate: '67%' },
+    stats: { questions: getFormattedCount('cfp'), lessons: LESSON_COUNTS.cfp, flashcards: FLASHCARD_COUNTS.cfp },
+    founderPrice: EXAM_PRICING.cfp.founderAnnual,
+    regularPrice: EXAM_PRICING.cfp.annual,
     features: ['8 Knowledge Domains', 'Wealth Management', 'Financial Planning', 'Fiduciary Standards'],
     path: '/cfp',
     available: true,
@@ -109,7 +125,9 @@ const COURSES: CourseInfo[] = [
     icon: Shield,
     color: 'cyan',
     bgGradient: 'from-cyan-500 to-cyan-600',
-    stats: { questions: '1,100+', passRate: '50%' },
+    stats: { questions: getFormattedCount('cisa'), lessons: LESSON_COUNTS.cisa, flashcards: FLASHCARD_COUNTS.cisa },
+    founderPrice: EXAM_PRICING.cisa.founderAnnual,
+    regularPrice: EXAM_PRICING.cisa.annual,
     features: ['IT Audit Process', 'Governance & Mgmt', 'System Acquisition', 'Asset Protection'],
     path: '/cisa',
     available: true,
@@ -175,16 +193,30 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
         </p>
         
         {/* Stats */}
-        <div className="flex gap-4 mb-4">
+        <div className="flex gap-4 mb-2">
           <div>
             <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.questions}</div>
             <div className="text-xs text-slate-500">Questions</div>
           </div>
-          {course.stats.passRate && (
-            <div>
-              <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.passRate}</div>
-              <div className="text-xs text-slate-500">Nat'l Pass Rate</div>
+          <div>
+            <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.lessons}</div>
+            <div className="text-xs text-slate-500">Lessons</div>
+          </div>
+          <div>
+            <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.flashcards}</div>
+            <div className="text-xs text-slate-500">Flashcards</div>
+          </div>
+        </div>
+        {/* Pricing */}
+        <div className={`text-sm mb-4`}>
+          {isFounderPricingActive() ? (
+            <div className="flex items-center gap-2">
+              <span className={`font-bold text-${course.color}-600 dark:text-${course.color}-400`}>${course.founderPrice}/yr</span>
+              <span className="text-slate-400 line-through text-xs">${course.regularPrice}/yr</span>
+              <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded font-medium">Founders</span>
             </div>
+          ) : (
+            <span className={`font-semibold text-${course.color}-600 dark:text-${course.color}-400`}>${course.regularPrice}/yr</span>
           )}
         </div>
         
@@ -222,6 +254,7 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
 
 const VoraPrep = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // SEO meta tags
   useSEO({
@@ -283,18 +316,36 @@ const VoraPrep = () => {
             <a href="#why" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Why VoraPrep</a>
             <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
           </div>
-          <div className="flex items-center gap-2 md:gap-3">
-            <Link to="/login" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
-              Sign In
-            </Link>
-            <Link 
-              to="/register" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-xl font-semibold text-sm md:text-base hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Start Free
-            </Link>
-          </div>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-xl animate-fade-in">
+            <div className="px-4 py-4 space-y-1">
+              <a href="#courses" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Certifications</a>
+              <a href="#why" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Why VoraPrep</a>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">About</a>
+              <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-2">
+                <p className="px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Exam Prep</p>
+                <Link to="/cpa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CPA Exam Prep</Link>
+                <Link to="/ea-prep" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">EA Exam Prep</Link>
+                <Link to="/cma" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CMA Exam Prep</Link>
+                <Link to="/cia" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CIA Exam Prep</Link>
+                <Link to="/cfp" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CFP Exam Prep</Link>
+                <Link to="/cisa" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">CISA Exam Prep</Link>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -309,11 +360,11 @@ const VoraPrep = () => {
           <div className="absolute top-40 right-1/4 w-64 h-64 bg-sky-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
 
           <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* Beta Badge */}
+            {/* Trial Badge */}
             <div className="flex justify-center mb-6">
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
                 <Sparkles className="w-4 h-4" />
-                FREE BETA — Full Access, No Credit Card
+                14-Day Free Trial — Full Access, No Credit Card
                 <Sparkles className="w-4 h-4" />
               </div>
             </div>
@@ -367,7 +418,7 @@ const VoraPrep = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                   <BookOpen className="w-6 h-6 text-blue-600" />
-                  10,000+
+                  {getFormattedTotal()}
                 </div>
                 <div className="text-sm text-slate-500">Practice Questions</div>
               </div>
@@ -388,16 +439,16 @@ const VoraPrep = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                   <Globe className="w-6 h-6 text-amber-600" />
-                  $0
+                  Free
                 </div>
-                <div className="text-sm text-slate-500">During Beta</div>
+                <div className="text-sm text-slate-500">14-Day Trial</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Detailed Course Cards Section */}
-        <section id="courses" className="py-8 md:py-12 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section id="courses" className="scroll-mt-20 py-8 md:py-12 px-6 bg-slate-50 dark:bg-slate-900/50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -415,11 +466,24 @@ const VoraPrep = () => {
                 <CourseCard key={course.id} course={course} />
               ))}
             </div>
+
+            {/* Competitor pricing callout */}
+            <div className="mt-10 text-center">
+              <div className="inline-flex items-center gap-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 py-4 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 text-emerald-600" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-slate-900 dark:text-white">70–95% cheaper than traditional review courses</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">Becker, Gleim, Kaplan, and others charge $500–$3,500. VoraPrep starts at $149/yr.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Why VoraPrep Section */}
-        <section id="why" className="py-8 md:py-12 px-6 bg-white dark:bg-slate-950">
+        <section id="why" className="scroll-mt-20 py-8 md:py-12 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -448,7 +512,7 @@ const VoraPrep = () => {
         </section>
 
         {/* About VoraPrep Section */}
-        <section id="about" className="py-8 md:py-12 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <section id="about" className="scroll-mt-20 py-8 md:py-12 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Built by Practitioners, for Candidates
@@ -460,8 +524,8 @@ const VoraPrep = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-                <div className="text-2xl font-bold text-white">100% Free</div>
-                <div className="text-sm text-white/80">During Beta</div>
+                <div className="text-2xl font-bold text-white">Affordable</div>
+                <div className="text-sm text-white/80">Founder Rates Available</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
                 <div className="text-2xl font-bold text-white">AI-First</div>
@@ -482,22 +546,16 @@ const VoraPrep = () => {
               Ready to Start?
             </h2>
             <p className="text-slate-600 dark:text-slate-300 mb-8">
-              Create a free account and begin your certification journey today. No credit card required.
+              Pick your certification above and begin your exam prep journey today. No credit card required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/register" 
+              <a 
+                href="#courses"
                 className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
               >
-                Create Free Account
+                Choose Your Certification
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link 
-                to="/login" 
-                className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-xl text-lg font-bold hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
-              >
-                Sign In
-              </Link>
+              </a>
             </div>
           </div>
         </section>

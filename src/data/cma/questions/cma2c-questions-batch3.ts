@@ -31,12 +31,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Delta sells Products A (CM $20, 40% of sales) and B (CM $30, 60% of sales). Fixed costs are $180,000. What is the breakeven in total units?',
     options: [
-      '6,000 units',
       '7,500 units',
+      '6,000 units',
+      '9,000 units',
       '6,923 units',
-      '9,000 units'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Weighted average CM = (0.40 × $20) + (0.60 × $30) = $8 + $18 = $26. Breakeven units = $180,000 / $26 = 6,923 units.',
     reference: 'Multi-Product CVP',
   },
@@ -51,12 +51,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Company X has CM of $500,000 and operating income of $100,000. If sales increase 10%, operating income will increase by:',
     options: [
-      '10%',
       '20%',
+      '10%',
+      '100%',
       '50%',
-      '100%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Degree of Operating Leverage (DOL) = CM / Operating Income = $500,000 / $100,000 = 5. % change in OI = DOL × % change in sales = 5 × 10% = 50%.',
     reference: 'Operating Leverage',
   },
@@ -72,11 +72,11 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     question: 'Current sales are $800,000 and breakeven sales are $600,000. The margin of safety ratio is:',
     options: [
       '20%',
+      '75%',
       '25%',
       '33%',
-      '75%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Margin of Safety $ = $800,000 - $600,000 = $200,000. MOS Ratio = $200,000 / $800,000 = 25%. This is the cushion before incurring losses.',
     reference: 'Margin of Safety',
   },
@@ -92,11 +92,11 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     question: 'Fixed costs are $200,000, CM ratio is 40%, and target after-tax profit is $90,000. Tax rate is 25%. Required sales are:',
     options: [
       '$725,000',
+      '$620,000',
       '$800,000',
       '$575,000',
-      '$620,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Before-tax profit needed = $90,000 / (1 - 0.25) = $120,000. Required sales = (FC + Target pretax) / CM ratio = ($200,000 + $120,000) / 0.40 = $800,000.',
     reference: 'Target Profit with Taxes',
   },
@@ -115,12 +115,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'When deciding to make or buy, which cost is IRRELEVANT?',
     options: [
+      'Allocated corporate overhead (unavoidable)',
       'Variable manufacturing cost to make',
       'Purchase price from supplier',
       'Avoidable fixed costs if outsourced',
-      'Allocated corporate overhead (unavoidable)'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Unavoidable costs are irrelevant—they continue regardless of the decision. Relevant costs differ between alternatives: variable costs, avoidable fixed costs, and purchase price.',
     reference: 'Make vs Buy Analysis',
   },
@@ -135,12 +135,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Make: Variable cost $8/unit, avoidable fixed $50,000 for 20,000 units. Buy: $10/unit. The best decision is:',
     options: [
-      'Buy—saves $10,000',
       'Make—saves $10,000',
+      'Make—saves $50,000',
+      'Buy—saves $10,000',
       'Indifferent',
-      'Make—saves $50,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Total relevant make cost = Variable ($8 × 20,000) + Avoidable fixed ($50,000) = $160,000 + $50,000 = $210,000. Total buy cost = $10 × 20,000 = $200,000. Buying saves $210,000 − $200,000 = $10,000. The company should buy externally since the outside price is lower than the avoidable internal costs.',
     reference: 'Make vs Buy Calculation',
   },
@@ -155,12 +155,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Evaluation',
     question: 'Continuing the previous scenario: If space freed by buying could be rented for $15,000, the revised decision is:',
     options: [
-      'Still Buy—now saves $25,000',
+      'Need more information',
       'Now Make is better',
+      'Still Buy—now saves $25,000',
       'Indifferent',
-      'Need more information'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The rental income is an opportunity cost of making. Revised: Make = $210,000 + $15,000 opportunity cost = $225,000. Buy = $200,000 with $15,000 rental income = net $185,000. Buy saves $40,000 total.',
     reference: 'Opportunity Cost in Decisions',
   },
@@ -181,8 +181,8 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     options: [
       'The price exceeds full cost including allocated overhead',
       'Price covers variable costs and any incremental fixed costs (with excess capacity)',
+      'The price matches competitors',
       'An existing customer demands a lower price',
-      'The price matches competitors'
     ],
     correctAnswer: 1,
     explanation: 'With excess capacity, accept if price > incremental costs (variable costs + any incremental fixed costs). Allocated fixed costs are sunk/irrelevant if unchanged.',
@@ -199,12 +199,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Variable cost is $35/unit. A special order for 5,000 units at $40 requires $15,000 extra shipping. The order contributes:',
     options: [
-      '$25,000 profit',
       '$10,000 profit',
+      '$25,000 profit',
+      '$0—breakeven',
       '$15,000 loss',
-      '$0—breakeven'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CM per unit = $40 - $35 = $5. Total CM = 5,000 × $5 = $25,000. Less incremental fixed (shipping) = $25,000 - $15,000 = $10,000 contribution to profit.',
     reference: 'Special Order Profitability',
   },
@@ -219,12 +219,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Evaluation',
     question: 'When accepting a special order below normal price, management should consider:',
     options: [
-      'Only the immediate profit impact',
       'Potential price erosion, customer relations, and long-term strategic fit',
+      'Only the immediate profit impact',
+      'Variable costs only',
       'Tax implications only',
-      'Variable costs only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Qualitative factors: Will regular customers demand lower prices? Is this a one-time deal or recurring? Does it align with strategy? Could it lead to more business?',
     reference: 'Qualitative Decision Factors',
   },
@@ -245,8 +245,8 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Increase by $50,000',
       'Decrease by $30,000',
+      'Increase by $80,000',
       'Stay the same',
-      'Increase by $80,000'
     ],
     correctAnswer: 1,
     explanation: 'The line has a segment margin of $30,000 ($80,000 allocated costs - $50,000 loss = $30,000 contribution). Dropping it loses this $30,000 contribution; common costs remain.',
@@ -265,8 +265,8 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     options: [
       'All product costs including allocations',
       'Only avoidable (traceable) costs that would be eliminated',
+      'Only sunk costs',
       'Only variable costs',
-      'Only sunk costs'
     ],
     correctAnswer: 1,
     explanation: 'Relevant costs are those that differ between alternatives. Only avoidable/traceable costs that disappear if the segment is dropped are relevant. Common allocated costs continue.',
@@ -287,12 +287,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Products A (CM $40, 2 machine hrs) and B (CM $45, 3 machine hrs). With limited machine hours, produce:',
     options: [
+      'Neither—stop production',
       'Product A—higher CM per hour ($20/hr vs $15/hr)',
       'Product B—higher total CM',
       'Equal quantities of both',
-      'Neither—stop production'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'When a resource is scarce, maximize CM per unit of the constraint. A: $40/2 = $20/hr. B: $45/3 = $15/hr. Prioritize Product A.',
     reference: 'Constrained Resource Decisions',
   },
@@ -307,12 +307,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'With multiple binding constraints (machine hours AND labor hours), the optimal product mix is determined using:',
     options: [
+      'Historical sales ratios',
       'Simple CM per unit ranking',
       'Linear programming',
       'Gut feeling',
-      'Historical sales ratios'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'When multiple constraints bind simultaneously, linear programming (LP) finds the optimal solution. Simple CM rankings work only for a single constraint.',
     reference: 'Linear Programming',
   },
@@ -331,12 +331,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Full cost is $80, desired markup on cost is 25%. The selling price should be:',
     options: [
-      '$100',
+      '$105',
       '$85',
+      '$100',
       '$96',
-      '$105'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Price = Cost × (1 + Markup%) = $80 × 1.25 = $100. Cost-plus ensures margins but ignores market conditions.',
     reference: 'Cost-Plus Pricing',
   },
@@ -351,10 +351,10 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Target costing determines the allowable cost by:',
     options: [
-      'Adding markup to current costs',
+      'Using historical cost trends',
       'Starting with market price and subtracting required margin',
+      'Adding markup to current costs',
       'Averaging competitor costs',
-      'Using historical cost trends'
     ],
     correctAnswer: 1,
     explanation: 'Target cost = Market price - Required profit margin. This market-driven approach forces cost out of products from the design stage.',
@@ -371,12 +371,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'If price elasticity is -2.0, a 10% price increase will cause quantity demanded to:',
     options: [
-      'Decrease by 20%',
       'Increase by 20%',
+      'Stay the same',
+      'Decrease by 20%',
       'Decrease by 5%',
-      'Stay the same'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Elasticity = % change in quantity / % change in price. -2.0 = X% / 10%. X = -20%. Quantity decreases 20% (elastic demand).',
     reference: 'Price Elasticity of Demand',
   },
@@ -395,12 +395,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Project A: 40% chance of $100K, 60% chance of $50K. Project B: 70% chance of $60K, 30% chance of $80K. Expected value is higher for:',
     options: [
-      'Project A ($70K)',
       'Project B ($66K)',
+      'Project A ($70K)',
+      'They are equal',
       'Project A ($66K)',
-      'They are equal'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'EV(A) = 0.40 × $100K + 0.60 × $50K = $40K + $30K = $70K. EV(B) = 0.70 × $60K + 0.30 × $80K = $42K + $24K = $66K. A has higher EV.',
     reference: 'Expected Value Analysis',
   },
@@ -417,8 +417,8 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Find the optimal solution directly',
       'Test how changes in key variables affect outcomes',
+      'Replace all other analysis methods',
       'Eliminate all uncertainty',
-      'Replace all other analysis methods'
     ],
     correctAnswer: 1,
     explanation: 'Sensitivity analysis tests "what if" scenarios—how changes in assumptions (price, cost, volume) affect the decision outcome, identifying critical variables.',
@@ -435,12 +435,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Decision trees are useful for:',
     options: [
-      'Single-period decisions only',
       'Sequential decisions with uncertainty at multiple stages',
+      'Single-period decisions only',
+      'Replacing judgment with formulas',
       'Eliminating risk completely',
-      'Replacing judgment with formulas'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Decision trees map out sequential decisions and chance events, calculating expected values at each node to identify the optimal strategy over multiple stages.',
     reference: 'Decision Tree Analysis',
   },
@@ -459,12 +459,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Sunk costs are irrelevant to decisions because:',
     options: [
-      'They are small amounts',
       'They have already been incurred and cannot be changed by any future decision',
+      'They are small amounts',
+      'Management chooses to ignore them',
       'They are always fixed costs',
-      'Management chooses to ignore them'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Sunk costs are past costs that cannot be recovered regardless of the decision made. Only future costs that differ between alternatives are relevant.',
     reference: 'Sunk Cost Principle',
   },
@@ -480,11 +480,11 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     question: 'Differential (incremental) analysis focuses on:',
     options: [
       'All costs in the accounting records',
+      'Allocated overhead only',
       'Only the costs and revenues that differ between alternatives',
       'Historical trends',
-      'Allocated overhead only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Differential analysis compares alternatives using only the revenues and costs that differ. This simplifies complex decisions by ignoring elements common to all alternatives.',
     reference: 'Differential Analysis',
   },
@@ -504,11 +504,11 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     question: 'Monte Carlo simulation in decision analysis:',
     options: [
       'Provides a single point estimate',
+      'Is only used in gambling applications',
       'Runs thousands of scenarios with random inputs to model probability distributions of outcomes',
       'Eliminates all uncertainty',
-      'Is only used in gambling applications'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Monte Carlo uses random sampling to generate thousands of possible outcomes based on probability distributions of input variables, providing a range of results and their likelihoods.',
     reference: 'Monte Carlo Simulation',
   },
@@ -523,12 +523,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Real options analysis values:',
     options: [
+      'Accounting profits only',
       'Only the immediate cash flows',
       'The flexibility to adapt and change course as uncertainty resolves',
       'Historical investment returns',
-      'Accounting profits only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Real options recognize value in managerial flexibility: options to expand, abandon, delay, or switch investments as new information becomes available. Traditional NPV misses this value.',
     reference: 'Real Options Analysis',
   },
@@ -543,12 +543,12 @@ export const CMA2C_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In decision-making, game theory is most applicable when:',
     options: [
-      'Decisions are made in isolation',
       'Competitor reactions and strategic interactions must be considered',
+      'Costs are purely fixed',
+      'Decisions are made in isolation',
       'All information is known with certainty',
-      'Costs are purely fixed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Game theory analyzes strategic interactions where outcomes depend on competitors\' actions. It models pricing wars, market entry, and other competitive decisions.',
     reference: 'Game Theory in Business',
   },

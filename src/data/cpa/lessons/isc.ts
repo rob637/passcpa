@@ -4870,7 +4870,7 @@ export const iscLessons: Lesson[] = [
   // ISC: ADDITIONAL INFORMATION SYSTEMS TOPICS
   // =============================================
   {
-    id: 'ISC-IV-005',
+    id: 'ISC-IV-013',
     section: 'ISC',
     title: "Encryption and Cryptography",
     description: "Understand encryption types and cryptographic controls",
@@ -4944,7 +4944,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-006',
+    id: 'ISC-IV-014',
     section: 'ISC',
     title: "Network Security Fundamentals",
     description: "Understand firewalls, VPNs, and network security architecture",
@@ -5019,7 +5019,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-007',
+    id: 'ISC-IV-015',
     section: 'ISC',
     title: "Data Analytics and Visualization",
     description: "Apply data analytics techniques for audit and business insights",
@@ -5089,7 +5089,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-008',
+    id: 'ISC-IV-016',
     section: 'ISC',
     title: "Cloud Computing Models",
     description: "Understand IaaS, PaaS, SaaS and cloud security considerations",
@@ -5159,7 +5159,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-009',
+    id: 'ISC-IV-017',
     section: 'ISC',
     title: "Change Management and SDLC",
     description: "Understand software development lifecycle and change controls",
@@ -5232,7 +5232,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-010',
+    id: 'ISC-IV-018',
     section: 'ISC',
     title: "Identity and Access Management (IAM)",
     description: "Understand authentication, authorization, and access controls",
@@ -5453,7 +5453,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-III-010',
+    id: 'ISC-III-012',
     section: 'ISC',
     title: "IT Audit Techniques",
     description: "Understand IT audit methodology and procedures",
@@ -5667,7 +5667,7 @@ export const iscLessons: Lesson[] = [
   // ISC-IV: EMERGING TECHNOLOGIES
   // ==========================================
   {
-    id: 'ISC-IV-009',
+    id: 'ISC-IV-019',
     section: 'ISC',
     title: "Artificial Intelligence in Accounting",
     description: "Understand AI applications, risks, and governance in accounting",
@@ -5743,7 +5743,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-010',
+    id: 'ISC-IV-020',
     section: 'ISC',
     title: "Blockchain and Distributed Ledger Technology",
     description: "Evaluate blockchain applications and risks in accounting",
@@ -5812,7 +5812,7 @@ export const iscLessons: Lesson[] = [
     }
   },
   {
-    id: 'ISC-IV-011',
+    id: 'ISC-IV-021',
     section: 'ISC',
     title: "Robotic Process Automation (RPA)",
     description: "Implement and control software robots for accounting processes",

@@ -686,6 +686,7 @@ import { CFP_FLASHCARDS_RISK_BATCH2 } from './cfp-flashcards-risk-batch2';
 import { CFP_FLASHCARDS_EST_BATCH2 } from './cfp-flashcards-est-batch2';
 import { CFP_FLASHCARDS_PRO_BATCH2 } from './cfp-flashcards-pro-batch2';
 import { CFP_FLASHCARDS_PSY_BATCH2 } from './cfp-flashcards-psy-batch2';
+import { CFP_MNEMONICS } from './mnemonics';
 
 // Combined flashcards from all batches
 export const CFP_FLASHCARDS: Flashcard[] = [
@@ -698,6 +699,7 @@ export const CFP_FLASHCARDS: Flashcard[] = [
   ...CFP_FLASHCARDS_EST_BATCH2,
   ...CFP_FLASHCARDS_PRO_BATCH2,
   ...CFP_FLASHCARDS_PSY_BATCH2,
+  ...CFP_MNEMONICS as Flashcard[],
 ];
 
 export const FLASHCARD_DOMAINS: { id: FlashcardDomain; name: string; color: string }[] = [

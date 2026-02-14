@@ -22,7 +22,7 @@ import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import {
   doc,
   getDoc,
@@ -98,12 +98,12 @@ const TUTOR_MODES: Record<string, TutorMode> = {
 };
 
 // Smart prompts based on user's weak areas and course
-const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string, _courseId: string = 'cpa', shortName: string = 'CPA'): SmartPrompt[] => {
-  // Generate course-specific base prompts
+const getSmartPrompts = (weakAreas: WeakArea[] = [], _section: string, _courseId: string = 'cpa', shortName: string = 'CPA'): SmartPrompt[] => {
+  // Generate course-specific base prompts (exam-level, not section-level)
   const basePrompts: SmartPrompt[] = [
     {
       icon: HelpCircle,
-      text: `What are the most important concepts in ${section}?`,
+      text: `What are the most important concepts for the ${shortName} exam?`,
       category: 'Concept',
       topics: [],
     },
@@ -115,13 +115,13 @@ const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string, _courseId:
     },
     {
       icon: Target,
-      text: `Walk me through a complex calculation for ${section}`,
+      text: `Walk me through a complex ${shortName} calculation`,
       category: 'Step-by-Step',
       topics: [],
     },
     {
       icon: TrendingUp,
-      text: `What are the most tested topics on the ${section} ${shortName} exam?`,
+      text: `What are the most tested topics on the ${shortName} exam?`,
       category: 'High-Yield',
       topics: [],
     },
@@ -215,7 +215,6 @@ const AITutor: React.FC = () => {
   // Safely cast userProfile
   const profile = userProfile as UserProfile | null;
   const currentSection = profile?.examSection || getDefaultSection(courseId);
-  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Check for context passed from Practice page (via state or URL params)
   useEffect(() => {
@@ -224,10 +223,19 @@ const AITutor: React.FC = () => {
       setReturnTo(location.state.returnTo);
     }
     
+    // Check for context from Practice page
     if (location.state?.context) {
       setContextFromPractice(location.state.context);
       // Clear the state so it doesn't persist on refresh
       window.history.replaceState({}, document.title);
+      return;
+    }
+    
+    // Check for lesson context (from LessonViewer navigation)
+    if (location.state?.lessonTitle) {
+      const lessonContext = `The student is studying: ${location.state.lessonTitle}. They want help understanding this topic. Provide a clear, focused explanation of this topic.`;
+      setContextFromPractice(lessonContext);
+      // Don't clear state yet - let buildGreeting use it first
       return;
     }
     
@@ -298,7 +306,7 @@ const AITutor: React.FC = () => {
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
-    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion for **${sectionInfo?.shortName || course.shortName}**. 🎓\n\n`;
+    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion and **${course.shortName} expert**. 🎓\n\n`;
 
     // Add context about weak areas
     if (weakAreas.length > 0) {
@@ -318,7 +326,7 @@ const AITutor: React.FC = () => {
     message += `**Choose how you'd like to learn:**\n• **Explain** - I'll give you clear, complete explanations\n• **Guide Me** - I'll ask questions to help you think through problems (Socratic method)\n• **Quiz Me** - I'll test your knowledge with questions\n\nWhat would you like to explore?`;
 
     return message;
-  }, [userProfile, sectionInfo?.shortName, weakAreas, weeklyStats, location.state]);
+  }, [userProfile, course.shortName, weakAreas, weeklyStats, location.state]);
 
   // Show greeting after memory loads
   useEffect(() => {
@@ -570,10 +578,10 @@ const AITutor: React.FC = () => {
   return (
     <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 dark:bg-slate-900 page-enter">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 py-2 md:px-4 md:py-3 flex-shrink-0">
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between mb-2 md:mb-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <Button
                 variant="ghost"
                 size="icon"
@@ -583,12 +591,12 @@ const AITutor: React.FC = () => {
               >
                 <ArrowLeft className="w-5 h-5" />
               </Button>
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
-                <Sparkles className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
+                <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-semibold text-slate-900 dark:text-white">Vory</h1>
-                <p className="text-xs text-slate-600 dark:text-slate-400">Your AI Study Companion</p>
+                <h1 className="font-semibold text-sm md:text-base text-slate-900 dark:text-white">Vory</h1>
+                <p className="text-[10px] md:text-xs text-slate-600 dark:text-slate-400">AI Study Companion</p>
               </div>
             </div>
             <Button
@@ -601,8 +609,8 @@ const AITutor: React.FC = () => {
             </Button>
           </div>
 
-          {/* Mode Selector */}
-          <div className="flex gap-2">
+          {/* Mode Selector - more compact on mobile */}
+          <div className="flex gap-1 md:gap-2">
             {Object.values(TUTOR_MODES).map((mode) => {
               const Icon = mode.icon;
               const isActive = tutorMode === mode.id;
@@ -611,7 +619,7 @@ const AITutor: React.FC = () => {
                   key={mode.id}
                   onClick={() => setTutorMode(mode.id)}
                   className={clsx(
-                    'flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all',
+                    'flex-1 flex items-center justify-center gap-1 md:gap-2 px-2 md:px-3 py-1.5 md:py-2 rounded-lg md:rounded-xl text-xs md:text-sm font-medium transition-all',
                     isActive
                       ? mode.color === 'primary'
                         ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
@@ -621,7 +629,7 @@ const AITutor: React.FC = () => {
                       : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
                   )}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
                   <span className="hidden sm:inline">{mode.label}</span>
                 </button>
               );
@@ -786,10 +794,10 @@ const AITutor: React.FC = () => {
         </div>
       )}
 
-      {/* Input Area */}
-      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-3 md:p-4 flex-shrink-0">
+      {/* Input Area - anchored at bottom */}
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-2 md:p-4 flex-shrink-0">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
-          <div className="flex items-end gap-3">
+          <div className="flex items-end gap-2 md:gap-3">
             <div className="flex-1 relative">
               <textarea
                 ref={inputRef}
@@ -808,9 +816,9 @@ const AITutor: React.FC = () => {
                       ? 'Tell me a topic to quiz you on...'
                       : `Ask anything about the ${course.shortName} exam...`
                 }
-                className="input resize-none"
+                className="input resize-none text-sm md:text-base"
                 rows={1}
-                style={{ minHeight: '48px', maxHeight: '120px' }}
+                style={{ minHeight: '44px', maxHeight: '100px' }}
               />
             </div>
             <Button
@@ -823,7 +831,7 @@ const AITutor: React.FC = () => {
               <Send className="w-5 h-5" aria-hidden="true" />
             </Button>
           </div>
-          <p className="text-[10px] text-slate-600 dark:text-slate-400 mt-2 text-center">
+          <p className="text-[9px] md:text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 text-center">
             AI responses are for educational purposes only. Verify important information with authoritative sources.
           </p>
         </form>

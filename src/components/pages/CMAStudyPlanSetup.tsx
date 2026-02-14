@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
 import {
   ChevronLeft,
   ChevronRight,
@@ -17,6 +18,8 @@ import {
   CheckCircle2,
   AlertCircle,
   Sparkles,
+  FileText,
+  FileSpreadsheet,
 } from 'lucide-react';
 import { format } from 'date-fns';
 import clsx from 'clsx';
@@ -81,7 +84,7 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, selectedDate, on
         value={selectedDate}
         min={minDate}
         onChange={(e) => onChange(e.target.value)}
-        className="input-field w-full"
+        className="input w-full"
       />
       {selectedDate && (
         <div className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
@@ -101,8 +104,41 @@ const CMAStudyPlanSetup: React.FC = () => {
     CMA1: '',
     CMA2: '',
   });
+  // Exam format preference: 'essay' (legacy) or 'cbq' (new format)
+  // May-Aug 2026 = transition window (choice), Sept 2026+ = CBQ mandatory
+  const [examFormat, setExamFormat] = useState<'essay' | 'cbq' | null>(null);
 
   const [generatedPlan, setGeneratedPlan] = useState<CMAStudyPlan | null>(null);
+
+  // CBQ transition dates
+  const CBQ_TRANSITION_START = new Date('2026-05-01');
+  const CBQ_MANDATORY_DATE = new Date('2026-09-01');
+
+  // Determine if format selection is needed based on exam dates
+  const getFormatRequirement = (): 'essay-only' | 'choice' | 'cbq-only' | 'none' => {
+    const earliestExamDate = examDates.CMA1 || examDates.CMA2 
+      ? new Date(Math.min(
+          ...[examDates.CMA1, examDates.CMA2]
+            .filter(Boolean)
+            .map(d => new Date(d).getTime())
+        ))
+      : null;
+
+    if (!earliestExamDate) return 'none';
+
+    if (earliestExamDate >= CBQ_MANDATORY_DATE) {
+      return 'cbq-only'; // Sept 2026+: CBQ is mandatory
+    } else if (earliestExamDate >= CBQ_TRANSITION_START) {
+      return 'choice'; // May-Aug 2026: Candidate can choose
+    } else {
+      return 'essay-only'; // Before May 2026: Essay format only
+    }
+  };
+
+  // Determine total steps based on format requirement
+  const formatRequirement = getFormatRequirement();
+  const needsFormatStep = formatRequirement === 'choice';
+  const totalSteps = needsFormatStep ? 4 : 3;
 
   const handleDateChange = (sectionId: CMASectionId, date: string) => {
     setExamDates(prev => ({
@@ -125,14 +161,35 @@ const CMAStudyPlanSetup: React.FC = () => {
       const plan = generateCMAStudyPlan(dates);
       setGeneratedPlan(plan);
       setLoading(false);
-      setStep(3);
+      setStep(totalSteps); // Go to final review step
     }, 1500);
+  };
+
+  // Navigate from step 1 (dates) to next step
+  const handleNextFromDates = () => {
+    if (needsFormatStep) {
+      setStep(2); // Go to format selection
+    } else {
+      // Auto-set format based on requirement
+      if (formatRequirement === 'cbq-only') {
+        setExamFormat('cbq');
+      } else if (formatRequirement === 'essay-only') {
+        setExamFormat('essay');
+      }
+      setStep(needsFormatStep ? 3 : 2); // Go to confirmation
+    }
   };
 
   const handleSavePlan = () => {
     // Save to local storage or backend
     if (generatedPlan) {
-      localStorage.setItem('cma_study_plan', JSON.stringify(generatedPlan));
+      // Include exam format preference in saved data
+      const planWithFormat = {
+        ...generatedPlan,
+        examFormat: examFormat || (formatRequirement === 'cbq-only' ? 'cbq' : 'essay'),
+      };
+      localStorage.setItem('cma_study_plan', JSON.stringify(planWithFormat));
+      localStorage.setItem('cma_exam_format', examFormat || (formatRequirement === 'cbq-only' ? 'cbq' : 'essay'));
       navigate('/cma');
     }
   };
@@ -155,7 +212,7 @@ const CMAStudyPlanSetup: React.FC = () => {
           </p>
         </div>
 
-        <StepIndicator currentStep={step} totalSteps={3} />
+        <StepIndicator currentStep={step} totalSteps={totalSteps} />
 
         {/* Step 1: Exam Dates */}
         {step === 1 && (
@@ -191,7 +248,7 @@ const CMAStudyPlanSetup: React.FC = () => {
             <div className="flex justify-end">
               <Button
                 variant="primary"
-                onClick={() => setStep(2)}
+                onClick={handleNextFromDates}
                 disabled={!examDates.CMA1 && !examDates.CMA2}
                 rightIcon={ChevronRight}
               >
@@ -201,8 +258,103 @@ const CMAStudyPlanSetup: React.FC = () => {
           </div>
         )}
 
-        {/* Step 2: Confirm & Generate */}
-        {step === 2 && (
+        {/* Step 2: Exam Format Selection (only shown during May-Aug 2026 transition window) */}
+        {step === 2 && needsFormatStep && (
+          <div className="space-y-6 animate-in slide-in-from-right fade-in duration-300">
+            <div className="card p-6 bg-white dark:bg-slate-900 border-purple-100 dark:border-purple-900/30 shadow-xl shadow-purple-900/5">
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                <FileSpreadsheet className="w-5 h-5 text-emerald-600" />
+                Choose Your Exam Format
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                Your exam date falls in the transition window (May-August 2026). You can choose between the legacy Essay format or the new Case-Based Questions (CBQ) format.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Essay Option */}
+                <button
+                  onClick={() => setExamFormat('essay')}
+                  className={clsx(
+                    'p-5 rounded-xl border-2 text-left transition-all',
+                    examFormat === 'essay'
+                      ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20'
+                      : 'border-slate-200 dark:border-slate-700 hover:border-slate-300'
+                  )}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+                      <FileText className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">Essay Format</h3>
+                      <p className="text-xs text-slate-500">Legacy format (ends Aug 2026)</p>
+                    </div>
+                  </div>
+                  <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                    <li>• 2 written essays per part</li>
+                    <li>• 30 minutes per essay</li>
+                    <li>• Typed response to scenario</li>
+                  </ul>
+                </button>
+
+                {/* CBQ Option */}
+                <button
+                  onClick={() => setExamFormat('cbq')}
+                  className={clsx(
+                    'p-5 rounded-xl border-2 text-left transition-all relative',
+                    examFormat === 'cbq'
+                      ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20'
+                      : 'border-slate-200 dark:border-slate-700 hover:border-slate-300'
+                  )}
+                >
+                  <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-emerald-500 text-white text-xs font-bold rounded-full">NEW</span>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                      <FileSpreadsheet className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">CBQ Format</h3>
+                      <p className="text-xs text-slate-500">New format (mandatory Sept 2026+)</p>
+                    </div>
+                  </div>
+                  <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                    <li>• 2 case scenarios per part</li>
+                    <li>• 15-20 minutes per case</li>
+                    <li>• Interactive questions (calculations, drag-and-drop, multi-select)</li>
+                  </ul>
+                </button>
+              </div>
+
+              {!examFormat && (
+                <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300 rounded-lg text-sm flex items-start gap-2">
+                  <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  Select your preferred exam format to continue.
+                </div>
+              )}
+            </div>
+
+            <div className="flex justify-between">
+              <Button
+                variant="ghost"
+                onClick={() => setStep(1)}
+                leftIcon={ChevronLeft}
+              >
+                Back
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => setStep(3)}
+                disabled={!examFormat}
+                rightIcon={ChevronRight}
+              >
+                Next Step
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {/* Step 2/3: Confirm & Generate */}
+        {step === (needsFormatStep ? 3 : 2) && (
           <div className="space-y-6 animate-in slide-in-from-right fade-in duration-300">
             <div className="card p-8 text-center bg-white dark:bg-slate-900 border-purple-100 dark:border-purple-900/30">
               <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -212,7 +364,7 @@ const CMAStudyPlanSetup: React.FC = () => {
                 Ready to Generate?
               </h2>
               <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto">
-                Our AI will analyze your timeline and distribute 130+ lessons and 3,000+ questions evenly across your available days.
+                Our AI will analyze your timeline and distribute {COURSE_DISPLAY_STATS.cma.lessons} lessons and {COURSE_DISPLAY_STATS.cma.questions} questions evenly across your available days.
               </p>
               
               <Button
@@ -229,17 +381,17 @@ const CMAStudyPlanSetup: React.FC = () => {
             
             <Button
               variant="ghost"
-              onClick={() => setStep(1)}
+              onClick={() => setStep(needsFormatStep ? 2 : 1)}
               fullWidth
               className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 text-sm"
             >
-              Back to Dates
+              {needsFormatStep ? 'Back to Format Selection' : 'Back to Dates'}
             </Button>
           </div>
         )}
 
-        {/* Step 3: Plan Review */}
-        {step === 3 && generatedPlan && (
+        {/* Step 3/4: Plan Review */}
+        {step === totalSteps && generatedPlan && (
           <div className="space-y-6 animate-in slide-in-from-right fade-in duration-300">
             <div className="card p-6 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-100 dark:border-emerald-800">
               <div className="flex items-start gap-4">

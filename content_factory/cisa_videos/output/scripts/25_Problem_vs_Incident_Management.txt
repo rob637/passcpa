@@ -1,0 +1,9 @@
+Problem vs. Incident Management – Nail it, or risk failing the CISA. This is a GUARANTEED exam topic.
+
+Incident management… it’s about restoring service FAST. Getting users back online, fixing the immediate break. Problem management… that’s about finding the ROOT cause, preventing future incidents. Think of it this way: incident management puts out fires… problem management stops them from starting in the first place. Auditors care because effective problem management reduces risk, improves efficiency, and ultimately saves the organization money. Weak problem management? Expect audit findings.
+
+The trap is… ISACA loves to blur the lines. They'll give you scenarios where an incident keeps recurring. The question will ask what process is most important. The tempting answer? Incident management! Because the system is down! Wrong. The correct answer is problem management. Repeated incidents signal a DEEPER underlying issue that needs investigation. It's not just about fixing the symptom… it's about curing the disease. Always look for keywords like "recurring," "repeated," or "underlying cause."
+
+For example, when auditing a help desk… you notice a high volume of password reset requests. Incident management is handling them fine, but problem management should be analyzing WHY so many resets are needed. Are password policies too complex? Is there a lack of user training? Problem management digs into those questions.
+
+The ONE thing you MUST remember? Incident management fixes the immediate… problem management fixes the future. Get that straight… and you'll crush this on the exam.

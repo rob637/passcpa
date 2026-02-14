@@ -40,6 +40,14 @@
         { "fieldPath": "topicId", "order": "ASCENDING" },
         { "fieldPath": "difficulty", "order": "ASCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "question_history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "section", "order": "ASCENDING" },
+        { "fieldPath": "nextReviewDate", "order": "ASCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []

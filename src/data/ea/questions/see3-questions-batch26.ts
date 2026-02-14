@@ -21,11 +21,11 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     question: 'The Office of Professional Responsibility (OPR) has authority to:',
     options: [
       'Prepare tax returns',
-      'Discipline practitioners who violate Circular 230 regulations',
       'Conduct tax audits',
-      'Issue refunds'
+      'Discipline practitioners who violate Circular 230 regulations',
+      'Issue refunds',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'OPR is the IRS office responsible for establishing and enforcing practitioner conduct standards, including investigating and taking disciplinary action for Circular 230 violations.',
     reference: 'Circular 230 §10.60',
   },
@@ -60,12 +60,12 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under Circular 230, disreputable conduct includes:',
     options: [
-      'Representing clients in Appeals',
       'Conviction of a crime involving dishonesty, giving a false opinion, or knowingly making false statements',
+      'Representing clients in Appeals',
       'Filing an extension request',
-      'Disagreeing with an examiner'
+      'Disagreeing with an examiner',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Disreputable conduct includes conviction of crimes involving dishonesty, giving false opinions, filing frivolous returns, willful violations of tax law, and other conduct specified in §10.51.',
     reference: 'Circular 230 §10.51',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A practitioner may be sanctioned for incompetence if:',
     options: [
-      'They make any error',
       'Their conduct reflects a pattern of providing incompetent representation',
+      'They make any error',
       'A client complains',
-      'They lose a case in Tax Court'
+      'They lose a case in Tax Court',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Incompetence under Circular 230 involves a pattern of failing to possess the knowledge and skill necessary to competently represent clients. Single errors typically don\'t constitute incompetence.',
     reference: 'Circular 230 §10.51',
   },
@@ -100,10 +100,10 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under Circular 230 due diligence, a practitioner must:',
     options: [
-      'Simply sign whatever the client provides',
-      'Make reasonable inquiries if information appears incorrect, inconsistent, or incomplete',
       'Guarantee refund amounts',
-      'Audit all client records'
+      'Make reasonable inquiries if information appears incorrect, inconsistent, or incomplete',
+      'Simply sign whatever the client provides',
+      'Audit all client records',
     ],
     correctAnswer: 1,
     explanation: 'Practitioners have a duty to make reasonable inquiries when information appears incorrect, incomplete, or inconsistent with an important fact. They cannot simply ignore red flags.',
@@ -120,10 +120,10 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A practitioner must:',
     options: [
-      'Take as long as needed on any matter',
-      'Promptly submit records or information requested by the IRS',
       'Ignore IRS requests',
-      'Only respond to court orders'
+      'Promptly submit records or information requested by the IRS',
+      'Take as long as needed on any matter',
+      'Only respond to court orders',
     ],
     correctAnswer: 1,
     explanation: 'Under Circular 230 §10.23, practitioners must promptly submit records or information properly and lawfully requested by the IRS. Unreasonable delay is a violation.',
@@ -140,12 +140,12 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A practitioner must return client records:',
     options: [
+      'At the end of the year',
       'Only if fees are paid',
       'Upon request, regardless of fee disputes (with limited exceptions)',
-      'At the end of the year',
-      'Only by court order'
+      'Only by court order',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under Circular 230 §10.28, practitioners must promptly return client records upon request, as necessary to comply with tax obligations, even if fees are unpaid (with limited exceptions for practitioner work products).',
     reference: 'Circular 230 §10.28',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under Circular 230, a conflict of interest exists when:',
     options: [
+      'The practitioner disagrees with the IRS',
       'A practitioner represents multiple clients',
       'Representation of one client will be directly adverse to another, or there is significant risk representation will be limited',
-      'The practitioner disagrees with the IRS',
-      'The practitioner has too many clients'
+      'The practitioner has too many clients',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A conflict exists when: (1) representation is directly adverse to another client, or (2) there is significant risk representation of one client will be materially limited by responsibilities to another, a former client, or the practitioner\'s own interests.',
     reference: 'Circular 230 §10.29',
   },
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Circular 230 advertising rules prohibit:',
     options: [
+      'Stating qualifications',
       'Any advertising',
       'False, fraudulent, coercive, or misleading statements',
-      'Stating qualifications',
-      'Listing services offered'
+      'Listing services offered',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Practitioners may advertise but must not make false, fraudulent, misleading, or coercive statements. Advertising must be truthful and not contain claims that cannot be substantiated.',
     reference: 'Circular 230 §10.30',
   },
@@ -201,11 +201,11 @@ export const SEE3_QUESTIONS_BATCH26: Question[] = [
     question: 'In disciplinary proceedings, an Administrative Law Judge:',
     options: [
       'Works for the practitioner',
-      'Conducts hearings and issues initial decisions on sanctions',
       'Has no authority',
-      'Only handles criminal cases'
+      'Conducts hearings and issues initial decisions on sanctions',
+      'Only handles criminal cases',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'An ALJ conducts disciplinary hearings under Circular 230 and issues initial decisions. The decision can be appealed to the Secretary of Treasury, with the ALJ decision becoming final if not appealed.',
     reference: 'Circular 230 §10.72, §10.76',
   },

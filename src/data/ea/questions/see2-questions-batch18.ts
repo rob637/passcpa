@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A distribution from a C corporation is a taxable dividend to the extent of:',
     options: [
+      'The fair market value of property distributed',
       'The amount of cash distributed',
       'The corporation\'s current and accumulated earnings and profits (E&P)',
       'The shareholder\'s stock basis',
-      'The fair market value of property distributed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §316(a), a dividend is any distribution made out of either current E&P (as of close of year) or accumulated E&P. Distributions exceeding E&P are return of capital, then capital gain.',
     reference: 'IRC §316(a)',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Application',
     question: 'Which of the following increases a C corporation\'s earnings and profits?',
     options: [
+      'Capital losses in excess of capital gains',
       'Federal income tax paid',
       'Dividends paid to shareholders',
       'Tax-exempt interest income',
-      'Capital losses in excess of capital gains'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Tax-exempt interest income increases E&P even though it doesn\'t increase taxable income. Federal taxes and dividends paid reduce E&P. Excess capital losses don\'t affect E&P beyond net income.',
     reference: 'IRC §312',
   },
@@ -61,11 +61,11 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     question: 'A C corporation distributes property with FMV of $80,000 and basis of $30,000 to a shareholder. The corporation:',
     options: [
       'Recognizes no gain on the distribution',
+      'Recognizes $30,000 gain limited to basis',
       'Recognizes $50,000 gain as if the property were sold at FMV',
       'Deducts $50,000 as a dividend expense',
-      'Recognizes $30,000 gain limited to basis'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §311(b), when a corporation distributes appreciated property, it recognizes gain as if the property were sold for its FMV. The $50,000 gain ($80,000 - $30,000) is recognized.',
     reference: 'IRC §311(b)',
   },
@@ -82,8 +82,8 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     options: [
       'Recognizes a $30,000 loss',
       'Recognizes no loss on the distribution',
+      'Recognizes a capital loss',
       'Can carry the loss back 3 years',
-      'Recognizes a capital loss'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §311(a), a corporation does not recognize loss on distributions of depreciated property to shareholders. The loss is effectively disallowed. The shareholder takes a FMV basis.',
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A stock redemption is treated as a sale or exchange (not a dividend) if it:',
     options: [
-      'Is pro rata to all shareholders',
       'Is substantially disproportionate under IRC §302(b)(2)',
+      'Is pro rata to all shareholders',
+      'Is funded by borrowed money',
       'Reduces the shareholder\'s ownership by any percentage',
-      'Is funded by borrowed money'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §302(b), a redemption receives sale treatment (capital gain/loss) if it\'s substantially disproportionate (ownership drops to less than 80% of prior percentage and below 50%), complete termination, or not essentially equivalent to dividend.',
     reference: 'IRC §302(b)(2)',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Application',
     question: 'Before a redemption, Shareholder A owns 60% of a corporation. After redemption, A owns 35%. Is this substantially disproportionate?',
     options: [
-      'No, because A still owns more than 20%',
       'No, because A\'s ownership must drop below 50%',
+      'Yes, because any reduction qualifies',
+      'No, because A still owns more than 20%',
       'Yes, because 35% is less than 80% of 60% (48%) and less than 50%',
-      'Yes, because any reduction qualifies'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §302(b)(2), substantially disproportionate requires: (1) after redemption, ownership < 80% of pre-redemption percentage (35% < 48%), AND (2) ownership < 50%. Both tests are met here.',
     reference: 'IRC §302(b)(2)',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under stock attribution rules for redemptions, stock owned by a shareholder\'s spouse is:',
     options: [
-      'Never attributed to the shareholder',
+      'Attributed only for complete termination redemptions',
       'Attributed only if they file jointly',
+      'Never attributed to the shareholder',
       'Attributed to the shareholder',
-      'Attributed only for complete termination redemptions'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §318(a)(1), family attribution rules treat stock owned by spouse, children, grandchildren, and parents as owned by the taxpayer. This affects whether a redemption qualifies for sale or exchange treatment.',
     reference: 'IRC §318(a)(1)',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Application',
     question: 'For a complete termination redemption to qualify for sale treatment when family members still own stock, the redeemed shareholder must:',
     options: [
-      'File a joint return with family members',
+      'Own stock for at least 5 years before redemption',
       'Have no interest in the corporation (except as creditor) for 10 years',
+      'File a joint return with family members',
       'File an agreement and have no interest (except as creditor) for 10 years, with other conditions',
-      'Own stock for at least 5 years before redemption'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §302(c)(2), family attribution can be waived for complete terminations if the shareholder files an agreement, doesn\'t acquire any interest (except as creditor) for 10 years, and meets other requirements.',
     reference: 'IRC §302(c)(2)',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §303, a redemption to pay estate taxes and funeral expenses receives sale treatment if:',
     options: [
+      'The redemption occurs within 6 months of death',
       'Any amount of the decedent\'s estate consists of the corporation\'s stock',
       'The corporation\'s stock exceeds 35% of the adjusted gross estate',
       'The estate has at least $5 million in assets',
-      'The redemption occurs within 6 months of death'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §303, stock of a closely held corporation can be redeemed to pay death taxes/funeral expenses with sale treatment if the stock value exceeds 35% of the decedent\'s adjusted gross estate.',
     reference: 'IRC §303(b)(2)(A)',
   },
@@ -201,11 +201,11 @@ export const SEE2_QUESTIONS_BATCH18: Question[] = [
     question: 'When a corporation redeems stock and the redemption qualifies as a sale or exchange:',
     options: [
       'E&P is not affected',
+      'E&P is increased by any gain recognized',
       'E&P is reduced by the full amount paid',
       'E&P is reduced by the ratable share of E&P attributable to the redeemed shares',
-      'E&P is increased by any gain recognized'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under IRC §312(n)(7), when a redemption is treated as an exchange (not a dividend), E&P is reduced by the lesser of the ratable share of E&P or the amount of the distribution.',
     reference: 'IRC §312(n)(7)',
   },

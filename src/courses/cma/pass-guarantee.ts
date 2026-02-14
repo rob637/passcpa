@@ -3,118 +3,106 @@
  * 
  * Defines the pass guarantee terms and requirements for the CMA (Certified Management Accountant) course.
  * CMA exam has 2 parts, each scored 0-500, passing is 360.
+ * 
+ * NOTE: Uses the unified PassGuarantee config from src/config/passGuarantee.ts
+ * This file contains CMA-specific overrides and part-specific requirements.
  */
 
-export interface PassGuaranteeConfig {
-  enabled: boolean;
-  name: string;
-  tagline: string;
-  description: string;
-  requirements: PassGuaranteeRequirement[];
-  refundPolicy: RefundPolicy;
-  eligibilityWindow: EligibilityWindow;
-  supportContact: string;
+import {
+  PassGuaranteeConfig,
+  PassGuaranteeRequirement,
+  ClaimPolicy,
+  ExtensionTerms,
+  PASS_GUARANTEE_CLAIM_POLICY,
+  PASS_GUARANTEE_EXTENSION_TERMS
+} from '../../config/passGuarantee';
+
+// Re-export types for backwards compatibility
+export type { PassGuaranteeConfig, PassGuaranteeRequirement };
+
+// CMA-specific requirements (aligned with unified config but with CMA-specific thresholds)
+const CMA_REQUIREMENTS: PassGuaranteeRequirement[] = [
+  {
+    id: 'pg-min-subscription',
+    title: 'Maintain Active Subscription',
+    description: 'Be subscribed for at least 3 consecutive months before your exam date',
+    metric: 'min_paid_months',
+    threshold: 3,
+    icon: 'CreditCard'
+  },
+  {
+    id: 'pg-lesson-completion',
+    title: 'Complete 80% of Lessons',
+    description: 'Work through at least 80% of the lesson content for the part you\'re studying',
+    metric: 'lesson_completion',
+    threshold: 80,
+    icon: 'BookOpen'
+  },
+  {
+    id: 'pg-question-completion',
+    title: 'Complete 80% of Practice Questions',
+    description: 'Answer at least 80% of the practice questions for that part',
+    metric: 'question_completion',
+    threshold: 80,
+    icon: 'CheckCircle'
+  },
+  {
+    id: 'pg-average-score',
+    title: 'Achieve 70% Average Score',
+    description: 'Maintain a 70% average on practice questions',
+    metric: 'average_score',
+    threshold: 70,
+    icon: 'Target'
+  },
+  {
+    id: 'pg-mock-exams',
+    title: 'Complete All Mock Exams',
+    description: 'Take and complete all available mock exams for that part',
+    metric: 'mock_exam_completion',
+    threshold: 100,
+    icon: 'FileCheck'
+  },
+  {
+    id: 'pg-final-mock',
+    title: 'Score 72%+ on Final Mock',
+    description: 'Achieve a score of 72% or above on your final practice exam (equivalent to 360/500)',
+    metric: 'final_mock_score',
+    threshold: 72,
+    icon: 'Award'
+  },
+  {
+    id: 'pg-flashcards',
+    title: 'Review 80% of Flashcards',
+    description: 'Review at least 80% of the flashcards at least once for that part',
+    metric: 'flashcard_review',
+    threshold: 80,
+    icon: 'Layers'
+  }
+];
+
+export interface CMAPassGuaranteeConfig extends PassGuaranteeConfig {
+  claimPolicy: ClaimPolicy;
+  extensionTerms: ExtensionTerms;
 }
 
-export interface PassGuaranteeRequirement {
-  id: string;
-  title: string;
-  description: string;
-  metric: string;
-  threshold: number;
-  icon: string;
-}
-
-export interface RefundPolicy {
-  type: 'full' | 'partial' | 'credit';
-  percentage: number;
-  description: string;
-  processingDays: number;
-  excludedPlans: string[];
-}
-
-export interface EligibilityWindow {
-  minDaysBeforeExam: number;
-  maxDaysAfterPurchase: number;
-  examAttemptLimit: number;
-  proofRequired: string[];
-}
-
-export const CMA_PASS_GUARANTEE: PassGuaranteeConfig = {
+export const CMA_PASS_GUARANTEE: CMAPassGuaranteeConfig = {
   enabled: true,
   name: 'CMA Pass Guarantee',
-  tagline: 'Pass Both Parts or Your Money Back',
-  description: 'We\'re so confident in our CMA prep course that we offer a full money-back guarantee. Complete the requirements below for each part and pass your exam, or receive a full refund for that part.',
+  tagline: 'Pass or Study Free Until You Do',
+  description: 'We\'re confident you\'ll pass with VoraPrep. Meet our study requirements, take your CMA exam, and if you don\'t pass, we\'ll extend your subscription free for 3 months so you can keep studying.',
   
-  requirements: [
-    {
-      id: 'pg-req-001',
-      title: 'Complete All Lessons',
-      description: 'Work through 100% of the lesson content for the part you\'re studying',
-      metric: 'lesson_completion',
-      threshold: 100,
-      icon: 'BookOpen'
-    },
-    {
-      id: 'pg-req-002',
-      title: 'Complete 80% of Practice Questions',
-      description: 'Answer at least 80% of the practice questions for that part (100 MCQs per part)',
-      metric: 'question_completion',
-      threshold: 80,
-      icon: 'CheckCircle'
-    },
-    {
-      id: 'pg-req-003',
-      title: 'Achieve 75% Average Score',
-      description: 'Maintain a 75% average on practice questions in best attempts',
-      metric: 'average_score',
-      threshold: 75,
-      icon: 'Target'
-    },
-    {
-      id: 'pg-req-004',
-      title: 'Complete All Mock Exams',
-      description: 'Take and complete all available mock exams for that part',
-      metric: 'mock_exam_completion',
-      threshold: 100,
-      icon: 'FileCheck'
-    },
-    {
-      id: 'pg-req-005',
-      title: 'Score 360+ on Final Mock Exam',
-      description: 'Achieve a scaled score of 360 or above on the final practice exam (IMA passing score is 360/500)',
-      metric: 'final_mock_score',
-      threshold: 360,
-      icon: 'Award'
-    },
-    {
-      id: 'pg-req-006',
-      title: 'Review All Flashcards',
-      description: 'Review at least 90% of flashcards at least once for that part',
-      metric: 'flashcard_review',
-      threshold: 90,
-      icon: 'Layers'
-    }
-  ],
+  requirements: CMA_REQUIREMENTS,
   
-  refundPolicy: {
-    type: 'full',
-    percentage: 100,
-    description: 'Full refund of your subscription payment if you meet all requirements but do not pass that part of the CMA exam.',
-    processingDays: 14,
-    excludedPlans: ['free', 'trial']
-  },
-  
-  eligibilityWindow: {
-    minDaysBeforeExam: 30, // Must study for at least 30 days before exam
-    maxDaysAfterPurchase: 365, // Must take exam within 1 year of purchase
-    examAttemptLimit: 1, // Applies to first exam attempt only
+  claimPolicy: {
+    ...PASS_GUARANTEE_CLAIM_POLICY,
     proofRequired: [
-      'IMA score report showing failing score (below 360)',
-      'Screenshot of completed course dashboard for that part',
-      'Exam date within eligibility window'
+      'Official IMA score report showing score below 360',
+      'Score report must show exam date within subscription period',
+      'Score report submitted within 30 days of exam date'
     ]
   },
+  
+  extensionTerms: PASS_GUARANTEE_EXTENSION_TERMS,
   
   supportContact: 'support@voraprep.com'
 };
@@ -155,6 +143,7 @@ export const CMA_PART_REQUIREMENTS = {
 
 // Helper function to check if a user meets pass guarantee requirements for a part
 export interface UserProgress {
+  paidMonthsCount: number;
   lessonCompletion: number;
   questionCompletion: number;
   averageScore: number;
@@ -178,6 +167,9 @@ export function checkPassGuaranteeEligibility(
     let met = false;
     
     switch (req.metric) {
+      case 'min_paid_months':
+        met = progress.paidMonthsCount >= req.threshold;
+        break;
       case 'lesson_completion':
         met = progress.lessonCompletion >= req.threshold;
         break;
@@ -213,14 +205,16 @@ export function checkPassGuaranteeEligibility(
 }
 
 export const PASS_GUARANTEE_SUMMARY = {
-  headline: 'Pass Guaranteed or 100% Money Back',
+  headline: 'Pass Guaranteed or Study Free Until You Do',
   subheadline: 'Complete our proven study plan and pass your CMA exam',
   
   bullets: [
-    'Full refund if you don\'t pass after completing all requirements',
-    'Applies to each of the 2 CMA parts independently',
-    'Valid for 12 months from purchase date',
-    'No hidden fees or complicated claims process'
+    'Must be subscribed for at least 3 months before your exam',
+    'Complete 80% of lessons, questions, and flashcards',
+    'Achieve 70% average score on practice questions',
+    'Take all mock exams and score 72%+ on your final mock',
+    'Submit official IMA score report within 30 days if you don\'t pass',
+    'Get 3 months free extension per section (up to 2 times each)'
   ],
   
   termsLink: '/terms/pass-guarantee',

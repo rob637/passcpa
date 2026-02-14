@@ -55,11 +55,11 @@ describe('cisaAnalytics', () => {
     });
 
     it('sets correct domain weights', () => {
-      expect(analytics.domainMastery['CISA1'].examWeight).toBe(18);
-      expect(analytics.domainMastery['CISA2'].examWeight).toBe(18);
-      expect(analytics.domainMastery['CISA3'].examWeight).toBe(12);
-      expect(analytics.domainMastery['CISA4'].examWeight).toBe(26);
-      expect(analytics.domainMastery['CISA5'].examWeight).toBe(26);
+      expect(analytics.domainMastery['CISA1'].examWeight).toBe(21);
+      expect(analytics.domainMastery['CISA2'].examWeight).toBe(16);
+      expect(analytics.domainMastery['CISA3'].examWeight).toBe(18);
+      expect(analytics.domainMastery['CISA4'].examWeight).toBe(20);
+      expect(analytics.domainMastery['CISA5'].examWeight).toBe(25);
     });
 
     it('initializes CISA-specific metrics', () => {
@@ -499,7 +499,7 @@ describe('cisaAnalytics', () => {
       expect(insights).not.toBeNull();
       expect(insights?.domain).toBe('CISA4');
       expect(insights?.name).toBe('Information Systems Operations and Business Resilience');
-      expect(insights?.examWeight).toBe(26);
+      expect(insights?.examWeight).toBe(20);
     });
 
     it('calculates gap to target', () => {
@@ -569,7 +569,7 @@ describe('cisaAnalytics', () => {
       analytics.lastStudyDate = new Date('2024-01-15');
       
       const json = serializeAnalytics(analytics);
-      const restored = deserializeAnalytics(json);
+      const restored = deserializeAnalytics<CISAAnalytics>(json);
       
       expect(restored.totalQuestionsAttempted).toBe(100);
       expect(restored.overallAccuracy).toBe(75);
@@ -578,7 +578,7 @@ describe('cisaAnalytics', () => {
 
     it('handles null dates', () => {
       const json = serializeAnalytics(analytics);
-      const restored = deserializeAnalytics(json);
+      const restored = deserializeAnalytics<CISAAnalytics>(json);
       
       expect(restored.lastStudyDate).toBeNull();
     });

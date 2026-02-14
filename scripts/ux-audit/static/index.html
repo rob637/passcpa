@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoraPrep UX Audit Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #263348;
+      --bg-input: #0f172a;
+      --border: #334155;
+      --border-focus: #3b82f6;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --primary-light: rgba(59,130,246,0.15);
+      --success: #22c55e;
+      --success-light: rgba(34,197,94,0.15);
+      --warning: #f59e0b;
+      --warning-light: rgba(245,158,11,0.15);
+      --error: #ef4444;
+      --error-light: rgba(239,68,68,0.15);
+      --purple: #a78bfa;
+      --purple-light: rgba(167,139,250,0.15);
+      --radius: 10px;
+      --radius-sm: 6px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+    .app { display: flex; min-height: 100vh; }
+
+    .sidebar {
+      width: 240px;
+      background: var(--bg-card);
+      border-right: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .sidebar-logo {
+      padding: 0 20px 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    .sidebar-logo h1 {
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sidebar-logo p {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: all 0.15s;
+      border-left: 3px solid transparent;
+    }
+
+    .nav-item:hover { background: var(--bg-card-hover); color: var(--text); }
+    .nav-item.active {
+      color: var(--primary);
+      background: var(--primary-light);
+      border-left-color: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+
+    .main {
+      flex: 1;
+      padding: 32px;
+      overflow-y: auto;
+      max-height: 100vh;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Grid */
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    @media (max-width: 1200px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 900px) {
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .sidebar { width: 60px; }
+      .sidebar .nav-label, .sidebar-logo p { display: none; }
+      .sidebar-logo h1 { font-size: 14px; }
+    }
+
+    /* Forms */
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    }
+
+    .form-row { margin-bottom: 16px; }
+    .form-row-inline { display: flex; gap: 12px; align-items: end; }
+    .form-row-inline > * { flex: 1; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: var(--bg-card-hover);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: var(--border); }
+
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+    .btn-success:hover { background: #16a34a; }
+
+    .btn-sm { padding: 6px 12px; font-size: 13px; }
+    .btn-lg { padding: 12px 28px; font-size: 16px; }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-blue { background: var(--primary-light); color: var(--primary); }
+    .badge-green { background: var(--success-light); color: var(--success); }
+    .badge-yellow { background: var(--warning-light); color: var(--warning); }
+    .badge-red { background: var(--error-light); color: var(--error); }
+    .badge-purple { background: var(--purple-light); color: var(--purple); }
+
+    /* Task cards */
+    .task-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .task-card:hover {
+      border-color: var(--primary);
+      background: var(--bg-card-hover);
+    }
+
+    .task-card.selected {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+    }
+
+    .task-card .task-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .task-card .task-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .task-card .task-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .task-card .task-meta {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .task-card .checkmark {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: all 0.15s;
+    }
+
+    .task-card.selected .checkmark {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    /* Course pills */
+    .course-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .course-pill {
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+
+    .course-pill:hover { border-color: var(--primary); }
+    .course-pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    /* Status indicator */
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status-dot.green { background: var(--success); }
+    .status-dot.yellow { background: var(--warning); }
+    .status-dot.red { background: var(--error); }
+    .status-dot.blue { background: var(--primary); }
+    .status-dot.gray { background: var(--text-dim); }
+
+    /* Log viewer */
+    .log-viewer {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .log-entry { padding: 1px 0; }
+    .log-entry .log-time { color: var(--text-dim); margin-right: 8px; }
+    .log-entry.info .log-msg { color: var(--text-muted); }
+    .log-entry.success .log-msg { color: var(--success); }
+    .log-entry.error .log-msg { color: var(--error); }
+    .log-entry.warning .log-msg { color: var(--warning); }
+
+    /* Run history */
+    .run-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+    }
+
+    .run-row:hover { background: var(--bg-card-hover); }
+    .run-row:last-child { border-bottom: none; }
+
+    .run-info { display: flex; align-items: center; gap: 12px; }
+    .run-actions { display: flex; gap: 8px; }
+
+    /* Report viewer */
+    .report-content {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      line-height: 1.7;
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .report-content h1 { font-size: 20px; margin-bottom: 16px; }
+    .report-content h2 { font-size: 17px; margin: 20px 0 10px; color: var(--primary); }
+    .report-content h3 { font-size: 15px; margin: 16px 0 8px; color: var(--text-muted); }
+    .report-content p { margin-bottom: 8px; color: var(--text-muted); }
+    .report-content ul { margin: 8px 0 8px 20px; color: var(--text-muted); }
+    .report-content table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    .report-content th, .report-content td {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+      font-size: 13px;
+    }
+    .report-content th { background: var(--bg-card); font-weight: 600; }
+    .report-content strong { color: var(--text); }
+    .report-content code {
+      background: var(--bg-card);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    /* Banner */
+    .banner {
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .banner-warning {
+      background: var(--warning-light);
+      border: 1px solid rgba(245,158,11,0.3);
+      color: var(--warning);
+    }
+
+    .banner-info {
+      background: var(--primary-light);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: var(--primary);
+    }
+
+    .banner-success {
+      background: var(--success-light);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: var(--success);
+    }
+
+    /* Misc */
+    .text-muted { color: var(--text-muted); }
+    .text-dim { color: var(--text-dim); }
+    .text-sm { font-size: 13px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-4 { margin-top: 16px; }
+    .mb-4 { margin-bottom: 16px; }
+    .flex { display: flex; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-2 { gap: 8px; }
+    .gap-3 { gap: 12px; }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+    }
+
+    .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+    .empty-state p { font-size: 15px; margin-bottom: 8px; }
+
+    /* Spinner */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    /* Toast */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toast {
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: slideIn 0.2s ease;
+      max-width: 400px;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .toast-success { background: #166534; color: #bbf7d0; }
+    .toast-error { background: #991b1b; color: #fecaca; }
+    .toast-info { background: #1e40af; color: #bfdbfe; }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-logo">
+        <h1>🔍 UX Audit</h1>
+        <p>VoraPrep</p>
+      </div>
+
+      <div class="nav-item active" data-page="run" onclick="showPage('run')">
+        <span class="icon">▶️</span>
+        <span class="nav-label">Run Audit</span>
+      </div>
+      <div class="nav-item" data-page="history" onclick="showPage('history')">
+        <span class="icon">📋</span>
+        <span class="nav-label">Run History</span>
+      </div>
+      <div class="nav-item" data-page="reports" onclick="showPage('reports')">
+        <span class="icon">📄</span>
+        <span class="nav-label">Reports</span>
+      </div>
+      <div class="nav-item" data-page="settings" onclick="showPage('settings')">
+        <span class="icon">⚙️</span>
+        <span class="nav-label">Settings</span>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <!-- ============================================================ -->
+      <!-- RUN AUDIT PAGE -->
+      <!-- ============================================================ -->
+      <div id="page-run" class="page active">
+        <div id="api-key-banner"></div>
+
+        <div class="flex justify-between items-center mb-4">
+          <div>
+            <h2 style="font-size:24px; font-weight:700;">Run Audit</h2>
+            <p class="text-muted text-sm mt-2">Select a course and tasks to audit</p>
+          </div>
+          <div class="flex gap-2">
+            <button class="btn btn-secondary btn-sm" onclick="selectSuite('smoke')">🔥 Smoke Test</button>
+            <button class="btn btn-secondary btn-sm" onclick="selectSuite('full')">📝 Full Audit</button>
+            <button class="btn btn-secondary btn-sm" onclick="clearSelection()">Clear</button>
+          </div>
+        </div>
+
+        <!-- Course selection -->
+        <div class="card">
+          <h3>1. Select Course</h3>
+          <div class="course-pills" id="course-pills"></div>
+        </div>
+
+        <!-- Task selection -->
+        <div class="card">
+          <h3>2. Select Tasks <span id="task-count" class="text-dim text-sm" style="font-weight:400;"></span></h3>
+          <div class="grid grid-4" id="task-grid"></div>
+        </div>
+
+        <!-- Run controls -->
+        <div class="card">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <label style="margin:0; display:flex; align-items:center; gap:6px; cursor:pointer;">
+                <input type="checkbox" id="headless-toggle" checked style="width:auto;">
+                Headless
+              </label>
+              <span class="text-dim text-sm" id="selected-summary">No tasks selected</span>
+            </div>
+            <button class="btn btn-primary btn-lg" id="run-btn" onclick="startAudit()" disabled>
+              ▶️ Run Audit
+            </button>
+          </div>
+        </div>
+
+        <!-- Live progress -->
+        <div id="live-progress" style="display:none;">
+          <div class="card">
+            <div class="flex justify-between items-center mb-4">
+              <h3 style="margin:0;">Live Progress</h3>
+              <div class="flex items-center gap-2">
+                <div class="spinner"></div>
+                <span class="text-sm text-muted" id="progress-status">Running...</span>
+              </div>
+            </div>
+            <div class="log-viewer" id="log-viewer"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- HISTORY PAGE -->
+      <!-- ============================================================ -->
+      <div id="page-history" class="page">
+        <h2 style="font-size:24px; font-weight:700; margin-bottom:20px;">Run History</h2>
+        <div class="card" id="history-card">
+          <div id="history-list"></div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- REPORTS PAGE -->
+      <!-- ============================================================ -->
+      <div id="page-reports" class="page">
+        <h2 style="font-size:24px; font-weight:700; margin-bottom:20px;">Reports</h2>
+
+        <div class="grid grid-2">
+          <div class="card" style="max-height:80vh; overflow-y:auto;">
+            <h3>Saved Reports</h3>
+            <div id="report-list"></div>
+          </div>
+          <div class="card" style="max-height:80vh; overflow-y:auto;">
+            <h3 id="report-viewer-title">Select a report</h3>
+            <div id="report-viewer">
+              <div class="empty-state">
+                <div class="icon">📄</div>
+                <p>Select a report from the list to view it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- SETTINGS PAGE -->
+      <!-- ============================================================ -->
+      <div id="page-settings" class="page">
+        <h2 style="font-size:24px; font-weight:700; margin-bottom:20px;">Settings</h2>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h2>🔑 API Key</h2>
+            <div class="form-row">
+              <label>Anthropic API Key</label>
+              <div class="form-row-inline">
+                <input type="password" id="api-key-input" placeholder="sk-ant-..." />
+                <button class="btn btn-primary" onclick="saveApiKey()" style="flex:0;">Save</button>
+              </div>
+              <p class="text-dim text-sm mt-2">Required. Get one at <a href="https://console.anthropic.com/settings/keys" target="_blank" style="color:var(--primary)">console.anthropic.com</a></p>
+            </div>
+            <div id="key-status" class="mt-2"></div>
+          </div>
+
+          <div class="card">
+            <h2>🌐 App Connection</h2>
+            <div class="form-row">
+              <label>App URL</label>
+              <input type="url" id="settings-url" placeholder="http://localhost:5173" />
+            </div>
+            <div class="form-row">
+              <label>Test Email</label>
+              <input type="email" id="settings-email" placeholder="test@voraprep.com" />
+            </div>
+            <div class="form-row">
+              <label>Test Password</label>
+              <input type="password" id="settings-password" placeholder="••••••••" />
+            </div>
+            <button class="btn btn-primary mt-2" onclick="saveSettings()">Save Settings</button>
+          </div>
+
+          <div class="card">
+            <h2>🤖 Agent Settings</h2>
+            <div class="form-row">
+              <label>LLM Model</label>
+              <select id="settings-model">
+                <option value="claude-sonnet-4-20250514">Claude Sonnet 4</option>
+                <option value="claude-opus-4-20250514">Claude Opus 4</option>
+                <option value="claude-3-5-sonnet-20241022">Claude 3.5 Sonnet</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Max Steps per Audit</label>
+              <input type="number" id="settings-max-steps" min="10" max="200" value="50" />
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>📖 Quick Start</h2>
+            <div style="font-size:14px; color:var(--text-muted); line-height:1.8;">
+              <p><strong>1.</strong> Paste your Anthropic API key above</p>
+              <p><strong>2.</strong> Make sure your dev server is running (<code>npm run dev</code>)</p>
+              <p><strong>3.</strong> Go to <strong>Run Audit</strong>, pick a course and tasks</p>
+              <p><strong>4.</strong> Hit <strong>Run Audit</strong> and watch the agent work</p>
+              <p><strong>5.</strong> View results in <strong>Reports</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script>
+    // ====================================================================
+    // State
+    // ====================================================================
+    let config = {};
+    let selectedCourse = null;
+    let selectedTasks = new Set();
+    let activeRunIds = [];
+    let pollingInterval = null;
+
+    const TASK_ICONS = {
+      'login': '🔐', 'signup': '📝', 'dashboard': '📊', 'navigation': '🧭',
+      'practice': '✏️', 'exam-simulator': '🎓', 'flashcards': '🃏',
+      'lessons': '📖', 'settings': '⚙️', 'dark-mode': '🌙',
+      'responsive': '📱', 'accessibility': '♿', 'landing': '🏠',
+    };
+
+    // ====================================================================
+    // Init
+    // ====================================================================
+    async function init() {
+      try {
+        const res = await fetch('/api/config');
+        config = await res.json();
+        renderCoursePills();
+        renderTaskGrid();
+        renderSettings();
+        renderApiKeyBanner();
+      } catch (e) {
+        toast('Failed to load config: ' + e.message, 'error');
+      }
+    }
+
+    // ====================================================================
+    // Navigation
+    // ====================================================================
+    function showPage(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('page-' + page).classList.add('active');
+      document.querySelector(`.nav-item[data-page="${page}"]`).classList.add('active');
+
+      if (page === 'history') loadHistory();
+      if (page === 'reports') loadReports();
+    }
+
+    // ====================================================================
+    // Course Selection
+    // ====================================================================
+    function renderCoursePills() {
+      const container = document.getElementById('course-pills');
+      container.innerHTML = '';
+      for (const [id, course] of Object.entries(config.courses || {})) {
+        const pill = document.createElement('div');
+        pill.className = 'course-pill';
+        pill.dataset.course = id;
+        pill.textContent = id.toUpperCase();
+        pill.title = course.name;
+        pill.onclick = () => selectCourse(id);
+        container.appendChild(pill);
+      }
+    }
+
+    function selectCourse(courseId) {
+      selectedCourse = selectedCourse === courseId ? null : courseId;
+      document.querySelectorAll('.course-pill').forEach(p => {
+        p.classList.toggle('active', p.dataset.course === selectedCourse);
+      });
+      updateSummary();
+    }
+
+    // ====================================================================
+    // Task Selection
+    // ====================================================================
+    function renderTaskGrid() {
+      const grid = document.getElementById('task-grid');
+      grid.innerHTML = '';
+      for (const [id, task] of Object.entries(config.tasks || {})) {
+        const card = document.createElement('div');
+        card.className = 'task-card';
+        card.dataset.task = id;
+        card.onclick = () => toggleTask(id);
+        card.innerHTML = `
+          <div class="checkmark"></div>
+          <div class="task-icon">${TASK_ICONS[id] || '🔍'}</div>
+          <div class="task-name">${task.name.replace(' Audit', '')}</div>
+          <div class="task-desc">${task.description}</div>
+          <div class="task-meta">
+            ${task.requires_auth ? '<span class="badge badge-yellow">Auth</span>' : '<span class="badge badge-green">Public</span>'}
+            ${task.requires_course ? '<span class="badge badge-blue">Course</span>' : ''}
+            <span class="badge badge-purple">~${task.estimated_steps} steps</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    function toggleTask(taskId) {
+      if (selectedTasks.has(taskId)) {
+        selectedTasks.delete(taskId);
+      } else {
+        selectedTasks.add(taskId);
+      }
+      document.querySelectorAll('.task-card').forEach(c => {
+        c.classList.toggle('selected', selectedTasks.has(c.dataset.task));
+        const cm = c.querySelector('.checkmark');
+        cm.textContent = selectedTasks.has(c.dataset.task) ? '✓' : '';
+      });
+      updateSummary();
+    }
+
+    function selectSuite(suite) {
+      const tasks = config.suites?.[suite] || [];
+      selectedTasks = new Set(tasks);
+      document.querySelectorAll('.task-card').forEach(c => {
+        c.classList.toggle('selected', selectedTasks.has(c.dataset.task));
+        const cm = c.querySelector('.checkmark');
+        cm.textContent = selectedTasks.has(c.dataset.task) ? '✓' : '';
+      });
+      updateSummary();
+    }
+
+    function clearSelection() {
+      selectedTasks.clear();
+      document.querySelectorAll('.task-card').forEach(c => {
+        c.classList.remove('selected');
+        c.querySelector('.checkmark').textContent = '';
+      });
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const count = selectedTasks.size;
+      const courseLabel = selectedCourse ? selectedCourse.toUpperCase() : 'no course';
+      document.getElementById('task-count').textContent = count > 0 ? `(${count} selected)` : '';
+      document.getElementById('selected-summary').textContent = count > 0
+        ? `${count} task${count > 1 ? 's' : ''} · ${courseLabel}`
+        : 'No tasks selected';
+
+      const btn = document.getElementById('run-btn');
+      const needsCourse = [...selectedTasks].some(t => config.tasks?.[t]?.requires_course);
+      btn.disabled = count === 0 || !config.has_api_key || (needsCourse && !selectedCourse);
+    }
+
+    // ====================================================================
+    // Run Audit
+    // ====================================================================
+    async function startAudit() {
+      const headless = document.getElementById('headless-toggle').checked;
+      const tasks = [...selectedTasks];
+      activeRunIds = [];
+
+      document.getElementById('live-progress').style.display = 'block';
+      document.getElementById('log-viewer').innerHTML = '';
+      document.getElementById('progress-status').textContent = `Running 0/${tasks.length}...`;
+      document.getElementById('run-btn').disabled = true;
+
+      appendLog('info', `Starting ${tasks.length} audit task(s)...`);
+      if (selectedCourse) appendLog('info', `Course: ${selectedCourse.toUpperCase()}`);
+
+      let completed = 0;
+      for (const taskId of tasks) {
+        try {
+          appendLog('info', `▶ Starting: ${taskId}`);
+          const res = await fetch('/api/audit/run', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              task_id: taskId,
+              course_id: selectedCourse,
+              headless,
+            }),
+          });
+          const data = await res.json();
+
+          if (data.error) {
+            appendLog('error', `✗ ${taskId}: ${data.error}`);
+            continue;
+          }
+
+          activeRunIds.push(data.run_id);
+          appendLog('info', `  Run ID: ${data.run_id}`);
+
+          // Poll until done
+          await pollUntilDone(data.run_id, taskId);
+          completed++;
+          document.getElementById('progress-status').textContent = `Running ${completed}/${tasks.length}...`;
+
+        } catch (e) {
+          appendLog('error', `✗ ${taskId}: ${e.message}`);
+        }
+      }
+
+      document.getElementById('progress-status').textContent = `Done (${completed}/${tasks.length})`;
+      document.querySelector('#live-progress .spinner').style.display = 'none';
+      document.getElementById('run-btn').disabled = false;
+      appendLog('success', `\n✓ All tasks complete. ${completed}/${tasks.length} succeeded.`);
+      toast(`Audit complete: ${completed}/${tasks.length} tasks`, 'success');
+    }
+
+    async function pollUntilDone(runId, taskId) {
+      return new Promise((resolve) => {
+        const interval = setInterval(async () => {
+          try {
+            const res = await fetch(`/api/audit/status/${runId}`);
+            const run = await res.json();
+
+            if (run.status === 'completed') {
+              clearInterval(interval);
+              appendLog('success', `  ✓ ${taskId} completed`);
+              if (run.report_path) {
+                const filename = run.report_path.split('/').pop();
+                appendLog('info', `  📄 Report: ${filename}`);
+              }
+              resolve();
+            } else if (run.status === 'failed') {
+              clearInterval(interval);
+              appendLog('error', `  ✗ ${taskId} failed: ${run.error || 'Unknown error'}`);
+              resolve();
+            }
+          } catch (e) {
+            clearInterval(interval);
+            resolve();
+          }
+        }, 2000);
+      });
+    }
+
+    // ====================================================================
+    // Log viewer
+    // ====================================================================
+    function appendLog(level, message) {
+      const viewer = document.getElementById('log-viewer');
+      const time = new Date().toLocaleTimeString();
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${level}`;
+      entry.innerHTML = `<span class="log-time">${time}</span><span class="log-msg">${escapeHtml(message)}</span>`;
+      viewer.appendChild(entry);
+      viewer.scrollTop = viewer.scrollHeight;
+    }
+
+    // ====================================================================
+    // History
+    // ====================================================================
+    async function loadHistory() {
+      const container = document.getElementById('history-list');
+      try {
+        const res = await fetch('/api/audit/runs');
+        const data = await res.json();
+        const runs = data.runs || [];
+
+        if (runs.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="icon">📋</div>
+              <p>No audit runs yet</p>
+              <p class="text-sm">Run an audit to see results here</p>
+            </div>`;
+          return;
+        }
+
+        container.innerHTML = runs.map(run => {
+          const statusIcon = {
+            'completed': '🟢', 'failed': '🔴', 'running': '🔵', 'queued': '⚪', 'starting': '🟡'
+          }[run.status] || '⚪';
+          const course = run.course_id ? run.course_id.toUpperCase() : 'Global';
+          const task = config.tasks?.[run.task_id]?.name || run.task_id;
+          const time = new Date(run.started_at).toLocaleString();
+          const reportBtn = run.report_path
+            ? `<button class="btn btn-sm btn-secondary" onclick="viewReportFromHistory('${run.report_path.split('/').pop()}')">View Report</button>`
+            : '';
+
+          return `
+            <div class="run-row">
+              <div class="run-info">
+                <span>${statusIcon}</span>
+                <div>
+                  <div style="font-weight:600; font-size:14px;">${task}</div>
+                  <div class="text-dim text-sm">${course} · ${time}</div>
+                </div>
+              </div>
+              <div class="run-actions">
+                <span class="badge badge-${run.status === 'completed' ? 'green' : run.status === 'failed' ? 'red' : 'blue'}">${run.status}</span>
+                ${reportBtn}
+              </div>
+            </div>`;
+        }).join('');
+      } catch (e) {
+        container.innerHTML = `<p class="text-dim">Failed to load history</p>`;
+      }
+    }
+
+    function viewReportFromHistory(filename) {
+      showPage('reports');
+      setTimeout(() => viewReport(filename), 200);
+    }
+
+    // ====================================================================
+    // Reports
+    // ====================================================================
+    async function loadReports() {
+      const container = document.getElementById('report-list');
+      try {
+        const res = await fetch('/api/reports');
+        const data = await res.json();
+        const reports = data.reports || [];
+
+        if (reports.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state" style="padding:30px;">
+              <div class="icon">📄</div>
+              <p>No reports yet</p>
+            </div>`;
+          return;
+        }
+
+        container.innerHTML = reports.map(r => {
+          const parts = r.filename.replace('.md', '').split('_');
+          const course = parts[2] ? parts[2].toUpperCase() : '';
+          const task = parts[3] || '';
+          const size = (r.size / 1024).toFixed(1);
+
+          return `
+            <div class="run-row" onclick="viewReport('${r.filename}')" style="cursor:pointer;">
+              <div class="run-info">
+                <span>📄</span>
+                <div>
+                  <div style="font-weight:600; font-size:14px;">${course} · ${task}</div>
+                  <div class="text-dim text-sm">${r.filename}</div>
+                </div>
+              </div>
+              <span class="text-dim text-sm">${size} KB</span>
+            </div>`;
+        }).join('');
+      } catch (e) {
+        container.innerHTML = `<p class="text-dim">Failed to load reports</p>`;
+      }
+    }
+
+    async function viewReport(filename) {
+      const viewer = document.getElementById('report-viewer');
+      const title = document.getElementById('report-viewer-title');
+
+      viewer.innerHTML = '<div class="flex items-center gap-2"><div class="spinner"></div> Loading...</div>';
+      title.textContent = filename;
+
+      try {
+        const res = await fetch(`/api/reports/${filename}`);
+        const data = await res.json();
+
+        if (data.error) {
+          viewer.innerHTML = `<p class="text-dim">${data.error}</p>`;
+          return;
+        }
+
+        viewer.innerHTML = `<div class="report-content">${markdownToHtml(data.content)}</div>`;
+      } catch (e) {
+        viewer.innerHTML = `<p class="text-dim">Failed to load report</p>`;
+      }
+    }
+
+    // ====================================================================
+    // Settings
+    // ====================================================================
+    function renderSettings() {
+      document.getElementById('settings-url').value = config.app_url || '';
+      document.getElementById('settings-email').value = config.test_email || '';
+      document.getElementById('settings-max-steps').value = config.max_steps || 50;
+
+      const modelSelect = document.getElementById('settings-model');
+      if (config.llm_model) {
+        modelSelect.value = config.llm_model;
+      }
+
+      renderKeyStatus();
+    }
+
+    function renderKeyStatus() {
+      const el = document.getElementById('key-status');
+      if (config.has_api_key) {
+        el.innerHTML = '<span class="badge badge-green">✓ API key configured</span>';
+      } else {
+        el.innerHTML = '<span class="badge badge-yellow">⚠ No API key set</span>';
+      }
+    }
+
+    function renderApiKeyBanner() {
+      const el = document.getElementById('api-key-banner');
+      if (!config.has_api_key) {
+        el.innerHTML = `
+          <div class="banner banner-warning">
+            ⚠️ <strong>API key required.</strong>
+            Go to <a href="#" onclick="showPage('settings'); return false;" style="color:inherit; text-decoration:underline;">Settings</a>
+            to add your Anthropic API key before running audits.
+          </div>`;
+      } else {
+        el.innerHTML = '';
+      }
+    }
+
+    async function saveApiKey() {
+      const key = document.getElementById('api-key-input').value.trim();
+      if (!key) { toast('Enter an API key', 'error'); return; }
+
+      try {
+        const res = await fetch('/api/config/key', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({key}),
+        });
+        const data = await res.json();
+
+        if (data.error) {
+          toast(data.error, 'error');
+          return;
+        }
+
+        config.has_api_key = true;
+        document.getElementById('api-key-input').value = '';
+        renderKeyStatus();
+        renderApiKeyBanner();
+        updateSummary();
+        toast('API key saved', 'success');
+      } catch (e) {
+        toast('Failed to save key: ' + e.message, 'error');
+      }
+    }
+
+    async function saveSettings() {
+      try {
+        const body = {
+          app_url: document.getElementById('settings-url').value,
+          test_email: document.getElementById('settings-email').value,
+          test_password: document.getElementById('settings-password').value || undefined,
+          llm_model: document.getElementById('settings-model').value,
+          max_steps: parseInt(document.getElementById('settings-max-steps').value),
+        };
+
+        // Remove undefined values
+        Object.keys(body).forEach(k => body[k] === undefined && delete body[k]);
+
+        await fetch('/api/config/update', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(body),
+        });
+
+        toast('Settings saved', 'success');
+      } catch (e) {
+        toast('Failed to save: ' + e.message, 'error');
+      }
+    }
+
+    // ====================================================================
+    // Utilities
+    // ====================================================================
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function markdownToHtml(md) {
+      // Basic markdown → HTML (good enough for reports)
+      let html = escapeHtml(md);
+
+      // Headers
+      html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+      html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+      html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+
+      // Bold / italic
+      html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+      // Inline code
+      html = html.replace(/`(.+?)`/g, '<code>$1</code>');
+
+      // Bullet lists
+      html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+      html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+
+      // Tables
+      html = html.replace(/\|(.+)\|/g, (match) => {
+        const cells = match.split('|').filter(c => c.trim());
+        if (cells.every(c => /^[\s-:]+$/.test(c))) return ''; // separator row
+        const tag = 'td';
+        const row = cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('');
+        return `<tr>${row}</tr>`;
+      });
+      html = html.replace(/(<tr>.*<\/tr>\n?)+/g, '<table>$&</table>');
+
+      // Line breaks
+      html = html.replace(/\n---\n/g, '<hr>');
+      html = html.replace(/\n\n/g, '</p><p>');
+      html = '<p>' + html + '</p>';
+
+      // Clean up empty paragraphs
+      html = html.replace(/<p>\s*<\/p>/g, '');
+
+      return html;
+    }
+
+    function toast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const el = document.createElement('div');
+      el.className = `toast toast-${type}`;
+      el.textContent = message;
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+
+    // Boot
+    init();
+  </script>
+</body>
+</html>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2, ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
@@ -10,13 +9,17 @@ import {
   checkAchievements,
   getAchievementProgress,
   getAchievementsByCategory,
+  getAchievementDisplayName,
 } from '../../services/achievements';
+import { getReferralStats } from '../../services/referral';
 import feedback from '../../services/feedback';
 import { celebrateAchievement } from '../../utils/confetti';
 import clsx from 'clsx';
 import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigation';
 import ShareableAchievementCard from '../ShareableAchievementCard';
 import { Button } from '../common/Button';
+import { useCourse } from '../../hooks/useCourse';
+import { BackButton } from '../navigation';
 
 // Types
 interface CategoryInfo {
@@ -33,6 +36,7 @@ const CATEGORY_INFO: Record<string, CategoryInfo> = {
   time: { name: 'Time', icon: Clock, color: 'slate' },
   milestone: { name: 'Milestones', icon: Gift, color: 'error' },
   feature: { name: 'Features', icon: Trophy, color: 'primary' },
+  referral: { name: 'Referrals', icon: Share2, color: 'success' },
 };
 
 interface UserStats {
@@ -58,6 +62,7 @@ interface Achievement {
 const Achievements: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { currentStreak, todayLog } = useStudy();
+  const { courseId } = useCourse();
   const [earnedAchievements, setEarnedAchievements] = useState<string[]>([]);
   const [userStats, setUserStats] = useState<UserStats | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -80,13 +85,24 @@ const Achievements: React.FC = () => {
     const loadStats = async () => {
       const progressRef = doc(db, 'users', user.uid, 'progress', 'stats');
       const snap = await getDoc(progressRef);
+      
+      // Also load referral stats
+      let referralCount = 0;
+      try {
+        const referralData = await getReferralStats(user.uid);
+        referralCount = referralData.referralCount || 0;
+      } catch {
+        // Referral stats not available
+      }
+      
       if (snap.exists()) {
-        setUserStats(snap.data() as UserStats);
+        setUserStats({ ...snap.data() as UserStats, referralCount });
       } else {
         setUserStats({
           totalQuestions: 0,
           totalCorrect: 0,
           accuracy: 0,
+          referralCount,
         });
       }
     };
@@ -163,22 +179,15 @@ const Achievements: React.FC = () => {
     return sum + (ACHIEVEMENTS[id as keyof typeof ACHIEVEMENTS]?.points || 0);
   }, 0);
 
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
       {/* Header */}
       <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-6 pb-16">
         <div className="flex items-center gap-3 mb-4">
-          <Button
-            onClick={() => navigate(-1)}
-            variant="ghost"
-            size="icon"
-            className="-ml-2 hover:bg-white/10"
-            aria-label="Go back"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </Button>
+          <BackButton 
+            className="text-white hover:bg-white/10" 
+            iconOnlyMobile
+          />
           <h1 className="text-2xl font-bold">Achievements</h1>
         </div>
         <p className="text-primary-100">Track your learning milestones</p>
@@ -283,7 +292,7 @@ const Achievements: React.FC = () => {
                       isEarned ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
                     )}
                   >
-                    {achievement.name}
+                    {getAchievementDisplayName(achievement.id, courseId)}
                   </h3>
                   <span
                     className={clsx(
@@ -295,7 +304,7 @@ const Achievements: React.FC = () => {
                   </span>
                 </div>
                 <p
-                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-600 dark:text-slate-300' : 'text-slate-600 dark:text-slate-400')}
+                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-700 dark:text-slate-200' : 'text-slate-700 dark:text-slate-300')}
                 >
                   {achievement.description}
                 </p>
@@ -354,7 +363,7 @@ const Achievements: React.FC = () => {
               {showUnlocked.icon}
             </div>
             <h2 id="achievement-title" className="text-xl font-bold text-slate-900 dark:text-white mb-1">Achievement Unlocked!</h2>
-            <h3 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{showUnlocked.name}</h3>
+            <h3 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{getAchievementDisplayName(showUnlocked.id, courseId)}</h3>
             <p className="text-slate-600 dark:text-slate-300 mb-4">{showUnlocked.description}</p>
             <div className="inline-flex items-center gap-1 px-3 py-1 bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300 rounded-full text-sm font-medium">
               +{showUnlocked.points} points

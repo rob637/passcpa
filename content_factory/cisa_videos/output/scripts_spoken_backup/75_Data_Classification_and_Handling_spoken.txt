@@ -1,0 +1,29 @@
+Welcome to Pass CISA <break time='0.5s' /> This video covers Data Classification and Handling <break time='0.3s' /> a foundational security concept you'll definitely see on exam day.
+
+<break time='1.0s' />
+
+Data classification assigns sensitivity levels to information <break time='0.3s' /> determining who can access it and how it must be protected.
+
+<break time='1.0s' />
+
+Most organizations use a tiered classification scheme. Common levels include <break time='0.3s' /> Public <break time='0.3s' /> Internal <break time='0.3s' /> Confidential <break time='0.3s' /> and Restricted or Secret.
+
+<break time='0.8s' />
+
+Public data can be freely shared <break time='0.3s' /> like marketing materials. Internal data is for employees only <break time='0.3s' /> like policies and procedures. Confidential data requires specific authorization <break time='0.3s' /> like customer records. Restricted data has the highest protection <break time='0.3s' /> like trade secrets or personal health information.
+
+<break time='1.0s' />
+
+Key exam concept <break time='0.3s' /> Data owners are responsible for classification decisions. They understand the business value and determine the appropriate level. Data custodians implement the technical controls to protect data at each level.
+
+<break time='0.8s' />
+
+Handling procedures must align with classification <break time='0.3s' /> This includes storage requirements <break time='0.3s' /> encryption standards <break time='0.3s' /> transmission methods <break time='0.3s' /> and disposal procedures. Higher classifications require stronger controls throughout the data lifecycle.
+
+<break time='1.0s' />
+
+Remember for the exam <break time='0.3s' /> Classification should be based on the highest sensitivity of any data element in a document <break time='0.3s' /> even if most content is public. And always consider regulatory requirements <break time='0.3s' /> some data types have legally mandated handling procedures.
+
+<break time='0.8s' />
+
+That's data classification and handling <break time='0.3s' /> Know your classification levels <break time='0.3s' /> understand owner versus custodian roles <break time='0.3s' /> and match handling procedures to sensitivity. Good luck on exam day!

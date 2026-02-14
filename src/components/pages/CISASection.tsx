@@ -27,26 +27,6 @@ export default function CISASection() {
     [sectionId]
   );
   
-  // Handle not found
-  if (!legacyConfig && !loading) {
-    return (
-      <div className="p-8 text-center">
-        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-          Domain Not Found
-        </h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-4">
-          The requested CISA domain doesn't exist.
-        </p>
-        <button 
-          onClick={() => navigate('/cisa/dashboard')}
-          className="btn-primary"
-        >
-          Back to CISA Dashboard
-        </button>
-      </div>
-    );
-  }
-  
   // Transform blueprint areas from course config
   const blueprintAreas: BlueprintArea[] = useMemo(() => {
     if (!courseSection?.blueprintAreas) {
@@ -101,6 +81,26 @@ export default function CISASection() {
   const handleAreaPractice = useCallback((areaId: string) => {
     navigate(`/practice?course=cisa&section=${sectionId}&area=${areaId}`);
   }, [navigate, sectionId]);
+
+  // Handle not found — AFTER all hooks to satisfy Rules of Hooks
+  if (!legacyConfig && !loading) {
+    return (
+      <div className="p-8 text-center">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+          Domain Not Found
+        </h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-4">
+          The requested CISA domain doesn't exist.
+        </p>
+        <button 
+          onClick={() => navigate('/cisa/dashboard')}
+          className="btn-primary"
+        >
+          Back to CISA Dashboard
+        </button>
+      </div>
+    );
+  }
 
   return (
     <SectionTemplate

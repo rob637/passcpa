@@ -148,6 +148,17 @@ vi.mock('../../../hooks/useAuth', () => ({
   }),
 }));
 
+// Mock AuthProvider (used by useSubscription)
+vi.mock('../../../providers/AuthProvider', () => ({
+  useAuth: () => ({
+    user: mockUser,
+    userProfile: mockUserProfile,
+    updateUserProfile: mockUpdateUserProfile,
+    resetPassword: mockResetPassword,
+    signOut: mockSignOut,
+  }),
+}));
+
 // Mock exam config
 vi.mock('../../../config/examConfig', () => ({
   CPA_SECTIONS: {
@@ -247,7 +258,8 @@ describe('Settings Component', () => {
     it('switches to Study Plan tab when clicked', async () => {
       await renderSettings();
       fireEvent.click(screen.getByText('Study Plan'));
-      expect(screen.getByText('Study Plan Settings')).toBeInTheDocument();
+      // The heading shows "{course.name} Settings" which is "CPA Settings" based on mock
+      expect(screen.getByText('CPA Settings')).toBeInTheDocument();
     });
 
     it('displays exam section options', async () => {

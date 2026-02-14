@@ -377,13 +377,6 @@ export const CPA_COURSE: Course = {
     },
   ],
   
-  pricing: {
-    monthly: 29,
-    annual: 99,
-    lifetime: 299,
-    bundleDiscount: 25,
-  },
-  
   metadata: {
     examProvider: 'AICPA',
     websiteUrl: 'https://www.aicpa.org/cpa-exam',

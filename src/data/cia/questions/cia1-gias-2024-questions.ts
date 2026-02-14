@@ -13,259 +13,304 @@ export const CIA1_GIAS_2024_QUESTIONS: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-GIAS-001',
+    id: 'cia1-gias-001',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Global Internal Audit Standards (GIAS) 2024 became effective on which date?',
     options: [
       'January 1, 2024',
+      'January 1, 2026',
       'January 9, 2025',
       'July 1, 2024',
-      'January 1, 2026'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The Global Internal Audit Standards (GIAS) became effective January 9, 2025, replacing the previous International Professional Practices Framework (IPPF) structure.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-002',
+    id: 'cia1-gias-002',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'How many structural domains are included in the Global Internal Audit Standards (GIAS) 2024?',
     options: [
       'Three',
+      'Fifteen',
       'Five',
       'Ten',
-      'Fifteen'
-    ],
-    correctAnswer: 1,
-    explanation: 'GIAS 2024 organizes standards into FIVE structural domains: Purpose of Internal Auditing, Ethics and Professionalism, Governing the Internal Audit Function, Managing the Internal Audit Function, and Performing Internal Audit Services.',
-    topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
-  },
-  {
-    id: 'CIA1-GIAS-003',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'hard',
-    question: 'Under GIAS 2024, which domain contains standards related to the CAE\'s responsibilities and the board\'s oversight role?',
-    options: [
-      'Domain I: Purpose of Internal Auditing',
-      'Domain II: Ethics and Professionalism',
-      'Domain III: Governing the Internal Audit Function',
-      'Domain V: Performing Internal Audit Services'
     ],
     correctAnswer: 2,
+    explanation: 'GIAS 2024 organizes standards into FIVE structural domains: Purpose of Internal Auditing, Ethics and Professionalism, Governing the Internal Audit Function, Managing the Internal Audit Function, and Performing Internal Audit Services.',
+    topic: 'Foundations of Internal Auditing',
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-gias-003',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Under GIAS 2024, which domain contains standards related to the CAE\'s responsibilities and the board\'s oversight role?',
+    options: [
+      'Domain II: Ethics and Professionalism',
+      'Domain V: Performing Internal Audit Services',
+      'Domain I: Purpose of Internal Auditing',
+      'Domain III: Governing the Internal Audit Function',
+    ],
+    correctAnswer: 3,
     explanation: 'Domain III: Governing the Internal Audit Function contains Standards 6 and 7, which cover the board\'s oversight role and the CAE\'s responsibilities respectively.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-004',
+    id: 'cia1-gias-004',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'What happened to the 10 Core Principles that were part of the IPPF under GIAS 2024?',
     options: [
-      'They were eliminated entirely',
       'They were integrated into the 15 Standards',
+      'They were moved to Implementation Guidance only',
+      'They were eliminated entirely',
       'They remain as a separate mandatory document',
-      'They were moved to Implementation Guidance only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under GIAS 2024, the 10 Core Principles are integrated into the 15 Standards rather than existing as a separate document. The principles remain conceptually valid but are now embedded throughout the standards framework.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-005',
+    id: 'cia1-gias-005',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which GIAS 2024 standard replaces the functionality of both Standard 1100 (Independence and Objectivity) from the old IPPF?',
     options: [
-      'Standard 2 - Ethics and Professionalism',
+      'Standard 7 - CAE Responsibilities',
       'Standard 4 - Independence and Objectivity',
+      'Standard 2 - Ethics and Professionalism',
       'Standard 5 - Competence',
-      'Standard 7 - CAE Responsibilities'
     ],
     correctAnswer: 1,
     explanation: 'GIAS 2024 Standard 4: Independence and Objectivity directly replaces and expands upon the old IPPF Standard 1100. It covers both organizational independence and individual objectivity requirements.',
     topic: 'Independence and Objectivity',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-006',
+    id: 'cia1-gias-006',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Where is the Code of Ethics now addressed under GIAS 2024?',
     options: [
       'It remains a separate mandatory component',
       'It is embedded in Standard 2: Ethics and Professionalism',
+      'It is included in Standard 1: Purpose of Internal Auditing',
       'It was eliminated as unnecessary',
-      'It is included in Standard 1: Purpose of Internal Auditing'
     ],
     correctAnswer: 1,
     explanation: 'Under GIAS 2024, the Code of Ethics requirements are embedded in Standard 2: Ethics and Professionalism. The four principles (Integrity, Objectivity, Confidentiality, Competency) remain foundational but are now integrated into the standards structure.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-007',
+    id: 'cia1-gias-007',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GIAS 2024, which standards cover the "Managing the Internal Audit Function" domain?',
     options: [
-      'Standards 1-3',
       'Standards 4-5',
+      'Standards 1-3',
+      'Standards 11-15',
       'Standards 8-10',
-      'Standards 11-15'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Domain IV: Managing the Internal Audit Function includes Standards 8 (Strategic Planning), 9 (Resource Management), and 10 (Coordination and Reliance). These cover how the internal audit function operates and coordinates with others.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-008',
+    id: 'cia1-gias-008',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Mission of Internal Audit under GIAS 2024 compared to the previous IPPF is:',
     options: [
+      'No longer part of the standards',
       'Completely rewritten with new language',
       'Essentially unchanged',
       'More focused on compliance only',
-      'No longer part of the standards'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The Mission of Internal Audit remains essentially unchanged under GIAS 2024: "To enhance and protect organizational value by providing risk-based and objective assurance, advice, and insight." This is one of the constants through the transition.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Mission of Internal Audit'
+    subtopic: 'Mission of Internal Audit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-009',
+    id: 'cia1-gias-009',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'What is the primary structural difference between the old IPPF and GIAS 2024?',
     options: [
       'GIAS 2024 separates Attribute and Performance Standards more clearly',
+      'GIAS 2024 only covers consulting engagements',
       'GIAS 2024 uses 15 thematic standards instead of the Attribute/Performance division',
       'GIAS 2024 eliminates all mandatory requirements',
-      'GIAS 2024 only covers consulting engagements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The primary structural change is that GIAS 2024 organizes requirements into 15 thematic standards within 5 domains, replacing the previous Attribute Standards (1000 series) and Performance Standards (2000 series) structure.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-010',
+    id: 'cia1-gias-010',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GIAS 2024, engagement-level requirements (planning, conducting, communicating) are found in which domain?',
     options: [
       'Domain II: Ethics and Professionalism',
+      'Domain V: Performing Internal Audit Services',
       'Domain III: Governing the Internal Audit Function',
       'Domain IV: Managing the Internal Audit Function',
-      'Domain V: Performing Internal Audit Services'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Domain V: Performing Internal Audit Services contains Standards 11-15, which cover engagement planning, conducting, forming conclusions, communicating results, and monitoring actions. This is the equivalent of the old Performance Standards 2100-2600.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-011',
+    id: 'cia1-gias-011',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'How should internal auditors approach questions about the "Attribute Standards" on the CIA exam?',
     options: [
+      'Attribute Standards are still the primary framework',
       'Attribute Standards no longer exist and should be ignored',
       'Apply knowledge of GIAS Standards 1-7, which cover organizational-level requirements',
       'Only use GIAS 2024 terminology regardless of how the question is phrased',
-      'Attribute Standards are still the primary framework'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'During the transition period, candidates should understand that Attribute Standards (1000 series) concepts are now covered in GIAS Standards 1-7, which address organizational-level requirements like purpose, ethics, governance, independence, and competence.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-012',
+    id: 'cia1-gias-012',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which component of GIAS 2024 replaced the Implementation Standards (.A and .C suffixes) from IPPF?',
     options: [
-      'Foundational Principles',
       'Topical Requirements and Implementation Considerations',
+      'Practice Advisories',
+      'Foundational Principles',
       'Core Principles',
-      'Practice Advisories'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'GIAS 2024 replaces Implementation Standards (.A for assurance, .C for consulting) with Topical Requirements and Implementation Considerations embedded within each standard. This provides more integrated guidance.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-013',
+    id: 'cia1-gias-013',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'What is the relationship between GIAS 2024 and the IIA\'s previous Practice Guides and Practice Advisories?',
     options: [
-      'They remain separate supplemental guidance documents',
+      'They are now mandatory requirements',
       'They are eliminated with no replacement',
+      'They remain separate supplemental guidance documents',
       'They are integrated into the Implementation Considerations within each Standard',
-      'They are now mandatory requirements'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'GIAS 2024 integrates much of the practical guidance from previous Practice Guides and Practice Advisories into Implementation Considerations within each Standard, providing more accessible and consolidated guidance.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-014',
+    id: 'cia1-gias-014',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GIAS 2024, Standard 15 (Monitoring Actions) covers which important requirement previously in Standard 2600?',
     options: [
-      'Engagement planning',
+      'Evidence gathering procedures',
       'Quality assurance improvement program',
+      'Engagement planning',
       'Communicating risk acceptance to the board',
-      'Evidence gathering procedures'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Standard 15 (Monitoring Actions) includes the requirement for the CAE to communicate risk acceptance decisions to the board when management has accepted a level of risk that may be unacceptable. This was previously covered in Standard 2600.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-015',
+    id: 'cia1-gias-015',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'According to IIA transition guidance, during the CIA exam transition period:',
     options: [
-      'Only GIAS 2024 terminology will be tested',
       'Only IPPF terminology will be tested',
+      'Only GIAS 2024 terminology will be tested',
+      'Candidates must choose which framework to apply',
       'Both IPPF and GIAS 2024 terminology may appear, with focus on underlying concepts',
-      'Candidates must choose which framework to apply'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'During the transition period, the CIA exam may include questions referencing both IPPF and GIAS 2024 terminology. The IIA emphasizes that the underlying concepts remain consistent, and candidates should focus on principles rather than specific framework labels.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -273,89 +318,104 @@ export const CIA1_GIAS_2024_QUESTIONS: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-GIAS-016',
+    id: 'cia1-gias-016',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GIAS 2024 Standard 7: CAE Responsibilities, the CAE must establish which program to ensure ongoing improvement?',
     options: [
-      'Fraud Prevention Program',
       'Quality Assurance and Improvement Program',
+      'Fraud Prevention Program',
+      'Compliance Monitoring Program',
       'Risk Management Program',
-      'Compliance Monitoring Program'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Standard 7 requires the CAE to establish a Quality Assurance and Improvement Program (QAIP) that covers all aspects of the internal audit function. This requirement continues from the previous IPPF Standard 1300.',
     topic: 'Quality Assurance',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-017',
+    id: 'cia1-gias-017',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'GIAS 2024 Standard 6 addresses the roles and responsibilities of which stakeholder?',
     options: [
       'The Chief Audit Executive',
       'External Auditors',
+      'Senior Management',
       'The Board',
-      'Senior Management'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Standard 6: Roles and Responsibilities of the Board covers the board\'s oversight of internal audit, including charter approval, CAE evaluation, and ensuring adequate resources. This reinforces governance accountability.',
     topic: 'Governance',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-018',
+    id: 'cia1-gias-018',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GIAS 2024, combined assurance and coordination with other assurance providers is addressed in which standard?',
     options: [
       'Standard 8 - Strategic Planning',
+      'Standard 11 - Planning Engagements',
       'Standard 9 - Resource Management',
       'Standard 10 - Coordination and Reliance',
-      'Standard 11 - Planning Engagements'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Standard 10: Coordination and Reliance addresses how the internal audit function coordinates with other assurance providers and determines when to rely on their work. This promotes an efficient combined assurance approach.',
     topic: 'Managing IA Activity',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-019',
+    id: 'cia1-gias-019',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'What is the primary benefit of GIAS 2024\'s principles-based approach compared to the previous IPPF rules-based structure?',
     options: [
+      'It focuses only on financial auditing',
       'It reduces professional judgment requirements',
       'It allows more flexible application across different contexts and organizations',
       'It eliminates mandatory requirements',
-      'It focuses only on financial auditing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'GIAS 2024\'s principles-based approach allows more flexible application across different organizational contexts, sizes, and industries while maintaining the underlying professional requirements. This provides consistency with adaptability.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-GIAS-020',
+    id: 'cia1-gias-020',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GIAS 2024 Standard 5: Competence, internal auditors must:',
     options: [
       'Have expertise in all areas of the organization',
+      'Defer all technical matters to external specialists',
       'Only audit areas where they have certified specialty designations',
       'Possess the knowledge, skills, and abilities needed for their assigned responsibilities',
-      'Defer all technical matters to external specialists'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Standard 5: Competence requires internal auditors to possess the knowledge, skills, and abilities needed for their assigned responsibilities. This includes technical competence and continuing professional development.',
     topic: 'Proficiency and Due Professional Care',
-    subtopic: 'GIAS 2024'
+    subtopic: 'GIAS 2024',
+  reference: 'IIA Standards'
   },
 ];
 

@@ -57,10 +57,10 @@ describe('subscription service', () => {
 
     it('should have correct pricing for each tier', () => {
       expect(SUBSCRIPTION_PLANS.free.price).toBe(0);
-      expect(SUBSCRIPTION_PLANS.monthly.price).toBe(12.99);
-      expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(29.99);
-      expect(SUBSCRIPTION_PLANS.annual.price).toBe(99);
-      expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(399);
+      expect(SUBSCRIPTION_PLANS.monthly.price).toBe(49);
+      expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(0); // Legacy plan - no longer offered
+      expect(SUBSCRIPTION_PLANS.annual.price).toBe(449);
+      expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(0); // Legacy plan - no longer offered
     });
 
     it('should have correct intervals for each tier', () => {
@@ -194,7 +194,7 @@ describe('subscription service', () => {
       const subscription = await subscriptionService.createFreeSubscription('new-user');
 
       expect(subscription.tier).toBe('free');
-      expect(subscription.status).toBe('active');
+      expect(subscription.status).toBe('trialing'); // Free users start with a trial
       expect(mockSetDoc).toHaveBeenCalled();
     });
   });
@@ -371,14 +371,15 @@ describe('subscription service', () => {
   });
 
   describe('subscriptionService.endTrial', () => {
-    it('should revert to free tier', async () => {
+    it('should revert to free tier with expired status', async () => {
       await subscriptionService.endTrial('test-user');
 
       expect(mockUpdateDoc).toHaveBeenCalled();
       const updateCall = mockUpdateDoc.mock.calls[0];
       expect(updateCall[1].tier).toBe('free');
-      expect(updateCall[1].status).toBe('active');
-      expect(updateCall[1].trialEnd).toBeNull();
+      expect(updateCall[1].status).toBe('expired');
+      // trialEnd is preserved (not set to null) to track trial history
+      expect(updateCall[1].trialEnd).toBeUndefined();
     });
   });
 

@@ -148,7 +148,7 @@ function buildProgress(): CISAProgress {
     CISA1: 0, CISA2: 0, CISA3: 0, CISA4: 0, CISA5: 0,
   };
   
-  Object.entries(adaptiveState.domainPerformance).forEach(([domain, perf]) => {
+  Object.entries(adaptiveState.sectionPerformance).forEach(([domain, perf]) => {
     const domainId = domain as CISASectionId;
     // Progress is based on questions attempted vs target (assuming ~200 per domain)
     domainProgress[domainId] = Math.min(100, Math.round((perf.questionsAttempted / 200) * 100));

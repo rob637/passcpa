@@ -21,8 +21,8 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     options: [
       '$5,000 or less',
       '$10,000 or less',
+      '$50,000 or less',
       '$25,000 or less',
-      '$50,000 or less'
     ],
     correctAnswer: 1,
     explanation: 'The IRS must accept a guaranteed installment agreement when the total tax (excluding interest and penalties) is $10,000 or less, the taxpayer has filed timely for the past 5 years, and can pay within 3 years.',
@@ -39,12 +39,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'A streamlined installment agreement is generally available for individual taxpayers who owe:',
     options: [
-      '$10,000 or less',
       '$50,000 or less in combined tax, penalties, and interest',
+      '$10,000 or less',
+      'Any amount if they file Form 433-A',
       '$100,000 or less',
-      'Any amount if they file Form 433-A'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Streamlined installment agreements are available for individuals owing $50,000 or less in combined tax, penalties, and interest, when the debt can be paid within 72 months or by the collection statute expiration.',
     reference: 'IRM 5.14.5.2',
   },
@@ -59,12 +59,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Taxpayers can apply for an installment agreement online when they owe:',
     options: [
-      'Only $10,000 or less',
       '$100,000 or less for individuals, $25,000 or less for businesses',
+      'Online applications are not available',
+      'Only $10,000 or less',
       'Any amount',
-      'Online applications are not available'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRS Online Payment Agreement tool is available for individuals owing $100,000 or less and businesses owing $25,000 or less. This provides immediate notification of approval for qualifying taxpayers.',
     reference: 'IRS.gov Online Payment Agreement',
   },
@@ -79,10 +79,10 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An offer in compromise may be accepted based on:',
     options: [
-      'Hardship only',
+      'Political connections',
       'Doubt as to collectibility, doubt as to liability, or effective tax administration',
+      'Hardship only',
       'The taxpayer\'s promise to pay in the future',
-      'Political connections'
     ],
     correctAnswer: 1,
     explanation: 'The IRS accepts OICs based on: (1) doubt as to liability - uncertainty about the correct tax, (2) doubt as to collectibility - doubt the tax can be collected in full, or (3) effective tax administration - exceptional hardship.',
@@ -99,12 +99,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'To submit an offer in compromise, a taxpayer generally must:',
     options: [
-      'File Form 656 with the required payment and be current on filing requirements',
+      'Hire an attorney',
       'Simply write a letter to the IRS',
+      'File Form 656 with the required payment and be current on filing requirements',
       'Appear in person at an IRS office',
-      'Hire an attorney'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'An OIC requires Form 656 (Offer in Compromise), a complete financial statement (Form 433-A/B), payment of the $205 application fee (unless low-income), and an initial payment. Taxpayers must be current on filing.',
     reference: 'Form 656 Instructions',
   },
@@ -119,12 +119,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Under a lump sum cash offer in compromise:',
     options: [
+      'The full amount must be paid within 30 days of filing',
       'No payment is required until accepted',
       '20% must be submitted with the application',
       '50% must be submitted upfront',
-      'The full amount must be paid within 30 days of filing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'For lump sum cash offers (payable within 5 or fewer months), 20% of the offer amount must be submitted with Form 656. Periodic payment offers require the first proposed payment with the application.',
     reference: 'Form 656 Instructions',
   },
@@ -139,12 +139,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Notice of Federal Tax Lien (NFTL):',
     options: [
+      'Is only filed for balances over $100,000',
       'Is automatically filed when any balance is owed',
       'Is a public document filed to alert creditors of the government\'s claim',
       'Seizes the taxpayer\'s property',
-      'Is only filed for balances over $100,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The NFTL is a public document filed with state or local authorities to establish the government\'s priority against other creditors. It does not seize property; it protects the government\'s interest.',
     reference: 'IRC §6323',
   },
@@ -157,12 +157,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Levy Process',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'A levy:',
+    question: 'Under IRC §6331, which of the following best describes a levy as a tax collection tool?',
     options: [
       'Is the same as a lien',
       'Is the legal seizure of property to satisfy a tax debt',
+      'Requires court approval first',
       'Is only used for debts over $50,000',
-      'Requires court approval first'
     ],
     correctAnswer: 1,
     explanation: 'A levy is the legal seizure of property to satisfy a tax debt. Unlike a lien (which is a claim), a levy actually takes the property, including wages, bank accounts, and other assets.',
@@ -181,8 +181,8 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Bank accounts',
       'Unemployment benefits',
+      'Business equipment',
       'Investment accounts',
-      'Business equipment'
     ],
     correctAnswer: 1,
     explanation: 'Certain property is exempt from levy including necessary clothing, school books, certain annuity and pension payments, workers\' compensation, unemployment benefits, and a minimum weekly income exemption.',
@@ -199,12 +199,12 @@ export const SEE3_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The IRS generally has how long to collect a tax from the date of assessment?',
     options: [
-      '3 years',
       '6 years',
+      '3 years',
+      '20 years',
       '10 years',
-      '20 years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The IRS has 10 years from the date of assessment to collect a tax debt. This is the Collection Statute Expiration Date (CSED). After this date, the debt is no longer legally enforceable.',
     reference: 'IRC §6502',
   },

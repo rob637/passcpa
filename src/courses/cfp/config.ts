@@ -46,7 +46,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-GEN',
     name: 'General Principles of Financial Planning',
-    shortName: 'General',
+    shortName: 'Gen',
     weight: '15%',
     questionCount: 26, // ~15% of 170 questions
     timeAllowed: 45,
@@ -95,7 +95,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-RISK',
     name: 'Risk Management and Insurance Planning',
-    shortName: 'Insurance',
+    shortName: 'Risk',
     weight: '11%',
     questionCount: 19,
     timeAllowed: 33,
@@ -144,7 +144,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-INV',
     name: 'Investment Planning',
-    shortName: 'Investments',
+    shortName: 'Inv',
     weight: '17%',
     questionCount: 29,
     timeAllowed: 51,
@@ -256,7 +256,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-RET',
     name: 'Retirement and Income Planning',
-    shortName: 'Retirement',
+    shortName: 'Ret',
     weight: '18%',
     questionCount: 31,
     timeAllowed: 54,
@@ -307,7 +307,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-EST',
     name: 'Estate Planning',
-    shortName: 'Estate',
+    shortName: 'Est',
     weight: '10%',
     questionCount: 17,
     timeAllowed: 30,
@@ -357,7 +357,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-PSY',
     name: 'Psychology of Financial Planning',
-    shortName: 'Psychology',
+    shortName: 'Psy',
     weight: '7%',
     questionCount: 12,
     timeAllowed: 21,
@@ -401,12 +401,6 @@ export const CFP_COURSE: Course = {
   description: 'Comprehensive review for the CFP® Certification Examination.',
   passingScore: 0, // Pass/Fail only - CFP Board uses a criterion-referenced passing standard
   totalTime: 300, // 5 hours (300 minutes) for 170 questions
-  
-  pricing: {
-    monthly: 39,
-    annual: 349,
-    lifetime: 599,
-  },
   
   metadata: {
     examProvider: 'Pearson VUE (CFP Board)',

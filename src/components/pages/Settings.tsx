@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logger from '../../utils/logger';
 import {
   User as UserIcon,
@@ -15,21 +16,28 @@ import {
   Moon,
   Monitor,
   Palette,
-  GraduationCap,
+  RefreshCw,
+  CheckCircle,
+  Smartphone,
+  Users,
+  Award,
+  CreditCard,
+  ExternalLink,
 } from 'lucide-react';
+import { triggerUpdateBanner } from '../common/UpdateBanner';
 import { Button } from '../common/Button';
+import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage, auth } from '../../config/firebase';
+import { storage, auth, functions } from '../../config/firebase';
 import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
-import { createExamDateUpdate } from '../../utils/profileHelpers';
-import { COURSES, ACTIVE_COURSES, type CourseId } from '../../courses';
+import { getSectionDisplayInfo, getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
+import { createExamDateUpdate, getExamDate } from '../../utils/profileHelpers';
 import {
   setupDailyReminder,
   getDailyReminderSettings,
@@ -37,7 +45,14 @@ import {
 } from '../../services/pushNotifications';
 import { getCacheStatus, clearCache, cacheQuestions } from '../../services/offlineCache';
 import { fetchQuestions } from '../../services/questionService';
+import { useSubscription, EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
+import { isCourseActive } from '../../courses';
+import type { CourseId } from '../../types/course';
+import { httpsCallable } from 'firebase/functions';
+import { InviteFriends } from '../common/InviteFriends';
+import { PassedCelebration } from '../common/PassedCelebration';
 import { Timestamp } from 'firebase/firestore';
+import { clearTodaysPlan } from '../../services/dailyPlanPersistence';
 import clsx from 'clsx';
 
 interface UserProfile {
@@ -50,7 +65,7 @@ interface UserProfile {
 }
 
 // Helper to convert various date formats to YYYY-MM-DD string
-const formatDateForInput = (date: Timestamp | Date | string | undefined): string => {
+const formatDateForInput = (date: Timestamp | Date | string | null | undefined): string => {
   if (!date) return '';
   
   try {
@@ -85,11 +100,16 @@ const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
   const { courseId, course } = useCourse();
   const { darkMode, themeMode, setThemeMode } = useTheme();
+  const { subscription, getExamAccess } = useSubscription();
+  const navigate = useNavigate();
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
+  const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
+  const [updateCheckResult, setUpdateCheckResult] = useState<'none' | 'available' | null>(null);
+  const [isManagingSubscription, setIsManagingSubscription] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Cast profile
@@ -97,21 +117,25 @@ const Settings: React.FC = () => {
 
   // Form states
   const [displayName, setDisplayName] = useState(profile?.displayName || '');
-  const [examSection, setExamSection] = useState(profile?.examSection || getDefaultSection(courseId));
+  // Use getCurrentSectionForCourse to validate profile section is valid for current course
+  const [examSection, setExamSection] = useState(getCurrentSectionForCourse(profile?.examSection, courseId));
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
-  const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
-  const [activeCourse, setActiveCourse] = useState<CourseId>(profile?.activeCourse || 'cpa');
+  // Use getExamDate for multi-course support (handles single-exam courses like CISA/CFP)
+  // Cast to any since our local UserProfile type is compatible with what getExamDate needs
+  const [examDate, setExamDate] = useState(formatDateForInput(getExamDate(profile as any, examSection, courseId)));
 
-  // Sync form state when profile changes (e.g., after reset)
+  // Sync form state when profile changes (e.g., after reset) or courseId changes
   useEffect(() => {
     if (profile) {
       setDisplayName(profile.displayName || '');
-      setExamSection(profile.examSection || getDefaultSection(courseId));
+      // Validate profile section is valid for current course
+      const validSection = getCurrentSectionForCourse(profile.examSection, courseId);
+      setExamSection(validSection);
       setDailyGoal(profile.dailyGoal || 50);
-      setExamDate(formatDateForInput(profile.examDate));
-      setActiveCourse(profile.activeCourse || 'cpa');
+      // Use getExamDate helper for multi-course exam date lookup
+      setExamDate(formatDateForInput(getExamDate(profile as any, validSection, courseId)));
     }
-  }, [profile]);
+  }, [profile, courseId]);
   
   const [notifications, setNotifications] = useState({
     dailyReminder: true,
@@ -119,6 +143,9 @@ const Settings: React.FC = () => {
     streakReminder: true,
     newContent: false,
   });
+  
+  // I Passed celebration modal
+  const [showPassedCelebration, setShowPassedCelebration] = useState(false);
 
   // New states for enhanced settings
   const [notificationPermission, setNotificationPermission] = useState<NotificationPermission>('default');
@@ -278,10 +305,12 @@ const Settings: React.FC = () => {
     setIsSaving(true);
     try {
       // Create multi-course aware exam date update
+      // Pass courseId so single-exam courses (CFP, CISA) use course ID as key
       const examDateUpdate = createExamDateUpdate(
         userProfile,
         examSection || userProfile?.examSection || getDefaultSection(courseId),
-        examDate ? new Date(examDate) : null
+        examDate ? new Date(examDate) : null,
+        courseId
       );
       
       // Save profile settings
@@ -290,7 +319,6 @@ const Settings: React.FC = () => {
         examSection,
         dailyGoal,
         ...examDateUpdate,
-        activeCourse,
         dailyReminderEnabled: notifications.dailyReminder,
         dailyReminderTime: reminderTime || '09:00',
         weeklyReportEnabled: notifications.weeklyReport,
@@ -307,6 +335,11 @@ const Settings: React.FC = () => {
         
         // Update weekly report preference
         await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
+        
+        // Clear daily plan cache to force regeneration with new exam date/daily goal
+        // This ensures the plan recalculates intensity based on the new exam date
+        await clearTodaysPlan(user.uid, examSection);
+        logger.log('Daily plan cache cleared - will regenerate with updated settings');
       }
       
       setSaveSuccess(true);
@@ -318,14 +351,35 @@ const Settings: React.FC = () => {
     }
   };
 
+  const handleManageSubscription = async () => {
+    if (!user) return;
+    setIsManagingSubscription(true);
+    try {
+      const createPortalSession = httpsCallable<{ returnUrl: string }, { url: string }>(
+        functions,
+        'createCustomerPortalSession'
+      );
+      const result = await createPortalSession({
+        returnUrl: window.location.href
+      });
+      window.location.href = result.data.url;
+    } catch (error) {
+      logger.error('Error opening subscription portal:', error);
+      alert('Unable to open subscription management. Please try again.');
+      setIsManagingSubscription(false);
+    }
+  };
+
   const tabs: Tab[] = [
     { id: 'profile', label: 'Profile', icon: UserIcon },
     { id: 'study', label: 'Study Plan', icon: Target },
+    { id: 'invite', label: 'Invite Friends', icon: Users },
     { id: 'appearance', label: 'Appearance', icon: Palette },
     { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'feedback', label: 'Feedback & Support', icon: MessageSquare },
     { id: 'offline', label: 'Offline', icon: Wifi },
     { id: 'account', label: 'Account', icon: Shield },
+    { id: 'about', label: 'About', icon: Info },
   ];
 
   // Keyboard navigation for tabs
@@ -340,10 +394,14 @@ const Settings: React.FC = () => {
   );
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Settings</h1>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
+      <PageHeader 
+        title="Settings"
+        subtitle="Manage your account and preferences"
+      />
 
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
         <div className="md:w-56 flex-shrink-0">
           <nav 
@@ -449,47 +507,17 @@ const Settings: React.FC = () => {
             {activeTab === 'study' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Study Plan Settings</h2>
-
-                  {/* Active Course */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      <span className="flex items-center gap-2">
-                        <GraduationCap className="w-4 h-4" />
-                        Certification Course
-                      </span>
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {ACTIVE_COURSES.map((courseKey) => {
-                        const course = COURSES[courseKey as CourseId];
-                        if (!course) return null;
-                        return (
-                          <button
-                            key={courseKey}
-                            onClick={() => setActiveCourse(courseKey as CourseId)}
-                            className={clsx(
-                              'p-3 rounded-xl border-2 text-left transition-all',
-                              activeCourse === courseKey
-                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                                : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
-                            )}
-                          >
-                            <div
-                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
-                              style={{ backgroundColor: course.color }}
-                            >
-                              {course.shortName}
-                            </div>
-                            <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                              {course.name}
-                            </div>
-                          </button>
-                        );
-                      })}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                      style={{ backgroundColor: course?.color || '#3b82f6' }}
+                    >
+                      {course?.shortName || 'CPA'}
                     </div>
-                    <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                      Switch between your certification prep courses
-                    </p>
+                    <div>
+                      <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{course?.name || 'CPA Exam Review'} Settings</h2>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Use the course selector in the sidebar to switch exams</p>
+                    </div>
                   </div>
 
                   {/* Exam Section - All Courses */}
@@ -501,16 +529,15 @@ const Settings: React.FC = () => {
                     {(() => {
                       // For CPA: Determine available sections based on user's exam date
                       let availableSections: string[];
-                      if (activeCourse === 'cpa') {
-                        const BLUEPRINT_CUTOFF = new Date('2026-07-01');
-                        const userExamDate = examDate ? new Date(examDate) : new Date();
-                        const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
-                        availableSections = is2025Blueprint
-                          ? [...CORE_SECTIONS, 'BEC']
-                          : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+                      if (courseId === 'cpa') {
+                        // BEC was retired December 15, 2023 - only BAR/ISC/TCP available
+                        // Blueprint date only affects TAX LAW content (OBBBA), not section availability
+                        availableSections = [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
                       } else {
-                        // For other courses, show all sections
-                        availableSections = course.sections.map((s: { id: string }) => s.id);
+                        // For other courses, show all sections except PREP (strategy sections)
+                        availableSections = course.sections
+                          .filter((s: { id: string }) => s.id !== 'PREP')
+                          .map((s: { id: string }) => s.id);
                       }
                       
                       return (
@@ -518,7 +545,7 @@ const Settings: React.FC = () => {
                           {course.sections
                             .filter((s: { id: string }) => availableSections.includes(s.id))
                             .map((section: { id: string }) => {
-                              const displayInfo = getSectionDisplayInfo(section.id, activeCourse);
+                              const displayInfo = getSectionDisplayInfo(section.id, courseId);
                               if (!displayInfo) return null;
                               return (
                             <button
@@ -548,16 +575,16 @@ const Settings: React.FC = () => {
                     })()}
                     
                     {/* Blueprint Info Note - CPA only */}
-                    {activeCourse === 'cpa' && (
+                    {courseId === 'cpa' && (
                     <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                       <div className="flex gap-2">
                         <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                         <div className="text-sm text-blue-800 dark:text-blue-200">
                           {isBefore2026Blueprint() ? (
                             <>
-                              <strong>2025 vs 2026 Blueprint:</strong> BEC is available through June 30, 2026. 
-                              Starting July 1, 2026, choose BAR, ISC, or TCP as your discipline section. 
-                              REG and TCP will also have significant tax law updates (OBBBA) after July 1.
+                              <strong>2025 vs 2026 Blueprint:</strong> Choose one discipline section (BAR, ISC, or TCP).
+                              Starting July 1, 2026, REG and TCP will have significant tax law updates (OBBBA).
+                              Content will adapt automatically based on your target exam date.
                             </>
                           ) : (
                             <>
@@ -581,7 +608,7 @@ const Settings: React.FC = () => {
                       type="date"
                       value={examDate}
                       onChange={(e) => setExamDate(e.target.value)}
-                      className="w-full sm:w-auto px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full sm:w-auto px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:[color-scheme:dark]"
                     />
                   </div>
 
@@ -608,7 +635,33 @@ const Settings: React.FC = () => {
                       ))}
                     </div>
                   </div>
+
+                  {/* I Passed Celebration */}
+                  <div className="pt-6 mt-6 border-t border-slate-200 dark:border-slate-700">
+                    <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                      Passed Your Exam?
+                    </h3>
+                    <button
+                      onClick={() => setShowPassedCelebration(true)}
+                      className="flex items-center gap-3 w-full p-4 rounded-xl border-2 border-emerald-200 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/20 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all text-left"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-emerald-700 dark:text-emerald-400">I Passed!</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Celebrate and share your success</div>
+                      </div>
+                    </button>
+                  </div>
                 </div>
+              </div>
+            )}
+
+            {/* Invite Friends Tab */}
+            {activeTab === 'invite' && (
+              <div className="card-body">
+                <InviteFriends />
               </div>
             )}
 
@@ -754,7 +807,7 @@ const Settings: React.FC = () => {
                     <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800 mb-4">
                       <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Download for Offline Study</h3>
                       <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
-                        Download up to 500 {profile?.examSection || getDefaultSection(courseId)} questions to practice anywhere, anytime.
+                        Download up to 500 {getSectionDisplayInfo(profile?.examSection || getDefaultSection(courseId), courseId)?.shortName || course?.shortName} questions to practice anywhere, anytime.
                       </p>
                       <button
                         onClick={handleDownloadOffline}
@@ -820,6 +873,11 @@ const Settings: React.FC = () => {
                               ? 'You\'ve blocked notifications. Enable them in your browser settings to receive study reminders.'
                               : 'Allow notifications to receive daily study reminders in your browser.'}
                           </div>
+                          {notificationPermission === 'denied' && (
+                            <div className="mt-2 text-xs text-red-600 dark:text-red-400">
+                              <strong>To fix:</strong> Click the lock/tune icon in your browser's address bar → Site settings → Notifications → Allow. Then refresh this page.
+                            </div>
+                          )}
                         </div>
                         {notificationPermission !== 'denied' && (
                           <Button
@@ -1052,6 +1110,118 @@ const Settings: React.FC = () => {
 
                     <div className="border-t border-slate-200 pt-6"></div>
 
+                    {/* Subscription Management — Per-Exam */}
+                    <h3 className="font-medium text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                      <CreditCard className="w-5 h-5" />
+                      Subscriptions & Trials
+                    </h3>
+                    <div className="space-y-3 mb-6">
+                      {(['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'] as CourseId[]).filter(isCourseActive).map(examId => {
+                        const access = getExamAccess(examId);
+                        const examName = examId.toUpperCase();
+                        const pricing = EXAM_PRICING[examId];
+                        const isActive = examId === courseId;
+                        // Show: current exam always, other exams if user has interacted
+                        const hasInteraction = access.isPaid || access.isTrialing || access.trialExpired;
+                        if (!isActive && !hasInteraction) return null;
+
+                        return (
+                          <div key={examId} className={clsx(
+                            'rounded-xl border p-4 transition-colors',
+                            isActive
+                              ? 'bg-primary-50 dark:bg-primary-900/10 border-primary-200 dark:border-primary-800'
+                              : 'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700'
+                          )}>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                <div className={clsx(
+                                  'w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm',
+                                  access.isPaid
+                                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                                    : access.isTrialing
+                                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
+                                      : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
+                                )}>
+                                  {examName}
+                                </div>
+                                <div>
+                                  <div className="font-medium text-slate-900 dark:text-white flex items-center gap-2">
+                                    {examName} Exam
+                                    {isActive && (
+                                      <span className="text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 px-1.5 py-0.5 rounded">Current</span>
+                                    )}
+                                  </div>
+                                  <div className="text-sm text-slate-600 dark:text-slate-400">
+                                    {access.isPaid ? (
+                                      <span className={`${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'} flex items-center gap-1`}>
+                                        <CheckCircle className="w-3.5 h-3.5" />
+                                        {access.cancelAtPeriodEnd ? 'Cancels' : 'Active Subscription'}
+                                        {access.currentPeriodEnd && (
+                                          <span className="text-slate-500">
+                                            {access.cancelAtPeriodEnd
+                                              ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
+                                              : ` · Renews ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
+                                            }
+                                          </span>
+                                        )}
+                                      </span>
+                                    ) : access.isTrialing ? (
+                                      <span className="text-blue-600 dark:text-blue-400">
+                                        Trial · {access.trialDaysRemaining}d remaining
+                                        {access.trialEndDate && (
+                                          <span className="text-slate-500"> · Ends {new Date(access.trialEndDate).toLocaleDateString()}</span>
+                                        )}
+                                      </span>
+                                    ) : access.trialExpired ? (
+                                      <span className="text-amber-600 dark:text-amber-400">Trial expired</span>
+                                    ) : (
+                                      <span>Free trial available</span>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                {/* Upgrade button for non-paid exams */}
+                                {!access.isPaid && (access.trialExpired || access.isTrialing) && (
+                                  <button
+                                    onClick={() => navigate(`/${examId}#pricing`)}
+                                    className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
+                                  >
+                                    Subscribe
+                                    <span className="text-xs opacity-80">
+                                      {isFounderPricingActive() ? `$${pricing.founderAnnual}/yr` : `$${pricing.annual}/yr`}
+                                    </span>
+                                  </button>
+                                )}
+                                {/* Manage button for paid subscribers */}
+                                {access.isPaid && subscription?.stripeCustomerId && (
+                                  <button
+                                    onClick={handleManageSubscription}
+                                    disabled={isManagingSubscription}
+                                    className="flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors disabled:opacity-50"
+                                  >
+                                    {isManagingSubscription ? (
+                                      <>
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        Opening...
+                                      </>
+                                    ) : (
+                                      <>
+                                        Manage
+                                        <ExternalLink className="w-4 h-4" />
+                                      </>
+                                    )}
+                                  </button>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="border-t border-slate-200 pt-6"></div>
+
                     {/* Actions */}
                     <h3 className="font-medium text-slate-900 dark:text-white mb-3">Security & Session</h3>
                     <div className="space-y-3">
@@ -1083,6 +1253,118 @@ const Settings: React.FC = () => {
               </div>
             )}
             
+            {/* About Tab */}
+            {activeTab === 'about' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">About VoraPrep</h2>
+                  
+                  <div className="space-y-6">
+                    {/* App Info */}
+                    <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+                          <Smartphone className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white">VoraPrep</h3>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">AI-Powered Exam Prep</p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
+                            Version
+                          </div>
+                          <div className="text-sm font-mono text-slate-700 dark:text-slate-300">
+                            v{__APP_VERSION__}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
+                            Platform
+                          </div>
+                          <div className="text-sm text-slate-700 dark:text-slate-300">
+                            {/iPhone|iPad|iPod/.test(navigator.userAgent) ? 'iOS' : /Android/.test(navigator.userAgent) ? 'Android' : 'Web'}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Updates Section */}
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-3">Updates</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                        VoraPrep automatically checks for updates. You can also manually check below.
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <Button
+                          onClick={async () => {
+                            setIsCheckingUpdate(true);
+                            setUpdateCheckResult(null);
+                            try {
+                              // Force service worker update check
+                              const registration = await navigator.serviceWorker?.getRegistration();
+                              if (registration) {
+                                await registration.update();
+                                // Wait a moment for the update check to complete
+                                await new Promise(resolve => setTimeout(resolve, 1500));
+                                // Check if there's a waiting worker (new version available)
+                                if (registration.waiting) {
+                                  setUpdateCheckResult('available');
+                                  triggerUpdateBanner();
+                                } else {
+                                  setUpdateCheckResult('none');
+                                }
+                              } else {
+                                setUpdateCheckResult('none');
+                              }
+                            } catch (err) {
+                              logger.error('Update check failed:', err);
+                              setUpdateCheckResult('none');
+                            } finally {
+                              setIsCheckingUpdate(false);
+                            }
+                          }}
+                          variant="secondary"
+                          leftIcon={RefreshCw}
+                          disabled={isCheckingUpdate}
+                          className="w-full sm:w-auto"
+                        >
+                          {isCheckingUpdate ? 'Checking...' : 'Check for Updates'}
+                        </Button>
+                        {updateCheckResult === 'none' && (
+                          <div className="flex items-center gap-2 text-green-600 dark:text-green-400 text-sm">
+                            <CheckCircle className="w-4 h-4" />
+                            <span>You're up to date!</span>
+                          </div>
+                        )}
+                        {updateCheckResult === 'available' && (
+                          <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400 text-sm">
+                            <RefreshCw className="w-4 h-4" />
+                            <span>Update available - see banner above</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Legal Links */}
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-3">Legal</h3>
+                      <div className="flex flex-wrap gap-4">
+                        <a href="/terms" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">Terms of Service</a>
+                        <a href="/privacy" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">Privacy Policy</a>
+                      </div>
+                      <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
+                        VoraPrep is not affiliated with AICPA, NASBA, IMA, IIA, ISACA, CFP Board, or any certifying organization. 
+                        All exam names are trademarks of their respective owners.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Save Button - only show on tabs with saveable settings */}
             {['profile', 'study', 'notifications'].includes(activeTab) && (
               <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">
@@ -1107,6 +1389,16 @@ const Settings: React.FC = () => {
         </div>
       </div>
     </div>
+
+    {/* I Passed Celebration Modal */}
+    {showPassedCelebration && (
+      <PassedCelebration
+        section={examSection}
+        userName={displayName || user?.displayName || undefined}
+        onClose={() => setShowPassedCelebration(false)}
+      />
+    )}
+  </div>
   );
 };
 

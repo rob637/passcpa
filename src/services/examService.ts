@@ -1,13 +1,15 @@
 /**
  * Exam Service
- * 
- * Multi-course exam simulation service that dynamically loads exam configurations
- * for any supported exam (CPA, EA, CMA, CIA, CISA, CFP).
+ *
+ * Multi-course exam simulation service. Exam format configs are stored in a
+ * Record lookup (not switch/case), and TBS loading uses the generic
+ * courseDataLoader.
  */
 
 import { CourseId } from '../types/course';
 import { getCourse } from '../courses';
 import { TBS } from '../types';
+import { loadCourseData } from './courseDataLoader';
 
 export interface TestletConfig {
   type: 'mcq' | 'tbs' | 'wc';
@@ -44,32 +46,12 @@ export function getExamConfig(courseId: CourseId, sectionId: string): ExamConfig
   const section = course.sections.find(s => s.id === sectionId);
   void section; // May be used for section-specific time in future
   const passingScore = course.passingScore || 75;
-  
-  let config: ExamConfig;
-  
-  switch (courseId) {
-    case 'cpa':
-      config = getCPAExamConfig(sectionId, passingScore);
-      break;
-    case 'ea':
-      config = getEAExamConfig(sectionId, passingScore);
-      break;
-    case 'cma':
-      config = getCMAExamConfig(sectionId, passingScore);
-      break;
-    case 'cia':
-      config = getCIAExamConfig(sectionId, passingScore);
-      break;
-    case 'cisa':
-      config = getCISAExamConfig(sectionId, passingScore);
-      break;
-    case 'cfp':
-      config = getCFPExamConfig(sectionId, passingScore);
-      break;
-    default:
-      config = getDefaultExamConfig(passingScore);
-  }
-  
+
+  const builder = examConfigBuilders[courseId];
+  const config = builder
+    ? builder(sectionId, passingScore)
+    : getDefaultExamConfig(passingScore);
+
   examConfigCache[cacheKey] = config;
   return config;
 }
@@ -99,51 +81,39 @@ export function getMiniExamConfig(courseId: CourseId, passingScore: number = 75)
   };
 }
 
-// CPA Exam Configuration
+// CPA Exam Configuration - matches AICPA specifications
 function getCPAExamConfig(sectionId: string, passingScore: number): ExamConfig {
-  // CPA has consistent structure across sections
-  const farLikeStructure: ExamConfig = {
-    testlets: [
-      { type: 'mcq', questions: 33, time: 45 * 60 },
-      { type: 'mcq', questions: 33, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 70 * 60 },
-      { type: 'tbs', questions: 6, time: 70 * 60 },
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore,
+  // Section-specific MCQ and TBS counts per AICPA CPA Evolution (2024+)
+  // Structure: 2 MCQ testlets + 3 TBS testlets, 4 hours total
+  const sectionConfigs: Record<string, { mcq: number; tbs: number }> = {
+    'FAR': { mcq: 50, tbs: 7 },
+    'AUD': { mcq: 78, tbs: 7 },
+    'REG': { mcq: 72, tbs: 8 },
+    'BAR': { mcq: 50, tbs: 7 },
+    'ISC': { mcq: 82, tbs: 6 }, // 60% MCQ / 40% TBS weighting
+    'TCP': { mcq: 68, tbs: 7 },
   };
   
-  const standardStructure: ExamConfig = {
+  const config = sectionConfigs[sectionId] || { mcq: 72, tbs: 7 };
+  const mcqPerTestlet = Math.ceil(config.mcq / 2);
+  const tbsTestlet1 = Math.floor(config.tbs / 2);
+  const tbsTestlet2 = config.tbs - tbsTestlet1;
+  
+  // Time allocation: ~1.5 min/MCQ, ~15 min/TBS, remaining for review
+  const mcqTime = 45 * 60; // 45 min per MCQ testlet
+  const tbsTime = Math.floor((4 * 60 * 60 - 2 * mcqTime) / 2); // Split remaining time
+  
+  return {
     testlets: [
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
+      { type: 'mcq', questions: mcqPerTestlet, time: mcqTime },
+      { type: 'mcq', questions: config.mcq - mcqPerTestlet, time: mcqTime },
+      { type: 'tbs', questions: tbsTestlet1, time: tbsTime },
+      { type: 'tbs', questions: tbsTestlet2, time: tbsTime },
     ],
-    totalTime: 4 * 60 * 60,
+    totalTime: 4 * 60 * 60, // 4 hours
     passingScore,
+    description: `CPA ${sectionId} - ${config.mcq} MCQ + ${config.tbs} TBS`,
   };
-  
-  // FAR and BAR have slightly different structure
-  if (sectionId === 'FAR' || sectionId === 'BAR') {
-    return farLikeStructure;
-  }
-  
-  // BEC (legacy) had written communication
-  if (sectionId === 'BEC') {
-    return {
-      testlets: [
-        { type: 'mcq', questions: 31, time: 45 * 60 },
-        { type: 'mcq', questions: 31, time: 45 * 60 },
-        { type: 'tbs', questions: 4, time: 60 * 60 },
-        { type: 'wc', questions: 3, time: 30 * 60 },
-      ],
-      totalTime: 4 * 60 * 60,
-      passingScore,
-    };
-  }
-  
-  return standardStructure;
 }
 
 // EA Exam Configuration (Enrolled Agent - IRS)
@@ -246,21 +216,28 @@ function getDefaultExamConfig(passingScore: number): ExamConfig {
 }
 
 /**
- * Load TBS questions for a course section
+ * Exam config builders by course.
+ * New courses: add an entry here or get getDefaultExamConfig automatically.
+ */
+const examConfigBuilders: Partial<Record<CourseId, (sectionId: string, passingScore: number) => ExamConfig>> = {
+  cpa: getCPAExamConfig,
+  ea: getEAExamConfig,
+  cma: getCMAExamConfig,
+  cia: getCIAExamConfig,
+  cisa: getCISAExamConfig,
+  cfp: getCFPExamConfig,
+};
+
+/**
+ * Load TBS questions for a course section.
+ * Uses COURSE_DATA.tbs — works for any course that provides TBS content.
  */
 export async function loadExamTBS(courseId: CourseId, sectionId: string, count: number): Promise<TBS[]> {
   try {
-    switch (courseId) {
-      case 'cpa': {
-        const { getTBSBySection } = await import('../data/cpa/tbs');
-        const allTbs = getTBSBySection(sectionId as import('../types').ExamSection);
-        return allTbs.slice(0, count);
-      }
-      // Other courses that don't have TBS yet return empty
-      // CMA, CIA, CISA, CFP exams are MCQ-only or use different simulation types
-      default:
-        return [];
-    }
+    const courseData = await loadCourseData(courseId);
+    const allTbs = (courseData.tbs || []) as TBS[];
+    const sectionTbs = allTbs.filter(t => t.section === sectionId);
+    return sectionTbs.slice(0, count);
   } catch (error) {
     console.error(`Failed to load TBS for ${courseId}/${sectionId}:`, error);
     return [];

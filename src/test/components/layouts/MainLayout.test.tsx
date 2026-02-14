@@ -11,6 +11,46 @@ vi.mock('../../../hooks/useStudy', () => ({
   }),
 }));
 
+// Mock AuthProvider (used by useSubscription)
+vi.mock('../../../providers/AuthProvider', () => ({
+  useAuth: () => ({
+    user: { uid: 'test-user' },
+    userProfile: null,
+  }),
+}));
+
+// Mock useSubscription (used by TrialBanner in SubscriptionGate and CourseSelector)
+vi.mock('../../../services/subscription', () => ({
+  useSubscription: () => ({
+    subscription: null,
+    isPremium: false,
+    isTrialing: false,
+    trialDaysRemaining: 0,
+    trialExpired: false,
+    loading: false,
+    limits: { questionsPerDay: Infinity },
+    getExamAccess: () => ({
+      hasAccess: true,
+      isPaid: false,
+      isTrialing: true,
+      trialDaysRemaining: 14,
+      trialExpired: false,
+      canStartTrial: false,
+      trialEndDate: null,
+    }),
+    startExamTrial: vi.fn().mockResolvedValue(true),
+    hasFullAccess: true,
+  }),
+}));
+
+// Mock CourseProvider (used by TrialBanner)
+vi.mock('../../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: { id: 'cpa', name: 'CPA' },
+  }),
+}));
+
 vi.mock('../../../hooks/useDocumentTitle', () => ({
   useRouteTitle: vi.fn(),
   ROUTE_TITLES: {
@@ -22,6 +62,17 @@ vi.mock('../../../hooks/useDocumentTitle', () => ({
 
 vi.mock('../../../hooks/usePageTracking', () => ({
   usePageTracking: vi.fn(),
+}));
+
+// Mock useToast (used by CourseSelector)
+vi.mock('../../../components/common/Toast', () => ({
+  useToast: () => ({
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warning: vi.fn(),
+    show: vi.fn(),
+  }),
 }));
 
 import MainLayout from '../../../components/layouts/MainLayout';

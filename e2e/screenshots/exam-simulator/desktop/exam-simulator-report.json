@@ -1,0 +1,241 @@
+{
+  "timestamp": "2026-02-14T15:37:41.942Z",
+  "viewport": "desktop",
+  "results": [
+    {
+      "f": "Login",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Intro screen loaded",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Mode options visible",
+      "s": "PASS",
+      "d": "Mini, Full, Curated"
+    },
+    {
+      "f": "CPA Exam — Mini mode selected",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Question displayed",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Timer visible",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Testlet indicator visible",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Questions in testlet",
+      "s": "INFO",
+      "d": "3"
+    },
+    {
+      "f": "CPA Exam — Results screen with score",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CPA Exam — Score",
+      "s": "INFO",
+      "d": "100%"
+    },
+    {
+      "f": "Mock Selection — Screen loaded",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Mock Selection — Back button present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Mock Selection — Mock exams available",
+      "s": "PASS",
+      "d": "5 cards"
+    },
+    {
+      "f": "Prometric — Theme toggle found and enabled",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Prometric — Theme styling applied",
+      "s": "PASS",
+      "d": "65 prometric elements"
+    },
+    {
+      "f": "Keyboard — Option selected via number key",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Keyboard — Flag toggled via F key",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Keyboard — ArrowRight moved to next question",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Keyboard — All shortcuts tested without crash",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Template Exam — CISA setup screen loaded",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Template Exam — Multi-select mode (checkboxes)",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Template Exam — Mode options found",
+      "s": "PASS",
+      "d": "Half Exam75 Q75-question practice exam ("
+    },
+    {
+      "f": "Template Exam — Quick mode selected",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Template Exam — Exam started, question displayed",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Template Exam — Timer visible",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Template Exam — Could not answer any questions",
+      "s": "WARN",
+      "d": ""
+    },
+    {
+      "f": "Timer — Initial value read",
+      "s": "PASS",
+      "d": "69 min 56 sec"
+    },
+    {
+      "f": "Timer — Counting down correctly",
+      "s": "PASS",
+      "d": "5s elapsed in 5s wall time"
+    },
+    {
+      "f": "Navigation — Next button works",
+      "s": "PASS",
+      "d": "Q1 → Q2"
+    },
+    {
+      "f": "Navigation — Previous button works",
+      "s": "PASS",
+      "d": "Q2 → Q1"
+    },
+    {
+      "f": "Navigation — Flag toggled",
+      "s": "PASS",
+      "d": "1 flag indicators"
+    },
+    {
+      "f": "Navigation — Question grid jump works",
+      "s": "PASS",
+      "d": "Jumped to Q3"
+    },
+    {
+      "f": "Navigation — Question grid shows state",
+      "s": "PASS",
+      "d": "Answered: 0, Current: 4, Flagged: 0"
+    },
+    {
+      "f": "Exit — Left exam without confirmation",
+      "s": "WARN",
+      "d": ""
+    },
+    {
+      "f": "EA Exam — Simulator loaded with modes",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "EA Exam — Start button enabled",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CMA Exam — Simulator loaded with modes",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CMA Exam — Start button enabled",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CIA Exam — Simulator loaded with modes",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CIA Exam — Start button enabled",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CFP Exam — Simulator loaded with modes",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "CFP Exam — Start button enabled",
+      "s": "PASS",
+      "d": ""
+    }
+  ],
+  "issues": [
+    {
+      "sev": "LOW",
+      "f": "Template Exam — Could not answer any questions",
+      "d": ""
+    },
+    {
+      "sev": "LOW",
+      "f": "Exit — Left exam without confirmation",
+      "d": ""
+    }
+  ],
+  "consoleErrors": [
+    "[2026-02-14T15:35:22.346Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:35:22.347Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:35:22.347Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:35:22.368Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T15:35:22.470Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
+  ],
+  "summary": {
+    "PASS": 37,
+    "FAIL": 0,
+    "WARN": 2,
+    "INFO": 3
+  }
+}

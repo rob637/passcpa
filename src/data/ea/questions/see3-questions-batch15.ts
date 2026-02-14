@@ -18,15 +18,15 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     subtopic: 'CNC Definition',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'Currently Not Collectible (CNC) status means:',
+    question: 'A taxpayer owes $28,000 in back taxes and has monthly income of $2,800 with monthly living expenses of $2,750. The taxpayer has no significant assets. What IRS collection alternative is most appropriate?',
     options: [
-      'The tax liability is forgiven',
-      'The IRS has determined that collection action is not currently appropriate',
-      'The taxpayer is in prison',
-      'The account is closed permanently'
+      'Currently Not Collectible (CNC) status because the taxpayer cannot pay and meet basic living expenses',
+      'An installment agreement with monthly payments of $50',
+      'An offer in compromise based on doubt as to collectibility',
+      'Voluntary bankruptcy filing to discharge the tax debt',
     ],
-    correctAnswer: 1,
-    explanation: 'CNC status is when the IRS determines collection is not currently feasible because the taxpayer cannot pay anything toward the liability. The debt is not forgiven; collection is just suspended.',
+    correctAnswer: 0,
+    explanation: 'Currently Not Collectible (CNC) status is appropriate when a taxpayer\'s allowable expenses meet or exceed income, making collection impractical. With only $50 monthly surplus, the IRS may classify the account as CNC. While in CNC status, the IRS suspends active collection efforts but penalties and interest continue to accrue, and the collection statute (CSED) continues to run. The IRS periodically reviews CNC accounts for changed circumstances.',
     reference: 'IRM 5.16.1',
   },
   {
@@ -40,12 +40,12 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'CNC status may be granted when:',
     options: [
-      'The taxpayer does not want to pay',
       'Monthly income does not exceed allowable living expenses',
+      'The liability is for current year taxes only',
+      'The taxpayer does not want to pay',
       'The taxpayer has filed all returns',
-      'The liability is for current year taxes only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CNC is granted when the taxpayer has no ability to pay - monthly income equals or is less than allowable necessary expenses, and there are no assets to levy.',
     reference: 'IRM 5.16.1',
   },
@@ -61,11 +61,11 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     question: 'While an account is in CNC status:',
     options: [
       'The CSED is suspended',
+      'A new CSED is established',
       'The CSED continues to run',
       'The CSED is extended by 2 years',
-      'A new CSED is established'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CNC status does not suspend the collection statute. The 10-year CSED continues to run, and if it expires while the account is in CNC, the liability is written off.',
     reference: 'IRM 5.16.1.2',
   },
@@ -81,11 +81,11 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     question: 'While in CNC status:',
     options: [
       'Interest and penalties stop accruing',
+      'Only interest stops',
       'Interest and penalties continue to accrue',
       'Only penalties stop',
-      'Only interest stops'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Even while in CNC status, penalties and interest continue to accrue on the tax liability. The balance will grow while collection is suspended.',
     reference: 'IRC §6601',
   },
@@ -100,12 +100,12 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When an account is placed in CNC status:',
     options: [
+      'All liens are converted to judgments',
       'Any federal tax lien is released',
       'The federal tax lien typically remains in place',
       'A new lien is automatically filed',
-      'All liens are converted to judgments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Federal tax liens generally remain in place when an account goes into CNC status. The lien protects the government\'s interest while collection is suspended.',
     reference: 'IRM 5.16.1.5',
   },
@@ -120,12 +120,12 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'CNC closing code 03 indicates:',
     options: [
-      'Taxpayer deceased',
       'Unable to locate taxpayer',
+      'Taxpayer deceased',
+      'Account transferred',
       'Hardship - taxpayer unable to pay',
-      'Account transferred'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'CNC closing code 03 is "hardship" - the taxpayer has been determined unable to pay any amount due to financial circumstances. Other codes include 05 (unable to locate), 06 (deceased), etc.',
     reference: 'IRM 5.16.1.2.9',
   },
@@ -142,8 +142,8 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     options: [
       'Never reviewed again',
       'Reviewed periodically based on the taxpayer\'s financial situation',
+      'Automatically closed after 3 years',
       'Reviewed only upon taxpayer request',
-      'Automatically closed after 3 years'
     ],
     correctAnswer: 1,
     explanation: 'The IRS periodically reviews CNC accounts. If the taxpayer\'s financial situation improves (increased income detected), the case may be reactivated for collection.',
@@ -162,8 +162,8 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     options: [
       'Only verbal verification of income',
       'Collection Information Statement (Form 433-F or 433-A)',
+      'A letter from an employer',
       'Only the prior year tax return',
-      'A letter from an employer'
     ],
     correctAnswer: 1,
     explanation: 'The IRS typically requires a Collection Information Statement (CIS) documenting income, expenses, and assets to substantiate inability to pay for CNC consideration.',
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When an account is in CNC status, refunds are:',
     options: [
-      'Issued to the taxpayer normally',
       'Still subject to offset against the outstanding liability',
+      'Converted to credits for next year',
+      'Issued to the taxpayer normally',
       'Paid only if requested',
-      'Converted to credits for next year'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CNC status suspends active collection but does not prevent refund offset. Any refunds the taxpayer is entitled to will still be applied to the outstanding balance.',
     reference: 'IRC §6402',
   },
@@ -200,12 +200,12 @@ export const SEE3_QUESTIONS_BATCH15: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer in CNC status must:',
     options: [
-      'Make small monthly payments',
       'File all future tax returns and pay taxes when due',
       'Never file returns again',
-      'Only file returns every other year'
+      'Make small monthly payments',
+      'Only file returns every other year',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CNC status applies to past liabilities. Taxpayers must remain in filing and payment compliance with current tax obligations. Failure to do so may result in new balances and case reactivation.',
     reference: 'IRM 5.16.1',
   },

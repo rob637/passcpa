@@ -1,0 +1,60 @@
+# CISA Video Pipeline - Docker Compose
+# 
+# Usage:
+#   docker-compose up -d          # Start in background
+#   docker-compose logs -f        # Watch logs
+#   docker-compose down           # Stop
+#   docker-compose exec pipeline python orchestrator.py --status
+
+version: '3.8'
+
+services:
+  pipeline:
+    build: .
+    container_name: cisa-video-pipeline
+    
+    # Environment variables
+    env_file:
+      - ../../.env  # Load from project root
+    
+    environment:
+      - PYTHONUNBUFFERED=1
+      - HEADLESS=true
+      - BATCH_SIZE=100
+    
+    # Persist output between runs
+    volumes:
+      - ./output:/app/output
+      - ./.browser_data:/app/output/.browser_data
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2'
+    
+    # Restart on failure
+    restart: unless-stopped
+    
+    # Logging
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+
+  # Optional: Webhook server for Make.com integration
+  webhook:
+    build: .
+    container_name: cisa-video-webhook
+    command: ["python", "webhook_server.py"]
+    ports:
+      - "5050:5050"
+    env_file:
+      - ../../.env
+    volumes:
+      - ./output:/app/output
+    restart: unless-stopped
+    profiles:
+      - webhook  # Only starts with: docker-compose --profile webhook up

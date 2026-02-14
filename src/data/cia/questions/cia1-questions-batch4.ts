@@ -18,158 +18,185 @@ export const CIA1_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-271',
+    id: 'cia1-271',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which element is NOT part of the IIA\'s Definition of Internal Auditing?',
     options: [
       'Independent and objective assurance',
-      'Consulting activity',
+      'Improving effectiveness of operations',
       'External audit coordination',
-      'Improving effectiveness of operations'
+      'Consulting activity',
     ],
     correctAnswer: 2,
     explanation: 'The Definition includes independent, objective assurance and consulting activities designed to add value and improve operations. External audit coordination is a responsibility but not part of the definition.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Definition of Internal Auditing'
+    subtopic: 'Definition of Internal Auditing',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-273',
+    id: 'cia1-273',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Core Principles for the Professional Practice of Internal Auditing include all of the following EXCEPT:',
     options: [
-      'Demonstrates integrity',
-      'Provides risk-based assurance',
       'Guarantees fraud detection',
-      'Promotes organizational improvement'
+      'Demonstrates integrity',
+      'Promotes organizational improvement',
+      'Provides risk-based assurance',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Internal auditing does not guarantee fraud detection. The Core Principles include demonstrating integrity, proficiency, promoting improvement, and providing risk-based assurance.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Core Principles'
+    subtopic: 'Core Principles',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-274',
+    id: 'cia1-274',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'What is the primary purpose of the internal audit activity?',
     options: [
       'Detect fraud and errors',
-      'Ensure regulatory compliance',
       'Help the organization accomplish its objectives',
-      'Reduce external audit fees'
+      'Reduce external audit fees',
+      'Ensure regulatory compliance',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'The primary purpose is to help the organization accomplish its objectives through systematic evaluation and improvement of governance, risk management, and control processes.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Purpose of Internal Audit'
+    subtopic: 'Purpose of Internal Audit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-275',
+    id: 'cia1-275',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'According to the IIA Standards, the internal audit activity\'s scope should be:',
     options: [
+      'Determined by external auditors',
+      'Restricted to requested engagements',
       'Limited to financial controls',
       'Sufficient to achieve audit plan objectives',
-      'Determined by external auditors',
-      'Restricted to requested engagements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The scope should be sufficient to achieve engagement objectives. Internal audit should have unrestricted access to all operations, records, and personnel.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Scope of Internal Audit'
+    subtopic: 'Scope of Internal Audit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-276',
+    id: 'cia1-276',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which is a mandatory element of the International Professional Practices Framework (IPPF)?',
     options: [
+      'Standards',
+      'Position Papers',
       'Practice Guides',
       'Implementation Guidance',
-      'Standards',
-      'Position Papers'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'The Standards are mandatory guidance in the IPPF. Practice Guides and Implementation Guidance are recommended but not required.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'IPPF Structure'
+    subtopic: 'IPPF Structure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-277',
+    id: 'cia1-277',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An internal auditor discovers a policy violation during an engagement. The auditor should first:',
     options: [
+      'Confront the employee involved',
+      'Evaluate the significance and gather additional evidence',
       'Report immediately to law enforcement',
       'Notify the audit committee',
-      'Evaluate the significance and gather additional evidence',
-      'Confront the employee involved'
-    ],
-    correctAnswer: 2,
-    explanation: 'The auditor should first evaluate the significance of the finding and gather sufficient evidence before determining appropriate reporting.',
-    topic: 'Foundations of Internal Auditing',
-    subtopic: 'Engagement Findings'
-  },
-  {
-    id: 'CIA1-278',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'hard',
-    question: 'The IIA Code of Ethics requires internal auditors to:',
-    options: [
-      'Report all findings to external parties',
-      'Be loyal to the profession and their organization',
-      'Perform only assurance engagements',
-      'Avoid consulting activities'
     ],
     correctAnswer: 1,
-    explanation: 'The Code of Ethics requires loyalty to the profession through adherence to standards while also being loyal to the organization. Auditors must balance these responsibilities.',
+    explanation: 'The auditor should first evaluate the significance of the finding and gather sufficient evidence before determining appropriate reporting.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Engagement Findings',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-279',
+    id: 'cia1-278',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The IIA Code of Ethics requires internal auditors to:',
+    options: [
+      'Avoid consulting activities',
+      'Report all findings to external parties',
+      'Perform only assurance engagements',
+      'Be loyal to the profession and their organization',
+    ],
+    correctAnswer: 3,
+    explanation: 'The Code of Ethics requires loyalty to the profession through adherence to standards while also being loyal to the organization. Auditors must balance these responsibilities.',
+    topic: 'Foundations of Internal Auditing',
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-279',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which best describes the relationship between assurance and consulting engagements?',
     options: [
       'They are mutually exclusive',
-      'Consulting must always precede assurance',
+      'Only assurance is part of internal auditing',
       'Both can add value to the organization',
-      'Only assurance is part of internal auditing'
+      'Consulting must always precede assurance',
     ],
     correctAnswer: 2,
     explanation: 'Both assurance and consulting engagements are part of internal auditing and can add value. The nature differs - assurance involves independent assessment while consulting is advisory.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Types of Engagements'
+    subtopic: 'Types of Engagements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-280',
+    id: 'cia1-280',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit activity adds value when it provides:',
     options: [
+      'Regulatory enforcement',
       'External audit services',
-      'Objective and relevant assurance',
       'Management decisions',
-      'Regulatory enforcement'
+      'Objective and relevant assurance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal audit adds value by providing objective and relevant assurance and contributing to effective governance, risk management, and control processes.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Adding Value'
+    subtopic: 'Adding Value',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -177,106 +204,124 @@ export const CIA1_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-281',
+    id: 'cia1-281',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor previously managed the accounts payable function. How long should the auditor wait before auditing that function?',
     options: [
+      'Never',
       '6 months',
-      '1 year',
       'Until objectivity can be demonstrated',
-      'Never'
+      '1 year',
     ],
     correctAnswer: 2,
     explanation: 'Standards require waiting until objectivity can reasonably be presumed. The specific period depends on circumstances and CAE judgment, typically at least one year.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Impairments to Objectivity'
+    subtopic: 'Impairments to Objectivity',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-282',
+    id: 'cia1-282',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Who is responsible for determining when an individual auditor\'s objectivity is impaired?',
     options: [
       'The external auditor',
-      'The board',
       'The CAE',
-      'The auditor themselves'
+      'The auditor themselves',
+      'The board',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'The CAE is responsible for determining when impairments exist and taking appropriate actions, such as reassigning auditors to different engagements.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Managing Impairments'
+    subtopic: 'Managing Impairments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-283',
+    id: 'cia1-283',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Functional reporting to the board is essential for:',
     options: [
       'Administrative efficiency',
-      'Organizational independence',
       'Staff scheduling',
-      'Budget management'
+      'Budget management',
+      'Organizational independence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Functional reporting to the board (audit committee) is essential for organizational independence, ensuring internal audit can perform its work without management interference.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Organizational Independence'
+    subtopic: 'Organizational Independence',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-284',
+    id: 'cia1-284',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor accepts a gift from an auditee worth $500. This most likely represents:',
     options: [
-      'Acceptable business courtesy',
-      'An impairment to objectivity',
       'Required disclosure item only',
-      'A fraud indicator'
+      'Acceptable business courtesy',
+      'A fraud indicator',
+      'An impairment to objectivity',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Gifts of significant value can impair objectivity by creating an obligation to the auditee. Internal auditors should not accept gifts that could influence judgment.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Individual Objectivity'
+    subtopic: 'Individual Objectivity',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-285',
+    id: 'cia1-285',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE has responsibility for all activities performed under the internal audit activity name EXCEPT:',
     options: [
+      'Follow-up activities',
+      'Assurance engagements',
       'External audit activities',
       'Consulting engagements',
-      'Assurance engagements',
-      'Follow-up activities'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The CAE is responsible for internal audit activities including assurance, consulting, and follow-up. External audit is performed by a separate independent function.',
     topic: 'Independence and Objectivity',
-    subtopic: 'CAE Responsibilities'
+    subtopic: 'CAE Responsibilities',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-286',
+    id: 'cia1-286',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When should impairments to independence or objectivity be disclosed?',
     options: [
+      'Only if they result in findings',
+      'Never, to protect the organization',
       'Only in annual reports',
       'To appropriate parties depending on the nature of the impairment',
-      'Only if they result in findings',
-      'Never, to protect the organization'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Impairments must be disclosed to appropriate parties depending on the nature. Organizational impairments go to the board; individual impairments may be disclosed to management.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Disclosure of Impairments'
+    subtopic: 'Disclosure of Impairments',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -284,90 +329,105 @@ export const CIA1_QUESTIONS_BATCH4: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA1-287',
+    id: 'cia1-287',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal auditors must possess:',
     options: [
       'Expertise in every area they audit',
-      'Knowledge, skills, and competencies needed to fulfill responsibilities',
+      'External audit experience',
       'Advanced degrees in accounting',
-      'External audit experience'
+      'Knowledge, skills, and competencies needed to fulfill responsibilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Auditors must possess knowledge, skills, and competencies needed for their responsibilities. They need not be experts in all areas but should know when expertise is needed.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Proficiency Requirements'
+    subtopic: 'Proficiency Requirements',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-289',
+    id: 'cia1-289',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Due professional care requires auditors to consider:',
     options: [
+      'Political implications only',
       'Only financial risks',
-      'The extent of work needed to achieve engagement objectives',
       'External auditor preferences',
-      'Political implications only'
+      'The extent of work needed to achieve engagement objectives',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Due professional care requires considering the extent of work needed to achieve objectives, including relative complexity, materiality, and sufficiency of procedures.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-290',
+    id: 'cia1-290',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When should internal auditors seek external assistance?',
     options: [
       'Never - it indicates weakness',
-      'When they lack knowledge or skills for the engagement',
+      'For financial audits only',
       'Only when required by the board',
-      'For financial audits only'
+      'When they lack knowledge or skills for the engagement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The CAE must obtain competent advice when the internal audit staff lacks necessary knowledge, skills, or competencies.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Use of External Resources'
+    subtopic: 'Use of External Resources',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-291',
+    id: 'cia1-291',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Internal auditors should have sufficient knowledge to:',
     options: [
       'Conduct detailed IT forensic investigations',
-      'Identify indicators of fraud',
       'Replace IT security specialists',
-      'Perform external financial audits'
+      'Perform external financial audits',
+      'Identify indicators of fraud',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal auditors should have sufficient knowledge to evaluate fraud risk and identify indicators, but are not expected to have forensic investigation expertise unless that is their role.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Fraud Knowledge Requirements'
+    subtopic: 'Fraud Knowledge Requirements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-292',
+    id: 'cia1-292',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which best describes professional skepticism?',
     options: [
-      'Assuming management is always wrong',
-      'Distrusting all evidence',
       'Questioning mindset and critical assessment of evidence',
-      'Refusing to rely on client representations'
+      'Assuming management is always wrong',
+      'Refusing to rely on client representations',
+      'Distrusting all evidence',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Professional skepticism is a questioning mindset that critically assesses audit evidence. It doesn\'t mean distrust but rather appropriate questioning.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Professional Skepticism'
+    subtopic: 'Professional Skepticism',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -376,89 +436,104 @@ export const CIA1_QUESTIONS_BATCH4: Question[] = [
   
   
   {
-    id: 'CIA1-294',
+    id: 'cia1-294',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'External assessments of the internal audit activity must be conducted:',
     options: [
+      'At least once every five years',
+      'Only when requested by the board',
       'Annually',
       'Every three years',
-      'At least once every five years',
-      'Only when requested by the board'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Standard 1312 requires external assessments at least once every five years by a qualified, independent assessor or team.',
     topic: 'Quality Assurance',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-295',
+    id: 'cia1-295',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Who should perform the external assessment of internal audit?',
     options: [
+      'The audit committee members',
+      'The CAE',
       'Management',
       'A qualified, independent assessor',
-      'The audit committee members',
-      'The CAE'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'External assessments must be conducted by a qualified, independent assessor or team from outside the organization.',
     topic: 'Quality Assurance',
-    subtopic: 'External Assessments'
+    subtopic: 'External Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-296',
+    id: 'cia1-296',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the internal audit activity does not conform with the Code of Ethics or Standards, the CAE must:',
     options: [
+      'Report only to senior management',
+      'Hide the issue until corrected',
       'Resign immediately',
       'Disclose the nonconformance and its impact',
-      'Hide the issue until corrected',
-      'Report only to senior management'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Nonconformance that impacts the overall scope or operation must be disclosed to the board and senior management with its potential impact.',
     topic: 'Quality Assurance',
-    subtopic: 'Reporting on Conformance'
+    subtopic: 'Reporting on Conformance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-297',
+    id: 'cia1-297',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal assessments of quality include:',
     options: [
+      'Client testimonials',
       'External benchmarking only',
-      'Ongoing monitoring and periodic self-assessments',
       'Annual external reviews',
-      'Client testimonials'
+      'Ongoing monitoring and periodic self-assessments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal assessments include ongoing monitoring integrated into processes and periodic self-assessments by persons with sufficient knowledge.',
     topic: 'Quality Assurance',
-    subtopic: 'Internal Assessments'
+    subtopic: 'Internal Assessments',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-298',
+    id: 'cia1-298',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The phrase "Conforms with the International Standards" may be used only when:',
     options: [
       'The CAE believes conformance exists',
-      'Results of QAIP support the statement',
+      'External auditors approve',
       'Management agrees',
-      'External auditors approve'
+      'Results of QAIP support the statement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'This phrase may only be used when supported by results of the quality assurance and improvement program, including external assessment.',
     topic: 'Quality Assurance',
-    subtopic: 'Use of Conformance Statement'
+    subtopic: 'Use of Conformance Statement',
+  reference: 'IIA Standards'
   },
   
   // ============================================================================
@@ -467,626 +542,734 @@ export const CIA1_QUESTIONS_BATCH4: Question[] = [
   
   
   {
-    id: 'CIA1-300',
+    id: 'cia1-300',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which is NOT a component of an effective control?',
     options: [
+      'Zero cost',
+      'Effective operation',
       'Adequate design',
       'Proper implementation',
-      'Effective operation',
-      'Zero cost'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Effective controls must be adequately designed, properly implemented, and operating effectively. While cost-benefit is considered, zero cost is not a requirement.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Effectiveness'
+    subtopic: 'Control Effectiveness',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-301',
+    id: 'cia1-301',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal audit should assess risk management processes to determine if:',
     options: [
       'All risks are eliminated',
-      'Risks are identified, assessed, and managed appropriately',
+      'Insurance covers all risks',
       'External consultants are used',
-      'Insurance covers all risks'
+      'Risks are identified, assessed, and managed appropriately',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal audit assesses whether organizational objectives support strategy, risks are identified and assessed, and responses achieve acceptable residual risk.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Management Assessment'
+    subtopic: 'Risk Management Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-302',
+    id: 'cia1-302',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The three lines model assigns accountability for risk management to:',
     options: [
       'Internal audit alone',
-      'External parties',
+      'Regulators',
       'Management and the board with internal audit providing assurance',
-      'Regulators'
+      'External parties',
     ],
     correctAnswer: 2,
     explanation: 'The three lines model assigns first and second line roles to management (with board oversight) and third line (internal audit) provides independent assurance.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Three Lines Model'
+    subtopic: 'Three Lines Model',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-303',
+    id: 'cia1-303',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Control activities include all of the following EXCEPT:',
     options: [
+      'Reconciliations',
       'Approvals and authorizations',
-      'Segregation of duties',
       'Setting strategic objectives',
-      'Reconciliations'
+      'Segregation of duties',
     ],
     correctAnswer: 2,
     explanation: 'Control activities include policies and procedures like approvals, segregation of duties, and reconciliations. Setting strategic objectives is a governance activity.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Activities'
+    subtopic: 'Control Activities',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-304',
+    id: 'cia1-304',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which type of control prevents errors before they occur?',
     options: [
-      'Detective control',
-      'Corrective control',
       'Preventive control',
-      'Compensating control'
+      'Detective control',
+      'Compensating control',
+      'Corrective control',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Preventive controls stop errors or fraud before they occur. Detective controls identify after the fact, and corrective controls address identified issues.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Types of Controls'
+    subtopic: 'Types of Controls',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-306',
+    id: 'cia1-306',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating governance, internal auditors should assess:',
     options: [
+      'External audit findings only',
+      'Regulatory compliance exclusively',
       'Only financial controls',
       'Strategic alignment, ethical culture, and accountability',
-      'External audit findings only',
-      'Regulatory compliance exclusively'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Governance assessment includes strategic alignment with organizational objectives, ethical culture, accountability mechanisms, and stakeholder communication.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Governance Elements'
+    subtopic: 'Governance Elements',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-308',
+    id: 'cia1-308',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control environment is best described as:',
     options: [
+      'External audit procedures',
+      'The foundation that influences control consciousness',
       'Physical controls only',
       'IT systems and applications',
-      'The foundation that influences control consciousness',
-      'External audit procedures'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Control environment is the foundation of the control system, including integrity, ethical values, competence, management philosophy, and organizational structure.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Environment'
+    subtopic: 'Control Environment',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-310',
+    id: 'cia1-310',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Enterprise risk management (ERM) should be:',
     options: [
+      'Managed by internal audit',
+      'Limited to insurable risks',
       'Separate from organizational strategy',
       'Integrated into strategy and performance',
-      'Managed by internal audit',
-      'Limited to insurable risks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Modern ERM frameworks integrate risk management with strategy-setting and performance to create, preserve, and realize value.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Enterprise Risk Management'
+    subtopic: 'Enterprise Risk Management',
+  reference: 'IIA Standards'
   },
   
   // Additional Domain I questions
   {
-    id: 'CIA1-311',
+    id: 'cia1-311',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit activity should be established by:',
     options: [
+      'Management preference',
       'External auditors',
-      'The internal audit charter',
       'Government regulation only',
-      'Management preference'
+      'The internal audit charter',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The internal audit activity is formally established by the internal audit charter, which defines purpose, authority, and responsibility.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Establishing Internal Audit'
+    subtopic: 'Establishing Internal Audit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-312',
+    id: 'cia1-312',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which represents the proper relationship between the CAE and the board?',
     options: [
+      'There should be no direct relationship',
       'The CAE should report administratively to the board',
-      'The CAE should report functionally to the board',
       'The CAE should report to the CEO only',
-      'There should be no direct relationship'
+      'The CAE should report functionally to the board',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The CAE should report functionally to the board (audit committee) for independence and administratively to a senior executive for day-to-day operations.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Reporting Relationships'
+    subtopic: 'Reporting Relationships',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-313',
+    id: 'cia1-313',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit activity must be free from interference in:',
     options: [
       'Determining scope only',
-      'Determining scope, performing work, and communicating results',
       'Hiring staff only',
-      'Budget allocation only'
+      'Budget allocation only',
+      'Determining scope, performing work, and communicating results',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The internal audit activity must be free from interference in determining scope, performing work, and communicating results to maintain independence.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Freedom from Interference'
+    subtopic: 'Freedom from Interference',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-314',
+    id: 'cia1-314',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Advisory services (consulting) differ from assurance services in that:',
     options: [
       'They are less valuable',
-      'The nature and scope are agreed with the client',
       'They are not part of internal auditing',
-      'They require less expertise'
+      'They require less expertise',
+      'The nature and scope are agreed with the client',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Consulting engagements are advisory in nature, with scope generally agreed upon with the engagement client, unlike assurance where auditors determine scope.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Consulting Engagements'
+    subtopic: 'Consulting Engagements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-315',
+    id: 'cia1-315',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An internal auditor uncovers evidence of significant fraud. The appropriate first action is to:',
     options: [
-      'Immediately confront the suspected fraudster',
-      'Notify appropriate parties within the organization',
       'Contact law enforcement directly',
-      'Destroy the evidence to protect the organization'
+      'Immediately confront the suspected fraudster',
+      'Destroy the evidence to protect the organization',
+      'Notify appropriate parties within the organization',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Significant fraud findings should be reported to appropriate parties, typically the CAE firstly, who then determines appropriate escalation including the audit committee.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Fraud Reporting'
+    subtopic: 'Fraud Reporting',
+  reference: 'IIA Standards'
   },
   
   // Additional Domain II questions
   {
-    id: 'CIA1-316',
+    id: 'cia1-316',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: '"Organizational independence" of the internal audit activity means:',
     options: [
+      'Internal audit sets its own budget',
+      'Internal audit can perform duties free from interference',
       'Internal audit is a separate legal entity',
       'Internal audit has no relationships with management',
-      'Internal audit can perform duties free from interference',
-      'Internal audit sets its own budget'
-    ],
-    correctAnswer: 2,
-    explanation: 'Organizational independence allows the internal audit activity to perform work free from interference, achieved through appropriate reporting lines.',
-    topic: 'Independence and Objectivity',
-    subtopic: 'Organizational Independence'
-  },
-  {
-    id: 'CIA1-317',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'hard',
-    question: 'Self-interest threats to objectivity include:',
-    options: [
-      'Auditing a friend\'s department',
-      'Having financial interest in the outcome',
-      'Long tenure with the organization',
-      'Pressure from management'
     ],
     correctAnswer: 1,
-    explanation: 'Self-interest threats occur when auditors have financial or other interest that could inappropriately influence judgment, such as auditing areas affecting their compensation.',
+    explanation: 'Organizational independence allows the internal audit activity to perform work free from interference, achieved through appropriate reporting lines.',
     topic: 'Independence and Objectivity',
-    subtopic: 'Threats to Objectivity'
+    subtopic: 'Organizational Independence',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-318',
+    id: 'cia1-317',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Self-interest threats to objectivity include:',
+    options: [
+      'Long tenure with the organization',
+      'Pressure from management',
+      'Auditing a friend\'s department',
+      'Having financial interest in the outcome',
+    ],
+    correctAnswer: 3,
+    explanation: 'Self-interest threats occur when auditors have financial or other interest that could inappropriately influence judgment, such as auditing areas affecting their compensation.',
+    topic: 'Independence and Objectivity',
+    subtopic: 'Threats to Objectivity',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-318',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If the CAE has operational responsibilities outside internal audit, the CAE must:',
     options: [
       'Resign immediately',
-      'Disclose and have safeguards to limit impairment',
+      'Refuse all such assignments',
       'Keep it confidential',
-      'Refuse all such assignments'
+      'Disclose and have safeguards to limit impairment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'If CAE has operational responsibilities, safeguards must be in place and the impairment disclosed. Independent oversight should review related audit work.',
     topic: 'Independence and Objectivity',
-    subtopic: 'CAE Operational Roles'
+    subtopic: 'CAE Operational Roles',
+  reference: 'IIA Standards'
   },
   
   // Additional questions to round out batch
   {
-    id: 'CIA1-319',
+    id: 'cia1-319',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal auditors should have a working knowledge of:',
     options: [
+      'Network administration',
       'All IT systems in detail',
-      'Key IT risks and controls',
       'Programming languages',
-      'Network administration'
+      'Key IT risks and controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal auditors need working knowledge of key IT risks and controls to evaluate the control system effectively, not necessarily deep technical expertise.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'IT Knowledge'
+    subtopic: 'IT Knowledge',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-320',
+    id: 'cia1-320',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Due professional care means the auditor:',
     options: [
-      'Guarantees error-free work',
+      'Never makes mistakes',
       'Applies the care and skill expected of a reasonably prudent auditor',
       'Works without time constraints',
-      'Never makes mistakes'
+      'Guarantees error-free work',
     ],
     correctAnswer: 1,
     explanation: 'Due professional care means applying care and skill expected of a reasonably prudent and competent internal auditor. It does not imply infallibility.',
     topic: 'Proficiency and Due Care',
-    subtopic: 'Due Professional Care'
+    subtopic: 'Due Professional Care',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-321',
+    id: 'cia1-321',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE should discuss the QAIP with:',
     options: [
-      'Staff only',
+      'Regulators',
       'Senior management and the board',
       'External auditors only',
-      'Regulators'
+      'Staff only',
     ],
     correctAnswer: 1,
     explanation: 'The CAE must discuss with senior management and the board the form and frequency of external assessment and qualifications of assessors.',
     topic: 'Quality Assurance',
-    subtopic: 'QAIP Governance'
+    subtopic: 'QAIP Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-322',
+    id: 'cia1-322',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which is a legitimate reason for internal audit to assess compliance?',
     options: [
-      'To replace legal counsel',
-      'To provide assurance on regulatory compliance',
       'To avoid external audits',
-      'To enforce laws'
+      'To enforce laws',
+      'To provide assurance on regulatory compliance',
+      'To replace legal counsel',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Internal audit provides assurance on compliance with laws, regulations, and policies. It assesses but does not enforce or replace legal functions.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Compliance Assessment'
+    subtopic: 'Compliance Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-323',
+    id: 'cia1-323',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The tone at the top primarily influences:',
     options: [
-      'IT security only',
-      'The control environment',
       'External audit opinions',
-      'Regulatory relationships'
+      'Regulatory relationships',
+      'The control environment',
+      'IT security only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tone at the top set by leadership directly influences the control environment, which is the foundation of the internal control system.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Environment'
+    subtopic: 'Control Environment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-324',
+    id: 'cia1-324',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal auditors should be alert to:',
     options: [
-      'Only risks identified in the audit plan',
-      'All significant risks including emerging risks',
       'Financial risks only',
-      'Risks assigned to them'
+      'Risks assigned to them',
+      'All significant risks including emerging risks',
+      'Only risks identified in the audit plan',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Internal auditors should be alert to all significant risks including emerging risks, not just those in the original audit plan.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Awareness'
+    subtopic: 'Risk Awareness',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-325',
+    id: 'cia1-325',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Standards apply to:',
     options: [
-      'Internal audit activities only in the US',
-      'All internal auditors worldwide',
       'Only public company auditors',
-      'External auditors who do internal audit work'
+      'All internal auditors worldwide',
+      'External auditors who do internal audit work',
+      'Internal audit activities only in the US',
     ],
     correctAnswer: 1,
     explanation: 'The IIA International Standards apply to internal auditors worldwide, regardless of country or organization type.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Standards Application'
+    subtopic: 'Standards Application',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-326',
+    id: 'cia1-326',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When considering whether to accept a consulting engagement, the CAE should evaluate:',
     options: [
-      'Whether it will generate fee revenue',
-      'Potential for improving governance, risk management, and control',
       'Whether external auditors approve',
-      'If it avoids difficult audit findings'
+      'Potential for improving governance, risk management, and control',
+      'If it avoids difficult audit findings',
+      'Whether it will generate fee revenue',
     ],
     correctAnswer: 1,
     explanation: 'Consulting engagements should contribute to improving governance, risk management, and control processes while not impairing independence.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Consulting Acceptance'
+    subtopic: 'Consulting Acceptance',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-328',
+    id: 'cia1-328',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which is a detective control?',
     options: [
-      'Password requirements',
       'Segregation of duties',
+      'Approval limits',
       'Reconciliation of accounts',
-      'Approval limits'
+      'Password requirements',
     ],
     correctAnswer: 2,
     explanation: 'Reconciliations detect discrepancies after transactions occur. Passwords, segregation, and approval limits are preventive controls.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Types'
+    subtopic: 'Control Types',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA1-330',
+    id: 'cia1-330',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An external assessment with self-assessment is appropriate when:',
     options: [
-      'Never, it\'s prohibited',
       'When approved by the board',
+      'When a full external assessment is too expensive',
       'Only for small organizations',
-      'When a full external assessment is too expensive'
-    ],
-    correctAnswer: 1,
-    explanation: 'A self-assessment with independent external validation may be acceptable when the board approves this approach, though a full external assessment is preferred.',
-    topic: 'Quality Assurance',
-    subtopic: 'External Assessment Alternatives'
-  },
-  {
-    id: 'CIA1-331',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'medium',
-    question: 'Risk responses include:',
-    options: [
-      'Ignore, deny, or transfer only',
-      'Accept, avoid, mitigate, or share',
-      'Eliminate all risks',
-      'Insurance only'
-    ],
-    correctAnswer: 1,
-    explanation: 'Risk responses include accepting, avoiding, mitigating (reducing), and sharing (transferring) risks. Complete elimination is rarely possible.',
-    topic: 'Governance, Risk, and Control',
-    subtopic: 'Risk Response'
-  },
-  {
-    id: 'CIA1-332',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'hard',
-    question: 'The internal audit activity should coordinate with:',
-    options: [
-      'Only external auditors',
-      'All assurance and consulting providers',
-      'No one to maintain independence',
-      'Management only'
-    ],
-    correctAnswer: 1,
-    explanation: 'The CAE should share information and coordinate activities with other assurance and consulting providers to ensure proper coverage and minimize duplication.',
-    topic: 'Foundations of Internal Auditing',
-    subtopic: 'Coordination'
-  },
-  {
-    id: 'CIA1-333',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'medium',
-    question: 'Which principle of the IIA Code of Ethics relates to avoiding illegal activities?',
-    options: [
-      'Integrity',
-      'Objectivity',
-      'Confidentiality',
-      'Competency'
+      'Never, it\'s prohibited',
     ],
     correctAnswer: 0,
+    explanation: 'A self-assessment with independent external validation may be acceptable when the board approves this approach, though a full external assessment is preferred.',
+    topic: 'Quality Assurance',
+    subtopic: 'External Assessment Alternatives',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-331',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Risk responses include:',
+    options: [
+      'Accept, avoid, mitigate, or share',
+      'Insurance only',
+      'Eliminate all risks',
+      'Ignore, deny, or transfer only',
+    ],
+    correctAnswer: 0,
+    explanation: 'Risk responses include accepting, avoiding, mitigating (reducing), and sharing (transferring) risks. Complete elimination is rarely possible.',
+    topic: 'Governance, Risk, and Control',
+    subtopic: 'Risk Response',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-332',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The internal audit activity should coordinate with:',
+    options: [
+      'Management only',
+      'No one to maintain independence',
+      'All assurance and consulting providers',
+      'Only external auditors',
+    ],
+    correctAnswer: 2,
+    explanation: 'The CAE should share information and coordinate activities with other assurance and consulting providers to ensure proper coverage and minimize duplication.',
+    topic: 'Foundations of Internal Auditing',
+    subtopic: 'Coordination',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-333',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which principle of the IIA Code of Ethics relates to avoiding illegal activities?',
+    options: [
+      'Competency',
+      'Confidentiality',
+      'Objectivity',
+      'Integrity',
+    ],
+    correctAnswer: 3,
     explanation: 'Integrity requires internal auditors to perform work with honesty, diligence, and responsibility, which includes not engaging in illegal activities.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Code of Ethics'
+    subtopic: 'Code of Ethics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-334',
+    id: 'cia1-334',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit risk-based plan should consider:',
     options: [
-      'Only management requests',
       'Input from senior management and the board',
       'External auditor priorities exclusively',
-      'Prior year plan only'
+      'Prior year plan only',
+      'Only management requests',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The risk-based plan should consider input from senior management and the board regarding organizational objectives, risks, and priorities.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Audit Planning'
+    subtopic: 'Audit Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-335',
+    id: 'cia1-335',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Internal audit conformance with the Standards can be demonstrated by:',
     options: [
-      'CAE assertion only',
       'Results of internal and external assessments',
       'External auditor opinion',
-      'Management approval'
+      'Management approval',
+      'CAE assertion only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Conformance with Standards is demonstrated through results of the QAIP, including both internal and external assessments.',
     topic: 'Quality Assurance',
-    subtopic: 'Demonstrating Conformance'
+    subtopic: 'Demonstrating Conformance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-336',
+    id: 'cia1-336',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control effectiveness requires:',
     options: [
-      'Only proper design',
-      'Both proper design and proper operation',
       'External verification only',
-      'Management attestation only'
+      'Both proper design and proper operation',
+      'Management attestation only',
+      'Only proper design',
     ],
     correctAnswer: 1,
     explanation: 'Control effectiveness requires both proper design (will it prevent/detect if working?) and proper operation (is it actually working as designed?).',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Control Effectiveness'
+    subtopic: 'Control Effectiveness',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-337',
+    id: 'cia1-337',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit activity\'s annual plan should be:',
     options: [
-      'Fixed and unchangeable',
+      'Determined by external auditors',
       'Responsive to changes in the organization\'s risks',
       'Based solely on prior year\'s plan',
-      'Determined by external auditors'
+      'Fixed and unchangeable',
     ],
     correctAnswer: 1,
     explanation: 'The audit plan should be risk-based and responsive to changes in organizational risks, business, operations, and systems.',
     topic: 'Foundations of Internal Auditing',
-    subtopic: 'Audit Planning'
+    subtopic: 'Audit Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-338',
+    id: 'cia1-338',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT governance, internal auditors should assess whether:',
     options: [
-      'The organization has the latest technology',
       'IT supports the organization\'s strategies and objectives',
+      'All systems are cloud-based',
       'IT budget is maximized',
-      'All systems are cloud-based'
-    ],
-    correctAnswer: 1,
-    explanation: 'IT governance assessment focuses on whether IT supports organizational strategies and objectives, not on having the newest technology.',
-    topic: 'Governance, Risk, and Control',
-    subtopic: 'IT Governance'
-  },
-  {
-    id: 'CIA1-339',
-    courseId: 'cia',
-    section: 'CIA1',
-    difficulty: 'medium',
-    question: 'The CAE\'s resource management responsibility includes:',
-    options: [
-      'Ensuring internal audit resources are sufficient to meet the plan',
-      'Setting organization-wide budgets',
-      'Managing all risk functions',
-      'Controlling IT resources'
+      'The organization has the latest technology',
     ],
     correctAnswer: 0,
-    explanation: 'The CAE must ensure internal audit resources are appropriate, sufficient, and effectively deployed to achieve the approved plan.',
-    topic: 'Foundations of Internal Auditing',
-    subtopic: 'Resource Management'
+    explanation: 'IT governance assessment focuses on whether IT supports organizational strategies and objectives, not on having the newest technology.',
+    topic: 'Governance, Risk, and Control',
+    subtopic: 'IT Governance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA1-340',
+    id: 'cia1-339',
     courseId: 'cia',
     section: 'CIA1',
+    blueprintArea: 'CIA1-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The CAE\'s resource management responsibility includes:',
+    options: [
+      'Managing all risk functions',
+      'Controlling IT resources',
+      'Setting organization-wide budgets',
+      'Ensuring internal audit resources are sufficient to meet the plan',
+    ],
+    correctAnswer: 3,
+    explanation: 'The CAE must ensure internal audit resources are appropriate, sufficient, and effectively deployed to achieve the approved plan.',
+    topic: 'Foundations of Internal Auditing',
+    subtopic: 'Resource Management',
+  reference: 'IIA Standards'
+  },
+  {
+    id: 'cia1-340',
+    courseId: 'cia',
+    section: 'CIA1',
+    blueprintArea: 'CIA1-I',
+    difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Monitoring activities are:',
     options: [
-      'Detective controls only',
+      'Insurance reviews',
       'Ongoing evaluations and separate evaluations of controls',
       'External audit procedures',
-      'Insurance reviews'
+      'Detective controls only',
     ],
     correctAnswer: 1,
     explanation: 'Monitoring includes ongoing evaluations (built into operations) and separate evaluations (periodic assessments) of control effectiveness.',
     topic: 'Governance, Risk, and Control',
-    subtopic: 'Monitoring'
+    subtopic: 'Monitoring',
+  reference: 'IIA Standards'
   },
 ];

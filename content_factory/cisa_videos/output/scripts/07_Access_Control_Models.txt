@@ -1,0 +1,9 @@
+Access control models…nailing this topic is crucial for passing the CISA exam. Trust me on this.
+
+So, what are access control models? Simply put, they're the frameworks that dictate *who* can access *what* resources. Think of them as the rulebooks governing your organization's digital kingdom. Now, from an auditor's perspective, these models are vital for ensuring confidentiality, integrity, and availability. We need to verify that the right people have the right access…and that unauthorized access is prevented. Because a weak access control model? It's a compliance nightmare waiting to happen.
+
+The number one way ISACA tries to trip you up? By blurring the lines between Mandatory Access Control, or MAC, and Discretionary Access Control, or DAC. The trap is…they’ll describe a scenario where access is based on sensitivity labels, then ask which model is in use. You might be tempted to say DAC, because individuals *seem* to have some control. But the correct answer is MAC. Remember, MAC uses labels…and those labels are centrally managed by the system, not by individual users. DAC, on the other hand, allows data owners to grant access at their discretion. Big difference.
+
+For example, when auditing a government agency, you might find that classified documents are governed by a MAC model. Access is based strictly on security clearances and data sensitivity levels, not on individual preferences. This ensures that only authorized personnel can view sensitive information, regardless of their personal opinions. Conversely, in a small business, shared folders might be managed using DAC, where the folder owner decides who gets access.
+
+Your key takeaway? MAC uses labels, DAC grants discretion, and RBAC… Role Based Access Control…assigns permissions based on job function. Master this, and you're well on your way to acing the CISA exam!

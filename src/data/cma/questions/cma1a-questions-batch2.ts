@@ -27,10 +27,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Apex Corp enters a contract to sell equipment for $100,000, plus a potential bonus of $20,000 if the customer achieves certain performance metrics. Based on historical data, there is a 70% probability the bonus will be earned. Under ASC 606, how should Apex initially recognize revenue?',
     options: [
-      'Recognize $120,000 immediately when equipment is delivered',
       'Recognize $100,000 initially, then $20,000 when bonus is earned',
+      'Recognize $120,000 immediately when equipment is delivered',
       'Recognize $114,000 initially using the expected value method',
-      'Recognize $100,000 and disclose the contingent amount only'
+      'Recognize $100,000 and disclose the contingent amount only',
     ],
     correctAnswer: 2,
     explanation: 'ASC 606 requires variable consideration to be estimated using either the expected value or most likely amount method. Using expected value: $100,000 + ($20,000 × 70%) = $114,000. This amount should be recognized to the extent it is probable a significant reversal will not occur.',
@@ -47,12 +47,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A software company sells a license bundled with 3 years of support services for $90,000. The standalone price of the license is $60,000 and support is $15,000/year. How should revenue be allocated?',
     options: [
-      'License $60,000; Support $30,000 total',
       'License $51,429; Support $38,571 total',
+      'License $60,000; Support $30,000 total',
       'License $30,000; Support $60,000 total',
-      'Recognize $90,000 ratably over 3 years'
+      'Recognize $90,000 ratably over 3 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Allocate based on relative standalone selling prices. Total standalone = $60,000 + (3 × $15,000) = $105,000. License = $90,000 × ($60,000/$105,000) = $51,429. Support = $90,000 × ($45,000/$105,000) = $38,571.',
     reference: 'ASC 606-10-32; Allocating Transaction Price',
   },
@@ -67,10 +67,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'An online marketplace facilitates sales between third-party sellers and customers. The marketplace sets prices, handles returns, but never takes title to goods. How should the marketplace recognize revenue?',
     options: [
-      'Gross revenue at the selling price',
-      'Net revenue as commission/fee only',
       'Gross revenue less estimated returns',
-      'No revenue until goods are delivered'
+      'Net revenue as commission/fee only',
+      'Gross revenue at the selling price',
+      'No revenue until goods are delivered',
     ],
     correctAnswer: 1,
     explanation: 'Key indicators of agent status: does not control goods before transfer, does not take inventory risk. Since the marketplace never takes title and risk remains with sellers, it acts as agent and recognizes only the net commission/fee.',
@@ -87,10 +87,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A construction company has a $10M contract (50% complete, $5M recognized). The customer requests changes adding $2M to the contract. The additional work is NOT distinct from original scope. How should this be accounted for?',
     options: [
-      'Treat as a separate contract; recognize $2M over the new work',
-      'Cumulative catch-up: adjust revenue as if the $12M contract existed from the start',
       'Prospective: recognize $7M remaining over remaining performance',
-      'Defer recognition until modification is complete'
+      'Cumulative catch-up: adjust revenue as if the $12M contract existed from the start',
+      'Treat as a separate contract; recognize $2M over the new work',
+      'Defer recognition until modification is complete',
     ],
     correctAnswer: 1,
     explanation: 'When additional goods/services are NOT distinct, treat as part of the original contract using a cumulative catch-up adjustment. Recalculate progress on the combined $12M contract and adjust revenue recognized to date accordingly.',
@@ -111,12 +111,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'A 7-year lease has annual payments of $50,000 (present value $285,000). The asset\'s fair value is $350,000 and useful life is 10 years. No purchase option or title transfer. This lease is:',
     options: [
-      'Operating lease because no title transfer',
       'Finance lease because PV exceeds 75% of fair value',
       'Finance lease because term exceeds 75% of useful life',
-      'Operating lease because neither 75% test is met'
+      'Operating lease because no title transfer',
+      'Operating lease because neither 75% test is met',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under ASC 842, a lease is classified as a finance lease if ANY of the five criteria are met:\n1. Transfer of ownership — No ✗\n2. Purchase option reasonably certain — No ✗\n3. Lease term ≥ 75% of useful life — 7/10 = 70% ✗\n4. PV of payments ≥ 90% of fair value — $285,000/$350,000 = 81.4% > 75% (but note IMA uses the 75% bright-line test for PV) ✓\n5. Specialized asset — Not stated ✗\nSince the present value of lease payments ($285,000) exceeds 75% of the asset\'s fair value ($350,000), this is a Finance Lease.',
     reference: 'ASC 842-10-25; Lease Classification Criteria',
   },
@@ -131,10 +131,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'A finance lease has a right-of-use asset of $500,000 and lease liability of $500,000 at inception. After Year 1, the lease liability is $420,000 (after $80,000 payment and $50,000 interest). What is the ROU asset balance if straight-line amortization is used over 5 years?',
     options: [
-      '$420,000',
-      '$400,000',
       '$450,000',
-      '$500,000'
+      '$400,000',
+      '$420,000',
+      '$500,000',
     ],
     correctAnswer: 1,
     explanation: 'ROU asset amortization is separate from liability reduction. Straight-line over 5 years = $500,000 / 5 = $100,000 per year. Year 1 balance = $500,000 - $100,000 = $400,000. The liability balance ($420,000) is different because it follows effective interest method.',
@@ -152,11 +152,11 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     question: 'An operating lease has total payments of $120,000 over 4 years ($30,000/year). PV of payments at inception is $105,000. Annual lease expense under ASC 842 is:',
     options: [
       '$26,250 (straight-line of PV)',
-      '$30,000 (straight-line of total payments)',
       '$35,000 (front-loaded)',
-      'Variable based on interest'
+      '$30,000 (straight-line of total payments)',
+      'Variable based on interest',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Operating lease expense is recognized straight-line over the lease term based on total lease payments, not the liability amount. $120,000 / 4 years = $30,000 per year. This differs from finance leases which separately recognize interest and amortization.',
     reference: 'ASC 842-20-25; Operating Lease Recognition',
   },
@@ -171,12 +171,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company sells a building (BV $800K, FV $1M) and leases it back under an operating lease at market rates. Under ASC 842, the seller-lessee should:',
     options: [
+      'Recognize gain proportionate to rights transferred; defer portion retained',
       'Recognize the full $200,000 gain immediately',
       'Defer the entire gain over the lease term',
-      'Recognize gain proportionate to rights transferred; defer portion retained',
-      'Record no gain; continue to depreciate the asset'
+      'Record no gain; continue to depreciate the asset',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Under ASC 842, if sale-leaseback qualifies as a sale, gain is recognized only for the portion of rights transferred to the buyer-lessor. The portion of asset rights retained through the leaseback (ROU asset) defers that proportionate gain.',
     reference: 'ASC 842-40; Sale-Leaseback Transactions',
   },
@@ -195,12 +195,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Parent acquires 100% of Sub for $5M cash. Sub\'s identifiable net assets have BV of $3M and FV of $4M. What goodwill is recorded?',
     options: [
+      '$5M (Full purchase price)',
       '$2M (Purchase price - BV)',
       '$1M (Purchase price - FV of net assets)',
-      '$5M (Full purchase price)',
-      'Zero (no goodwill if FV > BV)'
+      'Zero (no goodwill if FV > BV)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under ASC 805 acquisition method: Goodwill = Consideration paid - Fair value of identifiable net assets = $5M - $4M = $1M. Book value is irrelevant; assets and liabilities are recorded at acquisition-date fair value.',
     reference: 'ASC 805-30; Goodwill Recognition',
   },
@@ -259,12 +259,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Level 2 inputs in the fair value hierarchy include:',
     options: [
-      'Quoted prices in active markets for identical assets',
       'Observable inputs other than Level 1 quoted prices',
       'Unobservable inputs based on the entity\'s own assumptions',
-      'Historical cost information'
+      'Quoted prices in active markets for identical assets',
+      'Historical cost information',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Level 1 = quoted prices for identical items in active markets. Level 2 = observable inputs including quoted prices for similar assets, or prices in inactive markets. Level 3 = unobservable, entity-developed inputs.',
     reference: 'ASC 820-10-35; Fair Value Hierarchy',
   },
@@ -279,12 +279,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company uses a discounted cash flow model to value an investment property. This approach is called:',
     options: [
-      'Market approach',
       'Cost approach',
       'Income approach',
-      'Replacement approach'
+      'Market approach',
+      'Replacement approach',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'The income approach converts future cash flows or earnings to present value. DCF is the most common income approach technique. Market approach uses comparable transactions; cost approach uses replacement cost.',
     reference: 'ASC 820-10-35; Valuation Techniques',
   },
@@ -299,10 +299,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Fair value under ASC 820 is defined as:',
     options: [
-      'The cost to acquire the asset',
-      'The price to sell an asset or transfer a liability in an orderly transaction',
       'The replacement cost of the asset',
-      'The historical cost adjusted for depreciation'
+      'The price to sell an asset or transfer a liability in an orderly transaction',
+      'The cost to acquire the asset',
+      'The historical cost adjusted for depreciation',
     ],
     correctAnswer: 1,
     explanation: 'Fair value is an exit price—the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date.',
@@ -323,10 +323,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A key difference between IFRS and US GAAP for inventory is:',
     options: [
-      'IFRS requires FIFO; GAAP requires LIFO',
-      'LIFO is prohibited under IFRS but allowed under US GAAP',
       'IFRS uses lower of cost or market; GAAP uses NRV',
-      'There are no significant differences'
+      'LIFO is prohibited under IFRS but allowed under US GAAP',
+      'IFRS requires FIFO; GAAP requires LIFO',
+      'There are no significant differences',
     ],
     correctAnswer: 1,
     explanation: 'LIFO (Last-In, First-Out) is prohibited under IFRS but permitted under US GAAP. Additionally, IFRS uses lower of cost or NRV, while GAAP uses lower of cost or market for LIFO/retail, and LCNRV for other methods.',
@@ -343,12 +343,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IFRS, property, plant, and equipment can be measured subsequent to acquisition using:',
     options: [
-      'Cost model only',
       'Cost model or revaluation model',
       'Fair value model only',
-      'Replacement cost model'
+      'Cost model only',
+      'Replacement cost model',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IFRS allows an accounting policy choice: cost model (like GAAP) OR revaluation model (carrying at fair value with revaluation gains to OCI). US GAAP only permits the cost model for PP&E.',
     reference: 'IAS 16 vs ASC 360; PP&E Subsequent Measurement',
   },
@@ -363,10 +363,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A key difference in impairment accounting between IFRS and GAAP is:',
     options: [
+      'GAAP uses a two-step test; IFRS uses value-in-use immediately',
       'IFRS requires annual testing; GAAP only tests when triggered',
       'IFRS allows reversal of impairment losses on PP&E; GAAP does not',
-      'GAAP uses a two-step test; IFRS uses value-in-use immediately',
-      'Both B and C'
+      'Both B and C',
     ],
     correctAnswer: 3,
     explanation: 'IFRS: Single-step test using higher of fair value less costs to sell OR value-in-use. Impairment reversals allowed (except goodwill). GAAP: Previously two-step for goodwill (now simplified), and impairment reversals are prohibited.',
@@ -384,11 +384,11 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     question: 'Development costs (internal) are treated as follows:',
     options: [
       'Capitalized under both IFRS and GAAP',
-      'Expensed under both IFRS and GAAP',
       'Capitalized under IFRS if criteria met; expensed under GAAP',
-      'Capitalized under GAAP; expensed under IFRS'
+      'Expensed under both IFRS and GAAP',
+      'Capitalized under GAAP; expensed under IFRS',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'IFRS requires capitalization of development costs when specific criteria are met (technical feasibility, intent to complete, ability to use/sell, etc.). US GAAP generally expenses all research and development costs except for software development costs.',
     reference: 'IAS 38 vs ASC 730; R&D Costs',
   },
@@ -427,10 +427,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Which transaction is classified as an investing activity?',
     options: [
-      'Payment of dividends to shareholders',
       'Proceeds from issuance of bonds',
+      'Payment of dividends to shareholders',
       'Purchase of a competitor company for cash',
-      'Payment of interest on debt'
+      'Payment of interest on debt',
     ],
     correctAnswer: 2,
     explanation: 'Investing activities include: acquisitions/disposals of PP&E, investments in securities, and business acquisitions. Dividends paid and debt proceeds = financing. Interest paid = operating under US GAAP.',
@@ -451,12 +451,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which item is reported in Other Comprehensive Income (OCI)?',
     options: [
-      'Realized gain on sale of trading securities',
       'Unrealized gain on available-for-sale debt securities',
+      'Realized gain on sale of trading securities',
       'Dividends received',
-      'Depreciation expense'
+      'Depreciation expense',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'OCI includes: unrealized gains/losses on AFS debt securities, foreign currency translation adjustments, pension prior service costs/gains-losses, and effective portion of cash flow hedges. Trading security gains and dividends go to net income.',
     reference: 'ASC 220; Comprehensive Income',
   },
@@ -471,10 +471,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'When an available-for-sale debt security is sold, the unrealized gain previously recorded in AOCI should be:',
     options: [
-      'Left in AOCI permanently',
-      'Reclassified from AOCI to net income',
       'Reversed and recorded as a liability',
-      'Directly closed to retained earnings'
+      'Reclassified from AOCI to net income',
+      'Left in AOCI permanently',
+      'Directly closed to retained earnings',
     ],
     correctAnswer: 1,
     explanation: 'Upon sale/realization, amounts previously recognized in OCI are "recycled" (reclassified) to net income. This reclassification adjustment is disclosed in the statement of comprehensive income.',
@@ -495,10 +495,10 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'An operating segment is separately reportable if it meets any of the following thresholds EXCEPT:',
     options: [
-      'Revenue ≥ 10% of combined segment revenues',
-      'Profit/loss ≥ 10% of the greater of combined profit or combined loss',
       'Assets ≥ 10% of combined assets',
-      'Employees ≥ 10% of total employees'
+      'Profit/loss ≥ 10% of the greater of combined profit or combined loss',
+      'Revenue ≥ 10% of combined segment revenues',
+      'Employees ≥ 10% of total employees',
     ],
     correctAnswer: 3,
     explanation: 'Quantitative thresholds for reportable segments are: 10% of combined revenue, 10% of the greater of combined segment profit or combined segment loss, or 10% of combined assets. Employee count is not a criterion.',
@@ -515,12 +515,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the integral approach to interim reporting:',
     options: [
+      'Only cash-basis accounting is used',
       'Each interim period stands alone, unrelated to the annual period',
       'Each interim period is viewed as part of the annual period',
-      'Only cash-basis accounting is used',
-      'Revenue recognition is deferred to year-end'
+      'Revenue recognition is deferred to year-end',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'US GAAP uses the integral approach: each interim period is part of the annual period. This affects income tax calculations, which use estimated annual rates, and allows for seasonal adjustments.',
     reference: 'ASC 270; Interim Reporting',
   },
@@ -535,12 +535,12 @@ export const CMA1A_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company discovers on February 15 that a major customer filed for bankruptcy on February 5. Financial statements are dated December 31, issued March 1. This is:',
     options: [
-      'A recognized subsequent event—adjust the December 31 statements',
       'A nonrecognized subsequent event—disclose only',
       'Not reportable since it occurred after year-end',
-      'An error in prior period statements'
+      'A recognized subsequent event—adjust the December 31 statements',
+      'An error in prior period statements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Nonrecognized (Type II) subsequent events are new conditions arising after year-end but before issuance. The customer was not bankrupt at December 31, so the statements are not adjusted—only disclosure of the event is required.',
     reference: 'ASC 855-10; Subsequent Events',
   },

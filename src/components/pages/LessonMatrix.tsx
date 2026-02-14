@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { 
   Search, 
   Layout, 
@@ -8,7 +8,8 @@ import {
   AlertTriangle,
   Calendar,
   AlertCircle,
-  Sparkles
+  Sparkles,
+  ArrowLeft
 } from 'lucide-react';
 import { fetchAllLessons } from '../../services/lessonService';
 import { useCourse } from '../../providers/CourseProvider';
@@ -180,10 +181,17 @@ const ObbbaIndicator = ({ note }: { note?: string }) => {
 
 const LessonMatrix: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { courseId, course } = useCourse();
   const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
-  const [search, setSearch] = useState('');
-  const [sectionFilter, setSectionFilter] = useState<string>('ALL');
+  
+  // Read initial values from URL params (for deep linking from Practice)
+  const initialSection = searchParams.get('section')?.toUpperCase() || 'ALL';
+  const initialSearch = searchParams.get('blueprintArea') || '';
+  const returnTo = searchParams.get('returnTo'); // For returning to practice
+  
+  const [search, setSearch] = useState(initialSearch);
+  const [sectionFilter, setSectionFilter] = useState<string>(initialSection);
   const [methodFilter, setMethodFilter] = useState<string>('ALL');
   const [versionFilter, setVersionFilter] = useState<string>('ALL');
   const [showObbbaOnly, setShowObbbaOnly] = useState(false);
@@ -265,6 +273,17 @@ const LessonMatrix: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
+      {/* Back to Practice Button - when coming from practice session */}
+      {returnTo && (
+        <button
+          onClick={() => navigate(returnTo)}
+          className="mb-4 inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Practice
+        </button>
+      )}
+
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
@@ -346,8 +365,8 @@ const LessonMatrix: React.FC = () => {
                   <option key={s} value={s}>{s}</option>
                 ))}
               </optgroup>
-              <optgroup label="Legacy (2025 Blueprint)">
-                <option value="BEC">BEC</option>
+              <optgroup label="Retired (Dec 2023)">
+                <option value="BEC">BEC (Legacy)</option>
               </optgroup>
               <optgroup label="Study Resources">
                 <option value="PREP">Exam Strategy</option>
@@ -442,7 +461,7 @@ const LessonMatrix: React.FC = () => {
                     <tr 
                       key={lesson.id} 
                       className="hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer group focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
-                      {...getAccessibleClickProps(() => navigate(`/lessons/${lesson.id}`))}
+                      {...getAccessibleClickProps(() => navigate(returnTo ? `/lessons/${lesson.id}?returnTo=${encodeURIComponent(returnTo)}` : `/lessons/${lesson.id}`))}
                       aria-label={`Open lesson: ${lesson.title}`}
                     >
                       <td className="p-4 whitespace-nowrap">

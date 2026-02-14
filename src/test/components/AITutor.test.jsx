@@ -214,10 +214,11 @@ describe('AITutor', () => {
       renderAITutor();
 
       await waitFor(() => {
-        // Should mention REG somewhere (in greeting or prompts)
-        const regText = screen.queryByText(/REG/i);
-        // If not REG specifically, at least the page should load with Vory
+        // The page should load with Vory header and AI tutor interface
         expect(screen.getByText(/Vory/i)).toBeInTheDocument();
+        // The AI tutor should be aware of the user's exam context
+        // It may display the section in various ways or use it internally
+        // Just verify the component loads with Vory branding
       });
     });
   });

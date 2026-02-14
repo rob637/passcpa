@@ -1,15 +1,19 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
-import { Flame, Compass, WifiOff } from 'lucide-react';
+import { Flame, WifiOff } from 'lucide-react';
+import { PageTransition } from '../common/PageTransition';
+import { TrialBanner } from '../common/SubscriptionGate';
+import { PWAInstallPrompt, PWAInstallBanner } from '../common/PWAInstallPrompt';
 import { useStudy } from '../../hooks/useStudy';
-import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
+import { useRouteTitle } from '../../hooks/useDocumentTitle';
+import * as feedback from '../../services/feedback';
 import { usePageTracking } from '../../hooks/usePageTracking';
 import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
 import { useCourse } from '../../providers/CourseProvider';
 import { COURSES } from '../../courses';
 import { detectCourseFromPath } from '../../utils/courseNavigation';
-import { getNavItems, getNavConfig, isNavActive } from '../../config/navigation';
+import { getNavItems, isNavActive } from '../../config/navigation';
 import clsx from 'clsx';
 
 interface ProgressRingProps {
@@ -57,17 +61,20 @@ const MainLayout = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { courseId: _providerCourseId } = useCourse();
+  const { courseId: providerCourseId } = useCourse();
   
-  // Detect course from URL - this takes precedence to prevent bleeding
-  const currentCourseId = useMemo(() => detectCourseFromPath(location.pathname), [location.pathname]);
+  // For course-specific URLs (e.g., /cfp/home), use path detection.
+  // For shared routes (e.g., /settings), use the CourseProvider's courseId.
+  const currentCourseId = useMemo(() => {
+    const pathCourse = detectCourseFromPath(location.pathname);
+    // If path doesn't start with a course prefix (returns 'cpa' as default),
+    // check if we're actually on a shared route and should use provider's course
+    const isExplicitCourseRoute = /^\/(cpa|ea|cma|cia|cfp|cisa)(\/|$)/.test(location.pathname);
+    return isExplicitCourseRoute ? pathCourse : providerCourseId;
+  }, [location.pathname, providerCourseId]);
   
   // Get course config for metadata like examProvider
   const course = COURSES[currentCourseId];
-  
-  // Get navigation config from centralized config
-  const navConfig = useMemo(() => getNavConfig(currentCourseId), [currentCourseId]);
   
   // Build nav items with course-specific paths (from centralized config)
   const navItems = useMemo(() => getNavItems(currentCourseId), [currentCourseId]);
@@ -78,15 +85,6 @@ const MainLayout = () => {
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
-  
-  // Check if Strategy section is active (uses centralized config)
-  const strategyActive = useMemo(
-    () => isNavActive('strategy', location.pathname, searchParams, currentCourseId),
-    [location.pathname, searchParams, currentCourseId]
-  );
-  
-  // Strategy nav path
-  const strategyNavPath = navConfig.paths.strategy;
 
   // Set document title based on route
   useRouteTitle();
@@ -128,18 +126,10 @@ const MainLayout = () => {
   useEffect(() => {
     if (!navRef.current || !indicatorRef.current) return;
 
-    // Find active index - check Strategy first (CPA only), then regular nav items
-    let activeIndex = -1;
-    
-    if (strategyActive && navConfig.showStrategy) {
-      // Strategy is after the main nav items
-      activeIndex = navItems.findIndex(item => item.navType === 'strategy');
-      if (activeIndex === -1) activeIndex = navItems.length;
-    } else {
-      activeIndex = navItems.findIndex(
-        (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
-      );
-    }
+    // Find active index
+    const activeIndex = navItems.findIndex(
+      (item) => isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
+    );
 
     if (activeIndex >= 0) {
       const navElements = navRef.current.querySelectorAll('.nav-link');
@@ -156,26 +146,10 @@ const MainLayout = () => {
         indicatorRef.current.style.opacity = '1';
       }
     }
-  }, [location.pathname, strategyActive, navItems, currentCourseId]);
-
-
-  // Get current page title
-  const getPageTitle = () => {
-    // Check Strategy first
-    if (strategyActive && navConfig.showStrategy) return 'Exam Strategy';
-    
-    const current = navItems.find(
-      (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
-    );
-    if (current) return current.label;
-    
-    // Fallback using ROUTE_TITLES
-    const path = location.pathname;
-    return ROUTE_TITLES[path] || 'VoraPrep';
-  };
+  }, [location.pathname, navItems, currentCourseId, searchParams]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+    <div className="min-h-app bg-slate-50 dark:bg-slate-900">
       {/* Skip Navigation Link - Accessibility */}
       <a
         href="#main-content"
@@ -200,8 +174,14 @@ const MainLayout = () => {
         </div>
       )}
 
+      {/* Trial Status Banner - Shows when trial ending soon or expired */}
+      <TrialBanner />
+
+      {/* PWA Install Banner - Compact top banner for install prompt */}
+      <PWAInstallBanner />
+
       {/* App Shell - Max width container that centers the entire app */}
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-screen">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-app">
         {/* Desktop Sidebar */}
         <aside 
           className="hidden md:flex flex-col w-64 flex-shrink-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-screen sticky top-0 z-40"
@@ -223,14 +203,15 @@ const MainLayout = () => {
           </div>
 
           <div className="space-y-1">
-            {navItems.filter(item => item.navType !== 'strategy').map((item) => (
+            {navItems.map((item) => (
               <NavLink
                 key={item.navType}
                 to={item.path}
+                data-testid={`nav-desktop-${item.navType}`}
                 className={() =>
                   clsx(
                     'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium',
-                    isNavActive(item.navType, location.pathname, searchParams, currentCourseId) && !strategyActive
+                    isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
                       ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
                   )
@@ -241,27 +222,6 @@ const MainLayout = () => {
               </NavLink>
             ))}
           </div>
-          
-          {/* Exam Strategy Section - Shown for courses with strategy */}
-          {navConfig.showStrategy && (
-          <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Exam Strategy
-            </span>
-            <NavLink
-              to={strategyNavPath}
-              className={clsx(
-                'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium mt-2',
-                strategyActive
-                  ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
-              )}
-            >
-              <Compass className="w-5 h-5" />
-              Strategy & Tips
-            </NavLink>
-          </div>
-          )}
         </div>
 
         <div className="mt-auto p-6 border-t border-slate-100 dark:border-slate-700">
@@ -291,7 +251,7 @@ const MainLayout = () => {
         </div>
       </aside>
 
-      {/* Mobile Top Bar */}
+      {/* Mobile Top Bar - Google-style minimal header showing exam context */}
       <header
         className={clsx(
           'md:hidden fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 z-40 transition-shadow duration-200 safe-top',
@@ -299,20 +259,20 @@ const MainLayout = () => {
         )}
         role="banner"
       >
-        <div className="flex items-center justify-between px-4 h-16">
+        <div className="flex items-center justify-between px-4 h-14">
+          {/* Left: Exam name with tap-to-switch */}
+          <CourseSelector mobileHeader showComingSoon={false} />
+          
+          {/* Right: Streak + Progress (compact) */}
           <div className="flex items-center gap-2">
-            <CourseSelector compact showComingSoon={false} />
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{getPageTitle()}</div>
-          </div>
-          <div className="flex items-center gap-3">
             <div 
-              className="flex items-center gap-1.5 px-2 py-1 bg-orange-50 dark:bg-orange-900/30 rounded-lg border border-orange-100 dark:border-orange-800"
+              className="flex items-center gap-1 px-1.5 py-0.5 bg-orange-50 dark:bg-orange-900/30 rounded-md"
               aria-label={`${currentStreak} day streak`}
             >
-              <Flame className="w-4 h-4 text-orange-500" aria-hidden="true" />
-              <span className="text-sm font-bold text-orange-700 dark:text-orange-400">{currentStreak}</span>
+              <Flame className="w-3.5 h-3.5 text-orange-500" aria-hidden="true" />
+              <span className="text-xs font-bold text-orange-700 dark:text-orange-400">{currentStreak}</span>
             </div>
-            <ProgressRing progress={dailyProgress} size={32} />
+            <ProgressRing progress={dailyProgress} size={28} />
           </div>
         </div>
       </header>
@@ -326,7 +286,9 @@ const MainLayout = () => {
         aria-label="Main content"
         className="flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8 focus:outline-none"
       >
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       </div>{/* End App Shell */}
 
@@ -346,15 +308,17 @@ const MainLayout = () => {
             aria-hidden="true"
           />
 
-          {navItems.filter(item => item.navType !== 'strategy').map((item) => (
+          {navItems.map((item) => (
             <NavLink
               key={item.navType}
               to={item.path}
               aria-label={item.label}
+              data-testid={`nav-mobile-${item.navType}`}
+              onClick={() => feedback.tap()}
               className={() =>
                 clsx(
-                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isNavActive(item.navType, location.pathname, searchParams, currentCourseId) && !strategyActive 
+                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5 transition-transform active:scale-95',
+                  isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
                     ? 'text-primary-600 dark:text-primary-400' 
                     : 'text-slate-500 dark:text-slate-400'
                 )
@@ -364,23 +328,11 @@ const MainLayout = () => {
               <span className="text-[10px] font-medium">{item.label}</span>
             </NavLink>
           ))}
-          
-          {/* Strategy Tab - Shown for courses with strategy */}
-          {navConfig.showStrategy && (
-            <NavLink
-              to={strategyNavPath}
-              aria-label="Exam Strategy"
-              className={clsx(
-                'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-500 dark:text-slate-400'
-              )}
-            >
-              <Compass className="w-5 h-5" aria-hidden="true" />
-              <span className="text-[10px] font-medium">Strategy</span>
-            </NavLink>
-          )}
         </div>
       </nav>
+
+      {/* PWA Install Prompt Modal - Bottom sheet for install flow */}
+      <PWAInstallPrompt />
     </div>
   );
 };

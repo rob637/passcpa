@@ -1,15 +1,42 @@
 /**
  * CFP Adaptive Question Engine
- * 
+ *
  * Intelligently selects questions based on user performance:
  * - Adjusts difficulty based on recent accuracy
  * - Prioritizes weak domains based on exam weight
  * - Uses spaced repetition for missed questions
  * - Balances coverage across all domains
  * - Avoids recently seen questions
+ *
+ * This engine uses a functional (immutable state) pattern — state is passed in
+ * and a new state is returned. No module-level singleton.
+ *
+ * Uses shared adaptiveEngineCore for SM-2, difficulty adjustment, state management,
+ * and question selection algorithms.
  */
 
-// Question type for adaptive engine - works with CFP-style questions
+import {
+  type QuestionHistoryEntry,
+  type CoreAdaptiveState,
+  type BaseSelectionCriteria,
+  type SelectionReason,
+  createEngineConfig,
+  initializeState,
+  loadState,
+  saveState,
+  recordAnswerCore,
+  selectQuestionsCore,
+  getPerformanceSummaryCore,
+  getQuestionsDueForReview,
+  getWeakSections,
+  startSessionCore,
+  endSessionCore,
+} from './adaptiveEngineCore';
+
+// ============================================================================
+// CFP-Specific Types
+// ============================================================================
+
 export interface AdaptiveQuestion {
   id: string;
   courseId?: string;
@@ -23,52 +50,32 @@ export interface AdaptiveQuestion {
   explanation: string;
 }
 
-// Types
-export interface QuestionHistory {
-  questionId: string;
-  attempts: number;
-  correctCount: number;
-  lastAttempted: Date;
-  lastResult: boolean;
-  easeFactor: number; // SM-2 inspired
-  interval: number; // days until next review
-  nextReviewDate: Date;
-}
+export type QuestionHistory = QuestionHistoryEntry;
 
 export interface DomainPerformance {
   domain: string;
   questionsAttempted: number;
   accuracy: number;
-  recentAccuracy: number; // Last 10 questions
+  recentAccuracy: number;
   needsWork: boolean;
   lastPracticed: Date | null;
 }
 
-export interface AdaptiveState {
-  currentDifficulty: 'easy' | 'medium' | 'hard';
-  targetAccuracy: number; // 70-85% is optimal for learning
-  recentResults: boolean[]; // Last 10 answers
-  domainPerformance: Record<string, DomainPerformance>;
-  questionHistory: Map<string, QuestionHistory>;
-  lastSessionQuestions: string[];
-}
+export type AdaptiveState = CoreAdaptiveState;
 
-export interface SelectionCriteria {
+export interface SelectionCriteria extends BaseSelectionCriteria {
   domains?: string[];
-  difficulty?: 'easy' | 'medium' | 'hard' | 'adaptive';
-  count: number;
-  excludeRecent?: boolean;
-  prioritizeWeakAreas?: boolean;
-  includeReviewDue?: boolean;
-  examWeighted?: boolean;
 }
 
 export interface SelectedQuestion extends AdaptiveQuestion {
-  selectionReason: 'weak-domain' | 'review-due' | 'new' | 'balanced' | 'difficulty-match';
+  selectionReason: SelectionReason;
   priority: number;
 }
 
-// Exam domain weights
+// ============================================================================
+// CFP Exam Domain Weights
+// ============================================================================
+
 const DOMAIN_WEIGHTS: Record<string, number> = {
   'RET': 19,
   'GEN': 18,
@@ -79,40 +86,72 @@ const DOMAIN_WEIGHTS: Record<string, number> = {
   'INV': 11,
 };
 
-// Difficulty adjustment thresholds
-const TARGET_ACCURACY = 0.75; // 75% target accuracy
-const EASY_THRESHOLD = 0.85; // Above this, increase difficulty
-const HARD_THRESHOLD = 0.60; // Below this, decrease difficulty
+// ============================================================================
+// Engine Configuration
+// ============================================================================
+
+const ENGINE_CONFIG = createEngineConfig({
+  storageKey: 'cfp-adaptive-state',
+  sections: Object.keys(DOMAIN_WEIGHTS),
+  sectionWeights: DOMAIN_WEIGHTS,
+  readinessTargetQuestions: 1500,
+});
+
+// ============================================================================
+// Public API — State Management (Functional Pattern)
+// ============================================================================
 
 /**
- * Initialize adaptive state
+ * Initialize adaptive state. Returns a fresh state object.
  */
 export function initializeAdaptiveState(): AdaptiveState {
-  const domainPerformance: Record<string, DomainPerformance> = {};
-  
-  Object.keys(DOMAIN_WEIGHTS).forEach(domain => {
-    domainPerformance[domain] = {
-      domain,
-      questionsAttempted: 0,
-      accuracy: 0,
-      recentAccuracy: 0,
-      needsWork: true,
-      lastPracticed: null,
-    };
-  });
-  
-  return {
-    currentDifficulty: 'medium',
-    targetAccuracy: TARGET_ACCURACY,
-    recentResults: [],
-    domainPerformance,
-    questionHistory: new Map(),
-    lastSessionQuestions: [],
-  };
+  return initializeState(ENGINE_CONFIG);
 }
 
 /**
- * Record a question result and update adaptive state
+ * Load adaptive state from localStorage. Returns saved state or fresh state if none.
+ */
+export function loadAdaptiveState(): AdaptiveState {
+  return loadState(ENGINE_CONFIG);
+}
+
+/**
+ * Save adaptive state to localStorage.
+ */
+export function saveAdaptiveState(state: AdaptiveState): void {
+  saveState(state, ENGINE_CONFIG.storageKey);
+}
+
+// ============================================================================
+// Public API — Sessions
+// ============================================================================
+
+/**
+ * Start a new practice session. Returns updated state.
+ */
+export function startSession(state: AdaptiveState): AdaptiveState {
+  const updated = startSessionCore(state);
+  saveAdaptiveState(updated);
+  return updated;
+}
+
+/**
+ * End the current session. Returns updated state with session summary.
+ */
+export function endSession(state: AdaptiveState): { state: AdaptiveState; summary: ReturnType<typeof endSessionCore>['summary'] } {
+  const result = endSessionCore(state);
+  saveAdaptiveState(result.state);
+  return result;
+}
+
+// ============================================================================
+// Public API — Recording Results (Functional — returns new state)
+// ============================================================================
+
+/**
+ * Record a question result and update adaptive state.
+ * Returns a new state object (does not mutate input).
+ * Auto-saves to localStorage.
  */
 export function recordResult(
   state: AdaptiveState,
@@ -120,324 +159,58 @@ export function recordResult(
   domain: string,
   isCorrect: boolean
 ): AdaptiveState {
-  const newState = { ...state };
-  
-  // Update recent results
-  newState.recentResults = [...state.recentResults, isCorrect].slice(-10);
-  
-  // Update question history
-  const history = state.questionHistory.get(questionId);
-  const now = new Date();
-  
-  if (history) {
-    const newHistory = updateQuestionHistory(history, isCorrect);
-    newState.questionHistory = new Map(state.questionHistory);
-    newState.questionHistory.set(questionId, newHistory);
-  } else {
-    const newHistory = createQuestionHistory(questionId, isCorrect);
-    newState.questionHistory = new Map(state.questionHistory);
-    newState.questionHistory.set(questionId, newHistory);
-  }
-  
-  // Update domain performance
-  const domainStats = { ...state.domainPerformance[domain] };
-  if (domainStats) {
-    domainStats.questionsAttempted++;
-    // Update accuracy using running average
-    const correctBefore = Math.round(domainStats.accuracy * (domainStats.questionsAttempted - 1) / 100);
-    const correctNow = correctBefore + (isCorrect ? 1 : 0);
-    domainStats.accuracy = Math.round((correctNow / domainStats.questionsAttempted) * 100);
-    domainStats.lastPracticed = now;
-    
-    // Calculate recent accuracy for this domain
-    domainStats.recentAccuracy = calculateRecentDomainAccuracy(newState.questionHistory, domain);
-    domainStats.needsWork = domainStats.accuracy < 70;
-    
-    newState.domainPerformance = {
-      ...state.domainPerformance,
-      [domain]: domainStats,
-    };
-  }
-  
-  // Adjust difficulty
-  newState.currentDifficulty = adjustDifficulty(newState.recentResults, state.currentDifficulty);
-  
-  // Track last session questions
-  newState.lastSessionQuestions = [...state.lastSessionQuestions, questionId].slice(-50);
-  
-  return newState;
+  const updated = recordAnswerCore(state, ENGINE_CONFIG, questionId, domain, isCorrect);
+  saveAdaptiveState(updated);
+  return updated;
 }
 
+// ============================================================================
+// Public API — Question Selection
+// ============================================================================
+
 /**
- * Create initial history for a new question
+ * Helper to extract domain from a CFP question (which may use domain or section field)
  */
-function createQuestionHistory(questionId: string, isCorrect: boolean): QuestionHistory {
-  const now = new Date();
-  const interval = isCorrect ? 1 : 0.1;
-  const nextReview = new Date(now);
-  nextReview.setDate(nextReview.getDate() + Math.ceil(interval));
-  
-  return {
-    questionId,
-    attempts: 1,
-    correctCount: isCorrect ? 1 : 0,
-    lastAttempted: now,
-    lastResult: isCorrect,
-    easeFactor: isCorrect ? 2.5 : 1.3,
-    interval,
-    nextReviewDate: nextReview,
-  };
+function getDomain(q: AdaptiveQuestion): string {
+  return q.domain || q.section || q.id.split('-')[1] || 'GEN';
 }
 
 /**
- * Update question history using SM-2 inspired algorithm
- */
-function updateQuestionHistory(history: QuestionHistory, isCorrect: boolean): QuestionHistory {
-  const now = new Date();
-  let newEaseFactor = history.easeFactor;
-  let newInterval = history.interval;
-  
-  if (isCorrect) {
-    // Increase interval
-    if (history.attempts === 1) {
-      newInterval = 1;
-    } else if (history.attempts === 2) {
-      newInterval = 6;
-    } else {
-      newInterval = Math.round(history.interval * newEaseFactor);
-    }
-    
-    // Adjust ease factor (min 1.3)
-    newEaseFactor = Math.max(1.3, newEaseFactor + 0.1);
-  } else {
-    // Reset interval, decrease ease factor
-    newInterval = 0.1;
-    newEaseFactor = Math.max(1.3, newEaseFactor - 0.2);
-  }
-  
-  const nextReview = new Date(now);
-  nextReview.setDate(nextReview.getDate() + Math.ceil(newInterval));
-  
-  return {
-    ...history,
-    attempts: history.attempts + 1,
-    correctCount: history.correctCount + (isCorrect ? 1 : 0),
-    lastAttempted: now,
-    lastResult: isCorrect,
-    easeFactor: newEaseFactor,
-    interval: newInterval,
-    nextReviewDate: nextReview,
-  };
-}
-
-/**
- * Calculate recent accuracy for a domain
- */
-function calculateRecentDomainAccuracy(
-  history: Map<string, QuestionHistory>,
-  domain: string
-): number {
-  const domainHistory = Array.from(history.values())
-    .filter(h => h.questionId.includes(domain))
-    .sort((a, b) => b.lastAttempted.getTime() - a.lastAttempted.getTime())
-    .slice(0, 10);
-  
-  if (domainHistory.length === 0) return 0;
-  
-  const correct = domainHistory.filter(h => h.lastResult).length;
-  return Math.round((correct / domainHistory.length) * 100);
-}
-
-/**
- * Adjust difficulty based on recent performance
- */
-function adjustDifficulty(
-  recentResults: boolean[],
-  currentDifficulty: 'easy' | 'medium' | 'hard'
-): 'easy' | 'medium' | 'hard' {
-  if (recentResults.length < 5) return currentDifficulty;
-  
-  const recentAccuracy = recentResults.filter(r => r).length / recentResults.length;
-  
-  if (recentAccuracy >= EASY_THRESHOLD && currentDifficulty !== 'hard') {
-    // Doing too well, increase difficulty
-    return currentDifficulty === 'easy' ? 'medium' : 'hard';
-  }
-  
-  if (recentAccuracy < HARD_THRESHOLD && currentDifficulty !== 'easy') {
-    // Struggling, decrease difficulty
-    return currentDifficulty === 'hard' ? 'medium' : 'easy';
-  }
-  
-  return currentDifficulty;
-}
-
-/**
- * Select questions adaptively based on state and criteria
+ * Select questions adaptively based on state and criteria.
+ *
+ * Uses shared core selection algorithm with CFP-specific domain extraction.
  */
 export function selectQuestions(
   allQuestions: AdaptiveQuestion[],
   state: AdaptiveState,
   criteria: SelectionCriteria
 ): SelectedQuestion[] {
-  const now = new Date();
-  const selected: SelectedQuestion[] = [];
-  const usedIds = new Set<string>();
-  
-  // Helper to get domain from question ID or section
-  const getDomain = (q: AdaptiveQuestion): string => {
-    return q.domain || q.section || q.id.split('-')[1] || 'GEN';
+  // Normalize CFP questions to have the `difficulty` field the core expects
+  const normalizedQuestions = allQuestions.map(q => ({
+    ...q,
+    difficulty: (q.difficulty || 'medium') as 'easy' | 'medium' | 'hard',
+    correctAnswer: q.correctAnswer ?? 0,
+  }));
+
+  const coreCriteria: BaseSelectionCriteria = {
+    sections: criteria.domains,
+    difficulty: criteria.difficulty,
+    count: criteria.count,
+    excludeRecent: criteria.excludeRecent,
+    prioritizeWeakAreas: criteria.prioritizeWeakAreas,
+    includeReviewDue: criteria.includeReviewDue,
+    examWeighted: criteria.examWeighted,
   };
-  
-  // Filter questions by criteria domains
-  let candidateQuestions = criteria.domains
-    ? allQuestions.filter(q => criteria.domains!.includes(getDomain(q)))
-    : allQuestions;
-  
-  // Exclude recently seen questions if requested
-  if (criteria.excludeRecent) {
-    candidateQuestions = candidateQuestions.filter(q => !state.lastSessionQuestions.includes(q.id));
-  }
-  
-  // 1. First, add questions due for review (spaced repetition)
-  if (criteria.includeReviewDue) {
-    const reviewDue = candidateQuestions.filter(q => {
-      const history = state.questionHistory.get(q.id);
-      if (!history) return false;
-      return history.nextReviewDate <= now && !history.lastResult;
-    });
-    
-    // Sort by priority (missed questions first, then by next review date)
-    reviewDue.sort((a, b) => {
-      const histA = state.questionHistory.get(a.id)!;
-      const histB = state.questionHistory.get(b.id)!;
-      return histA.nextReviewDate.getTime() - histB.nextReviewDate.getTime();
-    });
-    
-    for (const q of reviewDue.slice(0, Math.ceil(criteria.count * 0.3))) {
-      if (!usedIds.has(q.id)) {
-        selected.push({
-          ...q,
-          selectionReason: 'review-due',
-          priority: 1,
-        });
-        usedIds.add(q.id);
-      }
-    }
-  }
-  
-  // 2. Add questions from weak domains
-  if (criteria.prioritizeWeakAreas) {
-    const weakDomains = Object.values(state.domainPerformance)
-      .filter(d => d.needsWork)
-      .sort((a, b) => {
-        // Prioritize by: low accuracy + high exam weight
-        const aWeight = DOMAIN_WEIGHTS[a.domain] || 10;
-        const bWeight = DOMAIN_WEIGHTS[b.domain] || 10;
-        return (b.accuracy - a.accuracy) + (bWeight - aWeight) * 2;
-      })
-      .map(d => d.domain);
-    
-    for (const domain of weakDomains) {
-      const domainQuestions = candidateQuestions
-        .filter(q => getDomain(q) === domain && !usedIds.has(q.id))
-        .filter(q => matchesDifficulty(q, state.currentDifficulty, criteria.difficulty));
-      
-      // Prefer unseen questions
-      const unseen = domainQuestions.filter(q => !state.questionHistory.has(q.id));
-      const source = unseen.length > 0 ? unseen : domainQuestions;
-      
-      for (const q of shuffleArray(source).slice(0, 2)) {
-        if (selected.length < criteria.count && !usedIds.has(q.id)) {
-          selected.push({
-            ...q,
-            selectionReason: 'weak-domain',
-            priority: 2,
-          });
-          usedIds.add(q.id);
-        }
-      }
-    }
-  }
-  
-  // 3. Fill remaining with balanced/weighted selection
-  const remaining = criteria.count - selected.length;
-  
-  if (remaining > 0 && criteria.examWeighted) {
-    // Distribute remaining by exam weight
-    const domainAllocation: Record<string, number> = {};
-    const totalWeight = Object.values(DOMAIN_WEIGHTS).reduce((a, b) => a + b, 0);
-    
-    Object.entries(DOMAIN_WEIGHTS).forEach(([domain, weight]) => {
-      domainAllocation[domain] = Math.max(1, Math.round((weight / totalWeight) * remaining));
-    });
-    
-    Object.entries(domainAllocation).forEach(([domain, count]) => {
-      const domainQuestions = candidateQuestions
-        .filter(q => getDomain(q) === domain && !usedIds.has(q.id))
-        .filter(q => matchesDifficulty(q, state.currentDifficulty, criteria.difficulty));
-      
-      for (const q of shuffleArray(domainQuestions).slice(0, count)) {
-        if (selected.length < criteria.count && !usedIds.has(q.id)) {
-          selected.push({
-            ...q,
-            selectionReason: 'balanced',
-            priority: 3,
-          });
-          usedIds.add(q.id);
-        }
-      }
-    });
-  } else if (remaining > 0) {
-    // Simple random selection with difficulty matching
-    const pool = candidateQuestions
-      .filter(q => !usedIds.has(q.id))
-      .filter(q => matchesDifficulty(q, state.currentDifficulty, criteria.difficulty));
-    
-    for (const q of shuffleArray(pool).slice(0, remaining)) {
-      selected.push({
-        ...q,
-        selectionReason: 'new',
-        priority: 4,
-      });
-      usedIds.add(q.id);
-    }
-  }
-  
-  // Sort by priority
-  selected.sort((a, b) => a.priority - b.priority);
-  
-  return selected;
-}
 
-/**
- * Check if question matches target difficulty
- */
-function matchesDifficulty(
-  question: AdaptiveQuestion,
-  currentDifficulty: 'easy' | 'medium' | 'hard',
-  requestedDifficulty?: 'easy' | 'medium' | 'hard' | 'adaptive'
-): boolean {
-  const questionDifficulty = question.difficulty || 'medium';
-  
-  if (!requestedDifficulty || requestedDifficulty === 'adaptive') {
-    // Use adaptive difficulty from state
-    return questionDifficulty === currentDifficulty;
-  }
-  
-  return questionDifficulty === requestedDifficulty;
-}
+  const results = selectQuestionsCore(
+    normalizedQuestions,
+    state,
+    ENGINE_CONFIG,
+    coreCriteria,
+    getDomain,
+  );
 
-/**
- * Fisher-Yates shuffle
- */
-function shuffleArray<T>(array: T[]): T[] {
-  const result = [...array];
-  for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [result[i], result[j]] = [result[j], result[i]];
-  }
-  return result;
+  return results as unknown as SelectedQuestion[];
 }
 
 /**
@@ -486,20 +259,18 @@ export function getWeakAreaFocus(
   state: AdaptiveState,
   count: number = 15
 ): SelectedQuestion[] {
-  // Find weakest domains
-  const weakDomains = Object.values(state.domainPerformance)
-    .filter(d => d.needsWork || d.accuracy < 70)
+  const weakDomains = Object.values(state.sectionPerformance)
+    .filter(d => d.needsWork || d.accuracy < 0.70)
     .sort((a, b) => a.accuracy - b.accuracy)
     .slice(0, 3)
-    .map(d => d.domain);
-  
+    .map(d => d.sectionId);
+
   if (weakDomains.length === 0) {
-    // No weak areas - use lowest performing
-    const lowestDomains = Object.values(state.domainPerformance)
+    const lowestDomains = Object.values(state.sectionPerformance)
       .sort((a, b) => a.accuracy - b.accuracy)
       .slice(0, 2)
-      .map(d => d.domain);
-    
+      .map(d => d.sectionId);
+
     return selectQuestions(allQuestions, state, {
       domains: lowestDomains,
       difficulty: 'adaptive',
@@ -510,10 +281,10 @@ export function getWeakAreaFocus(
       examWeighted: false,
     });
   }
-  
+
   return selectQuestions(allQuestions, state, {
     domains: weakDomains,
-    difficulty: 'adaptive', // Slightly easier to build confidence
+    difficulty: 'adaptive',
     count,
     excludeRecent: true,
     prioritizeWeakAreas: true,
@@ -521,6 +292,10 @@ export function getWeakAreaFocus(
     examWeighted: false,
   });
 }
+
+// ============================================================================
+// Public API — Recommendations
+// ============================================================================
 
 /**
  * Get recommended next study action
@@ -535,7 +310,7 @@ export function getStudyRecommendation(state: AdaptiveState): {
   const reviewDue = Array.from(state.questionHistory.values())
     .filter(h => h.nextReviewDate <= new Date() && !h.lastResult)
     .length;
-  
+
   if (reviewDue > 10) {
     return {
       action: 'review',
@@ -543,44 +318,44 @@ export function getStudyRecommendation(state: AdaptiveState): {
       priority: 'high',
     };
   }
-  
+
   // Check for weak domains
-  const weakDomains = Object.values(state.domainPerformance)
+  const weakDomains = Object.values(state.sectionPerformance)
     .filter(d => d.needsWork && d.questionsAttempted >= 10)
     .sort((a, b) => {
-      const aWeight = DOMAIN_WEIGHTS[a.domain] || 10;
-      const bWeight = DOMAIN_WEIGHTS[b.domain] || 10;
+      const aWeight = DOMAIN_WEIGHTS[a.sectionId] || 10;
+      const bWeight = DOMAIN_WEIGHTS[b.sectionId] || 10;
       return (a.accuracy - b.accuracy) + (aWeight - bWeight) * 2;
     });
-  
+
   if (weakDomains.length > 0) {
     const weakest = weakDomains[0];
     return {
       action: 'weak-areas',
-      domain: weakest.domain,
-      reason: `Focus on ${weakest.domain} (${weakest.accuracy}% accuracy, ${DOMAIN_WEIGHTS[weakest.domain] || 10}% of exam).`,
+      domain: weakest.sectionId,
+      reason: `Focus on ${weakest.sectionId} (${Math.round(weakest.accuracy * 100)}% accuracy, ${DOMAIN_WEIGHTS[weakest.sectionId] || 10}% of exam).`,
       priority: 'high',
     };
   }
-  
+
   // Check for domains with low practice count
-  const lowPractice = Object.values(state.domainPerformance)
+  const lowPractice = Object.values(state.sectionPerformance)
     .filter(d => d.questionsAttempted < 20)
     .sort((a, b) => a.questionsAttempted - b.questionsAttempted);
-  
+
   if (lowPractice.length > 0) {
     return {
       action: 'new-content',
-      domain: lowPractice[0].domain,
-      reason: `Practice more in ${lowPractice[0].domain} to build comprehensive coverage.`,
+      domain: lowPractice[0].sectionId,
+      reason: `Practice more in ${lowPractice[0].sectionId} to build comprehensive coverage.`,
       priority: 'medium',
     };
   }
-  
+
   // Check overall performance
-  const totalAttempts = Object.values(state.domainPerformance)
+  const totalAttempts = Object.values(state.sectionPerformance)
     .reduce((sum, d) => sum + d.questionsAttempted, 0);
-  
+
   if (totalAttempts > 300 && state.recentResults.length >= 10) {
     const recentAccuracy = state.recentResults.filter(r => r).length / state.recentResults.length;
     if (recentAccuracy >= 0.75) {
@@ -591,7 +366,7 @@ export function getStudyRecommendation(state: AdaptiveState): {
       };
     }
   }
-  
+
   return {
     action: 'maintain',
     reason: 'Continue balanced practice across all domains.',
@@ -599,12 +374,44 @@ export function getStudyRecommendation(state: AdaptiveState): {
   };
 }
 
+// ============================================================================
+// Public API — Performance & Review
+// ============================================================================
+
+/**
+ * Get performance summary across all domains.
+ */
+export function getPerformanceSummary(state: AdaptiveState) {
+  return getPerformanceSummaryCore(state, ENGINE_CONFIG);
+}
+
+/**
+ * Get question IDs due for spaced repetition review.
+ */
+export function getDueForReview(state: AdaptiveState): string[] {
+  return getQuestionsDueForReview(state.questionHistory);
+}
+
+/**
+ * Get weak domains (accuracy below threshold).
+ */
+export function getWeakDomains(state: AdaptiveState) {
+  return getWeakSections(state, ENGINE_CONFIG);
+}
+
 export default {
   initializeAdaptiveState,
+  loadAdaptiveState,
+  saveAdaptiveState,
+  startSession,
+  endSession,
   recordResult,
   selectQuestions,
   getTargetedPractice,
   getAdaptiveSession,
   getWeakAreaFocus,
   getStudyRecommendation,
+  getPerformanceSummary,
+  getDueForReview,
+  getWeakDomains,
 };

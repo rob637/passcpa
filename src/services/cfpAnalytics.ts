@@ -1,542 +1,289 @@
 /**
- * CFP Performance Analytics Service
- * 
- * Tracks and analyzes user performance across all CFP study activities:
- * - Domain mastery tracking
- * - Weak area identification
- * - Time-per-question statistics
- * - Progress trends
- * - Study streak tracking
- * - Predicted exam readiness
+ * CFP Analytics Service
+ *
+ * Analytics tracking for CFP (Certified Financial Planner) exam preparation.
+ * Delegates common logic to analyticsCore.ts.
+ *
+ * CFP Exam: 170 questions, 3 hours
+ * Scoring: Percentage-based, ~70% estimated passing
+ * Domains: 7 (Retirement, General, Professional Conduct, Tax, Estate, Risk, Investments)
  */
 
+import {
+  type MasteryLevel,
+  type TrendDirection,
+  type ReadinessLevel,
+  type PerformanceTrend,
+  type SectionMastery,
+  type MasteryThresholds,
+  updateOverallStats,
+  updateSectionMastery,
+  processStudySession,
+  processMockExam,
+  updateSectionsFromMockExam,
+  calculateWeightedScore,
+  identifyFocusAreas,
+  applyConfidenceAdjustment,
+  buildOverview,
+  categorizeSections,
+  generateBaseRecommendations,
+  buildSectionBreakdown,
+  appendTrend,
+  calculateTrend,
+} from './analyticsCore';
+
+export type { MasteryLevel, TrendDirection, ReadinessLevel, PerformanceTrend };
+
+// ============================================================================
 // Types
+// ============================================================================
+
 export interface QuestionAttempt {
   questionId: string;
   domain: string;
+  topic?: string;
   isCorrect: boolean;
-  timeSpent: number; // seconds
+  timeSpent: number;
   attemptedAt: Date;
-  difficulty: 'easy' | 'medium' | 'hard';
 }
 
 export interface StudySession {
-  id: string;
+  sessionId: string;
   date: Date;
-  duration: number; // minutes
-  questionsAttempted: number;
-  questionsCorrect: number;
-  domainsStudied: string[];
-  activities: ('lessons' | 'practice' | 'flashcards' | 'mock-exam' | 'case-study')[];
+  duration: number;
+  type: 'practice' | 'flashcards' | 'lessons' | 'simulation' | 'review';
+  domain?: string;
+  questionsAttempted?: number;
 }
 
-export interface DomainMastery {
+export interface DomainMastery extends SectionMastery {
   domain: string;
   domainName: string;
   examWeight: number;
-  questionsAttempted: number;
-  questionsCorrect: number;
-  accuracy: number;
-  masteryLevel: 'novice' | 'developing' | 'proficient' | 'expert';
-  trend: 'improving' | 'stable' | 'declining';
-  averageTimePerQuestion: number;
-  lastPracticed: Date | null;
   weakTopics: string[];
   strongTopics: string[];
-}
-
-export interface PerformanceTrend {
-  date: string;
-  accuracy: number;
-  questionsAttempted: number;
-  averageTime: number;
 }
 
 export interface CFPAnalytics {
   userId: string;
   lastUpdated: Date;
-  
-  // Overall stats
   totalQuestionsAttempted: number;
   totalQuestionsCorrect: number;
   overallAccuracy: number;
   averageTimePerQuestion: number;
-  
-  // Study engagement
   totalStudyMinutes: number;
   currentStreak: number;
   longestStreak: number;
   studyDays: number;
   lastStudyDate: Date | null;
-  
-  // Domain breakdown
   domainMastery: Record<string, DomainMastery>;
-  
-  // Mock exam performance
   mockExamsTaken: number;
   mockExamScores: number[];
   averageMockScore: number;
   bestMockScore: number;
-  
-  // Predictions
   estimatedPassProbability: number;
-  examReadiness: 'not-ready' | 'getting-close' | 'ready' | 'well-prepared';
+  examReadiness: ReadinessLevel;
   recommendedFocusAreas: string[];
-  
-  // Trends
   weeklyTrends: PerformanceTrend[];
   dailyTrends: PerformanceTrend[];
 }
 
-// Domain configuration
-const DOMAIN_CONFIG: Record<string, { name: string; weight: number }> = {
-  'GEN': { name: 'General Principles', weight: 18 },
-  'RISK': { name: 'Risk Management & Insurance', weight: 12 },
-  'INV': { name: 'Investment Planning', weight: 11 },
-  'TAX': { name: 'Tax Planning', weight: 14 },
-  'RET': { name: 'Retirement Planning', weight: 19 },
-  'EST': { name: 'Estate Planning', weight: 12 },
-  'PRO': { name: 'Professional Conduct', weight: 15 },
+// ============================================================================
+// Domain Configuration
+// ============================================================================
+
+export const DOMAIN_CONFIG: Record<string, { name: string; weight: number }> = {
+  retirement: { name: 'Retirement Savings and Income Planning', weight: 19 },
+  general: { name: 'General Financial Planning Principles', weight: 18 },
+  professional: { name: 'Professional Conduct and Regulation', weight: 15 },
+  tax: { name: 'Tax Planning', weight: 14 },
+  estate: { name: 'Estate Planning', weight: 12 },
+  risk: { name: 'Risk Management and Insurance Planning', weight: 12 },
+  investment: { name: 'Investment Planning', weight: 11 },
 };
 
-/**
- * Initialize empty analytics for a user
- */
-export function initializeAnalytics(userId: string): CFPAnalytics {
-  const domainMastery: Record<string, DomainMastery> = {};
-  
-  Object.entries(DOMAIN_CONFIG).forEach(([domain, config]) => {
-    domainMastery[domain] = {
-      domain,
-      domainName: config.name,
-      examWeight: config.weight,
-      questionsAttempted: 0,
-      questionsCorrect: 0,
-      accuracy: 0,
-      masteryLevel: 'novice',
-      trend: 'stable',
-      averageTimePerQuestion: 0,
-      lastPracticed: null,
-      weakTopics: [],
-      strongTopics: [],
-    };
-  });
-  
+const CFP_MASTERY_THRESHOLDS: MasteryThresholds = {
+  minAttempts: 10,
+  developingMinAttempts: 20,
+  expertAccuracy: 85,
+  proficientAccuracy: 75,
+  developingAccuracy: 60,
+};
+
+// ============================================================================
+// Core Functions
+// ============================================================================
+
+function toDomainMastery(sm: SectionMastery): DomainMastery {
   return {
-    userId,
-    lastUpdated: new Date(),
-    totalQuestionsAttempted: 0,
-    totalQuestionsCorrect: 0,
-    overallAccuracy: 0,
-    averageTimePerQuestion: 0,
-    totalStudyMinutes: 0,
-    currentStreak: 0,
-    longestStreak: 0,
-    studyDays: 0,
-    lastStudyDate: null,
-    domainMastery,
-    mockExamsTaken: 0,
-    mockExamScores: [],
-    averageMockScore: 0,
-    bestMockScore: 0,
-    estimatedPassProbability: 0,
-    examReadiness: 'not-ready',
-    recommendedFocusAreas: Object.keys(DOMAIN_CONFIG),
-    weeklyTrends: [],
-    dailyTrends: [],
+    ...sm,
+    domain: sm.sectionId,
+    domainName: sm.sectionName,
+    examWeight: sm.weight,
+    weakTopics: sm.weakAreas,
+    strongTopics: sm.strongAreas,
   };
 }
 
-/**
- * Record a question attempt
- */
+export function initializeAnalytics(userId: string): CFPAnalytics {
+  const domainMastery: Record<string, DomainMastery> = {};
+  Object.entries(DOMAIN_CONFIG).forEach(([domain, config]) => {
+    const baseMastery: SectionMastery = {
+      sectionId: domain, sectionName: config.name, weight: config.weight,
+      questionsAttempted: 0, questionsCorrect: 0, accuracy: 0,
+      masteryLevel: 'novice', trend: 'stable', averageTimePerQuestion: 0,
+      lastPracticed: null, weakAreas: [], strongAreas: [], areaAccuracy: {},
+    };
+    domainMastery[domain] = toDomainMastery(baseMastery);
+  });
+
+  return {
+    userId, lastUpdated: new Date(),
+    totalQuestionsAttempted: 0, totalQuestionsCorrect: 0, overallAccuracy: 0,
+    averageTimePerQuestion: 0, totalStudyMinutes: 0,
+    currentStreak: 0, longestStreak: 0, studyDays: 0, lastStudyDate: null,
+    domainMastery, mockExamsTaken: 0, mockExamScores: [],
+    averageMockScore: 0, bestMockScore: 0,
+    estimatedPassProbability: 0,
+    examReadiness: 'not-ready',
+    recommendedFocusAreas: Object.keys(DOMAIN_CONFIG),
+    weeklyTrends: [], dailyTrends: [],
+  };
+}
+
 export function recordQuestionAttempt(
   analytics: CFPAnalytics,
   attempt: QuestionAttempt
 ): CFPAnalytics {
   const newAnalytics = { ...analytics };
   const domain = attempt.domain;
-  
-  // Update overall stats
-  newAnalytics.totalQuestionsAttempted++;
-  if (attempt.isCorrect) {
-    newAnalytics.totalQuestionsCorrect++;
-  }
-  newAnalytics.overallAccuracy = Math.round(
-    (newAnalytics.totalQuestionsCorrect / newAnalytics.totalQuestionsAttempted) * 100
-  );
-  
-  // Update average time (running average)
-  const oldTotal = (analytics.totalQuestionsAttempted - 1) * analytics.averageTimePerQuestion;
-  newAnalytics.averageTimePerQuestion = Math.round(
-    (oldTotal + attempt.timeSpent) / newAnalytics.totalQuestionsAttempted
-  );
-  
-  // Update domain mastery
+
+  updateOverallStats(newAnalytics, attempt.isCorrect, attempt.timeSpent);
+
   if (newAnalytics.domainMastery[domain]) {
-    const domainStats = { ...newAnalytics.domainMastery[domain] };
-    domainStats.questionsAttempted++;
-    if (attempt.isCorrect) {
-      domainStats.questionsCorrect++;
-    }
-    domainStats.accuracy = Math.round(
-      (domainStats.questionsCorrect / domainStats.questionsAttempted) * 100
+    const updated = updateSectionMastery(
+      newAnalytics.domainMastery[domain], attempt.isCorrect, attempt.timeSpent,
+      attempt.attemptedAt, undefined, CFP_MASTERY_THRESHOLDS
     );
-    domainStats.lastPracticed = attempt.attemptedAt;
-    
-    // Update average time
-    const oldDomainTotal = (domainStats.questionsAttempted - 1) * domainStats.averageTimePerQuestion;
-    domainStats.averageTimePerQuestion = Math.round(
-      (oldDomainTotal + attempt.timeSpent) / domainStats.questionsAttempted
-    );
-    
-    // Update mastery level
-    domainStats.masteryLevel = calculateMasteryLevel(domainStats.accuracy, domainStats.questionsAttempted);
-    
-    newAnalytics.domainMastery[domain] = domainStats;
+    newAnalytics.domainMastery[domain] = toDomainMastery(updated);
   }
-  
+
   newAnalytics.lastUpdated = new Date();
-  
-  // Recalculate predictions
   return updatePredictions(newAnalytics);
 }
 
-/**
- * Record a study session
- */
 export function recordStudySession(
   analytics: CFPAnalytics,
   session: StudySession
 ): CFPAnalytics {
   const newAnalytics = { ...analytics };
-  
-  // Update study time
-  newAnalytics.totalStudyMinutes += session.duration;
-  
-  // Update streak
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  
-  const lastStudy = newAnalytics.lastStudyDate 
-    ? new Date(newAnalytics.lastStudyDate) 
-    : null;
-  
-  if (lastStudy) {
-    lastStudy.setHours(0, 0, 0, 0);
-    const daysDiff = Math.floor((today.getTime() - lastStudy.getTime()) / (1000 * 60 * 60 * 24));
-    
-    if (daysDiff === 1) {
-      // Consecutive day
-      newAnalytics.currentStreak++;
-    } else if (daysDiff > 1) {
-      // Streak broken
-      newAnalytics.currentStreak = 1;
-    }
-    // Same day - don't change streak
-  } else {
-    newAnalytics.currentStreak = 1;
-  }
-  
-  newAnalytics.longestStreak = Math.max(newAnalytics.longestStreak, newAnalytics.currentStreak);
-  newAnalytics.studyDays++;
-  newAnalytics.lastStudyDate = session.date;
-  newAnalytics.lastUpdated = new Date();
-  
+  Object.assign(newAnalytics, processStudySession(newAnalytics, session.date, session.duration));
   return newAnalytics;
 }
 
-/**
- * Record a mock exam result
- */
 export function recordMockExam(
   analytics: CFPAnalytics,
   score: number,
   domainScores: Record<string, { correct: number; total: number }>
 ): CFPAnalytics {
   const newAnalytics = { ...analytics };
-  
-  // Update mock exam stats
-  newAnalytics.mockExamsTaken++;
-  newAnalytics.mockExamScores.push(score);
-  newAnalytics.averageMockScore = Math.round(
-    newAnalytics.mockExamScores.reduce((a, b) => a + b, 0) / newAnalytics.mockExamScores.length
-  );
-  newAnalytics.bestMockScore = Math.max(...newAnalytics.mockExamScores);
-  
-  // Update domain mastery from mock exam
-  Object.entries(domainScores).forEach(([domain, stats]) => {
-    if (newAnalytics.domainMastery[domain]) {
-      const domainMastery = { ...newAnalytics.domainMastery[domain] };
-      domainMastery.questionsAttempted += stats.total;
-      domainMastery.questionsCorrect += stats.correct;
-      domainMastery.accuracy = Math.round(
-        (domainMastery.questionsCorrect / domainMastery.questionsAttempted) * 100
-      );
-      domainMastery.masteryLevel = calculateMasteryLevel(
-        domainMastery.accuracy, 
-        domainMastery.questionsAttempted
-      );
-      domainMastery.lastPracticed = new Date();
-      
-      newAnalytics.domainMastery[domain] = domainMastery;
-    }
-  });
-  
+
+  const mockUpdates = processMockExam(newAnalytics, score);
+  Object.assign(newAnalytics, mockUpdates);
+
+  newAnalytics.domainMastery = updateSectionsFromMockExam(
+    newAnalytics.domainMastery, domainScores, CFP_MASTERY_THRESHOLDS
+  ) as Record<string, DomainMastery>;
+
   newAnalytics.lastUpdated = new Date();
-  
   return updatePredictions(newAnalytics);
 }
 
-/**
- * Calculate mastery level based on accuracy and attempts
- */
-function calculateMasteryLevel(
-  accuracy: number,
-  attempts: number
-): 'novice' | 'developing' | 'proficient' | 'expert' {
-  // Need minimum attempts for meaningful level
-  if (attempts < 10) return 'novice';
-  if (attempts < 20) {
-    return accuracy >= 70 ? 'developing' : 'novice';
-  }
-  
-  if (accuracy >= 85) return 'expert';
-  if (accuracy >= 75) return 'proficient';
-  if (accuracy >= 60) return 'developing';
-  return 'novice';
-}
-
-/**
- * Update trend for a domain
- */
 export function updateDomainTrend(
   analytics: CFPAnalytics,
   domain: string,
   recentAccuracy: number
 ): CFPAnalytics {
-  const newAnalytics = { ...analytics };
-  const domainStats = newAnalytics.domainMastery[domain];
-  
+  const domainStats = analytics.domainMastery[domain];
   if (!domainStats) return analytics;
-  
-  const historicalAccuracy = domainStats.accuracy;
-  
-  let trend: 'improving' | 'stable' | 'declining';
-  if (recentAccuracy > historicalAccuracy + 5) {
-    trend = 'improving';
-  } else if (recentAccuracy < historicalAccuracy - 5) {
-    trend = 'declining';
-  } else {
-    trend = 'stable';
-  }
-  
-  newAnalytics.domainMastery[domain] = {
-    ...domainStats,
-    trend,
+  return {
+    ...analytics,
+    domainMastery: {
+      ...analytics.domainMastery,
+      [domain]: { ...domainStats, trend: calculateTrend(domainStats.accuracy, recentAccuracy) },
+    },
   };
-  
-  return newAnalytics;
 }
 
-/**
- * Update predictions based on current performance
- */
 function updatePredictions(analytics: CFPAnalytics): CFPAnalytics {
   const newAnalytics = { ...analytics };
-  
-  // Calculate weighted score based on domain weights
-  let weightedScore = 0;
-  let totalWeight = 0;
-  
-  Object.values(analytics.domainMastery).forEach(domain => {
-    if (domain.questionsAttempted > 0) {
-      weightedScore += domain.accuracy * domain.examWeight;
-      totalWeight += domain.examWeight;
-    }
-  });
-  
-  const effectiveScore = totalWeight > 0 ? weightedScore / totalWeight : 0;
-  
-  // Calculate pass probability
-  // Using a simple model: probability based on weighted score and question attempts
-  const questionsFactor = Math.min(1, analytics.totalQuestionsAttempted / 500); // Max at 500 questions
-  const mockExamFactor = Math.min(1, analytics.mockExamsTaken / 3); // Max at 3 mock exams
+  const sections = Object.values(analytics.domainMastery) as SectionMastery[];
+  const effectiveScore = calculateWeightedScore(sections);
+
+  const questionsFactor = Math.min(1, analytics.totalQuestionsAttempted / 500);
+  const mockExamFactor = Math.min(1, analytics.mockExamsTaken / 3);
   const accuracyFactor = effectiveScore / 100;
-  
-  // Combined probability (weighted formula)
+
   let rawProbability = (
     accuracyFactor * 0.5 +
     (analytics.bestMockScore / 100) * 0.3 +
     questionsFactor * 0.1 +
     mockExamFactor * 0.1
   );
-  
-  // Apply confidence adjustment based on attempts
-  if (analytics.totalQuestionsAttempted < 100) {
-    rawProbability *= 0.5; // Low confidence
-  } else if (analytics.totalQuestionsAttempted < 300) {
-    rawProbability *= 0.75;
-  }
-  
+  rawProbability = applyConfidenceAdjustment(rawProbability, analytics.totalQuestionsAttempted);
   newAnalytics.estimatedPassProbability = Math.min(95, Math.round(rawProbability * 100));
-  
-  // Determine exam readiness
-  if (newAnalytics.estimatedPassProbability >= 80) {
-    newAnalytics.examReadiness = 'well-prepared';
-  } else if (newAnalytics.estimatedPassProbability >= 65) {
-    newAnalytics.examReadiness = 'ready';
-  } else if (newAnalytics.estimatedPassProbability >= 45) {
-    newAnalytics.examReadiness = 'getting-close';
-  } else {
-    newAnalytics.examReadiness = 'not-ready';
-  }
-  
-  // Identify focus areas (weak domains with high exam weight)
-  const focusAreas = Object.values(analytics.domainMastery)
-    .filter(d => d.accuracy < 70 || d.questionsAttempted < 30)
-    .sort((a, b) => {
-      // Prioritize by: low accuracy + high weight
-      const aPriority = (100 - a.accuracy) * a.examWeight;
-      const bPriority = (100 - b.accuracy) * b.examWeight;
-      return bPriority - aPriority;
-    })
-    .slice(0, 3)
-    .map(d => d.domain);
-  
-  newAnalytics.recommendedFocusAreas = focusAreas;
-  
+
+  if (newAnalytics.estimatedPassProbability >= 80) newAnalytics.examReadiness = 'well-prepared';
+  else if (newAnalytics.estimatedPassProbability >= 65) newAnalytics.examReadiness = 'ready';
+  else if (newAnalytics.estimatedPassProbability >= 45) newAnalytics.examReadiness = 'getting-close';
+  else newAnalytics.examReadiness = 'not-ready';
+
+  newAnalytics.recommendedFocusAreas = identifyFocusAreas(sections, 70, 30, 3);
   return newAnalytics;
 }
 
-/**
- * Add daily trend data point
- */
-export function addDailyTrend(
-  analytics: CFPAnalytics,
-  trend: PerformanceTrend
-): CFPAnalytics {
-  const newAnalytics = { ...analytics };
-  
-  // Keep last 30 days
-  newAnalytics.dailyTrends = [...analytics.dailyTrends, trend].slice(-30);
-  
-  return newAnalytics;
+export function addDailyTrend(analytics: CFPAnalytics, trend: PerformanceTrend): CFPAnalytics {
+  return { ...analytics, dailyTrends: appendTrend(analytics.dailyTrends, trend, 30) };
 }
 
-/**
- * Add weekly trend data point
- */
-export function addWeeklyTrend(
-  analytics: CFPAnalytics,
-  trend: PerformanceTrend
-): CFPAnalytics {
-  const newAnalytics = { ...analytics };
-  
-  // Keep last 12 weeks
-  newAnalytics.weeklyTrends = [...analytics.weeklyTrends, trend].slice(-12);
-  
-  return newAnalytics;
+export function addWeeklyTrend(analytics: CFPAnalytics, trend: PerformanceTrend): CFPAnalytics {
+  return { ...analytics, weeklyTrends: appendTrend(analytics.weeklyTrends, trend, 12) };
 }
 
-/**
- * Get analytics summary for dashboard
- */
-export function getAnalyticsSummary(analytics: CFPAnalytics): {
-  overview: {
-    accuracy: number;
-    questionsCompleted: number;
-    studyHours: number;
-    streak: number;
-    passChance: string;
-    readiness: string;
-  };
-  strengths: string[];
-  weaknesses: string[];
-  recommendations: string[];
-  domainBreakdown: Array<{
-    domain: string;
-    name: string;
-    accuracy: number;
-    level: string;
-    trend: string;
-    weight: number;
-  }>;
-} {
-  // Identify strengths (>80% accuracy with sufficient attempts)
-  const strengths = Object.values(analytics.domainMastery)
-    .filter(d => d.accuracy >= 80 && d.questionsAttempted >= 20)
-    .map(d => d.domainName);
-  
-  // Identify weaknesses (<65% accuracy or insufficient attempts)
-  const weaknesses = Object.values(analytics.domainMastery)
-    .filter(d => d.accuracy < 65 || d.questionsAttempted < 20)
-    .map(d => d.domainName);
-  
-  // Generate recommendations
-  const recommendations: string[] = [];
-  
-  if (analytics.totalQuestionsAttempted < 200) {
-    recommendations.push('Complete more practice questions to build a stronger foundation.');
-  }
-  
-  if (analytics.mockExamsTaken < 2) {
-    recommendations.push('Take at least 2 full mock exams before your exam date.');
-  }
-  
-  if (analytics.currentStreak < 7) {
-    recommendations.push('Build a consistent daily study habit for best retention.');
-  }
-  
+// ============================================================================
+// Analytics Summary
+// ============================================================================
+
+export function getAnalyticsSummary(analytics: CFPAnalytics) {
+  const sections = Object.values(analytics.domainMastery) as SectionMastery[];
+  const { strengths, weaknesses } = categorizeSections(sections, 80, 65);
+  const recommendations = generateBaseRecommendations(analytics, 200, 2, 7, 'CFP');
+
   analytics.recommendedFocusAreas.forEach(domain => {
     const d = analytics.domainMastery[domain];
-    if (d) {
-      recommendations.push(`Focus on ${d.domainName} (${d.examWeight}% of exam, currently ${d.accuracy}% accuracy).`);
-    }
+    if (d) recommendations.push(`Focus on ${d.domainName} (${d.examWeight}% of exam, currently ${d.accuracy}% accuracy).`);
   });
-  
-  // Domain breakdown
-  const domainBreakdown = Object.values(analytics.domainMastery)
-    .sort((a, b) => b.examWeight - a.examWeight)
-    .map(d => ({
-      domain: d.domain,
-      name: d.domainName,
-      accuracy: d.accuracy,
-      level: d.masteryLevel,
-      trend: d.trend,
-      weight: d.examWeight,
-    }));
-  
+
   return {
     overview: {
-      accuracy: analytics.overallAccuracy,
-      questionsCompleted: analytics.totalQuestionsAttempted,
-      studyHours: Math.round(analytics.totalStudyMinutes / 60),
-      streak: analytics.currentStreak,
+      ...buildOverview(analytics),
       passChance: `${analytics.estimatedPassProbability}%`,
       readiness: analytics.examReadiness.replace('-', ' '),
     },
-    strengths,
-    weaknesses,
+    strengths, weaknesses,
     recommendations,
-    domainBreakdown,
+    domainBreakdown: buildSectionBreakdown(sections).map(s => ({
+      domain: s.sectionId, name: s.name, accuracy: s.accuracy,
+      level: s.level, trend: s.trend, weight: s.weight,
+    })),
   };
 }
 
-/**
- * Get time-based performance insights
- */
-export function getTimeInsights(analytics: CFPAnalytics): {
-  averageTimePerQuestion: number;
-  timeStatus: 'too-fast' | 'good' | 'too-slow';
-  recommendation: string;
-  domainTimes: Array<{ domain: string; avgTime: number; status: string }>;
-} {
+export function getTimeInsights(analytics: CFPAnalytics) {
   const avgTime = analytics.averageTimePerQuestion;
-  
   let timeStatus: 'too-fast' | 'good' | 'too-slow';
   let recommendation: string;
-  
+
   if (avgTime < 30) {
     timeStatus = 'too-fast';
     recommendation = 'You may be rushing. Take time to read questions and all options carefully.';
@@ -547,69 +294,32 @@ export function getTimeInsights(analytics: CFPAnalytics): {
     timeStatus = 'good';
     recommendation = 'Your pace is good. Maintain this timing on exam day.';
   }
-  
+
   const domainTimes = Object.values(analytics.domainMastery)
     .filter(d => d.questionsAttempted > 0)
-    .map(d => {
-      let status: string;
-      if (d.averageTimePerQuestion < 30) status = 'Fast';
-      else if (d.averageTimePerQuestion > 90) status = 'Slow';
-      else status = 'Good';
-      
-      return {
-        domain: d.domainName,
-        avgTime: d.averageTimePerQuestion,
-        status,
-      };
-    });
-  
-  return {
-    averageTimePerQuestion: avgTime,
-    timeStatus,
-    recommendation,
-    domainTimes,
-  };
+    .map(d => ({
+      domain: d.domainName,
+      avgTime: d.averageTimePerQuestion,
+      status: d.averageTimePerQuestion < 30 ? 'Fast' : d.averageTimePerQuestion > 90 ? 'Slow' : 'Good',
+    }));
+
+  return { averageTimePerQuestion: avgTime, timeStatus, recommendation, domainTimes };
 }
 
-/**
- * Calculate study consistency score
- */
-export function getConsistencyScore(analytics: CFPAnalytics): {
-  score: number;
-  grade: 'A' | 'B' | 'C' | 'D' | 'F';
-  message: string;
-} {
+export function getConsistencyScore(analytics: CFPAnalytics) {
   let score = 0;
-  
-  // Streak factor (40 points max)
   score += Math.min(40, analytics.currentStreak * 4);
-  
-  // Study days factor (30 points max)
   score += Math.min(30, analytics.studyDays * 2);
-  
-  // Questions factor (30 points max)
   score += Math.min(30, analytics.totalQuestionsAttempted / 20);
-  
+
   let grade: 'A' | 'B' | 'C' | 'D' | 'F';
   let message: string;
-  
-  if (score >= 90) {
-    grade = 'A';
-    message = 'Excellent consistency! Keep up the great work.';
-  } else if (score >= 80) {
-    grade = 'B';
-    message = 'Good consistency. Try to study a little more each day.';
-  } else if (score >= 70) {
-    grade = 'C';
-    message = 'Moderate consistency. Build longer study streaks.';
-  } else if (score >= 60) {
-    grade = 'D';
-    message = 'Room for improvement. Set daily study reminders.';
-  } else {
-    grade = 'F';
-    message = 'Just getting started. Commit to daily practice.';
-  }
-  
+  if (score >= 90) { grade = 'A'; message = 'Excellent consistency! Keep up the great work.'; }
+  else if (score >= 80) { grade = 'B'; message = 'Good consistency. Try to study a little more each day.'; }
+  else if (score >= 70) { grade = 'C'; message = 'Moderate consistency. Build longer study streaks.'; }
+  else if (score >= 60) { grade = 'D'; message = 'Room for improvement. Set daily study reminders.'; }
+  else { grade = 'F'; message = 'Just getting started. Commit to daily practice.'; }
+
   return { score: Math.round(score), grade, message };
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, TrendingUp, ChevronRight } from 'lucide-react';
 import { useStudy } from '../hooks/useStudy';
+import { useCourse } from '../providers/CourseProvider';
 
 // Donut chart colors matching Becker's style
 const ACTIVITY_COLORS = {
@@ -71,25 +72,53 @@ const DonutChart: React.FC<{
 
 const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
   const { weeklyStats, todayLog } = useStudy();
+  const { courseId } = useCourse();
   
-  // Calculate time breakdown from todayLog activities or estimate from stats
-  // In a real implementation, you'd track time per activity type
-  // For now, we'll estimate based on question counts
+  // TBS is only for CPA exam
+  const hasTBS = courseId === 'cpa';
+  
+  // Calculate real time breakdown from todayLog activities
   const todayMinutes = todayLog?.studyTimeMinutes || 0;
   const weeklyMinutes = weeklyStats?.totalMinutes || 0;
   
-  // Estimate breakdown (in real app, track this explicitly)
-  const lessonsTime = Math.round(todayMinutes * 0.3);
-  const mcqsTime = Math.round(todayMinutes * 0.4);
-  const tbsTime = Math.round(todayMinutes * 0.2);
-  const flashcardsTime = Math.round(todayMinutes * 0.1);
+  // Sum actual time per activity type from today's activities
+  let lessonsTime = 0;
+  let mcqsTime = 0;
+  let tbsTime = 0;
   
-  const segments = [
+  if (todayLog?.activities && Array.isArray(todayLog.activities)) {
+    for (const activity of todayLog.activities) {
+      if (activity.type === 'lesson') {
+        // Lessons record timeSpent in minutes
+        lessonsTime += activity.timeSpent || 0;
+      } else if (activity.type === 'mcq') {
+        // MCQs record timeSpentSeconds
+        mcqsTime += (activity.timeSpentSeconds || 0) / 60;
+      } else if (activity.type === 'simulation') {
+        // Simulations record timeSpent in minutes
+        tbsTime += activity.timeSpent || 0;
+      }
+    }
+  }
+  
+  // Round to nearest integer
+  lessonsTime = Math.round(lessonsTime);
+  mcqsTime = Math.round(mcqsTime);
+  tbsTime = Math.round(tbsTime);
+  
+  // Any remaining time not tracked per-activity goes to "Other"
+  const trackedTime = lessonsTime + mcqsTime + tbsTime;
+  const otherTime = Math.max(0, Math.round(todayMinutes - trackedTime));
+  
+  // Build segments dynamically based on course
+  const allSegments = [
     { value: lessonsTime, color: ACTIVITY_COLORS.lessons, label: 'Lessons' },
     { value: mcqsTime, color: ACTIVITY_COLORS.mcqs, label: 'MCQs' },
-    { value: tbsTime, color: ACTIVITY_COLORS.tbs, label: 'TBS' },
-    { value: flashcardsTime, color: ACTIVITY_COLORS.flashcards, label: 'Flashcards' },
-  ].filter(s => s.value > 0);
+    ...(hasTBS ? [{ value: tbsTime, color: ACTIVITY_COLORS.tbs, label: 'TBS' }] : []),
+    { value: otherTime, color: ACTIVITY_COLORS.other, label: 'Other' },
+  ];
+  
+  const segments = allSegments.filter(s => s.value > 0);
   
   // If no activity today, show placeholder
   if (todayMinutes === 0 && weeklyMinutes === 0) {
@@ -111,10 +140,10 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
     >
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <Clock className="w-4 h-4 text-slate-600" />
+          <Clock className="w-4 h-4 text-slate-600 dark:text-slate-400" />
           <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Study Time</span>
         </div>
-        <ChevronRight className="w-4 h-4 text-slate-600" />
+        <ChevronRight className="w-4 h-4 text-slate-600 dark:text-slate-400" />
       </div>
       
       <div className="flex items-center gap-4">
@@ -125,7 +154,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
             <span className="text-lg font-bold text-slate-900 dark:text-slate-100">
               {formatTime(todayMinutes)}
             </span>
-            <span className="text-xs text-slate-600">today</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">today</span>
           </div>
         </div>
         
@@ -134,8 +163,8 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
           {[
             { label: 'Lessons', color: ACTIVITY_COLORS.lessons, time: lessonsTime },
             { label: 'MCQs', color: ACTIVITY_COLORS.mcqs, time: mcqsTime },
-            { label: 'TBS', color: ACTIVITY_COLORS.tbs, time: tbsTime },
-            { label: 'Flashcards', color: ACTIVITY_COLORS.flashcards, time: flashcardsTime },
+            ...(hasTBS ? [{ label: 'TBS', color: ACTIVITY_COLORS.tbs, time: tbsTime }] : []),
+            { label: 'Other', color: ACTIVITY_COLORS.other, time: otherTime },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-1.5">
               <div 
@@ -154,7 +183,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
       {/* Weekly total */}
       {weeklyMinutes > 0 && (
         <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm">
-          <span className="text-slate-600">This week</span>
+          <span className="text-slate-700 dark:text-slate-300">This week</span>
           <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
             <TrendingUp className="w-3.5 h-3.5" />
             <span className="font-medium">{formatTime(weeklyMinutes)}</span>

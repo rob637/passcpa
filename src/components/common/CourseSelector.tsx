@@ -7,12 +7,15 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, Check, GraduationCap, Lock } from 'lucide-react';
+import { ChevronDown, Check, Clock, Sparkles, Play } from 'lucide-react';
 import { Button } from './Button';
+import { useToast } from './Toast';
 import { useCourse } from '../../providers/CourseProvider';
+import { useSubscription } from '../../services/subscription';
 import { isCourseActive, ACTIVE_COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
 import { getCourseHomePath } from '../../utils/courseNavigation';
+import logger from '../../utils/logger';
 import clsx from 'clsx';
 
 /** All courses that may be shown (even if not yet available) */
@@ -66,6 +69,8 @@ const COURSE_DISPLAY: Record<CourseId, {
 interface CourseSelectorProps {
   /** Compact mode for mobile/narrow spaces */
   compact?: boolean;
+  /** Mobile header variant - shows badge + short name */
+  mobileHeader?: boolean;
   /** Show "coming soon" courses */
   showComingSoon?: boolean;
   /** Additional CSS classes */
@@ -74,10 +79,13 @@ interface CourseSelectorProps {
 
 export const CourseSelector: React.FC<CourseSelectorProps> = ({
   compact = false,
+  mobileHeader = false,
   showComingSoon = true,
   className,
 }) => {
-  const { courseId, setCourse, userCourses } = useCourse();
+  const { courseId, setCourse } = useCourse();
+  const { getExamAccess, startExamTrial } = useSubscription();
+  const toast = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -110,15 +118,27 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
     }
   }, [isOpen]);
   
-  const handleSelect = (id: CourseId) => {
-    if (isCourseActive(id) && userCourses.includes(id)) {
-      setCourse(id);
-      setIsOpen(false);
-
-      // Navigate to the correct dashboard based on course
-      const courseDashboard = getCourseHomePath(id);
-      navigate(courseDashboard);
+  const handleSelect = async (id: CourseId) => {
+    if (!isCourseActive(id)) return;
+    
+    // Check if user needs a trial started for this exam
+    try {
+      const access = getExamAccess(id);
+      if (!access.hasAccess && access.canStartTrial) {
+        const started = await startExamTrial(id);
+        if (started) {
+          toast.success(`Started 14-day free trial for ${COURSE_DISPLAY[id].shortName}!`);
+        }
+      }
+    } catch (error) {
+      // Don't block course switching if trial start fails
+      logger.error('Error starting trial:', error);
     }
+    
+    // Always allow switching (soft-lock at content level, not navigation)
+    setCourse(id);
+    setIsOpen(false);
+    navigate(getCourseHomePath(id));
   };
   
   // Filter courses to show
@@ -139,9 +159,9 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
           'flex items-center gap-2 rounded-xl',
-          compact 
-            ? 'px-2 py-1.5' 
-            : 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600'
+          compact && !mobileHeader && 'px-2 py-1.5',
+          mobileHeader && 'px-2.5 py-1.5 bg-slate-100 dark:bg-slate-700 border-0',
+          !compact && !mobileHeader && 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600'
         )}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -150,12 +170,26 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
         <span className={clsx(
           'flex items-center justify-center rounded-lg text-white text-sm font-bold',
           currentDisplay.color,
-          compact ? 'w-6 h-6' : 'w-8 h-8'
+          mobileHeader ? 'w-7 h-7' : compact ? 'w-6 h-6' : 'w-8 h-8'
         )}>
           {currentDisplay.icon}
         </span>
         
-        {!compact && (
+        {/* Mobile header: show short name + small chevron */}
+        {mobileHeader && (
+          <>
+            <span className="font-bold text-base text-slate-900 dark:text-slate-100">
+              {currentDisplay.shortName}
+            </span>
+            <ChevronDown className={clsx(
+              'w-4 h-4 text-slate-500 transition-transform duration-200',
+              isOpen && 'rotate-180'
+            )} />
+          </>
+        )}
+        
+        {/* Full desktop: show name + description */}
+        {!compact && !mobileHeader && (
           <>
             <div className="flex-1 text-left">
               <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
@@ -193,18 +227,17 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
             {coursesToShow.map((id) => {
               const display = COURSE_DISPLAY[id];
               const isActive = isCourseActive(id);
-              const hasAccess = userCourses.includes(id);
               const isSelected = id === courseId;
-              const isAvailable = isActive && hasAccess;
+              const access = isActive ? getExamAccess(id) : null;
               
               return (
                 <button
                   key={id}
                   onClick={() => handleSelect(id)}
-                  disabled={!isAvailable}
+                  disabled={!isActive}
                   className={clsx(
                     'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-150',
-                    isAvailable 
+                    isActive
                       ? 'hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer'
                       : 'opacity-60 cursor-not-allowed',
                     isSelected && 'bg-primary-50 dark:bg-primary-900/20'
@@ -232,10 +265,31 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
                   {isSelected && (
                     <Check className="w-4 h-4 text-primary-600" />
                   )}
-                  {isActive && !hasAccess && (
-                    <span className="flex items-center gap-1 text-slate-600">
-                      <Lock className="w-4 h-4" />
-                    </span>
+                  {!isSelected && isActive && access && (
+                    <>
+                      {access.isPaid && (
+                        <span className="text-[10px] font-semibold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-1.5 py-0.5 rounded-full">
+                          Active
+                        </span>
+                      )}
+                      {access.isTrialing && (
+                        <span className="flex items-center gap-0.5 text-[10px] font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-1.5 py-0.5 rounded-full">
+                          <Clock className="w-3 h-3" />
+                          {access.trialDaysRemaining}d
+                        </span>
+                      )}
+                      {access.trialExpired && (
+                        <span className="text-[10px] font-semibold text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded-full">
+                          Expired
+                        </span>
+                      )}
+                      {access.canStartTrial && (
+                        <span className="flex items-center gap-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded-full">
+                          <Play className="w-3 h-3" />
+                          Free Trial
+                        </span>
+                      )}
+                    </>
                   )}
                 </button>
               );
@@ -246,8 +300,8 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
           {showComingSoon && (
             <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                <GraduationCap className="w-3.5 h-3.5 inline mr-1" />
-                All exam preps included free during beta!
+                <Sparkles className="w-3.5 h-3.5 inline mr-1" />
+                Each exam includes a free 14-day trial!
               </p>
             </div>
           )}

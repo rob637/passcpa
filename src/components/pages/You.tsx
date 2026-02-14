@@ -11,6 +11,12 @@ import {
   Camera,
   HelpCircle,
   Users,
+  CreditCard,
+  Clock,
+  Sparkles,
+  ExternalLink,
+  Play,
+  CheckCircle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -27,6 +33,9 @@ import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness
 import { fetchAllLessons } from '../../services/lessonService';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { useSubscription, EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
+import { isCourseActive } from '../../courses';
+import { CourseId } from '../../types/course';
 import logger from '../../utils/logger';
 
 // Readiness Ring Component
@@ -112,6 +121,11 @@ const You: React.FC = () => {
   const { user, userProfile, signOut } = useAuth();
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId, course } = useCourse();
+  const { getExamAccess, isPremium } = useSubscription();
+  
+  // Single-exam courses should aggregate ALL domains/sections (one exam = one set of stats)
+  const singleExamCourses = ['cisa', 'cfp', 'cia'];
+  const isSingleExamCourse = singleExamCourses.includes(courseId || '');
   
   // Initialize with current week's dates (Mon-Sun) for consistent chart rendering
   const getInitialWeeklyActivity = () => {
@@ -144,7 +158,7 @@ const You: React.FC = () => {
   const sectionInfo = getSectionDisplayInfo(examSection, courseId);
   
   // Calculate days until exam - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, examSection);
+  const examDate = getExamDate(userProfile, examSection, courseId);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Load data
@@ -177,19 +191,31 @@ const You: React.FC = () => {
             }
 
             const dateKey = format(date, 'yyyy-MM-dd');
-            const logRef = doc(db, 'users', user.uid, 'daily_log', dateKey);
+            // Use course-specific daily log ID
+            const dailyLogId = `${courseId}_${dateKey}`;
+            const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
             const logSnap = await getDoc(logRef);
 
             if (logSnap.exists()) {
               const data = logSnap.data();
               
-              // Filter activities by current section for section-specific stats
+              // Filter activities by section(s) for stats
+              // For single-exam courses (CISA, CFP, CIA), include ALL sections for aggregate stats
               const activities = data.activities || [];
               const sectionActivities = activities.filter(
-                (a: { section?: string; type?: string }) => 
-                  a.section === examSection || 
-                  // Include legacy activities without section (before this update)
-                  (!a.section && a.type === 'mcq')
+                (a: { section?: string; type?: string; courseId?: string }) => {
+                  // For single-exam courses, match by courseId or section prefix
+                  if (isSingleExamCourse) {
+                    return a.courseId === courseId || 
+                           (a.section && a.section.toUpperCase().startsWith(courseId?.toUpperCase() || '')) ||
+                           // Include legacy activities without section
+                           (!a.section && a.type === 'mcq');
+                  }
+                  // For multi-exam courses (CPA, CMA, EA), filter by exact section
+                  return a.section === examSection || 
+                         // Include legacy activities without section (before this update)
+                         (!a.section && a.type === 'mcq');
+                }
               );
               
               // Count section-specific MCQs
@@ -228,25 +254,40 @@ const You: React.FC = () => {
         
         setWeeklyActivity(dailyData);
 
-        // Get topic performance (section-filtered)
+        // Get topic performance (section-filtered, or all sections for single-exam courses)
         let topicsData: { id: string; topic: string; accuracy: number; questions: number }[] = [];
         if (getTopicPerformance) {
-          topicsData = await getTopicPerformance(examSection);
+          // For single-exam courses, pass undefined to get all sections
+          topicsData = await getTopicPerformance(isSingleExamCourse ? undefined : examSection);
         }
         setTopicPerformance(topicsData);
 
-        // Get lesson progress for section
+        // Get lesson progress for section (or all sections for single-exam courses)
         let lessonsCompletedCount = 0;
         if (getLessonProgress) {
           const lessonProgress = await getLessonProgress();
           lessonsCompletedCount = Object.values(lessonProgress).filter(
-            (lesson: any) => lesson.section === examSection && lesson.progress >= 100
+            (lesson: any) => {
+              // Check completion: either status === 'completed' OR progress >= 100
+              const isCompleted = lesson.status === 'completed' || lesson.progress >= 100;
+              if (!isCompleted) return false;
+              
+              // For single-exam courses, count all sections (they're all for one exam)
+              if (isSingleExamCourse) {
+                return lesson.courseId === courseId || 
+                       (lesson.section && lesson.section.toUpperCase().startsWith(courseId?.toUpperCase() || ''));
+              }
+              // For multi-exam courses, filter by specific section
+              return lesson.section === examSection;
+            }
           ).length;
         }
 
-        // Get total lessons for section
+        // Get total lessons for section (or all sections for single-exam courses)
         const allLessons = await fetchAllLessons(courseId);
-        const sectionLessons = allLessons.filter(l => l.section === examSection);
+        const sectionLessons = isSingleExamCourse 
+          ? allLessons // All lessons count for single-exam courses
+          : allLessons.filter(l => l.section === examSection);
         const totalLessonsCount = sectionLessons.length;
 
         setOverallStats({
@@ -317,7 +358,8 @@ const You: React.FC = () => {
   const weeklyQuestions = weeklyActivity.reduce((sum, d) => sum + d.questions, 0);
 
   return (
-    <div className="max-w-lg mx-auto space-y-6 pb-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-lg mx-auto space-y-6 pb-8">
       {/* Profile Header */}
       <Card className="p-6">
         <div className="flex items-center gap-4">
@@ -340,12 +382,13 @@ const You: React.FC = () => {
               className="hidden"
             />
             <Button
-              variant="ghost"
-              size="icon"
+              variant="secondary"
+              size="sm"
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploadingPhoto}
               loading={isUploadingPhoto}
-              className="absolute -bottom-1 -right-1 w-8 h-8 bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 shadow-sm"
+              className="absolute -bottom-1 -right-1 !w-8 !h-8 !min-w-0 !min-h-0 !p-0 rounded-full bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 flex items-center justify-center"
+              aria-label="Upload profile photo"
             >
               {!isUploadingPhoto && <Camera className="w-4 h-4 text-slate-600 dark:text-slate-300" />}
             </Button>
@@ -432,6 +475,110 @@ const You: React.FC = () => {
           <WeeklyChart activity={weeklyActivity} />
         </Card>
       </div>
+
+      {/* Subscription & Trials */}
+      <Card className="p-4">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-2">
+            <CreditCard className="w-4 h-4" />
+            Subscription & Trials
+          </h3>
+          {isPremium && (
+            <Link
+              to="/settings"
+              className="text-xs text-primary-600 hover:text-primary-700 flex items-center gap-1"
+            >
+              Manage <ExternalLink className="w-3 h-3" />
+            </Link>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          {(['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'] as CourseId[]).filter(id => isCourseActive(id)).map(examId => {
+            const access = getExamAccess(examId);
+            const examName = examId.toUpperCase();
+            const pricing = EXAM_PRICING[examId];
+            const isFounder = isFounderPricingActive();
+
+            // Skip exams user has never interacted with
+            if (!access.hasAccess && !access.trialExpired && access.canStartTrial && examId !== courseId) {
+              return null;
+            }
+
+            return (
+              <div
+                key={examId}
+                className={clsx(
+                  'flex items-center justify-between p-3 rounded-lg border transition-colors',
+                  examId === courseId
+                    ? 'border-primary-200 dark:border-primary-800 bg-primary-50/50 dark:bg-primary-900/10'
+                    : 'border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50'
+                )}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-sm font-bold text-slate-700 dark:text-slate-300 w-10">{examName}</span>
+                  <div>
+                    {access.isPaid && (
+                      <span className={`flex items-center gap-1 text-xs font-semibold ${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'}`}>
+                        <CheckCircle className="w-3.5 h-3.5" />
+                        {access.cancelAtPeriodEnd
+                          ? `Cancels${access.currentPeriodEnd ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}` : ''}`
+                          : 'Active Subscription'
+                        }
+                      </span>
+                    )}
+                    {access.isTrialing && (
+                      <span className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                        <Clock className="w-3.5 h-3.5" />
+                        Trial: {access.trialDaysRemaining} days remaining
+                      </span>
+                    )}
+                    {access.trialExpired && (
+                      <span className="flex items-center gap-1 text-xs font-semibold text-red-500 dark:text-red-400">
+                        <Clock className="w-3.5 h-3.5" />
+                        Trial expired
+                      </span>
+                    )}
+                    {access.canStartTrial && (
+                      <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                        <Play className="w-3.5 h-3.5" />
+                        14-day free trial available
+                      </span>
+                    )}
+                    {/* Show trial end date if trialing */}
+                    {access.isTrialing && access.trialEndDate && (
+                      <span className="text-[10px] text-slate-500 dark:text-slate-400">
+                        Ends {access.trialEndDate.toLocaleDateString()}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Action button — show subscribe for trialing, expired, or no-trial users */}
+                {!access.isPaid && !access.canStartTrial && (
+                  <Link
+                    to={`/start-checkout?course=${examId}&interval=annual`}
+                    className="text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center gap-1"
+                  >
+                    {isFounder && <Sparkles className="w-3 h-3" />}
+                    ${isFounder ? pricing.founderAnnual : pricing.annual}/yr
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Founder pricing notice */}
+        {isFounderPricingActive() && !isPremium && (
+          <div className="mt-3 p-2.5 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800">
+            <p className="text-xs text-amber-700 dark:text-amber-300 flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 flex-shrink-0" />
+              Founder pricing available — lock in 40%+ savings through April 2028!
+            </p>
+          </div>
+        )}
+      </Card>
 
       {/* Menu Items */}
       <Card noPadding>
@@ -532,6 +679,7 @@ const You: React.FC = () => {
         <p className="mt-1">
           Not affiliated with {course?.metadata?.examProvider?.split(' (')[0] || 'any exam provider'} or any licensing board.
         </p>
+      </div>
       </div>
     </div>
   );

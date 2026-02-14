@@ -19,12 +19,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: '457(b) plans are available to employees of:',
     options: [
-      'A) For-profit corporations',
       'B) State and local governments and certain tax-exempt organizations',
       'C) Self-employed individuals only',
-      'D) Federal government employees only'
+      'A) For-profit corporations',
+      'D) Federal government employees only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: '457(b) plans are deferred compensation plans for state and local government employees and employees of certain tax-exempt organizations. They have unique rules, including no 10% early withdrawal penalty (for governmental plans) and the ability to contribute to both a 457(b) and a 401(k)/403(b) in the same year.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A self-employed consultant with $150,000 net self-employment income can potentially contribute the MOST to which type of retirement plan?',
     options: [
-      'A) SEP IRA',
       'B) SIMPLE IRA',
       'C) Solo 401(k)',
-      'D) Traditional IRA'
+      'A) SEP IRA',
+      'D) Traditional IRA',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Solo 401(k) allows both employee deferrals ($23,500 for 2026 + catch-up if eligible) AND employer profit-sharing contributions (up to 25% of compensation). This dual component typically allows higher total contributions than SEP IRA (employer only) or SIMPLE IRA (lower limits).'
   },
   {
@@ -95,12 +95,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Net Unrealized Appreciation (NUA) treatment allows:',
     options: [
+      'C) Immediate taxation of the full fair market value',
       'A) Tax-free distribution of employer stock',
       'B) Deferral of tax on appreciation until stock is sold, then taxed at capital gains rates',
-      'C) Immediate taxation of the full fair market value',
-      'D) Rollover of employer stock tax-free to a Roth IRA'
+      'D) Rollover of employer stock tax-free to a Roth IRA',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'NUA allows employees to take a lump-sum distribution of employer stock, paying ordinary income tax only on the cost basis. The appreciation (NUA) is deferred until the stock is sold and then taxed at long-term capital gains rates regardless of holding period post-distribution. This can result in significant tax savings.'
   },
   // RET-3: Advanced IRA Topics
@@ -115,12 +115,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A Qualified Charitable Distribution (QCD) from an IRA:',
     options: [
+      'C) Provides a charitable deduction in addition to excluding the distribution from income',
       'A) Is available to any IRA owner regardless of age',
       'B) Allows up to $100,000 to transfer directly to charity, satisfying RMDs without increasing AGI',
-      'C) Provides a charitable deduction in addition to excluding the distribution from income',
-      'D) Can only be made from Roth IRAs'
+      'D) Can only be made from Roth IRAs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'QCDs allow IRA owners age 70½+ to transfer up to $105,000 (2024, indexed) directly to qualified charities. The distribution counts toward RMDs, is excluded from taxable income, but does not provide a separate charitable deduction. This is beneficial for those who don\'t itemize or have MAGI-sensitive benefits.'
   },
   {
@@ -135,11 +135,11 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     question: 'Under current law, recharacterization:',
     options: [
       'A) Allows a Traditional IRA contribution to be treated as a Roth contribution',
-      'B) Can undo a Roth conversion and return funds to a Traditional IRA',
       'C) Is no longer allowed for Roth conversions but remains available for contributions',
-      'D) Is available for any retirement account transaction'
+      'B) Can undo a Roth conversion and return funds to a Traditional IRA',
+      'D) Is available for any retirement account transaction',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'The TCJA eliminated recharacterization of Roth conversions (no more "do-overs"). However, recharacterization of contributions remains allowed—a Traditional IRA contribution can be recharacterized as a Roth contribution (and vice versa) by the tax filing deadline plus extensions.'
   },
   {
@@ -153,10 +153,10 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'If a taxpayer makes an excess IRA contribution and does not correct it, the penalty is:',
     options: [
-      'A) 10% of the excess amount once',
-      'B) 6% of the excess amount each year until corrected',
       'C) Forfeiture of the entire IRA balance',
-      'D) No penalty if withdrawn within 5 years'
+      'B) 6% of the excess amount each year until corrected',
+      'A) 10% of the excess amount once',
+      'D) No penalty if withdrawn within 5 years',
     ],
     correctAnswer: 1,
     explanation: 'Excess IRA contributions are subject to a 6% excise tax each year until the excess is removed. The penalty can be avoided by withdrawing the excess plus earnings before the tax filing deadline (plus extensions) or by applying the excess to a future year\'s contribution limit.'
@@ -173,12 +173,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'For Roth IRA earnings to be withdrawn tax-free, the account must have been open for at least 5 years AND:',
     options: [
-      'A) The owner must be age 55 or older',
       'B) The owner must be age 59½, disabled, deceased, or using up to $10K for first home',
       'C) The owner must have made only Roth contributions, no conversions',
-      'D) The owner must have no Traditional IRA assets'
+      'A) The owner must be age 55 or older',
+      'D) The owner must have no Traditional IRA assets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Qualified Roth distributions require the 5-year holding period AND a qualifying event: age 59½, disability, death, or first-time home purchase (up to $10K lifetime). Without both requirements, earnings may be taxable and possibly subject to the 10% penalty.'
   },
   {
@@ -192,12 +192,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Which exception to the 10% early withdrawal penalty applies to BOTH IRAs and qualified plans?',
     options: [
-      'A) First-time home purchase up to $10,000',
-      'B) Separation from service after age 55',
       'C) Death of the account owner',
-      'D) Higher education expenses'
+      'B) Separation from service after age 55',
+      'A) First-time home purchase up to $10,000',
+      'D) Higher education expenses',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Death and disability exceptions apply universally to both IRAs and qualified plans. First-time home purchase and higher education expenses apply only to IRAs. Separation from service at age 55+ applies only to qualified plans (not IRAs). These distinctions are frequently tested.'
   },
   {
@@ -211,10 +211,10 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'How are RMDs calculated for someone with multiple Traditional IRAs?',
     options: [
-      'A) RMDs must be calculated and taken separately from each IRA',
-      'B) RMDs are calculated separately but can be taken from any IRA or combination',
       'C) Only the largest IRA is subject to RMDs',
-      'D) RMDs are based on the combined balance, then divided equally among accounts'
+      'B) RMDs are calculated separately but can be taken from any IRA or combination',
+      'A) RMDs must be calculated and taken separately from each IRA',
+      'D) RMDs are based on the combined balance, then divided equally among accounts',
     ],
     correctAnswer: 1,
     explanation: 'Traditional IRA RMDs are calculated separately for each account using their individual year-end balances. However, the total RMD amount can be taken from any one IRA or any combination. This flexibility allows strategic withdrawal decisions. Note: 401(k) RMDs cannot be aggregated—each must be taken from its own plan.'
@@ -230,12 +230,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under SECURE Act 2.0, which beneficiary is an "eligible designated beneficiary" (EDB) exempt from the 10-year rule?',
     options: [
-      'A) Any adult child of the deceased',
       'B) A surviving spouse, minor child, disabled individual, or beneficiary not more than 10 years younger',
+      'A) Any adult child of the deceased',
       'C) Only the surviving spouse',
-      'D) Any beneficiary who was named before 2020'
+      'D) Any beneficiary who was named before 2020',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'EDBs can stretch distributions over their lifetime: (1) surviving spouse, (2) minor children (until majority), (3) disabled or chronically ill individuals, (4) beneficiaries not more than 10 years younger than the deceased. All other designated beneficiaries must deplete inherited accounts within 10 years.'
   },
   // RET-5: Advanced Social Security Topics
@@ -250,10 +250,10 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Delaying Social Security from age 67 (FRA) to age 70 increases the monthly benefit by:',
     options: [
-      'A) 8% total',
       'B) 16% total',
+      'A) 8% total',
       'C) 24% total',
-      'D) 32% total'
+      'D) 32% total',
     ],
     correctAnswer: 2,
     explanation: 'Delayed retirement credits add 8% per year (2/3% per month) for each year benefits are delayed past FRA, up to age 70. Delaying 3 years (67 to 70) adds 24% to the benefit (3 × 8%). Combined with annual COLA increases, this can significantly increase lifetime benefits for those with longevity.'
@@ -289,11 +289,11 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     question: 'The Windfall Elimination Provision (WEP) may reduce Social Security benefits for workers who:',
     options: [
       'A) Have high lifetime earnings',
-      'B) Receive a pension from non-Social Security-covered employment',
       'C) Delay benefits past age 70',
-      'D) Have foreign work credits'
+      'B) Receive a pension from non-Social Security-covered employment',
+      'D) Have foreign work credits',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'WEP reduces Social Security benefits for workers who receive pensions from employment not covered by Social Security (some government jobs, foreign employment). The formula reduction can decrease benefits significantly, though it cannot exceed half the pension amount. GPO similarly affects spousal/survivor benefits.'
   },
   {
@@ -307,12 +307,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A divorced spouse may claim benefits on an ex-spouse\'s record if the marriage lasted at least:',
     options: [
+      'C) 15 years',
       'A) 5 years',
       'B) 10 years',
-      'C) 15 years',
-      'D) 20 years'
+      'D) 20 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Divorced spouse benefits require at least 10 years of marriage, age 62+, currently unmarried, and the ex-spouse is entitled to benefits. The benefit is up to 50% of the ex-spouse\'s PIA at the claimant\'s FRA. Claiming on an ex-spouse\'s record does not reduce the ex-spouse\'s or current spouse\'s benefits.'
   },
   // RET-1: Additional Retirement Needs Topics
@@ -327,12 +327,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Asset location strategy generally places bonds in tax-deferred accounts because:',
     options: [
-      'A) Bonds have higher capital gains potential',
       'B) Interest is taxed at ordinary rates; sheltering it defers the highest-taxed income',
       'C) Bonds appreciate faster than stocks',
-      'D) Tax-deferred accounts cannot hold stocks'
+      'A) Bonds have higher capital gains potential',
+      'D) Tax-deferred accounts cannot hold stocks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Asset location optimizes after-tax returns by placing assets according to their tax treatment. Bond interest is taxed at ordinary rates, so sheltering it in tax-deferred accounts defers higher-taxed income. Stocks with qualified dividends and long-term gains (lower rates) are often better in taxable accounts; municipal bonds are efficient in taxable accounts.'
   },
   {
@@ -346,10 +346,10 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The "bucket" approach to retirement income divides assets into:',
     options: [
-      'A) Growth, income, and capital preservation allocations',
-      'B) Short-term, medium-term, and long-term buckets based on spending timeline',
       'C) Taxable, tax-deferred, and tax-free accounts only',
-      'D) Stocks, bonds, and cash in equal proportions'
+      'B) Short-term, medium-term, and long-term buckets based on spending timeline',
+      'A) Growth, income, and capital preservation allocations',
+      'D) Stocks, bonds, and cash in equal proportions',
     ],
     correctAnswer: 1,
     explanation: 'The bucket strategy creates separate buckets for different time horizons: short-term (1-2 years in cash/near-cash), medium-term (3-7 years in bonds), and long-term (8+ years in stocks). This allows equities time to recover from downturns while near-term spending is protected from market volatility.'
@@ -365,10 +365,10 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A single premium immediate annuity (SPIA) is used to:',
     options: [
-      'A) Accumulate assets tax-deferred for future retirement',
-      'B) Convert a lump sum into guaranteed lifetime income immediately',
       'C) Provide death benefits to beneficiaries',
-      'D) Access funds flexibly as needed'
+      'B) Convert a lump sum into guaranteed lifetime income immediately',
+      'A) Accumulate assets tax-deferred for future retirement',
+      'D) Access funds flexibly as needed',
     ],
     correctAnswer: 1,
     explanation: 'SPIAs convert a lump sum into guaranteed income payments that begin immediately (or within a year). They provide longevity protection—income that cannot be outlived. Tradeoffs include loss of liquidity and access to principal, and inflation risk unless an inflation rider is purchased.'
@@ -384,12 +384,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Qualified Longevity Annuity Contract (QLAC) allows:',
     options: [
-      'A) Tax-free accumulation in non-qualified accounts',
       'B) Deferral of RMDs on funds used to purchase the annuity until age 85',
       'C) Immediate income from qualified retirement accounts',
-      'D) Unlimited transfers from IRAs to annuities'
+      'A) Tax-free accumulation in non-qualified accounts',
+      'D) Unlimited transfers from IRAs to annuities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'QLACs are deferred income annuities purchased with qualified plan or IRA funds that begin payments no later than age 85. The funds used ($200,000 maximum) are excluded from RMD calculations until annuity payments begin. This provides longevity insurance while deferring taxes and RMDs.'
   },
   // RET-2: Additional Plan Topics
@@ -404,12 +404,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'After-tax 401(k) contributions (beyond the employee elective deferral limit) are advantageous because:',
     options: [
-      'A) They provide an immediate tax deduction',
       'B) They can be converted to Roth 401(k) or Roth IRA with only earnings subject to tax',
       'C) They are always tax-free when withdrawn',
-      'D) They have no contribution limits'
+      'A) They provide an immediate tax deduction',
+      'D) They have no contribution limits',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'After-tax 401(k) contributions (up to the §415 limit including employer match) can be converted to Roth accounts in a "mega backdoor Roth" strategy. The contributions convert tax-free; only earnings are taxed. This allows high earners to add significant Roth savings beyond normal Roth IRA income limits.'
   },
   {
@@ -461,12 +461,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The minimum employer contribution for a Safe Harbor 401(k) is:',
     options: [
+      'C) 10% of each employee\'s salary',
       'A) No contribution is required',
       'B) 100% match on first 3%, 50% match on next 2%, or 3% nonelective contribution',
-      'C) 10% of each employee\'s salary',
-      'D) 5% nonelective contribution to all employees'
+      'D) 5% nonelective contribution to all employees',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Safe Harbor 401(k) plans require minimum employer contributions to avoid ADP/ACP testing: either a matching formula (100% on first 3% + 50% on next 2% = 4% effective match) or a 3% nonelective contribution to all eligible employees. These contributions must be immediately 100% vested.'
   },
   {
@@ -480,12 +480,12 @@ export const CFP_RETIREMENT_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A retirement plan is considered "top-heavy" when key employees own more than what percentage of plan assets?',
     options: [
+      'C) 60%',
       'A) 25%',
       'B) 50%',
-      'C) 60%',
-      'D) 75%'
+      'D) 75%',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'A plan is top-heavy when key employees (officers with comp >$220,000, 5% owners, 1% owners with comp >$150,000) own more than 60% of plan assets. Top-heavy plans must provide accelerated vesting (3-year cliff or 2-6 year graded) and minimum contributions to non-key employees.'
   }
 ];

@@ -12,19 +12,22 @@ import { CISA5_QUESTIONS_BATCH10 } from './cisa-questions-batch10';
 import { CISA5_QUESTIONS_BATCH11 } from './cisa-questions-batch11';
 import { CISA5_QUESTIONS_BATCH12 } from './cisa-questions-batch12';
 import { CISA5_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
+import { PRIVACY_REGULATION_QUESTIONS } from './cisa-cobit-privacy-batch15';
 
 const CISA5_QUESTIONS_BATCH1: Question[] = [
   {
-    id: 'CISA5-001',
+    id: 'cisa5-001',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following creates a digital signature?',
     options: [
       'Encrypting the message digest with the sender\'s private key',
-      'Encrypting the message digest with the sender\'s public key',
+      'Encrypting the message with a shared secret key',
       'Encrypting the message digest with the receiver\'s public key',
-      'Encrypting the message with a shared secret key'
+      'Encrypting the message digest with the sender\'s public key',
     ],
     correctAnswer: 0,
     explanation: 'A digital signature is created by hashing the message to create a digest, and then encrypting that digest with the sender\'s private key. This ensures authenticity and non-repudiation.',
@@ -32,18 +35,20 @@ const CISA5_QUESTIONS_BATCH1: Question[] = [
     subtopic: 'Cryptography'
   },
   {
-    id: 'CISA5-002',
+    id: 'cisa5-002',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The principle of "least privilege" is best described as:',
     options: [
+      'Requiring two people to complete a sensitive task',
       'Granting users access to all data but logging their actions',
-      'Granting users only the access necessary to perform their job functions',
       'Rotation of duties to prevent fraud',
-      'Requiring two people to complete a sensitive task'
+      'Granting users only the access necessary to perform their job functions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Least privilege ensures that users are granted the minimum level of access rights necessary to perform their assigned job responsibilities, reducing security risk.',
     topic: 'Logical Access',
     subtopic: 'Access Control Principles'
@@ -65,4 +70,5 @@ export const CISA5_QUESTIONS: Question[] = [
   ...CISA5_QUESTIONS_BATCH11,
   ...CISA5_QUESTIONS_BATCH12,
   ...CISA5_QUESTIONS_BATCH13,
+  ...PRIVACY_REGULATION_QUESTIONS, // GDPR, CCPA, cross-border transfers (Batch 15)
 ];

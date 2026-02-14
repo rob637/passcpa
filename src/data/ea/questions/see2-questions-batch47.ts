@@ -18,15 +18,15 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     subtopic: 'Form 1099-NEC',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Form 1099-NEC is used to report:',
+    question: 'A business paid $8,500 to an independent contractor for services in 2024. The contractor is not incorporated. Is the business required to file Form 1099-NEC for this payment?',
     options: [
-      'Interest income',
-      'Nonemployee compensation of $600 or more',
-      'Dividend income',
-      'Rental income'
+      'Yes, because payments of $600 or more to a non-corporate recipient for services require Form 1099-NEC',
+      'No, because Form 1099-NEC is only required for payments over $10,000',
+      'Yes, but only if the contractor is an employee',
+      'No, because payments to individuals are reported on Form W-2',
     ],
-    correctAnswer: 1,
-    explanation: 'Form 1099-NEC reports nonemployee compensation of $600 or more paid to independent contractors, freelancers, and self-employed individuals during the tax year.',
+    correctAnswer: 0,
+    explanation: 'Form 1099-NEC must be filed for payments of $600 or more to non-corporate recipients for services performed in the course of a trade or business. The $8,500 exceeds the $600 threshold and was paid to a non-corporate contractor, so filing is required. The form is due to the recipient and IRS by January 31 of the following year.',
     reference: 'IRC §6041A; IRS Form 1099-NEC Instructions',
   },
   {
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 1099-MISC is used to report:',
     options: [
-      'All payments to contractors',
       'Rents, royalties, prizes, and other miscellaneous income of $600 or more',
+      'All payments to contractors',
+      'Partnership distributions',
       'Employee wages',
-      'Partnership distributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 1099-MISC reports rents ($600+), royalties ($10+), prizes, awards, other income payments, and amounts for attorneys. Nonemployee compensation moved to 1099-NEC.',
     reference: 'IRS Form 1099-MISC Instructions',
   },
@@ -62,8 +62,8 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     options: [
       'February 28',
       'January 31',
+      'April 15',
       'March 31',
-      'April 15'
     ],
     correctAnswer: 1,
     explanation: 'Form 1099-NEC must be furnished to recipients AND filed with the IRS by January 31. There is no automatic extension for filing 1099-NEC.',
@@ -82,8 +82,8 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     options: [
       'The payment exceeds $10,000',
       'The payee has not provided a correct TIN or is subject to backup withholding notice',
+      'The payment is for rent',
       'The payee is an employee',
-      'The payment is for rent'
     ],
     correctAnswer: 1,
     explanation: 'Backup withholding (24%) applies when the payee fails to provide TIN, provides incorrect TIN, or IRS notifies payer of underreported income requiring backup withholding.',
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form W-9 is used by payees to:',
     options: [
-      'Report income',
       'Provide their TIN and certify backup withholding status to payers',
+      'Register a new business',
+      'Report income',
       'Request a refund',
-      'Register a new business'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form W-9 is used to provide the payer with the payee\'s name, address, TIN, and certification regarding backup withholding status before payments subject to information reporting.',
     reference: 'IRS Form W-9 Instructions',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 1099-K reports:',
     options: [
-      'Employee wages',
       'Payments from payment card transactions and third-party network transactions',
+      'Retirement distributions',
+      'Employee wages',
       'Interest income',
-      'Retirement distributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 1099-K reports payments processed by payment settlement entities (credit/debit card transactions, PayPal, Venmo, etc.) above the threshold ($600 for 2024 per transition rule).',
     reference: 'IRC §6050W',
   },
@@ -141,11 +141,11 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     question: 'The penalty for failing to file correct information returns by the due date is:',
     options: [
       'A flat $100 per return',
+      'No penalty if corrected within 1 year',
       '$60 to $310 per return depending on how late, with maximum per year',
       '10% of unreported amounts',
-      'No penalty if corrected within 1 year'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Penalties range from $60 (corrected within 30 days) to $310 per return (after August 1 or not filed), with annual maximums based on small business status.',
     reference: 'IRC §6721',
   },
@@ -161,11 +161,11 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     question: 'The penalty for failure to furnish correct payee statements is:',
     options: [
       '$50 flat',
+      'No penalty exists',
       '$60 to $310 per statement depending on lateness',
       '5% of unreported income',
-      'No penalty exists'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Penalties for failure to furnish correct payee statements mirror the filing penalties: $60 if corrected within 30 days, up to $310 if not corrected or furnished.',
     reference: 'IRC §6722',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 8300 must be filed when a business receives:',
     options: [
+      'Credit card payments over $10,000',
       'Any cash payment',
       'More than $10,000 in cash in one transaction or related transactions',
       'Payments by check over $10,000',
-      'Credit card payments over $10,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Form 8300 must be filed within 15 days when a business receives more than $10,000 in cash (including cashier\'s checks under certain conditions) in one transaction or related transactions.',
     reference: 'IRC §6050I',
   },
@@ -201,11 +201,11 @@ export const SEE2_QUESTIONS_BATCH47: Question[] = [
     question: 'Beginning in 2024, most companies must file a Beneficial Ownership Information (BOI) report with:',
     options: [
       'The IRS',
+      'State Secretary of State',
       'FinCEN (Financial Crimes Enforcement Network)',
       'The SEC',
-      'State Secretary of State'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under the Corporate Transparency Act, most companies must file BOI reports with FinCEN disclosing beneficial owners (25%+ ownership or substantial control). New entities must file within 30/90 days of formation.',
     reference: 'Corporate Transparency Act; 31 CFR 1010',
   },

@@ -19,12 +19,12 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'The accumulated earnings tax is imposed on corporations that:',
     options: [
-      'Have more than 100 shareholders',
       'Accumulate earnings beyond reasonable business needs to avoid shareholder taxes',
+      'Have more than 100 shareholders',
+      'Have net operating losses',
       'Pay dividends exceeding $1 million',
-      'Have net operating losses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The accumulated earnings tax (20%) is imposed on corporations that accumulate earnings beyond the reasonable needs of the business to avoid shareholder-level taxes on dividends. The first $250,000 ($150,000 for service corporations) is generally exempt.',
     reference: 'IRC §531-537',
   },
@@ -39,12 +39,12 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A personal holding company (PHC) is subject to a penalty tax of:',
     options: [
-      '10%',
       '15%',
+      '10%',
+      '35%',
       '20%',
-      '35%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'A PHC is subject to a 20% penalty tax on undistributed personal holding company income. A PHC is a corporation where more than 50% of stock is owned by 5 or fewer individuals and 60%+ of income is passive (dividends, interest, rents, royalties).',
     reference: 'IRC §541-547',
   },
@@ -61,8 +61,8 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     options: [
       'March 15',
       'April 15',
+      'September 15',
       'April 18',
-      'September 15'
     ],
     correctAnswer: 1,
     explanation: 'Form 1120 for a calendar-year C corporation is due on April 15 (the 15th day of the 4th month after the tax year ends). An automatic 6-month extension to October 15 is available by filing Form 7004.',
@@ -83,12 +83,12 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An S corporation can have no more than:',
     options: [
-      '35 shareholders',
+      '500 shareholders',
       '75 shareholders',
+      '35 shareholders',
       '100 shareholders',
-      '500 shareholders'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'An S corporation is limited to 100 shareholders. A husband and wife (and their estates) are treated as one shareholder. Family members can elect to be treated as one shareholder as well.',
     reference: 'IRC §1361(b)(1)(A)',
   },
@@ -103,12 +103,12 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Which of the following may be a shareholder in an S corporation?',
     options: [
-      'A partnership',
       'A C corporation',
+      'An individual U.S. citizen',
+      'A partnership',
       'A nonresident alien',
-      'An individual U.S. citizen'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'S corporation shareholders must be individuals (U.S. citizens or residents), certain trusts, or estates. Partnerships, corporations, and nonresident aliens cannot be S corporation shareholders.',
     reference: 'IRC §1361(b)(1)(B), (C)',
   },
@@ -123,12 +123,12 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'To elect S corporation status effective for the current tax year, Form 2553 must be filed:',
     options: [
+      'With the first tax return',
       'By the end of the tax year',
       'Within 30 days of forming the corporation',
       'By the 15th day of the 3rd month of the tax year',
-      'With the first tax return'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Form 2553 must be filed by the 15th day of the 3rd month of the tax year for which the election is to be effective (March 15 for calendar-year corporations). Late elections may be accepted under certain relief provisions.',
     reference: 'IRC §1362(b)',
   },
@@ -144,11 +144,11 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     question: 'S corporations are generally:',
     options: [
       'Subject to federal income tax at the entity level',
+      'Subject to self-employment tax on all income',
       'Pass-through entities not subject to entity-level tax',
       'Taxed at a 15% flat rate',
-      'Subject to self-employment tax on all income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'S corporations are generally pass-through entities. Income, deductions, and credits pass through to shareholders who report them on their individual returns. The S corporation itself generally does not pay federal income tax.',
     reference: 'IRC §1363',
   },
@@ -164,11 +164,11 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     question: 'An S corporation shareholder-employee must receive:',
     options: [
       'Only distributions, no salary',
+      'Compensation equal to 50% of profits',
       'Reasonable compensation for services before taking distributions',
       'At least minimum wage',
-      'Compensation equal to 50% of profits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The IRS requires shareholder-employees to receive reasonable compensation (W-2 wages) for services performed before taking additional distributions. This prevents avoiding payroll taxes by taking all income as distributions.',
     reference: 'IRC §3121; IRS Fact Sheet 2008-25',
   },
@@ -185,10 +185,10 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Cash contributions',
       'Share of income',
+      'Basis of property contributed',
       'Share of entity-level debt',
-      'Basis of property contributed'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'S corporation shareholder basis includes contributions and share of income but does NOT include the shareholder\'s share of entity-level debt. This differs from partnerships, where partner basis includes their share of partnership liabilities.',
     reference: 'IRC §1366, §1367',
   },
@@ -203,12 +203,12 @@ export const SEE2_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A calendar-year S corporation\'s Form 1120-S is due on:',
     options: [
+      'September 15',
       'March 15',
       'April 15',
       'April 18',
-      'September 15'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Form 1120-S for a calendar-year S corporation is due on March 15 (the 15th day of the 3rd month after the tax year ends). This earlier deadline allows shareholders to receive Schedule K-1s before their individual return deadlines.',
     reference: 'IRC §6072',
   },

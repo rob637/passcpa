@@ -20,11 +20,11 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     question: 'A risk matrix evaluates potential losses by considering:',
     options: [
       'A) Only probability of occurrence',
+      'D) Historical claims data exclusively',
       'B) Both the probability of occurrence and the severity of potential loss to prioritize risk management responses',
       'C) Insurance premium costs only',
-      'D) Historical claims data exclusively'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Risk matrix: plots probability (likelihood) vs. severity (impact). High probability/high severity: priority for risk transfer (insurance). Low probability/high severity: catastrophic—insurance essential. High probability/low severity: may self-insure with reserves. Low/low: accept the risk. Helps allocate limited risk management resources effectively.'
   },
   {
@@ -36,15 +36,15 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Pure vs Speculative Risk',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Pure risk differs from speculative risk in that pure risk:',
+    question: 'A financial planner explains risk classifications to a client. Which of the following scenarios represents a pure risk rather than a speculative risk?',
     options: [
-      'A) Always results in gain',
-      'B) Involves only the possibility of loss or no loss, with no chance of gain, making it insurable',
-      'C) Cannot be measured',
-      'D) Only applies to businesses'
+      'Investing in stocks with the potential for gain or loss',
+      'Starting a new business venture that may succeed or fail',
+      'The possibility of a client\'s home being damaged by a hurricane',
+      'Placing a bet on a sporting event',
     ],
-    correctAnswer: 1,
-    explanation: 'Pure risk: loss or no loss (fire, death, accident)—no upside. Insurance covers pure risks. Speculative risk: possibility of loss, no change, or gain (investing, gambling, business ventures)—has upside potential. Insurance doesn\'t cover speculative risks because adverse selection would be extreme.'
+    correctAnswer: 2,
+    explanation: 'Pure risk involves only the possibility of loss or no loss — there is no potential gain. Property damage from a hurricane is a pure risk because the only outcomes are loss (damage occurs) or no loss (no damage). Speculative risks like investing or starting a business include the possibility of gain.',
   },
   {
     id: 'CFP-RIS-B7-003',
@@ -57,12 +57,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A comprehensive personal risk assessment should identify:',
     options: [
-      'A) Only property risks',
       'B) Personal risks (death, disability), property risks (damage, theft), liability risks (lawsuits), and economic risks (inflation, job loss)',
+      'D) Only catastrophic exposures',
+      'A) Only property risks',
       'C) Insurance discounts available',
-      'D) Only catastrophic exposures'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Complete risk assessment categories: Personal (premature death, disability, longevity, health needs), Property (damage, theft, loss of use), Liability (injury to others, professional errors), Economic (unemployment, inflation, market losses). Each category requires different strategies. Comprehensive planning addresses all exposures.'
   },
   // RIS-2: Life Insurance
@@ -77,12 +77,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The term conversion privilege allows:',
     options: [
-      'A) Converting whole life to term',
       'B) Converting term insurance to permanent coverage without evidence of insurability, typically before age 65 or 70',
+      'A) Converting whole life to term',
+      'D) Reducing coverage without fees',
       'C) Changing the insured person',
-      'D) Reducing coverage without fees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Conversion privilege: term policyholders can convert to permanent insurance without new medical underwriting. Valuable if health declines. Limitations: must exercise before attainment age (typically 65-70) or within certain years, limited permanent policy choices. Premiums based on attained age at conversion. Key feature when evaluating term policies.'
   },
   {
@@ -98,8 +98,8 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     options: [
       'A) Receive higher death benefits',
       'B) Access a portion of the death benefit while living if diagnosed with terminal illness, chronic illness, or critical illness',
+      'D) Increase coverage without underwriting',
       'C) Avoid premium payments',
-      'D) Increase coverage without underwriting'
     ],
     correctAnswer: 1,
     explanation: 'Accelerated death benefit (ADB): access portion of death benefit early upon qualifying event (terminal illness with 6-24 month life expectancy, chronic illness requiring care, or critical illness like cancer). Amount received reduces death benefit. Often included at no cost. Provides living benefits from life insurance when needed most.'
@@ -117,8 +117,8 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     options: [
       'A) Providing employee benefits',
       'B) Compensating the business for financial loss when an essential employee dies or becomes disabled',
+      'D) Paying employee families',
       'C) Funding buy-sell agreements',
-      'D) Paying employee families'
     ],
     correctAnswer: 1,
     explanation: 'Key person insurance: business owns policy on essential employee, pays premiums, receives death benefit. Covers: revenue loss, replacement costs, loan repayment, business stabilization. Not a buy-sell funding mechanism (different purpose). May be needed for: executives, salespeople, technical experts, or anyone whose loss would financially harm business.'
@@ -135,12 +135,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'To contribute to an HSA, an individual must:',
     options: [
+      'D) Have employer contribution',
       'A) Have any health insurance plan',
       'B) Be covered by an HSA-eligible high-deductible health plan with no other disqualifying coverage, including Medicare',
       'C) Be under age 55',
-      'D) Have employer contribution'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'HSA eligibility: must have HDHP (2024: individual deductible ≥$1,600, family ≥$3,200), cannot have other health coverage (including Medicare), cannot be claimed as dependent. Common disqualifiers: spouse\'s FSA, enrollment in Medicare. Once eligible, can contribute (2024: $4,150 individual, $8,300 family, plus $1,000 catch-up at 55+).'
   },
   {
@@ -154,12 +154,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'ACA cost-sharing reductions (CSRs) differ from premium tax credits in that CSRs:',
     options: [
+      'D) Are received as tax refund',
       'A) Reduce monthly premiums',
       'B) Lower deductibles, copayments, and out-of-pocket maximums for Silver plan enrollees with income below 250% FPL',
       'C) Apply to all metal levels',
-      'D) Are received as tax refund'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CSRs reduce out-of-pocket costs (deductibles, copays, coinsurance, max out-of-pocket), not premiums. Only available: on marketplace Silver plans, income 100-250% FPL, Native Americans to 300%. Creates "enhanced Silver" with better cost-sharing. Premium tax credits reduce premiums; CSR reduces what you pay when using care. Different benefits, both income-based.'
   },
   {
@@ -173,10 +173,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Children\'s Health Insurance Program (CHIP) provides:',
     options: [
-      'A) Coverage only for disabled children',
+      'D) Dental coverage only',
       'B) Low-cost health coverage to children in families earning too much for Medicaid but unable to afford private insurance',
+      'A) Coverage only for disabled children',
       'C) Medicare benefits for children',
-      'D) Dental coverage only'
     ],
     correctAnswer: 1,
     explanation: 'CHIP: state-federal program covering children whose families earn too much for Medicaid but can\'t afford private coverage. Eligibility varies by state (typically up to 200-300% FPL). Low or no premiums and copays. Some states also cover pregnant women. Separate from marketplace with its own enrollment rules. Important safety net for families.'
@@ -194,11 +194,11 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     question: 'Partial disability benefits typically:',
     options: [
       'A) Pay full benefits while working part-time',
+      'D) End when any work resumes',
       'B) Pay proportional benefits based on income loss when the insured can work but earns less due to disability',
       'C) Only apply after total disability',
-      'D) End when any work resumes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Partial/residual disability: pays proportional benefit when earning capacity is reduced (typically 20%+ income loss). Formula often: (Pre-disability income - Current income) / Pre-disability income × Full benefit. Encourages return to work without losing all benefits. Some policies require initial total disability; others cover partial from onset.'
   },
   {
@@ -210,15 +210,15 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'COLA Rider',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'A cost-of-living adjustment (COLA) rider on disability insurance:',
+    question: 'A professional purchases a disability insurance policy with a Cost-of-Living Adjustment (COLA) rider. In what year does the COLA rider first increase the benefit amount?',
     options: [
-      'A) Increases premiums annually',
-      'B) Increases benefits during a claim period to keep pace with inflation, typically tied to CPI up to a cap',
-      'C) Reduces the elimination period',
-      'D) Extends the benefit period'
+      'Immediately upon policy purchase',
+      'After the first year of receiving disability benefits, adjusting for inflation during the claim',
+      'At the policy\'s fifth anniversary regardless of disability status',
+      'Only after the insured reaches age 50',
     ],
     correctAnswer: 1,
-    explanation: 'COLA rider: once disability claim begins, benefits increase periodically (typically annually) based on CPI, usually capped at 3-8% per year. Important for long-term disabilities where fixed benefits lose purchasing power. Usually doesn\'t apply to short claims. Adds cost but protects real value of multi-year claims. Compound increases add up significantly.'
+    explanation: 'A COLA rider on disability insurance increases the benefit amount after the first anniversary of a disability claim, typically adjusting for CPI inflation. The increases continue each year the insured remains disabled, protecting the purchasing power of long-term disability benefits against inflation.',
   },
   {
     id: 'CFP-RIS-B7-012',
@@ -231,12 +231,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A Social Insurance Supplement (SIS) or Social Insurance Substitute rider:',
     options: [
-      'A) Replaces Social Security',
       'B) Pays additional benefits initially that reduce if/when Social Security Disability benefits are approved',
+      'D) Waives Medicare waiting period',
+      'A) Replaces Social Security',
       'C) Increases SSDI benefits',
-      'D) Waives Medicare waiting period'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SIS rider: provides additional benefit during SSDI application process (can take months/years). Once SSDI approved, SIS benefit reduces or ends (offset). Bridges gap during waiting period. Makes coverage more affordable (lower base benefit covered by SIS). If SSDI denied, SIS may continue. Important for balancing cost and protection.'
   },
   // RIS-5: Property and Casualty
@@ -251,10 +251,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Ordinance or law coverage is needed when:',
     options: [
-      'A) All claims are denied',
+      'D) Rental income is lost',
       'B) Building codes require upgrades during repairs, demolition of undamaged portions, or increased construction costs not covered by basic policies',
+      'A) All claims are denied',
       'C) Crimes occur on property',
-      'D) Rental income is lost'
     ],
     correctAnswer: 1,
     explanation: 'Ordinance/law coverage: when repairing damaged buildings, current codes may require upgrades (undamaged portions must comply). Standard policies don\'t cover code upgrades or demolishing undamaged portions. Coverage includes: undamaged portion loss, demolition costs, increased construction costs. Essential for older buildings; standard policies explicitly exclude.'
@@ -272,8 +272,8 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     options: [
       'A) Reduces coverage',
       'B) Provides higher limits and broader coverage for specific valuable items like jewelry, art, or collectibles with appraisals',
+      'D) Only applies to electronics',
       'C) Eliminates deductibles for home',
-      'D) Only applies to electronics'
     ],
     correctAnswer: 1,
     explanation: 'Scheduling: lists specific items with appraised values. Benefits: higher limits than policy sub-limits (jewelry often capped at $1,500), broader perils (typically all-risk), agreed value (no depreciation disputes), often no deductible. Requires current appraisals. Items: jewelry, fine art, antiques, collectibles, musical instruments, camera equipment.'
@@ -289,12 +289,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Medical payments coverage in homeowners and auto policies:',
     options: [
-      'A) Covers only the policyholder',
       'B) Pays medical expenses for injuries to others regardless of fault, up to policy limits, without requiring proof of liability',
+      'A) Covers only the policyholder',
+      'D) Only covers emergency care',
       'C) Replaces health insurance',
-      'D) Only covers emergency care'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Medical payments coverage: pays for injuries to others regardless of negligence. Homeowners: guests injured on property. Auto: injured passengers in your car. Limits are typically modest ($1K-$10K). Purpose: maintain goodwill, handle small claims without lawsuits, demonstrate good faith. Not fault-based—pays even if you\'re not liable.'
   },
   // Additional Topics
@@ -307,15 +307,15 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Moral Hazard',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'Moral hazard in insurance refers to:',
+    question: 'An insured homeowner installs a swimming pool without informing their homeowner\'s insurance carrier, increasing the liability risk. This behavior is an example of:',
     options: [
-      'A) Fraudulent claims only',
-      'B) The tendency for insured individuals to take greater risks or exercise less care because they are protected by insurance',
-      'C) High-risk applicants',
-      'D) Premium increases'
+      'Adverse selection by the insured',
+      'Morale hazard — carelessness or indifference about risk due to having insurance coverage',
+      'Pure risk elimination through risk control',
+      'Subrogation rights exercised by the insurer',
     ],
     correctAnswer: 1,
-    explanation: 'Moral hazard: insurance changes behavior—less incentive to prevent losses when protected. Examples: driving less carefully with full coverage, not maintaining insured property. Insurers combat with: deductibles (share loss), coinsurance (share cost), policy limits, exclusions. Differs from adverse selection (pre-purchase selection bias).'
+    explanation: 'Morale hazard (distinct from moral hazard) involves carelessness or indifference about preventing losses because insurance coverage exists. Failing to inform the insurer about increased risk reflects morale hazard. Moral hazard involves intentional actions to cause losses, while adverse selection involves concealing known risks at application.',
   },
   {
     id: 'CFP-RIS-B7-017',
@@ -329,11 +329,11 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     question: 'Guaranteed issue life insurance:',
     options: [
       'A) Offers the lowest premiums',
+      'D) Is only offered by employers',
       'B) Accepts all applicants regardless of health but typically has lower face amounts, higher premiums, and graded death benefits',
       'C) Requires medical exams',
-      'D) Is only offered by employers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Guaranteed issue: no medical questions or exams—everyone accepted. Trade-offs: low face amounts ($5K-$25K typically), high premiums (company assumes high-risk pool), graded benefits (limited or no benefit for natural death in first 2-3 years). Designed for final expenses when uninsurable elsewhere. Last resort—explore other options first.'
   },
   {
@@ -348,11 +348,11 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     question: 'Short-term health insurance:',
     options: [
       'A) Meets ACA requirements',
+      'D) Is the same as COBRA',
       'B) Provides temporary coverage during transitions but may exclude pre-existing conditions, have annual/lifetime limits, and limited benefits',
       'C) Has no coverage gaps',
-      'D) Is the same as COBRA'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Short-term medical insurance: temporary coverage (3-12 months, sometimes renewable). Not ACA-compliant: can exclude pre-existing conditions, impose limits, offer limited benefits. May exclude maternity, mental health, preventive care. Lower premiums than ACA plans but significant protection gaps. Bridge coverage only—not long-term substitute.'
   },
   {
@@ -366,12 +366,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When coordinating personal and employer disability coverage:',
     options: [
-      'A) Personal coverage replaces employer coverage',
       'B) Consider total after-tax replacement ratio, definition of disability differences, and whether employer-paid benefits are taxable',
+      'D) Only one policy can pay',
+      'A) Personal coverage replaces employer coverage',
       'C) Employer coverage is always sufficient',
-      'D) Only one policy can pay'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Coordination considerations: employer-paid STD/LTD benefits are taxable; employee-paid are tax-free. Total replacement should target 60-70% of gross (80%+ of net). Employer policies may have weak disability definitions. Personal policies supplement with own-occupation coverage, portable protection. Insurers cap total coverage around 60-70% of income.'
   },
   {
@@ -386,11 +386,11 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     question: 'Loss of use coverage (Coverage D) in homeowners insurance pays for:',
     options: [
       'A) Replacing damaged items',
+      'D) Property depreciation',
       'B) Additional living expenses when the home is uninhabitable due to a covered loss, including temporary housing and food costs',
       'C) Lost wages during repairs',
-      'D) Property depreciation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Loss of use (Coverage D): pays additional living expenses when home is uninhabitable due to covered peril. Includes: hotel/rental costs, restaurant meals above normal food costs, laundry, storage. Pays difference between normal expenses and actual costs incurred. Limit typically 20-30% of dwelling coverage. Critical for maintaining lifestyle during repairs.'
   },
   {
@@ -404,10 +404,10 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When evaluating whether to self-insure a risk:',
     options: [
-      'A) Only consider premium savings',
+      'D) Only look at deductible options',
       'B) Compare premium costs against expected losses, ability to absorb worst-case loss, and opportunity cost of held reserves',
+      'A) Only consider premium savings',
       'C) Self-insure all risks to save money',
-      'D) Only look at deductible options'
     ],
     correctAnswer: 1,
     explanation: 'Self-insurance analysis: premium saved vs. expected claims (actuarial value), ability to absorb maximum possible loss (capital adequacy), opportunity cost of held reserves (could invest elsewhere), administrative costs, and risk tolerance. Self-insure: high frequency/low severity. Transfer to insurer: low frequency/high severity catastrophes.'
@@ -423,12 +423,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Interest on policy loans from life insurance:',
     options: [
-      'A) Is always tax-deductible',
       'B) Accrues and adds to the loan balance, and if not paid, can cause policy lapse which may trigger taxable gain',
+      'D) Reduces death benefit only',
+      'A) Is always tax-deductible',
       'C) Is paid to the beneficiary',
-      'D) Reduces death benefit only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Policy loan interest: typically not deductible (personal loan). Interest accrues and adds to loan balance. If total loan exceeds cash value, policy lapses. On lapse: if gains exist (total premiums paid < cash value + loan), gain is taxable income even though no cash received. Must monitor loan balance vs. cash value to prevent unintended lapse.'
   },
   {
@@ -442,12 +442,12 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Mental Health Parity and Addiction Equity Act requires:',
     options: [
-      'A) All plans to cover mental health',
       'B) Plans offering mental health benefits to provide them on terms comparable to medical/surgical benefits—similar cost-sharing and limits',
+      'A) All plans to cover mental health',
+      'D) Employer-paid mental health care',
       'C) Unlimited mental health coverage',
-      'D) Employer-paid mental health care'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Mental Health Parity Act: if a plan covers mental health/substance use, it must be comparable to medical benefits—can\'t have stricter financial requirements (copays, deductibles) or treatment limitations (visit caps). Applies to group plans with 50+ employees and ACA individual plans. Doesn\'t require coverage but ensures parity if offered.'
   },
   {
@@ -459,15 +459,15 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Overhead Expense Insurance',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Business overhead expense (BOE) insurance:',
+    question: 'A dentist owns a solo dental practice and purchases business overhead expense (BOE) insurance. Which of the following expenses is typically covered by the BOE policy?',
     options: [
-      'A) Covers employee wages',
-      'B) Reimburses fixed business expenses like rent, utilities, and employee salaries during the owner\'s disability',
-      'C) Pays business profits',
-      'D) Only covers malpractice'
+      'The dentist\'s personal salary and retirement plan contributions',
+      'Fixed business expenses such as office rent, utilities, employee salaries, and equipment lease payments',
+      'The cost of purchasing new dental equipment for practice expansion',
+      'Personal living expenses of the dentist\'s family',
     ],
     correctAnswer: 1,
-    explanation: 'BOE disability insurance: covers fixed business expenses when owner is disabled. Covered: rent/mortgage, utilities, employee salaries, insurance premiums, equipment leases. Not covered: owner\'s salary (personal DI), business profits, new hires. Typically short benefit period (12-24 months). Premiums tax-deductible; benefits taxable. Essential for small business owners.'
+    explanation: 'BOE insurance covers fixed monthly business expenses such as rent, utilities, employee salaries, insurance premiums, and equipment leases during the owner\'s disability. It does not cover the owner\'s salary, profit distributions, or personal expenses. Benefits are tax-deductible as a business expense.',
   },
   {
     id: 'CFP-RIS-B7-025',
@@ -482,8 +482,8 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
     options: [
       'A) Physical injuries to the insured',
       'B) Non-physical torts like libel, slander, defamation, false arrest, or invasion of privacy',
+      'D) Intentional criminal acts',
       'C) Car accidents only',
-      'D) Intentional criminal acts'
     ],
     correctAnswer: 1,
     explanation: 'Personal injury liability: covers non-physical harm claims. Typically includes: libel, slander, defamation, false arrest, malicious prosecution, invasion of privacy, wrongful eviction. Not included in basic HO policies—requires endorsement. Important for: bloggers/social media users, landlords, those in public roles. Umbrella policies often include automatically.'

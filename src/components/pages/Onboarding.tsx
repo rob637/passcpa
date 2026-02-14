@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
 import { getCourseHomePath } from '../../utils/courseNavigation';
+import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {
   ChevronRight,
@@ -34,14 +35,38 @@ interface Step {
   title: string;
 }
 
-const STEPS: Step[] = [
-  { id: 'welcome', title: 'Welcome' },
-  { id: 'course', title: 'Certification' },
-  { id: 'exam-date', title: 'Exam Date' },
-  { id: 'section', title: 'Choose Section' },
-  { id: 'daily-goal', title: 'Daily Goal' },
-  { id: 'complete', title: 'All Set!' },
-];
+// Single-exam courses: these exams test all domains in one sitting
+// Users don't pick a section - they study for the whole exam
+const SINGLE_EXAM_COURSES: CourseId[] = ['cfp', 'cisa'];
+
+const isSingleExamCourse = (courseId: string): boolean => 
+  SINGLE_EXAM_COURSES.includes(courseId as CourseId);
+
+// Get steps based on course type and whether switching (skips course selection when switching)
+const getStepsForCourse = (courseId: string, isCourseSwitching: boolean = false): Step[] => {
+  const baseSteps: Step[] = [
+    { id: 'welcome', title: 'Welcome' },
+  ];
+  
+  // Skip course selection when switching to a new course (they already chose it)
+  if (!isCourseSwitching) {
+    baseSteps.push({ id: 'course', title: 'Certification' });
+  }
+  
+  baseSteps.push({ id: 'exam-date', title: 'Exam Date' });
+  
+  // Single-exam courses skip section selection
+  if (!isSingleExamCourse(courseId)) {
+    baseSteps.push({ id: 'section', title: 'Choose Section' });
+  }
+  
+  baseSteps.push(
+    { id: 'daily-goal', title: 'Daily Goal' },
+    { id: 'complete', title: 'All Set!' }
+  );
+  
+  return baseSteps;
+};
 
 // Sub-component props
 interface SectionStepProps {
@@ -54,6 +79,7 @@ interface SectionStepProps {
 interface ExamDateStepProps {
   value: string;
   onChange: (val: string) => void;
+  courseId: string;
 }
 
 interface DailyGoalStepProps {
@@ -72,40 +98,84 @@ interface CompleteStepProps {
 
 
 // Step Components
-const WelcomeStep: React.FC = () => (
-  <div className="text-center">
-    <img 
-      src="/logo-icon.svg" 
-      alt="VoraPrep" 
-      className="w-20 h-20 mx-auto mb-6"
-    />
-    <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
-    <p className="text-slate-600 dark:text-slate-400 mb-6">
-      Let's set up your personalized study plan in just a few steps.
-    </p>
-    <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
-      <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">What we'll cover:</h3>
-      <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
-        <li className="flex items-center gap-2">
-          <GraduationCap className="w-4 h-4" />
-          Which certification you're pursuing
-        </li>
-        <li className="flex items-center gap-2">
-          <Calendar className="w-4 h-4" />
-          Your target exam date
-        </li>
-        <li className="flex items-center gap-2">
-          <BookOpen className="w-4 h-4" />
-          Which exam section you're preparing for
-        </li>
-        <li className="flex items-center gap-2">
-          <Target className="w-4 h-4" />
-          Your daily study goals
-        </li>
-      </ul>
+interface WelcomeStepProps {
+  courseId?: CourseId | '';
+  isCourseSwitching: boolean;
+}
+
+const WelcomeStep: React.FC<WelcomeStepProps> = ({ courseId, isCourseSwitching }) => {
+  const course = courseId ? COURSES[courseId] : null;
+  
+  if (isCourseSwitching && course) {
+    // Course-specific welcome when switching exams
+    return (
+      <div className="text-center">
+        <div className="w-20 h-20 mx-auto mb-6 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+          <GraduationCap className="w-10 h-10 text-primary-600 dark:text-primary-400" />
+        </div>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+          Welcome to {course.shortName} Prep! 🎉
+        </h1>
+        <p className="text-slate-600 dark:text-slate-400 mb-6">
+          Let's set up your {course.shortName} study plan in just a few steps.
+        </p>
+        <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
+          <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">About {course.shortName}:</h3>
+          <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
+            <li className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4" />
+              {course.sections.length} exam {course.sections.length === 1 ? 'part' : 'parts'}: {course.sections.map(s => s.shortName).join(', ')}
+            </li>
+            <li className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              Set your target exam date
+            </li>
+            <li className="flex items-center gap-2">
+              <Target className="w-4 h-4" />
+              Configure your daily study goals
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  
+  // Default welcome for new users
+  return (
+    <div className="text-center">
+      <img 
+        src="/logo-icon.svg" 
+        alt="VoraPrep" 
+        className="w-20 h-20 mx-auto mb-6"
+      />
+      <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
+      <p className="text-slate-600 dark:text-slate-400 mb-6">
+        Let's set up your personalized study plan in just a few steps.
+      </p>
+      <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
+        <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">What we'll cover:</h3>
+        <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
+          <li className="flex items-center gap-2">
+            <GraduationCap className="w-4 h-4" />
+            Which certification you're pursuing
+          </li>
+          <li className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
+            Your target exam date
+          </li>
+          <li className="flex items-center gap-2">
+            <BookOpen className="w-4 h-4" />
+            Which exam section you're preparing for
+          </li>
+          <li className="flex items-center gap-2">
+            <Target className="w-4 h-4" />
+            Your daily study goals
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // Course icons mapping
 const COURSE_ICONS: Record<string, React.ElementType> = {
@@ -190,7 +260,7 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate,
   let sections = course?.sections || [];
   if (isCPA) {
     const availableSectionIds = is2025Blueprint
-      ? [...CORE_SECTIONS, 'BEC']
+      ? [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026]
       : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
     sections = sections.filter(s => availableSectionIds.includes(s.id));
   }
@@ -256,23 +326,68 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate,
     {/* Note about changing sections */}
     <div className="mt-4 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl p-3">
       <p className="text-xs text-slate-600 dark:text-slate-400 text-center">
-        📝 Studying for multiple sections? You can switch your active section anytime in <strong>Settings</strong>.
+        📝 Studying for multiple sections? Switch anytime from the <strong>Home</strong> screen or in <strong>Settings</strong>.
       </p>
     </div>
   </div>
   );
 };
 
-const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
+const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId }) => {
   const today = new Date().toISOString().split('T')[0];
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
   const maxDateStr = maxDate.toISOString().split('T')[0];
   
-  // Determine blueprint based on selected date
+  // Get course info
+  const course = COURSES[courseId as CourseId];
+  const examName = course?.shortName || courseId?.toUpperCase() || 'exam';
+  
+  // CPA-specific: Determine blueprint based on selected date
   const BLUEPRINT_CUTOFF = new Date('2026-07-01');
   const selectedDate = value ? new Date(value) : null;
   const is2025Blueprint = selectedDate && selectedDate < BLUEPRINT_CUTOFF;
+  const isCPA = courseId === 'cpa';
+  
+  // Get exam-specific info message
+  const getExamInfoMessage = () => {
+    switch (courseId) {
+      case 'cpa':
+        return 'The CPA exam blueprint changes on July 1, 2026. After that date, REG and TCP sections will include updated tax law provisions (OBBBA). Our content adapts automatically.';
+      case 'ea':
+        return 'The EA exam (SEE) is offered year-round at Prometric test centers. Each of the three parts can be taken in any order. Testing typically opens in May for the next year\'s content.';
+      case 'cma':
+        return 'The CMA exam has three testing windows: January-February, May-June, and September-October. Plan your study schedule around your target window.';
+      case 'cia':
+        return 'The CIA exam is offered year-round at Pearson VUE test centers. You can take the three parts in any order and must complete all parts within 3 years.';
+      case 'cfp':
+        return 'The CFP exam is offered three times per year: March, July, and November. The exam is a single 6-hour test covering all 8 principal knowledge domains.';
+      case 'cisa':
+        return 'The CISA exam is offered year-round at PSI testing centers worldwide. It\'s a single 4-hour exam covering all 5 domains.';
+      default:
+        return `Set your target exam date to help us create an optimal study plan for your ${examName} preparation.`;
+    }
+  };
+  
+  // Get exam-specific tip
+  const getExamTip = () => {
+    switch (courseId) {
+      case 'cpa':
+        return 'Most candidates need 6-8 weeks per section to prepare.';
+      case 'ea':
+        return 'Most candidates need 4-6 weeks per part to prepare.';
+      case 'cma':
+        return 'Most candidates need 150-200 study hours per part.';
+      case 'cia':
+        return 'Plan for 100-150 study hours per part.';
+      case 'cfp':
+        return 'Most candidates need 250-300 total study hours.';
+      case 'cisa':
+        return 'Most candidates need 100-150 total study hours.';
+      default:
+        return 'Set a realistic target to stay on track.';
+    }
+  };
 
   return (
     <div>
@@ -280,31 +395,34 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
         <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
           <Calendar className="w-6 h-6 text-primary-600 dark:text-primary-400" />
         </div>
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white">When's Your Exam?</h2>
-        <p className="text-slate-600 dark:text-slate-400 mt-2">This determines which exam sections are available to you</p>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white">When's Your {examName} Exam?</h2>
+        <p className="text-slate-600 dark:text-slate-400 mt-2">This helps us create an optimal study plan for you</p>
       </div>
 
-      {/* Why we're asking */}
+      {/* Why we're asking - exam-specific */}
       <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-xl p-4 mb-6">
         <p className="text-sm text-blue-800 dark:text-blue-300">
-          <strong>Why does this matter?</strong> The CPA exam changes on July 1, 2026. Before that date, you can take <strong>BEC</strong>. After that date, BEC is replaced by <strong>BAR, ISC, and TCP</strong> disciplines.
+          <strong>Why does this matter?</strong> {getExamInfoMessage()}
         </p>
       </div>
 
       <div className="mb-6">
         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Target Exam Date</label>
-        <input
-          type="date"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          min={today}
-          max={maxDateStr}
-          className="w-full max-w-full box-border px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-lg"
-        />
+        <div className="relative">
+          <input
+            type="date"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            min={today}
+            max={maxDateStr}
+            className="w-full pl-12 pr-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-base dark:[color-scheme:dark]"
+          />
+          <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+        </div>
       </div>
 
-      {/* Blueprint indicator */}
-      {selectedDate && (
+      {/* Blueprint indicator - CPA only */}
+      {isCPA && selectedDate && (
         <div className={clsx(
           'mb-4 px-4 py-3 rounded-xl text-sm',
           is2025Blueprint ? 'bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800' : 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800'
@@ -312,7 +430,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
           {is2025Blueprint ? (
             <div className="text-amber-800 dark:text-amber-300">
               <strong>✓ 2025 Blueprint</strong>
-              <p className="mt-1 text-xs">Sections available: AUD, FAR, REG, or BEC</p>
+              <p className="mt-1 text-xs">Current tax law. Choose a discipline: BAR, ISC, or TCP</p>
             </div>
           ) : (
             <div className="text-green-800 dark:text-green-300">
@@ -325,7 +443,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
 
       <div className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl p-4">
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          <strong>Tip:</strong> Most candidates need 6-8 weeks to prepare. You can change this later in Settings.
+          <strong>Tip:</strong> {getExamTip()} You can change this later in Settings.
         </p>
       </div>
     </div>
@@ -449,7 +567,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
       </div>
 
       <p className="text-sm text-slate-600 dark:text-slate-400">
-        You can adjust these settings anytime in your profile.
+        You can adjust these settings anytime from Home or Settings.
       </p>
     </div>
   );
@@ -457,30 +575,75 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
 
 const Onboarding: React.FC = () => {
   const navigate = useNavigate();
-  const { userProfile, updateUserProfile } = useAuth(); // removed user as it was only used for userProfile check
+  const { userProfile, updateUserProfile } = useAuth();
+  const { courseId: currentCourseId } = useCourse();
+
+  // Detect if this is a course switch (user already completed onboarding for at least one course)
+  // In this case, we pre-select the course and skip the course selection step
+  const isCourseSwitching = Boolean(
+    userProfile?.onboardingCompleted && 
+    Object.values(userProfile.onboardingCompleted).some(v => v === true)
+  ) || Boolean(userProfile?.onboardingComplete);
+
+  // Check for pending course from registration flow or course-specific launch page
+  // Priority: 1) localStorage pendingCourse, 2) CourseProvider courseId, 3) userProfile.activeCourse
+  const getPendingCourse = (): CourseId | '' => {
+    const pending = localStorage.getItem('pendingCourse');
+    if (pending && ACTIVE_COURSES.includes(pending as CourseId)) {
+      return pending as CourseId;
+    }
+    // Use the current course from CourseProvider (this handles course switching)
+    if (currentCourseId) {
+      return currentCourseId;
+    }
+    return (userProfile?.activeCourse as CourseId) || '';
+  };
+  
+  // Check if course was pre-selected (from launch page or registration)
+  // This should skip the course selection step
+  const hadPendingCourse = Boolean(localStorage.getItem('pendingCourse'));
 
   const [currentStep, setCurrentStep] = useState(0);
-  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>((userProfile?.activeCourse as CourseId) || '');
-  const [selectedSection, setSelectedSection] = useState(userProfile?.examSection || '');
+  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(getPendingCourse());
+  const [selectedSection, setSelectedSection] = useState('');
   const [examDate, setExamDate] = useState('');
   const [dailyGoal, setDailyGoal] = useState(50);
   const [studyPlan, setStudyPlan] = useState('balanced');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Track if course was pre-determined (skip course selection step)
+  const [skipCourseStep] = useState(isCourseSwitching || hadPendingCourse);
+
+  // Dynamic steps based on course type and whether course was pre-selected
+  const steps = getStepsForCourse(selectedCourse, skipCourseStep);
+
+  // Auto-set section for single-exam courses (they study the whole exam)
+  useEffect(() => {
+    if (selectedCourse && isSingleExamCourse(selectedCourse)) {
+      // For single-exam courses, set section to the course ID (uppercase)
+      setSelectedSection(selectedCourse.toUpperCase());
+    }
+  }, [selectedCourse]);
+
+  // Clear pending course from localStorage on mount
+  useEffect(() => {
+    localStorage.removeItem('pendingCourse');
+  }, []);
 
   // Track onboarding step changes for funnel analytics
   useEffect(() => {
-    const stepId = STEPS[currentStep]?.id;
+    const stepId = steps[currentStep]?.id;
     if (stepId) {
       trackEvent('onboarding_step', {
         step_number: currentStep + 1,
         step_id: stepId,
-        step_name: STEPS[currentStep].title,
+        step_name: steps[currentStep].title,
       });
     }
-  }, [currentStep]);
+  }, [currentStep, steps]);
 
   const canContinue = () => {
-    switch (STEPS[currentStep].id) {
+    switch (steps[currentStep].id) {
       case 'welcome':
         return true;
       case 'course':
@@ -497,7 +660,7 @@ const Onboarding: React.FC = () => {
   };
 
   const handleNext = async () => {
-    if (currentStep < STEPS.length - 1) {
+    if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
       scrollToTop();
     } else {
@@ -533,8 +696,16 @@ const Onboarding: React.FC = () => {
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
       
       // Create multi-course aware profile updates
-      const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate);
+      // Pass selectedCourse so single-exam courses (CFP, CISA) use course ID as key
+      const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate, selectedCourse as CourseId);
       const studyPlanUpdate = createStudyPlanUpdate(userProfile, selectedCourse as CourseId, studyPlan);
+      
+      // Create per-course onboarding status update
+      const existingOnboarding = userProfile?.onboardingCompleted || {};
+      const onboardingUpdate = {
+        ...existingOnboarding,
+        [selectedCourse]: true,
+      };
       
       await updateUserProfile({
         activeCourse: selectedCourse as CourseId,
@@ -542,10 +713,26 @@ const Onboarding: React.FC = () => {
         ...examDateUpdate,
         dailyGoal,
         ...studyPlanUpdate,
-        onboardingComplete: true,
+        onboardingComplete: true, // Keep legacy flag for compatibility
+        onboardingCompleted: onboardingUpdate, // New per-course tracking
         onboardingCompletedAt: new Date(),
         timezone: userTimezone,
       });
+      
+      // Check for pending checkout (user came from pricing page)
+      const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+      if (pendingCheckoutStr) {
+        try {
+          const pendingCheckout = JSON.parse(pendingCheckoutStr);
+          localStorage.removeItem('pendingCheckout');
+          // Navigate to start checkout page
+          navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+          return;
+        } catch {
+          // Invalid JSON, continue to dashboard
+          localStorage.removeItem('pendingCheckout');
+        }
+      }
       
       // Navigate to appropriate dashboard based on selected course
       const courseDashboard = getCourseHomePath(selectedCourse as CourseId);
@@ -558,13 +745,13 @@ const Onboarding: React.FC = () => {
   };
 
   const renderStep = () => {
-    switch (STEPS[currentStep].id) {
+    switch (steps[currentStep].id) {
       case 'welcome':
-        return <WelcomeStep />;
+        return <WelcomeStep courseId={selectedCourse} isCourseSwitching={skipCourseStep} />;
       case 'course':
         return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
       case 'exam-date':
-        return <ExamDateStep value={examDate} onChange={setExamDate} />;
+        return <ExamDateStep value={examDate} onChange={setExamDate} courseId={selectedCourse} />;
       case 'section':
         return <SectionStep selected={selectedSection} onSelect={setSelectedSection} examDate={examDate} courseId={selectedCourse} />;
       case 'daily-goal':
@@ -584,12 +771,12 @@ const Onboarding: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-600 to-primary-800 flex flex-col">
+    <div className="h-[100dvh] bg-gradient-to-br from-primary-600 to-primary-800 flex flex-col">
       {/* Progress Indicator */}
-      <div className="p-4">
+      <div className="p-4 safe-top">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-2">
-            {STEPS.map((step, index) => (
+            {steps.map((step, index) => (
               <div key={step.id} className="flex-1">
                 <div
                   className={clsx(
@@ -601,20 +788,20 @@ const Onboarding: React.FC = () => {
             ))}
           </div>
           <p className="text-white/70 text-sm mt-2 text-center">
-            Step {currentStep + 1} of {STEPS.length}
+            Step {currentStep + 1} of {steps.length}
           </p>
         </div>
       </div>
 
       {/* Content */}
-      <div className="flex-1 flex items-center justify-center p-4">
-        <div className="w-full max-w-lg">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 sm:p-8 overflow-hidden">{renderStep()}</div>
+      <div className="flex-1 overflow-y-auto p-4">
+        <div className="w-full max-w-lg mx-auto">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 sm:p-8">{renderStep()}</div>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="p-4">
+      <div className="p-4 safe-bottom">
         <div className="max-w-lg mx-auto flex items-center justify-between gap-4">
           <Button
             variant="ghost"
@@ -634,15 +821,15 @@ const Onboarding: React.FC = () => {
             onClick={handleNext}
             disabled={!canContinue() || isSubmitting}
             loading={isSubmitting}
-            rightIcon={currentStep === STEPS.length - 1 ? Sparkles : ChevronRight}
+            rightIcon={currentStep === steps.length - 1 ? Sparkles : ChevronRight}
             className={clsx(
-              'px-8 py-3 shadow-lg',
+              'px-8 py-3 shadow-lg transition-all duration-200',
               canContinue() && !isSubmitting
-                ? 'bg-white text-primary-600 hover:bg-white/90'
-                : 'bg-white/30 text-white'
+                ? '!bg-white !text-primary-600 hover:!bg-primary-50 hover:shadow-xl hover:scale-[1.02] font-semibold'
+                : '!bg-white/30 !text-white/70'
             )}
           >
-            {isSubmitting ? 'Saving...' : currentStep === STEPS.length - 1 ? "Let's Go!" : 'Continue'}
+            {isSubmitting ? 'Saving...' : currentStep === steps.length - 1 ? "Let's Go!" : 'Continue'}
           </Button>
         </div>
       </div>

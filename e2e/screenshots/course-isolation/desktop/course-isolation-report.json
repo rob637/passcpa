@@ -1,0 +1,300 @@
+{
+  "timestamp": "2026-02-14T17:05:14.434Z",
+  "viewport": "desktop",
+  "results": [
+    {
+      "f": "Login",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — localStorage state",
+      "s": "INFO",
+      "d": "{\"pendingCourse\":null}"
+    },
+    {
+      "f": "Onboarding CPA — Accessible (onboarding already completed)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding EA — Accessible (onboarding already completed)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding CMA — Accessible (onboarding already completed)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding CIA — Accessible (onboarding already completed)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding CISA — Accessible (onboarding already completed)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding CFP — Accessible (onboarding already completed)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Onboarding — At least one course is onboarded",
+      "s": "PASS",
+      "d": "6 accessible, 0 gated"
+    },
+    {
+      "f": "Onboarding — All courses onboarded (user has completed onboarding for all)",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Metrics CPA — Gathered",
+      "s": "PASS",
+      "d": "Streak: 1, Questions: 528"
+    },
+    {
+      "f": "Metrics EA — Gathered",
+      "s": "PASS",
+      "d": "Streak: 1, Questions: 0"
+    },
+    {
+      "f": "Metric Isolation — Section changes between courses",
+      "s": "PASS",
+      "d": "CPA: BAR, EA: SEE1"
+    },
+    {
+      "f": "No Hardcoded Metrics — All values appear dynamic",
+      "s": "PASS",
+      "d": "streak=1, N/A_placeholders=0, zero_percent=1"
+    },
+    {
+      "f": "You Page — Shows course-specific label",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — Card visible on Home page",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — MCQs category shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — Lessons category shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — Flashcards category shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — TBS category shown (CPA-specific)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — Today value is reasonable",
+      "s": "PASS",
+      "d": "3h 2m"
+    },
+    {
+      "f": "Study Time — Weekly total shown",
+      "s": "PASS",
+      "d": "3h 2m"
+    },
+    {
+      "f": "Study Time — Today ≤ weekly total (consistent)",
+      "s": "PASS",
+      "d": "Today: 3h 2m, Weekly: 3h 2m"
+    },
+    {
+      "f": "Study Time — Donut chart rendered",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time — Breakdown has varied values (not all equal)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Study Time EA — No TBS (correct for non-CPA)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Subscribe — \"Subscription & Trials\" section found",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Subscribe — Exam status rows found",
+      "s": "PASS",
+      "d": "6 exams displayed"
+    },
+    {
+      "f": "Subscribe CPA — Status: Trial active",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscribe EA — Status: Trial active",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscribe CMA — Status: Trial active",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscribe CIA — Status: Trial active",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscribe CISA — Status: Trial active",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscribe CFP — Status: Trial active",
+      "s": "INFO",
+      "d": ""
+    },
+    {
+      "f": "Subscribe — Subscribe link found",
+      "s": "PASS",
+      "d": "/start-checkout?course=cpa&interval=annual"
+    },
+    {
+      "f": "Subscribe — Link has correct params (course + interval)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Subscribe — Navigated to checkout flow",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Subscribe — Founder pricing notice shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Tab found and clicked",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — \"Offline Storage\" header present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Download Questions button present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Cache status display present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Last Updated display present",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Cache count readable",
+      "s": "PASS",
+      "d": "0 questions cached"
+    },
+    {
+      "f": "Offline — Last updated",
+      "s": "INFO",
+      "d": "Never"
+    },
+    {
+      "f": "Offline — Download started (Downloading... state shown)",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Download completed",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Cache populated after download",
+      "s": "PASS",
+      "d": "500 questions"
+    },
+    {
+      "f": "Offline — Cache cleared successfully",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — IndexedDB \"voraprep-offline\" database exists",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Offline banner shown when network disconnected",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Banner dismissed when back online",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Offline — Service worker not registered (dev mode has SW disabled)",
+      "s": "INFO",
+      "d": ""
+    }
+  ],
+  "issues": [],
+  "consoleErrors": [
+    "[2026-02-14T17:02:52.651Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:02:52.670Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:02:52.736Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:02:52.741Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:02:52.741Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:02:52.808Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:03:05.820Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:03:05.820Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:03:05.820Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:03:06.048Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:03:08.879Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
+    "[2026-02-14T17:03:08.879Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
+    "[2026-02-14T17:03:08.880Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
+    "[2026-02-14T17:03:08.880Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
+    "[2026-02-14T17:03:08.983Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
+    "[2026-02-14T17:03:08.984Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
+    "[2026-02-14T17:03:08.984Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
+    "[2026-02-14T17:03:08.984Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
+    "[2026-02-14T17:03:09.079Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
+    "[2026-02-14T17:03:09.079Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
+  ],
+  "summary": {
+    "PASS": 43,
+    "FAIL": 0,
+    "WARN": 0,
+    "INFO": 10
+  }
+}

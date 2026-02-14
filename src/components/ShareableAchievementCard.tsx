@@ -1,8 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Share2, Download, X, Linkedin, Twitter } from 'lucide-react';
 import html2canvas from 'html2canvas';
 import { Button } from './common/Button';
 import { useCourse } from '../providers/CourseProvider';
+import { useAuth } from '../hooks/useAuth';
+import { getAchievementDisplayName } from '../services/achievements';
+import { getReferralStats } from '../services/referral';
 
 interface ShareableAchievementCardProps {
   achievement: {
@@ -27,8 +30,31 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [shareError, setShareError] = useState<string | null>(null);
+  const [referralCode, setReferralCode] = useState<string>('');
   const { courseId, course } = useCourse();
+  const { user } = useAuth();
   const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
+  const displayName = getAchievementDisplayName(achievement.id, courseId);
+
+  // Load user's referral code for share links
+  useEffect(() => {
+    async function loadReferralCode() {
+      if (!user?.uid) return;
+      try {
+        const data = await getReferralStats(user.uid);
+        setReferralCode(data.code);
+      } catch (error) {
+        // Silently fail - sharing still works without referral
+      }
+    }
+    loadReferralCode();
+  }, [user?.uid]);
+
+  // Build share URL with optional referral code
+  const getShareUrl = () => {
+    const base = 'https://voraprep.com';
+    return referralCode ? `${base}/register?ref=${referralCode}` : base;
+  };
 
   const generateImage = async (): Promise<Blob | null> => {
     if (!cardRef.current) return null;
@@ -77,12 +103,13 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
     if (!blob) return;
 
     const file = new File([blob], `voraprep-achievement-${achievement.id}.png`, { type: 'image/png' });
+    const shareUrl = getShareUrl();
     
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       try {
         await navigator.share({
-          title: `I unlocked "${achievement.name}" on VoraPrep!`,
-          text: `🏆 ${achievement.description} - Studying for the ${courseName} exam with VoraPrep`,
+          title: `I unlocked "${displayName}" on VoraPrep!`,
+          text: `🏆 ${achievement.description} - Studying for the ${courseName} exam with VoraPrep\n\n${shareUrl}`,
           files: [file],
         });
       } catch (error) {
@@ -98,8 +125,8 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   };
 
   const handleLinkedInShare = () => {
-    const text = `🏆 Just unlocked "${achievement.name}" while studying for the ${courseName} exam!\n\n${achievement.description}\n\nPreparing with @VoraPrep - the smart way to pass the ${courseName} exam.`;
-    const url = 'https://voraprep.com';
+    const text = `🏆 Just unlocked "${displayName}" while studying for the ${courseName} exam!\n\n${achievement.description}\n\nPreparing with @VoraPrep - the smart way to pass the ${courseName} exam.`;
+    const url = getShareUrl();
     window.open(
       `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${encodeURIComponent(text)}`,
       '_blank',
@@ -108,8 +135,8 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   };
 
   const handleTwitterShare = () => {
-    const text = `🏆 Just unlocked "${achievement.name}" on @VoraPrep!\n\n${achievement.description}\n\n#${courseName}Exam #Accounting`;
-    const url = 'https://voraprep.com';
+    const text = `🏆 Just unlocked "${displayName}" on @VoraPrep!\n\n${achievement.description}\n\n#${courseName}Exam #Accounting`;
+    const url = getShareUrl();
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
       '_blank',
@@ -168,7 +195,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
                 <span className="text-xs font-medium text-white/90">Achievement Unlocked!</span>
               </div>
               
-              <h3 className="text-xl font-bold mb-2">{achievement.name}</h3>
+              <h3 className="text-xl font-bold mb-2">{displayName}</h3>
               <p className="text-sm text-white/80 mb-4">{achievement.description}</p>
               
               {/* Stats Row */}

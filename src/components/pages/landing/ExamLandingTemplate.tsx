@@ -20,8 +20,11 @@ import {
   Sparkles,
   Check,
   X,
+  Menu,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
+import { isFounderPricingActive, founderDaysRemaining } from '../../../services/subscription';
+import { useAuth } from '../../../hooks/useAuth';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -29,10 +32,16 @@ interface ExamLandingTemplateProps {
 
 const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [config.id]);
 
   // Color utility - maps color name to Tailwind classes
   const getColorClasses = (color: string) => {
@@ -61,13 +70,13 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
-        <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
-          <div className="flex items-center gap-3">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
-              <img src="/logo.svg" alt="VoraPrep" className="h-10 dark:hidden" />
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-10 hidden dark:block" />
+              <img src="/logo.svg" alt="VoraPrep" className="h-8 sm:h-10 dark:hidden" />
+              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 sm:h-10 hidden dark:block" />
             </Link>
-            <span className={`${colors.text} font-bold text-lg`}>{config.name}</span>
+            <span className={`hidden sm:inline ${colors.text} font-bold text-lg`}>{config.name}</span>
           </div>
           <div className="hidden md:flex items-center gap-6">
             {/* Quick Exam Switcher Dropdown */}
@@ -108,8 +117,82 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             >
               Start Free
             </Link>
+            {/* Mobile hamburger menu button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-xl animate-fade-in">
+            <div className="px-4 py-4 space-y-1">
+              <a 
+                href="#why-become" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Why {config.name}?
+              </a>
+              <a 
+                href="#exam" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Exam Overview
+              </a>
+              <a 
+                href="#features" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Features
+              </a>
+              {config.competitors && (
+                <a 
+                  href="#comparison" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+                >
+                  Compare
+                </a>
+              )}
+              <a 
+                href="#pricing" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Pricing
+              </a>
+              
+              <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-2">
+                <p className="px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Other Certifications</p>
+                <Link to="/cpa" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cpa' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CPA Exam Prep</Link>
+                <Link to="/ea-prep" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'ea' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>EA Exam Prep</Link>
+                <Link to="/cma" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cma' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CMA Exam Prep</Link>
+                <Link to="/cia" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cia' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CIA Exam Prep</Link>
+                <Link to="/cfp" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cfp' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CFP Exam Prep</Link>
+                <Link to="/cisa" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cisa' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CISA Exam Prep</Link>
+              </div>
+
+              <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-3 px-4">
+                <Link 
+                  to={config.loginPath}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-center py-3 text-slate-700 dark:text-slate-300 font-medium"
+                >
+                  Sign In
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       <main id="main-content">
@@ -125,11 +208,11 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           <div className={`absolute bottom-20 right-10 w-96 h-96 ${colors.bg}/10 rounded-full blur-3xl animate-pulse`} style={{ animationDelay: '1s' }} />
 
           <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* Beta Badge */}
+            {/* Trial Badge */}
             <div className="flex justify-center mb-5">
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
                 <Sparkles className="w-4 h-4" />
-                FREE BETA — Full Access, No Credit Card
+                14-Day Free Trial — Full Access, No Credit Card
                 <Sparkles className="w-4 h-4" />
               </div>
             </div>
@@ -158,7 +241,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
               {config.description}
               <br className="hidden md:block" />
-              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — 100% free during beta.
+              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — start your free trial today.
             </p>
 
             {/* CTA Buttons */}
@@ -190,7 +273,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
                   <Check className="w-3 h-3 text-emerald-600" />
                 </div>
-                <span>Full access during beta</span>
+                <span>14-day free trial</span>
               </div>
             </div>
 
@@ -200,13 +283,21 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <Check className={`w-4 h-4 ${colors.text}`} />
                 {config.questionCount} Practice Questions
               </div>
+              {config.lessonCount && (
+                <div className="flex items-center gap-2">
+                  <Check className={`w-4 h-4 ${colors.text}`} />
+                  {config.lessonCount} Lessons
+                </div>
+              )}
+              {config.flashcardCount && (
+                <div className="flex items-center gap-2">
+                  <Check className={`w-4 h-4 ${colors.text}`} />
+                  {config.flashcardCount} Flashcards
+                </div>
+              )}
               <div className="flex items-center gap-2">
                 <Check className={`w-4 h-4 ${colors.text}`} />
-                AI-Powered Adaptive Learning
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className={`w-4 h-4 ${colors.text}`} />
-                All {config.name} {config.examParts.length > 3 ? 'Sections' : 'Parts'} Covered
+                AI-Powered Learning
               </div>
             </div>
           </div>
@@ -215,7 +306,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             WHY BECOME A [CERTIFICATION] SECTION
             ================================================================ */}
-        <section id="why-become" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+        <section id="why-become" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -246,7 +337,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             EXAM OVERVIEW SECTION
             ================================================================ */}
-        <section id="exam" className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section id="exam" className="scroll-mt-20 py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -259,9 +350,10 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
 
             <div className={`grid gap-6 ${config.examParts.length <= 3 ? 'md:grid-cols-3 max-w-4xl mx-auto' : config.examParts.length <= 6 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
               {config.examParts.map((part, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow"
+                <Link 
+                  key={idx}
+                  to={`${config.registerPath}?section=${part.part}`}
+                  className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 transition-all cursor-pointer group"
                 >
                   <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
                     {part.part}
@@ -287,7 +379,11 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                       </li>
                     )}
                   </ul>
-                </div>
+                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Start studying {part.part}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -296,7 +392,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             WHY VORAPREP SECTION (shared across all exams)
             ================================================================ */}
-        <section id="features" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+        <section id="features" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -331,7 +427,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             COMPETITOR COMPARISON SECTION (if available)
             ================================================================ */}
         {config.competitors && (
-          <section id="comparison" className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+          <section id="comparison" className="scroll-mt-20 py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
@@ -374,16 +470,21 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                             row.competitor2 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
                           ) : row.competitor2}
                         </td>
-                        <td className="p-4 text-center text-slate-600 dark:text-slate-400">
-                          {typeof row.competitor3 === 'boolean' ? (
-                            row.competitor3 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
-                          ) : row.competitor3}
-                        </td>
+                        {row.competitor3 !== undefined && (
+                          <td className="p-4 text-center text-slate-600 dark:text-slate-400">
+                            {typeof row.competitor3 === 'boolean' ? (
+                              row.competitor3 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
+                            ) : row.competitor3}
+                          </td>
+                        )}
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
+                *Founding member annual rate — sign up by April 30, 2026, rate locked for 2 years. Regular annual pricing shown for competitors.
+              </p>
             </div>
           </section>
         )}
@@ -391,74 +492,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             PRICING SECTION
             ================================================================ */}
-        <section id="pricing" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                {config.name} Exam Prep Pricing
-              </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
-                Premium exam prep at a fraction of traditional costs
-              </p>
-            </div>
-            
-            {/* Free Beta Card */}
-            <div className={`relative bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} rounded-2xl p-8 md:p-10 text-white shadow-xl`}>
-              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                Limited Time
-              </div>
-              
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">Free During Beta</h3>
-                  <p className="text-white/90 text-lg mb-4">
-                    Full access to all {config.name} content — no credit card required
-                  </p>
-                  <ul className="space-y-2 text-white/90">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      All {config.examParts.length} exam sections with 1,000+ questions
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      Expert-written lessons with clear explanations
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      AI tutor for personalized help 24/7
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      Founding member pricing locked in forever
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="text-center md:text-right">
-                  <div className="mb-4">
-                    <span className="text-5xl md:text-6xl font-bold">$0</span>
-                    <span className="text-white/80 text-lg">/month</span>
-                  </div>
-                  <Link 
-                    to={config.registerPath}
-                    className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                  >
-                    Start Free Today
-                  </Link>
-                  <p className="text-white/70 text-sm mt-3">No credit card required</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <p className="text-white/80 text-sm">
-                  <strong>When we launch paid plans:</strong> {config.name} prep will be priced competitively — 
-                  significantly less than traditional review courses. Beta users automatically become founding members 
-                  with exclusive lifetime discounts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PricingSection config={config} colors={colors} />
 
         {/* ================================================================
             FINAL CTA SECTION
@@ -469,7 +503,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               Ready to Become a {config.name}?
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              Join thousands of candidates using VoraPrep. 100% free during beta!
+              Join thousands of candidates using VoraPrep. Start your 14-day free trial!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
@@ -544,6 +578,227 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         </div>
       </footer>
     </div>
+  );
+};
+
+// ============================================================================
+// PRICING SECTION COMPONENT
+// ============================================================================
+
+interface PricingSectionProps {
+  config: ExamLandingConfig;
+  colors: { bg: string; text: string; light: string; ring: string; gradient: string };
+}
+
+const PricingSection = ({ config, colors }: PricingSectionProps) => {
+  const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const { user } = useAuth();
+  
+  // Founder pricing — single source of truth in subscription.ts
+  const isFounderWindow = isFounderPricingActive();
+  const daysRemaining = founderDaysRemaining();
+  
+  const pricing = config.pricing;
+  const currentPrice = billingInterval === 'annual' 
+    ? (isFounderWindow ? pricing.founderAnnual : pricing.annual)
+    : (isFounderWindow ? pricing.founderMonthly : pricing.monthly);
+  const regularPrice = billingInterval === 'annual' ? pricing.annual : pricing.monthly;
+  const savings = billingInterval === 'annual' ? Math.round((1 - pricing.founderAnnual / pricing.annual) * 100) : 0;
+
+  const features = [
+    `${config.questionCount} practice questions`,
+    `${config.lessonCount || '100+'} expert lessons`,
+    config.flashcardCount ? `${config.flashcardCount} flashcards` : null,
+    'Vory AI tutor - unlimited',
+    'Real-time adaptive engine',
+    'SM-2 spaced repetition',
+    'Task-based simulations',
+    'Full exam simulations',
+    'Progress analytics',
+    'Offline mode (PWA)',
+    'Pass guarantee*',
+  ].filter(Boolean);
+
+  const handleCheckout = async () => {
+    setIsCheckingOut(true);
+    // Logged-in users go directly to checkout, others to registration
+    if (user) {
+      window.location.href = `/start-checkout?course=${config.id}&interval=${billingInterval}`;
+    } else {
+      window.location.href = `/register?course=${config.id}&redirect=checkout&interval=${billingInterval}`;
+    }
+  };
+
+  return (
+    <section id="pricing" className="scroll-mt-20 py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            {config.name} Exam Prep Pricing
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Premium exam prep at a fraction of traditional costs. 14-day free trial included.
+          </p>
+        </div>
+
+        {/* Founder Banner */}
+        {isFounderWindow && (
+          <div className="mb-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-4 md:p-6 text-white text-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+              <span className="text-2xl">🏆</span>
+              <div>
+                <span className="font-bold text-lg">Founding Member Pricing</span>
+                <span className="mx-2">•</span>
+                <span>Save over 40% — rate guaranteed for 2 years</span>
+              </div>
+              <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold">
+                {daysRemaining} days left
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Billing Toggle */}
+        <div className="flex justify-center mb-10">
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-1.5 inline-flex shadow-lg border border-slate-200 dark:border-slate-700">
+            <button
+              onClick={() => setBillingInterval('annual')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                billingInterval === 'annual'
+                  ? `bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white shadow-md`
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              Annual
+              {isFounderWindow && <span className="ml-2 text-xs opacity-80">(Best Value)</span>}
+            </button>
+            <button
+              onClick={() => setBillingInterval('monthly')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                billingInterval === 'monthly'
+                  ? `bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white shadow-md`
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              Monthly
+            </button>
+          </div>
+        </div>
+
+        {/* Pricing Card */}
+        <div className="max-w-lg mx-auto">
+          <div className="relative bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+            {/* Popular Badge */}
+            {billingInterval === 'annual' && (
+              <div className={`absolute top-0 right-0 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl`}>
+                MOST POPULAR
+              </div>
+            )}
+
+            {/* Price Header */}
+            <div className={`bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} p-8 text-center text-white`}>
+              <h3 className="text-xl font-bold mb-2">{config.name} Full Access</h3>
+              
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                {isFounderWindow && regularPrice !== currentPrice && (
+                  <span className="text-2xl text-white/60 line-through">${regularPrice}</span>
+                )}
+                <span className="text-5xl md:text-6xl font-bold">${currentPrice}</span>
+                <span className="text-white/80">/{billingInterval === 'annual' ? 'year' : 'month'}</span>
+              </div>
+              
+              {billingInterval === 'annual' && (
+                <p className="text-white/80 text-sm">
+                  Just ${(currentPrice / 12).toFixed(0)}/month • Save {savings}%
+                </p>
+              )}
+              
+              {isFounderWindow && (
+                <div className="mt-3 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
+                  <span>🏆</span>
+                  <span>Founder rate guaranteed through August 2028</span>
+                </div>
+              )}
+            </div>
+
+            {/* Features */}
+            <div className="p-8">
+              <p className="text-center text-slate-600 dark:text-slate-400 mb-6">
+                Everything you need to pass the {config.name} exam
+              </p>
+              
+              <div className="space-y-3 mb-8">
+                {features.map((feature, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle className={`w-5 h-5 ${colors.text} flex-shrink-0`} />
+                    <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <button
+                onClick={handleCheckout}
+                disabled={isCheckingOut}
+                className={`w-full bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+              >
+                {isCheckingOut ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  <>
+                    Subscribe Now
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
+              </button>
+              
+              <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
+                Cancel anytime • Pass guarantee included
+              </p>
+            </div>
+
+            {/* Pass Guarantee */}
+            <div className="bg-emerald-50 dark:bg-emerald-900/20 p-4 border-t border-emerald-100 dark:border-emerald-900/30">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div>
+                  <p className="font-semibold text-emerald-900 dark:text-emerald-300">Pass Guarantee</p>
+                  <p className="text-sm text-emerald-700 dark:text-emerald-400">
+                    *If you don't pass after meeting study requirements, we extend your subscription free.{' '}
+                    <a href="/pass-guarantee" className="underline hover:text-emerald-600">See terms</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Compare to competitors */}
+        <div className="mt-12 text-center">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
+            Compare to traditional review courses:
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {config.competitors?.data.slice(0, 1).map((row, i) => (
+              <div key={i} className="flex items-center gap-6 bg-white dark:bg-slate-800 px-6 py-3 rounded-xl shadow border border-slate-200 dark:border-slate-700">
+                <span className="text-slate-500">{config.competitors?.names[0]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor1}</span></span>
+                <span className="text-slate-500">{config.competitors?.names[1]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor2}</span></span>
+                {config.competitors?.names[2] && row.competitor3 && (
+                  <span className="text-slate-500">{config.competitors?.names[2]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor3}</span></span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

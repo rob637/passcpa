@@ -22,8 +22,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       '12 times; 30.4 days',
       '10 times; 36.5 days',
+      '8 times; 45.6 days',
       '12 times; 45.6 days',
-      '8 times; 45.6 days'
     ],
     correctAnswer: 0,
     explanation: 'AR Turnover = Sales / Average AR = $4,800,000 / $400,000 = 12 times. Average collection period = 365 / 12 = 30.4 days. This indicates customers pay in about 30 days on average.',
@@ -40,12 +40,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Total debt: $600,000. Total equity: $400,000. What is the debt-to-equity ratio?',
     options: [
+      '2.50',
       '0.40',
       '0.60',
       '1.50',
-      '2.50'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Debt-to-Equity Ratio = Total Debt / Total Equity = $600,000 / $400,000 = 1.5. This means the company has $1.50 of debt for every $1.00 of equity, indicating significant financial leverage.',
     reference: 'IMA CMA Content Specification',
   },
@@ -60,12 +60,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Year 1 sales: $500,000. Year 2 sales: $575,000. What is the percentage change?',
     options: [
+      '87.0%',
       '7.5%',
       '13.0%',
       '15.0%',
-      '87.0%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Percentage change = (New - Old) / Old × 100 = ($575,000 - $500,000) / $500,000 × 100 = $75,000 / $500,000 × 100 = 15%.',
     reference: 'IMA CMA Content Specification',
   },
@@ -81,11 +81,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'A company reports revenue growth while its days sales outstanding (DSO) increases significantly. This could indicate:',
     options: [
       'Improved cash collection efficiency',
+      'Decreased credit sales volume',
       'Conservative revenue recognition',
       'Potential aggressive revenue recognition or credit quality issues',
-      'Decreased credit sales volume'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Rising DSO with revenue growth may signal aggressive revenue recognition (booking sales that are difficult to collect) or deteriorating credit quality of customers. It warrants investigation of revenue quality.',
     reference: 'IMA CMA Content Specification',
   },
@@ -100,12 +100,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Total assets: $2,000,000. Total liabilities: $1,200,000. Shares outstanding: 40,000. What is book value per share?',
     options: [
-      '$20.00',
+      '$80.00',
       '$30.00',
+      '$20.00',
       '$50.00',
-      '$80.00'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Book value per share = (Total Assets - Total Liabilities) / Shares Outstanding = ($2,000,000 - $1,200,000) / 40,000 = $800,000 / 40,000 = $20.00.',
     reference: 'IMA CMA Content Specification',
   },
@@ -124,10 +124,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A company issues bonds with 8% coupon at par. The tax rate is 30%. What is the after-tax cost of debt?',
     options: [
-      '2.4%',
+      '11.4%',
       '5.6%',
+      '2.4%',
       '8.0%',
-      '11.4%'
     ],
     correctAnswer: 1,
     explanation: 'After-tax cost of debt = Interest rate × (1 - Tax rate) = 8% × (1 - 0.30) = 8% × 0.70 = 5.6%. Interest is tax-deductible, so the effective cost is lower than the stated rate.',
@@ -144,12 +144,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'According to pecking order theory, firms prefer financing in which order?',
     options: [
-      'Equity, debt, internal funds',
       'Internal funds, debt, equity',
+      'All sources equally',
+      'Equity, debt, internal funds',
       'Debt, internal funds, equity',
-      'All sources equally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Pecking order theory suggests firms prefer: (1) internal funds first (retained earnings), (2) debt second, (3) equity last due to information asymmetry and signaling effects of issuing new equity.',
     reference: 'IMA CMA Content Specification',
   },
@@ -164,12 +164,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A company accelerates cash collections and slows disbursements to optimize cash flow. This describes:',
     options: [
-      'Cash budgeting',
       'Float management',
+      'Cash budgeting',
+      'Factoring',
       'Capital rationing',
-      'Factoring'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Float management involves accelerating collections (reducing collection float) and slowing disbursements (extending disbursement float) to maximize available cash balances and reduce borrowing needs.',
     reference: 'IMA CMA Content Specification',
   },
@@ -186,8 +186,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       '300,000 shares at $60 each',
       '300,000 shares at $20 each',
+      '33,333 shares at $180 each',
       '100,000 shares at $180 each',
-      '33,333 shares at $180 each'
     ],
     correctAnswer: 1,
     explanation: 'A 3-for-1 split triples shares: 100,000 × 3 = 300,000 shares. Price adjusts inversely: $60 / 3 = $20 per share. Total market value remains unchanged at $6,000,000.',
@@ -204,12 +204,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the residual dividend theory, dividends are paid from:',
     options: [
-      'A fixed percentage of earnings',
       'Earnings remaining after funding positive NPV projects',
+      'A fixed percentage of earnings',
+      'A constant dollar amount each period',
       'All earnings not needed for debt service',
-      'A constant dollar amount each period'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Residual theory prioritizes investment in positive NPV projects, paying dividends only from leftover ("residual") earnings. This minimizes the need for costly external financing.',
     reference: 'IMA CMA Content Specification',
   },
@@ -228,12 +228,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Selling price: $120. Variable cost: $72. Fixed costs: $192,000. Tax rate: 20%. How many units must be sold to achieve an after-tax profit of $60,000?',
     options: [
-      '4,563 units',
       '5,250 units',
+      '4,563 units',
+      '6,000 units',
       '5,563 units',
-      '6,000 units'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Pre-tax profit needed: $60,000 / (1 - 0.20) = $75,000. CM per unit = $120 - $72 = $48. Units = (Fixed costs + Target pre-tax profit) / CM = ($192,000 + $75,000) / $48 = $267,000 / $48 = 5,563 units.',
     reference: 'IMA CMA Content Specification',
   },
@@ -249,11 +249,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'Defective units: 500. Cost incurred to date: $10,000 (sunk). Rework cost: $4,000 to achieve $18,000 sales value. Scrap value: $3,000 as-is. What is the benefit of reworking?',
     options: [
       '$1,000',
+      '$14,000',
       '$4,000',
       '$11,000',
-      '$14,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Ignore sunk cost. Rework: Revenue $18,000 - Rework cost $4,000 = $14,000 net. Scrap: $3,000. Incremental benefit of rework = $14,000 - $3,000 = $11,000.',
     reference: 'IMA CMA Content Specification',
   },
@@ -269,11 +269,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'Full cost per unit: $80. Target markup on cost: 25%. Target selling price:',
     options: [
       '$85',
+      '$120',
       '$100',
       '$105',
-      '$120'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Markup on cost: $80 × 25% = $20. Selling price = Cost + Markup = $80 + $20 = $100.',
     reference: 'IMA CMA Content Specification',
   },
@@ -288,12 +288,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A company uses floor space (rent $50,000/year) for product storage. Alternatively, the space could be rented out for $70,000/year. The opportunity cost of using the space is:',
     options: [
-      '$0',
       '$50,000',
+      '$120,000',
+      '$0',
       '$70,000',
-      '$120,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Opportunity cost is the benefit foregone from the best alternative use. By using the space internally, the company foregoes $70,000 rental income. The $50,000 rent is a sunk/committed cost and is not the opportunity cost.',
     reference: 'IMA CMA Content Specification',
   },
@@ -308,12 +308,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Analysis',
     question: 'With limited direct labor hours, which product should be prioritized?',
     options: [
-      'Product with highest selling price',
       'Product with highest contribution margin per unit',
+      'Product with lowest variable cost',
+      'Product with highest selling price',
       'Product with highest contribution margin per direct labor hour',
-      'Product with lowest variable cost'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'When a resource is constrained, maximize contribution margin per unit of the constraint. Contribution margin per direct labor hour shows the profit earned for each hour of the scarce resource.',
     reference: 'IMA CMA Content Specification',
   },
@@ -332,12 +332,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The risk of loss due to failed internal processes, people, or systems is:',
     options: [
-      'Market risk',
+      'Liquidity risk',
       'Credit risk',
+      'Market risk',
       'Operational risk',
-      'Liquidity risk'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Operational risk arises from failures in internal processes, people, or systems, or from external events. Examples include processing errors, fraud, system failures, and legal risks.',
     reference: 'COSO ERM',
   },
@@ -354,8 +354,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       'Entering into forward contracts',
       'Requiring letters of credit or credit insurance',
+      'Using interest rate swaps',
       'Purchasing put options',
-      'Using interest rate swaps'
     ],
     correctAnswer: 1,
     explanation: 'Credit risk (counterparty default risk) is mitigated through credit analysis, credit limits, letters of credit, factoring, and credit insurance. Forwards, puts, and swaps address market/interest rate risks, not credit risk.',
@@ -372,12 +372,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Futures contracts differ from forward contracts primarily because futures are:',
     options: [
-      'Private agreements only between two parties',
       'Standardized contracts traded on organized exchanges',
+      'Private agreements only between two parties',
+      'Always settled by physical delivery',
       'Not subject to margin requirements',
-      'Always settled by physical delivery'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Futures are standardized (size, maturity, terms), exchange-traded, marked-to-market daily, and guaranteed by clearinghouses. Forwards are customized private contracts between two parties.',
     reference: 'IMA CMA Content Specification',
   },
@@ -392,12 +392,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Economic exposure to currency risk refers to:',
     options: [
-      'The impact of exchange rate changes on booked receivables and payables',
       'The impact of exchange rate changes on the firm\'s future competitive position and cash flows',
+      'The impact of exchange rate changes on booked receivables and payables',
+      'Short-term cash flow fluctuations',
       'Only changes in translated financial statements',
-      'Short-term cash flow fluctuations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Economic (operating) exposure measures how currency fluctuations affect a firm\'s long-term competitive position, future revenues, and costs—broader than just existing transactions or translation effects.',
     reference: 'IMA CMA Content Specification',
   },
@@ -414,8 +414,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       'Avoidance',
       'Mitigation',
+      'Acceptance',
       'Transfer',
-      'Acceptance'
     ],
     correctAnswer: 1,
     explanation: 'Mitigation reduces the likelihood or impact of a risk through controls and preventive measures. Fire suppression systems mitigate fire risk. Fire insurance would be risk transfer; closing the facility would be avoidance.',
@@ -437,11 +437,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'A firm\'s WACC is 10%. A project has risk significantly higher than the firm\'s average. For NPV analysis, the firm should:',
     options: [
       'Use 10% as the discount rate',
+      'Use the risk-free rate',
       'Use a rate higher than 10% to reflect project risk',
       'Use a rate lower than 10%',
-      'Use the risk-free rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Projects with above-average risk should be evaluated at a higher discount rate than the firm\'s WACC. This risk-adjusted rate better reflects the project\'s required return. Using WACC would understate risk and overstate NPV.',
     reference: 'IMA CMA Content Specification',
   },
@@ -456,12 +456,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following should NOT be included in a project\'s incremental cash flows?',
     options: [
+      'Tax effects of depreciation',
       'Increase in working capital',
       'Cannibalization of existing product sales',
       'Sunk costs from prior feasibility studies',
-      'Tax effects of depreciation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Sunk costs are past costs that cannot be recovered and are irrelevant to the decision. Working capital changes, cannibalization effects, and tax shields from depreciation ARE relevant incremental cash flows.',
     reference: 'IMA CMA Content Specification',
   },
@@ -476,12 +476,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Modified Internal Rate of Return (MIRR) addresses a limitation of traditional IRR by:',
     options: [
+      'Eliminating the need for a hurdle rate',
       'Assuming cash flows are reinvested at the cost of capital instead of the IRR',
       'Ignoring the time value of money',
       'Using accounting profits instead of cash flows',
-      'Eliminating the need for a hurdle rate'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'MIRR assumes intermediate cash flows are reinvested at the cost of capital (a more realistic assumption than IRR\'s implicit reinvestment at the IRR itself). MIRR also addresses multiple IRR issues.',
     reference: 'IMA CMA Content Specification',
   },
@@ -496,10 +496,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Free Cash Flow to Equity (FCFE) differs from Free Cash Flow to Firm (FCFF) because FCFE:',
     options: [
-      'Ignores depreciation',
+      'Is always higher than FCFF',
       'Accounts for debt payments and new borrowings',
+      'Ignores depreciation',
       'Excludes capital expenditures',
-      'Is always higher than FCFF'
     ],
     correctAnswer: 1,
     explanation: 'FCFE is cash available to equity holders after debt obligations: FCFE = FCFF - Interest(1-T) - Principal payments + New borrowings. FCFF is available to all capital providers before debt payments.',
@@ -516,10 +516,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A stock with a beta of 1.5:',
     options: [
-      'Is expected to move 50% less than the market',
+      'Has a guaranteed return of 15%',
       'Is expected to move 50% more than the market in the same direction',
+      'Is expected to move 50% less than the market',
       'Has no systematic risk',
-      'Has a guaranteed return of 15%'
     ],
     correctAnswer: 1,
     explanation: 'Beta measures systematic risk relative to the market. A beta of 1.5 means the stock is expected to move 1.5 times the market movement—50% more volatile in the same direction. Beta = 1 moves with market.',
@@ -540,12 +540,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A CMA is asked to prepare a tax analysis but lacks expertise in international tax law needed for the task. Under the Competence standard, the CMA should:',
     options: [
-      'Attempt the analysis anyway to avoid appearing incompetent',
       'Decline the assignment or consult with an appropriate specialist',
+      'Attempt the analysis anyway to avoid appearing incompetent',
+      'Outsource the entire project without disclosure',
       'Complete only portions of the analysis',
-      'Outsource the entire project without disclosure'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Competence requires performing duties according to relevant laws and technical standards. If lacking expertise, the CMA should either decline the assignment, obtain necessary training, or engage appropriate specialists with appropriate disclosure.',
     reference: 'IMA Statement of Ethical Professional Practice',
   },
@@ -560,12 +560,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Agency costs arise because:',
     options: [
-      'Managers always act in shareholders\' best interests',
       'Managers\' interests may differ from shareholders\', requiring monitoring and incentives',
+      'Managers always act in shareholders\' best interests',
+      'External audits are too expensive',
       'There are no information asymmetries in corporations',
-      'External audits are too expensive'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Agency theory recognizes that managers (agents) may pursue personal interests different from shareholders (principals). Agency costs include monitoring costs, bonding costs, and residual losses from this conflict.',
     reference: 'IMA CMA Content Specification',
   },
@@ -582,8 +582,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       'Report violations only internally',
       'Report securities violations to the SEC with possible financial rewards',
+      'Must be external auditors',
       'Cannot receive any financial compensation',
-      'Must be external auditors'
     ],
     correctAnswer: 1,
     explanation: 'Dodd-Frank provides bounties (10-30% of sanctions over $1M) and anti-retaliation protections for whistleblowers who report original information to the SEC about securities law violations.',
@@ -601,11 +601,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'A CMA discovers the company\'s quarterly earnings are overstated due to an accounting error by a colleague. Under the Integrity standard, the CMA should:',
     options: [
       'Ignore it if the amount is immaterial',
+      'Wait until the annual audit to address it',
       'Report the error to appropriate parties and ensure it is corrected',
       'Correct it quietly without reporting to anyone',
-      'Wait until the annual audit to address it'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Integrity requires communicating all relevant information, both favorable and unfavorable. Material misstatements must be reported and corrected through appropriate channels, regardless of how they occurred.',
     reference: 'IMA Statement of Ethical Professional Practice',
   },
@@ -620,12 +620,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The primary fiduciary duty of the board of directors is to:',
     options: [
-      'Maximize short-term stock price',
       'Act in the best long-term interests of the corporation and its shareholders',
+      'Maximize short-term stock price',
+      'Minimize tax obligations',
       'Represent employee interests',
-      'Minimize tax obligations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The board has fiduciary duties of care and loyalty to act in the corporation\'s and shareholders\' best long-term interests. While other stakeholders matter, shareholders are the primary principals under traditional governance models.',
     reference: 'IMA CMA Content Specification',
   },
@@ -645,11 +645,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'COGS: $3,600,000. Beginning inventory: $420,000. Ending inventory: $380,000. What is inventory turnover?',
     options: [
       '8.6 times',
+      '10.0 times',
       '9.0 times',
       '9.5 times',
-      '10.0 times'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Average inventory = ($420,000 + $380,000) / 2 = $400,000. Inventory turnover = COGS / Average inventory = $3,600,000 / $400,000 = 9.0 times.',
     reference: 'IMA CMA Content Specification',
   },
@@ -665,11 +665,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'In a rights offering, existing shareholders:',
     options: [
       'Are forced to sell their shares',
+      'Must vote on a merger proposal',
       'Have the option to purchase new shares at a subscription price',
       'Receive cash dividends',
-      'Must vote on a merger proposal'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A rights offering gives existing shareholders the preemptive right to purchase new shares proportionally at a subscription price (usually below market) before the offering goes to the public, preventing dilution.',
     reference: 'IMA CMA Content Specification',
   },
@@ -684,10 +684,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Selling price: $200. Variable cost ratio: 65%. Fixed costs: $350,000. What is the breakeven point in sales dollars?',
     options: [
-      '$500,000',
+      '$1,076,923',
       '$1,000,000',
+      '$500,000',
       '$538,462',
-      '$1,076,923'
     ],
     correctAnswer: 1,
     explanation: 'CM ratio = 1 - Variable cost ratio = 1 - 0.65 = 0.35 = 35%. Breakeven sales = Fixed costs / CM ratio = $350,000 / 0.35 = $1,000,000.',
@@ -704,12 +704,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A company with euro-denominated revenues and euro-denominated costs has achieved a:',
     options: [
-      'Speculative position',
       'Natural hedge',
+      'Currency option strategy',
+      'Speculative position',
       'Perfect forward arrangement',
-      'Currency option strategy'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A natural hedge occurs when revenues and costs are in the same currency, offsetting currency risk without derivatives. If euro revenues fall due to EUR depreciation, euro costs also fall when converted to home currency.',
     reference: 'IMA CMA Content Specification',
   },
@@ -724,12 +724,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'Target company has EBITDA of $20 million. Comparable companies trade at 8× EV/EBITDA. Target has $15M debt and $5M cash. Estimated equity value is:',
     options: [
-      '$145 million',
       '$150 million',
+      '$160 million',
+      '$145 million',
       '$155 million',
-      '$160 million'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Enterprise Value = EBITDA × Multiple = $20M × 8 = $160M. Equity Value = EV - Debt + Cash = $160M - $15M + $5M = $150M.',
     reference: 'IMA CMA Content Specification',
   },
@@ -746,10 +746,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       '1.5',
       '5.0',
+      '1.0',
       '6.0',
-      '1.0'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'DCL = DOL × DFL = 3.0 × 2.0 = 6.0. This means a 1% change in sales will cause a 6% change in EPS, reflecting both operating and financial leverage effects.',
     reference: 'IMA CMA Content Specification',
   },
@@ -766,8 +766,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       'Yes, the product shows a $10,000 loss',
       'No, dropping would reduce total profit by $30,000',
+      'Cannot determine without knowing market conditions',
       'Yes, the allocated overhead makes it unprofitable',
-      'Cannot determine without knowing market conditions'
     ],
     correctAnswer: 1,
     explanation: 'Relevant analysis: Revenue $100,000 minus avoidable costs $70,000 = $30,000 contribution. Allocated overhead continues regardless. Dropping loses $30,000 contribution with no savings on the overhead.',
@@ -784,12 +784,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Costs of financial distress include all of the following EXCEPT:',
     options: [
+      'Difficulty attracting and retaining employees',
       'Bankruptcy legal and administrative costs',
       'Loss of customers worried about company viability',
       'Interest tax shield benefits',
-      'Difficulty attracting and retaining employees'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Financial distress costs include direct (legal fees, administrative costs) and indirect costs (lost customers, employee turnover, lost supplier terms). Interest tax shield is a BENEFIT of debt, not a distress cost.',
     reference: 'IMA CMA Content Specification',
   },
@@ -804,12 +804,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A CMA leaves one employer for a competitor. Regarding confidential information from the previous employer:',
     options: [
+      'Only trade secrets remain confidential',
       'The obligation ends with employment',
       'The CMA may share it after a 90-day waiting period',
       'The confidentiality obligation continues after employment ends',
-      'Only trade secrets remain confidential'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The IMA Confidentiality standard requires protecting confidential information acquired during employment, which continues after the employment relationship ends. Professional and often legal obligations persist.',
     reference: 'IMA Statement of Ethical Professional Practice',
   },
@@ -825,11 +825,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'When comparing mutually exclusive projects with different useful lives, which method is most appropriate?',
     options: [
       'Simple NPV comparison',
+      'Payback period comparison',
       'IRR comparison',
       'Replacement chain or equivalent annual cost method',
-      'Payback period comparison'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Projects with unequal lives cannot be directly compared by NPV. Either use the replacement chain approach (replicate to a common time frame) or equivalent annual cost/annuity (convert NPV to annual equivalent).',
     reference: 'IMA CMA Content Specification',
   },
@@ -844,12 +844,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company with strong operating cash flow but negative free cash flow is likely:',
     options: [
+      'Experiencing declining sales',
       'Investing heavily in growth',
       'In financial distress',
       'Paying excessive dividends',
-      'Experiencing declining sales'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Strong operating cash flow indicates healthy operations. Negative free cash flow (OCF minus CapEx minus working capital changes) suggests heavy investment in growth. This is often positive for growing companies.',
     reference: 'IMA CMA Content Specification',
   },
@@ -864,12 +864,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'An airline wants to hedge against rising fuel prices. The appropriate hedge is to:',
     options: [
+      'Buy fuel put options',
       'Sell fuel futures',
       'Buy fuel futures',
       'Sell fuel call options',
-      'Buy fuel put options'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Airlines need to buy fuel, so they face rising price risk. Buying futures locks in a purchase price, protecting against increases. Selling futures would profit from price declines but add exposure to price increases.',
     reference: 'IMA CMA Content Specification',
   },
@@ -884,10 +884,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A board member who is also the company\'s largest supplier lacks:',
     options: [
-      'Technical competence',
+      'Board membership qualifications',
       'Independence',
+      'Technical competence',
       'Fiduciary duty',
-      'Board membership qualifications'
     ],
     correctAnswer: 1,
     explanation: 'A supplier relationship creates a conflict of interest that compromises independence. Independent directors should have no material relationships with the company that could influence their judgment.',
@@ -904,10 +904,10 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In linear programming for product mix optimization, the objective function represents:',
     options: [
-      'The resource constraints',
+      'Fixed costs to be minimized',
       'The profit or contribution margin to be maximized',
+      'The resource constraints',
       'The production capacity limitations',
-      'Fixed costs to be minimized'
     ],
     correctAnswer: 1,
     explanation: 'The objective function is what we seek to optimize—typically maximize contribution margin or profit. Constraints represent resource limitations (labor, materials, capacity). Linear programming finds the optimal mix given constraints.',
@@ -924,12 +924,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A supplier offers terms 2/10, net 30. The annualized cost of not taking the discount is approximately:',
     options: [
-      '2%',
       '18.4%',
+      '2%',
+      '73.5%',
       '36.7%',
-      '73.5%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Cost of not taking discount = [Discount / (1 - Discount)] × [365 / (Net period - Discount period)] = [0.02 / 0.98] × [365 / 20] = 0.0204 × 18.25 = 37.2%, approximately 36.7%.',
     reference: 'IMA CMA Content Specification',
   },
@@ -944,12 +944,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A stock pays a $4 dividend expected to grow at 3% indefinitely. Required return is 11%. What is the intrinsic value?',
     options: [
-      '$36.36',
       '$50.00',
+      '$36.36',
+      '$133.33',
       '$51.50',
-      '$133.33'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Gordon Growth Model: P = D₁ / (r - g) = D₀(1+g) / (r - g) = $4(1.03) / (0.11 - 0.03) = $4.12 / 0.08 = $51.50.',
     reference: 'IMA CMA Content Specification',
   },
@@ -966,8 +966,8 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     options: [
       '8.3%',
       '12.0%',
+      '16.7%',
       '15.0%',
-      '16.7%'
     ],
     correctAnswer: 1,
     explanation: 'ROA = Net Income / Total Assets = $300,000 / $2,500,000 = 0.12 = 12%. ROA measures how efficiently management uses assets to generate earnings.',
@@ -985,11 +985,11 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     question: 'Stock options as executive compensation are designed to:',
     options: [
       'Guarantee minimum income',
+      'Replace salary entirely',
       'Align executive interests with shareholder interests',
       'Reduce company tax obligations',
-      'Replace salary entirely'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Stock options give executives incentive to increase stock price, aligning their interests with shareholders. Options are valuable when stock rises, creating shared benefit from company success.',
     reference: 'IMA CMA Content Specification',
   },
@@ -1004,12 +1004,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A company chooses to self-insure for minor equipment losses while buying insurance for catastrophic events. This reflects:',
     options: [
+      'Complete risk transfer',
       'Risk avoidance',
       'Risk avoidance with transfer',
       'Retention of high-frequency/low-severity risks with transfer of low-frequency/high-severity risks',
-      'Complete risk transfer'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Self-insuring predictable minor losses is cost-effective risk retention. Purchasing insurance for catastrophic losses transfers tail risk. This balances cost efficiency with protection against devastating losses.',
     reference: 'IMA CMA Content Specification',
   },
@@ -1024,12 +1024,12 @@ export const CMA2_MCQ_BATCH10: Question[] = [
     skillLevel: 'Application',
     question: 'A project can be launched or not. If launched, there is 70% chance of success ($500,000 profit) and 30% chance of failure ($200,000 loss). Launch cost is $50,000. Expected value of launching is:',
     options: [
+      '$350,000',
       '$240,000',
       '$250,000',
       '$290,000',
-      '$350,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EV = (0.70 × $500,000) + (0.30 × -$200,000) - $50,000 = $350,000 - $60,000 - $50,000 = $240,000. Wait: The launch cost is separate. Better: EV of outcomes = 0.70(500,000) + 0.30(-200,000) = 350,000 - 60,000 = 290,000. Minus launch cost: 290,000 - 50,000 = 240,000. That\'s option A. Let me reconsider if the $500,000 is net of launch. If net: 0.70(500,000) + 0.30(-200,000) = 350,000 - 60,000 = $290,000 which is C.',
     reference: 'IMA CMA Content Specification',
   },

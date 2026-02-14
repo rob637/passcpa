@@ -8,22 +8,19 @@ import {
   Shuffle,
   Eye,
   ChevronDown,
-  Check,
+  ChevronRight,
   Play,
-  RotateCcw,
-  CheckCircle,
-  AlertCircle,
+  Sparkles,
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useCourse } from '../providers/CourseProvider';
-import { BackButton } from './navigation';
 import { Button } from './common/Button';
-import { Card } from './common/Card';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { getFlashcardsBySection } from '../data/cpa/flashcards';
-import { ExamSection, EASection, AllExamSections } from '../types';
+import { EASection, AllExamSections } from '../types';
 import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
+import { getCurrentSection } from '../utils/profileHelpers';
 import { EA_SECTION_CONFIG } from '../courses/ea/config';
 import clsx from 'clsx';
 
@@ -47,6 +44,7 @@ interface FlashcardConfig {
   unit: string; // 'all' or specific unit/blueprint area
   shuffle: boolean;
   showBothSides: boolean;
+  count: number; // Number of cards to study
 }
 
 const FlashcardSetup: React.FC = () => {
@@ -59,7 +57,7 @@ const FlashcardSetup: React.FC = () => {
   const sectionFromUrl = searchParams.get('section');
   const currentSection: AllExamSections = sectionFromUrl 
     ? (sectionFromUrl as AllExamSections)
-    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+    : getCurrentSection(userProfile, courseId, getDefaultSection) as AllExamSections;
   
   // Get section info - handle both CPA and EA sections
   const isEA = isEASection(currentSection);
@@ -69,7 +67,6 @@ const FlashcardSetup: React.FC = () => {
   
   const [loading, setLoading] = useState(true);
   const [counts, setCounts] = useState<CategoryCount>({ all: 0, toReview: 0, mastered: 0, notWorked: 0 });
-  const [showUnits, setShowUnits] = useState(false);
   
   const [config, setConfig] = useState<FlashcardConfig>({
     categories: ['all'],
@@ -77,7 +74,11 @@ const FlashcardSetup: React.FC = () => {
     unit: 'all',
     shuffle: false,
     showBothSides: false,
+    count: 25, // Default to 25 cards
   });
+
+  // Advanced options toggle
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   // Get blueprint areas for unit filter
   const sectionCards = getFlashcardsBySection(currentSection);
@@ -127,21 +128,6 @@ const FlashcardSetup: React.FC = () => {
     loadMasteryData();
   }, [user, currentSection]);
 
-  // Toggle category selection
-  const toggleCategory = (cat: 'all' | 'toReview' | 'mastered' | 'notWorked') => {
-    if (cat === 'all') {
-      setConfig(prev => ({ ...prev, categories: ['all'] }));
-    } else {
-      setConfig(prev => {
-        const current = prev.categories.filter(c => c !== 'all');
-        const newCats = current.includes(cat) 
-          ? current.filter(c => c !== cat)
-          : [...current, cat];
-        return { ...prev, categories: newCats.length > 0 ? newCats : ['all'] };
-      });
-    }
-  };
-
   // Toggle card type
   const toggleCardType = (type: 'definition' | 'formula' | 'mnemonic' | 'question') => {
     setConfig(prev => {
@@ -190,243 +176,209 @@ const FlashcardSetup: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      {/* Header */}
-      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-4">
-        <div className="max-w-lg mx-auto flex items-center gap-3">
-          <BackButton />
-          <div className="flex-1">
-            <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-              Create a Flashcard Session
-            </h1>
-            <p className="text-sm text-slate-600 dark:text-slate-300">
-              {sectionInfo?.name || currentSection}
-            </p>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-md mx-auto">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            Flashcards
+          </h1>
+          <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
+            {sectionInfo?.name || currentSection}
+          </p>
+        </div>
+
+        <div className="card">
+          <div className="card-body space-y-5">
+            {/* Card Count - Simplified to 3 options */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                Cards
+              </label>
+              <div className="flex items-center gap-3">
+                {[10, 25, 50].map((count) => (
+                  <button
+                    key={count}
+                    onClick={() => setConfig((prev) => ({ ...prev, count }))}
+                    className={clsx(
+                      'flex-1 py-3 rounded-xl border-2 font-semibold text-lg transition-all focus:ring-2 focus:ring-primary-500/50',
+                      config.count === count
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
+                        : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
+                    )}
+                    aria-label={`${count} cards`}
+                    aria-pressed={config.count === count}
+                  >
+                    {count}
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-2 text-center">
+                {loading ? '...' : counts.all} cards available
+              </p>
+            </div>
+
+            {/* Simple Toggles */}
+            <div className="space-y-3">
+              {/* Shuffle Toggle */}
+              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={config.shuffle}
+                  onChange={(e) => setConfig((prev) => ({ ...prev, shuffle: e.target.checked }))}
+                  className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+                />
+                <div className="flex items-center gap-2">
+                  <Shuffle className="w-5 h-5 text-slate-500" />
+                  <div>
+                    <div className="font-medium text-slate-900 dark:text-slate-100">Shuffle</div>
+                    <div className="text-xs text-slate-500">Randomize card order</div>
+                  </div>
+                </div>
+              </label>
+
+              {/* Focus on Weak Areas Toggle */}
+              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={config.categories.includes('toReview') || config.categories.includes('notWorked')}
+                  onChange={(e) => setConfig((prev) => ({ 
+                    ...prev, 
+                    categories: e.target.checked ? ['toReview', 'notWorked'] : ['all']
+                  }))}
+                  className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+                />
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-slate-500" />
+                  <div>
+                    <div className="font-medium text-slate-900 dark:text-slate-100">Focus on weak areas</div>
+                    <div className="text-xs text-slate-500">{counts.toReview + counts.notWorked} cards to review</div>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            {/* More Options Toggle */}
+            <button
+              onClick={() => setShowAdvanced(!showAdvanced)}
+              className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium"
+            >
+              {showAdvanced ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+              More options
+            </button>
+
+            {/* Advanced Options Panel */}
+            {showAdvanced && (
+              <div className="space-y-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+                {/* Card Types */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    Card Types
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { id: 'definition', label: 'Definitions', icon: BookOpen },
+                      { id: 'formula', label: 'Formulas', icon: Calculator },
+                      { id: 'mnemonic', label: 'Mnemonics', icon: Lightbulb },
+                      { id: 'question', label: 'Questions', icon: Brain },
+                    ].map((type) => {
+                      const Icon = type.icon;
+                      const isSelected = config.cardTypes.includes(type.id as any);
+                      return (
+                        <button
+                          key={type.id}
+                          onClick={() => toggleCardType(type.id as any)}
+                          className={clsx(
+                            'flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all',
+                            isSelected
+                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400'
+                              : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-slate-300'
+                          )}
+                        >
+                          <Icon className="w-4 h-4" />
+                          {type.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Categories */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    Filter by Mastery
+                  </label>
+                  <select
+                    value={config.categories.includes('all') ? 'all' : config.categories.join(',')}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      if (val === 'all') {
+                        setConfig(prev => ({ ...prev, categories: ['all'] }));
+                      } else {
+                        setConfig(prev => ({ ...prev, categories: val.split(',') as any[] }));
+                      }
+                    }}
+                    className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
+                  >
+                    <option value="all">All Cards ({counts.all})</option>
+                    <option value="toReview">To Review ({counts.toReview})</option>
+                    <option value="mastered">Mastered ({counts.mastered})</option>
+                    <option value="notWorked">Not Worked ({counts.notWorked})</option>
+                  </select>
+                </div>
+
+                {/* Units Filter */}
+                {blueprintAreas.length > 0 && (
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      Unit
+                    </label>
+                    <select
+                      value={config.unit}
+                      onChange={(e) => setConfig(prev => ({ ...prev, unit: e.target.value }))}
+                      className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
+                    >
+                      <option value="all">All Units</option>
+                      {blueprintAreas.map((area) => (
+                        <option key={area} value={area}>
+                          {area}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                {/* Show Both Sides */}
+                <label className="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-white dark:hover:bg-slate-700/50 transition-colors">
+                  <input
+                    type="checkbox"
+                    checked={config.showBothSides}
+                    onChange={(e) => setConfig((prev) => ({ ...prev, showBothSides: e.target.checked }))}
+                    className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+                  />
+                  <div className="flex items-center gap-2">
+                    <Eye className="w-5 h-5 text-slate-500" />
+                    <div>
+                      <div className="font-medium text-slate-700 dark:text-slate-300">Show both sides</div>
+                      <div className="text-xs text-slate-500">See front and back simultaneously</div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            )}
+
+            {/* Start Button */}
+            <Button
+              variant="primary"
+              size="lg"
+              fullWidth
+              onClick={startSession}
+              disabled={loading}
+              leftIcon={Play}
+            >
+              Start Session
+            </Button>
           </div>
         </div>
-      </div>
-
-      <div className="max-w-lg mx-auto p-4 space-y-6">
-        {/* Categories Section - Like Becker */}
-        <Card noPadding className="p-4">
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">
-            Categories
-          </h2>
-          <p className="text-xs text-slate-600 dark:text-slate-300 mb-4">
-            Filter flashcards by mastery status
-          </p>
-          
-          <div className="space-y-2">
-            {[
-              { id: 'all', label: 'All', count: counts.all, icon: Brain },
-              { id: 'toReview', label: 'To Review', count: counts.toReview, icon: RotateCcw },
-              { id: 'mastered', label: 'Mastered', count: counts.mastered, icon: CheckCircle },
-              { id: 'notWorked', label: 'Not Worked', count: counts.notWorked, icon: AlertCircle },
-            ].map((cat) => {
-              const Icon = cat.icon;
-              const isSelected = config.categories.includes(cat.id as any);
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => toggleCategory(cat.id as any)}
-                  className={clsx(
-                    'w-full flex items-center gap-3 p-3 rounded-lg border-2 transition-all',
-                    isSelected
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                      : 'border-slate-200 dark:border-slate-700 hover:border-slate-300'
-                  )}
-                >
-                  <div className={clsx(
-                    'w-5 h-5 rounded border-2 flex items-center justify-center',
-                    isSelected ? 'border-primary-500 bg-primary-500' : 'border-slate-300 dark:border-slate-600'
-                  )}>
-                    {isSelected && <Check className="w-3 h-3 text-white" />}
-                  </div>
-                  <Icon className={clsx('w-5 h-5', isSelected ? 'text-primary-600' : 'text-slate-600')} />
-                  <span className={clsx('flex-1 text-left font-medium', isSelected ? 'text-primary-700 dark:text-primary-400' : 'text-slate-700 dark:text-slate-300')}>
-                    {cat.label}
-                  </span>
-                  <span className={clsx(
-                    'px-2 py-0.5 rounded-full text-sm font-semibold',
-                    isSelected ? 'bg-primary-100 text-primary-700' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
-                  )}>
-                    {loading ? '...' : cat.count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </Card>
-
-        {/* Card Types */}
-        <Card noPadding className="p-4">
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">
-            Card Types
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {[
-              { id: 'definition', label: 'Definitions', icon: BookOpen, color: 'blue' },
-              { id: 'formula', label: 'Formulas', icon: Calculator, color: 'blue' },
-              { id: 'mnemonic', label: 'Mnemonics', icon: Lightbulb, color: 'amber' },
-              { id: 'question', label: 'Questions', icon: Brain, color: 'emerald' },
-            ].map((type) => {
-              const Icon = type.icon;
-              const isSelected = config.cardTypes.includes(type.id as any);
-              return (
-                <button
-                  key={type.id}
-                  onClick={() => toggleCardType(type.id as any)}
-                  className={clsx(
-                    'flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all',
-                    isSelected
-                      ? `border-${type.color}-500 bg-${type.color}-50 dark:bg-${type.color}-900/20 text-${type.color}-700 dark:text-${type.color}-400`
-                      : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-slate-300'
-                  )}
-                  style={isSelected ? { 
-                    borderColor: type.color === 'blue' ? '#1a73e8' : type.color === 'amber' ? '#f59e0b' : '#10b981',
-                    backgroundColor: type.color === 'blue' ? '#e8f0fe' : type.color === 'amber' ? '#fffbeb' : '#ecfdf5',
-                  } : {}}
-                >
-                  <Icon className="w-4 h-4" />
-                  {type.label}
-                </button>
-              );
-            })}
-          </div>
-        </Card>
-
-        {/* Units & Modules (collapsible) */}
-        <Card noPadding>
-          <button
-            onClick={() => setShowUnits(!showUnits)}
-            className="w-full flex items-center justify-between p-4"
-          >
-            <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-              Units & Modules
-            </span>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-slate-600">{config.unit === 'all' ? 'All' : config.unit}</span>
-              <ChevronDown className={clsx('w-5 h-5 text-slate-600 transition-transform', showUnits && 'rotate-180')} />
-            </div>
-          </button>
-          
-          {showUnits && (
-            <div className="px-4 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-700 pt-3">
-              <button
-                onClick={() => setConfig(prev => ({ ...prev, unit: 'all' }))}
-                className={clsx(
-                  'w-full flex items-center justify-between p-3 rounded-lg border-2 transition-all',
-                  config.unit === 'all'
-                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                    : 'border-slate-200 dark:border-slate-700'
-                )}
-              >
-                <span className={clsx('font-medium', config.unit === 'all' ? 'text-primary-700' : 'text-slate-700 dark:text-slate-300')}>
-                  All Units
-                </span>
-                <span className="text-sm text-slate-600">{counts.all}</span>
-              </button>
-              {blueprintAreas.map((area) => {
-                const areaCount = sectionCards.filter(c => c.blueprintArea === area).length;
-                return (
-                  <button
-                    key={area}
-                    onClick={() => setConfig(prev => ({ ...prev, unit: area }))}
-                    className={clsx(
-                      'w-full flex items-center justify-between p-3 rounded-lg border-2 transition-all',
-                      config.unit === area
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                        : 'border-slate-200 dark:border-slate-700'
-                    )}
-                  >
-                    <span className={clsx('font-medium text-left', config.unit === area ? 'text-primary-700' : 'text-slate-700 dark:text-slate-300')}>
-                      {area}
-                    </span>
-                    <span className="text-sm text-slate-600">{areaCount}</span>
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </Card>
-
-        {/* Flashcard Mode Options */}
-        <Card noPadding className="p-4 space-y-4">
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-            Flashcard mode
-          </h2>
-          
-          {/* Shuffle Toggle */}
-          <div className="flex items-center justify-between py-2">
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <Shuffle className="w-4 h-4 text-slate-600" />
-                <span className="font-medium text-slate-700 dark:text-slate-300">Shuffle order</span>
-              </div>
-              <p className="text-xs text-slate-600 mt-1 ml-6">
-                Randomize card order for better retention
-              </p>
-            </div>
-            <button
-              onClick={() => setConfig(prev => ({ ...prev, shuffle: !prev.shuffle }))}
-              role="switch"
-              aria-checked={config.shuffle}
-              className={clsx(
-                'relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                config.shuffle ? 'bg-primary-500' : 'bg-slate-200 dark:bg-slate-600'
-              )}
-            >
-              <span
-                className={clsx(
-                  'pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out',
-                  config.shuffle ? 'translate-x-5' : 'translate-x-0'
-                )}
-              />
-            </button>
-          </div>
-
-          {/* Show Both Sides Toggle */}
-          <div className="flex items-center justify-between py-2">
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4 text-slate-600" />
-                <span className="font-medium text-slate-700 dark:text-slate-300">Show both sides</span>
-              </div>
-              <p className="text-xs text-slate-600 mt-1 ml-6">
-                See front and back simultaneously
-              </p>
-            </div>
-            <button
-              onClick={() => setConfig(prev => ({ ...prev, showBothSides: !prev.showBothSides }))}
-              role="switch"
-              aria-checked={config.showBothSides}
-              className={clsx(
-                'relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                config.showBothSides ? 'bg-primary-500' : 'bg-slate-200 dark:bg-slate-600'
-              )}
-            >
-              <span
-                className={clsx(
-                  'pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out',
-                  config.showBothSides ? 'translate-x-5' : 'translate-x-0'
-                )}
-              />
-            </button>
-          </div>
-        </Card>
-
-        {/* Start Button */}
-        <Button
-          variant="primary"
-          size="lg"
-          fullWidth
-          onClick={startSession}
-          disabled={loading}
-          leftIcon={Play}
-          className="bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-lg shadow-amber-400/30"
-        >
-          Start session
-        </Button>
       </div>
     </div>
   );

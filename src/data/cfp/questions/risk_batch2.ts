@@ -21,10 +21,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     options: [
       'A) Market risk on underlying investments',
       'B) Interest rate risk on future returns',
+      'D) Currency risk on international holdings',
       'C) No investment risk—the insurer guarantees rates',
-      'D) Currency risk on international holdings'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'In a fixed annuity, the insurance company bears the investment risk and guarantees a minimum interest rate. The owner has no market risk but does have inflation risk (fixed payments may lose purchasing power) and the credit risk of the insurer.'
   },
   {
@@ -40,8 +40,8 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     options: [
       'A) The insurer\'s general account',
       'B) Separate accounts with investment options selected by the owner',
+      'D) Fixed-income portfolios managed by the insurer',
       'C) Treasury securities only',
-      'D) Fixed-income portfolios managed by the insurer'
     ],
     correctAnswer: 1,
     explanation: 'Variable annuity premiums go into "separate accounts" that are segregated from the insurer\'s general account. The owner selects from investment options (subaccounts) and bears the investment risk. This is why variable annuities are securities regulated by the SEC.'
@@ -57,12 +57,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client purchased an immediate annuity for $200,000 with a life expectancy of 20 years. Annual payments are $15,000. What amount is excluded from tax each year?',
     options: [
+      'D) $15,000',
       'A) $0',
       'B) $5,000',
       'C) $10,000',
-      'D) $15,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The exclusion ratio = Investment / Expected Return. Investment = $200,000. Expected return = $15,000 × 20 = $300,000. Ratio = $200,000 / $300,000 = 66.67%. Annual exclusion = $15,000 × 66.67% = $10,000 tax-free return of principal. The remaining $5,000 is taxable.'
   },
   {
@@ -76,12 +76,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'How are withdrawals from a deferred annuity during the accumulation phase taxed?',
     options: [
+      'D) All long-term capital gains',
       'A) FIFO—principal comes out first (tax-free)',
       'B) LIFO—earnings come out first (taxable as ordinary income)',
       'C) Pro-rata—part principal, part earnings',
-      'D) All long-term capital gains'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Deferred annuity withdrawals use "earnings-first" LIFO treatment. Earnings are taxed as ordinary income (not capital gains). Once all earnings are withdrawn, remaining amounts are tax-free return of principal. A 10% penalty may apply before age 59½.'
   },
   {
@@ -96,11 +96,11 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     question: 'An indexed annuity has a participation rate of 80% and a cap of 6%. The S&P 500 gains 10%. What is credited to the annuity?',
     options: [
       'A) 10%',
+      'D) 4.8%',
       'B) 8%',
       'C) 6%',
-      'D) 4.8%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The participation rate of 80% × 10% gain = 8% potential credit. However, the 6% cap limits the credit. The annuity is credited 6% (the cap). Caps, participation rates, and spreads are common features that limit upside in indexed annuities.'
   },
   {
@@ -114,10 +114,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'A Guaranteed Minimum Withdrawal Benefit (GMWB) rider on a variable annuity guarantees what?',
     options: [
-      'A) The account value will never decline',
+      'D) A minimum annuitization rate',
       'B) A minimum withdrawal amount regardless of account performance',
+      'A) The account value will never decline',
       'C) A death benefit equal to original investment',
-      'D) A minimum annuitization rate'
     ],
     correctAnswer: 1,
     explanation: 'GMWB riders guarantee a minimum withdrawal amount (typically 4-5% of the "benefit base") for life or a period of years, regardless of how the underlying investments perform. The account value can still decline, but withdrawals continue. This is valuable protection that comes with an ongoing fee.'
@@ -133,12 +133,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Who is typically the owner and beneficiary of key person life insurance?',
     options: [
-      'A) The key employee owns the policy; business is beneficiary',
       'B) The business owns the policy and is the beneficiary',
+      'D) A third-party trust owns the policy; business is beneficiary',
+      'A) The key employee owns the policy; business is beneficiary',
       'C) The key employee\'s family owns the policy and is beneficiary',
-      'D) A third-party trust owns the policy; business is beneficiary'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Key person insurance is owned by and payable to the business. The purpose is to compensate the business for economic loss if a key employee dies—lost profits, recruitment costs, and debt repayment. The key person has no ownership rights.'
   },
   {
@@ -152,12 +152,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a cross-purchase buy-sell agreement between 3 equal partners, how many life insurance policies are needed?',
     options: [
-      'A) 1',
       'B) 3',
+      'A) 1',
+      'D) 9',
       'C) 6',
-      'D) 9'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'In a cross-purchase agreement, each owner insures the other owners. With 3 partners, the formula is n × (n-1) = 3 × 2 = 6 policies. Each partner owns 2 policies on the lives of the other two partners. This becomes unwieldy with more owners.'
   },
   {
@@ -171,12 +171,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'What is an advantage of an entity (stock redemption) buy-sell agreement over a cross-purchase agreement?',
     options: [
-      'A) Buyers receive a stepped-up basis in acquired shares',
       'B) Fewer policies are required (one per owner)',
+      'A) Buyers receive a stepped-up basis in acquired shares',
+      'D) No valuation is required',
       'C) Proceeds are always tax-free to the entity',
-      'D) No valuation is required'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Entity purchase agreements require only n policies (one per owner), compared to n × (n-1) for cross-purchase. The entity owns and is beneficiary of each policy. However, cross-purchase has the advantage of basis step-up for survivors. C is wrong—corporate AMT and transfer-for-value rules may create taxes.'
   },
   {
@@ -192,10 +192,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     options: [
       'A) The business owner\'s personal income replacement',
       'B) Employee salaries of the disabled owner',
+      'D) Cost of hiring a replacement for the disabled owner',
       'C) Business operating expenses like rent, utilities, and staff salaries during owner disability',
-      'D) Cost of hiring a replacement for the disabled owner'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'BOE insurance reimburses the business for normal operating expenses (rent, utilities, employee salaries, insurance premiums) while the owner is disabled. It does not replace the owner\'s income (that requires individual disability insurance) or pay for a replacement.'
   },
   {
@@ -209,12 +209,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In an endorsement split-dollar arrangement, who owns the policy?',
     options: [
-      'A) The employee',
       'B) The employer',
+      'A) The employee',
+      'D) Joint ownership between employer and employee',
       'C) A third-party trust',
-      'D) Joint ownership between employer and employee'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'In endorsement split-dollar, the employer owns the policy and endorses (assigns) a portion of the death benefit to the employee\'s beneficiary. The employee recognizes income for the economic benefit. In collateral assignment split-dollar, the employee or trust owns the policy.'
   },
   {
@@ -228,12 +228,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Why is corporate-owned life insurance (COLI) commonly used to informally fund nonqualified deferred compensation?',
     options: [
-      'A) COLI premiums are tax-deductible',
       'B) COLI provides tax-deferred growth and tax-free death benefits to recover costs',
+      'A) COLI premiums are tax-deductible',
+      'D) COLI is required by ERISA',
       'C) COLI benefits are not subject to creditors',
-      'D) COLI is required by ERISA'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'COLI cash value grows tax-deferred, and death benefits are generally tax-free. This creates a tax-efficient source to recover costs of deferred compensation payments. Premiums are not deductible, benefits are general assets (creditors can access), and nonqualified plans are exempt from ERISA.'
   },
   {
@@ -248,11 +248,11 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     question: 'An annuitant selects "life with 10-year period certain." She dies after 6 years. What happens?',
     options: [
       'A) Payments stop immediately',
+      'D) Beneficiary receives lifetime payments',
       'B) Beneficiary receives payments for remaining 4 years',
       'C) Beneficiary receives a lump-sum refund',
-      'D) Beneficiary receives lifetime payments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Life with period certain guarantees payments for the greater of life or the certain period. If the annuitant dies within the period (6 years < 10 years), the beneficiary receives payments for the remaining 4 years. If she had lived past 10 years, payments would continue for life.'
   },
   {
@@ -267,11 +267,11 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     question: 'What is the maximum amount that can be used to purchase a QLAC from qualified retirement accounts?',
     options: [
       'A) $100,000',
+      'D) No limit',
       'B) $145,000',
       'C) $200,000',
-      'D) No limit'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'SECURE 2.0 increased the QLAC limit to $200,000 (from $145,000) and eliminated the 25% of account balance limit. QLACs are deferred income annuities that begin payments at age 85, and the amount used is excluded from RMD calculations.'
   },
   {
@@ -285,12 +285,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Disability buy-out insurance is designed for what purpose?',
     options: [
-      'A) Replace income if a business owner becomes disabled',
       'B) Fund the purchase of a disabled owner\'s business interest',
+      'D) Provide medical coverage for disabled employees',
+      'A) Replace income if a business owner becomes disabled',
       'C) Pay business overhead during owner disability',
-      'D) Provide medical coverage for disabled employees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Disability buy-out insurance funds the buyout of a disabled owner\'s business interest per a buy-sell agreement. It typically has a long elimination period (1-2 years) to ensure permanent disability before triggering. This is separate from individual DI (income replacement) and BOE (overhead expenses).'
   },
   {
@@ -304,12 +304,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: 'For which client is a deferred variable annuity MOST appropriate?',
     options: [
-      'A) 25-year-old who has not maxed out 401(k) contributions',
       'B) 55-year-old in low tax bracket with maxed retirement accounts seeking tax deferral',
+      'D) 40-year-old seeking liquidity for near-term home purchase',
+      'A) 25-year-old who has not maxed out 401(k) contributions',
       'C) 70-year-old needing current income with short time horizon',
-      'D) 40-year-old seeking liquidity for near-term home purchase'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Variable annuities are suitable when (1) tax-advantaged accounts are maxed, (2) the investor has a long time horizon, (3) tax deferral is valuable (higher current bracket than expected in retirement), and (4) liquidity is not needed. The 55-year-old meets these criteria.'
   },
   {
@@ -323,10 +323,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which exchange qualifies for tax-free treatment under Section 1035?',
     options: [
-      'A) Annuity exchanged for life insurance',
+      'D) Annuity surrendered and repurchased with a different company',
       'B) Life insurance exchanged for an annuity',
+      'A) Annuity exchanged for life insurance',
       'C) Qualified annuity exchanged for nonqualified annuity',
-      'D) Annuity surrendered and repurchased with a different company'
     ],
     correctAnswer: 1,
     explanation: 'Section 1035 allows tax-free exchanges of like or like-to-unlike in one direction: life insurance → life insurance, life insurance → annuity, annuity → annuity. You cannot go from annuity to life insurance tax-free. Surrender and repurchase is taxable.'
@@ -344,8 +344,8 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     options: [
       'A) $80,000',
       'B) $100,000',
+      'D) The higher of account value or premiums paid',
       'C) $180,000',
-      'D) The higher of account value or premiums paid'
     ],
     correctAnswer: 1,
     explanation: 'The stepped-up death benefit rider guarantees a minimum death benefit (often the highest anniversary value). Beneficiaries receive the greater of account value or guaranteed amount—$100,000. Taxes are owed on gains above basis, but the full $100,000 is paid.'
@@ -361,12 +361,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'In a Section 162 executive bonus plan, who owns the life insurance policy?',
     options: [
-      'A) The employer',
       'B) The employee',
+      'A) The employer',
+      'D) Shared ownership between employer and employee',
       'C) A trust for the employee\'s benefit',
-      'D) Shared ownership between employer and employee'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'In a 162 bonus plan, the employer gives the employee a bonus to pay life insurance premiums. The employee owns the policy outright. The bonus is tax-deductible to the employer and taxable income to the employee. This is simple and provides the employee with full ownership.'
   },
   {
@@ -380,12 +380,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which is an exception to the 10% early withdrawal penalty on nonqualified annuities?',
     options: [
-      'A) First-time home purchase',
       'B) Higher education expenses',
+      'A) First-time home purchase',
+      'D) Substantially equal periodic payments (SEPP) under Rule 72(q)',
       'C) Death or disability',
-      'D) Substantially equal periodic payments (SEPP) under Rule 72(q)'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The 10% penalty on nonqualified annuity withdrawals before 59½ has exceptions including death, disability, and 72(q) substantially equal periodic payments. Unlike IRAs, there are no exceptions for first-time home purchase or education—those apply only to qualified plans.'
   },
   {
@@ -401,10 +401,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     options: [
       'A) After a 5-year deferral period',
       'B) After the first anniversary',
+      'D) At the annuitant\'s 65th birthday',
       'C) Within one year of purchase (typically within 30-90 days)',
-      'D) At the annuitant\'s 65th birthday'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Immediate annuities begin payments within one year of purchase, typically within 30-90 days. There is no accumulation phase. SPIAs are purchased with a single lump sum and immediately converted to an income stream.'
   },
   {
@@ -419,11 +419,11 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     question: 'Which valuation method for a buy-sell agreement best avoids disputes and reflects current value?',
     options: [
       'A) Fixed price agreed upon at signing',
+      'D) Annual appraisal by independent appraiser',
       'B) Book value',
       'C) Formula based on revenue multiple',
-      'D) Annual appraisal by independent appraiser'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Annual independent appraisal provides current fair market value and avoids disputes common with fixed prices (quickly outdated) or formulas (may not reflect true value). While more expensive, it provides defensible valuations for estate tax purposes and reduces conflict among owners.'
   },
   {
@@ -437,12 +437,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which fee in a variable annuity compensates the insurer for mortality and expense risk?',
     options: [
+      'D) Rider fee',
       'A) Subaccount management fee',
       'B) Surrender charge',
       'C) M&E (mortality and expense risk) charge',
-      'D) Rider fee'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The M&E charge (typically 1.0-1.5% annually) compensates the insurer for guaranteeing death benefits and for administrative expenses. This is in addition to subaccount fees (investment management), surrender charges (early withdrawal), and optional rider fees.'
   },
   {
@@ -456,12 +456,12 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A sole proprietor with no planned successor wants to ensure her family receives value from the business if she dies. What is the MOST appropriate strategy?',
     options: [
+      'D) COLI with proceeds paying deferred compensation',
       'A) Cross-purchase agreement with employees',
       'B) Key person insurance payable to the business',
       'C) Life insurance with family as beneficiary, plus arrangements for orderly business sale',
-      'D) COLI with proceeds paying deferred compensation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'With no successor, the business may have little going-concern value. Life insurance on the owner (family as beneficiary) provides immediate liquidity. A plan for orderly sale of assets or to a competitor maximizes value. Key person insurance serves no purpose when the business ends with the owner.'
   },
   {
@@ -475,10 +475,10 @@ export const CFP_RISK_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A variable annuity has a 7-year declining surrender charge schedule starting at 7%. If the owner surrenders after 3 years, what is the approximate surrender charge?',
     options: [
-      'A) 0%',
+      'D) 7%',
       'B) 4%',
+      'A) 0%',
       'C) 5%',
-      'D) 7%'
     ],
     correctAnswer: 1,
     explanation: 'With a 7-year declining schedule starting at 7%, the charge typically decreases by 1% per year: Year 1 = 7%, Year 2 = 6%, Year 3 = 5%, Year 4 = 4%. Surrender in year 3 = likely 4-5% charge. Many annuities allow 10% annual withdrawals without surrender charges.'

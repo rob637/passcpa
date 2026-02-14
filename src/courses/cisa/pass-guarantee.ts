@@ -4,6 +4,8 @@
  * Defines the pass guarantee terms and requirements for the CISA course.
  */
 
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
+
 export interface PassGuaranteeConfig {
   enabled: boolean;
   name: string;
@@ -57,7 +59,7 @@ export const CISA_PASS_GUARANTEE: PassGuaranteeConfig = {
     {
       id: 'pg-req-002',
       title: 'Complete 80% of Practice Questions',
-      description: 'Answer at least 80% of the 1,100+ practice questions',
+      description: `Answer at least 80% of the ${COURSE_DISPLAY_STATS.cisa.questions} practice questions`,
       metric: 'question_completion',
       threshold: 80,
       icon: 'CheckCircle'

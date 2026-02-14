@@ -13,6 +13,7 @@
  */
 
 import logger from '../utils/logger';
+import { trackPWAEngagement } from '../hooks/usePWAInstall';
 
 // GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
@@ -110,6 +111,8 @@ export const analytics = {
       exam_section: section,
       topic: topic,
     });
+    // Track for PWA install prompt engagement threshold
+    trackPWAEngagement('question_answered');
   },
 
   // Practice mode events

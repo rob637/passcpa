@@ -1,0 +1,16 @@
+# CISA Video Pipeline Dependencies
+# Install: pip install -r requirements.txt
+
+# Core
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Browser automation (for HeyGen)
+playwright>=1.40.0
+
+# Firebase (for storage upload)
+firebase-admin>=6.2.0
+
+# Optional: For Make.com webhook integration
+flask>=3.0.0
+gunicorn>=21.2.0

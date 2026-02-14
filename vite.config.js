@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
+import { readFileSync } from 'fs';
+
+// Read version from package.json
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 // Enable bundle analyzer via ANALYZE=true environment variable
 const enableAnalyzer = process.env.ANALYZE === 'true';
@@ -64,7 +68,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3 MiB - main bundle is ~2.2MB
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MiB - CPA questions bundle is ~3.5MB
         skipWaiting: false, // Don't auto-activate new service worker during exam!
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,
@@ -135,6 +139,9 @@ export default defineConfig({
       template: 'treemap', // or 'sunburst', 'network'
     }),
   ].filter(Boolean),
+  define: {
+    __APP_VERSION__: JSON.stringify(packageJson.version),
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -155,30 +162,75 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Manual chunks for better code splitting - Google/Apple quality
-        manualChunks: {
+        manualChunks(id) {
           // Core vendor chunks
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore', 'firebase/storage'],
-          'vendor-ui': ['lucide-react', 'clsx', 'date-fns'],
-          'vendor-charts': ['recharts'],
+          if (id.includes('node_modules')) {
+            if (id.includes('react-dom') || id.includes('react-router')) {
+              return 'vendor-react';
+            }
+            if (id.includes('firebase')) {
+              return 'vendor-firebase';
+            }
+            if (id.includes('lucide-react') || id.includes('clsx') || id.includes('date-fns')) {
+              return 'vendor-ui';
+            }
+            if (id.includes('recharts')) {
+              return 'vendor-charts';
+            }
+          }
           
-          // Feature chunks - separated for lazy loading
-          'feature-admin-cms': [
-            './src/components/pages/admin/AdminCMS.tsx',
-          ],
-          'feature-admin-seed': [
-            './src/components/pages/AdminSeed.tsx',
-          ],
-          'feature-ai': [
-            './src/components/pages/AITutor.tsx',
-            './src/services/aiService.ts',
-          ],
-          'feature-tbs': [
-            './src/components/pages/TBSSimulator.tsx',
-            './src/components/pages/WrittenCommunication.tsx',
-          ],
-          // Data chunks - only needed for admin seeding, dynamically imported
-          // Removed explicit chunking since these are now dynamically imported via services
+          // Question data chunks - split by course for lazy loading
+          if (id.includes('/data/cpa/questions')) {
+            return 'data-cpa-questions';
+          }
+          if (id.includes('/data/ea/questions')) {
+            return 'data-ea-questions';
+          }
+          if (id.includes('/data/cma/questions')) {
+            return 'data-cma-questions';
+          }
+          if (id.includes('/data/cia/questions')) {
+            return 'data-cia-questions';
+          }
+          if (id.includes('/data/cisa/questions')) {
+            return 'data-cisa-questions';
+          }
+          if (id.includes('/data/cfp/questions')) {
+            return 'data-cfp-questions';
+          }
+          
+          // Study materials chunks - split by course
+          if (id.includes('/data/cpa/study-materials') || id.includes('/data/cpa/lessons')) {
+            return 'data-cpa-content';
+          }
+          if (id.includes('/data/ea/study-materials') || id.includes('/data/ea/lessons')) {
+            return 'data-ea-content';
+          }
+          if (id.includes('/data/cma/') && !id.includes('questions')) {
+            return 'data-cma-content';
+          }
+          if (id.includes('/data/cia/') && !id.includes('questions')) {
+            return 'data-cia-content';
+          }
+          if (id.includes('/data/cisa/') && !id.includes('questions')) {
+            return 'data-cisa-content';
+          }
+          if (id.includes('/data/cfp/') && !id.includes('questions')) {
+            return 'data-cfp-content';
+          }
+          
+          // Feature chunks
+          if (id.includes('AdminCMS')) {
+            return 'feature-admin-cms';
+          }
+          if (id.includes('AdminSeed')) {
+            return 'feature-admin-seed';
+          }
+          // Merged AI and TBS into single chunk to prevent circular dependency
+          if (id.includes('AITutor') || id.includes('aiService') || 
+              id.includes('TBSSimulator') || id.includes('WrittenCommunication')) {
+            return 'feature-ai-tbs';
+          }
         },
       },
     },

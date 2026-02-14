@@ -19,6 +19,7 @@ export interface CrossDomainQuestion {
   integrationLevel: 'moderate' | 'high';
   conceptsTested: string[];
   difficulty: 'easy' | 'medium' | 'hard';
+  skillLevel?: string;
   question: string;
   options: QuestionOption[];
   correctOptionId: string;
@@ -37,6 +38,7 @@ export const CFP_CROSS_DOMAIN_QUESTIONS: CrossDomainQuestion[] = [
     integrationLevel: 'high',
     conceptsTested: ['Roth Conversion', 'Tax Brackets', 'RMD Planning'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Marcus, age 68, has a $1.2 million traditional IRA and taxable income of $120,000. He's considering converting $80,000 to a Roth IRA this year. His marginal rate is 24%, and he projects being in the 32% bracket once RMDs begin at 73. Which statement BEST describes the tax planning opportunity?",
     options: [
       { id: 'A', text: 'The conversion is inadvisable because he will pay $19,200 in taxes now' },
@@ -79,6 +81,7 @@ This question integrates tax bracket management with retirement distribution pla
     integrationLevel: 'high',
     conceptsTested: ['Step-Up in Basis', 'Gift Tax', 'Capital Gains'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Helen, age 82, owns stock worth $500,000 with a basis of $50,000. Her grandson wants to sell the stock to fund a home purchase. Helen is considering either gifting the stock now or bequeathing it at death. If Helen is expected to live 3+ more years and the grandson is in the 15% LTCG bracket, which approach results in the LOWEST total tax?",
     options: [
       { id: 'A', text: 'Gift now—grandson receives Helen\'s basis and pays capital gains if sold' },
@@ -128,6 +131,7 @@ This question integrates gift/estate transfer rules with capital gains taxation.
     integrationLevel: 'high',
     conceptsTested: ['Retirement Income', 'Annuitization', 'Longevity Risk'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Patricia, age 65, is retiring with $800,000 in savings and Social Security of $2,500/month. She needs $5,000/month and is concerned about outliving her assets. Her advisor recommends allocating $200,000 to a single premium immediate annuity (SPIA). Which statement BEST justifies this recommendation from an integrated planning perspective?",
     options: [
       { id: 'A', text: 'The SPIA guarantees a fixed return higher than bonds' },
@@ -172,6 +176,7 @@ This integrates retirement income planning with insurance concepts.
     integrationLevel: 'high',
     conceptsTested: ['Asset Location', 'Municipal Bonds', 'Tax Efficiency'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "David has $500,000 in a taxable account and $500,000 in a traditional IRA. He wants to hold both municipal bonds and REITs. His marginal tax rate is 32%. From an asset location perspective, which placement is MOST tax-efficient?",
     options: [
       { id: 'A', text: 'Municipal bonds in IRA, REITs in taxable account' },
@@ -220,6 +225,7 @@ This integrates investment vehicle characteristics with tax planning.
     integrationLevel: 'moderate',
     conceptsTested: ['Fiduciary Duty', 'Conflicts of Interest', 'Estate Planning'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "A CFP® professional's client, age 78, wants to add her son as joint owner on all accounts 'to avoid probate.' The CFP® knows this could expose assets to the son's creditors, affect Medicaid eligibility, and create unequal inheritance among siblings. The son is present and enthusiastic about the plan. What is the CFP®'s BEST course of action?",
     options: [
       { id: 'A', text: 'Implement the client\'s wishes since she has decision-making capacity' },
@@ -272,6 +278,7 @@ This integrates fiduciary standards with estate planning risks.
     integrationLevel: 'high',
     conceptsTested: ['IRA Beneficiary', 'IRD', 'Estate Tax'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Robert, a widower with a $15 million estate, has a $3 million IRA and three adult children. He is charitably inclined. From an integrated tax perspective, the MOST efficient beneficiary designation for his IRA is:",
     options: [
       { id: 'A', text: 'Equally to his three children (subject to 10-year rule)' },
@@ -330,6 +337,7 @@ This integrates IRA distribution rules, income tax, and estate planning.
     integrationLevel: 'high',
     conceptsTested: ['Sequence Risk', 'Asset Allocation', 'Withdrawal Strategy'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Tom retired at 65 with $1,000,000 invested 60/40 stocks/bonds. After year one, stocks dropped 30% while bonds returned 5%. His portfolio is now worth $800,000. Tom needs $45,000/year. Which strategy BEST addresses sequence-of-returns risk?",
     options: [
       { id: 'A', text: 'Rebalance to maintain 60/40 allocation and withdraw $45,000 proportionally' },
@@ -384,6 +392,7 @@ This integrates portfolio management with retirement withdrawal strategy.
     integrationLevel: 'high',
     conceptsTested: ['Life Insurance Taxation', 'MEC', 'Withdrawal Order'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Sandra purchased a universal life policy 5 years ago. She's contributed $150,000 in premiums and the cash value is now $180,000. Her policy is NOT a MEC. She wants to access $50,000 for her daughter's wedding. The MOST tax-efficient method is:",
     options: [
       { id: 'A', text: 'Surrender the policy and take the cash' },
@@ -444,6 +453,7 @@ This integrates life insurance mechanics with tax consequences.
     integrationLevel: 'high',
     conceptsTested: ['Education Funding', '529 Plans', 'Financial Aid'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "The Johnson family has a 16-year-old planning to attend college in 2 years. They have $80,000 available. Grandparents want to contribute $50,000 as well. The family's AGI is $180,000. Which approach MAXIMIZES both tax benefits and financial aid eligibility?",
     options: [
       { id: 'A', text: 'Parents open a 529 in child\'s name and fund with $130,000' },
@@ -498,6 +508,7 @@ This integrates education planning, investment vehicles, and tax/financial aid i
     integrationLevel: 'high',
     conceptsTested: ['Social Security Optimization', 'Tax Torpedo', 'Client Communication'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "A couple, both 62, asks whether to claim Social Security now or wait. The husband's PIA is $2,800, wife's is $1,200. They have $800,000 in traditional IRAs. The CFP® runs projections showing that claiming at 62 reduces lifetime benefits by $400,000, but the clients prefer 'getting money now.' The CFP®'s BEST response is:",
     options: [
       { id: 'A', text: 'Respect client autonomy and file for benefits immediately' },
@@ -555,6 +566,7 @@ This integrates education planning, investment vehicles, and tax/financial aid i
     integrationLevel: 'high',
     conceptsTested: ['ILIT', 'Estate Tax', 'Life Insurance Ownership'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Margaret, age 60, has a $12 million estate and a $3 million life insurance policy she owns. She wants the death benefit to pay estate taxes at her death. Her estate planner suggests transferring the policy to an ILIT. Which statement is MOST accurate?",
     options: [
       { id: 'A', text: 'If Margaret survives 3 years, the $3M death benefit is excluded from her estate' },
@@ -604,6 +616,7 @@ This integrates education planning, investment vehicles, and tax/financial aid i
     integrationLevel: 'high',
     conceptsTested: ['Inflation Risk', 'TIPS', 'Retirement Income'],
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "Frank, 62, is planning for 30 years of retirement. He's concerned about inflation eroding his purchasing power. He asks whether to include TIPS or I-Bonds in his portfolio. Which placement strategy is MOST appropriate?",
     options: [
       { id: 'A', text: 'Hold TIPS in taxable account for inflation-adjusted interest' },

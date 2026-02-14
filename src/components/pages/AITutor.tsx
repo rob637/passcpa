@@ -51,11 +51,6 @@ interface WeakArea {
   accuracy: number;
 }
 
-interface UserProfile {
-  examSection?: string;
-  displayName?: string;
-}
-
 interface SmartPrompt {
   icon: LucideIcon;
   text: string;
@@ -212,8 +207,8 @@ const AITutor: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  // Safely cast userProfile
-  const profile = userProfile as UserProfile | null;
+  // User profile for section/name
+  const profile = userProfile;
   const currentSection = profile?.examSection || getDefaultSection(courseId);
 
   // Check for context passed from Practice page (via state or URL params)
@@ -293,7 +288,7 @@ const AITutor: React.FC = () => {
 
   // Build personalized greeting
   const buildGreeting = useCallback(() => {
-    const p = userProfile as UserProfile | null;
+    const p = userProfile;
     const firstName = p?.displayName?.split(' ')[0] || 'there';
     
     // Check for context from navigation (e.g. from LessonViewer)

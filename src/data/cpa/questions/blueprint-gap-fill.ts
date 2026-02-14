@@ -22,12 +22,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Under SQMS 1, which component addresses the firm\'s policies for client acceptance and continuance?',
     options: [
-      'Risk assessment process',
       'Governance and leadership',
+      'Acceptance and continuance of client relationships',
+      'Risk assessment process',
       'Relevant ethical requirements',
-      'Acceptance and continuance of client relationships'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'SQMS 1 includes a specific component for "Acceptance and Continuance of Client Relationships and Specific Engagements" which requires firms to establish policies and procedures for evaluating prospective clients and engagements.',
     reference: 'SQMS 1.30-.33',
   },
@@ -44,10 +44,10 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'For which types of engagements is an engagement quality review (EQR) always required?',
     options: [
-      'All compilation engagements',
+      'Only engagements with significant deficiencies',
       'All audit engagements of public entities',
+      'All compilation engagements',
       'All review engagements',
-      'Only engagements with significant deficiencies'
     ],
     correctAnswer: 1,
     explanation: 'An engagement quality review is required for all audit engagements of public entities (issuers). For non-issuers, the firm determines criteria based on its risk assessment.',
@@ -67,11 +67,11 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     question: 'Under SQMS 1, when a deficiency in the system of quality management is identified, the firm must:',
     options: [
       'Report the deficiency to the PCAOB within 30 days',
+      'Notify all affected clients within 60 days',
       'Evaluate the root cause, design remedial actions, and evaluate whether similar deficiencies exist',
       'Immediately terminate all affected engagements',
-      'Notify all affected clients within 60 days'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SQMS 1 requires firms to investigate identified deficiencies, evaluate root causes, design and implement remedial actions, and evaluate whether similar deficiencies exist or could occur elsewhere.',
     reference: 'SQMS 1.49-.51',
   },
@@ -88,12 +88,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Which AICPA committee has the authority to investigate potential ethics violations and recommend disciplinary action?',
     options: [
+      'Board of Directors',
       'Auditing Standards Board',
       'Professional Ethics Executive Committee',
       'Peer Review Board',
-      'Board of Directors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The Professional Ethics Executive Committee (PEEC) is responsible for investigating potential ethics violations, issuing ethics interpretations, and recommending disciplinary actions against members.',
     reference: 'AICPA Bylaws Section 7',
   },
@@ -110,12 +110,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the AICPA Joint Ethics Enforcement Program, automatic expulsion from membership occurs when a CPA:',
     options: [
-      'Fails to complete required CPE hours for two consecutive years',
       'Is convicted of a felony defined in the AICPA bylaws as a crime punishable by imprisonment for more than one year',
+      'Fails to complete required CPE hours for two consecutive years',
+      'Is named in three or more malpractice lawsuits',
       'Receives an adverse peer review report',
-      'Is named in three or more malpractice lawsuits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under AICPA Bylaws Section 7.3, automatic expulsion occurs when a member is convicted of a crime punishable by imprisonment for more than one year, including tax fraud, embezzlement, or other financial crimes.',
     reference: 'AICPA Bylaws Section 7.3',
   },
@@ -134,10 +134,10 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     options: [
       'Annually',
       'Every two years',
+      'Every five years',
       'Every three years',
-      'Every five years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Firms enrolled in the AICPA Peer Review Program that perform audit, review, or certain attestation engagements must have a peer review at least once every three years.',
     reference: 'AICPA Peer Review Standards',
   },
@@ -156,8 +156,8 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     options: [
       'System review',
       'Engagement review',
+      'Limited review',
       'No peer review is required',
-      'Limited review'
     ],
     correctAnswer: 1,
     explanation: 'Firms performing only compilation engagements undergo an Engagement Review. Firms performing audits, reviews, or examinations undergo a System Review which evaluates the firm\'s system of quality control.',
@@ -176,12 +176,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'What is the relationship between state board of accountancy disciplinary actions and AICPA membership?',
     options: [
-      'State board actions have no effect on AICPA membership',
       'State license suspension automatically suspends AICPA membership',
+      'State board actions must be reviewed by the AICPA before taking effect',
+      'State board actions have no effect on AICPA membership',
       'AICPA can discipline members based on state board actions without conducting its own investigation',
-      'State board actions must be reviewed by the AICPA before taking effect'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under the Joint Ethics Enforcement Program, the AICPA can impose discipline based on state board findings without a separate investigation, as long as the state board\'s proceedings provided due process.',
     reference: 'AICPA/State CPA Society Joint Ethics Enforcement Program',
   },
@@ -198,12 +198,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The engagement quality reviewer must complete the review before:',
     options: [
-      'The audit planning phase is finalized',
       'Fieldwork begins',
+      'The financial statements are filed with regulators',
+      'The audit planning phase is finalized',
       'The auditor\'s report is dated',
-      'The financial statements are filed with regulators'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The engagement quality review must be completed, and all questions resolved, before the auditor\'s report is dated. This ensures the review is completed before the report is released.',
     reference: 'SQMS 2.27, AS 1220',
   },
@@ -220,12 +220,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under SEC Rule 102(e), the Commission may temporarily or permanently deny an accountant the privilege of appearing or practicing before it for all of the following reasons EXCEPT:',
     options: [
-      'Lacking the requisite qualifications to represent others',
+      'Having been suspended from membership in a professional organization for failure to pay dues',
       'Lacking character or integrity',
+      'Lacking the requisite qualifications to represent others',
       'Having engaged in unethical or improper professional conduct',
-      'Having been suspended from membership in a professional organization for failure to pay dues'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'SEC Rule 102(e) allows denial of practice privileges for lack of qualifications, lack of character or integrity, unethical conduct, or willful violations of securities laws. Suspension for non-payment of dues is not a grounds for SEC sanction.',
     reference: 'SEC Rule 102(e), SOX Section 602',
   },
@@ -243,10 +243,10 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A firm\'s system of quality management must include policies requiring personnel to promptly notify the firm when they become aware of:',
     options: [
-      'Any changes in audit client management',
+      'Changes in industry regulations',
       'Breaches of independence requirements',
+      'Any changes in audit client management',
       'Decreases in client revenue',
-      'Changes in industry regulations'
     ],
     correctAnswer: 1,
     explanation: 'SQMS 1 requires firms to have policies for personnel to promptly notify the firm of independence breaches so appropriate action can be taken, including evaluating the significance and impact on engagements.',
@@ -265,12 +265,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Under auditing standards, the minimum retention period for audit documentation after the report release date is:',
     options: [
+      '10 years',
       '3 years',
       '5 years',
       '7 years',
-      '10 years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'AU-C 230 requires audit documentation to be retained for at least 5 years after the report release date. For SEC audits, documentation must be retained for 7 years under PCAOB rules.',
     reference: 'AU-C 230, AS 1215',
   },
@@ -287,12 +287,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The PCAOB has authority to impose sanctions on registered firms and associated persons. Which of the following is NOT a sanction the PCAOB can impose?',
     options: [
+      'Criminal prosecution',
       'Civil monetary penalties',
       'Revocation of firm registration',
       'Suspension from association with registered firms',
-      'Criminal prosecution'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'The PCAOB can impose civil monetary penalties, revoke registration, suspend individuals, and require remedial measures. Criminal prosecution authority rests with the Department of Justice, not the PCAOB.',
     reference: 'SOX Section 105(c)',
   },
@@ -311,8 +311,8 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     options: [
       'The engagement has been performed for more than three consecutive years',
       'The entity is a first-year audit client in a high-risk industry',
+      'The audit fee exceeds $50,000',
       'The client has elected to change its fiscal year-end',
-      'The audit fee exceeds $50,000'
     ],
     correctAnswer: 1,
     explanation: 'First-year audits, high-risk industries, and entities of public interest are factors that would typically indicate the need for an engagement quality review under firm policies.',
@@ -333,8 +333,8 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     options: [
       'Immediately report the violation to the AICPA ethics division',
       'Report the violation to the appropriate regulatory authority and consider consulting with legal counsel',
+      'Take no action unless the violation directly affects the CPA\'s own clients',
       'Confront the other CPA directly before taking any action',
-      'Take no action unless the violation directly affects the CPA\'s own clients'
     ],
     correctAnswer: 1,
     explanation: 'CPAs may have reporting obligations under state accountancy laws and should consider consulting with legal counsel. The Code encourages ethical behavior but specific reporting requirements vary by jurisdiction.',
@@ -354,12 +354,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'What does SQMS stand for in the context of quality management standards?',
     options: [
-      'Standard Quality Measurement System',
       'Statements on Quality Management Standards',
+      'Standard Quality Measurement System',
+      'Systematic Quality Monitoring Standards',
       'Strategic Quality Management Services',
-      'Systematic Quality Monitoring Standards'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SQMS stands for Statements on Quality Management Standards, issued by the AICPA to establish standards for firms providing audit, review, and attestation services.',
     reference: 'SQMS 1',
   },
@@ -376,12 +376,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The purpose of mandatory CPE requirements for CPAs is to:',
     options: [
-      'Generate revenue for state boards',
       'Maintain professional competence and stay current with changes in the profession',
+      'Satisfy IRS requirements for tax preparers',
+      'Generate revenue for state boards',
       'Limit the number of practicing CPAs',
-      'Satisfy IRS requirements for tax preparers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CPE requirements ensure that CPAs maintain and improve their professional competence, staying current with changes in standards, regulations, and best practices.',
     reference: 'AICPA Code 1.400',
   },
@@ -398,10 +398,10 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The engagement partner is ultimately responsible for:',
     options: [
-      'Preparing all audit documentation',
+      'Selecting all engagement team members',
       'The overall quality of the engagement',
+      'Preparing all audit documentation',
       'Calculating the audit fee',
-      'Selecting all engagement team members'
     ],
     correctAnswer: 1,
     explanation: 'The engagement partner has overall responsibility for managing and achieving quality on the engagement, including direction and supervision of the engagement team.',
@@ -420,12 +420,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Independence in auditing consists of:',
     options: [
-      'Independence in fact only',
+      'Independence from management decisions',
       'Independence in appearance only',
+      'Independence in fact only',
       'Independence in fact and in appearance',
-      'Independence from management decisions'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Auditors must maintain both independence in fact (actual objectivity) and independence in appearance (others\' perception of objectivity) to serve the public interest.',
     reference: 'AICPA Code ET 1.200',
   },
@@ -442,12 +442,12 @@ export const AUD_VII_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Proper supervision during an audit includes:',
     options: [
-      'Only reviewing workpapers after the audit is complete',
       'Directing, supervising, and reviewing the work of engagement team members',
+      'Allowing team members to work independently without oversight',
+      'Only reviewing workpapers after the audit is complete',
       'Delegating all work to staff accountants',
-      'Allowing team members to work independently without oversight'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'AU-C 220 requires the engagement partner to direct, supervise, and review the work performed by engagement team members on a timely basis throughout the engagement.',
     reference: 'AU-C 220.16',
   },
@@ -471,12 +471,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A SOC 1® report is primarily designed to address controls at a service organization that are relevant to:',
     options: [
-      'User entities\' internal control over financial reporting',
       'Security, availability, and privacy',
+      'User entities\' internal control over financial reporting',
       'Compliance with data protection regulations',
-      'IT general controls only'
+      'IT general controls only',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'SOC 1 reports are designed for user entities and their auditors to evaluate controls at a service organization that are relevant to user entities\' internal control over financial reporting (ICFR).',
     reference: 'SSAE 18, AT-C 320',
   },
@@ -493,12 +493,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The key difference between a SOC 1 Type 1 and Type 2 report is:',
     options: [
-      'Type 1 is for financial services; Type 2 is for technology companies',
       'Type 1 covers design only at a point in time; Type 2 covers design and operating effectiveness over a period',
+      'Type 1 is for financial services; Type 2 is for technology companies',
       'Type 1 is restricted use; Type 2 is general use',
-      'Type 1 requires testing all controls; Type 2 only tests key controls'
+      'Type 1 requires testing all controls; Type 2 only tests key controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Type 1 reports cover the description of controls and their suitability of design at a specific point in time. Type 2 reports also include testing of operating effectiveness over a specified period (typically 6-12 months).',
     reference: 'AT-C 320',
   },
@@ -515,12 +515,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which of the following is NOT one of the Trust Services Criteria categories used in SOC 2 examinations?',
     options: [
-      'Security',
-      'Availability',
       'Auditability',
-      'Confidentiality'
+      'Availability',
+      'Security',
+      'Confidentiality',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'The five Trust Services Criteria categories are: Security (required), Availability, Processing Integrity, Confidentiality, and Privacy. Auditability is not a TSC category.',
     reference: 'AICPA Trust Services Criteria',
   },
@@ -537,10 +537,10 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The Security principle (also known as Common Criteria) in a SOC 2 report addresses:',
     options: [
-      'Only access controls to prevent unauthorized access',
-      'Protection against unauthorized access, use, or modification of the system',
       'Only network security and encryption',
-      'Physical security of data centers exclusively'
+      'Protection against unauthorized access, use, or modification of the system',
+      'Only access controls to prevent unauthorized access',
+      'Physical security of data centers exclusively',
     ],
     correctAnswer: 1,
     explanation: 'The Security criteria address protection against unauthorized access, unauthorized disclosure, and damage that could compromise availability, integrity, confidentiality, and privacy of information.',
@@ -559,12 +559,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a SOC 1 report, when a service organization uses the "carve-out" method for a subservice organization:',
     options: [
-      'The subservice organization\'s controls are included in the service organization\'s description and testing',
       'The service organization\'s description excludes the subservice organization\'s controls, and user entities must obtain a separate report',
       'Only financial controls of the subservice organization are included',
-      'The subservice organization is not mentioned in the report'
+      'The subservice organization\'s controls are included in the service organization\'s description and testing',
+      'The subservice organization is not mentioned in the report',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under the carve-out method, the service organization\'s description excludes the subservice organization\'s controls. User entities and their auditors must obtain and evaluate a separate report from the subservice organization.',
     reference: 'AT-C 320.A14-.A16',
   },
@@ -581,12 +581,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a service organization uses the "inclusive" method for a subservice organization in a SOC report:',
     options: [
+      'The subservice organization must issue its own separate SOC report',
       'Only the subservice organization\'s controls are tested',
       'The service auditor tests both the service organization\'s and subservice organization\'s controls',
-      'The subservice organization must issue its own separate SOC report',
-      'No testing is performed on the subservice organization\'s controls'
+      'No testing is performed on the subservice organization\'s controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under the inclusive method, the service organization includes the subservice organization\'s description and controls in the system description. The service auditor tests both organizations\' relevant controls.',
     reference: 'AT-C 320.A14-.A16',
   },
@@ -604,11 +604,11 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     question: 'IT General Controls (ITGCs) typically include all of the following categories EXCEPT:',
     options: [
       'Access to programs and data',
-      'Program change management',
       'Customer relationship management',
-      'Computer operations'
+      'Program change management',
+      'Computer operations',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'ITGCs typically include: Access to programs and data, Program development, Program change management, and Computer operations. Customer relationship management is a business process, not an ITGC.',
     reference: 'PCAOB AS 2110, COSO',
   },
@@ -626,11 +626,11 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     question: 'When testing access controls during an IT audit, the auditor would most likely:',
     options: [
       'Only review the access control policy document',
-      'Test whether terminated employees have had access promptly removed and review user access listings for appropriateness',
       'Assume controls are effective if no security breaches occurred',
-      'Only test administrative user accounts'
+      'Test whether terminated employees have had access promptly removed and review user access listings for appropriateness',
+      'Only test administrative user accounts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Testing access controls includes reviewing timely removal of terminated employee access, periodic user access reviews, appropriate segregation of duties, and ensuring access is commensurate with job responsibilities.',
     reference: 'COBIT, COSO',
   },
@@ -647,12 +647,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A SOC 3 report differs from a SOC 2 report primarily because SOC 3:',
     options: [
-      'Covers a longer time period',
       'Is designed for general use and may be freely distributed (e.g., on a website)',
+      'Covers a longer time period',
       'Includes more detailed testing results',
-      'Only covers the security criteria'
+      'Only covers the security criteria',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SOC 3 reports are general use reports that can be freely distributed. They contain the same information as SOC 2 but without detailed descriptions of tests and results, making them suitable for marketing purposes.',
     reference: 'AT-C 205',
   },
@@ -669,12 +669,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'When testing IT change management controls, an auditor would be most concerned if:',
     options: [
-      'All changes were documented in a ticketing system',
       'Emergency changes bypassed normal approval processes without subsequent review',
+      'All changes were documented in a ticketing system',
       'Users were required to test changes in a staging environment',
-      'Changes required approval from both IT and business owners'
+      'Changes required approval from both IT and business owners',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'While emergency changes may occasionally bypass normal processes, they should be subject to subsequent review and documentation. Lack of any review of emergency changes represents a control deficiency.',
     reference: 'COBIT, ITIL',
   },
@@ -735,10 +735,10 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a SOC 2 Type 2 report, a qualified opinion would most likely be issued when:',
     options: [
-      'The service organization uses a subservice organization',
       'One or more controls were not operating effectively during the review period',
       'The service organization experienced a security incident',
-      'Management\'s description of the system is inaccurate or incomplete in a material respect'
+      'The service organization uses a subservice organization',
+      'Management\'s description of the system is inaccurate or incomplete in a material respect',
     ],
     correctAnswer: 3,
     explanation: 'A qualified opinion is issued when management\'s description is not fairly presented in all material respects, or the controls were not suitably designed. Control exceptions result in listing in Section IV but typically not a qualified opinion.',
@@ -757,12 +757,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'In IT environments, which combination of duties should be segregated?',
     options: [
-      'Help desk support and user training',
       'Application development and moving code to production',
       'Network monitoring and security awareness training',
-      'Hardware maintenance and software licensing'
+      'Help desk support and user training',
+      'Hardware maintenance and software licensing',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A key IT segregation of duties is between application development and production migration. Developers should not have the ability to move their own code to production without independent review and approval.',
     reference: 'COSO, COBIT',
   },
@@ -780,11 +780,11 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     question: 'A SOC for Cybersecurity examination differs from a SOC 2 examination in that SOC for Cybersecurity:',
     options: [
       'Is only available as a Type 1 report',
-      'Evaluates an entity\'s cybersecurity risk management program against criteria, not specific controls',
       'Does not require an independent CPA to perform the examination',
-      'Only covers organizations in the financial services industry'
+      'Evaluates an entity\'s cybersecurity risk management program against criteria, not specific controls',
+      'Only covers organizations in the financial services industry',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SOC for Cybersecurity examines an entity\'s cybersecurity risk management program at an entity-wide level, evaluating it against descriptive criteria rather than specific controls as in SOC 2.',
     reference: 'AICPA SOC for Cybersecurity',
   },
@@ -803,11 +803,11 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     question: 'What does "SOC" stand for in SOC 1, SOC 2, and SOC 3 reports?',
     options: [
       'Security Operations Center',
-      'System and Organization Controls',
       'Service Organization Compliance',
-      'Security Oversight Committee'
+      'System and Organization Controls',
+      'Security Oversight Committee',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SOC stands for System and Organization Controls. These reports are examination reports performed by independent CPAs that assess controls at service organizations.',
     reference: 'AICPA SOC Suite of Services',
   },
@@ -824,12 +824,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Who are the primary users of a SOC 1 report?',
     options: [
+      'The service organization\'s marketing department',
       'The general public',
       'User entities and their auditors',
-      'The service organization\'s marketing department',
-      'Government regulators only'
+      'Government regulators only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SOC 1 reports are restricted use reports intended for user entities (customers of the service organization) and their auditors who need to understand and rely on controls at the service organization.',
     reference: 'AT-C 320.08',
   },
@@ -846,12 +846,12 @@ export const ISC_V_GAP_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The primary purpose of IT General Controls (ITGCs) is to:',
     options: [
-      'Replace all manual controls',
       'Ensure that application controls continue to operate effectively',
+      'Replace all manual controls',
       'Eliminate the need for financial audits',
-      'Automate all business processes'
+      'Automate all business processes',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ITGCs support the effective operation of application controls. If ITGCs are weak, application controls may not be reliable even if designed correctly.',
     reference: 'COSO, AS 2110',
   },

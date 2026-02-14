@@ -20,12 +20,12 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Collection Due Process (CDP) hearings are available:',
     options: [
-      'Before any collection notice is issued',
       'After a Notice of Federal Tax Lien filing or before levy action',
+      'Before any collection notice is issued',
+      'During the audit process',
       'Only after tax is paid in full',
-      'During the audit process'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'CDP rights arise after: (1) a Notice of Federal Tax Lien is filed (IRC §6320), or (2) a Final Notice of Intent to Levy is issued (IRC §6330). Taxpayers have 30 days to request a hearing.',
     reference: 'IRC §6320; IRC §6330',
   },
@@ -42,8 +42,8 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     options: [
       'Only liability issues',
       'Appropriate spousal defenses, collection alternatives, and underlying liability if not previously contested',
+      'No issues - it is informational only',
       'Only collection alternatives',
-      'No issues - it is informational only'
     ],
     correctAnswer: 1,
     explanation: 'At a CDP hearing, taxpayers may raise: spousal defenses, collection alternatives (installment agreement, OIC, CNC), and underlying liability if they had no prior opportunity to dispute it.',
@@ -60,10 +60,10 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When a timely CDP hearing is requested:',
     options: [
-      'Collection continues while the hearing is pending',
+      'Penalties are immediately waived',
       'Collection is suspended until the CDP determination is made',
+      'Collection continues while the hearing is pending',
       'The tax liability is automatically reduced',
-      'Penalties are immediately waived'
     ],
     correctAnswer: 1,
     explanation: 'Filing a timely CDP request (within 30 days) suspends levy action and generally collection activity until the CDP determination is issued and any court petition period expires.',
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An "equivalent hearing" differs from a CDP hearing in that:',
     options: [
-      'It has the same rights as CDP',
       'It does not suspend collection and the determination is not appealable to Tax Court',
+      'It is conducted by the IRS Chief Counsel',
+      'It has the same rights as CDP',
       'It requires full payment of tax',
-      'It is conducted by the IRS Chief Counsel'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'An equivalent hearing (requested after 30 days but within 1 year) does not suspend collection action and the determination cannot be appealed to Tax Court, unlike a regular CDP hearing.',
     reference: 'Treas. Reg. §301.6330-1(i)',
   },
@@ -98,15 +98,15 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     subtopic: 'Taxpayer Bill of Rights',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'The Taxpayer Bill of Rights includes the right to:',
+    question: 'The Taxpayer Bill of Rights (TBOR) codified in IRC §7803(a)(3) provides ten fundamental rights. Which of the following accurately describes one of these rights?',
     options: [
-      'Avoid all audits',
-      'Be informed, quality service, pay no more than the correct amount, finality, and appeal',
-      'Automatic tax liability reduction',
-      'Unlimited extensions on all deadlines'
+      'The right to finality — knowing the maximum time to challenge an IRS position and the maximum time the IRS has to audit a tax year',
+      'The right to unlimited filing extensions without justification',
+      'The right to interest-free installment agreements regardless of balance owed',
+      'The right to refuse all IRS document requests during an examination',
     ],
-    correctAnswer: 1,
-    explanation: 'The 10 taxpayer rights include: be informed, quality service, pay no more than correct amount, challenge IRS position, appeal, finality, privacy, confidentiality, retain representation, and a fair tax system.',
+    correctAnswer: 0,
+    explanation: 'The TBOR includes 10 rights, one being the right to finality — taxpayers can know the timeframes for IRS audits and for challenging IRS positions. Other rights include the right to be informed, quality service, pay no more than the correct tax, challenge an IRS position, appeal, privacy, confidentiality, retain representation, and a fair tax system.',
     reference: 'IRS Publication 1',
   },
   {
@@ -121,11 +121,11 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     question: 'The Taxpayer Advocate Service (TAS) can assist when:',
     options: [
       'Every taxpayer requests assistance',
+      'Only during criminal investigations',
       'A taxpayer is experiencing a significant hardship or is not receiving timely response from IRS',
       'Only for wealthy taxpayers',
-      'Only during criminal investigations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'TAS helps taxpayers experiencing significant hardship, facing imminent adverse action, or not receiving timely resolution of issues through normal IRS channels. Contact via Form 911.',
     reference: 'IRC §7803(c)',
   },
@@ -141,11 +141,11 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     question: 'Under IRC §7491, the burden of proof shifts to the IRS if the taxpayer:',
     options: [
       'Files a return',
+      'Waives appeal rights',
       'Introduces credible evidence and meets substantiation and cooperation requirements',
       'Pays all tax due',
-      'Waives appeal rights'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under §7491, burden of proof shifts to IRS if taxpayer produces credible evidence, maintains required records, substantiates items, and cooperates with reasonable IRS requests.',
     reference: 'IRC §7491',
   },
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer has the right to make an audio recording of an IRS interview if:',
     options: [
-      'Never - recording is prohibited',
       'The taxpayer provides 10 days advance notice',
+      'Never - recording is prohibited',
+      'Only in Appeals',
       'Only with IRS permission',
-      'Only in Appeals'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §7521, taxpayers may record in-person interviews with 10 days advance written notice. The IRS may also record if they provide 10 days notice and provide a copy.',
     reference: 'IRC §7521(a)',
   },
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'During an IRS interview, a taxpayer has the right to:',
     options: [
-      'Refuse all questions',
       'Suspend the interview to consult with a representative',
+      'Refuse all questions',
+      'Record without notice',
       'Demand the interview be conducted at their home',
-      'Record without notice'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §7521(b)(2), if at any point during an interview the taxpayer clearly requests to consult with a representative, the interview must be suspended.',
     reference: 'IRC §7521(b)(2)',
   },
@@ -202,8 +202,8 @@ export const SEE3_QUESTIONS_BATCH12: Question[] = [
     options: [
       'Contacting taxpayers at all',
       'Using their positions to harass or intimidate taxpayers',
+      'Conducting audits',
       'Issuing any notices',
-      'Conducting audits'
     ],
     correctAnswer: 1,
     explanation: 'IRC §7804(b) prohibits IRS employees from using their authority to harass or intimidate taxpayers. Violations can result in disciplinary action and taxpayers can report misconduct.',

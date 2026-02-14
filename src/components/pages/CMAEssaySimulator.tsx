@@ -14,11 +14,6 @@ import {
 } from 'lucide-react';
 import clsx from 'clsx';
 import { CMA_ESSAYS } from '../../data/cma/essays/index';
-// Legacy 2-essay import kept as fallback
-import { CMA_ESSAY_TASKS as LEGACY_ESSAYS } from '../../data/cma/essays';
-
-// Use the full 40-essay collection, falling back to legacy if needed
-const CMA_ESSAY_TASKS = CMA_ESSAYS.length > 0 ? CMA_ESSAYS : LEGACY_ESSAYS;
 import { WCTask } from '../../types';
 import aiService from '../../services/aiService';
 import logger from '../../utils/logger';
@@ -136,7 +131,7 @@ const CMAEssaySimulator: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {CMA_ESSAY_TASKS.map(task => (
+          {CMA_ESSAYS.map(task => (
             <Card key={task.id} variant="interactive" className="p-6">
               <div className="flex justify-between items-start mb-4">
                  <span className={clsx(

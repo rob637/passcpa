@@ -12,7 +12,7 @@ import { CMA_COURSE } from './cma';
 import { CIA_COURSE } from './cia';
 import { CISA_COURSE } from './cisa';
 import { CFP_COURSE } from './cfp';
-import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CISA_COURSE, ENABLE_CFP_COURSE } from '../config/featureFlags';
+import { isCourseEnabled } from '../config/featureFlags';
 
 /**
  * All registered courses
@@ -27,16 +27,12 @@ export const COURSES: Record<CourseId, Course> = {
 } as Record<CourseId, Course>;
 
 /**
- * Courses that are currently active/available to users
+ * Courses that are currently active/available to users.
+ * Derived automatically from COURSES keys + isCourseEnabled().
+ * Adding a course to COURSES is the only step needed.
  */
-export const ACTIVE_COURSES: CourseId[] = [
-  ...(ENABLE_CPA_COURSE ? ['cpa'] : []),
-  ...(ENABLE_EA_COURSE ? ['ea'] : []),
-  ...(ENABLE_CMA_COURSE ? ['cma'] : []),
-  ...(ENABLE_CIA_COURSE ? ['cia'] : []),
-  ...(ENABLE_CISA_COURSE ? ['cisa'] : []),
-  ...(ENABLE_CFP_COURSE ? ['cfp'] : []),
-] as CourseId[];
+export const ACTIVE_COURSES: CourseId[] =
+  (Object.keys(COURSES) as CourseId[]).filter(isCourseEnabled);
 
 /**
  * Get a course by ID

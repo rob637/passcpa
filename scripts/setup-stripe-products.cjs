@@ -58,15 +58,15 @@ const EXAM_PRICING = {
 const PRODUCT_INFO = {
   cpa: {
     name: 'VoraPrep CPA Exam Prep',
-    description: 'AI-powered CPA exam preparation — 3,200+ questions, adaptive engine, Vory AI tutor, TBS simulations.',
+    description: 'AI-powered CPA exam preparation — 5,000+ questions, adaptive engine, Vory AI tutor, TBS simulations.',
   },
   ea: {
     name: 'VoraPrep EA Exam Prep',
-    description: 'AI-powered Enrolled Agent exam preparation — 2,200+ questions, all 3 SEE parts, Vory AI tutor.',
+    description: 'AI-powered Enrolled Agent exam preparation — 2,100+ questions, all 3 SEE parts, Vory AI tutor.',
   },
   cma: {
     name: 'VoraPrep CMA Exam Prep',
-    description: 'AI-powered CMA exam preparation — 2,000+ questions, both parts, Vory AI tutor.',
+    description: 'AI-powered CMA exam preparation — 1,900+ questions, both parts, Vory AI tutor.',
   },
   cia: {
     name: 'VoraPrep CIA Exam Prep',
@@ -74,7 +74,7 @@ const PRODUCT_INFO = {
   },
   cfp: {
     name: 'VoraPrep CFP Exam Prep',
-    description: 'AI-powered CFP exam preparation — 2,500+ questions, 8 domains, Vory AI tutor, case studies.',
+    description: 'AI-powered CFP exam preparation — 2,200+ questions, 8 domains, Vory AI tutor, case studies.',
   },
   cisa: {
     name: 'VoraPrep CISA Exam Prep',

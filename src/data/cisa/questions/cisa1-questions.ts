@@ -22,12 +22,12 @@ const CISA1_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Which of the following describes the key objective of an IS audit strategy?',
     options: [
-      'To provide sufficient evidence to support the audit opinion',
       'To identify all vulnerabilities in the system',
+      'To ensure compliance with every regulation globally',
+      'To provide sufficient evidence to support the audit opinion',
       'To eliminate all risks in the IT environment',
-      'To ensure compliance with every regulation globally'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The primary objective of an audit strategy is to determine the scope and approach that will provide sufficient appropriate evidence to support the auditor\'s opinion.',
     topic: 'Planning',
     subtopic: 'Audit Strategy'
@@ -41,10 +41,10 @@ const CISA1_QUESTIONS_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'When an IS auditor identifies a significant control weakness, the FIRST step should be to:',
     options: [
-      'Report the finding to the audit committee immediately',
+      'Develop a recommendation for remediation',
       'Validate the finding with the auditee',
+      'Report the finding to the audit committee immediately',
       'Conduct a root cause analysis',
-      'Develop a recommendation for remediation'
     ],
     correctAnswer: 1,
     explanation: 'The auditor should first validate the finding with the auditee to ensure the factual accuracy of the observation before proceeding to analysis or reporting.',

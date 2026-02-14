@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
 import {
   ChevronLeft,
   ChevronRight,
@@ -363,7 +364,7 @@ const CMAStudyPlanSetup: React.FC = () => {
                 Ready to Generate?
               </h2>
               <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto">
-                Our AI will analyze your timeline and distribute 130+ lessons and 3,000+ questions evenly across your available days.
+                Our AI will analyze your timeline and distribute {COURSE_DISPLAY_STATS.cma.lessons} lessons and {COURSE_DISPLAY_STATS.cma.questions} questions evenly across your available days.
               </p>
               
               <Button

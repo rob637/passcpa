@@ -20,6 +20,8 @@ export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[fea
  * Reads from VITE_ENABLE_{COURSE}_COURSE env vars.
  * Defaults to true when the env var is unset (all courses enabled unless explicitly disabled).
  * Set VITE_ENABLE_CPA_COURSE=false in your .env to disable a course.
+ *
+ * This is fully dynamic — adding a new CourseId requires ZERO changes here.
  */
 const envFlag = (key: string): boolean => {
   const val = import.meta.env[key];
@@ -28,32 +30,19 @@ const envFlag = (key: string): boolean => {
   return val !== 'false';
 };
 
-export const ENABLE_CPA_COURSE = envFlag('VITE_ENABLE_CPA_COURSE');
-export const ENABLE_EA_COURSE = envFlag('VITE_ENABLE_EA_COURSE');
-export const ENABLE_CMA_COURSE = envFlag('VITE_ENABLE_CMA_COURSE');
-export const ENABLE_CIA_COURSE = envFlag('VITE_ENABLE_CIA_COURSE');
-export const ENABLE_CFP_COURSE = envFlag('VITE_ENABLE_CFP_COURSE');
-export const ENABLE_CISA_COURSE = envFlag('VITE_ENABLE_CISA_COURSE');
-
 /**
- * Map from CourseId → enabled flag for programmatic lookup
- */
-const COURSE_FLAGS: Record<string, boolean> = {
-  cpa: ENABLE_CPA_COURSE,
-  ea: ENABLE_EA_COURSE,
-  cma: ENABLE_CMA_COURSE,
-  cia: ENABLE_CIA_COURSE,
-  cfp: ENABLE_CFP_COURSE,
-  cisa: ENABLE_CISA_COURSE,
-};
-
-/**
- * Check if a specific course is enabled by its CourseId
+ * Check if a specific course is enabled by its CourseId.
+ * Derives the env var name automatically: 'cpa' → VITE_ENABLE_CPA_COURSE.
+ * No manual entries needed when adding new courses.
  */
 export const isCourseEnabled = (courseId: string): boolean =>
-  COURSE_FLAGS[courseId] ?? false;
+  envFlag(`VITE_ENABLE_${courseId.toUpperCase()}_COURSE`);
 
-// Log status on startup for verification
-if (import.meta.env.DEV) {
-  console.log('[FeatureFlags] Course flags:', COURSE_FLAGS);
-}
+// Legacy individual exports — used in App.tsx route guards.
+// Derived from isCourseEnabled; no manual record to maintain.
+export const ENABLE_CPA_COURSE = isCourseEnabled('cpa');
+export const ENABLE_EA_COURSE = isCourseEnabled('ea');
+export const ENABLE_CMA_COURSE = isCourseEnabled('cma');
+export const ENABLE_CIA_COURSE = isCourseEnabled('cia');
+export const ENABLE_CFP_COURSE = isCourseEnabled('cfp');
+export const ENABLE_CISA_COURSE = isCourseEnabled('cisa');

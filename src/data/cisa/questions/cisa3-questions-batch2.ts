@@ -16,12 +16,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'The PRIMARY purpose of a feasibility study for a new IT project is to:',
     options: [
-      'Develop detailed technical specifications',
       'Determine if the project is viable and worth pursuing',
       'Create the project schedule',
-      'Assign project team members'
+      'Develop detailed technical specifications',
+      'Assign project team members',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A feasibility study determines whether a project is viable from technical, operational, economic, and scheduling perspectives before committing significant resources.',
     topic: 'Project Initiation',
     subtopic: 'Feasibility Study'
@@ -35,12 +35,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'When reviewing system requirements, an IS auditor should be MOST concerned if:',
     options: [
+      'Requirements are not traceable to business needs',
       'Requirements are documented in a standard format',
       'Users were involved in requirements gathering',
-      'Requirements are not traceable to business needs',
-      'Requirements include performance criteria'
+      'Requirements include performance criteria',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Requirements that cannot be traced to business needs may result in features that do not add value. Traceability ensures all requirements support business objectives.',
     topic: 'Requirements',
     subtopic: 'Traceability'
@@ -55,11 +55,11 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     question: 'The software development life cycle (SDLC) phase where detailed design specifications are created is:',
     options: [
       'Requirements analysis',
-      'System design',
       'Implementation',
-      'Maintenance'
+      'System design',
+      'Maintenance',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'During the system design phase, detailed technical specifications including architecture, data models, and interface designs are created based on the requirements.',
     topic: 'SDLC',
     subtopic: 'Design Phase'
@@ -92,12 +92,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'The waterfall development model is MOST appropriate when:',
     options: [
-      'Requirements are likely to change frequently',
       'Requirements are well-defined and stable',
+      'Requirements are likely to change frequently',
       'Rapid prototyping is required',
-      'User involvement is limited'
+      'User involvement is limited',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Waterfall is best suited for projects with well-defined, stable requirements because changes are costly once development progresses beyond initial phases.',
     topic: 'Development Methodologies',
     subtopic: 'Waterfall'
@@ -111,12 +111,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Configuration management ensures that:',
     options: [
-      'Software is developed faster',
       'Changes to software components are controlled and tracked',
+      'Software is developed faster',
       'Developers work independently',
-      'Testing is minimized'
+      'Testing is minimized',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Configuration management provides control and tracking of changes to software components, ensuring integrity and enabling rollback if issues arise.',
     topic: 'Development Controls',
     subtopic: 'Configuration Management'
@@ -130,10 +130,10 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Source code version control is important because it:',
     options: [
-      'Speeds up compilation',
-      'Tracks changes and enables recovery of previous versions',
       'Eliminates the need for testing',
-      'Reduces storage requirements'
+      'Tracks changes and enables recovery of previous versions',
+      'Speeds up compilation',
+      'Reduces storage requirements',
     ],
     correctAnswer: 1,
     explanation: 'Version control tracks all changes to source code, identifies who made changes, and enables recovery of previous versions if needed.',
@@ -149,12 +149,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Code review is MOST effective for detecting:',
     options: [
-      'Performance issues under load',
       'Logical errors and security vulnerabilities',
+      'Performance issues under load',
       'Hardware compatibility issues',
-      'User interface problems'
+      'User interface problems',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Code review examines source code for logical errors, security vulnerabilities, coding standards violations, and potential bugs before execution.',
     topic: 'Quality Assurance',
     subtopic: 'Code Review'
@@ -168,12 +168,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Unit testing verifies:',
     options: [
-      'Integration between system components',
       'Individual modules or functions work as designed',
       'System performance under load',
-      'User acceptance of the system'
+      'Integration between system components',
+      'User acceptance of the system',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Unit testing verifies that individual modules, functions, or components work correctly in isolation before integration with other components.',
     topic: 'Testing',
     subtopic: 'Unit Testing'
@@ -187,10 +187,10 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Integration testing focuses on:',
     options: [
-      'Individual module functionality',
-      'Data flow and interfaces between components',
       'User acceptance',
-      'System performance'
+      'Data flow and interfaces between components',
+      'Individual module functionality',
+      'System performance',
     ],
     correctAnswer: 1,
     explanation: 'Integration testing verifies that components work together correctly, focusing on interfaces, data flow, and communication between integrated modules.',
@@ -207,11 +207,11 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     question: 'User acceptance testing (UAT) should be performed by:',
     options: [
       'Developers',
-      'Quality assurance team',
       'Business users',
-      'IT operations'
+      'Quality assurance team',
+      'IT operations',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'UAT should be performed by business users who verify that the system meets their requirements and is suitable for their intended use.',
     topic: 'Testing',
     subtopic: 'UAT'
@@ -225,12 +225,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Regression testing is performed to ensure that:',
     options: [
+      'Performance meets requirements',
       'New features work correctly',
       'Changes do not break existing functionality',
-      'Performance meets requirements',
-      'Security controls are effective'
+      'Security controls are effective',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Regression testing verifies that changes or fixes do not inadvertently break existing functionality that was previously working correctly.',
     topic: 'Testing',
     subtopic: 'Regression Testing'
@@ -244,12 +244,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Stress testing evaluates:',
     options: [
+      'User interface design',
       'Normal operating conditions',
       'System behavior under extreme conditions',
-      'User interface design',
-      'Data accuracy'
+      'Data accuracy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Stress testing evaluates system behavior under extreme conditions (high load, limited resources) to identify breaking points and failure modes.',
     topic: 'Testing',
     subtopic: 'Stress Testing'
@@ -301,12 +301,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Data conversion during system implementation should:',
     options: [
-      'Be performed without validation',
       'Include data cleansing and validation',
       'Only include current data',
-      'Be done after go-live'
+      'Be performed without validation',
+      'Be done after go-live',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data conversion should include cleansing and validation to ensure data quality and accuracy in the new system. Poor data migration can cause significant issues.',
     topic: 'Implementation',
     subtopic: 'Data Conversion'
@@ -320,12 +320,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Post-implementation review should assess:',
     options: [
-      'Only technical performance',
       'Whether project objectives were achieved',
       'Only budget variance',
-      'Code quality only'
+      'Only technical performance',
+      'Code quality only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Post-implementation review assesses whether project objectives were achieved, comparing actual outcomes to expected benefits and identifying lessons learned.',
     topic: 'Implementation',
     subtopic: 'Post-Implementation Review'
@@ -339,10 +339,10 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When evaluating packaged software, the MOST important criterion is:',
     options: [
-      'Lowest cost',
-      'Fit with business requirements',
       'Vendor market share',
-      'Latest technology'
+      'Fit with business requirements',
+      'Lowest cost',
+      'Latest technology',
     ],
     correctAnswer: 1,
     explanation: 'The most important criterion is how well the software fits business requirements. Even low-cost or popular solutions fail if they don\'t meet the organization\'s needs.',
@@ -358,10 +358,10 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A request for proposal (RFP) should include:',
     options: [
-      'Only technical requirements',
-      'Requirements, evaluation criteria, and contract terms',
       'Vendor names',
-      'Budget details'
+      'Requirements, evaluation criteria, and contract terms',
+      'Only technical requirements',
+      'Budget details',
     ],
     correctAnswer: 1,
     explanation: 'An RFP should include detailed requirements, evaluation criteria, timeline, and contract terms to enable vendors to provide complete proposals.',
@@ -377,12 +377,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Software escrow agreements protect the organization by:',
     options: [
-      'Reducing license costs',
       'Ensuring access to source code if vendor fails',
       'Eliminating support needs',
-      'Automating updates'
+      'Reducing license costs',
+      'Automating updates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Escrow agreements ensure the organization can access source code if the vendor goes out of business or fails to meet obligations, enabling continued maintenance.',
     topic: 'Software Acquisition',
     subtopic: 'Escrow'
@@ -396,12 +396,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Rapid application development (RAD) emphasizes:',
     options: [
+      'Minimal user involvement',
       'Extensive documentation',
       'Quick development through prototyping and iteration',
-      'Minimal user involvement',
-      'Sequential phases'
+      'Sequential phases',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'RAD emphasizes quick development through prototyping, user feedback, and rapid iteration, trading some formality for speed.',
     topic: 'Development Methodologies',
     subtopic: 'RAD'
@@ -416,11 +416,11 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     question: 'DevOps practices primarily aim to:',
     options: [
       'Eliminate testing requirements',
-      'Improve collaboration between development and operations',
       'Reduce security controls',
-      'Minimize documentation'
+      'Improve collaboration between development and operations',
+      'Minimize documentation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DevOps aims to improve collaboration between development and operations teams, enabling faster, more reliable software delivery through automation and shared responsibility.',
     topic: 'Development Methodologies',
     subtopic: 'DevOps'
@@ -453,12 +453,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Object-oriented programming provides benefits including:',
     options: [
-      'Faster compilation',
       'Code reusability through inheritance',
+      'Faster compilation',
       'Eliminated need for testing',
-      'Reduced development team size'
+      'Reduced development team size',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Object-oriented programming benefits include code reusability through inheritance, encapsulation for data protection, and modularity for maintainability.',
     topic: 'Programming Concepts',
     subtopic: 'OOP'
@@ -472,12 +472,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Input validation controls should be implemented:',
     options: [
-      'Only on the server side',
       'On both client and server sides',
+      'Only on the server side',
       'Only on the client side',
-      'Only for numeric fields'
+      'Only for numeric fields',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Input validation should occur on both client side (for user experience) and server side (for security). Client-side validation alone can be bypassed by attackers.',
     topic: 'Application Controls',
     subtopic: 'Input Validation'
@@ -491,10 +491,10 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Application programming interfaces (APIs) require:',
     options: [
-      'No security controls',
-      'Authentication and authorization controls',
       'Only internal use',
-      'Manual invocation'
+      'Authentication and authorization controls',
+      'No security controls',
+      'Manual invocation',
     ],
     correctAnswer: 1,
     explanation: 'APIs require authentication and authorization controls to ensure only authorized systems and users can access functionality and data they are permitted to use.',
@@ -510,10 +510,10 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Database normalization reduces:',
     options: [
-      'Query performance',
-      'Data redundancy',
       'Security controls',
-      'Storage costs only'
+      'Data redundancy',
+      'Query performance',
+      'Storage costs only',
     ],
     correctAnswer: 1,
     explanation: 'Database normalization reduces data redundancy by organizing data into related tables, improving data integrity and reducing storage waste.',
@@ -529,12 +529,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'The PRIMARY control for preventing SQL injection attacks is:',
     options: [
-      'Encryption of database',
       'Use of parameterized queries',
       'Network segmentation',
-      'Database replication'
+      'Encryption of database',
+      'Database replication',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Parameterized queries (prepared statements) prevent SQL injection by separating SQL code from data, ensuring user input is treated as data, not executable code.',
     topic: 'Application Security',
     subtopic: 'SQL Injection'
@@ -548,12 +548,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Web application firewalls (WAFs) protect against:',
     options: [
-      'Physical intrusion',
       'Application-layer attacks like XSS and injection',
       'Network bandwidth issues',
-      'Hardware failures'
+      'Physical intrusion',
+      'Hardware failures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'WAFs protect against application-layer attacks including cross-site scripting (XSS), SQL injection, and other web application vulnerabilities.',
     topic: 'Application Security',
     subtopic: 'WAF'
@@ -568,11 +568,11 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     question: 'System documentation should be updated:',
     options: [
       'Only during initial development',
-      'Whenever changes are made to the system',
       'Annually regardless of changes',
-      'Only by external auditors'
+      'Whenever changes are made to the system',
+      'Only by external auditors',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'System documentation should be updated whenever changes are made to ensure it accurately reflects the current system state and supports maintenance.',
     topic: 'Documentation',
     subtopic: 'Maintenance'

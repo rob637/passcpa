@@ -16,12 +16,12 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Schedule C-EZ was discontinued:',
     options: [
+      'Never existed',
       'Still in use',
-      'After tax year 2018',
       'After tax year 2010',
-      'Never existed'
+      'After tax year 2018',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Schedule C-EZ was discontinued after 2018 as part of IRS form redesign. All sole proprietors now use Schedule C.',
     reference: 'IRS Forms Update',
   },
@@ -37,11 +37,11 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     question: 'A small business with average annual gross receipts under $29 million may:',
     options: [
       'Not track inventory',
-      'Use cash method and treat inventory as non-incidental materials and supplies',
+      'Never hold inventory',
       'Use LIFO only',
-      'Never hold inventory'
+      'Use cash method and treat inventory as non-incidental materials and supplies',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Small businesses meeting the gross receipts test can use the cash method and treat inventory as non-incidental materials and supplies deductible when used or consumed.',
     reference: 'IRC §471(c)',
   },
@@ -56,12 +56,12 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     skillLevel: 'Application',
     question: 'The Uniform Capitalization Rules (UNICAP) under Section 263A require:',
     options: [
+      'Using FIFO inventory method',
+      'Expensing overhead immediately',
       'Expensing all production costs',
       'Capitalizing direct and indirect costs into inventory or self-constructed assets',
-      'Using FIFO inventory method',
-      'Expensing overhead immediately'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'UNICAP requires producers and resellers (unless exempt) to capitalize direct costs and allocable indirect costs into inventory or self-constructed property.',
     reference: 'IRC §263A',
   },
@@ -76,12 +76,12 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     skillLevel: 'Application',
     question: 'A self-employed taxpayer may deduct business vehicle expenses using:',
     options: [
+      'Neither method',
+      'Only standard mileage rate',
       'Only actual expenses',
       'Actual expense method or standard mileage rate (if chosen from vehicle\'s first year)',
-      'Only standard mileage rate',
-      'Neither method'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Business vehicle expenses can use actual expense (depreciation, gas, insurance, etc.) or standard mileage rate. Standard mileage must be chosen in first year to preserve option.',
     reference: 'Rev. Proc. 2023-34',
   },
@@ -96,12 +96,12 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The 2024 standard mileage rate for business use is:',
     options: [
+      '21 cents per mile',
+      '70 cents per mile',
       '56 cents per mile',
       '67 cents per mile',
-      '70 cents per mile',
-      '21 cents per mile'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The 2024 standard mileage rate for business use is 67 cents per mile. Medical and moving (military) is 21 cents. Charitable is 14 cents.',
     reference: 'Notice 2024-8',
   },
@@ -117,11 +117,11 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     question: 'Listed property business use must exceed what percentage to claim accelerated depreciation?',
     options: [
       '25%',
-      '50%',
       '75%',
-      '90%'
+      '90%',
+      '50%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Listed property (vehicles, computers, phones) must be used more than 50% for business to claim MACRS accelerated depreciation. Otherwise, ADS straight-line is required.',
     reference: 'IRC §280F(b)(1)',
   },
@@ -137,11 +137,11 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     question: 'The 2024 Section 179 expense deduction limit is:',
     options: [
       '$500,000',
-      '$1,220,000',
       '$2 million',
-      'Unlimited'
+      'Unlimited',
+      '$1,220,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The 2024 Section 179 limit is $1,220,000, phased out dollar-for-dollar when property placed in service exceeds $3,050,000.',
     reference: 'IRC §179',
   },
@@ -157,11 +157,11 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     question: 'For 2024, bonus depreciation for qualified property is:',
     options: [
       '100%',
-      '60%',
+      '40%',
       '80%',
-      '40%'
+      '60%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Bonus depreciation phases down: 80% for 2023, 60% for 2024, 40% for 2025, 20% for 2026, 0% after 2026 (unless extended).',
     reference: 'IRC §168(k)',
   },
@@ -176,10 +176,10 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Office furniture and equipment has a MACRS recovery period of:',
     options: [
+      '10 years',
       '3 years',
-      '5 years',
       '7 years',
-      '10 years'
+      '5 years',
     ],
     correctAnswer: 2,
     explanation: '7-year property includes office furniture, fixtures, and equipment. 5-year is for computers, vehicles, and office machinery.',
@@ -197,11 +197,11 @@ export const SEE1_QUESTIONS_BATCH25: Question[] = [
     question: 'Personal property placed in service during the year generally uses:',
     options: [
       'Full-year convention',
-      'Half-year convention',
+      'No convention',
       'Full-month convention',
-      'No convention'
+      'Half-year convention',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The half-year convention treats property as placed in service and disposed of at midyear. Mid-quarter convention applies if over 40% is placed in service in Q4.',
     reference: 'IRC §168(d)',
   },

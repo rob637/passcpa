@@ -20,11 +20,11 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     question: 'The failure to file penalty is generally:',
     options: [
       '0.5% of unpaid tax per month, up to 25%',
+      '1% per day',
       '5% of unpaid tax per month, up to 25%',
       '10% flat penalty',
-      '1% per day'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The failure to file penalty is 5% of the unpaid tax for each month or part of a month the return is late, up to a maximum of 25%. If both failure to file and failure to pay apply, the combined penalty is adjusted.',
     reference: 'IRC §6651(a)(1)',
   },
@@ -41,8 +41,8 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     options: [
       '5% of unpaid tax per month',
       '0.5% of unpaid tax per month, up to 25%',
+      '1% per year',
       '10% of total tax due',
-      '1% per year'
     ],
     correctAnswer: 1,
     explanation: 'The failure to pay penalty is 0.5% of the unpaid tax for each month or part of a month the tax remains unpaid, up to a maximum of 25%. This rate may increase to 1% if the IRS issues a levy notice.',
@@ -59,12 +59,12 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'A substantial understatement of income tax exists for individuals when the understatement exceeds the greater of:',
     options: [
-      '$1,000 or 5% of tax shown on return',
       '$5,000 or 10% of tax shown on return',
+      '$1,000 or 5% of tax shown on return',
+      '$25,000 or 50% of tax shown on return',
       '$10,000 or 20% of tax shown on return',
-      '$25,000 or 50% of tax shown on return'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'For individuals, a substantial understatement exists when the understatement exceeds the greater of $5,000 or 10% of the tax required to be shown on the return. The penalty is 20% of the understatement.',
     reference: 'IRC §6662(d)',
   },
@@ -79,12 +79,12 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The accuracy-related penalty for negligence or substantial understatement is:',
     options: [
-      '10% of the underpayment',
       '20% of the underpayment',
+      '10% of the underpayment',
+      '75% of the underpayment',
       '50% of the underpayment',
-      '75% of the underpayment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The accuracy-related penalty is 20% of the portion of the underpayment attributable to negligence, substantial understatement, or other specified causes under IRC §6662.',
     reference: 'IRC §6662(a)',
   },
@@ -97,15 +97,15 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Civil Fraud',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'The civil fraud penalty is:',
+    question: 'The IRS assesses a civil fraud penalty against a taxpayer who intentionally underreported income. What is the burden of proof required for the IRS to sustain a civil fraud penalty?',
     options: [
-      '20% of the underpayment',
-      '50% of the underpayment',
-      '75% of the underpayment',
-      '100% of the underpayment'
+      'Clear and convincing evidence',
+      'Preponderance of the evidence',
+      'Beyond a reasonable doubt',
+      'Substantial authority',
     ],
-    correctAnswer: 2,
-    explanation: 'The civil fraud penalty is 75% of the portion of the underpayment due to fraud. This penalty applies when fraud is proven by clear and convincing evidence. The fraud penalty and accuracy-related penalty cannot both apply to the same portion of an underpayment.',
+    correctAnswer: 0,
+    explanation: 'For civil fraud penalties under IRC §6663, the IRS must prove fraud by clear and convincing evidence. This is a higher standard than preponderance of the evidence (used in most civil cases) but lower than beyond a reasonable doubt (the criminal standard). The IRS must establish that the taxpayer intentionally acted to evade tax.',
     reference: 'IRC §6663',
   },
   {
@@ -119,10 +119,10 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Interest on underpayments of tax:',
     options: [
-      'Is charged at a flat 6% annually',
+      'Can be waived by the IRS at any time',
       'Is determined quarterly at the federal short-term rate plus 3%',
+      'Is charged at a flat 6% annually',
       'Is only charged if the underpayment exceeds $10,000',
-      'Can be waived by the IRS at any time'
     ],
     correctAnswer: 1,
     explanation: 'Underpayment interest is charged at the federal short-term rate plus 3 percentage points, compounded daily. The rate is determined quarterly and applies from the due date until payment.',
@@ -139,12 +139,12 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'Reasonable cause for penalty abatement may include:',
     options: [
+      'Preferring to wait until you had more money',
       'Not knowing about the tax law',
       'Serious illness, natural disaster, or death of immediate family member',
       'Being too busy to file on time',
-      'Preferring to wait until you had more money'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Reasonable cause includes circumstances beyond the taxpayer\'s control such as fire, casualty, serious illness, death of immediate family, or reliance on erroneous IRS advice. Ignorance of the law is generally not reasonable cause.',
     reference: 'IRM 20.1.1.3.2',
   },
@@ -159,12 +159,12 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'First-time penalty abatement (FTA) relief may be available if the taxpayer:',
     options: [
+      'Is over 65 years old',
       'Has never filed a tax return before',
       'Has filed timely returns and has no penalties in the prior 3 years',
       'Earned less than $50,000',
-      'Is over 65 years old'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'First-time abatement is an administrative waiver available to taxpayers who have filed (or filed valid extensions) and have no penalties for the 3 tax years prior to the year being penalized.',
     reference: 'IRM 20.1.1.3.6.1',
   },
@@ -180,11 +180,11 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     question: 'The penalty for a preparer taking an unreasonable position on a return is:',
     options: [
       '$100 per return',
+      '$10,000 per return',
       'The greater of $1,000 or 50% of income derived from the return',
       '$5,000 per return',
-      '$10,000 per return'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If an understatement of tax is due to an unreasonable position, the preparer penalty is the greater of $1,000 or 50% of the income derived by the preparer with respect to the return.',
     reference: 'IRC §6694(a)',
   },
@@ -200,11 +200,11 @@ export const SEE3_QUESTIONS_BATCH4: Question[] = [
     question: 'The penalty for a preparer\'s willful or reckless conduct is:',
     options: [
       '$1,000 per return',
+      '$10,000 flat penalty',
       '$5,000 or 50% of income derived, whichever is greater',
       '$5,000 or 75% of income derived, whichever is greater',
-      '$10,000 flat penalty'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'For willful or reckless conduct, the penalty is the greater of $5,000 or 75% of the income derived by the preparer with respect to the return. This is significantly higher than the unreasonable position penalty.',
     reference: 'IRC §6694(b)',
   },

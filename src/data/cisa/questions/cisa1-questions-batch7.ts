@@ -16,10 +16,10 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating IT general controls, the IS auditor should FIRST:',
     options: [
-      'Test access controls',
+      'Interview developers',
       'Understand the control environment and IT organization',
+      'Test access controls',
       'Review change management logs',
-      'Interview developers'
     ],
     correctAnswer: 1,
     explanation: 'Understanding the control environment provides context for evaluating specific controls.',
@@ -36,11 +36,11 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     question: 'The primary purpose of an audit trail is:',
     options: [
       'Performance monitoring',
+      'Capacity planning',
       'Providing evidence of transactions and user activities',
       'Backup recovery',
-      'Capacity planning'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Audit trails provide evidence of transactions and user activities for accountability and investigation.',
     topic: 'Audit Evidence',
     subtopic: 'Audit Trail Purpose'
@@ -54,12 +54,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Negative assurance in attestation means:',
     options: [
+      'Testing was not performed',
       'Issues were found',
       'Nothing came to attention indicating material misstatement',
       'Complete accuracy verified',
-      'Testing was not performed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Negative assurance indicates nothing came to attention suggesting material issues, based on limited procedures.',
     topic: 'Audit Reporting',
     subtopic: 'Negative Assurance'
@@ -73,12 +73,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit evidence sufficiency refers to:',
     options: [
+      'Source of evidence',
       'Quality of evidence',
       'Quantity of evidence needed to support conclusions',
       'Type of evidence',
-      'Source of evidence'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Sufficiency refers to the quantity of evidence needed to adequately support audit conclusions.',
     topic: 'Audit Evidence',
     subtopic: 'Sufficiency'
@@ -94,8 +94,8 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     options: [
       'No review is needed',
       'The auditor must evaluate competence and objectivity',
+      'No documentation required',
       'The work is automatically accepted',
-      'No documentation required'
     ],
     correctAnswer: 1,
     explanation: 'Using others\' work requires evaluation of their competence, objectivity, and work quality.',
@@ -113,8 +113,8 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Only satisfy management',
       'Gather feedback to improve audit quality',
+      'Document findings',
       'Reduce future audits',
-      'Document findings'
     ],
     correctAnswer: 1,
     explanation: 'Post-audit surveys gather stakeholder feedback to improve audit effectiveness and relationships.',
@@ -130,12 +130,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Inherent limitations of IT auditing include:',
     options: [
-      'Perfect assurance',
       'Sampling risk and reliance on management representations',
+      'Unlimited resources',
+      'Perfect assurance',
       'Complete automation',
-      'Unlimited resources'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Inherent limitations include sampling risk, judgment, management representations, and control circumvention.',
     topic: 'Audit Conduct',
     subtopic: 'Limitations'
@@ -151,8 +151,8 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Speed only',
       'Efficiency while maintaining quality and coverage',
+      'Fewer audits',
       'Cost reduction only',
-      'Fewer audits'
     ],
     correctAnswer: 1,
     explanation: 'Optimization balances efficiency improvements with maintaining audit quality and coverage.',
@@ -168,10 +168,10 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Coordination between internal and external audit:',
     options: [
-      'Is prohibited',
+      'Is required',
       'Can improve efficiency and coverage while avoiding duplication',
+      'Is prohibited',
       'Compromises independence',
-      'Is required'
     ],
     correctAnswer: 1,
     explanation: 'Coordination can improve efficiency and coverage while avoiding unnecessary duplication of effort.',
@@ -187,12 +187,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit technology enablement should consider:',
     options: [
-      'Latest technology only',
       'Business case, capabilities, and integration with audit processes',
+      'Vendor marketing',
+      'Latest technology only',
       'Cost only',
-      'Vendor marketing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Technology enablement requires business case analysis, capability assessment, and process integration.',
     topic: 'Audit Tools',
     subtopic: 'Technology Enablement'
@@ -206,12 +206,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Risk-based audit planning allocates resources based on:',
     options: [
-      'Available time',
       'Risk levels of audit areas',
+      'Previous audit schedules',
+      'Available time',
       'Management preferences',
-      'Previous audit schedules'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Risk-based planning allocates audit resources proportionally to assessed risk levels.',
     topic: 'Audit Planning',
     subtopic: 'Risk-Based Planning'
@@ -226,11 +226,11 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     question: 'Audit standardization benefits include:',
     options: [
       'Reduced flexibility',
+      'Fewer resources',
       'Consistency, efficiency, and quality assurance',
       'Less documentation',
-      'Fewer resources'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Standardization provides consistency, efficiency gains, and quality assurance across audits.',
     topic: 'Audit Methodology',
     subtopic: 'Standardization'
@@ -245,11 +245,11 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     question: 'Emerging risk identification for audit planning uses:',
     options: [
       'Only historical data',
+      'Only regulatory guidance',
       'Multiple sources including threat intelligence and industry trends',
       'Only management input',
-      'Only regulatory guidance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Emerging risk identification uses multiple sources including threat intelligence, trends, and expert input.',
     topic: 'Risk Assessment',
     subtopic: 'Emerging Risks'
@@ -263,12 +263,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Audit report executive summary should include:',
     options: [
-      'All technical details',
       'Key findings, risks, and recommendations at appropriate level',
+      'All technical details',
+      'Only methodology',
       'Only positive results',
-      'Only methodology'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Executive summaries provide key findings, risks, and recommendations at a level appropriate for executives.',
     topic: 'Audit Reporting',
     subtopic: 'Executive Summary'
@@ -282,12 +282,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Engagement letters for audits should specify:',
     options: [
-      'Only start date',
       'Scope, objectives, responsibilities, and timeline',
+      'Only start date',
+      'Only deliverables',
       'Only audit team',
-      'Only deliverables'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Engagement letters should specify scope, objectives, responsibilities, timeline, and deliverables.',
     topic: 'Audit Planning',
     subtopic: 'Engagement Letter'
@@ -303,8 +303,8 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     options: [
       'Management goals',
       'Criteria against which controls are evaluated',
+      'Audit findings',
       'Test procedures',
-      'Audit findings'
     ],
     correctAnswer: 1,
     explanation: 'Control objectives are the criteria against which the adequacy of controls is evaluated.',
@@ -320,10 +320,10 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Application',
     question: 'Audit notification to auditees should be:',
     options: [
-      'As short as possible',
+      'After audit begins',
       'Timely with sufficient information for preparation',
+      'As short as possible',
       'Same day as audit',
-      'After audit begins'
     ],
     correctAnswer: 1,
     explanation: 'Notification should be timely, providing sufficient information for auditee preparation.',
@@ -339,12 +339,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Status reporting during audits should communicate:',
     options: [
-      'Only positive news',
       'Progress, issues, and any scope or timeline changes',
+      'Only findings',
+      'Only positive news',
       'Only final results',
-      'Only findings'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Status reports should communicate progress, issues encountered, and any changes to scope or timeline.',
     topic: 'Audit Communication',
     subtopic: 'Status Reporting'
@@ -358,12 +358,12 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit evidence reliability hierarchy from most to least reliable:',
     options: [
-      'Inquiry, observation, inspection',
       'External confirmation, inspection, observation, inquiry',
+      'Inquiry, inspection, confirmation',
+      'Inquiry, observation, inspection',
       'Observation, inquiry, inspection',
-      'Inquiry, inspection, confirmation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Generally: external confirmation > inspection > observation > inquiry, though context matters.',
     topic: 'Audit Evidence',
     subtopic: 'Reliability Hierarchy'
@@ -377,10 +377,10 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Surprise audit techniques are appropriate when:',
     options: [
-      'Management requests',
+      'For all audits',
       'Fraud indicators exist or controls rely on unexpected testing',
+      'Management requests',
       'Resources allow',
-      'For all audits'
     ],
     correctAnswer: 1,
     explanation: 'Surprise techniques are appropriate when fraud is suspected or controls depend on unpredictable testing.',

@@ -62,11 +62,11 @@ describe('cisaExamSimulator.ts', () => {
 
     it('should have correct domain distribution (question counts)', () => {
       const distribution = CISA_EXAM_CONFIG.domainDistribution;
-      expect(distribution.CISA1).toBe(27); // 18% of 150
-      expect(distribution.CISA2).toBe(27); // 18% of 150
-      expect(distribution.CISA3).toBe(18); // 12% of 150
-      expect(distribution.CISA4).toBe(39); // 26% of 150
-      expect(distribution.CISA5).toBe(39); // 26% of 150
+      expect(distribution.CISA1).toBe(32); // 21% of 150
+      expect(distribution.CISA2).toBe(24); // 16% of 150
+      expect(distribution.CISA3).toBe(27); // 18% of 150
+      expect(distribution.CISA4).toBe(30); // 20% of 150
+      expect(distribution.CISA5).toBe(37); // 25% of 150
     });
 
     it('should have domain question counts summing to 150', () => {

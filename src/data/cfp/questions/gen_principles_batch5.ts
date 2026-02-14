@@ -19,12 +19,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The front-end housing ratio (housing expense ratio) should generally not exceed:',
     options: [
-      'A) 20% of gross income',
       'B) 28% of gross income',
+      'D) 50% of gross income',
+      'A) 20% of gross income',
       'C) 36% of gross income',
-      'D) 50% of gross income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The front-end ratio (PITI ÷ gross income) typically should not exceed 28% by conventional lending standards. This measures the portion of income dedicated to housing costs only. The back-end ratio (36% guideline) includes all debt payments. These are guidelines—actual approval depends on creditworthiness and compensating factors.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'For a single-income household in a volatile industry, the recommended emergency fund is:',
     options: [
+      'D) No emergency fund is needed with adequate insurance',
       'A) 1-2 months of expenses',
       'B) 3-6 months of expenses',
       'C) 6-12 months of expenses',
-      'D) No emergency fund is needed with adequate insurance'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Single-income households and those in volatile industries (cyclical, commission-based, or unstable employment) need larger emergency reserves—typically 6-12 months of expenses. The 3-6 month guideline applies to dual-income, stable-employment households. Individual circumstances determine the appropriate level.'
   },
   {
@@ -58,11 +58,11 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     question: 'A client with $250,000 in assets and $75,000 in debt has a debt-to-asset ratio of:',
     options: [
       'A) 0.23 or 23%',
+      'D) 3.33 or 333%',
       'B) 0.30 or 30%',
       'C) 0.33 or 33%',
-      'D) 3.33 or 333%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Debt-to-asset ratio = Total debt ÷ Total assets = $75,000 ÷ $250,000 = 0.30 or 30%. This indicates 30% of assets are financed by debt for a net worth of $175,000. Lower ratios indicate less financial risk. Young households often have higher ratios that decrease as they accumulate wealth.'
   },
   // GEN-2: Advanced Time Value of Money
@@ -79,10 +79,10 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     options: [
       'A) 11%',
       'B) 8%',
+      'D) 3%',
       'C) 5%',
-      'D) 3%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The real rate of return = Nominal rate - Inflation rate ≈ 8% - 3% = 5% (simplified). The exact formula is (1 + nominal)/(1 + inflation) - 1 = 1.08/1.03 - 1 = 4.85%. Real returns represent purchasing power growth. Financial planning projections should consider real returns for goal attainment.'
   },
   {
@@ -96,12 +96,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Serial payments in financial planning are:',
     options: [
-      'A) Payments that decrease over time',
       'B) Payments that increase at a constant rate, typically to keep pace with inflation',
+      'A) Payments that decrease over time',
+      'D) Random variable payments',
       'C) Fixed payments like a mortgage',
-      'D) Random variable payments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Serial payments are annuities that increase at a constant rate (often inflation) each period. Unlike level payments, they maintain purchasing power over time. The PV/FV calculations are more complex. Common in retirement planning where withdrawals may increase 2-3% annually to match inflation.'
   },
   {
@@ -115,12 +115,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A project with a Net Present Value (NPV) of $50,000 should be:',
     options: [
-      'A) Rejected because positive NPV indicates loss',
       'B) Accepted because positive NPV indicates value creation above the required return',
+      'A) Rejected because positive NPV indicates loss',
+      'D) Rejected if IRR exceeds the discount rate',
       'C) Considered neutral',
-      'D) Rejected if IRR exceeds the discount rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Positive NPV indicates the project generates returns exceeding the discount rate (required return), creating value. Accept if NPV > 0; reject if NPV < 0. NPV = 0 is break-even. NPV is generally preferred over IRR because it assumes reinvestment at the discount rate rather than the IRR itself.'
   },
   // GEN-3: Advanced Education Planning
@@ -135,10 +135,10 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'ABLE (Achieving a Better Life Experience) accounts:',
     options: [
-      'A) Are available to anyone regardless of disability status',
+      'D) Replace all other disability benefits',
       'B) Provide tax-advantaged savings for individuals with disabilities that began before age 26',
+      'A) Are available to anyone regardless of disability status',
       'C) Have no contribution limits',
-      'D) Replace all other disability benefits'
     ],
     correctAnswer: 1,
     explanation: 'ABLE accounts allow tax-free growth and withdrawals for qualified disability expenses for individuals whose disability onset was before age 26. Annual contributions are limited (currently $18,000, with additional amounts for working beneficiaries). Balances up to $100,000 are disregarded for SSI eligibility.'
@@ -154,10 +154,10 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Prepaid tuition 529 plans differ from savings 529 plans in that prepaid plans:',
     options: [
-      'A) Can be used for any college expense',
+      'D) Are available in all states',
       'B) Lock in today\'s tuition rates at specific institutions or state systems',
+      'A) Can be used for any college expense',
       'C) Have unlimited investment options',
-      'D) Are available in all states'
     ],
     correctAnswer: 1,
     explanation: 'Prepaid plans purchase future tuition at today\'s prices at specific colleges or state systems, hedging against tuition inflation. Savings plans offer investment options for any qualified education expense at any institution. Prepaid plans have residency and institution restrictions; fewer states offer them now.'
@@ -173,12 +173,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'If a 529 beneficiary receives a scholarship, the account owner may:',
     options: [
+      'D) Transfer all funds to a new beneficiary only',
       'A) Not withdraw funds at all',
       'B) Withdraw an amount equal to the scholarship penalty-free (though earnings are still taxable)',
       'C) Keep all funds tax-free regardless of use',
-      'D) Transfer all funds to a new beneficiary only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Scholarships create an exception to the 10% penalty on non-qualified withdrawals. An amount equal to the scholarship can be withdrawn without penalty (but earnings remain taxable). This prevents penalties when legitimate scholarships reduce education costs. Documentation of the scholarship is required.'
   },
   // GEN-4: Financial Planning Process
@@ -193,12 +193,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Ongoing monitoring in financial planning should include:',
     options: [
-      'A) Annual review only',
       'B) Regular reviews and updates based on life changes, market events, and progress toward goals',
+      'D) No monitoring once the plan is implemented',
+      'A) Annual review only',
       'C) Review only when the client requests',
-      'D) No monitoring once the plan is implemented'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Monitoring is the final ongoing step in the financial planning process. It includes tracking progress, reviewing assumptions, adjusting for life changes (job, family, health), responding to market/tax law changes, and rebalancing as needed. Regular scheduled reviews plus ad-hoc updates maintain plan relevance.'
   },
   {
@@ -213,11 +213,11 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     question: 'Implementation responsibility in financial planning rests with:',
     options: [
       'A) Only the CFP® professional',
+      'D) The financial planning software',
       'B) Only the client',
       'C) Both the client and CFP® professional, with responsibilities defined in the engagement',
-      'D) The financial planning software'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Implementation requires action from both parties. The CFP® professional may place trades, coordinate with other professionals, and provide guidance. The client must take their assigned actions (sign documents, change beneficiaries, etc.). The engagement defines who does what. Non-implementation undermines planning value.'
   },
   // GEN-1: More Financial Analysis
@@ -233,11 +233,11 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     question: 'A client with positive net worth but negative monthly cash flow:',
     options: [
       'A) Has excellent financial health',
+      'D) Has a sustainable financial situation',
       'B) May be depleting assets or accumulating debt to fund spending',
       'C) Should immediately increase retirement contributions',
-      'D) Has a sustainable financial situation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Negative cash flow means expenses exceed income, funded by withdrawing from assets or adding debt. This erodes net worth over time. While temporarily acceptable (during education, retirement drawdown phase), chronic negative cash flow is unsustainable. Identifying the cause and adjusting spending or income is essential.'
   },
   {
@@ -251,12 +251,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The investment assets to gross income ratio measures:',
     options: [
+      'D) Insurance adequacy',
       'A) How much debt the client has',
       'B) Progress toward financial independence by comparing investment assets to income',
       'C) Housing affordability',
-      'D) Insurance adequacy'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Investment assets ÷ gross income shows progress toward financial independence. Higher ratios indicate greater capacity to sustain lifestyle from investments. Target ratios increase with age—young workers might have 0.5×, while those near retirement need 10-15× or more income in investments. It\'s a quick wealth accumulation check.'
   },
   // GEN-2: More TVM
@@ -271,12 +271,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Compared to an ordinary annuity, an annuity due with the same payment, rate, and periods has:',
     options: [
-      'A) The same present value',
       'B) A lower present value',
+      'A) The same present value',
+      'D) No time value of money impact',
       'C) A higher present value because payments occur at the beginning of each period',
-      'D) No time value of money impact'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Annuity due payments occur at the start of each period (like rent), while ordinary annuity payments occur at period end. Beginning-of-period payments are received/paid one period earlier, making annuity due worth more (higher PV, higher FV) by a factor of (1 + r). Many retirement contributions are annuity due.'
   },
   {
@@ -292,8 +292,8 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     options: [
       'A) Principal reduction',
       'B) Interest, with principal paydown accelerating over time',
+      'D) Equal amounts of principal and interest',
       'C) Escrow only',
-      'D) Equal amounts of principal and interest'
     ],
     correctAnswer: 1,
     explanation: 'Amortization front-loads interest because interest is calculated on outstanding balance. Early payments are mostly interest. As principal decreases, more of each payment goes to principal. This is why extra principal payments early are so effective—they reduce the balance that interest is calculated on for the life of the loan.'
@@ -310,10 +310,10 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'For financial aid purposes, assets held in the student\'s name are assessed at:',
     options: [
-      'A) 0% for EFC calculation',
+      'D) 100% of value',
       'B) A higher rate than parent assets, typically 20% vs. about 5.64%',
+      'A) 0% for EFC calculation',
       'C) The same rate as parent assets',
-      'D) 100% of value'
     ],
     correctAnswer: 1,
     explanation: 'EFC (Expected Family Contribution) counts 20% of student assets annually but only about 5.64% of parent assets above an asset protection allowance. This makes parent-owned accounts and 529s (counted as parent assets) more favorable for financial aid than accounts in the student\'s name (UGMA/UTMA).'
@@ -329,12 +329,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The American Opportunity Credit and 529 tax-free distributions:',
     options: [
-      'A) Can be claimed on the same expenses without coordination',
       'B) Cannot be used for the same qualified expenses; planning should allocate expenses appropriately',
+      'D) Are available only for graduate school',
+      'A) Can be claimed on the same expenses without coordination',
       'C) Are mutually exclusive—only one or the other can be used',
-      'D) Are available only for graduate school'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The same expense cannot qualify for both a credit and tax-free 529 distribution. Strategy: Use 529 for expenses that don\'t qualify for credits (room/board, supplies not required), and pay tuition/books with non-529 funds to claim AOTC. This maximizes overall tax benefit. Coordination is essential.'
   },
   // GEN-4: More Planning
@@ -349,12 +349,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Scenario analysis in financial planning involves:',
     options: [
-      'A) Testing only the most likely outcome',
       'B) Modeling multiple possible futures (best case, worst case, expected) to understand range of outcomes',
+      'D) Assuming constant returns and inflation',
+      'A) Testing only the most likely outcome',
       'C) Using only historical data',
-      'D) Assuming constant returns and inflation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Scenario analysis tests financial plans against multiple possible futures—varying returns, inflation, lifespan, health events, market crashes. It reveals vulnerabilities and helps clients understand that plans aren\'t predictions. Common scenarios: early retirement, market crash at retirement, longevity, disability.'
   },
   {
@@ -369,11 +369,11 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     question: 'When planning for a child with disabilities, a Special Needs Trust is important because:',
     options: [
       'A) It reduces income taxes on investment gains',
+      'D) It is required by Social Security',
       'B) It provides for the child without jeopardizing public benefits eligibility',
       'C) It eliminates the need for ongoing financial planning',
-      'D) It is required by Social Security'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Special Needs Trusts (SNTs) hold assets for beneficiaries with disabilities without counting toward resource limits for SSI, Medicaid, and other means-tested benefits. First-party SNTs hold the beneficiary\'s own assets; third-party SNTs hold others\' gifts/inheritance. Proper drafting is essential for benefit preservation.'
   },
   {
@@ -388,11 +388,11 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     question: 'A CFP® professional working with other advisors (CPA, attorney) should:',
     options: [
       'A) Avoid communication to maintain confidentiality',
+      'D) Only communicate after the plan is complete',
       'B) Coordinate with written client authorization, ensuring integrated advice across disciplines',
       'C) Override other professionals\' recommendations',
-      'D) Only communicate after the plan is complete'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Effective financial planning often requires a team approach. With client authorization, the CFP® professional should coordinate with CPAs (tax), attorneys (legal documents), insurance agents, and others to ensure consistent advice. Clear communication prevents conflicts and ensures recommendations work together across disciplines.'
   },
   // Additional Topics
@@ -407,12 +407,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'On a personal balance sheet, assets are typically listed in order of:',
     options: [
+      'D) Date of acquisition',
       'A) Alphabetical',
       'B) Liquidity (most liquid first)',
       'C) Size (largest first)',
-      'D) Date of acquisition'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Personal balance sheets list assets by liquidity: cash and cash equivalents first, then marketable securities, retirement accounts, real estate, and personal use assets. This shows financial flexibility and emergency fund adequacy at a glance. Liabilities are typically listed by due date, short-term first.'
   },
   {
@@ -426,12 +426,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Yield to Maturity (YTM) represents:',
     options: [
+      'D) Last year\'s actual return',
       'A) The current yield only',
       'B) The total return anticipated if a bond is held to maturity, assuming reinvestment at YTM',
       'C) The coupon rate of the bond',
-      'D) Last year\'s actual return'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'YTM is the internal rate of return of a bond held to maturity, considering purchase price, coupon payments, and principal return. It assumes coupons are reinvested at the YTM rate. YTM differs from current yield (annual coupon ÷ price) and coupon rate (annual coupon ÷ face value).'
   },
   {
@@ -447,8 +447,8 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     options: [
       'A) Post-secondary education only',
       'B) Up to $10,000 per year for K-12 tuition in addition to college expenses',
+      'D) K-12 expenses in certain states only',
       'C) Unlimited K-12 expenses',
-      'D) K-12 expenses in certain states only'
     ],
     correctAnswer: 1,
     explanation: 'The Tax Cuts and Jobs Act expanded 529 use to include up to $10,000 per year per beneficiary for K-12 tuition (private, public, or religious schools). This is federal law; some states don\'t conform and may recapture deductions or tax earnings on K-12 use. Room, board, and supplies remain college-only qualified expenses.'
@@ -466,8 +466,8 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     options: [
       'A) Promise all goals can be achieved',
       'B) Help the client prioritize goals and model trade-offs between competing objectives',
+      'D) Recommend the client find more income',
       'C) Focus only on retirement and ignore other goals',
-      'D) Recommend the client find more income'
     ],
     correctAnswer: 1,
     explanation: 'Limited resources require prioritization. The CFP® professional helps clients understand trade-offs: earlier retirement vs. more spending, college funding vs. retirement, etc. Modeling alternatives shows consequences of choices. Clients make informed decisions; the planner doesn\'t impose values but ensures understanding.'
@@ -483,12 +483,12 @@ export const CFP_GEN_BATCH5_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client is considered financially independent when:',
     options: [
-      'A) They have no debt',
       'B) Investment income and assets can sustain lifestyle without employment income',
+      'A) They have no debt',
+      'D) They receive an inheritance',
       'C) They reach age 65',
-      'D) They receive an inheritance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Financial independence (FI) means the client could maintain their lifestyle from investments without employment. FI doesn\'t necessarily mean retirement—many continue working by choice. Key metrics: investment assets relative to spending, sustainable withdrawal rates. The FIRE movement focuses on achieving FI early.'
   }
 ];

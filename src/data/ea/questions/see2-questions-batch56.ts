@@ -24,12 +24,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'When a partner contributes property to a partnership in exchange for a partnership interest, the partner generally recognizes:',
     options: [
-      'Gain equal to FMV minus adjusted basis',
       'No gain or loss',
+      'Gain equal to FMV minus adjusted basis',
       'Gain only if the FMV exceeds twice the basis',
-      'Loss only if the basis exceeds FMV'
+      'Loss only if the basis exceeds FMV',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under §721, no gain or loss is generally recognized on contribution of property to a partnership in exchange for a partnership interest. The partnership takes the contributor\'s basis (carryover basis) and the partner\'s basis in the partnership interest equals the property basis.',
     reference: 'IRC §721'
   },
@@ -44,12 +44,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'Partner A contributes property with a basis of $20,000 and FMV of $100,000, subject to a mortgage of $70,000, to a 50% partnership. What is A\'s gain recognized?',
     options: [
+      '$35,000',
       '$0',
       '$15,000',
-      '$35,000',
-      '$50,000'
+      '$50,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A is relieved of $70,000 debt but assumes 50% of partnership debt = $35,000. Net debt relief = $70,000 - $35,000 = $35,000. A\'s basis = $20,000 (property) - $35,000 (net debt relief) = negative $15,000, so A recognizes $15,000 gain (basis cannot go below zero). Gain is recognized when net debt relief exceeds the contributing partner\'s basis in the contributed property.',
     reference: 'IRC §721, §752'
   },
@@ -65,11 +65,11 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     question: 'A partner who receives a partnership capital interest in exchange for services recognizes:',
     options: [
       'No income under §721',
-      'Ordinary income equal to the FMV of the interest received',
       'Capital gain equal to the FMV of the interest received',
-      'Income only when the interest is sold'
+      'Ordinary income equal to the FMV of the interest received',
+      'Income only when the interest is sold',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Section 721 does not apply to services. A partner receiving a capital interest (immediate liquidation value) for services must recognize ordinary income equal to the FMV of the interest. If only a profits interest is received (no immediate value), generally no income is recognized under Rev. Proc. 93-27.',
     reference: 'IRC §721, Rev. Proc. 93-27'
   },
@@ -85,9 +85,9 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     question: 'A partner\'s outside basis is increased by all of the following EXCEPT:',
     options: [
       'Distributive share of partnership income',
-      'Additional capital contributions',
       'Increase in partner\'s share of partnership debt',
-      'Distributions received from the partnership'
+      'Additional capital contributions',
+      'Distributions received from the partnership',
     ],
     correctAnswer: 3,
     explanation: 'Outside basis is increased by income, contributions, and debt increases. Distributions DECREASE basis. The order is: (1) increase for income, (2) decrease for distributions, (3) decrease for losses. This ensures losses don\'t create negative basis.',
@@ -104,12 +104,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'A partner\'s share of tax-exempt income earned by the partnership:',
     options: [
-      'Is excluded from basis calculations entirely',
       'Increases the partner\'s outside basis',
       'Decreases the partner\'s outside basis',
-      'Has no effect on basis but is reported on Schedule K-1'
+      'Is excluded from basis calculations entirely',
+      'Has no effect on basis but is reported on Schedule K-1',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Tax-exempt income increases the partner\'s outside basis even though it\'s not taxable. This prevents the exempt income from being taxed when the partner sells their interest or receives distributions. Non-deductible expenses correspondingly decrease basis.',
     reference: 'IRC §705(a)(1)(B)'
   },
@@ -124,12 +124,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'Special allocations of partnership items must have:',
     options: [
-      'Approval from all partners',
       'Substantial economic effect',
       'IRS pre-approval',
-      'Equal allocation among all partners'
+      'Approval from all partners',
+      'Equal allocation among all partners',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under §704(b), allocations must have substantial economic effect. "Economic effect" means the allocation actually affects the dollar amount of each partner\'s share. "Substantial" means there is a reasonable possibility the allocation will substantially affect amounts received by partners independent of tax consequences.',
     reference: 'IRC §704(b)'
   },
@@ -184,12 +184,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a partner sells their partnership interest, gain attributable to "hot assets" (unrealized receivables and inventory) is treated as:',
     options: [
-      'Capital gain',
       'Ordinary income',
+      'Capital gain',
       'Section 1231 gain',
-      'Tax-exempt income'
+      'Tax-exempt income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under §751(a), gain attributable to "hot assets" (unrealized receivables and substantially appreciated inventory) is ordinary income, regardless of how long the partner held the interest. The remaining gain/loss is capital. This prevents conversion of ordinary income to capital gain.',
     reference: 'IRC §751(a)'
   },
@@ -202,16 +202,16 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     subtopic: 'General Partners',
     difficulty: 'medium',
     skillLevel: 'Remembering',
-    question: 'A general partner\'s distributive share of partnership ordinary income is:',
+    question: 'Partner Hayes is a general partner in a consulting firm and received a $50,000 guaranteed payment for services plus a $25,000 distributive share of partnership ordinary income. Hayes is also a limited partner in a separate real estate partnership and received a $15,000 distributive share. What is Hayes\' total net earnings from self-employment?',
     options: [
-      'Subject to self-employment tax',
-      'Exempt from self-employment tax',
-      'Subject to SE tax only if the partner works in the business',
-      'Subject to SE tax only if over $400'
+      '$75,000',
+      '$90,000',
+      '$50,000',
+      '$65,000',
     ],
     correctAnswer: 0,
-    explanation: 'A general partner\'s distributive share of ordinary income (not investment income) is subject to self-employment tax, regardless of the partner\'s level of involvement. Limited partners generally owe SE tax only on guaranteed payments for services (not their distributive share).',
-    reference: 'IRC §1402(a)'
+    explanation: 'For self-employment tax, general partners include both guaranteed payments and their distributive share of trade or business income. Hayes includes $50,000 + $25,000 = $75,000 from the consulting firm. Limited partners are generally not subject to SE tax on distributive shares, so the $15,000 from the real estate partnership is excluded. Only guaranteed payments to limited partners would be subject to SE tax.',
+    reference: 'IRC §1402(a)',
   },
   {
     id: 'see2-part-011',
@@ -222,16 +222,16 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     subtopic: 'Treatment',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Guaranteed payments to a partner are:',
+    question: 'Partner Martinez receives a guaranteed payment of $85,000 from a partnership that had a net loss of $30,000 before considering the guaranteed payment. What is the tax treatment of this guaranteed payment to Martinez?',
     options: [
-      'Deductible by the partnership and ordinary income to the partner',
-      'Not deductible by the partnership but capital gain to the partner',
-      'Deductible by the partnership and tax-exempt to the partner',
-      'Treated as distributions reducing basis'
+      'The guaranteed payment is fully taxable as ordinary income subject to self-employment tax',
+      'The payment is limited to partnership income of $0 and therefore not taxable',
+      'Only $55,000 is taxable because $30,000 offsets the partnership loss',
+      'The guaranteed payment is treated as a return of capital until basis is exhausted',
     ],
     correctAnswer: 0,
-    explanation: 'Guaranteed payments are deductible by the partnership in computing ordinary income and are ordinary income to the receiving partner. They are determined without regard to partnership income - paid regardless of profit/loss. They are subject to self-employment tax.',
-    reference: 'IRC §707(c)'
+    explanation: 'Under IRC §707(c), guaranteed payments are taxable to the receiving partner regardless of whether the partnership has sufficient income. They are treated as made to a non-partner for services, meaning Martinez must report the full $85,000 as ordinary income subject to self-employment tax. The partnership loss does not reduce the guaranteed payment amount.',
+    reference: 'IRC §707(c)',
   },
   {
     id: 'see2-part-012',
@@ -245,11 +245,11 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     question: 'Partnerships file their returns on:',
     options: [
       'Form 1040, Schedule C',
-      'Form 1065',
       'Form 1120',
-      'Form 1120-S'
+      'Form 1065',
+      'Form 1120-S',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Partnerships file Form 1065 (U.S. Return of Partnership Income). This is an information return - the partnership itself does not pay income tax. Individual allocations are reported on Schedule K-1 to each partner, who reports on their individual returns.',
     reference: 'IRC §6031'
   },
@@ -264,12 +264,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Remembering',
     question: 'Form 1065 is due on:',
     options: [
+      'September 15',
       'March 15 (or the 15th day of the 3rd month after year-end)',
       'April 15',
-      'September 15',
-      'The last day of the 4th month after year-end'
+      'The last day of the 4th month after year-end',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Form 1065 is due March 15 for calendar-year partnerships (15th day of the 3rd month after fiscal year-end). A 6-month extension to September 15 is available via Form 7004. Late filing results in a penalty of $235 per partner per month (2024).',
     reference: 'IRC §6072(b)'
   },
@@ -284,12 +284,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'Recourse debt of a partnership is allocated to:',
     options: [
-      'All partners based on profit-sharing ratios',
       'Partners who bear the economic risk of loss',
       'Only general partners equally',
-      'Only the managing partner'
+      'All partners based on profit-sharing ratios',
+      'Only the managing partner',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Partnership recourse debt is allocated to partners who bear the economic risk of loss - those who would be obligated to pay the creditor if the partnership cannot. For general partnerships, this usually follows profit/loss ratios. For LPs, limited partners have no recourse debt allocation.',
     reference: 'Treas. Reg. §1.752-2'
   },
@@ -304,12 +304,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'Nonrecourse debt of a partnership is generally allocated:',
     options: [
-      'Only to general partners',
-      'Only to the partner who contributed the encumbered property',
       'To all partners based on their share of profits',
-      'Equally among all partners'
+      'Only to the partner who contributed the encumbered property',
+      'Only to general partners',
+      'Equally among all partners',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Nonrecourse debt (where no partner has personal liability) is generally allocated in three tiers: (1) partnership minimum gain, (2) §704(c) minimum gain, (3) based on the partners\' share of profits. All partners (including limited partners) can be allocated nonrecourse debt.',
     reference: 'Treas. Reg. §1.752-3'
   },
@@ -324,10 +324,10 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'A §754 election provides for a basis adjustment to partnership assets when:',
     options: [
-      'Any partner contributes additional capital',
-      'A partner dies or sells their interest (§743(b)) or property is distributed (§734(b))',
       'The partnership files its annual return',
-      'Only when all partners agree unanimously'
+      'A partner dies or sells their interest (§743(b)) or property is distributed (§734(b))',
+      'Any partner contributes additional capital',
+      'Only when all partners agree unanimously',
     ],
     correctAnswer: 1,
     explanation: 'A §754 election allows adjustment to the inside basis of partnership assets upon: (1) transfer of a partnership interest (sale/death) under §743(b), or (2) certain distributions under §734(b). This aligns the inside and outside basis to prevent inequities.',
@@ -344,12 +344,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Remembering',
     question: 'Under current law (post-TCJA), a partnership terminates for tax purposes only when:',
     options: [
-      '50% or more of interests change hands within 12 months',
       'All operations cease and no business is conducted',
+      '50% or more of interests change hands within 12 months',
       'A majority of partners vote to dissolve',
-      'Any partner withdraws from the partnership'
+      'Any partner withdraws from the partnership',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The TCJA (2017) repealed technical terminations. Now, a partnership terminates for tax purposes only when no part of its business continues to be carried on by any partner. The old 50%-ownership-change rule no longer applies.',
     reference: 'IRC §708(b)(1)'
   },
@@ -364,12 +364,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'The correct order of loss limitation rules applied to partnership losses is:',
     options: [
-      'At-risk, basis, passive activity, excess business loss',
       'Basis, at-risk, passive activity, excess business loss',
+      'At-risk, basis, passive activity, excess business loss',
       'Passive activity, basis, at-risk, excess business loss',
-      'Basis, passive activity, at-risk, excess business loss'
+      'Basis, passive activity, at-risk, excess business loss',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Partnership losses are limited in this order: (1) basis limitation (§704(d)), (2) at-risk limitation (§465), (3) passive activity limitation (§469), (4) excess business loss limitation (§461(l)). A loss must pass each hurdle before being deductible.',
     reference: 'IRC §704(d), §465, §469, §461(l)'
   },
@@ -385,11 +385,11 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     question: 'In a family partnership where capital is a material income-producing factor:',
     options: [
       'The donee partner is not recognized for tax purposes',
-      'The donor must be allocated reasonable compensation before allocating income to donee',
       'Income is always split equally',
-      'The donee cannot receive more than 50% of income'
+      'The donor must be allocated reasonable compensation before allocating income to donee',
+      'The donee cannot receive more than 50% of income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under §704(e), in family partnerships where capital is a material factor, the donor-partner must receive reasonable compensation for services before allocating remaining income. The donee\'s share cannot be proportionally greater than the donor\'s share attributable to capital.',
     reference: 'IRC §704(e)'
   },
@@ -429,12 +429,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'Under §351, no gain or loss is recognized on transfer of property to a corporation if:',
     options: [
-      'The transferor receives stock and controls the corporation immediately after transfer',
+      'Only one person makes the transfer',
       'The transferor receives any corporate interest',
       'The corporation is newly formed',
-      'Only one person makes the transfer'
+      'The transferor receives stock and controls the corporation immediately after transfer',
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'Section 351 requires: (1) transfer of property (not services) to a corporation, (2) solely in exchange for stock, (3) transferors as a group control the corporation (80% or more) immediately after the transfer. Boot (non-stock consideration) triggers gain recognition.',
     reference: 'IRC §351'
   },
@@ -449,12 +449,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a §351 exchange, a transferor receives stock worth $80,000 and cash of $20,000 for property with a basis of $60,000 and FMV of $100,000. What gain is recognized?',
     options: [
-      '$0',
-      '$20,000',
       '$40,000',
-      '$100,000'
+      '$100,000',
+      '$20,000',
+      '$0',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Gain recognized in a §351 exchange with boot equals the lesser of: (1) realized gain ($100,000 - $60,000 = $40,000), or (2) boot received ($20,000). Here, $20,000 is less than $40,000, so $20,000 gain is recognized.',
     reference: 'IRC §351(b)'
   },
@@ -467,16 +467,16 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     subtopic: 'Flat Rate',
     difficulty: 'easy',
     skillLevel: 'Remembering',
-    question: 'The federal corporate income tax rate for C corporations is:',
+    question: 'Horizon Industries, a C corporation, reported taxable income of $475,000 for the current tax year. What is Horizon\'s federal income tax liability?',
     options: [
-      '15%',
-      '21%',
-      '28%',
-      '35%'
+      '$99,750',
+      '$71,250',
+      '$80,750',
+      '$161,500',
     ],
-    correctAnswer: 1,
-    explanation: 'Since TCJA (2018), C corporations pay a flat 21% federal income tax rate. This replaced the prior graduated rate structure (15%, 25%, 34%, 35%). There is no lower rate for small corporations.',
-    reference: 'IRC §11(b)'
+    correctAnswer: 0,
+    explanation: 'Under the TCJA, all C corporations are taxed at a flat 21% rate. Horizon\'s tax = $475,000 × 21% = $99,750. The previous graduated rates (15%, 25%, 34%, 35%) were eliminated for tax years beginning after December 31, 2017.',
+    reference: 'IRC §11(b)',
   },
   {
     id: 'see2-ccorp-004',
@@ -489,10 +489,10 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'The accumulated earnings tax applies to corporations that:',
     options: [
-      'Have earnings over $1 million',
-      'Accumulate earnings beyond reasonable business needs to avoid shareholder tax on dividends',
       'Are publicly traded',
-      'Pay dividends of less than 50% of earnings'
+      'Accumulate earnings beyond reasonable business needs to avoid shareholder tax on dividends',
+      'Pay dividends of less than 50% of earnings',
+      'Have earnings over $1 million',
     ],
     correctAnswer: 1,
     explanation: 'The accumulated earnings tax (20% rate) applies to C corporations that accumulate earnings beyond reasonable business needs to avoid individual income tax on dividends. Reasonable needs include business expansion, debt retirement, and working capital. The exempt accumulation is $250,000 ($150,000 for PSCs).',
@@ -509,10 +509,10 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'A personal holding company (PHC) is subject to an additional tax of:',
     options: [
-      '15% on undistributed PHC income',
-      '20% on undistributed PHC income',
       '30% on all PHC income',
-      '21% on all income'
+      '20% on undistributed PHC income',
+      '21% on all income',
+      '15% on undistributed PHC income',
     ],
     correctAnswer: 1,
     explanation: 'The PHC tax is 20% on undistributed personal holding company income. A PHC is a corporation where: (1) more than 50% owned by 5 or fewer individuals, and (2) 60% or more of adjusted ordinary gross income is PHC income (dividends, interest, rents, royalties, certain personal service income).',
@@ -529,12 +529,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'A C corporation receiving dividends from a domestic corporation in which it owns 25% of the stock may deduct:',
     options: [
-      '50% of dividends received',
       '65% of dividends received',
       '80% of dividends received',
-      '100% of dividends received'
+      '100% of dividends received',
+      '50% of dividends received',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The dividends received deduction (DRD) is: 50% for ownership < 20%, 65% for ownership of 20-79%, and 100% for ownership of 80% or more (affiliated group). Since 25% falls in the 20-79% range, the DRD is 65%.',
     reference: 'IRC §243'
   },
@@ -547,16 +547,16 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     subtopic: 'Limitation',
     difficulty: 'medium',
     skillLevel: 'Remembering',
-    question: 'A C corporation\'s charitable contribution deduction is limited to:',
+    question: 'Davenport Inc., a C corporation, has modified taxable income of $520,000 before considering charitable contributions. During the year, Davenport donated appreciated stock with FMV of $75,000 (basis $30,000) held for 2 years to a public charity. What is the allowable charitable deduction for the current year?',
     options: [
-      '5% of taxable income',
-      '10% of taxable income (before certain deductions)',
-      '25% of taxable income',
-      '60% of taxable income'
+      '$52,000',
+      '$75,000',
+      '$30,000',
+      '$45,000',
     ],
-    correctAnswer: 1,
-    explanation: 'C corporations may deduct charitable contributions up to 10% of taxable income (computed before the charitable deduction, DRD, NOL carryback, and capital loss carryback). Excess contributions carry forward 5 years.',
-    reference: 'IRC §170(b)(2)'
+    correctAnswer: 0,
+    explanation: 'C corporation charitable deductions are limited to 10% of modified taxable income. The calculation is 10% × $520,000 = $52,000. Long-term capital gain property donated to a public charity is generally deductible at fair market value ($75,000), but the 10% limitation caps the current year deduction at $52,000. The excess $23,000 carries forward for up to 5 years.',
+    reference: 'IRC §170(b)(2)',
   },
   {
     id: 'see2-ccorp-008',
@@ -569,10 +569,10 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'When a C corporation distributes property to shareholders, the amount treated as a dividend is limited to:',
     options: [
-      'The fair market value of the property',
+      'The lesser of FMV or basis of distributed property',
       'The corporation\'s accumulated and current earnings and profits (E&P)',
       'The shareholder\'s basis in stock',
-      'The lesser of FMV or basis of distributed property'
+      'The fair market value of the property',
     ],
     correctAnswer: 1,
     explanation: 'Distributions are dividends to the extent of current and accumulated E&P. Amounts exceeding E&P are return of capital (reducing stock basis). Amounts exceeding stock basis are capital gain. Order: first current E&P, then accumulated E&P.',
@@ -589,12 +589,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'When a corporation completely liquidates, shareholders recognize:',
     options: [
-      'Ordinary income on all amounts received',
-      'Gain or loss (generally capital) based on FMV of property received minus stock basis',
+      'Dividend income equal to the distribution',
       'No gain or loss until property is sold',
-      'Dividend income equal to the distribution'
+      'Gain or loss (generally capital) based on FMV of property received minus stock basis',
+      'Ordinary income on all amounts received',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'In a complete liquidation under §331, shareholders treat the liquidating distribution as full payment for stock. Gain or loss equals FMV of property received minus adjusted basis of stock surrendered. The gain/loss is generally capital in nature.',
     reference: 'IRC §331'
   },
@@ -609,12 +609,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'A liquidating corporation recognizes gain or loss:',
     options: [
-      'Never - liquidation is tax-free',
       'On all property distributed as if sold at FMV',
+      'Only if the shareholder recognizes gain',
       'Only on property with built-in gains',
-      'Only if the shareholder recognizes gain'
+      'Never - liquidation is tax-free',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under §336, a liquidating corporation recognizes gain or loss on all property distributed as if it were sold at FMV. This is double taxation - the corporation pays tax on the gain, and shareholders also recognize gain/loss. Exception: §332 subsidiary liquidation.',
     reference: 'IRC §336'
   },
@@ -629,12 +629,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'A C corporation\'s net operating loss (NOL) may:',
     options: [
-      'Only be carried forward 5 years',
-      'Be carried forward indefinitely but limited to 80% of taxable income',
       'Be carried back 2 years and forward 20 years',
-      'Be carried forward indefinitely with no limitation'
+      'Be carried forward indefinitely with no limitation',
+      'Be carried forward indefinitely but limited to 80% of taxable income',
+      'Only be carried forward 5 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under post-TCJA rules (for NOLs arising after 2020), NOLs carry forward indefinitely but are limited to 80% of taxable income. NOL carrybacks are generally not allowed (with limited exceptions). The 80% limitation ensures some tax is always paid.',
     reference: 'IRC §172'
   },
@@ -649,12 +649,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Analysis',
     question: 'A stock redemption is treated as a sale (capital gain) rather than a dividend if it meets which test?',
     options: [
-      'Any redemption is treated as a sale',
-      'Substantially disproportionate, complete termination, or not essentially equivalent to a dividend',
+      'Only if authorized by the board of directors',
       'Only if the shareholder owns less than 50%',
-      'Only if authorized by the board of directors'
+      'Substantially disproportionate, complete termination, or not essentially equivalent to a dividend',
+      'Any redemption is treated as a sale',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under §302, a redemption is treated as a sale if it is: (1) substantially disproportionate (after redemption, shareholder owns < 50% voting and < 80% of prior percentage), (2) complete termination of interest, or (3) not essentially equivalent to a dividend (meaningful reduction). Otherwise, it is a §301 distribution.',
     reference: 'IRC §302'
   },
@@ -669,12 +669,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'A C corporation must make estimated tax payments if its expected tax liability is:',
     options: [
-      '$1,000 or more',
-      '$500 or more',
+      '$10,000 or more',
       '$5,000 or more',
-      '$10,000 or more'
+      '$500 or more',
+      '$1,000 or more',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'C corporations must make estimated tax payments if the expected tax for the year is $500 or more. Payments are due the 15th of the 4th, 6th, 9th, and 12th months. Each payment is generally 25% of required annual payment.',
     reference: 'IRC §6655'
   },
@@ -689,12 +689,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Remembering',
     question: 'C corporation tax returns (Form 1120) are due:',
     options: [
-      'March 15',
       'April 15 (15th day of the 4th month after year-end)',
       'September 15',
-      'The last day of the 3rd month after year-end'
+      'The last day of the 3rd month after year-end',
+      'March 15',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 1120 for C corporations is due the 15th day of the 4th month after the close of the tax year (April 15 for calendar year). A 6-month extension is available via Form 7004.',
     reference: 'IRC §6072'
   },
@@ -709,12 +709,12 @@ export const SEE2_QUESTIONS_BATCH56: Question[] = [
     skillLevel: 'Application',
     question: 'C corporation capital losses:',
     options: [
-      'May offset up to $3,000 of ordinary income',
       'May only offset capital gains',
       'May offset any type of income',
-      'Are not deductible'
+      'Are not deductible',
+      'May offset up to $3,000 of ordinary income',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Unlike individuals, C corporations may ONLY deduct capital losses against capital gains. There is no $3,000 deduction against ordinary income. Excess capital losses carry back 3 years and forward 5 years (all as short-term).',
     reference: 'IRC §1211(a), §1212(a)'
   },

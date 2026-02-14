@@ -16,12 +16,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'The PRIMARY reason for planning IS audits is to:',
     options: [
-      'Minimize audit costs',
       'Ensure audit objectives are achieved efficiently',
+      'Minimize audit costs',
+      'Document audit procedures',
       'Satisfy management requirements',
-      'Document audit procedures'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Audit planning ensures that audit objectives are achievable and resources are used efficiently, focusing on the most significant risks.',
     topic: 'Audit Planning',
     subtopic: 'Planning Purpose'
@@ -35,10 +35,10 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'When developing an audit program, the FIRST step should be to:',
     options: [
-      'Select audit tools',
+      'Draft the audit report',
       'Understand the area being audited and its risks',
+      'Select audit tools',
       'Schedule interviews',
-      'Draft the audit report'
     ],
     correctAnswer: 1,
     explanation: 'Before developing procedures, the auditor must understand the area being audited, its objectives, and associated risks.',
@@ -54,10 +54,10 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Risk ranking in audit planning helps:',
     options: [
-      'Reduce audit staff',
+      'Satisfy regulatory requirements',
       'Prioritize audit resources to high-risk areas',
+      'Reduce audit staff',
       'Eliminate low-risk areas',
-      'Satisfy regulatory requirements'
     ],
     correctAnswer: 1,
     explanation: 'Risk ranking prioritizes audit resources toward areas with the highest risk, ensuring the most significant risks receive appropriate attention.',
@@ -73,12 +73,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An IS auditor should obtain authorization to perform the audit through:',
     options: [
-      'Verbal agreement',
       'Formal engagement letter or audit charter',
+      'Calendar invitation',
+      'Verbal agreement',
       'Email confirmation',
-      'Calendar invitation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A formal engagement letter or audit charter provides documented authorization, defining scope, objectives, and responsibilities.',
     topic: 'Audit Administration',
     subtopic: 'Authorization'
@@ -92,12 +92,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'When evaluating control effectiveness, an auditor should consider:',
     options: [
+      'Only management opinion',
       'Only control design',
       'Both design and operating effectiveness',
       'Only cost of controls',
-      'Only management opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Control evaluation considers both design (whether the control is capable of preventing/detecting issues) and operating effectiveness (whether it works consistently).',
     topic: 'Control Assessment',
     subtopic: 'Control Evaluation'
@@ -112,11 +112,11 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     question: 'Automated controls are generally preferred because they:',
     options: [
       'Are always more effective',
+      'Require no monitoring',
       'Operate consistently without human error',
       'Cost less to implement',
-      'Require no monitoring'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Automated controls operate consistently once properly implemented, eliminating variability from human factors.',
     topic: 'Control Assessment',
     subtopic: 'Automated Controls'
@@ -132,8 +132,8 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Primary controls are inadequate or impractical',
       'No risks exist',
+      'Auditors require them',
       'Management requests them',
-      'Auditors require them'
     ],
     correctAnswer: 0,
     explanation: 'Compensating controls are alternative controls implemented when primary controls are inadequate, impractical, or too costly.',
@@ -149,12 +149,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'When testing controls, sample size should be determined by:',
     options: [
+      'Prior year sample size',
       'Available time only',
       'Population size, desired confidence level, and expected error rate',
       'Management preference',
-      'Prior year sample size'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Sample size depends on the population size, desired confidence level, tolerable error rate, and expected error rate.',
     topic: 'Sampling',
     subtopic: 'Sample Size'
@@ -170,8 +170,8 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Statistical conclusions are required',
       'The auditor needs to focus on specific high-risk items',
+      'Large samples are needed',
       'Population is uniform',
-      'Large samples are needed'
     ],
     correctAnswer: 1,
     explanation: 'Judgmental sampling allows auditors to focus on specific items of interest, high-risk transactions, or unusual items.',
@@ -189,8 +189,8 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Estimate error rates',
       'Find at least one error if the error rate exceeds a threshold',
+      'Test all items',
       'Select random samples',
-      'Test all items'
     ],
     correctAnswer: 1,
     explanation: 'Discovery sampling is designed to find at least one error if the error rate in the population exceeds a predefined threshold.',
@@ -206,12 +206,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'Generalized audit software (GAS) capabilities include:',
     options: [
-      'Only report writing',
       'Data extraction, analysis, and testing',
+      'Only documentation',
+      'Only report writing',
       'Only data backup',
-      'Only documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'GAS provides data extraction, analysis, sampling, duplicate testing, gap analysis, and reporting capabilities.',
     topic: 'CAATs',
     subtopic: 'GAS'
@@ -225,12 +225,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When using CAATs, data integrity should be verified by:',
     options: [
-      'Trusting the source system',
       'Comparing extracted data to known totals',
+      'Limiting data volume',
+      'Trusting the source system',
       'Using only recent data',
-      'Limiting data volume'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data integrity verification includes comparing extracted data to known control totals, record counts, or other reliable sources.',
     topic: 'CAATs',
     subtopic: 'Data Integrity'
@@ -244,10 +244,10 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Embedded audit modules are:',
     options: [
-      'External tools',
+      'Manual procedures',
       'Audit routines built into production applications',
+      'External tools',
       'Standalone programs',
-      'Manual procedures'
     ],
     correctAnswer: 1,
     explanation: 'Embedded audit modules are audit routines programmed into production applications to capture transactions meeting specific criteria.',
@@ -264,11 +264,11 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     question: 'When auditing system development, the MOST critical phase to review is:',
     options: [
       'Maintenance',
+      'Testing',
       'Requirements definition',
       'Coding',
-      'Testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Requirements definition is most critical because errors here propagate through all subsequent phases and are costly to correct later.',
     topic: 'SDLC Auditing',
     subtopic: 'Requirements'
@@ -283,11 +283,11 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     question: 'Post-implementation audits should assess:',
     options: [
       'Only technical functionality',
+      'Only schedule compliance',
       'Whether objectives were achieved and lessons learned',
       'Only budget adherence',
-      'Only schedule compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Post-implementation reviews assess whether project objectives were achieved, benefits realized, and lessons learned for future projects.',
     topic: 'SDLC Auditing',
     subtopic: 'Post-Implementation'
@@ -301,12 +301,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'When reviewing access control lists, an auditor should verify:',
     options: [
+      'Only external access',
       'Only the list format',
       'Access aligns with job responsibilities and least privilege',
       'Only administrator access',
-      'Only external access'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Access reviews verify that access permissions align with job responsibilities and follow the least privilege principle.',
     topic: 'Access Control Auditing',
     subtopic: 'Access Reviews'
@@ -320,12 +320,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'Review of terminated user accounts is important to ensure:',
     options: [
-      'Accounts are renamed',
       'Access is disabled or removed timely',
+      'Accounts are renamed',
+      'Licenses are reclaimed',
       'Accounts are archived',
-      'Licenses are reclaimed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Terminated user accounts should be disabled or removed promptly to prevent unauthorized access after employment ends.',
     topic: 'Access Control Auditing',
     subtopic: 'Termination'
@@ -341,8 +341,8 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Only firewall rules',
       'Firewall configurations, network segmentation, and monitoring',
+      'Only physical network',
       'Only wireless access',
-      'Only physical network'
     ],
     correctAnswer: 1,
     explanation: 'Network security auditing covers firewall rules, network segmentation, intrusion detection, remote access, wireless security, and monitoring.',
@@ -358,12 +358,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When auditing business continuity plans, the auditor should verify:',
     options: [
-      'Only documentation existence',
       'Plans are current, complete, and tested',
+      'Only documentation existence',
+      'Only IT recovery',
       'Only executive approval',
-      'Only IT recovery'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'BCP audit verifies plans are current, complete, aligned with business requirements, and tested to validate recovery capability.',
     topic: 'BCP Auditing',
     subtopic: 'BCP Review'
@@ -377,12 +377,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'An audit of third-party providers should include:',
     options: [
-      'Only contract review',
       'Contract terms, control assessments, and ongoing monitoring',
+      'Only contract review',
+      'Only service delivery',
       'Only pricing review',
-      'Only service delivery'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Third-party audits cover contract terms, control assessments (or SOC reports), performance monitoring, and compliance with requirements.',
     topic: 'Third-Party Auditing',
     subtopic: 'Vendor Audit'
@@ -396,10 +396,10 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Cloud computing audits should address:',
     options: [
-      'Only physical data center',
+      'Only contract price',
       'Shared responsibility, data protection, and vendor controls',
+      'Only physical data center',
       'Only network speed',
-      'Only contract price'
     ],
     correctAnswer: 1,
     explanation: 'Cloud audits address shared responsibility model, data protection, access controls, compliance, and vendor control assessments.',
@@ -415,10 +415,10 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Privacy audits should assess:',
     options: [
-      'Only technical controls',
+      'Only data deletion',
       'Data collection, use, protection, and compliance with regulations',
+      'Only technical controls',
       'Only user consent',
-      'Only data deletion'
     ],
     correctAnswer: 1,
     explanation: 'Privacy audits assess the entire data lifecycle: collection practices, use, protection measures, retention, and regulatory compliance.',
@@ -434,12 +434,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Analysis',
     question: 'Continuous auditing and continuous monitoring differ in that:',
     options: [
+      'Continuous monitoring requires more tools',
       'There is no difference',
       'Continuous monitoring is management\'s responsibility; continuous auditing is audit\'s',
       'Continuous auditing is more frequent',
-      'Continuous monitoring requires more tools'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Continuous monitoring is a management responsibility for ongoing control effectiveness; continuous auditing is the audit function\'s ongoing assessment.',
     topic: 'Continuous Auditing',
     subtopic: 'CA vs CM'
@@ -453,12 +453,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Audit recommendations should be:',
     options: [
+      'Limited to technical solutions',
       'As detailed as possible',
       'Practical, actionable, and address the root cause',
       'Directed to specific individuals',
-      'Limited to technical solutions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Recommendations should be practical, actionable, cost-effective, and address root causes rather than just symptoms.',
     topic: 'Audit Reporting',
     subtopic: 'Recommendations'
@@ -473,11 +473,11 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     question: 'Management response to audit findings should include:',
     options: [
       'Only acknowledgment',
+      'Only budget impact',
       'Planned corrective actions, responsible parties, and target dates',
       'Only disagreement if applicable',
-      'Only budget impact'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Management responses should include specific corrective actions, responsible individuals, and target completion dates.',
     topic: 'Audit Reporting',
     subtopic: 'Management Response'
@@ -493,8 +493,8 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Remove the finding',
       'Document management\'s position and escalate if risk is significant',
+      'Ignore the disagreement',
       'Accept management\'s view',
-      'Ignore the disagreement'
     ],
     correctAnswer: 1,
     explanation: 'When management disagrees, document their position and rationale. If risk is significant, escalate to appropriate levels.',
@@ -510,12 +510,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Audit report distribution should be based on:',
     options: [
-      'Auditor preference',
       'Need to know and organizational requirements',
+      'Auditor preference',
+      'Maximum distribution',
       'Auditee request',
-      'Maximum distribution'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Report distribution follows the need-to-know principle, distributing to those who need the information for their responsibilities.',
     topic: 'Audit Reporting',
     subtopic: 'Distribution'
@@ -529,12 +529,12 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'An audit conclusion should be based on:',
     options: [
-      'Management assertions',
       'Sufficient, reliable evidence gathered during the audit',
+      'Management assertions',
+      'Auditor assumptions',
       'Prior year conclusions',
-      'Auditor assumptions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Audit conclusions must be supported by sufficient, reliable, and relevant evidence gathered through appropriate audit procedures.',
     topic: 'Audit Reporting',
     subtopic: 'Conclusions'
@@ -550,8 +550,8 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Multiple auditees',
       'Financial, operational, and IT audit procedures',
+      'Only IT procedures',
       'Multiple audit firms',
-      'Only IT procedures'
     ],
     correctAnswer: 1,
     explanation: 'Integrated audits combine financial, operational, compliance, and IT audit procedures into a unified approach.',
@@ -567,10 +567,10 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     skillLevel: 'Application',
     question: 'Knowledge transfer at audit conclusion is important for:',
     options: [
-      'Billing purposes',
+      'Report approval',
       'Continuity and efficiency of future audits',
+      'Billing purposes',
       'Staff evaluation',
-      'Report approval'
     ],
     correctAnswer: 1,
     explanation: 'Knowledge transfer ensures understanding of the audit area, findings, and processes is retained for future audit engagements.',

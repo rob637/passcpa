@@ -25,9 +25,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Current assets: $450,000. Current liabilities: $180,000. What is the current ratio?',
     options: [
       '2.5',
+      '4.0',
       '0.4',
       '2.0',
-      '4.0'
     ],
     correctAnswer: 0,
     explanation: 'Current Ratio = Current Assets / Current Liabilities\n= $450,000 / $180,000 = 2.5\nFor every $1 of current liabilities, there is $2.50 in current assets.',
@@ -45,12 +45,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Cash: $80,000. Marketable securities: $40,000. Receivables: $120,000. Inventory: $200,000. Prepaid expenses: $10,000. Current liabilities: $160,000. What is the quick ratio?',
     options: [
-      '1.5',
+      '2.0',
       '2.8',
+      '1.5',
       '1.0',
-      '2.0'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Quick Ratio = (Cash + Marketable Securities + Receivables) / Current Liabilities\n= ($80,000 + $40,000 + $120,000) / $160,000\n= $240,000 / $160,000 = 1.5',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -66,12 +66,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Cost of goods sold: $1,800,000. Beginning inventory: $280,000. Ending inventory: $320,000. What is inventory turnover?',
     options: [
-      '6.0 times',
+      '7.2 times',
       '5.6 times',
+      '6.0 times',
       '6.4 times',
-      '7.2 times'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Average Inventory = ($280,000 + $320,000) / 2 = $300,000\nInventory Turnover = COGS / Average Inventory\n= $1,800,000 / $300,000 = 6.0 times per year',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -87,12 +87,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Annual credit sales: $2,920,000. Average accounts receivable: $320,000. What is DSO (days sales outstanding)?',
     options: [
-      '40 days',
       '36.5 days',
+      '40 days',
+      '45 days',
       '9.1 days',
-      '45 days'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'DSO = (Average Receivables / Annual Credit Sales) × 365\n= ($320,000 / $2,920,000) × 365\n= 0.1096 × 365 = 40 days\nAlternatively: A/R Turnover = 9.125, Days = 365 / 9.125 = 40',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -108,12 +108,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Total liabilities: $600,000. Total stockholders\' equity: $400,000. What is the debt-to-equity ratio?',
     options: [
-      '1.5',
       '0.67',
+      '1.5',
+      '1.0',
       '0.6',
-      '1.0'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Debt-to-Equity = Total Liabilities / Total Equity\n= $600,000 / $400,000 = 1.5\nThe company has $1.50 of debt for every $1 of equity.',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -131,8 +131,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '5.0 times',
       '3.5 times',
+      '5.25 times',
       '4.0 times',
-      '5.25 times'
     ],
     correctAnswer: 0,
     explanation: 'Times Interest Earned = EBIT / Interest Expense\n= $750,000 / $150,000 = 5.0 times\n(Tax rate is not used in TIE calculation)',
@@ -151,9 +151,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Net income: $240,000. Beginning total assets: $1,800,000. Ending total assets: $2,200,000. What is ROA?',
     options: [
       '12%',
+      '6%',
       '10.9%',
       '13.3%',
-      '6%'
     ],
     correctAnswer: 0,
     explanation: 'Average Total Assets = ($1,800,000 + $2,200,000) / 2 = $2,000,000\nROA = Net Income / Average Total Assets\n= $240,000 / $2,000,000 = 0.12 = 12%',
@@ -171,12 +171,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Net income: $180,000. Average common equity: $900,000. Preferred dividends: $20,000. What is ROE for common shareholders?',
     options: [
+      '16%',
       '17.8%',
       '20%',
       '22.2%',
-      '16%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'ROE (Common) = (Net Income - Preferred Dividends) / Average Common Equity\n= ($180,000 - $20,000) / $900,000\n= $160,000 / $900,000 = 0.178 = 17.8%',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -192,12 +192,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Profit margin: 8%. Asset turnover: 1.5. Equity multiplier: 2.0. What is ROE using DuPont?',
     options: [
-      '24%',
       '12%',
+      '16%',
+      '24%',
       '8%',
-      '16%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'DuPont ROE = Profit Margin × Asset Turnover × Equity Multiplier\n= 8% × 1.5 × 2.0 = 24%\nThis shows ROE is driven by profitability, efficiency, and leverage.',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'dupont',
@@ -214,9 +214,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Net income: $500,000. Preferred dividends: $50,000. Common shares outstanding: 100,000. What is basic EPS?',
     options: [
       '$4.50',
+      '$4.00',
       '$5.00',
       '$5.50',
-      '$4.00'
     ],
     correctAnswer: 0,
     explanation: 'Basic EPS = (Net Income - Preferred Dividends) / Weighted Avg Common Shares\n= ($500,000 - $50,000) / 100,000\n= $450,000 / 100,000 = $4.50 per share',
@@ -234,12 +234,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Net income: $1,200,000. Common shares: 400,000. Stock options outstanding: 50,000 with exercise price $40. Average market price: $50. Tax rate: 25%. What is diluted EPS?',
     options: [
-      '$2.93',
       '$3.00',
+      '$2.86',
+      '$2.93',
       '$2.67',
-      '$2.86'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Treasury Stock Method:\nShares from options = 50,000\nShares bought back = 50,000 × $40 / $50 = 40,000\nIncremental shares = 50,000 - 40,000 = 10,000\nDiluted shares = 400,000 + 10,000 = 410,000\nDiluted EPS = $1,200,000 / 410,000 = $2.93',
     reference: 'ASC 260',
     calculationType: 'eps',
@@ -255,12 +255,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Stock price: $72. Earnings per share: $4.50. What is the P/E ratio?',
     options: [
-      '16.0',
       '15.0',
+      '14.5',
+      '16.0',
       '18.0',
-      '14.5'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'P/E Ratio = Stock Price / EPS\n= $72 / $4.50 = 16.0\nInvestors are paying $16 for each $1 of earnings.',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -278,8 +278,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '40%',
       '60%',
+      '2.5%',
       '25%',
-      '2.5%'
     ],
     correctAnswer: 0,
     explanation: 'Dividend Payout = Dividends per Share / EPS\n= $1.80 / $4.50 = 0.40 = 40%\n40% of earnings are paid out as dividends.',
@@ -299,8 +299,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$10.00',
       '$12.00',
+      '$14.00',
       '$8.00',
-      '$14.00'
     ],
     correctAnswer: 0,
     explanation: 'Book Value per Share = (Total Equity - Preferred Stock) / Common Shares\n= ($2,400,000 - $400,000) / 200,000\n= $2,000,000 / 200,000 = $10.00 per share',
@@ -318,12 +318,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Operating cash flow: $420,000. Current liabilities: $350,000. What is the operating cash flow ratio?',
     options: [
-      '1.2',
       '0.83',
+      '1.2',
+      '0.7',
       '1.0',
-      '0.7'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Operating Cash Flow Ratio = Operating Cash Flow / Current Liabilities\n= $420,000 / $350,000 = 1.2\nCompany generates $1.20 in operating cash for each $1 of current liabilities.',
     reference: 'IMA CMA LOS 2A1',
     calculationType: 'ratios',
@@ -343,12 +343,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Debt: $4M at 8% pre-tax. Equity: $6M with required return 14%. Tax rate: 25%. What is WACC?',
     options: [
+      '10.0%',
       '10.8%',
       '11.6%',
       '12.0%',
-      '10.0%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Total Capital = $4M + $6M = $10M\nWeight of Debt = 40%, Weight of Equity = 60%\nAfter-tax cost of debt = 8% × (1 - 0.25) = 6%\nWACC = (40% × 6%) + (60% × 14%)\n= 2.4% + 8.4% = 10.8%',
     reference: 'IMA CMA LOS 2B2',
     calculationType: 'wacc',
@@ -365,9 +365,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Risk-free rate: 3%. Market return: 11%. Beta: 1.25. What is the required return on equity using CAPM?',
     options: [
       '13%',
+      '14.75%',
       '11%',
       '10%',
-      '14.75%'
     ],
     correctAnswer: 0,
     explanation: 'CAPM: Re = Rf + β(Rm - Rf)\nRe = 3% + 1.25(11% - 3%)\n= 3% + 1.25(8%)\n= 3% + 10% = 13%',
@@ -386,11 +386,11 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Initial investment: $100,000. Cash flows: Year 1 $30,000, Year 2 $40,000, Year 3 $50,000. Discount rate: 10%. What is NPV? (PV factors: 0.909, 0.826, 0.751)',
     options: [
       '$2,300',
+      '$5,680',
       '$20,000',
       '-$2,700',
-      '$5,680'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'PV of cash flows using given PV factors at 10%:\nYear 1: $30,000 × 0.909 = $27,270\nYear 2: $40,000 × 0.826 = $33,040\nYear 3: $50,000 × 0.751 = $37,550\nTotal PV = $27,270 + $33,040 + $37,550 = $97,860\nNPV = Total PV − Initial Investment = $97,860 − $100,000 = −$2,140\nThe NPV is negative, indicating the project does not meet the 10% required return. Among the choices, −$2,700 is closest to the calculated −$2,140.',
     reference: 'IMA CMA LOS 2B3',
     calculationType: 'npv',
@@ -406,12 +406,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Investment: $50,000. Annual cash flow for 5 years: $14,000. What is the approximate IRR? (5-year annuity PVF at 12%: 3.605; at 14%: 3.433)',
     options: [
-      '12.5%',
       '14%',
+      '15%',
+      '12.5%',
       '10%',
-      '15%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'At IRR, NPV = 0, so Investment = PV of cash flows\n$50,000 = $14,000 × PVF\nRequired PVF = $50,000 / $14,000 = 3.571\nPVF at 12% = 3.605 (NPV slightly positive)\nPVF at 14% = 3.433 (NPV negative)\nIRR is between 12% and 14%, closer to 12%. Approximately 12.5%',
     reference: 'IMA CMA LOS 2B3',
     calculationType: 'irr',
@@ -427,12 +427,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Investment: $80,000. Cash flows: Year 1 $25,000, Year 2 $30,000, Year 3 $35,000, Year 4 $20,000. What is the payback period?',
     options: [
-      '2.71 years',
       '3.00 years',
+      '2.25 years',
+      '2.71 years',
       '2.50 years',
-      '2.25 years'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Cumulative cash flows:\nYear 1: $25,000\nYear 2: $55,000\nYear 3: $90,000 (exceeds $80,000)\nRemaining after Year 2 = $80,000 - $55,000 = $25,000\nPartial Year 3 = $25,000 / $35,000 = 0.714 years\nPayback = 2 + 0.714 = 2.71 years',
     reference: 'IMA CMA LOS 2B3',
     calculationType: 'payback',
@@ -448,12 +448,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'PV of future cash flows: $156,000. Initial investment: $120,000. What is the profitability index?',
     options: [
-      '1.30',
+      '0.30',
       '0.77',
+      '1.30',
       '1.23',
-      '0.30'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Profitability Index = PV of Cash Flows / Initial Investment\n= $156,000 / $120,000 = 1.30\nFor every $1 invested, $1.30 of value is created.',
     reference: 'IMA CMA LOS 2B3',
     calculationType: 'capital-budgeting',
@@ -469,12 +469,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Current dividend: $2.00. Expected growth rate: 6%. Stock price: $40. What is the cost of retained earnings using Gordon model?',
     options: [
-      '11.3%',
+      '6.0%',
       '5.0%',
+      '11.3%',
       '11.0%',
-      '6.0%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Cost of Retained Earnings = (D1 / P0) + g\nD1 = D0 × (1 + g) = $2.00 × 1.06 = $2.12\nRe = ($2.12 / $40) + 0.06\n= 0.053 + 0.06 = 0.113 = 11.3%',
     reference: 'IMA CMA LOS 2B2',
     calculationType: 'cost-of-capital',
@@ -490,12 +490,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Bond face value: $1,000. Coupon rate: 8%. Current price: $950. Tax rate: 30%. Remaining life: 10 years. What is the approximate after-tax cost of debt?',
     options: [
-      '6.1%',
       '8.7%',
+      '6.1%',
+      '8.0%',
       '5.6%',
-      '8.0%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Approximate YTM = [Annual Coupon + (Face - Price)/n] / [(Face + Price)/2]\n= [$80 + ($50/10)] / [($1,000 + $950)/2]\n= ($80 + $5) / $975 = $85 / $975 = 8.72%\nAfter-tax = 8.72% × (1 - 0.30) = 6.1%',
     reference: 'IMA CMA LOS 2B2',
     calculationType: 'cost-of-capital',
@@ -511,12 +511,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Current assets: $500,000. Current liabilities: $300,000. Long-term debt: $400,000. What is net working capital?',
     options: [
-      '$200,000',
       '$500,000',
+      '$200,000',
+      '$100,000',
       '-$200,000',
-      '$100,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Net Working Capital = Current Assets - Current Liabilities\n= $500,000 - $300,000 = $200,000\n(Long-term debt is not part of working capital calculation)',
     reference: 'IMA CMA LOS 2B4',
     calculationType: 'working-capital',
@@ -533,9 +533,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Days inventory outstanding: 45. Days sales outstanding: 38. Days payable outstanding: 32. What is the cash conversion cycle?',
     options: [
       '51 days',
+      '45 days',
       '115 days',
       '83 days',
-      '45 days'
     ],
     correctAnswer: 0,
     explanation: 'Cash Conversion Cycle = DIO + DSO - DPO\n= 45 + 38 - 32 = 51 days\nIt takes 51 days from paying for inventory to collecting cash from customers.',
@@ -554,9 +554,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'Expected dividend next year: $3.00. Dividend growth rate: 5%. Required return: 12%. What is the stock value using constant growth model?',
     options: [
       '$42.86',
+      '$37.50',
       '$25.00',
       '$60.00',
-      '$37.50'
     ],
     correctAnswer: 0,
     explanation: 'Gordon Growth Model: P0 = D1 / (r - g)\n= $3.00 / (0.12 - 0.05)\n= $3.00 / 0.07 = $42.86',
@@ -574,12 +574,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Project NPV: $24,000 over 4 years. Discount rate: 10%. Annuity PVF (4 years, 10%): 3.170. What is the equivalent annual annuity?',
     options: [
+      '$5,678',
       '$7,571',
       '$6,000',
       '$8,000',
-      '$5,678'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Equivalent Annual Annuity = NPV / Annuity PVF\n= $24,000 / 3.170 = $7,571\nThis allows comparison of projects with different lives.',
     reference: 'IMA CMA LOS 2B3',
     calculationType: 'capital-budgeting',
@@ -595,12 +595,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Annual demand: 10,000 units. Ordering cost: $50 per order. Carrying cost: $2 per unit per year. What is EOQ?',
     options: [
-      '707 units',
       '500 units',
+      '250 units',
+      '707 units',
       '1,000 units',
-      '250 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'EOQ = √(2 × D × O / C)\n= √(2 × 10,000 × $50 / $2)\n= √(1,000,000 / $2)\n= √500,000 = 707 units',
     reference: 'IMA CMA LOS 2B4',
     calculationType: 'inventory-management',
@@ -616,12 +616,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Terms: 2/10, net 30. What is the annualized cost of not taking the discount?',
     options: [
-      '36.7%',
+      '18.25%',
       '24.5%',
+      '36.7%',
       '2%',
-      '18.25%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Cost of not taking discount = [Discount% / (100% - Discount%)] × [365 / (Full days - Discount days)]\n= [2% / 98%] × [365 / 20]\n= 0.0204 × 18.25 = 0.3673 = 36.7%\nVery expensive to forgo the discount!',
     reference: 'IMA CMA LOS 2B4',
     calculationType: 'working-capital',
@@ -637,12 +637,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Stock return variance: 0.16. Market return variance: 0.09. Covariance: 0.096. What is the stock\'s beta?',
     options: [
-      '1.07',
+      '0.67',
       '0.60',
+      '1.07',
       '1.67',
-      '0.67'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Beta = Covariance(stock, market) / Variance(market)\n= 0.096 / 0.09 = 1.07\nThe stock is slightly more volatile than the market.',
     reference: 'IMA CMA LOS 2B2',
     calculationType: 'capm',
@@ -662,12 +662,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Contribution margin ratio: 35%. Fixed costs: $280,000. What is the break-even point in sales dollars?',
     options: [
-      '$800,000',
       '$980,000',
+      '$800,000',
+      '$450,000',
       '$400,000',
-      '$450,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Break-even sales = Fixed Costs / CM Ratio\n= $280,000 / 0.35 = $800,000',
     reference: 'IMA CMA LOS 2C1',
     calculationType: 'cvp',
@@ -685,8 +685,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '9,000 units',
       '6,000 units',
+      '10,000 units',
       '3,000 units',
-      '10,000 units'
     ],
     correctAnswer: 0,
     explanation: 'Target units = (Fixed Costs + Target Profit) / CM per unit\n= ($150,000 + $75,000) / $25\n= $225,000 / $25 = 9,000 units',
@@ -706,8 +706,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$500,000',
       '$450,000',
+      '$550,000',
       '$380,000',
-      '$550,000'
     ],
     correctAnswer: 0,
     explanation: 'Pre-tax profit needed = After-tax profit / (1 - Tax rate)\n= $60,000 / 0.75 = $80,000\nRequired sales = (Fixed Costs + Pre-tax profit) / CM Ratio\n= ($120,000 + $80,000) / 0.40 = $500,000',
@@ -725,12 +725,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Current sales: $600,000. Break-even sales: $480,000. What is the margin of safety percentage?',
     options: [
+      '12%',
       '20%',
       '80%',
       '25%',
-      '12%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Margin of Safety = (Current Sales - Break-even Sales) / Current Sales\n= ($600,000 - $480,000) / $600,000\n= $120,000 / $600,000 = 0.20 = 20%\nSales can drop 20% before incurring a loss.',
     reference: 'IMA CMA LOS 2C1',
     calculationType: 'cvp',
@@ -746,12 +746,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Contribution margin: $300,000. Operating income: $100,000. If sales increase 10%, what is the % increase in operating income?',
     options: [
+      '20%',
       '30%',
       '10%',
       '33.3%',
-      '20%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Degree of Operating Leverage = CM / Operating Income\n= $300,000 / $100,000 = 3.0\n% Change in Operating Income = DOL × % Change in Sales\n= 3.0 × 10% = 30%',
     reference: 'IMA CMA LOS 2C1',
     calculationType: 'leverage',
@@ -767,12 +767,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Product A: SP $100, VC $60. Product B: SP $80, VC $40. Sales mix: A 60%, B 40%. Fixed costs: $240,000. What are total break-even units?',
     options: [
-      '6,000 units',
+      '4,800 units',
       '5,000 units',
+      '6,000 units',
       '6,667 units',
-      '4,800 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'CM: A = $40, B = $40\nWeighted Average CM = (0.60 × $40) + (0.40 × $40)\n= $24 + $16 = $40\nBreak-even units = $240,000 / $40 = 6,000 total units\n(A: 3,600 units, B: 2,400 units)',
     reference: 'IMA CMA LOS 2C1',
     calculationType: 'cvp',
@@ -788,12 +788,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Variable cost: $60. Fixed cost: $20 per unit (at 10,000 units). Target markup: 25% of cost. What is the selling price?',
     options: [
-      '$100',
+      '$95',
       '$80',
+      '$100',
       '$75',
-      '$95'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Full cost = Variable + Fixed = $60 + $20 = $80\nMarkup = $80 × 25% = $20\nSelling price = $80 + $20 = $100',
     reference: 'IMA CMA LOS 2C2',
     calculationType: 'pricing',
@@ -809,12 +809,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Price increased from $80 to $88 (10% increase). Quantity decreased from 5,000 to 4,250 units. What is the price elasticity of demand?',
     options: [
-      '1.5',
       '0.67',
+      '2.0',
+      '1.5',
       '1.0',
-      '2.0'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: '% Change in Quantity = (4,250 - 5,000) / 5,000 = -15%\n% Change in Price = 10%\nPrice Elasticity = |% Change in Qty / % Change in Price|\n= |-15% / 10%| = 1.5\nDemand is elastic (>1).',
     reference: 'IMA CMA LOS 2C2',
     calculationType: 'elasticity',
@@ -830,12 +830,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Current: SP $50, VC $35, Units 8,000, FC $80,000. If VC increases 10%, what happens to operating income?',
     options: [
-      'Decreases by $28,000',
+      'Decreases by $3,500',
       'Decreases by $8,000',
+      'Decreases by $28,000',
       'Increases by $28,000',
-      'Decreases by $3,500'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Current VC = $35, New VC = $35 × 1.10 = $38.50\nChange in VC per unit = $3.50\nChange in total VC = $3.50 × 8,000 = $28,000 increase\nOperating income decreases by $28,000.',
     reference: 'IMA CMA LOS 2C1',
     calculationType: 'cvp',
@@ -855,12 +855,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Project outcomes: 30% chance of $100,000 profit, 50% chance of $40,000 profit, 20% chance of $20,000 loss. What is expected value?',
     options: [
-      '$46,000',
+      '$36,000',
       '$40,000',
+      '$46,000',
       '$50,000',
-      '$36,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Expected Value = Σ(Probability × Outcome)\n= (0.30 × $100,000) + (0.50 × $40,000) + (0.20 × -$20,000)\n= $30,000 + $20,000 - $4,000 = $46,000',
     reference: 'IMA CMA LOS 2D1',
     calculationType: 'probability',
@@ -876,12 +876,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Expected return: 12%. Outcomes: 50% chance of 18%, 50% chance of 6%. What is the standard deviation?',
     options: [
-      '6%',
       '3%',
+      '6%',
+      '9%',
       '12%',
-      '9%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Variance = Σ[P × (Outcome - Expected)²]\n= 0.5 × (18% - 12%)² + 0.5 × (6% - 12%)²\n= 0.5 × 36 + 0.5 × 36 = 36\nStandard Deviation = √36 = 6%',
     reference: 'IMA CMA LOS 2D1',
     calculationType: 'statistics',
@@ -897,12 +897,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Project A: Expected return 15%, Std dev 5%. Project B: Expected return 10%, Std dev 4%. Which has higher risk per unit of return?',
     options: [
-      'Project B (CV = 0.40)',
       'Project A (CV = 0.33)',
+      'Project B (CV = 0.40)',
+      'Cannot determine',
       'Both equal',
-      'Cannot determine'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Coefficient of Variation = Std Dev / Expected Return\nProject A: CV = 5% / 15% = 0.33\nProject B: CV = 4% / 10% = 0.40\nProject B has higher risk per unit of return.',
     reference: 'IMA CMA LOS 2D1',
     calculationType: 'statistics',
@@ -919,9 +919,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'EBIT: $200,000. Interest: $40,000. What is the degree of financial leverage?',
     options: [
       '1.25',
+      '0.80',
       '5.0',
       '4.0',
-      '0.80'
     ],
     correctAnswer: 0,
     explanation: 'Degree of Financial Leverage = EBIT / (EBIT - Interest)\n= $200,000 / ($200,000 - $40,000)\n= $200,000 / $160,000 = 1.25\nA 10% change in EBIT leads to 12.5% change in EBT.',
@@ -940,9 +940,9 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     question: 'DOL: 3.0. DFL: 1.5. If sales increase 8%, what is the % change in EPS?',
     options: [
       '36%',
+      '4.5%',
       '24%',
       '12%',
-      '4.5%'
     ],
     correctAnswer: 0,
     explanation: 'Degree of Total Leverage = DOL × DFL = 3.0 × 1.5 = 4.5\n% Change in EPS = DTL × % Change in Sales\n= 4.5 × 8% = 36%',
@@ -960,12 +960,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Stock price: $50. Exercise price: $45. Call option trading at $8. What is the time value of the option?',
     options: [
+      '$13',
       '$3',
       '$8',
       '$5',
-      '$13'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Intrinsic Value of Call = Stock Price - Exercise Price\n= $50 - $45 = $5\nTime Value = Option Premium - Intrinsic Value\n= $8 - $5 = $3',
     reference: 'IMA CMA LOS 2D3',
     calculationType: 'options',
@@ -981,12 +981,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Company will receive €500,000 in 90 days. Current spot: $1.10/€. 90-day forward: $1.08/€. What is the hedged dollar amount?',
     options: [
-      '$540,000',
       '$550,000',
+      '$510,000',
+      '$540,000',
       '$500,000',
-      '$510,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Hedged amount = Foreign currency × Forward rate\n= €500,000 × $1.08/€ = $540,000\nThis locks in the dollar amount regardless of spot rate changes.',
     reference: 'IMA CMA LOS 2D4',
     calculationType: 'hedging',
@@ -1002,12 +1002,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Plan A: Issue 100,000 shares at $20. Plan B: Issue $1M bonds at 10%. Tax rate: 30%. Existing shares: 500,000. At what EBIT are the plans equivalent?',
     options: [
-      '$600,000',
+      '$833,333',
       '$500,000',
+      '$600,000',
       '$1,000,000',
-      '$833,333'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'At the EPS indifference point, EPS under both plans is equal:\nPlan A (equity): EPS = EBIT × (1 − 0.30) / 600,000 shares\nPlan B (debt): EPS = (EBIT − $100,000 interest) × (1 − 0.30) / 500,000 shares\nSetting equal and canceling (1 − 0.30) from both sides:\nEBIT / 600,000 = (EBIT − $100,000) / 500,000\n500,000 × EBIT = 600,000 × (EBIT − $100,000)\n500,000 × EBIT = 600,000 × EBIT − $60,000,000,000\n$60,000,000,000 = 100,000 × EBIT\nEBIT = $600,000\nAbove $600,000 EBIT, the debt plan is preferred due to financial leverage.',
     reference: 'IMA CMA LOS 2B2',
     calculationType: 'capital-structure',
@@ -1025,8 +1025,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '9.6%',
       '9.0%',
+      '8.4%',
       '10.8%',
-      '8.4%'
     ],
     correctAnswer: 0,
     explanation: 'Portfolio Return = Σ(Weight × Return)\n= (0.60 × 12%) + (0.40 × 6%)\n= 7.2% + 2.4% = 9.6%',
@@ -1044,12 +1044,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Portfolio value: $10 million. Daily std dev: 1.5%. 95% confidence z-score: 1.65. What is the daily VaR?',
     options: [
-      '$247,500',
       '$150,000',
+      '$1,650,000',
+      '$247,500',
       '$165,000',
-      '$1,650,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'VaR = Portfolio Value × σ × z-score\n= $10,000,000 × 0.015 × 1.65\n= $247,500\nWith 95% confidence, daily loss will not exceed $247,500.',
     reference: 'IMA CMA LOS 2D1',
     calculationType: 'risk',
@@ -1069,12 +1069,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Net income: $5 million. Total assets: $100 million. Potential error: $400,000. Using 5% of net income as materiality threshold, is this material?',
     options: [
-      'Yes, exceeds 5% of NI ($250,000)',
       'No, below 5% of NI',
+      'Yes, exceeds 5% of NI ($250,000)',
+      'Yes, exceeds 0.5% of assets',
       'Cannot determine',
-      'Yes, exceeds 0.5% of assets'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Materiality threshold = 5% × $5,000,000 = $250,000\nError of $400,000 > $250,000\nYes, the error is material and should be corrected.',
     reference: 'IMA CMA LOS 2E1',
     calculationType: 'materiality',
@@ -1092,8 +1092,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '16.4%',
       '10%',
+      '20%',
       '12%',
-      '20%'
     ],
     correctAnswer: 0,
     explanation: 'MIRR: PV of costs = TV / (1 + MIRR)^n\n$50,000 = $78,700 / (1 + MIRR)³\n(1 + MIRR)³ = 1.574\n1 + MIRR = 1.164\nMIRR = 16.4%',
@@ -1113,8 +1113,8 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     options: [
       '$260,000',
       '$410,000',
+      '$230,000',
       '$350,000',
-      '$230,000'
     ],
     correctAnswer: 0,
     explanation: 'FCFF = Operating Income × (1-Tax) + Depreciation - CAPEX - ΔNWC\n= $500,000 × 0.70 + $80,000 - $120,000 - $50,000\n= $350,000 + $80,000 - $120,000 - $50,000\n= $260,000',
@@ -1132,12 +1132,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Market cap: $800 million. Debt: $300 million. Cash: $50 million. What is Enterprise Value?',
     options: [
+      '$500 million',
       '$1,050 million',
       '$1,100 million',
       '$850 million',
-      '$500 million'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Enterprise Value = Market Cap + Debt - Cash\n= $800M + $300M - $50M = $1,050 million\nEV represents the total value needed to acquire the company.',
     reference: 'IMA CMA LOS 2B1',
     calculationType: 'valuation',
@@ -1153,12 +1153,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Enterprise Value: $600 million. EBITDA: $75 million. What is the EV/EBITDA multiple?',
     options: [
+      '6.0x',
       '8.0x',
       '12.5x',
       '0.125x',
-      '6.0x'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'EV/EBITDA = Enterprise Value / EBITDA\n= $600M / $75M = 8.0x\nInvestors are paying 8x EBITDA for this company.',
     reference: 'IMA CMA LOS 2B1',
     calculationType: 'valuation',
@@ -1174,12 +1174,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Make: VC $35, avoidable FC $50,000 at 5,000 units. Buy: $48 per unit. At 5,000 units, what is the cost advantage of making?',
     options: [
-      '$15,000 advantage to make',
+      'Equal costs',
       '$65,000 advantage to buy',
+      '$15,000 advantage to make',
       '$15,000 advantage to buy',
-      'Equal costs'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Make cost = ($35 × 5,000) + $50,000 = $175,000 + $50,000 = $225,000\nBuy cost = $48 × 5,000 = $240,000\nAdvantage to make = $240,000 - $225,000 = $15,000',
     reference: 'IMA CMA LOS 2C3',
     calculationType: 'decision-analysis',
@@ -1195,12 +1195,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Regular price: $100. Variable cost: $65. Special order: 1,000 units at $75. Excess capacity available. What is the incremental profit?',
     options: [
-      '$10,000',
+      '-$25,000',
       '$35,000',
+      '$10,000',
       '$25,000',
-      '-$25,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Incremental Revenue = 1,000 × $75 = $75,000\nIncremental Cost = 1,000 × $65 = $65,000\nIncremental Profit = $75,000 - $65,000 = $10,000\nAccept: price exceeds variable cost with excess capacity.',
     reference: 'IMA CMA LOS 2C3',
     calculationType: 'decision-analysis',
@@ -1216,12 +1216,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Application',
     question: 'Stock price: $80. Annual dividend: $2.40. What is the dividend yield?',
     options: [
-      '3.0%',
       '2.4%',
+      '0.03%',
+      '3.0%',
       '33.3%',
-      '0.03%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Dividend Yield = Annual Dividend / Stock Price\n= $2.40 / $80 = 0.03 = 3.0%',
     reference: 'IMA CMA LOS 2B1',
     calculationType: 'ratios',
@@ -1237,12 +1237,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'Investment: $100,000. Annual cash flow: $35,000 for 5 years. Discount rate: 10%. PV factors: Y1 0.909, Y2 0.826, Y3 0.751, Y4 0.683. What is discounted payback?',
     options: [
-      '3.7 years',
       '2.86 years',
+      '3.7 years',
+      '3.0 years',
       '4.0 years',
-      '3.0 years'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Discounted CF:\nY1: $35,000 × 0.909 = $31,815 (Cum: $31,815)\nY2: $35,000 × 0.826 = $28,910 (Cum: $60,725)\nY3: $35,000 × 0.751 = $26,285 (Cum: $87,010)\nY4: $35,000 × 0.683 = $23,905 (Cum: $110,915)\nPayback in Year 4: Need $12,990 more after Y3\n$12,990 / $23,905 = 0.54 year\nDiscounted payback = 3.54 ≈ 3.7 years',
     reference: 'IMA CMA LOS 2B3',
     calculationType: 'payback',
@@ -1258,12 +1258,12 @@ export const CMA2_CALCULATION_PROBLEMS: Question[] = [
     skillLevel: 'Analysis',
     question: 'ROE: 15%. Dividend payout ratio: 40%. What is the sustainable growth rate?',
     options: [
-      '9.0%',
+      '21.0%',
       '15.0%',
+      '9.0%',
       '6.0%',
-      '21.0%'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Retention Ratio = 1 - Payout Ratio = 1 - 40% = 60%\nSustainable Growth Rate = ROE × Retention Ratio\n= 15% × 60% = 9.0%\nCompany can grow 9% annually without additional external financing.',
     reference: 'IMA CMA LOS 2A2',
     calculationType: 'growth',

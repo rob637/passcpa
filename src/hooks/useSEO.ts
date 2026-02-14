@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { COURSE_DISPLAY_STATS, TOTAL_DISPLAY } from '../config/contentStats';
 
 interface SEOProps {
   title: string;
@@ -15,7 +16,7 @@ interface SEOProps {
  * @example
  * useSEO({
  *   title: 'CPA Exam Prep',
- *   description: 'Free AI-powered CPA exam prep with 3,300+ questions.',
+ *   description: 'Free AI-powered CPA exam prep with 5,000+ questions.',
  *   canonicalUrl: 'https://voraprep.com/cpa'
  * });
  */
@@ -98,31 +99,31 @@ export const useSEO = ({
 export const LANDING_SEO = {
   home: {
     title: 'Free AI-Powered Exam Prep',
-    description: 'VoraPrep offers free AI-powered exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications. 11,000+ practice questions with adaptive learning.',
+    description: `VoraPrep offers free AI-powered exam prep for CPA, EA, CMA, CIA, CFP, and CISA certifications. ${TOTAL_DISPLAY.questions} practice questions with adaptive learning.`,
   },
   cpa: {
     title: 'CPA Exam Prep',
-    description: 'Pass your CPA exam with VoraPrep\'s free AI-powered prep. 3,300+ questions, adaptive learning, SM-2 spaced repetition. 2025 & 2026 blueprint ready.',
+    description: `Pass your CPA exam with VoraPrep's free AI-powered prep. ${COURSE_DISPLAY_STATS.cpa.questions} questions, adaptive learning, SM-2 spaced repetition. 2025 & 2026 blueprint ready.`,
   },
   ea: {
     title: 'Enrolled Agent (EA) Exam Prep',
-    description: 'Free EA exam prep for the Special Enrollment Examination. 2,100+ questions covering all 3 SEE parts. AI-powered adaptive learning.',
+    description: `Free EA exam prep for the Special Enrollment Examination. ${COURSE_DISPLAY_STATS.ea.questions} questions covering all 3 SEE parts. AI-powered adaptive learning.`,
   },
   cma: {
     title: 'CMA Exam Prep',
-    description: 'Free CMA exam prep with 1,600+ practice questions. Master financial planning, performance management, and cost management with AI-powered learning.',
+    description: `Free CMA exam prep with ${COURSE_DISPLAY_STATS.cma.questions} practice questions. Master financial planning, performance management, and cost management with AI-powered learning.`,
   },
   cia: {
     title: 'CIA Exam Prep',
-    description: 'Free CIA exam prep covering all 3 parts. 1,100+ practice questions for internal audit certification with adaptive AI learning.',
+    description: `Free CIA exam prep covering all 3 parts. ${COURSE_DISPLAY_STATS.cia.questions} practice questions for internal audit certification with adaptive AI learning.`,
   },
   cfp: {
     title: 'CFP Exam Prep',
-    description: 'Free CFP exam prep covering all 8 CFP Board knowledge domains. 2,100+ questions with AI-powered adaptive learning.',
+    description: `Free CFP exam prep covering all 8 CFP Board knowledge domains. ${COURSE_DISPLAY_STATS.cfp.questions} questions with AI-powered adaptive learning.`,
   },
   cisa: {
     title: 'CISA Exam Prep',
-    description: 'Free CISA exam prep for IT auditors. 1,100+ questions covering all 5 ISACA domains with AI-powered learning.',
+    description: `Free CISA exam prep for IT auditors. ${COURSE_DISPLAY_STATS.cisa.questions} questions covering all 5 ISACA domains with AI-powered learning.`,
   },
 };
 

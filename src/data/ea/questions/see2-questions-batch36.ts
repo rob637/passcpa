@@ -20,10 +20,10 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'FICA taxes consist of:',
     options: [
-      'Federal income tax only',
+      'Unemployment taxes only',
       'Social Security and Medicare taxes',
+      'Federal income tax only',
       'State income tax only',
-      'Unemployment taxes only'
     ],
     correctAnswer: 1,
     explanation: 'FICA (Federal Insurance Contributions Act) includes Social Security tax (6.2% on wages up to the annual limit) and Medicare tax (1.45% on all wages, plus 0.9% additional Medicare on high earners).',
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Social Security tax applies to:',
     options: [
-      'All wages without limit',
       'Wages up to the annual wage base limit',
+      'Only salary, not hourly wages',
+      'All wages without limit',
       'Only tips and bonuses',
-      'Only salary, not hourly wages'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Social Security tax (OASDI) applies only to wages up to the annual wage base ($168,600 for 2024). Wages above this amount are not subject to Social Security tax (but are subject to Medicare).',
     reference: 'IRC §3121(a); Social Security Act',
   },
@@ -58,15 +58,15 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     subtopic: 'Additional Medicare Tax',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: 'The Additional Medicare Tax of 0.9% applies to:',
+    question: 'An employer paid total wages of $180,000 to a single employee in 2024 (Social Security wage base: $168,600). What is the employer\'s total share of FICA taxes for this employee?',
     options: [
-      'All wages regardless of amount',
-      'Wages exceeding $200,000 (single) or $250,000 (married filing jointly)',
-      'Only self-employment income',
-      'Only investment income'
+      '$13,063',
+      '$13,770',
+      '$12,898',
+      '$10,453',
     ],
-    correctAnswer: 1,
-    explanation: 'The Additional Medicare Tax of 0.9% applies to wages exceeding $200,000 for single filers or $250,000 for married filing jointly. Employers must withhold on wages over $200,000.',
+    correctAnswer: 0,
+    explanation: 'Employer FICA = Social Security (6.2%) on wages up to $168,600 + Medicare (1.45%) on all wages. Social Security: 6.2% × $168,600 = $10,453. Medicare: 1.45% × $180,000 = $2,610. Total = $13,063. Employers do not pay the Additional Medicare Tax — that is the employee\'s responsibility alone.',
     reference: 'IRC §3101(b)(2)',
   },
   {
@@ -81,11 +81,11 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     question: 'The Federal Unemployment Tax (FUTA) is:',
     options: [
       'Paid 50/50 by employer and employee',
+      'Paid by the state government',
       'Paid only by the employer',
       'Paid only by the employee',
-      'Paid by the state government'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'FUTA tax is paid entirely by employers. The rate is 6.0% on the first $7,000 of wages per employee, but employers receive up to 5.4% credit for state unemployment taxes, resulting in a net 0.6% rate.',
     reference: 'IRC §3301',
   },
@@ -101,11 +101,11 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     question: 'Employers with over $100,000 in employment tax liability during a lookback period must deposit:',
     options: [
       'Quarterly',
+      'Annually',
       'Monthly',
       'Semi-weekly or next business day',
-      'Annually'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Large employers (over $100,000 lookback period liability) must make semi-weekly deposits. If liability exceeds $100,000 in one day, next-day deposit is required.',
     reference: 'Treas. Reg. §31.6302-1',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 941 is used by employers to:',
     options: [
-      'Report annual federal income tax',
       'Report quarterly employment taxes withheld and employer\'s share',
+      'Report annual federal income tax',
+      'Report annual wage and tax statements',
       'Request employer identification number',
-      'Report annual wage and tax statements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 941, Employer\'s Quarterly Federal Tax Return, reports wages paid, tips reported, federal income tax withheld, and both employer and employee shares of Social Security and Medicare taxes.',
     reference: 'IRC §6011',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Trust Fund Recovery Penalty (IRC §6672) may be assessed against:',
     options: [
-      'Only the corporation',
       'Responsible persons who willfully fail to collect, account for, or pay trust fund taxes',
+      'Only the corporation',
+      'State governments',
       'Only silent partners',
-      'State governments'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The TFRP equals 100% of trust fund taxes (employee withholdings) and can be personally assessed against any responsible person (officer, director, owner) who willfully fails to pay.',
     reference: 'IRC §6672',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The IRS uses which test to determine worker classification as employee vs. independent contractor?',
     options: [
-      'Written agreement test only',
       'Common-law rules focusing on behavioral control, financial control, and relationship type',
+      'Written agreement test only',
+      'Industry standard test',
       'Amount of compensation only',
-      'Industry standard test'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The IRS applies common-law rules examining behavioral control (how work is done), financial control (business aspects), and type of relationship (contracts, benefits, permanency).',
     reference: 'Rev. Rul. 87-41; IRS Publication 15-A',
   },
@@ -180,10 +180,10 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form W-2 must be furnished to employees by:',
     options: [
-      'December 31 of the tax year',
+      'Within 30 days of termination',
       'January 31 of the following year',
+      'December 31 of the tax year',
       'April 15 of the following year',
-      'Within 30 days of termination'
     ],
     correctAnswer: 1,
     explanation: 'Employers must furnish Form W-2 to employees by January 31 following the calendar year. Copies must also be filed with SSA by January 31.',
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH36: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The purpose of Form W-4 is to:',
     options: [
-      'Report wages earned during the year',
       'Provide information to employer for calculating federal income tax withholding',
+      'Report independent contractor income',
+      'Report wages earned during the year',
       'Claim exempt status from FICA taxes',
-      'Report independent contractor income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form W-4, Employee\'s Withholding Certificate, provides information about filing status, dependents, other income, and deductions so employers can calculate proper federal income tax withholding.',
     reference: 'IRC §3402(f)',
   },

@@ -6,6 +6,8 @@
  * Passing score is determined by CFP Board using a modified Angoff method (approximately 62-65%).
  */
 
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
+
 export interface PassGuaranteeConfig {
   enabled: boolean;
   name: string;
@@ -59,7 +61,7 @@ export const CFP_PASS_GUARANTEE: PassGuaranteeConfig = {
     {
       id: 'pg-req-002',
       title: 'Complete 80% of Practice Questions',
-      description: 'Answer at least 80% of the 1,500+ practice questions',
+      description: `Answer at least 80% of the ${COURSE_DISPLAY_STATS.cfp.questions} practice questions`,
       metric: 'question_completion',
       threshold: 80,
       icon: 'CheckCircle'

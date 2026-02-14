@@ -58,12 +58,12 @@ export const CFP_RET_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: `Margaret, age 60, wants to retire at 65 with $80,000 annual income (today's dollars). She expects 3% inflation, a 7% pre-retirement return, and 5% post-retirement return. Life expectancy is age 90. She currently has $400,000 saved. What approximate additional lump sum does Margaret need AT RETIREMENT to fund her goal (assuming level real payments)?`,
     options: [
+      'C) $1,150,000',
       'A) $680,000',
       'B) $925,000',
-      'C) $1,150,000',
-      'D) $1,425,000'
+      'D) $1,425,000',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C ($1,150,000 additional needed)**
 
 **Analysis:**
@@ -91,12 +91,12 @@ export const CFP_RET_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: `Robert's Primary Insurance Amount (PIA) at Full Retirement Age (67) is $2,800/month. If Robert claims benefits at age 62, what will his monthly benefit be?`,
     options: [
+      'C) $2,240',
       'A) $1,960',
       'B) $2,100',
-      'C) $2,240',
-      'D) $2,380'
+      'D) $2,380',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($1,960)**
 
 **Social Security Early Claiming Reduction:**
@@ -123,10 +123,10 @@ export const CFP_RET_QUESTIONS: Question[] = [
     skillLevel: 'Evaluation',
     question: `Tom (age 66, PIA $3,200) and Susan (age 64, PIA $1,800) are married. Tom is in excellent health; Susan has health concerns. Which Social Security claiming strategy would likely maximize their lifetime household benefits?`,
     options: [
-      'A) Both claim immediately at their current ages',
-      'B) Tom claims at 70, Susan claims at 62',
       'C) Tom claims at 67, Susan claims at 67',
-      'D) Susan claims at 62, Tom claims at 67, Susan switches to spousal at 67'
+      'B) Tom claims at 70, Susan claims at 62',
+      'A) Both claim immediately at their current ages',
+      'D) Susan claims at 62, Tom claims at 67, Susan switches to spousal at 67',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Tom claims at 70, Susan claims at 62)**
@@ -160,12 +160,12 @@ export const CFP_RET_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: `Which of the following statements about Medicare is CORRECT?`,
     options: [
-      'A) Medicare Part A requires a monthly premium for all beneficiaries',
-      'B) Medicare Part B covers prescription drugs purchased at retail pharmacies',
       'C) IRMAA surcharges apply to Parts B and D based on income from two years prior',
-      'D) Medigap plans can be purchased at any time without medical underwriting'
+      'B) Medicare Part B covers prescription drugs purchased at retail pharmacies',
+      'A) Medicare Part A requires a monthly premium for all beneficiaries',
+      'D) Medigap plans can be purchased at any time without medical underwriting',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C**
 
 IRMAA (Income-Related Monthly Adjustment Amount) surcharges are added to Medicare Parts B and D premiums based on Modified Adjusted Gross Income from TWO years prior (the "IRMAA lookback period"). For 2024 premiums, 2022 income is used.
@@ -189,10 +189,10 @@ IRMAA (Income-Related Monthly Adjustment Amount) surcharges are added to Medicar
     skillLevel: 'Application',
     question: `Jennifer, age 55, participates in her employer's 401(k) plan. In 2024, what is her maximum total contribution (employee + employer) if her compensation is $350,000 and the employer matches 100% of the first 6%?`,
     options: [
-      'A) $30,500',
       'B) $46,000',
       'C) $69,000',
-      'D) $76,500'
+      'A) $30,500',
+      'D) $76,500',
     ],
     correctAnswer: 3,
     explanation: `**Correct Answer: D ($76,500)**
@@ -231,12 +231,12 @@ Wait - the question asks for maximum total. Employer can contribute more:
     skillLevel: 'Application',
     question: `Dr. Martinez, age 48, has worked at a university for 18 years and participates in a 403(b) plan. She has always contributed the maximum but has never used the 15-Year Rule. In 2024, what is her maximum employee contribution?`,
     options: [
-      'A) $23,000',
       'B) $26,000',
+      'A) $23,000',
       'C) $30,500',
-      'D) $33,000'
+      'D) $33,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($26,000)**
 
 **403(b) 15-Year Rule:**
@@ -294,11 +294,11 @@ Employees with 15+ years of service at educational organizations, hospitals, or 
     question: `Which of the following employer-sponsored plan distributions would be subject to the 10% early withdrawal penalty?`,
     options: [
       'A) Distribution at age 56 after separation from service in the year the participant turned 55',
-      'B) Distribution to an alternate payee under a QDRO',
       'C) Distribution at age 52 rolled to an IRA, then withdrawn at age 54',
-      'D) Distribution for unreimbursed medical expenses exceeding 7.5% of AGI'
+      'B) Distribution to an alternate payee under a QDRO',
+      'D) Distribution for unreimbursed medical expenses exceeding 7.5% of AGI',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C**
 
 The "Rule of 55" exception (separation from service at age 55+) applies ONLY to employer plans, not IRAs. Once funds are rolled to an IRA, the age threshold becomes 59½.
@@ -324,10 +324,10 @@ The "Rule of 55" exception (separation from service at age 55+) applies ONLY to 
     skillLevel: 'Application',
     question: `James (age 45) is married filing jointly with a MAGI of $138,000 for 2024. His wife, Karen, is not covered by an employer retirement plan, but James IS covered by his 401(k). What is the maximum deductible Traditional IRA contribution for Karen in 2024?`,
     options: [
-      'A) $0 (fully phased out)',
       'B) $3,500 (partial deduction)',
+      'A) $0 (fully phased out)',
       'C) $7,000 (full deduction)',
-      'D) Karen cannot contribute because James is covered'
+      'D) Karen cannot contribute because James is covered',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C ($7,000 full deduction)**
@@ -359,10 +359,10 @@ When one spouse IS covered by an employer plan and the other IS NOT:
     skillLevel: 'Evaluation',
     question: `Patricia, age 58, has a Traditional IRA worth $500,000 (all pre-tax). She expects to be in the 32% tax bracket now and 24% in retirement at age 67. She's considering a Roth conversion. Ignoring state taxes and assuming 6% annual growth, which statement is MOST accurate?`,
     options: [
+      'C) She should never convert because she will be in a lower bracket in retirement',
       'A) Converting now is clearly advantageous because the account will grow tax-free',
       'B) Converting now costs $160,000 in taxes but may still be beneficial if she lives past age 85',
-      'C) She should never convert because she will be in a lower bracket in retirement',
-      'D) Partial annual conversions to "fill up" lower brackets would likely be optimal'
+      'D) Partial annual conversions to "fill up" lower brackets would likely be optimal',
     ],
     correctAnswer: 3,
     explanation: `**Correct Answer: D (Partial annual conversions)**
@@ -396,11 +396,11 @@ The conventional wisdom of "convert when you're in a lower bracket" is oversimpl
     question: `Sarah is a self-employed consultant with net self-employment income of $180,000 (after self-employment tax deduction). What is her maximum SEP-IRA contribution for 2024?`,
     options: [
       'A) $23,000',
-      'B) $36,000',
       'C) $45,000',
-      'D) $69,000'
+      'B) $36,000',
+      'D) $69,000',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($45,000)**
 
 **SEP-IRA Contribution Limit:**
@@ -429,9 +429,9 @@ The conventional wisdom of "convert when you're in a lower bracket" is oversimpl
     question: `Which of the following statements about IRA rollovers is INCORRECT?`,
     options: [
       'A) A 60-day indirect rollover is limited to once per 12-month period across all IRAs',
-      'B) Trustee-to-trustee transfers are unlimited and do not count toward the 60-day rule',
       'C) Roth 401(k) balances can only be rolled to a Roth IRA, never to a Traditional IRA',
-      'D) After-tax contributions in a 401(k) can be rolled directly to a Roth IRA'
+      'B) Trustee-to-trustee transfers are unlimited and do not count toward the 60-day rule',
+      'D) After-tax contributions in a 401(k) can be rolled directly to a Roth IRA',
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A is INCORRECT**
@@ -459,12 +459,12 @@ Roth 401(k) balances CAN be rolled to a Traditional IRA—they would just be sub
     skillLevel: 'Analysis',
     question: `CEO Williams has $2 million in a nonqualified deferred compensation (NQDC) plan. Which of the following represents the PRIMARY risk to Williams that does NOT exist with qualified plans?`,
     options: [
-      'A) The deferred amounts are subject to FICA taxes when earned',
       'B) Distributions must begin at age 73 under RMD rules',
       'C) If the company becomes insolvent, Williams is an unsecured general creditor',
-      'D) Investment earnings in the plan are taxed annually'
+      'A) The deferred amounts are subject to FICA taxes when earned',
+      'D) Investment earnings in the plan are taxed annually',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C (Creditor risk)**
 
 **Key NQDC Characteristic:**
@@ -490,12 +490,12 @@ NQDC plans are "unfunded" for tax purposes—the executive's benefit is merely a
     skillLevel: 'Application',
     question: `Maria received Incentive Stock Options (ISOs) with an exercise price of $25. The current FMV is $45. She exercises 1,000 shares. What are the immediate tax consequences (assuming she holds the shares)?`,
     options: [
-      'A) $20,000 ordinary income at exercise',
       'B) No regular income tax, but $20,000 AMT preference item',
       'C) $20,000 capital gain at exercise',
-      'D) No tax consequences until sale'
+      'A) $20,000 ordinary income at exercise',
+      'D) No tax consequences until sale',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (No regular income, but $20,000 AMT preference)**
 
 **ISO Tax Treatment at Exercise:**
@@ -602,12 +602,12 @@ When the original owner died AFTER their Required Beginning Date (age 73+), the 
     skillLevel: 'Evaluation',
     question: `Janet, age 62, is retiring and has employer stock in her 401(k) worth $800,000. Her cost basis in the stock is $150,000. She is in the 32% tax bracket. If she takes a lump-sum distribution and uses the NUA strategy, what is her IMMEDIATE tax liability?`,
     options: [
-      'A) $48,000',
       'B) $208,000',
+      'A) $48,000',
       'C) $256,000',
-      'D) She owes no tax until she sells the stock'
+      'D) She owes no tax until she sells the stock',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($48,000)**
 
 **NUA (Net Unrealized Appreciation) Strategy:**
@@ -641,12 +641,12 @@ When taking a lump-sum distribution of employer stock:
     skillLevel: 'Remembering and Understanding',
     question: `Which of the following statements about Qualified Domestic Relations Orders (QDROs) is CORRECT?`,
     options: [
+      'C) A QDRO must specify the amount or percentage payable to the alternate payee',
       'A) QDROs apply to both qualified plans and IRAs',
       'B) The alternate payee under a QDRO is subject to the 10% early withdrawal penalty if under age 59½',
-      'C) A QDRO must specify the amount or percentage payable to the alternate payee',
-      'D) QDROs can only be issued at the time of divorce, not after the divorce is final'
+      'D) QDROs can only be issued at the time of divorce, not after the divorce is final',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C**
 
 A QDRO must include specific requirements:
@@ -713,12 +713,12 @@ A QDRO must include specific requirements:
     skillLevel: 'Application',
     question: `Which of the following is TRUE about the "4% Rule" for retirement withdrawals?`,
     options: [
+      'C) It adjusts the initial withdrawal amount annually for inflation',
       'A) It guarantees a 30-year portfolio survival rate of 100%',
       'B) It was based on a portfolio of 100% stocks',
-      'C) It adjusts the initial withdrawal amount annually for inflation',
-      'D) It requires recalculating 4% of the current portfolio balance each year'
+      'D) It requires recalculating 4% of the current portfolio balance each year',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C**
 
 **The 4% Rule (Bengen/Trinity Study):**
@@ -748,12 +748,12 @@ A QDRO must include specific requirements:
     skillLevel: 'Evaluation',
     question: `A small business owner with 15 employees wants a simple retirement plan with low administrative burden. Most employees are hourly workers with high turnover. Which plan would be MOST appropriate?`,
     options: [
+      'C) Profit-Sharing Plan with 2-year eligibility',
       'A) Traditional Defined Benefit Plan',
       'B) SIMPLE IRA',
-      'C) Profit-Sharing Plan with 2-year eligibility',
-      'D) Cash Balance Plan'
+      'D) Cash Balance Plan',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (SIMPLE IRA)**
 
 **Why SIMPLE IRA is optimal:**
@@ -781,10 +781,10 @@ A QDRO must include specific requirements:
     skillLevel: 'Application',
     question: `Dr. Patel earns $400,000 and wants to contribute to a Roth IRA. He has a Traditional IRA with a $200,000 balance from old rollovers. If he makes a $7,000 non-deductible Traditional IRA contribution and immediately converts to Roth, approximately how much of the $7,000 conversion will be taxable under the pro-rata rule?`,
     options: [
-      'A) $0 (only the contribution is converted)',
-      'B) $6,831',
       'C) $3,500',
-      'D) $7,000'
+      'B) $6,831',
+      'A) $0 (only the contribution is converted)',
+      'D) $7,000',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($6,831)**
@@ -822,10 +822,10 @@ This is why the "backdoor Roth" is problematic when you have existing pre-tax IR
     skillLevel: 'Analysis',
     question: `Which statement BEST compares Restricted Stock Units (RSUs) to Incentive Stock Options (ISOs)?`,
     options: [
-      'A) RSUs have no value if the stock price falls below grant price; ISOs always have value',
-      'B) RSUs are taxed as ordinary income at vesting; ISOs have no regular tax until sale',
       'C) Both RSUs and ISOs qualify for long-term capital gains treatment at grant',
-      'D) ISOs have no holding period requirements; RSUs require a 1-year holding period'
+      'B) RSUs are taxed as ordinary income at vesting; ISOs have no regular tax until sale',
+      'A) RSUs have no value if the stock price falls below grant price; ISOs always have value',
+      'D) ISOs have no holding period requirements; RSUs require a 1-year holding period',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -856,10 +856,10 @@ This is why the "backdoor Roth" is problematic when you have existing pre-tax IR
     skillLevel: 'Remembering and Understanding',
     question: `Social Security integration in qualified retirement plans typically results in which of the following?`,
     options: [
-      'A) Lower contributions for high-earning employees',
-      'B) Higher contribution rates on compensation above the Social Security wage base',
       'C) Equal contributions for all employees regardless of salary',
-      'D) Reduced benefits for employees who retire early'
+      'B) Higher contribution rates on compensation above the Social Security wage base',
+      'A) Lower contributions for high-earning employees',
+      'D) Reduced benefits for employees who retire early',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -895,10 +895,10 @@ Since Social Security is a form of employer-provided retirement benefit (employe
     skillLevel: 'Application',
     question: `Jennifer, age 45, wants to take a hardship withdrawal from her 401(k) to prevent eviction from her primary residence. Her vested account balance is $120,000 and she needs $15,000. Which statement about this hardship withdrawal is CORRECT?`,
     options: [
-      'A) She can withdraw $15,000 tax-free if she repays within 60 days',
       'B) She must exhaust all other plan loans before qualifying for hardship',
+      'A) She can withdraw $15,000 tax-free if she repays within 60 days',
       'C) She will owe income tax plus a 10% early withdrawal penalty on the distribution',
-      'D) She can only withdraw her employee contributions, not employer match or earnings'
+      'D) She can only withdraw her employee contributions, not employer match or earnings',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C**
@@ -929,12 +929,12 @@ Since Social Security is a form of employer-provided retirement benefit (employe
     skillLevel: 'Analysis',
     question: `Michael, a physician earning $450,000 annually, wants to fund a Roth IRA. He has a traditional IRA with a $50,000 balance from a prior 401(k) rollover. If he makes a $7,000 non-deductible traditional IRA contribution and immediately converts to Roth, what is the taxable portion of the conversion using the pro-rata rule?`,
     options: [
-      'A) $0 - the entire conversion is tax-free',
       'B) $6,140 is taxable',
+      'A) $0 - the entire conversion is tax-free',
       'C) $7,000 is taxable',
-      'D) $860 is taxable'
+      'D) $860 is taxable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($6,140 is taxable)**
 
 **Pro-Rata Rule Calculation:**
@@ -965,11 +965,11 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
     question: `Susan, age 60, needs $80,000/year in retirement income (beginning of year payments) starting at age 65. She expects to live until age 90 and assumes 3% inflation and a 6% return during retirement. Social Security will provide $30,000/year. How much capital does Susan need at retirement (age 65) using the capital preservation approach?`,
     options: [
       'A) $742,000',
-      'B) $987,000',
       'C) $1,156,000',
-      'D) $1,412,000'
+      'B) $987,000',
+      'D) $1,412,000',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($1,156,000)**
 
 **Capital Needs Analysis (Preservation Method):**
@@ -1006,11 +1006,11 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
     question: `Dr. Patel operates a dental practice with 8 employees. She is considering a SIMPLE IRA. Which statement about SIMPLE IRA employer contribution requirements is CORRECT?`,
     options: [
       'A) Employer must match 100% up to 6% of compensation',
-      'B) Employer can choose either a 3% match or 2% non-elective contribution',
       'C) Only the employer can contribute; employees cannot defer salary',
-      'D) Employees are subject to a 6-month waiting period before participation'
+      'B) Employer can choose either a 3% match or 2% non-elective contribution',
+      'D) Employees are subject to a 6-month waiting period before participation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **SIMPLE IRA Employer Contribution Options:**
@@ -1040,12 +1040,12 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
     skillLevel: 'Analysis',
     question: `Maria, a hospital administrator, participates in both a 403(b) plan and a governmental 457(b) plan. In 2024, what is her maximum combined deferral to both plans?`,
     options: [
+      'C) $23,000 plus catch-up contributions if eligible',
       'A) $23,000 total shared between both plans',
       'B) $46,000 ($23,000 to each plan)',
-      'C) $23,000 plus catch-up contributions if eligible',
-      'D) $69,000 including employer contributions'
+      'D) $69,000 including employer contributions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($46,000)**
 
 **Key Rule: 457(b) Has Separate Deferral Limit**
@@ -1082,11 +1082,11 @@ Government and tax-exempt employees can dramatically accelerate retirement savin
     question: `Robert, born June 15, 1951, has a traditional IRA worth $800,000 as of December 31, 2024. Using the Uniform Lifetime Table factor of 24.6 for his age, what is his 2025 RMD?`,
     options: [
       'A) $0 - his RMD year has not started yet',
-      'B) $32,520',
       'C) $29,851',
-      'D) $34,188'
+      'B) $32,520',
+      'D) $34,188',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($32,520)**
 
 **RMD Calculation:**
@@ -1120,11 +1120,11 @@ RMDs are always calculated using the prior year-end account balance.
     question: `Which client would benefit MOST from a Roth conversion strategy?`,
     options: [
       'A) Carlos, 62, retiring next year with large pension income',
-      'B) Linda, 35, in the 32% bracket expecting to be in 22% bracket in retirement',
       'C) David, 55, in a 22% bracket now but expecting to be in 32% bracket when RMDs begin',
-      'D) Patricia, 72, taking RMDs and in the highest tax bracket'
+      'B) Linda, 35, in the 32% bracket expecting to be in 22% bracket in retirement',
+      'D) Patricia, 72, taking RMDs and in the highest tax bracket',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C (David)**
 
 **Optimal Roth Conversion Candidates:**
@@ -1155,12 +1155,12 @@ RMDs are always calculated using the prior year-end account balance.
     skillLevel: 'Remembering and Understanding',
     question: `ABC Company wants to establish a Safe Harbor 401(k) to avoid ADP/ACP testing. Which contribution formula would satisfy Safe Harbor requirements?`,
     options: [
-      'A) 2% non-elective contribution with 2-year cliff vesting',
       'B) 100% match on first 3% deferred plus 50% match on next 2% deferred',
       'C) 25% match up to 6% of compensation with 6-year graded vesting',
-      'D) 4% profit sharing contribution with 3-year cliff vesting'
+      'A) 2% non-elective contribution with 2-year cliff vesting',
+      'D) 4% profit sharing contribution with 3-year cliff vesting',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **Safe Harbor 401(k) Contribution Options:**
@@ -1189,12 +1189,12 @@ RMDs are always calculated using the prior year-end account balance.
     skillLevel: 'Analysis',
     question: `A Monte Carlo simulation shows a client's retirement plan has a 78% probability of success. How should the financial planner interpret this result?`,
     options: [
-      'A) The plan will definitely fail 22% of the time',
       'B) The client needs to save 22% more to achieve 100% success',
       'C) Based on 1,000+ random market scenarios, 780 resulted in not depleting the portfolio',
-      'D) The portfolio has a 78% expected return over the retirement period'
+      'A) The plan will definitely fail 22% of the time',
+      'D) The portfolio has a 78% expected return over the retirement period',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C**
 
 **Monte Carlo Simulation Explained:**
@@ -1298,12 +1298,12 @@ $2,800 × 1.24 = $3,472
     skillLevel: 'Application',
     question: `Janet made non-deductible IRA contributions of $6,000/year for 10 years ($60,000 total). Her traditional IRA is now worth $150,000. If she takes a $30,000 distribution, how much is taxable?`,
     options: [
-      'A) $30,000 (fully taxable)',
       'B) $18,000',
+      'A) $30,000 (fully taxable)',
       'C) $12,000',
-      'D) $0 (return of basis first)'
+      'D) $0 (return of basis first)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($18,000)**
 
 **Pro-Rata Rule for IRA Distributions:**
@@ -1339,12 +1339,12 @@ Pre-tax ratio: $90,000 ÷ $150,000 = 60%
     skillLevel: 'Analysis',
     question: `Mark, an executive, participates in his company's non-qualified deferred compensation plan. He deferred $200,000 of salary in 2024. His NQDC account has grown to $350,000. If the company files for bankruptcy, what is Mark likely to receive?`,
     options: [
+      'C) Potentially $0 (unsecured general creditor)',
       'A) $350,000 (full account balance protected)',
       'B) $200,000 (original deferrals protected)',
-      'C) Potentially $0 (unsecured general creditor)',
-      'D) $350,000 minus a 10% bankruptcy penalty'
+      'D) $350,000 minus a 10% bankruptcy penalty',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (Potentially $0)**
 
 **NQDC Plans Are Unsecured Promises:**
@@ -1378,11 +1378,11 @@ Some NQDC plans use rabbi trusts, but these do NOT protect against employer inso
     question: `Lisa, age 50, wants to retire early and access her $1,000,000 IRA without penalty using SEPP (72t). Using the fixed amortization method with a 5% reasonable interest rate and life expectancy of 34.2 years, what is her approximate annual payment?`,
     options: [
       'A) $29,240',
-      'B) $50,000',
       'C) $58,480',
-      'D) $76,923'
+      'B) $50,000',
+      'D) $76,923',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($58,480)**
 
 **72(t) SEPP Calculation - Fixed Amortization:**
@@ -1417,11 +1417,11 @@ This method calculates payments as if the IRA were a loan being paid out over th
     question: `Greg, age 52, is a self-employed consultant with $200,000 of net self-employment income. What is his maximum Solo 401(k) contribution for 2024?`,
     options: [
       'A) $30,500',
-      'B) $53,500',
       'C) $69,000',
-      'D) $76,500'
+      'B) $53,500',
+      'D) $76,500',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C ($69,000)**
 
 **Solo 401(k) Contribution Calculation:**
@@ -1458,12 +1458,12 @@ At $200,000 income, Greg can contribute close to the maximum.`
     skillLevel: 'Analysis',
     question: `Two retirees each have $1 million and withdraw 5% annually. Both experience the same average return over 20 years. Retiree A has poor returns early; Retiree B has poor returns late. Which statement is CORRECT?`,
     options: [
+      'C) Retiree B will likely deplete funds earlier due to compounding effects',
       'A) Both will have the same ending balance since average returns are identical',
       'B) Retiree A will likely deplete funds earlier due to sequence of returns risk',
-      'C) Retiree B will likely deplete funds earlier due to compounding effects',
-      'D) Sequence of returns only matters during the accumulation phase'
+      'D) Sequence of returns only matters during the accumulation phase',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 **Sequence of Returns Risk:**
@@ -1500,12 +1500,12 @@ During retirement (distribution phase), the ORDER of returns matters significant
     skillLevel: 'Remembering and Understanding',
     question: `Kevin, age 48, earns $200,000. His wife Emily, age 45, has no earned income. What is the maximum Emily can contribute to a traditional IRA in 2024?`,
     options: [
-      'A) $0 - she has no earned income',
       'B) $7,000',
       'C) $8,000',
-      'D) $14,000 (combined with Kevin)'
+      'A) $0 - she has no earned income',
+      'D) $14,000 (combined with Kevin)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($7,000)**
 
 **Spousal IRA Rules:**
@@ -1536,10 +1536,10 @@ May be limited if Kevin has workplace retirement plan (AGI phase-outs apply to s
     skillLevel: 'Remembering and Understanding',
     question: `In a divorce, Janet is awarded $150,000 from her ex-husband's 401(k) via a QDRO. Which statement about her options is CORRECT?`,
     options: [
-      'A) She must wait until age 59½ to access the funds penalty-free',
-      'B) She can roll the funds to her own IRA or take a distribution without 10% penalty',
       'C) The funds are taxable to her ex-husband since it was his account',
-      'D) She must take the distribution within 60 days of the divorce'
+      'B) She can roll the funds to her own IRA or take a distribution without 10% penalty',
+      'A) She must wait until age 59½ to access the funds penalty-free',
+      'D) She must take the distribution within 60 days of the divorce',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -1574,10 +1574,10 @@ If Janet needs immediate access (under 59½), take distribution BEFORE rolling t
     skillLevel: 'Application',
     question: `Tom has worked at his company for 4 years. The employer match in his 401(k) uses 6-year graded vesting (20% per year after year 2). His employer contributions total $50,000. How much is Tom vested in?`,
     options: [
-      'A) $10,000',
-      'B) $20,000',
       'C) $30,000',
-      'D) $40,000'
+      'B) $20,000',
+      'A) $10,000',
+      'D) $40,000',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($20,000)**
@@ -1611,12 +1611,12 @@ $50,000 × 40% = $20,000
     skillLevel: 'Analysis',
     question: `Sarah, age 40, inherited a Roth IRA from her mother in 2023. Her mother had held the Roth for 8 years. Under SECURE Act rules, which statement is CORRECT?`,
     options: [
-      'A) Sarah can stretch distributions over her lifetime',
       'B) Sarah must empty the account within 10 years but distributions are tax-free',
+      'A) Sarah can stretch distributions over her lifetime',
       'C) Sarah must start taking annual RMDs immediately',
-      'D) Sarah must pay tax on distributions until the 5-year holding period is met'
+      'D) Sarah must pay tax on distributions until the 5-year holding period is met',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **Inherited Roth IRA Rules (SECURE Act):**
@@ -1654,12 +1654,12 @@ $50,000 × 40% = $20,000
     skillLevel: 'Analysis',
     question: `A Monte Carlo simulation shows a client's retirement plan has a 78% probability of success. Which recommendation would MOST LIKELY increase the success probability?`,
     options: [
-      'A) Increase equity allocation from 40% to 80%',
       'B) Delay retirement by 2 years while continuing to save',
+      'A) Increase equity allocation from 40% to 80%',
       'C) Use average historical returns instead of randomized sequences',
-      'D) Reduce the confidence interval from 95% to 90%'
+      'D) Reduce the confidence interval from 95% to 90%',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 Delaying retirement by 2 years provides multiple benefits:
@@ -1685,11 +1685,11 @@ Delaying retirement by 2 years provides multiple benefits:
     question: `Tom (FRA benefit $2,800/month) and Mary (FRA benefit $1,000/month) are both at FRA. If Tom claims now, what is Mary's maximum spousal benefit?`,
     options: [
       'A) $400/month',
-      'B) $1,000/month',
       'C) $1,400/month',
-      'D) $2,800/month'
+      'B) $1,000/month',
+      'D) $2,800/month',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($1,000/month)**
 
 Mary's spousal benefit = GREATER of:
@@ -1719,9 +1719,9 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
     question: `Janet, 63, claims Social Security with a monthly benefit of $1,800. She continues working and earns $62,000 in 2024. The earnings limit is $22,320. How much will her annual benefits be reduced?`,
     options: [
       'A) $19,840',
-      'B) $21,600',
       'C) $39,680',
-      "D) $0—earnings test doesn't apply after age 62"
+      'B) $21,600',
+      "D) $0—earnings test doesn't apply after age 62",
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A ($19,840)**
@@ -1747,12 +1747,12 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
     skillLevel: 'Analysis',
     question: `A defined benefit plan uses a final average salary formula: 1.5% × years of service × final 3-year average salary. Mark has 28 years of service. His last 3 years' salaries were $95,000, $100,000, and $105,000. What is his annual pension benefit?`,
     options: [
+      'C) $42,000',
       'A) $42,000',
       'B) $44,100',
-      'C) $42,000',
-      'D) $44,100'
+      'D) $44,100',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A ($42,000)**
 
 **Calculation:**
@@ -1773,12 +1773,12 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
     skillLevel: 'Analysis',
     question: `A cross-tested profit sharing plan would be MOST beneficial for which business owner?`,
     options: [
+      'C) Age 45 owner with employees averaging age 45',
       'A) Age 35 owner with employees averaging age 50',
       'B) Age 58 owner with employees averaging age 28',
-      'C) Age 45 owner with employees averaging age 45',
-      'D) Age 30 owner with 1099 contractors only'
+      'D) Age 30 owner with 1099 contractors only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B**
 
 Cross-tested plans allocate contributions based on the PROJECTED BENEFIT at retirement rather than current contribution amount.
@@ -1805,12 +1805,12 @@ Cross-tested plans allocate contributions based on the PROJECTED BENEFIT at reti
     skillLevel: 'Application',
     question: `Which profit sharing allocation method allows different contribution rates for different employee groups while satisfying nondiscrimination rules?`,
     options: [
-      'A) Pro rata allocation',
-      'B) Integration with Social Security',
       'C) New comparability (cross-tested)',
-      'D) Age-weighted allocation'
+      'B) Integration with Social Security',
+      'A) Pro rata allocation',
+      'D) Age-weighted allocation',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C (New comparability)**
 
 New comparability plans:
@@ -1835,10 +1835,10 @@ New comparability plans:
     skillLevel: 'Application',
     question: `Lisa made a $7,000 Roth IRA contribution in January 2024. In September 2024, her income exceeds the Roth limit. What is her BEST option?`,
     options: [
-      'A) Pay the 6% excess contribution penalty annually',
-      'B) Recharacterize the contribution to a Traditional IRA',
       'C) Withdraw the contribution and earnings before year-end',
-      'D) Convert the contribution to a SEP-IRA'
+      'B) Recharacterize the contribution to a Traditional IRA',
+      'A) Pay the 6% excess contribution penalty annually',
+      'D) Convert the contribution to a SEP-IRA',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Recharacterize)**
@@ -1865,12 +1865,12 @@ Recharacterization allows:
     skillLevel: 'Application',
     question: `Tom, age 48, contributed $8,000 to his Traditional IRA in 2024 (limit $7,000). He discovers this error in April 2025 before filing his tax return. What should he do?`,
     options: [
-      'A) File Form 8606 to report the nondeductible portion',
       'B) Withdraw $1,000 plus attributable earnings before filing deadline',
       'C) Apply the excess to his 2025 contribution',
-      'D) Nothing—the 6% penalty is minimal'
+      'A) File Form 8606 to report the nondeductible portion',
+      'D) Nothing—the 6% penalty is minimal',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 To avoid the 6% excess contribution penalty:
@@ -1894,12 +1894,12 @@ To avoid the 6% excess contribution penalty:
     skillLevel: 'Analysis',
     question: `Maria has $80,000 in a Traditional IRA (all pre-tax) and $20,000 in a non-deductible Traditional IRA. She converts $20,000 to a Roth. How much is taxable?`,
     options: [
-      'A) $0—she converted her after-tax money',
       'B) $16,000',
+      'A) $0—she converted her after-tax money',
       'C) $20,000',
-      'D) $4,000'
+      'D) $4,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($16,000)**
 
 **Pro-Rata Rule Calculation:**
@@ -1955,11 +1955,11 @@ Roth conversions increase MAGI, which can trigger:
     question: `The "bucket strategy" for retirement income primarily addresses which risk?`,
     options: [
       'A) Inflation risk',
-      'B) Longevity risk',
       'C) Sequence of returns risk',
-      'D) Interest rate risk'
+      'B) Longevity risk',
+      'D) Interest rate risk',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: `**Correct Answer: C (Sequence of returns risk)**
 
 Bucket strategy divides assets into time horizons:
@@ -1985,12 +1985,12 @@ By having immediate needs in safe assets, you avoid selling equities during mark
     skillLevel: 'Application',
     question: `Which withdrawal sequence is generally most tax-efficient in retirement?`,
     options: [
+      'C) Taxable first, then Traditional, then Roth',
       'A) Roth first, then Traditional, then taxable',
       'B) Traditional first, then taxable, then Roth',
-      'C) Taxable first, then Traditional, then Roth',
-      'D) Equal withdrawals from all account types'
+      'D) Equal withdrawals from all account types',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: `**Correct Answer: C**
 
 **Tax-Efficient Withdrawal Order:**
@@ -2016,12 +2016,12 @@ This sequence maximizes tax-advantaged growth and manages bracket filling.
     skillLevel: 'Application',
     question: `Margaret, age 74, wants to donate $10,000 to charity. She has a $500,000 Traditional IRA. Why would a Qualified Charitable Distribution (QCD) be beneficial?`,
     options: [
+      'C) QCDs avoid the 10% early withdrawal penalty',
       'A) It counts toward her RMD and is excluded from gross income',
       'B) She receives a charitable deduction above the standard deduction',
-      'C) QCDs avoid the 10% early withdrawal penalty',
-      'D) QCDs can be made from Roth IRAs'
+      'D) QCDs can be made from Roth IRAs',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: `**Correct Answer: A**
 
 QCD Benefits:
@@ -2046,12 +2046,12 @@ QCD Benefits:
     skillLevel: 'Remembering',
     question: `Which statement about SIMPLE IRA plans is CORRECT?`,
     options: [
-      'A) The employer may choose between a 2% non-elective or 3% match contribution',
-      'B) Employees can contribute up to $23,000 in 2024',
       'C) Rollovers to Traditional IRAs are permitted after 1 year',
-      'D) SIMPLE IRAs are available to employers with up to 500 employees'
+      'B) Employees can contribute up to $23,000 in 2024',
+      'A) The employer may choose between a 2% non-elective or 3% match contribution',
+      'D) SIMPLE IRAs are available to employers with up to 500 employees',
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: `**Correct Answer: A**
 
 SIMPLE IRA Employer Options:
@@ -2074,12 +2074,12 @@ SIMPLE IRA Employer Options:
     skillLevel: 'Remembering',
     question: `A self-employed consultant, sole proprietor with no employees, wants to maximize retirement contributions with minimal administration. Which plan is MOST appropriate?`,
     options: [
+      'C) 401(k) plan',
       'A) Defined benefit plan',
       'B) SEP-IRA',
-      'C) 401(k) plan',
-      'D) SIMPLE IRA'
+      'D) SIMPLE IRA',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (SEP-IRA)**
 
 SEP-IRA advantages for self-employed:
@@ -2104,12 +2104,12 @@ SEP-IRA advantages for self-employed:
     skillLevel: 'Analysis',
     question: `A cash balance plan is classified as which type of retirement plan?`,
     options: [
-      'A) Defined contribution with guaranteed returns',
       'B) Defined benefit with hypothetical account balance',
       'C) Hybrid plan that is technically a profit sharing plan',
-      'D) ERISA-exempt retirement arrangement'
+      'A) Defined contribution with guaranteed returns',
+      'D) ERISA-exempt retirement arrangement',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 Cash balance plans:
@@ -2135,10 +2135,10 @@ Cash balance plans:
     skillLevel: 'Application',
     question: `ABC Company wants to avoid 401(k) nondiscrimination testing. Which contribution formula satisfies safe harbor requirements?`,
     options: [
-      'A) 2% match on first 6% of compensation',
-      'B) 3% non-elective contribution to all eligible employees',
       'C) 50% match on first 4% of compensation',
-      'D) Discretionary profit sharing contribution'
+      'B) 3% non-elective contribution to all eligible employees',
+      'A) 2% match on first 6% of compensation',
+      'D) Discretionary profit sharing contribution',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (3% non-elective)**
@@ -2198,10 +2198,10 @@ PV = PMT × [(1 - ((1+g)/(1+r))^n) / (r-g)]
     skillLevel: 'Analysis',
     question: `George worked 15 years in Social Security-covered employment and 20 years as a state employee with a pension (non-covered employment). How does WEP affect his Social Security benefit?`,
     options: [
-      'A) His benefit is eliminated entirely',
       'B) His benefit is reduced by up to half his non-covered pension',
+      'A) His benefit is eliminated entirely',
       'C) His benefit formula uses a lower first-bend-point factor',
-      'D) WEP does not apply because he has 15 years of substantial earnings'
+      'D) WEP does not apply because he has 15 years of substantial earnings',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: C**
@@ -2228,10 +2228,10 @@ PV = PMT × [(1 - ((1+g)/(1+r))^n) / (r-g)]
     skillLevel: 'Application',
     question: `A retired couple has combined income (AGI + ½ SS + tax-exempt interest) of $60,000 and receives $24,000 in Social Security benefits. What portion of their benefits is subject to income tax?`,
     options: [
-      'A) $0',
       'B) $12,000 (50%)',
+      'A) $0',
       'C) $18,000 (75%)',
-      'D) $20,400 (85%)'
+      'D) $20,400 (85%)',
     ],
     correctAnswer: 3,
     explanation: `**Correct Answer: D (85%)**
@@ -2260,9 +2260,9 @@ With $60,000 combined income (well above $44,000):
     question: `For 2024 401(k) testing purposes, an employee is considered a Highly Compensated Employee (HCE) if they:`,
     options: [
       'A) Own more than 1% of the company regardless of compensation',
-      'B) Earned more than $150,000 in the prior year',
       'C) Are in the top 10% of employees by tenure',
-      'D) Earned more than $155,000 in the prior year'
+      'B) Earned more than $150,000 in the prior year',
+      'D) Earned more than $155,000 in the prior year',
     ],
     correctAnswer: 3,
     explanation: `**Correct Answer: D ($155,000 for 2024)**
@@ -2289,11 +2289,11 @@ HCE Definition:
     question: `Tom earns $120,000 and his wife Sarah has no earned income. What is the maximum combined IRA contribution they can make for 2024?`,
     options: [
       'A) $7,000 (Tom only)',
-      'B) $14,000 ($7,000 each)',
       'C) $8,000 (Tom only, with catch-up)',
-      'D) $7,000 (shared between them)'
+      'B) $14,000 ($7,000 each)',
+      'D) $7,000 (shared between them)',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($14,000)**
 
 Spousal IRA Rules:
@@ -2318,12 +2318,12 @@ Spousal IRA Rules:
     skillLevel: 'Application',
     question: `John, age 75, has three Traditional IRAs with the following year-end values: $200,000, $300,000, and $500,000. His RMD factor is 22.9. How must he take his RMDs?`,
     options: [
-      'A) Must take from each IRA proportionally',
       'B) Can aggregate and take total from any one or combination of IRAs',
       'C) Must take from largest account first',
-      'D) Can only take from one account per year'
+      'A) Must take from each IRA proportionally',
+      'D) Can only take from one account per year',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Aggregate)**
 
 IRA RMD Rules:
@@ -2350,12 +2350,12 @@ This does NOT apply to 401(k)s—each must satisfy its own RMD.
     skillLevel: 'Remembering',
     question: `What is the penalty for failing to take a Required Minimum Distribution under SECURE 2.0?`,
     options: [
-      'A) 50% of the shortfall',
       'B) 25% of the shortfall (10% if corrected timely)',
       'C) 10% of the shortfall',
-      'D) $100 per day until corrected'
+      'A) 50% of the shortfall',
+      'D) $100 per day until corrected',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 SECURE 2.0 Act Changes (2023):
@@ -2379,10 +2379,10 @@ SECURE 2.0 Act Changes (2023):
     skillLevel: 'Analysis',
     question: `Dr. Patel is a self-employed consultant with $300,000 net self-employment income. She is 52 years old. What is her maximum Solo 401(k) contribution for 2024?`,
     options: [
-      'A) $23,000',
-      'B) $30,500',
       'C) $69,000',
-      'D) $76,500'
+      'B) $30,500',
+      'A) $23,000',
+      'D) $76,500',
     ],
     correctAnswer: 3,
     explanation: `**Correct Answer: D ($76,500)**
@@ -2411,10 +2411,10 @@ Maximum total annual addition with catch-up = $76,500
     skillLevel: 'Application',
     question: `Amy receives a $100,000 distribution from her 401(k) and wants to roll it to an IRA. The plan withholds 20% for taxes. To avoid tax on the distribution, she must:`,
     options: [
-      'A) Deposit $80,000 within 60 days',
-      'B) Deposit $100,000 within 60 days using other funds',
       'C) Request a direct rollover to avoid the issue',
-      'D) Report the $20,000 withheld as a Roth conversion'
+      'B) Deposit $100,000 within 60 days using other funds',
+      'A) Deposit $80,000 within 60 days',
+      'D) Report the $20,000 withheld as a Roth conversion',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
@@ -2443,12 +2443,12 @@ Indirect Rollover Challenge:
     skillLevel: 'Remembering',
     question: `Which statement about Qualified Longevity Annuity Contracts (QLACs) is CORRECT?`,
     options: [
-      'A) QLACs must begin payments by age 72',
       'B) The maximum QLAC premium is $200,000 from qualified accounts',
       'C) QLAC values are included in RMD calculations',
-      'D) QLACs can only be purchased within Traditional IRAs'
+      'A) QLACs must begin payments by age 72',
+      'D) QLACs can only be purchased within Traditional IRAs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B ($200,000 maximum)**
 
 QLAC Rules (SECURE 2.0):
@@ -2473,12 +2473,12 @@ QLAC Rules (SECURE 2.0):
     skillLevel: 'Remembering',
     question: `What is the primary difference between a Single Premium Immediate Annuity (SPIA) and a Deferred Income Annuity (DIA)?`,
     options: [
-      'A) SPIA has lower fees than DIA',
       'B) SPIA payments begin immediately; DIA payments are delayed',
+      'A) SPIA has lower fees than DIA',
       'C) SPIA is only for qualified money',
-      'D) DIA provides a death benefit; SPIA does not'
+      'D) DIA provides a death benefit; SPIA does not',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
 **SPIA:** Payments begin within 12 months of purchase
@@ -2532,11 +2532,11 @@ Social Security provides annual Cost-of-Living Adjustments (COLA):
     question: `Which 403(b) feature is NOT available in 401(k) plans?`,
     options: [
       'A) Roth contributions',
-      'B) 15-year service catch-up contribution',
       'C) Employer matching contributions',
-      'D) Participant loans'
+      'B) 15-year service catch-up contribution',
+      'D) Participant loans',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (15-year catch-up)**
 
 403(b) Special Catch-up:

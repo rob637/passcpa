@@ -21,11 +21,11 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     question: 'A qualified retirement plan must meet which of the following requirements?',
     options: [
       'Cover only highly compensated employees',
+      'Be funded only with employee contributions',
       'Be in writing, for exclusive benefit of employees/beneficiaries, and meet minimum coverage and participation requirements',
       'Distribute all earnings annually',
-      'Be funded only with employee contributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Qualified plans must be in writing, exclusively benefit employees and beneficiaries, meet coverage and participation requirements, satisfy vesting rules, and follow contribution and benefit limits.',
     reference: 'IRC §401(a)',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In a defined benefit plan:',
     options: [
-      'The employee\'s retirement benefit is determined by account balance',
       'The benefit is determined by a formula (typically based on salary and service)',
+      'The employee\'s retirement benefit is determined by account balance',
+      'Only employee contributions are allowed',
       'Contributions are limited to $23,000 per year',
-      'Only employee contributions are allowed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Defined benefit plans promise a specific retirement benefit calculated by a formula, typically based on compensation and years of service. The employer funds the plan to meet the promised benefit.',
     reference: 'IRC §414(j)',
   },
@@ -60,12 +60,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In a defined contribution plan:',
     options: [
-      'The employer promises a fixed retirement benefit',
       'Contributions are allocated to individual accounts, and benefits depend on account performance',
+      'The employer promises a fixed retirement benefit',
+      'Employees cannot make contributions',
       'The maximum annual addition is unlimited',
-      'Employees cannot make contributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Defined contribution plans (401(k), profit sharing, etc.) allocate contributions to individual participant accounts. The retirement benefit depends on contributions and investment performance.',
     reference: 'IRC §414(i)',
   },
@@ -80,12 +80,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Application',
     question: 'For 2024, the maximum employee elective deferral to a 401(k) plan is:',
     options: [
-      '$20,500',
+      '$30,500',
       '$22,500',
+      '$20,500',
       '$23,000',
-      '$30,500'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'For 2024, the employee elective deferral limit for 401(k) plans is $23,000 ($30,500 for those age 50+ with catch-up). This limit is indexed annually for inflation.',
     reference: 'IRC §402(g); IRS Notice 2023-75',
   },
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Application',
     question: 'For 2024, the maximum total annual additions (employee + employer contributions) to a defined contribution plan is the lesser of 100% of compensation or:',
     options: [
-      '$23,000',
+      '$69,000',
       '$46,000',
+      '$23,000',
       '$66,000',
-      '$69,000'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Under IRC §415(c), the annual additions limit for 2024 is the lesser of 100% of compensation or $69,000 ($76,500 with catch-up for age 50+). Annual additions include employee deferrals, employer contributions, and forfeitures.',
     reference: 'IRC §415(c); IRS Notice 2023-75',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A SIMPLE IRA can be established by an employer with:',
     options: [
-      'Any number of employees',
       '100 or fewer employees who earned at least $5,000',
+      'More than 500 employees',
+      'Any number of employees',
       'Only self-employed individuals',
-      'More than 500 employees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §408(p), SIMPLE IRAs are for employers with 100 or fewer employees who earned at least $5,000 in any 2 preceding years. The employer generally cannot maintain another qualified plan.',
     reference: 'IRC §408(p)',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Application',
     question: 'For 2024, the employee contribution limit for a SIMPLE IRA is:',
     options: [
+      '$23,000',
       '$7,000',
       '$15,500',
       '$16,000',
-      '$23,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'For 2024, the SIMPLE IRA employee deferral limit is $16,000 ($19,500 with catch-up for age 50+). Employers must either match up to 3% or contribute 2% for all eligible employees.',
     reference: 'IRC §408(p)(2)(A); IRS Notice 2023-75',
   },
@@ -161,11 +161,11 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     question: 'For 2024, the maximum employer contribution to a SEP IRA is:',
     options: [
       '10% of compensation up to $66,000',
+      '100% of compensation up to $23,000',
       '25% of compensation up to $69,000',
       '15% of compensation up to $50,000',
-      '100% of compensation up to $23,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §408(j), SEP contributions are limited to 25% of the employee\'s compensation (20% for self-employed after adjustment) up to $69,000 for 2024. Only employer contributions are allowed.',
     reference: 'IRC §408(j); IRC §415',
   },
@@ -182,8 +182,8 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     options: [
       'Immediately upon contribution',
       '100% after 3 years (cliff) or 6-year graded schedule',
+      '50% after 5 years',
       '100% at retirement age only',
-      '50% after 5 years'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §411(a)(2), qualified plans must use at least 3-year cliff vesting (100% after 3 years) or 2-6 year graded vesting (20% per year starting in year 2). Employee contributions are always 100% vested.',
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH26: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A retirement plan is top-heavy when more than 60% of plan benefits or contributions are for:',
     options: [
+      'Union employees',
       'Employees over age 50',
       'Key employees (officers, 5% owners, 1% owners with $150K+ pay)',
       'Employees with more than 20 years of service',
-      'Union employees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §416, a plan is top-heavy if more than 60% of accrued benefits (DB plan) or account balances (DC plan) are for key employees. Top-heavy plans must provide minimum contributions/benefits for non-key employees.',
     reference: 'IRC §416',
   },

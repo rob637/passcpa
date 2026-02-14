@@ -131,8 +131,8 @@ const loadCourseUniqueContent = async (courseId: CourseId): Promise<{
         };
       }
       case 'cfp': {
-        const caseModule = await import('../../../data/cfp/caseStudies/index');
-        const itemSetModule = await import('../../../data/cfp/itemSets/index');
+        const caseModule = await import('../../../data/cfp/case-studies/index');
+        const itemSetModule = await import('../../../data/cfp/item-sets/index');
         return {
           caseStudies: caseModule.CFP_CASE_STUDIES?.length || 0,
           itemSets: itemSetModule.CFP_ITEM_SETS?.length || 0,
@@ -254,6 +254,8 @@ interface UserDocument {
     trialEnd?: { seconds: number };
     isFounderPricing?: boolean; // Locked in founder rate (2-year lock)
   };
+  // Per-exam trials map (loaded from subscriptions collection)
+  _trials?: Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>;
 }
 
 interface UserActivityData {
@@ -368,6 +370,32 @@ const ADMIN_EMAILS: string[] = [
   'rob@voraprep.com',
 ];
 
+// Helper: derive courseId from examSection name
+// This avoids relying on stale courseId field in user docs
+const getCourseFromSection = (section?: string | null): CourseId => {
+  if (!section) return 'cpa';
+  const upper = section.toUpperCase();
+  // CPA sections
+  if (['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'].includes(upper)) return 'cpa';
+  // EA sections
+  if (upper.startsWith('SEE')) return 'ea';
+  // CMA sections
+  if (upper.startsWith('CMA')) return 'cma';
+  // CIA sections
+  if (upper.startsWith('CIA')) return 'cia';
+  // CISA sections
+  if (upper.startsWith('CISA')) return 'cisa';
+  // CFP sections
+  if (upper.startsWith('CFP') || ['GEN', 'TAX', 'INS', 'INV', 'RET', 'EST'].includes(upper)) return 'cfp';
+  // Fallback: check COURSES registry
+  for (const [id, course] of Object.entries(COURSES)) {
+    if (course.sections?.some(s => s.id === upper || s.shortName === upper)) {
+      return id as CourseId;
+    }
+  }
+  return 'cpa';
+};
+
 // ============================================================================
 // Component
 // ============================================================================
@@ -403,6 +431,7 @@ const AdminCMS: React.FC = () => {
   const [filteredUsers, setFilteredUsers] = useState<UserDocument[]>([]);
   const [userSearch, setUserSearch] = useState('');
   const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial'>('all');
+  const [editingTrialUserId, setEditingTrialUserId] = useState<string | null>(null);
   const [userCourseFilter, setUserCourseFilter] = useState<CourseId | 'all'>('all');
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
@@ -517,11 +546,32 @@ const AdminCMS: React.FC = () => {
     if (!isAdmin) return;
     setIsLoadingUsers(true);
     try {
-      const q = query(collection(db, 'users'), limit(200)); // Increased limit
+      const q = query(collection(db, 'users'), limit(200));
       const querySnapshot = await getDocs(q);
       const users: UserDocument[] = [];
-      querySnapshot.forEach((doc) => {
-        users.push({ id: doc.id, ...doc.data() } as UserDocument);
+      
+      // Load subscription docs in parallel for per-exam trial data
+      const userIds = querySnapshot.docs.map(d => d.id);
+      const subPromises = userIds.map(uid => 
+        getDoc(doc(db, 'subscriptions', uid)).catch(() => null)
+      );
+      const subDocs = await Promise.all(subPromises);
+      const subMap: Record<string, Record<string, unknown>> = {};
+      subDocs.forEach((subDoc, i) => {
+        if (subDoc && subDoc.exists()) {
+          subMap[userIds[i]] = subDoc.data();
+        }
+      });
+      
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const subData = subMap[docSnap.id];
+        users.push({ 
+          id: docSnap.id, 
+          ...data,
+          // Attach per-exam trials from subscription doc
+          _trials: (subData?.trials as Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>) || undefined,
+        } as UserDocument);
       });
       setUsersList(users);
       setFilteredUsers(users);
@@ -1040,6 +1090,70 @@ const AdminCMS: React.FC = () => {
     } catch (error) {
       logger.error('Error updating subscription', error);
       addLog('Failed to update subscription: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    }
+  };
+
+  // Set a user's trial end date for a specific exam (admin only)
+  const setTrialEndDate = async (userId: string, newDate: Date, examId?: string) => {
+    if (!isAdmin) return;
+
+    try {
+      const subRef = doc(db, 'subscriptions', userId);
+      const { Timestamp, setDoc: firestoreSetDoc } = await import('firebase/firestore');
+
+      if (examId) {
+        // Per-exam trial: update specific exam in trials map
+        // IMPORTANT: Use updateDoc (not setDoc+merge) so dot-notation keys
+        // are written as nested paths (trials.ea.endDate -> trials -> ea -> endDate)
+        // setDoc+merge treats them as literal flat field names which breaks reads.
+        try {
+          await updateDoc(subRef, {
+            [`trials.${examId}.endDate`]: Timestamp.fromDate(newDate),
+            [`trials.${examId}.startDate`]: Timestamp.now(),
+            updatedAt: Timestamp.now(),
+            modifiedBy: user?.email,
+          });
+        } catch (docErr: unknown) {
+          // If subscription doc doesn't exist yet, create it with proper nesting
+          if (docErr instanceof Error && docErr.message?.includes('No document to update')) {
+            await firestoreSetDoc(subRef, {
+              trials: {
+                [examId]: {
+                  endDate: Timestamp.fromDate(newDate),
+                  startDate: Timestamp.now(),
+                },
+              },
+              updatedAt: Timestamp.now(),
+              modifiedBy: user?.email,
+            });
+          } else {
+            throw docErr;
+          }
+        }
+        addLog(`Set ${examId.toUpperCase()} trial end to ${newDate.toLocaleDateString()} for user ${userId}`, 'success');
+      } else {
+        // Legacy: update root-level trialEnd (top-level fields, safe with setDoc+merge)
+        await firestoreSetDoc(subRef, {
+          trialEnd: Timestamp.fromDate(newDate),
+          status: 'trialing',
+          updatedAt: Timestamp.now(),
+          modifiedBy: user?.email,
+        }, { merge: true });
+        addLog(`Set trial end date to ${newDate.toLocaleDateString()} for user ${userId}`, 'success');
+      }
+
+      // Also update the user document's subscription snapshot
+      const userRef = doc(db, 'users', userId);
+      await updateDoc(userRef, {
+        'subscription.trialEnd': { seconds: Math.floor(newDate.getTime() / 1000), nanoseconds: 0 },
+        'subscription.status': 'trialing',
+      });
+
+      setEditingTrialUserId(null);
+      loadUsers();
+    } catch (error) {
+      logger.error('Error setting trial date', error);
+      addLog('Failed to set trial date: ' + (error instanceof Error ? error.message : String(error)), 'error');
     }
   };
 
@@ -2149,6 +2263,7 @@ const AdminCMS: React.FC = () => {
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Course</th>
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Section</th>
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Subscription</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Trials (per exam)</th>
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Role</th>
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Joined</th>
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Actions</th>
@@ -2157,7 +2272,7 @@ const AdminCMS: React.FC = () => {
                     <tbody className="divide-y divide-gray-100 dark:divide-slate-700">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={7} className="p-4 text-center text-gray-600 dark:text-gray-400">
+                          <td colSpan={8} className="p-4 text-center text-gray-600 dark:text-gray-400">
                             {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
@@ -2169,16 +2284,21 @@ const AdminCMS: React.FC = () => {
                               <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{u.id.slice(0, 12)}...</div>
                             </td>
                             <td className="p-3">
-                              <span className={`px-2 py-1 rounded text-xs font-medium ${
-                                (u.courseId || 'cpa') === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
-                                u.courseId === 'ea' ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
-                                u.courseId === 'cma' ? 'bg-purple-50 text-purple-700' :
-                                u.courseId === 'cia' ? 'bg-orange-50 text-orange-700' :
-                                u.courseId === 'cisa' ? 'bg-teal-50 text-teal-700' :
-                                'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
-                              }`}>
-                                {(u.courseId || 'cpa').toUpperCase()}
-                              </span>
+                              {(() => {
+                                const derivedCourse = getCourseFromSection(u.examSection);
+                                return (
+                                  <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                    derivedCourse === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                    derivedCourse === 'ea' ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                    derivedCourse === 'cma' ? 'bg-purple-50 text-purple-700' :
+                                    derivedCourse === 'cia' ? 'bg-orange-50 text-orange-700' :
+                                    derivedCourse === 'cisa' ? 'bg-teal-50 text-teal-700' :
+                                    'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                                  }`}>
+                                    {derivedCourse.toUpperCase()}
+                                  </span>
+                                );
+                              })()}
                             </td>
                             <td className="p-3">
                               <span className="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-medium">
@@ -2201,6 +2321,127 @@ const AdminCMS: React.FC = () => {
                               </span>
                             </td>
                             <td className="p-3">
+                              {(() => {
+                                const trials = u._trials;
+                                const legacyTrialEnd = u.subscription?.trialEnd;
+                                const isEditing = editingTrialUserId === u.id;
+                                const allExams = ['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'];
+
+                                // Editing mode: show per-exam date inputs
+                                if (isEditing) {
+                                  return (
+                                    <div className="flex flex-col gap-1.5 min-w-[200px]">
+                                      {allExams.map(examId => {
+                                        const trial = trials?.[examId];
+                                        const endSec = trial?.endDate?.seconds;
+                                        const currentVal = endSec
+                                          ? new Date(endSec * 1000).toISOString().split('T')[0]
+                                          : '';
+                                        return (
+                                          <div key={examId} className="flex items-center gap-1">
+                                            <span className="text-[10px] font-bold w-8 text-gray-500 uppercase">{examId}</span>
+                                            <input
+                                              type="date"
+                                              defaultValue={currentVal}
+                                              placeholder="No trial"
+                                              className="px-1 py-0.5 text-[11px] border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-gray-900 dark:text-white w-[120px]"
+                                              id={`trial-${u.id}-${examId}`}
+                                            />
+                                            <button
+                                              onClick={() => {
+                                                const input = document.getElementById(`trial-${u.id}-${examId}`) as HTMLInputElement;
+                                                if (input?.value) {
+                                                  const newDate = new Date(input.value + 'T23:59:59');
+                                                  if (!isNaN(newDate.getTime())) {
+                                                    setTrialEndDate(u.id, newDate, examId);
+                                                  }
+                                                }
+                                              }}
+                                              className="px-1.5 py-0.5 text-[9px] bg-green-600 text-white rounded hover:bg-green-700"
+                                            >
+                                              Set
+                                            </button>
+                                          </div>
+                                        );
+                                      })}
+                                      <button
+                                        onClick={() => setEditingTrialUserId(null)}
+                                        className="px-2 py-0.5 text-[10px] bg-gray-200 dark:bg-slate-600 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-300 self-start mt-1"
+                                      >
+                                        Close
+                                      </button>
+                                    </div>
+                                  );
+                                }
+
+                                // Display mode: show active trials as compact badges
+                                const now = new Date();
+                                const activeTrials: { examId: string; endDate: Date; daysLeft: number }[] = [];
+                                const expiredTrials: string[] = [];
+
+                                if (trials) {
+                                  for (const [examId, trial] of Object.entries(trials)) {
+                                    if (trial?.endDate?.seconds) {
+                                      const endDate = new Date(trial.endDate.seconds * 1000);
+                                      const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+                                      if (daysLeft > 0) {
+                                        activeTrials.push({ examId, endDate, daysLeft });
+                                      } else {
+                                        expiredTrials.push(examId);
+                                      }
+                                    }
+                                  }
+                                } else if (legacyTrialEnd?.seconds) {
+                                  // Legacy: show single trial
+                                  const endDate = new Date(legacyTrialEnd.seconds * 1000);
+                                  const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+                                  const examId = u.courseId || 'cpa';
+                                  if (daysLeft > 0) {
+                                    activeTrials.push({ examId, endDate, daysLeft });
+                                  } else {
+                                    expiredTrials.push(examId);
+                                  }
+                                }
+
+                                if (activeTrials.length === 0 && expiredTrials.length === 0) {
+                                  return (
+                                    <button
+                                      onClick={() => setEditingTrialUserId(u.id)}
+                                      className="text-xs text-gray-400 hover:text-blue-500 hover:underline cursor-pointer"
+                                      title="Click to manage per-exam trials"
+                                    >
+                                      No trials
+                                    </button>
+                                  );
+                                }
+
+                                return (
+                                  <button
+                                    onClick={() => setEditingTrialUserId(u.id)}
+                                    className="text-left hover:opacity-80 cursor-pointer group"
+                                    title="Click to manage per-exam trials"
+                                  >
+                                    <div className="flex flex-wrap gap-1">
+                                      {activeTrials.map(t => (
+                                        <span key={t.examId} className={`inline-flex items-center gap-0.5 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${
+                                          t.daysLeft <= 3
+                                            ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                                            : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                                        }`}>
+                                          {t.examId.toUpperCase()} {t.daysLeft}d
+                                        </span>
+                                      ))}
+                                      {expiredTrials.map(examId => (
+                                        <span key={examId} className="inline-flex items-center text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+                                          {examId.toUpperCase()} exp
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </button>
+                                );
+                              })()}
+                            </td>
+                            <td className="p-3">
                               <span
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.isAdmin
@@ -2217,7 +2458,7 @@ const AdminCMS: React.FC = () => {
                                 : '—'}
                             </td>
                             <td className="p-3">
-                              <div className="flex gap-1">
+                              <div className="flex gap-1 flex-wrap">
                                 <button
                                   onClick={() => loadUserActivity(u)}
                                   className="px-2 py-1 text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100"
@@ -2239,6 +2480,7 @@ const AdminCMS: React.FC = () => {
                                 >
                                   {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
                                 </button>
+
                               </div>
                             </td>
                           </tr>

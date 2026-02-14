@@ -1,64 +1,48 @@
 /**
- * Course-level question statistics
- * ================================
- * SINGLE SOURCE OF TRUTH for question counts across the app.
+ * Course-level content statistics (re-exported from contentStats.ts)
+ * ==================================================================
+ * This file re-exports from src/config/contentStats.ts which is the
+ * SINGLE SOURCE OF TRUTH. Do NOT add hardcoded numbers here.
  * 
- * Update these numbers when adding significant question batches.
- * Used by: Landing page, marketing materials, course cards
- * 
- * To recalculate from actual data:
- * npx tsx -e "
- *   import * as cpa from './src/data/cpa/questions/index';
- *   import * as cma from './src/data/cma/questions/index';
- *   import * as ea from './src/data/ea/questions/index';
- *   import { CFP_QUESTION_STATS } from './src/data/cfp/questions/index';
- *   import { ALL_CIA1_QUESTIONS, ALL_CIA2_QUESTIONS, ALL_CIA3_QUESTIONS } from './src/data/cia/questions/index';
- *   import { CISA_QUESTIONS } from './src/data/cisa/questions/index';
- *   console.log('CPA:', cpa.getQuestionStats().total);
- *   console.log('EA:', ea.EA_QUESTION_COUNTS.Total);
- *   console.log('CMA:', cma.getQuestionStats().total);
- *   console.log('CIA:', ALL_CIA1_QUESTIONS.length + ALL_CIA2_QUESTIONS.length + ALL_CIA3_QUESTIONS.length);
- *   console.log('CFP:', CFP_QUESTION_STATS.total);
- *   console.log('CISA:', CISA_QUESTIONS.length);
- * "
- * 
- * Last updated: 2026-02-09
+ * Used by: VoraPrep.tsx (homepage), marketing materials, course cards
  */
 
+import { COURSE_STATS } from '../config/contentStats';
+
 // ==========================================
-// QUESTION COUNTS - UPDATE HERE
+// QUESTION COUNTS — derived from contentStats
 // ==========================================
 export const QUESTION_COUNTS = {
-  cpa: 3197,
-  ea: 2190,
-  cma: 2025,
-  cia: 1524,
-  cfp: 2521,
-  cisa: 1523,
+  cpa: COURSE_STATS.cpa.questions,
+  ea: COURSE_STATS.ea.questions,
+  cma: COURSE_STATS.cma.questions,
+  cia: COURSE_STATS.cia.questions,
+  cfp: COURSE_STATS.cfp.questions,
+  cisa: COURSE_STATS.cisa.questions,
 } as const;
 
 // ==========================================
-// FLASHCARD COUNTS
+// FLASHCARD COUNTS — derived from contentStats
 // ==========================================
 export const FLASHCARD_COUNTS = {
-  cpa: 613,
-  ea: 466,
-  cma: 506,
-  cia: 535,
-  cfp: 531,
-  cisa: 506,
+  cpa: COURSE_STATS.cpa.flashcards,
+  ea: COURSE_STATS.ea.flashcards,
+  cma: COURSE_STATS.cma.flashcards,
+  cia: COURSE_STATS.cia.flashcards,
+  cfp: COURSE_STATS.cfp.flashcards,
+  cisa: COURSE_STATS.cisa.flashcards,
 } as const;
 
 // ==========================================
-// LESSON COUNTS
+// LESSON COUNTS — derived from contentStats
 // ==========================================
 export const LESSON_COUNTS = {
-  cpa: 463,
-  ea: 152,
-  cma: 114,
-  cia: 140,
-  cfp: 138,
-  cisa: 109,
+  cpa: COURSE_STATS.cpa.lessons,
+  ea: COURSE_STATS.ea.lessons,
+  cma: COURSE_STATS.cma.lessons,
+  cia: COURSE_STATS.cia.lessons,
+  cfp: COURSE_STATS.cfp.lessons,
+  cisa: COURSE_STATS.cisa.lessons,
 } as const;
 
 // ==========================================

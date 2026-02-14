@@ -31,12 +31,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Life cycle costing considers costs across which phases?',
     options: [
-      'Production phase only',
+      'R&D through end-of-life disposal',
       'Design, production, and post-sale service',
+      'Production phase only',
       'Marketing and distribution only',
-      'R&D through end-of-life disposal'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Life cycle costing tracks ALL costs from cradle to grave: R&D, design, production, distribution, customer service, and disposal. This gives a complete picture beyond just manufacturing costs.',
     reference: 'Life Cycle Costing',
   },
@@ -51,12 +51,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Studies show that approximately what percentage of total life cycle costs are committed during the design phase?',
     options: [
-      '20-30%',
+      '95-100%',
       '40-50%',
+      '20-30%',
       '70-85%',
-      '95-100%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'While actual spending during design is small (maybe 5%), decisions made during design commit 70-85% of total life cycle costs. This is why design decisions are critical for cost management.',
     reference: 'Committed vs Incurred Costs',
   },
@@ -71,12 +71,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'From the customer\'s perspective, the "whole life cost" includes:',
     options: [
+      'Only costs covered by warranty',
       'Purchase price only',
       'Purchase price plus operating costs plus disposal costs',
       'Manufacturer\'s production cost plus markup',
-      'Only costs covered by warranty'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Customers evaluate total cost of ownership: initial purchase price, operating costs (energy, maintenance), and disposal costs. Products with lower purchase price may have higher whole-life costs.',
     reference: 'Total Cost of Ownership',
   },
@@ -95,12 +95,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'If a product\'s target selling price is $100 and the required profit margin is 25% of selling price, what is the target cost?',
     options: [
+      '$125',
       '$25',
       '$75',
       '$80',
-      '$125'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Target Cost = Target Price - Required Profit = $100 - ($100 × 25%) = $100 - $25 = $75. Target costing works backward from market-acceptable price.',
     reference: 'Target Costing Formula',
   },
@@ -116,11 +116,11 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     question: 'Target costing is MOST effective when applied during which phase?',
     options: [
       'Mass production',
+      'After-sales service',
       'Product design and development',
       'Distribution and marketing',
-      'After-sales service'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Target costing is applied during design when 70-85% of costs are determined. Changing costs during production is expensive and limited. Early intervention is key.',
     reference: 'Target Costing Application',
   },
@@ -137,8 +137,8 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     options: [
       '$12 gap; increase selling price',
       '$12 gap; use value engineering to reduce estimated cost',
+      '$12 gap; cancel the product',
       '$12 gap; accept lower profit margin',
-      '$12 gap; cancel the product'
     ],
     correctAnswer: 1,
     explanation: 'The cost gap is $72 - $60 = $12. Target costing uses value engineering and design changes to close the gap WITHOUT changing the market-driven target price or accepting lower margins.',
@@ -159,12 +159,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Kaizen costing focuses on:',
     options: [
-      'Cost reduction during the design phase',
       'Continuous small improvements during the production phase',
+      'Cost reduction during the design phase',
+      'Allocating costs to activities',
       'One-time reengineering of processes',
-      'Allocating costs to activities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Kaizen means "continuous improvement." Kaizen costing seeks incremental cost reductions during production through small, ongoing improvements. Target costing addresses design; Kaizen addresses production.',
     reference: 'Kaizen Costing',
   },
@@ -179,12 +179,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'A product has variable costs of $50 per unit. Management sets a Kaizen cost reduction target of 2% per month. After 3 months, the target variable cost is:',
     options: [
-      '$47.00',
       '$47.06',
+      '$44.00',
+      '$47.00',
       '$48.50',
-      '$44.00'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Month 1: $50 × 0.98 = $49.00. Month 2: $49 × 0.98 = $48.02. Month 3: $48.02 × 0.98 = $47.06. Kaizen targets compound over time.',
     reference: 'Kaizen Cost Targets',
   },
@@ -199,12 +199,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A key principle of Kaizen is that improvement ideas should come from:',
     options: [
-      'Top management only',
+      'The accounting department',
       'External consultants',
+      'Top management only',
       'All employees, especially those doing the work',
-      'The accounting department'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Kaizen emphasizes that workers closest to the process have valuable insights for improvement. Employee involvement at all levels is essential for continuous improvement culture.',
     reference: 'Kaizen Philosophy',
   },
@@ -223,12 +223,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'In Theory of Constraints, system throughput is determined by:',
     options: [
-      'The fastest workstation',
+      'The final assembly station',
       'The average of all workstations',
+      'The fastest workstation',
       'The bottleneck (constraint) resource',
-      'The final assembly station'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'A system can only produce as fast as its slowest link (bottleneck). TOC focuses management attention on identifying and managing the constraint to maximize throughput.',
     reference: 'Theory of Constraints',
   },
@@ -243,12 +243,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The FIRST step in TOC\'s five focusing steps is to:',
     options: [
-      'Elevate the constraint',
       'Subordinate everything to the constraint',
+      'Exploit the constraint',
+      'Elevate the constraint',
       'Identify the system constraint',
-      'Exploit the constraint'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'TOC\'s five steps: (1) Identify the constraint, (2) Exploit it (maximize throughput), (3) Subordinate other processes, (4) Elevate (add capacity), (5) Repeat. Identification comes first.',
     reference: 'TOC Five Focusing Steps',
   },
@@ -263,12 +263,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Product A has throughput of $60 and uses 3 hours of constraint time. Product B has throughput of $50 and uses 2 hours. With limited constraint hours, which product is preferred?',
     options: [
-      'Product A (higher throughput)',
       'Product B (higher throughput per constraint hour)',
+      'Cannot determine without fixed cost data',
+      'Product A (higher throughput)',
       'Produce equal amounts of each',
-      'Cannot determine without fixed cost data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Throughput per constraint hour: A = $60/3 = $20/hr; B = $50/2 = $25/hr. Product B generates more throughput per hour of constraint time and should be prioritized.',
     reference: 'TOC Product Mix Decisions',
   },
@@ -288,11 +288,11 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     question: 'Throughput in TOC terminology equals:',
     options: [
       'Sales minus all variable costs',
+      'Contribution margin',
       'Sales minus direct materials (truly variable costs)',
       'Sales minus cost of goods sold',
-      'Contribution margin'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'In TOC, throughput = Sales - Truly Variable Costs (mainly direct materials). Unlike traditional contribution margin, TOC considers most labor as fixed in the short run.',
     reference: 'Throughput Accounting',
   },
@@ -308,11 +308,11 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     question: 'In throughput accounting, "operating expense" includes:',
     options: [
       'Direct materials only',
+      'Manufacturing overhead only',
       'All costs other than direct materials needed to convert materials into throughput',
       'Variable costs only',
-      'Manufacturing overhead only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'TOC operating expense includes all costs except direct materials: labor, overhead, SG&A. These are relatively fixed in the short run and don\'t vary with individual units.',
     reference: 'Throughput Accounting Definitions',
   },
@@ -331,12 +331,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Value engineering seeks to:',
     options: [
-      'Increase product features regardless of cost',
       'Reduce costs while maintaining or improving functionality',
+      'Increase product features regardless of cost',
+      'Replace expensive materials with cheaper ones',
       'Eliminate all non-manufacturing costs',
-      'Replace expensive materials with cheaper ones'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Value engineering analyzes functions to find ways to deliver required functionality at lower cost OR improve functionality without adding cost. It\'s about value (function/cost), not just cost cutting.',
     reference: 'Value Engineering',
   },
@@ -351,12 +351,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'A component contributes 15% of product functionality but accounts for 20% of cost. Its value index is:',
     options: [
-      '0.75 - needs value improvement',
       '1.33 - good value',
+      '0.75 - needs value improvement',
+      '1.05 - acceptable',
       '0.35 - eliminate the component',
-      '1.05 - acceptable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Value Index = % of Function / % of Cost = 15% / 20% = 0.75. Values below 1.0 indicate the component costs more than its value contribution; target for cost reduction.',
     reference: 'Value Index',
   },
@@ -373,8 +373,8 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Charts production cycle time',
       'Maps functions and their relationships to identify cost-reduction opportunities',
+      'Allocates overhead using activity drivers',
       'Tracks financial analysis of sales trends',
-      'Allocates overhead using activity drivers'
     ],
     correctAnswer: 1,
     explanation: 'FAST diagrams map product functions using HOW/WHY logic to understand what the product must do. This functional analysis reveals opportunities to eliminate unnecessary functions or find cheaper ways to deliver them.',
@@ -395,12 +395,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Supplier A offers a component for $10 with 5% defect rate. Supplier B offers it for $12 with 0.5% defect rate. If rework costs $40 per defect, which supplier has lower total cost for 1,000 units?',
     options: [
-      'Supplier A ($12,000)',
+      'Supplier B ($12,020)',
       'Supplier A ($10,000)',
+      'Supplier A ($12,000)',
       'Supplier B ($12,200)',
-      'Supplier B ($12,020)'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Supplier A: (1,000 × $10) + (50 defects × $40) = $10,000 + $2,000 = $12,000. Supplier B: (1,000 × $12) + (5 defects × $40) = $12,000 + $200 = $12,200. Supplier A is slightly cheaper but consider other quality costs.',
     reference: 'Total Cost of Supplier',
   },
@@ -415,12 +415,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A primary benefit of Just-in-Time (JIT) inventory is:',
     options: [
-      'Building safety stock for demand fluctuations',
       'Reducing inventory carrying costs and exposing production problems',
+      'Allowing longer production lead times',
+      'Building safety stock for demand fluctuations',
       'Maximizing purchase discounts through bulk ordering',
-      'Allowing longer production lead times'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'JIT minimizes inventory, reducing carrying costs (storage, insurance, obsolescence). Low inventory also exposes production problems (defects, equipment issues) that were hidden by buffer stock.',
     reference: 'Just-in-Time Benefits',
   },
@@ -435,12 +435,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Backflush costing is appropriate when:',
     options: [
-      'Inventory levels are high and tracked in detail',
       'Production is complex with many WIP stages',
+      'Standard costs are not used',
+      'Inventory levels are high and tracked in detail',
       'JIT environment with minimal WIP and short cycle times',
-      'Standard costs are not used'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Backflush costing delays cost assignment until goods are completed (or sold). It works in JIT environments with minimal WIP because tracking detailed WIP costs adds little value.',
     reference: 'Backflush Costing',
   },
@@ -459,10 +459,10 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Environmental costs are often "hidden" because they are:',
     options: [
-      'Always immaterial',
+      'Only incurred by government',
       'Buried in overhead accounts rather than traced to products',
+      'Always immaterial',
       'Not required to be reported',
-      'Only incurred by government'
     ],
     correctAnswer: 1,
     explanation: 'Environmental costs (waste disposal, pollution control, permits) are often pooled in overhead rather than traced to specific products. This hides their magnitude and prevents informed product decisions.',
@@ -480,11 +480,11 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     question: 'Environmental prevention costs include:',
     options: [
       'Fines for pollution violations',
+      'Disposal of hazardous waste',
       'Cleanup costs for contamination',
       'Redesigning products to reduce waste',
-      'Disposal of hazardous waste'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Prevention costs are proactive: design changes, employee training, cleaner technologies. Failure costs are reactive: fines, cleanup, disposal. Investing in prevention typically reduces total environmental costs.',
     reference: 'Environmental Prevention Costs',
   },
@@ -503,12 +503,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Annual demand is 10,000 units, ordering cost is $50 per order, and carrying cost is $2 per unit per year. What is the Economic Order Quantity?',
     options: [
+      '250 units',
       '500 units',
       '707 units',
       '1,000 units',
-      '250 units'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EOQ = √(2 × D × O / C) = √(2 × 10,000 × $50 / $2) = √(500,000) = 707 units. EOQ minimizes total ordering plus carrying costs.',
     reference: 'Economic Order Quantity',
   },
@@ -523,12 +523,12 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Daily demand averages 100 units with standard deviation of 20. Lead time is 5 days. At 95% service level (z=1.65), what safety stock is needed?',
     options: [
-      '33 units',
       '74 units',
+      '33 units',
+      '500 units',
       '165 units',
-      '500 units'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Safety Stock = z × σ × √LT = 1.65 × 20 × √5 = 1.65 × 20 × 2.236 = 73.8 ≈ 74 units. Safety stock protects against demand variability during lead time.',
     reference: 'Safety Stock Calculation',
   },
@@ -545,10 +545,10 @@ export const CMA1D_QUESTIONS_BATCH3: Question[] = [
     options: [
       'Storage and warehousing costs',
       'Insurance and taxes on inventory',
+      'Cost of capital tied up in inventory',
       'Ordering and setup costs',
-      'Cost of capital tied up in inventory'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Carrying costs are incurred for holding inventory: storage, insurance, taxes, obsolescence, capital cost. Ordering/setup costs are incurred to acquire inventory, not hold it.',
     reference: 'Inventory Carrying Costs',
   },

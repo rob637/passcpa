@@ -28,10 +28,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Under ASC 842, a lessee classifies a lease as a finance lease when the lease term is for the major part of the remaining economic life of the underlying asset. What percentage is typically considered "major part"?',
     options: [
-      '50% or more',
       '65% or more',
+      '50% or more',
       '75% or more',
-      '90% or more'
+      '90% or more',
     ],
     correctAnswer: 2,
     explanation: 'Under ASC 842, "major part" is generally interpreted as 75% or more of the remaining economic life of the underlying asset. This is one of the five criteria that, if met, would classify the lease as a finance lease rather than an operating lease.',
@@ -49,11 +49,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'TechCorp sells a software license bundled with two years of customer support. Under ASC 606, how should TechCorp account for this arrangement?',
     options: [
       'Recognize all revenue when the software is delivered',
-      'Recognize all revenue ratably over the two-year support period',
       'Identify separate performance obligations and allocate transaction price based on standalone selling prices',
-      'Defer all revenue until the support period ends'
+      'Recognize all revenue ratably over the two-year support period',
+      'Defer all revenue until the support period ends',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Under ASC 606, contracts with multiple performance obligations require identification of each distinct performance obligation. The transaction price is then allocated to each obligation based on its relative standalone selling price. The software license and support services are likely separate obligations recognized at different times.',
     reference: 'ASC 606-10-25',
   },
@@ -69,11 +69,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'A company has inventory with an original cost of $100,000, replacement cost of $85,000, net realizable value of $90,000, and net realizable value less normal profit margin of $75,000. Under US GAAP, the inventory should be reported at:',
     options: [
       '$75,000',
-      '$85,000',
       '$90,000',
-      '$100,000'
+      '$85,000',
+      '$100,000',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Under US GAAP (ASC 330), inventory is reported at the lower of cost or net realizable value (NRV). Since NRV of $90,000 is less than cost of $100,000, the inventory is written down to $90,000. The "ceiling and floor" constraints are no longer applicable under the simplified ASU 2015-11 guidance.',
     reference: 'ASC 330-10-35',
   },
@@ -88,12 +88,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Under the simplified goodwill impairment test, a reporting unit has a carrying amount of $500,000 including goodwill of $120,000. The fair value of the reporting unit is determined to be $450,000. What amount of impairment loss should be recognized?',
     options: [
+      '$70,000',
       '$0',
       '$50,000',
-      '$70,000',
-      '$120,000'
+      '$120,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under the simplified one-step impairment test (ASU 2017-04), the impairment loss equals the excess of carrying amount over fair value, but is limited to the amount of goodwill. Here: $500,000 - $450,000 = $50,000 impairment. Since this is less than the $120,000 goodwill balance, the full $50,000 is recognized as impairment.',
     reference: 'ASC 350-20-35',
   },
@@ -108,10 +108,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A manufacturing company paid $50,000 for equipment under a finance lease. Where should this payment be classified in the statement of cash flows?',
     options: [
-      'Operating activities only',
       'Investing activities only',
       'Financing activities for the principal portion, operating for interest',
-      'No cash flow impact at inception; subsequent payments split between financing and operating'
+      'Operating activities only',
+      'No cash flow impact at inception; subsequent payments split between financing and operating',
     ],
     correctAnswer: 3,
     explanation: 'For a finance lease, there is no initial cash outflow at inception (the asset and liability are recognized). Subsequent lease payments are split: the principal reduction is reported as financing activity, while the interest portion is reported as operating activity (or financing, by policy choice under ASC 842).',
@@ -132,10 +132,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following best describes a key advantage of zero-based budgeting over incremental budgeting?',
     options: [
-      'It is faster and requires less management time',
-      'It forces justification of all activities, not just changes',
       'It automatically adjusts for inflation',
-      'It eliminates the need for variance analysis'
+      'It forces justification of all activities, not just changes',
+      'It is faster and requires less management time',
+      'It eliminates the need for variance analysis',
     ],
     correctAnswer: 1,
     explanation: 'Zero-based budgeting requires managers to justify every dollar of budget from zero, rather than starting from last year\'s budget. This forces critical evaluation of all activities and can eliminate wasteful spending that becomes embedded in incremental budgets. However, it is more time-consuming.',
@@ -172,12 +172,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Sales for March are $200,000. Collection pattern: 30% in month of sale, 50% in month after sale, 18% two months after, 2% uncollectible. February sales were $180,000, January sales were $150,000. What are March cash collections?',
     options: [
-      '$174,000',
       '$177,000',
+      '$174,000',
       '$180,000',
-      '$183,000'
+      '$183,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'March collections: 30% of March ($200,000 × 0.30 = $60,000) + 50% of February ($180,000 × 0.50 = $90,000) + 18% of January ($150,000 × 0.18 = $27,000) = $60,000 + $90,000 + $27,000 = $177,000.',
     reference: 'IMA CMA Content Specification',
   },
@@ -192,12 +192,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A flexible budget shows overhead costs of $50,000 at 8,000 units and $62,000 at 10,000 units. What is the variable overhead rate per unit?',
     options: [
-      '$5.00',
       '$6.00',
+      '$5.00',
       '$6.20',
-      '$6.25'
+      '$6.25',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Using the high-low method: Variable rate = Change in cost / Change in units = ($62,000 - $50,000) / (10,000 - 8,000) = $12,000 / 2,000 = $6.00 per unit. This represents the variable component of the mixed overhead cost.',
     reference: 'IMA CMA Content Specification',
   },
@@ -236,12 +236,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: 10,000 units at $50 per unit with variable costs of $30 per unit. Actual: 11,000 units sold at $48 per unit. What is the sales volume variance for contribution margin?',
     options: [
-      '$20,000 Favorable',
       '$22,000 Unfavorable',
+      '$20,000 Favorable',
       '$20,000 Unfavorable',
-      '$22,000 Favorable'
+      '$22,000 Favorable',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Sales volume variance = (Actual units - Budgeted units) × Budgeted CM per unit. Budgeted CM = $50 - $30 = $20 per unit. Variance = (11,000 - 10,000) × $20 = 1,000 × $20 = $20,000 Favorable. More units sold than budgeted means favorable volume variance.',
     reference: 'IMA CMA Content Specification',
   },
@@ -256,12 +256,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Standard labor rate is $22 per hour. Actual hours worked: 5,200. Actual labor cost: $119,600. What is the labor rate variance?',
     options: [
+      '$4,400 Favorable',
       '$5,200 Favorable',
       '$5,200 Unfavorable',
-      '$4,400 Favorable',
-      '$4,400 Unfavorable'
+      '$4,400 Unfavorable',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Actual rate = $119,600 ÷ 5,200 hours = $23 per hour. Labor rate variance = (Actual rate - Standard rate) × Actual hours = ($23 - $22) × 5,200 = $5,200 Unfavorable. The variance is unfavorable because the company paid $1 more per hour than the standard rate.',
     reference: 'IMA CMA Content Specification',
   },
@@ -276,10 +276,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Employee training hours and employee satisfaction scores are measures typically found in which Balanced Scorecard perspective?',
     options: [
+      'Internal Business Process',
       'Financial',
       'Customer',
-      'Internal Business Process',
-      'Learning and Growth'
+      'Learning and Growth',
     ],
     correctAnswer: 3,
     explanation: 'Employee-related measures such as training hours, satisfaction, turnover, and skill development belong to the Learning and Growth perspective. This perspective focuses on the organization\'s ability to innovate, improve, and learn—foundations for achieving all other objectives.',
@@ -296,12 +296,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Division A can sell externally at $100 (variable cost $60). Division B needs the component and can buy externally for $95. Division A has excess capacity. What is the range for a negotiated transfer price?',
     options: [
-      '$60 to $95',
-      '$60 to $100',
       '$95 to $100',
-      '$65 to $95'
+      '$60 to $100',
+      '$60 to $95',
+      '$65 to $95',
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'With excess capacity: Division A\'s minimum = variable cost = $60 (opportunity cost is zero). Division B\'s maximum = external purchase price = $95. The negotiated price will fall between $60 and $95, as any price in this range benefits both divisions compared to their alternatives.',
     reference: 'IMA CMA Content Specification',
   },
@@ -316,10 +316,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Division Z has operating income of $450,000, average operating assets of $3,000,000, and a cost of capital of 12%. What is the Economic Value Added (EVA)?',
     options: [
-      '$50,000',
-      '$90,000',
       '$360,000',
-      '$810,000'
+      '$90,000',
+      '$50,000',
+      '$810,000',
     ],
     correctAnswer: 1,
     explanation: 'EVA = Operating Income - (Cost of Capital × Invested Capital). EVA = $450,000 - (12% × $3,000,000) = $450,000 - $360,000 = $90,000. Positive EVA means the division is creating value above the required return on capital.',
@@ -340,12 +340,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A company uses a predetermined overhead rate of $25 per direct labor hour. Job 101 required 120 direct labor hours. Actual overhead for the period was $625,000 and actual direct labor hours were 24,000. What overhead is applied to Job 101?',
     options: [
-      '$3,000',
       '$3,125',
       '$3,250',
-      '$26,042'
+      '$3,000',
+      '$26,042',
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Applied overhead = Predetermined rate × Actual hours for the job = $25 × 120 hours = $3,000. The predetermined rate is used regardless of actual overhead incurred during the period. Actual overhead is used to calculate over/under-applied overhead but not to apply costs to individual jobs.',
     reference: 'IMA CMA Content Specification',
   },
@@ -360,12 +360,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'When beginning work in process inventory costs are significantly different from current period costs, which process costing method provides better decision-making information about current period efficiency?',
     options: [
-      'Weighted average method',
       'FIFO method',
+      'Weighted average method',
       'Both methods provide the same information',
-      'Standard costing method'
+      'Standard costing method',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'FIFO separates beginning inventory costs from current period costs, providing a clearer picture of current period efficiency and cost control. Weighted average blends old and new costs, which can obscure changes in performance. This makes FIFO more useful when analyzing current-period operations.',
     reference: 'IMA CMA Content Specification',
   },
@@ -401,11 +401,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'Joint products A and B are produced together. At split-off, Product A can sell for $40,000 or be processed further for $12,000 to sell for $55,000. Joint costs are $60,000. What should be done with Product A?',
     options: [
       'Sell at split-off; further processing loses $3,000',
-      'Process further; incremental profit is $3,000',
       'Sell at split-off; further processing loses $17,000',
-      'Cannot determine without knowing Product B\'s values'
+      'Process further; incremental profit is $3,000',
+      'Cannot determine without knowing Product B\'s values',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Joint costs are sunk and irrelevant to the decision. Incremental analysis: Additional revenue = $55,000 - $40,000 = $15,000. Additional cost = $12,000. Incremental profit = $15,000 - $12,000 = $3,000. Process further since incremental revenue exceeds incremental cost.',
     reference: 'IMA CMA Content Specification',
   },
@@ -420,10 +420,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Supervision costs are $50,000 for up to 10,000 units of production. For each additional 5,000 units, another supervisor is needed at $50,000. What are the supervision costs for producing 18,000 units?',
     options: [
-      '$50,000',
       '$100,000',
+      '$50,000',
       '$150,000',
-      '$180,000'
+      '$180,000',
     ],
     correctAnswer: 2,
     explanation: 'Step costs increase at defined activity levels. First supervisor covers 0-10,000 units ($50,000). Second supervisor needed for 10,001-15,000 units ($50,000). Third supervisor needed for 15,001-20,000 units ($50,000). At 18,000 units, 3 supervisors are required: 3 × $50,000 = $150,000 total supervision cost.',
@@ -445,9 +445,9 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'Which COSO internal control component establishes the tone at the top and encompasses the integrity and ethical values of the organization?',
     options: [
       'Risk Assessment',
-      'Control Activities',
       'Information and Communication',
-      'Control Environment'
+      'Control Activities',
+      'Control Environment',
     ],
     correctAnswer: 3,
     explanation: 'The Control Environment is the foundation of all other internal control components and sets the tone at the top. It includes the organization\'s commitment to integrity and ethical values, board oversight, organizational structure, commitment to competence, and accountability.',
@@ -465,11 +465,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'According to the fraud triangle, which THREE elements must be present for fraud to occur?',
     options: [
       'Intent, Action, Concealment',
-      'Pressure, Opportunity, Rationalization',
       'Motive, Means, Method',
-      'Planning, Execution, Cover-up'
+      'Pressure, Opportunity, Rationalization',
+      'Planning, Execution, Cover-up',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The fraud triangle posits that fraud occurs when three conditions exist: (1) Pressure/Incentive - motivation to commit fraud; (2) Opportunity - ability to commit fraud due to weak controls; (3) Rationalization - ability to justify the fraudulent behavior.',
     reference: 'COSO; SAS 99',
   },
@@ -484,12 +484,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'To maintain maximum independence, the internal audit function should report functionally to:',
     options: [
+      'The Audit Committee of the Board',
       'The Chief Financial Officer',
       'The Chief Executive Officer',
-      'The Audit Committee of the Board',
-      'The Controller'
+      'The Controller',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Internal audit should report functionally to the Audit Committee (a committee of independent board members) to maintain independence from management. Administrative reporting may be to the CEO or CFO, but functional reporting to the Audit Committee ensures internal audit can report on management without interference.',
     reference: 'IIA Standards',
   },
@@ -504,10 +504,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Which pairing of duties represents a segregation of duties violation in the purchasing cycle?',
     options: [
-      'Same person receives goods and updates perpetual inventory records',
       'Same person approves purchase orders and signs checks',
       'Same person requisitions goods and approves purchase orders',
-      'Both B and C'
+      'Same person receives goods and updates perpetual inventory records',
+      'Both B and C',
     ],
     correctAnswer: 3,
     explanation: 'Both B and C represent violations. Approving purchases and signing checks combines authorization and custody functions. Requisitioning and approving separates who requests from who authorizes, so having the same person do both defeats the control purpose. Receiving goods and updating records (A) is often acceptable if physical custody verification is separated.',
@@ -524,10 +524,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is an example of an IT application control rather than a general control?',
     options: [
-      'Password complexity requirements',
-      'Input validation that rejects orders exceeding credit limits',
       'Backup and recovery procedures',
-      'Segregation of development and production environments'
+      'Input validation that rejects orders exceeding credit limits',
+      'Password complexity requirements',
+      'Segregation of development and production environments',
     ],
     correctAnswer: 1,
     explanation: 'Application controls are embedded in specific applications to ensure transaction integrity—like input validation that checks credit limits. General controls apply across the IT environment: password policies, backup procedures, and environment segregation are all IT general controls (ITGCs).',
@@ -568,10 +568,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a significant risk associated with ERP system implementation?',
     options: [
-      'Increased data redundancy',
       'Inability to support multiple currencies',
+      'Increased data redundancy',
       'High implementation costs and change management challenges',
-      'Lack of real-time data availability'
+      'Lack of real-time data availability',
     ],
     correctAnswer: 2,
     explanation: 'ERP implementations are complex, expensive, and require significant organizational change management. Other options are typically benefits of ERP: reduced redundancy, multi-currency support, and real-time data. Failed ERP projects often result from underestimating cost, time, and change management requirements.',
@@ -588,10 +588,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Which type of chart is most appropriate for showing how total revenue breaks down by product category?',
     options: [
-      'Line chart',
       'Scatter plot',
+      'Line chart',
       'Pie chart',
-      'Histogram'
+      'Histogram',
     ],
     correctAnswer: 2,
     explanation: 'Pie charts show parts of a whole—ideal for composition analysis like revenue by product category. Line charts show trends over time, scatter plots show relationships between variables, and histograms show frequency distributions.',
@@ -609,11 +609,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'A company purchases cyber liability insurance to cover potential data breach costs. This is an example of risk:',
     options: [
       'Avoidance',
-      'Mitigation',
       'Transfer',
-      'Acceptance'
+      'Mitigation',
+      'Acceptance',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Purchasing insurance transfers the financial consequences of risk to the insurer. Avoidance eliminates the activity causing risk, mitigation reduces likelihood or impact through controls, and acceptance means bearing the risk without additional action.',
     reference: 'IMA CMA Content Specification',
   },
@@ -652,12 +652,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted Q1 sales: 15,000 units. Desired ending inventory: 20% of next quarter\'s sales. Q2 budgeted sales: 18,000 units. Beginning Q1 inventory: 2,800 units. What is Q1 production budget?',
     options: [
+      '15,600 units',
       '15,000 units',
       '15,800 units',
-      '15,600 units',
-      '16,200 units'
+      '16,200 units',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Production budget formula: Units to produce = Budgeted sales + Desired ending inventory - Beginning inventory. Desired ending inventory = 20% × 18,000 next month sales = 3,600 units. Required production = 15,000 + 3,600 - 2,800 = 15,800 units.',
     reference: 'IMA CMA Content Specification',
   },
@@ -672,12 +672,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A division has operating income of $200,000 and average operating assets of $1,600,000. The manager is considering a project with operating income of $30,000 and required investment of $200,000. If the cost of capital is 12%, should the manager accept this project?',
     options: [
+      'No, because it decreases ROI below the current level',
       'Yes, because it increases EVA',
       'Yes, because it increases both ROI and EVA',
-      'No, because it decreases ROI below the current level',
-      'No, because it has negative EVA'
+      'No, because it has negative EVA',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Current ROI: $200,000/$1,600,000 = 12.5%. New project ROI: $30,000/$200,000 = 15%. New combined ROI: $230,000/$1,800,000 = 12.78%. Since 12.78% > 12.5%, ROI increases. Project EVA: $30,000 - (12% × $200,000) = $30,000 - $24,000 = $6,000 positive. The project should be accepted because it increases both ROI and EVA.',
     reference: 'IMA CMA Content Specification',
   },
@@ -692,10 +692,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Analysis',
     question: 'Make costs per unit: DM $8, DL $10, Variable OH $4, Fixed OH $6 (allocated). External supplier offers $24 per unit. Fixed costs remain if outsourced. Company needs 5,000 units. What is the annual cost effect of outsourcing?',
     options: [
-      '$10,000 savings',
-      '$10,000 additional cost',
       '$30,000 savings',
-      '$30,000 additional cost'
+      '$10,000 additional cost',
+      '$10,000 savings',
+      '$30,000 additional cost',
     ],
     correctAnswer: 1,
     explanation: 'Relevant make cost = DM + DL + Variable OH = $8 + $10 + $4 = $22 per unit (Fixed OH is irrelevant—it continues either way). Outsource cost = $24. Difference = $24 - $22 = $2 per unit MORE to outsource. 5,000 units × $2 = $10,000 additional cost to outsource.',
@@ -712,12 +712,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Net income: $500,000. Preferred dividends: $50,000. Weighted average shares: 100,000. Convertible bonds (10,000 bonds convertible to 2 shares each, annual interest $40,000, tax rate 25%). What is diluted EPS?',
     options: [
-      '$4.50',
-      '$4.13',
       '$4.00',
-      '$3.75'
+      '$4.13',
+      '$4.50',
+      '$3.75',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Basic EPS = ($500,000 - $50,000) / 100,000 = $4.50. For diluted: Add back after-tax interest = $40,000 × (1 - 0.25) = $30,000. Add shares: 10,000 × 2 = 20,000. Diluted EPS = ($450,000 + $30,000) / (100,000 + 20,000) = $480,000 / 120,000 = $4.00. Since $4.00 < $4.50, bonds are dilutive.',
     reference: 'ASC 260',
   },
@@ -732,10 +732,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted fixed overhead: $120,000. Budgeted production: 10,000 units. Standard hours per unit: 2. Actual production: 9,000 units. What is the fixed overhead volume variance?',
     options: [
-      '$6,000 Favorable',
       '$6,000 Unfavorable',
       '$12,000 Favorable',
-      '$12,000 Unfavorable'
+      '$6,000 Favorable',
+      '$12,000 Unfavorable',
     ],
     correctAnswer: 3,
     explanation: 'FOH rate = $120,000 / (10,000 units × 2 hours) = $6/hour. Standard hours allowed = 9,000 × 2 = 18,000 hours. Budgeted hours = 10,000 × 2 = 20,000 hours. Volume variance = (SH allowed - Budgeted hours) × FOH rate = (18,000 - 20,000) × $6 = -$12,000 = $12,000 Unfavorable (under-absorbed fixed overhead due to lower production).',
@@ -752,10 +752,10 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which forecasting method assigns more weight to recent observations than to older observations?',
     options: [
-      'Simple moving average',
       'Simple linear regression',
+      'Simple moving average',
       'Exponential smoothing',
-      'Naive forecasting'
+      'Naive forecasting',
     ],
     correctAnswer: 2,
     explanation: 'Exponential smoothing applies declining weights to older observations through a smoothing constant (alpha). Recent data has more influence on the forecast. Simple moving average weights all periods equally, regression weights by the linear relationship, and naive forecasting uses only the most recent observation.',
@@ -793,11 +793,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'The risk that a company\'s strategic objectives will not be achieved due to changes in the competitive environment is classified as:',
     options: [
       'Operational risk',
-      'Financial risk',
       'Strategic risk',
-      'Compliance risk'
+      'Financial risk',
+      'Compliance risk',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Strategic risk relates to the achievement of strategic objectives and includes competitive threats, market changes, and failure to adapt to industry shifts. Operational risk relates to internal processes, financial risk to financial exposures, and compliance risk to regulatory violations.',
     reference: 'COSO ERM',
   },
@@ -812,12 +812,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Division A: Operating income $350,000, assets $2,500,000. Division B: Operating income $150,000, assets $1,000,000. Required return: 12%. Which division has higher residual income?',
     options: [
+      'Both have equal residual income',
       'Division A ($50,000)',
       'Division B ($30,000)',
-      'Both have equal residual income',
-      'Division A ($350,000)'
+      'Division A ($350,000)',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'RI = Operating Income - (Required Return × Assets). Division A: $350,000 - (12% × $2,500,000) = $350,000 - $300,000 = $50,000. Division B: $150,000 - (12% × $1,000,000) = $150,000 - $120,000 = $30,000. Division A has higher RI at $50,000.',
     reference: 'IMA CMA Content Specification',
   },
@@ -832,12 +832,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which characteristic of blockchain technology makes it particularly valuable for supply chain tracking?',
     options: [
+      'Immutable, transparent record of transactions',
       'Centralized control by a single authority',
       'Ability to modify historical records easily',
-      'Immutable, transparent record of transactions',
-      'High transaction processing speed'
+      'High transaction processing speed',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Blockchain\'s immutability (records cannot be altered) and transparency (all parties see the same information) make it ideal for supply chain tracking. It ensures product provenance and prevents fraud. Blockchain is decentralized (not centralized), records are difficult to modify (not easy), and processing can be slower than centralized systems.',
     reference: 'IMA CMA Content Specification',
   },
@@ -853,11 +853,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'Which of the following items is included in Other Comprehensive Income (OCI) rather than net income?',
     options: [
       'Gain on sale of equipment',
-      'Unrealized gain on trading securities',
       'Unrealized gain on available-for-sale debt securities',
-      'Interest income on investments'
+      'Unrealized gain on trading securities',
+      'Interest income on investments',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Unrealized gains/losses on available-for-sale debt securities go to OCI. Trading security gains/losses go to net income. Gains on asset sales and interest income are also part of net income. Other OCI items include pension adjustments, foreign currency translation, and effective cash flow hedge gains/losses.',
     reference: 'ASC 220; ASC 320',
   },
@@ -873,11 +873,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'A rolling (continuous) budget is characterized by:',
     options: [
       'Requiring justification of all expenses from zero each period',
-      'Adding a new budget period when the current period ends',
       'Setting a fixed target that cannot be changed during the year',
-      'Using last year\'s budget adjusted for inflation'
+      'Adding a new budget period when the current period ends',
+      'Using last year\'s budget adjusted for inflation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A rolling budget continuously adds a new period (month or quarter) as the current period expires, maintaining a constant planning horizon (e.g., always 12 months ahead). Zero-based budgeting requires full justification, not rolling budgets.',
     reference: 'IMA CMA Content Specification',
   },
@@ -892,12 +892,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'Service department S provides services to Production departments P1 (60%) and P2 (40%). S has costs of $100,000. Under the direct method, how much is allocated to P1?',
     options: [
-      '$50,000',
       '$60,000',
       '$70,000',
-      '$100,000'
+      '$50,000',
+      '$100,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under the direct method, service department costs are allocated only to production departments based on relative usage. P1 receives 60% of $100,000 = $60,000. The direct method ignores any services provided between service departments.',
     reference: 'IMA CMA Content Specification',
   },
@@ -912,12 +912,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A key control over cash is monthly bank reconciliation. This control is most effective when performed by:',
     options: [
-      'The accounts payable clerk who writes checks',
       'The cashier who handles cash receipts',
       'An employee with no cash handling or recording duties',
-      'The bank that provides the statement'
+      'The accounts payable clerk who writes checks',
+      'The bank that provides the statement',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Bank reconciliations should be prepared by someone independent of cash receipts and disbursements to ensure errors or fraud can be detected. Segregation of duties is a fundamental control principle—the person reconciling should not handle or record cash.',
     reference: 'COSO Framework',
   },
@@ -972,12 +972,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Application',
     question: 'A product\'s target selling price is $150, required profit margin is 20%, and estimated production cost is $135. What is the cost gap that must be closed?',
     options: [
-      '$5',
       '$15',
+      '$5',
       '$30',
-      '$105'
+      '$105',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Target cost = Target price - Required profit = $150 - (20% × $150) = $150 - $30 = $120. Cost gap = Estimated cost - Target cost = $135 - $120 = $15. The company must find ways to reduce costs by $15 per unit.',
     reference: 'IMA CMA Content Specification',
   },
@@ -992,12 +992,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Master data management focuses on ensuring consistency of which type of data across systems?',
     options: [
+      'External data from market research',
       'Transactional data like individual sales orders',
       'Core reference data like customer and product information',
-      'External data from market research',
-      'Archived historical data'
+      'Archived historical data',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Master data refers to core business entities that are shared across systems—customers, products, vendors, employees, accounts. Master data management ensures this foundational data is consistent, accurate, and governed across the enterprise.',
     reference: 'IMA CMA Content Specification',
   },
@@ -1013,11 +1013,11 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     question: 'A project costs $100,000 and generates annual cash flows of $30,000 for 5 years. What is the payback period?',
     options: [
       '2.5 years',
-      '3.0 years',
       '3.33 years',
-      '5.0 years'
+      '3.0 years',
+      '5.0 years',
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Payback period = Initial investment / Annual cash flow = $100,000 / $30,000 = 3.33 years. This represents the time to recover the initial investment, ignoring the time value of money.',
     reference: 'IMA CMA Content Specification',
   },
@@ -1032,12 +1032,12 @@ export const CMA1_MCQ_BATCH9: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'According to the IMA Statement of Ethical Professional Practice, which of the following is NOT one of the four overarching ethical standards?',
     options: [
+      'Profitability',
       'Competence',
       'Confidentiality',
-      'Profitability',
-      'Integrity'
+      'Integrity',
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'The four IMA ethical standards are Competence, Confidentiality, Integrity, and Credibility. Profitability is a business goal, not an ethical standard. CMAs must maintain professional competence, preserve confidentiality, act with integrity, and communicate credibly.',
     reference: 'IMA Statement of Ethical Professional Practice',
   },

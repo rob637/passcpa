@@ -202,15 +202,15 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     difficulty: 'hard',
     blueprintArea: 'ISC-VI',
     skillLevel: 'Analysis',
-    question: 'In the cloud shared responsibility model for IaaS:',
+    question: 'An organization implements a cloud access security broker (CASB) to monitor and control access to cloud-based financial applications. The CASB identifies that employees are using 47 unsanctioned cloud applications (shadow IT) to store and share financial data, including customer account information and internal financial reports. The IT department was unaware of these applications. What should the auditor assess?',
     options: [
-      'Provider handles all security',
-      'Same as on-premises',
-      'Customer handles nothing',
-      'Customer responsible for data, applications, OS security; provider for infrastructure'
+      'Shadow IT does not create risk because employees choose applications that meet their needs',
+      'The 47 unsanctioned cloud applications represent unmanaged risk \u2014 financial data stored in uncontrolled cloud services may lack encryption, access controls, backup, and compliance with data retention policies, and the organization has no visibility into how this data is being used or shared',
+      'The CASB should block all cloud applications to eliminate shadow IT',
+      'Shadow IT is the employees\' responsibility, not the organization\'s'
     ],
-    correctAnswer: 3,
-    explanation: 'Shared responsibility varies by model. IaaS: provider = physical, network, hypervisor; customer = OS, apps, data, access. PaaS: provider adds OS/middleware. SaaS: provider handles most, customer = data, access. Security "in" vs "of" cloud.',
+    correctAnswer: 1,
+    explanation: 'Shadow IT creates significant risk: (1) financial data in unmanaged services may violate data classification policies, (2) no access controls means anyone with the link may access data, (3) no backup or retention controls, (4) data may be stored in non-compliant jurisdictions, (5) the organization cannot respond to data subject access requests for data it doesn\'t know about. The auditor should assess the sensitivity of exposed data and recommend a shadow IT governance program.',
     reference: 'Cloud Security - Shared Responsibility',
   },
   {
@@ -347,15 +347,15 @@ export const ISC_QUESTIONS_ELITE: Question[] = [
     difficulty: 'hard',
     blueprintArea: 'ISC-III',
     skillLevel: 'Analysis',
-    question: 'The NIST Cybersecurity Framework core functions are:',
+    question: 'An organization\'s security architecture includes a demilitarized zone (DMZ) between the internet and the internal network. The financial reporting web application is hosted in the DMZ. The auditor discovers that the DMZ server also hosts the financial database, which should be on the internal network behind an additional firewall layer. What architecture concern exists?',
     options: [
-      'Identify, Protect, Detect, Respond, Recover',
-      'Plan, Do, Check, Act',
-      'Prevent, Detect, Correct',
-      'Confidentiality, Integrity, Availability'
+      'Hosting the database in the DMZ is acceptable because the DMZ has firewall protection',
+      'Placing the financial database in the DMZ exposes it to internet-facing threats \u2014 the database should be on the internal network behind a second firewall layer, with only the web application tier in the DMZ, following a tiered architecture that limits the blast radius of a DMZ compromise',
+      'DMZ and internal network placement does not affect database security',
+      'A single firewall layer provides adequate protection for database servers'
     ],
-    correctAnswer: 0,
-    explanation: 'NIST CSF: Identify (asset management, risk assessment), Protect (access control, training), Detect (monitoring, anomalies), Respond (incident response), Recover (recovery planning). Framework profiles for maturity levels.',
+    correctAnswer: 1,
+    explanation: 'A tiered security architecture separates presentation (DMZ), application (DMZ or internal), and database (internal) layers. Placing the database in the DMZ: (1) exposes financial data to internet-adjacent attacks, (2) if the web server is compromised, the attacker has direct access to the database without crossing additional security boundaries, (3) violates defense-in-depth principles. The database should be behind an additional firewall layer on the internal network.',
     reference: 'NIST Cybersecurity Framework',
   },
   {

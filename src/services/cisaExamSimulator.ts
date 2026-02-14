@@ -18,11 +18,11 @@ export const CISA_EXAM_CONFIG = {
   passingScore: 450, // Scaled score (out of 800)
   passingPercentage: 65, // Approximate raw percentage needed
   domainDistribution: {
-    CISA1: 27, // 18% of 150
-    CISA2: 27, // 18% of 150
-    CISA3: 18, // 12% of 150
-    CISA4: 39, // 26% of 150
-    CISA5: 39, // 26% of 150
+    CISA1: 32, // 21% of 150
+    CISA2: 24, // 16% of 150
+    CISA3: 27, // 18% of 150
+    CISA4: 30, // 20% of 150
+    CISA5: 37, // 25% of 150
   } as Record<CISASectionId, number>,
 };
 

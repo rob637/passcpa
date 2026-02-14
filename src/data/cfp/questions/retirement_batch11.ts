@@ -19,12 +19,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The "go-go, slow-go, no-go" model of retirement spending describes:',
     options: [
-      'A) Investment strategies',
       'B) Declining spending patterns where active early years have higher discretionary spending that decreases with age',
+      'A) Investment strategies',
       'C) Social Security claiming',
-      'D) Healthcare costs only'
+      'D) Healthcare costs only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Retirement spending phases: Go-go (60s-70s): active, travel, hobbies—higher discretionary. Slow-go (mid-70s-80s): slower pace, less travel—lower discretionary. No-go (80s+): less active but possibly higher healthcare. Implications: may not need level inflation-adjusted spending; front-load experiences; plan for healthcare later. More realistic than straight-line assumptions.'
   },
   {
@@ -38,12 +38,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A retirement funded ratio measures:',
     options: [
+      'C) Savings rate',
       'A) Investment returns only',
       'B) Current retirement assets relative to the present value of projected retirement spending needs',
-      'C) Savings rate',
-      'D) Social Security benefits'
+      'D) Social Security benefits',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Funded ratio: Assets / PV(Liabilities). If 100%, fully funded. Under 100%, shortfall exists. Over 100%, surplus. Borrowed from pension accounting. Useful for: tracking progress, setting priorities, determining if can retire. Liabilities include: essential spending, discretionary goals. Can calculate total or category-by-category. More precise than simple net worth comparison.'
   },
   {
@@ -57,12 +57,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A complete retirement income analysis should identify all sources including:',
     options: [
+      'C) Only guaranteed income',
       'A) Only investment accounts',
       'B) Social Security, pensions, investment portfolios, part-time work, rental income, and any other projected income',
-      'C) Only guaranteed income',
-      'D) Only taxable accounts'
+      'D) Only taxable accounts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Income source inventory: Social Security (estimate via SSA.gov), pensions/annuities (check statements), investment accounts (project sustainable withdrawals), rental income, part-time work (realistic?), inheritance expectations (uncertain), business value. Coordinate: which sources first, tax optimization, guaranteed vs. variable. Complete picture enables comprehensive planning.'
   },
   // RET-2: Qualified Plans
@@ -77,10 +77,10 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A cash balance pension plan is:',
     options: [
-      'A) A defined contribution plan',
-      'B) A defined benefit plan that expresses benefits as an account balance growing at a specified rate, providing more portability',
       'C) A Roth account',
-      'D) An IRA variant'
+      'B) A defined benefit plan that expresses benefits as an account balance growing at a specified rate, providing more portability',
+      'A) A defined contribution plan',
+      'D) An IRA variant',
     ],
     correctAnswer: 1,
     explanation: 'Cash balance: hybrid DB plan. Technically defined benefit (employer bears investment risk, PBGC covered), but looks like DC (individual account balance). Credits: pay credits (percentage of salary) + interest credits (guaranteed rate). Benefits: more portable than traditional DB, easier to understand. Still must follow DB rules—can be complex to administer. Growing in popularity.'
@@ -96,10 +96,10 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: '457(b) governmental plan distributions:',
     options: [
-      'A) Are always subject to 10% penalty',
-      'B) Are not subject to the 10% early withdrawal penalty before age 59½, unlike 401(k)s',
       'C) Are tax-free',
-      'D) Require annuitization'
+      'B) Are not subject to the 10% early withdrawal penalty before age 59½, unlike 401(k)s',
+      'A) Are always subject to 10% penalty',
+      'D) Require annuitization',
     ],
     correctAnswer: 1,
     explanation: '457(b) advantage: no 10% early withdrawal penalty at any age. Still owe income tax, but no penalty. Unique among employer retirement plans. Other differences: can contribute to both 457 and 401(k)/403(b) (separate limits), catch-up contributions different structure. 457(f) (non-governmental) has different rules—deferred compensation, substantial risk of forfeiture required.'
@@ -115,12 +115,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The opportunity cost of a 401(k) loan includes:',
     options: [
-      'A) Only interest paid',
       'B) Foregone investment growth on borrowed amount and potential job change complications',
       'C) No opportunity cost exists',
-      'D) Higher contribution limits'
+      'A) Only interest paid',
+      'D) Higher contribution limits',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Plan loan opportunity cost: borrowed funds aren\'t invested (miss potential gains), repayments with after-tax dollars (taxed again at distribution), job change risk (may require immediate repayment or deemed distribution). Not as "free" as appears. Sometimes necessary, but consider: other sources first, minimum needed, repay quickly. Interest paid to self doesn\'t truly offset opportunity cost.'
   },
   // RET-3: Distribution Rules
@@ -135,12 +135,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'RMD aggregation rules allow:',
     options: [
-      'A) Combining all retirement accounts',
       'B) Taking total IRA RMDs from any IRA(s), but 401(k) RMDs must come from each individual plan',
+      'A) Combining all retirement accounts',
       'C) Skipping RMDs',
-      'D) Converting to Roth instead'
+      'D) Converting to Roth instead',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'RMD aggregation: calculate separately for each IRA, but can take total from any IRA(s). 403(b)s also aggregate. 401(k)s: must calculate AND withdraw from each separately. Strategy: take from least tax-efficient IRA, or one you\'re closing. Simplifies multiple IRAs. Inherited IRAs: separate from your own, each decedent\'s separate. Understanding enables tax-efficient withdrawal strategies.'
   },
   {
@@ -174,11 +174,11 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     question: 'The annual limit for a Qualified Charitable Distribution (QCD) from an IRA is:',
     options: [
       'A) Unlimited',
-      'B) $100,000 per individual (indexed after 2023), directly to charity, counting toward RMD',
       'C) 50% of AGI',
-      'D) $10,000'
+      'B) $100,000 per individual (indexed after 2023), directly to charity, counting toward RMD',
+      'D) $10,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'QCD limits: $100,000 per individual (now indexed for inflation). Must be 70½ or older. Direct transfer to charity (not DAF). Counts toward RMD. Excludes from income (better than deduction for most). Each spouse can do up to limit from own IRA. One-time exception: up to $50,000 to split-interest entity (CRT, CGA). Powerful for charitable retirees.'
   },
   // RET-4: Social Security
@@ -193,12 +193,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Windfall Elimination Provision (WEP) and Government Pension Offset (GPO) affect:',
     options: [
-      'A) All Social Security recipients',
       'B) Those with pensions from work not covered by Social Security, reducing their SS benefits',
+      'A) All Social Security recipients',
       'C) Only high earners',
-      'D) Only federal employees'
+      'D) Only federal employees',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'WEP: reduces Social Security benefits for those with pensions from non-SS covered work (some state/local government jobs). Affects own benefit calculation. GPO: reduces spousal/survivor benefits by 2/3 of non-covered pension. Affects: teachers, police, firefighters in some states, some federal employees. Planning: understand impact, may affect spousal claiming strategies. Calculator on SSA.gov.'
   },
   {
@@ -213,11 +213,11 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     question: 'Social Security benefits may be available to children when a parent:',
     options: [
       'A) Only after parent\'s death',
-      'B) Retires, becomes disabled, or dies, with benefits paid until typically age 18 (or 19 if in high school)',
       'C) Only for adopted children',
-      'D) Only if parent has 40 credits'
+      'B) Retires, becomes disabled, or dies, with benefits paid until typically age 18 (or 19 if in high school)',
+      'D) Only if parent has 40 credits',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Children\'s benefits: available when parent retires, disabled, or dies. Child must be: unmarried, under 18 (19 if full-time high school student), or disabled (if disability began before 22). Amount: up to 50% of parent\'s benefit (retirement/disability) or 75% (death). Family maximum applies. Older parents with young children: valuable benefit. Often overlooked in planning.'
   },
   {
@@ -232,11 +232,11 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     question: 'Retroactive Social Security retirement benefits:',
     options: [
       'A) Are always available back to age 62',
-      'B) Can be claimed for up to 6 months before application (but not before FRA), providing lump sum',
       'C) Are never available',
-      'D) Require special application'
+      'B) Can be claimed for up to 6 months before application (but not before FRA), providing lump sum',
+      'D) Require special application',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Retroactive benefits: can request up to 6 months of past benefits. But: can\'t go earlier than FRA, treated as earlier claiming date (permanently lower benefit). Trade-off: lump sum now vs. higher ongoing. Best for: those who delayed past FRA and need immediate funds. Don\'t accidentally elect retroactive if wanting highest ongoing benefit.'
   },
   // RET-5: Investment Considerations
@@ -251,12 +251,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Implementing a bucket strategy for retirement income involves:',
     options: [
-      'A) One investment account',
       'B) Segmenting assets into near-term (conservative), medium-term (balanced), and long-term (growth) buckets',
       'C) Avoiding all stocks',
-      'D) Annual rebalancing only'
+      'A) One investment account',
+      'D) Annual rebalancing only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Bucket strategy: Bucket 1 (1-3 years): cash, short bonds—spend from here, peace of mind in downturns. Bucket 2 (4-10 years): bonds, balanced funds—refills Bucket 1. Bucket 3 (10+ years): stocks—growth, not touched in downturn. Psychological: easier to stay invested when near-term needs are secure. Mechanics: can be mental accounting or actual accounts. Replenish periodically.'
   },
   {
@@ -270,12 +270,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'TIPS (Treasury Inflation-Protected Securities) in retirement portfolios:',
     options: [
-      'A) Provide no inflation protection',
       'B) Offer inflation-adjusted principal and interest, protecting purchasing power but with lower yields than nominal bonds',
       'C) Are suitable only for taxable accounts',
-      'D) Have high credit risk'
+      'A) Provide no inflation protection',
+      'D) Have high credit risk',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'TIPS: principal adjusts with CPI, interest paid on adjusted principal. Protects against inflation—real yield is guaranteed. Lower nominal yield than regular Treasuries (giving up inflation uncertainty). Tax consideration: inflation adjustment taxable annually (phantom income)—better in tax-deferred. For retirement: can ladder to match spending needs, immunize against inflation risk on essentials.'
   },
   {
@@ -289,10 +289,10 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Single Premium Immediate Annuity (SPIA) provides:',
     options: [
-      'A) Variable income based on investments',
-      'B) Guaranteed lifetime income stream beginning immediately in exchange for a lump sum premium',
       'C) Access to principal anytime',
-      'D) Death benefit to heirs'
+      'B) Guaranteed lifetime income stream beginning immediately in exchange for a lump sum premium',
+      'A) Variable income based on investments',
+      'D) Death benefit to heirs',
     ],
     correctAnswer: 1,
     explanation: 'SPIA: exchange lump sum for guaranteed lifetime (or period-certain) income starting immediately. Pros: longevity insurance, simplicity, guaranteed income. Cons: illiquid (no access to principal), no inflation adjustment unless purchased, may lose value if die early (unless period-certain/refund feature). Use: cover essential expenses with guaranteed income. Portion of portfolio, not all.'
@@ -328,12 +328,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Non-qualified deferred compensation plans differ from qualified plans in that they:',
     options: [
-      'A) Follow the same rules',
       'B) Lack ERISA protections, are typically unfunded promises to pay, and have no contribution limits',
+      'A) Follow the same rules',
       'C) Are available to all employees',
-      'D) Must be immediately vested'
+      'D) Must be immediately vested',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'NQDC: no ERISA protection (just unsecured creditor), no contribution limits, no early withdrawal penalty (but must follow Section 409A). Typically: unfunded promise (employer just owes you), subject to employer bankruptcy risk, only for highly compensated. Must elect deferral before earning. Distribution timing elected in advance. Common: SERPs, excess benefit plans and deferred compensation for executives.'
   },
   {
@@ -347,12 +347,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The age 55 exception for 401(k) withdrawals:',
     options: [
-      'A) Applies to all retirement accounts',
       'B) Allows penalty-free withdrawals from a 401(k) if separated from service at age 55 or older that year',
+      'A) Applies to all retirement accounts',
       'C) Only applies to Roth accounts',
-      'D) Requires hardship'
+      'D) Requires hardship',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Rule of 55: 401(k)/403(b) only, not IRAs. If separate from service in year you turn 55 (50 for public safety), can withdraw penalty-free from THAT employer\'s plan. Can\'t roll to IRA and use exception. Leaves employer before 55? Doesn\'t apply to that plan. Strategy: keep at least some in 401(k) if planning early retirement. Each plan separately considered.'
   },
   {
@@ -367,11 +367,11 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     question: 'The Average Indexed Monthly Earnings (AIME) calculation:',
     options: [
       'A) Uses all years of employment',
-      'B) Uses highest 35 years of indexed earnings, with zeros for missing years if under 35 years of work history',
       'C) Only uses last 10 years',
-      'D) Ignores inflation adjustments'
+      'B) Uses highest 35 years of indexed earnings, with zeros for missing years if under 35 years of work history',
+      'D) Ignores inflation adjustments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'AIME calculation: take each year\'s earnings (up to max taxable), adjust for wage inflation to current dollars, take highest 35 years, average, divide by 12 for monthly. Zeros count for years under 35! Implications: additional years of work can increase AIME (replace zeros or low years), high earnings late in career especially valuable if replacing zeros. Check Social Security statement for earnings history.'
   },
   {
@@ -386,11 +386,11 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     question: 'Portfolio longevity can be extended by:',
     options: [
       'A) Higher withdrawals in downturns',
-      'B) Flexible spending that reduces withdrawals in poor markets, tax-efficient withdrawals, and controlling costs',
       'C) Concentrated positions',
-      'D) Avoiding all equities'
+      'B) Flexible spending that reduces withdrawals in poor markets, tax-efficient withdrawals, and controlling costs',
+      'D) Avoiding all equities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Extending portfolio longevity: flexible withdrawals (guardrails—reduce in bad years), tax-efficient withdrawal ordering, minimize investment costs (compound benefit), delay Social Security (bridge with portfolio, then higher guaranteed), part-time income (reduce draws), downsize/reduce expenses. Every dollar not withdrawn continues compounding. Small adjustments have big long-term impact.'
   },
   {
@@ -404,12 +404,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Long-term care planning should be integrated with retirement planning because:',
     options: [
+      'C) Medicare covers all LTC',
       'A) Insurance is always required',
       'B) LTC costs can significantly deplete retirement assets, and planning options vary by age, health, and resources',
-      'C) Medicare covers all LTC',
-      'D) Medicaid is always available'
+      'D) Medicaid is always available',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'LTC in retirement planning: average need 3+ years, costs $100K+/year depending on care type. Medicare covers very limited. Options: self-insure (high assets), traditional LTC insurance, hybrid (life/LTC), annuity with LTC, Medicaid planning. Decision factors: age, health, family history, assets, preferences. Procrastination costly—premiums rise, health changes. Part of comprehensive retirement plan.'
   },
   {
@@ -423,12 +423,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'After-tax 401(k) contributions with in-plan Roth conversions (mega backdoor Roth) allow:',
     options: [
+      'C) Unlimited tax deductions',
       'A) No additional savings',
       'B) Contributing beyond regular 401(k) limits and converting to Roth, if the plan permits both features',
-      'C) Unlimited tax deductions',
-      'D) Early penalty-free access'
+      'D) Early penalty-free access',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Mega backdoor Roth: some plans allow after-tax contributions (up to overall 415 limit ~$69K total), then in-service conversion to Roth (either in-plan Roth or Roth IRA). Result: additional Roth savings beyond normal limits. Requirements: plan must allow after-tax AND in-service conversion. Valuable for high earners maxing regular options. Check plan documents carefully.'
   },
   {
@@ -442,10 +442,10 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The first-time homebuyer exception for IRA early withdrawals:',
     options: [
-      'A) Eliminates all taxes',
-      'B) Allows up to $10,000 penalty-free for a first-time homebuyer, though income tax still applies',
       'C) Has no limits',
-      'D) Only applies to Roth IRAs'
+      'B) Allows up to $10,000 penalty-free for a first-time homebuyer, though income tax still applies',
+      'A) Eliminates all taxes',
+      'D) Only applies to Roth IRAs',
     ],
     correctAnswer: 1,
     explanation: 'First-time homebuyer exception: up to $10,000 lifetime, penalty-free (still owe income tax on traditional). "First-time": haven\'t owned in past 2 years. Can be for yourself, spouse, child, grandchild, parent. Must use within 120 days. Applies to IRA only (not 401(k)). $10,000 lifetime limit modest for today\'s home prices. Roth: 5-year contribution basis comes out first tax-free anyway.'
@@ -461,10 +461,10 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A divorced spouse can claim Social Security benefits on an ex-spouse\'s record if:',
     options: [
-      'A) Any length of marriage',
-      'B) Marriage lasted 10+ years, currently unmarried, and at least age 62, with potential benefits up to 50%',
       'C) Ex-spouse is deceased only',
-      'D) Ex-spouse gives permission'
+      'B) Marriage lasted 10+ years, currently unmarried, and at least age 62, with potential benefits up to 50%',
+      'A) Any length of marriage',
+      'D) Ex-spouse gives permission',
     ],
     correctAnswer: 1,
     explanation: 'Divorced spouse benefits: marriage lasted 10+ years, divorced at least 2 years (if ex hasn\'t claimed), currently unmarried, age 62+. Benefit: up to 50% of ex\'s PIA (same as married spouse). Doesn\'t affect ex\'s benefit. If divorced and remarry, lose benefit (unless that marriage ends). Multiple ex-spouses can claim on same worker. Survivor benefits also available if 10+ year marriage.'
@@ -480,12 +480,12 @@ export const CFP_RETIREMENT_BATCH11_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The decision to annuitize retirement assets should consider:',
     options: [
-      'A) Only current interest rates',
       'B) Unique mortality credits, loss of liquidity and legacy, existing guaranteed income, and personal health',
+      'A) Only current interest rates',
       'C) Only tax benefits',
-      'D) Market performance exclusively'
+      'D) Market performance exclusively',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Annuity decision factors: Mortality credits (pooled risk—survivors benefit from those who die early). Loss: liquidity, legacy (unless features added), inflation protection (unless COLA). Consider: existing guaranteed income (SS, pension), health/life expectancy, desire for simplicity vs control, interest rate environment. Not all-or-nothing—partial annuitization common. Complex personal decision.'
   }
 ];

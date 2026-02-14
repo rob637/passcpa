@@ -16,12 +16,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Maximum tolerable downtime (MTD) determines:',
     options: [
-      'The backup frequency',
-      'The longest period a function can be unavailable without unacceptable impact',
+      'The testing schedule',
       'The recovery site type',
-      'The testing schedule'
+      'The longest period a function can be unavailable without unacceptable impact',
+      'The backup frequency',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'MTD is the maximum time a business function can be disrupted before the impact becomes unacceptable, driving RTO requirements.',
     topic: 'Business Continuity',
     subtopic: 'MTD'
@@ -35,12 +35,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Work recovery time (WRT) represents:',
     options: [
-      'Time to restore systems',
-      'Time to verify and resume business processes after system restoration',
+      'Backup duration',
       'Total downtime',
-      'Backup duration'
+      'Time to verify and resume business processes after system restoration',
+      'Time to restore systems',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'WRT is the time needed to verify systems are working correctly and resume business processes after technical systems are restored.',
     topic: 'Business Continuity',
     subtopic: 'WRT'
@@ -54,12 +54,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'IT service continuity management ensures:',
     options: [
-      'Zero downtime always',
       'IT services can be recovered within business requirements',
+      'Lowest cost operations',
       'No disasters occur',
-      'Lowest cost operations'
+      'Zero downtime always',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT service continuity management ensures IT services can be recovered within agreed timeframes to support business continuity requirements.',
     topic: 'Business Continuity',
     subtopic: 'ITSCM'
@@ -73,12 +73,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Reciprocal agreements for disaster recovery have a key weakness:',
     options: [
-      'High cost',
       'Each party may not have capacity when both are affected',
+      'Geographic distance',
       'Legal complexity',
-      'Geographic distance'
+      'High cost',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Reciprocal agreements assume one organization can host another during disaster, but both may be affected simultaneously or capacity may not exist.',
     topic: 'Disaster Recovery',
     subtopic: 'Reciprocal Agreements'
@@ -92,10 +92,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Cloud-based disaster recovery offers:',
     options: [
-      'Guaranteed uptime',
+      'Automatic compliance',
       'Cost-effective scalable recovery infrastructure',
       'No planning required',
-      'Automatic compliance'
+      'Guaranteed uptime',
     ],
     correctAnswer: 1,
     explanation: 'Cloud DR offers cost-effective, scalable recovery infrastructure without maintaining dedicated standby hardware, though planning is still required.',
@@ -111,10 +111,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Database journaling supports recovery by:',
     options: [
-      'Encrypting all data',
-      'Recording all changes to enable point-in-time recovery',
       'Compressing data',
-      'Archiving old data'
+      'Recording all changes to enable point-in-time recovery',
+      'Archiving old data',
+      'Encrypting all data',
     ],
     correctAnswer: 1,
     explanation: 'Database journaling records all changes (before and after images), enabling recovery to any point in time by replaying or reversing transactions.',
@@ -130,12 +130,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Synchronous replication differs from asynchronous in that:',
     options: [
-      'It is less reliable',
       'Writes are confirmed at both sites before acknowledgment',
       'It uses less bandwidth',
-      'Recovery is slower'
+      'Recovery is slower',
+      'It is less reliable',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Synchronous replication confirms writes at both primary and secondary sites before acknowledging, ensuring zero data loss but adding latency.',
     topic: 'Data Recovery',
     subtopic: 'Replication'
@@ -149,12 +149,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Storage area networks (SANs) provide:',
     options: [
-      'Only local storage',
       'Centralized, high-performance block-level storage',
       'Only backup storage',
-      'Only archival storage'
+      'Only archival storage',
+      'Only local storage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SANs provide centralized, high-performance block-level storage that can be shared across servers, with features like snapshots and replication.',
     topic: 'Data Center',
     subtopic: 'Storage'
@@ -168,10 +168,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'RAID levels provide:',
     options: [
-      'Only backup',
-      'Data protection through redundancy and/or improved performance',
       'Only encryption',
-      'Only compression'
+      'Data protection through redundancy and/or improved performance',
+      'Only compression',
+      'Only backup',
     ],
     correctAnswer: 1,
     explanation: 'RAID (Redundant Array of Independent Disks) provides data protection through disk redundancy and/or improved I/O performance depending on level.',
@@ -187,12 +187,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'High availability clustering provides:',
     options: [
-      'Data encryption',
-      'Automatic failover to minimize downtime',
+      'Reduced costs',
       'Improved network speed',
-      'Reduced costs'
+      'Automatic failover to minimize downtime',
+      'Data encryption',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'High availability clustering uses multiple servers with automatic failover, minimizing downtime if a server fails.',
     topic: 'IT Operations',
     subtopic: 'High Availability'
@@ -206,12 +206,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Load balancing distributes:',
     options: [
-      'Only backup traffic',
-      'Traffic across multiple servers for performance and availability',
       'Only administrative functions',
-      'Only security functions'
+      'Only security functions',
+      'Traffic across multiple servers for performance and availability',
+      'Only backup traffic',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Load balancing distributes network traffic across multiple servers to improve performance, availability, and prevent any single server from being overwhelmed.',
     topic: 'IT Operations',
     subtopic: 'Load Balancing'
@@ -225,12 +225,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Event logging should capture:',
     options: [
-      'Only errors',
-      'Significant events including access, changes, and exceptions',
       'Only security events',
-      'Only performance data'
+      'Only performance data',
+      'Significant events including access, changes, and exceptions',
+      'Only errors',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Logging should capture significant events including user access, configuration changes, errors, and security events for troubleshooting and accountability.',
     topic: 'IT Operations',
     subtopic: 'Logging'
@@ -244,10 +244,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security Information and Event Management (SIEM) provides:',
     options: [
-      'Only log storage',
+      'Only backup',
       'Real-time analysis, correlation, and alerting on security events',
       'Only compliance reporting',
-      'Only backup'
+      'Only log storage',
     ],
     correctAnswer: 1,
     explanation: 'SIEM aggregates logs from multiple sources, correlates events to detect threats, provides real-time alerting, and supports investigation.',
@@ -263,10 +263,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network operations center (NOC) is responsible for:',
     options: [
-      'Only help desk functions',
+      'Only development',
       'Monitoring and managing network infrastructure',
       'Only security functions',
-      'Only development'
+      'Only help desk functions',
     ],
     correctAnswer: 1,
     explanation: 'The NOC monitors and manages network infrastructure, identifying and resolving issues to maintain network availability and performance.',
@@ -282,12 +282,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Security operations center (SOC) focuses on:',
     options: [
-      'Network performance only',
       'Detecting, analyzing, and responding to security threats',
       'Only compliance',
-      'Only help desk'
+      'Only help desk',
+      'Network performance only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The SOC monitors for security threats, analyzes events, and coordinates incident response to protect the organization.',
     topic: 'Security Operations',
     subtopic: 'SOC'
@@ -301,12 +301,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Runbooks document:',
     options: [
-      'Only emergency procedures',
       'Routine operational procedures for common tasks and issues',
       'Only security policies',
-      'Only training materials'
+      'Only training materials',
+      'Only emergency procedures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Runbooks document step-by-step procedures for routine operational tasks and common issue resolution, ensuring consistent operations.',
     topic: 'IT Operations',
     subtopic: 'Runbooks'
@@ -320,10 +320,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Operating system hardening includes:',
     options: [
-      'Only patching',
-      'Removing unnecessary services, applying patches, and secure configuration',
       'Only antivirus installation',
-      'Only password policies'
+      'Removing unnecessary services, applying patches, and secure configuration',
+      'Only password policies',
+      'Only patching',
     ],
     correctAnswer: 1,
     explanation: 'OS hardening includes removing unnecessary services, applying patches, disabling default accounts, and applying secure configuration settings.',
@@ -339,10 +339,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Baseline configurations provide:',
     options: [
-      'Maximum flexibility',
-      'Standard secure configurations for consistent deployment',
       'No security',
-      'Only performance settings'
+      'Standard secure configurations for consistent deployment',
+      'Only performance settings',
+      'Maximum flexibility',
     ],
     correctAnswer: 1,
     explanation: 'Baseline configurations define standard secure settings for systems, ensuring consistent, compliant deployment across the environment.',
@@ -358,12 +358,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Privileged access management (PAM) controls:',
     options: [
-      'Only user passwords',
       'Access to high-privilege accounts and systems',
       'Only network access',
-      'Only physical access'
+      'Only physical access',
+      'Only user passwords',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'PAM controls access to privileged accounts (admin, root) through features like password vaulting, session recording, and just-in-time access.',
     topic: 'Access Control',
     subtopic: 'PAM'
@@ -377,12 +377,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Print server controls should address:',
     options: [
-      'Only paper usage',
-      'Unauthorized access to sensitive documents',
       'Only printer maintenance',
-      'Only ink levels'
+      'Only ink levels',
+      'Unauthorized access to sensitive documents',
+      'Only paper usage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Print controls should prevent unauthorized access to sensitive documents through features like secure print release and logging.',
     topic: 'IT Operations',
     subtopic: 'Print Security'
@@ -396,12 +396,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Media sanitization ensures:',
     options: [
-      'Media is clean',
-      'Data on storage media cannot be recovered',
+      'Media is labeled',
       'Media works properly',
-      'Media is labeled'
+      'Data on storage media cannot be recovered',
+      'Media is clean',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Media sanitization removes data so it cannot be recovered, using methods appropriate to data sensitivity (clearing, purging, or destroying).',
     topic: 'Data Management',
     subtopic: 'Media Sanitization'
@@ -415,10 +415,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cryptographic key management includes:',
     options: [
-      'Only key creation',
+      'Only backup',
       'Generation, storage, distribution, rotation, and destruction',
       'Only password management',
-      'Only backup'
+      'Only key creation',
     ],
     correctAnswer: 1,
     explanation: 'Key management covers the entire key lifecycle: generation, secure storage, distribution, rotation, archival, and secure destruction.',
@@ -434,12 +434,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Hardware security modules (HSMs) provide:',
     options: [
-      'Only physical security',
       'Secure cryptographic processing and key storage',
+      'Only backup',
       'Only network security',
-      'Only backup'
+      'Only physical security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'HSMs are tamper-resistant devices that perform cryptographic operations and securely store cryptographic keys.',
     topic: 'Data Security',
     subtopic: 'HSM'
@@ -453,12 +453,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Automated provisioning of resources:',
     options: [
-      'Increases errors',
       'Improves consistency and reduces deployment time',
+      'Is less secure',
       'Requires more staff',
-      'Is less secure'
+      'Increases errors',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Automated provisioning improves consistency by using predefined templates, reduces deployment time, and decreases human errors.',
     topic: 'IT Operations',
     subtopic: 'Automation'
@@ -472,10 +472,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Site assessments for disaster recovery should consider:',
     options: [
-      'Only distance from primary site',
-      'Geographic risks, accessibility, security, and infrastructure',
       'Only cost',
-      'Only available vendors'
+      'Geographic risks, accessibility, security, and infrastructure',
+      'Only available vendors',
+      'Only distance from primary site',
     ],
     correctAnswer: 1,
     explanation: 'DR site assessments should consider geographic risks, accessibility during disasters, physical security, infrastructure capacity, and regional threats.',
@@ -491,10 +491,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Crisis management differs from incident management in that it:',
     options: [
-      'Handles routine incidents',
-      'Addresses organization-threatening events requiring executive involvement',
       'Is handled by IT only',
-      'Does not require planning'
+      'Addresses organization-threatening events requiring executive involvement',
+      'Does not require planning',
+      'Handles routine incidents',
     ],
     correctAnswer: 1,
     explanation: 'Crisis management handles major events that threaten the organization\'s survival, requiring executive leadership and strategic decision-making.',
@@ -510,12 +510,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Emergency response procedures should be:',
     options: [
-      'Complex and detailed',
-      'Clear, simple, and regularly tested',
       'Known only to management',
-      'Updated only after incidents'
+      'Updated only after incidents',
+      'Clear, simple, and regularly tested',
+      'Complex and detailed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Emergency procedures should be clear, simple to follow under stress, and regularly tested to ensure effectiveness.',
     topic: 'Business Continuity',
     subtopic: 'Emergency Response'
@@ -529,10 +529,10 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'The PRIMARY goal of business continuity testing is to:',
     options: [
-      'Satisfy auditors',
-      'Verify plans work and identify gaps for improvement',
       'Train new staff',
-      'Update documentation'
+      'Verify plans work and identify gaps for improvement',
+      'Update documentation',
+      'Satisfy auditors',
     ],
     correctAnswer: 1,
     explanation: 'BC testing primarily verifies that plans work as expected, identifies gaps and weaknesses, and validates that objectives can be met.',
@@ -548,12 +548,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Service level monitoring should:',
     options: [
-      'Occur only during problems',
-      'Be continuous with reporting against SLA targets',
+      'Focus only on availability',
       'Be performed annually',
-      'Focus only on availability'
+      'Be continuous with reporting against SLA targets',
+      'Occur only during problems',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Service level monitoring should be continuous, measuring actual performance against SLA targets and reporting on compliance.',
     topic: 'IT Service Management',
     subtopic: 'SLA Monitoring'
@@ -567,12 +567,12 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Mean time between failures (MTBF) measures:',
     options: [
-      'Time to repair',
-      'Average time a system operates before failing',
       'Time to detect failures',
-      'Maintenance frequency'
+      'Maintenance frequency',
+      'Average time a system operates before failing',
+      'Time to repair',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'MTBF measures the average time a system or component operates before experiencing a failure, indicating reliability.',
     topic: 'IT Operations',
     subtopic: 'Reliability Metrics'

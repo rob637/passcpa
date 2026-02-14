@@ -43,13 +43,14 @@ export function useCheckout(): UseCheckoutReturn {
 
     try {
       const createCheckoutSession = httpsCallable<
-        { courseId: string; interval: string },
+        { courseId: string; interval: string; origin: string },
         CheckoutSessionResponse
       >(functions, 'createCheckoutSession');
 
       const result = await createCheckoutSession({
         courseId,
         interval,
+        origin: window.location.origin,
       });
 
       // Redirect to Stripe Checkout

@@ -39,7 +39,7 @@ describe('cisaAdaptiveEngine.ts', () => {
       const state = loadAdaptiveState();
       
       expect(state).toBeDefined();
-      expect(state.domainPerformance).toBeDefined();
+      expect(state.sectionPerformance).toBeDefined();
       expect(state.questionHistory).toBeInstanceOf(Map);
       expect(state.recentResults).toEqual([]);
       expect(state.currentDifficulty).toBe('medium');
@@ -47,8 +47,9 @@ describe('cisaAdaptiveEngine.ts', () => {
 
     it('should restore state from localStorage when data exists', () => {
       const mockState = {
-        domainPerformance: {
+        sectionPerformance: {
           CISA1: {
+            sectionId: 'CISA1',
             accuracy: 0.75,
             questionsAttempted: 10,
             recentAccuracy: 0.8,
@@ -56,6 +57,7 @@ describe('cisaAdaptiveEngine.ts', () => {
             needsWork: false,
             masteredConcepts: ['concept1'],
             struggleConcepts: [],
+            subSectionPerformance: {},
           },
         },
         questionHistory: [['q1', { questionId: 'q1', attempts: 1 }]],

@@ -20,10 +20,10 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Section 1231 property includes:',
     options: [
-      'Inventory and stock in trade',
+      'Short-term capital assets',
       'Depreciable property and real property used in a trade or business held more than one year',
+      'Inventory and stock in trade',
       'Personal-use assets only',
-      'Short-term capital assets'
     ],
     correctAnswer: 1,
     explanation: 'Section 1231 property includes depreciable property and real property used in a trade or business and held more than one year. It does not include inventory, copyrights, or assets held for sale to customers.',
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If Section 1231 gains exceed Section 1231 losses for the year:',
     options: [
+      'Gains are carried forward',
       'All gains are ordinary income',
       'Net gain is treated as long-term capital gain',
       'Gains are tax-exempt',
-      'Gains are carried forward'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If §1231 gains exceed §1231 losses, the net gain is treated as long-term capital gain, eligible for preferential rates (0%, 15%, or 20%).',
     reference: 'IRC §1231(a)(1)',
   },
@@ -60,12 +60,12 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If Section 1231 losses exceed Section 1231 gains for the year:',
     options: [
+      'Losses carry back 3 years',
       'All losses are capital losses',
       'Net loss is treated as ordinary loss',
       'Losses are disallowed',
-      'Losses carry back 3 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'If §1231 losses exceed §1231 gains, the net loss is treated as ordinary loss, fully deductible against ordinary income without capital loss limitations.',
     reference: 'IRC §1231(a)(2)',
   },
@@ -81,11 +81,11 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     question: 'The Section 1231 lookback rule requires:',
     options: [
       'All §1231 gains to be taxed at 25%',
+      'Gains to be deferred for 5 years',
       'Net §1231 gain to be recharacterized as ordinary income to the extent of unrecaptured §1231 losses from prior 5 years',
       'Losses to be spread over 5 years',
-      'Gains to be deferred for 5 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The lookback rule recaptures prior ordinary loss benefits by treating §1231 gain as ordinary income to the extent of non-recaptured net §1231 losses from the previous 5 years.',
     reference: 'IRC §1231(c)',
   },
@@ -102,8 +102,8 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     options: [
       'Land',
       'Personal property subject to depreciation',
+      'Intangible assets not subject to amortization',
       'Non-depreciable real property',
-      'Intangible assets not subject to amortization'
     ],
     correctAnswer: 1,
     explanation: 'Section 1245 property includes tangible and intangible personal property subject to depreciation or amortization. This includes machinery, equipment, vehicles, and certain §1250 property with additional depreciation.',
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Application',
     question: 'Equipment purchased for $50,000 with $30,000 accumulated depreciation is sold for $45,000. Section 1245 recapture is:',
     options: [
-      '$45,000',
       '$30,000',
+      '$45,000',
+      '$15,000',
       '$25,000',
-      '$15,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Adjusted basis = $50,000 - $30,000 = $20,000. Gain = $45,000 - $20,000 = $25,000. §1245 recapture = lesser of gain ($25,000) or depreciation ($30,000) = $25,000.',
     reference: 'IRC §1245(a)(1)',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Section 1250 property includes:',
     options: [
-      'Equipment and machinery',
       'Depreciable real property (buildings and improvements)',
+      'Land',
+      'Equipment and machinery',
       'Inventory',
-      'Land'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Section 1250 property is depreciable real property - primarily buildings and structural improvements. (Land is not depreciable and is not §1250 property.)',
     reference: 'IRC §1250(c)',
   },
@@ -160,12 +160,12 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Unrecaptured Section 1250 gain is taxed at a maximum rate of:',
     options: [
-      '0%',
+      '37%',
       '15%',
+      '0%',
       '25%',
-      '37%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Unrecaptured §1250 gain (straight-line depreciation on real property) is taxed at a maximum rate of 25%, while the remaining gain is taxed at regular LTCG rates (0%, 15%, or 20%).',
     reference: 'IRC §1(h)(1)(E)',
   },
@@ -180,10 +180,10 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Section 1245 recapture is:',
     options: [
-      'Limited to additional depreciation over straight-line',
+      'Capped at $100,000 per year',
       'Full recapture - 100% of depreciation taken (up to gain)',
+      'Limited to additional depreciation over straight-line',
       'Only 60% of depreciation',
-      'Capped at $100,000 per year'
     ],
     correctAnswer: 1,
     explanation: 'Section 1245 requires full recapture - all depreciation is recaptured as ordinary income, up to the amount of gain recognized. Unlike §1250, there is no limitation to additional depreciation.',
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH38: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Casualty and theft gains and losses on business property are netted:',
     options: [
-      'Directly with §1231 gains and losses',
       'Separately first; only net gains enter the §1231 netting process',
+      'Never - they are always ordinary',
+      'Directly with §1231 gains and losses',
       'Only on personal property',
-      'Never - they are always ordinary'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Casualty and theft gains/losses on §1231 property are netted separately first. If net gain results, it enters §1231 netting. If net loss, all items are treated as ordinary (bypass §1231).',
     reference: 'IRC §1231(a)',
   },

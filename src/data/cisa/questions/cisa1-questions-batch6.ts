@@ -16,10 +16,10 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'When auditing a complex IT environment, the MOST important first step is:',
     options: [
-      'Reviewing previous audit reports',
+      'Interviewing IT management',
       'Understanding the business context and IT strategy',
+      'Reviewing previous audit reports',
       'Testing system controls',
-      'Interviewing IT management'
     ],
     correctAnswer: 1,
     explanation: 'Understanding business context and IT strategy is foundational to designing an effective audit approach.',
@@ -35,12 +35,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Compensating controls are appropriate when:',
     options: [
-      'Primary controls are too expensive',
       'Primary controls cannot be fully implemented and alternative controls reduce risk',
+      'No other options exist',
+      'Primary controls are too expensive',
       'Auditors require them',
-      'No other options exist'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Compensating controls provide alternative risk reduction when primary controls cannot be fully implemented.',
     topic: 'Control Assessment',
     subtopic: 'Compensating Controls'
@@ -54,12 +54,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Detective controls primarily:',
     options: [
-      'Prevent issues',
       'Identify issues that have occurred',
+      'Deter issues',
+      'Prevent issues',
       'Correct issues',
-      'Deter issues'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Detective controls identify issues that have already occurred, enabling timely response.',
     topic: 'Control Assessment',
     subtopic: 'Control Types'
@@ -74,11 +74,11 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     question: 'Control self-assessment (CSA) programs:',
     options: [
       'Replace internal audit',
+      'Eliminate audit testing',
       'Supplement audit by engaging management in control evaluation',
       'Are conducted only by auditors',
-      'Eliminate audit testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CSA supplements internal audit by engaging management in evaluating their own control environment.',
     topic: 'Audit Techniques',
     subtopic: 'CSA'
@@ -93,11 +93,11 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     question: 'When evaluating third-party audit reports:',
     options: [
       'Accept all findings',
+      'Use only for compliance',
       'Assess scope, timing, and relevance to identified risks',
       'Ignore if recent',
-      'Use only for compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Evaluate third-party reports for scope coverage, timing, and relevance to your specific risk concerns.',
     topic: 'Audit Evidence',
     subtopic: 'Third-Party Reports'
@@ -111,12 +111,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Bridge letters from service organizations:',
     options: [
-      'Replace SOC reports',
       'Cover the gap between SOC report period and current date',
+      'Replace SOC reports',
+      'Are issued by auditors',
       'Are not acceptable',
-      'Are issued by auditors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Bridge letters from service organizations cover the period between SOC report date and current date.',
     topic: 'Audit Evidence',
     subtopic: 'Bridge Letters'
@@ -130,12 +130,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Confirmations as audit evidence:',
     options: [
-      'Are only for financial audits',
       'Provide independent verification from external parties',
+      'Are only for financial audits',
+      'Cannot be used for IT audits',
       'Are less reliable than internal documents',
-      'Cannot be used for IT audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Confirmations provide high-quality evidence through independent verification from external parties.',
     topic: 'Audit Evidence',
     subtopic: 'Confirmations'
@@ -151,8 +151,8 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Only who accessed data',
       'Complete transaction history including who, what, when, and where',
+      'Only security events',
       'Only error conditions',
-      'Only security events'
     ],
     correctAnswer: 1,
     explanation: 'Audit trails should provide complete history including who performed actions, what was done, when, and from where.',
@@ -168,12 +168,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When auditing IT governance:',
     options: [
-      'Focus only on technology',
       'Evaluate alignment between IT and business objectives',
+      'Focus only on technology',
+      'Only review IT policies',
       'Skip board involvement',
-      'Only review IT policies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT governance audits should evaluate alignment between IT objectives and business strategy.',
     topic: 'IT Governance Audit',
     subtopic: 'Governance Assessment'
@@ -187,12 +187,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Auditing cloud service providers requires:',
     options: [
-      'Same approach as on-premises',
       'Understanding shared responsibility and leveraging third-party assurance',
+      'Same approach as on-premises',
+      'Ignoring provider controls',
       'Direct control testing only',
-      'Ignoring provider controls'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cloud audits require understanding shared responsibility models and leveraging available third-party assurance.',
     topic: 'Cloud Audit',
     subtopic: 'Cloud Approach'
@@ -206,10 +206,10 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Audit of IT project management should include:',
     options: [
-      'Only technical delivery',
+      'Only timeline review',
       'Governance, methodology, scope control, and benefits realization',
+      'Only technical delivery',
       'Only budget adherence',
-      'Only timeline review'
     ],
     correctAnswer: 1,
     explanation: 'Project audits should cover governance, methodology adherence, scope control, and benefits realization.',
@@ -225,10 +225,10 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'When management proposes to accept a risk:',
     options: [
-      'Auditor must reject',
+      'Finding is automatically closed',
       'Auditor validates understanding of risk and appropriate authorization level',
+      'Auditor must reject',
       'Auditor ignores the finding',
-      'Finding is automatically closed'
     ],
     correctAnswer: 1,
     explanation: 'Auditors should validate that management understands the risk and that acceptance is authorized appropriately.',
@@ -244,12 +244,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Auditor judgment in determining materiality considers:',
     options: [
+      'Only management preferences',
       'Only financial impact',
       'Quantitative and qualitative factors including reputational risk',
       'Only regulatory requirements',
-      'Only management preferences'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Materiality considers both quantitative impacts and qualitative factors including reputational and regulatory risk.',
     topic: 'Audit Materiality',
     subtopic: 'Materiality Judgment'
@@ -264,11 +264,11 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     question: 'Presenting audit results to the audit committee:',
     options: [
       'Should include all technical details',
+      'Should be identical to the full report',
       'Should focus on key risks, significant findings, and management response',
       'Should avoid negative information',
-      'Should be identical to the full report'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Committee presentations should focus on key risks, significant findings, and management responses.',
     topic: 'Audit Reporting',
     subtopic: 'Committee Reporting'
@@ -284,8 +284,8 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Replace periodic audits',
       'Enable ongoing monitoring and more timely identification of issues',
+      'Are only for financial audits',
       'Require no human oversight',
-      'Are only for financial audits'
     ],
     correctAnswer: 1,
     explanation: 'Continuous auditing enables ongoing monitoring and earlier identification of control issues.',
@@ -301,12 +301,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Automated audit tools should be:',
     options: [
-      'Used without validation',
       'Validated for accuracy and appropriateness for the audit objective',
+      'Used without validation',
+      'Used only by IT auditors',
       'Eliminated to reduce risk',
-      'Used only by IT auditors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Automated tools should be validated to ensure accuracy and appropriateness for audit objectives.',
     topic: 'Audit Tools',
     subtopic: 'Tool Validation'
@@ -320,12 +320,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Audit evidence relevance means:',
     options: [
-      'Any information is acceptable',
       'Evidence relates directly to the audit objective',
+      'Any information is acceptable',
+      'Only recent evidence counts',
       'More is always better',
-      'Only recent evidence counts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Relevant evidence directly relates to and supports conclusions about the specific audit objective.',
     topic: 'Audit Evidence',
     subtopic: 'Relevance'
@@ -341,8 +341,8 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Abandon the audit',
       'Document the obstruction and escalate appropriately',
+      'Accept limited scope',
       'Work around it',
-      'Accept limited scope'
     ],
     correctAnswer: 1,
     explanation: 'Obstruction should be documented and escalated to appropriate levels including audit committee if necessary.',
@@ -358,10 +358,10 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Audit resource allocation should prioritize:',
     options: [
-      'Equal time for all areas',
+      'Areas with prior findings',
       'Higher risk areas with greater potential impact',
+      'Equal time for all areas',
       'Management preferences',
-      'Areas with prior findings'
     ],
     correctAnswer: 1,
     explanation: 'Resources should be allocated based on risk, with more effort on higher-risk areas.',
@@ -377,12 +377,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Cross-referencing in audit workpapers:',
     options: [
-      'Is optional',
       'Links evidence to conclusions and supports report assertions',
+      'Is only for complex audits',
+      'Is optional',
       'Creates redundancy',
-      'Is only for complex audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cross-referencing links evidence to conclusions, supporting reviewability and report assertions.',
     topic: 'Audit Documentation',
     subtopic: 'Cross-Referencing'
@@ -396,12 +396,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Audit universe maintenance should:',
     options: [
-      'Be static year to year',
       'Reflect organizational changes and emerging risks',
+      'Exclude cloud services',
+      'Be static year to year',
       'Only include IT systems',
-      'Exclude cloud services'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The audit universe should be updated to reflect organizational changes, new systems, and emerging risks.',
     topic: 'Audit Planning',
     subtopic: 'Audit Universe'
@@ -416,11 +416,11 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     question: 'Audit risk assessment should consider:',
     options: [
       'Only inherent risk',
+      'Only detection risk',
       'Inherent risk, control risk, and detection risk',
       'Only control risk',
-      'Only detection risk'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Audit risk considers inherent risk, control risk, and detection risk to determine appropriate procedures.',
     topic: 'Risk Assessment',
     subtopic: 'Audit Risk'
@@ -435,11 +435,11 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     question: 'Audit issue aging reports help:',
     options: [
       'Only track dates',
+      'Determine audit frequency',
       'Identify overdue remediation and enable escalation',
       'Calculate fines',
-      'Determine audit frequency'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Aging reports identify overdue items, enabling appropriate escalation and management attention.',
     topic: 'Audit Follow-up',
     subtopic: 'Issue Aging'
@@ -453,12 +453,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'The auditor\'s opinion should be:',
     options: [
-      'Always positive',
       'Supported by sufficient appropriate evidence',
+      'Always positive',
+      'Identical to prior audits',
       'Based on management views',
-      'Identical to prior audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Audit opinions must be supported by sufficient appropriate evidence gathered during the audit.',
     topic: 'Audit Reporting',
     subtopic: 'Audit Opinion'
@@ -472,12 +472,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Audit team briefings should cover:',
     options: [
-      'Only audit objectives',
       'Background, objectives, risks, approach, and timeline',
+      'Only audit objectives',
+      'Only prior findings',
       'Only timeline',
-      'Only prior findings'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Team briefings should cover background, objectives, key risks, audit approach, and timeline.',
     topic: 'Audit Execution',
     subtopic: 'Team Briefings'
@@ -493,8 +493,8 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Replace all testing',
       'Help understand processes and identify control points',
+      'Are not evidence',
       'Are only for initial audits',
-      'Are not evidence'
     ],
     correctAnswer: 1,
     explanation: 'Walkthroughs help auditors understand processes, identify controls, and verify process documentation.',
@@ -512,8 +512,8 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Is sufficient for all conclusions',
       'Should be corroborated with other evidence types',
+      'Replaces observation',
       'Is the most reliable',
-      'Replaces observation'
     ],
     correctAnswer: 1,
     explanation: 'Inquiry should be corroborated with other evidence types for reliable conclusions.',
@@ -529,12 +529,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Professional skepticism requires auditors to:',
     options: [
-      'Trust all management representations',
       'Critically assess evidence and remain alert for misrepresentation',
+      'Trust all management representations',
+      'Question only financial data',
       'Assume fraud exists',
-      'Question only financial data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Professional skepticism means critically assessing evidence and remaining alert to potential misrepresentation.',
     topic: 'Professional Standards',
     subtopic: 'Skepticism'
@@ -548,12 +548,12 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Audit work program modifications:',
     options: [
-      'Are not allowed',
       'Should be documented with justification',
+      'Indicate poor planning',
+      'Are not allowed',
       'Do not require approval',
-      'Indicate poor planning'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Program modifications may be necessary and should be documented with appropriate justification.',
     topic: 'Audit Execution',
     subtopic: 'Program Modifications'

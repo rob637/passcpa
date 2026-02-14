@@ -16,12 +16,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Crisis management differs from incident management by:',
     options: [
-      'Only addressing IT issues',
       'Addressing organization-wide strategic response to significant events',
+      'Having faster resolution',
       'Being more technical',
-      'Having faster resolution'
+      'Only addressing IT issues',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Crisis management addresses strategic, organization-wide response to significant events beyond operational incidents.',
     topic: 'Crisis Management',
     subtopic: 'Crisis vs Incident'
@@ -35,10 +35,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Command center activation occurs when:',
     options: [
-      'For all incidents',
-      'Incidents exceed normal escalation thresholds',
       'Never',
-      'Only for natural disasters'
+      'Incidents exceed normal escalation thresholds',
+      'Only for natural disasters',
+      'For all incidents',
     ],
     correctAnswer: 1,
     explanation: 'Command centers are activated when incidents exceed normal operational response capabilities and thresholds.',
@@ -54,10 +54,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cyber resilience differs from cybersecurity by:',
     options: [
-      'Focusing only on prevention',
-      'Emphasizing ability to operate despite successful attacks',
       'Ignoring security',
-      'Only addressing recovery'
+      'Emphasizing ability to operate despite successful attacks',
+      'Only addressing recovery',
+      'Focusing only on prevention',
     ],
     correctAnswer: 1,
     explanation: 'Cyber resilience emphasizes maintaining operations despite attacks, not just preventing them.',
@@ -73,12 +73,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Playbook documentation for incident response:',
     options: [
-      'Is optional',
-      'Provides step-by-step procedures for common scenarios',
+      'Is only for major incidents',
       'Replaces expertise',
-      'Is only for major incidents'
+      'Provides step-by-step procedures for common scenarios',
+      'Is optional',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Playbooks provide documented step-by-step procedures for common incident scenarios, enabling consistent response.',
     topic: 'Incident Management',
     subtopic: 'Playbooks'
@@ -92,12 +92,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Runbook automation:',
     options: [
-      'Eliminates all operators',
-      'Automates routine operational procedures to improve consistency',
       'Increases manual work',
-      'Only applies to security'
+      'Only applies to security',
+      'Automates routine operational procedures to improve consistency',
+      'Eliminates all operators',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Runbook automation automates routine operational procedures, improving consistency and reducing human error.',
     topic: 'IT Operations',
     subtopic: 'Runbook Automation'
@@ -111,12 +111,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Self-healing systems:',
     options: [
-      'Never fail',
       'Automatically detect and recover from failures',
+      'Replace all maintenance',
       'Require no monitoring',
-      'Replace all maintenance'
+      'Never fail',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Self-healing systems automatically detect failures and take corrective action without human intervention.',
     topic: 'IT Operations',
     subtopic: 'Self-Healing'
@@ -130,10 +130,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT asset management lifecycle includes:',
     options: [
-      'Only acquisition',
-      'Request, procurement, deployment, maintenance, and disposal',
       'Only maintenance',
-      'Only disposal'
+      'Request, procurement, deployment, maintenance, and disposal',
+      'Only disposal',
+      'Only acquisition',
     ],
     correctAnswer: 1,
     explanation: 'Asset lifecycle includes request, procurement, testing, deployment, maintenance, and proper disposal.',
@@ -149,12 +149,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Software Asset Management (SAM) ensures:',
     options: [
-      'Only cost tracking',
       'License compliance and optimization of software investments',
       'Only installation',
-      'Only removal'
+      'Only removal',
+      'Only cost tracking',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SAM ensures license compliance, tracks entitlements, and optimizes software investments.',
     topic: 'IT Asset Management',
     subtopic: 'SAM'
@@ -168,12 +168,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Configuration Management Database (CMDB) accuracy requires:',
     options: [
-      'One-time population',
-      'Automated discovery and reconciliation processes',
       'Manual updates only',
-      'Annual reviews only'
+      'Annual reviews only',
+      'Automated discovery and reconciliation processes',
+      'One-time population',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CMDB accuracy requires automated discovery, regular reconciliation, and integration with change management.',
     topic: 'Configuration Management',
     subtopic: 'CMDB'
@@ -187,12 +187,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Service catalog provides:',
     options: [
-      'Only technical specifications',
-      'User-facing view of available IT services',
+      'Only pricing',
       'Only internal documentation',
-      'Only pricing'
+      'User-facing view of available IT services',
+      'Only technical specifications',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Service catalog provides a user-facing view of available IT services, including descriptions and request processes.',
     topic: 'IT Service Management',
     subtopic: 'Service Catalog'
@@ -206,10 +206,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Service request fulfillment:',
     options: [
-      'Is same as incident management',
+      'Requires CAB approval',
       'Handles pre-approved routine requests',
       'Only handles emergencies',
-      'Requires CAB approval'
+      'Is same as incident management',
     ],
     correctAnswer: 1,
     explanation: 'Request fulfillment handles pre-approved routine requests (password resets, access requests) through standardized processes.',
@@ -225,12 +225,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Problem management investigates:',
     options: [
-      'Single incidents',
       'Root causes of recurring incidents',
+      'Only security incidents',
       'Only major incidents',
-      'Only security incidents'
+      'Single incidents',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Problem management investigates root causes of recurring incidents to prevent future occurrences.',
     topic: 'IT Service Management',
     subtopic: 'Problem Management'
@@ -244,12 +244,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Known error database (KEDB) contains:',
     options: [
-      'All incidents',
       'Problems with identified root causes and workarounds',
+      'Only security vulnerabilities',
       'Only unresolved issues',
-      'Only security vulnerabilities'
+      'All incidents',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'KEDB documents known errors with root causes and workarounds, speeding incident resolution.',
     topic: 'IT Service Management',
     subtopic: 'KEDB'
@@ -263,10 +263,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Change Advisory Board (CAB) membership should include:',
     options: [
-      'Only IT management',
-      'Representatives from impacted areas and technical experts',
       'Only developers',
-      'Only operations'
+      'Representatives from impacted areas and technical experts',
+      'Only operations',
+      'Only IT management',
     ],
     correctAnswer: 1,
     explanation: 'CAB should include representatives from impacted business areas and relevant technical experts.',
@@ -282,10 +282,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Emergency change procedures should:',
     options: [
-      'Skip all approvals',
-      'Provide expedited approval while ensuring documentation',
       'Avoid documentation',
-      'Not exist'
+      'Provide expedited approval while ensuring documentation',
+      'Not exist',
+      'Skip all approvals',
     ],
     correctAnswer: 1,
     explanation: 'Emergency changes require expedited approval processes but must still be documented and reviewed post-implementation.',
@@ -301,12 +301,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Change success rate metrics indicate:',
     options: [
-      'Only volume',
-      'Effectiveness of change management processes',
       'Only speed',
-      'Only cost'
+      'Only cost',
+      'Effectiveness of change management processes',
+      'Only volume',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Change success rate indicates process effectiveness by measuring changes implemented without causing incidents.',
     topic: 'Change Management',
     subtopic: 'Change Metrics'
@@ -320,10 +320,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Release management coordinates:',
     options: [
-      'Only code deployment',
-      'Building, testing, and deploying changes to production',
       'Only testing',
-      'Only documentation'
+      'Building, testing, and deploying changes to production',
+      'Only documentation',
+      'Only code deployment',
     ],
     correctAnswer: 1,
     explanation: 'Release management coordinates building, testing, and deploying changes to production environments.',
@@ -335,19 +335,19 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     courseId: 'cisa',
     section: 'CISA4',
     blueprintArea: 'CISA4-1',
+    topic: 'IT Operations',
+    subtopic: 'Immutable Infrastructure',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Immutable infrastructure means:',
+    question: 'An organization adopts immutable infrastructure for its cloud environment. What IS audit consideration is MOST relevant?',
     options: [
-      'Never updating',
-      'Replacing rather than modifying deployed components',
-      'Manual changes only',
-      'No automation'
+      'Immutable infrastructure requires manual patching of running servers',
+      'Changes are deployed by replacing entire server instances rather than modifying running ones, requiring strong pipeline controls and image management',
+      'Immutable infrastructure eliminates the need for change management',
+      'Configuration drift is the primary concern with immutable infrastructure',
     ],
     correctAnswer: 1,
-    explanation: 'Immutable infrastructure replaces deployed components rather than modifying them, ensuring consistency.',
-    topic: 'IT Operations',
-    subtopic: 'Immutable Infrastructure'
+    explanation: 'With immutable infrastructure, running servers are never modified — changes are deployed by building new images and replacing instances. The auditor should focus on CI/CD pipeline controls, image signing, base image security, and automated deployment processes, since these become the critical control points replacing traditional change management.',
   },
   {
     id: 'cisa4-112',
@@ -358,12 +358,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Deployment pipelines:',
     options: [
-      'Are only for code',
-      'Automate build, test, and deployment processes',
       'Require manual intervention',
-      'Skip testing'
+      'Skip testing',
+      'Automate build, test, and deployment processes',
+      'Are only for code',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Deployment pipelines automate the flow from code commit through build, test, and deployment.',
     topic: 'DevOps',
     subtopic: 'Deployment Pipeline'
@@ -377,12 +377,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Environment parity means:',
     options: [
-      'Different environments',
       'Consistent configuration across development, test, and production',
+      'Test environments are optional',
       'Only production matters',
-      'Test environments are optional'
+      'Different environments',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Environment parity ensures development, test, and production environments are consistently configured.',
     topic: 'IT Operations',
     subtopic: 'Environment Parity'
@@ -396,10 +396,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Database replication lag monitoring:',
     options: [
-      'Is unnecessary for synchronous replication',
+      'Is optional',
       'Ensures data consistency and failover readiness',
       'Only applies to backups',
-      'Is optional'
+      'Is unnecessary for synchronous replication',
     ],
     correctAnswer: 1,
     explanation: 'Replication lag monitoring ensures acceptable data consistency and failover readiness for recovery.',
@@ -415,10 +415,10 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Storage tiering optimizes:',
     options: [
-      'Only speed',
+      'Only capacity',
       'Cost and performance by matching data to appropriate storage',
       'Only security',
-      'Only capacity'
+      'Only speed',
     ],
     correctAnswer: 1,
     explanation: 'Storage tiering optimizes cost and performance by placing data on appropriate storage tiers based on access patterns.',
@@ -434,12 +434,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Data archiving differs from backup by:',
     options: [
-      'Being faster',
       'Moving data for long-term retention rather than recovery',
       'Being more secure',
-      'Being automatic'
+      'Being automatic',
+      'Being faster',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Archiving moves data for long-term retention and compliance, while backups protect for recovery purposes.',
     topic: 'Data Management',
     subtopic: 'Archiving'
@@ -453,12 +453,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data retention policies should consider:',
     options: [
-      'Only storage cost',
       'Legal requirements, business needs, and privacy obligations',
       'Only convenience',
-      'Only technical limitations'
+      'Only technical limitations',
+      'Only storage cost',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Retention policies must balance legal requirements, business needs, storage costs, and privacy obligations.',
     topic: 'Data Management',
     subtopic: 'Retention'
@@ -472,12 +472,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Network performance monitoring should track:',
     options: [
-      'Only bandwidth',
       'Latency, bandwidth, packet loss, and jitter',
       'Only errors',
-      'Only uptime'
+      'Only uptime',
+      'Only bandwidth',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Network monitoring should track latency, bandwidth utilization, packet loss, jitter, and availability.',
     topic: 'Network Operations',
     subtopic: 'Performance Monitoring'
@@ -491,12 +491,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network segmentation in operations helps:',
     options: [
-      'Only security',
-      'Contain issues and manage traffic for both security and performance',
+      'Only compliance',
       'Only performance',
-      'Only compliance'
+      'Contain issues and manage traffic for both security and performance',
+      'Only security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Segmentation helps contain security issues, manage traffic, and improve both security and performance.',
     topic: 'Network Operations',
     subtopic: 'Segmentation'
@@ -510,12 +510,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'SD-WAN (Software-Defined WAN) provides:',
     options: [
-      'Only cost reduction',
-      'Centralized control and dynamic path selection across WAN',
       'Only security',
-      'Only monitoring'
+      'Only monitoring',
+      'Centralized control and dynamic path selection across WAN',
+      'Only cost reduction',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'SD-WAN provides centralized management, dynamic path selection, and optimization across WAN connections.',
     topic: 'Network Operations',
     subtopic: 'SD-WAN'
@@ -529,12 +529,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Cloud operations require:',
     options: [
-      'No monitoring',
-      'Different operational practices from on-premises',
       'Same practices as on-premises',
-      'Less governance'
+      'Less governance',
+      'Different operational practices from on-premises',
+      'No monitoring',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Cloud operations require adapted practices for consumption-based billing, shared responsibility, and provider-specific tools.',
     topic: 'Cloud Operations',
     subtopic: 'Cloud Ops'
@@ -548,12 +548,12 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'FinOps (Cloud Financial Operations) focuses on:',
     options: [
-      'Only security',
-      'Optimizing cloud spend through visibility and accountability',
+      'Only performance',
       'Only compliance',
-      'Only performance'
+      'Optimizing cloud spend through visibility and accountability',
+      'Only security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'FinOps focuses on cloud financial management, optimizing spend through visibility, accountability, and optimization.',
     topic: 'Cloud Operations',
     subtopic: 'FinOps'

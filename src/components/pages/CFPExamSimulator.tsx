@@ -103,18 +103,18 @@ const CFP_EXAM_MODES: ExamMode[] = [
 // ============================================
 
 function getQuestionPool(domain: CFPDomain): ExamQuestion[] {
-  // Filter questions by domain
+  // Filter questions by section
   const filtered = CFP_QUESTIONS_ALL.filter(q => {
-    const section = q.section || q.domain || '';
+    const section = q.section || '';
     return section.includes(domain) || section.includes(domain.replace('CFP-', ''));
   });
   
   return filtered.map((q, idx) => ({
     id: q.id || `cfp-q-${idx}`,
-    question: q.question || (q as any).text || '',
+    question: q.question || '',
     options: q.options || [],
     correctAnswer: typeof q.correctAnswer === 'number' ? q.correctAnswer : 0,
-    explanation: q.explanation || (q as any).rationale || '',
+    explanation: q.explanation || '',
     section: domain,
   }));
 }

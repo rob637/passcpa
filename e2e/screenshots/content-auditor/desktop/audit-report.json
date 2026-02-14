@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-02-14T14:46:57.055Z",
+  "viewport": "desktop",
+  "mode": "quick",
+  "totalAudited": 10,
+  "issues": [],
+  "sectionStats": {
+    "CFP-PCR": {
+      "audited": 10,
+      "issues": 0
+    }
+  },
+  "summary": {
+    "high": 0,
+    "med": 0,
+    "low": 0,
+    "total": 0
+  }
+}

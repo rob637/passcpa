@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { useSubscription, isFounderPricingActive, EXAM_PRICING } from '../../services/subscription';
 import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
-import { Lock, Clock, Sparkles, ArrowRight } from 'lucide-react';
+import { Lock, Clock, Sparkles, ArrowRight, X } from 'lucide-react';
 
 interface SubscriptionGateProps {
   children: React.ReactNode;
@@ -28,7 +28,7 @@ export function SubscriptionGate({
   message,
   inline = false,
 }: SubscriptionGateProps) {
-  const { hasFullAccess, trialDaysRemaining, trialExpired, loading, subscribedCourseId, isPremium } = useSubscription();
+  const { hasFullAccess, trialDaysRemaining, trialExpired, loading } = useSubscription();
   const { courseId, course } = useCourse();
   const { user } = useAuth();
 
@@ -39,17 +39,13 @@ export function SubscriptionGate({
     );
   }
 
-  // User has access - show content
+  // User has access (paid or active trial for THIS exam) - show content
   if (hasFullAccess) {
     return <>{children}</>;
   }
 
-  // Check if user is subscribed to a DIFFERENT course
-  const subscribedToOtherCourse = isPremium && subscribedCourseId && subscribedCourseId !== courseId;
-  const subscribedCourseName = subscribedCourseId?.toUpperCase() || '';
-
-  // Trial expired or not subscribed - show gate
-  const courseName = course?.name || 'CPA';
+  // Trial expired or not subscribed for THIS exam - show gate
+  const courseName = course?.name || courseId.toUpperCase();
   const pricing = EXAM_PRICING[courseId as keyof typeof EXAM_PRICING] || EXAM_PRICING.cpa;
   const isFounder = isFounderPricingActive();
   
@@ -75,13 +71,10 @@ export function SubscriptionGate({
           <div className="text-center p-6 max-w-md">
             <Lock className="w-8 h-8 text-primary-600 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-              {subscribedToOtherCourse ? `${courseName} Subscription Required` : trialExpired ? 'Your trial has ended' : 'Premium Feature'}
+              {trialExpired ? `Your ${courseName} trial has ended` : `${courseName} Subscription Required`}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              {message || (subscribedToOtherCourse
-                ? `You're subscribed to ${subscribedCourseName}. Each exam requires its own subscription.`
-                : `Subscribe to continue studying for the ${courseName} exam.`
-              )}
+              {message || `Subscribe to continue studying for the ${courseName} exam.`}
             </p>
             <Link
               to={upgradeUrl}
@@ -123,21 +116,17 @@ export function SubscriptionGate({
         </div>
         
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-          {subscribedToOtherCourse
-            ? `${courseName} Subscription Required`
-            : trialExpired 
-              ? 'Your Free Trial Has Ended'
-              : 'Subscribe to Continue'
+          {trialExpired 
+            ? `Your ${courseName} Trial Has Ended`
+            : `Subscribe to ${courseName}`
           }
         </h2>
         
         <p className="text-gray-600 dark:text-gray-400 mb-6">
           {message || (
-            subscribedToOtherCourse
-              ? `You're subscribed to VoraPrep ${subscribedCourseName}, but this is ${courseName} content. Each exam requires its own subscription.`
-              : trialExpired
-                ? `Your 14-day free trial of VoraPrep ${courseName} has ended. Subscribe now to continue your exam preparation.`
-                : `Access to this feature requires an active subscription.`
+            trialExpired
+              ? `Your 14-day free trial of VoraPrep ${courseName} has ended. Subscribe now to continue your exam preparation.`
+              : `Access to ${courseName} content requires an active subscription.`
           )}
         </p>
 
@@ -189,44 +178,48 @@ export function SubscriptionGate({
 
 /**
  * TrialBanner - Shows trial status banner (for dashboard header)
+ * - Hidden during first 7 days of trial (let users explore freely)
+ * - Shows last 7 days with subscribe link
+ * - Dismissible for 24 hours (comes back daily)
+ * - Always shows (not dismissible) when trial expired
  */
 export function TrialBanner() {
-  const { isTrialing, trialDaysRemaining, trialExpired, isPremium, hasFullAccess, subscribedCourseId, loading } = useSubscription();
-  const { courseId } = useCourse();
+  const { isTrialing, trialDaysRemaining, trialExpired, isPremium, loading } = useSubscription();
+  const { courseId, course } = useCourse();
+  const [dismissed, setDismissed] = React.useState(false);
   
-  // Hide if user has full access to current course
-  if (loading || hasFullAccess) return null;
-  
-  const upgradeUrl = `/${courseId}?scroll=pricing`;
+  // Check if banner was recently dismissed (24-hour cooldown)
+  React.useEffect(() => {
+    const dismissedAt = localStorage.getItem(`trial_banner_dismissed_${courseId}`);
+    if (dismissedAt) {
+      const elapsed = Date.now() - parseInt(dismissedAt, 10);
+      if (elapsed < 24 * 60 * 60 * 1000) {
+        setDismissed(true);
+      } else {
+        localStorage.removeItem(`trial_banner_dismissed_${courseId}`);
+      }
+    }
+  }, [courseId]);
 
-  // User is subscribed to a different course
-  const subscribedToOtherCourse = isPremium && subscribedCourseId && subscribedCourseId !== courseId;
-  if (subscribedToOtherCourse) {
-    return (
-      <div className="bg-blue-600 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Lock className="w-4 h-4" />
-            <span className="font-medium">You&apos;re subscribed to {subscribedCourseId.toUpperCase()}. Subscribe separately for {courseId.toUpperCase()} access.</span>
-          </div>
-          <Link 
-            to={upgradeUrl}
-            className="text-sm bg-white text-blue-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
-          >
-            Get {courseId.toUpperCase()}
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const handleDismiss = () => {
+    setDismissed(true);
+    localStorage.setItem(`trial_banner_dismissed_${courseId}`, Date.now().toString());
+  };
+  
+  // Hide if user has paid access to current course
+  if (loading || isPremium) return null;
+  
+  const courseName = course?.name || courseId.toUpperCase();
+  const upgradeUrl = `/start-checkout?course=${courseId}&interval=annual`;
 
   if (trialExpired) {
+    // Always show expired banner (not dismissible)
     return (
       <div className="bg-red-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span className="font-medium">Your trial has ended.</span>
+            <span className="font-medium">Your {courseName} trial has ended.</span>
           </div>
           <Link 
             to={upgradeUrl}
@@ -239,25 +232,36 @@ export function TrialBanner() {
     );
   }
 
-  if (isTrialing && trialDaysRemaining <= 3) {
+  // Only show during last 7 days of trial, and respect dismissal
+  if (isTrialing && trialDaysRemaining <= 7 && !dismissed) {
+    const isUrgent = trialDaysRemaining <= 3;
     return (
-      <div className="bg-amber-500 text-white py-2 px-4">
+      <div className={`${isUrgent ? 'bg-amber-500' : 'bg-blue-600'} text-white py-2 px-4`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span className="font-medium">
+            <span className="font-medium text-sm">
               {trialDaysRemaining === 1 
                 ? 'Last day of your trial!' 
-                : `${trialDaysRemaining} days left in trial`
+                : `${trialDaysRemaining} days left in your free trial`
               }
             </span>
           </div>
-          <Link 
-            to={upgradeUrl}
-            className="text-sm bg-white text-amber-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
-          >
-            Subscribe at Founder Rate
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link 
+              to={upgradeUrl}
+              className={`text-sm bg-white ${isUrgent ? 'text-amber-600' : 'text-blue-600'} px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors`}
+            >
+              Subscribe Now
+            </Link>
+            <button
+              onClick={handleDismiss}
+              className="p-1 hover:bg-white/20 rounded transition-colors"
+              aria-label="Dismiss banner"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
     );

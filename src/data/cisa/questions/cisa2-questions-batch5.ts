@@ -16,10 +16,10 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'IT governance frameworks (COBIT) primarily help:',
     options: [
-      'Replace management',
+      'Only increase productivity',
       'Align IT with business objectives and manage IT-related risks',
+      'Replace management',
       'Only reduce costs',
-      'Only increase productivity'
     ],
     correctAnswer: 1,
     explanation: 'COBIT and similar frameworks help align IT objectives with business goals while effectively managing IT-related risks.',
@@ -35,12 +35,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'The distinction between governance and management is:',
     options: [
-      'They are identical',
       'Governance directs and evaluates; management plans and executes',
+      'Management does not report to governance',
+      'They are identical',
       'Governance only applies to IT',
-      'Management does not report to governance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Governance involves directing, evaluating, and monitoring while management involves planning, building, running, and monitoring.',
     topic: 'IT Governance',
     subtopic: 'Governance vs Management'
@@ -54,12 +54,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'IT investment portfolio management ensures:',
     options: [
-      'All projects are approved',
       'Resources are allocated to initiatives aligned with strategic value',
+      'Budget overruns are allowed',
+      'All projects are approved',
       'All technologies are used',
-      'Budget overruns are allowed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Portfolio management ensures IT resources are allocated to initiatives that align with and deliver strategic business value.',
     topic: 'IT Strategy',
     subtopic: 'Portfolio Management'
@@ -74,11 +74,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'IT value delivery is measured by:',
     options: [
       'Only cost',
+      'Only uptime',
       'Benefits realization compared to expected business outcomes',
       'Only project completion',
-      'Only uptime'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT value is measured by comparing realized benefits to expected business outcomes, not just costs or project completion.',
     topic: 'IT Strategy',
     subtopic: 'Value Delivery'
@@ -93,11 +93,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'Enterprise architecture (EA) provides:',
     options: [
       'Only technical diagrams',
+      'Only network design',
       'A holistic view of business processes, information, and technology',
       'Only application inventory',
-      'Only network design'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EA provides a holistic view aligning business processes, information systems, and technology with business strategy.',
     topic: 'IT Strategy',
     subtopic: 'Enterprise Architecture'
@@ -111,12 +111,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT policies should be:',
     options: [
-      'Technical and detailed',
       'Reviewed and updated regularly to reflect changes',
+      'Technical and detailed',
+      'Known only to IT',
       'Unchanging',
-      'Known only to IT'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT policies should be reviewed and updated regularly to reflect organizational, regulatory, and technology changes.',
     topic: 'IT Governance',
     subtopic: 'IT Policies'
@@ -130,12 +130,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Technology obsolescence risk is addressed by:',
     options: [
-      'Ignoring aging systems',
       'Technology lifecycle management and replacement planning',
+      'Ignoring aging systems',
+      'Reducing documentation',
       'Waiting for failures',
-      'Reducing documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Technology obsolescence is addressed through lifecycle management, including monitoring, planning, and budgeting for replacements.',
     topic: 'IT Resource Management',
     subtopic: 'Obsolescence'
@@ -150,11 +150,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'Managing shadow IT requires:',
     options: [
       'Ignoring it',
+      'Eliminating all user control',
       'Discovery, risk assessment, and policy-based response',
       'Blocking all cloud services',
-      'Eliminating all user control'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Managing shadow IT requires discovery of unauthorized tools, assessing risks, and responding based on risk and policy.',
     topic: 'IT Governance',
     subtopic: 'Shadow IT Management'
@@ -168,12 +168,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'IT steering committee effectiveness depends on:',
     options: [
+      'Technical expertise only',
       'IT-only membership',
       'Appropriate business representation and decision authority',
       'Meeting frequency only',
-      'Technical expertise only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Steering committee effectiveness requires appropriate business stakeholder representation and decision-making authority.',
     topic: 'IT Governance',
     subtopic: 'Steering Committee'
@@ -187,12 +187,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT budget variance analysis helps:',
     options: [
-      'Only track spending',
       'Identify issues early and support corrective action',
+      'Only track spending',
+      'Avoid accountability',
       'Reduce all spending',
-      'Avoid accountability'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Variance analysis identifies deviations from budget early, enabling timely corrective action and management oversight.',
     topic: 'IT Resource Management',
     subtopic: 'Budget Management'
@@ -208,8 +208,8 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Only acquisition cost',
       'All costs through the asset lifecycle including disposal',
+      'Only support costs',
       'Only operating costs',
-      'Only support costs'
     ],
     correctAnswer: 1,
     explanation: 'TCO includes all costs throughout the asset lifecycle: acquisition, implementation, operation, support, and disposal.',
@@ -225,10 +225,10 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'IT risk appetite is:',
     options: [
-      'Always zero',
+      'Fixed and unchanging',
       'The level of risk the organization is willing to accept',
+      'Always zero',
       'Determined by IT alone',
-      'Fixed and unchanging'
     ],
     correctAnswer: 1,
     explanation: 'Risk appetite is the amount and type of risk the organization is willing to accept in pursuit of its objectives.',
@@ -240,19 +240,19 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     courseId: 'cisa',
     section: 'CISA2',
     blueprintArea: 'CISA2-1',
+    topic: 'IT Risk Management',
+    subtopic: 'KRI',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Key Risk Indicators (KRIs) provide:',
+    question: 'An organization\'s Key Risk Indicators (KRIs) show a 300% increase in failed login attempts over the past month. How should IT management respond?',
     options: [
-      'Only historical data',
-      'Early warning of increasing risk exposure',
-      'Only compliance status',
-      'Performance measurement only'
+      'Ignore the trend since login failures are common',
+      'Investigate the cause — potential brute-force attacks, credential stuffing, or password policy issues — and implement appropriate countermeasures',
+      'Reset all user passwords immediately without investigation',
+      'Disable the KRI monitoring to reduce alert noise',
     ],
     correctAnswer: 1,
-    explanation: 'KRIs provide early warning signals of increasing risk exposure, enabling proactive risk management.',
-    topic: 'IT Risk Management',
-    subtopic: 'KRI'
+    explanation: 'KRIs serve as early warning indicators requiring investigation when thresholds are exceeded. A 300% increase in failed logins warrants investigation to determine root cause — whether from external attacks (brute force, credential stuffing), internal policy issues, or system errors — before implementing targeted countermeasures.',
   },
   {
     id: 'cisa2-107',
@@ -263,12 +263,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Risk heat maps visually display:',
     options: [
-      'Only probability',
       'Risk likelihood and impact for prioritization',
+      'Only technical risks',
+      'Only probability',
       'Only historical incidents',
-      'Only technical risks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Risk heat maps visually display risk likelihood and impact, supporting prioritization and communication.',
     topic: 'IT Risk Management',
     subtopic: 'Risk Visualization'
@@ -283,11 +283,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'Emerging technology risk assessment should occur:',
     options: [
       'After adoption',
+      'Only for security technologies',
       'Before adoption to inform the adoption decision',
       'Only if problems arise',
-      'Only for security technologies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Emerging technology risks should be assessed before adoption to inform the adoption decision and mitigation planning.',
     topic: 'IT Risk Management',
     subtopic: 'Emerging Technology'
@@ -302,11 +302,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'IT human resource management includes:',
     options: [
       'Only hiring',
+      'Only compensation',
       'Recruiting, training, retention, and succession planning',
       'Only performance reviews',
-      'Only compensation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT HR management encompasses recruiting, training, performance management, retention strategies, and succession planning.',
     topic: 'IT Resource Management',
     subtopic: 'HR Management'
@@ -320,12 +320,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Key person dependency risk is mitigated by:',
     options: [
+      'Outsourcing',
       'Higher salaries only',
       'Cross-training, documentation, and succession planning',
       'Hiring more staff',
-      'Outsourcing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Key person risk is mitigated through cross-training, documentation, knowledge sharing, and succession planning.',
     topic: 'IT Resource Management',
     subtopic: 'Key Person Risk'
@@ -340,11 +340,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'IT skills gap analysis identifies:',
     options: [
       'Only current capabilities',
+      'Only hiring needs',
       'Differences between current and required competencies',
       'Only training needs',
-      'Only hiring needs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Skills gap analysis identifies differences between current competencies and those required to meet strategic objectives.',
     topic: 'IT Resource Management',
     subtopic: 'Skills Gap'
@@ -360,8 +360,8 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Only large vendors',
       'All vendors based on risk and criticality',
+      'Only cloud vendors',
       'Only IT vendors',
-      'Only cloud vendors'
     ],
     correctAnswer: 1,
     explanation: 'Vendor management should include all vendors with scope and rigor based on their risk, criticality, and spend.',
@@ -377,12 +377,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Vendor performance metrics should be:',
     options: [
-      'Qualitative only',
       'Defined in contracts with regular measurement and review',
+      'Qualitative only',
+      'Changed frequently',
       'Secret from vendors',
-      'Changed frequently'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Performance metrics should be defined in contracts (SLAs, KPIs) with regular measurement and review.',
     topic: 'Third-Party Management',
     subtopic: 'Performance Metrics'
@@ -396,12 +396,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Fourth-party risk refers to:',
     options: [
-      'Internal departments',
       'Risk from vendors\' vendors and subcontractors',
+      'Internal departments',
+      'Customer risk',
       'Only financial risk',
-      'Customer risk'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Fourth-party risk arises from vendors\' use of subcontractors and their vendors, extending the risk chain.',
     topic: 'Third-Party Management',
     subtopic: 'Fourth-Party Risk'
@@ -415,10 +415,10 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Contract terms for IT services should address:',
     options: [
-      'Only price',
+      'Only warranties',
       'SLAs, security, audit rights, and termination provisions',
+      'Only price',
       'Only delivery dates',
-      'Only warranties'
     ],
     correctAnswer: 1,
     explanation: 'IT contracts should address SLAs, security requirements, audit rights, data protection, and termination provisions.',
@@ -434,10 +434,10 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Right to audit clauses enable:',
     options: [
-      'Automatic audit',
+      'Cost reduction',
       'Verification of vendor controls and compliance',
+      'Automatic audit',
       'Reduced due diligence',
-      'Cost reduction'
     ],
     correctAnswer: 1,
     explanation: 'Right to audit clauses enable the organization to verify vendor controls, compliance, and contractual performance.',
@@ -453,12 +453,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cloud shared responsibility model defines:',
     options: [
+      'Only cost sharing',
       'All responsibility with cloud provider',
       'Security responsibilities between provider and customer',
       'No customer responsibility',
-      'Only cost sharing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The shared responsibility model defines which security responsibilities belong to the cloud provider versus the customer.',
     topic: 'Cloud Governance',
     subtopic: 'Shared Responsibility'
@@ -472,12 +472,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'Data residency requirements affect:',
     options: [
+      'Only access control',
       'Only backup',
       'Where data can be stored and processed geographically',
       'Only encryption',
-      'Only access control'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Data residency requirements specify where data can be stored and processed, affecting cloud and geographic decisions.',
     topic: 'Data Governance',
     subtopic: 'Data Residency'
@@ -492,11 +492,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'IT compliance management requires:',
     options: [
       'Annual review only',
+      'Self-assessment only',
       'Continuous monitoring and evidence collection',
       'External audit only',
-      'Self-assessment only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Compliance management requires continuous monitoring, evidence collection, and response to compliance requirements.',
     topic: 'IT Governance',
     subtopic: 'Compliance Management'
@@ -511,11 +511,11 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     question: 'Regulatory change management ensures:',
     options: [
       'Regulations are ignored',
+      'Minimal documentation',
       'Timely identification and implementation of new requirements',
       'Delayed compliance',
-      'Minimal documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Regulatory change management ensures timely identification, impact assessment, and implementation of new requirements.',
     topic: 'IT Governance',
     subtopic: 'Regulatory Change'
@@ -529,12 +529,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT governance maturity assessment:',
     options: [
-      'Is one-time only',
       'Identifies current state and improvement opportunities',
+      'Is one-time only',
+      'Replaces audits',
       'Only measures compliance',
-      'Replaces audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Maturity assessments identify current governance state, gaps, and opportunities for improvement.',
     topic: 'IT Governance',
     subtopic: 'Maturity Assessment'
@@ -548,12 +548,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     skillLevel: 'Application',
     question: 'IT metrics and reporting should align with:',
     options: [
-      'Technical details only',
       'Business objectives and stakeholder needs',
+      'Technical details only',
+      'IT department goals only',
       'Industry averages only',
-      'IT department goals only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT metrics should align with business objectives and address the information needs of various stakeholders.',
     topic: 'IT Governance',
     subtopic: 'IT Metrics'

@@ -19,7 +19,7 @@ vi.mock('../../../providers/AuthProvider', () => ({
   }),
 }));
 
-// Mock useSubscription (used by TrialBanner in SubscriptionGate)
+// Mock useSubscription (used by TrialBanner in SubscriptionGate and CourseSelector)
 vi.mock('../../../services/subscription', () => ({
   useSubscription: () => ({
     subscription: null,
@@ -29,6 +29,17 @@ vi.mock('../../../services/subscription', () => ({
     trialExpired: false,
     loading: false,
     limits: { questionsPerDay: Infinity },
+    getExamAccess: () => ({
+      hasAccess: true,
+      isPaid: false,
+      isTrialing: true,
+      trialDaysRemaining: 14,
+      trialExpired: false,
+      canStartTrial: false,
+      trialEndDate: null,
+    }),
+    startExamTrial: vi.fn().mockResolvedValue(true),
+    hasFullAccess: true,
   }),
 }));
 
@@ -51,6 +62,17 @@ vi.mock('../../../hooks/useDocumentTitle', () => ({
 
 vi.mock('../../../hooks/usePageTracking', () => ({
   usePageTracking: vi.fn(),
+}));
+
+// Mock useToast (used by CourseSelector)
+vi.mock('../../../components/common/Toast', () => ({
+  useToast: () => ({
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warning: vi.fn(),
+    show: vi.fn(),
+  }),
 }));
 
 import MainLayout from '../../../components/layouts/MainLayout';

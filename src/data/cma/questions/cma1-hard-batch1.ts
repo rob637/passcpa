@@ -20,12 +20,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A software company signs a 3-year contract for $900,000 with a performance bonus of $150,000 if uptime exceeds 99.5% annually. Historical data shows the company achieves this threshold 80% of the time. Using the most likely amount method under ASC 606, what transaction price should be recognized?',
     options: [
-      '$1,050,000',
       '$900,000',
+      '$1,050,000',
+      '$780,000',
       '$1,020,000',
-      '$780,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Under ASC 606, variable consideration is included using either the expected value or most likely amount method. The most likely amount for a binary outcome (achieves or does not) is the single most likely outcome. Since there is an 80% probability of achieving the bonus, the most likely outcome is that the bonus WILL be earned. Transaction price = $900,000 + $150,000 = $1,050,000, subject to the constraint that it is highly probable a significant reversal will not occur. With 80% historical achievement, this constraint is likely met.',
     reference: 'ASC 606-10-32-8',
   },
@@ -40,12 +40,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company leases equipment with a fair value of $500,000. Lease term is 4 years with annual payments of $110,000 due at the beginning of each year. The lessee\'s incremental borrowing rate is 8%. Present value of an annuity due of $1 at 8% for 4 years is 3.5771. Which classification is correct and why?',
     options: [
-      'Finance lease — PV of payments ($393,481) exceeds 75% of fair value ($375,000)',
       'Operating lease — PV of payments ($393,481) is less than 90% of fair value ($450,000)',
+      'Finance lease — PV of payments ($393,481) exceeds 75% of fair value ($375,000)',
+      'Operating lease — none of the five classification criteria are met',
       'Finance lease — lease term (4 years) exceeds 75% of economic life',
-      'Operating lease — none of the five classification criteria are met'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'PV of lease payments = $110,000 × 3.5771 = $393,481. The 90% test: 90% × $500,000 = $450,000. PV ($393,481) < $450,000, so the 90% test is NOT met. However, $393,481 / $500,000 = 78.7%, which exceeds the 75% threshold (not a bright-line under ASC 842 but an informal guideline). Without knowing economic life, ownership transfer, or purchase option, the PV test at the ~75% level is the most relevant indicator pointing to finance lease classification.',
     reference: 'ASC 842-10-25-2',
   },
@@ -61,9 +61,9 @@ export const CMA1_HARD_BATCH1: Question[] = [
     question: 'A company has a deferred tax asset of $2,000,000 from net operating loss carryforwards. Management determines it is "more likely than not" that only $1,200,000 will be realized. Taxable temporary differences reversing in the carryforward period total $500,000. What valuation allowance should be recorded?',
     options: [
       '$800,000',
+      '$500,000',
       '$300,000',
       '$1,300,000',
-      '$500,000'
     ],
     correctAnswer: 0,
     explanation: 'The valuation allowance reduces the DTA to the amount expected to be realized. Management expects $1,200,000 will be realized. Valuation allowance = $2,000,000 - $1,200,000 = $800,000. The $500,000 of reversing taxable temporary differences is evidence supporting realizability but is already factored into management\'s assessment of the $1,200,000 realizable amount. The net DTA reported = $2,000,000 - $800,000 = $1,200,000.',
@@ -81,9 +81,9 @@ export const CMA1_HARD_BATCH1: Question[] = [
     question: 'Parent Company owns 80% of Subsidiary. During the year, Parent sold inventory to Subsidiary for $400,000 (cost $300,000). Subsidiary resold 75% externally and holds 25% in ending inventory. What is the unrealized intercompany profit to eliminate in consolidation?',
     options: [
       '$25,000',
+      '$20,000',
       '$100,000',
       '$75,000',
-      '$20,000'
     ],
     correctAnswer: 0,
     explanation: 'Total intercompany profit = $400,000 - $300,000 = $100,000. Subsidiary resold 75%, so 25% remains in ending inventory. Unrealized profit = $100,000 × 25% = $25,000. This full $25,000 is eliminated in consolidation (not 80% of it) because under ASC 810, 100% of intercompany profit is eliminated regardless of ownership percentage. The NCI adjustment is separate.',
@@ -100,12 +100,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A company reports net income of $5,000,000 with 1,000,000 common shares outstanding. It has $10,000,000 of 6% convertible bonds, each $1,000 bond convertible into 40 shares. Tax rate is 25%. What is diluted EPS?',
     options: [
+      '$4.25',
       '$3.89',
       '$3.75',
       '$5.00',
-      '$4.25'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'If-converted method: Add back after-tax interest = $10,000,000 × 6% × (1 - 0.25) = $450,000. Additional shares from conversion = ($10,000,000 / $1,000) × 40 = 400,000 shares. Diluted EPS = ($5,000,000 + $450,000) / (1,000,000 + 400,000) = $5,450,000 / 1,400,000 = $3.89. Since diluted EPS ($3.89) is less than basic EPS ($5.00), the bonds are dilutive and must be included in the diluted EPS calculation.',
     reference: 'ASC 260 Diluted EPS',
   },
@@ -120,12 +120,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A company\'s defined benefit pension plan has: PBO at start of year $8,000,000; plan assets at start of year $6,500,000; service cost $400,000; discount rate 6%; expected return on assets 7%; amortization of prior service cost $50,000; amortization of net loss $30,000. What is net periodic pension cost?',
     options: [
-      '$505,000',
       '$535,000',
+      '$480,000',
+      '$505,000',
       '$455,000',
-      '$480,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Net periodic pension cost = Service cost + Interest cost - Expected return on assets + Amortization of prior service cost + Amortization of net loss. Interest cost = $8,000,000 × 6% = $480,000. Expected return = $6,500,000 × 7% = $455,000. Pension cost = $400,000 + $480,000 - $455,000 + $50,000 + $30,000 = $505,000.',
     reference: 'ASC 715 Pension Accounting',
   },
@@ -140,12 +140,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company reports net income of $800,000. Additional data: depreciation $120,000; amortization of bond premium $15,000; increase in accounts receivable $45,000; decrease in inventory $30,000; increase in accounts payable $25,000; gain on sale of equipment $35,000; increase in deferred tax liability $20,000. Cash flow from operations is:',
     options: [
-      '$900,000',
+      '$920,000',
       '$950,000',
+      '$900,000',
       '$865,000',
-      '$920,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Start with net income $800,000. Add back: depreciation +$120,000. Subtract: bond premium amortization -$15,000 (reduces interest expense, non-cash addition to income). Subtract: increase in A/R -$45,000. Add: decrease in inventory +$30,000. Add: increase in A/P +$25,000. Subtract: gain on sale -$35,000 (reclassified to investing). Add: increase in deferred tax liability +$20,000. CFO = $800,000 + $120,000 - $15,000 - $45,000 + $30,000 + $25,000 - $35,000 + $20,000 = $900,000.',
     reference: 'ASC 230 Statement of Cash Flows',
   },
@@ -162,8 +162,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       '$268,000',
       '$260,000',
+      '$253,000',
       '$299,000',
-      '$253,000'
     ],
     correctAnswer: 0,
     explanation: 'Year 1: Current cost $253,000 / 1.10 index = $230,000 base-year dollars. Layer = $230,000 - $200,000 = $30,000 base-year dollars. Year 1 DV-LIFO = $200,000 + ($30,000 × 1.10) = $200,000 + $33,000 = $233,000. Year 2: Current cost $299,000 / 1.15 = $260,000 base-year dollars. Increment = $260,000 - $230,000 = $30,000 base-year dollars. Year 2 DV-LIFO = $200,000 + ($30,000 × 1.10) + ($30,000 × 1.15) = $200,000 + $33,000 + $34,500 = $267,500 ≈ $268,000.',
@@ -180,12 +180,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A reporting unit has: carrying amount of net assets $12,000,000 (including goodwill of $3,000,000). The fair value of the reporting unit is determined to be $10,500,000. Under the simplified one-step impairment test (ASC 350), what is the goodwill impairment loss?',
     options: [
-      '$1,500,000',
       '$3,000,000',
+      '$1,500,000',
+      '$2,000,000',
       '$0',
-      '$2,000,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Under the simplified approach in ASC 350 (post-2017 update), impairment = carrying amount of reporting unit minus fair value, limited to the amount of goodwill. Carrying amount $12,000,000 - Fair value $10,500,000 = $1,500,000 excess. Since $1,500,000 < goodwill of $3,000,000, the impairment loss is $1,500,000. Goodwill is written down to $1,500,000 ($3,000,000 - $1,500,000).',
     reference: 'ASC 350-20-35 Goodwill Impairment',
   },
@@ -202,8 +202,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       '$72,000',
       '$80,000',
+      '$108,000',
       '$90,000',
-      '$108,000'
     ],
     correctAnswer: 0,
     explanation: 'Total standalone prices = $80,000 + $15,000 + $25,000 = $120,000. Discount = $120,000 - $108,000 = $12,000. Allocated proportionally. Equipment allocation = ($80,000 / $120,000) × $108,000 = 0.6667 × $108,000 = $72,000. Installation = ($15,000 / $120,000) × $108,000 = $13,500. Maintenance = ($25,000 / $120,000) × $108,000 = $22,500. Total = $108,000.',
@@ -222,8 +222,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       'Other comprehensive income as a cumulative translation adjustment',
       'Net income as a foreign currency transaction gain or loss',
+      'Net income as an operating expense',
       'Retained earnings as a prior period adjustment',
-      'Net income as an operating expense'
     ],
     correctAnswer: 0,
     explanation: 'When the functional currency is the local currency, the current rate method (translation) is used. Translation adjustments go to Other Comprehensive Income (OCI) as a cumulative translation adjustment (CTA) in equity. If the functional currency were the US dollar, remeasurement gains/losses would go to net income. The key distinction is functional currency determination under ASC 830.',
@@ -246,8 +246,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       '$738,000',
       '$696,000',
+      '$800,000',
       '$740,000',
-      '$800,000'
     ],
     correctAnswer: 0,
     explanation: 'April cash collections come from three months of sales. From April sales: $800,000 × 60% = $480,000. From March sales: $700,000 × 30% = $210,000. From February sales (2 months prior): $600,000 × 8% = $48,000. January sales are past the collection window and fall into the 2% uncollectible category. Total April collections = $480,000 + $210,000 + $48,000 = $738,000.',
@@ -264,12 +264,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A regression model for overhead costs yields: Y = $45,000 + $12.50X, where X is machine hours. R² = 0.89, standard error = $3,200. If budgeted machine hours are 8,000, which statement is MOST accurate about the predicted overhead?',
     options: [
+      'The model is unreliable because R² is below 0.95',
       'Predicted cost is $145,000 with 89% of variation explained by machine hours',
       'Predicted cost is $145,000 with 95% confidence the actual cost will be within $3,200',
       'Predicted cost is $100,000 with a strong correlation',
-      'The model is unreliable because R² is below 0.95'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Y = $45,000 + $12.50(8,000) = $45,000 + $100,000 = $145,000. R² = 0.89 means 89% of the variation in overhead costs is explained by machine hours — a strong fit. The standard error ($3,200) measures the average distance of actual values from the regression line, not a confidence interval directly. R² of 0.89 is considered strong; there is no requirement for 0.95. Option A correctly states both the prediction and the R² interpretation.',
     reference: 'Regression Analysis in Cost Estimation',
   },
@@ -284,12 +284,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Static budget: 10,000 units at $50/unit = $500,000 revenue. Actual results: 11,500 units at $48/unit = $552,000 revenue. What are the sales volume variance and sales price variance?',
     options: [
+      'Volume variance $23,000 F; Price variance $52,000 F',
       'Volume variance $75,000 F; Price variance $23,000 U',
       'Volume variance $52,000 F; Price variance $0',
       'Volume variance $75,000 F; Price variance $75,000 U',
-      'Volume variance $23,000 F; Price variance $52,000 F'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Flexible budget revenue = Actual units × Budgeted price = 11,500 × $50 = $575,000. Sales volume variance = Flexible budget - Static budget = $575,000 - $500,000 = $75,000 Favorable (sold more units). Sales price variance = Actual revenue - Flexible budget = $552,000 - $575,000 = -$23,000 Unfavorable (sold at lower price). Total variance = $75,000 F + $23,000 U = $52,000 F = $552,000 - $500,000. ✓',
     reference: 'Flexible Budget Analysis',
   },
@@ -304,12 +304,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted sales: Q1 20,000; Q2 25,000; Q3 30,000; Q4 22,000. Policy: ending finished goods = 15% of next quarter\'s sales. Beginning Q1 inventory: 3,000 units. Next year Q1 budgeted sales: 24,000. What is total production for Q3?',
     options: [
-      '28,800 units',
+      '26,700 units',
       '30,000 units',
+      '28,800 units',
       '33,300 units',
-      '26,700 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Production = Sales + Desired ending inventory - Beginning inventory. Q3 ending inventory = 15% × Q4 sales = 15% × 22,000 = 3,300 units. Q3 beginning inventory = Q2 ending inventory = 15% × Q3 sales = 15% × 30,000 = 4,500 units. Q3 production = 30,000 + 3,300 - 4,500 = 28,800 units.',
     reference: 'Production Budget',
   },
@@ -324,12 +324,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'A company experiences an 80% learning curve on direct labor. The first unit requires 100 hours. Under the cumulative average-time model, what is the cumulative average time per unit after 8 units are produced?',
     options: [
-      '51.2 hours',
+      '40.96 hours',
       '64.0 hours',
+      '51.2 hours',
       '80.0 hours',
-      '40.96 hours'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'With an 80% learning curve (cumulative average model), each time cumulative output doubles, the cumulative average time per unit drops to 80% of the previous average. 1 unit: 100 hrs avg. 2 units: 100 × 0.80 = 80 hrs avg. 4 units: 80 × 0.80 = 64 hrs avg. 8 units: 64 × 0.80 = 51.2 hrs avg. Total hours for 8 units = 51.2 × 8 = 409.6 hours.',
     reference: 'Learning Curve Analysis',
   },
@@ -344,12 +344,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company is preparing its annual budget. Planned capital expenditure is $2,000,000 for new equipment (5-year useful life, straight-line depreciation, no salvage). The equipment will be purchased on April 1. What is the depreciation impact on the year\'s operating budget?',
     options: [
-      '$300,000',
       '$400,000',
+      '$100,000',
+      '$300,000',
       '$200,000',
-      '$100,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Annual depreciation = $2,000,000 / 5 years = $400,000 per year. Since the equipment is purchased April 1, depreciation for the first year covers 9 months (April through December). Depreciation impact = $400,000 × 9/12 = $300,000. This partial-year depreciation must be reflected in the operating budget but not the prior quarters\' budget.',
     reference: 'Capital Budget and Operating Budget Integration',
   },
@@ -364,12 +364,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A company forecasts three scenarios for next year: Optimistic (30% probability, revenue $10M), Base (50% probability, revenue $7M), Pessimistic (20% probability, revenue $4M). Variable costs are 60% of revenue. Fixed costs are $2M. What is the expected operating income?',
     options: [
-      '$880,000',
       '$800,000',
+      '$880,000',
+      '$600,000',
       '$1,200,000',
-      '$600,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Expected revenue = (0.30 × $10M) + (0.50 × $7M) + (0.20 × $4M) = $3M + $3.5M + $0.8M = $7.3M. Variable costs = 60% × $7.3M = $4.38M. Contribution margin = $7.3M - $4.38M = $2.92M. Operating income = $2.92M - $2.0M fixed = $920,000. Alternatively calculating per scenario: Optimistic OI = $10M × 0.40 - $2M = $2M. Base OI = $7M × 0.40 - $2M = $0.8M. Pessimistic OI = $4M × 0.40 - $2M = -$0.4M. Expected OI = (0.30 × $2M) + (0.50 × $0.8M) + (0.20 × -$0.4M) = $0.6M + $0.4M - $0.08M = $0.92M = $920,000. Closest: $880,000.',
     reference: 'Expected Value Forecasting',
   },
@@ -386,8 +386,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       'It requires significantly more time and resources because every activity must be justified from scratch each period',
       'It automatically inflates budgets by building on the prior year\'s base',
+      'It is less effective for service departments than for production departments',
       'It cannot identify low-priority programs for elimination',
-      'It is less effective for service departments than for production departments'
     ],
     correctAnswer: 0,
     explanation: 'Zero-based budgeting (ZBB) requires managers to justify every dollar of spending from zero each budget period, creating decision packages ranked by priority. This is extremely time-consuming and resource-intensive compared to incremental budgeting, which simply adjusts prior year amounts. While ZBB is excellent at identifying waste and low-value activities, its implementation cost is the primary drawback. Incremental budgeting\'s weakness is perpetuating inefficiencies — the opposite of option B.',
@@ -404,12 +404,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Annual sales are forecasted at $12,000,000. Seasonal indices: Q1 = 0.80, Q2 = 1.10, Q3 = 1.30, Q4 = 0.80. What is Q3 budgeted sales?',
     options: [
-      '$3,900,000',
       '$3,000,000',
+      '$3,900,000',
+      '$4,200,000',
       '$3,600,000',
-      '$4,200,000'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Average quarterly sales = $12,000,000 / 4 = $3,000,000. Q3 budgeted sales = $3,000,000 × 1.30 seasonal index = $3,900,000. Verification: Q1 = $3M × 0.80 = $2.4M. Q2 = $3M × 1.10 = $3.3M. Q3 = $3M × 1.30 = $3.9M. Q4 = $3M × 0.80 = $2.4M. Total = $12.0M. ✓',
     reference: 'Seasonal Forecasting',
   },
@@ -424,12 +424,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Production budget: Q1 10,000 units; Q2 12,000 units. Each unit requires 3 lbs of material at $5/lb. Material ending inventory policy: 20% of next quarter\'s production needs. Q1 beginning materials inventory: 7,000 lbs. What is Q1 materials purchase cost?',
     options: [
-      '$151,000',
       '$150,000',
+      '$151,000',
+      '$157,200',
       '$172,000',
-      '$157,200'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Q1 production material needs = 10,000 units × 3 lbs = 30,000 lbs. Q1 desired ending material inventory = 20% × Q2 production needs = 20% × (12,000 × 3) = 7,200 lbs. Q1 material purchases = Production needs + Desired ending - Beginning inventory = 30,000 + 7,200 - 7,000 = 30,200 lbs. Purchase cost = 30,200 lbs × $5/lb = $151,000.',
     reference: 'Direct Materials Purchase Budget',
   },
@@ -445,9 +445,9 @@ export const CMA1_HARD_BATCH1: Question[] = [
     question: 'Which budgeting approach explicitly builds in continuous cost reduction targets for each period, requiring managers to find incremental efficiency improvements?',
     options: [
       'Kaizen budgeting',
+      'Rolling (continuous) budgeting',
       'Activity-based budgeting',
       'Zero-based budgeting',
-      'Rolling (continuous) budgeting'
     ],
     correctAnswer: 0,
     explanation: 'Kaizen budgeting (from the Japanese concept of continuous improvement) explicitly incorporates cost reduction targets into each budget period. Unlike ZBB (which justifies from zero) or ABB (which budgets by activity cost drivers), kaizen budgeting assumes the current cost level and then requires specific incremental reductions. Rolling budgets maintain a constant planning horizon but don\'t inherently require cost reduction. Kaizen is common in lean manufacturing environments.',
@@ -469,9 +469,9 @@ export const CMA1_HARD_BATCH1: Question[] = [
     question: 'Division data: Operating income $3,200,000; Tax rate 25%; Total assets $18,000,000; Current liabilities $3,000,000; WACC 10%. What is the division\'s Economic Value Added (EVA)?',
     options: [
       '$900,000',
+      '$400,000',
       '$1,700,000',
       '$2,400,000',
-      '$400,000'
     ],
     correctAnswer: 0,
     explanation: 'EVA = NOPAT - (Capital × WACC). NOPAT = Operating income × (1 - tax rate) = $3,200,000 × 0.75 = $2,400,000. Invested capital = Total assets - Current liabilities = $18,000,000 - $3,000,000 = $15,000,000. Capital charge = $15,000,000 × 10% = $1,500,000. EVA = $2,400,000 - $1,500,000 = $900,000. Positive EVA means the division is creating shareholder value above its cost of capital.',
@@ -488,12 +488,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'Division A has ROI of 22% on assets of $5,000,000. The company\'s required rate of return is 14%. A new project offers ROI of 18% on $1,000,000 investment. What happens to Division A\'s ROI and residual income if the project is accepted?',
     options: [
-      'ROI decreases from 22% to 21.3%; Residual income increases by $40,000',
       'ROI increases to 24%; Residual income increases by $40,000',
+      'Both ROI and Residual Income increase',
+      'ROI decreases from 22% to 21.3%; Residual income increases by $40,000',
       'ROI decreases from 22% to 18%; Residual income decreases by $40,000',
-      'Both ROI and Residual Income increase'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Current: Operating income = 22% × $5M = $1,100,000. New project: Operating income = 18% × $1M = $180,000. Combined: Income = $1,280,000; Assets = $6,000,000. New ROI = $1,280,000 / $6,000,000 = 21.3% — DECREASED (project ROI of 18% pulls down 22% average). Residual income change: Project RI = $180,000 - (14% × $1,000,000) = $180,000 - $140,000 = $40,000 — INCREASED. This illustrates the goal congruence problem with ROI: managers reject value-creating projects that reduce their division\'s ROI.',
     reference: 'ROI vs RI Goal Congruence',
   },
@@ -508,12 +508,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'In a balanced scorecard strategy map, which sequence correctly represents the cause-and-effect chain from root driver to financial outcome?',
     options: [
-      'Employee training (Learning) → Process cycle time (Internal) → Customer retention (Customer) → Revenue growth (Financial)',
       'Revenue growth (Financial) → Customer retention (Customer) → Process cycle time (Internal) → Employee training (Learning)',
+      'Process cycle time (Internal) → Employee training (Learning) → Revenue growth (Financial) → Customer retention (Customer)',
+      'Employee training (Learning) → Process cycle time (Internal) → Customer retention (Customer) → Revenue growth (Financial)',
       'Customer retention (Customer) → Revenue growth (Financial) → Employee training (Learning) → Process cycle time (Internal)',
-      'Process cycle time (Internal) → Employee training (Learning) → Revenue growth (Financial) → Customer retention (Customer)'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'The BSC strategy map flows bottom-up: Learning & Growth (root causes like employee skills) drives Internal Business Process improvements (efficiency gains), which drive Customer perspective outcomes (satisfaction, retention), which ultimately drive Financial results (revenue, profitability). Employee training is a lead indicator; revenue growth is a lag indicator. The other options reverse or scramble this causal chain.',
     reference: 'Balanced Scorecard Strategy Maps — Kaplan & Norton',
   },
@@ -528,12 +528,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Division S (seller) has capacity of 50,000 units, current external sales of 40,000 units at $80 each. Variable cost is $50/unit, fixed cost $10/unit. Division B (buyer) wants 15,000 units. What is the minimum transfer price Division S should accept?',
     options: [
-      '$56 for the first 10,000 units; $80 for the remaining 5,000 units',
+      '$60 for all 15,000 units',
       '$50 for all 15,000 units',
+      '$56 for the first 10,000 units; $80 for the remaining 5,000 units',
       '$80 for all 15,000 units',
-      '$60 for all 15,000 units'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Division S has excess capacity of 50,000 - 40,000 = 10,000 units. For the first 10,000 units (using idle capacity): minimum price = variable cost + lost CM per unit = $50 + $0 = $50. But if any fixed cost is avoidable, it rises. With $10/unit allocated fixed, if traceable: $50 + $0 = $50 for excess capacity units. For the remaining 5,000 units, S must sacrifice external sales: minimum = variable cost + lost CM = $50 + ($80 - $50) = $80. The blended minimum depends on the split. A common exam presentation shows the stepped pricing: $50 for excess capacity and $80 for displaced sales.',
     reference: 'Transfer Pricing — Opportunity Cost Approach',
   },
@@ -550,8 +550,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       '$7,500 Unfavorable',
       '$7,500 Favorable',
+      '$2,500 Unfavorable',
       '$15,000 Unfavorable',
-      '$2,500 Unfavorable'
     ],
     correctAnswer: 0,
     explanation: 'Variable OH efficiency variance = (Actual hours - Standard hours allowed) × Standard variable OH rate. Standard hours allowed = 9,500 units × 2 DLH = 19,000 DLH. Actual hours = 19,500 DLH. Variance = (19,500 - 19,000) × $15 = 500 × $15 = $7,500 Unfavorable. Workers took 500 more hours than standard, increasing variable OH by $7,500.',
@@ -568,12 +568,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Budget: Product A 6,000 units at $20 CM; Product B 4,000 units at $30 CM. Actual: Product A 5,500 units; Product B 5,500 units. What is the total sales mix variance?',
     options: [
-      '$5,000 Favorable',
       '$5,000 Unfavorable',
+      '$5,000 Favorable',
+      '$15,000 Favorable',
       '$10,000 Favorable',
-      '$15,000 Favorable'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Total actual units = 11,000. Budgeted mix: A = 60%, B = 40%. Actual mix: A = 50%, B = 50%. Sales mix variance = Actual total units × (Actual mix% - Budgeted mix%) × Budgeted CM per unit, summed. Product A: 11,000 × (50% - 60%) × $20 = 11,000 × (-10%) × $20 = -$22,000 (U). Product B: 11,000 × (50% - 40%) × $30 = 11,000 × 10% × $30 = $33,000 (F). Net mix variance = -$22,000 + $33,000 = $11,000 F. The shift toward higher-margin Product B is favorable. Closest answer: $5,000 F.',
     reference: 'Sales Mix and Quantity Variances',
   },
@@ -588,12 +588,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'Which is the MOST significant problem with using ROI to evaluate investment center managers?',
     options: [
-      'Managers may reject profitable projects that exceed cost of capital but reduce division ROI',
       'ROI cannot be calculated for divisions with shared assets',
+      'Managers may reject profitable projects that exceed cost of capital but reduce division ROI',
+      'ROI is too complex for most managers to understand',
       'ROI ignores the time value of money in ongoing operations',
-      'ROI is too complex for most managers to understand'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'The primary behavioral problem with ROI is the goal congruence issue: A division manager with a current ROI of 25% will reject a project earning 18%, even if the company\'s cost of capital is 12%. The project creates value for shareholders (18% > 12%) but dilutes the division\'s ROI (18% < 25%). Residual income (RI) solves this by measuring dollars above the capital charge rather than a ratio. This is a classic CMA exam topic.',
     reference: 'ROI Behavioral Limitations',
   },
@@ -610,8 +610,8 @@ export const CMA1_HARD_BATCH1: Question[] = [
     options: [
       'Increase prevention and appraisal spending to reduce total failure costs',
       'Reduce appraisal costs since they exceed industry benchmarks',
+      'Reduce prevention costs to minimize total spending on quality',
       'Accept current quality levels since total quality costs are within reason',
-      'Reduce prevention costs to minimize total spending on quality'
     ],
     correctAnswer: 0,
     explanation: 'Current total CoQ = 8.5% of sales. Industry benchmark = 6.5%. The gap is mainly in failure costs (current 6% vs benchmark 2%). Best-in-class companies invest MORE in prevention and appraisal (conformance costs) to reduce failure costs (nonconformance costs). Prevention costs of 1% vs benchmark 2.5% show underinvestment. The optimal quality cost model shows that increasing conformance spending reduces failure costs disproportionately, lowering total quality cost.',
@@ -629,9 +629,9 @@ export const CMA1_HARD_BATCH1: Question[] = [
     question: 'A product requires a standard mix of: Material X: 6 lbs at $4/lb; Material Y: 4 lbs at $7/lb for 10 lbs input yielding 9 lbs output. Actual: 6,500 lbs of X and 4,200 lbs of Y used to produce 9,400 lbs output. What is the total material mix variance?',
     options: [
       '$240 Favorable',
+      '$300 Unfavorable',
       '$600 Favorable',
       '$1,200 Unfavorable',
-      '$300 Unfavorable'
     ],
     correctAnswer: 0,
     explanation: 'Total actual input = 6,500 + 4,200 = 10,700 lbs. Standard mix: X = 60%, Y = 40%. At standard mix for 10,700 lbs: X should be 6,420 lbs; Y should be 4,280 lbs. Mix variance per input = (Actual qty - Standard mix qty) × Standard price. X: (6,500 - 6,420) × $4 = $320 U. Y: (4,200 - 4,280) × $7 = $560 F. Net mix variance = $320 U - $560 F = $240 Favorable. Using more of cheaper Material X and less of expensive Material Y produced a favorable mix variance.',
@@ -648,12 +648,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A profit center manager\'s performance report should include which combination of items?',
     options: [
+      'Controllable revenues less standard costs, regardless of actual costs',
       'Controllable revenues, controllable variable costs, controllable fixed costs, but NOT allocated corporate overhead',
       'All revenues and all costs including allocated corporate overhead',
       'Only variable costs that the manager can directly influence',
-      'Controllable revenues less standard costs, regardless of actual costs'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Under responsibility accounting, managers should be evaluated only on items they can control. A profit center manager controls revenues and both variable and fixed costs within their authority, but does NOT control allocated corporate overhead. Including uncontrollable allocations distorts performance evaluation and demotivates managers. The controllable margin (revenues - controllable variable costs - controllable fixed costs) is the appropriate measure for profit center managers.',
     reference: 'Responsibility Accounting Principles',
   },
@@ -668,12 +668,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A US parent company sells products to its subsidiary in a country with a 15% corporate tax rate (US rate is 25%). To minimize global tax, what transfer pricing strategy would be advantageous, and what constraint limits this?',
     options: [
+      'Use market price only; no constraints apply to transfer pricing',
       'Set low transfer prices to shift profit to the low-tax country; constrained by arm\'s length requirements under tax law',
       'Set high transfer prices to maximize US revenue; constrained by import duties in the subsidiary country',
       'Use variable cost to eliminate intercompany profit; constrained by GAAP requirements',
-      'Use market price only; no constraints apply to transfer pricing'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Lower transfer prices from US parent to the low-tax subsidiary mean less revenue/profit recognized in the high-tax US (25%) and more profit in the low-tax country (15%), reducing global tax. However, Section 482 of the IRC and OECD guidelines require arm\'s length pricing — transfer prices must approximate what unrelated parties would charge. Significant deviations trigger penalties and adjustments. Import duties, while relevant, are secondary to the arm\'s length standard as the primary regulatory constraint.',
     reference: 'International Transfer Pricing — Section 482 / OECD',
   },
@@ -688,12 +688,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Budgeted fixed overhead: $480,000 for 12,000 units (normal capacity). Actual production: 11,000 units. Actual fixed overhead: $490,000. What are the fixed overhead budget (spending) variance and volume variance?',
     options: [
-      'Budget variance $10,000 U; Volume variance $40,000 U',
+      'Budget variance $0; Volume variance $50,000 U',
       'Budget variance $10,000 U; Volume variance $50,000 U',
+      'Budget variance $10,000 U; Volume variance $40,000 U',
       'Budget variance $40,000 U; Volume variance $10,000 U',
-      'Budget variance $0; Volume variance $50,000 U'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Fixed OH rate = $480,000 / 12,000 = $40/unit. Budget (spending) variance = Actual FOH - Budgeted FOH = $490,000 - $480,000 = $10,000 Unfavorable (overspent). Volume variance = Budgeted FOH - Applied FOH = $480,000 - ($40 × 11,000) = $480,000 - $440,000 = $40,000 Unfavorable (underproduction means underabsorption). Total = $10,000 U + $40,000 U = $50,000 U = $490,000 actual vs $440,000 applied.',
     reference: 'Fixed OH Two-Way Variance Analysis',
   },
@@ -708,12 +708,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Analysis',
     question: 'A manufacturing company tracks: customer complaint rate (down 15%), on-time delivery (up to 96%), employee turnover (up 20%), and defect rate (down 30%). From a balanced scorecard perspective, which trend is MOST concerning for long-term performance?',
     options: [
-      'Employee turnover increasing 20%, because learning & growth problems eventually cascade to all other perspectives',
+      'Defect rate declining 30%, because it may indicate over-inspection',
       'Customer complaint rate decreasing only 15%, because it should be declining faster',
+      'Employee turnover increasing 20%, because learning & growth problems eventually cascade to all other perspectives',
       'On-time delivery only at 96%, because it should be 100%',
-      'Defect rate declining 30%, because it may indicate over-inspection'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'In the BSC cause-and-effect chain, Learning & Growth is the foundation. Rising employee turnover (20% increase) threatens institutional knowledge, training investment, and process consistency. Even though current operational and customer metrics look positive, high turnover will eventually degrade internal processes, then customer outcomes, then financial results. This is a leading indicator of future problems across all perspectives. The other metrics are improving, not concerning.',
     reference: 'Balanced Scorecard Cause-and-Effect Analysis',
   },
@@ -728,12 +728,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Product A: selling price $100, material cost $40, processing time 2 hours on the bottleneck resource. Product B: selling price $150, material cost $80, processing time 5 hours on the bottleneck resource. Using Theory of Constraints throughput accounting, which product should be prioritized?',
     options: [
-      'Product A, because its throughput per bottleneck hour ($30/hr) exceeds Product B ($14/hr)',
       'Product B, because its total throughput ($70) exceeds Product A ($60)',
+      'Product A, because its throughput per bottleneck hour ($30/hr) exceeds Product B ($14/hr)',
+      'Product A, because its material cost is lower',
       'Product B, because its selling price is higher',
-      'Product A, because its material cost is lower'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'In TOC throughput accounting, the key metric is throughput per unit of the constraint (bottleneck). Throughput = Price - Totally variable costs (materials). Product A: ($100 - $40) / 2 hrs = $60 / 2 = $30/bottleneck hour. Product B: ($150 - $80) / 5 hrs = $70 / 5 = $14/bottleneck hour. Product A generates over 2× more throughput per bottleneck hour and should be prioritized. Total throughput per unit (B\'s $70 > A\'s $60) is misleading because it ignores the constraint consumption.',
     reference: 'Theory of Constraints — Throughput Accounting',
   },
@@ -748,12 +748,12 @@ export const CMA1_HARD_BATCH1: Question[] = [
     skillLevel: 'Application',
     question: 'Standard: 3 DLH per unit at $22/hr. Actual: 9,800 units produced, 30,100 DLH at $23.50/hr total cost $707,350. What are the labor rate and efficiency variances?',
     options: [
-      'Rate $45,150 U; Efficiency $15,400 U',
       'Rate $45,150 U; Efficiency $15,400 F',
+      'Rate $45,150 U; Efficiency $15,400 U',
+      'Rate $30,100 U; Efficiency $22,000 U',
       'Rate $14,700 U; Efficiency $45,150 U',
-      'Rate $30,100 U; Efficiency $22,000 U'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Labor rate variance = (Actual rate - Standard rate) × Actual hours = ($23.50 - $22.00) × 30,100 = $1.50 × 30,100 = $45,150 Unfavorable. Standard hours allowed = 9,800 units × 3 DLH = 29,400 DLH. Efficiency variance = (Actual hours - Standard hours) × Standard rate = (30,100 - 29,400) × $22 = 700 × $22 = $15,400 Unfavorable. Workers were paid more than standard ($23.50 vs $22.00) and used more hours than allowed (30,100 vs 29,400), so both variances are unfavorable.',
     reference: 'DL Rate and Efficiency Variances',
   },

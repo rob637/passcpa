@@ -19,10 +19,10 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'During the "Understanding the Client\'s Personal and Financial Circumstances" step, the planner should:',
     options: [
-      'A) Focus solely on investment accounts',
-      'B) Gather comprehensive quantitative data and explore qualitative factors including goals, values, and concerns',
       'C) Make assumptions based on client demographics',
-      'D) Skip non-financial information'
+      'B) Gather comprehensive quantitative data and explore qualitative factors including goals, values, and concerns',
+      'A) Focus solely on investment accounts',
+      'D) Skip non-financial information',
     ],
     correctAnswer: 1,
     explanation: 'Understanding the client requires both quantitative data (income, assets, liabilities, cash flows) and qualitative factors (goals, values, risk tolerance, family dynamics, concerns, expectations). The depth of discovery should match the engagement scope but always ensures sufficient information for recommendations.'
@@ -39,11 +39,11 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     question: 'The analysis step of financial planning involves:',
     options: [
       'A) Simply inputting data into software',
-      'B) Evaluating the client\'s current situation, identifying gaps, testing scenarios, and determining how to achieve goals',
       'C) Comparing to industry averages only',
-      'D) Selecting products to recommend'
+      'B) Evaluating the client\'s current situation, identifying gaps, testing scenarios, and determining how to achieve goals',
+      'D) Selecting products to recommend',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Analysis goes beyond data compilation to evaluate current trajectory, identify shortfalls, test assumptions through scenarios, and determine what changes would help achieve goals. It integrates all planning domains and applies professional judgment beyond software outputs.'
   },
   {
@@ -57,12 +57,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Effective presentation of financial planning recommendations requires:',
     options: [
+      'C) Providing detailed calculations without explanation',
       'A) Reading through the financial plan document page by page',
       'B) Clear communication of priorities, trade-offs, and rationale in language the client understands, with opportunity for questions',
-      'C) Providing detailed calculations without explanation',
-      'D) Mailing recommendations without meeting'
+      'D) Mailing recommendations without meeting',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Presentations should be client-focused, using appropriate language, visuals, and examples. Key recommendations should be prioritized, alternatives explained, trade-offs discussed, and the "why" behind recommendations clarified. Interactive dialogue ensures understanding and addresses questions before implementation.'
   },
   // GEN-2: Time Value of Money Applications
@@ -77,12 +77,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client wants to fund a $50,000 annual scholarship in perpetuity. At a 5% return assumption, the required endowment is:',
     options: [
+      'C) $750,000',
       'A) $500,000',
       'B) $1,000,000',
-      'C) $750,000',
-      'D) $250,000'
+      'D) $250,000',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A perpetuity PV = Payment / Rate. $50,000 / 0.05 = $1,000,000. This amount invested at 5% generates $50,000 annually forever without depleting principal. This assumes constant returns and no inflation adjustment (inflation would require higher endowment or growing perpetuity formula).'
   },
   {
@@ -135,12 +135,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A personal cash flow statement helps identify:',
     options: [
-      'A) Only total assets owned',
       'B) Income sources, expense categories, and surplus or deficit available for savings/debt reduction',
       'C) Net worth only',
-      'D) Investment returns'
+      'A) Only total assets owned',
+      'D) Investment returns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cash flow statements track money movement—income sources and amounts, fixed and variable expenses, and resulting surplus or deficit. This identifies where money goes, supports realistic budgeting, reveals savings capacity, and helps prioritize expense reduction or income enhancement.'
   },
   {
@@ -154,12 +154,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The debt-to-income ratio is calculated as:',
     options: [
-      'A) Total assets divided by total liabilities',
       'B) Monthly debt payments divided by gross monthly income',
       'C) Net worth divided by annual income',
-      'D) Total debt divided by total assets'
+      'A) Total assets divided by total liabilities',
+      'D) Total debt divided by total assets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Debt-to-income (DTI) = Monthly debt payments / Gross monthly income. Lenders use this for mortgage qualification (typically <43% for QM). It measures debt burden relative to income capacity. Front-end ratio focuses on housing costs; back-end includes all debt payments.'
   },
   {
@@ -173,10 +173,10 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The liquidity ratio measures:',
     options: [
-      'A) Net worth growth over time',
-      'B) The number of months of expenses covered by liquid assets',
       'C) Total debt as a percentage of assets',
-      'D) Investment returns'
+      'B) The number of months of expenses covered by liquid assets',
+      'A) Net worth growth over time',
+      'D) Investment returns',
     ],
     correctAnswer: 1,
     explanation: 'Liquidity ratio = Liquid assets / Monthly expenses. It indicates emergency fund adequacy. A ratio of 3-6 is commonly recommended (3-6 months of expenses in accessible savings). Lower ratios indicate vulnerability to income disruption; higher may indicate excess cash earning low returns.'
@@ -193,12 +193,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'An inverted yield curve (short-term rates higher than long-term rates) has historically been associated with:',
     options: [
-      'A) Strong economic growth',
       'B) Increased recession probability',
       'C) Rising inflation expectations',
-      'D) Bond bull markets'
+      'A) Strong economic growth',
+      'D) Bond bull markets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'An inverted yield curve often precedes recessions—it indicates markets expect future rate cuts due to economic weakness. Normally, yields rise with maturity (upward slope). Inversion suggests near-term uncertainty exceeds long-term, often reflecting Fed tightening slowing the economy.'
   },
   {
@@ -212,12 +212,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Federal Reserve\'s dual mandate includes:',
     options: [
-      'A) Maximizing tax revenue and minimizing debt',
       'B) Maximum employment and stable prices (targeting 2% inflation)',
       'C) Balancing the federal budget',
-      'D) Regulating stock markets'
+      'A) Maximizing tax revenue and minimizing debt',
+      'D) Regulating stock markets',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Fed\'s dual mandate (from the Federal Reserve Act as amended) targets maximum sustainable employment and stable prices (2% inflation target). It uses tools like the federal funds rate, quantitative easing, and reserve requirements to pursue these goals, often facing trade-offs between them.'
   },
   {
@@ -231,12 +231,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Fiscal policy differs from monetary policy in that fiscal policy:',
     options: [
+      'C) Focuses only on interest rates',
       'A) Is controlled by the Federal Reserve',
       'B) Involves government spending and taxation decisions made by Congress and the President',
-      'C) Focuses only on interest rates',
-      'D) Operates independently of politics'
+      'D) Operates independently of politics',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Fiscal policy (taxation and government spending) is set by elected officials. Monetary policy (money supply, interest rates) is managed by the independent Federal Reserve. Both affect economic conditions but through different mechanisms and with different lag times.'
   },
   // GEN-1: More Process
@@ -252,11 +252,11 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     question: 'The implementation phase of financial planning may include:',
     options: [
       'A) Only activities the planner directly controls',
-      'B) Coordinating with other professionals, completing applications, transferring assets, and tracking action items',
       'C) Developing recommendations',
-      'D) Data gathering'
+      'B) Coordinating with other professionals, completing applications, transferring assets, and tracking action items',
+      'D) Data gathering',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Implementation translates recommendations into action. It may involve the planner directly (investment allocation), coordination with others (attorney for documents, CPA for tax strategies), and client action items (updating beneficiaries, insurance applications). Clear timelines and accountability improve follow-through.'
   },
   {
@@ -290,12 +290,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An annuity due differs from an ordinary annuity in that payments:',
     options: [
-      'A) Are larger in an annuity due',
       'B) Occur at the beginning of each period in an annuity due, resulting in higher present and future values',
+      'A) Are larger in an annuity due',
       'C) Are tax-deferred in an annuity due',
-      'D) Last longer in an ordinary annuity'
+      'D) Last longer in an ordinary annuity',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Annuity due pays at period start (rent, lease payments); ordinary annuity pays at period end (most loans). Beginning-of-period payments earn one more period of interest, making annuity due values higher by a factor of (1 + r). Most financial calculators have BEGIN/END mode for this.'
   },
   {
@@ -309,12 +309,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'To calculate NPV of uneven cash flows:',
     options: [
-      'A) Average the cash flows and use ordinary annuity formula',
       'B) Discount each cash flow individually at the required rate and sum the present values',
+      'A) Average the cash flows and use ordinary annuity formula',
       'C) Use only the final cash flow',
-      'D) Ignore negative cash flows'
+      'D) Ignore negative cash flows',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Uneven cash flows require discounting each individually: NPV = Σ [CFt / (1+r)^t] - Initial Investment. This applies to real-world scenarios like varying rental income, business cash flows, or project returns. Financial calculators have cash flow (CF) functions for this.'
   },
   // GEN-3: More Statements
@@ -329,10 +329,10 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Analysis',
     question: 'When analyzing a personal balance sheet, a high percentage of assets in a single investment or asset class indicates:',
     options: [
-      'A) Strong investment conviction',
-      'B) Concentration risk that may require diversification',
       'C) Superior expected returns',
-      'D) Optimal asset allocation'
+      'B) Concentration risk that may require diversification',
+      'A) Strong investment conviction',
+      'D) Optimal asset allocation',
     ],
     correctAnswer: 1,
     explanation: 'Concentration (in company stock, real estate, or other single assets) creates risk if that asset declines. Analysis should identify concentration and evaluate whether it\'s appropriate given client risk capacity. Diversification strategies (staged selling, hedging, exchange funds) may be recommended.'
@@ -348,10 +348,10 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'When organizing asset location across accounts with different tax treatments:',
     options: [
-      'A) Hold the same allocation in all accounts',
-      'B) Generally hold tax-efficient assets in taxable accounts and tax-inefficient assets in tax-advantaged accounts',
       'C) Hold only bonds in all accounts',
-      'D) Asset location doesn\'t affect returns'
+      'B) Generally hold tax-efficient assets in taxable accounts and tax-inefficient assets in tax-advantaged accounts',
+      'A) Hold the same allocation in all accounts',
+      'D) Asset location doesn\'t affect returns',
     ],
     correctAnswer: 1,
     explanation: 'Asset location optimizes after-tax returns. Tax-efficient assets (index funds, stocks held long-term) suit taxable accounts; tax-inefficient assets (bonds generating ordinary income, REITs, actively traded funds) suit tax-advantaged accounts. Exceptions apply based on individual circumstances.'
@@ -368,12 +368,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The four phases of a business cycle are:',
     options: [
+      'C) Bull, bear, recovery, growth',
       'A) Growth, stagnation, decline, reset',
       'B) Expansion, peak, contraction (recession), trough',
-      'C) Bull, bear, recovery, growth',
-      'D) Inflation, deflation, stagflation, growth'
+      'D) Inflation, deflation, stagflation, growth',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Business cycles move through expansion (growth, rising employment), peak (maximum activity), contraction/recession (declining output, rising unemployment), and trough (minimum activity) before expanding again. Duration and intensity vary. Understanding cycles helps with investment positioning and client expectations.'
   },
   {
@@ -387,10 +387,10 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Leading economic indicators that tend to precede economic changes include:',
     options: [
-      'A) GDP and unemployment rate',
-      'B) Stock prices, building permits, consumer expectations, and initial unemployment claims',
       'C) CPI and interest rates',
-      'D) Government spending levels'
+      'B) Stock prices, building permits, consumer expectations, and initial unemployment claims',
+      'A) GDP and unemployment rate',
+      'D) Government spending levels',
     ],
     correctAnswer: 1,
     explanation: 'Leading indicators change before the economy changes direction: stock prices, building permits, consumer expectations, new orders, money supply, initial unemployment claims. Lagging indicators (unemployment rate, CPI changes) confirm trends. GDP is coincident, moving with the economy.'
@@ -408,11 +408,11 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     question: 'A comprehensive financial plan document typically includes:',
     options: [
       'A) Only investment recommendations',
-      'B) Executive summary, current situation analysis, goals, recommendations across planning areas, and action plan',
       'C) Just a budget worksheet',
-      'D) Only projection charts'
+      'B) Executive summary, current situation analysis, goals, recommendations across planning areas, and action plan',
+      'D) Only projection charts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Comprehensive plans document the engagement, current situation summary, stated goals, recommendations across relevant domains (investment, insurance, tax, retirement, estate), rationale, projections/scenarios, and action items. The format should match client preferences and engagement scope.'
   },
   {
@@ -426,12 +426,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'The internal rate of return (IRR) is the discount rate that:',
     options: [
+      'C) Equals the risk-free rate',
       'A) Maximizes future value',
       'B) Makes the NPV of all cash flows equal to zero',
-      'C) Equals the risk-free rate',
-      'D) Is always positive'
+      'D) Is always positive',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IRR is the discount rate where NPV = 0—the "break-even" return rate. It\'s used to evaluate investments and compare opportunities. Limitations include multiple IRRs with non-conventional cash flows, reinvestment rate assumptions, and scale ignorance (NPV often preferred for mutually exclusive projects).'
   },
   {
@@ -445,12 +445,12 @@ export const CFP_GEN_BATCH6_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A client\'s savings rate should be evaluated considering:',
     options: [
+      'C) Only bank account deposits',
       'A) Only 401(k) contributions',
       'B) All additions to net worth including retirement contributions, debt principal payments, and taxable savings',
-      'C) Only bank account deposits',
-      'D) Investment returns'
+      'D) Investment returns',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'True savings rate includes all net worth increases from income: retirement contributions (including employer match), after-tax savings, and principal portion of debt payments. Investment returns aren\'t savings—they\'re returns on savings. Target rates depend on age, goals, and timeline.'
   },
   {

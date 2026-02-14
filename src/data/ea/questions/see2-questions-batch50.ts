@@ -22,10 +22,10 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     options: [
       'C corporation',
       'S corporation',
+      'Sole proprietorship',
       'Partnership/LLC taxed as partnership',
-      'Sole proprietorship'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Partnerships offer the most flexibility through special allocations of income, loss, deductions, and credits among partners, subject to substantial economic effect rules. S corps must allocate pro-rata.',
     reference: 'IRC §704(a)',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The accumulated earnings tax is designed to:',
     options: [
-      'Encourage corporations to retain earnings',
       'Penalize C corporations that accumulate earnings beyond reasonable business needs to avoid dividend tax',
+      'Encourage corporations to retain earnings',
+      'Apply to S corporations',
       'Tax all retained earnings',
-      'Apply to S corporations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The accumulated earnings tax (20%) applies to C corporations that accumulate earnings beyond reasonable business needs to allow shareholders to avoid dividend taxation. A $250,000/$150,000 minimum is allowed.',
     reference: 'IRC §531-537',
   },
@@ -60,12 +60,12 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A personal holding company (PHC) is subject to a 20% penalty tax on:',
     options: [
-      'All corporate income',
       'Undistributed personal holding company income',
+      'Capital gains only',
+      'All corporate income',
       'Dividend payments',
-      'Capital gains only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'PHCs (>60% passive income, >50% owned by 5 or fewer individuals) face a 20% penalty tax on undistributed PHC income to discourage using corporations to shelter passive income.',
     reference: 'IRC §541-547',
   },
@@ -78,15 +78,15 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     subtopic: 'Guaranteed Payments SE Tax',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Guaranteed payments to a partner for services are:',
+    question: 'Partner Wilson receives a guaranteed payment of $75,000 from the WXY Partnership for services rendered. Wilson also received a $20,000 distributive share of partnership ordinary income. What amount is subject to self-employment tax?',
     options: [
-      'Never subject to self-employment tax',
-      'Subject to self-employment tax',
-      'Treated as wages subject to FICA',
-      'Tax-exempt'
+      '$95,000 — both the guaranteed payment and distributive share of ordinary income',
+      '$75,000 — only the guaranteed payment',
+      '$20,000 — only the distributive share',
+      '$0 — partnership income is not subject to SE tax',
     ],
-    correctAnswer: 1,
-    explanation: 'Guaranteed payments for services to a general partner are subject to self-employment tax, similar to how a partner\'s distributive share of ordinary income is treated.',
+    correctAnswer: 0,
+    explanation: 'For general partners, both guaranteed payments and the distributive share of ordinary trade or business income are subject to self-employment tax under IRC §1402. Wilson must include the $75,000 guaranteed payment plus the $20,000 distributive share = $95,000 as net earnings from self-employment. Limited partners are generally exempt from SE tax on distributive shares but not on guaranteed payments.',
     reference: 'IRC §1402(a)',
   },
   {
@@ -100,10 +100,10 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Analysis',
     question: 'If an S corporation shareholder-employee takes distributions but minimal salary, the IRS may:',
     options: [
-      'Automatically revoke the S election',
+      'Require conversion to C corporation status',
       'Reclassify distributions as wages subject to employment taxes',
+      'Automatically revoke the S election',
       'Assess a penalty equal to 50% of distributions',
-      'Require conversion to C corporation status'
     ],
     correctAnswer: 1,
     explanation: 'The IRS may recharacterize distributions as wages if the shareholder-employee takes unreasonably low salary. This subjects the reclassified amount to FICA taxes plus potential penalties.',
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Application',
     question: 'The simplified home office deduction method allows a deduction of:',
     options: [
+      'Actual expenses only',
       '$10 per square foot, max 500 sq ft',
       '$5 per square foot, max 300 sq ft',
       '$15 per square foot, no limit',
-      'Actual expenses only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The simplified method allows $5 per square foot of home office space, up to 300 sq ft ($1,500 max). This avoids complex calculations of actual expense percentage.',
     reference: 'Rev. Proc. 2013-13',
   },
@@ -140,12 +140,12 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The uniform capitalization rules (UNICAP) under §263A require:',
     options: [
+      'Deferring direct costs only',
       'Expensing all inventory costs immediately',
       'Capitalizing certain indirect costs into inventory/property produced',
       'Immediate deduction of all production costs',
-      'Deferring direct costs only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'UNICAP requires taxpayers to capitalize certain indirect costs (storage, handling, portions of overhead) into inventory or long-lived property produced or purchased for resale.',
     reference: 'IRC §263A',
   },
@@ -162,8 +162,8 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     options: [
       'Any employer with employees',
       'Self-employed individuals with no full-time employees (other than spouse)',
+      'Part-time workers only',
       'C corporations only',
-      'Part-time workers only'
     ],
     correctAnswer: 1,
     explanation: 'Solo 401(k) plans are for self-employed individuals or business owners with no full-time employees (spouse can be included). Higher contribution limits than SEP-IRAs are possible.',
@@ -182,8 +182,8 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     options: [
       'May do so up to 5% of budget',
       'May lose its tax-exempt status - absolutely prohibited from campaign intervention',
+      'Can make unlimited contributions',
       'Must file Form 1120',
-      'Can make unlimited contributions'
     ],
     correctAnswer: 1,
     explanation: '501(c)(3) organizations are absolutely prohibited from participating in political campaigns for or against any candidate. Violation can result in loss of exempt status and excise taxes.',
@@ -200,12 +200,12 @@ export const SEE2_QUESTIONS_BATCH50: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under the "check-the-box" regulations, an eligible business entity may elect:',
     options: [
+      'Different classifications for federal and state tax',
       'Only to be taxed as a corporation',
       'To be classified as a corporation or as a pass-through (partnership or disregarded entity)',
       'Any classification regardless of state law',
-      'Different classifications for federal and state tax'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Check-the-box allows eligible entities (generally LLCs) to elect corporate or pass-through (partnership if 2+ owners, disregarded if 1 owner) tax treatment on Form 8832. Default rules apply if no election.',
     reference: 'Treas. Reg. §301.7701-3',
   },

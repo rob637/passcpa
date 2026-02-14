@@ -92,6 +92,8 @@ const renderPractice = () => {
 describe('Practice Component', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    localStorage.clear();
+    sessionStorage.clear();
   });
 
   describe('Session Setup Screen', () => {

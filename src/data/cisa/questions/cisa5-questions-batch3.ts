@@ -16,12 +16,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Defense in depth strategy implements:',
     options: [
+      'Only endpoint security',
+      'Only perimeter security',
       'Single strong control',
       'Multiple layers of security controls',
-      'Only perimeter security',
-      'Only endpoint security'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Defense in depth uses multiple layers of security controls so that if one layer fails, other layers still protect assets.',
     topic: 'Security Architecture',
     subtopic: 'Defense in Depth'
@@ -35,12 +35,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Zero trust security model assumes:',
     options: [
-      'Internal network is trusted',
-      'No user or system should be trusted by default',
       'Only external threats exist',
-      'Perimeter security is sufficient'
+      'Internal network is trusted',
+      'Perimeter security is sufficient',
+      'No user or system should be trusted by default',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Zero trust assumes no implicit trust, requiring verification of every user and device regardless of location inside or outside the network.',
     topic: 'Security Architecture',
     subtopic: 'Zero Trust'
@@ -55,11 +55,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Demilitarized zone (DMZ) provides:',
     options: [
       'Maximum access for all users',
-      'Buffer zone between internal network and internet',
       'No security benefit',
-      'Only email services'
+      'Only email services',
+      'Buffer zone between internal network and internet',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A DMZ creates a buffer zone where public-facing services are isolated from the internal network, limiting exposure if compromised.',
     topic: 'Network Security',
     subtopic: 'DMZ'
@@ -74,11 +74,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Next-generation firewalls (NGFW) add capabilities including:',
     options: [
       'Only basic packet filtering',
-      'Application awareness, intrusion prevention, and advanced threat detection',
+      'Only logging',
       'Only VPN',
-      'Only logging'
+      'Application awareness, intrusion prevention, and advanced threat detection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'NGFWs add application-level inspection, integrated IPS, advanced threat detection, and identity awareness beyond traditional packet filtering.',
     topic: 'Network Security',
     subtopic: 'NGFW'
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Wireless security best practices include:',
     options: [
+      'No encryption for convenience',
       'Using WEP encryption',
-      'Using WPA3/WPA2-Enterprise with strong authentication',
       'Broadcasting SSID always',
-      'No encryption for convenience'
+      'Using WPA3/WPA2-Enterprise with strong authentication',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Wireless security should use WPA3 or WPA2-Enterprise with strong authentication, disable unnecessary features, and segment wireless networks.',
     topic: 'Network Security',
     subtopic: 'Wireless Security'
@@ -111,12 +111,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network access control (NAC) ensures:',
     options: [
+      'Only wireless devices are checked',
       'No devices can connect',
-      'Only authorized, compliant devices connect to the network',
       'All devices have full access',
-      'Only wireless devices are checked'
+      'Only authorized, compliant devices connect to the network',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'NAC verifies that devices connecting to the network are authorized and meet compliance requirements before granting access.',
     topic: 'Network Security',
     subtopic: 'NAC'
@@ -130,12 +130,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Endpoint detection and response (EDR) provides:',
     options: [
+      'Only patch management',
+      'Only inventory',
       'Only antivirus protection',
       'Continuous monitoring, threat detection, and response on endpoints',
-      'Only patch management',
-      'Only inventory'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'EDR continuously monitors endpoints, detects threats through behavioral analysis, and provides investigation and response capabilities.',
     topic: 'Endpoint Security',
     subtopic: 'EDR'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Mobile device management (MDM) provides:',
     options: [
+      'Only tracking',
+      'Only app installation',
       'Only email access',
       'Control over mobile device configuration, security, and data',
-      'Only app installation',
-      'Only tracking'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MDM enables organizations to manage, configure, secure, and monitor mobile devices, including enforcement of security policies and remote wipe.',
     topic: 'Endpoint Security',
     subtopic: 'MDM'
@@ -168,12 +168,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Bring your own device (BYOD) introduces risks including:',
     options: [
+      'Only training needs',
+      'Only hardware costs',
       'No security concerns',
       'Data leakage, non-compliant devices, and support complexity',
-      'Only hardware costs',
-      'Only training needs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'BYOD introduces risks of data leakage on personal devices, non-compliant devices, and complexity in managing mixed environments.',
     topic: 'Endpoint Security',
     subtopic: 'BYOD'
@@ -187,12 +187,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Threat intelligence helps organizations by:',
     options: [
+      'Replacing security controls',
+      'Automating all responses',
       'Eliminating all threats',
       'Providing context about threat actors and their methods',
-      'Replacing security controls',
-      'Automating all responses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Threat intelligence provides context about threat actors, their tactics, techniques, and procedures, enabling proactive and informed defense.',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence'
@@ -207,11 +207,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Security orchestration, automation, and response (SOAR) provides:',
     options: [
       'Only ticketing',
-      'Automated incident response workflows and integration',
       'Only reporting',
-      'Only monitoring'
+      'Only monitoring',
+      'Automated incident response workflows and integration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SOAR platforms automate incident response workflows, integrate security tools, and orchestrate responses to improve efficiency.',
     topic: 'Security Operations',
     subtopic: 'SOAR'
@@ -226,11 +226,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Phishing attacks primarily rely on:',
     options: [
       'Technical exploits',
-      'Deceiving users into taking harmful actions',
       'Network vulnerabilities',
-      'Physical access'
+      'Physical access',
+      'Deceiving users into taking harmful actions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Phishing exploits human psychology, deceiving users into clicking links, opening attachments, or providing credentials.',
     topic: 'Security Threats',
     subtopic: 'Phishing'
@@ -244,12 +244,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Ransomware protection should include:',
     options: [
+      'Only insurance',
       'Only antivirus',
-      'Backups, user training, patching, and network segmentation',
       'Only paying ransom',
-      'Only insurance'
+      'Backups, user training, patching, and network segmentation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Ransomware defense requires multiple layers: regular tested backups, user awareness, patching, network segmentation, and endpoint protection.',
     topic: 'Security Threats',
     subtopic: 'Ransomware'
@@ -263,12 +263,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Business email compromise (BEC) attacks target:',
     options: [
+      'Backup systems',
       'Network infrastructure',
-      'Employees through impersonation targeting financial transactions',
       'Physical security',
-      'Backup systems'
+      'Employees through impersonation targeting financial transactions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'BEC attacks impersonate executives or vendors via email to trick employees into making fraudulent payments or revealing sensitive information.',
     topic: 'Security Threats',
     subtopic: 'BEC'
@@ -283,11 +283,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Advanced persistent threats (APTs) are characterized by:',
     options: [
       'Quick, random attacks',
-      'Long-term, targeted, and sophisticated intrusions',
+      'Only denial of service',
       'Only automated scanning',
-      'Only denial of service'
+      'Long-term, targeted, and sophisticated intrusions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'APTs are sophisticated, long-term targeted attacks, typically by well-resourced threat actors pursuing specific objectives.',
     topic: 'Security Threats',
     subtopic: 'APT'
@@ -301,12 +301,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Insider threat detection should include:',
     options: [
+      'Only termination procedures',
+      'Only policy awareness',
       'Only background checks',
       'Behavioral analytics, access monitoring, and data loss prevention',
-      'Only termination procedures',
-      'Only policy awareness'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Insider threat detection requires behavioral analytics, access pattern monitoring, DLP, and anomaly detection to identify malicious or negligent insiders.',
     topic: 'Security Threats',
     subtopic: 'Insider Threats'
@@ -320,12 +320,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Security testing should include:',
     options: [
+      'Only automated scans',
+      'Only compliance checks',
       'Only annual assessments',
       'Regular vulnerability scans, penetration tests, and security audits',
-      'Only compliance checks',
-      'Only automated scans'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security testing should include regular vulnerability scanning, periodic penetration testing, security audits, and continuous monitoring.',
     topic: 'Security Assessment',
     subtopic: 'Security Testing'
@@ -339,12 +339,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Red team exercises:',
     options: [
+      'Only test policies',
+      'Only test awareness',
       'Test backup procedures',
       'Simulate real-world attacks to test defensive capabilities',
-      'Only test policies',
-      'Only test awareness'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Red team exercises simulate sophisticated real-world attacks to test the organization\'s detection and response capabilities.',
     topic: 'Security Assessment',
     subtopic: 'Red Team'
@@ -358,12 +358,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Incident response preparation should include:',
     options: [
+      'Only insurance',
+      'Only legal counsel',
       'Only technical tools',
       'Plans, trained team, tools, and tested procedures',
-      'Only insurance',
-      'Only legal counsel'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IR preparation requires documented plans, a trained response team, appropriate tools, and regularly tested procedures.',
     topic: 'Incident Response',
     subtopic: 'IR Preparation'
@@ -377,12 +377,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Chain of custody in incident response ensures:',
     options: [
-      'Evidence is destroyed',
-      'Evidence integrity is maintained for potential legal proceedings',
       'Incidents are closed quickly',
-      'Staff are notified'
+      'Evidence is destroyed',
+      'Staff are notified',
+      'Evidence integrity is maintained for potential legal proceedings',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Chain of custody documents evidence handling to maintain integrity, essential if evidence may be used in legal proceedings.',
     topic: 'Incident Response',
     subtopic: 'Evidence Handling'
@@ -396,12 +396,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Forensic investigation in incident response should:',
     options: [
-      'Modify original evidence',
-      'Work on forensic copies while preserving originals',
       'Delete log files',
-      'Immediately restore systems'
+      'Modify original evidence',
+      'Immediately restore systems',
+      'Work on forensic copies while preserving originals',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Forensic investigation should work on forensic copies of evidence, preserving original evidence in its unaltered state.',
     topic: 'Incident Response',
     subtopic: 'Forensics'
@@ -416,11 +416,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Privacy by design requires:',
     options: [
       'Adding privacy controls after development',
-      'Building privacy into systems from the beginning',
       'Ignoring privacy in IT',
-      'Only legal review'
+      'Only legal review',
+      'Building privacy into systems from the beginning',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Privacy by design incorporates privacy considerations into system design from the beginning, not as an afterthought.',
     topic: 'Privacy',
     subtopic: 'Privacy by Design'
@@ -435,11 +435,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'GDPR requires organizations to:',
     options: [
       'Only protect EU citizens',
-      'Protect personal data of EU residents with specific rights and requirements',
+      'Only encrypt data',
       'Only report breaches in 30 days',
-      'Only encrypt data'
+      'Protect personal data of EU residents with specific rights and requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'GDPR requires protecting personal data of EU residents with requirements for consent, data subject rights, breach notification, and data protection.',
     topic: 'Privacy',
     subtopic: 'GDPR'
@@ -453,12 +453,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Data subject access requests require organizations to:',
     options: [
+      'Charge unlimited fees',
       'Ignore the request',
-      'Provide individuals access to their personal data',
       'Delete all data immediately',
-      'Charge unlimited fees'
+      'Provide individuals access to their personal data',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Data subject access requests require organizations to provide individuals with access to their personal data within specified timeframes.',
     topic: 'Privacy',
     subtopic: 'Data Subject Rights'
@@ -472,12 +472,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cross-border data transfers require:',
     options: [
+      'Only management approval',
+      'Only encryption',
       'No special consideration',
       'Appropriate safeguards for data protection',
-      'Only encryption',
-      'Only management approval'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Cross-border transfers require appropriate safeguards such as standard contractual clauses, binding corporate rules, or adequacy decisions.',
     topic: 'Privacy',
     subtopic: 'Cross-Border Transfers'
@@ -491,12 +491,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Data minimization principle requires:',
     options: [
+      'Storing data indefinitely',
+      'Sharing data freely',
       'Collecting all available data',
       'Collecting only data necessary for specified purposes',
-      'Storing data indefinitely',
-      'Sharing data freely'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Data minimization requires collecting only the personal data necessary for the specified purpose, limiting exposure.',
     topic: 'Privacy',
     subtopic: 'Data Minimization'
@@ -510,12 +510,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Security control effectiveness should be:',
     options: [
+      'Reported once',
+      'Delegated to vendors',
       'Assumed',
       'Regularly tested and measured',
-      'Reported once',
-      'Delegated to vendors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Control effectiveness should be regularly tested and measured to ensure controls actually work as intended.',
     topic: 'Security Management',
     subtopic: 'Control Testing'
@@ -529,12 +529,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Analysis',
     question: 'Cloud security shared responsibility model means:',
     options: [
+      'No one is responsible',
+      'Customer handles all security',
       'Cloud provider handles all security',
       'Security responsibilities are divided between provider and customer',
-      'Customer handles all security',
-      'No one is responsible'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The shared responsibility model divides security responsibilities between the cloud provider and customer based on the service model (IaaS, PaaS, SaaS).',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility'
@@ -548,12 +548,12 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     skillLevel: 'Application',
     question: 'Cloud access security brokers (CASBs) provide:',
     options: [
+      'Only encryption',
+      'Only authentication',
       'Only cloud storage',
       'Visibility and control over cloud service usage',
-      'Only authentication',
-      'Only encryption'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CASBs provide visibility into cloud service usage, enable policy enforcement, and offer security controls between users and cloud services.',
     topic: 'Cloud Security',
     subtopic: 'CASB'
@@ -568,11 +568,11 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     question: 'Tokenization protects sensitive data by:',
     options: [
       'Encrypting data',
-      'Replacing sensitive data with non-sensitive placeholders',
       'Deleting data',
-      'Compressing data'
+      'Compressing data',
+      'Replacing sensitive data with non-sensitive placeholders',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Tokenization replaces sensitive data with non-sensitive tokens that have no intrinsic value, with the original data stored securely in a token vault.',
     topic: 'Data Security',
     subtopic: 'Tokenization'

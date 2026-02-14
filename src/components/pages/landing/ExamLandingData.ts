@@ -1,7 +1,11 @@
 /**
  * Centralized data configuration for all exam landing pages
  * Each exam follows the same uniform structure with exam-specific content
+ * 
+ * Content stats are imported from contentStats.ts — the single source of truth.
  */
+
+import { COURSE_DISPLAY_STATS } from '../../../config/contentStats';
 
 import { 
   Brain,
@@ -103,16 +107,6 @@ export interface ExamLandingConfig {
     href: string;
   }>;
   
-  // Demo question for landing page (interactive preview)
-  demoQuestion?: {
-    question: string;
-    options: string[];
-    correctAnswer: number;
-    explanation: string;
-    section: string;
-    topic: string;
-  };
-  
   // Disclaimer text
   disclaimer: string;
 }
@@ -175,9 +169,9 @@ export const CPA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-blue-600',
   gradientTo: 'to-blue-700',
   
-  questionCount: '3,200+',
-  lessonCount: '460+',
-  flashcardCount: '600+',
+  questionCount: COURSE_DISPLAY_STATS.cpa.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cpa.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cpa.flashcards,
   passRate: '50%',
   
   registerPath: '/register?course=cpa',
@@ -198,12 +192,12 @@ export const CPA_CONFIG: ExamLandingConfig = {
   ],
   
   examParts: [
-    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '463+', time: '4 hours' },
-    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '425+', time: '4 hours' },
-    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '460+', time: '4 hours' },
-    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '393+', time: '4 hours' },
-    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '388+', time: '4 hours' },
-    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '379+', time: '4 hours' },
+    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '850+', time: '4 hours' },
+    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '800+', time: '4 hours' },
+    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '800+', time: '4 hours' },
+    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '800+', time: '4 hours' },
+    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '800+', time: '4 hours' },
+    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '850+', time: '4 hours' },
   ],
   
   whyBecome: [
@@ -216,7 +210,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
-      { feature: 'Annual Price', voraprep: '$21/mo*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
       { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -227,16 +221,6 @@ export const CPA_CONFIG: ExamLandingConfig = {
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
     ],
-  },
-  
-  // Demo question shown on landing page for interactive preview
-  demoQuestion: {
-    question: 'On December 15, Year 1, Holt Co. signed a legally binding contract to purchase a building for $750,000. The contract required that the closing take place on February 15, Year 2. Which amount, if any, should Holt report as a liability from this contract in its Year 1 financial statements?',
-    options: ['$0', '$75,000', '$375,000', '$750,000'],
-    correctAnswer: 0,
-    explanation: 'Until the closing occurs, no liability exists. A commitment to purchase an asset in the future is disclosed in the notes to financial statements but is not recorded as a liability. The contract creates an executory contract, where both parties have performance obligations remaining.',
-    section: 'FAR',
-    topic: 'Contingencies & Commitments',
   },
   
   disclaimer: 'Not affiliated with AICPA or NASBA.',
@@ -257,9 +241,9 @@ export const EA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-emerald-600',
   gradientTo: 'to-teal-600',
   
-  questionCount: '2,200+',
-  lessonCount: '150+',
-  flashcardCount: '460+',
+  questionCount: COURSE_DISPLAY_STATS.ea.questions,
+  lessonCount: COURSE_DISPLAY_STATS.ea.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.ea.flashcards,
   passRate: '70%',
   
   registerPath: '/register?course=ea',
@@ -288,15 +272,15 @@ export const EA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: '$12/mo*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
+      { feature: 'Price', voraprep: '$149/yr*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Text-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 SEE Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Practice Questions', voraprep: '2,100+', competitor1: '2,500+', competitor2: '1,800+', competitor3: '2,000+' },
-      { feature: 'Flashcards', voraprep: '460+', competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Expert Lessons', voraprep: '150+', competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.ea.questions, competitor1: '2,500+', competitor2: '1,800+', competitor3: '2,000+' },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.ea.flashcards, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.ea.lessons, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -321,9 +305,9 @@ export const CMA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-purple-600',
   gradientTo: 'to-indigo-600',
   
-  questionCount: '2,000+',
-  lessonCount: '110+',
-  flashcardCount: '500+',
+  questionCount: COURSE_DISPLAY_STATS.cma.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cma.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cma.flashcards,
   passRate: '45%',
   
   registerPath: '/register?course=cma',
@@ -351,16 +335,16 @@ export const CMA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
-      { feature: 'Price', voraprep: '$17/mo*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'Both Parts Included', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Practice Questions', voraprep: '2,000+', competitor1: '2,000+', competitor2: '1,500+', competitor3: '2,000+' },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cma.questions, competitor1: '2,000+', competitor2: '1,500+', competitor3: '2,000+' },
       { feature: 'Essay Practice', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Flashcards', voraprep: '500+', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Expert Lessons', voraprep: '110+', competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cma.flashcards, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cma.lessons, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -385,9 +369,9 @@ export const CIA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-amber-500',
   gradientTo: 'to-orange-600',
   
-  questionCount: '1,500+',
-  lessonCount: '140+',
-  flashcardCount: '550+',
+  questionCount: COURSE_DISPLAY_STATS.cia.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cia.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cia.flashcards,
   passRate: '40%',
   
   registerPath: '/register?course=cia',
@@ -416,15 +400,15 @@ export const CIA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: '$12/mo*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
+      { feature: 'Price', voraprep: '$149/yr*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Practice Questions', voraprep: '1,500+', competitor1: '1,500+', competitor2: '1,200+', competitor3: '1,000+' },
-      { feature: 'Flashcards', voraprep: '550+', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Expert Lessons', voraprep: '140+', competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cia.questions, competitor1: '1,500+', competitor2: '1,200+', competitor3: '1,000+' },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cia.flashcards, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cia.lessons, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -449,9 +433,9 @@ export const CFP_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-green-500',
   gradientTo: 'to-emerald-600',
   
-  questionCount: '2,500+',
-  lessonCount: '135+',
-  flashcardCount: '550+',
+  questionCount: COURSE_DISPLAY_STATS.cfp.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cfp.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cfp.flashcards,
   passRate: '67%',
   
   registerPath: '/register?course=cfp',
@@ -485,16 +469,16 @@ export const CFP_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
-      { feature: 'Price', voraprep: '$17/mo*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 8 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Practice Questions', voraprep: '2,500+', competitor1: '2,000+', competitor2: '2,500+', competitor3: '2,000+' },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cfp.questions, competitor1: '2,000+', competitor2: '2,500+', competitor3: '2,000+' },
       { feature: 'Case Studies', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
-      { feature: 'Flashcards', voraprep: '550+', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Expert Lessons', voraprep: '135+', competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cfp.flashcards, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cfp.lessons, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: 'Basic', competitor3: 'Basic', highlight: true },
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -519,9 +503,9 @@ export const CISA_CONFIG: ExamLandingConfig = {
   gradientFrom: 'from-cyan-500',
   gradientTo: 'to-blue-600',
   
-  questionCount: '1,500+',
-  lessonCount: '100+',
-  flashcardCount: '530+',
+  questionCount: COURSE_DISPLAY_STATS.cisa.questions,
+  lessonCount: COURSE_DISPLAY_STATS.cisa.lessons,
+  flashcardCount: COURSE_DISPLAY_STATS.cisa.flashcards,
   passRate: '50%',
   
   registerPath: '/register?course=cisa',
@@ -552,15 +536,15 @@ export const CISA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['ISACA', 'Hemang Doshi'],
     data: [
-      { feature: 'Price', voraprep: '$17/mo*', competitor1: '$795', competitor2: '$299', highlight: true },
+      { feature: 'Price', voraprep: '$199/yr*', competitor1: '$795', competitor2: '$299', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', highlight: true },
       { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true },
-      { feature: 'Practice Questions', voraprep: '1,500+', competitor1: '1,000', competitor2: '500+' },
-      { feature: 'Flashcards', voraprep: '530+', competitor1: false, competitor2: false, highlight: true },
-      { feature: 'Expert Lessons', voraprep: '100+', competitor1: true, competitor2: true },
+      { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cisa.questions, competitor1: '1,000', competitor2: '500+' },
+      { feature: 'Flashcards', voraprep: COURSE_DISPLAY_STATS.cisa.flashcards, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: COURSE_DISPLAY_STATS.cisa.lessons, competitor1: true, competitor2: true },
       { feature: 'Structured Learning Path', voraprep: true, competitor1: true, competitor2: true },
       { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: false, highlight: true },
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, highlight: true },

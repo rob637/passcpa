@@ -36,8 +36,8 @@ export const CISA_SECTION_CONFIG: Record<CISASectionId, CISASectionConfig> = {
     title: 'Domain 1: Information Systems Auditing Process',
     shortTitle: 'Auditing Process',
     description: 'Providing audit services in accordance with IS audit standards to assist the organization in protecting and controlling information systems.',
-    weight: 18,
-    questionCount: 27, // 18% of 150
+    weight: 21,
+    questionCount: 32, // 21% of 150
     color: 'bg-indigo-500',
     icon: 'FileSearch',
     topics: [
@@ -65,8 +65,8 @@ export const CISA_SECTION_CONFIG: Record<CISASectionId, CISASectionConfig> = {
     title: 'Domain 2: Governance and Management of IT',
     shortTitle: 'IT Governance',
     description: 'Assurance that necessary leadership, organizational structures and processes are in place to achieve objectives and to support the organization\'s strategy.',
-    weight: 18,
-    questionCount: 27, // 18% of 150
+    weight: 16,
+    questionCount: 24, // 16% of 150
     color: 'bg-blue-500',
     icon: 'Building',
     topics: [
@@ -94,8 +94,8 @@ export const CISA_SECTION_CONFIG: Record<CISASectionId, CISASectionConfig> = {
     title: 'Domain 3: IS Acquisition, Development & Implementation',
     shortTitle: 'Acquisition & Dev',
     description: 'Assurance that the practices for the acquisition, development, testing and implementation of information systems meet the organization\'s strategies and objectives.',
-    weight: 12,
-    questionCount: 18, // 12% of 150
+    weight: 18,
+    questionCount: 27, // 18% of 150
     color: 'bg-cyan-500',
     icon: 'Code',
     topics: [
@@ -125,8 +125,8 @@ export const CISA_SECTION_CONFIG: Record<CISASectionId, CISASectionConfig> = {
     title: 'Domain 4: IS Operations and Business Resilience',
     shortTitle: 'Operations & Resilience',
     description: 'Assurance that IT operations and support processes ensure the required level of service and security.',
-    weight: 26,
-    questionCount: 39, // 26% of 150
+    weight: 20,
+    questionCount: 30, // 20% of 150
     color: 'bg-teal-500',
     icon: 'Server',
     topics: [
@@ -158,8 +158,8 @@ export const CISA_SECTION_CONFIG: Record<CISASectionId, CISASectionConfig> = {
     title: 'Domain 5: Protection of Information Assets',
     shortTitle: 'InfoSec',
     description: 'Assurance that the organization\'s security policies, standards, procedures and controls ensure the confidentiality, integrity and availability of information assets.',
-    weight: 26,
-    questionCount: 39, // 26% of 150
+    weight: 25,
+    questionCount: 37, // 25% of 150
     color: 'bg-emerald-500',
     icon: 'Shield',
     topics: [
@@ -205,15 +205,15 @@ export const CISA_COURSE: Course = {
       id: 'CISA1',
       name: 'Domain 1: Information Systems Auditing Process',
       shortName: 'Audit',
-      weight: '18%',
-      questionCount: 27,
-      timeAllowed: 43, // Proportional to weight
+      weight: '21%',
+      questionCount: 32,
+      timeAllowed: 50, // Proportional to weight
       questionTypes: ['mcq'],
       blueprintAreas: [
         {
           id: 'CISA1-A',
           name: 'IS Audit Process',
-          weight: '10%',
+          weight: '12%',
           topics: [
             'IS Audit Standards and Guidelines',
             'Risk-Based Audit Planning',
@@ -224,7 +224,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA1-B',
           name: 'Audit Execution',
-          weight: '8%',
+          weight: '9%',
           topics: [
             'Audit Evidence Collection',
             'CAATs and Data Analytics',
@@ -239,15 +239,15 @@ export const CISA_COURSE: Course = {
       id: 'CISA2',
       name: 'Domain 2: Governance and Management of IT',
       shortName: 'Gov',
-      weight: '18%',
-      questionCount: 27,
-      timeAllowed: 43,
+      weight: '16%',
+      questionCount: 24,
+      timeAllowed: 38,
       questionTypes: ['mcq'],
       blueprintAreas: [
         {
           id: 'CISA2-A',
           name: 'IT Governance',
-          weight: '9%',
+          weight: '8%',
           topics: [
             'IT Governance Frameworks (COBIT, ITIL)',
             'IT Strategy and Business Alignment',
@@ -258,7 +258,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA2-B',
           name: 'IT Risk Management',
-          weight: '9%',
+          weight: '8%',
           topics: [
             'Risk Assessment Methodologies',
             'Risk Treatment Options',
@@ -272,15 +272,15 @@ export const CISA_COURSE: Course = {
       id: 'CISA3',
       name: 'Domain 3: IS Acquisition, Development & Implementation',
       shortName: 'Dev',
-      weight: '12%',
-      questionCount: 18,
-      timeAllowed: 29,
+      weight: '18%',
+      questionCount: 27,
+      timeAllowed: 43,
       questionTypes: ['mcq'],
       blueprintAreas: [
         {
           id: 'CISA3-A',
           name: 'Project Management',
-          weight: '6%',
+          weight: '9%',
           topics: [
             'Project Governance',
             'SDLC Methodologies',
@@ -291,7 +291,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA3-B',
           name: 'System Implementation',
-          weight: '6%',
+          weight: '9%',
           topics: [
             'Secure Coding Practices',
             'Testing Methodologies',
@@ -305,15 +305,15 @@ export const CISA_COURSE: Course = {
       id: 'CISA4',
       name: 'Domain 4: IS Operations and Business Resilience',
       shortName: 'Ops',
-      weight: '26%',
-      questionCount: 39,
-      timeAllowed: 62,
+      weight: '20%',
+      questionCount: 30,
+      timeAllowed: 48,
       questionTypes: ['mcq'],
       blueprintAreas: [
         {
           id: 'CISA4-A',
           name: 'IT Operations',
-          weight: '13%',
+          weight: '10%',
           topics: [
             'IT Service Management (ITSM)',
             'Service Level Agreements',
@@ -325,7 +325,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA4-B',
           name: 'Business Resilience',
-          weight: '13%',
+          weight: '10%',
           topics: [
             'Business Impact Analysis (BIA)',
             'Business Continuity Planning (BCP)',
@@ -340,9 +340,9 @@ export const CISA_COURSE: Course = {
       id: 'CISA5',
       name: 'Domain 5: Protection of Information Assets',
       shortName: 'Sec',
-      weight: '26%',
-      questionCount: 39,
-      timeAllowed: 62,
+      weight: '25%',
+      questionCount: 37,
+      timeAllowed: 60,
       questionTypes: ['mcq'],
       blueprintAreas: [
         {
@@ -359,7 +359,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA5-B',
           name: 'Security Controls',
-          weight: '13%',
+          weight: '12%',
           topics: [
             'Identity and Access Management (IAM)',
             'Network Security Controls',

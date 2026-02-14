@@ -20,12 +20,12 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'The Freedom of Information Act (FOIA) allows:',
     options: [
+      'Access only to personal tax records',
       'Access to all government records without limitation',
       'Access to federal agency records with certain exemptions',
-      'Access only to personal tax records',
-      'Access only through court order'
+      'Access only through court order',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'FOIA requires federal agencies to disclose records upon request, subject to nine exemptions covering areas like national security, personal privacy, and law enforcement.',
     reference: '5 U.S.C. §552',
   },
@@ -41,11 +41,11 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     question: 'Tax return information requested under FOIA:',
     options: [
       'Must be released like other records',
-      'Is protected as confidential and generally exempt from disclosure',
       'Is available to anyone who pays a fee',
-      'May only be released after 10 years'
+      'Is protected as confidential and generally exempt from disclosure',
+      'May only be released after 10 years',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tax return information is protected under IRC §6103 as confidential and is generally exempt from FOIA disclosure under Exemption 3 (information exempted by other statutes).',
     reference: 'IRC §6103; 5 U.S.C. §552(b)(3)',
   },
@@ -61,11 +61,11 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     question: 'An IRS "Tax Return Transcript" provides:',
     options: [
       'An exact copy of the original return',
-      'Most line items from the filed return in a computer-generated format',
       'Only the refund amount',
-      'Previous years\' transcripts only'
+      'Most line items from the filed return in a computer-generated format',
+      'Previous years\' transcripts only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'A Tax Return Transcript shows most line items from the original tax return as filed, including accompanying forms and schedules. It is not an exact copy but contains the reported data.',
     reference: 'IRS Publication 4506-T',
   },
@@ -80,12 +80,12 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An IRS "Tax Account Transcript" shows:',
     options: [
-      'Only the W-2 information',
       'Basic data including filing status, payments, penalties, and adjustments',
+      'Only the W-2 information',
       'All attachments to the return',
-      'Only state tax information'
+      'Only state tax information',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'A Tax Account Transcript shows basic data like return type, filing status, AGI, taxable income, and all assessed taxes, payments, refunds, penalties, and subsequent adjustments.',
     reference: 'IRS Publication 4506-T',
   },
@@ -100,12 +100,12 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A "Wage and Income Transcript" shows:',
     options: [
-      'Only employment income',
       'Data from information returns (W-2, 1099s, etc.) received by the IRS',
+      'Only employment income',
       'Taxpayer-estimated income',
-      'Foreign income only'
+      'Foreign income only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The Wage and Income Transcript displays data from all information returns (W-2, 1099-INT, 1099-DIV, 1099-MISC, etc.) reported to the IRS by payers for a specific tax year.',
     reference: 'IRS Publication 4506-T',
   },
@@ -120,10 +120,10 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A "Record of Account Transcript" combines:',
     options: [
-      'All years of transcripts',
-      'The Tax Return Transcript and Tax Account Transcript',
       'Federal and state records',
-      'Current and prior addresses'
+      'The Tax Return Transcript and Tax Account Transcript',
+      'All years of transcripts',
+      'Current and prior addresses',
     ],
     correctAnswer: 1,
     explanation: 'The Record of Account Transcript combines the information from a Tax Return Transcript and a Tax Account Transcript, providing a comprehensive view of both filed data and account activity.',
@@ -140,10 +140,10 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 4506 is used to request:',
     options: [
-      'A free transcript',
-      'An actual copy of a previously filed tax return',
       'Penalty abatement',
-      'An extension of time'
+      'An actual copy of a previously filed tax return',
+      'A free transcript',
+      'An extension of time',
     ],
     correctAnswer: 1,
     explanation: 'Form 4506 (Request for Copy of Tax Return) is used to obtain an actual photocopy of a prior return, including attachments. There is a fee per return, unlike free transcripts obtained via Form 4506-T.',
@@ -160,12 +160,12 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Form 4506-T is used to:',
     options: [
-      'Request a copy of a return',
       'Request a transcript of tax return or account information',
       'Authorize a power of attorney',
-      'File an amended return'
+      'Request a copy of a return',
+      'File an amended return',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Form 4506-T (Request for Transcript of Tax Return) is the free form used to request various types of tax transcripts from the IRS.',
     reference: 'IRS Form 4506-T',
   },
@@ -180,12 +180,12 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Taxpayers can access transcripts online through:',
     options: [
+      'Email request',
       'Social media platforms',
       'Get Transcript Online at IRS.gov',
-      'Email request',
-      'Third-party websites only'
+      'Third-party websites only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The IRS provides "Get Transcript Online" through IRS.gov, allowing taxpayers to view or download transcripts after identity verification. Get Transcript by Mail is also available.',
     reference: 'IRS.gov',
   },
@@ -201,11 +201,11 @@ export const SEE3_QUESTIONS_BATCH19: Question[] = [
     question: 'Tax return transcripts are generally available for:',
     options: [
       'Current year only',
-      'Current year and prior 3 years',
       '10 years',
-      'Indefinitely'
+      'Current year and prior 3 years',
+      'Indefinitely',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tax Return Transcripts are typically available for the current tax year and the prior 3 years. Tax Account Transcripts and other types may be available for longer periods.',
     reference: 'IRS Publication 4506-T',
   },

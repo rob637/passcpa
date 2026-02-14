@@ -2,6 +2,7 @@ import { useState, useEffect, createContext, useContext, useCallback, ReactNode 
 import { X, ChevronLeft, ChevronRight, Check, Lightbulb, Rocket, BookOpen, BarChart3 } from 'lucide-react';
 import { useTheme } from '../providers/ThemeProvider';
 import { Button } from './common/Button';
+import { TOTAL_DISPLAY } from '../config/contentStats';
 
 // ============================================================================
 // Types
@@ -79,7 +80,7 @@ const TOUR_STEPS: TourStep[] = [
     target: '[data-tour="practice"]',
     title: 'Practice Questions',
     content:
-      'Access 2,500+ MCQs, TBS simulations, and written communication tasks organized by topic. Questions align with the official AICPA blueprints.',
+      `Access ${TOTAL_DISPLAY.questions} MCQs, TBS simulations, and written communication tasks organized by topic. Questions align with the official AICPA blueprints.`,
     placement: 'bottom',
     icon: <BookOpen className="w-6 h-6 text-success-500" />,
   },

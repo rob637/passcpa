@@ -23,12 +23,12 @@ export const CFP_INV_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: `According to Modern Portfolio Theory, which statement BEST describes an efficient portfolio?`,
     options: [
-      'A) A portfolio with the highest possible return',
       'B) A portfolio that maximizes return for a given level of risk',
+      'D) A portfolio with only large-cap stocks',
+      'A) A portfolio with the highest possible return',
       'C) A portfolio with zero systematic risk',
-      'D) A portfolio with only large-cap stocks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Maximizes return for a given level of risk)**
 
 An efficient portfolio offers the maximum expected return for a given level of risk, or minimum risk for a given expected return. These portfolios lie on the efficient frontier.
@@ -49,10 +49,10 @@ An efficient portfolio offers the maximum expected return for a given level of r
     skillLevel: 'Application',
     question: `A portfolio has two equally weighted assets with individual standard deviations of 20% each and a correlation of 0.40. What is the portfolio's standard deviation?`,
     options: [
-      'A) 20.0%',
+      'D) 10.0%',
       'B) 16.7%',
+      'A) 20.0%',
       'C) 14.0%',
-      'D) 10.0%'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (16.7%)**
@@ -83,11 +83,11 @@ Diversification reduced risk from 20% to 16.7% because correlation < 1.
     question: `A stock has a beta of 1.3. If the market declines by 8%, approximately how much would the stock be expected to decline, assuming no company-specific factors?`,
     options: [
       'A) 6.2%',
+      'D) 9.3%',
       'B) 8.0%',
       'C) 10.4%',
-      'D) 9.3%'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (10.4%)**
 
 **Beta Relationship:**
@@ -112,12 +112,12 @@ Beta measures systematic risk relative to the market. A beta > 1 indicates highe
     skillLevel: 'Application',
     question: `Using CAPM, calculate the expected return for a security with a beta of 1.2, given a risk-free rate of 4% and an expected market return of 10%.`,
     options: [
+      'D) 14.4%',
       'A) 10.0%',
       'B) 11.2%',
       'C) 12.0%',
-      'D) 14.4%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (11.2%)**
 
 **CAPM Formula:**
@@ -143,12 +143,12 @@ E(R) = 11.2%
     skillLevel: 'Analysis',
     question: `A fund has an actual return of 14%, beta of 1.1, with a risk-free rate of 3% and market return of 11%. What is the fund's alpha?`,
     options: [
+      'D) -1.0%',
       'A) 3.0%',
       'B) 2.2%',
       'C) 0.8%',
-      'D) -1.0%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (2.2%)**
 
 **Alpha Calculation:**
@@ -179,10 +179,10 @@ Positive alpha indicates outperformance relative to risk-adjusted expectations.
     options: [
       'A) Par value',
       'B) A premium',
+      'D) Cannot be determined',
       'C) A discount',
-      'D) Cannot be determined'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (A discount)**
 
 When YTM > Coupon Rate, the bond trades at a discount.
@@ -210,8 +210,8 @@ Investors require a lower price to achieve the higher market rate.
     options: [
       'A) Decrease of $24,375',
       'B) Increase of $24,375',
+      'D) Decrease of $3,750',
       'C) Decrease of $32,500',
-      'D) Decrease of $3,750'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A (Decrease of $24,375)**
@@ -239,12 +239,12 @@ When rates rise, bond prices fall. Duration quantifies this inverse relationship
     skillLevel: 'Remembering and Understanding',
     question: `Which statement about credit spreads is CORRECT?`,
     options: [
-      'A) Credit spreads typically narrow during recessions',
       'B) Higher credit spreads indicate lower default risk',
+      'D) Credit spreads widen during times of financial stress',
+      'A) Credit spreads typically narrow during recessions',
       'C) Investment-grade bonds have spreads near zero',
-      'D) Credit spreads widen during times of financial stress'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: `**Correct Answer: D (Credit spreads widen during times of financial stress)**
 
 During economic stress or recessions:
@@ -269,12 +269,12 @@ During economic stress or recessions:
     skillLevel: 'Application',
     question: `An investor in the 32% federal tax bracket is comparing a municipal bond yielding 3.5% to a taxable corporate bond. What taxable equivalent yield does the municipal bond offer?`,
     options: [
-      'A) 4.62%',
       'B) 5.15%',
+      'D) 2.38%',
+      'A) 4.62%',
       'C) 4.38%',
-      'D) 2.38%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (5.15%)**
 
 **Taxable Equivalent Yield:**
@@ -301,12 +301,12 @@ The investor would need a 5.15% taxable yield to match the 3.5% municipal yield.
     skillLevel: 'Remembering and Understanding',
     question: `Which risk is MOST relevant for an investor who plans to hold a Treasury bond until maturity?`,
     options: [
-      'A) Default risk',
+      'D) Inflation risk',
       'B) Interest rate risk',
+      'A) Default risk',
       'C) Reinvestment risk',
-      'D) Inflation risk'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: `**Correct Answer: D (Inflation risk)**
 
 For a hold-to-maturity investor in Treasury bonds:
@@ -334,12 +334,12 @@ For a hold-to-maturity investor in Treasury bonds:
     skillLevel: 'Application',
     question: `A stock pays a current dividend of $2.40, which is expected to grow at 4% indefinitely. If the required return is 10%, what is the stock's intrinsic value using the Gordon Growth Model?`,
     options: [
-      'A) $40.00',
+      'D) $48.00',
       'B) $24.00',
+      'A) $40.00',
       'C) $41.60',
-      'D) $48.00'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C ($41.60)**
 
 **Gordon Growth Model:**
@@ -366,12 +366,12 @@ P = $41.60
     skillLevel: 'Application',
     question: `Company A has a P/E ratio of 18 and earnings per share of $4.50. Company B is in the same industry with a P/E ratio of 22. If an analyst believes Company A should trade at the industry P/E, what is the implied value per share?`,
     options: [
+      'D) $108.00',
       'A) $81.00',
       'B) $99.00',
       'C) $90.00',
-      'D) $108.00'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B ($99.00)**
 
 **Relative Valuation:**
@@ -397,12 +397,12 @@ Current price = $4.50 × 18 = $81.00, suggesting undervaluation.
     skillLevel: 'Remembering and Understanding',
     question: `Which characteristic is MOST associated with value stocks compared to growth stocks?`,
     options: [
+      'D) Higher expected earnings growth',
       'A) Higher P/E ratios',
       'B) Lower dividend yields',
       'C) Trading below intrinsic value estimates',
-      'D) Higher expected earnings growth'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Trading below intrinsic value estimates)**
 
 **Value Stock Characteristics:**
@@ -431,11 +431,11 @@ Current price = $4.50 × 18 = $81.00, suggesting undervaluation.
     question: `An investor owns 400 shares of a stock trading at $90. After a 3-for-1 stock split, what will they own?`,
     options: [
       'A) 400 shares at $30',
+      'D) 133 shares at $270',
       'B) 1,200 shares at $30',
       'C) 1,200 shares at $90',
-      'D) 133 shares at $270'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (1,200 shares at $30)**
 
 **3-for-1 Stock Split:**
@@ -463,10 +463,10 @@ Stock splits don't change total value, just the number of shares and price per s
     options: [
       'A) Trading based on insider information',
       'B) Fundamental analysis of financial statements',
+      'D) Both B and C',
       'C) Technical analysis of price patterns',
-      'D) Both B and C'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: `**Correct Answer: D (Both B and C)**
 
 **Semi-Strong Form Efficiency:**
@@ -496,12 +496,12 @@ Only insider information (strong form) could provide an edge.
     skillLevel: 'Remembering and Understanding',
     question: `Which statement about mutual fund share classes is CORRECT?`,
     options: [
-      'A) Class A shares typically have the highest ongoing expenses',
       'B) Class B shares have front-end loads but no back-end loads',
+      'A) Class A shares typically have the highest ongoing expenses',
+      'D) All share classes have identical total costs over any time period',
       'C) Class C shares typically have level loads and higher annual expenses',
-      'D) All share classes have identical total costs over any time period'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Class C shares have level loads and higher annual expenses)**
 
 **Share Class Characteristics:**
@@ -525,12 +525,12 @@ Only insider information (strong form) could provide an edge.
     skillLevel: 'Remembering and Understanding',
     question: `Which is an advantage of ETFs over traditional mutual funds?`,
     options: [
-      'A) ETFs are always actively managed',
       'B) ETFs can be traded throughout the day at market prices',
+      'A) ETFs are always actively managed',
+      'D) ETFs must distribute capital gains annually',
       'C) ETFs have higher expense ratios',
-      'D) ETFs must distribute capital gains annually'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (ETFs can be traded throughout the day)**
 
 **ETF Advantages:**
@@ -555,10 +555,10 @@ Only insider information (strong form) could provide an edge.
     skillLevel: 'Remembering and Understanding',
     question: `To qualify as a REIT, which requirement must be met?`,
     options: [
-      'A) At least 50% of assets in real estate',
+      'D) Be privately held',
       'B) Distribute at least 90% of taxable income to shareholders',
+      'A) At least 50% of assets in real estate',
       'C) Have fewer than 100 shareholders',
-      'D) Be privately held'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B (Distribute at least 90% of taxable income)**
@@ -586,10 +586,10 @@ Only insider information (strong form) could provide an edge.
     skillLevel: 'Application',
     question: `An investor buys a call option for $4 with a strike price of $50. The stock is currently $48. At expiration, the stock is trading at $58. What is the investor's profit per share?`,
     options: [
-      'A) $8',
+      'D) $6',
       'B) $4',
+      'A) $8',
       'C) $10',
-      'D) $6'
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($4 profit)**
@@ -617,12 +617,12 @@ The option is in-the-money by $8, minus the $4 cost = $4 profit.
     skillLevel: 'Remembering and Understanding',
     question: `Which statement about variable annuities is CORRECT?`,
     options: [
-      'A) Returns are fixed and guaranteed',
       'B) Investment risk is borne by the insurance company',
+      'D) All gains are tax-free if held for 10+ years',
+      'A) Returns are fixed and guaranteed',
       'C) Withdrawals before 59½ may incur a 10% penalty',
-      'D) All gains are tax-free if held for 10+ years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Withdrawals before 59½ may incur 10% penalty)**
 
 **Variable Annuity Features:**
@@ -651,12 +651,12 @@ The option is in-the-money by $8, minus the $4 cost = $4 profit.
     skillLevel: 'Application',
     question: `Portfolio A has a return of 12%, standard deviation of 18%, and the risk-free rate is 3%. What is the Sharpe ratio?`,
     options: [
-      'A) 0.50',
+      'D) 1.00',
       'B) 0.67',
+      'A) 0.50',
       'C) 0.75',
-      'D) 1.00'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: `**Correct Answer: A (0.50)**
 
 **Sharpe Ratio Formula:**
@@ -682,9 +682,9 @@ Higher Sharpe ratios indicate better risk-adjusted performance.
     question: `A portfolio has a return of 11%, beta of 0.8, and the risk-free rate is 2%. What is the Treynor ratio?`,
     options: [
       'A) 0.1125',
+      'D) 11.25',
       'B) 0.0900',
       'C) 13.75',
-      'D) 11.25'
     ],
     correctAnswer: 0,
     explanation: `**Correct Answer: A (0.1125 or 11.25%)**
@@ -712,12 +712,12 @@ Treynor measures excess return per unit of systematic risk (beta).
     skillLevel: 'Analysis',
     question: `Which benchmark would be MOST appropriate for evaluating a small-cap value mutual fund?`,
     options: [
+      'D) Bloomberg Aggregate Bond Index',
       'A) S&P 500 Index',
       'B) Russell 2000 Value Index',
       'C) MSCI EAFE Index',
-      'D) Bloomberg Aggregate Bond Index'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: `**Correct Answer: B (Russell 2000 Value Index)**
 
 Appropriate benchmarks match:
@@ -744,12 +744,12 @@ Russell 2000 Value is the standard benchmark for US small-cap value strategies.
     skillLevel: 'Analysis',
     question: `When evaluating a portfolio manager's skill versus a client's actual investment experience, which measures should be used respectively?`,
     options: [
-      'A) Dollar-weighted for manager; time-weighted for client',
       'B) Time-weighted for manager; dollar-weighted for client',
+      'A) Dollar-weighted for manager; time-weighted for client',
+      'D) Dollar-weighted for both',
       'C) Time-weighted for both',
-      'D) Dollar-weighted for both'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: `**Correct Answer: B (Time-weighted for manager; dollar-weighted for client)**
 
 **Time-Weighted Return:**
@@ -778,10 +778,10 @@ Russell 2000 Value is the standard benchmark for US small-cap value strategies.
     options: [
       'A) Only systematic risk',
       'B) Only unsystematic risk',
+      'D) Neither systematic nor unsystematic risk',
       'C) Total risk (systematic + unsystematic)',
-      'D) Neither systematic nor unsystematic risk'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: `**Correct Answer: C (Total risk)**
 
 **Standard Deviation:**

@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { CheckCircle, XCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
+import { TOTAL_DISPLAY } from '../../config/contentStats';
 
 interface DemoQuestionProps {
   question: string;
@@ -165,7 +166,7 @@ export const DemoQuestion = ({
               <ArrowRight className="w-4 h-4" />
             </Link>
             <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-              3,000+ practice questions with detailed explanations
+              {TOTAL_DISPLAY.questions} practice questions with detailed explanations
             </p>
           </div>
         )}

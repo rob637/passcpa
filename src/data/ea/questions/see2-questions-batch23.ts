@@ -20,12 +20,12 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under TCJA, a business with average annual gross receipts of $28 million (under the threshold) in the prior 3 years:',
     options: [
+      'Cannot deduct cost of goods sold',
       'Must maintain inventories under the accrual method',
       'May treat inventory as non-incidental materials and supplies',
       'Must use LIFO',
-      'Cannot deduct cost of goods sold'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under IRC §471(c), small businesses meeting the gross receipts test may account for inventories using the method used in their financial statements, treat inventory as non-incidental supplies, or use any other IRS-approved method.',
     reference: 'IRC §471(c)',
   },
@@ -40,12 +40,12 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Application',
     question: 'Under FIFO (First-In, First-Out), during a period of rising prices:',
     options: [
+      'FIFO is not permitted during inflation',
       'Cost of goods sold is higher, ending inventory is lower',
       'Cost of goods sold is lower, ending inventory is higher',
       'Cost of goods sold equals ending inventory',
-      'FIFO is not permitted during inflation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Under FIFO, the oldest (lower-cost) inventory is assumed sold first. During inflation, this results in lower COGS and higher ending inventory valuation, producing higher taxable income.',
     reference: 'Treas. Reg. §1.471-2',
   },
@@ -62,8 +62,8 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     options: [
       'They may use FIFO for financial statements',
       'They must also use LIFO for financial reporting (LIFO conformity)',
+      'They cannot use the simplified LIFO methods',
       'A Section 481(a) adjustment is never required',
-      'They cannot use the simplified LIFO methods'
     ],
     correctAnswer: 1,
     explanation: 'Under IRC §472(c) and (e), the LIFO conformity rule requires that if LIFO is used for tax purposes, it must also be used for financial reports to creditors and shareholders.',
@@ -82,8 +82,8 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     options: [
       'Market value is always fair market value',
       'Market is generally replacement cost, bounded by ceiling (NRV) and floor (NRV less normal profit)',
+      'This method is only available for LIFO taxpayers',
       'Inventory can never be written down',
-      'This method is only available for LIFO taxpayers'
     ],
     correctAnswer: 1,
     explanation: 'Under Treas. Reg. §1.471-4, market is replacement cost, but cannot exceed NRV (ceiling) or be less than NRV minus normal profit (floor). LCM is not available to LIFO taxpayers.',
@@ -100,12 +100,12 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §263A (UNICAP), a manufacturer must capitalize:',
     options: [
-      'Only direct materials and direct labor',
       'Direct costs plus an allocable portion of indirect costs',
+      'Only direct materials and direct labor',
+      'Only costs exceeding $500 per unit',
       'All indirect costs regardless of relation to production',
-      'Only costs exceeding $500 per unit'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §263A, taxpayers must capitalize direct costs plus a proper share of indirect costs allocable to production (including mixed service costs, storage, purchasing, handling, etc.).',
     reference: 'IRC §263A(a)',
   },
@@ -120,12 +120,12 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Which businesses are exempt from the uniform capitalization (UNICAP) rules?',
     options: [
-      'All manufacturers',
       'Small businesses with gross receipts under $29 million (indexed)',
+      'Only cash-method taxpayers',
+      'All manufacturers',
       'Retailers only',
-      'Only cash-method taxpayers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Under IRC §263A(i), small businesses meeting the $25 million gross receipts test (indexed for inflation) are exempt from UNICAP. Farmers using cash method and certain creative producers also have exceptions.',
     reference: 'IRC §263A(i)',
   },
@@ -140,10 +140,10 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Application',
     question: 'A business has beginning inventory of $50,000, purchases of $200,000, and ending inventory of $60,000. Cost of goods sold is:',
     options: [
-      '$310,000',
+      '$200,000',
       '$190,000',
+      '$310,000',
       '$260,000',
-      '$200,000'
     ],
     correctAnswer: 1,
     explanation: 'COGS = Beginning Inventory + Purchases - Ending Inventory = $50,000 + $200,000 - $60,000 = $190,000.',
@@ -161,11 +161,11 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     question: 'Freight costs to bring inventory to the business location are:',
     options: [
       'Deducted as an operating expense',
+      'Amortized over 15 years',
       'Included in the cost of inventory (COGS)',
       'Capitalized as a fixed asset',
-      'Amortized over 15 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Freight-in costs are part of inventory cost and included in COGS when the inventory is sold. Freight-out (delivery to customers) is a selling expense.',
     reference: 'Treas. Reg. §1.471-3(b)',
   },
@@ -180,12 +180,12 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Specific identification method of inventory is most appropriate for:',
     options: [
+      'Fungible goods like oil or grain',
       'High-volume, low-cost items',
       'Commodities traded on public markets',
       'Unique, high-value items like automobiles or jewelry',
-      'Fungible goods like oil or grain'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Specific identification tracks actual cost of each item sold. It\'s appropriate for unique, identifiable, high-value items where each item can be individually tracked.',
     reference: 'Treas. Reg. §1.471-2(d)',
   },
@@ -201,11 +201,11 @@ export const SEE2_QUESTIONS_BATCH23: Question[] = [
     question: 'Goods held on consignment are included in the inventory of:',
     options: [
       'The consignee (party holding the goods)',
+      'Neither party until sold',
       'The consignor (owner of the goods)',
       'Both parties equally',
-      'Neither party until sold'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Consigned goods remain in the inventory of the consignor (owner) until sold. The consignee holds the goods for sale on behalf of the consignor but does not own them.',
     reference: 'Treas. Reg. §1.471-1',
   },

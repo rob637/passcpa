@@ -95,11 +95,29 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin();
     }
 
-    // Subscriptions - users can read their own, only backend can write
+    // Subscriptions - users can read their own, backend handles most writes
     match /subscriptions/{userId} {
       allow read: if isOwner(userId) || isAdmin();
-      // No client-side write allowed - only Cloud Functions update subscriptions
-      allow write: if false;
+      // Allow users to create their own subscription doc (free tier / trial start)
+      allow create: if isOwner(userId);
+      // Allow users to update only the trials and updatedAt fields (for starting per-exam trials)
+      allow update: if isOwner(userId) && 
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['trials', 'updatedAt', 'status']);
+      // Admins can fully manage subscription documents
+      allow write: if isAdmin();
+    }
+
+    // Leaderboard - community stats, daily activity, streaks
+    match /leaderboard/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+      
+      // Subcollections: daily_stats/dates, daily_stats/user_flags, user_streaks
+      match /{subcollection=**} {
+        allow read: if isAuthenticated();
+        allow write: if isAuthenticated();
+      }
     }
 
     // Referrals - tracking who referred whom

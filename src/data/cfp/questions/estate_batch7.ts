@@ -19,10 +19,10 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A certificate of trust (certification of trust) is used to:',
     options: [
-      'A) Replace the trust document entirely',
-      'B) Provide third parties with key trust information without disclosing the full trust document',
       'C) Register the trust with the state',
-      'D) Avoid all estate taxes'
+      'B) Provide third parties with key trust information without disclosing the full trust document',
+      'A) Replace the trust document entirely',
+      'D) Avoid all estate taxes',
     ],
     correctAnswer: 1,
     explanation: 'A certificate of trust (or trust certification/abstract) summarizes key information (existence, trustees, powers) allowing third parties like banks to deal with the trust without seeing private details like beneficiaries or asset distributions. It protects privacy while facilitating transactions.'
@@ -57,12 +57,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Common requirements for a valid will include:',
     options: [
-      'A) Notarization in all states',
       'B) Testamentary capacity, intent, proper execution (signature), and typically two witnesses',
+      'A) Notarization in all states',
       'C) Attorney preparation required',
-      'D) Court approval before death'
+      'D) Court approval before death',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Valid wills generally require: testamentary capacity (understanding nature of assets, beneficiaries, and the act), testamentary intent, written form, signature, and witnesses (typically two). Requirements vary by state—some recognize holographic (handwritten) wills with fewer formalities.'
   },
   // EST-2: Trusts
@@ -77,12 +77,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A directed trust allows:',
     options: [
+      'C) Beneficiaries to direct all decisions',
       'A) Only court-directed distributions',
       'B) Separation of trustee responsibilities, with an investment advisor directing investments and a distribution committee making distribution decisions',
-      'C) Beneficiaries to direct all decisions',
-      'D) Automatic distributions'
+      'D) Automatic distributions',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Directed trusts bifurcate traditional trustee duties. An investment director handles investments; a distribution committee (or advisor) decides discretionary distributions; an administrative trustee handles custody and tax filings. This allows expertise in each area and may provide liability protection in states with directed trust statutes.'
   },
   {
@@ -97,11 +97,11 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     question: 'Trust situs (jurisdiction) affects:',
     options: [
       'A) Only trust name',
-      'B) State income tax, trust duration rules, asset protection features, and applicable trust law',
       'C) Federal estate tax only',
-      'D) Investment options'
+      'B) State income tax, trust duration rules, asset protection features, and applicable trust law',
+      'D) Investment options',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Trust situs determines governing law. Some states have favorable trust features: no state income tax (Nevada, South Dakota, Delaware), abolished perpetuities rules (allowing dynasty trusts), strong asset protection (spendthrift provisions), and modern trust statutes. Trusts can be moved to more favorable jurisdictions.'
   },
   {
@@ -116,11 +116,11 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     question: 'Trust decanting refers to:',
     options: [
       'A) Terminating a trust',
-      'B) A trustee\'s power to transfer assets from one irrevocable trust into a new trust with different terms',
       'C) Adding wine to trust assets',
-      'D) Converting to revocable trust'
+      'B) A trustee\'s power to transfer assets from one irrevocable trust into a new trust with different terms',
+      'D) Converting to revocable trust',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Decanting allows modification of "irrevocable" trusts by pouring assets into a new trust. Available in many states, it can fix drafting problems, adjust distribution standards, add beneficiaries (in some states), or move situs. Typically requires discretionary distribution authority and no material adverse impact on beneficiaries.'
   },
   // EST-3: Estate Tax
@@ -133,15 +133,15 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'Alternate Valuation Date',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'The alternate valuation date for estate tax purposes:',
+    question: 'An executor is considering electing the alternate valuation date for an estate with assets worth $8 million at date of death and $7.2 million six months later. Under what condition is this election permitted?',
     options: [
-      'A) Is required for all estates',
-      'B) Allows valuing assets 6 months after death if it reduces estate tax, but cannot be used solely to increase step-up in basis',
-      'C) Is any date chosen by the executor',
-      'D) Only applies to real estate'
+      'The election is always available regardless of the effect on estate value',
+      'The election is only available if it reduces both the gross estate value and the estate tax liability',
+      'The election requires approval from all beneficiaries named in the will',
+      'The election is only available for taxable estates exceeding $12 million',
     ],
     correctAnswer: 1,
-    explanation: 'Alternate valuation (6 months post-death) can reduce estate tax if assets declined. However, it can only be elected if it reduces both the gross estate AND estate tax liability—preventing use solely to increase basis (benefiting heirs at income tax level) when no estate tax is owed.'
+    explanation: 'IRC Section 2032 permits the alternate valuation date election only if it results in a decrease in both the value of the gross estate AND the amount of estate tax. The election cannot be used solely to increase the basis of inherited assets for income tax purposes.',
   },
   {
     id: 'CFP-EST-B7-008',
@@ -154,12 +154,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IRC Section 6166 allows:',
     options: [
-      'A) Tax-free estate transfers',
       'B) Installment payment of estate tax over up to 14 years when a closely held business comprises more than 35% of the adjusted gross estate',
       'C) Avoiding estate tax entirely',
-      'D) Paying tax with business stock'
+      'A) Tax-free estate transfers',
+      'D) Paying tax with business stock',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Section 6166 helps estates with illiquid business interests. If the business exceeds 35% of adjusted gross estate, estate tax attributable to it can be paid in installments: interest-only for 4 years, then principal plus interest over 10 years. Provides liquidity relief for family businesses.'
   },
   {
@@ -193,12 +193,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A "net gift" arrangement involves:',
     options: [
-      'A) Giving after taxes',
       'B) The donee agreeing to pay any gift tax due, reducing the gift\'s value for gift tax purposes',
       'C) Only cash gifts',
-      'D) Employer gifts'
+      'A) Giving after taxes',
+      'D) Employer gifts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Net gifts: the recipient pays the gift tax. This reduces the gift\'s value (it\'s worth less if one must pay tax on it). Circular calculation: gift value minus recipient\'s tax obligation. Useful for large gifts when donor lacks cash for tax. The recipient\'s tax payment isn\'t income to the donor if it doesn\'t exceed gift tax.'
   },
   {
@@ -212,12 +212,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Gifts of future interests (such as remainder interests in trusts):',
     options: [
-      'A) Qualify for the annual exclusion',
       'B) Do not qualify for the annual exclusion because the beneficiary cannot immediately use the gift',
+      'A) Qualify for the annual exclusion',
       'C) Are not subject to gift tax',
-      'D) Are valued at zero'
+      'D) Are valued at zero',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The annual exclusion requires a present interest—immediate right to use, possess, or enjoy. Future interests (remainder after a life estate, distributions at trustee discretion) don\'t qualify. Crummey powers convert future interests to present interests by giving withdrawal rights, enabling exclusion use.'
   },
   {
@@ -231,12 +231,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A gift is incomplete for gift tax purposes when:',
     options: [
-      'A) The donor retains too much control, such as the power to revoke or redirect the gift',
       'B) The gift exceeds the annual exclusion',
+      'A) The donor retains too much control, such as the power to revoke or redirect the gift',
       'C) No gift tax return is filed',
-      'D) The donee is a minor'
+      'D) The donee is a minor',
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Complete gifts require the donor to relinquish dominion and control. Retained powers—to revoke, change beneficiaries, or control enjoyment—make gifts incomplete. The transfer isn\'t taxable until complete. Incomplete gift trusts use this strategically, sometimes combined with state tax planning.'
   },
   // EST-5: Estate Planning for Special Situations
@@ -268,15 +268,15 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     subtopic: 'ABLE Accounts',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'ABLE (Achieving a Better Life Experience) accounts:',
+    question: 'Which of the following is a key eligibility requirement for opening an ABLE (Achieving a Better Life Experience) account?',
     options: [
-      'A) Are available for anyone',
-      'B) Allow tax-advantaged savings for disability-related expenses without affecting means-tested benefits, for those disabled before age 26',
-      'C) Replace special needs trusts',
-      'D) Have unlimited contributions'
+      'The beneficiary must have a disability that occurred before age 26',
+      'The beneficiary must have annual income below the federal poverty level',
+      'The account must be established before the beneficiary reaches age 18',
+      'The beneficiary must be receiving Social Security retirement benefits',
     ],
-    correctAnswer: 1,
-    explanation: 'ABLE accounts (like 529s for disability expenses) provide tax-free growth and qualified withdrawals for disability expenses. Balance up to $100,000 is disregarded for SSI. Annual contribution limit equals gift exclusion. Disability must have begun before age 26 (Secure 2.0 changed to age 46). Complements, doesn\'t replace, SNTs.'
+    correctAnswer: 0,
+    explanation: 'ABLE accounts require that the beneficiary\'s qualifying disability must have occurred before age 26. Recent legislation (ABLE Age Adjustment Act) increased this to age 46 starting in 2026. The accounts allow tax-advantaged savings without affecting means-tested benefits like SSI and Medicaid.',
   },
   {
     id: 'CFP-EST-B7-015',
@@ -289,12 +289,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Estate planning for a non-citizen spouse requires special attention because:',
     options: [
+      'C) All property must be liquidated',
       'A) Non-citizens cannot inherit',
       'B) The unlimited marital deduction is not available for transfers to non-citizen spouses; a QDOT may be needed',
-      'C) All property must be liquidated',
-      'D) There are no differences'
+      'D) There are no differences',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The unlimited marital deduction doesn\'t apply to non-citizen spouses (concern about assets leaving U.S. tax jurisdiction). A QDOT (Qualified Domestic Trust) allows deferral—assets pass to QDOT, with tax on corpus distributions during life. Annual gift exclusion is also higher for non-citizen spouses ($185,000 in 2024).'
   },
   // Additional Topics
@@ -309,12 +309,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A self-proving affidavit attached to a will:',
     options: [
-      'A) Proves the will is valid',
       'B) Contains sworn statements from witnesses, eliminating the need to locate them for probate court testimony',
       'C) Replaces witnesses',
-      'D) Is required in all states'
+      'A) Proves the will is valid',
+      'D) Is required in all states',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Self-proving affidavits are notarized statements by witnesses confirming proper execution. They streamline probate—courts accept the affidavit without requiring witnesses to appear. Most estates benefit from this added step at signing. Some states integrate self-proving language into the will itself.'
   },
   {
@@ -328,10 +328,10 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A silent trust provision limits:',
     options: [
-      'A) Trust investments',
-      'B) Beneficiary notification of the trust\'s existence or terms, though state laws vary on enforceability',
       'C) Trustee communications with courts',
-      'D) Trust duration'
+      'B) Beneficiary notification of the trust\'s existence or terms, though state laws vary on enforceability',
+      'A) Trust investments',
+      'D) Trust duration',
     ],
     correctAnswer: 1,
     explanation: 'Silent trust (or quiet trust) provisions delay or limit beneficiary notice. Parents may want children to develop independently without expecting inheritance. Most states allow some limitation on information, but core duties (account regularly, respond to reasonable requests) often cannot be fully eliminated.'
@@ -347,10 +347,10 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A Qualified Personal Residence Trust (QPRT) works by:',
     options: [
-      'A) Selling the home immediately',
-      'B) Transferring the home to the trust while retaining the right to live there for a term; if the grantor survives, the home passes to beneficiaries at a reduced gift tax value',
       'C) Eliminating property taxes',
-      'D) Converting to rental property'
+      'B) Transferring the home to the trust while retaining the right to live there for a term; if the grantor survives, the home passes to beneficiaries at a reduced gift tax value',
+      'A) Selling the home immediately',
+      'D) Converting to rental property',
     ],
     correctAnswer: 1,
     explanation: 'QPRT: grantor gifts home to irrevocable trust but retains residence rights for a term. Gift value is discounted (present value of remainder interest). If grantor outlives the term, home transfers estate-tax-free. If not, home returns to estate (no harm, but no benefit). Lower interest rates increase QPRT benefits.'
@@ -366,12 +366,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'A reverse gift strategy involves:',
     options: [
-      'A) Taking back previous gifts',
       'B) Gifting low-basis assets to an older relative who will bequeath them back, obtaining a stepped-up basis at their death',
+      'A) Taking back previous gifts',
       'C) Charitable giving',
-      'D) Generation-skipping transfers'
+      'D) Generation-skipping transfers',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Reverse gift: give low-basis assets to elderly family member; at their death, you inherit with stepped-up basis. However, IRC 1014(e) prevents this if property is acquired within one year of death and passes back to the original donor or spouse. Strategy requires the relative to survive at least one year.'
   },
   {
@@ -385,10 +385,10 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Digital estate planning should address:',
     options: [
-      'A) Only cryptocurrency',
-      'B) Digital assets (accounts, files, crypto), passwords/access, social media accounts, and designating a digital executor',
       'C) Only email accounts',
-      'D) Nothing—digital assets transfer automatically'
+      'B) Digital assets (accounts, files, crypto), passwords/access, social media accounts, and designating a digital executor',
+      'A) Only cryptocurrency',
+      'D) Nothing—digital assets transfer automatically',
     ],
     correctAnswer: 1,
     explanation: 'Digital assets include: financial accounts, cryptocurrency, email, social media, cloud storage, domain names, loyalty points. Planning includes: inventory, secure password storage, terms of service review, state digital access laws, and naming someone with authority to access. The Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA) governs in most states.'
@@ -423,12 +423,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Totten trust (payable-on-death account) is:',
     options: [
-      'A) A complex irrevocable trust',
       'B) A bank account that passes directly to a named beneficiary at death, avoiding probate',
+      'A) A complex irrevocable trust',
       'C) A testamentary trust',
-      'D) Only for retirement accounts'
+      'D) Only for retirement accounts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Totten trusts are simple "in trust for" or POD bank accounts. The owner maintains full control during life; at death, funds transfer to the beneficiary outside probate. Easy to establish, but provide no ongoing management—the beneficiary receives outright. Named for the case that validated them.'
   },
   {
@@ -442,12 +442,12 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'A Graegin loan is used in estate planning to:',
     options: [
+      'C) Fund ILIT premiums',
       'A) Avoid estate tax entirely',
       'B) Generate deductible interest when an estate borrows to pay taxes or expenses from an entity it owns, generating estate/income deductions',
-      'C) Fund ILIT premiums',
-      'D) Pay for funeral expenses'
+      'D) Pay for funeral expenses',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Graegin loans (from the case name): estate borrows from family entity to pay estate tax/expenses. The interest is an administrative expense deduction. Loans must have legitimate terms—fixed rate, no prepayment—per the case. Useful when estate is illiquid but has ownership in cash-generating entities.'
   },
   {
@@ -462,11 +462,11 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     question: 'A bargain sale to a family member:',
     options: [
       'A) Is entirely tax-free',
-      'B) Is part sale, part gift—the difference between the sale price and fair market value is a gift',
       'C) Must be at fair market value',
-      'D) Is prohibited'
+      'B) Is part sale, part gift—the difference between the sale price and fair market value is a gift',
+      'D) Is prohibited',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Selling property below FMV to family creates a gift of the difference. For income tax, basis is allocated between sale and gift portions. Example: $100K property (basis $40K) sold for $60K = $40K sale, $60K gift. Sale portion recognizes gain; gift portion transfers with carryover basis. Both gift and income tax consequences apply.'
   },
   {
@@ -481,11 +481,11 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
     question: 'If a person becomes incapacitated without proper planning documents:',
     options: [
       'A) Family can make all decisions automatically',
-      'B) A court-supervised guardianship or conservatorship may be required, which is costly, public, and limits family flexibility',
       'C) The state takes over all assets',
-      'D) Healthcare decisions cannot be made'
+      'B) A court-supervised guardianship or conservatorship may be required, which is costly, public, and limits family flexibility',
+      'D) Healthcare decisions cannot be made',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Without POA and healthcare directives, court intervention may be needed. Guardianship (for person) and conservatorship (for finances) are expensive, public proceedings. The court supervises decisions, requiring reports and approvals. Proper planning with durable POA and healthcare proxy avoids this, maintaining privacy and flexibility.'
   }
 ];

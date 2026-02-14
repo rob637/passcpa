@@ -22,8 +22,8 @@ const ALL_BATCH12: Question[] = [
     options: [
       'Completely different for each audit',
       'Consistent and systematic while allowing flexibility for specific circumstances',
+      'The same as financial auditing only',
       'Determined solely by the auditee',
-      'The same as financial auditing only'
     ],
     correctAnswer: 1,
     explanation: 'Audit methodology provides consistency and quality while allowing adaptation to specific audit circumstances.',
@@ -39,12 +39,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Inherent risk refers to:',
     options: [
-      'Risk after controls are implemented',
       'Risk that exists before any controls are applied',
+      'Risk after controls are implemented',
+      'Risk of detection',
       'Risk of audit failure',
-      'Risk of detection'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Inherent risk is the natural level of risk that exists in an area before any controls are implemented.',
     topic: 'Planning',
     subtopic: 'Risk Concepts'
@@ -58,12 +58,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Walk-through procedures help auditors:',
     options: [
-      'Skip detailed testing',
       'Understand processes by tracing transactions end-to-end',
+      'Avoid documentation',
+      'Skip detailed testing',
       'Replace all other tests',
-      'Avoid documentation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Walk-throughs trace transactions through the process to understand systems, controls, and identify risks.',
     topic: 'Execution',
     subtopic: 'Walk-Through'
@@ -77,12 +77,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Observation as an audit technique:',
     options: [
-      'Is always sufficient evidence',
       'Provides evidence only at the time of observation',
+      'Is not reliable',
+      'Is always sufficient evidence',
       'Replaces all other techniques',
-      'Is not reliable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Observation provides evidence of what was occurring at the time observed but does not prove controls operate consistently.',
     topic: 'Execution',
     subtopic: 'Audit Techniques'
@@ -96,10 +96,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Inquiry as an audit procedure should be:',
     options: [
-      'Used alone for conclusions',
+      'Avoided entirely',
       'Corroborated with other evidence',
+      'Used alone for conclusions',
       'Limited to management only',
-      'Avoided entirely'
     ],
     correctAnswer: 1,
     explanation: 'Inquiry alone is not sufficient evidence; it should be supported by other corroborating evidence.',
@@ -116,11 +116,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Reperformance testing involves:',
     options: [
       'Reviewing documentation',
+      'Interviewing stakeholders',
       'Independently executing procedures to verify they produce expected results',
       'Observing staff activities',
-      'Interviewing stakeholders'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Reperformance means the auditor independently executes procedures or controls to verify they operate correctly.',
     topic: 'Execution',
     subtopic: 'Audit Techniques'
@@ -134,12 +134,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Tolerable error rate in sampling defines:',
     options: [
+      'Confidence level only',
       'Maximum errors expected',
       'Maximum deviation rate the auditor will accept',
       'Minimum sample size',
-      'Confidence level only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Tolerable error rate is the maximum deviation from prescribed controls the auditor is willing to accept.',
     topic: 'Execution',
     subtopic: 'Sampling'
@@ -153,12 +153,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Stopping rules in sampling determine:',
     options: [
-      'When to start testing',
       'When sampling can stop based on results observed',
+      'When to start testing',
+      'Population characteristics',
       'Sample selection method',
-      'Population characteristics'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Stop-or-go sampling allows early stopping if results clearly indicate the population meets or fails control objectives.',
     topic: 'Execution',
     subtopic: 'Sampling Methods'
@@ -174,8 +174,8 @@ const ALL_BATCH12: Question[] = [
     options: [
       'Statistical probability',
       'Auditor knowledge and experience selecting items',
+      'Computer-generated selections',
       'Random number tables',
-      'Computer-generated selections'
     ],
     correctAnswer: 1,
     explanation: 'Judgmental (non-statistical) sampling uses auditor knowledge to select items believed to be representative or high-risk.',
@@ -191,12 +191,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Discovery sampling is used when:',
     options: [
-      'Errors are common',
       'Looking for rare but critical items like fraud',
+      'Errors are common',
+      'Calculating dollar values',
       'Testing all items',
-      'Calculating dollar values'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Discovery sampling is designed to detect at least one occurrence of a critical but rare event like fraud if it exists.',
     topic: 'Execution',
     subtopic: 'Sampling Methods'
@@ -210,12 +210,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Data validation for CAATs should ensure:',
     options: [
-      'Speed of processing',
       'Data completeness and accuracy before analysis',
+      'Speed of processing',
+      'Fastest query execution',
       'Minimum file sizes',
-      'Fastest query execution'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Before using data for analysis, auditors must verify its completeness and accuracy to ensure valid conclusions.',
     topic: 'CAATs',
     subtopic: 'Data Validation'
@@ -231,8 +231,8 @@ const ALL_BATCH12: Question[] = [
     options: [
       'System photos',
       'Transaction data at specific processing points',
+      'Physical environment',
       'Only final outputs',
-      'Physical environment'
     ],
     correctAnswer: 1,
     explanation: 'Snapshot captures transaction data at selected processing points to provide an audit trail of processing flow.',
@@ -248,10 +248,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Mapping software is used to:',
     options: [
-      'Create geographic maps',
+      'Document organizational charts',
       'Identify executed and unexecuted program code paths',
+      'Create geographic maps',
       'Map network connections',
-      'Document organizational charts'
     ],
     correctAnswer: 1,
     explanation: 'Mapping software identifies which code paths are executed during processing to detect unused or hidden code.',
@@ -267,12 +267,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Base case system evaluation (BCSE):',
     options: [
-      'Tests production data only',
       'Uses a standard set of transactions to verify processing accuracy',
+      'Tests only new functionality',
+      'Tests production data only',
       'Avoids testing',
-      'Tests only new functionality'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'BCSE uses a standardized set of test transactions with known results to verify ongoing processing accuracy.',
     topic: 'CAATs',
     subtopic: 'BCSE'
@@ -286,12 +286,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Audit finding severity should consider:',
     options: [
+      'Audit budget only',
       'Only ease of fixing',
       'Potential impact and likelihood of adverse consequences',
       'Management preferences',
-      'Audit budget only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Severity ratings should reflect the potential impact if the issue is not addressed and the likelihood of occurrence.',
     topic: 'Reporting',
     subtopic: 'Finding Severity'
@@ -306,11 +306,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Constructive recommendations should:',
     options: [
       'Only describe problems',
+      'Be vague for flexibility',
       'Provide practical solutions that address root causes',
       'Avoid specific suggestions',
-      'Be vague for flexibility'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Recommendations should be practical, address root causes, and provide clear guidance for remediation.',
     topic: 'Reporting',
     subtopic: 'Recommendations'
@@ -320,19 +320,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA1',
     blueprintArea: 'CISA1-1',
+    topic: 'Reporting',
+    subtopic: 'Distribution',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Audit report distribution should be:',
+    question: 'An IS auditor has completed an audit and is determining report distribution. Audit findings include a critical vulnerability in the CEO\'s email system. To whom should the report be distributed?',
     options: [
-      'As wide as possible',
-      'Limited to those with a legitimate need to know',
-      'Only to external parties',
-      'Publicly available'
+      'Only the IT department that is responsible for remediation',
+      'Those individuals authorized to receive the report, including senior management and audit committee, respecting the sensitivity of findings',
+      'All employees so they are aware of the vulnerability',
+      'Only the CEO since the finding relates to their email system',
     ],
     correctAnswer: 1,
-    explanation: 'Report distribution should be controlled to those with legitimate business need while ensuring appropriate oversight.',
-    topic: 'Reporting',
-    subtopic: 'Distribution'
+    explanation: 'Audit report distribution should be restricted to authorized recipients — typically senior management, the audit committee, and those responsible for remediation — based on the sensitivity and nature of findings. Broad distribution of security vulnerabilities could increase risk, while restricted distribution to only one party may lack proper oversight.',
   },
   {
     id: 'cisa1-b12-018',
@@ -343,12 +343,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Due professional care requires:',
     options: [
-      'Guarantee of no errors',
       'Application of reasonable skill and competence',
+      'Guarantee of no errors',
+      'Unlimited time for audits',
       'Perfect results',
-      'Unlimited time for audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Due professional care means applying reasonable skill, diligence, and competence expected of a professional auditor.',
     topic: 'Standards and Ethics',
     subtopic: 'Due Care'
@@ -362,12 +362,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Engagement letters for IS audits define:',
     options: [
-      'Only fees',
       'Scope, objectives, responsibilities, and expectations',
+      'Only fees',
+      'Only staffing',
       'Only timelines',
-      'Only staffing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Engagement letters formally document audit scope, objectives, roles, responsibilities, timing, and expectations.',
     topic: 'Planning',
     subtopic: 'Engagement Letter'
@@ -383,8 +383,8 @@ const ALL_BATCH12: Question[] = [
     options: [
       'Faster completion',
       'Compliance with standards and appropriate evidence for conclusions',
+      'Fewer findings reported',
       'Lower costs',
-      'Fewer findings reported'
     ],
     correctAnswer: 1,
     explanation: 'QA reviews verify that audit work complies with standards and that evidence appropriately supports conclusions.',
@@ -405,12 +405,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'IT strategy should include:',
     options: [
-      'Only technology plans',
       'Vision, goals, initiatives, and alignment with business strategy',
       'Only budget allocations',
-      'Only staffing plans'
+      'Only staffing plans',
+      'Only technology plans',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT strategy defines vision, goals, and initiatives that align with and support business objectives.',
     topic: 'IT Governance',
     subtopic: 'IT Strategy'
@@ -424,10 +424,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'IT value delivery ensures:',
     options: [
-      'Minimum IT spending',
-      'IT investments deliver expected business benefits',
       'Technology is newest possible',
-      'IT budget increases annually'
+      'IT investments deliver expected business benefits',
+      'IT budget increases annually',
+      'Minimum IT spending',
     ],
     correctAnswer: 1,
     explanation: 'Value delivery focuses on ensuring IT investments deliver promised benefits on time and within budget.',
@@ -443,10 +443,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT performance measurement requires:',
     options: [
-      'No baseline data',
-      'Defined metrics, baselines, and regular monitoring',
       'Only annual reviews',
-      'Only cost tracking'
+      'Defined metrics, baselines, and regular monitoring',
+      'Only cost tracking',
+      'No baseline data',
     ],
     correctAnswer: 1,
     explanation: 'Effective measurement needs defined metrics, baseline data, targets, and regular monitoring and reporting.',
@@ -462,12 +462,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Enterprise risk management (ERM) scope includes:',
     options: [
-      'Only financial risks',
       'Strategic, operational, reporting, and compliance risks across the enterprise',
+      'Only regulatory risks',
       'Only IT risks',
-      'Only regulatory risks'
+      'Only financial risks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ERM takes a comprehensive view of all enterprise risks including strategic, operational, financial, and compliance.',
     topic: 'IT Risk Management',
     subtopic: 'ERM'
@@ -481,12 +481,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Risk heat maps display:',
     options: [
-      'Only high risks',
       'Risks plotted by impact and likelihood for prioritization',
+      'Only accepted risks',
       'Only technology risks',
-      'Only accepted risks'
+      'Only high risks',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Heat maps visually display risks based on impact and likelihood to help prioritize risk treatment efforts.',
     topic: 'IT Risk Management',
     subtopic: 'Risk Visualization'
@@ -500,10 +500,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Control objectives define:',
     options: [
-      'Specific control procedures',
+      'Only compliance requirements',
       'What controls should achieve rather than how',
       'Only technical controls',
-      'Only compliance requirements'
+      'Specific control procedures',
     ],
     correctAnswer: 1,
     explanation: 'Control objectives state what controls should accomplish; specific controls define how to achieve them.',
@@ -519,12 +519,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'IT budget should be aligned with:',
     options: [
-      'Previous year only',
-      'Strategic objectives and planned initiatives',
+      'Industry averages only',
       'Competitor spending',
-      'Industry averages only'
+      'Strategic objectives and planned initiatives',
+      'Previous year only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'IT budget should align with strategic priorities and support planned initiatives rather than just historical spending.',
     topic: 'IT Management',
     subtopic: 'IT Budget'
@@ -534,19 +534,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA2',
     blueprintArea: 'CISA2-1',
+    topic: 'IT Management',
+    subtopic: 'TCO',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Total cost of ownership (TCO) includes:',
+    question: 'When calculating TCO for a new enterprise resource planning (ERP) system, which cost category is MOST commonly underestimated?',
     options: [
-      'Only purchase price',
-      'Acquisition, operation, maintenance, and disposal costs over lifetime',
-      'Only hardware costs',
-      'Only recurring costs'
+      'The initial software licensing fee',
+      'Ongoing costs including training, customization, data migration, organizational change management, and post-implementation support',
+      'The hardware purchase price for servers',
+      'The cost of the initial vendor evaluation process',
     ],
     correctAnswer: 1,
-    explanation: 'TCO includes all costs throughout the asset lifecycle: acquisition, implementation, operation, maintenance, and retirement.',
-    topic: 'IT Management',
-    subtopic: 'TCO'
+    explanation: 'TCO analysis frequently underestimates ongoing and indirect costs such as end-user training, system customization, data migration, organizational change management, integration with existing systems, and post-implementation support. These hidden costs often exceed the initial software and hardware investment.',
   },
   {
     id: 'cisa2-b12-029',
@@ -557,12 +557,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'IT standards ensure:',
     options: [
-      'Flexibility in all choices',
       'Consistency, compatibility, and supportability across the organization',
       'Maximum vendor choice',
-      'No restrictions on technology'
+      'No restrictions on technology',
+      'Flexibility in all choices',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT standards promote consistency, interoperability, and supportability while reducing complexity and costs.',
     topic: 'IT Management',
     subtopic: 'IT Standards'
@@ -576,12 +576,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Technology obsolescence should be managed through:',
     options: [
-      'Ignoring until failure',
-      'Lifecycle management with planned refresh and retirement',
+      'Annual complete replacements',
       'Only emergency replacements',
-      'Annual complete replacements'
+      'Lifecycle management with planned refresh and retirement',
+      'Ignoring until failure',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Lifecycle management proactively plans for technology refresh and retirement before obsolescence creates risk.',
     topic: 'IT Management',
     subtopic: 'Asset Lifecycle'
@@ -595,10 +595,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Cloud vendor assessment should include:',
     options: [
-      'Only price comparison',
-      'Security, compliance, financial stability, and performance capabilities',
       'Only technical features',
-      'Only geographic location'
+      'Security, compliance, financial stability, and performance capabilities',
+      'Only geographic location',
+      'Only price comparison',
     ],
     correctAnswer: 1,
     explanation: 'Cloud vendor assessment evaluates security practices, compliance certifications, financial health, and service capabilities.',
@@ -614,12 +614,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Exit strategies for outsourcing should be:',
     options: [
-      'Developed when exiting',
       'Planned before entering agreements to ensure transition capability',
       'Left to the vendor',
-      'Not necessary'
+      'Not necessary',
+      'Developed when exiting',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Exit strategies should be planned before signing agreements to ensure data, services, and operations can transition if needed.',
     topic: 'Vendor Management',
     subtopic: 'Exit Strategy'
@@ -633,12 +633,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'SOC 2 reports cover:',
     options: [
-      'Only financial controls',
       'Trust service criteria: security, availability, processing integrity, confidentiality, privacy',
+      'Only compliance controls',
       'Only IT general controls',
-      'Only compliance controls'
+      'Only financial controls',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SOC 2 reports assess controls related to security, availability, processing integrity, confidentiality, and/or privacy.',
     topic: 'Vendor Management',
     subtopic: 'Third-Party Assurance'
@@ -652,10 +652,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'RACI charts define:',
     options: [
-      'Only responsible parties',
+      'Only project timelines',
       'Responsible, Accountable, Consulted, and Informed roles for activities',
       'Only IT roles',
-      'Only project timelines'
+      'Only responsible parties',
     ],
     correctAnswer: 1,
     explanation: 'RACI clarifies who is Responsible, Accountable, Consulted, and Informed for each activity or decision.',
@@ -671,10 +671,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Problem escalation procedures ensure:',
     options: [
-      'All problems are ignored',
+      'Problems are hidden',
       'Unresolved issues are raised to appropriate levels for resolution',
       'Only management is involved',
-      'Problems are hidden'
+      'All problems are ignored',
     ],
     correctAnswer: 1,
     explanation: 'Escalation procedures ensure problems that cannot be resolved at one level are raised appropriately.',
@@ -690,12 +690,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Information security steering committee should include:',
     options: [
-      'Only IT security staff',
-      'Business and IT stakeholders to provide governance and direction',
       'Only external consultants',
-      'Only operations staff'
+      'Only operations staff',
+      'Business and IT stakeholders to provide governance and direction',
+      'Only IT security staff',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Security steering committees should include business and IT leadership to align security with business needs.',
     topic: 'IT Governance',
     subtopic: 'Security Governance'
@@ -714,12 +714,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Make vs. buy decisions should consider:',
     options: [
-      'Only cost',
-      'Strategic fit, cost, time, quality, and risk factors',
       'Only technical capability',
-      'Only vendor reputation'
+      'Only vendor reputation',
+      'Strategic fit, cost, time, quality, and risk factors',
+      'Only cost',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Make vs. buy analysis considers strategic alignment, total cost, time to market, quality requirements, and associated risks.',
     topic: 'Project Management',
     subtopic: 'Make vs. Buy'
@@ -733,12 +733,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Request for proposal (RFP) should include:',
     options: [
-      'Only pricing requirements',
       'Detailed requirements, evaluation criteria, and contract terms',
+      'Only vendor questions',
       'Only technical specifications',
-      'Only vendor questions'
+      'Only pricing requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'RFPs include requirements, evaluation criteria, contract terms, timeline, and response format to enable fair vendor comparison.',
     topic: 'Project Management',
     subtopic: 'Procurement'
@@ -752,10 +752,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Scope creep occurs when:',
     options: [
-      'Scope is too small',
+      'Resources are reduced',
       'Requirements expand beyond original boundaries without formal approval',
       'Scope is well defined',
-      'Resources are reduced'
+      'Scope is too small',
     ],
     correctAnswer: 1,
     explanation: 'Scope creep is uncontrolled expansion of project scope without formal change control and approval.',
@@ -771,12 +771,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Critical path in project management:',
     options: [
-      'Is the shortest sequence',
       'Is the longest sequence determining minimum project duration',
+      'Can be ignored',
       'Has the most resources',
-      'Can be ignored'
+      'Is the shortest sequence',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The critical path is the longest sequence of dependent tasks that determines the minimum project completion time.',
     topic: 'Project Management',
     subtopic: 'Critical Path'
@@ -790,12 +790,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Use case diagrams document:',
     options: [
-      'Database structures',
       'System functions from user perspective',
+      'Hardware specifications',
       'Network topology',
-      'Hardware specifications'
+      'Database structures',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Use cases document system functionality from the users\' perspective, showing actor interactions with the system.',
     topic: 'SDLC',
     subtopic: 'Use Cases'
@@ -809,10 +809,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Entity-relationship diagrams (ERDs) show:',
     options: [
-      'System processes',
+      'Program logic',
       'Data entities and their relationships',
       'User interfaces',
-      'Program logic'
+      'System processes',
     ],
     correctAnswer: 1,
     explanation: 'ERDs model data entities, their attributes, and relationships to support database design.',
@@ -824,19 +824,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'SDLC',
+    subtopic: 'Prototyping',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Prototyping is useful when:',
+    question: 'An IS auditor recommends prototyping for a new business intelligence dashboard project. In which situation would prototyping be LEAST appropriate?',
     options: [
-      'Requirements are perfectly clear',
-      'Users need to visualize and refine requirements',
-      'Time is not a factor',
-      'No user involvement is possible'
+      'When users have difficulty articulating their visualization requirements',
+      'When developing a safety-critical system that requires formal specification and verification before any code is written',
+      'When the project requires rapid iteration based on user feedback',
+      'When stakeholders want to see a working model before committing to full development',
     ],
     correctAnswer: 1,
-    explanation: 'Prototyping helps users visualize the solution and refine requirements when they cannot clearly articulate needs upfront.',
-    topic: 'SDLC',
-    subtopic: 'Prototyping'
+    explanation: 'Prototyping is least appropriate for safety-critical systems (medical devices, aviation, nuclear control systems) that require formal specification, mathematical verification, and rigorous documentation before development. These systems follow waterfall or V-model approaches where completeness and correctness of specifications are paramount.',
   },
   {
     id: 'cisa3-b12-044',
@@ -847,12 +847,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Scrum sprints are:',
     options: [
-      'Indefinite duration',
       'Fixed-length iterations delivering working increments',
       'Only for documentation',
-      'Sequential waterfall phases'
+      'Sequential waterfall phases',
+      'Indefinite duration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Sprints are fixed-length iterations (typically 2-4 weeks) that deliver potentially shippable product increments.',
     topic: 'SDLC',
     subtopic: 'Agile/Scrum'
@@ -866,12 +866,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Technical debt accumulates when:',
     options: [
-      'Projects are cancelled',
-      'Short-term solutions create future rework requirements',
       'Documentation is complete',
-      'Testing is thorough'
+      'Testing is thorough',
+      'Short-term solutions create future rework requirements',
+      'Projects are cancelled',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Technical debt results from shortcuts or suboptimal solutions that require future rework to address properly.',
     topic: 'Development',
     subtopic: 'Technical Debt'
@@ -885,12 +885,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Continuous integration (CI) ensures:',
     options: [
-      'Code is never tested',
-      'Code changes are frequently integrated and automatically tested',
+      'Manual deployments',
       'Only annual releases',
-      'Manual deployments'
+      'Code changes are frequently integrated and automatically tested',
+      'Code is never tested',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'CI automatically integrates and tests code changes frequently to detect integration issues early.',
     topic: 'Development',
     subtopic: 'CI/CD'
@@ -904,12 +904,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Continuous deployment differs from continuous delivery because:',
     options: [
-      'They are identical',
-      'Deployment automatically releases to production; delivery requires manual approval',
+      'Deployment has no testing',
       'Delivery is faster',
-      'Deployment has no testing'
+      'Deployment automatically releases to production; delivery requires manual approval',
+      'They are identical',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Continuous deployment automatically deploys to production; continuous delivery prepares for release but requires approval.',
     topic: 'Development',
     subtopic: 'CI/CD'
@@ -919,38 +919,38 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'Secure Development',
+    subtopic: 'SCA',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Software composition analysis (SCA) identifies:',
+    question: 'How does Software Composition Analysis (SCA) complement Static Application Security Testing (SAST) in a secure development pipeline?',
     options: [
-      'Code style issues',
-      'Vulnerabilities in open source and third-party components',
-      'Performance issues',
-      'User interface problems'
+      'SCA and SAST perform identical functions and are interchangeable',
+      'SCA identifies vulnerabilities in third-party and open-source components, while SAST analyzes the organization\'s proprietary code for security flaws',
+      'SCA replaces the need for any other security testing',
+      'SAST analyzes third-party components while SCA tests custom code',
     ],
     correctAnswer: 1,
-    explanation: 'SCA identifies known vulnerabilities, license issues, and risks in open source and third-party components.',
-    topic: 'Secure Development',
-    subtopic: 'SCA'
+    explanation: 'SCA and SAST are complementary tools. SCA focuses on identifying known vulnerabilities, license compliance issues, and outdated versions in third-party/open-source libraries. SAST analyzes custom-developed source code for security vulnerabilities like injection flaws and hardcoded credentials. Together they provide comprehensive code security coverage.',
   },
   {
     id: 'cisa3-b12-049',
     courseId: 'cisa',
     section: 'CISA3',
     blueprintArea: 'CISA3-1',
+    topic: 'Secure Development',
+    subtopic: 'Threat Modeling',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Threat modeling identifies:',
+    question: 'An IS auditor recommends that the development team adopt threat modeling during the design phase. Which threat modeling methodology uses a mnemonic to categorize threats into Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privilege?',
     options: [
-      'Only known vulnerabilities',
-      'Potential threats and attack vectors for a system',
-      'Only compliance gaps',
-      'Only performance issues'
+      'PASTA (Process for Attack Simulation and Threat Analysis)',
+      'STRIDE',
+      'DREAD',
+      'OCTAVE',
     ],
     correctAnswer: 1,
-    explanation: 'Threat modeling systematically identifies potential threats, attack vectors, and mitigations during design.',
-    topic: 'Secure Development',
-    subtopic: 'Threat Modeling'
+    explanation: 'STRIDE is a threat modeling methodology developed by Microsoft that categorizes threats into six types: Spoofing identity, Tampering with data, Repudiation, Information disclosure, Denial of service, and Elevation of privilege. Each category maps to specific security properties that the design should address.',
   },
   {
     id: 'cisa3-b12-050',
@@ -961,10 +961,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'STRIDE is a threat modeling framework for:',
     options: [
-      'Performance testing',
+      'Database design',
       'Categorizing threats: Spoofing, Tampering, Repudiation, Info Disclosure, DoS, Elevation',
       'Code review',
-      'Database design'
+      'Performance testing',
     ],
     correctAnswer: 1,
     explanation: 'STRIDE categorizes threats: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege.',
@@ -980,10 +980,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Test management includes:',
     options: [
-      'Only test execution',
+      'Only automation',
       'Planning, design, execution, tracking, and defect management',
       'Only defect logging',
-      'Only automation'
+      'Only test execution',
     ],
     correctAnswer: 1,
     explanation: 'Test management encompasses planning, test case design, execution, results tracking, and defect management.',
@@ -999,12 +999,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Test coverage metrics measure:',
     options: [
-      'Test script length',
       'Extent to which requirements, code, or conditions are tested',
       'Number of testers',
-      'Test execution time'
+      'Test execution time',
+      'Test script length',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Coverage metrics measure what percentage of requirements, code paths, or conditions are exercised by tests.',
     topic: 'Testing',
     subtopic: 'Test Metrics'
@@ -1018,12 +1018,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Training for new systems should:',
     options: [
-      'Only use documentation',
       'Be role-appropriate and provided before go-live',
       'Occur only after problems',
-      'Be optional'
+      'Be optional',
+      'Only use documentation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Training should be tailored to user roles and provided before implementation to ensure effective system use.',
     topic: 'Implementation',
     subtopic: 'Training'
@@ -1037,10 +1037,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Hypercare period after go-live provides:',
     options: [
-      'Normal support',
-      'Enhanced support to address issues during initial production use',
       'No support',
-      'Only documentation updates'
+      'Enhanced support to address issues during initial production use',
+      'Only documentation updates',
+      'Normal support',
     ],
     correctAnswer: 1,
     explanation: 'Hypercare provides enhanced support resources immediately after go-live to quickly address issues.',
@@ -1061,12 +1061,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Event management distinguishes between:',
     options: [
-      'Only critical events',
       'Informational, warning, and exception events for appropriate handling',
+      'Only critical events',
       'Only positive events',
-      'Only automated events'
+      'Only automated events',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Event management categorizes events to ensure appropriate handling - information, warnings requiring attention, and exceptions requiring action.',
     topic: 'IT Service Management',
     subtopic: 'Event Management'
@@ -1080,12 +1080,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Service request fulfillment differs from incident management because:',
     options: [
+      'Incidents are planned',
       'They are identical',
       'Service requests are pre-approved standard changes; incidents are unplanned interruptions',
-      'Incidents are planned',
-      'Requests are faster'
+      'Requests are faster',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Service requests are standard, pre-approved activities; incidents are unplanned interruptions requiring restoration.',
     topic: 'IT Service Management',
     subtopic: 'Service Request'
@@ -1100,11 +1100,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Major incident management requires:',
     options: [
       'Normal incident handling',
-      'Escalated coordination, communication, and faster resolution efforts',
       'No documentation',
-      'Ignoring until resolved'
+      'Escalated coordination, communication, and faster resolution efforts',
+      'Ignoring until resolved',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Major incidents require escalated management attention, coordinated response, and enhanced communication.',
     topic: 'IT Service Management',
     subtopic: 'Major Incidents'
@@ -1119,11 +1119,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Root cause analysis (RCA) techniques include:',
     options: [
       'Only brainstorming',
-      '5 Whys, fishbone diagrams, and fault tree analysis',
       'Only interviewing',
-      'Only log review'
+      '5 Whys, fishbone diagrams, and fault tree analysis',
+      'Only log review',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'RCA uses techniques like 5 Whys, Ishikawa/fishbone diagrams, and fault tree analysis to identify underlying causes.',
     topic: 'IT Service Management',
     subtopic: 'Root Cause Analysis'
@@ -1133,19 +1133,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA4',
     blueprintArea: 'CISA4-1',
+    topic: 'IT Service Management',
+    subtopic: 'Service Catalog',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Service catalog provides:',
+    question: 'An IS auditor reviewing ITIL-based service management finds that the service catalog has not been updated in 18 months. What is the PRIMARY risk?',
     options: [
-      'Only pricing',
-      'Description of available services with their characteristics',
-      'Only technical specifications',
-      'Only historical data'
+      'New services may not appear in the catalog, causing users to submit ad-hoc requests and bypass standard provisioning, support, and cost allocation processes',
+      'The catalog may contain too many services',
+      'Users will automatically discover all available services',
+      'Service level agreements will automatically update',
     ],
-    correctAnswer: 1,
-    explanation: 'The service catalog documents available services, their features, service levels, and how to request them.',
-    topic: 'IT Service Management',
-    subtopic: 'Service Catalog'
+    correctAnswer: 0,
+    explanation: 'An outdated service catalog means newly deployed services lack defined SLAs, support processes, and cost allocation. Users may not know what services are available or how to request them properly, leading to ad-hoc provisioning, shadow IT, inconsistent service delivery, and inability to accurately charge back costs.',
   },
   {
     id: 'cisa4-b12-060',
@@ -1157,11 +1157,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Operational level agreements (OLAs) define:',
     options: [
       'Customer service levels',
-      'Internal support group commitments supporting external SLAs',
       'Vendor commitments',
-      'Project deliverables'
+      'Internal support group commitments supporting external SLAs',
+      'Project deliverables',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'OLAs define internal support group responsibilities and commitments that enable meeting external SLAs.',
     topic: 'IT Service Management',
     subtopic: 'OLA'
@@ -1175,10 +1175,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Availability management ensures:',
     options: [
-      'Only uptime tracking',
-      'Services are available to meet agreed service levels',
       'Only capacity planning',
-      'Only performance monitoring'
+      'Services are available to meet agreed service levels',
+      'Only uptime tracking',
+      'Only performance monitoring',
     ],
     correctAnswer: 1,
     explanation: 'Availability management ensures IT services are available when needed to meet agreed service levels.',
@@ -1194,12 +1194,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Fault tolerance provides:',
     options: [
-      'Only faster recovery',
       'Continued operation despite component failures',
       'Only backup power',
-      'Only data backup'
+      'Only faster recovery',
+      'Only data backup',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Fault tolerance allows systems to continue operating properly despite failures of some components.',
     topic: 'IT Operations',
     subtopic: 'Fault Tolerance'
@@ -1213,12 +1213,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'High availability architectures use:',
     options: [
-      'Single points of failure',
       'Redundant components and failover capabilities',
+      'Single points of failure',
       'Only cloud services',
-      'Only manual recovery'
+      'Only manual recovery',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'High availability eliminates single points of failure through redundancy and automatic failover.',
     topic: 'IT Operations',
     subtopic: 'High Availability'
@@ -1270,12 +1270,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Business continuity plan testing frequency should be:',
     options: [
+      'Only annually',
       'Only after disasters',
       'Regular and based on risk, with updates after significant changes',
-      'Only annually',
-      'Never during business hours'
+      'Never during business hours',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'BCP testing should occur regularly based on risk, and additionally when significant changes occur.',
     topic: 'Business Continuity',
     subtopic: 'Testing Frequency'
@@ -1289,12 +1289,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Simulation testing of DR plans:',
     options: [
+      'Replaces all other testing',
       'Uses actual failover',
       'Simulates disaster scenarios to test decision-making without actual activation',
-      'Replaces all other testing',
-      'Is less valuable than tabletop'
+      'Is less valuable than tabletop',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Simulation tests disaster scenarios more realistically than tabletops without requiring actual system failover.',
     topic: 'Business Continuity',
     subtopic: 'DR Testing'
@@ -1308,10 +1308,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Alternate processing facilities should be:',
     options: [
-      'Identical to primary',
-      'Capable of supporting critical operations within RTO',
       'Lower capacity than needed',
-      'In the same building'
+      'Capable of supporting critical operations within RTO',
+      'Identical to primary',
+      'In the same building',
     ],
     correctAnswer: 1,
     explanation: 'Alternate facilities must have sufficient capability to support critical operations within recovery time objectives.',
@@ -1327,10 +1327,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Vital records management for BC ensures:',
     options: [
-      'All records are kept forever',
-      'Essential records are protected and available when needed',
       'Records are only electronic',
-      'Records are only physical'
+      'Essential records are protected and available when needed',
+      'All records are kept forever',
+      'Records are only physical',
     ],
     correctAnswer: 1,
     explanation: 'Vital records programs protect essential records needed during and after disasters for business continuity.',
@@ -1346,12 +1346,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Supply chain resilience in BCP addresses:',
     options: [
-      'Only internal operations',
       'Dependencies on suppliers and partners that could affect operations',
       'Only IT vendors',
-      'Only domestic suppliers'
+      'Only internal operations',
+      'Only domestic suppliers',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Supply chain resilience addresses dependencies on external suppliers and partners whose disruption could affect operations.',
     topic: 'Business Continuity',
     subtopic: 'Supply Chain'
@@ -1365,12 +1365,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Automatic failover compared to manual:',
     options: [
-      'Is always preferred',
       'Provides faster recovery but may trigger unnecessarily',
       'Is less reliable',
-      'Costs nothing additional'
+      'Is always preferred',
+      'Costs nothing additional',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Automatic failover is faster but may be triggered by false positives; manual requires intervention but offers more control.',
     topic: 'IT Operations',
     subtopic: 'Failover'
@@ -1384,10 +1384,10 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Runbook automation:',
     options: [
-      'Eliminates all human involvement',
-      'Automates operational procedures for consistency and speed',
       'Only applies to documentation',
-      'Replaces monitoring'
+      'Automates operational procedures for consistency and speed',
+      'Eliminates all human involvement',
+      'Replaces monitoring',
     ],
     correctAnswer: 1,
     explanation: 'Runbook automation scripts operational procedures to ensure consistent execution and faster response.',
@@ -1422,12 +1422,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Fire suppression systems in data centers should:',
     options: [
-      'Use water only',
       'Use agents safe for equipment and personnel while effective',
+      'Use water only',
       'Only activate manually',
-      'Only protect certain areas'
+      'Only protect certain areas',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Data center fire suppression should use clean agents that suppress fire without damaging equipment.',
     topic: 'IT Operations',
     subtopic: 'Environmental Controls'
@@ -1446,12 +1446,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Security policy framework includes:',
     options: [
-      'Only high-level policies',
-      'Policies, standards, procedures, and guidelines in hierarchy',
       'Only IT procedures',
-      'Only compliance statements'
+      'Only high-level policies',
+      'Only compliance statements',
+      'Policies, standards, procedures, and guidelines in hierarchy',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The framework includes policies (what), standards (what specifically), procedures (how), and guidelines (suggestions).',
     topic: 'Security Governance',
     subtopic: 'Policy Framework'
@@ -1461,19 +1461,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Security Governance',
+    subtopic: 'Security Metrics',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Security metrics should be:',
+    question: 'An IS auditor recommends that the organization adopt the NIST Cybersecurity Framework for security metrics. Which metric would BEST measure the effectiveness of the \'Detect\' function?',
     options: [
-      'As numerous as possible',
-      'Meaningful, actionable, and aligned with objectives',
-      'Only technical measures',
-      'Only for compliance'
+      'Total annual security budget',
+      'Percentage of security events correctly identified as true positives versus false positives (detection accuracy rate)',
+      'Number of firewalls deployed across the enterprise',
+      'Total number of employees who completed security awareness training',
     ],
     correctAnswer: 1,
-    explanation: 'Effective metrics are meaningful, support decision-making, drive action, and align with security objectives.',
-    topic: 'Security Governance',
-    subtopic: 'Security Metrics'
+    explanation: 'The detection accuracy rate — measuring the proportion of true positives among all security alerts — directly evaluates the Detect function\'s effectiveness. A high false positive rate wastes analyst time, while a low detection rate means real threats are missed. Both dimensions are critical for evaluating detection capability.',
   },
   {
     id: 'cisa5-b12-077',
@@ -1485,11 +1485,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Security risk assessment should identify:',
     options: [
       'Only high risks',
-      'Assets, threats, vulnerabilities, and potential impacts',
+      'Only technical issues',
       'Only compliance gaps',
-      'Only technical issues'
+      'Assets, threats, vulnerabilities, and potential impacts',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Risk assessment identifies assets, threats, vulnerabilities, existing controls, and potential impacts.',
     topic: 'Security Management',
     subtopic: 'Risk Assessment'
@@ -1499,19 +1499,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Access Control',
+    subtopic: 'MAC',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: 'Mandatory access control (MAC) is characterized by:',
+    question: 'In which environment is Mandatory Access Control (MAC) MOST appropriate compared to discretionary or role-based access control?',
     options: [
-      'User-defined permissions',
-      'System-enforced labels determining access regardless of user preference',
-      'Role assignments only',
-      'No access restrictions'
+      'A small business with fewer than 20 employees',
+      'A military or intelligence organization requiring multi-level security with classified information at different sensitivity levels',
+      'A general-purpose web application with user-generated content',
+      'A public library offering internet access to patrons',
     ],
     correctAnswer: 1,
-    explanation: 'MAC uses security labels and classifications enforced by the system regardless of user preferences.',
-    topic: 'Access Control',
-    subtopic: 'MAC'
+    explanation: 'MAC is most appropriate in environments requiring strict, centrally enforced access based on security classifications (Top Secret, Secret, Confidential). Military and intelligence organizations use MAC to prevent unauthorized information flow between classification levels. MAC\'s rigidity makes it impractical for most commercial environments.',
   },
   {
     id: 'cisa5-b12-079',
@@ -1522,12 +1522,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Discretionary access control (DAC) allows:',
     options: [
+      'No access delegation',
       'Only system administrators to grant access',
-      'Resource owners to grant access at their discretion',
       'Only role-based access',
-      'No access delegation'
+      'Resource owners to grant access at their discretion',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DAC allows resource owners to grant access to their resources at their own discretion.',
     topic: 'Access Control',
     subtopic: 'DAC'
@@ -1542,11 +1542,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Federated identity management enables:',
     options: [
       'Only internal authentication',
-      'Cross-domain authentication using trusted identity providers',
+      'Only local accounts',
       'Only password management',
-      'Only local accounts'
+      'Cross-domain authentication using trusted identity providers',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Federation allows authentication credentials from trusted identity providers to be accepted across organizational boundaries.',
     topic: 'Access Control',
     subtopic: 'Federation'
@@ -1561,11 +1561,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Session management controls should:',
     options: [
       'Keep sessions active indefinitely',
-      'Limit session duration, enforce logout, and protect session tokens',
+      'Skip authentication checks',
       'Allow unlimited concurrent sessions',
-      'Skip authentication checks'
+      'Limit session duration, enforce logout, and protect session tokens',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Session controls include timeouts, logout enforcement, token protection, and limiting concurrent sessions.',
     topic: 'Access Control',
     subtopic: 'Session Management'
@@ -1579,12 +1579,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Web application firewalls (WAF) provide:',
     options: [
+      'Only encryption',
+      'Only authentication',
       'Only network filtering',
       'Application-layer protection against web attacks',
-      'Only authentication',
-      'Only encryption'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'WAFs filter HTTP traffic to protect against application-layer attacks like SQL injection and XSS.',
     topic: 'Network Security',
     subtopic: 'WAF'
@@ -1598,12 +1598,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'DMZ (demilitarized zone) placement isolates:',
     options: [
+      'Only development systems',
+      'Only database servers',
       'All internal systems',
       'Public-facing services from internal networks',
-      'Only database servers',
-      'Only development systems'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DMZ isolates public-facing services, providing a buffer between untrusted networks and the internal network.',
     topic: 'Network Security',
     subtopic: 'Network Architecture'
@@ -1618,11 +1618,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Micro-segmentation differs from traditional network segmentation because:',
     options: [
       'It uses larger segments',
-      'It provides granular, workload-level isolation and access control',
       'It only applies to cloud',
-      'It uses no firewalls'
+      'It uses no firewalls',
+      'It provides granular, workload-level isolation and access control',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Micro-segmentation provides granular isolation at the workload or application level rather than network zone level.',
     topic: 'Network Security',
     subtopic: 'Micro-segmentation'
@@ -1632,19 +1632,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Cryptography',
+    subtopic: 'Digital Certificates',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Digital certificates are used to:',
+    question: 'An organization issues digital certificates using an internal Certificate Authority (CA). The IS auditor should verify that the CA implements which critical security practice?',
     options: [
-      'Only encrypt data',
-      'Verify entity identity and enable secure communications',
-      'Only sign documents',
-      'Only store passwords'
+      'Issuing certificates with unlimited validity periods to reduce administrative overhead',
+      'Protecting the CA\'s root private key using an offline, air-gapped system or Hardware Security Module with strict access controls',
+      'Allowing all employees to issue certificates on demand',
+      'Using the same certificate for all organizational systems',
     ],
     correctAnswer: 1,
-    explanation: 'Digital certificates verify entity identity, enabling authentication and encrypted communications.',
-    topic: 'Cryptography',
-    subtopic: 'Digital Certificates'
+    explanation: 'The CA\'s root private key is the foundation of trust for all certificates issued. Compromise of the root key invalidates all certificates in the chain. The root CA should be offline (air-gapped) with its key stored in an HSM, using intermediate CAs for day-to-day certificate issuance.',
   },
   {
     id: 'cisa5-b12-086',
@@ -1655,12 +1655,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Certificate revocation occurs when:',
     options: [
-      'Certificates expire normally',
-      'Certificates are invalidated before expiration due to compromise or other reasons',
       'Certificates are renewed',
-      'PKI is decommissioned'
+      'Certificates expire normally',
+      'PKI is decommissioned',
+      'Certificates are invalidated before expiration due to compromise or other reasons',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Revocation invalidates certificates before expiration, typically due to key compromise, policy changes, or operational reasons.',
     topic: 'Cryptography',
     subtopic: 'Certificate Management'
@@ -1670,19 +1670,19 @@ const ALL_BATCH12: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Cryptography',
+    subtopic: 'Forward Secrecy',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'Perfect forward secrecy ensures:',
+    question: 'A security architect is evaluating TLS configurations. Why is Perfect Forward Secrecy (PFS) considered essential for protecting past communications?',
     options: [
-      'Keys never expire',
-      'Compromise of long-term keys does not compromise past session keys',
-      'Faster encryption',
-      'No authentication'
+      'PFS encrypts data using longer encryption keys than standard TLS',
+      'PFS uses ephemeral key pairs for each session, ensuring that compromise of the server\'s long-term private key cannot decrypt previously recorded sessions',
+      'PFS eliminates the need for certificate authorities',
+      'PFS works only with symmetric encryption algorithms',
     ],
     correctAnswer: 1,
-    explanation: 'Perfect forward secrecy uses ephemeral keys so compromise of long-term keys does not expose past communications.',
-    topic: 'Cryptography',
-    subtopic: 'Forward Secrecy'
+    explanation: 'Perfect Forward Secrecy generates unique ephemeral key pairs for each session using Diffie-Hellman exchange. Even if the server\'s long-term private key is later compromised, past recorded communications remain secure because the session keys (which were destroyed after use) cannot be derived from the long-term key.',
   },
   {
     id: 'cisa5-b12-088',
@@ -1694,11 +1694,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Hardware security modules (HSM) provide:',
     options: [
       'Only key storage',
-      'Tamper-resistant key generation, storage, and cryptographic operations',
+      'Only performance',
       'Only backup',
-      'Only performance'
+      'Tamper-resistant key generation, storage, and cryptographic operations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'HSMs are dedicated hardware providing tamper-resistant cryptographic key management and operations.',
     topic: 'Cryptography',
     subtopic: 'HSM'
@@ -1712,12 +1712,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Security baselines define:',
     options: [
+      'Optional improvements',
+      'Future goals only',
       'Maximum security',
       'Minimum security configurations for systems',
-      'Optional improvements',
-      'Future goals only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security baselines define minimum required security configurations for system types.',
     topic: 'Security Operations',
     subtopic: 'Configuration Management'
@@ -1731,12 +1731,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security hardening includes:',
     options: [
+      'Only antivirus',
       'Adding all features',
-      'Removing unnecessary services, applying patches, and restricting access',
       'Only firewall rules',
-      'Only antivirus'
+      'Removing unnecessary services, applying patches, and restricting access',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Hardening reduces attack surface by removing unnecessary services, applying patches, configuring securely, and restricting access.',
     topic: 'Security Operations',
     subtopic: 'Hardening'
@@ -1750,12 +1750,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Anomaly-based detection:',
     options: [
+      'Has no false positives',
+      'Only detects known threats',
       'Uses predefined signatures',
       'Identifies deviations from established normal behavior patterns',
-      'Only detects known threats',
-      'Has no false positives'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Anomaly detection identifies deviations from baselines of normal behavior, detecting unknown threats.',
     topic: 'Security Operations',
     subtopic: 'Detection Methods'
@@ -1769,12 +1769,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'APT (advanced persistent threat) is characterized by:',
     options: [
+      'Only malware',
+      'Only denial of service',
       'Quick, automated attacks',
       'Sophisticated, targeted, patient attacks often by nation-states',
-      'Only malware',
-      'Only denial of service'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'APTs are sophisticated, targeted attacks by well-resourced actors (often nation-states) who persist undetected over time.',
     topic: 'Security Threats',
     subtopic: 'APT'
@@ -1788,12 +1788,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Supply chain attacks target:',
     options: [
+      'Only networks',
+      'Only physical facilities',
       'Only end users',
       'Vendors or software to compromise downstream customers',
-      'Only networks',
-      'Only physical facilities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Supply chain attacks compromise vendors, software, or components to affect downstream customers.',
     topic: 'Security Threats',
     subtopic: 'Supply Chain Attacks'
@@ -1807,12 +1807,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'Tabletop exercises for incident response:',
     options: [
-      'Test actual systems',
-      'Walk through scenarios to test plans and identify gaps',
       'Replace all other testing',
-      'Are not valuable'
+      'Test actual systems',
+      'Are not valuable',
+      'Walk through scenarios to test plans and identify gaps',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Tabletops discuss scenarios to test response plans, clarify roles, and identify gaps without actual system activation.',
     topic: 'Incident Management',
     subtopic: 'IR Testing'
@@ -1826,12 +1826,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Eradication phase of incident response:',
     options: [
-      'Comes before containment',
-      'Removes threat actors and artifacts from the environment',
       'Is optional',
-      'Only involves backup'
+      'Comes before containment',
+      'Only involves backup',
+      'Removes threat actors and artifacts from the environment',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Eradication removes threats, malware, and artifacts from the environment after containment.',
     topic: 'Incident Management',
     subtopic: 'Incident Response'
@@ -1846,11 +1846,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Forensic imaging should:',
     options: [
       'Modify original evidence',
-      'Create bit-for-bit copies without altering originals',
+      'Be performed last',
       'Only copy selected files',
-      'Be performed last'
+      'Create bit-for-bit copies without altering originals',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Forensic imaging creates exact bit-for-bit copies for analysis while preserving original evidence integrity.',
     topic: 'Incident Management',
     subtopic: 'Digital Forensics'
@@ -1865,11 +1865,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Visitor management controls include:',
     options: [
       'Open access policies',
-      'Registration, escort requirements, and access limitations',
+      'Only weekday restrictions',
       'Only sign-in logs',
-      'Only weekday restrictions'
+      'Registration, escort requirements, and access limitations',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Visitor controls include registration, ID verification, escort requirements, and access restrictions.',
     topic: 'Physical Security',
     subtopic: 'Visitor Control'
@@ -1883,12 +1883,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Analysis',
     question: 'GDPR requirements include:',
     options: [
+      'Only marketing consent',
       'Only EU residents',
-      'Consent, data subject rights, breach notification, and DPO requirements',
       'Only cookies',
-      'Only marketing consent'
+      'Consent, data subject rights, breach notification, and DPO requirements',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'GDPR requires lawful basis for processing, data subject rights, breach notification, and data protection measures.',
     topic: 'Privacy',
     subtopic: 'GDPR'
@@ -1902,12 +1902,12 @@ const ALL_BATCH12: Question[] = [
     skillLevel: 'Application',
     question: 'Data minimization requires:',
     options: [
+      'Sharing all data',
+      'Keeping data forever',
       'Collecting maximum data',
       'Collecting only data necessary for the specified purpose',
-      'Keeping data forever',
-      'Sharing all data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Data minimization limits collection to data necessary and proportionate for the specified legitimate purpose.',
     topic: 'Privacy',
     subtopic: 'Privacy Principles'
@@ -1922,11 +1922,11 @@ const ALL_BATCH12: Question[] = [
     question: 'Cloud access security brokers (CASB) provide:',
     options: [
       'Only cloud storage',
-      'Visibility and control over cloud service usage and security',
       'Only authentication',
-      'Only encryption'
+      'Only encryption',
+      'Visibility and control over cloud service usage and security',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CASBs provide visibility, compliance, data security, and threat protection for cloud service usage.',
     topic: 'Cloud Security',
     subtopic: 'CASB'

@@ -16,10 +16,10 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Operational resilience focuses on:',
     options: [
-      'Only IT recovery',
+      'Only disaster recovery',
       'Ability to continue critical business services during disruptions',
       'Only backup systems',
-      'Only disaster recovery'
+      'Only IT recovery',
     ],
     correctAnswer: 1,
     explanation: 'Operational resilience focuses on maintaining critical business services during and after disruptions.',
@@ -35,12 +35,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Impact tolerances define:',
     options: [
-      'Recovery costs',
       'Maximum acceptable disruption to important business services',
+      'Vendor requirements',
       'Only IT metrics',
-      'Vendor requirements'
+      'Recovery costs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Impact tolerances define maximum tolerable disruption levels for important business services.',
     topic: 'Resilience',
     subtopic: 'Impact Tolerance'
@@ -54,12 +54,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Business process mapping for resilience identifies:',
     options: [
-      'Only IT systems',
       'Critical processes, dependencies, and single points of failure',
       'Only staff requirements',
-      'Only cost centers'
+      'Only cost centers',
+      'Only IT systems',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Process mapping identifies critical processes, their dependencies, and potential single points of failure.',
     topic: 'Business Continuity',
     subtopic: 'Process Mapping'
@@ -73,10 +73,10 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Third-party resilience requires:',
     options: [
-      'Only SLAs',
-      'Understanding provider dependencies and testing recovery capabilities',
       'Contractual terms only',
-      'Insurance only'
+      'Understanding provider dependencies and testing recovery capabilities',
+      'Insurance only',
+      'Only SLAs',
     ],
     correctAnswer: 1,
     explanation: 'Third-party resilience requires understanding dependencies and validating provider recovery capabilities.',
@@ -92,10 +92,10 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Scenario-based resilience testing should include:',
     options: [
-      'Only known risks',
-      'Severe but plausible scenarios including combination events',
       'Only minor disruptions',
-      'Only IT failures'
+      'Severe but plausible scenarios including combination events',
+      'Only IT failures',
+      'Only known risks',
     ],
     correctAnswer: 1,
     explanation: 'Resilience testing should include severe but plausible scenarios, including combination events.',
@@ -111,12 +111,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Communication plans during incidents should address:',
     options: [
-      'Only IT staff',
-      'Internal stakeholders, customers, regulators, and media',
       'Only executives',
-      'Only vendors'
+      'Only vendors',
+      'Internal stakeholders, customers, regulators, and media',
+      'Only IT staff',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Communication plans should address all stakeholders including employees, customers, regulators, and media.',
     topic: 'Incident Management',
     subtopic: 'Crisis Communication'
@@ -130,12 +130,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Major incident management differs from normal incidents by:',
     options: [
-      'Having same processes',
-      'Requiring dedicated incident commander and cross-functional coordination',
       'Being faster',
-      'Needing less documentation'
+      'Needing less documentation',
+      'Requiring dedicated incident commander and cross-functional coordination',
+      'Having same processes',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Major incidents require dedicated incident command, cross-functional coordination, and executive engagement.',
     topic: 'Incident Management',
     subtopic: 'Major Incidents'
@@ -149,12 +149,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'War rooms during major incidents provide:',
     options: [
-      'Only physical space',
-      'Centralized coordination, communication, and decision-making',
+      'Only documentation',
       'Only technical support',
-      'Only documentation'
+      'Centralized coordination, communication, and decision-making',
+      'Only physical space',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'War rooms provide centralized coordination, communication, and decision-making during major incidents.',
     topic: 'Incident Management',
     subtopic: 'War Room'
@@ -168,12 +168,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Incident classification criteria should include:',
     options: [
-      'Only technical impact',
-      'Business impact, urgency, and scope of affected services',
+      'Only system type',
       'Only response time',
-      'Only system type'
+      'Business impact, urgency, and scope of affected services',
+      'Only technical impact',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Classification should consider business impact, urgency, scope, and affected services/users.',
     topic: 'Incident Management',
     subtopic: 'Classification'
@@ -187,12 +187,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Service availability is calculated as:',
     options: [
-      'Uptime only',
       '(Agreed service time - Downtime) / Agreed service time × 100',
+      'Uptime minus maintenance',
       'Total hours - Outages',
-      'Uptime minus maintenance'
+      'Uptime only',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Availability = (Agreed service time - Downtime) / Agreed service time × 100%.',
     topic: 'IT Service Management',
     subtopic: 'Availability Calculation'
@@ -206,12 +206,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Planned maintenance windows should:',
     options: [
-      'Be random',
       'Be scheduled during low-impact periods with stakeholder notification',
+      'Be during peak hours',
       'Avoid user notification',
-      'Be during peak hours'
+      'Be random',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Maintenance windows should be during low-impact periods with advance stakeholder notification.',
     topic: 'IT Operations',
     subtopic: 'Maintenance Windows'
@@ -225,10 +225,10 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Standard changes require:',
     options: [
-      'Full CAB approval each time',
-      'Pre-approved procedures for low-risk, repeatable changes',
       'No documentation',
-      'Management approval each time'
+      'Pre-approved procedures for low-risk, repeatable changes',
+      'Management approval each time',
+      'Full CAB approval each time',
     ],
     correctAnswer: 1,
     explanation: 'Standard changes are pre-approved low-risk changes with documented procedures applied without individual CAB review.',
@@ -244,12 +244,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Post-implementation review of changes should assess:',
     options: [
-      'Only success',
       'Whether objectives were met and any lessons learned',
       'Only failures',
-      'Only costs'
+      'Only costs',
+      'Only success',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Post-implementation review assesses if objectives were met and captures lessons learned.',
     topic: 'Change Management',
     subtopic: 'PIR'
@@ -263,12 +263,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Batch job scheduling controls should include:',
     options: [
-      'Only start times',
-      'Dependencies, resource allocation, failure handling, and monitoring',
       'Only priorities',
-      'Only completion logs'
+      'Only completion logs',
+      'Dependencies, resource allocation, failure handling, and monitoring',
+      'Only start times',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Job scheduling requires managing dependencies, resources, failure handling, and monitoring.',
     topic: 'IT Operations',
     subtopic: 'Job Scheduling'
@@ -282,12 +282,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Database administration controls should include:',
     options: [
-      'Only backups',
-      'Access control, monitoring, performance tuning, and backup/recovery',
+      'Only schema design',
       'Only capacity',
-      'Only schema design'
+      'Access control, monitoring, performance tuning, and backup/recovery',
+      'Only backups',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'DBA controls include access control, activity monitoring, performance optimization, and backup/recovery.',
     topic: 'Data Management',
     subtopic: 'Database Administration'
@@ -301,12 +301,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Backup verification should include:',
     options: [
-      'Only completion status',
-      'Integrity checks and periodic restore testing',
+      'Only duration',
       'Only size verification',
-      'Only duration'
+      'Integrity checks and periodic restore testing',
+      'Only completion status',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Backup verification includes integrity checks and periodic restore testing to ensure recoverability.',
     topic: 'Data Management',
     subtopic: 'Backup Verification'
@@ -320,12 +320,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Off-site backup storage should:',
     options: [
-      'Be next door',
-      'Be sufficiently distant to survive regional disasters',
       'Be online only',
-      'Be at same facility'
+      'Be at same facility',
+      'Be sufficiently distant to survive regional disasters',
+      'Be next door',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Off-site storage should be sufficiently distant to survive regional disasters affecting primary site.',
     topic: 'Disaster Recovery',
     subtopic: 'Off-Site Storage'
@@ -339,12 +339,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Immutable backups protect against:',
     options: [
-      'Only accidental deletion',
-      'Ransomware and malicious modification by preventing changes',
+      'Only user errors',
       'Only hardware failure',
-      'Only user errors'
+      'Ransomware and malicious modification by preventing changes',
+      'Only accidental deletion',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Immutable backups cannot be modified or deleted for a defined period, protecting against ransomware.',
     topic: 'Data Management',
     subtopic: 'Immutable Backup'
@@ -358,10 +358,10 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Network operations center (NOC) responsibilities include:',
     options: [
-      'Only monitoring',
+      'Only help desk',
       'Monitoring, initial response, escalation, and coordination',
       'Only physical security',
-      'Only help desk'
+      'Only monitoring',
     ],
     correctAnswer: 1,
     explanation: 'NOC provides monitoring, initial response, escalation, and coordination for network operations.',
@@ -377,12 +377,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Event correlation reduces:',
     options: [
-      'All events',
       'Alert noise by identifying related events',
+      'Monitoring capability',
       'Only critical events',
-      'Monitoring capability'
+      'All events',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Event correlation identifies related events, reducing noise and enabling identification of root causes.',
     topic: 'IT Operations',
     subtopic: 'Event Correlation'
@@ -396,12 +396,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Alert thresholds should be:',
     options: [
-      'Set once and never changed',
       'Tuned based on baselines and adjusted to reduce false positives',
       'As sensitive as possible',
-      'Identical for all systems'
+      'Identical for all systems',
+      'Set once and never changed',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Thresholds should be tuned based on baselines and adjusted to balance detection with false positives.',
     topic: 'IT Operations',
     subtopic: 'Alert Thresholds'
@@ -415,12 +415,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Log retention periods should consider:',
     options: [
-      'Only storage costs',
       'Regulatory requirements, investigation needs, and operational use',
       'Only convenience',
-      'Only technical limits'
+      'Only technical limits',
+      'Only storage costs',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Log retention should consider regulatory requirements, investigation needs, and operational requirements.',
     topic: 'IT Operations',
     subtopic: 'Log Retention'
@@ -434,10 +434,10 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Time synchronization (NTP) is important for:',
     options: [
-      'Only scheduling',
-      'Log correlation, authentication, and forensic investigation',
       'Only backups',
-      'Only performance'
+      'Log correlation, authentication, and forensic investigation',
+      'Only performance',
+      'Only scheduling',
     ],
     correctAnswer: 1,
     explanation: 'Time synchronization is critical for log correlation, authentication protocols, and forensic investigations.',
@@ -453,12 +453,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'End-of-life (EOL) systems should be:',
     options: [
-      'Continued indefinitely',
-      'Identified, risk-assessed, and migrated or compensated',
+      'Only documented',
       'Ignored',
-      'Only documented'
+      'Identified, risk-assessed, and migrated or compensated',
+      'Continued indefinitely',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EOL systems should be identified, risk-assessed, and either migrated or protected with compensating controls.',
     topic: 'IT Operations',
     subtopic: 'EOL Management'
@@ -472,12 +472,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Capacity trending analysis helps:',
     options: [
-      'Only current status',
-      'Predict future capacity needs before they become critical',
       'Only historical review',
-      'Only cost analysis'
+      'Only cost analysis',
+      'Predict future capacity needs before they become critical',
+      'Only current status',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Trending analysis predicts future capacity needs enabling proactive planning before issues occur.',
     topic: 'IT Operations',
     subtopic: 'Capacity Trending'
@@ -491,12 +491,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Print management controls should address:',
     options: [
-      'Only paper usage',
       'Confidential printing, access control, and audit trails',
+      'Only capacity',
       'Only costs',
-      'Only capacity'
+      'Only paper usage',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Print management should address secure printing, access control, and audit trails for sensitive documents.',
     topic: 'IT Operations',
     subtopic: 'Print Management'
@@ -510,12 +510,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data center site selection considers:',
     options: [
-      'Only cost',
-      'Natural disasters, utilities, connectivity, and accessibility',
+      'Only proximity',
       'Only size',
-      'Only proximity'
+      'Natural disasters, utilities, connectivity, and accessibility',
+      'Only cost',
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Site selection considers natural disaster risk, utility availability, connectivity, and accessibility.',
     topic: 'Data Center',
     subtopic: 'Site Selection'
@@ -529,12 +529,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'UPS systems provide:',
     options: [
-      'Permanent power',
       'Short-term power during outages until generators start',
+      'Only monitoring',
       'Only surge protection',
-      'Only monitoring'
+      'Permanent power',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'UPS provides short-term power during outages, bridging until generators start or allowing graceful shutdown.',
     topic: 'Data Center',
     subtopic: 'UPS'
@@ -548,12 +548,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     skillLevel: 'Application',
     question: 'Generator testing should include:',
     options: [
-      'Only visual inspection',
       'Regular load testing to verify capability',
+      'Only automatic start',
       'Only fuel checks',
-      'Only automatic start'
+      'Only visual inspection',
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Generator testing should include regular load testing to verify the generator can handle required loads.',
     topic: 'Data Center',
     subtopic: 'Generator Testing'

@@ -16,12 +16,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'The PRIMARY goal of information security management is to:',
     options: [
+      'Achieve regulatory compliance',
+      'Implement the latest security technologies',
       'Eliminate all security risks',
       'Protect information assets in alignment with business objectives',
-      'Implement the latest security technologies',
-      'Achieve regulatory compliance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Information security management protects information assets in a manner that aligns with and supports business objectives, balancing security with operational needs.',
     topic: 'Security Management',
     subtopic: 'Security Goals'
@@ -35,12 +35,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'The three pillars of information security are:',
     options: [
+      'Prevention, detection, correction',
+      'Physical, technical, administrative',
       'People, process, technology',
       'Confidentiality, integrity, availability (CIA)',
-      'Prevention, detection, correction',
-      'Physical, technical, administrative'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'The CIA triad (Confidentiality, Integrity, Availability) represents the three fundamental pillars of information security.',
     topic: 'Security Fundamentals',
     subtopic: 'CIA Triad'
@@ -55,11 +55,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Data classification is important because it:',
     options: [
       'Reduces storage costs',
-      'Enables appropriate protection based on sensitivity',
       'Eliminates the need for encryption',
-      'Simplifies user access'
+      'Simplifies user access',
+      'Enables appropriate protection based on sensitivity',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Data classification enables organizations to apply appropriate protection based on data sensitivity, ensuring critical data receives adequate protection.',
     topic: 'Data Security',
     subtopic: 'Data Classification'
@@ -69,19 +69,19 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     courseId: 'cisa',
     section: 'CISA5',
     blueprintArea: 'CISA5-1',
+    topic: 'Access Control',
+    subtopic: 'Least Privilege',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: 'The principle of least privilege means:',
+    question: 'An organization implementing least privilege discovers that several database administrators have system-level access they do not need for their daily responsibilities. What is the MOST appropriate corrective action?',
     options: [
-      'Users have no access to systems',
-      'Users have only the access needed to perform their job',
-      'All users have the same access',
-      'Access is reviewed annually'
+      'Terminate the database administrators immediately',
+      'Restrict their access to only the specific databases and functions required for their assigned duties',
+      'Allow the access to remain since they are trusted employees',
+      'Implement compensating controls by adding additional logging only',
     ],
     correctAnswer: 1,
-    explanation: 'Least privilege ensures users have only the minimum access rights necessary to perform their job functions, reducing the risk of unauthorized access.',
-    topic: 'Access Control',
-    subtopic: 'Least Privilege'
+    explanation: 'Least privilege requires restricting access rights to the minimum necessary for each user\'s job function. DBA access should be scoped to specific databases and operations they manage, not system-wide administrative privileges. Compensating controls like logging are supplementary, not substitutes for proper access restriction.',
   },
   {
     id: 'cisa5-007',
@@ -92,12 +92,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Mandatory access control (MAC) is characterized by:',
     options: [
-      'User-controlled permissions',
-      'System-enforced access based on security labels',
       'Role-based permissions',
-      'No access restrictions'
+      'User-controlled permissions',
+      'No access restrictions',
+      'System-enforced access based on security labels',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MAC is enforced by the system based on security labels (classifications) assigned to subjects and objects. Users cannot override these controls.',
     topic: 'Access Control',
     subtopic: 'MAC'
@@ -112,11 +112,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Role-based access control (RBAC) assigns access based on:',
     options: [
       'User identity',
-      'Job function or role',
+      'Time of day',
       'Data classification',
-      'Time of day'
+      'Job function or role',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'RBAC assigns access permissions based on the user\'s job function or role, simplifying access management and ensuring consistency.',
     topic: 'Access Control',
     subtopic: 'RBAC'
@@ -131,11 +131,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Multi-factor authentication requires factors from:',
     options: [
       'Two passwords',
-      'Two or more different authentication categories',
+      'Biometrics only',
       'The same authentication category',
-      'Biometrics only'
+      'Two or more different authentication categories',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'MFA requires authentication factors from different categories: something you know (password), something you have (token), something you are (biometrics).',
     topic: 'Authentication',
     subtopic: 'MFA'
@@ -149,12 +149,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Single sign-on (SSO) provides:',
     options: [
+      'Reduced security',
       'Stronger authentication',
-      'Access to multiple systems with one authentication',
       'Elimination of passwords',
-      'Reduced security'
+      'Access to multiple systems with one authentication',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SSO allows users to authenticate once and access multiple systems without re-authenticating, improving user experience and reducing password fatigue.',
     topic: 'Authentication',
     subtopic: 'SSO'
@@ -169,11 +169,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Identity and access management (IAM) encompasses:',
     options: [
       'Only password management',
-      'Provisioning, authentication, authorization, and review processes',
+      'Only network access',
       'Only user creation',
-      'Only network access'
+      'Provisioning, authentication, authorization, and review processes',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'IAM includes all processes for managing user identities: provisioning, authentication, authorization, access review, and deprovisioning.',
     topic: 'Access Control',
     subtopic: 'IAM'
@@ -187,12 +187,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'User access reviews should be performed to:',
     options: [
+      'Increase user productivity',
+      'Satisfy audit requirements only',
       'Reduce IT workload',
       'Ensure access remains appropriate and remove unnecessary access',
-      'Increase user productivity',
-      'Satisfy audit requirements only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Access reviews ensure that user access remains appropriate for current job functions and that unnecessary access is removed, reducing the risk of unauthorized access.',
     topic: 'Access Control',
     subtopic: 'Access Review'
@@ -206,12 +206,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Encryption protects data by:',
     options: [
+      'Moving data offsite',
+      'Compressing data',
       'Deleting sensitive data',
       'Converting data into an unreadable format without the key',
-      'Compressing data',
-      'Moving data offsite'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Encryption transforms data into an unreadable format that can only be decrypted with the appropriate key, protecting confidentiality.',
     topic: 'Cryptography',
     subtopic: 'Encryption'
@@ -225,12 +225,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Symmetric encryption uses:',
     options: [
+      'Public keys only',
+      'No keys',
       'Different keys for encryption and decryption',
       'The same key for encryption and decryption',
-      'No keys',
-      'Public keys only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Symmetric encryption uses the same key for both encryption and decryption, making key distribution a challenge but offering faster performance.',
     topic: 'Cryptography',
     subtopic: 'Symmetric Encryption'
@@ -245,11 +245,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Asymmetric encryption uses:',
     options: [
       'The same key for both operations',
-      'A public key and a private key',
       'Only passwords',
-      'Hash functions'
+      'Hash functions',
+      'A public key and a private key',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Asymmetric encryption uses a key pair: a public key for encryption and a private key for decryption, solving the key distribution problem.',
     topic: 'Cryptography',
     subtopic: 'Asymmetric Encryption'
@@ -264,11 +264,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Digital signatures provide:',
     options: [
       'Encryption of data',
-      'Authentication and non-repudiation',
       'Data compression',
-      'Access control'
+      'Access control',
+      'Authentication and non-repudiation',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Digital signatures provide authentication (verifying sender identity), integrity (detecting changes), and non-repudiation (sender cannot deny sending).',
     topic: 'Cryptography',
     subtopic: 'Digital Signatures'
@@ -282,12 +282,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Public key infrastructure (PKI) provides:',
     options: [
+      'Backup services',
       'Physical security',
-      'Framework for managing digital certificates',
       'Network segmentation',
-      'Backup services'
+      'Framework for managing digital certificates',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PKI provides a framework for issuing, managing, and validating digital certificates that bind public keys to identities.',
     topic: 'Cryptography',
     subtopic: 'PKI'
@@ -301,12 +301,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'A firewall controls traffic based on:',
     options: [
+      'Network speed',
       'User preferences',
-      'Rules defining allowed and blocked traffic',
       'Random selection',
-      'Network speed'
+      'Rules defining allowed and blocked traffic',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Firewalls filter network traffic based on predefined rules that specify which traffic is allowed or blocked based on source, destination, ports, and protocols.',
     topic: 'Network Security',
     subtopic: 'Firewalls'
@@ -320,12 +320,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'An intrusion detection system (IDS) is designed to:',
     options: [
+      'Manage user access',
       'Block all network traffic',
-      'Detect and alert on suspicious activity',
       'Encrypt network communications',
-      'Manage user access'
+      'Detect and alert on suspicious activity',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'An IDS monitors network or system activity for suspicious behavior and generates alerts when potential intrusions are detected.',
     topic: 'Network Security',
     subtopic: 'IDS'
@@ -340,11 +340,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'An intrusion prevention system (IPS) differs from an IDS in that it:',
     options: [
       'Only monitors traffic',
-      'Can automatically block detected threats',
+      'Works only on endpoints',
       'Does not generate alerts',
-      'Works only on endpoints'
+      'Can automatically block detected threats',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Unlike IDS which only detects and alerts, IPS can automatically take action to block or prevent detected threats.',
     topic: 'Network Security',
     subtopic: 'IPS'
@@ -358,12 +358,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Network segmentation improves security by:',
     options: [
+      'Simplifying network management',
       'Increasing network speed',
-      'Limiting the spread of attacks and isolating sensitive systems',
       'Reducing hardware costs',
-      'Simplifying network management'
+      'Limiting the spread of attacks and isolating sensitive systems',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Network segmentation divides networks into separate zones, limiting attack spread, isolating sensitive systems, and enabling more granular access control.',
     topic: 'Network Security',
     subtopic: 'Segmentation'
@@ -377,12 +377,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'A virtual private network (VPN) provides:',
     options: [
+      'Antivirus protection',
+      'Faster internet speeds',
       'Physical network isolation',
       'Encrypted communications over public networks',
-      'Faster internet speeds',
-      'Antivirus protection'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'A VPN creates an encrypted tunnel for communications over public networks, providing confidentiality and secure remote access.',
     topic: 'Network Security',
     subtopic: 'VPN'
@@ -396,12 +396,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Malware protection should include:',
     options: [
+      'Only network controls',
+      'Annual scanning',
       'Only antivirus software',
       'Multiple layers including prevention, detection, and response',
-      'Only network controls',
-      'Annual scanning'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Effective malware protection uses multiple layers: preventive controls, detection mechanisms, and response capabilities for defense in depth.',
     topic: 'Endpoint Security',
     subtopic: 'Malware Protection'
@@ -416,11 +416,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Vulnerability management includes:',
     options: [
       'Only patching systems',
-      'Identification, assessment, prioritization, and remediation of vulnerabilities',
       'Only scanning for vulnerabilities',
-      'Only reporting to management'
+      'Only reporting to management',
+      'Identification, assessment, prioritization, and remediation of vulnerabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Vulnerability management is a continuous process of identifying, assessing, prioritizing, and remediating security vulnerabilities.',
     topic: 'Security Operations',
     subtopic: 'Vulnerability Management'
@@ -434,12 +434,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Patch management is important because it:',
     options: [
-      'Improves system performance',
-      'Addresses known security vulnerabilities',
       'Reduces storage requirements',
-      'Simplifies user training'
+      'Improves system performance',
+      'Simplifies user training',
+      'Addresses known security vulnerabilities',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Patch management addresses known security vulnerabilities by applying vendor-provided fixes, reducing the attack surface.',
     topic: 'Security Operations',
     subtopic: 'Patch Management'
@@ -453,12 +453,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Security awareness training should be:',
     options: [
-      'Provided only to IT staff',
-      'Provided to all employees and updated regularly',
       'A one-time event',
-      'Optional for management'
+      'Provided only to IT staff',
+      'Optional for management',
+      'Provided to all employees and updated regularly',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security awareness training should be provided to all employees and updated regularly to address evolving threats and reinforce security practices.',
     topic: 'Security Management',
     subtopic: 'Security Awareness'
@@ -473,11 +473,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Security incident response should include:',
     options: [
       'Only technical remediation',
-      'Detection, containment, eradication, recovery, and lessons learned',
+      'Only restoring from backup',
       'Only reporting to management',
-      'Only restoring from backup'
+      'Detection, containment, eradication, recovery, and lessons learned',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Incident response includes detection, containment, eradication, recovery, and post-incident review for continuous improvement.',
     topic: 'Incident Response',
     subtopic: 'IR Process'
@@ -492,11 +492,11 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     question: 'Physical security controls include:',
     options: [
       'Only guards',
-      'Barriers, access controls, surveillance, and environmental protections',
+      'Only cameras',
       'Only locks',
-      'Only cameras'
+      'Barriers, access controls, surveillance, and environmental protections',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Physical security includes multiple layers: barriers, access controls (badges, biometrics), surveillance (cameras), environmental controls, and security personnel.',
     topic: 'Physical Security',
     subtopic: 'Physical Controls'
@@ -510,12 +510,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Social engineering attacks target:',
     options: [
+      'Physical barriers',
+      'Network infrastructure',
       'System vulnerabilities',
       'Human psychology to bypass security controls',
-      'Network infrastructure',
-      'Physical barriers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Social engineering exploits human psychology rather than technical vulnerabilities, manipulating people into revealing information or taking harmful actions.',
     topic: 'Security Threats',
     subtopic: 'Social Engineering'
@@ -529,12 +529,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Data loss prevention (DLP) controls:',
     options: [
+      'Only classify data',
       'Only encrypt data',
-      'Monitor and prevent unauthorized data exfiltration',
       'Only backup data',
-      'Only classify data'
+      'Monitor and prevent unauthorized data exfiltration',
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'DLP solutions monitor data in motion, at rest, and in use to detect and prevent unauthorized transmission of sensitive data outside the organization.',
     topic: 'Data Security',
     subtopic: 'DLP'
@@ -548,12 +548,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Privacy controls should ensure:',
     options: [
+      'No data is collected',
+      'Only IT has access to personal data',
       'All data is public',
       'Personal information is collected, used, and protected appropriately',
-      'No data is collected',
-      'Only IT has access to personal data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Privacy controls ensure personal information is collected with consent, used for stated purposes, protected appropriately, and handled in compliance with regulations.',
     topic: 'Privacy',
     subtopic: 'Privacy Controls'
@@ -567,12 +567,12 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     skillLevel: 'Analysis',
     question: 'Security metrics should:',
     options: [
+      'Only count security incidents',
+      'Be reported annually',
       'Be kept confidential from management',
       'Measure the effectiveness of security controls',
-      'Only count security incidents',
-      'Be reported annually'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Security metrics should measure the effectiveness of security controls using meaningful, actionable indicators that demonstrate security posture and trends.',
     topic: 'Security Management',
     subtopic: 'Security Metrics'

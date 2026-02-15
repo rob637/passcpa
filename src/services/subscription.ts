@@ -774,6 +774,9 @@ export function useSubscription() {
   // Force a refresh of subscription data (e.g., after starting a trial)
   const refreshSubscription = () => setRefreshKey(k => k + 1);
 
+  // Track previous courseId to detect explicit course switches (not initialization)
+  const prevCourseIdRef = useRef<string | null>(null);
+
   useEffect(() => {
     async function fetchSubscription() {
       if (!user) {
@@ -784,6 +787,7 @@ export function useSubscription() {
         setTrialDaysRemaining(0);
         setTrialExpired(false);
         setLoading(false);
+        prevCourseIdRef.current = null;
         return;
       }
 
@@ -791,18 +795,20 @@ export function useSubscription() {
       try {
         let sub = await subscriptionService.getUserSubscription(user.uid);
         
-        // Create free subscription with trial if none exists
+        // Create free subscription with trial if none exists (first signup only)
         if (!sub) {
           sub = await subscriptionService.createFreeSubscription(user.uid, activeCourseId);
-        } else {
-          // Grant trial for the active course if user hasn't had one for it
-          const upgraded = await subscriptionService.grantTrialIfEligible(user.uid, activeCourseId);
-          if (upgraded) {
-            sub = upgraded;
-          }
         }
+        // NOTE: We no longer auto-grant trials when activeCourseId changes.
+        // Trials for new exams are started explicitly via CourseSelector.handleSelect()
+        // which calls startExamTrial(). This prevents accidental trial creation
+        // during initialization race conditions (e.g., CourseProvider briefly
+        // defaulting to CPA before detecting the correct course from profile).
         
         setSubscription(sub);
+        
+        // Track courseId for future reference
+        prevCourseIdRef.current = activeCourseId;
         
         // === Per-exam trial status for the ACTIVE course ===
         const examTrialStatus = subscriptionService.getExamTrialStatus(sub, activeCourseId);

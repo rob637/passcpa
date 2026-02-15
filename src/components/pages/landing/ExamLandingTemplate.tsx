@@ -352,7 +352,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               {config.examParts.map((part, idx) => (
                 <Link 
                   key={idx}
-                  to={`${config.registerPath}?section=${part.part}`}
+                  to={`${config.registerPath}&section=${part.part}`}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 transition-all cursor-pointer group"
                 >
                   <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-3 py-1 rounded-full text-sm font-semibold mb-3`}>

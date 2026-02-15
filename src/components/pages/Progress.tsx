@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
+import { FEATURES } from '../../config/featureFlags';
 import {
   TrendingUp,
   Target,
@@ -1027,7 +1028,7 @@ const Progress: React.FC = () => {
             </div>
 
             {/* Community Leaderboard Widget */}
-            <Leaderboard compact />
+            {FEATURES.community && <Leaderboard compact />}
           </div>
         </div>
       </div>

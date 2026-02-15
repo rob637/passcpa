@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FEATURES } from '../../config/featureFlags';
 import {
   Settings,
   ChevronRight,
@@ -638,21 +639,23 @@ const You: React.FC = () => {
           <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
-        <Link
-          to="/community"
-          className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-              <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+        {FEATURES.community && (
+          <Link
+            to="/community"
+            className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+              </div>
+              <div>
+                <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>
+                <p className="text-xs text-slate-600 dark:text-slate-400">Leaderboard, compare with other candidates</p>
+              </div>
             </div>
-            <div>
-              <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>
-              <p className="text-xs text-slate-600 dark:text-slate-400">Leaderboard, compare with other candidates</p>
-            </div>
-          </div>
-          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-        </Link>
+            <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+          </Link>
+        )}
 
         <Link
           to="/settings"

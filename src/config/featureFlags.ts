@@ -8,6 +8,7 @@ export const FEATURES = {
   blueprint2026Preview: true, // Allow users to toggle 2026 content preview
   offlineMode: true,
   gamification: true, // Streaks, points
+  community: false, // Community leaderboard - enable when user base is larger
 };
 
 /**

@@ -186,12 +186,11 @@ describe('Leaderboard', () => {
       });
     });
 
-    it('should show View All link', async () => {
+    it('should hide View All link when community feature is disabled', async () => {
       render(<Leaderboard compact />);
 
       await waitFor(() => {
-        const viewAllLink = screen.getByText('View All').closest('a');
-        expect(viewAllLink).toHaveAttribute('href', '/community');
+        expect(screen.queryByText('View All')).not.toBeInTheDocument();
       });
     });
 

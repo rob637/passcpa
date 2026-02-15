@@ -122,6 +122,7 @@ const Flashcards: React.FC = () => {
 
   // Ref for scrolling to top of card on navigation (mobile fix)
   const cardTopRef = useRef<HTMLDivElement>(null);
+  const cardContentRef = useRef<HTMLDivElement>(null);
 
   // Load flashcards
   useEffect(() => {
@@ -285,6 +286,9 @@ const Flashcards: React.FC = () => {
 
   // Helper to scroll to top of card (mobile fix)
   const scrollToCardTop = useCallback(() => {
+    if (cardContentRef.current) {
+      cardContentRef.current.scrollTop = 0;
+    }
     if (cardTopRef.current) {
       cardTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
     }
@@ -558,14 +562,15 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div ref={cardTopRef} className="flex-1 flex items-start sm:items-center justify-center p-4 pt-2">
+      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2">
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           {showBothSides ? (
             /* Both-sides view — no flip, front + back stacked */
             <div
+              ref={cardContentRef}
               data-testid="flashcard"
-              className="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
+              className="w-full max-h-[calc(100vh-280px)] overflow-y-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
             >
               {/* Front section */}
               <div>

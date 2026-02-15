@@ -179,9 +179,9 @@ export const CPA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 449,
-    monthly: 49,
+    monthly: 59,
     founderAnnual: 249,
-    founderMonthly: 21,
+    founderMonthly: 29,
   },
   
   notices: [
@@ -251,9 +251,9 @@ export const EA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 249,
-    monthly: 29,
+    monthly: 35,
     founderAnnual: 149,
-    founderMonthly: 13,
+    founderMonthly: 19,
   },
 
   examParts: [
@@ -315,9 +315,9 @@ export const CMA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 349,
-    monthly: 39,
+    monthly: 49,
     founderAnnual: 199,
-    founderMonthly: 17,
+    founderMonthly: 25,
   },
   
   examParts: [
@@ -379,9 +379,9 @@ export const CIA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 249,
-    monthly: 29,
+    monthly: 35,
     founderAnnual: 149,
-    founderMonthly: 13,
+    founderMonthly: 19,
   },
 
   examParts: [
@@ -443,9 +443,9 @@ export const CFP_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 349,
-    monthly: 39,
+    monthly: 49,
     founderAnnual: 199,
-    founderMonthly: 17,
+    founderMonthly: 25,
   },
   
   examParts: [
@@ -513,9 +513,9 @@ export const CISA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 349,
-    monthly: 39,
+    monthly: 49,
     founderAnnual: 199,
-    founderMonthly: 17,
+    founderMonthly: 25,
   },
   
   examParts: [

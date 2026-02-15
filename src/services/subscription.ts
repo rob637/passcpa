@@ -103,18 +103,18 @@ export const founderDaysRemaining = (): number => {
   return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
 };
 
-// Per-exam pricing — 3 price bands
-// Band 1 (CPA): $49/mo, $449/yr — Founder: $249/yr (~$21/mo)
-// Band 2 (CMA, CFP, CISA): $39/mo, $349/yr — Founder: $199/yr (~$17/mo)
-// Band 3 (EA, CIA): $29/mo, $249/yr — Founder: $149/yr (~$13/mo)
+// Per-exam pricing — 3 price bands (40%+ annual savings to drive conversions)
+// Band 1 (CPA): $59/mo, $449/yr (37% savings) — Founder: $249/yr, $29/mo (28% savings)
+// Band 2 (CMA, CFP, CISA): $49/mo, $349/yr (41% savings) — Founder: $199/yr, $25/mo (33% savings)
+// Band 3 (EA, CIA): $35/mo, $249/yr (41% savings) — Founder: $149/yr, $19/mo (35% savings)
 // Founder: 300 seats per exam, 2-year rate lock, window closes Apr 30, 2026
 export const EXAM_PRICING = {
-  cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 21 },
-  ea: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 13 },
-  cma: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
-  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 13 },
-  cfp: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
-  cisa: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
+  cpa: { annual: 449, monthly: 59, founderAnnual: 249, founderMonthly: 29 },
+  ea: { annual: 249, monthly: 35, founderAnnual: 149, founderMonthly: 19 },
+  cma: { annual: 349, monthly: 49, founderAnnual: 199, founderMonthly: 25 },
+  cia: { annual: 249, monthly: 35, founderAnnual: 149, founderMonthly: 19 },
+  cfp: { annual: 349, monthly: 49, founderAnnual: 199, founderMonthly: 25 },
+  cisa: { annual: 349, monthly: 49, founderAnnual: 199, founderMonthly: 25 },
 } as const;
 
 // Founder seat limits per exam

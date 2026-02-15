@@ -83,6 +83,12 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin(); // Only admin can view/manage
     }
 
+    // Announcements - admin write, authenticated read
+    match /announcements/{announcementId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
     // Feedback - authenticated write, admin read
     match /feedback/{feedbackId} {
       allow create: if isAuthenticated();

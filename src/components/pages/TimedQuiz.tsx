@@ -786,7 +786,7 @@ const TimedQuiz: React.FC = () => {
 
   // Active Quiz Screen
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
+    <div className="bg-slate-50 dark:bg-slate-900 flex flex-col">
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3 sticky top-0 z-10">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
@@ -854,7 +854,7 @@ const TimedQuiz: React.FC = () => {
       )}
 
       {/* Question */}
-      <div ref={questionTopRef} className="flex-1 p-4">
+      <div ref={questionTopRef} className="p-4">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-4">
             <div className="text-xs text-primary-600 dark:text-primary-400 font-medium mb-2">
@@ -895,7 +895,7 @@ const TimedQuiz: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-4 py-3 sticky bottom-0 z-10">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <Button
             variant="secondary"

@@ -9,10 +9,12 @@ export interface MnemonicFlashcard {
   id: string;
   front: string;
   back: string;
-  category: string;
+  category?: string;
   tags: string[];
   section: string;
   type: string;
+  topic?: string;
+  difficulty?: 'easy' | 'medium' | 'hard';
   mnemonic?: string;
 }
 

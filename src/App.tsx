@@ -1,4 +1,4 @@
-import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
+import React, { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
@@ -131,6 +131,12 @@ const ScrollToTop = () => {
   }, [pathname]);
   
   return null;
+};
+
+// Force remount when course changes (prevents stale data in session-based components)
+const CourseKeyed = ({ children }: { children: JSX.Element }) => {
+  const { courseId } = useCourse();
+  return <React.Fragment key={courseId}>{children}</React.Fragment>;
 };
 
 // Protected Route Component
@@ -659,7 +665,9 @@ function App() {
                     path="/practice"
                     element={
                       <PremiumPage>
-                        <Practice />
+                        <CourseKeyed>
+                          <Practice />
+                        </CourseKeyed>
                       </PremiumPage>
                     }
                   />

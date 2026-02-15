@@ -14,6 +14,8 @@
  */
 
 import { CBQ } from '../../../types';
+import { CMA1_CBQS_BATCH2 } from './cma1-cbq-batch2';
+import { CMA2_CBQS_BATCH2 } from './cma2-cbq-batch2';
 
 /**
  * CMA Part 1 CBQs - Financial Planning, Performance, and Analytics
@@ -499,9 +501,14 @@ As the CFO of MidWest Manufacturing, you are analyzing the financial performance
 ];
 
 /**
- * All CMA CBQs
+ * All CMA CBQs (4 inline + 16 from batch2 files = 20 total)
  */
-export const ALL_CMA_CBQS: CBQ[] = [...CMA1_CBQS, ...CMA2_CBQS];
+export const ALL_CMA_CBQS: CBQ[] = [
+  ...CMA1_CBQS,
+  ...CMA1_CBQS_BATCH2,
+  ...CMA2_CBQS,
+  ...CMA2_CBQS_BATCH2,
+];
 
 /**
  * Get CBQs by section

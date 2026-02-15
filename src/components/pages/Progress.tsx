@@ -337,6 +337,9 @@ const Progress: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy() as any;
   const { courseId, course } = useCourse();
+  // CISA and CFP are single-exam courses where all sections are tested on the same day
+  const SINGLE_EXAM_COURSES = ['cisa', 'cfp'];
+  const isSingleExamCourse = SINGLE_EXAM_COURSES.includes(courseId);
   const [timeRange, setTimeRange] = useState('week');
   const [weeklyActivity, setWeeklyActivity] = useState<WeeklyActivity[]>([]);
   const [topicPerformance, setTopicPerformance] = useState<TopicStat[]>([]);
@@ -359,8 +362,18 @@ const Progress: React.FC = () => {
   
   // Study Plan - use getExamDate helper for multi-course support
   const examDate = getExamDate(userProfile, currentSection, courseId);
-  // Only show study plan if we have a valid exam date for THIS course
-  const studyPlan = examDate ? generateStudyPlan(currentSection, examDate) : null;
+  // Derive study plan start date from user's account creation
+  const userStartDate = userProfile?.createdAt 
+    ? (userProfile.createdAt instanceof Date 
+        ? userProfile.createdAt 
+        : 'seconds' in (userProfile.createdAt as any) 
+          ? new Date((userProfile.createdAt as any).seconds * 1000) 
+          : undefined)
+    : undefined;
+  // Compute study plan with real lesson count (re-computed when totalLessons loads)
+  const studyPlan = examDate 
+    ? generateStudyPlan(currentSection, examDate, userStartDate, overallStats.totalLessons || undefined) 
+    : null;
 
   // Load real data from Firestore
   useEffect(() => {
@@ -391,11 +404,14 @@ const Progress: React.FC = () => {
             if (logSnap.exists()) {
               const data = logSnap.data();
               
-              // Filter activities by current section for section-specific stats
+              // Filter activities by section(s)
               const activities = data.activities || [];
+              const allSectionIds = isSingleExamCourse 
+                ? course.sections.map(s => s.id) 
+                : [currentSection];
               const sectionActivities = activities.filter(
                 (a: { section?: string; type?: string }) => 
-                  a.section === currentSection || 
+                  allSectionIds.includes(a.section || '') ||
                   // Include legacy activities without section
                   (!a.section && a.type === 'mcq')
               );
@@ -442,10 +458,10 @@ const Progress: React.FC = () => {
         );
         setWeeklyActivity(dailyData);
 
-        // Get topic performance filtered by current section
+        // Get topic performance — for single-exam courses, get ALL sections
         let topicsData: TopicStat[] = [];
         if (getTopicPerformance) {
-            topicsData = await getTopicPerformance(currentSection);
+            topicsData = await getTopicPerformance(isSingleExamCourse ? undefined : currentSection);
         }
         setTopicPerformance(topicsData);
 
@@ -453,31 +469,47 @@ const Progress: React.FC = () => {
         let lessonsCompletedCount = 0;
         if (getLessonProgress) {
           const lessonProgress = await getLessonProgress();
-          // Only count lessons for the current course AND section
           lessonsCompletedCount = Object.values(lessonProgress).filter(
             (lesson: any) => {
-              // Must match current section
+              const isCompleted = lesson.status === 'completed' || lesson.completedAt;
+              if (!isCompleted) return false;
+              // For single-exam courses (CISA/CFP), count ALL sections (one exam day)
+              if (isSingleExamCourse) {
+                return lesson.courseId === courseId || 
+                       (lesson.section && lesson.section.toUpperCase().startsWith(courseId?.toUpperCase() || ''));
+              }
+              // For multi-exam courses, filter by specific section
               if (lesson.section !== currentSection) return false;
-              // If courseId is stored, it must match current course
               if (lesson.courseId && lesson.courseId !== courseId) return false;
               return true;
             }
           ).length;
         }
 
-        // Get total lessons for user's section
+        // Get total lessons for section (or all sections for single-exam courses)
         const allLessons = await fetchAllLessons(courseId);
-        const sectionLessons = allLessons.filter(l => l.section === currentSection);
-        // If no lessons uploaded for section, default to 0 to avoid misleading progress
+        const sectionLessons = isSingleExamCourse
+          ? allLessons // All lessons count for single-exam courses
+          : allLessons.filter(l => l.section === currentSection);
         const totalLessonsCount = sectionLessons.length;
 
-        // Get TBS history for section
-        const tbsHistory = await getTBSHistory(user.uid, currentSection);
-        const tbsCompletedCount = tbsHistory.length;
+        // Get TBS history — for single-exam courses, aggregate all sections
+        let tbsCompletedCount = 0;
+        if (isSingleExamCourse) {
+          const allTbs = await Promise.all(
+            course.sections.map(s => getTBSHistory(user.uid, s.id))
+          );
+          tbsCompletedCount = allTbs.reduce((sum, h) => sum + h.length, 0);
+        } else {
+          const tbsHistory = await getTBSHistory(user.uid, currentSection);
+          tbsCompletedCount = tbsHistory.length;
+        }
 
         // Calculate unit stats for Units Report (Becker-style)
-        const sectionConfig = course.sections.find(s => s.id === currentSection);
-        const blueprintAreas = sectionConfig?.blueprintAreas || [];
+        // For single-exam courses, show ALL sections' blueprint areas
+        const blueprintAreas = isSingleExamCourse
+          ? course.sections.flatMap(s => s.blueprintAreas || [])
+          : (course.sections.find(s => s.id === currentSection)?.blueprintAreas || []);
         
         // Get lesson progress for mapping
         let lessonProgressData: Record<string, any> = {};
@@ -675,19 +707,10 @@ const Progress: React.FC = () => {
         
       {/* Study Plan Overview (New Feature) */}
       {studyPlan && (() => {
-        // Pass user's createdAt as startDate so pace is calculated from signup, not today
-        const userStartDate = userProfile?.createdAt 
-          ? (userProfile.createdAt instanceof Date 
-              ? userProfile.createdAt 
-              : 'seconds' in (userProfile.createdAt as any) 
-                ? new Date((userProfile.createdAt as any).seconds * 1000) 
-                : undefined)
-          : undefined;
         const paceInfo = calculatePaceStatus(
           studyPlan, 
           overallStats.lessonsCompleted, 
-          overallStats.totalLessons,
-          userStartDate
+          overallStats.totalLessons
         );
         
         const paceStyles: Record<PaceStatus, { bg: string; text: string; icon: string }> = {
@@ -705,7 +728,7 @@ const Progress: React.FC = () => {
             <div>
               <h2 className="text-xl font-bold flex items-center gap-2">
                 <Target className="w-6 h-6 text-primary-400" />
-                Study Plan: {sectionInfo?.name ?? currentSection}
+                Study Plan: {isSingleExamCourse ? course.shortName : (sectionInfo?.name ?? currentSection)}
               </h2>
               <p className="text-slate-400 text-sm mt-1">
                 Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
@@ -713,7 +736,7 @@ const Progress: React.FC = () => {
             </div>
             <div className="text-right hidden sm:block">
               <div className="text-3xl font-bold text-primary-400">{studyPlan.modulesPerDay}</div>
-              <div className="text-xs text-slate-400">Modules / Day</div>
+              <div className="text-xs text-slate-400">Lessons / Day</div>
             </div>
           </div>
           
@@ -761,7 +784,7 @@ const Progress: React.FC = () => {
       })()}
       
         {/* Units Report - Becker-style detailed breakdown */}
-        <UnitsReport unitStats={unitStats} section={currentSection} />
+        <UnitsReport unitStats={unitStats} section={isSingleExamCourse ? courseId.toUpperCase() : currentSection} />
       
         {/* Blueprint Analytics - Advanced Mastery Analysis */}
         {blueprintAnalytics.totalAreas > 0 && (

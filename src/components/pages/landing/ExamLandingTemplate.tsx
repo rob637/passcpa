@@ -740,7 +740,7 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               
               {billingInterval === 'annual' && (
                 <p className="text-white/80 text-sm">
-                  Just ${(currentPrice / 12).toFixed(0)}/month • Save {savings}%
+                  Just ${isFounderWindow ? pricing.founderMonthly : pricing.monthly}/month • Save {savings}%
                 </p>
               )}
               

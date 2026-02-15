@@ -3,7 +3,7 @@
  * 25-question assessment covering all 5 CISA domains to identify knowledge gaps.
  * Single exam format — no sections, just domains.
  */
-import type { DiagnosticQuiz } from '../../../types/diagnostic';
+import type { DiagnosticQuiz } from '../../types/diagnostic';
 
 export const CISA_AREA_NAMES: Record<string, string> = {
   'CISA1': 'Information Systems Auditing Process',

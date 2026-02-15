@@ -6,7 +6,7 @@
  * Flow: Intro → Quiz (timed, 25 questions) → Results (per-area breakdown)
  * Results are saved to Firestore and feed the adaptive learning engine.
  */
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -22,10 +22,8 @@ import {
   ChevronLeft,
   ChevronRight,
   CheckCircle,
-  XCircle,
   AlertTriangle,
   ArrowRight,
-  SkipForward,
   BarChart3,
   Target,
   BookOpen,
@@ -399,7 +397,6 @@ interface SectionPickerProps {
 
 function SectionPicker({ courseId, sections, onSelect, onSkip }: SectionPickerProps) {
   const courseName = courseId.toUpperCase();
-  const areaNames = ALL_AREA_NAMES[courseId] || {};
 
   // Build section display names
   const sectionDisplayNames: Record<string, string> = {
@@ -559,7 +556,6 @@ export default function DiagnosticQuizPage() {
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [startTime, setStartTime] = useState(0);
   const [result, setResult] = useState<DiagnosticResult | null>(null);
-  const [isSaving, setIsSaving] = useState(false);
 
   const quiz = useMemo(
     () => (selectedSection ? getQuizForSection(courseId, selectedSection) : null),
@@ -648,7 +644,6 @@ export default function DiagnosticQuizPage() {
     setPhase('results');
 
     // Save to Firestore
-    setIsSaving(true);
     try {
       const docId = `${courseId}-${selectedSection}`;
       await setDoc(
@@ -672,8 +667,6 @@ export default function DiagnosticQuizPage() {
       logger.info('Diagnostic results saved', { courseId, section: selectedSection, score: scored.percentage });
     } catch (err) {
       logger.error('Failed to save diagnostic results:', err);
-    } finally {
-      setIsSaving(false);
     }
   }, [quiz, user, startTime, courseId, answers, selectedSection]);
 

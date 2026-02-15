@@ -2,7 +2,7 @@
  * CMA Diagnostic Quizzes
  * 25-question assessments for each CMA part to identify knowledge gaps.
  */
-import type { DiagnosticQuiz } from '../../../types/diagnostic';
+import type { DiagnosticQuiz } from '../../types/diagnostic';
 
 export const CMA_AREA_NAMES: Record<string, string> = {
   'CMA1-A': 'External Financial Reporting Decisions',

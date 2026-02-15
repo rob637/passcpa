@@ -360,6 +360,20 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     };
   }, [examState]);
 
+  // Prevent accidental navigation away during active exam
+  useEffect(() => {
+    if (examState !== 'running') return;
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [examState]);
+
   // ============================================
   // Exam Controls
   // ============================================
@@ -1055,6 +1069,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                     <button
                       key={idx}
                       onClick={() => handleSelectAnswer(idx)}
+                      data-testid={`answer-option-${idx}`}
                       className={clsx('prometric-option', isSelected && 'selected')}
                     >
                       <span className="prometric-option-letter">
@@ -1243,6 +1258,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                     <button
                       key={idx}
                       onClick={() => handleSelectAnswer(idx)}
+                      data-testid={`answer-option-${idx}`}
                       className={clsx('pvue-option', isSelected && 'selected')}
                     >
                       <span className="pvue-option-letter">
@@ -1369,6 +1385,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                 navigate(backPath);
               }
             }}
+            aria-label="Exit"
             className="p-2 hover:bg-red-50 dark:hover:bg-red-900/30 text-gray-400 hover:text-red-500 rounded transition-colors"
           >
             <X className="w-5 h-5" />
@@ -1420,6 +1437,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                   <button
                     key={idx}
                     onClick={() => handleSelectAnswer(idx)}
+                    data-testid={`answer-option-${idx}`}
                     className={clsx(
                       'w-full text-left p-4 rounded-xl border-2 transition-all flex items-start group',
                       isSelected 

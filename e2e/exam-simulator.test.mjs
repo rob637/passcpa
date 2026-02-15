@@ -959,9 +959,8 @@ async function testExitConfirmation(page) {
   await selectAnswer(page, 0);
   await page.waitForTimeout(500);
 
-  // Try to exit — look for X/Close button
-  const exitBtn = page.locator('button:has-text("✕"), button:has-text("×"), button[aria-label="Close"], button[aria-label="Exit"]').first();
-  const exitX = page.locator('button').filter({ has: page.locator('svg') }).filter({ hasNot: page.locator('text') }).last();
+  // Try to exit — look for X/Close button (template uses aria-label="Exit")
+  const exitBtn = page.locator('button[aria-label="Exit"], button[aria-label="Close"], button:has-text("✕"), button:has-text("×")').first();
   
   // Set up dialog handler BEFORE clicking exit
   let dialogAppeared = false;
@@ -971,14 +970,21 @@ async function testExitConfirmation(page) {
     await dialog.dismiss(); // Cancel — stay in exam
   });
 
-  // Try clicking exit
+  // Try clicking exit button
   if (await exitBtn.count() > 0) {
     await exitBtn.click();
     await page.waitForTimeout(1000);
   } else {
-    // Try browser back
-    await page.goBack();
-    await page.waitForTimeout(1000);
+    // Fallback: look for any small button with an SVG icon (X icon)
+    const svgBtn = page.locator('button').filter({ has: page.locator('svg') }).filter({ hasText: /^$/ }).last();
+    if (await svgBtn.count() > 0) {
+      await svgBtn.click();
+      await page.waitForTimeout(1000);
+    } else {
+      // Last resort: browser back
+      await page.goBack();
+      await page.waitForTimeout(1000);
+    }
   }
 
   if (dialogAppeared) {

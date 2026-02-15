@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-15T20:42:01.741Z",
+  "timestamp": "2026-02-15T21:06:58.175Z",
   "viewport": "desktop",
   "results": [
     {
@@ -168,8 +168,18 @@
       "d": "Answered: 0, Current: 4, Flagged: 0"
     },
     {
-      "f": "Exit — Left exam without confirmation",
-      "s": "WARN",
+      "f": "Exit — Confirm dialog",
+      "s": "INFO",
+      "d": "Are you sure you want to exit? Your progress will be lost."
+    },
+    {
+      "f": "Exit — Confirmation dialog shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Exit — Stayed in exam after dismissing",
+      "s": "PASS",
       "d": ""
     },
     {
@@ -218,18 +228,13 @@
       "sev": "LOW",
       "f": "Template Exam — Could not answer any questions",
       "d": ""
-    },
-    {
-      "sev": "LOW",
-      "f": "Exit — Left exam without confirmation",
-      "d": ""
     }
   ],
   "consoleErrors": [],
   "summary": {
-    "PASS": 37,
+    "PASS": 39,
     "FAIL": 0,
-    "WARN": 2,
-    "INFO": 3
+    "WARN": 1,
+    "INFO": 4
   }
 }

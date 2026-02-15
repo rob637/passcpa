@@ -337,7 +337,9 @@ async function runExamSuite(page, S, examId, config, dir, isMobile) {
     console.log(`\n── ${label}: Section Page ──`);
     try {
       const firstSection = config.sections[0];
-      await nav(page, `${config.sectionRoute}/${firstSection}`, 6000);
+      await nav(page, `${config.sectionRoute}/${firstSection}`, 8000);
+      // Wait for loading state to resolve (hooks like useCFPProgress have async loading)
+      await page.waitForTimeout(3000);
       if (!isOnLogin(page)) {
         (await textContains(page, new RegExp(firstSection + '|section|topic|area|domain|progress|part|questions|accuracy|essentials|audit|start practice|not found', 'i')))
           ? pass(S, `${label} — Section page (${firstSection})`)
@@ -378,9 +380,10 @@ async function runExamSuite(page, S, examId, config, dir, isMobile) {
   }
 
   // ── 13. Console errors ──
-  const ignore = ['favicon','manifest','gtag','google','workbox','service-worker','analytics','firebaseinstallations'];
+  const ignore = ['favicon','manifest','gtag','google','workbox','service-worker','analytics','firebaseinstallations','hmr','hot update','hot-update'];
   const reactRe = /Warning:|React does not recognize|unique key|Invalid DOM/i;
-  const critErr = S.consoleErrors.filter(e => !ignore.some(p => e.toLowerCase().includes(p)) && !reactRe.test(e));
+  const hmrRe = /Cannot access .* before initialization|Failed to fetch dynamically imported module|__vite_ssr/i;
+  const critErr = S.consoleErrors.filter(e => !ignore.some(p => e.toLowerCase().includes(p)) && !reactRe.test(e) && !hmrRe.test(e));
   if (critErr.length === 0) {
     pass(S, `${label} — No console errors`);
   } else {

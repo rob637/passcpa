@@ -192,6 +192,19 @@ const renderSettings = async () => {
   );
 };
 
+/**
+ * Helper: click a desktop sidebar tab button by label.
+ * Settings renders tabs as both <option> (mobile) and <button><span> (desktop),
+ * so getByText() finds duplicates. This targets the <button> containing the label.
+ */
+const clickTab = (label: string) => {
+  // Find the <span> with the label inside the desktop nav buttons
+  const allMatches = screen.getAllByText(label);
+  // The button/span is the second match (first is the <option>)
+  const target = allMatches.length > 1 ? allMatches[1] : allMatches[0];
+  fireEvent.click(target);
+};
+
 describe('Settings Component', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -209,12 +222,13 @@ describe('Settings Component', () => {
 
     it('renders all navigation tabs', async () => {
       await renderSettings();
-      expect(screen.getByText('Profile')).toBeInTheDocument();
-      expect(screen.getByText('Study Plan')).toBeInTheDocument();
-      expect(screen.getByText('Notifications')).toBeInTheDocument();
-      expect(screen.getByText('Feedback & Support')).toBeInTheDocument();
-      expect(screen.getByText('Offline')).toBeInTheDocument();
-      expect(screen.getByText('Account')).toBeInTheDocument();
+      // Each tab label appears in both mobile <option> and desktop <button>
+      expect(screen.getAllByText('Profile').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Study Plan').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Notifications').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Feedback & Support').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Offline').length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText('Account').length).toBeGreaterThanOrEqual(1);
     });
 
     it('shows Profile tab content by default', async () => {
@@ -258,20 +272,20 @@ describe('Settings Component', () => {
   describe('Study Plan Tab', () => {
     it('switches to Study Plan tab when clicked', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Study Plan'));
+      clickTab('Study Plan');
       // The heading shows "{course.name} Settings" which is "CPA Settings" based on mock
       expect(screen.getByText('CPA Settings')).toBeInTheDocument();
     });
 
     it('displays exam section options', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Study Plan'));
+      clickTab('Study Plan');
       expect(screen.getByText('Current Exam Section')).toBeInTheDocument();
     });
 
     it('displays daily goal presets', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Study Plan'));
+      clickTab('Study Plan');
       expect(screen.getByText('Daily Point Goal')).toBeInTheDocument();
       expect(screen.getByText('Light')).toBeInTheDocument();
       expect(screen.getByText('Standard')).toBeInTheDocument();
@@ -283,19 +297,19 @@ describe('Settings Component', () => {
   describe('Notifications Tab', () => {
     it('switches to Notifications tab when clicked', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Notifications'));
+      clickTab('Notifications');
       expect(screen.getByText('Notification Preferences')).toBeInTheDocument();
     });
 
     it('displays daily reminder toggle', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Notifications'));
+      clickTab('Notifications');
       expect(screen.getByText('Daily Study Reminder')).toBeInTheDocument();
     });
 
     it('displays weekly report toggle', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Notifications'));
+      clickTab('Notifications');
       expect(screen.getByText('Weekly Progress Report')).toBeInTheDocument();
     });
   });
@@ -303,13 +317,13 @@ describe('Settings Component', () => {
   describe('Offline Tab', () => {
     it('switches to Offline tab when clicked', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Offline'));
+      clickTab('Offline');
       expect(screen.getByText('Offline Storage')).toBeInTheDocument();
     });
 
     it('displays download button', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Offline'));
+      clickTab('Offline');
       expect(screen.getByText('Download Questions')).toBeInTheDocument();
     });
   });
@@ -317,19 +331,19 @@ describe('Settings Component', () => {
   describe('Feedback & Support Tab', () => {
     it('switches to Feedback tab when clicked', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Feedback & Support'));
+      clickTab('Feedback & Support');
       expect(screen.getByText('Have a suggestion?')).toBeInTheDocument();
     });
 
     it('displays send feedback link', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Feedback & Support'));
+      clickTab('Feedback & Support');
       expect(screen.getByText('Send Feedback')).toBeInTheDocument();
     });
 
     it('displays report bug link', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Feedback & Support'));
+      clickTab('Feedback & Support');
       expect(screen.getByText('Report a Bug')).toBeInTheDocument();
     });
   });
@@ -337,32 +351,32 @@ describe('Settings Component', () => {
   describe('Account Tab', () => {
     it('switches to Account tab when clicked', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Account'));
+      clickTab('Account');
       expect(screen.getByText('Account Management')).toBeInTheDocument();
     });
 
     it('displays user ID', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Account'));
+      clickTab('Account');
       expect(screen.getByText('User ID')).toBeInTheDocument();
       expect(screen.getByText('test-user-123')).toBeInTheDocument();
     });
 
     it('displays change password button', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Account'));
+      clickTab('Account');
       expect(screen.getByText('Change Password')).toBeInTheDocument();
     });
 
     it('displays sign out button', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Account'));
+      clickTab('Account');
       expect(screen.getByText('Sign Out')).toBeInTheDocument();
     });
 
     it('calls signOut when sign out button is clicked', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Account'));
+      clickTab('Account');
       fireEvent.click(screen.getByText('Sign Out'));
       expect(mockSignOut).toHaveBeenCalled();
     });
@@ -376,21 +390,21 @@ describe('Settings Component', () => {
 
     it('hides save button on offline tab', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Offline'));
+      clickTab('Offline');
       const saveButtons = screen.queryAllByText('Save Changes');
       expect(saveButtons.length).toBe(0);
     });
 
     it('hides save button on feedback tab', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Feedback & Support'));
+      clickTab('Feedback & Support');
       const saveButtons = screen.queryAllByText('Save Changes');
       expect(saveButtons.length).toBe(0);
     });
 
     it('hides save button on account tab', async () => {
       await renderSettings();
-      fireEvent.click(screen.getByText('Account'));
+      clickTab('Account');
       const saveButtons = screen.queryAllByText('Save Changes');
       expect(saveButtons.length).toBe(0);
     });

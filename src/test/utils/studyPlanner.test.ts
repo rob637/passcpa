@@ -24,14 +24,21 @@ vi.mock('date-fns', () => ({
 }));
 
 import { generateStudyPlan } from '../../utils/studyPlanner';
-import { differenceInDays } from 'date-fns';
+
+/**
+ * Helper: create a Date `daysFromNow` days in the future from a fixed anchor.
+ * Using a common anchor avoids fake-timer drift issues.
+ */
+const MS_PER_DAY = 86400000;
+const anchor = new Date(Date.now()); // real clock, captured once
+const daysFromNow = (n: number) => new Date(anchor.getTime() + n * MS_PER_DAY);
 
 describe('studyPlanner', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // Mock current date to be consistent
+    // Pin "now" so generateStudyPlan's `new Date()` equals our anchor
     vi.useFakeTimers();
-    vi.setSystemTime(new Date('2025-01-15'));
+    vi.setSystemTime(anchor);
   });
 
   afterEach(() => {
@@ -40,7 +47,7 @@ describe('studyPlanner', () => {
 
   describe('generateStudyPlan', () => {
     it('should generate a study plan with correct structure', () => {
-      const examDate = new Date('2025-03-15'); // 59 days from mock date
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -52,9 +59,7 @@ describe('studyPlanner', () => {
     });
 
     it('should calculate correct days until exam', () => {
-      const examDate = new Date('2025-02-15'); // 31 days from Jan 15
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(31);
+      const examDate = daysFromNow(31);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -62,21 +67,17 @@ describe('studyPlanner', () => {
     });
 
     it('should reserve last 14 days for review', () => {
-      const examDate = new Date('2025-03-15'); // 59 days
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('AUD', examDate);
 
       // 59 days total - 14 days review = 45 study days
-      // 40 modules / 45 days = ~0.9 modules per day
-      expect(plan.modulesPerDay).toBeCloseTo(40 / 45, 1);
+      // 40 modules / 45 days = 0.889, .toFixed(1) rounds to 0.9
+      expect(plan.modulesPerDay).toBe(0.9);
     });
 
     it('should handle minimum 1 study day', () => {
-      const examDate = new Date('2025-01-16'); // 1 day away
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(1);
+      const examDate = daysFromNow(1);
 
       const plan = generateStudyPlan('REG', examDate);
 
@@ -86,9 +87,7 @@ describe('studyPlanner', () => {
     });
 
     it('should include 4 milestones', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -96,9 +95,7 @@ describe('studyPlanner', () => {
     });
 
     it('should have Start milestone', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -107,9 +104,7 @@ describe('studyPlanner', () => {
     });
 
     it('should have Halfway Point milestone', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -118,9 +113,7 @@ describe('studyPlanner', () => {
     });
 
     it('should have Review Starts milestone', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -129,9 +122,7 @@ describe('studyPlanner', () => {
     });
 
     it('should have Exam Day milestone', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -140,9 +131,7 @@ describe('studyPlanner', () => {
     });
 
     it('should return the original exam date', () => {
-      const examDate = new Date('2025-04-01');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(76);
+      const examDate = daysFromNow(76);
 
       const plan = generateStudyPlan('BEC', examDate);
 
@@ -150,9 +139,7 @@ describe('studyPlanner', () => {
     });
 
     it('should use 40 total modules as estimate', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -160,9 +147,7 @@ describe('studyPlanner', () => {
     });
 
     it('should handle very long study period', () => {
-      const examDate = new Date('2025-09-15'); // ~8 months
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(243);
+      const examDate = daysFromNow(243);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -173,9 +158,7 @@ describe('studyPlanner', () => {
     });
 
     it('should format milestone dates correctly', () => {
-      const examDate = new Date('2025-03-15');
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
+      const examDate = daysFromNow(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
@@ -187,10 +170,8 @@ describe('studyPlanner', () => {
     });
 
     it('should work for all exam sections', () => {
-      const examDate = new Date('2025-03-15');
+      const examDate = daysFromNow(59);
       const sections = ['FAR', 'AUD', 'REG', 'BEC'];
-
-      (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
 
       sections.forEach(section => {
         const plan = generateStudyPlan(section, examDate);

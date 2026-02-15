@@ -557,6 +557,16 @@ export default function DiagnosticQuizPage() {
   const [startTime, setStartTime] = useState(0);
   const [result, setResult] = useState<DiagnosticResult | null>(null);
 
+  // Fix race condition: userProfile may not be loaded when component first mounts,
+  // so useState captured 'section-pick'. Once profile loads with a valid examSection,
+  // automatically advance to 'intro' phase.
+  useEffect(() => {
+    if (phase === 'section-pick' && hasValidOnboardingSection) {
+      setSelectedSection(onboardingSection);
+      setPhase('intro');
+    }
+  }, [phase, hasValidOnboardingSection, onboardingSection]);
+
   const quiz = useMemo(
     () => (selectedSection ? getQuizForSection(courseId, selectedSection) : null),
     [courseId, selectedSection]

@@ -6,12 +6,16 @@
 
 export interface Flashcard {
   id: string;
-  domain: FlashcardDomain;
-  category: string;
+  domain?: FlashcardDomain;
+  category?: string;
   front: string;
   back: string;
   difficulty: 'easy' | 'medium' | 'hard';
   tags: string[];
+  // Optional properties used by batch files
+  section?: string;
+  type?: string;
+  topic?: string;
 }
 
 export type FlashcardDomain = 'GEN' | 'RET' | 'TAX' | 'INV' | 'RISK' | 'EST' | 'PRO' | 'PSY';

@@ -7,8 +7,7 @@
 import { Flashcard } from './index';
 
 // CFP-specific mnemonic flashcard type with mnemonic field
-interface MnemonicFlashcard extends Omit<Flashcard, 'category'> {
-  category: 'mnemonic';
+interface MnemonicFlashcard extends Flashcard {
   mnemonic?: string;
 }
 

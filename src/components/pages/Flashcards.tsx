@@ -105,8 +105,9 @@ const Flashcards: React.FC = () => {
   const topic = searchParams.get('topic');
   const typeParam = searchParams.get('type') as FlashcardType | null;
   const sectionParam = searchParams.get('section');
-  const countParam = searchParams.get('count'); // Number of cards for daily plan sessions
+  const countParam = searchParams.get('count'); // Number of cards for session
   const sessionCardLimit = countParam ? parseInt(countParam, 10) : null;
+  const showBothSides = searchParams.get('showBothSides') === 'true';
   // Support URL param for section (for EA) or fall back to user profile
   const currentSection: AllExamSections = sectionParam 
     ? (sectionParam as AllExamSections)
@@ -560,6 +561,83 @@ const Flashcards: React.FC = () => {
       <div ref={cardTopRef} className="flex-1 flex items-start sm:items-center justify-center p-4 pt-2">
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
+          {showBothSides ? (
+            /* Both-sides view — no flip, front + back stacked */
+            <div
+              data-testid="flashcard"
+              className="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
+            >
+              {/* Front section */}
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">
+                    {currentCard.topic || 'Question'}
+                  </span>
+                  {currentCard.cardType && currentCard.cardType !== 'question' && (
+                    <span
+                      className={clsx(
+                        'text-xs px-2 py-0.5 rounded-full font-medium',
+                        currentCard.cardType === 'definition' && 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300',
+                        currentCard.cardType === 'formula' && 'bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300',
+                        currentCard.cardType === 'mnemonic' && 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300'
+                      )}
+                    >
+                      {currentCard.cardType === 'definition' && '📖 Definition'}
+                      {currentCard.cardType === 'formula' && '📐 Formula'}
+                      {currentCard.cardType === 'mnemonic' && '💡 Mnemonic'}
+                    </span>
+                  )}
+                </div>
+                <p className="text-lg sm:text-xl text-slate-900 dark:text-white leading-relaxed">
+                  {currentCard.front || currentCard.question}
+                </p>
+                {currentCard.mnemonic && (
+                  <div className="mt-3">
+                    <span className="inline-block bg-amber-50 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-4 py-2 rounded-lg text-lg font-bold tracking-wider">
+                      {currentCard.mnemonic}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-slate-200 dark:border-slate-600" />
+
+              {/* Back section */}
+              <div>
+                <div className="text-xs text-success-600 dark:text-success-400 font-medium mb-3">Answer</div>
+                <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-wrap">
+                  {currentCard.cardType === 'question' 
+                    ? (currentCard.back || currentCard.answer)
+                    : currentCard.answer?.split('\n\n📐')[0]?.split('\n\n💡')[0]?.split('\n\n📝')[0] || currentCard.back
+                  }
+                </p>
+                {currentCard.formula && (
+                  <div className="mt-4 max-w-md">
+                    <div className="bg-teal-50 dark:bg-teal-900/40 border border-teal-200 dark:border-teal-700 rounded-lg p-4">
+                      <div className="text-xs text-teal-600 dark:text-teal-300 font-medium mb-2 flex items-center gap-1">
+                        <Calculator className="w-3.5 h-3.5" />
+                        Formula
+                      </div>
+                      <p className="text-teal-900 dark:text-teal-100 font-mono text-sm whitespace-pre-wrap">
+                        {currentCard.formula}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                {currentCard.example && (
+                  <div className="mt-3 max-w-md">
+                    <div className="bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4">
+                      <div className="text-xs text-slate-600 dark:text-slate-300 font-medium mb-2">📝 Example</div>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                        {currentCard.example}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
           <div
             onClick={handleFlip}
             data-testid="flashcard"
@@ -668,9 +746,10 @@ const Flashcards: React.FC = () => {
               </div>
             </div>
           </div>
+          )}
 
-          {/* Rating Buttons (show when flipped) */}
-          {isFlipped && (
+          {/* Rating Buttons (show when flipped or both-sides mode) */}
+          {(isFlipped || showBothSides) && (
             <div className="mt-6 grid grid-cols-4 gap-2 animate-fade-in">
               {RATING_BUTTONS.map((btn) => {
                 const Icon = btn.icon;
@@ -717,7 +796,7 @@ const Flashcards: React.FC = () => {
           )}
 
           {/* Navigation hint */}
-          {!isFlipped && (
+          {!isFlipped && !showBothSides && (
             <div className="mt-6 flex justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
               <span className="hidden sm:inline">← → to navigate</span>
               <span className="hidden sm:inline">Space to flip</span>

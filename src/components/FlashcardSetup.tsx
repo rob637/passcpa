@@ -171,6 +171,14 @@ const FlashcardSetup: React.FC = () => {
     if (config.shuffle) {
       params.set('shuffle', 'true');
     }
+
+    // Card count
+    params.set('count', config.count.toString());
+
+    // Show both sides simultaneously
+    if (config.showBothSides) {
+      params.set('showBothSides', 'true');
+    }
     
     navigate(`/flashcards/session?${params.toString()}`);
   };

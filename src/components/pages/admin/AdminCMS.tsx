@@ -10,7 +10,9 @@ import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
 import { COURSES, getActiveCourses } from '../../../courses';
-import { EXAM_PRICING, isFounderPricingActive } from '../../../services/subscription';
+import { EXAM_PRICING, isFounderPricingActive, founderDaysRemaining, FOUNDER_DEADLINE, FOUNDER_SEATS_PER_EXAM } from '../../../services/subscription';
+import { functions } from '../../../config/firebase';
+import { httpsCallable } from 'firebase/functions';
 
 // Dynamic imports for course-specific question data
 // Returns { questions: array, stats: { total, bySection, byDifficulty, topics } }
@@ -398,6 +400,212 @@ const getCourseFromSection = (section?: string | null): CourseId => {
 };
 
 // ============================================================================
+// Stripe Status Section
+// ============================================================================
+
+const StripeStatusSection: React.FC = () => {
+  const [stripeStatus, setStripeStatus] = useState<'idle' | 'checking' | 'ok' | 'error'>('idle');
+  const [stripeError, setStripeError] = useState<string>('');
+  const [stripeLatency, setStripeLatency] = useState<number | null>(null);
+  const [subStats, setSubStats] = useState<{
+    total: number;
+    active: number;
+    trialing: number;
+    expired: number;
+    paid: number;
+  } | null>(null);
+  const [lastChecked, setLastChecked] = useState<Date | null>(null);
+
+  const founderActive = isFounderPricingActive();
+  const daysLeft = founderDaysRemaining();
+
+  // Load subscription stats from Firestore
+  const loadSubStats = useCallback(async () => {
+    try {
+      const snapshot = await getDocs(collection(db, 'subscriptions'));
+      let total = 0, active = 0, trialing = 0, expired = 0, paid = 0;
+      snapshot.forEach((doc) => {
+        total++;
+        const data = doc.data();
+        if (data.status === 'active') active++;
+        if (data.status === 'trialing') trialing++;
+        if (data.status === 'expired') expired++;
+        if (data.stripeSubscriptionId || (data.paidExams && Object.keys(data.paidExams).length > 0)) paid++;
+      });
+      setSubStats({ total, active, trialing, expired, paid });
+    } catch (err) {
+      logger.error('Failed to load subscription stats:', err);
+    }
+  }, []);
+
+  // Check Stripe Cloud Function connectivity
+  const checkStripe = useCallback(async () => {
+    setStripeStatus('checking');
+    setStripeError('');
+    const start = performance.now();
+
+    try {
+      // Call createCheckoutSession with intentionally invalid data
+      // to verify the function is reachable and Stripe is configured.
+      // It should return a specific error (not a generic connectivity error).
+      const createCheckout = httpsCallable(functions, 'createCheckoutSession');
+      await createCheckout({ courseId: '__health_check__', interval: 'annual', origin: window.location.origin });
+      // If it somehow succeeds, Stripe is working
+      setStripeStatus('ok');
+    } catch (err: unknown) {
+      const elapsed = Math.round(performance.now() - start);
+      setStripeLatency(elapsed);
+
+      const error = err as { code?: string; message?: string; details?: string };
+      // Expected errors mean the function IS reachable:
+      // - 'invalid-argument': Function received our bad data and rejected it → Stripe is connected
+      // - 'failed-precondition': Stripe not configured (STRIPE_SECRET_KEY missing)
+      // - 'unauthenticated': Auth required but missing (function reachable)
+      // - 'internal': Function crashed or Stripe API error
+      if (error.code === 'invalid-argument') {
+        setStripeStatus('ok');
+      } else if (error.code === 'failed-precondition') {
+        setStripeStatus('error');
+        setStripeError('Stripe secret key not configured on server');
+      } else if (error.code === 'unauthenticated') {
+        // Function is reachable but requires auth — that's fine, it's working
+        setStripeStatus('ok');
+      } else {
+        setStripeStatus('error');
+        setStripeError(error.message || 'Could not reach Stripe Cloud Function');
+      }
+    }
+    setLastChecked(new Date());
+  }, []);
+
+  // Auto-check on mount
+  useEffect(() => {
+    checkStripe();
+    loadSubStats();
+  }, [checkStripe, loadSubStats]);
+
+  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'passcpa-dev';
+  const webhookUrl = `https://us-central1-${projectId}.cloudfunctions.net/stripeWebhook`;
+
+  return (
+    <div className="p-4 bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 rounded-lg">
+      <div className="flex items-center justify-between mb-2">
+        <h4 className="font-medium text-purple-900 dark:text-purple-100">💳 Stripe Payment Status</h4>
+        <button
+          onClick={() => { checkStripe(); loadSubStats(); }}
+          disabled={stripeStatus === 'checking'}
+          className="text-xs text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-200 underline hover:no-underline disabled:opacity-50"
+        >
+          {stripeStatus === 'checking' ? 'Checking...' : 'Refresh'}
+        </button>
+      </div>
+
+      <div className="space-y-2">
+        {/* Cloud Function status */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300">Checkout Function:</span>
+          {stripeStatus === 'idle' || stripeStatus === 'checking' ? (
+            <span className="text-sm text-gray-500 dark:text-gray-400 animate-pulse">Checking...</span>
+          ) : stripeStatus === 'ok' ? (
+            <span className="text-sm font-medium text-green-600 dark:text-green-400">
+              ✓ Reachable {stripeLatency !== null && `(${stripeLatency}ms)`}
+            </span>
+          ) : (
+            <span className="text-sm font-medium text-red-600 dark:text-red-400">✗ {stripeError}</span>
+          )}
+        </div>
+
+        {/* Webhook URL */}
+        <div className="flex items-start gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300 whitespace-nowrap">Webhook URL:</span>
+          <span className="text-xs text-purple-600 dark:text-purple-400 font-mono break-all">{webhookUrl}</span>
+        </div>
+
+        {/* Founder pricing status */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300">Founder Pricing:</span>
+          {founderActive ? (
+            <span className="text-sm font-medium text-green-600 dark:text-green-400">
+              ✓ Active — {daysLeft} days remaining (ends {FOUNDER_DEADLINE.toLocaleDateString()})
+            </span>
+          ) : (
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Expired</span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300">Founder Seats/Exam:</span>
+          <span className="text-sm text-purple-600 dark:text-purple-400">{FOUNDER_SEATS_PER_EXAM}</span>
+        </div>
+
+        {/* Subscription stats */}
+        {subStats && (
+          <div className="mt-3 pt-3 border-t border-purple-200 dark:border-purple-700">
+            <p className="text-sm font-medium text-purple-800 dark:text-purple-200 mb-2">Subscription Overview</p>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-gray-900 dark:text-white">{subStats.total}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Total</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-green-600 dark:text-green-400">{subStats.paid}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Paid</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{subStats.trialing}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Trialing</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-amber-600 dark:text-amber-400">{subStats.active}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Active</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-gray-500 dark:text-gray-400">{subStats.expired}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Expired</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pricing table */}
+        <div className="mt-3 pt-3 border-t border-purple-200 dark:border-purple-700">
+          <p className="text-sm font-medium text-purple-800 dark:text-purple-200 mb-2">Active Pricing ({founderActive ? 'Founder' : 'Regular'})</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="text-purple-600 dark:text-purple-400">
+                  <th className="text-left py-1 pr-3">Exam</th>
+                  <th className="text-right py-1 pr-3">Monthly</th>
+                  <th className="text-right py-1">Annual</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(Object.entries(EXAM_PRICING) as [string, typeof EXAM_PRICING.cpa][]).map(([exam, pricing]) => (
+                  <tr key={exam} className="text-purple-700 dark:text-purple-300 border-t border-purple-100 dark:border-purple-800">
+                    <td className="py-1 pr-3 font-medium uppercase">{exam}</td>
+                    <td className="text-right py-1 pr-3">
+                      ${founderActive ? pricing.founderMonthly : pricing.monthly}/mo
+                    </td>
+                    <td className="text-right py-1">
+                      ${founderActive ? pricing.founderAnnual : pricing.annual}/yr
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {lastChecked && (
+          <p className="text-xs text-purple-500 dark:text-purple-400 mt-2">
+            Last checked: {lastChecked.toLocaleTimeString()}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
 // Component
 // ============================================================================
 
@@ -465,6 +673,12 @@ const AdminCMS: React.FC = () => {
   const [contentAudit, setContentAudit] = useState<{
     questionsWithoutExplanation: Array<{ id: string; section: string; topic?: string }>;
     questionsWithoutBlueprint: Array<{ id: string; section: string }>;
+    duplicateIds: Array<{ id: string; course: string; count: number }>;
+    shortExplanations: Array<{ id: string; section: string; length: number }>;
+    wrongOptionCount: Array<{ id: string; section: string; count: number }>;
+    missingDifficulty: Array<{ id: string; section: string }>;
+    missingSection: Array<{ id: string; course: string }>;
+    difficultyDistribution: Record<string, { easy: number; medium: number; hard: number; other: number }>;
     totalScanned: number;
   } | null>(null);
   const [isLoadingAudit, setIsLoadingAudit] = useState(false);
@@ -1413,6 +1627,12 @@ const AdminCMS: React.FC = () => {
     try {
       const withoutExplanation: Array<{ id: string; section: string; topic?: string }> = [];
       const withoutBlueprint: Array<{ id: string; section: string }> = [];
+      const shortExplanations: Array<{ id: string; section: string; length: number }> = [];
+      const wrongOptionCount: Array<{ id: string; section: string; count: number }> = [];
+      const missingDifficulty: Array<{ id: string; section: string }> = [];
+      const missingSection: Array<{ id: string; course: string }> = [];
+      const idCounts = new Map<string, { course: string; count: number }>();
+      const difficultyDistribution: Record<string, { easy: number; medium: number; hard: number; other: number }> = {};
       let totalScanned = 0;
 
       // Scan all courses' questions
@@ -1420,31 +1640,114 @@ const AdminCMS: React.FC = () => {
         const data = await loadCourseQuestionData(courseId);
         if (!data?.questions) continue;
 
-        for (const q of data.questions as Array<{ id?: string; question_id?: string; explanation?: string; detailed_explanation?: string; blueprintArea?: string; section?: string; topic?: string }>) {
+        const courseLabel = courseId.toUpperCase();
+        if (!difficultyDistribution[courseLabel]) {
+          difficultyDistribution[courseLabel] = { easy: 0, medium: 0, hard: 0, other: 0 };
+        }
+
+        for (const q of data.questions as Array<{
+          id?: string; question_id?: string;
+          explanation?: string; detailed_explanation?: string;
+          blueprintArea?: string; section?: string; topic?: string;
+          options?: string[]; choices?: string[];
+          difficulty?: string;
+        }>) {
           totalScanned++;
           const qId = q.id || q.question_id || 'unknown';
-          const section = q.section || courseId.toUpperCase();
+          const section = q.section || courseLabel;
           
           // Check for missing explanation
           if (!q.explanation && !q.detailed_explanation) {
-            withoutExplanation.push({ id: qId, section, topic: q.topic });
-            if (withoutExplanation.length >= 50) continue; // Limit to prevent huge lists
+            if (withoutExplanation.length < 50) {
+              withoutExplanation.push({ id: qId, section, topic: q.topic });
+            }
+          }
+          
+          // Check for short/placeholder explanations (< 20 chars)
+          const explText = q.explanation || q.detailed_explanation || '';
+          if (explText && explText.length > 0 && explText.length < 20) {
+            if (shortExplanations.length < 50) {
+              shortExplanations.push({ id: qId, section, length: explText.length });
+            }
           }
           
           // Check for missing blueprint (CPA specific)
           if (courseId === 'cpa' && !q.blueprintArea) {
-            withoutBlueprint.push({ id: qId, section });
-            if (withoutBlueprint.length >= 50) continue;
+            if (withoutBlueprint.length < 50) {
+              withoutBlueprint.push({ id: qId, section });
+            }
+          }
+
+          // Check for wrong option count (should be exactly 4)
+          const opts = q.options || q.choices || [];
+          if (opts.length !== 4) {
+            if (wrongOptionCount.length < 50) {
+              wrongOptionCount.push({ id: qId, section, count: opts.length });
+            }
+          }
+
+          // Check for missing difficulty
+          if (!q.difficulty) {
+            if (missingDifficulty.length < 50) {
+              missingDifficulty.push({ id: qId, section });
+            }
+          }
+
+          // Check for missing section
+          if (!q.section) {
+            if (missingSection.length < 50) {
+              missingSection.push({ id: qId, course: courseLabel });
+            }
+          }
+
+          // Track duplicate IDs
+          const fullId = `${courseId}:${qId}`;
+          const existing = idCounts.get(fullId);
+          if (existing) {
+            existing.count++;
+          } else {
+            idCounts.set(fullId, { course: courseLabel, count: 1 });
+          }
+
+          // Track difficulty distribution
+          const diff = (q.difficulty || '').toLowerCase();
+          if (diff === 'easy' || diff === 'beginner' || diff === 'foundational') {
+            difficultyDistribution[courseLabel].easy++;
+          } else if (diff === 'medium' || diff === 'moderate' || diff === 'intermediate') {
+            difficultyDistribution[courseLabel].medium++;
+          } else if (diff === 'hard' || diff === 'tough' || diff === 'advanced') {
+            difficultyDistribution[courseLabel].hard++;
+          } else {
+            difficultyDistribution[courseLabel].other++;
           }
         }
       }
 
+      // Extract duplicates
+      const duplicateIds: Array<{ id: string; course: string; count: number }> = [];
+      idCounts.forEach((val, key) => {
+        if (val.count > 1) {
+          const qId = key.split(':').slice(1).join(':');
+          duplicateIds.push({ id: qId, course: val.course, count: val.count });
+        }
+      });
+      duplicateIds.sort((a, b) => b.count - a.count);
+
       setContentAudit({
-        questionsWithoutExplanation: withoutExplanation.slice(0, 50),
-        questionsWithoutBlueprint: withoutBlueprint.slice(0, 50),
+        questionsWithoutExplanation: withoutExplanation,
+        questionsWithoutBlueprint: withoutBlueprint,
+        duplicateIds: duplicateIds.slice(0, 50),
+        shortExplanations,
+        wrongOptionCount,
+        missingDifficulty,
+        missingSection,
+        difficultyDistribution,
         totalScanned
       });
-      addLog(`Audit complete: scanned ${totalScanned} questions`, 'success');
+      
+      const issues = withoutExplanation.length + withoutBlueprint.length + duplicateIds.length + 
+        shortExplanations.length + wrongOptionCount.length + missingDifficulty.length + missingSection.length;
+      addLog(`Audit complete: scanned ${totalScanned} questions, ${issues} issues found`, issues > 0 ? 'warning' : 'success');
     } catch (error) {
       logger.error('Error loading content audit', error);
       addLog('Error loading content audit', 'error');
@@ -2004,80 +2307,323 @@ const AdminCMS: React.FC = () => {
               </div>
               
               {contentAudit && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
-                      <span className={`px-2 py-1 rounded text-sm font-medium ${
-                        contentAudit.questionsWithoutExplanation.length === 0 
-                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
-                          : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                <>
+                  {/* Summary bar */}
+                  {(() => {
+                    const totalIssues = contentAudit.questionsWithoutExplanation.length + 
+                      contentAudit.questionsWithoutBlueprint.length + contentAudit.duplicateIds.length + 
+                      contentAudit.shortExplanations.length + contentAudit.wrongOptionCount.length + 
+                      contentAudit.missingDifficulty.length + contentAudit.missingSection.length;
+                    return (
+                      <div className={`p-4 rounded-lg mb-6 flex items-center justify-between ${
+                        totalIssues === 0 
+                          ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800' 
+                          : 'bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800'
                       }`}>
-                        {contentAudit.questionsWithoutExplanation.length}
-                        {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
-                      </span>
-                    </div>
-                    {contentAudit.questionsWithoutExplanation.length === 0 ? (
-                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have explanations!</p>
-                    ) : (
-                      <div className="space-y-2 max-h-64 overflow-y-auto">
-                        {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
-                          <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
-                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
-                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">{totalIssues === 0 ? '✅' : '⚠️'}</span>
+                          <div>
+                            <p className={`font-semibold ${totalIssues === 0 ? 'text-green-700 dark:text-green-300' : 'text-amber-700 dark:text-amber-300'}`}>
+                              {totalIssues === 0 ? 'All checks passed!' : `${totalIssues} issue${totalIssues !== 1 ? 's' : ''} found`}
+                            </p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              Scanned {contentAudit.totalScanned.toLocaleString()} questions across {Object.keys(contentAudit.difficultyDistribution).length} courses
+                            </p>
                           </div>
-                        ))}
-                        {contentAudit.questionsWithoutExplanation.length > 15 && (
-                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
-                            + {contentAudit.questionsWithoutExplanation.length - 15} more
-                          </p>
-                        )}
+                        </div>
+                        <div className="flex gap-2 flex-wrap justify-end">
+                          {[
+                            { label: 'Explanations', count: contentAudit.questionsWithoutExplanation.length },
+                            { label: 'Blueprints', count: contentAudit.questionsWithoutBlueprint.length },
+                            { label: 'Duplicates', count: contentAudit.duplicateIds.length },
+                            { label: 'Short Expl.', count: contentAudit.shortExplanations.length },
+                            { label: 'Options', count: contentAudit.wrongOptionCount.length },
+                            { label: 'Difficulty', count: contentAudit.missingDifficulty.length },
+                            { label: 'Section', count: contentAudit.missingSection.length },
+                          ].filter(c => c.count > 0).map(c => (
+                            <span key={c.label} className="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-medium">
+                              {c.label}: {c.count}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    )}
-                  </Card>
+                    );
+                  })()}
 
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
-                      <span className={`px-2 py-1 rounded text-sm font-medium ${
-                        contentAudit.questionsWithoutBlueprint.length === 0 
-                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
-                          : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
-                      }`}>
-                        {contentAudit.questionsWithoutBlueprint.length}
-                        {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
-                      </span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Missing Explanations */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.questionsWithoutExplanation.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {contentAudit.questionsWithoutExplanation.length}
+                          {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.questionsWithoutExplanation.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have explanations!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                            </div>
+                          ))}
+                          {contentAudit.questionsWithoutExplanation.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.questionsWithoutExplanation.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Missing Blueprint Tags */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.questionsWithoutBlueprint.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {contentAudit.questionsWithoutBlueprint.length}
+                          {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.questionsWithoutBlueprint.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All CPA questions have blueprint tags!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                            </div>
+                          ))}
+                          {contentAudit.questionsWithoutBlueprint.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.questionsWithoutBlueprint.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Duplicate IDs */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">🔁 Duplicate Question IDs</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.duplicateIds.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {contentAudit.duplicateIds.length}
+                        </span>
+                      </div>
+                      {contentAudit.duplicateIds.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All question IDs are unique!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.duplicateIds.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.course} ×{q.count}</span>
+                            </div>
+                          ))}
+                          {contentAudit.duplicateIds.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.duplicateIds.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Short Explanations */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">📝 Short Explanations (&lt;20 chars)</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.shortExplanations.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {contentAudit.shortExplanations.length}
+                          {contentAudit.shortExplanations.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.shortExplanations.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All explanations are substantive!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.shortExplanations.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section} ({q.length} chars)</span>
+                            </div>
+                          ))}
+                          {contentAudit.shortExplanations.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.shortExplanations.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Wrong Option Count */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">🔢 Wrong Option Count (≠4)</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.wrongOptionCount.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {contentAudit.wrongOptionCount.length}
+                          {contentAudit.wrongOptionCount.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.wrongOptionCount.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have exactly 4 options!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.wrongOptionCount.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section} ({q.count} opts)</span>
+                            </div>
+                          ))}
+                          {contentAudit.wrongOptionCount.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.wrongOptionCount.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Missing Difficulty + Missing Section (combined card) */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">⚙️ Missing Metadata</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.missingDifficulty.length + contentAudit.missingSection.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {contentAudit.missingDifficulty.length + contentAudit.missingSection.length}
+                        </span>
+                      </div>
+                      {contentAudit.missingDifficulty.length + contentAudit.missingSection.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have difficulty and section!</p>
+                      ) : (
+                        <div className="space-y-3">
+                          {contentAudit.missingDifficulty.length > 0 && (
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Missing difficulty ({contentAudit.missingDifficulty.length})</p>
+                              <div className="space-y-1 max-h-28 overflow-y-auto">
+                                {contentAudit.missingDifficulty.slice(0, 8).map((q, i) => (
+                                  <div key={i} className="p-1.5 bg-amber-50 dark:bg-amber-900/30 rounded text-xs flex justify-between">
+                                    <span className="font-mono truncate flex-1">{q.id.slice(0, 24)}</span>
+                                    <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                                  </div>
+                                ))}
+                                {contentAudit.missingDifficulty.length > 8 && (
+                                  <p className="text-gray-400 text-xs text-center">+ {contentAudit.missingDifficulty.length - 8} more</p>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                          {contentAudit.missingSection.length > 0 && (
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Missing section ({contentAudit.missingSection.length})</p>
+                              <div className="space-y-1 max-h-28 overflow-y-auto">
+                                {contentAudit.missingSection.slice(0, 8).map((q, i) => (
+                                  <div key={i} className="p-1.5 bg-amber-50 dark:bg-amber-900/30 rounded text-xs flex justify-between">
+                                    <span className="font-mono truncate flex-1">{q.id.slice(0, 24)}</span>
+                                    <span className="text-gray-500 dark:text-gray-400 ml-2">{q.course}</span>
+                                  </div>
+                                ))}
+                                {contentAudit.missingSection.length > 8 && (
+                                  <p className="text-gray-400 text-xs text-center">+ {contentAudit.missingSection.length - 8} more</p>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+                  </div>
+
+                  {/* Difficulty Distribution */}
+                  {Object.keys(contentAudit.difficultyDistribution).length > 0 && (
+                    <div className="mt-6">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📊 Difficulty Distribution by Course</h4>
+                      <Card className="p-6">
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="text-left text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-slate-700">
+                                <th className="pb-2 pr-4">Course</th>
+                                <th className="pb-2 pr-4 text-right">Easy</th>
+                                <th className="pb-2 pr-4 text-right">Medium</th>
+                                <th className="pb-2 pr-4 text-right">Hard</th>
+                                <th className="pb-2 pr-4 text-right">Other</th>
+                                <th className="pb-2 text-right">Total</th>
+                                <th className="pb-2 pl-4">Balance</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {Object.entries(contentAudit.difficultyDistribution).map(([course, dist]) => {
+                                const total = dist.easy + dist.medium + dist.hard + dist.other;
+                                const easyPct = total > 0 ? Math.round((dist.easy / total) * 100) : 0;
+                                const medPct = total > 0 ? Math.round((dist.medium / total) * 100) : 0;
+                                const hardPct = total > 0 ? Math.round((dist.hard / total) * 100) : 0;
+                                // Ideal: ~25% easy, ~50% medium, ~25% hard
+                                const isBalanced = easyPct >= 15 && easyPct <= 40 && medPct >= 30 && medPct <= 60 && hardPct >= 15 && hardPct <= 40;
+                                return (
+                                  <tr key={course} className="border-b border-gray-100 dark:border-slate-800">
+                                    <td className="py-2 pr-4 font-medium">{course}</td>
+                                    <td className="py-2 pr-4 text-right text-green-600 dark:text-green-400">{dist.easy} <span className="text-gray-400 text-xs">({easyPct}%)</span></td>
+                                    <td className="py-2 pr-4 text-right text-amber-600 dark:text-amber-400">{dist.medium} <span className="text-gray-400 text-xs">({medPct}%)</span></td>
+                                    <td className="py-2 pr-4 text-right text-red-600 dark:text-red-400">{dist.hard} <span className="text-gray-400 text-xs">({hardPct}%)</span></td>
+                                    <td className="py-2 pr-4 text-right text-gray-400">{dist.other > 0 ? dist.other : '—'}</td>
+                                    <td className="py-2 text-right font-medium">{total.toLocaleString()}</td>
+                                    <td className="py-2 pl-4">
+                                      {/* Mini bar chart */}
+                                      <div className="flex h-3 w-24 rounded overflow-hidden bg-gray-100 dark:bg-slate-700">
+                                        <div className="bg-green-400" style={{ width: `${easyPct}%` }} />
+                                        <div className="bg-amber-400" style={{ width: `${medPct}%` }} />
+                                        <div className="bg-red-400" style={{ width: `${hardPct}%` }} />
+                                      </div>
+                                      {!isBalanced && dist.other === 0 && (
+                                        <span className="text-xs text-amber-500 dark:text-amber-400">⚠️ Skewed</span>
+                                      )}
+                                    </td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                        <p className="text-xs text-gray-400 mt-3">Ideal distribution: ~25% Easy / ~50% Medium / ~25% Hard. &quot;Skewed&quot; flag triggers when any level is outside 15–40% (easy/hard) or 30–60% (medium).</p>
+                      </Card>
                     </div>
-                    {contentAudit.questionsWithoutBlueprint.length === 0 ? (
-                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All CPA questions have blueprint tags!</p>
-                    ) : (
-                      <div className="space-y-2 max-h-64 overflow-y-auto">
-                        {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
-                          <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
-                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
-                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
-                          </div>
-                        ))}
-                        {contentAudit.questionsWithoutBlueprint.length > 15 && (
-                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
-                            + {contentAudit.questionsWithoutBlueprint.length - 15} more
-                          </p>
-                        )}
-                      </div>
-                    )}
-                  </Card>
-                </div>
-              )}
-
-              {contentAudit && (
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-                  Scanned {contentAudit.totalScanned.toLocaleString()} questions across all courses
-                </p>
+                  )}
+                </>
               )}
 
               {!contentAudit && !isLoadingAudit && (
                 <Card className="p-6 text-center text-gray-500 dark:text-gray-400">
-                  Click "Run Audit" to scan all questions for missing explanations and blueprint tags
+                  Click &quot;Run Audit&quot; to scan all questions for quality issues
                 </Card>
               )}
             </div>
@@ -3585,6 +4131,9 @@ const AdminCMS: React.FC = () => {
           <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Admin Settings</h3>
             <div className="space-y-4">
+              {/* Stripe Payment Status */}
+              <StripeStatusSection />
+
               {/* AI Service Status */}
               <div className="p-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg">
                 <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">🤖 AI Service Status (Vory)</h4>

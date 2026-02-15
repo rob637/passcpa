@@ -21,6 +21,7 @@ import { initializeNotifications } from '../services/pushNotifications';
 import { getPendingReferral, applyReferralCode } from '../services/referral';
 import { Capacitor } from '@capacitor/core';
 import { UserProfile } from '../types';
+import { CourseId } from '../types/course';
 
 // Check if running in native Capacitor app
 const isNativePlatform = Capacitor.isNativePlatform();
@@ -113,7 +114,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             photoURL: user.photoURL,
             createdAt: serverTimestamp() as unknown as Date,
             onboardingComplete: false,
-            activeCourse: pendingCourse,
+            activeCourse: pendingCourse as CourseId,
             examSection: null,
             examDate: null,
             dailyGoal: 25,
@@ -199,7 +200,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         createdAt: serverTimestamp() as unknown as Date,
         onboardingComplete: false,
         // Store the course they signed up for so it persists across windows/devices
-        activeCourse: pendingCourse,
+        activeCourse: pendingCourse as CourseId,
         examSection: null,
         examDate: null,
         dailyGoal: 50,
@@ -330,7 +331,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             photoURL: user.photoURL,
             createdAt: serverTimestamp() as unknown as Date,
             onboardingComplete: false,
-            activeCourse: pendingCourse,
+            activeCourse: pendingCourse as CourseId,
             examSection: null,
             examDate: null,
             dailyGoal: 25,

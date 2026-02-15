@@ -86,14 +86,15 @@ const ReadinessRing = ({ readiness, size = 100 }: { readiness: number; size?: nu
 };
 
 // Weekly Activity Chart
-const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }[] }) => {
-  const maxQuestions = Math.max(...activity.map(d => d.questions), 1);
+const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number; lessons: number }[] }) => {
+  const maxActivity = Math.max(...activity.map(d => d.questions + d.lessons), 1);
   
   return (
     <div className="flex items-end justify-between gap-1 h-16">
       {activity.map((day, i) => {
-        const isActive = day.questions > 0;
-        const height = Math.max((day.questions / maxQuestions) * 100, isActive ? 20 : 10);
+        const totalActivity = day.questions + day.lessons;
+        const isActive = totalActivity > 0;
+        const height = Math.max((totalActivity / maxActivity) * 100, isActive ? 20 : 10);
         
         return (
           <div key={i} className="flex-1 flex flex-col items-center h-full">
@@ -131,10 +132,10 @@ const You: React.FC = () => {
   const getInitialWeeklyActivity = () => {
     const start = startOfWeek(new Date(), { weekStartsOn: 1 });
     const end = endOfWeek(new Date(), { weekStartsOn: 1 });
-    return eachDayOfInterval({ start, end }).map(date => ({ date, questions: 0 }));
+    return eachDayOfInterval({ start, end }).map(date => ({ date, questions: 0, lessons: 0 }));
   };
   
-  const [weeklyActivity, setWeeklyActivity] = useState<{ date: Date; questions: number }[]>(getInitialWeeklyActivity);
+  const [weeklyActivity, setWeeklyActivity] = useState<{ date: Date; questions: number; lessons: number }[]>(getInitialWeeklyActivity);
   const [overallStats, setOverallStats] = useState({
     totalQuestions: 0,
     correctAnswers: 0,
@@ -187,7 +188,7 @@ const You: React.FC = () => {
           days.map(async (date) => {
             // Don't query future dates
             if (isAfter(date, new Date())) {
-              return { date, questions: 0 };
+              return { date, questions: 0, lessons: 0 };
             }
 
             const dateKey = format(date, 'yyyy-MM-dd');
@@ -243,12 +244,16 @@ const You: React.FC = () => {
               );
               sectionMinutes += sectionTime;
 
+              // Count section-specific lessons
+              const lessonActivities = sectionActivities.filter((a: { type?: string }) => a.type === 'lesson');
+
               return {
                 date,
-                questions: mcqActivities.length, // Section-specific for chart
+                questions: mcqActivities.length,
+                lessons: lessonActivities.length,
               };
             }
-            return { date, questions: 0 };
+            return { date, questions: 0, lessons: 0 };
           })
         );
         
@@ -356,6 +361,7 @@ const You: React.FC = () => {
   };
 
   const weeklyQuestions = weeklyActivity.reduce((sum, d) => sum + d.questions, 0);
+  const weeklyLessons = weeklyActivity.reduce((sum, d) => sum + d.lessons, 0);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -470,7 +476,12 @@ const You: React.FC = () => {
         <Card className="p-4">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300">This Week</h3>
-            <span className="text-xs text-primary-600 font-medium">{weeklyQuestions} Q</span>
+            <span className="text-xs text-primary-600 font-medium">
+              {weeklyQuestions > 0 && `${weeklyQuestions} Q`}
+              {weeklyQuestions > 0 && weeklyLessons > 0 && ' · '}
+              {weeklyLessons > 0 && `${weeklyLessons} L`}
+              {weeklyQuestions === 0 && weeklyLessons === 0 && '0'}
+            </span>
           </div>
           <WeeklyChart activity={weeklyActivity} />
         </Card>

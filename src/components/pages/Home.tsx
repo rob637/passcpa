@@ -37,6 +37,7 @@ import { CourseId } from '../../types/course';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
 import { BottomSheet } from '../common/BottomSheet';
+import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -94,6 +95,12 @@ const Home = () => {
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
+  const showDashboardNudge = useDashboardShareNudge();
+
+  // Check for milestone-based share nudges
+  const totalQuestionsAnswered = stats?.totalQuestions || 0;
+  const showStreakNudge = shouldShowStreakNudge(currentStreak);
+  const showQuestionsNudge = !showStreakNudge && shouldShowQuestionsMilestone(totalQuestionsAnswered);
 
   // Check for pending checkout on mount (safety net if onboarding didn't catch it)
   // ONLY redirect if pendingCheckout matches current course context
@@ -560,6 +567,17 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      {/* Share Nudge - contextual, non-intrusive */}
+      {showStreakNudge && (
+        <ShareNudge trigger="streak_milestone" streak={currentStreak} />
+      )}
+      {showQuestionsNudge && (
+        <ShareNudge trigger="questions_milestone" totalQuestions={totalQuestionsAnswered} />
+      )}
+      {showDashboardNudge && !showStreakNudge && !showQuestionsNudge && (
+        <ShareNudge trigger="dashboard_periodic" />
+      )}
 
       {/* Study Time Card - At bottom since less actionable */}
       <StudyTimeCard />

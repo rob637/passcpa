@@ -12,6 +12,7 @@ import { Button } from './Button';
 import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
 import { getReferralStats } from '../../services/referral';
+import logger from '../../utils/logger';
 
 interface PassedCelebrationProps {
   /** Which exam section/part was passed (optional, for multi-section exams) */
@@ -78,7 +79,7 @@ export function PassedCelebration({ section, userName, onClose }: PassedCelebrat
         }, 'image/png', 1.0);
       });
     } catch (error) {
-      console.error('Failed to generate image:', error);
+      logger.error('Failed to generate image:', error);
       setShareError('Failed to generate image');
       return null;
     } finally {

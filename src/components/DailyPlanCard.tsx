@@ -50,7 +50,6 @@ import {
   getCourseLessonPath, 
   getCoursePracticePath, 
   getCourseTBSPath, 
-  getCourseFlashcardPath,
   getCourseHomePath,
 } from '../utils/courseNavigation';
 import clsx from 'clsx';
@@ -292,14 +291,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
         break;
       case 'flashcards':
-        // Pass cardCount if specified, and mode from params
+        // Navigate directly to flashcard session (skip setup page) with daily plan params
         const flashcardParams = new URLSearchParams();
         flashcardParams.set('from', 'dailyplan');
         flashcardParams.set('activityId', activity.id);
         if (activity.params?.mode) flashcardParams.set('mode', activity.params.mode);
         if (activity.params?.cardCount) flashcardParams.set('count', String(activity.params.cardCount));
         if (activity.params?.section) flashcardParams.set('section', activity.params.section);
-        navigate(`${getCourseFlashcardPath(courseId)}?${flashcardParams.toString()}`);
+        navigate(`/flashcards/session?${flashcardParams.toString()}`);
         break;
       case 'essay':
         // CMA Essay Simulator

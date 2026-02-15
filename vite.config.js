@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 
 // Read version from package.json
 const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
@@ -11,9 +11,48 @@ const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
 // Enable bundle analyzer via ANALYZE=true environment variable
 const enableAnalyzer = process.env.ANALYZE === 'true';
 
+/**
+ * Vite plugin: inject Firebase config into the messaging service worker.
+ * The SW file in public/ uses `self.__FIREBASE_CONFIG__` placeholder.
+ * This plugin writes the config from VITE_FIREBASE_* env vars into the
+ * built file so no API keys are hardcoded in source control.
+ */
+function firebaseMessagingSWPlugin() {
+  return {
+    name: 'firebase-messaging-sw-config',
+    writeBundle(options) {
+      const outDir = options.dir || 'dist';
+      const swPath = path.resolve(outDir, 'firebase-messaging-sw.js');
+      if (!existsSync(swPath)) return;
+
+      // Load env vars (Vite doesn't expose them to config plugins by default)
+      const env = loadEnv(process.env.NODE_ENV || 'production', process.cwd(), 'VITE_');
+
+      const firebaseConfig = JSON.stringify({
+        apiKey: env.VITE_FIREBASE_API_KEY || '',
+        authDomain: env.VITE_FIREBASE_AUTH_DOMAIN || '',
+        projectId: env.VITE_FIREBASE_PROJECT_ID || '',
+        storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET || '',
+        messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
+        appId: env.VITE_FIREBASE_APP_ID || '',
+        measurementId: env.VITE_FIREBASE_MEASUREMENT_ID || '',
+      });
+
+      let content = readFileSync(swPath, 'utf-8');
+      // Inject config by replacing the placeholder assignment
+      content = content.replace(
+        /self\.__FIREBASE_CONFIG__\s*\|\|\s*\{[^}]*\}/,
+        firebaseConfig
+      );
+      writeFileSync(swPath, content, 'utf-8');
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
+    firebaseMessagingSWPlugin(),
     VitePWA({
       registerType: 'prompt', // Don't auto-refresh - let user decide when to update
       devOptions: {

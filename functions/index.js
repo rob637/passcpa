@@ -172,7 +172,7 @@ function getCourseConfig(courseId) {
 const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim();
 const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
 // Email to receive admin notifications (e.g. new signups)
-const ADMIN_EMAIL = 'rob@sagecg.com';
+const ADMIN_EMAIL = 'support@voraprep.com';
 
 let resend = null;
 if (RESEND_API_KEY) {
@@ -1491,7 +1491,10 @@ exports.createCheckoutSession = onCall({
 exports.stripeWebhook = onRequest({
   cors: false, // Stripe sends POST directly, no CORS needed
   invoker: 'public', // Allow Stripe to call without authentication
-  secrets: ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'],
+  secrets: [
+    'STRIPE_SECRET_KEY',
+    { name: 'STRIPE_WEBHOOK_SECRET', version: 'latest' },
+  ],
 }, async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).send('Method not allowed');
@@ -1508,13 +1511,16 @@ exports.stripeWebhook = onRequest({
 
   try {
     // Verify webhook signature
+    // Use rawBody (Buffer) which is the original request body before JSON parsing
+    const bodyToVerify = req.rawBody || req.body;
     event = stripe.webhooks.constructEvent(
-      req.rawBody,
+      bodyToVerify,
       sig,
       STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message);
+    console.error('Debug info: rawBody available:', !!req.rawBody, '| body type:', typeof req.body, '| sig present:', !!sig, '| secret length:', STRIPE_WEBHOOK_SECRET?.length);
     res.status(400).send(`Webhook Error: ${err.message}`);
     return;
   }
@@ -1577,6 +1583,19 @@ async function handleCheckoutComplete(session) {
 
   console.log(`Checkout complete for user ${userId}, course ${courseId}`);
 
+  // Also write subscription data directly from the checkout session.
+  // This acts as a fallback in case customer.subscription.created/updated
+  // events are delayed, missed, or fail signature verification.
+  if (session.subscription && stripe) {
+    try {
+      const subscription = await stripe.subscriptions.retrieve(session.subscription);
+      await updateUserSubscription(userId, subscription, courseId);
+      console.log(`Subscription data written from checkout.session.completed for user ${userId}`);
+    } catch (subError) {
+      console.error('Error syncing subscription from checkout session:', subError);
+    }
+  }
+
   // Send welcome email
   if (resend) {
     const userDoc = await db.collection('users').doc(userId).get();
@@ -1632,8 +1651,13 @@ async function updateUserSubscription(userId, subscription, courseId) {
   const status = subscription.status; // 'active', 'past_due', 'canceled', 'trialing'
   const isFounder = subscription.metadata?.isFounder === 'true';
   const examId = courseId || subscription.metadata?.courseId || 'cpa';
-  const interval = subscription.items.data[0]?.price.recurring?.interval;
+  const firstItem = subscription.items?.data?.[0];
+  const interval = firstItem?.price?.recurring?.interval;
   const tier = interval === 'year' ? 'annual' : 'monthly';
+  
+  // Stripe API v2026-01-28 moved current_period_start/end to the subscription item
+  const periodStart = subscription.current_period_start || firstItem?.current_period_start;
+  const periodEnd = subscription.current_period_end || firstItem?.current_period_end;
   
   const subscriptionData = {
     stripeSubscriptionId: subscription.id,
@@ -1641,10 +1665,10 @@ async function updateUserSubscription(userId, subscription, courseId) {
     status: status,
     courseId: examId,
     isFounder: isFounder,
-    currentPeriodStart: new Date(subscription.current_period_start * 1000),
-    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+    currentPeriodStart: periodStart ? new Date(periodStart * 1000) : null,
+    currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : null,
     cancelAtPeriodEnd: subscription.cancel_at_period_end,
-    priceId: subscription.items.data[0]?.price.id,
+    priceId: firstItem?.price?.id,
     interval: interval,
     updatedAt: admin.firestore.FieldValue.serverTimestamp(),
   };
@@ -1654,8 +1678,8 @@ async function updateUserSubscription(userId, subscription, courseId) {
     stripeSubscriptionId: subscription.id,
     status: status,
     tier: tier,
-    currentPeriodStart: new Date(subscription.current_period_start * 1000),
-    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+    currentPeriodStart: periodStart ? new Date(periodStart * 1000) : null,
+    currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : null,
     cancelAtPeriodEnd: subscription.cancel_at_period_end,
     isFounder: isFounder,
   };
@@ -1845,6 +1869,75 @@ exports.createCustomerPortalSession = onCall({
   } catch (error) {
     console.error('Customer portal error:', error);
     throw new HttpsError('internal', 'Failed to create portal session');
+  }
+});
+
+// ============================================================================
+// STRIPE: SYNC SUBSCRIPTION FROM STRIPE
+// Fallback for webhook failures — client can call this to force-sync
+// subscription status directly from the Stripe API to Firestore.
+// ============================================================================
+
+exports.syncSubscriptionFromStripe = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: ['STRIPE_SECRET_KEY'],
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in.');
+  }
+
+  if (!stripe) {
+    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  }
+
+  const userId = request.auth.uid;
+
+  try {
+    const userDoc = await db.collection('users').doc(userId).get();
+    const stripeCustomerId = userDoc.data()?.stripeCustomerId;
+
+    if (!stripeCustomerId) {
+      console.log(`syncSubscriptionFromStripe: no Stripe customer for user ${userId}`);
+      return { synced: false, reason: 'no_customer' };
+    }
+
+    // List active subscriptions for this customer from Stripe
+    const subscriptions = await stripe.subscriptions.list({
+      customer: stripeCustomerId,
+      status: 'active',
+      limit: 10,
+    });
+
+    if (subscriptions.data.length === 0) {
+      // Also check for trialing subscriptions
+      const trialingSubs = await stripe.subscriptions.list({
+        customer: stripeCustomerId,
+        status: 'trialing',
+        limit: 10,
+      });
+      subscriptions.data.push(...trialingSubs.data);
+    }
+
+    if (subscriptions.data.length === 0) {
+      console.log(`syncSubscriptionFromStripe: no active subscriptions for user ${userId}`);
+      return { synced: false, reason: 'no_subscriptions' };
+    }
+
+    // Process each active subscription
+    let syncCount = 0;
+    for (const subscription of subscriptions.data) {
+      const courseId = subscription.metadata?.courseId;
+      await updateUserSubscription(userId, subscription, courseId);
+      syncCount++;
+      console.log(`syncSubscriptionFromStripe: synced ${courseId || 'unknown'} for user ${userId}, status=${subscription.status}`);
+    }
+
+    return { synced: true, count: syncCount };
+  } catch (error) {
+    console.error('syncSubscriptionFromStripe error:', error);
+    throw new HttpsError('internal', 'Failed to sync subscription');
   }
 });
 

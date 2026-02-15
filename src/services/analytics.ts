@@ -59,6 +59,9 @@ export const initAnalytics = (): void => {
 
   initialized = true;
   logger.log('Analytics initialized');
+
+  // Track session start for PWA install threshold
+  trackPWAEngagement('session_start');
 };
 
 /**

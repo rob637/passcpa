@@ -1,0 +1,8 @@
+{
+  "cpa":  { "questions": 6203, "flashcards": 609, "lessons": 463 },
+  "ea":   { "questions": 2612, "flashcards": 451, "lessons": 152 },
+  "cma":  { "questions": 2024, "flashcards": 491, "lessons": 114 },
+  "cia":  { "questions": 1522, "flashcards": 497, "lessons": 140 },
+  "cfp":  { "questions": 2485, "flashcards": 487, "lessons": 143 },
+  "cisa": { "questions": 1520, "flashcards": 531, "lessons": 109 }
+}

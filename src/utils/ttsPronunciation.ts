@@ -98,6 +98,26 @@ export const ACRONYM_PRONUNCIATIONS: Record<string, string> = {
   'WIP':    'W.I.P.',          // Work in Process
   'NFP':    'N.F.P.',          // Not-for-Profit
   'FOB':    'F.O.B.',          // Free on Board
+  'FV':     'F.V.',            // Fair Value
+  'PV':     'P.V.',            // Present Value
+  'AAA':    'triple A',        // Accumulated Adjustments Account
+  'CTA':    'C.T.A.',          // Cumulative Translation Adjustment
+  'UCC':    'U.C.C.',          // Uniform Commercial Code
+  'UBTI':   'U.B.T.I.',       // Unrelated Business Taxable Income
+  'SSAE':   'S.S.A.E.',       // Statement on Standards for Attestation Engagements
+  'PMSI':   'P.M.S.I.',       // Purchase Money Security Interest
+  'EOM':    'E.O.M.',          // Emphasis of Matter
+  'AR':     'A.R.',            // Accounts Receivable / Audit Risk
+  'GP':     'G.P.',            // General Partnership / Gross Profit
+  'WC':     'W.C.',            // Written Communication / Working Capital
+  'CM':     'C.M.',            // Contribution Margin
+  'QSBS':   'Q.S.B.S.',       // Qualified Small Business Stock
+  'CAFR':   'CAF-er',         // Comprehensive Annual Financial Report
+  'SAS':    'S.A.S.',          // Statement on Auditing Standards
+  'FASAB':  'FAZ-ab',         // Federal Accounting Standards Advisory Board
+  'IR':     'I.R.',            // Inherent Risk
+  'CR':     'C.R.',            // Control Risk
+  'DR':     'D.R.',            // Detection Risk
 
   // ═══════════════════════════════════════════════════════════════════
   // MANAGEMENT ACCOUNTING (CMA)
@@ -194,6 +214,7 @@ export const ACRONYM_PRONUNCIATIONS: Record<string, string> = {
   'AUP':    'A.U.P.',          // Agreed-Upon Procedures
   'ITGC':   'I.T.G.C.',       // IT General Controls
   'ERM':    'E.R.M.',          // Enterprise Risk Management
+  'GAS':    'G.A.S.',          // Government Auditing Standards
 
   // ═══════════════════════════════════════════════════════════════════
   // INFORMATION SYSTEMS (CISA, ISC)

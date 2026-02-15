@@ -117,21 +117,36 @@ export function getStudyPlanId(
  * Normalize a date value from Firestore (may be Date or Timestamp-like object)
  */
 function normalizeDate(
-  value: Date | { seconds: number; nanoseconds: number } | { toDate?: () => Date } | null | undefined
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: any
 ): Date | null {
   if (!value) return null;
   
   // Already a Date
-  if (value instanceof Date) return value;
+  if (value instanceof Date) {
+    return isNaN(value.getTime()) ? null : value;
+  }
   
   // Firestore Timestamp (has toDate method)
-  if (typeof (value as { toDate?: () => Date }).toDate === 'function') {
-    return (value as { toDate: () => Date }).toDate();
+  if (typeof value.toDate === 'function') {
+    const d = value.toDate();
+    return isNaN(d.getTime()) ? null : d;
   }
   
   // Plain object with seconds (serialized Timestamp)
-  if ('seconds' in value && typeof value.seconds === 'number') {
+  if (typeof value === 'object' && 'seconds' in value && typeof value.seconds === 'number') {
     return new Date(value.seconds * 1000);
+  }
+  
+  // String dates (ISO strings, YYYY-MM-DD, etc.)
+  if (typeof value === 'string') {
+    const parsed = new Date(value);
+    return isNaN(parsed.getTime()) ? null : parsed;
+  }
+  
+  // Number (epoch milliseconds)
+  if (typeof value === 'number') {
+    return new Date(value);
   }
   
   return null;

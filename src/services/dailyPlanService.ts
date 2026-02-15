@@ -407,6 +407,16 @@ export const determineLearningPhase = (
     };
   }
 
+  // Accelerated Foundation → Building: Exam within 45 days AND user has been assessed
+  // (diagnostic quiz seeds topicStats). Even with 0% lessons, a tight deadline
+  // demands more than just lessons — include practice blocks for identified weak areas.
+  if (daysUntilExam !== null && daysUntilExam <= 45 && attemptedTopics.length >= 2) {
+    return {
+      phase: 'building',
+      reason: `${daysUntilExam} days until exam with diagnostic data — accelerated study plan`,
+    };
+  }
+
   // Foundation: <25% content covered (default)
   return {
     phase: 'foundation',

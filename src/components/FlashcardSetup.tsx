@@ -17,7 +17,7 @@ import { useCourse } from '../providers/CourseProvider';
 import { Button } from './common/Button';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { getFlashcardsBySection } from '../data/cpa/flashcards';
+import { getFlashcardsBySection } from '../services/flashcardService';
 import { EASection, AllExamSections } from '../types';
 import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
 import { getCurrentSection } from '../utils/profileHelpers';
@@ -67,6 +67,7 @@ const FlashcardSetup: React.FC = () => {
   
   const [loading, setLoading] = useState(true);
   const [counts, setCounts] = useState<CategoryCount>({ all: 0, toReview: 0, mastered: 0, notWorked: 0 });
+  const [blueprintAreas, setBlueprintAreas] = useState<string[]>([]);
   
   const [config, setConfig] = useState<FlashcardConfig>({
     categories: ['all'],
@@ -74,59 +75,63 @@ const FlashcardSetup: React.FC = () => {
     unit: 'all',
     shuffle: false,
     showBothSides: false,
-    count: 25, // Default to 25 cards
+    count: 10, // Default to 10 cards
   });
 
   // Advanced options toggle
   const [showAdvanced, setShowAdvanced] = useState(false);
 
-  // Get blueprint areas for unit filter
-  const sectionCards = getFlashcardsBySection(currentSection);
-  const blueprintAreas = [...new Set(sectionCards.map(c => c.blueprintArea).filter((a): a is string => !!a))];
-  
-  // Load user's flashcard mastery data
+  // Load flashcards and user's mastery data
   useEffect(() => {
-    const loadMasteryData = async () => {
-      if (!user) return;
-      
+    const loadData = async () => {
       setLoading(true);
       try {
-        const srsRef = doc(db, 'users', user.uid, 'srs', 'cards');
-        const srsSnap = await getDoc(srsRef);
-        const srsData = srsSnap.exists() ? srsSnap.data() : {};
+        // Load flashcards for current section/course (works for all courses)
+        const sectionCards = await getFlashcardsBySection(currentSection, courseId);
         
-        const allCards = sectionCards;
+        // Extract blueprint areas for unit filter
+        const areas = [...new Set(sectionCards.map(c => c.blueprintArea).filter((a): a is string => !!a))];
+        setBlueprintAreas(areas);
+        
+        // Load mastery data from Firestore
         let toReview = 0;
         let mastered = 0;
         let notWorked = 0;
         
-        allCards.forEach(card => {
-          const cardSrs = srsData[card.id];
-          if (!cardSrs || !cardSrs.nextReview) {
-            notWorked++;
-          } else if (cardSrs.masteryLevel === 'mastered') {
-            mastered++;
-          } else {
-            // Has been worked but not mastered = to review
-            toReview++;
-          }
-        });
+        if (user) {
+          const srsRef = doc(db, 'users', user.uid, 'srs', 'cards');
+          const srsSnap = await getDoc(srsRef);
+          const srsData = srsSnap.exists() ? srsSnap.data() : {};
+          
+          sectionCards.forEach(card => {
+            const cardSrs = srsData[card.id];
+            if (!cardSrs || !cardSrs.nextReview) {
+              notWorked++;
+            } else if (cardSrs.masteryLevel === 'mastered') {
+              mastered++;
+            } else {
+              toReview++;
+            }
+          });
+        } else {
+          notWorked = sectionCards.length;
+        }
         
         setCounts({
-          all: allCards.length,
+          all: sectionCards.length,
           toReview,
           mastered,
           notWorked,
         });
       } catch (error) {
-        console.error('Error loading mastery data:', error);
+        console.error('Error loading flashcard data:', error);
       } finally {
         setLoading(false);
       }
     };
     
-    loadMasteryData();
-  }, [user, currentSection]);
+    loadData();
+  }, [user, currentSection, courseId]);
 
   // Toggle card type
   const toggleCardType = (type: 'definition' | 'formula' | 'mnemonic' | 'question') => {
@@ -143,10 +148,8 @@ const FlashcardSetup: React.FC = () => {
   const startSession = () => {
     const params = new URLSearchParams();
     
-    // Always include section for EA (so session knows which cards to use)
-    if (isEA) {
-      params.set('section', currentSection);
-    }
+    // Always include section so session knows which cards to use
+    params.set('section', currentSection);
     
     // Mode based on categories
     if (config.categories.includes('toReview')) {

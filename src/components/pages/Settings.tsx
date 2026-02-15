@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import logger from '../../utils/logger';
 import {
   User as UserIcon,
@@ -101,7 +101,9 @@ const Settings: React.FC = () => {
   const { subscription, getExamAccess } = useSubscription();
   const navigate = useNavigate();
   // const { startTour, resetTour } = useTour();
-  const [activeTab, setActiveTab] = useState('profile');
+  const [searchParams] = useSearchParams();
+  const initialTab = searchParams.get('tab') || 'profile';
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);

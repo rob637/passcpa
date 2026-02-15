@@ -696,8 +696,15 @@ const Onboarding: React.FC = () => {
       });
 
       // Parse date as local date to avoid timezone shift
-      const [year, month, day] = examDate.split('-').map(Number);
-      const localExamDate = new Date(year, month - 1, day);
+      let localExamDate: Date | null = null;
+      if (examDate && /^\d{4}-\d{2}-\d{2}$/.test(examDate)) {
+        const [year, month, day] = examDate.split('-').map(Number);
+        localExamDate = new Date(year, month - 1, day);
+        // Validate the parsed date is real
+        if (isNaN(localExamDate.getTime())) {
+          localExamDate = null;
+        }
+      }
       
       // Auto-detect user's timezone
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';

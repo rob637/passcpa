@@ -66,6 +66,60 @@ const cleanTextForSpeech = (text: string): string => {
     .trim();
 };
 
+/**
+ * Split text into chunks at sentence boundaries.
+ * Chrome has a bug where SpeechSynthesisUtterance silently stops after ~15s
+ * on long text. Splitting into smaller chunks fixes this.
+ */
+const splitTextIntoChunks = (text: string, maxLength: number = 300): string[] => {
+  const chunks: string[] = [];
+  let remaining = text;
+  
+  while (remaining.length > 0) {
+    if (remaining.length <= maxLength) {
+      chunks.push(remaining.trim());
+      break;
+    }
+    
+    // Find the best split point (sentence boundary) within maxLength
+    let splitAt = -1;
+    // Try period + space first
+    for (let i = maxLength; i >= maxLength / 2; i--) {
+      if (remaining[i] === '.' && remaining[i + 1] === ' ') {
+        splitAt = i + 1;
+        break;
+      }
+    }
+    // Try comma + space as fallback
+    if (splitAt === -1) {
+      for (let i = maxLength; i >= maxLength / 2; i--) {
+        if (remaining[i] === ',' && remaining[i + 1] === ' ') {
+          splitAt = i + 1;
+          break;
+        }
+      }
+    }
+    // Last resort: split at space
+    if (splitAt === -1) {
+      for (let i = maxLength; i >= maxLength / 2; i--) {
+        if (remaining[i] === ' ') {
+          splitAt = i;
+          break;
+        }
+      }
+    }
+    // Absolute last resort: hard cut
+    if (splitAt === -1) {
+      splitAt = maxLength;
+    }
+    
+    chunks.push(remaining.substring(0, splitAt).trim());
+    remaining = remaining.substring(splitAt).trim();
+  }
+  
+  return chunks.filter(c => c.length > 0);
+};
+
 // Get the best available voice for natural speech
 const getBestVoice = (): SpeechSynthesisVoice | null => {
   const voices = window.speechSynthesis.getVoices();
@@ -559,6 +613,75 @@ const LessonViewer: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasPracticeQuestions, setHasPracticeQuestions] = useState<boolean>(false);
 
+  // Chrome TTS keep-alive: prevent silent cancel on long speech
+  const ttsKeepAliveRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
+  
+  const stopTTS = React.useCallback(() => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    if (ttsKeepAliveRef.current) {
+      clearInterval(ttsKeepAliveRef.current);
+      ttsKeepAliveRef.current = null;
+    }
+    setIsPlaying(false);
+  }, []);
+
+  const startTTS = React.useCallback((text: string) => {
+    if (!('speechSynthesis' in window)) return;
+    
+    // Cancel any existing speech
+    window.speechSynthesis.cancel();
+    if (ttsKeepAliveRef.current) {
+      clearInterval(ttsKeepAliveRef.current);
+    }
+    
+    // Split into chunks to avoid Chrome's ~15s auto-cancel bug
+    const chunks = splitTextIntoChunks(text, 300);
+    if (chunks.length === 0) return;
+    
+    let currentChunk = 0;
+    const voice = getBestVoice();
+    
+    const speakNextChunk = () => {
+      if (currentChunk >= chunks.length) {
+        stopTTS();
+        return;
+      }
+      
+      const utterance = new SpeechSynthesisUtterance(chunks[currentChunk]);
+      if (voice) utterance.voice = voice;
+      utterance.rate = 0.95;
+      utterance.pitch = 1.0;
+      
+      utterance.onend = () => {
+        currentChunk++;
+        speakNextChunk();
+      };
+      
+      utterance.onerror = (e) => {
+        // 'interrupted' is expected when user stops — not a real error
+        if (e.error !== 'interrupted') {
+          logger.warn('TTS error:', e.error);
+        }
+        stopTTS();
+      };
+      
+      window.speechSynthesis.speak(utterance);
+    };
+    
+    // Chrome workaround: periodically pause/resume to prevent silent stop
+    ttsKeepAliveRef.current = setInterval(() => {
+      if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        window.speechSynthesis.resume();
+      }
+    }, 10000);
+    
+    speakNextChunk();
+    setIsPlaying(true);
+  }, [stopTTS]);
+
   // Use the lesson's actual section, not the user's profile section
   // This ensures PREP lessons stay within the PREP section
   const currentSection = (lesson?.section || userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
@@ -566,11 +689,9 @@ const LessonViewer: React.FC = () => {
   // Cleanup TTS when navigating away from the lesson
   useEffect(() => {
     return () => {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
+      stopTTS();
     };
-  }, []);
+  }, [stopTTS]);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -634,10 +755,7 @@ const LessonViewer: React.FC = () => {
     }
 
     // Stop TTS and scroll to top when lesson changes
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-    }
-    setIsPlaying(false);
+    stopTTS();
     window.scrollTo(0, 0);
     setProgress(0);
     setIsComplete(false);
@@ -774,72 +892,47 @@ const LessonViewer: React.FC = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => {
-                  if ('speechSynthesis' in window && lesson) {
-                    if (isPlaying) {
-                      window.speechSynthesis.cancel();
-                      setIsPlaying(false);
-                    } else {
-                      // Build complete lesson text starting from title
-                      const textParts: string[] = [];
-                      
-                      // Start with title and description
-                      textParts.push(lesson.title);
-                      if (lesson.description) {
-                        textParts.push(lesson.description);
-                      }
-                      
-                      // Get text from all readable sections
-                      lesson.content.sections.forEach(section => {
-                        if (section.title) {
-                          textParts.push(section.title);
-                        }
-                        
-                        if (typeof section.content === 'string') {
-                          textParts.push(section.content);
-                        } else if (Array.isArray(section.content)) {
-                          // Handle list content (strings or definition items)
-                          section.content.forEach(item => {
-                            if (typeof item === 'string') {
-                              textParts.push(item);
-                            } else if (item && typeof item === 'object' && 'term' in item) {
-                              textParts.push(`${item.term}: ${item.definition}`);
-                            }
-                          });
-                        }
-                        
-                        // Handle items array for lists
-                        if (section.items && Array.isArray(section.items)) {
-                          section.items.forEach(item => {
-                            if (typeof item === 'string') {
-                              textParts.push(item);
-                            }
-                          });
-                        }
-                      });
-                      
-                      const rawText = textParts.join('. ');
-                      
-                      // Clean text for natural speech
-                      const cleanedText = cleanTextForSpeech(rawText);
-                      
-                      const utterance = new SpeechSynthesisUtterance(cleanedText);
-                      
-                      // Get a natural-sounding voice
-                      const voice = getBestVoice();
-                      if (voice) {
-                        utterance.voice = voice;
-                      }
-                      
-                      // Natural speech settings
-                      utterance.rate = 0.95; // Slightly slower than default
-                      utterance.pitch = 1.0;
-                      
-                      utterance.onend = () => setIsPlaying(false);
-                      utterance.onerror = () => setIsPlaying(false);
-                      
-                      window.speechSynthesis.speak(utterance);
-                      setIsPlaying(true);
+                  if (isPlaying) {
+                    stopTTS();
+                  } else if (lesson) {
+                    // Build complete lesson text starting from title
+                    const textParts: string[] = [];
+                    
+                    textParts.push(lesson.title);
+                    if (lesson.description) {
+                      textParts.push(lesson.description);
                     }
+                    
+                    // Get text from all readable sections
+                    lesson.content.sections.forEach(section => {
+                      if (section.title) {
+                        textParts.push(section.title);
+                      }
+                      
+                      if (typeof section.content === 'string') {
+                        textParts.push(section.content);
+                      } else if (Array.isArray(section.content)) {
+                        section.content.forEach(item => {
+                          if (typeof item === 'string') {
+                            textParts.push(item);
+                          } else if (item && typeof item === 'object' && 'term' in item) {
+                            textParts.push(`${item.term}: ${item.definition}`);
+                          }
+                        });
+                      }
+                      
+                      if (section.items && Array.isArray(section.items)) {
+                        section.items.forEach(item => {
+                          if (typeof item === 'string') {
+                            textParts.push(item);
+                          }
+                        });
+                      }
+                    });
+                    
+                    const rawText = textParts.join('. ');
+                    const cleanedText = cleanTextForSpeech(rawText);
+                    startTTS(cleanedText);
                   }
                 }}
                 className={clsx(

@@ -898,7 +898,11 @@ exports.sendWelcomeEmail = onDocumentCreated({
   
   const userData = event.data.data();
   const userEmail = userData.email;
-  const courseConfig = getCourseConfig(userData.activeCourse);
+  const activeCourse = userData.activeCourse;
+  if (!activeCourse) {
+    console.warn('Welcome email: No activeCourse set for user, defaulting to CPA. User email:', userEmail);
+  }
+  const courseConfig = getCourseConfig(activeCourse);
   const displayName = userData.displayName || 'Exam Candidate';
   
   if (!userEmail) {

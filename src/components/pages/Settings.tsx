@@ -1199,17 +1199,27 @@ const Settings: React.FC = () => {
                                 </div>
                               </div>
                               <div className="flex items-center gap-2">
-                                {/* Upgrade button for non-paid exams */}
+                                {/* Upgrade buttons for non-paid exams */}
                                 {!access.isPaid && (access.trialExpired || access.isTrialing) && (
-                                  <button
-                                    onClick={() => navigate(`/${examId}#pricing`)}
-                                    className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
-                                  >
-                                    Subscribe
-                                    <span className="text-xs opacity-80">
-                                      {isFounderPricingActive() ? `$${pricing.founderAnnual}/yr` : `$${pricing.annual}/yr`}
-                                    </span>
-                                  </button>
+                                  <div className="flex items-center gap-2">
+                                    <button
+                                      onClick={() => navigate(`/checkout?course=${examId}&interval=monthly`)}
+                                      className="flex items-center gap-1.5 text-sm bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium px-3 py-1.5 rounded-lg transition-colors"
+                                    >
+                                      <span className="text-xs">
+                                        ${isFounderPricingActive() ? pricing.founderMonthly : pricing.monthly}/mo
+                                      </span>
+                                    </button>
+                                    <button
+                                      onClick={() => navigate(`/checkout?course=${examId}&interval=annual`)}
+                                      className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
+                                    >
+                                      <span className="text-xs">
+                                        ${isFounderPricingActive() ? pricing.founderAnnual : pricing.annual}/yr
+                                      </span>
+                                      <span className="text-xs bg-green-500/20 text-green-100 px-1.5 py-0.5 rounded font-normal">Save 40%+</span>
+                                    </button>
+                                  </div>
                                 )}
                                 {/* Manage button for paid subscribers */}
                                 {access.isPaid && subscription?.stripeCustomerId && (

@@ -107,9 +107,12 @@ const VerifyEmail = () => {
           </li>
           <li className="flex items-start gap-2">
             <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full w-5 h-5 flex items-center justify-center text-xs font-medium flex-shrink-0 mt-0.5">3</span>
-            <span>You'll be automatically redirected once verified</span>
+            <span><strong>Return to this window</strong> — it will automatically continue</span>
           </li>
         </ol>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 italic">
+          Tip: You can close the verification tab after clicking the link.
+        </p>
       </div>
 
       {/* Status Messages */}

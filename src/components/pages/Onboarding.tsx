@@ -586,22 +586,29 @@ const Onboarding: React.FC = () => {
   ) || Boolean(userProfile?.onboardingComplete);
 
   // Check for pending course from registration flow or course-specific launch page
-  // Priority: 1) localStorage pendingCourse, 2) CourseProvider courseId, 3) userProfile.activeCourse
+  // Priority: 1) localStorage pendingCourse, 2) userProfile.activeCourse, 3) CourseProvider courseId
   const getPendingCourse = (): CourseId | '' => {
     const pending = localStorage.getItem('pendingCourse');
     if (pending && ACTIVE_COURSES.includes(pending as CourseId)) {
       return pending as CourseId;
     }
+    // Check activeCourse from Firestore (set during registration)
+    if (userProfile?.activeCourse && ACTIVE_COURSES.includes(userProfile.activeCourse as CourseId)) {
+      return userProfile.activeCourse as CourseId;
+    }
     // Use the current course from CourseProvider (this handles course switching)
     if (currentCourseId) {
       return currentCourseId;
     }
-    return (userProfile?.activeCourse as CourseId) || '';
+    return '';
   };
   
-  // Check if course was pre-selected (from launch page or registration)
+  // Check if course was pre-selected (from launch page, registration, or stored in profile)
   // This should skip the course selection step
-  const hadPendingCourse = Boolean(localStorage.getItem('pendingCourse'));
+  const hadPendingCourse = Boolean(
+    localStorage.getItem('pendingCourse') || 
+    (userProfile?.activeCourse && ACTIVE_COURSES.includes(userProfile.activeCourse as CourseId))
+  );
 
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(getPendingCourse());

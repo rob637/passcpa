@@ -708,6 +708,9 @@ const Practice: React.FC = () => {
   // Track weak topics for targeted practice
   const [, setWeakTopicsFromSession] = useState<string[]>([]);
 
+  // Ref to prevent cleanup from re-saving a session that was intentionally ended
+  const sessionEndedRef = useRef(false);
+
   // Note: sessionId removed - using 'practice' mode shuffle which is stable per user
 
   const currentQuestion: Question | undefined = questions[currentIndex];
@@ -728,7 +731,7 @@ const Practice: React.FC = () => {
 
   // Save session state to sessionStorage (for returning after lesson/Vory)
   const saveSessionState = useCallback(() => {
-    if (!inSession || questions.length === 0) return;
+    if (!inSession || questions.length === 0 || sessionEndedRef.current) return;
     
     const sessionState = {
       courseId, // Track which course this session belongs to
@@ -1015,6 +1018,7 @@ const Practice: React.FC = () => {
 
       setQuestions(fetchedQuestions);
       setSessionConfig(config);
+      sessionEndedRef.current = false; // Allow saving for this new session
       setInSession(true);
       setStartTime(Date.now());
       setCurrentIndex(0);
@@ -1264,6 +1268,9 @@ const Practice: React.FC = () => {
     const weakTopics = [...new Set(wrongQuestions.map(q => q.topic || q.topicId || 'Unknown'))];
     setWeakTopicsFromSession(weakTopics);
 
+    // Mark session as intentionally ended (prevents cleanup from re-saving)
+    sessionEndedRef.current = true;
+    
     // Show results screen
     setInSession(false);
     setShowResults(true);
@@ -1274,6 +1281,7 @@ const Practice: React.FC = () => {
   
   // Reset and start new session
   const handleTryAgain = () => {
+    sessionEndedRef.current = false; // Allow saving for the new session
     setShowResults(false);
     setSessionConfig(null);
     setQuestions([]);

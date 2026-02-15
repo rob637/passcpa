@@ -4,7 +4,6 @@
  * Minimal, non-intrusive referral system:
  * - Auto-generates unique referral code on first access
  * - Tracks referrals in Firestore
- * - Extended trial for referred users (30 days instead of 14)
  * 
  * Touch points:
  * - Settings → "Invite Friends"
@@ -190,6 +189,48 @@ export function getReferralUrl(code: string, courseId?: string): string {
 }
 
 /**
+ * Exam-specific share details for richer referral messages
+ */
+const EXAM_SHARE_INFO: Record<string, { name: string; fullName: string; hook: string }> = {
+  cpa: {
+    name: 'CPA',
+    fullName: 'CPA exam',
+    hook: 'Adaptive MCQs, task-based simulations, and AI explanations that actually make sense — for a fraction of what Becker or Roger charge.',
+  },
+  ea: {
+    name: 'EA',
+    fullName: 'Enrolled Agent exam',
+    hook: 'Covers all three SEE parts with adaptive practice and AI-powered explanations. Way better than paying thousands for Gleim or Surgent.',
+  },
+  cma: {
+    name: 'CMA',
+    fullName: 'CMA exam',
+    hook: 'Adaptive practice for both parts, essay prep, and AI explanations — without the Gleim or Wiley price tag.',
+  },
+  cia: {
+    name: 'CIA',
+    fullName: 'CIA exam',
+    hook: 'All three parts covered with adaptive practice questions and AI-powered explanations. Much more affordable than the IIA\'s own materials.',
+  },
+  cisa: {
+    name: 'CISA',
+    fullName: 'CISA exam',
+    hook: 'All five domains covered with adaptive practice and AI explanations. A fraction of the cost of the ISACA review course.',
+  },
+  cfp: {
+    name: 'CFP',
+    fullName: 'CFP exam',
+    hook: 'Comprehensive coverage across all sections with adaptive learning and AI-powered explanations. Way more affordable than Dalton or Kaplan.',
+  },
+};
+
+const DEFAULT_SHARE_INFO = {
+  name: 'certification',
+  fullName: 'professional certification exam',
+  hook: 'AI-powered practice questions, adaptive learning, and detailed explanations — for a fraction of what traditional review courses charge.',
+};
+
+/**
  * Generate share text for referral
  */
 export function getReferralShareText(code: string, courseId?: string): {
@@ -197,24 +238,24 @@ export function getReferralShareText(code: string, courseId?: string): {
   text: string;
   url: string;
 } {
-  const examName = courseId?.toUpperCase() || 'professional certification';
+  const info = (courseId && EXAM_SHARE_INFO[courseId]) || DEFAULT_SHARE_INFO;
   const url = getReferralUrl(code, courseId);
   
   return {
-    title: 'Study with me on VoraPrep!',
+    title: `Study with me on VoraPrep!`,
     // Include URL in text so email clients always show it
-    text: `I'm using VoraPrep to study for the ${examName} exam. It's an AI-powered study platform that's way more affordable than Becker. Use my link to get an extended 30-day free trial!\n\n${url}`,
+    text: `Hey! I've been using VoraPrep to study for the ${info.fullName} and it's been a game-changer. ${info.hook}\n\nCheck it out: ${url}`,
     url,
   };
 }
 
 /**
- * Share via Web Share API (mobile) or copy to clipboard (desktop)
+ * Share via Web Share API (mobile), mailto (desktop), or copy to clipboard (fallback)
  */
 export async function shareReferralLink(
   code: string, 
   courseId?: string
-): Promise<{ method: 'native' | 'clipboard'; success: boolean }> {
+): Promise<{ method: 'native' | 'mailto' | 'clipboard'; success: boolean }> {
   const { title, text, url } = getReferralShareText(code, courseId);
   
   // Try native share first (mobile)
@@ -230,12 +271,20 @@ export async function shareReferralLink(
     }
   }
   
-  // Fallback to clipboard (text already includes URL)
+  // Desktop fallback: open mailto link with subject and body
   try {
-    await navigator.clipboard.writeText(text);
-    return { method: 'clipboard', success: true };
+    const subject = encodeURIComponent(title);
+    const body = encodeURIComponent(text);
+    window.open(`mailto:?subject=${subject}&body=${body}`, '_self');
+    return { method: 'mailto', success: true };
   } catch {
-    return { method: 'clipboard', success: false };
+    // If mailto fails, fall back to clipboard
+    try {
+      await navigator.clipboard.writeText(text);
+      return { method: 'clipboard', success: true };
+    } catch {
+      return { method: 'clipboard', success: false };
+    }
   }
 }
 

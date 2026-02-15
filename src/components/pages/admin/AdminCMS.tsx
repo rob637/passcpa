@@ -278,6 +278,7 @@ interface UserActivityData {
   }>;
   dailyLogs: Array<{
     date: string;
+    courseId?: string; // Parsed from doc ID prefix (e.g., 'ea_2026-02-15' → 'ea')
     questionsAnswered: number;
     correctAnswers: number;
     lessonsCompleted: number;
@@ -1101,7 +1102,7 @@ const AdminCMS: React.FC = () => {
         
         // Count by subscription
         const tier = u.subscription?.tier || 'free';
-        if (bySubscription.hasOwnProperty(tier)) {
+        if (tier in bySubscription) {
           bySubscription[tier]++;
         } else {
           bySubscription.free++;
@@ -1206,14 +1207,31 @@ const AdminCMS: React.FC = () => {
       });
       
       // Load daily logs (all - sort in memory)
+      // Doc IDs are either 'YYYY-MM-DD' (legacy) or '{courseId}_YYYY-MM-DD' (current)
       const dailyLogRef = collection(db, 'users', userId, 'daily_log');
       const dailyLogSnap = await getDocs(dailyLogRef);
       logger.log('Got daily_log:', dailyLogSnap.docs.length, 'docs');
-      const dailyLogs = dailyLogSnap.docs.map(doc => ({
-        date: doc.id,
-        ...doc.data()
+      const validCourseIds = ['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'];
+      const dailyLogs = dailyLogSnap.docs.map(doc => {
+        const rawId = doc.id;
+        let courseId = '';
+        let dateStr = rawId;
+        // Parse courseId prefix from doc ID (e.g., 'ea_2026-02-15' → courseId='ea', date='2026-02-15')
+        const underscoreIdx = rawId.indexOf('_');
+        if (underscoreIdx > 0) {
+          const prefix = rawId.substring(0, underscoreIdx).toLowerCase();
+          if (validCourseIds.includes(prefix)) {
+            courseId = prefix;
+            dateStr = rawId.substring(underscoreIdx + 1);
+          }
+        }
+        return {
+          date: dateStr,
+          courseId,
+          ...doc.data()
+        };
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      })) as any[];
+      }) as any[];
       dailyLogs.sort((a, b) => b.date.localeCompare(a.date));
       
       // Load practice sessions (all - sort in memory)
@@ -1246,7 +1264,7 @@ const AdminCMS: React.FC = () => {
       const totalQuestions = questionHistory.length;
       const totalCorrect = questionHistory.filter(q => q.lastCorrect === true || q.timesCorrect > 0).length;
       const overallAccuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
-      const totalStudyMinutes = dailyLogs.reduce((sum, log) => sum + (log.studyMinutes || 0), 0);
+      const totalStudyMinutes = dailyLogs.reduce((sum, log) => sum + (log.studyTimeMinutes || log.studyMinutes || 0), 0);
       const lastActiveDate = dailyLogs.length > 0 ? dailyLogs[0].date : null;
       
       // Calculate study streak
@@ -1292,7 +1310,6 @@ const AdminCMS: React.FC = () => {
       addLog(`Loaded activity for ${userDoc.email || userId}`, 'success');
     } catch (error) {
       logger.error('Error loading user activity:', error);
-      logger.error('Error loading user activity', error);
       addLog('Error loading activity: ' + (error instanceof Error ? error.message : String(error)), 'error');
       // Still set loading to false so modal shows error state
     } finally {
@@ -1321,8 +1338,7 @@ const AdminCMS: React.FC = () => {
       addLog(`Admin status ${currentIsAdmin ? 'removed from' : 'granted to'} user ${userId}`, 'success');
       loadUsers();
     } catch (error) {
-      logger.error('toggleAdminStatus error:', error);
-      logger.error('Error toggling admin status', error);
+      logger.error('Error toggling admin status:', error);
       addLog('Failed to toggle admin: ' + (error instanceof Error ? error.message : String(error)), 'error');
     }
   };
@@ -2046,8 +2062,8 @@ const AdminCMS: React.FC = () => {
               onClick={() => setActiveTab(tab)}
               className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                 activeTab === tab
-                  ? 'text-blue-600 dark:text-blue-400 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-300'
+                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
               }`}
             >
               <span className="hidden sm:inline">
@@ -2142,9 +2158,9 @@ const AdminCMS: React.FC = () => {
                 <>
                   {[1, 2, 3, 4, 5, 6].map(i => (
                     <Card key={i} className="p-6 animate-pulse">
-                      <div className="h-6 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
-                      <div className="h-10 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
-                      <div className="h-4 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 rounded w-full"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
+                      <div className="h-10 bg-gray-200 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
+                      <div className="h-4 bg-gray-100 dark:bg-slate-700 rounded w-full"></div>
                     </Card>
                   ))}
                 </>
@@ -2152,9 +2168,9 @@ const AdminCMS: React.FC = () => {
                 allCourseStats.map(course => {
                   const colorClass = course.courseId === 'cpa' ? 'text-blue-600 dark:text-blue-400' :
                                      course.courseId === 'ea' ? 'text-green-600 dark:text-green-400' :
-                                     course.courseId === 'cma' ? 'text-purple-600' :
-                                     course.courseId === 'cia' ? 'text-orange-600' :
-                                     course.courseId === 'cisa' ? 'text-teal-600' :
+                                     course.courseId === 'cma' ? 'text-purple-600 dark:text-purple-400' :
+                                     course.courseId === 'cia' ? 'text-orange-600 dark:text-orange-400' :
+                                     course.courseId === 'cisa' ? 'text-teal-600 dark:text-teal-400' :
                                      'text-amber-600 dark:text-amber-400';
                   return (
                     <Card key={course.courseId} className="p-6">
@@ -2708,15 +2724,15 @@ const AdminCMS: React.FC = () => {
             {/* Users by Course Breakdown */}
             {usersList.length > 0 && (
               <Card className="p-4">
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Users by Course</h4>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Users by Course</h4>
                 <div className="flex flex-wrap gap-3">
                   {getActiveCourses().map(course => {
                     const count = usersList.filter(u => getUserCourse(u) === course.id).length;
                     const colorClass = course.id === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                        course.id === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
-                                       course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
-                                       course.id === 'cia' ? 'bg-orange-100 text-orange-700' :
-                                       course.id === 'cisa' ? 'bg-teal-100 text-teal-700' :
+                                       course.id === 'cma' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                       course.id === 'cia' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                       course.id === 'cisa' ? 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
                                        'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300';
                     return (
                       <div key={course.id} className={`px-3 py-2 rounded-lg ${colorClass}`}>
@@ -2880,9 +2896,9 @@ const AdminCMS: React.FC = () => {
                                   <span className={`px-2 py-1 rounded text-xs font-medium ${
                                     derivedCourse === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                     derivedCourse === 'ea' ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
-                                    derivedCourse === 'cma' ? 'bg-purple-50 text-purple-700' :
-                                    derivedCourse === 'cia' ? 'bg-orange-50 text-orange-700' :
-                                    derivedCourse === 'cisa' ? 'bg-teal-50 text-teal-700' :
+                                    derivedCourse === 'cma' ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                    derivedCourse === 'cia' ? 'bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                    derivedCourse === 'cisa' ? 'bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
                                     'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
                                   }`}>
                                     {derivedCourse.toUpperCase()}
@@ -3175,7 +3191,7 @@ const AdminCMS: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Monthly Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Monthly Plans</span>
                           <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -3184,7 +3200,7 @@ const AdminCMS: React.FC = () => {
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Annual Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Annual Plans</span>
                           <span className="text-lg font-bold text-green-600 dark:text-green-400">{revenueMetrics.byPlan.annual}</span>
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -3196,7 +3212,7 @@ const AdminCMS: React.FC = () => {
                     {/* Revenue by Course */}
                     {Object.keys(revenueMetrics.byCourse).length > 0 && (
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Revenue by Course</h5>
+                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Revenue by Course</h5>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                           {Object.entries(revenueMetrics.byCourse)
                             .sort((a, b) => b[1].revenue - a[1].revenue)
@@ -3259,7 +3275,7 @@ const AdminCMS: React.FC = () => {
                                 </span>
                                 <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
+                              <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                                 <div 
                                   className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                   style={{ width: `${Math.min(percentage * 2, 100)}%` }}
@@ -3293,7 +3309,7 @@ const AdminCMS: React.FC = () => {
                               <span className="font-medium">{label}</span>
                               <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                             </div>
-                            <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                               <div 
                                 className={`${color} h-2 rounded-full transition-all duration-500`} 
                                 style={{ width: `${percentage}%` }}
@@ -3305,7 +3321,7 @@ const AdminCMS: React.FC = () => {
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-100">
                       <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Premium Users</span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300">Premium Users</span>
                         <span className="font-bold text-green-600 dark:text-green-400">
                           {(analytics.bySubscription.lifetime || 0) + 
                            (analytics.bySubscription.annual || 0) + 
@@ -3479,7 +3495,7 @@ const AdminCMS: React.FC = () => {
                                   <span className="font-medium">{type.replace(/_/g, ' ')}</span>
                                   <span className="text-gray-600 dark:text-gray-400">{count}</span>
                                 </div>
-                                <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
+                                <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                                   <div 
                                     className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                     style={{ width: `${percentage}%` }}
@@ -3512,7 +3528,7 @@ const AdminCMS: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Title</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Title</label>
                   <input
                     type="text"
                     id="announcement-title"
@@ -3521,7 +3537,7 @@ const AdminCMS: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Body</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Body</label>
                   <textarea
                     id="announcement-body"
                     rows={3}
@@ -3696,7 +3712,7 @@ const AdminCMS: React.FC = () => {
                 <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
+                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(featureFlags).map(([flag, enabled]) => (
@@ -3982,7 +3998,7 @@ const AdminCMS: React.FC = () => {
                       <div className="space-y-1">
                         {staleAccounts.slice(0, 10).map(acc => (
                           <div key={acc.id} className="text-xs bg-white dark:bg-slate-800 rounded px-2 py-1 flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
                             <span className="text-gray-400">
                               {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
                             </span>
@@ -4001,12 +4017,12 @@ const AdminCMS: React.FC = () => {
             </Card>
 
             {/* Beta User Trial Transition */}
-            <Card className="p-6 border-2 border-amber-300 bg-amber-50">
+            <Card className="p-6 border-2 border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎫 Beta User Trial Transition
                 <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-4">
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                 Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
                 Paid subscribers will be skipped. Users will be marked as Founders (founder rate eligible).
               </p>
@@ -4047,13 +4063,13 @@ const AdminCMS: React.FC = () => {
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ✅ Will Update ({betaTransitionResults.toUpdate.length})
                       </div>
                       <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
                           </div>
                         ))}
@@ -4063,13 +4079,13 @@ const AdminCMS: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ⏭️ Will Skip ({betaTransitionResults.skipped.length})
                       </div>
                       <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.skipped.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-amber-600 dark:text-amber-400">{u.reason}</span>
                           </div>
                         ))}
@@ -4254,13 +4270,13 @@ const AdminCMS: React.FC = () => {
                 
                 {/* Course selector for per-exam reset */}
                 <div className="mb-4 p-3 bg-white dark:bg-slate-800 rounded border border-red-200 dark:border-red-800">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Exam to reset (for per-exam options):
                   </label>
                   <select 
                     value={resetExamSelection}
                     onChange={(e) => setResetExamSelection(e.target.value)}
-                    className="w-full p-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white"
+                    className="w-full p-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-900 dark:text-white"
                   >
                     <option value="cpa">CPA</option>
                     <option value="ea">EA (Enrolled Agent)</option>
@@ -4660,9 +4676,10 @@ const AdminCMS: React.FC = () => {
                     {userActivity.dailyLogs.length > 0 ? (
                       <div className="bg-gray-50 dark:bg-slate-900 rounded-lg overflow-hidden">
                         <table className="w-full text-sm">
-                          <thead className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700">
+                          <thead className="bg-gray-100 dark:bg-slate-700">
                             <tr>
                               <th className="p-2 text-left">Date</th>
+                              <th className="p-2 text-center">Course</th>
                               <th className="p-2 text-center">Questions</th>
                               <th className="p-2 text-center">Correct</th>
                               <th className="p-2 text-center">Lessons</th>
@@ -4670,9 +4687,25 @@ const AdminCMS: React.FC = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {userActivity.dailyLogs.slice(0, 10).map((log, i) => (
+                            {userActivity.dailyLogs.slice(0, 20).map((log, i) => (
                               <tr key={i} className="border-t border-gray-200 dark:border-slate-700">
                                 <td className="p-2">{log.date}</td>
+                                <td className="p-2 text-center">
+                                  {log.courseId ? (
+                                    <span className={`px-1.5 py-0.5 rounded text-xs font-semibold ${
+                                      log.courseId === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                      log.courseId === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                      log.courseId === 'cma' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                      log.courseId === 'cia' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                      log.courseId === 'cisa' ? 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
+                                      'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                                    }`}>
+                                      {log.courseId.toUpperCase()}
+                                    </span>
+                                  ) : (
+                                    <span className="text-gray-400 text-xs">—</span>
+                                  )}
+                                </td>
                                 <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
                                 <td className="p-2 text-center text-green-600 dark:text-green-400">{log.questionsCorrect || log.correctAnswers || 0}</td>
                                 <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
@@ -4775,7 +4808,7 @@ const AdminCMS: React.FC = () => {
             <div className="border-t p-4 flex justify-end gap-3">
               <button
                 onClick={() => { setSelectedUser(null); setUserActivity(null); }}
-                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:bg-slate-600 dark:bg-slate-600"
+                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600"
               >
                 Close
               </button>

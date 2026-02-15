@@ -107,7 +107,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MiB - CPA questions bundle is ~3.5MB
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024, // 8 MiB - CPA questions bundle is ~5.8MB
         skipWaiting: false, // Don't auto-activate new service worker during exam!
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,

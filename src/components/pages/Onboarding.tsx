@@ -576,7 +576,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
 const Onboarding: React.FC = () => {
   const navigate = useNavigate();
   const { userProfile, updateUserProfile } = useAuth();
-  const { courseId: currentCourseId } = useCourse();
+  const { courseId: currentCourseId, setCourse } = useCourse();
 
   // Detect if this is a course switch (user already completed onboarding for at least one course)
   // In this case, we pre-select the course and skip the course selection step
@@ -748,6 +748,11 @@ const Onboarding: React.FC = () => {
       
       // Navigate to diagnostic quiz to assess baseline knowledge
       // Users can skip the diagnostic from within the quiz page
+      // Sync the selected course to CourseProvider so everything
+      // downstream (subscription, routing, etc.) uses the right course
+      if (selectedCourse && selectedCourse !== currentCourseId) {
+        setCourse(selectedCourse as CourseId);
+      }
       navigate('/diagnostic');
     } catch (error) {
       logger.error('Error completing onboarding:', error);

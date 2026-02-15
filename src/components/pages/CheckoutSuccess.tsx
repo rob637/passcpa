@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Sparkles, BookOpen, Trophy } from 'lucide-react';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
-import { isFounderPricingActive, useSubscription } from '../../services/subscription';
+import { isFounderPricingActive, useSubscription, syncSubscriptionFromStripe } from '../../services/subscription';
 
 const CheckoutSuccess = () => {
   useDocumentTitle('Welcome to VoraPrep!');
@@ -22,7 +22,15 @@ const CheckoutSuccess = () => {
     // Webhook may take a moment — poll a couple of times
     const t1 = setTimeout(refreshSubscription, 2000);
     const t2 = setTimeout(refreshSubscription, 5000);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+
+    // Fallback: call syncSubscriptionFromStripe to force-sync
+    // in case the webhook failed or was delayed
+    const t3 = setTimeout(async () => {
+      const synced = await syncSubscriptionFromStripe();
+      if (synced) refreshSubscription();
+    }, 4000);
+
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

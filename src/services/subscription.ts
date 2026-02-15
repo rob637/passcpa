@@ -6,6 +6,7 @@
  */
 
 import { doc, getDoc, setDoc, updateDoc, deleteField, serverTimestamp, onSnapshot } from 'firebase/firestore';
+import { httpsCallable } from 'firebase/functions';
 import logger from '../utils/logger';
 import { db } from '../config/firebase.js';
 
@@ -728,6 +729,27 @@ class SubscriptionService {
 
 // Export singleton instance
 export const subscriptionService = new SubscriptionService();
+
+/**
+ * Force-sync subscription state from Stripe to Firestore.
+ * Useful as a fallback when webhooks fail or are delayed.
+ * Calls the syncSubscriptionFromStripe Cloud Function.
+ */
+export async function syncSubscriptionFromStripe(): Promise<boolean> {
+  try {
+    const { functions } = await import('../config/firebase.js');
+    const syncFn = httpsCallable<Record<string, never>, { synced: boolean; count?: number }>(
+      functions,
+      'syncSubscriptionFromStripe'
+    );
+    const result = await syncFn({});
+    logger.info('syncSubscriptionFromStripe result:', result.data);
+    return result.data.synced;
+  } catch (error) {
+    logger.error('syncSubscriptionFromStripe failed:', error);
+    return false;
+  }
+}
 
 // ============================================================================
 // React Hook for Subscription

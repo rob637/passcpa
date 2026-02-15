@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate, useSearchParams, useLocation, Link } from 'react-router-dom';
 import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
@@ -508,6 +508,125 @@ const SimpleCalculator: React.FC = () => {
   );
 };
 
+/**
+ * Renders TBS scenario text with proper formatting:
+ * - Detects tabular data (lines with multiple space-separated columns) and renders in monospace
+ * - Converts bullet points (•) to styled list items
+ * - Renders section headers (lines ending with :) as bold
+ * - Regular paragraphs get normal text styling
+ */
+const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
+  const lines = text.split('\n');
+  const blocks: { type: 'paragraph' | 'table' | 'bullets' | 'header'; lines: string[] }[] = [];
+  
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    
+    // Skip empty lines
+    if (!trimmed) {
+      i++;
+      continue;
+    }
+    
+    // Bullet point line
+    if (trimmed.startsWith('•') || trimmed.startsWith('-  ') || trimmed.startsWith('- ')) {
+      const bulletLines: string[] = [];
+      while (i < lines.length && (lines[i].trim().startsWith('•') || lines[i].trim().startsWith('-  ') || lines[i].trim().startsWith('- '))) {
+        bulletLines.push(lines[i].trim().replace(/^[•\-]\s*/, ''));
+        i++;
+      }
+      blocks.push({ type: 'bullets', lines: bulletLines });
+      continue;
+    }
+    
+    // Detect tabular data: lines that have multiple values separated by 2+ spaces
+    // (e.g., "Accounts Receivable    $280,000   $320,000   ($40,000)")
+    const isTabularLine = (l: string) => {
+      const t = l.trim();
+      if (!t) return false;
+      // Has at least 2 groups separated by 2+ spaces, and contains $ or numbers
+      const parts = t.split(/\s{2,}/).filter(p => p.trim());
+      return parts.length >= 2 && (/\$/.test(t) || /\d/.test(t));
+    };
+    
+    if (isTabularLine(line)) {
+      const tableLines: string[] = [];
+      while (i < lines.length && (isTabularLine(lines[i]) || !lines[i].trim())) {
+        if (lines[i].trim()) tableLines.push(lines[i]);
+        i++;
+      }
+      blocks.push({ type: 'table', lines: tableLines });
+      continue;
+    }
+    
+    // Section header: short line ending with :
+    if (trimmed.endsWith(':') && trimmed.length < 80 && !trimmed.includes('$')) {
+      blocks.push({ type: 'header', lines: [trimmed] });
+      i++;
+      continue;
+    }
+    
+    // Regular paragraph — collect consecutive non-empty, non-special lines
+    const paraLines: string[] = [];
+    while (
+      i < lines.length &&
+      lines[i].trim() &&
+      !lines[i].trim().startsWith('•') &&
+      !lines[i].trim().startsWith('- ') &&
+      !(lines[i].trim().endsWith(':') && lines[i].trim().length < 80 && !lines[i].trim().includes('$')) &&
+      !isTabularLine(lines[i])
+    ) {
+      paraLines.push(lines[i].trim());
+      i++;
+    }
+    if (paraLines.length > 0) {
+      blocks.push({ type: 'paragraph', lines: paraLines });
+    }
+  }
+  
+  return (
+    <div className="space-y-4 text-slate-700 dark:text-slate-200 text-[15px] leading-relaxed">
+      {blocks.map((block, idx) => {
+        switch (block.type) {
+          case 'header':
+            return (
+              <h3 key={idx} className="font-semibold text-slate-900 dark:text-white text-base">
+                {block.lines[0]}
+              </h3>
+            );
+          case 'paragraph':
+            return <p key={idx}>{block.lines.join(' ')}</p>;
+          case 'bullets':
+            return (
+              <ul key={idx} className="space-y-1.5 pl-1">
+                {block.lines.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary-500 mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            );
+          case 'table':
+            return (
+              <div key={idx} className="overflow-x-auto -mx-2 px-2">
+                <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-slate-200 dark:border-slate-600 p-4">
+                  <pre className="text-sm font-mono whitespace-pre leading-relaxed text-slate-700 dark:text-slate-200 overflow-x-auto">
+                    {block.lines.map(l => l.trimEnd()).join('\n')}
+                  </pre>
+                </div>
+              </div>
+            );
+          default:
+            return null;
+        }
+      })}
+    </div>
+  );
+};
+
 const TBSSimulator: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -516,6 +635,9 @@ const TBSSimulator: React.FC = () => {
   const { userProfile } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId } = useCourse();
+
+  // Ref for scrolling to top when entering active view
+  const mainContentRef = useRef<HTMLDivElement>(null);
 
   const [tbs, setTbs] = useState<TBSQuestion | null>(null);
   // Track answers for each task by task id
@@ -646,6 +768,7 @@ const TBSSimulator: React.FC = () => {
           setTbs(transformTbs(loadedTbs));
           setStartTime(Date.now());
           setViewState('active');
+          scrollToTop();
         } else {
           setError(`Simulation not found: ${tbsId}`);
         }
@@ -666,6 +789,15 @@ const TBSSimulator: React.FC = () => {
     loadTBSList();
   }, [viewState, selectedSection]);
 
+  // Scroll to top when entering active view
+  const scrollToTop = useCallback(() => {
+    // Small delay to let DOM render first
+    setTimeout(() => {
+      mainContentRef.current?.scrollTo(0, 0);
+      window.scrollTo(0, 0);
+    }, 50);
+  }, []);
+
   // Start a specific TBS from the selection list
   const handleSelectTBS = async (selectedTbs: TBS) => {
     setTbs(transformTbs(selectedTbs));
@@ -677,6 +809,7 @@ const TBSSimulator: React.FC = () => {
     setScore(0);
     setError(null);
     setViewState('active');
+    scrollToTop();
   };
 
   // Go back to the selection screen
@@ -1215,7 +1348,7 @@ const TBSSimulator: React.FC = () => {
 
       <div className="flex-1 flex overflow-hidden">
         {/* Main Content */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 pb-24">
+        <div ref={mainContentRef} className="flex-1 overflow-y-auto p-4 sm:p-6 pb-24">
           <div className="max-w-5xl mx-auto space-y-6">
             
             {/* Context/Scenario */}
@@ -1224,9 +1357,7 @@ const TBSSimulator: React.FC = () => {
                 <Lightbulb className="w-5 h-5 text-warning-500" />
                 Scenario
               </h2>
-              <div className="prose prose-slate max-w-none text-slate-700 dark:text-slate-200 whitespace-pre-line">
-                 {tbs.description}
-              </div>
+              <ScenarioRenderer text={tbs.description} />
             </div>
 
             {/* Hints Panel (Collapsible) */}

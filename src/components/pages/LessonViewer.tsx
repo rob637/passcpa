@@ -29,10 +29,11 @@ import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Button } from '../common/Button';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection, Lesson } from '../../types';
+import { applyAcronymPronunciation } from '../../utils/ttsPronunciation';
 
 // Clean text for speech synthesis - remove markdown and punctuation that sounds weird
 const cleanTextForSpeech = (text: string): string => {
-  return text
+  return applyAcronymPronunciation(text)
     // Remove markdown headers
     .replace(/#{1,6}\s*/g, '')
     // Remove bold/italic markers

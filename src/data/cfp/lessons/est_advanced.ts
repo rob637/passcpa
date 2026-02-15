@@ -458,7 +458,7 @@ Unlimited marital deduction requires spouse to be a U.S. citizen.
 | Spouse Status | Marital Deduction |
 |---------------|-------------------|
 | U.S. citizen | Unlimited |
-| Non-citizen | Limited to annual exclusion (~$185,000/year for gifts) |
+| Non-citizen | Limited to annual exclusion (~$190,000/year for gifts) |
 
 ### Solution: Qualified Domestic Trust (QDOT)
 
@@ -667,7 +667,7 @@ Allowed—disclaim a portion, accept the rest (if clearly severable).
 
 ### The Estate as a Taxpayer
 
-Estates hit the top 37% bracket at only ~$14,450 (2024), making tax planning critical.
+Estates hit the top 37% bracket at only ~$15,200 (2026), making tax planning critical.
 
 ### Distributable Net Income (DNI)
 

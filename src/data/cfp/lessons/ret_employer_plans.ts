@@ -42,14 +42,14 @@ The **401(k)** is the most common employer-sponsored retirement plan, named afte
 
 ---
 
-## Contribution Limits (2024)
+## Contribution Limits (2026)
 
 ### Employee Elective Deferrals
 
 | Category | Limit |
 |----------|-------|
-| **Under age 50** | $23,000 |
-| **Age 50+** (catch-up) | $23,000 + $7,500 = **$30,500** |
+| **Under age 50** | $24,500 |
+| **Age 50+** (catch-up) | $24,500 + $7,500 = **$32,000** |
 
 ### Total Annual Addition (415 Limit)
 
@@ -57,7 +57,7 @@ The **combined** employee + employer contribution limit:
 
 | Year | Limit |
 |------|-------|
-| 2024 | $69,000 ($76,500 with catch-up) |
+| 2026 | $71,500 ($79,000 with catch-up) |
 
 Includes:
 - Employee deferrals
@@ -211,22 +211,22 @@ $$\\text{RMD} = \\frac{\\text{Account Balance (Dec 31 prior year)}}{\\text{Life 
 
 ## Key Takeaways
 
-1. **2024 limits**: $23,000 employee ($30,500 with catch-up); $69,000 total
+1. **2026 limits**: $24,500 employee ($32,000 with catch-up); $71,500 total
 2. **Roth 401(k)**: After-tax in, tax-free out (if qualified)
 3. **Age 55 rule**: Penalty-free withdrawals at separation after 55
 4. **Safe harbor**: 3% non-elective or 4% match, immediately vested
 5. **RMDs start**: Age 73 (75 in 2033)
     `,
     keyTakeaways: [
-      "2024 employee deferral: $23,000 ($30,500 age 50+); total limit $69,000",
+      "2026 employee deferral: $24,500 ($32,000 age 50+); total limit $71,500",
       "Traditional = pre-tax in, taxable out; Roth = after-tax in, tax-free out",
       "Age 55 separation rule: No 10% penalty if leave job in year turning 55+",
       "Safe harbor avoids testing: 3% non-elective or 4% enhanced match, 100% vested",
       "RMDs begin at 73 (SECURE 2.0); age 75 starting in 2033"
     ],
     keyFormulas: [
-      "2024 Employee Deferral = $23,000 (+ $7,500 catch-up if 50+)",
-      "2024 Total Annual Addition (415 Limit) = $69,000",
+      "2026 Employee Deferral = $24,500 (+ $7,500 catch-up if 50+)",
+      "2026 Total Annual Addition (415 Limit) = $71,500",
       "Max Loan = Lesser of 50% of vested balance or $50,000"
     ],
     mnemonics: [
@@ -235,8 +235,8 @@ $$\\text{RMD} = \\frac{\\text{Account Balance (Dec 31 prior year)}}{\\text{Life 
     ],
     practiceProblems: [
       {
-        question: "A 52-year-old wants to maximize their 401(k) in 2024. What is the maximum employee contribution?",
-        answer: "$23,000 + $7,500 catch-up = $30,500"
+        question: "A 52-year-old wants to maximize their 401(k) in 2026. What is the maximum employee contribution?",
+        answer: "$24,500 + $7,500 catch-up = $32,000"
       },
       {
         question: "An employee is 60% vested in employer contributions of $50,000. They leave the company. How much of employer contributions do they receive?",
@@ -278,12 +278,12 @@ These plans serve specific employer types with unique rules that differ from tra
 - **Tax-exempt 501(c)(3) organizations** (hospitals, charities)
 - **Churches** and religious organizations
 
-### Contribution Limits (2024)
+### Contribution Limits (2026)
 
 Same as 401(k):
-- **Under 50**: $23,000
-- **Age 50+**: $23,000 + $7,500 = $30,500
-- **Total annual addition**: $69,000 (including employer)
+- **Under 50**: $24,500
+- **Age 50+**: $24,500 + $7,500 = $32,000
+- **Total annual addition**: $71,500 (including employer)
 
 ---
 
@@ -299,7 +299,7 @@ Employees with **15+ years of service** with same employer:
 **Order of catch-ups**:
 1. 15-year catch-up (if eligible): $3,000
 2. Age 50 catch-up: $7,500
-3. **Maximum possible**: $23,000 + $3,000 + $7,500 = $33,500
+3. **Maximum possible**: $24,500 + $3,000 + $7,500 = $35,000
 
 ### Requirements for 15-Year Catch-Up
 
@@ -335,17 +335,17 @@ Employees with **15+ years of service** with same employer:
 
 ---
 
-## 457(b) Contribution Limits (2024)
+## 457(b) Contribution Limits (2026)
 
 ### Standard Limit
-- **Under 50**: $23,000
-- **Age 50+ catch-up**: $23,000 + $7,500 = $30,500
+- **Under 50**: $24,500
+- **Age 50+ catch-up**: $24,500 + $7,500 = $32,000
 
 ### Special 3-Year Catch-Up
 
 In the **3 years before normal retirement age**:
 - Can contribute up to **double the limit**
-- 2024: Up to $46,000
+- 2026: Up to $49,000
 - **OR** use age 50 catch-up (cannot use both)
 
 ---
@@ -368,23 +368,23 @@ This makes 457(b) plans excellent for early retirees!
 
 Can contribute to BOTH with **separate limits**:
 
-**Example (2024 under 50)**:
-- 401(k): $23,000
-- 457(b): $23,000
-- **Total**: $46,000
+**Example (2026 under 50)**:
+- 401(k): $24,500
+- 457(b): $24,500
+- **Total**: $49,000
 
 ### 403(b) and 457(b)
 
 Can contribute to BOTH:
-- 403(b): $23,000
-- 457(b): $23,000
-- **Total**: $46,000
+- 403(b): $24,500
+- 457(b): $24,500
+- **Total**: $49,000
 
 ### 401(k) and 403(b)
 
 Share one limit (controlled group rules):
-- Combined maximum: $23,000
-- Cannot contribute $23,000 to each
+- Combined maximum: $24,500
+- Cannot contribute $24,500 to each
 
 ---
 
@@ -428,12 +428,12 @@ Share one limit (controlled group rules):
     ],
     keyFormulas: [
       "403(b) Max with all catch-ups = $23,000 + $3,000 + $7,500 = $33,500",
-      "457(b) 3-year catch-up = $23,000 × 2 = $46,000 (2024)",
+      "457(b) 3-year catch-up = $24,500 × 2 = $49,000 (2026)",
       "Dual 401k/403b + 457 = $23,000 + $23,000 = $46,000 (if under 50)"
     ],
     practiceProblems: [
       {
-        question: "A 55-year-old teacher has worked for the same school for 20 years with average contributions of $4,000/year. What is her maximum 403(b) contribution in 2024?",
+        question: "A 55-year-old teacher has worked for the same school for 20 years with average contributions of $4,000/year. What is her maximum 403(b) contribution in 2026?",
         answer: "Eligible for 15-year catch-up ($3,000) AND age 50 catch-up ($7,500). Maximum = $23,000 + $3,000 + $7,500 = $33,500."
       },
       {
@@ -590,7 +590,7 @@ If married, default is **Qualified Joint and Survivor Annuity (QJSA)**:
 - Pays benefits if plan terminates with insufficient assets
 - Funded by premiums from covered plans
 
-### 2024 Maximum Insured Benefit
+### 2026 Maximum Insured Benefit
 
 At age 65: **$7,107.95/month** ($85,295/year)
 
@@ -638,7 +638,7 @@ Many traditional DB plans converted to cash balance in 1990s-2000s:
 1. **DB formula**: Years × Multiplier × Final Average Salary (commonly)
 2. **Employer bears** all investment and longevity risk
 3. **Lump sum vs. annuity**: Consider health, spouse, legacy, confidence
-4. **PBGC maximum**: ~$85,295/year at 65 (2024); less for early retirement
+4. **PBGC maximum**: ~$88,500/year at 65 (2026); less for early retirement
 5. **Cash balance**: Hybrid that looks like DC but is legally DB
     `,
     keyTakeaways: [
@@ -646,7 +646,7 @@ Many traditional DB plans converted to cash balance in 1990s-2000s:
       "Employer bears investment and longevity risk in DB plans",
       "Lump sum suits short life expectancy, legacy goals, investment confidence",
       "Annuity suits long life expectancy, guaranteed income needs, risk aversion",
-      "PBGC insures up to ~$85,295/year (2024) at age 65"
+      "PBGC insures up to ~$88,500/year (2026) at age 65"
     ],
     keyFormulas: [
       "Final Average Benefit = Years × Multiplier × Avg Highest 3-5 Years",
@@ -664,7 +664,7 @@ Many traditional DB plans converted to cash balance in 1990s-2000s:
       },
       {
         question: "A pension plan is terminated when a participant's accrued benefit is $7,500/month. What does PBGC guarantee?",
-        answer: "PBGC maximum in 2024 is ~$7,108/month at 65. The participant would receive only $7,108, losing ~$392/month."
+        answer: "PBGC maximum in 2026 is ~$7,375/month at 65. The participant would receive only $7,375, losing ~$125/month."
       }
     ],
     relatedLessons: ["CFP-RET-L005", "CFP-RET-L008", "CFP-RET-L001"]
@@ -699,7 +699,7 @@ These employer-funded plans provide flexible retirement benefits without employe
 | **Contributions** | 100% employer-funded |
 | **Discretionary** | Amount can vary year to year |
 | **Maximum** | 25% of eligible payroll |
-| **Individual maximum** | Lesser of 100% compensation or $69,000 (2024) |
+| **Individual maximum** | Lesser of 100% compensation or $71,500 (2026) |
 
 ### Flexibility Advantage
 
@@ -847,7 +847,7 @@ This protects employees from concentration risk.
     ],
     keyFormulas: [
       "Profit Sharing Maximum: 25% of eligible payroll",
-      "Individual Maximum: Lesser of 100% of comp or $69,000 (2024)",
+      "Individual Maximum: Lesser of 100% of comp or $71,500 (2026)",
       "Pro-rata allocation = Total Contribution / Total Compensation × Individual Comp"
     ],
     practiceProblems: [

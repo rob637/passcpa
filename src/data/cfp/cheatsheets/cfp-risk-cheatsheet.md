@@ -180,18 +180,18 @@
 
 ### Tax-Qualified Policies
 - Premiums deductible as medical expense (age limits)
-- Benefits generally tax-free up to per diem limit ($420/day 2024)
+- Benefits generally tax-free up to per diem limit ($440/day 2026)
 - Must meet benefit triggers
 
-### 2024 Deductible Limits (Based on Age)
+### 2026 Deductible Limits (Based on Age)
 
 | Age | Maximum Deduction |
 |-----|-------------------|
-| 40 and under | $480 |
-| 41-50 | $890 |
-| 51-60 | $1,790 |
-| 61-70 | $4,770 |
-| 71+ | $5,960 |
+| 40 and under | $500 |
+| 41-50 | $930 |
+| 51-60 | $1,870 |
+| 61-70 | $4,990 |
+| 71+ | $6,230 |
 
 ---
 
@@ -207,18 +207,18 @@
 | **POS** | Hybrid HMO/PPO; PCP referrals for specialists |
 | **HDHP** | High deductible; HSA eligible |
 
-### High Deductible Health Plan (HDHP) 2024
+### High Deductible Health Plan (HDHP) 2026
 
 | Feature | Self-Only | Family |
 |---------|-----------|--------|
-| Minimum Deductible | $1,600 | $3,200 |
-| Maximum Out-of-Pocket | $8,050 | $16,100 |
+| Minimum Deductible | $1,700 | $3,400 |
+| Maximum Out-of-Pocket | $8,500 | $17,000 |
 
-### Health Savings Account (HSA) 2024
+### Health Savings Account (HSA) 2026
 
 | Feature | Self-Only | Family |
 |---------|-----------|--------|
-| Contribution Limit | $4,150 | $8,300 |
+| Contribution Limit | $4,450 | $8,900 |
 | Catch-up (55+) | +$1,000 | +$1,000 |
 
 **HSA Benefits**:
@@ -229,8 +229,8 @@
 - After 65: non-medical withdrawals taxable (no penalty)
 
 ### Flexible Spending Account (FSA)
-- **2024 Limit**: $3,200
-- Use-it-or-lose-it (or $640 carryover if employer allows)
+- **2026 Limit**: $3,350
+- Use-it-or-lose-it (or $670 carryover if employer allows)
 - Pre-tax contributions
 - Employer-sponsored only
 
@@ -246,24 +246,24 @@
 
 ### Part Overview
 
-| Part | Coverage | 2024 Premium |
-|------|----------|--------------|
+| Part | Coverage | 2026 Premium |
+|------|----------|--------------|  
 | **Part A** | Inpatient hospital, SNF, hospice | $0 (with 40 quarters) |
-| **Part B** | Outpatient, doctor visits | $174.70/month |
+| **Part B** | Outpatient, doctor visits | $185.00/month |
 | **Part C** | Medicare Advantage (private plans) | Varies |
 | **Part D** | Prescription drugs | Varies |
 
-### Part A Cost Sharing (2024)
+### Part A Cost Sharing (2026)
 
 | Benefit Period Days | Cost |
 |--------------------|------|
-| 1-60 | $1,632 deductible |
-| 61-90 | $408/day coinsurance |
-| 91-150 (lifetime reserve) | $816/day |
+| 1-60 | $1,700 deductible |
+| 61-90 | $425/day coinsurance |
+| 91-150 (lifetime reserve) | $850/day |
 | 150+ | Full cost |
 
 ### Part B Cost Sharing
-- $240 annual deductible
+- $257 annual deductible
 - 20% coinsurance after deductible
 - No out-of-pocket maximum
 
@@ -383,9 +383,9 @@ Example: **100/300/50**
 - Expected to last 12+ months or result in death
 - 5-month waiting period
 
-### 2024 Substantial Gainful Activity
-- Non-blind: $1,550/month
-- Blind: $2,590/month
+### 2026 Substantial Gainful Activity
+- Non-blind: $1,620/month
+- Blind: $2,700/month
 
 ### Benefit Amount
 - Based on AIME (same as retirement)

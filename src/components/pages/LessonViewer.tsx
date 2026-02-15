@@ -988,13 +988,13 @@ const LessonViewer: React.FC = () => {
           )}
 
           <Link 
-            to={lesson.section === 'PREP' ? '/ai-tutor?returnTo=/lessons?section=PREP' : '/ai-tutor'}
+            to={`/ai-tutor?returnTo=${encodeURIComponent(`/lessons/${lesson.id}`)}`}
             state={{ 
               lessonTitle: lesson.title, 
               lessonId: lesson.id,
               section: lesson.section,
               topic: lesson.topics?.[lesson.topics.length - 1],
-              returnTo: lesson.section === 'PREP' ? '/lessons?section=PREP' : undefined
+              returnTo: `/lessons/${lesson.id}`
             }}
             className="card p-4 hover:shadow-md transition-shadow group"
           >

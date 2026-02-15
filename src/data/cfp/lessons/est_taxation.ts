@@ -35,7 +35,7 @@ A transfer of property where full consideration is not received in return
 
 ### Gift Tax Exclusions
 
-**Annual Exclusion (2024): $18,000 per donee**
+**Annual Exclusion (2026): $19,000 per donee**
 
 Key features:
 - Unlimited number of donees
@@ -44,7 +44,7 @@ Key features:
 
 **Example:**
 Married couple with 3 children:
-$$2 \\text{ donors} \\times 3 \\text{ donees} \\times \\$18,000 = \\$108,000/\\text{year}$$
+$$2 \\text{ donors} \\times 3 \\text{ donees} \\times \\$19,000 = \\$114,000/\\text{year}$$
 
 ### Gift Splitting
 Married couples can "split" gifts—treat each gift as made half by each spouse
@@ -55,9 +55,9 @@ Married couples can "split" gifts—treat each gift as made half by each spouse
 - Applies to all gifts made that year
 
 **Example:**
-Wife gives $36,000 to son. With gift-splitting:
-- Wife: $18,000 (her half) ✓ Covered by exclusion
-- Husband: $18,000 (his half) ✓ Covered by exclusion
+Wife gives $38,000 to son. With gift-splitting:
+- Wife: $19,000 (her half) ✓ Covered by exclusion
+- Husband: $19,000 (his half) ✓ Covered by exclusion
 - No taxable gift!
 
 ## Present vs. Future Interest
@@ -102,7 +102,7 @@ Tuition and medical payments must be made directly to the provider—not to the 
 $$\\text{Taxable Gifts} = \\text{Total Gifts} - \\text{Annual Exclusions} - \\text{Marital Deduction} - \\text{Charitable Deduction}$$
 
 ### Example Calculation
-Tom makes these gifts in 2024:
+Tom makes these gifts in 2026:
 - $30,000 to son
 - $50,000 directly to granddaughter's college
 - $20,000 to wife
@@ -119,8 +119,8 @@ Tom makes these gifts in 2024:
 
 ## Lifetime Gift Tax Exemption
 
-### Unified Credit (2024): $13.61 Million
-- Same exemption for gifts and estate
+### Unified Credit (2026): $7.0 Million
+- Same exemption for gifts and estate (TCJA sunset reduced from ~$13.6M)
 - Lifetime gifts reduce estate exemption
 - Gift tax rate: 40%
 
@@ -145,7 +145,7 @@ Tom makes these gifts in 2024:
 - Estate: $1.4M needed to transfer $1M after 40% tax
     `,
     keyTakeaways: [
-      'Annual exclusion is $18,000/donee (2024) for present interest gifts',
+      'Annual exclusion is $19,000/donee (2026) for present interest gifts',
       'Gift splitting doubles the annual exclusion for married couples',
       'Tuition and medical paid directly to providers are unlimited exclusions',
       'Crummey powers convert trust gifts to present interests',
@@ -169,8 +169,8 @@ Tom makes these gifts in 2024:
     ],
     practiceProblems: [
       {
-        question: 'Jane and her husband give $40,000 to their daughter in 2024. They elect gift-splitting. What is the taxable gift?',
-        answer: '$4,000. Each spouse is treated as gifting $20,000. Each uses their $18,000 exclusion. Taxable: 2 × ($20,000 - $18,000) = $4,000 total.'
+        question: 'Jane and her husband give $40,000 to their daughter in 2026. They elect gift-splitting. What is the taxable gift?',
+        answer: '$2,000. Each spouse is treated as gifting $20,000. Each uses their $19,000 exclusion. Taxable: 2 × ($20,000 - $19,000) = $2,000 total.'
       },
       {
         question: 'Grandpa pays $80,000 directly to State University for his grandson\'s tuition and gives him an additional $18,000 cash. What are the taxable gifts?',
@@ -255,8 +255,8 @@ $$\\text{Tentative Tax Base} = \\text{Gross Estate} - \\text{Deductions} + \\tex
 $$\\text{Estate Tax} = \\text{Tentative Tax} - \\text{Credits}$$
 
 ### Unified Credit
-Exempts $13.61 million from estate/gift tax (2024)
-- Credit amount: \$5,389,800 (40% of $13.61M)
+Exempts $7.0 million from estate/gift tax (2026 - TCJA sunset)
+- Credit amount: \$2,725,800 (40% of $7.0M)
 - Reduced by gift tax credits used during life
 
 ### Example Calculation
@@ -297,9 +297,9 @@ Exempts $13.61 million from estate/gift tax (2024)
 - Surviving spouse must be US citizen
 
 **Example:**
-- Husband dies with $5M estate, $13.61M exemption
-- Unused: $13.61M - $5M = $8.61M
-- Wife's new exemption: $13.61M + $8.61M = $22.22M
+- Husband dies with $5M estate, $7.0M exemption
+- Unused: $7.0M - $5M = $2.0M
+- Wife's new exemption: $7.0M + $2.0M = $9.0M
 
 ### Portability Limitations
 - Only available from last deceased spouse
@@ -324,7 +324,7 @@ Federal exemption may shelter estate, but state tax can still apply
     keyTakeaways: [
       'Gross estate includes all property with incidents of ownership',
       'Marital and charitable deductions are unlimited',
-      'Unified credit exempts $13.61M (2024) from estate tax',
+      'Unified credit exempts $7.0M (2026 - TCJA sunset) from estate tax',
       'Portability allows surviving spouse to use deceased spouse\'s unused exemption',
       'State estate taxes may apply even when no federal tax is due'
     ],
@@ -346,8 +346,8 @@ Federal exemption may shelter estate, but state tax can still apply
     ],
     practiceProblems: [
       {
-        question: 'A widow dies with a gross estate of $18M. She properly elected to use her late husband\'s $10M DSUE. No charitable gifts. What is her estate tax?',
-        answer: 'Estate tax = $0. Her total exemption = $13.61M + $10M DSUE = $23.61M. Since $18M < $23.61M, no estate tax.'
+        question: 'A widow dies with a gross estate of $12M. She properly elected to use her late husband\'s $2M DSUE. No charitable gifts. What is her estate tax?',
+        answer: 'Estate tax = $0. Her total exemption = $7.0M + $2M DSUE = $9.0M. Since $12M > $9.0M, tentative tax on excess $3M at 40% = $1.2M estate tax.'
       },
       {
         question: 'Decedent owned a $2M life insurance policy on his life, payable to his daughter. He owned the policy. Is it included in his gross estate?',
@@ -424,8 +424,8 @@ Trust terminates, assets pass to skip persons
 
 ## GST Exemption
 
-### 2024 Exemption: $13.61 Million
-- Same amount as estate/gift exemption
+### 2026 Exemption: $7.0 Million
+- Same amount as estate/gift exemption (TCJA sunset)
 - Separate allocation
 - NOT portable (unlike estate exemption)
 
@@ -483,7 +483,7 @@ Must be "of the transferor" to apply—doesn't apply to unrelated parties
     keyTakeaways: [
       'GSTT is 40% flat tax on transfers to persons 2+ generations below',
       'Skip persons include grandchildren and more remote descendants',
-      'GST exemption ($13.61M) is NOT portable between spouses',
+      'GST exemption ($7.0M) is NOT portable between spouses',
       'Deceased parent exception moves grandchild up a generation',
       'Dynasty trusts use GST exemption to avoid transfer taxes for generations'
     ],
@@ -595,7 +595,7 @@ Allow family farms and businesses to be valued at current use rather than highes
 5. Property passes to qualified heirs
 6. Qualified heirs must continue qualified use for 10 years
 
-### Maximum Reduction (2024): $1,380,000
+### Maximum Reduction (2026): $1,440,000
 
 ### Recapture
 If property is sold or use changes within 10 years, special use valuation recaptured with interest

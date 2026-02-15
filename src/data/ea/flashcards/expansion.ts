@@ -5,7 +5,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
   // SEE1: Individuals (34 cards)
   // ==========================
   {
-    id: 'SEE1-EXP-001',
+    id: 'see1-exp-001',
     section: 'SEE1',
     type: 'definition',
     topic: 'Filing Status',
@@ -15,7 +15,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-002',
+    id: 'see1-exp-002',
     section: 'SEE1',
     type: 'rule',
     topic: 'Filing Status',
@@ -25,7 +25,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-003',
+    id: 'see1-exp-003',
     section: 'SEE1',
     type: 'rule',
     topic: 'Filing Status',
@@ -35,7 +35,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-004',
+    id: 'see1-exp-004',
     section: 'SEE1',
     type: 'definition',
     topic: 'Filing Status',
@@ -45,7 +45,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-005',
+    id: 'see1-exp-005',
     section: 'SEE1',
     type: 'rule',
     topic: 'Filing Status',
@@ -55,7 +55,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-006',
+    id: 'see1-exp-006',
     section: 'SEE1',
     type: 'threshold',
     topic: 'Standard Deduction',
@@ -65,7 +65,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-007',
+    id: 'see1-exp-007',
     section: 'SEE1',
     type: 'threshold',
     topic: 'Standard Deduction',
@@ -75,7 +75,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-008',
+    id: 'see1-exp-008',
     section: 'SEE1',
     type: 'threshold',
     topic: 'Standard Deduction',
@@ -85,7 +85,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-009',
+    id: 'see1-exp-009',
     section: 'SEE1',
     type: 'threshold',
     topic: 'Standard Deduction',
@@ -95,7 +95,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-010',
+    id: 'see1-exp-010',
     section: 'SEE1',
     type: 'rule',
     topic: 'Tax Credits',
@@ -105,7 +105,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-011',
+    id: 'see1-exp-011',
     section: 'SEE1',
     type: 'threshold',
     topic: 'Tax Credits',
@@ -115,7 +115,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-012',
+    id: 'see1-exp-012',
     section: 'SEE1',
     type: 'rule',
     topic: 'Tax Credits',
@@ -125,7 +125,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-013',
+    id: 'see1-exp-013',
     section: 'SEE1',
     type: 'rule',
     topic: 'Tax Credits',
@@ -135,7 +135,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-014',
+    id: 'see1-exp-014',
     section: 'SEE1',
     type: 'rule',
     topic: 'Tax Credits',
@@ -145,7 +145,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-015',
+    id: 'see1-exp-015',
     section: 'SEE1',
     type: 'rule',
     topic: 'Tax Credits',
@@ -155,7 +155,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-016',
+    id: 'see1-exp-016',
     section: 'SEE1',
     type: 'rule',
     topic: 'Tax Credits',
@@ -165,7 +165,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-017',
+    id: 'see1-exp-017',
     section: 'SEE1',
     type: 'comparison',
     topic: 'Tax Credits',
@@ -175,7 +175,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-4'
   },
   {
-    id: 'SEE1-EXP-018',
+    id: 'see1-exp-018',
     section: 'SEE1',
     type: 'rule',
     topic: 'Capital Gains',
@@ -185,7 +185,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-3'
   },
   {
-    id: 'SEE1-EXP-019',
+    id: 'see1-exp-019',
     section: 'SEE1',
     type: 'rule',
     topic: 'Capital Gains',
@@ -195,7 +195,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-3'
   },
   {
-    id: 'SEE1-EXP-020',
+    id: 'see1-exp-020',
     section: 'SEE1',
     type: 'rule',
     topic: 'Capital Gains',
@@ -205,7 +205,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-3'
   },
   {
-    id: 'SEE1-EXP-021',
+    id: 'see1-exp-021',
     section: 'SEE1',
     type: 'rule',
     topic: 'Capital Gains',
@@ -215,7 +215,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-3'
   },
   {
-    id: 'SEE1-EXP-022',
+    id: 'see1-exp-022',
     section: 'SEE1',
     type: 'rule',
     topic: 'Home Sale Exclusion',
@@ -225,7 +225,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-3'
   },
   {
-    id: 'SEE1-EXP-023',
+    id: 'see1-exp-023',
     section: 'SEE1',
     type: 'rule',
     topic: 'Home Sale Exclusion',
@@ -235,7 +235,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-3'
   },
   {
-    id: 'SEE1-EXP-024',
+    id: 'see1-exp-024',
     section: 'SEE1',
     type: 'rule',
     topic: 'Dependent',
@@ -245,7 +245,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-025',
+    id: 'see1-exp-025',
     section: 'SEE1',
     type: 'rule',
     topic: 'Dependent',
@@ -255,7 +255,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-1'
   },
   {
-    id: 'SEE1-EXP-026',
+    id: 'see1-exp-026',
     section: 'SEE1',
     type: 'rule',
     topic: 'Income',
@@ -265,7 +265,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-027',
+    id: 'see1-exp-027',
     section: 'SEE1',
     type: 'rule',
     topic: 'Retirement',
@@ -275,7 +275,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-028',
+    id: 'see1-exp-028',
     section: 'SEE1',
     type: 'rule',
     topic: 'Retirement',
@@ -285,7 +285,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-029',
+    id: 'see1-exp-029',
     section: 'SEE1',
     type: 'rule',
     topic: 'Retirement',
@@ -295,7 +295,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-030',
+    id: 'see1-exp-030',
     section: 'SEE1',
     type: 'rule',
     topic: 'Itemized Deductions',
@@ -305,7 +305,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-031',
+    id: 'see1-exp-031',
     section: 'SEE1',
     type: 'rule',
     topic: 'Itemized Deductions',
@@ -315,7 +315,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-032',
+    id: 'see1-exp-032',
     section: 'SEE1',
     type: 'rule',
     topic: 'Itemized Deductions',
@@ -325,7 +325,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-033',
+    id: 'see1-exp-033',
     section: 'SEE1',
     type: 'rule',
     topic: 'Estimated Taxes',
@@ -335,7 +335,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE1-2'
   },
   {
-    id: 'SEE1-EXP-034',
+    id: 'see1-exp-034',
     section: 'SEE1',
     type: 'rule',
     topic: 'Kiddie Tax',
@@ -349,7 +349,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
   // SEE2: Businesses (33 cards)
   // ==========================
   {
-    id: 'SEE2-EXP-001',
+    id: 'see2-exp-001',
     section: 'SEE2',
     type: 'rule',
     topic: 'Partnership',
@@ -359,7 +359,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-002',
+    id: 'see2-exp-002',
     section: 'SEE2',
     type: 'rule',
     topic: 'Partnership',
@@ -369,7 +369,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-003',
+    id: 'see2-exp-003',
     section: 'SEE2',
     type: 'rule',
     topic: 'Partnership',
@@ -379,7 +379,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-004',
+    id: 'see2-exp-004',
     section: 'SEE2',
     type: 'rule',
     topic: 'Partnership',
@@ -389,7 +389,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-005',
+    id: 'see2-exp-005',
     section: 'SEE2',
     type: 'rule',
     topic: 'S-Corp',
@@ -399,7 +399,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-006',
+    id: 'see2-exp-006',
     section: 'SEE2',
     type: 'rule',
     topic: 'S-Corp',
@@ -409,7 +409,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-007',
+    id: 'see2-exp-007',
     section: 'SEE2',
     type: 'rule',
     topic: 'S-Corp',
@@ -419,7 +419,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-008',
+    id: 'see2-exp-008',
     section: 'SEE2',
     type: 'rule',
     topic: 'S-Corp',
@@ -429,7 +429,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-009',
+    id: 'see2-exp-009',
     section: 'SEE2',
     type: 'rule',
     topic: 'S-Corp',
@@ -439,7 +439,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-010',
+    id: 'see2-exp-010',
     section: 'SEE2',
     type: 'rule',
     topic: 'S-Corp',
@@ -449,7 +449,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-011',
+    id: 'see2-exp-011',
     section: 'SEE2',
     type: 'rule',
     topic: 'C-Corp',
@@ -459,7 +459,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-3'
   },
   {
-    id: 'SEE2-EXP-012',
+    id: 'see2-exp-012',
     section: 'SEE2',
     type: 'rule',
     topic: 'C-Corp',
@@ -469,7 +469,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-3'
   },
   {
-    id: 'SEE2-EXP-013',
+    id: 'see2-exp-013',
     section: 'SEE2',
     type: 'rule',
     topic: 'C-Corp',
@@ -479,7 +479,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-3'
   },
   {
-    id: 'SEE2-EXP-014',
+    id: 'see2-exp-014',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -489,7 +489,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-015',
+    id: 'see2-exp-015',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -499,7 +499,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-016',
+    id: 'see2-exp-016',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -509,7 +509,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-017',
+    id: 'see2-exp-017',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -519,7 +519,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-018',
+    id: 'see2-exp-018',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -529,7 +529,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-019',
+    id: 'see2-exp-019',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -539,7 +539,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-020',
+    id: 'see2-exp-020',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -549,7 +549,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-021',
+    id: 'see2-exp-021',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -559,7 +559,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-022',
+    id: 'see2-exp-022',
     section: 'SEE2',
     type: 'rule',
     topic: 'Depreciation',
@@ -569,7 +569,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-023',
+    id: 'see2-exp-023',
     section: 'SEE2',
     type: 'rule',
     topic: 'Business Expenses',
@@ -579,7 +579,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-024',
+    id: 'see2-exp-024',
     section: 'SEE2',
     type: 'rule',
     topic: 'Business Expenses',
@@ -589,7 +589,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-025',
+    id: 'see2-exp-025',
     section: 'SEE2',
     type: 'rule',
     topic: 'Inventory',
@@ -599,7 +599,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-026',
+    id: 'see2-exp-026',
     section: 'SEE2',
     type: 'rule',
     topic: 'Employment Taxes',
@@ -609,7 +609,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-027',
+    id: 'see2-exp-027',
     section: 'SEE2',
     type: 'rule',
     topic: 'Employment Taxes',
@@ -619,7 +619,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-028',
+    id: 'see2-exp-028',
     section: 'SEE2',
     type: 'rule',
     topic: 'Retirement Plans',
@@ -629,7 +629,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-029',
+    id: 'see2-exp-029',
     section: 'SEE2',
     type: 'rule',
     topic: 'Retirement Plans',
@@ -639,7 +639,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-1'
   },
   {
-    id: 'SEE2-EXP-030',
+    id: 'see2-exp-030',
     section: 'SEE2',
     type: 'rule',
     topic: 'Estate & Trust',
@@ -649,7 +649,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-031',
+    id: 'see2-exp-031',
     section: 'SEE2',
     type: 'rule',
     topic: 'Estate & Trust',
@@ -659,7 +659,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-032',
+    id: 'see2-exp-032',
     section: 'SEE2',
     type: 'rule',
     topic: 'Estate & Trust',
@@ -669,7 +669,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE2-2'
   },
   {
-    id: 'SEE2-EXP-033',
+    id: 'see2-exp-033',
     section: 'SEE2',
     type: 'rule',
     topic: 'Gift Tax',
@@ -683,7 +683,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
   // SEE3: Representation (33 cards)
   // ==========================
   {
-    id: 'SEE3-EXP-001',
+    id: 'see3-exp-001',
     section: 'SEE3',
     type: 'penalty',
     topic: 'Penalties',
@@ -693,7 +693,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-002',
+    id: 'see3-exp-002',
     section: 'SEE3',
     type: 'penalty',
     topic: 'Penalties',
@@ -703,7 +703,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-003',
+    id: 'see3-exp-003',
     section: 'SEE3',
     type: 'penalty',
     topic: 'Penalties',
@@ -713,7 +713,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-004',
+    id: 'see3-exp-004',
     section: 'SEE3',
     type: 'penalty',
     topic: 'Penalties',
@@ -723,7 +723,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-005',
+    id: 'see3-exp-005',
     section: 'SEE3',
     type: 'penalty',
     topic: 'Penalties',
@@ -733,7 +733,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-006',
+    id: 'see3-exp-006',
     section: 'SEE3',
     type: 'rule',
     topic: 'Due Diligence',
@@ -743,7 +743,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-007',
+    id: 'see3-exp-007',
     section: 'SEE3',
     type: 'rule',
     topic: 'Due Diligence',
@@ -753,7 +753,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-008',
+    id: 'see3-exp-008',
     section: 'SEE3',
     type: 'comparison',
     topic: 'Power of Attorney',
@@ -763,7 +763,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-2'
   },
   {
-    id: 'SEE3-EXP-009',
+    id: 'see3-exp-009',
     section: 'SEE3',
     type: 'rule',
     topic: 'Power of Attorney',
@@ -773,7 +773,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-2'
   },
   {
-    id: 'SEE3-EXP-010',
+    id: 'see3-exp-010',
     section: 'SEE3',
     type: 'rule',
     topic: 'Practice',
@@ -783,7 +783,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-011',
+    id: 'see3-exp-011',
     section: 'SEE3',
     type: 'rule',
     topic: 'Practice',
@@ -793,7 +793,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-012',
+    id: 'see3-exp-012',
     section: 'SEE3',
     type: 'rule',
     topic: 'Practice',
@@ -803,7 +803,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-013',
+    id: 'see3-exp-013',
     section: 'SEE3',
     type: 'rule',
     topic: 'Practice',
@@ -813,7 +813,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-014',
+    id: 'see3-exp-014',
     section: 'SEE3',
     type: 'rule',
     topic: 'E-filing',
@@ -823,7 +823,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-1'
   },
   {
-    id: 'SEE3-EXP-015',
+    id: 'see3-exp-015',
     section: 'SEE3',
     type: 'rule',
     topic: 'Representation',
@@ -833,7 +833,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-2'
   },
   {
-    id: 'SEE3-EXP-016',
+    id: 'see3-exp-016',
     section: 'SEE3',
     type: 'rule',
     topic: 'Appeals',
@@ -843,7 +843,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-017',
+    id: 'see3-exp-017',
     section: 'SEE3',
     type: 'rule',
     topic: 'Appeals',
@@ -853,7 +853,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-018',
+    id: 'see3-exp-018',
     section: 'SEE3',
     type: 'rule',
     topic: 'Appeals',
@@ -863,7 +863,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-019',
+    id: 'see3-exp-019',
     section: 'SEE3',
     type: 'rule',
     topic: 'Courts',
@@ -873,7 +873,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-020',
+    id: 'see3-exp-020',
     section: 'SEE3',
     type: 'rule',
     topic: 'Courts',
@@ -883,7 +883,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-021',
+    id: 'see3-exp-021',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collections',
@@ -893,7 +893,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-022',
+    id: 'see3-exp-022',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collections',
@@ -903,7 +903,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-023',
+    id: 'see3-exp-023',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collections',
@@ -913,7 +913,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-024',
+    id: 'see3-exp-024',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collections',
@@ -923,7 +923,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-025',
+    id: 'see3-exp-025',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collections',
@@ -933,7 +933,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-026',
+    id: 'see3-exp-026',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collections',
@@ -943,7 +943,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-027',
+    id: 'see3-exp-027',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collection Appeal',
@@ -953,7 +953,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-028',
+    id: 'see3-exp-028',
     section: 'SEE3',
     type: 'rule',
     topic: 'Collection Appeal',
@@ -963,7 +963,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-029',
+    id: 'see3-exp-029',
     section: 'SEE3',
     type: 'rule',
     topic: 'Penalties',
@@ -973,7 +973,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-030',
+    id: 'see3-exp-030',
     section: 'SEE3',
     type: 'rule',
     topic: 'Penalties',
@@ -983,7 +983,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-031',
+    id: 'see3-exp-031',
     section: 'SEE3',
     type: 'comparison',
     topic: 'Penalties',
@@ -993,7 +993,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-032',
+    id: 'see3-exp-032',
     section: 'SEE3',
     type: 'rule',
     topic: 'Recordkeeping',
@@ -1003,7 +1003,7 @@ export const EXPANSION_FLASHCARDS: EAFlashcard[] = [
     blueprintArea: 'SEE3-3'
   },
   {
-    id: 'SEE3-EXP-033',
+    id: 'see3-exp-033',
     section: 'SEE3',
     type: 'rule',
     topic: 'Electronic Records',

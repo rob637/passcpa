@@ -63,7 +63,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
       'B) Valuation of qualified family farms and closely held businesses based on actual use rather than highest and best use',
     ],
     correctAnswer: 3,
-    explanation: 'Special use valuation allows qualifying real property used in farming or closely held businesses to be valued at current use (e.g., farmland value) rather than highest and best use (e.g., development value). Requirements include material participation and continued use. The reduction is capped (about $1.31M in 2024).'
+    explanation: 'Special use valuation allows qualifying real property used in farming or closely held businesses to be valued at current use (e.g., farmland value) rather than highest and best use (e.g., development value). Requirements include material participation and continued use. The reduction is capped (about $1.39M in 2026).'
   },
   // EST-2: Advanced Trust Topics
   {
@@ -334,7 +334,7 @@ export const CFP_ESTATE_BATCH5_QUESTIONS: Question[] = [
       'B) Some states have lower exemptions than federal and may tax estates that owe no federal tax',
     ],
     correctAnswer: 3,
-    explanation: 'About a dozen states have estate or inheritance taxes with exemptions often much lower than federal ($1M-$6M vs. $13.61M federal). State-level planning may include credit shelter trusts specifically for state exemption amounts, domicile planning, or qualification for state-specific exclusions.'
+    explanation: 'About a dozen states have estate or inheritance taxes with exemptions often much lower than federal ($1M-$6M vs. $7.0M federal after TCJA sunset). State-level planning may include credit shelter trusts specifically for state exemption amounts, domicile planning, or qualification for state-specific exclusions.'
   },
   // EST-2: More Trusts
   {

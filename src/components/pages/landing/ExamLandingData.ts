@@ -253,9 +253,9 @@ export const EA_CONFIG: ExamLandingConfig = {
     annual: 249,
     monthly: 29,
     founderAnnual: 149,
-    founderMonthly: 12,
+    founderMonthly: 13,
   },
-  
+
   examParts: [
     { part: 'Part 1', title: 'Individuals', topics: ['Filing Requirements', 'Income & Deductions', 'Credits & Adjustments', 'Tax Calculations'], questions: '700+', time: '3.5 hours' },
     { part: 'Part 2', title: 'Businesses', topics: ['Business Entities', 'Business Income', 'Deductions & Credits', 'Specialized Returns'], questions: '700+', time: '3.5 hours' },
@@ -381,9 +381,9 @@ export const CIA_CONFIG: ExamLandingConfig = {
     annual: 249,
     monthly: 29,
     founderAnnual: 149,
-    founderMonthly: 12,
+    founderMonthly: 13,
   },
-  
+
   examParts: [
     { part: 'Part 1', title: 'Essentials of Internal Auditing', topics: ['Foundations of Internal Auditing', 'Independence & Objectivity', 'Proficiency & Due Care', 'Quality Assurance'], questions: '125 MCQs', time: '2.5 hours' },
     { part: 'Part 2', title: 'Practice of Internal Auditing', topics: ['Managing the Audit Function', 'Planning Engagements', 'Performing Engagements', 'Communicating Results'], questions: '100 MCQs', time: '2 hours' },

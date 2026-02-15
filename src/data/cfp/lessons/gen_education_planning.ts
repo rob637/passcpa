@@ -86,7 +86,7 @@ There's no annual federal contribution limit, but:
 
 | Consideration | Details |
 |---------------|---------|
-| **Gift tax** | Contributions over $18,000/year (2024) per beneficiary use lifetime exclusion |
+| **Gift tax** | Contributions over $19,000/year (2026) per beneficiary use lifetime exclusion |
 | **State limits** | Aggregate limits typically $300,000-$550,000 per beneficiary |
 | **Income limits** | NONE - anyone can contribute regardless of income |
 
@@ -94,9 +94,9 @@ There's no annual federal contribution limit, but:
 
 Contributors can make a **lump sum contribution** and spread it over 5 years for gift tax purposes.
 
-**2024 Example**:
-- Maximum super-fund amount: $18,000 × 5 = **$90,000**
-- Married couple splitting gifts: $36,000 × 5 = **$180,000**
+**2026 Example**:
+- Maximum super-fund amount: $19,000 × 5 = **$95,000**
+- Married couple splitting gifts: $38,000 × 5 = **$190,000**
 
 **Rules**:
 - Must file Form 709 each year
@@ -115,7 +115,7 @@ Contributors can make a **lump sum contribution** and spread it over 5 years for
 |-------------|--------|
 | Account age | 529 must be open 15+ years |
 | Contribution age | Contributions from last 5 years excluded |
-| Annual limit | Subject to Roth IRA contribution limit ($7,000 in 2024) |
+| Annual limit | Subject to Roth IRA contribution limit ($7,500 in 2026) |
 | Lifetime limit | $35,000 maximum rollover per beneficiary |
 | Income test | Beneficiary must have earned income |
 
@@ -224,7 +224,7 @@ Can change to another **member of the family** without tax consequences:
     keyTakeaways: [
       "Two types: College Savings Plans (most common) and Prepaid Tuition Plans",
       "No federal deduction; tax-deferred growth; tax-free for qualified expenses",
-      "Super-funding: 5-year gift election allows $90,000 lump sum (2024)",
+      "Super-funding: 5-year gift election allows $95,000 lump sum (2026)",
       "SECURE 2.0: Roll unused 529 to Roth IRA ($35,000 lifetime limit)",
       "Non-qualified: Earnings taxed as ordinary income + 10% penalty"
     ],
@@ -238,8 +238,8 @@ Can change to another **member of the family** without tax consequences:
     ],
     practiceProblems: [
       {
-        question: "A grandparent wants to super-fund a 529 for their grandchild in 2024. If married and splitting gifts with spouse, what is the maximum lump sum contribution?",
-        answer: "$36,000 × 5 = $180,000. Must file Form 709 for 5 years and survive the period."
+        question: "A grandparent wants to super-fund a 529 for their grandchild in 2026. If married and splitting gifts with spouse, what is the maximum lump sum contribution?",
+        answer: "$38,000 × 5 = $190,000. Must file Form 709 for 5 years and survive the period."
       },
       {
         question: "A client withdraws $30,000 from a 529 ($20,000 contributions, $10,000 earnings) for non-qualified expenses. What is the tax impact?",
@@ -287,7 +287,7 @@ Coverdell ESAs (formerly Education IRAs) provide tax-free growth for education e
 | Age limit | Beneficiary must be under 18 (exceptions for special needs) |
 | Distribution deadline | Funds must be used by age 30 |
 
-### Income Phase-Out (2024)
+### Income Phase-Out (2026)
 
 | Filing Status | Full Contribution | Phase-Out | No Contribution |
 |---------------|-------------------|-----------|-----------------|
@@ -362,12 +362,12 @@ Interest from EE and I bonds can be **tax-free** if used for qualified higher ed
 | Qualified expenses | Tuition and REQUIRED fees at eligible institution |
 | Registration | Cannot be in child's name |
 
-### Income Limits (2024)
+### Income Limits (2026)
 
 | Filing Status | Full Exclusion | Phase-Out | No Exclusion |
 |---------------|----------------|-----------|--------------|
-| Single/HOH | < $96,800 | $96,800 - $111,800 | > $111,800 |
-| MFJ | < $145,200 | $145,200 - $175,200 | > $175,200 |
+| Single/HOH | < $100,800 | $100,800 - $115,800 | > $115,800 |
+| MFJ | < $151,300 | $151,300 - $181,300 | > $181,300 |
 
 ### Calculation
 
@@ -481,7 +481,7 @@ The **most valuable** education tax credit for undergraduates.
 - Course materials (books, supplies, equipment)
 - **NOT**: Room and board, transportation, insurance
 
-### Income Phase-Out (2024)
+### Income Phase-Out (2026)
 
 | Filing Status | Full Credit | Phase-Out | No Credit |
 |---------------|-------------|-----------|-----------|
@@ -511,7 +511,7 @@ Broader eligibility than AOTC, but smaller benefit.
 - Course materials if required to be purchased from institution
 - **NOT**: Books purchased elsewhere, room and board
 
-### Income Phase-Out (2024)
+### Income Phase-Out (2026)
 
 | Filing Status | Full Credit | Phase-Out | No Credit |
 |---------------|-------------|-----------|-----------|
@@ -563,12 +563,12 @@ Broader eligibility than AOTC, but smaller benefit.
 | Interest only | Cannot deduct principal |
 | Dependency | Cannot claim if claimed as dependent |
 
-### Income Phase-Out (2024)
+### Income Phase-Out (2026)
 
 | Filing Status | Full Deduction | Phase-Out | No Deduction |
 |---------------|----------------|-----------|--------------|
-| Single/HOH | < $75,000 | $75,000 - $90,000 | > $90,000 |
-| MFJ | < $155,000 | $155,000 - $185,000 | > $185,000 |
+| Single/HOH | < $80,000 | $80,000 - $95,000 | > $95,000 |
+| MFJ | < $165,000 | $165,000 - $195,000 | > $195,000 |
 
 ### Qualified Loans
 

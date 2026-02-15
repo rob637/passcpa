@@ -257,7 +257,7 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
       'C) State tax is deductible',
     ],
     correctAnswer: 2,
-    explanation: 'With federal exemption at ~$13M but state exemptions often $1-6M, funding a credit shelter trust at federal exemption could trigger unnecessary state tax. Solutions: formula clauses, disclaimer funding, state-only QTIP trusts, portability for federal + trust for state. Must coordinate federal and state planning—what\'s optimal for one may be poor for another.'
+    explanation: 'With federal exemption at ~$7M but state exemptions often $1-6M, funding a credit shelter trust at federal exemption could trigger unnecessary state tax. Solutions: formula clauses, disclaimer funding, state-only QTIP trusts, portability for federal + trust for state. Must coordinate federal and state planning—what\'s optimal for one may be poor for another.'
   },
   // Additional Topics
   {
@@ -405,12 +405,12 @@ export const CFP_ESTATE_BATCH8_QUESTIONS: Question[] = [
     question: '529 plan superfunding allows:',
     options: [
       'A) Unlimited contributions',
-      'B) Contributing up to 5 years of annual exclusions at once ($90,000/$180,000 for couples in 2024) without using lifetime exemption',
+      'B) Contributing up to 5 years of annual exclusions at once ($95,000/$190,000 for couples in 2026) without using lifetime exemption',
       'D) Avoiding all gift tax',
       'C) Tax-free withdrawals for any purpose',
     ],
     correctAnswer: 1,
-    explanation: '529 superfunding: elect to treat gift as made over 5 years. 5 × $18K = $90K per donor ($180K married). File gift return electing 5-year treatment. If donor dies within 5 years, pro-rata portion returns to estate. Removes growth from estate immediately. Additional gifts to same beneficiary during 5 years use exemption. Powerful for grandparent planning.'
+    explanation: '529 superfunding: elect to treat gift as made over 5 years. 5 × $19K = $95K per donor ($190K married). File gift return electing 5-year treatment. If donor dies within 5 years, pro-rata portion returns to estate. Removes growth from estate immediately. Additional gifts to same beneficiary during 5 years use exemption. Powerful for grandparent planning.'
   },
   {
     id: 'cfp-est-b8-024',

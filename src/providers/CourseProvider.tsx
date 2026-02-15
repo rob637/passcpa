@@ -128,6 +128,7 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
   /**
    * Change the active course
    * Clears question cache to prevent memory leaks on mobile devices
+   * Clears stale checkout/course intents to prevent cross-course contamination
    */
   const setCourse = useCallback((id: CourseId) => {
     if (id !== courseId) {
@@ -135,6 +136,22 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
       // Each course's questions can be 1-3MB, so keeping all courses cached
       // would consume excessive memory on mobile devices
       clearQuestionCache();
+      
+      // Clear stale checkout intents to prevent cross-course contamination
+      // (e.g., user started CFP checkout but switched to CISA)
+      const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+      if (pendingCheckoutStr) {
+        try {
+          const pending = JSON.parse(pendingCheckoutStr);
+          if (pending.course !== id) {
+            localStorage.removeItem('pendingCheckout');
+          }
+        } catch {
+          localStorage.removeItem('pendingCheckout');
+        }
+      }
+      // Clear pendingCourse as we're explicitly setting a new course
+      localStorage.removeItem('pendingCourse');
     }
     setCourseId(id);
     saveCoursePreference(id);

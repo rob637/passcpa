@@ -23,6 +23,7 @@ import {
   Award,
   CreditCard,
   ExternalLink,
+  ChevronDown,
 } from 'lucide-react';
 import { triggerUpdateBanner } from '../common/UpdateBanner';
 import { Button } from '../common/Button';
@@ -392,10 +393,28 @@ const Settings: React.FC = () => {
 
       <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row gap-6">
-        {/* Sidebar */}
-        <div className="md:w-56 flex-shrink-0">
+        {/* Mobile dropdown menu */}
+        <div className="md:hidden mb-4">
+          <div className="relative">
+            <select
+              value={activeTab}
+              onChange={(e) => setActiveTab(e.target.value)}
+              className="w-full appearance-none bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 pr-10 text-slate-900 dark:text-slate-100 font-medium focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            >
+              {tabs.map((tab) => (
+                <option key={tab.id} value={tab.id}>
+                  {tab.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Desktop sidebar */}
+        <div className="hidden md:block md:w-56 flex-shrink-0">
           <nav 
-            className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0"
+            className="flex flex-col gap-1"
             {...tabListProps}
           >
             {tabs.map((tab) => (
@@ -403,7 +422,7 @@ const Settings: React.FC = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={clsx(
-                  'shrink-0 flex items-center gap-3 px-4 py-2 rounded-lg text-left transition-colors whitespace-nowrap',
+                  'flex items-center gap-3 px-4 py-2 rounded-lg text-left transition-colors whitespace-nowrap',
                   activeTab === tab.id
                     ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                     : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'

@@ -58,10 +58,10 @@ SECURE 2.0 (2022) builds on the original SECURE Act (2019), implementing dozens 
 
 ### Standard Catch-Up
 
-| Plan Type | Regular Limit (2024) | Catch-Up (50+) |
+| Plan Type | Regular Limit (2026) | Catch-Up (50+) |
 |-----------|---------------------|----------------|
-| 401(k)/403(b) | $23,000 | +$7,500 |
-| IRA | $7,000 | +$1,000 |
+| 401(k)/403(b) | $24,500 | +$7,500 |
+| IRA | $7,500 | +$1,000 |
 
 ### SECURE 2.0 "Super" Catch-Up (Ages 60-63)
 
@@ -277,12 +277,12 @@ Withdrawing from the wrong account can:
 
 ### Bracket Management
 
-| Federal Bracket (2024) | Income Range (MFJ) |
+| Federal Bracket (2026) | Income Range (MFJ) |
 |------------------------|--------------------|
-| 10% | $0 - $23,200 |
-| 12% | $23,201 - $94,300 |
-| 22% | $94,301 - $201,050 |
-| 24% | $201,051 - $383,900 |
+| 10% | $0 - $24,500 |
+| 12% | $24,501 - $99,550 |
+| 22% | $99,551 - $212,300 |
+| 24% | $212,301 - $405,400 |
 
 **Strategy**: Fill lower brackets with taxable income, use Roth for amounts that would push into higher brackets.
 
@@ -310,13 +310,13 @@ Withdrawing from the wrong account can:
 
 | Item | Amount |
 |------|--------|
-| Standard deduction (MFJ) | $29,200 |
+| Standard deduction (MFJ) | $30,700 |
 | Social Security (taxable portion) | $20,000 |
 | Other income | $10,000 |
-| Top of 12% bracket | $94,300 |
-| "Room" in 12% bracket | $35,100 |
+| Top of 12% bracket | $99,400 |
+| "Room" in 12% bracket | $39,300 |
 
-Convert up to $35,100 without entering 22% bracket.
+Convert up to $39,300 without entering 22% bracket.
 
 ---
 
@@ -350,7 +350,7 @@ Convert up to $35,100 without entering 22% bracket.
 
 Income-Related Monthly Adjustment Amount adds to Medicare Part B and D premiums for higher earners.
 
-### 2024 IRMAA Thresholds (Medicare premiums look back 2 years)
+### 2026 IRMAA Thresholds (Medicare premiums look back 2 years)
 
 | Income (MAGI, MFJ) | Part B Monthly Premium |
 |--------------------|------------------------|
@@ -582,7 +582,7 @@ Medicare begins at 65; early retirees need coverage for potentially 10+ years.
 ### ACA Subsidy Strategy
 
 Keep MAGI below 400% of FPL for premium tax credits:
-- 2024: ~$58,320 (single), ~$120,000 (family of 4)
+- 2026: ~$60,240 (single), ~$124,800 (family of 4)
 
 **Strategy**: Use Roth withdrawals (not counted in MAGI) to stay below subsidy thresholds.
 
@@ -650,11 +650,11 @@ Many retirees continue working for income, purpose, or both. Understanding how w
 
 Reduction in Social Security benefits for those who work before Full Retirement Age (FRA).
 
-### 2024 Limits
+### 2026 Limits
 
 | Age | Limit | Penalty |
 |-----|-------|---------|
-| Under FRA all year | $22,320/year | $1 withheld per $2 over limit |
+| Under FRA all year | $23,400/year | $1 withheld per $2 over limit |
 | Year reaching FRA | $59,520 (months before FRA) | $1 withheld per $3 over limit |
 | At or after FRA | No limit | No reduction |
 
@@ -664,7 +664,7 @@ Reduction in Social Security benefits for those who work before Full Retirement 
 |--------|--------|
 | Age | 63 |
 | Earnings | $40,000 |
-| Earnings limit (2024) | $22,320 |
+| Earnings limit (2026) | $23,400 |
 | Excess earnings | $17,680 |
 | Benefits withheld | $8,840 ($17,680 ÷ 2) |
 | Annual SS benefit | $24,000 |
@@ -817,7 +817,7 @@ Gradual transition from full-time work to full retirement.
    - C) The full benefit amount
    - D) 50% of benefits
 
-   **Answer: B** - Excess earnings: $50,000 - $22,320 = $27,680. Withheld: $27,680 ÷ 2 = $13,840.
+   **Answer: B** - Excess earnings: $50,000 - $23,400 = $26,600. Withheld: $26,600 ÷ 2 = $13,300.
 
 2. A 67-year-old (past FRA) working and earning $100,000:
    - A) Has Social Security benefits reduced
@@ -887,7 +887,7 @@ Annuities can provide guaranteed lifetime income. Understanding when and how to 
 | **Joint and survivor** | Covers two lives; lower initial payout |
 | **Life with cash refund** | Beneficiaries receive remaining premium at death |
 
-### Payout Example (2024 rates, approximate)
+### Payout Example (2026 rates, approximate)
 
 | Premium | Age | Gender | Life-Only Monthly | 10-Year Certain |
 |---------|-----|--------|-------------------|-----------------|

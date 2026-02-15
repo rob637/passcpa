@@ -641,14 +641,14 @@ $$\\text{FV}_{\\text{Ordinary}} = \\text{PMT} \\times \\frac{(1 + r)^n - 1}{r}$$
 
 ### Example 4: Annual 401(k) Contributions
 
-**Question**: A client contributes $23,000/year (2024 limit) to a 401(k) for 25 years at 8%. What's the balance?
+**Question**: A client contributes $24,500/year (2026 limit) to a 401(k) for 25 years at 8%. What's the balance?
 
 **Calculator Inputs** (annual):
 - N = 25
 - I/Y = 8
 - PV = 0
-- PMT = -23,000
-- **Solve FV = $1,681,965.54**
+- PMT = -24,500
+- **Solve FV = $1,791,095**
 
 ---
 

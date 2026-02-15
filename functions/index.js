@@ -12,6 +12,10 @@ const { onCall, onRequest, HttpsError } = require('firebase-functions/v2/https')
 const admin = require('firebase-admin');
 const { Resend } = require('resend');
 
+// Shared content stats (questions, lessons, flashcards per course)
+// Source of truth: shared/content-stats.json — also used by frontend
+const CONTENT_STATS = require('../shared/content-stats.json');
+
 // Initialize Firebase Admin
 admin.initializeApp();
 const db = admin.firestore();
@@ -102,7 +106,17 @@ const PRICE_LOOKUP_KEYS = {
 // ============================================================================
 // COURSE-SPECIFIC CONFIGURATION
 // Used to customize email content based on user's exam type
+// Content stats (questions, lessons) pulled from shared/content-stats.json
 // ============================================================================
+
+/**
+ * Format a number as "X,XXX+" (round down to nearest 100)
+ */
+function formatDisplayCount(n) {
+  const rounded = Math.floor(n / 100) * 100;
+  return rounded.toLocaleString('en-US') + '+';
+}
+
 const COURSE_CONFIG = {
   cpa: {
     name: 'CPA Exam',
@@ -142,7 +156,14 @@ const COURSE_CONFIG = {
  * @returns {Object} Course-specific configuration for emails
  */
 function getCourseConfig(courseId) {
-  return COURSE_CONFIG[courseId] || COURSE_CONFIG.cpa;
+  const config = COURSE_CONFIG[courseId] || COURSE_CONFIG.cpa;
+  const stats = CONTENT_STATS[courseId] || CONTENT_STATS.cpa;
+  return {
+    ...config,
+    questions: formatDisplayCount(stats.questions),
+    lessons: formatDisplayCount(stats.lessons),
+    flashcards: formatDisplayCount(stats.flashcards),
+  };
 }
 
 // Email configuration using Resend (3,000 free emails/month)
@@ -453,7 +474,7 @@ exports.sendWeeklyReports = onSchedule({
       const weeklyStats = await getWeeklyStats(userDoc.id, weekAgo);
       
       // Get course-specific content
-      const courseConfig = getCourseConfig(userData.currentCourse);
+      const courseConfig = getCourseConfig(userData.activeCourse);
       
       // Generate email content
       const emailContent = generateWeeklyReportEmail(userData, weeklyStats);
@@ -541,7 +562,7 @@ exports.sendOnboardingReminders = onSchedule({
         }
         
         // Get course-specific content
-        const courseConfig = getCourseConfig(userData.currentCourse);
+        const courseConfig = getCourseConfig(userData.activeCourse);
         
         // Send reminder email
         const { error } = await resend.emails.send({
@@ -718,7 +739,7 @@ exports.checkTrialExpirations = onSchedule({
             const authUser = await admin.auth().getUser(userId);
             const userEmail = authUser.email;
             const displayName = userData?.displayName || authUser.displayName || 'there';
-            const courseConfig = getCourseConfig(userData?.currentCourse);
+            const courseConfig = getCourseConfig(userData?.activeCourse);
             
             if (userEmail) {
               const { error } = await resend.emails.send({
@@ -877,7 +898,7 @@ exports.sendWelcomeEmail = onDocumentCreated({
   
   const userData = event.data.data();
   const userEmail = userData.email;
-  const courseConfig = getCourseConfig(userData.currentCourse);
+  const courseConfig = getCourseConfig(userData.activeCourse);
   const displayName = userData.displayName || 'Exam Candidate';
   
   if (!userEmail) {
@@ -1037,7 +1058,7 @@ async function getWeeklyStats(userId, startDate) {
 }
 
 function generateWeeklyReportEmail(userData, stats) {
-  const courseConfig = getCourseConfig(userData.currentCourse);
+  const courseConfig = getCourseConfig(userData.activeCourse);
   const displayName = userData.displayName || 'Exam Candidate';
   const section = userData.examSection || courseConfig.name.replace(' Exam', '');
   
@@ -1174,13 +1195,13 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     </p>
     
     <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
-      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">� Welcome Aboard</div>
+      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">💎 Welcome Aboard</div>
       <div style="font-size: 16px; opacity: 0.95;">
-        You now have access to <strong>all premium features</strong>:
+        You now have access to <strong>all ${examName} premium features</strong>:
       </div>
       <ul style="margin: 15px 0 0 0; padding-left: 20px;">
-        <li>14,400+ practice questions</li>
-        <li>1,100+ lessons</li>
+        <li>${courseConfig.questions} practice questions</li>
+        <li>${courseConfig.lessons} lessons</li>
         <li>AI Tutor assistance</li>
         <li>Exam simulator</li>
         <li>Progress analytics</li>

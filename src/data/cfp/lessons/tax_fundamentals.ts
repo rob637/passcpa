@@ -82,8 +82,8 @@ Understanding the structure of income tax is essential for effective tax plannin
 
 | Deduction | Limit |
 |-----------|-------|
-| Traditional IRA contributions | $7,000 ($8,000 if 50+) |
-| HSA contributions | $4,150 individual, $8,300 family |
+| Traditional IRA contributions | $7,500 ($8,500 if 50+) |
+| HSA contributions | $4,450 individual, $8,900 family |
 | Self-employment tax (50%) | Half of SE tax |
 | Student loan interest | $2,500 |
 | Educator expenses | $300 |
@@ -101,14 +101,14 @@ Many tax benefits phase out based on AGI:
 
 ## Standard vs. Itemized Deductions
 
-### Standard Deduction (2024)
+### Standard Deduction (2026)
 
 | Filing Status | Amount |
 |---------------|--------|
-| Single | $14,600 |
-| MFJ | $29,200 |
-| MFS | $14,600 |
-| HOH | $21,900 |
+| Single | $15,350 |
+| MFJ | $30,700 |
+| MFS | $15,350 |
+| HOH | $22,950 |
 | Additional (65+/blind) | $1,550 (single), $1,550 (MFJ per person) |
 
 ### Common Itemized Deductions
@@ -146,31 +146,31 @@ Itemize if: **Total itemized > Standard deduction**
 
 ---
 
-## Tax Brackets (2024)
+## Tax Brackets (2026)
 
 ### Married Filing Jointly
 
 | Rate | Income Range |
 |------|-------------|
-| 10% | $0 - $23,200 |
-| 12% | $23,201 - $94,300 |
-| 22% | $94,301 - $201,050 |
-| 24% | $201,051 - $383,900 |
-| 32% | $383,901 - $487,450 |
-| 35% | $487,451 - $731,200 |
-| 37% | $731,201+ |
+| 10% | $0 - $24,450 |
+| 12% | $24,451 - $99,400 |
+| 22% | $99,401 - $211,900 |
+| 24% | $211,901 - $403,800 |
+| 32% | $403,801 - $512,500 |
+| 35% | $512,501 - $768,650 |
+| 37% | $768,651+ |
 
 ### Single
 
 | Rate | Income Range |
 |------|-------------|
-| 10% | $0 - $11,600 |
-| 12% | $11,601 - $47,150 |
-| 22% | $47,151 - $100,525 |
-| 24% | $100,526 - $191,950 |
-| 32% | $191,951 - $243,725 |
-| 35% | $243,726 - $609,350 |
-| 37% | $609,351+ |
+| 10% | $0 - $12,200 |
+| 12% | $12,201 - $49,600 |
+| 22% | $49,601 - $105,750 |
+| 24% | $105,751 - $201,850 |
+| 32% | $201,851 - $256,500 |
+| 35% | $256,501 - $640,850 |
+| 37% | $640,851+ |
 
 ---
 
@@ -252,7 +252,7 @@ $1,000 credit = **$1,000** tax savings
     practiceProblems: [
       {
         question: "A single filer has $120,000 AGI, $18,000 itemized deductions, and no QBI. What is taxable income and should they itemize?",
-        answer: "Yes, itemize ($18,000 > $14,600 standard). Taxable income = $120,000 - $18,000 = $102,000."
+        answer: "Yes, itemize ($18,000 > $15,350 standard). Taxable income = $120,000 - $18,000 = $102,000."
       },
       {
         question: "A married couple in the 24% bracket can either take a $5,000 deduction or a $1,000 credit. Which saves more tax?",

@@ -884,7 +884,7 @@ With strategy: Smooth income = ~18% effective rate
       },
       {
         question: "A 45-year-old self-employed professional wants to maximize retirement contributions. Net SE income is $400,000. What plan combination should they consider?",
-        answer: "Solo 401(k) + Cash Balance (or DB) plan. The Solo 401(k) allows $23,000 employee + ~$69,000 employer = ~$69,000 total. Adding a cash balance plan could add $100,000+ more depending on plan design—total contributions potentially $150,000+."
+        answer: "Solo 401(k) + Cash Balance (or DB) plan. The Solo 401(k) allows $24,500 employee + ~$71,500 employer = ~$71,500 total. Adding a cash balance plan could add $100,000+ more depending on plan design—total contributions potentially $170,000+."
       }
     ],
     relatedLessons: ["CFP-RET-L002", "CFP-RET-L015", "CFP-RET-L016"]

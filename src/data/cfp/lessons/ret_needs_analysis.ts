@@ -289,7 +289,7 @@ Social Security provides foundational retirement income for most Americans. Unde
 
 - Need **40 credits** (10 years of work) for retirement benefits
 - Earn up to **4 credits per year**
-- 2024: $1,730 in earnings = 1 credit
+- 2026: $1,810 in earnings = 1 credit
 
 ### Full Retirement Age (FRA)
 
@@ -318,10 +318,10 @@ Social Security provides foundational retirement income for most Americans. Unde
 
 **Primary Insurance Amount (PIA)** uses bend points:
 
-For 2024:
-- **90%** of first $1,174 AIME, plus
-- **32%** of AIME between $1,174 and $7,078, plus
-- **15%** of AIME above $7,078
+For 2026:
+- **90%** of first $1,226 AIME, plus
+- **32%** of AIME between $1,226 and $7,391, plus
+- **15%** of AIME above $7,391
 
 ### Example: AIME = $8,000
 
@@ -454,7 +454,7 @@ $$\\text{Combined Income} = \\text{AGI} + \\text{Tax-Exempt Interest} + \\frac{1
 If still working and claiming before FRA:
 
 ### Under FRA All Year
-- $1 withheld for every $2 earned above **$22,320** (2024)
+- $1 withheld for every $2 earned above **$23,400** (2026)
 
 ### Year Reaching FRA
 - $1 withheld for every $3 earned above **$59,520** (2024)
@@ -578,7 +578,7 @@ Healthcare costs are often the **largest expense** in retirement. Understanding 
 | **Hospice care** | End-of-life care |
 
 **Premium**: Free for most (40+ quarters of work)
-**Deductible 2024**: $1,632 per benefit period
+**Deductible 2026**: $1,700 per benefit period
 
 ### Part B - Medical Insurance
 
@@ -589,8 +589,8 @@ Healthcare costs are often the **largest expense** in retirement. Understanding 
 | **Durable medical equipment** | Wheelchairs, walkers |
 | **Outpatient procedures** | Surgery, therapy |
 
-**Standard Premium 2024**: $174.70/month
-**Deductible 2024**: $240/year
+**Standard Premium 2026**: $185.00/month
+**Deductible 2026**: $257/year
 **Coinsurance**: 20% after deductible
 
 ### Part C - Medicare Advantage (MA)
@@ -608,10 +608,10 @@ Private insurance alternative combining A + B (often + D).
 
 Standalone or included in Part C.
 
-**Standard Benefit Structure 2024**:
-- Deductible: $545
-- Initial coverage: 25% coinsurance until $5,030
-- Coverage gap (donut hole): 25% until $8,000 true OOP
+**Standard Benefit Structure 2026**:
+- Deductible: $590
+- Initial coverage: 25% coinsurance until $5,400
+- Coverage gap (donut hole): 25% until $8,600 true OOP
 - Catastrophic: 5% coinsurance (or small copays)
 
 ---
@@ -620,18 +620,18 @@ Standalone or included in Part C.
 
 High-income beneficiaries pay more for Parts B and D.
 
-### Part B Monthly IRMAA (2024)
+### Part B Monthly IRMAA (2026)
 
 | Single MAGI | Married MAGI | Part B Total |
 |-------------|--------------|--------------|
-| ≤ $103,000 | ≤ $206,000 | $174.70 |
-| $103,001-$129,000 | $206,001-$258,000 | $244.60 |
-| $129,001-$161,000 | $258,001-$322,000 | $349.40 |
-| $161,001-$193,000 | $322,001-$386,000 | $454.20 |
-| $193,001-$499,999 | $386,001-$749,999 | $559.00 |
-| ≥ $500,000 | ≥ $750,000 | $594.00 |
+| ≤ $106,000 | ≤ $212,000 | $185.00 |
+| $106,001-$133,000 | $212,001-$266,000 | $259.00 |
+| $133,001-$167,000 | $266,001-$334,000 | $370.00 |
+| $167,001-$200,000 | $334,001-$400,000 | $481.00 |
+| $200,001-$500,000 | $400,001-$750,000 | $592.00 |
+| ≥ $500,001 | ≥ $750,001 | $628.00 |
 
-**Based on**: Tax return from 2 years prior (2022 for 2024 premiums)
+**Based on**: Tax return from 2 years prior (2024 for 2026 premiums)
 
 ### Life-Changing Events
 

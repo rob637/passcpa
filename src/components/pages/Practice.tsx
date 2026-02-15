@@ -751,8 +751,9 @@ const Practice: React.FC = () => {
       
       // Check if session belongs to the current course
       if (sessionState.courseId && sessionState.courseId !== courseId) {
-        // Don't restore sessions from a different course
-        logger.info(`Skipping session restore: saved for ${sessionState.courseId}, current is ${courseId}`);
+        // Clear sessions from a different course - don't let them linger
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        logger.info(`Cleared session from ${sessionState.courseId}: current course is ${courseId}`);
         return false;
       }
       
@@ -821,6 +822,21 @@ const Practice: React.FC = () => {
   useEffect(() => {
     if (prevCourseRef.current !== courseId) {
       prevCourseRef.current = courseId;
+      
+      // Always clear any saved session from a different course
+      try {
+        const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
+        if (saved) {
+          const sessionState = JSON.parse(saved);
+          if (sessionState.courseId && sessionState.courseId !== courseId) {
+            sessionStorage.removeItem(SESSION_STORAGE_KEY);
+            logger.info(`Cleared stale session for ${sessionState.courseId}`);
+          }
+        }
+      } catch {
+        // Ignore parse errors
+      }
+      
       if (inSession) {
         // End the in-progress session — it belongs to a different course
         setInSession(false);

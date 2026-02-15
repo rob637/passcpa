@@ -595,6 +595,35 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const { user } = useAuth();
   
+  // Reset checkout state on mount and bfcache restore (back button)
+  // Also clear stale pendingCheckout if it's for a different course
+  useEffect(() => {
+    setIsCheckingOut(false);
+    
+    // Clear pendingCheckout if it's for a different course (user switched exams)
+    const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+    if (pendingCheckoutStr) {
+      try {
+        const pendingCheckout = JSON.parse(pendingCheckoutStr);
+        if (pendingCheckout.course !== config.id) {
+          localStorage.removeItem('pendingCheckout');
+        }
+      } catch {
+        localStorage.removeItem('pendingCheckout');
+      }
+    }
+    
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        // Page was restored from bfcache (back/forward navigation)
+        setIsCheckingOut(false);
+      }
+    };
+    
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
+  }, [config.id]);
+  
   // Founder pricing — single source of truth in subscription.ts
   const isFounderWindow = isFounderPricingActive();
   const daysRemaining = founderDaysRemaining();
@@ -712,6 +741,12 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               {billingInterval === 'annual' && (
                 <p className="text-white/80 text-sm">
                   Just ${(currentPrice / 12).toFixed(0)}/month • Save {savings}%
+                </p>
+              )}
+              
+              {billingInterval === 'monthly' && (
+                <p className="text-white/80 text-sm">
+                  Switch to annual and save ${(pricing.monthly * 12) - (isFounderWindow ? pricing.founderAnnual : pricing.annual)}/year
                 </p>
               )}
               

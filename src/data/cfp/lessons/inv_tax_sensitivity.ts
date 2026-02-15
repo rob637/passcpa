@@ -481,12 +481,12 @@ Effective capital gains management is essential for maximizing after-tax investm
 | ≤ 1 year | Short-term capital gain | Ordinary income rates (10–37%) |
 | > 1 year | Long-term capital gain | Preferential rates (0%, 15%, or 20%) |
 
-### 2024 Long-Term Capital Gains Rates
+### 2026 Long-Term Capital Gains Rates
 
 | Filing Status | 0% Rate | 15% Rate | 20% Rate |
 |--------------|---------|----------|----------|
-| Single | Up to \$47,025 | \$47,026–\$518,900 | Over \$518,900 |
-| MFJ | Up to \$94,050 | \$94,051–\$583,750 | Over \$583,750 |
+| Single | Up to \$49,000 | \$49,001–\$539,900 | Over \$539,900 |
+| MFJ | Up to \$98,000 | \$98,001–\$607,350 | Over \$607,350 |
 
 ### Net Investment Income Tax (NIIT)
 

@@ -163,7 +163,7 @@ export const CFP_AUDIO_FLASHCARDS: AudioFlashcard[] = [
     domain: 'EST',
     topic: 'Estate Basics',
     term: 'Unified Credit',
-    definition: 'The amount exempt from gift and estate tax. In 2024, the exemption is $13.61 million per person. Gifts and estates share this single lifetime limit. Scheduled to drop to approximately $6 million in 2026.',
+    definition: 'The amount exempt from gift and estate tax. In 2026, the exemption is $7.0 million per person due to the TCJA sunset. Gifts and estates share this single lifetime limit.',
     pauseSeconds: 5
   },
   {
@@ -171,7 +171,7 @@ export const CFP_AUDIO_FLASHCARDS: AudioFlashcard[] = [
     domain: 'EST',
     topic: 'Estate Basics',
     term: 'Annual Gift Tax Exclusion',
-    definition: 'The amount you can give to any recipient each year tax-free and without using your lifetime exemption. In 2024, the exclusion is $18,000 per person. Spouses can combine for $36,000 per recipient.',
+    definition: 'The amount you can give to any recipient each year tax-free and without using your lifetime exemption. In 2026, the exclusion is $19,000 per person. Spouses can combine for $38,000 per recipient.',
     pauseSeconds: 4
   },
   {

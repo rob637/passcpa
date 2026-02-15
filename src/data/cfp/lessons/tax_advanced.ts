@@ -43,13 +43,13 @@ Regular Taxable Income
 = AMT (if positive)
 \`\`\`
 
-## AMT Exemption Amounts (2024)
+## AMT Exemption Amounts (2026)
 
 | Filing Status | Exemption | Phase-out Starts | Phase-out Complete |
 |--------------|-----------|------------------|-------------------|
-| Single | $85,700 | $609,350 | $952,150 |
-| MFJ | $133,300 | $1,218,700 | $1,751,900 |
-| MFS | $66,650 | $609,350 | $876,100 |
+| Single | $88,100 | $626,350 | $978,750 |
+| MFJ | $137,000 | $1,252,700 | $1,800,700 |
+| MFS | $68,500 | $626,350 | $900,350 |
 
 **Phase-out:** 25% of AMTI above threshold
 

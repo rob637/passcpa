@@ -720,14 +720,19 @@ const Onboarding: React.FC = () => {
       });
       
       // Check for pending checkout (user came from pricing page)
+      // ONLY redirect if pendingCheckout matches the course we just onboarded
       const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
       if (pendingCheckoutStr) {
         try {
           const pendingCheckout = JSON.parse(pendingCheckoutStr);
           localStorage.removeItem('pendingCheckout');
-          // Navigate to start checkout page
-          navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
-          return;
+          // Only redirect if checkout is for the same course we just completed onboarding for
+          if (pendingCheckout.course === selectedCourse) {
+            navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+            return;
+          }
+          // Different course — ignore stale checkout, continue to dashboard
+          logger.info(`Ignoring stale pendingCheckout for ${pendingCheckout.course}, onboarded ${selectedCourse}`);
         } catch {
           // Invalid JSON, continue to dashboard
           localStorage.removeItem('pendingCheckout');

@@ -675,10 +675,19 @@ const Progress: React.FC = () => {
         
       {/* Study Plan Overview (New Feature) */}
       {studyPlan && (() => {
+        // Pass user's createdAt as startDate so pace is calculated from signup, not today
+        const userStartDate = userProfile?.createdAt 
+          ? (userProfile.createdAt instanceof Date 
+              ? userProfile.createdAt 
+              : 'seconds' in (userProfile.createdAt as any) 
+                ? new Date((userProfile.createdAt as any).seconds * 1000) 
+                : undefined)
+          : undefined;
         const paceInfo = calculatePaceStatus(
           studyPlan, 
           overallStats.lessonsCompleted, 
-          overallStats.totalLessons
+          overallStats.totalLessons,
+          userStartDate
         );
         
         const paceStyles: Record<PaceStatus, { bg: string; text: string; icon: string }> = {

@@ -148,7 +148,7 @@ export function SubscriptionGate({
             <span className="text-lg font-normal text-gray-500">/year</span>
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-            Just ${Math.round(displayPrice / 12)}/month
+            Just ${isFounder ? pricing.founderMonthly : pricing.monthly}/month
           </div>
           {isFounder && displayPrice < originalPrice && (
             <div className="text-gray-500 line-through mt-1">${originalPrice}/year</div>

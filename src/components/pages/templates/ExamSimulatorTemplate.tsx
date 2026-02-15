@@ -98,6 +98,8 @@ export interface ExamSimulatorConfig<SectionId extends string = string> {
   // Mode configuration  
   modes: ExamMode[];
   defaultModeIndex?: number;
+  /** Optional: return section-specific modes (e.g., CIA parts have different question counts) */
+  getModes?: (section: SectionId) => ExamMode[];
   
   // Question pool - function so it's only called when needed
   getQuestionPool: (section: SectionId) => ExamQuestion[];
@@ -247,13 +249,27 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     calculateResults,
     passingScore = 70,
     allowMultiSectionSelect = false,
+    getModes,
   } = config;
 
   // Setup state
   const [selectedSection, setSelectedSection] = useState<SectionId>(defaultSection);
   const [selectedSections, setSelectedSections] = useState<SectionId[]>([defaultSection]);
-  const [selectedMode, setSelectedMode] = useState<ExamMode>(modes[defaultModeIndex] || modes[0]);
+  
+  // Compute active modes based on selected section
+  const activeModes = getModes ? getModes(selectedSection) : modes;
+  const [selectedMode, setSelectedMode] = useState<ExamMode>(activeModes[defaultModeIndex] || activeModes[0]);
   const [examState, setExamState] = useState<ExamState>('setup');
+
+  // Update selected mode when section changes (modes may differ per section)
+  useEffect(() => {
+    if (getModes) {
+      const newModes = getModes(selectedSection);
+      // Keep the same mode type if it exists, otherwise reset to default
+      const sameType = newModes.find(m => m.id === selectedMode.id);
+      setSelectedMode(sameType || newModes[defaultModeIndex] || newModes[0]);
+    }
+  }, [selectedSection]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Exam state
   const [exam, setExam] = useState<GeneratedExam | null>(null);
@@ -543,7 +559,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
               Select Exam Mode
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {modes.map(mode => (
+              {activeModes.map(mode => (
                 <button
                   key={mode.id}
                   onClick={() => setSelectedMode(mode)}

@@ -147,6 +147,7 @@ const config: ExamSimulatorConfig<CIASectionId> = {
   defaultSection: 'CIA1',
   modes: CIA_EXAM_MODES,
   defaultModeIndex: 2, // Quick Practice
+  getModes: getExamModes, // Dynamic modes per part (Part 1: 125Q, Parts 2&3: 100Q)
   getQuestionPool,
   generateExam,
   passingScore: 60, // CIA uses scaled scoring, ~60% raw approximation

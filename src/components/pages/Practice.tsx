@@ -29,6 +29,7 @@ import {
   Brain,
   Zap,
   History,
+  Home,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -48,6 +49,8 @@ import { Question, ExamSection, Difficulty } from '../../types';
 import { formatDistanceToNow } from 'date-fns';
 import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionShuffle';
 import { ShareNudge, shouldShowHighScoreNudge } from '../common/ShareNudge';
+import { useNavigation } from '../navigation';
+import { markActivityCompleted } from '../../services/dailyPlanPersistence';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
@@ -637,6 +640,14 @@ const SessionResults: React.FC<SessionResultsProps> = ({
           ) : (
             <>
               <Button
+                onClick={() => navigate('/home')}
+                variant="secondary"
+                leftIcon={Home}
+                className="flex-1"
+              >
+                Home
+              </Button>
+              <Button
                 onClick={onTryAgain}
                 variant="secondary"
                 leftIcon={RotateCcw}
@@ -667,10 +678,13 @@ const Practice: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
   const { courseId, course } = useCourse();
+  const { session: navSession, endSession: endNavSession } = useNavigation();
   
-  // Check if coming from daily plan
-  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
-  const activityId = searchParams.get('activityId');
+  // Check if coming from daily plan (URL params OR navigation session)
+  const fromDailyPlanUrl = searchParams.get('from') === 'dailyplan';
+  const fromDailyPlanNav = navSession.mode === 'daily-plan';
+  const fromDailyPlan = fromDailyPlanUrl || fromDailyPlanNav;
+  const activityId = searchParams.get('activityId') || navSession.activityId || null;
   const blueprintAreaParam = searchParams.get('blueprintArea');
   const subtopicParam = searchParams.get('subtopic'); // Specific topic from lesson
 
@@ -1305,6 +1319,29 @@ const Practice: React.FC = () => {
     try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
   };
   
+  // Auto-complete daily plan activity when results are shown
+  useEffect(() => {
+    if (showResults && fromDailyPlan && activityId && user?.uid) {
+      // Mark the activity complete via the persistent service
+      markActivityCompleted(
+        user.uid,
+        activityId,
+        userProfile?.examSection || getDefaultSection(courseId),
+      ).catch(err => logger.error('Failed to auto-complete daily plan activity:', err));
+      
+      // Also save to legacy localStorage for DailyPlanCard to pick up
+      const storageKey = `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
+      try {
+        const existing = localStorage.getItem(storageKey);
+        const completed = existing ? JSON.parse(existing) : [];
+        if (!completed.includes(activityId)) {
+          completed.push(activityId);
+          localStorage.setItem(storageKey, JSON.stringify(completed));
+        }
+      } catch { /* ignore */ }
+    }
+  }, [showResults, fromDailyPlan, activityId, user?.uid, userProfile?.examSection, courseId]);
+
   // Back to daily plan (marks activity complete)
   const handleBackToDailyPlan = () => {
     if (activityId) {
@@ -1327,6 +1364,7 @@ const Practice: React.FC = () => {
     params.set('from', 'dailyplan');
     if (activityId) params.set('activityId', activityId);
     params.set('completed', 'true');
+    endNavSession();
     navigate(`/home?${params.toString()}`);
   };
   

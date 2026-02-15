@@ -15,6 +15,7 @@ import {
   getReferralUrl,
 } from '../../services/referral';
 import clsx from 'clsx';
+import logger from '../../utils/logger';
 
 interface InviteFriendsProps {
   /** Compact mode for embedding in other views */
@@ -40,7 +41,7 @@ export function InviteFriends({ compact = false }: InviteFriendsProps) {
         setReferralCode(data.code);
         setStats({ referralCount: data.referralCount, referralRewards: data.referralRewards });
       } catch (error) {
-        console.error('Error loading referral data:', error);
+        logger.error('Error loading referral data:', error);
       } finally {
         setIsLoading(false);
       }

@@ -47,6 +47,7 @@ import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
 import { formatDistanceToNow } from 'date-fns';
 import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionShuffle';
+import { ShareNudge, shouldShowHighScoreNudge } from '../common/ShareNudge';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
@@ -605,6 +606,13 @@ const SessionResults: React.FC<SessionResultsProps> = ({
           </div>
         </Card>
         
+        {/* Share Nudge — show after an exceptional score */}
+        {shouldShowHighScoreNudge(accuracy) && (
+          <div className="mb-6">
+            <ShareNudge trigger="high_score" score={accuracy} />
+          </div>
+        )}
+
         {/* Footer Actions */}
         <div className="flex gap-3">
           {fromDailyPlan && onBackToDailyPlan ? (

@@ -17,6 +17,7 @@ export { CFP_INV1_LESSONS } from './inv_theory';
 export { CFP_INV2_LESSONS } from './inv_vehicles';
 export { CFP_INV3_LESSONS } from './inv_portfolio';
 export { CFP_INV4_LESSONS } from './inv_advanced';
+export { CFP_INV_TAX_SENSITIVITY_LESSONS } from './inv_tax_sensitivity';
 
 // Domain 5: Tax Planning (14%)
 export { CFP_TAX1_LESSONS } from './tax_fundamentals';
@@ -63,6 +64,7 @@ import { CFP_INV1_LESSONS } from './inv_theory';
 import { CFP_INV2_LESSONS } from './inv_vehicles';
 import { CFP_INV3_LESSONS } from './inv_portfolio';
 import { CFP_INV4_LESSONS } from './inv_advanced';
+import { CFP_INV_TAX_SENSITIVITY_LESSONS } from './inv_tax_sensitivity';
 import { CFP_TAX1_LESSONS } from './tax_fundamentals';
 import { CFP_TAX2_LESSONS } from './tax_strategies';
 import { TAX_ADVANCED_LESSONS } from './tax_advanced';
@@ -171,7 +173,10 @@ const RAW_CFP_LESSONS: CFPLesson[] = [
  * All CFP lessons combined and normalized to standard Lesson type
  * This is used by the courseDataLoader for consistent lesson handling
  */
-export const ALL_CFP_LESSONS: Lesson[] = RAW_CFP_LESSONS.map(normalizeCFPLesson);
+export const ALL_CFP_LESSONS: Lesson[] = [
+  ...RAW_CFP_LESSONS.map(normalizeCFPLesson),
+  ...CFP_INV_TAX_SENSITIVITY_LESSONS,  // Already in Lesson format
+];
 
 /**
  * Get lessons by domain
@@ -210,7 +215,7 @@ export const CFP_DOMAIN_STATS = {
     name: 'Investment Planning',
     examWeight: 11,
     lessonCount: CFP_INV1_LESSONS.length + CFP_INV2_LESSONS.length + 
-                 CFP_INV3_LESSONS.length,
+                 CFP_INV3_LESSONS.length + CFP_INV_TAX_SENSITIVITY_LESSONS.length,
     areas: ['INV-1', 'INV-2', 'INV-3']
   },
   'CFP-TAX': {

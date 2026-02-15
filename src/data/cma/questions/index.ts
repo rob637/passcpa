@@ -116,6 +116,10 @@ import { CMA2_MCQ_BATCH11 } from './cma2-mcq-batch11';
 import { CMA1_MCQ_BATCH12 } from './cma1-mcq-batch12';
 import { CMA2_MCQ_BATCH12 } from './cma2-mcq-batch12';
 
+// Hard question batches
+import { CMA1_HARD_BATCH1 } from './cma1-hard-batch1';
+import { CMA1_HARD_BATCH2 } from './cma1-hard-batch2';
+
 // Re-export individual batches
 export {
   CMA1A_QUESTIONS_BATCH1,
@@ -222,6 +226,8 @@ export const CMA_PART1_QUESTIONS = [
   ...CMA1_MCQ_BATCH10,
   ...CMA1_MCQ_BATCH11,
   ...CMA1_MCQ_BATCH12,
+  ...CMA1_HARD_BATCH1,
+  ...CMA1_HARD_BATCH2,
 ];
 
 export const CMA_PART2_QUESTIONS = [

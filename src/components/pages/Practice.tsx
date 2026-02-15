@@ -53,7 +53,7 @@ import { useNavigation } from '../navigation';
 import { markActivityCompleted } from '../../services/dailyPlanPersistence';
 
 // Question status filter options (like Becker)
-type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
+type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
 
 interface SessionConfig {
   section: ExamSection;
@@ -283,7 +283,6 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
                   <option value="unanswered">Unanswered</option>
                   <option value="incorrect">Incorrect</option>
                   <option value="correct">Correct</option>
-                  <option value="flagged">Flagged</option>
                 </select>
               </div>
 
@@ -1039,6 +1038,7 @@ const Practice: React.FC = () => {
           userId: userProfile?.id, // For smart question selection
           useSmartSelection: shouldUseSmartSelection, // Enable spaced repetition for study mode
           examDate: examDateStr, // For adaptive weights near exam date
+          questionStatus: config.questionStatus !== 'all' ? config.questionStatus as any : undefined, // Filter by answer history
         });
       }
 
@@ -1434,6 +1434,15 @@ const Practice: React.FC = () => {
 
   // No questions available for selected criteria
   if (questions.length === 0) {
+    const statusLabels: Record<string, string> = {
+      unanswered: 'unanswered',
+      incorrect: 'previously incorrect',
+      correct: 'previously correct',
+    };
+    const activeStatusFilter = sessionConfig?.questionStatus && sessionConfig.questionStatus !== 'all'
+      ? statusLabels[sessionConfig.questionStatus]
+      : null;
+
     return (
       <div className="min-h-screen flex items-center justify-center" data-testid="practice-empty-state">
         <div className="text-center max-w-md mx-auto p-6">
@@ -1444,8 +1453,9 @@ const Practice: React.FC = () => {
             No Questions Available
           </h2>
           <p className="text-slate-600 dark:text-slate-300 mb-6">
-            There are no practice questions available for your selected section and criteria. 
-            Try adjusting your filters or selecting a different exam section.
+            {activeStatusFilter
+              ? `No ${activeStatusFilter} questions found for this section. Try changing the Question Status filter to "All Questions".`
+              : 'There are no practice questions available for your selected section and criteria. Try adjusting your filters or selecting a different exam section.'}
           </p>
           <Button
             onClick={endSession}

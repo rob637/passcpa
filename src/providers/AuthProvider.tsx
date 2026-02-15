@@ -104,12 +104,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const userDoc = await getDoc(userRef);
         
         if (!userDoc.exists()) {
+          // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
+          const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+
           const newProfile: Omit<UserProfile, 'id'> = {
             email: user.email || '',
             displayName: user.displayName || '',
             photoURL: user.photoURL,
             createdAt: serverTimestamp() as unknown as Date,
             onboardingComplete: false,
+            activeCourse: pendingCourse,
             examSection: null,
             examDate: null,
             dailyGoal: 25,
@@ -185,12 +189,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         url: `${window.location.origin}/login`,
       });
 
+      // Get pending course from registration flow (saved in localStorage by Register.tsx)
+      const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+
       // Create user document in Firestore
       const newUserProfile: Omit<UserProfile, 'id'> = {
         email,
         displayName,
         createdAt: serverTimestamp() as unknown as Date,
         onboardingComplete: false,
+        // Store the course they signed up for so it persists across windows/devices
+        activeCourse: pendingCourse,
         examSection: null,
         examDate: null,
         dailyGoal: 50,
@@ -311,6 +320,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const userDoc = await getDoc(userRef);
         
         if (!userDoc.exists()) {
+          // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
+          const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+
           // Create new profile for Google user
           const newProfile: Omit<UserProfile, 'id'> = {
             email: user.email || '',
@@ -318,6 +330,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             photoURL: user.photoURL,
             createdAt: serverTimestamp() as unknown as Date,
             onboardingComplete: false,
+            activeCourse: pendingCourse,
             examSection: null,
             examDate: null,
             dailyGoal: 25,

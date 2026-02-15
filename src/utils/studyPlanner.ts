@@ -19,8 +19,10 @@ export interface PaceInfo {
 
 export interface StudyPlan {
   examDate: Date;
+  startDate: Date; // When the study plan started
   totalDays: number;
   studyDays: number; // Days for content (excludes review period)
+  daysElapsed: number; // Days elapsed since start
   totalModules: number;
   modulesPerDay: number;
   expectedProgress: number; // Expected lesson completion % based on time elapsed
@@ -34,11 +36,10 @@ export const calculatePaceStatus = (
   studyPlan: StudyPlan,
   lessonsCompleted: number,
   totalLessons: number,
-  startDate?: Date
+  _startDate?: Date // Deprecated — startDate now lives on studyPlan
 ): PaceInfo => {
-  const today = new Date();
-  const start = startDate || today; // If no start date, assume they just started
-  const daysElapsed = Math.max(0, differenceInDays(today, start));
+  // Use the study plan's own start date for consistency
+  const daysElapsed = studyPlan.daysElapsed;
   
   // Expected lessons based on linear progress through study period
   const progressRatio = Math.min(1, daysElapsed / studyPlan.studyDays);
@@ -55,7 +56,16 @@ export const calculatePaceStatus = (
   let status: PaceStatus;
   let message: string;
   
-  if (lessonsDiff >= 2) {
+  if (daysElapsed <= 1 && lessonsExpected === 0) {
+    // Too early to judge pace — any completed work is just a good start
+    if (lessonsCompleted > 0) {
+      status = 'on-track';
+      message = 'Great start!';
+    } else {
+      status = 'on-track';
+      message = 'On pace';
+    }
+  } else if (lessonsDiff >= 2) {
     status = 'ahead';
     message = `${lessonsDiff} lessons ahead`;
   } else if (lessonsDiff >= -1) {
@@ -79,46 +89,65 @@ export const calculatePaceStatus = (
 };
 
 /**
- * Generates a study plan based on exam date with proportional milestone positions
+ * Generates a study plan based on exam date with proportional milestone positions.
+ * 
+ * @param _examSectionId - The exam section (e.g. 'FAR', 'SEE1').
+ * @param examDate - Target exam date.
+ * @param startDate - When the user started studying (e.g. account creation or exam date set).
+ *                    Defaults to today if not provided.
+ * @param actualLessonCount - Real number of lessons for this section. If provided,
+ *                            used for accurate modulesPerDay. Falls back to 40 estimate.
  */
-export const generateStudyPlan = (_examSectionId: string, examDate: Date): StudyPlan => {
+export const generateStudyPlan = (
+  _examSectionId: string, 
+  examDate: Date, 
+  startDate?: Date,
+  actualLessonCount?: number
+): StudyPlan => {
   const today = new Date();
+  const start = startDate && startDate < today ? startDate : today;
   const daysUntilExam = differenceInDays(examDate, today);
+  const totalPlanDays = Math.max(1, differenceInDays(examDate, start));
   
-  // Estimate module count (roughly 30-40 lessons per section + 2 reviews)
-  const totalModules = 40; 
+  // Use actual lesson count when available, otherwise estimate
+  const totalModules = actualLessonCount && actualLessonCount > 0 ? actualLessonCount : 40; 
   
-  // Reserve last 14 days for final review (minimum 7 days to avoid crazy numbers)
-  const studyDays = Math.max(7, daysUntilExam - 14);
+  // Reserve last 14 days for final review
+  const reviewDays = 14;
   
-  // Cap modulesPerDay at a reasonable maximum (10) to avoid showing unrealistic numbers
-  const modulesPerDay = Math.min(10, Number((totalModules / studyDays).toFixed(1)));
+  // Study days = content learning period (minimum 7 days)
+  const studyDays = Math.max(7, totalPlanDays - reviewDays);
   
-  // Calculate days for each milestone
+  // Days elapsed since plan start
+  const daysElapsed = Math.max(0, differenceInDays(today, start));
+  
+  // Remaining lessons / remaining study days = daily target
+  const remainingStudyDays = Math.max(1, studyDays - daysElapsed);
+  const modulesPerDay = Math.min(10, Number((totalModules / remainingStudyDays).toFixed(1)));
+  
+  // Calculate days for each milestone (relative to start date)
   const halfwayDay = Math.floor(studyDays * 0.5);
   const contentCompleteDay = studyDays;
-  const examDay = daysUntilExam;
+  const examDay = totalPlanDays;
   
   // Calculate expected progress based on days elapsed in study period
-  // (0% at start, 100% at content complete)
-  const daysElapsed = 0; // Today is day 0
   const expectedProgress = Math.min(100, Math.max(0, (daysElapsed / studyDays) * 100));
   
   const milestones: StudyPlanMilestone[] = [
     { 
-      date: format(today, 'MMM d'), 
+      date: format(start, 'MMM d'), 
       label: 'Start', 
       position: 0,
       dayFromStart: 0
     },
     { 
-      date: format(addDays(today, halfwayDay), 'MMM d'), 
+      date: format(addDays(start, halfwayDay), 'MMM d'), 
       label: 'Halfway Point',
       position: (halfwayDay / examDay) * 100,
       dayFromStart: halfwayDay
     },
     { 
-      date: format(addDays(today, contentCompleteDay), 'MMM d'), 
+      date: format(addDays(start, contentCompleteDay), 'MMM d'), 
       label: 'Review Starts',
       position: (contentCompleteDay / examDay) * 100,
       dayFromStart: contentCompleteDay
@@ -133,8 +162,10 @@ export const generateStudyPlan = (_examSectionId: string, examDate: Date): Study
 
   return {
     examDate,
+    startDate: start,
     totalDays: daysUntilExam,
     studyDays,
+    daysElapsed,
     totalModules,
     modulesPerDay,
     expectedProgress,

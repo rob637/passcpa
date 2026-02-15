@@ -120,31 +120,37 @@ function formatDisplayCount(n) {
 const COURSE_CONFIG = {
   cpa: {
     name: 'CPA Exam',
+    slug: 'cpa',
     tagline: 'Your AI-Powered CPA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with AICPA, NASBA, or any state board of accountancy.',
   },
   ea: {
     name: 'EA Exam',
+    slug: 'ea',
     tagline: 'Your AI-Powered EA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with the IRS or Treasury Department.',
   },
   cma: {
     name: 'CMA Exam',
+    slug: 'cma',
     tagline: 'Your AI-Powered CMA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with the Institute of Management Accountants (IMA).',
   },
   cia: {
     name: 'CIA Exam',
+    slug: 'cia',
     tagline: 'Your AI-Powered CIA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with The Institute of Internal Auditors (IIA).',
   },
   cisa: {
     name: 'CISA Exam',
+    slug: 'cisa',
     tagline: 'Your AI-Powered CISA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with ISACA.',
   },
   cfp: {
     name: 'CFP Exam',
+    slug: 'cfp',
     tagline: 'Your AI-Powered CFP Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with the CFP Board.',
   },
@@ -1241,7 +1247,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     </div>
     
     <div style="text-align: center; margin: 35px 0;">
-      <a href="https://voraprep.com/dashboard" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
+      <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
         Start Studying Now →
       </a>
     </div>
@@ -1999,7 +2005,7 @@ function getWelcomeSubscriberEmailHTML(name, courseId, isFounder) {
       ` : ''}
       
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/dashboard" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+        <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
           Start Studying
         </a>
       </div>

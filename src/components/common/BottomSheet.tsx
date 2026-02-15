@@ -118,7 +118,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-end justify-center"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby={title ? 'bottom-sheet-title' : undefined}
@@ -137,9 +137,9 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
       <div
         ref={sheetRef}
         className={clsx(
-          'relative w-full max-w-lg mx-auto bg-white dark:bg-slate-800 rounded-t-3xl shadow-2xl',
+          'relative w-full max-w-lg mx-auto bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-3xl shadow-2xl',
           'transform transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]',
-          'animate-slide-up'
+          'animate-slide-up sm:animate-fade-in'
         )}
         style={{ 
           maxHeight: `${maxHeight}vh`,
@@ -150,9 +150,9 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Handle */}
+        {/* Handle - only shown on mobile bottom sheet mode */}
         {showHandle && (
-          <div className="flex justify-center pt-3 pb-2">
+          <div className="flex sm:hidden justify-center pt-3 pb-2">
             <div className="w-10 h-1 bg-slate-300 dark:bg-slate-600 rounded-full" />
           </div>
         )}

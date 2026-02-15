@@ -218,9 +218,15 @@ export default defineConfig({
             }
           }
           
-          // Question data chunks - split by course for lazy loading
+          // Question data chunks - split CPA by section since it's very large
           if (id.includes('/data/cpa/questions')) {
-            return 'data-cpa-questions';
+            if (id.includes('far-questions') || id.includes('far_questions')) return 'data-cpa-questions-far';
+            if (id.includes('aud-questions') || id.includes('aud_questions')) return 'data-cpa-questions-aud';
+            if (id.includes('reg-questions') || id.includes('reg_questions')) return 'data-cpa-questions-reg';
+            if (id.includes('bar-questions') || id.includes('bar_questions')) return 'data-cpa-questions-bar';
+            if (id.includes('isc-questions') || id.includes('isc_questions')) return 'data-cpa-questions-isc';
+            if (id.includes('tcp-questions') || id.includes('tcp_questions')) return 'data-cpa-questions-tcp';
+            return 'data-cpa-questions-misc'; // world-class batches, easy-questions, etc.
           }
           if (id.includes('/data/ea/questions')) {
             return 'data-ea-questions';

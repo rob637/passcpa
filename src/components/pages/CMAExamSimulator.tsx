@@ -126,6 +126,7 @@ const config: ExamSimulatorConfig<CMASection> = {
   courseName: 'CMA',
   courseDescription: 'Practice with realistic exam conditions for the IMA Certified Management Accountant exam',
   backPath: '/cma/dashboard',
+  testingProvider: 'prometric',
   sections: CMA_SECTIONS,
   defaultSection: 'CMA1',
   modes: CMA_EXAM_MODES,

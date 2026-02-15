@@ -132,6 +132,7 @@ const config: ExamSimulatorConfig<EASection> = {
   courseName: 'EA',
   courseDescription: 'Practice with realistic exam conditions for the IRS Special Enrollment Examination',
   backPath: '/ea/dashboard',
+  testingProvider: 'prometric',
   sections: EA_SECTIONS,
   defaultSection: 'SEE1',
   modes: EA_EXAM_MODES,

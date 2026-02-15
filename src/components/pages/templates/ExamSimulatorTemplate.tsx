@@ -605,6 +605,56 @@ export function ExamSimulatorTemplate<SectionId extends string>({
 
           {/* Start Button */}
           <div className="text-center">
+            {/* Realistic Theme Toggle */}
+            {testingProvider && (
+              <div className="max-w-lg mx-auto mb-6 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <label className="flex items-center justify-between cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className={clsx(
+                      'w-10 h-10 rounded-lg flex items-center justify-center',
+                      testingProvider === 'prometric' 
+                        ? 'bg-slate-800' 
+                        : 'bg-blue-900'
+                    )}>
+                      <span className="text-white text-xs font-bold">
+                        {testingProvider === 'prometric' ? 'WIN' : 'VUE'}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900 dark:text-white">
+                        {testingProvider === 'prometric' ? 'Prometric Interface Mode' : 'Pearson VUE Interface Mode'}
+                      </div>
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
+                        Practice with the exact look of the real exam
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={useRealisticTheme}
+                      onChange={(e) => setUseRealisticTheme(e.target.checked)}
+                      className="sr-only peer"
+                    />
+                    <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                  </div>
+                </label>
+                {useRealisticTheme && (
+                  <div className={clsx(
+                    'mt-3 p-3 rounded-lg text-sm',
+                    testingProvider === 'prometric'
+                      ? 'bg-amber-50 border border-amber-200 text-amber-800'
+                      : 'bg-blue-50 border border-blue-200 text-blue-800'
+                  )}>
+                    <strong>Heads up:</strong>{' '}
+                    {testingProvider === 'prometric'
+                      ? `The Prometric interface uses a dated 1990s aesthetic that matches the real ${courseName} exam at Prometric testing centers. This helps reduce test-day anxiety.`
+                      : `The Pearson VUE interface replicates the modern testing experience you'll encounter at real ${courseName} exam centers. This helps reduce test-day anxiety.`}
+                  </div>
+                )}
+              </div>
+            )}
+
             <button
               onClick={startExam}
               disabled={allowMultiSectionSelect && selectedSections.length === 0}
@@ -627,6 +677,156 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   // ============================================
 
   if (examState === 'results' && examResult) {
+    // ============================================
+    // Prometric Results Screen
+    // ============================================
+    if (useRealisticTheme && testingProvider === 'prometric') {
+      return (
+        <div className="prometric-theme prometric-results">
+          <div className="prometric-results-window">
+            <div className="prometric-results-titlebar">
+              {courseName} Examination Results
+              <div className="prometric-titlebar-buttons">
+                <button className="prometric-titlebar-btn">_</button>
+                <button className="prometric-titlebar-btn">□</button>
+                <button className="prometric-titlebar-btn">×</button>
+              </div>
+            </div>
+            <div className="prometric-results-content">
+              <div className="prometric-results-header">
+                <div className="prometric-score-display">
+                  <div className="prometric-score-label">Final Score</div>
+                  <div className={clsx('prometric-score-value', examResult.passed ? 'passing' : 'failing')}>
+                    {examResult.score}
+                  </div>
+                  <div className="prometric-score-target">
+                    Target: {passingScore} | {examResult.correctAnswers} of {examResult.totalQuestions} correct
+                  </div>
+                </div>
+                <div className={clsx('prometric-result-status', examResult.passed ? 'pass' : 'fail')}>
+                  {examResult.passed ? '✓ PASS' : '✗ FAIL'}
+                </div>
+              </div>
+              
+              <div className="prometric-results-divider" />
+              
+              <div className="prometric-results-section">
+                <div className="prometric-section-title">Performance by Content Area</div>
+                <table className="prometric-results-table">
+                  <thead>
+                    <tr><th>Section</th><th>Correct</th><th>Total</th><th>Score</th></tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(examResult.bySection)
+                      .filter(([_, data]) => (data as { total: number }).total > 0)
+                      .map(([id, data]) => {
+                        const { correct, total, name } = data as { correct: number; total: number; name: string };
+                        const pct = Math.round((correct / total) * 100);
+                        return (
+                          <tr key={id}>
+                            <td>{name}</td>
+                            <td>{correct}</td>
+                            <td>{total}</td>
+                            <td className={pct < passingScore ? 'weak' : ''}>{pct}%</td>
+                          </tr>
+                        );
+                      })}
+                    <tr className="prometric-results-total">
+                      <td>Total</td>
+                      <td>{examResult.correctAnswers}</td>
+                      <td>{examResult.totalQuestions}</td>
+                      <td>{examResult.score}%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="prometric-results-divider" />
+              
+              <div className="prometric-results-actions">
+                <button onClick={handleRetakeExam} className="prometric-btn">New Exam</button>
+                <button onClick={() => navigate(backPath)} className="prometric-btn prometric-btn-primary">
+                  Return to Dashboard
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================
+    // Pearson VUE Results Screen
+    // ============================================
+    if (useRealisticTheme && testingProvider === 'pearsonvue') {
+      return (
+        <div className="pvue-theme pvue-results">
+          <div className="pvue-results-window">
+            <div className="pvue-results-titlebar">
+              {courseName} Examination — Results
+            </div>
+            <div className="pvue-results-content">
+              <div className="pvue-results-header">
+                <div className="pvue-score-display">
+                  <div className="pvue-score-label">Your Score</div>
+                  <div className={clsx('pvue-score-value', examResult.passed ? 'passing' : 'failing')}>
+                    {examResult.score}%
+                  </div>
+                  <div className="pvue-score-target">
+                    Passing Score: {passingScore}% | {examResult.correctAnswers}/{examResult.totalQuestions} correct
+                  </div>
+                </div>
+                <div className={clsx('pvue-result-status', examResult.passed ? 'pass' : 'fail')}>
+                  {examResult.passed ? 'PASS' : 'DID NOT PASS'}
+                </div>
+              </div>
+              
+              <div className="pvue-results-section">
+                <div className="pvue-section-title">Performance by Content Area</div>
+                <table className="pvue-results-table">
+                  <thead>
+                    <tr><th>Domain</th><th>Correct</th><th>Total</th><th>Score</th></tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(examResult.bySection)
+                      .filter(([_, data]) => (data as { total: number }).total > 0)
+                      .map(([id, data]) => {
+                        const { correct, total, name } = data as { correct: number; total: number; name: string };
+                        const pct = Math.round((correct / total) * 100);
+                        return (
+                          <tr key={id}>
+                            <td>{name}</td>
+                            <td>{correct}</td>
+                            <td>{total}</td>
+                            <td className={pct < passingScore ? 'weak' : ''}>{pct}%</td>
+                          </tr>
+                        );
+                      })}
+                    <tr className="pvue-results-total">
+                      <td>Total</td>
+                      <td>{examResult.correctAnswers}</td>
+                      <td>{examResult.totalQuestions}</td>
+                      <td>{examResult.score}%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="pvue-results-actions">
+                <button onClick={handleRetakeExam} className="pvue-btn">New Exam</button>
+                <button onClick={() => navigate(backPath)} className="pvue-btn pvue-btn-primary">
+                  Return to Dashboard
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================
+    // Default Modern Results Screen
+    // ============================================
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
         <div className="max-w-4xl mx-auto">
@@ -754,6 +954,379 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   const currentAnswer = exam.answers[currentQuestion.id];
   const isCurrentFlagged = exam.flagged.has(currentQuestion.id);
 
+  // ============================================
+  // Prometric Theme — Exam In Progress
+  // ============================================
+  if (useRealisticTheme && testingProvider === 'prometric') {
+    return (
+      <div className="prometric-theme h-screen flex flex-col overflow-hidden">
+        {/* Prometric Header */}
+        <div className="prometric-header">
+          <div className="prometric-header-title">
+            <span className="prometric-header-section">{courseName} — {sections[selectedSection]?.name || selectedSection}</span>
+            <div className="prometric-header-divider" />
+            <span className="prometric-header-info">
+              Question {currentIndex + 1} of {exam.questions.length}
+            </span>
+          </div>
+          <div className="prometric-header-right">
+            <div className={clsx('prometric-timer', timeRemaining < 300 && 'warning')}>
+              {formatTime(timeRemaining)}
+            </div>
+          </div>
+        </div>
+
+        {/* Prometric Toolbar */}
+        <div className="prometric-toolbar">
+          <button
+            onClick={() => setShowCalculator(!showCalculator)}
+            className={clsx('prometric-toolbar-btn', showCalculator && 'active')}
+          >
+            <Calculator className="w-4 h-4" />
+            Calculator
+          </button>
+          <div className="prometric-toolbar-separator" />
+          <button
+            onClick={handleToggleFlag}
+            className={clsx('prometric-toolbar-btn', isCurrentFlagged && 'active')}
+          >
+            <Flag className="w-4 h-4" />
+            {isCurrentFlagged ? 'Unflag' : 'Flag'}
+          </button>
+          <div className="flex-1" />
+          <span className="text-xs text-gray-600">
+            Answered: {answeredCount} of {exam.questions.length}
+          </span>
+        </div>
+
+        {/* Main Content */}
+        <div className="prometric-content flex-1">
+          <div className="prometric-main relative">
+            {/* Calculator Overlay */}
+            {showCalculator && (
+              <div className="prometric-calculator">
+                <div className="prometric-calculator-title">
+                  <span>Calculator</span>
+                  <button className="prometric-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
+                </div>
+                <div className="prometric-calculator-display">0</div>
+                <div className="prometric-calculator-buttons">
+                  {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
+                    <button
+                      key={btn}
+                      className={clsx(
+                        'prometric-calc-btn',
+                        ['+','-','*','/'].includes(btn) && 'operator',
+                        btn === '=' && 'equals'
+                      )}
+                    >
+                      {btn}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* MCQ Rendering in Prometric style */}
+            <div className="prometric-question-header">
+              <span className="prometric-question-number">
+                Question {currentIndex + 1} of {exam.questions.length}
+              </span>
+              <button
+                onClick={handleToggleFlag}
+                className={clsx('prometric-flag-btn', isCurrentFlagged && 'flagged')}
+              >
+                <Flag className="w-3 h-3" />
+                {isCurrentFlagged ? 'Flagged for Review' : 'Flag for Review'}
+              </button>
+            </div>
+
+            <div className="prometric-question-body">
+              <div className="prometric-question-text">
+                {currentQuestion.question}
+              </div>
+
+              <div className="prometric-options">
+                {shuffledCurrentQuestion?.shuffledOptions.map((option, idx) => {
+                  const originalIdx = shuffledCurrentQuestion.reverseMap[idx];
+                  const isSelected = currentAnswer !== undefined &&
+                    (typeof currentAnswer === 'number' ? currentAnswer === originalIdx : parseInt(String(currentAnswer), 10) === originalIdx);
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => handleSelectAnswer(idx)}
+                      className={clsx('prometric-option', isSelected && 'selected')}
+                    >
+                      <span className="prometric-option-letter">
+                        {String.fromCharCode(65 + idx)}
+                      </span>
+                      <span className="prometric-option-text">{option}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Prometric Navigation */}
+        <div className="prometric-nav">
+          <div className="prometric-nav-buttons">
+            <button
+              onClick={() => handleNavigate('prev')}
+              disabled={currentIndex === 0}
+              className="prometric-nav-btn"
+            >
+              « Previous
+            </button>
+            <button
+              onClick={() => handleNavigate('next')}
+              disabled={currentIndex === exam.questions.length - 1}
+              className="prometric-nav-btn"
+            >
+              Next »
+            </button>
+          </div>
+
+          {/* Question Grid */}
+          <div className="prometric-question-grid">
+            {exam.questions.map((q, i) => (
+              <button
+                key={i}
+                onClick={() => handleJumpToQuestion(i)}
+                className={clsx(
+                  'prometric-grid-btn',
+                  currentIndex === i && 'current',
+                  exam.answers[q.id] !== undefined && 'answered',
+                  exam.flagged.has(q.id) && 'flagged'
+                )}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+
+          <div className="prometric-nav-buttons">
+            {currentIndex === exam.questions.length - 1 ? (
+              <button onClick={handleSubmitExam} className="prometric-nav-btn primary">
+                Submit Exam »
+              </button>
+            ) : (
+              <button onClick={() => handleNavigate('next')} className="prometric-nav-btn primary">
+                Next »
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Status Bar */}
+        <div className="prometric-status">
+          <div className="prometric-status-left">
+            <div className="prometric-status-item">
+              <div className="prometric-status-indicator answered" />
+              <span>Answered</span>
+            </div>
+            <div className="prometric-status-item">
+              <div className="prometric-status-indicator flagged" />
+              <span>Flagged</span>
+            </div>
+            <div className="prometric-status-item">
+              <div className="prometric-status-indicator unanswered" />
+              <span>Unanswered</span>
+            </div>
+          </div>
+          <span>
+            Answered: {answeredCount} of {exam.questions.length}
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  // ============================================
+  // Pearson VUE Theme — Exam In Progress
+  // ============================================
+  if (useRealisticTheme && testingProvider === 'pearsonvue') {
+    return (
+      <div className="pvue-theme h-screen flex flex-col overflow-hidden">
+        {/* Pearson VUE Header */}
+        <div className="pvue-header">
+          <div className="pvue-header-left">
+            <span className="pvue-header-logo">{courseName} Examination</span>
+            <div className="pvue-header-divider" />
+            <span className="pvue-header-section">{sections[selectedSection]?.name || selectedSection}</span>
+          </div>
+          <div className="pvue-header-right">
+            <div className={clsx('pvue-timer', timeRemaining < 300 && 'warning')}>
+              <Clock className="w-4 h-4" />
+              {formatTime(timeRemaining)}
+            </div>
+          </div>
+        </div>
+
+        {/* Pearson VUE Toolbar */}
+        <div className="pvue-toolbar">
+          <div className="pvue-toolbar-left">
+            <button
+              onClick={() => setShowCalculator(!showCalculator)}
+              className={clsx('pvue-toolbar-btn', showCalculator && 'active')}
+            >
+              <Calculator className="w-4 h-4" />
+              Calculator
+            </button>
+            <button
+              onClick={handleToggleFlag}
+              className={clsx('pvue-toolbar-btn', isCurrentFlagged && 'active')}
+            >
+              <Flag className="w-4 h-4" />
+              {isCurrentFlagged ? 'Unflag' : 'Flag for Review'}
+            </button>
+          </div>
+          <div className="pvue-toolbar-right">
+            {answeredCount} of {exam.questions.length} answered
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="pvue-content flex-1">
+          <div className="pvue-main relative">
+            {/* Calculator Overlay */}
+            {showCalculator && (
+              <div className="pvue-calculator">
+                <div className="pvue-calculator-title">
+                  <span>Calculator</span>
+                  <button className="pvue-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
+                </div>
+                <div className="pvue-calculator-display">0</div>
+                <div className="pvue-calculator-buttons">
+                  {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
+                    <button
+                      key={btn}
+                      className={clsx(
+                        'pvue-calc-btn',
+                        ['+','-','*','/'].includes(btn) && 'operator',
+                        btn === '=' && 'equals'
+                      )}
+                    >
+                      {btn}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Question Area */}
+            <div className="pvue-question-header">
+              <span className="pvue-question-number">
+                Question {currentIndex + 1} of {exam.questions.length}
+              </span>
+              <button
+                onClick={handleToggleFlag}
+                className={clsx('pvue-flag-btn', isCurrentFlagged && 'flagged')}
+              >
+                <Flag className="w-3.5 h-3.5" />
+                {isCurrentFlagged ? 'Flagged' : 'Flag'}
+              </button>
+            </div>
+
+            <div className="pvue-question-body">
+              <div className="pvue-question-text">
+                {currentQuestion.question}
+              </div>
+
+              <div className="pvue-options">
+                {shuffledCurrentQuestion?.shuffledOptions.map((option, idx) => {
+                  const originalIdx = shuffledCurrentQuestion.reverseMap[idx];
+                  const isSelected = currentAnswer !== undefined &&
+                    (typeof currentAnswer === 'number' ? currentAnswer === originalIdx : parseInt(String(currentAnswer), 10) === originalIdx);
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => handleSelectAnswer(idx)}
+                      className={clsx('pvue-option', isSelected && 'selected')}
+                    >
+                      <span className="pvue-option-letter">
+                        {String.fromCharCode(65 + idx)}
+                      </span>
+                      <span className="pvue-option-text">{option}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Pearson VUE Navigation */}
+        <div className="pvue-nav">
+          <div className="pvue-nav-buttons">
+            <button
+              onClick={() => handleNavigate('prev')}
+              disabled={currentIndex === 0}
+              className="pvue-nav-btn"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              Previous
+            </button>
+          </div>
+
+          {/* Question Grid */}
+          <div className="pvue-question-grid">
+            {exam.questions.map((q, i) => (
+              <button
+                key={i}
+                onClick={() => handleJumpToQuestion(i)}
+                className={clsx(
+                  'pvue-grid-btn',
+                  currentIndex === i && 'current',
+                  exam.answers[q.id] !== undefined && 'answered',
+                  exam.flagged.has(q.id) && 'flagged'
+                )}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+
+          <div className="pvue-nav-buttons">
+            {currentIndex === exam.questions.length - 1 ? (
+              <button onClick={handleSubmitExam} className="pvue-nav-btn primary">
+                Submit Exam
+              </button>
+            ) : (
+              <button onClick={() => handleNavigate('next')} className="pvue-nav-btn primary">
+                Next
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Status Bar */}
+        <div className="pvue-status">
+          <div className="pvue-status-left">
+            <div className="pvue-status-item">
+              <div className="pvue-status-indicator answered" />
+              <span>Answered</span>
+            </div>
+            <div className="pvue-status-item">
+              <div className="pvue-status-indicator flagged" />
+              <span>Flagged</span>
+            </div>
+            <div className="pvue-status-item">
+              <div className="pvue-status-indicator unanswered" />
+              <span>Unanswered</span>
+            </div>
+          </div>
+          <span>{answeredCount} of {exam.questions.length} answered</span>
+        </div>
+      </div>
+    );
+  }
+
+  // ============================================
+  // Default Modern Theme — Exam In Progress
+  // ============================================
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
       {/* Header */}

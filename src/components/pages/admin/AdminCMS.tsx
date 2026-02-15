@@ -5,7 +5,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
@@ -842,25 +842,36 @@ const AdminCMS: React.FC = () => {
     }
   }, [isAdmin]);
 
-  // Find stale accounts (incomplete onboarding, no activity in 7+ days)
+  // Find stale accounts (incomplete onboarding, 7+ days old)
   const findStaleAccounts = useCallback(async () => {
     if (!isAdmin) return;
     setIsLoadingStale(true);
     try {
       const sevenDaysAgo = new Date();
       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+      const cutoffTimestamp = Timestamp.fromDate(sevenDaysAgo);
       
-      // Query users with incomplete onboarding
+      // Query users created before cutoff date (single inequality avoids composite index)
       const q = query(
         collection(db, 'users'),
-        where('onboardingComplete', '==', false),
-        where('createdAt', '<=', sevenDaysAgo),
-        limit(100)
+        where('createdAt', '<=', cutoffTimestamp),
+        orderBy('createdAt', 'desc'),
+        limit(500)
       );
       const querySnapshot = await getDocs(q);
       const stale: UserDocument[] = [];
-      querySnapshot.forEach((doc) => {
-        stale.push({ id: doc.id, ...doc.data() } as UserDocument);
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        // Check both legacy and new onboarding fields
+        const legacyOnboarded = data.onboardingComplete === true;
+        const perCourseOnboarded = data.onboardingCompleted && 
+          Object.values(data.onboardingCompleted).some((v: unknown) => v === true);
+        const isOnboarded = legacyOnboarded || perCourseOnboarded;
+        
+        // Only include accounts that never completed onboarding
+        if (!isOnboarded) {
+          stale.push({ id: docSnap.id, ...data } as UserDocument);
+        }
       });
       setStaleAccounts(stale);
       addLog(`Found ${stale.length} stale accounts (incomplete onboarding, 7+ days old)`, stale.length > 0 ? 'warning' : 'info');

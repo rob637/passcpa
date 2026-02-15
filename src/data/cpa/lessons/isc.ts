@@ -4,6 +4,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-001',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Database Fundamentals",
     description: "Master database architectures, structures, and management systems critical for IT audits and controls evaluation",
     order: 1,
@@ -100,6 +101,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-002',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Data Modeling & Normalization",
     description: "Understand entity-relationship diagrams and normalization techniques for database design and data integrity assessment",
     order: 2,
@@ -202,6 +204,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-003',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Data Governance & Quality",
     description: "Learn frameworks for managing data as a strategic asset and ensuring data quality for reliable financial reporting",
     order: 3,
@@ -312,6 +315,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-004',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SQL for Auditors",
     description: "Master SQL queries for data extraction, analysis, and audit testing of financial databases",
     order: 4,
@@ -418,6 +422,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-005',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Hardware & Infrastructure",
     description: "Understand IT infrastructure components, server architectures, and physical controls for IT audits",
     order: 5,
@@ -537,6 +542,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-006',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Cloud Computing: IaaS, PaaS, SaaS",
     description: "Understand cloud service models, deployment options, and shared responsibility for security and compliance",
     order: 6,
@@ -650,6 +656,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-007',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Network Fundamentals",
     description: "Understand network architecture, protocols, and security controls for evaluating IT infrastructure risks",
     order: 7,
@@ -775,6 +782,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-008',
     section: 'ISC',
+    courseId: 'cpa',
     title: "System Development Life Cycle",
     description: "Master SDLC phases, methodologies, and controls for evaluating system development and implementation risks",
     order: 8,
@@ -888,6 +896,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-009',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Change Management Controls",
     description: "Evaluate IT change management processes that protect production system integrity and prevent unauthorized modifications",
     order: 9,
@@ -1010,6 +1019,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-010',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Disaster Recovery & BCP",
     description: "Understand business continuity planning and disaster recovery strategies for ensuring system availability and data protection",
     order: 10,
@@ -1131,6 +1141,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-011',
     section: 'ISC',
+    courseId: 'cpa',
     title: "IT Governance: COBIT & ITIL",
     description: "Master IT governance frameworks and service management practices for evaluating organizational IT controls",
     order: 11,
@@ -1256,6 +1267,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-012',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Big Data & Data Analytics",
     description: "Understand big data concepts, analytics techniques, and their applications in audit and financial analysis",
     order: 12,
@@ -1387,6 +1399,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-001',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Cybersecurity Threat Landscape",
     description: "Understand cyber threats, attack vectors, and threat actors to assess organizational security risk",
     order: 13,
@@ -1504,6 +1517,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-002',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Security Controls: Preventive, Detective, Corrective",
     description: "Classify and evaluate security controls by function to assess organizational security posture",
     order: 14,
@@ -1628,6 +1642,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-003',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Encryption & Cryptography",
     description: "Master encryption concepts, algorithms, and key management for evaluating data protection controls",
     order: 15,
@@ -1763,6 +1778,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-004',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Logical Access Controls",
     description: "Evaluate authentication, authorization, and access management controls that protect system and data access",
     order: 16,
@@ -1886,6 +1902,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-005',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Physical Access Controls",
     description: "Understand physical security controls that protect IT infrastructure, facilities, and sensitive areas",
     order: 17,
@@ -2015,6 +2032,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-006',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Identity & Access Management",
     description: "Master IAM concepts including identity lifecycle, single sign-on, federation, and privileged access management",
     order: 18,
@@ -2152,6 +2170,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-007',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Privacy Principles & GAPP",
     description: "Master Generally Accepted Privacy Principles for evaluating organizational privacy programs and controls",
     order: 19,
@@ -2276,6 +2295,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-008',
     section: 'ISC',
+    courseId: 'cpa',
     title: "HIPAA Requirements",
     description: "Understand HIPAA privacy and security rules for healthcare organizations and their business associates",
     order: 20,
@@ -2424,6 +2444,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-009',
     section: 'ISC',
+    courseId: 'cpa',
     title: "GDPR & Global Privacy",
     description: "Navigate GDPR requirements and international privacy regulations affecting organizations with global operations",
     order: 21,
@@ -2567,6 +2588,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-010',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Incident Response & Breach Handling",
     description: "Master incident response processes and breach notification requirements for security event management",
     order: 22,
@@ -2715,6 +2737,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-011',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Vulnerability Assessment & Penetration Testing",
     description: "Understand vulnerability management and penetration testing methodologies for evaluating security posture",
     order: 23,
@@ -2859,6 +2882,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-001',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC 1: Overview & Scope",
     description: "Understand SOC 1 engagements, their purpose, and when service organizations need ICFR-related reports",
     order: 24,
@@ -2977,6 +3001,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-002',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC 1: Type 1 vs Type 2 Reports",
     description: "Distinguish between Type 1 and Type 2 SOC reports and understand when each is appropriate",
     order: 25,
@@ -3104,6 +3129,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-003',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC 1: Control Objectives",
     description: "Understand how control objectives are developed and evaluated in SOC 1 examinations",
     order: 26,
@@ -3227,6 +3253,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-004',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC 2: Trust Services Criteria",
     description: "Master the five Trust Services Criteria categories that form the basis for SOC 2 examinations",
     order: 27,
@@ -3365,6 +3392,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-005',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC 2: Examination & Reporting",
     description: "Navigate SOC 2 examination procedures, report structure, and using SOC 2 reports for assurance",
     order: 28,
@@ -3513,6 +3541,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-006',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC 3: Public Reports",
     description: "Understand SOC 3 general-use reports and their role in marketing and public assurance",
     order: 29,
@@ -3621,6 +3650,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-007',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC for Cybersecurity",
     description: "Understand the SOC for Cybersecurity examination for enterprise-wide cybersecurity risk management programs",
     order: 30,
@@ -3750,6 +3780,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-008',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Using SOC Reports in Financial Audits",
     description: "Apply SOC reports as audit evidence when service organizations process user entity transactions",
     order: 31,
@@ -3886,6 +3917,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-009',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Subservice Organizations: Carve-Out vs Inclusive",
     description: "Navigate subservice organization treatment in SOC reports and implications for audit reliance",
     order: 32,
@@ -4009,6 +4041,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-010',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC for Supply Chain",
     description: "Understand SOC for Supply Chain engagements addressing controls over production and distribution systems",
     order: 33,
@@ -4140,6 +4173,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-001',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Cloud Computing Security",
     description: "Evaluate cloud security models, controls, and compliance",
     order: 34,
@@ -4215,6 +4249,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-002',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Cybersecurity Frameworks and Standards",
     description: "Apply NIST, ISO 27001, and other security frameworks",
     order: 35,
@@ -4287,6 +4322,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-003',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Penetration Testing and Vulnerability Assessment",
     description: "Understand security testing methodologies and their role in assurance",
     order: 36,
@@ -4346,6 +4382,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-004',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Incident Response Planning",
     description: "Evaluate and advise on security incident response capabilities",
     order: 37,
@@ -4402,6 +4439,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-005',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Identity and Access Management",
     description: "Evaluate IAM controls and authentication mechanisms",
     order: 38,
@@ -4462,6 +4500,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-006',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Encryption and Cryptography",
     description: "Understand cryptographic controls for data protection",
     order: 39,
@@ -4520,6 +4559,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-007',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Data Privacy Regulations",
     description: "Navigate GDPR, CCPA, and privacy compliance requirements",
     order: 40,
@@ -4579,6 +4619,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-008',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Third-Party Risk Management",
     description: "Evaluate vendor and third-party risks and controls",
     order: 41,
@@ -4640,6 +4681,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-009',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC Examination Deep Dive",
     description: "Master SOC 1, SOC 2, and SOC 3 examination requirements",
     order: 42,
@@ -4711,6 +4753,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-010',
     section: 'ISC',
+    courseId: 'cpa',
     title: "IT Governance and Control Frameworks",
     description: "Apply COBIT, ITIL, and governance frameworks",
     order: 43,
@@ -4793,6 +4836,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-011',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Business Continuity and Disaster Recovery",
     description: "Evaluate BCP/DR plans and recovery capabilities",
     order: 44,
@@ -4872,6 +4916,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-013',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Encryption and Cryptography",
     description: "Understand encryption types and cryptographic controls",
     order: 55,
@@ -4946,6 +4991,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-014',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Network Security Fundamentals",
     description: "Understand firewalls, VPNs, and network security architecture",
     order: 56,
@@ -5021,6 +5067,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-015',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Data Analytics and Visualization",
     description: "Apply data analytics techniques for audit and business insights",
     order: 57,
@@ -5091,6 +5138,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-016',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Cloud Computing Models",
     description: "Understand IaaS, PaaS, SaaS and cloud security considerations",
     order: 58,
@@ -5161,6 +5209,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-017',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Change Management and SDLC",
     description: "Understand software development lifecycle and change controls",
     order: 59,
@@ -5234,6 +5283,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-018',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Identity and Access Management (IAM)",
     description: "Understand authentication, authorization, and access controls",
     order: 60,
@@ -5313,6 +5363,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-015',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Cybersecurity Frameworks",
     description: "Understand NIST CSF, ISO 27001, and COBIT",
     order: 75,
@@ -5384,6 +5435,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-II-016',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Incident Response and Forensics",
     description: "Master incident handling and digital evidence",
     order: 76,
@@ -5455,6 +5507,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-012',
     section: 'ISC',
+    courseId: 'cpa',
     title: "IT Audit Techniques",
     description: "Understand IT audit methodology and procedures",
     order: 77,
@@ -5525,6 +5578,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-III-011',
     section: 'ISC',
+    courseId: 'cpa',
     title: "SOC Reports: Types and Uses",
     description: "Understand Service Organization Control reports",
     order: 78,
@@ -5595,6 +5649,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-I-015',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Emerging Technologies and Risks",
     description: "Understand AI, blockchain, and IoT security considerations",
     order: 79,
@@ -5669,6 +5724,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-019',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Artificial Intelligence in Accounting",
     description: "Understand AI applications, risks, and governance in accounting",
     order: 80,
@@ -5745,6 +5801,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-020',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Blockchain and Distributed Ledger Technology",
     description: "Evaluate blockchain applications and risks in accounting",
     order: 81,
@@ -5814,6 +5871,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-021',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Robotic Process Automation (RPA)",
     description: "Implement and control software robots for accounting processes",
     order: 82,
@@ -5890,6 +5948,7 @@ export const iscLessons: Lesson[] = [
   {
     id: 'ISC-IV-012',
     section: 'ISC',
+    courseId: 'cpa',
     title: "Quantum Computing and Future Technologies",
     description: "Prepare for quantum computing impacts on cryptography and security",
     order: 83,

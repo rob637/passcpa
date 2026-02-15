@@ -710,6 +710,9 @@ const Practice: React.FC = () => {
 
   // Ref to prevent cleanup from re-saving a session that was intentionally ended
   const sessionEndedRef = useRef(false);
+  
+  // Track the courseId this session was started with (prevents cross-course save on unmount)
+  const sessionCourseRef = useRef<string | null>(null);
 
   // Note: sessionId removed - using 'practice' mode shuffle which is stable per user
 
@@ -733,8 +736,16 @@ const Practice: React.FC = () => {
   const saveSessionState = useCallback(() => {
     if (!inSession || questions.length === 0 || sessionEndedRef.current) return;
     
+    // Prevent saving if the course changed since the session started
+    // This fixes a race condition where unmount saves CISA questions with courseId='cma'
+    const saveCourseId = sessionCourseRef.current || courseId;
+    if (saveCourseId !== courseId) {
+      logger.info(`Skipping session save: session course ${saveCourseId} !== current course ${courseId}`);
+      return;
+    }
+    
     const sessionState = {
-      courseId, // Track which course this session belongs to
+      courseId: saveCourseId, // Use the session's original course, not the potentially-changed context
       questions,
       currentIndex,
       answers,
@@ -848,18 +859,19 @@ const Practice: React.FC = () => {
         // Ignore parse errors
       }
       
-      if (inSession) {
-        // End the in-progress session — it belongs to a different course
-        setInSession(false);
-        setQuestions([]);
-        setAnswers({});
-        setCurrentIndex(0);
-        setShowResults(false);
-        setSelectedAnswer(null);
-        setShowExplanation(false);
-        setFlagged(new Set());
-        logger.info(`Practice session reset: course changed to ${courseId}`);
-      }
+      // Always end the in-progress session — it belongs to a different course
+      sessionEndedRef.current = true; // Prevent unmount from saving stale data
+      sessionCourseRef.current = null; // Clear session course lock
+      setInSession(false);
+      setQuestions([]);
+      setAnswers({});
+      setCurrentIndex(0);
+      setShowResults(false);
+      setSelectedAnswer(null);
+      setShowExplanation(false);
+      setFlagged(new Set());
+      setShowShortcuts(false);
+      logger.info(`Practice session reset: course changed to ${courseId}`);
     }
   }, [courseId, inSession]);
 
@@ -1019,6 +1031,7 @@ const Practice: React.FC = () => {
       setQuestions(fetchedQuestions);
       setSessionConfig(config);
       sessionEndedRef.current = false; // Allow saving for this new session
+      sessionCourseRef.current = courseId; // Lock session to current course
       setInSession(true);
       setStartTime(Date.now());
       setCurrentIndex(0);

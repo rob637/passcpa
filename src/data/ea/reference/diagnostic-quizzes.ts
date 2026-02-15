@@ -2,41 +2,22 @@
  * EA Diagnostic Quizzes
  * 25-question assessments for each section to identify knowledge gaps
  */
+import type { DiagnosticQuiz } from '../../../types/diagnostic';
 
-export interface DiagnosticQuestion {
-  id: string;
-  question: string;
-  options: string[];
-  correctAnswer: number; // 0-indexed
-  blueprintArea: string;
-  topic: string;
-  difficulty: 'easy' | 'medium' | 'hard';
-  explanation: string;
-}
-
-export interface DiagnosticQuiz {
-  section: 'SEE1' | 'SEE2' | 'SEE3';
-  title: string;
-  description: string;
-  timeLimit: number; // minutes
-  passingScore: number; // percentage
-  questions: DiagnosticQuestion[];
-}
-
-export interface DiagnosticResult {
-  section: string;
-  score: number;
-  totalQuestions: number;
-  percentage: number;
-  passed: boolean;
-  weakAreas: { area: string; score: number; total: number }[];
-  recommendations: string[];
-}
+export const EA_AREA_NAMES: Record<string, string> = {
+  'SEE1-1': 'Preliminary Work & Taxpayer Data',
+  'SEE1-2': 'Income & Assets',
+  'SEE1-3': 'Deductions & Credits',
+  'SEE2-1': 'Business Entities',
+  'SEE2-2': 'Business Financial Information',
+  'SEE3-1': 'Practices & Procedures',
+};
 
 // ============================================
 // SEE1 DIAGNOSTIC QUIZ
 // ============================================
 export const SEE1_DIAGNOSTIC: DiagnosticQuiz = {
+  courseId: 'ea',
   section: 'SEE1',
   title: 'Individuals Diagnostic Assessment',
   description: 'Assess your readiness for SEE Part 1: Individuals',
@@ -300,6 +281,7 @@ export const SEE1_DIAGNOSTIC: DiagnosticQuiz = {
 // SEE2 DIAGNOSTIC QUIZ
 // ============================================
 export const SEE2_DIAGNOSTIC: DiagnosticQuiz = {
+  courseId: 'ea',
   section: 'SEE2',
   title: 'Businesses Diagnostic Assessment',
   description: 'Assess your readiness for SEE Part 2: Businesses',
@@ -563,6 +545,7 @@ export const SEE2_DIAGNOSTIC: DiagnosticQuiz = {
 // SEE3 DIAGNOSTIC QUIZ
 // ============================================
 export const SEE3_DIAGNOSTIC: DiagnosticQuiz = {
+  courseId: 'ea',
   section: 'SEE3',
   title: 'Representation Diagnostic Assessment',
   description: 'Assess your readiness for SEE Part 3: Representation, Practices and Procedures',
@@ -821,62 +804,6 @@ export const SEE3_DIAGNOSTIC: DiagnosticQuiz = {
     },
   ],
 };
-
-// ============================================
-// Scoring Function
-// ============================================
-export function scoreDiagnosticQuiz(
-  quiz: DiagnosticQuiz,
-  answers: number[]
-): DiagnosticResult {
-  const areaScores: Record<string, { correct: number; total: number }> = {};
-  let correct = 0;
-
-  quiz.questions.forEach((q, i) => {
-    const isCorrect = answers[i] === q.correctAnswer;
-    if (isCorrect) correct++;
-
-    if (!areaScores[q.blueprintArea]) {
-      areaScores[q.blueprintArea] = { correct: 0, total: 0 };
-    }
-    areaScores[q.blueprintArea].total++;
-    if (isCorrect) areaScores[q.blueprintArea].correct++;
-  });
-
-  const percentage = Math.round((correct / quiz.questions.length) * 100);
-  const passed = percentage >= quiz.passingScore;
-
-  // Identify weak areas (below 70% in that area)
-  const weakAreas = Object.entries(areaScores)
-    .filter(([_, scores]) => (scores.correct / scores.total) < 0.7)
-    .map(([area, scores]) => ({
-      area,
-      score: scores.correct,
-      total: scores.total,
-    }));
-
-  // Generate recommendations
-  const recommendations: string[] = [];
-  if (!passed) {
-    recommendations.push('Focus on fundamentals before attempting practice exams.');
-  }
-  weakAreas.forEach(wa => {
-    recommendations.push(`Review ${wa.area}: scored ${wa.score}/${wa.total} (${Math.round((wa.score/wa.total)*100)}%)`);
-  });
-  if (passed && weakAreas.length === 0) {
-    recommendations.push('Strong foundation! Proceed to mock exams and timed practice.');
-  }
-
-  return {
-    section: quiz.section,
-    score: correct,
-    totalQuestions: quiz.questions.length,
-    percentage,
-    passed,
-    weakAreas,
-    recommendations,
-  };
-}
 
 // Export all diagnostics
 export const EA_DIAGNOSTIC_QUIZZES = {

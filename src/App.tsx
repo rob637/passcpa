@@ -83,6 +83,7 @@ const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPag
 
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
+const DiagnosticQuiz = lazy(() => import('./components/pages/DiagnosticQuiz'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
 const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
@@ -549,6 +550,18 @@ function App() {
                     <ProtectedRoute skipOnboarding>
                       <SuspensePage>
                         <Onboarding />
+                      </SuspensePage>
+                    </ProtectedRoute>
+                  }
+                />
+
+                {/* Diagnostic Quiz (protected, standalone layout, skip onboarding check) */}
+                <Route
+                  path="/diagnostic"
+                  element={
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <DiagnosticQuiz />
                       </SuspensePage>
                     </ProtectedRoute>
                   }

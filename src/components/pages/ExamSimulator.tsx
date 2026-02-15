@@ -237,6 +237,20 @@ const ExamSimulator: React.FC = () => {
     return () => clearInterval(timerRef.current);
   }, [examState]);
 
+  // Prevent accidental navigation away during active exam
+  useEffect(() => {
+    if (examState !== 'exam') return;
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [examState]);
+
   // Keyboard shortcuts
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1330,6 +1344,7 @@ const ExamSimulator: React.FC = () => {
                         <button
                           key={idx}
                           onClick={() => handleSelectAnswer(idx)}
+                          data-testid={`answer-option-${idx}`}
                           className={clsx(
                             'prometric-option',
                             currentQuestion?.id && answers[currentQuestion.id] === originalIdx && 'selected'
@@ -1564,6 +1579,7 @@ const ExamSimulator: React.FC = () => {
                         <button
                           key={idx}
                           onClick={() => handleSelectAnswer(idx)}
+                          data-testid={`answer-option-${idx}`}
                           className={clsx(
                             'w-full p-4 rounded border text-left transition-all flex items-start gap-4 group',
                             currentQuestion?.id && answers[currentQuestion.id] === originalIdx

@@ -1203,7 +1203,7 @@ const Settings: React.FC = () => {
                                 {!access.isPaid && (access.trialExpired || access.isTrialing) && (
                                   <div className="flex items-center gap-2">
                                     <button
-                                      onClick={() => navigate(`/checkout?course=${examId}&interval=monthly`)}
+                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=monthly`)}
                                       className="flex items-center gap-1.5 text-sm bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium px-3 py-1.5 rounded-lg transition-colors"
                                     >
                                       <span className="text-xs">
@@ -1211,7 +1211,7 @@ const Settings: React.FC = () => {
                                       </span>
                                     </button>
                                     <button
-                                      onClick={() => navigate(`/checkout?course=${examId}&interval=annual`)}
+                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=annual`)}
                                       className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
                                     >
                                       <span className="text-xs">

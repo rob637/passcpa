@@ -26,10 +26,19 @@ const PROJECT_PATTERNS = {
 function getCurrentFirebaseProject() {
   try {
     // Execute firebase use and capture both stdout and stderr
-    const result = execSync('firebase use 2>&1', { encoding: 'utf8' });
-    // Output looks like: "Active Project: passcpa-dev"
+    const result = execSync('firebase use 2>&1', { encoding: 'utf8' }).trim();
+    // Output varies by context:
+    //   Interactive terminal: "Active Project: staging (voraprep-staging)" or "Active Project: passcpa-dev"
+    //   Non-interactive/subprocess: just "voraprep-staging"
+    
+    // Try parenthesized project ID first (alias format)
+    const aliasMatch = result.match(/Active Project:\s*\S+\s+\((\S+)\)/);
+    if (aliasMatch) return aliasMatch[1];
+    // Try direct "Active Project: project-id" format
     const match = result.match(/Active Project:\s*(\S+)/);
     if (match) return match[1];
+    // Non-interactive: output is just the project ID
+    if (result && !result.includes(' ') && !result.includes('\n')) return result;
     
     // Fallback: check .firebaserc
     const firebaserc = JSON.parse(fs.readFileSync('.firebaserc', 'utf8'));

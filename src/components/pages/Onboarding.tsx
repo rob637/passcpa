@@ -3,7 +3,7 @@ import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
-import { getCourseHomePath } from '../../utils/courseNavigation';
+// getCourseHomePath removed — onboarding now navigates to /diagnostic
 import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {

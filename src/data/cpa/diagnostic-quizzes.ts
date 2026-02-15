@@ -3,7 +3,7 @@
  * 25-question assessments for each CPA section to identify knowledge gaps.
  * Covers FAR, AUD, REG, BAR, ISC, TCP blueprint areas.
  */
-import type { DiagnosticQuiz } from '../../../types/diagnostic';
+import type { DiagnosticQuiz } from '../../types/diagnostic';
 
 // Blueprint area display names
 export const CPA_AREA_NAMES: Record<string, string> = {

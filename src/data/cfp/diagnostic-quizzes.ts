@@ -3,7 +3,7 @@
  * 25-question assessment covering all 8 CFP domains to identify knowledge gaps.
  * Single exam format — covers the entire CFP exam.
  */
-import type { DiagnosticQuiz } from '../../../types/diagnostic';
+import type { DiagnosticQuiz } from '../../types/diagnostic';
 
 export const CFP_AREA_NAMES: Record<string, string> = {
   'CFP-PCR': 'Professional Conduct & Regulation',

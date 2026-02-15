@@ -2,7 +2,7 @@
  * CIA Diagnostic Quizzes
  * 25-question assessments for each CIA part to identify knowledge gaps.
  */
-import type { DiagnosticQuiz } from '../../../types/diagnostic';
+import type { DiagnosticQuiz } from '../../types/diagnostic';
 
 export const CIA_AREA_NAMES: Record<string, string> = {
   'CIA1-I': 'Foundations of Internal Auditing',

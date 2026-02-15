@@ -114,8 +114,8 @@ describe('Question Service - Quality Tests', () => {
     });
 
     it('excludeIds with all question IDs returns empty', async () => {
-      // First get some questions
-      const allQuestions = await fetchQuestions({ section: 'FAR', count: 1000 });
+      // First get ALL questions for the section (use a very high count to ensure we get them all)
+      const allQuestions = await fetchQuestions({ section: 'FAR', count: 10000 });
       const allIds = allQuestions.map(q => q.id);
 
       // Then try to fetch excluding all of them

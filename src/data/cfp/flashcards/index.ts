@@ -80,7 +80,7 @@ const CFP_FLASHCARDS_BASE: Flashcard[] = [
     domain: 'GEN',
     category: 'Education Planning',
     front: '529 Plan contribution limits and gift tax treatment?',
-    back: '• No federal limit (state limits vary $300K-$500K+)\n• Contributions = completed gifts (gift tax exclusion $18K/2024)\n• 5-year superfunding: Up to $90K at once (5 × $18K)\n• Tax-free growth and qualified withdrawals',
+    back: '• No federal limit (state limits vary $300K-$500K+)\n• Contributions = completed gifts (gift tax exclusion $19K/2026)\n• 5-year superfunding: Up to $95K at once (5 × $19K)\n• Tax-free growth and qualified withdrawals',
     difficulty: 'medium',
     tags: ['529', 'education', 'gift-tax']
   },
@@ -174,7 +174,7 @@ const CFP_FLASHCARDS_BASE: Flashcard[] = [
     domain: 'RET',
     category: 'Employer Plans',
     front: 'SEP-IRA vs SIMPLE IRA comparison?',
-    back: 'SEP-IRA:\n• Employer only contributions (up to 25% of comp or $69K)\n• No catch-up\n• Deadline: Tax return due date\n\nSIMPLE IRA:\n• Employee: $16,000 ($19,500 catch-up)\n• Employer: 2% non-elective OR 3% match\n• 2-year rule for rollovers\n• <100 employees',
+    back: 'SEP-IRA:\n• Employer only contributions (up to 25% of comp or $71.5K)\n• No catch-up\n• Deadline: Tax return due date\n\nSIMPLE IRA:\n• Employee: $17,000 ($20,500 catch-up)\n• Employer: 2% non-elective OR 3% match\n• 2-year rule for rollovers\n• <100 employees',
     difficulty: 'hard',
     tags: ['SEP', 'SIMPLE', 'small-business']
   },
@@ -201,7 +201,7 @@ const CFP_FLASHCARDS_BASE: Flashcard[] = [
     domain: 'RET',
     category: 'Solo 401(k)',
     front: 'What are the advantages of a Solo 401(k)?',
-    back: '• Higher contribution limits ($69K + catch-up)\n• Employee + Employer contributions\n• Roth option available\n• Loan provision allowed\n• No plan discrimination testing\n• Self-employed and spouse only\n• Can do mega backdoor Roth',
+    back: '• Higher contribution limits ($71.5K + catch-up)\n• Employee + Employer contributions\n• Roth option available\n• Loan provision allowed\n• No plan discrimination testing\n• Self-employed and spouse only\n• Can do mega backdoor Roth',
     difficulty: 'medium',
     tags: ['Solo-401k', 'self-employed', 'contributions']
   },
@@ -213,10 +213,10 @@ const CFP_FLASHCARDS_BASE: Flashcard[] = [
     id: 'FC-TAX-001',
     domain: 'TAX',
     category: 'Filing Status',
-    front: '2024 Standard Deduction amounts?',
-    back: 'Single: $14,600\nMFJ: $29,200\nMFS: $14,600\nHOH: $21,900\n\nAdditional for 65+ or blind:\n• Single/HOH: +$1,950\n• MFJ/MFS: +$1,550 each',
+    front: '2026 Standard Deduction amounts?',
+    back: 'Single: $15,350\nMFJ: $30,700\nMFS: $15,350\nHOH: $22,900\n\nAdditional for 65+ or blind:\n• Single/HOH: +$2,050\n• MFJ/MFS: +$1,650 each',
     difficulty: 'easy',
-    tags: ['deduction', 'filing', '2024']
+    tags: ['deduction', 'filing', '2026']
   },
   {
     id: 'FC-TAX-002',
@@ -532,7 +532,7 @@ const CFP_FLASHCARDS_BASE: Flashcard[] = [
     domain: 'EST',
     category: 'Transfers',
     front: 'What is PORTABILITY of the estate tax exemption?',
-    back: 'Surviving spouse can use deceased spouse\'s unused exemption (DSUE)\n\nRequirements:\n• Must file estate tax return (even if not required)\n• Must elect portability on return\n• Must be married at death\n\n2024: Up to $13.61M can pass to surviving spouse',
+    back: 'Surviving spouse can use deceased spouse\'s unused exemption (DSUE)\n\nRequirements:\n• Must file estate tax return (even if not required)\n• Must elect portability on return\n• Must be married at death\n\n2026: Up to $7.0M can pass to surviving spouse (TCJA sunset)',
     difficulty: 'medium',
     tags: ['portability', 'DSUE', 'estate-tax']
   },

@@ -218,7 +218,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
       'D) Refundable credit',
     ],
     correctAnswer: 1,
-    explanation: 'Saver\'s Credit: encourages low/moderate income retirement savings. Credit: 50%, 20%, or 10% of up to $2,000 contributed ($4,000 married). Based on AGI. 2024 limits approx: 50% if AGI <$23K single, <$46K married. Contributions: IRA, 401(k), 403(b), etc. Nonrefundable—only reduces tax to zero. Age 18+, not dependent, not student. Stacks with deduction for traditional contributions.'
+    explanation: 'Saver\'s Credit: encourages low/moderate income retirement savings. Credit: 50%, 20%, or 10% of up to $2,000 contributed ($4,000 married). Based on AGI. 2026 limits approx: 50% if AGI <$24K single, <$48K married. Contributions: IRA, 401(k), 403(b), etc. Nonrefundable—only reduces tax to zero. Age 18+, not dependent, not student. Stacks with deduction for traditional contributions.'
   },
   {
     id: 'cfp-tax-b12-012',
@@ -448,7 +448,7 @@ export const CFP_TAX_BATCH12_QUESTIONS: Question[] = [
       'D) Expense any purchase',
     ],
     correctAnswer: 2,
-    explanation: 'Section 179: elect to expense (deduct immediately) qualifying assets instead of capitalizing and depreciating. 2024 limit: ~$1.16M, phases out when purchases exceed ~$2.89M. Qualifying: tangible personal property, qualified real property improvements. Limits: can\'t exceed business income. Vehicles: additional limitations. Alternative: bonus depreciation (100% through 2026, then phases down). Powerful planning tool.'
+    explanation: 'Section 179: elect to expense (deduct immediately) qualifying assets instead of capitalizing and depreciating. 2026 limit: ~$1.25M, phases out when purchases exceed ~$3.13M. Qualifying: tangible personal property, qualified real property improvements. Limits: can\'t exceed business income. Vehicles: additional limitations. Alternative: bonus depreciation (80% in 2026, then phases down). Powerful planning tool.'
   },
   {
     id: 'cfp-tax-b12-025',

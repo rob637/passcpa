@@ -8,21 +8,21 @@ import { Flashcard } from './types';
 export const cisa4Flashcards: Flashcard[] = [
   // IT Operations
   {
-    id: 'CISA4-FC-001',
+    id: 'cisa4-fc-001',
     front: 'What are the main areas of IT operations?',
     back: 'Infrastructure management, service management, batch processing, security operations, monitoring, and support functions.',
     category: 'IT Operations',
     tags: ['IT operations', 'infrastructure', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-002',
+    id: 'cisa4-fc-002',
     front: 'What is job scheduling?',
     back: 'Automated execution of batch jobs according to defined schedules and dependencies. Controls timing, sequence, and resource allocation for processing.',
     category: 'IT Operations',
     tags: ['job scheduling', 'batch processing', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-003',
+    id: 'cisa4-fc-003',
     front: 'What are the Uptime Institute Data Center Tiers?',
     back: 'Tier I: Basic (99.671%)\nTier II: Redundant components (99.741%)\nTier III: Concurrently maintainable (99.982%)\nTier IV: Fault tolerant (99.995%)',
     category: 'Data Center',
@@ -31,21 +31,21 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Physical/Environmental Security
   {
-    id: 'CISA4-FC-004',
+    id: 'cisa4-fc-004',
     front: 'What are the layers of physical security?',
     back: 'Perimeter (fencing, lighting) → Building (guards, reception) → Floor/Zone (badge access) → Room (biometric, mantrap) → Asset (locks, cages)',
     category: 'Physical Security',
     tags: ['physical security', 'defense in depth', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-005',
+    id: 'cisa4-fc-005',
     front: 'What type of fire suppression is best for data centers?',
     back: 'Clean agent suppression (FM-200, Novec, inert gas). These suppress fire without leaving residue or damaging electronic equipment.',
     category: 'Environmental',
     tags: ['fire suppression', 'clean agent', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-006',
+    id: 'cisa4-fc-006',
     front: 'What is a UPS and what is its purpose?',
     back: 'Uninterruptible Power Supply - provides battery backup for short outages, power conditioning, and surge protection. Typically 15-30 minutes runtime.',
     category: 'Environmental',
@@ -54,21 +54,21 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Incident Management
   {
-    id: 'CISA4-FC-007',
+    id: 'cisa4-fc-007',
     front: 'What is the difference between incident and problem management?',
     back: 'Incident: Restore service quickly (reactive)\nProblem: Find and fix root cause to prevent recurrence (proactive)',
     category: 'Incident Management',
     tags: ['incident', 'problem', 'ITIL', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-008',
+    id: 'cisa4-fc-008',
     front: 'How is incident priority determined?',
     back: 'Priority = Impact × Urgency\nImpact: How many affected, severity\nUrgency: How quickly resolution is needed',
     category: 'Incident Management',
     tags: ['priority', 'impact', 'urgency', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-009',
+    id: 'cisa4-fc-009',
     front: 'What are the types of escalation?',
     back: 'Functional: Route to specialized team for expertise\nHierarchical: Escalate to management for authority/resources',
     category: 'Incident Management',
@@ -77,21 +77,21 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Security Incident Response
   {
-    id: 'CISA4-FC-010',
+    id: 'cisa4-fc-010',
     front: 'What are the NIST incident response phases?',
     back: '1. Preparation\n2. Detection and Analysis\n3. Containment, Eradication, Recovery\n4. Post-Incident Activity',
     category: 'Security Incident',
     tags: ['NIST', 'incident response', 'phases', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-011',
+    id: 'cisa4-fc-011',
     front: 'What is chain of custody?',
     back: 'Documented record of who handled evidence, when, and what they did. Essential for legal admissibility and forensic integrity.',
     category: 'Security Incident',
     tags: ['chain of custody', 'forensics', 'evidence', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-012',
+    id: 'cisa4-fc-012',
     front: 'What is the first priority during security incident containment?',
     back: 'Stop the spread and limit damage while preserving evidence for investigation. Balance speed with evidence preservation.',
     category: 'Security Incident',
@@ -100,21 +100,21 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Business Continuity
   {
-    id: 'CISA4-FC-013',
+    id: 'cisa4-fc-013',
     front: 'What is the difference between BCP and DRP?',
     back: 'BCP: Keeps entire business running during disruption (broader scope)\nDRP: Restores IT systems after disaster (technology focused)',
     category: 'Business Continuity',
     tags: ['BCP', 'DRP', 'difference', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-014',
+    id: 'cisa4-fc-014',
     front: 'What are RTO, RPO, and MTD?',
     back: 'RTO: Maximum time to restore (how fast)\nRPO: Maximum data loss acceptable (how much)\nMTD: Maximum downtime before failure (overall limit)',
     category: 'Business Continuity',
     tags: ['RTO', 'RPO', 'MTD', 'recovery objectives', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-015',
+    id: 'cisa4-fc-015',
     front: 'What is the relationship between MTD, RTO, and WRT?',
     back: 'MTD ≥ RTO + WRT\nWRT (Work Recovery Time) = time to verify systems and catch up on work after restoration.',
     category: 'Business Continuity',
@@ -123,14 +123,14 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Recovery Sites
   {
-    id: 'CISA4-FC-016',
+    id: 'cisa4-fc-016',
     front: 'What are the recovery site types?',
     back: 'Cold: Facility only, no equipment (weeks to recover)\nWarm: Facility + some equipment (days)\nHot: Fully equipped and configured (hours)\nCloud: Variable, on-demand (minutes to hours)',
     category: 'Disaster Recovery',
     tags: ['recovery sites', 'cold', 'warm', 'hot', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-017',
+    id: 'cisa4-fc-017',
     front: 'What is a reciprocal agreement?',
     back: 'Arrangement between organizations to share facilities during disasters. Low cost but limited capacity and availability concerns.',
     category: 'Disaster Recovery',
@@ -139,28 +139,28 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Backup
   {
-    id: 'CISA4-FC-018',
+    id: 'cisa4-fc-018',
     front: 'What are the three backup types?',
     back: 'Full: Complete copy (longest backup, fastest restore)\nIncremental: Changes since last backup (fastest backup, slowest restore)\nDifferential: Changes since last full (moderate both)',
     category: 'Backup',
     tags: ['backup types', 'full', 'incremental', 'differential', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-019',
+    id: 'cisa4-fc-019',
     front: 'What is the difference between incremental and differential backup?',
     back: 'Incremental: Changes since last ANY backup\nDifferential: Changes since last FULL backup\nDifferential grows larger, but needs fewer tapes to restore.',
     category: 'Backup',
     tags: ['incremental', 'differential', 'comparison', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-020',
+    id: 'cisa4-fc-020',
     front: 'What is GFS backup rotation?',
     back: 'Grandfather-Father-Son rotation:\nSon = Daily backups\nFather = Weekly backups\nGrandfather = Monthly backups\nBalances retention with media usage.',
     category: 'Backup',
     tags: ['GFS', 'rotation', 'retention', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-021',
+    id: 'cisa4-fc-021',
     front: 'What is the most important test for backups?',
     back: 'Restore testing! A backup is worthless if you cannot restore from it. Test regularly and document recovery times.',
     category: 'Backup',
@@ -169,7 +169,7 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Replication
   {
-    id: 'CISA4-FC-022',
+    id: 'cisa4-fc-022',
     front: 'What is the difference between synchronous and asynchronous replication?',
     back: 'Synchronous: Write to both sites simultaneously (zero data loss, distance limited)\nAsynchronous: Write to DR after primary (some data loss possible, no distance limit)',
     category: 'Disaster Recovery',
@@ -178,14 +178,14 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // BC/DR Testing
   {
-    id: 'CISA4-FC-023',
+    id: 'cisa4-fc-023',
     front: 'What are the types of BC/DR tests from least to most rigorous?',
     back: '1. Checklist review (paper)\n2. Tabletop exercise (discussion)\n3. Simulation (practice)\n4. Parallel test (recover without cutover)\n5. Full interruption (actual failover)',
     category: 'BC/DR Testing',
     tags: ['DR testing', 'exercise types', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-024',
+    id: 'cisa4-fc-024',
     front: 'What is a tabletop exercise?',
     back: 'Discussion-based exercise where participants walk through a scenario, identifying decision points, gaps, and issues without actually recovering systems.',
     category: 'BC/DR Testing',
@@ -194,14 +194,14 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Problem Management
   {
-    id: 'CISA4-FC-025',
+    id: 'cisa4-fc-025',
     front: 'What is the Five Whys technique?',
     back: 'Root cause analysis method that asks "Why?" repeatedly (typically 5 times) until reaching the underlying cause of a problem.',
     category: 'Problem Management',
     tags: ['five whys', 'root cause', 'RCA', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-026',
+    id: 'cisa4-fc-026',
     front: 'What is a Known Error?',
     back: 'A problem with documented root cause and workaround, but no permanent fix yet. Stored in Known Error Database (KEDB) for faster incident resolution.',
     category: 'Problem Management',
@@ -210,14 +210,14 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Patch Management
   {
-    id: 'CISA4-FC-027',
+    id: 'cisa4-fc-027',
     front: 'What is the patch management process?',
     back: '1. Identify patches available\n2. Assess applicability and priority\n3. Test in non-production\n4. Deploy with rollback plan\n5. Verify and document',
     category: 'Patch Management',
     tags: ['patch management', 'vulnerability', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-028',
+    id: 'cisa4-fc-028',
     front: 'What is CVSS?',
     back: 'Common Vulnerability Scoring System - standard for rating vulnerability severity. Scores range 0-10 (0=None, 9-10=Critical).',
     category: 'Vulnerability Management',
@@ -226,14 +226,14 @@ export const cisa4Flashcards: Flashcard[] = [
   
   // Asset Management
   {
-    id: 'CISA4-FC-029',
+    id: 'cisa4-fc-029',
     front: 'What are the stages of the IT asset lifecycle?',
     back: 'Planning/Procurement → Deployment → Operation/Maintenance → Retirement/Disposal',
     category: 'Asset Management',
     tags: ['asset lifecycle', 'ITAM', 'CISA4'],
   },
   {
-    id: 'CISA4-FC-030',
+    id: 'cisa4-fc-030',
     front: 'What is data sanitization?',
     back: 'Process of removing data from media before disposal. Methods include overwriting, degaussing (magnetic), physical destruction, and cryptographic erasure.',
     category: 'Asset Management',

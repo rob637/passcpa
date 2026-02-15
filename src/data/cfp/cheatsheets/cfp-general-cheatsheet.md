@@ -107,8 +107,8 @@ Income - Expenses = Surplus/Deficit
 | Feature | Details |
 |---------|---------|
 | Contribution Limit | No federal limit; state limits $300K-$500K+ |
-| Annual Gift Exclusion | $18,000/beneficiary (2024) |
-| 5-Year Superfunding | $90,000 at once ($18,000 × 5) |
+| Annual Gift Exclusion | $19,000/beneficiary (2026) |
+| 5-Year Superfunding | $95,000 at once ($19,000 × 5) |
 | Tax Treatment | Tax-free growth and qualified withdrawals |
 | FAFSA Impact | Parent asset (5.64% max assessment) |
 
@@ -222,10 +222,10 @@ Income - Expenses = Surplus/Deficit
 
 ## Quick Numbers Reference
 
-| Item | 2024 Amount |
+| Item | 2026 Amount |
 |------|-------------|
-| 529 Gift Tax Exclusion | $18,000 |
-| 529 Superfunding | $90,000 (5 years) |
+| 529 Gift Tax Exclusion | $19,000 |
+| 529 Superfunding | $95,000 (5 years) |
 | Coverdell ESA Limit | $2,000/year |
 | American Opportunity Credit | $2,500 max |
 | Lifetime Learning Credit | $2,000 max |

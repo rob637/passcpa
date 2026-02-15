@@ -361,15 +361,15 @@ A trust is a legal arrangement where one party (trustee) holds property for the 
 
 ## Trust Taxation (Compressed Brackets)
 
-### 2024 Trust Income Tax Rates
+### 2026 Trust Income Tax Rates
 | Taxable Income | Rate |
 |----------------|------|
-| $0 - $3,100 | 10% |
-| $3,100 - $11,150 | 24% |
-| $11,150 - $15,200 | 35% |
-| Over $15,200 | 37% |
+| $0 - $3,250 | 10% |
+| $3,250 - $11,700 | 24% |
+| $11,700 - $15,950 | 35% |
+| Over $15,950 | 37% |
 
-**Key Insight:** Trusts reach top bracket at $15,200 vs. $609,350 for individuals!
+**Key Insight:** Trusts reach top bracket at $15,950 vs. $626,350 for individuals!
 
 ### Trust Taxation Types
 
@@ -475,7 +475,7 @@ Trust gets deduction for income distributed to beneficiaries. Beneficiaries incl
 **Purpose:** Maximize use of estate tax exemption at first spouse's death
 
 **How It Works:**
-1. At first death, exemption amount ($13.61M in 2024) funds bypass trust
+1. At first death, exemption amount ($7.0M in 2026, due to TCJA sunset) funds bypass trust
 2. Surviving spouse can receive income and limited principal
 3. At second death, bypass trust assets pass to children, NOT included in surviving spouse's estate
 

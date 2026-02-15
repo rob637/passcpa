@@ -236,7 +236,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
       'B) 529 plan owned by the parent',
     ],
     correctAnswer: 0,
-    explanation: 'Grandparent-owned 529 plans are not reported as assets on the FAFSA (using SAI methodology). However, distributions were historically counted as student income. Under newer FAFSA rules (2024+), distributions from grandparent 529s are no longer counted as income, making them very advantageous for financial aid.'
+    explanation: 'Grandparent-owned 529 plans are not reported as assets on the FAFSA (using SAI methodology). Under current FAFSA rules, distributions from grandparent 529s are no longer counted as student income, making them very advantageous for financial aid.'
   },
   // GEN-4: Planning Process
   {
@@ -411,7 +411,7 @@ export const CFP_GEN_BATCH4_QUESTIONS: Question[] = [
       'B) Front-load 5 years of annual gift exclusion amounts without gift tax',
     ],
     correctAnswer: 3,
-    explanation: 'Superfunding allows contributors to make 5 years of gift exclusion contributions ($19,000 × 5 = $95,000 per donor in 2025) in a single year without using lifetime gift exemption, as long as no additional gifts are made to that beneficiary for 5 years. This accelerates tax-advantaged growth.'
+    explanation: 'Superfunding allows contributors to make 5 years of gift exclusion contributions ($19,000 × 5 = $95,000 per donor in 2026) in a single year without using lifetime gift exemption, as long as no additional gifts are made to that beneficiary for 5 years. This accelerates tax-advantaged growth.'
   },
   {
     id: 'cfp-gen-b4-022',

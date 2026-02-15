@@ -88,12 +88,36 @@ import { CFP_PSY_LESSONS } from './psy_behavioral_finance';
 import { CFP_PSY2_LESSONS } from './psy_client_counseling';
 
 import { CFPLesson } from '../../../types/cfp';
+import type { Lesson } from '../../../types';
 
 /**
- * All CFP lessons combined into a single array
- * Sorted by domain and lesson order
+ * Convert CFPLesson to standard Lesson type
+ * CFP lessons use a different shape: domain/objectives/content as string
+ * Standard Lesson uses: section/topics/content as { sections: [], markdown?: string }
  */
-export const ALL_CFP_LESSONS: CFPLesson[] = [
+function normalizeCFPLesson(cfpLesson: CFPLesson): Lesson {
+  return {
+    id: cfpLesson.id,
+    courseId: 'cfp',
+    section: cfpLesson.domain as Lesson['section'],  // Map domain to section
+    title: cfpLesson.title,
+    description: cfpLesson.objectives?.[0] || cfpLesson.title,  // Use first objective as description
+    order: cfpLesson.order,
+    duration: cfpLesson.duration,
+    difficulty: (cfpLesson.difficulty || 'medium') as Lesson['difficulty'],
+    topics: cfpLesson.objectives || [],  // Map objectives to topics
+    blueprintArea: cfpLesson.blueprintArea,
+    content: {
+      sections: [],  // CFP uses markdown, not structured sections
+      markdown: cfpLesson.content,  // Wrap string content as markdown
+    },
+  };
+}
+
+/**
+ * Raw CFP lessons (used internally)
+ */
+const RAW_CFP_LESSONS: CFPLesson[] = [
   // Domain 2: General Principles (23 lessons)
   ...CFP_GEN1_LESSONS,
   ...CFP_GEN2_LESSONS,
@@ -144,24 +168,30 @@ export const ALL_CFP_LESSONS: CFPLesson[] = [
 ];
 
 /**
+ * All CFP lessons combined and normalized to standard Lesson type
+ * This is used by the courseDataLoader for consistent lesson handling
+ */
+export const ALL_CFP_LESSONS: Lesson[] = RAW_CFP_LESSONS.map(normalizeCFPLesson);
+
+/**
  * Get lessons by domain
  */
 export function getLessonsByDomain(domain: string): CFPLesson[] {
-  return ALL_CFP_LESSONS.filter(lesson => lesson.domain === domain);
+  return RAW_CFP_LESSONS.filter(lesson => lesson.domain === domain);
 }
 
 /**
  * Get lessons by blueprint area
  */
 export function getLessonsByArea(area: string): CFPLesson[] {
-  return ALL_CFP_LESSONS.filter(lesson => lesson.blueprintArea === area);
+  return RAW_CFP_LESSONS.filter(lesson => lesson.blueprintArea === area);
 }
 
 /**
  * Get a single lesson by ID
  */
 export function getLessonById(id: string): CFPLesson | undefined {
-  return ALL_CFP_LESSONS.find(lesson => lesson.id === id);
+  return RAW_CFP_LESSONS.find(lesson => lesson.id === id);
 }
 
 /**

@@ -482,9 +482,9 @@ export const INSURANCE_QUICK_REF: DomainQuickReference = {
   
   keyNumbers: [
     { id: 'RISK-NUM-001', title: 'Medicare Part A Premium', value: '$0 (if 40+ quarters)', details: 'Otherwise up to $505/month' },
-    { id: 'RISK-NUM-002', title: 'Medicare Part B Premium (2024)', value: '$174.70 base', details: 'IRMAA surcharges for high income', examTip: 'Based on MAGI 2 years prior' },
-    { id: 'RISK-NUM-003', title: 'HDHP Minimum Deductible (2024)', value: '$1,600 indiv / $3,200 family', details: 'For HSA eligibility' },
-    { id: 'RISK-NUM-004', title: 'HSA Contribution (2024)', value: '$4,150 indiv / $8,300 family', details: 'Catch-up: +$1,000 if 55+' },
+    { id: 'RISK-NUM-002', title: 'Medicare Part B Premium (2026)', value: '$185.00 base', details: 'IRMAA surcharges for high income', examTip: 'Based on MAGI 2 years prior' },
+    { id: 'RISK-NUM-003', title: 'HDHP Minimum Deductible (2026)', value: '$1,650 indiv / $3,300 family', details: 'For HSA eligibility' },
+    { id: 'RISK-NUM-004', title: 'HSA Contribution (2026)', value: '$4,450 indiv / $8,900 family', details: 'Catch-up: +$1,000 if 55+' },
     { id: 'RISK-NUM-005', title: 'LTC ADL Requirement', value: '2 of 6 ADLs', details: 'For tax-qualified benefits', examTip: 'ADLs: Eating, Bathing, Dressing, Toileting, Transferring, Continence' },
     { id: 'RISK-NUM-006', title: 'MEC 7-Pay Test', value: '7 years', details: 'Exceeding test creates Modified Endowment Contract' },
     { id: 'RISK-NUM-007', title: 'Life Insurance Incontestability', value: '2 years', details: 'After 2 years, insurer cannot contest policy' },
@@ -534,7 +534,7 @@ export const INSURANCE_QUICK_REF: DomainQuickReference = {
       keyPoints: [
         'Benefit trigger: 2 of 6 ADLs OR cognitive impairment',
         'Tax-qualified: Premium deductible (age-based limits)',
-        'Benefits: Tax-free up to per diem limit ($420/day 2024)',
+        'Benefits: Tax-free up to per diem limit ($440/day 2026)',
         'Elimination period = waiting period before benefits start',
         'Partnership policies: Dollar-for-dollar Medicaid asset protection'
       ]

@@ -141,7 +141,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
       'A) Count toward the annual gift exclusion',
     ],
     correctAnswer: 1,
-    explanation: 'Direct payments to educational institutions for tuition (not room/board/books) and to medical providers for medical care are unlimited exclusions separate from the $18,000 annual exclusion. This allows wealthy individuals to transfer substantial amounts for education and healthcare without gift tax consequences.'
+    explanation: 'Direct payments to educational institutions for tuition (not room/board/books) and to medical providers for medical care are unlimited exclusions separate from the $19,000 annual exclusion. This allows wealthy individuals to transfer substantial amounts for education and healthcare without gift tax consequences.'
   },
   {
     id: 'cfp-est-b6-008',
@@ -276,7 +276,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
       'A) For all estates',
     ],
     correctAnswer: 2,
-    explanation: 'Form 706 is required when the gross estate plus adjusted taxable gifts exceeds the exemption amount (about $13.6M in 2024). Filing is also required to elect portability even if no tax is owed. Due 9 months after death with automatic 6-month extension available. Payment is due at 9 months without extension.'
+    explanation: 'Form 706 is required when the gross estate plus adjusted taxable gifts exceeds the exemption amount (about $7.0M in 2026 after TCJA sunset). Filing is also required to elect portability even if no tax is owed. Due 9 months after death with automatic 6-month extension available. Payment is due at 9 months without extension.'
   },
   {
     id: 'cfp-est-b6-015',
@@ -353,7 +353,7 @@ export const CFP_ESTATE_BATCH6_QUESTIONS: Question[] = [
       'A) Any gift is made',
     ],
     correctAnswer: 0,
-    explanation: 'Form 709 is required when annual exclusion is exceeded, gifts to non-citizen spouses exceed the enhanced exclusion ($185K in 2024), couples elect gift-splitting, gifts of future interests are made, or GST tax may apply. Filing tracks lifetime exemption usage even when no tax is due.'
+    explanation: 'Form 709 is required when annual exclusion is exceeded, gifts to non-citizen spouses exceed the enhanced exclusion ($190K in 2026), couples elect gift-splitting, gifts of future interests are made, or GST tax may apply. Filing tracks lifetime exemption usage even when no tax is due.'
   },
   {
     id: 'cfp-est-b6-019',

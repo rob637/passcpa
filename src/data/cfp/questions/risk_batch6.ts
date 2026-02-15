@@ -315,7 +315,7 @@ export const CFP_RISK_BATCH6_QUESTIONS: Question[] = [
       'D) Employer-only contributions',
     ],
     correctAnswer: 2,
-    explanation: 'HDHP + HSA: triple tax advantage (deduction, tax-free growth, tax-free qualified withdrawals). HDHPs have minimum deductibles ($1,600 individual/$3,200 family in 2024) and maximum out-of-pocket limits. HSA contributions for 2024: $4,150/$8,300 + $1,000 catch-up (55+). HSA funds roll over and can be invested for retirement.'
+    explanation: 'HDHP + HSA: triple tax advantage (deduction, tax-free growth, tax-free qualified withdrawals). HDHPs have minimum deductibles ($1,650 individual/$3,300 family in 2026) and maximum out-of-pocket limits. HSA contributions for 2026: $4,450/$8,900 + $1,000 catch-up (55+). HSA funds roll over and can be invested for retirement.'
   },
   {
     id: 'cfp-ris-b6-017',

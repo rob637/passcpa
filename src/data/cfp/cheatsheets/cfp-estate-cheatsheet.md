@@ -135,14 +135,14 @@ AZ, CA, ID, LA, NV, NM, TX, WA, WI (+ AK opt-in)
 - Income taxed to trust or beneficiaries
 - Gift made at transfer
 
-### Trust Taxation (2024)
+### Trust Taxation (2026)
 
 | Taxable Income | Tax Rate |
 |----------------|----------|
-| $0 - $3,100 | 10% |
-| $3,101 - $11,150 | 24% |
-| $11,151 - $15,200 | 35% |
-| Over $15,200 | 37% |
+| $0 - $3,150 | 10% |
+| $3,151 - $11,450 | 24% |
+| $11,451 - $15,650 | 35% |
+| Over $15,650 | 37% |
 
 **Note**: Trust brackets are compressed - hits 37% quickly
 
@@ -256,10 +256,10 @@ AZ, CA, ID, LA, NV, NM, TX, WA, WI (+ AK opt-in)
 ## Gift Tax
 
 ### Annual Exclusion
-- **$18,000** per donee (2024)
+- **$19,000** per donee (2026)
 - Unlimited number of donees
 - **Present interest required** for exclusion
-- Gift splitting: $36,000 per donee (married)
+- Gift splitting: $38,000 per donee (married)
 
 ### Crummey Powers
 - Convert future interest to present
@@ -332,7 +332,7 @@ Gross Estate
 ### Overview
 - Additional 40% tax on transfers skipping a generation
 - Applies to grandchildren and below
-- Separate $13.61M exemption
+- Separate $7.0M exemption (post-TCJA sunset)
 
 ### Skip Persons
 - Grandchild (or lower)
@@ -414,7 +414,7 @@ If FMV at gift < donor's basis:
 - Self-dealing rules apply
 
 ### Qualified Charitable Distribution (QCD)
-- From IRA, up to $105,000 (2024)
+- From IRA, up to $108,000 (2026)
 - Age 70½ or older
 - Counts toward RMD
 - Not included in income
@@ -423,7 +423,7 @@ If FMV at gift < donor's basis:
 
 ## Exam Tips
 
-1. **Know the numbers**: $18K annual exclusion, $13.61M exemption, 40% rate
+1. **Know the numbers**: $19K annual exclusion, $7M exemption (post-TCJA sunset), 40% rate
 2. **Probate avoidance**: JTWROS, beneficiary designations, trusts
 3. **Marital deduction**: Unlimited; must be to spouse
 4. **QTIP vs Bypass**: QTIP delays tax; bypass uses exemption

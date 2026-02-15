@@ -45,12 +45,12 @@ Does NOT include:
 - Pension, Social Security
 - Alimony (divorce decrees 2019+)
 
-### Contribution Limits (2024)
+### Contribution Limits (2026)
 
 | Age | Limit |
 |-----|-------|
-| Under 50 | $7,000 |
-| 50+ | $7,000 + $1,000 = **$8,000** |
+| Under 50 | $7,500 |
+| 50+ | $7,500 + $1,000 = **$8,500** |
 
 ### No Age Limit
 
@@ -68,31 +68,31 @@ SECURE Act eliminated the age 70½ contribution prohibition. Can contribute at a
 
 Deduction phases out based on MAGI:
 
-**Single/HOH (2024)**:
+**Single/HOH (2026)**:
 
 | MAGI | Deduction |
 |------|-----------|
-| ≤ $77,000 | Full |
-| $77,001 - $87,000 | Partial |
-| > $87,000 | None |
+| ≤ $79,000 | Full |
+| $79,001 - $89,000 | Partial |
+| > $89,000 | None |
 
-**Married Filing Jointly (2024)**:
+**Married Filing Jointly (2026)**:
 
 | MAGI | Deduction |
 |------|-----------|
-| ≤ $123,000 | Full |
-| $123,001 - $143,000 | Partial |
-| > $143,000 | None |
+| ≤ $126,000 | Full |
+| $126,001 - $146,000 | Partial |
+| > $146,000 | None |
 
 ### Spousal IRA (Non-Working Spouse)
 
 If one spouse works and other doesn't:
 
 | MFJ MAGI | Non-Working Spouse Deduction |
-|----------|------------------------------|
-| ≤ $230,000 | Full |
-| $230,001 - $240,000 | Partial |
-| > $240,000 | None |
+|----------|—----------------------------|
+| ≤ $236,000 | Full |
+| $236,001 - $246,000 | Partial |
+| > $246,000 | None |
 
 ---
 
@@ -205,21 +205,21 @@ For Roth IRAs:
 
 ## Key Takeaways
 
-1. **2024 limit**: $7,000 ($8,000 if 50+) with earned income
+1. **2026 limit**: $7,500 ($8,500 if 50+) with earned income
 2. **Deduction phase-out**: Depends on active participant status and MAGI
 3. **Non-deductible contributions**: Track basis on Form 8606
 4. **RMDs start**: Age 73 (or 75 for those born 1960+)
 5. **10% penalty exceptions**: Education, first home, disability, 72(t), more
     `,
     keyTakeaways: [
-      "2024 contribution limit: $7,000 ($8,000 if 50+) - requires earned income",
-      "Active participant: Deduction phases out at $77K-$87K single / $123K-$143K MFJ",
+      "2026 contribution limit: $7,500 ($8,500 if 50+) - requires earned income",
+      "Active participant: Deduction phases out at $79K-$89K single / $126K-$146K MFJ",
       "Non-deductible contributions: Track basis on Form 8606 for tax-free portion",
       "RMDs begin at 73 (75 for those born 1960+); RMD penalty is 25%",
       "10% penalty exceptions: Death, disability, education, first home, 72(t)"
     ],
     keyFormulas: [
-      "IRA Limit (2024) = $7,000 (under 50) / $8,000 (50+)",
+      "IRA Limit (2026) = $7,500 (under 50) / $8,500 (50+)",
       "RMD = Dec 31 Prior Year Balance / Uniform Table Factor"
     ],
     mnemonics: [
@@ -229,7 +229,7 @@ For Roth IRAs:
     practiceProblems: [
       {
         question: "A 52-year-old single taxpayer has a 401(k) at work and MAGI of $95,000. Can she deduct a Traditional IRA contribution?",
-        answer: "No. As an active participant with MAGI above $87,000 (single), no deduction is allowed. She can make a non-deductible contribution."
+        answer: "No. As an active participant with MAGI above $89,000 (single), no deduction is allowed. She can make a non-deductible contribution."
       },
       {
         question: "A 75-year-old has a Traditional IRA balance of $400,000 on December 31. What is her RMD?",
@@ -269,37 +269,37 @@ The **Roth IRA** offers tax-free growth and tax-free qualified distributions—o
 
 Must have **earned income** AND income below limits.
 
-### Contribution Limits (2024)
+### Contribution Limits (2026)
 
 Same as Traditional IRA:
 | Age | Limit |
 |-----|-------|
-| Under 50 | $7,000 |
-| 50+ | **$8,000** |
+| Under 50 | $7,500 |
+| 50+ | **$8,500** |
 
 ### Combined Limit
 
-Traditional + Roth combined cannot exceed $7,000/$8,000.
+Traditional + Roth combined cannot exceed $7,500/$8,500.
 
 ---
 
-## Income Limits (2024)
+## Income Limits (2026)
 
 Unlike Traditional IRA, Roth has **income limits for contributions**:
 
 **Single/HOH**:
 | MAGI | Contribution |
 |------|--------------|
-| < $146,000 | Full |
-| $146,000 - $161,000 | Partial |
-| > $161,000 | None |
+| < $150,000 | Full |
+| $150,000 - $165,000 | Partial |
+| > $165,000 | None |
 
 **Married Filing Jointly**:
 | MAGI | Contribution |
 |------|--------------|
-| < $230,000 | Full |
-| $230,000 - $240,000 | Partial |
-| > $240,000 | None |
+| < $236,000 | Full |
+| $236,000 - $246,000 | Partial |
+| > $246,000 | None |
 
 ---
 
@@ -433,22 +433,22 @@ Original owner never has to take RMDs:
 
 ## Key Takeaways
 
-1. **2024 income limits**: $161,000 single / $240,000 MFJ for direct contributions
+1. **2026 income limits**: $165,000 single / $246,000 MFJ for direct contributions
 2. **5-year rule**: Account must be open 5+ years for qualified distribution
 3. **Distribution order**: Contributions → Conversions → Earnings
 4. **Backdoor Roth**: Non-deductible Traditional → convert to Roth (watch pro-rata rule)
 5. **No RMDs**: Roth IRAs never require distributions for original owner
     `,
     keyTakeaways: [
-      "Income limits (2024): Phase-out at $146K-$161K single / $230K-$240K MFJ",
+      "Income limits (2026): Phase-out at $150K-$165K single / $236K-$246K MFJ",
       "5-year rule: Must hold 5 years + triggering event for tax-free earnings",
       "Distribution order: Contributions (tax-free) → Conversions → Earnings",
       "Backdoor Roth: Non-deductible Traditional + convert; beware pro-rata rule",
       "No RMDs for original owner; ideal for estate planning"
     ],
     keyFormulas: [
-      "Roth Contribution Phase-Out (Single): $146,000 - $161,000 (2024)",
-      "Roth Contribution Phase-Out (MFJ): $230,000 - $240,000 (2024)"
+      "Roth Contribution Phase-Out (Single): $150,000 - $165,000 (2026)",
+      "Roth Contribution Phase-Out (MFJ): $236,000 - $246,000 (2026)"
     ],
     mnemonics: [
       "Roth = Right Out Tax-free at the Horizon",
@@ -456,8 +456,8 @@ Original owner never has to take RMDs:
     ],
     practiceProblems: [
       {
-        question: "A single taxpayer has MAGI of $175,000 in 2024. Can she contribute directly to a Roth IRA?",
-        answer: "No. MAGI exceeds the $161,000 limit. She could do a backdoor Roth conversion instead."
+        question: "A single taxpayer has MAGI of $175,000 in 2026. Can she contribute directly to a Roth IRA?",
+        answer: "No. MAGI exceeds the $165,000 limit. She could do a backdoor Roth conversion instead."
       },
       {
         question: "A 50-year-old opened his first Roth IRA 3 years ago and wants to withdraw $10,000 (he contributed $8,000, so $2,000 is earnings). What are the tax consequences?",
@@ -504,7 +504,7 @@ These plans allow small businesses and self-employed individuals to establish re
 | Feature | Description |
 |---------|-------------|
 | **Contributions** | Employer only (no employee deferrals) |
-| **Maximum** | 25% of compensation or $69,000 (2024) |
+| **Maximum** | 25% of compensation or $71,500 (2026) |
 | **Deadline** | Tax return deadline (including extensions) |
 | **Administration** | Minimal - just an IRA for each participant |
 | **Vesting** | 100% immediate |
@@ -517,8 +517,8 @@ These plans allow small businesses and self-employed individuals to establish re
 
 $$\\text{Contribution} = \\text{Compensation} \\times 25\\%$$
 
-Maximum: $69,000 (2024)
-Maximum compensation considered: $345,000 (2024)
+Maximum: $71,500 (2026)
+Maximum compensation considered: $360,000 (2026)
 
 ### For Self-Employed Individuals
 
@@ -563,20 +563,20 @@ Employer must include employees who:
 |---------|-------------|
 | **Eligibility** | Employers with ≤100 employees |
 | **Contributions** | Employee deferrals + employer match |
-| **Employee limit** | $16,000 ($19,500 if 50+) for 2024 |
+| **Employee limit** | $17,000 ($20,500 if 50+) for 2026 |
 | **Employer contribution** | Required (matching or non-elective) |
 | **Other plans** | Cannot maintain with other qualified plans |
 
 ---
 
-## SIMPLE IRA Contribution Limits (2024)
+## SIMPLE IRA Contribution Limits (2026)
 
 ### Employee Deferrals
 
 | Age | Limit |
 |-----|-------|
-| Under 50 | $16,000 |
-| 50+ | $16,000 + $3,500 = **$19,500** |
+| Under 50 | $17,000 |
+| 50+ | $17,000 + $3,500 = **$20,500** |
 
 ### Employer Contribution (Required)
 
@@ -602,10 +602,10 @@ If distributions taken within **first 2 years** of participation:
 
 | Event | Date |
 |-------|------|
-| First SIMPLE contribution | January 2024 |
-| 2-year penalty period ends | January 2026 |
-| Distributions before January 2026 | 25% penalty |
-| Distributions after January 2026 | 10% penalty (if under 59½) |
+| First SIMPLE contribution | January 2026 |
+| 2-year penalty period ends | January 2028 |
+| Distributions before January 2028 | 25% penalty |
+| Distributions after January 2028 | 10% penalty (if under 59½) |
 
 ---
 
@@ -645,9 +645,9 @@ For self-employed with no employees (other than spouse):
 
 | Feature | Solo 401(k) |
 |---------|------------|
-| **Employee deferral** | $23,000 (+ $7,500 catch-up) |
+| **Employee deferral** | $24,500 (+ $7,500 catch-up) |
 | **Employer contribution** | 25% of compensation |
-| **Total maximum** | $69,000 ($76,500 catch-up) |
+| **Total maximum** | $71,500 ($79,000 catch-up) |
 | **Roth option** | Available |
 | **Loans** | Permitted |
 
@@ -657,33 +657,33 @@ For self-employed with no employees (other than spouse):
 
 ## Key Takeaways
 
-1. **SEP-IRA**: Employer contributions only; 25% of comp up to $69,000
+1. **SEP-IRA**: Employer contributions only; 25% of comp up to $71,500
 2. **Self-employed SEP**: Effective rate is 20% of net SE income
-3. **SIMPLE IRA**: Employee deferrals ($16,000) + employer match (3%)
+3. **SIMPLE IRA**: Employee deferrals ($17,000) + employer match (3%)
 4. **SIMPLE 2-year rule**: 25% penalty if withdrawn within first 2 years
 5. **Solo 401(k)**: Often superior for self-employed with no employees
     `,
     keyTakeaways: [
-      "SEP: Employer-only contributions, 25% of comp (20% for self-employed), $69K max",
+      "SEP: Employer-only contributions, 25% of comp (20% for self-employed), $71.5K max",
       "SEP flexibility: Can vary/skip contributions; deadline = tax return deadline",
-      "SIMPLE: Employee deferrals $16K + employer 3% match or 2% non-elective",
+      "SIMPLE: Employee deferrals $17K + employer 3% match or 2% non-elective",
       "SIMPLE 2-year rule: 25% early withdrawal penalty for first 2 years",
       "Solo 401(k): Often better for solo practitioners (both deferral + employer)"
     ],
     keyFormulas: [
       "SEP (employees) = Compensation × 25%",
       "SEP (self-employed) = Net SE Income × 20%",
-      "SIMPLE employee = $16,000 ($19,500 if 50+)",
+      "SIMPLE employee = $17,000 ($20,500 if 50+)",
       "SIMPLE employer match = 3% of compensation"
     ],
     practiceProblems: [
       {
         question: "A self-employed consultant has $300,000 in net self-employment income. What is the maximum SEP contribution?",
-        answer: "$300,000 × 20% = $60,000. But maximum is $69,000, so full $60,000 is allowed."
+        answer: "$300,000 × 20% = $60,000. But maximum is $71,500, so full $60,000 is allowed."
       },
       {
         question: "An employee earning $80,000 participates in a SIMPLE IRA, contributing the maximum. The employer provides a 3% match. What is the total annual contribution?",
-        answer: "Employee: $16,000. Employer match: $80,000 × 3% = $2,400. Total: $18,400."
+        answer: "Employee: $17,000. Employer match: $80,000 × 3% = $2,400. Total: $19,400."
       },
       {
         question: "A 45-year-old takes a $20,000 distribution from a SIMPLE IRA after 18 months of participation. What is the penalty?",

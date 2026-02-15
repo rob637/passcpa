@@ -44,7 +44,7 @@ Percentage split (e.g., 80/20 after deductible)
 **Out-of-Pocket Maximum:**
 Cap on annual cost-sharing
 - After reaching, plan pays 100%
-- 2024 limit: $9,450 individual / $18,900 family
+- 2026 limit: $9,800 individual / $19,600 family
 
 ### Cost-Sharing Example
 | Event | Amount |
@@ -107,9 +107,9 @@ Cap on annual cost-sharing
 - Not on Medicare
 - Not claimed as dependent
 
-**Contribution Limits (2024):**
-- Individual: $4,150
-- Family: $8,300
+**Contribution Limits (2026):**
+- Individual: $4,450
+- Family: $8,900
 - Catch-up (55+): Additional $1,000
 
 **Tax Benefits:**
@@ -125,8 +125,8 @@ Cap on annual cost-sharing
 ### Flexible Spending Account (FSA)
 - Employer-sponsored
 - Pre-tax contributions
-- 2024 limit: $3,200
-- Use-it-or-lose-it (or $640 rollover option)
+- 2026 limit: $3,350
+- Use-it-or-lose-it (or $670 rollover option)
 - Limited to medical for healthcare FSA
 
 ### HSA vs. FSA Comparison
@@ -185,8 +185,8 @@ All ACA plans must cover:
     ],
     practiceProblems: [
       {
-        question: 'Maria is 58, enrolled in an HDHP with family coverage. What is her maximum HSA contribution for 2024?',
-        answer: '$9,300. Family contribution limit ($8,300) + Catch-up contribution for age 55+ ($1,000) = $9,300.'
+        question: 'Maria is 58, enrolled in an HDHP with family coverage. What is her maximum HSA contribution for 2026?',
+        answer: '$9,900. Family contribution limit ($8,900) + Catch-up contribution for age 55+ ($1,000) = $9,900.'
       }
     ],
     relatedLessons: ['CFP-RIS-L009', 'CFP-RIS-L010']
@@ -472,14 +472,14 @@ Option to increase at claim time (if available)
 - Age-based limits apply
 - Deductible as medical expense (subject to 7.5% AGI floor)
 
-**2024 Age-Based Premium Limits:**
+**2026 Age-Based Premium Limits:**
 | Age | Limit |
 |-----|-------|
-| 40 or under | $480 |
-| 41-50 | $900 |
-| 51-60 | $1,790 |
-| 61-70 | $4,770 |
-| 71+ | $5,960 |
+| 40 or under | $510 |
+| 41-50 | $960 |
+| 51-60 | $1,910 |
+| 61-70 | $5,090 |
+| 71+ | $6,350 |
 
 **Benefits:**
 - Tax-free up to per diem limit ($420/day in 2024)

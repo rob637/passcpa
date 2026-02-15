@@ -121,7 +121,7 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
       'B) Insures defined benefit plans, paying benefits up to limits if plans terminate with insufficient assets',
     ],
     correctAnswer: 3,
-    explanation: 'PBGC is federal insurance for DB plans (funded by employer premiums). If a DB plan terminates underfunded, PBGC pays benefits up to annual limits (around $67K at 65 in 2024). It doesn\'t cover DC plans, government plans, or church plans. Single-employer and multiemployer programs have different rules.'
+    explanation: 'PBGC is federal insurance for DB plans (funded by employer premiums). If a DB plan terminates underfunded, PBGC pays benefits up to annual limits (around $70K at 65 in 2026). It doesn\'t cover DC plans, government plans, or church plans. Single-employer and multiemployer programs have different rules.'
   },
   // RET-3: IRAs
   {
@@ -369,10 +369,10 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
       'C) Charitable deductions from Roth IRAs',
       'D) Gifts to private foundations',
       'A) Unlimited charitable deductions',
-      'B) To transfer up to $105,000 annually directly to charity, satisfying RMDs without inclusion in taxable income',
+      'B) To transfer up to $108,000 annually directly to charity, satisfying RMDs without inclusion in taxable income',
     ],
     correctAnswer: 3,
-    explanation: 'QCDs transfer IRA funds directly to charity (not donor-advised funds or private foundations). They satisfy RMDs without increasing AGI—beneficial for those not itemizing or subject to phase-outs. 2024 limit is $105,000 (indexed). SECURE 2.0 added one-time $53,000 gift to charitable trusts/annuities.'
+    explanation: 'QCDs transfer IRA funds directly to charity (not donor-advised funds or private foundations). They satisfy RMDs without increasing AGI—beneficial for those not itemizing or subject to phase-outs. 2026 limit is $108,000 (indexed). SECURE 2.0 added one-time $54,000 gift to charitable trusts/annuities.'
   },
   {
     id: 'cfp-ret-b8-020',
@@ -426,10 +426,10 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
       'D) Convert to Roth automatically',
       'C) Catch up only to employer matches',
       'A) Make only regular contributions',
-      'B) Contribute an additional amount above the regular limit ($7,500 in 2024; SECURE 2.0 increases for ages 60-63)',
+      'B) Contribute an additional amount above the regular limit ($7,500 in 2026; SECURE 2.0 increases for ages 60-63)',
     ],
     correctAnswer: 3,
-    explanation: 'Age-50+ can contribute extra: $7,500 for 401(k)/403(b) in 2024. SECURE 2.0 adds higher catch-up for ages 60-63 starting 2025. IRA catch-up is $1,000. This allows accelerated saving for those behind, those with higher income later in career, or those who simply can save more as kids leave home.'
+    explanation: 'Age-50+ can contribute extra: $7,500 for 401(k)/403(b) in 2026. SECURE 2.0 adds higher catch-up for ages 60-63 starting 2025. IRA catch-up is $1,000. This allows accelerated saving for those behind, those with higher income later in career, or those who simply can save more as kids leave home.'
   },
   {
     id: 'cfp-ret-b8-023',
@@ -440,15 +440,15 @@ export const CFP_RETIREMENT_BATCH8_QUESTIONS: Question[] = [
     subtopic: 'SIMPLE IRA Limits',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'SIMPLE IRA employee contribution limits in 2024 are:',
+    question: 'SIMPLE IRA employee contribution limits in 2026 are:',
     options: [
       'C) $7,000 like traditional IRAs',
       'D) Unlimited',
       'A) Same as 401(k) limits',
-      'B) $16,000 with $3,500 catch-up for age 50+, lower than 401(k) limits',
+      'B) $17,000 with $3,500 catch-up for age 50+, lower than 401(k) limits',
     ],
     correctAnswer: 3,
-    explanation: 'SIMPLE IRAs have lower limits than 401(k)s: $16,000 employee deferral in 2024 (vs $23,000 for 401(k)), $3,500 catch-up (vs $7,500). Employer must match 1-3% or provide 2% non-elective. They\'re simpler to administer but have lower contribution potential for higher earners.'
+    explanation: 'SIMPLE IRAs have lower limits than 401(k)s: $17,000 employee deferral in 2026 (vs $23,500 for 401(k)), $3,500 catch-up (vs $7,500). Employer must match 1-3% or provide 2% non-elective. They\'re simpler to administer but have lower contribution potential for higher earners.'
   },
   {
     id: 'cfp-ret-b8-024',

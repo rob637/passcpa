@@ -353,7 +353,7 @@ export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
       'B) Provides dollar-for-dollar credit for qualified adoption expenses up to a maximum, with higher limits for special needs adoptions',
     ],
     correctAnswer: 3,
-    explanation: 'The adoption credit covers qualified expenses (adoption fees, legal costs, court costs, travel) up to $16,810 (2024). Special needs adoptions get the full credit regardless of actual expenses. Income phaseout applies. The credit is nonrefundable but carryforward is available for 5 years.'
+    explanation: 'The adoption credit covers qualified expenses (adoption fees, legal costs, court costs, travel) up to $17,280 (2026). Special needs adoptions get the full credit regardless of actual expenses. Income phaseout applies. The credit is nonrefundable but carryforward is available for 5 years.'
   },
   {
     id: 'cfp-tax-b8-020',

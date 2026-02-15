@@ -17,7 +17,7 @@ interface MnemonicFlashcard extends Omit<Flashcard, 'category'> {
 // ==========================================
 export const GEN_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-GEN-MN-001',
+    id: 'fc-gen-mn-001',
     domain: 'GEN',
     category: 'mnemonic',
     mnemonic: 'UIADPIM',
@@ -27,7 +27,7 @@ export const GEN_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['process', 'standards', 'mnemonic']
   },
   {
-    id: 'FC-GEN-MN-002',
+    id: 'fc-gen-mn-002',
     domain: 'GEN',
     category: 'mnemonic',
     mnemonic: 'ACT FAIR',
@@ -37,7 +37,7 @@ export const GEN_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['ethics', 'standards', 'mnemonic']
   },
   {
-    id: 'FC-GEN-MN-003',
+    id: 'fc-gen-mn-003',
     domain: 'GEN',
     category: 'mnemonic',
     mnemonic: '4 Es',
@@ -53,7 +53,7 @@ export const GEN_MNEMONICS: MnemonicFlashcard[] = [
 // ==========================================
 export const RET_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-RET-MN-001',
+    id: 'fc-ret-mn-001',
     domain: 'RET',
     category: 'mnemonic',
     mnemonic: 'SECURE 2.0 AGES',
@@ -63,7 +63,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['SECURE 2.0', 'RMD', 'ages', 'mnemonic']
   },
   {
-    id: 'FC-RET-MN-002',
+    id: 'fc-ret-mn-002',
     domain: 'RET',
     category: 'mnemonic',
     mnemonic: 'SEPP-72(t)',
@@ -73,27 +73,27 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['72t', 'SEPP', 'early withdrawal', 'mnemonic']
   },
   {
-    id: 'FC-RET-MN-003',
+    id: 'fc-ret-mn-003',
     domain: 'RET',
     category: 'mnemonic',
     mnemonic: 'SIMPLE = 100',
     front: 'SIMPLE IRA Key Requirements',
-    back: 'Savings Incentive Match Plan for Employees:\n\n• 100 or fewer employees\n• $5,000 compensation in any 2 prior years\n• $5,000 expected current year\n\nContributions 2024:\n• Employee: $16,000 ($3,500 catch-up)\n• Employer: 2% nonelective OR 3% match\n\nNo other qualified plans allowed',
+    back: 'Savings Incentive Match Plan for Employees:\n\n• 100 or fewer employees\n• $5,000 compensation in any 2 prior years\n• $5,000 expected current year\n\nContributions 2026:\n• Employee: $17,000 ($3,500 catch-up)\n• Employer: 2% nonelective OR 3% match\n\nNo other qualified plans allowed',
     difficulty: 'medium',
     tags: ['SIMPLE', 'small business', 'mnemonic']
   },
   {
-    id: 'FC-RET-MN-004',
+    id: 'fc-ret-mn-004',
     domain: 'RET',
     category: 'mnemonic',
     mnemonic: 'SEP = 25%',
     front: 'SEP-IRA Contribution Limits',
-    back: 'Simplified Employee Pension:\n\n• Employer-only contributions\n• Up to 25% of compensation\n• Maximum $69,000 (2024)\n• Self-employed: net SE × 0.9235 × 20%\n\nEligibility: 21+, 3 of last 5 years, $750 comp\n\nSimplest employer plan to establish',
+    back: 'Simplified Employee Pension:\n\n• Employer-only contributions\n• Up to 25% of compensation\n• Maximum $71,500 (2026)\n• Self-employed: net SE × 0.9235 × 20%\n\nEligibility: 21+, 3 of last 5 years, $750 comp\n\nSimplest employer plan to establish',
     difficulty: 'medium',
     tags: ['SEP', 'self-employed', 'mnemonic']
   },
   {
-    id: 'FC-RET-MN-005',
+    id: 'fc-ret-mn-005',
     domain: 'RET',
     category: 'mnemonic',
     mnemonic: 'ROTH 5-5',
@@ -109,7 +109,7 @@ export const RET_MNEMONICS: MnemonicFlashcard[] = [
 // ==========================================
 export const TAX_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-TAX-MN-001',
+    id: 'fc-tax-mn-001',
     domain: 'TAX',
     category: 'mnemonic',
     mnemonic: 'BASIS = PAID',
@@ -119,7 +119,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['basis', 'capital gains', 'mnemonic']
   },
   {
-    id: 'FC-TAX-MN-002',
+    id: 'fc-tax-mn-002',
     domain: 'TAX',
     category: 'mnemonic',
     mnemonic: 'SALT $10K',
@@ -129,7 +129,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['SALT', 'deductions', 'mnemonic']
   },
   {
-    id: 'FC-TAX-MN-003',
+    id: 'fc-tax-mn-003',
     domain: 'TAX',
     category: 'mnemonic',
     mnemonic: 'NII 3.8%',
@@ -139,7 +139,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['NIIT', 'investment tax', 'mnemonic']
   },
   {
-    id: 'FC-TAX-MN-004',
+    id: 'fc-tax-mn-004',
     domain: 'TAX',
     category: 'mnemonic',
     mnemonic: 'AMT ADD-BACKS',
@@ -155,7 +155,7 @@ export const TAX_MNEMONICS: MnemonicFlashcard[] = [
 // ==========================================
 export const INV_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-INV-MN-001',
+    id: 'fc-inv-mn-001',
     domain: 'INV',
     category: 'mnemonic',
     mnemonic: 'CAPM: RF + β(RM-RF)',
@@ -165,7 +165,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['CAPM', 'beta', 'mnemonic']
   },
   {
-    id: 'FC-INV-MN-002',
+    id: 'fc-inv-mn-002',
     domain: 'INV',
     category: 'mnemonic',
     mnemonic: 'SML vs CML',
@@ -175,7 +175,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['SML', 'CML', 'portfolio theory', 'mnemonic']
   },
   {
-    id: 'FC-INV-MN-003',
+    id: 'fc-inv-mn-003',
     domain: 'INV',
     category: 'mnemonic',
     mnemonic: 'TREYNOR = RP/β',
@@ -185,7 +185,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['Treynor', 'performance', 'mnemonic']
   },
   {
-    id: 'FC-INV-MN-004',
+    id: 'fc-inv-mn-004',
     domain: 'INV',
     category: 'mnemonic',
     mnemonic: 'DURATION × Δi',
@@ -201,7 +201,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
 // ==========================================
 export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-RISK-MN-001',
+    id: 'fc-risk-mn-001',
     domain: 'RISK',
     category: 'mnemonic',
     mnemonic: 'DIME',
@@ -211,7 +211,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['life insurance', 'needs analysis', 'mnemonic']
   },
   {
-    id: 'FC-RISK-MN-002',
+    id: 'fc-risk-mn-002',
     domain: 'RISK',
     category: 'mnemonic',
     mnemonic: 'OWN OCCUPATION',
@@ -221,7 +221,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['disability', 'definitions', 'mnemonic']
   },
   {
-    id: 'FC-RISK-MN-003',
+    id: 'fc-risk-mn-003',
     domain: 'RISK',
     category: 'mnemonic',
     mnemonic: 'HO-3 = OPEN',
@@ -231,7 +231,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['homeowners', 'coverage', 'mnemonic']
   },
   {
-    id: 'FC-RISK-MN-004',
+    id: 'fc-risk-mn-004',
     domain: 'RISK',
     category: 'mnemonic',
     mnemonic: 'COBRA = 18/36',
@@ -247,7 +247,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
 // ==========================================
 export const EST_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-EST-MN-001',
+    id: 'fc-est-mn-001',
     domain: 'EST',
     category: 'mnemonic',
     mnemonic: 'GRAT/GRUT',
@@ -257,17 +257,17 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['GRAT', 'GRUT', 'trusts', 'mnemonic']
   },
   {
-    id: 'FC-EST-MN-002',
+    id: 'fc-est-mn-002',
     domain: 'EST',
     category: 'mnemonic',
-    mnemonic: 'ANNUAL = $18K',
+    mnemonic: 'ANNUAL = $19K',
     front: 'Gift Tax Annual Exclusion',
-    back: 'Annual exclusion (2024): $18,000\n\n• Per donee, per year\n• Unlimited number of recipients\n• Gift splitting with spouse = $36,000\n• No return needed if under limit\n\nMust be present interest gift\n(Crummey power for trusts)',
+    back: 'Annual exclusion (2026): $19,000\n\n• Per donee, per year\n• Unlimited number of recipients\n• Gift splitting with spouse = $38,000\n• No return needed if under limit\n\nMust be present interest gift\n(Crummey power for trusts)',
     difficulty: 'easy',
     tags: ['gift tax', 'annual exclusion', 'mnemonic']
   },
   {
-    id: 'FC-EST-MN-003',
+    id: 'fc-est-mn-003',
     domain: 'EST',
     category: 'mnemonic',
     mnemonic: 'ILIT',
@@ -277,7 +277,7 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['ILIT', 'trusts', 'estate tax', 'mnemonic']
   },
   {
-    id: 'FC-EST-MN-004',
+    id: 'fc-est-mn-004',
     domain: 'EST',
     category: 'mnemonic',
     mnemonic: 'POD/TOD',
@@ -293,7 +293,7 @@ export const EST_MNEMONICS: MnemonicFlashcard[] = [
 // ==========================================
 export const PSY_MNEMONICS: MnemonicFlashcard[] = [
   {
-    id: 'FC-PSY-MN-001',
+    id: 'fc-psy-mn-001',
     domain: 'PSY',
     category: 'mnemonic',
     mnemonic: 'BIAS TRAPS',
@@ -303,7 +303,7 @@ export const PSY_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['behavioral finance', 'biases', 'mnemonic']
   },
   {
-    id: 'FC-PSY-MN-002',
+    id: 'fc-psy-mn-002',
     domain: 'PSY',
     category: 'mnemonic',
     mnemonic: 'ACTIVE LISTENING',
@@ -313,7 +313,7 @@ export const PSY_MNEMONICS: MnemonicFlashcard[] = [
     tags: ['communication', 'listening', 'mnemonic']
   },
   {
-    id: 'FC-PSY-MN-003',
+    id: 'fc-psy-mn-003',
     domain: 'PSY',
     category: 'mnemonic',
     mnemonic: 'SMART GOALS',

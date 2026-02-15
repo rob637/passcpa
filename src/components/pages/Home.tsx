@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   BookOpen,
   FileSpreadsheet,
@@ -85,6 +85,7 @@ const getGreeting = (): string => {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
   const { userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
   const { courseId, course, setCourse } = useCourse();
@@ -93,6 +94,29 @@ const Home = () => {
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
+
+  // Check for pending checkout on mount (safety net if onboarding didn't catch it)
+  // ONLY redirect if pendingCheckout matches current course context
+  useEffect(() => {
+    const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+    if (pendingCheckoutStr) {
+      try {
+        const pendingCheckout = JSON.parse(pendingCheckoutStr);
+        // Only redirect if checkout is for the current course
+        if (pendingCheckout.course === courseId) {
+          localStorage.removeItem('pendingCheckout');
+          logger.info('Home: Found pending checkout for current course, redirecting to checkout');
+          navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+        } else {
+          // Clear stale checkout for different course
+          localStorage.removeItem('pendingCheckout');
+          logger.info(`Home: Cleared stale pendingCheckout for ${pendingCheckout.course}, current course is ${courseId}`);
+        }
+      } catch {
+        localStorage.removeItem('pendingCheckout');
+      }
+    }
+  }, [navigate, courseId]);
 
   // Get user info - properly typed now
   const firstName = userProfile?.displayName?.split(' ')[0] || 'there';

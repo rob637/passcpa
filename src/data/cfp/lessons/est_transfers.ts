@@ -701,8 +701,8 @@ If spouse becomes US citizen before estate tax return due:
 - QDOT not needed
 
 **Annual gifts:**
-$185,000 annual exclusion for gifts to non-citizen spouse (2024)
-- Higher than regular $18,000 exclusion
+$190,000 annual exclusion for gifts to non-citizen spouse (2026)
+- Higher than regular $19,000 exclusion
 - Still subject to lifetime limits
 
 ## Planning for Minor Children

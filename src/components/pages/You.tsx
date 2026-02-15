@@ -561,13 +561,21 @@ const You: React.FC = () => {
 
                 {/* Action button — show subscribe for trialing, expired, or no-trial users */}
                 {!access.isPaid && !access.canStartTrial && (
-                  <Link
-                    to={`/start-checkout?course=${examId}&interval=annual`}
-                    className="text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center gap-1"
-                  >
-                    {isFounder && <Sparkles className="w-3 h-3" />}
-                    ${isFounder ? pricing.founderAnnual : pricing.annual}/yr
-                  </Link>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      to={`/start-checkout?course=${examId}&interval=annual`}
+                      className="text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center gap-1"
+                    >
+                      {isFounder && <Sparkles className="w-3 h-3" />}
+                      ${isFounder ? pricing.founderAnnual : pricing.annual}/yr
+                    </Link>
+                    <Link
+                      to={`/start-checkout?course=${examId}&interval=monthly`}
+                      className="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                    >
+                      ${isFounder ? pricing.founderMonthly : pricing.monthly}/mo
+                    </Link>
+                  </div>
                 )}
               </div>
             );

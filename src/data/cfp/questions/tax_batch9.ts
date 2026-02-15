@@ -195,11 +195,11 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
     options: [
       'D) Only for corporations',
       'A) Only straight-line depreciation',
-      'B) Immediate deduction of qualifying property costs (up to $1.16M in 2024), limited to business income',
+      'B) Immediate deduction of qualifying property costs (up to $1.25M in 2026), limited to business income',
       'C) Unlimited expensing',
     ],
     correctAnswer: 2,
-    explanation: 'Section 179: expense qualifying property (equipment, some software, qualified improvements) instead of depreciating. 2024 limit: $1,160,000, phasing out when purchases exceed $2.89M. Limited to taxable income from active business. Can be combined with bonus depreciation. Enables significant first-year deductions for capital purchases.'
+    explanation: 'Section 179: expense qualifying property (equipment, some software, qualified improvements) instead of depreciating. 2026 limit: $1,250,000, phasing out when purchases exceed $3.13M. Limited to taxable income from active business. Can be combined with bonus depreciation. Enables significant first-year deductions for capital purchases.'
   },
   {
     id: 'cfp-tax-b9-011',
@@ -218,7 +218,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
       'C) Only manufacturers',
     ],
     correctAnswer: 2,
-    explanation: 'SSTBs (health, law, accounting, actuarial, performing arts, consulting, athletics, financial services, brokerage) have stricter limits. Above thresholds ($191,950 single/$383,900 MFJ in 2024), the QBI deduction phases out completely—no W-2/capital limitation helps. Non-SSTB businesses can still qualify using W-2 wages or property limits above thresholds.'
+    explanation: 'SSTBs (health, law, accounting, actuarial, performing arts, consulting, athletics, financial services, brokerage) have stricter limits. Above thresholds ($202,050 single/$404,100 MFJ in 2026), the QBI deduction phases out completely—no W-2/capital limitation helps. Non-SSTB businesses can still qualify using W-2 wages or property limits above thresholds.'
   },
   {
     id: 'cfp-tax-b9-012',
@@ -257,7 +257,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
       'C) Only testamentary transfers',
     ],
     correctAnswer: 0,
-    explanation: 'GST prevents avoiding estate tax by skipping generations. Skip persons: those two or more generations below (grandchildren unless parent deceased). Three types: direct skip (outright gift), taxable termination (trust interest ends), taxable distribution (distribution from trust). 40% flat rate, with exemption equal to estate exemption ($13.61M in 2024).'
+    explanation: 'GST prevents avoiding estate tax by skipping generations. Skip persons: those two or more generations below (grandchildren unless parent deceased). Three types: direct skip (outright gift), taxable termination (trust interest ends), taxable distribution (distribution from trust). 40% flat rate, with exemption equal to estate exemption ($14.00M in 2026).'
   },
   {
     id: 'cfp-tax-b9-015',
@@ -276,7 +276,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
       'C) Only give to spouses',
     ],
     correctAnswer: 1,
-    explanation: 'Gift splitting (IRC 2513): with spouse consent, gifts can be treated as 50% from each spouse. This doubles annual exclusion ($18K × 2 = $36K per donee in 2024) and potentially uses both unified credits. Requires spouse consent on gift return. Both spouses must be U.S. citizens/residents. Simple strategy to maximize gift-tax-free giving.'
+    explanation: 'Gift splitting (IRC 2513): with spouse consent, gifts can be treated as 50% from each spouse. This doubles annual exclusion ($19K × 2 = $38K per donee in 2026) and potentially uses both unified credits. Requires spouse consent on gift return. Both spouses must be U.S. citizens/residents. Simple strategy to maximize gift-tax-free giving.'
   },
   // Additional Topics
   {
@@ -391,7 +391,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
       'C) Only earned income',
     ],
     correctAnswer: 2,
-    explanation: 'Kiddie tax prevents income shifting via gifts of income-producing property to children in lower brackets. Applies: under 19, or under 24 if full-time student, with unearned income over $2,500 (2024). Excess taxed at parents\' marginal rate. Reduces benefit of UGMA/UTMA accounts for tax purposes. Planning: use growth/deferred investments before child ages out.'
+    explanation: 'Kiddie tax prevents income shifting via gifts of income-producing property to children in lower brackets. Applies: under 19, or under 24 if full-time student, with unearned income over $2,700 (2026). Excess taxed at parents\' marginal rate. Reduces benefit of UGMA/UTMA accounts for tax purposes. Planning: use growth/deferred investments before child ages out.'
   },
   {
     id: 'cfp-tax-b9-022',
@@ -410,7 +410,7 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
       'C) Is a deduction, not a credit',
     ],
     correctAnswer: 0,
-    explanation: 'Saver\'s Credit: nonrefundable credit for retirement contributions (IRA, 401k, etc.). Credit rate: 50%/20%/10% based on AGI. 2024 limits: 50% rate for AGI up to $23K single. Max credit: $1,000 ($2,000 MFJ). Must be 18+, not student or dependent. Stacks with retirement contribution deduction—double benefit for eligible savers.'
+    explanation: 'Saver\'s Credit: nonrefundable credit for retirement contributions (IRA, 401k, etc.). Credit rate: 50%/20%/10% based on AGI. 2026 limits: 50% rate for AGI up to $24K single. Max credit: $1,000 ($2,000 MFJ). Must be 18+, not student or dependent. Stacks with retirement contribution deduction—double benefit for eligible savers.'
   },
   {
     id: 'cfp-tax-b9-023',
@@ -467,6 +467,6 @@ export const CFP_TAX_BATCH9_QUESTIONS: Question[] = [
       'C) Will double again',
     ],
     correctAnswer: 0,
-    explanation: 'TCJA doubled exemption (indexed to ~$13.61M in 2024). Without legislative action, it reverts to pre-TCJA amounts (~$6-7M indexed) after 2025. IRS has ruled no "clawback" of gifts using higher exemption. This creates a planning window—clients should consider using exemption through gifts or irrevocable trusts before potential reduction.'
+    explanation: 'TCJA doubled exemption (indexed to ~$14.00M in 2026). Without legislative action, it reverts to pre-TCJA amounts (~$7M indexed) after 2025. IRS has ruled no "clawback" of gifts using higher exemption. This creates a planning window—clients should consider using exemption through gifts or irrevocable trusts before potential reduction.'
   }
 ];

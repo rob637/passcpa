@@ -413,15 +413,15 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     subtopic: '529 Plan Contributions',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: "Grandparents want to fund a 529 plan for their grandchild and minimize gift tax. What is the MAXIMUM they can contribute using 5-year gift tax averaging in 2024 (assuming $18,000 annual exclusion)?",
+    question: "Grandparents want to fund a 529 plan for their grandchild and minimize gift tax. What is the MAXIMUM they can contribute using 5-year gift tax averaging in 2026 (assuming $19,000 annual exclusion)?",
     options: [
-      "B) $90,000",
-      "D) $360,000",
-      "A) $18,000",
-      "C) $180,000",
+      "B) $95,000",
+      "D) $380,000",
+      "A) $19,000",
+      "C) $190,000",
     ],
     correctAnswer: 3,
-    explanation: "**Correct Answer: C ($180,000)**\n\n**529 Gift Tax Averaging:**\n- Special election allows 5 years of annual exclusions in one contribution\n- 2024 exclusion: $18,000 per donor\n- Per grandparent: $18,000 × 5 = $90,000\n- Both grandparents together: $90,000 × 2 = **$180,000**\n\n**Key Rules:**\n- File Form 709 to elect averaging\n- No additional gifts to same beneficiary for 5 years\n- If donor dies during period, portion included in estate\n- Gift splitting between spouses doubles the amount"
+    explanation: "**Correct Answer: C ($190,000)**\n\n**529 Gift Tax Averaging:**\n- Special election allows 5 years of annual exclusions in one contribution\n- 2026 exclusion: $19,000 per donor\n- Per grandparent: $19,000 × 5 = $95,000\n- Both grandparents together: $95,000 × 2 = **$190,000**\n\n**Key Rules:**\n- File Form 709 to elect averaging\n- No additional gifts to same beneficiary for 5 years\n- If donor dies during period, portion included in estate\n- Gift splitting between spouses doubles the amount"
   },
   {
     id: 'cfp-gen-022',
@@ -497,7 +497,7 @@ export const CFP_GEN_QUESTIONS: Question[] = [
       "C) Student savings accounts",
     ],
     correctAnswer: 0,
-    explanation: "**Correct Answer: B (Life insurance cash value and retirement accounts)**\n\n**FAFSA Asset Treatment:**\n\n**EXCLUDED from FAFSA:**\n- Retirement accounts (401k, IRA, pensions) ✓\n- Life insurance cash value ✓\n- Primary residence equity\n- Small business (< 100 employees)\n- Personal property\n\n**INCLUDED in FAFSA:**\n- 529 plans (parent-owned counted at 5.64%)\n- Savings/checking accounts\n- Investment accounts\n- Real estate (non-primary)\n\n**Planning Strategy:** Maximize contributions to excluded assets (retirement, life insurance) before college years to reduce EFC. Note: Grandparent 529s aren't counted but distributions were previously counted as student income (rules changed for 2024-25 FAFSA)."
+    explanation: "**Correct Answer: B (Life insurance cash value and retirement accounts)**\n\n**FAFSA Asset Treatment:**\n\n**EXCLUDED from FAFSA:**\n- Retirement accounts (401k, IRA, pensions) ✓\n- Life insurance cash value ✓\n- Primary residence equity\n- Small business (< 100 employees)\n- Personal property\n\n**INCLUDED in FAFSA:**\n- 529 plans (parent-owned counted at 5.64%)\n- Savings/checking accounts\n- Investment accounts\n- Real estate (non-primary)\n\n**Planning Strategy:** Maximize contributions to excluded assets (retirement, life insurance) before college years to reduce EFC. Note: Under current FAFSA rules, grandparent 529 distributions are no longer counted as student income, making them advantageous for financial aid."
   },
   // ============================================
   // Additional GEN Questions (026-045)
@@ -625,15 +625,15 @@ export const CFP_GEN_QUESTIONS: Question[] = [
     subtopic: '529 Plan Strategies',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: "A grandparent wants to superfund a 529 plan with a $90,000 contribution in 2024. This contribution:",
+    question: "A grandparent wants to superfund a 529 plan with a $95,000 contribution in 2026. This contribution:",
     options: [
-      "B) Exceeds the gift tax exclusion by $72,000",
+      "B) Exceeds the gift tax exclusion by $76,000",
       "D) Is not permitted under 529 rules",
-      "A) Fully uses five years of annual exclusions ($18,000 × 5)",
-      "C) Reduces the grandparent's lifetime exemption by $90,000",
+      "A) Fully uses five years of annual exclusions ($19,000 × 5)",
+      "C) Reduces the grandparent's lifetime exemption by $95,000",
     ],
     correctAnswer: 2,
-    explanation: "**529 Superfunding:**\n\nThe 5-year election allows one-time contributions up to 5× the annual exclusion:\n- 2024 annual exclusion: $18,000\n- Maximum superfund: $18,000 × 5 = **$90,000**\n\nThe $90,000 contribution is reported over 5 gift tax returns, using each year's exclusion. No lifetime exemption is used if the contributor survives 5 years. If the contributor dies during that period, a prorated portion is included in their estate."
+    explanation: "**529 Superfunding:**\n\nThe 5-year election allows one-time contributions up to 5× the annual exclusion:\n- 2026 annual exclusion: $19,000\n- Maximum superfund: $19,000 × 5 = **$95,000**\n\nThe $95,000 contribution is reported over 5 gift tax returns, using each year's exclusion. No lifetime exemption is used if the contributor survives 5 years. If the contributor dies during that period, a prorated portion is included in their estate."
   },
   {
     id: 'cfp-gen-033',

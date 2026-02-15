@@ -46,39 +46,51 @@ try {
 // PRICING CONFIGURATION — must match src/services/subscription.ts
 // ============================================================================
 
+// Content stats from shared JSON file (single source of truth)
+const CONTENT_STATS = require('../shared/content-stats.json');
+
+/**
+ * Format a number as "X,XXX+" (round down to nearest 100)
+ */
+function formatDisplayCount(n) {
+  const rounded = Math.floor(n / 100) * 100;
+  return rounded.toLocaleString('en-US') + '+';
+}
+
 const EXAM_PRICING = {
   cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 21 },
-  ea:  { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  ea:  { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 13 },
   cma: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
-  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 13 },
   cfp: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
   cisa:{ annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
 };
 
+// Generate product descriptions dynamically from shared content stats
 const PRODUCT_INFO = {
   cpa: {
     name: 'VoraPrep CPA Exam Prep',
-    description: 'AI-powered CPA exam preparation — 5,000+ questions, adaptive engine, Vory AI tutor, TBS simulations.',
+    description: `AI-powered CPA exam preparation — ${formatDisplayCount(CONTENT_STATS.cpa.questions)} questions, adaptive engine, Vory AI tutor, TBS simulations.`,
   },
   ea: {
     name: 'VoraPrep EA Exam Prep',
-    description: 'AI-powered Enrolled Agent exam preparation — 2,100+ questions, all 3 SEE parts, Vory AI tutor.',
+    description: `AI-powered Enrolled Agent exam preparation — ${formatDisplayCount(CONTENT_STATS.ea.questions)} questions, all 3 SEE parts, Vory AI tutor.`,
   },
   cma: {
     name: 'VoraPrep CMA Exam Prep',
-    description: 'AI-powered CMA exam preparation — 1,900+ questions, both parts, Vory AI tutor.',
+    description: `AI-powered CMA exam preparation — ${formatDisplayCount(CONTENT_STATS.cma.questions)} questions, both parts, Vory AI tutor.`,
   },
   cia: {
     name: 'VoraPrep CIA Exam Prep',
-    description: 'AI-powered CIA exam preparation — 1,500+ questions, all 3 parts, Vory AI tutor.',
+    description: `AI-powered CIA exam preparation — ${formatDisplayCount(CONTENT_STATS.cia.questions)} questions, all 3 parts, Vory AI tutor.`,
   },
   cfp: {
     name: 'VoraPrep CFP Exam Prep',
-    description: 'AI-powered CFP exam preparation — 2,200+ questions, 8 domains, Vory AI tutor, case studies.',
+    description: `AI-powered CFP exam preparation — ${formatDisplayCount(CONTENT_STATS.cfp.questions)} questions, 8 domains, Vory AI tutor, case studies.`,
   },
   cisa: {
     name: 'VoraPrep CISA Exam Prep',
-    description: 'AI-powered CISA exam preparation — 1,500+ questions, 5 domains, Vory AI tutor.',
+    description: `AI-powered CISA exam preparation — ${formatDisplayCount(CONTENT_STATS.cisa.questions)} questions, 5 domains, Vory AI tutor.`,
   },
 };
 

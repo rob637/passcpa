@@ -379,7 +379,7 @@ Must reduce expenses by:
 ### Superfunding
 
 Can contribute 5 years of annual exclusion at once:
-- $90,000 single / $180,000 married (2024)
+- $95,000 single / $190,000 married (2026)
 - Must not give additional gifts to beneficiary for 5 years
 
 ---
@@ -479,8 +479,8 @@ Student has $15,000 expenses:
         answer: "No. AOTC is only for the first four years of post-secondary education. Graduate students can use LLC (20% × $8,000 = $1,600 credit) or 529 distributions."
       },
       {
-        question: "A parent wants to fund a 529 with $90,000 at once. What are the gift tax implications?",
-        answer: "They can use superfunding: Treat as 5-year gift ($90,000 ÷ 5 = $18,000/year). No gift tax if they elect on Form 709 and make no additional gifts to that beneficiary for 5 years."
+        question: "A parent wants to fund a 529 with $95,000 at once. What are the gift tax implications?",
+        answer: "They can use superfunding: Treat as 5-year gift ($95,000 ÷ 5 = $19,000/year). No gift tax if they elect on Form 709 and make no additional gifts to that beneficiary for 5 years."
       }
     ],
     relatedLessons: ["CFP-GEN-L004", "CFP-TAX-L001", "CFP-TAX-L007"]
@@ -812,11 +812,11 @@ Alternate years to exceed standard deduction threshold.
 
 | Year | Natural Itemized | Strategy | Result |
 |------|-----------------|----------|--------|
-| 2024 | $11,000 | Prepay $8,000 to 2024 | $19,000 itemized |
-| 2025 | $11,000 | Reduce by $8,000 | Standard ($14,600) |
+| 2026 | $11,000 | Prepay $8,000 to 2026 | $19,000 itemized |
+| 2027 | $11,000 | Reduce by $8,000 | Standard ($15,350) |
 
-**Without bunching**: Standard deduction both years = $29,200 total
-**With bunching**: $19,000 + $14,600 = $33,600 total
+**Without bunching**: Standard deduction both years = $30,700 total
+**With bunching**: $19,000 + $15,350 = $34,350 total
 
 **Extra deduction**: $4,400
 
@@ -977,8 +977,8 @@ Unearned income of children taxed at parent's rate:
     ],
     practiceProblems: [
       {
-        question: "A couple normally has $12,000 in itemized deductions annually. The standard deduction is $29,200 MFJ. How can bunching help?",
-        answer: "Bunch two years: $24,000 in Year 1 (prepay charity, property tax). Year 1: itemize $24,000 (loses to standard). This doesn't help. Alternative: Give to DAF to make Year 1 exceed $29,200. With $12K + $20K DAF = $32K, itemize in Year 1, standard in Year 2. Benefit: $32K + $29.2K = $61.2K vs. 2 × $29.2K = $58.4K. Extra: $2,800."
+        question: "A couple normally has $12,000 in itemized deductions annually. The standard deduction is $30,700 MFJ. How can bunching help?",
+        answer: "Bunch two years: $24,000 in Year 1 (prepay charity, property tax). Year 1: itemize $24,000 (loses to standard). This doesn't help. Alternative: Give to DAF to make Year 1 exceed $30,700. With $12K + $20K DAF = $32K, itemize in Year 1, standard in Year 2. Benefit: $32K + $30.7K = $62.7K vs. 2 × $30.7K = $61.4K. Extra: $1,300."
       },
       {
         question: "A retiree is 62 with no earned income and $40,000 from investments. Should they do a Roth conversion?",
@@ -986,7 +986,7 @@ Unearned income of children taxed at parent's rate:
       },
       {
         question: "What is the kiddie tax, and when does it apply?",
-        answer: "Kiddie tax taxes a child's unearned income above $2,600 (2024) at the parent's marginal rate. Applies to children under 19, or under 24 if full-time student. Limits benefit of shifting investment income to children."
+        answer: "Kiddie tax taxes a child's unearned income above $2,700 (2026) at the parent's marginal rate. Applies to children under 19, or under 24 if full-time student. Limits benefit of shifting investment income to children."
       }
     ],
     relatedLessons: ["CFP-TAX-L001", "CFP-TAX-L003", "CFP-RET-L016"]

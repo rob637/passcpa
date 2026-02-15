@@ -531,9 +531,9 @@ Business owners have unique retirement planning opportunities—and challenges�
 | Plan | Max Employer | Max Employee | Admin Burden | Best For |
 |------|--------------|--------------|--------------|----------|
 | **SEP-IRA** | 25% (20% SE) | None | Low | Variable income, few employees |
-| **SIMPLE IRA** | 3% match | $16,000 | Low | Small employers, want employee contributions |
-| **Solo 401(k)** | 25% | $23,000 | Medium | Solo practitioners |
-| **Regular 401(k)** | 25% | $23,000 | Higher | Larger businesses |
+| **SIMPLE IRA** | 3% match | $17,000 | Low | Small employers, want employee contributions |
+| **Solo 401(k)** | 25% | $24,500 | Medium | Solo practitioners |
+| **Regular 401(k)** | 25% | $24,500 | Higher | Larger businesses |
 | **Traditional DB** | Actuarial | None | Highest | Older owners, stable income |
 | **Cash Balance** | Actuarial | None | High | Professionals wanting high contributions |
 
@@ -545,21 +545,21 @@ Business owners have unique retirement planning opportunities—and challenges�
 
 Self-employed with **no employees** (except spouse).
 
-### Contribution Limits (2024)
+### Contribution Limits (2026)
 
 | Type | Maximum |
 |------|---------|
-| **Employee deferral** | $23,000 ($30,500 if 50+) |
+| **Employee deferral** | $24,500 ($32,000 if 50+) |
 | **Employer contribution** | 20% of net SE income |
-| **Total** | $69,000 ($76,500 if 50+) |
+| **Total** | $71,500 ($79,000 if 50+) |
 
 ### Example
 
 | Income | Employee Deferral | Employer (20%) | Total |
 |--------|-------------------|----------------|-------|
-| $100,000 | $23,000 | $20,000 | $43,000 |
-| $200,000 | $23,000 | $40,000 | $63,000 |
-| $345,000+ | $23,000 | $69,000 | $69,000 (max) |
+| $100,000 | $24,500 | $20,000 | $44,500 |
+| $200,000 | $24,500 | $40,000 | $64,500 |
+| $360,000+ | $24,500 | $71,500 | $71,500 (max) |
 
 ### Solo 401(k) Advantages
 
@@ -578,12 +578,12 @@ Solo 401(k) beats SEP when you can contribute **employee deferrals + employer co
 
 | Net SE Income | SEP (20%) | Solo 401(k) | Advantage |
 |---------------|-----------|-------------|-----------|
-| $50,000 | $10,000 | $33,000 ($23K + $10K) | Solo +$23,000 |
-| $100,000 | $20,000 | $43,000 | Solo +$23,000 |
-| $200,000 | $40,000 | $63,000 | Solo +$23,000 |
-| $345,000+ | $69,000 | $69,000 | Equal |
+| $50,000 | $10,000 | $34,500 ($24.5K + $10K) | Solo +$24,500 |
+| $100,000 | $20,000 | $44,500 | Solo +$24,500 |
+| $200,000 | $40,000 | $64,500 | Solo +$24,500 |
+| $360,000+ | $71,500 | $71,500 | Equal |
 
-> **Solo 401(k) is almost always better** for solo practitioners with income under ~$345,000.
+> **Solo 401(k) is almost always better** for solo practitioners with income under ~$360,000.
 
 ---
 
@@ -598,10 +598,10 @@ Solo 401(k) beats SEP when you can contribute **employee deferrals + employer co
 | **Want large deductions** | DB limits exceed DC limits |
 | **Few/no employees** | Coverage costs minimal |
 
-### Maximum Benefit (2024)
+### Maximum Benefit (2026)
 
 Annual benefit cannot exceed:
-- **$275,000/year** lifetime annuity starting at 62, OR
+- **$290,000/year** lifetime annuity starting at 62, OR
 - 100% of average highest 3-year compensation
 
 ### Contribution Calculation
@@ -702,7 +702,7 @@ If you have employees, contribution levels must be similar across covered employ
       "Combine DB + 401(k) for maximum contributions and flexibility"
     ],
     keyFormulas: [
-      "Solo 401(k) Employee = $23,000 ($30,500 if 50+)",
+      "Solo 401(k) Employee = $24,500 ($32,000 if 50+)",
       "Solo 401(k) Employer = 20% of Net SE Income",
       "SEP (Self-Employed) = 20% of Net SE Income",
       "DB Max Benefit = $275,000/year or 100% of 3-year average"
@@ -710,7 +710,7 @@ If you have employees, contribution levels must be similar across covered employ
     practiceProblems: [
       {
         question: "A 45-year-old solo consultant has $150,000 net SE income. Compare maximum SEP vs. Solo 401(k) contributions (under 50, so no catch-up).",
-        answer: "SEP: $150,000 × 20% = $30,000. Solo 401(k): $23,000 (employee) + $30,000 (employer 20%) = $53,000. Solo 401(k) allows $23,000 more."
+        answer: "SEP: $150,000 × 20% = $30,000. Solo 401(k): $24,500 (employee) + $30,000 (employer 20%) = $54,500. Solo 401(k) allows $24,500 more."
       },
       {
         question: "A 58-year-old physician wants to maximize retirement contributions. What plan type allows the largest contribution?",
@@ -844,14 +844,14 @@ Convert Traditional IRA to Roth during low-income years:
 
 **Result**: Reduced future RMDs + tax-free Roth growth
 
-### Bracket Boundaries to Know (2024)
+### Bracket Boundaries to Know (2026)
 
 | MFJ Bracket | Top of Bracket |
 |-------------|----------------|
-| 10% | $23,200 |
-| 12% | $94,300 |
-| 22% | $201,050 |
-| 24% | $383,900 |
+| 10% | $24,500 |
+| 12% | $99,550 |
+| 22% | $212,300 |
+| 24% | $405,400 |
 
 ---
 

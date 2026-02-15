@@ -1,6 +1,6 @@
 /**
  * VoraPrep CFP® Lesson Matrix
- * Certified Financial Planner™ Certification Examination - 2024+ Curriculum
+ * Certified Financial Planner™ Certification Examination - 2026 Curriculum
  * 
  * This matrix maps all CFP lessons to the 8 Principal Knowledge Domains
  * as defined by the CFP Board's exam content outline.
@@ -463,7 +463,7 @@ export const CFP_GEN_LESSONS: CFPLessonMatrixEntry[] = [
     duration: 50,
     order: 17,
     keyFormulas: [
-      'Maximum 5-Year Gift: $18,000 × 5 = $90,000 per beneficiary (2024)',
+      'Maximum 5-Year Gift: $19,000 × 5 = $95,000 per beneficiary (2026)',
       'Non-Qualified Penalty: 10% on earnings + ordinary income tax'
     ]
   },

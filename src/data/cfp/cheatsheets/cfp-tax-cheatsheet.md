@@ -66,7 +66,7 @@
 | Deduction | Limit/Notes |
 |-----------|-------------|
 | Traditional IRA | $7,500 (+$1,000 catch-up) |
-| HSA | $4,400/$8,750 (+$1,000 catch-up) |
+| HSA | $4,450/$8,900 (+$1,000 catch-up) |
 | Self-employment tax | 50% deductible |
 | Self-employed health insurance | 100% if profitable |
 | Student loan interest | Up to $2,500 |
@@ -142,13 +142,13 @@
 - **Short-term**: ≤1 year (ordinary rates)
 - **Long-term**: >1 year (preferential rates)
 
-### Long-Term Capital Gains Rates (2024)
+### Long-Term Capital Gains Rates (2026)
 
 | Rate | Single | MFJ |
 |------|--------|-----|
-| 0% | $0 - $47,025 | $0 - $94,050 |
-| 15% | $47,026 - $518,900 | $94,051 - $583,750 |
-| 20% | Over $518,900 | Over $583,750 |
+| 0% | $0 - $48,350 | $0 - $96,700 |
+| 15% | $48,351 - $533,400 | $96,701 - $600,050 |
+| 20% | Over $533,400 | Over $600,050 |
 
 ### Net Investment Income Tax (NIIT)
 - **3.8%** additional tax on lesser of:
@@ -167,16 +167,16 @@
 
 ## Alternative Minimum Tax (AMT)
 
-### 2024 Exemption
+### 2026 Exemption
 
 | Status | Exemption | Phase-out Start |
-|--------|-----------|-----------------|
-| Single | $85,700 | $609,350 |
-| MFJ | $133,300 | $1,218,700 |
-| MFS | $66,650 | $609,350 |
+|--------|-----------|-----------------|  
+| Single | $90,200 | $626,350 |
+| MFJ | $140,500 | $1,252,700 |
+| MFS | $70,250 | $626,350 |
 
 ### AMT Rates
-- **26%** on AMTI up to $232,600 ($116,300 MFS)
+- **26%** on AMTI up to $239,100 ($119,550 MFS)
 - **28%** on AMTI above threshold
 
 ### Common AMT Adjustments
@@ -188,9 +188,9 @@
 
 ## Self-Employment Tax
 
-### 2024 Rules
-- **15.3%** on first $168,600 (12.4% SS + 2.9% Medicare)
-- **2.9%** Medicare only above $168,600
+### 2026 Rules
+- **15.3%** on first $176,100 (12.4% SS + 2.9% Medicare)
+- **2.9%** Medicare only above $176,100
 - **0.9%** Additional Medicare Tax over $200K/$250K
 
 ### Deduction
@@ -205,12 +205,12 @@
 - **20%** deduction of qualified business income
 - Applies to pass-through entities (S-corps, partnerships, sole proprietors)
 
-### Income Limits (2024)
+### Income Limits (2026)
 
 | Status | Full Deduction | Phase-out Range |
-|--------|----------------|-----------------|
-| Single | Below $191,950 | $191,950 - $241,950 |
-| MFJ | Below $383,900 | $383,900 - $483,900 |
+|--------|----------------|-----------------|  
+| Single | Below $197,300 | $197,300 - $247,300 |
+| MFJ | Below $394,600 | $394,600 - $494,600 |
 
 ### SSTB Limitation
 - Specified Service Trades/Businesses (law, health, consulting, etc.)
@@ -259,13 +259,13 @@ Above thresholds: Lesser of:
 ## Gift and Estate Tax Integration
 
 ### Annual Gift Exclusion
-- **$18,000** per donee (2024)
-- **$36,000** married couple (gift splitting)
+- **$19,000** per donee (2026)
+- **$38,000** married couple (gift splitting)
 - Unlimited: Medical/education paid directly
 
 ### Lifetime Exemption
-- **$13.61 million** per person (2024)
-- **$27.22 million** per married couple (with portability)
+- **$7.0 million** per person (2026, post-TCJA sunset)
+- **$14.0 million** per married couple (with portability)
 
 ### Gift Tax Rate
 - **40%** on gifts exceeding lifetime exemption
@@ -306,7 +306,7 @@ Above thresholds: Lesser of:
 
 ## Exam Tips
 
-1. **Know 2024 numbers**: Brackets, standard deduction, credit amounts
+1. **Know 2026 numbers**: Brackets, standard deduction, credit amounts
 2. **Filing status order**: HOH > MFJ split > Single (usually)
 3. **Above vs below the line**: AGI impact for other deductions
 4. **SALT cap**: $10,000 is key limitation

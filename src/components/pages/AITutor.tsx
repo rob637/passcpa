@@ -227,10 +227,12 @@ const AITutor: React.FC = () => {
     }
     
     // Check for lesson context (from LessonViewer navigation)
+    // NOTE: For lessons, we only customize the greeting - we DON'T auto-send
+    // The greeting already says "I see you're studying {topic}" which is enough
+    // User should be able to type their own question
     if (location.state?.lessonTitle) {
-      const lessonContext = `The student is studying: ${location.state.lessonTitle}. They want help understanding this topic. Provide a clear, focused explanation of this topic.`;
-      setContextFromPractice(lessonContext);
-      // Don't clear state yet - let buildGreeting use it first
+      // Don't set contextFromPractice - just let the greeting handle it
+      // The buildGreeting function will use location.state.lessonTitle
       return;
     }
     

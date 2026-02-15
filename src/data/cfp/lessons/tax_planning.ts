@@ -288,23 +288,23 @@ Income, gift, and estate taxes interact in complex ways. Understanding these con
 
 | Component | Explanation |
 |-----------|-------------|
-| **Unified credit** | Single lifetime exemption for gifts + estate (~$13.6M in 2024) |
+| **Unified credit** | Single lifetime exemption for gifts + estate (~$7.0M in 2026 - TCJA sunset) |
 | **Gift tax return** | Tracks taxable gifts reducing available exemption |
 | **Estate tax return** | Uses remaining exemption after lifetime gifts |
 | **Cumulative system** | Gifts reduce estate exemption dollar-for-dollar |
 
 ### Annual Exclusion vs. Lifetime Exemption
 
-| Type | Amount (2024) | Impact |
+| Type | Amount (2026) | Impact |
 |------|---------------|--------|
-| **Annual exclusion** | $18,000/recipient | No exemption used, no return required |
-| **Lifetime exemption** | ~$13.6 million | Gifts above annual exclusion reduce this |
+| **Annual exclusion** | $19,000/recipient | No exemption used, no return required |
+| **Lifetime exemption** | ~$7.0 million | Gifts above annual exclusion reduce this |
 
 ### Gift Tax Return (Form 709)
 
 Required when:
 - Gifts to any one person exceed annual exclusion
-- Gifts to non-citizen spouses exceed special limit ($185,000)
+- Gifts to non-citizen spouses exceed special limit ($190,000)
 - Gift-splitting elected with spouse
 - Gifts of future interests (no annual exclusion)
 
@@ -959,11 +959,11 @@ Small business owners have unique tax planning opportunities. Understanding thes
 
 ### Plan Comparison
 
-| Plan | Max Contribution (2024) | Best For |
+| Plan | Max Contribution (2026) | Best For |
 |------|------------------------|----------|
-| **SEP-IRA** | 25% of comp, up to $69,000 | Simple setup, fluctuating income |
-| **SIMPLE IRA** | $16,000 + 3% match | Small employer, employee participation |
-| **Solo 401(k)** | $23,000 + 25% of comp, up to $69,000 | Self-employed, maximize contributions |
+| **SEP-IRA** | 25% of comp, up to $71,500 | Simple setup, fluctuating income |
+| **SIMPLE IRA** | $17,000 + 3% match | Small employer, employee participation |
+| **Solo 401(k)** | $24,500 + 25% of comp, up to $71,500 | Self-employed, maximize contributions |
 | **Defined Benefit** | Actuarially determined (can exceed $200K) | High income, older owners |
 
 ### SEP-IRA
@@ -979,9 +979,9 @@ Small business owners have unique tax planning opportunities. Understanding thes
 
 | Feature | Detail |
 |---------|--------|
-| **Employee deferral** | $23,000 ($30,500 if 50+) |
+| **Employee deferral** | $24,500 ($32,000 if 50+) |
 | **Employer profit sharing** | Up to 25% of compensation |
-| **Total** | Up to $69,000 ($76,500 if 50+) |
+| **Total** | Up to $71,500 ($79,000 if 50+) |
 | **Roth option** | Available |
 | **Loans** | Available |
 
@@ -1273,12 +1273,12 @@ Each year, evaluate converting traditional IRA to Roth:
 
 ### Bracket Filling
 
-| Bracket | 2024 MFJ Threshold |
+| Bracket | 2026 MFJ Threshold |
 |---------|-------------------|
-| 12% | Up to $94,300 |
-| 22% | Up to $201,050 |
-| 24% | Up to $383,900 |
-| 32% | Up to $487,450 |
+| 12% | Up to $98,500 |
+| 22% | Up to $210,000 |
+| 24% | Up to $400,000 |
+| 32% | Up to $509,000 |
 
 **Strategy**: Convert enough to "fill" current bracket without jumping to next.
 

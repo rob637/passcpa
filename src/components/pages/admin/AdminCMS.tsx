@@ -795,9 +795,38 @@ const AdminCMS: React.FC = () => {
       querySnapshot.forEach((docSnap) => {
         const data = docSnap.data();
         const subData = subMap[docSnap.id];
+        
+        // Merge subscription data from subscriptions/{uid} collection
+        // The Stripe webhook writes to subscriptions/{uid}, NOT to users/{uid}.subscription
+        // So we need to build the subscription object from the sub doc if the user doc doesn't have one.
+        let subscription = data.subscription;
+        if (subData && (!subscription?.tier || subscription?.tier === 'free')) {
+          const subTier = subData.tier as string;
+          const subStatus = subData.status as string;
+          // Only override if the sub doc has real subscription data
+          if (subTier && subTier !== 'free') {
+            subscription = {
+              tier: subTier,
+              status: subStatus || 'active',
+              currentPeriodEnd: subData.currentPeriodEnd as { seconds: number } | undefined,
+              trialEnd: subData.trialEnd as { seconds: number } | undefined,
+              isFounderPricing: (subData.isFounder as boolean) || false,
+            };
+          } else if (subStatus === 'trialing' || subStatus === 'active') {
+            subscription = {
+              tier: subTier || data.subscription?.tier || 'free',
+              status: subStatus,
+              currentPeriodEnd: subData.currentPeriodEnd as { seconds: number } | undefined,
+              trialEnd: (subData.trialEnd || subData.currentPeriodEnd) as { seconds: number } | undefined,
+              isFounderPricing: (subData.isFounder as boolean) || false,
+            };
+          }
+        }
+        
         users.push({ 
           id: docSnap.id, 
           ...data,
+          subscription,
           // Attach per-exam trials from subscription doc
           _trials: (subData?.trials as Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>) || undefined,
         } as UserDocument);

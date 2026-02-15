@@ -4,6 +4,7 @@ import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';
+import { getCourseHomePath } from './utils/courseNavigation';
 import type { CourseId } from './types/course';
 
 // Layouts (always loaded - part of shell)
@@ -159,6 +160,11 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     return <Navigate to="/login" replace />;
   }
 
+  // Require email verification before accessing protected routes
+  if (!user.emailVerified && location.pathname !== '/verify-email') {
+    return <Navigate to="/verify-email" replace />;
+  }
+
   // Redirect to onboarding if not complete for the current course
   // Check per-course onboarding status (with fallback to legacy global flag for existing users)
   if (!skipOnboarding && userProfile && location.pathname !== '/onboarding') {
@@ -217,6 +223,11 @@ const PublicRoute = ({ children }: RouteProps) => {
   }
 
   if (user) {
+    // Unverified users should stay on verify-email
+    if (!user.emailVerified) {
+      return <Navigate to="/verify-email" replace />;
+    }
+
     // If user is already logged in and came from an exam-specific page
     // (e.g., /register?course=ea), redirect to that course's dashboard
     const courseParam = searchParams.get('course')?.toLowerCase();
@@ -224,11 +235,7 @@ const PublicRoute = ({ children }: RouteProps) => {
       // Save course preference so CourseProvider picks it up
       saveCoursePreference(courseParam as CourseId);
       localStorage.setItem('pendingCourse', courseParam);
-      const dashboardMap: Record<string, string> = {
-        cpa: '/home', ea: '/ea/home', cma: '/cma/home',
-        cia: '/cia/home', cfp: '/cfp/home', cisa: '/cisa/home',
-      };
-      return <Navigate to={dashboardMap[courseParam] || '/home'} replace />;
+      return <Navigate to={getCourseHomePath(courseParam as CourseId)} replace />;
     }
     return <Navigate to="/home" replace />;
   }

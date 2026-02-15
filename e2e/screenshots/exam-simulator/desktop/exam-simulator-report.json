@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-14T15:37:41.942Z",
+  "timestamp": "2026-02-15T20:42:01.741Z",
   "viewport": "desktop",
   "results": [
     {
@@ -225,13 +225,7 @@
       "d": ""
     }
   ],
-  "consoleErrors": [
-    "[2026-02-14T15:35:22.346Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.347Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.347Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.368Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.470Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
-  ],
+  "consoleErrors": [],
   "summary": {
     "PASS": 37,
     "FAIL": 0,

@@ -27,11 +27,14 @@ import {
   Play,
   ClipboardCheck,
   X,
+  Calculator,
 } from 'lucide-react';
 import clsx from 'clsx';
 import feedback from '../../../services/feedback';
 import logger from '../../../utils/logger';
 import { getShuffledIndices } from '../../../utils/questionShuffle';
+import '../../../styles/prometric.css';
+import '../../../styles/pearsonvue.css';
 
 // ============================================
 // Types
@@ -83,6 +86,8 @@ export interface ExamResult {
   bySection: Record<string, { correct: number; total: number; name: string }>;
 }
 
+export type TestingProvider = 'prometric' | 'pearsonvue';
+
 export interface ExamSimulatorConfig<SectionId extends string = string> {
   // Course identity
   courseId: string;
@@ -90,6 +95,9 @@ export interface ExamSimulatorConfig<SectionId extends string = string> {
   courseIcon?: React.ReactNode;
   courseDescription: string;
   backPath: string;
+  
+  // Testing provider theme (optional - enables realistic exam interface toggle)
+  testingProvider?: TestingProvider;
   
   // Section configuration
   sections: Record<SectionId, SectionInfo>;
@@ -250,11 +258,16 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     passingScore = 70,
     allowMultiSectionSelect = false,
     getModes,
+    testingProvider,
   } = config;
 
   // Setup state
   const [selectedSection, setSelectedSection] = useState<SectionId>(defaultSection);
   const [selectedSections, setSelectedSections] = useState<SectionId[]>([defaultSection]);
+  
+  // Realistic theme toggle (only available when testingProvider is set)
+  const [useRealisticTheme, setUseRealisticTheme] = useState(false);
+  const [showCalculator, setShowCalculator] = useState(false);
   
   // Compute active modes based on selected section
   const activeModes = getModes ? getModes(selectedSection) : modes;

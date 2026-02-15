@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-14T14:46:57.055Z",
+  "timestamp": "2026-02-15T20:27:17.144Z",
   "viewport": "desktop",
   "mode": "quick",
   "totalAudited": 10,
   "issues": [],
   "sectionStats": {
-    "CFP-PCR": {
+    "FAR": {
       "audited": 10,
       "issues": 0
     }

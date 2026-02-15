@@ -31,6 +31,7 @@ import { ExamSection } from '../../types';
 import { generateStudyPlan, calculatePaceStatus, type PaceStatus } from '../../utils/studyPlanner';
 import { fetchAllLessons } from '../../services/lessonService';
 import { getTBSHistory } from '../../services/questionHistoryService';
+import { getTopicToBlueprintAreaMap } from '../../services/questionService';
 import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
 import { calculateBlueprintAnalytics, BlueprintAnalytics, QuestionAttempt } from '../../utils/blueprintAnalytics';
 import { BlueprintHeatMap, WeightComparisonChart, SmartRecommendations, AnalyticsSummary } from '../analytics/BlueprintAnalyticsComponents';
@@ -517,6 +518,14 @@ const Progress: React.FC = () => {
         if (getLessonProgress) {
           lessonProgressData = await getLessonProgress();
         }
+
+        // Build topic-to-blueprintArea mapping from question data
+        // Topics in daily logs are human-readable names (e.g., "Definition of Internal Auditing")
+        // but blueprint area IDs are codes (e.g., "CIA1-I"). This mapping bridges the two.
+        const topicToBpMap = await getTopicToBlueprintAreaMap(
+          courseId || undefined,
+          isSingleExamCourse ? undefined : currentSection
+        );
         
         const calculatedUnitStats: UnitStats[] = blueprintAreas.map(bp => {
           // Find lessons for this blueprint area
@@ -526,11 +535,14 @@ const Progress: React.FC = () => {
             l.id?.startsWith(bp.id.toLowerCase())
           );
           
-          // Find topic performance for this area
-          const areaTopics = topicsData.filter(t => 
-            t.topic?.startsWith(bp.id) || 
-            t.id?.startsWith(bp.id)
-          );
+          // Find topic performance for this area using the question-based mapping
+          const areaTopics = topicsData.filter(t => {
+            // Primary: use question data to map topic name → blueprint area
+            const mappedArea = topicToBpMap.get(t.topic);
+            if (mappedArea === bp.id) return true;
+            // Fallback: prefix matching (works for exams where topics start with area ID)
+            return t.topic?.startsWith(bp.id) || t.id?.startsWith(bp.id);
+          });
           
           const lessonsComplete = areaLessons.filter(l => 
             lessonProgressData[l.id]?.status === 'completed' || 

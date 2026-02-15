@@ -640,6 +640,36 @@ export async function fetchAdaptiveQuestions(input: AdaptiveSelectionInput): Pro
 }
 
 /**
+ * Build a mapping from topic name to blueprintArea ID for given sections.
+ * Used by the Progress page to associate topic performance with blueprint areas.
+ */
+export async function getTopicToBlueprintAreaMap(
+  courseId?: string,
+  section?: string
+): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  try {
+    const sections = section
+      ? [section]
+      : courseId
+        ? getSectionsForCourse(courseId as CourseId)
+        : getAllSections();
+
+    for (const s of sections) {
+      const questions = await loadSectionQuestions(s);
+      questions.forEach(q => {
+        if (q.topic && q.blueprintArea) {
+          map.set(q.topic, q.blueprintArea);
+        }
+      });
+    }
+  } catch (error) {
+    logger.error('Error building topic-to-blueprint mapping:', error);
+  }
+  return map;
+}
+
+/**
  * Get all unique topics for a section
  */
 export async function getTopicsForSection(section: ExamSection): Promise<string[]> {

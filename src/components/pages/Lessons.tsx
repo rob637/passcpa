@@ -469,9 +469,9 @@ const Lessons: React.FC = () => {
                           {lesson.difficulty && (
                             <span className={clsx(
                               'px-2 py-0.5 rounded text-xs font-medium',
-                              lesson.difficulty === 'beginner' && 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-                              lesson.difficulty === 'intermediate' && 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
-                              lesson.difficulty === 'advanced' && 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                              (lesson.difficulty === 'beginner' || lesson.difficulty === 'easy') && 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+                              (lesson.difficulty === 'intermediate' || lesson.difficulty === 'medium') && 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                              (lesson.difficulty === 'advanced' || lesson.difficulty === 'hard') && 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
                             )}>
                               {lesson.difficulty}
                             </span>

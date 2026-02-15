@@ -1082,13 +1082,13 @@ const LessonViewer: React.FC = () => {
           )}
 
           <Link 
-            to={`/ai-tutor?returnTo=${encodeURIComponent(`/lessons/${lesson.id}`)}`}
+            to={`/ai-tutor?returnTo=${encodeURIComponent(`/lessons/${lesson.id}${fromDailyPlan ? `?from=dailyplan${activityId ? `&activityId=${activityId}` : ''}` : ''}`)}`}
             state={{ 
               lessonTitle: lesson.title, 
               lessonId: lesson.id,
               section: lesson.section,
               topic: lesson.topics?.[lesson.topics.length - 1],
-              returnTo: `/lessons/${lesson.id}`
+              returnTo: `/lessons/${lesson.id}${fromDailyPlan ? `?from=dailyplan${activityId ? `&activityId=${activityId}` : ''}` : ''}`
             }}
             className="card p-4 hover:shadow-md transition-shadow group"
           >

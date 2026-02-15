@@ -143,6 +143,7 @@ const config: ExamSimulatorConfig<CIASectionId> = {
   courseName: 'CIA',
   courseDescription: 'Practice with realistic exam conditions for the IIA Certified Internal Auditor exam',
   backPath: '/cia/dashboard',
+  testingProvider: 'pearsonvue',
   sections: CIA_SECTIONS,
   defaultSection: 'CIA1',
   modes: CIA_EXAM_MODES,

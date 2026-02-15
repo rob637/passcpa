@@ -124,6 +124,7 @@ const config: ExamSimulatorConfig<CISASectionId> = {
   courseName: 'CISA',
   courseDescription: 'Practice with realistic exam conditions for the ISACA Certified Information Systems Auditor exam',
   backPath: '/cisa/dashboard',
+  testingProvider: 'pearsonvue',
   sections: CISA_SECTIONS,
   defaultSection: 'CISA1',
   modes: CISA_EXAM_MODES,

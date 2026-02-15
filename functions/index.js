@@ -29,8 +29,17 @@ const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET?.trim();
 // Publishable key is not secret but varies per environment (test vs live)
 const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_51SzK1cQ9jgQM2iI4Iy1B5iRE5mi17YHRIS1R24vJRX9Cyrvc8W1Q0fjpJMFAfI1DSO3OziMXWFjQ8umbQZhxvFK300AKFvcEJb';
 
-// Base URL for redirects — defaults to production, override via env for dev/staging
-const APP_BASE_URL = process.env.APP_BASE_URL || 'https://voraprep.com';
+// Base URL for redirects — auto-detects from Firebase project ID, override via env
+function detectAppBaseUrl() {
+  if (process.env.APP_BASE_URL) return process.env.APP_BASE_URL;
+  // Auto-detect environment from Firebase project ID
+  const projectId = process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT ||
+    (process.env.FIREBASE_CONFIG ? JSON.parse(process.env.FIREBASE_CONFIG).projectId : null);
+  if (projectId === 'passcpa-dev') return 'https://passcpa-dev.web.app';
+  if (projectId === 'voraprep-staging') return 'https://voraprep-staging.web.app';
+  return 'https://voraprep.com'; // production default
+}
+const APP_BASE_URL = detectAppBaseUrl();
 
 // Allowed origins for Stripe redirect URLs (prevents open redirect)
 const ALLOWED_ORIGINS = [
@@ -209,7 +218,7 @@ exports.sendCustomPasswordReset = onCall({
   try {
     // Generate Firebase password reset link
     const resetLink = await admin.auth().generatePasswordResetLink(email, {
-      url: 'https://voraprep.com/login',
+      url: `${APP_BASE_URL}/login`,
     });
 
     // Send branded email via Resend
@@ -309,7 +318,7 @@ function getPasswordResetEmailHTML(email, resetLink) {
         <strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner
       </p>
       <p style="margin: 15px 0 0 0;">
-        <a href="https://voraprep.com" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+        <a href="${APP_BASE_URL}" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
       </p>
     </div>
     
@@ -408,7 +417,7 @@ exports.sendDailyReminders = onSchedule({
           },
           webpush: {
             fcmOptions: {
-              link: 'https://voraprep.com/study'
+              link: `${APP_BASE_URL}/study`
             }
           }
         });
@@ -605,7 +614,7 @@ exports.sendOnboardingReminders = onSchedule({
             <li><strong>${skippedCount}</strong> skipped (unverified email)</li>
             <li><strong>${errorCount}</strong> errors</li>
           </ul>
-          <p><a href="https://voraprep.com/admin/cms">View Admin CMS</a></p>
+          <p><a href="${APP_BASE_URL}/admin/cms">View Admin CMS</a></p>
         `,
       });
     }
@@ -665,7 +674,7 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
       
       <!-- CTA Button -->
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/onboarding" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+        <a href="${APP_BASE_URL}/onboarding" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
           Complete My Setup →
         </a>
       </div>
@@ -682,7 +691,7 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
         VoraPrep - ${courseConfig.tagline}
       </p>
       <p style="font-size: 11px; margin-top: 10px;">
-        <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
       </p>
     </div>
     
@@ -838,7 +847,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
       
       <!-- CTA Button -->
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+        <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
           Upgrade Now →
         </a>
       </div>
@@ -855,7 +864,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
         VoraPrep - ${courseConfig.tagline}
       </p>
       <p style="font-size: 11px; margin-top: 10px;">
-        <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
       </p>
     </div>
     
@@ -1151,7 +1160,7 @@ function generateWeeklyReportEmail(userData, stats) {
   
   <!-- CTA Button -->
   <div style="text-align: center; margin: 30px 0;">
-    <a href="https://voraprep.com/practice" style="display: inline-block; background: #2563eb; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    <a href="${APP_BASE_URL}/practice" style="display: inline-block; background: #2563eb; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
       Continue Studying →
     </a>
   </div>
@@ -1160,7 +1169,7 @@ function generateWeeklyReportEmail(userData, stats) {
   <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 30px; text-align: center; color: #94a3b8; font-size: 12px;">
     <p>VoraPrep - ${courseConfig.tagline}</p>
     <p>
-      <a href="https://voraprep.com/settings" style="color: #64748b;">Manage email preferences</a>
+      <a href="${APP_BASE_URL}/settings" style="color: #64748b;">Manage email preferences</a>
     </p>
     <p style="margin-top: 15px; font-size: 11px;">
       ${courseConfig.disclaimer}
@@ -1247,7 +1256,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     </div>
     
     <div style="text-align: center; margin: 35px 0;">
-      <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
+      <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
         Start Studying Now →
       </a>
     </div>
@@ -1263,7 +1272,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
   
   <!-- Footer -->
   <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
-    <p>Questions? Reply to this email or visit our <a href="https://voraprep.com" style="color: #64748b;">website</a></p>
+    <p>Questions? Reply to this email or visit our <a href="${APP_BASE_URL}" style="color: #64748b;">website</a></p>
     <p style="margin-top: 15px;">
       VoraPrep - ${courseConfig.tagline}
     </p>
@@ -1315,7 +1324,7 @@ function generateWaitlistEmail(email) {
       <div style="font-size: 16px; opacity: 0.95; margin-bottom: 15px;">
         Get <strong>14 days free</strong> with full access to all features!
       </div>
-      <a href="https://voraprep.com/register" style="display: inline-block; background: white; color: #059669; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+      <a href="${APP_BASE_URL}/register" style="display: inline-block; background: white; color: #059669; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
         Create Your Free Account →
       </a>
     </div>
@@ -2005,7 +2014,7 @@ function getWelcomeSubscriberEmailHTML(name, courseId, isFounder) {
       ` : ''}
       
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+        <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
           Start Studying
         </a>
       </div>
@@ -2059,7 +2068,7 @@ function getPaymentFailedEmailHTML(name) {
       </p>
       
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/settings" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+        <a href="${APP_BASE_URL}/settings" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
           Update Payment Method
         </a>
       </div>

@@ -452,7 +452,7 @@ const Flashcards: React.FC = () => {
                 params.set('completed', 'true');
                 navigate(`/home?${params.toString()}`);
               } else {
-                navigate('/study');
+                navigate('/home');
               }
             }}>
               {fromDailyPlan ? 'Back to Daily Plan' : 'Done'}

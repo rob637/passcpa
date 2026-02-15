@@ -243,7 +243,8 @@ interface UserDocument {
   isAdmin?: boolean;
   createdAt?: { seconds: number; nanoseconds: number };
   examSection?: string;
-  courseId?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
+  activeCourse?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
+  courseId?: string; // Legacy alias for activeCourse
   lastLogin?: string; // If you track this
   onboardingComplete?: boolean;
   onboardingCompleted?: Record<string, boolean>; // Per-course onboarding status
@@ -777,7 +778,7 @@ const AdminCMS: React.FC = () => {
     // Apply course filter
     if (userCourseFilter !== 'all') {
       result = result.filter(u => {
-        const userCourse = u.courseId || 'cpa';
+        const userCourse = u.activeCourse || u.courseId || 'cpa';
         return userCourse === userCourseFilter;
       });
     }
@@ -828,8 +829,8 @@ const AdminCMS: React.FC = () => {
       users.forEach(u => {
         const createdAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
         
-        // Count by course (new courseId field or default to 'cpa')
-        const courseId = u.courseId || 'cpa';
+        // Count by course (activeCourse is the canonical field, courseId is legacy)
+        const courseId = u.activeCourse || u.courseId || 'cpa';
         if (byCourse[courseId] !== undefined) {
           byCourse[courseId]++;
         } else {
@@ -1477,7 +1478,7 @@ const AdminCMS: React.FC = () => {
     usersList.forEach(u => {
       const tier = u.subscription?.tier;
       const status = u.subscription?.status;
-      const courseId = (u.courseId || 'cpa') as keyof typeof EXAM_PRICING;
+      const courseId = (u.activeCourse || u.courseId || 'cpa') as keyof typeof EXAM_PRICING;
       const isFounder = u.subscription?.isFounderPricing;
       
       if (status === 'active' || status === 'trialing') {
@@ -2121,7 +2122,7 @@ const AdminCMS: React.FC = () => {
                 <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Users by Course</h4>
                 <div className="flex flex-wrap gap-3">
                   {getActiveCourses().map(course => {
-                    const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
+                    const count = usersList.filter(u => (u.activeCourse || u.courseId || 'cpa') === course.id).length;
                     const colorClass = course.id === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                        course.id === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
                                        course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
@@ -2168,7 +2169,7 @@ const AdminCMS: React.FC = () => {
                       <p className="font-semibold text-gray-900 dark:text-white">{lookupResult.email || 'No email'}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">{lookupResult.id}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                        Course: {(lookupResult.courseId || 'cpa').toUpperCase()} • 
+                        Course: {(lookupResult.activeCourse || lookupResult.courseId || 'cpa').toUpperCase()} • 
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
                         Status: {lookupResult.subscription?.status || 'N/A'}
@@ -2395,7 +2396,7 @@ const AdminCMS: React.FC = () => {
                                   // Legacy: show single trial
                                   const endDate = new Date(legacyTrialEnd.seconds * 1000);
                                   const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-                                  const examId = u.courseId || 'cpa';
+                                  const examId = u.activeCourse || u.courseId || 'cpa';
                                   if (daysLeft > 0) {
                                     activeTrials.push({ examId, endDate, daysLeft });
                                   } else {
@@ -3334,7 +3335,7 @@ const AdminCMS: React.FC = () => {
                         const csv = [
                           'Email,UID,Course,Section,Subscription,IsAdmin,CreatedAt',
                           ...usersList.map(u => 
-                            `"${u.email || ''}","${u.id}","${u.courseId || 'cpa'}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
+                            `"${u.email || ''}","${u.id}","${u.activeCourse || u.courseId || 'cpa'}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
                           )
                         ].join('\n');
                         const blob = new Blob([csv], { type: 'text/csv' });
@@ -4010,7 +4011,7 @@ const AdminCMS: React.FC = () => {
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
                   <div className="flex gap-3 mt-2 text-sm">
-                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{(selectedUser.courseId || 'cpa').toUpperCase()}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{(selectedUser.activeCourse || selectedUser.courseId || 'cpa').toUpperCase()}</span>
                     <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
                     <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
                     {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}

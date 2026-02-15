@@ -31,7 +31,7 @@ const dataCache = new Map<CourseId, CourseData>();
  *
  * @example
  * const data = await loadCourseData('cpa');
- * console.log(data.questions.length); // 5033
+ * console.log(data.questions.length); // 6203
  */
 export async function loadCourseData(courseId: CourseId): Promise<CourseData> {
   const cached = dataCache.get(courseId);

@@ -192,12 +192,12 @@ export const CPA_CONFIG: ExamLandingConfig = {
   ],
   
   examParts: [
-    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '850+', time: '4 hours' },
-    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '800+', time: '4 hours' },
-    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '800+', time: '4 hours' },
-    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '800+', time: '4 hours' },
-    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '800+', time: '4 hours' },
-    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '850+', time: '4 hours' },
+    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '1,300+', time: '4 hours' },
+    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '1,000+', time: '4 hours' },
+    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '900+', time: '4 hours' },
+    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '1,000+', time: '4 hours' },
+    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '900+', time: '4 hours' },
+    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '800+', time: '4 hours' },
   ],
   
   whyBecome: [
@@ -258,8 +258,8 @@ export const EA_CONFIG: ExamLandingConfig = {
 
   examParts: [
     { part: 'Part 1', title: 'Individuals', topics: ['Filing Requirements', 'Income & Deductions', 'Credits & Adjustments', 'Tax Calculations'], questions: '700+', time: '3.5 hours' },
-    { part: 'Part 2', title: 'Businesses', topics: ['Business Entities', 'Business Income', 'Deductions & Credits', 'Specialized Returns'], questions: '700+', time: '3.5 hours' },
-    { part: 'Part 3', title: 'Representation', topics: ['Practice & Procedures', 'Taxpayer Rights', 'Penalties & Appeals', 'Ethics'], questions: '700+', time: '3.5 hours' },
+    { part: 'Part 2', title: 'Businesses', topics: ['Business Entities', 'Business Income', 'Deductions & Credits', 'Specialized Returns'], questions: '900+', time: '3.5 hours' },
+    { part: 'Part 3', title: 'Representation', topics: ['Practice & Procedures', 'Taxpayer Rights', 'Penalties & Appeals', 'Ethics'], questions: '900+', time: '3.5 hours' },
   ],
   
   whyBecome: [

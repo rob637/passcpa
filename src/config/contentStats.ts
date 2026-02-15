@@ -58,7 +58,7 @@ export const TOTAL_LESSONS = Object.values(COURSE_STATS).reduce(
 
 /**
  * Round down to the nearest hundred and format with commas + "+"
- * e.g., 5411 → "5,400+", 2190 → "2,100+", 1523 → "1,500+"
+ * e.g., 6203 → "6,200+", 2612 → "2,600+", 1520 → "1,500+"
  */
 function formatDisplayCount(n: number): string {
   const rounded = Math.floor(n / 100) * 100;

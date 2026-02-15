@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation, Link } from 'react-router-dom';
 import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   ArrowLeft,
@@ -15,14 +15,17 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  Clock,
+  FileSpreadsheet,
+  AlertCircle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
-import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse, getSectionsMap } from '../../utils/sectionUtils';
 import clsx from 'clsx';
-import { ExamSection } from '../../types';
+import { ExamSection, TBS } from '../../types';
 import { Button } from '../common/Button';
 
 const TBS_LABELS: Record<string, string> = {
@@ -527,14 +530,24 @@ const TBSSimulator: React.FC = () => {
   const [taskScores, setTaskScores] = useState<Record<string, number>>({});
   const [error, setError] = useState<string | null>(null);
 
+  // Selection view state
+  const tbsId = searchParams.get('id');
+  const [viewState, setViewState] = useState<'select' | 'active'>(tbsId ? 'active' : 'select');
+  const [tbsList, setTbsList] = useState<TBS[]>([]);
+  const [tbsLoading, setTbsLoading] = useState(false);
+
   // Use getCurrentSectionForCourse to ensure section is valid for this course
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
-  const tbsId = searchParams.get('id');
   
   // Daily plan awareness
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
+
+  // Get all available sections for this course (for section filter)
+  const sectionsMap = getSectionsMap(courseId);
+  const availableSections = Object.keys(sectionsMap);
+  const [selectedSection, setSelectedSection] = useState<string>(currentSection);
 
   // Get current task
   const currentTask = tbs?.tasks[currentTaskIndex] || null;
@@ -625,32 +638,58 @@ const TBSSimulator: React.FC = () => {
   const currentAnswer = currentTask ? answers[currentTask.id] : null;
 
   useEffect(() => {
-    // Load TBS
-    const loadTBS = async () => {
-      if (tbsId) {
-        // Fetch specific TBS
+    // If a specific TBS id is provided, load it directly (deep-link or daily plan)
+    if (tbsId) {
+      const loadSpecificTBS = async () => {
         const loadedTbs = await fetchTBSById(tbsId);
         if (loadedTbs) {
           setTbs(transformTbs(loadedTbs));
           setStartTime(Date.now());
+          setViewState('active');
         } else {
           setError(`Simulation not found: ${tbsId}`);
         }
-      } else {
-        // Get random TBS for section
-        const sectionTbs = await fetchTBSBySection(currentSection);
-        if (sectionTbs && sectionTbs.length > 0) {
-          const randomTbs = sectionTbs[Math.floor(Math.random() * sectionTbs.length)];
-          setTbs(transformTbs(randomTbs));
-          setStartTime(Date.now());
-        } else {
-          setError(`No simulations available for section: ${currentSection}`);
-        }
-      }
+      };
+      loadSpecificTBS();
+    }
+  }, [tbsId]);
+
+  // Load TBS list for selection view
+  useEffect(() => {
+    if (viewState !== 'select') return;
+    const loadTBSList = async () => {
+      setTbsLoading(true);
+      const sectionTbs = await fetchTBSBySection(selectedSection as ExamSection);
+      setTbsList(sectionTbs || []);
+      setTbsLoading(false);
     };
-    
-    loadTBS();
-  }, [tbsId, currentSection]);
+    loadTBSList();
+  }, [viewState, selectedSection]);
+
+  // Start a specific TBS from the selection list
+  const handleSelectTBS = async (selectedTbs: TBS) => {
+    setTbs(transformTbs(selectedTbs));
+    setStartTime(Date.now());
+    setSubmitted(false);
+    setAnswers({});
+    setTaskScores({});
+    setCurrentTaskIndex(0);
+    setScore(0);
+    setError(null);
+    setViewState('active');
+  };
+
+  // Go back to the selection screen
+  const handleBackToList = () => {
+    setTbs(null);
+    setSubmitted(false);
+    setAnswers({});
+    setTaskScores({});
+    setCurrentTaskIndex(0);
+    setScore(0);
+    setError(null);
+    setViewState('select');
+  };
 
   // Score Written Communication responses based on AICPA criteria
   // Evaluates: Organization, Development, Expression
@@ -937,6 +976,141 @@ const TBSSimulator: React.FC = () => {
     setScore(0);
   };
 
+  // ─── Selection View ───────────────────────────────────────────────────
+  if (viewState === 'select') {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
+        {/* Header */}
+        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <Link to={courseHome}>
+              <Button variant="ghost" size="icon" className="hover:bg-white/10 text-white">
+                <ArrowLeft className="w-5 h-5" />
+              </Button>
+            </Link>
+            <h1 className="text-2xl font-bold">Task-Based Simulations</h1>
+          </div>
+          <p className="text-teal-100">Practice realistic CPA exam simulations</p>
+
+          {/* Section Filter */}
+          <div className="mt-4 flex gap-2 flex-wrap">
+            {availableSections.map((sectionId) => {
+              const info = getSectionDisplayInfo(sectionId, courseId);
+              return (
+                <button
+                  key={sectionId}
+                  onClick={() => setSelectedSection(sectionId)}
+                  className={clsx(
+                    'px-4 py-2 rounded-lg font-medium transition-colors text-sm',
+                    selectedSection === sectionId
+                      ? 'bg-white text-teal-700'
+                      : 'bg-white/20 text-white hover:bg-white/30'
+                  )}
+                >
+                  {info?.name || sectionId}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* TBS Info Card */}
+        <div className="px-4 -mt-6 mb-6">
+          <div className="bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-xl p-4">
+            <div className="flex items-start gap-3">
+              <FileSpreadsheet className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-teal-800 dark:text-teal-200">
+                <p className="font-medium mb-1">About Task-Based Simulations</p>
+                <ul className="list-disc list-inside space-y-1 text-teal-700 dark:text-teal-300">
+                  <li>Realistic scenarios matching CPA exam format</li>
+                  <li>Types: journal entries, calculations, document review, research</li>
+                  <li>Multi-task simulations with exhibits and scenarios</li>
+                  <li>Scored with detailed explanations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* TBS List */}
+        <div className="px-4 space-y-3">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+            {getSectionDisplayInfo(selectedSection, courseId)?.name || selectedSection} Simulations
+            {!tbsLoading && <span className="text-sm font-normal text-slate-500 dark:text-slate-400 ml-2">({tbsList.length})</span>}
+          </h2>
+
+          {tbsLoading ? (
+            <div className="flex items-center justify-center py-12">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600" />
+            </div>
+          ) : tbsList.length === 0 ? (
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 text-center">
+              <AlertCircle className="w-12 h-12 mx-auto text-slate-400 mb-3" />
+              <p className="text-slate-600 dark:text-slate-400">No simulations available for this section yet.</p>
+            </div>
+          ) : (
+            tbsList.map((tbsItem) => (
+              <div key={tbsItem.id} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                <button
+                  onClick={() => handleSelectTBS(tbsItem)}
+                  className="w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-slate-900 dark:text-white mb-1 truncate">
+                        {tbsItem.title || 'Untitled Simulation'}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        {(tbsItem.estimatedTime || tbsItem.timeEstimate) && (
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5" />
+                            {tbsItem.estimatedTime || tbsItem.timeEstimate} min
+                          </span>
+                        )}
+                        {tbsItem.requirements && tbsItem.requirements.length > 0 && (
+                          <span className="flex items-center gap-1">
+                            <FileText className="w-3.5 h-3.5" />
+                            {tbsItem.requirements.length} {tbsItem.requirements.length === 1 ? 'task' : 'tasks'}
+                          </span>
+                        )}
+                        <span className={clsx(
+                          'px-2 py-0.5 rounded-full text-xs font-medium',
+                          tbsItem.difficulty === 'easy' && 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300',
+                          tbsItem.difficulty === 'medium' && 'bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-300',
+                          tbsItem.difficulty === 'hard' && 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-300',
+                        )}>
+                          {tbsItem.difficulty}
+                        </span>
+                      </div>
+                      {/* Type badge + topic */}
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        <span className="px-2 py-0.5 bg-teal-100 dark:bg-teal-900/30 rounded text-xs font-medium text-teal-700 dark:text-teal-300">
+                          {TBS_LABELS[tbsItem.type] || tbsItem.type}
+                        </span>
+                        {tbsItem.topic && (
+                          <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
+                            {tbsItem.topic}
+                          </span>
+                        )}
+                        {tbsItem.blueprintArea && (
+                          <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
+                            {tbsItem.blueprintArea}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2 mt-1" />
+                  </div>
+                </button>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Active (Simulation) View ─────────────────────────────────────────
   if (!tbs) {
     if (error) {
        return (
@@ -947,9 +1121,9 @@ const TBSSimulator: React.FC = () => {
             <p className="text-slate-600 dark:text-slate-300 mb-6">{error}</p>
             <Button 
               variant="secondary"
-              onClick={() => navigate('/practice')}
+              onClick={() => handleBackToList()}
             >
-              Return to Practice
+              Back to Simulations
             </Button>
           </div>
         </div>
@@ -971,7 +1145,16 @@ const TBSSimulator: React.FC = () => {
       <div className="bg-slate-900 text-white px-4 py-3 flex items-center justify-between shadow-md z-10">
         <div className="flex items-center gap-4">
           <button
-            onClick={() => navigate(fromDailyPlan ? '/home' : '/study')}
+            onClick={() => {
+              if (fromDailyPlan) {
+                navigate('/home');
+              } else if (tbsId) {
+                // Deep-linked: go back to practice or home
+                navigate(courseHome);
+              } else {
+                handleBackToList();
+              }
+            }}
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -1012,10 +1195,21 @@ const TBSSimulator: React.FC = () => {
             <Calculator className="w-4 h-4" />
             <span className="hidden sm:inline">Calculator</span>
           </button>
-          <LinkButton to="/study" className="bg-slate-700 hover:bg-slate-600 p-2 sm:px-3 sm:py-2 rounded text-sm text-white">
+          <button
+            onClick={() => {
+              if (fromDailyPlan) {
+                navigate('/home');
+              } else if (tbsId) {
+                navigate(courseHome);
+              } else {
+                handleBackToList();
+              }
+            }}
+            className="bg-slate-700 hover:bg-slate-600 p-2 sm:px-3 sm:py-2 rounded text-sm text-white"
+          >
             <span className="hidden sm:inline">Quit</span>
             <X className="w-4 h-4 sm:hidden" />
-          </LinkButton>
+          </button>
         </div>
       </div>
 
@@ -1273,9 +1467,15 @@ const TBSSimulator: React.FC = () => {
                       {submitted && !fromDailyPlan && (
                         <Button
                           variant="primary"
-                          onClick={() => navigate(courseHome)}
+                          onClick={() => {
+                            if (tbsId) {
+                              navigate(courseHome);
+                            } else {
+                              handleBackToList();
+                            }
+                          }}
                         >
-                          Done
+                          {tbsId ? 'Done' : 'Back to List'}
                         </Button>
                       )}
                     
@@ -1327,15 +1527,5 @@ const TBSSimulator: React.FC = () => {
     </div>
   );
 };
-
-// Helper for link button style
-const LinkButton = ({ to, children, className }: { to: string, children: React.ReactNode, className?: string }) => {
-    const navigate = useNavigate();
-    return (
-        <button onClick={() => navigate(to)} className={className}>
-            {children}
-        </button>
-    )
-}
 
 export default TBSSimulator;

@@ -13,8 +13,8 @@ const admin = require('firebase-admin');
 const { Resend } = require('resend');
 
 // Shared content stats (questions, lessons, flashcards per course)
-// Source of truth: shared/content-stats.json — also used by frontend
-const CONTENT_STATS = require('../shared/content-stats.json');
+// Source of truth: shared/content-stats.json — copy to functions/ for deploy
+const CONTENT_STATS = require('./content-stats.json');
 
 // Initialize Firebase Admin
 admin.initializeApp();

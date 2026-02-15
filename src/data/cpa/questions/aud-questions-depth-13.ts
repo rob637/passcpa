@@ -24,7 +24,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only reviewing the management representation letter',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 700.10 through 11 requires the engagement partner to evaluate: (1) whether sufficient appropriate audit evidence was obtained for each material assertion — including adequate coverage of significant risks; (2) whether uncorrected misstatements (individually or in aggregate) are material; (3) whether the financial statements are prepared in accordance with the applicable financial reporting framework — including appropriate accounting policies, adequate disclosures, proper classification, and reasonable estimates; (4) whether the financial statements achieve fair presentation — reflecting the underlying economic substance of transactions and events. This evaluation synthesizes all findings from the audit and requires the partner\'s professional judgment.',
+    explanation: 'AU-C 700.10 through 11 requires the engagement partner to evaluate: (1) whether sufficient appropriate audit evidence was obtained for each material assertion - including adequate coverage of significant risks; (2) whether uncorrected misstatements (individually or in aggregate) are material; (3) whether the financial statements are prepared in accordance with the applicable financial reporting framework - including appropriate accounting policies, adequate disclosures, proper classification, and reasonable estimates; (4) whether the financial statements achieve fair presentation - reflecting the underlying economic substance of transactions and events. This evaluation synthesizes all findings from the audit and requires the partner\'s professional judgment.',
     reference: 'AU-C 700.10 through 11',
   },
   {
@@ -45,7 +45,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only securities regulations',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 250.06 distinguishes between laws with direct and indirect effects on financial statements: Direct-effect laws are those where noncompliance directly affects financial statement amounts and disclosures. Examples: (1) tax laws — noncompliance affects the tax provision, penalties, and accruals; (2) pension regulations (ERISA) — noncompliance affects pension liability calculations; (3) government contract regulations — affect revenue recognition, allowable costs, and contract-related assets/liabilities; (4) revenue recognition requirements under securities laws. Indirect-effect laws (e.g., environmental laws, occupational safety, equal employment) may create contingent liabilities but do not directly determine recorded amounts. The auditor has greater responsibility for direct-effect violations.',
+    explanation: 'AU-C 250.06 distinguishes between laws with direct and indirect effects on financial statements: Direct-effect laws are those where noncompliance directly affects financial statement amounts and disclosures. Examples: (1) tax laws - noncompliance affects the tax provision, penalties, and accruals; (2) pension regulations (ERISA) - noncompliance affects pension liability calculations; (3) government contract regulations - affect revenue recognition, allowable costs, and contract-related assets/liabilities; (4) revenue recognition requirements under securities laws. Indirect-effect laws (e.g., environmental laws, occupational safety, equal employment) may create contingent liabilities but do not directly determine recorded amounts. The auditor has greater responsibility for direct-effect violations.',
     reference: 'AU-C 250.06 through 07',
   },
   {
@@ -61,12 +61,12 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
     question: 'The management representation letter should be dated:',
     options: [
       'As of the balance sheet date',
-      'As of the date of the auditor\'s report — the same date as the audit report',
+      'As of the date of the auditor\'s report - the same date as the audit report',
       'As of the date the engagement letter was signed',
       'As of the first day of fieldwork',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 580.15 requires the management representation letter to be dated as of the date of the auditor\'s report — ensuring that representations cover the entire period from the balance sheet date through the report date (including the subsequent period). This timing ensures management is representing that it has fulfilled its responsibilities through the date the auditor forms the opinion. The letter is typically one of the last procedures performed before the engagement is completed. It should be addressed to the auditor and signed by members of management with appropriate knowledge and responsibility (usually the CEO and CFO).',
+    explanation: 'AU-C 580.15 requires the management representation letter to be dated as of the date of the auditor\'s report - ensuring that representations cover the entire period from the balance sheet date through the report date (including the subsequent period). This timing ensures management is representing that it has fulfilled its responsibilities through the date the auditor forms the opinion. The letter is typically one of the last procedures performed before the engagement is completed. It should be addressed to the auditor and signed by members of management with appropriate knowledge and responsibility (usually the CEO and CFO).',
     reference: 'AU-C 580.15',
   },
   {
@@ -108,7 +108,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Verify all statistics and projections in the annual report',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 720.04 through 06 requires the auditor to READ (not audit) other information in documents containing the audited financial statements. The purpose is to identify: (1) material inconsistencies — where the other information contradicts information in the audited financial statements (e.g., the annual report discusses revenue growth of 15% but the financial statements show 5%); (2) material misstatements of fact — where the other information contains factual errors unrelated to the financial statements but within the auditor\'s knowledge. If inconsistencies or misstatements are found, the auditor should discuss with management and determine whether the financial statements or the other information needs revision. The auditor does NOT express an opinion on the other information.',
+    explanation: 'AU-C 720.04 through 06 requires the auditor to READ (not audit) other information in documents containing the audited financial statements. The purpose is to identify: (1) material inconsistencies - where the other information contradicts information in the audited financial statements (e.g., the annual report discusses revenue growth of 15% but the financial statements show 5%); (2) material misstatements of fact - where the other information contains factual errors unrelated to the financial statements but within the auditor\'s knowledge. If inconsistencies or misstatements are found, the auditor should discuss with management and determine whether the financial statements or the other information needs revision. The auditor does NOT express an opinion on the other information.',
     reference: 'AU-C 720.04 through 06',
   },
   {
@@ -129,7 +129,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only the documentation retention policy',
     ],
     correctAnswer: 1,
-    explanation: 'SQCS No. 8 identifies the key elements of a quality management system: (1) Leadership responsibilities — firm culture emphasizing quality, tone at the top; (2) Ethical requirements — policies ensuring compliance with independence, integrity, and objectivity; (3) Acceptance and continuance — evaluating client relationships and specific engagements; (4) Human resources — recruitment, capabilities, competence, career development, assignment of engagement teams; (5) Engagement performance — direction, supervision, review, consultation, differences of opinion, quality review; (6) Monitoring — ongoing and periodic inspection of completed engagements to assess the effectiveness of the quality management system; (7) Information and communication — relevant information flows. These elements work together to provide reasonable assurance that engagements are performed in accordance with professional standards.',
+    explanation: 'SQCS No. 8 identifies the key elements of a quality management system: (1) Leadership responsibilities - firm culture emphasizing quality, tone at the top; (2) Ethical requirements - policies ensuring compliance with independence, integrity, and objectivity; (3) Acceptance and continuance - evaluating client relationships and specific engagements; (4) Human resources - recruitment, capabilities, competence, career development, assignment of engagement teams; (5) Engagement performance - direction, supervision, review, consultation, differences of opinion, quality review; (6) Monitoring - ongoing and periodic inspection of completed engagements to assess the effectiveness of the quality management system; (7) Information and communication - relevant information flows. These elements work together to provide reasonable assurance that engagements are performed in accordance with professional standards.',
     reference: 'SQCS No. 8',
   },
   {
@@ -150,7 +150,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only review the bank statement',
     ],
     correctAnswer: 1,
-    explanation: 'Comprehensive bank reconciliation testing includes: (1) verify the bank balance to the independent bank confirmation received; (2) verify the book balance to the general ledger; (3) test mathematical accuracy of the reconciliation; (4) examine outstanding checks — verify they clear in the cutoff bank statement and are properly dated (not stale or issued after year-end); (5) verify deposits in transit — confirm they appear in the cutoff bank statement within a reasonable period; (6) investigate unusual reconciling items (bank errors, transfer entries, NSF checks); (7) review the cutoff bank statement (typically the first 7-10 days of the subsequent period) for checks clearing that were not on the year-end outstanding check list (indicating possible window-dressing or check kiting).',
+    explanation: 'Comprehensive bank reconciliation testing includes: (1) verify the bank balance to the independent bank confirmation received; (2) verify the book balance to the general ledger; (3) test mathematical accuracy of the reconciliation; (4) examine outstanding checks - verify they clear in the cutoff bank statement and are properly dated (not stale or issued after year-end); (5) verify deposits in transit - confirm they appear in the cutoff bank statement within a reasonable period; (6) investigate unusual reconciling items (bank errors, transfer entries, NSF checks); (7) review the cutoff bank statement (typically the first 7-10 days of the subsequent period) for checks clearing that were not on the year-end outstanding check list (indicating possible window-dressing or check kiting).',
     reference: 'AU-C 330; AU-C 505',
   },
   {
@@ -166,12 +166,12 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
     question: 'Before completing the audit, the engagement partner should evaluate whether insufficient evidence has been obtained for any significant assertion. If sufficient evidence cannot be obtained:',
     options: [
       'The auditor should issue an unmodified opinion anyway',
-      'The auditor should consider whether to modify the opinion — a scope limitation may lead to a qualified opinion or disclaimer of opinion',
+      'The auditor should consider whether to modify the opinion - a scope limitation may lead to a qualified opinion or disclaimer of opinion',
       'The auditor should rely on management representations alone',
       'The auditor should extend the audit indefinitely',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 700.12 and AU-C 705 require the auditor to evaluate whether sufficient appropriate evidence has been obtained. If not: (1) consider whether additional procedures can be performed to obtain the needed evidence; (2) if additional procedures are not possible (e.g., records were destroyed, timing constraints prevent observation), this constitutes a scope limitation; (3) evaluate the pervasiveness of the scope limitation — does it affect a single account or many aspects of the financial statements?; (4) if the scope limitation is material but not pervasive, issue a qualified opinion; (5) if the scope limitation is both material and pervasive (the auditor cannot form an opinion on the financial statements as a whole), issue a disclaimer of opinion; (6) clearly describe the scope limitation in the Basis for Qualification/Disclaimer paragraph.',
+    explanation: 'AU-C 700.12 and AU-C 705 require the auditor to evaluate whether sufficient appropriate evidence has been obtained. If not: (1) consider whether additional procedures can be performed to obtain the needed evidence; (2) if additional procedures are not possible (e.g., records were destroyed, timing constraints prevent observation), this constitutes a scope limitation; (3) evaluate the pervasiveness of the scope limitation - does it affect a single account or many aspects of the financial statements?; (4) if the scope limitation is material but not pervasive, issue a qualified opinion; (5) if the scope limitation is both material and pervasive (the auditor cannot form an opinion on the financial statements as a whole), issue a disclaimer of opinion; (6) clearly describe the scope limitation in the Basis for Qualification/Disclaimer paragraph.',
     reference: 'AU-C 700.12; AU-C 705',
   },
   {
@@ -213,7 +213,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only long-term leases',
     ],
     correctAnswer: 1,
-    explanation: 'Under ASC 842 and AU-C 330, lease testing encompasses: (1) completeness — identifying all lease arrangements, including embedded leases; (2) classification — evaluating whether management properly classified leases as finance or operating based on the five criteria in ASC 842-10-25; (3) measurement — testing the initial and subsequent measurement of right-of-use assets and lease liabilities (discount rate selection, lease term, variable/fixed payment identification, modification accounting); (4) existence — confirming lease terms through inspection of signed agreements; (5) disclosures — evaluating completeness and consistency of lease disclosures with the lease data (weighted average remaining term, discount rate, maturity analysis). This is a complex area requiring careful evaluation of contracts and management judgments.',
+    explanation: 'Under ASC 842 and AU-C 330, lease testing encompasses: (1) completeness - identifying all lease arrangements, including embedded leases; (2) classification - evaluating whether management properly classified leases as finance or operating based on the five criteria in ASC 842-10-25; (3) measurement - testing the initial and subsequent measurement of right-of-use assets and lease liabilities (discount rate selection, lease term, variable/fixed payment identification, modification accounting); (4) existence - confirming lease terms through inspection of signed agreements; (5) disclosures - evaluating completeness and consistency of lease disclosures with the lease data (weighted average remaining term, discount rate, maturity analysis). This is a complex area requiring careful evaluation of contracts and management judgments.',
     reference: 'AU-C 330; ASC 842',
   },
   {
@@ -234,7 +234,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only tracking staff turnover',
     ],
     correctAnswer: 1,
-    explanation: 'SQCS No. 8 requires monitoring activities including: (1) periodic inspection of completed engagements — an independent review (by partners or staff not involved in the engagement) of workpapers, reports, and conclusions to assess compliance with professional standards and firm policies; (2) ongoing monitoring — regular review of processes and communications; (3) evaluation of inspection findings — identifying trends, common deficiencies, and systemic issues; (4) remedial action — implementing changes to policies, training, supervision, or staffing in response to monitoring findings; (5) communication of results — informing engagement partners and staff of monitoring findings and improvements needed. Monitoring provides a feedback loop that drives continuous improvement in audit quality.',
+    explanation: 'SQCS No. 8 requires monitoring activities including: (1) periodic inspection of completed engagements - an independent review (by partners or staff not involved in the engagement) of workpapers, reports, and conclusions to assess compliance with professional standards and firm policies; (2) ongoing monitoring - regular review of processes and communications; (3) evaluation of inspection findings - identifying trends, common deficiencies, and systemic issues; (4) remedial action - implementing changes to policies, training, supervision, or staffing in response to monitoring findings; (5) communication of results - informing engagement partners and staff of monitoring findings and improvements needed. Monitoring provides a feedback loop that drives continuous improvement in audit quality.',
     reference: 'SQCS No. 8',
   },
   {
@@ -255,7 +255,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'The current auditor issues a new opinion on both periods',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 700.45 through 46 provides options when comparative financial statements include a period audited by a predecessor: (1) the predecessor\'s report may be reissued — the predecessor updates their report and it is presented alongside the current auditor\'s report; (2) if the predecessor\'s report is not reissued, the current auditor includes an other-matter paragraph that: (a) states the prior period was audited by another auditor; (b) includes the date of the predecessor\'s report; (c) describes the type of opinion expressed (unmodified, qualified, etc.); (d) states the reasons for any modification. The current auditor does NOT express a new opinion on the prior period unless engaged to re-audit it.',
+    explanation: 'AU-C 700.45 through 46 provides options when comparative financial statements include a period audited by a predecessor: (1) the predecessor\'s report may be reissued - the predecessor updates their report and it is presented alongside the current auditor\'s report; (2) if the predecessor\'s report is not reissued, the current auditor includes an other-matter paragraph that: (a) states the prior period was audited by another auditor; (b) includes the date of the predecessor\'s report; (c) describes the type of opinion expressed (unmodified, qualified, etc.); (d) states the reasons for any modification. The current auditor does NOT express a new opinion on the prior period unless engaged to re-audit it.',
     reference: 'AU-C 700.45 through 46',
   },
   {
@@ -276,7 +276,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only the prior-year impairment test',
     ],
     correctAnswer: 1,
-    explanation: 'Goodwill impairment testing under ASC 350 involves significant management judgment that the auditor must evaluate: (1) reporting unit identification — are the reporting units appropriate under ASC 350 guidance?; (2) qualitative assessment option (Step 0) — if management uses the qualitative approach, do the factors support a conclusion that fair value more likely than not exceeds carrying amount?; (3) quantitative testing — evaluating the fair value measurement approach (income approach with DCF models, market approach with comparable transactions, or a combination); (4) key assumptions — discount rates (WACC), revenue growth projections, terminal growth rates, EBITDA margins, comparable company selection; (5) sensitivity analysis — how sensitive is the conclusion to changes in key assumptions?; (6) a specialist may be needed for complex valuations.',
+    explanation: 'Goodwill impairment testing under ASC 350 involves significant management judgment that the auditor must evaluate: (1) reporting unit identification - are the reporting units appropriate under ASC 350 guidance?; (2) qualitative assessment option (Step 0) - if management uses the qualitative approach, do the factors support a conclusion that fair value more likely than not exceeds carrying amount?; (3) quantitative testing - evaluating the fair value measurement approach (income approach with DCF models, market approach with comparable transactions, or a combination); (4) key assumptions - discount rates (WACC), revenue growth projections, terminal growth rates, EBITDA margins, comparable company selection; (5) sensitivity analysis - how sensitive is the conclusion to changes in key assumptions?; (6) a specialist may be needed for complex valuations.',
     reference: 'AU-C 540; ASC 350-20-35',
   },
   {
@@ -297,7 +297,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only reporting noncompliance that results in criminal prosecution',
     ],
     correctAnswer: 1,
-    explanation: 'Government Auditing Standards (GAO Yellow Book) imposes additional requirements beyond AICPA standards: (1) the auditor must report on internal controls over financial reporting and on compliance with laws, regulations, contracts, and grant agreements — this is a separate report from the financial statement audit opinion; (2) the report on compliance must include instances of noncompliance or other matters required to be reported under the standards; (3) reports are typically distributed to the legislative body, oversight entity, and other parties specified by law or regulation; (4) for Single Audit engagements (Uniform Guidance), additional compliance testing and reporting requirements apply for federal award programs. These expanded requirements reflect the public accountability of government entities.',
+    explanation: 'Government Auditing Standards (GAO Yellow Book) imposes additional requirements beyond AICPA standards: (1) the auditor must report on internal controls over financial reporting and on compliance with laws, regulations, contracts, and grant agreements - this is a separate report from the financial statement audit opinion; (2) the report on compliance must include instances of noncompliance or other matters required to be reported under the standards; (3) reports are typically distributed to the legislative body, oversight entity, and other parties specified by law or regulation; (4) for Single Audit engagements (Uniform Guidance), additional compliance testing and reporting requirements apply for federal award programs. These expanded requirements reflect the public accountability of government entities.',
     reference: 'Government Auditing Standards (Yellow Book); AU-C 935',
   },
   {
@@ -318,7 +318,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only discussions with the client',
     ],
     correctAnswer: 1,
-    explanation: 'SQCS No. 8 requires firms to establish policies and procedures for consultation on difficult or contentious matters. Consultation involves: (1) seeking advice from qualified individuals — other partners, firm specialists, or external experts with relevant expertise; (2) situations requiring consultation include: complex accounting issues, unusual transactions, going concern situations, fraud indicators, scope limitations, and potential opinion modifications; (3) documentation — the nature of the issue, who was consulted, the advice received, and the conclusion reached must be documented; (4) the person consulted must have appropriate knowledge, seniority, and experience. Consultation ensures that difficult professional judgments benefit from diverse perspective and expertise.',
+    explanation: 'SQCS No. 8 requires firms to establish policies and procedures for consultation on difficult or contentious matters. Consultation involves: (1) seeking advice from qualified individuals - other partners, firm specialists, or external experts with relevant expertise; (2) situations requiring consultation include: complex accounting issues, unusual transactions, going concern situations, fraud indicators, scope limitations, and potential opinion modifications; (3) documentation - the nature of the issue, who was consulted, the advice received, and the conclusion reached must be documented; (4) the person consulted must have appropriate knowledge, seniority, and experience. Consultation ensures that difficult professional judgments benefit from diverse perspective and expertise.',
     reference: 'SQCS No. 8',
   },
   {
@@ -339,7 +339,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only the aging schedule',
     ],
     correctAnswer: 1,
-    explanation: 'Under ASC 326 (CECL model), the allowance for credit losses reflects expected losses over the LIFETIME of the receivable, requiring: (1) understanding management\'s methodology — loss rate, vintage analysis, discounted cash flow, probability-weighted scenarios, or aging schedule approaches; (2) evaluating historical loss experience and adjustments for current conditions (economic indicators, industry trends, borrower-specific factors); (3) evaluating reasonable and supportable forecasts used to estimate future losses (GDP, unemployment, industry-specific data); (4) testing key assumptions for reasonableness and consistency; (5) reviewing the reversion method for periods beyond the forecast horizon; (6) evaluating disclosures about credit quality, aging, allowance rollforward, and policies. This is a significant estimate with high estimation uncertainty.',
+    explanation: 'Under ASC 326 (CECL model), the allowance for credit losses reflects expected losses over the LIFETIME of the receivable, requiring: (1) understanding management\'s methodology - loss rate, vintage analysis, discounted cash flow, probability-weighted scenarios, or aging schedule approaches; (2) evaluating historical loss experience and adjustments for current conditions (economic indicators, industry trends, borrower-specific factors); (3) evaluating reasonable and supportable forecasts used to estimate future losses (GDP, unemployment, industry-specific data); (4) testing key assumptions for reasonableness and consistency; (5) reviewing the reversion method for periods beyond the forecast horizon; (6) evaluating disclosures about credit quality, aging, allowance rollforward, and policies. This is a significant estimate with high estimation uncertainty.',
     reference: 'AU-C 540; ASC 326-20',
   },
   {
@@ -360,7 +360,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Issuing two separate reports',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 560.12(b) permits dual dating when a subsequent event occurs after the original report date. The auditor has two options: (1) Dual date — retain the original report date for all matters except the specific subsequent event, which receives a later date. This LIMITS the auditor\'s responsibility for events after the original report date to ONLY the specific subsequent event disclosed. Example: "February 15, 20X5, except for Note 12, as to which the date is March 3, 20X5." (2) Change the report date to the later date — this EXTENDS the auditor\'s responsibility for ALL subsequent events through the new date, requiring the auditor to extend subsequent events procedures to the new date. Most auditors prefer dual dating because it limits additional responsibility.',
+    explanation: 'AU-C 560.12(b) permits dual dating when a subsequent event occurs after the original report date. The auditor has two options: (1) Dual date - retain the original report date for all matters except the specific subsequent event, which receives a later date. This LIMITS the auditor\'s responsibility for events after the original report date to ONLY the specific subsequent event disclosed. Example: "February 15, 20X5, except for Note 12, as to which the date is March 3, 20X5." (2) Change the report date to the later date - this EXTENDS the auditor\'s responsibility for ALL subsequent events through the new date, requiring the auditor to extend subsequent events procedures to the new date. Most auditors prefer dual dating because it limits additional responsibility.',
     reference: 'AU-C 560.12(b)',
   },
   {
@@ -402,7 +402,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Ignore the omission unless a lawsuit is filed',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 585 (and related guidance) addresses omitted procedures discovered after report issuance: (1) assess whether other procedures performed during the audit were sufficient to provide a basis for the opinion — other procedures may have inadvertently compensated; (2) if the omitted procedures are necessary and were not compensated by alternative procedures, the auditor should perform the omitted procedures (or satisfactory alternatives) promptly; (3) if the procedures reveal information that would have affected the opinion, the auditor must take action per AU-C 560 (subsequent discovery of facts); (4) if the procedures confirm the original opinion, document the additional work. The auditor should consult with legal counsel when assessing the implications.',
+    explanation: 'AU-C 585 (and related guidance) addresses omitted procedures discovered after report issuance: (1) assess whether other procedures performed during the audit were sufficient to provide a basis for the opinion - other procedures may have inadvertently compensated; (2) if the omitted procedures are necessary and were not compensated by alternative procedures, the auditor should perform the omitted procedures (or satisfactory alternatives) promptly; (3) if the procedures reveal information that would have affected the opinion, the auditor must take action per AU-C 560 (subsequent discovery of facts); (4) if the procedures confirm the original opinion, document the additional work. The auditor should consult with legal counsel when assessing the implications.',
     reference: 'AU-C 585',
   },
   {
@@ -423,7 +423,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'They are prohibited under GAAP',
     ],
     correctAnswer: 1,
-    explanation: 'Bill-and-hold arrangements present high fraud risk because revenue is recognized before the goods are physically delivered to the customer. Under ASC 606-10-55-81 through 84, revenue recognition in a bill-and-hold arrangement requires ALL of the following: (1) the arrangement must be substantive — there must be a genuine business reason (not just to accelerate revenue); (2) the product must be identified separately as belonging to the customer; (3) the product must be ready for physical transfer; (4) the entity cannot use the product or direct it to another customer. The auditor should: (a) examine the underlying contracts and customer requests; (b) evaluate whether the criteria are genuinely met; (c) confirm the arrangement with the customer; (d) verify that the goods are physically segregated and identified. Bill-and-hold is specifically identified as an indicator of possible fraud under AU-C 240.',
+    explanation: 'Bill-and-hold arrangements present high fraud risk because revenue is recognized before the goods are physically delivered to the customer. Under ASC 606-10-55-81 through 84, revenue recognition in a bill-and-hold arrangement requires ALL of the following: (1) the arrangement must be substantive - there must be a genuine business reason (not just to accelerate revenue); (2) the product must be identified separately as belonging to the customer; (3) the product must be ready for physical transfer; (4) the entity cannot use the product or direct it to another customer. The auditor should: (a) examine the underlying contracts and customer requests; (b) evaluate whether the criteria are genuinely met; (c) confirm the arrangement with the customer; (d) verify that the goods are physically segregated and identified. Bill-and-hold is specifically identified as an indicator of possible fraud under AU-C 240.',
     reference: 'ASC 606-10-55-81 through 84; AU-C 240',
   },
   {
@@ -444,7 +444,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Disclosures match the prior year exactly',
     ],
     correctAnswer: 1,
-    explanation: 'AU-C 700.13 through 14 requires the auditor to evaluate whether disclosures are: (1) adequate — all disclosures required by the applicable framework (GAAP) are included; (2) appropriate — the disclosures are properly classified, described, clearly presented, and understandable; (3) not misleading — voluntary disclosures do not present information in a biased or misleading manner; (4) consistent with the audited financial statements — the narrative disclosures should be consistent with the numbers in the statements; (5) sufficient to enable users to understand the effects of material transactions, events, and conditions. Inadequate disclosures constitute a departure from the applicable framework, which may require a qualified or adverse opinion under AU-C 705.',
+    explanation: 'AU-C 700.13 through 14 requires the auditor to evaluate whether disclosures are: (1) adequate - all disclosures required by the applicable framework (GAAP) are included; (2) appropriate - the disclosures are properly classified, described, clearly presented, and understandable; (3) not misleading - voluntary disclosures do not present information in a biased or misleading manner; (4) consistent with the audited financial statements - the narrative disclosures should be consistent with the numbers in the statements; (5) sufficient to enable users to understand the effects of material transactions, events, and conditions. Inadequate disclosures constitute a departure from the applicable framework, which may require a qualified or adverse opinion under AU-C 705.',
     reference: 'AU-C 700.13 through 14',
   },
   {
@@ -486,7 +486,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only new client acceptance',
     ],
     correctAnswer: 1,
-    explanation: 'SQCS No. 8 and AICPA Code of Professional Conduct require comprehensive independence policies: (1) financial interests — direct and material indirect investments in audit clients; (2) business relationships — commercial relationships with clients, joint ventures, marketing arrangements; (3) family and personal relationships — close relatives employed by clients in key positions; (4) employment relationships — former employees now working for clients, key partners' employment negotiations with clients; (5) non-audit services — identifying services that impair independence (e.g., bookkeeping, management functions, acting as advocate); (6) monitoring — annual independence confirmations from all professionals, tracking restricted entity lists; (7) resolution procedures — process for addressing violations when they occur. These policies protect the firm\'s objectivity.',
+    explanation: 'SQCS No. 8 and AICPA Code of Professional Conduct require comprehensive independence policies: (1) financial interests - direct and material indirect investments in audit clients; (2) business relationships - commercial relationships with clients, joint ventures, marketing arrangements; (3) family and personal relationships - close relatives employed by clients in key positions; (4) employment relationships - former employees now working for clients, key partners\' employment negotiations with clients; (5) non-audit services - identifying services that impair independence (e.g., bookkeeping, management functions, acting as advocate); (6) monitoring - annual independence confirmations from all professionals, tracking restricted entity lists; (7) resolution procedures - process for addressing violations when they occur. These policies protect the firm\'s objectivity.',
     reference: 'SQCS No. 8; ET Section 1.200',
   },
   {
@@ -507,7 +507,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Issue a disclaimer on both periods',
     ],
     correctAnswer: 1,
-    explanation: 'When prior-period financial statements are restated: (1) the auditor should audit the restatement adjustments to verify they are appropriate and correctly applied; (2) evaluate whether the restatement disclosures comply with ASC 250 (nature of error, effect on previously reported amounts, effect on earnings per share, cumulative effect); (3) determine the effect on the audit report — the auditor typically includes an emphasis-of-matter paragraph drawing attention to the restatement (AU-C 708); (4) if the prior period was audited by the same firm, the original opinion should be updated; (5) consider whether the error indicates a material weakness in internal control; (6) consider SEC implications if applicable (amendments to prior filings).',
+    explanation: 'When prior-period financial statements are restated: (1) the auditor should audit the restatement adjustments to verify they are appropriate and correctly applied; (2) evaluate whether the restatement disclosures comply with ASC 250 (nature of error, effect on previously reported amounts, effect on earnings per share, cumulative effect); (3) determine the effect on the audit report - the auditor typically includes an emphasis-of-matter paragraph drawing attention to the restatement (AU-C 708); (4) if the prior period was audited by the same firm, the original opinion should be updated; (5) consider whether the error indicates a material weakness in internal control; (6) consider SEC implications if applicable (amendments to prior filings).',
     reference: 'AU-C 700; AU-C 708; ASC 250',
   },
   {
@@ -528,7 +528,7 @@ export const AUD_QUESTIONS_DEPTH_13: Question[] = [
       'Only test operating cash flows',
     ],
     correctAnswer: 1,
-    explanation: 'Cash flow statement audit procedures include: (1) verifying the mathematical accuracy of the statement; (2) tracing amounts to the other financial statements — beginning/ending cash balances to the balance sheet, net income to the income statement; (3) testing significant reconciling items (depreciation, working capital changes, gains/losses) to supporting schedules; (4) evaluating the appropriateness of classification — operating, investing, and financing activities per ASC 230 (e.g., interest received is operating under US GAAP, but the entity may need to properly classify items like insurance proceeds, customer advances, equipment purchases); (5) reviewing significant noncash investing and financing activities for proper disclosure (e.g., debt converted to equity, assets obtained through capital leases); (6) verifying supplemental disclosures (interest paid, taxes paid).',
+    explanation: 'Cash flow statement audit procedures include: (1) verifying the mathematical accuracy of the statement; (2) tracing amounts to the other financial statements - beginning/ending cash balances to the balance sheet, net income to the income statement; (3) testing significant reconciling items (depreciation, working capital changes, gains/losses) to supporting schedules; (4) evaluating the appropriateness of classification - operating, investing, and financing activities per ASC 230 (e.g., interest received is operating under US GAAP, but the entity may need to properly classify items like insurance proceeds, customer advances, equipment purchases); (5) reviewing significant noncash investing and financing activities for proper disclosure (e.g., debt converted to equity, assets obtained through capital leases); (6) verifying supplemental disclosures (interest paid, taxes paid).',
     reference: 'AU-C 330; ASC 230',
   },
 ];

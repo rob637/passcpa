@@ -4,6 +4,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-001',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Nature & Scope of Audit Engagements",
     description: "Understand the different types of engagements CPAs perform and the assurance spectrum",
     order: 1,
@@ -92,6 +93,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-002',
     section: 'AUD',
+    courseId: 'cpa',
     title: "AICPA Code of Professional Conduct",
     description: "Master the ethical principles and rules governing CPA conduct",
     order: 2,
@@ -189,6 +191,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-003',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Independence: Conceptual Framework",
     description: "Apply the threats and safeguards approach to evaluate auditor independence",
     order: 3,
@@ -285,6 +288,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-004',
     section: 'AUD',
+    courseId: 'cpa',
     title: "SEC & PCAOB Independence Rules",
     description: "Understand the stricter independence requirements for public company audits",
     order: 4,
@@ -379,6 +383,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-005',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Conflicts of Interest & Threats",
     description: "Identify and resolve conflicts of interest in professional engagements",
     order: 5,
@@ -463,6 +468,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-006',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Engagement Letters & Acceptance",
     description: "Understand the requirements for accepting engagements and documenting terms",
     order: 6,
@@ -552,6 +558,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-007',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Communications with Governance",
     description: "Learn the required communications between auditors and those charged with governance",
     order: 7,
@@ -648,6 +655,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-008',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Quality Management Standards (SQMS)",
     description: "Understand the firm-wide quality management system requirements",
     order: 8,
@@ -747,6 +755,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-009',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Professional Skepticism & Judgment",
     description: "Develop the critical mindset essential for effective auditing",
     order: 9,
@@ -838,6 +847,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-010',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Documentation Requirements",
     description: "Master the requirements for audit documentation (working papers)",
     order: 10,
@@ -931,6 +941,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-001',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Preliminary Engagement Activities",
     description: "Understand the essential activities before beginning substantive audit work",
     order: 11,
@@ -1022,6 +1033,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-002',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Materiality: Planning & Performance",
     description: "Master materiality concepts for audit planning and evaluation",
     order: 12,
@@ -1113,6 +1125,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-003',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Audit Risk Model: AR = IR × CR × DR",
     description: "Understand the fundamental risk model that drives audit planning",
     order: 13,
@@ -1207,6 +1220,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-004',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Understanding the Entity: Industry Factors",
     description: "Learn how industry knowledge helps identify audit risks",
     order: 14,
@@ -1294,6 +1308,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-005',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Business Operations & Strategy",
     description: "Understand how business strategy affects financial reporting and audit risk",
     order: 15,
@@ -1380,6 +1395,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-006',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Financial Performance Measures",
     description: "Use financial metrics and ratios to identify audit risks",
     order: 16,
@@ -1486,6 +1502,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-007',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Internal Control: COSO Framework",
     description: "Master the COSO Internal Control Framework used in audit evaluation",
     order: 17,
@@ -1581,6 +1598,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-008',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Evaluating Control Design & Implementation",
     description: "Learn to assess whether controls are properly designed and implemented",
     order: 18,
@@ -1665,6 +1683,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-009',
     section: 'AUD',
+    courseId: 'cpa',
     title: "IT Controls: General & Application",
     description: "Understand IT controls and their impact on the audit",
     order: 19,
@@ -1760,6 +1779,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-010',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Identifying & Assessing RMM",
     description: "Learn to identify and assess risks of material misstatement",
     order: 20,
@@ -1851,6 +1871,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-011',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Significant Risks",
     description: "Identify and respond to risks requiring special audit consideration",
     order: 21,
@@ -1932,6 +1953,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-012',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Fraud Risk Assessment",
     description: "Understand the auditor's responsibility for fraud and the fraud triangle",
     order: 22,
@@ -2021,6 +2043,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-001',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Audit Evidence: Sufficiency & Appropriateness",
     description: "Understand what makes audit evidence sufficient and appropriate",
     order: 23,
@@ -2107,6 +2130,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-002',
     section: 'AUD',
+    courseId: 'cpa',
     title: "External Confirmations",
     description: "Master confirmation procedures for accounts receivable, payable, and more",
     order: 24,
@@ -2191,6 +2215,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-003',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Analytical Procedures",
     description: "Use relationships in data to identify risks and evaluate conclusions",
     order: 25,
@@ -2280,6 +2305,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-004',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Audit Sampling: Statistical & Non-Statistical",
     description: "Master the fundamentals of audit sampling methods",
     order: 26,
@@ -2369,6 +2395,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-005',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Sample Design & Selection",
     description: "Learn proper sample design and selection methods",
     order: 27,
@@ -2458,6 +2485,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-006',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Evaluating Sample Results",
     description: "Learn to evaluate and project sample findings to populations",
     order: 28,
@@ -2537,6 +2565,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-007',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Auditing Accounting Estimates",
     description: "Learn the special considerations for testing management estimates",
     order: 29,
@@ -2621,6 +2650,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-008',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Related Party Transactions",
     description: "Identify and audit transactions with related parties",
     order: 30,
@@ -2700,6 +2730,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-009',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Going Concern Evaluation",
     description: "Evaluate management's assessment of the entity's ability to continue",
     order: 31,
@@ -2785,6 +2816,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-010',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Subsequent Events: Type I & Type II",
     description: "Understand and audit events occurring after period end",
     order: 32,
@@ -2864,6 +2896,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-011',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Using Internal Auditors' Work",
     description: "Learn when and how to use the work of internal audit",
     order: 33,
@@ -2938,6 +2971,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-012',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Component Auditors & Group Audits",
     description: "Understand group audit responsibilities and component auditor oversight",
     order: 34,
@@ -3022,6 +3056,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-013',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Using Specialists & Experts",
     description: "Learn when and how to use the work of specialists",
     order: 35,
@@ -3096,6 +3131,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-014',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Substantive Testing: Revenue & Receivables",
     description: "Master audit procedures for the revenue cycle",
     order: 36,
@@ -3181,6 +3217,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-015',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Substantive Testing: Inventory & PP&E",
     description: "Learn key procedures for inventory observation and fixed assets",
     order: 37,
@@ -3265,6 +3302,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-001',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Unmodified Audit Opinion",
     description: "Understand the standard unmodified audit report",
     order: 38,
@@ -3344,6 +3382,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-002',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Modified Opinions: Qualified, Adverse, Disclaimer",
     description: "Master the three types of modified audit opinions",
     order: 39,
@@ -3427,6 +3466,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-003',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Emphasis of Matter & Other Matter Paragraphs",
     description: "Understand when to add informational paragraphs to the audit report",
     order: 40,
@@ -3501,6 +3541,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-004',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Comparative Financial Statements",
     description: "Understand reporting when prior periods are presented",
     order: 41,
@@ -3575,6 +3616,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-005',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Key Audit Matters (KAM) / Critical Audit Matters (CAM)",
     description: "Understand expanded audit reporting requirements",
     order: 42,
@@ -3649,6 +3691,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-006',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Attestation: Examination Engagements",
     description: "Understand examination engagements under the attestation standards",
     order: 43,
@@ -3729,6 +3772,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-007',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Attestation: Review Engagements",
     description: "Learn the requirements for attestation review engagements",
     order: 44,
@@ -3798,6 +3842,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-008',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Agreed-Upon Procedures (AUP)",
     description: "Master agreed-upon procedures engagements",
     order: 45,
@@ -3872,6 +3917,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-009',
     section: 'AUD',
+    courseId: 'cpa',
     title: "SSARS: Compilation Engagements",
     description: "Understand compilation services under SSARS",
     order: 46,
@@ -3953,6 +3999,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-010',
     section: 'AUD',
+    courseId: 'cpa',
     title: "SSARS: Review Engagements",
     description: "Master review services for non-public entities",
     order: 47,
@@ -4027,6 +4074,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-011',
     section: 'AUD',
+    courseId: 'cpa',
     title: "SSARS: Preparation Engagements",
     description: "Understand the preparation of financial statements service",
     order: 48,
@@ -4103,6 +4151,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-012',
     section: 'AUD',
+    courseId: 'cpa',
     title: "SOC 1 & SOC 2 Reports",
     description: "Understand Service Organization Control reports",
     order: 49,
@@ -4193,6 +4242,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-013',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Single Audit & Government Auditing",
     description: "Understand audits of federal awards and government auditing standards",
     order: 50,
@@ -4279,6 +4329,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-110',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Components of Internal Control",
     description: "Master the five COSO internal control components",
     order: 51,
@@ -4365,6 +4416,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-111',
     section: 'AUD',
+    courseId: 'cpa',
     title: "IT General and Application Controls",
     description: "Understand IT controls in an automated environment",
     order: 52,
@@ -4460,6 +4512,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-112',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Materiality in Planning and Performing the Audit",
     description: "Determine planning and performance materiality levels",
     order: 53,
@@ -4540,6 +4593,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-013',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Fraud Risk Assessment",
     description: "Identify and respond to fraud risk factors in the audit",
     order: 54,
@@ -4634,6 +4688,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-113',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Audit Sampling Fundamentals",
     description: "Master statistical and non-statistical sampling methods",
     order: 55,
@@ -4715,6 +4770,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-114',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Substantive Analytical Procedures",
     description: "Use analytics as substantive evidence",
     order: 56,
@@ -4788,6 +4844,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-112',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Government Auditing Standards (Yellow Book)",
     description: "Understand GAGAS requirements for government audits",
     order: 57,
@@ -4858,6 +4915,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-113',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Single Audit (Uniform Guidance)",
     description: "Understand single audit requirements for federal award recipients",
     order: 58,
@@ -4929,6 +4987,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-014',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Engagement Quality Review",
     description: "Understand EQR requirements and the reviewer's responsibilities",
     order: 59,
@@ -4999,6 +5058,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-015',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Communications with Those Charged with Governance",
     description: "Master required and other communications with audit committees",
     order: 60,
@@ -5071,6 +5131,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-016',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Related Party Transactions",
     description: "Understand audit procedures for related party relationships and transactions",
     order: 61,
@@ -5142,6 +5203,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-017',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Using the Work of a Specialist",
     description: "Understand when and how auditors use specialists",
     order: 62,
@@ -5214,6 +5276,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-018',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Group Audits (Component Auditors)",
     description: "Understand using the work of component auditors",
     order: 63,
@@ -5284,6 +5347,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-019',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Auditing Estimates",
     description: "Master audit procedures for accounting estimates",
     order: 64,
@@ -5356,6 +5420,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-020',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Subsequent Events and Subsequently Discovered Facts",
     description: "Understand audit procedures for events after period end",
     order: 65,
@@ -5428,6 +5493,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-I-015',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Professional Skepticism and Judgment",
     description: "Understand the foundation of quality auditing",
     order: 66,
@@ -5498,6 +5564,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-015',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Risk of Material Misstatement",
     description: "Master the audit risk model components",
     order: 67,
@@ -5568,6 +5635,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-016',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Understanding Internal Control",
     description: "Master the five components of internal control",
     order: 68,
@@ -5639,6 +5707,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-II-017',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Tests of Controls",
     description: "Understand when and how to test internal controls",
     order: 69,
@@ -5709,6 +5778,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-115',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Audit Evidence Requirements",
     description: "Master sufficiency and appropriateness of evidence",
     order: 70,
@@ -5780,6 +5850,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-III-016',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Substantive Procedures",
     description: "Master tests of details and substantive analytics",
     order: 71,
@@ -5852,6 +5923,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-021',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Modification to the Auditor's Report",
     description: "Understand qualified, adverse, and disclaimer opinions",
     order: 72,
@@ -5921,6 +5993,7 @@ export const audLessons: Lesson[] = [
   {
     id: 'AUD-IV-022',
     section: 'AUD',
+    courseId: 'cpa',
     title: "Emphasis-of-Matter and Other-Matter Paragraphs",
     description: "Understand when to add explanatory paragraphs",
     order: 73,

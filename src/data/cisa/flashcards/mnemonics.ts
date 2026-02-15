@@ -11,7 +11,8 @@ export interface MnemonicFlashcard {
   back: string;
   category: string;
   tags: string[];
-  domain: 'CISA1' | 'CISA2' | 'CISA3' | 'CISA4' | 'CISA5';
+  section: string;
+  type: string;
   mnemonic?: string;
 }
 
@@ -21,7 +22,9 @@ export interface MnemonicFlashcard {
 export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa1-mn-001',
-    domain: 'CISA1',
+    section: 'CISA1',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'PRISM',
     front: 'IS Audit Planning Steps',
@@ -31,7 +34,9 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa1-mn-002',
-    domain: 'CISA1',
+    section: 'CISA1',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'CISER',
     front: 'IS Audit Standards - General Standards',
@@ -41,7 +46,9 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa1-mn-003',
-    domain: 'CISA1',
+    section: 'CISA1',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'RICE',
     front: 'Audit Evidence Attributes',
@@ -51,7 +58,9 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa1-mn-004',
-    domain: 'CISA1',
+    section: 'CISA1',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'SUBSTANTIVE',
     front: 'Types of Audit Tests',
@@ -61,7 +70,9 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa1-mn-005',
-    domain: 'CISA1',
+    section: 'CISA1',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'SAMPLING',
     front: 'Statistical vs Judgmental Sampling',
@@ -77,7 +88,9 @@ export const CISA1_MNEMONICS: MnemonicFlashcard[] = [
 export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa2-mn-001',
-    domain: 'CISA2',
+    section: 'CISA2',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'COBIT EDM-APO-BAI-DSS-MEA',
     front: 'COBIT 2019 Domains',
@@ -87,7 +100,9 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa2-mn-002',
-    domain: 'CISA2',
+    section: 'CISA2',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'G-D-M',
     front: 'COBIT 2019 Governance vs Management',
@@ -97,7 +112,9 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa2-mn-003',
-    domain: 'CISA2',
+    section: 'CISA2',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'IT-SC',
     front: 'IT Steering Committee Responsibilities',
@@ -107,7 +124,9 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa2-mn-004',
-    domain: 'CISA2',
+    section: 'CISA2',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'SLA-OLA-UC',
     front: 'Service Level Agreement Hierarchy',
@@ -117,7 +136,9 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa2-mn-005',
-    domain: 'CISA2',
+    section: 'CISA2',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'RACI',
     front: 'RACI Matrix for Responsibility Assignment',
@@ -133,7 +154,9 @@ export const CISA2_MNEMONICS: MnemonicFlashcard[] = [
 export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa3-mn-001',
-    domain: 'CISA3',
+    section: 'CISA3',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'RADIM',
     front: 'Traditional SDLC Phases',
@@ -143,7 +166,9 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa3-mn-002',
-    domain: 'CISA3',
+    section: 'CISA3',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'AGILE-SPRINT',
     front: 'Agile Development Key Concepts',
@@ -153,7 +178,9 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa3-mn-003',
-    domain: 'CISA3',
+    section: 'CISA3',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'UT-ST-IT-UAT',
     front: 'Testing Phases Hierarchy',
@@ -163,7 +190,9 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa3-mn-004',
-    domain: 'CISA3',
+    section: 'CISA3',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'SEP-D-T-P',
     front: 'Separation of Environments',
@@ -173,7 +202,9 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa3-mn-005',
-    domain: 'CISA3',
+    section: 'CISA3',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'CAB',
     front: 'Change Management - Change Advisory Board',
@@ -189,7 +220,9 @@ export const CISA3_MNEMONICS: MnemonicFlashcard[] = [
 export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa4-mn-001',
-    domain: 'CISA4',
+    section: 'CISA4',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'RTO-RPO-MTPD',
     front: 'Business Continuity Key Metrics',
@@ -199,7 +232,9 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa4-mn-002',
-    domain: 'CISA4',
+    section: 'CISA4',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'HOT-WARM-COLD',
     front: 'Disaster Recovery Site Types',
@@ -209,7 +244,9 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa4-mn-003',
-    domain: 'CISA4',
+    section: 'CISA4',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'FULL-DIFF-INCR',
     front: 'Backup Types Comparison',
@@ -219,7 +256,9 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa4-mn-004',
-    domain: 'CISA4',
+    section: 'CISA4',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'ITIL-SERVICE',
     front: 'ITIL Service Management Processes',
@@ -229,7 +268,9 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa4-mn-005',
-    domain: 'CISA4',
+    section: 'CISA4',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'IRP',
     front: 'Incident Response Phases',
@@ -245,7 +286,9 @@ export const CISA4_MNEMONICS: MnemonicFlashcard[] = [
 export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'cisa5-mn-001',
-    domain: 'CISA5',
+    section: 'CISA5',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'CIA-AAA',
     front: 'Security Principles - CIA and AAA',
@@ -255,7 +298,9 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa5-mn-002',
-    domain: 'CISA5',
+    section: 'CISA5',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'SYM-ASYM',
     front: 'Symmetric vs Asymmetric Encryption',
@@ -265,7 +310,9 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa5-mn-003',
-    domain: 'CISA5',
+    section: 'CISA5',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'HASH = OWF',
     front: 'Hashing - One-Way Function',
@@ -275,7 +322,9 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa5-mn-004',
-    domain: 'CISA5',
+    section: 'CISA5',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'DMZ',
     front: 'Network Security - DMZ Architecture',
@@ -285,7 +334,9 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa5-mn-005',
-    domain: 'CISA5',
+    section: 'CISA5',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'GDPR-7',
     front: 'GDPR Key Principles',
@@ -295,7 +346,9 @@ export const CISA5_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'cisa5-mn-006',
-    domain: 'CISA5',
+    section: 'CISA5',
+
+    type: 'concept',
     topic: 'mnemonic',
     mnemonic: 'MFA-SWK',
     front: 'Multi-Factor Authentication Factors',

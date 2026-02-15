@@ -4,6 +4,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-001',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Acquisition Method: Overview",
     description: "Master the acquisition method for business combinations under ASC 805",
     order: 1,
@@ -73,6 +74,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-002',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Measuring Consideration Transferred",
     description: "Understand how to measure purchase price in business combinations",
     order: 2,
@@ -141,6 +143,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-003',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Goodwill & Bargain Purchases",
     description: "Master goodwill calculation and bargain purchase accounting",
     order: 3,
@@ -215,6 +218,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-004',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Consolidation Procedures",
     description: "Master the mechanics of preparing consolidated financial statements",
     order: 4,
@@ -290,6 +294,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-005',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Intercompany Transactions: Inventory",
     description: "Master elimination of unrealized profit in intercompany inventory sales",
     order: 5,
@@ -363,6 +368,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-006',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Intercompany Transactions: Fixed Assets",
     description: "Master elimination of gain/loss on intercompany fixed asset transfers",
     order: 6,
@@ -436,6 +442,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-007',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Noncontrolling Interests",
     description: "Master accounting for minority shareholders in consolidated statements",
     order: 7,
@@ -509,6 +516,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-008',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Variable Interest Entities: Identification",
     description: "Master the identification of VIEs under ASC 810",
     order: 8,
@@ -578,6 +586,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-009',
     section: 'BAR',
+    courseId: 'cpa',
     title: "VIE: Primary Beneficiary",
     description: "Determine who must consolidate a variable interest entity",
     order: 9,
@@ -651,6 +660,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-010',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Disposal of Subsidiaries",
     description: "Master accounting for subsidiary disposals and deconsolidation",
     order: 10,
@@ -724,6 +734,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-001',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Complex Contract Modifications",
     description: "Master revenue recognition for modified contracts under ASC 606",
     order: 11,
@@ -787,6 +798,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-002',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Principal vs Agent Considerations",
     description: "Determine whether an entity is principal or agent in revenue transactions",
     order: 12,
@@ -846,6 +858,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-003',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Licenses of Intellectual Property",
     description: "Master revenue recognition for IP licenses under ASC 606",
     order: 13,
@@ -905,6 +918,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-004',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Lease Modifications & Reassessments",
     description: "Master accounting for lease changes under ASC 842",
     order: 14,
@@ -964,6 +978,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-005',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Subleases",
     description: "Master sublease accounting under ASC 842",
     order: 15,
@@ -1017,6 +1032,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-006',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Build-to-Suit Arrangements",
     description: "Master accounting for build-to-suit leases under ASC 842",
     order: 16,
@@ -1070,6 +1086,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-007',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Derivatives: Forwards, Futures, Options, Swaps",
     description: "Master derivative instruments under ASC 815",
     order: 17,
@@ -1129,6 +1146,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-008',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Hedge Accounting: Fair Value Hedges",
     description: "Master fair value hedge accounting under ASC 815",
     order: 18,
@@ -1188,6 +1206,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-009',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Hedge Accounting: Cash Flow Hedges",
     description: "Master cash flow hedge accounting under ASC 815",
     order: 19,
@@ -1247,6 +1266,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-010',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Foreign Currency Transactions",
     description: "Master accounting for transactions in foreign currencies under ASC 830",
     order: 20,
@@ -1306,6 +1326,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-011',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Translation of Foreign Operations",
     description: "Master the translation method for foreign subsidiaries under ASC 830",
     order: 21,
@@ -1366,6 +1387,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-012',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Remeasurement",
     description: "Master the remeasurement method for foreign operations under ASC 830",
     order: 22,
@@ -1426,6 +1448,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-001',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Capital Assets & Infrastructure (GASB)",
     description: "Master governmental capital asset accounting under GASB standards",
     order: 23,
@@ -1490,6 +1513,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-002',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Long-Term Liabilities: Governmental",
     description: "Master governmental long-term debt and liability accounting",
     order: 24,
@@ -1554,6 +1578,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-003',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Pension Accounting: GASB 68",
     description: "Master governmental pension accounting standards",
     order: 25,
@@ -1619,6 +1644,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-004',
     section: 'BAR',
+    courseId: 'cpa',
     title: "OPEB: GASB 75",
     description: "Master governmental other postemployment benefit accounting",
     order: 26,
@@ -1684,6 +1710,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-005',
     section: 'BAR',
+    courseId: 'cpa',
     title: "ACFR Components",
     description: "Master the Annual Comprehensive Financial Report structure",
     order: 27,
@@ -1747,6 +1774,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-006',
     section: 'BAR',
+    courseId: 'cpa',
     title: "RSI & Supplementary Information",
     description: "Understand required and other supplementary information",
     order: 28,
@@ -1812,6 +1840,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-007',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Government-Wide to Fund Reconciliations",
     description: "Master the reconciliation between fund and government-wide statements",
     order: 29,
@@ -1877,6 +1906,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-008',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Fiduciary Activities: GASB 84",
     description: "Master accounting for governmental fiduciary funds",
     order: 30,
@@ -1941,6 +1971,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-009',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Leases: GASB 87",
     description: "Master governmental lease accounting under GASB 87",
     order: 31,
@@ -2005,6 +2036,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-001',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Ratio Analysis: Liquidity, Solvency, Profitability",
     description: "Master financial ratio analysis for decision-making",
     order: 32,
@@ -2065,6 +2097,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-002',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Trend Analysis & Benchmarking",
     description: "Master horizontal and vertical analysis techniques",
     order: 33,
@@ -2123,6 +2156,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-003',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Prospective Financial Statements",
     description: "Understand forecasts and projections",
     order: 34,
@@ -2182,6 +2216,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-004',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Cost-Volume-Profit Analysis",
     description: "Master CVP analysis and breakeven calculations",
     order: 35,
@@ -2242,6 +2277,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-005',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Budgeting & Forecasting",
     description: "Master budgeting concepts and techniques",
     order: 36,
@@ -2302,6 +2338,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-006',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Variance Analysis",
     description: "Master budget variance calculations and analysis",
     order: 37,
@@ -2362,6 +2399,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-007',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Cost Accounting: Job & Process",
     description: "Master job-order and process costing systems",
     order: 38,
@@ -2421,6 +2459,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-008',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Activity-Based Costing",
     description: "Master ABC costing methodology",
     order: 39,
@@ -2480,6 +2519,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-009',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Capital Budgeting: NPV, IRR, Payback",
     description: "Master capital investment decision techniques",
     order: 40,
@@ -2546,6 +2586,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-001',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Data Analytics Fundamentals",
     description: "Understand data analytics concepts and applications in accounting",
     order: 41,
@@ -2610,6 +2651,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-002',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Statistical Sampling and Analysis",
     description: "Apply statistical concepts in audit and business contexts",
     order: 42,
@@ -2681,6 +2723,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-003',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Regression Analysis",
     description: "Apply regression techniques for forecasting and analysis",
     order: 43,
@@ -2745,6 +2788,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-004',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Variance Analysis Deep Dive",
     description: "Master multi-level variance analysis for performance evaluation",
     order: 44,
@@ -2808,6 +2852,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-005',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Transfer Pricing",
     description: "Understand transfer pricing methods and implications",
     order: 45,
@@ -2872,6 +2917,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-006',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Balanced Scorecard and KPIs",
     description: "Implement strategic performance measurement systems",
     order: 46,
@@ -2936,6 +2982,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-007',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Economic Value Added (EVA)",
     description: "Calculate and interpret residual income metrics",
     order: 47,
@@ -3000,6 +3047,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-008',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Business Process Improvement",
     description: "Apply process improvement methodologies",
     order: 48,
@@ -3065,6 +3113,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-009',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Risk Assessment and Management",
     description: "Apply enterprise risk management frameworks",
     order: 49,
@@ -3135,6 +3184,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-010',
     section: 'BAR',
+    courseId: 'cpa',
     title: "IFRS vs. US GAAP Key Differences",
     description: "Compare major differences between IFRS and US GAAP",
     order: 50,
@@ -3206,6 +3256,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-011',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Revenue Recognition: Complex Arrangements",
     description: "Apply ASC 606 to complex multi-element arrangements",
     order: 51,
@@ -3270,6 +3321,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-012',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Lease Accounting: Lessee",
     description: "Apply ASC 842 lease accounting from lessee perspective",
     order: 52,
@@ -3334,6 +3386,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-013',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Stock-Based Compensation",
     description: "Account for stock options and restricted stock",
     order: 53,
@@ -3398,6 +3451,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-014',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Foreign Currency Translation",
     description: "Apply ASC 830 for foreign subsidiaries and transactions",
     order: 54,
@@ -3461,6 +3515,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-V-015',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Income Tax Accounting: Advanced Topics",
     description: "Master complex deferred tax and valuation allowance issues",
     order: 55,
@@ -3529,6 +3584,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-016',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Fair Value Measurements (ASC 820)",
     description: "Master the fair value hierarchy and measurement techniques",
     order: 56,
@@ -3603,6 +3659,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-017',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Segment Reporting (ASC 280)",
     description: "Understand operating segment identification and disclosure",
     order: 57,
@@ -3678,6 +3735,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-018',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Earnings Per Share: Complex Structures",
     description: "Master EPS with convertibles, options, and contingent shares",
     order: 58,
@@ -3753,6 +3811,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-019',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Business Combinations (ASC 805)",
     description: "Master acquisition accounting and purchase price allocation",
     order: 59,
@@ -3829,6 +3888,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-020',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Impairment Testing (ASC 350/360)",
     description: "Understand goodwill and long-lived asset impairment",
     order: 60,
@@ -3904,6 +3964,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-021',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Foreign Currency Transactions (ASC 830)",
     description: "Master foreign currency remeasurement and translation",
     order: 61,
@@ -3978,6 +4039,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-022',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Variable Interest Entities (VIEs)",
     description: "Understand VIE identification and consolidation requirements",
     order: 62,
@@ -4054,6 +4116,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-023',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Stock-Based Compensation (ASC 718)",
     description: "Master accounting for stock options and restricted stock",
     order: 63,
@@ -4130,6 +4193,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-024',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Financial Statement Analysis Ratios",
     description: "Master key ratios for liquidity, solvency, and profitability",
     order: 64,
@@ -4218,6 +4282,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-IV-010',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Cash Flow Statement Analysis",
     description: "Analyze operating, investing, and financing cash flows",
     order: 65,
@@ -4292,6 +4357,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-010',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Prospective Financial Information",
     description: "Understand forecasts, projections, and pro forma statements",
     order: 66,
@@ -4362,6 +4428,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-III-011',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Valuation Concepts and Methods",
     description: "Understand approaches to business and asset valuation",
     order: 67,
@@ -4431,6 +4498,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-110',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Data Analytics Fundamentals",
     description: "Understand data analysis techniques for accountants",
     order: 68,
@@ -4501,6 +4569,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-II-111',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Regression Analysis",
     description: "Understand regression for financial forecasting and analysis",
     order: 69,
@@ -4571,6 +4640,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-I-015',
     section: 'BAR',
+    courseId: 'cpa',
     title: "Hedging and Derivatives",
     description: "Understand hedge accounting and derivative instruments",
     order: 70,
@@ -4645,6 +4715,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-A-1',
     title: 'Time Value of Money',
@@ -4698,6 +4769,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-A-2',
     title: 'Capital Budgeting Methods',
@@ -4751,6 +4823,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-B-1',
     title: 'Working Capital Management',
@@ -4803,6 +4876,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-C-1',
     title: 'Cost Behavior and CVP Analysis',
@@ -4861,6 +4935,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-C-2',
     title: 'Budgeting and Variance Analysis',
@@ -4918,6 +4993,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-C-3',
     title: 'Process Costing and Job Order Costing',
@@ -4971,6 +5047,7 @@ export const barLessons: Lesson[] = [
   {
     id: 'BAR-VII-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VII',
     blueprintTopic: 'BAR-VII-D-1',
     title: 'Ratio Analysis and Financial Metrics',

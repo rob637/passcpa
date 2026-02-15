@@ -746,9 +746,9 @@ const Onboarding: React.FC = () => {
         }
       }
       
-      // Navigate to appropriate dashboard based on selected course
-      const courseDashboard = getCourseHomePath(selectedCourse as CourseId);
-      navigate(courseDashboard);
+      // Navigate to diagnostic quiz to assess baseline knowledge
+      // Users can skip the diagnostic from within the quiz page
+      navigate('/diagnostic');
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {

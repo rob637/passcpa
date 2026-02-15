@@ -592,15 +592,10 @@ interface PricingSectionProps {
 
 const PricingSection = ({ config, colors }: PricingSectionProps) => {
   const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
-  const [isCheckingOut, setIsCheckingOut] = useState(false);
   const { user } = useAuth();
   
-  // Reset checkout state on mount and bfcache restore (back button)
-  // Also clear stale pendingCheckout if it's for a different course
+  // Clear stale pendingCheckout if it's for a different course
   useEffect(() => {
-    setIsCheckingOut(false);
-    
-    // Clear pendingCheckout if it's for a different course (user switched exams)
     const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
     if (pendingCheckoutStr) {
       try {
@@ -612,16 +607,6 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
         localStorage.removeItem('pendingCheckout');
       }
     }
-    
-    const handlePageShow = (event: PageTransitionEvent) => {
-      if (event.persisted) {
-        // Page was restored from bfcache (back/forward navigation)
-        setIsCheckingOut(false);
-      }
-    };
-    
-    window.addEventListener('pageshow', handlePageShow);
-    return () => window.removeEventListener('pageshow', handlePageShow);
   }, [config.id]);
   
   // Founder pricing — single source of truth in subscription.ts
@@ -649,13 +634,14 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
     'Pass guarantee*',
   ].filter(Boolean);
 
-  const handleCheckout = async () => {
-    setIsCheckingOut(true);
-    // Logged-in users go directly to checkout, others to registration
+  // All landing page CTAs route to registration (free trial first)
+  // Users can subscribe from the dashboard/banner after trying the product
+  const handleStartTrial = () => {
     if (user) {
-      window.location.href = `/start-checkout?course=${config.id}&interval=${billingInterval}`;
+      // Already logged in — go to their dashboard
+      window.location.href = `/${config.id === 'cpa' ? 'home' : config.id}`;
     } else {
-      window.location.href = `/register?course=${config.id}&redirect=checkout&interval=${billingInterval}`;
+      window.location.href = `/register?course=${config.id}`;
     }
   };
 
@@ -773,27 +759,17 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
                 ))}
               </div>
 
-              {/* CTA Button */}
+              {/* CTA Button — always starts with free trial */}
               <button
-                onClick={handleCheckout}
-                disabled={isCheckingOut}
-                className={`w-full bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+                onClick={handleStartTrial}
+                className={`w-full bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2`}
               >
-                {isCheckingOut ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Loading...
-                  </>
-                ) : (
-                  <>
-                    Subscribe Now
-                    <ArrowRight className="w-5 h-5" />
-                  </>
-                )}
+                Start 14-Day Free Trial
+                <ArrowRight className="w-5 h-5" />
               </button>
               
               <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
-                Cancel anytime • Pass guarantee included
+                No credit card required • Cancel anytime • Pass guarantee
               </p>
             </div>
 

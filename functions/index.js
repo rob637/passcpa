@@ -60,6 +60,25 @@ function getBaseUrl(clientOrigin) {
   return APP_BASE_URL;
 }
 
+// Lazy-initialize Stripe client (secrets only available at function runtime in Gen 2)
+let _stripeClient = null;
+function getStripeClient() {
+  if (_stripeClient) return _stripeClient;
+  
+  const secretKey = process.env.STRIPE_SECRET_KEY?.trim();
+  if (!secretKey) {
+    console.error('STRIPE_SECRET_KEY not found in environment');
+    return null;
+  }
+  
+  const Stripe = require('stripe');
+  _stripeClient = new Stripe(secretKey, {
+    apiVersion: '2024-12-18.acacia',
+  });
+  return _stripeClient;
+}
+
+// Legacy stripe variable for backward compatibility (webhook uses this)
 let stripe = null;
 if (STRIPE_SECRET_KEY) {
   const Stripe = require('stripe');
@@ -1566,8 +1585,11 @@ exports.createCheckoutSession = onCall({
     throw new HttpsError('invalid-argument', 'Missing courseId or interval');
   }
 
-  if (!stripe) {
-    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  // Get Stripe client (lazy-initialized with runtime secret)
+  const stripeClient = getStripeClient();
+  if (!stripeClient) {
+    console.error('Stripe client not available - STRIPE_SECRET_KEY may not be configured');
+    throw new HttpsError('failed-precondition', 'Stripe not configured. Please contact support.');
   }
 
   const validCourses = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
@@ -1586,19 +1608,22 @@ exports.createCheckoutSession = onCall({
     const priceType = isFounderWindow ? `founder_${interval}` : interval;
     const lookupKey = PRICE_LOOKUP_KEYS[courseId][priceType];
 
+    console.log(`Looking up price: ${lookupKey} for user ${userId}, course ${courseId}`);
+
     // Look up the price by lookup_key
-    const prices = await stripe.prices.list({
+    const prices = await stripeClient.prices.list({
       lookup_keys: [lookupKey],
       active: true,
       limit: 1,
     });
 
     if (prices.data.length === 0) {
-      console.error(`Price not found for lookup_key: ${lookupKey}`);
-      throw new HttpsError('not-found', 'Price not found. Please contact support.');
+      console.error(`Price not found for lookup_key: ${lookupKey}. Make sure this price exists in Stripe with this lookup_key.`);
+      throw new HttpsError('not-found', `Price "${lookupKey}" not found. Please ensure pricing is configured in Stripe.`);
     }
 
     const priceId = prices.data[0].id;
+    console.log(`Found price ID: ${priceId}`);
 
     // Check if user already has a Stripe customer ID
     const userDoc = await db.collection('users').doc(userId).get();
@@ -1606,7 +1631,8 @@ exports.createCheckoutSession = onCall({
 
     // Create customer if needed
     if (!stripeCustomerId) {
-      const customer = await stripe.customers.create({
+      console.log(`Creating Stripe customer for user ${userId}`);
+      const customer = await stripeClient.customers.create({
         email: userEmail,
         metadata: {
           firebaseUserId: userId,
@@ -1614,14 +1640,14 @@ exports.createCheckoutSession = onCall({
       });
       stripeCustomerId = customer.id;
       
-      // Save customer ID to user profile
-      await db.collection('users').doc(userId).update({
+      // Save customer ID to user profile (use set with merge in case doc doesn't exist)
+      await db.collection('users').doc(userId).set({
         stripeCustomerId: stripeCustomerId,
-      });
+      }, { merge: true });
     }
 
     // Create checkout session
-    const session = await stripe.checkout.sessions.create({
+    const session = await stripeClient.checkout.sessions.create({
       customer: stripeCustomerId,
       payment_method_types: ['card'],
       mode: 'subscription',
@@ -1654,7 +1680,13 @@ exports.createCheckoutSession = onCall({
     };
   } catch (error) {
     console.error('Checkout session error:', error);
-    throw new HttpsError('internal', 'Failed to create checkout session');
+    // Pass through HttpsErrors we already threw
+    if (error instanceof HttpsError) {
+      throw error;
+    }
+    // Include more details for debugging
+    const stripeError = error.raw?.message || error.message || 'Unknown error';
+    throw new HttpsError('internal', `Failed to create checkout session: ${stripeError}`);
   }
 });
 
@@ -1676,7 +1708,9 @@ exports.stripeWebhook = onRequest({
     return;
   }
 
-  if (!stripe) {
+  const stripeClient = getStripeClient();
+  if (!stripeClient) {
+    console.error('Stripe client not available - STRIPE_SECRET_KEY may not be configured');
     res.status(500).send('Stripe not configured');
     return;
   }
@@ -1688,7 +1722,7 @@ exports.stripeWebhook = onRequest({
     // Verify webhook signature
     // Use rawBody (Buffer) which is the original request body before JSON parsing
     const bodyToVerify = req.rawBody || req.body;
-    event = stripe.webhooks.constructEvent(
+    event = stripeClient.webhooks.constructEvent(
       bodyToVerify,
       sig,
       STRIPE_WEBHOOK_SECRET
@@ -1761,13 +1795,16 @@ async function handleCheckoutComplete(session) {
   // Also write subscription data directly from the checkout session.
   // This acts as a fallback in case customer.subscription.created/updated
   // events are delayed, missed, or fail signature verification.
-  if (session.subscription && stripe) {
-    try {
-      const subscription = await stripe.subscriptions.retrieve(session.subscription);
-      await updateUserSubscription(userId, subscription, courseId);
-      console.log(`Subscription data written from checkout.session.completed for user ${userId}`);
-    } catch (subError) {
-      console.error('Error syncing subscription from checkout session:', subError);
+  if (session.subscription) {
+    const stripeClient = getStripeClient();
+    if (stripeClient) {
+      try {
+        const subscription = await stripeClient.subscriptions.retrieve(session.subscription);
+        await updateUserSubscription(userId, subscription, courseId);
+        console.log(`Subscription data written from checkout.session.completed for user ${userId}`);
+      } catch (subError) {
+        console.error('Error syncing subscription from checkout session:', subError);
+      }
     }
   }
 
@@ -2009,8 +2046,10 @@ exports.createCustomerPortalSession = onCall({
     throw new HttpsError('unauthenticated', 'You must be logged in.');
   }
 
-  if (!stripe) {
-    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  const stripeClient = getStripeClient();
+  if (!stripeClient) {
+    console.error('Stripe client not available - STRIPE_SECRET_KEY may not be configured');
+    throw new HttpsError('failed-precondition', 'Stripe not configured. Please contact support.');
   }
 
   const userId = request.auth.uid;
@@ -2035,7 +2074,7 @@ exports.createCustomerPortalSession = onCall({
       } catch (_) { /* invalid URL, use default */ }
     }
 
-    const session = await stripe.billingPortal.sessions.create({
+    const session = await stripeClient.billingPortal.sessions.create({
       customer: stripeCustomerId,
       return_url: portalReturnUrl,
     });
@@ -2063,8 +2102,10 @@ exports.syncSubscriptionFromStripe = onCall({
     throw new HttpsError('unauthenticated', 'You must be logged in.');
   }
 
-  if (!stripe) {
-    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  const stripeClient = getStripeClient();
+  if (!stripeClient) {
+    console.error('Stripe client not available - STRIPE_SECRET_KEY may not be configured');
+    throw new HttpsError('failed-precondition', 'Stripe not configured. Please contact support.');
   }
 
   const userId = request.auth.uid;
@@ -2079,7 +2120,7 @@ exports.syncSubscriptionFromStripe = onCall({
     }
 
     // List active subscriptions for this customer from Stripe
-    const subscriptions = await stripe.subscriptions.list({
+    const subscriptions = await stripeClient.subscriptions.list({
       customer: stripeCustomerId,
       status: 'active',
       limit: 10,
@@ -2087,7 +2128,7 @@ exports.syncSubscriptionFromStripe = onCall({
 
     if (subscriptions.data.length === 0) {
       // Also check for trialing subscriptions
-      const trialingSubs = await stripe.subscriptions.list({
+      const trialingSubs = await stripeClient.subscriptions.list({
         customer: stripeCustomerId,
         status: 'trialing',
         limit: 10,

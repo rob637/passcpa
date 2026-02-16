@@ -19,12 +19,14 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firest
 import { httpsCallable } from 'firebase/functions';
 import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
-import type { FieldValue, Timestamp } from 'firebase/firestore';
 import { getPendingReferral, applyReferralCode } from '../services/referral';
 import { saveCoursePreference } from '../utils/courseDetection';
 import { Capacitor } from '@capacitor/core';
-import { UserProfile } from '../types';
-import { CourseId } from '../types/course';
+import { UserProfile, CourseId } from '../types';
+import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
+
+// Re-export UserProfile for components that import from AuthProvider
+export type { UserProfile };
 
 // Check if running in native Capacitor app
 const isNativePlatform = Capacitor.isNativePlatform();
@@ -32,31 +34,6 @@ const isNativePlatform = Capacitor.isNativePlatform();
 // Firebase error type for proper catch handling
 interface FirebaseError extends Error {
   code?: string;
-}
-
-export interface UserProfile {
-  id: string;
-  uid?: string; // Alias for id, some code uses this
-  email: string;
-  displayName: string;
-  photoURL?: string | null; // User profile photo
-  createdAt: Timestamp | FieldValue; // Firestore Timestamp
-  onboardingComplete: boolean;
-  onboardingCompletedAt?: Timestamp | Date | null;
-  examSection: string | null;
-  examDate: Timestamp | Date | null;
-  dailyGoal: number;
-  studyPlanId: string | null;
-  isAdmin?: boolean; // Admin role for CMS access
-  dailyReminderEnabled?: boolean;
-  dailyReminderTime?: string;
-  weeklyReportEnabled?: boolean;
-  timezone?: string; // IANA timezone string (e.g., "America/New_York")
-  settings: {
-    notifications: boolean;
-    darkMode: boolean;
-    soundEffects: boolean;
-  };
 }
 
 export interface AuthContextType {
@@ -400,41 +377,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         logger.log('Using native Google Sign-In');
         const result = await FirebaseAuthentication.signInWithGoogle();
         
-        // Check if user profile exists, create if not
-        const userRef = doc(db, 'users', user.uid);
-        const userDoc = await getDoc(userRef);
-        
-        if (!userDoc.exists()) {
-          // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
-          const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
-
-          // Create new profile for Google user
-          const newProfile: Omit<UserProfile, 'id'> = {
-            email: user.email || '',
-            displayName: user.displayName || '',
-            photoURL: user.photoURL,
-            createdAt: serverTimestamp() as unknown as Date,
-            onboardingComplete: false,
-            activeCourse: pendingCourse as CourseId,
-            examSection: null,
-            examDate: null,
-            dailyGoal: 25,
-            studyPlanId: null,
-            settings: {
-              notifications: true,
-              darkMode: false,
-              soundEffects: true,
-            },
-          };
-          await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
-          setUserProfile({ 
-            ...newProfile,
-            id: user.uid, 
-          } as UserProfile);
-        } else {
-          // Update last login for existing user
-          await updateDoc(userRef, { lastLogin: serverTimestamp() });
-          await fetchUserProfile(user.uid);
+        // Extract idToken from native sign-in result
+        const idToken = result.credential?.idToken;
+        if (!idToken) {
+          throw new Error('No ID token returned from native Google Sign-In');
         }
         
         // Sign in to Firebase with the Google credential

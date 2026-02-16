@@ -1498,6 +1498,84 @@ textarea:focus:not(:focus-visible),
   font-size: 0.875em;
 }
 
+/* AI formatted lists - professional look */
+.ai-list,
+.ai-list-ordered {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.ai-list {
+  list-style-type: none;
+}
+
+.ai-list li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.ai-list li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.ai-list-ordered {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.ai-list-ordered li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.6;
+}
+
+.ai-list-ordered li::marker {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* AI paragraphs */
+.ai-paragraph {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.ai-paragraph:not(:last-child) {
+  margin-bottom: 0.125rem;
+}
+
+.ai-paragraph-break {
+  height: 0.75rem;
+}
+
+/* Nested list styling */
+.ai-list .ai-list,
+.ai-list-ordered .ai-list-ordered,
+.ai-list .ai-list-ordered,
+.ai-list-ordered .ai-list {
+  margin: 0.375rem 0 0.375rem 0.5rem;
+}
+
+/* Key term highlighting within AI responses */
+.ai-list li strong,
+.ai-list-ordered li strong {
+  color: var(--primary);
+}
+
+.dark .ai-list li strong,
+.dark .ai-list-ordered li strong {
+  color: var(--primary-light);
+}
+
 /* ============================================
    LIGHT MODE CRISPNESS ENHANCEMENTS
    Premium "floating card" effect - match dark mode polish

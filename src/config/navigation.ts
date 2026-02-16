@@ -59,7 +59,7 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
       strategy: '/resources',
     },
     activePaths: {
-      home: ['/home', '/flashcards', '/quiz', '/exam', '/tbs', '/written-communication', '/ai-tutor', '/tutor'],
+      home: ['/home', '/flashcards', '/quiz', '/exam', '/tbs', '/ai-tutor', '/tutor'],
       learn: ['/learn', '/lessons'],
       practice: ['/practice'],
       you: ['/you', '/progress', '/settings', '/achievements', '/community'],

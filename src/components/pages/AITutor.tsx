@@ -137,17 +137,16 @@ const getSmartPrompts = (weakAreas: WeakArea[] = [], _section: string, _courseId
   return basePrompts.slice(0, 4);
 };
 
-// Format message content with XSS protection and markdown rendering
+// Format message content with XSS protection and professional markdown rendering
 const formatMessage = (content: string) => {
   // Guard against non-string content
   if (typeof content !== 'string') {
     return '';
   }
   
-  // Process markdown tables first (before other formatting)
   let formatted = content;
   
-  // Match markdown tables and convert to HTML
+  // Process markdown tables first (before other formatting)
   const tableRegex = /\|(.+)\|\n\|[-:|\s]+\|\n((?:\|.+\|\n?)+)/g;
   formatted = formatted.replace(tableRegex, (_match, headerRow, bodyRows) => {
     const headers = headerRow.split('|').map((h: string) => h.trim()).filter(Boolean);
@@ -165,23 +164,91 @@ const formatMessage = (content: string) => {
     return table;
   });
   
-  // Handle headers (####, ###, ##)
+  // Handle headers (####, ###, ##) - must be done before list processing
   formatted = formatted
-    .replace(/^#### (.+)$/gm, '<h4 class="ai-h4">$1</h4>')
-    .replace(/^### (.+)$/gm, '<h3 class="ai-h3">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2 class="ai-h2">$1</h2>');
+    .replace(/^#### (.+)$/gm, '<<<H4>>>$1<<<\/H4>>>')
+    .replace(/^### (.+)$/gm, '<<<H3>>>$1<<<\/H3>>>')
+    .replace(/^## (.+)$/gm, '<<<H2>>>$1<<<\/H2>>>');
   
-  // Handle other markdown
+  // Process bold/italic BEFORE list detection (to avoid ** being confused with list markers)
+  formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<<<STRONG>>>$1<<<\/STRONG>>>');
+  
+  // Convert markdown lists to proper HTML lists
+  const lines = formatted.split('\n');
+  const result: string[] = [];
+  let inUnorderedList = false;
+  let inOrderedList = false;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmedLine = line.trim();
+    
+    // Check for unordered list items (*, -, •)
+    const unorderedMatch = trimmedLine.match(/^[\*\-•]\s+(.+)$/);
+    // Check for ordered list items (1., 2., etc.)
+    const orderedMatch = trimmedLine.match(/^(\d+)\.\s+(.+)$/);
+    
+    if (unorderedMatch) {
+      if (!inUnorderedList) {
+        if (inOrderedList) {
+          result.push('</ol>');
+          inOrderedList = false;
+        }
+        result.push('<ul class="ai-list">');
+        inUnorderedList = true;
+      }
+      result.push(`<li>${unorderedMatch[1]}</li>`);
+    } else if (orderedMatch) {
+      if (!inOrderedList) {
+        if (inUnorderedList) {
+          result.push('</ul>');
+          inUnorderedList = false;
+        }
+        result.push('<ol class="ai-list-ordered">');
+        inOrderedList = true;
+      }
+      result.push(`<li>${orderedMatch[2]}</li>`);
+    } else {
+      // Close any open lists
+      if (inUnorderedList) {
+        result.push('</ul>');
+        inUnorderedList = false;
+      }
+      if (inOrderedList) {
+        result.push('</ol>');
+        inOrderedList = false;
+      }
+      
+      // Handle empty lines as paragraph breaks
+      if (trimmedLine === '') {
+        result.push('<div class="ai-paragraph-break"></div>');
+      } else {
+        result.push(`<p class="ai-paragraph">${line}</p>`);
+      }
+    }
+  }
+  
+  // Close any remaining open lists
+  if (inUnorderedList) result.push('</ul>');
+  if (inOrderedList) result.push('</ol>');
+  
+  formatted = result.join('');
+  
+  // Restore headers and formatting
   formatted = formatted
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/<<<H4>>>(.*?)<<<\/H4>>>/g, '<h4 class="ai-h4">$1</h4>')
+    .replace(/<<<H3>>>(.*?)<<<\/H3>>>/g, '<h3 class="ai-h3">$1</h3>')
+    .replace(/<<<H2>>>(.*?)<<<\/H2>>>/g, '<h2 class="ai-h2">$1</h2>')
+    .replace(/<<<STRONG>>>(.*?)<<<\/STRONG>>>/g, '<strong>$1</strong>');
+  
+  // Handle remaining markdown formatting
+  formatted = formatted
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/`([^`]+)`/g, '<code class="ai-code">$1</code>')
-    .replace(/\n/g, '<br>')
-    .replace(/• /g, '&bull; ');
+    .replace(/`([^`]+)`/g, '<code class="ai-code">$1</code>');
   
   // Sanitize to prevent XSS attacks
   return DOMPurify.sanitize(formatted, {
-    ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'ul', 'ol', 'li', 'code', 'pre', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'h2', 'h3', 'h4'],
+    ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'div', 'ul', 'ol', 'li', 'code', 'pre', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'h2', 'h3', 'h4'],
     ALLOWED_ATTR: ['class'],
   });
 };

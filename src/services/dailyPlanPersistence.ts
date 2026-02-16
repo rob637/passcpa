@@ -43,6 +43,7 @@ export interface PersistedDailyPlan extends DailyPlan {
   version: number;
   createdAt: Date;
   updatedAt: Date;
+  examDate?: string; // Exam date at time of plan generation - used to invalidate cache if changed
 }
 
 /**
@@ -91,8 +92,9 @@ const getTodayDate = (): string => {
  * Fetch today's plan from Firestore (if exists) or LocalStorage (offline)
  * @param userId - User ID
  * @param section - Exam section (e.g., 'FAR', 'AUD') - if provided, only returns plan if section matches
+ * @param currentExamDate - Current exam date - if provided and differs from cached, invalidates cache
  */
-export const fetchTodaysPlan = async (userId: string, section?: string): Promise<PersistedDailyPlan | null> => {
+export const fetchTodaysPlan = async (userId: string, section?: string, currentExamDate?: string): Promise<PersistedDailyPlan | null> => {
   if (!userId) return null;
 
   const today = getTodayDate();
@@ -110,6 +112,11 @@ export const fetchTodaysPlan = async (userId: string, section?: string): Promise
           // Verify section matches if specified (extra safety check)
           if (section && parsed.section !== section) {
               logger.log(`Cached plan section (${parsed.section}) doesn't match requested (${section}), will regenerate`);
+              return null;
+          }
+          // Check if exam date changed - invalidate cache if so
+          if (currentExamDate !== undefined && parsed.examDate !== currentExamDate) {
+              logger.log(`Exam date changed (was: ${parsed.examDate}, now: ${currentExamDate}), regenerating plan`);
               return null;
           }
           // Convert date strings back to Date objects
@@ -142,6 +149,12 @@ export const fetchTodaysPlan = async (userId: string, section?: string): Promise
       // Verify section matches if specified
       if (section && plan.section !== section) {
         logger.log(`Firestore plan section (${plan.section}) doesn't match requested (${section}), will regenerate`);
+        return null;
+      }
+      
+      // Check if exam date changed - invalidate cache if so
+      if (currentExamDate !== undefined && plan.examDate !== currentExamDate) {
+        logger.log(`Exam date changed (was: ${plan.examDate}, now: ${currentExamDate}), regenerating plan`);
         return null;
       }
       
@@ -303,7 +316,7 @@ export const getOrCreateTodaysPlan = async (
   // Try to fetch existing plan (unless force regenerate)
   // Pass normalized section to ensure consistent cache key
   if (!forceRegenerate) {
-    const existingPlan = await fetchTodaysPlan(userId, cacheSection);
+    const existingPlan = await fetchTodaysPlan(userId, cacheSection, state.examDate);
     if (existingPlan) {
       logger.log(`Using cached daily plan for section ${cacheSection}`);
       return existingPlan;
@@ -393,6 +406,7 @@ export const getOrCreateTodaysPlan = async (
     version: PLAN_VERSION,
     createdAt: new Date(),
     updatedAt: new Date(),
+    examDate: state.examDate, // Store exam date for cache invalidation
     summary: {
       ...newPlan.summary,
       totalActivities: mergedActivities.length,

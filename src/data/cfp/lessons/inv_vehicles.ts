@@ -224,32 +224,6 @@ export const CFP_INV2_LESSONS: Lesson[] = [
         }
       ]
     },
-    keyFormulas: [
-      'Current Yield = Annual Coupon / Current Price',
-      'Tax-Equivalent Yield = Muni Yield / (1 - Tax Rate)',
-      'Price Change ≈ -Duration × ΔInterest Rate'
-    ],
-    practiceProblems: [
-      {
-        question:
-          'A muni bond yields 4%. An investor is in the 35% tax bracket. What taxable yield would be equivalent?',
-        answer:
-          'TEY = 4% / (1 - 0.35) = 4% / 0.65 = 6.15%. The investor needs a taxable bond yielding more than 6.15% to beat the muni.'
-      },
-      {
-        question:
-          'A bond has duration of 5 years. If rates rise 2%, what is the approximate price change?',
-        answer:
-          'Price change ≈ -5 × 2% = -10%. The bond price would fall approximately 10%.'
-      },
-      {
-        question:
-          'A $1,000 par bond pays 6% coupon and trades at $1,100. What is the current yield?',
-        answer:
-          'Current yield = $60 / $1,100 = 5.45%. Note: This is a premium bond because price > par.'
-      }
-    ],
-    relatedLessons: ['CFP-INV-L006', 'CFP-INV-L001', 'CFP-TAX-L005']
   },
 
   {
@@ -503,33 +477,6 @@ export const CFP_INV2_LESSONS: Lesson[] = [
         }
       ]
     },
-    keyFormulas: [
-      'Gordon Model: P₀ = D₁ / (r - g)',
-      'Dividend Yield = Annual Dividend / Price',
-      'P/E = Price / EPS',
-      'PEG = P/E / Growth Rate'
-    ],
-    practiceProblems: [
-      {
-        question:
-          'A stock pays $3 dividend, growing 4% annually. Required return is 9%. What is the intrinsic value?',
-        answer:
-          'D₁ = $3 × 1.04 = $3.12. P₀ = $3.12 / (0.09 - 0.04) = $3.12 / 0.05 = $62.40'
-      },
-      {
-        question:
-          'A stock trades at $80 with EPS of $4. The industry P/E is 25. Is the stock over or undervalued relative to peers?',
-        answer:
-          'Stock P/E = $80 / $4 = 20. Industry P/E = 25. Stock is undervalued relative to peers (lower P/E).'
-      },
-      {
-        question:
-          'How does a 3-for-1 stock split affect an investor with 100 shares at $90?',
-        answer:
-          'After split: 300 shares at $30 each. Total value unchanged at $9,000.'
-      }
-    ],
-    relatedLessons: ['CFP-INV-L005', 'CFP-INV-L007', 'CFP-TAX-L003']
   },
 
   {
@@ -767,31 +714,6 @@ export const CFP_INV2_LESSONS: Lesson[] = [
         }
       ]
     },
-    keyFormulas: [
-      'NAV = (Total Assets - Liabilities) / Shares Outstanding',
-      'Expense Ratio = Annual Expenses / Average Net Assets'
-    ],
-    practiceProblems: [
-      {
-        question:
-          'A fund has $500 million in assets, $5 million in liabilities, and 20 million shares. What is the NAV?',
-        answer:
-          'NAV = ($500M - $5M) / 20M = $495M / 20M = $24.75 per share'
-      },
-      {
-        question:
-          'An investor plans to invest $50,000 for 10 years. Should they choose A shares (5% front load, 0.25% annual) or C shares (1% annual level load)?',
-        answer:
-          'A shares: 5% × $50K = $2,500 upfront cost + 10 years × 0.25% annual cost. C shares: 10 years × 1% annual = 10% total load equivalent. For 10+ years, A shares are typically better.'
-      },
-      {
-        question:
-          'Why are ETFs generally more tax-efficient than mutual funds?',
-        answer:
-          'ETFs use in-kind redemptions—authorized participants exchange baskets of securities rather than cash. This avoids selling shares and triggering capital gains that would be distributed to shareholders.'
-      }
-    ],
-    relatedLessons: ['CFP-INV-L005', 'CFP-INV-L006', 'CFP-INV-L008']
   },
 
   {
@@ -969,36 +891,39 @@ export const CFP_INV2_LESSONS: Lesson[] = [
           content: 'These strategies combine stock positions with options for different objectives.'
         },
         {
-          type: 'list',
+          type: 'table',
           title: 'Covered Call',
-          items: [
-            { term: 'Structure', definition: 'Own stock + sell call' },
-            { term: 'Benefit', definition: 'Generate income from premium' },
-            { term: 'Trade-off', definition: 'Limit upside (stock called away if above strike)' },
-            { term: 'Protection', definition: 'Reduce downside slightly (premium offsets loss)' },
-            { term: 'Best for', definition: 'Income generation, willing to sell at strike' }
+          headers: ['Term', 'Definition'],
+          rows: [
+            ['Structure', 'Own stock + sell call'],
+            ['Benefit', 'Generate income from premium'],
+            ['Trade-off', 'Limit upside (stock called away if above strike)'],
+            ['Protection', 'Reduce downside slightly (premium offsets loss)'],
+            ['Best for', 'Income generation, willing to sell at strike']
           ]
         },
         {
-          type: 'list',
+          type: 'table',
           title: 'Protective Put',
-          items: [
-            { term: 'Structure', definition: 'Own stock + buy put' },
-            { term: 'Benefit', definition: 'Insurance against price decline' },
-            { term: 'Trade-off', definition: 'Keep unlimited upside' },
-            { term: 'Cost', definition: 'Premium paid' },
-            { term: 'Best for', definition: 'Protecting gains, worried about downside' }
+          headers: ['Term', 'Definition'],
+          rows: [
+            ['Structure', 'Own stock + buy put'],
+            ['Benefit', 'Insurance against price decline'],
+            ['Trade-off', 'Keep unlimited upside'],
+            ['Cost', 'Premium paid'],
+            ['Best for', 'Protecting gains, worried about downside']
           ]
         },
         {
-          type: 'list',
+          type: 'table',
           title: 'Collar',
-          items: [
-            { term: 'Structure', definition: 'Own stock + sell call + buy put' },
-            { term: 'Benefit', definition: 'Floor and ceiling on returns' },
-            { term: 'Trade-off', definition: 'Reduced cost (call premium funds put)' },
-            { term: 'Exposure', definition: 'Limited upside and downside' },
-            { term: 'Best for', definition: 'Concentrated stock positions' }
+          headers: ['Term', 'Definition'],
+          rows: [
+            ['Structure', 'Own stock + sell call + buy put'],
+            ['Benefit', 'Floor and ceiling on returns'],
+            ['Trade-off', 'Reduced cost (call premium funds put)'],
+            ['Exposure', 'Limited upside and downside'],
+            ['Best for', 'Concentrated stock positions']
           ]
         },
         {
@@ -1083,32 +1008,6 @@ export const CFP_INV2_LESSONS: Lesson[] = [
         }
       ]
     },
-    keyFormulas: [
-      'Call Intrinsic Value = MAX(Stock - Strike, 0)',
-      'Put Intrinsic Value = MAX(Strike - Stock, 0)',
-      'Time Value = Premium - Intrinsic Value'
-    ],
-    practiceProblems: [
-      {
-        question:
-          'A call option has strike $50, stock is at $55, premium is $8. What is intrinsic and time value?',
-        answer:
-          'Intrinsic = $55 - $50 = $5. Time value = $8 - $5 = $3. The option is in-the-money by $5.'
-      },
-      {
-        question:
-          'An investor owns 100 shares at $60 and sells a call with $65 strike for $3 premium. What happens if stock goes to $70?',
-        answer:
-          'The call is exercised; investor sells at $65. Total received: $65 + $3 premium = $68 per share. Miss out on $70 - $68 = $2 of additional upside.'
-      },
-      {
-        question:
-          'A REIT pays $4 per share in distributions. How is this typically taxed?',
-        answer:
-          'Most REIT distributions are ordinary income (taxed at ordinary rates). However, non-capital gain, non-qualified dividend portions may qualify for the 20% QBI deduction under Section 199A. Some may be return of capital (tax-deferred, reduces basis).'
-      }
-    ],
-    relatedLessons: ['CFP-INV-L005', 'CFP-INV-L006', 'CFP-TAX-L003']
   }
 ];
 

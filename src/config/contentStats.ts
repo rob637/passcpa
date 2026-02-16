@@ -1,7 +1,7 @@
 /**
  * Centralized Content Statistics — Single Source of Truth
  * 
- * ALL content counts (questions, flashcards, lessons) should reference this file.
+ * ALL content counts (questions, flashcards, lessons, TBS, essays, case studies) should reference this file.
  * When content is added, update the numbers in shared/content-stats.json and they propagate everywhere:
  * - Landing pages (ExamLandingData.ts)
  * - SEO metadata (useSEO.ts)
@@ -11,7 +11,7 @@
  * 
  * To recount from data files, run: npx tsx scripts/count-content.ts
  * 
- * Last updated: 2026-02-15
+ * Last updated: 2026-02-16
  */
 
 import type { CourseId } from '../types/course';
@@ -28,6 +28,14 @@ export interface CourseContentStats {
   flashcards: number;
   /** Actual count of lessons in data files */
   lessons: number;
+  /** Task-Based Simulations (CPA only) */
+  tbs?: number;
+  /** Essays/Written Communication (CMA only) */
+  essays?: number;
+  /** Case-Based Questions (CMA only - replacing essays Sept 2026) */
+  cbqs?: number;
+  /** Case Studies (CFP only) */
+  caseStudies?: number;
 }
 
 /**
@@ -73,6 +81,14 @@ export interface CourseDisplayStats {
   questions: string;
   flashcards: string;
   lessons: string;
+  /** Task-Based Simulations (CPA only) */
+  tbs?: string;
+  /** Essays/Written Communication (CMA only) */
+  essays?: string;
+  /** Case-Based Questions (CMA only - replacing essays Sept 2026) */
+  cbqs?: string;
+  /** Case Studies (CFP only) */
+  caseStudies?: string;
 }
 
 export const COURSE_DISPLAY_STATS: Record<CourseId, CourseDisplayStats> = Object.fromEntries(
@@ -84,6 +100,10 @@ export const COURSE_DISPLAY_STATS: Record<CourseId, CourseDisplayStats> = Object
         questions: formatDisplayCount(stats.questions),
         flashcards: formatDisplayCount(stats.flashcards),
         lessons: formatDisplayCount(stats.lessons),
+        ...(stats.tbs && { tbs: `${stats.tbs}+` }),
+        ...(stats.essays && { essays: `${stats.essays}+` }),
+        ...(stats.cbqs && { cbqs: `${stats.cbqs}` }),
+        ...(stats.caseStudies && { caseStudies: `${stats.caseStudies}` }),
       },
     ];
   })

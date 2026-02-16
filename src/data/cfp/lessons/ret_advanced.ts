@@ -98,7 +98,7 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'RMD age rises to 73 (2023) and 75 (2033)',
             'No RMDs from Roth 401(k)/403(b) starting 2024',
             'Super catch-up for ages 60-63 starting 2025',
@@ -219,7 +219,7 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Sequence withdrawals to minimize lifetime taxes, not just this year\'s',
             'Fill lower brackets with taxable income; use Roth for overflow',
             'Convert to Roth during low-income years before RMDs and SS',
@@ -301,8 +301,8 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         },
         {
           title: 'Roth Conversion Ladder',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             '1. Convert Traditional IRA to Roth each year',
             '2. Wait 5 years (seasoning requirement)',
             '3. Withdraw converted amounts penalty-free',
@@ -329,7 +329,7 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Rule of 55 unlocks 401(k) at separation from service at 55+',
             'SEPP/72(t) allows any-age access with serious commitment',
             'Taxable accounts bridge to 59½ at favorable rates',
@@ -435,8 +435,8 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         },
         {
           title: 'Phased Retirement Options',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Employer programs: Reduced hours, in-service distributions (62+), mentoring role',
             'Self-directed: Contract/consultant, encore career, part-time W-2'
           ]
@@ -444,7 +444,7 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Earnings test reduces SS benefits before FRA (but increases later)',
             'Investment income doesn\'t count against earnings test',
             'Delayed retirement credits (8%/year) reward working past FRA',
@@ -568,7 +568,7 @@ export const CFP_RET6_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'SPIAs provide immediate guaranteed income for life',
             'DIAs/QLACs provide longevity insurance starting later',
             'Variable annuities with GLWB offer market upside with income floor',

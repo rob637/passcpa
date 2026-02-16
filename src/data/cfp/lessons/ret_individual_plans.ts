@@ -125,7 +125,7 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             '2026 limit: $7,500 ($8,500 if 50+) with earned income',
             'Deduction phase-out: Depends on active participant status and MAGI',
             'Non-deductible contributions: Track basis on Form 8606',
@@ -201,8 +201,8 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         },
         {
           title: 'Distribution Ordering Rules',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             '1. Regular contributions (always tax-free, penalty-free)',
             '2. Conversion amounts (tax-free; penalty if under 59½ and within 5 years)',
             '3. Earnings (taxable + penalty if not qualified)'
@@ -255,7 +255,7 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Income limits (2026): Phase-out at $150K-$165K single / $236K-$246K MFJ',
             '5-year rule: Must hold 5 years + triggering event for tax-free earnings',
             'Distribution order: Contributions (tax-free) → Conversions → Earnings',
@@ -327,8 +327,8 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         },
         {
           title: 'SIMPLE Employer Contribution Options',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Option 1: Matching - Dollar-for-dollar up to 3% of compensation (can reduce to 2% for 2 of any 5 years)',
             'Option 2: Non-Elective - 2% of compensation to all eligible employees regardless of whether they contribute'
           ]
@@ -360,7 +360,7 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'SEP: Employer-only contributions, 25% of comp (20% for self-employed), $71.5K max',
             'SEP flexibility: Can vary/skip contributions; deadline = tax return deadline',
             'SIMPLE: Employee deferrals $17K + employer 3% match or 2% non-elective',
@@ -447,8 +447,8 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         },
         {
           title: 'Common Rollover Mistakes',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Missing 60-day deadline - even one day late = fully taxable',
             'Multiple 60-day rollovers - second IRA-to-IRA in 12 months = taxable',
             'Not making up withholding - shortfall is taxable',
@@ -464,7 +464,7 @@ export const CFP_RET3_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Direct transfer preferred—unlimited, no tax reporting',
             '60-day rule: Funds must be deposited within 60 days',
             'One per year: Only one IRA-to-IRA 60-day rollover per 12 months',

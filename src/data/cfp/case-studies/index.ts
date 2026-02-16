@@ -7,8 +7,13 @@
  */
 
 import { CaseStudy } from '../../../types';
+import { CFP_CASE_STUDIES_BATCH2 } from './batch2';
+import { CFP_CASE_STUDIES_BATCH3 } from './batch3';
+import { CFP_CASE_STUDIES_BATCH4 } from './batch4';
+import { CFP_CASE_STUDIES_BATCH5 } from './batch5';
+import { CFP_CASE_STUDIES_BATCH6 } from './batch6';
 
-export const CFP_CASE_STUDIES: CaseStudy[] = [
+const CFP_CASE_STUDIES_BASE: CaseStudy[] = [
   {
     id: 'CFP-CASE-001',
     title: 'The Martinez Family: Comprehensive Financial Plan',
@@ -1617,6 +1622,16 @@ Given Victoria's profile (artist, limited income, concerns about dependency):
 8. QOZ offers deferral + exclusion for long-term investors
 `
   }
+];
+
+// Combine all case study batches
+export const CFP_CASE_STUDIES: CaseStudy[] = [
+  ...CFP_CASE_STUDIES_BASE,
+  ...CFP_CASE_STUDIES_BATCH2,
+  ...CFP_CASE_STUDIES_BATCH3,
+  ...CFP_CASE_STUDIES_BATCH4,
+  ...CFP_CASE_STUDIES_BATCH5,
+  ...CFP_CASE_STUDIES_BATCH6,
 ];
 
 export default CFP_CASE_STUDIES;

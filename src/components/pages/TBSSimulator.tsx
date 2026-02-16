@@ -165,7 +165,9 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
               placeholder="Account name"
               className={clsx(
                 'w-full px-3 py-2 border rounded-lg text-sm',
-                disabled ? 'bg-slate-50' : 'focus:ring-2 focus:ring-primary-500'
+                'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+                'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+                disabled ? 'bg-slate-50 dark:bg-slate-800' : 'focus:ring-2 focus:ring-primary-500'
               )}
             />
           </div>
@@ -178,7 +180,9 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
               placeholder="0"
               className={clsx(
                 'w-full px-3 py-2 border rounded-lg text-sm text-right',
-                disabled ? 'bg-slate-50' : 'focus:ring-2 focus:ring-primary-500'
+                'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+                'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+                disabled ? 'bg-slate-50 dark:bg-slate-800' : 'focus:ring-2 focus:ring-primary-500'
               )}
             />
           </div>
@@ -191,7 +195,9 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
               placeholder="0"
               className={clsx(
                 'w-full px-3 py-2 border rounded-lg text-sm text-right',
-                disabled ? 'bg-slate-50' : 'focus:ring-2 focus:ring-primary-500'
+                'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+                'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+                disabled ? 'bg-slate-50 dark:bg-slate-800' : 'focus:ring-2 focus:ring-primary-500'
               )}
             />
           </div>
@@ -222,9 +228,9 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
       )}
 
       {showCorrect && correctEntries && (
-        <div className="mt-4 p-4 bg-success-50 rounded-lg">
-          <h4 className="font-medium text-success-800 mb-2">Correct Answer:</h4>
-          <div className="space-y-1 text-sm">
+        <div className="mt-4 p-4 bg-success-50 dark:bg-green-900/20 rounded-lg">
+          <h4 className="font-medium text-success-800 dark:text-green-200 mb-2">Correct Answer:</h4>
+          <div className="space-y-1 text-sm text-slate-800 dark:text-slate-200">
             {correctEntries.map((entry, i) => (
               <div key={i} className="grid grid-cols-3 gap-4">
                 <span>{entry.account}</span>
@@ -258,7 +264,7 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-3">
-        <span className="text-slate-600">$</span>
+        <span className="text-slate-600 dark:text-slate-400">$</span>
         <input
           type="number"
           value={value || ''}
@@ -267,9 +273,11 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
           placeholder="Enter amount"
           className={clsx(
             'w-48 px-4 py-2 border rounded-lg text-right font-mono',
-            disabled && 'bg-slate-50',
+            'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+            'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+            disabled && 'bg-slate-50 dark:bg-slate-800',
             showCorrect &&
-              (isCorrect ? 'border-success-500 bg-success-50' : 'border-error-500 bg-error-50')
+              (isCorrect ? 'border-success-500 bg-success-50 dark:bg-green-900/20' : 'border-error-500 bg-error-50 dark:bg-red-900/20')
           )}
         />
         {showCorrect &&
@@ -281,9 +289,9 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
       </div>
 
       {showCorrect && !isCorrect && (
-        <div className="p-3 bg-error-50 rounded-lg text-sm">
-          <p className="font-medium text-error-800">Correct: ${correctAnswer.toLocaleString()}</p>
-          {explanation && <p className="text-error-700 mt-1">{explanation}</p>}
+        <div className="p-3 bg-error-50 dark:bg-red-900/20 rounded-lg text-sm">
+          <p className="font-medium text-error-800 dark:text-red-200">Correct: ${correctAnswer.toLocaleString()}</p>
+          {explanation && <p className="text-error-700 dark:text-red-300 mt-1">{explanation}</p>}
         </div>
       )}
     </div>
@@ -376,10 +384,12 @@ const WrittenCommunicationInput: React.FC<WrittenCommunicationInputProps> = ({
           rows={15}
           className={clsx(
             'w-full px-4 py-3 border rounded-lg resize-none font-mono text-sm',
-            disabled ? 'bg-slate-50' : 'focus:ring-2 focus:ring-primary-500'
+            'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+            'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+            disabled ? 'bg-slate-50 dark:bg-slate-800' : 'focus:ring-2 focus:ring-primary-500'
           )}
         />
-        <div className="absolute bottom-3 right-3 text-xs text-slate-600">{wordCount} words</div>
+        <div className="absolute bottom-3 right-3 text-xs text-slate-600 dark:text-slate-400">{wordCount} words</div>
       </div>
     </div>
   );

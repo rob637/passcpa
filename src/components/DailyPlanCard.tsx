@@ -477,9 +477,15 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const totalActivities = plan.activities.length;
   const progress = totalActivities > 0 ? Math.round((completedCount / totalActivities) * 100) : 0;
 
-  // Compact view for dashboard (can expand inline)
+  // Compact view for dashboard — shows full plan inline
   if (compact && !expanded) {
     const nextActivity = plan.activities.find((a: DailyActivity) => !completedActivities.has(a.id));
+    const remainingActivities = plan.activities.filter(
+      (a: DailyActivity) => !completedActivities.has(a.id) && a.id !== nextActivity?.id
+    );
+    const completedList = plan.activities.filter(
+      (a: DailyActivity) => completedActivities.has(a.id)
+    );
     
     return (
       <Card noPadding className="overflow-hidden">
@@ -490,9 +496,20 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               <Calendar className="w-5 h-5 text-primary-500" />
               <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
             </div>
-            <span className="text-sm text-slate-600 dark:text-slate-400">
-              {completedCount}/{totalActivities} done
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-slate-600 dark:text-slate-400">
+                {completedCount}/{totalActivities} done
+              </span>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => loadPlan(true)}
+                aria-label="Regenerate plan"
+                className="w-7 h-7"
+              >
+                <RefreshCw className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
           {/* Progress bar */}
           <div className="mt-2 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
@@ -549,37 +566,65 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
           </div>
         )}
         
-        {/* Remaining activities preview */}
-        {totalActivities > 1 && (
-          <div className="p-3 bg-slate-50 dark:bg-slate-900/50">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                <span>Up next:</span>
-                <div className="flex gap-1">
-                  {plan.activities.slice(1, 4).map((activity: DailyActivity, idx: number) => (
-                    <div 
-                      key={idx}
-                      className={clsx(
-                        'w-6 h-6 rounded flex items-center justify-center',
-                        getActivityColor(activity.type)
-                      )}
-                      title={activity.title}
-                    >
-                      {React.createElement(getActivityIcon(activity.type), { className: 'w-3 h-3' })}
+        {/* Remaining activities - show full list */}
+        {remainingActivities.length > 0 && (
+          <div className="divide-y divide-slate-200 dark:divide-slate-700">
+            {remainingActivities.map((activity: DailyActivity) => {
+              const Icon = getActivityIcon(activity.type);
+              return (
+                <div
+                  key={activity.id}
+                  className="p-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors flex items-center gap-3"
+                  onClick={() => handleActivityClick(activity)}
+                >
+                  <div className={clsx(
+                    'w-8 h-8 rounded-lg flex items-center justify-center shrink-0',
+                    getActivityColor(activity.type)
+                  )}>
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium text-sm text-slate-900 dark:text-slate-100 truncate">
+                        {activity.title}
+                      </span>
+                      {getPriorityBadge(activity.priority)}
                     </div>
-                  ))}
-                  {plan.activities.length > 4 && (
-                    <span className="text-xs text-slate-600 dark:text-slate-400">+{plan.activities.length - 4}</span>
-                  )}
+                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{activity.reason}</p>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0 text-xs text-slate-500 dark:text-slate-400">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {activity.estimatedMinutes}m
+                    </span>
+                    <ChevronRight className="w-4 h-4" />
+                  </div>
                 </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Completed activities (collapsed) */}
+        {completedList.length > 0 && (
+          <div className="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
+            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+              <CheckCircle className="w-4 h-4 text-success-500" />
+              <span>{completedList.length} completed</span>
+              <div className="flex gap-1 ml-1">
+                {completedList.map((activity: DailyActivity) => (
+                  <div 
+                    key={activity.id}
+                    className={clsx(
+                      'w-5 h-5 rounded flex items-center justify-center opacity-60',
+                      getActivityColor(activity.type)
+                    )}
+                    title={`✓ ${activity.title}`}
+                  >
+                    {React.createElement(getActivityIcon(activity.type), { className: 'w-3 h-3' })}
+                  </div>
+                ))}
               </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setExpanded(true)}
-              >
-                View All →
-              </Button>
             </div>
           </div>
         )}

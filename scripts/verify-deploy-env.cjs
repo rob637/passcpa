@@ -8,11 +8,20 @@
  * 
  * Usage: node scripts/verify-deploy-env.cjs
  * Called automatically by firebase predeploy hook
+ * 
+ * In CI environments (GitHub Actions), this check is skipped because
+ * the workflow already performs its own environment verification.
  */
 
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+
+// Skip in CI environments - GitHub Actions already verifies environment before deploy
+if (process.env.CI || process.env.GITHUB_ACTIONS) {
+  console.log('🔍 CI environment detected - skipping predeploy verification (handled by workflow)');
+  process.exit(0);
+}
 
 // Project ID patterns to detect from build
 const PROJECT_PATTERNS = {
@@ -24,6 +33,15 @@ const PROJECT_PATTERNS = {
 
 // Get current Firebase project from CLI
 function getCurrentFirebaseProject() {
+  // First check environment variables (set by firebase CLI with --project flag)
+  // GCLOUD_PROJECT is set by Firebase CLI when --project is specified
+  if (process.env.GCLOUD_PROJECT) {
+    return process.env.GCLOUD_PROJECT;
+  }
+  if (process.env.FIREBASE_PROJECT) {
+    return process.env.FIREBASE_PROJECT;
+  }
+  
   try {
     // Execute firebase use and capture both stdout and stderr
     const result = execSync('firebase use 2>&1', { encoding: 'utf8' }).trim();

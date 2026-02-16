@@ -91,7 +91,11 @@ describe('useAuth Hook', () => {
 
   describe('signUp', () => {
     it('should create user and Firestore document', async () => {
-      const mockUser = { uid: 'new-user-uid', email: 'new@example.com' };
+      const mockUser = { 
+        uid: 'new-user-uid', 
+        email: 'new@example.com',
+        getIdToken: vi.fn().mockResolvedValue('mock-id-token'),
+      };
       createUserWithEmailAndPassword.mockResolvedValueOnce({ user: mockUser });
       updateProfile.mockResolvedValueOnce();
       setDoc.mockResolvedValueOnce();

@@ -72,9 +72,16 @@ const StartCheckout = () => {
         } else {
           throw new Error('No checkout URL returned');
         }
-      } catch (err) {
+      } catch (err: unknown) {
         logger.error('Checkout error:', err);
-        const message = err instanceof Error ? err.message : 'Failed to start checkout';
+        // Firebase Functions errors have code and message properties
+        let message = 'Failed to create checkout session';
+        if (err && typeof err === 'object') {
+          const firebaseError = err as { code?: string; message?: string };
+          if (firebaseError.message) {
+            message = firebaseError.message;
+          }
+        }
         setError(message);
       }
     };

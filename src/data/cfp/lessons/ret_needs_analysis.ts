@@ -41,8 +41,8 @@ export const CFP_RET1_LESSONS: Lesson[] = [
         },
         {
           title: 'The Retirement Planning Process',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Step 1: Estimate Retirement Expenses',
             'Step 2: Identify Guaranteed Income Sources',
             'Step 3: Calculate the Gap (Shortfall)',
@@ -125,7 +125,7 @@ export const CFP_RET1_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Income replacement: 70-80% is a guideline; customize to client',
             'Expense budgeting is more accurate than replacement percentages',
             'Inflation compounds; $80K today ≠ $80K in 20 years',
@@ -258,7 +258,7 @@ export const CFP_RET1_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             '40 credits (10 years) for eligibility; 35 best years for calculation',
             'FRA is 67 for those born 1960+; claiming early = permanent reduction',
             'Delayed credits: 8%/year increase until 70 (max 24-32% boost)',
@@ -369,7 +369,7 @@ export const CFP_RET1_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Part A (hospital) usually free; Part B (medical) $185/mo standard',
             'Medicare Advantage (Part C) = private alternative with network restrictions',
             'IRMAA applies to high-income: based on MAGI from 2 years prior',
@@ -437,8 +437,8 @@ export const CFP_RET1_LESSONS: Lesson[] = [
         },
         {
           title: 'Dynamic Withdrawal Strategies',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Guardrails Approach (Guyton-Klinger): Adjust withdrawals based on portfolio performance with set thresholds',
             'RMD Method: Divide portfolio by remaining life expectancy each year - naturally adjusts',
             'Bucket Strategy: Segment by time horizon - Cash (1-2 years), Bonds (3-7 years), Stocks (8+ years)'
@@ -477,7 +477,7 @@ export const CFP_RET1_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Plan to age 95 (50%+ of couples see one spouse reach 90)',
             '4% rule = $40,000/year per $1M; 3.5% may be safer today',
             'Sequence risk: Poor early returns + withdrawals = rapid depletion',

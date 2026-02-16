@@ -10,7 +10,7 @@
  * │  Format:         Computer-based, single session                            │
  * │  Duration:       5.5 hours (includes breaks)                               │
  * │  Questions:      170 total (85 stand-alone + 85 case-based)               │
- * │  Case Studies:   10-12 cases with 7-8 questions each                       │
+ * │  Case Studies:   17 cases with 6-8 questions each                         │
  * │  Passing Score:  Scaled (approximately 65-70% correct)                     │
  * └─────────────────────────────────────────────────────────────────────────────┘
  * 

@@ -104,6 +104,16 @@ export const COURSE_CBQ_PATHS: Record<CourseId, string> = {
   cisa: '/', // CISA doesn't have CBQ
 };
 
+// Course-specific Case Study paths (CFP only)
+export const COURSE_CASE_STUDY_PATHS: Record<CourseId, string> = {
+  cpa: '/', // CPA doesn't have case studies
+  ea: '/', // EA doesn't have case studies
+  cma: '/', // CMA doesn't have case studies
+  cia: '/', // CIA doesn't have case studies
+  cfp: '/cfp/cases', // CFP Case Study Simulator
+  cisa: '/', // CISA doesn't have case studies
+};
+
 // Get the home path for a specific course
 export function getCourseHomePath(courseId: CourseId): string {
   return COURSE_HOME_PATHS[courseId] || '/home';
@@ -167,6 +177,11 @@ export function getCourseEssayPath(courseId: CourseId): string {
 // Get the CBQ path for a specific course (CMA only)
 export function getCourseCBQPath(courseId: CourseId): string {
   return COURSE_CBQ_PATHS[courseId] || '/';
+}
+
+// Get the Case Study path for a specific course (CFP only)
+export function getCourseCaseStudyPath(courseId: CourseId): string {
+  return COURSE_CASE_STUDY_PATHS[courseId] || '/';
 }
 
 // Get the lesson path for a specific course and lesson

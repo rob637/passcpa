@@ -54,8 +54,8 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         },
         {
           title: 'Five Eligible Designated Beneficiaries',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             '1. Surviving spouse - can treat as own',
             '2. Minor child of deceased - stretch until majority, then 10-year (owner\'s child only, not grandchild)',
             '3. Disabled individual - IRS definition',
@@ -111,7 +111,7 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'SECURE Act: 10-year rule for most non-spouse beneficiaries',
             '5 EDBs can stretch: spouse, minor child, disabled, chronically ill, ≤10 years younger',
             'If owner died after RMD age: Annual RMDs + deplete by year 10',
@@ -168,8 +168,8 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         },
         {
           title: 'NUA Requirements',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Must be from qualified plan (401(k), profit-sharing, ESOP) - NOT from IRA',
             'Must be lump-sum distribution (entire balance in one tax year)',
             'Triggering events: Separation from service, death, disability, after age 59½',
@@ -201,7 +201,7 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'NUA = employer stock appreciation in plan; taxed at LTCG rate',
             'Must be lump-sum distribution from qualified plan (not IRA)',
             'Pay ordinary income on cost basis at distribution; LTCG on NUA at sale',
@@ -260,8 +260,8 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         },
         {
           title: 'QDRO Requirements',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Must Include: Names/addresses, plan name, dollar amount or percentage, payment timing',
             'Cannot Require: Benefits not otherwise available, increased benefits, benefits allocated to another payee'
           ]
@@ -309,7 +309,7 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'QDRO required for qualified plans (401(k), 403(b), pension); not for IRAs',
             'IRAs: Transfer incident to divorce = tax-free, no QDRO needed',
             'QDRO distribution exception: No 10% penalty from plan (even under 59½)',
@@ -417,7 +417,7 @@ export const CFP_RET5_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Match plan type to business structure, owner age, and contribution goals',
             'SECURE 2.0: Super catch-up at 60-63, RMD age 75, Roth 401(k) no RMD',
             'Integrate retirement with tax planning, estate planning, risk management',

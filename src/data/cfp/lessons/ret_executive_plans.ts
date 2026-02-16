@@ -53,8 +53,8 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         },
         {
           title: 'Why Employers Use NQDC',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'For Executives: Defer income beyond 401(k) limits, tax benefits if lower future bracket, retention tool',
             'For Employers: No cost until payment, can discriminate (select executives only), "golden handcuffs" retention'
           ]
@@ -72,8 +72,8 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         },
         {
           title: 'Six Permitted Distribution Events',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             '1. Separation from service',
             '2. Disability',
             '3. Death',
@@ -122,7 +122,7 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'NQDC = unsecured promise to pay; executive is a general creditor',
             'Section 409A: Election timing, 6 distribution events, severe penalties',
             '409A violation: Immediate income + 20% penalty + interest from deferral year',
@@ -231,7 +231,7 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'NQSOs: Spread is ordinary income at exercise; employer deduction',
             'ISOs: No regular tax at exercise (AMT preference); LTCG if qualified',
             'ISO holding: 2 years from grant + 1 year from exercise for LTCG',
@@ -345,7 +345,7 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Solo 401(k) usually beats SEP for self-employed under $345K income',
             'Defined benefit allows largest contributions, especially for older owners',
             'Cash balance plans = hybrid with DB contribution levels, DC appearance',
@@ -396,8 +396,8 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         },
         {
           title: 'RMD Aggregation Rules',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Traditional IRAs: Calculate separately, aggregate, satisfy from ANY Traditional IRA',
             '401(k) Plans: Each plan\'s RMD must be taken from that plan',
             '403(b) Plans: Can aggregate like IRAs'
@@ -459,7 +459,7 @@ export const CFP_RET4_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'RMD starts at 73 (75 for 1960+); first year can delay to April 1 following',
             'IRAs aggregate for RMDs (distribute from any); 401(k)s do not aggregate',
             'Roth conversions: Fill low brackets in early retirement before SS/RMDs',

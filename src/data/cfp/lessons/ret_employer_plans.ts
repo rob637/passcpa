@@ -71,8 +71,8 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         },
         {
           title: 'Employer Contributions',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Common match formulas: 50% on first 6% = 3%, or 100% on first 3% + 50% on next 2% = 4%',
             'Safe Harbor 401(k): 3% non-elective OR 100% on first 3% + 50% on next 2% (4% total)',
             'Safe harbor contributions must be immediately vested',
@@ -96,8 +96,8 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         },
         {
           title: 'Distribution Triggering Events',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Separation from service (any age)',
             'Age 59½ (while still employed)',
             'Disability',
@@ -144,7 +144,7 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             '2026 limits: $24,500 employee ($32,000 with catch-up); $71,500 total',
             'Roth 401(k): After-tax in, tax-free out (if qualified)',
             'Age 55 rule: Penalty-free withdrawals at separation after 55',
@@ -191,8 +191,8 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         },
         {
           title: '403(b) Investment Options',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Annuities (from insurance companies)',
             'Mutual funds (custodial accounts)',
             'Church retirement accounts (for churches only)',
@@ -246,7 +246,7 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             '403(b): For non-profits/schools; 15-year catch-up available',
             '457(b) governmental: NO 10% early withdrawal penalty',
             '457(b) non-governmental: Not rollover eligible to IRA; not creditor protected',
@@ -353,7 +353,7 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'DB formula: Years × Multiplier × Final Average Salary (commonly)',
             'Employer bears all investment and longevity risk',
             'Lump sum suits short life expectancy, legacy goals, investment confidence',
@@ -401,8 +401,8 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         },
         {
           title: 'Allocation Methods',
-          type: 'key_points',
-          points: [
+          type: 'list',
+          items: [
             'Pro-Rata (most common): Same percentage of compensation to all participants',
             'New Comparability (age-weighted): Allocates more to older, higher-paid employees',
             'Integrated with Social Security: Higher contribution % above SS wage base'
@@ -454,7 +454,7 @@ export const CFP_RET2_LESSONS: Lesson[] = [
         {
           title: 'Summary',
           type: 'summary',
-          points: [
+          items: [
             'Profit sharing: 100% employer-funded, discretionary, up to 25% of payroll',
             'Allocation methods: Pro-rata, age-weighted/new comparability, SS-integrated',
             'ESOPs: Can leverage (borrow), must invest in employer stock',

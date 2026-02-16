@@ -39,7 +39,7 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
 import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
-import { getPracticeSessions, getPracticeSessionsByCourse, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
+import { getPracticeSessionsByCourse, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import feedback from '../../services/feedback';

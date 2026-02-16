@@ -136,7 +136,7 @@ export const CFP_DOMAIN_REQUIREMENTS = {
   mockExamCount: 4,
   lessonCount: 60,
   flashcardCount: 800,
-  caseStudyCount: 12,
+  caseStudyCount: 17,
   examDuration: 360, // 6 hours (two 3-hour sessions)
   examQuestions: 170,
   domains: [

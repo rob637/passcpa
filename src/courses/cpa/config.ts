@@ -161,7 +161,7 @@ export const CPA_COURSE: Course = {
       weight: '100%',
       questionCount: 72,
       timeAllowed: 240,
-      questionTypes: ['mcq', 'tbs', 'wc'],
+      questionTypes: ['mcq', 'tbs'],
       blueprintAreas: [
         { 
           id: 'REG-I', 
@@ -239,7 +239,7 @@ export const CPA_COURSE: Course = {
       weight: '100%',
       questionCount: 66,
       timeAllowed: 240,
-      questionTypes: ['mcq', 'tbs', 'wc'],
+      questionTypes: ['mcq', 'tbs'],
       blueprintAreas: [
         { 
           id: 'BAR-I', 
@@ -330,7 +330,7 @@ export const CPA_COURSE: Course = {
       weight: '100%',
       questionCount: 66,
       timeAllowed: 240,
-      questionTypes: ['mcq', 'tbs', 'wc'],
+      questionTypes: ['mcq', 'tbs'],
       blueprintAreas: [
         { 
           id: 'TCP-I', 
@@ -398,7 +398,7 @@ export const CPA_COURSE: Course = {
   
   features: {
     hasTBS: true,
-    hasWrittenCommunication: true,
+    hasWrittenCommunication: false, // WC retired with BEC (Dec 2023)
     hasEssay: false,
     hasDataInsights: false,
   },

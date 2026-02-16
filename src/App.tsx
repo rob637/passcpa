@@ -4,6 +4,7 @@ import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';
+import { isAdminEmail } from './config/adminConfig';
 import { getCourseHomePath } from './utils/courseNavigation';
 import type { CourseId } from './types/course';
 
@@ -97,6 +98,9 @@ const Terms = lazy(() => import('./components/pages/legal/Terms'));
 const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
 const PassGuarantee = lazy(() => import('./components/pages/legal/PassGuarantee'));
+
+// Error Pages
+const NotFound = lazy(() => import('./components/pages/NotFound'));
 
 // Checkout Pages
 const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
@@ -196,9 +200,6 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   return children;
 };
 
-// Admin email whitelist - fallback when Firestore isAdmin flag not set
-const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
-
 // Admin-only Route - requires isAdmin: true in Firestore user profile OR whitelisted email
 const AdminRoute = ({ children }: RouteProps) => {
   const { user, userProfile, loading } = useAuth();
@@ -212,7 +213,7 @@ const AdminRoute = ({ children }: RouteProps) => {
   }
 
   // Check admin status from Firestore user profile OR email whitelist
-  const isAdmin = userProfile?.isAdmin === true || ADMIN_EMAILS.includes(user.email || '');
+  const isAdmin = userProfile?.isAdmin === true || isAdminEmail(user.email);
   
   if (!isAdmin) {
     // Non-admins silently redirected to home
@@ -1119,8 +1120,8 @@ function App() {
                   />
                 </Route>
 
-                {/* Default redirect - logged in users go to home */}
-                <Route path="*" element={<Navigate to="/home" replace />} />
+                {/* 404 - Not Found */}
+                <Route path="*" element={<SuspensePage><NotFound /></SuspensePage>} />
               </Routes>
             </Suspense>
           </ToastProvider>

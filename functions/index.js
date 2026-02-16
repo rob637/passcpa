@@ -904,9 +904,9 @@ exports.checkTrialExpirations = onSchedule({
       const subData = subDoc.data();
       
       try {
-        // Update subscription status to 'past_due' (trial expired, needs payment)
+        // Update subscription status to 'expired' (trial expired, needs payment)
         await db.collection('subscriptions').doc(userId).update({
-          status: 'past_due',
+          status: 'expired',
           updatedAt: admin.firestore.FieldValue.serverTimestamp(),
         });
         

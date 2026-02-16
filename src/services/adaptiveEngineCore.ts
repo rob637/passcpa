@@ -362,6 +362,102 @@ export function saveState(state: CoreAdaptiveState, storageKey: string): void {
 }
 
 // ============================================================================
+// Firestore Sync
+// ============================================================================
+
+/**
+ * Sync adaptive state to Firestore for cross-device persistence.
+ *
+ * Writes to: users/{uid}/adaptive_state/{courseId}
+ *
+ * This should be called periodically (e.g. on session end, after a batch of
+ * answers, or on a debounced timer) — NOT on every single answer to avoid
+ * excessive writes.
+ */
+export async function syncToFirestore(
+  state: CoreAdaptiveState,
+  userId: string,
+  courseId: string
+): Promise<void> {
+  try {
+    const { db } = await import('../config/firebase');
+    const { doc, setDoc } = await import('firebase/firestore');
+
+    const serialized = JSON.parse(serializeState(state));
+    // Flatten the Map-turned-array for Firestore (arrays of [key, value] pairs)
+    // Add metadata
+    serialized._syncedAt = new Date().toISOString();
+    serialized._courseId = courseId;
+
+    const docRef = doc(db, 'users', userId, 'adaptive_state', courseId);
+    await setDoc(docRef, serialized, { merge: false });
+  } catch (e) {
+    console.error(`Failed to sync adaptive state to Firestore (${courseId}):`, e);
+  }
+}
+
+/**
+ * Load adaptive state from Firestore. Used as fallback when localStorage is
+ * empty (e.g. new device, cleared browser data).
+ *
+ * Returns null if no Firestore state exists.
+ */
+export async function loadFromFirestore(
+  userId: string,
+  courseId: string,
+  config: EngineConfig
+): Promise<CoreAdaptiveState | null> {
+  try {
+    const { db } = await import('../config/firebase');
+    const { doc, getDoc } = await import('firebase/firestore');
+
+    const docRef = doc(db, 'users', userId, 'adaptive_state', courseId);
+    const snap = await getDoc(docRef);
+
+    if (!snap.exists()) return null;
+
+    const data = snap.data();
+    // Convert back to the serialized string format so we can reuse deserializeState
+    const json = JSON.stringify(data);
+    return deserializeState(json, config);
+  } catch (e) {
+    console.error(`Failed to load adaptive state from Firestore (${courseId}):`, e);
+    return null;
+  }
+}
+
+/**
+ * Load state from localStorage with Firestore fallback.
+ *
+ * Priority: localStorage → Firestore → fresh state
+ *
+ * When loaded from Firestore, also persists to localStorage for fast future loads.
+ */
+export async function loadStateWithFirestoreFallback(
+  config: EngineConfig,
+  userId: string,
+  courseId: string
+): Promise<CoreAdaptiveState> {
+  // Try localStorage first (fast)
+  try {
+    const stored = localStorage.getItem(config.storageKey);
+    if (stored) {
+      return deserializeState(stored, config);
+    }
+  } catch { /* fall through */ }
+
+  // Try Firestore (cross-device)
+  const firestoreState = await loadFromFirestore(userId, courseId, config);
+  if (firestoreState) {
+    // Persist to localStorage for next time
+    saveState(firestoreState, config.storageKey);
+    return firestoreState;
+  }
+
+  return initializeState(config);
+}
+
+// ============================================================================
 // Recording Answers
 // ============================================================================
 

@@ -25,11 +25,14 @@ import {
   recordAnswerCore,
   getQuestionsDueForReview as coreGetQuestionsDueForReview,
   getWeakSections as coreGetWeakSections,
+  getWeakSubSections,
   selectQuestionsCore,
   getPerformanceSummaryCore,
   startSessionCore,
   endSessionCore,
   shuffleArray,
+  syncToFirestore,
+  loadStateWithFirestoreFallback,
 } from './adaptiveEngineCore';
 
 // ============================================================================
@@ -137,6 +140,30 @@ function saveCMAState(state: AdaptiveState): void {
 
 let adaptiveState: AdaptiveState = loadCMAState();
 
+/** Fire-and-forget sync of adaptive state to Firestore for cross-device persistence */
+async function syncStateToCloud(): Promise<void> {
+  try {
+    const userId = adaptiveState.userId;
+    if (userId) {
+      await syncToFirestore(adaptiveState, userId, 'cma');
+    }
+  } catch { /* fire-and-forget */ }
+}
+
+/** Load state with Firestore fallback (for logged-in users on new devices) */
+export async function loadWithFirestoreFallback(userId: string): Promise<AdaptiveState> {
+  try {
+    const coreState = await loadStateWithFirestoreFallback(ENGINE_CONFIG, userId, 'cma');
+    adaptiveState = {
+      ...coreState,
+      userId,
+      sessionQuestionsAnswered: adaptiveState.sessionQuestionsAnswered || 0,
+    };
+    return adaptiveState;
+  } catch { /* fall through to local load */ }
+  return loadCMAState();
+}
+
 // ============================================================================
 // Public API — State Management
 // ============================================================================
@@ -203,6 +230,58 @@ export function getDueForReview(): string[] {
 
 export function getWeakParts(): CMASectionId[] {
   return coreGetWeakSections(adaptiveState, ENGINE_CONFIG) as CMASectionId[];
+}
+
+export function getWeakDomains(): string[] {
+  return getWeakSubSections(adaptiveState, ENGINE_CONFIG);
+}
+
+// ============================================================================
+// Public API — Recommendations
+// ============================================================================
+
+/**
+ * Get recommended next study action based on current adaptive state.
+ */
+export function getRecommendedAction(): {
+  action: 'practice' | 'review' | 'mock-exam' | 'break';
+  part?: CMASectionId;
+  reason: string;
+} {
+  const dueCount = getDueForReview().length;
+  const weakParts = getWeakParts();
+  const recentAccuracy = adaptiveState.recentResults.slice(-20);
+  const overallAccuracy = recentAccuracy.length > 0
+    ? recentAccuracy.filter(r => r).length / recentAccuracy.length
+    : 0;
+
+  if (dueCount >= 20) {
+    return {
+      action: 'review',
+      reason: `You have ${dueCount} questions due for spaced repetition review.`,
+    };
+  }
+
+  if (adaptiveState.totalQuestionsAnswered >= 400 && overallAccuracy >= 0.75) {
+    return {
+      action: 'mock-exam',
+      reason: 'Your accuracy is strong! Take a CMA practice exam.',
+    };
+  }
+
+  if (weakParts.length > 0) {
+    const priorityPart = weakParts[0];
+    return {
+      action: 'practice',
+      part: priorityPart,
+      reason: `Focus on ${priorityPart} — it needs more work.`,
+    };
+  }
+
+  return {
+    action: 'practice',
+    reason: 'Continue your balanced study across both CMA parts.',
+  };
 }
 
 // ============================================================================
@@ -295,6 +374,7 @@ export function endSession(): {
     sessionQuestionsAnswered: 0,
   };
   saveCMAState(adaptiveState);
+  syncStateToCloud();
   return summary;
 }
 

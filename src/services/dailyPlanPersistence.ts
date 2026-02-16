@@ -35,6 +35,67 @@ import { DailyPlan, DailyActivity, UserStudyState, RecentDaySnapshot, ActivityFe
 import logger from '../utils/logger';
 import type { CourseId } from '../types';
 
+/**
+ * Fetch adaptive engine data (review-due questions, weak areas) for a given course.
+ * Gracefully returns empty data if the engine fails or has no state.
+ * Uses dynamic imports to avoid circular dependency issues.
+ */
+async function getAdaptiveEngineData(courseId: CourseId): Promise<{ questionsDue: string[]; weakSections: string[] }> {
+  const empty = { questionsDue: [], weakSections: [] };
+  try {
+    switch (courseId) {
+      case 'cpa': {
+        const engine = await import('./cpaAdaptiveEngine');
+        return {
+          questionsDue: engine.getQuestionsDueForReview(),
+          weakSections: engine.getWeakSections() as string[],
+        };
+      }
+      case 'ea': {
+        const engine = await import('./eaAdaptiveEngine');
+        return {
+          questionsDue: engine.getQuestionsDueForReview(),
+          weakSections: engine.getWeakParts() as string[],
+        };
+      }
+      case 'cma': {
+        const engine = await import('./cmaAdaptiveEngine');
+        return {
+          questionsDue: engine.getDueForReview(),
+          weakSections: engine.getWeakParts() as string[],
+        };
+      }
+      case 'cia': {
+        const engine = await import('./ciaAdaptiveEngine');
+        return {
+          questionsDue: engine.getCoreQuestionsDueForReview(),
+          weakSections: engine.getWeakParts() as string[],
+        };
+      }
+      case 'cisa': {
+        const engine = await import('./cisaAdaptiveEngine');
+        return {
+          questionsDue: engine.getQuestionsDueForReview(),
+          weakSections: engine.getWeakDomains() as string[],
+        };
+      }
+      case 'cfp': {
+        const engine = await import('./cfpAdaptiveEngine');
+        const state = engine.loadAdaptiveState();
+        return {
+          questionsDue: engine.getDueForReview(state),
+          weakSections: engine.getWeakDomains(state) as string[],
+        };
+      }
+      default:
+        return empty;
+    }
+  } catch (err) {
+    logger.warn(`Could not fetch adaptive engine data for ${courseId}:`, err);
+    return empty;
+  }
+}
+
 export interface PersistedDailyPlan extends DailyPlan {
   userId: string;
   completedActivities: string[];
@@ -373,11 +434,40 @@ export const getOrCreateTodaysPlan = async (
     // Graceful degradation
   }
 
+  // Inject adaptive engine data (spaced repetition review queue + weak areas)
+  let adaptiveQuestionsDue: string[] | undefined;
+  try {
+    const adaptiveData = await getAdaptiveEngineData(courseId);
+    if (adaptiveData.questionsDue.length > 0) {
+      adaptiveQuestionsDue = adaptiveData.questionsDue;
+    }
+    // Inject weak sections as synthetic low-accuracy topic stats so the plan
+    // generator naturally schedules practice for them
+    if (adaptiveData.weakSections.length > 0) {
+      const existingTopics = new Set((state.topicStats || []).map(t => t.topic));
+      const syntheticStats = adaptiveData.weakSections
+        .filter(section => !existingTopics.has(section))
+        .map(section => ({
+          topic: section,
+          accuracy: 0.45, // Below the 60% threshold → marked as critical weak area
+          totalQuestions: 5,
+          correct: 2,
+          lastPracticed: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+        }));
+      if (syntheticStats.length > 0) {
+        state = { ...state, topicStats: [...(state.topicStats || []), ...syntheticStats] };
+      }
+    }
+  } catch {
+    // Graceful degradation — plan generates without adaptive engine data
+  }
+
   const enrichedState: UserStudyState = {
     ...state,
     recentHistory,
     personalizedDurations,
     activityFeedback,
+    ...(adaptiveQuestionsDue ? { questionsDue: adaptiveQuestionsDue } : {}),
   };
   const newPlan = await generateDailyPlan(enrichedState, courseId);
 

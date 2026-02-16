@@ -190,7 +190,7 @@ export const CFP_DOMAIN_STATS = {
                  CFP_RIS3_LESSONS.length + CFP_RIS4_LESSONS.length,
     areas: ['RIS-1', 'RIS-2', 'RIS-3', 'RIS-4']
   },
-  'CFP-PRO': {
+  'CFP-PCR': {
     name: 'Professional Conduct and Regulation',
     examWeight: 15,
     lessonCount: CFP_PRO1_LESSONS.length + CFP_PRO2_LESSONS.length + PRO_FIDUCIARY_LESSONS.length,

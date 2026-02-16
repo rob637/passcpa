@@ -11,13 +11,30 @@
  * This engine uses a session-based, functional architecture (different from the
  * singleton pattern used by CPA/EA/CISA/CMA engines). It uses the shared
  * SM-2 algorithms from adaptiveEngineCore.
+ *
+ * It also maintains a shared CoreAdaptiveState in the background so that
+ * performance queries (weak sections, readiness, etc.) can be served from
+ * a unified interface.
  */
 
 import { CIAPart, CIA_PART_CONFIG } from './ciaAnalytics';
 import {
   type QuestionHistoryEntry,
+  type CoreAdaptiveState,
   calculateSM2WithQuality as coreCalculateSM2WithQuality,
   responseToQuality as coreResponseToQuality,
+  createEngineConfig,
+  loadState,
+  saveState,
+  initializeState,
+  recordAnswerCore,
+  getQuestionsDueForReview as coreGetQuestionsDueForReview,
+  getWeakSections as coreGetWeakSections,
+  getPerformanceSummaryCore,
+  startSessionCore,
+  endSessionCore,
+  syncToFirestore,
+  loadStateWithFirestoreFallback,
 } from './adaptiveEngineCore';
 
 // ============================================================================
@@ -347,12 +364,14 @@ export function createSession(
 }
 
 /**
- * Record an answer in the session
+ * Record an answer in the session.
+ * Also updates the shared core state automatically (fixes dual-call fragility).
  */
 export function recordAnswer(
   session: AdaptiveSession,
   cardId: string,
-  isCorrect: boolean
+  isCorrect: boolean,
+  part?: CIAPart
 ): AdaptiveSession {
   const updatedSession = { ...session };
 
@@ -370,6 +389,12 @@ export function recordAnswer(
   updatedSession.sessionAccuracy = Math.round(
     (updatedSession.correctAnswers / updatedSession.questionsAnswered) * 100
   );
+
+  // Auto-sync to shared core state (eliminates need for separate recordAnswerToCore call)
+  const effectivePart = part || (session.part !== 'all' ? session.part : undefined);
+  if (effectivePart) {
+    recordAnswerToCore(cardId, effectivePart as CIAPart, isCorrect);
+  }
 
   return updatedSession;
 }
@@ -518,4 +543,186 @@ export function deserializeProgress(json: string): Map<string, CardProgress> {
     map.set(k, v as CardProgress);
   });
   return map;
+}
+
+// ============================================================================
+// Shared Core Integration (bridging CIA-specific API to unified core state)
+// ============================================================================
+
+const CIA_PART_WEIGHTS: Record<string, number> = {
+  CIA1: CIA_PART_CONFIG.CIA1.weight,
+  CIA2: CIA_PART_CONFIG.CIA2.weight,
+  CIA3: CIA_PART_CONFIG.CIA3.weight,
+};
+
+const CIA_ENGINE_CONFIG = createEngineConfig({
+  storageKey: 'cia-adaptive-state',
+  sections: ['CIA1', 'CIA2', 'CIA3'],
+  sectionWeights: CIA_PART_WEIGHTS,
+  readinessTargetQuestions: 1000,
+});
+
+/** Module-level shared core state */
+let coreState: CoreAdaptiveState = loadState(CIA_ENGINE_CONFIG);
+
+/** Fire-and-forget sync of adaptive state to Firestore for cross-device persistence */
+async function syncStateToCloud(): Promise<void> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      await syncToFirestore(coreState, user.uid, 'cia');
+    }
+  } catch { /* fire-and-forget */ }
+}
+
+/** Load state with Firestore fallback (for logged-in users on new devices) */
+export async function loadWithFirestoreFallback(): Promise<CoreAdaptiveState> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      coreState = await loadStateWithFirestoreFallback(CIA_ENGINE_CONFIG, user.uid, 'cia');
+      return coreState;
+    }
+  } catch { /* fall through to local load */ }
+  return coreState;
+}
+
+/**
+ * Record an answer in the shared core state (call alongside the CIA-specific recordAnswer).
+ * This keeps the unified core state in sync with the card-level CIA engine.
+ */
+export function recordAnswerToCore(
+  questionId: string,
+  part: CIAPart,
+  isCorrect: boolean
+): void {
+  coreState = recordAnswerCore(
+    coreState,
+    CIA_ENGINE_CONFIG,
+    questionId,
+    part,
+    isCorrect,
+  );
+  saveState(coreState, CIA_ENGINE_CONFIG.storageKey);
+}
+
+/**
+ * Get performance summary in the unified format used by all engines.
+ */
+export function getPerformanceSummary(): {
+  totalQuestions: number;
+  overallAccuracy: number;
+  currentDifficulty: string;
+  readinessScore: number;
+  partBreakdown: { part: CIAPart; accuracy: number; questionsAttempted: number }[];
+  weakParts: CIAPart[];
+  strongParts: CIAPart[];
+} {
+  const summary = getPerformanceSummaryCore(coreState, CIA_ENGINE_CONFIG);
+
+  return {
+    totalQuestions: summary.totalQuestions,
+    overallAccuracy: summary.overallAccuracy,
+    currentDifficulty: summary.currentDifficulty,
+    readinessScore: summary.readinessScore,
+    partBreakdown: summary.sectionBreakdown.map(s => ({
+      part: s.section as CIAPart,
+      accuracy: s.accuracy,
+      questionsAttempted: s.questionsAttempted,
+    })),
+    weakParts: summary.weakSections as CIAPart[],
+    strongParts: summary.strongSections as CIAPart[],
+  };
+}
+
+/**
+ * Get recommended next study action (unified with CISA/CFP pattern).
+ */
+export function getRecommendedAction(): {
+  action: 'practice' | 'review' | 'mock-exam' | 'break';
+  part?: CIAPart;
+  reason: string;
+} {
+  const dueCount = coreGetQuestionsDueForReview(coreState.questionHistory).length;
+  const weakParts = coreGetWeakSections(coreState, CIA_ENGINE_CONFIG) as CIAPart[];
+  const recentAccuracy = coreState.recentResults.slice(-20);
+  const overallAccuracy = recentAccuracy.length > 0
+    ? recentAccuracy.filter(r => r).length / recentAccuracy.length
+    : 0;
+
+  if (dueCount >= 20) {
+    return {
+      action: 'review',
+      reason: `You have ${dueCount} questions due for review using spaced repetition.`,
+    };
+  }
+
+  if (coreState.totalQuestionsAnswered >= 300 && overallAccuracy >= 0.75) {
+    return {
+      action: 'mock-exam',
+      reason: 'Your accuracy is strong! Test your skills with a practice exam.',
+    };
+  }
+
+  if (weakParts.length > 0) {
+    const priorityPart = weakParts[0];
+    const partName = CIA_PART_CONFIG[priorityPart].name;
+    return {
+      action: 'practice',
+      part: priorityPart,
+      reason: `Focus on ${partName} — it accounts for ${CIA_PART_WEIGHTS[priorityPart]}% of the exam.`,
+    };
+  }
+
+  return {
+    action: 'practice',
+    reason: 'Continue your balanced study across all three parts.',
+  };
+}
+
+/**
+ * Get weak parts via the shared core (consistent with other engines).
+ */
+export function getWeakParts(): CIAPart[] {
+  return coreGetWeakSections(coreState, CIA_ENGINE_CONFIG) as CIAPart[];
+}
+
+/**
+ * Get questions due for spaced repetition review (shared core).
+ */
+export function getCoreQuestionsDueForReview(): string[] {
+  return coreGetQuestionsDueForReview(coreState.questionHistory);
+}
+
+/**
+ * Start a session in the shared core state.
+ */
+export function startCoreSession(): void {
+  coreState = startSessionCore(coreState);
+  saveState(coreState, CIA_ENGINE_CONFIG.storageKey);
+}
+
+/**
+ * End a session in the shared core state.
+ */
+export function endCoreSession(): {
+  duration: number;
+  questionsAnswered: number;
+  accuracy: number;
+} {
+  const result = endSessionCore(coreState);
+  coreState = result.state;
+  saveState(coreState, CIA_ENGINE_CONFIG.storageKey);
+  syncStateToCloud();
+  return result.summary;
+}
+
+/**
+ * Reset both CIA card-level and shared core state.
+ */
+export function resetCoreState(): void {
+  coreState = initializeState(CIA_ENGINE_CONFIG);
+  saveState(coreState, CIA_ENGINE_CONFIG.storageKey);
 }

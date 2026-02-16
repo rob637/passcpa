@@ -272,13 +272,13 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
                           Active
                         </span>
                       )}
-                      {access.isTrialing && (
+                      {!access.isPaid && access.isTrialing && (
                         <span className="flex items-center gap-0.5 text-[10px] font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-1.5 py-0.5 rounded-full">
                           <Clock className="w-3 h-3" />
                           {access.trialDaysRemaining}d
                         </span>
                       )}
-                      {access.trialExpired && (
+                      {!access.isPaid && access.trialExpired && (
                         <span className="text-[10px] font-semibold text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded-full">
                           Expired
                         </span>

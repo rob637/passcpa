@@ -59,13 +59,14 @@ const STORAGE_KEYS = {
 };
 
 // Engagement thresholds for showing prompt
+// Keep these LOW — users benefit most from installing early
 export const ENGAGEMENT_THRESHOLDS = {
   /** Questions answered before first prompt */
-  QUESTIONS_ANSWERED: 5,
+  QUESTIONS_ANSWERED: 2,
   /** Days of use before prompting */
-  DAYS_ACTIVE: 2,
+  DAYS_ACTIVE: 1,
   /** Sessions before prompting */
-  SESSIONS: 3,
+  SESSIONS: 2,
 };
 
 // Re-prompt delays (in days)

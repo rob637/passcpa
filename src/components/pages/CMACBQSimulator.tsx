@@ -33,7 +33,7 @@ import { Card } from '../common/Card';
 import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
 import { CBQ, CBQQuestion } from '../../types';
-import { CMA1_CBQS, CMA2_CBQS } from '../../data/cma/cbq';
+import { getCBQsBySection } from '../../data/cma/cbq';
 
 // ============================================
 // Types
@@ -319,8 +319,8 @@ const CMACBQSimulator: React.FC = () => {
   const [viewState, setViewState] = useState<'select' | 'scenario' | 'questions' | 'results'>('select');
   const [results, setResults] = useState<QuestionResult[]>([]);
 
-  // Get CBQs for section
-  const cbqs = selectedSection === 'CMA1' ? CMA1_CBQS : CMA2_CBQS;
+  // Get CBQs for section (includes all batches)
+  const cbqs = getCBQsBySection(selectedSection);
 
   // Timer
   useEffect(() => {
@@ -451,7 +451,7 @@ const CMACBQSimulator: React.FC = () => {
         {/* Header */}
         <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-6 pb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Link to="/cma">
+            <Link to="/cma/dashboard">
               <Button variant="ghost" size="icon" className="hover:bg-white/10">
                 <ArrowLeft className="w-5 h-5" />
               </Button>

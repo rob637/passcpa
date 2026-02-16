@@ -429,7 +429,7 @@ export const CFP_TAX_BATCH11_QUESTIONS: Question[] = [
       'C) Earned income only',
     ],
     correctAnswer: 1,
-    explanation: 'Kiddie tax (IRC §1(g)): unearned (investment) income of children taxed at parents\' marginal rate if exceeds threshold (~$2,500 for 2024). Applies: under 19, or under 24 if full-time student (with earned income < half of support). Prevents: shifting investment income to children\'s lower brackets. Earned income taxed at child\'s rate. Plan around: Roth for kids, 529s.'
+    explanation: 'Kiddie tax (IRC §1(g)): unearned (investment) income of children taxed at parents\' marginal rate if exceeds threshold (~$2,700 for 2026). Applies: under 19, or under 24 if full-time student (with earned income < half of support). Prevents: shifting investment income to children\'s lower brackets. Earned income taxed at child\'s rate. Plan around: Roth for kids, 529s.'
   },
   {
     id: 'cfp-tax-b11-023',

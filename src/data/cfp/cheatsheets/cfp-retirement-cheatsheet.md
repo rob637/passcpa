@@ -25,8 +25,8 @@
 |---------|-------|----------------|
 | Traditional IRA | $7,500 | +$1,000 |
 | Roth IRA | $7,500 | +$1,000 |
-| HSA (Self) | $4,400 | +$1,000 (55+) |
-| HSA (Family) | $8,750 | +$1,000 (55+) |
+| HSA (Self) | $4,450 | +$1,000 (55+) |
+| HSA (Family) | $8,900 | +$1,000 (55+) |
 
 ---
 
@@ -118,8 +118,8 @@
 - Children under 18 (or 19 if in school)
 
 ### Earnings Test (Before FRA)
-- **Under FRA all year**: $1 reduction for every $2 over $22,320
-- **Year of FRA**: $1 reduction for every $3 over $59,520
+- **Under FRA all year**: $1 reduction for every $2 over $23,400
+- **Year of FRA**: $1 reduction for every $3 over $62,160
 - **At/After FRA**: No earnings test
 
 ### Taxation of Benefits
@@ -197,7 +197,7 @@ Can still use stretch:
 | Part | Coverage | Premium |
 |------|----------|---------|
 | Part A | Hospital, SNF, hospice | Usually $0 (40 quarters) |
-| Part B | Medical, outpatient | ~$174.70/month (2024) |
+| Part B | Medical, outpatient | ~$185.00/month (2026) |
 | Part C | Medicare Advantage | Varies |
 | Part D | Prescription drugs | Varies |
 
@@ -212,14 +212,14 @@ Can still use stretch:
 ### IRMAA (Income-Related Monthly Adjustment Amount)
 Higher premiums for Parts B and D based on MAGI from 2 years prior
 
-| Single MAGI (2024) | Part B Premium Impact |
+| Single MAGI (2026) | Part B Premium Impact |
 |--------------------|----------------------|
-| ≤$103,000 | Standard ($174.70) |
-| $103,001-$129,000 | +$69.90 |
-| $129,001-$161,000 | +$174.70 |
-| $161,001-$193,000 | +$279.50 |
-| $193,001-$500,000 | +$384.30 |
-| >$500,000 | +$419.30 |
+| ≤$106,000 | Standard ($185.00) |
+| $106,001-$133,000 | +$74.00 |
+| $133,001-$167,000 | +$185.00 |
+| $167,001-$200,000 | +$296.00 |
+| $200,001-$500,000 | +$407.00 |
+| >$500,000 | +$444.00 |
 
 ### Medigap
 - Supplements Original Medicare (A & B)
@@ -302,7 +302,7 @@ PMT × [(1 - (1 + r)^-n) / r]
 
 ## Exam Tips
 
-1. **Know all 2024 limits** - Contribution limits change annually
+1. **Know all 2026 limits** - Contribution limits change annually
 2. **Social Security math**: FRA, early claiming reduction, delayed credits
 3. **RMD calculations**: Practice using the Uniform Lifetime Table
 4. **SECURE Act changes**: 10-year rule, RMD age, Roth 401(k) RMDs

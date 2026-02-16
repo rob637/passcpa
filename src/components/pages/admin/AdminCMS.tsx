@@ -5,12 +5,14 @@ import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
 import { COURSES, getActiveCourses } from '../../../courses';
-import { EXAM_PRICING, isFounderPricingActive } from '../../../services/subscription';
+import { EXAM_PRICING, isFounderPricingActive, founderDaysRemaining, FOUNDER_DEADLINE, FOUNDER_SEATS_PER_EXAM } from '../../../services/subscription';
+import { functions } from '../../../config/firebase';
+import { httpsCallable } from 'firebase/functions';
 
 // Dynamic imports for course-specific question data
 // Returns { questions: array, stats: { total, bySection, byDifficulty, topics } }
@@ -243,7 +245,8 @@ interface UserDocument {
   isAdmin?: boolean;
   createdAt?: { seconds: number; nanoseconds: number };
   examSection?: string;
-  courseId?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
+  activeCourse?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
+  courseId?: string; // Legacy alias for activeCourse
   lastLogin?: string; // If you track this
   onboardingComplete?: boolean;
   onboardingCompleted?: Record<string, boolean>; // Per-course onboarding status
@@ -275,6 +278,7 @@ interface UserActivityData {
   }>;
   dailyLogs: Array<{
     date: string;
+    courseId?: string; // Parsed from doc ID prefix (e.g., 'ea_2026-02-15' → 'ea')
     questionsAnswered: number;
     correctAnswers: number;
     lessonsCompleted: number;
@@ -396,6 +400,226 @@ const getCourseFromSection = (section?: string | null): CourseId => {
   return 'cpa';
 };
 
+/**
+ * Resolve a user's active course from all available signals:
+ * 1. activeCourse field (canonical, set on newer accounts)
+ * 2. courseId field (legacy alias)
+ * 3. Derived from examSection (e.g., SEE3 → 'ea', CISA1 → 'cisa')
+ * 4. Default to 'cpa'
+ */
+const getUserCourse = (u: { activeCourse?: string; courseId?: string; examSection?: string }): CourseId => {
+  if (u.activeCourse) return u.activeCourse as CourseId;
+  if (u.courseId) return u.courseId as CourseId;
+  if (u.examSection) return getCourseFromSection(u.examSection);
+  return 'cpa';
+};
+
+// ============================================================================
+// Stripe Status Section
+// ============================================================================
+
+const StripeStatusSection: React.FC = () => {
+  const [stripeStatus, setStripeStatus] = useState<'idle' | 'checking' | 'ok' | 'error'>('idle');
+  const [stripeError, setStripeError] = useState<string>('');
+  const [stripeLatency, setStripeLatency] = useState<number | null>(null);
+  const [subStats, setSubStats] = useState<{
+    total: number;
+    active: number;
+    trialing: number;
+    expired: number;
+    paid: number;
+  } | null>(null);
+  const [lastChecked, setLastChecked] = useState<Date | null>(null);
+
+  const founderActive = isFounderPricingActive();
+  const daysLeft = founderDaysRemaining();
+
+  // Load subscription stats from Firestore
+  const loadSubStats = useCallback(async () => {
+    try {
+      const snapshot = await getDocs(collection(db, 'subscriptions'));
+      let total = 0, active = 0, trialing = 0, expired = 0, paid = 0;
+      snapshot.forEach((doc) => {
+        total++;
+        const data = doc.data();
+        if (data.status === 'active') active++;
+        if (data.status === 'trialing') trialing++;
+        if (data.status === 'expired') expired++;
+        if (data.stripeSubscriptionId || (data.paidExams && Object.keys(data.paidExams).length > 0)) paid++;
+      });
+      setSubStats({ total, active, trialing, expired, paid });
+    } catch (err) {
+      logger.error('Failed to load subscription stats:', err);
+    }
+  }, []);
+
+  // Check Stripe Cloud Function connectivity
+  const checkStripe = useCallback(async () => {
+    setStripeStatus('checking');
+    setStripeError('');
+    const start = performance.now();
+
+    try {
+      // Call createCheckoutSession with intentionally invalid data
+      // to verify the function is reachable and Stripe is configured.
+      // It should return a specific error (not a generic connectivity error).
+      const createCheckout = httpsCallable(functions, 'createCheckoutSession');
+      await createCheckout({ courseId: '__health_check__', interval: 'annual', origin: window.location.origin });
+      // If it somehow succeeds, Stripe is working
+      setStripeStatus('ok');
+    } catch (err: unknown) {
+      const elapsed = Math.round(performance.now() - start);
+      setStripeLatency(elapsed);
+
+      const error = err as { code?: string; message?: string; details?: string };
+      // Expected errors mean the function IS reachable:
+      // - 'invalid-argument': Function received our bad data and rejected it → Stripe is connected
+      // - 'failed-precondition': Stripe not configured (STRIPE_SECRET_KEY missing)
+      // - 'unauthenticated': Auth required but missing (function reachable)
+      // - 'internal': Function crashed or Stripe API error
+      if (error.code === 'invalid-argument') {
+        setStripeStatus('ok');
+      } else if (error.code === 'failed-precondition') {
+        setStripeStatus('error');
+        setStripeError('Stripe secret key not configured on server');
+      } else if (error.code === 'unauthenticated') {
+        // Function is reachable but requires auth — that's fine, it's working
+        setStripeStatus('ok');
+      } else {
+        setStripeStatus('error');
+        setStripeError(error.message || 'Could not reach Stripe Cloud Function');
+      }
+    }
+    setLastChecked(new Date());
+  }, []);
+
+  // Auto-check on mount
+  useEffect(() => {
+    checkStripe();
+    loadSubStats();
+  }, [checkStripe, loadSubStats]);
+
+  const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'passcpa-dev';
+  const webhookUrl = `https://us-central1-${projectId}.cloudfunctions.net/stripeWebhook`;
+
+  return (
+    <div className="p-4 bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 rounded-lg">
+      <div className="flex items-center justify-between mb-2">
+        <h4 className="font-medium text-purple-900 dark:text-purple-100">💳 Stripe Payment Status</h4>
+        <button
+          onClick={() => { checkStripe(); loadSubStats(); }}
+          disabled={stripeStatus === 'checking'}
+          className="text-xs text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-200 underline hover:no-underline disabled:opacity-50"
+        >
+          {stripeStatus === 'checking' ? 'Checking...' : 'Refresh'}
+        </button>
+      </div>
+
+      <div className="space-y-2">
+        {/* Cloud Function status */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300">Checkout Function:</span>
+          {stripeStatus === 'idle' || stripeStatus === 'checking' ? (
+            <span className="text-sm text-gray-500 dark:text-gray-400 animate-pulse">Checking...</span>
+          ) : stripeStatus === 'ok' ? (
+            <span className="text-sm font-medium text-green-600 dark:text-green-400">
+              ✓ Reachable {stripeLatency !== null && `(${stripeLatency}ms)`}
+            </span>
+          ) : (
+            <span className="text-sm font-medium text-red-600 dark:text-red-400">✗ {stripeError}</span>
+          )}
+        </div>
+
+        {/* Webhook URL */}
+        <div className="flex items-start gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300 whitespace-nowrap">Webhook URL:</span>
+          <span className="text-xs text-purple-600 dark:text-purple-400 font-mono break-all">{webhookUrl}</span>
+        </div>
+
+        {/* Founder pricing status */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300">Founder Pricing:</span>
+          {founderActive ? (
+            <span className="text-sm font-medium text-green-600 dark:text-green-400">
+              ✓ Active — {daysLeft} days remaining (ends {FOUNDER_DEADLINE.toLocaleDateString()})
+            </span>
+          ) : (
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Expired</span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-purple-700 dark:text-purple-300">Founder Seats/Exam:</span>
+          <span className="text-sm text-purple-600 dark:text-purple-400">{FOUNDER_SEATS_PER_EXAM}</span>
+        </div>
+
+        {/* Subscription stats */}
+        {subStats && (
+          <div className="mt-3 pt-3 border-t border-purple-200 dark:border-purple-700">
+            <p className="text-sm font-medium text-purple-800 dark:text-purple-200 mb-2">Subscription Overview</p>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-gray-900 dark:text-white">{subStats.total}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Total</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-green-600 dark:text-green-400">{subStats.paid}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Paid</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{subStats.trialing}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Trialing</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-amber-600 dark:text-amber-400">{subStats.active}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Active</div>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-2 text-center">
+                <div className="text-lg font-bold text-gray-500 dark:text-gray-400">{subStats.expired}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">Expired</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pricing table */}
+        <div className="mt-3 pt-3 border-t border-purple-200 dark:border-purple-700">
+          <p className="text-sm font-medium text-purple-800 dark:text-purple-200 mb-2">Active Pricing ({founderActive ? 'Founder' : 'Regular'})</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="text-purple-600 dark:text-purple-400">
+                  <th className="text-left py-1 pr-3">Exam</th>
+                  <th className="text-right py-1 pr-3">Monthly</th>
+                  <th className="text-right py-1">Annual</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(Object.entries(EXAM_PRICING) as [string, typeof EXAM_PRICING.cpa][]).map(([exam, pricing]) => (
+                  <tr key={exam} className="text-purple-700 dark:text-purple-300 border-t border-purple-100 dark:border-purple-800">
+                    <td className="py-1 pr-3 font-medium uppercase">{exam}</td>
+                    <td className="text-right py-1 pr-3">
+                      ${founderActive ? pricing.founderMonthly : pricing.monthly}/mo
+                    </td>
+                    <td className="text-right py-1">
+                      ${founderActive ? pricing.founderAnnual : pricing.annual}/yr
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {lastChecked && (
+          <p className="text-xs text-purple-500 dark:text-purple-400 mt-2">
+            Last checked: {lastChecked.toLocaleTimeString()}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
 // ============================================================================
 // Component
 // ============================================================================
@@ -464,6 +688,12 @@ const AdminCMS: React.FC = () => {
   const [contentAudit, setContentAudit] = useState<{
     questionsWithoutExplanation: Array<{ id: string; section: string; topic?: string }>;
     questionsWithoutBlueprint: Array<{ id: string; section: string }>;
+    duplicateIds: Array<{ id: string; course: string; count: number }>;
+    shortExplanations: Array<{ id: string; section: string; length: number }>;
+    wrongOptionCount: Array<{ id: string; section: string; count: number }>;
+    missingDifficulty: Array<{ id: string; section: string }>;
+    missingSection: Array<{ id: string; course: string }>;
+    difficultyDistribution: Record<string, { easy: number; medium: number; hard: number; other: number }>;
     totalScanned: number;
   } | null>(null);
   const [isLoadingAudit, setIsLoadingAudit] = useState(false);
@@ -566,9 +796,38 @@ const AdminCMS: React.FC = () => {
       querySnapshot.forEach((docSnap) => {
         const data = docSnap.data();
         const subData = subMap[docSnap.id];
+        
+        // Merge subscription data from subscriptions/{uid} collection
+        // The Stripe webhook writes to subscriptions/{uid}, NOT to users/{uid}.subscription
+        // So we need to build the subscription object from the sub doc if the user doc doesn't have one.
+        let subscription = data.subscription;
+        if (subData && (!subscription?.tier || subscription?.tier === 'free')) {
+          const subTier = subData.tier as string;
+          const subStatus = subData.status as string;
+          // Only override if the sub doc has real subscription data
+          if (subTier && subTier !== 'free') {
+            subscription = {
+              tier: subTier,
+              status: subStatus || 'active',
+              currentPeriodEnd: subData.currentPeriodEnd as { seconds: number } | undefined,
+              trialEnd: subData.trialEnd as { seconds: number } | undefined,
+              isFounderPricing: (subData.isFounder as boolean) || false,
+            };
+          } else if (subStatus === 'trialing' || subStatus === 'active') {
+            subscription = {
+              tier: subTier || data.subscription?.tier || 'free',
+              status: subStatus,
+              currentPeriodEnd: subData.currentPeriodEnd as { seconds: number } | undefined,
+              trialEnd: (subData.trialEnd || subData.currentPeriodEnd) as { seconds: number } | undefined,
+              isFounderPricing: (subData.isFounder as boolean) || false,
+            };
+          }
+        }
+        
         users.push({ 
           id: docSnap.id, 
           ...data,
+          subscription,
           // Attach per-exam trials from subscription doc
           _trials: (subData?.trials as Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>) || undefined,
         } as UserDocument);
@@ -583,25 +842,36 @@ const AdminCMS: React.FC = () => {
     }
   }, [isAdmin]);
 
-  // Find stale accounts (incomplete onboarding, no activity in 7+ days)
+  // Find stale accounts (incomplete onboarding, 7+ days old)
   const findStaleAccounts = useCallback(async () => {
     if (!isAdmin) return;
     setIsLoadingStale(true);
     try {
       const sevenDaysAgo = new Date();
       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+      const cutoffTimestamp = Timestamp.fromDate(sevenDaysAgo);
       
-      // Query users with incomplete onboarding
+      // Query users created before cutoff date (single inequality avoids composite index)
       const q = query(
         collection(db, 'users'),
-        where('onboardingComplete', '==', false),
-        where('createdAt', '<=', sevenDaysAgo),
-        limit(100)
+        where('createdAt', '<=', cutoffTimestamp),
+        orderBy('createdAt', 'desc'),
+        limit(500)
       );
       const querySnapshot = await getDocs(q);
       const stale: UserDocument[] = [];
-      querySnapshot.forEach((doc) => {
-        stale.push({ id: doc.id, ...doc.data() } as UserDocument);
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        // Check both legacy and new onboarding fields
+        const legacyOnboarded = data.onboardingComplete === true;
+        const perCourseOnboarded = data.onboardingCompleted && 
+          Object.values(data.onboardingCompleted).some((v: unknown) => v === true);
+        const isOnboarded = legacyOnboarded || perCourseOnboarded;
+        
+        // Only include accounts that never completed onboarding
+        if (!isOnboarded) {
+          stale.push({ id: docSnap.id, ...data } as UserDocument);
+        }
       });
       setStaleAccounts(stale);
       addLog(`Found ${stale.length} stale accounts (incomplete onboarding, 7+ days old)`, stale.length > 0 ? 'warning' : 'info');
@@ -777,7 +1047,7 @@ const AdminCMS: React.FC = () => {
     // Apply course filter
     if (userCourseFilter !== 'all') {
       result = result.filter(u => {
-        const userCourse = u.courseId || 'cpa';
+        const userCourse = getUserCourse(u);
         return userCourse === userCourseFilter;
       });
     }
@@ -828,8 +1098,8 @@ const AdminCMS: React.FC = () => {
       users.forEach(u => {
         const createdAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
         
-        // Count by course (new courseId field or default to 'cpa')
-        const courseId = u.courseId || 'cpa';
+        // Count by course (activeCourse → courseId → derived from examSection → 'cpa')
+        const courseId = getUserCourse(u);
         if (byCourse[courseId] !== undefined) {
           byCourse[courseId]++;
         } else {
@@ -843,7 +1113,7 @@ const AdminCMS: React.FC = () => {
         
         // Count by subscription
         const tier = u.subscription?.tier || 'free';
-        if (bySubscription.hasOwnProperty(tier)) {
+        if (tier in bySubscription) {
           bySubscription[tier]++;
         } else {
           bySubscription.free++;
@@ -948,14 +1218,31 @@ const AdminCMS: React.FC = () => {
       });
       
       // Load daily logs (all - sort in memory)
+      // Doc IDs are either 'YYYY-MM-DD' (legacy) or '{courseId}_YYYY-MM-DD' (current)
       const dailyLogRef = collection(db, 'users', userId, 'daily_log');
       const dailyLogSnap = await getDocs(dailyLogRef);
       logger.log('Got daily_log:', dailyLogSnap.docs.length, 'docs');
-      const dailyLogs = dailyLogSnap.docs.map(doc => ({
-        date: doc.id,
-        ...doc.data()
+      const validCourseIds = ['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'];
+      const dailyLogs = dailyLogSnap.docs.map(doc => {
+        const rawId = doc.id;
+        let courseId = '';
+        let dateStr = rawId;
+        // Parse courseId prefix from doc ID (e.g., 'ea_2026-02-15' → courseId='ea', date='2026-02-15')
+        const underscoreIdx = rawId.indexOf('_');
+        if (underscoreIdx > 0) {
+          const prefix = rawId.substring(0, underscoreIdx).toLowerCase();
+          if (validCourseIds.includes(prefix)) {
+            courseId = prefix;
+            dateStr = rawId.substring(underscoreIdx + 1);
+          }
+        }
+        return {
+          date: dateStr,
+          courseId,
+          ...doc.data()
+        };
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      })) as any[];
+      }) as any[];
       dailyLogs.sort((a, b) => b.date.localeCompare(a.date));
       
       // Load practice sessions (all - sort in memory)
@@ -988,7 +1275,7 @@ const AdminCMS: React.FC = () => {
       const totalQuestions = questionHistory.length;
       const totalCorrect = questionHistory.filter(q => q.lastCorrect === true || q.timesCorrect > 0).length;
       const overallAccuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
-      const totalStudyMinutes = dailyLogs.reduce((sum, log) => sum + (log.studyMinutes || 0), 0);
+      const totalStudyMinutes = dailyLogs.reduce((sum, log) => sum + (log.studyTimeMinutes || log.studyMinutes || 0), 0);
       const lastActiveDate = dailyLogs.length > 0 ? dailyLogs[0].date : null;
       
       // Calculate study streak
@@ -1034,7 +1321,6 @@ const AdminCMS: React.FC = () => {
       addLog(`Loaded activity for ${userDoc.email || userId}`, 'success');
     } catch (error) {
       logger.error('Error loading user activity:', error);
-      logger.error('Error loading user activity', error);
       addLog('Error loading activity: ' + (error instanceof Error ? error.message : String(error)), 'error');
       // Still set loading to false so modal shows error state
     } finally {
@@ -1063,8 +1349,7 @@ const AdminCMS: React.FC = () => {
       addLog(`Admin status ${currentIsAdmin ? 'removed from' : 'granted to'} user ${userId}`, 'success');
       loadUsers();
     } catch (error) {
-      logger.error('toggleAdminStatus error:', error);
-      logger.error('Error toggling admin status', error);
+      logger.error('Error toggling admin status:', error);
       addLog('Failed to toggle admin: ' + (error instanceof Error ? error.message : String(error)), 'error');
     }
   };
@@ -1412,6 +1697,12 @@ const AdminCMS: React.FC = () => {
     try {
       const withoutExplanation: Array<{ id: string; section: string; topic?: string }> = [];
       const withoutBlueprint: Array<{ id: string; section: string }> = [];
+      const shortExplanations: Array<{ id: string; section: string; length: number }> = [];
+      const wrongOptionCount: Array<{ id: string; section: string; count: number }> = [];
+      const missingDifficulty: Array<{ id: string; section: string }> = [];
+      const missingSection: Array<{ id: string; course: string }> = [];
+      const idCounts = new Map<string, { course: string; count: number }>();
+      const difficultyDistribution: Record<string, { easy: number; medium: number; hard: number; other: number }> = {};
       let totalScanned = 0;
 
       // Scan all courses' questions
@@ -1419,31 +1710,114 @@ const AdminCMS: React.FC = () => {
         const data = await loadCourseQuestionData(courseId);
         if (!data?.questions) continue;
 
-        for (const q of data.questions as Array<{ id?: string; question_id?: string; explanation?: string; detailed_explanation?: string; blueprintArea?: string; section?: string; topic?: string }>) {
+        const courseLabel = courseId.toUpperCase();
+        if (!difficultyDistribution[courseLabel]) {
+          difficultyDistribution[courseLabel] = { easy: 0, medium: 0, hard: 0, other: 0 };
+        }
+
+        for (const q of data.questions as Array<{
+          id?: string; question_id?: string;
+          explanation?: string; detailed_explanation?: string;
+          blueprintArea?: string; section?: string; topic?: string;
+          options?: string[]; choices?: string[];
+          difficulty?: string;
+        }>) {
           totalScanned++;
           const qId = q.id || q.question_id || 'unknown';
-          const section = q.section || courseId.toUpperCase();
+          const section = q.section || courseLabel;
           
           // Check for missing explanation
           if (!q.explanation && !q.detailed_explanation) {
-            withoutExplanation.push({ id: qId, section, topic: q.topic });
-            if (withoutExplanation.length >= 50) continue; // Limit to prevent huge lists
+            if (withoutExplanation.length < 50) {
+              withoutExplanation.push({ id: qId, section, topic: q.topic });
+            }
+          }
+          
+          // Check for short/placeholder explanations (< 20 chars)
+          const explText = q.explanation || q.detailed_explanation || '';
+          if (explText && explText.length > 0 && explText.length < 20) {
+            if (shortExplanations.length < 50) {
+              shortExplanations.push({ id: qId, section, length: explText.length });
+            }
           }
           
           // Check for missing blueprint (CPA specific)
           if (courseId === 'cpa' && !q.blueprintArea) {
-            withoutBlueprint.push({ id: qId, section });
-            if (withoutBlueprint.length >= 50) continue;
+            if (withoutBlueprint.length < 50) {
+              withoutBlueprint.push({ id: qId, section });
+            }
+          }
+
+          // Check for wrong option count (should be exactly 4)
+          const opts = q.options || q.choices || [];
+          if (opts.length !== 4) {
+            if (wrongOptionCount.length < 50) {
+              wrongOptionCount.push({ id: qId, section, count: opts.length });
+            }
+          }
+
+          // Check for missing difficulty
+          if (!q.difficulty) {
+            if (missingDifficulty.length < 50) {
+              missingDifficulty.push({ id: qId, section });
+            }
+          }
+
+          // Check for missing section
+          if (!q.section) {
+            if (missingSection.length < 50) {
+              missingSection.push({ id: qId, course: courseLabel });
+            }
+          }
+
+          // Track duplicate IDs
+          const fullId = `${courseId}:${qId}`;
+          const existing = idCounts.get(fullId);
+          if (existing) {
+            existing.count++;
+          } else {
+            idCounts.set(fullId, { course: courseLabel, count: 1 });
+          }
+
+          // Track difficulty distribution
+          const diff = (q.difficulty || '').toLowerCase();
+          if (diff === 'easy' || diff === 'beginner' || diff === 'foundational') {
+            difficultyDistribution[courseLabel].easy++;
+          } else if (diff === 'medium' || diff === 'moderate' || diff === 'intermediate') {
+            difficultyDistribution[courseLabel].medium++;
+          } else if (diff === 'hard' || diff === 'tough' || diff === 'advanced') {
+            difficultyDistribution[courseLabel].hard++;
+          } else {
+            difficultyDistribution[courseLabel].other++;
           }
         }
       }
 
+      // Extract duplicates
+      const duplicateIds: Array<{ id: string; course: string; count: number }> = [];
+      idCounts.forEach((val, key) => {
+        if (val.count > 1) {
+          const qId = key.split(':').slice(1).join(':');
+          duplicateIds.push({ id: qId, course: val.course, count: val.count });
+        }
+      });
+      duplicateIds.sort((a, b) => b.count - a.count);
+
       setContentAudit({
-        questionsWithoutExplanation: withoutExplanation.slice(0, 50),
-        questionsWithoutBlueprint: withoutBlueprint.slice(0, 50),
+        questionsWithoutExplanation: withoutExplanation,
+        questionsWithoutBlueprint: withoutBlueprint,
+        duplicateIds: duplicateIds.slice(0, 50),
+        shortExplanations,
+        wrongOptionCount,
+        missingDifficulty,
+        missingSection,
+        difficultyDistribution,
         totalScanned
       });
-      addLog(`Audit complete: scanned ${totalScanned} questions`, 'success');
+      
+      const issues = withoutExplanation.length + withoutBlueprint.length + duplicateIds.length + 
+        shortExplanations.length + wrongOptionCount.length + missingDifficulty.length + missingSection.length;
+      addLog(`Audit complete: scanned ${totalScanned} questions, ${issues} issues found`, issues > 0 ? 'warning' : 'success');
     } catch (error) {
       logger.error('Error loading content audit', error);
       addLog('Error loading content audit', 'error');
@@ -1477,7 +1851,7 @@ const AdminCMS: React.FC = () => {
     usersList.forEach(u => {
       const tier = u.subscription?.tier;
       const status = u.subscription?.status;
-      const courseId = (u.courseId || 'cpa') as keyof typeof EXAM_PRICING;
+      const courseId = getUserCourse(u) as keyof typeof EXAM_PRICING;
       const isFounder = u.subscription?.isFounderPricing;
       
       if (status === 'active' || status === 'trialing') {
@@ -1699,8 +2073,8 @@ const AdminCMS: React.FC = () => {
               onClick={() => setActiveTab(tab)}
               className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                 activeTab === tab
-                  ? 'text-blue-600 dark:text-blue-400 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-300'
+                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
               }`}
             >
               <span className="hidden sm:inline">
@@ -1795,9 +2169,9 @@ const AdminCMS: React.FC = () => {
                 <>
                   {[1, 2, 3, 4, 5, 6].map(i => (
                     <Card key={i} className="p-6 animate-pulse">
-                      <div className="h-6 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
-                      <div className="h-10 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
-                      <div className="h-4 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 rounded w-full"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
+                      <div className="h-10 bg-gray-200 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
+                      <div className="h-4 bg-gray-100 dark:bg-slate-700 rounded w-full"></div>
                     </Card>
                   ))}
                 </>
@@ -1805,9 +2179,9 @@ const AdminCMS: React.FC = () => {
                 allCourseStats.map(course => {
                   const colorClass = course.courseId === 'cpa' ? 'text-blue-600 dark:text-blue-400' :
                                      course.courseId === 'ea' ? 'text-green-600 dark:text-green-400' :
-                                     course.courseId === 'cma' ? 'text-purple-600' :
-                                     course.courseId === 'cia' ? 'text-orange-600' :
-                                     course.courseId === 'cisa' ? 'text-teal-600' :
+                                     course.courseId === 'cma' ? 'text-purple-600 dark:text-purple-400' :
+                                     course.courseId === 'cia' ? 'text-orange-600 dark:text-orange-400' :
+                                     course.courseId === 'cisa' ? 'text-teal-600 dark:text-teal-400' :
                                      'text-amber-600 dark:text-amber-400';
                   return (
                     <Card key={course.courseId} className="p-6">
@@ -2003,80 +2377,323 @@ const AdminCMS: React.FC = () => {
               </div>
               
               {contentAudit && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
-                      <span className={`px-2 py-1 rounded text-sm font-medium ${
-                        contentAudit.questionsWithoutExplanation.length === 0 
-                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
-                          : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                <>
+                  {/* Summary bar */}
+                  {(() => {
+                    const totalIssues = contentAudit.questionsWithoutExplanation.length + 
+                      contentAudit.questionsWithoutBlueprint.length + contentAudit.duplicateIds.length + 
+                      contentAudit.shortExplanations.length + contentAudit.wrongOptionCount.length + 
+                      contentAudit.missingDifficulty.length + contentAudit.missingSection.length;
+                    return (
+                      <div className={`p-4 rounded-lg mb-6 flex items-center justify-between ${
+                        totalIssues === 0 
+                          ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800' 
+                          : 'bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800'
                       }`}>
-                        {contentAudit.questionsWithoutExplanation.length}
-                        {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
-                      </span>
-                    </div>
-                    {contentAudit.questionsWithoutExplanation.length === 0 ? (
-                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have explanations!</p>
-                    ) : (
-                      <div className="space-y-2 max-h-64 overflow-y-auto">
-                        {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
-                          <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
-                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
-                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">{totalIssues === 0 ? '✅' : '⚠️'}</span>
+                          <div>
+                            <p className={`font-semibold ${totalIssues === 0 ? 'text-green-700 dark:text-green-300' : 'text-amber-700 dark:text-amber-300'}`}>
+                              {totalIssues === 0 ? 'All checks passed!' : `${totalIssues} issue${totalIssues !== 1 ? 's' : ''} found`}
+                            </p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              Scanned {contentAudit.totalScanned.toLocaleString()} questions across {Object.keys(contentAudit.difficultyDistribution).length} courses
+                            </p>
                           </div>
-                        ))}
-                        {contentAudit.questionsWithoutExplanation.length > 15 && (
-                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
-                            + {contentAudit.questionsWithoutExplanation.length - 15} more
-                          </p>
-                        )}
+                        </div>
+                        <div className="flex gap-2 flex-wrap justify-end">
+                          {[
+                            { label: 'Explanations', count: contentAudit.questionsWithoutExplanation.length },
+                            { label: 'Blueprints', count: contentAudit.questionsWithoutBlueprint.length },
+                            { label: 'Duplicates', count: contentAudit.duplicateIds.length },
+                            { label: 'Short Expl.', count: contentAudit.shortExplanations.length },
+                            { label: 'Options', count: contentAudit.wrongOptionCount.length },
+                            { label: 'Difficulty', count: contentAudit.missingDifficulty.length },
+                            { label: 'Section', count: contentAudit.missingSection.length },
+                          ].filter(c => c.count > 0).map(c => (
+                            <span key={c.label} className="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-medium">
+                              {c.label}: {c.count}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    )}
-                  </Card>
+                    );
+                  })()}
 
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
-                      <span className={`px-2 py-1 rounded text-sm font-medium ${
-                        contentAudit.questionsWithoutBlueprint.length === 0 
-                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
-                          : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
-                      }`}>
-                        {contentAudit.questionsWithoutBlueprint.length}
-                        {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
-                      </span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Missing Explanations */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.questionsWithoutExplanation.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {contentAudit.questionsWithoutExplanation.length}
+                          {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.questionsWithoutExplanation.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have explanations!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                            </div>
+                          ))}
+                          {contentAudit.questionsWithoutExplanation.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.questionsWithoutExplanation.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Missing Blueprint Tags */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.questionsWithoutBlueprint.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {contentAudit.questionsWithoutBlueprint.length}
+                          {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.questionsWithoutBlueprint.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All CPA questions have blueprint tags!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                            </div>
+                          ))}
+                          {contentAudit.questionsWithoutBlueprint.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.questionsWithoutBlueprint.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Duplicate IDs */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">🔁 Duplicate Question IDs</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.duplicateIds.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {contentAudit.duplicateIds.length}
+                        </span>
+                      </div>
+                      {contentAudit.duplicateIds.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All question IDs are unique!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.duplicateIds.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.course} ×{q.count}</span>
+                            </div>
+                          ))}
+                          {contentAudit.duplicateIds.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.duplicateIds.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Short Explanations */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">📝 Short Explanations (&lt;20 chars)</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.shortExplanations.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {contentAudit.shortExplanations.length}
+                          {contentAudit.shortExplanations.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.shortExplanations.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All explanations are substantive!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.shortExplanations.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section} ({q.length} chars)</span>
+                            </div>
+                          ))}
+                          {contentAudit.shortExplanations.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.shortExplanations.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Wrong Option Count */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">🔢 Wrong Option Count (≠4)</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.wrongOptionCount.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+                        }`}>
+                          {contentAudit.wrongOptionCount.length}
+                          {contentAudit.wrongOptionCount.length >= 50 && '+'}
+                        </span>
+                      </div>
+                      {contentAudit.wrongOptionCount.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have exactly 4 options!</p>
+                      ) : (
+                        <div className="space-y-2 max-h-64 overflow-y-auto">
+                          {contentAudit.wrongOptionCount.slice(0, 15).map((q, i) => (
+                            <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
+                              <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}</span>
+                              <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section} ({q.count} opts)</span>
+                            </div>
+                          ))}
+                          {contentAudit.wrongOptionCount.length > 15 && (
+                            <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
+                              + {contentAudit.wrongOptionCount.length - 15} more
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+
+                    {/* Missing Difficulty + Missing Section (combined card) */}
+                    <Card className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">⚙️ Missing Metadata</h4>
+                        <span className={`px-2 py-1 rounded text-sm font-medium ${
+                          contentAudit.missingDifficulty.length + contentAudit.missingSection.length === 0 
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                            : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {contentAudit.missingDifficulty.length + contentAudit.missingSection.length}
+                        </span>
+                      </div>
+                      {contentAudit.missingDifficulty.length + contentAudit.missingSection.length === 0 ? (
+                        <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have difficulty and section!</p>
+                      ) : (
+                        <div className="space-y-3">
+                          {contentAudit.missingDifficulty.length > 0 && (
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Missing difficulty ({contentAudit.missingDifficulty.length})</p>
+                              <div className="space-y-1 max-h-28 overflow-y-auto">
+                                {contentAudit.missingDifficulty.slice(0, 8).map((q, i) => (
+                                  <div key={i} className="p-1.5 bg-amber-50 dark:bg-amber-900/30 rounded text-xs flex justify-between">
+                                    <span className="font-mono truncate flex-1">{q.id.slice(0, 24)}</span>
+                                    <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
+                                  </div>
+                                ))}
+                                {contentAudit.missingDifficulty.length > 8 && (
+                                  <p className="text-gray-400 text-xs text-center">+ {contentAudit.missingDifficulty.length - 8} more</p>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                          {contentAudit.missingSection.length > 0 && (
+                            <div>
+                              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Missing section ({contentAudit.missingSection.length})</p>
+                              <div className="space-y-1 max-h-28 overflow-y-auto">
+                                {contentAudit.missingSection.slice(0, 8).map((q, i) => (
+                                  <div key={i} className="p-1.5 bg-amber-50 dark:bg-amber-900/30 rounded text-xs flex justify-between">
+                                    <span className="font-mono truncate flex-1">{q.id.slice(0, 24)}</span>
+                                    <span className="text-gray-500 dark:text-gray-400 ml-2">{q.course}</span>
+                                  </div>
+                                ))}
+                                {contentAudit.missingSection.length > 8 && (
+                                  <p className="text-gray-400 text-xs text-center">+ {contentAudit.missingSection.length - 8} more</p>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+                  </div>
+
+                  {/* Difficulty Distribution */}
+                  {Object.keys(contentAudit.difficultyDistribution).length > 0 && (
+                    <div className="mt-6">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📊 Difficulty Distribution by Course</h4>
+                      <Card className="p-6">
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="text-left text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-slate-700">
+                                <th className="pb-2 pr-4">Course</th>
+                                <th className="pb-2 pr-4 text-right">Easy</th>
+                                <th className="pb-2 pr-4 text-right">Medium</th>
+                                <th className="pb-2 pr-4 text-right">Hard</th>
+                                <th className="pb-2 pr-4 text-right">Other</th>
+                                <th className="pb-2 text-right">Total</th>
+                                <th className="pb-2 pl-4">Balance</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {Object.entries(contentAudit.difficultyDistribution).map(([course, dist]) => {
+                                const total = dist.easy + dist.medium + dist.hard + dist.other;
+                                const easyPct = total > 0 ? Math.round((dist.easy / total) * 100) : 0;
+                                const medPct = total > 0 ? Math.round((dist.medium / total) * 100) : 0;
+                                const hardPct = total > 0 ? Math.round((dist.hard / total) * 100) : 0;
+                                // Ideal: ~25% easy, ~50% medium, ~25% hard
+                                const isBalanced = easyPct >= 15 && easyPct <= 40 && medPct >= 30 && medPct <= 60 && hardPct >= 15 && hardPct <= 40;
+                                return (
+                                  <tr key={course} className="border-b border-gray-100 dark:border-slate-800">
+                                    <td className="py-2 pr-4 font-medium">{course}</td>
+                                    <td className="py-2 pr-4 text-right text-green-600 dark:text-green-400">{dist.easy} <span className="text-gray-400 text-xs">({easyPct}%)</span></td>
+                                    <td className="py-2 pr-4 text-right text-amber-600 dark:text-amber-400">{dist.medium} <span className="text-gray-400 text-xs">({medPct}%)</span></td>
+                                    <td className="py-2 pr-4 text-right text-red-600 dark:text-red-400">{dist.hard} <span className="text-gray-400 text-xs">({hardPct}%)</span></td>
+                                    <td className="py-2 pr-4 text-right text-gray-400">{dist.other > 0 ? dist.other : '—'}</td>
+                                    <td className="py-2 text-right font-medium">{total.toLocaleString()}</td>
+                                    <td className="py-2 pl-4">
+                                      {/* Mini bar chart */}
+                                      <div className="flex h-3 w-24 rounded overflow-hidden bg-gray-100 dark:bg-slate-700">
+                                        <div className="bg-green-400" style={{ width: `${easyPct}%` }} />
+                                        <div className="bg-amber-400" style={{ width: `${medPct}%` }} />
+                                        <div className="bg-red-400" style={{ width: `${hardPct}%` }} />
+                                      </div>
+                                      {!isBalanced && dist.other === 0 && (
+                                        <span className="text-xs text-amber-500 dark:text-amber-400">⚠️ Skewed</span>
+                                      )}
+                                    </td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                        <p className="text-xs text-gray-400 mt-3">Ideal distribution: ~25% Easy / ~50% Medium / ~25% Hard. &quot;Skewed&quot; flag triggers when any level is outside 15–40% (easy/hard) or 30–60% (medium).</p>
+                      </Card>
                     </div>
-                    {contentAudit.questionsWithoutBlueprint.length === 0 ? (
-                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All CPA questions have blueprint tags!</p>
-                    ) : (
-                      <div className="space-y-2 max-h-64 overflow-y-auto">
-                        {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
-                          <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
-                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
-                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
-                          </div>
-                        ))}
-                        {contentAudit.questionsWithoutBlueprint.length > 15 && (
-                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
-                            + {contentAudit.questionsWithoutBlueprint.length - 15} more
-                          </p>
-                        )}
-                      </div>
-                    )}
-                  </Card>
-                </div>
-              )}
-
-              {contentAudit && (
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-                  Scanned {contentAudit.totalScanned.toLocaleString()} questions across all courses
-                </p>
+                  )}
+                </>
               )}
 
               {!contentAudit && !isLoadingAudit && (
                 <Card className="p-6 text-center text-gray-500 dark:text-gray-400">
-                  Click "Run Audit" to scan all questions for missing explanations and blueprint tags
+                  Click &quot;Run Audit&quot; to scan all questions for quality issues
                 </Card>
               )}
             </div>
@@ -2118,15 +2735,15 @@ const AdminCMS: React.FC = () => {
             {/* Users by Course Breakdown */}
             {usersList.length > 0 && (
               <Card className="p-4">
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Users by Course</h4>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Users by Course</h4>
                 <div className="flex flex-wrap gap-3">
                   {getActiveCourses().map(course => {
-                    const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
+                    const count = usersList.filter(u => getUserCourse(u) === course.id).length;
                     const colorClass = course.id === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                        course.id === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
-                                       course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
-                                       course.id === 'cia' ? 'bg-orange-100 text-orange-700' :
-                                       course.id === 'cisa' ? 'bg-teal-100 text-teal-700' :
+                                       course.id === 'cma' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                       course.id === 'cia' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                       course.id === 'cisa' ? 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
                                        'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300';
                     return (
                       <div key={course.id} className={`px-3 py-2 rounded-lg ${colorClass}`}>
@@ -2168,7 +2785,7 @@ const AdminCMS: React.FC = () => {
                       <p className="font-semibold text-gray-900 dark:text-white">{lookupResult.email || 'No email'}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">{lookupResult.id}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                        Course: {(lookupResult.courseId || 'cpa').toUpperCase()} • 
+                        Course: {getUserCourse(lookupResult).toUpperCase()} • 
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
                         Status: {lookupResult.subscription?.status || 'N/A'}
@@ -2285,14 +2902,14 @@ const AdminCMS: React.FC = () => {
                             </td>
                             <td className="p-3">
                               {(() => {
-                                const derivedCourse = getCourseFromSection(u.examSection);
+                                const derivedCourse = getUserCourse(u);
                                 return (
                                   <span className={`px-2 py-1 rounded text-xs font-medium ${
                                     derivedCourse === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                     derivedCourse === 'ea' ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
-                                    derivedCourse === 'cma' ? 'bg-purple-50 text-purple-700' :
-                                    derivedCourse === 'cia' ? 'bg-orange-50 text-orange-700' :
-                                    derivedCourse === 'cisa' ? 'bg-teal-50 text-teal-700' :
+                                    derivedCourse === 'cma' ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                    derivedCourse === 'cia' ? 'bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                    derivedCourse === 'cisa' ? 'bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
                                     'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
                                   }`}>
                                     {derivedCourse.toUpperCase()}
@@ -2395,7 +3012,7 @@ const AdminCMS: React.FC = () => {
                                   // Legacy: show single trial
                                   const endDate = new Date(legacyTrialEnd.seconds * 1000);
                                   const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-                                  const examId = u.courseId || 'cpa';
+                                  const examId = getUserCourse(u);
                                   if (daysLeft > 0) {
                                     activeTrials.push({ examId, endDate, daysLeft });
                                   } else {
@@ -2585,7 +3202,7 @@ const AdminCMS: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Monthly Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Monthly Plans</span>
                           <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -2594,7 +3211,7 @@ const AdminCMS: React.FC = () => {
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Annual Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Annual Plans</span>
                           <span className="text-lg font-bold text-green-600 dark:text-green-400">{revenueMetrics.byPlan.annual}</span>
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -2606,7 +3223,7 @@ const AdminCMS: React.FC = () => {
                     {/* Revenue by Course */}
                     {Object.keys(revenueMetrics.byCourse).length > 0 && (
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Revenue by Course</h5>
+                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Revenue by Course</h5>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                           {Object.entries(revenueMetrics.byCourse)
                             .sort((a, b) => b[1].revenue - a[1].revenue)
@@ -2669,7 +3286,7 @@ const AdminCMS: React.FC = () => {
                                 </span>
                                 <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
+                              <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                                 <div 
                                   className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                   style={{ width: `${Math.min(percentage * 2, 100)}%` }}
@@ -2703,7 +3320,7 @@ const AdminCMS: React.FC = () => {
                               <span className="font-medium">{label}</span>
                               <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                             </div>
-                            <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                               <div 
                                 className={`${color} h-2 rounded-full transition-all duration-500`} 
                                 style={{ width: `${percentage}%` }}
@@ -2715,7 +3332,7 @@ const AdminCMS: React.FC = () => {
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-100">
                       <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Premium Users</span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300">Premium Users</span>
                         <span className="font-bold text-green-600 dark:text-green-400">
                           {(analytics.bySubscription.lifetime || 0) + 
                            (analytics.bySubscription.annual || 0) + 
@@ -2889,7 +3506,7 @@ const AdminCMS: React.FC = () => {
                                   <span className="font-medium">{type.replace(/_/g, ' ')}</span>
                                   <span className="text-gray-600 dark:text-gray-400">{count}</span>
                                 </div>
-                                <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
+                                <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                                   <div 
                                     className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                     style={{ width: `${percentage}%` }}
@@ -2922,7 +3539,7 @@ const AdminCMS: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Title</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Title</label>
                   <input
                     type="text"
                     id="announcement-title"
@@ -2931,7 +3548,7 @@ const AdminCMS: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Body</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Body</label>
                   <textarea
                     id="announcement-body"
                     rows={3}
@@ -3106,7 +3723,7 @@ const AdminCMS: React.FC = () => {
                 <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
+                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(featureFlags).map(([flag, enabled]) => (
@@ -3334,7 +3951,7 @@ const AdminCMS: React.FC = () => {
                         const csv = [
                           'Email,UID,Course,Section,Subscription,IsAdmin,CreatedAt',
                           ...usersList.map(u => 
-                            `"${u.email || ''}","${u.id}","${u.courseId || 'cpa'}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
+                            `"${u.email || ''}","${u.id}","${getUserCourse(u)}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
                           )
                         ].join('\n');
                         const blob = new Blob([csv], { type: 'text/csv' });
@@ -3392,7 +4009,7 @@ const AdminCMS: React.FC = () => {
                       <div className="space-y-1">
                         {staleAccounts.slice(0, 10).map(acc => (
                           <div key={acc.id} className="text-xs bg-white dark:bg-slate-800 rounded px-2 py-1 flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
                             <span className="text-gray-400">
                               {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
                             </span>
@@ -3411,12 +4028,12 @@ const AdminCMS: React.FC = () => {
             </Card>
 
             {/* Beta User Trial Transition */}
-            <Card className="p-6 border-2 border-amber-300 bg-amber-50">
+            <Card className="p-6 border-2 border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎫 Beta User Trial Transition
                 <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-4">
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                 Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
                 Paid subscribers will be skipped. Users will be marked as Founders (founder rate eligible).
               </p>
@@ -3457,13 +4074,13 @@ const AdminCMS: React.FC = () => {
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ✅ Will Update ({betaTransitionResults.toUpdate.length})
                       </div>
                       <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
                           </div>
                         ))}
@@ -3473,13 +4090,13 @@ const AdminCMS: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ⏭️ Will Skip ({betaTransitionResults.skipped.length})
                       </div>
                       <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.skipped.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-amber-600 dark:text-amber-400">{u.reason}</span>
                           </div>
                         ))}
@@ -3584,6 +4201,9 @@ const AdminCMS: React.FC = () => {
           <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Admin Settings</h3>
             <div className="space-y-4">
+              {/* Stripe Payment Status */}
+              <StripeStatusSection />
+
               {/* AI Service Status */}
               <div className="p-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg">
                 <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">🤖 AI Service Status (Vory)</h4>
@@ -3661,13 +4281,13 @@ const AdminCMS: React.FC = () => {
                 
                 {/* Course selector for per-exam reset */}
                 <div className="mb-4 p-3 bg-white dark:bg-slate-800 rounded border border-red-200 dark:border-red-800">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Exam to reset (for per-exam options):
                   </label>
                   <select 
                     value={resetExamSelection}
                     onChange={(e) => setResetExamSelection(e.target.value)}
-                    className="w-full p-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white"
+                    className="w-full p-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-900 dark:text-white"
                   >
                     <option value="cpa">CPA</option>
                     <option value="ea">EA (Enrolled Agent)</option>
@@ -4010,7 +4630,7 @@ const AdminCMS: React.FC = () => {
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
                   <div className="flex gap-3 mt-2 text-sm">
-                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{(selectedUser.courseId || 'cpa').toUpperCase()}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{getUserCourse(selectedUser).toUpperCase()}</span>
                     <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
                     <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
                     {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}
@@ -4067,9 +4687,10 @@ const AdminCMS: React.FC = () => {
                     {userActivity.dailyLogs.length > 0 ? (
                       <div className="bg-gray-50 dark:bg-slate-900 rounded-lg overflow-hidden">
                         <table className="w-full text-sm">
-                          <thead className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700">
+                          <thead className="bg-gray-100 dark:bg-slate-700">
                             <tr>
                               <th className="p-2 text-left">Date</th>
+                              <th className="p-2 text-center">Course</th>
                               <th className="p-2 text-center">Questions</th>
                               <th className="p-2 text-center">Correct</th>
                               <th className="p-2 text-center">Lessons</th>
@@ -4077,9 +4698,25 @@ const AdminCMS: React.FC = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {userActivity.dailyLogs.slice(0, 10).map((log, i) => (
+                            {userActivity.dailyLogs.slice(0, 20).map((log, i) => (
                               <tr key={i} className="border-t border-gray-200 dark:border-slate-700">
                                 <td className="p-2">{log.date}</td>
+                                <td className="p-2 text-center">
+                                  {log.courseId ? (
+                                    <span className={`px-1.5 py-0.5 rounded text-xs font-semibold ${
+                                      log.courseId === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                      log.courseId === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                      log.courseId === 'cma' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                      log.courseId === 'cia' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                      log.courseId === 'cisa' ? 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
+                                      'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                                    }`}>
+                                      {log.courseId.toUpperCase()}
+                                    </span>
+                                  ) : (
+                                    <span className="text-gray-400 text-xs">—</span>
+                                  )}
+                                </td>
                                 <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
                                 <td className="p-2 text-center text-green-600 dark:text-green-400">{log.questionsCorrect || log.correctAnswers || 0}</td>
                                 <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
@@ -4182,7 +4819,7 @@ const AdminCMS: React.FC = () => {
             <div className="border-t p-4 flex justify-end gap-3">
               <button
                 onClick={() => { setSelectedUser(null); setUserActivity(null); }}
-                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:bg-slate-600 dark:bg-slate-600"
+                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600"
               >
                 Close
               </button>

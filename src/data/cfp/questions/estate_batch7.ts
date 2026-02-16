@@ -295,7 +295,7 @@ export const CFP_ESTATE_BATCH7_QUESTIONS: Question[] = [
       'D) There are no differences',
     ],
     correctAnswer: 2,
-    explanation: 'The unlimited marital deduction doesn\'t apply to non-citizen spouses (concern about assets leaving U.S. tax jurisdiction). A QDOT (Qualified Domestic Trust) allows deferral—assets pass to QDOT, with tax on corpus distributions during life. Annual gift exclusion is also higher for non-citizen spouses ($185,000 in 2024).'
+    explanation: 'The unlimited marital deduction doesn\'t apply to non-citizen spouses (concern about assets leaving U.S. tax jurisdiction). A QDOT (Qualified Domestic Trust) allows deferral—assets pass to QDOT, with tax on corpus distributions during life. Annual gift exclusion is also higher for non-citizen spouses ($190,000 in 2026).'
   },
   // Additional Topics
   {

@@ -4,7 +4,7 @@
 
 import { Question, AllExamSections, ExamSection, Difficulty } from '../types';
 import logger from '../utils/logger';
-import { getSmartQuestionSelection, CurriculumFilterOptions } from './questionHistoryService';
+import { getSmartQuestionSelection, getQuestionIdsByStatus, CurriculumFilterOptions } from './questionHistoryService';
 import { COURSES } from '../courses';
 import { CourseId } from '../types/course';
 
@@ -45,6 +45,7 @@ interface FetchQuestionsOptions {
   useSmartSelection?: boolean; // Enable intelligent question selection
   courseId?: string; // Multi-course support
   examDate?: string; // For adaptive review weights near exam
+  questionStatus?: 'all' | 'unanswered' | 'incorrect' | 'correct'; // Filter by user's answer history
   // NEW: Curriculum-aware options
   curriculumOptions?: CurriculumFilterOptions; // Filter to covered topics only
 }
@@ -199,6 +200,7 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     useSmartSelection = false,
     courseId,
     examDate,
+    questionStatus,
     curriculumOptions, // NEW: Curriculum filtering options
   } = options;
 
@@ -245,6 +247,21 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
       
       return true;
     });
+
+    // Apply question status filter (unanswered/incorrect/correct)
+    if (questionStatus && questionStatus !== 'all' && userId && section) {
+      const statusIds = await getQuestionIdsByStatus(userId, section as string);
+      
+      if (questionStatus === 'unanswered') {
+        filtered = filtered.filter(q => !statusIds.all.has(q.id));
+      } else if (questionStatus === 'incorrect') {
+        filtered = filtered.filter(q => statusIds.incorrect.has(q.id));
+      } else if (questionStatus === 'correct') {
+        filtered = filtered.filter(q => statusIds.correct.has(q.id));
+      }
+      
+      logger.debug(`Question status filter '${questionStatus}': ${filtered.length} questions match`);
+    }
 
     // Use smart selection if enabled and user is authenticated
     if (useSmartSelection && userId && section) {
@@ -620,6 +637,36 @@ export async function fetchAdaptiveQuestions(input: AdaptiveSelectionInput): Pro
   }
   
   return { questions: shuffleArray(result), breakdown };
+}
+
+/**
+ * Build a mapping from topic name to blueprintArea ID for given sections.
+ * Used by the Progress page to associate topic performance with blueprint areas.
+ */
+export async function getTopicToBlueprintAreaMap(
+  courseId?: string,
+  section?: string
+): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  try {
+    const sections = section
+      ? [section]
+      : courseId
+        ? getSectionsForCourse(courseId as CourseId)
+        : getAllSections();
+
+    for (const s of sections) {
+      const questions = await loadSectionQuestions(s);
+      questions.forEach(q => {
+        if (q.topic && q.blueprintArea) {
+          map.set(q.topic, q.blueprintArea);
+        }
+      });
+    }
+  } catch (error) {
+    logger.error('Error building topic-to-blueprint mapping:', error);
+  }
+  return map;
 }
 
 /**

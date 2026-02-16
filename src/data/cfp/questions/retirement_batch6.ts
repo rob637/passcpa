@@ -141,7 +141,7 @@ export const CFP_RETIREMENT_BATCH6_QUESTIONS: Question[] = [
       'C) Contribute unlimited amounts',
     ],
     correctAnswer: 1,
-    explanation: 'Spousal IRAs allow a non-working or low-earning spouse to contribute up to the annual limit ($7,000 for 2024, plus $1,000 catch-up if 50+) as long as the couple files jointly and the working spouse has sufficient earned income to cover both contributions. This maintains retirement savings for caregivers and non-working spouses.'
+    explanation: 'Spousal IRAs allow a non-working or low-earning spouse to contribute up to the annual limit ($7,500 for 2026, plus $1,000 catch-up if 50+) as long as the couple files jointly and the working spouse has sufficient earned income to cover both contributions. This maintains retirement savings for caregivers and non-working spouses.'
   },
   {
     id: 'cfp-ret-b6-008',

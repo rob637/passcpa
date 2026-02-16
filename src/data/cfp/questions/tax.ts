@@ -21,7 +21,7 @@ export const CFP_TAX_QUESTIONS: Question[] = [
     subtopic: 'Tax Formula',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `John has gross income of $200,000, above-the-line deductions of $15,000, itemized deductions of $35,000, and a qualified business income deduction of $8,000. The standard deduction is $29,200. What is John's taxable income?`,
+    question: `John has gross income of $200,000, above-the-line deductions of $15,000, itemized deductions of $35,000, and a qualified business income deduction of $8,000. The standard deduction is $30,700. What is John's taxable income?`,
     options: [
       'A) $142,000',
       'D) $177,000',
@@ -35,12 +35,12 @@ export const CFP_TAX_QUESTIONS: Question[] = [
 1. Gross Income: $200,000
 2. Less: Above-the-line deductions: -$15,000
 3. = AGI: $185,000
-4. Less: GREATER of itemized ($35,000) or standard ($29,200): -$35,000
+4. Less: GREATER of itemized ($35,000) or standard ($30,700): -$35,000
 5. Less: QBI Deduction: -$8,000
 6. = **Taxable Income: $142,000**
 
 **Key Points:**
-- John itemizes because $35,000 > $29,200 standard
+- John itemizes because $35,000 > $30,700 standard
 - QBI deduction is taken AFTER choosing standard/itemized
 - Above-the-line deductions reduce AGI (affecting phase-outs)
 
@@ -58,7 +58,8 @@ export const CFP_TAX_QUESTIONS: Question[] = [
     subtopic: 'Marginal vs Effective Rate',
     difficulty: 'medium',
     skillLevel: 'Analysis',
-    question: `Sarah (single) has taxable income of $180,000 in 2024. Her total federal income tax is $35,500. What are her marginal and effective tax rates? (2024 brackets: 32% applies to income $191,951-$243,725)`,
+    question: `Sarah (single) has taxable income of $180,000 in 2026. Her total federal income tax is $35,500. What are her marginal and effective tax rates? (2026 brackets: 32% applies to income $201,051-$253,725)`,
+
     options: [
       'A) Marginal 32%, Effective 19.7%',
       'D) Marginal 32%, Effective 32%',
@@ -70,7 +71,7 @@ export const CFP_TAX_QUESTIONS: Question[] = [
 
 **Analysis:**
 - **Taxable income:** $180,000
-- **2024 single brackets:** 24% applies from $100,526 to $191,950
+- **2026 single brackets:** 24% applies from $105,526 to $201,050
 - **Marginal rate:** 24% (next dollar taxed at this rate)
 - **Effective rate:** $35,500 / $180,000 = **19.7%**
 
@@ -130,7 +131,7 @@ Lower brackets (10%, 12%, 22%) apply to initial income, reducing average rate.
     subtopic: 'Holding Period and Rates',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Mark sold stock for a $40,000 gain. He purchased the stock on March 15, 2023 and sold it on March 17, 2024. His taxable income (including the gain) puts him in the 24% bracket. What tax rate applies to his gain?`,
+    question: `Mark sold stock for a $40,000 gain. He purchased the stock on March 15, 2025 and sold it on March 17, 2026. His taxable income (including the gain) puts him in the 24% bracket. What tax rate applies to his gain?`,
     options: [
       'B) 15%',
       'A) 0%',
@@ -144,14 +145,14 @@ Lower brackets (10%, 12%, 22%) apply to initial income, reducing average rate.
 Long-term capital gains require holding the asset for MORE THAN one year.
 
 **Mark's Timeline:**
-- Purchased: March 15, 2023
-- Sold: March 17, 2024
+- Purchased: March 15, 2025
+- Sold: March 17, 2026
 - Holding period: 1 year and 2 days = **LONG-TERM** ✓
 
 **LTCG Rate Determination:**
 For taxpayers in the 24% ordinary income bracket, the LTCG rate is **15%**.
 
-LTCG rates for 2024:
+LTCG rates for 2026:
 - 0%: Single up to $47,025 / MFJ up to $94,050
 - 15%: Single $47,026-$518,900 / MFJ $94,051-$583,750
 - 20%: Above those thresholds
@@ -161,7 +162,7 @@ LTCG rates for 2024:
 - **C) 20%:** Only applies to highest income brackets
 - **D) 24%:** Would apply if SHORT-term (held 1 year or less), but Mark held for more than 1 year
 
-**Exam Tip:** Count holding periods carefully - must be MORE than 12 months. March 15, 2023 to March 16, 2024 is exactly 1 year + 1 day, which qualifies for LTCG.`
+**Exam Tip:** Count holding periods carefully - must be MORE than 12 months. March 15, 2025 to March 16, 2026 is exactly 1 year + 1 day, which qualifies for LTCG.`
   },
   {
     id: 'cfp-tax-005',
@@ -252,7 +253,7 @@ These are added back to regular taxable income to calculate AMTI:
     subtopic: 'QBI Deduction',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: `James, a single taxpayer, owns a consulting business (sole proprietorship) with $300,000 net income. His taxable income before QBI is $270,000. His business has no W-2 wages or qualified property. What is his QBI deduction? (2024 thresholds: phase-out begins at $191,950)`,
+    question: `James, a single taxpayer, owns a consulting business (sole proprietorship) with $300,000 net income. His taxable income before QBI is $270,000. His business has no W-2 wages or qualified property. What is his QBI deduction? (2026 thresholds: phase-out begins at $202,050)`,
     options: [
       'B) $27,000',
       'D) $60,000',
@@ -269,9 +270,9 @@ These are added back to regular taxable income to calculate AMTI:
    - SSTBs phase out above threshold
 
 2. **Income Check:**
-   - Single threshold: $191,950 - $241,950 phase-out range
+   - Single threshold: $202,050 - $252,050 phase-out range
    - James's taxable income: $270,000
-   - **$270,000 > $241,950 = Completely phased out**
+   - **$270,000 > $252,050 = Completely phased out**
 
 3. **Even if NOT an SSTB:**
    - W-2/Wage limit would apply: Greater of:
@@ -401,7 +402,7 @@ These are added back to regular taxable income to calculate AMTI:
 **Requirements:**
 - 529 account open at least **15 years**
 - **$35,000 lifetime limit** per beneficiary
-- Annual rollover capped at Roth IRA contribution limit ($7,000 in 2024)
+- Annual rollover capped at Roth IRA contribution limit ($7,500 in 2026)
 - Contributions from last 5 years + earnings cannot be rolled
 - Beneficiary must have earned income (standard Roth rule)
 
@@ -424,7 +425,7 @@ These are added back to regular taxable income to calculate AMTI:
     subtopic: 'Child Tax Credit',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Tom and Lisa (MFJ) have three qualifying children ages 5, 12, and 19. Their MAGI is $380,000. What is their Child Tax Credit for 2024?`,
+    question: `Tom and Lisa (MFJ) have three qualifying children ages 5, 12, and 19. Their MAGI is $380,000. What is their Child Tax Credit for 2026?`,
     options: [
       'D) $1,000',
       'A) $6,000',
@@ -510,31 +511,31 @@ Deduction would need to be $15,625 to equal the credit`
       'A) Entirely at daughter\'s lower rate',
       'B) First $2,500 at daughter\'s rate, remainder at parent\'s rate',
       'D) Entirely at parent\'s marginal rate',
-      'C) First $1,300 untaxed, next $1,300 at daughter\'s rate, remainder at parent\'s rate',
+      'C) First $1,350 untaxed, next $1,350 at daughter\'s rate, remainder at parent\'s rate',
     ],
     correctAnswer: 3,
     explanation: `**Correct Answer: C**
 
-**Kiddie Tax Rules (2024):**
+**Kiddie Tax Rules (2026):**
 For children under 19 (or under 24 if full-time student):
 
 **Unearned Income Treatment:**
-- First $1,300: Tax-free (standard deduction for dependents)
-- Next $1,300: Taxed at child's rate (likely 10%)
-- Above $2,600: Taxed at parent's marginal rate (35%)
+- First $1,350: Tax-free (standard deduction for dependents)
+- Next $1,350: Taxed at child's rate (likely 10%)
+- Above $2,700: Taxed at parent's marginal rate (35%)
 
 **Application to $8,000:**
-- $0-$1,300: Tax-free
-- $1,301-$2,600: Child's rate (10%) = $130
-- $2,601-$8,000: Parent's rate (35%) = $1,890
-- **Total tax: ~$2,020**
+- $0-$1,350: Tax-free
+- $1,351-$2,700: Child's rate (10%) = $135
+- $2,701-$8,000: Parent's rate (35%) = $1,855
+- **Total tax: ~$1,990**
 
 **Kiddie Tax Purpose:**
 Prevents high-income parents from shifting investment income to children in lower brackets.
 
 **Why other answers are wrong:**
 - **A)** Kiddie tax prevents this
-- **B)** Wrong thresholds ($2,500 is incorrect)
+- **B)** Wrong thresholds ($2,700 threshold applies)
 - **D)** First portions receive favorable treatment`
   },
   {
@@ -975,21 +976,15 @@ When gift FMV is less than donor's basis:
 
 **SSTB (Specified Service Trade or Business) Limits:**
 - Consulting is an SSTB
-- MFJ income thresholds (2024):
-  - Full deduction: < $383,900
-  - Phase-out: $383,900 - $483,900
-  - No deduction: > $483,900
+- MFJ income thresholds (2026):
+  - Full deduction: < $404,100
+  - Phase-out: $404,100 - $504,100
+  - No deduction: > $504,100
 
 **This Taxpayer:**
 - Taxable income: $400,000
-- Within phase-out range
-
-At $400,000 for SSTB:
-- ($400,000 - $383,900) / $100,000 = 16.1% into phase-out
-- Applicable percentage: 100% - 16.1% = 83.9%
-- Tentative deduction: $200,000 × 20% × 83.9% = $33,560
-
-If answer is $0, the question assumes taxable income above the full phase-out threshold. **Key point: SSTBs get no 199A deduction above the upper threshold ($483,900 MFJ).**`
+- Below phase-out range
+- Full 20% deduction available: $200,000 × 20% = $40,000`
   },
   {
     id: 'cfp-tax-025',
@@ -1000,7 +995,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     subtopic: 'Bunching Deductions',
     difficulty: 'medium',
     skillLevel: 'Evaluation',
-    question: `A single taxpayer has itemized deductions of $12,000 annually (below the $14,600 standard deduction). Which strategy would MOST benefit them?`,
+    question: `A single taxpayer has itemized deductions of $12,000 annually (below the $15,350 standard deduction). Which strategy would MOST benefit them?`,
     options: [
       'D) Convert to cash-basis accounting',
       'B) Bunch two years of deductions into one year, then take standard the next',
@@ -1013,17 +1008,17 @@ If answer is $0, the question assumes taxable income above the full phase-out th
 **Bunching Strategy:**
 
 **Current Situation (Annual):**
-- Itemized: $12,000 < Standard: $14,600
+- Itemized: $12,000 < Standard: $15,350
 - Takes standard deduction each year
 - Itemized deductions provide no benefit
 
 **Bunching (Every Other Year):**
 - Year 1: Bunch $24,000 itemized → Itemize
-- Year 2: $0 itemized → Standard $14,600
-- Two-year benefit: $24,000 + $14,600 = **$38,600**
+- Year 2: $0 itemized → Standard $15,350
+- Two-year benefit: $24,000 + $15,350 = **$39,350**
 
 **Without Bunching:**
-- Two-year benefit: $14,600 + $14,600 = $29,200
+- Two-year benefit: $15,350 + $15,350 = $30,700
 
 **Additional Benefit: $9,400 extra deductions**
 
@@ -1044,9 +1039,9 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     subtopic: 'Kiddie Tax',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Emma, age 16, has $4,500 of unearned income (dividends and interest) in 2024. Her parents are in the 32% tax bracket. How is Emma's unearned income taxed under the kiddie tax rules?`,
+    question: `Emma, age 16, has $4,500 of unearned income (dividends and interest) in 2026. Her parents are in the 32% tax bracket. How is Emma's unearned income taxed under the kiddie tax rules?`,
     options: [
-      'B) First $1,300 tax-free, next $1,300 at Emma\'s rate, remainder at parents\' 32% rate',
+      'B) First $1,350 tax-free, next $1,350 at Emma\'s rate, remainder at parents\' 32% rate',
       'D) Taxed at a flat 24% unearned income rate',
       'A) All $4,500 taxed at Emma\'s rate (10%)',
       'C) All $4,500 taxed at parents\' 32% rate',
@@ -1054,18 +1049,18 @@ If answer is $0, the question assumes taxable income above the full phase-out th
     correctAnswer: 0,
     explanation: `**Correct Answer: B**
 
-**Kiddie Tax Rules (2024):**
-- First $1,300 of unearned income: Tax-free (standard deduction for dependents)
-- Next $1,300: Taxed at child's rate (typically 10%)
-- Amount over $2,600: Taxed at parents' marginal rate
+**Kiddie Tax Rules (2026):**
+- First $1,350 of unearned income: Tax-free (standard deduction for dependents)
+- Next $1,350: Taxed at child's rate (typically 10%)
+- Amount over $2,700: Taxed at parents' marginal rate
 
 **Emma's Tax Calculation:**
 | Amount | Tax Treatment |
 |--------|---------------|
-| $1,300 | Tax-free |
-| $1,300 | 10% = $130 |
-| $1,900 | 32% (parents' rate) = $608 |
-| **Total Tax** | **$738** |
+| $1,350 | Tax-free |
+| $1,350 | 10% = $135 |
+| $1,800 | 32% (parents' rate) = $576 |
+| **Total Tax** | **$711** |
 
 **Key Points:**
 - Applies to children under 19 (or under 24 if full-time student)
@@ -1074,7 +1069,7 @@ If answer is $0, the question assumes taxable income above the full phase-out th
 
 **Why other answers are wrong:**
 - **A)** Ignores kiddie tax rules
-- **C)** Ignores the $2,600 threshold
+- **C)** Ignores the $2,700 threshold
 - **D)** No such flat rate exists`
   },
   {
@@ -1313,7 +1308,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
     subtopic: 'Tax Credits',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: `Which statement about the Child Tax Credit (CTC) for 2024 is CORRECT?`,
+    question: `Which statement about the Child Tax Credit (CTC) for 2026 is CORRECT?`,
     options: [
       'A) Maximum credit is $3,600 per child under 6',
       'B) The credit is $2,000 per qualifying child with up to $1,700 refundable',
@@ -1323,7 +1318,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
     correctAnswer: 1,
     explanation: `**Correct Answer: B**
 
-**2024 Child Tax Credit Rules:**
+**2026 Child Tax Credit Rules:**
 
 **Credit Amounts:**
 - $2,000 per qualifying child under 17
@@ -1341,7 +1336,7 @@ If profitable in 3 of 5 consecutive years (2 of 7 for horses), presumed to be fo
 - Reduces $50 per $1,000 over threshold
 
 **Why other answers are wrong:**
-- **A)** 2024 reverted to $2,000 (not expanded COVID amounts)
+- **A)** 2026 uses $2,000 credit (not expanded COVID amounts)
 - **C)** Phase-outs are $200K/$400K, not $75K
 - **D)** Under 17, not 13 (13 is for Child Care Credit)`
   },
@@ -1444,7 +1439,7 @@ Karen may recover AMT paid at exercise as AMT credit in future years.
     subtopic: 'Net Operating Loss',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `John's business had a $100,000 net operating loss (NOL) in 2024. Under current tax law, how can he use this NOL?`,
+    question: `John's business had a $100,000 net operating loss (NOL) in 2026. Under current tax law, how can he use this NOL?`,
     options: [
       'B) Carry forward indefinitely, limited to 80% of taxable income',
       'D) Carry back 5 years with no limitation',
@@ -1465,7 +1460,7 @@ Karen may recover AMT paid at exercise as AMT credit in future years.
 - Excess continues to carry forward
 
 **Example:**
-- 2024 NOL: $100,000
+- 2026 NOL: $100,000
 - 2025 taxable income (before NOL): $80,000
 - 2025 NOL deduction: $80,000 × 80% = $64,000
 - Remaining NOL to carry: $36,000
@@ -1487,7 +1482,7 @@ Ensures taxpayers always pay some tax even with losses.
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Maria has $150,000 net profit from her consulting business (sole proprietorship). What is her self-employment tax for 2024?`,
+    question: `Maria has $150,000 net profit from her consulting business (sole proprietorship). What is her self-employment tax for 2026?`,
     options: [
       'A) $22,950',
       'D) $11,475',
@@ -1503,7 +1498,7 @@ Ensures taxpayers always pay some tax even with losses.
 Net profit × 92.35% = $150,000 × 0.9235 = $138,525
 
 **Step 2: Apply SE Tax Rates**
-- Social Security (12.4%): $168,600 cap (2024)
+- Social Security (12.4%): $176,100 cap (2026)
   - $138,525 × 12.4% = $17,177
 - Medicare (2.9%): No cap
   - $138,525 × 2.9% = $4,017
@@ -1554,7 +1549,7 @@ If Maria's combined SE + wages exceed $200,000 (single), additional 0.9% Medicar
 | Sell stock, give cash | $50,000 | $40,000 taxed |
 | Give stock to DAF | $50,000 | $0 |
 
-**AGI Limitations (2024):**
+**AGI Limitations (2026):**
 - Cash to public charities: 60% of AGI
 - LTCG property: 30% of AGI (stock to DAF)
 - Excess carries forward 5 years
@@ -1665,7 +1660,7 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
     subtopic: 'Alimony',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: `For divorces finalized in 2024, how is alimony treated for tax purposes?`,
+    question: `For divorces finalized in 2026, how is alimony treated for tax purposes?`,
     options: [
       'A) Deductible by payer, taxable to recipient',
       'D) Taxable to recipient only if exceeds $15,000',
@@ -1708,29 +1703,29 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
     subtopic: 'Excess Business Loss',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: `Jennifer, single, has $800,000 business loss and $200,000 W-2 wages in 2024. How much of her business loss can she deduct this year?`,
+    question: `Jennifer, single, has $800,000 business loss and $200,000 W-2 wages in 2026. How much of her business loss can she deduct this year?`,
     options: [
       'A) $800,000 (full loss)',
-      'B) $305,000 (excess business loss limitation)',
+      'B) $315,000 (excess business loss limitation)',
       'D) $0 (hobby loss rules apply)',
       'C) $200,000 (limited to wages)',
     ],
     correctAnswer: 1,
-    explanation: `**Correct Answer: B ($305,000)**
+    explanation: `**Correct Answer: B ($315,000)**
 
 **Excess Business Loss Limitation (Section 461(l)):**
 
-**2024 Threshold (Single):** $305,000
+**2026 Threshold (Single):** $315,000
 (Threshold is indexed for inflation annually)
 
 **Calculation:**
 - Total business loss: $800,000
-- Threshold amount: $305,000
-- Excess business loss: $800,000 - $305,000 = $495,000
+- Threshold amount: $315,000
+- Excess business loss: $800,000 - $315,000 = $485,000
 
 **Treatment:**
-- Deductible in 2024: $305,000
-- Carried forward as NOL: $495,000
+- Deductible in 2026: $315,000
+- Carried forward as NOL: $485,000
 
 **NOL Carryforward:**
 - Subject to 80% of taxable income limitation
@@ -1827,9 +1822,9 @@ $5M × 23.8% (LTCG + NIIT) = $1,190,000 saved
 - Medical expenses for you, spouse, dependents
 - No tax if used for qualified expenses
 
-**2024 Contribution Limits:**
-- Individual: $4,150
-- Family: $8,300
+**2026 Contribution Limits:**
+- Individual: $4,450
+- Family: $8,900
 - Catch-up (55+): +$1,000
 
 **After Age 65:**
@@ -1851,7 +1846,7 @@ Unlike FSAs, no "use it or lose it" rule.
     subtopic: 'Phase-Outs',
     difficulty: 'medium',
     skillLevel: 'Remembering and Understanding',
-    question: `For 2024, at what income level does the educational credit (Lifetime Learning Credit) phase-out BEGIN for married filing jointly?`,
+    question: `For 2026, at what income level does the educational credit (Lifetime Learning Credit) phase-out BEGIN for married filing jointly?`,
     options: [
       'D) $300,000',
       'B) $160,000',
@@ -1861,7 +1856,7 @@ Unlike FSAs, no "use it or lose it" rule.
     correctAnswer: 1,
     explanation: `**Correct Answer: B ($160,000)**
 
-**Lifetime Learning Credit Phase-Outs (2024):**
+**Lifetime Learning Credit Phase-Outs (2026):**
 
 | Filing Status | Phase-Out Begins | Phase-Out Complete |
 |---------------|------------------|-------------------|
@@ -1895,7 +1890,7 @@ Unlike FSAs, no "use it or lose it" rule.
     subtopic: 'Opportunity Cost of Roth',
     difficulty: 'hard',
     skillLevel: 'Evaluation',
-    question: `A client in the 24% bracket asks whether to contribute $7,000 to a traditional IRA (deductible) or Roth IRA. Assuming identical investment returns and a 24% tax rate in retirement, which analysis is CORRECT?`,
+    question: `A client in the 24% bracket asks whether to contribute $7,500 to a traditional IRA (deductible) or Roth IRA. Assuming identical investment returns and a 24% tax rate in retirement, which analysis is CORRECT?`,
     options: [
       'D) Traditional is always better due to tax deferral',
       'B) Roth is better because future tax rates are unpredictable',
@@ -1907,17 +1902,17 @@ Unlike FSAs, no "use it or lose it" rule.
 
 **The Math of Tax Deferral:**
 
-**Scenario: $7,000, 24% bracket now and later, 7% return for 20 years**
+**Scenario: $7,500, 24% bracket now and later, 7% return for 20 years**
 
 **Traditional IRA:**
-- Invest $7,000 (deduct, save $1,680 in taxes)
-- After 20 years at 7%: $7,000 × 3.87 = $27,090
-- After-tax (24%): $27,090 × 0.76 = **$20,588**
+- Invest $7,500 (deduct, save $1,800 in taxes)
+- After 20 years at 7%: $7,500 × 3.87 = $29,025
+- After-tax (24%): $29,025 × 0.76 = **$22,059**
 
 **Roth IRA:**
-- Invest $7,000 after-tax ($9,211 pre-tax equivalent)
-- After 20 years at 7%: $7,000 × 3.87 = $27,090
-- After-tax: $27,090 × 1.00 = **$27,090**
+- Invest $7,500 after-tax ($9,868 pre-tax equivalent)
+- After 20 years at 7%: $7,500 × 3.87 = $29,025
+- After-tax: $29,025 × 1.00 = **$29,025**
 
 **True Comparison (same pre-tax dollars):**
 Traditional investors can also invest their $1,680 tax savings.
@@ -1950,12 +1945,12 @@ Traditional investors can also invest their $1,680 tax savings.
     subtopic: 'Filing Status',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Susan's husband died on March 15, 2024. She has a dependent child age 10. For tax year 2024, what is Susan's filing status and for how many years can she use it?`,
+    question: `Susan's husband died on March 15, 2025. She has a dependent child age 10. For tax year 2025, what is Susan's filing status and for how many years can she use it?`,
     options: [
-      'D) Qualifying Surviving Spouse for 2024-2026',
-      'A) Single for 2024 only',
-      'B) Married Filing Jointly for 2024, then Qualifying Surviving Spouse for 2025-2026',
-      'C) Head of Household for 2024-2026',
+      'D) Qualifying Surviving Spouse for 2025-2027',
+      'A) Single for 2025 only',
+      'B) Married Filing Jointly for 2025, then Qualifying Surviving Spouse for 2026-2027',
+      'C) Head of Household for 2025-2027',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: B**
@@ -1966,10 +1961,10 @@ Traditional investors can also invest their $1,680 tax savings.
 - Requirements: Maintain home for dependent child, remain unmarried
 
 **Susan's Timeline:**
-- 2024: MFJ (year of death)
-- 2025: Qualifying Surviving Spouse (year 1)
-- 2026: Qualifying Surviving Spouse (year 2)
-- 2027+: Head of Household (if still has dependent)
+- 2025: MFJ (year of death)
+- 2026: Qualifying Surviving Spouse (year 1)
+- 2027: Qualifying Surviving Spouse (year 2)
+- 2028+: Head of Household (if still has dependent)
 
 **Why other answers are wrong:**
 - **A)** Can file MFJ in year of death
@@ -1995,20 +1990,20 @@ Traditional investors can also invest their $1,680 tax savings.
     correctAnswer: 0,
     explanation: `**Correct Answer: D**
 
-**Kiddie Tax Calculation (2024):**
-- First $1,250: Tax-free (standard deduction for unearned)
-- Next $1,250: Taxed at child's rate (10%)
-- Above $2,500: Taxed at parents' marginal rate (35%)
+**Kiddie Tax Calculation (2026):**
+- First $1,350: Tax-free (standard deduction for unearned)
+- Next $1,350: Taxed at child's rate (10%)
+- Above $2,700: Taxed at parents' marginal rate (35%)
 
 **Emma's taxation:**
-- $1,250: $0 tax
-- $1,250: Child's rate (10%) = $125
-- $9,500: Parents' rate (35%) = $3,325
+- $1,350: $0 tax
+- $1,350: Child's rate (10%) = $135
+- $9,300: Parents' rate (35%) = $3,255
 - Earned income taxed separately at Emma's rates
 
 **Why other answers are wrong:**
-- **A)** First $2,500 gets preferential treatment
-- **B)** First $1,250 is tax-free, not just preferential
+- **A)** First $2,700 gets preferential treatment
+- **B)** First $1,350 is tax-free, not just preferential
 - **C)** Kiddie tax applies regardless of earned income`
   },
   {
@@ -2291,7 +2286,7 @@ $500,000 × 80% = $400,000 taxable in year of sale
     subtopic: 'Charitable Bunching',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `A client typically gives $10,000 to charity annually and has $8,000 in other itemized deductions. The standard deduction is $14,600. Which strategy maximizes tax benefit?`,
+    question: `A client typically gives $10,000 to charity annually and has $8,000 in other itemized deductions. The standard deduction is $15,350. Which strategy maximizes tax benefit?`,
     options: [
       'A) Deduct $10,000 charity each year',
       'D) Convert all gifts to non-cash for better valuation',
@@ -2303,17 +2298,17 @@ $500,000 × 80% = $400,000 taxable in year of sale
 
 **Standard Deduction Analysis:**
 - Each year: $10,000 + $8,000 = $18,000 itemized
-- Benefit over standard: $18,000 - $14,600 = $3,400/year
+- Benefit over standard: $18,000 - $15,350 = $2,650/year
 
 **Bunching Strategy:**
 - Year 1: $20,000 + $8,000 = $28,000 itemized
-- Benefit: $28,000 - $14,600 = $13,400
-- Year 2: Standard deduction $14,600
+- Benefit: $28,000 - $15,350 = $12,650
+- Year 2: Standard deduction $15,350
 
 **Total 2-year benefit:**
-- Bunching: $13,400 + $14,600 = $28,000
-- Annual: $3,400 × 2 = $6,800
-- Improvement: $21,200 more in deductions!
+- Bunching: $12,650 + $15,350 = $28,000
+- Annual: $2,650 × 2 = $5,300
+- Improvement: $22,700 more in deductions!
 
 **Why other answers are wrong:**
 - **A)** Standard deduction wastes part of gift benefit
@@ -2344,9 +2339,9 @@ $500,000 × 80% = $400,000 taxable in year of sale
 2. Growth: Tax-deferred (or tax-free if used for medical)
 3. Distributions: Tax-free for qualified medical expenses
 
-**2024 Limits:**
-- Self-only: $4,150
-- Family: $8,300
+**2026 Limits:**
+- Self-only: $4,450
+- Family: $8,900
 - Catch-up (55+): +$1,000
 
 **Why other answers are wrong:**
@@ -2363,21 +2358,21 @@ $500,000 × 80% = $400,000 taxable in year of sale
     subtopic: 'Gift Tax',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `In 2024, a married couple wants to give $50,000 to each of their 3 children. What is their total gift tax?`,
+    question: `In 2026, a married couple wants to give $50,000 to each of their 3 children. What is their total gift tax?`,
     options: [
       'B) $0 with gift splitting, no exemption used',
       'A) $0 after using lifetime exemption',
-      'D) $42,000 applied against lifetime exemption',
+      'D) $36,000 applied against lifetime exemption',
       'C) $6,000 gift tax on excess',
     ],
     correctAnswer: 2,
     explanation: `**Correct Answer: D ($42,000 against exemption)**
 
 **Gift Splitting Analysis:**
-- Annual exclusion: $18,000 per donor per recipient
-- With splitting: $36,000 per recipient tax-free ($18K × 2)
-- Taxable gift per child: $50,000 - $36,000 = $14,000
-- Total taxable: $14,000 × 3 = $42,000
+- Annual exclusion: $19,000 per donor per recipient
+- With splitting: $38,000 per recipient tax-free ($19K × 2)
+- Taxable gift per child: $50,000 - $38,000 = $12,000
+- Total taxable: $12,000 × 3 = $36,000
 
 **No actual tax due because:**
 - Taxable gifts reduce lifetime exemption
@@ -2429,26 +2424,26 @@ $500,000 × 80% = $400,000 taxable in year of sale
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Dr. Chen has $200,000 in net self-employment income. What is her self-employment tax for 2024?`,
+    question: `Dr. Chen has $200,000 in net self-employment income. What is her self-employment tax for 2026?`,
     options: [
       'A) $30,600 (15.3% of $200,000)',
       'B) $25,195',
       'D) $22,950',
-      'C) $28,332',
+      'C) $28,636',
     ],
     correctAnswer: 3,
-    explanation: `**Correct Answer: C ($28,332)**
+    explanation: `**Correct Answer: C ($28,636)**
 
 **SE Tax Calculation:**
 1. Net SE income: $200,000
 2. Multiply by 92.35%: $184,700
-3. Social Security (6.2% × 2): 12.4% × $168,600 = $20,906
+3. Social Security (6.2% × 2): 12.4% × $176,100 = $21,836
 4. Medicare (1.45% × 2): 2.9% × $184,700 = $5,356
 5. Additional Medicare (0.9%): On amount over $200K = $0
 
-**Total: $20,906 + $5,356 = ~$26,262**
+**Total: $21,836 + $5,356 = ~$27,192**
 
-Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE income base before applying FICA rates. The total SE tax is approximately $26,262.
+Note: The half-deduction adjustment (multiplying by 92.35%) reduces the SE income base before applying FICA rates.
 
 **Why other answers are wrong:**
 - Other calculations have various errors in applying caps and percentages`
@@ -2820,7 +2815,7 @@ This is the "dual basis" or "split basis" rule.
 - Sarah: 23, graduated May (only 5 months, borderline)
 
 **Qualifying Relative Requirements:**
-- Gross income < $5,050 (2024)
+- Gross income < $5,300 (2026)
 - Sarah earned $6,000 = FAILS
 
 **Result:** Too old for QC, too much income for QR

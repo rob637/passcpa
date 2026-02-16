@@ -6,7 +6,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Share2, Copy, Check, Users, Gift, Loader2 } from 'lucide-react';
+import { Share2, Copy, Check, Users, Sparkles, Loader2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { 
@@ -15,6 +15,7 @@ import {
   getReferralUrl,
 } from '../../services/referral';
 import clsx from 'clsx';
+import logger from '../../utils/logger';
 
 interface InviteFriendsProps {
   /** Compact mode for embedding in other views */
@@ -40,7 +41,7 @@ export function InviteFriends({ compact = false }: InviteFriendsProps) {
         setReferralCode(data.code);
         setStats({ referralCount: data.referralCount, referralRewards: data.referralRewards });
       } catch (error) {
-        console.error('Error loading referral data:', error);
+        logger.error('Error loading referral data:', error);
       } finally {
         setIsLoading(false);
       }
@@ -110,7 +111,7 @@ export function InviteFriends({ compact = false }: InviteFriendsProps) {
             Invite Friends
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            They get 30 days free
+            Share VoraPrep with study buddies
           </p>
         </div>
         <Share2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -131,16 +132,16 @@ export function InviteFriends({ compact = false }: InviteFriendsProps) {
       </div>
 
       {/* Benefit callout */}
-      <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 rounded-xl border border-emerald-100 dark:border-emerald-800">
-        <div className="p-2 bg-emerald-100 dark:bg-emerald-900/40 rounded-lg flex-shrink-0">
-          <Gift className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+      <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl border border-blue-100 dark:border-blue-800">
+        <div className="p-2 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex-shrink-0">
+          <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400" />
         </div>
         <div>
-          <p className="font-medium text-emerald-900 dark:text-emerald-100">
-            Your friends get 30 days free
+          <p className="font-medium text-blue-900 dark:text-blue-100">
+            Know someone prepping for an exam?
           </p>
-          <p className="text-sm text-emerald-700 dark:text-emerald-300 mt-1">
-            Instead of the normal 14-day trial, anyone who signs up with your link gets a full 30 days to try VoraPrep.
+          <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
+            Share VoraPrep with friends studying for their CPA, EA, CMA, CIA, CISA, or CFP. AI-powered practice, adaptive learning, and a fraction of the cost of traditional review courses.
           </p>
         </div>
       </div>

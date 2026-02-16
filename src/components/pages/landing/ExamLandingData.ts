@@ -179,9 +179,9 @@ export const CPA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 449,
-    monthly: 49,
+    monthly: 59,
     founderAnnual: 249,
-    founderMonthly: 21,
+    founderMonthly: 29,
   },
   
   notices: [
@@ -192,12 +192,12 @@ export const CPA_CONFIG: ExamLandingConfig = {
   ],
   
   examParts: [
-    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '850+', time: '4 hours' },
-    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '800+', time: '4 hours' },
-    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '800+', time: '4 hours' },
-    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '800+', time: '4 hours' },
-    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '800+', time: '4 hours' },
-    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '850+', time: '4 hours' },
+    { part: 'FAR', title: 'Financial Accounting & Reporting', topics: ['Financial Statements', 'Government & NFP', 'Transactions', 'Consolidated Statements'], questions: '1,300+', time: '4 hours' },
+    { part: 'AUD', title: 'Auditing & Attestation', topics: ['Audit Planning', 'Internal Controls', 'Evidence & Procedures', 'Reports'], questions: '1,000+', time: '4 hours' },
+    { part: 'REG', title: 'Regulation', topics: ['Individual Tax', 'Business Tax', 'Ethics', 'Business Law'], questions: '900+', time: '4 hours' },
+    { part: 'BAR', title: 'Business Analysis & Reporting', topics: ['Data Analysis', 'Technical Accounting', 'State & Local Gov', 'NFP Accounting'], questions: '1,000+', time: '4 hours' },
+    { part: 'ISC', title: 'Information Systems & Controls', topics: ['IT Governance', 'System Development', 'SOC Engagements', 'Cybersecurity'], questions: '900+', time: '4 hours' },
+    { part: 'TCP', title: 'Tax Compliance & Planning', topics: ['Individual Tax', 'Entity Tax', 'Property Transactions', 'Tax Research'], questions: '800+', time: '4 hours' },
   ],
   
   whyBecome: [
@@ -251,15 +251,15 @@ export const EA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 249,
-    monthly: 29,
+    monthly: 35,
     founderAnnual: 149,
-    founderMonthly: 12,
+    founderMonthly: 19,
   },
-  
+
   examParts: [
     { part: 'Part 1', title: 'Individuals', topics: ['Filing Requirements', 'Income & Deductions', 'Credits & Adjustments', 'Tax Calculations'], questions: '700+', time: '3.5 hours' },
-    { part: 'Part 2', title: 'Businesses', topics: ['Business Entities', 'Business Income', 'Deductions & Credits', 'Specialized Returns'], questions: '700+', time: '3.5 hours' },
-    { part: 'Part 3', title: 'Representation', topics: ['Practice & Procedures', 'Taxpayer Rights', 'Penalties & Appeals', 'Ethics'], questions: '700+', time: '3.5 hours' },
+    { part: 'Part 2', title: 'Businesses', topics: ['Business Entities', 'Business Income', 'Deductions & Credits', 'Specialized Returns'], questions: '900+', time: '3.5 hours' },
+    { part: 'Part 3', title: 'Representation', topics: ['Practice & Procedures', 'Taxpayer Rights', 'Penalties & Appeals', 'Ethics'], questions: '900+', time: '3.5 hours' },
   ],
   
   whyBecome: [
@@ -315,9 +315,9 @@ export const CMA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 349,
-    monthly: 39,
+    monthly: 49,
     founderAnnual: 199,
-    founderMonthly: 17,
+    founderMonthly: 25,
   },
   
   examParts: [
@@ -379,11 +379,11 @@ export const CIA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 249,
-    monthly: 29,
+    monthly: 35,
     founderAnnual: 149,
-    founderMonthly: 12,
+    founderMonthly: 19,
   },
-  
+
   examParts: [
     { part: 'Part 1', title: 'Essentials of Internal Auditing', topics: ['Foundations of Internal Auditing', 'Independence & Objectivity', 'Proficiency & Due Care', 'Quality Assurance'], questions: '125 MCQs', time: '2.5 hours' },
     { part: 'Part 2', title: 'Practice of Internal Auditing', topics: ['Managing the Audit Function', 'Planning Engagements', 'Performing Engagements', 'Communicating Results'], questions: '100 MCQs', time: '2 hours' },
@@ -443,9 +443,9 @@ export const CFP_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 349,
-    monthly: 39,
+    monthly: 49,
     founderAnnual: 199,
-    founderMonthly: 17,
+    founderMonthly: 25,
   },
   
   examParts: [
@@ -513,9 +513,9 @@ export const CISA_CONFIG: ExamLandingConfig = {
   
   pricing: {
     annual: 349,
-    monthly: 39,
+    monthly: 49,
     founderAnnual: 199,
-    founderMonthly: 17,
+    founderMonthly: 25,
   },
   
   examParts: [

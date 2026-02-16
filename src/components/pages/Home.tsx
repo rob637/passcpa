@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import logger from '../../utils/logger';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../config/firebase';
 import {
   BookOpen,
   FileSpreadsheet,
@@ -13,6 +15,7 @@ import {
   TrendingUp,
   Check,
   Sparkles,
+  ClipboardCheck,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -37,6 +40,7 @@ import { CourseId } from '../../types/course';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
 import { BottomSheet } from '../common/BottomSheet';
+import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -85,7 +89,8 @@ const getGreeting = (): string => {
 };
 
 const Home = () => {
-  const { userProfile, updateUserProfile } = useAuth();
+  const navigate = useNavigate();
+  const { user, userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
   const { courseId, course, setCourse } = useCourse();
   
@@ -93,14 +98,50 @@ const Home = () => {
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
+  const [hasDiagnosticResult, setHasDiagnosticResult] = useState<boolean | null>(null);
+  const showDashboardNudge = useDashboardShareNudge();
+
+  // Check for milestone-based share nudges
+  const totalQuestionsAnswered = stats?.totalQuestions || 0;
+  const showStreakNudge = shouldShowStreakNudge(currentStreak);
+  const showQuestionsNudge = !showStreakNudge && shouldShowQuestionsMilestone(totalQuestionsAnswered);
+
+  // Check for pending checkout on mount (safety net if onboarding didn't catch it)
+  // ONLY redirect if pendingCheckout matches current course context
+  useEffect(() => {
+    const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+    if (pendingCheckoutStr) {
+      try {
+        const pendingCheckout = JSON.parse(pendingCheckoutStr);
+        // Only redirect if checkout is for the current course
+        if (pendingCheckout.course === courseId) {
+          localStorage.removeItem('pendingCheckout');
+          logger.info('Home: Found pending checkout for current course, redirecting to checkout');
+          navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+        } else {
+          // Clear stale checkout for different course
+          localStorage.removeItem('pendingCheckout');
+          logger.info(`Home: Cleared stale pendingCheckout for ${pendingCheckout.course}, current course is ${courseId}`);
+        }
+      } catch {
+        localStorage.removeItem('pendingCheckout');
+      }
+    }
+  }, [navigate, courseId]);
 
   // Get user info - properly typed now
-  const firstName = userProfile?.displayName?.split(' ')[0] || 'there';
+  const firstName = userProfile?.displayName?.split(' ')[0] || user?.displayName?.split(' ')[0] || 'there';
   
   // Use local state for section so we can update immediately
   // getCurrentSection returns course-appropriate section (not CPA 'FAR' for non-CPA courses)
   const initialSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const [activeSection, setActiveSection] = useState<string>(initialSection);
+  
+  // Keep a ref to track activeSection for effect comparisons (avoids stale closure issues)
+  const activeSectionRef = useRef(activeSection);
+  useEffect(() => {
+    activeSectionRef.current = activeSection;
+  }, [activeSection]);
   
   // Lock body scroll when section picker is open
   useEffect(() => {
@@ -113,11 +154,12 @@ const Home = () => {
   }, [showSectionPicker]);
 
   // Sync local state when profile loads/changes
-  // Use getCurrentSection to ensure section is valid for current course
+  // Use ref for comparison to avoid stale closure issues
   useEffect(() => {
     if (userProfile?.examSection) {
       const validSection = getCurrentSection(userProfile, courseId, getDefaultSection);
-      if (validSection !== activeSection) {
+      // Use ref to get current value (not stale closure)
+      if (validSection !== activeSectionRef.current) {
         setActiveSection(validSection);
       }
     }
@@ -128,11 +170,34 @@ const Home = () => {
     // Check if current section is valid for the new course using course config
     const validSections = course?.sections.map(s => s.id) || [];
     
-    if (validSections.length > 0 && !validSections.includes(activeSection)) {
+    // Use ref to get current value (not stale closure)
+    if (validSections.length > 0 && !validSections.includes(activeSectionRef.current)) {
       // Reset to default if current section isn't valid for this course
       setActiveSection(getDefaultSection(courseId));
     }
   }, [courseId, course?.sections]);
+  
+  // Check if user has completed diagnostic quiz for current section
+  useEffect(() => {
+    const checkDiagnostic = async () => {
+      if (!user?.uid) return;
+      try {
+        // Single-exam courses (CFP, CISA) use course ID as section key
+        const singleExamCourses: CourseId[] = ['cfp', 'cisa'];
+        const diagSection = singleExamCourses.includes(courseId) 
+          ? courseId.toUpperCase() 
+          : activeSection;
+        const diagDocId = `${courseId}-${diagSection}`;
+        const diagRef = doc(db, 'users', user.uid, 'diagnosticResults', diagDocId);
+        const diagSnap = await getDoc(diagRef);
+        setHasDiagnosticResult(diagSnap.exists());
+      } catch (err) {
+        logger.warn('Could not check diagnostic status:', err);
+        setHasDiagnosticResult(null);
+      }
+    };
+    checkDiagnostic();
+  }, [user?.uid, courseId, activeSection]);
   
   // Get section info - course-aware via getSectionDisplayInfo
   const sectionInfo = getSectionDisplayInfo(activeSection, courseId);
@@ -417,7 +482,7 @@ const Home = () => {
       {/* Exam Date Prompt - Show when no exam date set for this course */}
       {!examDate && (
         <Link
-          to="/settings"
+          to="/settings?tab=study"
           className="flex items-center gap-3 p-4 bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 border border-primary-200 dark:border-primary-700 rounded-xl hover:shadow-md transition-all"
         >
           <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center flex-shrink-0">
@@ -432,6 +497,28 @@ const Home = () => {
             </div>
           </div>
           <Sparkles className="w-5 h-5 text-primary-500" />
+        </Link>
+      )}
+
+      {/* Diagnostic Quiz Prompt - Show when user hasn't taken the diagnostic yet */}
+      {hasDiagnosticResult === false && (
+        <Link
+          to="/diagnostic"
+          state={{ section: userProfile?.examSection || '' }}
+          className="flex items-center gap-3 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border border-indigo-200 dark:border-indigo-700 rounded-xl hover:shadow-md transition-all"
+        >
+          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
+            <ClipboardCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          </div>
+          <div className="flex-1">
+            <div className="font-semibold text-slate-900 dark:text-slate-100">
+              Take Your Diagnostic Quiz
+            </div>
+            <div className="text-sm text-slate-600 dark:text-slate-300">
+              25 questions to identify your strengths and weak areas
+            </div>
+          </div>
+          <Brain className="w-5 h-5 text-indigo-500" />
         </Link>
       )}
 
@@ -536,6 +623,17 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      {/* Share Nudge - contextual, non-intrusive */}
+      {showStreakNudge && (
+        <ShareNudge trigger="streak_milestone" streak={currentStreak} />
+      )}
+      {showQuestionsNudge && (
+        <ShareNudge trigger="questions_milestone" totalQuestions={totalQuestionsAnswered} />
+      )}
+      {showDashboardNudge && !showStreakNudge && !showQuestionsNudge && (
+        <ShareNudge trigger="dashboard_periodic" />
+      )}
 
       {/* Study Time Card - At bottom since less actionable */}
       <StudyTimeCard />

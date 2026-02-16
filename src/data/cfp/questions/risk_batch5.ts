@@ -448,7 +448,7 @@ export const CFP_RISK_BATCH5_QUESTIONS: Question[] = [
       'A) Have use-it-or-lose-it rules',
     ],
     correctAnswer: 0,
-    explanation: 'HSAs are owned by individuals, roll over indefinitely (no use-it-or-lose-it), have higher limits ($4,150/$8,300 in 2024), and offer triple tax benefits (deductible, grow tax-free, tax-free withdrawals for medical). They require HDHP enrollment. FSAs are employer accounts with limited rollover.'
+    explanation: 'HSAs are owned by individuals, roll over indefinitely (no use-it-or-lose-it), have higher limits ($4,450/$8,900 in 2026), and offer triple tax benefits (deductible, grow tax-free, tax-free withdrawals for medical). They require HDHP enrollment. FSAs are employer accounts with limited rollover.'
   },
   {
     id: 'cfp-ris-b5-024',

@@ -121,7 +121,7 @@ export const CFP_RETIREMENT_BATCH7_QUESTIONS: Question[] = [
       'C) It doesn\'t allow employee deferrals',
     ],
     correctAnswer: 1,
-    explanation: 'SIMPLE 401(k) is for employers with ≤100 employees. Lower salary deferral limits ($16,000 in 2024) but no ADP/ACP testing. Employers must provide matching (up to 3%) or 2% non-elective contribution. More features than SIMPLE IRA (loans, Roth) but more complex.'
+    explanation: 'SIMPLE 401(k) is for employers with ≤100 employees. Lower salary deferral limits ($17,000 in 2026) but no ADP/ACP testing. Employers must provide matching (up to 3%) or 2% non-elective contribution. More features than SIMPLE IRA (loans, Roth) but more complex.'
   },
   // RET-3: IRAs
   {

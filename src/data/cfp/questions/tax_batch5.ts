@@ -36,7 +36,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
     subtopic: 'Filing Status',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'A taxpayer whose spouse died in 2024 and who has a dependent child living with them may file as what status for 2025?',
+    question: 'A taxpayer whose spouse died in 2025 and who has a dependent child living with them may file as what status for 2026?',
     options: [
       'C) Qualifying Surviving Spouse',
       'B) Married Filing Jointly',
@@ -44,7 +44,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
       'D) Head of Household',
     ],
     correctAnswer: 0,
-    explanation: 'Qualifying Surviving Spouse status is available for 2 years following the year of the spouse\'s death (2025 and 2026 for a 2024 death), provided the taxpayer has not remarried and maintains a household for a dependent child. This status provides the same tax rates and standard deduction as Married Filing Jointly.'
+    explanation: 'Qualifying Surviving Spouse status is available for 2 years following the year of the spouse\'s death (2026 and 2027 for a 2025 death), provided the taxpayer has not remarried and maintains a household for a dependent child. This status provides the same tax rates and standard deduction as Married Filing Jointly.'
   },
   {
     id: 'cfp-tax-b5-003',
@@ -275,7 +275,7 @@ export const CFP_TAX_BATCH5_QUESTIONS: Question[] = [
       'D) $12,400',
     ],
     correctAnswer: 2,
-    explanation: 'Self-employment tax is 15.3% of net SE income (12.4% Social Security + 2.9% Medicare), but only 92.35% of net SE income is subject to the tax. $100,000 × 0.9235 × 0.153 = $14,130. The Social Security portion is capped at the wage base ($168,600 for 2024), but there is no cap on Medicare tax.'
+    explanation: 'Self-employment tax is 15.3% of net SE income (12.4% Social Security + 2.9% Medicare), but only 92.35% of net SE income is subject to the tax. $100,000 × 0.9235 × 0.153 = $14,130. The Social Security portion is capped at the wage base ($176,100 for 2026), but there is no cap on Medicare tax.'
   },
   {
     id: 'cfp-tax-b5-015',

@@ -270,6 +270,17 @@ export const CPA_COURSE: Course = {
             'Fund accounting',
           ]
         },
+        { 
+          id: 'BAR-VII', 
+          name: 'Managerial Accounting & Financial Analysis', 
+          weight: '5-10%', 
+          topics: [
+            'Time Value of Money',
+            'Financial Management',
+            'Cost Accounting',
+            'Decision Analysis',
+          ]
+        },
       ]
     },
     {

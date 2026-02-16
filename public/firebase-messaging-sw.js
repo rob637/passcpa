@@ -1,18 +1,23 @@
 // Firebase Cloud Messaging Service Worker
 // This file handles background push notifications
+//
+// NOTE: Firebase config is injected at build time by Vite (see vite.config.js).
+// The __FIREBASE_CONFIG__ placeholder is replaced with actual values from
+// environment variables during the build process. This avoids hardcoding
+// API keys in source control.
 
 importScripts('https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/10.7.0/firebase-messaging-compat.js');
 
 // Initialize Firebase in the service worker
-firebase.initializeApp({
-  apiKey: "AIzaSyAGg1VknTBNJxeJ5d4O6Dg5dvLXfKTuoYM",
-  authDomain: "passcpa-dev.firebaseapp.com",
-  projectId: "passcpa-dev",
-  storageBucket: "passcpa-dev.firebasestorage.app",
-  messagingSenderId: "927993599009",
-  appId: "1:927993599009:web:9e0f63dced5a44a0ab1b18",
-  measurementId: "G-54Z8TZXMSK"
+// Config is injected at build time from VITE_FIREBASE_* environment variables
+firebase.initializeApp(self.__FIREBASE_CONFIG__ || {
+  apiKey: '',
+  authDomain: '',
+  projectId: '',
+  storageBucket: '',
+  messagingSenderId: '',
+  appId: '',
 });
 
 const messaging = firebase.messaging();

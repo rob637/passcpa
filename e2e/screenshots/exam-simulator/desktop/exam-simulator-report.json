@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-14T15:37:41.942Z",
+  "timestamp": "2026-02-15T21:24:33.984Z",
   "viewport": "desktop",
   "results": [
     {
@@ -128,9 +128,14 @@
       "d": ""
     },
     {
-      "f": "Template Exam — Could not answer any questions",
-      "s": "WARN",
+      "f": "Template Exam — Results screen shown",
+      "s": "PASS",
       "d": ""
+    },
+    {
+      "f": "Template Exam — Score",
+      "s": "INFO",
+      "d": "100%"
     },
     {
       "f": "Timer — Initial value read",
@@ -165,11 +170,21 @@
     {
       "f": "Navigation — Question grid shows state",
       "s": "PASS",
-      "d": "Answered: 0, Current: 4, Flagged: 0"
+      "d": "Answered: 1, Current: 4, Flagged: 0"
     },
     {
-      "f": "Exit — Left exam without confirmation",
-      "s": "WARN",
+      "f": "Exit — Confirm dialog",
+      "s": "INFO",
+      "d": "Are you sure you want to exit? Your progress will be lost."
+    },
+    {
+      "f": "Exit — Confirmation dialog shown",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "Exit — Stayed in exam after dismissing",
+      "s": "PASS",
       "d": ""
     },
     {
@@ -213,29 +228,12 @@
       "d": ""
     }
   ],
-  "issues": [
-    {
-      "sev": "LOW",
-      "f": "Template Exam — Could not answer any questions",
-      "d": ""
-    },
-    {
-      "sev": "LOW",
-      "f": "Exit — Left exam without confirmation",
-      "d": ""
-    }
-  ],
-  "consoleErrors": [
-    "[2026-02-14T15:35:22.346Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.347Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.347Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.368Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:35:22.470Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
-  ],
+  "issues": [],
+  "consoleErrors": [],
   "summary": {
-    "PASS": 37,
+    "PASS": 40,
     "FAIL": 0,
-    "WARN": 2,
-    "INFO": 3
+    "WARN": 0,
+    "INFO": 5
   }
 }

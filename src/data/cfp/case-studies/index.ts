@@ -291,14 +291,14 @@ Donate $50,000 of stock with $31,000 basis:
 
 **Contribution Flexibility:**
 SEP-IRA: 25% of net self-employment income only
-Solo 401(k): Employee deferral ($23,000) PLUS employer contribution (25%)
+Solo 401(k): Employee deferral ($24,500) PLUS employer contribution (25%)
 
 **In a High-Income Year ($162,500):**
 - SEP max: ~$32,500
-- Solo 401(k) max: $23,000 + $32,500 = **$55,500** (plus catch-up at 50+)
+- Solo 401(k) max: $24,500 + $32,500 = **$57,000** (plus catch-up at 50+)
 
 **In a Low-Income Year ($87,500):**
-- Can still defer $23,000 as employee contribution
+- Can still defer $24,500 as employee contribution
 - Provides income smoothing flexibility
 
 **Additional Benefits:**
@@ -418,7 +418,7 @@ Jordan should then continue building the emergency fund with the $75/month freed
         domain: 'RET',
         question: 'Jordan contributes enough to get the full 401(k) match. Given their goals and cash flow, what is the optimal retirement savings strategy?',
         options: [
-          { id: 'A', text: 'Max out 401(k) to $23,000, skip Roth IRA' },
+          { id: 'A', text: 'Max out 401(k) to $24,500, skip Roth IRA' },
           { id: 'B', text: 'Contribute to 401(k) for match, max HSA, then Roth IRA' },
           { id: 'C', text: 'Skip 401(k) entirely, focus on Roth IRA only' },
           { id: 'D', text: 'Max all accounts regardless of other goals' }
@@ -427,8 +427,8 @@ Jordan should then continue building the emergency fund with the $75/month freed
         explanation: `**Optimal Order for Jordan:**
 
 1. **401(k) to get match (4%)** = $5,400/year (free money)
-2. **Max HSA ($4,150 individual 2024)** = Triple tax advantage
-3. **Max Roth IRA ($7,000)** = Tax-free growth for 35+ years
+2. **Max HSA ($4,450 individual 2026)** = Triple tax advantage
+3. **Max Roth IRA ($7,500)** = Tax-free growth for 35+ years
 
 **Why this order at age 28:**
 - 401(k) match is 100% return
@@ -733,7 +733,7 @@ $200,000 / 0.04 = **$5,000,000 needed**
         domain: 'EST',
         question: 'With a combined estate of approximately $9 million, what estate planning concern should the Thompsons address most urgently?',
         options: [
-          { id: 'A', text: 'Federal estate tax exposure (above $13.61M exemption in 2024)' },
+          { id: 'A', text: 'Federal estate tax exposure (above $7.0M exemption in 2026 - TCJA sunset)' },
           { id: 'B', text: 'State estate tax if they reside in a state with lower exemption' },
           { id: 'C', text: 'Updating the 2015 A/B trust for current law and exemption portability' },
           { id: 'D', text: 'Income in Respect of a Decedent (IRD) on the large IRA' }
@@ -743,7 +743,7 @@ $200,000 / 0.04 = **$5,000,000 needed**
 
 **Most Urgent: Update 2015 Trust**
 - A/B trusts designed for 2015 law may be inefficient now
-- 2024 exemption is $13.61M per person ($27.22M married)
+- 2026 exemption is $7.0M per person ($14.0M married) due to TCJA sunset
 - Portability may be better than mandatory bypass trust
 - Distributions and terms should be reviewed
 
@@ -837,9 +837,9 @@ $200,000 / 0.04 = **$5,000,000 needed**
 
 **Changed circumstances:**
 - No business debt or obligations to cover
-- Estate currently below exemption ($9M < $13.61M)
-- But: 2026 exemption may revert to ~$7M
-- Potential future estate tax if exemption sunsets
+- Estate currently has exposure ($9M vs $7.0M exemption in 2026)
+- TCJA sunset means estate is now taxable
+- Estate planning more urgent now
 
 **Conversion consideration:**
 - Term expires at age 65 (7 years away)
@@ -848,9 +848,9 @@ $200,000 / 0.04 = **$5,000,000 needed**
 - Could convert partial amount ($500K-$1M) for flexibility
 
 **Why not other options:**
-- A) May expire when still needed if exemption drops
+- A) May expire when still needed given estate tax exposure
 - C) Cancelling eliminates future options
-- D) No current need for more coverage
+- D) Already has estate tax exposure, warrants review
 
 **Recommended:** Evaluate conversion before health events make it impossible.`
       },
@@ -1071,7 +1071,7 @@ For early retirees, ACA marketplace plans are typically the best solution:
 - Roth conversions add to MAGI, so plan carefully
 
 **Sample calculation:**
-- 2024 FPL for family of 4: ~$31,200
+- 2026 FPL for family of 4: ~$32,500
 - 400% FPL: ~$124,800
 - If MAGI kept at $84,000 (~270% FPL): Significant subsidies available
 
@@ -1098,9 +1098,9 @@ The pro-rata rule affects KEVIN's ability to do backdoor Roth, NOT Priya's.
 **How pro-rata works:**
 - All traditional IRA assets aggregated for conversion calculations
 - Kevin has $45,000 pre-tax in traditional IRA
-- If he contributes $7,000 non-deductible and converts $7,000:
-  - Taxable portion = $7,000 × ($45,000 / $52,000) = ~$6,058 taxable
-  - Only ~$942 would be tax-free
+- If he contributes $7,500 non-deductible and converts $7,500:
+  - Taxable portion = $7,500 × ($45,000 / $52,500) = ~$6,429 taxable
+  - Only ~$1,071 would be tax-free
 
 **Solution: Roll traditional IRA INTO Solo 401(k)**
 - Solo 401(k) can accept IRA rollovers
@@ -1177,18 +1177,18 @@ This advanced strategy requires specific plan features:
 2. **In-plan Roth conversion** or **in-service distribution** to Roth IRA
 
 **How it works:**
-- 2024 total 401(k) limit: $69,000 (includes all sources)
-- Employee deferral max: $23,000
+- 2026 total 401(k) limit: $71,500 (includes all sources)
+- Employee deferral max: $24,500
 - Employer match: Varies (say $13,500)
-- Remaining room: $69,000 - $23,000 - $13,500 = $32,500 available for after-tax
+- Remaining room: $71,500 - $24,500 - $13,500 = $33,500 available for after-tax
 - Contribute after-tax, immediately convert to Roth
-- Result: Additional $30,500+ into Roth tax treatment
+- Result: Additional $33,500+ into Roth tax treatment
 
 **FAANG companies often offer this** - it's a valuable benefit for high earners.
 
 **Why not other options:**
 - A) Profit sharing is employer contribution; different from after-tax employee
-- C) Roth 401(k) shares the $23,000 deferral limit; not the mega backdoor
+- C) Roth 401(k) shares the $24,500 deferral limit; not the mega backdoor
 - D) Brokerage window is about investment options, not contribution types`
       }
     ],
@@ -1271,7 +1271,7 @@ This advanced strategy requires specific plan features:
 6. Harrison concerned about cognitive decline in family history
 
 **Concerns:**
-- Estate tax sunsets in 2026 (exemption drops from $13.61M to ~$6M)
+- Estate tax exposure now significant (exemption is $7.0M due to TCJA sunset)
 - Victoria's financial stability
 - Healthcare decisions if Harrison becomes incapacitated
 `,
@@ -1279,14 +1279,14 @@ This advanced strategy requires specific plan features:
       {
         id: 'CFP-CASE-005-Q1',
         domain: 'EST',
-        question: 'With the estate tax exemption sunsetting in 2026, the Wellingtons gross estate exceeds exemptions by approximately:',
+        question: 'With the estate tax exemption at $7.0M (2026 TCJA sunset), the Wellingtons gross estate exceeds exemptions by approximately:',
         options: [
-          { id: 'A', text: '$8 million (using current $13.61M per spouse)' },
-          { id: 'B', text: '$22 million (using current $13.61M per spouse)' },
-          { id: 'C', text: '$24 million (using projected ~$6M per spouse post-2026)' },
-          { id: 'D', text: '$32 million (using projected ~$6M per spouse post-2026)' }
+          { id: 'A', text: '$21 million (combined $14M exemption for married couple)' },
+          { id: 'B', text: '$22 million (combined $14M exemption for married couple)' },
+          { id: 'C', text: '$24 million (after deductions)' },
+          { id: 'D', text: '$32 million (gross estate)' }
         ],
-        correctOptionId: 'C',
+        correctOptionId: 'A',
         explanation: `**Estate Tax Calculation:**
 
 **Gross estate estimate:**
@@ -1305,15 +1305,11 @@ This advanced strategy requires specific plan features:
 
 **Tax exposure analysis:**
 
-Current exemption ($13.61M × 2 = $27.22M):
-- Excess: $35.2M - $27.22M = **$7.98M taxable** ≈ $8M
-- Tax at 40%: ~$3.2M
+2026 exemption ($7.0M × 2 = $14.0M):
+- Excess: $35.2M - $14.0M = **$21.2M taxable** ≈ $21M
+- Tax at 40%: **~$8.5M estate tax**
 
-Post-2026 (~$6M × 2 = $12M):
-- Excess: $35.2M - $12M = **$23.2M taxable** ≈ $24M
-- Tax at 40%: **~$9.3M additional tax**
-
-**Urgent planning need:** Use exemption before 2026 sunset.`
+**Urgent planning need:** Estate tax planning is critical with $21M+ exposure.`
       },
       {
         id: 'CFP-CASE-005-Q2',
@@ -1344,7 +1340,7 @@ Post-2026 (~$6M × 2 = $12M):
 **Crummey powers for premium payments:**
 - ILIT receives gifts each year for premiums
 - Beneficiaries notified of withdrawal right (typically 30 days)
-- Creates present interest for annual exclusion ($18K per beneficiary)
+- Creates present interest for annual exclusion ($19K per beneficiary)
 
 **Why not other options:**
 - A) Transfer to Eleanor: Still in estate at her death (second-to-die problem)
@@ -1485,7 +1481,7 @@ Given Victoria's profile (artist, limited income, concerns about dependency):
         domain: 'EST',
         question: 'To maximize wealth transfer to grandchildren while minimizing transfer taxes, the Wellingtons should use:',
         options: [
-          { id: 'A', text: 'Annual exclusion gifts of $18,000 per grandchild' },
+          { id: 'A', text: 'Annual exclusion gifts of $19,000 per grandchild' },
           { id: 'B', text: 'Dynasty trust funded with remaining GST exemption' },
           { id: 'C', text: 'UGMA/UTMA accounts for each grandchild' },
           { id: 'D', text: 'Gifts after both deaths via will' }
@@ -1495,8 +1491,7 @@ Given Victoria's profile (artist, limited income, concerns about dependency):
 
 **GST Planning:**
 - Generation-Skipping Transfer tax: Additional 40% tax on transfers to grandchildren
-- Each spouse has $13.61M GST exemption (separate from estate exemption)
-- GST exemption also sunsets to ~$6M in 2026
+- Each spouse has $7.0M GST exemption (2026)
 
 **Dynasty trust benefits:**
 - Allocate GST exemption to trust
@@ -1507,15 +1502,15 @@ Given Victoria's profile (artist, limited income, concerns about dependency):
 **For Wellingtons:**
 - 5 grandchildren (2 + 1 + likely more)
 - Fund dynasty trust with appreciating assets
-- Use GST exemption NOW before sunset
+- Use combined $14M GST exemption strategically
 - Growth occurs outside family's estates forever
 
 **Maximum leverage:**
-- Gift $27.22M (combined exemption) before 2026
-- If it grows to $50M+, entire amount avoids GST and estate tax for generations
+- Gift $14M (combined exemption) now
+- If it grows to $30M+, entire amount avoids GST and estate tax for generations
 
 **Why not other options:**
-- A) Annual exclusion is good but small compared to wealth ($90K/year × 5 = $450K)
+- A) Annual exclusion is good but small compared to wealth ($95K/year × 5 = $475K)
 - C) UGMA/UTMA gives assets to kids at 18/21 (no control)
 - D) Gifts at death use exemption but no leverage from growth`
       },

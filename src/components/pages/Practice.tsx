@@ -29,6 +29,7 @@ import {
   Brain,
   Zap,
   History,
+  Home,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -38,7 +39,7 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
 import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
-import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
+import { getPracticeSessions, getPracticeSessionsByCourse, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import feedback from '../../services/feedback';
@@ -47,9 +48,12 @@ import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
 import { formatDistanceToNow } from 'date-fns';
 import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionShuffle';
+import { ShareNudge, shouldShowHighScoreNudge } from '../common/ShareNudge';
+import { useNavigation } from '../navigation';
+import { markActivityCompleted } from '../../services/dailyPlanPersistence';
 
 // Question status filter options (like Becker)
-type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
+type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
 
 interface SessionConfig {
   section: ExamSection;
@@ -108,7 +112,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
         return;
       }
       try {
-        const sessions = await getPracticeSessions(userId, 5);
+        // Filter by courseId to only show sessions for the current course
+        const sessions = await getPracticeSessionsByCourse(userId, courseId, 5);
         setPracticeHistory(sessions);
       } catch (error) {
         logger.error('Error loading practice history:', error);
@@ -117,7 +122,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
       }
     };
     loadHistory();
-  }, [userId]);
+  }, [userId, courseId]);
 
   // Derive mode from toggles for backwards compatibility
   const derivedMode = config.mode === 'weak' ? 'weak' : (config.mode === 'timed' ? 'timed' : 'study');
@@ -279,7 +284,6 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
                   <option value="unanswered">Unanswered</option>
                   <option value="incorrect">Incorrect</option>
                   <option value="correct">Correct</option>
-                  <option value="flagged">Flagged</option>
                 </select>
               </div>
 
@@ -605,6 +609,13 @@ const SessionResults: React.FC<SessionResultsProps> = ({
           </div>
         </Card>
         
+        {/* Share Nudge — show after an exceptional score */}
+        {shouldShowHighScoreNudge(accuracy) && (
+          <div className="mb-6">
+            <ShareNudge trigger="high_score" score={accuracy} />
+          </div>
+        )}
+
         {/* Footer Actions */}
         <div className="flex gap-3">
           {fromDailyPlan && onBackToDailyPlan ? (
@@ -628,6 +639,14 @@ const SessionResults: React.FC<SessionResultsProps> = ({
             </>
           ) : (
             <>
+              <Button
+                onClick={() => navigate('/home')}
+                variant="secondary"
+                leftIcon={Home}
+                className="flex-1"
+              >
+                Home
+              </Button>
               <Button
                 onClick={onTryAgain}
                 variant="secondary"
@@ -659,10 +678,13 @@ const Practice: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
   const { courseId, course } = useCourse();
+  const { session: navSession, endSession: endNavSession } = useNavigation();
   
-  // Check if coming from daily plan
-  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
-  const activityId = searchParams.get('activityId');
+  // Check if coming from daily plan (URL params OR navigation session)
+  const fromDailyPlanUrl = searchParams.get('from') === 'dailyplan';
+  const fromDailyPlanNav = navSession.mode === 'daily-plan';
+  const fromDailyPlan = fromDailyPlanUrl || fromDailyPlanNav;
+  const activityId = searchParams.get('activityId') || navSession.activityId || null;
   const blueprintAreaParam = searchParams.get('blueprintArea');
   const subtopicParam = searchParams.get('subtopic'); // Specific topic from lesson
 
@@ -700,6 +722,12 @@ const Practice: React.FC = () => {
   // Track weak topics for targeted practice
   const [, setWeakTopicsFromSession] = useState<string[]>([]);
 
+  // Ref to prevent cleanup from re-saving a session that was intentionally ended
+  const sessionEndedRef = useRef(false);
+  
+  // Track the courseId this session was started with (prevents cross-course save on unmount)
+  const sessionCourseRef = useRef<string | null>(null);
+
   // Note: sessionId removed - using 'practice' mode shuffle which is stable per user
 
   const currentQuestion: Question | undefined = questions[currentIndex];
@@ -720,10 +748,18 @@ const Practice: React.FC = () => {
 
   // Save session state to sessionStorage (for returning after lesson/Vory)
   const saveSessionState = useCallback(() => {
-    if (!inSession || questions.length === 0) return;
+    if (!inSession || questions.length === 0 || sessionEndedRef.current) return;
+    
+    // Prevent saving if the course changed since the session started
+    // This fixes a race condition where unmount saves CISA questions with courseId='cma'
+    const saveCourseId = sessionCourseRef.current || courseId;
+    if (saveCourseId !== courseId) {
+      logger.info(`Skipping session save: session course ${saveCourseId} !== current course ${courseId}`);
+      return;
+    }
     
     const sessionState = {
-      courseId, // Track which course this session belongs to
+      courseId: saveCourseId, // Use the session's original course, not the potentially-changed context
       questions,
       currentIndex,
       answers,
@@ -751,8 +787,9 @@ const Practice: React.FC = () => {
       
       // Check if session belongs to the current course
       if (sessionState.courseId && sessionState.courseId !== courseId) {
-        // Don't restore sessions from a different course
-        logger.info(`Skipping session restore: saved for ${sessionState.courseId}, current is ${courseId}`);
+        // Clear sessions from a different course - don't let them linger
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        logger.info(`Cleared session from ${sessionState.courseId}: current course is ${courseId}`);
         return false;
       }
       
@@ -821,18 +858,34 @@ const Practice: React.FC = () => {
   useEffect(() => {
     if (prevCourseRef.current !== courseId) {
       prevCourseRef.current = courseId;
-      if (inSession) {
-        // End the in-progress session — it belongs to a different course
-        setInSession(false);
-        setQuestions([]);
-        setAnswers({});
-        setCurrentIndex(0);
-        setShowResults(false);
-        setSelectedAnswer(null);
-        setShowExplanation(false);
-        setFlagged(new Set());
-        logger.info(`Practice session reset: course changed to ${courseId}`);
+      
+      // Always clear any saved session from a different course
+      try {
+        const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
+        if (saved) {
+          const sessionState = JSON.parse(saved);
+          if (sessionState.courseId && sessionState.courseId !== courseId) {
+            sessionStorage.removeItem(SESSION_STORAGE_KEY);
+            logger.info(`Cleared stale session for ${sessionState.courseId}`);
+          }
+        }
+      } catch {
+        // Ignore parse errors
       }
+      
+      // Always end the in-progress session — it belongs to a different course
+      sessionEndedRef.current = true; // Prevent unmount from saving stale data
+      sessionCourseRef.current = null; // Clear session course lock
+      setInSession(false);
+      setQuestions([]);
+      setAnswers({});
+      setCurrentIndex(0);
+      setShowResults(false);
+      setSelectedAnswer(null);
+      setShowExplanation(false);
+      setFlagged(new Set());
+      setShowShortcuts(false);
+      logger.info(`Practice session reset: course changed to ${courseId}`);
     }
   }, [courseId, inSession]);
 
@@ -986,11 +1039,14 @@ const Practice: React.FC = () => {
           userId: userProfile?.id, // For smart question selection
           useSmartSelection: shouldUseSmartSelection, // Enable spaced repetition for study mode
           examDate: examDateStr, // For adaptive weights near exam date
+          questionStatus: config.questionStatus !== 'all' ? config.questionStatus as any : undefined, // Filter by answer history
         });
       }
 
       setQuestions(fetchedQuestions);
       setSessionConfig(config);
+      sessionEndedRef.current = false; // Allow saving for this new session
+      sessionCourseRef.current = courseId; // Lock session to current course
       setInSession(true);
       setStartTime(Date.now());
       setCurrentIndex(0);
@@ -1224,6 +1280,7 @@ const Practice: React.FC = () => {
     // Save practice session to history for Attempts List
     if (user?.uid && sessionConfig) {
       savePracticeSession(user.uid, {
+        courseId,  // Include courseId to filter by course later
         section: sessionConfig.section,
         mode: sessionConfig.mode,
         questionCount: totalQuestions,
@@ -1240,6 +1297,9 @@ const Practice: React.FC = () => {
     const weakTopics = [...new Set(wrongQuestions.map(q => q.topic || q.topicId || 'Unknown'))];
     setWeakTopicsFromSession(weakTopics);
 
+    // Mark session as intentionally ended (prevents cleanup from re-saving)
+    sessionEndedRef.current = true;
+    
     // Show results screen
     setInSession(false);
     setShowResults(true);
@@ -1250,6 +1310,7 @@ const Practice: React.FC = () => {
   
   // Reset and start new session
   const handleTryAgain = () => {
+    sessionEndedRef.current = false; // Allow saving for the new session
     setShowResults(false);
     setSessionConfig(null);
     setQuestions([]);
@@ -1260,6 +1321,32 @@ const Practice: React.FC = () => {
     try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
   };
   
+  // Auto-complete daily plan activity when results are shown
+  useEffect(() => {
+    if (showResults && fromDailyPlan && activityId && user?.uid) {
+      // Mark the activity complete via the persistent service
+      markActivityCompleted(
+        user.uid,
+        activityId,
+        userProfile?.examSection || getDefaultSection(courseId),
+        undefined,
+        undefined,
+        courseId
+      ).catch(err => logger.error('Failed to auto-complete daily plan activity:', err));
+      
+      // Also save to legacy localStorage for DailyPlanCard to pick up
+      const storageKey = `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
+      try {
+        const existing = localStorage.getItem(storageKey);
+        const completed = existing ? JSON.parse(existing) : [];
+        if (!completed.includes(activityId)) {
+          completed.push(activityId);
+          localStorage.setItem(storageKey, JSON.stringify(completed));
+        }
+      } catch { /* ignore */ }
+    }
+  }, [showResults, fromDailyPlan, activityId, user?.uid, userProfile?.examSection, courseId]);
+
   // Back to daily plan (marks activity complete)
   const handleBackToDailyPlan = () => {
     if (activityId) {
@@ -1282,6 +1369,7 @@ const Practice: React.FC = () => {
     params.set('from', 'dailyplan');
     if (activityId) params.set('activityId', activityId);
     params.set('completed', 'true');
+    endNavSession();
     navigate(`/home?${params.toString()}`);
   };
   
@@ -1351,6 +1439,15 @@ const Practice: React.FC = () => {
 
   // No questions available for selected criteria
   if (questions.length === 0) {
+    const statusLabels: Record<string, string> = {
+      unanswered: 'unanswered',
+      incorrect: 'previously incorrect',
+      correct: 'previously correct',
+    };
+    const activeStatusFilter = sessionConfig?.questionStatus && sessionConfig.questionStatus !== 'all'
+      ? statusLabels[sessionConfig.questionStatus]
+      : null;
+
     return (
       <div className="min-h-screen flex items-center justify-center" data-testid="practice-empty-state">
         <div className="text-center max-w-md mx-auto p-6">
@@ -1361,8 +1458,9 @@ const Practice: React.FC = () => {
             No Questions Available
           </h2>
           <p className="text-slate-600 dark:text-slate-300 mb-6">
-            There are no practice questions available for your selected section and criteria. 
-            Try adjusting your filters or selecting a different exam section.
+            {activeStatusFilter
+              ? `No ${activeStatusFilter} questions found for this section. Try changing the Question Status filter to "All Questions".`
+              : 'There are no practice questions available for your selected section and criteria. Try adjusting your filters or selecting a different exam section.'}
           </p>
           <Button
             onClick={endSession}

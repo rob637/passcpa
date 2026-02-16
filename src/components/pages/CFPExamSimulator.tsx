@@ -148,6 +148,7 @@ const config: ExamSimulatorConfig<CFPDomain> = {
   courseName: 'CFP',
   courseDescription: 'Practice with realistic exam conditions for the CFP Board certification exam',
   backPath: '/cfp/dashboard',
+  testingProvider: 'prometric',
   sections: CFP_SECTIONS,
   defaultSection: 'CFP-GEN',
   modes: CFP_EXAM_MODES,

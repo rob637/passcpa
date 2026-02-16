@@ -295,7 +295,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
       'A) Anyone dies with any assets',
     ],
     correctAnswer: 1,
-    explanation: 'Form 706 filing: required when gross estate + adjusted taxable gifts > exemption (~$13M in 2024). Also: elect to port unused exclusion to surviving spouse (regardless of value). Due: 9 months from death (6-month extension available). Portability election: even if no tax owed, file to preserve DSUE for surviving spouse. Many file solely for portability.'
+    explanation: 'Form 706 filing: required when gross estate + adjusted taxable gifts > exemption (~$7M in 2026). Also: elect to port unused exclusion to surviving spouse (regardless of value). Due: 9 months from death (6-month extension available). Portability election: even if no tax owed, file to preserve DSUE for surviving spouse. Many file solely for portability.'
   },
   {
     id: 'cfp-est-b10-016',
@@ -371,7 +371,7 @@ export const CFP_ESTATE_BATCH10_QUESTIONS: Question[] = [
       'A) Are automatically taxed',
     ],
     correctAnswer: 2,
-    explanation: 'Over-exclusion gifts: File Form 709 (gift tax return) by April 15. Gift reduces lifetime exemption (currently ~$13M). Rarely results in current tax payment due to high exemption. Cumulative: all taxable gifts accumulate over lifetime. If exceed exemption: 40% gift tax. Strategy: many plan to use exemption during life. Track lifetime gifts—estate uses remaining exemption.'
+    explanation: 'Over-exclusion gifts: File Form 709 (gift tax return) by April 15. Gift reduces lifetime exemption (currently ~$7M). Rarely results in current tax payment due to exemption. Cumulative: all taxable gifts accumulate over lifetime. If exceed exemption: 40% gift tax. Strategy: some plan to use exemption during life. Track lifetime gifts—estate uses remaining exemption.'
   },
   {
     id: 'cfp-est-b10-020',

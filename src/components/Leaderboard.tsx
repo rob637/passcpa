@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FEATURES } from '../config/featureFlags';
 import {
   Users,
   Trophy,
@@ -206,12 +207,14 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             </div>
             <h3 className="font-semibold text-slate-900 dark:text-white">Your Ranking</h3>
           </div>
-          <a
-            href="/community"
-            className="text-xs text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1"
-          >
-            View All <ChevronRight className="w-3 h-3" />
-          </a>
+          {FEATURES.community && (
+            <a
+              href="/community"
+              className="text-xs text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1"
+            >
+              View All <ChevronRight className="w-3 h-3" />
+            </a>
+          )}
         </div>
 
         {motivationalMessage && (
@@ -241,7 +244,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
           </div>
         </div>
 
-        {communityStats && communityStats.todayActive > 0 && (
+        {communityStats && communityStats.todayActive >= 20 && (
           <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-sm">
             <span className="text-slate-600">Studying with you today:</span>
             <span className="font-semibold text-slate-900 flex items-center gap-1">

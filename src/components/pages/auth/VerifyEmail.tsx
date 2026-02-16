@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Mail, RefreshCw, CheckCircle, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 import { trackEvent } from '../../../services/analytics';
@@ -7,7 +7,7 @@ import logger from '../../../utils/logger';
 
 const VerifyEmail = () => {
   const navigate = useNavigate();
-  const { user, resendVerificationEmail } = useAuth();
+  const { user, resendVerificationEmail, signOut } = useAuth();
   const [isResending, setIsResending] = useState(false);
   const [resendSuccess, setResendSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -107,9 +107,12 @@ const VerifyEmail = () => {
           </li>
           <li className="flex items-start gap-2">
             <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full w-5 h-5 flex items-center justify-center text-xs font-medium flex-shrink-0 mt-0.5">3</span>
-            <span>You'll be automatically redirected once verified</span>
+            <span><strong>Return to this window</strong> — it will automatically continue</span>
           </li>
         </ol>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 italic">
+          Tip: You can close the verification tab after clicking the link.
+        </p>
       </div>
 
       {/* Status Messages */}
@@ -155,15 +158,21 @@ const VerifyEmail = () => {
       <div className="mt-6 text-center">
         <p className="text-sm text-slate-600 dark:text-slate-300">
           Wrong email?{' '}
-          <Link to="/register" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+          <button
+            onClick={async () => { await signOut(); navigate('/register'); }}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
             Sign up again
-          </Link>
+          </button>
         </p>
         <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">
           Already verified?{' '}
-          <Link to="/login" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+          <button
+            onClick={async () => { await signOut(); navigate('/login'); }}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
             Sign in
-          </Link>
+          </button>
         </p>
       </div>
     </div>

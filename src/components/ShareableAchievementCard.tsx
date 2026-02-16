@@ -6,6 +6,7 @@ import { useCourse } from '../providers/CourseProvider';
 import { useAuth } from '../hooks/useAuth';
 import { getAchievementDisplayName } from '../services/achievements';
 import { getReferralStats } from '../services/referral';
+import logger from '../utils/logger';
 
 interface ShareableAchievementCardProps {
   achievement: {
@@ -76,7 +77,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
         }, 'image/png', 1.0);
       });
     } catch (error) {
-      console.error('Failed to generate image:', error);
+      logger.error('Failed to generate image:', error);
       setShareError('Failed to generate image');
       return null;
     } finally {

@@ -4,6 +4,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-001',
     section: 'REG',
+    courseId: 'cpa',
     title: "Treasury Circular 230: Practice Before IRS",
     description: "Master the rules governing practice before the Internal Revenue Service",
     order: 1,
@@ -93,6 +94,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-002',
     section: 'REG',
+    courseId: 'cpa',
     title: "AICPA Statements on Standards for Tax Services",
     description: "Understand the ethical standards CPAs must follow in tax practice",
     order: 2,
@@ -172,6 +174,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-003',
     section: 'REG',
+    courseId: 'cpa',
     title: "Tax Preparer Penalties",
     description: "Learn the penalties that apply to tax return preparers",
     order: 3,
@@ -263,6 +266,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-004',
     section: 'REG',
+    courseId: 'cpa',
     title: "Filing Requirements & Deadlines",
     description: "Master individual and business tax filing deadlines",
     order: 4,
@@ -344,6 +348,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-005',
     section: 'REG',
+    courseId: 'cpa',
     title: "Statute of Limitations: Assessment & Collection",
     description: "Understand time limits for IRS assessment and collection actions",
     order: 5,
@@ -425,6 +430,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-006',
     section: 'REG',
+    courseId: 'cpa',
     title: "IRS Audit Process & Appeals",
     description: "Navigate the IRS examination and appeals procedures",
     order: 6,
@@ -509,6 +515,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-007',
     section: 'REG',
+    courseId: 'cpa',
     title: "Taxpayer Penalties: Civil & Criminal",
     description: "Understand the penalties taxpayers face for noncompliance",
     order: 7,
@@ -594,6 +601,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-I-008',
     section: 'REG',
+    courseId: 'cpa',
     title: "Power of Attorney & Authorizations",
     description: "Learn how representatives are authorized to act before the IRS",
     order: 8,
@@ -680,6 +688,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-001',
     section: 'REG',
+    courseId: 'cpa',
     title: "Agency: Formation & Authority",
     description: "Understand how agency relationships are created and the types of authority",
     order: 9,
@@ -760,6 +769,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-002',
     section: 'REG',
+    courseId: 'cpa',
     title: "Agency: Duties & Liabilities",
     description: "Learn the duties agents and principals owe each other and to third parties",
     order: 10,
@@ -851,6 +861,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-003',
     section: 'REG',
+    courseId: 'cpa',
     title: "Contracts: Formation & Enforceability",
     description: "Master the elements required to form a valid, enforceable contract",
     order: 11,
@@ -951,6 +962,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-004',
     section: 'REG',
+    courseId: 'cpa',
     title: "Contracts: Performance & Remedies",
     description: "Understand contract performance standards and remedies for breach",
     order: 12,
@@ -1053,6 +1065,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-005',
     section: 'REG',
+    courseId: 'cpa',
     title: "Contracts: Third-Party Rights",
     description: "Learn how contract rights can be transferred to third parties",
     order: 13,
@@ -1144,6 +1157,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-006',
     section: 'REG',
+    courseId: 'cpa',
     title: "Business Structures: Overview",
     description: "Compare the legal characteristics of different business entities",
     order: 14,
@@ -1231,6 +1245,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-007',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnerships & LLCs: Legal Aspects",
     description: "Understand partnership and LLC formation, operation, and dissolution",
     order: 15,
@@ -1317,6 +1332,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-008',
     section: 'REG',
+    courseId: 'cpa',
     title: "Corporations: Formation & Governance",
     description: "Learn the legal requirements for forming and operating corporations",
     order: 16,
@@ -1402,6 +1418,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-009',
     section: 'REG',
+    courseId: 'cpa',
     title: "Secured Transactions: UCC Article 9",
     description: "Master the rules for security interests in personal property",
     order: 17,
@@ -1487,6 +1504,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-010',
     section: 'REG',
+    courseId: 'cpa',
     title: "Bankruptcy: Chapters 7, 11, 13",
     description: "Understand the major types of bankruptcy proceedings",
     order: 18,
@@ -1586,6 +1604,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-011',
     section: 'REG',
+    courseId: 'cpa',
     title: "Secured Transactions: UCC Article 9",
     description: "Master secured transactions including attachment, perfection, and priority",
     order: 15,
@@ -1679,6 +1698,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-012',
     section: 'REG',
+    courseId: 'cpa',
     title: "Business Entity Formation: Sole Proprietorships",
     description: "Understand the simplest form of business organization",
     order: 16,
@@ -1761,6 +1781,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-013',
     section: 'REG',
+    courseId: 'cpa',
     title: "Business Entity Formation: LLCs",
     description: "Master Limited Liability Company formation and characteristics",
     order: 17,
@@ -1846,6 +1867,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-014',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnership Formation and General Partners",
     description: "Understand partnership formation, rights, and liabilities",
     order: 18,
@@ -1937,6 +1959,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-015',
     section: 'REG',
+    courseId: 'cpa',
     title: "Corporation Formation and Characteristics",
     description: "Master corporate formation, governance, and shareholder rights",
     order: 19,
@@ -2028,6 +2051,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-001',
     section: 'REG',
+    courseId: 'cpa',
     title: "Gross Income: Inclusions",
     description: "Master what items must be included in gross income",
     order: 19,
@@ -2112,6 +2136,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-002',
     section: 'REG',
+    courseId: 'cpa',
     title: "Gross Income: Exclusions",
     description: "Learn what items can be excluded from gross income",
     order: 20,
@@ -2208,6 +2233,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-003',
     section: 'REG',
+    courseId: 'cpa',
     title: "🆕 H.R. 1: Tip Income Exclusion",
     description: "Understand the new tip income exclusion provisions",
     order: 21,
@@ -2283,6 +2309,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-004',
     section: 'REG',
+    courseId: 'cpa',
     title: "Above-the-Line Deductions",
     description: "Master deductions for AGI that reduce adjusted gross income",
     order: 22,
@@ -2366,6 +2393,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-005',
     section: 'REG',
+    courseId: 'cpa',
     title: "Standard vs Itemized Deductions",
     description: "Compare standard deduction with itemized deductions",
     order: 23,
@@ -2447,6 +2475,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-006',
     section: 'REG',
+    courseId: 'cpa',
     title: "Qualified Business Income Deduction (199A)",
     description: "Master the 20% deduction for pass-through business income",
     order: 24,
@@ -2526,6 +2555,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-007',
     section: 'REG',
+    courseId: 'cpa',
     title: "🆕 H.R. 1: SALT Deduction Changes",
     description: "Understand changes to the state and local tax deduction",
     order: 25,
@@ -2595,6 +2625,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-008',
     section: 'REG',
+    courseId: 'cpa',
     title: "Filing Status Determination",
     description: "Master the rules for determining correct filing status",
     order: 26,
@@ -2676,6 +2707,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-009',
     section: 'REG',
+    courseId: 'cpa',
     title: "Dependency: Qualifying Child & Relative",
     description: "Master the tests for claiming dependents",
     order: 27,
@@ -2756,6 +2788,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-010',
     section: 'REG',
+    courseId: 'cpa',
     title: "Child Tax Credit",
     description: "Master the Child Tax Credit and its refundable component",
     order: 28,
@@ -2830,6 +2863,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-011',
     section: 'REG',
+    courseId: 'cpa',
     title: "Earned Income Credit",
     description: "Understand the refundable credit for low-income workers",
     order: 29,
@@ -2910,6 +2944,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-012',
     section: 'REG',
+    courseId: 'cpa',
     title: "Education Credits: AOTC & LLC",
     description: "Master the American Opportunity and Lifetime Learning Credits",
     order: 30,
@@ -2995,6 +3030,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-013',
     section: 'REG',
+    courseId: 'cpa',
     title: "🆕 H.R. 1: Enhanced Child Tax Credit",
     description: "Understand changes to the Child Tax Credit under H.R. 1",
     order: 31,
@@ -3065,6 +3101,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-014',
     section: 'REG',
+    courseId: 'cpa',
     title: "Basis Determination",
     description: "Master the rules for determining tax basis in property",
     order: 32,
@@ -3144,6 +3181,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-015',
     section: 'REG',
+    courseId: 'cpa',
     title: "Capital Gains & Losses",
     description: "Master the taxation of capital gains and losses",
     order: 33,
@@ -3222,6 +3260,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-016',
     section: 'REG',
+    courseId: 'cpa',
     title: "Section 1231 Assets & Recapture",
     description: "Understand the taxation of business property sales",
     order: 34,
@@ -3302,6 +3341,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-017',
     section: 'REG',
+    courseId: 'cpa',
     title: "Like-Kind Exchanges (Section 1031)",
     description: "Master tax-deferred exchanges of real property",
     order: 35,
@@ -3381,6 +3421,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-018',
     section: 'REG',
+    courseId: 'cpa',
     title: "Home Sale Exclusion (Section 121)",
     description: "Master the exclusion for gain on sale of principal residence",
     order: 36,
@@ -3456,6 +3497,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-019',
     section: 'REG',
+    courseId: 'cpa',
     title: "Above-the-Line Deductions",
     description: "Master adjustments to income that reduce AGI",
     order: 37,
@@ -3535,6 +3577,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-020',
     section: 'REG',
+    courseId: 'cpa',
     title: "Itemized Deductions",
     description: "Master Schedule A deductions including SALT, mortgage interest, and charitable",
     order: 38,
@@ -3616,6 +3659,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-021',
     section: 'REG',
+    courseId: 'cpa',
     title: "Tax Credits: Child, Dependent Care, and Education",
     description: "Master refundable and nonrefundable individual tax credits",
     order: 39,
@@ -3697,6 +3741,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-022',
     section: 'REG',
+    courseId: 'cpa',
     title: "Filing Status and Dependents",
     description: "Determine correct filing status and dependency exemptions",
     order: 40,
@@ -3778,6 +3823,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-023',
     section: 'REG',
+    courseId: 'cpa',
     title: "Qualified Business Income Deduction (Section 199A)",
     description: "Master the 20% pass-through deduction",
     order: 41,
@@ -3857,6 +3903,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-001',
     section: 'REG',
+    courseId: 'cpa',
     title: "C Corporation Formation (Section 351)",
     description: "Master tax-free incorporation rules",
     order: 37,
@@ -3931,6 +3978,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-002',
     section: 'REG',
+    courseId: 'cpa',
     title: "C Corporation Taxable Income",
     description: "Understand corporate taxable income and rates",
     order: 38,
@@ -4006,6 +4054,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-003',
     section: 'REG',
+    courseId: 'cpa',
     title: "C Corporation Distributions & E&P",
     description: "Master dividend and non-dividend distributions",
     order: 39,
@@ -4081,6 +4130,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-004',
     section: 'REG',
+    courseId: 'cpa',
     title: "Accumulated Earnings Tax",
     description: "Understand the penalty tax on excess retained earnings",
     order: 40,
@@ -4144,6 +4194,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-005',
     section: 'REG',
+    courseId: 'cpa',
     title: "Personal Holding Company Tax",
     description: "Understand the PHC penalty tax on passive income",
     order: 41,
@@ -4212,6 +4263,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-006',
     section: 'REG',
+    courseId: 'cpa',
     title: "S Corporation Eligibility & Election",
     description: "Master S corporation eligibility and election rules",
     order: 42,
@@ -4281,6 +4333,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-007',
     section: 'REG',
+    courseId: 'cpa',
     title: "S Corporation Shareholder Basis",
     description: "Master basis calculations for S corporation shareholders",
     order: 43,
@@ -4349,6 +4402,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-008',
     section: 'REG',
+    courseId: 'cpa',
     title: "S Corporation Built-In Gains Tax",
     description: "Understand the tax on C-to-S conversion gains",
     order: 44,
@@ -4414,6 +4468,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-009',
     section: 'REG',
+    courseId: 'cpa',
     title: "S Corporation Distributions & AAA",
     description: "Master the Accumulated Adjustments Account",
     order: 45,
@@ -4483,6 +4538,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-010',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnership Formation & Contributions",
     description: "Master tax-free contributions to partnerships",
     order: 46,
@@ -4557,6 +4613,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-011',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnership Partner Basis Calculations",
     description: "Master inside and outside basis for partners",
     order: 47,
@@ -4632,6 +4689,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-012',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnership Allocations & Distributions",
     description: "Understand special allocations and distribution rules",
     order: 48,
@@ -4707,6 +4765,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-013',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnership Sales & Liquidations",
     description: "Master the tax consequences of selling partnership interests",
     order: 49,
@@ -4782,6 +4841,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-014',
     section: 'REG',
+    courseId: 'cpa',
     title: "Trusts & Estates: Fiduciary Income Tax",
     description: "Understand taxation of trusts and estates",
     order: 50,
@@ -4857,6 +4917,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-015',
     section: 'REG',
+    courseId: 'cpa',
     title: "Distributable Net Income (DNI)",
     description: "Master DNI calculations and character",
     order: 51,
@@ -4933,6 +4994,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-016',
     section: 'REG',
+    courseId: 'cpa',
     title: "Simple vs. Complex Trusts",
     description: "Understand the differences and tax treatment",
     order: 52,
@@ -5009,6 +5071,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-017',
     section: 'REG',
+    courseId: 'cpa',
     title: "Tax-Exempt Entities: Section 501(c)(3)",
     description: "Understand requirements for tax-exempt organizations",
     order: 53,
@@ -5084,6 +5147,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-018',
     section: 'REG',
+    courseId: 'cpa',
     title: "Unrelated Business Income (UBTI)",
     description: "Understand when exempt organizations pay tax",
     order: 54,
@@ -5164,6 +5228,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-IV-019',
     section: 'REG',
+    courseId: 'cpa',
     title: "Partnership Liquidations and Terminations",
     description: "Master partnership wind-up tax rules",
     order: 55,
@@ -5233,6 +5298,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-001',
     section: 'REG',
+    courseId: 'cpa',
     title: "Gift Tax Fundamentals",
     description: "Master federal gift tax rules and exclusions",
     order: 56,
@@ -5308,6 +5374,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-002',
     section: 'REG',
+    courseId: 'cpa',
     title: "Estate Tax Fundamentals",
     description: "Understand federal estate tax basics",
     order: 57,
@@ -5385,6 +5452,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-024',
     section: 'REG',
+    courseId: 'cpa',
     title: "Installment Sales",
     description: "Master installment method for deferred payment sales",
     order: 58,
@@ -5456,6 +5524,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-025',
     section: 'REG',
+    courseId: 'cpa',
     title: "Passive Activity Loss Rules",
     description: "Master PAL limitations and material participation",
     order: 59,
@@ -5532,6 +5601,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-012',
     section: 'REG',
+    courseId: 'cpa',
     title: "Like-Kind Exchanges (Section 1031)",
     description: "Master tax-deferred exchanges of real property",
     order: 75,
@@ -5602,6 +5672,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-013',
     section: 'REG',
+    courseId: 'cpa',
     title: "Involuntary Conversions (Section 1033)",
     description: "Understand tax treatment of condemnations and casualties",
     order: 76,
@@ -5671,6 +5742,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-014',
     section: 'REG',
+    courseId: 'cpa',
     title: "Home Sale Exclusion (Section 121)",
     description: "Master the $250K/$500K gain exclusion for principal residence",
     order: 77,
@@ -5741,6 +5813,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-015',
     section: 'REG',
+    courseId: 'cpa',
     title: "Capital Gains and Losses",
     description: "Master capital gain rates and loss limitation rules",
     order: 78,
@@ -5813,6 +5886,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-115',
     section: 'REG',
+    courseId: 'cpa',
     title: "Professional Responsibility: Circular 230",
     description: "Understand IRS rules governing tax practitioners",
     order: 79,
@@ -5888,6 +5962,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-II-016',
     section: 'REG',
+    courseId: 'cpa',
     title: "Agency Law",
     description: "Understand principal-agent relationships and liability",
     order: 80,
@@ -5961,6 +6036,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-026',
     section: 'REG',
+    courseId: 'cpa',
     title: "Tax-Free Tip Income (H.R.1)",
     description: "Understand the new tax exemption for qualifying tip income",
     order: 81,
@@ -6026,6 +6102,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-027',
     section: 'REG',
+    courseId: 'cpa',
     title: "SALT Deduction Changes (H.R.1)",
     description: "Navigate the revised State and Local Tax deduction limits",
     order: 82,
@@ -6094,6 +6171,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-028',
     section: 'REG',
+    courseId: 'cpa',
     title: "Enhanced Child Tax Credit (H.R.1)",
     description: "Apply the expanded Child Tax Credit provisions",
     order: 83,
@@ -6164,6 +6242,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-029',
     section: 'REG',
+    courseId: 'cpa',
     title: "Auto Loan Interest Deduction (H.R.1)",
     description: "Understand the new deduction for auto loan interest",
     order: 84,
@@ -6229,6 +6308,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-III-030',
     section: 'REG',
+    courseId: 'cpa',
     title: "No Tax on Overtime (H.R.1)",
     description: "Apply the tax exemption for qualifying overtime pay",
     order: 85,
@@ -6297,6 +6377,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-003',
     section: 'REG',
+    courseId: 'cpa',
     title: "IRS Audit Process and Taxpayer Rights",
     description: "Navigate IRS examinations and understand taxpayer protections",
     order: 86,
@@ -6371,6 +6452,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-004',
     section: 'REG',
+    courseId: 'cpa',
     title: "IRS Appeals and Litigation",
     description: "Understand the administrative and judicial remedies for tax disputes",
     order: 87,
@@ -6439,6 +6521,7 @@ export const regLessons: Lesson[] = [
   {
     id: 'REG-V-005',
     section: 'REG',
+    courseId: 'cpa',
     title: "Tax Penalties and Interest",
     description: "Apply accuracy-related, fraud, and failure-to-file/pay penalties",
     order: 88,

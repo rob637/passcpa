@@ -3,7 +3,7 @@ import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
-import { getCourseHomePath } from '../../utils/courseNavigation';
+// getCourseHomePath removed — onboarding now navigates to /diagnostic
 import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {
@@ -576,7 +576,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
 const Onboarding: React.FC = () => {
   const navigate = useNavigate();
   const { userProfile, updateUserProfile } = useAuth();
-  const { courseId: currentCourseId } = useCourse();
+  const { courseId: currentCourseId, setCourse } = useCourse();
 
   // Detect if this is a course switch (user already completed onboarding for at least one course)
   // In this case, we pre-select the course and skip the course selection step
@@ -586,22 +586,29 @@ const Onboarding: React.FC = () => {
   ) || Boolean(userProfile?.onboardingComplete);
 
   // Check for pending course from registration flow or course-specific launch page
-  // Priority: 1) localStorage pendingCourse, 2) CourseProvider courseId, 3) userProfile.activeCourse
+  // Priority: 1) localStorage pendingCourse, 2) userProfile.activeCourse, 3) CourseProvider courseId
   const getPendingCourse = (): CourseId | '' => {
     const pending = localStorage.getItem('pendingCourse');
     if (pending && ACTIVE_COURSES.includes(pending as CourseId)) {
       return pending as CourseId;
     }
+    // Check activeCourse from Firestore (set during registration)
+    if (userProfile?.activeCourse && ACTIVE_COURSES.includes(userProfile.activeCourse as CourseId)) {
+      return userProfile.activeCourse as CourseId;
+    }
     // Use the current course from CourseProvider (this handles course switching)
     if (currentCourseId) {
       return currentCourseId;
     }
-    return (userProfile?.activeCourse as CourseId) || '';
+    return '';
   };
   
-  // Check if course was pre-selected (from launch page or registration)
+  // Check if course was pre-selected (from launch page, registration, or stored in profile)
   // This should skip the course selection step
-  const hadPendingCourse = Boolean(localStorage.getItem('pendingCourse'));
+  const hadPendingCourse = Boolean(
+    localStorage.getItem('pendingCourse') || 
+    (userProfile?.activeCourse && ACTIVE_COURSES.includes(userProfile.activeCourse as CourseId))
+  );
 
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(getPendingCourse());
@@ -689,8 +696,15 @@ const Onboarding: React.FC = () => {
       });
 
       // Parse date as local date to avoid timezone shift
-      const [year, month, day] = examDate.split('-').map(Number);
-      const localExamDate = new Date(year, month - 1, day);
+      let localExamDate: Date | null = null;
+      if (examDate && /^\d{4}-\d{2}-\d{2}$/.test(examDate)) {
+        const [year, month, day] = examDate.split('-').map(Number);
+        localExamDate = new Date(year, month - 1, day);
+        // Validate the parsed date is real
+        if (isNaN(localExamDate.getTime())) {
+          localExamDate = null;
+        }
+      }
       
       // Auto-detect user's timezone
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
@@ -699,6 +713,14 @@ const Onboarding: React.FC = () => {
       // Pass selectedCourse so single-exam courses (CFP, CISA) use course ID as key
       const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate, selectedCourse as CourseId);
       const studyPlanUpdate = createStudyPlanUpdate(userProfile, selectedCourse as CourseId, studyPlan);
+      
+      logger.info('Onboarding: Saving profile with exam date', {
+        rawExamDate: examDate,
+        parsedLocalDate: localExamDate?.toISOString() || null,
+        courseId: selectedCourse,
+        examDateUpdateKeys: Object.keys(examDateUpdate.examDates || {}),
+        examDateUpdateValues: JSON.stringify(examDateUpdate.examDates),
+      });
       
       // Create per-course onboarding status update
       const existingOnboarding = userProfile?.onboardingCompleted || {};
@@ -720,23 +742,35 @@ const Onboarding: React.FC = () => {
       });
       
       // Check for pending checkout (user came from pricing page)
+      // ONLY redirect if pendingCheckout matches the course we just onboarded
       const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
       if (pendingCheckoutStr) {
         try {
           const pendingCheckout = JSON.parse(pendingCheckoutStr);
           localStorage.removeItem('pendingCheckout');
-          // Navigate to start checkout page
-          navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
-          return;
+          // Only redirect if checkout is for the same course we just completed onboarding for
+          if (pendingCheckout.course === selectedCourse) {
+            navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+            return;
+          }
+          // Different course — ignore stale checkout, continue to dashboard
+          logger.info(`Ignoring stale pendingCheckout for ${pendingCheckout.course}, onboarded ${selectedCourse}`);
         } catch {
           // Invalid JSON, continue to dashboard
           localStorage.removeItem('pendingCheckout');
         }
       }
       
-      // Navigate to appropriate dashboard based on selected course
-      const courseDashboard = getCourseHomePath(selectedCourse as CourseId);
-      navigate(courseDashboard);
+      // Navigate to diagnostic quiz to assess baseline knowledge
+      // Users can skip the diagnostic from within the quiz page
+      // Sync the selected course to CourseProvider so everything
+      // downstream (subscription, routing, etc.) uses the right course
+      if (selectedCourse && selectedCourse !== currentCourseId) {
+        setCourse(selectedCourse as CourseId);
+      }
+      // Pass selected section via router state so the diagnostic page
+      // can use it immediately without waiting for profile state to propagate
+      navigate('/diagnostic', { state: { section: selectedSection } });
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {

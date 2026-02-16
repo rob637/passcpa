@@ -9,7 +9,7 @@
  * - One-click navigation to each activity
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -43,14 +43,17 @@ import {
   markActivityStarted,
   PersistedDailyPlan,
 } from '../services/dailyPlanPersistence';
+import { fetchLessonsBySection } from '../services/lessonService';
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
-import { getCurrentSection } from '../utils/profileHelpers';
+import { getCurrentSection, getExamDate } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../config/firebase';
+import type { DiagnosticAreaScore } from '../types/diagnostic';
 import { 
   getCourseLessonPath, 
   getCoursePracticePath, 
   getCourseTBSPath, 
-  getCourseFlashcardPath,
   getCourseHomePath,
 } from '../utils/courseNavigation';
 import clsx from 'clsx';
@@ -86,7 +89,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const navigate = useNavigate();
   const { userProfile, user } = useAuth();
   const { stats, dailyProgress, getTopicPerformance, getLessonProgress } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   const { startDailyPlanSession } = useNavigation();
   
   const [plan, setPlan] = useState<PersistedDailyPlan | null>(null);
@@ -98,7 +101,6 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   
   // Track section to detect changes - course-aware
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
-  const [lastLoadedSection, setLastLoadedSection] = useState<string | null>(null);
 
   // Load daily plan from Firestore (with caching and carryover)
   const loadPlan = useCallback(async (forceRegenerate: boolean = false) => {
@@ -110,7 +112,12 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     try {
       // Get topic performance data for current section - use course-aware section
       const section = currentSection; // Already course-aware from getCurrentSection
-      const topicStats = getTopicPerformance ? await getTopicPerformance(section) : [];
+      // For single-exam courses (CISA, CFP), pass undefined to get all domains/sections
+      const SINGLE_EXAM_COURSES = ['cisa', 'cfp'];
+      const isSingleExam = SINGLE_EXAM_COURSES.includes(courseId);
+      const topicStats = getTopicPerformance
+        ? await getTopicPerformance(isSingleExam ? undefined : section)
+        : [];
       
       // CRITICAL: Fetch actual lesson progress from Firestore subcollection
       const lessonProgressData = getLessonProgress ? await getLessonProgress() : {};
@@ -127,37 +134,111 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         }
       });
       
-      // Handle examDate which could be Date, Timestamp, or string
-      let examDateStr: string | undefined;
-      const rawExamDate = userProfile.examDate;
-      if (rawExamDate) {
-        if (typeof rawExamDate === 'string') {
-          examDateStr = rawExamDate;
-        } else if (rawExamDate instanceof Date) {
-          examDateStr = rawExamDate.toISOString().split('T')[0];
-        } else if (typeof (rawExamDate as any).toDate === 'function') {
-          examDateStr = (rawExamDate as any).toDate().toISOString().split('T')[0];
+      // ── Auto-advance for single-exam courses (CISA, CFP) ───────────
+      // If all lessons in the current section are complete, move to the next 
+      // section that still has incomplete lessons. This way the daily plan
+      // automatically progresses through domains without the user manually switching.
+      let effectiveSection = section;
+      if (isSingleExam && course?.sections) {
+        const currentSectionLessons = await fetchLessonsBySection(section, courseId);
+        const completedLessonsInSection = currentSectionLessons.filter(
+          l => lessonProgress[l.id] >= 100
+        ).length;
+        
+        if (currentSectionLessons.length > 0 && completedLessonsInSection >= currentSectionLessons.length) {
+          // Current section is complete — find next incomplete section in order
+          for (const s of course.sections) {
+            if (s.id === section) continue; // Skip current
+            const sLessons = await fetchLessonsBySection(s.id, courseId);
+            const sCompleted = sLessons.filter(l => lessonProgress[l.id] >= 100).length;
+            if (sLessons.length > 0 && sCompleted < sLessons.length) {
+              effectiveSection = s.id;
+              logger.info(`Auto-advancing from completed ${section} to ${effectiveSection}`);
+              break;
+            }
+          }
         }
       }
       
-      // Build user study state - use course-aware section
+      // Handle examDate — use course-aware getExamDate helper
+      let examDateStr: string | undefined;
+      const examDateObj = getExamDate(userProfile, section, courseId);
+      if (examDateObj) {
+        examDateStr = examDateObj.toISOString().split('T')[0];
+      } else {
+        // Legacy fallback: try userProfile.examDate directly
+        const rawExamDate = userProfile.examDate;
+        if (rawExamDate) {
+          if (typeof rawExamDate === 'string') {
+            examDateStr = rawExamDate;
+          } else if (rawExamDate instanceof Date) {
+            examDateStr = rawExamDate.toISOString().split('T')[0];
+          } else if (typeof (rawExamDate as any).toDate === 'function') {
+            examDateStr = (rawExamDate as any).toDate().toISOString().split('T')[0];
+          }
+        }
+      }
+      
+      // Build user study state - use effective section (may be auto-advanced)
       const [tbsStats, questionsDue] = await Promise.all([
-          getTBSHistory(user.uid, section),
-          getDueQuestions(user.uid, section)
+          getTBSHistory(user.uid, effectiveSection),
+          getDueQuestions(user.uid, effectiveSection)
       ]);
 
+      // Map practice-based topic performance
+      const mappedTopicStats = topicStats.map((t: any) => ({
+        topic: t.topic || t.id,
+        topicId: t.topicId || t.id,
+        accuracy: t.accuracy || 0,
+        totalQuestions: t.questions || t.totalQuestions || 0,
+        correct: t.correct || Math.round((t.accuracy || 0) * (t.questions || t.totalQuestions || 0) / 100),
+        lastPracticed: t.lastPracticed,
+      }));
+
+      // Seed topicStats from diagnostic results if no practice history exists
+      // This ensures the daily plan knows about weak areas from the diagnostic quiz
+      let diagnosticWeakAreas: DiagnosticAreaScore[] = [];
+      if (mappedTopicStats.length === 0 || mappedTopicStats.every((t: any) => t.totalQuestions === 0)) {
+        try {
+          const diagDocId = `${courseId}-${effectiveSection}`;
+          const diagRef = doc(db, 'users', user.uid, 'diagnosticResults', diagDocId);
+          const diagSnap = await getDoc(diagRef);
+          if (diagSnap.exists()) {
+            const diagData = diagSnap.data();
+            const areaScores: DiagnosticAreaScore[] = diagData.areaScores || [];
+            diagnosticWeakAreas = diagData.weakAreas || [];
+            
+            // Convert diagnostic area scores to topicStats format
+            // This gives the plan generator weak-area data to work with
+            const diagnosticTopicStats = areaScores.map((area: DiagnosticAreaScore) => ({
+              topic: area.areaName,
+              topicId: area.area,
+              accuracy: area.percentage,
+              totalQuestions: area.total,
+              correct: area.score,
+              lastPracticed: diagData.completedAt ? new Date(diagData.completedAt.seconds ? diagData.completedAt.seconds * 1000 : diagData.completedAt).toISOString() : undefined,
+            }));
+            
+            // Use diagnostic stats as seed data
+            if (diagnosticTopicStats.length > 0) {
+              mappedTopicStats.push(...diagnosticTopicStats);
+              logger.info('Seeded topicStats from diagnostic results', {
+                areas: diagnosticTopicStats.length,
+                weakAreas: diagnosticWeakAreas.length,
+              });
+            }
+          }
+        } catch (err) {
+          logger.warn('Could not load diagnostic results for plan seeding:', err);
+          // Graceful degradation — plan generates without diagnostic data
+        }
+      }
+
       const studyState: UserStudyState = {
-        section,
+        section: effectiveSection,
         examDate: examDateStr,
         dailyGoal: userProfile.dailyGoal || 50,
-        topicStats: topicStats.map((t: any) => ({
-          topic: t.topic || t.id,
-          topicId: t.topicId || t.id,
-          accuracy: t.accuracy || 0,
-          totalQuestions: t.questions || t.totalQuestions || 0,
-          correct: t.correct || Math.round((t.accuracy || 0) * (t.questions || t.totalQuestions || 0) / 100),
-          lastPracticed: t.lastPracticed,
-        })),
+        topicStats: mappedTopicStats,
         tbsStats, 
         questionsDue,
         lessonProgress,
@@ -183,7 +264,6 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       setPlan(persistedPlan);
       setCompletedActivities(new Set(persistedPlan.completedActivities || []));
       setHasCarryover(!!persistedPlan.carryoverFrom);
-      setLastLoadedSection(studyState.section); // Track which section we loaded
       
       // Also save to localStorage as fallback
       saveCompletedToStorage(new Set(persistedPlan.completedActivities || []));
@@ -195,21 +275,30 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     } finally {
       setLoading(false);
     }
-  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId]);
+  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId, currentSection]);
 
-  // Load plan on mount
-  useEffect(() => {
-    loadPlan();
-  }, [loadPlan]);
+  // Track previous section to detect changes
+  const prevSectionRef = useRef<string | null>(null);
   
-  // Force regenerate plan when section changes
+  // Load plan on mount and when section changes
   useEffect(() => {
-    // Only trigger if we've loaded a plan before and section has changed
-    if (lastLoadedSection && lastLoadedSection !== currentSection) {
-      logger.log(`Section changed from ${lastLoadedSection} to ${currentSection}, regenerating daily plan`);
-      loadPlan(true); // Force regenerate for new section
+    // Determine if this is a section change (not initial load)
+    const prevSection = prevSectionRef.current;
+    const sectionChanged = prevSection !== null && prevSection !== currentSection;
+    
+    if (sectionChanged) {
+      // Section changed - load the plan for the new section (NOT force regenerate)
+      // Each section has its own cached plan, so we just need to load it
+      logger.log(`Section changed from ${prevSection} to ${currentSection}, loading plan for new section`);
     }
-  }, [currentSection, lastLoadedSection, loadPlan]);
+    
+    // Update the ref for next comparison
+    prevSectionRef.current = currentSection;
+    
+    // Never force regenerate on section change - each section has its own plan
+    // Only force regenerate when user explicitly requests it (e.g., refresh button)
+    loadPlan(false);
+  }, [loadPlan, currentSection]);
 
   // Check URL params for returning from an activity (auto-completion)
   useEffect(() => {
@@ -222,14 +311,15 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
       // Find the activity in the plan to get metadata for duration tracking
       const matchedActivity = plan?.activities.find(a => a.id === activityId);
-      // Mark the activity as complete - pass section for correct cache key
+      // Mark the activity as complete - pass section and courseId for correct cache key
       const section = plan?.section || currentSection;
       markActivityCompleted(
         user.uid,
         activityId,
         section,
         matchedActivity?.estimatedMinutes,
-        matchedActivity?.type
+        matchedActivity?.type,
+        courseId
       ).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);
@@ -292,14 +382,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
         break;
       case 'flashcards':
-        // Pass cardCount if specified, and mode from params
+        // Navigate directly to flashcard session (skip setup page) with daily plan params
         const flashcardParams = new URLSearchParams();
         flashcardParams.set('from', 'dailyplan');
         flashcardParams.set('activityId', activity.id);
         if (activity.params?.mode) flashcardParams.set('mode', activity.params.mode);
         if (activity.params?.cardCount) flashcardParams.set('count', String(activity.params.cardCount));
         if (activity.params?.section) flashcardParams.set('section', activity.params.section);
-        navigate(`${getCourseFlashcardPath(courseId)}?${flashcardParams.toString()}`);
+        navigate(`/flashcards/session?${flashcardParams.toString()}`);
         break;
       case 'essay':
         // CMA Essay Simulator

@@ -102,7 +102,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-006',
-    question: 'A credit shelter trust is funded with $5 million at the first spouse\'s death in 2024. The applicable exclusion amount is $13.61 million. At the surviving spouse\'s death 10 years later, the credit shelter trust assets have appreciated to $8 million. What are the estate tax consequences?',
+    question: 'A credit shelter trust is funded with $5 million at the first spouse\'s death in 2026. The applicable exclusion amount is $7.0 million. At the surviving spouse\'s death 10 years later, the credit shelter trust assets have appreciated to $8 million. What are the estate tax consequences?',
     options: [
       '$8 million is included in the surviving spouse\'s estate',
       '$5 million is included in the surviving spouse\'s estate',
@@ -158,15 +158,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   // EST-2: Gift, Estate, and GST Tax (Questions 9-17)
   {
     id: 'cfp-est-009',
-    question: 'In 2024, Michael makes a $75,000 gift to his nephew and a $500,000 gift to his alma mater for a new scholarship fund. What is Michael\'s total taxable gift for the year?',
+    question: 'In 2026, Michael makes a $75,000 gift to his nephew and a $500,000 gift to his alma mater for a new scholarship fund. What is Michael\'s total taxable gift for the year?',
     options: [
       '$0',
-      '$57,000',
-      '$557,000',
+      '$56,000',
+      '$556,000',
       '$575,000'
     ],
     correctAnswer: 1,
-    explanation: 'The gift to the nephew exceeds the 2024 annual exclusion of $18,000, resulting in a taxable gift of $75,000 - $18,000 = $57,000. The $500,000 gift to the university is not a taxable gift because gifts to qualified charities receive an unlimited gift tax charitable deduction. Therefore, total taxable gifts = $57,000.',
+    explanation: 'The gift to the nephew exceeds the 2026 annual exclusion of $19,000, resulting in a taxable gift of $75,000 - $19,000 = $56,000. The $500,000 gift to the university is not a taxable gift because gifts to qualified charities receive an unlimited gift tax charitable deduction. Therefore, total taxable gifts = $56,000.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -178,13 +178,13 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     id: 'cfp-est-010',
     question: 'Barbara gifts $100,000 to her daughter. Her husband Bruce agrees to gift splitting. Neither has made prior taxable gifts. What is the impact on each spouse\'s lifetime exemption?',
     options: [
-      'Barbara uses $82,000 exemption; Bruce uses $0',
-      'Barbara uses $41,000 exemption; Bruce uses $41,000',
-      'Barbara uses $32,000 exemption; Bruce uses $32,000',
-      'Barbara uses $64,000 exemption; Bruce uses $0'
+      'Barbara uses $81,000 exemption; Bruce uses $0',
+      'Barbara uses $40,500 exemption; Bruce uses $40,500',
+      'Barbara uses $31,000 exemption; Bruce uses $31,000',
+      'Barbara uses $62,000 exemption; Bruce uses $0'
     ],
     correctAnswer: 2,
-    explanation: 'With gift splitting, the $100,000 gift is treated as $50,000 from each spouse. Each spouse can apply the $18,000 annual exclusion, making each spouse\'s taxable gift $50,000 - $18,000 = $32,000. Each spouse uses $32,000 of their lifetime exemption (unified credit). This allows larger gifts while minimizing exemption usage.',
+    explanation: 'With gift splitting, the $100,000 gift is treated as $50,000 from each spouse. Each spouse can apply the $19,000 annual exclusion (2026), making each spouse\'s taxable gift $50,000 - $19,000 = $31,000. Each spouse uses $31,000 of their lifetime exemption (unified credit). This allows larger gifts while minimizing exemption usage.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -197,12 +197,12 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
     question: 'Harold pays his grandson\'s $45,000 medical school tuition directly to the university and also gives him $25,000 cash. What is Harold\'s taxable gift for the year?',
     options: [
       '$0',
-      '$7,000',
-      '$52,000',
+      '$6,000',
+      '$51,000',
       '$70,000'
     ],
     correctAnswer: 1,
-    explanation: 'Payments made directly to educational institutions for tuition qualify for the unlimited education exclusion under IRC §2503(e) and are NOT taxable gifts. The $45,000 tuition payment is completely excluded. The $25,000 cash gift is a separate gift that qualifies for the $18,000 annual exclusion, leaving $7,000 as a taxable gift. Key: direct payment requirement.',
+    explanation: 'Payments made directly to educational institutions for tuition qualify for the unlimited education exclusion under IRC §2503(e) and are NOT taxable gifts. The $45,000 tuition payment is completely excluded. The $25,000 cash gift is a separate gift that qualifies for the $19,000 annual exclusion (2026), leaving $6,000 as a taxable gift. Key: direct payment requirement.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -212,15 +212,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-012',
-    question: 'Calculate the tentative estate tax for a decedent with a taxable estate of $15 million in 2024. The 2024 applicable exclusion amount is $13.61 million and the estate tax rate is 40%.',
+    question: 'Calculate the tentative estate tax for a decedent with a taxable estate of $15 million in 2026. The 2026 applicable exclusion amount is $7.0 million and the estate tax rate is 40%.',
     options: [
       '$0',
-      '$556,000',
-      '$6,000,000',
-      '$5,444,000'
+      '$2,800,000',
+      '$3,200,000',
+      '$6,000,000'
     ],
-    correctAnswer: 1,
-    explanation: 'Estate tax calculation: Taxable estate ($15M) - Applicable exclusion ($13.61M) = $1.39M subject to estate tax. Estate tax = $1,390,000 × 40% = $556,000. The unified credit effectively exempts the first $13.61 million from taxation. Only the excess is taxed at the flat 40% rate.',
+    correctAnswer: 2,
+    explanation: 'Estate tax calculation: Taxable estate ($15M) - Applicable exclusion ($7.0M) = $8.0M subject to estate tax. Estate tax = $8,000,000 × 40% = $3,200,000. The unified credit effectively exempts the first $7.0 million from taxation (post-TCJA sunset). Only the excess is taxed at the flat 40% rate.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -230,7 +230,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-013',
-    question: 'Roger dies in 2024 with a gross estate of $18 million. His estate includes a $5 million bequest to his wife and $1 million to charity. He made no lifetime taxable gifts. Calculate the taxable estate.',
+    question: 'Roger dies in 2026 with a gross estate of $18 million. His estate includes a $5 million bequest to his wife and $1 million to charity. He made no lifetime taxable gifts. Calculate the taxable estate.',
     options: [
       '$12,000,000',
       '$13,000,000',
@@ -248,15 +248,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-014',
-    question: 'Ellen\'s husband died in 2020 with a taxable estate of $5 million, using only that portion of his $11.58 million exemption. Ellen dies in 2024 when the exemption is $13.61 million. If Ellen properly elected portability, what is her available exemption?',
+    question: 'Ellen\'s husband died in 2020 with a taxable estate of $5 million, using only that portion of his $11.58 million exemption. Ellen dies in 2026 when the exemption is $7.0 million. If Ellen properly elected portability, what is her available exemption?',
     options: [
-      '$13.61 million',
-      '$19.19 million',
-      '$20.19 million',
-      '$27.22 million'
+      '$7.0 million',
+      '$11.58 million',
+      '$13.58 million',
+      '$14.0 million'
     ],
     correctAnswer: 2,
-    explanation: 'With portability, Ellen receives her deceased spouse\'s unused exclusion (DSUE). DSUE = $11.58M (2020 exemption) - $5M (used) = $6.58M. Ellen\'s total exemption = Her own ($13.61M) + DSUE ($6.58M) = $20.19 million. Note: The DSUE is based on the exemption at the first spouse\'s death, not when the surviving spouse dies.',
+    explanation: 'With portability, Ellen receives her deceased spouse\'s unused exclusion (DSUE). DSUE = $11.58M (2020 exemption) - $5M (used) = $6.58M. Ellen\'s total exemption = Her own ($7.0M in 2026 post-sunset) + DSUE ($6.58M) = $13.58 million. Note: The DSUE is based on the exemption at the first spouse\'s death, not when the surviving spouse dies.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -274,7 +274,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       '$4,200,000'
     ],
     correctAnswer: 0,
-    explanation: 'The GST exemption ($13.61 million in 2024) can be allocated to generation-skipping transfers. A direct skip to grandchildren can be covered by allocating $3 million of GST exemption, resulting in an inclusion ratio of zero and no GST tax. The GST tax (40%) only applies to transfers exceeding the GST exemption allocation.',
+    explanation: 'The GST exemption ($7.0 million in 2026) can be allocated to generation-skipping transfers. A direct skip to grandchildren can be covered by allocating $3 million of GST exemption, resulting in an inclusion ratio of zero and no GST tax. The GST tax (40%) only applies to transfers exceeding the GST exemption allocation.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -435,10 +435,10 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       'Unlimited marital deduction applies - no estate tax',
       'No marital deduction available - full estate subject to tax',
       'Marital deduction available only if passed through a QDOT',
-      '$185,000 annual exclusion applies to the transfer'
+      '$190,000 annual exclusion applies to the transfer'
     ],
     correctAnswer: 2,
-    explanation: 'The unlimited marital deduction is NOT available for transfers to non-citizen spouses (regardless of residency status). To qualify for the marital deduction, assets must pass to a Qualified Domestic Trust (QDOT) with a US trustee. The QDOT allows deferral until distributions are made or the surviving spouse dies. The $185,000 is the annual gift exclusion for gifts to non-citizen spouses during life, not at death.',
+    explanation: 'The unlimited marital deduction is NOT available for transfers to non-citizen spouses (regardless of residency status). To qualify for the marital deduction, assets must pass to a Qualified Domestic Trust (QDOT) with a US trustee. The QDOT allows deferral until distributions are made or the surviving spouse dies. The $190,000 is the annual gift exclusion for gifts to non-citizen spouses during life (2026), not at death.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -469,15 +469,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   // ============================================
   {
     id: 'cfp-est-026',
-    question: 'Samuel dies in 2024 with a gross estate of $15 million. He made $500,000 in taxable lifetime gifts. What is his taxable estate after applying the unified credit exemption of $13.61 million?',
+    question: 'Samuel dies in 2026 with a gross estate of $15 million. He made $500,000 in taxable lifetime gifts. What is his taxable estate after applying the unified credit exemption of $7.0 million?',
     options: [
       '$0 - fully sheltered by exemption',
-      '$890,000',
-      '$1,390,000',
-      '$1,890,000'
+      '$7,500,000',
+      '$8,000,000',
+      '$8,500,000'
     ],
     correctAnswer: 3,
-    explanation: 'The unified credit applies to combined lifetime gifts and estate transfers. Total taxable transfers = $15M (estate) + $500K (prior gifts) = $15.5M. Minus $13.61M exemption = $1.89M subject to estate tax. At 40% rate, this generates approximately $756,000 in estate tax. Lifetime gifts reduce the remaining exemption available at death.',
+    explanation: 'The unified credit applies to combined lifetime gifts and estate transfers. Total taxable transfers = $15M (estate) + $500K (prior gifts) = $15.5M. Minus $7.0M exemption = $8.5M subject to estate tax. At 40% rate, this generates approximately $3,400,000 in estate tax. Lifetime gifts reduce the remaining exemption available at death.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -487,15 +487,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-027',
-    question: 'Catherine wants to make gifts to 10 grandchildren and their spouses (20 total recipients) in 2024. Her husband agrees to gift-split. What is the maximum they can give tax-free using only annual exclusions?',
+    question: 'Catherine wants to make gifts to 10 grandchildren and their spouses (20 total recipients) in 2026. Her husband agrees to gift-split. What is the maximum they can give tax-free using only annual exclusions?',
     options: [
+      '$380,000',
+      '$760,000',
       '$360,000',
-      '$720,000',
-      '$340,000',
-      '$680,000'
+      '$720,000'
     ],
     correctAnswer: 1,
-    explanation: 'With gift-splitting, each spouse can use their $18,000 annual exclusion (2024) per recipient. Combined: $36,000 per recipient × 20 recipients = $720,000 tax-free annually. Gift-splitting effectively doubles the amount one spouse can give without using unified credit. All recipients must receive present interests (not future interests) for annual exclusion to apply.',
+    explanation: 'With gift-splitting, each spouse can use their $19,000 annual exclusion (2026) per recipient. Combined: $38,000 per recipient × 20 recipients = $760,000 tax-free annually. Gift-splitting effectively doubles the amount one spouse can give without using unified credit. All recipients must receive present interests (not future interests) for annual exclusion to apply.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -577,15 +577,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-032',
-    question: 'Harold wants to benefit his grandchildren but minimize Generation-Skipping Transfer Tax (GSTT). Which amount represents his 2024 GST exemption?',
+    question: 'Harold wants to benefit his grandchildren but minimize Generation-Skipping Transfer Tax (GSTT). Which amount represents his 2026 GST exemption?',
     options: [
-      '$6.12 million',
-      '$12.92 million',
-      '$13.61 million',
-      '$27.22 million'
+      '$5.0 million',
+      '$6.0 million',
+      '$7.0 million',
+      '$14.0 million'
     ],
     correctAnswer: 2,
-    explanation: 'The GST exemption is equal to the basic exclusion amount: $13.61 million for 2024 (indexed for inflation). This can be allocated to transfers to skip persons (grandchildren, etc.) to shield them from the 40% GST tax. The exemption is separate from but equal to the gift/estate tax exemption. Married couples can combine for $27.22 million with proper allocation and portability.',
+    explanation: 'The GST exemption is equal to the basic exclusion amount: $7.0 million for 2026 (post-TCJA sunset). This can be allocated to transfers to skip persons (grandchildren, etc.) to shield them from the 40% GST tax. The exemption is separate from but equal to the gift/estate tax exemption. Married couples can combine for $14.0 million with proper allocation and portability.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -595,7 +595,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-033',
-    question: 'Irene durable power of attorney for property was executed in 2019. She becomes incapacitated in 2024. Which statement about the POA is CORRECT?',
+    question: 'Irene durable power of attorney for property was executed in 2019. She becomes incapacitated in 2026. Which statement about the POA is CORRECT?',
     options: [
       'The POA terminates upon her incapacity',
       'The agent can continue to act on her behalf during incapacity',
@@ -613,7 +613,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-034',
-    question: 'James creates a Crummey trust for his minor children, contributing $54,000 annually ($18,000 per child × 3 children). What is required for the gifts to qualify for the annual exclusion?',
+    question: 'James creates a Crummey trust for his minor children, contributing $57,000 annually ($19,000 per child × 3 children). What is required for the gifts to qualify for the annual exclusion?',
     options: [
       'The children must be at least 18 years old',
       'Beneficiaries must be given withdrawal rights for a reasonable period',
@@ -631,15 +631,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-035',
-    question: 'Karen husband Jack died in 2020 without using his $11.58 million exemption. Karen files a timely estate tax return electing portability. Jack estate was $3 million. In 2024, Karen dies with a $20 million estate. What is her available exemption?',
+    question: 'Karen husband Jack died in 2020 without using his $11.58 million exemption. Karen files a timely estate tax return electing portability. Jack estate was $3 million. In 2026, Karen dies with a $20 million estate. What is her available exemption?',
     options: [
-      '$13.61 million (her exemption only)',
-      '$22.19 million (her exemption + portable DSUE)',
-      '$25.19 million (both current exemptions)',
+      '$7.0 million (her exemption only)',
+      '$15.58 million (her exemption + portable DSUE)',
+      '$22.19 million (both current exemptions)',
       '$11.58 million (Jack exemption only)'
     ],
     correctAnswer: 1,
-    explanation: 'Portability allows the surviving spouse to use the Deceased Spousal Unused Exclusion (DSUE). Jack used $3M of his $11.58M, leaving $8.58M unused. Karen elected portability on Jack timely-filed estate return. Karen now has her 2024 exemption ($13.61M) + Jack DSUE ($8.58M) = $22.19M available. Note: DSUE is locked at death, not indexed for inflation.',
+    explanation: 'Portability allows the surviving spouse to use the Deceased Spousal Unused Exclusion (DSUE). Jack used $3M of his $11.58M, leaving $8.58M unused. Karen elected portability on Jack timely-filed estate return. Karen now has her 2026 exemption ($7.0M post-sunset) + Jack DSUE ($8.58M) = $15.58M available. Note: DSUE is locked at death, not indexed for inflation.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -869,15 +869,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-048',
-    question: 'A client wants to leave assets to grandchildren but avoid GST tax. What is the maximum amount they can transfer using the GST exemption in 2024?',
+    question: 'A client wants to leave assets to grandchildren but avoid GST tax. What is the maximum amount they can transfer using the GST exemption in 2026?',
     options: [
-      '$17,000 per grandchild',
       '$18,000 per grandchild',
-      '$12.92 million lifetime',
-      '$13.61 million lifetime'
+      '$19,000 per grandchild',
+      '$6.0 million lifetime',
+      '$7.0 million lifetime'
     ],
     correctAnswer: 3,
-    explanation: 'The 2024 GST exemption is $13.61 million per person (same as estate/gift exemption). This can be allocated to generation-skipping transfers to grandchildren or more remote descendants. Annual exclusion gifts ($18,000 in 2024) are also GST-exempt automatically.',
+    explanation: 'The 2026 GST exemption is $7.0 million per person (same as estate/gift exemption post-TCJA sunset). This can be allocated to generation-skipping transfers to grandchildren or more remote descendants. Annual exclusion gifts ($19,000 in 2026) are also GST-exempt automatically.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -895,7 +895,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       'General power of appointment trust for spouse'
     ],
     correctAnswer: 2,
-    explanation: 'The unlimited marital deduction does NOT apply to transfers to non-citizen spouses. Instead, a Qualified Domestic Trust (QDOT) is required, or gifts up to the enhanced annual exclusion ($185,000 in 2024). QTIP and GPOA trusts qualify if spouse is a U.S. citizen.',
+    explanation: 'The unlimited marital deduction does NOT apply to transfers to non-citizen spouses. Instead, a Qualified Domestic Trust (QDOT) is required, or gifts up to the enhanced annual exclusion ($190,000 in 2026). QTIP and GPOA trusts qualify if spouse is a U.S. citizen.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -905,15 +905,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-050',
-    question: 'A single client dies with a $15 million estate in 2024. Approximately how much federal estate tax is due?',
+    question: 'A single client dies with a $15 million estate in 2026. Approximately how much federal estate tax is due?',
     options: [
       '$0',
-      '$556,000',
-      '$1,390,000',
+      '$2,800,000',
+      '$3,200,000',
       '$6,000,000'
     ],
-    correctAnswer: 1,
-    explanation: 'Taxable estate = $15M - $13.61M exemption = $1.39M. Estate tax at 40% = $556,000. The unified credit eliminates tax on the first $13.61M (2024). Without planning, estates above exemption are taxed at 40%.',
+    correctAnswer: 2,
+    explanation: 'Taxable estate = $15M - $7.0M exemption = $8.0M. Estate tax at 40% = $3,200,000. The unified credit eliminates tax on the first $7.0M (2026 post-TCJA sunset). Without planning, estates above exemption are taxed at 40%.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -931,7 +931,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       'Naming multiple trustees across different states'
     ],
     correctAnswer: 1,
-    explanation: 'Portability allows the surviving spouse to use the deceased spouse\'s unused exclusion amount (DSUE). Requires filing estate tax return (Form 706) even if no tax is due. DSUE can be combined with survivor\'s exemption for up to $27.22M exemption (2024).',
+    explanation: 'Portability allows the surviving spouse to use the deceased spouse\'s unused exclusion amount (DSUE). Requires filing estate tax return (Form 706) even if no tax is due. DSUE can be combined with survivor\'s exemption for up to $14.0M combined exemption (2026 post-TCJA sunset).',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -1165,7 +1165,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       'Combine their annual exclusions into one gift'
     ],
     correctAnswer: 1,
-    explanation: 'Gift-splitting allows spouses to treat gifts by one as made 50% by each. Doubles annual exclusion ($36,000 per donee in 2024) and uses both unified credits. Requires consent of both spouses on gift tax return. Gift must be to third party.',
+    explanation: 'Gift-splitting allows spouses to treat gifts by one as made 50% by each. Doubles annual exclusion ($38,000 per donee in 2026) and uses both unified credits. Requires consent of both spouses on gift tax return. Gift must be to third party.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -1211,15 +1211,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-067',
-    question: 'The annual gift tax exclusion amount for 2024 is:',
+    question: 'The annual gift tax exclusion amount for 2026 is:',
     options: [
-      '$15,000',
       '$16,000',
       '$17,000',
-      '$18,000'
+      '$18,000',
+      '$19,000'
     ],
     correctAnswer: 3,
-    explanation: 'The 2024 annual gift tax exclusion is $18,000 per donee (up from $17,000 in 2023). Unlimited recipients allowed. Married couples can gift-split for $36,000 per donee. No gift tax return required if under annual exclusion.',
+    explanation: 'The 2026 annual gift tax exclusion is $19,000 per donee (up from $18,000 in 2024). Unlimited recipients allowed. Married couples can gift-split for $38,000 per donee. No gift tax return required if under annual exclusion.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -1255,7 +1255,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       'Avoid all income taxation'
     ],
     correctAnswer: 1,
-    explanation: 'Bypass trust uses deceased spouse\'s exemption ($13.61M in 2024) to shelter assets from estate tax at both deaths. Does NOT qualify for marital deduction—that\'s the point. Surviving spouse can receive income and limited principal (HEMS standard). Less critical now with portability.',
+    explanation: 'Bypass trust uses deceased spouse\'s exemption ($7.0M in 2026 post-TCJA sunset) to shelter assets from estate tax at both deaths. Does NOT qualify for marital deduction—that\'s the point. Surviving spouse can receive income and limited principal (HEMS standard). More critical now that portability is limited by lower exemptions.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -1345,7 +1345,7 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
       'A surviving spouse'
     ],
     correctAnswer: 1,
-    explanation: 'GST tax applies to transfers to "skip persons"—grandchildren or more remote descendants (or unrelated persons 37.5+ years younger). Rate is flat 40%. Three types: direct skip, taxable termination, taxable distribution. Each person has GST exemption ($13.61M in 2024).',
+    explanation: 'GST tax applies to transfers to "skip persons"—grandchildren or more remote descendants (or unrelated persons 37.5+ years younger). Rate is flat 40%. Three types: direct skip, taxable termination, taxable distribution. Each person has GST exemption ($7.0M in 2026 post-TCJA sunset).',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',
@@ -1355,15 +1355,15 @@ export const CFP_ESTATE_QUESTIONS: Question[] = [
   },
   {
     id: 'cfp-est-075',
-    question: 'Under current law, what happens to the estate tax exemption after 2025?',
+    question: 'What happened to the estate tax exemption when the TCJA provisions expired on January 1, 2026?',
     options: [
-      'Remains at current level permanently',
-      'Increases to $15 million',
-      'Sunsets to approximately half the current amount',
-      'Estate tax is eliminated entirely'
+      'Remained at $13.61 million permanently',
+      'Increased to $15 million',
+      'Decreased to approximately $7.0 million',
+      'Estate tax was eliminated entirely'
     ],
     correctAnswer: 2,
-    explanation: 'The TCJA doubled the exemption through 2025. Without legislative action, exemption sunsets to pre-TCJA levels (~$5-6M adjusted for inflation) on January 1, 2026. Creates planning urgency for high-net-worth clients to use exemption now. Anti-clawback regulations protect pre-2026 gifts.',
+    explanation: 'The TCJA doubled the exemption through 2025. On January 1, 2026, the exemption reverted to pre-TCJA levels adjusted for inflation (approximately $7.0 million). This significantly impacts estate planning for estates above the new threshold. Anti-clawback regulations protect gifts made before 2026 using the higher exemption.',
     courseId: 'cfp',
     section: 'CFP-EST',
     topic: 'Estate Planning',

@@ -148,7 +148,7 @@ export function SubscriptionGate({
             <span className="text-lg font-normal text-gray-500">/year</span>
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-            Just ${Math.round(displayPrice / 12)}/month
+            Just ${isFounder ? pricing.founderMonthly : pricing.monthly}/month
           </div>
           {isFounder && displayPrice < originalPrice && (
             <div className="text-gray-500 line-through mt-1">${originalPrice}/year</div>
@@ -210,7 +210,8 @@ export function TrialBanner() {
   if (loading || isPremium) return null;
   
   const courseName = course?.name || courseId.toUpperCase();
-  const upgradeUrl = `/start-checkout?course=${courseId}&interval=annual`;
+  const annualUrl = `/start-checkout?course=${courseId}&interval=annual`;
+  const monthlyUrl = `/start-checkout?course=${courseId}&interval=monthly`;
 
   if (trialExpired) {
     // Always show expired banner (not dismissible)
@@ -221,12 +222,20 @@ export function TrialBanner() {
             <Clock className="w-4 h-4" />
             <span className="font-medium">Your {courseName} trial has ended.</span>
           </div>
-          <Link 
-            to={upgradeUrl}
-            className="text-sm bg-white text-red-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
-          >
-            Subscribe Now
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link 
+              to={annualUrl}
+              className="text-sm bg-white text-red-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
+            >
+              Annual
+            </Link>
+            <Link 
+              to={monthlyUrl}
+              className="text-sm bg-red-700 text-white px-3 py-1 rounded-full font-medium hover:bg-red-800 transition-colors"
+            >
+              Monthly
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -249,10 +258,16 @@ export function TrialBanner() {
           </div>
           <div className="flex items-center gap-2">
             <Link 
-              to={upgradeUrl}
+              to={annualUrl}
               className={`text-sm bg-white ${isUrgent ? 'text-amber-600' : 'text-blue-600'} px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors`}
             >
-              Subscribe Now
+              Annual
+            </Link>
+            <Link 
+              to={monthlyUrl}
+              className={`text-sm ${isUrgent ? 'bg-amber-600' : 'bg-blue-700'} text-white px-3 py-1 rounded-full font-medium hover:opacity-90 transition-colors`}
+            >
+              Monthly
             </Link>
             <button
               onClick={handleDismiss}

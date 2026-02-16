@@ -12,6 +12,10 @@ const { onCall, onRequest, HttpsError } = require('firebase-functions/v2/https')
 const admin = require('firebase-admin');
 const { Resend } = require('resend');
 
+// Shared content stats (questions, lessons, flashcards per course)
+// Source of truth: shared/content-stats.json — copy to functions/ for deploy
+const CONTENT_STATS = require('./content-stats.json');
+
 // Initialize Firebase Admin
 admin.initializeApp();
 const db = admin.firestore();
@@ -25,8 +29,17 @@ const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET?.trim();
 // Publishable key is not secret but varies per environment (test vs live)
 const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_51SzK1cQ9jgQM2iI4Iy1B5iRE5mi17YHRIS1R24vJRX9Cyrvc8W1Q0fjpJMFAfI1DSO3OziMXWFjQ8umbQZhxvFK300AKFvcEJb';
 
-// Base URL for redirects — defaults to production, override via env for dev/staging
-const APP_BASE_URL = process.env.APP_BASE_URL || 'https://voraprep.com';
+// Base URL for redirects — auto-detects from Firebase project ID, override via env
+function detectAppBaseUrl() {
+  if (process.env.APP_BASE_URL) return process.env.APP_BASE_URL;
+  // Auto-detect environment from Firebase project ID
+  const projectId = process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT ||
+    (process.env.FIREBASE_CONFIG ? JSON.parse(process.env.FIREBASE_CONFIG).projectId : null);
+  if (projectId === 'passcpa-dev') return 'https://passcpa-dev.web.app';
+  if (projectId === 'voraprep-staging') return 'https://voraprep-staging.web.app';
+  return 'https://voraprep.com'; // production default
+}
+const APP_BASE_URL = detectAppBaseUrl();
 
 // Allowed origins for Stripe redirect URLs (prevents open redirect)
 const ALLOWED_ORIGINS = [
@@ -102,35 +115,51 @@ const PRICE_LOOKUP_KEYS = {
 // ============================================================================
 // COURSE-SPECIFIC CONFIGURATION
 // Used to customize email content based on user's exam type
+// Content stats (questions, lessons) pulled from shared/content-stats.json
 // ============================================================================
+
+/**
+ * Format a number as "X,XXX+" (round down to nearest 100)
+ */
+function formatDisplayCount(n) {
+  const rounded = Math.floor(n / 100) * 100;
+  return rounded.toLocaleString('en-US') + '+';
+}
+
 const COURSE_CONFIG = {
   cpa: {
     name: 'CPA Exam',
+    slug: 'cpa',
     tagline: 'Your AI-Powered CPA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with AICPA, NASBA, or any state board of accountancy.',
   },
   ea: {
     name: 'EA Exam',
+    slug: 'ea',
     tagline: 'Your AI-Powered EA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with the IRS or Treasury Department.',
   },
   cma: {
     name: 'CMA Exam',
+    slug: 'cma',
     tagline: 'Your AI-Powered CMA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with the Institute of Management Accountants (IMA).',
   },
   cia: {
     name: 'CIA Exam',
+    slug: 'cia',
     tagline: 'Your AI-Powered CIA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with The Institute of Internal Auditors (IIA).',
   },
   cisa: {
     name: 'CISA Exam',
+    slug: 'cisa',
     tagline: 'Your AI-Powered CISA Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with ISACA.',
   },
   cfp: {
     name: 'CFP Exam',
+    slug: 'cfp',
     tagline: 'Your AI-Powered CFP Exam Prep Partner',
     disclaimer: 'VoraPrep is not affiliated with the CFP Board.',
   },
@@ -142,7 +171,14 @@ const COURSE_CONFIG = {
  * @returns {Object} Course-specific configuration for emails
  */
 function getCourseConfig(courseId) {
-  return COURSE_CONFIG[courseId] || COURSE_CONFIG.cpa;
+  const config = COURSE_CONFIG[courseId] || COURSE_CONFIG.cpa;
+  const stats = CONTENT_STATS[courseId] || CONTENT_STATS.cpa;
+  return {
+    ...config,
+    questions: formatDisplayCount(stats.questions),
+    lessons: formatDisplayCount(stats.lessons),
+    flashcards: formatDisplayCount(stats.flashcards),
+  };
 }
 
 // Email configuration using Resend (3,000 free emails/month)
@@ -151,7 +187,7 @@ function getCourseConfig(courseId) {
 const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim();
 const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
 // Email to receive admin notifications (e.g. new signups)
-const ADMIN_EMAIL = 'rob@sagecg.com';
+const ADMIN_EMAIL = 'support@voraprep.com';
 
 let resend = null;
 if (RESEND_API_KEY) {
@@ -175,18 +211,21 @@ exports.sendCustomPasswordReset = onCall({
     throw new HttpsError('invalid-argument', 'Email is required');
   }
 
-  if (!resend) {
+  // Lazy-initialize Resend client (secrets only available at runtime in Gen 2)
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
     throw new HttpsError('failed-precondition', 'Email service not configured. Set RESEND_API_KEY.');
   }
+  const resendClient = new Resend(apiKey);
 
   try {
     // Generate Firebase password reset link
     const resetLink = await admin.auth().generatePasswordResetLink(email, {
-      url: 'https://voraprep.com/login',
+      url: `${APP_BASE_URL}/login`,
     });
 
     // Send branded email via Resend
-    const { error } = await resend.emails.send({
+    const { error } = await resendClient.emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: '🔐 Reset Your VoraPrep Password',
@@ -228,12 +267,12 @@ function getPasswordResetEmailHTML(email, resetLink) {
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-        </div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <!-- Main Content -->
@@ -282,7 +321,154 @@ function getPasswordResetEmailHTML(email, resetLink) {
         <strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner
       </p>
       <p style="margin: 15px 0 0 0;">
-        <a href="https://voraprep.com" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+        <a href="${APP_BASE_URL}" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// CUSTOM BRANDED EMAIL VERIFICATION
+// Sends a friendly, VoraPrep-branded verification email via Resend
+// Bypasses Firebase's unreliable built-in email verification
+// ============================================================================
+
+exports.sendCustomEmailVerification = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: ['RESEND_API_KEY'],
+}, async (request) => {
+  const { email } = request.data;
+
+  if (!email) {
+    throw new HttpsError('invalid-argument', 'Email is required');
+  }
+
+  if (!resend) {
+    throw new HttpsError('failed-precondition', 'Email service not configured. Set RESEND_API_KEY.');
+  }
+
+  try {
+    // Generate Firebase email verification link
+    const verificationLink = await admin.auth().generateEmailVerificationLink(email, {
+      url: `${APP_BASE_URL}/login`,
+    });
+
+    // Initialize Resend lazily to ensure secret is available
+    const apiKey = process.env.RESEND_API_KEY?.trim();
+    if (!apiKey) {
+      throw new HttpsError('failed-precondition', 'RESEND_API_KEY not available');
+    }
+    const resendClient = new Resend(apiKey);
+    console.log(`Resend initialized, sending verification to ${email}, API key starts: ${apiKey.substring(0, 8)}...`);
+
+    // Send branded email via Resend
+    const { data, error } = await resendClient.emails.send({
+      from: FROM_EMAIL,
+      to: email,
+      subject: '✉️ Verify Your VoraPrep Email',
+      html: getEmailVerificationHTML(email, verificationLink),
+    });
+
+    if (error) {
+      console.error('Resend verification email error:', JSON.stringify(error));
+      throw new Error(error.message);
+    }
+
+    console.log(`Verification email sent to ${email} via Resend, id: ${data?.id}`);
+    return { success: true, emailId: data?.id };
+  } catch (error) {
+    console.error('Email verification error:', error);
+
+    if (error.code === 'auth/user-not-found') {
+      throw new HttpsError('not-found', 'No account found with this email');
+    }
+
+    throw new HttpsError('internal', 'Failed to send verification email');
+  }
+});
+
+// Email Verification HTML Template
+function getEmailVerificationHTML(email, verificationLink) {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Your VoraPrep Email</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0; text-align: center;">
+        Verify Your Email Address
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 10px 0; text-align: center;">
+        Welcome to VoraPrep! 🎉
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0; text-align: center;">
+        Please verify your email address to get started with your exam prep journey.
+      </p>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${verificationLink}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Verify My Email
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        This link will expire in 24 hours.
+      </p>
+      
+      <div style="border-top: 1px solid #e2e8f0; margin: 30px 0; padding-top: 20px;">
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">
+          <strong>Didn't create an account?</strong> You can safely ignore this email.
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 20px 0 0 0;">
+        If the button doesn't work, copy and paste this link into your browser:
+      </p>
+      <p style="color: #3b82f6; font-size: 12px; word-break: break-all; margin: 10px 0 0 0;">
+        ${verificationLink}
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        This email was sent to ${email}
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <a href="${APP_BASE_URL}" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
       </p>
     </div>
     
@@ -381,7 +567,7 @@ exports.sendDailyReminders = onSchedule({
           },
           webpush: {
             fcmOptions: {
-              link: 'https://voraprep.com/study'
+              link: `${APP_BASE_URL}/study`
             }
           }
         });
@@ -453,7 +639,7 @@ exports.sendWeeklyReports = onSchedule({
       const weeklyStats = await getWeeklyStats(userDoc.id, weekAgo);
       
       // Get course-specific content
-      const courseConfig = getCourseConfig(userData.currentCourse);
+      const courseConfig = getCourseConfig(userData.activeCourse);
       
       // Generate email content
       const emailContent = generateWeeklyReportEmail(userData, weeklyStats);
@@ -541,7 +727,7 @@ exports.sendOnboardingReminders = onSchedule({
         }
         
         // Get course-specific content
-        const courseConfig = getCourseConfig(userData.currentCourse);
+        const courseConfig = getCourseConfig(userData.activeCourse);
         
         // Send reminder email
         const { error } = await resend.emails.send({
@@ -578,7 +764,7 @@ exports.sendOnboardingReminders = onSchedule({
             <li><strong>${skippedCount}</strong> skipped (unverified email)</li>
             <li><strong>${errorCount}</strong> errors</li>
           </ul>
-          <p><a href="https://voraprep.com/admin/cms">View Admin CMS</a></p>
+          <p><a href="${APP_BASE_URL}/admin/cms">View Admin CMS</a></p>
         `,
       });
     }
@@ -606,12 +792,12 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-        </div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <!-- Main Content -->
@@ -638,7 +824,7 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
       
       <!-- CTA Button -->
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/onboarding" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+        <a href="${APP_BASE_URL}/onboarding" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
           Complete My Setup →
         </a>
       </div>
@@ -655,7 +841,7 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
         VoraPrep - ${courseConfig.tagline}
       </p>
       <p style="font-size: 11px; margin-top: 10px;">
-        <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
       </p>
     </div>
     
@@ -718,7 +904,7 @@ exports.checkTrialExpirations = onSchedule({
             const authUser = await admin.auth().getUser(userId);
             const userEmail = authUser.email;
             const displayName = userData?.displayName || authUser.displayName || 'there';
-            const courseConfig = getCourseConfig(userData?.currentCourse);
+            const courseConfig = getCourseConfig(userData?.activeCourse);
             
             if (userEmail) {
               const { error } = await resend.emails.send({
@@ -770,12 +956,12 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-        </div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <!-- Main Content -->
@@ -811,7 +997,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
       
       <!-- CTA Button -->
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+        <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
           Upgrade Now →
         </a>
       </div>
@@ -828,7 +1014,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
         VoraPrep - ${courseConfig.tagline}
       </p>
       <p style="font-size: 11px; margin-top: 10px;">
-        <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
       </p>
     </div>
     
@@ -877,7 +1063,11 @@ exports.sendWelcomeEmail = onDocumentCreated({
   
   const userData = event.data.data();
   const userEmail = userData.email;
-  const courseConfig = getCourseConfig(userData.currentCourse);
+  const activeCourse = userData.activeCourse;
+  if (!activeCourse) {
+    console.warn('Welcome email: No activeCourse set for user, defaulting to CPA. User email:', userEmail);
+  }
+  const courseConfig = getCourseConfig(activeCourse);
   const displayName = userData.displayName || 'Exam Candidate';
   
   if (!userEmail) {
@@ -1037,7 +1227,7 @@ async function getWeeklyStats(userId, startDate) {
 }
 
 function generateWeeklyReportEmail(userData, stats) {
-  const courseConfig = getCourseConfig(userData.currentCourse);
+  const courseConfig = getCourseConfig(userData.activeCourse);
   const displayName = userData.displayName || 'Exam Candidate';
   const section = userData.examSection || courseConfig.name.replace(' Exam', '');
   
@@ -1120,7 +1310,7 @@ function generateWeeklyReportEmail(userData, stats) {
   
   <!-- CTA Button -->
   <div style="text-align: center; margin: 30px 0;">
-    <a href="https://voraprep.com/practice" style="display: inline-block; background: #2563eb; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    <a href="${APP_BASE_URL}/practice" style="display: inline-block; background: #2563eb; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
       Continue Studying →
     </a>
   </div>
@@ -1129,7 +1319,7 @@ function generateWeeklyReportEmail(userData, stats) {
   <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 30px; text-align: center; color: #94a3b8; font-size: 12px;">
     <p>VoraPrep - ${courseConfig.tagline}</p>
     <p>
-      <a href="https://voraprep.com/settings" style="color: #64748b;">Manage email preferences</a>
+      <a href="${APP_BASE_URL}/settings" style="color: #64748b;">Manage email preferences</a>
     </p>
     <p style="margin-top: 15px; font-size: 11px;">
       ${courseConfig.disclaimer}
@@ -1174,13 +1364,13 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     </p>
     
     <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
-      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">� Welcome Aboard</div>
+      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">💎 Welcome Aboard</div>
       <div style="font-size: 16px; opacity: 0.95;">
-        You now have access to <strong>all premium features</strong>:
+        You now have access to <strong>all ${examName} premium features</strong>:
       </div>
       <ul style="margin: 15px 0 0 0; padding-left: 20px;">
-        <li>14,400+ practice questions</li>
-        <li>1,100+ lessons</li>
+        <li>${courseConfig.questions} practice questions</li>
+        <li>${courseConfig.lessons} lessons</li>
         <li>AI Tutor assistance</li>
         <li>Exam simulator</li>
         <li>Progress analytics</li>
@@ -1189,34 +1379,44 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     
     <h2 style="color: #1e293b; font-size: 20px; margin: 30px 0 15px;">Here's how to get started:</h2>
     
-    <div style="margin: 20px 0;">
-      <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <div style="background: #dbeafe; color: #1d4ed8; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">1</div>
-        <div>
-          <div style="font-weight: 600; color: #1e293b;">Complete your profile</div>
-          <div style="color: #64748b; font-size: 14px;">Select your exam section and target date</div>
-        </div>
-      </div>
-      
-      <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <div style="background: #dbeafe; color: #1d4ed8; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">2</div>
-        <div>
-          <div style="font-weight: 600; color: #1e293b;">Start with a diagnostic quiz</div>
-          <div style="color: #64748b; font-size: 14px;">We'll identify your strengths and weaknesses</div>
-        </div>
-      </div>
-      
-      <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <div style="background: #dbeafe; color: #1d4ed8; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">3</div>
-        <div>
-          <div style="font-weight: 600; color: #1e293b;">Practice daily</div>
-          <div style="color: #64748b; font-size: 14px;">Consistency beats cramming every time</div>
-        </div>
-      </div>
-    </div>
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 20px 0;">
+      <tr>
+        <td style="padding-bottom: 15px;" valign="top">
+          <table cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="width: 32px; height: 32px; background-color: #dbeafe; color: #1d4ed8; border-radius: 50%; text-align: center; vertical-align: middle; font-weight: bold; line-height: 32px; font-size: 14px;" width="32">1</td>
+            <td style="padding-left: 15px; vertical-align: middle;">
+              <div style="font-weight: 600; color: #1e293b;">Complete your profile</div>
+              <div style="color: #64748b; font-size: 14px;">Select your exam section and target date</div>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-bottom: 15px;" valign="top">
+          <table cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="width: 32px; height: 32px; background-color: #dbeafe; color: #1d4ed8; border-radius: 50%; text-align: center; vertical-align: middle; font-weight: bold; line-height: 32px; font-size: 14px;" width="32">2</td>
+            <td style="padding-left: 15px; vertical-align: middle;">
+              <div style="font-weight: 600; color: #1e293b;">Start with a diagnostic quiz</div>
+              <div style="color: #64748b; font-size: 14px;">We'll identify your strengths and weaknesses</div>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-bottom: 15px;" valign="top">
+          <table cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="width: 32px; height: 32px; background-color: #dbeafe; color: #1d4ed8; border-radius: 50%; text-align: center; vertical-align: middle; font-weight: bold; line-height: 32px; font-size: 14px;" width="32">3</td>
+            <td style="padding-left: 15px; vertical-align: middle;">
+              <div style="font-weight: 600; color: #1e293b;">Practice daily</div>
+              <div style="color: #64748b; font-size: 14px;">Consistency beats cramming every time</div>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+    </table>
     
     <div style="text-align: center; margin: 35px 0;">
-      <a href="https://voraprep.com/dashboard" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
+      <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
         Start Studying Now →
       </a>
     </div>
@@ -1232,7 +1432,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
   
   <!-- Footer -->
   <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
-    <p>Questions? Reply to this email or visit our <a href="https://voraprep.com" style="color: #64748b;">website</a></p>
+    <p>Questions? Reply to this email or visit our <a href="${APP_BASE_URL}" style="color: #64748b;">website</a></p>
     <p style="margin-top: 15px;">
       VoraPrep - ${courseConfig.tagline}
     </p>
@@ -1284,7 +1484,7 @@ function generateWaitlistEmail(email) {
       <div style="font-size: 16px; opacity: 0.95; margin-bottom: 15px;">
         Get <strong>14 days free</strong> with full access to all features!
       </div>
-      <a href="https://voraprep.com/register" style="display: inline-block; background: white; color: #059669; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+      <a href="${APP_BASE_URL}/register" style="display: inline-block; background: white; color: #059669; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
         Create Your Free Account →
       </a>
     </div>
@@ -1466,7 +1666,10 @@ exports.createCheckoutSession = onCall({
 exports.stripeWebhook = onRequest({
   cors: false, // Stripe sends POST directly, no CORS needed
   invoker: 'public', // Allow Stripe to call without authentication
-  secrets: ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'],
+  secrets: [
+    'STRIPE_SECRET_KEY',
+    { name: 'STRIPE_WEBHOOK_SECRET', version: 'latest' },
+  ],
 }, async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).send('Method not allowed');
@@ -1483,13 +1686,16 @@ exports.stripeWebhook = onRequest({
 
   try {
     // Verify webhook signature
+    // Use rawBody (Buffer) which is the original request body before JSON parsing
+    const bodyToVerify = req.rawBody || req.body;
     event = stripe.webhooks.constructEvent(
-      req.rawBody,
+      bodyToVerify,
       sig,
       STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message);
+    console.error('Debug info: rawBody available:', !!req.rawBody, '| body type:', typeof req.body, '| sig present:', !!sig, '| secret length:', STRIPE_WEBHOOK_SECRET?.length);
     res.status(400).send(`Webhook Error: ${err.message}`);
     return;
   }
@@ -1552,6 +1758,19 @@ async function handleCheckoutComplete(session) {
 
   console.log(`Checkout complete for user ${userId}, course ${courseId}`);
 
+  // Also write subscription data directly from the checkout session.
+  // This acts as a fallback in case customer.subscription.created/updated
+  // events are delayed, missed, or fail signature verification.
+  if (session.subscription && stripe) {
+    try {
+      const subscription = await stripe.subscriptions.retrieve(session.subscription);
+      await updateUserSubscription(userId, subscription, courseId);
+      console.log(`Subscription data written from checkout.session.completed for user ${userId}`);
+    } catch (subError) {
+      console.error('Error syncing subscription from checkout session:', subError);
+    }
+  }
+
   // Send welcome email
   if (resend) {
     const userDoc = await db.collection('users').doc(userId).get();
@@ -1607,8 +1826,13 @@ async function updateUserSubscription(userId, subscription, courseId) {
   const status = subscription.status; // 'active', 'past_due', 'canceled', 'trialing'
   const isFounder = subscription.metadata?.isFounder === 'true';
   const examId = courseId || subscription.metadata?.courseId || 'cpa';
-  const interval = subscription.items.data[0]?.price.recurring?.interval;
+  const firstItem = subscription.items?.data?.[0];
+  const interval = firstItem?.price?.recurring?.interval;
   const tier = interval === 'year' ? 'annual' : 'monthly';
+  
+  // Stripe API v2026-01-28 moved current_period_start/end to the subscription item
+  const periodStart = subscription.current_period_start || firstItem?.current_period_start;
+  const periodEnd = subscription.current_period_end || firstItem?.current_period_end;
   
   const subscriptionData = {
     stripeSubscriptionId: subscription.id,
@@ -1616,10 +1840,10 @@ async function updateUserSubscription(userId, subscription, courseId) {
     status: status,
     courseId: examId,
     isFounder: isFounder,
-    currentPeriodStart: new Date(subscription.current_period_start * 1000),
-    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+    currentPeriodStart: periodStart ? new Date(periodStart * 1000) : null,
+    currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : null,
     cancelAtPeriodEnd: subscription.cancel_at_period_end,
-    priceId: subscription.items.data[0]?.price.id,
+    priceId: firstItem?.price?.id,
     interval: interval,
     updatedAt: admin.firestore.FieldValue.serverTimestamp(),
   };
@@ -1629,8 +1853,8 @@ async function updateUserSubscription(userId, subscription, courseId) {
     stripeSubscriptionId: subscription.id,
     status: status,
     tier: tier,
-    currentPeriodStart: new Date(subscription.current_period_start * 1000),
-    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+    currentPeriodStart: periodStart ? new Date(periodStart * 1000) : null,
+    currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : null,
     cancelAtPeriodEnd: subscription.cancel_at_period_end,
     isFounder: isFounder,
   };
@@ -1824,6 +2048,75 @@ exports.createCustomerPortalSession = onCall({
 });
 
 // ============================================================================
+// STRIPE: SYNC SUBSCRIPTION FROM STRIPE
+// Fallback for webhook failures — client can call this to force-sync
+// subscription status directly from the Stripe API to Firestore.
+// ============================================================================
+
+exports.syncSubscriptionFromStripe = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: ['STRIPE_SECRET_KEY'],
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in.');
+  }
+
+  if (!stripe) {
+    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  }
+
+  const userId = request.auth.uid;
+
+  try {
+    const userDoc = await db.collection('users').doc(userId).get();
+    const stripeCustomerId = userDoc.data()?.stripeCustomerId;
+
+    if (!stripeCustomerId) {
+      console.log(`syncSubscriptionFromStripe: no Stripe customer for user ${userId}`);
+      return { synced: false, reason: 'no_customer' };
+    }
+
+    // List active subscriptions for this customer from Stripe
+    const subscriptions = await stripe.subscriptions.list({
+      customer: stripeCustomerId,
+      status: 'active',
+      limit: 10,
+    });
+
+    if (subscriptions.data.length === 0) {
+      // Also check for trialing subscriptions
+      const trialingSubs = await stripe.subscriptions.list({
+        customer: stripeCustomerId,
+        status: 'trialing',
+        limit: 10,
+      });
+      subscriptions.data.push(...trialingSubs.data);
+    }
+
+    if (subscriptions.data.length === 0) {
+      console.log(`syncSubscriptionFromStripe: no active subscriptions for user ${userId}`);
+      return { synced: false, reason: 'no_subscriptions' };
+    }
+
+    // Process each active subscription
+    let syncCount = 0;
+    for (const subscription of subscriptions.data) {
+      const courseId = subscription.metadata?.courseId;
+      await updateUserSubscription(userId, subscription, courseId);
+      syncCount++;
+      console.log(`syncSubscriptionFromStripe: synced ${courseId || 'unknown'} for user ${userId}, status=${subscription.status}`);
+    }
+
+    return { synced: true, count: syncCount };
+  } catch (error) {
+    console.error('syncSubscriptionFromStripe error:', error);
+    throw new HttpsError('internal', 'Failed to sync subscription');
+  }
+});
+
+// ============================================================================
 // EMAIL TEMPLATES FOR SUBSCRIPTION
 // ============================================================================
 
@@ -1843,10 +2136,12 @@ function getWelcomeSubscriberEmailHTML(name, courseId, isFounder) {
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
   <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;"></div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
@@ -1881,7 +2176,7 @@ function getWelcomeSubscriberEmailHTML(name, courseId, isFounder) {
       ` : ''}
       
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/dashboard" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+        <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
           Start Studying
         </a>
       </div>
@@ -1911,10 +2206,12 @@ function getPaymentFailedEmailHTML(name) {
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
   <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;"></div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
@@ -1935,7 +2232,7 @@ function getPaymentFailedEmailHTML(name) {
       </p>
       
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://voraprep.com/settings" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+        <a href="${APP_BASE_URL}/settings" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
           Update Payment Method
         </a>
       </div>

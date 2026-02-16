@@ -168,7 +168,7 @@ export const CFP_RET_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation: `**Correct Answer: C**
 
-IRMAA (Income-Related Monthly Adjustment Amount) surcharges are added to Medicare Parts B and D premiums based on Modified Adjusted Gross Income from TWO years prior (the "IRMAA lookback period"). For 2024 premiums, 2022 income is used.
+IRMAA (Income-Related Monthly Adjustment Amount) surcharges are added to Medicare Parts B and D premiums based on Modified Adjusted Gross Income from TWO years prior (the "IRMAA lookback period"). For 2026 premiums, 2024 income is used.
 
 **Why other answers are wrong:**
 - **A)** Part A is premium-free for those with 40+ quarters of covered employment
@@ -187,37 +187,37 @@ IRMAA (Income-Related Monthly Adjustment Amount) surcharges are added to Medicar
     subtopic: '401(k) Plans',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Jennifer, age 55, participates in her employer's 401(k) plan. In 2024, what is her maximum total contribution (employee + employer) if her compensation is $350,000 and the employer matches 100% of the first 6%?`,
+    question: `Jennifer, age 55, participates in her employer's 401(k) plan. In 2026, what is her maximum total contribution (employee + employer) if her compensation is $370,000 and the employer matches 100% of the first 6%?`,
     options: [
-      'B) $46,000',
-      'C) $69,000',
-      'A) $30,500',
-      'D) $76,500',
+      'B) $48,000',
+      'C) $71,500',
+      'A) $32,000',
+      'D) $79,000',
     ],
     correctAnswer: 3,
-    explanation: `**Correct Answer: D ($76,500)**
+    explanation: `**Correct Answer: D ($79,000)**
 
-**2024 Contribution Limits:**
-- Employee deferral limit: $23,000
+**2026 Contribution Limits:**
+- Employee deferral limit: $24,500
 - Catch-up (age 50+): $7,500
-- Total employee: $30,500
-- Section 415(c) annual additions limit: $69,000 (plus catch-up)
+- Total employee: $32,000
+- Section 415(c) annual additions limit: $71,500 (plus catch-up)
 
 **Jennifer's Maximum:**
-- Employee deferrals: $23,000 + $7,500 = $30,500
-- Employer match: 6% × $345,000 (compensation cap) = $20,700
-  - Note: Compensation cap for 2024 is $345,000
-- Total potential: $30,500 + $20,700 = $51,200
+- Employee deferrals: $24,500 + $7,500 = $32,000
+- Employer match: 6% × $360,000 (compensation cap) = $21,600
+  - Note: Compensation cap for 2026 is $360,000
+- Total potential: $32,000 + $21,600 = $53,600
 
 Wait - the question asks for maximum total. Employer can contribute more:
-- Section 415(c) limit: $69,000 + $7,500 catch-up = $76,500 total limit
-- If employer contributes maximum: $76,500 is the ceiling
+- Section 415(c) limit: $71,500 + $7,500 catch-up = $79,000 total limit
+- If employer contributes maximum: $79,000 is the ceiling
 
 **This is the correct answer as it represents the maximum allowed under law.**
 
 **Why other answers are wrong:**
 - **A)** Employee maximum only
-- **B)** 2023 limit (outdated)
+- **B)** 2024 limit (outdated)
 - **C)** Section 415(c) limit without catch-up`
   },
   {
@@ -229,24 +229,24 @@ Wait - the question asks for maximum total. Employer can contribute more:
     subtopic: '403(b) Plans',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Dr. Martinez, age 48, has worked at a university for 18 years and participates in a 403(b) plan. She has always contributed the maximum but has never used the 15-Year Rule. In 2024, what is her maximum employee contribution?`,
+    question: `Dr. Martinez, age 48, has worked at a university for 18 years and participates in a 403(b) plan. She has always contributed the maximum but has never used the 15-Year Rule. In 2026, what is her maximum employee contribution?`,
     options: [
-      'B) $26,000',
-      'A) $23,000',
-      'C) $30,500',
-      'D) $33,000',
+      'B) $27,500',
+      'A) $24,500',
+      'C) $32,000',
+      'D) $35,000',
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: B ($26,000)**
+    explanation: `**Correct Answer: B ($27,500)**
 
 **403(b) 15-Year Rule:**
 Employees with 15+ years of service at educational organizations, hospitals, or churches may contribute an additional $3,000/year, up to a lifetime maximum of $15,000.
 
 **Dr. Martinez's Calculation:**
-- Base 2024 limit: $23,000
+- Base 2026 limit: $24,500
 - 15-Year Rule addition: $3,000 (18 years of service qualifies)
 - No catch-up (under age 50)
-- **Total: $26,000**
+- **Total: $27,500**
 
 **Why other answers are wrong:**
 - **A)** Ignores 15-Year Rule benefit
@@ -322,29 +322,29 @@ The "Rule of 55" exception (separation from service at age 55+) applies ONLY to 
     subtopic: 'Traditional IRA Deductibility',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: `James (age 45) is married filing jointly with a MAGI of $138,000 for 2024. His wife, Karen, is not covered by an employer retirement plan, but James IS covered by his 401(k). What is the maximum deductible Traditional IRA contribution for Karen in 2024?`,
+    question: `James (age 45) is married filing jointly with a MAGI of $138,000 for 2026. His wife, Karen, is not covered by an employer retirement plan, but James IS covered by his 401(k). What is the maximum deductible Traditional IRA contribution for Karen in 2026?`,
     options: [
-      'B) $3,500 (partial deduction)',
+      'B) $3,750 (partial deduction)',
       'A) $0 (fully phased out)',
-      'C) $7,000 (full deduction)',
+      'C) $7,500 (full deduction)',
       'D) Karen cannot contribute because James is covered',
     ],
     correctAnswer: 2,
-    explanation: `**Correct Answer: C ($7,000 full deduction)**
+    explanation: `**Correct Answer: C ($7,500 full deduction)**
 
 **IRA Deduction Rules for Spouses:**
 When one spouse IS covered by an employer plan and the other IS NOT:
 - The NON-covered spouse has a separate, higher phase-out range
-- 2024 phase-out for non-covered spouse: $230,000 - $240,000 MAGI (MFJ)
+- 2026 phase-out for non-covered spouse: $236,000 - $246,000 MAGI (MFJ)
 
 **Analysis:**
 - James's MAGI: $138,000
-- Karen (non-covered spouse) phase-out: $230,000 - $240,000
-- $138,000 is well below $230,000
-- **Karen gets FULL deduction of $7,000**
+- Karen (non-covered spouse) phase-out: $236,000 - $246,000
+- $138,000 is well below $236,000
+- **Karen gets FULL deduction of $7,500**
 
 **Why other answers are wrong:**
-- **A)** Uses covered spouse phase-out range ($123,000-$143,000)
+- **A)** Uses covered spouse phase-out range ($126,000-$146,000)
 - **B)** Incorrectly calculates partial deduction
 - **D)** Misunderstands spousal IRA rules`
   },
@@ -393,24 +393,24 @@ The conventional wisdom of "convert when you're in a lower bracket" is oversimpl
     subtopic: 'SEP-IRA',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Sarah is a self-employed consultant with net self-employment income of $180,000 (after self-employment tax deduction). What is her maximum SEP-IRA contribution for 2024?`,
+    question: `Sarah is a self-employed consultant with net self-employment income of $180,000 (after self-employment tax deduction). What is her maximum SEP-IRA contribution for 2026?`,
     options: [
-      'A) $23,000',
+      'A) $24,500',
       'C) $45,000',
       'B) $36,000',
-      'D) $69,000',
+      'D) $71,500',
     ],
     correctAnswer: 1,
     explanation: `**Correct Answer: C ($45,000)**
 
 **SEP-IRA Contribution Limit:**
 - 25% of net self-employment income (after SE tax deduction)
-- Subject to maximum of $69,000 (2024)
+- Subject to maximum of $71,500 (2026)
 
 **Calculation:**
 - Net SE income: $180,000
 - Maximum contribution: 25% × $180,000 = **$45,000**
-- This is below the $69,000 cap, so $45,000 is the limit
+- This is below the $71,500 cap, so $45,000 is the limit
 
 **Why other answers are wrong:**
 - **A)** This is the 401(k) employee deferral limit
@@ -541,7 +541,7 @@ Dr. Chen's profile is ideal for a defined benefit plan:
 - **Young employee (age 30):** Lower contribution required for younger employees in DB plans
 
 **Contribution Comparison:**
-- **Solo 401(k)/SEP:** Maximum ~$69,000-$76,500 for Dr. Chen
+- **Solo 401(k)/SEP:** Maximum ~$71,500-$79,000 for Dr. Chen
 - **DB Plan:** Could potentially allow $200,000+ annual contributions for age-58 owner
 - **DB + 401(k) combo:** Maximizes both DC and DB limits
 
@@ -551,8 +551,8 @@ Dr. Chen's profile is ideal for a defined benefit plan:
 - Cross-testing or age-weighted approaches amplify this effect
 
 **Why other answers are wrong:**
-- **A) & B)** Limited to ~$69,000-76,500; wastes contribution potential
-- **D)** SIMPLE has low limits ($16,000 + 3% match) and wouldn't help high-earner`
+- **A) & B)** Limited to ~$71,500-79,000; wastes contribution potential
+- **D)** SIMPLE has low limits ($17,000 + 3% match) and wouldn't help high-earner`
   },
   // ============================================
   // RET-5: Special Topics
@@ -761,7 +761,7 @@ A QDRO must include specific requirements:
 - Immediate vesting (which is fine with turnover—they take their money when they leave)
 - Simple matching formula (1% or 3%)
 - Low cost to establish and maintain
-- Employees can contribute $16,000 (2024)
+- Employees can contribute $17,000 (2026)
 
 **Consider the alternatives:**
 - **A) DB Plan:** Extremely complex, expensive, not suited for this scenario
@@ -779,29 +779,29 @@ A QDRO must include specific requirements:
     subtopic: 'Backdoor Roth',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: `Dr. Patel earns $400,000 and wants to contribute to a Roth IRA. He has a Traditional IRA with a $200,000 balance from old rollovers. If he makes a $7,000 non-deductible Traditional IRA contribution and immediately converts to Roth, approximately how much of the $7,000 conversion will be taxable under the pro-rata rule?`,
+    question: `Dr. Patel earns $400,000 and wants to contribute to a Roth IRA. He has a Traditional IRA with a $200,000 balance from old rollovers. If he makes a $7,500 non-deductible Traditional IRA contribution and immediately converts to Roth, approximately how much of the $7,500 conversion will be taxable under the pro-rata rule?`,
     options: [
-      'C) $3,500',
-      'B) $6,831',
+      'C) $3,750',
+      'B) $7,229',
       'A) $0 (only the contribution is converted)',
-      'D) $7,000',
+      'D) $7,500',
     ],
     correctAnswer: 1,
-    explanation: `**Correct Answer: B ($6,831)**
+    explanation: `**Correct Answer: B ($7,229)**
 
 **Pro-Rata Rule Application:**
 
 When converting, the IRS treats ALL Traditional IRA balances as one pool.
 
 **Calculation:**
-1. After-tax contribution: $7,000
+1. After-tax contribution: $7,500
 2. Pre-tax IRA balance: $200,000
-3. Total IRA balance: $207,000
-4. After-tax percentage: $7,000 ÷ $207,000 = 3.38%
-5. Taxable percentage: 96.62%
+3. Total IRA balance: $207,500
+4. After-tax percentage: $7,500 ÷ $207,500 = 3.61%
+5. Taxable percentage: 96.39%
 
-**Taxable amount of $7,000 conversion:**
-$7,000 × 96.62% = **$6,763** (≈$6,831 with rounding)
+**Taxable amount of $7,500 conversion:**
+$7,500 × 96.39% = **$7,229**
 
 **The Pro-Rata Problem:**
 This is why the "backdoor Roth" is problematic when you have existing pre-tax IRA balances. The solution is to roll the pre-tax IRA into a 401(k) first (if eligible).
@@ -927,25 +927,25 @@ Since Social Security is a form of employer-provided retirement benefit (employe
     subtopic: 'Backdoor Roth IRA',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: `Michael, a physician earning $450,000 annually, wants to fund a Roth IRA. He has a traditional IRA with a $50,000 balance from a prior 401(k) rollover. If he makes a $7,000 non-deductible traditional IRA contribution and immediately converts to Roth, what is the taxable portion of the conversion using the pro-rata rule?`,
+    question: `Michael, a physician earning $450,000 annually, wants to fund a Roth IRA. He has a traditional IRA with a $50,000 balance from a prior 401(k) rollover. If he makes a $7,500 non-deductible traditional IRA contribution and immediately converts to Roth, what is the taxable portion of the conversion using the pro-rata rule?`,
     options: [
-      'B) $6,140 is taxable',
+      'B) $6,522 is taxable',
       'A) $0 - the entire conversion is tax-free',
-      'C) $7,000 is taxable',
-      'D) $860 is taxable',
+      'C) $7,500 is taxable',
+      'D) $978 is taxable',
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: B ($6,140 is taxable)**
+    explanation: `**Correct Answer: B ($6,522 is taxable)**
 
 **Pro-Rata Rule Calculation:**
-Total IRA balance = $50,000 (pre-tax) + $7,000 (after-tax) = $57,000
+Total IRA balance = $50,000 (pre-tax) + $7,500 (after-tax) = $57,500
 
-After-tax percentage: $7,000 ÷ $57,000 = 12.28%
-Pre-tax percentage: $50,000 ÷ $57,000 = 87.72%
+After-tax percentage: $7,500 ÷ $57,500 = 13.04%
+Pre-tax percentage: $50,000 ÷ $57,500 = 86.96%
 
-**Conversion of $7,000:**
-- Tax-free portion: $7,000 × 12.28% = $860
-- Taxable portion: $7,000 × 87.72% = $6,140
+**Conversion of $7,500:**
+- Tax-free portion: $7,500 × 13.04% = $978
+- Taxable portion: $7,500 × 86.96% = $6,522
 
 **Why the pro-rata rule applies:**
 The IRS aggregates ALL traditional IRA balances (including SEP, SIMPLE after 2 years) when calculating the taxable portion of any conversion.
@@ -1022,11 +1022,11 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
 **Option 2: Non-Elective Contribution**
 - 2% of compensation for ALL eligible employees
 - No employee deferral required to receive contribution
-- Based on up to $345,000 compensation limit (2024)
+- Based on up to $360,000 compensation limit (2026)
 
 **Why other answers are wrong:**
 - **A)** Match is 3% (not 6%) of compensation
-- **C)** SIMPLEs are primarily employee-deferral plans ($16,000 limit, $19,500 with catch-up)
+- **C)** SIMPLEs are primarily employee-deferral plans ($17,000 limit, $20,500 with catch-up)
 - **D)** Maximum waiting period is 60 days, not 6 months`
   },
   {
@@ -1038,29 +1038,29 @@ Roll the $50,000 traditional IRA into his current employer's 401(k) BEFORE the c
     subtopic: 'Section 457(b) Plans',
     difficulty: 'medium',
     skillLevel: 'Analysis',
-    question: `Maria, a hospital administrator, participates in both a 403(b) plan and a governmental 457(b) plan. In 2024, what is her maximum combined deferral to both plans?`,
+    question: `Maria, a hospital administrator, participates in both a 403(b) plan and a governmental 457(b) plan. In 2026, what is her maximum combined deferral to both plans?`,
     options: [
-      'C) $23,000 plus catch-up contributions if eligible',
-      'A) $23,000 total shared between both plans',
-      'B) $46,000 ($23,000 to each plan)',
-      'D) $69,000 including employer contributions',
+      'C) $24,500 plus catch-up contributions if eligible',
+      'A) $24,500 total shared between both plans',
+      'B) $49,000 ($24,500 to each plan)',
+      'D) $71,500 including employer contributions',
     ],
     correctAnswer: 2,
-    explanation: `**Correct Answer: B ($46,000)**
+    explanation: `**Correct Answer: B ($49,000)**
 
 **Key Rule: 457(b) Has Separate Deferral Limit**
 
 Unlike 401(k) and 403(b) which share a combined limit, 457(b) plans have their OWN separate limit.
 
-**Maria's Maximum Deferrals (2024):**
-- 403(b): $23,000
-- 457(b): $23,000
-- **Total: $46,000**
+**Maria's Maximum Deferrals (2026):**
+- 403(b): $24,500
+- 457(b): $24,500
+- **Total: $49,000**
 
 **If Maria is 50+, add catch-up:**
 - 403(b) catch-up: +$7,500
 - 457(b) catch-up: +$7,500
-- **Potential total: $61,000**
+- **Potential total: $64,000**
 
 **Why this matters:**
 Government and tax-exempt employees can dramatically accelerate retirement savings by maxing both plans.
@@ -1079,32 +1079,32 @@ Government and tax-exempt employees can dramatically accelerate retirement savin
     subtopic: 'Required Minimum Distributions',
     difficulty: 'hard',
     skillLevel: 'Application',
-    question: `Robert, born June 15, 1951, has a traditional IRA worth $800,000 as of December 31, 2024. Using the Uniform Lifetime Table factor of 24.6 for his age, what is his 2025 RMD?`,
+    question: `Robert, born June 15, 1951, has a traditional IRA worth $800,000 as of December 31, 2025. Using the Uniform Lifetime Table factor of 23.7 for his age, what is his 2026 RMD?`,
     options: [
       'A) $0 - his RMD year has not started yet',
-      'C) $29,851',
-      'B) $32,520',
-      'D) $34,188',
+      'C) $30,769',
+      'B) $33,755',
+      'D) $35,294',
     ],
     correctAnswer: 2,
-    explanation: `**Correct Answer: B ($32,520)**
+    explanation: `**Correct Answer: B ($33,755)**
 
 **RMD Calculation:**
 - Prior year-end balance: $800,000
-- Uniform Lifetime Table factor: 24.6
-- RMD = $800,000 ÷ 24.6 = $32,520
+- Uniform Lifetime Table factor: 23.7 (for age 75)
+- RMD = $800,000 ÷ 23.7 = $33,755
 
 **RMD Rules (SECURE 2.0):**
 - Born 1951-1959: RMD begins at age 73
 - Robert (born 1951) turned 73 in 2024
 - First RMD due by April 1, 2025
-- 2025 RMD due by December 31, 2025
+- 2026 RMD due by December 31, 2026
 
-**Why December 31, 2024 balance:**
+**Why December 31, 2025 balance:**
 RMDs are always calculated using the prior year-end account balance.
 
 **Why other answers are wrong:**
-- **A)** Robert is already 73+, RMDs have begun
+- **A)** Robert is already 75, RMDs have begun
 - **C)** Uses incorrect divisor
 - **D)** Uses incorrect balance or divisor`
   },
@@ -1269,17 +1269,17 @@ $2,800 × 1.24 = $3,472
 
 **Contribution Comparison for Dr. Chen:**
 
-**A) SEP IRA:** 25% × $345,000 cap = $69,000 max
+**A) SEP IRA:** 25% × $360,000 cap = $71,500 max
 (Plus must give same % to employees)
 
-**B) SIMPLE IRA:** $16,000 + $3,500 catch-up + 3% match = ~$32,000 max
+**B) SIMPLE IRA:** $17,000 + $3,500 catch-up + 3% match = ~$33,000 max
 
 **C) Cash Balance + 401(k):**
 - Cash Balance: Can contribute $250,000+ for older owners (actuarially determined)
-- 401(k): $23,000 + $7,500 catch-up
+- 401(k): $24,500 + $7,500 catch-up
 - **Total: $280,000+ possible**
 
-**D) PS 401(k):** $69,000 max (same % to employees required)
+**D) PS 401(k):** $71,500 max (same % to employees required)
 
 **Why Cash Balance Wins:**
 - Defined benefit contributions are actuarially determined
@@ -1337,7 +1337,7 @@ Pre-tax ratio: $105,000 ÷ $175,000 = 60%
     subtopic: 'NQDC Substantial Risk of Forfeiture',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: `Mark, an executive, participates in his company's non-qualified deferred compensation plan. He deferred $200,000 of salary in 2024. His NQDC account has grown to $350,000. If the company files for bankruptcy, what is Mark likely to receive?`,
+    question: `Mark, an executive, participates in his company's non-qualified deferred compensation plan. He deferred $200,000 of salary in 2026. His NQDC account has grown to $350,000. If the company files for bankruptcy, what is Mark likely to receive?`,
     options: [
       'C) Potentially $0 (unsecured general creditor)',
       'A) $350,000 (full account balance protected)',
@@ -1414,15 +1414,15 @@ This method calculates payments as if the IRA were a loan being paid out over th
     subtopic: 'Solo 401(k)',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Greg, age 52, is a self-employed consultant with $200,000 of net self-employment income. What is his maximum Solo 401(k) contribution for 2024?`,
+    question: `Greg, age 52, is a self-employed consultant with $200,000 of net self-employment income. What is his maximum Solo 401(k) contribution for 2026?`,
     options: [
-      'A) $30,500',
-      'C) $69,000',
-      'B) $53,500',
-      'D) $76,500',
+      'A) $32,000',
+      'C) $69,174',
+      'B) $56,000',
+      'D) $79,000',
     ],
     correctAnswer: 1,
-    explanation: `**Correct Answer: C ($69,000)**
+    explanation: `**Correct Answer: C ($69,174)**
 
 **Solo 401(k) Contribution Calculation:**
 
@@ -1438,12 +1438,12 @@ $200,000 - $14,129 = $185,871
 20% × $185,871 = $37,174
 
 **Step 4: Employee Deferral**
-$23,000 + $7,500 catch-up (age 50+) = $30,500
+$24,500 + $7,500 catch-up (age 50+) = $32,000
 
 **Step 5: Total**
-$37,174 + $30,500 = $67,674
+$37,174 + $32,000 = $69,174
 
-**Maximum annual addition limit:** $69,000 (2024) for those 50+
+**Maximum annual addition limit:** $71,500 + $7,500 catch-up = $79,000 (2026) for those 50+
 
 At $200,000 income, Greg can contribute close to the maximum.`
   },
@@ -1498,15 +1498,15 @@ During retirement (distribution phase), the ORDER of returns matters significant
     subtopic: 'Spousal IRA',
     difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
-    question: `Kevin, age 48, earns $200,000. His wife Emily, age 45, has no earned income. What is the maximum Emily can contribute to a traditional IRA in 2024?`,
+    question: `Kevin, age 48, earns $200,000. His wife Emily, age 45, has no earned income. What is the maximum Emily can contribute to a traditional IRA in 2026?`,
     options: [
-      'B) $7,000',
-      'C) $8,000',
+      'B) $7,500',
+      'C) $8,500',
       'A) $0 - she has no earned income',
-      'D) $14,000 (combined with Kevin)',
+      'D) $15,000 (combined with Kevin)',
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: B ($7,000)**
+    explanation: `**Correct Answer: B ($7,500)**
 
 **Spousal IRA Rules:**
 - A non-working spouse CAN contribute to an IRA
@@ -1514,7 +1514,7 @@ During retirement (distribution phase), the ORDER of returns matters significant
 - Combined contributions cannot exceed total earned income
 
 **Emily's Maximum:**
-- Under age 50: $7,000 (2024 limit)
+- Under age 50: $7,500 (2026 limit)
 - Kevin's income easily supports both contributions
 
 **Deductibility:**
@@ -1522,7 +1522,7 @@ May be limited if Kevin has workplace retirement plan (AGI phase-outs apply to s
 
 **Why other answers are wrong:**
 - **A)** Spousal IRA exception allows contribution based on spouse's income
-- **C)** $8,000 would be with catch-up (Emily is only 45)
+- **C)** $8,500 would be with catch-up (Emily is only 45)
 - **D)** This is the combined family amount, not Emily's individual limit`
   },
   {
@@ -1716,20 +1716,20 @@ Wait—rereading the question: "what is Mary's maximum spousal benefit?" The max
     subtopic: 'Earnings Test',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Janet, 63, claims Social Security with a monthly benefit of $1,800. She continues working and earns $62,000 in 2024. The earnings limit is $22,320. How much will her annual benefits be reduced?`,
+    question: `Janet, 63, claims Social Security with a monthly benefit of $1,800. She continues working and earns $62,000 in 2026. The earnings limit is $23,400. How much will her annual benefits be reduced?`,
     options: [
-      'A) $19,840',
-      'C) $39,680',
+      'A) $19,300',
+      'C) $38,600',
       'B) $21,600',
       "D) $0—earnings test doesn't apply after age 62",
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: A ($19,840)**
+    explanation: `**Correct Answer: A ($19,300)**
 
 **Earnings Test Calculation (before FRA):**
-- Earnings over limit: $62,000 - $22,320 = $39,680
+- Earnings over limit: $62,000 - $23,400 = $38,600
 - Reduction: $1 for every $2 over limit
-- Annual reduction: $39,680 ÷ 2 = $19,840
+- Annual reduction: $38,600 ÷ 2 = $19,300
 
 **Why other answers are wrong:**
 - **B)** This is her full annual benefit, not the reduction
@@ -1833,7 +1833,7 @@ New comparability plans:
     subtopic: 'Recharacterization',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Lisa made a $7,000 Roth IRA contribution in January 2024. In September 2024, her income exceeds the Roth limit. What is her BEST option?`,
+    question: `Lisa made a $7,500 Roth IRA contribution in January 2026. In September 2026, her income exceeds the Roth limit. What is her BEST option?`,
     options: [
       'C) Withdraw the contribution and earnings before year-end',
       'B) Recharacterize the contribution to a Traditional IRA',
@@ -1863,10 +1863,10 @@ Recharacterization allows:
     subtopic: 'Excess Contributions',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: `Tom, age 48, contributed $8,000 to his Traditional IRA in 2024 (limit $7,000). He discovers this error in April 2025 before filing his tax return. What should he do?`,
+    question: `Tom, age 48, contributed $8,500 to his Traditional IRA in 2026 (limit $7,500). He discovers this error in April 2027 before filing his tax return. What should he do?`,
     options: [
       'B) Withdraw $1,000 plus attributable earnings before filing deadline',
-      'C) Apply the excess to his 2025 contribution',
+      'C) Apply the excess to his 2027 contribution',
       'A) File Form 8606 to report the nondeductible portion',
       'D) Nothing—the 6% penalty is minimal',
     ],
@@ -1876,7 +1876,7 @@ Recharacterization allows:
 To avoid the 6% excess contribution penalty:
 - Withdraw the excess ($1,000) PLUS earnings attributable
 - Must be done by tax filing deadline (including extensions)
-- Earnings will be taxable in 2024 plus 10% penalty if under 59½
+- Earnings will be taxable in 2026 plus 10% penalty if under 59½
 
 **Why other answers are wrong:**
 - **A)** Form 8606 is for nondeductible contributions, not fixing excess
@@ -2025,7 +2025,7 @@ This sequence maximizes tax-advantaged growth and manages bracket filling.
     explanation: `**Correct Answer: A**
 
 QCD Benefits:
-- Up to $105,000 annually (2024)
+- Up to $108,000 annually (2026)
 - Counts toward Required Minimum Distribution
 - EXCLUDED from gross income entirely
 - Better than deducting—reduces AGI, not just taxable income
@@ -2047,7 +2047,7 @@ QCD Benefits:
     question: `Which statement about SIMPLE IRA plans is CORRECT?`,
     options: [
       'C) Rollovers to Traditional IRAs are permitted after 1 year',
-      'B) Employees can contribute up to $23,000 in 2024',
+      'B) Employees can contribute up to $24,500 in 2026',
       'A) The employer may choose between a 2% non-elective or 3% match contribution',
       'D) SIMPLE IRAs are available to employers with up to 500 employees',
     ],
@@ -2059,7 +2059,7 @@ SIMPLE IRA Employer Options:
 - **2% Non-elective**: 2% contribution for all eligible employees regardless of deferral
 
 **Why other answers are wrong:**
-- **B)** SIMPLE limit is $16,000 (2024), not $23,000
+- **B)** SIMPLE limit is $17,000 (2026), not $24,500
 - **C)** 2-year rule for rollovers without penalty, not 1 year
 - **D)** SIMPLE is for employers with 100 or fewer employees`
   },
@@ -2083,7 +2083,7 @@ SIMPLE IRA Employer Options:
     explanation: `**Correct Answer: B (SEP-IRA)**
 
 SEP-IRA advantages for self-employed:
-- Contributions up to 25% of net SE income (max $69,000)
+- Contributions up to 25% of net SE income (max $71,500)
 - Minimal paperwork—no annual Form 5500
 - Deadline: Tax return due date plus extensions
 - No employee contributions to manage
@@ -2091,7 +2091,7 @@ SEP-IRA advantages for self-employed:
 **Why other answers are wrong:**
 - **A)** Defined benefit is complex and expensive to administer
 - **C)** 401(k) requires more administration (Form 5500)
-- **D)** SIMPLE has lower limits ($16,000 + 3% = less than SEP potential)`
+- **D)** SIMPLE has lower limits ($17,000 + 3% = less than SEP potential)`
   },
   {
     id: 'cfp-ret-061',
@@ -2257,24 +2257,24 @@ With $60,000 combined income (well above $44,000):
     subtopic: 'Highly Compensated Employees',
     difficulty: 'medium',
     skillLevel: 'Remembering',
-    question: `For 2024 401(k) testing purposes, an employee is considered a Highly Compensated Employee (HCE) if they:`,
+    question: `For 2026 401(k) testing purposes, an employee is considered a Highly Compensated Employee (HCE) if they:`,
     options: [
       'A) Own more than 1% of the company regardless of compensation',
       'C) Are in the top 10% of employees by tenure',
-      'B) Earned more than $150,000 in the prior year',
-      'D) Earned more than $155,000 in the prior year',
+      'B) Earned more than $155,000 in the prior year',
+      'D) Earned more than $160,000 in the prior year',
     ],
     correctAnswer: 3,
-    explanation: `**Correct Answer: D ($155,000 for 2024)**
+    explanation: `**Correct Answer: D ($160,000 for 2026)**
 
 HCE Definition:
 - 5% owner at any time during current or prior year, OR
-- Compensation > $155,000 in prior year (2024 threshold)
+- Compensation > $160,000 in prior year (2026 threshold)
 - Employer may elect top 20% by compensation
 
 **Why other answers are wrong:**
 - **A)** Must be 5% owner, not 1%
-- **B)** $150,000 was the 2023 threshold
+- **B)** $155,000 was the 2024 threshold
 - **C)** Tenure is not an HCE factor`
   },
   {
@@ -2286,18 +2286,18 @@ HCE Definition:
     subtopic: 'Spousal IRA',
     difficulty: 'easy',
     skillLevel: 'Remembering',
-    question: `Tom earns $120,000 and his wife Sarah has no earned income. What is the maximum combined IRA contribution they can make for 2024?`,
+    question: `Tom earns $120,000 and his wife Sarah has no earned income. What is the maximum combined IRA contribution they can make for 2026?`,
     options: [
-      'A) $7,000 (Tom only)',
-      'C) $8,000 (Tom only, with catch-up)',
-      'B) $14,000 ($7,000 each)',
-      'D) $7,000 (shared between them)',
+      'A) $7,500 (Tom only)',
+      'C) $8,500 (Tom only, with catch-up)',
+      'B) $15,000 ($7,500 each)',
+      'D) $7,500 (shared between them)',
     ],
     correctAnswer: 2,
-    explanation: `**Correct Answer: B ($14,000)**
+    explanation: `**Correct Answer: B ($15,000)**
 
 Spousal IRA Rules:
-- Non-working spouse can contribute up to $7,000
+- Non-working spouse can contribute up to $7,500
 - Working spouse's income covers both contributions
 - Contributions must be to SEPARATE accounts
 - Same rules for deductibility apply
@@ -2377,23 +2377,23 @@ SECURE 2.0 Act Changes (2023):
     subtopic: 'Solo 401(k)',
     difficulty: 'hard',
     skillLevel: 'Analysis',
-    question: `Dr. Patel is a self-employed consultant with $300,000 net self-employment income. She is 52 years old. What is her maximum Solo 401(k) contribution for 2024?`,
+    question: `Dr. Patel is a self-employed consultant with $300,000 net self-employment income. She is 52 years old. What is her maximum Solo 401(k) contribution for 2026?`,
     options: [
-      'C) $69,000',
-      'B) $30,500',
-      'A) $23,000',
-      'D) $76,500',
+      'C) $71,500',
+      'B) $32,000',
+      'A) $24,500',
+      'D) $79,000',
     ],
     correctAnswer: 3,
-    explanation: `**Correct Answer: D ($76,500)**
+    explanation: `**Correct Answer: D ($79,000)**
 
 **Solo 401(k) Calculation:**
 1. SE income after SE tax deduction: ~$278,535
-2. Employee deferral: $23,000 + $7,500 catch-up = $30,500
-3. Employer contribution: 25% of $278,535 = ~$69,634 (capped at $46,000)
-4. Total: $30,500 + $46,000 = $76,500
+2. Employee deferral: $24,500 + $7,500 catch-up = $32,000
+3. Employer contribution: 25% of $278,535 = ~$69,634 (capped at $47,000)
+4. Total: $32,000 + $47,000 = $79,000
 
-Maximum total annual addition with catch-up = $76,500
+Maximum total annual addition with catch-up = $79,000
 
 **Why other answers are wrong:**
 - **A)** Employee deferral only without catch-up

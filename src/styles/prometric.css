@@ -488,6 +488,12 @@
   background: #e0e0ff;
 }
 
+.prometric-calc-btn.clear {
+  grid-column: span 4;
+  background: #ffcccc;
+  color: #cc0000;
+}
+
 /* ======================================
    STATUS BAR
    ====================================== */

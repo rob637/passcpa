@@ -141,7 +141,7 @@ export const CFP_RISK_BATCH7_QUESTIONS: Question[] = [
       'C) Be under age 55',
     ],
     correctAnswer: 2,
-    explanation: 'HSA eligibility: must have HDHP (2024: individual deductible ≥$1,600, family ≥$3,200), cannot have other health coverage (including Medicare), cannot be claimed as dependent. Common disqualifiers: spouse\'s FSA, enrollment in Medicare. Once eligible, can contribute (2024: $4,150 individual, $8,300 family, plus $1,000 catch-up at 55+).'
+    explanation: 'HSA eligibility: must have HDHP (2026: individual deductible ≥$1,650, family ≥$3,300), cannot have other health coverage (including Medicare), cannot be claimed as dependent. Common disqualifiers: spouse\'s FSA, enrollment in Medicare. Once eligible, can contribute (2026: $4,450 individual, $8,900 family, plus $1,000 catch-up at 55+).'
   },
   {
     id: 'cfp-ris-b7-008',

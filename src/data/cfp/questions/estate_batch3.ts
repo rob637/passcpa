@@ -154,11 +154,11 @@ export const CFP_ESTATE_BATCH3_QUESTIONS: Question[] = [
     options: [
       'A) $50,000',
       'B) $100,000',
-      'C) $105,000',
+      'C) $108,000',
       'D) Unlimited'
     ],
     correctAnswer: 2,
-    explanation: 'The annual QCD limit is $105,000 per person for 2024 (indexed for inflation). SECURE 2.0 added a one-time $53,000 transfer to certain split-interest entities (CRATs, CRUTs, charitable gift annuities), also indexed. For 2026 the base limit is approximately $108,000.'
+    explanation: 'The annual QCD limit is $108,000 per person for 2026 (indexed for inflation from $105,000 in 2024). SECURE 2.0 added a one-time $54,000 transfer to certain split-interest entities (CRATs, CRUTs, charitable gift annuities), also indexed.'
   },
   {
     id: 'cfp-est-b3-009',

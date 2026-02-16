@@ -43,14 +43,15 @@ vi.mock('firebase/firestore', () => ({
     exists: () => false,
     data: () => ({}),
   }),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
-vi.mock('../../data/cpa/flashcards', () => ({
-  getFlashcardsBySection: vi.fn(() => [
-    { id: 'card1', blueprintArea: 'Area1', type: 'definition', front: 'Q1', back: 'A1' },
-    { id: 'card2', blueprintArea: 'Area1', type: 'formula', front: 'Q2', back: 'A2' },
-    { id: 'card3', blueprintArea: 'Area2', type: 'mnemonic', front: 'Q3', back: 'A3' },
-    { id: 'card4', blueprintArea: 'Area2', type: 'question', front: 'Q4', back: 'A4' },
+vi.mock('../../services/flashcardService', () => ({
+  getFlashcardsBySection: vi.fn(async () => [
+    { id: 'card1', section: 'FAR', blueprintArea: 'Area1', type: 'definition', front: 'Q1', back: 'A1' },
+    { id: 'card2', section: 'FAR', blueprintArea: 'Area1', type: 'formula', front: 'Q2', back: 'A2' },
+    { id: 'card3', section: 'FAR', blueprintArea: 'Area2', type: 'mnemonic', front: 'Q3', back: 'A3' },
+    { id: 'card4', section: 'FAR', blueprintArea: 'Area2', type: 'question', front: 'Q4', back: 'A4' },
   ]),
 }));
 
@@ -69,7 +70,7 @@ import FlashcardSetup from '../../components/FlashcardSetup';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { getDoc } from 'firebase/firestore';
-import { getFlashcardsBySection } from '../../data/cpa/flashcards';
+import { getFlashcardsBySection } from '../../services/flashcardService';
 
 const renderComponent = () => {
   return render(
@@ -310,12 +311,12 @@ describe('FlashcardSetup', () => {
   });
 
   describe('count button selection', () => {
-    it('should default to 25 cards selected', async () => {
+    it('should default to 10 cards selected', async () => {
       renderComponent();
 
       await waitFor(() => {
-        const button25 = screen.getByRole('button', { name: /25 cards/i });
-        expect(button25).toHaveAttribute('aria-pressed', 'true');
+        const button10 = screen.getByRole('button', { name: /10 cards/i });
+        expect(button10).toHaveAttribute('aria-pressed', 'true');
       });
     });
 
@@ -347,7 +348,7 @@ describe('FlashcardSetup', () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(getFlashcardsBySection).toHaveBeenCalledWith('AUD');
+        expect(getFlashcardsBySection).toHaveBeenCalledWith('AUD', 'cpa');
       });
     });
 

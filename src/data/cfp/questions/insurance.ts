@@ -232,15 +232,15 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
   // RIS-3: Health, Disability, LTC (Questions 13-19)
   {
     id: 'cfp-ris-013',
-    question: 'Mark, age 56, is enrolled in an HDHP with family coverage. His HSA contribution limit for 2024 is:',
+    question: 'Mark, age 56, is enrolled in an HDHP with family coverage. His HSA contribution limit for 2026 is:',
     options: [
-      '$4,150',
-      '$8,300',
-      '$9,300',
-      '$5,150'
+      '$4,450',
+      '$8,900',
+      '$9,900',
+      '$5,450'
     ],
     correctAnswer: 2,
-    explanation: 'For 2024, the family HSA contribution limit is $8,300. Since Mark is age 55+, he can contribute an additional $1,000 catch-up contribution. Total = $8,300 + $1,000 = $9,300. HSAs offer triple tax benefits: deductible contributions, tax-free growth, and tax-free qualified medical withdrawals.',
+    explanation: 'For 2026, the family HSA contribution limit is $8,900. Since Mark is age 55+, he can contribute an additional $1,000 catch-up contribution. Total = $8,900 + $1,000 = $9,900. HSAs offer triple tax benefits: deductible contributions, tax-free growth, and tax-free qualified medical withdrawals.',
     courseId: 'cfp',
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',
@@ -1293,7 +1293,7 @@ export const CFP_INSURANCE_QUESTIONS: Question[] = [
       'HDHP eligible for HSA'
     ],
     correctAnswer: 3,
-    explanation: 'High-deductible health plans (HDHPs) have lowest premiums due to higher cost-sharing. Trade-off: lower premium, higher out-of-pocket. HSA eligibility provides tax advantages to offset deductible. 2024 HDHP minimum: $1,600 individual, $3,200 family.',
+    explanation: 'High-deductible health plans (HDHPs) have lowest premiums due to higher cost-sharing. Trade-off: lower premium, higher out-of-pocket. HSA eligibility provides tax advantages to offset deductible. 2026 HDHP minimum: $1,650 individual, $3,300 family.',
     courseId: 'cfp',
     section: 'CFP-RISK',
     topic: 'Risk Management & Insurance',

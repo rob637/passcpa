@@ -284,7 +284,7 @@ const MainLayout = () => {
         tabIndex={-1}
         role="main"
         aria-label="Main content"
-        className="flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8 focus:outline-none"
+        className="flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 pt-16 md:pt-8 focus:outline-none"
       >
         <PageTransition>
           <Outlet />

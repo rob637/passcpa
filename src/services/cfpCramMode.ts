@@ -88,18 +88,18 @@ export const CFP_CRAM_TOPICS: CramTopic[] = [
     priority: 'high',
     estimatedMinutes: 8,
     keyPoints: [
-      '401(k)/403(b) employee: $23,000 (2024)',
-      'Catch-up (50+): $7,500 additional',
-      'IRA: $7,000 (2024), catch-up $1,000',
-      'Total 401(k) limit: $69,000 (all sources)',
-      'SIMPLE IRA: $16,000, catch-up $3,500',
-      'SEP-IRA: 25% comp up to $69,000'
+      '401(k)/403(b) employee: $24,500 (2026)',
+      'Catch-up (50+): $7,500 additional; $11,250 if 60-63 (SECURE 2.0)',
+      'IRA: $7,500 (2026), catch-up $1,000',
+      'Total 401(k) limit: $71,500 (all sources)',
+      'SIMPLE IRA: $17,000, catch-up $3,500',
+      'SEP-IRA: 25% comp up to $71,500'
     ],
     commonMistakes: [
       'Exceeding 25% limit on SEP-IRA for self-employed',
       'Aggregation of 401(k) contributions across employers'
     ],
-    memoryTip: '23-7-69: Employee $23K, IRA $7K, total $69K'
+    memoryTip: '24.5-7.5-71.5: Employee $24.5K, IRA $7.5K, total $71.5K'
   },
   
   // TAX - 14% of exam
@@ -171,20 +171,20 @@ export const CFP_CRAM_TOPICS: CramTopic[] = [
     priority: 'critical',
     estimatedMinutes: 12,
     keyPoints: [
-      'Unified credit exemption: $13.61M (2024)',
-      'Annual exclusion: $18,000 per recipient',
-      'Gift splitting doubles to $36,000',
+      'Unified credit exemption: $7.0M (2026, TCJA sunset effective)',
+      'Annual exclusion: $19,000 per recipient',
+      'Gift splitting doubles to $38,000',
       'Unlimited marital deduction (US citizen spouse)',
       'Unlimited educational/medical (direct pay)',
       'Estate tax rate: 40% on excess',
-      'Exemption sunsets to ~$6M in 2026'
+      'Anti-clawback protects pre-2026 gifts'
     ],
     commonMistakes: [
       'Confusing annual exclusion with lifetime exemption',
-      'Not understanding sunset provisions',
+      'Not recognizing TCJA sunset impact on planning',
       'Missing direct-pay tuition exclusion'
     ],
-    memoryTip: '13.61M exemption, 18K annual, 40% rate'
+    memoryTip: '7.0M exemption, 19K annual, 40% rate'
   },
   {
     id: 'cram-est-002',
@@ -649,11 +649,11 @@ export const CFP_EXAM_DAY_REMINDERS = {
     'Wash sale = 30 days BEFORE and after'
   ],
   keyNumbers: [
-    '$13.61M estate exemption (2024)',
-    '$18,000 annual gift exclusion',
-    '$23,000 401(k) contribution limit',
-    '$7,000 IRA contribution limit',
-    '$69,000 total 401(k) limit',
+    '$7.0M estate exemption (2026, TCJA sunset)',
+    '$19,000 annual gift exclusion',
+    '$24,500 401(k) contribution limit',
+    '$7,500 IRA contribution limit',
+    '$71,500 total 401(k) limit',
     'Age 73 for RMDs',
     'Age 67 for full retirement age'
   ]

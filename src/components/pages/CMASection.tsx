@@ -62,7 +62,7 @@ export default function CMASection() {
           The requested CMA part doesn't exist.
         </p>
         <button 
-          onClick={() => navigate('/cma')}
+          onClick={() => navigate('/cma/dashboard')}
           className="btn-primary"
         >
           Back to CMA Dashboard

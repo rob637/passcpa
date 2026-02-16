@@ -14,6 +14,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-001',
     section: 'PREP',
+    courseId: 'cpa',
     title: "CPA Evolution 2026: Your Complete Roadmap",
     description: "Understand the new 3 Core + 1 Discipline structure and 30-month testing window",
     order: 1,
@@ -96,6 +97,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-002',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Anatomy of the Exam: Testlets, Timing, Scoring",
     description: "Master the exam structure, question types, and time allocation for each section",
     order: 2,
@@ -176,6 +178,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-003',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Adaptive Testing: What It Means for You",
     description: "Understand how MCQ difficulty adapts based on your performance",
     order: 3,
@@ -250,6 +253,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-004',
     section: 'PREP',
+    courseId: 'cpa',
     title: "How the CPA Exam is Scored",
     description: "Understand raw scores, scaled scores, and what 75 really means",
     order: 4,
@@ -328,6 +332,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-005',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Strategic Section Order",
     description: "Plan your optimal exam sequence: FAR first? Save your discipline for last?",
     order: 5,
@@ -401,6 +406,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-006',
     section: 'PREP',
+    courseId: 'cpa',
     title: "The 90-Second Rule: MCQ Time Management",
     description: "Master the timing discipline that separates passers from failers",
     order: 6,
@@ -470,6 +476,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-007',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Reading MCQs Effectively",
     description: "Stem first or options first? Master the reading strategy that works",
     order: 7,
@@ -543,6 +550,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-008',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Process of Elimination (POE)",
     description: "Turn 'I don't know' into 'I can figure this out' by eliminating wrong answers",
     order: 8,
@@ -618,6 +626,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-009',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Recognizing Distractor Patterns",
     description: "Learn how test writers craft wrong answers and avoid their traps",
     order: 9,
@@ -687,6 +696,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-010',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Calculation MCQs: Set Up First",
     description: "Avoid calculation traps by setting up the problem before computing",
     order: 10,
@@ -745,6 +755,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-011',
     section: 'PREP',
+    courseId: 'cpa',
     title: 'The "I Have No Idea" Protocol',
     description: "What to do when you're completely stumped on an MCQ",
     order: 11,
@@ -816,6 +827,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-012',
     section: 'PREP',
+    courseId: 'cpa',
     title: "TBS Overview: Types & Weighting",
     description: "Understand Task-Based Simulations and their heavy weight in your score",
     order: 12,
@@ -883,6 +895,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-013',
     section: 'PREP',
+    courseId: 'cpa',
     title: "TBS Time Management: 15-Minute Rule",
     description: "Budget your simulation time to maximize points across all TBS",
     order: 13,
@@ -947,6 +960,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-014',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Research TBS: Guaranteed Points",
     description: "Master the research simulation for nearly free points on exam day",
     order: 14,
@@ -1013,6 +1027,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-015',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Document Review TBS",
     description: "Master the art of extracting data from complex exhibit packages",
     order: 15,
@@ -1078,6 +1093,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-016',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Journal Entry TBS",
     description: "Approach journal entry simulations with confidence and precision",
     order: 16,
@@ -1147,6 +1163,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-017',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Spreadsheet TBS: Excel for CPAs",
     description: "Leverage spreadsheet tools in TBS for faster, accurate calculations",
     order: 17,
@@ -1214,6 +1231,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-018',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Written Communication: What Graders Want",
     description: "Understand the rubric and maximize your WC scores",
     order: 18,
@@ -1277,6 +1295,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-019',
     section: 'PREP',
+    courseId: 'cpa',
     title: "IRAC Method for Tax Memos",
     description: "The proven legal/tax writing framework that graders love",
     order: 19,
@@ -1329,6 +1348,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-020',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Common WC Mistakes",
     description: "Avoid these errors that cost candidates easy points",
     order: 20,
@@ -1389,6 +1409,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-021',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Building Your Study Schedule",
     description: "Create a realistic, effective study plan for all four sections",
     order: 21,
@@ -1452,6 +1473,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-022',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Active vs Passive Studying",
     description: "Why practice beats reading and how to study effectively",
     order: 22,
@@ -1510,6 +1532,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-023',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Final Review: Last 2 Weeks",
     description: "Maximize your score in the critical final stretch before exam day",
     order: 23,
@@ -1575,6 +1598,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-024',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Test Day Protocol",
     description: "Everything you need to know from morning routine to walking out",
     order: 24,
@@ -1652,6 +1676,7 @@ export const prepLessons: Lesson[] = [
   {
     id: 'PREP-025',
     section: 'PREP',
+    courseId: 'cpa',
     title: "Managing Test Anxiety",
     description: "Mental strategies to stay calm and perform at your best",
     order: 25,

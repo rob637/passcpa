@@ -52,8 +52,8 @@ export interface TopicArea {
 export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
   id: 'cfp-comprehensive-guide',
   title: 'CFP Certification Examination Study Guide',
-  version: '2024',
-  lastUpdated: '2024-12-01',
+  version: '2026',
+  lastUpdated: '2026-02-01',
 
   examFormat: {
     questions: 170,
@@ -192,8 +192,8 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
           name: 'Health Insurance',
           description: 'Medical coverage and HSA planning',
           keyPoints: [
-            'HDHP requirements: Min deductible $1,600 single, $3,200 family (2024)',
-            'HSA contributions: $4,150 single, $8,300 family (2024), $1,000 55+ catchup',
+            'HDHP requirements: Min deductible $1,650 single, $3,300 family (2026)',
+            'HSA contributions: $4,450 single, $8,900 family (2026), $1,000 55+ catchup',
             'HSA triple tax advantage: Deduction, tax-free growth, tax-free for medical',
             'Medicare: Part A (hospital), B (medical), C (Advantage), D (drugs)',
             'Medicare eligibility: Age 65 or disabled/ESRD',
@@ -374,9 +374,9 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
           keyPoints: [
             'Gross Income - Adjustments = AGI',
             'AGI - Deductions (Standard/Itemized) = Taxable Income',
-            'Tax brackets 2024: 10%, 12%, 22%, 24%, 32%, 35%, 37%',
+            'Tax brackets 2026: 10%, 12%, 22%, 24%, 32%, 35%, 37%',
             'Filing status: Single, MFJ, MFS, HOH, QW',
-            'Standard deduction 2024: $14,600 single, $29,200 MFJ',
+            'Standard deduction 2026: $15,350 single, $30,700 MFJ',
             'AMT: Alternative minimum tax for preference items',
             'NIIT: 3.8% on investment income over $200K/$250K',
           ],
@@ -406,12 +406,12 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
           keyPoints: [
             'Traditional IRA: Deductible contribution, taxable withdrawal',
             'Roth IRA: After-tax contribution, tax-free withdrawal',
-            '401(k) 2024: $23,000 limit, $7,500 catch-up if 50+',
-            'IRA 2024: $7,000 limit, $1,000 catch-up if 50+',
+            '401(k) 2026: $24,500 limit, $7,500 catch-up if 50+',
+            'IRA 2026: $7,500 limit, $1,000 catch-up if 50+',
             'Backdoor Roth: Nondeductible IRA → Roth conversion',
             '529 Plan: State tax deduction (varies), tax-free for education',
             'Coverdell ESA: $2,000/year limit, K-12 and college',
-            'ABLE accounts: Disability savings, $18,000/year',
+            'ABLE accounts: Disability savings, $19,000/year',
           ],
         },
         {
@@ -473,7 +473,7 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
             'Top-heavy rules: >60% in key employees, special contributions',
             'Safe harbor 401(k): Avoid ADP/ACP testing',
             'SIMPLE IRA: <100 employees, 3% match or 2% nonelective',
-            'SEP IRA: Up to 25% compensation, $69,000 max (2024)',
+            'SEP IRA: Up to 25% compensation, $71,500 max (2026)',
           ],
           mustKnow: [
             'Contribution limits for each plan type',
@@ -507,7 +507,7 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
             'File and suspend: Ended 2016, but survivor strategies remain',
             'Taxation: 0%, 50%, or 85% taxable based on provisional income',
             'Provisional income: AGI + tax-exempt interest + 50% SS benefits',
-            'Earnings test: Before FRA, $1 withheld per $2 earned over $22,320',
+            'Earnings test: Before FRA, $1 withheld per $2 earned over $23,400',
           ],
           mustKnow: [
             'FRA by birth year ranges',
@@ -600,15 +600,15 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
           name: 'Estate and Gift Tax',
           description: 'Transfer tax system',
           keyPoints: [
-            'Unified credit: $13.61 million exemption (2024)',
-            'Annual exclusion: $18,000 per donee (2024)',
+            'Unified credit: $7.0 million exemption (2026 - TCJA sunset)',
+            'Annual exclusion: $19,000 per donee (2026)',
             'Gift splitting: Married couples can double gifts',
             'Educational/medical: Unlimited if paid directly',
             'Estate tax rate: 40% on taxable estate over exemption',
             'Gross estate: FMV of all assets, including life insurance',
             'Marital deduction: Unlimited for US citizen spouse',
             'Step-up in basis: Inherited assets receive date-of-death FMV',
-            'GSTT: Generation-skipping transfer tax, separate $13.61M exemption',
+            'GSTT: Generation-skipping transfer tax, separate $7.0M exemption',
           ],
         },
         {

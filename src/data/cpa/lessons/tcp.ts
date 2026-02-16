@@ -4,6 +4,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-001',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Income Timing Strategies",
     description: "Master income recognition timing techniques to minimize tax liability across periods",
     order: 1,
@@ -129,6 +130,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-002',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Income Shifting Strategies",
     description: "Implement tax-efficient income shifting among family members and entities",
     order: 2,
@@ -261,6 +263,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-003',
     section: 'TCP',
+    courseId: 'cpa',
     title: "🆕 H.R. 1: New Income Exclusions",
     description: "Navigate the Tax Cuts and Jobs Act income exclusion changes and planning opportunities",
     order: 3,
@@ -389,6 +392,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-004',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Deduction Timing & Bunching",
     description: "Optimize deduction timing through strategic bunching and year-end planning",
     order: 4,
@@ -522,6 +526,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-005',
     section: 'TCP',
+    courseId: 'cpa',
     title: "🆕 H.R. 1: Updated Deduction Limits",
     description: "Master the TCJA deduction limit changes and planning strategies before sunset",
     order: 5,
@@ -660,6 +665,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-006',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Capital Gains Strategies",
     description: "Optimize capital gains recognition through timing, harvesting, and rate management",
     order: 6,
@@ -795,6 +801,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-007',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Qualified Opportunity Zones",
     description: "Leverage Qualified Opportunity Zone investments for capital gains deferral and exclusion",
     order: 7,
@@ -928,6 +935,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-008',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Net Investment Income Tax Planning",
     description: "Minimize the 3.8% Net Investment Income Tax through strategic income classification and timing",
     order: 8,
@@ -1062,6 +1070,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-009',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Retirement Planning: Roth vs Traditional",
     description: "Analyze Roth versus Traditional retirement account decisions for optimal tax efficiency",
     order: 9,
@@ -1206,6 +1215,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-010',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Charitable Giving Strategies",
     description: "Maximize tax benefits through strategic charitable contribution planning",
     order: 10,
@@ -1343,6 +1353,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-001',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Entity Selection: Comprehensive Comparison",
     description: "Master entity selection analysis considering tax, liability, and operational factors",
     order: 11,
@@ -1488,6 +1499,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-002',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Check-the-Box Regulations",
     description: "Navigate entity classification elections under the check-the-box regulations",
     order: 12,
@@ -1634,6 +1646,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-003',
     section: 'TCP',
+    courseId: 'cpa',
     title: "State Tax Considerations: Nexus",
     description: "Understand state tax nexus rules and multistate taxation triggers",
     order: 13,
@@ -1770,6 +1783,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-004',
     section: 'TCP',
+    courseId: 'cpa',
     title: "State Apportionment Formulas",
     description: "Apply state income apportionment formulas to allocate multistate business income",
     order: 14,
@@ -1908,6 +1922,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-005',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Reasonable Compensation Planning",
     description: "Navigate reasonable compensation requirements and optimize owner compensation structures",
     order: 15,
@@ -2047,6 +2062,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-006',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Retirement Plan Selection",
     description: "Choose the optimal employer-sponsored retirement plan based on business and owner objectives",
     order: 16,
@@ -2191,6 +2207,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-007',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Fringe Benefits Tax Planning",
     description: "Maximize tax-advantaged fringe benefits for owners and employees",
     order: 17,
@@ -2342,6 +2359,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-008',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Section 199A Planning Strategies",
     description: "Maximize the Qualified Business Income deduction through strategic planning",
     order: 18,
@@ -2473,6 +2491,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-009',
     section: 'TCP',
+    courseId: 'cpa',
     title: "International Tax: GILTI",
     description: "Understand Global Intangible Low-Taxed Income rules and planning strategies",
     order: 19,
@@ -2596,6 +2615,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-010',
     section: 'TCP',
+    courseId: 'cpa',
     title: "International Tax: FDII & BEAT",
     description: "Navigate Foreign-Derived Intangible Income and Base Erosion Anti-Abuse Tax rules",
     order: 20,
@@ -2735,6 +2755,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-011',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Transfer Pricing Concepts",
     description: "Understand arm's length principles and transfer pricing rules for related party transactions",
     order: 21,
@@ -2869,6 +2890,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-012',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Business Succession Planning",
     description: "Design tax-efficient business succession and transition strategies",
     order: 22,
@@ -3016,6 +3038,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-013',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Equity Compensation Planning",
     description: "Navigate stock options, restricted stock, and other equity compensation arrangements",
     order: 23,
@@ -3155,6 +3178,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-014',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Partnership Advanced Planning",
     description: "Master complex partnership tax planning including special allocations and basis management",
     order: 24,
@@ -3294,6 +3318,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-001',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Installment Sale Planning",
     description: "Optimize tax deferral through properly structured installment sales",
     order: 25,
@@ -3418,6 +3443,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-002',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Related Party Transactions",
     description: "Navigate the complex tax rules governing transactions between related parties",
     order: 26,
@@ -3533,6 +3559,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-003',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Like-Kind Exchange Planning: Advanced",
     description: "Master complex like-kind exchange structures including reverse and improvement exchanges",
     order: 27,
@@ -3664,6 +3691,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-004',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Stock vs Asset Sales",
     description: "Analyze the tax implications of structuring business sales as stock or asset transactions",
     order: 28,
@@ -3795,6 +3823,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-005',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Section 338 Elections",
     description: "Apply Section 338 elections to optimize the tax treatment of corporate acquisitions",
     order: 29,
@@ -3922,6 +3951,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-006',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Corporate Liquidations Planning",
     description: "Understand the tax consequences of complete and partial corporate liquidations",
     order: 30,
@@ -4053,6 +4083,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-IV-001',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Gift Tax: Annual Exclusion & Lifetime",
     description: "Master the gift tax annual exclusion and lifetime exemption for tax-efficient wealth transfers",
     order: 31,
@@ -4179,6 +4210,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-IV-002',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Gift-Splitting Strategies",
     description: "Maximize gift tax benefits through proper gift-splitting elections between spouses",
     order: 32,
@@ -4301,6 +4333,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-IV-003',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Valuation Discounts: FLPs & LLCs",
     description: "Apply valuation discounts using family limited partnerships and LLCs for estate planning",
     order: 33,
@@ -4426,6 +4459,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-IV-004',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Estate Tax: Valuation & Deductions",
     description: "Master estate tax valuation rules and available deductions to minimize estate tax liability",
     order: 34,
@@ -4566,6 +4600,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-IV-005',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Estate Tax: Portability Election",
     description: "Leverage portability to transfer unused estate tax exemption between spouses",
     order: 35,
@@ -4691,6 +4726,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-IV-006',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Generation-Skipping Transfer Tax",
     description: "Navigate the complex GST tax rules for transfers to grandchildren and beyond",
     order: 36,
@@ -4822,6 +4858,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-110',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Check-the-Box Entity Classification",
     description: "Master elective entity classification rules for tax purposes",
     order: 37,
@@ -4924,6 +4961,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-010',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Section 338 Elections",
     description: "Understand deemed asset sale treatment in stock acquisitions",
     order: 38,
@@ -5007,6 +5045,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-111',
     section: 'TCP',
+    courseId: 'cpa',
     title: "International Tax Basics for Tax Planning",
     description: "Understand fundamental international tax concepts for planning",
     order: 39,
@@ -5109,6 +5148,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-011',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Alternative Minimum Tax (AMT) for Corporations",
     description: "Master the corporate AMT after TCJA and IRA changes",
     order: 65,
@@ -5179,6 +5219,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-012',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Retirement Plan Distributions & Taxation",
     description: "Understand taxation of qualified plan and IRA distributions",
     order: 66,
@@ -5252,6 +5293,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-013',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Tax Research Methodology",
     description: "Learn systematic approaches to researching tax questions",
     order: 67,
@@ -5323,6 +5365,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-014',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Tax Penalties and Interest",
     description: "Understand civil and criminal tax penalties",
     order: 68,
@@ -5404,6 +5447,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-015',
     section: 'TCP',
+    courseId: 'cpa',
     title: "State and Local Tax (SALT) Considerations",
     description: "Understand nexus, apportionment, and multistate planning",
     order: 69,
@@ -5474,6 +5518,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-016',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Estimated Tax Payments",
     description: "Master estimated tax rules for individuals and businesses",
     order: 70,
@@ -5544,6 +5589,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-017',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Net Operating Loss (NOL) Rules",
     description: "Understand NOL carryforward rules and limitations",
     order: 71,
@@ -5614,6 +5660,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-018',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Accounting Method Changes",
     description: "Learn how to change accounting methods for tax purposes",
     order: 72,
@@ -5683,6 +5730,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-019',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Wealth Transfer Strategies",
     description: "Understand estate and gift planning techniques",
     order: 73,
@@ -5759,6 +5807,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-III-020',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Compensation Planning Strategies",
     description: "Optimize tax treatment of employee compensation",
     order: 74,
@@ -5834,6 +5883,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-015',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Partnership Taxation Fundamentals",
     description: "Master pass-through taxation and basis rules",
     order: 75,
@@ -5905,6 +5955,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-016',
     section: 'TCP',
+    courseId: 'cpa',
     title: "S Corporation Taxation",
     description: "Understand S corp requirements and taxation rules",
     order: 76,
@@ -5975,6 +6026,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-II-017',
     section: 'TCP',
+    courseId: 'cpa',
     title: "C Corporation Taxation Overview",
     description: "Understand corporate tax calculation and distributions",
     order: 77,
@@ -6046,6 +6098,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-110',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Tax Credits: Business and Individual",
     description: "Understand major tax credits and their application",
     order: 78,
@@ -6118,6 +6171,7 @@ export const tcpLessons: Lesson[] = [
   {
     id: 'TCP-I-011',
     section: 'TCP',
+    courseId: 'cpa',
     title: "Qualified Business Income Deduction (Section 199A)",
     description: "Master the 20% pass-through deduction rules",
     order: 79,

@@ -589,69 +589,73 @@ const You: React.FC = () => {
               <div
                 key={examId}
                 className={clsx(
-                  'flex items-center justify-between p-3 rounded-lg border transition-colors',
+                  'p-3 rounded-lg border transition-colors',
                   examId === courseId
                     ? 'border-primary-200 dark:border-primary-800 bg-primary-50/50 dark:bg-primary-900/10'
                     : 'border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50'
                 )}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-sm font-bold text-slate-700 dark:text-slate-300 w-10">{examName}</span>
+                {/* Top row: exam badge + status + current indicator */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-sm font-bold text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-600 px-2 py-0.5 rounded">{examName}</span>
+                    {examId === courseId && (
+                      <span className="text-[10px] font-medium text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900/30 px-1.5 py-0.5 rounded">Current</span>
+                    )}
+                  </div>
                   <div>
                     {access.isPaid ? (
-                      <>
-                        <span className={`flex items-center gap-1 text-xs font-semibold ${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'}`}>
-                          <CheckCircle className="w-3.5 h-3.5" />
-                          {access.cancelAtPeriodEnd
-                            ? `Cancels${access.currentPeriodEnd ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}` : ''}`
-                            : 'Subscribed'
-                          }
-                        </span>
-                        {!access.cancelAtPeriodEnd && access.currentPeriodEnd && (
-                          <span className="text-[10px] text-slate-500 dark:text-slate-400">
-                            Through {new Date(access.currentPeriodEnd).toLocaleDateString()}
-                          </span>
-                        )}
-                      </>
+                      <span className={`flex items-center gap-1 text-xs font-semibold ${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'}`}>
+                        <CheckCircle className="w-3.5 h-3.5" />
+                        {access.cancelAtPeriodEnd
+                          ? 'Cancels'
+                          : 'Subscribed'
+                        }
+                      </span>
                     ) : access.isTrialing ? (
-                      <>
-                        <span className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
-                          <Clock className="w-3.5 h-3.5" />
-                          Trial: {access.trialDaysRemaining} days remaining
-                        </span>
-                        {access.trialEndDate && (
-                          <span className="text-[10px] text-slate-500 dark:text-slate-400">
-                            Ends {access.trialEndDate.toLocaleDateString()}
-                          </span>
-                        )}
-                      </>
+                      <span className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                        <Clock className="w-3.5 h-3.5" />
+                        {access.trialDaysRemaining}d left
+                      </span>
                     ) : access.trialExpired ? (
                       <span className="flex items-center gap-1 text-xs font-semibold text-red-500 dark:text-red-400">
                         <Clock className="w-3.5 h-3.5" />
-                        Trial expired
+                        Expired
                       </span>
                     ) : access.canStartTrial ? (
                       <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                         <Play className="w-3.5 h-3.5" />
-                        14-day free trial available
+                        Free trial
                       </span>
                     ) : null}
                   </div>
                 </div>
 
-                {/* Action button — show subscribe for trialing, expired, or no-trial users */}
+                {/* Detail line */}
+                <div className="mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                  {access.isPaid && !access.cancelAtPeriodEnd && access.currentPeriodEnd
+                    ? `Through ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
+                    : access.isPaid && access.cancelAtPeriodEnd && access.currentPeriodEnd
+                    ? `Ends ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
+                    : access.isTrialing && access.trialEndDate
+                    ? `Trial ends ${access.trialEndDate.toLocaleDateString()}`
+                    : null
+                  }
+                </div>
+
+                {/* Subscribe buttons — full width row below status */}
                 {!access.isPaid && !access.canStartTrial && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 mt-2.5">
                     <Link
                       to={`/start-checkout?course=${examId}&interval=annual`}
-                      className="text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center gap-1"
+                      className="flex-1 text-center text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center justify-center gap-1"
                     >
                       {isFounder && <Sparkles className="w-3 h-3" />}
                       ${isFounder ? pricing.founderAnnual : pricing.annual}/yr
                     </Link>
                     <Link
                       to={`/start-checkout?course=${examId}&interval=monthly`}
-                      className="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                      className="text-center text-xs font-medium px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
                     >
                       ${isFounder ? pricing.founderMonthly : pricing.monthly}/mo
                     </Link>

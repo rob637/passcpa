@@ -451,7 +451,7 @@ const CMACBQSimulator: React.FC = () => {
         {/* Header */}
         <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-6 pb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Link to="/cma">
+            <Link to="/cma/dashboard">
               <Button variant="ghost" size="icon" className="hover:bg-white/10">
                 <ArrowLeft className="w-5 h-5" />
               </Button>

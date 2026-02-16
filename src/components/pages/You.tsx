@@ -23,7 +23,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
-import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
+import { getExamDate, getCurrentSection, createExamDateUpdate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -120,7 +120,7 @@ const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number; 
 };
 
 const You: React.FC = () => {
-  const { user, userProfile, signOut } = useAuth();
+  const { user, userProfile, updateUserProfile, signOut } = useAuth();
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId, course } = useCourse();
   const { getExamAccess, isPremium } = useSubscription();
@@ -149,6 +149,7 @@ const You: React.FC = () => {
   const [_topicPerformance, setTopicPerformance] = useState<{ id: string; topic: string; accuracy: number; questions: number }[]>([]);
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
+  const [isSavingExamDate, setIsSavingExamDate] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [_loading, setLoading] = useState(true);
 
@@ -162,6 +163,24 @@ const You: React.FC = () => {
   // Calculate days until exam - use getExamDate helper for multi-course support
   const examDate = getExamDate(userProfile, examSection, courseId);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
+
+  // Handle inline exam date save
+  const handleExamDateChange = async (dateStr: string) => {
+    if (!dateStr) return;
+    setIsSavingExamDate(true);
+    try {
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const localDate = new Date(year, month - 1, day);
+      if (isNaN(localDate.getTime())) return;
+      const examDateUpdate = createExamDateUpdate(userProfile, examSection, localDate, courseId);
+      await updateUserProfile(examDateUpdate);
+      logger.info('Exam date saved from You page:', { courseId, date: dateStr });
+    } catch (err) {
+      logger.error('Failed to save exam date:', err);
+    } finally {
+      setIsSavingExamDate(false);
+    }
+  };
 
   // Load data
   useEffect(() => {
@@ -422,6 +441,28 @@ const You: React.FC = () => {
           </div>
         </div>
 
+        {/* Exam Date - inline editor */}
+        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-primary-500" />
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Target Exam Date</span>
+            </div>
+            {isSavingExamDate && (
+              <span className="text-xs text-primary-500">Saving...</span>
+            )}
+          </div>
+          <div className="mt-2">
+            <input
+              type="date"
+              value={examDate ? format(examDate, 'yyyy-MM-dd') : ''}
+              onChange={(e) => handleExamDateChange(e.target.value)}
+              min={format(new Date(), 'yyyy-MM-dd')}
+              className="w-full px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:[color-scheme:dark]"
+            />
+          </div>
+        </div>
+
         {/* Quick Stats - 2 rows showing key metrics */}
         <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
           {/* Row 1: Streak, MCQs, TBS */}
@@ -658,7 +699,7 @@ const You: React.FC = () => {
         )}
 
         <Link
-          to="/settings"
+          to="/settings?tab=study"
           className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
         >
           <div className="flex items-center gap-3">

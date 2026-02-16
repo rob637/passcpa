@@ -268,7 +268,7 @@ Today we're officially launching paid plans. Here's what this means for you:
 
 ✅ **You have 14 more days of full access** — no interruption
 ✅ **You're eligible for Founding Member pricing** — save over 40% for 2 years
-✅ **Lock in $249/year** (instead of $449) for CPA — rate guaranteed through August 2028
+✅ **Lock in $249/year** (instead of $449) for CPA — rate guaranteed through April 2028
 
 Your trial ends: [DATE]
 

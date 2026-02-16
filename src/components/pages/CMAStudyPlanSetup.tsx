@@ -190,7 +190,7 @@ const CMAStudyPlanSetup: React.FC = () => {
       };
       localStorage.setItem('cma_study_plan', JSON.stringify(planWithFormat));
       localStorage.setItem('cma_exam_format', examFormat || (formatRequirement === 'cbq-only' ? 'cbq' : 'essay'));
-      navigate('/cma');
+      navigate('/cma/dashboard');
     }
   };
 

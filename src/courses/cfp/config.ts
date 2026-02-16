@@ -132,11 +132,21 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
         name: 'Property & Casualty', 
         weight: 'Medium', 
         topics: [
-          'Homeowners insurance (HO-3, HO-5, etc.)',
+          'Homeowners insurance basics',
           'Auto insurance coverage',
-          'Umbrella/excess liability policies',
           'Business liability insurance',
           'Risk management techniques',
+        ] 
+      },
+      { 
+        id: 'RISK-4', 
+        name: 'Property & Liability Insurance', 
+        weight: 'Medium', 
+        topics: [
+          'Homeowners policy forms (HO-3, HO-5)',
+          'Auto insurance details',
+          'Umbrella/excess liability policies',
+          'Coinsurance and valuation',
         ] 
       },
     ]

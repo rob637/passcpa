@@ -28,6 +28,7 @@ import {
   ClipboardCheck,
   X,
   Calculator,
+  LogOut,
 } from 'lucide-react';
 import clsx from 'clsx';
 import feedback from '../../../services/feedback';
@@ -268,6 +269,64 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   // Realistic theme toggle (only available when testingProvider is set)
   const [useRealisticTheme, setUseRealisticTheme] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
+  
+  // Calculator state
+  const [calcDisplay, setCalcDisplay] = useState('0');
+  const [calcPrevValue, setCalcPrevValue] = useState<number | null>(null);
+  const [calcOperator, setCalcOperator] = useState<string | null>(null);
+  const [calcWaitingForOperand, setCalcWaitingForOperand] = useState(false);
+
+  const handleCalcButton = useCallback((btn: string) => {
+    if (btn >= '0' && btn <= '9' || btn === '.') {
+      // Number or decimal input
+      if (calcWaitingForOperand) {
+        setCalcDisplay(btn === '.' ? '0.' : btn);
+        setCalcWaitingForOperand(false);
+      } else {
+        if (btn === '.' && calcDisplay.includes('.')) return;
+        setCalcDisplay(calcDisplay === '0' && btn !== '.' ? btn : calcDisplay + btn);
+      }
+    } else if (['+', '-', '*', '/'].includes(btn)) {
+      // Operator
+      const currentValue = parseFloat(calcDisplay);
+      if (calcPrevValue !== null && calcOperator && !calcWaitingForOperand) {
+        const result = performCalc(calcPrevValue, currentValue, calcOperator);
+        setCalcDisplay(String(result));
+        setCalcPrevValue(result);
+      } else {
+        setCalcPrevValue(currentValue);
+      }
+      setCalcOperator(btn);
+      setCalcWaitingForOperand(true);
+    } else if (btn === '=') {
+      // Calculate result
+      if (calcPrevValue !== null && calcOperator) {
+        const currentValue = parseFloat(calcDisplay);
+        const result = performCalc(calcPrevValue, currentValue, calcOperator);
+        setCalcDisplay(String(result));
+        setCalcPrevValue(null);
+        setCalcOperator(null);
+        setCalcWaitingForOperand(true);
+      }
+    } else if (btn === 'C') {
+      // Clear
+      setCalcDisplay('0');
+      setCalcPrevValue(null);
+      setCalcOperator(null);
+      setCalcWaitingForOperand(false);
+    }
+  }, [calcDisplay, calcPrevValue, calcOperator, calcWaitingForOperand]);
+
+  const performCalc = (a: number, b: number, op: string): number => {
+    switch (op) {
+      case '+': return a + b;
+      case '-': return a - b;
+      case '*': return a * b;
+      case '/': return b !== 0 ? a / b : 0;
+      default: return b;
+    }
+  };
   
   // Compute active modes based on selected section
   const activeModes = getModes ? getModes(selectedSection) : modes;
@@ -1007,6 +1066,14 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             <Flag className="w-4 h-4" />
             {isCurrentFlagged ? 'Unflag' : 'Flag'}
           </button>
+          <div className="prometric-toolbar-separator" />
+          <button
+            onClick={() => setShowExitConfirm(true)}
+            className="prometric-toolbar-btn text-red-600 hover:text-red-700"
+          >
+            <LogOut className="w-4 h-4" />
+            Exit Exam
+          </button>
           <div className="flex-1" />
           <span className="text-xs text-gray-600">
             Answered: {answeredCount} of {exam.questions.length}
@@ -1023,11 +1090,13 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                   <span>Calculator</span>
                   <button className="prometric-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
                 </div>
-                <div className="prometric-calculator-display">0</div>
+                <div className="prometric-calculator-display">{calcDisplay}</div>
                 <div className="prometric-calculator-buttons">
+                  <button className="prometric-calc-btn clear" onClick={() => handleCalcButton('C')}>C</button>
                   {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
                     <button
                       key={btn}
+                      onClick={() => handleCalcButton(btn)}
                       className={clsx(
                         'prometric-calc-btn',
                         ['+','-','*','/'].includes(btn) && 'operator',
@@ -1154,6 +1223,37 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             Answered: {answeredCount} of {exam.questions.length}
           </span>
         </div>
+
+        {/* Exit Confirmation Modal */}
+        {showExitConfirm && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                  <AlertTriangle className="w-5 h-5 text-red-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Exit Exam?</h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-6">
+                Are you sure you want to exit? Your progress will be lost and this exam attempt will not be scored.
+              </p>
+              <div className="flex gap-3 justify-end">
+                <button
+                  onClick={() => setShowExitConfirm(false)}
+                  className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors"
+                >
+                  Continue Exam
+                </button>
+                <button
+                  onClick={() => navigate(backPath)}
+                  className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                >
+                  Exit Exam
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -1196,6 +1296,13 @@ export function ExamSimulatorTemplate<SectionId extends string>({
               <Flag className="w-4 h-4" />
               {isCurrentFlagged ? 'Unflag' : 'Flag for Review'}
             </button>
+            <button
+              onClick={() => setShowExitConfirm(true)}
+              className="pvue-toolbar-btn text-red-600 hover:text-red-700"
+            >
+              <LogOut className="w-4 h-4" />
+              Exit
+            </button>
           </div>
           <div className="pvue-toolbar-right">
             {answeredCount} of {exam.questions.length} answered
@@ -1212,11 +1319,13 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                   <span>Calculator</span>
                   <button className="pvue-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
                 </div>
-                <div className="pvue-calculator-display">0</div>
+                <div className="pvue-calculator-display">{calcDisplay}</div>
                 <div className="pvue-calculator-buttons">
+                  <button className="pvue-calc-btn clear" onClick={() => handleCalcButton('C')}>C</button>
                   {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
                     <button
                       key={btn}
+                      onClick={() => handleCalcButton(btn)}
                       className={clsx(
                         'pvue-calc-btn',
                         ['+','-','*','/'].includes(btn) && 'operator',
@@ -1336,6 +1445,37 @@ export function ExamSimulatorTemplate<SectionId extends string>({
           </div>
           <span>{answeredCount} of {exam.questions.length} answered</span>
         </div>
+
+        {/* Exit Confirmation Modal */}
+        {showExitConfirm && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                  <AlertTriangle className="w-5 h-5 text-red-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Exit Exam?</h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-6">
+                Are you sure you want to exit? Your progress will be lost and this exam attempt will not be scored.
+              </p>
+              <div className="flex gap-3 justify-end">
+                <button
+                  onClick={() => setShowExitConfirm(false)}
+                  className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors"
+                >
+                  Continue Exam
+                </button>
+                <button
+                  onClick={() => navigate(backPath)}
+                  className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                >
+                  Exit Exam
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -1380,11 +1520,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
           
           {/* Exit */}
           <button 
-            onClick={() => {
-              if (confirm('Are you sure you want to exit? Your progress will be lost.')) {
-                navigate(backPath);
-              }
-            }}
+            onClick={() => setShowExitConfirm(true)}
             aria-label="Exit"
             className="p-2 hover:bg-red-50 dark:hover:bg-red-900/30 text-gray-400 hover:text-red-500 rounded transition-colors"
           >
@@ -1524,6 +1660,37 @@ export function ExamSimulatorTemplate<SectionId extends string>({
           </div>
         </div>
       </div>
+
+      {/* Exit Confirmation Modal */}
+      {showExitConfirm && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                <AlertTriangle className="w-5 h-5 text-red-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Exit Exam?</h3>
+            </div>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">
+              Are you sure you want to exit? Your progress will be lost and this exam attempt will not be scored.
+            </p>
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={() => setShowExitConfirm(false)}
+                className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors"
+              >
+                Continue Exam
+              </button>
+              <button
+                onClick={() => navigate(backPath)}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+              >
+                Exit Exam
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

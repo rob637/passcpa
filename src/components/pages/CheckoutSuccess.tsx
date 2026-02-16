@@ -125,7 +125,7 @@ const CheckoutSuccess = () => {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 px-4 py-2 rounded-full">
               <Trophy className="w-5 h-5 text-amber-600 dark:text-amber-400" />
               <span className="text-sm font-semibold text-amber-800 dark:text-amber-300">
-                Founding Member — rate guaranteed through August 2028
+                Founding Member — rate guaranteed through April 2028
               </span>
             </div>
           </div>

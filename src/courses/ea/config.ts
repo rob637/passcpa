@@ -272,7 +272,9 @@ export const EA_COURSE: Course = {
       'Corporate Tax Compliance',
     ],
     averageSalary: '$50,000 - $100,000+ (self-employed EAs can earn significantly more)',
-    examFormat: '3 parts (Individuals, Businesses, Representation), 3.5 hours each, 100% MCQ',
+    examFormat: '3 parts (Individuals, Businesses, Representation), 3.5 hours each, 100 MCQ per part (50 questions, break, 50 questions)',
+    prerequisites: ['Obtain a Preparer Tax Identification Number (PTIN) before testing'],
+    passRates: '60% to 90% depending on the part',
   },
   
   examStrategy: {

@@ -7,7 +7,7 @@
  * Results are saved to Firestore and feed the adaptive learning engine.
  */
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { useAuth } from '../../hooks/useAuth';
@@ -534,14 +534,17 @@ type Phase = 'section-pick' | 'intro' | 'quiz' | 'results';
 
 export default function DiagnosticQuizPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { user, userProfile } = useAuth();
   const { courseId } = useCourse();
 
   const isSingleExam = SINGLE_EXAM_COURSES.includes(courseId);
   const availableSections = useMemo(() => getAvailableSections(courseId), [courseId]);
 
-  // Use the section already chosen during onboarding (if available and valid)
-  const onboardingSection = userProfile?.examSection || '';
+  // Use section from router state (passed directly from onboarding) as primary source,
+  // fall back to userProfile.examSection (for "take diagnostic later" from Home page)
+  const routerSection = (location.state as { section?: string })?.section || '';
+  const onboardingSection = routerSection || userProfile?.examSection || '';
   const hasValidOnboardingSection = !!onboardingSection && availableSections.includes(onboardingSection);
 
   // State — skip section picker if we already have a valid section from onboarding
@@ -787,17 +790,8 @@ export default function DiagnosticQuizPage() {
         {/* Bottom Bar */}
         <footer className="border-t border-gray-200 dark:border-gray-800 px-4 py-4">
           <div className="max-w-3xl mx-auto">
-            {/* Question Navigator */}
-            <div className="mb-4">
-              <QuestionNavigator
-                total={quiz.questions.length}
-                current={currentQuestion}
-                answers={answers}
-                onJump={handleJump}
-              />
-            </div>
-
-            <div className="flex items-center justify-between">
+            {/* Navigation Buttons - Above question numbers for easier access */}
+            <div className="flex items-center justify-between mb-4">
               <Button
                 variant="ghost"
                 size="sm"
@@ -833,6 +827,14 @@ export default function DiagnosticQuizPage() {
                 </Button>
               )}
             </div>
+
+            {/* Question Navigator */}
+            <QuestionNavigator
+              total={quiz.questions.length}
+              current={currentQuestion}
+              answers={answers}
+              onJump={handleJump}
+            />
           </div>
         </footer>
       </div>

@@ -58,47 +58,36 @@ async function bodyText(page) { return page.evaluate(() => document.body.innerTe
 
 // Helper: select an answer option (works for both CPA and template)
 async function selectAnswer(page, optionIndex = 0) {
-  // Try numbered option buttons (A, B, C, D styled)
-  const selectors = [
-    `button:nth-child(${optionIndex + 1})[class*="option"]`,
-    `button:has-text("${String.fromCharCode(65 + optionIndex)}.")`,
-    `button:has-text("${String.fromCharCode(65 + optionIndex)}")`,
-  ];
-  
-  // Try clicking an answer option by looking for option containers
-  const options = page.locator('button').filter({ hasText: /^[A-D][\.\)]/ });
-  if (await options.count() >= optionIndex + 1) {
-    await options.nth(optionIndex).click();
+  const letter = String.fromCharCode(65 + optionIndex);
+
+  // Strategy 1: data-testid answer options (Practice, ExamSimulatorTemplate, etc.)
+  const byTestId = page.locator(`[data-testid="answer-option-${optionIndex}"]`);
+  if (await byTestId.count() > 0) {
+    await byTestId.click();
     return true;
   }
-  
-  // Fallback: find any clickable answer buttons
-  const allButtons = await page.evaluate(() => {
-    const btns = document.querySelectorAll('button');
-    return Array.from(btns).map(b => ({
-      text: b.textContent?.trim().substring(0, 60),
-      classes: b.className,
-      disabled: b.disabled
-    })).filter(b => 
-      (b.classes.includes('option') || b.text?.match(/^[A-D][\.\)]/)) && !b.disabled
-    );
-  });
-  
-  if (allButtons.length > optionIndex) {
-    const optBtn = page.locator('button').filter({ hasText: /^[A-D][\.\)]/ }).nth(optionIndex);
-    if (await optBtn.count() > 0) {
-      await optBtn.click();
-      return true;
-    }
+
+  // Strategy 2: buttons starting with "A." / "B)" etc. (CPA prometric text)
+  const options = page.locator('button').filter({ hasText: new RegExp(`^${letter}[.)]`) });
+  if (await options.count() > 0) {
+    await options.first().click();
+    return true;
   }
-  
-  // Try answer option by class
+
+  // Strategy 3: Prometric/PearsonVUE option elements
+  const promOption = page.locator('.prometric-option, .pvue-option').nth(optionIndex);
+  if (await promOption.count() > 0) {
+    await promOption.click();
+    return true;
+  }
+
+  // Strategy 4: Any element with class containing "option"
   const optByClass = page.locator('[class*="option"]:not([disabled])').nth(optionIndex);
   if (await optByClass.count() > 0) {
     await optByClass.click();
     return true;
   }
-  
+
   return false;
 }
 

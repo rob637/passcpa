@@ -1510,6 +1510,16 @@ const Settings: React.FC = () => {
                                 await new Promise(resolve => setTimeout(resolve, 1500));
                                 // Check if there's a waiting worker (new version available)
                                 if (registration.waiting) {
+                                  // Check if we just updated (banner uses 30s cooldown)
+                                  const justUpdated = localStorage.getItem('pwa-just-updated');
+                                  if (justUpdated) {
+                                    const elapsed = Date.now() - parseInt(justUpdated, 10);
+                                    if (elapsed < 30000) {
+                                      // Within cooldown - clear the waiting worker and report up to date
+                                      setUpdateCheckResult('none');
+                                      return;
+                                    }
+                                  }
                                   setUpdateCheckResult('available');
                                   triggerUpdateBanner();
                                 } else {

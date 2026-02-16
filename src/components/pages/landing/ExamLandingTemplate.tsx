@@ -739,7 +739,7 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               {isFounderWindow && (
                 <div className="mt-3 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
                   <span>🏆</span>
-                  <span>Founder rate guaranteed through August 2028</span>
+                  <span>Founder rate guaranteed through April 2028</span>
                 </div>
               )}
             </div>

@@ -714,6 +714,14 @@ const Onboarding: React.FC = () => {
       const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate, selectedCourse as CourseId);
       const studyPlanUpdate = createStudyPlanUpdate(userProfile, selectedCourse as CourseId, studyPlan);
       
+      logger.info('Onboarding: Saving profile with exam date', {
+        rawExamDate: examDate,
+        parsedLocalDate: localExamDate?.toISOString() || null,
+        courseId: selectedCourse,
+        examDateUpdateKeys: Object.keys(examDateUpdate.examDates || {}),
+        examDateUpdateValues: JSON.stringify(examDateUpdate.examDates),
+      });
+      
       // Create per-course onboarding status update
       const existingOnboarding = userProfile?.onboardingCompleted || {};
       const onboardingUpdate = {
@@ -760,7 +768,9 @@ const Onboarding: React.FC = () => {
       if (selectedCourse && selectedCourse !== currentCourseId) {
         setCourse(selectedCourse as CourseId);
       }
-      navigate('/diagnostic');
+      // Pass selected section via router state so the diagnostic page
+      // can use it immediately without waiting for profile state to propagate
+      navigate('/diagnostic', { state: { section: selectedSection } });
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {

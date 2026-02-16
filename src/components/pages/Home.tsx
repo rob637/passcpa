@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../config/firebase';
 import {
   BookOpen,
   FileSpreadsheet,
@@ -13,6 +15,7 @@ import {
   TrendingUp,
   Check,
   Sparkles,
+  ClipboardCheck,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -87,7 +90,7 @@ const getGreeting = (): string => {
 
 const Home = () => {
   const navigate = useNavigate();
-  const { userProfile, updateUserProfile } = useAuth();
+  const { user, userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
   const { courseId, course, setCourse } = useCourse();
   
@@ -95,6 +98,7 @@ const Home = () => {
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
+  const [hasDiagnosticResult, setHasDiagnosticResult] = useState<boolean | null>(null);
   const showDashboardNudge = useDashboardShareNudge();
 
   // Check for milestone-based share nudges
@@ -126,7 +130,7 @@ const Home = () => {
   }, [navigate, courseId]);
 
   // Get user info - properly typed now
-  const firstName = userProfile?.displayName?.split(' ')[0] || 'there';
+  const firstName = userProfile?.displayName?.split(' ')[0] || user?.displayName?.split(' ')[0] || 'there';
   
   // Use local state for section so we can update immediately
   // getCurrentSection returns course-appropriate section (not CPA 'FAR' for non-CPA courses)
@@ -164,6 +168,28 @@ const Home = () => {
       setActiveSection(getDefaultSection(courseId));
     }
   }, [courseId, course?.sections]);
+  
+  // Check if user has completed diagnostic quiz for current section
+  useEffect(() => {
+    const checkDiagnostic = async () => {
+      if (!user?.uid) return;
+      try {
+        // Single-exam courses (CFP, CISA) use course ID as section key
+        const singleExamCourses: CourseId[] = ['cfp', 'cisa'];
+        const diagSection = singleExamCourses.includes(courseId) 
+          ? courseId.toUpperCase() 
+          : activeSection;
+        const diagDocId = `${courseId}-${diagSection}`;
+        const diagRef = doc(db, 'users', user.uid, 'diagnosticResults', diagDocId);
+        const diagSnap = await getDoc(diagRef);
+        setHasDiagnosticResult(diagSnap.exists());
+      } catch (err) {
+        logger.warn('Could not check diagnostic status:', err);
+        setHasDiagnosticResult(null);
+      }
+    };
+    checkDiagnostic();
+  }, [user?.uid, courseId, activeSection]);
   
   // Get section info - course-aware via getSectionDisplayInfo
   const sectionInfo = getSectionDisplayInfo(activeSection, courseId);
@@ -463,6 +489,28 @@ const Home = () => {
             </div>
           </div>
           <Sparkles className="w-5 h-5 text-primary-500" />
+        </Link>
+      )}
+
+      {/* Diagnostic Quiz Prompt - Show when user hasn't taken the diagnostic yet */}
+      {hasDiagnosticResult === false && (
+        <Link
+          to="/diagnostic"
+          state={{ section: userProfile?.examSection || '' }}
+          className="flex items-center gap-3 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border border-indigo-200 dark:border-indigo-700 rounded-xl hover:shadow-md transition-all"
+        >
+          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
+            <ClipboardCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          </div>
+          <div className="flex-1">
+            <div className="font-semibold text-slate-900 dark:text-slate-100">
+              Take Your Diagnostic Quiz
+            </div>
+            <div className="text-sm text-slate-600 dark:text-slate-300">
+              25 questions to identify your strengths and weak areas
+            </div>
+          </div>
+          <Brain className="w-5 h-5 text-indigo-500" />
         </Link>
       )}
 

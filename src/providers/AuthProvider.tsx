@@ -21,8 +21,10 @@ import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
 import type { FieldValue, Timestamp } from 'firebase/firestore';
 import { getPendingReferral, applyReferralCode } from '../services/referral';
+import { saveCoursePreference } from '../utils/courseDetection';
 import { Capacitor } from '@capacitor/core';
-import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
+import { UserProfile } from '../types';
+import { CourseId } from '../types/course';
 
 // Check if running in native Capacitor app
 const isNativePlatform = Capacitor.isNativePlatform();
@@ -61,6 +63,7 @@ export interface AuthContextType {
   user: User | null;
   userProfile: UserProfile | null;
   loading: boolean;
+  profileLoaded: boolean;
   error: string | null;
   signIn: (email: string, password: string) => Promise<User>;
   signUp: (email: string, password: string, displayName: string) => Promise<User>;
@@ -90,6 +93,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [profileLoaded, setProfileLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Fetch user profile from Firestore
@@ -97,13 +101,22 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const userDoc = await getDoc(doc(db, 'users', uid));
       if (userDoc.exists()) {
-        setUserProfile({ id: uid, ...userDoc.data() } as UserProfile);
+        const profile = { id: uid, ...userDoc.data() } as UserProfile;
+        setUserProfile(profile);
+        
+        // Sync Firestore activeCourse to localStorage so CourseProvider detects it correctly.
+        // This is critical for cross-device login — without it, user lands on CPA instead of their course.
+        if (profile.activeCourse) {
+          saveCoursePreference(profile.activeCourse);
+        }
       } else {
         setUserProfile(null);
       }
     } catch (err) {
       logger.error('Error fetching user profile:', err);
       setUserProfile(null);
+    } finally {
+      setProfileLoaded(true);
     }
   };
 
@@ -128,12 +141,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const userDoc = await getDoc(userRef);
         
         if (!userDoc.exists()) {
+          // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
+          const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+
           const newProfile: Omit<UserProfile, 'id'> = {
             email: user.email || '',
             displayName: user.displayName || '',
             photoURL: user.photoURL,
             createdAt: serverTimestamp(),
             onboardingComplete: false,
+            activeCourse: pendingCourse as CourseId,
             examSection: null,
             examDate: null,
             dailyGoal: 25,
@@ -157,6 +174,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       authResolved = true;
       clearTimeout(timeout);
       if (firebaseUser) {
+        // If user appears unverified, reload from server to get latest status.
+        // Firebase caches auth state locally — if the user verified their email
+        // in another tab/session and then closed the app, the cached state is stale.
+        if (!firebaseUser.emailVerified) {
+          try {
+            await firebaseUser.reload();
+          } catch (err) {
+            logger.warn('Failed to reload user during auth state change:', err);
+          }
+        }
         setUser(firebaseUser);
         // Fetch user profile from Firestore
         await fetchUserProfile(firebaseUser.uid);
@@ -168,6 +195,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       } else {
         setUser(null);
         setUserProfile(null);
+        setProfileLoaded(false);
       }
       setLoading(false);
     });
@@ -199,15 +227,42 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const signUp = async (email: string, password: string, displayName: string): Promise<User> => {
     setError(null);
     try {
+      // Sign out any existing user first to prevent session conflicts
+      // (e.g., stale unverified user blocking new registration)
+      if (auth.currentUser) {
+        await firebaseSignOut(auth);
+      }
       const result = await createUserWithEmailAndPassword(auth, email, password);
 
       // Update display name
       await updateProfile(result.user, { displayName });
 
-      // Send email verification
-      await sendEmailVerification(result.user, {
-        url: `${window.location.origin}/login`,
-      });
+      // Wait for ID token to be ready before calling Cloud Function
+      // This ensures Firebase Auth is fully initialized after account creation
+      await result.user.getIdToken(true);
+
+      // Send branded verification email via Cloud Function (Resend)
+      try {
+        const sendCustomEmailVerification = httpsCallable(functions, 'sendCustomEmailVerification');
+        await sendCustomEmailVerification({ email });
+      } catch (verifyErr: any) {
+        // Fallback to Firebase's built-in email if Cloud Function fails
+        logger.warn('Cloud Function verification email failed, using Firebase default:', verifyErr);
+        try {
+          await sendEmailVerification(result.user, {
+            url: `${window.location.origin}/login`,
+          });
+        } catch (fallbackErr) {
+          logger.warn('Firebase verification fallback also failed:', fallbackErr);
+        }
+      }
+
+      // Get pending course from registration flow (saved in localStorage by Register.tsx)
+      const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+
+      // Save to 'voraprep_active_course' so detectCourse() finds it.
+      // Without this, the user lands on CPA instead of their chosen course.
+      saveCoursePreference(pendingCourse as CourseId);
 
       // Create user document in Firestore
       const newUserProfile: Omit<UserProfile, 'id'> = {
@@ -215,6 +270,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         displayName,
         createdAt: serverTimestamp(),
         onboardingComplete: false,
+        // Store the course they signed up for so it persists across windows/devices
+        activeCourse: pendingCourse as CourseId,
         examSection: null,
         examDate: null,
         dailyGoal: 50,
@@ -227,6 +284,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       };
 
       await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
+
+      // Re-fetch the profile so it's immediately available in React state.
+      // Without this, onAuthStateChanged already fired (before setDoc) and found no doc,
+      // leaving userProfile=null until the next page load.
+      await fetchUserProfile(result.user.uid);
 
       // Apply any pending referral code
       const pendingReferral = getPendingReferral();
@@ -269,14 +331,22 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     if (!user) throw new Error('No user logged in');
     if (user.emailVerified) throw new Error('Email already verified');
     
+    // Send branded verification email via Cloud Function (Resend)
     try {
-      await sendEmailVerification(user, {
-        url: `${window.location.origin}/login`,
-      });
-    } catch (err) {
-      const error = err as FirebaseError;
-      setError(error.message);
-      throw err;
+      const sendCustomEmailVerification = httpsCallable(functions, 'sendCustomEmailVerification');
+      await sendCustomEmailVerification({ email: user.email });
+    } catch (err: any) {
+      // Fallback to Firebase's built-in email if Cloud Function fails
+      logger.warn('Cloud Function verification email failed, using Firebase default:', err);
+      try {
+        await sendEmailVerification(user, {
+          url: `${window.location.origin}/login`,
+        });
+      } catch (fallbackErr) {
+        const error = fallbackErr as FirebaseError;
+        setError(error.message);
+        throw fallbackErr;
+      }
     }
   };
 
@@ -330,10 +400,41 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         logger.log('Using native Google Sign-In');
         const result = await FirebaseAuthentication.signInWithGoogle();
         
-        // Get the ID token and create Firebase credential
-        const idToken = result.credential?.idToken;
-        if (!idToken) {
-          throw new Error('No ID token received from Google Sign-In');
+        // Check if user profile exists, create if not
+        const userRef = doc(db, 'users', user.uid);
+        const userDoc = await getDoc(userRef);
+        
+        if (!userDoc.exists()) {
+          // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
+          const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+
+          // Create new profile for Google user
+          const newProfile: Omit<UserProfile, 'id'> = {
+            email: user.email || '',
+            displayName: user.displayName || '',
+            photoURL: user.photoURL,
+            createdAt: serverTimestamp() as unknown as Date,
+            onboardingComplete: false,
+            activeCourse: pendingCourse as CourseId,
+            examSection: null,
+            examDate: null,
+            dailyGoal: 25,
+            studyPlanId: null,
+            settings: {
+              notifications: true,
+              darkMode: false,
+              soundEffects: true,
+            },
+          };
+          await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
+          setUserProfile({ 
+            ...newProfile,
+            id: user.uid, 
+          } as UserProfile);
+        } else {
+          // Update last login for existing user
+          await updateDoc(userRef, { lastLogin: serverTimestamp() });
+          await fetchUserProfile(user.uid);
         }
         
         // Sign in to Firebase with the Google credential
@@ -406,6 +507,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     user,
     userProfile,
     loading,
+    profileLoaded,
     error,
     signIn,
     signUp,

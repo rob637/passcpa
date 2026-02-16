@@ -213,7 +213,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA1-A',
           name: 'IS Audit Process',
-          weight: '12%',
+          weight: '6%',
           topics: [
             'IS Audit Standards and Guidelines',
             'Risk-Based Audit Planning',
@@ -224,13 +224,42 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA1-B',
           name: 'Audit Execution',
-          weight: '9%',
+          weight: '5%',
           topics: [
             'Audit Evidence Collection',
-            'CAATs and Data Analytics',
             'Sampling Methodologies',
             'Audit Documentation',
+          ]
+        },
+        {
+          id: 'CISA1-C',
+          name: 'Audit Reporting',
+          weight: '4%',
+          topics: [
+            'Report Structure',
             'Findings and Recommendations',
+            'Report Distribution',
+          ]
+        },
+        {
+          id: 'CISA1-D',
+          name: 'Control Frameworks',
+          weight: '3%',
+          topics: [
+            'COSO Framework',
+            'COBIT Framework',
+            'Control Objectives',
+          ]
+        },
+        {
+          id: 'CISA1-E',
+          name: 'CAATs',
+          weight: '3%',
+          topics: [
+            'Computer-Assisted Audit Techniques',
+            'Generalized Audit Software',
+            'Test Data Methods',
+            'Continuous Auditing',
           ]
         },
       ]
@@ -247,7 +276,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA2-A',
           name: 'IT Governance',
-          weight: '8%',
+          weight: '4%',
           topics: [
             'IT Governance Frameworks (COBIT, ITIL)',
             'IT Strategy and Business Alignment',
@@ -258,12 +287,33 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA2-B',
           name: 'IT Risk Management',
-          weight: '8%',
+          weight: '4%',
           topics: [
             'Risk Assessment Methodologies',
             'Risk Treatment Options',
-            'Regulatory Compliance',
             'Third-Party Risk Management',
+          ]
+        },
+        {
+          id: 'CISA2-C',
+          name: 'IT Risk Framework & Assessment',
+          weight: '4%',
+          topics: [
+            'Risk Management Framework',
+            'Risk Identification',
+            'Risk Analysis',
+            'Risk Assessment Practices',
+          ]
+        },
+        {
+          id: 'CISA2-D',
+          name: 'Compliance & Business Impact',
+          weight: '4%',
+          topics: [
+            'Regulatory Compliance',
+            'Privacy Regulations',
+            'Business Impact Analysis',
+            'RTO/RPO',
           ]
         },
       ]
@@ -280,7 +330,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA3-A',
           name: 'Project Management',
-          weight: '9%',
+          weight: '6%',
           topics: [
             'Project Governance',
             'SDLC Methodologies',
@@ -291,12 +341,22 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA3-B',
           name: 'System Implementation',
-          weight: '9%',
+          weight: '6%',
           topics: [
             'Secure Coding Practices',
             'Testing Methodologies',
             'Change and Release Management',
-            'Post-Implementation Review',
+          ]
+        },
+        {
+          id: 'CISA3-C',
+          name: 'Software Acquisition',
+          weight: '6%',
+          topics: [
+            'Build vs Buy Analysis',
+            'RFP Process',
+            'Vendor Evaluation',
+            'Licensing and Contracts',
           ]
         },
       ]
@@ -313,7 +373,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA4-A',
           name: 'IT Operations',
-          weight: '10%',
+          weight: '7%',
           topics: [
             'IT Service Management (ITSM)',
             'Service Level Agreements',
@@ -324,14 +384,23 @@ export const CISA_COURSE: Course = {
         },
         {
           id: 'CISA4-B',
-          name: 'Business Resilience',
-          weight: '10%',
+          name: 'Disaster Recovery',
+          weight: '7%',
+          topics: [
+            'Disaster Recovery Planning (DRP)',
+            'Backup and Recovery Strategies',
+            'Testing DRP Plans',
+          ]
+        },
+        {
+          id: 'CISA4-C',
+          name: 'Business Continuity Planning',
+          weight: '6%',
           topics: [
             'Business Impact Analysis (BIA)',
             'Business Continuity Planning (BCP)',
-            'Disaster Recovery Planning (DRP)',
-            'Backup and Recovery Strategies',
-            'Testing BCP/DRP Plans',
+            'Recovery Strategies',
+            'BC Testing',
           ]
         },
       ]
@@ -348,7 +417,7 @@ export const CISA_COURSE: Course = {
         {
           id: 'CISA5-A',
           name: 'Information Security Management',
-          weight: '13%',
+          weight: '8%',
           topics: [
             'Security Program Management',
             'Security Policies and Standards',
@@ -358,14 +427,44 @@ export const CISA_COURSE: Course = {
         },
         {
           id: 'CISA5-B',
-          name: 'Security Controls',
-          weight: '12%',
+          name: 'Identity & Access Management',
+          weight: '5%',
           topics: [
             'Identity and Access Management (IAM)',
-            'Network Security Controls',
+            'Authentication',
+            'Authorization',
+          ]
+        },
+        {
+          id: 'CISA5-C',
+          name: 'Network Security',
+          weight: '5%',
+          topics: [
+            'Network Security Architecture',
+            'Firewalls and IDS/IPS',
+            'Network Segmentation',
             'Encryption and Cryptography',
-            'Vulnerability Management',
-            'Incident Response',
+          ]
+        },
+        {
+          id: 'CISA5-D',
+          name: 'Physical & Environmental Security',
+          weight: '3%',
+          topics: [
+            'Physical Access Controls',
+            'Environmental Controls',
+            'Surveillance Systems',
+          ]
+        },
+        {
+          id: 'CISA5-E',
+          name: 'Emerging Technology Security',
+          weight: '4%',
+          topics: [
+            'AI/ML Security',
+            'Cloud Security',
+            'IoT Security',
+            'Adversarial Attacks',
           ]
         },
       ]

@@ -13,7 +13,7 @@
 |----------|--------|
 | **Launch Date** | February 19, 2026 |
 | **Founder Window** | February 19 – August 31, 2026 |
-| **Founder Lock** | 2 years (rate guaranteed through August 2028) |
+| **Founder Lock** | 2 years (rate guaranteed through April 2028) |
 | **Founder Seats** | 300 per exam |
 | **Primary Plan** | Annual subscription |
 | **Trial** | 14 days full access, no credit card |
@@ -33,9 +33,9 @@
 |------|-------|---------|--------|----------------|------------------|
 | **Band 1** | CPA | $49/mo | $449/yr | $249/yr | ~$21/mo |
 | **Band 2** | CMA, CFP, CISA | $39/mo | $349/yr | $199/yr | ~$17/mo |
-| **Band 3** | EA, CIA | $29/mo | $249/yr | $149/yr | ~$12/mo |
+| **Band 3** | EA, CIA | $29/mo | $249/yr | $149/yr | ~$13/mo |
 
-*Founder monthly = founder annual / 12, rounded.
+*Founder monthly must be > founder annual / 12 to incentivize annual.
 
 ### Founder Savings
 
@@ -131,9 +131,9 @@ All pricing is defined in `src/services/subscription.ts` → `EXAM_PRICING`:
 ```typescript
 export const EXAM_PRICING = {
   cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 21 },
-  ea:  { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  ea:  { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 13 },
   cma: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
-  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 13 },
   cfp: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
   cisa:{ annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
 };

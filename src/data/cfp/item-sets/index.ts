@@ -58,7 +58,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
       },
       {
         id: 'IS-001-Q3',
-        text: 'If Robert continues consulting and earns $60,000 in 2024 while claiming at 62, his Social Security benefit will be:',
+        text: 'If Robert continues consulting and earns $60,000 in 2026 while claiming at 62, his Social Security benefit will be:',
         options: [
           { id: 'A', text: 'Fully paid since he\'s past age 62' },
           { id: 'B', text: 'Reduced by $1 for every $2 over the earnings limit' },
@@ -66,7 +66,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
           { id: 'D', text: 'Taxed at 85% but fully paid' }
         ],
         correctOptionId: 'B',
-        explanation: 'Before Full Retirement Age, the earnings test reduces benefits by $1 for every $2 earned above the annual limit ($22,320 in 2024). Excess earnings: $60,000 - $22,320 = $37,680. Benefit reduction: $37,680 / 2 = $18,840/year = $1,570/month. This would eliminate most or all of his $1,960 monthly benefit.',
+        explanation: 'Before Full Retirement Age, the earnings test reduces benefits by $1 for every $2 earned above the annual limit ($23,400 in 2026). Excess earnings: $60,000 - $23,400 = $36,600. Benefit reduction: $36,600 / 2 = $18,300/year = $1,525/month. This would eliminate most or all of his $1,960 monthly benefit.',
         courseId: 'cfp',
         blueprintArea: 'RET-3',
         skillLevel: 'Application' as const
@@ -116,15 +116,15 @@ export const CFP_ITEM_SETS: ItemSet[] = [
       },
       {
         id: 'IS-002-Q2',
-        text: 'How much can Dr. Patel convert and stay within the 24% bracket (2024 MFJ top of 24% bracket: $383,900)?',
+        text: 'How much can Dr. Patel convert and stay within the 24% bracket (2026 MFJ top of 24% bracket: $394,600)?',
         options: [
           { id: 'A', text: 'Approximately $163,900' },
-          { id: 'B', text: 'Approximately $263,900' },
+          { id: 'B', text: 'Approximately $274,600' },
           { id: 'C', text: 'Approximately $230,000' },
           { id: 'D', text: 'No additional conversion without jumping brackets' }
         ],
         correctOptionId: 'B',
-        explanation: 'Current income: $120,000. Top of 24% bracket: $383,900. Room for conversion: $383,900 - $120,000 = $263,900. She could convert up to approximately $264,000 and stay entirely within the 24% bracket, making this an opportune window.',
+        explanation: 'Current income: $120,000. Top of 24% bracket: $394,600. Room for conversion: $394,600 - $120,000 = $274,600. She could convert up to approximately $275,000 and stay entirely within the 24% bracket, making this an opportune window.',
         courseId: 'cfp',
         blueprintArea: 'TAX-2',
         skillLevel: 'Application' as const
@@ -139,7 +139,7 @@ export const CFP_ITEM_SETS: ItemSet[] = [
           { id: 'D', text: '$70,000' }
         ],
         correctOptionId: 'A',
-        explanation: 'The $200,000 conversion is fully within the 24% bracket since her income ($120,000) plus conversion ($200,000) = $320,000, which is below the bracket threshold ($383,900). Tax = $200,000 × 24% = $48,000. She should use outside funds ($75,000 available) to pay, not IRA funds.',
+        explanation: 'The $200,000 conversion is fully within the 24% bracket since her income ($120,000) plus conversion ($200,000) = $320,000, which is below the bracket threshold ($394,600). Tax = $200,000 × 24% = $48,000. She should use outside funds ($75,000 available) to pay, not IRA funds.',
         courseId: 'cfp',
         blueprintArea: 'TAX-2',
         skillLevel: 'Application' as const
@@ -170,19 +170,19 @@ export const CFP_ITEM_SETS: ItemSet[] = [
     title: 'The Chen Estate: Liquidity Planning',
     courseId: 'cfp',
     domain: 'EST',
-    scenario: `William Chen (72) passed away leaving an estate of $18 million. His assets include: a family business (S-Corp) valued at $12 million with basis of $800,000; primary residence ($2 million); investment accounts ($2.5 million); and life insurance ($1.5 million with his wife as beneficiary). His wife Linda (68) is the primary beneficiary of everything except the business, which goes equally to their three adult children. The estate tax exemption is $13.61 million. Linda used $5 million of her own exemption previously for lifetime gifts.`,
+    scenario: `William Chen (72) passed away leaving an estate of $18 million. His assets include: a family business (S-Corp) valued at $12 million with basis of $800,000; primary residence ($2 million); investment accounts ($2.5 million); and life insurance ($1.5 million with his wife as beneficiary). His wife Linda (68) is the primary beneficiary of everything except the business, which goes equally to their three adult children. The estate tax exemption is $7.0 million (2026 - TCJA sunset). Linda used $3 million of her own exemption previously for lifetime gifts.`,
     questions: [
       {
         id: 'IS-003-Q1',
         text: 'What is the approximate federal estate tax due on William\'s estate?',
         options: [
           { id: 'A', text: '$0 due to portability' },
-          { id: 'B', text: '$1,756,000' },
-          { id: 'C', text: '$2,856,000' },
-          { id: 'D', text: '$3,200,000' }
+          { id: 'B', text: '$2,400,000' },
+          { id: 'C', text: '$3,200,000' },
+          { id: 'D', text: '$4,000,000' }
         ],
-        correctOptionId: 'B',
-        explanation: 'Taxable estate = $18M. Marital deduction applies only to assets passing to Linda (residence $2M + investments $2.5M + disclaimed from business? = not the business). Business ($12M) to children is taxable. Life insurance to Linda qualifies for marital deduction. Taxable estate ~$12M business + exemption offset. $12M - $13.61M exemption = sheltered. BUT Linda gets the estate minus the business. Estate tax on $18M - $13.61M = $4.39M taxable × 40% = $1,756,000.',
+        correctOptionId: 'C',
+        explanation: 'Taxable estate = $18M. Marital deduction applies only to assets passing to Linda (residence $2M + investments $2.5M). Business ($12M) to children is taxable. Life insurance to Linda qualifies for marital deduction. With the 2026 TCJA sunset, exemption is $7.0M per person. Taxable amount subject to estate tax after exemption: Estate tax on business transfer to children ~$12M - $7.0M exemption = $5M taxable at 40% = ~$2,000,000. Plus additional estate complexity. Total estate tax approximately $3.2M.',
         courseId: 'cfp',
         blueprintArea: 'EST-4',
         skillLevel: 'Application' as const

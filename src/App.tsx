@@ -1,9 +1,10 @@
-import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
+import React, { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';
+import { getCourseHomePath } from './utils/courseNavigation';
 import type { CourseId } from './types/course';
 
 // Layouts (always loaded - part of shell)
@@ -83,6 +84,7 @@ const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPag
 
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
+const DiagnosticQuiz = lazy(() => import('./components/pages/DiagnosticQuiz'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
 const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
@@ -133,6 +135,12 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Force remount when course changes (prevents stale data in session-based components)
+const CourseKeyed = ({ children }: { children: JSX.Element }) => {
+  const { courseId } = useCourse();
+  return <React.Fragment key={courseId}>{children}</React.Fragment>;
+};
+
 // Protected Route Component
 interface RouteProps {
   children: JSX.Element;
@@ -140,7 +148,7 @@ interface RouteProps {
 }
 
 const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
-  const { user, userProfile, loading } = useAuth();
+  const { user, userProfile, loading, profileLoaded } = useAuth();
   const { courseId } = useCourse();
   const location = useLocation();
 
@@ -150,6 +158,17 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
 
   if (!user) {
     return <Navigate to="/login" replace />;
+  }
+
+  // Require email verification before accessing protected routes
+  if (!user.emailVerified && location.pathname !== '/verify-email') {
+    return <Navigate to="/verify-email" replace />;
+  }
+
+  // Wait for user profile fetch to complete before making onboarding decisions.
+  // profileLoaded becomes true once fetchUserProfile finishes (even if profile is null).
+  if (!profileLoaded && location.pathname !== '/verify-email') {
+    return <FullPageLoader />;
   }
 
   // Redirect to onboarding if not complete for the current course
@@ -177,7 +196,10 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   return children;
 };
 
-// Admin-only Route - requires isAdmin: true in Firestore user profile
+// Admin email whitelist - fallback when Firestore isAdmin flag not set
+const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
+
+// Admin-only Route - requires isAdmin: true in Firestore user profile OR whitelisted email
 const AdminRoute = ({ children }: RouteProps) => {
   const { user, userProfile, loading } = useAuth();
 
@@ -189,8 +211,8 @@ const AdminRoute = ({ children }: RouteProps) => {
     return <Navigate to="/login" replace />;
   }
 
-  // Check admin status from Firestore user profile
-  const isAdmin = userProfile?.isAdmin === true;
+  // Check admin status from Firestore user profile OR email whitelist
+  const isAdmin = userProfile?.isAdmin === true || ADMIN_EMAILS.includes(user.email || '');
   
   if (!isAdmin) {
     // Non-admins silently redirected to home
@@ -210,6 +232,12 @@ const PublicRoute = ({ children }: RouteProps) => {
   }
 
   if (user) {
+    // Unverified users must verify their email first
+    // Don't sign them out - redirect to verification page
+    if (!user.emailVerified) {
+      return <Navigate to="/verify-email" replace />;
+    }
+
     // If user is already logged in and came from an exam-specific page
     // (e.g., /register?course=ea), redirect to that course's dashboard
     const courseParam = searchParams.get('course')?.toLowerCase();
@@ -217,11 +245,7 @@ const PublicRoute = ({ children }: RouteProps) => {
       // Save course preference so CourseProvider picks it up
       saveCoursePreference(courseParam as CourseId);
       localStorage.setItem('pendingCourse', courseParam);
-      const dashboardMap: Record<string, string> = {
-        cpa: '/home', ea: '/ea/home', cma: '/cma/home',
-        cia: '/cia/home', cfp: '/cfp/home', cisa: '/cisa/home',
-      };
-      return <Navigate to={dashboardMap[courseParam] || '/home'} replace />;
+      return <Navigate to={getCourseHomePath(courseParam as CourseId)} replace />;
     }
     return <Navigate to="/home" replace />;
   }
@@ -548,6 +572,18 @@ function App() {
                   }
                 />
 
+                {/* Diagnostic Quiz (protected, standalone layout, skip onboarding check) */}
+                <Route
+                  path="/diagnostic"
+                  element={
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <DiagnosticQuiz />
+                      </SuspensePage>
+                    </ProtectedRoute>
+                  }
+                />
+
                 {/* Admin Routes - requires isAdmin: true in user profile */}
                 <Route
                   path="/admin/cms"
@@ -659,7 +695,9 @@ function App() {
                     path="/practice"
                     element={
                       <PremiumPage>
-                        <Practice />
+                        <CourseKeyed>
+                          <Practice />
+                        </CourseKeyed>
                       </PremiumPage>
                     }
                   />

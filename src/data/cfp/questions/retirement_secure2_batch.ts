@@ -33,7 +33,7 @@ export const CFP_SECURE_2_0_QUESTIONS: Question[] = [
       'A) The rollover is unlimited in amount with no restrictions',
     ],
     correctAnswer: 1,
-    explanation: 'SECURE 2.0 529→Roth rollover (effective 2024): 529 must be open 15+ years. Annual limit: normal Roth IRA contribution limit ($7,000 in 2024). Lifetime cap: $35,000. Rollover is tax-free. Cannot include contributions/earnings from last 5 years. Beneficiary must have earned income ≥ rollover amount. Phase-out rules don\'t apply. Great for over-funded 529s.'
+    explanation: 'SECURE 2.0 529→Roth rollover (effective 2024): 529 must be open 15+ years. Annual limit: normal Roth IRA contribution limit ($7,500 in 2026). Lifetime cap: $35,000. Rollover is tax-free. Cannot include contributions/earnings from last 5 years. Beneficiary must have earned income ≥ rollover amount. Phase-out rules don\'t apply. Great for over-funded 529s.'
   },
   {
     id: 'cfp-ret-sec2-002',

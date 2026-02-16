@@ -467,7 +467,7 @@ export const CFP_RETIREMENT_BATCH10_QUESTIONS: Question[] = [
       'D) No minimum',
     ],
     correctAnswer: 0,
-    explanation: 'Social Security eligibility: 40 credits required (fully insured). Earn up to 4 credits/year based on earnings (2024: $1,730 per credit). About 10 years of covered work. Fewer credits for disability (recently insured test) or survivors benefits. 40 credits gets eligibility—benefit amount depends on earnings history. Check Social Security statement for credits.'
+    explanation: 'Social Security eligibility: 40 credits required (fully insured). Earn up to 4 credits/year based on earnings (2026: $1,810 per credit). About 10 years of covered work. Fewer credits for disability (recently insured test) or survivors benefits. 40 credits gets eligibility—benefit amount depends on earnings history. Check Social Security statement for credits.'
   },
   {
     id: 'cfp-ret-b10-025',

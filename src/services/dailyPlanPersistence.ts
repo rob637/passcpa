@@ -64,6 +64,23 @@ const FEEDBACK_STORAGE_KEY = 'voraprep_activity_feedback';
 const PLAN_VERSION = 1;
 
 /**
+ * Single-exam courses use one unified daily plan across all domains.
+ * This prevents the plan from resetting when users navigate between domains.
+ */
+const SINGLE_EXAM_COURSES: CourseId[] = ['cisa', 'cfp'];
+
+/**
+ * For single-exam courses, normalize the section to 'ALL' for cache keys.
+ * This ensures users get the same daily plan regardless of which domain they're viewing.
+ */
+const normalizeSectionForCache = (section: string | undefined, courseId?: CourseId): string => {
+  if (courseId && SINGLE_EXAM_COURSES.includes(courseId)) {
+    return 'ALL'; // Unified plan for single-exam courses
+  }
+  return section || 'default';
+};
+
+/**
  * Get today's date as YYYY-MM-DD string
  */
 const getTodayDate = (): string => {
@@ -280,20 +297,21 @@ export const getOrCreateTodaysPlan = async (
   forceRegenerate: boolean = false
 ): Promise<PersistedDailyPlan> => {
   const today = getTodayDate();
-  const section = state.section; // Use section from study state for cache key
+  // For single-exam courses, use unified section 'ALL' to prevent plan reset on domain navigation
+  const cacheSection = normalizeSectionForCache(state.section, courseId);
 
   // Try to fetch existing plan (unless force regenerate)
-  // Pass section to ensure we get a plan for the current section
+  // Pass normalized section to ensure consistent cache key
   if (!forceRegenerate) {
-    const existingPlan = await fetchTodaysPlan(userId, section);
+    const existingPlan = await fetchTodaysPlan(userId, cacheSection);
     if (existingPlan) {
-      logger.log(`Using cached daily plan for section ${section}`);
+      logger.log(`Using cached daily plan for section ${cacheSection}`);
       return existingPlan;
     }
   }
 
   // Generate new plan
-  logger.log(`Generating new daily plan for section ${section}...`);
+  logger.log(`Generating new daily plan for section ${cacheSection}...`);
 
   // Inject weekly history for intelligent plan generation
   // Fetch last 7 days of plans and convert to lightweight snapshots
@@ -384,19 +402,19 @@ export const getOrCreateTodaysPlan = async (
   // Save to Firestore and LocalStorage
   try {
     // 1. Save to LocalStorage (Immediate / Offline)
-    // Cache key includes section to keep plans separate
-    const cacheKey = `daily_plan_${userId}_${today}_${section}`;
+    // Cache key uses normalized section (unified for single-exam courses)
+    const cacheKey = `daily_plan_${userId}_${today}_${cacheSection}`;
     localStorage.setItem(cacheKey, JSON.stringify(persistedPlan));
 
-    // 2. Save to Firestore - document path includes section
-    const docPath = `${today}_${section}`;
+    // 2. Save to Firestore - document path uses normalized section
+    const docPath = `${today}_${cacheSection}`;
     const planRef = doc(db, 'users', userId, 'daily_plans', docPath);
     await setDoc(planRef, {
       ...persistedPlan,
       createdAt: Timestamp.fromDate(persistedPlan.createdAt),
       updatedAt: Timestamp.fromDate(persistedPlan.updatedAt),
     });
-    logger.log(`Daily plan saved for section ${section}`);
+    logger.log(`Daily plan saved for section ${cacheSection}`);
   } catch (error) {
     logger.error('Error saving daily plan:', error);
     // Return plan anyway (can work in offline mode mostly)
@@ -426,23 +444,28 @@ export const markActivityStarted = (activityId: string): void => {
  * @param section - Exam section for the plan (e.g., 'FAR', 'AUD')
  * @param estimatedMinutes - Optional: the estimated duration for this activity
  * @param activityType - Optional: the activity type for duration tracking
+ * @param courseId - Optional: Course ID (used to normalize section for single-exam courses)
  */
 export const markActivityCompleted = async (
   userId: string,
   activityId: string,
   section?: string,
   estimatedMinutes?: number,
-  activityType?: DailyActivity['type']
+  activityType?: DailyActivity['type'],
+  courseId?: CourseId
 ): Promise<void> => {
   if (!userId || !activityId) return;
   const today = getTodayDate();
+  
+  // Normalize section for single-exam courses
+  const cacheSection = normalizeSectionForCache(section, courseId);
 
   try {
     // 1. Update LocalStorage first
-    // Try section-specific key first, fall back to legacy key
-    const sectionKey = section ? `daily_plan_${userId}_${today}_${section}` : null;
+    // Use normalized section for cache key
+    const sectionKey = `daily_plan_${userId}_${today}_${cacheSection}`;
     const legacyKey = `daily_plan_${userId}_${today}`;
-    const cacheKey = sectionKey && localStorage.getItem(sectionKey) ? sectionKey : legacyKey;
+    const cacheKey = localStorage.getItem(sectionKey) ? sectionKey : legacyKey;
     
     const localData = localStorage.getItem(cacheKey);
     if (localData) {
@@ -456,8 +479,8 @@ export const markActivityCompleted = async (
     }
 
     // 2. Update Firestore
-    // Try section-specific doc path first
-    const docPath = section ? `${today}_${section}` : today;
+    // Use normalized section for doc path
+    const docPath = `${today}_${cacheSection}`;
     const planRef = doc(db, 'users', userId, 'daily_plans', docPath);
 
     await updateDoc(planRef, {

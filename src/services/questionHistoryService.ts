@@ -454,6 +454,43 @@ export const getTopicPerformanceFromHistory = async (
 };
 
 /**
+ * Get question IDs grouped by their last-correct status for a section.
+ * Returns { correct: Set, incorrect: Set, all: Set } where:
+ * - correct = questions the user last answered correctly
+ * - incorrect = questions the user last answered incorrectly
+ * - all = all answered question IDs
+ */
+export const getQuestionIdsByStatus = async (
+  userId: string,
+  section: string
+): Promise<{ correct: Set<string>; incorrect: Set<string>; all: Set<string> }> => {
+  const result = { correct: new Set<string>(), incorrect: new Set<string>(), all: new Set<string>() };
+  if (!userId) return result;
+
+  try {
+    const historyRef = collection(db, 'users', userId, 'question_history');
+    const q = query(historyRef, where('section', '==', section));
+    const snapshot = await getDocs(q);
+
+    snapshot.forEach(docSnap => {
+      const id = docSnap.id;
+      const data = docSnap.data();
+      result.all.add(id);
+      if (data.lastCorrect) {
+        result.correct.add(id);
+      } else {
+        result.incorrect.add(id);
+      }
+    });
+
+    return result;
+  } catch (error) {
+    logger.error('Error fetching question status IDs:', error);
+    return result;
+  }
+};
+
+/**
  * Get fresh questions (never answered by this user)
  * This is the key to preventing repetition!
  */
@@ -638,6 +675,7 @@ export default {
   getDueQuestions,
   getRecentlyIncorrect,
   getAnsweredQuestionIds,
+  getQuestionIdsByStatus,
   getTopicPerformanceFromHistory,
   getFreshQuestions,
   getSmartQuestionSelection,

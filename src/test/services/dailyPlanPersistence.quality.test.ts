@@ -22,6 +22,7 @@ vi.mock('firebase/firestore', () => ({
   orderBy: vi.fn(() => ({})),
   limit: vi.fn(() => ({})),
   getDocs: vi.fn(() => Promise.resolve({ docs: [], empty: true })),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 // Mock firebase config

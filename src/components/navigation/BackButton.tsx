@@ -58,16 +58,14 @@ const getFallbackDestination = (pathname: string): { path: string; label: string
     return { path: '/settings', label: 'Settings' };
   }
   
-  // Social pages → Course Home
+  // You sub-pages → You profile
   if (pathname.startsWith('/community') || 
       pathname.startsWith('/achievements') || 
-      pathname.startsWith('/leaderboard')) {
-    return { path: coursehomePath, label: 'Home' };
-  }
-  
-  // Progress → Course Home
-  if (pathname.startsWith('/progress')) {
-    return { path: coursehomePath, label: 'Home' };
+      pathname.startsWith('/leaderboard') ||
+      pathname.startsWith('/progress') ||
+      pathname.startsWith('/settings') ||
+      pathname.startsWith('/help')) {
+    return { path: '/you', label: 'You' };
   }
   
   // Default - Course Home

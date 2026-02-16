@@ -36,7 +36,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
     subtopic: 'Kiddie Tax',
     difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Under the "kiddie tax" rules, a 17-year-old dependent child\'s unearned income above $2,500 (2024) is taxed at:',
+    question: 'Under the "kiddie tax" rules, a 17-year-old dependent child\'s unearned income above $2,700 (2026) is taxed at:',
     options: [
       'B) A flat 15% rate',
       'D) Zero—unearned income is not taxable for minors',
@@ -218,7 +218,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
       'A) Only the 12.4% Social Security portion',
     ],
     correctAnswer: 1,
-    explanation: 'Self-employed individuals pay 15.3% SE tax (equivalent to both employer and employee FICA shares) on 92.35% of net self-employment income. Social Security applies up to the wage base ($168,600 in 2024); Medicare has no cap plus 0.9% surtax on high earners. Half of SE tax is deductible for income tax purposes.'
+    explanation: 'Self-employed individuals pay 15.3% SE tax (equivalent to both employer and employee FICA shares) on 92.35% of net self-employment income. Social Security applies up to the wage base ($176,100 in 2026); Medicare has no cap plus 0.9% surtax on high earners. Half of SE tax is deductible for income tax purposes.'
   },
   {
     id: 'cfp-tax-b6-012',
@@ -234,7 +234,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
       'D) The owner works fewer than 1,000 hours annually',
       'B) The business has more than 10 employees',
       'C) The business operates in multiple states',
-      'A) Taxable income exceeds $182,100 (single) or $364,200 (MFJ) for 2024',
+      'A) Taxable income exceeds $202,050 (single) or $404,100 (MFJ) for 2026',
     ],
     correctAnswer: 3,
     explanation: 'SSTBs (health, law, accounting, performing arts, consulting, financial services, etc.) face QBI deduction limitations when taxable income exceeds thresholds. Above these limits, the deduction phases out and is eliminated at higher incomes. Non-SSTBs face W-2 wage and property limitations instead.'
@@ -315,7 +315,7 @@ export const CFP_TAX_BATCH6_QUESTIONS: Question[] = [
       'A) Reduce AGI',
     ],
     correctAnswer: 2,
-    explanation: 'The adoption credit offsets tax liability dollar-for-dollar for qualified expenses up to $16,810 (2024). It\'s nonrefundable (no refund if credit exceeds tax) but any unused credit carries forward 5 years. Income phaseout applies. The credit applies to domestic, international, and special needs adoptions.'
+    explanation: 'The adoption credit offsets tax liability dollar-for-dollar for qualified expenses up to $17,500 (2026). It\'s nonrefundable (no refund if credit exceeds tax) but any unused credit carries forward 5 years. Income phaseout applies. The credit applies to domestic, international, and special needs adoptions.'
   },
   {
     id: 'cfp-tax-b6-017',

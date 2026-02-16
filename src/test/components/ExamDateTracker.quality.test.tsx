@@ -24,6 +24,7 @@ vi.mock('../../config/firebase', () => ({
 vi.mock('firebase/firestore', () => ({
   doc: vi.fn(() => ({})),
   updateDoc: vi.fn().mockResolvedValue(undefined),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 vi.mock('../../config/examConfig', () => ({

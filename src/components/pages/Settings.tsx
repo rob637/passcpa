@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import logger from '../../utils/logger';
 import {
   User as UserIcon,
@@ -23,7 +23,14 @@ import {
   Award,
   CreditCard,
   ExternalLink,
+  ChevronDown,
+  Download,
+  Share,
+  PlusSquare,
+  CheckCircle2,
+  Zap,
 } from 'lucide-react';
+import { usePWAInstall } from '../../hooks/usePWAInstall';
 import { triggerUpdateBanner } from '../common/UpdateBanner';
 import { Button } from '../common/Button';
 import { PageHeader } from '../navigation';
@@ -94,7 +101,9 @@ const Settings: React.FC = () => {
   const { subscription, getExamAccess } = useSubscription();
   const navigate = useNavigate();
   // const { startTour, resetTour } = useTour();
-  const [activeTab, setActiveTab] = useState('profile');
+  const [searchParams] = useSearchParams();
+  const initialTab = searchParams.get('tab') || 'profile';
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
@@ -360,6 +369,8 @@ const Settings: React.FC = () => {
     }
   };
 
+  const [pwaState, pwaActions] = usePWAInstall();
+
   const tabs: Tab[] = [
     { id: 'profile', label: 'Profile', icon: UserIcon },
     { id: 'study', label: 'Study Plan', icon: Target },
@@ -368,6 +379,7 @@ const Settings: React.FC = () => {
     { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'feedback', label: 'Feedback & Support', icon: MessageSquare },
     { id: 'offline', label: 'Offline', icon: Wifi },
+    ...(!pwaState.isInstalled ? [{ id: 'install' as const, label: 'Install App', icon: Download }] : []),
     { id: 'account', label: 'Account', icon: Shield },
     { id: 'about', label: 'About', icon: Info },
   ];
@@ -392,10 +404,28 @@ const Settings: React.FC = () => {
 
       <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row gap-6">
-        {/* Sidebar */}
-        <div className="md:w-56 flex-shrink-0">
+        {/* Mobile dropdown menu */}
+        <div className="md:hidden mb-4">
+          <div className="relative">
+            <select
+              value={activeTab}
+              onChange={(e) => setActiveTab(e.target.value)}
+              className="w-full appearance-none bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 pr-10 text-slate-900 dark:text-slate-100 font-medium focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            >
+              {tabs.map((tab) => (
+                <option key={tab.id} value={tab.id}>
+                  {tab.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Desktop sidebar */}
+        <div className="hidden md:block md:w-56 flex-shrink-0">
           <nav 
-            className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0"
+            className="flex flex-col gap-1"
             {...tabListProps}
           >
             {tabs.map((tab) => (
@@ -403,7 +433,7 @@ const Settings: React.FC = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={clsx(
-                  'shrink-0 flex items-center gap-3 px-4 py-2 rounded-lg text-left transition-colors whitespace-nowrap',
+                  'flex items-center gap-3 px-4 py-2 rounded-lg text-left transition-colors whitespace-nowrap',
                   activeTab === tab.id
                     ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                     : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'
@@ -1171,17 +1201,27 @@ const Settings: React.FC = () => {
                                 </div>
                               </div>
                               <div className="flex items-center gap-2">
-                                {/* Upgrade button for non-paid exams */}
+                                {/* Upgrade buttons for non-paid exams */}
                                 {!access.isPaid && (access.trialExpired || access.isTrialing) && (
-                                  <button
-                                    onClick={() => navigate(`/${examId}#pricing`)}
-                                    className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
-                                  >
-                                    Subscribe
-                                    <span className="text-xs opacity-80">
-                                      {isFounderPricingActive() ? `$${pricing.founderAnnual}/yr` : `$${pricing.annual}/yr`}
-                                    </span>
-                                  </button>
+                                  <div className="flex items-center gap-2">
+                                    <button
+                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=monthly`)}
+                                      className="flex items-center gap-1.5 text-sm bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium px-3 py-1.5 rounded-lg transition-colors"
+                                    >
+                                      <span className="text-xs">
+                                        ${isFounderPricingActive() ? pricing.founderMonthly : pricing.monthly}/mo
+                                      </span>
+                                    </button>
+                                    <button
+                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=annual`)}
+                                      className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
+                                    >
+                                      <span className="text-xs">
+                                        ${isFounderPricingActive() ? pricing.founderAnnual : pricing.annual}/yr
+                                      </span>
+                                      <span className="text-xs bg-green-500/20 text-green-100 px-1.5 py-0.5 rounded font-normal">Save 40%+</span>
+                                    </button>
+                                  </div>
                                 )}
                                 {/* Manage button for paid subscribers */}
                                 {access.isPaid && subscription?.stripeCustomerId && (
@@ -1243,6 +1283,175 @@ const Settings: React.FC = () => {
               </div>
             )}
             
+            {/* Install App Tab */}
+            {activeTab === 'install' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Install VoraPrep</h2>
+                  <p className="text-slate-600 dark:text-slate-400 mb-6">
+                    Install VoraPrep on your device for the best study experience. It works just like a native app — instant loading, offline access, and always one tap away.
+                  </p>
+
+                  {/* Benefits */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                    <div className="flex flex-col items-center text-center p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800">
+                      <Wifi className="w-6 h-6 text-blue-500 mb-2" />
+                      <span className="text-sm font-medium text-slate-900 dark:text-white">Study Offline</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">No internet needed</span>
+                    </div>
+                    <div className="flex flex-col items-center text-center p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800">
+                      <Zap className="w-6 h-6 text-green-500 mb-2" />
+                      <span className="text-sm font-medium text-slate-900 dark:text-white">2x Faster</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">Instant loading</span>
+                    </div>
+                    <div className="flex flex-col items-center text-center p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800">
+                      <Smartphone className="w-6 h-6 text-purple-500 mb-2" />
+                      <span className="text-sm font-medium text-slate-900 dark:text-white">Home Screen</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">One tap to study</span>
+                    </div>
+                  </div>
+
+                  {/* Platform-specific instructions */}
+                  {pwaState.isIOS ? (
+                    <div className="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <h3 className="font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                        <Smartphone className="w-5 h-5" />
+                        Install on iPhone / iPad
+                      </h3>
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                            <span className="text-sm font-bold text-blue-600 dark:text-blue-400">1</span>
+                          </div>
+                          <div>
+                            <p className="font-medium text-slate-900 dark:text-white">Open in Safari</p>
+                            <p className="text-sm text-slate-500 dark:text-slate-400">This must be done in Safari — Chrome and other browsers don't support it on iOS.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                            <span className="text-sm font-bold text-blue-600 dark:text-blue-400">2</span>
+                          </div>
+                          <div>
+                            <p className="font-medium text-slate-900 dark:text-white">Tap the Share button</p>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                              <Share className="w-4 h-4 inline" /> The square with an arrow at the bottom of Safari
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                            <span className="text-sm font-bold text-blue-600 dark:text-blue-400">3</span>
+                          </div>
+                          <div>
+                            <p className="font-medium text-slate-900 dark:text-white">Scroll down and tap "Add to Home Screen"</p>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                              <PlusSquare className="w-4 h-4 inline" /> It may be below the fold — scroll down in the share sheet
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                            <span className="text-sm font-bold text-blue-600 dark:text-blue-400">4</span>
+                          </div>
+                          <div>
+                            <p className="font-medium text-slate-900 dark:text-white">Tap "Add"</p>
+                            <p className="text-sm text-slate-500 dark:text-slate-400">VoraPrep will appear on your home screen like a regular app!</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : pwaState.canInstall ? (
+                    <div className="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                        <Smartphone className="w-5 h-5" />
+                        {pwaState.isAndroid ? 'Install on Android' : 'Install on Your Device'}
+                      </h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                        Click the button below to install VoraPrep. It takes just a second and doesn't use much storage.
+                      </p>
+                      <Button
+                        onClick={async () => {
+                          const success = await pwaActions.promptInstall();
+                          if (success) {
+                            logger.info('PWA installed from Settings');
+                          }
+                        }}
+                        variant="primary"
+                        className="flex items-center gap-2"
+                      >
+                        <Download className="w-5 h-5" />
+                        Install VoraPrep
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="bg-slate-50 dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <h3 className="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                        <Smartphone className="w-5 h-5" />
+                        How to Install
+                      </h3>
+                      <div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <p><strong>Chrome (Android):</strong> Tap the menu (three dots) → "Install app" or "Add to Home screen"</p>
+                        <p><strong>Chrome (Desktop):</strong> Click the install icon in the address bar, or go to Menu → "Install VoraPrep"</p>
+                        <p><strong>Edge:</strong> Click the install icon in the address bar, or go to Menu → Apps → "Install this site as an app"</p>
+                        <p><strong>Firefox:</strong> Firefox doesn't support PWA install — try Chrome or Edge for the best experience</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Already installed message */}
+                  {pwaState.isInstalled && (
+                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-xl border border-green-200 dark:border-green-800 mt-4">
+                      <div className="flex items-center gap-3">
+                        <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
+                        <div>
+                          <p className="font-medium text-green-900 dark:text-green-200">VoraPrep is installed!</p>
+                          <p className="text-sm text-green-700 dark:text-green-300">You're running the app version. Enjoy faster loading and offline access.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* FAQ */}
+                  <div className="mt-6 space-y-3">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">Frequently Asked Questions</h3>
+                    <details className="group">
+                      <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                        What is a PWA?
+                      </summary>
+                      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 pl-4">
+                        A Progressive Web App (PWA) is a website that works like a native app. Once installed, VoraPrep opens in its own window, loads instantly, works offline, and lives on your home screen — no app store needed.
+                      </p>
+                    </details>
+                    <details className="group">
+                      <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                        Does it use a lot of storage?
+                      </summary>
+                      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 pl-4">
+                        No — VoraPrep uses less than 50MB, far less than most apps. Your study progress syncs to the cloud.
+                      </p>
+                    </details>
+                    <details className="group">
+                      <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                        Can I uninstall it?
+                      </summary>
+                      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 pl-4">
+                        Yes! Uninstall it like any other app. On mobile, long-press the icon and tap Remove. On desktop, click the three dots in the title bar → Uninstall.
+                      </p>
+                    </details>
+                    <details className="group">
+                      <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400">
+                        Is this the same as the App Store / Play Store app?
+                      </summary>
+                      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 pl-4">
+                        VoraPrep's PWA is our primary mobile experience. It gives you all the same features with the advantage of always being up to date — no manual updates needed.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* About Tab */}
             {activeTab === 'about' && (
               <div className="card-body space-y-6">
@@ -1301,6 +1510,16 @@ const Settings: React.FC = () => {
                                 await new Promise(resolve => setTimeout(resolve, 1500));
                                 // Check if there's a waiting worker (new version available)
                                 if (registration.waiting) {
+                                  // Check if we just updated (banner uses 30s cooldown)
+                                  const justUpdated = localStorage.getItem('pwa-just-updated');
+                                  if (justUpdated) {
+                                    const elapsed = Date.now() - parseInt(justUpdated, 10);
+                                    if (elapsed < 30000) {
+                                      // Within cooldown - clear the waiting worker and report up to date
+                                      setUpdateCheckResult('none');
+                                      return;
+                                    }
+                                  }
                                   setUpdateCheckResult('available');
                                   triggerUpdateBanner();
                                 } else {

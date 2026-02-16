@@ -352,7 +352,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               {config.examParts.map((part, idx) => (
                 <Link 
                   key={idx}
-                  to={`${config.registerPath}?section=${part.part}`}
+                  to={`${config.registerPath}&section=${part.part}`}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 transition-all cursor-pointer group"
                 >
                   <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
@@ -592,8 +592,22 @@ interface PricingSectionProps {
 
 const PricingSection = ({ config, colors }: PricingSectionProps) => {
   const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
-  const [isCheckingOut, setIsCheckingOut] = useState(false);
   const { user } = useAuth();
+  
+  // Clear stale pendingCheckout if it's for a different course
+  useEffect(() => {
+    const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+    if (pendingCheckoutStr) {
+      try {
+        const pendingCheckout = JSON.parse(pendingCheckoutStr);
+        if (pendingCheckout.course !== config.id) {
+          localStorage.removeItem('pendingCheckout');
+        }
+      } catch {
+        localStorage.removeItem('pendingCheckout');
+      }
+    }
+  }, [config.id]);
   
   // Founder pricing — single source of truth in subscription.ts
   const isFounderWindow = isFounderPricingActive();
@@ -620,13 +634,14 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
     'Pass guarantee*',
   ].filter(Boolean);
 
-  const handleCheckout = async () => {
-    setIsCheckingOut(true);
-    // Logged-in users go directly to checkout, others to registration
+  // All landing page CTAs route to registration (free trial first)
+  // Users can subscribe from the dashboard/banner after trying the product
+  const handleStartTrial = () => {
     if (user) {
-      window.location.href = `/start-checkout?course=${config.id}&interval=${billingInterval}`;
+      // Already logged in — go to their dashboard
+      window.location.href = `/${config.id === 'cpa' ? 'home' : config.id}`;
     } else {
-      window.location.href = `/register?course=${config.id}&redirect=checkout&interval=${billingInterval}`;
+      window.location.href = `/register?course=${config.id}`;
     }
   };
 
@@ -711,14 +726,20 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               
               {billingInterval === 'annual' && (
                 <p className="text-white/80 text-sm">
-                  Just ${(currentPrice / 12).toFixed(0)}/month • Save {savings}%
+                  Just ${isFounderWindow ? pricing.founderMonthly : pricing.monthly}/month • Save {savings}%
+                </p>
+              )}
+              
+              {billingInterval === 'monthly' && (
+                <p className="text-white/80 text-sm">
+                  Switch to annual and save ${(pricing.monthly * 12) - (isFounderWindow ? pricing.founderAnnual : pricing.annual)}/year
                 </p>
               )}
               
               {isFounderWindow && (
                 <div className="mt-3 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
                   <span>🏆</span>
-                  <span>Founder rate guaranteed through August 2028</span>
+                  <span>Founder rate guaranteed through April 2028</span>
                 </div>
               )}
             </div>
@@ -738,27 +759,17 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
                 ))}
               </div>
 
-              {/* CTA Button */}
+              {/* CTA Button — always starts with free trial */}
               <button
-                onClick={handleCheckout}
-                disabled={isCheckingOut}
-                className={`w-full bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+                onClick={handleStartTrial}
+                className={`w-full bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2`}
               >
-                {isCheckingOut ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Loading...
-                  </>
-                ) : (
-                  <>
-                    Subscribe Now
-                    <ArrowRight className="w-5 h-5" />
-                  </>
-                )}
+                Start 14-Day Free Trial
+                <ArrowRight className="w-5 h-5" />
               </button>
               
               <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
-                Cancel anytime • Pass guarantee included
+                No credit card required • Cancel anytime • Pass guarantee
               </p>
             </div>
 

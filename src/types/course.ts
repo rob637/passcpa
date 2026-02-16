@@ -121,6 +121,8 @@ export interface Course {
     careerOpportunities: string[];
     averageSalary?: string;
     examFormat: string;
+    prerequisites?: string[];
+    passRates?: string;
   };
   
   // Exam Strategy - Tips for passing

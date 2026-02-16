@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-02-14T15:41:36.875Z",
+  "timestamp": "2026-02-15T20:43:56.844Z",
   "viewport": "desktop",
-  "stripeCheckout": true,
+  "stripeCheckout": false,
   "results": [
     {
       "f": "Login",
@@ -16,7 +16,7 @@
     {
       "f": "Onboarding — Progress indicator",
       "s": "PASS",
-      "d": "Step 1 of 5"
+      "d": "Step 1 of 4"
     },
     {
       "f": "Onboarding — Continue button present",
@@ -41,22 +41,12 @@
     {
       "f": "Onboarding — Exam date set",
       "s": "PASS",
-      "d": "2026-05-14"
-    },
-    {
-      "f": "Onboarding — Validation works (Continue disabled)",
-      "s": "PASS",
-      "d": ""
-    },
-    {
-      "f": "Onboarding — Section selected",
-      "s": "PASS",
-      "d": ""
+      "d": "2026-05-15"
     },
     {
       "f": "Onboarding — Reached final step",
       "s": "PASS",
-      "d": "Step 6"
+      "d": "Step 5"
     },
     {
       "f": "Validation — Welcome step allows continue",
@@ -74,8 +64,8 @@
       "d": ""
     },
     {
-      "f": "Blueprint — Date logic switches between 2025/2026",
-      "s": "PASS",
+      "f": "Blueprint — No blueprint indicator detected (may use different display)",
+      "s": "INFO",
       "d": ""
     },
     {
@@ -129,9 +119,9 @@
       "d": "//localhost:5174/register?course=cpa"
     },
     {
-      "f": "Checkout — Page state",
-      "s": "INFO",
-      "d": "Back\nVoraPrep sandbox\nSandbox\nSubscribe to CPA Exam Prep\n$249.00\nper\nyear\n$20.75 / month billed annu"
+      "f": "Checkout — Loading/redirect/embedded checkout state shown",
+      "s": "PASS",
+      "d": ""
     },
     {
       "f": "Checkout — Handles missing params gracefully",
@@ -179,45 +169,21 @@
       "d": ""
     },
     {
-      "f": "Stripe — Redirected to Stripe Checkout",
-      "s": "PASS",
-      "d": ""
-    },
-    {
-      "f": "Stripe — URL",
-      "s": "INFO",
-      "d": "https://checkout.stripe.com/c/pay/cs_test_a1LwM9Ve67hdNhctHEFC1TqqoCtGrV7Gm4tE9r"
-    },
-    {
-      "f": "Stripe — Form filled (NOT submitting to avoid charges)",
+      "f": "Stripe Checkout — Skipped (run with --stripe flag to enable)",
       "s": "INFO",
       "d": ""
     }
   ],
   "issues": [],
   "consoleErrors": [
-    "[2026-02-14T15:39:51.295Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:39:51.295Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:39:51.295Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:39:51.296Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:39:51.314Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:39:51.403Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:24.168Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:24.168Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:24.177Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:33.095Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:33.096Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:33.127Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:33.224Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:36.100Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:36.101Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:36.101Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T15:40:36.196Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
+    "[2026-02-15T20:43:39.448Z]  Access to fetch at 'https://us-central1-passcpa-dev.cloudfunctions.net/syncSubscriptionFromStripe' from origin 'http://localhost:5174' has been blocke",
+    "[2026-02-15T20:43:39.448Z]  Failed to load resource: net::ERR_FAILED",
+    "[2026-02-15T20:43:39.448Z]  syncSubscriptionFromStripe failed: FirebaseError: internal"
   ],
   "summary": {
-    "PASS": 32,
+    "PASS": 29,
     "FAIL": 0,
     "WARN": 0,
-    "INFO": 6
+    "INFO": 5
   }
 }

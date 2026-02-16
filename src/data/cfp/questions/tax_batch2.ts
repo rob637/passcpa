@@ -147,16 +147,16 @@ Credits are more valuable than deductions of the same dollar amount.
     options: [
       'D) $35,000',
       'B) $32,250',
-      'C) $33,750',
-      'A) $30,750',
+      'C) $33,700',
+      'A) $30,700',
     ],
     correctAnswer: 2,
-    explanation: `**Correct Answer: C ($33,750)**
+    explanation: `**Correct Answer: C ($33,700)**
 
-**2026 Standard Deductions (estimated):**
-- MFJ base: $30,750
+**2026 Standard Deductions:**
+- MFJ base: $30,700
 - Additional for 65+: $1,500 per spouse
-- Total: $30,750 + $1,500 + $1,500 = $33,750
+- Total: $30,700 + $1,500 + $1,500 = $33,700
 
 Each spouse over 65 adds an extra deduction amount.
 
@@ -317,7 +317,7 @@ At $180,000 AGI, the $25,000 allowance is fully phased out. The $15,000 loss is 
 
 **Section 199A QBI Deduction:**
 - Basic deduction: 20% of QBI = $80,000 × 20% = $16,000
-- SSTB limitations phase in at $191,950 single (2026)
+- SSTB limitations phase in at $202,050 single (2026)
 - At $140,000, below threshold, so full deduction available
 
 The 20% deduction is available before phase-out limits apply.
@@ -803,7 +803,7 @@ $15,000 loss with no gains: $3,000 deductible, $12,000 carries forward.
     explanation: `**Correct Answer: B (Make a Qualified Charitable Distribution from IRA)**
 
 **QCD Benefits:**
-- Direct IRA-to-charity transfer (up to $105,000 in 2024+, indexed)
+- Direct IRA-to-charity transfer (up to $108,000 in 2026+, indexed)
 - Excludes distribution from income (not just deduction)
 - Counts toward RMD
 - Works even if client takes standard deduction

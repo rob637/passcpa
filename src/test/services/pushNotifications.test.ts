@@ -47,7 +47,8 @@ vi.mock('firebase/firestore', () => ({
   doc: (...args: unknown[]) => mockDoc(...args),
   updateDoc: (...args: unknown[]) => mockUpdateDoc(...args),
   arrayUnion: (val: unknown) => mockArrayUnion(val),
-  arrayRemove: (val: unknown) => mockArrayRemove(val)
+  arrayRemove: (val: unknown) => mockArrayRemove(val),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 // Import after all mocks

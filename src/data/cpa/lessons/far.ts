@@ -4,6 +4,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-001',
     section: 'FAR',
+    courseId: 'cpa',
     title: "FASB Conceptual Framework: Foundation of GAAP",
     description: "Master the theoretical foundation that underlies all U.S. GAAP standards",
     order: 1,
@@ -97,6 +98,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-002',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Financial Statements: Components & Presentation",
     description: "Understand the complete set of financial statements and their interrelationships",
     order: 2,
@@ -186,6 +188,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-003',
     section: 'FAR',
+    courseId: 'cpa',
     title: "GAAP Hierarchy & Standard-Setting Process",
     description: "Navigate the authoritative sources of U.S. GAAP and understand how standards are created",
     order: 3,
@@ -269,6 +272,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-004',
     section: 'FAR',
+    courseId: 'cpa',
     title: "SEC Reporting: 10-K, 10-Q, 8-K",
     description: "Master the SEC filing requirements that public companies must follow",
     order: 4,
@@ -369,6 +373,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-005',
     section: 'FAR',
+    courseId: 'cpa',
     title: "GAAP vs IFRS: Key Differences",
     description: "Understand the critical differences between U.S. GAAP and International Financial Reporting Standards",
     order: 5,
@@ -482,6 +487,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-006',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Recognition Criteria and Derecognition",
     description: "Apply the criteria for when to record and remove items from financial statements",
     order: 91,
@@ -557,6 +563,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-I-007',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Measurement Bases and Fair Value Concepts",
     description: "Apply different measurement approaches in financial reporting",
     order: 92,
@@ -627,6 +634,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-001',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Cash & Cash Equivalents: Recognition & Measurement",
     description: "Master the classification and reporting of cash and cash equivalents",
     order: 6,
@@ -709,6 +717,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-002',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Bank Reconciliations: The Complete Process",
     description: "Master the mechanics of reconciling book and bank balances",
     order: 7,
@@ -797,6 +806,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-003',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Accounts Receivable & Allowance Methods",
     description: "Master receivables recognition, valuation, and the allowance for doubtful accounts",
     order: 8,
@@ -883,6 +893,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-004',
     section: 'FAR',
+    courseId: 'cpa',
     title: "CECL: Current Expected Credit Losses",
     description: "Understand the forward-looking credit loss model under ASC 326",
     order: 9,
@@ -988,6 +999,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-005',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Notes Receivable & Impairment",
     description: "Account for long-term receivables, present value calculations, and impairment",
     order: 10,
@@ -1084,6 +1096,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-006',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Factoring, Pledging & Transfers of Receivables",
     description: "Understand when transfers qualify as sales vs. secured borrowings",
     order: 11,
@@ -1188,6 +1201,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-007',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Inventory Cost Flow: FIFO, LIFO, Weighted Average",
     description: "Master the major inventory costing methods and their financial statement impacts",
     order: 12,
@@ -1294,6 +1308,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-008',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Lower of Cost or Net Realizable Value",
     description: "Apply inventory valuation rules when market value declines",
     order: 13,
@@ -1393,6 +1408,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-009',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Dollar-Value LIFO",
     description: "Master the complex LIFO pools technique using price indices",
     order: 14,
@@ -1499,6 +1515,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-010',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Inventory Errors & Period Corrections",
     description: "Analyze and correct inventory errors across periods",
     order: 15,
@@ -1593,6 +1610,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-011',
     section: 'FAR',
+    courseId: 'cpa',
     title: "PP&E Acquisition & Capitalization",
     description: "Determine what costs to capitalize vs. expense for property, plant, and equipment",
     order: 16,
@@ -1706,6 +1724,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-012',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Depreciation Methods: SL, DDB, Units, SYD",
     description: "Calculate depreciation using all major methods tested on the CPA exam",
     order: 17,
@@ -1820,6 +1839,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-013',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Asset Impairment: Long-Lived Assets",
     description: "Apply the two-step impairment test for assets held and used",
     order: 18,
@@ -1915,6 +1935,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-014',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Disposals & Nonmonetary Exchanges",
     description: "Account for asset sales, retirements, and exchanges with commercial substance",
     order: 19,
@@ -2019,6 +2040,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-015',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Debt Securities: HTM, AFS, Trading",
     description: "Master the three classifications of debt security investments and their accounting",
     order: 20,
@@ -2122,6 +2144,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-016',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Equity Securities: Fair Value Measurement",
     description: "Account for stock investments using fair value method under ASC 321",
     order: 21,
@@ -2217,6 +2240,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-017',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Equity Method Investments",
     description: "Apply the equity method for investments with significant influence (20-50%)",
     order: 22,
@@ -2318,6 +2342,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-018',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Fair Value Hierarchy: Levels 1, 2, 3",
     description: "Apply the three-level fair value hierarchy under ASC 820",
     order: 23,
@@ -2432,6 +2457,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-019',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Intangible Assets: R&D & Software Costs",
     description: "Account for research & development costs and software development under GAAP",
     order: 24,
@@ -2539,6 +2565,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-020',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Acquired Intangibles & Amortization",
     description: "Account for purchased intangible assets and determine amortization periods",
     order: 25,
@@ -2641,6 +2668,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-021',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Goodwill Impairment Testing",
     description: "Apply the simplified goodwill impairment test under ASC 350",
     order: 26,
@@ -2741,6 +2769,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-022',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Accounts Payable & Accrued Liabilities",
     description: "Recognize and measure current trade and accrued liabilities",
     order: 27,
@@ -2836,6 +2865,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-023',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Asset Retirement Obligations",
     description: "Account for legal obligations to dismantle or restore long-lived assets",
     order: 28,
@@ -2943,6 +2973,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-024',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Notes Payable & Interest",
     description: "Account for short-term and long-term notes payable with interest calculations",
     order: 29,
@@ -3031,6 +3062,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-025',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Bonds Payable: Issuance, Premium, Discount",
     description: "Account for bond issuance at par, premium, and discount with effective interest method",
     order: 30,
@@ -3136,6 +3168,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-026',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Debt Modifications & Extinguishments",
     description: "Account for early debt retirement, troubled debt restructuring, and modifications",
     order: 31,
@@ -3234,6 +3267,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-027',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Stock Issuances: Common & Preferred",
     description: "Account for stock issuances for cash and noncash consideration",
     order: 32,
@@ -3334,6 +3368,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-028',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Treasury Stock: Cost & Par Value Methods",
     description: "Account for stock repurchases and reissuances under both methods",
     order: 33,
@@ -3434,6 +3469,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-029',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Dividends: Cash, Property, Stock, Liquidating",
     description: "Account for all types of dividends and their effects on equity",
     order: 34,
@@ -3534,6 +3570,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-II-030',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Stock Compensation: Options, RSUs, ESPPs",
     description: "Account for share-based payments to employees under ASC 718",
     order: 35,
@@ -3633,6 +3670,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-001',
     section: 'FAR',
+    courseId: 'cpa',
     title: "ASC 606: Five-Step Revenue Model",
     description: "Master the comprehensive framework for recognizing revenue from contracts with customers under ASC 606",
     order: 36,
@@ -3753,6 +3791,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-002',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Identifying Performance Obligations",
     description: "Deep dive into determining when promises are distinct performance obligations requiring separate revenue recognition",
     order: 37,
@@ -3870,6 +3909,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-003',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Variable Consideration & Constraints",
     description: "Master the estimation and constraint of variable consideration including discounts, rebates, refunds, and performance bonuses",
     order: 38,
@@ -3988,6 +4028,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-004',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Contract Costs: Obtain & Fulfill",
     description: "Learn when to capitalize costs to obtain and fulfill contracts and how to amortize them",
     order: 39,
@@ -4115,6 +4156,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-005',
     section: 'FAR',
+    courseId: 'cpa',
     title: "ASC 842: Lease Classification",
     description: "Master the criteria for classifying leases as finance or operating under the new lease standard",
     order: 40,
@@ -4233,6 +4275,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-006',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Lessee Accounting: Finance & Operating",
     description: "Master the initial measurement and subsequent accounting for both finance and operating leases from the lessee perspective",
     order: 41,
@@ -4357,6 +4400,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-007',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Lessor Accounting: Sales-Type, Direct, Operating",
     description: "Master the three lessor accounting models including initial and subsequent entries for each type",
     order: 42,
@@ -4487,6 +4531,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-008',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Sale-Leaseback Transactions",
     description: "Understand when a sale-leaseback qualifies as a sale and how to account for both qualifying and failed sale-leasebacks",
     order: 43,
@@ -4586,6 +4631,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-009',
     section: 'FAR',
+    courseId: 'cpa',
     title: "ASC 740: Deferred Taxes Overview",
     description: "Understand the asset/liability approach to accounting for income taxes and the framework for deferred tax assets and liabilities",
     order: 44,
@@ -4693,6 +4739,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-010',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Temporary vs Permanent Differences",
     description: "Distinguish between temporary differences that create deferred taxes and permanent differences that don't",
     order: 45,
@@ -4821,6 +4868,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-011',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Valuation Allowance & DTA Realization",
     description: "Master the more-likely-than-not threshold for deferred tax assets and when to record a valuation allowance",
     order: 46,
@@ -4928,6 +4976,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-012',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Uncertain Tax Positions (FIN 48)",
     description: "Learn the two-step recognition and measurement process for uncertain tax positions under ASC 740-10",
     order: 47,
@@ -5034,6 +5083,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-013',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Defined Benefit Pensions: Expense Components",
     description: "Master the five components of pension expense and the calculation of the pension liability/asset",
     order: 48,
@@ -5145,6 +5195,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-014',
     section: 'FAR',
+    courseId: 'cpa',
     title: "OPEB: Other Post-Employment Benefits",
     description: "Understand accounting for retiree health care and other post-employment benefits beyond pensions",
     order: 49,
@@ -5254,6 +5305,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-015',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Contingencies & Commitments",
     description: "Master the recognition and disclosure criteria for loss contingencies, gain contingencies, and commitments",
     order: 50,
@@ -5373,6 +5425,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-016',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Earnings Per Share: Basic & Diluted",
     description: "Master the calculation of basic and diluted EPS including the treatment of stock options, convertibles, and contingent shares",
     order: 51,
@@ -5492,6 +5545,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-017',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Statement of Cash Flows",
     description: "Master the preparation and classification of cash flows using both direct and indirect methods",
     order: 52,
@@ -5621,6 +5675,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-001',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Government Accounting: Measurement Focus & Basis",
     description: "Understand the unique measurement focuses and bases of accounting used in government financial reporting",
     order: 53,
@@ -5713,6 +5768,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-002',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Fund Accounting: Types & Purposes",
     description: "Learn the eleven fund types used in government accounting and their purposes",
     order: 54,
@@ -5814,6 +5870,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-003',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Budgetary Accounting & Encumbrances",
     description: "Master the budgetary entries and encumbrance accounting unique to governmental funds",
     order: 55,
@@ -5903,6 +5960,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-004',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Government-Wide: Statement of Net Position",
     description: "Understand the format and content of the government-wide Statement of Net Position",
     order: 56,
@@ -5987,6 +6045,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-005',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Government-Wide: Statement of Activities",
     description: "Master the unique net cost format of the government-wide Statement of Activities",
     order: 57,
@@ -6076,6 +6135,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-006',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Governmental Fund Financial Statements",
     description: "Master the balance sheet and operating statement formats for governmental funds",
     order: 58,
@@ -6164,6 +6224,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-007',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Proprietary Fund Financial Statements",
     description: "Learn the business-like statements for enterprise and internal service funds",
     order: 59,
@@ -6259,6 +6320,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-008',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Fiduciary Fund Financial Statements",
     description: "Understand fiduciary fund reporting for resources held in trust for others",
     order: 60,
@@ -6343,6 +6405,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-009',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Government Fund Accounting: General and Special Revenue",
     description: "Master the two primary governmental fund types",
     order: 59,
@@ -6422,6 +6485,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-IV-010',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Capital Projects and Debt Service Funds",
     description: "Master funds for capital improvements and debt repayment",
     order: 60,
@@ -6501,6 +6565,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-001',
     section: 'FAR',
+    courseId: 'cpa',
     title: "NFP Statement of Financial Position",
     description: "Master the unique balance sheet format for not-for-profit organizations",
     order: 61,
@@ -6585,6 +6650,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-002',
     section: 'FAR',
+    courseId: 'cpa',
     title: "NFP Statement of Activities",
     description: "Learn how to report revenues, expenses, and changes in net assets for NFPs",
     order: 62,
@@ -6679,6 +6745,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-003',
     section: 'FAR',
+    courseId: 'cpa',
     title: "NFP Statement of Cash Flows",
     description: "Understand the unique cash flow reporting requirements for not-for-profit organizations",
     order: 63,
@@ -6772,6 +6839,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-004',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Contributions, Pledges & Net Assets",
     description: "Master contribution revenue recognition, pledge accounting, and net asset classification",
     order: 64,
@@ -6861,6 +6929,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-005',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Split-Interest Agreements",
     description: "Learn the accounting for charitable remainder trusts, gift annuities, and other split-interest agreements",
     order: 65,
@@ -6956,6 +7025,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-006',
     section: 'FAR',
+    courseId: 'cpa',
     title: "NFP Functional Expense Reporting",
     description: "Master expense allocation and the Statement of Functional Expenses",
     order: 66,
@@ -7030,6 +7100,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-007',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Healthcare Entity Accounting",
     description: "Learn the unique accounting for hospitals and healthcare organizations",
     order: 67,
@@ -7111,6 +7182,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-018',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Defined Benefit Pension Plans",
     description: "Master pension accounting including the PBO, plan assets, and net pension cost",
     order: 66,
@@ -7218,6 +7290,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-019',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Basic Earnings Per Share (EPS)",
     description: "Calculate and present basic EPS for simple capital structures",
     order: 67,
@@ -7307,6 +7380,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-020',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Diluted Earnings Per Share",
     description: "Calculate diluted EPS with convertibles, options, and other dilutive securities",
     order: 68,
@@ -7401,6 +7475,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-021',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Income Tax Accounting: Deferred Taxes",
     description: "Master deferred tax assets, liabilities, and temporary differences",
     order: 69,
@@ -7496,6 +7571,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-022',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Deferred Tax Asset Valuation Allowance",
     description: "Determine when a valuation allowance is needed for deferred tax assets",
     order: 70,
@@ -7579,6 +7655,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-020',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Revenue Recognition: Multiple Performance Obligations",
     description: "Master allocation of transaction price to performance obligations",
     order: 85,
@@ -7649,6 +7726,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-021',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Revenue Recognition: Contract Modifications",
     description: "Understand accounting for changes to revenue contracts",
     order: 86,
@@ -7718,6 +7796,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-022',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Inventory: Lower of Cost or Net Realizable Value",
     description: "Apply LCNRV testing and write-down accounting",
     order: 87,
@@ -7788,6 +7867,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-023',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Troubled Debt Restructuring (ASC 470-60)",
     description: "Understand debtor and creditor accounting for restructured debt",
     order: 88,
@@ -7858,6 +7938,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-024',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Software Development Costs",
     description: "Understand capitalization of internal-use and for-sale software",
     order: 89,
@@ -7927,6 +8008,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-025',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Asset Retirement Obligations (ARO)",
     description: "Account for legal obligations to retire long-lived assets",
     order: 90,
@@ -7996,6 +8078,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-026',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Contingencies and Loss Accruals",
     description: "Apply contingency recognition and disclosure rules",
     order: 91,
@@ -8067,6 +8150,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-027',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Equity Method Investments",
     description: "Master accounting for significant influence investments",
     order: 92,
@@ -8142,6 +8226,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-028',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Consolidation: Noncontrolling Interests",
     description: "Account for NCI in consolidated financial statements",
     order: 93,
@@ -8210,6 +8295,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-029',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Statement of Cash Flows: Operating Section",
     description: "Master direct and indirect methods for operating activities",
     order: 94,
@@ -8287,6 +8373,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-030',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Government Fund Accounting Basics",
     description: "Master the fund structure and measurement focus",
     order: 95,
@@ -8363,6 +8450,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-031',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Government-wide Financial Statements",
     description: "Understand full accrual conversion and dual perspective",
     order: 96,
@@ -8434,6 +8522,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-032',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Not-for-Profit Financial Statements",
     description: "Master NFP financial statement requirements",
     order: 97,
@@ -8503,6 +8592,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-V-033',
     section: 'FAR',
+    courseId: 'cpa',
     title: "NFP Contributions and Promises",
     description: "Apply contribution recognition and pledges receivable",
     order: 98,
@@ -8572,6 +8662,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-120',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Bonds Payable: Premium and Discount",
     description: "Master bond issuance and effective interest method",
     order: 99,
@@ -8641,6 +8732,7 @@ export const farLessons: Lesson[] = [
   {
     id: 'FAR-III-121',
     section: 'FAR',
+    courseId: 'cpa',
     title: "Deferred Revenue and Contract Liabilities",
     description: "Understand performance obligations and timing",
     order: 100,

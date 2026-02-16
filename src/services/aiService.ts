@@ -284,7 +284,16 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   // Check for off-topic questions first - use course-specific keywords
   const topicKeywords = course.topicList;
   
-  const isOnTopic = topicKeywords.some(keyword => lowerInput.includes(keyword)) || lowerInput.length < 15;
+  // Recognize common follow-up/contextual questions that reference the previous message
+  const isFollowUp = /^(why|how|what|when|where|who|which|can you|could you|tell me|explain|elaborate|go (on|deeper)|more (detail|info|about)|give me|walk me|is (this|that|it)|are (these|those)|does (this|that|it)|do (these|those)|should|would|isn'?t|aren'?t|doesn'?t|what about|how about|so |but |and )/i.test(lowerInput) ||
+    /\b(important|relevant|matter|differ|compare|example|scenario|detail|summary|overview|breakdown|clarify|mean|definition|significance)\b/i.test(lowerInput);
+  
+  // Check if the previous assistant message establishes topic context
+  const hasConversationContext = lastAssistantMessage.length > 50;
+  
+  const isOnTopic = topicKeywords.some(keyword => lowerInput.includes(keyword)) || 
+    lowerInput.length < 15 ||
+    (isFollowUp && hasConversationContext);
   
   // Off-topic response
   if (!isOnTopic && lowerInput.length > 20) {

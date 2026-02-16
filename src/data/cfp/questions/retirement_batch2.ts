@@ -23,25 +23,25 @@ export const CFP_RET_BATCH2_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: `In 2026, an employee aged 53 wants to maximize their 401(k) contributions. What is the maximum total employee deferral they can make?`,
     options: [
-      'B) $31,000',
-      'A) $23,500',
-      'D) $30,500',
-      'C) $23,000',
+      'B) $32,000',
+      'A) $24,500',
+      'D) $31,000',
+      'C) $23,500',
     ],
     correctAnswer: 0,
-    explanation: `**Correct Answer: B ($31,000)**
+    explanation: `**Correct Answer: B ($32,000)**
 
 **2026 401(k) Limits:**
-- Regular deferral limit: $23,500
+- Regular deferral limit: $24,500
 - Catch-up (age 50+): $7,500
-- Total: $23,500 + $7,500 = $31,000
+- Total: $24,500 + $7,500 = $32,000
 
 At age 53, the employee qualifies for catch-up contributions.
 
 **Why other answers are wrong:**
-- **A) $23,500:** Base limit without catch-up
-- **C) $23,000:** Previous year limit
-- **D) $30,500:** Incorrect catch-up amount`
+- **A) $24,500:** Base limit without catch-up
+- **C) $23,500:** Previous year limit
+- **D) $31,000:** Incorrect catch-up amount`
   },
   {
     id: 'cfp-ret-b2-002',
@@ -74,7 +74,7 @@ At age 53, the employee qualifies for catch-up contributions.
     question: `A self-employed consultant has net self-employment income of $180,000 (after SE tax deduction). What is the maximum SEP contribution for 2026?`,
     options: [
       'A) $36,000',
-      'D) $69,000',
+      'D) $71,500',
       'B) $45,000',
       'C) $33,408',
     ],
@@ -92,7 +92,7 @@ More accurately: $180,000 × 20% = $36,000, reduced by SE tax = ~$33,408
 **Why other answers are wrong:**
 - **A) $36,000:** Simple 20% without proper adjustment
 - **B) $45,000:** 25% without self-employment adjustment
-- **D) $69,000:** Exceeds the annual limit`
+- **D) $71,500:** Exceeds the annual limit for this income level`
   },
   {
     id: 'cfp-ret-b2-004',

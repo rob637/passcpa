@@ -148,7 +148,7 @@ export const CFP_FORMULA_SHEET: CFPFormulaCategory[] = [
       { name: 'Spousal Benefit Maximum', formula: '50% of Worker\'s PIA at FRA', notes: 'Reduced if claimed early' },
       { name: 'Provisional Income', formula: 'AGI + Tax-Exempt Interest + 50% SS Benefits', notes: 'For SS taxation' },
       { name: 'SS Taxation Thresholds', formula: '$25K/$32K (50% taxable) or $34K/$44K (85% taxable)', notes: 'Single/MFJ thresholds' },
-      { name: 'Earnings Test', formula: '$1 withheld per $2 over limit ($22,320 in 2024)', notes: 'Before FRA' },
+      { name: 'Earnings Test', formula: '$1 withheld per $2 over limit ($23,400 in 2026)', notes: 'Before FRA' },
     ],
   },
 
@@ -210,8 +210,8 @@ export const CFP_FORMULA_SHEET: CFPFormulaCategory[] = [
     formulas: [
       { name: 'Taxable Estate', formula: 'Gross Estate - Deductions (Marital, Charitable, Expenses)', notes: 'Estate tax base' },
       { name: 'Estate Tax', formula: '(Taxable Estate + Adjusted Taxable Gifts) × 40% - Unified Credit', notes: 'After exemption' },
-      { name: 'Gift Tax Annual Exclusion', formula: '$18,000 per donee (2024)', notes: 'Per person, per year' },
-      { name: 'Unified Credit', formula: '$5,389,800 (2024) = $13.61M exemption', notes: 'Lifetime exemption' },
+      { name: 'Gift Tax Annual Exclusion', formula: '$19,000 per donee (2026)', notes: 'Per person, per year' },
+      { name: 'Unified Credit', formula: '$2,800,000 (2026) = $7.0M exemption', notes: 'Lifetime exemption (TCJA sunset)' },
       { name: 'GRAT Remainder Value', formula: 'Principal - PV of Retained Annuity Interest', notes: 'Taxable gift at creation' },
       { name: 'Present Interest (Crummey)', formula: 'Annual exclusion requires present interest', notes: 'Withdrawal rights create' },
     ],
@@ -246,7 +246,7 @@ export const CFP_FORMULA_SHEET: CFPFormulaCategory[] = [
     formulas: [
       { name: 'Self-Employment Tax', formula: '15.3% × (Net SE Income × 92.35%)', notes: 'Up to SS wage base ($168,600 in 2024), then 2.9%' },
       { name: 'SE Tax Deduction', formula: '50% of SE Tax', notes: 'Above-the-line deduction' },
-      { name: 'SEP IRA Contribution', formula: '25% of Compensation (or 20% of net SE income)', notes: 'Max $69,000 (2024)' },
+      { name: 'SEP IRA Contribution', formula: '25% of Compensation (or 20% of net SE income)', notes: 'Max $71,500 (2026)' },
       { name: 'SIMPLE IRA Employer Match', formula: '3% of Compensation (or 2% nonelective)', notes: 'Dollar-for-dollar or 2% for all' },
     ],
   },

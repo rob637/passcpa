@@ -4,6 +4,7 @@
  */
 
 import { useEffect, useRef, useCallback } from 'react';
+import logger from '../utils/logger';
 
 // Types
 interface SessionData {
@@ -65,13 +66,11 @@ export const useSessionTracking = () => {
         isVisible.current = false;
         // Log session pause
         const activeDuration = Date.now() - sessionStart.current;
-        if (import.meta.env.DEV) {
-          console.log(
+        logger.debug(
             '[Engagement] Session paused after',
             Math.round(activeDuration / 1000),
             'seconds'
           );
-        }
       } else {
         isVisible.current = true;
         // Resume session
@@ -151,9 +150,7 @@ export const useQuestionMetrics = () => {
         is_correct: isCorrect,
       };
 
-      if (import.meta.env.DEV) {
-        console.log('[Engagement] Question attempt:', metrics);
-      }
+      logger.debug('[Engagement] Question attempt:', metrics);
 
       logAnalyticsEvent('question_attempt', metrics as unknown as Record<string, unknown>);
 
@@ -234,9 +231,7 @@ export const useStudySessionMetrics = () => {
       accuracy_percent: accuracy,
     };
 
-    if (import.meta.env.DEV) {
-      console.log('[Engagement] Study session ended:', metrics);
-    }
+    logger.debug('[Engagement] Study session ended:', metrics);
 
     if (sessionData.current.questionsAnswered > 0) {
       logAnalyticsEvent('study_session_end', metrics as unknown as Record<string, unknown>);
@@ -270,9 +265,7 @@ export const useStudySessionMetrics = () => {
  * Track feature usage
  */
 export const trackFeatureUsage = (featureName: string, metadata: Record<string, unknown> = {}): void => {
-  if (import.meta.env.DEV) {
-    console.log('[Engagement] Feature used:', featureName, metadata);
-  }
+  logger.debug('[Engagement] Feature used:', featureName, metadata);
 
   logAnalyticsEvent('feature_used', {
     feature_name: featureName,
@@ -284,9 +277,7 @@ export const trackFeatureUsage = (featureName: string, metadata: Record<string, 
  * Track user milestones
  */
 export const trackMilestone = (milestoneName: string, value: unknown): void => {
-  if (import.meta.env.DEV) {
-    console.log('[Engagement] Milestone reached:', milestoneName, value);
-  }
+  logger.debug('[Engagement] Milestone reached:', milestoneName, value);
 
   logAnalyticsEvent('milestone_reached', {
     milestone_name: milestoneName,

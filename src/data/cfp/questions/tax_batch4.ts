@@ -254,7 +254,7 @@ export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
       'C) $19,000',
     ],
     correctAnswer: 3,
-    explanation: 'The annual gift exclusion is indexed for inflation in $1,000 increments. For 2024 it is $18,000. By 2026, projecting modest inflation, it is expected to be approximately $19,000 per donee per year. Gifts within this amount require no gift tax return.'
+    explanation: 'The annual gift exclusion for 2026 is $19,000 per donee per year. Gifts within this amount require no gift tax return.'
   },
   {
     id: 'cfp-tax-b4-014',

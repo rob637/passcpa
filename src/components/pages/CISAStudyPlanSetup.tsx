@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 import { generateCISAStudyPlan } from '../../utils/cisaStudyPlanner';
+import logger from '../../utils/logger';
 
 export default function CISAStudyPlanSetup() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function CISAStudyPlanSetup() {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     const plan = generateCISAStudyPlan(new Date(examDate));
-    console.log('Generated Plan:', plan);
+    logger.debug('Generated Plan:', plan);
     
     setLoading(false);
     navigate('/cisa/dashboard');

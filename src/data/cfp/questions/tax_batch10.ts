@@ -315,7 +315,7 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
       'C) 10% of business income',
     ],
     correctAnswer: 1,
-    explanation: 'QBI deduction limitations above threshold ($191,950 single/$383,900 MFJ): for non-SSTBs, limited to greater of 50% of W-2 wages OR 25% of W-2 wages + 2.5% of qualified property (unadjusted basis of depreciable property). Phases in between thresholds. Capital-intensive businesses use property; labor-intensive use wages. Complex planning for business structure.'
+    explanation: 'QBI deduction limitations above threshold ($202,050 single/$404,100 MFJ): for non-SSTBs, limited to greater of 50% of W-2 wages OR 25% of W-2 wages + 2.5% of qualified property (unadjusted basis of depreciable property). Phases in between thresholds. Capital-intensive businesses use property; labor-intensive use wages. Complex planning for business structure.'
   },
   {
     id: 'cfp-tax-b10-018',
@@ -347,13 +347,13 @@ export const CFP_TAX_BATCH10_QUESTIONS: Question[] = [
     skillLevel: 'Application',
     question: 'Self-employment tax applies to net self-employment income and:',
     options: [
-      'B) Equals 15.3% on first $168,600 (2024) of net earnings, with 2.9% on excess, and half is an above-the-line deduction',
+      'B) Equals 15.3% on first $176,100 (2026) of net earnings, with 2.9% on excess, and half is an above-the-line deduction',
       'D) Only applies to Schedule C filers',
       'A) Is fully deductible',
       'C) Has no limit',
     ],
     correctAnswer: 0,
-    explanation: 'SE tax: covers Social Security (12.4%) + Medicare (2.9%) for self-employed. Social Security portion: wages + SE income up to cap ($168,600 in 2024). Medicare: no cap, plus 0.9% additional Medicare tax on high earners. Calculated on 92.35% of net SE income. Half of SE tax is above-the-line deduction. Partners and LLC members also pay.'
+    explanation: 'SE tax: covers Social Security (12.4%) + Medicare (2.9%) for self-employed. Social Security portion: wages + SE income up to cap ($176,100 in 2026). Medicare: no cap, plus 0.9% additional Medicare tax on high earners. Calculated on 92.35% of net SE income. Half of SE tax is above-the-line deduction. Partners and LLC members also pay.'
   },
   {
     id: 'cfp-tax-b10-020',

@@ -80,7 +80,7 @@ export default function CFPSection() {
           The requested CFP domain doesn't exist.
         </p>
         <button 
-          onClick={() => navigate('/cfp')}
+          onClick={() => navigate('/cfp/dashboard')}
           className="btn-primary"
         >
           Back to CFP Dashboard

@@ -68,3 +68,5 @@ scripts/ux-audit/screenshots/
 # Android signing
 *.keystore
 *.keystore.base64
+firebase-debug.log
+**/firebase-debug.log

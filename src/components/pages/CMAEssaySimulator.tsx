@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import {
@@ -42,6 +43,7 @@ const CMAEssaySimulator: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [aiFeedback, setAiFeedback] = useState<string | null>(null);
   const [viewState, setViewState] = useState<'select' | 'writing' | 'results'>('select');
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // Timer Logic
   useEffect(() => {
@@ -96,6 +98,11 @@ const CMAEssaySimulator: React.FC = () => {
       
       setAiFeedback(feedback);
       setViewState('results');
+      // Scroll to top so user sees the grading report immediately
+      setTimeout(() => {
+        resultsRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     } catch (error) {
       logger.error('Error grading essay:', error);
       // Fallback if AI fails (offline or error)
@@ -248,7 +255,7 @@ const CMAEssaySimulator: React.FC = () => {
               </div>
             </>
           ) : (
-            <div className="flex-1 overflow-y-auto p-8">
+            <div ref={resultsRef} className="flex-1 overflow-y-auto p-8">
                <div className="max-w-3xl mx-auto">
                  <Card noPadding className="overflow-hidden mb-6">
                     <div className="p-6 border-b border-slate-200 dark:border-slate-700 bg-indigo-50 dark:bg-indigo-900/30 flex items-center gap-3">
@@ -256,11 +263,22 @@ const CMAEssaySimulator: React.FC = () => {
                        <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-200">AI Grading Report</h2>
                     </div>
                     <div className="p-6 prose prose-slate dark:prose-invert max-w-none">
-                       {/* Render AI Feedback - It might be markdown */}
-                       <div dangerouslySetInnerHTML={{ 
-                         // Simple protection since this comes from our internal AI service, though in prod use a sanitizer
-                         __html: aiFeedback ? aiFeedback.replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>') : '' 
-                       }} />
+                       {aiFeedback && (
+                         <ReactMarkdown
+                           components={{
+                             h2: ({ children }) => <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 mt-6 mb-3 first:mt-0">{children}</h2>,
+                             h3: ({ children }) => <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 mt-4 mb-2">{children}</h3>,
+                             strong: ({ children }) => <strong className="font-bold text-slate-900 dark:text-slate-100">{children}</strong>,
+                             ul: ({ children }) => <ul className="space-y-1.5 my-3 list-disc list-inside">{children}</ul>,
+                             ol: ({ children }) => <ol className="space-y-1.5 my-3 list-decimal list-inside">{children}</ol>,
+                             li: ({ children }) => <li className="text-slate-700 dark:text-slate-300">{children}</li>,
+                             p: ({ children }) => <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-3">{children}</p>,
+                             hr: () => <hr className="my-4 border-slate-200 dark:border-slate-700" />,
+                           }}
+                         >
+                           {aiFeedback}
+                         </ReactMarkdown>
+                       )}
                     </div>
                  </Card>
 

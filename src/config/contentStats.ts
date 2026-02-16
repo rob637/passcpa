@@ -2,23 +2,23 @@
  * Centralized Content Statistics — Single Source of Truth
  * 
  * ALL content counts (questions, flashcards, lessons) should reference this file.
- * When content is added, update the numbers here and they propagate everywhere:
+ * When content is added, update the numbers in shared/content-stats.json and they propagate everywhere:
  * - Landing pages (ExamLandingData.ts)
  * - SEO metadata (useSEO.ts)
  * - Onboarding (OnboardingTour.tsx)
- * - Email templates (functions/index.js) — update manually, can't import TS
- * - index.html meta tags — update manually, static HTML
- * - Stripe product descriptions (scripts/setup-stripe-products.cjs) — update manually
+ * - Email templates (functions/index.js)
+ * - Stripe product descriptions (scripts/setup-stripe-products.cjs)
  * 
  * To recount from data files, run: npx tsx scripts/count-content.ts
  * 
- * Last updated: 2026-02-13 (verified via runtime import counter)
+ * Last updated: 2026-02-15
  */
 
 import type { CourseId } from '../types/course';
+import contentStatsJson from '../../shared/content-stats.json';
 
 // ============================================================================
-// RAW COUNTS (from data files — update after adding content)
+// RAW COUNTS (from shared JSON file)
 // ============================================================================
 
 export interface CourseContentStats {
@@ -32,16 +32,10 @@ export interface CourseContentStats {
 
 /**
  * Raw content counts per course.
+ * Source of truth: shared/content-stats.json
  * Run `npx tsx scripts/count-content.ts` to verify these numbers.
  */
-export const COURSE_STATS: Record<CourseId, CourseContentStats> = {
-  cpa:  { questions: 5033, flashcards: 609, lessons: 463 },
-  ea:   { questions: 2190, flashcards: 451, lessons: 152 },
-  cma:  { questions: 2025, flashcards: 491, lessons: 114 },
-  cia:  { questions: 1524, flashcards: 557, lessons: 140 },
-  cfp:  { questions: 2517, flashcards: 557, lessons: 141 },
-  cisa: { questions: 1523, flashcards: 531, lessons: 109 },
-};
+export const COURSE_STATS: Record<CourseId, CourseContentStats> = contentStatsJson as Record<CourseId, CourseContentStats>;
 
 // ============================================================================
 // DERIVED / DISPLAY VALUES
@@ -64,7 +58,7 @@ export const TOTAL_LESSONS = Object.values(COURSE_STATS).reduce(
 
 /**
  * Round down to the nearest hundred and format with commas + "+"
- * e.g., 5411 → "5,400+", 2190 → "2,100+", 1523 → "1,500+"
+ * e.g., 6203 → "6,200+", 2612 → "2,600+", 1520 → "1,500+"
  */
 function formatDisplayCount(n: number): string {
   const rounded = Math.floor(n / 100) * 100;

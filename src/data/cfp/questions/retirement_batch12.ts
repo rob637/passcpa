@@ -102,7 +102,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
       'C) Roth contributions are prohibited',
     ],
     correctAnswer: 1,
-    explanation: 'Solo 401(k) advantages: employee deferrals (~$23K, +$7.5K if 50+) + employer contributions (up to 25% of comp or 20% of SE income). Total: up to ~$69K (2024). Optional: Roth elective deferrals, loans. Better than SEP for many self-employed (can save more with same income). Requirement: no employees (except spouse). More administration than SEP but more flexibility.'
+    explanation: 'Solo 401(k) advantages: employee deferrals (~$24.5K, +$7.5K if 50+) + employer contributions (up to 25% of comp or 20% of SE income). Total: up to ~$71.5K (2026). Optional: Roth elective deferrals, loans. Better than SEP for many self-employed (can save more with same income). Requirement: no employees (except spouse). More administration than SEP but more flexibility.'
   },
   {
     id: 'cfp-ret-b12-006',
@@ -199,7 +199,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
       'C) Average of all earnings',
     ],
     correctAnswer: 1,
-    explanation: 'PIA formula: progressive—replaces higher percentage of lower earnings. 2024 bend points example: 90% of first $1,174 AIME + 32% of AIME between $1,174-$7,078 + 15% above $7,078. Result: lower earners get higher replacement rate. COLA applied to PIA. Bend points adjust with wage growth. Understanding: why higher earners get lower replacement, why spousal benefit may be attractive for lower earner.'
+    explanation: 'PIA formula: progressive—replaces higher percentage of lower earnings. Bend points (indexed annually): 90% of first portion of AIME + 32% of middle portion + 15% above upper bend point. Result: lower earners get higher replacement rate. COLA applied to PIA. Bend points adjust with wage growth. Understanding: why higher earners get lower replacement, why spousal benefit may be attractive for lower earner.'
   },
   {
     id: 'cfp-ret-b12-011',
@@ -295,7 +295,7 @@ export const CFP_RETIREMENT_BATCH12_QUESTIONS: Question[] = [
       'C) Is only for qualified accounts',
     ],
     correctAnswer: 0,
-    explanation: 'DIA: purchase now, income starts later (often decades). Lower premium than SPIA because: deferral period earnings, mortality credits (deaths before income starts). Addresses: longevity risk, super-long retirement. QLAC: DIA within retirement account, up to $200K (2024), can defer RMDs on QLAC portion until income starts (by 85). Strategy: insure late retirement, reduce RMDs, accept loss if die early.'
+    explanation: 'DIA: purchase now, income starts later (often decades). Lower premium than SPIA because: deferral period earnings, mortality credits (deaths before income starts). Addresses: longevity risk, super-long retirement. QLAC: DIA within retirement account, up to $210K (2026), can defer RMDs on QLAC portion until income starts (by 85). Strategy: insure late retirement, reduce RMDs, accept loss if die early.'
   },
   // Additional Topics
   {

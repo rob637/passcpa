@@ -48,6 +48,7 @@ vi.mock('firebase/firestore', () => ({
     commit: vi.fn().mockResolvedValue(undefined),
   })),
   arrayUnion: vi.fn((arr) => arr),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 describe('Question History Service - Quality Tests', () => {

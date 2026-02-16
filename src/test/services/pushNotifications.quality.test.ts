@@ -48,6 +48,7 @@ vi.mock('firebase/firestore', () => ({
   updateDoc: vi.fn(() => Promise.resolve()),
   arrayUnion: vi.fn((arr) => arr),
   arrayRemove: vi.fn((arr) => arr),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 // Mock Firebase messaging

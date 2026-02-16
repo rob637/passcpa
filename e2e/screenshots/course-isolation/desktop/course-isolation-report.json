@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-14T17:05:14.434Z",
+  "timestamp": "2026-02-15T20:30:32.679Z",
   "viewport": "desktop",
   "results": [
     {
@@ -55,25 +55,30 @@
     {
       "f": "Metrics CPA — Gathered",
       "s": "PASS",
-      "d": "Streak: 1, Questions: 528"
+      "d": "Streak: 2, Questions: 70"
     },
     {
       "f": "Metrics EA — Gathered",
       "s": "PASS",
-      "d": "Streak: 1, Questions: 0"
+      "d": "Streak: 0, Questions: 0"
     },
     {
       "f": "Metric Isolation — Section changes between courses",
       "s": "PASS",
-      "d": "CPA: BAR, EA: SEE1"
+      "d": "CPA: FAR, EA: SEE1"
     },
     {
       "f": "No Hardcoded Metrics — All values appear dynamic",
       "s": "PASS",
-      "d": "streak=1, N/A_placeholders=0, zero_percent=1"
+      "d": "streak=0, N/A_placeholders=0, zero_percent=1"
     },
     {
       "f": "You Page — Shows course-specific label",
+      "s": "PASS",
+      "d": ""
+    },
+    {
+      "f": "You Page — Activity chart uses day labels (dynamic)",
       "s": "PASS",
       "d": ""
     },
@@ -105,17 +110,17 @@
     {
       "f": "Study Time — Today value is reasonable",
       "s": "PASS",
-      "d": "3h 2m"
+      "d": "21m\n"
     },
     {
       "f": "Study Time — Weekly total shown",
       "s": "PASS",
-      "d": "3h 2m"
+      "d": "3h 23m"
     },
     {
       "f": "Study Time — Today ≤ weekly total (consistent)",
       "s": "PASS",
-      "d": "Today: 3h 2m, Weekly: 3h 2m"
+      "d": "Today: 21m\n, Weekly: 3h 23m"
     },
     {
       "f": "Study Time — Donut chart rendered",
@@ -124,11 +129,6 @@
     },
     {
       "f": "Study Time — Breakdown has varied values (not all equal)",
-      "s": "PASS",
-      "d": ""
-    },
-    {
-      "f": "Study Time EA — No TBS (correct for non-CPA)",
       "s": "PASS",
       "d": ""
     },
@@ -148,7 +148,7 @@
       "d": ""
     },
     {
-      "f": "Subscribe EA — Status: Trial active",
+      "f": "Subscribe EA — Status: Trial expired",
       "s": "INFO",
       "d": ""
     },
@@ -240,7 +240,7 @@
     {
       "f": "Offline — Cache populated after download",
       "s": "PASS",
-      "d": "500 questions"
+      "d": "344 questions"
     },
     {
       "f": "Offline — Cache cleared successfully",
@@ -270,26 +270,19 @@
   ],
   "issues": [],
   "consoleErrors": [
-    "[2026-02-14T17:02:52.651Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:02:52.670Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:02:52.736Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:02:52.741Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:02:52.741Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:02:52.808Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:03:05.820Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:03:05.820Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:03:05.820Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:03:06.048Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:03:08.879Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
-    "[2026-02-14T17:03:08.879Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
-    "[2026-02-14T17:03:08.880Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
-    "[2026-02-14T17:03:08.880Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
-    "[2026-02-14T17:03:08.983Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
-    "[2026-02-14T17:03:08.984Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
-    "[2026-02-14T17:03:08.984Z]  Failed to load course data for \"ea\": Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/s",
-    "[2026-02-14T17:03:08.984Z]  Failed to load lessons for course ea: Error: Module src/data/ea/index.ts does not export COURSE_DATA\n    at loadCourseData (http://localhost:5175/src/",
-    "[2026-02-14T17:03:09.079Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas",
-    "[2026-02-14T17:03:09.079Z]  Error fetching due questions: FirebaseError: The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/pas"
+    "[2026-02-15T20:29:48.695Z]  Warning: You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() o",
+    "[2026-02-15T20:29:48.695Z]  ReferenceError: Cannot access 'App' before initialization\n    at http://localhost:5174/src/main.tsx?t=1771187388250:57:91",
+    "[2026-02-15T20:29:48.695Z]  [hmr] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)",
+    "[2026-02-15T20:30:26.378Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.385Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.385Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.387Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.389Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.389Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.993Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:26.994Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:27.762Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "[2026-02-15T20:30:27.763Z]  Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
   ],
   "summary": {
     "PASS": 43,

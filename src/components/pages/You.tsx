@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FEATURES } from '../../config/featureFlags';
 import {
   Settings,
   ChevronRight,
@@ -22,7 +23,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
-import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
+import { getExamDate, getCurrentSection, createExamDateUpdate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -86,14 +87,15 @@ const ReadinessRing = ({ readiness, size = 100 }: { readiness: number; size?: nu
 };
 
 // Weekly Activity Chart
-const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }[] }) => {
-  const maxQuestions = Math.max(...activity.map(d => d.questions), 1);
+const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number; lessons: number }[] }) => {
+  const maxActivity = Math.max(...activity.map(d => d.questions + d.lessons), 1);
   
   return (
     <div className="flex items-end justify-between gap-1 h-16">
       {activity.map((day, i) => {
-        const isActive = day.questions > 0;
-        const height = Math.max((day.questions / maxQuestions) * 100, isActive ? 20 : 10);
+        const totalActivity = day.questions + day.lessons;
+        const isActive = totalActivity > 0;
+        const height = Math.max((totalActivity / maxActivity) * 100, isActive ? 20 : 10);
         
         return (
           <div key={i} className="flex-1 flex flex-col items-center h-full">
@@ -118,7 +120,7 @@ const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }
 };
 
 const You: React.FC = () => {
-  const { user, userProfile, signOut } = useAuth();
+  const { user, userProfile, updateUserProfile, signOut } = useAuth();
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId, course } = useCourse();
   const { getExamAccess, isPremium } = useSubscription();
@@ -131,10 +133,10 @@ const You: React.FC = () => {
   const getInitialWeeklyActivity = () => {
     const start = startOfWeek(new Date(), { weekStartsOn: 1 });
     const end = endOfWeek(new Date(), { weekStartsOn: 1 });
-    return eachDayOfInterval({ start, end }).map(date => ({ date, questions: 0 }));
+    return eachDayOfInterval({ start, end }).map(date => ({ date, questions: 0, lessons: 0 }));
   };
   
-  const [weeklyActivity, setWeeklyActivity] = useState<{ date: Date; questions: number }[]>(getInitialWeeklyActivity);
+  const [weeklyActivity, setWeeklyActivity] = useState<{ date: Date; questions: number; lessons: number }[]>(getInitialWeeklyActivity);
   const [overallStats, setOverallStats] = useState({
     totalQuestions: 0,
     correctAnswers: 0,
@@ -147,6 +149,7 @@ const You: React.FC = () => {
   const [_topicPerformance, setTopicPerformance] = useState<{ id: string; topic: string; accuracy: number; questions: number }[]>([]);
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
+  const [isSavingExamDate, setIsSavingExamDate] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [_loading, setLoading] = useState(true);
 
@@ -160,6 +163,24 @@ const You: React.FC = () => {
   // Calculate days until exam - use getExamDate helper for multi-course support
   const examDate = getExamDate(userProfile, examSection, courseId);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
+
+  // Handle inline exam date save
+  const handleExamDateChange = async (dateStr: string) => {
+    if (!dateStr) return;
+    setIsSavingExamDate(true);
+    try {
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const localDate = new Date(year, month - 1, day);
+      if (isNaN(localDate.getTime())) return;
+      const examDateUpdate = createExamDateUpdate(userProfile, examSection, localDate, courseId);
+      await updateUserProfile(examDateUpdate);
+      logger.info('Exam date saved from You page:', { courseId, date: dateStr });
+    } catch (err) {
+      logger.error('Failed to save exam date:', err);
+    } finally {
+      setIsSavingExamDate(false);
+    }
+  };
 
   // Load data
   useEffect(() => {
@@ -187,7 +208,7 @@ const You: React.FC = () => {
           days.map(async (date) => {
             // Don't query future dates
             if (isAfter(date, new Date())) {
-              return { date, questions: 0 };
+              return { date, questions: 0, lessons: 0 };
             }
 
             const dateKey = format(date, 'yyyy-MM-dd');
@@ -243,12 +264,16 @@ const You: React.FC = () => {
               );
               sectionMinutes += sectionTime;
 
+              // Count section-specific lessons
+              const lessonActivities = sectionActivities.filter((a: { type?: string }) => a.type === 'lesson');
+
               return {
                 date,
-                questions: mcqActivities.length, // Section-specific for chart
+                questions: mcqActivities.length,
+                lessons: lessonActivities.length,
               };
             }
-            return { date, questions: 0 };
+            return { date, questions: 0, lessons: 0 };
           })
         );
         
@@ -356,6 +381,7 @@ const You: React.FC = () => {
   };
 
   const weeklyQuestions = weeklyActivity.reduce((sum, d) => sum + d.questions, 0);
+  const weeklyLessons = weeklyActivity.reduce((sum, d) => sum + d.lessons, 0);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -415,9 +441,31 @@ const You: React.FC = () => {
           </div>
         </div>
 
+        {/* Exam Date - inline editor */}
+        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-primary-500" />
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Target Exam Date</span>
+            </div>
+            {isSavingExamDate && (
+              <span className="text-xs text-primary-500">Saving...</span>
+            )}
+          </div>
+          <div className="mt-2">
+            <input
+              type="date"
+              value={examDate ? format(examDate, 'yyyy-MM-dd') : ''}
+              onChange={(e) => handleExamDateChange(e.target.value)}
+              min={format(new Date(), 'yyyy-MM-dd')}
+              className="w-full px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:[color-scheme:dark]"
+            />
+          </div>
+        </div>
+
         {/* Quick Stats - 2 rows showing key metrics */}
         <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-          {/* Row 1: Streak, MCQs, TBS */}
+          {/* Row 1: Streak, MCQs, TBS (or Accuracy if no TBS) */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 text-orange-500 mb-1">
               <Flame className="w-4 h-4" />
@@ -429,30 +477,57 @@ const You: React.FC = () => {
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.totalQuestions}</div>
             <span className="text-xs text-slate-600 dark:text-slate-400">MCQs</span>
           </div>
-          <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
-            <span className="text-xs text-slate-600 dark:text-slate-400">TBS</span>
-          </div>
+          {course?.hasTBS ? (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">TBS</span>
+            </div>
+          ) : (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
+            </div>
+          )}
           
-          {/* Row 2: Lessons, Accuracy, Time */}
+          {/* Row 2: Lessons, Accuracy (or Time if no TBS), Time */}
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
               {overallStats.lessonsCompleted}/{overallStats.totalLessons}
             </div>
             <span className="text-xs text-slate-600 dark:text-slate-400">Lessons</span>
           </div>
-          <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
-            <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
-          </div>
-          <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
-              {overallStats.studyMinutes < 60 
-                ? `${overallStats.studyMinutes}m` 
-                : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+          {course?.hasTBS ? (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
             </div>
-            <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
-          </div>
+          ) : (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+                {overallStats.studyMinutes < 60 
+                  ? `${overallStats.studyMinutes}m` 
+                  : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+              </div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
+            </div>
+          )}
+          {course?.hasTBS ? (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+                {overallStats.studyMinutes < 60 
+                  ? `${overallStats.studyMinutes}m` 
+                  : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+              </div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
+            </div>
+          ) : (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+                {daysUntilExam !== null && daysUntilExam > 0 ? daysUntilExam : '—'}
+              </div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Days Left</span>
+            </div>
+          )}
         </div>
       </Card>
 
@@ -470,7 +545,12 @@ const You: React.FC = () => {
         <Card className="p-4">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300">This Week</h3>
-            <span className="text-xs text-primary-600 font-medium">{weeklyQuestions} Q</span>
+            <span className="text-xs text-primary-600 font-medium">
+              {weeklyQuestions > 0 && `${weeklyQuestions} Q`}
+              {weeklyQuestions > 0 && weeklyLessons > 0 && ' · '}
+              {weeklyLessons > 0 && `${weeklyLessons} L`}
+              {weeklyQuestions === 0 && weeklyLessons === 0 && '0'}
+            </span>
           </div>
           <WeeklyChart activity={weeklyActivity} />
         </Card>
@@ -561,13 +641,21 @@ const You: React.FC = () => {
 
                 {/* Action button — show subscribe for trialing, expired, or no-trial users */}
                 {!access.isPaid && !access.canStartTrial && (
-                  <Link
-                    to={`/start-checkout?course=${examId}&interval=annual`}
-                    className="text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center gap-1"
-                  >
-                    {isFounder && <Sparkles className="w-3 h-3" />}
-                    ${isFounder ? pricing.founderAnnual : pricing.annual}/yr
-                  </Link>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      to={`/start-checkout?course=${examId}&interval=annual`}
+                      className="text-xs font-medium px-3 py-1.5 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors flex items-center gap-1"
+                    >
+                      {isFounder && <Sparkles className="w-3 h-3" />}
+                      ${isFounder ? pricing.founderAnnual : pricing.annual}/yr
+                    </Link>
+                    <Link
+                      to={`/start-checkout?course=${examId}&interval=monthly`}
+                      className="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                    >
+                      ${isFounder ? pricing.founderMonthly : pricing.monthly}/mo
+                    </Link>
+                  </div>
                 )}
               </div>
             );
@@ -619,24 +707,26 @@ const You: React.FC = () => {
           <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
-        <Link
-          to="/community"
-          className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-              <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+        {FEATURES.community && (
+          <Link
+            to="/community"
+            className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+              </div>
+              <div>
+                <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>
+                <p className="text-xs text-slate-600 dark:text-slate-400">Leaderboard, compare with other candidates</p>
+              </div>
             </div>
-            <div>
-              <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>
-              <p className="text-xs text-slate-600 dark:text-slate-400">Leaderboard, compare with other candidates</p>
-            </div>
-          </div>
-          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-        </Link>
+            <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+          </Link>
+        )}
 
         <Link
-          to="/settings"
+          to="/settings?tab=study"
           className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
         >
           <div className="flex items-center gap-3">

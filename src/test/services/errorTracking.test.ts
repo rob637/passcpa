@@ -12,6 +12,7 @@ vi.mock('firebase/firestore', () => ({
   collection: vi.fn(),
   addDoc: vi.fn().mockResolvedValue({ id: 'test-doc-id' }),
   serverTimestamp: vi.fn(() => new Date().toISOString()),
+  onSnapshot: vi.fn(() => vi.fn()),
 }));
 
 import {

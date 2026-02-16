@@ -227,10 +227,12 @@ const AITutor: React.FC = () => {
     }
     
     // Check for lesson context (from LessonViewer navigation)
+    // NOTE: For lessons, we only customize the greeting - we DON'T auto-send
+    // The greeting already says "I see you're studying {topic}" which is enough
+    // User should be able to type their own question
     if (location.state?.lessonTitle) {
-      const lessonContext = `The student is studying: ${location.state.lessonTitle}. They want help understanding this topic. Provide a clear, focused explanation of this topic.`;
-      setContextFromPractice(lessonContext);
-      // Don't clear state yet - let buildGreeting use it first
+      // Don't set contextFromPractice - just let the greeting handle it
+      // The buildGreeting function will use location.state.lessonTitle
       return;
     }
     
@@ -571,7 +573,7 @@ const AITutor: React.FC = () => {
   const smartPrompts = getSmartPrompts(weakAreas, currentSection, courseId, course?.shortName || 'CPA');
 
   return (
-    <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 dark:bg-slate-900 page-enter">
+    <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] flex flex-col bg-slate-50 dark:bg-slate-900 page-enter">
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 py-2 md:px-4 md:py-3 flex-shrink-0">
         <div className="max-w-3xl mx-auto">
@@ -790,7 +792,7 @@ const AITutor: React.FC = () => {
       )}
 
       {/* Input Area - anchored at bottom */}
-      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-2 md:p-4 flex-shrink-0">
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-2 md:p-4 pb-16 md:pb-4 pb-safe flex-shrink-0">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
           <div className="flex items-end gap-2 md:gap-3">
             <div className="flex-1 relative">

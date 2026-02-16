@@ -33,6 +33,12 @@ let messagingInstance: Messaging | null = null;
 export async function initializeFCM(): Promise<boolean> {
   if (!isWeb) return false;
   
+  // Skip FCM if no VAPID key configured (prevents 401 errors on staging)
+  if (!VAPID_KEY) {
+    logger.info('FCM skipped: VITE_FIREBASE_VAPID_KEY not configured');
+    return false;
+  }
+  
   try {
     const app = getApp();
     messagingInstance = getMessaging(app);
@@ -61,7 +67,7 @@ export async function initializeFCM(): Promise<boolean> {
  * Request FCM permission and get token
  */
 export async function requestFCMToken(userId: string): Promise<string | null> {
-  if (!isWeb || !messagingInstance) return null;
+  if (!isWeb || !messagingInstance || !VAPID_KEY) return null;
   
   try {
     // Request notification permission first

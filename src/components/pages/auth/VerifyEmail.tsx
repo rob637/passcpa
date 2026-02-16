@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Mail, RefreshCw, CheckCircle, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 import { trackEvent } from '../../../services/analytics';
@@ -7,7 +7,7 @@ import logger from '../../../utils/logger';
 
 const VerifyEmail = () => {
   const navigate = useNavigate();
-  const { user, resendVerificationEmail } = useAuth();
+  const { user, resendVerificationEmail, signOut } = useAuth();
   const [isResending, setIsResending] = useState(false);
   const [resendSuccess, setResendSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -158,15 +158,21 @@ const VerifyEmail = () => {
       <div className="mt-6 text-center">
         <p className="text-sm text-slate-600 dark:text-slate-300">
           Wrong email?{' '}
-          <Link to="/register" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+          <button
+            onClick={async () => { await signOut(); navigate('/register'); }}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
             Sign up again
-          </Link>
+          </button>
         </p>
         <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">
           Already verified?{' '}
-          <Link to="/login" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+          <button
+            onClick={async () => { await signOut(); navigate('/login'); }}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
             Sign in
-          </Link>
+          </button>
         </p>
       </div>
     </div>

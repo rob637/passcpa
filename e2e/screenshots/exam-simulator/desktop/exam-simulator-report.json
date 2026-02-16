@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-15T21:06:58.175Z",
+  "timestamp": "2026-02-15T21:24:33.984Z",
   "viewport": "desktop",
   "results": [
     {
@@ -128,9 +128,14 @@
       "d": ""
     },
     {
-      "f": "Template Exam — Could not answer any questions",
-      "s": "WARN",
+      "f": "Template Exam — Results screen shown",
+      "s": "PASS",
       "d": ""
+    },
+    {
+      "f": "Template Exam — Score",
+      "s": "INFO",
+      "d": "100%"
     },
     {
       "f": "Timer — Initial value read",
@@ -165,7 +170,7 @@
     {
       "f": "Navigation — Question grid shows state",
       "s": "PASS",
-      "d": "Answered: 0, Current: 4, Flagged: 0"
+      "d": "Answered: 1, Current: 4, Flagged: 0"
     },
     {
       "f": "Exit — Confirm dialog",
@@ -223,18 +228,12 @@
       "d": ""
     }
   ],
-  "issues": [
-    {
-      "sev": "LOW",
-      "f": "Template Exam — Could not answer any questions",
-      "d": ""
-    }
-  ],
+  "issues": [],
   "consoleErrors": [],
   "summary": {
-    "PASS": 39,
+    "PASS": 40,
     "FAIL": 0,
-    "WARN": 1,
-    "INFO": 4
+    "WARN": 0,
+    "INFO": 5
   }
 }

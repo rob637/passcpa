@@ -124,6 +124,21 @@ const Flashcards: React.FC = () => {
   const cardTopRef = useRef<HTMLDivElement>(null);
   const cardContentRef = useRef<HTMLDivElement>(null);
 
+  // Scroll card content to top when navigating to a new card or when cards first load
+  useEffect(() => {
+    // Use setTimeout to ensure this runs after React has rendered the new content
+    const scrollTimer = setTimeout(() => {
+      if (cardContentRef.current) {
+        cardContentRef.current.scrollTop = 0;
+      }
+      // Also scroll the page to show the card
+      if (cardTopRef.current) {
+        cardTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
+    }, 0);
+    return () => clearTimeout(scrollTimer);
+  }, [currentIndex, cards.length]);
+
   // Load flashcards
   useEffect(() => {
     const loadCards = async () => {
@@ -319,6 +334,10 @@ const Flashcards: React.FC = () => {
 
   const handleFlip = () => {
     setIsFlipped((f) => !f);
+    // Reset scroll of card content when flipping
+    if (cardContentRef.current) {
+      cardContentRef.current.scrollTop = 0;
+    }
     feedback.click();
   };
 

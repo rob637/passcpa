@@ -522,6 +522,13 @@
   border-color: var(--pvue-accent);
 }
 
+.pvue-calc-btn.clear {
+  grid-column: span 4;
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
 /* ======================================
    STATUS BAR
    ====================================== */

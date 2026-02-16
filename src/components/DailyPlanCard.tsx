@@ -9,7 +9,7 @@
  * - One-click navigation to each activity
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -101,7 +101,6 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   
   // Track section to detect changes - course-aware
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
-  const [lastLoadedSection, setLastLoadedSection] = useState<string | null>(null);
 
   // Load daily plan from Firestore (with caching and carryover)
   const loadPlan = useCallback(async (forceRegenerate: boolean = false) => {
@@ -265,7 +264,6 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       setPlan(persistedPlan);
       setCompletedActivities(new Set(persistedPlan.completedActivities || []));
       setHasCarryover(!!persistedPlan.carryoverFrom);
-      setLastLoadedSection(studyState.section); // Track which section we loaded
       
       // Also save to localStorage as fallback
       saveCompletedToStorage(new Set(persistedPlan.completedActivities || []));
@@ -277,21 +275,26 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     } finally {
       setLoading(false);
     }
-  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId]);
+  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId, currentSection]);
 
-  // Load plan on mount
-  useEffect(() => {
-    loadPlan();
-  }, [loadPlan]);
+  // Track previous section to detect changes
+  const prevSectionRef = useRef<string | null>(null);
   
-  // Force regenerate plan when section changes
+  // Load plan on mount and when section changes
   useEffect(() => {
-    // Only trigger if we've loaded a plan before and section has changed
-    if (lastLoadedSection && lastLoadedSection !== currentSection) {
-      logger.log(`Section changed from ${lastLoadedSection} to ${currentSection}, regenerating daily plan`);
-      loadPlan(true); // Force regenerate for new section
+    // Determine if this is a section change (not initial load)
+    const prevSection = prevSectionRef.current;
+    const shouldForceRegenerate = prevSection !== null && prevSection !== currentSection;
+    
+    if (shouldForceRegenerate) {
+      logger.log(`Section changed from ${prevSection} to ${currentSection}, regenerating daily plan`);
     }
-  }, [currentSection, lastLoadedSection, loadPlan]);
+    
+    // Update the ref for next comparison
+    prevSectionRef.current = currentSection;
+    
+    loadPlan(shouldForceRegenerate);
+  }, [loadPlan, currentSection]);
 
   // Check URL params for returning from an activity (auto-completion)
   useEffect(() => {

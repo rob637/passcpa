@@ -15,10 +15,10 @@ const VALID_COURSES: CourseId[] = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
 const COURSE_DASHBOARDS: Record<string, string> = {
   cpa: '/home',
   ea: '/ea',
-  cma: '/cma',
-  cia: '/cia',
-  cfp: '/cfp',
-  cisa: '/cisa',
+  cma: '/cma/dashboard',
+  cia: '/cia/dashboard',
+  cfp: '/cfp/dashboard',
+  cisa: '/cisa/dashboard',
 };
 
 // Course display names

@@ -264,12 +264,12 @@ function getPasswordResetEmailHTML(email, resetLink) {
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-        </div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <!-- Main Content -->
@@ -305,6 +305,153 @@ function getPasswordResetEmailHTML(email, resetLink) {
       </p>
       <p style="color: #3b82f6; font-size: 12px; word-break: break-all; margin: 10px 0 0 0;">
         ${resetLink}
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        This email was sent to ${email}
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <a href="${APP_BASE_URL}" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// CUSTOM BRANDED EMAIL VERIFICATION
+// Sends a friendly, VoraPrep-branded verification email via Resend
+// Bypasses Firebase's unreliable built-in email verification
+// ============================================================================
+
+exports.sendCustomEmailVerification = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: ['RESEND_API_KEY'],
+}, async (request) => {
+  const { email } = request.data;
+
+  if (!email) {
+    throw new HttpsError('invalid-argument', 'Email is required');
+  }
+
+  if (!resend) {
+    throw new HttpsError('failed-precondition', 'Email service not configured. Set RESEND_API_KEY.');
+  }
+
+  try {
+    // Generate Firebase email verification link
+    const verificationLink = await admin.auth().generateEmailVerificationLink(email, {
+      url: `${APP_BASE_URL}/login`,
+    });
+
+    // Initialize Resend lazily to ensure secret is available
+    const apiKey = process.env.RESEND_API_KEY?.trim();
+    if (!apiKey) {
+      throw new HttpsError('failed-precondition', 'RESEND_API_KEY not available');
+    }
+    const resendClient = new Resend(apiKey);
+    console.log(`Resend initialized, sending verification to ${email}, API key starts: ${apiKey.substring(0, 8)}...`);
+
+    // Send branded email via Resend
+    const { data, error } = await resendClient.emails.send({
+      from: FROM_EMAIL,
+      to: email,
+      subject: '✉️ Verify Your VoraPrep Email',
+      html: getEmailVerificationHTML(email, verificationLink),
+    });
+
+    if (error) {
+      console.error('Resend verification email error:', JSON.stringify(error));
+      throw new Error(error.message);
+    }
+
+    console.log(`Verification email sent to ${email} via Resend, id: ${data?.id}`);
+    return { success: true, emailId: data?.id };
+  } catch (error) {
+    console.error('Email verification error:', error);
+
+    if (error.code === 'auth/user-not-found') {
+      throw new HttpsError('not-found', 'No account found with this email');
+    }
+
+    throw new HttpsError('internal', 'Failed to send verification email');
+  }
+});
+
+// Email Verification HTML Template
+function getEmailVerificationHTML(email, verificationLink) {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Your VoraPrep Email</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0; text-align: center;">
+        Verify Your Email Address
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 10px 0; text-align: center;">
+        Welcome to VoraPrep! 🎉
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0; text-align: center;">
+        Please verify your email address to get started with your exam prep journey.
+      </p>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${verificationLink}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Verify My Email
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        This link will expire in 24 hours.
+      </p>
+      
+      <div style="border-top: 1px solid #e2e8f0; margin: 30px 0; padding-top: 20px;">
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">
+          <strong>Didn't create an account?</strong> You can safely ignore this email.
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 20px 0 0 0;">
+        If the button doesn't work, copy and paste this link into your browser:
+      </p>
+      <p style="color: #3b82f6; font-size: 12px; word-break: break-all; margin: 10px 0 0 0;">
+        ${verificationLink}
       </p>
       
     </div>
@@ -642,12 +789,12 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-        </div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <!-- Main Content -->
@@ -806,12 +953,12 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
     
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-        </div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <!-- Main Content -->
@@ -1229,31 +1376,41 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     
     <h2 style="color: #1e293b; font-size: 20px; margin: 30px 0 15px;">Here's how to get started:</h2>
     
-    <div style="margin: 20px 0;">
-      <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <div style="background: #dbeafe; color: #1d4ed8; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">1</div>
-        <div>
-          <div style="font-weight: 600; color: #1e293b;">Complete your profile</div>
-          <div style="color: #64748b; font-size: 14px;">Select your exam section and target date</div>
-        </div>
-      </div>
-      
-      <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <div style="background: #dbeafe; color: #1d4ed8; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">2</div>
-        <div>
-          <div style="font-weight: 600; color: #1e293b;">Start with a diagnostic quiz</div>
-          <div style="color: #64748b; font-size: 14px;">We'll identify your strengths and weaknesses</div>
-        </div>
-      </div>
-      
-      <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-        <div style="background: #dbeafe; color: #1d4ed8; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0;">3</div>
-        <div>
-          <div style="font-weight: 600; color: #1e293b;">Practice daily</div>
-          <div style="color: #64748b; font-size: 14px;">Consistency beats cramming every time</div>
-        </div>
-      </div>
-    </div>
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 20px 0;">
+      <tr>
+        <td style="padding-bottom: 15px;" valign="top">
+          <table cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="width: 32px; height: 32px; background-color: #dbeafe; color: #1d4ed8; border-radius: 50%; text-align: center; vertical-align: middle; font-weight: bold; line-height: 32px; font-size: 14px;" width="32">1</td>
+            <td style="padding-left: 15px; vertical-align: middle;">
+              <div style="font-weight: 600; color: #1e293b;">Complete your profile</div>
+              <div style="color: #64748b; font-size: 14px;">Select your exam section and target date</div>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-bottom: 15px;" valign="top">
+          <table cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="width: 32px; height: 32px; background-color: #dbeafe; color: #1d4ed8; border-radius: 50%; text-align: center; vertical-align: middle; font-weight: bold; line-height: 32px; font-size: 14px;" width="32">2</td>
+            <td style="padding-left: 15px; vertical-align: middle;">
+              <div style="font-weight: 600; color: #1e293b;">Start with a diagnostic quiz</div>
+              <div style="color: #64748b; font-size: 14px;">We'll identify your strengths and weaknesses</div>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-bottom: 15px;" valign="top">
+          <table cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="width: 32px; height: 32px; background-color: #dbeafe; color: #1d4ed8; border-radius: 50%; text-align: center; vertical-align: middle; font-weight: bold; line-height: 32px; font-size: 14px;" width="32">3</td>
+            <td style="padding-left: 15px; vertical-align: middle;">
+              <div style="font-weight: 600; color: #1e293b;">Practice daily</div>
+              <div style="color: #64748b; font-size: 14px;">Consistency beats cramming every time</div>
+            </td>
+          </tr></table>
+        </td>
+      </tr>
+    </table>
     
     <div style="text-align: center; margin: 35px 0;">
       <a href="${APP_BASE_URL}/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
@@ -1976,10 +2133,12 @@ function getWelcomeSubscriberEmailHTML(name, courseId, isFounder) {
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
   <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;"></div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
@@ -2044,10 +2203,12 @@ function getPaymentFailedEmailHTML(name) {
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
   <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;"></div>
-        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
-      </div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
     </div>
     
     <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">

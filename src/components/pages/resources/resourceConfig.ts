@@ -319,11 +319,13 @@ const EA_RESOURCES: CourseResourceConfig = {
   examTips: {
     title: 'EA Exam Success Tips',
     tips: [
+      'Get your PTIN first - required before you can schedule the exam',
       'Take SEE1 (Individuals) first - it builds the foundation',
       'Know the current year tax law - the exam updates annually',
       'Memorize key limits: contribution limits, income thresholds, phase-outs',
       'Circular 230 is heavily tested in Part 3 - know it cold',
       'Practice with IRS publications as reference',
+      'Each part has a break after 50 questions - use it to refocus',
       'Time management: all 100 questions in 3.5 hours',
       'Focus on the most tested topics per Prometric feedback',
     ],
@@ -331,13 +333,15 @@ const EA_RESOURCES: CourseResourceConfig = {
   strategyContent: {
     examStructure: {
       sections: [
-        { name: 'Individuals', code: 'SEE1', duration: '3.5 hours', questionTypes: [{ type: 'MCQ', count: '100', weight: '100%' }], passingScore: '105/130' },
-        { name: 'Businesses', code: 'SEE2', duration: '3.5 hours', questionTypes: [{ type: 'MCQ', count: '100', weight: '100%' }], passingScore: '105/130' },
-        { name: 'Representation', code: 'SEE3', duration: '3.5 hours', questionTypes: [{ type: 'MCQ', count: '100', weight: '100%' }], passingScore: '105/130' },
+        { name: 'Individuals', code: 'SEE1', duration: '3.5 hours', questionTypes: [{ type: 'MCQ', count: '100 (50 + break + 50)', weight: '100%' }], passingScore: '105/130' },
+        { name: 'Businesses', code: 'SEE2', duration: '3.5 hours', questionTypes: [{ type: 'MCQ', count: '100 (50 + break + 50)', weight: '100%' }], passingScore: '105/130' },
+        { name: 'Representation', code: 'SEE3', duration: '3.5 hours', questionTypes: [{ type: 'MCQ', count: '100 (50 + break + 50)', weight: '100%' }], passingScore: '105/130' },
       ],
       totalTime: '10.5 hours (3 parts x 3.5 hours)',
       testingWindow: 'Year-round at Prometric centers (except March/April)',
       retakePolicy: '3-year window to pass all 3 parts; can retake after 24 hours',
+      prerequisites: 'Must obtain a PTIN (Preparer Tax Identification Number) before scheduling',
+      passRates: '60-90% depending on part',
     },
     timeManagement: {
       title: 'Time Allocation Strategy',

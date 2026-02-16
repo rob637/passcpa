@@ -13,7 +13,7 @@
 |----------|--------|
 | **Launch Date** | February 19, 2026 |
 | **Founder Window** | February 19 – August 31, 2026 |
-| **Founder Lock** | 2 years (rate guaranteed through August 2028) |
+| **Founder Lock** | 2 years (rate guaranteed through April 2028) |
 | **Founder Seats** | 300 per exam |
 | **Primary Plan** | Annual subscription |
 | **Trial** | 14 days full access, no credit card |

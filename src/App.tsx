@@ -148,7 +148,7 @@ interface RouteProps {
 }
 
 const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
-  const { user, userProfile, loading } = useAuth();
+  const { user, userProfile, loading, profileLoaded } = useAuth();
   const { courseId } = useCourse();
   const location = useLocation();
 
@@ -163,6 +163,12 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   // Require email verification before accessing protected routes
   if (!user.emailVerified && location.pathname !== '/verify-email') {
     return <Navigate to="/verify-email" replace />;
+  }
+
+  // Wait for user profile fetch to complete before making onboarding decisions.
+  // profileLoaded becomes true once fetchUserProfile finishes (even if profile is null).
+  if (!profileLoaded && location.pathname !== '/verify-email') {
+    return <FullPageLoader />;
   }
 
   // Redirect to onboarding if not complete for the current course
@@ -223,7 +229,8 @@ const PublicRoute = ({ children }: RouteProps) => {
   }
 
   if (user) {
-    // Unverified users should stay on verify-email
+    // Unverified users must verify their email first
+    // Don't sign them out - redirect to verification page
     if (!user.emailVerified) {
       return <Navigate to="/verify-email" replace />;
     }

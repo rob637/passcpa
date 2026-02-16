@@ -83,6 +83,8 @@ export interface CourseResourceConfig {
       totalTime: string;
       testingWindow: string;
       retakePolicy: string;
+      prerequisites?: string;
+      passRates?: string;
     };
     /** Time management strategies */
     timeManagement: {

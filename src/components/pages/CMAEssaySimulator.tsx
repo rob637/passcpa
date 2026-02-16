@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import {
@@ -18,6 +19,8 @@ import { CMA_ESSAYS } from '../../data/cma/essays/index';
 import { WCTask } from '../../types';
 import aiService from '../../services/aiService';
 import logger from '../../utils/logger';
+import { useAuth } from '../../hooks/useAuth';
+import { recordEssayResult, getEssayHistory, EssayHistoryEntry } from '../../services/questionHistoryService';
 
 // --- Components ---
 
@@ -36,6 +39,7 @@ const WordCounter: React.FC<{ text: string }> = ({ text }) => {
 // --- Main Page ---
 
 const CMAEssaySimulator: React.FC = () => {
+  const { user } = useAuth();
   const [currentTask, setCurrentTask] = useState<WCTask | null>(null);
   const [response, setResponse] = useState('');
   const [timeLeft, setTimeLeft] = useState(0); 
@@ -43,7 +47,18 @@ const CMAEssaySimulator: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [aiFeedback, setAiFeedback] = useState<string | null>(null);
   const [viewState, setViewState] = useState<'select' | 'writing' | 'results'>('select');
+  const [essayHistory, setEssayHistory] = useState<Map<string, EssayHistoryEntry>>(new Map());
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  // Load essay history for completion indicators
+  useEffect(() => {
+    if (viewState !== 'select' || !user?.uid) return;
+    const loadHistory = async () => {
+      const history = await getEssayHistory(user.uid);
+      setEssayHistory(new Map(history.map(h => [h.essayId, h])));
+    };
+    loadHistory();
+  }, [viewState, user?.uid]);
 
   // Timer Logic
   useEffect(() => {
@@ -98,6 +113,16 @@ const CMAEssaySimulator: React.FC = () => {
       
       setAiFeedback(feedback);
       setViewState('results');
+      
+      // Record essay completion - use word count as a simple quality metric
+      if (user?.uid && currentTask) {
+        const wordCount = response.trim().split(/\s+/).length;
+        // Score based on meeting word count threshold (150+ = good)
+        const score = wordCount >= 150 ? 80 : Math.round((wordCount / 150) * 75);
+        const timeSpent = (currentTask.estimatedTime * 60) - timeLeft;
+        await recordEssayResult(user.uid, currentTask.id, score, currentTask.section, timeSpent);
+      }
+      
       // Scroll to top so user sees the grading report immediately
       setTimeout(() => {
         resultsRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
@@ -138,17 +163,35 @@ const CMAEssaySimulator: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {CMA_ESSAYS.map(task => (
-            <Card key={task.id} variant="interactive" className="p-6">
+          {CMA_ESSAYS.map(task => {
+            const history = essayHistory.get(task.id);
+            const isCompleted = history?.mastered;
+            const hasAttempted = history && history.attempts > 0;
+            
+            return (
+            <Card key={task.id} variant="interactive" className={clsx(
+              "p-6",
+              isCompleted && "ring-2 ring-success-400 dark:ring-success-600"
+            )}>
               <div className="flex justify-between items-start mb-4">
-                 <span className={clsx(
-                   "px-2 py-1 rounded-md text-xs font-semibold uppercase tracking-wider",
-                   task.section === 'CMA1' 
-                     ? "bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300" 
-                     : "bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300"
-                 )}>
-                   {task.section === 'CMA1' ? 'Part 1' : 'Part 2'}
-                 </span>
+                 <div className="flex items-center gap-2">
+                   <span className={clsx(
+                     "px-2 py-1 rounded-md text-xs font-semibold uppercase tracking-wider",
+                     task.section === 'CMA1' 
+                       ? "bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300" 
+                       : "bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300"
+                   )}>
+                     {task.section === 'CMA1' ? 'Part 1' : 'Part 2'}
+                   </span>
+                   {isCompleted && (
+                     <CheckCircle className="w-4 h-4 text-success-500" />
+                   )}
+                   {hasAttempted && !isCompleted && (
+                     <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
+                       {history.attempts}x
+                     </span>
+                   )}
+                 </div>
                  <span className={clsx("text-xs px-2 py-1 rounded-full", 
                    task.difficulty === 'hard' 
                      ? "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300" 
@@ -174,7 +217,8 @@ const CMAEssaySimulator: React.FC = () => {
                 </Button>
               </div>
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     );
@@ -265,6 +309,7 @@ const CMAEssaySimulator: React.FC = () => {
                     <div className="p-6 prose prose-slate dark:prose-invert max-w-none">
                        {aiFeedback && (
                          <ReactMarkdown
+                           remarkPlugins={[remarkGfm]}
                            components={{
                              h2: ({ children }) => <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 mt-6 mb-3 first:mt-0">{children}</h2>,
                              h3: ({ children }) => <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 mt-4 mb-2">{children}</h3>,

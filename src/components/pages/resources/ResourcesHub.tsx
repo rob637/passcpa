@@ -20,7 +20,6 @@ import {
   GraduationCap,
   Clock,
   FileText,
-  Compass,
   DollarSign,
   Briefcase,
   Award,
@@ -113,12 +112,6 @@ const ResourcesHub: React.FC = () => {
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center mb-8">
-        <div 
-          className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
-          style={{ backgroundColor: `${course.color}20` }}
-        >
-          <Compass className="w-8 h-8" style={{ color: course.color }} />
-        </div>
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           {course.shortName} Resources
         </h1>

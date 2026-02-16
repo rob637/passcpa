@@ -30,6 +30,13 @@ import { TCP_TBS_BATCH2 } from './tcp-tbs-batch2';
 import { BAR_TBS_BATCH2 } from './bar-tbs-batch2';
 // ISC TBS Batch 2 - Additional exam quality simulations
 import { ISC_TBS_BATCH2 } from './isc-tbs-batch2';
+// Batch 3 TBS - Additional exam quality simulations
+import { FAR_TBS_BATCH3 } from './far-tbs-batch3';
+import { AUD_TBS_BATCH3 } from './aud-tbs-batch3';
+import { REG_TBS_BATCH3 } from './reg-tbs-batch3';
+import { BAR_TBS_BATCH3 } from './bar-tbs-batch3';
+import { ISC_TBS_BATCH3 } from './isc-tbs-batch3';
+import { TCP_TBS_BATCH3 } from './tcp-tbs-batch3';
 
 // ==========================================
 // FAR - FINANCIAL ACCOUNTING TBS
@@ -1582,15 +1589,15 @@ const BAR_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'BAR');
 // TAX_RESEARCH_TBS and ADDITIONAL_RESEARCH_TBS are excluded from exports
 // Research skills are now integrated into Document Review and scenario-based TBS
 
-export const FAR_TBS_ALL: TBS[] = [...FAR_TBS, ...FAR_TBS_2, ...FAR_GAP_FILL, ...FAR_APPLICATION, ...FAR_TBS_WORLD_CLASS, ...FAR_TBS_BATCH2];
-export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2, ...TAX_FORM_TBS, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'REG'), ...REG_TBS_WORLD_CLASS, ...REG_TBS_BATCH2];
-export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2, ...AUD_GAP_FILL, ...AUD_APPLICATION, ...AUD_TBS_WORLD_CLASS, ...AUD_TBS_BATCH2];
+export const FAR_TBS_ALL: TBS[] = [...FAR_TBS, ...FAR_TBS_2, ...FAR_GAP_FILL, ...FAR_APPLICATION, ...FAR_TBS_WORLD_CLASS, ...FAR_TBS_BATCH2, ...FAR_TBS_BATCH3];
+export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2, ...TAX_FORM_TBS, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'REG'), ...REG_TBS_WORLD_CLASS, ...REG_TBS_BATCH2, ...REG_TBS_BATCH3];
+export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2, ...AUD_GAP_FILL, ...AUD_APPLICATION, ...AUD_TBS_WORLD_CLASS, ...AUD_TBS_BATCH2, ...AUD_TBS_BATCH3];
 export const BEC_TBS_ALL: TBS[] = [...BEC_TBS, ...BEC_TBS_2];
 
 // New 2024 CPA exam sections with NATIVE TBS content
-export const BAR_TBS_ALL: TBS[] = [...BAR_TBS, ...BAR_GAP_FILL, ...BAR_APPLICATION, ...BAR_TBS_WORLD_CLASS, ...BAR_TBS_BATCH2]; // Business Analysis & Reporting
-export const ISC_TBS_ALL: TBS[] = [...ISC_TBS, ...ISC_GAP_FILL, ...ISC_TBS_WORLD_CLASS, ...ISC_TBS_BATCH2]; // Information Systems & Controls  
-export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP'), ...TCP_TBS_WORLD_CLASS, ...TCP_TBS_BATCH2]; // Tax Compliance & Planning
+export const BAR_TBS_ALL: TBS[] = [...BAR_TBS, ...BAR_GAP_FILL, ...BAR_APPLICATION, ...BAR_TBS_WORLD_CLASS, ...BAR_TBS_BATCH2, ...BAR_TBS_BATCH3]; // Business Analysis & Reporting
+export const ISC_TBS_ALL: TBS[] = [...ISC_TBS, ...ISC_GAP_FILL, ...ISC_TBS_WORLD_CLASS, ...ISC_TBS_BATCH2, ...ISC_TBS_BATCH3]; // Information Systems & Controls  
+export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP'), ...TCP_TBS_WORLD_CLASS, ...TCP_TBS_BATCH2, ...TCP_TBS_BATCH3]; // Tax Compliance & Planning
 
 export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 

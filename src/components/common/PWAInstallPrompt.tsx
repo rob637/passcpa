@@ -200,6 +200,10 @@ function NativeInstallPrompt({
 
 /**
  * Compact install banner (for persistent but non-intrusive prompting)
+ * 
+ * Note: The Install button directly triggers the native browser install prompt
+ * rather than opening our custom modal, because the banner and modal use
+ * independent hook instances and can't share state.
  */
 export function PWAInstallBanner({ className }: { className?: string }) {
   const [state, actions] = usePWAInstall();
@@ -214,6 +218,19 @@ export function PWAInstallBanner({ className }: { className?: string }) {
     return null;
   }
 
+  const handleInstall = async () => {
+    if (state.isIOS) {
+      // iOS can't trigger native prompt — open modal instructions
+      actions.showPrompt();
+      return;
+    }
+    const success = await actions.promptInstall();
+    if (!success) {
+      // If native prompt failed or was declined, dismiss banner for 3 days
+      actions.dismissPrompt(3);
+    }
+  };
+
   return (
     <div
       className={clsx(
@@ -227,7 +244,7 @@ export function PWAInstallBanner({ className }: { className?: string }) {
       </div>
       <div className="flex items-center gap-2">
         <button
-          onClick={actions.showPrompt}
+          onClick={handleInstall}
           className="px-3 py-1 bg-white text-blue-600 rounded font-medium text-xs hover:bg-blue-50 transition-colors"
         >
           Install

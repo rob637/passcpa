@@ -71,6 +71,32 @@ interface UnitStats {
   progress: number;
 }
 
+// Parse Roman numeral to integer for sorting
+const parseRomanNumeral = (roman: string): number => {
+  const values: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let result = 0;
+  for (let i = 0; i < roman.length; i++) {
+    const current = values[roman[i]] || 0;
+    const next = values[roman[i + 1]] || 0;
+    result += current < next ? -current : current;
+  }
+  return result;
+};
+
+// Compare unit names with Roman numeral awareness (e.g., CIA3-I, CIA3-II, CIA3-III, CIA3-IV)
+const compareUnitNames = (a: string, b: string): number => {
+  // Extract prefix and Roman numeral suffix (e.g., "CIA3-IV" -> ["CIA3", "IV"])
+  const matchA = a.match(/^(.+?)-([IVXLCDM]+)$/);
+  const matchB = b.match(/^(.+?)-([IVXLCDM]+)$/);
+  
+  if (matchA && matchB && matchA[1] === matchB[1]) {
+    // Same prefix, compare Roman numerals
+    return parseRomanNumeral(matchA[2]) - parseRomanNumeral(matchB[2]);
+  }
+  // Fallback to alphabetical
+  return a.localeCompare(b);
+};
+
 // Units Report Component (Becker-style table)
 const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ unitStats, section }) => {
   const [expanded, setExpanded] = useState(true);
@@ -82,7 +108,7 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
   
   const sortedUnits = [...unitStats].sort((a, b) => {
     const multiplier = sortDir === 'asc' ? 1 : -1;
-    if (sortBy === 'name') return a.name.localeCompare(b.name) * multiplier;
+    if (sortBy === 'name') return compareUnitNames(a.name, b.name) * multiplier;
     if (sortBy === 'progress') return (a.progress - b.progress) * multiplier;
     return (a.accuracy - b.accuracy) * multiplier;
   });

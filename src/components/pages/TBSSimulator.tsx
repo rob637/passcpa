@@ -1124,7 +1124,7 @@ const TBSSimulator: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-16">
+        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-12">
           <div className="flex items-center gap-3 mb-4">
             <Link to={courseHome}>
               <Button variant="ghost" size="icon" className="hover:bg-white/10 text-white">
@@ -1158,7 +1158,7 @@ const TBSSimulator: React.FC = () => {
         </div>
 
         {/* TBS Info Card */}
-        <div className="px-4 -mt-6 mb-6">
+        <div className="px-4 mt-4 mb-6">
           <div className="bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-xl p-4">
             <div className="flex items-start gap-3">
               <FileSpreadsheet className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />

@@ -158,6 +158,7 @@ export default function CFPCaseStudy() {
     setIsTimerRunning(true);
     setViewState('scenario');
     setActiveTab('scenario');
+    window.scrollTo(0, 0);
   };
 
   // Submit all answers and record result
@@ -200,7 +201,7 @@ export default function CFPCaseStudy() {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-green-600 to-green-700 text-white p-6 pb-16">
+        <div className="bg-gradient-to-br from-green-600 to-green-700 text-white p-6 pb-12">
           <div className="flex items-center gap-3 mb-4">
             <Link to="/cfp/dashboard">
               <Button variant="ghost" size="icon" className="hover:bg-white/10 text-white">
@@ -233,7 +234,7 @@ export default function CFPCaseStudy() {
         </div>
 
         {/* Info Card */}
-        <div className="px-4 -mt-6 mb-6">
+        <div className="px-4 mt-4 mb-6">
           <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
             <div className="p-4">
               <div className="flex items-start gap-3">

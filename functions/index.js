@@ -1721,15 +1721,23 @@ exports.stripeWebhook = onRequest({
   try {
     // Verify webhook signature
     // Use rawBody (Buffer) which is the original request body before JSON parsing
+    // Read webhook secret at runtime (Gen 2 injects secrets as env vars at invocation, not cold start)
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET?.trim();
+    if (!webhookSecret) {
+      console.error('STRIPE_WEBHOOK_SECRET not available at runtime');
+      res.status(500).send('Webhook secret not configured');
+      return;
+    }
+
     const bodyToVerify = req.rawBody || req.body;
     event = stripeClient.webhooks.constructEvent(
       bodyToVerify,
       sig,
-      STRIPE_WEBHOOK_SECRET
+      webhookSecret
     );
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message);
-    console.error('Debug info: rawBody available:', !!req.rawBody, '| body type:', typeof req.body, '| sig present:', !!sig, '| secret length:', STRIPE_WEBHOOK_SECRET?.length);
+    console.error('Debug info: rawBody available:', !!req.rawBody, '| body type:', typeof req.body, '| sig present:', !!sig, '| secret length:', process.env.STRIPE_WEBHOOK_SECRET?.trim()?.length);
     res.status(400).send(`Webhook Error: ${err.message}`);
     return;
   }
@@ -2292,3 +2300,87 @@ function getPaymentFailedEmailHTML(name) {
   `;
 }
 
+// ============================================================================
+// GEMINI AI PROXY
+// Proxies Gemini API calls through Cloud Functions so the API key stays secret
+// ============================================================================
+
+const GEMINI_API_URL =
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+
+exports.geminiProxy = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  secrets: ['GEMINI_API_KEY'],
+}, async (request) => {
+  // Must be authenticated
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in to use the AI tutor.');
+  }
+
+  const { messages, systemPrompt, generationConfig } = request.data;
+
+  if (!messages || !Array.isArray(messages) || messages.length === 0) {
+    throw new HttpsError('invalid-argument', 'Messages array is required.');
+  }
+
+  if (!systemPrompt || typeof systemPrompt !== 'string') {
+    throw new HttpsError('invalid-argument', 'System prompt is required.');
+  }
+
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  if (!apiKey) {
+    console.error('GEMINI_API_KEY not configured');
+    throw new HttpsError('failed-precondition', 'AI service not configured.');
+  }
+
+  try {
+    const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: messages,
+        systemInstruction: {
+          parts: [{ text: systemPrompt }],
+        },
+        generationConfig: generationConfig || {
+          temperature: 0.7,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 1024,
+        },
+        safetySettings: [
+          { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
+          { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
+          { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+          { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const errorMessage = errorData?.error?.message || `HTTP ${response.status}`;
+      console.error(`Gemini API error: ${errorMessage}`);
+
+      if (response.status === 401 || response.status === 403) {
+        console.error('[ADMIN ALERT] Gemini API key is invalid or expired!');
+        throw new HttpsError('internal', 'AI service configuration error.');
+      }
+
+      throw new HttpsError('internal', 'AI service temporarily unavailable.');
+    }
+
+    const data = await response.json();
+
+    if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
+      return { text: data.candidates[0].content.parts[0].text };
+    }
+
+    throw new HttpsError('internal', 'No response from AI service.');
+  } catch (error) {
+    if (error instanceof HttpsError) throw error;
+    console.error('Gemini proxy error:', error);
+    throw new HttpsError('internal', 'AI service error.');
+  }
+});

@@ -21,6 +21,7 @@ import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
 import { getPendingReferral, applyReferralCode } from '../services/referral';
 import { saveCoursePreference } from '../utils/courseDetection';
+import { isAdminEmail } from '../config/adminConfig';
 import { Capacitor } from '@capacitor/core';
 import { UserProfile, CourseId } from '../types';
 import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
@@ -74,11 +75,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [error, setError] = useState<string | null>(null);
 
   // Fetch user profile from Firestore
-  const fetchUserProfile = async (uid: string) => {
+  const fetchUserProfile = async (uid: string, email?: string | null) => {
     try {
       const userDoc = await getDoc(doc(db, 'users', uid));
       if (userDoc.exists()) {
         const profile = { id: uid, ...userDoc.data() } as UserProfile;
+        
+        // Auto-sync isAdmin flag: if the user's email is in the admin whitelist
+        // but their Firestore doc doesn't have isAdmin: true, set it now.
+        // This ensures Firestore security rules (which check isAdmin on the doc)
+        // stay in sync with the client-side ADMIN_EMAILS list.
+        if (isAdminEmail(email) && !profile.isAdmin) {
+          try {
+            await updateDoc(doc(db, 'users', uid), { isAdmin: true });
+            profile.isAdmin = true;
+            logger.info(`[Auth] Auto-synced isAdmin flag for ${email}`);
+          } catch (syncErr) {
+            logger.warn('[Auth] Could not auto-sync isAdmin flag:', syncErr);
+          }
+        }
+        
         setUserProfile(profile);
         
         // Sync Firestore activeCourse to localStorage so CourseProvider detects it correctly.
@@ -163,7 +179,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
         setUser(firebaseUser);
         // Fetch user profile from Firestore
-        await fetchUserProfile(firebaseUser.uid);
+        await fetchUserProfile(firebaseUser.uid, firebaseUser.email);
         
         // Initialize notifications for this user
         initializeNotifications(firebaseUser.uid).catch((err) => {

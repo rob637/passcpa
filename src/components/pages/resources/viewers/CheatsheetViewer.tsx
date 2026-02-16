@@ -6,6 +6,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Loader2 } from 'lucide-react';
+import DOMPurify from 'dompurify';
 import { ResourceItem } from '../resourceConfig';
 
 interface CheatsheetViewerProps {
@@ -222,10 +223,11 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
     
     // Format inline content (bold, code, etc.)
     const formatCell = (text: string): string => {
-      return text
+      const html = text
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>')
         .replace(/`(.+?)`/g, '<code class="bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded text-xs">$1</code>');
+      return DOMPurify.sanitize(html);
     };
     
     return (
@@ -414,6 +416,7 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
           .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
           .replace(/\*(.+?)\*/g, '<em>$1</em>')
           .replace(/`(.+?)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm text-primary-600 dark:text-primary-400">$1</code>');
+        formattedLine = DOMPurify.sanitize(formattedLine);
         
         elements.push(
           <p 

@@ -233,7 +233,7 @@ export const INV_MNEMONICS: MnemonicFlashcard[] = [
 export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   {
     id: 'fc-risk-mn-001',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -245,7 +245,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'fc-risk-mn-002',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -257,7 +257,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'fc-risk-mn-003',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',
@@ -269,7 +269,7 @@ export const RISK_MNEMONICS: MnemonicFlashcard[] = [
   },
   {
     id: 'fc-risk-mn-004',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'mnemonic',

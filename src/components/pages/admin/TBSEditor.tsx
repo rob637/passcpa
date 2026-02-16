@@ -23,9 +23,7 @@ import {
 import clsx from 'clsx';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
-
-// Admin email whitelist
-const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
+import { isAdminEmail } from '../../../config/adminConfig';
 
 const EXAM_SECTIONS: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
 
@@ -42,7 +40,7 @@ const TBSEditor = () => {
   const [error, setError] = useState('');
 
   // Check admin access
-  const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
+  const isAdmin = user && (userProfile?.isAdmin || isAdminEmail(user?.email));
 
   const loadTBS = useCallback(async () => {
     setIsLoading(true);

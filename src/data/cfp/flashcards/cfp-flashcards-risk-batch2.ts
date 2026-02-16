@@ -8,7 +8,7 @@ import { Flashcard } from './index';
 export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   {
     id: 'fc-risk-011',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Risk Management',
@@ -19,7 +19,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-012',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Risk Management',
@@ -30,7 +30,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-013',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Insurance Concepts',
@@ -41,7 +41,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-014',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Insurance Concepts',
@@ -52,7 +52,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-015',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Insurance Concepts',
@@ -63,7 +63,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-016',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Insurance Concepts',
@@ -74,7 +74,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-017',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -85,7 +85,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-018',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -96,7 +96,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-019',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -107,7 +107,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-020',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -118,7 +118,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-021',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -129,7 +129,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-022',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -140,7 +140,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-023',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -151,7 +151,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-024',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -162,7 +162,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-025',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Disability Insurance',
@@ -173,7 +173,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-026',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Disability Insurance',
@@ -184,7 +184,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-027',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Disability Insurance',
@@ -195,7 +195,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-028',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Disability Insurance',
@@ -206,7 +206,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-029',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Long-Term Care',
@@ -217,7 +217,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-030',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Long-Term Care',
@@ -228,7 +228,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-031',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Long-Term Care',
@@ -239,7 +239,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-032',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Health Insurance',
@@ -250,7 +250,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-033',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Health Insurance',
@@ -261,7 +261,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-034',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Health Insurance',
@@ -272,7 +272,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-035',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Health Insurance',
@@ -283,7 +283,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-036',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Health Insurance',
@@ -294,7 +294,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-037',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Property Insurance',
@@ -305,7 +305,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-038',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Property Insurance',
@@ -316,7 +316,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-039',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Property Insurance',
@@ -327,7 +327,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-040',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Property Insurance',
@@ -338,7 +338,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-041',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Auto Insurance',
@@ -349,7 +349,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-042',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Auto Insurance',
@@ -360,7 +360,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-043',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Liability',
@@ -371,7 +371,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-044',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Liability',
@@ -382,7 +382,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-045',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Business Insurance',
@@ -393,7 +393,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-046',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Business Insurance',
@@ -404,7 +404,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-047',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Business Insurance',
@@ -415,7 +415,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-048',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Annuities',
@@ -426,7 +426,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-049',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Annuities',
@@ -437,7 +437,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-050',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Annuities',
@@ -448,7 +448,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-051',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Medicare',
@@ -459,7 +459,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-052',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Medicare',
@@ -470,7 +470,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-053',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Medicare',
@@ -481,7 +481,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-054',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Social Security',
@@ -492,7 +492,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-055',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Risk Assessment',
@@ -503,7 +503,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-056',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Policy Provisions',
@@ -514,7 +514,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-057',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Policy Provisions',
@@ -525,7 +525,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-058',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Policy Provisions',
@@ -536,7 +536,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-059',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Workers Compensation',
@@ -547,7 +547,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-060',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Title Insurance',
@@ -558,7 +558,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-061',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Flood Insurance',
@@ -569,7 +569,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-062',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Earthquake Insurance',
@@ -580,7 +580,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-063',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Renters Insurance',
@@ -591,7 +591,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-064',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Life Insurance',
@@ -602,7 +602,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-065',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Business Insurance',
@@ -613,7 +613,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-066',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Liability',
@@ -624,7 +624,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-067',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Liability',
@@ -635,7 +635,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-068',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Insurance Selection',
@@ -646,7 +646,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-069',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Insurance Selection',
@@ -657,7 +657,7 @@ export const CFP_FLASHCARDS_RISK_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-risk-070',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
 
     type: 'concept',
     topic: 'Policy Provisions',

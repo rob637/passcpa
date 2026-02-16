@@ -19,9 +19,7 @@ import {
 import clsx from 'clsx';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
-
-// Admin email whitelist
-const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
+import { isAdminEmail } from '../../../config/adminConfig';
 
 const EXAM_SECTIONS = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
 const DIFFICULTY_LEVELS = ['easy', 'medium', 'hard'];
@@ -38,10 +36,10 @@ const QuestionEditor = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [stats, setStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState('');  
 
   // Check admin access
-  const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
+  const isAdmin = user && (userProfile?.isAdmin || isAdminEmail(user?.email));
 
   const loadQuestions = useCallback(async () => {
     setIsLoading(true);

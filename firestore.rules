@@ -117,14 +117,17 @@ service cloud.firestore {
     }
 
     // Leaderboard - community stats, daily activity, streaks
+    // Users can only create/update their own entry (docId must match uid)
     match /leaderboard/{docId} {
       allow read: if isAuthenticated();
-      allow write: if isAuthenticated();
+      allow create, update: if isAuthenticated() && request.auth.uid == docId;
+      allow delete: if isAdmin();
       
       // Subcollections: daily_stats/dates, daily_stats/user_flags, user_streaks
       match /{subcollection=**} {
         allow read: if isAuthenticated();
-        allow write: if isAuthenticated();
+        allow create, update: if isAuthenticated() && request.auth.uid == docId;
+        allow delete: if isAdmin();
       }
     }
 

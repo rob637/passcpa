@@ -31,6 +31,8 @@ import {
   getWeakSections,
   startSessionCore,
   endSessionCore,
+  syncToFirestore,
+  loadStateWithFirestoreFallback,
 } from './adaptiveEngineCore';
 
 // ============================================================================
@@ -122,6 +124,29 @@ export function saveAdaptiveState(state: AdaptiveState): void {
   saveState(state, ENGINE_CONFIG.storageKey);
 }
 
+/** Fire-and-forget sync of adaptive state to Firestore for cross-device persistence */
+async function syncStateToCloud(state: AdaptiveState): Promise<void> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      await syncToFirestore(state, user.uid, 'cfp');
+    }
+  } catch { /* fire-and-forget */ }
+}
+
+/** Load state with Firestore fallback (for logged-in users on new devices) */
+export async function loadWithFirestoreFallback(): Promise<AdaptiveState> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      return await loadStateWithFirestoreFallback(ENGINE_CONFIG, user.uid, 'cfp');
+    }
+  } catch { /* fall through to local load */ }
+  return loadState(ENGINE_CONFIG);
+}
+
 // ============================================================================
 // Public API — Sessions
 // ============================================================================
@@ -141,6 +166,7 @@ export function startSession(state: AdaptiveState): AdaptiveState {
 export function endSession(state: AdaptiveState): { state: AdaptiveState; summary: ReturnType<typeof endSessionCore>['summary'] } {
   const result = endSessionCore(state);
   saveAdaptiveState(result.state);
+  syncStateToCloud(result.state);
   return result;
 }
 
@@ -371,6 +397,31 @@ export function getStudyRecommendation(state: AdaptiveState): {
     action: 'maintain',
     reason: 'Continue balanced practice across all domains.',
     priority: 'low',
+  };
+}
+
+/**
+ * Normalized recommendation action (consistent API with CPA/EA/CMA/CIA/CISA).
+ * Maps CFP-specific actions to the standard action set.
+ */
+export function getRecommendedAction(state: AdaptiveState): {
+  action: 'practice' | 'review' | 'mock-exam' | 'break';
+  domain?: string;
+  reason: string;
+} {
+  const rec = getStudyRecommendation(state);
+  // Map CFP-specific actions to the standard action set
+  const actionMap: Record<string, 'practice' | 'review' | 'mock-exam' | 'break'> = {
+    'review': 'review',
+    'weak-areas': 'practice',
+    'new-content': 'practice',
+    'mock-exam': 'mock-exam',
+    'maintain': 'practice',
+  };
+  return {
+    action: actionMap[rec.action] || 'practice',
+    domain: rec.domain,
+    reason: rec.reason,
   };
 }
 

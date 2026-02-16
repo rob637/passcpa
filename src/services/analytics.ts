@@ -16,7 +16,7 @@ import logger from '../utils/logger';
 import { trackPWAEngagement } from '../hooks/usePWAInstall';
 
 // GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 
 let initialized = false;
 
@@ -25,6 +25,12 @@ let initialized = false;
  */
 export const initAnalytics = (): void => {
   if (initialized || typeof window === 'undefined') return;
+
+  // Skip if no measurement ID configured
+  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.startsWith('G-XXXX')) {
+    logger.log('Analytics disabled: No GA4 Measurement ID configured. Set VITE_GA_MEASUREMENT_ID in your .env file.');
+    return;
+  }
 
   // Check for Do Not Track
   if (navigator.doNotTrack === '1') {

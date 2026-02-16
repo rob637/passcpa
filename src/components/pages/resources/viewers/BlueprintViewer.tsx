@@ -323,7 +323,7 @@ const BLUEPRINTS: Record<string, {
         examTips: ['Know your calculator (HP or TI) cold', 'TVM underlies many exam questions'],
       },
       {
-        id: 'CFP-RIS',
+        id: 'CFP-RISK',
         name: 'Risk & Insurance',
         code: 'Domain 3',
         weight: 11,

@@ -8,7 +8,7 @@ import { Flashcard } from './index';
 export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   {
     id: 'fc-pro-011',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'CFP Board',
     front: 'What are the FOUR Es of CFP certification?',
@@ -18,7 +18,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-012',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'CFP Board',
     front: 'What is the CFP BOARD\'s disciplinary process?',
@@ -28,7 +28,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-013',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Fiduciary Duty',
     front: 'When does FIDUCIARY duty apply to CFP professionals?',
@@ -38,7 +38,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-014',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Fiduciary Duty',
     front: 'What is the DUTY OF LOYALTY?',
@@ -48,7 +48,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-015',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Fiduciary Duty',
     front: 'What is the DUTY OF CARE?',
@@ -58,7 +58,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-016',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Client Relationship',
     front: 'What must be included in a CLIENT ENGAGEMENT?',
@@ -68,7 +68,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-017',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Client Relationship',
     front: 'What are SCOPE OF ENGAGEMENT considerations?',
@@ -78,7 +78,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-018',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Practice Standards',
     front: 'What are the 7 steps of FINANCIAL PLANNING process?',
@@ -88,7 +88,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-019',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Practice Standards',
     front: 'What information must be gathered about a CLIENT?',
@@ -98,7 +98,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-020',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Conflicts of Interest',
     front: 'How should CONFLICTS OF INTEREST be handled?',
@@ -108,7 +108,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-021',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Conflicts of Interest',
     front: 'What COMPENSATION conflicts must be disclosed?',
@@ -118,7 +118,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-022',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Confidentiality',
     front: 'What are CFP® CONFIDENTIALITY obligations?',
@@ -128,7 +128,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-023',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Competence',
     front: 'What is the COMPETENCE requirement?',
@@ -138,7 +138,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-024',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Integrity',
     front: 'What does INTEGRITY require of CFP® professionals?',
@@ -148,7 +148,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-025',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Professionalism',
     front: 'What does PROFESSIONALISM require?',
@@ -158,7 +158,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-026',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulation',
     front: 'What is the INVESTMENT ADVISERS ACT of 1940?',
@@ -168,7 +168,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-027',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulation',
     front: 'What is REGULATION BEST INTEREST (Reg BI)?',
@@ -178,7 +178,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-028',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulation',
     front: 'What is Form ADV?',
@@ -188,7 +188,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-029',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulation',
     front: 'What is Form CRS?',
@@ -198,7 +198,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-030',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulation',
     front: 'What is the difference between RIA and BD?',
@@ -208,7 +208,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-031',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulation',
     front: 'What are ERISA fiduciary responsibilities?',
@@ -218,7 +218,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-032',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Privacy',
     front: 'What does REGULATION S-P require?',
@@ -228,7 +228,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-033',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Licensing',
     front: 'What SECURITIES LICENSES are common?',
@@ -238,7 +238,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-034',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Licensing',
     front: 'What INSURANCE LICENSES are required?',
@@ -248,7 +248,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-035',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Continuing Education',
     front: 'What are CFP® CONTINUING EDUCATION requirements?',
@@ -258,7 +258,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-036',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Ethics',
     front: 'What is SUITABILITY vs BEST INTEREST?',
@@ -268,7 +268,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-037',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Anti-Money Laundering',
     front: 'What are AML requirements for financial professionals?',
@@ -278,7 +278,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-038',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Elder Care',
     front: 'What are obligations for SENIOR/ELDER clients?',
@@ -288,7 +288,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-039',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Documentation',
     front: 'What DOCUMENTATION should be maintained?',
@@ -298,7 +298,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-040',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Advertising',
     front: 'What are ADVERTISING rules for financial professionals?',
@@ -308,7 +308,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-041',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Advertising',
     front: 'What is the SEC MARKETING RULE?',
@@ -318,7 +318,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-042',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Referrals',
     front: 'What are rules for REFERRAL arrangements?',
@@ -328,7 +328,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-043',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Business Practices',
     front: 'What are CUSTODY rules?',
@@ -338,7 +338,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-044',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Business Practices',
     front: 'What is DISCRETIONARY vs NON-DISCRETIONARY authority?',
@@ -348,7 +348,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-045',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Cybersecurity',
     front: 'What CYBERSECURITY obligations exist?',
@@ -358,7 +358,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-046',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Outside Activities',
     front: 'What OUTSIDE BUSINESS ACTIVITIES must be disclosed?',
@@ -368,7 +368,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-047',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Gifts and Entertainment',
     front: 'What are rules on GIFTS and entertainment?',
@@ -378,7 +378,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-048',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Supervision',
     front: 'What are SUPERVISION requirements?',
@@ -388,7 +388,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-049',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Liability',
     front: 'What is E&O insurance for financial professionals?',
@@ -398,7 +398,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-050',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Dispute Resolution',
     front: 'How are client DISPUTES resolved?',
@@ -408,7 +408,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-051',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulatory Bodies',
     front: 'What does the SEC regulate?',
@@ -418,7 +418,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-052',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulatory Bodies',
     front: 'What is FINRA\'s role?',
@@ -428,7 +428,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-053',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Regulatory Bodies',
     front: 'What do STATE REGULATORS oversee?',
@@ -438,7 +438,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-054',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Communication',
     front: 'What rules apply to client COMMUNICATIONS?',
@@ -448,7 +448,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-055',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Termination',
     front: 'What are obligations when TERMINATING engagement?',
@@ -458,7 +458,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-056',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Due Diligence',
     front: 'What is PRODUCT DUE DILIGENCE?',
@@ -468,7 +468,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-057',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Compliance',
     front: 'What is a COMPLIANCE program?',
@@ -478,7 +478,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-058',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Special Situations',
     front: 'What obligations exist for DIMINISHED CAPACITY?',
@@ -488,7 +488,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-059',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Technology',
     front: 'What are ROBO-ADVISER considerations?',
@@ -498,7 +498,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-060',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Professional Development',
     front: 'What is required for maintaining PROFESSIONAL competence?',
@@ -508,7 +508,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-061',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Ethics',
     front: 'What is the CFP® CODE OF ETHICS?',
@@ -518,7 +518,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-062',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Planning Process',
     front: 'When is comprehensive FINANCIAL PLANNING required?',
@@ -528,7 +528,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-063',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Disclosure',
     front: 'What MATERIAL INFORMATION must be disclosed?',
@@ -538,7 +538,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-064',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Reporting',
     front: 'What must be reported to CFP BOARD?',
@@ -548,7 +548,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-065',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Misconduct',
     front: 'What conduct can result in CFP® DISCIPLINE?',
@@ -558,7 +558,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-066',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Client Relationship',
     front: 'What is INFORMED CONSENT?',
@@ -568,7 +568,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-067',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Risk Tolerance',
     front: 'How should RISK TOLERANCE be assessed?',
@@ -578,7 +578,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-068',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Implementation',
     front: 'What are obligations during IMPLEMENTATION?',
@@ -588,7 +588,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-069',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Monitoring',
     front: 'What are MONITORING obligations?',
@@ -598,7 +598,7 @@ export const CFP_FLASHCARDS_PRO_BATCH2: Flashcard[] = [
   },
   {
     id: 'fc-pro-070',
-    section: 'CFP-PRO',
+    section: 'CFP-PCR',
     type: 'concept',
     topic: 'Professional Standards',
     front: 'What are STANDARDS OF PROFESSIONAL CONDUCT?',

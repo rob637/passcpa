@@ -32,6 +32,8 @@ import {
   getPerformanceSummaryCore,
   startSessionCore,
   endSessionCore,
+  syncToFirestore,
+  loadStateWithFirestoreFallback,
 } from './adaptiveEngineCore';
 
 // ============================================================================
@@ -131,6 +133,31 @@ const ENGINE_CONFIG = createEngineConfig({
 
 let adaptiveState: EAAdaptiveState = loadState(ENGINE_CONFIG);
 
+/** Fire-and-forget sync of adaptive state to Firestore for cross-device persistence */
+async function syncStateToCloud(): Promise<void> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      await syncToFirestore(adaptiveState, user.uid, 'ea');
+    }
+  } catch { /* fire-and-forget */ }
+}
+
+/** Load state with Firestore fallback (for logged-in users on new devices) */
+export async function loadWithFirestoreFallback(): Promise<EAAdaptiveState> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      const coreState = await loadStateWithFirestoreFallback(ENGINE_CONFIG, user.uid, 'ea');
+      adaptiveState = coreState;
+      return adaptiveState;
+    }
+  } catch { /* fall through to local load */ }
+  return loadState(ENGINE_CONFIG);
+}
+
 // ============================================================================
 // Public API — State Management
 // ============================================================================
@@ -229,6 +256,54 @@ export function selectQuestions(
 }
 
 // ============================================================================
+// Public API — Recommendations
+// ============================================================================
+
+/**
+ * Get recommended next study action based on current adaptive state.
+ */
+export function getRecommendedAction(): {
+  action: 'practice' | 'review' | 'mock-exam' | 'break';
+  part?: EASectionId;
+  reason: string;
+} {
+  const dueCount = getQuestionsDueForReview().length;
+  const weakParts = getWeakParts();
+  const recentAccuracy = adaptiveState.recentResults.slice(-20);
+  const overallAccuracy = recentAccuracy.length > 0
+    ? recentAccuracy.filter(r => r).length / recentAccuracy.length
+    : 0;
+
+  if (dueCount >= 20) {
+    return {
+      action: 'review',
+      reason: `You have ${dueCount} questions due for spaced repetition review.`,
+    };
+  }
+
+  if (adaptiveState.totalQuestionsAnswered >= 400 && overallAccuracy >= 0.75) {
+    return {
+      action: 'mock-exam',
+      reason: 'Your accuracy is strong! Take a full SEE practice exam.',
+    };
+  }
+
+  if (weakParts.length > 0) {
+    const priorityPart = weakParts[0];
+    return {
+      action: 'practice',
+      part: priorityPart,
+      reason: `Focus on ${priorityPart} — it needs more work.`,
+    };
+  }
+
+  return {
+    action: 'practice',
+    reason: 'Continue your balanced study across all three SEE parts.',
+  };
+}
+
+// ============================================================================
 // Public API — Performance Summary
 // ============================================================================
 
@@ -275,5 +350,6 @@ export function endSession(): {
   const result = endSessionCore(adaptiveState);
   adaptiveState = result.state;
   saveState(adaptiveState, ENGINE_CONFIG.storageKey);
+  syncStateToCloud();
   return result.summary;
 }

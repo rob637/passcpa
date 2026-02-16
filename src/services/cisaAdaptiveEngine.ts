@@ -25,11 +25,14 @@ import {
   recordAnswerCore,
   getQuestionsDueForReview as coreGetQuestionsDueForReview,
   getWeakSections as coreGetWeakSections,
+  getWeakSubSections,
   selectQuestionsCore,
   getPerformanceSummaryCore,
   startSessionCore,
   endSessionCore,
   shuffleArray,
+  syncToFirestore,
+  loadStateWithFirestoreFallback,
 } from './adaptiveEngineCore';
 
 // ============================================================================
@@ -103,6 +106,30 @@ const ENGINE_CONFIG = createEngineConfig({
 
 let adaptiveState: AdaptiveState = loadState(ENGINE_CONFIG);
 
+/** Fire-and-forget sync of adaptive state to Firestore for cross-device persistence */
+async function syncStateToCloud(): Promise<void> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      await syncToFirestore(adaptiveState, user.uid, 'cisa');
+    }
+  } catch { /* fire-and-forget */ }
+}
+
+/** Load state with Firestore fallback (for logged-in users on new devices) */
+export async function loadWithFirestoreFallback(): Promise<AdaptiveState> {
+  try {
+    const { auth } = await import('../config/firebase');
+    const user = auth.currentUser;
+    if (user) {
+      adaptiveState = await loadStateWithFirestoreFallback(ENGINE_CONFIG, user.uid, 'cisa');
+      return adaptiveState;
+    }
+  } catch { /* fall through to local load */ }
+  return loadState(ENGINE_CONFIG);
+}
+
 // ============================================================================
 // Public API — State Management
 // ============================================================================
@@ -137,7 +164,8 @@ export function recordAnswer(
   domain: CISASectionId,
   isCorrect: boolean,
   _difficulty: 'easy' | 'medium' | 'hard',
-  concepts: string[] = []
+  concepts: string[] = [],
+  subdomain?: string
 ): void {
   adaptiveState = recordAnswerCore(
     adaptiveState,
@@ -145,7 +173,7 @@ export function recordAnswer(
     questionId,
     domain,
     isCorrect,
-    { concepts }
+    { subSectionId: subdomain, concepts }
   );
   saveState(adaptiveState, ENGINE_CONFIG.storageKey);
 }
@@ -160,6 +188,13 @@ export function getQuestionsDueForReview(): string[] {
 
 export function getWeakDomains(): CISASectionId[] {
   return coreGetWeakSections(adaptiveState, ENGINE_CONFIG) as CISASectionId[];
+}
+
+/**
+ * Get weak subdomains across all CISA domains.
+ */
+export function getWeakSubdomains(): string[] {
+  return getWeakSubSections(adaptiveState, ENGINE_CONFIG);
 }
 
 // ============================================================================
@@ -186,6 +221,7 @@ export function selectQuestions(
     ENGINE_CONFIG,
     coreCriteria,
     (q) => q.domain,
+    (q) => q.subdomain,
   );
 
   // Shuffle to avoid predictable order
@@ -297,5 +333,6 @@ export function endSession(): {
   const result = endSessionCore(adaptiveState);
   adaptiveState = result.state;
   saveState(adaptiveState, ENGINE_CONFIG.storageKey);
+  syncStateToCloud();
   return result.summary;
 }

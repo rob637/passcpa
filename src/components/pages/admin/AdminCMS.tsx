@@ -7,6 +7,7 @@ import { Button } from '../../common/Button';
 import { Navigate, Link } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
+import { ADMIN_EMAILS, isAdminEmail } from '../../../config/adminConfig';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
 import { COURSES, getActiveCourses } from '../../../courses';
@@ -259,6 +260,8 @@ interface UserDocument {
   };
   // Per-exam trials map (loaded from subscriptions collection)
   _trials?: Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>;
+  // Per-exam paid subscriptions (loaded from subscriptions collection)
+  _paidExams?: Record<string, { tier?: string; status?: string; currentPeriodEnd?: { seconds: number } }>;
 }
 
 interface UserActivityData {
@@ -367,12 +370,8 @@ interface CourseContentStats {
 // Constants
 // ============================================================================
 
-// Admin email whitelist - add your email here
-const ADMIN_EMAILS: string[] = [
-  'admin@voraprep.com',
-  'rob@sagecg.com',
-  'rob@voraprep.com',
-];
+// Admin emails imported from shared config
+// See src/config/adminConfig.ts to add new admin emails
 
 // Helper: derive courseId from examSection name
 // This avoids relying on stale courseId field in user docs
@@ -726,6 +725,8 @@ const AdminCMS: React.FC = () => {
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [isLoadingAnalytics, setIsLoadingAnalytics] = useState(false);
+  const [analyticsError, setAnalyticsError] = useState<string | null>(null);
+  const [usersError, setUsersError] = useState<string | null>(null);
 
   // Feature flags state (local copy for UI)
   const [featureFlags] = useState<FeatureFlagState>({
@@ -752,6 +753,7 @@ const AdminCMS: React.FC = () => {
   const [staleAccounts, setStaleAccounts] = useState<UserDocument[]>([]);
   const [isLoadingStale, setIsLoadingStale] = useState(false);
   const [isDeletingStale, setIsDeletingStale] = useState(false);
+  const [staleStatus, setStaleStatus] = useState<{ message: string; type: 'info' | 'success' | 'error' | 'warning' } | null>(null);
 
   // Beta user transition state
   const [betaTransitionStatus, setBetaTransitionStatus] = useState<'idle' | 'preview' | 'executing' | 'done'>('idle');
@@ -763,7 +765,7 @@ const AdminCMS: React.FC = () => {
   } | null>(null);
 
   // Check admin access
-  const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
+  const isAdmin = user && (userProfile?.isAdmin || isAdminEmail(user?.email));
 
   // Helper to log messages (used in reset functionality)
   const addLog = (msg: string, type: LogType = 'info'): void => {
@@ -775,6 +777,7 @@ const AdminCMS: React.FC = () => {
   const loadUsers = useCallback(async () => {
     if (!isAdmin) return;
     setIsLoadingUsers(true);
+    setUsersError(null);
     try {
       const q = query(collection(db, 'users'), limit(200));
       const querySnapshot = await getDocs(q);
@@ -830,13 +833,19 @@ const AdminCMS: React.FC = () => {
           subscription,
           // Attach per-exam trials from subscription doc
           _trials: (subData?.trials as Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>) || undefined,
+          // Attach per-exam paid subscriptions
+          _paidExams: (subData?.paidExams as Record<string, { tier?: string; status?: string; currentPeriodEnd?: { seconds: number } }>) || undefined,
         } as UserDocument);
       });
       setUsersList(users);
       setFilteredUsers(users);
     } catch (error) {
+      const msg = error instanceof Error ? error.message : String(error);
       logger.error('Error loading users', error);
-      addLog('Error loading users: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      addLog('Error loading users: ' + msg, 'error');
+      setUsersError(msg.includes('permission') || msg.includes('PERMISSION_DENIED')
+        ? 'Permission denied — your Firestore user document may not have isAdmin: true. Try logging out and back in to auto-sync.'
+        : 'Failed to load users: ' + msg);
     } finally {
       setIsLoadingUsers(false);
     }
@@ -846,6 +855,7 @@ const AdminCMS: React.FC = () => {
   const findStaleAccounts = useCallback(async () => {
     if (!isAdmin) return;
     setIsLoadingStale(true);
+    setStaleStatus(null);
     try {
       const sevenDaysAgo = new Date();
       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
@@ -874,10 +884,16 @@ const AdminCMS: React.FC = () => {
         }
       });
       setStaleAccounts(stale);
-      addLog(`Found ${stale.length} stale accounts (incomplete onboarding, 7+ days old)`, stale.length > 0 ? 'warning' : 'info');
+      const msg = stale.length > 0
+        ? `Found ${stale.length} stale accounts (incomplete onboarding, 7+ days old)`
+        : 'No stale accounts found — all users have completed onboarding.';
+      setStaleStatus({ message: msg, type: stale.length > 0 ? 'warning' : 'success' });
+      addLog(msg, stale.length > 0 ? 'warning' : 'info');
     } catch (error) {
+      const errMsg = 'Error finding stale accounts: ' + (error instanceof Error ? error.message : String(error));
       logger.error('Error finding stale accounts', error);
-      addLog('Error finding stale accounts: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      setStaleStatus({ message: errMsg, type: 'error' });
+      addLog(errMsg, 'error');
     } finally {
       setIsLoadingStale(false);
     }
@@ -896,6 +912,7 @@ const AdminCMS: React.FC = () => {
     if (!confirmed) return;
     
     setIsDeletingStale(true);
+    setStaleStatus(null);
     try {
       const batch = writeBatch(db);
       let count = 0;
@@ -908,14 +925,18 @@ const AdminCMS: React.FC = () => {
       }
       
       await batch.commit();
-      addLog(`Deleted ${count} stale accounts from Firestore`, 'success');
+      const msg = `Successfully deleted ${count} stale accounts from Firestore`;
+      setStaleStatus({ message: msg, type: 'success' });
+      addLog(msg, 'success');
       setStaleAccounts([]);
       
       // Refresh users list
       await loadUsers();
     } catch (error) {
+      const errMsg = 'Error deleting stale accounts: ' + (error instanceof Error ? error.message : String(error));
       logger.error('Error deleting stale accounts', error);
-      addLog('Error deleting stale accounts: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      setStaleStatus({ message: errMsg, type: 'error' });
+      addLog(errMsg, 'error');
     } finally {
       setIsDeletingStale(false);
     }
@@ -1059,6 +1080,7 @@ const AdminCMS: React.FC = () => {
   const loadAnalytics = useCallback(async () => {
     if (!isAdmin) return;
     setIsLoadingAnalytics(true);
+    setAnalyticsError(null);
     try {
       // Get total user count
       const usersRef = collection(db, 'users');
@@ -1147,8 +1169,12 @@ const AdminCMS: React.FC = () => {
         bySubscription,
       });
     } catch (error) {
+      const msg = error instanceof Error ? error.message : String(error);
       logger.error('Error loading analytics', error);
-      addLog('Error loading analytics: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      addLog('Error loading analytics: ' + msg, 'error');
+      setAnalyticsError(msg.includes('permission') || msg.includes('PERMISSION_DENIED')
+        ? 'Permission denied — your Firestore user document may not have isAdmin: true. Try logging out and back in to auto-sync.'
+        : 'Failed to load analytics: ' + msg);
     } finally {
       setIsLoadingAnalytics(false);
     }
@@ -2890,7 +2916,12 @@ const AdminCMS: React.FC = () => {
                       {filteredUsers.length === 0 ? (
                         <tr>
                           <td colSpan={8} className="p-4 text-center text-gray-600 dark:text-gray-400">
-                            {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
+                            {usersError ? (
+                              <div className="inline-flex items-center gap-2 px-4 py-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-400 text-sm">
+                                <span className="text-red-500">⚠</span>
+                                <span>{usersError}</span>
+                              </div>
+                            ) : userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
                       ) : (
@@ -2998,6 +3029,11 @@ const AdminCMS: React.FC = () => {
 
                                 if (trials) {
                                   for (const [examId, trial] of Object.entries(trials)) {
+                                    // Skip exams that have an active paid subscription
+                                    const paidExam = u._paidExams?.[examId];
+                                    if (paidExam?.status === 'active' || paidExam?.status === 'paid') {
+                                      continue;
+                                    }
                                     if (trial?.endDate?.seconds) {
                                       const endDate = new Date(trial.endDate.seconds * 1000);
                                       const daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
@@ -3522,6 +3558,13 @@ const AdminCMS: React.FC = () => {
                   </Card>
                 </div>
               </>
+            ) : analyticsError ? (
+              <div className="text-center py-12">
+                <div className="inline-flex items-center gap-2 px-4 py-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-400 text-sm max-w-lg">
+                  <span className="text-red-500">⚠</span>
+                  <span>{analyticsError}</span>
+                </div>
+              </div>
             ) : (
               <div className="text-center py-12 text-gray-600 dark:text-gray-400">
                 Click Refresh to load analytics data
@@ -4003,6 +4046,17 @@ const AdminCMS: React.FC = () => {
                   <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
                     Find accounts with incomplete onboarding (7+ days old) and remove them.
                   </p>
+                  {staleStatus && (
+                    <div className={`text-xs p-2 rounded mb-2 ${
+                      staleStatus.type === 'error' ? 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300' :
+                      staleStatus.type === 'success' ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300' :
+                      staleStatus.type === 'warning' ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300' :
+                      'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
+                    }`}>
+                      {staleStatus.type === 'error' ? '✗ ' : staleStatus.type === 'success' ? '✓ ' : '⚠ '}
+                      {staleStatus.message}
+                    </div>
+                  )}
                   {staleAccounts.length > 0 && (
                     <div className="mt-3 max-h-40 overflow-y-auto">
                       <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">Preview ({staleAccounts.length} accounts):</div>

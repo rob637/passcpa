@@ -284,16 +284,20 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   useEffect(() => {
     // Determine if this is a section change (not initial load)
     const prevSection = prevSectionRef.current;
-    const shouldForceRegenerate = prevSection !== null && prevSection !== currentSection;
+    const sectionChanged = prevSection !== null && prevSection !== currentSection;
     
-    if (shouldForceRegenerate) {
-      logger.log(`Section changed from ${prevSection} to ${currentSection}, regenerating daily plan`);
+    if (sectionChanged) {
+      // Section changed - load the plan for the new section (NOT force regenerate)
+      // Each section has its own cached plan, so we just need to load it
+      logger.log(`Section changed from ${prevSection} to ${currentSection}, loading plan for new section`);
     }
     
     // Update the ref for next comparison
     prevSectionRef.current = currentSection;
     
-    loadPlan(shouldForceRegenerate);
+    // Never force regenerate on section change - each section has its own plan
+    // Only force regenerate when user explicitly requests it (e.g., refresh button)
+    loadPlan(false);
   }, [loadPlan, currentSection]);
 
   // Check URL params for returning from an activity (auto-completion)

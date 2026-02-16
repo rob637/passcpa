@@ -23,6 +23,7 @@ import { POINT_VALUES } from '../config/examConfig';
 import type { CourseId, ExamSection } from '../types';
 import { TBSHistoryEntry } from './questionHistoryService';
 import { getCourse } from '../courses';
+import logger from '../utils/logger';
 import { 
   getCoveredTopics, 
   getPreviewTopics, 
@@ -640,8 +641,11 @@ export const generateDailyPlan = async (
   
   // Adjust for work already done today — don't rebuild a full plan if user is halfway through
   const goalCompletion = state.dailyGoal > 0 ? Math.min(1, state.todayPoints / state.dailyGoal) : 0;
-  const remainingFraction = Math.max(0.2, 1 - goalCompletion); // Always plan at least 20%
-  const targetMinutes = Math.round(fullTargetMinutes * remainingFraction);
+  const remainingFraction = Math.max(0.3, 1 - goalCompletion); // Always plan at least 30%
+  const scaledMinutes = Math.round(fullTargetMinutes * remainingFraction);
+  // Enforce a floor of 45 minutes so the plan always has room for 2-3 activities
+  const MIN_PLAN_MINUTES = 45;
+  const targetMinutes = Math.max(MIN_PLAN_MINUTES, scaledMinutes);
   let remainingMinutes = targetMinutes;
   
   // Shorthand for personalized duration lookups
@@ -650,7 +654,22 @@ export const generateDailyPlan = async (
   // Calculate max activities based on intensity and daily goal, scaled by remaining work
   const baseMaxActivities = Math.ceil(state.dailyGoal / 15); // ~3-4 for 50 goal, ~10 for 150
   const scaledMaxActivities = Math.round(baseMaxActivities * intensity * remainingFraction);
-  const maxActivities = Math.max(2, Math.min(10, scaledMaxActivities));
+  const maxActivities = Math.max(3, Math.min(10, scaledMaxActivities)); // Minimum 3 activities
+  
+  logger.info('Daily plan generation params', {
+    dailyGoal: state.dailyGoal,
+    todayPoints: state.todayPoints,
+    goalCompletion: Math.round(goalCompletion * 100) + '%',
+    remainingFraction,
+    fullTargetMinutes,
+    targetMinutes,
+    maxActivities,
+    intensity,
+    phase: 'pending',
+    section: state.section,
+    topicStatsCount: state.topicStats.length,
+    enableCurriculumFilter: state.enableCurriculumFilter,
+  });
   
   // Determine learning phase to modulate activity mix
   const lessons = await fetchLessonsBySection(state.section, courseId);
@@ -696,6 +715,20 @@ export const generateDailyPlan = async (
       remainingMinutes = Math.round(remainingMinutes * 1.1);
     }
   }
+  
+  // Re-enforce minimum after all adjustments
+  remainingMinutes = Math.max(MIN_PLAN_MINUTES, remainingMinutes);
+  
+  logger.info('Daily plan phase & budget', {
+    phase,
+    phaseReason: phaseInfo.reason,
+    lessonsAvailable: lessons.length,
+    isRestDay: restDay.isRestDay,
+    remainingMinutesAfterAdjustments: remainingMinutes,
+    filteredTopicStatsCount: state.topicStats.length,
+    flashcardsDue: state.flashcardsDue,
+    questionsDueCount: state.questionsDue?.length || 0,
+  });
   
   // Track what we're adding for summary
   const weakAreaFocus: string[] = [];
@@ -1447,6 +1480,102 @@ export const generateDailyPlan = async (
     if (aLoad !== bLoad) return aLoad - bLoad;
     // Within same cognitive tier, sort by priority
     return priorityOrder[a.priority] - priorityOrder[b.priority];
+  });
+  
+  // ── Minimum Activity Guarantee ──────────────────────────────────────
+  // If the plan has fewer than 3 activities after all generation logic,
+  // add lightweight guaranteed activities so users always get a meaningful plan.
+  const MIN_ACTIVITIES = 3;
+  if (activities.length < MIN_ACTIVITIES) {
+    logger.info(`Plan has only ${activities.length} activities — adding guaranteed activities to reach ${MIN_ACTIVITIES}`);
+    
+    // Add flashcards if missing
+    if (!activities.some(a => a.type === 'flashcards')) {
+      activities.push({
+        id: `flashcards-guaranteed-${today}`,
+        type: 'flashcards',
+        title: state.flashcardsDue > 0 ? 'Flashcard Review' : 'Learn Flashcards',
+        description: state.flashcardsDue > 0
+          ? `${state.flashcardsDue} cards due for review`
+          : 'Build retention with spaced repetition',
+        estimatedMinutes: 10,
+        points: 10 * POINT_VALUES.flashcard_review,
+        priority: 'medium',
+        reason: 'Quick flashcard practice to boost retention',
+        params: {
+          section: state.section,
+          mode: state.flashcardsDue > 0 ? 'review' : 'learn',
+          cardCount: state.flashcardsDue > 0 ? Math.min(state.flashcardsDue, 15) : 10,
+        },
+      });
+    }
+    
+    // Add mixed practice MCQ if still under minimum
+    if (activities.length < MIN_ACTIVITIES && !activities.some(a => a.id?.startsWith('practice-mixed'))) {
+      activities.push({
+        id: `practice-mixed-${today}`,
+        type: 'mcq',
+        title: 'Mixed Practice',
+        description: 'Random questions across all topics',
+        estimatedMinutes: 12,
+        points: 10 * MCQ_AVG_POINTS,
+        priority: 'low',
+        reason: 'Variety helps build connections between topics',
+        params: {
+          section: state.section,
+          questionCount: 10,
+          mode: 'study',
+        },
+      });
+    }
+    
+    // If STILL under minimum (e.g. both already existed), add a lesson or another MCQ
+    if (activities.length < MIN_ACTIVITIES) {
+      const availableLesson = lessons.find(l => {
+        const progress = state.lessonProgress[l.id] || 0;
+        return progress < 100 && !activities.some(a => a.id === `lesson-${l.id}`);
+      });
+      if (availableLesson) {
+        activities.push({
+          id: `lesson-${availableLesson.id}`,
+          type: 'lesson',
+          title: `Learn: ${availableLesson.title}`,
+          description: 'Continue building your knowledge',
+          estimatedMinutes: availableLesson.duration || 25,
+          points: POINT_VALUES.lesson_medium,
+          priority: 'medium',
+          reason: 'Keep progressing through the material',
+          params: {
+            lessonId: availableLesson.id,
+            section: state.section,
+          },
+        });
+      } else {
+        activities.push({
+          id: `practice-extra-guaranteed-${today}`,
+          type: 'mcq',
+          title: 'Quick Practice',
+          description: '5 questions to stay sharp',
+          estimatedMinutes: 8,
+          points: 5 * MCQ_AVG_POINTS,
+          priority: 'low',
+          reason: 'A few questions to keep your skills fresh',
+          params: {
+            section: state.section,
+            questionCount: 5,
+            mode: 'study',
+          },
+        });
+      }
+    }
+  }
+  
+  logger.info('Daily plan generated', {
+    totalActivities: activities.length,
+    types: activities.map(a => a.type),
+    phase,
+    maxActivities,
+    remainingMinutesAfter: remainingMinutes,
   });
   
   // Enforce max activities cap (keep highest priority ones)

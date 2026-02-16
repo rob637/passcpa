@@ -183,7 +183,7 @@ export function SubscriptionGate({
  * - Dismissible for 24 hours (comes back daily)
  * - Always shows (not dismissible) when trial expired
  */
-export function TrialBanner() {
+export function TrialBanner({ onVisibilityChange }: { onVisibilityChange?: (visible: boolean) => void } = {}) {
   const { isTrialing, trialDaysRemaining, trialExpired, isPremium, loading } = useSubscription();
   const { courseId, course } = useCourse();
   const [dismissed, setDismissed] = React.useState(false);
@@ -206,6 +206,16 @@ export function TrialBanner() {
     localStorage.setItem(`trial_banner_dismissed_${courseId}`, Date.now().toString());
   };
   
+  // Determine visibility
+  const isVisible = !loading && !isPremium && (
+    trialExpired || (isTrialing && trialDaysRemaining <= 7 && !dismissed)
+  );
+  
+  // Notify parent of visibility changes
+  React.useEffect(() => {
+    onVisibilityChange?.(isVisible);
+  }, [isVisible, onVisibilityChange]);
+  
   // Hide if user has paid access to current course
   if (loading || isPremium) return null;
   
@@ -216,11 +226,11 @@ export function TrialBanner() {
   if (trialExpired) {
     // Always show expired banner (not dismissible)
     return (
-      <div className="bg-red-600 text-white py-2 px-4">
+      <div className="bg-red-600 text-white py-2 px-4 fixed top-0 left-0 right-0 z-[60]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span className="font-medium">Your {courseName} trial has ended.</span>
+            <span className="font-medium text-sm">Your {courseName} trial has ended.</span>
           </div>
           <div className="flex items-center gap-2">
             <Link 
@@ -245,7 +255,7 @@ export function TrialBanner() {
   if (isTrialing && trialDaysRemaining <= 7 && !dismissed) {
     const isUrgent = trialDaysRemaining <= 3;
     return (
-      <div className={`${isUrgent ? 'bg-amber-500' : 'bg-blue-600'} text-white py-2 px-4`}>
+      <div className={`${isUrgent ? 'bg-amber-500' : 'bg-blue-600'} text-white py-2 px-4 fixed top-0 left-0 right-0 z-[60]`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />

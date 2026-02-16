@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { Flame, WifiOff } from 'lucide-react';
 import { PageTransition } from '../common/PageTransition';
@@ -82,9 +82,14 @@ const MainLayout = () => {
   const { darkMode } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [trialBannerVisible, setTrialBannerVisible] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
+  
+  const handleTrialBannerVisibility = useCallback((visible: boolean) => {
+    setTrialBannerVisible(visible);
+  }, []);
 
   // Set document title based on route
   useRouteTitle();
@@ -175,7 +180,9 @@ const MainLayout = () => {
       )}
 
       {/* Trial Status Banner - Shows when trial ending soon or expired */}
-      <TrialBanner />
+      <TrialBanner onVisibilityChange={handleTrialBannerVisibility} />
+      {/* Spacer to push content below the fixed trial banner */}
+      {trialBannerVisible && <div className="h-[36px]" />}
 
       {/* PWA Install Banner - Compact top banner for install prompt */}
       <PWAInstallBanner />
@@ -184,7 +191,10 @@ const MainLayout = () => {
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-app">
         {/* Desktop Sidebar */}
         <aside 
-          className="hidden md:flex flex-col w-64 flex-shrink-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-screen sticky top-0 z-40"
+          className={clsx(
+            'hidden md:flex flex-col w-64 flex-shrink-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 sticky z-40',
+            trialBannerVisible ? 'top-[36px] h-[calc(100vh-36px)]' : 'top-0 h-screen'
+          )}
           role="navigation"
           aria-label="Main navigation"
         >
@@ -254,8 +264,9 @@ const MainLayout = () => {
       {/* Mobile Top Bar - Google-style minimal header showing exam context */}
       <header
         className={clsx(
-          'md:hidden fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 z-40 transition-shadow duration-200 safe-top',
-          scrolled && 'shadow-md'
+          'md:hidden fixed left-0 right-0 bg-white dark:bg-slate-800 z-40 transition-all duration-200 safe-top',
+          scrolled && 'shadow-md',
+          trialBannerVisible ? 'top-[36px]' : 'top-0'
         )}
         role="banner"
       >
@@ -284,7 +295,10 @@ const MainLayout = () => {
         tabIndex={-1}
         role="main"
         aria-label="Main content"
-        className="flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 pt-16 md:pt-8 focus:outline-none"
+        className={clsx(
+          'flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 md:pt-8 focus:outline-none',
+          trialBannerVisible ? 'pt-[88px]' : 'pt-16'
+        )}
       >
         <PageTransition>
           <Outlet />

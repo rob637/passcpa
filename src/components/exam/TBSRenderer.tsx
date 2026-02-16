@@ -94,9 +94,11 @@ const CalculationInput: React.FC<{
           onChange={(e) => onChange(e.target.value)}
           className={clsx(
             'w-48 px-3 py-2 border rounded-lg text-right text-lg font-mono',
+            'bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+            'focus:ring-2 focus:ring-primary-500 focus:border-primary-500',
             isReview && (isCorrect 
-              ? 'border-green-500 bg-green-50' 
-              : 'border-red-500 bg-red-50')
+              ? 'border-green-500 bg-green-50 dark:bg-green-900/20' 
+              : 'border-red-500 bg-red-50 dark:bg-red-900/20')
           )}
           placeholder="Enter amount"
           disabled={isReview}
@@ -105,7 +107,7 @@ const CalculationInput: React.FC<{
       {isReview && requirement.explanation && (
         <div className={clsx(
           'mt-2 p-3 rounded-lg text-sm',
-          isCorrect ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'
+          isCorrect ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200' : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
         )}>
           <strong>{isCorrect ? '✓ Correct!' : '✗ Incorrect'}</strong>
           <p className="mt-1">{requirement.explanation}</p>
@@ -143,12 +145,12 @@ const MultipleChoiceRequirement: React.FC<{
               value === idx
                 ? isReview
                   ? idx === requirement.correctAnswer
-                    ? 'border-green-500 bg-green-50'
-                    : 'border-red-500 bg-red-50'
-                  : 'border-primary-500 bg-primary-50'
+                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                    : 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                  : 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                 : isReview && idx === requirement.correctAnswer
-                  ? 'border-green-500 bg-green-50'
-                  : 'border-slate-200 hover:border-slate-300'
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                  : 'border-slate-200 dark:border-slate-600 hover:border-slate-300 dark:hover:border-slate-500'
             )}
           >
             <span className={clsx(
@@ -163,14 +165,14 @@ const MultipleChoiceRequirement: React.FC<{
             )}>
               {String.fromCharCode(65 + idx)}
             </span>
-            <span className="text-slate-800">{option}</span>
+            <span className="text-slate-800 dark:text-slate-200">{option}</span>
           </button>
         ))}
       </div>
       {isReview && requirement.explanation && (
         <div className={clsx(
           'mt-2 p-3 rounded-lg text-sm',
-          isCorrect ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'
+          isCorrect ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200' : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
         )}>
           <strong>{isCorrect ? '✓ Correct!' : '✗ Incorrect'}</strong>
           <p className="mt-1">{requirement.explanation}</p>
@@ -246,16 +248,16 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
       case 'journal_entry':
         return (
           <div key={req.id} className="space-y-3">
-            <label className="block text-sm font-medium text-slate-700">
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
               {req.question || req.text || `Requirement ${index + 1}: Prepare the journal entry`}
             </label>
             <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse border border-slate-300">
+              <table className="min-w-full border-collapse border border-slate-300 dark:border-slate-600">
                 <thead>
-                  <tr className="bg-slate-100">
-                    <th className="px-3 py-2 border text-left text-sm font-medium text-slate-700 w-1/2">Account</th>
-                    <th className="px-3 py-2 border text-right text-sm font-medium text-slate-700 w-1/4">Debit</th>
-                    <th className="px-3 py-2 border text-right text-sm font-medium text-slate-700 w-1/4">Credit</th>
+                  <tr className="bg-slate-100 dark:bg-slate-700">
+                    <th className="px-3 py-2 border dark:border-slate-600 text-left text-sm font-medium text-slate-700 dark:text-slate-300 w-1/2">Account</th>
+                    <th className="px-3 py-2 border dark:border-slate-600 text-right text-sm font-medium text-slate-700 dark:text-slate-300 w-1/4">Debit</th>
+                    <th className="px-3 py-2 border dark:border-slate-600 text-right text-sm font-medium text-slate-700 dark:text-slate-300 w-1/4">Credit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -288,8 +290,8 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
               </table>
             </div>
             {isReview && req.correctEntries && (
-              <div className="mt-3 p-4 bg-green-50 rounded-lg">
-                <strong className="text-green-800">Correct Journal Entry:</strong>
+              <div className="mt-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                <strong className="text-green-800 dark:text-green-200">Correct Journal Entry:</strong>
                 <table className="mt-2 min-w-full text-sm">
                   <tbody>
                     {req.correctEntries.map((entry, idx) => (
@@ -310,13 +312,13 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
         // Generic text input for other types
         return (
           <div key={req.id} className="space-y-2">
-            <label className="block text-sm font-medium text-slate-700">
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
               {req.question || req.text || `Requirement ${index + 1}`}
             </label>
             <textarea
               value={(reqAnswer as string) || ''}
               onChange={(e) => onAnswerChange(req.id, e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg min-h-[100px] focus:ring-2 focus:ring-primary-500"
+              className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg min-h-[100px] focus:ring-2 focus:ring-primary-500"
               placeholder="Enter your answer..."
               disabled={isReview}
             />
@@ -326,7 +328,7 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+    <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden">
       {/* TBS Header */}
       <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-6 text-white">
         <div className="flex items-center gap-3 mb-2">

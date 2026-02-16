@@ -473,7 +473,7 @@ const CMACBQSimulator: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-6 pb-16">
+        <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-6 pb-12">
           <div className="flex items-center gap-3 mb-4">
             <Link to="/cma/dashboard">
               <Button variant="ghost" size="icon" className="hover:bg-white/10">
@@ -504,7 +504,7 @@ const CMACBQSimulator: React.FC = () => {
         </div>
 
         {/* CBQ Info Card */}
-        <div className="px-4 -mt-6 mb-6">
+        <div className="px-4 mt-4 mb-6">
           <Card className="bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800">
             <div className="p-4">
               <div className="flex items-start gap-3">

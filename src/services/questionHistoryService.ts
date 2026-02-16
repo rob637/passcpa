@@ -419,6 +419,298 @@ export const getTBSHistory = async (userId: string, section?: string): Promise<T
   }
 };
 
+// ============================================================================
+// CBQ (Case-Based Question) History - CMA Exam
+// ============================================================================
+
+export interface CBQHistoryEntry {
+  cbqId: string;
+  section: string;
+  attempts: number;
+  bestScore: number;
+  lastScore: number;
+  avgScore: number;
+  lastAttempted: Date;
+  totalTimeSpent: number;
+  mastered: boolean;
+}
+
+/**
+ * Record a CBQ result (CMA Case-Based Questions)
+ */
+export const recordCBQResult = async (
+  userId: string,
+  cbqId: string,
+  score: number, // 0-100
+  section: string,
+  timeSpentSeconds: number
+): Promise<void> => {
+  if (!userId) return;
+
+  try {
+    const historyRef = doc(db, 'users', userId, 'cbq_history', cbqId);
+    const docSnap = await getDoc(historyRef);
+    const now = new Date();
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      const newAttempts = (data.attempts || 0) + 1;
+      const bestScore = Math.max(data.bestScore || 0, score);
+      
+      await setDoc(historyRef, {
+        attempts: newAttempts,
+        lastScore: score,
+        bestScore,
+        lastAttempted: Timestamp.fromDate(now),
+        avgScore: ((data.avgScore || 0) * (newAttempts - 1) + score) / newAttempts,
+        totalTimeSpent: (data.totalTimeSpent || 0) + timeSpentSeconds,
+        mastered: bestScore >= 75
+      }, { merge: true });
+    } else {
+      await setDoc(historyRef, {
+        cbqId,
+        section,
+        attempts: 1,
+        lastScore: score,
+        bestScore: score,
+        avgScore: score,
+        lastAttempted: Timestamp.fromDate(now),
+        totalTimeSpent: timeSpentSeconds,
+        mastered: score >= 75
+      });
+    }
+  } catch (error) {
+    logger.error('Error recording CBQ history:', error);
+  }
+};
+
+/**
+ * Get CBQ history for completion indicators
+ */
+export const getCBQHistory = async (userId: string, section?: string): Promise<CBQHistoryEntry[]> => {
+  if (!userId) return [];
+
+  try {
+    const historyRef = collection(db, 'users', userId, 'cbq_history');
+    let q;
+    if (section) {
+      q = query(historyRef, where('section', '==', section));
+    } else {
+      q = query(historyRef);
+    }
+
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+            cbqId: doc.id,
+            section: data.section,
+            attempts: data.attempts,
+            bestScore: data.bestScore,
+            lastScore: data.lastScore,
+            avgScore: data.avgScore,
+            lastAttempted: data.lastAttempted?.toDate?.() || new Date(),
+            totalTimeSpent: data.totalTimeSpent,
+            mastered: data.mastered
+        } as CBQHistoryEntry;
+    });
+  } catch (error) {
+    logger.error('Error fetching CBQ history:', error);
+    return [];
+  }
+};
+
+// ============================================================================
+// Essay History - CMA Exam
+// ============================================================================
+
+export interface EssayHistoryEntry {
+  essayId: string;
+  section: string;
+  attempts: number;
+  bestScore: number;
+  lastScore: number;
+  avgScore: number;
+  lastAttempted: Date;
+  totalTimeSpent: number;
+  mastered: boolean;
+}
+
+/**
+ * Record an Essay result (CMA Essays)
+ */
+export const recordEssayResult = async (
+  userId: string,
+  essayId: string,
+  score: number, // 0-100
+  section: string,
+  timeSpentSeconds: number
+): Promise<void> => {
+  if (!userId) return;
+
+  try {
+    const historyRef = doc(db, 'users', userId, 'essay_history', essayId);
+    const docSnap = await getDoc(historyRef);
+    const now = new Date();
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      const newAttempts = (data.attempts || 0) + 1;
+      const bestScore = Math.max(data.bestScore || 0, score);
+      
+      await setDoc(historyRef, {
+        attempts: newAttempts,
+        lastScore: score,
+        bestScore,
+        lastAttempted: Timestamp.fromDate(now),
+        avgScore: ((data.avgScore || 0) * (newAttempts - 1) + score) / newAttempts,
+        totalTimeSpent: (data.totalTimeSpent || 0) + timeSpentSeconds,
+        mastered: bestScore >= 75
+      }, { merge: true });
+    } else {
+      await setDoc(historyRef, {
+        essayId,
+        section,
+        attempts: 1,
+        lastScore: score,
+        bestScore: score,
+        avgScore: score,
+        lastAttempted: Timestamp.fromDate(now),
+        totalTimeSpent: timeSpentSeconds,
+        mastered: score >= 75
+      });
+    }
+  } catch (error) {
+    logger.error('Error recording Essay history:', error);
+  }
+};
+
+/**
+ * Get Essay history for completion indicators
+ */
+export const getEssayHistory = async (userId: string, section?: string): Promise<EssayHistoryEntry[]> => {
+  if (!userId) return [];
+
+  try {
+    const historyRef = collection(db, 'users', userId, 'essay_history');
+    let q;
+    if (section) {
+      q = query(historyRef, where('section', '==', section));
+    } else {
+      q = query(historyRef);
+    }
+
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+            essayId: doc.id,
+            section: data.section,
+            attempts: data.attempts,
+            bestScore: data.bestScore,
+            lastScore: data.lastScore,
+            avgScore: data.avgScore,
+            lastAttempted: data.lastAttempted?.toDate?.() || new Date(),
+            totalTimeSpent: data.totalTimeSpent,
+            mastered: data.mastered
+        } as EssayHistoryEntry;
+    });
+  } catch (error) {
+    logger.error('Error fetching Essay history:', error);
+    return [];
+  }
+};
+
+// ============================================================================
+// Case Study History - CFP Exam
+// ============================================================================
+
+export interface CaseStudyHistoryEntry {
+  caseStudyId: string;
+  attempts: number;
+  bestScore: number;
+  lastScore: number;
+  avgScore: number;
+  lastAttempted: Date;
+  totalTimeSpent: number;
+  mastered: boolean;
+}
+
+/**
+ * Record a Case Study result (CFP Case Studies)
+ */
+export const recordCaseStudyResult = async (
+  userId: string,
+  caseStudyId: string,
+  score: number, // 0-100
+  timeSpentSeconds: number
+): Promise<void> => {
+  if (!userId) return;
+
+  try {
+    const historyRef = doc(db, 'users', userId, 'case_study_history', caseStudyId);
+    const docSnap = await getDoc(historyRef);
+    const now = new Date();
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      const newAttempts = (data.attempts || 0) + 1;
+      const bestScore = Math.max(data.bestScore || 0, score);
+      
+      await setDoc(historyRef, {
+        attempts: newAttempts,
+        lastScore: score,
+        bestScore,
+        lastAttempted: Timestamp.fromDate(now),
+        avgScore: ((data.avgScore || 0) * (newAttempts - 1) + score) / newAttempts,
+        totalTimeSpent: (data.totalTimeSpent || 0) + timeSpentSeconds,
+        mastered: bestScore >= 75
+      }, { merge: true });
+    } else {
+      await setDoc(historyRef, {
+        caseStudyId,
+        attempts: 1,
+        lastScore: score,
+        bestScore: score,
+        avgScore: score,
+        lastAttempted: Timestamp.fromDate(now),
+        totalTimeSpent: timeSpentSeconds,
+        mastered: score >= 75
+      });
+    }
+  } catch (error) {
+    logger.error('Error recording Case Study history:', error);
+  }
+};
+
+/**
+ * Get Case Study history for completion indicators
+ */
+export const getCaseStudyHistory = async (userId: string): Promise<CaseStudyHistoryEntry[]> => {
+  if (!userId) return [];
+
+  try {
+    const historyRef = collection(db, 'users', userId, 'case_study_history');
+    const snapshot = await getDocs(query(historyRef));
+    return snapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+            caseStudyId: doc.id,
+            attempts: data.attempts,
+            bestScore: data.bestScore,
+            lastScore: data.lastScore,
+            avgScore: data.avgScore,
+            lastAttempted: data.lastAttempted?.toDate?.() || new Date(),
+            totalTimeSpent: data.totalTimeSpent,
+            mastered: data.mastered
+        } as CaseStudyHistoryEntry;
+    });
+  } catch (error) {
+    logger.error('Error fetching Case Study history:', error);
+    return [];
+  }
+};
+
 /**
  * Get topic performance from question history (more accurate than daily logs)
  */
@@ -681,4 +973,10 @@ export default {
   getSmartQuestionSelection,
   recordTBSResult,
   getTBSHistory,
+  recordCBQResult,
+  getCBQHistory,
+  recordEssayResult,
+  getEssayHistory,
+  recordCaseStudyResult,
+  getCaseStudyHistory,
 };

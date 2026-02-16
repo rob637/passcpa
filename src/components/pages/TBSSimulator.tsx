@@ -23,6 +23,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
+import { getTBSHistory, TBSHistoryEntry } from '../../services/questionHistoryService';
 import { getSectionDisplayInfo, getCurrentSectionForCourse, getSectionsMap } from '../../utils/sectionUtils';
 import clsx from 'clsx';
 import { ExamSection, TBS } from '../../types';
@@ -632,7 +633,7 @@ const TBSSimulator: React.FC = () => {
   const location = useLocation();
   const courseHome = getHomePathFromLocation(location.pathname);
   const [searchParams] = useSearchParams();
-  const { userProfile } = useAuth();
+  const { userProfile, user } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId } = useCourse();
 
@@ -657,6 +658,7 @@ const TBSSimulator: React.FC = () => {
   const [viewState, setViewState] = useState<'select' | 'active'>(tbsId ? 'active' : 'select');
   const [tbsList, setTbsList] = useState<TBS[]>([]);
   const [tbsLoading, setTbsLoading] = useState(false);
+  const [tbsHistory, setTbsHistory] = useState<Map<string, TBSHistoryEntry>>(new Map());
 
   // Use getCurrentSectionForCourse to ensure section is valid for this course
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
@@ -784,10 +786,18 @@ const TBSSimulator: React.FC = () => {
       setTbsLoading(true);
       const sectionTbs = await fetchTBSBySection(selectedSection as ExamSection);
       setTbsList(sectionTbs || []);
+      
+      // Load TBS history for completion indicators
+      if (user?.uid) {
+        const history = await getTBSHistory(user.uid, selectedSection);
+        const historyMap = new Map(history.map(h => [h.tbsId, h]));
+        setTbsHistory(historyMap);
+      }
+      
       setTbsLoading(false);
     };
     loadTBSList();
-  }, [viewState, selectedSection]);
+  }, [viewState, selectedSection, user?.uid]);
 
   // Scroll to top when entering active view
   const scrollToTop = useCallback(() => {
@@ -1114,7 +1124,7 @@ const TBSSimulator: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-12">
+        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-16">
           <div className="flex items-center gap-3 mb-4">
             <Link to={courseHome}>
               <Button variant="ghost" size="icon" className="hover:bg-white/10 text-white">
@@ -1182,17 +1192,37 @@ const TBSSimulator: React.FC = () => {
               <p className="text-slate-600 dark:text-slate-400">No simulations available for this section yet.</p>
             </div>
           ) : (
-            tbsList.map((tbsItem) => (
-              <div key={tbsItem.id} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+            tbsList.map((tbsItem) => {
+              const history = tbsHistory.get(tbsItem.id);
+              const isCompleted = history?.mastered;
+              const hasAttempted = history && history.attempts > 0;
+              
+              return (
+              <div key={tbsItem.id} className={clsx(
+                'bg-white dark:bg-slate-800 rounded-xl border overflow-hidden',
+                isCompleted 
+                  ? 'border-success-300 dark:border-success-700' 
+                  : 'border-slate-200 dark:border-slate-700'
+              )}>
                 <button
                   onClick={() => handleSelectTBS(tbsItem)}
                   className="w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-slate-900 dark:text-white mb-1 truncate">
-                        {tbsItem.title || 'Untitled Simulation'}
-                      </h3>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-semibold text-slate-900 dark:text-white truncate">
+                          {tbsItem.title || 'Untitled Simulation'}
+                        </h3>
+                        {isCompleted && (
+                          <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0" />
+                        )}
+                        {hasAttempted && !isCompleted && (
+                          <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
+                            {history.bestScore}%
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
                         {(tbsItem.estimatedTime || tbsItem.timeEstimate) && (
                           <span className="flex items-center gap-1">
@@ -1236,7 +1266,8 @@ const TBSSimulator: React.FC = () => {
                   </div>
                 </button>
               </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>

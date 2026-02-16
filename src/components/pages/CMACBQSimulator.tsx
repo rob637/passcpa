@@ -32,8 +32,11 @@ import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { CBQ, CBQQuestion } from '../../types';
 import { getCBQsBySection } from '../../data/cma/cbq';
+import { useAuth } from '../../hooks/useAuth';
+import { recordCBQResult, getCBQHistory, CBQHistoryEntry } from '../../services/questionHistoryService';
 
 // ============================================
 // Types
@@ -308,6 +311,7 @@ const DragDropInput: React.FC<{
 const CMACBQSimulator: React.FC = () => {
   const [searchParams] = useSearchParams();
   const sectionParam = searchParams.get('section') as CMASection | null;
+  const { user } = useAuth();
   
   // State
   const [selectedSection, setSelectedSection] = useState<CMASection>(sectionParam || 'CMA1');
@@ -318,9 +322,20 @@ const CMACBQSimulator: React.FC = () => {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [viewState, setViewState] = useState<'select' | 'scenario' | 'questions' | 'results'>('select');
   const [results, setResults] = useState<QuestionResult[]>([]);
+  const [cbqHistory, setCbqHistory] = useState<Map<string, CBQHistoryEntry>>(new Map());
 
   // Get CBQs for section (includes all batches)
   const cbqs = getCBQsBySection(selectedSection);
+
+  // Load CBQ history for completion indicators
+  useEffect(() => {
+    if (viewState !== 'select' || !user?.uid) return;
+    const loadHistory = async () => {
+      const history = await getCBQHistory(user.uid, selectedSection);
+      setCbqHistory(new Map(history.map(h => [h.cbqId, h])));
+    };
+    loadHistory();
+  }, [viewState, selectedSection, user?.uid]);
 
   // Timer
   useEffect(() => {
@@ -413,7 +428,7 @@ const CMACBQSimulator: React.FC = () => {
   }, []);
 
   // Submit all answers
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!currentCBQ) return;
     setIsTimerRunning(false);
 
@@ -430,6 +445,15 @@ const CMACBQSimulator: React.FC = () => {
 
     setResults(questionResults);
     setViewState('results');
+    
+    // Record CBQ result for completion tracking
+    if (user?.uid) {
+      const earnedPoints = questionResults.reduce((sum, r) => sum + r.pointsEarned, 0);
+      const possiblePoints = questionResults.reduce((sum, r) => sum + r.pointsPossible, 0);
+      const scorePercent = possiblePoints > 0 ? Math.round((earnedPoints / possiblePoints) * 100) : 0;
+      const timeSpent = (currentCBQ.estimatedTime * 60) - timeLeft;
+      await recordCBQResult(user.uid, currentCBQ.id, scorePercent, currentCBQ.section, timeSpent);
+    }
   };
 
   // Calculate total score
@@ -449,7 +473,7 @@ const CMACBQSimulator: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-6 pb-12">
+        <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-6 pb-16">
           <div className="flex items-center gap-3 mb-4">
             <Link to="/cma/dashboard">
               <Button variant="ghost" size="icon" className="hover:bg-white/10">
@@ -511,17 +535,35 @@ const CMACBQSimulator: React.FC = () => {
               <p className="text-slate-600 dark:text-slate-400">No CBQs available for this section yet.</p>
             </Card>
           ) : (
-            cbqs.map((cbq) => (
-              <Card key={cbq.id} className="overflow-hidden">
+            cbqs.map((cbq) => {
+              const history = cbqHistory.get(cbq.id);
+              const isCompleted = history?.mastered;
+              const hasAttempted = history && history.attempts > 0;
+              
+              return (
+              <Card key={cbq.id} className={clsx(
+                'overflow-hidden',
+                isCompleted && 'ring-2 ring-success-400 dark:ring-success-600'
+              )}>
                 <button
                   onClick={() => handleStartCBQ(cbq)}
                   className="w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
-                        {cbq.title}
-                      </h3>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-semibold text-slate-900 dark:text-white">
+                          {cbq.title}
+                        </h3>
+                        {isCompleted && (
+                          <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0" />
+                        )}
+                        {hasAttempted && !isCompleted && (
+                          <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
+                            {history.bestScore}%
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
                         <span className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />
@@ -552,7 +594,8 @@ const CMACBQSimulator: React.FC = () => {
                   </div>
                 </button>
               </Card>
-            ))
+              );
+            })
           )}
         </div>
       </div>
@@ -585,7 +628,32 @@ const CMACBQSimulator: React.FC = () => {
           
           <Card className="mb-6">
             <div className="p-6 prose dark:prose-invert max-w-none">
-              <ReactMarkdown>{currentCBQ.scenario}</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  table: ({ children }) => (
+                    <div className="overflow-x-auto my-4">
+                      <table className="min-w-full border-collapse border border-slate-300 dark:border-slate-600 text-sm">
+                        {children}
+                      </table>
+                    </div>
+                  ),
+                  thead: ({ children }) => (
+                    <thead className="bg-slate-100 dark:bg-slate-700">{children}</thead>
+                  ),
+                  th: ({ children }) => (
+                    <th className="border border-slate-300 dark:border-slate-600 px-4 py-2 text-left font-semibold text-slate-900 dark:text-slate-100">{children}</th>
+                  ),
+                  td: ({ children }) => (
+                    <td className="border border-slate-300 dark:border-slate-600 px-4 py-2 text-slate-700 dark:text-slate-300">{children}</td>
+                  ),
+                  tr: ({ children }) => (
+                    <tr className="even:bg-slate-50 dark:even:bg-slate-800/50">{children}</tr>
+                  ),
+                }}
+              >
+                {currentCBQ.scenario}
+              </ReactMarkdown>
             </div>
           </Card>
 

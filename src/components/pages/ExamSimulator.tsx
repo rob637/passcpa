@@ -28,14 +28,13 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { collection, query, where, getDocs, limit } from 'firebase/firestore';
-import { db } from '../../config/firebase';
 import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, TBS } from '../../types';
 import TBSRenderer from '../exam/TBSRenderer';
 import { getShuffledIndices } from '../../utils/questionShuffle';
+import { fetchQuestions } from '../../services/questionService';
 import { 
   getExamConfig, 
   getMiniExamConfig, 
@@ -145,18 +144,15 @@ const ExamSimulator: React.FC = () => {
       const totalMcqQuestions = mcqTestlets.reduce((sum, t) => sum + t.questions, 0);
       const totalTbsQuestions = tbsTestlets.reduce((sum, t) => sum + t.questions, 0);
 
-      // Load MCQ questions from Firestore
-      const questionsQuery = query(
-        collection(db, 'questions'),
-        where('section', '==', currentSection),
-        limit(totalMcqQuestions)
-      );
+      // Load MCQ questions from local data
+      let loadedQuestions = await fetchQuestions({
+        section: currentSection,
+        count: totalMcqQuestions,
+        courseId,
+      });
 
-      const snapshot = await getDocs(questionsQuery);
-      let loadedQuestions = snapshot.docs
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .map((doc) => ({ id: doc.id, ...doc.data() } as any))
-        .sort(() => Math.random() - 0.5) as Question[];
+      // Shuffle the questions
+      loadedQuestions = loadedQuestions.sort(() => Math.random() - 0.5);
 
       // If not enough questions, fill with duplicates (shuffled)
       while (loadedQuestions.length < totalMcqQuestions) {

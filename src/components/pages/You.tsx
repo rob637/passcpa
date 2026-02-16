@@ -465,7 +465,7 @@ const You: React.FC = () => {
 
         {/* Quick Stats - 2 rows showing key metrics */}
         <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-          {/* Row 1: Streak, MCQs, TBS */}
+          {/* Row 1: Streak, MCQs, TBS (or Accuracy if no TBS) */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 text-orange-500 mb-1">
               <Flame className="w-4 h-4" />
@@ -477,30 +477,57 @@ const You: React.FC = () => {
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.totalQuestions}</div>
             <span className="text-xs text-slate-600 dark:text-slate-400">MCQs</span>
           </div>
-          <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
-            <span className="text-xs text-slate-600 dark:text-slate-400">TBS</span>
-          </div>
+          {course?.hasTBS ? (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">TBS</span>
+            </div>
+          ) : (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
+            </div>
+          )}
           
-          {/* Row 2: Lessons, Accuracy, Time */}
+          {/* Row 2: Lessons, Accuracy (or Time if no TBS), Time */}
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
               {overallStats.lessonsCompleted}/{overallStats.totalLessons}
             </div>
             <span className="text-xs text-slate-600 dark:text-slate-400">Lessons</span>
           </div>
-          <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
-            <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
-          </div>
-          <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
-              {overallStats.studyMinutes < 60 
-                ? `${overallStats.studyMinutes}m` 
-                : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+          {course?.hasTBS ? (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
             </div>
-            <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
-          </div>
+          ) : (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+                {overallStats.studyMinutes < 60 
+                  ? `${overallStats.studyMinutes}m` 
+                  : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+              </div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
+            </div>
+          )}
+          {course?.hasTBS ? (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+                {overallStats.studyMinutes < 60 
+                  ? `${overallStats.studyMinutes}m` 
+                  : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+              </div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
+            </div>
+          ) : (
+            <div className="text-center">
+              <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+                {daysUntilExam !== null && daysUntilExam > 0 ? daysUntilExam : '—'}
+              </div>
+              <span className="text-xs text-slate-600 dark:text-slate-400">Days Left</span>
+            </div>
+          )}
         </div>
       </Card>
 

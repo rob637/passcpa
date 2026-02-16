@@ -18,6 +18,7 @@ vi.mock('react-router-dom', async () => {
 
 vi.mock('../../utils/logger', () => ({
   default: {
+    log: vi.fn(),
     error: vi.fn(),
     info: vi.fn(),
     warn: vi.fn(),

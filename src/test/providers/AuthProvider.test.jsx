@@ -330,7 +330,12 @@ describe('AuthProvider', () => {
     });
 
     it('signUp calls Firebase createUserWithEmailAndPassword', async () => {
-      mockCreateUserWithEmailAndPassword.mockResolvedValue({ user: { uid: 'new-uid' } });
+      mockCreateUserWithEmailAndPassword.mockResolvedValue({ 
+        user: { 
+          uid: 'new-uid',
+          getIdToken: vi.fn().mockResolvedValue('mock-id-token'),
+        } 
+      });
       mockUpdateProfile.mockResolvedValue({});
       mockSetDoc.mockResolvedValue({});
       

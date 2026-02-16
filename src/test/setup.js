@@ -58,6 +58,13 @@ vi.mock('firebase/firestore', () => ({
   },
 }));
 
+// Mock Firebase Functions
+vi.mock('firebase/functions', () => ({
+  getFunctions: vi.fn(() => ({})),
+  httpsCallable: vi.fn(() => vi.fn().mockRejectedValue(new Error('Function not available in test'))),
+  connectFunctionsEmulator: vi.fn(),
+}));
+
 // Mock window.matchMedia for dark mode tests
 // Create a proper mock that persists across calls
 const createMatchMediaMock = (matches = false) => ({

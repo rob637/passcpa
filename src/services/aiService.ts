@@ -1,11 +1,10 @@
-// AI Service - Google Gemini Integration
+// AI Service - Google Gemini Integration (via Cloud Function proxy)
 // For real AI responses in the CPA/EA tutor
 
 import logger from '../utils/logger';
 import { CourseId } from '../courses';
-
-const GEMINI_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+import { httpsCallable } from 'firebase/functions';
+import { functions } from '../config/firebase';
 
 /**
  * Validates courseId and returns the course context.
@@ -436,10 +435,9 @@ export const generateAIResponse = async (
   
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
-  if (!apiKey) {
-    logger.warn('[AI Service] No API key found. Using offline response database.');
-    return generateFallbackResponse(userMessage, mode, section, conversationHistory, false, courseId);
-  }
+  // Prefer Cloud Function proxy (keeps API key server-side, secure for production).
+  // Fall back to direct API call only if VITE_GEMINI_API_KEY is explicitly set (local dev/testing).
+  const useProxy = !apiKey;
 
   try {
     const SYSTEM_PROMPTS = getSystemPrompts(courseId);
@@ -458,77 +456,82 @@ export const generateAIResponse = async (
       parts: [{ text: userMessage }],
     });
 
-    const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contents: messages,
-        systemInstruction: {
-          parts: [{ text: systemPrompt }],
-        },
+    let responseText: string;
+
+    if (useProxy || !apiKey) {
+      // Call Cloud Function proxy (API key stays server-side)
+      const geminiProxy = httpsCallable<
+        { messages: typeof messages; systemPrompt: string; generationConfig?: Record<string, unknown> },
+        { text: string }
+      >(functions, 'geminiProxy');
+
+      const result = await geminiProxy({
+        messages,
+        systemPrompt,
         generationConfig: {
           temperature: 0.7,
           topK: 40,
           topP: 0.95,
           maxOutputTokens: 1024,
         },
-        safetySettings: [
-          { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
-          { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
-          { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
-          { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
-        ],
-      }),
-    });
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      const errorMessage = errorData?.error?.message || `HTTP ${response.status}`;
-      logger.error(`Gemini API error: ${errorMessage}`);
-      
-      // Check for specific error types - API key issues
-      if (
-        errorMessage.includes('API_KEY_INVALID') ||
-        errorMessage.includes('PERMISSION_DENIED') ||
-        errorMessage.includes('API key not valid') ||
-        errorMessage.includes('API key expired') ||
-        errorMessage.includes('invalid API key') ||
-        response.status === 400 ||
-        response.status === 401 ||
-        response.status === 403
-      ) {
-        // Log for admin notification
-        logger.error('[ADMIN ALERT] Gemini API key is invalid or expired! Status:', response.status, 'Message:', errorMessage);
-        
-        // Track the failure for admin dashboard (can be picked up by error tracking)
-        try {
-          // Store in localStorage for admin to see
-          const failures = JSON.parse(localStorage.getItem('ai_api_failures') || '[]');
-          failures.push({
-            timestamp: new Date().toISOString(),
-            status: response.status,
-            message: errorMessage,
-          });
-          // Keep only last 10 failures
-          localStorage.setItem('ai_api_failures', JSON.stringify(failures.slice(-10)));
-        } catch {
-          // Ignore localStorage errors
+      responseText = result.data.text;
+    } else {
+      // Direct API call (dev/testing only when VITE_GEMINI_API_KEY is set)
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: messages,
+            systemInstruction: { parts: [{ text: systemPrompt }] },
+            generationConfig: {
+              temperature: 0.7,
+              topK: 40,
+              topP: 0.95,
+              maxOutputTokens: 1024,
+            },
+            safetySettings: [
+              { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
+              { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
+              { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+              { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+            ],
+          }),
         }
-        
-        throw new Error('API_KEY_INVALID');
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const errorMessage = errorData?.error?.message || `HTTP ${response.status}`;
+        logger.error(`Gemini API error: ${errorMessage}`);
+
+        if (
+          errorMessage.includes('API_KEY_INVALID') ||
+          errorMessage.includes('PERMISSION_DENIED') ||
+          errorMessage.includes('API key not valid') ||
+          errorMessage.includes('API key expired') ||
+          errorMessage.includes('invalid API key') ||
+          response.status === 400 ||
+          response.status === 401 ||
+          response.status === 403
+        ) {
+          logger.error('[ADMIN ALERT] Gemini API key is invalid or expired! Status:', response.status, 'Message:', errorMessage);
+          throw new Error('API_KEY_INVALID');
+        }
+        throw new Error(`Gemini API error: ${response.status}`);
       }
-      throw new Error(`Gemini API error: ${response.status}`);
+
+      const data = await response.json();
+      if (!data.candidates?.[0]?.content?.parts?.[0]?.text) {
+        throw new Error('No response from Gemini');
+      }
+      responseText = data.candidates[0].content.parts[0].text;
     }
 
-    const data = await response.json();
-
-    if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
-      return data.candidates[0].content.parts[0].text;
-    }
-
-    throw new Error('No response from Gemini');
+    return responseText;
   } catch (error) {
     logger.error('AI Service Error:', error);
     

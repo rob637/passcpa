@@ -26,8 +26,8 @@ service cloud.firestore {
       allow write: if isOwner(userId) && 
         (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin']));
       
-      // Admins can update any user's profile including isAdmin field
-      allow update: if isAdmin();
+      // Admins can update or delete any user's profile
+      allow update, delete: if isAdmin();
       
       // All subcollections under user (study_plan, daily_log, progress, etc.)
       match /{subcollection=**} {
@@ -107,9 +107,11 @@ service cloud.firestore {
       // Allow users to create their own subscription doc (free tier / trial start)
       allow create: if isOwner(userId);
       // Allow users to update only the trials and updatedAt fields (for starting per-exam trials)
+      // Note: 'status' is NOT allowed client-side — subscription status changes
+      // must come from Stripe webhooks via Cloud Functions (Admin SDK bypasses rules)
       allow update: if isOwner(userId) && 
         request.resource.data.diff(resource.data).affectedKeys()
-          .hasOnly(['trials', 'updatedAt', 'status']);
+          .hasOnly(['trials', 'updatedAt']);
       // Admins can fully manage subscription documents
       allow write: if isAdmin();
     }

@@ -389,7 +389,7 @@ const Flashcards: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
+      <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4" />
           <p className="text-slate-600 dark:text-slate-300">Loading flashcards...</p>
@@ -400,7 +400,7 @@ const Flashcards: React.FC = () => {
 
   if (cards.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
+      <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
         <div className="text-center max-w-md">
           <div className="w-20 h-20 bg-success-100 dark:bg-success-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10 text-success-600" />
@@ -427,7 +427,7 @@ const Flashcards: React.FC = () => {
   // Session complete
   if (currentIndex >= cards.length) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
+      <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
         <div className="text-center max-w-md">
           <div className="w-20 h-20 bg-success-100 dark:bg-success-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
             <Sparkles className="w-10 h-10 text-success-600" />
@@ -483,7 +483,7 @@ const Flashcards: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
+    <div className="h-[calc(100vh-8rem)] md:min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col overflow-hidden">
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
@@ -581,7 +581,7 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2">
+      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto">
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           {showBothSides ? (
@@ -589,7 +589,7 @@ const Flashcards: React.FC = () => {
             <div
               ref={cardContentRef}
               data-testid="flashcard"
-              className="w-full max-h-[calc(100vh-280px)] overflow-y-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
+              className="w-full max-h-[calc(100vh-340px)] md:max-h-[calc(100vh-280px)] overflow-y-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
             >
               {/* Front section */}
               <div>

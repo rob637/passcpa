@@ -211,9 +211,12 @@ exports.sendCustomPasswordReset = onCall({
     throw new HttpsError('invalid-argument', 'Email is required');
   }
 
-  if (!resend) {
+  // Lazy-initialize Resend client (secrets only available at runtime in Gen 2)
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
     throw new HttpsError('failed-precondition', 'Email service not configured. Set RESEND_API_KEY.');
   }
+  const resendClient = new Resend(apiKey);
 
   try {
     // Generate Firebase password reset link
@@ -222,7 +225,7 @@ exports.sendCustomPasswordReset = onCall({
     });
 
     // Send branded email via Resend
-    const { error } = await resend.emails.send({
+    const { error } = await resendClient.emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: '🔐 Reset Your VoraPrep Password',

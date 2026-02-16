@@ -1,1002 +1,1114 @@
 /**
  * CFP Domain 4: Investment Planning
  * Area INV-2: Investment Vehicles
- * 
+ *
  * These lessons cover bonds, stocks, mutual funds, ETFs,
  * and alternative investments.
  */
 
-import { CFPLesson } from '../../../types/cfp';
+import type { Lesson } from '../../../types';
 
-export const CFP_INV2_LESSONS: CFPLesson[] = [
+export const CFP_INV2_LESSONS: Lesson[] = [
   {
-    id: "CFP-INV-L005",
-    domain: "CFP-INV",
-    blueprintArea: "INV-2",
-    title: "Fixed Income Securities",
+    id: 'CFP-INV-L005',
+    courseId: 'cfp',
+    section: 'CFP-INV',
+    blueprintArea: 'INV-2',
+    title: 'Fixed Income Securities',
     order: 5,
     duration: 55,
-    objectives: [
-      "Calculate bond pricing, yield to maturity, and current yield",
-      "Explain the inverse relationship between prices and yields",
-      "Compare different types of bonds and their characteristics",
-      "Assess interest rate risk using duration"
+    difficulty: 'intermediate',
+    topics: [
+      'Bond pricing and yield calculations',
+      'Price-yield inverse relationship',
+      'Bond types and characteristics',
+      'Interest rate risk and duration'
     ],
-    content: `
-# Fixed Income Securities
-
-Understanding bonds is essential for building diversified portfolios and managing interest rate risk.
-
----
-
-## Bond Fundamentals
-
-### Key Terms
-
-| Term | Definition |
-|------|------------|
-| **Par (Face) Value** | Amount paid at maturity (typically $1,000) |
-| **Coupon Rate** | Annual interest as % of par |
-| **Coupon Payment** | Dollar amount paid periodically |
-| **Maturity** | Date when principal is returned |
-| **Yield to Maturity (YTM)** | Total return if held to maturity |
-
----
-
-## Bond Pricing
-
-### The Inverse Relationship
-
-**When interest rates rise, bond prices fall (and vice versa).**
-
-| Market Rate vs. Coupon | Bond Price | Name |
-|-----------------------|------------|------|
-| Market rate > Coupon | Below par | **Discount** |
-| Market rate = Coupon | At par | **Par** |
-| Market rate < Coupon | Above par | **Premium** |
-
-### Bond Price Formula
-
-$$\\text{Price} = \\sum_{t=1}^{n} \\frac{C}{(1+r)^t} + \\frac{FV}{(1+r)^n}$$
-
-Where:
-- C = Coupon payment
-- r = Market interest rate (per period)
-- n = Number of periods
-- FV = Face value
-
----
-
-## Yield Measures
-
-### Current Yield
-
-Simple income return:
-
-$$\\text{Current Yield} = \\frac{\\text{Annual Coupon}}{\\text{Current Price}}$$
-
-**Example**: $60 coupon / $950 price = 6.32%
-
-### Yield to Maturity (YTM)
-
-Total return if held to maturity, including:
-- Coupon payments
-- Reinvestment of coupons
-- Gain/loss from price vs. par
-
-### Yield to Call (YTC)
-
-If bond is callable, calculate yield to first call date.
-
-**Use lower of YTM or YTC** for premium bonds.
-
----
-
-## Example: Yield Calculations
-
-| Bond Details | Value |
-|--------------|-------|
-| Par value | $1,000 |
-| Coupon rate | 5% |
-| Current price | $920 |
-| Years to maturity | 10 |
-
-**Current Yield**: $50 / $920 = **5.43%**
-
-**YTM**: Approximately **5.9%** (includes $80 gain over 10 years)
-
----
-
-## Types of Bonds
-
-### By Issuer
-
-| Type | Characteristics | Tax Treatment |
-|------|-----------------|---------------|
-| **Treasury** | Backed by US government; safest | Exempt from state/local tax |
-| **Agency** | GSEs (Fannie, Freddie) | Usually taxable |
-| **Municipal** | State/local governments | Federal tax-exempt* |
-| **Corporate** | Companies | Fully taxable |
-
-*Some munis subject to AMT.
-
-### Treasury Securities
-
-| Security | Maturity | Features |
-|----------|----------|----------|
-| T-Bills | ≤ 1 year | Discount securities, no coupon |
-| T-Notes | 2-10 years | Semi-annual coupon |
-| T-Bonds | 10-30 years | Semi-annual coupon |
-| TIPS | Various | Inflation-adjusted principal |
-| I-Bonds | 30 years | Inflation + fixed rate |
-
----
-
-## Municipal Bonds
-
-### Tax-Equivalent Yield
-
-For comparing munis to taxable bonds:
-
-$$\\text{TEY} = \\frac{\\text{Muni Yield}}{1 - \\text{Tax Rate}}$$
-
-### Example
-
-Muni yields 3%, investor in 32% bracket:
-
-$$\\text{TEY} = \\frac{3\\%}{1 - 0.32} = \\frac{3\\%}{0.68} = 4.41\\%$$
-
-Need taxable bond to yield >4.41% to beat muni.
-
----
-
-## Corporate Bonds
-
-### Credit Ratings
-
-| Rating (S&P/Moody's) | Category | Risk |
-|---------------------|----------|------|
-| AAA/Aaa to BBB/Baa | Investment grade | Lower risk |
-| BB/Ba and below | High yield ("junk") | Higher risk/return |
-
-### Types
-
-| Type | Feature |
-|------|---------|
-| **Secured** | Backed by specific assets |
-| **Unsecured (Debenture)** | Backed by creditworthiness |
-| **Convertible** | Can convert to stock |
-| **Callable** | Issuer can redeem early |
-| **Zero-coupon** | No periodic payments; deep discount |
-
----
-
-## Interest Rate Risk: Duration
-
-### What Is Duration?
-
-Weighted average time to receive cash flows—measures **sensitivity to rate changes**.
-
-$$\\text{Price Change} \\approx -\\text{Duration} \\times \\Delta\\text{Interest Rate}$$
-
-### Duration Rules
-
-| Factor | Duration Impact |
-|--------|----------------|
-| Longer maturity | Higher duration |
-| Lower coupon | Higher duration |
-| Lower yield | Higher duration |
-
-### Example
-
-Bond has duration of 7 years. Rates rise 1%:
-
-$$\\text{Price Change} \\approx -7 \\times 1\\% = -7\\%$$
-
----
-
-## Zero-Coupon Bonds
-
-### Characteristics
-
-| Feature | Description |
-|---------|-------------|
-| Coupon | None |
-| Purchase price | Deep discount |
-| Return | All from price appreciation |
-| Duration | Equals maturity (no interim payments) |
-| Taxation | Phantom income (OID taxed annually) |
-
-### Use Cases
-
-- Goal funding (known future date)
-- IRAs (avoid phantom income issue)
-- Maximum interest rate sensitivity
-
----
-
-## Key Takeaways
-
-1. **Bond prices and yields move inversely**
-2. **Premium** = coupon > market rate; **Discount** = coupon < market rate
-3. **Tax-equivalent yield** = Muni yield / (1 - tax rate)
-4. **Duration** measures price sensitivity; longer maturity/lower coupon = higher duration
-5. **Zero-coupon bonds** have duration equal to maturity; taxed on phantom income
-    `,
-    keyTakeaways: [
-      "Bond prices and interest rates move inversely",
-      "Premium: coupon > market; Discount: coupon < market",
-      "Tax-equivalent yield = Muni yield / (1 - tax rate)",
-      "Duration measures rate sensitivity; price change ≈ -Duration × Δrate",
-      "Zero-coupon duration = maturity; phantom income taxed annually"
-    ],
+    description:
+      'Calculate bond pricing, yield to maturity, and current yield. Explain the inverse relationship between prices and yields. Compare different types of bonds and their characteristics. Assess interest rate risk using duration.',
+    content: {
+      sections: [
+        {
+          type: 'callout',
+          title: '🧠 Why This Matters',
+          content:
+            'Understanding bonds is essential for building diversified portfolios and managing interest rate risk.'
+        },
+        {
+          type: 'text',
+          title: 'Bond Fundamentals',
+          content:
+            'Bonds are debt instruments that pay periodic interest (coupons) and return principal at maturity. Understanding these key terms is critical for the CFP exam.'
+        },
+        {
+          type: 'table',
+          title: 'Key Terms',
+          headers: ['Term', 'Definition'],
+          rows: [
+            ['**Par (Face) Value**', 'Amount paid at maturity (typically $1,000)'],
+            ['**Coupon Rate**', 'Annual interest as % of par'],
+            ['**Coupon Payment**', 'Dollar amount paid periodically'],
+            ['**Maturity**', 'Date when principal is returned'],
+            ['**Yield to Maturity (YTM)**', 'Total return if held to maturity']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Bond Pricing',
+          content:
+            '**When interest rates rise, bond prices fall (and vice versa).** This inverse relationship is one of the most important concepts in fixed income investing.'
+        },
+        {
+          type: 'table',
+          title: 'The Inverse Relationship',
+          headers: ['Market Rate vs. Coupon', 'Bond Price', 'Name'],
+          rows: [
+            ['Market rate > Coupon', 'Below par', '**Discount**'],
+            ['Market rate = Coupon', 'At par', '**Par**'],
+            ['Market rate < Coupon', 'Above par', '**Premium**']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Bond Price Formula',
+          content:
+            '$$\\text{Price} = \\sum_{t=1}^{n} \\frac{C}{(1+r)^t} + \\frac{FV}{(1+r)^n}$$\n\nWhere:\n- C = Coupon payment\n- r = Market interest rate (per period)\n- n = Number of periods\n- FV = Face value'
+        },
+        {
+          type: 'text',
+          title: 'Yield Measures',
+          content:
+            '**Current Yield** — simple income return:\n\n$$\\text{Current Yield} = \\frac{\\text{Annual Coupon}}{\\text{Current Price}}$$\n\n**Example**: $60 coupon / $950 price = 6.32%'
+        },
+        {
+          type: 'text',
+          title: 'Yield to Maturity (YTM)',
+          content:
+            'Total return if held to maturity, including:\n- Coupon payments\n- Reinvestment of coupons\n- Gain/loss from price vs. par'
+        },
+        {
+          type: 'warning',
+          title: '⚠️ Exam Trap: YTM vs YTC',
+          content:
+            '**Yield to Call (YTC)** — if a bond is callable, calculate yield to first call date. For premium bonds, **use the lower of YTM or YTC** as this represents the worst-case yield for the investor.'
+        },
+        {
+          type: 'example',
+          title: '📊 Example: Yield Calculations',
+          content:
+            '| Bond Details | Value |\n|--------------|-------|\n| Par value | $1,000 |\n| Coupon rate | 5% |\n| Current price | $920 |\n| Years to maturity | 10 |\n\n**Current Yield**: $50 / $920 = **5.43%**\n\n**YTM**: Approximately **5.9%** (includes $80 gain over 10 years)'
+        },
+        {
+          type: 'text',
+          title: 'Types of Bonds by Issuer',
+          content:
+            'Different bond issuers have different risk profiles and tax treatments.'
+        },
+        {
+          type: 'table',
+          title: 'Bond Types by Issuer',
+          headers: ['Type', 'Characteristics', 'Tax Treatment'],
+          rows: [
+            ['**Treasury**', 'Backed by US government; safest', 'Exempt from state/local tax'],
+            ['**Agency**', 'GSEs (Fannie, Freddie)', 'Usually taxable'],
+            ['**Municipal**', 'State/local governments', 'Federal tax-exempt*'],
+            ['**Corporate**', 'Companies', 'Fully taxable']
+          ]
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aid',
+          content: '*Some munis are subject to AMT (Alternative Minimum Tax).'
+        },
+        {
+          type: 'table',
+          title: 'Treasury Securities',
+          headers: ['Security', 'Maturity', 'Features'],
+          rows: [
+            ['T-Bills', '≤ 1 year', 'Discount securities, no coupon'],
+            ['T-Notes', '2-10 years', 'Semi-annual coupon'],
+            ['T-Bonds', '10-30 years', 'Semi-annual coupon'],
+            ['TIPS', 'Various', 'Inflation-adjusted principal'],
+            ['I-Bonds', '30 years', 'Inflation + fixed rate']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Municipal Bonds: Tax-Equivalent Yield',
+          content:
+            'For comparing munis to taxable bonds:\n\n$$\\text{TEY} = \\frac{\\text{Muni Yield}}{1 - \\text{Tax Rate}}$$'
+        },
+        {
+          type: 'example',
+          title: '📊 Tax-Equivalent Yield Example',
+          content:
+            'Muni yields 3%, investor in 32% bracket:\n\n$$\\text{TEY} = \\frac{3\\%}{1 - 0.32} = \\frac{3\\%}{0.68} = 4.41\\%$$\n\nNeed taxable bond to yield >4.41% to beat the muni.'
+        },
+        {
+          type: 'table',
+          title: 'Corporate Bond Credit Ratings',
+          headers: ['Rating (S&P/Moody\'s)', 'Category', 'Risk'],
+          rows: [
+            ['AAA/Aaa to BBB/Baa', 'Investment grade', 'Lower risk'],
+            ['BB/Ba and below', 'High yield ("junk")', 'Higher risk/return']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Corporate Bond Types',
+          headers: ['Type', 'Feature'],
+          rows: [
+            ['**Secured**', 'Backed by specific assets'],
+            ['**Unsecured (Debenture)**', 'Backed by creditworthiness'],
+            ['**Convertible**', 'Can convert to stock'],
+            ['**Callable**', 'Issuer can redeem early'],
+            ['**Zero-coupon**', 'No periodic payments; deep discount']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Interest Rate Risk: Duration',
+          content:
+            '**What Is Duration?** Weighted average time to receive cash flows—measures **sensitivity to rate changes**.\n\n$$\\text{Price Change} \\approx -\\text{Duration} \\times \\Delta\\text{Interest Rate}$$'
+        },
+        {
+          type: 'table',
+          title: 'Duration Rules',
+          headers: ['Factor', 'Duration Impact'],
+          rows: [
+            ['Longer maturity', 'Higher duration'],
+            ['Lower coupon', 'Higher duration'],
+            ['Lower yield', 'Higher duration']
+          ]
+        },
+        {
+          type: 'example',
+          title: '📊 Duration Example',
+          content:
+            'Bond has duration of 7 years. Rates rise 1%:\n\n$$\\text{Price Change} \\approx -7 \\times 1\\% = -7\\%$$'
+        },
+        {
+          type: 'table',
+          title: 'Zero-Coupon Bond Characteristics',
+          headers: ['Feature', 'Description'],
+          rows: [
+            ['Coupon', 'None'],
+            ['Purchase price', 'Deep discount'],
+            ['Return', 'All from price appreciation'],
+            ['Duration', 'Equals maturity (no interim payments)'],
+            ['Taxation', 'Phantom income (OID taxed annually)']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Zero-Coupon Bond Use Cases',
+          content:
+            '- Goal funding (known future date)\n- IRAs (avoid phantom income issue)\n- Maximum interest rate sensitivity'
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aids',
+          content:
+            '**Rates UP, Prices DOWN** (like a seesaw)\n\n**Duration = Danger to rates** (higher duration = more danger)'
+        },
+        {
+          type: 'summary',
+          title: 'Key Takeaways',
+          content: [
+            'Bond prices and interest rates move inversely',
+            'Premium: coupon > market; Discount: coupon < market',
+            'Tax-equivalent yield = Muni yield / (1 - tax rate)',
+            'Duration measures rate sensitivity; price change ≈ -Duration × Δrate',
+            'Zero-coupon duration = maturity; phantom income taxed annually'
+          ]
+        }
+      ]
+    },
     keyFormulas: [
-      "Current Yield = Annual Coupon / Current Price",
-      "Tax-Equivalent Yield = Muni Yield / (1 - Tax Rate)",
-      "Price Change ≈ -Duration × ΔInterest Rate"
-    ],
-    mnemonics: [
-      "Rates UP, Prices DOWN (like a seesaw)",
-      "Duration = Danger to rates (higher duration = more danger)"
+      'Current Yield = Annual Coupon / Current Price',
+      'Tax-Equivalent Yield = Muni Yield / (1 - Tax Rate)',
+      'Price Change ≈ -Duration × ΔInterest Rate'
     ],
     practiceProblems: [
       {
-        question: "A muni bond yields 4%. An investor is in the 35% tax bracket. What taxable yield would be equivalent?",
-        answer: "TEY = 4% / (1 - 0.35) = 4% / 0.65 = 6.15%. The investor needs a taxable bond yielding more than 6.15% to beat the muni."
+        question:
+          'A muni bond yields 4%. An investor is in the 35% tax bracket. What taxable yield would be equivalent?',
+        answer:
+          'TEY = 4% / (1 - 0.35) = 4% / 0.65 = 6.15%. The investor needs a taxable bond yielding more than 6.15% to beat the muni.'
       },
       {
-        question: "A bond has duration of 5 years. If rates rise 2%, what is the approximate price change?",
-        answer: "Price change ≈ -5 × 2% = -10%. The bond price would fall approximately 10%."
+        question:
+          'A bond has duration of 5 years. If rates rise 2%, what is the approximate price change?',
+        answer:
+          'Price change ≈ -5 × 2% = -10%. The bond price would fall approximately 10%.'
       },
       {
-        question: "A $1,000 par bond pays 6% coupon and trades at $1,100. What is the current yield?",
-        answer: "Current yield = $60 / $1,100 = 5.45%. Note: This is a premium bond because price > par."
+        question:
+          'A $1,000 par bond pays 6% coupon and trades at $1,100. What is the current yield?',
+        answer:
+          'Current yield = $60 / $1,100 = 5.45%. Note: This is a premium bond because price > par.'
       }
     ],
-    relatedLessons: ["CFP-INV-L006", "CFP-INV-L001", "CFP-TAX-L005"]
+    relatedLessons: ['CFP-INV-L006', 'CFP-INV-L001', 'CFP-TAX-L005']
   },
 
   {
-    id: "CFP-INV-L006",
-    domain: "CFP-INV",
-    blueprintArea: "INV-2",
-    title: "Equity Securities",
+    id: 'CFP-INV-L006',
+    courseId: 'cfp',
+    section: 'CFP-INV',
+    blueprintArea: 'INV-2',
+    title: 'Equity Securities',
     order: 6,
     duration: 50,
-    objectives: [
-      "Distinguish between common and preferred stock",
-      "Calculate dividend yield and dividend growth valuation",
-      "Compare growth vs. value investing styles",
-      "Evaluate equity using fundamental metrics"
+    difficulty: 'intermediate',
+    topics: [
+      'Common vs preferred stock',
+      'Dividend yield and valuation',
+      'Growth vs value investing',
+      'Fundamental equity metrics'
     ],
-    content: `
-# Equity Securities
-
-Equity represents ownership in a company, offering potential for growth and income through dividends.
-
----
-
-## Common Stock
-
-### Ownership Rights
-
-| Right | Description |
-|-------|-------------|
-| **Voting** | Elect board, approve major decisions |
-| **Dividends** | Share of profits (not guaranteed) |
-| **Residual claim** | Last in line in bankruptcy |
-| **Limited liability** | Can only lose investment amount |
-| **Preemptive rights** | Right to maintain ownership % |
-
-### Returns Come From
-
-1. **Price appreciation** (capital gains)
-2. **Dividends** (income)
-
----
-
-## Preferred Stock
-
-### Hybrid Characteristics
-
-| Feature | More Like |
-|---------|-----------|
-| Fixed dividend | Bonds |
-| Price sensitivity to rates | Bonds |
-| No maturity date | Stocks |
-| Residual claim (after bonds) | Stocks |
-
-### Types of Preferred
-
-| Type | Feature |
-|------|---------|
-| **Cumulative** | Missed dividends must be paid before common |
-| **Non-cumulative** | Missed dividends are lost |
-| **Convertible** | Can convert to common stock |
-| **Callable** | Issuer can redeem |
-| **Participating** | Shares in extra profits |
-
----
-
-## Valuation: Dividend Discount Model
-
-### Constant Growth Model (Gordon Model)
-
-$$P_0 = \\frac{D_1}{r - g}$$
-
-Where:
-- $P_0$ = Current stock price
-- $D_1$ = Next year's dividend
-- $r$ = Required return
-- $g$ = Dividend growth rate
-
-**Requirement**: r > g
-
-### Example
-
-| Given | Value |
-|-------|-------|
-| Current dividend (D₀) | $2.00 |
-| Growth rate (g) | 5% |
-| Required return (r) | 10% |
-
-$$D_1 = \\$2.00 \\times 1.05 = \\$2.10$$
-$$P_0 = \\frac{\\$2.10}{0.10 - 0.05} = \\$42.00$$
-
----
-
-## Dividend Yield
-
-Simple income return from dividends:
-
-$$\\text{Dividend Yield} = \\frac{\\text{Annual Dividend}}{\\text{Stock Price}}$$
-
-### Example
-
-$3 annual dividend / $60 stock price = **5%**
-
----
-
-## Growth vs. Value Investing
-
-### Value Stocks
-
-| Characteristic | Description |
-|----------------|-------------|
-| **P/E ratio** | Low |
-| **P/B ratio** | Low |
-| **Dividend yield** | Higher |
-| **Growth** | Slower |
-| **Perception** | "Cheap" or out of favor |
-
-### Growth Stocks
-
-| Characteristic | Description |
-|----------------|-------------|
-| **P/E ratio** | High |
-| **P/B ratio** | High |
-| **Dividend yield** | Lower or none |
-| **Growth** | Faster earnings growth |
-| **Perception** | Premium for growth potential |
-
-### Historical Performance
-
-- Value tends to outperform over very long periods
-- Growth tends to outperform during bull markets
-- Neither consistently wins—diversify across both
-
----
-
-## Key Valuation Metrics
-
-### Price-to-Earnings (P/E) Ratio
-
-$$\\text{P/E} = \\frac{\\text{Price per Share}}{\\text{Earnings per Share}}$$
-
-| P/E | Interpretation |
-|-----|----------------|
-| High | Market expects growth (or overvalued) |
-| Low | Out of favor (or undervalued) |
-
-### Price-to-Book (P/B) Ratio
-
-$$\\text{P/B} = \\frac{\\text{Price per Share}}{\\text{Book Value per Share}}$$
-
-| P/B | Interpretation |
-|-----|----------------|
-| < 1 | Trading below asset value |
-| > 1 | Market values growth/intangibles |
-
-### PEG Ratio
-
-$$\\text{PEG} = \\frac{\\text{P/E}}{\\text{Earnings Growth Rate}}$$
-
-| PEG | Interpretation |
-|-----|----------------|
-| < 1 | May be undervalued |
-| > 1 | May be overvalued |
-
----
-
-## Market Capitalization
-
-| Category | Market Cap |
-|----------|-----------|
-| **Large-cap** | > $10 billion |
-| **Mid-cap** | $2-10 billion |
-| **Small-cap** | $300M-$2 billion |
-| **Micro-cap** | < $300 million |
-
-### Risk/Return by Size
-
-- Small-cap: Higher historical returns, higher volatility
-- Large-cap: Lower returns, more stability
-
----
-
-## Stock Splits and Dividends
-
-### Stock Split
-
-| Type | Effect |
-|------|--------|
-| 2-for-1 | Double shares, halve price |
-| 3-for-1 | Triple shares, third price |
-
-**Total value unchanged**—just more shares at lower price.
-
-### Reverse Split
-
-| Type | Effect |
-|------|--------|
-| 1-for-10 | Tenth the shares, 10x price |
-
-Often used by troubled companies to meet exchange minimums.
-
-### Stock Dividends
-
-Distribution of additional shares instead of cash.
-
-- 10% stock dividend = 10 shares become 11
-- Similar to small split in effect
-
----
-
-## Key Takeaways
-
-1. **Common stock**: Voting rights, residual claim, dividends not guaranteed
-2. **Preferred stock**: Fixed dividend priority, rate-sensitive like bonds
-3. **Gordon Model**: P₀ = D₁ / (r - g) for constant-growth valuation
-4. **Value**: Low P/E, high yield; **Growth**: High P/E, low/no yield
-5. **Small-cap**: Higher risk and return; **Large-cap**: More stability
-    `,
-    keyTakeaways: [
-      "Common stock: Voting, residual claim, variable dividends",
-      "Preferred: Fixed dividends, priority over common, rate-sensitive",
-      "Gordon Model: P₀ = D₁ / (r - g); requires r > g",
-      "Value = low P/E, high yield; Growth = high P/E, reinvests earnings",
-      "Small-cap = higher risk/return; large-cap = more stability"
-    ],
+    description:
+      'Distinguish between common and preferred stock. Calculate dividend yield and dividend growth valuation. Compare growth vs. value investing styles. Evaluate equity using fundamental metrics.',
+    content: {
+      sections: [
+        {
+          type: 'callout',
+          title: '🧠 Why This Matters',
+          content:
+            'Equity represents ownership in a company, offering potential for growth and income through dividends.'
+        },
+        {
+          type: 'text',
+          title: 'Common Stock',
+          content:
+            'Common stockholders are the true owners of a corporation with voting rights but are last in line during bankruptcy.'
+        },
+        {
+          type: 'table',
+          title: 'Common Stock Ownership Rights',
+          headers: ['Right', 'Description'],
+          rows: [
+            ['**Voting**', 'Elect board, approve major decisions'],
+            ['**Dividends**', 'Share of profits (not guaranteed)'],
+            ['**Residual claim**', 'Last in line in bankruptcy'],
+            ['**Limited liability**', 'Can only lose investment amount'],
+            ['**Preemptive rights**', 'Right to maintain ownership %']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Returns Come From',
+          content:
+            '1. **Price appreciation** (capital gains)\n2. **Dividends** (income)'
+        },
+        {
+          type: 'text',
+          title: 'Preferred Stock',
+          content:
+            'Preferred stock is a hybrid security with characteristics of both bonds and stocks.'
+        },
+        {
+          type: 'table',
+          title: 'Preferred Stock Hybrid Characteristics',
+          headers: ['Feature', 'More Like'],
+          rows: [
+            ['Fixed dividend', 'Bonds'],
+            ['Price sensitivity to rates', 'Bonds'],
+            ['No maturity date', 'Stocks'],
+            ['Residual claim (after bonds)', 'Stocks']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Types of Preferred Stock',
+          headers: ['Type', 'Feature'],
+          rows: [
+            ['**Cumulative**', 'Missed dividends must be paid before common'],
+            ['**Non-cumulative**', 'Missed dividends are lost'],
+            ['**Convertible**', 'Can convert to common stock'],
+            ['**Callable**', 'Issuer can redeem'],
+            ['**Participating**', 'Shares in extra profits']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Valuation: Dividend Discount Model',
+          content:
+            '**Constant Growth Model (Gordon Model)**\n\n$$P_0 = \\frac{D_1}{r - g}$$\n\nWhere:\n- $P_0$ = Current stock price\n- $D_1$ = Next year\'s dividend\n- $r$ = Required return\n- $g$ = Dividend growth rate\n\n**Requirement**: r > g'
+        },
+        {
+          type: 'example',
+          title: '📊 Gordon Model Example',
+          content:
+            '| Given | Value |\n|-------|-------|\n| Current dividend (D₀) | $2.00 |\n| Growth rate (g) | 5% |\n| Required return (r) | 10% |\n\n$$D_1 = \\$2.00 \\times 1.05 = \\$2.10$$\n$$P_0 = \\frac{\\$2.10}{0.10 - 0.05} = \\$42.00$$'
+        },
+        {
+          type: 'text',
+          title: 'Dividend Yield',
+          content:
+            'Simple income return from dividends:\n\n$$\\text{Dividend Yield} = \\frac{\\text{Annual Dividend}}{\\text{Stock Price}}$$\n\n**Example**: $3 annual dividend / $60 stock price = **5%**'
+        },
+        {
+          type: 'text',
+          title: 'Growth vs. Value Investing',
+          content:
+            'Understanding the difference between growth and value stocks is essential for portfolio construction.'
+        },
+        {
+          type: 'table',
+          title: 'Value Stocks',
+          headers: ['Characteristic', 'Description'],
+          rows: [
+            ['**P/E ratio**', 'Low'],
+            ['**P/B ratio**', 'Low'],
+            ['**Dividend yield**', 'Higher'],
+            ['**Growth**', 'Slower'],
+            ['**Perception**', '"Cheap" or out of favor']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Growth Stocks',
+          headers: ['Characteristic', 'Description'],
+          rows: [
+            ['**P/E ratio**', 'High'],
+            ['**P/B ratio**', 'High'],
+            ['**Dividend yield**', 'Lower or none'],
+            ['**Growth**', 'Faster earnings growth'],
+            ['**Perception**', 'Premium for growth potential']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Historical Performance',
+          content:
+            '- Value tends to outperform over very long periods\n- Growth tends to outperform during bull markets\n- Neither consistently wins—diversify across both'
+        },
+        {
+          type: 'text',
+          title: 'Key Valuation Metrics',
+          content:
+            '**Price-to-Earnings (P/E) Ratio**\n\n$$\\text{P/E} = \\frac{\\text{Price per Share}}{\\text{Earnings per Share}}$$'
+        },
+        {
+          type: 'table',
+          title: 'P/E Interpretation',
+          headers: ['P/E', 'Interpretation'],
+          rows: [
+            ['High', 'Market expects growth (or overvalued)'],
+            ['Low', 'Out of favor (or undervalued)']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Price-to-Book (P/B) Ratio',
+          content:
+            '$$\\text{P/B} = \\frac{\\text{Price per Share}}{\\text{Book Value per Share}}$$'
+        },
+        {
+          type: 'table',
+          title: 'P/B Interpretation',
+          headers: ['P/B', 'Interpretation'],
+          rows: [
+            ['< 1', 'Trading below asset value'],
+            ['> 1', 'Market values growth/intangibles']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'PEG Ratio',
+          content:
+            '$$\\text{PEG} = \\frac{\\text{P/E}}{\\text{Earnings Growth Rate}}$$'
+        },
+        {
+          type: 'table',
+          title: 'PEG Interpretation',
+          headers: ['PEG', 'Interpretation'],
+          rows: [
+            ['< 1', 'May be undervalued'],
+            ['> 1', 'May be overvalued']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Market Capitalization Categories',
+          headers: ['Category', 'Market Cap'],
+          rows: [
+            ['**Large-cap**', '> $10 billion'],
+            ['**Mid-cap**', '$2-10 billion'],
+            ['**Small-cap**', '$300M-$2 billion'],
+            ['**Micro-cap**', '< $300 million']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Risk/Return by Size',
+          content:
+            '- **Small-cap**: Higher historical returns, higher volatility\n- **Large-cap**: Lower returns, more stability'
+        },
+        {
+          type: 'text',
+          title: 'Stock Splits and Dividends',
+          content: 'Stock splits and dividends affect share count but not total value.'
+        },
+        {
+          type: 'table',
+          title: 'Stock Split Effects',
+          headers: ['Type', 'Effect'],
+          rows: [
+            ['2-for-1', 'Double shares, halve price'],
+            ['3-for-1', 'Triple shares, third price']
+          ]
+        },
+        {
+          type: 'warning',
+          title: '⚠️ Key Point',
+          content:
+            '**Total value unchanged** after a split—just more shares at lower price.'
+        },
+        {
+          type: 'table',
+          title: 'Reverse Split',
+          headers: ['Type', 'Effect'],
+          rows: [['1-for-10', 'Tenth the shares, 10x price']]
+        },
+        {
+          type: 'text',
+          title: 'Reverse Splits',
+          content:
+            'Often used by troubled companies to meet exchange minimums.'
+        },
+        {
+          type: 'text',
+          title: 'Stock Dividends',
+          content:
+            'Distribution of additional shares instead of cash.\n\n- 10% stock dividend = 10 shares become 11\n- Similar to small split in effect'
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aids',
+          content:
+            '**Gordon Growth**: Dividend / (Required - Growth)\n\n**Value = Victory for the patient; Growth = Glamour** (and higher P/E)'
+        },
+        {
+          type: 'summary',
+          title: 'Key Takeaways',
+          content: [
+            'Common stock: Voting, residual claim, variable dividends',
+            'Preferred: Fixed dividends, priority over common, rate-sensitive',
+            'Gordon Model: P₀ = D₁ / (r - g); requires r > g',
+            'Value = low P/E, high yield; Growth = high P/E, reinvests earnings',
+            'Small-cap = higher risk/return; large-cap = more stability'
+          ]
+        }
+      ]
+    },
     keyFormulas: [
-      "Gordon Model: P₀ = D₁ / (r - g)",
-      "Dividend Yield = Annual Dividend / Price",
-      "P/E = Price / EPS",
-      "PEG = P/E / Growth Rate"
-    ],
-    mnemonics: [
-      "Gordon Growth: Dividend / (Required - Growth)",
-      "Value = Victory for the patient; Growth = Glamour (and higher P/E)"
+      'Gordon Model: P₀ = D₁ / (r - g)',
+      'Dividend Yield = Annual Dividend / Price',
+      'P/E = Price / EPS',
+      'PEG = P/E / Growth Rate'
     ],
     practiceProblems: [
       {
-        question: "A stock pays $3 dividend, growing 4% annually. Required return is 9%. What is the intrinsic value?",
-        answer: "D₁ = $3 × 1.04 = $3.12. P₀ = $3.12 / (0.09 - 0.04) = $3.12 / 0.05 = $62.40"
+        question:
+          'A stock pays $3 dividend, growing 4% annually. Required return is 9%. What is the intrinsic value?',
+        answer:
+          'D₁ = $3 × 1.04 = $3.12. P₀ = $3.12 / (0.09 - 0.04) = $3.12 / 0.05 = $62.40'
       },
       {
-        question: "A stock trades at $80 with EPS of $4. The industry P/E is 25. Is the stock over or undervalued relative to peers?",
-        answer: "Stock P/E = $80 / $4 = 20. Industry P/E = 25. Stock is undervalued relative to peers (lower P/E)."
+        question:
+          'A stock trades at $80 with EPS of $4. The industry P/E is 25. Is the stock over or undervalued relative to peers?',
+        answer:
+          'Stock P/E = $80 / $4 = 20. Industry P/E = 25. Stock is undervalued relative to peers (lower P/E).'
       },
       {
-        question: "How does a 3-for-1 stock split affect an investor with 100 shares at $90?",
-        answer: "After split: 300 shares at $30 each. Total value unchanged at $9,000."
+        question:
+          'How does a 3-for-1 stock split affect an investor with 100 shares at $90?',
+        answer:
+          'After split: 300 shares at $30 each. Total value unchanged at $9,000.'
       }
     ],
-    relatedLessons: ["CFP-INV-L005", "CFP-INV-L007", "CFP-TAX-L003"]
+    relatedLessons: ['CFP-INV-L005', 'CFP-INV-L007', 'CFP-TAX-L003']
   },
 
   {
-    id: "CFP-INV-L007",
-    domain: "CFP-INV",
-    blueprintArea: "INV-2",
-    title: "Investment Companies: Mutual Funds and ETFs",
+    id: 'CFP-INV-L007',
+    courseId: 'cfp',
+    section: 'CFP-INV',
+    blueprintArea: 'INV-2',
+    title: 'Investment Companies: Mutual Funds and ETFs',
     order: 7,
     duration: 50,
-    objectives: [
-      "Compare mutual fund structures and share classes",
-      "Distinguish open-end funds from closed-end funds and ETFs",
-      "Evaluate funds using expense ratios and turnover",
-      "Apply tax-efficiency considerations to fund selection"
+    difficulty: 'intermediate',
+    topics: [
+      'Mutual fund structures and share classes',
+      'Open-end vs closed-end funds vs ETFs',
+      'Expense ratios and turnover',
+      'Tax-efficiency in fund selection'
     ],
-    content: `
-# Investment Companies: Mutual Funds and ETFs
-
-Investment companies pool investor money for professional management and diversification.
-
----
-
-## Types of Investment Companies
-
-### Open-End Funds (Mutual Funds)
-
-| Feature | Description |
-|---------|-------------|
-| Pricing | NAV calculated daily |
-| Shares | Created/redeemed at NAV |
-| Trading | Through fund company |
-| Liquidity | Guaranteed at NAV |
-
-### Closed-End Funds
-
-| Feature | Description |
-|---------|-------------|
-| Pricing | Market price (may differ from NAV) |
-| Shares | Fixed number; trade on exchange |
-| Trading | Like stocks (throughout day) |
-| Premium/Discount | Can trade above or below NAV |
-
-### ETFs (Exchange-Traded Funds)
-
-| Feature | Description |
-|---------|-------------|
-| Pricing | Intraday market price |
-| Shares | Trade on exchange |
-| Creation/Redemption | Authorized participants (in-kind) |
-| Tax efficiency | Generally more tax-efficient |
-
----
-
-## Net Asset Value (NAV)
-
-$$\\text{NAV} = \\frac{\\text{Total Assets} - \\text{Liabilities}}{\\text{Shares Outstanding}}$$
-
-### When Calculated
-
-| Fund Type | NAV Timing |
-|-----------|------------|
-| Mutual fund | 4:00 PM ET daily |
-| ETF | Continuous (trades at market) |
-| Closed-end | Reference; may not match price |
-
----
-
-## Mutual Fund Share Classes
-
-| Class | Sales Charge | 12b-1 Fee | Best For |
-|-------|--------------|-----------|----------|
-| **A shares** | Front-end (3-5%) | Low (0.25%) | Large, long-term investments |
-| **B shares** | Back-end (CDSC) | High (1%) | Phased out (now rare) |
-| **C shares** | Level load (1%) | High (1%) | Short-term (1-3 years) |
-| **Institutional** | None | None/Low | Large institutional investors |
-| **No-load** | None | Max 0.25% | Direct investors |
-
-### Breakpoints (A Shares)
-
-Volume discounts on front-end loads:
-- Larger purchases = lower sales charge
-- Rights of accumulation: Include existing holdings
-- Letter of intent: Commit to future purchases
-
----
-
-## Expense Ratio
-
-Annual operating expenses as % of assets.
-
-$$\\text{Expense Ratio} = \\frac{\\text{Total Annual Expenses}}{\\text{Average Net Assets}}$$
-
-| Type | Typical Expense Ratio |
-|------|----------------------|
-| Index fund | 0.03-0.20% |
-| Active equity | 0.50-1.50% |
-| Active bond | 0.30-0.80% |
-
-### Impact of Expenses
-
-| Initial Investment | Expense Ratio | Value After 30 Years (7% gross) |
-|-------------------|---------------|--------------------------------|
-| $100,000 | 0.10% | $738,000 |
-| $100,000 | 1.00% | $574,000 |
-| **Difference** | | **$164,000** |
-
----
-
-## Portfolio Turnover
-
-Percentage of holdings traded annually.
-
-| Turnover | Style | Tax Impact |
-|----------|-------|------------|
-| Low (<20%) | Buy and hold | More tax-efficient |
-| Medium (20-100%) | Active | Moderate distributions |
-| High (>100%) | Very active | More taxable distributions |
-
----
-
-## ETFs vs. Mutual Funds
-
-### Similarities
-
-- Professional management
-- Diversification
-- Variety of strategies
-
-### Key Differences
-
-| Feature | Mutual Fund | ETF |
-|---------|-------------|-----|
-| **Trading** | End of day at NAV | Intraday at market price |
-| **Minimum investment** | Often $1,000+ | Price of one share |
-| **Tax efficiency** | Lower (cash redemptions) | Higher (in-kind redemptions) |
-| **Costs** | Expense ratio + loads | Expense ratio + commissions |
-| **Transparency** | Disclose quarterly | Most disclose daily |
-
-### ETF Tax Efficiency
-
-Why ETFs are more tax-efficient:
-1. **In-kind creation/redemption**: No selling = no capital gains
-2. **Authorized participants** handle exchanges
-3. **Lower turnover** in index-tracking ETFs
-
----
-
-## Types of Funds by Strategy
-
-### By Asset Class
-
-| Type | Focus |
-|------|-------|
-| Equity | Stocks |
-| Fixed income | Bonds |
-| Money market | Short-term instruments |
-| Balanced/Hybrid | Mix of stocks and bonds |
-
-### By Style
-
-| Type | Description |
-|------|-------------|
-| Growth | Companies with high growth |
-| Value | Undervalued companies |
-| Blend | Mix of growth and value |
-
-### By Objective
-
-| Type | Goal |
-|------|------|
-| Index | Match benchmark |
-| Active | Beat benchmark |
-| Target-date | Adjust allocation by date |
-| Sector | Focus on one industry |
-
----
-
-## Evaluating Funds
-
-### Key Metrics
-
-| Metric | What It Measures |
-|--------|------------------|
-| **Expense ratio** | Annual cost |
-| **Turnover** | Trading activity |
-| **Alpha** | Risk-adjusted outperformance |
-| **Sharpe ratio** | Return per unit of total risk |
-| **R-squared** | How closely tracks benchmark |
-| **Standard deviation** | Volatility |
-
----
-
-## Key Takeaways
-
-1. **Open-end** = NAV at 4 PM; **Closed-end** = exchange-traded, premium/discount
-2. **ETFs** trade intraday, generally more tax-efficient than mutual funds
-3. **A shares**: Front load, best for large/long-term; **C shares**: level load, short-term
-4. **Expense ratios** compound significantly over time—lower is usually better
-5. **High turnover** = more taxable distributions
-    `,
-    keyTakeaways: [
-      "Open-end (mutual fund): NAV daily; Closed-end: trades at premium/discount",
-      "ETFs: Intraday trading, more tax-efficient (in-kind redemptions)",
-      "A shares: Front load, long-term; C shares: Level load, short-term",
-      "Expense ratios compound—0.10% vs 1.00% can mean $164K difference over 30 years",
-      "Higher turnover = more taxable capital gain distributions"
-    ],
+    description:
+      'Compare mutual fund structures and share classes. Distinguish open-end funds from closed-end funds and ETFs. Evaluate funds using expense ratios and turnover. Apply tax-efficiency considerations to fund selection.',
+    content: {
+      sections: [
+        {
+          type: 'callout',
+          title: '🧠 Why This Matters',
+          content:
+            'Investment companies pool investor money for professional management and diversification.'
+        },
+        {
+          type: 'text',
+          title: 'Types of Investment Companies',
+          content:
+            'Understanding the different structures is key to recommending appropriate investment vehicles.'
+        },
+        {
+          type: 'table',
+          title: 'Open-End Funds (Mutual Funds)',
+          headers: ['Feature', 'Description'],
+          rows: [
+            ['Pricing', 'NAV calculated daily'],
+            ['Shares', 'Created/redeemed at NAV'],
+            ['Trading', 'Through fund company'],
+            ['Liquidity', 'Guaranteed at NAV']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Closed-End Funds',
+          headers: ['Feature', 'Description'],
+          rows: [
+            ['Pricing', 'Market price (may differ from NAV)'],
+            ['Shares', 'Fixed number; trade on exchange'],
+            ['Trading', 'Like stocks (throughout day)'],
+            ['Premium/Discount', 'Can trade above or below NAV']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'ETFs (Exchange-Traded Funds)',
+          headers: ['Feature', 'Description'],
+          rows: [
+            ['Pricing', 'Intraday market price'],
+            ['Shares', 'Trade on exchange'],
+            ['Creation/Redemption', 'Authorized participants (in-kind)'],
+            ['Tax efficiency', 'Generally more tax-efficient']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Net Asset Value (NAV)',
+          content:
+            '$$\\text{NAV} = \\frac{\\text{Total Assets} - \\text{Liabilities}}{\\text{Shares Outstanding}}$$'
+        },
+        {
+          type: 'table',
+          title: 'When NAV Is Calculated',
+          headers: ['Fund Type', 'NAV Timing'],
+          rows: [
+            ['Mutual fund', '4:00 PM ET daily'],
+            ['ETF', 'Continuous (trades at market)'],
+            ['Closed-end', 'Reference; may not match price']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Mutual Fund Share Classes',
+          content:
+            'Different share classes have different fee structures suited for different investment horizons.'
+        },
+        {
+          type: 'table',
+          title: 'Share Class Comparison',
+          headers: ['Class', 'Sales Charge', '12b-1 Fee', 'Best For'],
+          rows: [
+            ['**A shares**', 'Front-end (3-5%)', 'Low (0.25%)', 'Large, long-term investments'],
+            ['**B shares**', 'Back-end (CDSC)', 'High (1%)', 'Phased out (now rare)'],
+            ['**C shares**', 'Level load (1%)', 'High (1%)', 'Short-term (1-3 years)'],
+            ['**Institutional**', 'None', 'None/Low', 'Large institutional investors'],
+            ['**No-load**', 'None', 'Max 0.25%', 'Direct investors']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Breakpoints (A Shares)',
+          content:
+            'Volume discounts on front-end loads:\n- Larger purchases = lower sales charge\n- **Rights of accumulation**: Include existing holdings\n- **Letter of intent**: Commit to future purchases'
+        },
+        {
+          type: 'text',
+          title: 'Expense Ratio',
+          content:
+            'Annual operating expenses as % of assets.\n\n$$\\text{Expense Ratio} = \\frac{\\text{Total Annual Expenses}}{\\text{Average Net Assets}}$$'
+        },
+        {
+          type: 'table',
+          title: 'Typical Expense Ratios',
+          headers: ['Type', 'Typical Expense Ratio'],
+          rows: [
+            ['Index fund', '0.03-0.20%'],
+            ['Active equity', '0.50-1.50%'],
+            ['Active bond', '0.30-0.80%']
+          ]
+        },
+        {
+          type: 'example',
+          title: '📊 Impact of Expenses',
+          content:
+            '| Initial Investment | Expense Ratio | Value After 30 Years (7% gross) |\n|-------------------|---------------|--------------------------------|\n| $100,000 | 0.10% | $738,000 |\n| $100,000 | 1.00% | $574,000 |\n| **Difference** | | **$164,000** |'
+        },
+        {
+          type: 'text',
+          title: 'Portfolio Turnover',
+          content:
+            'Percentage of holdings traded annually.'
+        },
+        {
+          type: 'table',
+          title: 'Turnover Impact',
+          headers: ['Turnover', 'Style', 'Tax Impact'],
+          rows: [
+            ['Low (<20%)', 'Buy and hold', 'More tax-efficient'],
+            ['Medium (20-100%)', 'Active', 'Moderate distributions'],
+            ['High (>100%)', 'Very active', 'More taxable distributions']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'ETFs vs. Mutual Funds',
+          content:
+            '**Similarities:**\n- Professional management\n- Diversification\n- Variety of strategies'
+        },
+        {
+          type: 'table',
+          title: 'Key Differences: ETFs vs Mutual Funds',
+          headers: ['Feature', 'Mutual Fund', 'ETF'],
+          rows: [
+            ['**Trading**', 'End of day at NAV', 'Intraday at market price'],
+            ['**Minimum investment**', 'Often $1,000+', 'Price of one share'],
+            ['**Tax efficiency**', 'Lower (cash redemptions)', 'Higher (in-kind redemptions)'],
+            ['**Costs**', 'Expense ratio + loads', 'Expense ratio + commissions'],
+            ['**Transparency**', 'Disclose quarterly', 'Most disclose daily']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'ETF Tax Efficiency',
+          content:
+            'Why ETFs are more tax-efficient:\n1. **In-kind creation/redemption**: No selling = no capital gains\n2. **Authorized participants** handle exchanges\n3. **Lower turnover** in index-tracking ETFs'
+        },
+        {
+          type: 'text',
+          title: 'Types of Funds by Strategy',
+          content: 'Funds can be categorized by asset class, style, or objective.'
+        },
+        {
+          type: 'table',
+          title: 'Funds by Asset Class',
+          headers: ['Type', 'Focus'],
+          rows: [
+            ['Equity', 'Stocks'],
+            ['Fixed income', 'Bonds'],
+            ['Money market', 'Short-term instruments'],
+            ['Balanced/Hybrid', 'Mix of stocks and bonds']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Funds by Style',
+          headers: ['Type', 'Description'],
+          rows: [
+            ['Growth', 'Companies with high growth'],
+            ['Value', 'Undervalued companies'],
+            ['Blend', 'Mix of growth and value']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Funds by Objective',
+          headers: ['Type', 'Goal'],
+          rows: [
+            ['Index', 'Match benchmark'],
+            ['Active', 'Beat benchmark'],
+            ['Target-date', 'Adjust allocation by date'],
+            ['Sector', 'Focus on one industry']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Key Fund Evaluation Metrics',
+          headers: ['Metric', 'What It Measures'],
+          rows: [
+            ['**Expense ratio**', 'Annual cost'],
+            ['**Turnover**', 'Trading activity'],
+            ['**Alpha**', 'Risk-adjusted outperformance'],
+            ['**Sharpe ratio**', 'Return per unit of total risk'],
+            ['**R-squared**', 'How closely tracks benchmark'],
+            ['**Standard deviation**', 'Volatility']
+          ]
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aids',
+          content:
+            '**A shares = A lot of money upfront** (front load)\n\n**ETF = Efficient Tax Features**'
+        },
+        {
+          type: 'summary',
+          title: 'Key Takeaways',
+          content: [
+            'Open-end (mutual fund): NAV daily; Closed-end: trades at premium/discount',
+            'ETFs: Intraday trading, more tax-efficient (in-kind redemptions)',
+            'A shares: Front load, long-term; C shares: Level load, short-term',
+            'Expense ratios compound—0.10% vs 1.00% can mean $164K difference over 30 years',
+            'Higher turnover = more taxable capital gain distributions'
+          ]
+        }
+      ]
+    },
     keyFormulas: [
-      "NAV = (Total Assets - Liabilities) / Shares Outstanding",
-      "Expense Ratio = Annual Expenses / Average Net Assets"
-    ],
-    mnemonics: [
-      "A shares = A lot of money upfront (front load)",
-      "ETF = Efficient Tax Features"
+      'NAV = (Total Assets - Liabilities) / Shares Outstanding',
+      'Expense Ratio = Annual Expenses / Average Net Assets'
     ],
     practiceProblems: [
       {
-        question: "A fund has $500 million in assets, $5 million in liabilities, and 20 million shares. What is the NAV?",
-        answer: "NAV = ($500M - $5M) / 20M = $495M / 20M = $24.75 per share"
+        question:
+          'A fund has $500 million in assets, $5 million in liabilities, and 20 million shares. What is the NAV?',
+        answer:
+          'NAV = ($500M - $5M) / 20M = $495M / 20M = $24.75 per share'
       },
       {
-        question: "An investor plans to invest $50,000 for 10 years. Should they choose A shares (5% front load, 0.25% annual) or C shares (1% annual level load)?",
-        answer: "A shares: 5% × $50K = $2,500 upfront cost + 10 years × 0.25% annual cost. C shares: 10 years × 1% annual = 10% total load equivalent. For 10+ years, A shares are typically better."
+        question:
+          'An investor plans to invest $50,000 for 10 years. Should they choose A shares (5% front load, 0.25% annual) or C shares (1% annual level load)?',
+        answer:
+          'A shares: 5% × $50K = $2,500 upfront cost + 10 years × 0.25% annual cost. C shares: 10 years × 1% annual = 10% total load equivalent. For 10+ years, A shares are typically better.'
       },
       {
-        question: "Why are ETFs generally more tax-efficient than mutual funds?",
-        answer: "ETFs use in-kind redemptions—authorized participants exchange baskets of securities rather than cash. This avoids selling shares and triggering capital gains that would be distributed to shareholders."
+        question:
+          'Why are ETFs generally more tax-efficient than mutual funds?',
+        answer:
+          'ETFs use in-kind redemptions—authorized participants exchange baskets of securities rather than cash. This avoids selling shares and triggering capital gains that would be distributed to shareholders.'
       }
     ],
-    relatedLessons: ["CFP-INV-L005", "CFP-INV-L006", "CFP-INV-L008"]
+    relatedLessons: ['CFP-INV-L005', 'CFP-INV-L006', 'CFP-INV-L008']
   },
 
   {
-    id: "CFP-INV-L008",
-    domain: "CFP-INV",
-    blueprintArea: "INV-2",
-    title: "Alternative Investments and Derivatives",
+    id: 'CFP-INV-L008',
+    courseId: 'cfp',
+    section: 'CFP-INV',
+    blueprintArea: 'INV-2',
+    title: 'Alternative Investments and Derivatives',
     order: 8,
     duration: 50,
-    objectives: [
-      "Describe characteristics of alternative investments",
-      "Explain option basics: calls, puts, and strategies",
-      "Evaluate REITs and their tax treatment",
-      "Assess suitability of alternatives for client portfolios"
+    difficulty: 'intermediate',
+    topics: [
+      'Alternative investment characteristics',
+      'Options basics: calls, puts, strategies',
+      'REITs and tax treatment',
+      'Suitability of alternatives'
     ],
-    content: `
-# Alternative Investments and Derivatives
-
-Alternatives can enhance diversification and returns but require understanding their unique risks.
-
----
-
-## What Are Alternative Investments?
-
-### Characteristics
-
-| Feature | Description |
-|---------|-------------|
-| **Liquidity** | Often limited |
-| **Correlation** | Lower to traditional assets |
-| **Transparency** | Less regulated |
-| **Complexity** | Often harder to value |
-| **Fees** | Generally higher |
-
-### Common Types
-
-- Real estate (REITs, direct)
-- Commodities
-- Hedge funds
-- Private equity
-- Collectibles
-- Cryptocurrencies
-
----
-
-## Real Estate Investment Trusts (REITs)
-
-### Structure
-
-| Requirement | Detail |
-|-------------|--------|
-| Income distribution | 90%+ of taxable income |
-| Asset composition | 75%+ in real estate |
-| Income sources | 75%+ from real estate |
-| Shares | Widely held (100+ shareholders) |
-
-### Types of REITs
-
-| Type | Invests In |
-|------|-----------|
-| **Equity REITs** | Properties (offices, apartments, retail) |
-| **Mortgage REITs** | Real estate loans |
-| **Hybrid REITs** | Both properties and mortgages |
-
-### Tax Treatment
-
-| Distribution Type | Tax to Shareholder |
-|-------------------|-------------------|
-| Ordinary income | Ordinary rates (may get 20% QBI deduction) |
-| Capital gains | Capital gains rates |
-| Return of capital | Reduces basis (tax-deferred) |
-
----
-
-## Commodities
-
-### Investment Methods
-
-| Method | Description |
-|--------|-------------|
-| **Physical** | Actual commodity (gold bars) |
-| **Futures** | Contracts for future delivery |
-| **ETFs** | Funds tracking commodity prices |
-| **Stocks** | Companies in commodity industries |
-
-### Common Commodities
-
-- Precious metals (gold, silver)
-- Energy (oil, natural gas)
-- Agriculture (corn, wheat)
-- Industrial metals (copper)
-
-### Characteristics
-
-| Feature | Commodity |
-|---------|-----------|
-| Income | None (no dividends/interest) |
-| Storage costs | For physical |
-| Inflation hedge | Often yes |
-| Correlation | Low to stocks/bonds |
-
----
-
-## Options Basics
-
-### Call Options
-
-**Right to BUY** at strike price.
-
-| Position | Outlook | Max Gain | Max Loss |
-|----------|---------|----------|----------|
-| **Buy call** | Bullish | Unlimited | Premium paid |
-| **Sell call** | Neutral/Bearish | Premium received | Unlimited |
-
-### Put Options
-
-**Right to SELL** at strike price.
-
-| Position | Outlook | Max Gain | Max Loss |
-|----------|---------|----------|----------|
-| **Buy put** | Bearish | Strike - premium | Premium paid |
-| **Sell put** | Bullish | Premium received | Strike - premium |
-
----
-
-## Option Value Components
-
-### Intrinsic Value
-
-| Call | Put |
-|------|-----|
-| Stock Price - Strike (if positive) | Strike - Stock Price (if positive) |
-
-### Time Value
-
-Premium above intrinsic value:
-
-$$\\text{Time Value} = \\text{Premium} - \\text{Intrinsic Value}$$
-
-### Option Status
-
-| Status | Call | Put |
-|--------|------|-----|
-| **In-the-money** | Stock > Strike | Stock < Strike |
-| **At-the-money** | Stock = Strike | Stock = Strike |
-| **Out-of-the-money** | Stock < Strike | Stock > Strike |
-
----
-
-## Common Option Strategies
-
-### Covered Call
-
-Own stock + sell call:
-- Generate income from premium
-- Limit upside (stock called away if above strike)
-- Reduce downside slightly (premium offsets loss)
-
-**Best for**: Income generation, willing to sell at strike
-
-### Protective Put
-
-Own stock + buy put:
-- Insurance against price decline
-- Keep unlimited upside
-- Cost = premium paid
-
-**Best for**: Protecting gains, worried about downside
-
-### Collar
-
-Own stock + sell call + buy put:
-- Floor and ceiling on returns
-- Reduced cost (call premium funds put)
-- Limited upside and downside
-
-**Best for**: Concentrated stock positions
-
----
-
-## Hedge Funds
-
-### Characteristics
-
-| Feature | Description |
-|---------|-------------|
-| **Investors** | Accredited/qualified only |
-| **Regulation** | Limited (private placement) |
-| **Liquidity** | Often limited (lock-up periods) |
-| **Fees** | "2 and 20" (2% management, 20% performance) |
-| **Strategies** | Long/short, arbitrage, macro, etc. |
-
-### Common Strategies
-
-| Strategy | Description |
-|----------|-------------|
-| **Long/Short** | Long undervalued, short overvalued |
-| **Market Neutral** | Equal long/short exposure |
-| **Global Macro** | Bets on economic trends |
-| **Event-Driven** | Mergers, bankruptcies, restructuring |
-| **Distressed** | Troubled company securities |
-
----
-
-## Private Equity
-
-### Types
-
-| Type | Description |
-|------|-------------|
-| **Venture capital** | Early-stage companies |
-| **Leveraged buyout (LBO)** | Acquire using debt |
-| **Growth equity** | Established but growing companies |
-| **Mezzanine** | Subordinated debt/preferred |
-
-### Characteristics
-
-| Feature | Consideration |
-|---------|---------------|
-| Return potential | High (20%+) |
-| Liquidity | 7-10 year lock-up typical |
-| Minimums | $250K+ typically |
-| J-curve | Negative returns early (fees, investments) |
-
----
-
-## Key Takeaways
-
-1. **Alternatives** offer diversification but are less liquid and more complex
-2. **REITs** must distribute 90%+ income; may qualify for 20% QBI deduction
-3. **Call** = right to buy; **Put** = right to sell
-4. **Covered call** = own stock + sell call (income generation)
-5. **Protective put** = own stock + buy put (insurance)
-    `,
-    keyTakeaways: [
-      "Alternatives: Lower correlation, less liquid, higher fees, more complex",
-      "REITs: 90%+ distribution required; dividends may get 20% QBI deduction",
-      "Call = right to buy (bullish); Put = right to sell (bearish)",
-      "Covered call: Own stock + sell call = income, limited upside",
-      "Protective put: Own stock + buy put = insurance against decline"
-    ],
+    description:
+      'Describe characteristics of alternative investments. Explain option basics: calls, puts, and strategies. Evaluate REITs and their tax treatment. Assess suitability of alternatives for client portfolios.',
+    content: {
+      sections: [
+        {
+          type: 'callout',
+          title: '🧠 Why This Matters',
+          content:
+            'Alternatives can enhance diversification and returns but require understanding their unique risks.'
+        },
+        {
+          type: 'text',
+          title: 'What Are Alternative Investments?',
+          content:
+            'Alternative investments are non-traditional assets that behave differently from stocks and bonds.'
+        },
+        {
+          type: 'table',
+          title: 'Alternative Investment Characteristics',
+          headers: ['Feature', 'Description'],
+          rows: [
+            ['**Liquidity**', 'Often limited'],
+            ['**Correlation**', 'Lower to traditional assets'],
+            ['**Transparency**', 'Less regulated'],
+            ['**Complexity**', 'Often harder to value'],
+            ['**Fees**', 'Generally higher']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Common Types',
+          content:
+            '- Real estate (REITs, direct)\n- Commodities\n- Hedge funds\n- Private equity\n- Collectibles\n- Cryptocurrencies'
+        },
+        {
+          type: 'text',
+          title: 'Real Estate Investment Trusts (REITs)',
+          content:
+            'REITs provide a liquid way to invest in real estate with specific tax advantages.'
+        },
+        {
+          type: 'table',
+          title: 'REIT Structure Requirements',
+          headers: ['Requirement', 'Detail'],
+          rows: [
+            ['Income distribution', '90%+ of taxable income'],
+            ['Asset composition', '75%+ in real estate'],
+            ['Income sources', '75%+ from real estate'],
+            ['Shares', 'Widely held (100+ shareholders)']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Types of REITs',
+          headers: ['Type', 'Invests In'],
+          rows: [
+            ['**Equity REITs**', 'Properties (offices, apartments, retail)'],
+            ['**Mortgage REITs**', 'Real estate loans'],
+            ['**Hybrid REITs**', 'Both properties and mortgages']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'REIT Tax Treatment',
+          headers: ['Distribution Type', 'Tax to Shareholder'],
+          rows: [
+            ['Ordinary income', 'Ordinary rates (may get 20% QBI deduction)'],
+            ['Capital gains', 'Capital gains rates'],
+            ['Return of capital', 'Reduces basis (tax-deferred)']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Commodities',
+          content: 'Commodities offer inflation protection and low correlation to traditional assets.'
+        },
+        {
+          type: 'table',
+          title: 'Commodity Investment Methods',
+          headers: ['Method', 'Description'],
+          rows: [
+            ['**Physical**', 'Actual commodity (gold bars)'],
+            ['**Futures**', 'Contracts for future delivery'],
+            ['**ETFs**', 'Funds tracking commodity prices'],
+            ['**Stocks**', 'Companies in commodity industries']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Common Commodities',
+          content:
+            '- Precious metals (gold, silver)\n- Energy (oil, natural gas)\n- Agriculture (corn, wheat)\n- Industrial metals (copper)'
+        },
+        {
+          type: 'table',
+          title: 'Commodity Characteristics',
+          headers: ['Feature', 'Commodity'],
+          rows: [
+            ['Income', 'None (no dividends/interest)'],
+            ['Storage costs', 'For physical'],
+            ['Inflation hedge', 'Often yes'],
+            ['Correlation', 'Low to stocks/bonds']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Options Basics',
+          content:
+            'Options are derivatives that give the holder the right, but not the obligation, to buy or sell at a specified price.'
+        },
+        {
+          type: 'table',
+          title: 'Call Options',
+          headers: ['Position', 'Outlook', 'Max Gain', 'Max Loss'],
+          rows: [
+            ['**Buy call**', 'Bullish', 'Unlimited', 'Premium paid'],
+            ['**Sell call**', 'Neutral/Bearish', 'Premium received', 'Unlimited']
+          ]
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aid',
+          content: '**Call** = Right to **BUY** at strike price'
+        },
+        {
+          type: 'table',
+          title: 'Put Options',
+          headers: ['Position', 'Outlook', 'Max Gain', 'Max Loss'],
+          rows: [
+            ['**Buy put**', 'Bearish', 'Strike - premium', 'Premium paid'],
+            ['**Sell put**', 'Bullish', 'Premium received', 'Strike - premium']
+          ]
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aid',
+          content: '**Put** = Right to **SELL** at strike price'
+        },
+        {
+          type: 'text',
+          title: 'Option Value Components',
+          content:
+            '**Intrinsic Value:**\n- Call: Stock Price - Strike (if positive)\n- Put: Strike - Stock Price (if positive)\n\n**Time Value:**\n$$\\text{Time Value} = \\text{Premium} - \\text{Intrinsic Value}$$'
+        },
+        {
+          type: 'table',
+          title: 'Option Status',
+          headers: ['Status', 'Call', 'Put'],
+          rows: [
+            ['**In-the-money**', 'Stock > Strike', 'Stock < Strike'],
+            ['**At-the-money**', 'Stock = Strike', 'Stock = Strike'],
+            ['**Out-of-the-money**', 'Stock < Strike', 'Stock > Strike']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Common Option Strategies',
+          content: 'These strategies combine stock positions with options for different objectives.'
+        },
+        {
+          type: 'list',
+          title: 'Covered Call',
+          items: [
+            { term: 'Structure', definition: 'Own stock + sell call' },
+            { term: 'Benefit', definition: 'Generate income from premium' },
+            { term: 'Trade-off', definition: 'Limit upside (stock called away if above strike)' },
+            { term: 'Protection', definition: 'Reduce downside slightly (premium offsets loss)' },
+            { term: 'Best for', definition: 'Income generation, willing to sell at strike' }
+          ]
+        },
+        {
+          type: 'list',
+          title: 'Protective Put',
+          items: [
+            { term: 'Structure', definition: 'Own stock + buy put' },
+            { term: 'Benefit', definition: 'Insurance against price decline' },
+            { term: 'Trade-off', definition: 'Keep unlimited upside' },
+            { term: 'Cost', definition: 'Premium paid' },
+            { term: 'Best for', definition: 'Protecting gains, worried about downside' }
+          ]
+        },
+        {
+          type: 'list',
+          title: 'Collar',
+          items: [
+            { term: 'Structure', definition: 'Own stock + sell call + buy put' },
+            { term: 'Benefit', definition: 'Floor and ceiling on returns' },
+            { term: 'Trade-off', definition: 'Reduced cost (call premium funds put)' },
+            { term: 'Exposure', definition: 'Limited upside and downside' },
+            { term: 'Best for', definition: 'Concentrated stock positions' }
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Hedge Funds',
+          content:
+            'Hedge funds are private investment pools for accredited investors using sophisticated strategies.'
+        },
+        {
+          type: 'table',
+          title: 'Hedge Fund Characteristics',
+          headers: ['Feature', 'Description'],
+          rows: [
+            ['**Investors**', 'Accredited/qualified only'],
+            ['**Regulation**', 'Limited (private placement)'],
+            ['**Liquidity**', 'Often limited (lock-up periods)'],
+            ['**Fees**', '"2 and 20" (2% management, 20% performance)'],
+            ['**Strategies**', 'Long/short, arbitrage, macro, etc.']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Common Hedge Fund Strategies',
+          headers: ['Strategy', 'Description'],
+          rows: [
+            ['**Long/Short**', 'Long undervalued, short overvalued'],
+            ['**Market Neutral**', 'Equal long/short exposure'],
+            ['**Global Macro**', 'Bets on economic trends'],
+            ['**Event-Driven**', 'Mergers, bankruptcies, restructuring'],
+            ['**Distressed**', 'Troubled company securities']
+          ]
+        },
+        {
+          type: 'text',
+          title: 'Private Equity',
+          content: 'Private equity involves direct investment in private companies.'
+        },
+        {
+          type: 'table',
+          title: 'Private Equity Types',
+          headers: ['Type', 'Description'],
+          rows: [
+            ['**Venture capital**', 'Early-stage companies'],
+            ['**Leveraged buyout (LBO)**', 'Acquire using debt'],
+            ['**Growth equity**', 'Established but growing companies'],
+            ['**Mezzanine**', 'Subordinated debt/preferred']
+          ]
+        },
+        {
+          type: 'table',
+          title: 'Private Equity Characteristics',
+          headers: ['Feature', 'Consideration'],
+          rows: [
+            ['Return potential', 'High (20%+)'],
+            ['Liquidity', '7-10 year lock-up typical'],
+            ['Minimums', '$250K+ typically'],
+            ['J-curve', 'Negative returns early (fees, investments)']
+          ]
+        },
+        {
+          type: 'warning',
+          title: '⚠️ Exam Trap: J-Curve',
+          content:
+            'Private equity often shows **negative returns in early years** due to fees and investment period before companies mature. This is called the **J-curve effect**.'
+        },
+        {
+          type: 'callout',
+          title: '🧠 Memory Aids',
+          content:
+            '**CALL up, PUT down** (call = buy/bullish, put = sell/bearish)\n\n**Covered Call = Collect premium, Cap upside**'
+        },
+        {
+          type: 'summary',
+          title: 'Key Takeaways',
+          content: [
+            'Alternatives: Lower correlation, less liquid, higher fees, more complex',
+            'REITs: 90%+ distribution required; dividends may get 20% QBI deduction',
+            'Call = right to buy (bullish); Put = right to sell (bearish)',
+            'Covered call: Own stock + sell call = income, limited upside',
+            'Protective put: Own stock + buy put = insurance against decline'
+          ]
+        }
+      ]
+    },
     keyFormulas: [
-      "Call Intrinsic Value = MAX(Stock - Strike, 0)",
-      "Put Intrinsic Value = MAX(Strike - Stock, 0)",
-      "Time Value = Premium - Intrinsic Value"
-    ],
-    mnemonics: [
-      "CALL up, PUT down (call = buy/bullish, put = sell/bearish)",
-      "Covered Call = Collect premium, Cap upside"
+      'Call Intrinsic Value = MAX(Stock - Strike, 0)',
+      'Put Intrinsic Value = MAX(Strike - Stock, 0)',
+      'Time Value = Premium - Intrinsic Value'
     ],
     practiceProblems: [
       {
-        question: "A call option has strike $50, stock is at $55, premium is $8. What is intrinsic and time value?",
-        answer: "Intrinsic = $55 - $50 = $5. Time value = $8 - $5 = $3. The option is in-the-money by $5."
+        question:
+          'A call option has strike $50, stock is at $55, premium is $8. What is intrinsic and time value?',
+        answer:
+          'Intrinsic = $55 - $50 = $5. Time value = $8 - $5 = $3. The option is in-the-money by $5.'
       },
       {
-        question: "An investor owns 100 shares at $60 and sells a call with $65 strike for $3 premium. What happens if stock goes to $70?",
-        answer: "The call is exercised; investor sells at $65. Total received: $65 + $3 premium = $68 per share. Miss out on $70 - $68 = $2 of additional upside."
+        question:
+          'An investor owns 100 shares at $60 and sells a call with $65 strike for $3 premium. What happens if stock goes to $70?',
+        answer:
+          'The call is exercised; investor sells at $65. Total received: $65 + $3 premium = $68 per share. Miss out on $70 - $68 = $2 of additional upside.'
       },
       {
-        question: "A REIT pays $4 per share in distributions. How is this typically taxed?",
-        answer: "Most REIT distributions are ordinary income (taxed at ordinary rates). However, non-capital gain, non-qualified dividend portions may qualify for the 20% QBI deduction under Section 199A. Some may be return of capital (tax-deferred, reduces basis)."
+        question:
+          'A REIT pays $4 per share in distributions. How is this typically taxed?',
+        answer:
+          'Most REIT distributions are ordinary income (taxed at ordinary rates). However, non-capital gain, non-qualified dividend portions may qualify for the 20% QBI deduction under Section 199A. Some may be return of capital (tax-deferred, reduces basis).'
       }
     ],
-    relatedLessons: ["CFP-INV-L005", "CFP-INV-L006", "CFP-TAX-L003"]
+    relatedLessons: ['CFP-INV-L005', 'CFP-INV-L006', 'CFP-TAX-L003']
   }
 ];
 

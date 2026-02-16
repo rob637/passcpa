@@ -33,7 +33,7 @@ import { Card } from '../common/Card';
 import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
 import { CBQ, CBQQuestion } from '../../types';
-import { CMA1_CBQS, CMA2_CBQS } from '../../data/cma/cbq';
+import { getCBQsBySection } from '../../data/cma/cbq';
 
 // ============================================
 // Types
@@ -319,8 +319,8 @@ const CMACBQSimulator: React.FC = () => {
   const [viewState, setViewState] = useState<'select' | 'scenario' | 'questions' | 'results'>('select');
   const [results, setResults] = useState<QuestionResult[]>([]);
 
-  // Get CBQs for section
-  const cbqs = selectedSection === 'CMA1' ? CMA1_CBQS : CMA2_CBQS;
+  // Get CBQs for section (includes all batches)
+  const cbqs = getCBQsBySection(selectedSection);
 
   // Timer
   useEffect(() => {

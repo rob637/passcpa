@@ -597,22 +597,24 @@ const Progress: React.FC = () => {
           };
         });
         
-        // Sort units by domain number then sub-area (handles CISA1-A, CISA2-B, SEE1-1, etc.)
+        // Sort units by section prefix then sub-area number
+        // Handles both formats: CISA1-A, SEE1-5 (domain-embedded) and INV-1, PSY-2 (CFP-style)
         calculatedUnitStats.sort((a, b) => {
-          // Extract domain number (e.g., "CISA1-A" -> 1, "SEE1-5" -> 1)
-          const getDomainNum = (id: string) => {
-            const match = id.match(/(\d+)/);
-            return match ? parseInt(match[1], 10) : 0;
+          // Extract prefix (everything before the last dash-number or dash-letter)
+          // e.g., "CISA1-A" -> "CISA1", "INV-1" -> "INV", "SEE1-5" -> "SEE1"
+          const getPrefix = (id: string) => {
+            const match = id.match(/^([A-Z]+\d*)/i);
+            return match ? match[1].toUpperCase() : id;
           };
-          // Extract sub-area suffix (e.g., "CISA1-A" -> "A", "SEE1-5" -> "5")
+          // Extract sub-area suffix (e.g., "CISA1-A" -> "A", "INV-1" -> "1")
           const getSubArea = (id: string) => {
             const match = id.match(/-([A-Z0-9]+)$/i);
             return match ? match[1] : '';
           };
           
-          const domainA = getDomainNum(a.id);
-          const domainB = getDomainNum(b.id);
-          if (domainA !== domainB) return domainA - domainB;
+          const prefixA = getPrefix(a.id);
+          const prefixB = getPrefix(b.id);
+          if (prefixA !== prefixB) return prefixA.localeCompare(prefixB, undefined, { numeric: true });
           
           // Sort sub-areas (A, B, C... or 1, 2, 3...)
           const subA = getSubArea(a.id);

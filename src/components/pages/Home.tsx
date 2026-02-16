@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import logger from '../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
@@ -137,6 +137,12 @@ const Home = () => {
   const initialSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const [activeSection, setActiveSection] = useState<string>(initialSection);
   
+  // Keep a ref to track activeSection for effect comparisons (avoids stale closure issues)
+  const activeSectionRef = useRef(activeSection);
+  useEffect(() => {
+    activeSectionRef.current = activeSection;
+  }, [activeSection]);
+  
   // Lock body scroll when section picker is open
   useEffect(() => {
     if (showSectionPicker) {
@@ -148,11 +154,12 @@ const Home = () => {
   }, [showSectionPicker]);
 
   // Sync local state when profile loads/changes
-  // Use getCurrentSection to ensure section is valid for current course
+  // Use ref for comparison to avoid stale closure issues
   useEffect(() => {
     if (userProfile?.examSection) {
       const validSection = getCurrentSection(userProfile, courseId, getDefaultSection);
-      if (validSection !== activeSection) {
+      // Use ref to get current value (not stale closure)
+      if (validSection !== activeSectionRef.current) {
         setActiveSection(validSection);
       }
     }
@@ -163,7 +170,8 @@ const Home = () => {
     // Check if current section is valid for the new course using course config
     const validSections = course?.sections.map(s => s.id) || [];
     
-    if (validSections.length > 0 && !validSections.includes(activeSection)) {
+    // Use ref to get current value (not stale closure)
+    if (validSections.length > 0 && !validSections.includes(activeSectionRef.current)) {
       // Reset to default if current section isn't valid for this course
       setActiveSection(getDefaultSection(courseId));
     }

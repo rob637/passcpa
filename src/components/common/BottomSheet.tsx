@@ -180,8 +180,8 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
         {/* Content */}
         <div 
           ref={contentRef}
-          className="overflow-y-auto overscroll-contain px-4 pb-6"
-          style={{ maxHeight: `calc(${maxHeight}vh - ${title ? '80px' : '40px'})` }}
+          className="overflow-y-auto overscroll-contain px-4 pb-6 pb-safe"
+          style={{ maxHeight: `calc(${maxHeight}vh - ${title ? '100px' : '60px'})` }}
         >
           {children}
         </div>

@@ -20,6 +20,7 @@ import logger from '../utils/logger';
 export interface PracticeSession {
   id: string;
   userId: string;
+  courseId?: string;  // Added to filter sessions by course
   section: string;
   mode: 'study' | 'timed' | 'exam' | 'weak';
   questionCount: number;
@@ -100,4 +101,16 @@ export const getPracticeSessionsBySection = async (
 ): Promise<PracticeSession[]> => {
   const allSessions = await getPracticeSessions(userId, maxResults * 2);
   return allSessions.filter(s => s.section === section).slice(0, maxResults);
+};
+
+/**
+ * Get practice sessions filtered by courseId
+ */
+export const getPracticeSessionsByCourse = async (
+  userId: string,
+  courseId: string,
+  maxResults: number = 10
+): Promise<PracticeSession[]> => {
+  const allSessions = await getPracticeSessions(userId, maxResults * 3);
+  return allSessions.filter(s => s.courseId === courseId).slice(0, maxResults);
 };

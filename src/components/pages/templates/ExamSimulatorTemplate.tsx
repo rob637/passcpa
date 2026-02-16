@@ -577,7 +577,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             
             {allowMultiSectionSelect ? (
               <div className="space-y-2">
-                <label className="flex items-center space-x-2 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded cursor-pointer">
+                <label className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded cursor-pointer">
                   <input 
                     type="checkbox" 
                     checked={selectedSections.length === Object.keys(sections).length}
@@ -588,13 +588,13 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                         setSelectedSections(Object.keys(sections) as SectionId[]);
                       }
                     }}
-                    className="rounded text-indigo-600 focus:ring-indigo-500"
+                    className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600"
                   />
                   <span className="font-medium text-gray-900 dark:text-white">All Domains</span>
                 </label>
                 <div className="h-px bg-gray-200 dark:bg-gray-700 my-2" />
                 {(Object.entries(sections) as [SectionId, SectionInfo][]).map(([id, info]) => (
-                  <label key={id} className="flex items-center space-x-2 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded cursor-pointer">
+                  <label key={id} className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded cursor-pointer">
                     <input 
                       type="checkbox"
                       checked={selectedSections.includes(id)}
@@ -605,7 +605,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                           setSelectedSections(selectedSections.filter(s => s !== id));
                         }
                       }}
-                      className="rounded text-indigo-600 focus:ring-indigo-500"
+                      className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600"
                     />
                     <span className="text-sm text-gray-700 dark:text-gray-300">{info.name}</span>
                   </label>
@@ -678,9 +678,9 @@ export function ExamSimulatorTemplate<SectionId extends string>({
 
           {/* Start Button */}
           <div className="text-center">
-            {/* Realistic Theme Toggle */}
+            {/* Realistic Theme Toggle - Desktop Only (interface doesn't render well on mobile) */}
             {testingProvider && (
-              <div className="max-w-lg mx-auto mb-6 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="hidden md:block max-w-lg mx-auto mb-6 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
                 <label className="flex items-center justify-between cursor-pointer">
                   <div className="flex items-center gap-3">
                     <div className={clsx(

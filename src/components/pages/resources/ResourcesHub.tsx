@@ -109,7 +109,7 @@ const ResourcesHub: React.FC = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+    <div className="px-2 py-1 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">

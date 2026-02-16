@@ -139,7 +139,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6">
       <div className="max-w-md mx-auto">
       <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">

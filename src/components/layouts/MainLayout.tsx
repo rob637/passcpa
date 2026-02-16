@@ -297,7 +297,7 @@ const MainLayout = () => {
         aria-label="Main content"
         className={clsx(
           'flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 md:pt-8 focus:outline-none',
-          trialBannerVisible ? 'pt-[88px]' : 'pt-16'
+          trialBannerVisible ? 'pt-[76px]' : 'pt-[58px]'
         )}
       >
         <PageTransition>

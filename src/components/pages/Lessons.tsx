@@ -239,7 +239,7 @@ const Lessons: React.FC = () => {
   }
 
   return (
-    <div className="px-2 py-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+    <div className="px-2 py-1 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-4">

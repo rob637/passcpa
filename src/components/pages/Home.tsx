@@ -284,8 +284,8 @@ const Home = () => {
   );
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div className="max-w-lg mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6">
+      <div className="max-w-lg mx-auto space-y-4 sm:space-y-6">
       {/* Section Picker Bottom Sheet */}
       <BottomSheet
         isOpen={showSectionPicker}

@@ -384,8 +384,8 @@ const You: React.FC = () => {
   const weeklyLessons = weeklyActivity.reduce((sum, d) => sum + d.lessons, 0);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div className="max-w-lg mx-auto space-y-6 pb-8">
+    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6">
+      <div className="max-w-lg mx-auto space-y-4 sm:space-y-6 pb-8">
       {/* Profile Header */}
       <Card className="p-6">
         <div className="flex items-center gap-4">

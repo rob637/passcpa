@@ -196,7 +196,10 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   return children;
 };
 
-// Admin-only Route - requires isAdmin: true in Firestore user profile
+// Admin email whitelist - fallback when Firestore isAdmin flag not set
+const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
+
+// Admin-only Route - requires isAdmin: true in Firestore user profile OR whitelisted email
 const AdminRoute = ({ children }: RouteProps) => {
   const { user, userProfile, loading } = useAuth();
 
@@ -208,8 +211,8 @@ const AdminRoute = ({ children }: RouteProps) => {
     return <Navigate to="/login" replace />;
   }
 
-  // Check admin status from Firestore user profile
-  const isAdmin = userProfile?.isAdmin === true;
+  // Check admin status from Firestore user profile OR email whitelist
+  const isAdmin = userProfile?.isAdmin === true || ADMIN_EMAILS.includes(user.email || '');
   
   if (!isAdmin) {
     // Non-admins silently redirected to home

@@ -1308,18 +1308,16 @@ body.dark {
 @media (pointer: coarse) {
   button,
   [role="button"],
-  input[type="checkbox"],
-  input[type="radio"],
   a {
     min-width: 44px;
     min-height: 44px;
   }
 
-  /* Radio and checkbox touch targets */
+  /* Radio and checkbox - keep visually small but label provides touch target */
   input[type="checkbox"],
   input[type="radio"] {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
   }
 
   /* Option buttons need larger touch targets */

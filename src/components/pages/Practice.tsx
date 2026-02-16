@@ -39,7 +39,7 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
 import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
-import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
+import { getPracticeSessions, getPracticeSessionsByCourse, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import feedback from '../../services/feedback';
@@ -112,7 +112,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
         return;
       }
       try {
-        const sessions = await getPracticeSessions(userId, 5);
+        // Filter by courseId to only show sessions for the current course
+        const sessions = await getPracticeSessionsByCourse(userId, courseId, 5);
         setPracticeHistory(sessions);
       } catch (error) {
         logger.error('Error loading practice history:', error);
@@ -121,7 +122,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
       }
     };
     loadHistory();
-  }, [userId]);
+  }, [userId, courseId]);
 
   // Derive mode from toggles for backwards compatibility
   const derivedMode = config.mode === 'weak' ? 'weak' : (config.mode === 'timed' ? 'timed' : 'study');
@@ -1279,6 +1280,7 @@ const Practice: React.FC = () => {
     // Save practice session to history for Attempts List
     if (user?.uid && sessionConfig) {
       savePracticeSession(user.uid, {
+        courseId,  // Include courseId to filter by course later
         section: sessionConfig.section,
         mode: sessionConfig.mode,
         questionCount: totalQuestions,
@@ -1327,6 +1329,9 @@ const Practice: React.FC = () => {
         user.uid,
         activityId,
         userProfile?.examSection || getDefaultSection(courseId),
+        undefined,
+        undefined,
+        courseId
       ).catch(err => logger.error('Failed to auto-complete daily plan activity:', err));
       
       // Also save to legacy localStorage for DailyPlanCard to pick up

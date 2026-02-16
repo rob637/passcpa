@@ -311,14 +311,15 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
       // Find the activity in the plan to get metadata for duration tracking
       const matchedActivity = plan?.activities.find(a => a.id === activityId);
-      // Mark the activity as complete - pass section for correct cache key
+      // Mark the activity as complete - pass section and courseId for correct cache key
       const section = plan?.section || currentSection;
       markActivityCompleted(
         user.uid,
         activityId,
         section,
         matchedActivity?.estimatedMinutes,
-        matchedActivity?.type
+        matchedActivity?.type,
+        courseId
       ).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);

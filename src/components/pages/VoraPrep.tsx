@@ -139,17 +139,17 @@ const WHY_VORAPREP = [
   {
     icon: Brain,
     title: 'AI-Powered Learning',
-    description: 'Vory, our AI tutor, adapts to your learning style and identifies your weak areas in real-time.',
+    description: 'Our adaptive engine calibrates difficulty on a continuous scale, factors in your response time, and targets your weakest areas.',
   },
   {
     icon: Target,
     title: 'Adaptive Practice',
-    description: 'Questions get harder as you improve. 70% of practice focuses on topics where you struggle most.',
+    description: 'Difficulty adjusts smoothly as you improve. 70% of practice focuses on topics where you struggle most.',
   },
   {
     icon: Zap,
-    title: 'Spaced Repetition',
-    description: 'SM-2 algorithm ensures you review concepts at the perfect moment for maximum retention.',
+    title: 'Smart Spaced Repetition',
+    description: 'Forgetting-curve modeling predicts when you\'ll forget each concept and resurfaces it at the perfect moment.',
   },
   {
     icon: Shield,

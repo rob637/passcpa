@@ -125,7 +125,7 @@ export const SHARED_WHY_VORAPREP = [
   {
     icon: Brain,
     title: 'AI-Powered Learning',
-    description: 'Our AI tracks your weak areas and adjusts difficulty in real-time. 70% of practice focuses on topics you struggle with most.',
+    description: 'Our adaptive engine continuously calibrates question difficulty, factors in your response time, and focuses 70% of practice on your weakest areas.',
     stat: 'Adaptive',
   },
   {
@@ -136,8 +136,8 @@ export const SHARED_WHY_VORAPREP = [
   },
   {
     icon: RefreshCw,
-    title: 'Spaced Repetition',
-    description: 'SM-2 algorithm schedules reviews right before you forget. Maximum retention, minimum time.',
+    title: 'Smart Spaced Repetition',
+    description: 'Forgetting-curve modeling predicts exactly when you\'ll forget each concept and resurfaces it at the optimal moment. Maximum retention, minimum time.',
     stat: '2x Retention',
   },
   {
@@ -212,8 +212,8 @@ export const CPA_CONFIG: ExamLandingConfig = {
     data: [
       { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
       { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: '2025 & 2026 Blueprint', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Task-Based Simulations', voraprep: COURSE_DISPLAY_STATS.cpa.tbs || '280+', competitor1: '200+', competitor2: '175+', competitor3: '150+', highlight: true },
@@ -274,8 +274,8 @@ export const EA_CONFIG: ExamLandingConfig = {
     data: [
       { feature: 'Price', voraprep: '$149/yr*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Text-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 SEE Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.ea.questions, competitor1: '2,500+', competitor2: '1,800+', competitor3: '2,000+' },
@@ -337,8 +337,8 @@ export const CMA_CONFIG: ExamLandingConfig = {
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'Both Parts Included', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cma.questions, competitor1: '2,000+', competitor2: '1,500+', competitor3: '2,000+' },
@@ -403,8 +403,8 @@ export const CIA_CONFIG: ExamLandingConfig = {
     data: [
       { feature: 'Price', voraprep: '$149/yr*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cia.questions, competitor1: '1,500+', competitor2: '1,200+', competitor3: '1,000+' },
@@ -472,8 +472,8 @@ export const CFP_CONFIG: ExamLandingConfig = {
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 8 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
       { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cfp.questions, competitor1: '2,000+', competitor2: '2,500+', competitor3: '2,000+' },
@@ -539,8 +539,8 @@ export const CISA_CONFIG: ExamLandingConfig = {
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$795', competitor2: '$299', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
-      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Limited', competitor2: false, highlight: true },
+      { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', highlight: true },
       { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true },
       { feature: 'Practice Questions', voraprep: COURSE_DISPLAY_STATS.cisa.questions, competitor1: '1,000', competitor2: '500+' },

@@ -6,6 +6,7 @@ import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';
 import { isAdminEmail } from './config/adminConfig';
 import { getCourseHomePath } from './utils/courseNavigation';
+import { initAnalytics, trackPageView } from './services/analytics';
 import type { CourseId } from './types/course';
 
 // Layouts (always loaded - part of shell)
@@ -136,6 +137,25 @@ const ScrollToTop = () => {
     scrollToTop();
   }, [pathname]);
   
+  return null;
+};
+
+// Global page tracker - initializes analytics and tracks ALL page views (including public landing pages)
+const GlobalPageTracker = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  useEffect(() => {
+    const title = document.title || 'VoraPrep';
+    const timeout = setTimeout(() => {
+      trackPageView(pathname, title);
+    }, 150);
+    return () => clearTimeout(timeout);
+  }, [pathname]);
+
   return null;
 };
 
@@ -316,6 +336,7 @@ function App() {
             <TourProvider>
               <ToastProvider>
               <ScrollToTop />
+              <GlobalPageTracker />
               {/* <EnvironmentIndicator /> */}
               <UpdateBanner onUpdate={handleUpdate} />
               <Suspense fallback={<FullPageLoader />}>

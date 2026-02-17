@@ -1857,9 +1857,24 @@ const Practice: React.FC = () => {
             Previous
           </Button>
 
-          {/* Question Dots */}
-          <div className="flex-1 flex items-center justify-center gap-1.5 overflow-x-auto py-2">
-            {questions.slice(0, Math.min(10, questions.length)).map((q, index) => (
+          {/* Question Dots - scrollable to show all questions */}
+          <div 
+            className="flex-1 flex items-center gap-1.5 overflow-x-auto py-2 scrollbar-hide"
+            ref={(el) => {
+              // Auto-scroll to keep current question visible
+              if (el) {
+                const activeBtn = el.children[currentIndex] as HTMLElement;
+                if (activeBtn) {
+                  const containerRect = el.getBoundingClientRect();
+                  const btnRect = activeBtn.getBoundingClientRect();
+                  if (btnRect.left < containerRect.left || btnRect.right > containerRect.right) {
+                    activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                  }
+                }
+              }
+            }}
+          >
+            {questions.map((q, index) => (
               <button
                 key={q.id}
                 onClick={() => goToQuestion(index)}
@@ -1868,11 +1883,11 @@ const Practice: React.FC = () => {
                   currentIndex === index && 'bg-primary-500 text-white',
                   currentIndex !== index &&
                     answers[q.id]?.correct &&
-                    'bg-success-100 text-success-700',
+                    'bg-success-100 text-success-700 dark:bg-success-900/40 dark:text-success-300',
                   currentIndex !== index &&
                     answers[q.id] &&
                     !answers[q.id].correct &&
-                    'bg-red-100 text-red-700',
+                    'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300',
                   currentIndex !== index &&
                     !answers[q.id] &&
                     'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
@@ -1881,11 +1896,6 @@ const Practice: React.FC = () => {
                 {index + 1}
               </button>
             ))}
-            {questions.length > 10 && (
-              <span className="text-sm text-slate-500 dark:text-slate-400">
-                +{questions.length - 10}
-              </span>
-            )}
           </div>
 
           {currentIndex === questions.length - 1 ? (

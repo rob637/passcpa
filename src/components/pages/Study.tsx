@@ -133,7 +133,7 @@ const Study = () => {
     {
       id: 'flashcards',
       title: 'Flashcard Review',
-      description: 'Smart review for long-term retention',
+      description: 'Spaced repetition powered by forgetting-curve modeling',
       icon: Brain,
       color: 'success',
       link: '/flashcards',

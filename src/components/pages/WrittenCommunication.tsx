@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { Link, useSearchParams } from 'react-router-dom';
+import { useStudy } from '../../hooks/useStudy';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import {
@@ -369,6 +370,7 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({ scores, onSelectNew, back
 
 const WrittenCommunication: React.FC = () => {
   const [searchParams] = useSearchParams();
+  const { recordStudyActivity } = useStudy();
   const [activeTask, setActiveTask] = useState<WCTask | null>(null);
   const [response, setResponse] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -425,7 +427,13 @@ const WrittenCommunication: React.FC = () => {
     };
     setScores(newScores);
     setIsSubmitted(true);
-  }, [activeTask, response]);
+
+    // Record points to daily log for daily goal progress (15 pts per written comm)
+    recordStudyActivity('written_communication', 15, 10, {
+      taskId: activeTask.id,
+      section: activeTask.section,
+    }).catch(() => { /* fire-and-forget */ });
+  }, [activeTask, response, recordStudyActivity]);
 
   if (!activeTask) {
     if (isLoading) {

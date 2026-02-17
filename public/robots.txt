@@ -3,20 +3,27 @@
 
 User-agent: *
 Allow: /
-Allow: /pricing
 Allow: /cpa
 Allow: /ea-prep
 Allow: /cma
 Allow: /cia
 Allow: /cfp
 Allow: /cisa
+Allow: /cpa/info
+Allow: /cma/info
+Allow: /cia/info
+Allow: /cfp/info
+Allow: /cisa/info
 Allow: /login
 Allow: /register
 Allow: /terms
 Allow: /privacy
+Allow: /help
+Allow: /pass-guarantee
 
 # Disallow app routes (require authentication)
 Disallow: /dashboard
+Disallow: /home
 Disallow: /study
 Disallow: /practice
 Disallow: /flashcards
@@ -27,9 +34,17 @@ Disallow: /lessons/*
 Disallow: /progress
 Disallow: /achievements
 Disallow: /tutor
+Disallow: /ai-tutor
 Disallow: /settings
 Disallow: /onboarding
 Disallow: /admin
+Disallow: /journey
+Disallow: /resources
+Disallow: /community
+Disallow: /you
+Disallow: /learn
+Disallow: /checkout-success
+Disallow: /checkout-cancel
 
 # Sitemap location
 Sitemap: https://voraprep.com/sitemap.xml

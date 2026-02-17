@@ -143,5 +143,15 @@ service cloud.firestore {
       // No updates or deletes from client
       allow update, delete: if isAdmin();
     }
+
+    // Rate limits - server-managed, no client access
+    match /rate_limits/{docId} {
+      allow read, write: if false; // Admin SDK only
+    }
+
+    // Processed Stripe events - idempotency tracking, server-managed
+    match /processed_stripe_events/{eventId} {
+      allow read, write: if false; // Admin SDK only
+    }
   }
 }

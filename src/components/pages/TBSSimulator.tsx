@@ -792,14 +792,17 @@ const TBSSimulator: React.FC = () => {
   // Load TBS list for selection view
   useEffect(() => {
     if (viewState !== 'select') return;
+    let cancelled = false;
     const loadTBSList = async () => {
       setTbsLoading(true);
       const sectionTbs = await fetchTBSBySection(selectedSection as ExamSection);
+      if (cancelled) return;
       setTbsList(sectionTbs || []);
       
       // Load TBS history for completion indicators
       if (user?.uid) {
         const history = await getTBSHistory(user.uid, selectedSection);
+        if (cancelled) return;
         const historyMap = new Map(history.map(h => [h.tbsId, h]));
         setTbsHistory(historyMap);
       }
@@ -807,6 +810,7 @@ const TBSSimulator: React.FC = () => {
       setTbsLoading(false);
     };
     loadTBSList();
+    return () => { cancelled = true; };
   }, [viewState, selectedSection, user?.uid]);
 
   // Scroll to top when entering active view

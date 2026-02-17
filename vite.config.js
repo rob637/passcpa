@@ -112,15 +112,18 @@ export default defineConfig({
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,
         runtimeCaching: [
-          // Cache questions and lessons data including TBS
+          // Cache question/lesson/content data chunks (Vite hashes them as data-*)
           {
-            urlPattern: /\/src\/data\/.*\.(ts|json)$/,
+            urlPattern: /\/assets\/data-.*\.js$/,
             handler: 'CacheFirst',
             options: {
               cacheName: 'content-data-cache',
               expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days (hashed = immutable)
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
               }
             }
           },
@@ -197,7 +200,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    sourcemap: process.env.NODE_ENV !== 'production',
     rollupOptions: {
       output: {
         // Manual chunks for better code splitting - Google/Apple quality

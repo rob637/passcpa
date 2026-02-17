@@ -36,6 +36,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { useSwipe } from '../../hooks/useSwipe';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
+import { selectQuestionsFromEngine } from '../../services/adaptiveEngineAdapter';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
 import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
@@ -1020,27 +1021,72 @@ const Practice: React.FC = () => {
         
         // HR1 filter only applies to CPA REG/TCP sections (tax law updates)
         const applyHr1Filter = is2026 && courseId === 'cpa' && (section === 'REG' || section === 'TCP');
+
+        // Determine if we should use the adaptive engine for question selection.
+        // Use adaptive engine when:
+        // - Mode is "study" (the default/adaptive mode)
+        // - No specific subtopic or blueprint area filter (those are explicit user choices)
+        // - No question-status filter (unanswered/incorrect/correct are explicit filters)
+        // - User is authenticated
+        const hasExplicitFilters = !!(subtopicParam || blueprintAreaParam ||
+          (config.questionStatus && config.questionStatus !== 'all') ||
+          (config.difficulty && config.difficulty !== 'all'));
+        const shouldUseAdaptiveEngine = config.mode === 'study' && !hasExplicitFilters && !!userProfile?.id;
         
-        // Use smart selection for study mode (spaced repetition + fresh questions)
-        const shouldUseSmartSelection = config.mode === 'study' && !!userProfile?.id;
-        
-        // Get exam date for adaptive review weights
-        const examDateStr = examDate ? examDate.toISOString().split('T')[0] : undefined;
-        
-        fetchedQuestions = await fetchQuestions({
-          section,
-          subtopic: subtopicParam || undefined, // Filter by specific lesson subtopic (most specific)
-          blueprintArea: !subtopicParam ? blueprintAreaParam || undefined : undefined, // Fallback to blueprintArea
-          difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
-          count: config.count,
-          hr1Only: applyHr1Filter, // Only for tax sections (REG, TCP) in 2026
-          mode: (config.mode === 'study' ? undefined : config.mode) as any, // Cast to fix strict type overlap
-          courseId, // Multi-course support
-          userId: userProfile?.id, // For smart question selection
-          useSmartSelection: shouldUseSmartSelection, // Enable spaced repetition for study mode
-          examDate: examDateStr, // For adaptive weights near exam date
-          questionStatus: config.questionStatus !== 'all' ? config.questionStatus as any : undefined, // Filter by answer history
-        });
+        if (shouldUseAdaptiveEngine) {
+          // Use adaptive engine for intelligent question selection
+          // First, load all questions for the section as candidates
+          const allCandidates = await fetchQuestions({
+            section,
+            count: 500, // Load a large pool for the engine to select from
+            hr1Only: applyHr1Filter,
+            courseId,
+          });
+
+          // Let the adaptive engine pick the best questions
+          fetchedQuestions = await selectQuestionsFromEngine(
+            courseId as any,
+            allCandidates,
+            {
+              section,
+              count: config.count,
+              prioritizeWeakAreas: true,
+              includeReviewDue: true,
+              examWeighted: false,
+              difficulty: 'adaptive',
+            }
+          );
+
+          // Fallback: if engine returned too few questions, fill with regular fetch
+          if (fetchedQuestions.length < config.count) {
+            const existingIds = new Set(fetchedQuestions.map(q => q.id));
+            const fillQuestions = allCandidates
+              .filter(q => !existingIds.has(q.id))
+              .slice(0, config.count - fetchedQuestions.length);
+            fetchedQuestions = [...fetchedQuestions, ...fillQuestions];
+          }
+
+          logger.debug(`Adaptive engine selected ${fetchedQuestions.length} questions for ${courseId}/${section}`);
+        } else {
+          // Use standard fetch with filters (explicit user choices, timed/exam modes)
+          const shouldUseSmartSelection = config.mode === 'study' && !!userProfile?.id;
+          const examDateStr = examDate ? examDate.toISOString().split('T')[0] : undefined;
+          
+          fetchedQuestions = await fetchQuestions({
+            section,
+            subtopic: subtopicParam || undefined,
+            blueprintArea: !subtopicParam ? blueprintAreaParam || undefined : undefined,
+            difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
+            count: config.count,
+            hr1Only: applyHr1Filter,
+            mode: (config.mode === 'study' ? undefined : config.mode) as any,
+            courseId,
+            userId: userProfile?.id,
+            useSmartSelection: shouldUseSmartSelection,
+            examDate: examDateStr,
+            questionStatus: config.questionStatus !== 'all' ? config.questionStatus as any : undefined,
+          });
+        }
       }
 
       setQuestions(fetchedQuestions);

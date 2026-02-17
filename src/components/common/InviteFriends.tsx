@@ -32,22 +32,25 @@ export function InviteFriends({ compact = false }: InviteFriendsProps) {
   const [isSharing, setIsSharing] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
     async function loadReferralData() {
       if (!user?.uid) return;
       
       setIsLoading(true);
       try {
         const data = await getReferralStats(user.uid);
+        if (cancelled) return;
         setReferralCode(data.code);
         setStats({ referralCount: data.referralCount, referralRewards: data.referralRewards });
       } catch (error) {
         logger.error('Error loading referral data:', error);
       } finally {
-        setIsLoading(false);
+        if (!cancelled) setIsLoading(false);
       }
     }
 
     loadReferralData();
+    return () => { cancelled = true; };
   }, [user?.uid]);
 
   const handleCopyLink = async () => {

@@ -283,7 +283,8 @@ export function recordAnswer(
   section: CPASectionId,
   blueprintArea: string | undefined,
   isCorrect: boolean,
-  concepts: string[] = []
+  concepts: string[] = [],
+  responseTimeMs?: number
 ): void {
   const updatedCore = recordAnswerCore(
     adaptiveState,
@@ -294,6 +295,7 @@ export function recordAnswer(
     {
       subSectionId: blueprintArea,
       concepts,
+      responseTimeMs,
     }
   );
 

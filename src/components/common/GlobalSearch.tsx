@@ -151,8 +151,9 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
   // Focus input when opened
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 100);
+      const timeoutId = setTimeout(() => inputRef.current?.focus(), 100);
       setSelectedIndex(0);
+      return () => clearTimeout(timeoutId);
     } else {
       setSearchQuery('');
       setResults([]);

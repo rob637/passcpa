@@ -428,9 +428,10 @@ describe('adaptiveEngineCore', () => {
     it('returns questions past their nextReviewDate', () => {
       const state = initializeState(config);
       let s = recordAnswerCore(state, config, 'q1', 'SEC1', false);
-      // Manually set nextReviewDate to past
+      // Set lastAttempted to the past so retrievability drops below threshold
       const entry = s.questionHistory.get('q1')!;
-      entry.nextReviewDate = new Date(Date.now() - 86400000); // yesterday
+      entry.lastAttempted = new Date(Date.now() - 2 * 86400000); // 2 days ago
+      entry.stability = 1; // low stability so R = e^(-2/1) ≈ 0.14
       s.questionHistory.set('q1', entry);
 
       const due = getQuestionsDueForReview(s.questionHistory);

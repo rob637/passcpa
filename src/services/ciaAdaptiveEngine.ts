@@ -131,6 +131,10 @@ export function calculateSM2(
     easeFactor: progress.easeFactor,
     interval: progress.interval,
     nextReviewDate: progress.nextReviewDate,
+    lastResponseTimeMs: 0,
+    averageResponseTimeMs: 0,
+    stability: progress.easeFactor >= 2.0 ? 2.0 : 0.8,
+    lapses: 0,
   };
 
   const updated = coreCalculateSM2WithQuality(coreEntry, q);
@@ -596,7 +600,8 @@ export async function loadWithFirestoreFallback(): Promise<CoreAdaptiveState> {
 export function recordAnswerToCore(
   questionId: string,
   part: CIAPart,
-  isCorrect: boolean
+  isCorrect: boolean,
+  responseTimeMs?: number
 ): void {
   coreState = recordAnswerCore(
     coreState,
@@ -604,6 +609,7 @@ export function recordAnswerToCore(
     questionId,
     part,
     isCorrect,
+    { responseTimeMs },
   );
   saveState(coreState, CIA_ENGINE_CONFIG.storageKey);
 }
@@ -725,4 +731,18 @@ export function endCoreSession(): {
 export function resetCoreState(): void {
   coreState = initializeState(CIA_ENGINE_CONFIG);
   saveState(coreState, CIA_ENGINE_CONFIG.storageKey);
+}
+
+/**
+ * Expose core state for the unified adapter (question selection).
+ */
+export function getCoreState(): CoreAdaptiveState {
+  return coreState;
+}
+
+/**
+ * Expose engine config for the unified adapter (question selection).
+ */
+export function getCIAEngineConfig() {
+  return CIA_ENGINE_CONFIG;
 }

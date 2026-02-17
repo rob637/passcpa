@@ -192,7 +192,8 @@ export function recordAnswer(
   part: EASectionId,
   domain: string | undefined,
   isCorrect: boolean,
-  concepts: string[] = []
+  concepts: string[] = [],
+  responseTimeMs?: number
 ): void {
   adaptiveState = recordAnswerCore(
     adaptiveState,
@@ -203,6 +204,7 @@ export function recordAnswer(
     {
       subSectionId: domain,
       concepts,
+      responseTimeMs,
     }
   );
   saveState(adaptiveState, ENGINE_CONFIG.storageKey);

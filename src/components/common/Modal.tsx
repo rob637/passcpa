@@ -2,6 +2,7 @@ import React, { useEffect, useCallback, useRef } from 'react';
 import { X } from 'lucide-react';
 import clsx from 'clsx';
 import { createPortal } from 'react-dom';
+import { useFocusTrap } from '../../hooks/useAccessibility';
 
 export type ModalSize = 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
@@ -75,8 +76,9 @@ export const Modal: React.FC<ModalProps> = ({
   children,
   footer,
 }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
+  const focusTrap = useFocusTrap(isOpen);
 
   // Handle escape key
   const handleKeyDown = useCallback(
@@ -151,7 +153,10 @@ export const Modal: React.FC<ModalProps> = ({
 
       {/* Modal panel */}
       <div
-        ref={modalRef}
+        ref={(el) => {
+          modalRef.current = el;
+          focusTrap.ref(el);
+        }}
         tabIndex={-1}
         className={clsx(
           'relative w-full transform transition-all',

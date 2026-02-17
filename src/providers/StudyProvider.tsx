@@ -18,6 +18,7 @@ import { useAuth } from './AuthProvider';
 import { format } from 'date-fns';
 import logger from '../utils/logger';
 import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
+import { recordAnswerToEngine } from '../services/adaptiveEngineAdapter';
 import { getStudyPlanId, getCurrentSection } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { COURSES } from '../courses';
@@ -369,6 +370,20 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           section: section || 'unknown',
           answeredAt: new Date(),
         });
+
+        // Feed answer into the adaptive engine (SM-2 scheduling, difficulty tracking)
+        // Fire-and-forget — engine errors should never block the UI
+        void recordAnswerToEngine(
+          activeCourse as CourseId,
+          questionId,
+          section || 'unknown',
+          isCorrect,
+          {
+            topic: topic || 'General',
+            difficulty,
+            timeSpentSeconds,
+          }
+        );
     } catch (e) {
         logger.error("Error recording answer", e);
     }

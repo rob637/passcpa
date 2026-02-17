@@ -165,7 +165,8 @@ export function recordAnswer(
   isCorrect: boolean,
   _difficulty: 'easy' | 'medium' | 'hard',
   concepts: string[] = [],
-  subdomain?: string
+  subdomain?: string,
+  responseTimeMs?: number
 ): void {
   adaptiveState = recordAnswerCore(
     adaptiveState,
@@ -173,7 +174,7 @@ export function recordAnswer(
     questionId,
     domain,
     isCorrect,
-    { subSectionId: subdomain, concepts }
+    { subSectionId: subdomain, concepts, responseTimeMs }
   );
   saveState(adaptiveState, ENGINE_CONFIG.storageKey);
 }

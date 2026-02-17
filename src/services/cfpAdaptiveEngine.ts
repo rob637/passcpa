@@ -183,9 +183,10 @@ export function recordResult(
   state: AdaptiveState,
   questionId: string,
   domain: string,
-  isCorrect: boolean
+  isCorrect: boolean,
+  responseTimeMs?: number
 ): AdaptiveState {
-  const updated = recordAnswerCore(state, ENGINE_CONFIG, questionId, domain, isCorrect);
+  const updated = recordAnswerCore(state, ENGINE_CONFIG, questionId, domain, isCorrect, { responseTimeMs });
   saveAdaptiveState(updated);
   return updated;
 }

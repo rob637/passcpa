@@ -34,7 +34,7 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Unit Tests
-        run: npm run test:run
+        run: npm run test:run -- --coverage
 
   # ============================================
   # Bundle Size Analysis (on PRs)
@@ -328,6 +328,19 @@ jobs:
           channelId: live
           projectId: passcpa-dev
 
+      - name: Setup Node.js for Functions
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy Cloud Functions (Development)
+        run: |
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}' > "${{ runner.temp }}/gcloud-key.json"
+          cd functions && npm ci && cd ..
+          npx firebase-tools@latest deploy --only functions --project passcpa-dev
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
+
   # ============================================
   # Deploy to Staging (staging branch)
   # ============================================
@@ -370,6 +383,19 @@ jobs:
           channelId: live
           projectId: voraprep-staging
 
+      - name: Setup Node.js for Functions
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy Cloud Functions (Staging)
+        run: |
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_STAGING }}' > "${{ runner.temp }}/gcloud-key.json"
+          cd functions && npm ci && cd ..
+          npx firebase-tools@latest deploy --only functions --project voraprep-staging
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
+
   # ============================================
   # Deploy to Production (main branch)
   # ============================================
@@ -411,6 +437,19 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}
           channelId: live
           projectId: voraprep-prod
+
+      - name: Setup Node.js for Functions
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy Cloud Functions (Production)
+        run: |
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}' > "${{ runner.temp }}/gcloud-key.json"
+          cd functions && npm ci && cd ..
+          npx firebase-tools@latest deploy --only functions --project voraprep-prod
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
 
   # ============================================
   # PR Preview Deployments

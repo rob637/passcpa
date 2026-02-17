@@ -35,6 +35,12 @@ export interface QuestionHistoryEntry {
   easeFactor: number;      // SM-2 ease factor (1.3 – 2.5)
   interval: number;        // days until next review
   nextReviewDate: Date;
+  // Response-time tracking (Phase 2, #5)
+  lastResponseTimeMs: number;     // most recent response time
+  averageResponseTimeMs: number;  // running average across all attempts
+  // Knowledge stability / decay (Phase 2, #7)
+  stability: number;              // FSRS-inspired: expected days until recall drops to 90%
+  lapses: number;                 // count of times forgotten (quality < 3)
 }
 
 /**
@@ -64,6 +70,7 @@ export interface SectionPerformanceEntry {
  */
 export interface CoreAdaptiveState {
   currentDifficulty: 'easy' | 'medium' | 'hard';
+  difficultyScore: number;  // 0.0–1.0 fine-grained difficulty (Phase 2, #6)
   targetAccuracy: number;
   recentResults: boolean[];
   sectionPerformance: Record<string, SectionPerformanceEntry>;
@@ -90,6 +97,8 @@ export interface EngineConfig {
   weaknessThreshold: number;         // accuracy below this = "needs work" (default 0.70)
   strongThreshold: number;           // accuracy above this = "strong" (default 0.80)
   minQuestionsForStrong: number;     // min attempts to be labeled "strong" (default 50)
+  targetTimePerQuestionMs: number;   // expected response time for quality rating (default 120000 = 2min)
+  retrievabilityThreshold: number;   // surface for review when recall drops below this (default 0.85)
 }
 
 /**
@@ -142,6 +151,10 @@ export function createQuestionHistory(
     easeFactor: isCorrect ? DEFAULT_EASE_FACTOR : MIN_EASE_FACTOR,
     interval: 1,
     nextReviewDate: new Date(now.getTime() + 1 * 24 * 60 * 60 * 1000),
+    lastResponseTimeMs: 0,
+    averageResponseTimeMs: 0,
+    stability: isCorrect ? 1.0 : 0.4,
+    lapses: isCorrect ? 0 : 1,
   };
 }
 
@@ -170,9 +183,14 @@ export function updateQuestionHistory(
       updated.interval = Math.round(updated.interval * updated.easeFactor);
     }
     updated.easeFactor = Math.max(MIN_EASE_FACTOR, updated.easeFactor + 0.1);
+    // Stability grows on successful recall
+    updated.stability = Math.min(365, (updated.stability || 1) * (1.0 + 0.1 * updated.easeFactor));
   } else {
     updated.interval = 1;
     updated.easeFactor = Math.max(MIN_EASE_FACTOR, updated.easeFactor - 0.2);
+    // Stability drops on failure; track lapse
+    updated.stability = Math.max(0.4, (updated.stability || 1) * 0.5);
+    updated.lapses = (updated.lapses || 0) + 1;
   }
 
   updated.nextReviewDate = new Date(now.getTime() + updated.interval * 24 * 60 * 60 * 1000);
@@ -214,9 +232,15 @@ export function calculateSM2WithQuality(
     // SM-2 ease factor formula
     updated.easeFactor = updated.easeFactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
     updated.easeFactor = Math.max(MIN_EASE_FACTOR, updated.easeFactor);
+    // Stability grows proportionally to quality
+    const stabilityGrowth = 1.0 + (q - 2) * 0.05 * updated.easeFactor;
+    updated.stability = Math.min(365, (updated.stability || 1) * stabilityGrowth);
   } else {
     updated.interval = 1;
     updated.easeFactor = Math.max(MIN_EASE_FACTOR, updated.easeFactor - 0.2);
+    // Stability drops; track lapse
+    updated.stability = Math.max(0.4, (updated.stability || 1) * 0.5);
+    updated.lapses = (updated.lapses || 0) + 1;
   }
 
   updated.nextReviewDate = new Date(now.getTime() + updated.interval * 24 * 60 * 60 * 1000);
@@ -256,6 +280,7 @@ export function initializeState(config: EngineConfig): CoreAdaptiveState {
 
   return {
     currentDifficulty: 'medium',
+    difficultyScore: 0.5,
     targetAccuracy: config.targetAccuracy,
     recentResults: [],
     sectionPerformance,
@@ -315,14 +340,25 @@ export function deserializeState(json: string, config: EngineConfig): CoreAdapti
     }
   });
 
-  // Restore dates in question history
+  // Restore dates in question history + backfill new fields for migration
   parsed.questionHistory.forEach((qh: QuestionHistoryEntry) => {
     qh.lastAttempted = new Date(qh.lastAttempted);
     qh.nextReviewDate = new Date(qh.nextReviewDate);
+    // Backfill Phase 2 fields for entries saved before this version
+    if (qh.stability === undefined) qh.stability = qh.lastResult ? 1.0 : 0.4;
+    if (qh.lapses === undefined) qh.lapses = 0;
+    if (qh.lastResponseTimeMs === undefined) qh.lastResponseTimeMs = 0;
+    if (qh.averageResponseTimeMs === undefined) qh.averageResponseTimeMs = 0;
   });
 
   if (parsed.sessionStartTime) {
     parsed.sessionStartTime = new Date(parsed.sessionStartTime);
+  }
+
+  // Backfill difficultyScore for states saved before Phase 2
+  if (parsed.difficultyScore === undefined) {
+    const levelMap: Record<string, number> = { easy: 0.2, medium: 0.5, hard: 0.8 };
+    parsed.difficultyScore = levelMap[parsed.currentDifficulty] ?? 0.5;
   }
 
   // Ensure all configured sections exist in performance map
@@ -481,6 +517,7 @@ export function recordAnswerCore(
   options?: {
     subSectionId?: string;
     concepts?: string[];
+    responseTimeMs?: number;
   }
 ): CoreAdaptiveState {
   const now = new Date();
@@ -492,9 +529,24 @@ export function recordAnswerCore(
   const questionHistory = new Map(state.questionHistory);
   const existing = state.questionHistory.get(questionId);
   if (existing) {
-    questionHistory.set(questionId, updateQuestionHistory(existing, isCorrect));
+    // When response time is available, use quality-based SM-2 for finer-grained repetition (#5)
+    if (options?.responseTimeMs && options.responseTimeMs > 0) {
+      const quality = responseToQuality(isCorrect, options.responseTimeMs, config.targetTimePerQuestionMs);
+      questionHistory.set(questionId, calculateSM2WithQuality(existing, quality));
+    } else {
+      questionHistory.set(questionId, updateQuestionHistory(existing, isCorrect));
+    }
   } else {
     questionHistory.set(questionId, createQuestionHistory(questionId, isCorrect));
+  }
+
+  // 2b. Update response time tracking
+  if (options?.responseTimeMs && options.responseTimeMs > 0) {
+    const entry = questionHistory.get(questionId)!;
+    entry.lastResponseTimeMs = options.responseTimeMs;
+    entry.averageResponseTimeMs = entry.attempts > 1
+      ? (((entry.averageResponseTimeMs || 0) * (entry.attempts - 1)) + options.responseTimeMs) / entry.attempts
+      : options.responseTimeMs;
   }
 
   // 3. Update section performance
@@ -546,8 +598,9 @@ export function recordAnswerCore(
 
   sectionPerformance[sectionId] = sectionPerf;
 
-  // 5. Adjust difficulty
-  const currentDifficulty = adjustDifficulty(recentResults, state.currentDifficulty, config);
+  // 5. Adjust difficulty (numeric score + categorical for backward compat)
+  const difficultyScore = adjustDifficultyScore(recentResults, state.difficultyScore ?? 0.5, config);
+  const currentDifficulty = difficultyScoreToLevel(difficultyScore);
 
   // 6. Anti-repetition tracking
   const lastSessionQuestions = [...state.lastSessionQuestions, questionId].slice(
@@ -560,6 +613,7 @@ export function recordAnswerCore(
     questionHistory,
     sectionPerformance,
     currentDifficulty,
+    difficultyScore,
     lastSessionQuestions,
     totalQuestionsAnswered: state.totalQuestionsAnswered + 1,
   };
@@ -650,27 +704,125 @@ export function adjustDifficulty(
   return currentDifficulty;
 }
 
+/**
+ * Compute a fine-grained difficulty score (0.0 – 1.0) as a smooth exponential
+ * moving average. Replaces the 3-step ladder with a continuous function.
+ *
+ * Phase 2, #6 — five effective difficulty bands:
+ *   0.0–0.2  beginner    (mostly easy questions)
+ *   0.2–0.4  easy        (easy + some medium)
+ *   0.4–0.6  medium      (medium questions)
+ *   0.6–0.8  hard        (medium + hard)
+ *   0.8–1.0  expert      (hard questions only)
+ *
+ * @param currentScore  Previous score (0–1)
+ * @returns             Updated score (0–1), clamped
+ */
+export function adjustDifficultyScore(
+  recentResults: boolean[],
+  currentScore: number,
+  config: EngineConfig
+): number {
+  const recent = recentResults.slice(-config.recentWindowSize);
+  if (recent.length < 3) return currentScore; // need at least 3 data points
+
+  const accuracy = recent.filter(r => r).length / recent.length;
+
+  // Determine the target score from accuracy
+  const target = accuracy > config.easyThreshold ? 1.0
+    : accuracy < config.hardThreshold ? 0.0
+    : accuracy; // proportional in the middle band
+
+  // Smooth exponential moving average — 20% step toward target each evaluation
+  const newScore = currentScore + 0.2 * (target - currentScore);
+  return Math.max(0, Math.min(1, newScore));
+}
+
+/**
+ * Map a numeric difficulty score to the three canonical question-difficulty levels.
+ * Used for backward compatibility with `currentDifficulty` and question filtering.
+ */
+export function difficultyScoreToLevel(score: number): 'easy' | 'medium' | 'hard' {
+  if (score < 0.33) return 'easy';
+  if (score < 0.67) return 'medium';
+  return 'hard';
+}
+
+/**
+ * Map a question's difficulty label to a numeric value for fuzzy matching
+ * against the engine's difficultyScore.
+ */
+export function difficultyLevelToScore(level: string): number {
+  switch (level) {
+    case 'easy':
+    case 'beginner':
+    case 'foundational':
+      return 0.17;
+    case 'medium':
+    case 'intermediate':
+    case 'moderate':
+      return 0.5;
+    case 'hard':
+    case 'advanced':
+    case 'tough':
+      return 0.83;
+    default:
+      return 0.5;
+  }
+}
+
+// ============================================================================
+// Knowledge Decay — Retrievability (#7)
+// ============================================================================
+
+/**
+ * Calculate the probability of recalling a question based on elapsed time
+ * and the item's stability (FSRS-inspired exponential decay).
+ *
+ *   R = e^(−t / S)
+ *
+ * where t = days since last review, S = stability in days.
+ * R falls from 1.0 (just reviewed) toward 0.0 over time.
+ *
+ * Items with higher stability (many successful recalls) decay more slowly.
+ */
+export function calculateRetrievability(entry: QuestionHistoryEntry): number {
+  const daysSinceReview = (Date.now() - entry.lastAttempted.getTime()) / (24 * 60 * 60 * 1000);
+  const stability = entry.stability || 1;
+  return Math.exp(-daysSinceReview / stability);
+}
+
 // ============================================================================
 // Queries
 // ============================================================================
 
 /**
  * Get question IDs due for spaced repetition review.
- * A question is due when its next review date has passed AND it was last answered incorrectly.
+ *
+ * A question is due when its estimated recall probability (retrievability)
+ * drops below the configured threshold. This ensures:
+ * - Correctly-answered questions eventually resurface (unlike the old
+ *   !lastResult filter which silently discarded them forever)
+ * - Urgency is proportional to how much the student has likely forgotten
+ *
+ * Returns IDs sorted by urgency (lowest retrievability first).
  */
 export function getQuestionsDueForReview(
-  questionHistory: Map<string, QuestionHistoryEntry>
+  questionHistory: Map<string, QuestionHistoryEntry>,
+  retrievabilityThreshold = 0.85
 ): string[] {
-  const now = new Date();
-  const due: string[] = [];
+  const due: { id: string; retrievability: number }[] = [];
 
   questionHistory.forEach((history, questionId) => {
-    if (history.nextReviewDate <= now && !history.lastResult) {
-      due.push(questionId);
+    const r = calculateRetrievability(history);
+    if (r < retrievabilityThreshold) {
+      due.push({ id: questionId, retrievability: r });
     }
   });
 
-  return due;
+  // Most forgotten first
+  due.sort((a, b) => a.retrievability - b.retrievability);
+  return due.map(d => d.id);
 }
 
 /**
@@ -773,15 +925,27 @@ export function selectQuestionsCore<Q extends BaseAdaptiveQuestion>(
   }
 
   // 1. Review-due questions (spaced repetition) — max 20%
+  //    Enhanced: priority scales with urgency (lowest retrievability = highest priority)
   if (criteria.includeReviewDue) {
-    const dueIds = new Set(getQuestionsDueForReview(state.questionHistory));
+    const threshold = config.retrievabilityThreshold ?? 0.85;
+    const dueSet = new Set(getQuestionsDueForReview(state.questionHistory, threshold));
     const dueQuestions = available
-      .filter(q => dueIds.has(q.id))
+      .filter(q => dueSet.has(q.id))
+      // Sort by retrievability ascending so most-forgotten are selected first
+      .sort((a, b) => {
+        const ra = state.questionHistory.get(a.id) ? calculateRetrievability(state.questionHistory.get(a.id)!) : 1;
+        const rb = state.questionHistory.get(b.id) ? calculateRetrievability(state.questionHistory.get(b.id)!) : 1;
+        return ra - rb;
+      })
       .slice(0, Math.ceil(criteria.count * 0.2));
 
     dueQuestions.forEach(q => {
       if (!usedIds.has(q.id)) {
-        selected.push({ ...q, selectionReason: 'review-due', priority: 100 });
+        const entry = state.questionHistory.get(q.id);
+        const retrievability = entry ? calculateRetrievability(entry) : 1;
+        // Urgency-weighted priority: 100 base + up to 50 bonus for most-forgotten
+        const urgencyBonus = Math.round((1 - retrievability) * 50);
+        selected.push({ ...q, selectionReason: 'review-due', priority: 100 + urgencyBonus });
         usedIds.add(q.id);
       }
     });
@@ -822,49 +986,50 @@ export function selectQuestionsCore<Q extends BaseAdaptiveQuestion>(
   }
 
   // 3. Fill remaining with difficulty-matched / exam-weighted / balanced
+  //    Enhanced: uses difficultyScore for fuzzy matching when adaptive (#6)
   const remaining = criteria.count - selected.length;
   if (remaining > 0) {
-    const targetDifficulty =
-      criteria.difficulty === 'adaptive'
-        ? state.currentDifficulty
-        : criteria.difficulty || 'medium';
+    const useAdaptive = criteria.difficulty === 'adaptive';
+    const targetScore = useAdaptive
+      ? (state.difficultyScore ?? 0.5)
+      : difficultyLevelToScore(criteria.difficulty || 'medium');
 
-    let difficultyFiltered = available.filter(
-      q => !usedIds.has(q.id) && q.difficulty === targetDifficulty
-    );
-
-    // Fallback to any difficulty if not enough
-    if (difficultyFiltered.length < remaining) {
-      difficultyFiltered = available.filter(q => !usedIds.has(q.id));
-    }
+    // Score each available question by how close its difficulty is to the target
+    const scoredAvailable = available
+      .filter(q => !usedIds.has(q.id))
+      .map(q => ({
+        question: q,
+        closeness: 1 - Math.abs(difficultyLevelToScore(q.difficulty) - targetScore),
+      }))
+      .sort((a, b) => b.closeness - a.closeness);
 
     if (criteria.examWeighted) {
       const sects = activeSections || config.sections;
       const targetPerSection = Math.ceil(remaining / sects.length);
 
       sects.forEach(section => {
-        const sectionQuestions = difficultyFiltered
-          .filter(q => getSection(q) === section && !usedIds.has(q.id))
+        const sectionQuestions = scoredAvailable
+          .filter(s => getSection(s.question) === section && !usedIds.has(s.question.id))
           .slice(0, targetPerSection);
 
-        sectionQuestions.forEach(q => {
+        sectionQuestions.forEach(s => {
           if (selected.length < criteria.count) {
-            selected.push({ ...q, selectionReason: 'balanced', priority: 50 });
-            usedIds.add(q.id);
+            selected.push({ ...s.question, selectionReason: 'balanced', priority: 50 });
+            usedIds.add(s.question.id);
           }
         });
       });
     }
 
-    // Fill any remaining slots
+    // Fill any remaining slots (best difficulty match first)
     const stillRemaining = criteria.count - selected.length;
     if (stillRemaining > 0) {
-      difficultyFiltered
-        .filter(q => !usedIds.has(q.id))
+      scoredAvailable
+        .filter(s => !usedIds.has(s.question.id))
         .slice(0, stillRemaining)
-        .forEach(q => {
-          selected.push({ ...q, selectionReason: 'difficulty-match', priority: 30 });
-          usedIds.add(q.id);
+        .forEach(s => {
+          selected.push({ ...s.question, selectionReason: 'difficulty-match', priority: 30 });
+          usedIds.add(s.question.id);
         });
     }
   }
@@ -999,6 +1164,8 @@ export function createEngineConfig(
     weaknessThreshold: 0.70,
     strongThreshold: 0.80,
     minQuestionsForStrong: 50,
+    targetTimePerQuestionMs: 120_000,  // 2 minutes
+    retrievabilityThreshold: 0.85,
     ...overrides,
   };
 }

@@ -209,7 +209,7 @@ export function recordAnswer(
     questionId,
     part,
     isCorrect,
-    { subSectionId: _domain }
+    { subSectionId: _domain, responseTimeMs: _timeSpent ? _timeSpent * 1000 : undefined }
   );
 
   adaptiveState = {

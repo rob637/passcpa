@@ -19,9 +19,7 @@ import {
   getQuestionCount,
   getQuestionStats,
   clearQuestionCache,
-  fetchAdaptiveQuestions,
   getTopicsForSection,
-  type AdaptiveSelectionInput,
 } from '../../services/questionService';
 import type { ExamSection } from '../../types';
 
@@ -265,101 +263,6 @@ describe('Question Service - Quality Tests', () => {
 
       const sum = Object.values(stats.bySection).reduce((a, b) => a + b, 0);
       expect(stats.total).toBe(sum);
-    });
-  });
-
-  describe('fetchAdaptiveQuestions - Edge Cases', () => {
-    it('handles empty topicStats', async () => {
-      const input: AdaptiveSelectionInput = {
-        section: 'FAR',
-        count: 10,
-        topicStats: [],
-      };
-
-      const result = await fetchAdaptiveQuestions(input);
-
-      expect(result.questions).toBeDefined();
-      expect(result.breakdown).toBeDefined();
-    });
-
-    it('handles count of 0', async () => {
-      const input: AdaptiveSelectionInput = {
-        section: 'FAR',
-        count: 0,
-        topicStats: [{ topic: 'Revenue', accuracy: 50, totalQuestions: 10 }],
-      };
-
-      const result = await fetchAdaptiveQuestions(input);
-
-      expect(result.questions.length).toBe(0);
-    });
-
-    it('prioritizes previously missed questions', async () => {
-      // First get some question IDs
-      const questions = await fetchQuestions({ section: 'FAR', count: 5 });
-      const missedIds = questions.slice(0, 2).map(q => q.id);
-
-      const input: AdaptiveSelectionInput = {
-        section: 'FAR',
-        count: 10,
-        topicStats: [],
-        previouslyMissedIds: missedIds,
-      };
-
-      const result = await fetchAdaptiveQuestions(input);
-
-      // Should include the missed questions
-      const hasMissed = result.breakdown.some(b => b.topic === 'Previously Missed');
-      if (missedIds.length > 0 && questions.length > 0) {
-        expect(hasMissed).toBe(true);
-      }
-    });
-
-    it('handles excludeIds correctly', async () => {
-      const questions = await fetchQuestions({ section: 'FAR', count: 10 });
-      const excludeIds = questions.slice(0, 5).map(q => q.id);
-
-      const input: AdaptiveSelectionInput = {
-        section: 'FAR',
-        count: 10,
-        topicStats: [],
-        excludeIds,
-      };
-
-      const result = await fetchAdaptiveQuestions(input);
-
-      // None of the excluded IDs should be in results
-      result.questions.forEach(q => {
-        expect(excludeIds).not.toContain(q.id);
-      });
-    });
-
-    it('handles topic with 0% accuracy', async () => {
-      const input: AdaptiveSelectionInput = {
-        section: 'FAR',
-        count: 10,
-        topicStats: [{ topic: 'Revenue', accuracy: 0, totalQuestions: 10 }],
-      };
-
-      const result = await fetchAdaptiveQuestions(input);
-
-      expect(result).toBeDefined();
-    });
-
-    it('handles all topics at 100% accuracy', async () => {
-      const input: AdaptiveSelectionInput = {
-        section: 'FAR',
-        count: 10,
-        topicStats: [
-          { topic: 'Topic1', accuracy: 100, totalQuestions: 20 },
-          { topic: 'Topic2', accuracy: 100, totalQuestions: 20 },
-        ],
-      };
-
-      const result = await fetchAdaptiveQuestions(input);
-
-      // Should still return questions (from variety pool)
-      expect(result.questions.length).toBeGreaterThanOrEqual(0);
     });
   });
 

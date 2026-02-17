@@ -544,9 +544,10 @@ const AITutor: React.FC = () => {
       setInput(contextFromPractice);
       setContextFromPractice(null);
       // Small delay to let UI update, then send
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         handleSendWithContext(contextFromPractice);
       }, 500);
+      return () => clearTimeout(timeoutId);
     }
   }, [contextFromPractice, memoryLoaded, messages.length, isLoading, handleSendWithContext]);
 

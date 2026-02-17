@@ -22,6 +22,58 @@ const db = admin.firestore();
 const messaging = admin.messaging();
 
 // ============================================================================
+// RATE LIMITING UTILITY
+// Uses Firestore counters to enforce per-user, per-function call limits
+// ============================================================================
+
+/**
+ * Check and enforce rate limits for a user+function combination.
+ * @param {string} uid - Firebase user ID (or email for unauthenticated flows)
+ * @param {string} functionName - Name of the function being rate-limited
+ * @param {number} maxPerHour - Maximum calls allowed per hour
+ * @throws {HttpsError} if rate limit is exceeded
+ */
+async function enforceRateLimit(uid, functionName, maxPerHour) {
+  const now = Date.now();
+  const hourAgo = now - 60 * 60 * 1000;
+  const docRef = db.collection('rate_limits').doc(`${uid}_${functionName}`);
+
+  try {
+    const result = await db.runTransaction(async (transaction) => {
+      const doc = await transaction.get(docRef);
+      const data = doc.exists ? doc.data() : { timestamps: [] };
+      
+      // Filter to only timestamps within the last hour
+      const recentTimestamps = (data.timestamps || []).filter(ts => ts > hourAgo);
+      
+      if (recentTimestamps.length >= maxPerHour) {
+        return { limited: true, count: recentTimestamps.length };
+      }
+
+      // Add current timestamp and write back
+      recentTimestamps.push(now);
+      transaction.set(docRef, { 
+        timestamps: recentTimestamps,
+        uid,
+        functionName,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp()
+      });
+      
+      return { limited: false, count: recentTimestamps.length };
+    });
+
+    if (result.limited) {
+      console.warn(`Rate limit exceeded: ${uid} called ${functionName} ${result.count} times in last hour (limit: ${maxPerHour})`);
+      throw new HttpsError('resource-exhausted', 'Too many requests. Please try again later.');
+    }
+  } catch (error) {
+    if (error instanceof HttpsError) throw error;
+    // If rate limiting itself fails, log but don't block the request
+    console.error(`Rate limit check failed for ${functionName}:`, error);
+  }
+}
+
+// ============================================================================
 // STRIPE CONFIGURATION
 // ============================================================================
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY?.trim();
@@ -230,6 +282,9 @@ exports.sendCustomPasswordReset = onCall({
     throw new HttpsError('invalid-argument', 'Email is required');
   }
 
+  // Rate limit: 5 password reset emails per hour per email address
+  await enforceRateLimit(email.toLowerCase(), 'passwordReset', 5);
+
   // Lazy-initialize Resend client (secrets only available at runtime in Gen 2)
   const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
@@ -368,6 +423,9 @@ exports.sendCustomEmailVerification = onCall({
   if (!email) {
     throw new HttpsError('invalid-argument', 'Email is required');
   }
+
+  // Rate limit: 5 verification emails per hour per email address
+  await enforceRateLimit(email.toLowerCase(), 'emailVerification', 5);
 
   if (!resend) {
     throw new HttpsError('failed-precondition', 'Email service not configured. Set RESEND_API_KEY.');
@@ -1745,6 +1803,22 @@ exports.stripeWebhook = onRequest({
   console.log(`Stripe webhook received: ${event.type}`);
 
   try {
+    // Idempotency check: skip if we've already processed this event
+    const eventRef = db.collection('processed_stripe_events').doc(event.id);
+    const existing = await eventRef.get();
+    if (existing.exists) {
+      console.log(`Skipping already-processed Stripe event: ${event.id} (${event.type})`);
+      res.status(200).json({ received: true, duplicate: true });
+      return;
+    }
+
+    // Mark event as processing before handling (prevents concurrent duplicates)
+    await eventRef.set({
+      eventType: event.type,
+      processedAt: admin.firestore.FieldValue.serverTimestamp(),
+      livemode: event.livemode,
+    });
+
     switch (event.type) {
       case 'checkout.session.completed': {
         const session = event.data.object;
@@ -2317,6 +2391,9 @@ exports.geminiProxy = onCall({
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'You must be logged in to use the AI tutor.');
   }
+
+  // Rate limit: 30 AI tutor calls per hour per user
+  await enforceRateLimit(request.auth.uid, 'geminiProxy', 30);
 
   const { messages, systemPrompt, generationConfig } = request.data;
 

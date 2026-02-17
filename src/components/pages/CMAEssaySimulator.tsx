@@ -20,6 +20,7 @@ import { WCTask } from '../../types';
 import aiService from '../../services/aiService';
 import logger from '../../utils/logger';
 import { useAuth } from '../../hooks/useAuth';
+import { useStudy } from '../../hooks/useStudy';
 import { recordEssayResult, getEssayHistory, EssayHistoryEntry } from '../../services/questionHistoryService';
 
 // --- Components ---
@@ -40,6 +41,7 @@ const WordCounter: React.FC<{ text: string }> = ({ text }) => {
 
 const CMAEssaySimulator: React.FC = () => {
   const { user } = useAuth();
+  const { recordStudyActivity } = useStudy();
   const [currentTask, setCurrentTask] = useState<WCTask | null>(null);
   const [response, setResponse] = useState('');
   const [timeLeft, setTimeLeft] = useState(0); 
@@ -121,6 +123,13 @@ const CMAEssaySimulator: React.FC = () => {
         const score = wordCount >= 150 ? 80 : Math.round((wordCount / 150) * 75);
         const timeSpent = (currentTask.estimatedTime * 60) - timeLeft;
         await recordEssayResult(user.uid, currentTask.id, score, currentTask.section, timeSpent);
+        // Record points to daily log for daily goal progress (15 pts per essay)
+        const timeSpentMinutes = Math.round(timeSpent / 60);
+        await recordStudyActivity('essay', 15, timeSpentMinutes, {
+          essayId: currentTask.id,
+          section: currentTask.section,
+          score,
+        });
       }
       
       // Scroll to top so user sees the grading report immediately

@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
+import { useStudy } from '../../hooks/useStudy';
 import { getDefaultSection } from '../../utils/sectionUtils';
 import { getCurrentSection } from '../../utils/profileHelpers';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
@@ -83,7 +84,7 @@ const Flashcards: React.FC = () => {
   const activityId = searchParams.get('activityId');
   const { user, userProfile } = useAuth();
   const { courseId } = useCourse();
-  // const { recordMCQAnswer } = useStudy(); // Unused in original code
+  const { recordStudyActivity } = useStudy();
 
   const [cards, setCards] = useState<Flashcard[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -374,6 +375,15 @@ const Flashcards: React.FC = () => {
       [rating]: prev[rating] + 1,
     }));
 
+    // Record points to daily log for daily goal progress
+    // Points: easy=2, good=2, hard=1, again=1 (always award at least 1 point per card)
+    const flashcardPoints = (rating === 'easy' || rating === 'good') ? 2 : 1;
+    recordStudyActivity('flashcard', flashcardPoints, 0.5, {
+      cardId: currentCard.id,
+      rating,
+      section: currentSection,
+    }).catch(() => { /* fire-and-forget */ });
+
     // Move to next card (or to completion screen if this was the last card)
     setTimeout(() => {
       if (currentIndex < cards.length - 1) {
@@ -581,7 +591,7 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto">
+      <div ref={cardTopRef} className="flex-1 flex items-start justify-center p-4 pt-2 overflow-y-auto scroll-smooth">
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           {showBothSides ? (
@@ -589,7 +599,7 @@ const Flashcards: React.FC = () => {
             <div
               ref={cardContentRef}
               data-testid="flashcard"
-              className="w-full max-h-[calc(100vh-340px)] md:max-h-[calc(100vh-280px)] overflow-y-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
+              className="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col gap-6"
             >
               {/* Front section */}
               <div>
@@ -722,6 +732,7 @@ const Flashcards: React.FC = () => {
 
             {/* Back */}
             <div
+              ref={isFlipped ? cardContentRef : undefined}
               className={clsx(
                 'absolute inset-0 bg-gradient-to-br from-primary-50 to-white dark:from-slate-800 dark:to-slate-900 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col',
                 !isFlipped && 'invisible'
@@ -732,7 +743,7 @@ const Flashcards: React.FC = () => {
               }}
             >
               <div className="text-xs text-success-600 dark:text-success-400 font-medium mb-3">Answer</div>
-              <div className="flex-1 flex flex-col items-center justify-center overflow-auto">
+              <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto">
                 {/* Main answer/explanation */}
                 <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed text-center whitespace-pre-wrap">
                   {currentCard.cardType === 'question' 

@@ -69,6 +69,7 @@ export interface StudyContextType {
   recordMCQAnswer: (questionId: string, topic: string | undefined, subtopic: string | undefined, isCorrect: boolean, difficulty: string, timeSpentSeconds?: number, section?: string) => Promise<void>;
   completeLesson: (lessonId: string, section: string, timeSpent: number) => Promise<void>;
   completeSimulation: (id: string, score: number, timeSpent: number, section?: string) => Promise<void>;
+  recordStudyActivity: (activityType: string, points: number, timeSpentMinutes: number, metadata?: Record<string, unknown>) => Promise<void>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getLessonProgress: () => Promise<Record<string, any>>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -477,6 +478,36 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       }
   };
 
+  /**
+   * Generic study activity recorder for flashcards, essays, written communication, etc.
+   * Increments earnedPoints and studyTimeMinutes in the daily log.
+   */
+  const recordStudyActivity = async (
+    activityType: string,
+    points: number,
+    timeSpentMinutes: number,
+    metadata: Record<string, unknown> = {}
+  ) => {
+    if (!user) return;
+    try {
+      const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
+      await setDoc(logRef, {
+        earnedPoints: increment(points),
+        studyTimeMinutes: increment(timeSpentMinutes),
+        activities: arrayUnion({
+          type: activityType,
+          points,
+          courseId: activeCourse,
+          timestamp: new Date().toISOString(),
+          ...metadata,
+        }),
+      }, { merge: true });
+      logger.log(`Study activity recorded: ${activityType}, +${points}pts`);
+    } catch (e) {
+      logger.error('Error recording study activity:', e);
+    }
+  };
+
   const getLessonProgress = async () => {
       if (!user) return {};
        try {
@@ -565,6 +596,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     recordMCQAnswer,
     completeLesson,
     completeSimulation,
+    recordStudyActivity,
     getLessonProgress,
     getTopicPerformance
   };

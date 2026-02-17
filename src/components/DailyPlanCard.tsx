@@ -300,8 +300,16 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     loadPlan(false);
   }, [loadPlan, currentSection]);
 
+  // Track whether auto-completion from URL params has been handled
+  const autoCompleteHandledRef = useRef(false);
+  
   // Check URL params for returning from an activity (auto-completion)
+  // Depends on `plan` and `loading` so that we wait for the plan to load before
+  // processing — otherwise plan is null and we lose activity metadata/section info.
   useEffect(() => {
+    // Skip if already handled or plan hasn't loaded yet
+    if (autoCompleteHandledRef.current || loading) return;
+    
     const params = new URLSearchParams(window.location.search);
     const from = params.get('from');
     const activityId = params.get('activityId');
@@ -309,6 +317,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // If returning from dailyplan activity AND it was marked completed
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
+      autoCompleteHandledRef.current = true;
+      
       // Find the activity in the plan to get metadata for duration tracking
       const matchedActivity = plan?.activities.find(a => a.id === activityId);
       // Mark the activity as complete - pass section and courseId for correct cache key
@@ -337,7 +347,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         window.history.replaceState({}, '', url.pathname);
       }).catch(err => logger.error('Failed to auto-mark activity:', err));
     }
-  }, [user?.uid]);
+  }, [user?.uid, plan, loading, currentSection, courseId]);
 
   // Refresh when page becomes visible (sync across devices)
   useEffect(() => {

@@ -506,7 +506,7 @@ function QuizIntro({
             </div>
             <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
               <Sparkles className="w-4 h-4 text-blue-500 flex-shrink-0" />
-              <span>Results feed your personalized study plan</span>
+              <span>Results calibrate your adaptive engine for personalized practice</span>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ export default function CISAInfo() {
             </h1>
             <p className="text-xl text-indigo-100 mb-10 leading-relaxed">
               The gold standard for IS audit, control, and security professionals. 
-              Our AI-driven platform adapts to your learning style.
+              Our adaptive engine personalizes every practice session to your strengths and weaknesses.
             </p>
             <Button 
               variant="secondary"
@@ -45,7 +45,7 @@ export default function CISAInfo() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <FeatureCard icon={<Target className="h-8 w-8 text-indigo-600" />} title="5 Domains" description="Comprehensive coverage of all 5 CISA domains with weighted question distribution." />
-          <FeatureCard icon={<BarChart className="h-8 w-8 text-indigo-600" />} title="Adaptive Testing" description="Smart algorithms focus on your weak areas to maximize study efficiency." />
+          <FeatureCard icon={<BarChart className="h-8 w-8 text-indigo-600" />} title="Adaptive Testing" description="Our engine tracks response time, difficulty, and forgetting curves to focus your study on what matters most." />
           <FeatureCard icon={<BookOpen className="h-8 w-8 text-indigo-600" />} title="Current Content" description="Updated for the latest CISA job practice areas and standards." />
         </div>
       </div>

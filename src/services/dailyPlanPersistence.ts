@@ -171,7 +171,9 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
       if (localData) {
           const parsed = JSON.parse(localData);
           // Verify section matches if specified (extra safety check)
-          if (section && parsed.section !== section) {
+          // Skip check when section is 'ALL' — single-exam courses (CISA, CFP) store
+          // plans under 'ALL' but the plan's internal .section may be the domain (e.g. 'CISA1')
+          if (section && section !== 'ALL' && parsed.section !== section) {
               logger.log(`Cached plan section (${parsed.section}) doesn't match requested (${section}), will regenerate`);
               return null;
           }
@@ -208,7 +210,9 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
       } as PersistedDailyPlan;
       
       // Verify section matches if specified
-      if (section && plan.section !== section) {
+      // Skip check when section is 'ALL' — single-exam courses (CISA, CFP) store
+      // plans under 'ALL' but the plan's internal .section may be the domain (e.g. 'CISA1')
+      if (section && section !== 'ALL' && plan.section !== section) {
         logger.log(`Firestore plan section (${plan.section}) doesn't match requested (${section}), will regenerate`);
         return null;
       }
@@ -485,8 +489,14 @@ export const getOrCreateTodaysPlan = async (
   ];
 
   // Create persisted plan
+  // IMPORTANT: Override section with cacheSection so that fetchTodaysPlan's
+  // section-match check succeeds. For single-exam courses (CISA, CFP) the
+  // cache key and Firestore path use 'ALL', so the plan's .section must also
+  // be 'ALL' — otherwise fetchTodaysPlan rejects the cached plan and
+  // regenerates a fresh one, wiping completedActivities.
   const persistedPlan: PersistedDailyPlan = {
     ...newPlan,
+    section: cacheSection,
     activities: mergedActivities,
     userId,
     completedActivities: [],

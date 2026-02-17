@@ -476,12 +476,14 @@ const StripeStatusSection: React.FC = () => {
       // - 'failed-precondition': Stripe not configured (STRIPE_SECRET_KEY missing)
       // - 'unauthenticated': Auth required but missing (function reachable)
       // - 'internal': Function crashed or Stripe API error
-      if (error.code === 'invalid-argument') {
+      // Note: Firebase v2 error codes may be prefixed with 'functions/' (e.g. 'functions/invalid-argument')
+      const code = error.code?.replace('functions/', '') || '';
+      if (code === 'invalid-argument') {
         setStripeStatus('ok');
-      } else if (error.code === 'failed-precondition') {
+      } else if (code === 'failed-precondition') {
         setStripeStatus('error');
         setStripeError('Stripe secret key not configured on server');
-      } else if (error.code === 'unauthenticated') {
+      } else if (code === 'unauthenticated') {
         // Function is reachable but requires auth — that's fine, it's working
         setStripeStatus('ok');
       } else {

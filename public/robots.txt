@@ -4,6 +4,12 @@
 User-agent: *
 Allow: /
 Allow: /pricing
+Allow: /cpa
+Allow: /ea-prep
+Allow: /cma
+Allow: /cia
+Allow: /cfp
+Allow: /cisa
 Allow: /login
 Allow: /register
 Allow: /terms

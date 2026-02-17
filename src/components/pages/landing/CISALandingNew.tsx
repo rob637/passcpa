@@ -2,6 +2,7 @@
  * CISA Landing Page - Uses unified template
  */
 import { useSEO, LANDING_SEO } from '../../../hooks/useSEO';
+import { useCourseSchema } from '../../../hooks/useStructuredData';
 import ExamLandingTemplate from './ExamLandingTemplate';
 import { CISA_CONFIG } from './ExamLandingData';
 
@@ -11,6 +12,7 @@ const CISALandingNew = () => {
     description: LANDING_SEO.cisa.description,
     canonicalUrl: 'https://voraprep.com/cisa',
   });
+  useCourseSchema('cisa');
 
   return <ExamLandingTemplate config={CISA_CONFIG} />;
 };

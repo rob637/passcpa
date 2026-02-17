@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
+import { useOrganizationSchema } from '../../hooks/useStructuredData';
 import { getFormattedCount, getFormattedTotal, LESSON_COUNTS, FLASHCARD_COUNTS } from '../../utils/courseStats';
 import { EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
 import { 
@@ -262,6 +263,9 @@ const VoraPrep = () => {
     description: LANDING_SEO.home.description,
     canonicalUrl: 'https://voraprep.com',
   });
+
+  // Structured data for Google rich results
+  useOrganizationSchema();
 
   useEffect(() => {
     setIsVisible(true);

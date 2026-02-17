@@ -12,6 +12,13 @@ vi.mock('../../hooks/useAuth', () => ({
   }),
 }));
 
+// Mock useStudy
+vi.mock('../../hooks/useStudy', () => ({
+  useStudy: () => ({
+    recordStudyActivity: vi.fn().mockResolvedValue(undefined),
+  }),
+}));
+
 vi.mock('../../services/spacedRepetition', () => ({
   calculateNextReview: vi.fn(() => ({
     interval: 1,

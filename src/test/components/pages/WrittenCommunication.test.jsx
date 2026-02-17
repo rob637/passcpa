@@ -122,6 +122,13 @@ vi.mock('clsx', () => ({
   default: (...args) => args.filter(Boolean).join(' '),
 }));
 
+// Mock useStudy
+vi.mock('../../../hooks/useStudy', () => ({
+  useStudy: () => ({
+    recordStudyActivity: vi.fn().mockResolvedValue(undefined),
+  }),
+}));
+
 const renderWithRouter = (component) => {
   return render(<BrowserRouter>{component}</BrowserRouter>);
 };

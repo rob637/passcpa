@@ -2735,6 +2735,82 @@ exports.geminiProxy = onCall({
 // ============================================================================
 
 /**
+ * Helper: Get Google Ads OAuth access token.
+ */
+async function getGoogleAdsAccessToken() {
+  const clientId = process.env.GOOGLE_ADS_CLIENT_ID?.trim();
+  const clientSecret = process.env.GOOGLE_ADS_CLIENT_SECRET?.trim();
+  const refreshToken = process.env.GOOGLE_ADS_REFRESH_TOKEN?.trim();
+
+  if (!clientId || !clientSecret || !refreshToken) {
+    throw new HttpsError('failed-precondition', 'Google Ads OAuth credentials not configured.');
+  }
+
+  const response = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
+      grant_type: 'refresh_token',
+    }),
+  });
+
+  if (!response.ok) {
+    console.error('Failed to refresh Google Ads access token:', await response.text());
+    throw new HttpsError('internal', 'Failed to authenticate with Google Ads.');
+  }
+
+  const data = await response.json();
+  return data.access_token;
+}
+
+/**
+ * Helper: Make a Google Ads API request.
+ */
+async function googleAdsRequest(endpoint, body) {
+  const accessToken = await getGoogleAdsAccessToken();
+  const developerToken = process.env.GOOGLE_ADS_DEVELOPER_TOKEN?.trim();
+  const customerId = process.env.GOOGLE_ADS_CUSTOMER_ID?.trim()?.replace(/-/g, '');
+
+  if (!developerToken || !customerId) {
+    throw new HttpsError('failed-precondition', 'Google Ads developer token or customer ID not configured.');
+  }
+
+  const mccId = process.env.GOOGLE_ADS_MCC_ID?.trim()?.replace(/-/g, '') || '';
+  const url = `https://googleads.googleapis.com/v20/customers/${customerId}/${endpoint}`;
+
+  const headers = {
+    'Authorization': `Bearer ${accessToken}`,
+    'developer-token': developerToken,
+    'Content-Type': 'application/json',
+  };
+
+  // If using an MCC, add the login-customer-id header
+  if (mccId) {
+    headers['login-customer-id'] = mccId;
+  }
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    const errorDetails = errorData?.error?.details?.[0]?.errors?.[0];
+    const errorMsg = errorDetails?.message || errorData?.error?.message || `HTTP ${response.status}`;
+    const errorCode = errorDetails?.errorCode ? JSON.stringify(errorDetails.errorCode) : '';
+    console.error('Google Ads API error:', JSON.stringify(errorData));
+    throw new HttpsError('internal', `Google Ads API error: ${errorMsg} ${errorCode}`.trim());
+  }
+
+  return response.json();
+}
+
+/**
  * Helper: Load growth engine config from Firestore.
  * Returns config with guard rail settings.
  */

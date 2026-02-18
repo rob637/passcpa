@@ -18,8 +18,9 @@ const CPAStudySchedule2026 = () => {
   ]);
 
   useArticleSchema({
-    title: 'CPA Exam Study Schedule 2026: Complete Week-by-Week Plan',
+    headline: 'CPA Exam Study Schedule 2026: Complete Week-by-Week Plan',
     description: 'A detailed, week-by-week CPA exam study schedule for 2026.',
+    author: 'VoraPrep Team',
     url: 'https://voraprep.com/blog/cpa-exam-study-schedule-2026',
     datePublished: '2026-02-17',
   });

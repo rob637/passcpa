@@ -18,8 +18,9 @@ const EAvsCPA = () => {
   ]);
 
   useArticleSchema({
-    title: 'EA vs CPA: Which Certification Should You Get in 2026?',
+    headline: 'EA vs CPA: Which Certification Should You Get in 2026?',
     description: 'A detailed comparison of the Enrolled Agent (EA) vs CPA certification.',
+    author: 'VoraPrep Team',
     url: 'https://voraprep.com/blog/ea-vs-cpa-which-certification',
     datePublished: '2026-02-17',
   });

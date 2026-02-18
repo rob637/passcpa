@@ -337,7 +337,7 @@ jobs:
         run: |
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}' > "${{ runner.temp }}/gcloud-key.json"
           cd functions && npm ci && cd ..
-          npx firebase-tools@latest deploy --only functions --project passcpa-dev
+          npx firebase-tools@latest deploy --only functions --force --project passcpa-dev
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
 
@@ -392,7 +392,7 @@ jobs:
         run: |
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_STAGING }}' > "${{ runner.temp }}/gcloud-key.json"
           cd functions && npm ci && cd ..
-          npx firebase-tools@latest deploy --only functions --project voraprep-staging
+          npx firebase-tools@latest deploy --only functions --force --project voraprep-staging
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
 
@@ -447,7 +447,7 @@ jobs:
         run: |
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}' > "${{ runner.temp }}/gcloud-key.json"
           cd functions && npm ci && cd ..
-          npx firebase-tools@latest deploy --only functions --project voraprep-prod
+          npx firebase-tools@latest deploy --only functions --force --project voraprep-prod
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud-key.json
 

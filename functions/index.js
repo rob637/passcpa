@@ -2728,3 +2728,1741 @@ exports.geminiProxy = onCall({
     throw new HttpsError('internal', 'AI service error.');
   }
 });
+
+// ============================================================================
+// GROWTH ENGINE — SEO/SEM AUTOMATION
+// Automated content generation, Google Ads sync, rank tracking, and more
+// ============================================================================
+
+/**
+ * Helper: Load growth engine config from Firestore.
+ * Returns config with guard rail settings.
+ */
+async function getGrowthConfig() {
+  const configDoc = await db.collection('growth_config').doc('settings').get();
+  const defaults = {
+    semEnabled: false,
+    totalDailyBudget: 100,
+    emergencyPauseAll: false,
+    maxCpaMultiplier: 2.0,
+    pauseOnZeroConversions: true,
+    pauseAfterDays: 7,
+    alertOnBudgetOverage: true,
+    alertOnRankDrop: true,
+    autoContentGeneration: true,
+    contentReviewRequired: true,
+    maxArticlesPerWeek: 10,
+  };
+  return configDoc.exists ? { ...defaults, ...configDoc.data() } : defaults;
+}
+
+/**
+ * Growth Engine: Test API connections.
+ * Verifies that configured API credentials actually work.
+ * Admin-only, callable.
+ */
+exports.growthTestConnections = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: [
+    'GOOGLE_ADS_DEVELOPER_TOKEN',
+    'GOOGLE_ADS_CLIENT_ID',
+    'GOOGLE_ADS_CLIENT_SECRET',
+    'GOOGLE_ADS_REFRESH_TOKEN',
+    'GOOGLE_ADS_CUSTOMER_ID',
+    'GOOGLE_ADS_MCC_ID',
+    'GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL',
+    'GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY',
+    'DATAFORSEO_LOGIN',
+    'DATAFORSEO_PASSWORD',
+  ],
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const results = {};
+
+  // Test Google Ads API
+  try {
+    const accessToken = await getGoogleAdsAccessToken();
+    const developerToken = process.env.GOOGLE_ADS_DEVELOPER_TOKEN?.trim();
+    const customerId = process.env.GOOGLE_ADS_CUSTOMER_ID?.trim()?.replace(/-/g, '');
+    const mccId = process.env.GOOGLE_ADS_MCC_ID?.trim()?.replace(/-/g, '') || '';
+
+    const headers = {
+      'Authorization': `Bearer ${accessToken}`,
+      'developer-token': developerToken,
+      'Content-Type': 'application/json',
+    };
+    if (mccId) headers['login-customer-id'] = mccId;
+
+    // Use searchStream POST (the REST API doesn't support bare GET on /customers/{id})
+    const response = await fetch(
+      `https://googleads.googleapis.com/v20/customers/${customerId}/googleAds:searchStream`,
+      {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          query: 'SELECT customer.id, customer.descriptive_name FROM customer LIMIT 1',
+        }),
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      const customerName = data?.[0]?.results?.[0]?.customer?.descriptiveName || customerId;
+      results.googleAds = { connected: true, accountName: customerName };
+    } else {
+      const errorText = await response.text();
+      results.googleAds = { connected: false, error: `HTTP ${response.status}: ${errorText.substring(0, 200)}` };
+    }
+  } catch (err) {
+    results.googleAds = { connected: false, error: err.message };
+  }
+
+  // Test Google Search Console API
+  try {
+    const scEmail = process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL?.trim();
+    const scKey = process.env.GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY?.trim();
+    if (!scEmail || !scKey) {
+      results.searchConsole = { connected: false, error: 'Credentials not configured. Set GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL and GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY.' };
+    } else {
+      const accessToken = await getSearchConsoleAccessToken();
+      const siteUrl = 'https://voraprep.com';
+      const response = await fetch(
+        `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}`,
+        { method: 'GET', headers: { 'Authorization': `Bearer ${accessToken}` } }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        results.searchConsole = { connected: true, siteUrl: data.siteUrl || siteUrl };
+      } else {
+        const errorText = await response.text();
+        results.searchConsole = { connected: false, error: `HTTP ${response.status}: ${errorText.substring(0, 200)}` };
+      }
+    }
+  } catch (err) {
+    results.searchConsole = { connected: false, error: err.message };
+  }
+
+  // Test DataForSEO API
+  try {
+    const login = process.env.DATAFORSEO_LOGIN?.trim();
+    const password = process.env.DATAFORSEO_PASSWORD?.trim();
+    if (!login || !password) {
+      results.dataForSEO = { connected: false, error: 'Credentials not configured. Set DATAFORSEO_LOGIN and DATAFORSEO_PASSWORD.' };
+    } else {
+      const authHeader = Buffer.from(`${login}:${password}`).toString('base64');
+      const response = await fetch('https://api.dataforseo.com/v3/appendix/user_data', {
+        method: 'GET',
+        headers: { 'Authorization': `Basic ${authHeader}` },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        const balance = data?.tasks?.[0]?.result?.[0]?.money?.balance;
+        results.dataForSEO = {
+          connected: true,
+          balance: balance !== undefined ? `$${balance.toFixed(2)}` : 'OK',
+        };
+      } else {
+        const errorText = await response.text();
+        results.dataForSEO = { connected: false, error: `HTTP ${response.status}: ${errorText.substring(0, 200)}` };
+      }
+    }
+  } catch (err) {
+    results.dataForSEO = { connected: false, error: err.message };
+  }
+
+  // Update Firestore config with real connection status
+  await db.collection('growth_config').doc('settings').set({
+    googleAdsConfigured: results.googleAds?.connected || false,
+    searchConsoleConfigured: results.searchConsole?.connected || false,
+    dataForSEOConfigured: results.dataForSEO?.connected || false,
+  }, { merge: true });
+
+  return results;
+});
+
+/**
+ * Growth Engine: Sync campaigns to Google Ads.
+ * Reads campaign structures from Firestore, pushes to Google Ads.
+ * Admin-only, callable.
+ */
+exports.growthSyncCampaigns = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  secrets: [
+    'GOOGLE_ADS_DEVELOPER_TOKEN',
+    'GOOGLE_ADS_CLIENT_ID',
+    'GOOGLE_ADS_CLIENT_SECRET',
+    'GOOGLE_ADS_REFRESH_TOKEN',
+    'GOOGLE_ADS_CUSTOMER_ID',
+    'GOOGLE_ADS_MCC_ID',
+  ],
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  // Check guard rails
+  const config = await getGrowthConfig();
+  if (config.emergencyPauseAll) {
+    throw new HttpsError('failed-precondition', 'Emergency pause is active. All campaigns are paused.');
+  }
+  if (!config.semEnabled) {
+    throw new HttpsError('failed-precondition', 'SEM is disabled in Growth Engine settings.');
+  }
+
+  // Get campaigns from request payload (sent by the dashboard)
+  const clientCampaigns = request.data?.campaigns;
+  if (!clientCampaigns || !Array.isArray(clientCampaigns) || clientCampaigns.length === 0) {
+    throw new HttpsError('invalid-argument', 'No campaigns provided. Generate campaigns first.');
+  }
+
+  console.log(`[GrowthSync] Syncing ${clientCampaigns.length} campaigns to Google Ads...`);
+
+  // First, save campaigns to Firestore for tracking
+  for (const campaign of clientCampaigns) {
+    await db.collection('growth_campaigns').doc(campaign.id).set({
+      ...campaign,
+      savedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+  }
+
+  let synced = 0;
+  const errors = [];
+  const customerId = process.env.GOOGLE_ADS_CUSTOMER_ID?.replace(/-/g, '');
+
+  for (const campaign of clientCampaigns) {
+    try {
+      // Check if campaign already exists in Google Ads (from a prior sync)
+      const firestoreDoc = await db.collection('growth_campaigns').doc(campaign.id).get();
+      const existing = firestoreDoc.data();
+
+      if (existing?.googleAdsCampaignId) {
+        // Verify the campaign still exists and is not REMOVED in Google Ads
+        let campaignStillActive = false;
+        try {
+          const checkResp = await googleAdsRequest('googleAds:searchStream', {
+            query: `SELECT campaign.status FROM campaign WHERE campaign.resource_name = '${existing.googleAdsCampaignId}' AND campaign.status != 'REMOVED' LIMIT 1`
+          });
+          campaignStillActive = checkResp?.[0]?.results?.length > 0;
+        } catch (checkErr) {
+          console.warn(`[GrowthSync] Could not verify campaign status, treating as removed:`, checkErr.message);
+        }
+
+        if (campaignStillActive) {
+          // Update existing campaign budget
+          console.log(`[GrowthSync] Updating existing campaign: ${campaign.name}`);
+          await googleAdsRequest('campaignBudgets:mutate', {
+            operations: [{
+              update: {
+                resource_name: existing.googleAdsBudgetResource,
+                amount_micros: (campaign.dailyBudget * 1_000_000).toString(),
+              },
+              update_mask: 'amount_micros',
+            }],
+          });
+        } else {
+          // Campaign was removed — clear stale IDs and recreate
+          console.log(`[GrowthSync] Campaign "${campaign.name}" was removed from Google Ads. Recreating...`);
+          await db.collection('growth_campaigns').doc(campaign.id).update({
+            googleAdsCampaignId: admin.firestore.FieldValue.delete(),
+            googleAdsBudgetResource: admin.firestore.FieldValue.delete(),
+          });
+          existing.googleAdsCampaignId = null;
+          existing.googleAdsBudgetResource = null;
+        }
+      }
+      
+      if (!existing?.googleAdsCampaignId) {
+        // Create new campaign budget with unique name (timestamp avoids DUPLICATE_NAME)
+        const budgetName = `VoraPrep-${campaign.courseId.toUpperCase()}-${Date.now()}`;
+        console.log(`[GrowthSync] Creating new campaign: ${campaign.name} (budget: ${budgetName})`);
+        
+        let budgetResource;
+        try {
+          const budgetResponse = await googleAdsRequest('campaignBudgets:mutate', {
+            operations: [{
+              create: {
+                name: budgetName,
+                amount_micros: (campaign.dailyBudget * 1_000_000).toString(),
+                delivery_method: 'STANDARD',
+              },
+            }],
+          });
+          budgetResource = budgetResponse?.results?.[0]?.resourceName;
+        } catch (budgetErr) {
+          // If DUPLICATE_NAME, try to find existing budget via search
+          if (budgetErr.message?.includes('DUPLICATE_NAME')) {
+            console.log(`[GrowthSync] Budget name collision, searching for existing budget...`);
+            const searchResp = await googleAdsRequest('googleAds:searchStream', {
+              query: `SELECT campaign_budget.resource_name, campaign_budget.name, campaign_budget.amount_micros FROM campaign_budget WHERE campaign_budget.name LIKE 'VoraPrep-${campaign.courseId.toUpperCase()}%' LIMIT 1`
+            });
+            budgetResource = searchResp?.[0]?.results?.[0]?.campaignBudget?.resourceName;
+            if (!budgetResource) throw budgetErr; // Re-throw if we can't find it
+            console.log(`[GrowthSync] Found existing budget: ${budgetResource}`);
+          } else {
+            throw budgetErr;
+          }
+        }
+
+        if (!budgetResource) {
+          throw new Error('Failed to create or find campaign budget');
+        }
+
+        // Create the campaign
+        // Start with MAXIMIZE_CLICKS — no conversion tracking needed.
+        // Switch to MAXIMIZE_CONVERSIONS once conversion actions are set up in Google Ads.
+        const campaignResponse = await googleAdsRequest('campaigns:mutate', {
+          operations: [{
+            create: {
+              name: campaign.name,
+              campaign_budget: budgetResource,
+              advertising_channel_type: 'SEARCH',
+              status: 'PAUSED',
+              // target_spend = MAXIMIZE_CLICKS in Google Ads API
+              target_spend: {
+                cpc_bid_ceiling_micros: ((campaign.targetCPA || 2) * 1_000_000).toString(),
+              },
+              network_settings: {
+                target_google_search: true,
+                target_search_network: false,
+                target_content_network: false,
+              },
+              contains_eu_political_advertising: 2,
+            },
+          }],
+        });
+
+        const googleAdsCampaignId = campaignResponse?.results?.[0]?.resourceName;
+
+        // Store the Google Ads IDs back to Firestore
+        await db.collection('growth_campaigns').doc(campaign.id).update({
+          googleAdsCampaignId,
+          googleAdsBudgetResource: budgetResource,
+          syncedAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+        console.log(`[GrowthSync] Created campaign ${campaign.name} -> ${googleAdsCampaignId}`);
+      }
+
+      // ================================================================
+      // Create Ad Groups, Keywords, and Responsive Search Ads
+      // ================================================================
+      const campaignResourceName = existing?.googleAdsCampaignId ||
+        (await db.collection('growth_campaigns').doc(campaign.id).get()).data()?.googleAdsCampaignId;
+
+      if (campaignResourceName && campaign.adGroups?.length) {
+        for (const adGroup of campaign.adGroups) {
+          try {
+            // --- 1) Create or find existing Ad Group ---
+            let adGroupResource;
+
+            try {
+              const adGroupResponse = await googleAdsRequest('adGroups:mutate', {
+                operations: [{
+                  create: {
+                    name: adGroup.name,
+                    campaign: campaignResourceName,
+                    status: 'ENABLED',
+                    type: 'SEARCH_STANDARD',
+                    cpc_bid_micros: ((adGroup.maxCpc || 1.5) * 1_000_000).toString(),
+                  },
+                }],
+              });
+              adGroupResource = adGroupResponse?.results?.[0]?.resourceName;
+            } catch (agCreateErr) {
+              if (agCreateErr.message?.includes('DUPLICATE_ADGROUP_NAME')) {
+                // Find the existing ad group by name
+                console.log(`[GrowthSync]   Ad group "${adGroup.name}" exists, finding it...`);
+                const searchResp = await googleAdsRequest('googleAds:searchStream', {
+                  query: `SELECT ad_group.resource_name FROM ad_group WHERE ad_group.name = '${adGroup.name.replace(/'/g, "\\'")}' AND campaign.resource_name = '${campaignResourceName}' AND ad_group.status != 'REMOVED' LIMIT 1`
+                });
+                adGroupResource = searchResp?.[0]?.results?.[0]?.adGroup?.resourceName;
+                if (!adGroupResource) throw agCreateErr;
+              } else {
+                throw agCreateErr;
+              }
+            }
+
+            if (!adGroupResource) {
+              console.warn(`[GrowthSync] No resource returned for ad group ${adGroup.name}`);
+              continue;
+            }
+            console.log(`[GrowthSync]   Ad group: ${adGroup.name} -> ${adGroupResource}`);
+
+            // --- 2) Create Keywords (batch up to 50 at a time) ---
+            if (adGroup.keywords?.length) {
+              const kwOps = adGroup.keywords
+                .filter(k => k.keyword && k.status !== 'removed')
+                .map(k => {
+                  // Strip all chars Google Ads doesn't allow in keyword text.
+                  // Only allow: letters, numbers, spaces, hyphens, apostrophes, periods.
+                  const kwText = k.keyword
+                    .replace(/["\[\]]/g, '')
+                    .replace(/[^a-zA-Z0-9\s\-'.]/g, '')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+                  const matchType = (k.matchType || 'broad').toUpperCase();
+
+                  if (!kwText) return null; // Skip empty after sanitization
+
+                  return {
+                    create: {
+                      ad_group: adGroupResource,
+                      keyword: {
+                        text: kwText,
+                        match_type: matchType,
+                      },
+                      status: 'ENABLED',
+                      cpc_bid_micros: ((k.maxCpc || adGroup.maxCpc || 1.5) * 1_000_000).toString(),
+                    },
+                  };
+                }).filter(Boolean);
+
+              // Batch in groups of 50 (API limit)
+              for (let i = 0; i < kwOps.length; i += 50) {
+                const batch = kwOps.slice(i, i + 50);
+                await googleAdsRequest('adGroupCriteria:mutate', {
+                  operations: batch,
+                });
+              }
+              console.log(`[GrowthSync]   Keywords: ${kwOps.length} created`);
+            }
+
+            // --- 3) Create Negative Keywords at ad group level ---
+            if (adGroup.negativeKeywords?.length) {
+              const negOps = adGroup.negativeKeywords.map(nk => ({
+                create: {
+                  ad_group: adGroupResource,
+                  keyword: {
+                    text: nk,
+                    match_type: 'BROAD',
+                  },
+                  negative: true,
+                  status: 'ENABLED',
+                },
+              }));
+
+              for (let i = 0; i < negOps.length; i += 50) {
+                const batch = negOps.slice(i, i + 50);
+                await googleAdsRequest('adGroupCriteria:mutate', {
+                  operations: batch,
+                });
+              }
+              console.log(`[GrowthSync]   Negative keywords: ${negOps.length} created`);
+            }
+
+            // --- 4) Create Responsive Search Ads ---
+            if (adGroup.ads?.length) {
+              for (const ad of adGroup.ads) {
+                // RSA requires at least 3 headlines and 2 descriptions
+                const validHeadlines = (ad.headlines || []).filter(h => h && h.length > 0 && h.length <= 30).slice(0, 15);
+                const validDescriptions = (ad.descriptions || []).filter(d => d && d.length > 0 && d.length <= 90).slice(0, 4);
+
+                if (validHeadlines.length < 3 || validDescriptions.length < 2) {
+                  console.warn(`[GrowthSync]   Skipping RSA ${ad.id}: only ${validHeadlines.length} headlines, ${validDescriptions.length} descriptions (need 3/2)`);
+                  continue;
+                }
+
+                await googleAdsRequest('adGroupAds:mutate', {
+                  operations: [{
+                    create: {
+                      ad_group: adGroupResource,
+                      status: 'ENABLED',
+                      ad: {
+                        responsive_search_ad: {
+                          headlines: validHeadlines.map(h => ({
+                            text: h.substring(0, 30),
+                          })),
+                          descriptions: validDescriptions.map(d => ({
+                            text: d.substring(0, 90),
+                          })),
+                          path1: ad.displayPath?.[0]?.substring(0, 15) || '',
+                          path2: ad.displayPath?.[1]?.substring(0, 15) || '',
+                        },
+                        final_urls: [ad.finalUrl || `https://voraprep.com/${campaign.courseId}`],
+                      },
+                    },
+                  }],
+                });
+                console.log(`[GrowthSync]   RSA created: ${ad.id}`);
+              }
+            }
+
+          } catch (agErr) {
+            const agErrMsg = agErr.message || String(agErr);
+            // Don't fail the whole campaign, just log and continue
+            console.error(`[GrowthSync]   Failed ad group ${adGroup.name}:`, agErrMsg);
+            errors.push({ campaign: campaign.name, adGroup: adGroup.name, error: agErrMsg });
+          }
+        }
+      }
+
+      synced++;
+    } catch (err) {
+      const errMsg = err.message || String(err);
+      errors.push({ campaign: campaign.name, error: errMsg });
+      console.error(`[GrowthSync] Failed to sync campaign ${campaign.name}:`, errMsg);
+    }
+  }
+
+  // Log sync event
+  await db.collection('growth_metrics').add({
+    type: 'campaign_sync',
+    synced,
+    errors: errors.length,
+    errorDetails: errors,
+    timestamp: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  const success = errors.length === 0;
+  return {
+    success,
+    synced,
+    errors,
+    message: success
+      ? `Successfully synced ${synced} campaigns to Google Ads (PAUSED). Go to Google Ads to review and enable.`
+      : `Synced ${synced}/${clientCampaigns.length} campaigns. ${errors.length} error(s): ${errors.map(e => e.error).join('; ')}`,
+  };
+});
+
+/**
+ * Growth Engine: Daily performance pull from Google Ads.
+ * Runs daily at 6 AM UTC, pulls spend/conversions/CPA and applies guard rails.
+ */
+exports.growthDailyPull = onSchedule({
+  schedule: 'every day 06:00',
+  timeZone: 'UTC',
+  secrets: [
+    'GOOGLE_ADS_DEVELOPER_TOKEN',
+    'GOOGLE_ADS_CLIENT_ID',
+    'GOOGLE_ADS_CLIENT_SECRET',
+    'GOOGLE_ADS_REFRESH_TOKEN',
+    'GOOGLE_ADS_CUSTOMER_ID',
+    'GOOGLE_ADS_MCC_ID',
+    'RESEND_API_KEY',
+  ],
+}, async () => {
+  const config = await getGrowthConfig();
+
+  // If emergency pause or SEM disabled, skip
+  if (config.emergencyPauseAll || !config.semEnabled) {
+    console.log('[GrowthEngine] SEM disabled or emergency pause active, skipping daily pull.');
+    return;
+  }
+
+  try {
+    // Pull yesterday's performance data via Google Ads reporting
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const dateStr = yesterday.toISOString().split('T')[0].replace(/-/g, '');
+
+    const reportResponse = await googleAdsRequest('googleAds:searchStream', {
+      query: `
+        SELECT
+          campaign.id,
+          campaign.name,
+          campaign.status,
+          metrics.cost_micros,
+          metrics.conversions,
+          metrics.clicks,
+          metrics.impressions,
+          metrics.ctr,
+          metrics.average_cpc,
+          metrics.cost_per_conversion
+        FROM campaign
+        WHERE segments.date = '${dateStr}'
+      `,
+    });
+
+    const results = reportResponse?.[0]?.results || [];
+    let totalSpend = 0;
+    const campaignMetrics = [];
+
+    for (const row of results) {
+      const costDollars = (parseInt(row.metrics?.costMicros || '0', 10) / 1_000_000);
+      totalSpend += costDollars;
+
+      const campaignData = {
+        googleCampaignId: row.campaign?.id,
+        name: row.campaign?.name,
+        status: row.campaign?.status,
+        spend: costDollars,
+        conversions: parseFloat(row.metrics?.conversions || '0'),
+        clicks: parseInt(row.metrics?.clicks || '0', 10),
+        impressions: parseInt(row.metrics?.impressions || '0', 10),
+        ctr: parseFloat(row.metrics?.ctr || '0'),
+        avgCpc: (parseInt(row.metrics?.averageCpc || '0', 10) / 1_000_000),
+        cpa: (parseInt(row.metrics?.costPerConversion || '0', 10) / 1_000_000),
+        date: dateStr,
+      };
+
+      campaignMetrics.push(campaignData);
+
+      // === GUARD RAIL: Auto-pause on high CPA ===
+      if (campaignData.conversions > 0 && campaignData.cpa > 0) {
+        // Find this campaign's target CPA from Firestore
+        const campaignDocs = await db.collection('growth_campaigns')
+          .where('googleAdsCampaignId', '==', `customers/${process.env.GOOGLE_ADS_CUSTOMER_ID?.trim()?.replace(/-/g, '')}/campaigns/${row.campaign?.id}`)
+          .limit(1).get();
+
+        if (!campaignDocs.empty) {
+          const targetCPA = campaignDocs.docs[0].data()?.targetCPA || 25;
+          if (campaignData.cpa > targetCPA * config.maxCpaMultiplier) {
+            console.warn(`[GrowthEngine] GUARD RAIL: Pausing campaign ${campaignData.name} — CPA $${campaignData.cpa.toFixed(2)} exceeds ${config.maxCpaMultiplier}x target $${targetCPA}`);
+
+            try {
+              await googleAdsRequest('campaigns:mutate', {
+                operations: [{
+                  update: {
+                    resourceName: `customers/${process.env.GOOGLE_ADS_CUSTOMER_ID?.trim()?.replace(/-/g, '')}/campaigns/${row.campaign?.id}`,
+                    status: 'PAUSED',
+                  },
+                  updateMask: 'status',
+                }],
+              });
+
+              // Log the pause action
+              await db.collection('growth_actions').add({
+                type: 'auto_pause_high_cpa',
+                campaign: campaignData.name,
+                reason: `CPA $${campaignData.cpa.toFixed(2)} exceeded ${config.maxCpaMultiplier}x target $${targetCPA}`,
+                timestamp: admin.firestore.FieldValue.serverTimestamp(),
+              });
+            } catch (pauseErr) {
+              console.error(`Failed to auto-pause campaign: ${pauseErr.message}`);
+            }
+          }
+        }
+      }
+    }
+
+    // Save daily metrics
+    await db.collection('growth_metrics').doc(dateStr).set({
+      date: dateStr,
+      totalSpend,
+      campaigns: campaignMetrics,
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
+    // === GUARD RAIL: Budget overage alert ===
+    if (config.alertOnBudgetOverage && totalSpend > config.totalDailyBudget * 1.2) {
+      const apiKey = process.env.RESEND_API_KEY?.trim();
+      if (apiKey) {
+        const emailResend = new Resend(apiKey);
+        await emailResend.emails.send({
+          from: 'VoraPrep Growth Engine <alerts@voraprep.com>',
+          to: 'admin@voraprep.com',
+          subject: `⚠️ Budget Overage Alert — $${totalSpend.toFixed(2)} spent (limit: $${config.totalDailyBudget})`,
+          html: `
+            <h2>Daily Spend Exceeded Budget</h2>
+            <p><strong>Date:</strong> ${yesterday.toISOString().split('T')[0]}</p>
+            <p><strong>Spent:</strong> $${totalSpend.toFixed(2)}</p>
+            <p><strong>Budget:</strong> $${config.totalDailyBudget}</p>
+            <p><strong>Overage:</strong> ${((totalSpend / config.totalDailyBudget - 1) * 100).toFixed(0)}%</p>
+            <p>Review campaigns at <a href="https://voraprep.com/admin/growth">Growth Dashboard</a></p>
+          `,
+        });
+      }
+    }
+
+    console.log(`[GrowthEngine] Daily pull complete. Total spend: $${totalSpend.toFixed(2)}, ${results.length} campaigns.`);
+  } catch (error) {
+    console.error('[GrowthEngine] Daily pull failed:', error);
+  }
+});
+
+
+// ============================================================================
+// GROWTH ENGINE — Google Search Console Rank Tracking
+// ============================================================================
+// Secrets required:
+//   firebase functions:secrets:set GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL
+//   firebase functions:secrets:set GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY
+// ============================================================================
+
+/**
+ * Helper: Get Search Console access token via service account.
+ */
+async function getSearchConsoleAccessToken() {
+  const clientEmail = process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL?.trim();
+  let privateKey = process.env.GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY?.trim();
+
+  if (!clientEmail || !privateKey) {
+    throw new HttpsError('failed-precondition', 'Search Console credentials not configured.');
+  }
+
+  // Normalize PEM private key — Firebase secrets can mangle newlines in several ways:
+  //  1. Literal backslash-n sequences: \\n or \n stored as text
+  //  2. Escaped JSON: \\\\n
+  //  3. All on one line with no breaks at all
+  // Fix all of them so crypto.createSign can parse the PEM.
+  privateKey = privateKey.replace(/\\n/g, '\n');           // literal \n → actual newline
+  privateKey = privateKey.replace(/\\\\n/g, '\n');         // \\n → actual newline
+  
+  // If the key has no real newlines between BEGIN/END markers, re-chunk it
+  if (privateKey.includes('-----BEGIN') && !privateKey.match(/-----BEGIN[^\n]*\n/)) {
+    // Key is all on one line — insert newlines around headers and every 64 chars
+    privateKey = privateKey
+      .replace(/-----BEGIN (.*?)-----/, '-----BEGIN $1-----\n')
+      .replace(/-----END (.*?)-----/, '\n-----END $1-----');
+    const headerMatch = privateKey.match(/-----BEGIN .*?-----\n/);
+    const footerMatch = privateKey.match(/\n-----END .*?-----/);
+    if (headerMatch && footerMatch) {
+      const header = headerMatch[0];
+      const footer = footerMatch[0];
+      const body = privateKey.slice(header.length, privateKey.length - footer.length + 1).replace(/\s/g, '');
+      const chunked = body.match(/.{1,64}/g)?.join('\n') || body;
+      privateKey = header + chunked + footer;
+    }
+  }
+
+  // Build JWT for service account auth
+  const now = Math.floor(Date.now() / 1000);
+  const header = Buffer.from(JSON.stringify({ alg: 'RS256', typ: 'JWT' })).toString('base64url');
+  const payload = Buffer.from(JSON.stringify({
+    iss: clientEmail,
+    scope: 'https://www.googleapis.com/auth/webmasters.readonly',
+    aud: 'https://oauth2.googleapis.com/token',
+    iat: now,
+    exp: now + 3600,
+  })).toString('base64url');
+
+  const crypto = require('crypto');
+  const signer = crypto.createSign('RSA-SHA256');
+  signer.update(`${header}.${payload}`);
+  const signature = signer.sign(privateKey, 'base64url');
+
+  const jwt = `${header}.${payload}.${signature}`;
+
+  const response = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion: jwt,
+    }),
+  });
+
+  if (!response.ok) {
+    console.error('Failed to get Search Console token:', await response.text());
+    throw new HttpsError('internal', 'Search Console authentication failed.');
+  }
+
+  const data = await response.json();
+  return data.access_token;
+}
+
+/**
+ * Growth Engine: Daily rank tracking via Google Search Console.
+ * Pulls search analytics for tracked keywords, updates positions in Firestore.
+ */
+exports.growthRankTracking = onSchedule({
+  schedule: 'every day 07:00',
+  timeZone: 'UTC',
+  secrets: [
+    'GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL',
+    'GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY',
+    'RESEND_API_KEY',
+  ],
+}, async () => {
+  const config = await getGrowthConfig();
+
+  if (!config.rankTrackingEnabled) {
+    console.log('[GrowthEngine] Rank tracking disabled, skipping.');
+    return;
+  }
+
+  try {
+    const accessToken = await getSearchConsoleAccessToken();
+    const siteUrl = 'https://voraprep.com';
+
+    // Query last 3 days of search analytics (Search Console has a 2-3 day lag)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() - 2);
+    const startDate = new Date(endDate);
+    startDate.setDate(startDate.getDate() - 1);
+
+    const response = await fetch(
+      `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          startDate: startDate.toISOString().split('T')[0],
+          endDate: endDate.toISOString().split('T')[0],
+          dimensions: ['query', 'page'],
+          rowLimit: 5000,
+        }),
+      },
+    );
+
+    if (!response.ok) {
+      console.error('Search Console API error:', await response.text());
+      return;
+    }
+
+    const data = await response.json();
+    const rows = data.rows || [];
+
+    console.log(`[GrowthEngine] Received ${rows.length} search analytics rows.`);
+
+    // Load tracked keywords from Firestore
+    const keywordsSnapshot = await db.collection('growth_keywords').get();
+    const trackedKeywords = new Map();
+    keywordsSnapshot.forEach(doc => {
+      trackedKeywords.set(doc.data().keyword?.toLowerCase(), doc.id);
+    });
+
+    let updated = 0;
+    let rankDrops = [];
+
+    // Batch update keyword positions
+    const batch = db.batch();
+    const batchSize = 500;
+    let batchCount = 0;
+
+    for (const row of rows) {
+      const keyword = row.keys?.[0]?.toLowerCase();
+      const docId = trackedKeywords.get(keyword);
+
+      if (docId) {
+        const ref = db.collection('growth_keywords').doc(docId);
+        const oldDoc = await ref.get();
+        const oldPosition = oldDoc.data()?.currentPosition || 0;
+        const newPosition = Math.round(row.position);
+
+        batch.update(ref, {
+          currentPosition: newPosition,
+          previousPosition: oldPosition,
+          lastChecked: admin.firestore.FieldValue.serverTimestamp(),
+          impressions: row.impressions || 0,
+          clicks: row.clicks || 0,
+          ctr: row.ctr || 0,
+          rankingUrl: row.keys?.[1] || '',
+        });
+
+        updated++;
+        batchCount++;
+
+        // Detect rank drops of 5+ positions
+        if (oldPosition > 0 && newPosition > oldPosition + 5) {
+          rankDrops.push({
+            keyword,
+            oldPosition,
+            newPosition,
+            drop: newPosition - oldPosition,
+          });
+        }
+
+        // Commit batch every 500 operations
+        if (batchCount >= batchSize) {
+          await batch.commit();
+          batchCount = 0;
+        }
+      }
+    }
+
+    if (batchCount > 0) {
+      await batch.commit();
+    }
+
+    // === GUARD RAIL: Rank drop alerts ===
+    if (config.alertOnRankDrop && rankDrops.length > 0) {
+      const apiKey = process.env.RESEND_API_KEY?.trim();
+      if (apiKey) {
+        const emailResend = new Resend(apiKey);
+        const dropRows = rankDrops
+          .sort((a, b) => b.drop - a.drop)
+          .slice(0, 20)
+          .map(d => `<tr><td>${d.keyword}</td><td>${d.oldPosition}</td><td>${d.newPosition}</td><td style="color:red">-${d.drop}</td></tr>`)
+          .join('');
+
+        await emailResend.emails.send({
+          from: 'VoraPrep Growth Engine <alerts@voraprep.com>',
+          to: 'admin@voraprep.com',
+          subject: `📉 Rank Drop Alert — ${rankDrops.length} keywords dropped 5+ positions`,
+          html: `
+            <h2>Keyword Rank Drops Detected</h2>
+            <p>${rankDrops.length} tracked keywords dropped 5+ positions.</p>
+            <table border="1" cellpadding="6" style="border-collapse:collapse">
+              <tr><th>Keyword</th><th>Old</th><th>New</th><th>Change</th></tr>
+              ${dropRows}
+            </table>
+            <p>Review at <a href="https://voraprep.com/admin/growth">Growth Dashboard</a></p>
+          `,
+        });
+      }
+    }
+
+    console.log(`[GrowthEngine] Rank tracking complete. Updated ${updated} keywords. ${rankDrops.length} drops detected.`);
+
+    // Log tracking run
+    await db.collection('growth_metrics').add({
+      type: 'rank_tracking',
+      keywordsUpdated: updated,
+      rankDrops: rankDrops.length,
+      totalRows: rows.length,
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    });
+  } catch (error) {
+    console.error('[GrowthEngine] Rank tracking failed:', error);
+  }
+});
+
+
+// ============================================================================
+// GROWTH ENGINE — Content Pipeline (Gemini-powered article generation)
+// ============================================================================
+
+/**
+ * Growth Engine: Generate an article draft from a content brief.
+ * Admin-only, callable. Generates via Gemini, saves as draft (requires review).
+ */
+exports.growthGenerateArticle = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  secrets: ['GEMINI_API_KEY'],
+  timeoutSeconds: 120,
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const { briefId } = request.data;
+  if (!briefId) {
+    throw new HttpsError('invalid-argument', 'briefId is required.');
+  }
+
+  // Load brief
+  const briefDoc = await db.collection('growth_content').doc(briefId).get();
+  if (!briefDoc.exists) {
+    throw new HttpsError('not-found', 'Content brief not found.');
+  }
+  const brief = briefDoc.data();
+
+  // Load config for guard rails
+  const config = await getGrowthConfig();
+
+  // Check weekly article limit
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const recentArticles = await db.collection('growth_content')
+    .where('status', 'in', ['draft', 'review', 'published'])
+    .where('generatedAt', '>=', admin.firestore.Timestamp.fromDate(weekAgo))
+    .get();
+
+  if (recentArticles.size >= config.maxArticlesPerWeek) {
+    throw new HttpsError(
+      'resource-exhausted',
+      `Weekly article limit reached (${config.maxArticlesPerWeek}/week). Increase in Settings.`
+    );
+  }
+
+  // Build the prompt
+  const examNames = {
+    cpa: 'CPA (Certified Public Accountant)',
+    ea: 'EA (Enrolled Agent)',
+    cma: 'CMA (Certified Management Accountant)',
+    cia: 'CIA (Certified Internal Auditor)',
+    cisa: 'CISA (Certified Information Systems Auditor)',
+    cfp: 'CFP (Certified Financial Planner)',
+  };
+
+  const systemPrompt = `You are an expert SEO content writer specializing in professional certification exam preparation. 
+You write for VoraPrep (voraprep.com), an AI-powered exam prep platform.
+
+CRITICAL RULES:
+- Write genuinely helpful, comprehensive content — not thin SEO filler
+- Include specific, accurate facts (pass rates, exam structure, pricing)
+- Use natural language — DO NOT keyword-stuff
+- Include actionable advice from real exam prep experience
+- Cite official sources (AICPA, IRS, IMA, IIA, ISACA, CFP Board) where appropriate
+- Use H2/H3 headings for structure
+- Include a compelling meta description (155 chars max)
+- Target word count: ${brief.wordCountTarget || 2000} words
+- Write in Markdown format`;
+
+  const userPrompt = `Write a comprehensive article for the following content brief:
+
+TITLE: ${brief.title}
+EXAM: ${examNames[brief.courseId] || brief.courseId.toUpperCase()}
+${brief.section ? `SECTION: ${brief.section}` : ''}
+CONTENT TYPE: ${brief.contentType}
+TARGET KEYWORDS: ${(brief.targetKeywords || []).join(', ')}
+TARGET WORD COUNT: ${brief.wordCountTarget || 2000}
+
+OUTLINE:
+${(brief.outline || []).map((s, i) => `${i + 1}. ${s.heading}\n   ${s.keyPoints?.join('\n   ') || ''}`).join('\n')}
+
+INTERNAL LINKS TO INCLUDE:
+${(brief.internalLinks || []).map(l => `- ${l}`).join('\n')}
+
+Please write the complete article in Markdown. Start with a meta description line, then the full article.`;
+
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  if (!apiKey) {
+    throw new HttpsError('failed-precondition', 'Gemini API key not configured.');
+  }
+
+  const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+
+  try {
+    const response = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 8192,
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Gemini content generation failed:', await response.text());
+      throw new HttpsError('internal', 'AI content generation failed.');
+    }
+
+    const data = await response.json();
+    const generatedContent = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (!generatedContent) {
+      throw new HttpsError('internal', 'No content generated.');
+    }
+
+    // Save the generated draft
+    const newStatus = config.contentReviewRequired ? 'review' : 'published';
+
+    await db.collection('growth_content').doc(briefId).update({
+      status: newStatus,
+      generatedContent,
+      generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      wordCount: generatedContent.split(/\s+/).length,
+      generatedBy: 'gemini-2.0-flash',
+    });
+
+    return {
+      status: newStatus,
+      wordCount: generatedContent.split(/\s+/).length,
+      preview: generatedContent.substring(0, 500) + '...',
+      message: config.contentReviewRequired
+        ? 'Article generated and moved to review queue. Approve before publishing.'
+        : 'Article generated and published.',
+    };
+  } catch (error) {
+    if (error instanceof HttpsError) throw error;
+    console.error('Content generation error:', error);
+    throw new HttpsError('internal', 'Failed to generate article.');
+  }
+});
+
+
+// ============================================================================
+// GROWTH ENGINE — DataForSEO Keyword Research
+// ============================================================================
+// Secrets required:
+//   firebase functions:secrets:set DATAFORSEO_LOGIN
+//   firebase functions:secrets:set DATAFORSEO_PASSWORD
+// ============================================================================
+
+/**
+ * Growth Engine: Enrich keywords with volume, difficulty, CPC data.
+ * Pulls from DataForSEO API and updates keyword records in Firestore.
+ * Admin-only, callable.
+ */
+exports.growthEnrichKeywords = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  secrets: ['DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
+  timeoutSeconds: 120,
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const login = process.env.DATAFORSEO_LOGIN?.trim();
+  const password = process.env.DATAFORSEO_PASSWORD?.trim();
+  if (!login || !password) {
+    throw new HttpsError('failed-precondition', 'DataForSEO credentials not configured.');
+  }
+
+  const authHeader = Buffer.from(`${login}:${password}`).toString('base64');
+
+  // Load un-enriched keywords (no volume data yet)
+  const keywordsSnapshot = await db.collection('growth_keywords')
+    .where('enriched', '==', false)
+    .limit(100)  // DataForSEO rate limits — process in batches
+    .get();
+
+  if (keywordsSnapshot.empty) {
+    return { enriched: 0, message: 'No keywords to enrich.' };
+  }
+
+  const keywords = keywordsSnapshot.docs.map(doc => ({
+    id: doc.id,
+    keyword: doc.data().keyword,
+  }));
+
+  // DataForSEO bulk keyword data endpoint
+  const response = await fetch('https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Basic ${authHeader}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify([{
+      keywords: keywords.map(k => k.keyword),
+      location_code: 2840,  // United States
+      language_code: 'en',
+    }]),
+  });
+
+  if (!response.ok) {
+    console.error('DataForSEO API error:', await response.text());
+    throw new HttpsError('internal', 'DataForSEO API error.');
+  }
+
+  const data = await response.json();
+  const results = data?.tasks?.[0]?.result || [];
+
+  // Update keywords in Firestore
+  let enriched = 0;
+  const batch = db.batch();
+
+  for (const result of results) {
+    const matchingKeyword = keywords.find(k =>
+      k.keyword.toLowerCase() === result.keyword?.toLowerCase()
+    );
+
+    if (matchingKeyword) {
+      batch.update(db.collection('growth_keywords').doc(matchingKeyword.id), {
+        searchVolume: result.search_volume || 0,
+        cpc: result.cpc || 0,
+        competition: result.competition || 0,
+        competitionLevel: result.competition_level || 'unknown',
+        enriched: true,
+        enrichedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      enriched++;
+    }
+  }
+
+  await batch.commit();
+
+  return {
+    enriched,
+    total: keywords.length,
+    message: `Enriched ${enriched}/${keywords.length} keywords with volume/CPC data.`,
+  };
+});
+
+
+// ============================================================================
+// GROWTH ENGINE — Automated Blog Content Publisher
+// ============================================================================
+// Runs on a schedule (every 2-3 days via randomized skip).
+// Picks a random unpublished brief, generates via Gemini, publishes directly.
+// This is the "set it and go" automation for SEO content growth.
+// ============================================================================
+
+/**
+ * Growth Engine: Automated content generation and publishing.
+ * 
+ * Schedule: Runs daily at 10 AM UTC, but randomly skips ~50% of runs
+ * to create a natural, unpredictable posting cadence (avg 3-4 posts/week).
+ * 
+ * Pipeline:
+ *   1. Check if auto-content is enabled in growth_config
+ *   2. Check weekly article limit (safety rail)
+ *   3. Roll dice — skip ~40% of runs for natural cadence
+ *   4. Pick a random brief with status='brief' (unpublished)
+ *   5. Generate full article via Gemini 2.0 Flash
+ *   6. Save as 'published' directly (no review gate)
+ *   7. Log the action for audit trail
+ */
+exports.growthAutoPublish = onSchedule({
+  schedule: 'every day 10:00',
+  timeZone: 'America/New_York',
+  secrets: ['GEMINI_API_KEY', 'RESEND_API_KEY'],
+  timeoutSeconds: 120,
+  memory: '512MiB',
+}, async () => {
+  console.log('[AutoPublish] Starting automated content pipeline...');
+
+  // 1. Load config
+  const config = await getGrowthConfig();
+  
+  if (!config.autoContentGeneration) {
+    console.log('[AutoPublish] Auto content generation is disabled. Skipping.');
+    return;
+  }
+
+  // 2. Check weekly limit
+  const weekAgo = new Date();
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const recentArticles = await db.collection('growth_content')
+    .where('status', '==', 'published')
+    .where('generatedAt', '>=', admin.firestore.Timestamp.fromDate(weekAgo))
+    .get();
+
+  const maxPerWeek = config.maxArticlesPerWeek || 5;
+  if (recentArticles.size >= maxPerWeek) {
+    console.log(`[AutoPublish] Weekly limit reached (${recentArticles.size}/${maxPerWeek}). Skipping.`);
+    return;
+  }
+
+  // 3. Random skip for natural cadence (~40% chance to skip)
+  //    This makes posting unpredictable: some days 0, some 1
+  //    Avg ~4 articles/week (7 days × 60% = 4.2)
+  const skipRoll = Math.random();
+  if (skipRoll < 0.40) {
+    console.log(`[AutoPublish] Random skip (roll=${skipRoll.toFixed(2)}). Will try again tomorrow.`);
+    return;
+  }
+
+  // 4. Pick a random unpublished brief
+  const briefsSnapshot = await db.collection('growth_content')
+    .where('status', '==', 'brief')
+    .limit(50)
+    .get();
+
+  if (briefsSnapshot.empty) {
+    console.log('[AutoPublish] No unpublished briefs available. Content pool exhausted.');
+    return;
+  }
+
+  // Pick a random brief from the pool
+  const briefs = briefsSnapshot.docs;
+  const randomIndex = Math.floor(Math.random() * briefs.length);
+  const briefDoc = briefs[randomIndex];
+  const brief = briefDoc.data();
+
+  console.log(`[AutoPublish] Selected brief: "${brief.title}" (${briefDoc.id})`);
+
+  // 5. Generate article via Gemini
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  if (!apiKey) {
+    console.error('[AutoPublish] GEMINI_API_KEY not configured.');
+    return;
+  }
+
+  const examNames = {
+    cpa: 'CPA (Certified Public Accountant)',
+    ea: 'EA (Enrolled Agent)',
+    cma: 'CMA (Certified Management Accountant)',
+    cia: 'CIA (Certified Internal Auditor)',
+    cisa: 'CISA (Certified Information Systems Auditor)',
+    cfp: 'CFP (Certified Financial Planner)',
+  };
+
+  const systemPrompt = `You are an expert SEO content writer specializing in professional certification exam preparation. 
+You write for VoraPrep (voraprep.com), an AI-powered exam prep platform.
+
+CRITICAL RULES:
+- Write genuinely helpful, comprehensive content — not thin SEO filler
+- Include specific, accurate facts (pass rates, exam structure, pricing)
+- Use natural language — DO NOT keyword-stuff
+- Include actionable advice from real exam prep experience
+- Cite official sources (AICPA, IRS, IMA, IIA, ISACA, CFP Board) where appropriate
+- Use H2/H3 headings for structure
+- Write a compelling meta description on the FIRST LINE in format: "Meta Description: ..."
+- Target word count: ${brief.wordCountTarget || 2000} words
+- Write in Markdown format
+- Do NOT include the article title as an H1 (it's rendered separately)
+- Include a brief, engaging intro paragraph before the first H2
+- End with a concise summary or key takeaways`;
+
+  const userPrompt = `Write a comprehensive article for the following content brief:
+
+TITLE: ${brief.title}
+EXAM: ${examNames[brief.courseId] || brief.courseId?.toUpperCase() || 'Professional Certification'}
+${brief.section ? `SECTION: ${brief.section}` : ''}
+CONTENT TYPE: ${brief.contentType}
+TARGET KEYWORDS: ${(brief.targetKeywords || []).join(', ')}
+TARGET WORD COUNT: ${brief.wordCountTarget || 2000}
+
+OUTLINE:
+${(brief.outline || []).map((s, i) => `${i + 1}. ${s.heading}\n   ${(s.keyPoints || []).join('\n   ')}`).join('\n')}
+
+INTERNAL LINKS TO INCLUDE (use markdown links to voraprep.com):
+${(brief.internalLinks || []).map(l => `- https://voraprep.com${l}`).join('\n')}
+
+Please write the complete article in Markdown. Start with "Meta Description: ..." on the first line, then the full article.`;
+
+  const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+
+  try {
+    const response = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 8192,
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      console.error('[AutoPublish] Gemini API error:', errText);
+      return;
+    }
+
+    const data = await response.json();
+    const generatedContent = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (!generatedContent) {
+      console.error('[AutoPublish] Gemini returned empty content.');
+      return;
+    }
+
+    // 6. Extract meta description from the first line
+    let metaDescription = '';
+    const metaMatch = generatedContent.match(/^Meta\s*Description:\s*(.+)/im);
+    if (metaMatch) {
+      metaDescription = metaMatch[1].trim().substring(0, 160);
+    }
+
+    const wordCount = generatedContent.split(/\s+/).length;
+
+    // Save as published
+    await db.collection('growth_content').doc(briefDoc.id).update({
+      status: 'published',
+      generatedContent,
+      metaDescription,
+      metaTitle: brief.title,
+      generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      publishedAt: admin.firestore.FieldValue.serverTimestamp(),
+      wordCount,
+      generatedBy: 'gemini-2.0-flash',
+      autoPublished: true,
+    });
+
+    console.log(`[AutoPublish] ✅ Published: "${brief.title}" (${wordCount} words, slug: ${brief.slug})`);
+
+    // 7. Log the action
+    await db.collection('growth_actions').add({
+      type: 'auto-publish',
+      briefId: briefDoc.id,
+      title: brief.title,
+      slug: brief.slug,
+      courseId: brief.courseId,
+      wordCount,
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
+    // 8. Send notification email
+    const resendKey = process.env.RESEND_API_KEY?.trim();
+    if (resendKey) {
+      try {
+        const notifyResend = new Resend(resendKey);
+        const articleUrl = `https://voraprep.com/blog/${brief.slug}`;
+        await notifyResend.emails.send({
+          from: 'VoraPrep Content Engine <alerts@voraprep.com>',
+          to: 'rob@sagecg.com',
+          subject: `📝 New article published: ${brief.title}`,
+          html: `
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #1e40af;">New Blog Article Published</h2>
+              <p style="font-size: 16px; color: #334155;"><strong>${brief.title}</strong></p>
+              <table style="margin: 16px 0; font-size: 14px; color: #64748b;">
+                <tr><td style="padding: 4px 12px 4px 0;">Exam:</td><td><strong>${(brief.courseId || '').toUpperCase()}</strong></td></tr>
+                <tr><td style="padding: 4px 12px 4px 0;">Type:</td><td>${brief.contentType || 'article'}</td></tr>
+                <tr><td style="padding: 4px 12px 4px 0;">Words:</td><td>${wordCount.toLocaleString()}</td></tr>
+                <tr><td style="padding: 4px 12px 4px 0;">Slug:</td><td>${brief.slug}</td></tr>
+              </table>
+              <a href="${articleUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 8px 0;">Read Article →</a>
+              <p style="font-size: 13px; color: #94a3b8; margin-top: 24px;">Auto-published by VoraPrep Content Engine</p>
+            </div>
+          `,
+        });
+        console.log('[AutoPublish] Notification email sent to rob@sagecg.com');
+      } catch (emailErr) {
+        console.warn('[AutoPublish] Failed to send notification email:', emailErr.message);
+      }
+    }
+
+  } catch (error) {
+    console.error('[AutoPublish] Generation failed:', error);
+  }
+});
+
+/**
+ * Growth Engine: Seed content briefs from the content matrix.
+ * Admin-only, callable. Generates all possible briefs and saves to Firestore.
+ * Run once to populate the content pipeline, then growthAutoPublish handles the rest.
+ */
+exports.growthSeedBriefs = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  timeoutSeconds: 60,
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  // Check how many briefs already exist
+  const existingSnapshot = await db.collection('growth_content').get();
+  const existingSlugs = new Set(existingSnapshot.docs.map(d => d.data().slug).filter(Boolean));
+
+  // Content templates — same approach as contentEngine.ts but server-side
+  const CURRENT_YEAR = '2026';
+  const exams = [
+    {
+      courseId: 'cpa', exam: 'CPA', examFull: 'Certified Public Accountant',
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting and Reporting' },
+        { id: 'AUD', name: 'Auditing and Attestation' },
+        { id: 'REG', name: 'Taxation and Regulation' },
+        { id: 'BAR', name: 'Business Analysis and Reporting' },
+        { id: 'ISC', name: 'Information Systems and Controls' },
+        { id: 'TCP', name: 'Tax Compliance and Planning' },
+      ],
+    },
+    {
+      courseId: 'ea', exam: 'EA', examFull: 'Enrolled Agent',
+      sections: [
+        { id: 'SEE1', name: 'Individual Taxation' },
+        { id: 'SEE2', name: 'Business Taxation' },
+        { id: 'SEE3', name: 'Representation and Ethics' },
+      ],
+    },
+    {
+      courseId: 'cma', exam: 'CMA', examFull: 'Certified Management Accountant',
+      sections: [
+        { id: 'CMA1', name: 'Financial Planning, Performance, and Analytics' },
+        { id: 'CMA2', name: 'Strategic Financial Management' },
+      ],
+    },
+    {
+      courseId: 'cia', exam: 'CIA', examFull: 'Certified Internal Auditor',
+      sections: [
+        { id: 'CIA1', name: 'Essentials of Internal Auditing' },
+        { id: 'CIA2', name: 'Practice of Internal Auditing' },
+        { id: 'CIA3', name: 'Business Knowledge for Internal Auditing' },
+      ],
+    },
+    {
+      courseId: 'cisa', exam: 'CISA', examFull: 'Certified Information Systems Auditor',
+      sections: [
+        { id: 'CISA1', name: 'Information Systems Auditing Process' },
+        { id: 'CISA2', name: 'Governance and Management of IT' },
+        { id: 'CISA3', name: 'Information Systems Acquisition and Development' },
+        { id: 'CISA4', name: 'Information Systems Operations and Business Resilience' },
+        { id: 'CISA5', name: 'Protection of Information Assets' },
+      ],
+    },
+    {
+      courseId: 'cfp', exam: 'CFP', examFull: 'Certified Financial Planner',
+      sections: [
+        { id: 'CFP1', name: 'General Principles of Financial Planning' },
+        { id: 'CFP2', name: 'Risk Management and Insurance Planning' },
+        { id: 'CFP3', name: 'Investment Planning' },
+        { id: 'CFP4', name: 'Tax Planning' },
+        { id: 'CFP5', name: 'Retirement Savings and Income Planning' },
+        { id: 'CFP6', name: 'Estate Planning' },
+        { id: 'CFP7', name: 'Financial Plan Development' },
+        { id: 'CFP8', name: 'Psychology of Financial Planning' },
+      ],
+    },
+  ];
+
+  // Template types to generate
+  const templates = [
+    { id: 'study-guide', title: 'Complete {exam} {section} Study Guide {year}', slug: '{course}-{sectionLower}-study-guide-{year}', perSection: true, wordCount: 2500, priority: 1 },
+    { id: 'pass-rates', title: '{exam} Pass Rates {year}: What to Expect', slug: '{course}-pass-rates-{year}', perSection: false, wordCount: 2000, priority: 2 },
+    { id: 'study-schedule', title: '{exam} Study Schedule {year}: Week-by-Week Plan', slug: '{course}-study-schedule-{year}', perSection: false, wordCount: 2200, priority: 2 },
+    { id: 'salary-guide', title: '{exam} Salary Guide {year}: How Much Do {exam}s Earn?', slug: '{course}-salary-guide-{year}', perSection: false, wordCount: 2000, priority: 3 },
+    { id: 'review-comparison', title: 'Best {exam} Review Courses {year}: Honest Comparison', slug: 'best-{course}-review-courses-{year}', perSection: false, wordCount: 2800, priority: 1 },
+    { id: 'exam-tips', title: '{count} Tips to Pass the {exam} Exam in {year}', slug: '{course}-exam-tips-{year}', perSection: false, wordCount: 2000, priority: 2 },
+    { id: 'requirements', title: '{exam} Requirements {year}: Education, Experience & Fees', slug: '{course}-requirements-{year}', perSection: false, wordCount: 2000, priority: 3 },
+    { id: 'free-practice', title: 'Free {exam} {section} Practice Questions ({year})', slug: 'free-{course}-{sectionLower}-practice-questions-{year}', perSection: true, wordCount: 3000, priority: 1 },
+    { id: 'topic-explainer', title: 'Understanding {sectionName}: {exam} {section} Breakdown', slug: '{course}-{sectionLower}-breakdown-{year}', perSection: true, wordCount: 1800, priority: 3 },
+  ];
+
+  // Comparison briefs for exam pairs
+  const comparisonPairs = [
+    ['cpa', 'ea', 'CPA vs EA'], ['cpa', 'cma', 'CPA vs CMA'],
+    ['cpa', 'cia', 'CPA vs CIA'], ['cma', 'cia', 'CMA vs CIA'],
+    ['cma', 'cfp', 'CMA vs CFP'], ['cisa', 'cia', 'CISA vs CIA'],
+  ];
+
+  let seeded = 0;
+  let skipped = 0;
+  const batch = db.batch();
+  let batchCount = 0;
+
+  for (const exam of exams) {
+    for (const template of templates) {
+      if (template.perSection) {
+        for (const section of exam.sections) {
+          const slug = template.slug
+            .replace('{course}', exam.courseId)
+            .replace('{sectionLower}', section.id.toLowerCase())
+            .replace('{year}', CURRENT_YEAR);
+
+          if (existingSlugs.has(slug)) { skipped++; continue; }
+
+          const title = template.title
+            .replace('{exam}', exam.exam)
+            .replace('{section}', section.id)
+            .replace('{sectionName}', section.name)
+            .replace('{year}', CURRENT_YEAR)
+            .replace('{count}', '15');
+
+          const briefId = `${exam.courseId}-${template.id}-${section.id.toLowerCase()}-${CURRENT_YEAR}`;
+          const ref = db.collection('growth_content').doc(briefId);
+          batch.set(ref, {
+            title, slug,
+            courseId: exam.courseId,
+            section: section.id,
+            contentType: template.id,
+            targetKeywords: [`${exam.exam.toLowerCase()} ${section.id.toLowerCase()}`, `${exam.exam.toLowerCase()} ${section.name.toLowerCase()}`],
+            primaryKeyword: `${exam.exam.toLowerCase()} ${section.id.toLowerCase()} study guide`,
+            wordCountTarget: template.wordCount,
+            internalLinks: [`/${exam.courseId}`],
+            ctaType: 'register',
+            ctaUrl: `/${exam.courseId}`,
+            status: 'brief',
+            priority: template.priority,
+            outline: [],
+            searchIntent: 'informational',
+            estimatedVolume: 0,
+            competitorUrls: [],
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+          }, { merge: true });
+          seeded++;
+          batchCount++;
+
+          if (batchCount >= 450) {
+            await batch.commit();
+            batchCount = 0;
+          }
+        }
+      } else {
+        const slug = template.slug
+          .replace('{course}', exam.courseId)
+          .replace('{year}', CURRENT_YEAR);
+
+        if (existingSlugs.has(slug)) { skipped++; continue; }
+
+        const title = template.title
+          .replace('{exam}', exam.exam)
+          .replace('{year}', CURRENT_YEAR)
+          .replace('{count}', '15');
+
+        const briefId = `${exam.courseId}-${template.id}-${CURRENT_YEAR}`;
+        const ref = db.collection('growth_content').doc(briefId);
+        batch.set(ref, {
+          title, slug,
+          courseId: exam.courseId,
+          contentType: template.id,
+          targetKeywords: [`${exam.exam.toLowerCase()} prep`, `${exam.exam.toLowerCase()} exam`],
+          primaryKeyword: `${exam.exam.toLowerCase()} ${template.id.replace(/-/g, ' ')}`,
+          wordCountTarget: template.wordCount,
+          internalLinks: [`/${exam.courseId}`],
+          ctaType: 'register',
+          ctaUrl: `/${exam.courseId}`,
+          status: 'brief',
+          priority: template.priority,
+          outline: [],
+          searchIntent: 'informational',
+          estimatedVolume: 0,
+          competitorUrls: [],
+          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+          updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        }, { merge: true });
+        seeded++;
+        batchCount++;
+
+        if (batchCount >= 450) {
+          await batch.commit();
+          batchCount = 0;
+        }
+      }
+    }
+  }
+
+  // Add comparison briefs
+  for (const [course1, course2, label] of comparisonPairs) {
+    const slug = `${course1}-vs-${course2}-comparison-${CURRENT_YEAR}`;
+    if (existingSlugs.has(slug)) { skipped++; continue; }
+
+    const briefId = `comparison-${course1}-${course2}-${CURRENT_YEAR}`;
+    const ref = db.collection('growth_content').doc(briefId);
+    batch.set(ref, {
+      title: `${label}: Which Certification Is Right for You in ${CURRENT_YEAR}?`,
+      slug,
+      courseId: course1,
+      contentType: 'comparison',
+      targetKeywords: [`${course1} vs ${course2}`, label.toLowerCase()],
+      primaryKeyword: `${course1} vs ${course2}`,
+      wordCountTarget: 2500,
+      internalLinks: [`/${course1}`, `/${course2}`],
+      ctaType: 'register',
+      ctaUrl: '/',
+      status: 'brief',
+      priority: 1,
+      outline: [],
+      searchIntent: 'informational',
+      estimatedVolume: 0,
+      competitorUrls: [],
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+    seeded++;
+    batchCount++;
+  }
+
+  if (batchCount > 0) {
+    await batch.commit();
+  }
+
+  console.log(`[SeedBriefs] Seeded ${seeded} briefs (${skipped} already existed).`);
+
+  return {
+    seeded,
+    skipped,
+    total: seeded + skipped,
+    message: `Seeded ${seeded} new content briefs. ${skipped} already existed. growthAutoPublish will start generating articles automatically.`,
+  };
+});
+
+
+// ============================================================================
+// DYNAMIC SITEMAP — serves sitemap.xml with published blog articles
+// ============================================================================
+
+/**
+ * Serves a dynamic sitemap.xml that includes all published blog articles.
+ * Firebase Hosting rewrite: /sitemap.xml → this function.
+ * Cached for 1 hour to avoid hitting Firestore on every crawl.
+ */
+exports.dynamicSitemap = onRequest({
+  cors: false,
+  timeoutSeconds: 15,
+}, async (req, res) => {
+  const DOMAIN = 'https://voraprep.com';
+  const TODAY = new Date().toISOString().split('T')[0];
+
+  // Static routes (same as generate-sitemap.cjs)
+  const staticRoutes = [
+    { loc: '/', priority: '1.0', changefreq: 'weekly' },
+    { loc: '/cpa', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/ea-prep', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/cma', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/cia', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/cfp', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/cisa', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/cpa/info', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/ea/info', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/cma/info', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/cia/info', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/cfp/info', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/cisa/info', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/about', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/faq', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/compare', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/pricing', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/pass-guarantee', priority: '0.6', changefreq: 'monthly' },
+    { loc: '/blog', priority: '0.8', changefreq: 'weekly' },
+    // Static blog articles
+    { loc: '/blog/cpa-exam-study-schedule-2026', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/ea-vs-cpa-which-certification', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/blog/how-to-pass-far-first-try', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/terms', priority: '0.3', changefreq: 'yearly' },
+    { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
+    { loc: '/help', priority: '0.4', changefreq: 'monthly' },
+    { loc: '/login', priority: '0.5', changefreq: 'monthly' },
+    { loc: '/signup', priority: '0.6', changefreq: 'monthly' },
+  ];
+
+  // Fetch published blog articles from Firestore
+  try {
+    const publishedSnapshot = await db.collection('growth_content')
+      .where('status', '==', 'published')
+      .get();
+
+    const existingSlugs = new Set(staticRoutes.map(r => r.loc));
+
+    for (const doc of publishedSnapshot.docs) {
+      const data = doc.data();
+      if (!data.slug) continue;
+      const loc = `/blog/${data.slug}`;
+      if (existingSlugs.has(loc)) continue;
+
+      const pubDate = data.publishedAt?.toDate?.()
+        ? data.publishedAt.toDate().toISOString().split('T')[0]
+        : TODAY;
+
+      staticRoutes.push({
+        loc,
+        priority: '0.7',
+        changefreq: 'monthly',
+        lastmod: pubDate,
+      });
+    }
+  } catch (err) {
+    console.error('[Sitemap] Error fetching published articles:', err);
+  }
+
+  // Generate XML
+  const urls = staticRoutes.map(r => `  <url>
+    <loc>${DOMAIN}${r.loc}</loc>
+    <lastmod>${r.lastmod || TODAY}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`).join('\n');
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`;
+
+  // Cache for 1 hour
+  res.set('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+  res.set('Content-Type', 'application/xml');
+  res.status(200).send(xml);
+});

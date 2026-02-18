@@ -18,8 +18,9 @@ const HowToPassFAR = () => {
   ]);
 
   useArticleSchema({
-    title: 'How to Pass FAR on Your First Try: 15 Proven Strategies',
+    headline: 'How to Pass FAR on Your First Try: 15 Proven Strategies',
     description: '15 proven strategies to pass the CPA FAR section on your first attempt.',
+    author: 'VoraPrep Team',
     url: 'https://voraprep.com/blog/how-to-pass-far-first-try',
     datePublished: '2026-02-17',
   });

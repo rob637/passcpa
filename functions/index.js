@@ -3137,154 +3137,190 @@ exports.growthSyncCampaigns = onCall({
 
       // ================================================================
       // Create Ad Groups, Keywords, and Responsive Search Ads
+      // OPTIMIZED: Batch operations to reduce API calls by ~90%
       // ================================================================
       const campaignResourceName = existing?.googleAdsCampaignId ||
         (await db.collection('growth_campaigns').doc(campaign.id).get()).data()?.googleAdsCampaignId;
 
       if (campaignResourceName && campaign.adGroups?.length) {
-        for (const adGroup of campaign.adGroups) {
-          try {
-            // --- 1) Create or find existing Ad Group ---
-            let adGroupResource;
+        // Map to track ad group name -> resource name
+        const adGroupResourceMap = {};
 
-            try {
-              const adGroupResponse = await googleAdsRequest('adGroups:mutate', {
-                operations: [{
-                  create: {
-                    name: adGroup.name,
-                    campaign: campaignResourceName,
-                    status: 'ENABLED',
-                    type: 'SEARCH_STANDARD',
-                    cpc_bid_micros: ((adGroup.maxCpc || 1.5) * 1_000_000).toString(),
-                  },
-                }],
-              });
-              adGroupResource = adGroupResponse?.results?.[0]?.resourceName;
-            } catch (agCreateErr) {
-              if (agCreateErr.message?.includes('DUPLICATE_ADGROUP_NAME')) {
-                // Find the existing ad group by name
-                console.log(`[GrowthSync]   Ad group "${adGroup.name}" exists, finding it...`);
-                const searchResp = await googleAdsRequest('googleAds:searchStream', {
-                  query: `SELECT ad_group.resource_name FROM ad_group WHERE ad_group.name = '${adGroup.name.replace(/'/g, "\\'")}' AND campaign.resource_name = '${campaignResourceName}' AND ad_group.status != 'REMOVED' LIMIT 1`
-                });
-                adGroupResource = searchResp?.[0]?.results?.[0]?.adGroup?.resourceName;
-                if (!adGroupResource) throw agCreateErr;
-              } else {
-                throw agCreateErr;
+        // --- PHASE 1: Batch create ALL ad groups at once ---
+        const adGroupOps = campaign.adGroups.map(ag => ({
+          create: {
+            name: ag.name,
+            campaign: campaignResourceName,
+            status: 'ENABLED',
+            type: 'SEARCH_STANDARD',
+            cpc_bid_micros: ((ag.maxCpc || 1.5) * 1_000_000).toString(),
+          },
+        }));
+
+        try {
+          const adGroupResponse = await googleAdsRequest('adGroups:mutate', {
+            operations: adGroupOps,
+            partialFailure: true, // Allow some to fail (e.g., duplicates)
+          });
+
+          // Map results back to ad group names
+          if (adGroupResponse?.results) {
+            adGroupResponse.results.forEach((result, idx) => {
+              if (result?.resourceName) {
+                adGroupResourceMap[campaign.adGroups[idx].name] = result.resourceName;
               }
+            });
+          }
+          console.log(`[GrowthSync]   Created ${Object.keys(adGroupResourceMap).length}/${adGroupOps.length} ad groups in batch`);
+        } catch (batchErr) {
+          // If batch fails, try to find existing ad groups
+          console.log(`[GrowthSync]   Batch ad group create failed, finding existing...`);
+          try {
+            const searchResp = await googleAdsRequest('googleAds:searchStream', {
+              query: `SELECT ad_group.name, ad_group.resource_name FROM ad_group WHERE campaign.resource_name = '${campaignResourceName}' AND ad_group.status != 'REMOVED'`
+            });
+            if (searchResp?.[0]?.results) {
+              searchResp[0].results.forEach(r => {
+                if (r.adGroup?.name && r.adGroup?.resourceName) {
+                  adGroupResourceMap[r.adGroup.name] = r.adGroup.resourceName;
+                }
+              });
             }
+            console.log(`[GrowthSync]   Found ${Object.keys(adGroupResourceMap).length} existing ad groups`);
+          } catch (searchErr) {
+            errors.push({ campaign: campaign.name, error: `Ad group batch failed: ${batchErr.message}` });
+          }
+        }
 
-            if (!adGroupResource) {
-              console.warn(`[GrowthSync] No resource returned for ad group ${adGroup.name}`);
+        // --- PHASE 2: Batch create ALL keywords across all ad groups ---
+        const allKeywordOps = [];
+        for (const adGroup of campaign.adGroups) {
+          const adGroupResource = adGroupResourceMap[adGroup.name];
+          if (!adGroupResource || !adGroup.keywords?.length) continue;
+
+          for (const k of adGroup.keywords) {
+            if (!k.keyword || k.status === 'removed') continue;
+
+            // Sanitize keyword text
+            const kwText = k.keyword
+              .replace(/["\[\]]/g, '')
+              .replace(/[^a-zA-Z0-9\s\-'.]/g, '')
+              .replace(/\s+/g, ' ')
+              .trim();
+            if (!kwText) continue;
+
+            allKeywordOps.push({
+              create: {
+                ad_group: adGroupResource,
+                keyword: {
+                  text: kwText,
+                  match_type: (k.matchType || 'broad').toUpperCase(),
+                },
+                status: 'ENABLED',
+                cpc_bid_micros: ((k.maxCpc || adGroup.maxCpc || 1.5) * 1_000_000).toString(),
+              },
+            });
+          }
+        }
+
+        // Batch keywords in groups of 1000 (safe limit)
+        if (allKeywordOps.length > 0) {
+          for (let i = 0; i < allKeywordOps.length; i += 1000) {
+            const batch = allKeywordOps.slice(i, i + 1000);
+            try {
+              await googleAdsRequest('adGroupCriteria:mutate', {
+                operations: batch,
+                partialFailure: true,
+              });
+            } catch (kwErr) {
+              console.error(`[GrowthSync]   Keyword batch ${i}-${i + batch.length} failed:`, kwErr.message);
+              errors.push({ campaign: campaign.name, error: `Keywords batch failed: ${kwErr.message}` });
+            }
+          }
+          console.log(`[GrowthSync]   Created ${allKeywordOps.length} keywords in ${Math.ceil(allKeywordOps.length / 1000)} batch(es)`);
+        }
+
+        // --- PHASE 3: Batch create ALL negative keywords ---
+        const allNegativeOps = [];
+        for (const adGroup of campaign.adGroups) {
+          const adGroupResource = adGroupResourceMap[adGroup.name];
+          if (!adGroupResource || !adGroup.negativeKeywords?.length) continue;
+
+          for (const nk of adGroup.negativeKeywords) {
+            allNegativeOps.push({
+              create: {
+                ad_group: adGroupResource,
+                keyword: { text: nk, match_type: 'BROAD' },
+                negative: true,
+                status: 'ENABLED',
+              },
+            });
+          }
+        }
+
+        if (allNegativeOps.length > 0) {
+          for (let i = 0; i < allNegativeOps.length; i += 1000) {
+            const batch = allNegativeOps.slice(i, i + 1000);
+            try {
+              await googleAdsRequest('adGroupCriteria:mutate', {
+                operations: batch,
+                partialFailure: true,
+              });
+            } catch (negErr) {
+              console.error(`[GrowthSync]   Negative keyword batch failed:`, negErr.message);
+            }
+          }
+          console.log(`[GrowthSync]   Created ${allNegativeOps.length} negative keywords`);
+        }
+
+        // --- PHASE 4: Batch create ALL RSA ads ---
+        const allAdOps = [];
+        for (const adGroup of campaign.adGroups) {
+          const adGroupResource = adGroupResourceMap[adGroup.name];
+          if (!adGroupResource || !adGroup.ads?.length) continue;
+
+          for (const ad of adGroup.ads) {
+            const validHeadlines = (ad.headlines || []).filter(h => h && h.length > 0 && h.length <= 30).slice(0, 15);
+            const validDescriptions = (ad.descriptions || []).filter(d => d && d.length > 0 && d.length <= 90).slice(0, 4);
+
+            if (validHeadlines.length < 3 || validDescriptions.length < 2) {
+              console.warn(`[GrowthSync]   Skipping RSA ${ad.id}: ${validHeadlines.length} headlines, ${validDescriptions.length} descriptions (need 3/2)`);
               continue;
             }
-            console.log(`[GrowthSync]   Ad group: ${adGroup.name} -> ${adGroupResource}`);
 
-            // --- 2) Create Keywords (batch up to 50 at a time) ---
-            if (adGroup.keywords?.length) {
-              const kwOps = adGroup.keywords
-                .filter(k => k.keyword && k.status !== 'removed')
-                .map(k => {
-                  // Strip all chars Google Ads doesn't allow in keyword text.
-                  // Only allow: letters, numbers, spaces, hyphens, apostrophes, periods.
-                  const kwText = k.keyword
-                    .replace(/["\[\]]/g, '')
-                    .replace(/[^a-zA-Z0-9\s\-'.]/g, '')
-                    .replace(/\s+/g, ' ')
-                    .trim();
-                  const matchType = (k.matchType || 'broad').toUpperCase();
-
-                  if (!kwText) return null; // Skip empty after sanitization
-
-                  return {
-                    create: {
-                      ad_group: adGroupResource,
-                      keyword: {
-                        text: kwText,
-                        match_type: matchType,
-                      },
-                      status: 'ENABLED',
-                      cpc_bid_micros: ((k.maxCpc || adGroup.maxCpc || 1.5) * 1_000_000).toString(),
-                    },
-                  };
-                }).filter(Boolean);
-
-              // Batch in groups of 50 (API limit)
-              for (let i = 0; i < kwOps.length; i += 50) {
-                const batch = kwOps.slice(i, i + 50);
-                await googleAdsRequest('adGroupCriteria:mutate', {
-                  operations: batch,
-                });
-              }
-              console.log(`[GrowthSync]   Keywords: ${kwOps.length} created`);
-            }
-
-            // --- 3) Create Negative Keywords at ad group level ---
-            if (adGroup.negativeKeywords?.length) {
-              const negOps = adGroup.negativeKeywords.map(nk => ({
-                create: {
-                  ad_group: adGroupResource,
-                  keyword: {
-                    text: nk,
-                    match_type: 'BROAD',
+            allAdOps.push({
+              create: {
+                ad_group: adGroupResource,
+                status: 'ENABLED',
+                ad: {
+                  responsive_search_ad: {
+                    headlines: validHeadlines.map(h => ({ text: h.substring(0, 30) })),
+                    descriptions: validDescriptions.map(d => ({ text: d.substring(0, 90) })),
+                    path1: ad.displayPath?.[0]?.substring(0, 15) || '',
+                    path2: ad.displayPath?.[1]?.substring(0, 15) || '',
                   },
-                  negative: true,
-                  status: 'ENABLED',
+                  final_urls: [ad.finalUrl || `https://voraprep.com/${campaign.courseId}`],
                 },
-              }));
-
-              for (let i = 0; i < negOps.length; i += 50) {
-                const batch = negOps.slice(i, i + 50);
-                await googleAdsRequest('adGroupCriteria:mutate', {
-                  operations: batch,
-                });
-              }
-              console.log(`[GrowthSync]   Negative keywords: ${negOps.length} created`);
-            }
-
-            // --- 4) Create Responsive Search Ads ---
-            if (adGroup.ads?.length) {
-              for (const ad of adGroup.ads) {
-                // RSA requires at least 3 headlines and 2 descriptions
-                const validHeadlines = (ad.headlines || []).filter(h => h && h.length > 0 && h.length <= 30).slice(0, 15);
-                const validDescriptions = (ad.descriptions || []).filter(d => d && d.length > 0 && d.length <= 90).slice(0, 4);
-
-                if (validHeadlines.length < 3 || validDescriptions.length < 2) {
-                  console.warn(`[GrowthSync]   Skipping RSA ${ad.id}: only ${validHeadlines.length} headlines, ${validDescriptions.length} descriptions (need 3/2)`);
-                  continue;
-                }
-
-                await googleAdsRequest('adGroupAds:mutate', {
-                  operations: [{
-                    create: {
-                      ad_group: adGroupResource,
-                      status: 'ENABLED',
-                      ad: {
-                        responsive_search_ad: {
-                          headlines: validHeadlines.map(h => ({
-                            text: h.substring(0, 30),
-                          })),
-                          descriptions: validDescriptions.map(d => ({
-                            text: d.substring(0, 90),
-                          })),
-                          path1: ad.displayPath?.[0]?.substring(0, 15) || '',
-                          path2: ad.displayPath?.[1]?.substring(0, 15) || '',
-                        },
-                        final_urls: [ad.finalUrl || `https://voraprep.com/${campaign.courseId}`],
-                      },
-                    },
-                  }],
-                });
-                console.log(`[GrowthSync]   RSA created: ${ad.id}`);
-              }
-            }
-
-          } catch (agErr) {
-            const agErrMsg = agErr.message || String(agErr);
-            // Don't fail the whole campaign, just log and continue
-            console.error(`[GrowthSync]   Failed ad group ${adGroup.name}:`, agErrMsg);
-            errors.push({ campaign: campaign.name, adGroup: adGroup.name, error: agErrMsg });
+              },
+            });
           }
+        }
+
+        if (allAdOps.length > 0) {
+          // Batch ads in groups of 100 (RSAs are more complex)
+          for (let i = 0; i < allAdOps.length; i += 100) {
+            const batch = allAdOps.slice(i, i + 100);
+            try {
+              await googleAdsRequest('adGroupAds:mutate', {
+                operations: batch,
+                partialFailure: true,
+              });
+            } catch (adErr) {
+              console.error(`[GrowthSync]   RSA batch failed:`, adErr.message);
+              errors.push({ campaign: campaign.name, error: `RSA batch failed: ${adErr.message}` });
+            }
+          }
+          console.log(`[GrowthSync]   Created ${allAdOps.length} RSA ads in ${Math.ceil(allAdOps.length / 100)} batch(es)`);
         }
       }
 

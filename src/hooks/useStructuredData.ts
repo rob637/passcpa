@@ -254,4 +254,81 @@ export const useCourseSchema = (courseId: CourseId) => {
   }, [courseId]);
 };
 
+/**
+ * Inject BreadcrumbList structured data
+ */
+export const useBreadcrumbs = (breadcrumbs: Array<{ name: string; url: string }>) => {
+  useEffect(() => {
+    if (!breadcrumbs || breadcrumbs.length === 0) return;
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, [breadcrumbs]);
+};
+
+/**
+ * Inject Article structured data (for blog posts)
+ */
+export const useArticleSchema = (article: {
+  headline: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+  url: string;
+}) => {
+  useEffect(() => {
+    if (!article) return;
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.headline,
+      description: article.description,
+      author: {
+        '@type': 'Person',
+        name: article.author,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'VoraPrep',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://voraprep.com/logo.svg',
+        },
+      },
+      datePublished: article.datePublished,
+      dateModified: article.dateModified || article.datePublished,
+      image: article.image || 'https://voraprep.com/og-image.png',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': article.url,
+      },
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, [article]);
+};
+
 export default useCourseSchema;

@@ -89,6 +89,7 @@ const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const DiagnosticQuiz = lazy(() => import('./components/pages/DiagnosticQuiz'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
+const GrowthDashboard = lazy(() => import('./components/pages/admin/GrowthDashboard'));
 const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
 const LessonEditor = lazy(() => import('./components/pages/admin/LessonEditor'));
 const WCEditor = lazy(() => import('./components/pages/admin/WCEditor'));
@@ -672,6 +673,16 @@ function App() {
                     <AdminRoute>
                       <SuspensePage>
                         <TBSEditor />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/growth"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <GrowthDashboard />
                       </SuspensePage>
                     </AdminRoute>
                   }

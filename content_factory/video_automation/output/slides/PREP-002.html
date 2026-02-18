@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy of the Exam: Testlets, Timing, Scoring</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.slides-container {
+    width: 1920px;
+    height: 1080px;
+}
+
+.slide {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 60px;
+}
+
+.slide-content {
+    flex: 1;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.avatar-space {
+    width: 340px;
+    height: 340px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 20px;
+    border: 2px dashed rgba(148, 163, 184, 0.3);
+}
+
+.slide-number {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    font-size: 18px;
+    color: rgba(148, 163, 184, 0.6);
+}
+
+/* Title Slide */
+.slide-title .meta-badge {
+    font-size: 20px;
+    color: #3b82f6;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.slide-title .title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #f8fafc, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide-title .subtitle {
+    font-size: 28px;
+    color: #94a3b8;
+    max-width: 900px;
+}
+
+.slide-title .duration {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    font-size: 18px;
+    color: #94a3b8;
+    background: rgba(59, 130, 246, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Text Slides */
+.slide-title-text {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #f8fafc;
+}
+
+h2.slide-title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #f8fafc;
+}
+
+.bullets {
+    list-style: none;
+}
+
+.bullets li {
+    font-size: 32px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding-left: 50px;
+    position: relative;
+    color: #e2e8f0;
+}
+
+.bullets li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+/* Callout Slides */
+.callout-box {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+    border-left: 6px solid #3b82f6;
+    border-radius: 16px;
+    padding: 50px;
+}
+
+.callout-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #60a5fa;
+}
+
+.callout-content {
+    font-size: 28px;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+
+/* Warning Slides */
+.warning-box {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+    border-left: 6px solid #ef4444;
+    border-radius: 16px;
+    padding: 50px;
+}
+
+.warning-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #f87171;
+}
+
+.warning-content {
+    font-size: 28px;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+
+/* Example Slides */
+.example-box {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 40px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.example-box pre {
+    font-size: 24px;
+    line-height: 1.8;
+    color: #e2e8f0;
+    white-space: pre-wrap;
+}
+
+/* Definition List Slides */
+.definition-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.definition-item {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.definition-item dt {
+    font-size: 28px;
+    font-weight: 600;
+    color: #60a5fa;
+    margin-bottom: 12px;
+}
+
+.definition-item dd {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* Summary Slides */
+.takeaways {
+    list-style: none;
+    counter-reset: takeaway;
+}
+
+.takeaways li {
+    font-size: 28px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding-left: 60px;
+    position: relative;
+    color: #e2e8f0;
+}
+
+.takeaway-num {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Text formatting */
+strong {
+    color: #f8fafc;
+    font-weight: 600;
+}
+
+em {
+    font-style: italic;
+    color: #94a3b8;
+}
+
+code {
+    background: rgba(59, 130, 246, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+        
+        <div class="slide slide-title" data-slide="1">
+            <div class="slide-content">
+                <div class="meta-badge">CPA • PREP</div>
+                <h1 class="title">Anatomy of the Exam: Testlets, Timing, Scoring</h1>
+                <p class="subtitle">Master the exam structure, question types, and time allocation for each section</p>
+                <div class="duration">45 min</div>
+            </div>
+            <div class="avatar-space"></div>
+            <div class="slide-number">1/5</div>
+        </div>
+        <div class="slide slide-callout" data-slide="2">
+            <div class="slide-content">
+                <div class="callout-box">
+                    <h2 class="callout-title">💡 Know Your Battlefield</h2>
+                    <div class="callout-content">Understanding the exam structure isn&#x27;t just helpful—it&#x27;s strategic. Knowing how many questions, how much time, and what&#x27;s weighted most lets you allocate your energy where it counts. This knowledge alone can add points to your score.</div>
+                </div>
+            </div>
+            <div class="avatar-space"></div>
+            <div class="slide-number">2/5</div>
+        </div>
+        <div class="slide slide-text" data-slide="3">
+            <div class="slide-content">
+                <h2 class="slide-title">Question Types</h2>
+                <ul class="bullets">
+                    
+                </ul>
+            </div>
+            <div class="avatar-space"></div>
+            <div class="slide-number">3/5</div>
+        </div>
+        <div class="slide slide-example" data-slide="4">
+            <div class="slide-content">
+                <h2 class="slide-title">📊 Time Allocation Strategy</h2>
+                <div class="example-box">
+                    <pre>For a 4-hour exam with 50 MCQs and 7 TBS:\n\nMCQ Time: ~90 seconds per question\n50 MCQs × 1.5 min = 75 minutes (~1.25 hours)\n\nTBS Time: Remaining 2.75 hours for 7 TBS\n~23 minutes per TBS average\n\nBuffer: Build in 15 minutes for review/unexpected\n\nGOLDEN RULE: Don&#x27;t spend more than 2 minutes on any MCQ!</pre>
+                </div>
+            </div>
+            <div class="avatar-space"></div>
+            <div class="slide-number">4/5</div>
+        </div>
+        <div class="slide slide-text" data-slide="5">
+            <div class="slide-content">
+                <h2 class="slide-title">The 15-Minute Break</h2>
+                <ul class="bullets">
+                    <li>You get one optional 15-minute break, typically between MCQ and TBS testlets. The clock stops during this break. USE IT! Get up, stretch, use the restroom, clear your mind. You&#x27;ll perform better on TBS with a mental reset.</li>
+                </ul>
+            </div>
+            <div class="avatar-space"></div>
+            <div class="slide-number">5/5</div>
+        </div>
+    </div>
+    <script>
+        // Slide navigation for preview
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach((s, i) => {
+                s.style.display = i === n ? 'flex' : 'none';
+            });
+            currentSlide = n;
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                showSlide(Math.min(currentSlide + 1, slides.length - 1));
+            } else if (e.key === 'ArrowLeft') {
+                showSlide(Math.max(currentSlide - 1, 0));
+            }
+        });
+        
+        showSlide(0);
+    </script>
+</body>
+</html>

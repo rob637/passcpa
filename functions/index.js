@@ -1103,6 +1103,273 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
 }
 
 // ============================================================================
+// TRIAL REMINDER EMAILS
+// Sends reminder emails at Day 7, Day 10, and Day 13 of trial
+// Helps convert trial users before they expire (14-day trial)
+// ============================================================================
+
+exports.sendTrialReminderEmails = onSchedule({
+  schedule: 'every day 11:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 180,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Checking for trial reminder emails...');
+  
+  try {
+    const now = new Date();
+    
+    // Calculate date ranges for Day 7, 10, and 13
+    // Day X means: trial started X days ago
+    const reminderDays = [
+      { day: 7, subject: "How's your {examName} prep going?", template: 'mid_trial' },
+      { day: 10, subject: "Don't lose your {examName} study progress!", template: 'almost_expired' },
+      { day: 13, subject: "⏰ Last day of your free trial - lock in founder pricing!", template: 'last_day' },
+    ];
+    
+    let totalSent = 0;
+    
+    for (const reminder of reminderDays) {
+      // Calculate the date range for this reminder day
+      // Users who started their trial exactly X days ago (within 24h window)
+      const targetDate = new Date(now);
+      targetDate.setDate(targetDate.getDate() - reminder.day);
+      const startOfDay = new Date(targetDate);
+      startOfDay.setHours(0, 0, 0, 0);
+      const endOfDay = new Date(targetDate);
+      endOfDay.setHours(23, 59, 59, 999);
+      
+      console.log(`Checking Day ${reminder.day} reminders (trial started between ${startOfDay.toISOString()} and ${endOfDay.toISOString()})`);
+      
+      // Find trialing subscriptions that started X days ago
+      const trialsSnapshot = await db.collection('subscriptions')
+        .where('status', '==', 'trialing')
+        .where('currentPeriodStart', '>=', admin.firestore.Timestamp.fromDate(startOfDay))
+        .where('currentPeriodStart', '<=', admin.firestore.Timestamp.fromDate(endOfDay))
+        .get();
+      
+      console.log(`Found ${trialsSnapshot.size} users on trial day ${reminder.day}`);
+      
+      for (const subDoc of trialsSnapshot.docs) {
+        const userId = subDoc.id;
+        const subData = subDoc.data();
+        
+        // Check if we've already sent this reminder
+        const reminderKey = `trialReminder_day${reminder.day}`;
+        if (subData[reminderKey]) {
+          console.log(`Skipping ${userId}: Day ${reminder.day} reminder already sent`);
+          continue;
+        }
+        
+        try {
+          // Get user info
+          const userDoc = await db.collection('users').doc(userId).get();
+          const userData = userDoc.exists ? userDoc.data() : {};
+          
+          const authUser = await admin.auth().getUser(userId);
+          const userEmail = authUser.email;
+          const displayName = userData?.displayName || authUser.displayName || 'there';
+          const courseConfig = getCourseConfig(userData?.activeCourse);
+          const examName = courseConfig.name.replace(' Exam', '');
+          
+          if (!userEmail) continue;
+          
+          // Generate subject with exam name
+          const subject = reminder.subject.replace('{examName}', examName);
+          
+          // Send the email
+          const { error } = await resend.emails.send({
+            from: FROM_EMAIL,
+            to: userEmail,
+            subject: subject,
+            html: generateTrialReminderEmail(displayName, courseConfig, reminder.template, reminder.day),
+          });
+          
+          if (error) {
+            console.error(`Error sending Day ${reminder.day} reminder to ${userEmail}:`, error);
+          } else {
+            console.log(`Sent Day ${reminder.day} trial reminder to ${userEmail}`);
+            totalSent++;
+            
+            // Mark this reminder as sent
+            await db.collection('subscriptions').doc(userId).update({
+              [reminderKey]: admin.firestore.FieldValue.serverTimestamp(),
+            });
+          }
+          
+        } catch (userError) {
+          console.error(`Error processing Day ${reminder.day} reminder for ${userId}:`, userError.message);
+        }
+      }
+    }
+    
+    console.log(`Trial reminder emails complete: ${totalSent} total sent`);
+    
+  } catch (error) {
+    console.error('Error sending trial reminder emails:', error);
+    throw error;
+  }
+});
+
+// Trial Reminder Email Templates
+function generateTrialReminderEmail(displayName, courseConfig, template, dayNum) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  const courseSlug = courseConfig.slug || 'cpa';
+  const daysRemaining = 14 - dayNum;
+  
+  // Different messaging based on trial stage
+  let headline, message, urgencyBox;
+  
+  if (template === 'mid_trial') {
+    // Day 7 - Friendly check-in
+    headline = `How's your ${examName} prep going?`;
+    message = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        You're halfway through your free trial! We wanted to check in and make sure you're getting the most out of VoraPrep.
+      </p>
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Have you tried these features yet?
+      </p>
+      <ul style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>🤖 <strong>AI Tutor:</strong> Get instant explanations for any question</li>
+        <li>📊 <strong>Score Predictor:</strong> See your estimated ${examName} score</li>
+        <li>🎯 <strong>Adaptive Practice:</strong> Questions that match your level</li>
+        <li>📱 <strong>Study Plan:</strong> Stay on track with daily goals</li>
+      </ul>
+    `;
+    urgencyBox = `
+      <div style="background: #f0f9ff; border-radius: 12px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #3b82f6;">
+        <p style="color: #1e40af; font-size: 14px; margin: 0;">
+          💡 <strong>Pro tip:</strong> Students who use the AI Tutor are 2x more likely to pass.
+        </p>
+      </div>
+    `;
+  } else if (template === 'almost_expired') {
+    // Day 10 - Progress reminder
+    headline = `Don't lose your ${examName} study progress!`;
+    message = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Your free trial ends in <strong>${daysRemaining} days</strong>. All that hard work you've put in? Keep it going by upgrading today.
+      </p>
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        When you upgrade, you'll keep:
+      </p>
+      <ul style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>✅ All your practice history and analytics</li>
+        <li>✅ Your personalized study plan</li>
+        <li>✅ Your spaced repetition flashcard decks</li>
+        <li>✅ Your score prediction progress</li>
+      </ul>
+    `;
+    urgencyBox = `
+      <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 20px; margin-bottom: 25px;">
+        <p style="color: #92400e; font-size: 14px; margin: 0; font-weight: 600;">
+          🎉 Founder Pricing — Save Over 40%!
+        </p>
+        <p style="color: #92400e; font-size: 14px; margin: 8px 0 0 0;">
+          Lock in founder pricing before it's gone. Only available to early adopters.
+        </p>
+      </div>
+    `;
+  } else {
+    // Day 13 - Last day urgency
+    headline = `⏰ Last day of your free trial, ${displayName}!`;
+    message = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        This is it — your trial ends <strong>tomorrow</strong>. After that, you'll lose access to:
+      </p>
+      <ul style="color: #ef4444; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>❌ Unlimited practice questions</li>
+        <li>❌ AI Tutor assistance</li>
+        <li>❌ Exam simulator</li>
+        <li>❌ Your study analytics</li>
+      </ul>
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Don't let your progress go to waste. Upgrade now and keep preparing for the ${examName} exam!
+      </p>
+    `;
+    urgencyBox = `
+      <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-radius: 12px; padding: 20px; margin-bottom: 25px; border: 2px solid #ef4444;">
+        <p style="color: #b91c1c; font-size: 16px; margin: 0; font-weight: 700;">
+          ⏰ Your trial expires in less than 24 hours!
+        </p>
+        <p style="color: #b91c1c; font-size: 14px; margin: 8px 0 0 0;">
+          Upgrade now to keep your access and lock in founder pricing.
+        </p>
+      </div>
+    `;
+  }
+  
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoraPrep Trial Reminder</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 20px 0;">
+        ${headline}
+      </h1>
+      
+      ${message}
+      
+      ${urgencyBox}
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${APP_BASE_URL}/${courseSlug}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Continue Studying →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Questions? Reply to this email — we're here to help!
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
 // FCM TOKEN MANAGEMENT
 // Log/track FCM token changes
 // ============================================================================

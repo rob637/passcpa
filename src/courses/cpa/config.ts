@@ -461,3 +461,139 @@ export const CPA_SECTIONS = CPA_COURSE.sections.map(s => s.id);
  */
 export const getCPASection = (sectionId: string) => 
   CPA_COURSE.sections.find(s => s.id === sectionId);
+
+/**
+ * CPA Section types
+ */
+export type CPACoreSectionId = 'FAR' | 'AUD' | 'REG';
+export type CPADisciplineSectionId = 'BAR' | 'ISC' | 'TCP';
+export type CPASectionId = CPACoreSectionId | CPADisciplineSectionId;
+
+export interface CPASectionConfig {
+  id: CPASectionId;
+  name: string;
+  shortName: string;
+  description: string;
+  examLength: number; // hours
+  questionCount: number;
+  color: string;
+  icon: string;
+  isCore: boolean;
+  topics: string[];
+}
+
+/**
+ * CPA Section Configuration Map for UI
+ */
+export const CPA_SECTION_CONFIG: Record<CPASectionId, CPASectionConfig> = {
+  // Core Sections (Required for all)
+  FAR: {
+    id: 'FAR',
+    name: 'Financial Accounting and Reporting',
+    shortName: 'FAR',
+    description: 'GAAP, government & nonprofit accounting, financial statements',
+    examLength: 4,
+    questionCount: 66,
+    color: '#3b82f6', // blue
+    icon: 'FileSpreadsheet',
+    isCore: true,
+    topics: [
+      'Conceptual Framework & Standards',
+      'Financial Statement Accounts',
+      'Transactions & Events',
+      'State & Local Governments',
+      'Not-for-Profit Entities',
+    ],
+  },
+  AUD: {
+    id: 'AUD',
+    name: 'Auditing and Attestation',
+    shortName: 'AUD',
+    description: 'Audit procedures, ethics, internal controls, reports',
+    examLength: 4,
+    questionCount: 72,
+    color: '#22c55e', // green
+    icon: 'Search',
+    isCore: true,
+    topics: [
+      'Ethics & Professional Responsibilities',
+      'Risk Assessment & Planning',
+      'Evidence & Procedures',
+      'Conclusions & Reporting',
+    ],
+  },
+  REG: {
+    id: 'REG',
+    name: 'Taxation and Regulation',
+    shortName: 'REG',
+    description: 'Individual & business taxation, business law, ethics',
+    examLength: 4,
+    questionCount: 72,
+    color: '#ef4444', // red
+    icon: 'Scale',
+    isCore: true,
+    topics: [
+      'Ethics & Tax Procedures',
+      'Business Law',
+      'Federal Taxation - Individuals',
+      'Federal Taxation - Entities',
+      'Property Transactions',
+    ],
+  },
+  // Discipline Sections (Choose ONE)
+  BAR: {
+    id: 'BAR',
+    name: 'Business Analysis and Reporting',
+    shortName: 'BAR',
+    description: 'Financial analysis, managerial accounting, advanced reporting',
+    examLength: 4,
+    questionCount: 66,
+    color: '#f59e0b', // amber
+    icon: 'TrendingUp',
+    isCore: false,
+    topics: [
+      'Business Analysis',
+      'Technical Accounting',
+      'Advanced Reporting',
+      'Financial Management',
+    ],
+  },
+  ISC: {
+    id: 'ISC',
+    name: 'Information Systems and Controls',
+    shortName: 'ISC',
+    description: 'IT audit, cybersecurity, data analytics, system controls',
+    examLength: 4,
+    questionCount: 66,
+    color: '#8b5cf6', // purple
+    icon: 'Shield',
+    isCore: false,
+    topics: [
+      'IT Infrastructure',
+      'Data Management',
+      'Security & Controls',
+      'System Operations',
+    ],
+  },
+  TCP: {
+    id: 'TCP',
+    name: 'Tax Compliance and Planning',
+    shortName: 'TCP',
+    description: 'Advanced tax planning, entity selection, wealth transfer',
+    examLength: 4,
+    questionCount: 66,
+    color: '#06b6d4', // cyan
+    icon: 'Calculator',
+    isCore: false,
+    topics: [
+      'Tax Compliance',
+      'Entity Tax Planning',
+      'Property Transactions',
+      'Wealth Transfer Planning',
+    ],
+  },
+};
+
+export const CPA_CORE_SECTIONS: CPACoreSectionId[] = ['FAR', 'AUD', 'REG'];
+export const CPA_DISCIPLINE_SECTIONS: CPADisciplineSectionId[] = ['BAR', 'ISC', 'TCP'];
+

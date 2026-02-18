@@ -128,6 +128,7 @@ const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'
 const CFPInfo = lazy(() => import('./components/pages/CFPInfo'));
 const CFPStudyPlanSetup = lazy(() => import('./components/pages/CFPStudyPlanSetup'));
 const CPAInfo = lazy(() => import('./components/pages/CPAInfo'));
+const CPAStudyPlanSetup = lazy(() => import('./components/pages/CPAStudyPlanSetup'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -409,6 +410,14 @@ function App() {
                       element={
                         <SuspensePage>
                           <CPAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                    <Route
+                      path="/cpa/study-plan"
+                      element={
+                        <SuspensePage>
+                          <CPAStudyPlanSetup />
                         </SuspensePage>
                       }
                     />

@@ -365,27 +365,29 @@ function generateHeadlines(meta: typeof EXAM_CONTENT_META[CourseId], theme: AdGr
 
 /**
  * Generate RSA descriptions (max 90 chars each, up to 4 per ad).
+ * NOTE: All descriptions MUST be <=90 chars after variable substitution.
  */
 function generateDescriptions(meta: typeof EXAM_CONTENT_META[CourseId], theme: AdGroupTheme): string[] {
+  // Keep descriptions SHORT - max 90 chars after substitution
   const base = [
-    `AI-powered ${meta.exam} exam prep with ${meta.questionCount} questions. Adaptive learning + AI tutor. Start free!`,
-    `Pass the ${meta.exam} exam with VoraPrep. Smart practice, detailed explanations, score predictor. ${meta.price}/mo.`,
-    `Join thousands studying smarter with VoraPrep. ${meta.exam} prep starting at ${meta.price}/mo. Try it free today.`,
-    `${meta.exam} review at a fraction of the cost. AI adapts to your weak areas. ${meta.questionCount} questions. Free trial.`,
+    `AI-powered ${meta.exam} prep with ${meta.questionCount} questions. Adaptive learning. Start free!`, // ~75 chars
+    `Pass the ${meta.exam} exam with VoraPrep. Smart practice & AI tutor. ${meta.price}/mo.`, // ~70 chars
+    `${meta.exam} prep starting at ${meta.price}/mo. Join thousands studying smarter. Free trial!`, // ~75 chars
+    `${meta.exam} review with AI that adapts to you. ${meta.questionCount} questions. Try free today.`, // ~75 chars
   ];
 
   const themeSpecific: Record<string, string[]> = {
     competitor: [
-      `Why pay $2,000+ for ${meta.exam} prep? VoraPrep offers AI-powered review starting at just ${meta.price}/month.`,
-      `Switch from expensive ${meta.exam} courses. Same quality, 90% less. AI-powered adaptive learning included.`,
+      `Why pay $2,000+ for ${meta.exam} prep? VoraPrep: AI-powered review from ${meta.price}/mo.`, // ~75 chars
+      `Switch from expensive ${meta.exam} courses. Same quality, 90% less. Try free!`, // ~70 chars
     ],
     'practice-questions': [
-      `Free ${meta.exam} practice questions with detailed explanations. Test your knowledge and track your progress.`,
-      `${meta.questionCount} ${meta.exam} practice questions. Adaptive difficulty, spaced repetition, real exam simulation.`,
+      `Free ${meta.exam} practice questions with detailed explanations. Track progress.`, // ~70 chars
+      `${meta.questionCount} ${meta.exam} questions. Adaptive difficulty & real exam simulation.`, // ~75 chars
     ],
     'price-sensitive': [
-      `${meta.exam} prep doesn't have to cost thousands. VoraPrep: ${meta.price}/mo or ${meta.annualPrice}/yr. Full access, no limits.`,
-      `Affordable ${meta.exam} review with premium features. AI tutor, adaptive engine, unlimited practice. Try free.`,
+      `${meta.exam} prep from ${meta.price}/mo or ${meta.annualPrice}/yr. Full access, no limits.`, // ~70 chars
+      `Affordable ${meta.exam} review with AI tutor & adaptive engine. Try free today.`, // ~70 chars
     ],
   };
 

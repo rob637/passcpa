@@ -1,0 +1,39 @@
+Welcome back to VoraPrep!
+
+Today we're covering Anatomy of the Exam: Testlets, Timing, Scoring.
+
+Master the exam structure, question types, and time allocation for each section
+
+This lesson will take about 45 minutes. Let's dive in!
+
+Here's an important tip:
+
+Know Your Battlefield.
+
+Understanding the exam structure isn't just helpful—I.T.'s strategic. Knowing how many questions, how much time, and what's weighted most lets you allocate your energy where I.T. counts. This knowledge alone can add points to your score.
+
+Remember that — it's a key concept!
+
+Now, now let's explore Question Types.
+
+Take a look at this table on screen. It compares the key differences. Study this carefully — tables like this are common on the exam.
+
+Let me highlight the most important rows...
+
+Next, let's walk through a scenario:
+
+For a 4-hour exam with 50 MCQs and 7 TBS:\n\nMCQ Time: ~90 seconds per question\n50 MCQs × 1.5 min = 75 minutes (~1.25 hours)\n\nTBS Time: Remaining 2.75 hours for 7 TBS\n~23 minutes per TBS average\n\nBuffer: Build in 15 minutes for review/unexpected\n\nGOLDEN RULE: Don't spend more than 2 minutes on any MCQ!
+
+Does that make sense? Let's keep going.
+
+Moving on, let me explain The 15-Minute Break.
+
+You get one optional 15-minute break, typically between MCQ and TBS testlets. The clock stops during this break. USE I.T.! Get up, stretch, use the restroom, clear your mind. You'll perform better on TBS with a mental reset.
+
+Let's continue with here are the key terms you need to know: Scoring Weights.
+
+That wraps up our lesson on Anatomy of the Exam: Testlets, Timing, Scoring.
+
+Now it's your turn to practice! Head over to the practice section and test what you've learned. The more questions you answer, the better prepared you'll be for exam day.
+
+Good luck, and I'll see you in the next lesson!

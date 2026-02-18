@@ -826,7 +826,7 @@ function TechnicalTab() {
 // ============================================================================
 
 function SettingsTab() {
-  const [config, setConfig] = useState<GrowthEngineConfig | null>(null);
+  const [_config, setConfig] = useState<GrowthEngineConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);

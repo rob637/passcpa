@@ -49,7 +49,9 @@ function firebaseMessagingSWPlugin() {
   };
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  return {
   plugins: [
     react(),
     firebaseMessagingSWPlugin(),
@@ -287,4 +289,5 @@ export default defineConfig({
     // Increase chunk warning limit since we're intentionally chunking
     chunkSizeWarningLimit: 700,
   },
+  };
 });

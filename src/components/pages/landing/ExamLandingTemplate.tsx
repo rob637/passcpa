@@ -21,9 +21,10 @@ import {
   Check,
   X,
   Menu,
+  Users,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
-import { isFounderPricingActive, founderDaysRemaining } from '../../../services/subscription';
+import { isFounderPricingActive, founderDaysRemaining, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
 import { useAuth } from '../../../hooks/useAuth';
 
 interface ExamLandingTemplateProps {
@@ -276,6 +277,14 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </div>
                 <span>14-day free trial</span>
               </div>
+              {isFounderPricingActive() && (
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
+                  <div className="w-5 h-5 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                    <Users className="w-3 h-3 text-amber-600" />
+                  </div>
+                  <span>{SOCIAL_PROOF.foundersJoined}+ founding members</span>
+                </div>
+              )}
             </div>
 
             {/* Quick stats */}
@@ -773,6 +782,14 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
                 No credit card required • Cancel anytime • Pass guarantee
               </p>
+              
+              {/* Social Proof */}
+              {SOCIAL_PROOF.showOnPricing && isFounderWindow && (
+                <div className="mt-6 flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
+                  <Users className="w-4 h-4 text-amber-500" />
+                  <span className="text-sm font-medium">{getSocialProofText()}</span>
+                </div>
+              )}
             </div>
 
             {/* Pass Guarantee */}

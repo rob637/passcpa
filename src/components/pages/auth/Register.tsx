@@ -23,6 +23,7 @@ const Register = () => {
     const course = searchParams.get('course');
     const redirect = searchParams.get('redirect');
     const interval = searchParams.get('interval');
+    const fast = searchParams.get('fast');
     
     // Capture referral code from ?ref=CODE
     captureReferralFromUrl();
@@ -34,6 +35,10 @@ const Register = () => {
       if (isValidCourseId(course)) {
         saveCoursePreference(course as CourseId);
       }
+    }
+    // Store fast-track flag for streamlined onboarding (from demo/landing pages)
+    if (fast === '1') {
+      localStorage.setItem('onboardingFastTrack', '1');
     }
     // Store checkout params for post-onboarding redirect
     if (redirect === 'checkout' && course && interval) {

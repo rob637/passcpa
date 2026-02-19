@@ -121,8 +121,8 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | **TBS Editor** | ✅ Full | TBSEditor.tsx |
 | **WC Editor** | ✅ Full | WCEditor.tsx |
 | **Growth Dashboard** | ✅ Full | GrowthDashboard.tsx — SEO/SEM command center |
-| **User Management** | ❌ None | No admin view of users, subscriptions, usage |
-| **Revenue Dashboard** | ❌ None | No Stripe revenue metrics in admin |
+| **User Management** | ⚠️ Partial | AdminCMS Users tab — view users, subscriptions, daily activity, diagnostics |
+| **Revenue Dashboard** | ✅ Full | AdminCMS Analytics tab — MRR, ARR, ARPU, churn risk, per-course breakdown |
 | **Content Analytics** | ❌ None | No question difficulty/discrimination analysis |
 | **Support Tickets** | ❌ None | No in-app support system |
 
@@ -261,7 +261,7 @@ The following systems were built and deployed on launch day:
 | Welcome drip sequence | P0 | 4h | ✅ DONE | `sendWelcomeDripEmails` Day 1/3/5/7 personalized emails (study tips, first Q kudos, AI tutor intro, blueprint mastery) |
 | Trial emails with stats | P0 | 2h | ✅ DONE | Enhanced trial reminders show user stats (questions, accuracy, days active, predicted score) |
 | Stripe webhook hardening | P1 | 3h | | Add retry logic, idempotency keys, failure alerts |
-| Onboarding funnel analytics | P1 | 2h | | Track drop-off at each onboarding step in GA4 |
+| Onboarding funnel analytics | P1 | 2h | ✅ DONE | 9 tracking events added: `onboarding_started`, `onboarding_abandoned`, per-step tracking in GA4 |
 | Fix Pricing page redirect | P1 | 2h | ✅ DONE | Stripe `cancel_url` now returns to `/{courseId}#pricing` for course-specific context |
 | Error tracking setup | P1 | 4h | | Add Sentry or LogRocket for production error monitoring |
 | Session recording (optional) | P2 | 2h | | Hotjar or FullStory for UX insights on first 100 users |
@@ -274,7 +274,7 @@ The following systems were built and deployed on launch day:
 | CISA distractor improvement | P1 | 6h | ✅ DONE | 26 absolute-language fixes (always→typically, never→rarely) |
 | CPA FAR distractor upgrade | P1 | 6h | Improve weak distractors in FAR questions (currently plausible but not tricky enough) |
 | CFP question expansion | P1 | 8h | Generate 500+ additional CFP questions (currently only 850 vs 4000+ for CPA/EA) |
-| Question validation script | P2 | 2h | Enhance `validate-questions.cjs` to check distractor diversity, reference presence |
+| Question validation script | P2 | 2h | ✅ DONE | Enhanced `validate-questions.cjs`: reference checks, absolute language detection, duplicate options |
 
 ### 5.3 SEM Optimization (~20 hours)
 
@@ -338,7 +338,7 @@ The following systems were built and deployed on launch day:
 | Task | Priority | Est. Hours | Description |
 |------|----------|-----------|-------------|
 | User management panel | P1 | 6h | ⚠️ Partial | Added diagnostic exam results to user activity modal, subscription viewing works |
-| Revenue dashboard | P1 | 4h | MRR, new subscribers, churn, ARPU — pull from Stripe API |
+| Revenue dashboard | P1 | 4h | ✅ DONE | MRR, ARR, ARPU, subscribers, churn risk, per-course revenue in AdminCMS Analytics tab |
 | Content quality metrics | P2 | 2h | Question answer rate, avg time, discrimination index |
 
 ---

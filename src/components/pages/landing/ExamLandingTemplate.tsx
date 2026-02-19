@@ -24,10 +24,11 @@ import {
   Users,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
-import { isFounderPricingActive, founderDaysRemaining, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
+import { isFounderPricingActive, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
 import { useAuth } from '../../../hooks/useAuth';
 import { useExitIntent } from '../../../hooks/useExitIntent';
 import ExitIntentModal from '../../common/ExitIntentModal';
+import FounderCountdown from '../../common/FounderCountdown';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -654,7 +655,6 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
   
   // Founder pricing — single source of truth in subscription.ts
   const isFounderWindow = isFounderPricingActive();
-  const daysRemaining = founderDaysRemaining();
   
   const pricing = config.pricing;
   const currentPrice = billingInterval === 'annual' 
@@ -701,22 +701,8 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
           </p>
         </div>
 
-        {/* Founder Banner */}
-        {isFounderWindow && (
-          <div className="mb-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-4 md:p-6 text-white text-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-              <span className="text-2xl">🏆</span>
-              <div>
-                <span className="font-bold text-lg">Founding Member Pricing</span>
-                <span className="mx-2">•</span>
-                <span>Save over 40% — rate guaranteed for 2 years</span>
-              </div>
-              <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold">
-                {daysRemaining} days left
-              </span>
-            </div>
-          </div>
-        )}
+        {/* Founder Countdown Banner */}
+        <FounderCountdown variant="banner" className="mb-8" />
 
         {/* Billing Toggle */}
         <div className="flex justify-center mb-10">

@@ -121,6 +121,27 @@ export const EXAM_PRICING = {
 // Founder seat limits per exam
 export const FOUNDER_SEATS_PER_EXAM = 300;
 
+// Founder countdown configuration
+// Seats remaining is disabled until we have enough subscribers to show meaningful scarcity
+export const FOUNDER_COUNTDOWN = {
+  showSeatsRemaining: false,    // Disabled until 50+ subscribers
+  seatsClaimed: 0,              // TODO: Update from admin dashboard or Stripe
+  totalSeats: 300,
+} as const;
+
+// Get seats remaining text (returns empty if disabled or too early)
+export const getSeatsRemainingText = (): string => {
+  const { showSeatsRemaining, seatsClaimed, totalSeats } = FOUNDER_COUNTDOWN;
+  if (!showSeatsRemaining || seatsClaimed < 50) {
+    return ''; // Don't show until we have meaningful scarcity
+  }
+  const remaining = totalSeats - seatsClaimed;
+  if (remaining <= 50) {
+    return `Only ${remaining} founder seats left!`;
+  }
+  return `${remaining} of ${totalSeats} seats remaining`;
+};
+
 // Social proof stats for landing pages
 // Update these periodically to reflect actual user counts
 // NOTE: Set showOnPricing to true once you have 50+ real users

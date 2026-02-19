@@ -1663,7 +1663,7 @@ function generateWelcomeDripEmail(displayName, courseConfig, template, userStats
     // Day 1: First practice tip
     headline = `Ready for your first ${examName} question?`;
     ctaText = 'Start a Quick Quiz →';
-    ctaUrl = `${APP_BASE_URL}/${courseSlug}/practice`;
+    ctaUrl = `${APP_BASE_URL}/practice`;
     content = `
       <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
         Here's a study hack that top scorers use:
@@ -1688,7 +1688,7 @@ function generateWelcomeDripEmail(displayName, courseConfig, template, userStats
     // Day 3: Study plan intro
     headline = `Your ${examName} study plan is ready`;
     ctaText = 'View My Study Plan →';
-    ctaUrl = `${APP_BASE_URL}/${courseSlug}/study-plan`;
+    ctaUrl = `${APP_BASE_URL}/you/study-plan`;
     content = `
       <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
         Most ${examName} candidates fail because they study without a plan. Don't be one of them.
@@ -1715,7 +1715,7 @@ function generateWelcomeDripEmail(displayName, courseConfig, template, userStats
     // Day 5: AI Tutor feature highlight
     headline = `Stuck on a question? Ask the AI Tutor`;
     ctaText = 'Try AI Tutor Now →';
-    ctaUrl = `${APP_BASE_URL}/${courseSlug}/ai-tutor`;
+    ctaUrl = `${APP_BASE_URL}/ai-tutor`;
     content = `
       <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
         Meet your study partner: an AI tutor that explains ${examName} concepts in plain English.
@@ -1742,7 +1742,7 @@ function generateWelcomeDripEmail(displayName, courseConfig, template, userStats
     const stats = userStats || { totalQuestions: 0, accuracy: 0, daysActive: 0 };
     headline = `Your first week: ${stats.totalQuestions} questions down! 🎉`;
     ctaText = 'Keep Practicing →';
-    ctaUrl = `${APP_BASE_URL}/${courseSlug}/practice`;
+    ctaUrl = `${APP_BASE_URL}/practice`;
     
     // Different messaging based on activity level
     let activityMsg;

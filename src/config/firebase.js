@@ -146,6 +146,12 @@ export const functions = getFunctions(app);
 // Initialize Analytics (only in browser, only in production)
 // Dev/staging projects may not have Analytics configured which causes console warnings
 export let analytics = null;
+
+// DISABLE FIREBASE ANALYTICS SDK INITIALIZATION
+// We are using a manual gtag implementation in src/services/analytics.ts to avoid
+// race conditions and double-initialization. Having both active causes conflict
+// for the same Measurement ID.
+/*
 if (typeof window !== 'undefined' && declaredEnvironment === 'production') {
   isSupported()
     .then((supported) => {
@@ -157,6 +163,7 @@ if (typeof window !== 'undefined' && declaredEnvironment === 'production') {
       // Analytics not supported
     });
 }
+*/
 
 // Connect to emulators in development if enabled
 if (isDevelopment && useEmulators) {

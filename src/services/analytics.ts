@@ -56,7 +56,8 @@ export const initAnalytics = (): void => {
 
   // Initialize gtag
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function (...args: any[]) {
+  // Use existing gtag function if defined (prevents overwriting if GTM/Firebase SDK injected it)
+  window.gtag = window.gtag || function (...args: any[]) {
     // @ts-ignore - Argument spread is intended
     window.dataLayer.push(args);
   };

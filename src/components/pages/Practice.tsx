@@ -1224,8 +1224,7 @@ const Practice: React.FC = () => {
       document.activeElement.blur();
     }
     
-    // Aggressive scroll-to-top for iOS Safari
-    // Uses multiple methods and timing to overcome iOS's scroll restoration behavior
+    // Standard scroll behavior - scroll to top once when question changes
     const scrollToTopNow = () => {
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
@@ -1235,18 +1234,11 @@ const Practice: React.FC = () => {
       }
     };
     
-    // Immediate scroll
+    // Immediate scroll only - removes aggressive retries that fight user scrolling
     scrollToTopNow();
     
-    // Delayed scroll after React re-render (requestAnimationFrame is more reliable than setTimeout on iOS)
-    requestAnimationFrame(() => {
-      scrollToTopNow();
-      // Double-tap for iOS Safari which sometimes needs extra time
-      requestAnimationFrame(scrollToTopNow);
-    });
-    
-    // Final fallback after a short delay for stubborn iOS behavior
-    setTimeout(scrollToTopNow, 50);
+    // One safety check after render, but prevent "fighting" the user
+    requestAnimationFrame(scrollToTopNow);
   }, [answers, questions]);
 
   const nextQuestion = useCallback(() => {

@@ -1224,20 +1224,29 @@ const Practice: React.FC = () => {
       document.activeElement.blur();
     }
     
-    // Use setTimeout to ensure scroll happens AFTER React updates the DOM
-    // This fixes mobile issue where browser auto-scrolls to focused/recently-clicked elements
-    setTimeout(() => {
-      // Scroll to top - use multiple methods for cross-platform reliability (especially mobile)
-      // scrollIntoView is more reliable on mobile/Capacitor than window.scrollTo
+    // Aggressive scroll-to-top for iOS Safari
+    // Uses multiple methods and timing to overcome iOS's scroll restoration behavior
+    const scrollToTopNow = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
       if (questionTopRef.current) {
         questionTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
       }
-      // Fallback for window scroll
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      // Also try document scroll for iOS
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }, 0);
+    };
+    
+    // Immediate scroll
+    scrollToTopNow();
+    
+    // Delayed scroll after React re-render (requestAnimationFrame is more reliable than setTimeout on iOS)
+    requestAnimationFrame(() => {
+      scrollToTopNow();
+      // Double-tap for iOS Safari which sometimes needs extra time
+      requestAnimationFrame(scrollToTopNow);
+    });
+    
+    // Final fallback after a short delay for stubborn iOS behavior
+    setTimeout(scrollToTopNow, 50);
   }, [answers, questions]);
 
   const nextQuestion = useCallback(() => {
@@ -1888,14 +1897,17 @@ const Practice: React.FC = () => {
           <div 
             className="flex-1 flex items-center gap-1.5 overflow-x-auto py-2 scrollbar-hide"
             ref={(el) => {
-              // Auto-scroll to keep current question visible
+              // Auto-scroll horizontally to keep current question dot visible
+              // Use scrollLeft instead of scrollIntoView to avoid affecting page scroll on iOS
               if (el) {
                 const activeBtn = el.children[currentIndex] as HTMLElement;
                 if (activeBtn) {
                   const containerRect = el.getBoundingClientRect();
                   const btnRect = activeBtn.getBoundingClientRect();
                   if (btnRect.left < containerRect.left || btnRect.right > containerRect.right) {
-                    activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    // Calculate scroll position to center the button
+                    const scrollLeft = activeBtn.offsetLeft - (el.clientWidth / 2) + (activeBtn.clientWidth / 2);
+                    el.scrollLeft = scrollLeft;
                   }
                 }
               }

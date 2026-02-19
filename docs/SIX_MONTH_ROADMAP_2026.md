@@ -351,7 +351,7 @@ The following systems were built and deployed on launch day:
 
 | Task | Timeline | Description |
 |------|----------|-------------|
-| Founder countdown on landing pages | Apr 1 | Show "X of 300 seats remaining" + countdown timer |
+| Founder countdown on landing pages | **DONE** | ✅ FounderCountdown component showing Days:Hours:Mins. Seats remaining disabled until 50+ subscribers |
 | Founder email campaign | Apr 1, 15, 25 | 3-email series to trial users: scarcity + savings messaging |
 | Founder social proof | **DONE** | ~~Display "127 founders have joined"~~ Infrastructure ready, disabled until 50+ real users (SOCIAL_PROOF in subscription.ts) |
 | Founder testimonial collection | Apr 7 | Email existing subscribers for quotes/reviews |

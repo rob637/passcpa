@@ -333,7 +333,7 @@ export const FAR_QUESTIONS_DEPTH_10: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 718, an employee stock purchase plan (ESPP) that allows employees to purchase stock at a discount of 5% or less from market price and has no look-back feature is:',
     options: [
-      'Always compensatory',
+      'Compensatory due to the discount provided',
       'Noncompensatory — no compensation expense is recognized',
       'Compensatory only if the discount exceeds 15%',
       'Accounted for under ASC 450 as a contingencies',
@@ -482,7 +482,7 @@ export const FAR_QUESTIONS_DEPTH_10: Question[] = [
     options: [
       'Based on the underlying asset (the building)',
       'With reference to the right-of-use asset arising from the head lease (not the underlying asset)',
-      'Always as an operating lease',
+      'As an operating lease in most cases',
       'As a new finance lease',
     ],
     correctAnswer: 1,

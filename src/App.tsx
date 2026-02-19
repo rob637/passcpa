@@ -87,6 +87,7 @@ const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPag
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const DiagnosticQuiz = lazy(() => import('./components/pages/DiagnosticQuiz'));
+const DemoPractice = lazy(() => import('./components/pages/DemoPractice'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
 const GrowthDashboard = lazy(() => import('./components/pages/admin/GrowthDashboard'));
@@ -514,6 +515,16 @@ function App() {
                     }
                   />
                 )}
+
+                {/* Demo Practice - Try 5 Questions Free (public, no auth) */}
+                <Route
+                  path="/demo-practice"
+                  element={
+                    <SuspensePage>
+                      <DemoPractice />
+                    </SuspensePage>
+                  }
+                />
 
                 {/* Legal Pages (public) */}
                 <Route

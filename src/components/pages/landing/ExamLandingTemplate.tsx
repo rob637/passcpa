@@ -21,10 +21,14 @@ import {
   Check,
   X,
   Menu,
+  Users,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
-import { isFounderPricingActive, founderDaysRemaining } from '../../../services/subscription';
+import { isFounderPricingActive, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
 import { useAuth } from '../../../hooks/useAuth';
+import { useExitIntent } from '../../../hooks/useExitIntent';
+import ExitIntentModal from '../../common/ExitIntentModal';
+import FounderCountdown from '../../common/FounderCountdown';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -33,6 +37,28 @@ interface ExamLandingTemplateProps {
 const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showExitModal, setShowExitModal] = useState(false);
+  const { user } = useAuth();
+
+  // Exit intent detection - only for non-authenticated users
+  const { markAsShown } = useExitIntent(
+    () => {
+      if (!user) {
+        setShowExitModal(true);
+      }
+    },
+    {
+      threshold: 20,
+      delay: 5000, // Wait 5 seconds before enabling
+      minTimeOnPage: 10000, // User must be on page 10+ seconds
+      storageKey: `exitIntent_${config.id}`,
+    }
+  );
+
+  const handleExitModalClose = () => {
+    setShowExitModal(false);
+    markAsShown();
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -254,10 +280,11 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                to="/"
+                to={`/demo-practice?course=${config.id}`}
                 className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-6 py-3 rounded-xl text-base font-bold hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                View All Certifications
+                <Sparkles className="w-4 h-4" />
+                Try 5 Questions Free
               </Link>
             </div>
 
@@ -275,6 +302,14 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </div>
                 <span>14-day free trial</span>
               </div>
+              {isFounderPricingActive() && SOCIAL_PROOF.showOnPricing && SOCIAL_PROOF.foundersJoined >= 50 && (
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
+                  <div className="w-5 h-5 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                    <Users className="w-3 h-3 text-amber-600" />
+                  </div>
+                  <span>{SOCIAL_PROOF.foundersJoined}+ founding members</span>
+                </div>
+              )}
             </div>
 
             {/* Quick stats */}
@@ -578,6 +613,14 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           </div>
         </div>
       </footer>
+
+      {/* Exit Intent Modal */}
+      <ExitIntentModal
+        isOpen={showExitModal}
+        onClose={handleExitModalClose}
+        courseId={config.id}
+        courseName={config.name}
+      />
     </div>
   );
 };
@@ -612,7 +655,6 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
   
   // Founder pricing — single source of truth in subscription.ts
   const isFounderWindow = isFounderPricingActive();
-  const daysRemaining = founderDaysRemaining();
   
   const pricing = config.pricing;
   const currentPrice = billingInterval === 'annual' 
@@ -659,22 +701,8 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
           </p>
         </div>
 
-        {/* Founder Banner */}
-        {isFounderWindow && (
-          <div className="mb-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-4 md:p-6 text-white text-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-              <span className="text-2xl">🏆</span>
-              <div>
-                <span className="font-bold text-lg">Founding Member Pricing</span>
-                <span className="mx-2">•</span>
-                <span>Save over 40% — rate guaranteed for 2 years</span>
-              </div>
-              <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold">
-                {daysRemaining} days left
-              </span>
-            </div>
-          </div>
-        )}
+        {/* Founder Countdown Banner */}
+        <FounderCountdown variant="banner" className="mb-8" />
 
         {/* Billing Toggle */}
         <div className="flex justify-center mb-10">
@@ -772,6 +800,14 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
                 No credit card required • Cancel anytime • Pass guarantee
               </p>
+              
+              {/* Social Proof */}
+              {SOCIAL_PROOF.showOnPricing && isFounderWindow && (
+                <div className="mt-6 flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
+                  <Users className="w-4 h-4 text-amber-500" />
+                  <span className="text-sm font-medium">{getSocialProofText()}</span>
+                </div>
+              )}
             </div>
 
             {/* Pass Guarantee */}

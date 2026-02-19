@@ -121,8 +121,8 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | **TBS Editor** | ✅ Full | TBSEditor.tsx |
 | **WC Editor** | ✅ Full | WCEditor.tsx |
 | **Growth Dashboard** | ✅ Full | GrowthDashboard.tsx — SEO/SEM command center |
-| **User Management** | ❌ None | No admin view of users, subscriptions, usage |
-| **Revenue Dashboard** | ❌ None | No Stripe revenue metrics in admin |
+| **User Management** | ⚠️ Partial | AdminCMS Users tab — view users, subscriptions, daily activity, diagnostics |
+| **Revenue Dashboard** | ✅ Full | AdminCMS Analytics tab — MRR, ARR, ARPU, churn risk, per-course breakdown |
 | **Content Analytics** | ❌ None | No question difficulty/discrimination analysis |
 | **Support Tickets** | ❌ None | No in-app support system |
 
@@ -242,8 +242,8 @@ The following systems were built and deployed on launch day:
 | Trial expiration drip | 🔴 P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Cloud Function (Day 7, 10, 13) |
 | **Google Ads conversion tracking** | 🔴 P0 | 2h | ✅ DONE | `analytics.ts` tracks signup/trial/purchase conversions with gtag |
 | Link GA4 ↔ Google Ads | 🔴 P0 | 0.5h | ✅ DONE | VoraPrepMCC linked Feb 17, Personalized Advertising enabled |
-| Landing page CTA flow | 🟡 P1 | 2h | | Ensure free trial CTA → onboarding → first practice is <60s |
-| Error boundary coverage | 🟡 P1 | 3h | | Add error boundaries to payment/practice flows |
+| Landing page CTA flow | 🟡 P1 | 2h | ✅ DONE | DemoPractice page (try 5 Qs free, no auth), fast-track onboarding, improved skip UX |
+| Error boundary coverage | 🟡 P1 | 3h | ✅ DONE | Route-level error boundaries in RouteErrorBoundary.tsx + ErrorBoundary HOC |
 
 ---
 
@@ -260,10 +260,10 @@ The following systems were built and deployed on launch day:
 | Trial expiration drip | P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Day 7/10/13 sequence |
 | Welcome drip sequence | P0 | 4h | ✅ DONE | `sendWelcomeDripEmails` Day 1/3/5/7 personalized emails (study tips, first Q kudos, AI tutor intro, blueprint mastery) |
 | Trial emails with stats | P0 | 2h | ✅ DONE | Enhanced trial reminders show user stats (questions, accuracy, days active, predicted score) |
-| Stripe webhook hardening | P1 | 3h | | Add retry logic, idempotency keys, failure alerts |
-| Onboarding funnel analytics | P1 | 2h | | Track drop-off at each onboarding step in GA4 |
+| Stripe webhook hardening | P1 | 3h | ✅ DONE | Added retry logic, failure logging to Firestore, email alerts for critical events |
+| Onboarding funnel analytics | P1 | 2h | ✅ DONE | 9 tracking events added: `onboarding_started`, `onboarding_abandoned`, per-step tracking in GA4 |
 | Fix Pricing page redirect | P1 | 2h | ✅ DONE | Stripe `cancel_url` now returns to `/{courseId}#pricing` for course-specific context |
-| Error tracking setup | P1 | 4h | | Add Sentry or LogRocket for production error monitoring |
+| Error tracking setup | P1 | 4h | ✅ DONE | Built-in error tracking in `errorTracking.ts` + enhanced Logs tab with stats dashboard (DIY Sentry) |
 | Session recording (optional) | P2 | 2h | | Hotjar or FullStory for UX insights on first 100 users |
 
 ### 5.2 Content Quality — CISA & CPA Improvements (~30 hours)
@@ -272,9 +272,9 @@ The following systems were built and deployed on launch day:
 |------|----------|-----------|-------------|
 | CISA question references | P0 | 8h | ✅ DONE | 1,411 references added citing CISA Review Manual chapters |
 | CISA distractor improvement | P1 | 6h | ✅ DONE | 26 absolute-language fixes (always→typically, never→rarely) |
-| CPA FAR distractor upgrade | P1 | 6h | Improve weak distractors in FAR questions (currently plausible but not tricky enough) |
+| CPA FAR distractor upgrade | P1 | 6h | ⚠️ Started | 12 absolute language fixes committed. 338 remaining issues (run `node scripts/validate-questions.cjs --course cpa`) |
 | CFP question expansion | P1 | 8h | Generate 500+ additional CFP questions (currently only 850 vs 4000+ for CPA/EA) |
-| Question validation script | P2 | 2h | Enhance `validate-questions.cjs` to check distractor diversity, reference presence |
+| Question validation script | P2 | 2h | ✅ DONE | Enhanced `validate-questions.cjs`: reference checks, absolute language detection, duplicate options |
 
 ### 5.3 SEM Optimization (~20 hours)
 
@@ -338,8 +338,8 @@ The following systems were built and deployed on launch day:
 | Task | Priority | Est. Hours | Description |
 |------|----------|-----------|-------------|
 | User management panel | P1 | 6h | ⚠️ Partial | Added diagnostic exam results to user activity modal, subscription viewing works |
-| Revenue dashboard | P1 | 4h | MRR, new subscribers, churn, ARPU — pull from Stripe API |
-| Content quality metrics | P2 | 2h | Question answer rate, avg time, discrimination index |
+| Revenue dashboard | P1 | 4h | ✅ DONE | MRR, ARR, ARPU, subscribers, churn risk, per-course revenue in AdminCMS Analytics tab |
+| Content quality metrics | P2 | 2h | ✅ DONE | Question answer rate, avg time tracked in AdminCMS Stats tab per-course |
 
 ---
 
@@ -351,9 +351,9 @@ The following systems were built and deployed on launch day:
 
 | Task | Timeline | Description |
 |------|----------|-------------|
-| Founder countdown on landing pages | Apr 1 | Show "X of 300 seats remaining" + countdown timer |
+| Founder countdown on landing pages | **DONE** | ✅ FounderCountdown component showing Days:Hours:Mins. Seats remaining disabled until 50+ subscribers |
 | Founder email campaign | Apr 1, 15, 25 | 3-email series to trial users: scarcity + savings messaging |
-| Founder social proof | Apr 1 | Display "127 founders have joined" on pricing sections |
+| Founder social proof | **DONE** | ~~Display "127 founders have joined"~~ Infrastructure ready, disabled until 50+ real users (SOCIAL_PROOF in subscription.ts) |
 | Founder testimonial collection | Apr 7 | Email existing subscribers for quotes/reviews |
 | Founder deadline enforcement | Apr 30 | Transition to regular pricing, update all pricing displays |
 | Post-founder pricing strategy | Apr 28 | Decision: introduce quarterly tier? Bundle pricing? |
@@ -398,7 +398,7 @@ The following systems were built and deployed on launch day:
 | Trial length (14 vs 7 days) | A/B | 7-day trial may create more urgency with similar conversion |
 | Onboarding diagnostic quiz | Analysis | Users who complete diagnostic have 2× higher Day 7 retention |
 | In-app upgrade prompts | Feature | Show upgrade modal when hitting free-tier limits |
-| Exit intent modal | Feature | Capture email on bounce from pricing page |
+| Exit intent modal | **DONE** | ✅ ExitIntentModal captures email on bounce, saves to waitlist with exit_intent tag |
 
 ---
 

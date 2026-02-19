@@ -1,0 +1,292 @@
+# S Corporation Shareholder Basis
+## Audio Recording Script
+
+**Total Duration:** ~7 minutes 30 seconds  
+**Reading Style:** Professional, conversational, moderate pace  
+**Tip:** Pause briefly (0.5s) at each [PAUSE] marker
+
+---
+
+## SCENE 1: Title (15 seconds)
+
+If there's one topic that trips up E-A candidates, it's shareholder basis in S corporations. [PAUSE]
+
+But here's the good news. [PAUSE]
+
+Once you understand the rules, it's actually a formula you can master. Today, we're going to demystify S Corp basis, step by step.
+
+---
+
+## SCENE 2: Why Basis Matters (25 seconds)
+
+Why should you care about basis? [PAUSE]
+
+Because without sufficient basis, your client cannot deduct their share of S corporation losses. [PAUSE]
+
+A shareholder with fifty thousand dollars in allocated losses but only ten thousand dollars in basis? [PAUSE] They can only deduct ten thousand. The rest gets suspended. Potentially forever if they don't get more basis.
+
+Basis also determines whether distributions are tax-free or taxable. Get this wrong, and your client has an unexpected tax bill.
+
+---
+
+## SCENE 3: Two Types of Basis (35 seconds)
+
+Shareholders have two types of basis. [PAUSE]
+
+First, STOCK BASIS. This is what the shareholder paid for their stock, plus any additional capital contributions.
+
+Second, DEBT BASIS. And this is critical. [PAUSE]
+
+Debt basis ONLY comes from direct loans the shareholder personally makes to the S corporation. [PAUSE]
+
+If the shareholder personally guarantees a bank loan to the corporation, does that create debt basis? [PAUSE] No!
+
+The loan must be directly from the shareholder to the corporation. Guarantees and indirect loans don't count. [PAUSE]
+
+Total basis for loss deduction purposes equals stock basis plus debt basis.
+
+---
+
+## SCENE 4: Initial Basis (30 seconds)
+
+Let's start at the beginning. Initial stock basis depends on HOW the shareholder acquired their stock. [PAUSE]
+
+Purchased for cash? Basis equals what they paid. [PAUSE]
+
+Contributed property to the corporation? They take the property's adjusted basis. Not fair market value. This is like a Section three-fifty-one transfer. [PAUSE]
+
+Received as a gift? Carryover the donor's basis. [PAUSE]
+
+Inherited? Step-up to fair market value at date of death. [PAUSE]
+
+Let's track an example. Sam purchases one hundred shares of Reynolds S Corp for fifty thousand dollars cash. Sam's initial stock basis is fifty thousand dollars.
+
+---
+
+## SCENE 5: Basis Increases (35 seconds)
+
+Now let's talk about what INCREASES basis. [PAUSE]
+
+Stock basis goes up when the shareholder makes capital contributions. Putting more money into the company. [PAUSE]
+
+It also increases for their allocable share of ALL income items. Both separately stated items like capital gains and interest, and the non-separately computed income, which is ordinary business income. [PAUSE]
+
+Here's one people miss. Tax-exempt income ALSO increases basis. [PAUSE]
+
+Why? Because even though it's not taxable, it represents real economic benefit. [PAUSE]
+
+For debt basis, the only increase is making additional direct loans to the corporation. Simple.
+
+In our example, Sam's beginning basis of fifty thousand, plus fifteen thousand ordinary income, plus two thousand tax-exempt income, equals sixty-seven thousand before decreases.
+
+---
+
+## SCENE 6: Basis Decreases (40 seconds)
+
+Here's where it gets tricky. And where the exam loves to test you. [PAUSE]
+
+Basis decreases follow a STRICT ORDER. [PAUSE]
+
+Step one. Distributions reduce basis first. But never below zero. Excess distributions become gain. [PAUSE]
+
+Step two. Nondeductible, noncapital expenses. Things like the fifty percent disallowed meals, penalties, and fines. [PAUSE]
+
+Step three. Deductible losses and deductions. This is your ordinary losses and separately stated loss items. [PAUSE] Notice this is AFTER distributions and nondeductible items! [PAUSE]
+
+Step four. The oil and gas depletion deduction. [PAUSE]
+
+Why does order matter? [PAUSE]
+
+Because if someone takes a big distribution first, there may not be enough basis left to absorb losses. Losses get suspended, but the distribution ordering already happened.
+
+Remember, D-N-D-D. [PAUSE] Distributions. Nondeductible. Deductions. Depletion.
+
+---
+
+## SCENE 7: Losses Exceed Basis (35 seconds)
+
+What happens when allocated losses exceed total basis? [PAUSE]
+
+First, losses reduce stock basis. [PAUSE]
+
+If stock basis hits zero, then, and ONLY then, losses can reduce debt basis. [PAUSE]
+
+If the shareholder still has excess losses after both bases hit zero, those losses are suspended. [PAUSE]
+
+They don't disappear. They carry forward indefinitely until the shareholder gets more basis. [PAUSE]
+
+How do you get more basis? Additional capital contributions, additional direct loans, or future income allocations. [PAUSE]
+
+The exam loves to test this. If a shareholder has thirty thousand dollars allocated losses but only twenty thousand dollars total basis, they deduct twenty thousand this year and carry forward ten thousand.
+
+---
+
+## SCENE 8: Debt Basis Restoration (30 seconds)
+
+Here's a nuance the exam tests. The debt basis restoration rule. [PAUSE]
+
+If losses reduce debt basis below its original amount, future income must FIRST restore debt basis before stock basis can increase. [PAUSE]
+
+Let's say a shareholder loaned ten thousand dollars to the corporation. Year one losses reduced their debt basis to zero. [PAUSE]
+
+In year two, they're allocated twenty-five thousand dollars of income. [PAUSE]
+
+The first ten thousand restores debt basis to its original amount. ONLY the remaining fifteen thousand increases stock basis. [PAUSE]
+
+This catches many candidates off guard.
+
+---
+
+## SCENE 9: Example Part 1 (25 seconds)
+
+Let's work through a comprehensive example. This is exactly the kind of problem you'll see on the exam. [PAUSE]
+
+Sarah invests one hundred thousand dollars for stock in an S corporation and makes a direct loan of twenty thousand dollars. Her total beginning basis is one hundred twenty thousand dollars. [PAUSE]
+
+At year end, she receives her K-one showing thirty-five thousand dollars ordinary income, three thousand dollars tax-exempt interest, a fifty thousand dollar cash distribution, five thousand dollars of nondeductible expenses, and eight thousand dollars of charitable contributions. [PAUSE]
+
+What's her ending basis?
+
+---
+
+## SCENE 10: Example Part 2 (40 seconds)
+
+Here's how we solve it. [PAUSE]
+
+Start with stock basis of one hundred thousand dollars. [PAUSE]
+
+First, apply ALL increases. This happens before decreases. [PAUSE]
+
+Add thirty-five thousand ordinary income and three thousand tax-exempt income. Stock basis is now one hundred thirty-eight thousand. [PAUSE]
+
+Now apply decreases IN ORDER. [PAUSE]
+
+Step one. Distributions reduce basis by fifty thousand. Now we're at eighty-eight thousand. [PAUSE]
+
+Step two. Nondeductible expenses reduce basis by five thousand. Down to eighty-three thousand. [PAUSE]
+
+Step three. The charitable contribution, a deduction item, reduces basis by eight thousand. [PAUSE]
+
+Ending stock basis is seventy-five thousand. [PAUSE]
+
+Sarah's debt basis is unchanged at twenty thousand because we never needed it. [PAUSE]
+
+Total ending basis: ninety-five thousand dollars. [PAUSE]
+
+On the exam, work methodically through each step.
+
+---
+
+## SCENE 11: AAA (30 seconds)
+
+For S corporations with accumulated earnings and profits, usually from prior C corporation years, distributions get more complex. [PAUSE]
+
+The Accumulated Adjustments Account, or triple-A, tracks earnings accumulated since the S election. [PAUSE]
+
+Distributions come first from triple-A. These are tax-free to the extent of stock basis, just like regular S corp distributions. [PAUSE]
+
+If triple-A is exhausted, then distributions come from E and P. These are taxed as dividends. [PAUSE]
+
+After E and P, it's return of basis, then capital gain. [PAUSE]
+
+If the S corp was NEVER a C corp, there's no E and P, and you skip the dividend layer. Much simpler.
+
+---
+
+## SCENE 12: Exam Traps (35 seconds)
+
+Let me share the five traps examiners love. [PAUSE]
+
+Trap one. Loan guarantees. [PAUSE] If a question says the shareholder guaranteed a bank loan, that's NOT debt basis. Only direct loans count. [PAUSE]
+
+Trap two. Ordering. [PAUSE] When there are distributions AND losses in the same year, distributions reduce basis first. This can limit loss deductions. [PAUSE]
+
+Trap three. Tax-exempt income is often forgotten. [PAUSE] It DOES increase basis. [PAUSE]
+
+Trap four. The debt basis restoration rule. [PAUSE] Remember, income restores debt basis before it increases stock basis. [PAUSE]
+
+Trap five. Neither stock nor debt basis can go below zero. [PAUSE] Excess amounts are suspended or taxable, not negative.
+
+---
+
+## SCENE 13: Formula Card (20 seconds)
+
+Here's your quick reference formula card. [PAUSE]
+
+Pause here if you need to take a screenshot. [LONGER PAUSE - 2 seconds]
+
+Remember. [PAUSE] Increases happen before decreases. Decreases follow the D-N-D-D order. Debt basis only comes from direct loans. And total basis equals stock plus debt for loss limitation purposes.
+
+---
+
+## SCENE 14: Practice Problem (15 seconds)
+
+Test yourself with this practice problem. [PAUSE]
+
+Pause the video now and work through it step by step. [PAUSE]
+
+Apply the ordering rules, watch for the loss limitation, and calculate Jake's ending basis.
+
+---
+
+## SCENE 15: Solution (35 seconds)
+
+Here's the solution. [PAUSE]
+
+Start with forty thousand stock basis, add the two thousand tax-exempt income. Now forty-two thousand. [PAUSE]
+
+Apply decreases in order. [PAUSE]
+
+Distribution first, down to thirty-two thousand. [PAUSE]
+Nondeductible expenses, down to twenty-nine thousand. [PAUSE]
+
+Now for losses. [PAUSE]
+
+Jake has sixty-five thousand allocated loss but only twenty-nine thousand stock basis plus fifteen thousand debt basis, totaling forty-four thousand. [PAUSE]
+
+He deducts forty-four thousand this year. The remaining twenty-one thousand is suspended. [PAUSE]
+
+His ending stock basis is zero. Debt basis is zero. [PAUSE]
+
+The twenty-one thousand carries forward until he gets more basis. [PAUSE]
+
+How'd you do?
+
+---
+
+## SCENE 16: Closing (20 seconds)
+
+You now have the framework to tackle any S Corp basis question on the E-A exam. [PAUSE]
+
+Remember. [PAUSE] Total basis limits losses. [PAUSE] Ordering rules matter. [PAUSE] And only direct loans create debt basis. [PAUSE]
+
+Practice with the basis problems in your question bank, and you'll be ready. [PAUSE]
+
+In our next video, we'll dive deeper into distributions and the triple-A account. [PAUSE]
+
+Good luck, future Enrolled Agent!
+
+---
+
+## PRONUNCIATION GUIDE
+
+| Term | Say It Like |
+|------|-------------|
+| EA | "E-A" (spell out) |
+| K-1 | "K-one" |
+| S Corp | "S Corp" (words) |
+| AAA | "triple-A" |
+| E&P | "E and P" |
+| §351 | "Section three-fifty-one" |
+| §1367 | "Section thirteen sixty-seven" |
+| TCJA | "T-C-J-A" |
+
+---
+
+## RECORDING TIPS
+
+1. **Pace:** Slightly slower than conversational (~140 words/minute)
+2. **Emphasis:** Stress words in CAPS
+3. **Pauses:** Take a breath at [PAUSE] markers
+4. **Energy:** Sound confident and encouraging
+5. **Numbers:** Say clearly, don't rush through calculations

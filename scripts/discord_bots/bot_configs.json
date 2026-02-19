@@ -1,0 +1,107 @@
+{
+  "cpa": {
+    "name": "VoraPrep CPA",
+    "full_name": "CPA (Certified Public Accountant)",
+    "description": "Practice CPA exam questions — FAR, AUD, REG, BAR, ISC, TCP",
+    "color": "0x1a73e8",
+    "emoji": "📊",
+    "sections": ["FAR", "AUD", "REG", "BAR", "ISC", "TCP"],
+    "section_names": {
+      "FAR": "Financial Accounting & Reporting",
+      "AUD": "Auditing & Attestation",
+      "REG": "Regulation",
+      "BAR": "Business Analysis & Reporting",
+      "ISC": "Information Systems & Controls",
+      "TCP": "Tax Compliance & Planning"
+    },
+    "url": "https://voraprep.com/cpa",
+    "invite_prompt": "Master the CPA exam with 4,789 questions, AI tutor, and score prediction",
+    "env_token_key": "DISCORD_BOT_TOKEN_CPA"
+  },
+  "ea": {
+    "name": "VoraPrep EA",
+    "full_name": "EA (Enrolled Agent)",
+    "description": "Practice EA exam questions — SEE1, SEE2, SEE3",
+    "color": "0x34a853",
+    "emoji": "🏛️",
+    "sections": ["SEE1", "SEE2", "SEE3"],
+    "section_names": {
+      "SEE1": "Individuals",
+      "SEE2": "Businesses",
+      "SEE3": "Representation, Practices & Procedures"
+    },
+    "url": "https://voraprep.com/ea",
+    "invite_prompt": "Ace the EA exam with 4,210 questions, IRC citations, and adaptive practice",
+    "env_token_key": "DISCORD_BOT_TOKEN_EA"
+  },
+  "cma": {
+    "name": "VoraPrep CMA",
+    "full_name": "CMA (Certified Management Accountant)",
+    "description": "Practice CMA exam questions — Part 1 & Part 2",
+    "color": "0xfbbc04",
+    "emoji": "💹",
+    "sections": ["CMA1", "CMA2"],
+    "section_names": {
+      "CMA1": "Financial Planning, Performance & Analytics",
+      "CMA2": "Strategic Financial Management"
+    },
+    "url": "https://voraprep.com/cma",
+    "invite_prompt": "Crush the CMA exam with 2,834 questions — CBQ format coming Sept 2026",
+    "env_token_key": "DISCORD_BOT_TOKEN_CMA"
+  },
+  "cia": {
+    "name": "VoraPrep CIA",
+    "full_name": "CIA (Certified Internal Auditor)",
+    "description": "Practice CIA exam questions — Parts 1, 2, 3",
+    "color": "0x9c27b0",
+    "emoji": "🔍",
+    "sections": ["CIA1", "CIA2", "CIA3"],
+    "section_names": {
+      "CIA1": "Essentials of Internal Auditing",
+      "CIA2": "Practice of Internal Auditing",
+      "CIA3": "Business Knowledge for Internal Auditing"
+    },
+    "url": "https://voraprep.com/cia",
+    "invite_prompt": "Prepare for the CIA exam with 2,196 questions and adaptive learning",
+    "env_token_key": "DISCORD_BOT_TOKEN_CIA"
+  },
+  "cisa": {
+    "name": "VoraPrep CISA",
+    "full_name": "CISA (Certified Information Systems Auditor)",
+    "description": "Practice CISA exam questions — 5 Domains",
+    "color": "0xea4335",
+    "emoji": "🔐",
+    "sections": ["CISA1", "CISA2", "CISA3", "CISA4", "CISA5"],
+    "section_names": {
+      "CISA1": "Information System Auditing Process",
+      "CISA2": "Governance & Management of IT",
+      "CISA3": "Information Systems Acquisition & Development",
+      "CISA4": "Information Systems Operations & Business Resilience",
+      "CISA5": "Protection of Information Assets"
+    },
+    "url": "https://voraprep.com/cisa",
+    "invite_prompt": "Pass the CISA exam with 1,501 questions across all 5 domains",
+    "env_token_key": "DISCORD_BOT_TOKEN_CISA"
+  },
+  "cfp": {
+    "name": "VoraPrep CFP",
+    "full_name": "CFP (Certified Financial Planner)",
+    "description": "Practice CFP exam questions — 8 Principal Knowledge Topics",
+    "color": "0x00bcd4",
+    "emoji": "💰",
+    "sections": ["CFP-PCR", "CFP-GEN", "CFP-INV", "CFP-RET", "CFP-TAX", "CFP-EST", "CFP-RISK", "CFP-PSY"],
+    "section_names": {
+      "CFP-PCR": "Professional Conduct & Regulation",
+      "CFP-GEN": "General Financial Planning",
+      "CFP-INV": "Investment Planning",
+      "CFP-RET": "Retirement Savings & Income Planning",
+      "CFP-TAX": "Tax Planning",
+      "CFP-EST": "Estate Planning",
+      "CFP-RISK": "Risk Management & Insurance",
+      "CFP-PSY": "Psychology of Financial Planning"
+    },
+    "url": "https://voraprep.com/cfp",
+    "invite_prompt": "Prepare for the CFP exam with 850+ questions across all 8 topics",
+    "env_token_key": "DISCORD_BOT_TOKEN_CFP"
+  }
+}

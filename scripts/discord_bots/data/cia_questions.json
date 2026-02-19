@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "cia3-271",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Strategic planning involves:",
+    "options": [
+      "Defining long-term direction and allocating resources to achieve goals",
+      "Day-to-day operational decisions",
+      "Processing payroll",
+      "Managing accounts receivable"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Strategic planning involves setting long-term organizational direction, goals, and allocating resources to achieve the strategic vision."
+  },
+  {
+    "id": "cia3-b5-015",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "An internal auditor reviewing security awareness should verify that the training program covers all of the following EXCEPT:",
+    "options": [
+      "Physical security awareness (tailgating, clean desk)",
+      "How to write secure application code",
+      "Password management best practices",
+      "Phishing recognition and reporting procedures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Security awareness training for all employees typically covers phishing recognition, password management, physical security, and data handling. Secure coding practices are specialized training for developers, not general security awareness content."
+  },
+  {
+    "id": "cia3-288",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "hard",
+    "question": "Encryption at rest protects:",
+    "options": [
+      "Stored data on disks and databases",
+      "Data during transmission",
+      "Data in memory",
+      "Network traffic"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Encryption at rest protects stored data on devices, databases, and backup media from unauthorized access."
+  },
+  {
+    "id": "cia3-213",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "medium",
+    "question": "Network protocols like TCP/IP:",
+    "options": [
+      "Define rules for data communication across networks",
+      "Only apply to wireless",
+      "Only apply to internal networks",
+      "Only handle email"
+    ],
+    "correctAnswer": 0,
+    "explanation": "TCP/IP and other protocols define how data is formatted, transmitted, routed, and received across networks."
+  },
+  {
+    "id": "cia3-097",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "Access control based on job responsibilities is called:",
+    "options": [
+      "Discretionary access control",
+      "Role-based access control (RBAC)",
+      "Mandatory access control",
+      "Physical access control"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Role-based access control assigns permissions based on job roles, simplifying administration and ensuring least privilege by job function."
+  },
+  {
+    "id": "cia3-248",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Conflicts of interest:",
+    "options": [
+      "Are only financial in nature",
+      "Occur when personal interests could improperly influence business decisions",
+      "Only apply to executives",
+      "Cannot be managed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Conflicts of interest arise when personal, financial, or other interests could improperly influence judgment in business matters."
+  },
+  {
+    "id": "cia3-094",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "Recovery Point Objective (RPO) defines:",
+    "options": [
+      "Maximum acceptable data loss measured in time",
+      "Recovery team membership",
+      "System availability requirements",
+      "Backup storage locations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "RPO represents the maximum acceptable data loss, driving backup frequency decisions (e.g., 4-hour RPO requires at least 4-hourly backups)."
+  },
+  {
+    "id": "cia3-176",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Organizational design considers:",
+    "options": [
+      "Structure, processes, roles, and systems alignment with strategy",
+      "Only physical office layout",
+      "Only reporting relationships",
+      "Only compensation systems"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Organizational design aligns structure, processes, people, rewards, and systems with strategic objectives."
+  },
+  {
+    "id": "cia3-021",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "The three primary objectives of information security are:",
+    "options": [
+      "Confidentiality, integrity, and availability",
+      "Physical, technical, and administrative",
+      "Prevention, detection, and correction",
+      "Encryption, authentication, and authorization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The CIA triad (Confidentiality, Integrity, and Availability) represents the three primary objectives of information security that organizations must protect."
+  },
+  {
+    "id": "cia2-163",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Complete communication includes:",
+    "options": [
+      "All essential information for proper understanding and decision-making",
+      "Only summary information",
+      "Only recommendations",
+      "Only major findings"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Complete communications include all material and relevant information needed for users to understand findings, draw proper conclusions, and take appropriate action."
+  },
+  {
+    "id": "cia2-b5-024",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "medium",
+    "question": "Which of the following is a key responsibility of the CAE regarding coordination with external auditors?",
+    "options": [
+      "Allowing external auditors to direct internal audit work",
+      "Sharing work to ensure efficient use of audit resources and minimize duplication",
+      "Reporting internal audit findings exclusively to external auditors",
+      "Replacing external audit work with internal audit coverage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard 2050 requires the CAE to share information and coordinate activities with external auditors to ensure proper coverage and minimize duplication of efforts. This does not mean external auditors direct internal audit work."
+  },
+  {
+    "id": "cia2-330",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing Internal Audit Activity",
+    "difficulty": "medium",
+    "question": "Engagement time budgets should be:",
+    "options": [
+      "Kept secret from staff",
+      "Realistic and monitored, with variances explained",
+      "As low as possible",
+      "Never exceeded"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Time budgets should be realistic, monitored throughout the engagement, with significant variances analyzed and explained."
+  },
+  {
+    "id": "cia3-011",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "According to Maslow's hierarchy of needs, which need must be satisfied before an employee can focus on self-actualization?",
+    "options": [
+      "All lower-level needs including esteem",
+      "Safety needs only",
+      "Physiological needs only",
+      "Social needs only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Maslow's hierarchy states that lower-level needs (physiological, safety, social/belonging, esteem) must be substantially satisfied before a person can focus on self-actualization, the highest level."
+  },
+  {
+    "id": "cia1-b7-093",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "Integrated auditing combines:",
+    "options": [
+      "Only financial auditing",
+      "Only IT auditing",
+      "Only compliance auditing",
+      "Assessment of financial, operational, compliance, and strategic aspects in a unified approach"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Integrated auditing takes a holistic approach, examining financial, operational, compliance, IT, and strategic aspects together rather than in isolation."
+  },
+  {
+    "id": "cia2-109",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "easy",
+    "question": "Data analytics in internal auditing helps:",
+    "options": [
+      "Identify patterns, anomalies, and risks in large data sets",
+      "Only graph data",
+      "Replace professional judgment",
+      "Eliminate the need for auditors"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data analytics enables auditors to analyze entire populations, identify patterns and anomalies, and focus testing on higher-risk items or unusual transactions."
+  },
+  {
+    "id": "cia2-086",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "Resource allocation for an engagement considers:",
+    "options": [
+      "Knowledge, skills, and other competencies needed for the engagement",
+      "Only cost minimization",
+      "Only availability",
+      "Only seniority of staff"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standard 2230 requires internal auditors to determine appropriate resources considering the nature and complexity of the engagement and available competencies."
+  },
+  {
+    "id": "cia2-b8-037",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "hard",
+    "question": "When communicating engagement results, \"significance\" refers to:",
+    "options": [
+      "Number of exceptions found",
+      "Relative importance based on impact to the organization and stakeholders",
+      "Only monetary amounts",
+      "Audit hours expended"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Significance considers the relative importance of matters in context, including impact on organizational objectives, stakeholders, and risk exposure."
+  },
+  {
+    "id": "cia2-016",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "The engagement opening meeting typically includes discussion of:",
+    "options": [
+      "Penalties for non-cooperation",
+      "Personnel evaluations",
+      "Scope, objectives, timing, and resources",
+      "Final conclusions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The opening meeting typically covers engagement scope, objectives, timing, resources, and coordination with the auditee. It sets expectations and facilitates cooperation."
+  },
+  {
+    "id": "cia1-prof-003",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "easy",
+    "question": "Due professional care requires the internal auditor to consider all of the following EXCEPT:",
+    "options": [
+      "The cost of assurance in relation to potential benefits",
+      "The extent of work needed to achieve engagement objectives",
+      "The relative complexity and materiality of matters to which assurance procedures are applied",
+      "Guaranteeing that all errors and irregularities will be detected"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Due professional care (Standard 1220) does NOT require a guarantee that all errors will be detected. It requires reasonable care and competence—not infallibility. Auditors must consider scope, complexity, materiality, and cost-benefit, but absolute assurance is impossible."
+  },
+  {
+    "id": "cia2-144",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "Preliminary survey activities include:",
+    "options": [
+      "Only counting inventory",
+      "Review of documents, interviews, observation, and analytical review",
+      "Only testing controls",
+      "Only reviewing prior audit reports"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Preliminary survey involves gathering background information through document review, discussions, walkthroughs, and analytical review to understand the area."
+  },
+  {
+    "id": "cia3-148",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "hard",
+    "question": "Treasury management includes:",
+    "options": [
+      "Cash management, investments, and funding strategies",
+      "Only payroll processing",
+      "Only accounts payable",
+      "Only financial reporting"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Treasury management encompasses cash and liquidity management, short-term investments, banking relationships, and financing activities."
+  },
+  {
+    "id": "cia1-046",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "Detective controls are designed to:",
+    "options": [
+      "Correct errors immediately",
+      "Replace preventive controls",
+      "Prevent errors from occurring",
+      "Identify errors or irregularities after they have occurred"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Detective controls identify errors or irregularities after they have occurred. Examples include reconciliations, reviews, audits, and exception reports."
+  },
+  {
+    "id": "cia2-126",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "easy",
+    "question": "If an engagement observes satisfactory performance, the audit report should:",
+    "options": [
+      "Only focus on weaknesses",
+      "Note the satisfactory performance and any areas for improvement",
+      "Be delayed until problems arise",
+      "Not be issued"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Satisfactory performance should be communicated. Reports acknowledging strengths and achievements, along with any improvement opportunities, provide balanced perspective."
+  },
+  {
+    "id": "cia2-b7-027",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "hard",
+    "question": "Consulting engagement objectives should be:",
+    "options": [
+      "Limited to financial matters",
+      "Consistent with the organization's values, strategies, and objectives",
+      "Identical to assurance engagement objectives",
+      "Determined solely by the internal auditor"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Consulting engagement objectives should be consistent with the organization's overall values, strategies, and objectives, addressing governance, risk management, and control processes."
+  },
+  {
+    "id": "cia1-320",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Care",
+    "difficulty": "hard",
+    "question": "Due professional care means the auditor:",
+    "options": [
+      "Never makes mistakes",
+      "Applies the care and skill expected of a reasonably prudent auditor",
+      "Works without time constraints",
+      "Guarantees error-free work"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Due professional care means applying care and skill expected of a reasonably prudent and competent internal auditor. It does not imply infallibility."
+  },
+  {
+    "id": "cia2-139",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "easy",
+    "question": "Key performance indicators (KPIs) for internal audit might include:",
+    "options": [
+      "Only number of audits completed",
+      "Only staff turnover",
+      "Plan completion, stakeholder satisfaction, and finding implementation rates",
+      "Only budget compliance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "KPIs measure various aspects of performance including plan completion, timeliness, stakeholder satisfaction, recommendation acceptance, and implementation rates."
+  },
+  {
+    "id": "cia3-253",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "medium",
+    "question": "Service level objectives (SLOs) define:",
+    "options": [
+      "Target performance levels for services",
+      "Only maximum costs",
+      "Only minimum staffing",
+      "Only technology requirements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SLOs specify target performance levels (response time, availability, throughput) that services should achieve."
+  },
+  {
+    "id": "cia3-242",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "easy",
+    "question": "Accounts payable turnover indicates:",
+    "options": [
+      "Inventory movement",
+      "How quickly the company pays its suppliers",
+      "Collection efficiency",
+      "Asset efficiency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Payables turnover (Purchases / Average Payables) indicates how frequently the company pays suppliers; lower may indicate cash management or distress."
+  },
+  {
+    "id": "cia2-184",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "Prior audit results are useful in planning for:",
+    "options": [
+      "Reducing current year scope",
+      "Identifying recurring issues and assessing changes since the last review",
+      "Avoiding new areas",
+      "Copying the same procedures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Prior audits provide insights into previous findings, remediation status, changes in the area, and issues that may warrant continued attention."
+  },
+  {
+    "id": "cia1-prof-007",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "easy",
+    "question": "The internal audit activity collectively must possess or obtain which of the following?",
+    "options": [
+      "The knowledge, skills, and competencies to perform its responsibilities",
+      "Certification as CPAs",
+      "A graduate degree in accounting",
+      "At least 5 years of audit experience per staff member"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standard 1210 states the internal audit activity must collectively possess or obtain the knowledge, skills, and other competencies to perform its responsibilities. The emphasis is on collective competency—not every individual needs every skill."
+  },
+  {
+    "id": "cia3-222",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "medium",
+    "question": "Credit risk refers to:",
+    "options": [
+      "The risk that a counterparty will fail to meet payment obligations",
+      "Only market price risk",
+      "Currency fluctuation risk",
+      "Only liquidity risk"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Credit risk is the potential that borrowers or counterparties will not fulfill their financial obligations."
+  },
+  {
+    "id": "cia3-202",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "hard",
+    "question": "Containerization technology:",
+    "options": [
+      "Only stores data",
+      "Only applies to physical shipping",
+      "Packages applications with dependencies for consistent deployment across environments",
+      "Only encrypts files"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Containers package applications with their dependencies, enabling consistent operation across different computing environments."
+  },
+  {
+    "id": "cia2-b8-088",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing Internal Audit",
+    "difficulty": "hard",
+    "question": "Relying on the work of external auditors requires the CAE to evaluate:",
+    "options": [
+      "Nothing; external audit work is always reliable",
+      "Only the external audit opinion",
+      "Competence, independence, due care, and communication",
+      "Only the external audit fee"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Before relying on external audit work, the CAE must evaluate their competence, independence, due professional care, scope, and communication of results."
+  },
+  {
+    "id": "cia3-091",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Corporate social responsibility (CSR) includes:",
+    "options": [
+      "Only legal compliance",
+      "Only charitable donations",
+      "Environmental, social, and governance considerations in business decisions",
+      "Only employee benefits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CSR encompasses environmental sustainability, social responsibility, ethical business practices, and governance beyond legal requirements."
+  },
+  {
+    "id": "cia3-023",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "Multi-factor authentication requires users to provide:",
+    "options": [
+      "Multiple passwords",
+      "Credentials from two or more different categories (something you know, have, or are)",
+      "Authentication from multiple administrators",
+      "Access codes from different departments"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multi-factor authentication requires verification using at least two different categories: something you know (password), something you have (token), or something you are (biometric)."
+  },
+  {
+    "id": "cia2-332",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Judgmental sampling is appropriate when:",
+    "options": [
+      "Auditor targets specific items based on risk or other factors",
+      "Population is small and homogeneous",
+      "Statistical precision is required",
+      "Results must be projected to the population"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Judgmental sampling is used when auditors target specific items based on risk, value, or other factors rather than projecting to the population."
+  },
+  {
+    "id": "cia3-283",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Lean principles focus on:",
+    "options": [
+      "Increasing inventory levels",
+      "Reducing staff",
+      "Eliminating waste and maximizing value",
+      "Adding process steps"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Lean principles focus on eliminating waste (non-value-added activities) while maximizing value delivered to customers."
+  },
+  {
+    "id": "cia3-106",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "easy",
+    "question": "Vulnerability scanning is used to:",
+    "options": [
+      "Identify security weaknesses in systems",
+      "Encrypt sensitive data",
+      "Block all network traffic",
+      "Train employees"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vulnerability scanning automatically identifies known security weaknesses in systems, applications, and configurations."
+  },
+  {
+    "id": "cia1-332",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "The internal audit activity should coordinate with:",
+    "options": [
+      "Management only",
+      "No one to maintain independence",
+      "All assurance and consulting providers",
+      "Only external auditors"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The CAE should share information and coordinate activities with other assurance and consulting providers to ensure proper coverage and minimize duplication."
+  },
+  {
+    "id": "cia1-038",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "Risk is defined as:",
+    "options": [
+      "A compliance violation",
+      "An internal control weakness",
+      "Something that has already occurred",
+      "The possibility of an event occurring that will have an impact on achievement of objectives"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Risk is the possibility of an event occurring that will have an impact on the achievement of objectives. Risk is measured in terms of impact and likelihood."
+  },
+  {
+    "id": "cia1-201",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "hard",
+    "question": "Due professional care requires consideration of the probability of significant errors. \"Significant\" in this context refers to:",
+    "options": [
+      "Only errors exceeding a specific dollar threshold",
+      "Only errors in financial statements",
+      "All errors regardless of impact",
+      "Errors that might affect achievement of objectives or operations"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Significance relates to potential impact on organizational objectives, operations, or stakeholder decisions. Dollar thresholds alone do not determine significance."
+  },
+  {
+    "id": "cia2-b5-012",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "During engagement planning, reviewing prior engagement reports helps the auditor to:",
+    "options": [
+      "Reduce the scope of the current engagement",
+      "Avoid duplicating the same tests",
+      "Understand prior findings and the status of corrective actions",
+      "Determine the final opinion for the current engagement"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Reviewing prior audit reports provides context about previously identified issues, management's corrective actions, and whether prior recommendations have been implemented. This informs risk assessment and helps focus current engagement efforts."
+  },
+  {
+    "id": "cia2-127",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "hard",
+    "question": "When management disputes significant audit findings, the auditor should:",
+    "options": [
+      "Include both the finding and management's position in the report",
+      "Withdraw the report entirely",
+      "Escalate directly to regulators",
+      "Remove the findings from the report"
+    ],
+    "correctAnswer": 0,
+    "explanation": "When disagreement occurs on significant issues, the report may include both the auditor's conclusion and management's position. The CAE determines appropriate handling."
+  },
+  {
+    "id": "cia1-026",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "medium",
+    "question": "The CAE must ensure the internal audit activity collectively possesses or obtains knowledge needed to evaluate:",
+    "options": [
+      "External audit procedures",
+      "Only financial operations",
+      "Competitor operations",
+      "Risks and controls related to IT and other specialized areas"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 1210 states that internal auditors must collectively possess or obtain knowledge, skills, and competencies needed to perform responsibilities, including fraud risks, IT risks, and other specialized areas."
+  },
+  {
+    "id": "cia1-020",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "hard",
+    "question": "An internal auditor has been asked to provide consulting services to a department where the auditor's spouse is the manager. According to the Standards, the auditor should:",
+    "options": [
+      "Accept if the spouse does not directly benefit",
+      "Accept only if the engagement is low risk",
+      "Accept the engagement with enhanced supervision",
+      "Decline the engagement due to impairment to objectivity"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 1130 states auditors must refrain from assessing specific operations for which they were previously responsible. Close personal relationships, such as with a spouse, create an impairment that cannot be managed through supervision alone."
+  },
+  {
+    "id": "cia2-186",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "hard",
+    "question": "Risk and control matrices (RCMs) are used to:",
+    "options": [
+      "Only track time spent",
+      "Only list interview questions",
+      "Document key risks, related controls, and planned testing approach",
+      "Replace all other planning documents"
+    ],
+    "correctAnswer": 2,
+    "explanation": "RCMs link identified risks to mitigating controls and planned audit procedures, providing a structured approach to ensuring key risks are addressed."
+  },
+  {
+    "id": "cia1-b9-004",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "medium",
+    "question": "Familiarity threats to objectivity arise when:",
+    "options": [
+      "Auditors develop close relationships that may influence judgment",
+      "Auditors use unfamiliar technology",
+      "Auditors are unfamiliar with the audit area",
+      "New auditors join the team"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Familiarity threats occur when close relationships with auditees (personal or professional) may make auditors too sympathetic or uncritical."
+  },
+  {
+    "id": "cia2-271",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing Internal Audit Activity",
+    "difficulty": "medium",
+    "question": "The risk-based internal audit plan should be updated:",
+    "options": [
+      "When significant changes occur in the organization",
+      "Never after initial approval",
+      "Only when mandated by regulators",
+      "Only annually"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The audit plan should be reviewed and adjusted when significant changes in business, operations, risks, or systems occur, not just annually."
+  },
+  {
+    "id": "cia3-258",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "Customer lifetime value (CLV) estimates:",
+    "options": [
+      "Only acquisition cost",
+      "Total revenue expected from a customer relationship over time",
+      "Only single transaction value",
+      "Only service costs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CLV estimates the total value a customer will bring over the entire relationship, guiding acquisition spending and retention investment decisions."
+  },
+  {
+    "id": "cia2-276",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing Internal Audit Activity",
+    "difficulty": "medium",
+    "question": "The internal audit activity should report to the board:",
+    "options": [
+      "Only negative findings",
+      "On audit plan, resource requirements, and results",
+      "Management decisions only",
+      "Only when requested"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The CAE should report to the board on the audit plan, resource requirements, results of audit work, and significant risk exposures."
+  },
+  {
+    "id": "cia3-b8-076",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Fraud",
+    "difficulty": "hard",
+    "question": "Forensic data analysis in fraud investigations includes:",
+    "options": [
+      "Only interviewing suspects",
+      "Only reviewing printed documents",
+      "Ignoring digital evidence",
+      "Recovering deleted data, analyzing metadata, and examining electronic evidence"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Forensic data analysis includes recovering deleted files, examining metadata, analyzing email, tracking electronic transactions, and preserving digital evidence."
+  },
+  {
+    "id": "cia2-297",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Fraud indicators should prompt the auditor to:",
+    "options": [
+      "Extend procedures and consider specialized assistance",
+      "Close the engagement",
+      "Ignore unless specifically requested",
+      "Immediately accuse suspects"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fraud indicators should prompt extended procedures and consideration of whether specialized fraud investigation assistance is needed."
+  },
+  {
+    "id": "cia3-175",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Strategic alliances differ from acquisitions in that:",
+    "options": [
+      "Partners maintain separate identities while collaborating",
+      "They always involve equity investments",
+      "One company always controls the other",
+      "They are permanent arrangements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Strategic alliances involve collaborative arrangements where partners maintain independence while working together for mutual benefit."
+  },
+  {
+    "id": "cia2-287",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Audit evidence must be:",
+    "options": [
+      "Sufficient, reliable, relevant, and useful",
+      "Obtained only from management",
+      "Limited to financial documents",
+      "Only documentary"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Evidence must be sufficient (based on facts), reliable (quality), relevant (consistent with objectives), and useful (helps reach conclusions)."
+  },
+  {
+    "id": "cia3-246",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "easy",
+    "question": "Related party transactions require:",
+    "options": [
+      "No special treatment",
+      "Only internal reporting",
+      "Disclosure and often scrutiny for arm's length terms",
+      "Only legal review"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Related party transactions require disclosure and evaluation to ensure they are conducted at arm's length and not for improper purposes."
+  },
+  {
+    "id": "cia1-b6-013",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Care",
+    "difficulty": "medium",
+    "question": "What is the CAE's responsibility regarding proficiency?",
+    "options": [
+      "Limit audits to areas where staff has expertise",
+      "Obtain competent advice and assistance when audit staff lacks needed knowledge",
+      "Ensure each auditor possesses all skills needed for any engagement",
+      "Hire only auditors with graduate degrees"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The CAE must obtain competent advice and assistance from external sources if internal audit staff lacks the required knowledge, skills, or competencies for part or all of an engagement."
+  },
+  {
+    "id": "cia2-295",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "When errors are found during testing, the auditor should:",
+    "options": [
+      "Stop the audit immediately",
+      "Evaluate the nature, cause, and significance",
+      "Report to regulators first",
+      "Ignore isolated errors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Errors should be evaluated for nature, cause, and significance to determine whether additional testing or reporting is needed."
+  },
+  {
+    "id": "cia1-330",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance",
+    "difficulty": "medium",
+    "question": "An external assessment with self-assessment is appropriate when:",
+    "options": [
+      "When approved by the board",
+      "When a full external assessment is too expensive",
+      "Only for small organizations",
+      "Never, it's prohibited"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A self-assessment with independent external validation may be acceptable when the board approves this approach, though a full external assessment is preferred."
+  },
+  {
+    "id": "cia1-239",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "Strategic risks relate to:",
+    "options": [
+      "Only financial reporting",
+      "Only compliance requirements",
+      "Only day-to-day operations",
+      "High-level goals and organizational objectives"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Strategic risks relate to organization-wide goals, mission, and long-term objectives. They concern the organization's strategic direction and ability to achieve its purpose."
+  },
+  {
+    "id": "cia2-b6-097",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Data analytics in auditing can help auditors:",
+    "options": [
+      "Replace professional judgment entirely",
+      "Guarantee fraud detection",
+      "Eliminate the need for sampling",
+      "Analyze entire populations and identify patterns and anomalies"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Data analytics enables auditors to analyze entire populations, identify patterns, trends, and anomalies that might indicate risk. However, it complements rather than replaces judgment."
+  },
+  {
+    "id": "cia1-b5-011",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "Which Core Principle is demonstrated when an internal auditor declines to audit a department where they previously worked as a manager?",
+    "options": [
+      "Demonstrates integrity",
+      "Is objective and free from undue influence",
+      "Demonstrates competence and due professional care",
+      "Aligns with the strategies, objectives, and risks of the organization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Core Principle \"Is objective and free from undue influence\" requires auditors to avoid situations that may compromise objectivity. Having previously managed a department could create familiarity threats or self-review threats, making it appropriate to decline the engagement."
+  },
+  {
+    "id": "cia3-098",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "easy",
+    "question": "Multi-factor authentication requires:",
+    "options": [
+      "Authentication using two or more different factor types",
+      "Multiple passwords",
+      "Multiple user accounts",
+      "Frequent password changes"
+    ],
+    "correctAnswer": 0,
+    "explanation": "MFA combines factors from different categories: something you know (password), something you have (token), and/or something you are (biometric)."
+  },
+  {
+    "id": "cia1-117",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "hard",
+    "question": "The Three Lines Model designates internal audit as:",
+    "options": [
+      "First line - operational management",
+      "Fourth line - external oversight",
+      "Third line - independent assurance",
+      "Second line - risk management and compliance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Three Lines Model positions internal audit as the third line, providing independent assurance. First line is operational management; second line is risk and compliance functions."
+  },
+  {
+    "id": "cia1-110",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance and Improvement Program",
+    "difficulty": "easy",
+    "question": "A qualified external assessor must demonstrate competence in:",
+    "options": [
+      "Financial statement auditing",
+      "Only the professional practice of internal auditing",
+      "Both internal auditing practice and external assessment process",
+      "Only the external assessment process"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Standard 1312 interpretation states that a qualified assessor demonstrates competence in two areas: the professional practice of internal auditing AND the external assessment process."
+  },
+  {
+    "id": "cia1-125",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "hard",
+    "question": "When management has implemented a control but the internal auditor believes residual risk still exceeds risk appetite, the auditor should:",
+    "options": [
+      "Implement additional controls personally",
+      "Discuss with management and potentially escalate to the board",
+      "Accept management's decision without comment",
+      "Immediately inform external auditors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to Standard 2600, when the CAE concludes management has accepted risk that may be unacceptable, they must discuss with senior management. If unresolved, the matter must be communicated to the board."
+  },
+  {
+    "id": "cia1-033",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance and Improvement Program",
+    "difficulty": "medium",
+    "question": "The primary purpose of ongoing monitoring as part of the QAIP is to:",
+    "options": [
+      "Reduce audit costs",
+      "Replace external assessments",
+      "Satisfy regulatory requirements only",
+      "Provide continuous oversight of internal audit performance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ongoing monitoring provides continuous oversight through routine quality activities such as supervision, checklists, feedback surveys, and engagement reviews. This is an integral part of day-to-day audit management."
+  },
+  {
+    "id": "cia1-b9-011",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk, and Control",
+    "difficulty": "medium",
+    "question": "Information and communication in control frameworks ensures:",
+    "options": [
+      "Only external reporting",
+      "Data is kept secret",
+      "Relevant quality information is identified, captured, and communicated",
+      "Only IT systems are involved"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Information and Communication component ensures relevant quality information is identified, captured, and communicated to enable people to carry out responsibilities."
+  },
+  {
+    "id": "cia2-153",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "easy",
+    "question": "Process narratives describe:",
+    "options": [
+      "Only control weaknesses",
+      "Step-by-step details of how a process works",
+      "Only IT systems",
+      "Only financial transactions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Narratives provide detailed written descriptions of how a process flows, including inputs, activities, controls, outputs, and responsibilities."
+  },
+  {
+    "id": "cia2-303",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Engagement communications must include:",
+    "options": [
+      "External audit opinions",
+      "Objectives, scope, conclusions, and recommendations",
+      "Staff evaluation scores",
+      "Only negative findings"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Communications must include engagement objectives, scope, conclusions, and recommendations when appropriate."
+  },
+  {
+    "id": "cia1-186",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "medium",
+    "question": "Self-review threat to objectivity occurs when:",
+    "options": [
+      "An auditor is offered a promotion",
+      "Management pressures the auditor to change findings",
+      "An auditor receives an expensive gift",
+      "An auditor reviews and audits their own prior work"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Self-review threat occurs when an internal auditor is asked to audit or review their previous work. This creates a conflict because objectivity in evaluating one's own work is questionable."
+  },
+  {
+    "id": "cia2-178",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "easy",
+    "question": "Engagement scheduling should consider:",
+    "options": [
+      "Only calendar year-end",
+      "Only external auditor schedules",
+      "Risk priorities, staff availability, and auditee timing constraints",
+      "Only auditor vacation schedules"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Scheduling balances risk priorities with practical considerations including staff availability, auditee operations, and coordination with other assurance providers."
+  },
+  {
+    "id": "cia1-b7-006",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "medium",
+    "question": "The CAE's functional reporting to the board enables the internal audit activity to:",
+    "options": [
+      "Override management decisions",
+      "Avoid all reporting to management",
+      "Set company strategy",
+      "Maintain organizational independence"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Functional reporting to the board allows the CAE to maintain independence from management, ensuring the internal audit activity can report objectively on all aspects of the organization."
+  },
+  {
+    "id": "cia2-014",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "hard",
+    "question": "A preliminary survey (engagement planning) should NOT:",
+    "options": [
+      "Understand the process being audited",
+      "Review prior audit reports",
+      "Finalize engagement conclusions",
+      "Identify the key control objectives"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Preliminary survey is for planning purposes—understanding the area, identifying risks and controls, and developing objectives. Conclusions are developed during and after fieldwork, not during planning."
+  },
+  {
+    "id": "cia2-260",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "easy",
+    "question": "Status meetings during engagements:",
+    "options": [
+      "Delay completion",
+      "Keep stakeholders informed and address emerging issues timely",
+      "Should be avoided",
+      "Are only for problems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Regular status communications keep stakeholders informed, manage expectations, and allow early discussion of issues requiring attention."
+  },
+  {
+    "id": "cia2-335",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Benchmarking in internal audit:",
+    "options": [
+      "Focuses only on costs",
+      "Compares practices to best practices or peer organizations",
+      "Replaces audit testing",
+      "Is not relevant"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Benchmarking compares organizational practices to best practices or peer organizations to identify improvement opportunities."
+  },
+  {
+    "id": "cia2-305",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "The quality of engagement communications should be:",
+    "options": [
+      "Generic and standard",
+      "Focused on blame",
+      "Accurate, objective, clear, concise, constructive, and complete",
+      "Lengthy and detailed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Communications must be accurate, objective, clear, concise, constructive, complete, and timely."
+  },
+  {
+    "id": "cia1-193",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "easy",
+    "question": "Independence and objectivity are supported by internal auditors:",
+    "options": [
+      "Having an impartial mental attitude",
+      "Never questioning management actions",
+      "Avoiding controversial areas",
+      "Agreeing with all management decisions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Objectivity requires an impartial, unbiased mental attitude that allows internal auditors to perform engagements in a manner that produces quality work without compromise."
+  },
+  {
+    "id": "cia3-b6-068",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "hard",
+    "question": "An internal auditor evaluating an RPA implementation should focus PRIMARILY on which risk?",
+    "options": [
+      "The risk that RPA bots will develop independent decision-making capabilities",
+      "The risk that automated processes may perpetuate and scale errors if underlying business rules are flawed",
+      "The risk that RPA will eliminate all human involvement in financial reporting",
+      "The risk that RPA bots will conflict with each other's processing schedules"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The primary risk with RPA is that bots follow predefined rules without judgment. If the underlying business rules contain errors or the process design is flawed, RPA will execute those errors at high speed and volume, potentially amplifying their impact across the organization."
+  },
+  {
+    "id": "cia1-147",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "hard",
+    "question": "The internal audit activity as a whole needs expertise in IT risks and controls. If no staff member possesses this expertise, the CAE should:",
+    "options": [
+      "Avoid all IT audits",
+      "Obtain competent advice and assistance from outside sources",
+      "Train all staff in IT before any IT audits can occur",
+      "Report to the board that IT cannot be audited"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard 1210 requires the internal audit activity collectively to possess or OBTAIN needed competencies. If expertise is lacking internally, the CAE should obtain competent advice and assistance from appropriate sources."
+  },
+  {
+    "id": "cia2-b9-034",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "hard",
+    "question": "When findings contradict prior management assertions, the auditor should:",
+    "options": [
+      "Withdraw from the engagement",
+      "Ignore the contradiction",
+      "Gather additional evidence to support the appropriate conclusion",
+      "Accept management's version"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Contradictions require additional investigation and evidence gathering to determine the facts and support the appropriate conclusion."
+  },
+  {
+    "id": "cia2-fraud-003",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Fraud Detection",
+    "difficulty": "medium",
+    "question": "Which fraud interview type should be conducted first when investigating a suspected fraud?",
+    "options": [
+      "Admission-seeking interview",
+      "Interrogation interview",
+      "Information-gathering interview",
+      "Confrontation interview"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The information-gathering interview should be conducted first. It is non-accusatory, uses open-ended questions, and helps establish facts and timeline. Only after sufficient evidence is gathered should an admission-seeking interview be considered."
+  },
+  {
+    "id": "cia3-152",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Pricing strategies like penetration pricing typically:",
+    "options": [
+      "Match competitor prices exactly",
+      "Set highest possible prices",
+      "Set low initial prices to gain market share",
+      "Ignore market conditions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Penetration pricing uses low initial prices to gain market share quickly, potentially raising prices after establishing market position."
+  },
+  {
+    "id": "cia3-087",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Project management fundamentals include:",
+    "options": [
+      "Scope, time, cost, quality, risk, and resource management",
+      "Only scheduling",
+      "Only budgeting",
+      "Only status reporting"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project management encompasses managing scope, schedule, cost, quality, resources, risk, communication, stakeholders, and procurement."
+  },
+  {
+    "id": "cia3-309",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "hard",
+    "question": "Transfer pricing affects:",
+    "options": [
+      "Employee compensation",
+      "Internal transactions between divisions and tax allocation",
+      "External customer sales only",
+      "Marketing strategies"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Transfer pricing sets prices for transactions between related entities, affecting profit allocation, taxation, and performance measurement."
+  },
+  {
+    "id": "cia3-270",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "Executive compensation should be:",
+    "options": [
+      "Only stock options",
+      "Aligned with performance and long-term shareholder value",
+      "Only fixed salary",
+      "Set without oversight"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Executive compensation should align incentives with organizational performance and long-term value creation, with appropriate board oversight."
+  },
+  {
+    "id": "cia3-b5-017",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "A SWOT analysis examines which four areas?",
+    "options": [
+      "Strategy, Worth, Operations, Tactics",
+      "Sales, Workers, Output, Timing",
+      "Strengths, Weaknesses, Opportunities, Threats",
+      "Systems, Workflows, Outcomes, Technology"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SWOT stands for Strengths (internal), Weaknesses (internal), Opportunities (external), and Threats (external). It provides a structured way to assess an organization's strategic position by examining both internal capabilities and external factors."
+  },
+  {
+    "id": "cia1-315",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "An internal auditor uncovers evidence of significant fraud. The appropriate first action is to:",
+    "options": [
+      "Contact law enforcement directly",
+      "Immediately confront the suspected fraudster",
+      "Destroy the evidence to protect the organization",
+      "Notify appropriate parties within the organization"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Significant fraud findings should be reported to appropriate parties, typically the CAE firstly, who then determines appropriate escalation including the audit committee."
+  },
+  {
+    "id": "cia2-b7-038",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Audit recommendations should be:",
+    "options": [
+      "Specific, practical, and cost-effective to address root causes",
+      "Always identical to prior audit recommendations",
+      "Vague to allow management flexibility",
+      "Optional in audit reports"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Recommendations should address the root cause of the finding and be practical, specific, and cost-effective. They should enhance operations and help achieve organizational objectives."
+  },
+  {
+    "id": "cia1-339",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "The CAE's resource management responsibility includes:",
+    "options": [
+      "Managing all risk functions",
+      "Controlling IT resources",
+      "Setting organization-wide budgets",
+      "Ensuring internal audit resources are sufficient to meet the plan"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The CAE must ensure internal audit resources are appropriate, sufficient, and effectively deployed to achieve the approved plan."
+  },
+  {
+    "id": "cia2-010",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "hard",
+    "question": "A significant deviation from the approved audit plan occurs when:",
+    "options": [
+      "Major changes significantly affect the ability to achieve objectives",
+      "Changes in staffing occur",
+      "Budget is exceeded by any amount",
+      "Any change is made to the plan"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Significant deviations occur when changes significantly affect the ability to achieve audit objectives. These must be communicated to senior management and the Board."
+  },
+  {
+    "id": "cia3-327",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "hard",
+    "question": "Hedging strategies:",
+    "options": [
+      "Offset potential losses from price or rate fluctuations",
+      "Guarantee profits",
+      "Increase risk exposure",
+      "Eliminate all financial risk"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Hedging uses financial instruments to offset potential losses from adverse price, interest rate, or currency movements."
+  },
+  {
+    "id": "cia3-219",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "easy",
+    "question": "Depreciation represents:",
+    "options": [
+      "Cash paid for assets",
+      "Asset market value decrease",
+      "Allocation of asset cost over its useful life",
+      "Maintenance expense"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Depreciation systematically allocates the cost of tangible assets over their useful lives, matching expense with benefit periods."
+  },
+  {
+    "id": "cia1-prof-005",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "hard",
+    "question": "An internal auditor is assigned to audit the treasury function but has limited knowledge of financial instruments. Which action BEST demonstrates proficiency?",
+    "options": [
+      "Decline the engagement and recommend an external auditor",
+      "Accept the engagement and learn about financial instruments during fieldwork",
+      "Complete the audit using standard testing procedures without specialized knowledge",
+      "Request that the CAE assign a team member with financial instruments expertise or arrange for subject matter expert assistance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Proficiency requires having or obtaining the necessary expertise. Standard 1210 allows the CAE to obtain advice and assistance from qualified individuals when the audit staff lacks the necessary expertise. This maintains audit quality while building the team's capability."
+  },
+  {
+    "id": "cia1-260",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "Monitoring of corrective action taken by management is essential to ensure:",
+    "options": [
+      "Reports are lengthy",
+      "Management is embarrassed",
+      "Auditors stay employed",
+      "Issues are resolved and do not recur"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 2500 requires monitoring progress on action plans to ensure corrective actions are effectively implemented or that management accepts the risk of not taking action."
+  },
+  {
+    "id": "cia2-316",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Audit conclusions should:",
+    "options": [
+      "Be supported by sufficient and appropriate evidence",
+      "Always be negative",
+      "Match management expectations",
+      "Be based on auditor intuition"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Conclusions must be based on and supported by sufficient and appropriate evidence documented in the workpapers."
+  },
+  {
+    "id": "cia2-320",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Recommendations in audit reports should be:",
+    "options": [
+      "Actionable and address root causes",
+      "Identical across all engagements",
+      "Optional",
+      "Vague to allow management flexibility"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Recommendations should address root causes and be specific enough for management to take action."
+  },
+  {
+    "id": "cia2-313",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Walkthroughs help auditors:",
+    "options": [
+      "Understand processes and identify control points",
+      "Avoid management contact",
+      "Complete the audit faster",
+      "Skip detailed testing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Walkthroughs trace transactions through processes to understand operations, identify controls, and pinpoint risks."
+  },
+  {
+    "id": "cia3-061",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "medium",
+    "question": "Accounts receivable turnover measures:",
+    "options": [
+      "How quickly inventory is sold",
+      "How efficiently a company collects credit sales",
+      "The rate of fixed asset utilization",
+      "The speed of paying suppliers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Accounts receivable turnover (Net Credit Sales / Average AR) measures how efficiently a company collects its receivables, indicating collection effectiveness."
+  },
+  {
+    "id": "cia2-210",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "easy",
+    "question": "Data mining in internal auditing helps identify:",
+    "options": [
+      "Only financial data",
+      "Only employee information",
+      "Patterns, anomalies, and relationships in large data sets",
+      "Only mineral deposits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Data mining uses statistical and database techniques to discover hidden patterns, relationships, and anomalies in large volumes of data."
+  },
+  {
+    "id": "cia3-278",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Change management in organizations requires:",
+    "options": [
+      "Mandating changes without explanation",
+      "Stakeholder engagement, communication, and managing resistance",
+      "Surprise announcements",
+      "Technical training only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Effective change management involves stakeholder engagement, clear communication, training, and addressing resistance."
+  },
+  {
+    "id": "cia2-165",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Report distribution should be:",
+    "options": [
+      "Made public for transparency",
+      "Determined based on who needs the information and can take action",
+      "Only to the CEO",
+      "To all employees"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distribution should be to those who need the information to understand findings, make decisions, or take corrective action, while protecting confidential information."
+  },
+  {
+    "id": "cia1-140",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "The internal audit charter must recognize which mandatory elements of the IPPF?",
+    "options": [
+      "Only the Standards",
+      "Core Principles, Code of Ethics, Standards, and Definition",
+      "All IPPF elements including recommended guidance",
+      "Only the Code of Ethics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard 1010 requires the charter to recognize the mandatory nature of the Core Principles, Code of Ethics, Standards, and Definition of Internal Auditing."
+  },
+  {
+    "id": "cia2-064",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "hard",
+    "question": "Continuous auditing is characterized by:",
+    "options": [
+      "Replacing all traditional auditing",
+      "Eliminating audit planning",
+      "Real-time or near real-time testing and monitoring using technology",
+      "Annual audit cycles only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Continuous auditing uses technology to perform testing and monitoring on a real-time or near real-time basis, enabling timely identification of exceptions and risks."
+  },
+  {
+    "id": "cia1-b9-012",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk, and Control",
+    "difficulty": "medium",
+    "question": "Risk identification should consider:",
+    "options": [
+      "Only operational risks",
+      "Only financial risks",
+      "Both internal and external factors that could affect objectives",
+      "Only compliance risks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Risk identification should consider all internal and external factors that could affect the organization's ability to achieve its objectives."
+  },
+  {
+    "id": "cia3-130",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "easy",
+    "question": "Robotic Process Automation (RPA) automates:",
+    "options": [
+      "Physical manufacturing robots",
+      "Repetitive rule-based tasks typically performed by humans",
+      "Only customer service",
+      "Only financial trading"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RPA uses software robots to automate repetitive, rule-based tasks like data entry, reducing manual effort and errors."
+  },
+  {
+    "id": "cia2-090",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "Adequate criteria against which to evaluate operations are:",
+    "options": [
+      "Only external regulations",
+      "Required for objective assessment of engagement subject matter",
+      "Determined only by management",
+      "Not needed for internal audits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard 2210.A3 requires internal auditors to identify adequate criteria against which to evaluate operations. Reliable criteria are essential for objective assessment."
+  },
+  {
+    "id": "cia1-b9-013",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk, and Control",
+    "difficulty": "hard",
+    "question": "Entity-level controls differ from process-level controls because:",
+    "options": [
+      "They apply organization-wide and set the tone for other controls",
+      "They are easier to test",
+      "They are less important",
+      "They only affect IT"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Entity-level controls (tone at the top, governance, risk management philosophy) apply organization-wide and set the foundation for process-level controls."
+  },
+  {
+    "id": "cia2-070",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "easy",
+    "question": "An engagement budget:",
+    "options": [
+      "Helps manage time and resources allocated to the engagement",
+      "Is set by the Board",
+      "Must never be exceeded",
+      "Is not needed for internal audits"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Engagement budgets help plan and manage time and resources. Variances from budget should be analyzed and communicated as part of project management."
+  },
+  {
+    "id": "cia3-092",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Business continuity planning ensures:",
+    "options": [
+      "Only IT system recovery",
+      "Only natural disaster response",
+      "The organization can continue critical operations during and after disruption",
+      "Only facility security"
+    ],
+    "correctAnswer": 2,
+    "explanation": "BCP addresses how the organization will continue critical operations during disruptions and recover fully afterward."
+  },
+  {
+    "id": "cia1-b6-004",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "What distinguishes internal auditing from external auditing?",
+    "options": [
+      "Internal auditors focus on operational improvement and risk management, not just financial statements",
+      "Internal auditors cannot provide assurance services",
+      "Internal auditors report only to management, never to the board",
+      "Internal auditors have less access to company records"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Internal auditing serves the organization by focusing on operational efficiency, risk management, and governance, whereas external auditing primarily focuses on financial statement opinions. Internal auditors should report functionally to the board."
+  },
+  {
+    "id": "cia2-b9-025",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "hard",
+    "question": "When identifying relevant controls, auditors should consider:",
+    "options": [
+      "Both preventive and detective controls that address identified risks",
+      "Only financial controls",
+      "Only manual controls",
+      "Only automated controls"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Auditors should identify all relevant controls (preventive, detective, corrective; manual and automated) that address risks to achieving engagement objectives."
+  },
+  {
+    "id": "cia3-085",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Supply chain management encompasses:",
+    "options": [
+      "Only vendor selection",
+      "End-to-end flow of materials, information, and finances from source to customer",
+      "Only transportation logistics",
+      "Only inventory management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Supply chain management integrates the flow of goods, information, and finances across the entire chain from raw materials to end customer."
+  },
+  {
+    "id": "cia1-306",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk, and Control",
+    "difficulty": "hard",
+    "question": "When evaluating governance, internal auditors should assess:",
+    "options": [
+      "External audit findings only",
+      "Regulatory compliance exclusively",
+      "Only financial controls",
+      "Strategic alignment, ethical culture, and accountability"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Governance assessment includes strategic alignment with organizational objectives, ethical culture, accountability mechanisms, and stakeholder communication."
+  },
+  {
+    "id": "cia2-b8-085",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "hard",
+    "question": "When audit scope is restricted after an engagement has begun, the auditor should:",
+    "options": [
+      "Communicate with the CAE and determine if the engagement can still meet its objectives",
+      "Immediately cancel the engagement",
+      "Accept the restriction silently",
+      "Ignore the restriction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Scope restrictions should be communicated, evaluated for impact on objectives, and potentially escalated to the CAE or board if they prevent achieving engagement objectives."
+  },
+  {
+    "id": "cia3-227",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "easy",
+    "question": "Rolling forecasts:",
+    "options": [
+      "Are created only annually",
+      "Never change",
+      "Continuously update projections by adding new periods as time passes",
+      "Only project one quarter"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Rolling forecasts continuously extend the forecast horizon, typically adding a new period as each period ends, maintaining a constant planning horizon."
+  },
+  {
+    "id": "cia2-rev-003",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Revenue Cycle",
+    "difficulty": "medium",
+    "question": "Which is the MOST reliable evidence of revenue recognition?",
+    "options": [
+      "Customer purchase order",
+      "Signed shipping document with third-party carrier",
+      "Sales invoice",
+      "Credit memo"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A signed shipping document from a third-party carrier provides the most reliable evidence that goods were shipped and delivered, supporting revenue recognition. Purchase orders and invoices are internal documents or represent customer intent, not delivery."
+  },
+  {
+    "id": "cia3-111",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "A security policy should:",
+    "options": [
+      "Include detailed technical configurations",
+      "Define information security objectives and management direction",
+      "Only address passwords",
+      "Be confidential to IT only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Security policies communicate management's direction and requirements for protecting information assets, providing the foundation for detailed standards and procedures."
+  },
+  {
+    "id": "cia3-321",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "hard",
+    "question": "DevOps security (DevSecOps) integrates:",
+    "options": [
+      "Security testing after deployment",
+      "Security throughout the development and deployment pipeline",
+      "External audits only",
+      "Annual security assessments"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DevSecOps embeds security practices throughout the development pipeline rather than treating security as a final gate."
+  },
+  {
+    "id": "cia1-108",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance and Improvement Program",
+    "difficulty": "hard",
+    "question": "An internal audit activity may claim conformance with the Standards only if:",
+    "options": [
+      "The CAE has CIA certification",
+      "The board provides written authorization",
+      "External auditors approve",
+      "QAIP results support this statement"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 1321 states that claiming conformance with the Standards is appropriate only if QAIP results support this claim. The QAIP provides the evidence needed to justify conformance statements."
+  },
+  {
+    "id": "cia1-b5-039",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "easy",
+    "question": "The Code of Ethics consists of the Principles and Rules of Conduct. Which of the following is one of the four principles?",
+    "options": [
+      "Profitability",
+      "Confidentiality",
+      "Efficiency",
+      "Compliance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The four principles of the Code of Ethics are: Integrity, Objectivity, Confidentiality, and Competency. Often remembered as \"I-O-C-C.\" Confidentiality requires prudent use and protection of information obtained during audits."
+  },
+  {
+    "id": "cia2-306",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Engagement observations and recommendations should be based on:",
+    "options": [
+      "Management preferences",
+      "Prior engagement results",
+      "Matters of fact and evidence",
+      "Auditor opinion only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Observations and recommendations must be based on factual matters and supported by evidence gathered during the engagement."
+  },
+  {
+    "id": "cia3-260",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Stress testing in risk management:",
+    "options": [
+      "Evaluates impact of severe but plausible adverse scenarios",
+      "Only applies to physical assets",
+      "Only tests employee performance",
+      "Uses only historical data"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stress testing evaluates how the organization would withstand severe adverse scenarios, informing risk management and capital planning."
+  },
+  {
+    "id": "cia2-291",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Working papers should be:",
+    "options": [
+      "Destroyed after each engagement",
+      "Well-organized and contain sufficient documentation to support conclusions",
+      "Available only to auditees",
+      "Minimal and incomplete"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Working papers should be well-organized, complete, and provide sufficient documentation to support conclusions and recommendations."
+  },
+  {
+    "id": "cia1-gias-019",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "What is the primary benefit of GIAS 2024's principles-based approach compared to the previous IPPF rules-based structure?",
+    "options": [
+      "It focuses only on financial auditing",
+      "It reduces professional judgment requirements",
+      "It allows more flexible application across different contexts and organizations",
+      "It eliminates mandatory requirements"
+    ],
+    "correctAnswer": 2,
+    "explanation": "GIAS 2024's principles-based approach allows more flexible application across different organizational contexts, sizes, and industries while maintaining the underlying professional requirements. This provides consistency with adaptability."
+  },
+  {
+    "id": "cia1-037",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "medium",
+    "question": "Corporate governance refers to:",
+    "options": [
+      "The company's strategic planning process",
+      "The relationship between the organization and external auditors",
+      "Government regulations affecting corporations",
+      "The combination of processes and structures used by the board to direct and manage the organization"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Governance is the combination of processes and structures implemented by the board to inform, direct, manage, and monitor the activities of the organization toward achievement of its objectives."
+  },
+  {
+    "id": "cia2-058",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "Materiality in auditing refers to:",
+    "options": [
+      "The significance of an amount or matter that could influence decisions",
+      "Cost of audit procedures",
+      "The quantity of evidence",
+      "Physical nature of evidence"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Materiality is the significance of an amount, transaction, or discrepancy that could influence stakeholder decisions. It helps auditors focus on what matters most."
+  },
+  {
+    "id": "cia2-319",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "A finding consists of which elements?",
+    "options": [
+      "Procedures and results",
+      "Condition, criteria, cause, and effect",
+      "Evidence and sampling",
+      "Opinion and recommendation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A complete finding includes: Condition (what exists), Criteria (what should exist), Cause (why), and Effect (impact)."
+  },
+  {
+    "id": "cia3-b6-070",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "hard",
+    "question": "When auditing IT outsourcing arrangements, the internal auditor should focus on:",
+    "options": [
+      "Vendor governance, contract terms, SLAs, and right-to-audit clauses",
+      "Ignoring IT audit since the vendor is responsible",
+      "Only cost savings achieved",
+      "Technical specifications only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Auditing IT outsourcing requires reviewing governance, contractual terms, service level agreements, security requirements, data protection, and ensuring right-to-audit clauses are included."
+  },
+  {
+    "id": "cia1-114",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "The COSO Internal Control Framework identifies how many components of internal control?",
+    "options": [
+      "Six",
+      "Five",
+      "Three",
+      "Four"
+    ],
+    "correctAnswer": 1,
+    "explanation": "COSO identifies five components: Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring Activities."
+  },
+  {
+    "id": "cia2-b6-037",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "hard",
+    "question": "The elements of an audit observation (finding) typically include:",
+    "options": [
+      "Strength, weakness, opportunity, and threat",
+      "Plan, do, check, and act",
+      "Condition, criteria, cause, and effect",
+      "Who, what, when, and where"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The four elements of an observation are: Condition (what exists), Criteria (what should exist), Cause (why it occurred), and Effect (impact/risk)."
+  },
+  {
+    "id": "cia1-b7-011",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Care",
+    "difficulty": "medium",
+    "question": "Continuing professional development is required to:",
+    "options": [
+      "Only meet certification requirements",
+      "Increase audit budget",
+      "Satisfy management preferences",
+      "Maintain and enhance competence"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Internal auditors must enhance their knowledge, skills, and other competencies through continuing professional development to maintain proficiency."
+  },
+  {
+    "id": "cia2-b9-033",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "medium",
+    "question": "Audit communication should be:",
+    "options": [
+      "Only written",
+      "Delayed until year-end",
+      "Accurate, objective, clear, concise, constructive, complete, and timely",
+      "As long as possible"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Engagement communications must be accurate, objective, clear, concise, constructive, complete, and timely to be effective."
+  },
+  {
+    "id": "cia2-b6-092",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "hard",
+    "question": "Final audit communications should include all of the following EXCEPT:",
+    "options": [
+      "Detailed personal opinions about management competence",
+      "Applicable conclusions, opinions, and action plans",
+      "Engagement objectives and scope",
+      "Relevant conclusions and recommendations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Audit communications must be accurate, objective, and constructive. Personal opinions about management competence are inappropriate; focus should be on processes, risks, and controls."
+  },
+  {
+    "id": "cia1-164",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "medium",
+    "question": "Reasonable assurance means:",
+    "options": [
+      "Assurance only from management representations",
+      "Absolute certainty of achieving objectives",
+      "Guarantee that no errors will occur",
+      "A level of confidence that objectives will be achieved, acknowledging inherent limitations"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Reasonable assurance recognizes that internal control can never guarantee achievement of objectives due to inherent limitations including human error, management override, and cost-benefit considerations."
+  },
+  {
+    "id": "cia3-006",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "A company pursuing a differentiation strategy would most likely focus on:",
+    "options": [
+      "Creating unique products or services that command premium prices",
+      "Achieving the lowest production costs in the industry",
+      "Serving a narrow market segment with specialized offerings",
+      "Acquiring competitors to gain market share"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A differentiation strategy focuses on creating unique products or services that customers perceive as superior, allowing the company to charge premium prices rather than competing on cost."
+  },
+  {
+    "id": "cia3-b5-010",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "hard",
+    "question": "Under GDPR, which of the following is NOT a lawful basis for processing personal data?",
+    "options": [
+      "Interest of a competitor in obtaining market intelligence",
+      "Compliance with a legal obligation",
+      "Legitimate interest of the data controller",
+      "Consent of the data subject"
+    ],
+    "correctAnswer": 0,
+    "explanation": "GDPR recognizes six lawful bases: consent, contract performance, legal obligation, vital interest, public interest, and legitimate interest. A competitor's desire for market intelligence is not a lawful basis for processing another organization's personal data."
+  },
+  {
+    "id": "cia3-268",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "hard",
+    "question": "Earnings management differs from fraud in that it:",
+    "options": [
+      "May operate within accounting rules while fraud violates them",
+      "Is more harmful",
+      "Is equally illegal",
+      "Requires external auditor approval"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Earnings management uses judgment within accounting rules to influence reported results; fraud intentionally violates standards or conceals information."
+  },
+  {
+    "id": "cia1-3l-009",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Three Lines Model",
+    "difficulty": "medium",
+    "question": "What does Principle 6 of the Three Lines Model emphasize?",
+    "options": [
+      "All roles collectively contribute to the creation and protection of value",
+      "The First Line is most important",
+      "External providers can play important roles in any line",
+      "All roles must be held by different individuals"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Principle 6 emphasizes that all roles collectively contribute to the creation and protection of value when aligned with stakeholder interests. Effective governance and risk management require all three lines working together."
+  },
+  {
+    "id": "cia2-b5-026",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "easy",
+    "question": "How often should the internal audit charter be reviewed and updated?",
+    "options": [
+      "Every five years",
+      "Periodically, and presented to senior management and the board for approval",
+      "Only when the organization undergoes a major restructuring",
+      "Only when a new CAE is appointed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard 1000 requires the charter to be periodically reviewed by the CAE and presented to senior management and the board for approval. Regular review ensures the charter remains relevant to the organization's needs."
+  },
+  {
+    "id": "cia2-078",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "easy",
+    "question": "Resource management for the internal audit activity includes ensuring resources are:",
+    "options": [
+      "Appropriate, sufficient, and effectively deployed",
+      "Exclusively internal employees",
+      "Focused only on compliance",
+      "Minimized to reduce costs"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standard 2030 requires the CAE to ensure resources (people, technology, budget) are appropriate to the work, sufficient in quantity, and effectively deployed per the plan."
+  },
+  {
+    "id": "cia3-004",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Which of the following best describes a SWOT analysis?",
+    "options": [
+      "A financial ratio analysis tool",
+      "A strategic planning framework examining internal and external factors",
+      "A risk assessment methodology for IT systems",
+      "A method for calculating net present value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SWOT analysis is a strategic planning framework that examines Strengths (internal), Weaknesses (internal), Opportunities (external), and Threats (external) to inform strategy development."
+  },
+  {
+    "id": "cia3-197",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "easy",
+    "question": "Mobile device management (MDM) enables:",
+    "options": [
+      "Only tracking device location",
+      "Only email access",
+      "Centralized management and security of mobile devices",
+      "Only app downloads"
+    ],
+    "correctAnswer": 2,
+    "explanation": "MDM provides centralized management of mobile devices including configuration, security policies, app management, and remote wipe capabilities."
+  },
+  {
+    "id": "cia1-023",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "easy",
+    "question": "Objectivity is:",
+    "options": [
+      "An organizational attribute",
+      "Required only for assurance engagements",
+      "Synonymous with independence",
+      "An individual auditor attribute related to unbiased mental attitude"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Objectivity is an unbiased mental attitude that allows internal auditors to perform engagements without bias. It is an individual attribute, while independence is an organizational attribute."
+  },
+  {
+    "id": "cia1-gias-007",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "Under GIAS 2024, which standards cover the \"Managing the Internal Audit Function\" domain?",
+    "options": [
+      "Standards 4-5",
+      "Standards 1-3",
+      "Standards 11-15",
+      "Standards 8-10"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Domain IV: Managing the Internal Audit Function includes Standards 8 (Strategic Planning), 9 (Resource Management), and 10 (Coordination and Reliance). These cover how the internal audit function operates and coordinates with others."
+  },
+  {
+    "id": "cia3-102",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "easy",
+    "question": "An intrusion detection system (IDS):",
+    "options": [
+      "Monitors for and alerts on suspicious activities",
+      "Blocks all network traffic",
+      "Encrypts network transmissions",
+      "Backs up critical data"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An IDS monitors network or system activities for malicious behavior or policy violations and generates alerts for investigation."
+  },
+  {
+    "id": "cia2-323",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Confirmation with external parties provides:",
+    "options": [
+      "Internal verification",
+      "Management assertions",
+      "Strong independent evidence when properly controlled",
+      "Weak evidence"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Confirmations from independent external parties provide strong evidence when the process is properly controlled by the auditor."
+  },
+  {
+    "id": "cia1-181",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "When providing advisory services during a consulting engagement, internal auditors must:",
+    "options": [
+      "Perform the same procedures as assurance engagements",
+      "Obtain board approval for each engagement",
+      "Always provide formal written reports",
+      "Not assume management responsibility"
+    ],
+    "correctAnswer": 3,
+    "explanation": "When providing consulting services, internal auditors should not assume management responsibility. They can advise and recommend, but management must own the decisions and implementations."
+  },
+  {
+    "id": "cia1-b5-008",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "easy",
+    "question": "The mission of internal audit emphasizes providing \"objective\" assurance. What does objectivity require from internal auditors?",
+    "options": [
+      "Always agreeing with management's conclusions",
+      "Making unbiased assessments without being influenced by personal feelings",
+      "Having formal accounting certifications",
+      "Only auditing areas where they have no prior experience"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Objectivity requires internal auditors to make impartial, unbiased assessments. They should not be swayed by their own interests, personal feelings, or influenced by others. This ensures conclusions are based on evidence and professional judgment."
+  },
+  {
+    "id": "cia3-079",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Change management includes:",
+    "options": [
+      "Leading people through organizational transitions effectively",
+      "Only technical system changes",
+      "Only document control",
+      "Only crisis response"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Change management encompasses the processes, tools, and techniques for managing the people side of change to achieve desired outcomes."
+  },
+  {
+    "id": "cia1-011",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "easy",
+    "question": "According to the Standards, internal audit's purpose is to promote and evaluate:",
+    "options": [
+      "The improvement of governance, risk management, and control processes",
+      "External audit quality",
+      "Financial statement accuracy",
+      "Management performance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standard 2100 states that internal audit evaluates and contributes to the improvement of governance, risk management, and control processes using a systematic and disciplined approach."
+  },
+  {
+    "id": "cia3-081",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Core competencies are:",
+    "options": [
+      "Basic skills all employees should have",
+      "Unique capabilities that provide competitive advantage",
+      "Industry-standard processes",
+      "Required certifications"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Core competencies are unique organizational capabilities that provide competitive advantage and are difficult for competitors to replicate."
+  },
+  {
+    "id": "cia1-prof-009",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "medium",
+    "question": "Which of the following is an example of appropriate CPD activity for an internal auditor?",
+    "options": [
+      "Completing the previous year's audit plan",
+      "Attending professional seminars, pursuing additional certifications, and participating in research projects",
+      "Only passing the CIA exam",
+      "Reading only the organization's internal audit reports"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CPD encompasses a variety of activities: professional seminars, conferences, additional certifications, self-study, research projects, teaching, and mentoring. It goes beyond the initial certification and day-to-day audit work."
+  },
+  {
+    "id": "cia2-b7-035",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "hard",
+    "question": "When using technology-based audit techniques, the auditor should ensure:",
+    "options": [
+      "All testing is automated",
+      "The validity of data used and proper interpretation of results",
+      "Only IT staff operate the tools",
+      "No manual testing is performed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When using CAATs or other technology-based tools, auditors must ensure data integrity, understand the tools' limitations, and properly interpret results."
+  },
+  {
+    "id": "cia1-278",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "The IIA Code of Ethics requires internal auditors to:",
+    "options": [
+      "Avoid consulting activities",
+      "Report all findings to external parties",
+      "Perform only assurance engagements",
+      "Be loyal to the profession and their organization"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Code of Ethics requires loyalty to the profession through adherence to standards while also being loyal to the organization. Auditors must balance these responsibilities."
+  },
+  {
+    "id": "cia2-b6-040",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "hard",
+    "question": "Control self-assessments (CSA) are most valuable because they:",
+    "options": [
+      "Engage those closest to risks in evaluating controls and identifying gaps",
+      "Replace the need for internal audits",
+      "Eliminate the need for documentation",
+      "Transfer all control responsibility to management"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CSA involves those closest to business processes in evaluating control adequacy. This provides valuable insight and increases risk awareness, though it does not replace internal audit's assurance role."
+  },
+  {
+    "id": "cia2-142",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "hard",
+    "question": "Control environment evaluation during planning assesses:",
+    "options": [
+      "Only segregation of duties",
+      "Only IT controls",
+      "The overall tone, culture, and attitude toward internal control",
+      "Only specific control procedures"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The control environment encompasses management's attitudes, integrity, ethics, and commitment to competence. It sets the tone for control consciousness."
+  },
+  {
+    "id": "cia3-230",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "medium",
+    "question": "Fraud in financial statements often involves:",
+    "options": [
+      "Only inventory theft",
+      "Only cash theft",
+      "Revenue manipulation, expense timing, or asset/liability misstatement",
+      "Only payroll fraud"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Financial statement fraud includes improper revenue recognition, expense manipulation, and asset/liability misstatement to deceive users."
+  },
+  {
+    "id": "cia2-198",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "easy",
+    "question": "Trend analysis involves:",
+    "options": [
+      "Analyzing data over multiple periods to identify patterns and anomalies",
+      "Only forecasting future results",
+      "Only reviewing management dashboards",
+      "Only comparing two periods"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Trend analysis examines data across multiple periods to identify patterns, changes, and anomalies that may warrant investigation."
+  },
+  {
+    "id": "cia3-212",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "easy",
+    "question": "IT project post-implementation reviews assess:",
+    "options": [
+      "Only technical performance",
+      "Whether objectives were achieved and lessons learned",
+      "Only project costs",
+      "Only vendor satisfaction"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Post-implementation reviews evaluate project success versus objectives, benefit realization, and lessons for future projects."
+  },
+  {
+    "id": "cia1-022",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Independence and Objectivity",
+    "difficulty": "medium",
+    "question": "If internal audit is asked to assume responsibility for a business process, the CAE should:",
+    "options": [
+      "Accept if the Board approves",
+      "Accept the responsibility to add value to the organization",
+      "Accept temporarily during a transition period only",
+      "Decline, as this would impair independence"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Internal audit should not assume management responsibilities, as this impairs independence and objectivity. Internal audit cannot objectively assess operations for which it has responsibility."
+  },
+  {
+    "id": "cia1-028",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "easy",
+    "question": "Continuing professional development (CPD) is required because:",
+    "options": [
+      "It is optional for experienced auditors",
+      "It replaces on-the-job training",
+      "It is mandated by all employers",
+      "It helps auditors maintain and enhance their professional competencies"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 1230 requires internal auditors to enhance their knowledge, skills, and competencies through continuing professional development. This ensures they remain current with industry developments and techniques."
+  },
+  {
+    "id": "cia3-182",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "Customer relationship management (CRM) systems:",
+    "options": [
+      "Only process payments",
+      "Manage customer interactions and data to enhance relationships",
+      "Only store contact information",
+      "Only handle complaints"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CRM systems consolidate customer data and interactions to support sales, service, and marketing relationship management."
+  },
+  {
+    "id": "cia3-156",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Digital transformation involves:",
+    "options": [
+      "Fundamental business changes leveraging digital technologies",
+      "Only adopting social media",
+      "Only upgrading hardware",
+      "Only implementing cloud services"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Digital transformation is the integration of digital technology into all business areas, fundamentally changing how organizations operate and deliver value."
+  },
+  {
+    "id": "cia3-082",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "Business process reengineering involves:",
+    "options": [
+      "Only technology upgrades",
+      "Minor process improvements",
+      "Fundamental rethinking and radical redesign of business processes",
+      "Only staff reductions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "BPR involves fundamentally rethinking and radically redesigning processes to achieve dramatic improvements in performance."
+  },
+  {
+    "id": "cia1-062",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "Risk treatment strategies include all of the following EXCEPT:",
+    "options": [
+      "Sharing risk through insurance",
+      "Transferring risk to third parties",
+      "Hiding risk from stakeholders",
+      "Avoiding the activity causing the risk"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Valid risk treatment strategies include: Accept (retain), Avoid, Mitigate (reduce), Share/Transfer. Hiding risk from stakeholders is not a valid strategy and violates governance principles."
+  },
+  {
+    "id": "cia3-013",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "hard",
+    "question": "Herzberg's two-factor theory distinguishes between:",
+    "options": [
+      "Hygiene factors and motivators",
+      "Intrinsic and extrinsic motivation",
+      "Financial and non-financial rewards",
+      "Individual and team motivation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Herzberg's two-factor theory distinguishes between hygiene factors (which prevent dissatisfaction but don't motivate) and motivators (which truly motivate and lead to job satisfaction)."
+  },
+  {
+    "id": "cia2-b5-032",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "medium",
+    "question": "Which performance measurement is MOST useful for assessing the value of internal audit to the organization?",
+    "options": [
+      "Total hours charged to engagements",
+      "Percentage of audit plan completed",
+      "Percentage of recommendations implemented by management",
+      "Number of audits completed per year"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The percentage of recommendations implemented by management indicates whether internal audit's work is driving real improvements. While completion metrics are useful, the ultimate value indicator is whether recommendations lead to actual organizational improvement."
+  },
+  {
+    "id": "cia1-167",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "The risk response \"transfer\" involves:",
+    "options": [
+      "Accepting the risk as is",
+      "Eliminating the risk completely",
+      "Reducing the likelihood of risk",
+      "Sharing or shifting risk to another party, such as through insurance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Transfer (or share) involves shifting some or all of the risk to another party, such as through insurance, outsourcing, or partnerships. The risk still exists but is shared with others."
+  },
+  {
+    "id": "cia1-295",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance",
+    "difficulty": "medium",
+    "question": "Who should perform the external assessment of internal audit?",
+    "options": [
+      "The audit committee members",
+      "The CAE",
+      "Management",
+      "A qualified, independent assessor"
+    ],
+    "correctAnswer": 3,
+    "explanation": "External assessments must be conducted by a qualified, independent assessor or team from outside the organization."
+  },
+  {
+    "id": "cia2-301",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Performing the Engagement",
+    "difficulty": "medium",
+    "question": "Reperformance as an audit procedure involves:",
+    "options": [
+      "Independently executing the procedure or control",
+      "Reviewing documentation only",
+      "Inquiring about procedures",
+      "Observing management procedures"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Reperformance means independently executing procedures or controls to verify they operate as described."
+  },
+  {
+    "id": "cia1-202",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "medium",
+    "question": "Internal auditors must have sufficient knowledge of IT risks and controls because:",
+    "options": [
+      "Regulations require IT certification",
+      "External auditors require it",
+      "All auditors must be IT specialists",
+      "IT is pervasive in modern organizations and affects nearly all operations"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IT permeates modern organizations, affecting operations, risks, and controls in nearly every area. Thus, understanding IT risks and controls is essential for most audit engagements."
+  },
+  {
+    "id": "cia2-b8-022",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing Internal Audit",
+    "difficulty": "hard",
+    "question": "When the audit plan requires expertise not available internally, the CAE should:",
+    "options": [
+      "Remove those areas from the plan",
+      "Train existing staff quickly",
+      "Obtain competent advice and assistance from external sources",
+      "Delay the audit indefinitely"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When internal expertise is lacking, the CAE must obtain competent external advice and assistance to ensure audit quality."
+  },
+  {
+    "id": "cia1-076",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "During an audit, the CAE receives a request from management to immediately cease work on a particular area. The CAE should:",
+    "options": [
+      "Notify external auditors and regulatory authorities",
+      "Comply immediately since management directs administrative activities",
+      "Evaluate the request, discuss with the board if it represents a scope limitation, and document the situation",
+      "Refuse and continue the audit regardless of the request"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The CAE should evaluate whether this represents a scope limitation. Standard 1110 indicates that the CAE should communicate with the board about scope limitations. The matter should be documented regardless of the outcome."
+  },
+  {
+    "id": "cia1-274",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "What is the primary purpose of the internal audit activity?",
+    "options": [
+      "Detect fraud and errors",
+      "Help the organization accomplish its objectives",
+      "Reduce external audit fees",
+      "Ensure regulatory compliance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The primary purpose is to help the organization accomplish its objectives through systematic evaluation and improvement of governance, risk management, and control processes."
+  },
+  {
+    "id": "cia3-264",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "hard",
+    "question": "Material weaknesses in ICFR:",
+    "options": [
+      "Are deficiencies creating reasonable possibility of material misstatement",
+      "Are minor deficiencies",
+      "Only require disclosure to management",
+      "Cannot be remediated"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A material weakness is a deficiency creating reasonable possibility that a material misstatement will not be prevented or detected timely."
+  },
+  {
+    "id": "cia1-b5-016",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "Internal audit identifies a significant control gap during a routine engagement and immediately alerts management to prevent potential losses. Which Core Principle is MOST applicable?",
+    "options": [
+      "Aligns with the strategies of the organization",
+      "Is insightful, proactive, and future-focused",
+      "Communicates effectively",
+      "Demonstrates integrity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Communicates effectively requires timely, clear, and relevant communication. Immediately alerting management to significant findings, rather than waiting for the final report, demonstrates effective communication that enables timely corrective action."
+  },
+  {
+    "id": "cia1-qaip-010",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance",
+    "difficulty": "medium",
+    "question": "Ongoing monitoring activities within the QAIP typically include:",
+    "options": [
+      "Board approval of each engagement",
+      "Annual external reviews conducted by third parties",
+      "Regulatory examination of audit reports",
+      "Supervisory review of workpapers, checklists, and feedback from audit clients"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ongoing monitoring is embedded in the routine policies and practices used to manage the internal audit activity. It includes supervisory review of workpapers, post-engagement feedback, and routine quality checklists."
+  },
+  {
+    "id": "cia1-163",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "easy",
+    "question": "Physical controls include:",
+    "options": [
+      "Segregation of duties",
+      "Approval requirements",
+      "Management review of reports",
+      "Locks, safes, and security cameras"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Physical controls are tangible controls such as locks, safes, fences, security cameras, and access cards that protect assets from unauthorized access or use."
+  },
+  {
+    "id": "cia3-247",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Whistleblower programs provide:",
+    "options": [
+      "Only complaint logging",
+      "Only external hotlines",
+      "Confidential channels for reporting misconduct with retaliation protection",
+      "Only legal defense"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Whistleblower programs enable confidential reporting of concerns with protections against retaliation, supporting ethics and compliance."
+  },
+  {
+    "id": "cia1-b5-029",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "medium",
+    "question": "Implementation Standards in the IPPF are designated with an \"A\" or \"C\" following the standard number. What do these letters indicate?",
+    "options": [
+      "\"A\" for Attribute standards; \"C\" for Control standards",
+      "\"A\" for Annual requirements; \"C\" for Continuous requirements",
+      "\"A\" for Assurance services; \"C\" for Consulting services",
+      "\"A\" for Advisory; \"C\" for Compliance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Implementation Standards expand on Attribute and Performance Standards by providing requirements applicable to Assurance activities (A) or Consulting activities (C). For example, Standard 2130.A1 applies to assurance engagements while 2130.C1 applies to consulting engagements."
+  },
+  {
+    "id": "cia3-078",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "easy",
+    "question": "Organizational culture refers to:",
+    "options": [
+      "Physical office layout",
+      "Shared values, beliefs, and norms within an organization",
+      "Formal policies only",
+      "Technology infrastructure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Organizational culture comprises the shared values, beliefs, behaviors, and norms that characterize how an organization operates."
+  },
+  {
+    "id": "cia1-199",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "easy",
+    "question": "Internal auditors are reasonably expected to identify fraud:",
+    "options": [
+      "Only during fraud-specific audits",
+      "When indicators suggest fraud may have occurred",
+      "In every audit engagement",
+      "Only when it relates to financial statements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Internal auditors should be alert to and identify significant risks and indicators of fraud. They are not expected to detect all fraud but should recognize red flags requiring further investigation."
+  },
+  {
+    "id": "cia2-b5-008",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Planning the Engagement",
+    "difficulty": "easy",
+    "question": "What is the PRIMARY purpose of a preliminary survey (planning phase)?",
+    "options": [
+      "To become familiar with the activities, risks, and controls of the area to be audited",
+      "To test controls for operating effectiveness",
+      "To verify financial statement accuracy",
+      "To issue the final audit report"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The preliminary survey allows auditors to gain an understanding of the area under review, including its objectives, risks, and controls. This knowledge is essential for developing effective engagement objectives and work programs."
+  },
+  {
+    "id": "cia1-174",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "easy",
+    "question": "The Standards are divided into which two main categories?",
+    "options": [
+      "General and Specific Standards",
+      "Core and Supplemental Standards",
+      "Mandatory and Recommended Standards",
+      "Attribute and Performance Standards"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Standards are organized into Attribute Standards (1000 series) addressing characteristics of organizations and individuals, and Performance Standards (2000 series) describing the nature of internal auditing and quality criteria."
+  },
+  {
+    "id": "cia1-258",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "hard",
+    "question": "Internal audit should evaluate the potential for fraud when:",
+    "options": [
+      "Only in financial audits",
+      "Only during fraud investigations",
+      "Only when specifically asked by management",
+      "In every engagement during risk assessment"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 2120.A2 requires internal auditors to evaluate the potential for fraud during every engagement as part of risk assessment, not just when conducting fraud-specific work."
+  },
+  {
+    "id": "cia3-228",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "medium",
+    "question": "Profitability index (PI) is useful for:",
+    "options": [
+      "Only rejecting projects",
+      "Only calculating payback",
+      "Ranking projects when capital is limited",
+      "Only assessing risk"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Profitability index (NPV/Initial Investment) helps rank projects by value created per investment dollar when capital is constrained."
+  },
+  {
+    "id": "cia2-b7-022",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing Internal Audit",
+    "difficulty": "hard",
+    "question": "When developing the risk-based audit plan, the CAE should consider:",
+    "options": [
+      "Audit team preferences",
+      "Only prior year findings",
+      "Input from senior management and the board regarding their expectations, risk assessments, and priorities",
+      "Only regulatory requirements"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The CAE should consider expectations of senior management, the board, regulators, and other stakeholders, as well as organizational risk assessments and strategic priorities."
+  },
+  {
+    "id": "cia3-b5-005",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "easy",
+    "question": "What is the relationship between NIST CSF and ISO 27001?",
+    "options": [
+      "ISO 27001 is for private sector only; NIST CSF is for government only",
+      "NIST CSF replaces ISO 27001 globally",
+      "Both are complementary frameworks for managing cybersecurity; NIST CSF is more flexible while ISO 27001 is certifiable",
+      "They are the same standard published by different organizations"
+    ],
+    "correctAnswer": 2,
+    "explanation": "NIST CSF and ISO 27001 are complementary. NIST CSF provides a flexible framework that can be customized to any organization. ISO 27001 provides a certifiable standard with specific requirements. Many organizations use elements of both."
+  },
+  {
+    "id": "cia3-014",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Business Acumen",
+    "difficulty": "medium",
+    "question": "Groupthink is best described as:",
+    "options": [
+      "Collaborative problem-solving in teams",
+      "A dysfunctional pattern where group harmony overrides critical thinking",
+      "A structured approach to group decision-making",
+      "The tendency for groups to make riskier decisions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Groupthink is a dysfunctional pattern where the desire for group harmony and conformity overrides realistic appraisal of alternatives and critical thinking, often leading to poor decisions."
+  },
+  {
+    "id": "cia2-b8-100",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "hard",
+    "question": "When an engagement identifies control deficiencies that also affect other areas, the CAE should:",
+    "options": [
+      "Wait until those areas are audited",
+      "Only report on the area audited",
+      "Consider the broader organizational impact and expand communication as appropriate",
+      "Ignore the broader implications"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Significant findings that affect other areas should be considered more broadly, and communication should be expanded to appropriate stakeholders."
+  },
+  {
+    "id": "cia2-b8-039",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Communicating Results",
+    "difficulty": "hard",
+    "question": "If the CAE believes management has accepted a level of risk that may be unacceptable to the organization:",
+    "options": [
+      "Include in the report and move on",
+      "Accept management's decision without question",
+      "Discuss the matter with senior management and possibly the board",
+      "Refuse to issue the report"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If the CAE concludes management has accepted unacceptable risk, the matter must be discussed with senior management. If not resolved, it should be escalated to the board."
+  },
+  {
+    "id": "cia3-166",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Financial Management",
+    "difficulty": "easy",
+    "question": "Hedging strategies are used to:",
+    "options": [
+      "Increase speculative risk",
+      "Reduce exposure to adverse price movements",
+      "Maximize trading profits",
+      "Avoid all risk"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hedging uses financial instruments to offset potential losses from adverse price movements in currencies, commodities, or interest rates."
+  },
+  {
+    "id": "cia3-117",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "medium",
+    "question": "ITIL focuses primarily on:",
+    "options": [
+      "IT service management best practices",
+      "Programming languages",
+      "Hardware maintenance",
+      "Database design"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ITIL (Information Technology Infrastructure Library) provides best practices for IT service management, focusing on aligning IT services with business needs."
+  },
+  {
+    "id": "cia1-049",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Governance, Risk Management, and Control",
+    "difficulty": "medium",
+    "question": "Segregation of duties is an example of which type of control?",
+    "options": [
+      "Compensating control",
+      "Detective control",
+      "Preventive control",
+      "Corrective control"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Segregation of duties is a preventive control that prevents a single person from having control over all aspects of a transaction, reducing opportunities for error or fraud."
+  },
+  {
+    "id": "cia2-b5-030",
+    "exam": "CIA",
+    "section": "CIA2",
+    "topic": "Managing the Internal Audit Activity",
+    "difficulty": "easy",
+    "question": "In determining resources needed, the CAE should consider all of the following EXCEPT:",
+    "options": [
+      "The personal preferences of the audit committee chair",
+      "Availability of external resources (co-sourcing, outsourcing)",
+      "The complexity and scope of planned engagements",
+      "Knowledge, skills, and competencies of the audit staff"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Resource planning should be based on professional factors including staff competencies, engagement complexity, and availability of external resources. Personal preferences of individuals should not drive resource allocation decisions."
+  },
+  {
+    "id": "cia1-104",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Quality Assurance and Improvement Program",
+    "difficulty": "hard",
+    "question": "A self-assessment with independent external validation (SAIV) is acceptable as an external assessment if:",
+    "options": [
+      "It is never acceptable; only full external assessments are allowed",
+      "A qualified, independent external assessor validates the results",
+      "The board specifically requests it",
+      "The CAE approves it"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Standard 1312 interpretation indicates that external assessments may be accomplished through a self-assessment with independent external validation. The key is that a qualified, independent external assessor validates the results."
+  },
+  {
+    "id": "cia3-254",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Technology",
+    "difficulty": "easy",
+    "question": "Capacity planning ensures:",
+    "options": [
+      "Maximum utilization always",
+      "Adequate resources to meet future demand",
+      "Only cost minimization",
+      "Only physical space"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Capacity planning forecasts resource needs and ensures adequate capacity (computing, storage, network, people) to meet anticipated demand."
+  },
+  {
+    "id": "cia1-203",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Proficiency and Due Professional Care",
+    "difficulty": "easy",
+    "question": "The CAE must ensure that internal audit resources are:",
+    "options": [
+      "Exclusively composed of certified auditors",
+      "Primarily focused on financial audits",
+      "Always the largest department in the organization",
+      "Appropriate, sufficient, and effectively deployed"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Standard 2030 requires resources to be appropriate (right mix of skills), sufficient (adequate quantity), and effectively deployed (allocated based on risk and plan priorities)."
+  },
+  {
+    "id": "cia1-b5-024",
+    "exam": "CIA",
+    "section": "CIA1",
+    "topic": "Foundations of Internal Auditing",
+    "difficulty": "hard",
+    "question": "Which Core Principle is MOST directly supported by the requirement for an external quality assessment at least once every five years?",
+    "options": [
+      "Demonstrates integrity",
+      "Is appropriately positioned and adequately resourced",
+      "Demonstrates quality and continuous improvement",
+      "Is objective and free from undue influence"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Demonstrates quality and continuous improvement requires a QAIP that includes both internal and external assessments. The five-year external quality assessment requirement directly supports this principle by providing independent evaluation and improvement opportunities."
+  },
+  {
+    "id": "cia3-103",
+    "exam": "CIA",
+    "section": "CIA3",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "Social engineering attacks target:",
+    "options": [
+      "Only computer systems",
+      "Human psychology to manipulate people into revealing information",
+      "Only network infrastructure",
+      "Only hardware components"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Social engineering exploits human psychology through manipulation, deception, or persuasion rather than technical vulnerabilities."
+  }
+]

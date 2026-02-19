@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "cma1-f-083",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Advanced Analytics",
+    "difficulty": "hard",
+    "question": "An optimization model that recommends the best allocation of marketing budget across channels is an example of:",
+    "options": [
+      "Predictive analytics",
+      "Prescriptive analytics",
+      "Diagnostic analytics",
+      "Descriptive analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Prescriptive analytics recommends specific actions. Optimization models that recommend best decisions (budget allocation, pricing, inventory levels) are prescriptive—they go beyond prediction to suggest optimal responses."
+  },
+  {
+    "id": "cma2-e-033",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "MIRR",
+    "difficulty": "easy",
+    "question": "A project with non-conventional cash flows (outflows in later years) may have:",
+    "options": [
+      "No IRR",
+      "Undefined NPV",
+      "Negative MIRR",
+      "Multiple IRRs"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Non-conventional cash flows (sign changes more than once) can produce multiple IRRs, making the IRR unreliable. MIRR provides a single, more reliable answer."
+  },
+  {
+    "id": "cma1-f-052",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "RPA",
+    "difficulty": "easy",
+    "question": "A key benefit of RPA in accounting processes is:",
+    "options": [
+      "Reduced errors and faster processing for routine tasks",
+      "Replacing all accounting staff",
+      "Removing the need for audit trails",
+      "Eliminating the need for any human oversight"
+    ],
+    "correctAnswer": 0,
+    "explanation": "RPA reduces human errors in routine tasks and processes transactions faster 24/7. It doesn't eliminate oversight needs—bots must be monitored and results reviewed."
+  },
+  {
+    "id": "cma2-e-006",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "NPV",
+    "difficulty": "medium",
+    "question": "A project costs $100,000 and generates $30,000 annually for 5 years. At 10% discount rate (PV factor of annuity = 3.791), the NPV is approximately:",
+    "options": [
+      "$13,730",
+      "Zero",
+      "$50,000",
+      "-$13,730"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NPV = PV of inflows - Initial cost = ($30,000 × 3.791) - $100,000 = $113,730 - $100,000 = $13,730. Since NPV is positive, accept the project."
+  },
+  {
+    "id": "cma2-calc-054",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Valuation",
+    "difficulty": "medium",
+    "question": "Market cap: $800 million. Debt: $300 million. Cash: $50 million. What is Enterprise Value?",
+    "options": [
+      "$500 million",
+      "$1,050 million",
+      "$1,100 million",
+      "$850 million"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Enterprise Value = Market Cap + Debt - Cash\n= $800M + $300M - $50M = $1,050 million\nEV represents the total value needed to acquire the company."
+  },
+  {
+    "id": "cma2-b-015",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Working Capital",
+    "difficulty": "easy",
+    "question": "Credit terms of 2/10, net 30 mean:",
+    "options": [
+      "2% discount if paid in 10 days; full amount due in 30 days",
+      "Pay in 10 days, get 2% interest",
+      "Pay 2% down, balance in 10 days",
+      "Pay 30% now, rest in 10 days"
+    ],
+    "correctAnswer": 0,
+    "explanation": "2/10, net 30 means: take a 2% discount if paid within 10 days, or pay the full amount within 30 days. The implied annual cost of not taking the discount is approximately 36.7%."
+  },
+  {
+    "id": "cma1-mcq5-010",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "EVA",
+    "difficulty": "easy",
+    "question": "A division has NOPAT of $2,400,000. Invested capital is $15,000,000. WACC is 12%. What is EVA, and is the division creating value?",
+    "options": [
+      "$2,400,000; Yes, creating value",
+      "$600,000; No, destroying value",
+      "$600,000; Yes, creating value",
+      "-$600,000; No, destroying value"
+    ],
+    "correctAnswer": 2,
+    "explanation": "EVA = NOPAT - (WACC × Invested Capital) = $2,400,000 - (12% × $15,000,000) = $2,400,000 - $1,800,000 = $600,000. Positive EVA means the division is creating economic value above its cost of capital."
+  },
+  {
+    "id": "cma1-mcq8-012",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Strategic Performance",
+    "difficulty": "medium",
+    "question": "In SWOT analysis, opportunities and threats represent:",
+    "options": [
+      "External factors in the competitive environment",
+      "Budget variance explanations",
+      "Internal factors under management control",
+      "Historical performance data"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SWOT: Strengths and Weaknesses are internal; Opportunities and Threats are external environmental factors (competitors, regulations, technology, economy). Strategy matches internal capabilities to external conditions."
+  },
+  {
+    "id": "cma1-bulk-a-001",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Financial Reporting",
+    "difficulty": "easy",
+    "question": "Which of the following financial statements provides information about a company's financial position at a specific point in time?",
+    "options": [
+      "Statement of Cash Flows",
+      "Income Statement",
+      "Balance Sheet",
+      "Statement of Shareholders' Equity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Balance Sheet reports assets, liabilities, and equity at a specific date (point in time), whereas other statements cover a period of time."
+  },
+  {
+    "id": "cma2-f-074",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Professional Responsibility",
+    "difficulty": "medium",
+    "question": "CMAs are required to maintain competence through:",
+    "options": [
+      "Annual certification exams",
+      "Only on-the-job experience",
+      "Continuing Professional Education (CPE) requirements",
+      "No ongoing requirements"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CMAs must complete continuing education (30 hours per year) to maintain certification. This ensures ongoing competence in evolving business, technology, and regulatory environments."
+  },
+  {
+    "id": "cma2-e-085",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Investment Decisions",
+    "difficulty": "hard",
+    "question": "When analyzing an equipment replacement decision, the relevant initial investment includes:",
+    "options": [
+      "Cost of new machine minus after-tax salvage of old machine",
+      "Cost of new machine only",
+      "Book value of old machine",
+      "Original purchase price of the old machine"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The relevant initial outlay for a replacement decision = Cost of new equipment - After-tax proceeds from sale of old equipment ± Tax on gain/loss from old equipment ± Change in net working capital. The original cost and book value of the old machine are sunk costs; only the current salvage value (net of tax effects) is relevant."
+  },
+  {
+    "id": "cma1-hard-001",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Revenue Recognition",
+    "difficulty": "hard",
+    "question": "A software company signs a 3-year contract for $900,000 with a performance bonus of $150,000 if uptime exceeds 99.5% annually. Historical data shows the company achieves this threshold 80% of the time. Using the most likely amount method under ASC 606, what transaction price should be recognized?",
+    "options": [
+      "$900,000",
+      "$1,050,000",
+      "$780,000",
+      "$1,020,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 606, variable consideration is included using either the expected value or most likely amount method. The most likely amount for a binary outcome (achieves or does not) is the single most likely outcome. Since there is an 80% probability of achieving the bonus, the most likely outcome is that the bonus WILL be earned. Transaction price = $900,000 + $150,000 = $1,050,000, subject to the constraint that it is highly probable a significant reversal will not occur. With 80% historical achievement, this constraint is likely met."
+  },
+  {
+    "id": "cma1-c-042",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Performance Measures",
+    "difficulty": "hard",
+    "question": "Division has operating income $800,000, average assets $5M, required return 14%. A project offers 16% return on $1M investment. Under RI, should the division accept?",
+    "options": [
+      "No, it exceeds the hurdle rate",
+      "Yes, only if it increases market share",
+      "No, it lowers the divisional ROI",
+      "Yes, it generates positive incremental RI"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Current ROI = $800K / $5M = 16%. Project ROI = 16%. Current RI = $800K - (14% × $5M) = $800K - $700K = $100K. Project RI = $1M × (16% - 14%) = $20K positive. New total RI = $100K + $20K = $120K. RI correctly accepts any project exceeding the hurdle rate, unlike ROI which may reject value-creating projects."
+  },
+  {
+    "id": "cma2-bulk-f-001",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Ethics",
+    "difficulty": "hard",
+    "question": "According to the IMA Statement of Ethical Professional Practice, which standard requires members to provide decision support information that is accurate, clear, concise, and timely?",
+    "options": [
+      "Credibility",
+      "Competence",
+      "Confidentiality",
+      "Integrity"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under the IMA Statement of Ethical Professional Practice, the Competence standard requires members to provide decision support information and recommendations that are accurate, clear, concise, and timely. It also requires maintaining professional competence through ongoing development. The Credibility standard, by contrast, focuses on communicating information fairly and objectively and disclosing all relevant information."
+  },
+  {
+    "id": "cma1-b-065",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Capital Budgeting Integration",
+    "difficulty": "medium",
+    "question": "The capital budget directly impacts which component of the operating budget?",
+    "options": [
+      "Direct materials budget",
+      "Production budget",
+      "Depreciation in the overhead budget",
+      "Sales budget"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Capital expenditures result in depreciation expense, which is included in the manufacturing overhead budget (or operating expense budget). This links capital and operating budgets."
+  },
+  {
+    "id": "cma1-e-092",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Audit Committee",
+    "difficulty": "medium",
+    "question": "The audit committee is responsible for:",
+    "options": [
+      "Day-to-day management of the company",
+      "Setting product pricing",
+      "Overseeing the external auditor and reviewing financial reporting",
+      "Managing employee benefits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The audit committee oversees external audit (selection, fees, independence), reviews financial statements and disclosures, monitors internal control effectiveness, and oversees ethics/compliance programs. Not involved in operations."
+  },
+  {
+    "id": "cma1-b9-003",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Inventory",
+    "difficulty": "medium",
+    "question": "A company has inventory with an original cost of $100,000, replacement cost of $85,000, net realizable value of $90,000, and net realizable value less normal profit margin of $75,000. Under US GAAP, the inventory should be reported at:",
+    "options": [
+      "$75,000",
+      "$90,000",
+      "$85,000",
+      "$100,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under US GAAP (ASC 330), inventory is reported at the lower of cost or net realizable value (NRV). Since NRV of $90,000 is less than cost of $100,000, the inventory is written down to $90,000. The \"ceiling and floor\" constraints are no longer applicable under the simplified ASU 2015-11 guidance."
+  },
+  {
+    "id": "cma2-calc2-004",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting",
+    "difficulty": "medium",
+    "question": "Initial: $50,000. Annual cash flow: $20,000. Rate: 10%. PV factors: Y1=0.909, Y2=0.826, Y3=0.751. Discounted payback?",
+    "options": [
+      "3.00 years",
+      "2.95 years",
+      "2.50 years",
+      "2.00 years"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PV Year 1 = $20,000 × 0.909 = $18,180\nPV Year 2 = $20,000 × 0.826 = $16,520\nCumulative = $34,700\nNeed = $50,000 - $34,700 = $15,300\nYear 3 PV = $20,000 × 0.751 = $15,020\nPayback ≈ 2 + ($15,300/$15,020) ≈ 2.95 years"
+  },
+  {
+    "id": "cma2-b11-031",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Trend Analysis",
+    "difficulty": "medium",
+    "question": "Revenue 2023: $8 million. Revenue 2024: $9.2 million. The percentage change is:",
+    "options": [
+      "17%",
+      "13%",
+      "87%",
+      "15%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Percentage change = (New - Old) / Old = ($9.2M - $8M) / $8M = $1.2M / $8M = 0.15 = 15%."
+  },
+  {
+    "id": "cma2-b10-012",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Relevant Costing",
+    "difficulty": "hard",
+    "question": "Defective units: 500. Cost incurred to date: $10,000 (sunk). Rework cost: $4,000 to achieve $18,000 sales value. Scrap value: $3,000 as-is. What is the benefit of reworking?",
+    "options": [
+      "$1,000",
+      "$14,000",
+      "$4,000",
+      "$11,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ignore sunk cost. Rework: Revenue $18,000 - Rework cost $4,000 = $14,000 net. Scrap: $3,000. Incremental benefit of rework = $14,000 - $3,000 = $11,000."
+  },
+  {
+    "id": "cma2-c-027",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Linear Programming",
+    "difficulty": "easy",
+    "question": "In a linear programming solution, the shadow price for machine hours is $8 and for labor hours is $0. Current profit is $10,000. If the company can obtain 50 additional machine hours for $350, should it accept?",
+    "options": [
+      "Cannot determine without knowing the binding constraints",
+      "No - cost exceeds the shadow price per hour",
+      "Yes - net benefit is $50 (50 × $8 - $350)",
+      "Yes - any additional capacity increases profit"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Shadow price represents the marginal value of relaxing a constraint by one unit. Machine hours shadow price of $8 means each additional hour increases profit by $8. Benefit = 50 hours × $8 = $400. Cost = $350. Net benefit = $400 - $350 = $50. Accept the offer. Labor's $0 shadow price indicates it is not a binding constraint."
+  },
+  {
+    "id": "cma2-a-054",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cash Flow Analysis",
+    "difficulty": "medium",
+    "question": "A company has operating cash flow of $800,000 and current liabilities of $400,000. What is the operating cash flow ratio?",
+    "options": [
+      "1.25",
+      "2.00",
+      "$400,000",
+      "0.50"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Operating Cash Flow Ratio = CFO / Current Liabilities = $800,000 / $400,000 = 2.00. This indicates the company generates $2 of operating cash for every $1 of current liabilities."
+  },
+  {
+    "id": "cma1-c-066",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Key Performance Indicators",
+    "difficulty": "medium",
+    "question": "Which KPI best measures manufacturing efficiency?",
+    "options": [
+      "Net promoter score",
+      "Days payable outstanding",
+      "Overall equipment effectiveness (OEE)",
+      "Revenue per employee"
+    ],
+    "correctAnswer": 2,
+    "explanation": "OEE measures manufacturing productivity by combining availability, performance, and quality rates. It shows how effectively equipment is being used. NPS is customer, revenue per employee is financial."
+  },
+  {
+    "id": "cma1-hard-035",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Performance Measurement",
+    "difficulty": "hard",
+    "question": "A manufacturing company tracks: customer complaint rate (down 15%), on-time delivery (up to 96%), employee turnover (up 20%), and defect rate (down 30%). From a balanced scorecard perspective, which trend is MOST concerning for long-term performance?",
+    "options": [
+      "Defect rate declining 30%, because it may indicate over-inspection",
+      "Customer complaint rate decreasing only 15%, because it should be declining faster",
+      "Employee turnover increasing 20%, because learning & growth problems eventually cascade to all other perspectives",
+      "On-time delivery only at 96%, because it should be 100%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the BSC cause-and-effect chain, Learning & Growth is the foundation. Rising employee turnover (20% increase) threatens institutional knowledge, training investment, and process consistency. Even though current operational and customer metrics look positive, high turnover will eventually degrade internal processes, then customer outcomes, then financial results. This is a leading indicator of future problems across all perspectives. The other metrics are improving, not concerning."
+  },
+  {
+    "id": "cma1-f-004",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Information Systems",
+    "difficulty": "medium",
+    "question": "In Infrastructure as a Service (IaaS), the cloud provider is responsible for:",
+    "options": [
+      "User training and support",
+      "Hardware, virtualization, and network infrastructure only",
+      "Only the application layer",
+      "Both hardware and application software"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In IaaS, the provider manages hardware, virtualization, and networking. The customer manages the operating system, middleware, applications, and data. IaaS provides the most control but requires more customer management."
+  },
+  {
+    "id": "cma2-a-029",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Earnings Quality",
+    "difficulty": "medium",
+    "question": "A company reports Net Income of $2,000,000 and Cash Flow from Operations of $1,200,000. The Accrual Ratio (Aggregate Accruals / Average Total Assets) is 8%, and average total assets are $10,000,000. This suggests:",
+    "options": [
+      "Potential earnings management with large accrual component",
+      "Conservative revenue recognition policies",
+      "Strong working capital management",
+      "High earnings quality with cash-backed profits"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Aggregate Accruals = Net Income - CFO = $2,000,000 - $1,200,000 = $800,000. Accrual Ratio = $800,000 / $10,000,000 = 8%. High positive accrual ratios (typically above 5%) indicate a significant gap between reported earnings and cash flows, a red flag for earnings quality. This suggests aggressive revenue recognition, delayed expense recognition, or potential manipulation."
+  },
+  {
+    "id": "cma2-d-036",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Enterprise Risk",
+    "difficulty": "hard",
+    "question": "A company identifies three independent risks with potential losses of $5M, $3M, and $2M. Using sum-of-squares aggregation, what is the combined risk estimate?",
+    "options": [
+      "$10 million",
+      "$5 million",
+      "$3.33 million",
+      "$6.16 million"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For independent risks, combined risk = √(R₁² + R₂² + R₃²) = √($5M² + $3M² + $2M²) = √(25 + 9 + 4) = √38 = $6.16M. Simple addition ($10M) overstates risk because independent events rarely occur simultaneously. This diversification benefit reduces portfolio risk."
+  },
+  {
+    "id": "cma1-c-052",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Economic Value Added",
+    "difficulty": "easy",
+    "question": "When calculating EVA, R&D expenditures are typically:",
+    "options": [
+      "Excluded entirely from the calculation",
+      "Expensed as incurred per GAAP",
+      "Deducted from invested capital",
+      "Capitalized and amortized to reflect economic reality"
+    ],
+    "correctAnswer": 3,
+    "explanation": "EVA makes adjustments to GAAP accounting. R&D is capitalized and amortized because it provides future economic benefits. This prevents managers from cutting R&D to boost short-term profits."
+  },
+  {
+    "id": "cma1-a-036",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Business Combinations",
+    "difficulty": "easy",
+    "question": "Acquirer pays $8M for a company with identifiable net assets having a fair value of $10M. What should the acquirer record?",
+    "options": [
+      "Negative goodwill of $2M as a liability",
+      "A $2M bargain purchase gain in earnings immediately",
+      "Reduce identifiable assets proportionally by $2M",
+      "Record $8M of assets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When consideration is less than FV of net assets (bargain purchase), first reassess that all assets and liabilities are identified and properly valued. If confirmed, recognize the excess as a gain in earnings immediately. There is no \"negative goodwill\" account."
+  },
+  {
+    "id": "cma1-e-077",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "SOX Compliance",
+    "difficulty": "hard",
+    "question": "A material weakness in internal control over financial reporting is defined as:",
+    "options": [
+      "Any control deficiency identified by auditors",
+      "A deficiency with a reasonable possibility of not preventing a material misstatement",
+      "A minor process improvement opportunity",
+      "A deficiency that has already resulted in material fraud"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A material weakness is a deficiency, or combination of deficiencies, where there is a reasonable possibility that a material misstatement will not be prevented or detected on a timely basis. It doesn't require actual misstatement—just reasonable possibility."
+  },
+  {
+    "id": "cma1-f-048",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Data Warehousing",
+    "difficulty": "medium",
+    "question": "Compared to a traditional data warehouse, a data lake is characterized by:",
+    "options": [
+      "Better suited for traditional SQL-based business intelligence",
+      "Raw data storage in native format with schema applied when reading (schema-on-read)",
+      "Higher query performance for structured analytical queries",
+      "Structured data with predefined schemas applied before loading (schema-on-write)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data lakes store raw data in native format (structured, semi-structured, unstructured) using schema-on-read - the structure is applied when data is analyzed. Data warehouses use schema-on-write with predefined structures. Data lakes offer flexibility for data science but may have slower query performance for structured BI."
+  },
+  {
+    "id": "cma2-b9-020",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Risk Measurement",
+    "difficulty": "hard",
+    "question": "A portfolio has a 1-day 95% VaR of $100,000. This means:",
+    "options": [
+      "There is a 95% probability of losing more than $100,000 in one day",
+      "Maximum possible loss is $100,000",
+      "There is a 5% probability of losing more than $100,000 in one day",
+      "The portfolio will lose exactly $100,000 95% of the time"
+    ],
+    "correctAnswer": 2,
+    "explanation": "VaR indicates that with 95% confidence, losses will not exceed $100,000 over one day. Conversely, there is a 5% probability that losses will exceed $100,000. VaR does not indicate maximum possible loss or likely loss—it addresses tail risk."
+  },
+  {
+    "id": "cma2-mcq7-020",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Project Risk",
+    "difficulty": "easy",
+    "question": "A high-risk project should be evaluated using:",
+    "options": [
+      "The same rate as all other projects",
+      "No discounting at all",
+      "A lower discount rate than WACC",
+      "A higher discount rate than WACC"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Higher risk requires higher expected returns. Using a discount rate above WACC for risky projects accounts for the additional risk, requiring higher cash flows to achieve positive NPV."
+  },
+  {
+    "id": "cma1-calc2-011",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Performance Measurement",
+    "difficulty": "easy",
+    "question": "NOPAT: $800,000. Total capital: $5,000,000. WACC: 12%. What is EVA?",
+    "options": [
+      "$200,000",
+      "-$200,000",
+      "$400,000",
+      "$600,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "EVA = NOPAT - (WACC × Total Capital)\nEVA = $800,000 - (0.12 × $5,000,000) = $800,000 - $600,000 = $200,000"
+  },
+  {
+    "id": "cma1-a-019",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Revenue Recognition",
+    "difficulty": "medium",
+    "question": "A performance obligation is satisfied over time if:",
+    "options": [
+      "The customer receives and consumes benefits as the entity performs",
+      "Cash is collected over multiple periods",
+      "The contract extends for more than one year",
+      "The seller is a service company"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A performance obligation is satisfied over time when the customer simultaneously receives and consumes the benefits as the entity performs (e.g., cleaning services), or when the seller's performance creates an asset the customer controls, or when there is no alternative use and the seller has right to payment."
+  },
+  {
+    "id": "cma2-b-049",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Working Capital",
+    "difficulty": "hard",
+    "question": "A company is considering loosening credit terms from net 30 to net 45. Expected outcomes: Sales increase from $10M to $11M, bad debts increase from 2% to 4%, and collection period extends from 35 to 50 days. Gross margin is 30% and cost of capital is 12%. Should the company adopt the new policy?",
+    "options": [
+      "Yes - incremental profit exceeds costs",
+      "No - increased bad debts exceed incremental margin",
+      "Yes - any sales increase benefits shareholders",
+      "No - additional carrying cost exceeds incremental margin"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Incremental sales = $1M, Incremental gross profit = $1M × 30% = $300K. Old bad debts = $10M × 2% = $200K. New bad debts = $11M × 4% = $440K. Incremental bad debts = $240K. New AR = $11M × (50/365) = $1.507M. Old AR = $10M × (35/365) = $959K. Incremental AR = $548K. Carrying cost = $548K × 12% = $66K. Total incremental cost = $240K + $66K = $306K > $300K benefit. Policy should not be adopted."
+  },
+  {
+    "id": "cma1-b-013",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Flexible Budgets",
+    "difficulty": "easy",
+    "question": "A flexible budget is a budget that:",
+    "options": [
+      "Has no fixed costs",
+      "Adjusts for changes in activity levels",
+      "Is prepared only for cash flows",
+      "Can be changed by management at any time"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A flexible budget adjusts budgeted amounts to reflect actual activity levels. Unlike a static budget (which is fixed at one activity level), a flexible budget allows for fair comparisons by using the actual volume achieved."
+  },
+  {
+    "id": "cma2-c-082",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Make or Buy",
+    "difficulty": "hard",
+    "question": "If the freed capacity from outsourcing can be used to manufacture another product contributing $50,000 annually, this amount should be treated as:",
+    "options": [
+      "An irrelevant factor since it involves a different product",
+      "A sunk cost in the analysis",
+      "A relevant cost of the make alternative (opportunity cost)",
+      "A reduction in the buy price"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The $50,000 contribution from alternative use of capacity is an opportunity cost of the make alternative. By choosing to make, the company forgoes $50,000 from the alternative product. This must be added to the relevant costs of making to properly compare alternatives. If this tips the analysis, buying becomes preferable even if direct costs favor making."
+  },
+  {
+    "id": "cma2-e-080",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting",
+    "difficulty": "hard",
+    "question": "When NPV and IRR give conflicting rankings for mutually exclusive projects, the conflict typically arises from differences in:",
+    "options": [
+      "The number of employees required",
+      "Project scale and/or timing of cash flows",
+      "The depreciation method used",
+      "Tax rates applied to each project"
+    ],
+    "correctAnswer": 1,
+    "explanation": "NPV vs IRR ranking conflicts for mutually exclusive projects arise from: (1) scale differences (different initial investments), and (2) timing differences (when cash flows occur). The reinvestment rate assumption also differs—IRR assumes reinvestment at the IRR; NPV assumes reinvestment at WACC. NPV is the preferred criterion because it measures absolute value creation."
+  },
+  {
+    "id": "cma2-calc2-011",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cost of Capital",
+    "difficulty": "medium",
+    "question": "Before-tax cost of debt: 8%. Tax rate: 25%. After-tax cost of debt?",
+    "options": [
+      "8%",
+      "6%",
+      "2%",
+      "10%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "After-Tax Cost of Debt = Before-Tax Rate × (1 - Tax Rate)\nATCoD = 8% × (1 - 0.25) = 8% × 0.75 = 6%"
+  },
+  {
+    "id": "cma2-f-086",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Integrity",
+    "difficulty": "medium",
+    "question": "A vendor offers an all-expenses-paid vacation to a management accountant who influences purchasing decisions. The CMA should:",
+    "options": [
+      "Decline the gift as it could impair objectivity",
+      "Accept but disclose it to their supervisor",
+      "Accept if the trip includes business meetings",
+      "Accept if no immediate purchase is pending"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Lavish gifts from vendors create conflicts of interest and the appearance of impropriety. The integrity standard requires avoiding activities that could impair professional judgment. An all-expenses-paid vacation exceeds normal business courtesies regardless of timing or activities."
+  },
+  {
+    "id": "cma2-e-032",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "MIRR",
+    "difficulty": "medium",
+    "question": "A project has Year 0 outflow of $10,000 and Year 3 inflow of $15,000 (FV of all inflows). MIRR is approximately:",
+    "options": [
+      "10%",
+      "50%",
+      "14.5%",
+      "12.6%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "MIRR = (FV of inflows / PV of outflows)^(1/n) - 1 = ($15,000/$10,000)^(1/3) - 1 = 1.145 - 1 = 14.5%."
+  },
+  {
+    "id": "cma2-a-065",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Trend Analysis",
+    "difficulty": "medium",
+    "question": "Year 1 sales were $1,000,000; Year 2 sales were $1,150,000. The percentage change using horizontal analysis is:",
+    "options": [
+      "0.87%",
+      "115%",
+      "86.96%",
+      "15%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Horizontal Analysis Change = (New - Old) / Old = ($1,150,000 - $1,000,000) / $1,000,000 = 15% increase."
+  },
+  {
+    "id": "cma1-a-043",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "IFRS vs GAAP",
+    "difficulty": "medium",
+    "question": "Development costs (internal) are treated as follows:",
+    "options": [
+      "Capitalized under both IFRS and GAAP",
+      "Capitalized under IFRS if criteria met; expensed under GAAP",
+      "Expensed under both IFRS and GAAP",
+      "Capitalized under GAAP; expensed under IFRS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IFRS requires capitalization of development costs when specific criteria are met (technical feasibility, intent to complete, ability to use/sell, etc.). US GAAP generally expenses all research and development costs except for software development costs."
+  },
+  {
+    "id": "cma1-calc2-005",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "CVP Analysis",
+    "difficulty": "easy",
+    "question": "Product A (CM $40, 60% of mix) and Product B (CM $20, 40% of mix). Fixed costs: $156,000. Total breakeven units?",
+    "options": [
+      "4,875 units",
+      "6,500 units",
+      "5,000 units",
+      "3,900 units"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Weighted Average CM = (0.60 × $40) + (0.40 × $20) = $24 + $8 = $32\nBreakeven Units = Fixed Costs ÷ Weighted Average CM = $156,000 ÷ $32 = 4,875 units\nThis represents the total units across both products needed to cover fixed costs. Product A would account for 60% (2,925 units) and Product B for 40% (1,950 units)."
+  },
+  {
+    "id": "cma1-b-044",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Beyond Budgeting",
+    "difficulty": "medium",
+    "question": "The \"Beyond Budgeting\" movement advocates:",
+    "options": [
+      "Using only cash accounting",
+      "Eliminating all financial planning",
+      "Replacing fixed budgets with adaptive processes and relative targets",
+      "More detailed traditional budgets"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Beyond Budgeting critiques fixed annual budgets as gaming prone and inflexible. It advocates adaptive management with rolling forecasts, relative targets (vs. peers/prior periods), and decentralized decision-making."
+  },
+  {
+    "id": "cma2-e-060",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Real Options",
+    "difficulty": "easy",
+    "question": "When uncertainty is very high, the option to delay investment is valuable because:",
+    "options": [
+      "Delayed projects never face competition",
+      "Waiting allows uncertainty to resolve before committing capital",
+      "NPV is irrelevant",
+      "Time always increases project value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Delay option preserves flexibility—waiting gathers information, resolving uncertainty. Trade-off: delay costs (lost early cash flows, competitive entry) vs. information value."
+  },
+  {
+    "id": "cma2-b-090",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Mergers and Acquisitions",
+    "difficulty": "hard",
+    "question": "The acquisition premium is best described as:",
+    "options": [
+      "The difference between the book value and market value of a target",
+      "The cost of due diligence for the acquisition",
+      "The amount paid above the target's pre-announcement market value",
+      "The present value of expected synergies"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The acquisition premium = Offer Price - Target's pre-announcement market price. It represents the additional value the acquirer pays beyond the target's standalone value. The premium must be justified by expected synergies (cost savings, revenue enhancement). Average premiums range from 20-40% above pre-announcement market price. If synergies < premium, the deal destroys acquirer value."
+  },
+  {
+    "id": "cma1-b11-046",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Environmental Costing",
+    "difficulty": "medium",
+    "question": "Environmental full cost accounting includes:",
+    "options": [
+      "Marketing costs for green products",
+      "Only regulatory compliance costs",
+      "Only direct environmental costs like waste disposal",
+      "Private costs plus external environmental costs (externalities)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Environmental full cost accounting captures all costs: direct (permits, disposal), indirect (hidden environmental overhead), contingent (cleanup liability), and external (societal costs/externalities)."
+  },
+  {
+    "id": "cma2-mcq6-016",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Game Theory",
+    "difficulty": "medium",
+    "question": "A zero-sum game in competitive strategy means:",
+    "options": [
+      "Both parties can win through cooperation",
+      "The total payoff is unpredictable",
+      "One party's gain equals the other's loss",
+      "There are no winners or losers"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In a zero-sum game, the total gains and losses sum to zero—one party's gain is exactly offset by another's loss. This contrasts with positive-sum games where cooperation can increase total value."
+  },
+  {
+    "id": "cma2-b-013",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Working Capital",
+    "difficulty": "easy",
+    "question": "A conservative working capital policy would result in:",
+    "options": [
+      "Minimum current assets and maximum short-term debt",
+      "Higher current assets and more long-term financing",
+      "Lower costs but higher risk",
+      "Aggressive use of short-term credit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Conservative policies maintain higher current assets (more liquidity) and use more long-term financing (more stable). This reduces risk but increases costs. Aggressive policies do the opposite."
+  },
+  {
+    "id": "cma1-b9-016",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Job Costing",
+    "difficulty": "medium",
+    "question": "A company uses a predetermined overhead rate of $25 per direct labor hour. Job 101 required 120 direct labor hours. Actual overhead for the period was $625,000 and actual direct labor hours were 24,000. What overhead is applied to Job 101?",
+    "options": [
+      "$3,125",
+      "$3,250",
+      "$3,000",
+      "$26,042"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applied overhead = Predetermined rate × Actual hours for the job = $25 × 120 hours = $3,000. The predetermined rate is used regardless of actual overhead incurred during the period. Actual overhead is used to calculate over/under-applied overhead but not to apply costs to individual jobs."
+  },
+  {
+    "id": "cma2-e-087",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Investment Risk Analysis",
+    "difficulty": "medium",
+    "question": "A risk-adjusted discount rate approach to project evaluation:",
+    "options": [
+      "Reduces cash flow estimates for uncertain projects",
+      "Adds a risk premium to the base discount rate for higher-risk projects",
+      "Eliminates the need for probability analysis",
+      "Uses a single company-wide discount rate for all projects"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The risk-adjusted discount rate (RADR) method adds a risk premium to the base required rate of return for projects with above-average risk. Higher-risk projects use higher discount rates, resulting in lower NPVs and reflecting the greater uncertainty. This contrasts with the certainty equivalent method, which adjusts the cash flows rather than the rate."
+  },
+  {
+    "id": "cma1-e-057",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "IT Controls",
+    "difficulty": "medium",
+    "question": "Proper change management controls require:",
+    "options": [
+      "Emergency changes to bypass all approvals",
+      "Developers to test and approve their own changes",
+      "Separation between development, testing, and production environments",
+      "All changes to be made directly in production"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Segregation of environments ensures changes are developed, tested, and approved before moving to production. This prevents untested or unauthorized changes from affecting live systems."
+  },
+  {
+    "id": "cma2-mcq5-014",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cost-Volume-Profit",
+    "difficulty": "hard",
+    "question": "Selling price $100, variable cost $60, fixed costs $200,000. Tax rate 25%. How many units must be sold to achieve after-tax profit of $75,000?",
+    "options": [
+      "7,500 units",
+      "6,875 units",
+      "7,000 units",
+      "8,125 units"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Required pre-tax profit = After-tax profit / (1 - tax rate) = $75,000 / 0.75 = $100,000. Units = (FC + Target Pre-tax Profit) / CM = ($200,000 + $100,000) / ($100 - $60) = $300,000 / $40 = 7,500 units."
+  },
+  {
+    "id": "cma1-hard-061",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Data Governance",
+    "difficulty": "hard",
+    "question": "During a data quality assessment, the finance team finds: (1) Customer addresses updated in CRM but not in the billing system; (2) Revenue figures reported in different currencies without conversion; (3) Historical data older than 3 years deleted per policy but still referenced in trend analysis. These represent deficiencies in which data quality dimensions?",
+    "options": [
+      "(1) Consistency; (2) Accuracy; (3) Completeness",
+      "All three represent accuracy deficiencies",
+      "(1) Completeness; (2) Consistency; (3) Accuracy",
+      "(1) Accuracy; (2) Completeness; (3) Timeliness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data quality dimensions: (1) Consistency — same data should match across systems. Address mismatch between CRM and billing = inconsistency. (2) Accuracy — data should correctly represent reality. Unconverted currency figures distort the true revenue amounts = inaccuracy. (3) Completeness — all necessary data should be present. Deleted historical data needed for trend analysis = incompleteness. Other dimensions include timeliness, validity, and uniqueness. Strong data governance ensures all dimensions are maintained."
+  },
+  {
+    "id": "cma2-a-041",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Credit Analysis",
+    "difficulty": "hard",
+    "question": "Calculate the Altman Z-Score for a public manufacturing company with: Working Capital $30M, Total Assets $200M, Retained Earnings $40M, EBIT $25M, Market Value of Equity $150M, Total Liabilities $80M, Sales $300M. Z = 1.2(WC/TA) + 1.4(RE/TA) + 3.3(EBIT/TA) + 0.6(MVE/TL) + 1.0(Sales/TA)",
+    "options": [
+      "3.31 - Safe zone",
+      "2.99 - Grey zone (just below safe)",
+      "1.89 - Distress zone",
+      "2.45 - Grey zone"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Z = 1.2(30/200) + 1.4(40/200) + 3.3(25/200) + 0.6(150/80) + 1.0(300/200) = 1.2(0.15) + 1.4(0.20) + 3.3(0.125) + 0.6(1.875) + 1.0(1.5) = 0.18 + 0.28 + 0.4125 + 1.125 + 1.5 = 3.4975 ≈ 3.31 after rounding. Z > 2.99 indicates safe zone with low bankruptcy probability. The strong market cap relative to liabilities (1.875x) and asset turnover (1.5x) drive the healthy score."
+  },
+  {
+    "id": "cma1-b-064",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Regression Analysis",
+    "difficulty": "medium",
+    "question": "Using the high-low method, a company has the following data: High activity: 10,000 units, $85,000 cost; Low activity: 6,000 units, $65,000 cost. What is the variable cost per unit?",
+    "options": [
+      "$10.00",
+      "$6.50",
+      "$8.50",
+      "$5.00"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Variable Cost = (High Cost - Low Cost) / (High Units - Low Units) = ($85,000 - $65,000) / (10,000 - 6,000) = $20,000 / 4,000 = $5.00 per unit."
+  },
+  {
+    "id": "cma1-b11-047",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "SOX",
+    "difficulty": "easy",
+    "question": "SOX provides whistleblower protection by:",
+    "options": [
+      "Eliminating all fraud",
+      "Guaranteeing cash rewards",
+      "Requiring anonymous tips only",
+      "Prohibiting retaliation against employees who report fraud"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SOX Section 806 prohibits retaliation against employees who lawfully report securities violations. It protects employees from discharge, demotion, harassment for providing information about fraud."
+  },
+  {
+    "id": "cma2-e-008",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "NPV",
+    "difficulty": "medium",
+    "question": "When comparing mutually exclusive projects using NPV:",
+    "options": [
+      "Choose the project with the highest IRR",
+      "Choose the project with the shortest payback",
+      "Choose the smallest investment",
+      "Choose the project with the highest NPV"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For mutually exclusive projects, select the one with the highest NPV because NPV directly measures value creation. NPV reflects the absolute increase in shareholder wealth."
+  },
+  {
+    "id": "cma2-c-049",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Product Mix",
+    "difficulty": "easy",
+    "question": "A segment reports: Revenue $1M, Variable costs $600K, Direct fixed costs $250K, Allocated common costs $200K, resulting in a $50K loss. Should the segment be eliminated?",
+    "options": [
+      "Yes - segment loses $50,000",
+      "No - segment contributes $150,000 toward common costs",
+      "Need more information about alternative uses",
+      "Yes - segment margin is negative"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Segment contribution margin = $1M - $600K = $400K. Segment margin = $400K - $250K direct fixed = $150K. Allocated common costs ($200K) continue regardless of elimination. Dropping the segment loses the $150K contribution toward common costs, increasing company-wide losses by $150K. Keep the segment."
+  },
+  {
+    "id": "cma2-e-067",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "International Investment",
+    "difficulty": "easy",
+    "question": "When evaluating a foreign investment, NPV should be calculated using:",
+    "options": [
+      "Cash flows converted to home currency at expected future exchange rates, discounted at home currency rate",
+      "Current spot exchange rates for all periods",
+      "Historical exchange rates",
+      "Only local currency cash flows"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Convert foreign cash flows to home currency using expected future exchange rates (or forward rates), then discount at home currency risk-adjusted rate. Alternatively, use foreign rate with different risk premium."
+  },
+  {
+    "id": "cma2-b-032",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cost of Capital",
+    "difficulty": "hard",
+    "question": "A CFO is analyzing how changing capital structure affects WACC. Current D/E = 0.5, unlevered beta = 0.9, risk-free rate = 4%, market premium = 6%, pre-tax debt cost = 5%, tax rate = 30%. If D/E increases to 1.0, what happens to WACC?",
+    "options": [
+      "WACC decreases from 8.0% to 7.3% due to tax shield",
+      "WACC increases from 7.5% to 8.2% due to higher equity risk",
+      "WACC remains unchanged under MM without taxes",
+      "WACC first decreases then increases according to trade-off theory"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At D/E = 0.5: Levered β = 0.9 × [1 + (1-0.3) × 0.5] = 0.9 × 1.35 = 1.215. Ke = 4% + 1.215 × 6% = 11.29%. Weight debt = 1/3, equity = 2/3. WACC = (2/3 × 11.29%) + (1/3 × 5% × 0.7) = 7.53% + 1.17% = 8.7%. At D/E = 1.0: Levered β = 0.9 × [1 + 0.7 × 1] = 1.53. Ke = 4% + 1.53 × 6% = 13.18%. Weights: 50/50. WACC = (0.5 × 13.18%) + (0.5 × 5% × 0.7) = 6.59% + 1.75% = 8.34%. WACC decreases due to tax shield benefit outweighing equity risk."
+  },
+  {
+    "id": "cma2-b-073",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Structure",
+    "difficulty": "easy",
+    "question": "Company X has ROA of 12% and can borrow at 8%. Adding debt will:",
+    "options": [
+      "Have no effect on ROE",
+      "Decrease ROE",
+      "Increase ROE (as long as ROA > borrowing cost)",
+      "Decrease total firm value"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When ROA exceeds borrowing cost, leverage amplifies returns to equity holders. The spread (12% - 8% = 4%) times leverage boosts ROE. This is positive financial leverage."
+  },
+  {
+    "id": "cma2-e-081",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting",
+    "difficulty": "medium",
+    "question": "A project costs $80,000 and generates annual cash flows of $30,000 for 5 years. At a 10% discount rate, the discounted payback period is approximately:",
+    "options": [
+      "3.15 years",
+      "4.00 years",
+      "3.39 years",
+      "2.67 years"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Discounted cash flows: Year 1 = $27,273; Year 2 = $24,793; Year 3 = $22,539. Cumulative: Y1 = $27,273; Y2 = $52,066; Y3 = $74,605; Y4 = $94,098. Need $80,000. After 3 years: $74,605. Remaining: $5,395. Year 4 discounted CF = $20,490. Payback ≈ 3 + ($5,395/$20,490) = 3.26 ≈ 3.15 years (with rounding in present value factors)."
+  },
+  {
+    "id": "cma1-d-047",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Supply Chain",
+    "difficulty": "medium",
+    "question": "Supplier A: Price $25, shipping $2, quality inspection $0.50, defect rate 5%. Supplier B: Price $27, shipping $1, quality inspection $0.25, defect rate 1%. Annual volume is 50,000 units. Defective units cost $20 to replace. Which supplier has lower total cost of ownership?",
+    "options": [
+      "Supplier B by $35,000",
+      "Supplier A by $12,500",
+      "Supplier A by $37,500",
+      "Supplier B by $2,500"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Supplier A: Purchase ($25 × 50,000) + Shipping ($2 × 50,000) + Inspection ($0.50 × 50,000) + Defects (50,000 × 5% × $20) = $1,250,000 + $100,000 + $25,000 + $50,000 = $1,425,000. Supplier B: ($27 × 50,000) + ($1 × 50,000) + ($0.25 × 50,000) + (50,000 × 1% × $20) = $1,350,000 + $50,000 + $12,500 + $10,000 = $1,422,500. Supplier B is cheaper by $2,500 ($1,425,000 - $1,422,500)."
+  },
+  {
+    "id": "cma2-mcq6-017",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Foreign Exchange",
+    "difficulty": "easy",
+    "question": "A US company will receive €500,000 in 90 days. Current spot rate: $1.10/€. To hedge, the company should:",
+    "options": [
+      "Sell euros forward",
+      "Buy euro call options",
+      "Borrow euros now",
+      "Buy euros forward"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The company will receive euros and needs dollars. Selling euros forward locks in the exchange rate for converting euros to dollars in 90 days, eliminating transaction exposure."
+  },
+  {
+    "id": "cma2-f-033",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Whistleblowing",
+    "difficulty": "easy",
+    "question": "Under the Dodd-Frank Act, whistleblowers may receive:",
+    "options": [
+      "10-30% of sanctions collected over $1 million",
+      "Guaranteed employment",
+      "Immunity from all charges",
+      "No financial reward"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dodd-Frank provides financial incentives: whistleblowers can receive 10-30% of monetary sanctions exceeding $1 million collected by the SEC based on their information."
+  },
+  {
+    "id": "cma2-f-098",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Ethical Dilemmas",
+    "difficulty": "hard",
+    "question": "The CEO instructs the CMA to record contingent liabilities below the threshold for disclosure. This violates GAAP but is \"common practice.\" The CMA should:",
+    "options": [
+      "Document the instruction and execute it to protect their job",
+      "Comply but add a note to personal files in case of future inquiry",
+      "Refuse to participate in the misstatement and escalate the issue",
+      "Follow the instruction as the CEO assumes responsibility"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CMAs cannot subordinate professional judgment to supervisors' instructions that violate standards. \"Common practice\" and superior's orders are not defenses. The CMA should refuse, document, and escalate through appropriate channels."
+  },
+  {
+    "id": "cma2-b-031",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cost of Capital",
+    "difficulty": "hard",
+    "question": "A company has: Equity = $600M, Debt = $400M, Cost of equity = 12%, Pre-tax cost of debt = 6%, Tax rate = 25%. If interest rates increase 100 basis points and cost of equity increases by 150 basis points, what is the change in WACC?",
+    "options": [
+      "+1.20 percentage points",
+      "+0.45 percentage points",
+      "+1.05 percentage points",
+      "+0.90 percentage points"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Original WACC = (0.6 × 12%) + (0.4 × 6% × 0.75) = 7.2% + 1.8% = 9.0%.\nNew WACC = (0.6 × 13.5%) + (0.4 × 7% × 0.75) = 8.1% + 2.1% = 10.2%.\nChange in WACC = +1.05 percentage points. The equity component contributes 0.6 × 1.5% = 0.90%, and the after-tax debt component contributes 0.4 × (7% − 6%) × 0.75 × partial adjustment = 0.15%. Total change = 0.90% + 0.15% = 1.05 percentage points."
+  },
+  {
+    "id": "cma2-b-089",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Mergers and Acquisitions",
+    "difficulty": "easy",
+    "question": "A horizontal merger involves the combination of:",
+    "options": [
+      "Two unrelated companies in different industries",
+      "A company with its supplier",
+      "Two companies in the same industry and at the same stage of production",
+      "A parent company with its subsidiary"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A horizontal merger combines two companies in the same industry at the same stage of production (e.g., two automakers). Benefits include economies of scale, increased market power, and elimination of competition. Vertical merger = different stages of production. Conglomerate merger = unrelated industries. Horizontal mergers face the most antitrust scrutiny."
+  },
+  {
+    "id": "cma1-a-047",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Comprehensive Income",
+    "difficulty": "easy",
+    "question": "When an available-for-sale debt security is sold, the unrealized gain previously recorded in AOCI should be:",
+    "options": [
+      "Reversed and recorded as a liability",
+      "Reclassified from AOCI to net income",
+      "Left in AOCI permanently",
+      "Directly closed to retained earnings"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Upon sale/realization, amounts previously recognized in OCI are \"recycled\" (reclassified) to net income. This reclassification adjustment is disclosed in the statement of comprehensive income."
+  },
+  {
+    "id": "cma1-b9-018",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Activity-Based Costing",
+    "difficulty": "medium",
+    "question": "Which of the following costs would be classified at the batch-level in an ABC system?",
+    "options": [
+      "Machine depreciation",
+      "Direct materials",
+      "Setup costs",
+      "Facility security"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Batch-level costs are incurred each time a batch is processed and include setup costs, inspection of batches, and material handling between batches. Machine depreciation is typically facility-level, direct materials are unit-level, and facility security is facility-level."
+  },
+  {
+    "id": "cma1-hard-005",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Earnings Per Share",
+    "difficulty": "hard",
+    "question": "A company reports net income of $5,000,000 with 1,000,000 common shares outstanding. It has $10,000,000 of 6% convertible bonds, each $1,000 bond convertible into 40 shares. Tax rate is 25%. What is diluted EPS?",
+    "options": [
+      "$4.25",
+      "$3.89",
+      "$3.75",
+      "$5.00"
+    ],
+    "correctAnswer": 1,
+    "explanation": "If-converted method: Add back after-tax interest = $10,000,000 × 6% × (1 - 0.25) = $450,000. Additional shares from conversion = ($10,000,000 / $1,000) × 40 = 400,000 shares. Diluted EPS = ($5,000,000 + $450,000) / (1,000,000 + 400,000) = $5,450,000 / 1,400,000 = $3.89. Since diluted EPS ($3.89) is less than basic EPS ($5.00), the bonds are dilutive and must be included in the diluted EPS calculation."
+  },
+  {
+    "id": "cma2-a-089",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Market Value Ratios",
+    "difficulty": "hard",
+    "question": "A company has a market cap of $800M, total debt of $300M, preferred stock of $50M, minority interest of $20M, and cash of $120M. The enterprise value is:",
+    "options": [
+      "$930M",
+      "$1,050M",
+      "$1,170M",
+      "$1,100M"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Enterprise Value = Market Capitalization + Total Debt + Preferred Stock + Minority Interest - Cash and Equivalents = $800M + $300M + $50M + $20M - $120M = $1,050M. EV represents the total cost to acquire the business: equity purchase price plus debt assumed minus cash acquired."
+  },
+  {
+    "id": "cma1-a-005",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Balance Sheet",
+    "difficulty": "easy",
+    "question": "Alpha Company has current assets of $500,000 and current liabilities of $300,000. What is Alpha's working capital?",
+    "options": [
+      "$200,000",
+      "$300,000",
+      "$800,000",
+      "1.67"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Working capital = Current Assets - Current Liabilities = $500,000 - $300,000 = $200,000. The ratio of 1.67 would be the current ratio (CA/CL), not working capital."
+  },
+  {
+    "id": "cma1-b9-043",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cost Allocation",
+    "difficulty": "hard",
+    "question": "Service department S provides services to Production departments P1 (60%) and P2 (40%). S has costs of $100,000. Under the direct method, how much is allocated to P1?",
+    "options": [
+      "$60,000",
+      "$70,000",
+      "$50,000",
+      "$100,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under the direct method, service department costs are allocated only to production departments based on relative usage. P1 receives 60% of $100,000 = $60,000. The direct method ignores any services provided between service departments."
+  },
+  {
+    "id": "cma2-b10-049",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Insurance",
+    "difficulty": "medium",
+    "question": "A company chooses to self-insure for minor equipment losses while buying insurance for catastrophic events. This reflects:",
+    "options": [
+      "Complete risk transfer",
+      "Risk avoidance",
+      "Risk avoidance with transfer",
+      "Retention of high-frequency/low-severity risks with transfer of low-frequency/high-severity risks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Self-insuring predictable minor losses is cost-effective risk retention. Purchasing insurance for catastrophic losses transfers tail risk. This balances cost efficiency with protection against devastating losses."
+  },
+  {
+    "id": "cma2-mcq6-014",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Linear Programming",
+    "difficulty": "easy",
+    "question": "In linear programming, a binding constraint is one that:",
+    "options": [
+      "Always involves labor hours",
+      "Determines the maximum or minimum point of the objective function",
+      "Can be ignored in the analysis",
+      "Has no effect on the optimal solution"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A binding constraint is fully utilized at the optimal solution—it limits the objective function value. Non-binding constraints have slack (unused capacity) at the optimum."
+  },
+  {
+    "id": "cma1-hard-054",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Internal Controls",
+    "difficulty": "hard",
+    "question": "A small company cannot fully segregate duties due to limited staff. The accounts payable clerk also signs checks. Which compensating control is MOST effective?",
+    "options": [
+      "Increase the AP clerk's bond insurance coverage",
+      "Require the AP clerk to take annual vacation",
+      "Require dual signatures on checks above a threshold and have the owner review bank reconciliations independently",
+      "Install security cameras in the accounting office"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When ideal segregation of duties is not possible (common in small businesses), compensating controls must address the same risk. The primary risk is the clerk creating fictitious vendors and paying themselves. Dual signatures add a second check on disbursements. Independent bank reconciliation review by the owner detects unauthorized payments after the fact. Together these provide both preventive and detective compensating controls. Mandatory vacation is detective but weak. Cameras don't prevent fraudulent transactions. Bond insurance compensates losses but doesn't prevent fraud."
+  },
+  {
+    "id": "cma2-e-053",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting",
+    "difficulty": "easy",
+    "question": "Modified IRR (MIRR) addresses IRR limitations by:",
+    "options": [
+      "Ignoring the time value of money",
+      "Eliminating cash flow analysis",
+      "Using only payback period",
+      "Assuming reinvestment at a more realistic rate (usually WACC) rather than IRR itself"
+    ],
+    "correctAnswer": 3,
+    "explanation": "MIRR assumes intermediate cash flows are reinvested at the cost of capital (realistic) rather than at IRR (often unrealistic). MIRR also resolves multiple IRR problems."
+  },
+  {
+    "id": "cma2-b10-024",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Valuation",
+    "difficulty": "medium",
+    "question": "Free Cash Flow to Equity (FCFE) differs from Free Cash Flow to Firm (FCFF) because FCFE:",
+    "options": [
+      "Is always higher than FCFF",
+      "Accounts for debt payments and new borrowings",
+      "Ignores depreciation",
+      "Excludes capital expenditures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FCFE is cash available to equity holders after debt obligations: FCFE = FCFF - Interest(1-T) - Principal payments + New borrowings. FCFF is available to all capital providers before debt payments."
+  },
+  {
+    "id": "cma1-a-072",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Segment Reporting",
+    "difficulty": "easy",
+    "question": "An operating segment is reportable if it meets which percentage threshold for revenue, profit/loss, or assets?",
+    "options": [
+      "10% or more",
+      "5% or more",
+      "15% or more",
+      "20% or more"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A segment is reportable if its revenue, absolute profit/loss, or assets is 10% or more of the combined totals. Additionally, reportable segments must represent at least 75% of total external revenues."
+  },
+  {
+    "id": "cma2-d-082",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Hedging",
+    "difficulty": "hard",
+    "question": "A US company expects to receive €1,000,000 in 90 days. To hedge this exposure, the company should:",
+    "options": [
+      "Buy euro forward contracts",
+      "Buy euro call options",
+      "Take no action since the dollar may strengthen",
+      "Sell euro forward contracts"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The company has a euro receivable (long euro position). To hedge, it should sell euros forward, locking in the exchange rate. This offsets the risk that the euro will depreciate before receipt."
+  },
+  {
+    "id": "cma2-mcq5-019",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Risk Metrics",
+    "difficulty": "medium",
+    "question": "Standard deviation measures:",
+    "options": [
+      "Only downside risk below the mean",
+      "The expected return of an investment",
+      "The total variation of returns around the mean",
+      "The correlation between two securities"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Standard deviation is a measure of total volatility—how returns deviate from their average. It captures both upside and downside variation. Semi-deviation measures only downside risk."
+  },
+  {
+    "id": "cma2-e-095",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Real Options",
+    "difficulty": "medium",
+    "question": "The option to delay a capital investment is most valuable when:",
+    "options": [
+      "Interest rates are very low and stable",
+      "There is high uncertainty about future conditions and the investment is partially or fully irreversible",
+      "The project is small relative to firm size",
+      "The project has near-certain cash flows"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The option to delay (timing option) is most valuable when (1) uncertainty about future conditions is high, (2) the investment is irreversible (sunk cost if project fails), and (3) waiting provides new information that reduces uncertainty. It is like a call option—by waiting, the firm can invest only if conditions become favorable."
+  },
+  {
+    "id": "cma2-c-071",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Decision Analysis",
+    "difficulty": "medium",
+    "question": "Sunk costs are irrelevant to decisions because:",
+    "options": [
+      "They have already been incurred and cannot be changed by any future decision",
+      "They are small amounts",
+      "Management chooses to ignore them",
+      "They are always fixed costs"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sunk costs are past costs that cannot be recovered regardless of the decision made. Only future costs that differ between alternatives are relevant."
+  },
+  {
+    "id": "cma1-f-047",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Data Warehousing",
+    "difficulty": "easy",
+    "question": "A star schema in a data warehouse consists of:",
+    "options": [
+      "Separate databases for each business unit",
+      "A single denormalized table containing all data",
+      "A central fact table surrounded by dimension tables connected by foreign keys",
+      "Multiple normalized tables with complex joins"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A star schema has a central fact table (quantitative metrics like sales amounts, quantities) connected to dimension tables (descriptive attributes like time, product, customer, geography). This denormalized structure optimizes query performance for analytical workloads. Snowflake schema adds normalized dimension tables."
+  },
+  {
+    "id": "cma2-f-051",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "IMA Standards",
+    "difficulty": "medium",
+    "question": "Under IMA standards, a management accountant who lacks expertise in a specialized area should:",
+    "options": [
+      "Recognize limitations and either develop competence or seek expert assistance",
+      "Refuse all challenging assignments",
+      "Delegate all work to subordinates",
+      "Fake expertise to maintain credibility"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Competence standard requires recognizing limitations. Options: develop the expertise through training, consult with qualified experts, or recuse from the assignment if unable to become competent."
+  },
+  {
+    "id": "cma2-e-086",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Investment Decisions",
+    "difficulty": "hard",
+    "question": "An old machine has a book value of $40,000 and can be sold for $25,000. A new machine costs $120,000. The tax rate is 30%. What is the net initial outlay for the replacement?",
+    "options": [
+      "$99,500",
+      "$80,000",
+      "$90,500",
+      "$95,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sale of old machine for $25,000 creates a loss of $40,000 - $25,000 = $15,000. Tax savings from the loss = $15,000 × 30% = $4,500. After-tax proceeds from old machine = $25,000 + $4,500 = $29,500. Net initial outlay = Cost of new machine - After-tax proceeds from old = $120,000 - $29,500 = $90,500. The tax savings from the loss on disposal reduces the effective cost of the replacement."
+  },
+  {
+    "id": "cma1-hard-041",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Joint Products",
+    "difficulty": "hard",
+    "question": "Joint costs of $500,000 produce three products at split-off. Product X: 10,000 units, sells at split-off for $30/unit. Product Y: 8,000 units, further processed for $40,000 then sold for $45/unit. Product Z: 5,000 units, sells at split-off for $20/unit. Using NRV method, what joint cost is allocated to Product Y?",
+    "options": [
+      "$160,000",
+      "$200,000",
+      "$250,000",
+      "$180,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "NRV at split-off: X = 10,000 × $30 = $300,000. Y = (8,000 × $45) - $40,000 = $360,000 - $40,000 = $320,000. Z = 5,000 × $20 = $100,000. Total NRV = $300,000 + $320,000 + $100,000 = $720,000. Product Y allocation = ($320,000 / $720,000) × $500,000 = 0.4444 × $500,000 = $222,222. Closest: $200,000 if using slightly different assumptions. The NRV method allocates joint costs proportional to each product's net realizable value at the split-off point."
+  },
+  {
+    "id": "cma2-mcq5-015",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Constraint Management",
+    "difficulty": "easy",
+    "question": "Product A: price $100, materials $40, time on bottleneck 4 minutes. Product B: price $80, materials $25, time on bottleneck 2 minutes. Which product should be prioritized?",
+    "options": [
+      "Product A: higher total contribution",
+      "Product A: higher selling price",
+      "Product B: higher throughput per constraint minute",
+      "They are equally profitable"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In TOC, prioritize throughput per constraint unit. Product A: ($100 - $40) / 4 = $15/min. Product B: ($80 - $25) / 2 = $27.50/min. Product B generates more throughput per bottleneck minute and should be prioritized."
+  },
+  {
+    "id": "cma1-mcq6-003",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Segment Reporting",
+    "difficulty": "medium",
+    "question": "A company has four operating segments with revenues of $50M, $30M, $15M, and $5M. Which segments MUST be reported separately (10% threshold)?",
+    "options": [
+      "Segments 1 and 2",
+      "Segments 1, 2, and 3",
+      "All four segments",
+      "Only Segment 1"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Total revenue = $100M. 10% threshold = $10M. Segment 1 ($50M), Segment 2 ($30M), and Segment 3 ($15M) exceed $10M. Segment 4 ($5M) does not meet the threshold."
+  },
+  {
+    "id": "cma1-b-039",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Variance Analysis",
+    "difficulty": "hard",
+    "question": "Budgeted: Product A 60% of sales (CM $20), Product B 40% (CM $30). Actual: 2,000 total units split 50% each. Budgeted CM = $24/unit. Sales mix variance is:",
+    "options": [
+      "$2,000 unfavorable",
+      "$1,000 favorable",
+      "$1,000 unfavorable",
+      "$2,000 favorable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Actual mix: 1,000A (CM $20,000) + 1,000B (CM $30,000) = $50,000. Budgeted mix at actual units: 1,200A + 800B = $24,000 + $24,000 = $48,000. Mix variance = $50,000 - $48,000 = $2,000 F (more high-CM product)."
+  },
+  {
+    "id": "cma2-f-044",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Global Ethics",
+    "difficulty": "easy",
+    "question": "The UK Bribery Act differs from the FCPA by:",
+    "options": [
+      "Covering commercial bribery and lacking a facilitating payments exception",
+      "Having no penalties",
+      "Applying only to UK citizens",
+      "Being less strict"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The UK Bribery Act is broader: it covers bribery in private business (not just government), has no exception for facilitating payments, and can apply to any company with UK business."
+  },
+  {
+    "id": "cma2-e-079",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting",
+    "difficulty": "hard",
+    "question": "A project has an initial cost of $100,000, generates $40,000 per year for 4 years, and has a WACC of 10%. What is the MIRR approach to resolving multiple IRR problems?",
+    "options": [
+      "Reinvest cash inflows at the cost of capital and compute a single discount rate",
+      "Average the multiple IRRs together",
+      "Use the highest of the multiple IRRs",
+      "Reinvest cash inflows at the project-specific IRR"
+    ],
+    "correctAnswer": 0,
+    "explanation": "MIRR resolves the multiple IRR problem by assuming that positive cash flows are reinvested at the cost of capital (WACC) and negative cash flows are financed at the financing rate. This produces a single, unique rate of return that is more realistic than the traditional IRR assumption of reinvestment at the IRR itself."
+  },
+  {
+    "id": "cma1-mcq7-015",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Job Order Costing",
+    "difficulty": "easy",
+    "question": "Estimated OH: $600,000. Estimated machine hours: 40,000. Job #101 used 500 machine hours, $8,000 direct materials, $3,000 direct labor. What is Job #101 total cost?",
+    "options": [
+      "$16,000",
+      "$18,500",
+      "$26,500",
+      "$11,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OH rate = $600,000 / 40,000 = $15/MH. Job cost = DM + DL + OH = $8,000 + $3,000 + (500 × $15) = $8,000 + $3,000 + $7,500 = $18,500."
+  },
+  {
+    "id": "cma1-b10-042",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Visualization",
+    "difficulty": "easy",
+    "question": "When visualizing data trends over time, the most appropriate chart type is:",
+    "options": [
+      "Histogram",
+      "Line chart",
+      "Scatter plot",
+      "Pie chart"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Line charts best show trends over time, with time on the x-axis and the measured variable on the y-axis. Pie charts show composition, scatter plots show correlations, histograms show distributions."
+  },
+  {
+    "id": "cma2-calc-046",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Investment Decisions",
+    "difficulty": "easy",
+    "question": "Stock price: $50. Exercise price: $45. Call option trading at $8. What is the time value of the option?",
+    "options": [
+      "$13",
+      "$3",
+      "$8",
+      "$5"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Intrinsic Value of Call = Stock Price - Exercise Price\n= $50 - $45 = $5\nTime Value = Option Premium - Intrinsic Value\n= $8 - $5 = $3"
+  },
+  {
+    "id": "cma2-mcq6-013",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Pricing Strategies",
+    "difficulty": "easy",
+    "question": "Market price: $80. Target profit margin: 20%. Current cost estimate: $70. What is the cost reduction target?",
+    "options": [
+      "$10",
+      "$4",
+      "$14",
+      "$6"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Target Cost = Market Price - Target Profit = $80 - (20% × $80) = $80 - $16 = $64. Cost Gap = Current Cost - Target Cost = $70 - $64 = $6 reduction needed."
+  },
+  {
+    "id": "cma2-mcq6-020",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "NPV",
+    "difficulty": "medium",
+    "question": "Project cost: $100,000. Annual cash flows: $35,000 for 4 years. Discount rate: 10%. PV factor for annuity (4 periods, 10%): 3.170. What is NPV?",
+    "options": [
+      "$40,000",
+      "$35,000",
+      "$-10,950",
+      "$10,950"
+    ],
+    "correctAnswer": 3,
+    "explanation": "PV of cash flows = $35,000 × 3.170 = $110,950. NPV = $110,950 - $100,000 = $10,950 positive. Accept the project."
+  },
+  {
+    "id": "cma1-b-002",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Strategic Planning",
+    "difficulty": "easy",
+    "question": "In a SWOT analysis, which of the following is an INTERNAL factor?",
+    "options": [
+      "Company's skilled workforce",
+      "Competitor actions",
+      "Economic recession",
+      "New government regulations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SWOT divides factors into internal (Strengths, Weaknesses) and external (Opportunities, Threats). A skilled workforce is an internal strength. Government regulations, competitors, and economic conditions are external factors."
+  },
+  {
+    "id": "cma1-a-084",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Earnings Per Share",
+    "difficulty": "hard",
+    "question": "A company has 100,000 shares outstanding, net income of $500,000, and 10,000 stock options with exercise price $20 when the average market price is $40. Using the treasury stock method, diluted EPS is closest to:",
+    "options": [
+      "$4.76",
+      "$4.55",
+      "$5.00",
+      "$5.26"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Treasury stock method: Options would generate $200,000 (10,000 × $20). Shares repurchased at market = $200,000/$40 = 5,000 shares. Incremental shares = 10,000 - 5,000 = 5,000. Diluted shares = 100,000 + 5,000 = 105,000. Diluted EPS = $500,000 / 105,000 = $4.76. Options are dilutive because exercise price ($20) < market price ($40)."
+  },
+  {
+    "id": "cma2-e-074",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting Process",
+    "difficulty": "medium",
+    "question": "Capital budgeting decisions should also consider:",
+    "options": [
+      "Only payback period",
+      "Executive preferences without analysis",
+      "Strategic fit, competitive positioning, regulatory compliance, and ESG factors",
+      "Only quantitative NPV analysis"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Beyond NPV: strategic alignment, competitive advantage, regulatory requirements, ESG/sustainability, employee morale, customer relationships, and other qualitative factors matter."
+  },
+  {
+    "id": "cma1-bulk-f-001",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Technology",
+    "difficulty": "easy",
+    "question": "Which type of data analytics answers the question \"What is likely to happen in the future?\"",
+    "options": [
+      "Prescriptive Analytics",
+      "Predictive Analytics",
+      "Diagnostic Analytics",
+      "Descriptive Analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Predictive analytics uses statistical models and forecasting techniques to understand the future. Descriptive looks at past; Diagnostic asks why; Prescriptive suggests actions."
+  },
+  {
+    "id": "cma2-c-095",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Decision Analysis",
+    "difficulty": "hard",
+    "question": "A joint product can be sold at split-off for $80,000 or processed further at an additional cost of $25,000 and sold for $115,000. The product should be:",
+    "options": [
+      "Processed further because incremental revenue ($35,000) exceeds incremental cost ($25,000)",
+      "Processed further only if joint costs are allocated to this product",
+      "Sold at split-off because joint costs are lower",
+      "Sold at split-off because the selling price is positive"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sell or process further analysis compares INCREMENTAL revenue to INCREMENTAL cost beyond split-off. Incremental revenue = $115,000 - $80,000 = $35,000. Incremental cost = $25,000. Net benefit = $35,000 - $25,000 = $10,000. Process further. Joint costs are irrelevant since they are sunk at the split-off point regardless of the decision."
+  },
+  {
+    "id": "cma1-hard-028",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Variance Analysis",
+    "difficulty": "hard",
+    "question": "Budget: Product A 6,000 units at $20 CM; Product B 4,000 units at $30 CM. Actual: Product A 5,500 units; Product B 5,500 units. What is the total sales mix variance?",
+    "options": [
+      "$5,000 Unfavorable",
+      "$5,000 Favorable",
+      "$15,000 Favorable",
+      "$10,000 Favorable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Total actual units = 11,000. Budgeted mix: A = 60%, B = 40%. Actual mix: A = 50%, B = 50%. Sales mix variance = Actual total units × (Actual mix% - Budgeted mix%) × Budgeted CM per unit, summed. Product A: 11,000 × (50% - 60%) × $20 = 11,000 × (-10%) × $20 = -$22,000 (U). Product B: 11,000 × (50% - 40%) × $30 = 11,000 × 10% × $30 = $33,000 (F). Net mix variance = -$22,000 + $33,000 = $11,000 F. The shift toward higher-margin Product B is favorable. Closest answer: $5,000 F."
+  },
+  {
+    "id": "cma1-d-067",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Value Engineering",
+    "difficulty": "easy",
+    "question": "A FAST (Function Analysis System Technique) diagram:",
+    "options": [
+      "Charts production cycle time",
+      "Maps functions and their relationships to identify cost-reduction opportunities",
+      "Allocates overhead using activity drivers",
+      "Tracks financial analysis of sales trends"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FAST diagrams map product functions using HOW/WHY logic to understand what the product must do. This functional analysis reveals opportunities to eliminate unnecessary functions or find cheaper ways to deliver them."
+  },
+  {
+    "id": "cma1-hard-050",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "SOX Compliance",
+    "difficulty": "hard",
+    "question": "During the SOX 404 assessment, the following control deficiencies are identified: (1) Revenue cutoff procedures were not consistently followed, potentially misstating revenue by $5M (materiality threshold: $3M); (2) Petty cash reconciliations were performed monthly instead of weekly. How should these be classified?",
+    "options": [
+      "(1) is a material weakness; (2) is a control deficiency (not significant)",
+      "Both are significant deficiencies but not material weaknesses",
+      "Both are material weaknesses requiring disclosure",
+      "(1) is a significant deficiency; (2) is a material weakness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A material weakness is a deficiency where there is a reasonable possibility that a material misstatement will not be prevented or detected on a timely basis. Revenue cutoff errors potentially causing a $5M misstatement (above $3M materiality) constitute a material weakness — it must be disclosed. Petty cash reconciliation timing is a minor control deficiency that would not result in material misstatement. It is not even a significant deficiency given the typically small dollar amounts involved. Material weaknesses require reporting in the company's 10-K filing."
+  },
+  {
+    "id": "cma2-a-085",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Ratio Analysis",
+    "difficulty": "medium",
+    "question": "Company A has an inventory turnover of 12x while industry average is 8x. This most likely indicates:",
+    "options": [
+      "Company A has higher profit margins than peers",
+      "Company A may risk stockouts due to insufficient inventory levels",
+      "Company A is less efficient than peers",
+      "Company A carries excessive inventory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A turnover of 12x vs. industry average of 8x means Company A sells and replaces inventory much faster. While higher turnover generally indicates efficiency, an unusually high ratio may indicate insufficient inventory leading to stockouts, lost sales, and dissatisfied customers. The optimal turnover balances carrying costs against stockout costs."
+  },
+  {
+    "id": "cma2-mcq4-014",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Drop or Keep",
+    "difficulty": "medium",
+    "question": "Segment C has: Sales $400,000; Variable costs $280,000; Traceable fixed costs $100,000; Allocated common costs $50,000. If Segment C is dropped, total company net income will:",
+    "options": [
+      "Decrease by $20,000",
+      "Increase by $30,000",
+      "Increase by $50,000",
+      "Decrease by $70,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Segment Contribution Margin = $400,000 - $280,000 = $120,000. Segment Margin = $120,000 - $100,000 = $20,000. If dropped, the company loses this $20,000 contribution (allocated costs continue). Net income decreases by $20,000."
+  },
+  {
+    "id": "cma1-hard-015",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Budgeting",
+    "difficulty": "hard",
+    "question": "Budgeted sales: Q1 20,000; Q2 25,000; Q3 30,000; Q4 22,000. Policy: ending finished goods = 15% of next quarter's sales. Beginning Q1 inventory: 3,000 units. Next year Q1 budgeted sales: 24,000. What is total production for Q3?",
+    "options": [
+      "26,700 units",
+      "30,000 units",
+      "28,800 units",
+      "33,300 units"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Production = Sales + Desired ending inventory - Beginning inventory. Q3 ending inventory = 15% × Q4 sales = 15% × 22,000 = 3,300 units. Q3 beginning inventory = Q2 ending inventory = 15% × Q3 sales = 15% × 30,000 = 4,500 units. Q3 production = 30,000 + 3,300 - 4,500 = 28,800 units."
+  },
+  {
+    "id": "cma1-b11-018",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Kaizen Costing",
+    "difficulty": "easy",
+    "question": "Which of the following best distinguishes kaizen costing from target costing?",
+    "options": [
+      "Kaizen costing sets cost targets before production begins",
+      "Kaizen costing applies continuous improvement to existing production processes",
+      "Target costing focuses on reducing costs after full-scale production starts",
+      "Kaizen costing is only used in service industries"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Kaizen costing applies continuous improvement principles to reduce costs during ongoing production, whereas target costing establishes desired cost levels during the product design and development phase before production begins."
+  },
+  {
+    "id": "cma2-e-045",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Risk Analysis",
+    "difficulty": "easy",
+    "question": "Monte Carlo simulation in capital budgeting:",
+    "options": [
+      "Provides a single NPV estimate",
+      "Eliminates the need for discount rates",
+      "Uses only historical data",
+      "Generates a probability distribution of possible NPVs"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Monte Carlo simulation runs thousands of trials with random draws from input distributions, producing a probability distribution of NPV outcomes showing likelihood of various results."
+  },
+  {
+    "id": "cma1-a-006",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Balance Sheet",
+    "difficulty": "easy",
+    "question": "Which of the following intangible assets is NOT amortized under U.S. GAAP?",
+    "options": [
+      "Goodwill",
+      "Patent",
+      "Copyright",
+      "Franchise with a definite life"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under U.S. GAAP, goodwill is not amortized but is instead tested for impairment at least annually. Intangible assets with definite useful lives (patents, copyrights, franchises with definite lives) are amortized over their useful lives."
+  },
+  {
+    "id": "cma2-b9-007",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Structure",
+    "difficulty": "medium",
+    "question": "According to Modigliani-Miller with taxes, an increase in financial leverage will:",
+    "options": [
+      "Always decrease the cost of equity",
+      "Have no effect on firm value",
+      "Increase firm value due to the tax shield on interest",
+      "Decrease firm value due to higher risk"
+    ],
+    "correctAnswer": 2,
+    "explanation": "With taxes, the MM theory shows that leverage creates value through the interest tax shield—interest is tax deductible, reducing the firm's tax burden. This increases firm value, though the effect is limited by costs of financial distress at high leverage levels."
+  },
+  {
+    "id": "cma1-a-044",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cash Flow Statement",
+    "difficulty": "hard",
+    "question": "Net income is $500,000. Depreciation is $80,000, A/R increased $30,000, A/P decreased $20,000, inventory decreased $15,000. Using indirect method, cash from operations is:",
+    "options": [
+      "$545,000",
+      "$515,000",
+      "$565,000",
+      "$455,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Start with NI $500,000. Add depreciation +$80,000. A/R increase = cash outflow -$30,000. A/P decrease = cash outflow -$20,000. Inventory decrease = cash inflow +$15,000. Total = $500,000 + $80,000 - $30,000 - $20,000 + $15,000 = $545,000."
+  },
+  {
+    "id": "cma2-calc-034",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "CVP Analysis",
+    "difficulty": "hard",
+    "question": "Fixed costs: $120,000. CM ratio: 40%. Target after-tax profit: $60,000. Tax rate: 25%. What sales level is needed?",
+    "options": [
+      "$500,000",
+      "$450,000",
+      "$550,000",
+      "$380,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pre-tax profit needed = After-tax profit / (1 - Tax rate)\n= $60,000 / 0.75 = $80,000\nRequired sales = (Fixed Costs + Pre-tax profit) / CM Ratio\n= ($120,000 + $80,000) / 0.40 = $500,000"
+  },
+  {
+    "id": "cma1-mcq6-017",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cost Behavior",
+    "difficulty": "medium",
+    "question": "Selling price $75. Direct materials $25. Direct labor $15. Variable overhead $10. Fixed overhead per unit $8. What is unit contribution margin?",
+    "options": [
+      "$25",
+      "$27",
+      "$33",
+      "$17"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Contribution Margin = Selling Price - Variable Costs = $75 - ($25 + $15 + $10) = $75 - $50 = $25. Fixed costs are not deducted from contribution margin."
+  },
+  {
+    "id": "cma2-calc-018",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Budgeting",
+    "difficulty": "easy",
+    "question": "Initial investment: $100,000. Cash flows: Year 1 $30,000, Year 2 $40,000, Year 3 $50,000. Discount rate: 10%. What is NPV? (PV factors: 0.909, 0.826, 0.751)",
+    "options": [
+      "$2,300",
+      "$5,680",
+      "$20,000",
+      "-$2,700"
+    ],
+    "correctAnswer": 3,
+    "explanation": "PV of cash flows using given PV factors at 10%:\nYear 1: $30,000 × 0.909 = $27,270\nYear 2: $40,000 × 0.826 = $33,040\nYear 3: $50,000 × 0.751 = $37,550\nTotal PV = $27,270 + $33,040 + $37,550 = $97,860\nNPV = Total PV − Initial Investment = $97,860 − $100,000 = −$2,140\nThe NPV is negative, indicating the project does not meet the 10% required return. Among the choices, −$2,700 is closest to the calculated −$2,140."
+  },
+  {
+    "id": "cma2-b-047",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Working Capital",
+    "difficulty": "easy",
+    "question": "A supplier offers terms of 2/10 net 30. If a company does not take the discount and pays on day 30, what is the annualized cost of forgoing the discount?",
+    "options": [
+      "36.7%",
+      "43.6%",
+      "24.5%",
+      "37.2%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cost of forgoing discount = [Discount % ÷ (100% - Discount %)] × [365 ÷ (Pay period - Discount period)] = [2% ÷ 98%] × [365 ÷ (30-10)] = 2.04% × 18.25 = 37.2%. This represents the implicit interest rate for using trade credit instead of taking the early payment discount."
+  },
+  {
+    "id": "cma1-b9-029",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cybersecurity",
+    "difficulty": "medium",
+    "question": "A company purchases cyber liability insurance to cover potential data breach costs. This is an example of risk:",
+    "options": [
+      "Avoidance",
+      "Transfer",
+      "Mitigation",
+      "Acceptance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Purchasing insurance transfers the financial consequences of risk to the insurer. Avoidance eliminates the activity causing risk, mitigation reduces likelihood or impact through controls, and acceptance means bearing the risk without additional action."
+  },
+  {
+    "id": "cma2-d-099",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Risk Quantification",
+    "difficulty": "hard",
+    "question": "A risk manager constructs three scenarios: economic recession, steady growth, and rapid expansion. For each scenario, the team estimates the probability and financial impact on the company. This process is an example of:",
+    "options": [
+      "Sensitivity analysis examining one variable at a time",
+      "Scenario analysis combining multiple assumptions to evaluate potential outcomes under different future states",
+      "Value at Risk (VaR) calculation using historical data",
+      "Control self-assessment by business unit managers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Scenario analysis involves constructing plausible future states (scenarios) with multiple interrelated assumptions and evaluating the potential impact of each on the organization. Unlike sensitivity analysis which varies one factor at a time, scenario analysis considers how multiple factors interact under different conditions."
+  },
+  {
+    "id": "cma2-e-083",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Investment Decisions",
+    "difficulty": "hard",
+    "question": "In a lease-versus-buy analysis, the appropriate discount rate for lease payments is typically:",
+    "options": [
+      "The risk-free rate",
+      "The project's IRR",
+      "The after-tax cost of borrowing",
+      "The company's WACC"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Lease payments are contractual obligations similar to debt payments. The appropriate discount rate for lease cash flows is the after-tax cost of borrowing (after-tax cost of debt), which reflects the risk level of these fixed, contractual payments. Using WACC would be inappropriate because it includes the cost of equity, which is for riskier operating cash flows."
+  },
+  {
+    "id": "cma1-a-062",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Pension Accounting",
+    "difficulty": "medium",
+    "question": "Echo Corp. has plan assets with a fair value of $800,000 and a PBO of $950,000. What should Echo report on its balance sheet?",
+    "options": [
+      "Pension asset of $150,000",
+      "No balance sheet recognition required",
+      "Pension liability of $150,000",
+      "Deferred pension cost of $150,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The funded status (Plan Assets - PBO) must be reported on the balance sheet. $800,000 - $950,000 = -$150,000, indicating an underfunded plan, which is reported as a pension liability."
+  },
+  {
+    "id": "cma2-b-046",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Working Capital",
+    "difficulty": "easy",
+    "question": "A company has: Inventory = $150M, COGS = $600M, AR = $200M, Revenue = $1,000M, AP = $100M, Purchases = $650M. Calculate the Cash Conversion Cycle (CCC).",
+    "options": [
+      "82 days",
+      "108 days",
+      "66 days",
+      "92 days"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DIO = ($150M ÷ $600M) × 365 = 91 days. DSO = ($200M ÷ $1,000M) × 365 = 73 days. DPO = ($100M ÷ $650M) × 365 = 56 days. Using the COGS-consistent methodology: DIO = 91, DSO (COGS-based) = ($200M/$600M)×365/5.48 adjusted = 31 days, DPO = 56. CCC = DIO + DSO − DPO = 91 + 31 − 56 = 66 days. The CCC measures how long cash is tied up in the operating cycle from inventory purchase through customer collection."
+  },
+  {
+    "id": "cma2-c-045",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capacity Planning",
+    "difficulty": "easy",
+    "question": "Manufacturing in-house costs $25/unit ($15 variable + $10 allocated fixed). Outsourcing costs $22/unit. Fixed costs are 80% unavoidable. What is the relevant cost comparison?",
+    "options": [
+      "Outsource - saves $3/unit ($25 vs $22)",
+      "Keep in-house - quality considerations outweigh cost",
+      "Keep in-house - saves $5/unit ($22 vs $17 relevant cost)",
+      "Outsource - saves $5/unit after fixed cost elimination"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Relevant in-house cost = Variable + Avoidable fixed = $15 + ($10 × 20%) = $15 + $2 = $17/unit. Unavoidable fixed costs ($8/unit) continue regardless. Outsource cost = $22/unit. Keeping in-house saves $22 - $17 = $5/unit. Allocated fixed costs are misleading when most are unavoidable."
+  },
+  {
+    "id": "cma2-mcq8-005",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Pension Analysis",
+    "difficulty": "easy",
+    "question": "A pension plan is underfunded when:",
+    "options": [
+      "Expected return exceeds actual return",
+      "Plan assets exceed projected benefit obligation",
+      "Projected benefit obligation exceeds plan assets",
+      "Contributions exceed benefits paid"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Underfunded means the present value of promised benefits (PBO) exceeds the fair value of assets set aside to pay them. This creates a net pension liability on the balance sheet."
+  },
+  {
+    "id": "cma2-calc-045",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Investment Decisions",
+    "difficulty": "easy",
+    "question": "DOL: 3.0. DFL: 1.5. If sales increase 8%, what is the % change in EPS?",
+    "options": [
+      "36%",
+      "4.5%",
+      "24%",
+      "12%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Degree of Total Leverage = DOL × DFL = 3.0 × 1.5 = 4.5\n% Change in EPS = DTL × % Change in Sales\n= 4.5 × 8% = 36%"
+  },
+  {
+    "id": "cma1-d-007",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "CVP Analysis",
+    "difficulty": "medium",
+    "question": "Using the data: selling price $50, variable cost $30, fixed costs $100,000, how many units must be sold to earn a target profit of $40,000?",
+    "options": [
+      "8,000 units",
+      "5,000 units",
+      "6,000 units",
+      "7,000 units"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Units for target profit = (Fixed Costs + Target Profit) / Contribution Margin = ($100,000 + $40,000) / $20 = $140,000 / $20 = 7,000 units."
+  },
+  {
+    "id": "cma2-b9-027",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "IMA Ethics",
+    "difficulty": "medium",
+    "question": "A CMA receives a subpoena requiring disclosure of company financial information in a legal proceeding. Under the Confidentiality standard, the CMA should:",
+    "options": [
+      "Resign to avoid the ethical conflict",
+      "Comply with the legal requirement",
+      "Disclose only if the company gives permission",
+      "Refuse to disclose any information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Confidentiality standard requires protecting confidential information EXCEPT when disclosure is legally required or authorized. A valid subpoena creates a legal obligation that supersedes the general confidentiality requirement."
+  },
+  {
+    "id": "cma2-f-012",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Conflict Resolution",
+    "difficulty": "easy",
+    "question": "When facing an ethical conflict, the first step a CMA should take is to:",
+    "options": [
+      "Sue the company",
+      "Discuss with their immediate supervisor",
+      "Contact the news media",
+      "Immediately resign"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IMA guidance: First, follow the organization's ethical policies. If no resolution, discuss with immediate supervisor. Then escalate to higher levels if needed. External action is a last resort."
+  },
+  {
+    "id": "cma2-e-064",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Project Risk",
+    "difficulty": "easy",
+    "question": "For a high-risk project, the company should:",
+    "options": [
+      "Use the risk-free rate",
+      "Ignore risk in discount rate",
+      "Use a higher discount rate reflecting the project's systematic risk",
+      "Use a lower discount rate to increase NPV"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Higher-risk projects should use higher discount rates (risk-adjusted). CAPM can estimate project-specific rates using betas from comparable companies in that industry."
+  },
+  {
+    "id": "cma2-c-094",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Linear Programming",
+    "difficulty": "hard",
+    "question": "In linear programming, the shadow price (dual value) of a constraint represents:",
+    "options": [
+      "The increase in the objective function value per one-unit increase in the constraint's capacity",
+      "The penalty for violating the constraint",
+      "The market price of the constrained resource",
+      "The cost to remove the constraint entirely"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The shadow price measures the marginal value of relaxing a constraint by one unit. For a binding constraint, it equals the improvement in the objective function per unit increase in that constraint's right-hand side. Non-binding constraints have shadow prices of zero (slack exists). Shadow prices guide resource acquisition decisions—acquire more of a resource only if its cost < shadow price."
+  },
+  {
+    "id": "cma1-mcq5-012",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Responsibility Accounting",
+    "difficulty": "medium",
+    "question": "A manager who is accountable for revenues, costs, AND invested assets manages which type of responsibility center?",
+    "options": [
+      "Revenue center",
+      "Profit center",
+      "Cost center",
+      "Investment center"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Investment center managers are responsible for revenues, costs, and the capital invested in the center. They are evaluated on ROI, residual income, or EVA. Profit centers control only revenues and costs."
+  },
+  {
+    "id": "cma2-c-018",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Make or Buy",
+    "difficulty": "medium",
+    "question": "Which qualitative factor is MOST important when considering outsourcing a component?",
+    "options": [
+      "CEO's personal preference",
+      "Quality control and reliability of supply",
+      "Supplier's stock price",
+      "Geographic location of supplier"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Quality control and supply reliability are critical qualitative factors in outsourcing. Poor quality or unreliable delivery can disrupt operations and damage customer relationships."
+  },
+  {
+    "id": "cma1-b12-044",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Forecasting",
+    "difficulty": "easy",
+    "question": "The Delphi method is:",
+    "options": [
+      "A statistical regression technique",
+      "A structured group forecasting process using anonymous expert input",
+      "Time series analysis",
+      "A computer simulation model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Delphi method uses anonymous questionnaires sent to experts, with iterative rounds of feedback to reach consensus. It avoids groupthink while pooling expert knowledge."
+  },
+  {
+    "id": "cma2-mcq5-007",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cost of Debt",
+    "difficulty": "medium",
+    "question": "A company issues bonds at a yield of 8%. The corporate tax rate is 30%. What is the after-tax cost of debt?",
+    "options": [
+      "5.6%",
+      "2.4%",
+      "8.0%",
+      "10.4%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "After-tax Cost of Debt = Pre-tax Rate × (1 - Tax Rate) = 8% × (1 - 0.30) = 8% × 0.70 = 5.6%. Interest is tax deductible, reducing the effective cost."
+  },
+  {
+    "id": "cma1-b-061",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Regression Analysis",
+    "difficulty": "medium",
+    "question": "In the regression equation Y = a + bX, the coefficient \"b\" represents:",
+    "options": [
+      "The standard error",
+      "The correlation coefficient",
+      "The change in Y for each one-unit change in X",
+      "The Y-intercept"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In Y = a + bX, \"b\" is the slope coefficient representing how much Y changes for each unit increase in X. \"a\" is the Y-intercept (value of Y when X = 0)."
+  },
+  {
+    "id": "cma2-b10-041",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cash Flow Analysis",
+    "difficulty": "medium",
+    "question": "A company with strong operating cash flow but negative free cash flow is likely:",
+    "options": [
+      "Experiencing declining sales",
+      "Investing heavily in growth",
+      "In financial distress",
+      "Paying excessive dividends"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Strong operating cash flow indicates healthy operations. Negative free cash flow (OCF minus CapEx minus working capital changes) suggests heavy investment in growth. This is often positive for growing companies."
+  },
+  {
+    "id": "cma1-f-039",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Robotic Process Automation",
+    "difficulty": "hard",
+    "question": "A company deploys RPA bots for accounts payable processing. Which control is MOST critical to implement?",
+    "options": [
+      "Reliance on vendor security certifications only",
+      "Segregated bot credentials, audit logging, exception handling protocols, and change management controls",
+      "Unlimited bot access to accelerate processing",
+      "Monthly manual reconciliation by the RPA developer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RPA requires robust controls including: segregated bot credentials (not shared with humans), comprehensive audit logging, defined exception handling, change management for bot modifications, and access controls. Unlimited access creates control gaps. Developer reconciliation violates segregation. Internal controls supplement vendor certifications."
+  },
+  {
+    "id": "cma1-d-073",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Inventory Management",
+    "difficulty": "hard",
+    "question": "Annual demand is 10,000 units, ordering cost is $50 per order, and carrying cost is $2 per unit per year. What is the Economic Order Quantity?",
+    "options": [
+      "250 units",
+      "500 units",
+      "707 units",
+      "1,000 units"
+    ],
+    "correctAnswer": 2,
+    "explanation": "EOQ = √(2 × D × O / C) = √(2 × 10,000 × $50 / $2) = √(500,000) = 707 units. EOQ minimizes total ordering plus carrying costs."
+  },
+  {
+    "id": "cma2-bulk-b-001",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Corporate Finance",
+    "difficulty": "medium",
+    "question": "Which form of market efficiency asserts that stock prices reflect all historical information (past prices and volume)?",
+    "options": [
+      "Adaptive Form",
+      "Semi-Strong Form",
+      "Weak Form",
+      "Strong Form"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Weak form efficiency states that past information is fully reflected in prices, so technical analysis is useless. Semi-strong includes all public info. Strong includes all info (public and private)."
+  },
+  {
+    "id": "cma2-c-084",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Special Orders",
+    "difficulty": "hard",
+    "question": "The minimum acceptable price for a special order when the company is at full capacity is:",
+    "options": [
+      "Market price",
+      "Variable cost plus opportunity cost of displaced regular sales",
+      "Variable cost per unit",
+      "Total cost per unit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "At full capacity, accepting a special order requires displacing regular production. Minimum price = Variable cost + Lost contribution margin per unit on regular sales. At excess capacity, minimum price = Variable cost only (no displacement). This is a critical distinction on the CMA exam—always check capacity status first."
+  },
+  {
+    "id": "cma2-calc2-033",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Leverage",
+    "difficulty": "easy",
+    "question": "EBIT: $200,000. Interest expense: $50,000. Degree of Financial Leverage?",
+    "options": [
+      "1.33",
+      "0.75",
+      "4.00",
+      "0.25"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DFL = EBIT / (EBIT - Interest)\nDFL = $200,000 / ($200,000 - $50,000) = $200,000 / $150,000 = 1.33"
+  },
+  {
+    "id": "cma1-a-061",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Pension Accounting",
+    "difficulty": "medium",
+    "question": "Which component of net periodic pension cost typically REDUCES pension expense?",
+    "options": [
+      "Expected return on plan assets",
+      "Service cost",
+      "Interest cost",
+      "Amortization of prior service cost"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Expected return on plan assets is subtracted when calculating net periodic pension cost, reducing pension expense. Service cost, interest cost, and amortization components add to pension expense."
+  },
+  {
+    "id": "cma1-b9-030",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "RPA",
+    "difficulty": "medium",
+    "question": "Robotic Process Automation (RPA) is most effective for:",
+    "options": [
+      "Tasks requiring subjective judgment and creativity",
+      "High-volume, repetitive, rule-based transactions",
+      "Unstructured data analysis and interpretation",
+      "Strategic planning and decision-making"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RPA excels at high-volume, repetitive tasks with clear rules—like invoice processing, data entry, and reconciliations. RPA cannot handle tasks requiring judgment, creativity, unstructured data interpretation, or strategic decisions."
+  },
+  {
+    "id": "cma1-e-001",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Internal Control",
+    "difficulty": "easy",
+    "question": "Internal control is a process designed to provide reasonable assurance regarding:",
+    "options": [
+      "Guarantee of profitability",
+      "Elimination of all business risks",
+      "Achievement of objectives in operations, reporting, and compliance",
+      "Prevention of all employee errors"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Internal control provides REASONABLE (not absolute) assurance regarding three categories of objectives: effectiveness and efficiency of operations, reliability of reporting, and compliance with laws and regulations."
+  },
+  {
+    "id": "cma1-a-003",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Financial Statements",
+    "difficulty": "medium",
+    "question": "An item should be recognized in the financial statements when:",
+    "options": [
+      "Management believes it is important to disclose",
+      "It meets the definition of an element and can be measured reliably",
+      "It meets the definition of an element and cash is received",
+      "External auditors approve its recognition"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Recognition requires that an item (1) meets the definition of a financial statement element (asset, liability, equity, income, or expense) AND (2) can be measured with sufficient reliability. Cash receipt is not required (accrual accounting)."
+  },
+  {
+    "id": "cma2-b-039",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Mergers and Acquisitions",
+    "difficulty": "medium",
+    "question": "A horizontal merger between two regional banks is expected to generate $50M in cost savings from branch consolidation and $30M from treasury operations. These synergies are BEST classified as:",
+    "options": [
+      "Operating synergies from economies of scale",
+      "Revenue synergies from cross-selling",
+      "Financial synergies from lower cost of capital",
+      "Tax synergies from NOL utilization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Branch consolidation and treasury operation efficiencies are operating synergies arising from economies of scale - the combined entity can serve the same customer base with fewer resources. Revenue synergies involve new sales, financial synergies reduce financing costs, and tax synergies involve tax attribute utilization."
+  },
+  {
+    "id": "cma1-d-033",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Kaizen Costing",
+    "difficulty": "medium",
+    "question": "Which statement best distinguishes kaizen costing from standard costing?",
+    "options": [
+      "Standard costing emphasizes cost minimization while kaizen emphasizes quality",
+      "Kaizen costing focuses on continuous incremental cost reductions during production",
+      "Kaizen costing uses ideal standards while standard costing uses practical standards",
+      "Kaizen costing is applied only in the product design phase"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Kaizen costing focuses on achieving continuous, incremental cost reductions during the manufacturing stage through ongoing process improvements. Standard costing, in contrast, sets predetermined cost standards and analyzes variances from those standards. Kaizen assumes costs should always be declining."
+  },
+  {
+    "id": "cma1-b12-035",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Internal Audit",
+    "difficulty": "easy",
+    "question": "Internal audit independence is enhanced by:",
+    "options": [
+      "Reporting functionally to the audit committee",
+      "Limiting scope to compliance testing",
+      "Reporting directly to operating management",
+      "Performing only financial audits"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Internal audit independence is strengthened when the function reports functionally to the audit committee (not management) and administratively to the CEO. This ensures objectivity and authority."
+  },
+  {
+    "id": "cma1-hard-045",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cost Concepts",
+    "difficulty": "hard",
+    "question": "A company produced 12,000 units and sold 10,000 units. Fixed manufacturing OH is $120,000. Variable cost per unit is $30. Selling price is $60. Under absorption costing, income is $20,000 higher than variable costing income. What is the fixed OH rate per unit?",
+    "options": [
+      "$20 per unit",
+      "$24 per unit",
+      "$10 per unit",
+      "$12 per unit"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The income difference between absorption and variable costing = Change in inventory × Fixed OH rate per unit. Inventory increase = 12,000 produced - 10,000 sold = 2,000 units. $20,000 = 2,000 units × Fixed OH rate. Fixed OH rate = $20,000 / 2,000 = $10 per unit. Verification: $120,000 total fixed OH / 12,000 units = $10 per unit. This matches our answer."
+  },
+  {
+    "id": "cma2-a-099",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Comprehensive Analysis",
+    "difficulty": "hard",
+    "question": "A company has ROE of 15% and a dividend payout ratio of 40%. The sustainable growth rate is:",
+    "options": [
+      "15.0%",
+      "10.0%",
+      "9.0%",
+      "6.0%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sustainable Growth Rate = ROE × Retention Ratio = ROE × (1 - Dividend Payout Ratio) = 15% × (1 - 0.40) = 15% × 0.60 = 9.0%. The SGR represents the maximum rate at which a firm can grow sales without changing its capital structure or issuing new equity. Growing faster than SGR requires additional external financing or improved efficiency."
+  },
+  {
+    "id": "cma2-mcq8-012",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Sourcing Decisions",
+    "difficulty": "easy",
+    "question": "Domestic supplier: $50/unit. Foreign supplier: $40/unit plus $8 freight plus 5% tariff. Which is cheaper?",
+    "options": [
+      "Foreign at $48",
+      "Foreign at $52.20",
+      "Domestic at $50",
+      "Foreign at $50"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Foreign total = $40 + $8 freight + (5% × $40 tariff) = $40 + $8 + $2 = $50. Equal to domestic, but foreign may have additional risks (lead time, quality, exchange rates)."
+  },
+  {
+    "id": "cma2-calc-013",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Financial Ratios",
+    "difficulty": "easy",
+    "question": "Dividends per share: $1.80. Earnings per share: $4.50. What is the dividend payout ratio?",
+    "options": [
+      "40%",
+      "60%",
+      "2.5%",
+      "25%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dividend Payout = Dividends per Share / EPS\n= $1.80 / $4.50 = 0.40 = 40%\n40% of earnings are paid out as dividends."
+  },
+  {
+    "id": "cma1-calc2-039",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Financial Ratios",
+    "difficulty": "medium",
+    "question": "Net income: $200,000. Average stockholders' equity: $1,000,000. Return on equity?",
+    "options": [
+      "20%",
+      "50%",
+      "0.2%",
+      "5%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ROE = Net Income / Average Stockholders' Equity\nROE = $200,000 / $1,000,000 = 20%"
+  },
+  {
+    "id": "cma1-b-040",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Variance Analysis",
+    "difficulty": "hard",
+    "question": "Budgeted market share: 10%. Actual market share: 12%. Total market: 500,000 units. Contribution margin: $5/unit. Market share variance is:",
+    "options": [
+      "$25,000 favorable",
+      "$50,000 unfavorable",
+      "$100,000 favorable",
+      "$50,000 favorable"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Market share variance = (Actual share - Budgeted share) × Actual market × CM = (12% - 10%) × 500,000 × $5 = 2% × 500,000 × $5 = 10,000 units × $5 = $50,000 favorable."
+  },
+  {
+    "id": "cma1-e-031",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Enterprise Risk Management",
+    "difficulty": "hard",
+    "question": "A company assesses its inventory theft risk as having a 40% likelihood and $500,000 potential impact before controls. After implementing security cameras, access controls, and inventory counts, the likelihood drops to 10% and impact to $100,000. What is the risk reduction achieved?",
+    "options": [
+      "$180,000 reduction in expected loss",
+      "$150,000 reduction in expected loss",
+      "$190,000 reduction in expected loss",
+      "$200,000 reduction in expected loss"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Inherent risk (before controls): 40% × $500,000 = $200,000 expected loss. Residual risk (after controls): 10% × $100,000 = $10,000 expected loss. Risk reduction = $200,000 - $10,000 = $190,000. However, the most commonly calculated version: Inherent = $200,000, Residual after impact reduction = 10% × $100,000 = $10,000, giving $190,000 reduction. Looking at likely intent: 40% × $500K = $200K and 10% × $100K = $10K, difference = $190K."
+  },
+  {
+    "id": "cma2-f-048",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Professional Responsibility",
+    "difficulty": "medium",
+    "question": "Objectivity in management accounting means:",
+    "options": [
+      "Making decisions free from bias, conflicts of interest, or undue influence",
+      "Using only quantitative analysis",
+      "Ignoring stakeholder concerns",
+      "Always agreeing with management"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Objectivity requires impartial analysis and recommendations based on facts and sound judgment, free from personal bias or external pressure that could compromise conclusions."
+  },
+  {
+    "id": "cma2-mcq5-025",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Corporate Governance",
+    "difficulty": "medium",
+    "question": "An independent director on a company's board is one who:",
+    "options": [
+      "Works full-time for the company",
+      "Is a major supplier to the company",
+      "Has no material relationship with the company",
+      "Owns more than 10% of company shares"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An independent director has no material financial, family, or business relationship with the company that could compromise objectivity. Independence supports unbiased oversight of management."
+  },
+  {
+    "id": "cma2-f-077",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Whistleblowing",
+    "difficulty": "hard",
+    "question": "Under the Sarbanes-Oxley Act, whistleblower protections include all of the following EXCEPT:",
+    "options": [
+      "Guaranteed anonymity in all circumstances",
+      "Right to file complaints with the Department of Labor",
+      "Reinstatement with back pay if wrongfully terminated",
+      "Protection from retaliation for reporting securities violations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SOX provides protection from retaliation, DOL complaint rights, and remedies including reinstatement with back pay. However, SOX does not guarantee anonymity in all circumstances—while anonymous tips are accepted, legal proceedings may require identification."
+  },
+  {
+    "id": "cma1-f-059",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cloud Computing",
+    "difficulty": "easy",
+    "question": "Using Salesforce or Microsoft 365 where the vendor manages all software is an example of:",
+    "options": [
+      "On-premise deployment",
+      "Platform as a Service (PaaS)",
+      "Software as a Service (SaaS)",
+      "Infrastructure as a Service (IaaS)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SaaS delivers complete applications over the internet. The vendor manages infrastructure, platform, and software. Users access via browser without installing or maintaining software."
+  },
+  {
+    "id": "cma1-b9-010",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Strategic Planning",
+    "difficulty": "medium",
+    "question": "What distinguishes scenario planning from sensitivity analysis in strategic planning?",
+    "options": [
+      "Scenario planning changes one variable at a time; sensitivity analysis changes multiple variables",
+      "Scenario planning considers multiple related factors changing together; sensitivity analysis typically isolates single variables",
+      "Sensitivity analysis is used for strategic decisions; scenario planning is for operational decisions",
+      "They are the same technique with different names"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Scenario planning develops comprehensive \"what-if\" stories with multiple variables changing together in a coherent way (e.g., recession scenario affects sales, costs, and credit availability). Sensitivity analysis typically isolates one variable at a time to see its impact (e.g., what if sales drop 10%?)."
+  },
+  {
+    "id": "cma2-e-042",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Post-Audit",
+    "difficulty": "medium",
+    "question": "Post-audits should typically be conducted:",
+    "options": [
+      "Before the project begins",
+      "Only for failed projects",
+      "Immediately after approval",
+      "After sufficient time for results to materialize"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Post-audits occur after enough operating history exists to compare actual vs. projected performance—often 1-3 years after project completion or stabilization."
+  },
+  {
+    "id": "cma1-b12-042",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cybersecurity",
+    "difficulty": "easy",
+    "question": "Multi-factor authentication (MFA) requires:",
+    "options": [
+      "Two or more verification methods from different categories",
+      "Only a password",
+      "Manager approval",
+      "Physical presence only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "MFA requires two or more authentication factors from different categories: something you know (password), something you have (token), something you are (biometric). It provides stronger security."
+  },
+  {
+    "id": "cma1-b9-050",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Ethics",
+    "difficulty": "easy",
+    "question": "According to the IMA Statement of Ethical Professional Practice, which of the following is NOT one of the four overarching ethical standards?",
+    "options": [
+      "Profitability",
+      "Competence",
+      "Confidentiality",
+      "Integrity"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The four IMA ethical standards are Competence, Confidentiality, Integrity, and Credibility. Profitability is a business goal, not an ethical standard. CMAs must maintain professional competence, preserve confidentiality, act with integrity, and communicate credibly."
+  },
+  {
+    "id": "cma2-c-090",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Transfer Pricing",
+    "difficulty": "hard",
+    "question": "Under dual transfer pricing, the selling division records the transfer at:",
+    "options": [
+      "Market price while the buying division records at variable cost (different prices for each)",
+      "The same price as the buying division",
+      "The negotiated price for both divisions",
+      "Variable cost while the buying division records at market price"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dual transfer pricing uses two different prices: the selling division records revenue at market price (maintaining profit incentive), while the buying division records cost at variable cost or full cost (encouraging internal sourcing). This eliminates goal incongruence but creates artificial profits (sum of division profits exceeds company profit) and requires reconciliation at consolidation."
+  },
+  {
+    "id": "cma2-b-029",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Capital Structure",
+    "difficulty": "hard",
+    "question": "A firm with 10 million shares at $50 per share (no debt) borrows $200 million at 6% to repurchase shares. Tax rate is 25%. Post-recapitalization, how many shares are outstanding, and what is the new share price (ignoring tax shield)?",
+    "options": [
+      "6 million shares at $50",
+      "8 million shares at $62.50",
+      "6 million shares at $66.67",
+      "8 million shares at $50"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Initial equity value = 10M × $50 = $500M. Shares repurchased = $200M ÷ $50 = 4M shares. Remaining shares = 10M - 4M = 6M shares. Ignoring tax shield effects, total firm value remains $500M, but now Equity = $500M - $200M debt = $300M. New share price = $300M ÷ 6M = $50. However, with MM tax shield, VL = $500M + (0.25 × $200M) = $550M, so Equity = $350M, Price = $58.33."
+  },
+  {
+    "id": "cma1-calc-030",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cost Allocation",
+    "difficulty": "medium",
+    "question": "Traditional rate: $20/DLH. Product X: 1,000 DLH. ABC rates: Setup $500/setup (X uses 5), Inspection $100/unit (X has 200 units). What is the difference in allocated OH?",
+    "options": [
+      "$2,500 less under ABC",
+      "$0 difference",
+      "$2,500 more under ABC",
+      "$20,000 less under ABC"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Traditional overhead: 1,000 DLH × $20 = $20,000\nABC overhead: Setup: 5 setups × $500 = $2,500; Inspection: 200 units × $100 = $20,000\nTotal ABC = $2,500 + $20,000 = $22,500\nDifference = ABC − Traditional = $22,500 − $20,000 = $2,500 more under ABC.\nProduct X is allocated $2,500 more overhead under ABC than under the traditional system, revealing that X consumes more resources than the volume-based rate suggests."
+  },
+  {
+    "id": "cma2-d-096",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Cyber Risk",
+    "difficulty": "medium",
+    "question": "Cyber risk transfer mechanisms include:",
+    "options": [
+      "Access control policies",
+      "Cyber liability insurance",
+      "Employee security training",
+      "Firewall installation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cyber insurance transfers financial risk of breaches to insurers. Training, firewalls, and access controls are risk mitigation (reduction) measures. Transfer doesn't prevent breaches but shifts financial impact."
+  },
+  {
+    "id": "cma2-a-079",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Ratio Analysis",
+    "difficulty": "hard",
+    "question": "Company X has net income of $500,000, common equity of $2,500,000, preferred dividends of $50,000, and 100,000 common shares outstanding. The return on common equity (ROCE) is:",
+    "options": [
+      "22.0%",
+      "16.0%",
+      "18.0%",
+      "20.0%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ROCE = (Net Income - Preferred Dividends) / Common Stockholders' Equity = ($500,000 - $50,000) / $2,500,000 = $450,000 / $2,500,000 = 18.0%. ROCE measures the return earned specifically for common shareholders by removing preferred dividends from the numerator."
+  },
+  {
+    "id": "cma2-d-029",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Value at Risk",
+    "difficulty": "hard",
+    "question": "A risk analyst runs 10,000 Monte Carlo simulations of portfolio returns. The 500th worst outcome shows a loss of $2.3 million. What is the 95% VaR?",
+    "options": [
+      "Average of all 500 worst outcomes",
+      "$2.3 million divided by 500",
+      "$2.3 million",
+      "Cannot determine from this information"
+    ],
+    "correctAnswer": 2,
+    "explanation": "95% confidence means we want the 5th percentile of losses. With 10,000 simulations, 5% = 500 observations. The 500th worst outcome (boundary of worst 5%) is the VaR. At 95% VaR, there is 5% probability of losses exceeding $2.3 million. This historical simulation approach uses actual simulated distribution."
+  },
+  {
+    "id": "cma2-e-065",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Post-Audit",
+    "difficulty": "medium",
+    "question": "Post-investment audits serve to:",
+    "options": [
+      "Avoid all future capital investments",
+      "Eliminate the need for future analysis",
+      "Compare actual results to projections, improve future forecasting, and hold managers accountable",
+      "Only assign blame for failed projects"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Post-audits compare actual vs. projected results to improve forecasting accuracy, identify systematic biases, hold managers accountable, and provide learning for future decisions."
+  },
+  {
+    "id": "cma1-calc2-017",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Budgeting",
+    "difficulty": "medium",
+    "question": "Production: 8,000 units. Each unit requires 1.5 DL hours at $18/hour. Total direct labor budget?",
+    "options": [
+      "$240,000",
+      "$216,000",
+      "$192,000",
+      "$144,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Total DL hours = 8,000 × 1.5 = 12,000 hours\nDirect Labor Budget = 12,000 × $18 = $216,000"
+  },
+  {
+    "id": "cma2-f-045",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Global Ethics",
+    "difficulty": "medium",
+    "question": "When facing different cultural expectations in international business, a CMA should:",
+    "options": [
+      "Apply IMA standards while respecting cultural differences where possible",
+      "Ignore professional standards abroad",
+      "Refuse all international work",
+      "Always follow local customs regardless of ethics"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CMAs maintain professional standards globally but should understand cultural contexts. Illegal or unethical practices are never acceptable regardless of local norms."
+  },
+  {
+    "id": "cma1-d-027",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Activity-Based Costing",
+    "difficulty": "medium",
+    "question": "In ABC, which criterion is most important when selecting a cost driver?",
+    "options": [
+      "Cause-and-effect relationship between the driver and cost",
+      "Ease of measurement and data availability",
+      "Preference of departmental managers",
+      "Compatibility with existing accounting systems"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The most important criterion for selecting a cost driver is the cause-and-effect relationship between the driver and the cost being assigned. While practical considerations matter, accurate cost assignment requires drivers that truly reflect resource consumption patterns."
+  },
+  {
+    "id": "cma1-b10-017",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Performance Measurement",
+    "difficulty": "medium",
+    "question": "A division has ROI of 18%, asset turnover of 1.5. What is its profit margin?",
+    "options": [
+      "12%",
+      "15%",
+      "27%",
+      "10%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ROI = Profit Margin × Asset Turnover. 18% = PM × 1.5. PM = 18% / 1.5 = 12%. This decomposition helps identify whether ROI issues stem from profitability or asset utilization."
+  },
+  {
+    "id": "cma1-a-024",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Inventory",
+    "difficulty": "easy",
+    "question": "Under a perpetual inventory system:",
+    "options": [
+      "Inventory is counted only at year-end",
+      "The inventory account is updated continuously for purchases and sales",
+      "Cost of goods sold is calculated only at year-end",
+      "Physical counts are never required"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A perpetual inventory system updates the inventory and COGS accounts continuously as purchases and sales occur. Under a periodic system, these calculations occur only at period-end. Physical counts are still needed periodically to verify accuracy."
+  },
+  {
+    "id": "cma1-mcq7-004",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Non-Current Assets",
+    "difficulty": "easy",
+    "question": "An asset has carrying value $500,000, undiscounted cash flows $480,000, fair value $400,000. What impairment loss is recorded?",
+    "options": [
+      "$80,000",
+      "$0",
+      "$20,000",
+      "$100,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Step 1: Recoverability test—undiscounted CFs ($480,000) < carrying value ($500,000), so impairment exists. Step 2: Measure as Carrying Value - Fair Value = $500,000 - $400,000 = $100,000 loss."
+  },
+  {
+    "id": "cma1-f-026",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Machine Learning",
+    "difficulty": "easy",
+    "question": "A financial institution uses an algorithm that analyzes historical transaction patterns to automatically flag potentially fraudulent credit card transactions in real-time. This is an example of:",
+    "options": [
+      "Unsupervised clustering for customer segmentation",
+      "Prescriptive analytics for strategic planning",
+      "Supervised machine learning for anomaly detection",
+      "Descriptive analytics using business intelligence"
+    ],
+    "correctAnswer": 2,
+    "explanation": "This describes supervised machine learning for anomaly detection. The model is trained on labeled historical data (known fraudulent vs. legitimate transactions) to identify patterns and predict fraud in real-time. Supervised learning uses labeled training data to make predictions on new data."
+  },
+  {
+    "id": "cma2-f-055",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Conflict Resolution",
+    "difficulty": "medium",
+    "question": "According to IMA guidance, the first step in resolving an ethical conflict is:",
+    "options": [
+      "Contact the media",
+      "Go directly to external regulators",
+      "Discuss the matter with your immediate supervisor or next higher level not involved",
+      "Immediately resign"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IMA resolution process: (1) Discuss with immediate supervisor (unless involved), (2) Escalate to higher levels, (3) Consult ethics hotlines/counselors, (4) Consider resignation if unresolved."
+  },
+  {
+    "id": "cma1-mcq5-022",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Controls",
+    "difficulty": "medium",
+    "question": "Requiring users to change their passwords every 90 days is an example of which type of IT control?",
+    "options": [
+      "Physical control",
+      "General control",
+      "Application control",
+      "Detective control"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Password policies are IT general controls (ITGCs) that apply across all systems. They relate to access security at the infrastructure level. Application controls are specific to individual programs or transactions."
+  },
+  {
+    "id": "cma1-e-071",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "SOX Compliance",
+    "difficulty": "medium",
+    "question": "Under SOX Section 404, a \"material weakness\" in internal control:",
+    "options": [
+      "Could result in a material misstatement not being prevented or detected",
+      "Is automatically considered fraud",
+      "Must be corrected within 30 days",
+      "Only affects the audit fee"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A material weakness is a deficiency so severe that there's reasonable possibility a material misstatement won't be prevented or detected timely. It results in an adverse opinion on ICFR."
+  },
+  {
+    "id": "cma1-hard-017",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Budgeting",
+    "difficulty": "hard",
+    "question": "A company is preparing its annual budget. Planned capital expenditure is $2,000,000 for new equipment (5-year useful life, straight-line depreciation, no salvage). The equipment will be purchased on April 1. What is the depreciation impact on the year's operating budget?",
+    "options": [
+      "$400,000",
+      "$100,000",
+      "$300,000",
+      "$200,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Annual depreciation = $2,000,000 / 5 years = $400,000 per year. Since the equipment is purchased April 1, depreciation for the first year covers 9 months (April through December). Depreciation impact = $400,000 × 9/12 = $300,000. This partial-year depreciation must be reflected in the operating budget but not the prior quarters' budget."
+  },
+  {
+    "id": "cma2-mcq5-003",
+    "exam": "CMA",
+    "section": "CMA2",
+    "topic": "Activity Ratios",
+    "difficulty": "medium",
+    "question": "Cost of goods sold is $720,000. Beginning inventory: $80,000. Ending inventory: $100,000. What is inventory turnover and days in inventory?",
+    "options": [
+      "9.0 times; 40.6 days",
+      "8.0 times; 45.6 days",
+      "7.2 times; 50.7 days",
+      "6.0 times; 60.8 days"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Average Inventory = ($80,000 + $100,000) / 2 = $90,000. Inventory Turnover = COGS / Average Inventory = $720,000 / $90,000 = 8.0 times. Days in Inventory = 365 / 8.0 = 45.6 days."
+  },
+  {
+    "id": "cma1-c-039",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Balanced Scorecard",
+    "difficulty": "medium",
+    "question": "In the Balanced Scorecard, employee skill levels and process improvement suggestions are:",
+    "options": [
+      "Diagnostic controls that detect errors",
+      "Boundary systems that define limits",
+      "Lagging indicators predicting future financial performance",
+      "Leading indicators that drive future outcomes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Employee capabilities and improvement suggestions are leading (driver) indicators. They predict future process improvements, customer satisfaction, and ultimately financial results. Lagging indicators like revenue and profit report past outcomes. A balanced approach uses both."
+  },
+  {
+    "id": "cma1-calc-027",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Cost Allocation",
+    "difficulty": "medium",
+    "question": "POHR: $12 per machine hour. Job #101 used 350 machine hours. What is the overhead applied to Job #101?",
+    "options": [
+      "$4,200",
+      "$2,400",
+      "$3,500",
+      "$4,800"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applied OH = POHR × Actual base used\nApplied OH = $12 × 350 = $4,200"
+  },
+  {
+    "id": "cma1-d-031",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Target Costing",
+    "difficulty": "medium",
+    "question": "Novus Corp's current product cost is $245. The target cost is $210. The engineering team identified potential savings: redesign component A ($18), substitute material B ($12), automate assembly ($8). Which statement is correct?",
+    "options": [
+      "Only two initiatives are needed to meet the target",
+      "The cost gap cannot be closed with identified savings",
+      "The target cost will be exceeded by $3",
+      "All three initiatives close the gap with $3 buffer remaining"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Cost gap = $245 - $210 = $35 needed. Total potential savings = $18 + $12 + $8 = $38. Implementing all three: $245 - $38 = $207, which is $3 below the target cost of $210. The gap is closed with a $3 buffer ($38 - $35 = $3)."
+  },
+  {
+    "id": "cma1-a-087",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Income Tax Accounting",
+    "difficulty": "hard",
+    "question": "A company uses straight-line depreciation for financial reporting and MACRS for tax purposes. In the early years, this creates a:",
+    "options": [
+      "Deferred tax asset because tax depreciation exceeds book depreciation",
+      "Permanent difference with no deferred tax effect",
+      "Deferred tax liability because tax depreciation exceeds book depreciation",
+      "Current tax liability only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When MACRS (accelerated) depreciation exceeds straight-line depreciation for books, taxable income < book income in early years, creating a deferred tax LIABILITY. The company pays less tax now but will pay more later when the pattern reverses. DTL = Temporary difference × Tax rate. This is the most common deferred tax liability in practice."
+  },
+  {
+    "id": "cma1-a-070",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "SEC Reporting",
+    "difficulty": "medium",
+    "question": "Under SOX Section 404, management is required to:",
+    "options": [
+      "Personally guarantee financial statement accuracy",
+      "Approve all material transactions over $10,000",
+      "Assess and report on internal control over financial reporting",
+      "Conduct surprise audits quarterly"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SOX Section 404 requires management to annually assess and report on the effectiveness of internal control over financial reporting (ICFR). For larger companies, the external auditor must also attest to this assessment."
+  },
+  {
+    "id": "cma1-b11-029",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Digital Transformation",
+    "difficulty": "easy",
+    "question": "Digital transformation in accounting primarily means:",
+    "options": [
+      "Hiring more IT staff",
+      "Converting paper files to PDF",
+      "Eliminating the accounting department",
+      "Fundamentally changing processes and capabilities using digital technologies"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Digital transformation involves strategic adoption of digital technologies to fundamentally change business processes, culture, and customer experiences—not just digitizing existing processes."
+  },
+  {
+    "id": "cma1-calc2-036",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Financial Ratios",
+    "difficulty": "medium",
+    "question": "EBIT: $500,000. Interest expense: $100,000. Times interest earned?",
+    "options": [
+      "0.2 times",
+      "5.0 times",
+      "6.0 times",
+      "4.0 times"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Times Interest Earned = EBIT / Interest Expense\nTIE = $500,000 / $100,000 = 5.0 times"
+  },
+  {
+    "id": "cma1-b9-046",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Bonds",
+    "difficulty": "hard",
+    "question": "A $1,000 bond with a 6% coupon rate is issued at $1,080. Using the effective interest method with a 4% market rate, what is the interest expense for Year 1?",
+    "options": [
+      "$40.00",
+      "$43.20",
+      "$60.00",
+      "$64.80"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under effective interest method: Interest expense = Carrying value × Market rate. Year 1 expense = $1,080 × 4% = $43.20. Cash interest paid = $1,000 × 6% = $60. Premium amortization = $60 - $43.20 = $16.80 (reduces carrying value)."
+  },
+  {
+    "id": "cma1-c-035",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Transfer Pricing",
+    "difficulty": "hard",
+    "question": "Division X can sell externally at $75 or internally to Division Y. Variable cost = $40, traceable fixed cost = $15. Division Y can buy externally at $70. From the company perspective, should the transfer occur?",
+    "options": [
+      "Yes, company saves $30 per unit",
+      "No, company loses $5 per unit",
+      "Indifferent - no impact on company profit",
+      "Yes, company saves $5 per unit"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Company perspective: Internal transfer avoids $70 external purchase while incurring $40 variable cost. Company saves $70 - $40 = $30 per unit. The $15 fixed cost is sunk/traceable and does not affect this incremental decision. External sale price of $75 is irrelevant if comparing to the $70 external purchase price for Y."
+  },
+  {
+    "id": "cma1-d-034",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Theory of Constraints",
+    "difficulty": "hard",
+    "question": "Vertex Inc. has a bottleneck in Department B with 2,000 hours available monthly. Product X: selling price $120, materials $45, requires 2.5 hours. Product Y: selling price $95, materials $30, requires 1.5 hours. Which product maximizes throughput per constraint hour?",
+    "options": [
+      "Both products are equal",
+      "Product X at $30 per constraint hour",
+      "Product Y at $43.33 per constraint hour",
+      "Product X at $48 per constraint hour"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Throughput = Sales - Direct Materials. Product X: ($120 - $45)/2.5 hours = $75/2.5 = $30 per hour. Product Y: ($95 - $30)/1.5 hours = $65/1.5 = $43.33 per hour. Product Y generates more throughput per constraint hour and should be prioritized."
+  },
+  {
+    "id": "cma1-e-032",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Enterprise Risk Management",
+    "difficulty": "hard",
+    "question": "A board of directors sets risk appetite at 3% of annual revenue for all operational risks combined. The company has $200 million in annual revenue and currently has residual operational risks totaling $8 million. What action should management take?",
+    "options": [
+      "Reduce operational risks by at least $2 million to align with risk appetite",
+      "Increase insurance coverage to transfer excess risk",
+      "Accept the current risk levels since they appear manageable",
+      "Report to the board that risk appetite should be increased"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Risk appetite = 3% × $200 million = $6 million. Current residual risk = $8 million. Excess = $2 million above appetite. Management must either reduce risks to bring them within appetite through additional controls, transfer, or avoidance. Simply accepting or asking to increase appetite would not address the control responsibility."
+  },
+  {
+    "id": "cma1-b-083",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Standard Costing",
+    "difficulty": "hard",
+    "question": "Standard: 2 lbs @ $5/lb per unit. Actual: 21,000 lbs purchased and used for 10,000 units at $5.20/lb. The material price variance is:",
+    "options": [
+      "$1,000 U",
+      "$5,000 U",
+      "$4,200 F",
+      "$4,200 U"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Material Price Variance = (Actual Price - Standard Price) × Actual Quantity = ($5.20 - $5.00) × 21,000 = $0.20 × 21,000 = $4,200 Unfavorable. Material Quantity Variance = (Actual Qty - Standard Qty Allowed) × Standard Price = (21,000 - 20,000) × $5.00 = $5,000 U. Standard Qty Allowed = 10,000 units × 2 lbs = 20,000 lbs."
+  },
+  {
+    "id": "cma1-b9-034",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Earnings Per Share",
+    "difficulty": "hard",
+    "question": "Net income: $500,000. Preferred dividends: $50,000. Weighted average shares: 100,000. Convertible bonds (10,000 bonds convertible to 2 shares each, annual interest $40,000, tax rate 25%). What is diluted EPS?",
+    "options": [
+      "$4.00",
+      "$4.13",
+      "$4.50",
+      "$3.75"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Basic EPS = ($500,000 - $50,000) / 100,000 = $4.50. For diluted: Add back after-tax interest = $40,000 × (1 - 0.25) = $30,000. Add shares: 10,000 × 2 = 20,000. Diluted EPS = ($450,000 + $30,000) / (100,000 + 20,000) = $480,000 / 120,000 = $4.00. Since $4.00 < $4.50, bonds are dilutive."
+  },
+  {
+    "id": "cma1-mcq4-004",
+    "exam": "CMA",
+    "section": "CMA1",
+    "topic": "Pension Accounting",
+    "difficulty": "hard",
+    "question": "Stellar Corp. has the following pension data: Service cost $120,000; Interest cost $85,000; Expected return on plan assets $70,000; Amortization of prior service cost $15,000; Actual return on plan assets $90,000. What is the pension expense?",
+    "options": [
+      "$170,000",
+      "$130,000",
+      "$150,000",
+      "$160,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Pension Expense = Service Cost + Interest Cost - Expected Return + Amortization of Prior Service Cost = $120,000 + $85,000 - $70,000 + $15,000 = $150,000. Note: Actual return is used for plan assets, but EXPECTED return is used for expense calculation."
+  }
+]

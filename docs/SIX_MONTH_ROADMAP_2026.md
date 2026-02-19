@@ -272,7 +272,7 @@ The following systems were built and deployed on launch day:
 |------|----------|-----------|-------------|
 | CISA question references | P0 | 8h | ✅ DONE | 1,411 references added citing CISA Review Manual chapters |
 | CISA distractor improvement | P1 | 6h | ✅ DONE | 26 absolute-language fixes (always→typically, never→rarely) |
-| CPA FAR distractor upgrade | P1 | 6h | Improve weak distractors in FAR questions (currently plausible but not tricky enough) |
+| CPA FAR distractor upgrade | P1 | 6h | ⚠️ Started | 12 absolute language fixes committed. 338 remaining issues (run `node scripts/validate-questions.cjs --course cpa`) |
 | CFP question expansion | P1 | 8h | Generate 500+ additional CFP questions (currently only 850 vs 4000+ for CPA/EA) |
 | Question validation script | P2 | 2h | ✅ DONE | Enhanced `validate-questions.cjs`: reference checks, absolute language detection, duplicate options |
 

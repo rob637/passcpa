@@ -748,6 +748,7 @@ const AdminCMS: React.FC = () => {
     annualMRR: number;
     totalMRR: number;
     arrProjection: number; // Annual run rate
+    arpu: number; // Average Revenue Per User
     subscriberCount: number;
     byPlan: { monthly: number; annual: number };
     byCourse: Record<string, { count: number; revenue: number }>;
@@ -2067,13 +2068,16 @@ const AdminCMS: React.FC = () => {
     });
 
     const totalMRR = monthlyMRR + annualMRR;
+    const subscriberCount = monthly + annual;
+    const arpu = subscriberCount > 0 ? totalMRR / subscriberCount : 0;
 
     setRevenueMetrics({
       monthlyMRR,
       annualMRR,
       totalMRR,
       arrProjection: totalMRR * 12,
-      subscriberCount: monthly + annual,
+      arpu,
+      subscriberCount,
       byPlan: { monthly, annual },
       byCourse,
       founderCount,
@@ -3717,7 +3721,7 @@ const AdminCMS: React.FC = () => {
                         </span>
                       )}
                     </h4>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                           ${revenueMetrics.totalMRR.toFixed(0)}
@@ -3729,6 +3733,12 @@ const AdminCMS: React.FC = () => {
                           ${revenueMetrics.arrProjection.toFixed(0)}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Annual Run Rate (ARR)</div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
+                          ${revenueMetrics.arpu.toFixed(2)}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">ARPU (Avg Rev/User)</div>
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="text-2xl font-bold text-purple-600">

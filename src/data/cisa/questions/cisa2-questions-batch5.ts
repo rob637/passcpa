@@ -23,6 +23,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'COBIT and similar frameworks help align IT objectives with business goals while effectively managing IT-related risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Frameworks'
   },
@@ -42,6 +43,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Governance involves directing, evaluating, and monitoring while management involves planning, building, running, and monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Governance vs Management'
   },
@@ -61,6 +63,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Portfolio management ensures IT resources are allocated to initiatives that align with and deliver strategic business value.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Portfolio Management'
   },
@@ -80,6 +83,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT value is measured by comparing realized benefits to expected business outcomes, not just costs or project completion.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Value Delivery'
   },
@@ -99,6 +103,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'EA provides a holistic view aligning business processes, information systems, and technology with business strategy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Enterprise Architecture'
   },
@@ -118,6 +123,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT policies should be reviewed and updated regularly to reflect organizational, regulatory, and technology changes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'IT Policies'
   },
@@ -137,6 +143,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Technology obsolescence is addressed through lifecycle management, including monitoring, planning, and budgeting for replacements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Obsolescence'
   },
@@ -156,6 +163,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Managing shadow IT requires discovery of unauthorized tools, assessing risks, and responding based on risk and policy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Shadow IT Management'
   },
@@ -175,6 +183,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Steering committee effectiveness requires appropriate business stakeholder representation and decision-making authority.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Steering Committee'
   },
@@ -194,6 +203,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Variance analysis identifies deviations from budget early, enabling timely corrective action and management oversight.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Budget Management'
   },
@@ -213,6 +223,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'TCO includes all costs throughout the asset lifecycle: acquisition, implementation, operation, support, and disposal.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'TCO'
   },
@@ -232,6 +243,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk appetite is the amount and type of risk the organization is willing to accept in pursuit of its objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Risk Appetite'
   },
@@ -270,6 +282,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Risk heat maps visually display risk likelihood and impact, supporting prioritization and communication.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Risk Visualization'
   },
@@ -289,6 +302,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Emerging technology risks should be assessed before adoption to inform the adoption decision and mitigation planning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Emerging Technology'
   },
@@ -308,6 +322,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT HR management encompasses recruiting, training, performance management, retention strategies, and succession planning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'HR Management'
   },
@@ -327,6 +342,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Key person risk is mitigated through cross-training, documentation, knowledge sharing, and succession planning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Key Person Risk'
   },
@@ -346,6 +362,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Skills gap analysis identifies differences between current competencies and those required to meet strategic objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Skills Gap'
   },
@@ -365,6 +382,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Vendor management should include all vendors with scope and rigor based on their risk, criticality, and spend.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Vendor Program'
   },
@@ -384,6 +402,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Performance metrics should be defined in contracts (SLAs, KPIs) with regular measurement and review.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Performance Metrics'
   },
@@ -422,6 +441,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT contracts should address SLAs, security requirements, audit rights, data protection, and termination provisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Contract Terms'
   },
@@ -441,6 +461,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Right to audit clauses enable the organization to verify vendor controls, compliance, and contractual performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Audit Rights'
   },
@@ -460,6 +481,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'The shared responsibility model defines which security responsibilities belong to the cloud provider versus the customer.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Cloud Governance',
     subtopic: 'Shared Responsibility'
   },
@@ -479,6 +501,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data residency requirements specify where data can be stored and processed, affecting cloud and geographic decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Data Governance',
     subtopic: 'Data Residency'
   },
@@ -498,6 +521,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Compliance management requires continuous monitoring, evidence collection, and response to compliance requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Compliance Management'
   },
@@ -517,6 +541,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Regulatory change management ensures timely identification, impact assessment, and implementation of new requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Regulatory Change'
   },
@@ -536,6 +561,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Maturity assessments identify current governance state, gaps, and opportunities for improvement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Maturity Assessment'
   },
@@ -555,6 +581,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT metrics should align with business objectives and address the information needs of various stakeholders.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'IT Metrics'
   },

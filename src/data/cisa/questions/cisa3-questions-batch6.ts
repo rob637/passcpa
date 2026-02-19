@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Phase gates ensure proper review, approval, and quality verification before proceeding.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'SDLC',
     subtopic: 'Phase Gates'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'RTM traces requirements through design, implementation, and testing for completeness verification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Requirements',
     subtopic: 'Traceability'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Prototyping enables early visualization and user feedback to refine requirements before full development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Approaches',
     subtopic: 'Prototyping'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'POC validates technical feasibility while prototypes focus on user interface and experience.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Approaches',
     subtopic: 'POC'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'User stories follow "As a [role], I want [functionality] so that [benefit]" format.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Agile',
     subtopic: 'User Stories'
   },
@@ -118,6 +123,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DoD defines consistent quality criteria that must be met before work is considered complete.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Agile',
     subtopic: 'Definition of Done'
   },
@@ -137,6 +143,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Spikes are time-boxed research activities to reduce technical uncertainty before committing to implementation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Agile',
     subtopic: 'Spikes'
   },
@@ -156,6 +163,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Branching strategies enable parallel development while controlling how changes are integrated.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Version Control',
     subtopic: 'Branching'
   },
@@ -175,6 +183,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Trunk-based development emphasizes frequent integration to main branch with short-lived feature branches.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Version Control',
     subtopic: 'Trunk-Based'
   },
@@ -194,6 +203,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SemVer uses Major.Minor.Patch where major indicates breaking changes, minor new features, patch bug fixes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Release Management',
     subtopic: 'Semantic Versioning'
   },
@@ -213,6 +223,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Validation should occur on both sides with server-side validation as authoritative since client-side can be bypassed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'Input Validation'
   },
@@ -232,6 +243,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Output encoding prevents injection by ensuring user-provided data is treated as data, not executable code.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'Output Encoding'
   },
@@ -251,6 +263,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Parameterized queries prevent SQL injection by treating user input as data, never as executable SQL.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'SQL Injection Prevention'
   },
@@ -270,6 +283,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Error handling should avoid exposing sensitive information like stack traces or database details to users.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'Error Handling'
   },
@@ -289,6 +303,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Session management requires secure generation, appropriate timeout, and proper invalidation on logout.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'Session Management'
   },
@@ -308,6 +323,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'CSRF prevention requires anti-CSRF tokens validating request origin and SameSite cookie attributes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'CSRF'
   },
@@ -327,6 +343,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Dependency scanning identifies known vulnerabilities in third-party libraries and components.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Secure Development',
     subtopic: 'Dependency Scanning'
   },
@@ -346,6 +363,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'License scanning ensures open source component usage complies with license terms and restrictions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Composition',
     subtopic: 'License Compliance'
   },
@@ -365,6 +383,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IaC scanning identifies security misconfigurations in infrastructure code before deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevSecOps',
     subtopic: 'IaC Security'
   },
@@ -384,6 +403,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Container scanning should check for vulnerabilities, malware, secrets, and policy compliance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevSecOps',
     subtopic: 'Container Security'
   },
@@ -403,6 +423,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Image signing enables verification of image integrity and authenticity before deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevSecOps',
     subtopic: 'Image Signing'
   },
@@ -422,6 +443,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Security champions promote security awareness and practices within development teams as local advocates.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevSecOps',
     subtopic: 'Security Champions'
   },
@@ -441,6 +463,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Smoke testing verifies basic functionality works before proceeding with more extensive testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Smoke Testing'
   },
@@ -460,6 +483,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Regression testing verifies that changes have not broken existing functionality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Regression'
   },
@@ -479,6 +503,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Test environments should be representative of production with appropriate data protection controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Test Environment'
   },
@@ -498,6 +523,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Go/No-Go decisions should consider test results, operational readiness, risks, and rollback plans.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Release Management',
     subtopic: 'Go/No-Go'
   },
@@ -517,6 +543,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Transition requires knowledge transfer, documentation, operational procedures, and support readiness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Support Transition'
   },
@@ -536,6 +563,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Hypercare provides enhanced support and monitoring after deployment for early issue detection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Hypercare'
   },

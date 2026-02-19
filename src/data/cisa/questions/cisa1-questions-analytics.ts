@@ -26,6 +26,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'GAS allows auditors to analyze entire populations of data rather than relying on samples, significantly improving coverage and risk detection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'GAS'
   },
@@ -45,6 +46,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The test data method processes fictitious transactions through the production system to verify that application controls function as intended.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Test Data'
   },
@@ -64,6 +66,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ITF creates a fictional entity (like a dummy department) within the live system to process test transactions alongside real production data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'ITF'
   },
@@ -102,6 +105,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Embedded audit modules are built into production systems and provide continuous, real-time monitoring and data capture for audit purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Embedded Modules'
   },
@@ -121,6 +125,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ITF processes test data in the live production environment, creating risk of affecting production reports or data if not carefully controlled and reversed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'ITF Risks'
   },
@@ -163,6 +168,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Gap analysis identifies missing numbers in sequences such as check numbers, invoice IDs, or transaction records that may indicate fraud or errors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Gap Analysis'
   },
@@ -175,13 +181,14 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     skillLevel: 'Analysis',
     question: 'The PRIMARY difference between continuous auditing and continuous monitoring is:',
     options: [
-      'Continuous auditing is always real-time',
+      'Continuous auditing is typically real-time',
       'Continuous monitoring uses more advanced tools',
       'There is no difference',
       'Continuous auditing is performed by internal audit for assurance; continuous monitoring is management\'s responsibility',
     ],
     correctAnswer: 3,
     explanation: 'Continuous auditing provides independent assurance (internal audit), while continuous monitoring is operational oversight performed by management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Continuous Auditing'
   },
@@ -201,6 +208,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Predictive analytics forecasts future events. Descriptive shows what happened, diagnostic explains why, and prescriptive recommends actions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Analytics Maturity'
   },
@@ -220,6 +228,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Effective analytics starts with clear objectives - what risks are being addressed and what questions need answers. Tool selection follows.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Analytics Implementation'
   },
@@ -239,6 +248,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Stratification groups data into ranges (e.g., transaction amounts by size) to analyze distribution patterns and identify unusual concentrations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Stratification'
   },
@@ -258,6 +268,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'An unusually high percentage of round-dollar payments may indicate fabricated invoices since legitimate invoices typically have irregular amounts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Fraud Indicators'
   },
@@ -277,6 +288,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Three-way matching compares purchase orders to receiving documents to vendor invoices to detect pricing errors or unauthorized purchases.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Matching Analytics'
   },
@@ -296,6 +308,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Visualization transforms complex data into understandable formats, enabling auditors to communicate findings effectively to stakeholders.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Analytics',
     subtopic: 'Visualization'
   }

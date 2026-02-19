@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Understanding business context and IT strategy is foundational to designing an effective audit approach.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Context Understanding'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Compensating controls provide alternative risk reduction when primary controls cannot be fully implemented.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Compensating Controls'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Detective controls identify issues that have already occurred, enabling timely response.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Control Types'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'CSA supplements internal audit by engaging management in evaluating their own control environment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'CSA'
   },
@@ -99,6 +103,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Evaluate third-party reports for scope coverage, timing, and relevance to your specific risk concerns.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Third-Party Reports'
   },
@@ -118,6 +123,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Bridge letters from service organizations cover the period between SOC report date and current date.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Bridge Letters'
   },
@@ -137,6 +143,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Confirmations provide high-quality evidence through independent verification from external parties.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Confirmations'
   },
@@ -156,6 +163,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Audit trails should provide complete history including who performed actions, what was done, when, and from where.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Audit Trails'
   },
@@ -175,6 +183,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT governance audits should evaluate alignment between IT objectives and business strategy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance Audit',
     subtopic: 'Governance Assessment'
   },
@@ -194,6 +203,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Cloud audits require understanding shared responsibility models and leveraging available third-party assurance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Cloud Audit',
     subtopic: 'Cloud Approach'
   },
@@ -213,6 +223,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Project audits should cover governance, methodology adherence, scope control, and benefits realization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Project Audit',
     subtopic: 'Project Management'
   },
@@ -232,6 +243,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Auditors should validate that management understands the risk and that acceptance is authorized appropriately.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Risk Acceptance'
   },
@@ -251,6 +263,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Materiality considers both quantitative impacts and qualitative factors including reputational and regulatory risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Materiality',
     subtopic: 'Materiality Judgment'
   },
@@ -270,6 +283,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Committee presentations should focus on key risks, significant findings, and management responses.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Committee Reporting'
   },
@@ -289,6 +303,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Continuous auditing enables ongoing monitoring and earlier identification of control issues.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Continuous Auditing',
     subtopic: 'Ongoing Monitoring'
   },
@@ -308,6 +323,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Automated tools should be validated to ensure accuracy and appropriateness for audit objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Tools',
     subtopic: 'Tool Validation'
   },
@@ -323,10 +339,11 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
       'Evidence relates directly to the audit objective',
       'Any information is acceptable',
       'Only recent evidence counts',
-      'More is always better',
+      'More is typically better',
     ],
     correctAnswer: 0,
     explanation: 'Relevant evidence directly relates to and supports conclusions about the specific audit objective.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Relevance'
   },
@@ -346,6 +363,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Obstruction should be documented and escalated to appropriate levels including audit committee if necessary.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Conduct',
     subtopic: 'Obstruction'
   },
@@ -365,6 +383,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Resources should be allocated based on risk, with more effort on higher-risk areas.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Resource Allocation'
   },
@@ -384,6 +403,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Cross-referencing links evidence to conclusions, supporting reviewability and report assertions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Documentation',
     subtopic: 'Cross-Referencing'
   },
@@ -403,6 +423,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The audit universe should be updated to reflect organizational changes, new systems, and emerging risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Audit Universe'
   },
@@ -422,6 +443,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Audit risk considers inherent risk, control risk, and detection risk to determine appropriate procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Audit Risk'
   },
@@ -441,6 +463,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Aging reports identify overdue items, enabling appropriate escalation and management attention.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Follow-up',
     subtopic: 'Issue Aging'
   },
@@ -460,6 +483,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Audit opinions must be supported by sufficient appropriate evidence gathered during the audit.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Audit Opinion'
   },
@@ -479,6 +503,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Team briefings should cover background, objectives, key risks, audit approach, and timeline.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Execution',
     subtopic: 'Team Briefings'
   },
@@ -498,6 +523,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Walkthroughs help auditors understand processes, identify controls, and verify process documentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Walkthroughs'
   },
@@ -517,6 +543,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Inquiry should be corroborated with other evidence types for reliable conclusions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Inquiry Corroboration'
   },
@@ -536,6 +563,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Professional skepticism means critically assessing evidence and remaining alert to potential misrepresentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Skepticism'
   },
@@ -555,6 +583,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Program modifications may be necessary and should be documented with appropriate justification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Execution',
     subtopic: 'Program Modifications'
   },

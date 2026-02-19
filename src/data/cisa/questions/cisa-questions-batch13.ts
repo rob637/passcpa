@@ -27,6 +27,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Continuous monitoring provides ongoing, often automated assessment rather than point-in-time evaluations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Approach',
     subtopic: 'Continuous Monitoring'
   },
@@ -46,6 +47,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'CAATs can analyze audit trails to detect anomalies, unauthorized access, and control failures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Audit Trail Analysis'
   },
@@ -84,6 +86,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Embedded audit modules are built into applications to capture and report on transactions meeting audit criteria.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Embedded Audit Modules'
   },
@@ -103,6 +106,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Stratification creates homogeneous subgroups from which samples are selected, improving efficiency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Sampling'
   },
@@ -122,6 +126,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Variable sampling estimates monetary amounts or quantities, while attribute sampling tests presence/absence of characteristics.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Sampling Types'
   },
@@ -160,6 +165,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'ITF creates dummy entities (like fake departments) in production to test processing controls with real transactions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'ITF'
   },
@@ -179,6 +185,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Supervisory review verifies that work is complete, properly documented, and conclusions are supported.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Documentation',
     subtopic: 'Working Paper Review'
   },
@@ -198,6 +205,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Retention policies must address legal requirements, regulatory mandates, and organizational policies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Documentation',
     subtopic: 'Retention'
   },
@@ -217,6 +225,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Exit meetings allow discussing findings, validating facts, and obtaining management responses before finalizing reports.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Reporting',
     subtopic: 'Exit Meeting'
   },
@@ -236,6 +245,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Audit opinions must be clearly stated and based on sufficient appropriate evidence gathered during the audit.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Reporting',
     subtopic: 'Audit Opinion'
   },
@@ -249,12 +259,13 @@ const ALL_BATCH13: Question[] = [
     question: 'Self-assessment by management:',
     options: [
       'Can be used by auditors but requires independent verification',
-      'Is never useful',
+      'is rarely useful',
       'Replaces all audit activities',
       'Has no reliability issues',
     ],
     correctAnswer: 0,
     explanation: 'Control self-assessments provide useful information but should be verified through independent audit procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Self-Assessment'
   },
@@ -312,6 +323,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Conflicts must be disclosed to appropriate parties and managed to prevent impairment of objectivity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Standards and Ethics',
     subtopic: 'Conflicts of Interest'
   },
@@ -336,6 +348,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT architecture provides a structured framework for how IT systems, data, and technology support business needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'IT Architecture'
   },
@@ -355,6 +368,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Technology radars help evaluate emerging technologies and plan adoption based on business value and maturity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Emerging Technology'
   },
@@ -374,6 +388,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT financial management encompasses budgeting, cost tracking, allocation methods, and chargeback mechanisms.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Management',
     subtopic: 'IT Finance'
   },
@@ -393,6 +408,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Benefit realization tracks and manages achievement of planned benefits from IT investments over time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Benefit Realization'
   },
@@ -431,6 +447,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'KPIs measure performance against objectives; KRIs (Key Risk Indicators) measure risk exposure and trends.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Metrics'
   },
@@ -450,6 +467,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Portfolio management treats all IT investments as a portfolio to balance risk, value, and resource allocation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Portfolio Management'
   },
@@ -469,6 +487,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Subservice organization reports cover controls at vendors that the primary service provider relies on.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Vendor Management',
     subtopic: 'Subservice Organizations'
   },
@@ -488,6 +507,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Multi-sourcing requires coordinating multiple vendors and clearly defining integration and responsibility boundaries.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Vendor Management',
     subtopic: 'Multi-sourcing'
   },
@@ -526,6 +546,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Demand management prioritizes requests for IT services, balancing demands against available capacity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Management',
     subtopic: 'Demand Management'
   },
@@ -564,6 +585,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Balanced scorecard provides a holistic view across financial, customer, process, and learning dimensions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Performance Measurement'
   },
@@ -607,6 +629,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Design patterns are proven, reusable solutions to common software design problems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development',
     subtopic: 'Design Patterns'
   },
@@ -626,6 +649,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'API versioning allows changes to be made while maintaining support for existing consumers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development',
     subtopic: 'API Management'
   },
@@ -664,6 +688,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Canary releases deploy changes to a small user subset first to detect issues before broad deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'SDLC',
     subtopic: 'Deployment Strategies'
   },
@@ -683,6 +708,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Feature toggles allow deploying code with features that can be enabled or disabled without redeployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development',
     subtopic: 'Feature Toggles'
   },
@@ -702,6 +728,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IaC manages infrastructure provisioning through version-controlled code for consistency and automation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development',
     subtopic: 'IaC'
   },
@@ -721,6 +748,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Immutable infrastructure replaces instances rather than modifying them, ensuring consistent, known states.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development',
     subtopic: 'Immutable Infrastructure'
   },
@@ -740,6 +768,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Fuzz testing provides random, invalid, or unexpected data as input to discover security vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Testing',
     subtopic: 'Security Testing'
   },
@@ -759,6 +788,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Contract testing verifies that service interfaces conform to expectations defined between service providers and consumers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Testing',
     subtopic: 'Contract Testing'
   },
@@ -778,6 +808,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Chaos engineering deliberately introduces failures to discover weaknesses and improve system resilience.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Testing',
     subtopic: 'Resilience Testing'
   },
@@ -797,6 +828,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DevSecOps embeds security practices, tools, and responsibilities throughout the entire development lifecycle.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'DevSecOps'
   },
@@ -816,6 +848,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Secrets management securely stores and injects credentials, keys, and tokens used by deployment pipelines.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'Secrets Management'
   },
@@ -835,6 +868,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Container scanning examines images, dependencies, and configurations for vulnerabilities and misconfigurations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'Container Security'
   },
@@ -854,6 +888,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Migration testing verifies data is completely and accurately transferred with integrity maintained.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Implementation',
     subtopic: 'Data Migration'
   },
@@ -892,6 +927,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Technical documentation should be created during development and maintained current throughout the system lifecycle.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'SDLC',
     subtopic: 'Documentation'
   },
@@ -935,6 +971,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Standard changes are pre-approved, routine changes with known, low risk executed via established procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Service Management',
     subtopic: 'Change Management'
   },
@@ -954,6 +991,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Configuration baselines document the approved state to detect unauthorized changes or drift.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Service Management',
     subtopic: 'Configuration Management'
   },
@@ -973,6 +1011,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Release management provides controlled, repeatable deployment processes that protect live service quality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Service Management',
     subtopic: 'Release Management'
   },
@@ -992,6 +1031,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Knowledge management captures and shares operational knowledge to improve efficiency and consistency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Service Management',
     subtopic: 'Knowledge Management'
   },
@@ -1011,6 +1051,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Capacity on demand enables rapid scaling of resources to meet changing requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Capacity Management'
   },
@@ -1030,6 +1071,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Trending analysis identifies patterns in performance data to anticipate future capacity requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Performance Management'
   },
@@ -1068,6 +1110,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Log aggregation centralizes logs from multiple sources for unified analysis, correlation, and retention.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Logging'
   },
@@ -1087,6 +1130,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Geographic redundancy planning considers distance, shared risk factors, latency, and jurisdictional requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Geographic Redundancy'
   },
@@ -1125,6 +1169,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Third-party BC/DR assessment ensures vendors have adequate continuity capabilities to support your requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Vendor BC'
   },
@@ -1144,6 +1189,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Replication options include synchronous (immediate), asynchronous (delayed), and semi-synchronous approaches.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Data Replication'
   },
@@ -1163,6 +1209,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Backup testing should include actual restores to confirm data can be successfully recovered when needed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Backup Testing'
   },
@@ -1182,6 +1229,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Environmental monitoring tracks temperature, humidity, water detection, power quality, and other conditions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Environmental Controls'
   },
@@ -1220,6 +1268,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Patch prioritization considers vulnerability severity, exploitability, business criticality, and system exposure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Patch Management'
   },
@@ -1244,6 +1293,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Defense in depth uses multiple layers of controls so no single failure compromises overall security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Management',
     subtopic: 'Defense in Depth'
   },
@@ -1263,6 +1313,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Control testing should be ongoing to provide assurance that controls continue to operate effectively.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Management',
     subtopic: 'Control Testing'
   },
@@ -1301,6 +1352,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'JIT access provides privileges only when needed for a specific task and removes them after completion.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control',
     subtopic: 'JIT Access'
   },
@@ -1377,6 +1429,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Deception technologies lure attackers to decoy systems to detect intrusions and gather intelligence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Operations',
     subtopic: 'Deception'
   },
@@ -1396,6 +1449,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'EDR monitors endpoint activity and provides detection, investigation, and response capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Operations',
     subtopic: 'EDR'
   },
@@ -1415,6 +1469,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Zero-days are vulnerabilities without patches when initially discovered or exploited.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Threats',
     subtopic: 'Zero-Day'
   },
@@ -1434,6 +1489,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'MITM attacks intercept and potentially modify communications between parties without their awareness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Threats',
     subtopic: 'Network Attacks'
   },
@@ -1453,6 +1509,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Credential stuffing uses stolen username/password combinations from breaches to attempt access on other sites.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Threats',
     subtopic: 'Credential Attacks'
   },
@@ -1510,6 +1567,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'DLP identifies, monitors, and prevents unauthorized transmission or disclosure of sensitive data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Security',
     subtopic: 'DLP'
   },
@@ -1529,6 +1587,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Rights management enforces usage restrictions on content (view, edit, print, forward) wherever it travels.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Security',
     subtopic: 'Rights Management'
   },
@@ -1548,6 +1607,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'PIAs assess privacy risks associated with personal data processing and identify mitigation measures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Privacy',
     subtopic: 'Privacy Assessment'
   },
@@ -1567,6 +1627,7 @@ const ALL_BATCH13: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'DSARs give individuals the right to obtain copies of their personal data held by organizations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Privacy',
     subtopic: 'Data Subject Rights'
   }

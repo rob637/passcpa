@@ -26,6 +26,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Undocumented training data creates risks of bias, data quality issues, and compliance problems. Data lineage is critical for AI governance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'AI Security',
     subtopic: 'AI Governance'
   },
@@ -45,6 +46,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Evasion attacks manipulate inputs at inference time to cause misclassification. Data poisoning attacks training data instead.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'AI Security',
     subtopic: 'Adversarial Attacks'
   },
@@ -83,6 +85,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Model monitoring detects drift where performance degrades as real-world data diverges from training data, requiring intervention.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'AI Security',
     subtopic: 'Model Monitoring'
   },
@@ -102,6 +105,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Explainability is critical when AI makes decisions affecting individuals due to regulatory requirements (like GDPR) and ethical considerations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'AI Security',
     subtopic: 'AI Ethics'
   },
@@ -125,6 +129,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'CSPM continuously scans cloud environments for misconfigurations, compliance violations, and security risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'CSPM'
   },
@@ -144,6 +149,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Image security is foundational - vulnerable or malicious images propagate to all deployments. Shifting security left to images prevents issues at scale.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Container Security'
   },
@@ -163,6 +169,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Network policies control which pods can communicate with each other, implementing network segmentation within the cluster.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Kubernetes Security'
   },
@@ -182,6 +189,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Serverless functions are ephemeral and traditional monitoring tools may not capture their short-lived execution, creating visibility challenges.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Serverless Security'
   },
@@ -201,6 +209,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Different clouds have different native controls, making consistent security policy implementation and monitoring challenging.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Multi-Cloud Security'
   },
@@ -224,6 +233,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'OT prioritizes availability and safety (AIC) because failures can cause physical harm, while IT prioritizes confidentiality (CIA).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'OT Security',
     subtopic: 'IT/OT Differences'
   },
@@ -243,6 +253,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The Purdue Model defines hierarchical network zones from field devices (level 0) to enterprise (level 5) for ICS segmentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'OT Security',
     subtopic: 'ICS Architecture'
   },
@@ -262,6 +273,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Shadow IoT devices bypass security controls and create unknown attack surface since IT is unaware of their existence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'IoT Security',
     subtopic: 'Shadow IoT'
   },
@@ -281,6 +293,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ICS patching is difficult due to availability requirements, potential impact on operations, and need for vendor-validated patches.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'OT Security',
     subtopic: 'ICS Patching'
   },
@@ -300,6 +313,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Many industrial protocols were designed before security was a concern and lack authentication, encryption, or integrity checking.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'OT Security',
     subtopic: 'Industrial Protocols'
   },
@@ -342,6 +356,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Rate limiting controls request volume to prevent abuse, DoS attacks, and excessive resource consumption.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'API Security',
     subtopic: 'Rate Limiting'
   },
@@ -380,6 +395,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'API gateways centralize security functions including authentication, authorization, rate limiting, and monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'API Security',
     subtopic: 'API Gateway'
   },
@@ -399,6 +415,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'APIs must verify authorization at multiple levels - object (whose data), property (which fields), and function (what actions) for each request.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'API Security',
     subtopic: 'API Authorization'
   },
@@ -422,6 +439,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SBOM provides inventory of software components enabling identification of vulnerable dependencies and supply chain risk management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'Supply Chain Security'
   },
@@ -441,6 +459,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Zero Trust evaluates multiple factors continuously - identity, device posture, location, behavior - not just network position.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'Zero Trust'
   },
@@ -460,6 +479,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DevSecOps shifts security left, embedding it throughout development, testing, deployment, and operations phases.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'DevSecOps'
   },
@@ -479,6 +499,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IaC scanning identifies misconfigurations in templates before deployment, preventing vulnerable infrastructure from being created.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'IaC Security'
   },
@@ -498,6 +519,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Cloud security is shared - providers secure infrastructure, customers secure their data, applications, and configurations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility'
   }

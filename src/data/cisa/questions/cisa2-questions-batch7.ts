@@ -23,6 +23,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Digital ethics encompasses AI fairness, privacy, algorithmic transparency, and societal impacts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Digital Ethics'
   },
@@ -42,6 +43,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Tech debt management requires inventory, risk-based prioritization, and planned remediation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Technology Debt'
   },
@@ -61,6 +63,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Agile governance provides guardrails and checkpoints while enabling team autonomy and speed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Agile Governance'
   },
@@ -80,6 +83,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Platform governance addresses partner management, API governance, and ecosystem security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Platform Governance'
   },
@@ -99,6 +103,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Operating model design aligns people, processes, technology, and governance with business needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Operating Model'
   },
@@ -118,6 +123,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Shared services require clear definitions, SLAs, chargeback, and governance mechanisms.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Shared Services'
   },
@@ -137,6 +143,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'CoEs provide specialized expertise, standards development, and best practice guidance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Centers of Excellence'
   },
@@ -156,6 +163,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Value realization requires tracking and measuring benefits against the original business case.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Value Realization'
   },
@@ -175,6 +183,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Maturity assessment identifies current capabilities, target state, and improvement roadmap.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Capability Maturity'
   },
@@ -194,6 +203,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Workforce transformation requires skills development, culture change, and organizational alignment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Workforce Transformation'
   },
@@ -213,6 +223,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'ERM integration ensures consistent risk appetite and holistic perspective across the enterprise.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'ERM Integration'
   },
@@ -232,6 +243,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Operational risk events should be captured and analyzed to enable process improvement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Operational Risk'
   },
@@ -251,6 +263,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Control effectiveness metrics measure whether controls achieve their intended risk reduction.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Control Metrics'
   },
@@ -270,6 +283,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'RegTech solutions automate compliance monitoring, reporting, and regulatory requirement management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'RegTech'
   },
@@ -289,6 +303,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Board reporting should be risk-focused and at a level appropriate for board understanding.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Board Reporting'
   },
@@ -308,6 +323,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Exception analysis can reveal policy gaps, implementation issues, or changing business needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Exception Analysis'
   },
@@ -327,6 +343,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Portfolio prioritization uses multi-criteria analysis considering value, risk, strategy, and resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Portfolio Prioritization'
   },
@@ -346,6 +363,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Business cases should include expected benefits, costs, risks, alternatives, and assumptions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Business Case'
   },

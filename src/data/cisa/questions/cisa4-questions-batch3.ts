@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'MTD is the maximum time a business function can be disrupted before the impact becomes unacceptable, driving RTO requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'MTD'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'WRT is the time needed to verify systems are working correctly and resume business processes after technical systems are restored.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'WRT'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT service continuity management ensures IT services can be recovered within agreed timeframes to support business continuity requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'ITSCM'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Reciprocal agreements assume one organization can host another during disaster, but both may be affected simultaneously or capacity may not exist.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Reciprocal Agreements'
   },
@@ -99,6 +103,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Cloud DR offers cost-effective, scalable recovery infrastructure without maintaining dedicated standby hardware, though planning is still required.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Cloud DR'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Database journaling records all changes (before and after images), enabling recovery to any point in time by replaying or reversing transactions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Recovery',
     subtopic: 'Journaling'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Synchronous replication confirms writes at both primary and secondary sites before acknowledging, ensuring zero data loss but adding latency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Recovery',
     subtopic: 'Replication'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SANs provide centralized, high-performance block-level storage that can be shared across servers, with features like snapshots and replication.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Storage'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'RAID (Redundant Array of Independent Disks) provides data protection through disk redundancy and/or improved I/O performance depending on level.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'RAID'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'High availability clustering uses multiple servers with automatic failover, minimizing downtime if a server fails.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'High Availability'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Load balancing distributes network traffic across multiple servers to improve performance, availability, and prevent any single server from being overwhelmed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Load Balancing'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Logging should capture significant events including user access, configuration changes, errors, and security events for troubleshooting and accountability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Logging'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SIEM aggregates logs from multiple sources, correlates events to detect threats, provides real-time alerting, and supports investigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Security Operations',
     subtopic: 'SIEM'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The NOC monitors and manages network infrastructure, identifying and resolving issues to maintain network availability and performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Network Operations',
     subtopic: 'NOC'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The SOC monitors for security threats, analyzes events, and coordinates incident response to protect the organization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Security Operations',
     subtopic: 'SOC'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Runbooks document step-by-step procedures for routine operational tasks and common issue resolution, ensuring consistent operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Runbooks'
   },
@@ -327,6 +343,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'OS hardening includes removing unnecessary services, applying patches, disabling default accounts, and applying secure configuration settings.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'System Security',
     subtopic: 'Hardening'
   },
@@ -346,6 +363,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Baseline configurations define standard secure settings for systems, ensuring consistent, compliant deployment across the environment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'System Security',
     subtopic: 'Baselines'
   },
@@ -365,6 +383,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'PAM controls access to privileged accounts (admin, root) through features like password vaulting, session recording, and just-in-time access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Access Control',
     subtopic: 'PAM'
   },
@@ -384,6 +403,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Print controls should prevent unauthorized access to sensitive documents through features like secure print release and logging.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Print Security'
   },
@@ -403,6 +423,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Media sanitization removes data so it cannot be recovered, using methods appropriate to data sensitivity (clearing, purging, or destroying).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Media Sanitization'
   },
@@ -422,6 +443,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Key management covers the entire key lifecycle: generation, secure storage, distribution, rotation, archival, and secure destruction.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Security',
     subtopic: 'Key Management'
   },
@@ -441,6 +463,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'HSMs are tamper-resistant devices that perform cryptographic operations and securely store cryptographic keys.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Security',
     subtopic: 'HSM'
   },
@@ -460,6 +483,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Automated provisioning improves consistency by using predefined templates, reduces deployment time, and decreases human errors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Automation'
   },
@@ -479,6 +503,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'DR site assessments should consider geographic risks, accessibility during disasters, physical security, infrastructure capacity, and regional threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Site Selection'
   },
@@ -517,6 +542,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Emergency procedures should be clear, simple to follow under stress, and regularly tested to ensure effectiveness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Emergency Response'
   },
@@ -536,6 +562,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'BC testing primarily verifies that plans work as expected, identifies gaps and weaknesses, and validates that objectives can be met.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BC Testing'
   },
@@ -555,6 +582,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Service level monitoring should be continuous, measuring actual performance against SLA targets and reporting on compliance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'SLA Monitoring'
   },
@@ -574,6 +602,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'MTBF measures the average time a system or component operates before experiencing a failure, indicating reliability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Reliability Metrics'
   },

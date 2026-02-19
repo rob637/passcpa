@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Feature flags enable controlled gradual rollout of features and rapid rollback without code deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Release Management',
     subtopic: 'Feature Flags'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Canary deployments release changes to a small user subset first to validate before broader rollout.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Release Management',
     subtopic: 'Canary Deployment'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Blue-green deployments maintain two identical environments, enabling zero-downtime releases and quick rollback.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Release Management',
     subtopic: 'Blue-Green'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Database migrations should be version controlled, tested, and include rollback scripts for data protection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Database Development',
     subtopic: 'Migrations'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Production schema changes require change management approval, impact assessment, and proper testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Database Development',
     subtopic: 'Schema Changes'
   },
@@ -118,6 +123,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'API versioning maintains backward compatibility for existing integrations while allowing new functionality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Development',
     subtopic: 'API Versioning'
   },
@@ -137,6 +143,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Technical debt should be tracked, prioritized based on impact, and addressed systematically to maintain quality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Development',
     subtopic: 'Technical Debt'
   },
@@ -156,6 +163,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Refactoring improves code structure, readability, and maintainability without changing external functionality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Development',
     subtopic: 'Refactoring'
   },
@@ -175,6 +183,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Design patterns provide proven, reusable solutions to common software design problems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Development',
     subtopic: 'Design Patterns'
   },
@@ -194,6 +203,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SOLID principles (Single responsibility, Open-closed, Liskov, Interface segregation, Dependency inversion) guide maintainable design.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Development',
     subtopic: 'SOLID'
   },
@@ -213,6 +223,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Microservices enable independent scaling, deployment, and development of individual services.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Architecture',
     subtopic: 'Microservices'
   },
@@ -232,6 +243,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Event-driven architecture uses events to trigger actions and enable loose coupling between services.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Architecture',
     subtopic: 'Event-Driven'
   },
@@ -251,6 +263,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'DDD focuses on creating software models that reflect business domain concepts and language.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Development',
     subtopic: 'DDD'
   },
@@ -270,6 +283,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Bounded contexts define explicit boundaries within which specific domain models apply.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Development',
     subtopic: 'Bounded Context'
   },
@@ -289,6 +303,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Contract testing validates that service interfaces meet the expectations defined by consuming services.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Contract Testing'
   },
@@ -308,6 +323,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Test data management provides realistic data for testing while protecting sensitive information through masking or synthesis.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Test Data'
   },
@@ -327,6 +343,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Shift-left moves testing earlier in development to find and fix defects when they are less expensive to address.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Shift-Left'
   },
@@ -346,6 +363,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Mutation testing evaluates test effectiveness by introducing small code changes (mutations) to see if tests catch them.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Mutation Testing'
   },
@@ -365,6 +383,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Chaos testing validates system resilience by deliberately introducing failures to observe system behavior.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Chaos Testing'
   },
@@ -384,6 +403,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Performance testing includes load (expected), stress (beyond capacity), endurance (long duration), and spike testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Performance Testing'
   },
@@ -403,6 +423,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Configuration as Code stores configuration in version control, enabling consistency, review, and auditability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevOps',
     subtopic: 'Configuration as Code'
   },
@@ -422,6 +443,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'GitOps uses declarative configuration with Git as the single source of truth for automated deployments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevOps',
     subtopic: 'GitOps'
   },
@@ -441,6 +463,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Container orchestration automates deployment, scaling, networking, and management of containerized applications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevOps',
     subtopic: 'Container Orchestration'
   },
@@ -460,6 +483,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Service mesh provides traffic management, security policies, and observability for microservices communication.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Architecture',
     subtopic: 'Service Mesh'
   },
@@ -479,6 +503,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Low-code/no-code enables faster development but requires governance for security, quality, and maintainability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Approaches',
     subtopic: 'Low-Code'
   },
@@ -498,6 +523,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Citizen developer programs should include training, governance frameworks, security guidelines, and support.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Approaches',
     subtopic: 'Citizen Development'
   },
@@ -517,6 +543,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'AI/ML development requires data quality, bias testing, explainability, model governance, and ongoing monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'AI Development',
     subtopic: 'ML Governance'
   },
@@ -536,6 +563,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'MLOps addresses the end-to-end ML lifecycle including data prep, training, deployment, and monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'AI Development',
     subtopic: 'MLOps'
   },
@@ -555,6 +583,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'PIR assesses whether expected benefits were realized and captures lessons learned for future projects.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Project Management',
     subtopic: 'PIR'
   },

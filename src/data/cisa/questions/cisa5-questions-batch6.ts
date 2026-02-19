@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IAM lifecycle includes provisioning, periodic review, modification based on changes, and de-provisioning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'IAM Lifecycle'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Certification reviews should be performed by managers who understand business needs for access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'Certification'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Birthright access is base access automatically granted when someone joins based on their role.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'Birthright Access'
   },
@@ -80,6 +83,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Access requests should require appropriate approvals (manager, data owner) with documented justification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'Approval Workflow'
   },
@@ -99,6 +103,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Emergency access should be time-limited, logged, monitored, and reviewed after the emergency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'Emergency Access'
   },
@@ -118,6 +123,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Service accounts should have minimum privileges, documented ownership, and controlled credentials.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'Service Accounts'
   },
@@ -137,6 +143,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'PAM solutions provide credential vaulting, session recording, access control, and monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'PAM'
   },
@@ -156,6 +163,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Biometrics are difficult to share or forget, providing something you are authentication.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'Biometrics'
   },
@@ -175,6 +183,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'FAR measures the rate of incorrectly accepting unauthorized users and should be minimized.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'FAR'
   },
@@ -194,6 +203,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'FIDO2/WebAuthn enables passwordless authentication using public key cryptography and hardware tokens.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'FIDO2'
   },
@@ -213,6 +223,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Context-aware authentication considers multiple factors like location, device, time, and behavior.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'Contextual'
   },
@@ -232,6 +243,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Step-up authentication requires additional verification for higher-risk transactions or sensitive access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'Step-Up'
   },
@@ -251,6 +263,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Key hierarchies include master keys protecting key encryption keys which protect data encryption keys.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Key Hierarchy'
   },
@@ -270,6 +283,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Encryption at rest protects stored data from unauthorized access to storage media.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Encryption at Rest'
   },
@@ -289,6 +303,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'TLS provides encryption, server authentication, and data integrity for network communications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'TLS'
   },
@@ -308,6 +323,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Firewall rule reviews should verify business justification, currency, and least privilege principle.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Firewall Review'
   },
@@ -327,6 +343,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IDS detects potential incidents through signature matching and behavioral analysis.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'IDS'
   },
@@ -346,6 +363,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'NGFW adds application awareness, user identity integration, and threat intelligence to traditional firewalls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'NGFW'
   },
@@ -365,6 +383,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'WAF protects against application-layer attacks like SQL injection and XSS.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Application Security',
     subtopic: 'WAF'
   },
@@ -379,11 +398,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Increases security',
       'Improves encryption',
-      'Is always recommended',
+      'is typically recommended',
       'Allows some traffic to bypass VPN, creating potential risk',
     ],
     correctAnswer: 3,
     explanation: 'Split tunneling allows some traffic to bypass VPN, potentially exposing the network to risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'VPN'
   },
@@ -403,6 +423,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DNSSEC authenticates DNS responses using digital signatures to prevent DNS spoofing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'DNSSEC'
   },
@@ -422,6 +443,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'NAC verifies device identity, health, and policy compliance before allowing network access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'NAC'
   },
@@ -441,6 +463,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Wireless security requires strong encryption (WPA3), authentication, and monitoring for rogue access points.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Wireless'
   },
@@ -460,6 +483,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Supply chain security verifies component integrity, provenance, and vendor security practices.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Supply Chain'
   },
@@ -479,6 +503,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security metrics should be meaningful to stakeholders, measurable, and drive actionable decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Metrics'
   },
@@ -498,6 +523,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Framework mapping enables efficient demonstration of compliance with multiple regulatory requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Framework Mapping'
   },
@@ -517,6 +543,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security by obscurity should not be relied upon alone; defense in depth with multiple controls is required.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Principles',
     subtopic: 'Security by Obscurity'
   },
@@ -536,6 +563,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Insider threat programs require prevention, detection, awareness training, and response capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Insider Threat'
   },
@@ -555,6 +583,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security culture requires leadership commitment, ongoing training, and positive reinforcement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Security Culture'
   },

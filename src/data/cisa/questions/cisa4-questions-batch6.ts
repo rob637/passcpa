@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Operational resilience focuses on maintaining critical business services during and after disruptions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Resilience',
     subtopic: 'Operational Resilience'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Impact tolerances define maximum tolerable disruption levels for important business services.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Resilience',
     subtopic: 'Impact Tolerance'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Process mapping identifies critical processes, their dependencies, and potential single points of failure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Process Mapping'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Third-party resilience requires understanding dependencies and validating provider recovery capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Third-Party Resilience'
   },
@@ -99,6 +103,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Resilience testing should include severe but plausible scenarios, including combination events.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Scenario Testing'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Communication plans should address all stakeholders including employees, customers, regulators, and media.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Crisis Communication'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Major incidents require dedicated incident command, cross-functional coordination, and executive engagement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Major Incidents'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'War rooms provide centralized coordination, communication, and decision-making during major incidents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'War Room'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Classification should consider business impact, urgency, scope, and affected services/users.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Classification'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Availability = (Agreed service time - Downtime) / Agreed service time × 100%.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Availability Calculation'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Maintenance windows should be during low-impact periods with advance stakeholder notification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Maintenance Windows'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Standard changes are pre-approved low-risk changes with documented procedures applied without individual CAB review.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Change Management',
     subtopic: 'Standard Changes'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Post-implementation review assesses if objectives were met and captures lessons learned.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Change Management',
     subtopic: 'PIR'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Job scheduling requires managing dependencies, resources, failure handling, and monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Job Scheduling'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DBA controls include access control, activity monitoring, performance optimization, and backup/recovery.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Database Administration'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Backup verification includes integrity checks and periodic restore testing to ensure recoverability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Backup Verification'
   },
@@ -327,6 +343,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Off-site storage should be sufficiently distant to survive regional disasters affecting primary site.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Off-Site Storage'
   },
@@ -346,6 +363,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Immutable backups cannot be modified or deleted for a defined period, protecting against ransomware.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Immutable Backup'
   },
@@ -365,6 +383,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'NOC provides monitoring, initial response, escalation, and coordination for network operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'NOC'
   },
@@ -384,6 +403,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Event correlation identifies related events, reducing noise and enabling identification of root causes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Event Correlation'
   },
@@ -403,6 +423,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Thresholds should be tuned based on baselines and adjusted to balance detection with false positives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Alert Thresholds'
   },
@@ -422,6 +443,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Log retention should consider regulatory requirements, investigation needs, and operational requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Log Retention'
   },
@@ -441,6 +463,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Time synchronization is critical for log correlation, authentication protocols, and forensic investigations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Time Synchronization'
   },
@@ -460,6 +483,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'EOL systems should be identified, risk-assessed, and either migrated or protected with compensating controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'EOL Management'
   },
@@ -479,6 +503,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Trending analysis predicts future capacity needs enabling proactive planning before issues occur.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Capacity Trending'
   },
@@ -498,6 +523,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Print management should address secure printing, access control, and audit trails for sensitive documents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Print Management'
   },
@@ -517,6 +543,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Site selection considers natural disaster risk, utility availability, connectivity, and accessibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Site Selection'
   },
@@ -536,6 +563,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'UPS provides short-term power during outages, bridging until generators start or allowing graceful shutdown.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'UPS'
   },
@@ -555,6 +583,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Generator testing should include regular load testing to verify the generator can handle required loads.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Generator Testing'
   },

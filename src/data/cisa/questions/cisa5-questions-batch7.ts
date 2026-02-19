@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Post-quantum preparation requires inventory, agility assessment, and migration planning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Post-Quantum Cryptography'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ZTNA provides identity-aware, context-based access as an alternative to traditional VPN.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'ZTNA'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Behavioral analytics identifies anomalies in user and entity behavior indicating threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Behavioral Analytics'
   },
@@ -80,6 +83,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SASE combines network (SD-WAN) and security services in a cloud-delivered model.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'SASE'
   },
@@ -99,6 +103,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Cloud DLP requires cloud-native capabilities and API integration for visibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Cloud DLP'
   },
@@ -118,6 +123,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'XDR provides unified threat detection and response across endpoints, network, and cloud.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'XDR'
   },
@@ -137,6 +143,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'API security testing covers authentication, injection, authorization, and rate limiting.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Application Security',
     subtopic: 'API Security Testing'
   },
@@ -156,6 +163,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Remote identity verification uses documents, biometrics, and liveness detection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Identity Management',
     subtopic: 'Identity Verification'
   },
@@ -175,6 +183,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Confidential computing protects data in use through hardware-based TEEs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Confidential Computing'
   },
@@ -194,6 +203,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SOAR enables automated incident response playbooks and security tool integration.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SOAR'
   },
@@ -213,6 +223,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ASM continuously discovers and monitors external-facing assets and potential exposures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Attack Surface Management'
   },
@@ -232,6 +243,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'PETs include differential privacy, homomorphic encryption, and secure multi-party computation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Privacy Enhancing Technologies'
   },
@@ -251,6 +263,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SLSA focuses on source integrity, secure build processes, and software provenance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Supply Chain Security'
   },
@@ -270,6 +283,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Workload identity manages non-human identities for services, containers, and automation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Identity Management',
     subtopic: 'Workload Identity'
   },
@@ -289,6 +303,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Deception technology provides early attack detection and valuable threat intelligence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Deception Technology'
   },
@@ -308,6 +323,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security data lakes aggregate data from multiple sources for advanced analytics and hunting.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Security Data Lake'
   },
@@ -327,6 +343,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'RASP provides real-time attack detection and blocking from within the application runtime.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Application Security',
     subtopic: 'RASP'
   },
@@ -346,6 +363,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'TIPs enable aggregation, analysis, and operationalization of threat intelligence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence Platform'
   },
@@ -365,6 +383,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'CCM automates real-time assessment of control effectiveness replacing point-in-time testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Continuous Control Monitoring'
   },

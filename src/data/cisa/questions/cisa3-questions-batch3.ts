@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Function point analysis estimates software size based on the functionality it provides to users, helping estimate development effort and cost.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Estimation',
     subtopic: 'Function Points'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Use cases describe how actors (users or systems) interact with the system to achieve specific goals, capturing functional requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Requirements',
     subtopic: 'Use Cases'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'ERDs model data entities, their attributes, and the relationships between them, forming the basis for database design.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Data Modeling',
     subtopic: 'ERD'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'DFDs show how data moves through a system, depicting processes, data stores, external entities, and the data flows between them.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'System Modeling',
     subtopic: 'DFD'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Prototyping is valuable when requirements are unclear, allowing users to interact with a working model and provide feedback.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'Prototyping'
   },
@@ -137,6 +142,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Scrum sprints are time-boxed iterations typically lasting one to four weeks, during which a potentially shippable product increment is created.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'Scrum'
   },
@@ -156,6 +162,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'TDD requires writing automated tests before writing the code that will make those tests pass, ensuring code meets requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'TDD'
   },
@@ -175,6 +182,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Refactoring restructures existing code to improve its internal structure without changing its external behavior, improving maintainability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'Refactoring'
   },
@@ -194,6 +202,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SAST analyzes source code or compiled binaries without executing them, identifying vulnerabilities through code review.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Testing',
     subtopic: 'SAST'
   },
@@ -213,6 +222,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DAST tests running applications from an external perspective, simulating attacks to identify runtime vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Testing',
     subtopic: 'DAST'
   },
@@ -232,6 +242,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Penetration testing should be performed before deployment and periodically to identify vulnerabilities that could be exploited.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Testing',
     subtopic: 'Penetration Testing'
   },
@@ -251,6 +262,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Secure coding includes input validation, output encoding, proper error handling, access controls, and protection against common vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Security',
     subtopic: 'Secure Coding'
   },
@@ -270,6 +282,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'XSS prevention requires validating and sanitizing user input and properly encoding output before rendering in browsers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Security',
     subtopic: 'XSS Prevention'
   },
@@ -308,6 +321,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'OWASP Top 10 is a regularly updated list of the most critical security risks to web applications, serving as awareness and guidance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Security',
     subtopic: 'OWASP'
   },
@@ -327,6 +341,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Software composition analysis identifies vulnerabilities and license issues in third-party and open-source components used in applications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Security',
     subtopic: 'SCA'
   },
@@ -346,6 +361,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IaC enables automated, repeatable infrastructure provisioning through code, improving consistency and reducing manual errors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'IaC'
   },
@@ -365,6 +381,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Blue-green deployment maintains two identical production environments, allowing instant switching between them for zero-downtime releases and easy rollback.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Deployment',
     subtopic: 'Deployment Strategies'
   },
@@ -384,6 +401,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Canary releases gradually roll out changes to a small subset of users, monitoring for issues before full deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Deployment',
     subtopic: 'Canary Releases'
   },
@@ -403,6 +421,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Feature flags allow enabling or disabling features at runtime without code deployment, enabling controlled rollouts and quick rollbacks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'Feature Flags'
   },
@@ -422,6 +441,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Microservices enable independent development, deployment, and scaling of application components, though they add operational complexity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Architecture',
     subtopic: 'Microservices'
   },
@@ -441,6 +461,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Containers package applications with dependencies, ensuring consistent behavior across development, testing, and production environments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'Containers'
   },
@@ -460,6 +481,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Kubernetes orchestrates and manages containerized applications, handling deployment, scaling, and operational tasks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'Kubernetes'
   },
@@ -479,6 +501,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Technical debt is the implied cost of additional rework caused by choosing quick solutions instead of better approaches that take longer.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Quality',
     subtopic: 'Technical Debt'
   },
@@ -498,6 +521,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Code coverage measures what percentage of code is executed during testing, indicating how thorough the test suite is.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Quality Assurance',
     subtopic: 'Code Coverage'
   },
@@ -536,6 +560,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Mobile app audits should focus on secure data storage, secure API communications, authentication, and device-specific security risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Mobile Development',
     subtopic: 'Mobile Security'
   },
@@ -555,6 +580,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Low-code platforms introduce security concerns, governance challenges for citizen development, and potential vendor lock-in risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'Low-Code'
   },
@@ -574,6 +600,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Release management controls ensure deployments are coordinated, authorized, tested, and successfully implemented with minimal disruption.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Deployment',
     subtopic: 'Release Management'
   },

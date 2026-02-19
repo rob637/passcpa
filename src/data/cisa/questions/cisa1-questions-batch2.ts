@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'The IS audit charter establishes the authority, responsibility, and accountability of the IS audit function. It provides the mandate for the audit function and should be approved by senior management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IS Audit Standards and Guidelines',
     subtopic: 'Audit Charter'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'A risk-based audit approach prioritizes areas based on business criticality and risk exposure. While other factors are considered, risk should drive audit planning to ensure resources focus on highest-impact areas.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk-Based Audit Planning',
     subtopic: 'Risk Assessment'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'External confirmations received directly by the auditor are most reliable because they come from independent third parties and are received directly without potential manipulation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Evidence Reliability'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Before escalating or recommending remediation, the auditor should first assess the business impact of the control failure to understand the significance and urgency of the issue.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Execution',
     subtopic: 'Control Evaluation'
   },
@@ -99,6 +103,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Discovery sampling is designed to detect at least one exception if the exception rate exceeds a specified threshold. It is most appropriate when even one control failure is significant.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Sampling',
     subtopic: 'Sampling Methods'
   },
@@ -118,6 +123,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The primary purpose of audit documentation is to provide sufficient evidence to support the audit conclusions and opinions. While compliance is important, evidence support is the fundamental purpose.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Documentation',
     subtopic: 'Working Papers'
   },
@@ -137,6 +143,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Material weaknesses should be communicated to the audit committee in a timely manner, not delayed until the final report or next meeting. Prompt notification enables appropriate governance oversight.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Communication'
   },
@@ -156,6 +163,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Functional reporting to the audit committee (rather than to IT or operational management) best ensures auditor independence by providing direct access to governance oversight.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Ethics',
     subtopic: 'Independence'
   },
@@ -175,6 +183,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'CAATs are most valuable for efficiently analyzing large volumes of data that would be impractical to review manually. They supplement but do not replace professional judgment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Tools and Techniques',
     subtopic: 'CAATs'
   },
@@ -213,6 +222,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'When reviewing prior working papers, the auditor should primarily assess changes in the control environment that may affect current audit scope and approach.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Prior Audit Review'
   },
@@ -232,6 +242,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'An audit program provides detailed procedures to guide the auditor in gathering sufficient appropriate evidence to achieve audit objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Audit Program'
   },
@@ -251,6 +262,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'When disagreement occurs, the auditor should first review the evidence and discuss with the auditee to ensure factual accuracy. This may resolve the disagreement or clarify the issue.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Disagreements'
   },
@@ -289,6 +301,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Continuous auditing uses automated tools and techniques to gather audit evidence and perform testing on an ongoing basis, enabling more timely identification of issues.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Continuous Auditing',
     subtopic: 'Definition'
   },
@@ -327,6 +340,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A compliance audit focuses on determining whether the organization adheres to applicable laws, regulations, contractual requirements, and internal policies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Types of Audits',
     subtopic: 'Compliance Audit'
   },
@@ -346,6 +360,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The ISACA Code requires IS auditors to maintain confidentiality of information obtained during audits, using it only for legitimate audit purposes and protecting it from unauthorized disclosure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Ethics',
     subtopic: 'ISACA Code'
   },
@@ -365,6 +380,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'When fraud is suspected, the auditor should first notify appropriate management (or the audit committee if management is involved) and seek guidance on next steps, including whether to involve specialists.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Fraud Detection',
     subtopic: 'Fraud Response'
   },
@@ -384,6 +400,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Observation of the control in operation provides direct evidence of operating effectiveness. Policies and assertions indicate design but not necessarily operation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Operating Effectiveness'
   },
@@ -403,6 +420,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Statistical sampling allows the auditor to draw mathematically based conclusions about an entire population from a sample, with known confidence levels and precision.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Sampling',
     subtopic: 'Statistical Sampling'
   },
@@ -422,6 +440,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Operators having access to multiple system consoles raises segregation of duties concerns and increases the risk of unauthorized actions or fraud.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Physical Security Audit',
     subtopic: 'Data Center'
   },
@@ -441,6 +460,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Capability maturity models (like CMMI or COBIT maturity assessments) provide structured frameworks for assessing and benchmarking IT process maturity levels.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Maturity Assessment',
     subtopic: 'Capability Models'
   },
@@ -460,6 +480,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'An audit trail provides accountability by recording who did what and when, enabling reconstruction of events for investigation, compliance, or troubleshooting purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Trails',
     subtopic: 'Purpose'
   },
@@ -479,6 +500,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT governance focuses on ensuring that IT supports and enables business objectives. The auditor should primarily assess this alignment rather than technical or operational details.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Assessment'
   },
@@ -498,6 +520,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The audit charter and scope define the authority, objectives, and boundaries of the audit. This should be reviewed first to understand the mandate before examining other materials.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Initial Review'
   },
@@ -517,6 +540,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Residual risk is what remains after controls are applied. The difference between inherent and residual risk represents the risk reduction achieved through control effectiveness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Risk Types'
   },
@@ -536,6 +560,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Audit responsibility remains with the organization regardless of outsourcing. The organization must ensure adequate oversight and assurance over outsourced operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Third-Party Audits',
     subtopic: 'Outsourcing'
   },
@@ -555,6 +580,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'A SOC 2 Type II report includes testing of control operating effectiveness over a period of time (typically 6-12 months), while Type I only assesses design at a point in time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Third-Party Assurance',
     subtopic: 'SOC Reports'
   },
@@ -574,6 +600,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Follow-up procedures primarily verify that management has implemented corrective actions to address audit findings and that the actions are effective.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Follow-up',
     subtopic: 'Verification'
   },

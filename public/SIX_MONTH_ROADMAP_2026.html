@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoraPrep — Six-Month Strategic Roadmap (Feb–Aug 2026)</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --success: #16a34a;
+      --warning: #d97706;
+      --error: #dc2626;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+    
+    @media print {
+      body { font-size: 10pt; }
+      .page-break { page-break-before: always; }
+      .no-print { display: none; }
+      table { font-size: 9pt; }
+      h1 { font-size: 18pt; }
+      h2 { font-size: 14pt; page-break-after: avoid; }
+      h3 { font-size: 12pt; page-break-after: avoid; }
+      section { page-break-inside: avoid; }
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    header h1 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    header .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin: 2rem 0 1rem;
+      font-size: 1.4rem;
+    }
+    
+    h3 {
+      color: var(--text);
+      margin: 1.5rem 0 0.75rem;
+      font-size: 1.1rem;
+    }
+    
+    h4 {
+      color: var(--muted);
+      margin: 1rem 0 0.5rem;
+      font-size: 1rem;
+    }
+    
+    p { margin-bottom: 1rem; }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) { background: #fafafa; }
+    
+    .done { color: var(--success); font-weight: 600; }
+    .partial { color: var(--warning); }
+    .not-done { color: var(--error); }
+    .in-progress { color: var(--primary); }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .badge-done { background: #dcfce7; color: #166534; }
+    .badge-partial { background: #fef3c7; color: #92400e; }
+    .badge-todo { background: #fee2e2; color: #991b1b; }
+    .badge-p0 { background: #fecaca; color: #991b1b; }
+    .badge-p1 { background: #fed7aa; color: #9a3412; }
+    .badge-p2 { background: #e0e7ff; color: #3730a3; }
+    
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .summary-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fafafa;
+    }
+    
+    .summary-card h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    
+    .summary-card .value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .summary-card .sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    
+    ul, ol {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+    
+    li { margin-bottom: 0.25rem; }
+    
+    .month-section {
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .month-section h3 {
+      margin-top: 0;
+    }
+    
+    .toc {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0 2rem;
+    }
+    
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+    
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .toc a:hover {
+      text-decoration: underline;
+    }
+    
+    .highlight-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .highlight-box.success {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    
+    .highlight-box.warning {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+    
+    .checklist li {
+      padding: 0.25rem 0;
+    }
+    
+    .checklist li::before {
+      content: '☐ ';
+      color: var(--muted);
+    }
+    
+    .checklist li.checked::before {
+      content: '✓ ';
+      color: var(--success);
+      font-weight: bold;
+    }
+    
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎯 VoraPrep — Six-Month Strategic Roadmap</h1>
+  <p class="meta">
+    <strong>Period:</strong> February 19 – August 31, 2026 &nbsp;|&nbsp;
+    <strong>Last Updated:</strong> February 19, 2026 &nbsp;|&nbsp;
+    <strong>Launch Date:</strong> Today
+  </p>
+</header>
+
+<nav class="toc no-print">
+  <h3>Table of Contents</h3>
+  <div class="toc-grid">
+    <div>
+      <a href="#executive-summary">1. Executive Summary</a><br>
+      <a href="#current-state">2. Current State</a><br>
+      <a href="#revenue-targets">3. Revenue Targets</a><br>
+      <a href="#launch-week">4. Launch Week</a>
+    </div>
+    <div>
+      <a href="#month1">5. Month 1: March</a><br>
+      <a href="#month2">6. Month 2: April</a><br>
+      <a href="#month3">7. Month 3: May</a><br>
+      <a href="#month4">8. Month 4: June</a>
+    </div>
+    <div>
+      <a href="#month5">9. Month 5: July</a><br>
+      <a href="#month6">10. Month 6: August</a><br>
+      <a href="#exam-plans">11. Exam Action Plans</a><br>
+      <a href="#metrics">12. Success Metrics</a>
+    </div>
+  </div>
+</nav>
+
+<section id="executive-summary">
+  <h2>1. Executive Summary</h2>
+  
+  <p>VoraPrep launches on <strong>February 19, 2026</strong> as an AI-powered exam prep platform covering 6 professional certifications: <strong>CPA, EA, CMA, CIA, CISA, and CFP</strong>. The platform has comprehensive content, fully deployed SEM engine with live Google Ads, an automated SEO blog, and community growth systems.</p>
+  
+  <div class="summary-grid">
+    <div class="summary-card">
+      <h4>Total Content Items</h4>
+      <div class="value">21,509</div>
+      <div class="sub">Questions, Flashcards, Lessons, TBS</div>
+    </div>
+    <div class="summary-card">
+      <h4>Questions</h4>
+      <div class="value">16,366</div>
+      <div class="sub">Across 6 professional exams</div>
+    </div>
+    <div class="summary-card">
+      <h4>Flashcards</h4>
+      <div class="value">3,066</div>
+      <div class="sub">SM-2 Spaced Repetition</div>
+    </div>
+    <div class="summary-card">
+      <h4>Lessons</h4>
+      <div class="value">1,121</div>
+      <div class="sub">Structured learning paths</div>
+    </div>
+  </div>
+  
+  <h3>Key Strategic Priorities</h3>
+  <table>
+    <tr>
+      <th>Priority</th>
+      <th>Why It Matters</th>
+      <th>Timeline</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>CPA feature parity</td>
+      <td>Flagship product needs Study Plan + Cram Mode</td>
+      <td>Week 1–2</td>
+      <td><span class="badge badge-done">✓ DONE</span></td>
+    </tr>
+    <tr>
+      <td>Optimize SEM spend</td>
+      <td>$20 CPA budget, $10 EA — need ROI validation</td>
+      <td>Weeks 2–6</td>
+      <td><span class="badge badge-partial">In Progress</span></td>
+    </tr>
+    <tr>
+      <td>Google Ads conversion tracking</td>
+      <td>Required for bid optimization</td>
+      <td>Week 1</td>
+      <td><span class="badge badge-done">✓ DONE</span></td>
+    </tr>
+    <tr>
+      <td>Discord community + quiz bot</td>
+      <td>Organic acquisition, engagement, retention</td>
+      <td>Launch Day</td>
+      <td><span class="badge badge-done">✓ DONE</span></td>
+    </tr>
+    <tr>
+      <td>Reddit/HN/SE monitor</td>
+      <td>Find organic outreach opportunities</td>
+      <td>Launch Day</td>
+      <td><span class="badge badge-done">✓ DONE</span></td>
+    </tr>
+    <tr>
+      <td>Scale content quality</td>
+      <td>CISA questions rated ★★★☆☆, need references</td>
+      <td>Mar–Apr</td>
+      <td><span class="badge badge-todo">TODO</span></td>
+    </tr>
+    <tr>
+      <td>Mobile app store launch</td>
+      <td>PWA + Capacitor ready, need submissions</td>
+      <td>Apr–May</td>
+      <td><span class="badge badge-todo">TODO</span></td>
+    </tr>
+  </table>
+  
+  <h3>6-Month Financial Targets</h3>
+  <table>
+    <tr>
+      <th>Metric</th>
+      <th>Month 1</th>
+      <th>Month 3</th>
+      <th>Month 6</th>
+    </tr>
+    <tr>
+      <td>Registered users</td>
+      <td>200</td>
+      <td>1,000</td>
+      <td>3,000</td>
+    </tr>
+    <tr>
+      <td>Paid subscribers</td>
+      <td>25</td>
+      <td>150</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <td>Monthly recurring revenue</td>
+      <td>$750</td>
+      <td>$5,000</td>
+      <td>$17,500</td>
+    </tr>
+    <tr>
+      <td>Trial → paid conversion</td>
+      <td>8%</td>
+      <td>15%</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>Monthly churn</td>
+      <td>—</td>
+      <td>&lt;8%</td>
+      <td>&lt;5%</td>
+    </tr>
+  </table>
+</section>
+
+<section id="current-state" class="page-break">
+  <h2>2. Current State Assessment</h2>
+  
+  <h3>2.1 Platform Capabilities (All 6 Exams)</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Authentication</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Firebase Auth (email, Google, Apple)</td>
+    </tr>
+    <tr>
+      <td>6 Exam Courses</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>CPA, EA, CMA, CIA, CISA, CFP all configured</td>
+    </tr>
+    <tr>
+      <td>Adaptive Practice (6 engines)</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Per-exam adaptive engines</td>
+    </tr>
+    <tr>
+      <td>Score Prediction (6 engines)</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Blueprint-weighted score predictors</td>
+    </tr>
+    <tr>
+      <td>Study Plan Setup (6 exams)</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>All 6 exams have study plan setup</td>
+    </tr>
+    <tr>
+      <td>Cram Mode (6 exams)</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>All 6 exams have cram mode</td>
+    </tr>
+    <tr>
+      <td>Exam Simulator</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Per-exam simulators with timer + review</td>
+    </tr>
+    <tr>
+      <td>Flashcards + Spaced Repetition</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>SM-2 algorithm, 3,066 cards</td>
+    </tr>
+    <tr>
+      <td>AI Tutor (Vory)</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Gemini 2.0 Flash, multi-course context</td>
+    </tr>
+    <tr>
+      <td>Gamification</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>14 achievements, XP/levels, streaks</td>
+    </tr>
+    <tr>
+      <td>Analytics</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>GA4 with 20+ custom events, conversion tracking</td>
+    </tr>
+    <tr>
+      <td>Stripe Payments</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Per-exam pricing, founder tiers, trial</td>
+    </tr>
+    <tr>
+      <td>PWA + Offline</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Offline caching, prompt updates, install</td>
+    </tr>
+    <tr>
+      <td>Trial Reminder Emails</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Day 7, 10, 13 drip sequence (Cloud Functions)</td>
+    </tr>
+    <tr>
+      <td>Discord Community</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Quiz bot, 6 exam channels, invite links in-app</td>
+    </tr>
+    <tr>
+      <td>Reddit/HN/SE Monitor</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Hourly scans, AI-generated responses, email alerts</td>
+    </tr>
+    <tr>
+      <td>Push Notifications</td>
+      <td><span class="partial">⚠️ Partial</span></td>
+      <td>FCM configured, cloud functions deployed</td>
+    </tr>
+    <tr>
+      <td>Video Content</td>
+      <td><span class="partial">⚠️ In Progress</span></td>
+      <td>84 CISA scripts written, EA batch 1 started</td>
+    </tr>
+    <tr>
+      <td>Mobile App Store</td>
+      <td><span class="not-done">❌ Not submitted</span></td>
+      <td>Capacitor scaffolded, needs store listing</td>
+    </tr>
+  </table>
+  
+  <h3>2.2 Content Inventory</h3>
+  <table>
+    <tr>
+      <th>Course</th>
+      <th>Questions</th>
+      <th>Flashcards</th>
+      <th>Lessons</th>
+      <th>TBS</th>
+      <th>Total</th>
+      <th>Quality</th>
+    </tr>
+    <tr>
+      <td><strong>CPA</strong></td>
+      <td>4,789</td>
+      <td>1,110</td>
+      <td>375</td>
+      <td>467</td>
+      <td>6,741</td>
+      <td>★★★★☆</td>
+    </tr>
+    <tr>
+      <td><strong>EA</strong></td>
+      <td>4,210</td>
+      <td>665</td>
+      <td>90</td>
+      <td>254</td>
+      <td>5,219</td>
+      <td>★★★★★</td>
+    </tr>
+    <tr>
+      <td><strong>CMA</strong></td>
+      <td>2,834</td>
+      <td>505</td>
+      <td>89</td>
+      <td>130</td>
+      <td>3,558</td>
+      <td>★★★★☆</td>
+    </tr>
+    <tr>
+      <td><strong>CIA</strong></td>
+      <td>2,196</td>
+      <td>361</td>
+      <td>88</td>
+      <td>75</td>
+      <td>2,720</td>
+      <td>★★★★☆</td>
+    </tr>
+    <tr>
+      <td><strong>CISA</strong></td>
+      <td>1,501</td>
+      <td>335</td>
+      <td>91</td>
+      <td>30</td>
+      <td>1,957</td>
+      <td>★★★☆☆</td>
+    </tr>
+    <tr>
+      <td><strong>CFP</strong></td>
+      <td>850</td>
+      <td>255</td>
+      <td>393</td>
+      <td>0</td>
+      <td>1,498</td>
+      <td>★★★☆☆</td>
+    </tr>
+    <tr style="font-weight: bold; background: #f0f9ff;">
+      <td>Total</td>
+      <td>16,366</td>
+      <td>3,066</td>
+      <td>1,121</td>
+      <td>956</td>
+      <td>21,509</td>
+      <td></td>
+    </tr>
+  </table>
+  
+  <h3>2.3 Growth Infrastructure</h3>
+  <table>
+    <tr>
+      <th>Channel</th>
+      <th>Status</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>Google Ads (SEM)</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>2 campaigns (CPA + EA), 23 ad groups, ~120 keywords</td>
+    </tr>
+    <tr>
+      <td>Google Ads Conversions</td>
+      <td><span class="done">✓ Configured</span></td>
+      <td>Signup, trial start, purchase conversions tracked via gtag</td>
+    </tr>
+    <tr>
+      <td>SEO — Technical</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>27-URL sitemap, structured data, canonical URLs, GSC connected</td>
+    </tr>
+    <tr>
+      <td>SEO — Blog Engine</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>123 briefs seeded, auto-publishes 3–4/week via Gemini, email alerts</td>
+    </tr>
+    <tr>
+      <td>Discord Quiz Bot</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Multi-exam bot, 1,200 questions, slash commands, daily auto-quiz</td>
+    </tr>
+    <tr>
+      <td>Reddit/HN/SE Monitor</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>10 subreddits + Stack Exchange + HN. Hourly scans, AI responses, email alerts</td>
+    </tr>
+    <tr>
+      <td>In-App Discord Links</td>
+      <td><span class="done">✓ Live</span></td>
+      <td>Settings, Footer, Sidebar — three touchpoints</td>
+    </tr>
+    <tr>
+      <td>YouTube Channel</td>
+      <td><span class="not-done">❌ Not created</span></td>
+      <td>Needed for video content + SEO</td>
+    </tr>
+    <tr>
+      <td>Social Media</td>
+      <td><span class="not-done">❌ None</span></td>
+      <td>No LinkedIn, Twitter/X accounts</td>
+    </tr>
+  </table>
+</section>
+
+<section id="revenue-targets" class="page-break">
+  <h2>3. Revenue & Growth Targets</h2>
+  
+  <h3>3.1 Pricing Structure</h3>
+  <table>
+    <tr>
+      <th>Exam</th>
+      <th>Monthly (Founder)</th>
+      <th>Monthly (Regular)</th>
+      <th>Annual (Founder)</th>
+      <th>Annual (Regular)</th>
+    </tr>
+    <tr>
+      <td>CPA</td>
+      <td>$29/mo</td>
+      <td>$59/mo</td>
+      <td>$229/yr</td>
+      <td>$449/yr</td>
+    </tr>
+    <tr>
+      <td>EA</td>
+      <td>$19/mo</td>
+      <td>$35/mo</td>
+      <td>$149/yr</td>
+      <td>$249/yr</td>
+    </tr>
+    <tr>
+      <td>CMA</td>
+      <td>$25/mo</td>
+      <td>$49/mo</td>
+      <td>$199/yr</td>
+      <td>$379/yr</td>
+    </tr>
+    <tr>
+      <td>CIA</td>
+      <td>$19/mo</td>
+      <td>$35/mo</td>
+      <td>$149/yr</td>
+      <td>$249/yr</td>
+    </tr>
+    <tr>
+      <td>CISA</td>
+      <td>$25/mo</td>
+      <td>$49/mo</td>
+      <td>$199/yr</td>
+      <td>$379/yr</td>
+    </tr>
+    <tr>
+      <td>CFP</td>
+      <td>$25/mo</td>
+      <td>$49/mo</td>
+      <td>$199/yr</td>
+      <td>$379/yr</td>
+    </tr>
+  </table>
+  
+  <div class="highlight-box">
+    <strong>Trial:</strong> 14 days, full access (unlimited questions, AI tutor, TBS, analytics)<br>
+    <strong>Founder Pricing:</strong> 300 seats/exam, locked for 2 years, deadline <strong>April 30, 2026</strong><br>
+    <strong>Post-trial limits:</strong> 20% content, AI Tutor blocked, TBS/Exam Sim blocked
+  </div>
+  
+  <h3>3.2 Unit Economics Target</h3>
+  <table>
+    <tr><th>Metric</th><th>Target</th><th>Calculation</th></tr>
+    <tr><td>Blended ARPU</td><td>$35/mo</td><td>Weighted across exams</td></tr>
+    <tr><td>CAC (SEM)</td><td>$40–60</td><td>Google Ads CPA after optimization</td></tr>
+    <tr><td>CAC (SEO)</td><td>$5–10</td><td>Organic traffic, long-term</td></tr>
+    <tr><td>LTV</td><td>$210</td><td>6-month avg retention × $35 ARPU</td></tr>
+    <tr><td>LTV:CAC (blended)</td><td>5:1+</td><td>After SEO traffic ramps</td></tr>
+    <tr><td>Trial → Paid</td><td>15–20%</td><td>Industry benchmark: 10–15%</td></tr>
+    <tr><td>Monthly Churn</td><td>&lt;5%</td><td>Exam-prep natural endpoint considered</td></tr>
+  </table>
+  
+  <h3>3.3 Revenue Milestones</h3>
+  <table>
+    <tr><th>Milestone</th><th>Target Date</th><th>Revenue</th><th>Subscribers</th></tr>
+    <tr><td>First paying customer</td><td>Feb 2026</td><td>$29</td><td>1</td></tr>
+    <tr><td>$1K MRR</td><td>Mar 2026</td><td>$1,000</td><td>~30</td></tr>
+    <tr><td>$5K MRR</td><td>May 2026</td><td>$5,000</td><td>~140</td></tr>
+    <tr><td>$10K MRR</td><td>Jul 2026</td><td>$10,000</td><td>~285</td></tr>
+    <tr><td>$20K MRR</td><td>Aug 2026</td><td>$20,000</td><td>~570</td></tr>
+    <tr><td>Founder seats sold out</td><td>Apr 2026</td><td>—</td><td>300+</td></tr>
+  </table>
+</section>
+
+<section id="launch-week" class="page-break">
+  <h2>4. Launch Week: Feb 19–28</h2>
+  
+  <h3>4.1 Launch Day Checklist (Feb 19)</h3>
+  <ul class="checklist">
+    <li class="checked">Switch Stripe to live mode (replace test keys in production)</li>
+    <li class="checked">Deploy production build with final content</li>
+    <li class="checked">Run user transition script for existing beta testers</li>
+    <li class="checked">Verify payment flow end-to-end with real card</li>
+    <li class="checked">Deploy Discord quiz bot (multi-exam, 6 channels, 1,200 questions)</li>
+    <li class="checked">Start Reddit/HN/SE opportunity monitor (hourly daemon)</li>
+    <li class="checked">Add Discord invite link to app (Settings, footer, sidebar)</li>
+    <li class="checked">CPA Study Plan Setup implemented</li>
+    <li class="checked">CPA Cram Mode implemented</li>
+    <li class="checked">Trial drip emails deployed (Day 7, 10, 13)</li>
+    <li class="checked">Google Ads conversion tracking configured</li>
+    <li>Send launch email blast to waitlist</li>
+    <li>Post launch announcement (LinkedIn, Twitter/X, Reddit r/CPA)</li>
+    <li>Monitor error logs for first 24 hours</li>
+    <li>Verify Google Ads campaigns are active and approved</li>
+    <li>Link GA4 ↔ Google Ads</li>
+    <li>IAM re-apply for all Cloud Run functions after final deploy</li>
+  </ul>
+  
+  <h3>4.2 Community Growth Systems (Live)</h3>
+  <table>
+    <tr>
+      <th>System</th>
+      <th>Status</th>
+      <th>Location</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td><strong>Reddit/HN/SE Monitor</strong></td>
+      <td><span class="done">✓ Running</span></td>
+      <td>scripts/reddit_monitor/</td>
+      <td>10 subreddits, Stack Exchange, HN. Hourly scans. AI responses with Discord invite. Email alerts.</td>
+    </tr>
+    <tr>
+      <td><strong>Discord Quiz Bot</strong></td>
+      <td><span class="done">✓ Running</span></td>
+      <td>scripts/discord_bots/</td>
+      <td>Single bot serving all 6 exams. 1,200 questions. Slash commands. 30s answer reveal with CTA.</td>
+    </tr>
+    <tr>
+      <td><strong>Discord Server</strong></td>
+      <td><span class="done">✓ Live</span></td>
+      <td>discord.gg/XBjzDrws</td>
+      <td>"VoraPrep Study Group" — 7 channels: #general + 6 quiz channels</td>
+    </tr>
+    <tr>
+      <td><strong>In-App Discord Links</strong></td>
+      <td><span class="done">✓ Deployed</span></td>
+      <td>Settings, Footer, Sidebar</td>
+      <td>Three touchpoints driving users to Discord community</td>
+    </tr>
+    <tr>
+      <td><strong>Telegram Bot</strong></td>
+      <td><span class="partial">Built</span></td>
+      <td>scripts/discord_bots/</td>
+      <td>telegram_adapter.py ready, needs @BotFather token</td>
+    </tr>
+    <tr>
+      <td><strong>Slack Bot</strong></td>
+      <td><span class="partial">Built</span></td>
+      <td>scripts/discord_bots/</td>
+      <td>slack_adapter.py ready, needs workspace deployment</td>
+    </tr>
+  </table>
+  
+  <h3>4.3 Launch Week Monitoring</h3>
+  <table>
+    <tr><th>Metric</th><th>Tool</th><th>Check Frequency</th></tr>
+    <tr><td>Signups</td><td>Firebase Auth console</td><td>Every 2 hours day 1, daily after</td></tr>
+    <tr><td>Trial starts</td><td>Firestore users collection</td><td>Daily</td></tr>
+    <tr><td>Stripe events</td><td>Stripe Dashboard</td><td>Daily</td></tr>
+    <tr><td>Error rate</td><td>Firebase Functions logs</td><td>Every 4 hours day 1, daily after</td></tr>
+    <tr><td>Google Ads spend</td><td>Google Ads console</td><td>Daily</td></tr>
+    <tr><td>Auto-published articles</td><td>Email notifications</td><td>Every morning</td></tr>
+    <tr><td>Reddit/HN/SE opportunities</td><td>Email alerts (Resend)</td><td>As they arrive — respond within 2-4 hours</td></tr>
+    <tr><td>Discord bot activity</td><td>Discord server</td><td>Daily</td></tr>
+    <tr><td>Discord member count</td><td>Discord server settings</td><td>Weekly</td></tr>
+  </table>
+</section>
+
+<section id="month1" class="page-break">
+  <h2>5. Month 1: March 2026 — Foundation & Fix</h2>
+  
+  <p><strong>Theme:</strong> Validate PMF, fix critical gaps, establish baseline metrics, deploy community systems to persistent servers.</p>
+  
+  <h3>5.1 Product — Critical Fixes</h3>
+  <table>
+    <tr><th>Task</th><th>Priority</th><th>Hours</th><th>Status</th><th>Description</th></tr>
+    <tr><td>CPA Study Plan Setup</td><td><span class="badge badge-p0">P0</span></td><td>6h</td><td><span class="done">✓ DONE</span></td><td>CPAStudyPlanSetup.tsx</td></tr>
+    <tr><td>CPA Cram Mode</td><td><span class="badge badge-p0">P0</span></td><td>4h</td><td><span class="done">✓ DONE</span></td><td>cpaCramMode.ts</td></tr>
+    <tr><td>Trial expiration drip</td><td><span class="badge badge-p0">P0</span></td><td>4h</td><td><span class="done">✓ DONE</span></td><td>Day 7/10/13 sequence</td></tr>
+    <tr><td>Google Ads conversion tracking</td><td><span class="badge badge-p0">P0</span></td><td>2h</td><td><span class="done">✓ DONE</span></td><td>analytics.ts gtag events</td></tr>
+    <tr><td>Stripe webhook hardening</td><td><span class="badge badge-p1">P1</span></td><td>3h</td><td></td><td>Retry logic, idempotency, alerts</td></tr>
+    <tr><td>Fix Pricing page redirect</td><td><span class="badge badge-p1">P1</span></td><td>2h</td><td></td><td>Build real pricing comparison page</td></tr>
+    <tr><td>Error tracking (Sentry)</td><td><span class="badge badge-p1">P1</span></td><td>4h</td><td></td><td>Production error monitoring</td></tr>
+  </table>
+  
+  <h3>5.2 Content Quality — CISA & CFP Improvements</h3>
+  <table>
+    <tr><th>Task</th><th>Priority</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>CISA question references</td><td><span class="badge badge-p0">P0</span></td><td>8h</td><td>Add ISACA citations to all 1,501 questions</td></tr>
+    <tr><td>CISA distractor improvement</td><td><span class="badge badge-p1">P1</span></td><td>6h</td><td>Remove "always/never" traps</td></tr>
+    <tr><td>CPA FAR distractor upgrade</td><td><span class="badge badge-p1">P1</span></td><td>6h</td><td>Make distractors more exam-realistic</td></tr>
+    <tr><td>CFP question expansion</td><td><span class="badge badge-p1">P1</span></td><td>8h</td><td>850 → 1,350 questions</td></tr>
+  </table>
+  
+  <h3>5.3 Community & Organic Growth</h3>
+  <table>
+    <tr><th>Task</th><th>Timeline</th><th>Priority</th><th>Description</th></tr>
+    <tr><td><strong>Deploy Discord bot to Railway</strong></td><td>Week 1</td><td><span class="badge badge-p0">P0</span></td><td>Move from codespace to 24/7 server</td></tr>
+    <tr><td><strong>Deploy Reddit monitor to Railway</strong></td><td>Week 1</td><td><span class="badge badge-p0">P0</span></td><td>Move from codespace to 24/7 server</td></tr>
+    <tr><td>Respond to Reddit monitor alerts</td><td>Ongoing</td><td><span class="badge badge-p0">P0</span></td><td>Target: 3-5 organic replies/week</td></tr>
+    <tr><td>Post Discord bot on listing sites</td><td>Week 1</td><td><span class="badge badge-p1">P1</span></td><td>top.gg, discordbotlist.com</td></tr>
+    <tr><td>LinkedIn launch post</td><td>Week 1</td><td><span class="badge badge-p1">P1</span></td><td>Announce + Discord invite</td></tr>
+    <tr><td>Discord bot: 3x/day auto-quiz</td><td>Week 3</td><td><span class="badge badge-p1">P1</span></td><td>Morning, lunch, evening schedule</td></tr>
+    <tr><td>Telegram bot launch</td><td>Week 3</td><td><span class="badge badge-p2">P2</span></td><td>Deploy with @BotFather token</td></tr>
+    <tr><td>Track Discord → signup conversion</td><td>Week 4</td><td><span class="badge badge-p1">P1</span></td><td>UTM params + GA4 tracking</td></tr>
+  </table>
+  
+  <h3>5.4 SEM Optimization</h3>
+  <table>
+    <tr><th>Task</th><th>Timeline</th><th>Description</th></tr>
+    <tr><td>Link GA4 ↔ Google Ads</td><td>Day 1</td><td>Link accounts for attribution</td></tr>
+    <tr><td>Exit learning phase</td><td>Week 1–2</td><td>Let campaigns run 14 days without changes</td></tr>
+    <tr><td>First performance review</td><td>Day 14</td><td>Analyze CTR, CPC, conversion rate</td></tr>
+    <tr><td>Pause low-performers</td><td>Day 14</td><td>CPC > $8 and CTR < 2%</td></tr>
+    <tr><td>Ad copy A/B tests</td><td>Week 3</td><td>2 new RSA variations per campaign</td></tr>
+    <tr><td>Negative keywords</td><td>Week 3</td><td>Add: "free", "reddit", "crack", competitor names</td></tr>
+  </table>
+  
+  <h3>5.5 YouTube Channel Setup</h3>
+  <table>
+    <tr><th>Task</th><th>Timeline</th><th>Description</th></tr>
+    <tr><td>Create branded channel</td><td>Week 1</td><td>VoraPrep channel with logo, banner, links</td></tr>
+    <tr><td>Upload CISA batch 1</td><td>Week 2–3</td><td>First 10–20 domain videos</td></tr>
+    <tr><td>YouTube SEO setup</td><td>Week 2</td><td>Keywords in titles/descriptions/tags</td></tr>
+    <tr><td>Channel trailer</td><td>Week 3</td><td>60-second intro video</td></tr>
+  </table>
+  
+  <div class="highlight-box success">
+    <strong>March Targets:</strong>
+    <ul>
+      <li>50 Discord members</li>
+      <li>12 organic Reddit/HN replies</li>
+      <li>200 registered users</li>
+      <li>25 paid subscribers</li>
+      <li>$750 MRR</li>
+    </ul>
+  </div>
+</section>
+
+<section id="month2" class="page-break">
+  <h2>6. Month 2: April 2026 — Content & Conversion</h2>
+  
+  <p><strong>Theme:</strong> Scale content, optimize conversion, execute founder deadline push.</p>
+  
+  <h3>6.1 Founder Pricing Push (Deadline: April 30)</h3>
+  <table>
+    <tr><th>Task</th><th>Timeline</th><th>Description</th></tr>
+    <tr><td>Founder countdown on landing pages</td><td>Apr 1</td><td>"X of 300 seats remaining" + timer</td></tr>
+    <tr><td>Founder email campaign</td><td>Apr 1, 15, 25</td><td>3-email scarcity series to trial users</td></tr>
+    <tr><td>Founder social proof</td><td>Apr 1</td><td>"127 founders have joined" display</td></tr>
+    <tr><td>Testimonial collection</td><td>Apr 7</td><td>Email existing subscribers for quotes</td></tr>
+    <tr><td>Founder deadline enforcement</td><td>Apr 30</td><td>Transition to regular pricing</td></tr>
+  </table>
+  
+  <h3>6.2 Content Expansion (~60 hours)</h3>
+  <table>
+    <tr><th>Task</th><th>Priority</th><th>Hours</th><th>Target</th></tr>
+    <tr><td>CFP questions: +1,000</td><td><span class="badge badge-p0">P0</span></td><td>16h</td><td>850 → 1,850</td></tr>
+    <tr><td>CFP lessons: Deepen all 8 sections</td><td><span class="badge badge-p0">P0</span></td><td>12h</td><td>Expand thin lessons</td></tr>
+    <tr><td>CISA questions: +500</td><td><span class="badge badge-p1">P1</span></td><td>8h</td><td>1,501 → 2,000</td></tr>
+    <tr><td>CIA questions: +500</td><td><span class="badge badge-p1">P1</span></td><td>8h</td><td>2,196 → 2,700</td></tr>
+    <tr><td>CMA CBQ simulator</td><td><span class="badge badge-p1">P1</span></td><td>12h</td><td>Prep for Sept 2026 format change</td></tr>
+    <tr><td>CPA TBS expansion</td><td><span class="badge badge-p2">P2</span></td><td>4h</td><td>+50 TBS for weak areas</td></tr>
+  </table>
+  
+  <h3>6.3 Email Marketing Automation</h3>
+  <table>
+    <tr><th>Sequence</th><th>Emails</th><th>Trigger</th><th>Description</th></tr>
+    <tr><td>Welcome drip</td><td>5</td><td>Signup</td><td>Welcome → First practice → Study plan → AI Tutor → Progress</td></tr>
+    <tr><td>Trial conversion</td><td>3</td><td>Day 7, 10, 13</td><td>Already implemented ✓</td></tr>
+    <tr><td>Win-back</td><td>3</td><td>Churn + 7 days</td><td>"We miss you" → Content update → Special offer</td></tr>
+    <tr><td>Weekly study digest</td><td>1</td><td>Every Monday</td><td>Personal stats, streak status, weak areas</td></tr>
+  </table>
+  
+  <h3>6.4 Community Growth</h3>
+  <table>
+    <tr><th>Task</th><th>Timeline</th><th>Description</th></tr>
+    <tr><td>Launch Telegram bot</td><td>Week 1</td><td>Deploy telegram_adapter.py</td></tr>
+    <tr><td>Track Discord → signup conversion</td><td>Week 1</td><td>UTM params for bot CTA links</td></tr>
+    <tr><td>Discord server promotion</td><td>Week 2</td><td>Cross-post in r/CPA study threads (organic)</td></tr>
+    <tr><td>Add 300 more bot questions</td><td>Week 3</td><td>200/exam → 250/exam</td></tr>
+  </table>
+  
+  <div class="highlight-box warning">
+    <strong>April Targets:</strong>
+    <ul>
+      <li>150 Discord members</li>
+      <li>40 organic Reddit/HN replies (cumulative)</li>
+      <li>500 registered users</li>
+      <li>75 paid subscribers</li>
+      <li>$2,500 MRR</li>
+      <li>Founder pricing deadline executed (Apr 30)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="month3" class="page-break">
+  <h2>7. Month 3: May 2026 — Scale & Optimize</h2>
+  
+  <p><strong>Theme:</strong> Scale what's working, cut what isn't, prepare for mobile.</p>
+  
+  <h3>7.1 SEM Scaling</h3>
+  <table>
+    <tr><th>Task</th><th>Description</th></tr>
+    <tr><td>ROI analysis</td><td>Calculate true CAC per exam: ad spend ÷ paid conversions</td></tr>
+    <tr><td>Scale winners</td><td>Increase budget on campaigns with CAC < $50</td></tr>
+    <tr><td>Kill losers</td><td>Pause campaigns with CAC > $100 after 30 days</td></tr>
+    <tr><td>New campaigns</td><td>Launch CMA and CISA campaigns if content is strong</td></tr>
+    <tr><td>Remarketing</td><td>Set up remarketing for site visitors who didn't convert</td></tr>
+    <tr><td>Budget target</td><td>Scale to $50–100/day if ROI positive</td></tr>
+  </table>
+  
+  <h3>7.2 Mobile App Store Preparation</h3>
+  <table>
+    <tr><th>Task</th><th>Hours</th><th>Platform</th><th>Description</th></tr>
+    <tr><td>Android app polish</td><td>6h</td><td>Android</td><td>Test all flows, fix Capacitor quirks</td></tr>
+    <tr><td>iOS app polish</td><td>6h</td><td>iOS</td><td>Test in Xcode simulator</td></tr>
+    <tr><td>App store assets</td><td>4h</td><td>Both</td><td>Screenshots (6+ per platform), icon</td></tr>
+    <tr><td>App store listing copy</td><td>3h</td><td>Both</td><td>Title, description, keywords</td></tr>
+    <tr><td>Privacy policy + ToS</td><td>2h</td><td>Both</td><td>Required for submission</td></tr>
+    <tr><td>Google Play submission</td><td>2h</td><td>Android</td><td>Build signed APK, submit</td></tr>
+    <tr><td>App Store submission</td><td>2h</td><td>iOS</td><td>Build IPA, submit</td></tr>
+  </table>
+  
+  <h3>7.3 Feature Development</h3>
+  <table>
+    <tr><th>Feature</th><th>Priority</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>Blueprint heatmap</td><td><span class="badge badge-p1">P1</span></td><td>8h</td><td>Visual performance by blueprint area</td></tr>
+    <tr><td>Smart Review</td><td><span class="badge badge-p1">P1</span></td><td>6h</td><td>Inject weak questions into study plan</td></tr>
+    <tr><td>Streak improvements</td><td><span class="badge badge-p2">P2</span></td><td>3h</td><td>Custom goals, streak shields, weekly recap</td></tr>
+    <tr><td>Dark mode polish</td><td><span class="badge badge-p2">P2</span></td><td>3h</td><td>Audit all components for consistency</td></tr>
+  </table>
+  
+  <div class="highlight-box">
+    <strong>May Targets:</strong>
+    <ul>
+      <li>300 Discord members</li>
+      <li>1,000 registered users</li>
+      <li>150 paid subscribers</li>
+      <li>$5,000 MRR</li>
+      <li>Mobile apps submitted to stores</li>
+    </ul>
+  </div>
+</section>
+
+<section id="month4" class="page-break">
+  <h2>8. Month 4: June 2026 — Mobile & Expansion</h2>
+  
+  <p><strong>Theme:</strong> Mobile launch, expand to all 6 exams in SEM, community foundations.</p>
+  
+  <h3>8.1 Mobile App Launch</h3>
+  <table>
+    <tr><th>Task</th><th>Timeline</th><th>Description</th></tr>
+    <tr><td>Address review feedback</td><td>Week 1</td><td>Fix issues from app review</td></tr>
+    <tr><td>Google Play soft launch</td><td>Week 1–2</td><td>Release as "Early Access"</td></tr>
+    <tr><td>Full launch on both stores</td><td>Week 3</td><td>Remove early access, promote</td></tr>
+    <tr><td>Mobile analytics</td><td>Week 1</td><td>Platform detection in GA4</td></tr>
+    <tr><td>Push notification optimization</td><td>Week 2</td><td>Test timing for engagement</td></tr>
+    <tr><td>In-app review prompt</td><td>Week 4</td><td>Trigger after 5 study sessions</td></tr>
+  </table>
+  
+  <h3>8.2 SEM Expansion to All 6 Exams</h3>
+  <table>
+    <tr><th>Exam</th><th>Budget/Day</th><th>Ad Groups</th><th>Status</th></tr>
+    <tr><td>CPA</td><td>$15–25</td><td>12+</td><td>Already live</td></tr>
+    <tr><td>EA</td><td>$8–12</td><td>11+</td><td>Already live</td></tr>
+    <tr><td>CMA</td><td>$8–12</td><td>6–8</td><td>New — launch</td></tr>
+    <tr><td>CISA</td><td>$5–8</td><td>5–6</td><td>New — launch</td></tr>
+    <tr><td>CIA</td><td>$5–8</td><td>5–6</td><td>New — launch</td></tr>
+    <tr><td>CFP</td><td>$5–8</td><td>5–6</td><td>New — launch</td></tr>
+  </table>
+  <p><strong>Total budget target:</strong> $50–75/day ($1,500–2,250/mo)</p>
+  
+  <h3>8.3 Community Features v1</h3>
+  <table>
+    <tr><th>Feature</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>Discussion forums</td><td>12h</td><td>Per-exam discussion boards (Firestore)</td></tr>
+    <tr><td>Study groups</td><td>8h</td><td>Create/join groups, shared progress</td></tr>
+    <tr><td>Q&A on questions</td><td>6h</td><td>User asks/answers on practice problems</td></tr>
+    <tr><td>Weekly challenges</td><td>4h</td><td>Timed competitive quizzes</td></tr>
+    <tr><td>Discord ↔ App sync</td><td>6h</td><td>Show Discord leaderboard in-app, earn XP from bot</td></tr>
+    <tr><td>Slack bot deployment</td><td>4h</td><td>Deploy to accounting firm workspaces</td></tr>
+  </table>
+  
+  <div class="highlight-box success">
+    <strong>June Targets:</strong>
+    <ul>
+      <li>500 Discord members</li>
+      <li>Mobile apps live on both stores</li>
+      <li>1,800 registered users</li>
+      <li>250 paid subscribers</li>
+      <li>$8,750 MRR</li>
+    </ul>
+  </div>
+</section>
+
+<section id="month5" class="page-break">
+  <h2>9. Month 5: July 2026 — Differentiation & Retention</h2>
+  
+  <p><strong>Theme:</strong> Build features no competitor has, reduce churn.</p>
+  
+  <h3>9.1 AI-Powered Differentiators</h3>
+  <table>
+    <tr><th>Feature</th><th>Hours</th><th>Description</th></tr>
+    <tr><td><strong>AI Exam Coach</strong></td><td>12h</td><td>Personalized daily study plan from Gemini based on score prediction, weak areas, exam date</td></tr>
+    <tr><td><strong>AI Question Generator</strong></td><td>10h</td><td>Users request custom practice on any topic, Gemini generates in real-time</td></tr>
+    <tr><td><strong>AI Explanation Enhancer</strong></td><td>6h</td><td>"Explain like I'm 5" / "Real-world example" / "How on exam?"</td></tr>
+    <tr><td><strong>AI Weak Area Diagnosis</strong></td><td>6h</td><td>Post-session AI summary with specific recommendations</td></tr>
+    <tr><td><strong>AI Essay Grader (CMA)</strong></td><td>6h</td><td>Gemini grades CBQ/essay with rubric-based scoring</td></tr>
+  </table>
+  
+  <h3>9.2 Retention & Engagement</h3>
+  <table>
+    <tr><th>Feature</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>Streak shields</td><td>3h</td><td>Miss 1 day/week without losing streak (XP purchase)</td></tr>
+    <tr><td>Achievement notifications</td><td>3h</td><td>In-app + push when approaching milestones</td></tr>
+    <tr><td>Weekly email digest</td><td>4h</td><td>Personalized stats, weak area focus</td></tr>
+    <tr><td>Exam countdown widget</td><td>2h</td><td>Dashboard widget with motivational messaging</td></tr>
+    <tr><td>Social sharing</td><td>4h</td><td>Share achievements to LinkedIn/Twitter</td></tr>
+    <tr><td>Referral program v1</td><td>4h</td><td>7 extra trial days for referee, 1 month free for referrer</td></tr>
+  </table>
+  
+  <h3>9.3 CMA Exam Format Transition</h3>
+  <div class="highlight-box warning">
+    <strong>CMA transitions to Constructed-Based Questions (CBQ) in September 2026.</strong>
+    VoraPrep should support both formats during the transition.
+  </div>
+  <table>
+    <tr><th>Task</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>CBQ question format</td><td>6h</td><td>New type: multi-part calculations, scenario-based</td></tr>
+    <tr><td>CBQ simulator</td><td>8h</td><td>Timed sections with partial credit scoring</td></tr>
+    <tr><td>Blueprint update</td><td>3h</td><td>Update CMA weights for 2026-2027</td></tr>
+    <tr><td>Migration notice</td><td>1h</td><td>In-app banner about format change</td></tr>
+  </table>
+  
+  <div class="highlight-box">
+    <strong>July Targets:</strong>
+    <ul>
+      <li>2,400 registered users</li>
+      <li>350 paid subscribers</li>
+      <li>$12,250 MRR</li>
+      <li>Monthly churn &lt;6%</li>
+    </ul>
+  </div>
+</section>
+
+<section id="month6" class="page-break">
+  <h2>10. Month 6: August 2026 — Growth Engine & Maturity</h2>
+  
+  <p><strong>Theme:</strong> Automate growth, reduce manual intervention, prepare for scale.</p>
+  
+  <h3>10.1 Growth Automation</h3>
+  <table>
+    <tr><th>Feature</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>Auto SEM bid adjustments</td><td>8h</td><td>Cloud Function adjusts bids based on conversion data</td></tr>
+    <tr><td>Content performance tracking</td><td>6h</td><td>Track which blog posts drive signups, auto-promote</td></tr>
+    <tr><td>SEO auto-interlinking</td><td>4h</td><td>AI-generated internal links in new posts</td></tr>
+    <tr><td>Lead scoring</td><td>6h</td><td>Score trial users by engagement</td></tr>
+    <tr><td>Conversion-optimized emails</td><td>6h</td><td>Behavior-triggered personalized emails</td></tr>
+  </table>
+  
+  <h3>10.2 Platform Maturity</h3>
+  <table>
+    <tr><th>Feature</th><th>Hours</th><th>Description</th></tr>
+    <tr><td>Admin: Question item analysis</td><td>8h</td><td>Per-question stats, discrimination index, flag outliers</td></tr>
+    <tr><td>Admin: Cohort analysis</td><td>6h</td><td>Retention curves, feature adoption, conversion by source</td></tr>
+    <tr><td>Content versioning</td><td>4h</td><td>Track question edits, maintain audit trail</td></tr>
+    <tr><td>Rate limiting</td><td>3h</td><td>Prevent AI tutor abuse per user tier</td></tr>
+    <tr><td>Accessibility audit</td><td>4h</td><td>WCAG 2.1 AA compliance, screen reader testing</td></tr>
+  </table>
+  
+  <h3>10.3 Partnership & Business Development</h3>
+  <table>
+    <tr><th>Opportunity</th><th>Action</th></tr>
+    <tr><td>Accounting firm partnerships</td><td>Reach out to Top 100 firms for bulk licensing</td></tr>
+    <tr><td>University partnerships</td><td>Contact 20 accounting programs for student discounts</td></tr>
+    <tr><td>CPE/CE credit partnerships</td><td>Explore NASBA CPE credit for VoraPrep content</td></tr>
+    <tr><td>Affiliate program</td><td>Launch for accounting bloggers/influencers</td></tr>
+    <tr><td>Corporate training</td><td>Enterprise pricing for company-sponsored exams</td></tr>
+  </table>
+  
+  <div class="highlight-box success">
+    <strong>August Targets (End of 6 Months):</strong>
+    <ul>
+      <li>3,000 registered users</li>
+      <li>500 paid subscribers</li>
+      <li><strong>$17,500 MRR</strong></li>
+      <li>Monthly churn &lt;5%</li>
+      <li>Trial → paid conversion 20%</li>
+      <li>Test coverage 38%</li>
+    </ul>
+  </div>
+</section>
+
+<section id="exam-plans" class="page-break">
+  <h2>11. Exam-by-Exam Action Plans</h2>
+  
+  <h3>11.1 CPA (Flagship — Highest Priority)</h3>
+  <p><strong>Current:</strong> 4,789 questions, 1,110 flashcards, 375 lessons, 467 TBS. Quality: ★★★★☆</p>
+  <p><strong>Status:</strong> All core features complete (Study Plan, Cram Mode, Score Predictor)</p>
+  <table>
+    <tr><th>Task</th><th>Month</th><th>Status</th><th>Description</th></tr>
+    <tr><td>Study Plan Setup</td><td>Feb</td><td><span class="done">✓ DONE</span></td><td>CPAStudyPlanSetup.tsx</td></tr>
+    <tr><td>Cram Mode</td><td>Feb</td><td><span class="done">✓ DONE</span></td><td>cpaCramMode.ts</td></tr>
+    <tr><td>FAR distractor improvement</td><td>Mar</td><td></td><td>Rewrite 200+ weak distractors</td></tr>
+    <tr><td>Score predictor tuning</td><td>Apr</td><td></td><td>Validate against real exam scores</td></tr>
+    <tr><td>2025→2026 blueprint transition</td><td>Apr</td><td></td><td>Map questions to current AICPA blueprint</td></tr>
+    <tr><td>Video lessons (5 pilot)</td><td>Jul</td><td></td><td>5 high-impact FAR video lessons</td></tr>
+  </table>
+  
+  <h3>11.2 EA (Second Priority — Strong Content)</h3>
+  <p><strong>Current:</strong> 4,210 questions, 665 flashcards, 90 lessons, 254 TBS. Quality: ★★★★★</p>
+  <p><strong>Strength:</strong> Professional-grade questions with IRC citations</p>
+  <table>
+    <tr><th>Task</th><th>Month</th><th>Description</th></tr>
+    <tr><td>Lesson expansion</td><td>Mar–Apr</td><td>90 → 200 lessons</td></tr>
+    <tr><td>IRS Form Explorer</td><td>Jul</td><td>Interactive form viewer linked to questions</td></tr>
+    <tr><td>Video lessons (batch 1)</td><td>May–Jun</td><td>Complete EA batch 1</td></tr>
+    <tr><td>SEM campaign optimization</td><td>Mar</td><td>Optimize keywords and ad copy</td></tr>
+  </table>
+  
+  <h3>11.3 CMA (Growth Opportunity — Format Transition)</h3>
+  <p><strong>Current:</strong> 2,834 questions, 505 flashcards, 89 lessons, 130 TBS. Quality: ★★★★☆</p>
+  <p><strong>Opportunity:</strong> CBQ format transition Sept 2026 — be first to market</p>
+  <table>
+    <tr><th>Task</th><th>Month</th><th>Description</th></tr>
+    <tr><td>Question expansion (+500)</td><td>Apr</td><td>2,834 → 3,334 questions</td></tr>
+    <tr><td>CBQ format support</td><td>Jul</td><td>New question type</td></tr>
+    <tr><td>AI Essay Grader</td><td>Jul</td><td>Gemini-powered grading</td></tr>
+    <tr><td>SEM campaign launch</td><td>Jun</td><td>New Google Ads campaign</td></tr>
+  </table>
+  
+  <h3>11.4 CIA (Steady Growth)</h3>
+  <p><strong>Current:</strong> 2,196 questions, 361 flashcards, 88 lessons, 75 TBS. Quality: ★★★★☆</p>
+  <table>
+    <tr><th>Task</th><th>Month</th><th>Description</th></tr>
+    <tr><td>Question expansion (+500)</td><td>Apr–May</td><td>2,196 → 2,700 questions</td></tr>
+    <tr><td>TBS expansion (+50)</td><td>May</td><td>75 → 125 TBS</td></tr>
+    <tr><td>SEM campaign launch</td><td>Jun</td><td>Google Ads for CIA keywords</td></tr>
+  </table>
+  
+  <h3>11.5 CISA (Quality Improvement Needed)</h3>
+  <p><strong>Current:</strong> 1,501 questions, 335 flashcards, 91 lessons, 30 TBS. Quality: ★★★☆☆</p>
+  <p><strong>Issues:</strong> Missing references, absolute-language distractors</p>
+  <table>
+    <tr><th>Task</th><th>Month</th><th>Priority</th><th>Description</th></tr>
+    <tr><td>Add references to all questions</td><td>Mar</td><td><span class="badge badge-p0">P0</span></td><td>ISACA citations for all 1,501</td></tr>
+    <tr><td>Distractor rewrite</td><td>Mar–Apr</td><td><span class="badge badge-p0">P0</span></td><td>Remove "always/never" traps</td></tr>
+    <tr><td>Question expansion (+500)</td><td>Apr–May</td><td><span class="badge badge-p1">P1</span></td><td>1,501 → 2,000 questions</td></tr>
+    <tr><td>Video integration</td><td>Jun–Jul</td><td><span class="badge badge-p2">P2</span></td><td>84 scripts already written</td></tr>
+  </table>
+  
+  <h3>11.6 CFP (Needs Most Work)</h3>
+  <p><strong>Current:</strong> 850 questions, 255 flashcards, 393 lessons, 0 TBS. Quality: ★★★☆☆</p>
+  <table>
+    <tr><th>Task</th><th>Month</th><th>Priority</th><th>Target</th></tr>
+    <tr><td>Question generation (+1,000)</td><td>Mar–Apr</td><td><span class="badge badge-p0">P0</span></td><td>850 → 1,850</td></tr>
+    <tr><td>Lesson deepening</td><td>Apr–May</td><td><span class="badge badge-p1">P1</span></td><td>Deepen 393 thin lessons</td></tr>
+    <tr><td>TBS creation (50+)</td><td>May</td><td><span class="badge badge-p1">P1</span></td><td>First 50 case study TBS</td></tr>
+    <tr><td>Question generation (+1,000)</td><td>Jun–Jul</td><td><span class="badge badge-p1">P1</span></td><td>1,850 → 2,850</td></tr>
+    <tr><td>SEM campaign launch</td><td>Jul</td><td><span class="badge badge-p2">P2</span></td><td>After content sufficient</td></tr>
+  </table>
+</section>
+
+<section id="metrics" class="page-break">
+  <h2>12. Success Metrics Dashboard</h2>
+  
+  <h3>12.1 North Star Metrics</h3>
+  <table>
+    <tr><th>Metric</th><th>Definition</th><th>Month 1</th><th>Month 3</th><th>Month 6</th></tr>
+    <tr><td><strong>MRR</strong></td><td>Monthly recurring revenue</td><td>$750</td><td>$5,000</td><td>$17,500</td></tr>
+    <tr><td><strong>Active learners</strong></td><td>3+ study sessions/week</td><td>50</td><td>300</td><td>1,000</td></tr>
+    <tr><td><strong>Pass rate</strong></td><td>Users who report passing</td><td>—</td><td>Track</td><td>&gt; industry avg</td></tr>
+  </table>
+  
+  <h3>12.2 Acquisition Metrics</h3>
+  <table>
+    <tr><th>Metric</th><th>Month 1</th><th>Month 3</th><th>Month 6</th></tr>
+    <tr><td>New signups/week</td><td>15–25</td><td>50–100</td><td>150–250</td></tr>
+    <tr><td>Organic traffic/month</td><td>500</td><td>3,000</td><td>10,000</td></tr>
+    <tr><td>SEM traffic/month</td><td>200</td><td>800</td><td>2,000</td></tr>
+    <tr><td>Blog articles (cumulative)</td><td>15</td><td>60</td><td>120</td></tr>
+    <tr><td>Google indexed pages</td><td>40</td><td>100</td><td>200</td></tr>
+    <tr><td><strong>Discord members</strong></td><td><strong>50</strong></td><td><strong>200</strong></td><td><strong>500</strong></td></tr>
+    <tr><td><strong>Reddit/HN organic replies</strong></td><td><strong>12</strong></td><td><strong>40</strong></td><td><strong>100</strong></td></tr>
+    <tr><td><strong>Discord → signup conversions</strong></td><td><strong>5</strong></td><td><strong>25</strong></td><td><strong>75</strong></td></tr>
+  </table>
+  
+  <h3>12.3 Engagement Metrics</h3>
+  <table>
+    <tr><th>Metric</th><th>Target</th></tr>
+    <tr><td>Day 1 retention</td><td>&gt;60%</td></tr>
+    <tr><td>Day 7 retention</td><td>&gt;40%</td></tr>
+    <tr><td>Day 30 retention</td><td>&gt;25%</td></tr>
+    <tr><td>Avg questions/session</td><td>15+</td></tr>
+    <tr><td>Avg sessions/week (active)</td><td>4+</td></tr>
+    <tr><td>AI Tutor usage rate</td><td>&gt;30% of active users</td></tr>
+    <tr><td>Flashcard review rate</td><td>&gt;20% of active users</td></tr>
+  </table>
+  
+  <h3>12.4 Conversion Metrics</h3>
+  <table>
+    <tr><th>Metric</th><th>Target</th></tr>
+    <tr><td>Signup → Trial start</td><td>&gt;80%</td></tr>
+    <tr><td>Trial → Day 7 active</td><td>&gt;50%</td></tr>
+    <tr><td>Trial → Paid conversion</td><td>15–20%</td></tr>
+    <tr><td>Paid → Month 2 retention</td><td>&gt;85%</td></tr>
+    <tr><td>Monthly churn</td><td>&lt;5%</td></tr>
+    <tr><td>Annual plan adoption</td><td>&gt;30% of paid</td></tr>
+  </table>
+</section>
+
+<section class="page-break">
+  <h2>13. Risk Register</h2>
+  
+  <table>
+    <tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Mitigation</th></tr>
+    <tr><td>SEM burns budget without conversions</td><td>Medium</td><td>High</td><td>Conversion tracking Day 1, daily caps, pause after 14 days if CPA > $100</td></tr>
+    <tr><td>Low trial-to-paid conversion (&lt;5%)</td><td>Medium</td><td>High</td><td>A/B test trial length, onboarding optimization, trial drip emails</td></tr>
+    <tr><td>Question quality complaints</td><td>Medium</td><td>Medium</td><td>Prioritize CISA/CFP quality fixes Month 1, add feedback mechanism</td></tr>
+    <tr><td>App store rejection</td><td>Medium</td><td>Low</td><td>Follow platform guidelines, prepare for 1-2 revision cycles</td></tr>
+    <tr><td>Content staleness (tax law)</td><td>High</td><td>Medium</td><td>Build annual update process for EA/CPA</td></tr>
+    <tr><td>Single-developer bottleneck</td><td>High</td><td>High</td><td>Document all systems, automate deploys, consider contract help</td></tr>
+    <tr><td>Firebase cost overruns</td><td>Low</td><td>Medium</td><td>Monitor reads/writes, billing alerts at $100, $500, $1,000</td></tr>
+    <tr><td>Google Ads account suspension</td><td>Low</td><td>High</td><td>Follow all policies, avoid trademark issues</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>14. Month-by-Month Summary</h2>
+  
+  <div class="month-section">
+    <h3>February 2026 (Launch)</h3>
+    <p>Launch day. Monitor everything. All P0 features complete. Discord quiz bot + Reddit/HN/SE monitor live. Respond to opportunity alerts daily. Deploy persistent server for bots.</p>
+  </div>
+  
+  <div class="month-section">
+    <h3>March 2026 (Foundation)</h3>
+    <p>Google Ads optimization, YouTube channel launch, CISA quality fixes, user management admin, error monitoring. Deploy Discord bot + monitor to Railway. Post on bot listing sites. Launch LinkedIn presence. <strong>Target: 50 Discord members, $750 MRR.</strong></p>
+  </div>
+  
+  <div class="month-section">
+    <h3>April 2026 (Conversion)</h3>
+    <p>Founder deadline push (Apr 30), CFP/CIA/CISA content expansion, email automation, pricing page, CRO experiments. Launch Telegram bot. Track Discord → signup conversions. <strong>Target: 150 Discord members, $2,500 MRR.</strong></p>
+  </div>
+  
+  <div class="month-section">
+    <h3>May 2026 (Scale)</h3>
+    <p>SEM scaling + new campaigns, SEO authority building, mobile app store prep, blueprint heatmap, smart review. Expand quiz bot questions to 500/exam. <strong>Target: 300 Discord members, $5,000 MRR.</strong></p>
+  </div>
+  
+  <div class="month-section">
+    <h3>June 2026 (Mobile & Community)</h3>
+    <p>Mobile app store launch, SEM expansion to all 6 exams, community v1 (forums + study groups), video integration. Deploy Slack bot. Discord ↔ App XP sync. <strong>Target: 500 Discord members, $8,750 MRR.</strong></p>
+  </div>
+  
+  <div class="month-section">
+    <h3>July 2026 (Differentiation)</h3>
+    <p>AI exam coach, AI question generator, CMA CBQ support, EA form explorer, retention features (referral, sharing). <strong>Target: $12,250 MRR.</strong></p>
+  </div>
+  
+  <div class="month-section">
+    <h3>August 2026 (Maturity)</h3>
+    <p>Growth automation, admin analytics (item analysis, cohorts), partnerships, security audit, test coverage push. <strong>Target: $17,500 MRR, 500 subscribers.</strong></p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>VoraPrep — AI-Powered Exam Prep That Gets You to 75+</strong></p>
+  <p>Document generated: February 19, 2026 &nbsp;|&nbsp; Next review: March 1, 2026</p>
+  <p>© 2026 VoraPrep. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

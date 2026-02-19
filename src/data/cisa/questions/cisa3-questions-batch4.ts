@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Requirements should be prioritized based on business value, associated risks, dependencies, and available resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Requirements',
     subtopic: 'Prioritization'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Requirement volatility measures how frequently requirements change, which affects project risk and methodology selection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Requirements',
     subtopic: 'Volatility'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Non-functional requirements specify system qualities: performance, security, usability, reliability, scalability, and maintainability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Requirements',
     subtopic: 'Non-Functional'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The V-model pairs each development phase with a corresponding testing phase, emphasizing verification and validation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'V-Model'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'XP emphasizes technical practices like pair programming, continuous integration, test-first development, and continuous customer feedback.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'XP'
   },
@@ -118,6 +123,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Kanban visualizes workflow, limits work in progress (WIP), and focuses on continuous flow rather than fixed iterations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'Kanban'
   },
@@ -137,6 +143,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SAFe provides guidance for implementing Agile practices at enterprise scale, coordinating multiple teams and aligning with business strategy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'SAFe'
   },
@@ -156,6 +163,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'BDD uses business-readable scenarios (Given-When-Then format) to specify behavior and guide development and testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'BDD'
   },
@@ -175,6 +183,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'API-first designs APIs before implementing functionality, ensuring consistent interfaces and enabling parallel development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'API-First'
   },
@@ -194,6 +203,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Event-driven architecture enables loose coupling and scalability through asynchronous event publishing and subscription.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Architecture',
     subtopic: 'Event-Driven'
   },
@@ -208,11 +218,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     options: [
       'Abstracts infrastructure, charging only for execution',
       'Requires server management',
-      'Is always cheaper',
+      'is typically cheaper',
       'Does not scale',
     ],
     correctAnswer: 0,
     explanation: 'Serverless abstracts infrastructure management, with the provider handling scaling and charging only for actual execution.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Architecture',
     subtopic: 'Serverless'
   },
@@ -232,6 +243,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Technical specifications detail architecture, component interfaces, data models, security requirements, and implementation standards.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Design',
     subtopic: 'Technical Specifications'
   },
@@ -251,6 +263,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Design patterns provide proven, reusable solutions to common design problems, improving code quality and maintainability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Design',
     subtopic: 'Design Patterns'
   },
@@ -270,6 +283,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Interface design should prioritize user needs, usability, accessibility, and efficient task completion.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Design',
     subtopic: 'UI Design'
   },
@@ -289,6 +303,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'WCAG (Web Content Accessibility Guidelines) provides standards for making web content accessible to people with disabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Design',
     subtopic: 'Accessibility'
   },
@@ -308,6 +323,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Security architecture should be designed in from the beginning, not bolted on afterward. Security by design reduces vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'Security Architecture'
   },
@@ -327,6 +343,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SSDLC integrates security activities throughout all phases: requirements, design, development, testing, deployment, and maintenance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'SSDLC'
   },
@@ -346,6 +363,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Threat modeling identifies potential threats, attack vectors, and vulnerabilities in system design, enabling proactive mitigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'Threat Modeling'
   },
@@ -365,6 +383,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'STRIDE categorizes threats: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privilege.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'STRIDE'
   },
@@ -384,6 +403,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Reducing attack surface minimizes exposed entry points, services, and interfaces that could potentially be exploited.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'Attack Surface'
   },
@@ -403,6 +423,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Secure defaults ensure systems are configured securely by default, requiring explicit action to reduce security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'Secure Defaults'
   },
@@ -422,6 +443,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Development and test environments should use masked, anonymized, or synthetic data to protect sensitive information.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'Data Masking'
   },
@@ -441,6 +463,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Secrets management securely stores and controls access to credentials, API keys, certificates, and tokens.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security',
     subtopic: 'Secrets Management'
   },
@@ -460,6 +483,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SBOM provides an inventory of all components, libraries, and dependencies in software for security and compliance management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'SBOM'
   },
@@ -479,6 +503,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'GitOps uses Git as the single source of truth for declarative infrastructure and applications, with automated reconciliation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'GitOps'
   },
@@ -498,6 +523,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DevSecOps integrates security into CI/CD pipelines through automated scanning, access controls, and artifact integrity verification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'DevSecOps'
   },
@@ -517,6 +543,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Rollback procedures should be planned and tested before deployment to enable quick recovery if problems occur.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Deployment',
     subtopic: 'Rollback'
   },
@@ -536,6 +563,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Change freezes restrict changes during high-risk periods (year-end, peak seasons) to maintain stability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Deployment',
     subtopic: 'Change Freeze'
   },
@@ -555,6 +583,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Production readiness reviews verify complete preparation: testing, documentation, monitoring, support, security, and operational procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Deployment',
     subtopic: 'Readiness Review'
   },

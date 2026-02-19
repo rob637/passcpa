@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Defense in depth uses multiple layers of security controls so that if one layer fails, other layers still protect assets.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'Defense in Depth'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Zero trust assumes no implicit trust, requiring verification of every user and device regardless of location inside or outside the network.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'Zero Trust'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'A DMZ creates a buffer zone where public-facing services are isolated from the internal network, limiting exposure if compromised.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'DMZ'
   },
@@ -80,6 +83,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'NGFWs add application-level inspection, integrated IPS, advanced threat detection, and identity awareness beyond traditional packet filtering.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'NGFW'
   },
@@ -99,6 +103,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Wireless security should use WPA3 or WPA2-Enterprise with strong authentication, disable unnecessary features, and segment wireless networks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Wireless Security'
   },
@@ -118,6 +123,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'NAC verifies that devices connecting to the network are authorized and meet compliance requirements before granting access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'NAC'
   },
@@ -137,6 +143,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'EDR continuously monitors endpoints, detects threats through behavioral analysis, and provides investigation and response capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'EDR'
   },
@@ -156,6 +163,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MDM enables organizations to manage, configure, secure, and monitor mobile devices, including enforcement of security policies and remote wipe.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'MDM'
   },
@@ -175,6 +183,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'BYOD introduces risks of data leakage on personal devices, non-compliant devices, and complexity in managing mixed environments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'BYOD'
   },
@@ -194,6 +203,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Threat intelligence provides context about threat actors, their tactics, techniques, and procedures, enabling proactive and informed defense.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence'
   },
@@ -213,6 +223,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SOAR platforms automate incident response workflows, integrate security tools, and orchestrate responses to improve efficiency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SOAR'
   },
@@ -232,6 +243,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Phishing exploits human psychology, deceiving users into clicking links, opening attachments, or providing credentials.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Threats',
     subtopic: 'Phishing'
   },
@@ -251,6 +263,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Ransomware defense requires multiple layers: regular tested backups, user awareness, patching, network segmentation, and endpoint protection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Threats',
     subtopic: 'Ransomware'
   },
@@ -270,6 +283,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'BEC attacks impersonate executives or vendors via email to trick employees into making fraudulent payments or revealing sensitive information.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Threats',
     subtopic: 'BEC'
   },
@@ -289,6 +303,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'APTs are sophisticated, long-term targeted attacks, typically by well-resourced threat actors pursuing specific objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Threats',
     subtopic: 'APT'
   },
@@ -308,6 +323,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Insider threat detection requires behavioral analytics, access pattern monitoring, DLP, and anomaly detection to identify malicious or negligent insiders.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Threats',
     subtopic: 'Insider Threats'
   },
@@ -327,6 +343,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security testing should include regular vulnerability scanning, periodic penetration testing, security audits, and continuous monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Assessment',
     subtopic: 'Security Testing'
   },
@@ -365,6 +382,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IR preparation requires documented plans, a trained response team, appropriate tools, and regularly tested procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'IR Preparation'
   },
@@ -384,6 +402,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Chain of custody documents evidence handling to maintain integrity, essential if evidence may be used in legal proceedings.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'Evidence Handling'
   },
@@ -403,6 +422,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Forensic investigation should work on forensic copies of evidence, preserving original evidence in its unaltered state.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'Forensics'
   },
@@ -422,6 +442,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Privacy by design incorporates privacy considerations into system design from the beginning, not as an afterthought.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Privacy by Design'
   },
@@ -441,6 +462,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'GDPR requires protecting personal data of EU residents with requirements for consent, data subject rights, breach notification, and data protection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'GDPR'
   },
@@ -460,6 +482,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Data subject access requests require organizations to provide individuals with access to their personal data within specified timeframes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Data Subject Rights'
   },
@@ -479,6 +502,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Cross-border transfers require appropriate safeguards such as standard contractual clauses, binding corporate rules, or adequacy decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Cross-Border Transfers'
   },
@@ -498,6 +522,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Data minimization requires collecting only the personal data necessary for the specified purpose, limiting exposure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Data Minimization'
   },
@@ -517,6 +542,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Control effectiveness should be regularly tested and measured to ensure controls actually work as intended.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Control Testing'
   },
@@ -536,6 +562,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The shared responsibility model divides security responsibilities between the cloud provider and customer based on the service model (IaaS, PaaS, SaaS).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility'
   },
@@ -555,6 +582,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'CASBs provide visibility into cloud service usage, enable policy enforcement, and offer security controls between users and cloud services.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'CASB'
   },
@@ -574,6 +602,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Tokenization replaces sensitive data with non-sensitive tokens that have no intrinsic value, with the original data stored securely in a token vault.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Tokenization'
   },

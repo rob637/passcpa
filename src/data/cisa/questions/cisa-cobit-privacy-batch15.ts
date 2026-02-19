@@ -32,6 +32,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The Evaluate, Direct and Monitor (EDM) domain contains governance objectives. EDM01 focuses on establishing and maintaining the governance framework. COBIT 2019 separates governance (EDM) from management (APO, BAI, DSS, MEA).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT 2019 Domains'
   },
@@ -70,6 +71,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'APO12 (Managed Risk) belongs to the Align, Plan and Organize (APO) domain. The APO domain covers IT strategy, architecture, innovation, portfolio, and risk management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'COBIT 2019 APO Domain'
   },
@@ -108,6 +110,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'EDM03 is "Ensured Risk Optimization" - ensuring that IT-related enterprise risk does not exceed risk appetite. EDM01 is governance framework, EDM02 is benefits delivery, and EDM04 is resource optimization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT 2019 EDM Objectives'
   },
@@ -127,6 +130,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The Build, Acquire and Implement (BAI) domain includes BAI06 (Managed IT Changes) and BAI07 (Managed IT Change Acceptance and Transitioning) for change and release management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Operations',
     subtopic: 'COBIT 2019 BAI Domain'
   },
@@ -146,6 +150,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'DSS05 is "Managed Security Services" - protecting enterprise information to maintain the level of risk acceptable to the enterprise. It covers physical security, network security, endpoint security, identity management, and more.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Information Security',
     subtopic: 'COBIT 2019 DSS Domain'
   },
@@ -165,6 +170,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The Monitor, Evaluate and Assess (MEA) domain includes MEA01 (Managed Performance and Conformance Monitoring), MEA02 (Managed System of Internal Control), MEA03 (Managed Compliance), and MEA04 (Managed Assurance).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT 2019 MEA Domain'
   },
@@ -184,6 +190,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'COBIT 2019 replaced the COBIT 5 "Process Reference Model" with "Governance and Management Objectives." The 40 objectives provide more flexibility and are not strictly tied to processes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT Evolution'
   },
@@ -203,6 +210,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Enterprise Strategy is typically considered first as it drives how IT should support the business. The four enterprise strategies in COBIT 2019 are: Growth/Acquisition, Innovation/Differentiation, Cost Leadership, and Client Service/Stability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT 2019 Implementation'
   },
@@ -222,6 +230,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'COBIT 2019 uses a 0-5 capability scale: 0 (Incomplete), 1 (Performed), 2 (Managed), 3 (Established), 4 (Predictable), 5 (Optimizing). This aligns with ISO/IEC 33000.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT 2019 Maturity'
   },
@@ -241,6 +250,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The seven COBIT 2019 components are: 1) Processes, 2) Organizational Structures, 3) Principles/Policies/Frameworks, 4) Information, 5) Culture/Ethics/Behavior, 6) People/Skills/Competencies, 7) Services/Infrastructure/Applications. Risk registers are outputs, not components.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT 2019 Components'
   },
@@ -266,6 +276,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'GDPR Article 9 requires explicit consent for processing special categories of data (sensitive data) such as racial/ethnic origin, political opinions, religious beliefs, health data, biometric data, etc. Other lawful bases may apply for regular personal data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'GDPR Legal Basis'
   },
@@ -285,6 +296,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'GDPR Article 17 provides exceptions to the right to erasure, including when processing is necessary for legal claims (defense, establishment, or exercise of claims). Organizations can retain data needed for litigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'GDPR Data Subject Rights'
   },
@@ -304,6 +316,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'CCPA grants California residents the right to know what personal information is collected, the right to delete, the right to opt-out of sale, and the right to non-discrimination for exercising these rights.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'CCPA Rights'
   },
@@ -323,6 +336,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Standard Contractual Clauses (SCCs) are pre-approved contractual terms that provide adequate safeguards for international transfers. Privacy Shield was invalidated (Schrems II). While consent and anonymization work, SCCs provide the most practical flexibility for ongoing business transfers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'Cross-Border Data Transfers'
   },
@@ -342,6 +356,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'GDPR Article 35 requires a DPIA when processing "is likely to result in a high risk to the rights and freedoms of natural persons." Examples include systematic monitoring, large-scale sensitive data processing, and automated decision-making with legal effects.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'Privacy Impact Assessment'
   },
@@ -357,10 +372,11 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
       'Cannot engage sub-processors',
       'Determines the purposes and means of processing',
       'Processes data only on documented instructions from the controller',
-      'Is always located within the EU',
+      'is typically located within the EU',
     ],
     correctAnswer: 2,
     explanation: 'GDPR Article 28 requires processors to process personal data only on documented instructions from the controller. The controller determines purposes and means. Processors can engage sub-processors with prior authorization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'GDPR Controller vs Processor'
   },
@@ -380,6 +396,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The EU-U.S. Data Privacy Framework (effective July 2023) requires U.S. organizations to self-certify their compliance with the framework principles annually through the Department of Commerce. It addresses Schrems II concerns regarding U.S. government access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'International Data Transfers'
   },
@@ -399,6 +416,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Data minimization (GDPR Article 5(1)(c)) requires that personal data be "adequate, relevant and limited to what is necessary." Purpose limitation relates to using data only for stated purposes. Storage limitation addresses retention periods.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'GDPR Principles'
   },
@@ -437,6 +455,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'GDPR Article 33 requires controllers to notify the supervisory authority within 72 hours of becoming aware of a personal data breach, "unless the breach is unlikely to result in a risk to the rights and freedoms of natural persons."',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'GDPR Breach Notification'
   },
@@ -456,6 +475,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'VCDPA (effective Jan 2023) includes the right to correct inaccuracies, which was not in the original CCPA (though the CPRA amendment added it). VCDPA is enforced by the Attorney General, has no private right of action, and does not apply to non-profits.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'US State Privacy Laws'
   },
@@ -475,6 +495,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Privacy by Design (GDPR Article 25) requires privacy to be embedded into systems from the beginning, not added later. The seven foundational principles include: proactive not reactive, privacy as default, embedded in design, full functionality, end-to-end security, visibility/transparency, and user-centricity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Privacy and Data Protection',
     subtopic: 'Privacy by Design'
   },

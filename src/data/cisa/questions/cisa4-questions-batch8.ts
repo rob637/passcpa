@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'RTO should be based on the maximum tolerable downtime before the business impact becomes unacceptable.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'RTO Determination'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A hot site is a fully equipped and operational recovery site that can assume operations quickly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Recovery Sites'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'If critical systems are excluded from DR testing, there is no assurance they can be recovered when needed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'DR Testing'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Incident response should follow a structured process including detection, containment, eradication, recovery, and lessons learned.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Incident Response Process'
   },
@@ -94,11 +98,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     options: [
       'Different media types are used',
       'Backups are stored offsite',
-      'Backup restoration is never tested',
+      'Backup restoration is rarely tested',
       'Backups are encrypted',
     ],
     correctAnswer: 2,
     explanation: 'If restoration is never tested, there is no assurance that backups can actually be restored when needed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Backup Verification'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Change management ensures changes are properly requested, analyzed, approved, tested, and documented.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Change Management',
     subtopic: 'Change Control'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Contractual provisions establish enforceable security requirements and audit rights for third-party operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Third-Party Management',
     subtopic: 'Contractual Controls'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Problem management focuses on identifying root causes and implementing solutions to prevent incident recurrence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Service Management',
     subtopic: 'Problem Management'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Replication can propagate corrupted or erroneous data to the recovery site, making both sites unusable.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Data Replication Risks'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Capacity management ensures resources are adequate for current and anticipated future demands.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Service Management',
     subtopic: 'Capacity Management'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Unreviewed alerts mean security and availability issues may not be detected or addressed timely.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Network Operations',
     subtopic: 'Monitoring'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'A BIA identifies critical business processes and assesses the impact of their disruption over time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BIA Purpose'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Single cloud dependency creates vendor lock-in and concentration risk if the provider experiences issues.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Cloud Operations',
     subtopic: 'Vendor Concentration'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Maintenance windows should be planned with business input and communicated to minimize impact.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations Management',
     subtopic: 'Maintenance Planning'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Lack of ransomware recovery planning indicates insufficient cyber resilience given the prevalence of ransomware threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Cyber Resilience',
     subtopic: 'Ransomware Planning'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SLA monitoring requires regular measurement and reporting against defined service level metrics.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Service Management',
     subtopic: 'SLA Monitoring'
   },
@@ -327,6 +343,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Job scheduling control includes detection, logging, and resolution of failed jobs with appropriate escalation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations Management',
     subtopic: 'Job Scheduling'
   },
@@ -346,6 +363,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The 3-2-1 rule: three copies of data on two different media types with one copy offsite.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Backup Strategy'
   },
@@ -365,6 +383,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'BCPs must be regularly reviewed to reflect current business processes, technology, and organizational changes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BCP Maintenance'
   },
@@ -384,6 +403,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'EOL software should be identified, risk assessed, and addressed through upgrade, replacement, or compensating controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Asset Management',
     subtopic: 'End-of-Life Management'
   },
@@ -403,6 +423,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Crisis communication requires designated spokespersons with consistent, appropriate messaging.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Crisis Communication'
   },
@@ -422,6 +443,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Help desk metrics should include resolution time, first-call resolution rate, and customer satisfaction.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Service Management',
     subtopic: 'Help Desk Metrics'
   },
@@ -441,6 +463,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Former employees with active access creates immediate unauthorized access risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Physical Security',
     subtopic: 'Access Control'
   },
@@ -460,6 +483,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'CI records maintain accurate information about IT assets, configurations, and their relationships.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Configuration Management',
     subtopic: 'CMDB'
   },
@@ -479,6 +503,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'RPO (Recovery Point Objective) defines the maximum acceptable data loss, measured in time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'RPO'
   },
@@ -498,6 +523,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Runbooks document step-by-step procedures for routine operations and exception handling.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations Management',
     subtopic: 'Runbooks'
   },
@@ -517,6 +543,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Cloud-based DR must be tested to verify recoverability and data accessibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Cloud Operations',
     subtopic: 'Cloud DR'
   },
@@ -536,6 +563,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Batch controls include reconciliation of input to output and completeness checks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations Controls',
     subtopic: 'Batch Controls'
   },
@@ -555,6 +583,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Environmental controls protect against temperature, fire, and water threats to equipment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Physical Security',
     subtopic: 'Environmental Controls'
   },
@@ -574,6 +603,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Lessons learned should drive process improvements to prevent recurrence of similar incidents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Lessons Learned'
   }

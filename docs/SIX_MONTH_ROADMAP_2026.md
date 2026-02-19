@@ -243,7 +243,7 @@ The following systems were built and deployed on launch day:
 | **Google Ads conversion tracking** | 🔴 P0 | 2h | ✅ DONE | `analytics.ts` tracks signup/trial/purchase conversions with gtag |
 | Link GA4 ↔ Google Ads | 🔴 P0 | 0.5h | ✅ DONE | VoraPrepMCC linked Feb 17, Personalized Advertising enabled |
 | Landing page CTA flow | 🟡 P1 | 2h | | Ensure free trial CTA → onboarding → first practice is <60s |
-| Error boundary coverage | 🟡 P1 | 3h | | Add error boundaries to payment/practice flows |
+| Error boundary coverage | 🟡 P1 | 3h | ✅ DONE | Route-level error boundaries in RouteErrorBoundary.tsx + ErrorBoundary HOC |
 
 ---
 

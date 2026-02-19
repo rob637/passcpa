@@ -1895,6 +1895,35 @@ exports.sendWaitlistConfirmation = onDocumentCreated({
 // HELPER FUNCTIONS
 // ============================================================================
 
+/**
+ * Retry an async operation with exponential backoff
+ * @param {Function} operation - Async function to retry
+ * @param {number} maxAttempts - Maximum number of attempts (default: 3)
+ * @param {number} baseDelay - Base delay in ms (default: 1000)
+ * @returns {Promise} - Result of the operation
+ */
+async function withRetry(operation, maxAttempts = 3, baseDelay = 1000) {
+  let lastError;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error;
+      // Don't retry on non-transient errors (validation, auth, etc.)
+      const isTransient = error.code === 'UNAVAILABLE' || error.code === 'DEADLINE_EXCEEDED' || 
+                          error.code === 'RESOURCE_EXHAUSTED' || error.code === 'ECONNRESET' ||
+                          error.message?.includes('ETIMEDOUT');
+      if (!isTransient || attempt === maxAttempts) {
+        throw error;
+      }
+      const delay = baseDelay * Math.pow(2, attempt - 1); // Exponential backoff
+      console.log(`Retry attempt ${attempt}/${maxAttempts} after ${delay}ms: ${error.message}`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+  throw lastError;
+}
+
 function getContextualReminder(now) {
   const hour = now.getHours();
   const day = now.getDay();
@@ -2535,6 +2564,41 @@ exports.stripeWebhook = onRequest({
     res.status(200).json({ received: true });
   } catch (error) {
     console.error('Webhook handler error:', error);
+    console.error('Event details:', JSON.stringify({ eventId: event.id, eventType: event.type, livemode: event.livemode }));
+    
+    // Log failure for monitoring and potential manual retry
+    try {
+      await db.collection('stripe_webhook_failures').add({
+        eventId: event.id,
+        eventType: event.type,
+        errorMessage: error.message,
+        errorStack: error.stack,
+        livemode: event.livemode,
+        failedAt: admin.firestore.FieldValue.serverTimestamp(),
+        rawEvent: JSON.stringify(event).substring(0, 5000), // Truncate large events
+      });
+      
+      // Alert admin via email for critical events (payment failures, subscription issues)
+      const criticalEvents = ['checkout.session.completed', 'customer.subscription.created', 'customer.subscription.updated', 'invoice.payment_failed'];
+      if (criticalEvents.includes(event.type) && resend) {
+        await resend.emails.send({
+          from: FROM_EMAIL,
+          to: 'rob@voraprep.com',
+          subject: `⚠️ Stripe Webhook Failure: ${event.type}`,
+          html: `<h2>Stripe Webhook Processing Failed</h2>
+<p><strong>Event ID:</strong> ${event.id}</p>
+<p><strong>Event Type:</strong> ${event.type}</p>
+<p><strong>Error:</strong> ${error.message}</p>
+<p><strong>Livemode:</strong> ${event.livemode ? 'PRODUCTION' : 'Test'}</p>
+<p><strong>Time:</strong> ${new Date().toISOString()}</p>
+<p>Check Firebase Functions logs and the <code>stripe_webhook_failures</code> collection for details.</p>`,
+        });
+      }
+    } catch (logError) {
+      console.error('Failed to log webhook failure:', logError);
+    }
+    
+    // Return 500 so Stripe retries the webhook (up to ~3 days with exponential backoff)
     res.status(500).send('Webhook handler failed');
   }
 });
@@ -2655,22 +2719,27 @@ async function updateUserSubscription(userId, subscription, courseId) {
     isFounder: isFounder,
   };
 
+  // Use withRetry for Firestore operations to handle transient failures
   // Merge: preserves other exam subscriptions and trials
-  // Use set+merge for top-level fields, then update() for nested paidExams path
-  // (update() correctly interprets dot-notation as nested field paths)
-  await db.collection('subscriptions').doc(userId).set({
-    ...subscriptionData,
-  }, { merge: true });
+  await withRetry(async () => {
+    await db.collection('subscriptions').doc(userId).set({
+      ...subscriptionData,
+    }, { merge: true });
+  });
 
   // Write to paidExams map using update() which handles dot-notation as nested paths
-  await db.collection('subscriptions').doc(userId).update({
-    [`paidExams.${examId}`]: paidExamData,
+  await withRetry(async () => {
+    await db.collection('subscriptions').doc(userId).update({
+      [`paidExams.${examId}`]: paidExamData,
+    });
   });
 
   // Update tier on root level for legacy compat
   if (status === 'active' || status === 'trialing') {
-    await db.collection('subscriptions').doc(userId).update({
-      tier: tier,
+    await withRetry(async () => {
+      await db.collection('subscriptions').doc(userId).update({
+        tier: tier,
+      });
     });
   }
 

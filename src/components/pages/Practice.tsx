@@ -1219,16 +1219,25 @@ const Practice: React.FC = () => {
     setSelectedAnswer(answers[questions[index]?.id]?.selected ?? null);
     setShowExplanation(answers[questions[index]?.id] !== undefined);
     
-    // Scroll to top - use multiple methods for cross-platform reliability (especially mobile)
-    // scrollIntoView is more reliable on mobile/Capacitor than window.scrollTo
-    if (questionTopRef.current) {
-      questionTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+    // Blur any focused element first - prevents mobile browsers from auto-scrolling to focused buttons
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
     }
-    // Fallback for window scroll
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    // Also try document scroll for iOS
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    
+    // Use setTimeout to ensure scroll happens AFTER React updates the DOM
+    // This fixes mobile issue where browser auto-scrolls to focused/recently-clicked elements
+    setTimeout(() => {
+      // Scroll to top - use multiple methods for cross-platform reliability (especially mobile)
+      // scrollIntoView is more reliable on mobile/Capacitor than window.scrollTo
+      if (questionTopRef.current) {
+        questionTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
+      // Fallback for window scroll
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      // Also try document scroll for iOS
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 0);
   }, [answers, questions]);
 
   const nextQuestion = useCallback(() => {

@@ -9,6 +9,7 @@ export const FEATURES = {
   offlineMode: true,
   gamification: true, // Streaks, points
   community: false, // Community leaderboard - enable when user base is larger
+  fastTrackOnboarding: true, // Abbreviated onboarding: skips Welcome + Daily Goal steps (uses 50 pts/day default)
 };
 
 /**

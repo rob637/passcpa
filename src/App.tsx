@@ -104,6 +104,7 @@ const PassGuarantee = lazy(() => import('./components/pages/legal/PassGuarantee'
 
 // Error Pages
 const NotFound = lazy(() => import('./components/pages/NotFound'));
+const Unsubscribe = lazy(() => import('./components/pages/Unsubscribe'));
 
 // Checkout Pages
 const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
@@ -578,6 +579,16 @@ function App() {
                   element={
                     <SuspensePage>
                       <PassGuarantee />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Email unsubscribe (public, one-click) */}
+                <Route
+                  path="/unsubscribe"
+                  element={
+                    <SuspensePage>
+                      <Unsubscribe />
                     </SuspensePage>
                   }
                 />

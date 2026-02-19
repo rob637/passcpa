@@ -702,6 +702,14 @@ const AdminCMS: React.FC = () => {
   const [expandedEmailId, setExpandedEmailId] = useState<string | null>(null);
   
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
+  const [errorStats, setErrorStats] = useState<{
+    total: number;
+    last24h: number;
+    last7d: number;
+    byCategory: Record<string, number>;
+    bySeverity: Record<string, number>;
+    topErrors: Array<{ message: string; count: number; lastSeen: Date }>;
+  } | null>(null);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
   
@@ -1634,7 +1642,7 @@ const AdminCMS: React.FC = () => {
       const q = query(
         collection(db, 'error_logs'),
         orderBy('timestamp', 'desc'),
-        limit(50)
+        limit(200) // Increased limit for better stats
       );
       const querySnapshot = await getDocs(q);
       const errors: SystemError[] = [];
@@ -1642,6 +1650,59 @@ const AdminCMS: React.FC = () => {
         errors.push({ id: doc.id, ...doc.data() } as SystemError);
       });
       setSystemErrors(errors);
+      
+      // Compute error statistics
+      const now = Date.now();
+      const day = 24 * 60 * 60 * 1000;
+      const byCategory: Record<string, number> = {};
+      const bySeverity: Record<string, number> = {};
+      const messageGroups: Record<string, { count: number; lastSeen: Date }> = {};
+      let last24h = 0;
+      let last7d = 0;
+      
+      errors.forEach(err => {
+        // Get timestamp
+        const ts = err.timestamp && typeof err.timestamp === 'object' && 'seconds' in err.timestamp
+          ? (err.timestamp as { seconds: number }).seconds * 1000
+          : typeof err.timestamp === 'string' ? new Date(err.timestamp).getTime() : 0;
+        
+        // Time-based counts
+        if (now - ts < day) last24h++;
+        if (now - ts < 7 * day) last7d++;
+        
+        // Category counts (from context if available)
+        const category = (err as unknown as { category?: string }).category || 'unknown';
+        byCategory[category] = (byCategory[category] || 0) + 1;
+        
+        // Severity counts
+        const severity = (err as unknown as { severity?: string }).severity || 'medium';
+        bySeverity[severity] = (bySeverity[severity] || 0) + 1;
+        
+        // Group by message (first 100 chars)
+        const msgKey = (err.message || 'Unknown error').substring(0, 100);
+        if (!messageGroups[msgKey]) {
+          messageGroups[msgKey] = { count: 0, lastSeen: new Date(ts) };
+        }
+        messageGroups[msgKey].count++;
+        if (ts > messageGroups[msgKey].lastSeen.getTime()) {
+          messageGroups[msgKey].lastSeen = new Date(ts);
+        }
+      });
+      
+      // Get top errors by count
+      const topErrors = Object.entries(messageGroups)
+        .map(([message, data]) => ({ message, ...data }))
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 10);
+      
+      setErrorStats({
+        total: errors.length,
+        last24h,
+        last7d,
+        byCategory,
+        bySeverity,
+        topErrors,
+      });
     } catch (error) {
        // If the index is missing, it will fail.
       logger.error('Error loading system errors', error);
@@ -4705,7 +4766,98 @@ const AdminCMS: React.FC = () => {
         )}
 
         {activeTab === 'logs' && (
-          <Card className="p-6">
+          <div className="space-y-6">
+            {/* Error Stats Dashboard */}
+            {errorStats && (
+              <Card className="p-6 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-red-200 dark:border-red-800">
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                  🔍 Error Monitoring Dashboard
+                  <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
+                    DIY Sentry
+                  </span>
+                </h4>
+                
+                {/* Key Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">{errorStats.total}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Total Errors (last 200)</div>
+                  </div>
+                  <div className={`bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm ${errorStats.last24h > 5 ? 'ring-2 ring-red-500' : ''}`}>
+                    <div className={`text-2xl font-bold ${errorStats.last24h > 5 ? 'text-red-600' : errorStats.last24h > 0 ? 'text-amber-600' : 'text-green-600'}`}>
+                      {errorStats.last24h}
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Last 24 Hours</div>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                    <div className={`text-2xl font-bold ${errorStats.last7d > 20 ? 'text-amber-600' : 'text-blue-600'}`}>
+                      {errorStats.last7d}
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Last 7 Days</div>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                    <div className="text-2xl font-bold text-purple-600">
+                      {errorStats.topErrors.length}
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">Unique Error Types</div>
+                  </div>
+                </div>
+                
+                {/* Error Categories & Severity */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                    <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">By Category</h5>
+                    <div className="space-y-1">
+                      {Object.entries(errorStats.byCategory).map(([cat, count]) => (
+                        <div key={cat} className="flex justify-between text-sm">
+                          <span className="capitalize text-gray-600 dark:text-gray-400">{cat}</span>
+                          <span className="font-medium">{count}</span>
+                        </div>
+                      ))}
+                      {Object.keys(errorStats.byCategory).length === 0 && (
+                        <span className="text-gray-400 text-sm">No categories</span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                    <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">By Severity</h5>
+                    <div className="space-y-1">
+                      {Object.entries(errorStats.bySeverity).map(([sev, count]) => (
+                        <div key={sev} className="flex justify-between text-sm">
+                          <span className={`capitalize ${sev === 'critical' ? 'text-red-600' : sev === 'high' ? 'text-orange-600' : sev === 'medium' ? 'text-amber-600' : 'text-gray-600'}`}>
+                            {sev === 'critical' ? '🔴' : sev === 'high' ? '🟠' : sev === 'medium' ? '🟡' : '🟢'} {sev}
+                          </span>
+                          <span className="font-medium">{count}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Top Errors */}
+                {errorStats.topErrors.length > 0 && (
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                    <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Most Frequent Errors</h5>
+                    <div className="space-y-2">
+                      {errorStats.topErrors.slice(0, 5).map((err, idx) => (
+                        <div key={idx} className="flex items-start gap-3 text-sm">
+                          <span className="font-bold text-red-600 min-w-[24px]">{err.count}×</span>
+                          <span className="text-gray-700 dark:text-gray-300 flex-1 font-mono text-xs truncate" title={err.message}>
+                            {err.message}
+                          </span>
+                          <span className="text-gray-400 text-xs whitespace-nowrap">
+                            {err.lastSeen.toLocaleDateString()}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </Card>
+            )}
+            
+            {/* Error List */}
+            <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
               <span>System Error Logs</span>
               <div className="flex items-center gap-2">
@@ -4769,6 +4921,7 @@ const AdminCMS: React.FC = () => {
               </div>
             )}
           </Card>
+          </div>
         )}
 
         {activeTab === 'settings' && (

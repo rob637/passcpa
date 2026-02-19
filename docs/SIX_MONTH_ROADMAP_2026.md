@@ -263,7 +263,7 @@ The following systems were built and deployed on launch day:
 | Stripe webhook hardening | P1 | 3h | ✅ DONE | Added retry logic, failure logging to Firestore, email alerts for critical events |
 | Onboarding funnel analytics | P1 | 2h | ✅ DONE | 9 tracking events added: `onboarding_started`, `onboarding_abandoned`, per-step tracking in GA4 |
 | Fix Pricing page redirect | P1 | 2h | ✅ DONE | Stripe `cancel_url` now returns to `/{courseId}#pricing` for course-specific context |
-| Error tracking setup | P1 | 4h | | Add Sentry or LogRocket for production error monitoring |
+| Error tracking setup | P1 | 4h | ✅ DONE | Built-in error tracking in `errorTracking.ts` + enhanced Logs tab with stats dashboard (DIY Sentry) |
 | Session recording (optional) | P2 | 2h | | Hotjar or FullStory for UX insights on first 100 users |
 
 ### 5.2 Content Quality — CISA & CPA Improvements (~30 hours)

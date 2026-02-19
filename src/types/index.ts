@@ -463,6 +463,8 @@ export interface UserProfile {
   dailyReminderEnabled?: boolean;
   dailyReminderTime?: string;    // e.g., "09:00"
   weeklyReportEnabled?: boolean;
+  emailUnsubscribed?: boolean;   // User opted out of marketing emails
+  emailUnsubscribedAt?: Date | FirestoreTimestamp;
   
   // Preferences
   timezone?: string;             // IANA timezone string (e.g., "America/New_York")

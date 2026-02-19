@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A feasibility study determines whether a project is viable from technical, operational, economic, and scheduling perspectives before committing significant resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Project Initiation',
     subtopic: 'Feasibility Study'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Requirements that cannot be traced to business needs may result in features that do not add value. Traceability ensures all requirements support business objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Requirements',
     subtopic: 'Traceability'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'During the system design phase, detailed technical specifications including architecture, data models, and interface designs are created based on the requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'SDLC',
     subtopic: 'Design Phase'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Agile uses iterative development cycles (sprints) with frequent customer feedback, enabling rapid adaptation to changing requirements and continuous improvement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'Agile'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Waterfall is best suited for projects with well-defined, stable requirements because changes are costly once development progresses beyond initial phases.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'Waterfall'
   },
@@ -118,6 +123,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Configuration management provides control and tracking of changes to software components, ensuring integrity and enabling rollback if issues arise.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Controls',
     subtopic: 'Configuration Management'
   },
@@ -137,6 +143,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Version control tracks all changes to source code, identifies who made changes, and enables recovery of previous versions if needed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Controls',
     subtopic: 'Version Control'
   },
@@ -156,6 +163,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Code review examines source code for logical errors, security vulnerabilities, coding standards violations, and potential bugs before execution.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Quality Assurance',
     subtopic: 'Code Review'
   },
@@ -175,6 +183,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Unit testing verifies that individual modules, functions, or components work correctly in isolation before integration with other components.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Unit Testing'
   },
@@ -194,6 +203,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Integration testing verifies that components work together correctly, focusing on interfaces, data flow, and communication between integrated modules.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Integration Testing'
   },
@@ -213,6 +223,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'UAT should be performed by business users who verify that the system meets their requirements and is suitable for their intended use.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'UAT'
   },
@@ -232,6 +243,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Regression testing verifies that changes or fixes do not inadvertently break existing functionality that was previously working correctly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Regression Testing'
   },
@@ -251,6 +263,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Stress testing evaluates system behavior under extreme conditions (high load, limited resources) to identify breaking points and failure modes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Stress Testing'
   },
@@ -270,6 +283,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Pilot implementation tests the system in a limited production environment with a subset of users to identify issues before full rollout.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Pilot'
   },
@@ -289,6 +303,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Parallel implementation runs both old and new systems simultaneously, allowing comparison of outputs and providing a fallback if the new system fails.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Parallel'
   },
@@ -308,6 +323,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Data conversion should include cleansing and validation to ensure data quality and accuracy in the new system. Poor data migration can cause significant issues.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Data Conversion'
   },
@@ -327,6 +343,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Post-implementation review assesses whether project objectives were achieved, comparing actual outcomes to expected benefits and identifying lessons learned.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Post-Implementation Review'
   },
@@ -365,6 +382,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'An RFP should include detailed requirements, evaluation criteria, timeline, and contract terms to enable vendors to provide complete proposals.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Acquisition',
     subtopic: 'RFP'
   },
@@ -384,6 +402,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Escrow agreements ensure the organization can access source code if the vendor goes out of business or fails to meet obligations, enabling continued maintenance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Software Acquisition',
     subtopic: 'Escrow'
   },
@@ -403,6 +422,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'RAD emphasizes quick development through prototyping, user feedback, and rapid iteration, trading some formality for speed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'RAD'
   },
@@ -422,6 +442,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DevOps aims to improve collaboration between development and operations teams, enabling faster, more reliable software delivery through automation and shared responsibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'DevOps'
   },
@@ -441,6 +462,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'CI involves frequently merging code changes into a shared repository with automated building and testing to detect integration issues early.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Practices',
     subtopic: 'CI/CD'
   },
@@ -460,6 +482,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Object-oriented programming benefits include code reusability through inheritance, encapsulation for data protection, and modularity for maintainability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Programming Concepts',
     subtopic: 'OOP'
   },
@@ -479,6 +502,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Input validation should occur on both client side (for user experience) and server side (for security). Client-side validation alone can be bypassed by attackers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Controls',
     subtopic: 'Input Validation'
   },
@@ -498,6 +522,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'APIs require authentication and authorization controls to ensure only authorized systems and users can access functionality and data they are permitted to use.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Development',
     subtopic: 'API Security'
   },
@@ -517,6 +542,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Database normalization reduces data redundancy by organizing data into related tables, improving data integrity and reducing storage waste.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Database Design',
     subtopic: 'Normalization'
   },
@@ -536,6 +562,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Parameterized queries (prepared statements) prevent SQL injection by separating SQL code from data, ensuring user input is treated as data, not executable code.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Security',
     subtopic: 'SQL Injection'
   },
@@ -555,6 +582,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'WAFs protect against application-layer attacks including cross-site scripting (XSS), SQL injection, and other web application vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Security',
     subtopic: 'WAF'
   },
@@ -574,6 +602,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'System documentation should be updated whenever changes are made to ensure it accurately reflects the current system state and supports maintenance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Documentation',
     subtopic: 'Maintenance'
   },

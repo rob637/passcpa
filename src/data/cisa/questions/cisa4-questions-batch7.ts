@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Digital twins enable simulation, predictive analysis, and optimization of physical systems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations Management',
     subtopic: 'Digital Twin'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Edge computing requires managing latency, connectivity challenges, and distributed security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Edge Computing'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT sustainability addresses energy efficiency, carbon footprint reduction, and e-waste.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Sustainability'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'AIOps uses ML to predict operational issues and enable proactive remediation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'AIOps'
   },
@@ -99,6 +103,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Immutable logging provides tamper-evident storage essential for forensic integrity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Logging'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Geo-redundancy planning considers data residency, latency, and regional failure scenarios.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Geo-Redundancy'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Ransomware resilience requires immutable backups, segmentation, and detection capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Ransomware Resilience'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SRE balances reliability targets (error budgets) with innovation and feature development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'SRE'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'ITAD must ensure secure data destruction and environmental/regulatory compliance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Asset Disposition'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'OT security prioritizes availability and safety, whereas IT typically prioritizes confidentiality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'OT Security'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'DR replication monitoring covers lag, integrity verification, and failover readiness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Data Replication'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SIEM correlation identifies patterns and relationships that indicate security incidents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'SIEM'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Operational resilience focuses on end-to-end service continuity, not just technology.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Operational Resilience'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Production chaos testing requires careful controls, monitoring, and rollback capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Chaos Testing'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Multi-region deployment addresses data sovereignty, synchronization, and traffic routing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Multi-Region Architecture'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Cyber insurance claims require comprehensive incident documentation and forensic evidence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Cyber Insurance'
   },
@@ -327,6 +343,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Runbook automation reduces human error and improves response times for operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Runbook Automation'
   },
@@ -346,6 +363,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Post-incident reviews focus on blameless learning and system improvement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Post-Incident Review'
   },
@@ -365,6 +383,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Third-party dependencies require continuous monitoring and inclusion in resilience testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Resilience',
     subtopic: 'Third-Party Resilience'
   },
@@ -384,6 +403,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Cloud capacity planning considers growth, burst needs, and cost optimization strategies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Capacity Planning'
   },

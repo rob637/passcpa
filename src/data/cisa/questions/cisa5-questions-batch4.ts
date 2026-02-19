@@ -42,6 +42,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Key escrow stores copies of cryptographic keys with trusted third parties for recovery or lawful access purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Key Escrow'
   },
@@ -61,6 +62,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Perfect forward secrecy uses ephemeral keys so that compromise of long-term keys does not compromise past session data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Forward Secrecy'
   },
@@ -80,6 +82,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Certificate transparency logs provide public, auditable records of issued certificates, helping detect misissued or fraudulent certificates.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Certificate Transparency'
   },
@@ -99,6 +102,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'API security requires authentication, authorization, rate limiting, input validation, and monitoring for abuse.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Application Security',
     subtopic: 'API Security'
   },
@@ -118,6 +122,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'OAuth 2.0 enables delegated authorization, allowing users to grant third-party applications limited access to resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'OAuth'
   },
@@ -137,6 +142,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SAML assertions contain authentication status, authorization decisions, and user attributes for federated identity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'SAML'
   },
@@ -156,6 +162,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'JIT provisioning automatically creates user accounts in applications at the time of first login based on identity provider data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Management',
     subtopic: 'JIT Provisioning'
   },
@@ -175,6 +182,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'PAWs are hardened, dedicated systems used exclusively for privileged administrative tasks, reducing attack surface.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'PAW'
   },
@@ -194,6 +202,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Credential stuffing uses breached username/password combinations from other sites, exploiting password reuse.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Credential Stuffing'
   },
@@ -213,6 +222,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security awareness training should reach all employees with content appropriate to their roles and responsibilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Security Awareness'
   },
@@ -232,6 +242,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Phishing simulations test employee awareness and provide learning opportunities, not to punish but to improve awareness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Phishing Simulations'
   },
@@ -251,6 +262,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Deception technology uses decoys to attract attackers, enabling detection and analysis of attack methods.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Controls',
     subtopic: 'Deception'
   },
@@ -270,6 +282,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Network segmentation limits lateral movement by attackers and contains breaches to smaller network segments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Segmentation'
   },
@@ -289,6 +302,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Micro-segmentation provides granular security by segmenting at the individual workload or application level.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Micro-segmentation'
   },
@@ -327,6 +341,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DLP systems detect sensitive data and prevent unauthorized transmission through monitoring, detection, and blocking.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'DLP'
   },
@@ -346,6 +361,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Email security gateways should provide comprehensive protection including anti-malware, anti-phishing, and content filtering.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Email Security'
   },
@@ -365,6 +381,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DMARC builds on SPF and DKIM to help prevent email spoofing by defining how receivers should handle authentication failures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'DMARC'
   },
@@ -384,6 +401,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Secure file transfer should use encrypted protocols like SFTP or FTPS to protect data in transit.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Secure Transfer'
   },
@@ -403,6 +421,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DAM monitors database activity in real-time to detect unauthorized access, policy violations, and anomalies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'DAM'
   },
@@ -422,6 +441,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Data masking obscures sensitive data while maintaining realistic format, enabling safe use in non-production environments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Data Masking'
   },
@@ -441,6 +461,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Tokenization replaces sensitive data with non-sensitive tokens, with mapping stored securely in a token vault.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Tokenization'
   },
@@ -460,6 +481,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MDM enables policy enforcement, remote wipe, application management, and secure configuration of mobile devices.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'MDM'
   },
@@ -479,6 +501,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Mobile containerization separates work data in a secure, encrypted container, enabling BYOD while protecting corporate data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'Containerization'
   },
@@ -498,6 +521,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SOCs provide centralized security monitoring, detection, analysis, and response to security incidents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SOC'
   },
@@ -517,6 +541,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Threat intelligence feeds provide indicators of compromise, threat actor information, and context for proactive defense.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence'
   },
@@ -536,6 +561,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MITRE ATT&CK documents adversary TTPs, providing a knowledge base for understanding and defending against threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'MITRE ATT&CK'
   },
@@ -555,6 +581,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Evidence preservation requires proper chain of custody documentation, forensic imaging, and secure storage for potential legal proceedings.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'Evidence Preservation'
   },

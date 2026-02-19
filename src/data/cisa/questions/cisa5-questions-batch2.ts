@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Information security management protects information assets in a manner that aligns with and supports business objectives, balancing security with operational needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Security Goals'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The CIA triad (Confidentiality, Integrity, Availability) represents the three fundamental pillars of information security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Fundamentals',
     subtopic: 'CIA Triad'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Data classification enables organizations to apply appropriate protection based on data sensitivity, ensuring critical data receives adequate protection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Data Classification'
   },
@@ -99,6 +102,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MAC is enforced by the system based on security labels (classifications) assigned to subjects and objects. Users cannot override these controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'MAC'
   },
@@ -137,6 +141,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MFA requires authentication factors from different categories: something you know (password), something you have (token), something you are (biometrics).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'MFA'
   },
@@ -156,6 +161,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SSO allows users to authenticate once and access multiple systems without re-authenticating, improving user experience and reducing password fatigue.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Authentication',
     subtopic: 'SSO'
   },
@@ -175,6 +181,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IAM includes all processes for managing user identities: provisioning, authentication, authorization, access review, and deprovisioning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'IAM'
   },
@@ -194,6 +201,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Access reviews ensure that user access remains appropriate for current job functions and that unnecessary access is removed, reducing the risk of unauthorized access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'Access Review'
   },
@@ -213,6 +221,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Encryption transforms data into an unreadable format that can only be decrypted with the appropriate key, protecting confidentiality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Encryption'
   },
@@ -232,6 +241,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Symmetric encryption uses the same key for both encryption and decryption, making key distribution a challenge but offering faster performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Symmetric Encryption'
   },
@@ -251,6 +261,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Asymmetric encryption uses a key pair: a public key for encryption and a private key for decryption, solving the key distribution problem.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Asymmetric Encryption'
   },
@@ -270,6 +281,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Digital signatures provide authentication (verifying sender identity), integrity (detecting changes), and non-repudiation (sender cannot deny sending).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Digital Signatures'
   },
@@ -289,6 +301,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'PKI provides a framework for issuing, managing, and validating digital certificates that bind public keys to identities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'PKI'
   },
@@ -308,6 +321,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Firewalls filter network traffic based on predefined rules that specify which traffic is allowed or blocked based on source, destination, ports, and protocols.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Firewalls'
   },
@@ -327,6 +341,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'An IDS monitors network or system activity for suspicious behavior and generates alerts when potential intrusions are detected.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'IDS'
   },
@@ -346,6 +361,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Unlike IDS which only detects and alerts, IPS can automatically take action to block or prevent detected threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'IPS'
   },
@@ -365,6 +381,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Network segmentation divides networks into separate zones, limiting attack spread, isolating sensitive systems, and enabling more granular access control.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Segmentation'
   },
@@ -384,6 +401,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'A VPN creates an encrypted tunnel for communications over public networks, providing confidentiality and secure remote access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'VPN'
   },
@@ -403,6 +421,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Effective malware protection uses multiple layers: preventive controls, detection mechanisms, and response capabilities for defense in depth.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'Malware Protection'
   },
@@ -422,6 +441,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Vulnerability management is a continuous process of identifying, assessing, prioritizing, and remediating security vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Vulnerability Management'
   },
@@ -441,6 +461,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Patch management addresses known security vulnerabilities by applying vendor-provided fixes, reducing the attack surface.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Patch Management'
   },
@@ -460,6 +481,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security awareness training should be provided to all employees and updated regularly to address evolving threats and reinforce security practices.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Security Awareness'
   },
@@ -479,6 +501,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Incident response includes detection, containment, eradication, recovery, and post-incident review for continuous improvement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'IR Process'
   },
@@ -498,6 +521,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Physical security includes multiple layers: barriers, access controls (badges, biometrics), surveillance (cameras), environmental controls, and security personnel.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Physical Security',
     subtopic: 'Physical Controls'
   },
@@ -517,6 +541,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Social engineering exploits human psychology rather than technical vulnerabilities, manipulating people into revealing information or taking harmful actions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Threats',
     subtopic: 'Social Engineering'
   },
@@ -536,6 +561,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DLP solutions monitor data in motion, at rest, and in use to detect and prevent unauthorized transmission of sensitive data outside the organization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'DLP'
   },
@@ -555,6 +581,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Privacy controls ensure personal information is collected with consent, used for stated purposes, protected appropriately, and handled in compliance with regulations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Privacy Controls'
   },
@@ -574,6 +601,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security metrics should measure the effectiveness of security controls using meaningful, actionable indicators that demonstrate security posture and trends.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Security Metrics'
   },

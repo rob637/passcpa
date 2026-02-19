@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Security should be addressed in requirements and design where it is most cost-effective. Retrofitting security later is expensive and less effective.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'SDLC Security',
     subtopic: 'Security by Design'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Post-implementation review should assess whether the expected business benefits that justified the project are being achieved.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Project Management',
     subtopic: 'Post-Implementation Review'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Configuration management ensures system integrity by controlling changes to system components and maintaining accurate records.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Configuration Management',
     subtopic: 'Configuration Control'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Testing should occur in an environment that mirrors production to identify issues before deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Test Environment'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Excessive customization creates complexity and can make future upgrades difficult or impossible.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Package Implementation',
     subtopic: 'Customization Risk'
   },
@@ -118,6 +123,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Escrow agreements provide access to source code if the vendor goes out of business or fails to maintain the software.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Acquisition',
     subtopic: 'Escrow Agreements'
   },
@@ -133,10 +139,11 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
       'Iterative development with frequent stakeholder feedback',
       'Separate testing phase at the end',
       'Complete requirements before development starts',
-      'Minimal documentation is always preferred',
+      'Minimal documentation is typically preferred',
     ],
     correctAnswer: 0,
     explanation: 'Agile uses iterative development with frequent releases and stakeholder feedback to adapt to changing requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Methodologies',
     subtopic: 'Agile Development'
   },
@@ -156,6 +163,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Code reviews identify defects and improve quality before testing, when fixes are less costly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Quality Assurance',
     subtopic: 'Code Reviews'
   },
@@ -175,6 +183,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Data migration must include verification of completeness, accuracy, and integrity to ensure data quality in the new system.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Data Migration'
   },
@@ -194,6 +203,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Regression testing verifies that changes have not broken or adversely affected existing functionality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Regression Testing'
   },
@@ -213,6 +223,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DevOps should integrate automated testing and security (DevSecOps) into the CI/CD pipeline.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'DevOps',
     subtopic: 'DevSecOps'
   },
@@ -232,6 +243,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Version control manages changes to source code and documentation, enabling tracking, rollback, and collaboration.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Configuration Management',
     subtopic: 'Version Control'
   },
@@ -251,6 +263,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Developer access to production creates segregation of duties risk and bypasses change control.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Development Controls',
     subtopic: 'Segregation of Duties'
   },
@@ -270,6 +283,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The project charter formally authorizes the project and defines objectives, scope, stakeholders, and authority.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Project Management',
     subtopic: 'Project Charter'
   },
@@ -289,6 +303,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Interface controls ensure data is transmitted completely and accurately between systems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Application Controls',
     subtopic: 'Interface Controls'
   },
@@ -308,6 +323,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A POC validates that a proposed solution or technology is feasible before full commitment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Acquisition',
     subtopic: 'Proof of Concept'
   },
@@ -327,6 +343,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SAST analyzes source code without executing it to identify potential security vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Testing',
     subtopic: 'SAST'
   },
@@ -346,6 +363,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Emergency changes may bypass normal approval but must be documented and reviewed after implementation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Change Management',
     subtopic: 'Emergency Changes'
   },
@@ -365,6 +383,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Container images should be scanned for vulnerabilities and properly maintained with security patches.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Modern Development',
     subtopic: 'Container Security'
   },
@@ -384,6 +403,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Scope creep is uncontrolled expansion of project scope without corresponding adjustments to budget and timeline.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Project Management',
     subtopic: 'Scope Management'
   },
@@ -403,6 +423,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DAST tests the running application from the outside (black-box testing) to identify vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Testing',
     subtopic: 'DAST'
   },
@@ -422,6 +443,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Parallel conversion runs old and new systems simultaneously to verify results before retiring the old system.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Conversion Strategies'
   },
@@ -441,6 +463,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A systems integrator ensures different components and systems work together effectively.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Implementation',
     subtopic: 'Systems Integration'
   },
@@ -460,6 +483,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Low-code platforms can introduce security gaps, governance challenges, and shadow IT if not properly controlled.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Modern Development',
     subtopic: 'Low-Code Development'
   },
@@ -479,6 +503,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Non-compliance with software licensing can result in significant legal and financial penalties.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Compliance',
     subtopic: 'License Management'
   },
@@ -498,6 +523,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IaC enables consistent, repeatable, and auditable infrastructure deployment through code-defined configurations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Modern Development',
     subtopic: 'Infrastructure as Code'
   },
@@ -517,6 +543,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Release management ensures releases are properly planned, tested, and coordinated before deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Change Management',
     subtopic: 'Release Management'
   }

@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Audit planning ensures that audit objectives are achievable and resources are used efficiently, focusing on the most significant risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Planning Purpose'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Before developing procedures, the auditor must understand the area being audited, its objectives, and associated risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Audit Program Development'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk ranking prioritizes audit resources toward areas with the highest risk, ensuring the most significant risks receive appropriate attention.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Risk Ranking'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A formal engagement letter or audit charter provides documented authorization, defining scope, objectives, and responsibilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Administration',
     subtopic: 'Authorization'
   },
@@ -99,6 +103,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Control evaluation considers both design (whether the control is capable of preventing/detecting issues) and operating effectiveness (whether it works consistently).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Control Evaluation'
   },
@@ -118,6 +123,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Automated controls operate consistently once properly implemented, eliminating variability from human factors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Automated Controls'
   },
@@ -137,6 +143,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Compensating controls are alternative controls implemented when primary controls are inadequate, impractical, or too costly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Compensating Controls'
   },
@@ -156,6 +163,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Sample size depends on the population size, desired confidence level, tolerable error rate, and expected error rate.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Sampling',
     subtopic: 'Sample Size'
   },
@@ -175,6 +183,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Judgmental sampling allows auditors to focus on specific items of interest, high-risk transactions, or unusual items.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Sampling',
     subtopic: 'Judgmental Sampling'
   },
@@ -194,6 +203,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Discovery sampling is designed to find at least one error if the error rate in the population exceeds a predefined threshold.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Sampling',
     subtopic: 'Discovery Sampling'
   },
@@ -213,6 +223,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'GAS provides data extraction, analysis, sampling, duplicate testing, gap analysis, and reporting capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'GAS'
   },
@@ -232,6 +243,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Data integrity verification includes comparing extracted data to known control totals, record counts, or other reliable sources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Data Integrity'
   },
@@ -251,6 +263,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Embedded audit modules are audit routines programmed into production applications to capture transactions meeting specific criteria.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Embedded Modules'
   },
@@ -270,6 +283,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Requirements definition is most critical because errors here propagate through all subsequent phases and are costly to correct later.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'SDLC Auditing',
     subtopic: 'Requirements'
   },
@@ -289,6 +303,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Post-implementation reviews assess whether project objectives were achieved, benefits realized, and lessons learned for future projects.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'SDLC Auditing',
     subtopic: 'Post-Implementation'
   },
@@ -308,6 +323,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Access reviews verify that access permissions align with job responsibilities and follow the least privilege principle.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control Auditing',
     subtopic: 'Access Reviews'
   },
@@ -327,6 +343,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Terminated user accounts should be disabled or removed promptly to prevent unauthorized access after employment ends.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control Auditing',
     subtopic: 'Termination'
   },
@@ -346,6 +363,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Network security auditing covers firewall rules, network segmentation, intrusion detection, remote access, wireless security, and monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Network Auditing',
     subtopic: 'Network Security'
   },
@@ -365,6 +383,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'BCP audit verifies plans are current, complete, aligned with business requirements, and tested to validate recovery capability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'BCP Auditing',
     subtopic: 'BCP Review'
   },
@@ -384,6 +403,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Third-party audits cover contract terms, control assessments (or SOC reports), performance monitoring, and compliance with requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Third-Party Auditing',
     subtopic: 'Vendor Audit'
   },
@@ -403,6 +423,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Cloud audits address shared responsibility model, data protection, access controls, compliance, and vendor control assessments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Cloud Auditing',
     subtopic: 'Cloud Assessment'
   },
@@ -422,6 +443,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Privacy audits assess the entire data lifecycle: collection practices, use, protection measures, retention, and regulatory compliance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Privacy Auditing',
     subtopic: 'Privacy Assessment'
   },
@@ -460,6 +482,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Recommendations should be practical, actionable, cost-effective, and address root causes rather than just symptoms.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Recommendations'
   },
@@ -479,6 +502,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Management responses should include specific corrective actions, responsible individuals, and target completion dates.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Management Response'
   },
@@ -498,6 +522,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'When management disagrees, document their position and rationale. If risk is significant, escalate to appropriate levels.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Disagreements'
   },
@@ -517,6 +542,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Report distribution follows the need-to-know principle, distributing to those who need the information for their responsibilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Distribution'
   },
@@ -536,6 +562,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Audit conclusions must be supported by sufficient, reliable, and relevant evidence gathered through appropriate audit procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Conclusions'
   },
@@ -555,6 +582,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Integrated audits combine financial, operational, compliance, and IT audit procedures into a unified approach.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Approach',
     subtopic: 'Integrated Auditing'
   },
@@ -574,6 +602,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Knowledge transfer ensures understanding of the audit area, findings, and processes is retained for future audit engagements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Administration',
     subtopic: 'Knowledge Transfer'
   },

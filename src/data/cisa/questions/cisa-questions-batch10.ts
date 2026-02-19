@@ -27,6 +27,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk-based planning prioritizes audit resources toward areas with the highest risk to organizational objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Planning',
     subtopic: 'Risk-Based Audit Planning'
   },
@@ -46,6 +47,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The audit universe should be dynamic and updated to reflect changes in the organization, new systems, and emerging risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Planning',
     subtopic: 'Audit Universe'
   },
@@ -65,6 +67,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Materiality considers the significance of an item including financial, operational, regulatory, and reputational aspects.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Materiality'
   },
@@ -141,6 +144,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Sampling allows auditors to draw reasonable conclusions about an entire population by testing a representative subset.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Sampling'
   },
@@ -160,6 +164,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Attribute sampling tests the rate of occurrence (presence or absence) of a specific characteristic, often used for compliance testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Sampling Methods'
   },
@@ -179,6 +184,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Irregularities require expanded investigation and timely reporting to appropriate management and potentially the audit committee.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Irregularities'
   },
@@ -198,6 +204,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Evidence should be sufficient (quantity), reliable (trustworthy), relevant (related to objectives), and useful (supports conclusions).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Audit Evidence'
   },
@@ -217,6 +224,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Continuous auditing uses technology to evaluate controls and transactions in real-time or near real-time, enabling faster detection of issues.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Continuous Auditing'
   },
@@ -236,6 +244,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'GAS allows auditors to access and analyze client data files to perform substantive testing and analytical procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Generalized Audit Software'
   },
@@ -255,6 +264,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Test data involves creating artificial transactions with known expected results to verify that system processing is correct.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Test Data'
   },
@@ -270,10 +280,11 @@ const ALL_BATCH10: Question[] = [
       'It only uses historical data',
       'It requires system shutdown',
       'It processes test transactions through production systems with production data',
-      'It is never used',
+      'It is rarely used',
     ],
     correctAnswer: 2,
     explanation: 'ITF creates a fictitious entity within the production system to process test transactions alongside real transactions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Integrated Test Facility'
   },
@@ -293,6 +304,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Complete findings include condition (what exists), criteria (what should exist), cause (why), effect (impact), and recommendations (how to fix).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Reporting',
     subtopic: 'Finding Elements'
   },
@@ -312,6 +324,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Management responses should be documented, but significant disagreements about risk should be escalated appropriately.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Reporting',
     subtopic: 'Management Response'
   },
@@ -331,6 +344,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Follow-up verifies that management actions were implemented and effectively address the identified risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Reporting',
     subtopic: 'Follow-Up'
   },
@@ -350,6 +364,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Quality assurance includes ongoing monitoring of audit work and periodic assessments to ensure professional standards are met.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Standards and Ethics',
     subtopic: 'Quality Assurance'
   },
@@ -369,6 +384,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The ISACA Code of Ethics requires independence, objectivity, professional competence, confidentiality, and adherence to standards.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Standards and Ethics',
     subtopic: 'Ethics'
   },
@@ -388,6 +404,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Professional skepticism involves maintaining a questioning mind, being alert to contradictions, and critically evaluating evidence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Standards and Ethics',
     subtopic: 'Professional Skepticism'
   },
@@ -412,6 +429,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT governance aligns IT strategy with business strategy to ensure IT investments support business objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'IT-Business Alignment'
   },
@@ -431,6 +449,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The board sets strategic direction, approves IT strategy, and provides oversight rather than managing day-to-day operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Governance Roles'
   },
@@ -469,6 +488,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The balanced scorecard framework measures performance from financial, customer, internal process, and learning/growth perspectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Management',
     subtopic: 'Performance Measurement'
   },
@@ -488,6 +508,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT risk should be integrated into enterprise risk management to ensure technology risks are considered in business context.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Risk Management',
     subtopic: 'Integration'
   },
@@ -507,6 +528,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Risk appetite is the broad level of risk an organization is willing to accept; tolerance defines acceptable variation around specific objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Risk Management',
     subtopic: 'Risk Concepts'
   },
@@ -526,6 +548,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT steering committees typically include business and IT leadership to prioritize initiatives and oversee major investments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Governance Structures'
   },
@@ -545,6 +568,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Enterprise architecture provides a holistic view of business processes, information, and technology to guide IT decisions and investments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Management',
     subtopic: 'Enterprise Architecture'
   },
@@ -564,6 +588,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT resources include personnel, data/information, technology infrastructure, and applications - all must be managed effectively.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Management',
     subtopic: 'Resource Management'
   },
@@ -583,6 +608,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'COBIT 2019 principles include meeting stakeholder needs, covering the enterprise end-to-end, applying a single integrated framework, enabling a holistic approach, and separating governance from management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance Frameworks',
     subtopic: 'COBIT'
   },
@@ -602,6 +628,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Due diligence evaluates vendor financial health, security practices, compliance status, and ability to deliver as promised.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Vendor Management',
     subtopic: 'Due Diligence'
   },
@@ -640,6 +667,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'BIA identifies critical business processes and quantifies the impact of disruption over time to prioritize recovery efforts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Risk Management',
     subtopic: 'BIA'
   },
@@ -659,6 +687,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'KRIs are forward-looking metrics that provide early warning signals when risk levels are increasing toward thresholds.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Risk Management',
     subtopic: 'Risk Monitoring'
   },
@@ -678,6 +707,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Change management requires proper authorization, testing, approval, and documentation before implementing changes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Management',
     subtopic: 'Change Management'
   },
@@ -697,6 +727,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Least privilege limits user access to only what is necessary for their job function, reducing risk of unauthorized access or errors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control',
     subtopic: 'Least Privilege'
   },
@@ -721,6 +752,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Feasibility studies assess technical, economic/financial, operational, and schedule aspects to determine project viability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Project Management',
     subtopic: 'Feasibility Study'
   },
@@ -740,6 +772,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The traceability matrix links requirements to design, code, and test cases to ensure all requirements are addressed and tested.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'SDLC',
     subtopic: 'Requirements Management'
   },
@@ -759,6 +792,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Shift left integrates security testing earlier in the SDLC (left on the timeline) to find and fix issues before deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'DevSecOps'
   },
@@ -778,6 +812,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SAST analyzes source code, bytecode, or binaries without running the application, finding vulnerabilities in code structure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'Application Security Testing'
   },
@@ -797,6 +832,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'UAT allows end users to verify the system meets their requirements and business needs before production deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Testing',
     subtopic: 'UAT'
   },
@@ -816,6 +852,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Regression testing verifies that new changes, fixes, or updates have not broken existing functionality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Testing',
     subtopic: 'Regression Testing'
   },
@@ -854,6 +891,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data conversion requires thorough validation, reconciliation, and verification to ensure accuracy and completeness of migrated data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Implementation',
     subtopic: 'Data Conversion'
   },
@@ -873,6 +911,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Parallel implementation runs old and new systems simultaneously, comparing results to validate the new system before retirement of the old one.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Implementation',
     subtopic: 'Implementation Strategies'
   },
@@ -888,10 +927,11 @@ const ALL_BATCH10: Question[] = [
       'Phased rolls out functionality incrementally rather than all at once',
       'They are identical',
       'Big bang has less risk',
-      'Phased is always faster',
+      'Phased is typically faster',
     ],
     correctAnswer: 0,
     explanation: 'Phased implementation deploys functionality in stages (by module, location, or user group), while big bang deploys everything simultaneously.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Implementation',
     subtopic: 'Implementation Strategies'
   },
@@ -930,6 +970,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'OWASP Top 10 identifies the most critical web application security risks (like injection, XSS, broken authentication) for developer awareness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'OWASP'
   },
@@ -949,6 +990,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Input validation prevents malicious input (SQL injection, XSS, buffer overflow) and ensures only valid data enters the system.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Application Controls',
     subtopic: 'Input Controls'
   },
@@ -968,6 +1010,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Code review is most effective when performed early and regularly, catching issues when they are easier and cheaper to fix.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Secure Development',
     subtopic: 'Code Review'
   },
@@ -987,6 +1030,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Version control tracks changes, maintains history, enables collaboration, and allows reverting to previous versions if needed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development',
     subtopic: 'Version Control'
   },
@@ -1006,6 +1050,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Separation of duties prevents developers from unilaterally moving untested or malicious code to production.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Development Controls',
     subtopic: 'Separation of Duties'
   },
@@ -1021,10 +1066,11 @@ const ALL_BATCH10: Question[] = [
       'Has no testing',
       'Has no documentation',
       'Delivers functionality in iterative increments with regular feedback',
-      'Is always faster',
+      'is typically faster',
     ],
     correctAnswer: 2,
     explanation: 'Agile uses iterative sprints to deliver working functionality incrementally, incorporating regular stakeholder feedback.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'SDLC',
     subtopic: 'Agile'
   },
@@ -1044,6 +1090,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IaC provides consistent, repeatable, version-controlled infrastructure deployment, reducing configuration drift and manual errors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Cloud and Automation',
     subtopic: 'Infrastructure as Code'
   },
@@ -1068,6 +1115,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT operations manage day-to-day delivery of IT services including batch processing, scheduling, monitoring, and incident response.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Operations Management'
   },
@@ -1087,6 +1135,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Job scheduling controls include job dependencies, priorities, retry/failure handling, and monitoring for timely completion.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Job Scheduling'
   },
@@ -1106,6 +1155,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Capacity management ensures IT resources are sufficient to meet current service levels and planned future demands.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Capacity Management'
   },
@@ -1125,6 +1175,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Incident management restores service quickly; problem management identifies and addresses root causes to prevent recurrence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Service Management',
     subtopic: 'Problem Management'
   },
@@ -1144,6 +1195,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Configuration management identifies, controls, and verifies configuration items (hardware, software, documentation) and their relationships.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Configuration Management'
   },
@@ -1182,6 +1234,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'RPO defines the maximum acceptable age of data to be recovered (i.e., how much data loss is acceptable) measured as a time period.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Recovery Objectives'
   },
@@ -1194,13 +1247,14 @@ const ALL_BATCH10: Question[] = [
     skillLevel: 'Analysis',
     question: 'Recovery Time Objective (RTO) differs from RTO because:',
     options: [
-      'RPO is always longer than RTO',
+      'RPO is typically longer than RTO',
       'RTO is the target time to restore service; RPO is tolerable data loss',
       'RTO measures data loss',
       'They are identical',
     ],
     correctAnswer: 1,
     explanation: 'RTO is the target time to restore business processes after disruption; RPO is the tolerable amount of data loss.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Recovery Objectives'
   },
@@ -1220,6 +1274,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Hot sites are fully equipped with hardware, software, and data replication, ready for immediate failover with minimal recovery time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Recovery Sites'
   },
@@ -1239,6 +1294,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Cold sites have lower ongoing costs but require more time to activate because equipment, software, and data must be installed/restored.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Recovery Sites'
   },
@@ -1258,6 +1314,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Regular testing validates that recovery procedures work, identifies gaps, and ensures staff are trained for disaster response.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'DR Testing'
   },
@@ -1277,6 +1334,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Full-interruption testing actually activates the disaster recovery site, providing the most realistic validation of recovery capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'DR Testing'
   },
@@ -1296,6 +1354,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Backup strategy includes frequency, retention periods, offsite/offline storage, encryption, and regular testing of restore capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Backup and Recovery'
   },
@@ -1309,12 +1368,13 @@ const ALL_BATCH10: Question[] = [
     question: 'Differential backups differ from incremental because:',
     options: [
       'Differential backs up changes since last full; incremental since last backup of any type',
-      'Incremental is always faster to restore',
+      'Incremental is typically faster to restore',
       'Differential requires more storage than incremental',
       'They are identical',
     ],
     correctAnswer: 0,
     explanation: 'Differential backs up all changes since the last full backup; incremental backs up changes since the last backup (full or incremental).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Backup Types'
   },
@@ -1353,6 +1413,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Environmental controls include temperature/humidity (HVAC), fire detection/suppression, water detection, power conditioning, and physical access controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Operations',
     subtopic: 'Data Center Operations'
   },
@@ -1391,6 +1452,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'BCP addresses maintaining or resuming critical business functions, not just IT, during and after any type of disruption.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'BCP Scope'
   },
@@ -1410,6 +1472,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Crisis communication plans pre-establish who communicates, through what channels, to which audiences, with prepared message frameworks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Business Continuity',
     subtopic: 'Crisis Communications'
   },
@@ -1429,6 +1492,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Service level management defines, negotiates, monitors, and reports on service performance against agreed SLA targets.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Service Management',
     subtopic: 'SLA Management'
   },
@@ -1453,6 +1517,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Security governance aligns security strategy with business objectives and ensures effective management and oversight of security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Governance',
     subtopic: 'Security Alignment'
   },
@@ -1472,6 +1537,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'CISO reporting structure should ensure sufficient independence and visibility to effectively influence security decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Governance',
     subtopic: 'Security Organization'
   },
@@ -1491,6 +1557,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Classification categorizes data by sensitivity to ensure appropriate protection controls are applied based on data value and risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Security',
     subtopic: 'Data Classification'
   },
@@ -1510,6 +1577,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'DLP solutions identify, monitor, and prevent unauthorized movement or disclosure of sensitive data across endpoints, networks, and cloud.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Data Security',
     subtopic: 'DLP'
   },
@@ -1548,6 +1616,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'RBAC assigns permissions to roles representing job functions; users receive access based on role assignment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control',
     subtopic: 'Access Control Models'
   },
@@ -1567,6 +1636,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'PAM solutions control, monitor, and secure access to privileged accounts that have elevated permissions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control',
     subtopic: 'Privileged Access'
   },
@@ -1586,6 +1656,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SSO creates a single point of failure - if SSO credentials are compromised, attackers gain access to all connected systems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Access Control',
     subtopic: 'SSO Security'
   },
@@ -1605,6 +1676,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Default deny with explicit allow follows least privilege principle - only specifically permitted traffic is allowed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Network Security',
     subtopic: 'Firewall Configuration'
   },
@@ -1624,6 +1696,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IDS detects and alerts on threats; IPS adds the capability to automatically block detected threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Network Security',
     subtopic: 'IDS/IPS'
   },
@@ -1662,6 +1735,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Zero trust requires verification for every access request regardless of network location - "never trust, always verify."',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Network Security',
     subtopic: 'Zero Trust'
   },
@@ -1700,6 +1774,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'TLS (Transport Layer Security) evolved from SSL with enhanced security and is the current standard for encrypted communications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Cryptography',
     subtopic: 'TLS/SSL'
   },
@@ -1757,6 +1832,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Vulnerability scanning discovers security weaknesses in systems, applications, and configurations that could be exploited.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Operations',
     subtopic: 'Vulnerability Management'
   },
@@ -1776,6 +1852,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Penetration testing actively attempts to exploit vulnerabilities to demonstrate real-world attack impact, while scanning only identifies potential vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Operations',
     subtopic: 'Penetration Testing'
   },
@@ -1814,6 +1891,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Social engineering manipulates human psychology rather than technical systems, exploiting trust, authority, or urgency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Threats',
     subtopic: 'Social Engineering'
   },
@@ -1833,6 +1911,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Phishing uses fraudulent emails, websites, or messages designed to trick recipients into revealing credentials or installing malware.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Threats',
     subtopic: 'Phishing'
   },
@@ -1852,6 +1931,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Defense-in-depth against ransomware includes offline backups, user training, segmentation, endpoint protection, and patch management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Security Threats',
     subtopic: 'Ransomware'
   },
@@ -1871,6 +1951,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The incident response lifecycle includes preparation, detection/analysis, containment, eradication, recovery, and post-incident activity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Incident Management',
     subtopic: 'Incident Response'
   },
@@ -1890,6 +1971,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Chain of custody documents who handled evidence, when, and what was done to preserve integrity for legal admissibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Incident Management',
     subtopic: 'Digital Forensics'
   },
@@ -1928,6 +2010,7 @@ const ALL_BATCH10: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'PIAs should be conducted proactively before implementing new systems or processes that collect, use, or share personal data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Privacy',
     subtopic: 'Privacy Assessments'
   }

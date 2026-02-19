@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Understanding the control environment provides context for evaluating specific controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT General Controls',
     subtopic: 'Control Environment'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Audit trails provide evidence of transactions and user activities for accountability and investigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Audit Trail Purpose'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Negative assurance indicates nothing came to attention suggesting material issues, based on limited procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Negative Assurance'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Sufficiency refers to the quantity of evidence needed to adequately support audit conclusions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Sufficiency'
   },
@@ -118,6 +122,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Post-audit surveys gather stakeholder feedback to improve audit effectiveness and relationships.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Quality',
     subtopic: 'Feedback'
   },
@@ -137,6 +142,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Inherent limitations include sampling risk, judgment, management representations, and control circumvention.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Conduct',
     subtopic: 'Limitations'
   },
@@ -156,6 +162,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Optimization balances efficiency improvements with maintaining audit quality and coverage.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Quality',
     subtopic: 'Optimization'
   },
@@ -175,6 +182,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Coordination can improve efficiency and coverage while avoiding unnecessary duplication of effort.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Conduct',
     subtopic: 'Coordination'
   },
@@ -194,6 +202,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Technology enablement requires business case analysis, capability assessment, and process integration.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Tools',
     subtopic: 'Technology Enablement'
   },
@@ -213,6 +222,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Risk-based planning allocates audit resources proportionally to assessed risk levels.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Risk-Based Planning'
   },
@@ -232,6 +242,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Standardization provides consistency, efficiency gains, and quality assurance across audits.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Methodology',
     subtopic: 'Standardization'
   },
@@ -251,6 +262,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Emerging risk identification uses multiple sources including threat intelligence, trends, and expert input.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Emerging Risks'
   },
@@ -270,6 +282,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Executive summaries provide key findings, risks, and recommendations at a level appropriate for executives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Executive Summary'
   },
@@ -289,6 +302,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Engagement letters should specify scope, objectives, responsibilities, timeline, and deliverables.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Engagement Letter'
   },
@@ -308,6 +322,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Control objectives are the criteria against which the adequacy of controls is evaluated.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Control Objectives'
   },
@@ -327,6 +342,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Notification should be timely, providing sufficient information for auditee preparation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Communication',
     subtopic: 'Notification'
   },
@@ -346,6 +362,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Status reports should communicate progress, issues encountered, and any changes to scope or timeline.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Communication',
     subtopic: 'Status Reporting'
   },
@@ -365,6 +382,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Generally: external confirmation > inspection > observation > inquiry, though context matters.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Reliability Hierarchy'
   },
@@ -384,6 +402,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Surprise techniques are appropriate when fraud is suspected or controls depend on unpredictable testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Surprise Audits'
   },

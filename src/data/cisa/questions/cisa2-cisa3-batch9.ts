@@ -22,6 +22,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT governance ensures IT strategy aligns with business goals and delivers value while managing risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Governance Objectives'
   },
@@ -41,6 +42,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'COBIT provides a comprehensive framework for enterprise IT governance and management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'COBIT'
   },
@@ -60,6 +62,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Enterprise architecture bridges business strategy and IT implementation, ensuring alignment at an enterprise level.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Enterprise Architecture'
   },
@@ -79,6 +82,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Steering committees require both business and IT leadership for balanced decision-making.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Governance Structures'
   },
@@ -92,12 +96,13 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     question: 'Quantitative risk analysis differs from qualitative in that it:',
     options: [
       'Requires no data',
-      'Is always faster',
+      'is typically faster',
       'Expresses risk in monetary or measurable terms',
       'Is less accurate',
     ],
     correctAnswer: 2,
     explanation: 'Quantitative analysis uses numerical values (probability, monetary impact) while qualitative uses descriptive categories.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Analysis'
   },
@@ -117,6 +122,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Risk appetite is a strategic decision made by the board and senior leadership, not operational management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Appetite'
   },
@@ -136,6 +142,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'KRIs are forward-looking metrics that signal when risk may be approaching tolerance thresholds.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'KRIs'
   },
@@ -174,6 +181,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Policies require regular review cycles plus updates when business, technology, or regulatory changes occur.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Policy Management'
   },
@@ -193,6 +201,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Vendor risk assessment should be part of selection, informing contract terms and ongoing monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Third-Party Risk'
   },
@@ -212,6 +221,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Balanced scorecards provide comprehensive view across multiple perspectives for governance effectiveness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Performance Measurement'
   },
@@ -231,6 +241,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT resources encompass human resources, data/information, infrastructure, and application assets.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Resource Management'
   },
@@ -250,6 +261,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Value delivery tracks whether projected benefits in business cases are actually achieved.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Value Delivery'
   },
@@ -269,6 +281,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'CSA engages management and staff in evaluating control effectiveness of their processes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'CSA'
   },
@@ -288,6 +301,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT strategic plans typically align with business planning horizons of 3-5 years.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Strategic Planning'
   }
@@ -310,6 +324,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Security in Agile should be expressed as user stories with acceptance criteria, integrated into sprints.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Agile Security'
   },
@@ -329,6 +344,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Code review during development catches issues early when they are cheapest to fix.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Code Review'
   },
@@ -348,6 +364,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Shift-left moves security activities earlier in the SDLC where issues are cheaper and easier to fix.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'DevSecOps'
   },
@@ -386,6 +403,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'CI/CD pipelines should include automated security testing (SAST, DAST, SCA) integrated into the flow.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'CI/CD Security'
   },
@@ -405,6 +423,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SCA tools scan for known vulnerabilities in open source and third-party components used in applications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Security Testing'
   },
@@ -424,6 +443,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Traceability links requirements through design, code, and test cases to ensure complete coverage.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Requirements Management'
   },
@@ -443,6 +463,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'CCBs evaluate changes for business and technical impact before authorization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Change Management',
     subtopic: 'CCB'
   },
@@ -462,6 +483,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Technical debt represents future effort to fix issues from expedient choices made during development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Technical Debt'
   },
@@ -500,6 +522,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IaC enables infrastructure changes to be reviewed, version controlled, and consistently applied.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Infrastructure as Code'
   },
@@ -519,6 +542,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SSDF (NIST SP 800-218) provides recommended practices for secure software development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Security Framework'
   },
@@ -538,6 +562,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Formal vendor evaluation against business, technical, and risk criteria ensures appropriate selection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Acquisition',
     subtopic: 'Vendor Evaluation'
   },
@@ -557,6 +582,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Configuration management tracks all changes to ensure environment consistency and auditability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Configuration Management'
   },
@@ -576,6 +602,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Container image security includes vulnerability scanning, signing, minimal base images, and trusted registries.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'SDLC',
     subtopic: 'Container Security'
   }

@@ -23,6 +23,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Enterprise governance of IT ensures IT supports and enables enterprise strategy, objectives, and operations effectively.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Enterprise IT Governance'
   },
@@ -42,6 +43,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The board sets strategic direction, evaluates IT performance against objectives, and ensures appropriate risk management and resource allocation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Board Role'
   },
@@ -61,6 +63,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT value is demonstrated by enabling business outcomes, supporting strategy, managing risks, and optimizing resource utilization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Value',
     subtopic: 'Value Delivery'
   },
@@ -80,6 +83,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The IT operating model defines how IT is organized, how it operates, how it delivers services, and how it interfaces with the business.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Operating Model'
   },
@@ -99,6 +103,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Centralized IT governance provides consistency, economies of scale, standardization, and unified direction but may be less responsive to local needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Centralization'
   },
@@ -118,6 +123,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Federated governance combines central standards and oversight with delegated authority for business units to make local decisions within guardrails.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Federated Model'
   },
@@ -137,6 +143,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Shadow IT refers to systems, services, or applications deployed by business units without formal IT department approval or oversight.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Shadow IT'
   },
@@ -156,6 +163,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT spending transparency enables informed decisions about investments, helps demonstrate value, and supports accountability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Investment',
     subtopic: 'Spending Transparency'
   },
@@ -175,6 +183,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Chargeback (billing) and showback (reporting) promote accountability for IT consumption and inform decisions about service utilization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Financial Management',
     subtopic: 'Cost Allocation'
   },
@@ -194,6 +203,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Technical debt management tracks and addresses accumulated shortcuts, deferred maintenance, and aging technology to reduce future costs and risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Management',
     subtopic: 'Technical Debt'
   },
@@ -213,6 +223,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Architecture governance ensures technology decisions align with established architectural principles, standards, and roadmaps.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Enterprise Architecture',
     subtopic: 'Architecture Governance'
   },
@@ -232,6 +243,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Technology roadmaps align technology evolution with business strategy, showing how current and planned technologies support business objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Technology Roadmap'
   },
@@ -251,6 +263,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Emerging technology assessment evaluates business value, risks, technology maturity, and organizational readiness for adoption.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Emerging Technology'
   },
@@ -270,6 +283,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT sourcing strategy considers capabilities needed, risks, flexibility requirements, costs, and strategic alignment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Sourcing',
     subtopic: 'Sourcing Strategy'
   },
@@ -289,6 +303,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Multi-vendor strategies reduce dependency on any single vendor and enable competitive pricing, though they increase management complexity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Sourcing',
     subtopic: 'Multi-Vendor'
   },
@@ -308,6 +323,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Exit strategies should be planned before engagement begins, addressing data return, transition, and continuity if the relationship ends.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Vendor Management',
     subtopic: 'Exit Planning'
   },
@@ -327,6 +343,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Cloud agreements should address SLAs, data protection, security controls, compliance, audit rights, exit provisions, and liability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Cloud Governance',
     subtopic: 'Cloud Contracts'
   },
@@ -346,6 +363,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data governance establishes accountability, policies, standards, and processes for managing data as an organizational asset.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Data Governance',
     subtopic: 'Data Governance Framework'
   },
@@ -365,6 +383,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Data stewardship assigns business responsibility for data quality, accuracy, and appropriate use within specific domains.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Data Governance',
     subtopic: 'Data Stewardship'
   },
@@ -384,6 +403,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'MDM ensures consistent, accurate core data (customers, products, etc.) across all systems using that data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Data Governance',
     subtopic: 'MDM'
   },
@@ -403,6 +423,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Compliance monitoring should be ongoing, with regular assessments, testing, and reporting to ensure continuous compliance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Compliance',
     subtopic: 'Compliance Monitoring'
   },
@@ -422,6 +443,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Organizations should monitor regulatory developments, assess impacts, and implement changes proactively before requirements take effect.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Compliance',
     subtopic: 'Regulatory Change'
   },
@@ -441,6 +463,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'GRC integration provides a unified view across governance, risk management, and compliance activities, reducing redundancy and improving visibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'GRC'
   },
@@ -460,6 +483,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Dashboards provide at-a-glance view of key performance indicators, enabling quick assessment of IT performance and issues.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Performance Measurement',
     subtopic: 'Dashboards'
   },
@@ -479,6 +503,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Maturity models help assess current capability levels and plan structured improvement roadmaps toward target maturity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Management',
     subtopic: 'Maturity Models'
   },
@@ -498,6 +523,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Process improvement should be ongoing, continuously assessing and improving processes to enhance efficiency and effectiveness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Management',
     subtopic: 'Process Improvement'
   },
@@ -517,6 +543,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Stakeholder management involves identifying stakeholders, understanding their needs, and engaging appropriately to align expectations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Stakeholder Management'
   },
@@ -536,6 +563,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Digital transformation governance addresses strategy alignment, organizational change management, risk management, and benefit realization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Digital Transformation'
   },
@@ -555,6 +583,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Innovation governance balances enabling innovation and agility with appropriate risk management and governance controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Innovation'
   },
@@ -574,6 +603,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT ethics extends beyond compliance to include data privacy, algorithmic fairness, AI ethics, and responsible technology deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'IT Ethics'
   },

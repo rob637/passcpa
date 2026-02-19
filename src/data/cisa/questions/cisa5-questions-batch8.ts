@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Social engineering targets people, so awareness training is the most effective control.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Social Engineering'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MFA requires factors from different categories: knowledge, possession, or biometric.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'Multi-Factor Authentication'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Storing keys with encrypted data defeats the purpose of encryption if both are compromised together.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Key Management'
   },
@@ -80,6 +83,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SIEM systems collect and correlate security events to enable detection and response to threats.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SIEM'
   },
@@ -99,6 +103,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Zero trust assumes no implicit trust and requires verification of all access regardless of network location.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Zero Trust'
   },
@@ -118,6 +123,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DLP detects and prevents unauthorized transmission or storage of sensitive data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'Data Loss Prevention'
   },
@@ -137,6 +143,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Segmentation limits lateral movement and contains the impact of security breaches.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Network Segmentation'
   },
@@ -156,6 +163,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'MDM should enforce security policies, encryption, and enable remote wipe of lost/stolen devices.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'Mobile Device Management'
   },
@@ -170,11 +178,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     options: [
       'No security controls are needed for SaaS',
       'The cloud provider handles all security',
-      'Cloud is always more secure than on-premises',
+      'Cloud is typically more secure than on-premises',
       'Responsibilities under the shared responsibility model are understood and addressed',
     ],
     correctAnswer: 3,
     explanation: 'The shared responsibility model requires the organization to address security for its areas of responsibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility'
   },
@@ -194,6 +203,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Vulnerability scanning should be regular and triggered by significant system changes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Vulnerability Management',
     subtopic: 'Scanning Frequency'
   },
@@ -213,6 +223,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Penetration testing goes beyond identification to attempt exploitation, demonstrating actual risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Testing',
     subtopic: 'Penetration Testing'
   },
@@ -232,6 +243,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'WAFs protect web applications from application-layer attacks like SQL injection and XSS.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Application Security',
     subtopic: 'Web Application Firewall'
   },
@@ -251,6 +263,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'PAM should provide just-in-time access with approval workflows and session recording.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'Privileged Access Management'
   },
@@ -270,6 +283,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Classification should reflect data sensitivity and potential impact of unauthorized disclosure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'Data Classification'
   },
@@ -289,6 +303,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IoT devices often have weak security and are difficult to patch, creating significant risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Endpoint Security',
     subtopic: 'IoT Security'
   },
@@ -308,6 +323,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'End-to-end encryption protects data so only endpoints can decrypt, not intermediaries.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'End-to-End Encryption'
   },
@@ -327,6 +343,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Database activity monitoring is critical for detecting unauthorized access and data exfiltration.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'Database Monitoring'
   },
@@ -346,6 +363,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Patches should be assessed for risk, tested, and applied within timeframes based on severity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Vulnerability Management',
     subtopic: 'Patch Management'
   },
@@ -365,6 +383,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SPF, DKIM, and DMARC are essential email authentication controls to prevent spoofing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Email Security',
     subtopic: 'Email Authentication'
   },
@@ -384,6 +403,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'An effective SOC provides continuous monitoring, detection, and response to security events.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Security Operations Center'
   },
@@ -397,12 +417,13 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'Identity and access management (IAM) should ensure:',
     options: [
       'All users have the same access',
-      'Access is never revoked',
+      'Access is rarely revoked',
       'Authentication is optional for low-risk systems',
       'Users have appropriate access based on role and least privilege',
     ],
     correctAnswer: 3,
     explanation: 'IAM ensures appropriate access based on role, applying least privilege principles.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'Identity Management'
   },
@@ -422,6 +443,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Third-party risk management requires security assessment and ongoing monitoring of vendors.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Third-Party Security',
     subtopic: 'Vendor Security'
   },
@@ -441,6 +463,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Secure destruction must ensure data cannot be recovered, using appropriate techniques for the media type.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'Data Destruction'
   },
@@ -460,6 +483,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Threat intelligence should inform and improve detection and response capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Threat Intelligence'
   },
@@ -479,6 +503,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Biometrics authenticate based on physical or behavioral characteristics (something you are).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'Biometric Authentication'
   },
@@ -492,12 +517,13 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     question: 'When reviewing data privacy controls, the IS auditor should verify:',
     options: [
       'All personal data is public',
-      'Consent is never required',
+      'Consent is rarely required',
       'Privacy is IT\'s responsibility only',
       'Privacy requirements are identified and appropriate controls are implemented',
     ],
     correctAnswer: 3,
     explanation: 'Privacy controls require identifying applicable requirements and implementing appropriate controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Privacy Controls'
   },
@@ -517,6 +543,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IPS can automatically block attacks, while IDS only detects and alerts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Intrusion Prevention'
   },
@@ -536,6 +563,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Physical access controls include visitor management, badge access, and security monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Physical Security',
     subtopic: 'Physical Access Controls'
   }

@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Insider threats require layered controls including access restrictions, activity monitoring, and behavioral analytics to detect anomalies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Insider Threats'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Defense in depth uses multiple overlapping security layers so if one control fails, others still provide protection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Security Architecture'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Segmentation limits attacker movement between network zones and contains breaches to smaller areas.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'Segmentation'
   },
@@ -80,6 +83,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'RBAC assigns access based on roles aligned to job functions, simplifying administration and enforcing least privilege.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'RBAC'
   },
@@ -99,6 +103,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Key management is often the weakest link. Poor key practices can undermine even strong algorithms.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'Key Management'
   },
@@ -118,6 +123,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Digital certificates link public keys to verified identities, enabling authentication and secure communications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Cryptography',
     subtopic: 'PKI'
   },
@@ -175,6 +181,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Simulations provide metrics on susceptibility and identify individuals/groups needing additional training.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Phishing Defense'
   },
@@ -213,6 +220,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'EDR provides continuous endpoint visibility, behavioral detection beyond signatures, and automated response capabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'EDR'
   },
@@ -232,6 +240,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Data owners understand the business value and sensitivity of their data and are accountable for classification decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'Data Classification'
   },
@@ -289,6 +298,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Vulnerability assessment scans for weaknesses; penetration testing actively attempts exploitation to prove real-world risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Security Testing'
   },
@@ -308,6 +318,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DLP inspects data in motion, at rest, and in use to detect and prevent unauthorized data transfers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'DLP'
   },
@@ -346,6 +357,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Biometrics (fingerprint, face, iris) represent "something you are" - inherent physical characteristics.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Access Control',
     subtopic: 'Biometrics'
   },
@@ -365,6 +377,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Modern supply chain security requires software bill of materials, code signing verification, and active dependency management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Supply Chain Security'
   },
@@ -384,6 +397,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Privacy by Design embeds privacy considerations into system design from inception rather than adding privacy controls afterward.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Privacy by Design'
   },
@@ -403,6 +417,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'GDPR requires breach notification to the supervisory authority within 72 hours unless the breach is unlikely to result in risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'GDPR'
   },
@@ -441,6 +456,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Architecture review during design is most cost-effective - fixing security issues later is exponentially more expensive.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Security Architecture'
   },
@@ -479,6 +495,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Threat hunting proactively searches for indicators of compromise that automated tools may miss.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Threat Hunting'
   },
@@ -498,6 +515,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Exceptions require documented risk assessment, appropriate approval, defined expiration, and compensating controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Exception Management'
   },
@@ -517,6 +535,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Assessment rigor should be proportionate to the risk - higher risk third parties require more thorough assessment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Third-Party Risk'
   },
@@ -536,6 +555,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Secure configuration includes defined hardening baselines, controlled changes, and ongoing compliance verification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Information Security',
     subtopic: 'Configuration Management'
   },
@@ -574,6 +594,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Tokenization substitutes sensitive data with tokens that have no mathematical relationship to the original data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Protection',
     subtopic: 'Tokenization'
   },
@@ -593,6 +614,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SOC maturity is measured by operational metrics: detection rates, response times, and coverage of threat landscape.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SOC Maturity'
   }

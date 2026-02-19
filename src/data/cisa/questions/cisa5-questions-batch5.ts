@@ -23,6 +23,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security architecture should follow defense-in-depth with multiple layers of complementary controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Architecture',
     subtopic: 'Defense in Depth'
   },
@@ -42,6 +43,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Security baselines should be documented, consistently applied, and periodically reviewed for appropriateness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Baselines'
   },
@@ -61,6 +63,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Hardening includes removing unnecessary services, applying patches, disabling defaults, and secure configuration.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Management',
     subtopic: 'Hardening'
   },
@@ -80,6 +83,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'CVSS scores consider base vulnerability characteristics, temporal factors, and environmental context.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Vulnerability Management',
     subtopic: 'CVSS'
   },
@@ -99,6 +103,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Remediation prioritization should consider exploitability, asset criticality, and potential business impact.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Vulnerability Management',
     subtopic: 'Prioritization'
   },
@@ -118,6 +123,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Patch management should include testing, change approval, controlled deployment, and verification.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Vulnerability Management',
     subtopic: 'Patch Management'
   },
@@ -137,6 +143,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Virtual patching provides compensating controls (like WAF rules) when patches cannot be immediately applied.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Vulnerability Management',
     subtopic: 'Virtual Patching'
   },
@@ -156,6 +163,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Rules of engagement should clearly define scope, testing methods, timing, notification, and escalation procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Testing',
     subtopic: 'Rules of Engagement'
   },
@@ -175,6 +183,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Red team exercises simulate real-world adversary tactics and techniques to test detection and response.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Testing',
     subtopic: 'Red Team'
   },
@@ -194,6 +203,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Purple team activities facilitate collaboration between red and blue teams to improve both attack simulation and defense.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Testing',
     subtopic: 'Purple Team'
   },
@@ -213,6 +223,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Bug bounty programs incentivize external security researchers to responsibly report vulnerabilities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Testing',
     subtopic: 'Bug Bounty'
   },
@@ -232,6 +243,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SIEM aggregates logs, correlates events, and provides detection and alerting for security events.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SIEM'
   },
@@ -251,6 +263,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'SOAR integrates security tools, automates repetitive tasks, and orchestrates incident response workflows.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'SOAR'
   },
@@ -270,6 +283,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'UEBA uses machine learning to detect anomalous behavior that may indicate insider threats or compromised accounts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'UEBA'
   },
@@ -289,6 +303,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'NDR monitors network traffic patterns to detect threats and anomalies that may evade other controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Network Security',
     subtopic: 'NDR'
   },
@@ -308,6 +323,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'XDR correlates detections across endpoints, network, cloud, and other layers for comprehensive threat detection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'XDR'
   },
@@ -327,6 +343,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Digital forensics maintains evidence integrity through documented procedures and chain of custody.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'Forensics'
   },
@@ -346,6 +363,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Memory forensics can recover volatile data including running processes, network connections, and encryption keys.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Incident Response',
     subtopic: 'Memory Forensics'
   },
@@ -365,6 +383,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Threat hunting proactively searches for threats that may have evaded automated detection controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'Threat Hunting'
   },
@@ -384,6 +403,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'IOCs are artifacts (hashes, IPs, behaviors) that indicate potential malicious activity or breach.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Security Operations',
     subtopic: 'IOCs'
   },
@@ -403,6 +423,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'DSARs require identity verification and timely response within regulatory timeframes (e.g., 30 days for GDPR).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'DSAR'
   },
@@ -422,6 +443,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Right to erasure must be balanced against legal retention requirements and other legitimate interests.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'Erasure'
   },
@@ -441,6 +463,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'PIAs systematically identify and mitigate privacy risks before implementing systems processing personal data.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Privacy',
     subtopic: 'PIA'
   },
@@ -460,6 +483,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Physical security should use multiple layers from perimeter to building to room to equipment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Physical Security',
     subtopic: 'Defense Layers'
   },
@@ -479,6 +503,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Visitor management should verify identity, log visits, provide temporary badges, and require escorts in sensitive areas.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Physical Security',
     subtopic: 'Visitor Management'
   },
@@ -498,6 +523,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Sanitization methods (clear, purge, destroy) should match data classification and whether media will be reused.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Data Security',
     subtopic: 'Media Sanitization'
   },
@@ -517,6 +543,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Environmental controls include HVAC, humidity control, fire detection/suppression, and water detection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Physical Security',
     subtopic: 'Environmental'
   },

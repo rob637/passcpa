@@ -30,6 +30,7 @@ const CISA2_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Governance is the responsibility of the Board of Directors and executive management. They set the strategic direction and ensure objectives are achieved.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Roles and Responsibilities'
   },
@@ -49,6 +50,7 @@ const CISA2_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'A developer with access to move code to production (promoting rights) creates a significant risk because they could introduce unauthorized code or bypass change controls without detection.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Segregation of Duties'
   }

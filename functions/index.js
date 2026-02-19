@@ -1180,15 +1180,18 @@ exports.sendTrialReminderEmails = onSchedule({
           
           if (!userEmail) continue;
           
+          // Fetch user's actual progress stats for personalized emails
+          const userStats = await getTrialUserStats(userId);
+          
           // Generate subject with exam name
           const subject = reminder.subject.replace('{examName}', examName);
           
-          // Send the email
+          // Send the email with stats
           const { error } = await resend.emails.send({
             from: FROM_EMAIL,
             to: userEmail,
             subject: subject,
-            html: generateTrialReminderEmail(displayName, courseConfig, reminder.template, reminder.day),
+            html: generateTrialReminderEmail(displayName, courseConfig, reminder.template, reminder.day, userStats),
           });
           
           if (error) {
@@ -1217,11 +1220,86 @@ exports.sendTrialReminderEmails = onSchedule({
   }
 });
 
+// Get user's trial progress stats for personalized emails
+async function getTrialUserStats(userId) {
+  try {
+    const logsRef = db.collection('users').doc(userId).collection('daily_log');
+    const logsSnapshot = await logsRef.orderBy('__name__', 'desc').limit(14).get();
+    
+    let totalQuestions = 0;
+    let correctQuestions = 0;
+    let daysActive = 0;
+    let totalMinutes = 0;
+    
+    logsSnapshot.forEach(doc => {
+      const data = doc.data();
+      totalQuestions += data.questionsAttempted || 0;
+      correctQuestions += data.questionsCorrect || 0;
+      totalMinutes += data.studyTimeMinutes || 0;
+      if ((data.questionsAttempted || 0) > 0) daysActive++;
+    });
+    
+    // Also try to get predicted score if available
+    const userDoc = await db.collection('users').doc(userId).get();
+    const userData = userDoc.data() || {};
+    const predictedScore = userData.predictedScore || null;
+    
+    return {
+      totalQuestions,
+      accuracy: totalQuestions > 0 ? Math.round((correctQuestions / totalQuestions) * 100) : 0,
+      daysActive,
+      totalMinutes,
+      predictedScore,
+    };
+  } catch (error) {
+    console.error('Error getting trial user stats:', error);
+    return { totalQuestions: 0, accuracy: 0, daysActive: 0, totalMinutes: 0, predictedScore: null };
+  }
+}
+
 // Trial Reminder Email Templates
-function generateTrialReminderEmail(displayName, courseConfig, template, dayNum) {
+function generateTrialReminderEmail(displayName, courseConfig, template, dayNum, userStats = null) {
   const examName = courseConfig.name.replace(' Exam', '');
   const courseSlug = courseConfig.slug || 'cpa';
   const daysRemaining = 14 - dayNum;
+  const stats = userStats || { totalQuestions: 0, accuracy: 0, daysActive: 0, totalMinutes: 0, predictedScore: null };
+  
+  // Build stats box HTML if user has activity
+  let statsBox = '';
+  if (stats.totalQuestions > 0) {
+    statsBox = `
+      <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0;">
+        <p style="color: #334155; font-size: 14px; font-weight: 600; margin: 0 0 15px 0;">📊 Your progress so far:</p>
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="text-align: center;">
+          <tr>
+            <td style="padding: 10px;">
+              <div style="font-size: 24px; font-weight: bold; color: #3b82f6;">${stats.totalQuestions}</div>
+              <div style="color: #64748b; font-size: 12px;">Questions</div>
+            </td>
+            <td style="padding: 10px;">
+              <div style="font-size: 24px; font-weight: bold; color: #10b981;">${stats.accuracy}%</div>
+              <div style="color: #64748b; font-size: 12px;">Accuracy</div>
+            </td>
+            <td style="padding: 10px;">
+              <div style="font-size: 24px; font-weight: bold; color: #8b5cf6;">${stats.daysActive}</div>
+              <div style="color: #64748b; font-size: 12px;">Days Active</div>
+            </td>
+            ${stats.predictedScore ? `
+            <td style="padding: 10px;">
+              <div style="font-size: 24px; font-weight: bold; color: #f59e0b;">${stats.predictedScore}</div>
+              <div style="color: #64748b; font-size: 12px;">Est. Score</div>
+            </td>
+            ` : ''}
+          </tr>
+        </table>
+        <p style="color: #64748b; font-size: 12px; margin: 15px 0 0 0; text-align: center;">
+          ${stats.totalQuestions >= 100 ? "🔥 You're on fire! Keep this momentum going." : 
+            stats.totalQuestions >= 50 ? "👏 Solid progress! A little more daily practice and you'll be exam-ready." : 
+            "💪 Good start! Increase to 20+ questions/day for best results."}
+        </p>
+      </div>
+    `;
+  }
   
   // Different messaging based on trial stage
   let headline, message, urgencyBox;
@@ -1335,6 +1413,8 @@ function generateTrialReminderEmail(displayName, courseConfig, template, dayNum)
         ${headline}
       </h1>
       
+      ${statsBox}
+      
       ${message}
       
       ${urgencyBox}
@@ -1433,6 +1513,336 @@ exports.sendWelcomeEmail = onDocumentCreated({
     console.error('Error sending welcome email:', error);
   }
 });
+
+// ============================================================================
+// WELCOME DRIP EMAIL SEQUENCE
+// Scheduled function that sends follow-up emails to new users
+// Day 1: First practice tip | Day 3: Study plan intro | Day 5: AI Tutor | Day 7: Progress check
+// ============================================================================
+
+exports.sendWelcomeDripEmails = onSchedule({
+  schedule: 'every day 10:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 300,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Sending welcome drip emails...');
+  
+  try {
+    const now = new Date();
+    
+    // Drip schedule: Day 1, 3, 5, 7 (Day 0 is the instant welcome email)
+    const dripDays = [
+      { day: 1, template: 'first_practice', subject: '🎯 5-minute study hack for {examName} success' },
+      { day: 3, template: 'study_plan', subject: '📅 Your personalized {examName} study plan is ready' },
+      { day: 5, template: 'ai_tutor', subject: '🤖 Meet your AI tutor — instant help for tough questions' },
+      { day: 7, template: 'progress_check', subject: "📊 Here's how your first week went" },
+    ];
+    
+    let totalSent = 0;
+    
+    for (const drip of dripDays) {
+      // Find users who signed up exactly X days ago
+      const targetDate = new Date(now);
+      targetDate.setDate(targetDate.getDate() - drip.day);
+      const startOfDay = new Date(targetDate);
+      startOfDay.setHours(0, 0, 0, 0);
+      const endOfDay = new Date(targetDate);
+      endOfDay.setHours(23, 59, 59, 999);
+      
+      console.log(`Checking Day ${drip.day} drip (users created between ${startOfDay.toISOString()} and ${endOfDay.toISOString()})`);
+      
+      // Query users created on target date who haven't received this drip
+      const usersSnapshot = await db.collection('users')
+        .where('createdAt', '>=', admin.firestore.Timestamp.fromDate(startOfDay))
+        .where('createdAt', '<=', admin.firestore.Timestamp.fromDate(endOfDay))
+        .get();
+      
+      console.log(`Found ${usersSnapshot.size} users from Day ${drip.day}`);
+      
+      for (const userDoc of usersSnapshot.docs) {
+        const userId = userDoc.id;
+        const userData = userDoc.data();
+        
+        // Check if this drip was already sent
+        const dripKey = `welcomeDrip_day${drip.day}`;
+        if (userData[dripKey]) {
+          continue; // Already sent
+        }
+        
+        const userEmail = userData.email;
+        if (!userEmail) continue;
+        
+        const displayName = userData.displayName || 'there';
+        const courseConfig = getCourseConfig(userData.activeCourse);
+        const examName = courseConfig.name.replace(' Exam', '');
+        
+        try {
+          // Get basic stats for progress check email
+          let userStats = null;
+          if (drip.template === 'progress_check') {
+            userStats = await getWelcomeDripStats(userId);
+          }
+          
+          const subject = drip.subject.replace('{examName}', examName);
+          
+          const { error } = await resend.emails.send({
+            from: FROM_EMAIL,
+            to: userEmail,
+            subject: subject,
+            html: generateWelcomeDripEmail(displayName, courseConfig, drip.template, userStats),
+          });
+          
+          if (error) {
+            console.error(`Error sending Day ${drip.day} drip to ${userEmail}:`, error);
+          } else {
+            console.log(`Sent Day ${drip.day} drip to ${userEmail}`);
+            totalSent++;
+            
+            // Mark this drip as sent
+            await db.collection('users').doc(userId).update({
+              [dripKey]: admin.firestore.FieldValue.serverTimestamp(),
+            });
+          }
+        } catch (userError) {
+          console.error(`Error processing Day ${drip.day} drip for ${userId}:`, userError.message);
+        }
+      }
+    }
+    
+    console.log(`Welcome drip emails complete: ${totalSent} total sent`);
+    
+  } catch (error) {
+    console.error('Error sending welcome drip emails:', error);
+    throw error;
+  }
+});
+
+// Get basic stats for welcome drip Day 7 progress email
+async function getWelcomeDripStats(userId) {
+  try {
+    const logsRef = db.collection('users').doc(userId).collection('daily_log');
+    const logsSnapshot = await logsRef.orderBy('__name__', 'desc').limit(7).get();
+    
+    let totalQuestions = 0;
+    let correctQuestions = 0;
+    let daysActive = 0;
+    
+    logsSnapshot.forEach(doc => {
+      const data = doc.data();
+      totalQuestions += data.questionsAttempted || 0;
+      correctQuestions += data.questionsCorrect || 0;
+      if ((data.questionsAttempted || 0) > 0) daysActive++;
+    });
+    
+    return {
+      totalQuestions,
+      accuracy: totalQuestions > 0 ? Math.round((correctQuestions / totalQuestions) * 100) : 0,
+      daysActive,
+    };
+  } catch (error) {
+    console.error('Error getting welcome drip stats:', error);
+    return { totalQuestions: 0, accuracy: 0, daysActive: 0 };
+  }
+}
+
+// Generate welcome drip email HTML
+function generateWelcomeDripEmail(displayName, courseConfig, template, userStats = null) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  const courseSlug = courseConfig.slug || 'cpa';
+  
+  let headline, content, ctaText, ctaUrl;
+  
+  if (template === 'first_practice') {
+    // Day 1: First practice tip
+    headline = `Ready for your first ${examName} question?`;
+    ctaText = 'Start a Quick Quiz →';
+    ctaUrl = `${APP_BASE_URL}/${courseSlug}/practice`;
+    content = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Here's a study hack that top scorers use:
+      </p>
+      
+      <div style="background: #f0f9ff; border-radius: 12px; padding: 24px; margin: 20px 0; border-left: 4px solid #3b82f6;">
+        <p style="color: #1e40af; font-size: 18px; margin: 0; font-weight: 600;">
+          🎯 The "5-5-5" Method
+        </p>
+        <p style="color: #334155; font-size: 15px; margin: 12px 0 0 0; line-height: 1.6;">
+          Answer <strong>5 questions</strong> every day for just <strong>5 minutes</strong>. 
+          This builds momentum and keeps concepts fresh. Research shows spaced practice 
+          beats marathon sessions every time.
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 20px 0;">
+        Start small. Build the habit. Watch your score climb.
+      </p>
+    `;
+  } else if (template === 'study_plan') {
+    // Day 3: Study plan intro
+    headline = `Your ${examName} study plan is ready`;
+    ctaText = 'View My Study Plan →';
+    ctaUrl = `${APP_BASE_URL}/${courseSlug}/study-plan`;
+    content = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Most ${examName} candidates fail because they study without a plan. Don't be one of them.
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 15px 0;">
+        Your personalized study plan includes:
+      </p>
+      
+      <ul style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>📅 <strong>Daily targets</strong> tailored to your exam date</li>
+        <li>📊 <strong>Topic priorities</strong> based on blueprint weights</li>
+        <li>🎯 <strong>Weak area focus</strong> from your practice results</li>
+        <li>⏰ <strong>Catch-up mode</strong> if you fall behind</li>
+      </ul>
+      
+      <div style="background: #ecfdf5; border-radius: 12px; padding: 20px; margin: 20px 0;">
+        <p style="color: #065f46; font-size: 14px; margin: 0;">
+          💡 <strong>Pro tip:</strong> Set your exam date in settings to get a countdown and pacing recommendations.
+        </p>
+      </div>
+    `;
+  } else if (template === 'ai_tutor') {
+    // Day 5: AI Tutor feature highlight
+    headline = `Stuck on a question? Ask the AI Tutor`;
+    ctaText = 'Try AI Tutor Now →';
+    ctaUrl = `${APP_BASE_URL}/${courseSlug}/ai-tutor`;
+    content = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Meet your study partner: an AI tutor that explains ${examName} concepts in plain English.
+      </p>
+      
+      <div style="background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 100%); border-radius: 12px; padding: 24px; margin: 20px 0;">
+        <p style="color: #5b21b6; font-size: 16px; margin: 0; font-weight: 600;">
+          🤖 What the AI Tutor can do:
+        </p>
+        <ul style="color: #6b21a8; font-size: 15px; line-height: 1.8; margin: 12px 0 0 0; padding-left: 20px;">
+          <li>Explain why an answer is correct (or wrong)</li>
+          <li>Break down complex topics step-by-step</li>
+          <li>Create memory tricks and mnemonics</li>
+          <li>Quiz you on specific concepts</li>
+        </ul>
+      </div>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 20px 0;">
+        It's like having a private tutor available 24/7 — no appointment needed.
+      </p>
+    `;
+  } else {
+    // Day 7: Progress check with stats
+    const stats = userStats || { totalQuestions: 0, accuracy: 0, daysActive: 0 };
+    headline = `Your first week: ${stats.totalQuestions} questions down! 🎉`;
+    ctaText = 'Keep Practicing →';
+    ctaUrl = `${APP_BASE_URL}/${courseSlug}/practice`;
+    
+    // Different messaging based on activity level
+    let activityMsg;
+    if (stats.totalQuestions >= 50) {
+      activityMsg = `Amazing work! You're in the top tier of new users. Keep this momentum going!`;
+    } else if (stats.totalQuestions >= 20) {
+      activityMsg = `Great start! You're building solid study habits. Time to kick it up a notch?`;
+    } else if (stats.totalQuestions > 0) {
+      activityMsg = `You've taken the first steps. Even a few questions a day adds up over time.`;
+    } else {
+      activityMsg = `Let's get started! Your first practice session is just a click away.`;
+    }
+    
+    content = `
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+        Here's your first week at a glance:
+      </p>
+      
+      <div style="display: flex; justify-content: space-around; margin: 25px 0; text-align: center;">
+        <div style="flex: 1; padding: 15px;">
+          <div style="font-size: 36px; font-weight: bold; color: #3b82f6;">${stats.totalQuestions}</div>
+          <div style="color: #64748b; font-size: 14px;">Questions</div>
+        </div>
+        <div style="flex: 1; padding: 15px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+          <div style="font-size: 36px; font-weight: bold; color: #10b981;">${stats.accuracy}%</div>
+          <div style="color: #64748b; font-size: 14px;">Accuracy</div>
+        </div>
+        <div style="flex: 1; padding: 15px;">
+          <div style="font-size: 36px; font-weight: bold; color: #8b5cf6;">${stats.daysActive}</div>
+          <div style="color: #64748b; font-size: 14px;">Days Active</div>
+        </div>
+      </div>
+      
+      <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0;">
+        <p style="color: #334155; font-size: 16px; margin: 0;">
+          ${activityMsg}
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 20px 0;">
+        Remember: The ${examName} passing rate is only ~45%. Consistent daily practice is your edge.
+      </p>
+    `;
+  }
+  
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 20px 0;">
+        ${headline}
+      </h1>
+      
+      ${content}
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${ctaUrl}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          ${ctaText}
+        </a>
+      </div>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="${APP_BASE_URL}/settings" style="color: #94a3b8;">Manage email preferences</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
 
 // ============================================================================
 // WAITLIST CONFIRMATION EMAIL
@@ -1983,7 +2393,7 @@ exports.createCheckoutSession = onCall({
         },
       ],
       success_url: `${baseUrl}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/pricing`,
+      cancel_url: `${baseUrl}/${courseId}#pricing`,
       subscription_data: {
         metadata: {
           firebaseUserId: userId,

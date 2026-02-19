@@ -29,6 +29,7 @@ const CISA3_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A feasibility study determines whether a project is viable. The primary focus is on cost-benefit analysis (economic feasibility) and whether the solution aligns with business strategy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Project Management',
     subtopic: 'Feasibility Study'
   },
@@ -48,6 +49,7 @@ const CISA3_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Security requirements should be defined as early as possible, ideally during the Requirements Analysis phase, to ensure they are built into the design rather than added as an afterthought.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Business Application Development',
     subtopic: 'SDLC Phases'
   }

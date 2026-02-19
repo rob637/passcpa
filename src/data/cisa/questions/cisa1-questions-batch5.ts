@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Evidence obtained directly by the auditor (observation, testing) is more reliable than evidence provided by the auditee.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Evidence Reliability'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'External documentary evidence (confirmations, third-party reports) is generally more reliable than internal documentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Documentary Evidence'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Fraud indicators should be evaluated and reported appropriately regardless of materiality due to their nature.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Findings',
     subtopic: 'Fraud Indicators'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Scope limitations must be clearly disclosed in the audit report so readers understand the boundaries of the audit.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Scope Limitations'
   },
@@ -99,6 +103,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A complete finding includes criteria (what should be), condition (what is), cause (why), and effect (risk/impact).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Findings',
     subtopic: 'Finding Components'
   },
@@ -118,6 +123,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Root cause analysis identifies underlying issues, enabling recommendations that address problems rather than symptoms.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Findings',
     subtopic: 'Root Cause Analysis'
   },
@@ -137,6 +143,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Management disagreement should be documented along with the finding, allowing readers to understand both perspectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Management Response'
   },
@@ -156,6 +163,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Exit conferences validate findings for accuracy and obtain management commitment to remediation actions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Communication',
     subtopic: 'Exit Conference'
   },
@@ -175,6 +183,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Rating systems should have defined, documented criteria applied consistently across audits for comparability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Rating Criteria'
   },
@@ -194,6 +203,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Report distribution should follow need-to-know principles and organizational policies regarding sensitive findings.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Report Distribution'
   },
@@ -213,6 +223,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Follow-up audits verify that management has implemented agreed remediation actions for prior findings.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Follow-up',
     subtopic: 'Remediation Verification'
   },
@@ -232,6 +243,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Issue tracking should track status, ownership, target dates, and include escalation for overdue items.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Follow-up',
     subtopic: 'Issue Tracking'
   },
@@ -246,11 +258,12 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     options: [
       'Removes auditor responsibility',
       'May be appropriate if properly documented and authorized',
-      'Is never acceptable',
+      'is rarely acceptable',
       'Closes the finding automatically',
     ],
     correctAnswer: 1,
     explanation: 'Risk acceptance may be appropriate for certain findings if properly documented and authorized at the appropriate level.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Follow-up',
     subtopic: 'Risk Acceptance'
   },
@@ -270,6 +283,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'QA reviews ensure audit work meets quality standards and complies with professional and organizational requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Quality',
     subtopic: 'Quality Assurance'
   },
@@ -283,12 +297,13 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     question: 'External quality assessment of the audit function:',
     options: [
       'Is only for financial audits',
-      'Is never required',
+      'is rarely required',
       'Should be conducted periodically by independent parties',
       'Can be self-performed',
     ],
     correctAnswer: 2,
     explanation: 'External quality assessments by independent parties should be conducted periodically per IIA standards (at least every 5 years).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Quality',
     subtopic: 'External Assessment'
   },
@@ -308,6 +323,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Continuous improvement encompasses lessons learned, methodology enhancements, skill development, and technology adoption.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Quality',
     subtopic: 'Continuous Improvement'
   },
@@ -327,6 +343,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data analytics enables analysis of entire data populations, providing more comprehensive coverage than traditional sampling.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Data Analytics'
   },
@@ -346,6 +363,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'RPA automates repetitive audit tasks like data extraction and validation, improving efficiency and allowing focus on judgment areas.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'RPA in Audit'
   },
@@ -365,6 +383,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Audit dashboards provide real-time visibility into audit status, findings, metrics, and performance indicators.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Dashboards'
   },
@@ -384,6 +403,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Integrated auditing combines multiple audit types (IT, operational, compliance, financial) for efficiency and comprehensive coverage.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Integrated Audit'
   },
@@ -403,6 +423,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Proper metadata and indexing enables efficient review, retrieval, and cross-referencing of audit documentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Documentation',
     subtopic: 'Metadata'
   },
@@ -422,6 +443,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Remote auditing presents challenges including limited observation, difficulty verifying physical evidence, and communication barriers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Execution',
     subtopic: 'Remote Audit'
   },
@@ -441,6 +463,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Agile audit methods use iterative approaches, allowing scope flexibility while maintaining audit quality and documentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Methodology',
     subtopic: 'Agile Audit'
   },
@@ -460,6 +483,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Co-sourcing supplements internal audit capabilities with external expertise for specialized areas while maintaining independence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Resources',
     subtopic: 'Co-sourcing'
   },
@@ -479,6 +503,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Good client relationships facilitate cooperation and communication while maintaining professional independence and objectivity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Communication',
     subtopic: 'Client Relations'
   },
@@ -498,6 +523,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Managing expectations requires clear communication about scope, timeline, deliverables, and any limitations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Communication',
     subtopic: 'Expectation Management'
   },
@@ -517,6 +543,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Aligning audit strategy with organizational strategy ensures audits focus on strategic priorities and add maximum value.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Strategic Alignment'
   },
@@ -536,6 +563,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The audit charter should be reviewed periodically to ensure it remains appropriate and aligned with organizational needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Governance',
     subtopic: 'Charter Review'
   },
@@ -555,6 +583,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Knowledge management supports retention and sharing of audit expertise, lessons learned, and best practices.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Resources',
     subtopic: 'Knowledge Management'
   },

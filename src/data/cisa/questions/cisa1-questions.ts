@@ -48,6 +48,7 @@ const CISA1_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The auditor should first validate the finding with the auditee to ensure the factual accuracy of the observation before proceeding to analysis or reporting.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Execution',
     subtopic: 'Audit Findings'
   }

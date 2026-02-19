@@ -50,6 +50,7 @@ const CISA5_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Least privilege ensures that users are granted the minimum level of access rights necessary to perform their assigned job responsibilities, reducing security risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 5',
     topic: 'Logical Access',
     subtopic: 'Access Control Principles'
   }

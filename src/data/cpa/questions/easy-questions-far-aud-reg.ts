@@ -553,8 +553,8 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
     options: [
       'Accepting all client requests',
       'Being honest and straightforward in professional relationships',
-      'Never making mistakes',
-      'Charging low fees',
+      'Maintaining technical competence at all times',
+      'Charging competitive fees',
     ],
     correctAnswer: 1,
     explanation: 'Integrity: honesty and straightforwardness. Do not knowingly misrepresent facts or subordinate judgment to others.',
@@ -679,8 +679,8 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
     options: [
       'Appropriate',
       'From management only',
-      'Cheap',
-      'Always written',
+      'Cost-effective',
+      'Documented in writing',
     ],
     correctAnswer: 0,
     explanation: 'Audit evidence: Sufficient (quantity) and Appropriate (quality = relevance + reliability). More reliable: external, independent, written, direct.',
@@ -803,10 +803,10 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
     skillLevel: 'Remembering and Understanding',
     question: 'If substantial doubt about going concern exists, the auditor:',
     options: [
-      'Always issues adverse opinion',
+      'Issues a qualified opinion due to the uncertainty',
       'Adds an emphasis of matter paragraph if adequately disclosed',
-      'Ignores the issue',
-      'Withdraws from engagement',
+      'Omits the issue from the report',
+      'Requires management to obtain a going concern letter',
     ],
     correctAnswer: 1,
     explanation: 'Going concern doubt with adequate disclosure: add emphasis of matter paragraph but opinion may remain unmodified. Inadequate disclosure: modify opinion.',
@@ -1085,7 +1085,7 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
     options: [
       'Only for corporate returns',
       'Determining eligibility for tax benefits',
-      'Never—software handles it',
+      'When specifically requested by the IRS',
       'Only for large refunds',
     ],
     correctAnswer: 1,
@@ -1272,7 +1272,7 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
     question: 'A C corporation:',
     options: [
       'Pays its own income tax',
-      'Cannot have shareholders',
+      'Is limited to 100 shareholders',
       'Has no liability protection',
       'Is a pass-through entity',
     ],
@@ -1377,7 +1377,7 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
     question: 'The basis of gifted property with a built-in gain is:',
     options: [
       'Zero',
-      'Always $15,000',
+      'The annual exclusion amount',
       'Donor\'s basis (carryover)',
       'Fair market value',
     ],
@@ -1420,7 +1420,7 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
     options: [
       '$10,000',
       '$3,000 against ordinary income',
-      'Zero—must carry forward only',
+      'Zero for individuals',
       'Unlimited',
     ],
     correctAnswer: 1,
@@ -1565,7 +1565,7 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
     question: 'Dividends from a C corporation are taxed to shareholders as:',
     options: [
       'Return of capital',
-      'Always tax-free',
+      'Exempt from taxation',
       'Qualified dividends (preferential rates)',
       'Ordinary income',
     ],

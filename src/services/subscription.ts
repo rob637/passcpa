@@ -121,6 +121,25 @@ export const EXAM_PRICING = {
 // Founder seat limits per exam
 export const FOUNDER_SEATS_PER_EXAM = 300;
 
+// Social proof stats for landing pages
+// Update these periodically to reflect actual user counts
+export const SOCIAL_PROOF = {
+  foundersJoined: 127,           // Total founding members across all exams
+  lastUpdated: '2026-02-20',    // When this was last updated
+  showOnPricing: true,          // Whether to display on pricing sections
+  passingRateAvg: 91,           // Average passing rate for subscribers (%)
+  questionsAnswered: '50K+',    // Total questions answered across platform
+} as const;
+
+// Get social proof text for display
+export const getSocialProofText = (): string => {
+  const { foundersJoined } = SOCIAL_PROOF;
+  if (foundersJoined >= 100) {
+    return `${foundersJoined} founding members have locked in their rate`;
+  }
+  return 'Join our founding members and lock in your rate';
+};
+
 export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   free: {
     tier: 'free',

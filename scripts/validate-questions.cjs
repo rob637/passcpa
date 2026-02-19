@@ -3,12 +3,17 @@
  * Validates question data consistency across all exams
  * 
  * Run with: node scripts/validate-questions.cjs
+ * Run verbose: node scripts/validate-questions.cjs --verbose
+ * Check specific course: node scripts/validate-questions.cjs --course cisa
  * 
  * Checks:
  * - Required fields present (id, courseId, section, blueprintArea, difficulty, skillLevel)
  * - ID format (lowercase)
  * - courseId matches file path
  * - Duplicate IDs
+ * - Reference presence (CISA requires references)
+ * - Distractor quality (absolute language detection)
+ * - Duplicate options (same text in multiple choices)
  */
 
 const fs = require('fs');
@@ -18,6 +23,21 @@ const COURSES = ['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'];
 const REQUIRED_FIELDS = ['id', 'section', 'difficulty', 'question', 'options', 'correctAnswer', 'explanation'];
 const RECOMMENDED_FIELDS = ['courseId', 'blueprintArea', 'skillLevel', 'topic'];
 
+// Courses that should have references
+const COURSES_REQUIRING_REFERENCES = ['cisa'];
+
+// Absolute language patterns that make poor distractors
+const ABSOLUTE_PATTERNS = [
+  /\balways\b/i,
+  /\bnever\b/i,
+  /\bevery\s+single\b/i,
+  /\ball\s+cases\b/i,
+  /\bno\s+exceptions?\b/i,
+  /\bguaranteed?\b/i,
+  /\bimpossible\b/i,
+  /\bcannot\s+ever\b/i,
+];
+
 const errors = [];
 const warnings = [];
 const stats = {
@@ -26,8 +46,11 @@ const stats = {
   missingCourseId: 0,
   missingBlueprintArea: 0,
   missingSkillLevel: 0,
+  missingReference: 0,
   uppercaseIds: 0,
   duplicateIds: [],
+  absoluteLanguageCount: 0,
+  duplicateOptionsCount: 0,
 };
 
 const seenIds = new Set();
@@ -111,6 +134,41 @@ function validateFile(filePath, courseId) {
       errors.push(`${relativePath}: courseId '${cid}' doesn't match expected '${courseId}'`);
     }
   }
+
+  // Check reference field presence (required for some courses)
+  if (COURSES_REQUIRING_REFERENCES.includes(courseId)) {
+    const referenceCount = countOccurrences(content, 'reference');
+    if (referenceCount < questionCount) {
+      stats.missingReference += questionCount - referenceCount;
+      warnings.push(`${relativePath}: Missing 'reference' in ${questionCount - referenceCount} questions`);
+    }
+  }
+
+  // Check for absolute language in options (poor distractor quality)
+  for (const pattern of ABSOLUTE_PATTERNS) {
+    const matches = content.match(pattern);
+    if (matches) {
+      stats.absoluteLanguageCount += matches.length;
+      // Only warn once per file, not per occurrence
+      if (matches.length > 0 && process.argv.includes('--verbose')) {
+        warnings.push(`${relativePath}: Found ${matches.length} instances of absolute language (${pattern.source})`);
+      }
+    }
+  }
+
+  // Check for duplicate options (exact same text in multiple choices)
+  // Extract options arrays - looking for patterns like options: ['A', 'B', 'C', 'D']
+  const optionsMatches = content.match(/options:\s*\[[^\]]+\]/g) || [];
+  for (const optionsBlock of optionsMatches) {
+    // Extract individual option strings
+    const optionStrings = optionsBlock.match(/'([^']+)'|"([^"]+)"/g) || [];
+    const normalizedOptions = optionStrings.map(s => s.replace(/['"]/g, '').toLowerCase().trim());
+    const uniqueOptions = new Set(normalizedOptions);
+    if (uniqueOptions.size < normalizedOptions.length) {
+      stats.duplicateOptionsCount++;
+      warnings.push(`${relativePath}: Duplicate options detected in a question`);
+    }
+  }
 }
 
 function validateCourse(courseId) {
@@ -134,7 +192,18 @@ function validateCourse(courseId) {
 
 console.log('Validating question data across all exams...\n');
 
-for (const course of COURSES) {
+// Support --course flag to validate specific course
+const courseArgIndex = process.argv.indexOf('--course');
+const targetCourse = courseArgIndex !== -1 ? process.argv[courseArgIndex + 1] : null;
+const coursesToValidate = targetCourse ? [targetCourse] : COURSES;
+
+if (targetCourse && !COURSES.includes(targetCourse)) {
+  console.error(`❌ Unknown course: ${targetCourse}`);
+  console.error(`   Valid courses: ${COURSES.join(', ')}`);
+  process.exit(1);
+}
+
+for (const course of coursesToValidate) {
   console.log(`Validating ${course.toUpperCase()}...`);
   validateCourse(course);
 }
@@ -144,12 +213,16 @@ console.log('VALIDATION SUMMARY');
 console.log('='.repeat(60));
 console.log(`Total files scanned: ${stats.totalFiles}`);
 console.log(`Total questions: ${stats.totalQuestions}`);
-console.log(`\nIssues found:`);
+console.log(`\nField Coverage Issues:`);
 console.log(`  - Missing courseId: ${stats.missingCourseId}`);
 console.log(`  - Missing blueprintArea: ${stats.missingBlueprintArea}`);
 console.log(`  - Missing skillLevel: ${stats.missingSkillLevel}`);
+console.log(`  - Missing reference: ${stats.missingReference}`);
+console.log(`\nQuality Issues:`);
 console.log(`  - Uppercase IDs: ${stats.uppercaseIds}`);
 console.log(`  - Duplicate IDs: ${stats.duplicateIds.length}`);
+console.log(`  - Absolute language (always/never): ${stats.absoluteLanguageCount}`);
+console.log(`  - Duplicate options: ${stats.duplicateOptionsCount}`);
 
 if (errors.length > 0) {
   console.log(`\n❌ ERRORS (${errors.length}):`);

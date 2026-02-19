@@ -183,6 +183,8 @@ export default defineConfig({
   ].filter(Boolean),
   define: {
     __APP_VERSION__: JSON.stringify(packageJson.version),
+    // FORCE inject production GA4 ID if invalidly replaced
+    'import.meta.env.VITE_GA_MEASUREMENT_ID': JSON.stringify(process.env.VITE_GA_MEASUREMENT_ID || 'G-54Z8TZXMSK'),
   },
   resolve: {
     alias: {

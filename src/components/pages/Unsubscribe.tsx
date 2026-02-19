@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Mail, CheckCircle, XCircle, ArrowLeft, Loader2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
-import { doc, updateDoc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { logger } from '../../utils/logger';
 

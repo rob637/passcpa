@@ -5,7 +5,63 @@
 
 ## Executive Summary
 
-This document outlines the strategy, workflows, and automation approach for producing animated training videos using Vyond for VoraPrep's exam prep courses.
+**Goal:** Fully automated video production. Input content → Output video. Zero manual work.
+
+**Solution:** Vyond Go API + content generation pipeline
+
+**Timeline:**
+- Phase 1 (Now): Semi-automated with copy-paste TTS
+- Phase 2 (1 month): Template-based generation
+- Phase 3 (2-3 months): Full API automation
+
+---
+
+## THE VISION: FULL AUTOMATION
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    AUTOMATED PIPELINE                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│   src/data/ea/lessons/see2.ts                               │
+│              │                                               │
+│              ▼                                               │
+│   ┌──────────────────────┐                                  │
+│   │  Content Extractor   │  (Python script)                 │
+│   │  - Topics            │                                  │
+│   │  - Key points        │                                  │
+│   │  - Examples          │                                  │
+│   └──────────┬───────────┘                                  │
+│              │                                               │
+│              ▼                                               │
+│   ┌──────────────────────┐                                  │
+│   │  Script Generator    │  (Claude API)                    │
+│   │  - TTS-ready script  │                                  │
+│   │  - On-screen text    │                                  │
+│   │  - Scene structure   │                                  │
+│   └──────────┬───────────┘                                  │
+│              │                                               │
+│              ▼                                               │
+│   ┌──────────────────────┐                                  │
+│   │  Vyond Go API        │  (REST API)                      │
+│   │  - Create scenes     │                                  │
+│   │  - Add TTS audio     │                                  │
+│   │  - Render video      │                                  │
+│   └──────────┬───────────┘                                  │
+│              │                                               │
+│              ▼                                               │
+│   ┌──────────────────────┐                                  │
+│   │  Firebase Upload     │                                  │
+│   │  - CDN storage       │                                  │
+│   │  - Lesson linkage    │                                  │
+│   └──────────────────────┘                                  │
+│                                                              │
+│   INPUT: Topic name                                          │
+│   OUTPUT: Published video linked to lesson                   │
+│   HUMAN EFFORT: Zero                                         │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 

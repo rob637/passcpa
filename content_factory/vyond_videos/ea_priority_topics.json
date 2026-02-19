@@ -1,0 +1,198 @@
+{
+  "name": "EA Priority Topics for Vyond Videos",
+  "description": "High-value topics ideal for animated explanation",
+  "total_videos": 20,
+  "estimated_total_duration": "140 minutes",
+  
+  "topics": [
+    {
+      "id": 1,
+      "topic": "S Corporation Shareholder Basis",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Numbers changing, ordering rules, flowcharts",
+      "duration_minutes": 7,
+      "status": "READY - See ea_s_corp_basis folder"
+    },
+    {
+      "id": 2,
+      "topic": "Partnership Distributions",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Hot assets, basis reduction, ordering visuals",
+      "duration_minutes": 8,
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "topic": "Section 1245 vs 1250 Recapture",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Comparison charts, recapture math visualization",
+      "duration_minutes": 7,
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "topic": "At-Risk and Passive Activity Limitations",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Stacked limitation visualization, decision tree",
+      "duration_minutes": 8,
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "topic": "Alternative Minimum Tax (AMT)",
+      "section": "SEE1",
+      "difficulty": "hard",
+      "why_vyond": "Parallel calculation system, preference items",
+      "duration_minutes": 7,
+      "status": "pending"
+    },
+    {
+      "id": 6,
+      "topic": "Capital Gains Netting Rules",
+      "section": "SEE1",
+      "difficulty": "hard",
+      "why_vyond": "Flowchart of netting, rate buckets",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 7,
+      "topic": "Basis in Inherited vs Gifted Property",
+      "section": "SEE1",
+      "difficulty": "medium",
+      "why_vyond": "Decision tree, FMV vs carryover visuals",
+      "duration_minutes": 5,
+      "status": "pending"
+    },
+    {
+      "id": 8,
+      "topic": "Net Operating Losses",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Carryforward tracking, 80% limit calculation",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 9,
+      "topic": "S Corporation Distributions and AAA",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Bucket ordering, E&P vs AAA flow",
+      "duration_minutes": 7,
+      "status": "pending"
+    },
+    {
+      "id": 10,
+      "topic": "Circular 230 Penalties",
+      "section": "SEE3",
+      "difficulty": "medium",
+      "why_vyond": "Dollar amounts matrix, sanctions flowchart",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "topic": "Collection Due Process",
+      "section": "SEE3",
+      "difficulty": "medium",
+      "why_vyond": "Timeline visualization, CDP hearing flowchart",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "topic": "Partnership Formation and Basis",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Property contribution flow, basis calculation",
+      "duration_minutes": 7,
+      "status": "pending"
+    },
+    {
+      "id": 13,
+      "topic": "Section 179 and Bonus Depreciation",
+      "section": "SEE2",
+      "difficulty": "medium",
+      "why_vyond": "Limits visualization, ordering decisions",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 14,
+      "topic": "Earned Income Credit",
+      "section": "SEE1",
+      "difficulty": "medium",
+      "why_vyond": "Tables, phase-in/phase-out visualization",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 15,
+      "topic": "Installment Sales",
+      "section": "SEE2",
+      "difficulty": "hard",
+      "why_vyond": "Gross profit ratio calculation, year-by-year flow",
+      "duration_minutes": 7,
+      "status": "pending"
+    },
+    {
+      "id": 16,
+      "topic": "IRS Audit Process",
+      "section": "SEE3",
+      "difficulty": "medium",
+      "why_vyond": "Timeline, appeals flowchart",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 17,
+      "topic": "Estimated Tax Penalties",
+      "section": "SEE1",
+      "difficulty": "medium",
+      "why_vyond": "Safe harbor rules, calculation visualization",
+      "duration_minutes": 5,
+      "status": "pending"
+    },
+    {
+      "id": 18,
+      "topic": "Like-Kind Exchange Basics",
+      "section": "SEE2",
+      "difficulty": "medium",
+      "why_vyond": "Timeline requirements, boot calculation",
+      "duration_minutes": 6,
+      "status": "pending"
+    },
+    {
+      "id": 19,
+      "topic": "Offer in Compromise",
+      "section": "SEE3",
+      "difficulty": "hard",
+      "why_vyond": "RCP calculation, payment options flow",
+      "duration_minutes": 7,
+      "status": "pending"
+    },
+    {
+      "id": 20,
+      "topic": "Self-Employment Tax Calculation",
+      "section": "SEE1",
+      "difficulty": "medium",
+      "why_vyond": "Net earnings formula, deduction interaction",
+      "duration_minutes": 5,
+      "status": "pending"
+    }
+  ],
+  
+  "production_order": "Recommend creating 1-5 first, then 6-10, etc.",
+  
+  "notes": [
+    "All use Vyond TTS - no voice recording needed",
+    "Each video is ~5-8 minutes",
+    "Topics chosen for: exam weight + visual explainability",
+    "Focus on topics where animation adds understanding"
+  ]
+}

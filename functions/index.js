@@ -2393,7 +2393,7 @@ exports.createCheckoutSession = onCall({
         },
       ],
       success_url: `${baseUrl}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/pricing`,
+      cancel_url: `${baseUrl}/${courseId}#pricing`,
       subscription_data: {
         metadata: {
           firebaseUserId: userId,

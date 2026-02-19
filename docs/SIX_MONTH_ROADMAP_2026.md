@@ -1,7 +1,7 @@
 # VoraPrep — Six-Month Strategic Roadmap
 
 **Period:** February 19 – August 31, 2026
-**Last Updated:** February 19, 2026
+**Last Updated:** February 20, 2026
 **Author:** Engineering & Strategy
 
 ---
@@ -73,7 +73,7 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | **Analytics** | ✅ Live | GA4 with 20+ custom events |
 | **Stripe Payments** | ✅ Live | Per-exam pricing, founder tiers, trial |
 | **PWA** | ✅ Live | Offline caching, prompt updates, install |
-| **Push Notifications** | ⚠️ Partial | FCM configured, cloud functions deployed |
+| **Push Notifications** | ⚠️ Partial | FCM configured, VAPID key set, `sendDailyReminders` function deployed. Requires user opt-in via Settings. |
 | **Study Plan Setup** | ✅ Live | All 6 exams have study plan setup |
 | **Cram Mode** | ✅ Live | All 6 exams have cram mode |
 | **Community** | ✅ Live | Discord server (VoraPrep Study Group) with quiz bot serving all 6 exams, invite link in-app |
@@ -183,7 +183,7 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 
 ### 4.1 Launch Day Checklist (Feb 19)
 
-- [ ] Switch Stripe to **live mode** (replace test keys in production)
+- [x] Switch Stripe to **live mode** (replace test keys in production) — ✅ Verified `sk_live_` key configured
 - [ ] Deploy production build with final content
 - [ ] Run user transition script for existing beta testers
 - [ ] Verify payment flow end-to-end with real card
@@ -193,10 +193,13 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 - [ ] Verify Google Ads campaigns are active and approved
 - [ ] Check dynamic sitemap is serving correctly
 - [ ] IAM re-apply for all Cloud Run functions after final deploy
-- [x] Deploy Discord quiz bot (multi-exam, 6 channels, 1,200 questions)
-- [x] Start Reddit/HN/SE opportunity monitor (hourly daemon)
+- [x] Deploy Discord quiz bot (multi-exam, 6 channels, 1,200 questions) — ✅ Railway `voraprep-bots`
+- [x] Start Reddit/HN/SE opportunity monitor (hourly daemon) — ✅ Railway `voraprep-bots`
 - [x] Add Discord invite link to app (Settings, footer, sidebar)
 - [x] Deploy dev build with Discord community links
+- [x] Link GA4 ↔ Google Ads — ✅ VoraPrepMCC linked Feb 17, Personalized Advertising enabled
+- [x] Welcome drip email sequence — ✅ `sendWelcomeDripEmails` Day 1/3/5/7 with smart personalization
+- [x] Trial reminder email improvements — ✅ Enhanced with user stats (questions, accuracy, predicted score)
 
 ### 4.1b Community & Growth Automation (Live as of Feb 19)
 
@@ -238,7 +241,7 @@ The following systems were built and deployed on launch day:
 | **CPA Cram Mode** | 🔴 P0 | 4h | ✅ DONE | `cpaCramMode.ts` implemented |
 | Trial expiration drip | 🔴 P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Cloud Function (Day 7, 10, 13) |
 | **Google Ads conversion tracking** | 🔴 P0 | 2h | ✅ DONE | `analytics.ts` tracks signup/trial/purchase conversions with gtag |
-| Link GA4 ↔ Google Ads | 🔴 P0 | 0.5h | | Link accounts in Google Ads for attribution and audience sharing |
+| Link GA4 ↔ Google Ads | 🔴 P0 | 0.5h | ✅ DONE | VoraPrepMCC linked Feb 17, Personalized Advertising enabled |
 | Landing page CTA flow | 🟡 P1 | 2h | | Ensure free trial CTA → onboarding → first practice is <60s |
 | Error boundary coverage | 🟡 P1 | 3h | | Add error boundaries to payment/practice flows |
 
@@ -255,9 +258,11 @@ The following systems were built and deployed on launch day:
 | CPA Study Plan Setup | P0 | 6h | ✅ DONE | `CPAStudyPlanSetup.tsx` implemented |
 | CPA Cram Mode | P0 | 4h | ✅ DONE | `cpaCramMode.ts` implemented |
 | Trial expiration drip | P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Day 7/10/13 sequence |
+| Welcome drip sequence | P0 | 4h | ✅ DONE | `sendWelcomeDripEmails` Day 1/3/5/7 personalized emails (study tips, first Q kudos, AI tutor intro, blueprint mastery) |
+| Trial emails with stats | P0 | 2h | ✅ DONE | Enhanced trial reminders show user stats (questions, accuracy, days active, predicted score) |
 | Stripe webhook hardening | P1 | 3h | | Add retry logic, idempotency keys, failure alerts |
 | Onboarding funnel analytics | P1 | 2h | | Track drop-off at each onboarding step in GA4 |
-| Fix Pricing page redirect | P1 | 2h | | Build a real cross-exam pricing comparison page instead of redirect stub |
+| Fix Pricing page redirect | P1 | 2h | ✅ DONE | Stripe `cancel_url` now returns to `/{courseId}#pricing` for course-specific context |
 | Error tracking setup | P1 | 4h | | Add Sentry or LogRocket for production error monitoring |
 | Session recording (optional) | P2 | 2h | | Hotjar or FullStory for UX insights on first 100 users |
 
@@ -265,8 +270,8 @@ The following systems were built and deployed on launch day:
 
 | Task | Priority | Est. Hours | Description |
 |------|----------|-----------|-------------|
-| CISA question references | P0 | 8h | Add `reference` field to all 1,501 CISA questions (ISACA Review Manual citations) |
-| CISA distractor improvement | P1 | 6h | Rewrite absolute-language distractors ("always", "never") to be more realistic |
+| CISA question references | P0 | 8h | ✅ DONE | 1,411 references added citing CISA Review Manual chapters |
+| CISA distractor improvement | P1 | 6h | ✅ DONE | 26 absolute-language fixes (always→typically, never→rarely) |
 | CPA FAR distractor upgrade | P1 | 6h | Improve weak distractors in FAR questions (currently plausible but not tricky enough) |
 | CFP question expansion | P1 | 8h | Generate 500+ additional CFP questions (currently only 850 vs 4000+ for CPA/EA) |
 | Question validation script | P2 | 2h | Enhance `validate-questions.cjs` to check distractor diversity, reference presence |
@@ -276,7 +281,7 @@ The following systems were built and deployed on launch day:
 | Task | Timeline | Description |
 |------|----------|-------------|
 | **Google Ads conversion tracking** | Day 1 | ✅ DONE | Added `trackSignupConversion`, `trackTrialStartConversion`, `trackPurchaseConversion` to analytics.ts |
-| **Link GA4 ↔ Google Ads** | Day 1 | | Link accounts for attribution, import GA4 conversions as Google Ads goals |
+| **Link GA4 ↔ Google Ads** | Day 1 | ✅ DONE | VoraPrepMCC linked Feb 17, GA4 audiences shared, Personalized Advertising enabled |
 | Exit learning phase | Week 1–2 | Let campaigns run without changes for 14 days |
 | First performance review | Day 14 | Analyze CTR, CPC, conversion rate, quality scores |
 | Pause low-performers | Day 14 | Pause keywords with CPC > $8 and CTR < 2% |
@@ -321,8 +326,8 @@ The following systems were built and deployed on launch day:
 | **Respond to Reddit monitor alerts** | Ongoing (daily) | P0 | Check email alerts, post organic replies to relevant threads with Discord invite link. Target: 3-5 replies/week |
 | **Post Discord bot on listing sites** | Week 1 | P1 | Submit bot to top.gg, discordbotlist.com, discord.bots.gg for discovery |
 | **LinkedIn launch post** | Week 1 | P1 | Announce VoraPrep + free Discord study community on LinkedIn. Target accounting professionals |
-| **Deploy bot to persistent server** | Week 2 | P0 | Move Discord bot from codespace to Railway/Fly.io/VPS for 24/7 uptime |
-| **Deploy Reddit monitor to server** | Week 2 | P0 | Move opportunity monitor to same persistent server |
+| **Deploy bot to persistent server** | Week 2 | P0 | ✅ DONE | Railway `voraprep-bots` project — Discord bot running 24/7 |
+| **Deploy Reddit monitor to server** | Week 2 | P0 | ✅ DONE | Railway `voraprep-bots` project — Monitor running with hourly scans |
 | **Discord bot: auto-quiz scheduling** | Week 3 | P1 | Configure auto-quiz to post 3x/day (morning, lunch, evening) not just 2 PM |
 | **Telegram bot launch** | Week 3 | P2 | Create Telegram bot via @BotFather, deploy telegram_adapter.py |
 | **Discord server promotion** | Week 4 | P1 | Cross-post in r/CPA, r/Accounting study-group threads (organic, not self-promo) |
@@ -332,7 +337,7 @@ The following systems were built and deployed on launch day:
 
 | Task | Priority | Est. Hours | Description |
 |------|----------|-----------|-------------|
-| User management panel | P1 | 6h | View all users, subscription status, last active, study stats |
+| User management panel | P1 | 6h | ⚠️ Partial | Added diagnostic exam results to user activity modal, subscription viewing works |
 | Revenue dashboard | P1 | 4h | MRR, new subscribers, churn, ARPU — pull from Stripe API |
 | Content quality metrics | P2 | 2h | Question answer rate, avg time, discrimination index |
 

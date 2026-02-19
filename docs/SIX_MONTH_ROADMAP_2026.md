@@ -1,7 +1,7 @@
 # VoraPrep — Six-Month Strategic Roadmap
 
 **Period:** February 19 – August 31, 2026
-**Last Updated:** February 17, 2026
+**Last Updated:** February 19, 2026
 **Author:** Engineering & Strategy
 
 ---
@@ -65,7 +65,7 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | **Authentication** | ✅ Live | Firebase Auth (email, Google, Apple) |
 | **6 Exam Courses** | ✅ Live | CPA, EA, CMA, CIA, CISA, CFP all configured |
 | **Adaptive Practice** | ✅ Live | Per-exam adaptive engines (6 engines) |
-| **Score Prediction** | ✅ Live | CPA, CIA, CISA predictors (weighted blueprint) |
+| **Score Prediction** | ✅ Live | All 6 exams have blueprint-weighted score predictors |
 | **Exam Simulator** | ✅ Live | Per-exam simulators with timer + review |
 | **Flashcards + SR** | ✅ Live | SM-2 spaced repetition, 3,066 cards |
 | **AI Tutor** | ✅ Live | Gemini 2.0 Flash, multi-course context |
@@ -74,9 +74,9 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | **Stripe Payments** | ✅ Live | Per-exam pricing, founder tiers, trial |
 | **PWA** | ✅ Live | Offline caching, prompt updates, install |
 | **Push Notifications** | ⚠️ Partial | FCM configured, cloud functions deployed |
-| **Study Plan Setup** | ⚠️ 5/6 | CPA MISSING — all others have it |
-| **Cram Mode** | ⚠️ 5/6 | CPA MISSING — all others have it |
-| **Community** | ⚠️ Minimal | Leaderboard only, no forums/discussions |
+| **Study Plan Setup** | ✅ Live | All 6 exams have study plan setup |
+| **Cram Mode** | ✅ Live | All 6 exams have cram mode |
+| **Community** | ✅ Live | Discord server (VoraPrep Study Group) with quiz bot serving all 6 exams, invite link in-app |
 | **Video Content** | ⚠️ In Progress | 84 CISA scripts, EA batch 1 started |
 | **Mobile App Store** | ❌ Not submitted | Capacitor scaffolded, needs store listing |
 | **Referral Program** | ❌ UI only | Achievement badges exist, no actual referral flow |
@@ -97,12 +97,17 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 
 | Channel | Status | Details |
 |---------|--------|---------|
-| **Google Ads (SEM)** | ✅ Live | 2 campaigns (CPA + EA), 23 ad groups, ~120 keywords, $30/day budget |
+| **Google Ads (SEM)** | ⚠️ Partial | 2 campaigns (CPA + EA), 23 ad groups, ~120 keywords — **missing conversion tracking** |
+| **Google Ads Conversions** | ❌ Not configured | No `AW-` conversion ID in analytics.ts — required for bid optimization |
 | **SEO — Technical** | ✅ Live | 27-URL sitemap, structured data, canonical URLs, Search Console connected |
 | **SEO — Blog Engine** | ✅ Live | 123 briefs seeded, auto-publishes 3–4/week via Gemini, email alerts |
 | **SEO — Pre-rendering** | ✅ Ready | Puppeteer script created, not yet in CI/CD pipeline |
+| **YouTube Channel** | ❌ Not created | Branded channel needed for CISA/EA videos + SEO (2nd largest search engine) |
 | **Email Marketing** | ⚠️ Partial | Transactional emails (Resend), no drip campaigns |
-| **Social Media** | ❌ None | No accounts or content strategy |
+| **Reddit/HN/SE Monitoring** | ✅ Live | Automated opportunity finder: RSS feeds (10 subreddits, Stack Exchange), HN Algolia API. Hourly scans, Gemini-generated responses, email alerts via Resend |
+| **Discord Quiz Bot** | ✅ Live | Multi-exam bot in VoraPrep Study Group server. Slash commands (/quiz, /daily, /leaderboard, /stats). Auto-posts daily questions at 2 PM UTC. Invite link: https://discord.gg/XBjzDrws |
+| **Discord In-App Integration** | ✅ Live | Invite link in Settings, landing page footer, desktop sidebar |
+| **Social Media** | ❌ None | No LinkedIn, Twitter/X accounts or content strategy |
 | **Backlink Building** | ❌ None | No outreach or partnerships |
 | **Content Marketing** | ⚠️ Auto only | AI blog posts, no manual long-form content |
 
@@ -188,6 +193,27 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 - [ ] Verify Google Ads campaigns are active and approved
 - [ ] Check dynamic sitemap is serving correctly
 - [ ] IAM re-apply for all Cloud Run functions after final deploy
+- [x] Deploy Discord quiz bot (multi-exam, 6 channels, 1,200 questions)
+- [x] Start Reddit/HN/SE opportunity monitor (hourly daemon)
+- [x] Add Discord invite link to app (Settings, footer, sidebar)
+- [x] Deploy dev build with Discord community links
+
+### 4.1b Community & Growth Automation (Live as of Feb 19)
+
+The following systems were built and deployed on launch day:
+
+| System | Status | Location | Details |
+|--------|--------|----------|--------|
+| **Reddit/HN/SE Opportunity Monitor** | ✅ Running | `scripts/reddit_monitor/` | Scans 10 subreddits (RSS), Stack Exchange, Hacker News every 60 min. AI-generates suggested responses with Discord invite link. Emails alerts to founder. |
+| **Discord Quiz Bot** | ✅ Running | `scripts/discord_bots/` | Single bot serving all 6 exams via channel auto-detection. 1,200 questions (200/exam). Slash commands, emoji voting, 30s answer reveal with VoraPrep CTA. |
+| **Discord Server** | ✅ Live | https://discord.gg/XBjzDrws | "VoraPrep Study Group" — 7 channels: #general, #cpa-quiz, #ea-quiz, #cma-quiz, #cia-quiz, #cisa-quiz, #cfp-quiz |
+| **In-App Discord Links** | ✅ Deployed | Settings, Footer, Sidebar | Three touchpoints driving users to Discord community |
+
+**Architecture:**
+- `quiz_engine.py` — Platform-agnostic core (works with Discord, Telegram, Slack)
+- `multi_exam_bot.py` — Discord adapter serving all 6 exams from one bot
+- `telegram_adapter.py` — Built, not yet deployed (needs @BotFather token)
+- `reddit_opportunity_finder.py` — Multi-platform monitor with Gemini AI responses
 
 ### 4.2 Launch Week Monitoring (Feb 19–28)
 
@@ -200,16 +226,21 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | Google Ads spend | Google Ads console | Daily |
 | Auto-published articles | Email notifications | Every morning |
 | Site speed | Lighthouse CI | Day 1, day 7 |
+| **Reddit/HN/SE opportunities** | Email alerts (Resend) | As they arrive — respond within 2-4 hours for best visibility |
+| **Discord bot activity** | Discord server | Daily — check for user engagement, questions asked |
+| **Discord member count** | Discord server settings | Weekly |
 
 ### 4.3 Critical Launch Week Fixes
 
-| Fix | Priority | Est. Hours | Why |
-|-----|----------|-----------|-----|
-| **CPA Study Plan Setup** | 🔴 P0 | 6h | Flagship product missing core feature all other exams have |
-| **CPA Cram Mode** | 🔴 P0 | 4h | Same — CPA is the only exam without it |
-| Landing page CTA flow | 🟡 P1 | 2h | Ensure free trial CTA → onboarding → first practice is <60s |
-| Error boundary coverage | 🟡 P1 | 3h | Add error boundaries to payment/practice flows |
-| Trial expiration email | 🟡 P1 | 2h | Cloud Function: send email at day 10 and day 13 of trial |
+| Fix | Priority | Est. Hours | Status | Why |
+|-----|----------|-----------|--------|-----|
+| **CPA Study Plan Setup** | 🔴 P0 | 6h | ✅ DONE | `CPAStudyPlanSetup.tsx` implemented |
+| **CPA Cram Mode** | 🔴 P0 | 4h | ✅ DONE | `cpaCramMode.ts` implemented |
+| Trial expiration drip | 🔴 P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Cloud Function (Day 7, 10, 13) |
+| **Google Ads conversion tracking** | 🔴 P0 | 2h | ✅ DONE | `analytics.ts` tracks signup/trial/purchase conversions with gtag |
+| Link GA4 ↔ Google Ads | 🔴 P0 | 0.5h | | Link accounts in Google Ads for attribution and audience sharing |
+| Landing page CTA flow | 🟡 P1 | 2h | | Ensure free trial CTA → onboarding → first practice is <60s |
+| Error boundary coverage | 🟡 P1 | 3h | | Add error boundaries to payment/practice flows |
 
 ---
 
@@ -217,18 +248,18 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 
 **Theme:** Validate PMF, fix critical gaps, establish baseline metrics.
 
-### 5.1 Product — Critical Fixes (~40 hours)
+### 5.1 Product — Critical Fixes (~40 hours → ~26 hours remaining)
 
-| Task | Priority | Est. Hours | Description |
-|------|----------|-----------|-------------|
-| CPA Study Plan Setup | P0 | 6h | Create `CPAStudyPlanSetup.tsx` following EA/CISA pattern. Section selection (FAR/AUD/REG + discipline), date picker, weekly hours, generate study calendar |
-| CPA Cram Mode | P0 | 4h | Create `cpaCramMode.ts` following other 5 exams. Focus on weak areas, high-weight blueprint domains, timed drills |
-| Trial expiration drip | P0 | 4h | 3-email sequence: Day 7 ("How's it going?"), Day 10 ("Don't lose your progress"), Day 13 ("Last day — unlock now") |
-| Stripe webhook hardening | P1 | 3h | Add retry logic, idempotency keys, failure alerts |
-| Onboarding funnel analytics | P1 | 2h | Track drop-off at each onboarding step in GA4 |
-| Fix Pricing page redirect | P1 | 2h | Build a real cross-exam pricing comparison page instead of redirect stub |
-| Error tracking setup | P1 | 4h | Add Sentry or LogRocket for production error monitoring |
-| Session recording (optional) | P2 | 2h | Hotjar or FullStory for UX insights on first 100 users |
+| Task | Priority | Est. Hours | Status | Description |
+|------|----------|-----------|--------|-------------|
+| CPA Study Plan Setup | P0 | 6h | ✅ DONE | `CPAStudyPlanSetup.tsx` implemented |
+| CPA Cram Mode | P0 | 4h | ✅ DONE | `cpaCramMode.ts` implemented |
+| Trial expiration drip | P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Day 7/10/13 sequence |
+| Stripe webhook hardening | P1 | 3h | | Add retry logic, idempotency keys, failure alerts |
+| Onboarding funnel analytics | P1 | 2h | | Track drop-off at each onboarding step in GA4 |
+| Fix Pricing page redirect | P1 | 2h | | Build a real cross-exam pricing comparison page instead of redirect stub |
+| Error tracking setup | P1 | 4h | | Add Sentry or LogRocket for production error monitoring |
+| Session recording (optional) | P2 | 2h | | Hotjar or FullStory for UX insights on first 100 users |
 
 ### 5.2 Content Quality — CISA & CPA Improvements (~30 hours)
 
@@ -240,10 +271,12 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | CFP question expansion | P1 | 8h | Generate 500+ additional CFP questions (currently only 850 vs 4000+ for CPA/EA) |
 | Question validation script | P2 | 2h | Enhance `validate-questions.cjs` to check distractor diversity, reference presence |
 
-### 5.3 SEM Optimization (~15 hours)
+### 5.3 SEM Optimization (~20 hours)
 
 | Task | Timeline | Description |
 |------|----------|-------------|
+| **Google Ads conversion tracking** | Day 1 | ✅ DONE | Added `trackSignupConversion`, `trackTrialStartConversion`, `trackPurchaseConversion` to analytics.ts |
+| **Link GA4 ↔ Google Ads** | Day 1 | | Link accounts for attribution, import GA4 conversions as Google Ads goals |
 | Exit learning phase | Week 1–2 | Let campaigns run without changes for 14 days |
 | First performance review | Day 14 | Analyze CTR, CPC, conversion rate, quality scores |
 | Pause low-performers | Day 14 | Pause keywords with CPC > $8 and CTR < 2% |
@@ -251,23 +284,51 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 | Negative keywords | Week 3 | Add negatives: "free", "reddit", "crack", "torrent", competitor names |
 | Landing page alignment | Week 4 | Match ad copy to landing page headlines (quality score boost) |
 | Expand EA campaign | Week 4 | Add 5–10 new ad groups for EA long-tail keywords |
+| Build remarketing audiences | Week 4 | Site visitors who didn't convert, cart abandoners, trial non-converters |
 
 **SEM Budget Recommendation:**
 - March: Maintain $30/day ($900/mo total)
 - If CPA > $60: pause underperformers, shift budget to best converters
 - If CPA < $40: increase budget to $50/day
 
-### 5.4 SEO Monitoring (~5 hours)
+### 5.4 SEO Monitoring (~8 hours)
 
 | Task | Timeline | Description |
 |------|----------|-------------|
+| **Brand keyword variations** | Day 1 | ✅ DONE | Added "Vora Prep" to meta, title, Organization JSON-LD schema with alternateName |
+| Add brand keywords to Google Ads | Day 1 | | Bid on "vora prep", "voraprep", "vora prep cpa" as exact match keywords |
 | Monitor auto-published articles | Ongoing | Check daily email notifications, verify quality |
 | Submit to Google News | Week 1 | Apply for Google News inclusion if eligible |
 | Track indexed pages | Weekly | Google Search Console → Index Coverage |
 | First ranking check | Week 4 | Check positions for top 20 target keywords |
 | Fix any crawl errors | Ongoing | Monitor GSC for 404s, redirect chains |
 
-### 5.5 Admin Improvements (~12 hours)
+### 5.5 YouTube Channel Setup (~8 hours)
+
+| Task | Timeline | Description |
+|------|----------|-------------|
+| Create branded YouTube channel | Week 1 | VoraPrep channel with logo, banner, description, links |
+| Upload CISA video batch 1 | Week 2–3 | First 10–20 CISA domain videos with SEO-optimized titles/descriptions |
+| YouTube SEO setup | Week 2 | Keywords in titles, descriptions, tags, playlists by exam/domain |
+| Channel trailer | Week 3 | 60-second "What is VoraPrep?" intro video |
+| End screens + cards | Week 3 | CTA to voraprep.com on all videos |
+| YouTube → website funnel | Week 4 | Track YouTube referrals in GA4, dedicated landing page for YouTube traffic |
+
+### 5.6 Community & Organic Growth (~20 hours)
+
+| Task | Timeline | Priority | Description |
+|------|----------|----------|-------------|
+| **Respond to Reddit monitor alerts** | Ongoing (daily) | P0 | Check email alerts, post organic replies to relevant threads with Discord invite link. Target: 3-5 replies/week |
+| **Post Discord bot on listing sites** | Week 1 | P1 | Submit bot to top.gg, discordbotlist.com, discord.bots.gg for discovery |
+| **LinkedIn launch post** | Week 1 | P1 | Announce VoraPrep + free Discord study community on LinkedIn. Target accounting professionals |
+| **Deploy bot to persistent server** | Week 2 | P0 | Move Discord bot from codespace to Railway/Fly.io/VPS for 24/7 uptime |
+| **Deploy Reddit monitor to server** | Week 2 | P0 | Move opportunity monitor to same persistent server |
+| **Discord bot: auto-quiz scheduling** | Week 3 | P1 | Configure auto-quiz to post 3x/day (morning, lunch, evening) not just 2 PM |
+| **Telegram bot launch** | Week 3 | P2 | Create Telegram bot via @BotFather, deploy telegram_adapter.py |
+| **Discord server promotion** | Week 4 | P1 | Cross-post in r/CPA, r/Accounting study-group threads (organic, not self-promo) |
+| **Track Discord → signup conversion** | Week 4 | P1 | Add UTM params to bot CTA links, track in GA4 |
+
+### 5.7 Admin Improvements (~12 hours)
 
 | Task | Priority | Est. Hours | Description |
 |------|----------|-----------|-------------|
@@ -418,12 +479,16 @@ VoraPrep launches on **February 19, 2026** as an AI-powered exam prep platform c
 
 ### 8.3 Community Features v1 (~30 hours)
 
+**Note:** Discord community is already live (launched Feb 19). These features extend the in-app experience.
+
 | Feature | Est. Hours | Description |
 |---------|-----------|-------------|
 | **Discussion forums** | 12h | Per-exam discussion boards, Firestore-backed, moderated |
 | **Study groups** | 8h | Create/join study groups, shared progress tracking |
 | **Q&A on questions** | 6h | Allow users to ask/answer questions about specific practice problems |
 | **Weekly challenges** | 4h | Timed competitive quizzes with leaderboard prizes |
+| **Discord ↔ App sync** | 6h | Show Discord leaderboard in-app, earn XP from bot participation |
+| **Slack bot deployment** | 4h | Deploy quiz bot to Slack workspaces (accounting firm channels) |
 
 ### 8.4 Content: Video Integration (~20 hours)
 
@@ -592,20 +657,20 @@ The auto-publish engine handles most content, but manual high-quality content sh
 ### 12.1 CPA (Flagship — Highest Priority)
 
 **Current:** 4,789 questions, 1,110 flashcards, 375 lessons, 467 TBS. Quality: ★★★★☆
-**Missing:** Study Plan Setup, Cram Mode
+**Status:** All core features complete (Study Plan, Cram Mode, Score Predictor)
 **Revenue potential:** Highest (largest market, highest price point)
 
-| Task | Month | Priority | Description |
-|------|-------|----------|-------------|
-| Study Plan Setup | Feb/Mar | P0 | Create `CPAStudyPlanSetup.tsx` — FAR/AUD/REG + discipline selection, calendar |
-| Cram Mode | Feb/Mar | P0 | Create `cpaCramMode.ts` — weak area focus, timed drills |
-| FAR distractor improvement | Mar | P1 | Rewrite 200+ weak distractors to be more exam-realistic |
-| Score predictor tuning | Apr | P1 | Validate CPA score predictor against real exam scores from users |
-| 2025→2026 blueprint transition | Apr | P1 | Ensure questions map to current AICPA blueprint |
-| ISC/BAR/TCP content parity | May | P1 | Ensure discipline sections have equal content depth |
-| Written Communication re-enable | Jun | P2 | WC format exists but feature flag is off — validate and enable |
-| Video lessons (5 pilot) | Jul | P2 | Produce 5 high-impact FAR video lessons |
-| Mock exam generator v2 | Aug | P2 | Full 4-testlet simulation with realistic timing |
+| Task | Month | Priority | Status | Description |
+|------|-------|----------|--------|-------------|
+| Study Plan Setup | Feb | P0 | ✅ DONE | `CPAStudyPlanSetup.tsx` implemented |
+| Cram Mode | Feb | P0 | ✅ DONE | `cpaCramMode.ts` implemented |
+| FAR distractor improvement | Mar | P1 | | Rewrite 200+ weak distractors to be more exam-realistic |
+| Score predictor tuning | Apr | P1 | | Validate CPA score predictor against real exam scores from users |
+| 2025→2026 blueprint transition | Apr | P1 | | Ensure questions map to current AICPA blueprint |
+| ISC/BAR/TCP content parity | May | P1 | | Ensure discipline sections have equal content depth |
+| Written Communication re-enable | Jun | P2 | | WC format exists but feature flag is off — validate and enable |
+| Video lessons (5 pilot) | Jul | P2 | | Produce 5 high-impact FAR video lessons |
+| Mock exam generator v2 | Aug | P2 | | Full 4-testlet simulation with realistic timing |
 
 ### 12.2 EA (Second Priority — Strong Content)
 
@@ -693,9 +758,9 @@ The auto-publish engine handles most content, but manual high-quality content sh
 | `console.log` in some files | Low | 2h | Replace with `logger` utility |
 | Legacy `.js`/`.jsx` files | Low | 4h | Gradual migration to `.tsx`/`.ts` as files are touched |
 | ROADMAP.md shows CISA for 2027 | Low | 0.5h | CISA already exists — update timeline docs |
-| No CFP score predictor | Medium | 6h | Build `cfpScorePredictor.ts` |
-| No EA score predictor | Medium | 6h | Build `eaScorePredictor.ts` |
-| No CMA score predictor | Medium | 6h | Build `cmaScorePredictor.ts` |
+| ~~No CFP score predictor~~ | ~~Medium~~ | ~~6h~~ | ✅ DONE — `cfpScorePredictor.ts` exists |
+| ~~No EA score predictor~~ | ~~Medium~~ | ~~6h~~ | ✅ DONE — `eaScorePredictor.ts` exists |
+| ~~No CMA score predictor~~ | ~~Medium~~ | ~~6h~~ | ✅ DONE — `cmaScorePredictor.ts` exists |
 
 ### 13.2 Infrastructure Improvements
 
@@ -740,7 +805,7 @@ Phase 3 (May): Production pipeline
 
 | Risk | Probability | Impact | Mitigation |
 |------|------------|--------|-----------|
-| **SEM burns budget without conversions** | Medium | High | Set daily budget caps, pause after 14 days if CPA > $100, shift to SEO |
+| **SEM burns budget without conversions** | Medium | High | Implement conversion tracking Day 1, set daily budget caps, pause after 14 days if CPA > $100 |
 | **Low trial-to-paid conversion (<5%)** | Medium | High | A/B test trial length, add onboarding optimization, trial drip emails |
 | **Question quality complaints** | Medium | Medium | Prioritize CISA/CFP quality fixes in Month 1, add user feedback mechanism |
 | **Competitor price war** | Low | Medium | Differentiate on AI features (tutor, coach), not price |
@@ -775,6 +840,9 @@ Phase 3 (May): Production pipeline
 | Blog articles published (cumulative) | 15 | 60 | 120 |
 | Google indexed pages | 40 | 100 | 200 |
 | Domain authority (Moz/Ahrefs) | 5 | 10 | 20 |
+| **Discord members** | **50** | **200** | **500** |
+| **Reddit/HN organic replies** | **12** | **40** | **100** |
+| **Discord → signup conversions** | **5** | **25** | **75** |
 
 ### 15.3 Engagement Metrics
 
@@ -893,19 +961,19 @@ Phase 3 (May): Production pipeline
 ## Month-by-Month Summary
 
 ### February 2026 (Launch)
-> Launch day, monitor everything, fix CPA study plan + cram mode.
+> Launch day. Monitor everything. Fix CPA study plan + cram mode. **Discord quiz bot + Reddit/HN/SE monitor live.** Respond to opportunity alerts daily.
 
 ### March 2026 (Foundation)
-> SEM optimization, CISA quality fixes, trial drip emails, user management admin, error monitoring.
+> Google Ads conversion tracking, YouTube channel launch, SEM optimization, CISA quality fixes, user management admin, error monitoring. **Deploy Discord bot + monitor to persistent server. Post on bot listing sites. Launch LinkedIn presence. Target 50 Discord members.**
 
 ### April 2026 (Conversion)
-> Founder deadline push, CFP/CIA/CISA content expansion, email automation, pricing page, CRO experiments.
+> Founder deadline push, CFP/CIA/CISA content expansion, email automation, pricing page, CRO experiments. **Launch Telegram bot. Track Discord → signup conversions. Target 150 Discord members.**
 
 ### May 2026 (Scale)
-> SEM scaling + new campaigns, SEO authority building, mobile app store prep, blueprint heatmap, smart review.
+> SEM scaling + new campaigns, SEO authority building, mobile app store prep, blueprint heatmap, smart review. **Expand quiz bot questions to 500/exam. Target 300 Discord members.**
 
 ### June 2026 (Mobile & Community)
-> Mobile app store launch, SEM expansion to all 6 exams, community v1 (forums + study groups), video integration.
+> Mobile app store launch, SEM expansion to all 6 exams, community v1 (forums + study groups), video integration. **Deploy Slack bot to accounting firm workspaces. Discord ↔ App XP sync. Target 500 Discord members.**
 
 ### July 2026 (Differentiation)
 > AI exam coach, AI question generator, CMA CBQ support, EA form explorer, retention features (referral, sharing).
@@ -928,7 +996,7 @@ Decisions to make at key milestones:
 | Mobile vs web priority | May 15 | Mobile first vs web first | Traffic source analysis |
 | Hire content writer | Jun 1 | In-house vs freelance vs AI-only | Content quality metrics + cost |
 | Video investment | Jun 15 | HeyGen production vs YouTube partnerships | Engagement data on CISA pilot |
-| Community platform | Jun 1 | Build in-app vs use Discord/Slack vs hybrid | User feedback + engagement data |
+| Community platform | Jun 1 | ~~Build in-app vs use Discord/Slack vs hybrid~~ **DECIDED: Hybrid** — Discord live since Feb 19, in-app features in Jun | Discord growth data + user feedback |
 
 ---
 

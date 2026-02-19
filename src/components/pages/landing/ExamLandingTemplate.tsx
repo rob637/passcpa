@@ -559,6 +559,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><Link to="/help" className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><a href="https://discord.gg/XBjzDrws" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Community (Discord)</a></li>
               </ul>
             </div>
             

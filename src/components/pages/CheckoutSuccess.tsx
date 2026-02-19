@@ -3,11 +3,14 @@
  * Shown after successful Stripe checkout
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Sparkles, BookOpen, Trophy } from 'lucide-react';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import { isFounderPricingActive, useSubscription, syncSubscriptionFromStripe } from '../../services/subscription';
+import { useAuth } from '../../hooks/useAuth';
+import { useCourse } from '../../hooks/useCourse';
+import { analytics } from '../../services/analytics';
 
 const CheckoutSuccess = () => {
   useDocumentTitle('Welcome to VoraPrep!');
@@ -15,9 +18,14 @@ const CheckoutSuccess = () => {
   const [searchParams] = useSearchParams();
   // Show founder badge if the checkout happened during the founder window
   const isFounder = searchParams.get('founder') === 'true' || isFounderPricingActive();
+  const conversionTracked = useRef(false);
+
+  // Get user and course for conversion tracking
+  const { user } = useAuth();
+  const { activeCourse } = useCourse();
 
   // Force a subscription refresh so the realtime listener picks up the Stripe webhook update
-  const { refreshSubscription } = useSubscription();
+  const { refreshSubscription, subscription } = useSubscription();
   useEffect(() => {
     // Webhook may take a moment — poll a couple of times
     const t1 = setTimeout(refreshSubscription, 2000);
@@ -33,6 +41,23 @@ const CheckoutSuccess = () => {
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Track purchase conversion for Google Ads (once)
+  useEffect(() => {
+    if (user && subscription?.status === 'active' && !conversionTracked.current) {
+      conversionTracked.current = true;
+      // Estimate value based on plan type (monthly vs annual)
+      const isAnnual = subscription.currentPeriodEnd && 
+        (new Date(subscription.currentPeriodEnd).getTime() - Date.now()) > 60 * 24 * 60 * 60 * 1000; // >60 days
+      const estimatedValue = isAnnual ? 199 : 29; // Conservative average pricing
+      analytics.trackPurchaseConversion(
+        user.uid,
+        activeCourse || 'cpa',
+        estimatedValue,
+        isAnnual ? 'annual' : 'monthly'
+      );
+    }
+  }, [user, subscription, activeCourse]);
 
   useEffect(() => {
     // Hide confetti after animation

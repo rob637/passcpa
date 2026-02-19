@@ -4578,3 +4578,265 @@ ${urls}
   res.set('Content-Type', 'application/xml');
   res.status(200).send(xml);
 });
+
+// ============================================================================
+// ADMIN SEND BULK EMAIL
+// Send emails to selected users from Admin CMS
+// Only admins can call this function
+// ============================================================================
+
+const ADMIN_WHITELIST = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
+
+exports.adminSendBulkEmail = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: ['RESEND_API_KEY'],
+}, async (request) => {
+  // Validate user is authenticated
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in.');
+  }
+  
+  // Verify admin status
+  const callerEmail = request.auth.token.email;
+  if (!callerEmail || !ADMIN_WHITELIST.includes(callerEmail)) {
+    console.warn(`Non-admin attempted to send bulk email: ${callerEmail}`);
+    throw new HttpsError('permission-denied', 'Only admins can send bulk emails.');
+  }
+  
+  const { subject, body, recipients } = request.data;
+  
+  if (!subject || !body || !recipients || !Array.isArray(recipients)) {
+    throw new HttpsError('invalid-argument', 'Missing subject, body, or recipients');
+  }
+  
+  if (recipients.length === 0) {
+    throw new HttpsError('invalid-argument', 'No recipients provided');
+  }
+  
+  if (recipients.length > 100) {
+    throw new HttpsError('invalid-argument', 'Cannot send to more than 100 recipients at once');
+  }
+  
+  if (!resend) {
+    throw new HttpsError('failed-precondition', 'Email service not configured');
+  }
+  
+  console.log(`Admin ${callerEmail} sending bulk email to ${recipients.length} users. Subject: ${subject}`);
+  
+  const results = { sent: 0, failed: 0, errors: [] };
+  
+  for (const recipient of recipients) {
+    if (!recipient.email) {
+      results.failed++;
+      continue;
+    }
+    
+    // Template substitution
+    const personalizedBody = body
+      .replace(/\{\{name\}\}/g, recipient.name || 'User')
+      .replace(/\{\{email\}\}/g, recipient.email);
+    
+    try {
+      await resend.emails.send({
+        from: 'Rob from VoraPrep <rob@voraprep.com>',
+        replyTo: 'rob@voraprep.com',
+        to: recipient.email,
+        subject: subject,
+        html: generateAdminBulkEmailHtml(personalizedBody, recipient.name || 'User'),
+      });
+      results.sent++;
+    } catch (err) {
+      console.error(`Failed to send to ${recipient.email}:`, err);
+      results.failed++;
+      results.errors.push({ email: recipient.email, error: err.message });
+    }
+  }
+  
+  console.log(`Bulk email complete: ${results.sent} sent, ${results.failed} failed`);
+  
+  // Log email to history collection
+  try {
+    const emailHistoryRef = db.collection('emailHistory').doc();
+    await emailHistoryRef.set({
+      id: emailHistoryRef.id,
+      subject: subject,
+      body: body, // Original template (before substitution)
+      recipientCount: recipients.length,
+      sentCount: results.sent,
+      failedCount: results.failed,
+      recipients: recipients.map(r => ({
+        email: r.email,
+        name: r.name || 'User',
+        uid: r.uid || null,
+      })),
+      sentBy: callerEmail,
+      sentAt: admin.firestore.FieldValue.serverTimestamp(),
+      errors: results.errors.slice(0, 10), // Store first 10 errors
+    });
+    console.log(`Email history logged: ${emailHistoryRef.id}`);
+  } catch (logErr) {
+    console.error('Failed to log email history:', logErr);
+    // Don't fail the request if logging fails
+  }
+  
+  return { 
+    success: true, 
+    sent: results.sent, 
+    failed: results.failed,
+    errors: results.errors.slice(0, 5) // Only return first 5 errors
+  };
+});
+
+// Generate HTML email template for admin bulk emails
+function generateAdminBulkEmailHtml(body, recipientName) {
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoraPrep</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); padding: 24px; text-align: center; border-radius: 12px 12px 0 0;">
+      <img src="https://voraprep.com/voraprep-logo-white.png" alt="VoraPrep" style="height: 40px; width: auto;" />
+    </div>
+    <div style="background: white; padding: 32px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <p style="margin: 0 0 16px 0; color: #374151; font-size: 16px; line-height: 1.6;">
+        Hi ${recipientName},
+      </p>
+      <div style="color: #374151; font-size: 16px; line-height: 1.6; white-space: pre-wrap;">
+${body}
+      </div>
+      <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
+      <p style="margin: 0; color: #6b7280; font-size: 14px;">
+        Best,<br/>
+        The VoraPrep Team
+      </p>
+    </div>
+    <div style="text-align: center; padding: 20px; color: #9ca3af; font-size: 12px;">
+      <p style="margin: 0;">VoraPrep - AI-Powered Exam Prep</p>
+      <p style="margin: 8px 0 0 0;">
+        <a href="https://voraprep.com" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+  `.trim();
+}
+
+// ============================================================================
+// ADMIN: SYNC USER EMAILS FROM FIREBASE AUTH TO FIRESTORE
+// Fixes users who signed up (especially via Google) but email wasn't saved to Firestore
+// ============================================================================
+
+exports.adminSyncUserEmails = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+}, async (request) => {
+  // Validate user is authenticated
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in.');
+  }
+  
+  // Verify admin status
+  const callerEmail = request.auth.token.email;
+  if (!callerEmail || !ADMIN_WHITELIST.includes(callerEmail)) {
+    console.warn(`Non-admin attempted to sync emails: ${callerEmail}`);
+    throw new HttpsError('permission-denied', 'Only admins can sync user emails.');
+  }
+  
+  console.log(`Admin ${callerEmail} initiated user email sync`);
+  
+  const results = { 
+    total: 0,
+    updated: 0, 
+    alreadyHasEmail: 0,
+    noAuthEmail: 0,
+    errors: [] 
+  };
+  
+  try {
+    // Get all users from Firestore
+    const usersSnapshot = await db.collection('users').get();
+    results.total = usersSnapshot.size;
+    
+    console.log(`Processing ${results.total} users...`);
+    
+    // Process in batches of 10 to avoid overwhelming Auth API
+    const batch = db.batch();
+    let batchCount = 0;
+    
+    for (const userDoc of usersSnapshot.docs) {
+      const firestoreData = userDoc.data();
+      const firestoreEmail = firestoreData.email;
+      
+      // Skip if Firestore already has a valid email
+      if (firestoreEmail && firestoreEmail.trim() !== '' && firestoreEmail.includes('@')) {
+        results.alreadyHasEmail++;
+        continue;
+      }
+      
+      // Try to get email from Firebase Auth
+      try {
+        const authUser = await admin.auth().getUser(userDoc.id);
+        
+        if (authUser.email) {
+          // Update Firestore with the email from Auth
+          const updates = { 
+            email: authUser.email,
+            emailSyncedAt: admin.firestore.FieldValue.serverTimestamp()
+          };
+          
+          // Also sync displayName and photoURL if missing
+          if (!firestoreData.displayName && authUser.displayName) {
+            updates.displayName = authUser.displayName;
+          }
+          if (!firestoreData.photoURL && authUser.photoURL) {
+            updates.photoURL = authUser.photoURL;
+          }
+          
+          batch.update(db.collection('users').doc(userDoc.id), updates);
+          batchCount++;
+          results.updated++;
+          
+          console.log(`Will update user ${userDoc.id}: ${authUser.email}`);
+          
+          // Commit batch every 500 writes
+          if (batchCount >= 500) {
+            await batch.commit();
+            batchCount = 0;
+          }
+        } else {
+          results.noAuthEmail++;
+          console.log(`User ${userDoc.id} has no email in Auth either (anonymous?)`);
+        }
+      } catch (authError) {
+        // User might not exist in Auth (deleted?) or other error
+        console.warn(`Could not get Auth user ${userDoc.id}:`, authError.message);
+        results.errors.push({ uid: userDoc.id, error: authError.message });
+      }
+    }
+    
+    // Commit any remaining updates
+    if (batchCount > 0) {
+      await batch.commit();
+    }
+    
+    console.log(`Email sync complete:`, results);
+    
+    return { 
+      success: true,
+      ...results
+    };
+    
+  } catch (error) {
+    console.error('Email sync failed:', error);
+    throw new HttpsError('internal', `Email sync failed: ${error.message}`);
+  }
+});

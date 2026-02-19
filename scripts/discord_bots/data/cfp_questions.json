@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "cfp-ret-b3-007",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "ERISA",
+    "difficulty": "medium",
+    "question": "Which type of plan is NOT covered by ERISA?",
+    "options": [
+      "Private employer 401(k) plan",
+      "Corporate defined benefit pension",
+      "State government pension plan",
+      "ESOP of a private company"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ERISA generally does not cover government plans (federal, state, local), church plans, or plans maintained solely for compliance with workers' compensation, unemployment, or disability laws."
+  },
+  {
+    "id": "cfp-inv-b3-001",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Modern Portfolio Theory",
+    "difficulty": "medium",
+    "question": "Portfolio X has an expected return of 10% and standard deviation of 15%. Portfolio Y has an expected return of 10% and standard deviation of 12%. According to Modern Portfolio Theory:",
+    "options": [
+      "X is preferred because of higher risk",
+      "Y dominates X because it has the same return with lower risk",
+      "Both portfolios are equally efficient",
+      "Neither portfolio can be on the efficient frontier"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For the same expected return (10%), a rational investor prefers lower risk. Portfolio Y dominates X because it offers identical returns with 3% less volatility. X is inefficient and Y is preferred."
+  },
+  {
+    "id": "cfp-pcr-b9-005",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Fiduciary Duty",
+    "difficulty": "hard",
+    "question": "The duty of loyalty is potentially violated when:",
+    "options": [
+      "B) A planner steers clients to products that benefit the planner without disclosure or when better alternatives exist for the client",
+      "A) Recommending lower-cost options",
+      "C) Referring to specialists",
+      "D) Charging reasonable fees"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Loyalty breaches: recommending products primarily for compensation benefit, steering to affiliated entities without disclosure, using client opportunities for personal gain, competing directly with client. Not necessarily prohibited—requires disclosure and client consent. Conflicts managed through: avoid if possible, disclose fully, obtain informed consent. Prioritize client interest."
+  },
+  {
+    "id": "cfp-inv-009",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Fixed Income",
+    "difficulty": "hard",
+    "question": "A 10-year corporate bond has a 5% coupon (paid annually) and a yield to maturity of 4%. The bond has a face value of $1,000. What is its approximate current price?",
+    "options": [
+      "C) $926",
+      "D) $1,162",
+      "A) $1,081",
+      "B) $1,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: A ($1,081)**\n\n**Bond Pricing:**\nWhen coupon rate (5%) > YTM (4%), bond trades at a **premium**.\n\n**Calculation:**\nPV = Σ(Coupon/(1+YTM)^t) + Face/(1+YTM)^n\n\nPV = $50 × PVIFA(4%, 10) + $1,000 × PVIF(4%, 10)\nPV = $50 × 8.1109 + $1,000 × 0.6756\nPV = $405.55 + $675.60 = **$1,081.15**\n\n**Why other answers are wrong:**\n- **B)** Par value only when coupon = YTM\n- **C)** Discount price (would occur if YTM > coupon)\n- **D)** Overstated premium"
+  },
+  {
+    "id": "cfp-gen-051",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Economic Concepts",
+    "difficulty": "easy",
+    "question": "Inflation is BEST described as:",
+    "options": [
+      "B) General increase in price levels over time",
+      "D) Increase in productivity",
+      "A) Rising unemployment rates",
+      "C) Decrease in the money supply"
+    ],
+    "correctAnswer": 0,
+    "explanation": "**Inflation = General increase in prices, decrease in purchasing power.**\n\n**Measured by:**\n- Consumer Price Index (CPI)\n- Personal Consumption Expenditures (PCE)\n\n**Effects:**\n- Erodes purchasing power\n- Hurts fixed-income investments\n- Benefits debtors (repay with cheaper dollars)"
+  },
+  {
+    "id": "cfp-psy-008",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Active Listening",
+    "difficulty": "easy",
+    "question": "After gathering extensive information from a client, what active listening technique should you use before moving to analysis?",
+    "options": [
+      "C) Validating—acknowledge their feelings",
+      "D) Pausing—allow silence for reflection",
+      "B) Summarizing—recap the key points you've heard",
+      "A) Reflecting—mirror the last statement"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Summarizing helps ensure you've captured the important points correctly and gives the client an opportunity to correct any misunderstandings. It signals respect for what they've shared and transitions naturally from discovery to analysis."
+  },
+  {
+    "id": "cfp-pcr-b8-014",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Practice Standards",
+    "difficulty": "easy",
+    "question": "If a client's needs exceed a CFP professional's competence:",
+    "options": [
+      "B) Refer to or consult with a qualified specialist or decline the engagement",
+      "A) Proceed anyway",
+      "D) Hide the knowledge gap",
+      "C) Charge higher fees"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Competence standard: don't provide services you're not qualified to provide. Options: refer to specialist, collaborate with qualified professional, acquire necessary competence through education/training before advising. Acknowledge limitations—clients respect honesty. Build referral network for areas outside expertise."
+  },
+  {
+    "id": "cfp-pcr-b8-019",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Regulation",
+    "difficulty": "medium",
+    "question": "Investment adviser representatives typically must register with:",
+    "options": [
+      "D) Only CFP Board",
+      "A) Only federal regulators",
+      "B) The state(s) where they have a place of business, following that state's qualification requirements",
+      "C) Only their employer"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IAR registration: state-by-state for state-registered advisers, states can require registration for SEC RIA personnel too. Must pass exams (Series 65 or 66 typically). Some states accept CFP as substitute for exam. Background checks, disclosure of disciplinary history. Know and follow your state's requirements."
+  },
+  {
+    "id": "cfp-gen-065",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Services",
+    "difficulty": "medium",
+    "question": "A fiduciary standard requires an adviser to:",
+    "options": [
+      "A) Recommend only suitable products",
+      "D) Charge the lowest fees possible",
+      "B) Act in the client's best interest",
+      "C) Avoid all conflicts of interest"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Fiduciary vs. Suitability:**\n\n**Fiduciary:** Act in client's BEST interest (RIAs, CFP® professionals)\n\n**Suitability/Reg BI:** Recommendation must be suitable/in best interest at time made (broker-dealers)\n\nFiduciary is higher standard. Conflicts allowed if disclosed and managed, not eliminated."
+  },
+  {
+    "id": "cfp-pro-056",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Practice Standards",
+    "difficulty": "easy",
+    "question": "The first step in the CFP Board's financial planning process is:",
+    "options": [
+      "B) Understanding the client's personal and financial circumstances",
+      "C) Developing recommendations",
+      "A) Analyzing the client's current situation",
+      "D) Implementing recommendations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The 7-step process: 1) Understanding client circumstances, 2) Identifying/selecting goals, 3) Analyzing current course, 4) Developing recommendations, 5) Presenting recommendations, 6) Implementing, 7) Monitoring. Understanding circumstances must come first."
+  },
+  {
+    "id": "cfp-inv-012",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Mutual Funds",
+    "difficulty": "medium",
+    "question": "Which statement about Exchange-Traded Funds (ETFs) versus open-end mutual funds is CORRECT?",
+    "options": [
+      "A) ETFs always have lower expense ratios than comparable mutual funds",
+      "D) Mutual funds can be traded throughout the day on exchanges",
+      "C) ETFs generally have better tax efficiency due to in-kind redemptions",
+      "B) ETF investors buy and sell at NAV calculated at end of day"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: C**\n\n**ETF Tax Efficiency:**\nETFs use an \"in-kind\" creation/redemption process with authorized participants. When shares are redeemed, the ETF delivers securities (not cash), avoiding recognition of embedded capital gains.\n\n**Result:** ETF investors rarely receive taxable capital gain distributions.\n\n**Why other answers are wrong:**\n- **A)** Generally true, but not ALWAYS (some specialized ETFs have high fees)\n- **B)** Reversed - ETFs trade intraday at market prices; mutual funds trade at end-of-day NAV\n- **D)** Reversed - ETFs trade intraday; mutual funds settle at NAV"
+  },
+  {
+    "id": "cfp-psy-b7-019",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Financial Psychology",
+    "difficulty": "hard",
+    "question": "Financial trauma from events like bankruptcy, foreclosure, or crisis may result in:",
+    "options": [
+      "D) Increased risk tolerance",
+      "B) Anxiety around finances, avoidance behaviors, or overcautious/risk-averse responses years later",
+      "A) No lasting effects",
+      "C) Immediately rational behavior"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Financial trauma: severe financial events can have lasting psychological effects. May manifest as: excessive fear/anxiety, inability to engage with finances, hoarding or extreme frugality, overcaution preventing reasonable risk-taking. Past experiences shape current behaviors. May need gentle approach, patience, possibly referral to therapist specializing in financial issues."
+  },
+  {
+    "id": "cfp-gen-b7-008",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Economics",
+    "difficulty": "easy",
+    "question": "A CFP professional needs to explain to a client why their investment returns may be affected by overall economic conditions. Which GDP component typically has the LARGEST impact on GDP in the United States?",
+    "options": [
+      "Government spending",
+      "Net exports",
+      "Business investment (gross private domestic investment)",
+      "Personal consumption expenditures"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Personal consumption expenditures (consumer spending) account for approximately 68-70% of U.S. GDP, making it the largest component. Changes in consumer spending have the greatest impact on overall economic growth and, consequently, investment returns."
+  },
+  {
+    "id": "cfp-gen-b2-025",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Planning Process",
+    "difficulty": "medium",
+    "question": "Which life event would MOST likely trigger an immediate need to review and potentially update a client's financial plan?",
+    "options": [
+      "B) Annual increase in cost of living",
+      "C) Birth of a child or grandchild",
+      "A) Minor fluctuation in portfolio value",
+      "D) Change in marginal tax bracket by 2%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: C (Birth of a child or grandchild)**\n\nMajor life events requiring immediate plan review include:\n- Birth/adoption of children\n- Marriage/divorce\n- Death of family member\n- Job loss or career change\n- Inheritance\n- Health diagnosis\n- Home purchase/sale\n\n**Why other answers are wrong:**\n- **A)** Normal market fluctuations don't require changes\n- **B)** Standard inflation is expected\n- **D)** Minor tax bracket changes are routine adjustments"
+  },
+  {
+    "id": "cfp-pcr-b5-013",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Code of Ethics",
+    "difficulty": "medium",
+    "question": "When ethical principles conflict in a situation (e.g., client autonomy versus best interest), the CFP® professional should:",
+    "options": [
+      "A) Always prioritize one principle over others",
+      "B) Use sound judgment to balance principles, considering facts, potential harm, and ethical reasoning",
+      "C) Refer matters to the CFP Board",
+      "D) Follow whatever the client prefers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Ethical dilemmas often involve balancing competing principles. Sound judgment considers all relevant facts, potential consequences, stakeholder interests, and professional obligations. There's rarely a formula—thoughtful analysis, documentation, and sometimes consultation are the best approaches."
+  },
+  {
+    "id": "cfp-gen-009",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Time Value of Money",
+    "difficulty": "medium",
+    "question": "Emma invests $10,000 today at 7% annual return. Additionally, she invests $5,000 at the end of each year for 10 years. What is the approximate future value at the end of year 10?",
+    "options": [
+      "D) $59,082",
+      "A) $69,082",
+      "B) $88,782",
+      "C) $78,686"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: B ($88,782)**\n\n**Two Components:**\n\n**1. Lump Sum FV:**\nFV = PV × (1 + r)^n\nFV = $10,000 × (1.07)^10 = $10,000 × 1.9672 = **$19,672**\n\n**2. Annuity FV (Ordinary Annuity):**\nFV = PMT × [(1+r)^n - 1] / r\nFV = $5,000 × [(1.07)^10 - 1] / 0.07\nFV = $5,000 × [0.9672 / 0.07]\nFV = $5,000 × 13.8164 = **$69,082**\n\n**Total: $19,672 + $69,082 = $88,754 ≈ $88,782**"
+  },
+  {
+    "id": "cfp-pro-051",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Fiduciary Duty",
+    "difficulty": "medium",
+    "question": "The Duty of Care under CFP Board standards requires:",
+    "options": [
+      "C) Recommending only passive investments",
+      "A) Guaranteeing positive investment outcomes",
+      "B) Acting with skill, prudence, and diligence",
+      "D) Avoiding all risky recommendations"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Duty of Care requires acting with skill, prudence, and diligence that a prudent CFP® professional would exercise. It's a process standard, not outcome guarantee. Risky recommendations may be appropriate based on client circumstances and risk tolerance."
+  },
+  {
+    "id": "cfp-inv-020",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Asset Location",
+    "difficulty": "hard",
+    "question": "A client has both taxable and tax-deferred accounts. Which asset placement strategy is generally MOST tax-efficient?",
+    "options": [
+      "C) Place bonds and REITs in tax-deferred accounts; stocks in taxable accounts",
+      "D) Place high-growth stocks in tax-deferred accounts",
+      "A) Place bonds in taxable accounts; stocks in tax-deferred accounts",
+      "B) Place all assets equally across both account types"
+    ],
+    "correctAnswer": 0,
+    "explanation": "**Correct Answer: C**\n\n**Asset Location Principles:**\n\n**Tax-Deferred Accounts (Traditional IRA, 401k):**\n- Place tax-inefficient assets:\n  - Bonds (interest taxed as ordinary income)\n  - REITs (dividends taxed at ordinary rates)\n  - High-turnover funds (frequent distributions)\n\n**Taxable Accounts:**\n- Place tax-efficient assets:\n  - Stocks (qualified dividends at 0-20% rates)\n  - Index funds (low turnover, fewer distributions)\n  - Muni bonds (tax-exempt interest)\n\n**Why C is best:**\n- Shelters high-tax income (bond interest, REIT dividends)\n- Stocks in taxable get favorable LTCG/qualified dividend rates\n- Stocks also get step-up in basis at death\n\n**Why D is wrong:**\n- Stocks' favorable tax treatment is wasted in tax-deferred accounts"
+  },
+  {
+    "id": "cfp-gen-b6-010",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Economic Concepts",
+    "difficulty": "hard",
+    "question": "An inverted yield curve (short-term rates higher than long-term rates) has historically been associated with:",
+    "options": [
+      "B) Increased recession probability",
+      "C) Rising inflation expectations",
+      "A) Strong economic growth",
+      "D) Bond bull markets"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An inverted yield curve often precedes recessions—it indicates markets expect future rate cuts due to economic weakness. Normally, yields rise with maturity (upward slope). Inversion suggests near-term uncertainty exceeds long-term, often reflecting Fed tightening slowing the economy."
+  },
+  {
+    "id": "cfp-inv-027",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Fixed Income",
+    "difficulty": "hard",
+    "question": "A bond has a modified duration of 7.5 years. If interest rates rise by 0.50%, approximately how much will the bond's price decline?",
+    "options": [
+      "D) 15.00%",
+      "C) 7.50%",
+      "A) 0.50%",
+      "B) 3.75%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: B (3.75%)**\n\n**Duration Price Change Formula:**\n$$\\Delta P \\approx -D_{mod} \\times \\Delta y$$\n\n**Calculation:**\n- Modified Duration = 7.5\n- Rate Change = +0.50% = +0.005\n- Price Change ≈ -7.5 × 0.50% = **-3.75%**\n\n**Key Concepts:**\n- Duration measures interest rate sensitivity\n- Negative relationship: rates up → prices down\n- This is an approximation (convexity adjusts for larger moves)"
+  },
+  {
+    "id": "cfp-psy-b2-018",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Communication",
+    "difficulty": "easy",
+    "question": "Which factor is MOST important in building client trust?",
+    "options": [
+      "C) Consistent follow-through on commitments",
+      "A) Impressive office decor and credentials displayed",
+      "D) Using complex financial terminology",
+      "B) Promising high investment returns"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Trust is built primarily through reliability and follow-through. When planners do what they say they will do, clients develop confidence in the relationship. Promising high returns is unethical, and complexity/decor are superficial."
+  },
+  {
+    "id": "cfp-pro-091",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Competence",
+    "difficulty": "easy",
+    "question": "How many continuing education hours must a CFP® professional complete each reporting period?",
+    "options": [
+      "B) 30 hours biennially (every two years)",
+      "A) 20 hours annually",
+      "C) 40 hours annually",
+      "D) 50 hours biennially (every two years)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CFP® professionals must complete 30 CE hours every two-year reporting period. This includes 2 hours of CFP Board-approved ethics CE and 28 hours of other CE. CE helps maintain competence in the evolving financial planning profession."
+  },
+  {
+    "id": "cfp-psy-b4-008",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Values and Goals",
+    "difficulty": "medium",
+    "question": "Values clarification exercises in financial planning:",
+    "options": [
+      "C) Should be avoided as too personal",
+      "B) Help uncover what truly matters to clients, ensuring plans align with their deepest priorities",
+      "A) Are unnecessary for investment decisions",
+      "D) Only apply to wealthy clients"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Understanding client values (security, freedom, legacy, experiences, family) ensures plans reflect true priorities. This prevents misaligned goals and increases commitment to the plan. Techniques include values card sorts, life satisfaction exercises, and open-ended exploration of what matters most."
+  },
+  {
+    "id": "cfp-inv-b3-011",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Risk Measures",
+    "difficulty": "easy",
+    "question": "A stock with a beta of 0.7 would be expected to:",
+    "options": [
+      "Rise 7% when the market rises 10%",
+      "Fall 10% when the market falls 7%",
+      "Have no correlation with the market",
+      "Outperform in all market conditions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Beta measures systematic risk relative to the market. A beta of 0.7 means the stock is expected to move 70% as much as the market. If the market rises 10%, the stock should rise approximately 7% (10% × 0.7)."
+  },
+  {
+    "id": "cfp-gen-b10-018",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Time Value of Money",
+    "difficulty": "hard",
+    "question": "A perpetuity is valued using the formula:",
+    "options": [
+      "D) PV = PMT × r",
+      "B) PV = PMT / r, representing the present value of payments continuing forever",
+      "A) PV = PMT × n",
+      "C) FV = PMT × (1+r)^n"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Perpetuity: infinite stream of payments. PV = Payment / Discount rate. Example: $1,000/year forever at 5% = $1,000/0.05 = $20,000. Applications: preferred stock valuation, some endowments, simplified pension valuation. Growing perpetuity: PV = Payment / (r - g). Theoretical but useful for quick estimates. Related to sustainable withdrawal concept in retirement."
+  },
+  {
+    "id": "cfp-inv-b11-014",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Vehicles",
+    "difficulty": "easy",
+    "question": "A fund of funds invests in:",
+    "options": [
+      "C) Bonds only",
+      "B) Other investment funds, providing diversification across managers but adding an additional layer of fees",
+      "D) Real estate directly",
+      "A) Individual stocks only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Fund of funds: invests in underlying funds rather than securities. Benefits: instant diversification, professional manager selection, access to otherwise inaccessible funds. Drawbacks: double layer of fees (fund + underlying), tax inefficiency, may overdiversify. Common in: hedge funds, target-date funds, some alternatives. Evaluate fees carefully."
+  },
+  {
+    "id": "cfp-gen-b9-018",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Time Value of Money",
+    "difficulty": "hard",
+    "question": "When evaluating an investment with uneven cash flows, NPV is superior to IRR because:",
+    "options": [
+      "A) NPV is always positive",
+      "B) IRR may have multiple solutions or assume reinvestment at unrealistic rates, while NPV uses consistent discount rate",
+      "D) NPV ignores time value",
+      "C) IRR is harder to calculate"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IRR limitations: assumes reinvestment at IRR (may be unrealistic), unconventional cash flows can produce multiple IRRs, can't compare projects of different sizes. NPV advantages: uses consistent required rate, additive (can compare different projects), no reinvestment rate assumptions. Use both—IRR for rate comparison, NPV for absolute value."
+  },
+  {
+    "id": "cfp-inv-b9-021",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Theory",
+    "difficulty": "medium",
+    "question": "Monte Carlo simulation in investment planning:",
+    "options": [
+      "A) Predicts exact future returns",
+      "C) Eliminates investment risk",
+      "D) Is only for gambling analysis",
+      "B) Generates thousands of random scenarios based on assumed return and volatility parameters to estimate probability of outcomes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Monte Carlo runs thousands of simulations with randomized returns within assumed parameters. Instead of a single deterministic projection, it produces a probability distribution of outcomes (e.g., 85% probability of not running out of money). It captures return sequence risk and helps stress-test plans, though results depend on input assumptions."
+  },
+  {
+    "id": "cfp-inv-b12-013",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Concepts",
+    "difficulty": "medium",
+    "question": "Liquidity risk in investments refers to:",
+    "options": [
+      "D) Currency fluctuations",
+      "A) Risk of total loss",
+      "C) Interest rate changes",
+      "B) Difficulty selling an investment quickly at fair value, potentially requiring price concession"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Liquidity risk: can't sell quickly without price impact. Examples: real estate, private equity, small-cap stocks in volume, some bonds. Manifests as: wide bid-ask spreads, time to sell, forced selling at discount. Planning: match liquidity to needs, liquidity premium expected in less liquid assets. Matters most when need cash unexpectedly. Core holdings should be liquid."
+  },
+  {
+    "id": "cfp-pro-029",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Confidentiality",
+    "difficulty": "hard",
+    "question": "A CFP® professional suspects a client is being financially exploited by a family member. Under confidentiality rules, the CFP® may:",
+    "options": [
+      "C) Only report if the client provides written authorization",
+      "A) Never disclose—confidentiality is absolute",
+      "B) Report to protective services if permitted by law and acting in good faith",
+      "D) Report only to law enforcement, not protective services"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Confidentiality has exceptions including: client consent, legal requirement, defending against allegations, and—importantly—when the CFP® reasonably believes disclosure is necessary to protect the client from financial exploitation. Many states have enacted safe harbor laws allowing (or requiring) reporting suspected elder abuse. The CFP® should act in the client's protective interest."
+  },
+  {
+    "id": "cfp-gen-b7-009",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Economics",
+    "difficulty": "medium",
+    "question": "The distinction between monetary and fiscal policy is:",
+    "options": [
+      "B) Monetary policy is Fed action on money supply/interest rates; fiscal policy is government taxation and spending",
+      "C) Monetary policy is state-level; fiscal is federal",
+      "D) Fiscal policy controls inflation only",
+      "A) They are the same"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Monetary policy (Federal Reserve): adjusting interest rates and money supply to influence inflation and employment. Fiscal policy (Congress/President): taxing and spending decisions affecting economic demand. They work differently—monetary policy is more nimble while fiscal changes require legislation."
+  },
+  {
+    "id": "cfp-inv-053",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Strategies",
+    "difficulty": "medium",
+    "question": "A core-satellite investment approach typically involves:",
+    "options": [
+      "C) Concentrating holdings in a few high-conviction stocks",
+      "A) 100% actively managed funds",
+      "D) Equal allocation across all asset classes",
+      "B) Index funds for the core with active funds or alternatives for satellites"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: B**\n\n**Core-Satellite Strategy:**\n- **Core (60-80%):** Low-cost index funds for market exposure\n- **Satellites (20-40%):** Active managers, alternatives, sector bets\n\n**Benefits:**\n- Reduced overall costs\n- Market-like returns from core\n- Potential alpha from satellites\n\n**Why other answers are wrong:**\n- **A)** Core should be passive/indexed\n- **C)** That's concentration, not diversified core\n- **D)** Equal weight is different strategy"
+  },
+  {
+    "id": "cfp-inv-b11-024",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Valuation",
+    "difficulty": "hard",
+    "question": "Sum-of-the-parts valuation is useful for:",
+    "options": [
+      "B) Conglomerates or companies with distinct business segments that may be undervalued as a whole",
+      "C) Startups only",
+      "D) Municipal bonds",
+      "A) Single-product companies"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sum-of-the-parts (SOTP): value each business segment separately, then sum. Used for: conglomerates, companies with diverse segments, potential breakup targets. May reveal: conglomerate discount (whole worth less than parts), hidden value. Apply appropriate valuation method to each segment. If SOTP > market cap, may be undervalued or breakup candidate."
+  },
+  {
+    "id": "cfp-gen-063",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Cash Management",
+    "difficulty": "easy",
+    "question": "Which factor has the GREATEST impact on a FICO credit score?",
+    "options": [
+      "B) Payment history",
+      "A) Length of credit history",
+      "D) Credit mix",
+      "C) New credit inquiries"
+    ],
+    "correctAnswer": 0,
+    "explanation": "**FICO Score Components:**\n- **Payment History: 35%** (most important)\n- Amounts Owed: 30%\n- Length of Credit History: 15%\n- New Credit: 10%\n- Credit Mix: 10%\n\nPaying on time is the single most important factor for credit scores."
+  },
+  {
+    "id": "cfp-psy-b8-025",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Behavioral Finance",
+    "difficulty": "hard",
+    "question": "The narrative fallacy in investing leads to:",
+    "options": [
+      "A) Better analysis",
+      "B) Creating compelling stories to explain market movements or investment outcomes that may be random or more complex",
+      "C) Avoiding all news",
+      "D) Indexing exclusively"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Narrative fallacy: humans crave explanations, create stories. Financial media does this: \"Stocks fell today because...\" (often after the fact, post-hoc rationalization). Leads to: overconfidence in explanations, hindsight bias, false patterns. Reality often: randomness, complex multicausal, unknowable. Counter: healthy skepticism of narratives, focus on long-term fundamentals, respect uncertainty."
+  },
+  {
+    "id": "cfp-ret-b2-008",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Individual Plans",
+    "difficulty": "hard",
+    "question": "A high-income individual wants to do a backdoor Roth IRA. They have a $100,000 traditional IRA from prior rollovers. What is the primary concern?",
+    "options": [
+      "B) Pro-rata rule will create a taxable portion",
+      "A) The contribution exceeds annual limits",
+      "D) Traditional IRA contributions are not deductible",
+      "C) The conversion must wait five years"
+    ],
+    "correctAnswer": 0,
+    "explanation": "**Correct Answer: B (Pro-rata rule will create a taxable portion)**\n\n**Backdoor Roth & Pro-Rata Rule:**\nWhen converting to Roth, you cannot choose to convert only after-tax amounts. The pro-rata rule treats all traditional IRAs as one pool:\n\n- Pre-tax IRA: $100,000\n- New after-tax contribution: $7,000\n- Total: $107,000 (93.5% pre-tax, 6.5% after-tax)\n\nConverting $7,000 would be 93.5% taxable!\n\n**Solutions:** Roll existing IRA into employer 401(k) before conversion.\n\n**Why other answers are wrong:**\n- **A)** Contribution is within limits\n- **C)** Five-year rule is for withdrawals, not conversions\n- **D)** Non-deductibility is expected for high earners"
+  },
+  {
+    "id": "cfp-inv-b2-008",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Fixed Income",
+    "difficulty": "medium",
+    "question": "Which statement about credit spreads is CORRECT?",
+    "options": [
+      "B) Higher credit spreads indicate lower default risk",
+      "D) Credit spreads widen during times of financial stress",
+      "A) Credit spreads typically narrow during recessions",
+      "C) Investment-grade bonds have spreads near zero"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: D (Credit spreads widen during times of financial stress)**\n\nDuring economic stress or recessions:\n- Investors demand higher premiums for credit risk\n- Flight to quality increases Treasury demand\n- Corporate bond yields rise relative to Treasuries\n- Result: Credit spreads widen\n\n**Why other answers are wrong:**\n- **A)** Spreads widen in recessions, not narrow\n- **B)** Higher spreads = higher perceived default risk\n- **C)** Even AAA-rated bonds have some spread above Treasuries"
+  },
+  {
+    "id": "cfp-gen-b7-007",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Economics",
+    "difficulty": "hard",
+    "question": "The Phillips Curve traditionally suggests:",
+    "options": [
+      "D) Only supply affects prices",
+      "B) An inverse relationship between inflation and unemployment in the short run",
+      "C) Inflation and unemployment move together",
+      "A) No relationship between inflation and unemployment"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Phillips Curve shows trade-off between inflation and unemployment: lower unemployment often coincides with higher inflation (tight labor markets = wage pressure = price increases). The relationship has been less stable in recent decades. It informs Fed policy balancing employment mandate with inflation control."
+  },
+  {
+    "id": "cfp-tax-b6-005",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Deductions and Credits",
+    "difficulty": "medium",
+    "question": "A donor-advised fund (DAF) allows:",
+    "options": [
+      "B) Immediate tax deduction upon contribution with flexibility on grant timing",
+      "C) Only cash contributions",
+      "D) Tax deductions exceeding the value of contributions",
+      "A) Tax deduction when grants are made to charity"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DAFs provide an immediate tax deduction when funds are contributed (cash or appreciated securities). The donor then recommends grants to charities over time. This separates the tax benefit from the charitable timing, useful for bunching deductions or having a high-income year."
+  },
+  {
+    "id": "cfp-tax-057",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Fundamentals",
+    "difficulty": "medium",
+    "question": "Which statement about Health Savings Accounts (HSAs) is CORRECT?",
+    "options": [
+      "A) Contributions are tax-deductible but distributions are taxable",
+      "D) Available with any health insurance plan",
+      "B) Must be used by year-end or forfeit (use-it-or-lose-it)",
+      "C) Triple tax advantage: deductible contributions, tax-free growth, tax-free qualified distributions"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: C (Triple tax advantage)**\n\n**HSA Tax Benefits:**\n1. Contributions: Above-the-line deduction\n2. Growth: Tax-deferred (or tax-free if used for medical)\n3. Distributions: Tax-free for qualified medical expenses\n\n**2026 Limits:**\n- Self-only: $4,450\n- Family: $8,900\n- Catch-up (55+): +$1,000\n\n**Why other answers are wrong:**\n- **A)** Qualified distributions are NOT taxable\n- **B)** That's FSAs; HSAs have no use-it-or-lose-it\n- **D)** Must have High Deductible Health Plan (HDHP)"
+  },
+  {
+    "id": "cfp-psy-009",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Cognitive Biases",
+    "difficulty": "medium",
+    "question": "A client refuses to sell a stock because \"I need to get back to my purchase price of $50.\" The stock is now $35 and fundamentals suggest further decline. This illustrates:",
+    "options": [
+      "C) Confirmation bias",
+      "D) Endowment effect",
+      "B) Anchoring bias",
+      "A) Loss aversion"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Anchoring bias occurs when a client fixates on an irrelevant reference point—in this case, the purchase price. The purchase price is economically irrelevant to the future prospects of the stock, but the client is \"anchored\" to it. While loss aversion may also be present, the specific fixation on the purchase price is anchoring."
+  },
+  {
+    "id": "cfp-inv-b3-002",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Fixed Income",
+    "difficulty": "medium",
+    "question": "A bond portfolio has a duration of 6 years. If interest rates increase by 1%, the approximate change in portfolio value is:",
+    "options": [
+      "+6%",
+      "-6%",
+      "+1%",
+      "-1%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Duration measures price sensitivity to interest rate changes. Price change ≈ -Duration × Rate change = -6 × 1% = -6%. Bond prices and interest rates move inversely."
+  },
+  {
+    "id": "cfp-ret-b12-024",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Social Security",
+    "difficulty": "easy",
+    "question": "Social Security disability insurance (SSDI) benefits:",
+    "options": [
+      "D) Don't affect retirement benefits",
+      "B) Provide income for workers unable to perform substantial gainful activity due to medical condition expected to last 12+ months",
+      "A) Are only for workplace injuries",
+      "C) Have no age requirements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SSDI: for workers with qualifying disability. Eligibility: work credits (varies by age), inability to perform substantial gainful activity, condition lasting 12+ months or terminal. Benefit: based on earnings record (like retirement). 5-month waiting period. At FRA: converts to retirement benefit (same amount). Medicare: after 24 months on SSDI. Application: complex process, often denied initially. Can work alongside planning."
+  },
+  {
+    "id": "cfp-tax-b9-018",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Investment Tax",
+    "difficulty": "hard",
+    "question": "Section 1256 contracts (regulated futures, foreign currency contracts) receive:",
+    "options": [
+      "D) 100% long-term treatment",
+      "A) Ordinary income treatment",
+      "B) 60/40 treatment: 60% long-term, 40% short-term capital gain regardless of holding period, with mark-to-market",
+      "C) Tax exemption"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Section 1256 contracts: mark-to-market at year-end (even if position is open), with gains/losses treated 60% LTCG, 40% STCG regardless of actual holding period. Applies to regulated futures, forex contracts, nonequity options, dealer equity options. Blended rate is favorable vs. short-term ordinary rates. Losses can be carried back 3 years."
+  },
+  {
+    "id": "cfp-psy-007",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Questioning Techniques",
+    "difficulty": "medium",
+    "question": "Which question type is MOST useful for understanding a client's priority among competing goals?",
+    "options": [
+      "D) Leading questions",
+      "C) Scaling questions",
+      "B) Closed-ended questions",
+      "A) Open-ended questions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Scaling questions (e.g., \"On a scale of 1-10, how important is X?\") help quantify priorities and make trade-offs visible. This is especially useful when clients have multiple goals that may compete for resources. Open-ended questions explore but don't quantify; closed-ended gather facts."
+  },
+  {
+    "id": "cfp-ret-b3-017",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Plan Distributions",
+    "difficulty": "easy",
+    "question": "Which expense would typically qualify for a 401(k) hardship withdrawal?",
+    "options": [
+      "Credit card debt repayment",
+      "Vacation expenses",
+      "Medical expenses not covered by insurance",
+      "Automobile purchase for commuting"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hardship withdrawals are permitted for immediate heavy financial needs: unreimbursed medical expenses, home purchase, education costs, funeral expenses, preventing eviction, or casualty damage repair."
+  },
+  {
+    "id": "cfp-est-047",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Planning",
+    "difficulty": "medium",
+    "question": "Which document should a CFP® recommend for a client who wants to designate someone to make healthcare decisions if incapacitated?",
+    "options": [
+      "Living will",
+      "Healthcare power of attorney (healthcare proxy)",
+      "General durable power of attorney",
+      "Revocable living trust"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Healthcare power of attorney (healthcare proxy) designates an agent to make medical decisions when the principal cannot. Living will only states preferences for end-of-life care. General POA handles financial matters. Revocable trust manages assets."
+  },
+  {
+    "id": "cfp-est-b10-016",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Asset Title",
+    "difficulty": "easy",
+    "question": "Payable on Death (POD) and Transfer on Death (TOD) account designations:",
+    "options": [
+      "C) Require trust",
+      "B) Allow assets to pass directly to named beneficiaries at death, avoiding probate while owner retains full control",
+      "D) Are irrevocable",
+      "A) Give beneficiary immediate access"
+    ],
+    "correctAnswer": 1,
+    "explanation": "POD/TOD designations: simple probate avoidance. Bank accounts: POD. Investment accounts: TOD. Owner: full control during life, can change beneficiary anytime, no beneficiary rights until death. At death: beneficiary claims with death certificate. Simple, free, effective for straightforward situations. Limitations: no contingent planning, may not override will."
+  },
+  {
+    "id": "cfp-pcr-b4-020",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Regulations",
+    "difficulty": "medium",
+    "question": "Under Regulation S-P, a financial institution must:",
+    "options": [
+      "B) Provide initial and annual privacy notices and opt-out rights for nonpublic personal information sharing",
+      "A) Never share client information",
+      "D) Only protect information about large accounts",
+      "C) Share all information with marketing partners"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Reg S-P requires clear initial and annual privacy notices describing information collection, sharing, and protection practices. Clients must have opt-out rights before nonpublic personal information is shared with nonaffiliated third parties (with exceptions for service providers and joint marketers with contracts)."
+  },
+  {
+    "id": "cfp-ris-b3-004",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "medium",
+    "question": "A client wants life insurance with premium flexibility and the ability to adjust the death benefit. Which type is MOST appropriate?",
+    "options": [
+      "A) 20-year level term",
+      "D) Decreasing term",
+      "B) Whole life",
+      "C) Universal life"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Universal life offers premium flexibility (within limits), adjustable death benefits, and transparent cost structure showing mortality charges, expense charges, and interest credits. The policyholder can increase or decrease premiums and coverage as needs change, within policy guidelines."
+  },
+  {
+    "id": "cfp-est-b9-015",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Advanced Estate",
+    "difficulty": "hard",
+    "question": "What is a primary risk associated with establishing a Spousal Lifetime Access Trust (SLAT) for estate planning purposes?",
+    "options": [
+      "The trust assets are included in the grantor's estate for estate tax purposes",
+      "If the couple divorces, the grantor spouse loses access to the trust assets",
+      "SLAT assets cannot be invested in marketable securities",
+      "The trust must distribute all income annually to the beneficiary spouse"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A major risk of a SLAT is that the grantor's access depends on remaining married to the beneficiary spouse. In the event of divorce, the grantor loses indirect access to the trust assets, which have been irrevocably transferred. This makes divorce risk a critical consideration in SLAT planning."
+  },
+  {
+    "id": "cfp-ret-028",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Retirement Needs Analysis",
+    "difficulty": "hard",
+    "question": "Susan, age 60, needs $80,000/year in retirement income (beginning of year payments) starting at age 65. She expects to live until age 90 and assumes 3% inflation and a 6% return during retirement. Social Security will provide $30,000/year. How much capital does Susan need at retirement (age 65) using the capital preservation approach?",
+    "options": [
+      "A) $742,000",
+      "C) $1,156,000",
+      "B) $987,000",
+      "D) $1,412,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: C ($1,156,000)**\n\n**Capital Needs Analysis (Preservation Method):**\n1. Annual need from savings: $80,000 - $30,000 SS = $50,000\n2. Real rate of return: (1.06 ÷ 1.03) - 1 = 2.91%\n3. Time period: 25 years (age 65 to 90)\n4. Payment mode: Beginning of year (annuity due)\n\n**Calculator inputs:**\n- PMT = $50,000\n- N = 25\n- I/Y = 2.91%\n- Mode = BEGIN\n- Solve for PV\n\n**Capital preservation** means the $50,000/year (inflation-adjusted) is sustainable without depleting principal.\n\n**Result:** PV ≈ $1,156,000 needed at age 65\n\n**Why other answers are wrong:**\n- **A)** Uses ordinary annuity instead of annuity due\n- **B)** Ignores inflation adjustment\n- **D)** Double-counts Social Security or uses wrong rate"
+  },
+  {
+    "id": "cfp-pro-032",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "FINRA Regulation",
+    "difficulty": "hard",
+    "question": "How does Regulation Best Interest (Reg BI) differ from the suitability standard for broker-dealers?",
+    "options": [
+      "C) Reg BI eliminates all conflicts of interest",
+      "A) Reg BI only applies to retirement accounts",
+      "B) Reg BI requires acting in client's best interest, not just recommending suitable products",
+      "D) Reg BI is identical to suitability with a different name"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Regulation Best Interest (effective June 2020) is an enhanced standard for broker-dealers: (1) Disclosure of material facts about the relationship, (2) Care to act in client's best interest without placing BD's interest ahead, (3) Conflict mitigation, and (4) Compliance policies. It's stronger than suitability but NOT identical to fiduciary duty—it applies at time of recommendation, not as ongoing duty."
+  },
+  {
+    "id": "cfp-ret-b3-015",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "NonQualified Plans",
+    "difficulty": "hard",
+    "question": "In an unfunded nonqualified deferred compensation plan, the employee is considered:",
+    "options": [
+      "A secured creditor of the employer",
+      "An unsecured general creditor of the employer",
+      "The owner of the assets set aside for benefits",
+      "Protected by ERISA provisions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To avoid current taxation, NQDC plans must be unfunded, making the employee an unsecured general creditor. If the employer becomes insolvent, the employee loses the deferred amounts."
+  },
+  {
+    "id": "cfp-inv-b8-018",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Portfolio Construction",
+    "difficulty": "easy",
+    "question": "Target date funds are designed to:",
+    "options": [
+      "C) Provide fixed income only",
+      "D) Avoid international investments",
+      "B) Automatically shift from aggressive to conservative allocations as the target retirement date approaches",
+      "A) Guarantee returns by the target date"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Target date funds use a \"glide path\" that starts equity-heavy and gradually shifts toward bonds/cash as retirement approaches. They provide automatic rebalancing and risk adjustment, making them simple \"set and forget\" options. The allocation at retirement and beyond (the \"landing point\") varies by provider."
+  },
+  {
+    "id": "cfp-tax-b6-017",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Deductions and Credits",
+    "difficulty": "medium",
+    "question": "The residential clean energy credit for solar installations provides:",
+    "options": [
+      "C) A maximum credit of $5,000 per year",
+      "D) Credit only for battery storage systems",
+      "B) A credit equal to 30% of qualified costs with no annual cap",
+      "A) A deduction from gross income"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The residential clean energy credit is 30% of costs for solar panels, solar water heaters, wind energy, geothermal, fuel cells, and battery storage through 2032 (phasing down thereafter). There's no annual cap, and unused credits carry forward. The credit is nonrefundable."
+  },
+  {
+    "id": "cfp-ret-b3-009",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Social Security",
+    "difficulty": "easy",
+    "question": "A spouse who never worked may be eligible for a Social Security spousal benefit equal to what percentage of the worker's PIA if claimed at full retirement age?",
+    "options": [
+      "25%",
+      "50%",
+      "75%",
+      "100%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A non-working spouse can receive up to 50% of the worker's Primary Insurance Amount (PIA) if claimed at FRA. Early claiming reduces the spousal benefit."
+  },
+  {
+    "id": "cfp-tax-b10-003",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Income Tax",
+    "difficulty": "easy",
+    "question": "Above-the-line deductions are valuable because they:",
+    "options": [
+      "D) Are refundable",
+      "A) Only benefit itemizers",
+      "B) Reduce adjusted gross income, which affects eligibility for various credits and deductions regardless of itemizing",
+      "C) Are unlimited in amount"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Above-the-line (ATL) deductions reduce AGI—beneficial even if you take standard deduction. Lower AGI affects: IRA contribution deductibility, child tax credit, education credits, student loan interest deduction, Social Security taxation, ACA subsidy eligibility. Examples: IRA contributions, student loan interest, self-employed health insurance, HSA contributions."
+  },
+  {
+    "id": "cfp-gen-b6-009",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Statements",
+    "difficulty": "easy",
+    "question": "The liquidity ratio measures:",
+    "options": [
+      "C) Total debt as a percentage of assets",
+      "B) The number of months of expenses covered by liquid assets",
+      "A) Net worth growth over time",
+      "D) Investment returns"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Liquidity ratio = Liquid assets / Monthly expenses. It indicates emergency fund adequacy. A ratio of 3-6 is commonly recommended (3-6 months of expenses in accessible savings). Lower ratios indicate vulnerability to income disruption; higher may indicate excess cash earning low returns."
+  },
+  {
+    "id": "cfp-tax-b2-011",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Deductions",
+    "difficulty": "medium",
+    "question": "A married couple has: mortgage interest $14,000, state income taxes $18,000, property taxes $6,000, and charitable contributions $5,000. What is their total itemized deduction?",
+    "options": [
+      "B) $29,000",
+      "C) $33,000",
+      "D) $37,000",
+      "A) $43,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "**Correct Answer: B ($29,000)**\n\n**Itemized Deduction Calculation:**\n- Mortgage interest: $14,000 (deductible)\n- SALT (State + Property): Limited to $10,000\n- Charitable contributions: $5,000\n\nTotal: $14,000 + $10,000 + $5,000 = $29,000\n\nThe SALT cap limits combined state income and property taxes to $10,000.\n\n**Why other answers are wrong:**\n- **A) $43,000:** No SALT cap applied\n- **C) $33,000:** Incorrect SALT calculation\n- **D) $37,000:** Incorrect calculation"
+  },
+  {
+    "id": "cfp-tax-b3-014",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Charitable Giving",
+    "difficulty": "medium",
+    "question": "Cash contributions to public charities are generally deductible up to what percentage of AGI?",
+    "options": [
+      "20%",
+      "30%",
+      "50%",
+      "60%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Cash contributions to public charities (50% limit organizations) are deductible up to 60% of AGI. Appreciated capital gain property to public charities is limited to 30% of AGI. Private foundations have lower limits."
+  },
+  {
+    "id": "cfp-ris-b2-005",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Indexed Annuities",
+    "difficulty": "medium",
+    "question": "An indexed annuity has a participation rate of 80% and a cap of 6%. The S&P 500 gains 10%. What is credited to the annuity?",
+    "options": [
+      "A) 10%",
+      "D) 4.8%",
+      "B) 8%",
+      "C) 6%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The participation rate of 80% × 10% gain = 8% potential credit. However, the 6% cap limits the credit. The annuity is credited 6% (the cap). Caps, participation rates, and spreads are common features that limit upside in indexed annuities."
+  },
+  {
+    "id": "cfp-ris-b6-008",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Disability Insurance",
+    "difficulty": "hard",
+    "question": "A Social Insurance Supplement/Offset rider on disability insurance:",
+    "options": [
+      "A) Eliminates Social Security",
+      "C) Is mandatory",
+      "B) Reduces policy benefits by Social Security disability received, or provides additional benefit if SSDI is denied",
+      "D) Only applies to group plans"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Social Insurance Supplement (SIS) provides extra benefit if SSDI is denied or delayed. Social Insurance Offset reduces the base benefit by SSDI received. The combination ensures adequate coverage while avoiding over-insurance. SSDI is difficult to obtain (strict definition), so SIS provides needed interim/permanent protection."
+  },
+  {
+    "id": "cfp-ris-b4-002",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "medium",
+    "question": "Outstanding policy loans at death:",
+    "options": [
+      "D) Are forgiven automatically",
+      "A) Must be repaid by the estate before death benefit is paid",
+      "C) Have no effect on the death benefit",
+      "B) Reduce the death benefit by the outstanding loan amount plus accrued interest"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Policy loans reduce the death benefit dollar-for-dollar plus accumulated interest. They don't require repayment during life but will reduce proceeds to beneficiaries. If loans plus interest exceed cash value, the policy may lapse, potentially creating taxable income if there's gain in the policy."
+  },
+  {
+    "id": "cfp-est-b3-010",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Charitable Gift Annuities",
+    "difficulty": "medium",
+    "question": "How does a charitable gift annuity differ from a charitable remainder annuity trust?",
+    "options": [
+      "A) CGAs are backed by the charity's general assets; CRATs are separate trusts",
+      "B) CGAs provide variable payments; CRATs provide fixed payments",
+      "C) CGAs require a separate trust; CRATs are contracts",
+      "D) CGAs have no age requirement; CRATs require beneficiaries over 50"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A charitable gift annuity is a contract where the charity agrees to pay a fixed annuity backed by its general assets. A CRAT is a separate trust with assets held by a trustee. CGAs are simpler but the donor bears the risk of the charity's financial health."
+  },
+  {
+    "id": "cfp-ins-b2-023",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "hard",
+    "question": "A Section 1035 exchange allows tax-free transfer from:",
+    "options": [
+      "An annuity to a life insurance policy",
+      "A life insurance policy to an annuity",
+      "A retirement account to life insurance",
+      "A life insurance policy to a qualified plan"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Section 1035 permits tax-free exchanges of life insurance to another life policy OR to an annuity (downgrade OK). Annuity to life insurance is NOT permitted. Retirement accounts are not eligible for 1035 exchanges."
+  },
+  {
+    "id": "cfp-ris-b9-015",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Liability Insurance",
+    "difficulty": "medium",
+    "question": "An umbrella policy's retained limit (self-insured retention) applies when:",
+    "options": [
+      "B) Claims are covered by umbrella but not by underlying policies, requiring out-of-pocket payment before umbrella pays",
+      "D) Premium payments",
+      "C) Claims under underlying limits",
+      "A) All claims"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Self-insured retention (SIR): umbrella covers some claims not covered by underlying. For those: must pay SIR (often $10K) before umbrella. Example: umbrella covers personal injury (libel/slander) not in auto policy. If sued, pay SIR, then umbrella. Not same as deductible—only applies to claims outside underlying coverage. Good umbrella feature: broader than underlying."
+  },
+  {
+    "id": "cfp-est-b9-010",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Tax",
+    "difficulty": "medium",
+    "question": "State estate tax considerations are important because:",
+    "options": [
+      "D) Federal preempts all state taxes",
+      "C) Only Washington, DC has estate tax",
+      "A) All states have same rules as federal",
+      "B) Some states have lower exemptions than federal, decouple from federal law, or impose inheritance taxes on beneficiaries"
+    ],
+    "correctAnswer": 3,
+    "explanation": "State estate/inheritance taxes: ~12 states plus DC have estate tax, often with lower exemptions than federal ($1-6M vs. $13M federal). ~6 states have inheritance tax (rate depends on beneficiary relationship). Some have both. Can't assume federal planning is sufficient. State of residence and property location both matter. May affect domicile decisions."
+  },
+  {
+    "id": "cfp-ris-b4-018",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "hard",
+    "question": "Premium financing for life insurance is most appropriate when:",
+    "options": [
+      "D) No collateral is available",
+      "C) The client wants term insurance",
+      "A) The client cannot afford any premium",
+      "B) Borrowing costs are lower than the economic value of keeping assets invested, and estate planning benefits justify the costs and risks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Premium financing involves borrowing premiums from third-party lenders, secured by the policy's cash value and other collateral. It's complex, involves ongoing costs and risks, and is appropriate for high-net-worth clients who can benefit from leverage in estate and insurance planning. Rising rates and exit strategies are key concerns."
+  },
+  {
+    "id": "cfp-gen-b7-015",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Planning Process",
+    "difficulty": "medium",
+    "question": "Proper documentation in financial planning:",
+    "options": [
+      "D) Should be minimized to reduce liability",
+      "B) Protects both client and planner, supports recommendations, creates continuity, and demonstrates due diligence",
+      "C) Is optional for trusted clients",
+      "A) Is only for regulatory compliance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Documentation creates records of client information gathered, analysis performed, recommendations made, and decisions taken. It protects against disputes, enables continuity if the planner changes, demonstrates appropriate care, and satisfies regulatory requirements. \"If it isn't documented, it didn't happen.\""
+  },
+  {
+    "id": "cfp-gen-014",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Education Planning",
+    "difficulty": "hard",
+    "question": "For FAFSA purposes, which asset has the GREATEST negative impact on a dependent student's Expected Family Contribution (EFC)?",
+    "options": [
+      "D) Parent's retirement accounts",
+      "B) Student's savings account in their name",
+      "A) Parent-owned 529 plan",
+      "C) Grandparent-owned 529 plan"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: B (Student's savings account)**\n\n**FAFSA Asset Assessment Rates:**\n\n**Student Assets:** 20% per year\n- Savings, checking, investments in student's name\n- UGMA/UTMA accounts\n\n**Parent Assets:** Up to 5.64%\n- 529 plans owned by parent\n- Brokerage accounts\n\n**Not Counted:**\n- Retirement accounts (401k, IRA)\n- Primary residence equity\n- Grandparent-owned 529s (until distribution)\n\n**Ranking of negative impact:**\n1. Student savings (20%)\n2. Parent 529 (5.64%)\n3. Grandparent 529 (0% until distributed)\n4. Retirement accounts (0%)"
+  },
+  {
+    "id": "cfp-inv-001",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Analysis",
+    "difficulty": "medium",
+    "question": "An investor holds a portfolio with a Beta of 1.2. The market return is expected to be 10%, and the risk-free rate is 2%. According to CAPM, what is the required rate of return for this portfolio?",
+    "options": [
+      "C) 12.0%",
+      "D) 14.0%",
+      "A) 11.6%",
+      "B) 10.0%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: A (11.6%)**\n\n**CAPM Formula:** Ri = Rf + β × (Rm - Rf)\n\n**Calculation:**\n- Rf = 2%\n- Rm = 10%\n- Risk Premium = (10% - 2%) = 8%\n- Beta = 1.2\n\nRi = 2% + 1.2 × 8% = 2% + 9.6% = **11.6%**"
+  },
+  {
+    "id": "cfp-psy-b8-012",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Client Assessment",
+    "difficulty": "medium",
+    "question": "Understanding a client's decision-making style helps the planner:",
+    "options": [
+      "B) Present information and options in a way that aligns with how the client processes and makes choices",
+      "C) Avoid client involvement",
+      "A) Make decisions for them",
+      "D) Rush decisions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Decision styles vary: analytical (wants data, spreadsheets), intuitive (gut feel, trust), consultative (values others' input), decisive (quick, action-oriented). Neither good nor bad—adapt approach. Analytical: provide detailed analysis. Intuitive: focus on big picture, values. Consultative: involve family, offer references. Decisive: get to recommendations quickly. Flexibility improves client experience."
+  },
+  {
+    "id": "cfp-est-046",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Planning",
+    "difficulty": "medium",
+    "question": "What is the primary estate planning advantage of a Qualified Personal Residence Trust (QPRT)?",
+    "options": [
+      "Eliminates all gift tax on residence transfer",
+      "Transfers residence at discounted gift tax value",
+      "Provides step-up in basis at death",
+      "Allows unlimited transfers to non-citizens"
+    ],
+    "correctAnswer": 1,
+    "explanation": "QPRT transfers the residence at a discounted gift tax value based on the retained income interest. The longer the retained term, the lower the gift value. If the grantor survives the term, the residence passes to heirs at the discounted value. Risk: If grantor dies during term, full FMV included in estate."
+  },
+  {
+    "id": "cfp-est-b5-012",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Business Succession",
+    "difficulty": "hard",
+    "question": "An installment sale to an intentionally defective grantor trust (IDGT) achieves:",
+    "options": [
+      "C) Complete gift tax exclusion",
+      "A) Immediate income tax deduction",
+      "D) Elimination of all death taxes",
+      "B) Estate freeze by transferring appreciation potential while grantor pays income taxes on trust income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Installment sales to IDGTs freeze the estate value (at sale price plus AFR interest) while future appreciation occurs outside the estate. The grantor pays income tax on trust earnings without additional gift consequences, effectively making tax-free gifts. Requires careful structuring with adequate consideration."
+  },
+  {
+    "id": "cfp-est-b9-023",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Beneficiary Planning",
+    "difficulty": "easy",
+    "question": "A spendthrift provision in a trust:",
+    "options": [
+      "A) Forces beneficiary to spend all funds",
+      "D) Only applies to minors",
+      "C) Eliminates all distributions",
+      "B) Prevents beneficiaries from assigning their interest and protects trust assets from beneficiaries' creditors"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Spendthrift provision: beneficiary cannot voluntarily transfer (assign) trust interest, and creditors cannot reach trust principal before distribution. Once distributed, no protection. Exceptions: child support, alimony, IRS, sometimes tort claims. Standard in most trusts. Protects beneficiaries from themselves and others. Enforceability varies by state."
+  },
+  {
+    "id": "cfp-ris-b4-016",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Long-Term Care",
+    "difficulty": "hard",
+    "question": "State LTC Partnership programs offer:",
+    "options": [
+      "A) Free long-term care coverage",
+      "C) Guaranteed insurability regardless of health",
+      "D) Tax deductions for all LTC premiums",
+      "B) Dollar-for-dollar asset protection for Medicaid eligibility based on LTC benefits received"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Partnership programs allow individuals who exhaust qualified LTC benefits to protect assets equal to benefits received when applying for Medicaid. Without partnership protection, nearly all assets must be spent before Medicaid eligibility. Partnership policies must meet specific requirements and are available in most states."
+  },
+  {
+    "id": "cfp-est-071",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Planning",
+    "difficulty": "medium",
+    "question": "The alternate valuation date for estate tax purposes is:",
+    "options": [
+      "3 months after death",
+      "6 months after death",
+      "9 months after death",
+      "12 months after death"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Alternate valuation date is 6 months after death. Can only be elected if it reduces both gross estate AND estate tax. Property sold or distributed before 6 months valued at date of distribution. Elected on Form 706."
+  },
+  {
+    "id": "cfp-gen-001",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Structure of Financial Planning",
+    "difficulty": "medium",
+    "question": "While establishing and defining the client-planner relationship, a CFP® professional must provide certain information to the client. Which of the following is NOT required to be provided in writing specifically at this stage for financial planning engagements?",
+    "options": [
+      "D) Compensation methodology (fee-only, commission, etc.)",
+      "A) Privacy Policy",
+      "B) Terms of the engagement (scope and limitations)",
+      "C) Specific investment recommendations"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: C.** Specific investment recommendations are developed *after* data gathering and analysis. At the initial stage of establishing the relationship (Step 1 of the Financial Planning Process), the professional must disclose the scope of services, conflicts of interest, compensation methods, and privacy policies. Recommendations come in Step 4.\n\n**Incorrect Options:**\n* **A, B, D:** These are foundational disclosures required by the Code of Ethics and Standards of Conduct when entering into a financial planning engagement."
+  },
+  {
+    "id": "cfp-ret-b6-009",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "IRAs",
+    "difficulty": "hard",
+    "question": "A prohibited transaction with an IRA includes:",
+    "options": [
+      "D) Converting to a Roth IRA",
+      "B) Selling property to or buying property from disqualified persons, or using IRA assets for personal benefit",
+      "A) Contributing the maximum amount",
+      "C) Rolling over to another IRA"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Prohibited transactions include transactions between the IRA and disqualified persons (owner, family members, fiduciaries), such as selling property to the IRA, borrowing from it, or using IRA property personally. Consequences can include immediate taxation of the entire IRA and penalties."
+  },
+  {
+    "id": "cfp-tax-b3-002",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Capital Gains",
+    "difficulty": "medium",
+    "question": "A client purchases stock on January 15, 2025. To receive long-term capital gain treatment, they must hold the stock until at least:",
+    "options": [
+      "January 15, 2026",
+      "January 16, 2026",
+      "December 31, 2025",
+      "January 14, 2026"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Long-term treatment requires holding MORE than one year. The holding period includes the day after acquisition but not the acquisition date itself. January 15 + more than 1 year = January 16 of the following year."
+  },
+  {
+    "id": "cfp-inv-b6-017",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Alternatives",
+    "difficulty": "hard",
+    "question": "Private equity J-curve effect refers to:",
+    "options": [
+      "A) Consistent positive returns throughout the investment period",
+      "D) The timing of dividend distributions",
+      "B) Negative returns in early years (fees, capital calls) followed by positive returns as investments mature",
+      "C) The correlation between private and public equity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The J-curve describes typical private equity cash flow pattern: negative returns initially (management fees, deal costs) while capital is deployed. As investments mature and are sold (typically years 4-8+), returns turn positive and accelerate, creating a J-shaped return pattern over the fund life."
+  },
+  {
+    "id": "cfp-ret-060",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "easy",
+    "question": "A self-employed consultant, sole proprietor with no employees, wants to maximize retirement contributions with minimal administration. Which plan is MOST appropriate?",
+    "options": [
+      "C) 401(k) plan",
+      "A) Defined benefit plan",
+      "B) SEP-IRA",
+      "D) SIMPLE IRA"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: B (SEP-IRA)**\n\nSEP-IRA advantages for self-employed:\n- Contributions up to 25% of net SE income (max $71,500)\n- Minimal paperwork—no annual Form 5500\n- Deadline: Tax return due date plus extensions\n- No employee contributions to manage\n\n**Why other answers are wrong:**\n- **A)** Defined benefit is complex and expensive to administer\n- **C)** 401(k) requires more administration (Form 5500)\n- **D)** SIMPLE has lower limits ($17,000 + 3% = less than SEP potential)"
+  },
+  {
+    "id": "cfp-ins-b3-016",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Health Insurance",
+    "difficulty": "easy",
+    "question": "Under COBRA, a qualified beneficiary who loses coverage due to the employee's termination (other than for gross misconduct) may continue coverage for up to:",
+    "options": [
+      "12 months",
+      "18 months",
+      "24 months",
+      "36 months"
+    ],
+    "correctAnswer": 1,
+    "explanation": "COBRA provides 18 months of continuation for termination or reduced hours. The 36-month period applies to divorce, death of employee, or Medicare eligibility of the employee."
+  },
+  {
+    "id": "cfp-inv-b4-011",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Alternative Investments",
+    "difficulty": "medium",
+    "question": "Which qualifies as an accredited investor under SEC rules?",
+    "options": [
+      "B) Net worth over $1 million excluding primary residence",
+      "C) Net worth over $1 million including primary residence",
+      "D) 5 years of investment experience",
+      "A) Income over $100,000 for each of the past two years"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Accredited investor status requires: (1) income over $200,000 annually ($300,000 joint) for past 2 years with expectation of same, OR (2) net worth over $1 million excluding primary residence. Recent changes added professional certifications (Series 65, etc.) as qualification pathways."
+  },
+  {
+    "id": "cfp-psy-b2-006",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Cognitive Biases",
+    "difficulty": "medium",
+    "question": "A client refuses to use a $50,000 \"vacation fund\" savings account to pay off 18% credit card debt, saying \"that money is for vacations.\" This is an example of:",
+    "options": [
+      "D) Sunk cost fallacy",
+      "C) Mental accounting",
+      "A) Endowment effect",
+      "B) Framing effect"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mental accounting involves treating money differently based on subjective criteria like source or intended use, rather than recognizing all money is fungible. Financially, paying off 18% debt would provide a guaranteed \"return\" higher than typical savings."
+  },
+  {
+    "id": "cfp-pcr-b5-015",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Code of Ethics",
+    "difficulty": "easy",
+    "question": "Professionalism as a CFP® principle includes:",
+    "options": [
+      "B) Acting with dignity, courtesy, and respect; cooperating with regulators; and upholding the profession's reputation",
+      "C) Competing aggressively against other advisors",
+      "A) Only following regulations that are enforced",
+      "D) Maximizing personal income"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Professionalism encompasses conduct that maintains public confidence in the profession. This includes treating colleagues and regulators with respect, cooperating with CFP Board and regulatory investigations, continuing education, and avoiding conduct that reflects adversely on the profession."
+  },
+  {
+    "id": "cfp-inv-b7-025",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Theory",
+    "difficulty": "hard",
+    "question": "The Treynor ratio differs from the Sharpe ratio by using:",
+    "options": [
+      "A) Total return instead of excess return",
+      "C) Only positive returns",
+      "B) Beta (systematic risk) instead of standard deviation (total risk) in the denominator",
+      "D) Maximum drawdown"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Treynor ratio = (Portfolio return - Risk-free rate) / Beta. It measures excess return per unit of systematic risk (beta). Unlike Sharpe (which uses total risk/standard deviation), Treynor is more appropriate for well-diversified portfolios where unsystematic risk has been eliminated. Both measure risk-adjusted returns."
+  },
+  {
+    "id": "cfp-ris-b3-022",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Health Insurance",
+    "difficulty": "medium",
+    "question": "Medicare Supplement (Medigap) insurance is designed to:",
+    "options": [
+      "A) Replace Medicare coverage",
+      "B) Cover costs not paid by Original Medicare, like copayments and deductibles",
+      "D) Pay for long-term nursing home care",
+      "C) Provide prescription drug coverage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Medigap policies fill the \"gaps\" in Original Medicare, covering costs like Part A and B deductibles, copayments, and coinsurance. Standardized plans (A through N) have defined benefits. Medigap cannot be used with Medicare Advantage plans and does not cover Part D (prescriptions)."
+  },
+  {
+    "id": "cfp-ins-b3-007",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "easy",
+    "question": "Which policy rider allows a policyowner to use a portion of the death benefit to pay for terminal illness care?",
+    "options": [
+      "Waiver of premium rider",
+      "Accelerated death benefit rider",
+      "Guaranteed insurability rider",
+      "Accidental death benefit rider"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The accelerated death benefit (living benefit) rider allows access to a portion of the death benefit when diagnosed with a terminal illness, typically defined as a life expectancy of 12-24 months."
+  },
+  {
+    "id": "cfp-psy-b7-004",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Behavioral Finance",
+    "difficulty": "hard",
+    "question": "Judging an investment decision as good solely because it made money demonstrates:",
+    "options": [
+      "A) Sound analysis",
+      "D) Hindsight effectiveness",
+      "B) Outcome bias, which evaluates decisions by results rather than the quality of the decision process",
+      "C) Returns-based investing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Outcome bias: judging decisions by results rather than process. A risky bet that pays off was still a bad decision if the odds were against it. Good process can have bad outcomes; bad process can luckily succeed. Evaluate: was the decision reasonable given information available at the time? Focus on quality process, not hindsight."
+  },
+  {
+    "id": "cfp-gen-b7-002",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Planning Process",
+    "difficulty": "easy",
+    "question": "Quantitative data gathered for financial planning includes:",
+    "options": [
+      "C) Goals and dreams only",
+      "B) Income, expenses, assets, liabilities, insurance coverage, and tax returns—numerical financial facts",
+      "D) Family history only",
+      "A) Only client attitudes about money"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Quantitative data is numerical: income/expenses, account values, debts, policy details, tax information. Qualitative data includes goals, values, risk tolerance, family dynamics. Both are essential—numbers without context and goals without data don't enable effective planning."
+  },
+  {
+    "id": "cfp-ret-b5-021",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "hard",
+    "question": "After-tax 401(k) contributions (beyond the employee elective deferral limit) are advantageous because:",
+    "options": [
+      "B) They can be converted to Roth 401(k) or Roth IRA with only earnings subject to tax",
+      "C) They are always tax-free when withdrawn",
+      "A) They provide an immediate tax deduction",
+      "D) They have no contribution limits"
+    ],
+    "correctAnswer": 0,
+    "explanation": "After-tax 401(k) contributions (up to the §415 limit including employer match) can be converted to Roth accounts in a \"mega backdoor Roth\" strategy. The contributions convert tax-free; only earnings are taxed. This allows high earners to add significant Roth savings beyond normal Roth IRA income limits."
+  },
+  {
+    "id": "cfp-ret-b6-020",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "medium",
+    "question": "A profit sharing plan differs from a money purchase pension plan in that:",
+    "options": [
+      "D) Money purchase plans are not qualified",
+      "B) Profit sharing contributions are discretionary while money purchase requires fixed annual contributions",
+      "A) Only profit sharing allows Roth contributions",
+      "C) Profit sharing has higher contribution limits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Profit sharing allows flexible employer contributions (0-25% of compensation annually based on profits and discretion). Money purchase pension plans require fixed annual contributions as a percentage of pay. Money purchase penalty for under-contribution makes them less flexible. Many employers prefer profit sharing for this flexibility."
+  },
+  {
+    "id": "cfp-psy-b2-016",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Client Counseling",
+    "difficulty": "easy",
+    "question": "Effective financial goals should be SMART, which stands for:",
+    "options": [
+      "C) Strategic, Meaningful, Actionable, Reasonable, Tracked",
+      "D) Specific, Monetary, Agreed, Recorded, Targeted",
+      "A) Simple, Measured, Attainable, Realistic, Timely",
+      "B) Specific, Measurable, Achievable, Relevant, Time-bound"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound. This framework helps transform vague aspirations into concrete, actionable objectives that clients can work toward and measure progress against."
+  },
+  {
+    "id": "cfp-ris-b3-025",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Liability Insurance",
+    "difficulty": "medium",
+    "question": "A CFP® professional should carry which type of liability insurance?",
+    "options": [
+      "B) Errors and omissions (E&O) / professional liability",
+      "D) No insurance is needed with proper disclosures",
+      "A) Commercial general liability only",
+      "C) Product liability insurance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CFP® professionals should carry errors and omissions (E&O) or professional liability insurance to protect against claims arising from professional advice or services. General liability covers premises accidents, not professional malpractice. E&O covers claims of negligence, errors, or omissions in professional duties."
+  },
+  {
+    "id": "cfp-tax-b8-017",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Income",
+    "difficulty": "hard",
+    "question": "Cancelled debt is generally taxable income, but exceptions include:",
+    "options": [
+      "C) Credit card debt only",
+      "A) Any personal debt cancellation",
+      "D) Debts under $1,000",
+      "B) Bankruptcy, insolvency, qualified principal residence indebtedness (through 2025), and student loan forgiveness meeting certain criteria"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Debt discharged in bankruptcy is excluded. Insolvency excludes debt forgiveness to the extent of insolvency. Qualified principal residence debt exclusion has been extended. Certain student loan forgiveness is excluded through 2025. Otherwise, Form 1099-C cancellation amounts are taxable ordinary income."
+  },
+  {
+    "id": "cfp-est-b2-019",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Gift Tax",
+    "difficulty": "medium",
+    "question": "Which feature must a gift have to qualify for the annual gift tax exclusion?",
+    "options": [
+      "The gift must be of cash only",
+      "The gift must be a present interest, not a future interest",
+      "The gift must be to a family member",
+      "The gift must be less than $10,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The annual exclusion only applies to gifts of present interests - where the donee has immediate access, use, or enjoyment. Future interests (like remainder interests in trusts) do not qualify unless Crummey powers are added."
+  },
+  {
+    "id": "cfp-psy-b2-021",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Cognitive Biases",
+    "difficulty": "medium",
+    "question": "A client values their concentrated stock position at $500,000 but wouldn't pay $500,000 to acquire the same position. This demonstrates:",
+    "options": [
+      "D) Disposition effect",
+      "A) Familiarity bias",
+      "C) Anchoring bias",
+      "B) Endowment effect"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The endowment effect causes people to value things they own more than equivalent things they don't own. This makes clients reluctant to sell or diversify concentrated positions, even when financially advisable."
+  },
+  {
+    "id": "cfp-tax-b9-023",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Investment Tax",
+    "difficulty": "hard",
+    "question": "Installment sale reporting allows:",
+    "options": [
+      "A) Avoiding all capital gain tax",
+      "B) Spreading gain recognition over years as payments are received, with each payment containing return of basis, gain, and interest",
+      "D) Only for real estate",
+      "C) Converting gain to ordinary income"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Installment sales (at least one payment after sale year) spread gain as payments are received. Gross profit ratio determines taxable portion of each principal payment. Interest is separately taxable. Not available for inventory, stocks traded on exchanges, or depreciation recapture. Can elect out. Useful for managing income/bracket."
+  },
+  {
+    "id": "cfp-inv-b8-023",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Portfolio Construction",
+    "difficulty": "easy",
+    "question": "Dollar-cost averaging involves:",
+    "options": [
+      "C) Only buying at market lows",
+      "B) Investing fixed amounts at regular intervals, buying more shares when prices are low and fewer when high",
+      "D) Timing the market",
+      "A) Investing a lump sum immediately"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DCA spreads purchases over time with fixed dollar amounts, naturally buying more shares at lower prices. It reduces timing risk and provides psychological comfort. While lump-sum investing historically outperforms (more time in market), DCA suits regular payroll investing and reduces regret risk."
+  },
+  {
+    "id": "cfp-pcr-b5-019",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Fiduciary Duty",
+    "difficulty": "hard",
+    "question": "The requirement that CFP® professionals receive only reasonable and disclosed compensation means:",
+    "options": [
+      "B) Compensation must be disclosed, proportionate to value provided, and not create incentives to recommend unsuitable products",
+      "A) Fees cannot exceed industry averages",
+      "C) All CFP® professionals must charge the same rates",
+      "D) Commission-based compensation is prohibited"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Reasonable compensation considers value provided, complexity, and market rates. The key is full disclosure and alignment of incentives. Compensation structures shouldn't drive recommendations that aren't in client interest. Neither fee-only nor commission-based is inherently more \"fiduciary\"—transparency and alignment matter."
+  },
+  {
+    "id": "cfp-ret-b9-007",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Distributions",
+    "difficulty": "medium",
+    "question": "The 60-day rollover rule allows:",
+    "options": [
+      "B) One indirect rollover per 12-month period per taxpayer, with funds recontributed within 60 days to avoid taxation",
+      "D) Partial rollovers prohibited",
+      "C) Extensions for any reason",
+      "A) Unlimited rollovers annually"
+    ],
+    "correctAnswer": 0,
+    "explanation": "60-day indirect rollover: receive distribution, redeposit to eligible plan within 60 days. Limited to one per person per 12 months (not per account). 20% mandatory withholding from distributions complicates rollover of full amount. Missed deadline = taxable distribution plus potential penalty. Direct trustee-to-trustee transfers avoid these issues."
+  },
+  {
+    "id": "cfp-ris-b3-021",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "easy",
+    "question": "A waiver of premium rider:",
+    "options": [
+      "B) Waives premiums if the insured becomes disabled",
+      "A) Eliminates the need to pay premiums entirely",
+      "D) Allows premium payments to be skipped without policy lapse",
+      "C) Reduces the death benefit to lower premiums"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A waiver of premium rider keeps the policy in force without premium payments if the insured becomes totally disabled (typically unable to work in any occupation) before a specified age (usually 60-65). The policy remains in effect with premiums paid by the insurance company during disability."
+  },
+  {
+    "id": "cfp-gen-040",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Ratios",
+    "difficulty": "hard",
+    "question": "A client has total assets of $800,000 and total liabilities of $320,000. Their debt-to-asset ratio and net worth are:",
+    "options": [
+      "B) 60% debt ratio; $480,000 net worth",
+      "D) 25% debt ratio; $480,000 net worth",
+      "A) 40% debt ratio; $480,000 net worth",
+      "C) 40% debt ratio; $320,000 net worth"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Financial Ratio Calculations:**\n\n**Debt-to-Asset Ratio:**\nTotal Liabilities / Total Assets = $320,000 / $800,000 = **40%**\n\n**Net Worth:**\nTotal Assets - Total Liabilities = $800,000 - $320,000 = **$480,000**\n\nA 40% debt ratio is moderate—meaning 60% of assets are owned free and clear. Generally, debt ratios below 50% indicate reasonable financial health, though context matters (age, asset types, interest rates)."
+  },
+  {
+    "id": "cfp-ret-b2-023",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Individual Plans",
+    "difficulty": "medium",
+    "question": "Which statement about Roth 401(k) plans is CORRECT?",
+    "options": [
+      "D) Distributions are never taxable at any age",
+      "A) Contributions are subject to income limits like Roth IRA",
+      "B) Employer matching contributions go into pre-tax account",
+      "C) There are no contribution limits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: B (Employer match goes to pre-tax account)**\n\n**Roth 401(k) Features:**\n- No income limits for contributions (unlike Roth IRA)\n- Same contribution limits as traditional 401(k)\n- Employee contributions: Roth (after-tax)\n- Employer contributions: Must be pre-tax\n- Qualified distributions are tax-free\n\n**Why other answers are wrong:**\n- **A)** No income limits on Roth 401(k)\n- **C)** Same limits as traditional 401(k)\n- **D)** Non-qualified distributions may include taxable earnings"
+  },
+  {
+    "id": "cfp-inv-b6-013",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Options",
+    "difficulty": "hard",
+    "question": "An option's delta of 0.60 indicates:",
+    "options": [
+      "D) The option has 60 days to expiration",
+      "B) The option price will change approximately $0.60 for a $1 change in the underlying stock",
+      "A) The option will expire worthless 60% of the time",
+      "C) 60% of the option's value is intrinsic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Delta measures the option price sensitivity to changes in the underlying asset. A delta of 0.60 means the call option gains (or loses) $0.60 for each $1 the stock moves. Delta also roughly approximates the probability the option expires in-the-money. Puts have negative deltas."
+  },
+  {
+    "id": "cfp-gen-b4-018",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Time Value of Money",
+    "difficulty": "hard",
+    "question": "A project with a Net Present Value (NPV) greater than zero indicates:",
+    "options": [
+      "A) The project will definitely be profitable",
+      "C) The project has no risk",
+      "D) The payback period is less than one year",
+      "B) The project's return exceeds the discount rate used"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A positive NPV means the project's expected return exceeds the discount rate (required rate of return). The investment adds value beyond the minimum acceptable return. NPV > 0 suggests acceptance; NPV < 0 suggests rejection. This is a key capital budgeting decision rule."
+  },
+  {
+    "id": "cfp-est-b6-014",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Administration",
+    "difficulty": "hard",
+    "question": "IRS Form 706 (estate tax return) must be filed:",
+    "options": [
+      "C) Only if tax is owed",
+      "D) Within 30 days of death",
+      "B) For estates exceeding the filing threshold, typically within 9 months of death (extendable to 15 months)",
+      "A) For all estates"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Form 706 is required when the gross estate plus adjusted taxable gifts exceeds the exemption amount (about $7.0M in 2026 after TCJA sunset). Filing is also required to elect portability even if no tax is owed. Due 9 months after death with automatic 6-month extension available. Payment is due at 9 months without extension."
+  },
+  {
+    "id": "cfp-tax-b5-013",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Business Tax",
+    "difficulty": "medium",
+    "question": "The Qualified Business Income (QBI) deduction allows eligible taxpayers to deduct up to what percentage of qualified business income from pass-through entities?",
+    "options": [
+      "C) 20%",
+      "B) 15%",
+      "A) 10%",
+      "D) 25%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Section 199A QBI deduction allows eligible taxpayers to deduct up to 20% of qualified business income from partnerships, S corporations, and sole proprietorships. The deduction is subject to taxable income limits, wage/capital limitations for higher-income taxpayers, and exclusions for specified services trades or businesses."
+  },
+  {
+    "id": "cfp-tax-b10-002",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Income Tax",
+    "difficulty": "easy",
+    "question": "A Dependent Care FSA allows employees to:",
+    "options": [
+      "B) Set aside pre-tax dollars for qualifying dependent care expenses enabling work, up to $5,000 annually",
+      "D) Fund children's education",
+      "A) Save for future childcare",
+      "C) Cover healthcare costs"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dependent Care FSA: pre-tax contribution for care of qualifying persons (child under 13, disabled spouse/dependent) enabling work. Max: $5,000/year ($2,500 MFS). Use-it-or-lose-it (some employers allow grace period or carryover up to $500). Reduces AGI. Coordinates with child care credit—can't use same expenses for both."
+  },
+  {
+    "id": "cfp-ret-b5-008",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "IRAs",
+    "difficulty": "medium",
+    "question": "If a taxpayer makes an excess IRA contribution and does not correct it, the penalty is:",
+    "options": [
+      "C) Forfeiture of the entire IRA balance",
+      "B) 6% of the excess amount each year until corrected",
+      "A) 10% of the excess amount once",
+      "D) No penalty if withdrawn within 5 years"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Excess IRA contributions are subject to a 6% excise tax each year until the excess is removed. The penalty can be avoided by withdrawing the excess plus earnings before the tax filing deadline (plus extensions) or by applying the excess to a future year's contribution limit."
+  },
+  {
+    "id": "cfp-inv-038",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Theory",
+    "difficulty": "easy",
+    "question": "A stock with a beta of 0.5 would be expected to:",
+    "options": [
+      "D) Always outperform the market",
+      "A) Decline 10% when the market declines 5%",
+      "C) Remain unchanged regardless of market movements",
+      "B) Decline 5% when the market declines 10%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: B**\n\n**Beta Interpretation:**\n- Beta = 1.0: Moves with the market\n- Beta > 1.0: Amplifies market movements\n- Beta < 1.0: Dampens market movements\n- Beta = 0.5: Half as volatile as market\n\n**Calculation:**\nMarket decline = -10%\nStock movement = Beta × Market movement\nStock decline = 0.5 × (-10%) = **-5%**\n\n**Why other answers are wrong:**\n- **A)** Would require beta of 2.0\n- **C)** Would require beta of 0\n- **D)** Beta doesn't predict outperformance"
+  },
+  {
+    "id": "cfp-pro-059",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Fiduciary Duty",
+    "difficulty": "hard",
+    "question": "When a CFP® professional identifies a material conflict of interest, they must:",
+    "options": [
+      "B) Disclose the conflict and obtain informed consent to proceed",
+      "A) Immediately terminate the client relationship",
+      "C) Ignore it if it benefits the client",
+      "D) File a report with the SEC"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Material conflicts require: 1) Full and fair disclosure, 2) Informed consent from client, 3) Proper management of conflict. Termination not required if properly managed. Ignoring conflicts violates fiduciary duty. SEC reporting not required unless securities violation."
+  },
+  {
+    "id": "cfp-ris-b8-006",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "easy",
+    "question": "An in-force illustration for life insurance shows:",
+    "options": [
+      "D) Competitor products",
+      "A) Guaranteed future returns",
+      "C) Past performance only",
+      "B) How the policy is projected to perform based on current assumptions including values, premiums, and potential lapse date"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In-force illustration: projects policy performance from current state. Shows: cash value, death benefit, premium payments at current assumptions vs. guaranteed. Critical for: universal life policies needing monitoring, policies at risk of lapse, planning future premiums. Request regularly (annually for UL). Different from original illustration—based on current reality."
+  },
+  {
+    "id": "cfp-tax-b5-020",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Deductions",
+    "difficulty": "easy",
+    "question": "Medical expenses are deductible to the extent they exceed what percentage of AGI?",
+    "options": [
+      "B) 7.5%",
+      "A) 2%",
+      "C) 10%",
+      "D) 12.5%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Unreimbursed medical expenses are deductible as an itemized deduction to the extent they exceed 7.5% of AGI. Only the amount above this threshold is deductible. This includes costs for diagnosis, treatment, and prevention of disease, as well as insurance premiums."
+  },
+  {
+    "id": "cfp-est-b5-015",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Documents",
+    "difficulty": "easy",
+    "question": "A HIPAA authorization in estate planning:",
+    "options": [
+      "C) Replaces the need for a healthcare proxy",
+      "D) Is only needed for hospital stays",
+      "A) Is included automatically in all powers of attorney",
+      "B) Allows designated individuals to access protected health information"
+    ],
+    "correctAnswer": 3,
+    "explanation": "HIPAA authorization grants permission to access protected health information. Without it, family members and agents may be denied medical information even with a healthcare proxy. It's often included in healthcare documents or as a separate authorization. Both spouses should have authorizations naming each other and backup agents."
+  },
+  {
+    "id": "cfp-tax-b7-016",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Deductions and Credits",
+    "difficulty": "hard",
+    "question": "The Research and Development (R&D) tax credit:",
+    "options": [
+      "A) Is available only to large corporations",
+      "C) Requires government approval for each project",
+      "D) Has been repealed",
+      "B) Provides credits for qualified research activities and may offset payroll tax for startups"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The R&D credit incentivizes research activities. Qualifying activities must meet a four-part test: technological uncertainty, process of experimentation, technological in nature, and for permitted purpose. Small businesses (under $5M revenue, ≤5 years old) can use credits against payroll tax."
+  },
+  {
+    "id": "cfp-ret-b5-004",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "easy",
+    "question": "The maximum loan from a 401(k) plan is generally:",
+    "options": [
+      "A) $10,000",
+      "B) The lesser of $50,000 or 50% of the vested balance",
+      "C) 100% of the vested balance up to $100,000",
+      "D) 25% of the vested balance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Plan loans are limited to the lesser of $50,000 or 50% of the vested account balance (with a $10,000 floor). Loans must generally be repaid within 5 years (longer for principal residence purchase). If not repaid, the balance becomes a taxable distribution."
+  },
+  {
+    "id": "cfp-ret-b4-022",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "easy",
+    "question": "403(b) plans are available to employees of:",
+    "options": [
+      "B) Public schools and 501(c)(3) organizations",
+      "D) State and local government employees only",
+      "C) Any small business with under 100 employees",
+      "A) For-profit corporations only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "403(b) plans (tax-sheltered annuities) are available to employees of public schools, churches, and 501(c)(3) tax-exempt organizations. State and local government employees use 457(b) plans. For-profit corporations typically offer 401(k) plans."
+  },
+  {
+    "id": "cfp-gen-b9-017",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Statements",
+    "difficulty": "medium",
+    "question": "Mortgage lenders typically want a back-end debt-to-income ratio of:",
+    "options": [
+      "A) 50% or less",
+      "B) 43% or less, though some programs allow higher with compensating factors",
+      "D) No limit",
+      "C) 20% or less"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Back-end DTI: all monthly debt payments ÷ gross monthly income. QM loans typically require ≤43%. FHA may allow up to 50% with compensating factors. Front-end (housing only): typically ≤28%. Lower DTI = more financial cushion. High DTI signals difficulty handling additional debt or expenses. Planning should aim to keep ratios manageable."
+  },
+  {
+    "id": "cfp-gen-003",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Mathematics",
+    "difficulty": "hard",
+    "question": "Calculate the inflation-adjusted return if an investment earns a nominal return of 8.5% while inflation is 3.2%. (Round to two decimal places)",
+    "options": [
+      "D) 12.00%",
+      "B) 5.14%",
+      "A) 5.30%",
+      "C) 5.10%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: B (5.14%).** The formula for the real rate of return is `((1 + Nominal) / (1 + Inflation)) - 1`.\n\nCalculation:\n((1.085) / (1.032)) - 1 = 1.051356... - 1 = 0.051356 = 5.14%.\n\n**Common Mistake:** Simply subtracting (8.5% - 3.2% = 5.3%) is an approximation but is mathematically incorrect for precise financial planning."
+  },
+  {
+    "id": "cfp-est-b5-006",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Trusts",
+    "difficulty": "hard",
+    "question": "A Spousal Lifetime Access Trust (SLAT) allows:",
+    "options": [
+      "C) Revocation by either spouse at any time",
+      "D) Automatic QTIP treatment",
+      "A) The grantor to access trust assets directly",
+      "B) Removal of assets from the grantor's estate while providing indirect access through distributions to a spouse beneficiary"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SLATs are irrevocable trusts where one spouse gifts assets (using gift/estate exemption) and the other spouse can receive distributions. This removes assets from the grantor's estate while maintaining indirect family access through the beneficiary spouse. Reciprocal trust doctrine must be avoided."
+  },
+  {
+    "id": "cfp-inv-050",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Investment Strategies",
+    "difficulty": "easy",
+    "question": "Dollar-cost averaging is MOST beneficial when:",
+    "options": [
+      "D) Markets are stable with low volatility",
+      "A) Markets are consistently rising",
+      "C) Markets are consistently falling",
+      "B) Markets are volatile with no clear trend"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: B (Volatile markets)**\n\n**Dollar-Cost Averaging Benefit:**\n- Fixed amount buys more shares when prices low\n- Fixed amount buys fewer shares when prices high\n- Average cost per share < average price per share\n\n**Works best with volatility:**\n- More opportunities to buy at various prices\n- Greater benefit from 'buying more when cheap'\n\n**Why other answers are wrong:**\n- **A)** Lump sum better in rising markets\n- **C)** Though you buy more shares, value keeps dropping\n- **D)** Less variation means less DCA benefit"
+  },
+  {
+    "id": "cfp-psy-b7-010",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Financial Psychology",
+    "difficulty": "hard",
+    "question": "Financial infidelity in couples refers to:",
+    "options": [
+      "B) Hiding money, debts, or spending from a partner, reflecting trust and communication issues",
+      "D) Late payments",
+      "A) Writing bad checks",
+      "C) Poor investment returns"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Financial infidelity: secret accounts, hidden debts, undisclosed purchases, lying about income. Common and damaging to relationships. Planners may discover discrepancies between partner statements. Not our role to investigate or judge, but facilitate open communication if willing. May suggest couples therapy. Affects ability to plan together."
+  },
+  {
+    "id": "cfp-inv-b10-019",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Portfolio Management",
+    "difficulty": "hard",
+    "question": "Risk parity portfolio construction:",
+    "options": [
+      "B) Allocates so each asset class contributes equally to total portfolio risk, often resulting in higher bond allocations",
+      "A) Weights assets equally",
+      "C) Maximizes returns regardless of risk",
+      "D) Uses only stocks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Risk parity: balance portfolio by risk contribution, not dollar amount. Since stocks are more volatile than bonds, equal risk contribution requires more bonds. Often uses leverage on bonds to achieve desired return. Result: more diversified risk profile, potentially smoother returns. Popular after 2008 when stock-heavy portfolios suffered. Bridgewater's All Weather is famous example."
+  },
+  {
+    "id": "cfp-gen-046",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Planning Process",
+    "difficulty": "easy",
+    "question": "SMART goal criteria include all EXCEPT:",
+    "options": [
+      "A) Specific",
+      "D) Time-bound",
+      "B) Measurable",
+      "C) Arbitrary"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**SMART Goals:**\n- **S**pecific\n- **M**easurable\n- **A**chievable (not Arbitrary)\n- **R**ealistic/Relevant\n- **T**ime-bound\n\nArbitrary is the opposite of what SMART goals should be. Goals should be carefully defined, not random."
+  },
+  {
+    "id": "cfp-gen-b11-022",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Statements",
+    "difficulty": "medium",
+    "question": "Personal balance sheet review should examine:",
+    "options": [
+      "D) Debt only",
+      "C) Only retirement accounts",
+      "A) Only totals",
+      "B) Asset composition, liquidity, diversification, tax characteristics, and alignment with goals and risk tolerance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Balance sheet analysis: beyond totals. Asset mix: liquid vs. illiquid, investment vs. personal use. Tax: taxable, tax-deferred, tax-free. Diversification: asset class, sector, geography. Concentration: single stock, real estate heavy? Alignment: matches goals timeline and risk capacity? Debt: interest rates, tax-deductible? Regular review catches drift, maintains appropriate positioning."
+  },
+  {
+    "id": "cfp-pcr-b7-012",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Practice Management",
+    "difficulty": "easy",
+    "question": "CFP® professionals must complete continuing education requirements that include:",
+    "options": [
+      "A) No ethics requirement",
+      "C) Only investment-related courses",
+      "D) 100 hours annually",
+      "B) 30 hours every two years including at least 2 hours of ethics"
+    ],
+    "correctAnswer": 3,
+    "explanation": "CFP® CE: 30 hours every 2-year reporting period, with at least 2 hours in ethics. CE must be reported by specific deadline. Courses must be from CFP Board-approved providers. This ensures ongoing competence in a changing field. Additional licensing (Series, insurance) may have separate CE requirements."
+  },
+  {
+    "id": "cfp-gen-b5-021",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Statements",
+    "difficulty": "easy",
+    "question": "On a personal balance sheet, assets are typically listed in order of:",
+    "options": [
+      "D) Date of acquisition",
+      "A) Alphabetical",
+      "B) Liquidity (most liquid first)",
+      "C) Size (largest first)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Personal balance sheets list assets by liquidity: cash and cash equivalents first, then marketable securities, retirement accounts, real estate, and personal use assets. This shows financial flexibility and emergency fund adequacy at a glance. Liabilities are typically listed by due date, short-term first."
+  },
+  {
+    "id": "cfp-tax-b8-013",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Special Topics",
+    "difficulty": "hard",
+    "question": "A Qualified Personal Residence Trust (QPRT):",
+    "options": [
+      "D) Only works for vacation homes",
+      "A) Provides no estate planning benefits",
+      "C) Is a revocable trust",
+      "B) Transfers a home to beneficiaries at a reduced gift tax value while the grantor retains the right to live there for a term of years"
+    ],
+    "correctAnswer": 3,
+    "explanation": "QPRTs freeze the home's value for estate tax purposes. The grantor gifts the home but retains occupancy for a term. The gift value is discounted based on term length and interest rates. If the grantor survives the term, the home passes to beneficiaries outside the estate. Early death nullifies the benefit."
+  },
+  {
+    "id": "cfp-tax-053",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Fundamentals",
+    "difficulty": "medium",
+    "question": "On December 15, Lisa sells 100 shares of XYZ stock for a $5,000 loss. On January 5, she buys 100 shares of the same stock. What is the tax consequence?",
+    "options": [
+      "B) Loss disallowed entirely",
+      "D) Loss allowed because it's a new tax year",
+      "A) $5,000 deductible loss",
+      "C) Loss disallowed, but added to new shares' basis"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: C**\n\n**Wash Sale Rule (Section 1091):**\n- Applies to repurchases within 30 days before OR after sale\n- December 15 to January 5 = 21 days (within window)\n- Loss is DISALLOWED for current deduction\n- BUT added to basis of new shares (not lost forever)\n\n**New basis:** Original cost + $5,000 disallowed loss\n\n**Why other answers are wrong:**\n- **A)** Wash sale rule applies\n- **B)** Loss adds to basis, not entirely lost\n- **D)** Calendar year change irrelevant; 30-day window controls"
+  },
+  {
+    "id": "cfp-pro-027",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Client Engagement",
+    "difficulty": "medium",
+    "question": "Before providing financial planning, a CFP® professional must establish the scope of engagement. Which element is NOT required?",
+    "options": [
+      "C) A guarantee of investment returns",
+      "B) Responsibilities of the CFP® professional and client",
+      "A) The services to be provided",
+      "D) How conflicts of interest will be managed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Standards require defining: services provided, responsibilities, compensation, engagement duration, and conflict management. A guarantee of investment returns is NEVER appropriate and would violate fiduciary duty by making promises that cannot be kept. The scope must be realistic and documented, typically through an engagement letter or advisory agreement."
+  },
+  {
+    "id": "cfp-psy-016",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Bias Mitigation",
+    "difficulty": "hard",
+    "question": "Which strategy is MOST effective for mitigating the impact of multiple behavioral biases in investment decision-making?",
+    "options": [
+      "B) Implementing a written Investment Policy Statement with automatic rebalancing",
+      "C) Showing long-term market returns",
+      "D) Increasing meeting frequency",
+      "A) Educating clients about each bias"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A written IPS with automatic rebalancing removes emotion from decisions. It addresses loss aversion (predetermined rules), recency bias (stick to allocation), and status quo bias (automatic rebalancing). Systematic approaches work better than relying on willpower to overcome biases."
+  },
+  {
+    "id": "cfp-tax-b2-002",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Fundamentals",
+    "difficulty": "medium",
+    "question": "A single taxpayer has taxable income of $95,000 in 2026. Their tax liability is $15,200. What is their approximate effective tax rate?",
+    "options": [
+      "C) 24.0%",
+      "B) 22.0%",
+      "D) 12.0%",
+      "A) 16.0%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: A (16.0%)**\n\n**Effective Tax Rate Calculation:**\nEffective Rate = Tax Liability / Taxable Income\nEffective Rate = $15,200 / $95,000 = 16.0%\n\nThe effective rate is lower than the marginal rate (22% bracket) because lower brackets are also used.\n\n**Why other answers are wrong:**\n- **B) 22.0%:** This is the marginal rate, not effective\n- **C) 24.0%:** Wrong bracket\n- **D) 12.0%:** Too low"
+  },
+  {
+    "id": "cfp-tax-b12-009",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Deductions",
+    "difficulty": "easy",
+    "question": "Moving expenses for work relocation are deductible:",
+    "options": [
+      "B) Only for active-duty military members moving due to military orders (2018-2025)",
+      "A) For all taxpayers meeting distance test",
+      "C) For any job change",
+      "D) Never"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Moving expense deduction: suspended for most taxpayers 2018-2025 (TCJA). Exception: active-duty military moving due to permanent change of station. Deductible expenses: moving household goods, travel to new home. Not: meals, house-hunting, temporary housing. Above-the-line deduction for qualifying military. May return after 2025. Employer reimbursements: may be taxable to non-military."
+  },
+  {
+    "id": "cfp-pcr-b7-010",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Practice Management",
+    "difficulty": "easy",
+    "question": "A financial planning engagement letter should include:",
+    "options": [
+      "C) Account performance history",
+      "A) Only fee information",
+      "D) Guaranteed outcomes",
+      "B) Services provided, compensation, scope, responsibilities of both parties, and termination terms"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Engagement letters define the relationship: scope of services (comprehensive or limited), compensation (amount, timing, method), client and planner responsibilities, duration and termination terms, and conflict disclosures. Written agreements prevent misunderstandings and demonstrate professionalism. Required for CFP® financial planning engagements."
+  },
+  {
+    "id": "cfp-ris-b6-012",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Property Insurance",
+    "difficulty": "medium",
+    "question": "Ordinance or law coverage in homeowners insurance pays for:",
+    "options": [
+      "C) Property taxes",
+      "B) Increased costs to rebuild to current building codes when they exceed original construction standards",
+      "A) Legal fees only",
+      "D) Zoning variances"
+    ],
+    "correctAnswer": 1,
+    "explanation": "After a loss, rebuilding must meet current codes, which may exceed original construction. Standard policies may not cover this gap. Ordinance coverage pays: 1) demolition of undamaged portions if required, 2) increased building costs for code compliance, and 3) loss of undamaged portions that must be demolished."
+  },
+  {
+    "id": "cfp-pcr-b8-020",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Practice Standards",
+    "difficulty": "medium",
+    "question": "If a CFP professional discovers an error that harmed a client:",
+    "options": [
+      "A) Hide the error",
+      "D) Only report to regulators",
+      "B) Promptly disclose the error to the client and take appropriate corrective action",
+      "C) Wait for the client to notice"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Error handling: disclose promptly to client, take corrective action if possible, document what happened and response, notify E&O carrier if applicable, consider firm compliance notification. Covering up errors magnifies problems. Timely disclosure often preserves relationships and limits liability. Integrity includes owning mistakes."
+  },
+  {
+    "id": "cfp-ret-b9-010",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Retirement Investing",
+    "difficulty": "hard",
+    "question": "Optimal asset location strategy generally places:",
+    "options": [
+      "C) All stocks in IRAs",
+      "D) Bonds in taxable accounts",
+      "B) Tax-inefficient assets (bonds, REITs) in tax-deferred accounts and tax-efficient assets (stocks, munis) in taxable accounts",
+      "A) All assets equally across accounts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Asset location: put tax-inefficient assets (taxable bonds—ordinary income, REITs—non-qualified dividends) in tax-deferred accounts. Tax-efficient assets (stocks—qualified divs/LTCG, munis—tax-exempt) go in taxable accounts. Roth accounts (never taxed) suit high-growth assets. Proper location can add 0.25-0.50% annual after-tax return."
+  },
+  {
+    "id": "cfp-ret-036",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer-Sponsored Plans",
+    "difficulty": "hard",
+    "question": "Dr. Chen, age 55, earns $400,000 and wants to maximize retirement contributions. Her practice has 3 younger employees. Which plan type would allow the HIGHEST contribution for Dr. Chen while minimizing employee costs?",
+    "options": [
+      "A) SEP IRA with 25% contribution rate",
+      "B) SIMPLE IRA with maximum deferral and 3% match",
+      "C) Cash balance defined benefit plan with 401(k)",
+      "D) Profit sharing 401(k) with 25% non-elective contribution"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: C (Cash Balance DB + 401(k))**\n\n**Contribution Comparison for Dr. Chen:**\n\n**A) SEP IRA:** 25% × $360,000 cap = $71,500 max\n(Plus must give same % to employees)\n\n**B) SIMPLE IRA:** $17,000 + $3,500 catch-up + 3% match = ~$33,000 max\n\n**C) Cash Balance + 401(k):**\n- Cash Balance: Can contribute $250,000+ for older owners (actuarially determined)\n- 401(k): $24,500 + $7,500 catch-up\n- **Total: $280,000+ possible**\n\n**D) PS 401(k):** $71,500 max (same % to employees required)\n\n**Why Cash Balance Wins:**\n- Defined benefit contributions are actuarially determined\n- Older participants can contribute much more than younger\n- Dr. Chen (55) can contribute 10x+ more than 25-year-old employee\n- Combined with 401(k) for additional deferrals"
+  },
+  {
+    "id": "cfp-ris-b2-014",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Qualified Longevity Annuity Contracts",
+    "difficulty": "hard",
+    "question": "What is the maximum amount that can be used to purchase a QLAC from qualified retirement accounts?",
+    "options": [
+      "A) $100,000",
+      "D) No limit",
+      "B) $145,000",
+      "C) $200,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SECURE 2.0 increased the QLAC limit to $200,000 (from $145,000) and eliminated the 25% of account balance limit. QLACs are deferred income annuities that begin payments at age 85, and the amount used is excluded from RMD calculations."
+  },
+  {
+    "id": "cfp-inv-b8-006",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Equities",
+    "difficulty": "easy",
+    "question": "Total return on a stock includes:",
+    "options": [
+      "B) Both price appreciation and dividend income",
+      "C) Only dividends",
+      "D) Only capital gains distributions",
+      "A) Only price appreciation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Total return = Capital Appreciation + Dividend Yield. Focusing only on price changes ignores income—historically about 40% of equity returns have come from dividends. Total return is the appropriate measure for evaluating investment performance."
+  },
+  {
+    "id": "cfp-tax-b12-011",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Credits",
+    "difficulty": "easy",
+    "question": "The Retirement Savings Contributions Credit (Saver's Credit) provides:",
+    "options": [
+      "C) Only for IRA contributions",
+      "B) Nonrefundable credit up to 50% of retirement contributions for low-to-moderate income taxpayers",
+      "A) Credit for all savings",
+      "D) Refundable credit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Saver's Credit: encourages low/moderate income retirement savings. Credit: 50%, 20%, or 10% of up to $2,000 contributed ($4,000 married). Based on AGI. 2026 limits approx: 50% if AGI <$24K single, <$48K married. Contributions: IRA, 401(k), 403(b), etc. Nonrefundable—only reduces tax to zero. Age 18+, not dependent, not student. Stacks with deduction for traditional contributions."
+  },
+  {
+    "id": "cfp-inv-b2-014",
+    "exam": "CFP",
+    "section": "CFP-INV",
+    "topic": "Equity Securities",
+    "difficulty": "easy",
+    "question": "An investor owns 400 shares of a stock trading at $90. After a 3-for-1 stock split, what will they own?",
+    "options": [
+      "A) 400 shares at $30",
+      "D) 133 shares at $270",
+      "B) 1,200 shares at $30",
+      "C) 1,200 shares at $90"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: B (1,200 shares at $30)**\n\n**3-for-1 Stock Split:**\n- Shares multiply by 3: 400 × 3 = 1,200 shares\n- Price divides by 3: $90 / 3 = $30 per share\n- Total value unchanged: $36,000\n\nStock splits don't change total value, just the number of shares and price per share.\n\n**Why other answers are wrong:**\n- **A)** Only adjusts price, not shares\n- **C)** Doesn't adjust price\n- **D)** Describes a reverse split"
+  },
+  {
+    "id": "cfp-ret-b4-023",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Retirement Planning",
+    "difficulty": "medium",
+    "question": "Monte Carlo simulation in retirement planning is used to:",
+    "options": [
+      "C) Calculate the optimal asset allocation",
+      "D) Predict exact future investment returns",
+      "B) Model probability of success across thousands of market scenarios",
+      "A) Determine the exact amount needed for retirement"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Monte Carlo simulation runs thousands of randomized scenarios using historical return and volatility data to estimate the probability that a retirement plan will succeed. Unlike deterministic models using average returns, it accounts for sequence of returns risk and provides probability-based confidence levels (e.g., 85% success rate)."
+  },
+  {
+    "id": "cfp-ris-b3-024",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Property Insurance",
+    "difficulty": "medium",
+    "question": "The most common homeowners policy (HO-3) provides:",
+    "options": [
+      "D) Actual cash value only, no replacement cost",
+      "A) Named perils coverage on both dwelling and contents",
+      "B) Open perils on dwelling, named perils on personal property",
+      "C) Open perils coverage on everything including floods and earthquakes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HO-3 (Special Form) provides open perils coverage on the dwelling (covers all risks except exclusions) and named perils coverage on personal property (only covers listed perils). Flood and earthquake require separate policies or endorsements. HO-5 provides open perils on both dwelling and contents."
+  },
+  {
+    "id": "cfp-tax-038",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Fundamentals",
+    "difficulty": "easy",
+    "question": "To avoid an estimated tax penalty, taxpayers must generally pay the lesser of what amounts?",
+    "options": [
+      "D) 100% of current year tax only",
+      "A) 100% of prior year tax or 100% of current year tax",
+      "B) 90% of current year tax or 100% of prior year tax (110% if high income)",
+      "C) 80% of current year tax or 90% of prior year tax"
+    ],
+    "correctAnswer": 2,
+    "explanation": "**Correct Answer: B**\n\n**Safe Harbor Rules for Estimated Tax:**\n\n**Standard Safe Harbor:**\nPay the lesser of:\n- 90% of current year tax liability, OR\n- 100% of prior year tax liability\n\n**High-Income Taxpayers (AGI > $150,000 MFJ):**\n- 110% of prior year tax (instead of 100%)\n\n**Payment Schedule:**\n| Due Date | Period Covered |\n|----------|----------------|\n| April 15 | Jan-Mar |\n| June 15 | Apr-May |\n| Sept 15 | Jun-Aug |\n| Jan 15 | Sep-Dec |\n\n**Penalty Calculation:**\n- Penalty calculated quarterly\n- IRS interest rate applied\n- Form 2210 calculates penalty\n\n**Why other answers are wrong:**\n- **A)** Missing the 90% current year option\n- **C)** Wrong percentages\n- **D)** Would cause penalty if current year much higher than prior"
+  },
+  {
+    "id": "cfp-pcr-b9-016",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Practice Standards",
+    "difficulty": "easy",
+    "question": "Recommendations should be presented to clients:",
+    "options": [
+      "B) In clear, understandable language appropriate to client's knowledge level, with opportunity for questions",
+      "C) Only in writing",
+      "A) With technical jargon to demonstrate expertise",
+      "D) Without alternatives"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Presentation best practices: adapt to client's communication style, avoid jargon (or explain it), use visuals if helpful, allow questions, confirm understanding. Present rationale—why recommendation fits goals. Written summary often useful. Alternative approaches may be discussed. Client should have time to consider. Goal: informed decision-making, not just acceptance."
+  },
+  {
+    "id": "cfp-ret-b3-012",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "SIMPLE IRA",
+    "difficulty": "medium",
+    "question": "The standard employer matching contribution formula for a SIMPLE IRA is:",
+    "options": [
+      "25% of employee contributions up to 6% of compensation",
+      "Dollar-for-dollar match of the first 3% of compensation",
+      "50% match of the first 6% of compensation",
+      "No employer matching required"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SIMPLE IRAs require employer contributions: either a matching contribution (dollar-for-dollar up to 3% of compensation) or a non-elective 2% contribution for all eligible employees."
+  },
+  {
+    "id": "cfp-ret-b6-006",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "medium",
+    "question": "Forfeitures in defined contribution plans are funds that:",
+    "options": [
+      "D) Must be donated to charity",
+      "A) Are returned to employees upon termination",
+      "B) Are unvested employer contributions that revert to the plan when employees leave before vesting",
+      "C) Are always distributed equally to remaining participants"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Forfeitures occur when employees leave before fully vesting in employer contributions. These funds revert to the plan and can be used to reduce future employer contributions, pay plan expenses, or allocate to remaining participants. Forfeiture timing and use varies by plan document."
+  },
+  {
+    "id": "cfp-est-b3-025",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Donor-Advised Funds",
+    "difficulty": "medium",
+    "question": "A donor contributes highly appreciated stock to a DAF. What happens to the unrealized gain?",
+    "options": [
+      "B) The gain is recognized when the DAF sells the stock",
+      "C) The gain is never recognized—donor gets FMV deduction, DAF sells tax-free",
+      "A) Donor owes capital gains tax on the transfer",
+      "D) The gain carries over to the charity when grants are made"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When appreciated securities are donated to a DAF, the donor receives a deduction for FMV (subject to AGI limits), and the unrealized gain is never taxed. The DAF is tax-exempt, so when it sells the stock, no capital gains tax is owed. This is the same tax treatment as donating directly to a charity."
+  },
+  {
+    "id": "cfp-tax-033",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Strategies",
+    "difficulty": "hard",
+    "question": "William funds a Charitable Lead Annuity Trust (CLAT) with $2,000,000. The trust pays $100,000/year to his favorite charity for 15 years, then the remainder goes to his children. If assets grow at 8% annually, what is the estate planning benefit?",
+    "options": [
+      "A) William gets an immediate income tax deduction of $2,000,000",
+      "B) The trust assets pass to heirs free of gift tax since charity receives income",
+      "D) William eliminates all estate taxes on the $2,000,000",
+      "C) Growth above the IRS assumed rate passes to heirs free of gift/estate tax"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: C**\n\n**CLAT Wealth Transfer Strategy:**\n\n**How It Works:**\n1. Fund trust with appreciated assets\n2. Charity receives fixed annuity for term\n3. Remainder to heirs at term end\n\n**Estate/Gift Tax Benefit:**\n- Gift value = FMV minus present value of charitable payments\n- If trust returns exceed Section 7520 rate (IRS assumed rate), excess passes to heirs gift/estate tax-free\n\n**Example:**\n- $2M trust growing at 8%\n- 7520 rate might be 5%\n- Excess 3% growth passes tax-free to heirs\n- After 15 years: potentially $1M+ tax-free transfer\n\n**No Income Tax Deduction:**\n- Grantor CLAT: No deduction, but grantor taxed on trust income\n- Non-grantor CLAT: Trust gets deduction, pays its own tax\n\n**Why other answers are wrong:**\n- **A)** CLATs don't provide upfront income tax deduction..."
+  },
+  {
+    "id": "cfp-gen-b6-002",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Financial Planning Process",
+    "difficulty": "medium",
+    "question": "The analysis step of financial planning involves:",
+    "options": [
+      "A) Simply inputting data into software",
+      "C) Comparing to industry averages only",
+      "B) Evaluating the client's current situation, identifying gaps, testing scenarios, and determining how to achieve goals",
+      "D) Selecting products to recommend"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Analysis goes beyond data compilation to evaluate current trajectory, identify shortfalls, test assumptions through scenarios, and determine what changes would help achieve goals. It integrates all planning domains and applies professional judgment beyond software outputs."
+  },
+  {
+    "id": "cfp-pcr-b6-012",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Ethics",
+    "difficulty": "hard",
+    "question": "When receiving compensation for client referrals:",
+    "options": [
+      "B) The arrangement must be disclosed as a conflict, fees cannot be unreasonable, and payments must comply with regulations",
+      "D) Referral fees are prohibited",
+      "C) Only the referring party needs to know",
+      "A) No disclosure is required"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Referral fees create conflicts of interest—advisers may be motivated by payment rather than client fit. Disclosure is required. Under the SEC's marketing rule, referral arrangements must be disclosed, payments documented, and arrangements must not create unreasonable compensation or materially mislead investors."
+  },
+  {
+    "id": "cfp-psy-b5-012",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Communication",
+    "difficulty": "easy",
+    "question": "Building rapport with clients includes:",
+    "options": [
+      "D) Maintaining strict formality at all times",
+      "C) Only discussing finances",
+      "B) Finding common ground, showing genuine interest, using appropriate body language, and establishing trust before diving into technical matters",
+      "A) Immediately discussing portfolio returns"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Rapport creates trust and openness. Techniques include mirroring body language, finding shared interests, remembering personal details, using active listening, and showing genuine care. Strong rapport improves information gathering, enhances receptiveness to advice, and builds lasting relationships."
+  },
+  {
+    "id": "cfp-psy-b4-014",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Behavioral Finance",
+    "difficulty": "medium",
+    "question": "A client refuses to sell an investment fund despite poor performance because \"I've already lost so much.\" This represents:",
+    "options": [
+      "A) Rational decision-making",
+      "B) The sunk cost fallacy—past losses shouldn't influence future decisions, only forward-looking prospects matter",
+      "C) Risk tolerance assessment",
+      "D) Time diversification"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sunk costs are irrecoverable regardless of future actions. Rational decisions consider only prospective costs and benefits. Continuing to hold a poor investment because of past losses ignores whether current value reflects future prospects. The remedy is focusing on \"what's the best use of these dollars NOW?\""
+  },
+  {
+    "id": "cfp-psy-b4-013",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Behavioral Finance",
+    "difficulty": "hard",
+    "question": "Framing effects in financial planning mean:",
+    "options": [
+      "B) How information is presented (as gains vs losses, probabilities vs frequencies) significantly influences client choices",
+      "A) Information presentation doesn't affect decisions",
+      "C) Clients only consider objective facts",
+      "D) Frames should be avoided entirely"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Framing dramatically affects decisions. \"90% survival rate\" sounds better than \"10% mortality rate\" though identical. Planners can use this ethically—framing savings as \"keeping\" money, or showing probability of success rather than failure. Awareness of framing effects helps both present and interpret information."
+  },
+  {
+    "id": "cfp-ret-b3-004",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Defined Benefit Plans",
+    "difficulty": "easy",
+    "question": "In a defined benefit pension plan, who bears the investment risk?",
+    "options": [
+      "The plan participants",
+      "The Pension Benefit Guaranty Corporation",
+      "The employer/plan sponsor",
+      "The investment manager"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The employer bears investment risk in a DB plan because they must contribute enough to fund promised benefits regardless of investment performance. The PBGC provides insurance but isn't responsible for funding."
+  },
+  {
+    "id": "cfp-psy-b2-011",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Family Dynamics",
+    "difficulty": "medium",
+    "question": "When advising on wealth transfer to adult children, which approach is MOST consistent with good practice?",
+    "options": [
+      "A) Recommend equal distributions to avoid family conflict",
+      "C) Focus only on tax minimization strategies",
+      "D) Discourage disclosure of estate plans to beneficiaries",
+      "B) Explore the family's values and dynamics regarding inheritance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Effective intergenerational planning requires understanding family dynamics, values, and the parents' goals. Equal distributions aren't always optimal (different needs, contributions, or family circumstances), and communication about plans often reduces rather than increases conflict."
+  },
+  {
+    "id": "cfp-gen-b11-019",
+    "exam": "CFP",
+    "section": "CFP-GEN",
+    "topic": "Economics",
+    "difficulty": "easy",
+    "question": "Consumer confidence indicators measure:",
+    "options": [
+      "D) Government policy impact",
+      "C) Only business outlook",
+      "A) Actual spending amounts",
+      "B) Consumer sentiment about current and future economic conditions, which often predicts spending behavior"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Consumer confidence: survey-based measure of household sentiment. Key surveys: Conference Board (Consumer Confidence Index), University of Michigan (Consumer Sentiment). Components: current conditions, expectations. Why it matters: consumer spending ~70% of GDP. High confidence → more spending, lower saving. Useful for: economic forecasting, retail sector analysis. Monthly data with market impact."
+  },
+  {
+    "id": "cfp-psy-b2-022",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Cognitive Biases",
+    "difficulty": "easy",
+    "question": "A client wants to invest heavily in a trending stock because \"everyone is buying it.\" This is an example of:",
+    "options": [
+      "D) Bandwagon effect and Herding",
+      "A) Social proof bias / Herding",
+      "C) Representativeness",
+      "B) Availability bias"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Herding (or social proof bias) is the tendency to follow what others are doing, assuming the crowd has information or knowledge. This can lead to buying overvalued assets or panic selling during downturns."
+  },
+  {
+    "id": "cfp-pcr-b4-015",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "CFP Board",
+    "difficulty": "medium",
+    "question": "A Financial Planning engagement agreement should include:",
+    "options": [
+      "D) Guaranteed investment returns",
+      "B) Services, compensation, parties, duration, client responsibilities, and termination procedures",
+      "A) Only the fee structure",
+      "C) Only a signature line"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Comprehensive engagement agreements define: scope of services, compensation method, parties and their responsibilities, duration, termination provisions, and acknowledgment of disclosures. A clear agreement protects both parties and sets expectations. Written agreements are required for Financial Planning services."
+  },
+  {
+    "id": "cfp-est-b2-025",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Planning Process",
+    "difficulty": "easy",
+    "question": "Which life event should trigger an immediate review of a client's estate planning documents?",
+    "options": [
+      "Annual increase in investment portfolio value",
+      "Divorce or marriage of the client",
+      "Routine change in employment",
+      "Annual inflation adjustments to exemption amounts"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Major life events like divorce, marriage, birth, death, or significant wealth changes require immediate estate plan review. These events may affect beneficiary designations, fiduciary appointments, and property transfers."
+  },
+  {
+    "id": "cfp-pro-087",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Fiduciary Duty",
+    "difficulty": "hard",
+    "question": "At what point does fiduciary duty attach to a prospective client?",
+    "options": [
+      "B) When providing Financial Advice, even before formal engagement",
+      "A) Upon signing an engagement agreement",
+      "C) After the first fee is paid",
+      "D) Only when comprehensive planning begins"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CFP Board's fiduciary duty attaches whenever a CFP® professional provides Financial Advice—which can occur before any formal engagement. Even in a discovery meeting, if substantive investment or planning advice is given, fiduciary duty applies. The key trigger is providing Financial Advice, not the formal engagement or fee payment."
+  },
+  {
+    "id": "cfp-pro-085",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "State Regulation",
+    "difficulty": "hard",
+    "question": "A CFP® professional advises only on 401(k) plans for employers. Which investment adviser registration exemption might apply?",
+    "options": [
+      "A) Bank exemption",
+      "C) ERISA exemption for retirement plan advice",
+      "B) Lawyer/accountant exemption",
+      "D) No exemption—retirement plan advisers must register"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Advisers who provide investment advice solely to ERISA plans and their participants may qualify for an exemption from state registration in some states. However, this varies by state. Additionally, such advisers may need to register with the DOL or meet ERISA fiduciary requirements. The federal Investment Advisers Act has a specific exemption for certain retirement plan advisers."
+  },
+  {
+    "id": "cfp-est-b4-012",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Transfer Techniques",
+    "difficulty": "hard",
+    "question": "A Grantor Retained Annuity Trust (GRAT) is designed to:",
+    "options": [
+      "A) Transfer appreciation above the Section 7520 rate to beneficiaries gift-tax-free",
+      "D) Allow the grantor to retain full control of assets",
+      "B) Provide income to charities during the grantor's life",
+      "C) Eliminate all estate taxes on transferred assets"
+    ],
+    "correctAnswer": 0,
+    "explanation": "GRATs transfer appreciation above the IRS Section 7520 interest rate to beneficiaries with minimal or no gift tax. The grantor receives annuity payments for a term of years; any remaining value passes to beneficiaries. If assets outperform the 7520 rate, the excess passes gift-tax-free."
+  },
+  {
+    "id": "cfp-tax-045",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Strategies",
+    "difficulty": "hard",
+    "question": "A client in the 24% bracket asks whether to contribute $7,500 to a traditional IRA (deductible) or Roth IRA. Assuming identical investment returns and a 24% tax rate in retirement, which analysis is CORRECT?",
+    "options": [
+      "D) Traditional is always better due to tax deferral",
+      "B) Roth is better because future tax rates are unpredictable",
+      "A) Traditional is better because tax savings can be invested today",
+      "C) Mathematically equivalent if tax rates remain the same"
+    ],
+    "correctAnswer": 3,
+    "explanation": "**Correct Answer: C (Mathematically equivalent)**\n\n**The Math of Tax Deferral:**\n\n**Scenario: $7,500, 24% bracket now and later, 7% return for 20 years**\n\n**Traditional IRA:**\n- Invest $7,500 (deduct, save $1,800 in taxes)\n- After 20 years at 7%: $7,500 × 3.87 = $29,025\n- After-tax (24%): $29,025 × 0.76 = **$22,059**\n\n**Roth IRA:**\n- Invest $7,500 after-tax ($9,868 pre-tax equivalent)\n- After 20 years at 7%: $7,500 × 3.87 = $29,025\n- After-tax: $29,025 × 1.00 = **$29,025**\n\n**True Comparison (same pre-tax dollars):**\nTraditional investors can also invest their $1,680 tax savings.\n\n**Formula Proof:**\n- Traditional: \\$t × (1+r)^n × (1-T) \n- Roth: \\$t × (1-T) × (1+r)^n\n- When T is same: Results are identical\n\n**When Roth WINS:**\n- Higher tax rate in retirement\n- Long time horizon amplifyin..."
+  },
+  {
+    "id": "cfp-pcr-b7-018",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Regulation",
+    "difficulty": "medium",
+    "question": "Anti-money laundering (AML) regulations require financial firms to:",
+    "options": [
+      "C) Avoid foreign clients",
+      "A) Only report large cash deposits",
+      "D) Guarantee customer identity",
+      "B) Implement customer identification programs, monitor for suspicious activity, and file required reports"
+    ],
+    "correctAnswer": 3,
+    "explanation": "AML programs include: Customer Identification Program (CIP) verifying identity, Customer Due Diligence (CDD) understanding the customer, monitoring for suspicious activity, Suspicious Activity Reports (SAR) when warranted, Currency Transaction Reports (CTR) for cash over $10,000, and training. Bank Secrecy Act and USA PATRIOT Act govern requirements."
+  },
+  {
+    "id": "cfp-psy-b4-022",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Client Communication",
+    "difficulty": "easy",
+    "question": "Open-ended questions in client discovery:",
+    "options": [
+      "A) Should be avoided for efficiency",
+      "B) Encourage detailed responses, reveal values and concerns, and provide richer information than yes/no questions",
+      "C) Create confusion",
+      "D) Are only for therapy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Open questions (How, What, Tell me about) invite elaboration and reveal information beyond what's asked. \"What concerns you about retirement?\" yields richer data than \"Are you concerned about retirement?\" They're essential for discovery but should be balanced with focused follow-ups."
+  },
+  {
+    "id": "cfp-ret-b4-001",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Employer Plans",
+    "difficulty": "easy",
+    "question": "For 2026, what is the maximum elective deferral contribution to a 401(k) plan for an employee under age 50?",
+    "options": [
+      "C) $23,500",
+      "B) $22,500",
+      "D) $24,500",
+      "A) $20,500"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For 2026, the maximum elective deferral contribution to a 401(k) plan is $23,500 for participants under age 50. Those age 50 and over can contribute an additional $7,500 catch-up contribution for a total of $31,000."
+  },
+  {
+    "id": "cfp-pcr-b5-025",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Code of Ethics",
+    "difficulty": "easy",
+    "question": "The CFP® integrity principle emphasizes:",
+    "options": [
+      "B) Honesty, truthfulness, and placing client interests ahead of personal interests",
+      "C) Maximizing profitability",
+      "A) Following the letter of the law regardless of ethics",
+      "D) Avoiding difficult conversations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Integrity is foundational—it means being honest, truthful, and trustworthy in all professional activities. It goes beyond legal compliance to encompass ethical behavior even when not legally required. Professionals should not deceive, mislead, or create false impressions, even through omission."
+  },
+  {
+    "id": "cfp-psy-b8-011",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Client Assessment",
+    "difficulty": "easy",
+    "question": "Assessing client financial knowledge helps:",
+    "options": [
+      "B) Tailor communication complexity and identify educational needs for informed decision-making",
+      "C) Determine fees charged",
+      "A) Only with investment selection",
+      "D) Avoid detailed explanations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Financial literacy assessment: understand client's baseline. Determines: explanation detail needed, concepts to clarify, areas for education. Don't assume—wealthy clients may have little knowledge; modest clients may be sophisticated. Adjust communication style. Identify knowledge gaps that could affect decisions. Education may be needed before complex recommendations. Meet client where they are."
+  },
+  {
+    "id": "cfp-ret-b7-016",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Retirement Planning",
+    "difficulty": "medium",
+    "question": "A \"bucket strategy\" in retirement income planning:",
+    "options": [
+      "D) Requires annuitization",
+      "A) Invests everything in one account",
+      "B) Segments assets into short-term (cash/bonds), medium-term, and long-term (stocks) buckets to match time horizons",
+      "C) Uses only dividend stocks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Bucket strategies divide portfolios by time horizon: bucket 1 (1-2 years expenses in safe assets), bucket 2 (3-7 years in balanced investments), bucket 3 (7+ years in growth assets). This provides psychological comfort during downturns (knowing near-term needs are secure) while maintaining long-term growth potential."
+  },
+  {
+    "id": "cfp-est-b6-019",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Trusts",
+    "difficulty": "easy",
+    "question": "Which of the following best describes a pet trust in estate planning?",
+    "options": [
+      "D) Is limited to dogs and cats",
+      "B) Provides for the care of animals after the owner's death or incapacity",
+      "C) Can only hold cash",
+      "A) Is recognized in all 50 states"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pet trusts (recognized in all states) designate a caretaker and funds for pet care. They name a trustee to manage funds and can specify care standards. Without a trust, pets are property with no guaranteed care. Funding should consider animal's lifespan and care costs."
+  },
+  {
+    "id": "cfp-est-b2-023",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Planning for Incapacity",
+    "difficulty": "easy",
+    "question": "A living will (advance directive for healthcare) primarily addresses:",
+    "options": [
+      "Distribution of assets after death",
+      "Appointment of a guardian for minor children",
+      "End-of-life medical treatment preferences",
+      "Management of financial accounts during incapacity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A living will specifies treatment preferences if the person becomes terminally ill or permanently unconscious and cannot communicate. It typically addresses life support, resuscitation, and comfort care preferences."
+  },
+  {
+    "id": "cfp-ris-b9-020",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Liability Insurance",
+    "difficulty": "easy",
+    "question": "Split limit auto liability coverage of 100/300/100 means:",
+    "options": [
+      "D) $300K per person",
+      "C) Only property coverage",
+      "B) $100K per person, $300K per accident for bodily injury, $100K for property damage",
+      "A) $100,000 total coverage"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Split limits format: bodily injury per person / bodily injury per accident / property damage. 100/300/100: up to $100K for any one injured person, $300K maximum for all injured in accident, $100K for others' property. Alternative: combined single limit (CSL)—one limit for all. Higher limits recommended—assets at stake. Umbrella for additional protection."
+  },
+  {
+    "id": "cfp-psy-b8-016",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Client Assessment",
+    "difficulty": "hard",
+    "question": "Understanding family systems in financial planning includes recognizing:",
+    "options": [
+      "B) Family dynamics, roles, communication patterns, and how money functions within the family structure",
+      "A) Only legal family members",
+      "C) Birth order only",
+      "D) Income levels"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Family systems: money has meaning beyond dollars. Roles: who earns, who decides, who worries. Patterns passed down: messages about money from parents. Power dynamics: money as control. Communication: open or secret about finances? Extended family obligations. Understanding helps: address couple conflicts, prepare for wealth transfer, involve appropriate family members, recognize tensions."
+  },
+  {
+    "id": "cfp-tax-065",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Fundamentals",
+    "difficulty": "easy",
+    "question": "Mark has $10,000 in short-term capital gains and $18,000 in long-term capital losses. What is his net capital loss deduction for the year?",
+    "options": [
+      "D) $5,000",
+      "A) $3,000",
+      "B) $8,000",
+      "C) $18,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: A ($3,000)**\n\n**Capital Loss Calculation:**\n- STCG: +$10,000\n- LTCL: -$18,000\n- Net capital loss: -$8,000\n- Deductible against ordinary income: $3,000\n- Carryforward: $5,000 (long-term character)\n\n**Why other answers are wrong:**\n- **B)** $8,000 is net loss, only $3K deductible\n- **C)** $18,000 is gross loss before STCG offset\n- **D)** $5,000 is carryforward, not current deduction"
+  },
+  {
+    "id": "cfp-ris-b5-019",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Disability Insurance",
+    "difficulty": "hard",
+    "question": "A presumptive disability provision:",
+    "options": [
+      "C) Applies only to occupational injuries",
+      "B) Automatically considers certain losses (sight, hearing, limbs) as total disability regardless of ability to work",
+      "D) Extends the elimination period",
+      "A) Requires proof of occupational disability"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Presumptive disability automatically qualifies claims for total disability upon specific losses (e.g., loss of sight in both eyes, use of both hands/feet, speech, hearing) without requiring proof of occupational disability. Benefits may begin immediately, waiving the elimination period."
+  },
+  {
+    "id": "cfp-tax-b3-013",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Gift Tax",
+    "difficulty": "hard",
+    "question": "When property with a fair market value BELOW donor's basis is gifted, the recipient's basis for calculating a LOSS is:",
+    "options": [
+      "Donor's adjusted basis (carryover)",
+      "Fair market value at time of gift",
+      "Zero",
+      "Average of donor's basis and FMV"
+    ],
+    "correctAnswer": 1,
+    "explanation": "This is the dual basis rule. For loss property (FMV < basis), the donee uses FMV to calculate loss. For gain, they use carryover basis. If sold between FMV and basis, there is no gain or loss."
+  },
+  {
+    "id": "cfp-ret-023",
+    "exam": "CFP",
+    "section": "CFP-RET",
+    "topic": "Individual Retirement Plans",
+    "difficulty": "hard",
+    "question": "Dr. Patel earns $400,000 and wants to contribute to a Roth IRA. He has a Traditional IRA with a $200,000 balance from old rollovers. If he makes a $7,500 non-deductible Traditional IRA contribution and immediately converts to Roth, approximately how much of the $7,500 conversion will be taxable under the pro-rata rule?",
+    "options": [
+      "C) $3,750",
+      "B) $7,229",
+      "A) $0 (only the contribution is converted)",
+      "D) $7,500"
+    ],
+    "correctAnswer": 1,
+    "explanation": "**Correct Answer: B ($7,229)**\n\n**Pro-Rata Rule Application:**\n\nWhen converting, the IRS treats ALL Traditional IRA balances as one pool.\n\n**Calculation:**\n1. After-tax contribution: $7,500\n2. Pre-tax IRA balance: $200,000\n3. Total IRA balance: $207,500\n4. After-tax percentage: $7,500 ÷ $207,500 = 3.61%\n5. Taxable percentage: 96.39%\n\n**Taxable amount of $7,500 conversion:**\n$7,500 × 96.39% = **$7,229**\n\n**The Pro-Rata Problem:**\nThis is why the \"backdoor Roth\" is problematic when you have existing pre-tax IRA balances. The solution is to roll the pre-tax IRA into a 401(k) first (if eligible).\n\n**Why other answers are wrong:**\n- **A)** Ignores pro-rata rule—common misconception\n- **C)** Incorrect 50/50 assumption\n- **D)** Would only be correct if no pre-tax IRA existed"
+  },
+  {
+    "id": "cfp-ris-b7-005",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Life Insurance",
+    "difficulty": "easy",
+    "question": "An accelerated death benefit rider allows policyholders to:",
+    "options": [
+      "A) Receive higher death benefits",
+      "B) Access a portion of the death benefit while living if diagnosed with terminal illness, chronic illness, or critical illness",
+      "D) Increase coverage without underwriting",
+      "C) Avoid premium payments"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Accelerated death benefit (ADB): access portion of death benefit early upon qualifying event (terminal illness with 6-24 month life expectancy, chronic illness requiring care, or critical illness like cancer). Amount received reduces death benefit. Often included at no cost. Provides living benefits from life insurance when needed most."
+  },
+  {
+    "id": "cfp-est-b3-021",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Charitable Lead Trusts",
+    "difficulty": "hard",
+    "question": "A \"zeroed-out\" CLAT is designed to have what gift tax value?",
+    "options": [
+      "C) Zero (or near zero) gift tax value",
+      "A) The full value of the contribution",
+      "B) Maximum gift tax value for optimal deduction",
+      "D) 50% of contribution value"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A \"zeroed-out\" CLAT is structured so the present value of the charitable annuity equals the full contribution, leaving zero (or minimal) taxable gift to the remainder beneficiaries. If the trust earns more than the Section 7520 rate, excess passes gift-tax-free to heirs."
+  },
+  {
+    "id": "cfp-pcr-b7-009",
+    "exam": "CFP",
+    "section": "CFP-PCR",
+    "topic": "Fiduciary",
+    "difficulty": "medium",
+    "question": "CFP® professionals must disclose compensation information:",
+    "options": [
+      "C) After services are provided",
+      "A) Only if clients ask",
+      "D) Only for fee-based accounts",
+      "B) In clear terms including how they are compensated, sources, and any conflicts compensation creates"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Compensation disclosure must be: provided before services, clear (clients understand what and how much), complete (all sources—fees, commissions, referral fees, 12b-1 fees), and explain conflicts (products paying more may create bias). This enables informed client decisions about the relationship."
+  },
+  {
+    "id": "cfp-psy-b3-016",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Client Psychology",
+    "difficulty": "medium",
+    "question": "When working with couples who have conflicting financial priorities, a CFP® professional should:",
+    "options": [
+      "B) Refuse to work with the couple until they agree",
+      "D) Work with each partner separately without joint meetings",
+      "A) Side with the more financially knowledgeable partner",
+      "C) Facilitate dialogue to understand both perspectives and find common ground"
+    ],
+    "correctAnswer": 3,
+    "explanation": "CFP® professionals should remain neutral, help each partner articulate their values and concerns, and facilitate productive dialogue toward shared goals. Understanding the \"why\" behind money positions often reveals common underlying values even when surface preferences differ."
+  },
+  {
+    "id": "cfp-ins-b3-017",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Health Insurance",
+    "difficulty": "easy",
+    "question": "The 2026 HSA contribution limit for family coverage is $8,900. Individuals age 55+ can make additional catch-up contributions of:",
+    "options": [
+      "$500",
+      "$1,000",
+      "$1,500",
+      "$2,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HSA catch-up contributions for those 55+ are $1,000, not indexed for inflation. This applies to each eligible spouse for married couples with family HDHP coverage."
+  },
+  {
+    "id": "cfp-est-b4-001",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Tax",
+    "difficulty": "easy",
+    "question": "For 2026, the federal estate tax exemption is approximately:",
+    "options": [
+      "A) $5 million per person",
+      "B) $7 million per person",
+      "D) $27 million per married couple",
+      "C) $13.6 million per person"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 2017 TCJA approximately doubled the estate tax exemption, which is indexed for inflation. For 2026, the exemption is approximately $13.6 million per person ($27.2 million for married couples with portability). Note: This amount is scheduled to sunset to approximately $7 million after 2025 unless extended."
+  },
+  {
+    "id": "cfp-ris-b2-025",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Annuity Surrender Charges",
+    "difficulty": "easy",
+    "question": "A variable annuity has a 7-year declining surrender charge schedule starting at 7%. If the owner surrenders after 3 years, what is the approximate surrender charge?",
+    "options": [
+      "D) 7%",
+      "B) 4%",
+      "A) 0%",
+      "C) 5%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With a 7-year declining schedule starting at 7%, the charge typically decreases by 1% per year: Year 1 = 7%, Year 2 = 6%, Year 3 = 5%, Year 4 = 4%. Surrender in year 3 = likely 4-5% charge. Many annuities allow 10% annual withdrawals without surrender charges."
+  },
+  {
+    "id": "cfp-ris-b4-014",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Long-Term Care",
+    "difficulty": "hard",
+    "question": "Life insurance/long-term care hybrid products appeal to consumers because:",
+    "options": [
+      "C) They require no underwriting",
+      "A) They are always less expensive than standalone LTC",
+      "D) They provide unlimited LTC benefits",
+      "B) They provide LTC benefits if needed, or death benefits if LTC is never used, addressing \"use it or lose it\" concerns"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hybrids combine life insurance (or annuities) with LTC riders. If LTC is needed, benefits are accessed (often accelerating the death benefit). If not, beneficiaries receive the death benefit. This addresses concerns about paying premiums for coverage never used. Tradeoffs include complexity and potentially higher cost per dollar of coverage."
+  },
+  {
+    "id": "cfp-est-b5-013",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Documents",
+    "difficulty": "medium",
+    "question": "A pour-over will:",
+    "options": [
+      "A) Creates a new trust at death",
+      "C) Avoids all probate",
+      "D) Is only valid in community property states",
+      "B) Transfers probate assets to an existing trust"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A pour-over will transfers any assets that were not titled in the trust during life into the trust at death. While these assets go through probate (unlike properly funded trust assets), they ultimately distribute according to trust terms. It serves as a safety net for assets not transferred to the trust."
+  },
+  {
+    "id": "cfp-ris-b4-013",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Auto Insurance",
+    "difficulty": "medium",
+    "question": "Underinsured motorist coverage:",
+    "options": [
+      "A) Pays when you are at fault",
+      "D) Only covers property damage",
+      "C) Is required in all states",
+      "B) Pays when the at-fault driver's coverage is insufficient to cover your damages"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Underinsured motorist (UIM) coverage applies when an at-fault driver's liability limits are less than your damages. It bridges the gap between their coverage and your loss. Stacking provisions, excess vs. offset calculations, and state requirements vary. High limits are important protection against inadequately insured drivers."
+  },
+  {
+    "id": "cfp-ris-b3-014",
+    "exam": "CFP",
+    "section": "CFP-RISK",
+    "topic": "Property Insurance",
+    "difficulty": "hard",
+    "question": "A homeowner insures a $400,000 home for $280,000 under a policy with 80% coinsurance. A covered $100,000 loss occurs. What does the insurer pay?",
+    "options": [
+      "D) $70,000",
+      "A) $100,000",
+      "B) $87,500",
+      "C) $80,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Coinsurance formula: (Insurance carried ÷ Insurance required) × Loss = Payment. Required: $400,000 × 80% = $320,000. Carried: $280,000. Payment: ($280,000 ÷ $320,000) × $100,000 = 87.5% × $100,000 = $87,500. Underinsurance results in the policyholder sharing the loss."
+  },
+  {
+    "id": "cfp-est-b2-018",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Liquidity",
+    "difficulty": "hard",
+    "question": "Section 6166 allows estate tax deferral for estates with a closely held business interest that comprises more than what percentage of the adjusted gross estate?",
+    "options": [
+      "25%",
+      "35%",
+      "50%",
+      "65%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Section 6166 allows estate tax attributable to a closely held business to be deferred and paid over 14 years if the business exceeds 35% of the adjusted gross estate."
+  },
+  {
+    "id": "cfp-est-018",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Planning",
+    "difficulty": "medium",
+    "question": "Samantha creates a 5-year zeroed-out GRAT, transferring $4 million in stock. The §7520 rate is 5.2% and the stock appreciates at 12% annually. Approximately how much value passes to her children at the GRAT's termination, assuming she survives?",
+    "options": [
+      "Zero - all appreciation returns to Samantha",
+      "Approximately $900,000 - $1,200,000",
+      "Approximately $3,000,000",
+      "Approximately $4,000,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In a zeroed-out GRAT, the annuity payments return to the grantor roughly equal to the initial contribution. The \"excess return\" - appreciation above the §7520 rate - passes to remaindermen gift-tax-free. With 12% appreciation vs. 5.2% §7520 rate, approximately 6.8% annual excess compounds over 5 years on a declining balance. This results in roughly $900K-$1.2M passing to children at no additional gift tax cost."
+  },
+  {
+    "id": "cfp-est-b7-002",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Estate Documents",
+    "difficulty": "hard",
+    "question": "A trust restatement differs from a trust amendment in that:",
+    "options": [
+      "A) They are identical",
+      "B) A restatement replaces the entire trust document while maintaining the original trust, whereas amendments add to or modify specific provisions",
+      "C) Restatements terminate the trust",
+      "D) Amendments require court approval"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Amendments change specific provisions while keeping the original document. After multiple amendments, the trust becomes hard to read. A restatement replaces the entire document with a current, consolidated version while the original trust continues—no re-funding needed. Both require the settlor's capacity."
+  },
+  {
+    "id": "cfp-psy-b4-015",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Behavioral Finance",
+    "difficulty": "hard",
+    "question": "Choice architecture in financial planning involves:",
+    "options": [
+      "A) Giving clients unlimited options",
+      "B) Structuring how choices are presented to encourage better decisions while preserving freedom to choose",
+      "C) Making decisions for clients",
+      "D) Avoiding recommendations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Choice architecture (from behavioral economics) structures decision environments. Examples: setting good defaults (auto-enrollment in 401(k)), simplifying choices, ordering options strategically, and timing recommendations. It nudges toward better outcomes while respecting autonomy—people can always choose differently."
+  },
+  {
+    "id": "cfp-psy-006",
+    "exam": "CFP",
+    "section": "CFP-PSY",
+    "topic": "Nonverbal Communication",
+    "difficulty": "easy",
+    "question": "During a client meeting, you notice the client has crossed arms, is looking away, and seems tense. What should you do?",
+    "options": [
+      "C) Speak louder to regain their attention",
+      "B) Acknowledge you notice something might be off and ask if they have concerns",
+      "D) End the meeting early to avoid conflict",
+      "A) Continue presenting your recommendations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Closed body language often signals discomfort, disagreement, or confusion. The best approach is to gently acknowledge this and invite the client to share what's on their mind. This demonstrates emotional intelligence and prevents moving forward without addressing underlying concerns."
+  },
+  {
+    "id": "cfp-est-b4-010",
+    "exam": "CFP",
+    "section": "CFP-EST",
+    "topic": "Gift Tax",
+    "difficulty": "easy",
+    "question": "Payments for a grandchild's college tuition are exempt from gift tax if paid:",
+    "options": [
+      "B) Into a 529 plan for the grandchild",
+      "A) Directly to the grandchild",
+      "D) To the grandchild's parents for reimbursement",
+      "C) Directly to the educational institution"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Unlimited payments for tuition or medical expenses are excluded from gift tax if paid directly to the educational institution or medical provider. This is in addition to the annual exclusion. Paying the student or a 529 plan does not qualify for this unlimited exclusion."
+  },
+  {
+    "id": "cfp-tax-b11-014",
+    "exam": "CFP",
+    "section": "CFP-TAX",
+    "topic": "Tax Planning",
+    "difficulty": "easy",
+    "question": "Filling up lower tax brackets in a given year may be accomplished by:",
+    "options": [
+      "A) Deferring all income",
+      "D) Avoiding all investment income",
+      "B) Roth conversions, harvesting capital gains, or accelerating ordinary income when in lower bracket",
+      "C) Only reducing income"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Bracket filling: intentionally recognize income to fill lower brackets. Strategies: Roth conversions (convert enough to top of current bracket), harvest capital gains at 0% rate, accelerate income in low years. Especially valuable: retirement transition years, sabbaticals, early retirement, business down years. Balance: current tax vs. future tax rate expectations."
+  }
+]

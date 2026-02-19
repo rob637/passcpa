@@ -6,25 +6,56 @@ This document explains how VoraPrep's development, staging, and production envir
 
 | Environment | Branch | Firebase Project | URL | Purpose |
 |-------------|--------|------------------|-----|---------|
-| **Development** | `develop` | `passcpa-dev` | passcpa-dev.web.app | Daily development, testing |
-| **Staging** | `staging` | `voraprep-staging` | staging.voraprep.com | QA, pre-release testing |
+| **Development** | `v2` | `passcpa-dev` | passcpa-dev.web.app | V2 development — big features, redesigns |
+| **Staging** | `develop` | `voraprep-staging` | staging.voraprep.com | Hotfixes & patches — test before production |
 | **Production** | `main` | `voraprep-prod` | voraprep.com | Live users |
 
 ## 🔀 Git Workflow
 
 ```
-feature/* ──┬──> develop ──> staging ──> main
-            │       ↓           ↓         ↓
-            │   Dev Deploy   Staging   Production
-            │
-            └──> PR Preview (auto-generated URL)
+                    V2 Development (isolated)
+                    ─────────────────────────
+                    v2 ──> deploy:dev (passcpa-dev.web.app)
+                    │
+                    │  (merge only when V2 is ready)
+                    ▼
+Hotfixes & Patches
+──────────────────
+develop ──> deploy:staging ──> PR to main ──> deploy:prod
+    ↑                              ↓
+    │                         Production
+feature/fix-* branches           (voraprep.com)
 ```
 
 ### Branch Rules
-- **`main`**: Protected. Requires PR + approval. Auto-deploys to production.
-- **`staging`**: Protected. Requires PR. Auto-deploys to staging.
-- **`develop`**: Default branch for development. Auto-deploys to dev.
-- **`feature/*`**: Feature branches. Create PRs to get preview URLs.
+- **`main`**: Protected. Requires PR. Deploys to production (`voraprep-prod`).
+- **`develop`**: Hotfixes, patches, small improvements. Deploys to staging (`voraprep-staging`). Merges to `main` via PR.
+- **`v2`**: Version 2 development. Deploys to dev (`passcpa-dev`). **Never merges to `main` or `develop` until V2 is ready.**
+- **`feature/*`, `fix/*`**: Short-lived branches off `develop` for specific fixes.
+
+### Key Safety Rules
+1. **V2 cannot reach production** — `v2` never merges to `develop` or `main` directly. When V2 is done, it merges to `develop` first, gets tested on staging, then goes to `main`.
+2. **Production hotfixes** — branch from `develop`, fix, test on staging, PR to `main`.
+3. **Deploy scripts enforce environment matching** — `scripts/verify-deploy-env.cjs` prevents deploying wrong builds to wrong projects.
+
+### Deploy Commands
+```bash
+# V2 development (from v2 branch)
+npm run deploy:dev          # → passcpa-dev.web.app
+
+# Staging / hotfix testing (from develop branch)  
+npm run deploy:staging      # → staging.voraprep.com
+
+# Production release (from main branch, after PR merge)
+npm run deploy:prod         # → voraprep.com
+```
+
+### One-Time Setup: Branch Protection on `main`
+Go to GitHub → Settings → Rules → Rulesets → New ruleset:
+1. Name: "Protect main"
+2. Target: `main` branch
+3. Rules: ✅ Require pull request, ✅ Prevent deletion
+4. Enforcement: Active
 
 ## 🔐 Firebase Projects Setup
 

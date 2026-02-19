@@ -26,6 +26,8 @@ import {
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
 import { isFounderPricingActive, founderDaysRemaining, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
 import { useAuth } from '../../../hooks/useAuth';
+import { useExitIntent } from '../../../hooks/useExitIntent';
+import ExitIntentModal from '../../common/ExitIntentModal';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -34,6 +36,28 @@ interface ExamLandingTemplateProps {
 const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showExitModal, setShowExitModal] = useState(false);
+  const { user } = useAuth();
+
+  // Exit intent detection - only for non-authenticated users
+  const { markAsShown } = useExitIntent(
+    () => {
+      if (!user) {
+        setShowExitModal(true);
+      }
+    },
+    {
+      threshold: 20,
+      delay: 5000, // Wait 5 seconds before enabling
+      minTimeOnPage: 10000, // User must be on page 10+ seconds
+      storageKey: `exitIntent_${config.id}`,
+    }
+  );
+
+  const handleExitModalClose = () => {
+    setShowExitModal(false);
+    markAsShown();
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -277,7 +301,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </div>
                 <span>14-day free trial</span>
               </div>
-              {isFounderPricingActive() && (
+              {isFounderPricingActive() && SOCIAL_PROOF.showOnPricing && SOCIAL_PROOF.foundersJoined >= 50 && (
                 <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
                   <div className="w-5 h-5 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
                     <Users className="w-3 h-3 text-amber-600" />
@@ -588,6 +612,14 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           </div>
         </div>
       </footer>
+
+      {/* Exit Intent Modal */}
+      <ExitIntentModal
+        isOpen={showExitModal}
+        onClose={handleExitModalClose}
+        courseId={config.id}
+        courseName={config.name}
+      />
     </div>
   );
 };

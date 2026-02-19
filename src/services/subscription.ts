@@ -123,21 +123,26 @@ export const FOUNDER_SEATS_PER_EXAM = 300;
 
 // Social proof stats for landing pages
 // Update these periodically to reflect actual user counts
+// NOTE: Set showOnPricing to true once you have 50+ real users
 export const SOCIAL_PROOF = {
-  foundersJoined: 127,           // Total founding members across all exams
-  lastUpdated: '2026-02-20',    // When this was last updated
-  showOnPricing: true,          // Whether to display on pricing sections
+  foundersJoined: 0,             // TODO: Update with real count from admin dashboard
+  lastUpdated: '2026-02-19',    // When this was last updated
+  showOnPricing: false,         // Disabled until we have real numbers to show
   passingRateAvg: 91,           // Average passing rate for subscribers (%)
   questionsAnswered: '50K+',    // Total questions answered across platform
 } as const;
 
 // Get social proof text for display
+// Returns empty string if not enough users to show credibly
 export const getSocialProofText = (): string => {
-  const { foundersJoined } = SOCIAL_PROOF;
+  const { foundersJoined, showOnPricing } = SOCIAL_PROOF;
+  if (!showOnPricing || foundersJoined < 50) {
+    return ''; // Don't show until we have credible numbers
+  }
   if (foundersJoined >= 100) {
     return `${foundersJoined} founding members have locked in their rate`;
   }
-  return 'Join our founding members and lock in your rate';
+  return `${foundersJoined}+ candidates are studying with VoraPrep`;
 };
 
 export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {

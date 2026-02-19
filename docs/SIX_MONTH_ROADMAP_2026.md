@@ -353,7 +353,7 @@ The following systems were built and deployed on launch day:
 |------|----------|-------------|
 | Founder countdown on landing pages | Apr 1 | Show "X of 300 seats remaining" + countdown timer |
 | Founder email campaign | Apr 1, 15, 25 | 3-email series to trial users: scarcity + savings messaging |
-| Founder social proof | Apr 1 | Display "127 founders have joined" on pricing sections |
+| Founder social proof | **DONE** | ~~Display "127 founders have joined"~~ Infrastructure ready, disabled until 50+ real users (SOCIAL_PROOF in subscription.ts) |
 | Founder testimonial collection | Apr 7 | Email existing subscribers for quotes/reviews |
 | Founder deadline enforcement | Apr 30 | Transition to regular pricing, update all pricing displays |
 | Post-founder pricing strategy | Apr 28 | Decision: introduce quarterly tier? Bundle pricing? |
@@ -398,7 +398,7 @@ The following systems were built and deployed on launch day:
 | Trial length (14 vs 7 days) | A/B | 7-day trial may create more urgency with similar conversion |
 | Onboarding diagnostic quiz | Analysis | Users who complete diagnostic have 2× higher Day 7 retention |
 | In-app upgrade prompts | Feature | Show upgrade modal when hitting free-tier limits |
-| Exit intent modal | Feature | Capture email on bounce from pricing page |
+| Exit intent modal | **DONE** | ✅ ExitIntentModal captures email on bounce, saves to waitlist with exit_intent tag |
 
 ---
 

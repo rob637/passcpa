@@ -452,12 +452,12 @@ function SectionPicker({ courseId, sections, onSelect, onSkip }: SectionPickerPr
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-2">
           <button
             onClick={onSkip}
-            className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 underline underline-offset-2 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
           >
-            Skip diagnostic — go to dashboard
+            Skip to Practice →
           </button>
         </div>
       </div>
@@ -517,10 +517,14 @@ function QuizIntro({
           </Button>
           <button
             onClick={onSkip}
-            className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 underline underline-offset-2 transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-medium"
           >
-            Skip — I'll take it later
+            <ArrowRight className="w-4 h-4" />
+            Skip to Practice
           </button>
+          <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">
+            You can always take the diagnostic later from Settings
+          </p>
         </div>
       </div>
     </div>

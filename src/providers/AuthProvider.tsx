@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import logger from '../utils/logger';
+import { analytics } from '../services/analytics';
 import {
   User,
   onAuthStateChanged,
@@ -289,6 +290,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         await applyReferralCode(result.user.uid, pendingReferral);
         logger.info('Applied referral code:', pendingReferral);
       }
+
+      // Track signup conversion for Google Ads SEM optimization
+      analytics.trackSignupConversion(result.user.uid, 'email');
+      // Track trial start (14-day trial begins at signup)
+      analytics.trackTrialStartConversion(result.user.uid, pendingCourse);
 
       return result.user;
     } catch (err) {

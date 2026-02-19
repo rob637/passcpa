@@ -766,9 +766,9 @@ function TechnicalTab() {
           <ChecklistItem label="Canonical URLs" status="active" detail="Set via useSEO hook on all public pages" />
           <ChecklistItem label="Open Graph Tags" status="active" detail="Title, description, image, type on all pages" />
           <ChecklistItem label="Meta Descriptions" status="active" detail="Dynamic per-page via useSEO hook" />
-          <ChecklistItem label="Google Search Console" status="pending" detail="Connect via Cloud Function for rank tracking" />
+          <ChecklistItem label="Google Search Console" status="active" detail="Connected via Cloud Function for rank tracking" />
           <ChecklistItem label="DataForSEO API" status="pending" detail="Connect for keyword volume and SERP data" />
-          <ChecklistItem label="Google Ads API" status="pending" detail="Connect for automated campaign management" />
+          <ChecklistItem label="Google Ads API" status="active" detail="Connected for automated campaign management" />
           <ChecklistItem label="Core Web Vitals Monitor" status="ready" detail="Client-side CWV measurement built in" />
           <ChecklistItem label="Internal Link Graph" status="ready" detail="Automated orphan page detection + link suggestions" />
           <ChecklistItem label="Pre-rendering (SSR)" status="planned" detail="Recommended: Astro for /blog/* routes via reverse proxy" />
@@ -954,6 +954,12 @@ function SettingsTab() {
       if (data.dataForSEO) updates.dataForSEOConfigured = data.dataForSEO.connected;
       if (Object.keys(updates).length > 0) {
         setFormState(prev => ({ ...prev, ...updates }));
+        // Persist connection status to Firestore so it shows correctly on reload
+        try {
+          await updateGrowthConfig(updates as Partial<GrowthEngineConfig>);
+        } catch (e) {
+          logger.warn('[GrowthDashboard] Failed to persist connection status:', e);
+        }
       }
     } catch (error: unknown) {
       const errMsg = error instanceof Error ? error.message : 'Unknown error';

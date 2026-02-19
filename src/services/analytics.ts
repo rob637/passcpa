@@ -18,6 +18,10 @@ import { trackPWAEngagement } from '../hooks/usePWAInstall';
 // GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 
+// Google Ads Conversion ID - Get from Google Ads → Tools → Conversions → Tag setup
+// Format: AW-XXXXXXXXX/YYYYYYYYYYYYYYY
+const GOOGLE_ADS_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_CONVERSION_ID || '';
+
 let initialized = false;
 
 /**
@@ -208,6 +212,86 @@ export const analytics = {
       component: componentName,
       fatal: false,
     });
+  },
+
+  // ============================================
+  // GOOGLE ADS CONVERSION TRACKING
+  // Required for SEM bid optimization
+  // ============================================
+
+  /**
+   * Track signup conversion for Google Ads
+   * Called when user creates an account
+   */
+  trackSignupConversion: (userId: string, method: string = 'email') => {
+    trackEvent('sign_up', {
+      method: method,
+      user_id: userId,
+    });
+
+    // Google Ads conversion
+    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: GOOGLE_ADS_CONVERSION_ID,
+        event_category: 'signup',
+      });
+      logger.log('Google Ads signup conversion tracked');
+    }
+  },
+
+  /**
+   * Track trial start conversion for Google Ads
+   * Called when user starts their free trial
+   */
+  trackTrialStartConversion: (userId: string, courseId: string) => {
+    trackEvent('trial_start', {
+      user_id: userId,
+      course_id: courseId,
+    });
+
+    // Google Ads conversion
+    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: GOOGLE_ADS_CONVERSION_ID,
+        event_category: 'trial_start',
+        value: 0,
+        currency: 'USD',
+      });
+      logger.log('Google Ads trial start conversion tracked');
+    }
+  },
+
+  /**
+   * Track purchase conversion for Google Ads
+   * Called when user completes a subscription purchase
+   */
+  trackPurchaseConversion: (userId: string, courseId: string, value: number, planType: 'monthly' | 'annual') => {
+    trackEvent('purchase', {
+      user_id: userId,
+      course_id: courseId,
+      value: value,
+      currency: 'USD',
+      plan_type: planType,
+    });
+
+    // Google Ads conversion with value
+    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: GOOGLE_ADS_CONVERSION_ID,
+        event_category: 'purchase',
+        value: value,
+        currency: 'USD',
+        transaction_id: `${userId}_${Date.now()}`,
+      });
+      logger.log(`Google Ads purchase conversion tracked: $${value}`);
+    }
+  },
+
+  /**
+   * Check if Google Ads tracking is configured
+   */
+  isGoogleAdsConfigured: (): boolean => {
+    return !!GOOGLE_ADS_CONVERSION_ID && !GOOGLE_ADS_CONVERSION_ID.startsWith('AW-XXXX');
   },
 };
 

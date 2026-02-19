@@ -253,6 +253,14 @@ const MainLayout = () => {
               <span>{currentStreak} day streak!</span>
             </div>
           </div>
+          <a
+            href="https://discord.gg/XBjzDrws"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 flex items-center gap-2 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+          >
+            💬 Join our Discord community
+          </a>
           {/* Legal Disclaimer - Dynamic based on course */}
           <p className="mt-4 text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
             Not affiliated with {course?.metadata?.examProvider || 'any certifying organization'}. For educational purposes only.{' '}

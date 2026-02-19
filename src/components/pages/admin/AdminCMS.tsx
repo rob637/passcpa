@@ -5,7 +5,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { ADMIN_EMAILS, isAdminEmail } from '../../../config/adminConfig';
 import { FEATURES } from '../../../config/featureFlags';
@@ -366,6 +366,18 @@ interface CourseContentStats {
   bySection?: Record<string, number>;
 }
 
+interface EmailHistoryItem {
+  id: string;
+  subject: string;
+  body: string;
+  recipientCount: number;
+  sentCount: number;
+  failedCount: number;
+  sentBy: string;
+  sentAt: { seconds: number; nanoseconds: number } | null;
+  recipients?: Array<{ email: string; name: string; uid?: string | null }>;
+}
+
 // ============================================================================
 // Constants
 // ============================================================================
@@ -658,6 +670,28 @@ const AdminCMS: React.FC = () => {
   const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial'>('all');
   const [editingTrialUserId, setEditingTrialUserId] = useState<string | null>(null);
   const [userCourseFilter, setUserCourseFilter] = useState<CourseId | 'all'>('all');
+  const [userSortColumn, setUserSortColumn] = useState<'email' | 'course' | 'section' | 'subscription' | 'trials' | 'role' | 'joined'>('joined');
+  const [userSortDirection, setUserSortDirection] = useState<'asc' | 'desc'>('desc');
+  
+  // Delete user state
+  const [deleteConfirmUserId, setDeleteConfirmUserId] = useState<string | null>(null);
+  const [deleteConfirmText, setDeleteConfirmText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  // Email to users state
+  const [selectedUserIds, setSelectedUserIds] = useState<Set<string>>(new Set());
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [emailSubject, setEmailSubject] = useState('');
+  const [emailBody, setEmailBody] = useState('');
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const [isSyncingEmails, setIsSyncingEmails] = useState(false);
+  const [emailSyncResult, setEmailSyncResult] = useState<{ updated: number; total: number } | null>(null);
+  
+  // Email history state
+  const [emailHistory, setEmailHistory] = useState<EmailHistoryItem[]>([]);
+  const [isLoadingEmailHistory, setIsLoadingEmailHistory] = useState(false);
+  const [expandedEmailId, setExpandedEmailId] = useState<string | null>(null);
+  
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
@@ -850,6 +884,41 @@ const AdminCMS: React.FC = () => {
         : 'Failed to load users: ' + msg);
     } finally {
       setIsLoadingUsers(false);
+    }
+  }, [isAdmin]);
+
+  // Load Email History
+  const loadEmailHistory = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsLoadingEmailHistory(true);
+    try {
+      const q = query(
+        collection(db, 'emailHistory'),
+        orderBy('sentAt', 'desc'),
+        limit(50)
+      );
+      const querySnapshot = await getDocs(q);
+      const history: EmailHistoryItem[] = [];
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        history.push({
+          id: docSnap.id,
+          subject: data.subject || '',
+          body: data.body || '',
+          recipientCount: data.recipientCount || 0,
+          sentCount: data.sentCount || 0,
+          failedCount: data.failedCount || 0,
+          sentBy: data.sentBy || 'unknown',
+          sentAt: data.sentAt || null,
+          recipients: data.recipients || [],
+        });
+      });
+      setEmailHistory(history);
+    } catch (error) {
+      logger.error('Error loading email history', error);
+      addLog('Error loading email history: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsLoadingEmailHistory(false);
     }
   }, [isAdmin]);
 
@@ -1075,8 +1144,65 @@ const AdminCMS: React.FC = () => {
       });
     }
     
+    // Apply sorting
+    result.sort((a, b) => {
+      let aVal: string | number = '';
+      let bVal: string | number = '';
+      
+      switch (userSortColumn) {
+        case 'email':
+          aVal = (a.email || '').toLowerCase();
+          bVal = (b.email || '').toLowerCase();
+          break;
+        case 'course':
+          aVal = getUserCourse(a);
+          bVal = getUserCourse(b);
+          break;
+        case 'section':
+          aVal = (a.examSection || '').toLowerCase();
+          bVal = (b.examSection || '').toLowerCase();
+          break;
+        case 'subscription':
+          const tiers = ['free', 'trial', 'monthly', 'quarterly', 'annual', 'lifetime'];
+          aVal = tiers.indexOf(a.subscription?.tier || 'free');
+          bVal = tiers.indexOf(b.subscription?.tier || 'free');
+          break;
+        case 'trials':
+          // Count active trials
+          const countTrials = (u: UserDocument) => {
+            const now = Date.now();
+            let count = 0;
+            if (u._trials) {
+              for (const trial of Object.values(u._trials)) {
+                if (trial?.endDate?.seconds && trial.endDate.seconds * 1000 > now) count++;
+              }
+            }
+            return count;
+          };
+          aVal = countTrials(a);
+          bVal = countTrials(b);
+          break;
+        case 'role':
+          aVal = a.isAdmin ? 1 : 0;
+          bVal = b.isAdmin ? 1 : 0;
+          break;
+        case 'joined':
+          aVal = a.createdAt && typeof a.createdAt === 'object' && 'seconds' in a.createdAt
+            ? (a.createdAt as { seconds: number }).seconds
+            : 0;
+          bVal = b.createdAt && typeof b.createdAt === 'object' && 'seconds' in b.createdAt
+            ? (b.createdAt as { seconds: number }).seconds
+            : 0;
+          break;
+      }
+      
+      if (aVal < bVal) return userSortDirection === 'asc' ? -1 : 1;
+      if (aVal > bVal) return userSortDirection === 'asc' ? 1 : -1;
+      return 0;
+    });
+    
     setFilteredUsers(result);
-  }, [usersList, userSearch, userFilter, userCourseFilter]);
+  }, [usersList, userSearch, userFilter, userCourseFilter, userSortColumn, userSortDirection]);
 
   // Load Analytics
   const loadAnalytics = useCallback(async () => {
@@ -1952,6 +2078,7 @@ const AdminCMS: React.FC = () => {
   useEffect(() => {
     if (activeTab === 'users') {
       loadUsers();
+      loadEmailHistory();
     } else if (activeTab === 'logs') {
       loadSystemErrors();
     } else if (activeTab === 'analytics') {
@@ -1959,7 +2086,7 @@ const AdminCMS: React.FC = () => {
     } else if (activeTab === 'tools') {
       loadAnnouncementHistory();
     }
-  }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics, loadAnnouncementHistory]);
+  }, [activeTab, loadUsers, loadEmailHistory, loadSystemErrors, loadAnalytics, loadAnnouncementHistory]);
 
   // Compute revenue metrics when users list changes
   useEffect(() => {
@@ -2897,6 +3024,43 @@ const AdminCMS: React.FC = () => {
                   >
                     Refresh
                   </button>
+                  <button
+                    onClick={async () => {
+                      if (!confirm('Sync missing emails from Firebase Auth to Firestore? This will update users who signed up with Google but have blank emails in the database.')) return;
+                      setIsSyncingEmails(true);
+                      setEmailSyncResult(null);
+                      try {
+                        const syncEmails = httpsCallable(functions, 'adminSyncUserEmails');
+                        const result = await syncEmails({});
+                        const data = result.data as { updated: number; total: number; alreadyHasEmail: number };
+                        setEmailSyncResult({ updated: data.updated, total: data.total });
+                        addLog(`Email sync complete: ${data.updated} updated, ${data.alreadyHasEmail} already had emails`, 'success');
+                        loadUsers(); // Refresh the list
+                      } catch (err) {
+                        addLog(`Email sync failed: ${(err as Error).message}`, 'error');
+                      } finally {
+                        setIsSyncingEmails(false);
+                      }
+                    }}
+                    disabled={isSyncingEmails}
+                    className="text-sm px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded hover:bg-purple-100 transition-colors disabled:opacity-50"
+                    title="Sync missing emails from Firebase Auth (for Google sign-in users)"
+                  >
+                    {isSyncingEmails ? '⏳ Syncing...' : '🔄 Sync Emails'}
+                  </button>
+                  {emailSyncResult && (
+                    <span className="text-sm text-green-600 dark:text-green-400">
+                      ✓ {emailSyncResult.updated} emails synced
+                    </span>
+                  )}
+                  {selectedUserIds.size > 0 && (
+                    <button
+                      onClick={() => setShowEmailModal(true)}
+                      className="text-sm px-3 py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded hover:bg-green-100 transition-colors flex items-center gap-1"
+                    >
+                      ✉️ Email Selected ({selectedUserIds.size})
+                    </button>
+                  )}
                 </div>
               </div>
             
@@ -2910,20 +3074,60 @@ const AdminCMS: React.FC = () => {
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-gray-50 dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Email</th>
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Course</th>
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Section</th>
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Subscription</th>
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Trials (per exam)</th>
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Role</th>
-                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Joined</th>
+                        <th className="p-3 w-10">
+                          <input
+                            type="checkbox"
+                            checked={filteredUsers.length > 0 && filteredUsers.slice(0, 100).every(u => selectedUserIds.has(u.id))}
+                            onChange={(e) => {
+                              if (e.target.checked) {
+                                setSelectedUserIds(new Set(filteredUsers.slice(0, 100).map(u => u.id)));
+                              } else {
+                                setSelectedUserIds(new Set());
+                              }
+                            }}
+                            className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            title="Select all visible"
+                          />
+                        </th>
+                        {[
+                          { key: 'email', label: 'Email' },
+                          { key: 'course', label: 'Course' },
+                          { key: 'section', label: 'Section' },
+                          { key: 'subscription', label: 'Subscription' },
+                          { key: 'trials', label: 'Trials' },
+                          { key: 'role', label: 'Role' },
+                          { key: 'joined', label: 'Joined' },
+                        ].map(col => (
+                          <th
+                            key={col.key}
+                            className="p-3 font-medium text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-800 select-none"
+                            onClick={() => {
+                              const colKey = col.key as typeof userSortColumn;
+                              if (userSortColumn === colKey) {
+                                setUserSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+                              } else {
+                                setUserSortColumn(colKey);
+                                setUserSortDirection('asc');
+                              }
+                            }}
+                          >
+                            <span className="flex items-center gap-1">
+                              {col.label}
+                              {userSortColumn === col.key && (
+                                <span className="text-blue-500">
+                                  {userSortDirection === 'asc' ? '↑' : '↓'}
+                                </span>
+                              )}
+                            </span>
+                          </th>
+                        ))}
                         <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Actions</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100 dark:divide-slate-700">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={8} className="p-4 text-center text-gray-600 dark:text-gray-400">
+                          <td colSpan={9} className="p-4 text-center text-gray-600 dark:text-gray-400">
                             {usersError ? (
                               <div className="inline-flex items-center gap-2 px-4 py-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-400 text-sm">
                                 <span className="text-red-500">⚠</span>
@@ -2935,6 +3139,22 @@ const AdminCMS: React.FC = () => {
                       ) : (
                         filteredUsers.slice(0, 100).map((u) => (
                           <tr key={u.id} className="hover:bg-gray-50 dark:hover:bg-slate-700 dark:bg-slate-900">
+                            <td className="p-3">
+                              <input
+                                type="checkbox"
+                                checked={selectedUserIds.has(u.id)}
+                                onChange={(e) => {
+                                  const newSet = new Set(selectedUserIds);
+                                  if (e.target.checked) {
+                                    newSet.add(u.id);
+                                  } else {
+                                    newSet.delete(u.id);
+                                  }
+                                  setSelectedUserIds(newSet);
+                                }}
+                                className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                              />
+                            </td>
                             <td className="p-3">
                               <div className="font-medium text-sm">{u.email || '—'}</div>
                               <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{u.id.slice(0, 12)}...</div>
@@ -3141,6 +3361,13 @@ const AdminCMS: React.FC = () => {
                                 >
                                   {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
                                 </button>
+                                <button
+                                  onClick={() => setDeleteConfirmUserId(u.id)}
+                                  className="px-2 py-1 text-xs bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded hover:bg-red-100"
+                                  title="Delete user"
+                                >
+                                  🗑️
+                                </button>
 
                               </div>
                             </td>
@@ -3157,6 +3384,252 @@ const AdminCMS: React.FC = () => {
                 </div>
               )}
             </Card>
+            
+            {/* Delete User Confirmation Modal */}
+            {deleteConfirmUserId && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-md p-6">
+                  <h3 className="text-lg font-bold text-red-600 dark:text-red-400 mb-4">⚠️ Delete User</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2">
+                    This will soft-delete the user <strong>{usersList.find(u => u.id === deleteConfirmUserId)?.email || deleteConfirmUserId}</strong>.
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    The user's data will be marked as deleted but retained for audit purposes.
+                  </p>
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Type <span className="font-mono bg-red-100 dark:bg-red-900/30 px-1 rounded text-red-600">DELETE</span> to confirm:
+                  </p>
+                  <input
+                    type="text"
+                    value={deleteConfirmText}
+                    onChange={(e) => setDeleteConfirmText(e.target.value)}
+                    placeholder="Type DELETE"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg mb-4 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                  />
+                  <div className="flex gap-3 justify-end">
+                    <button
+                      onClick={() => {
+                        setDeleteConfirmUserId(null);
+                        setDeleteConfirmText('');
+                      }}
+                      className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={async () => {
+                        if (deleteConfirmText !== 'DELETE') return;
+                        setIsDeleting(true);
+                        try {
+                          const userRef = doc(db, 'users', deleteConfirmUserId);
+                          await updateDoc(userRef, {
+                            deletedAt: serverTimestamp(),
+                            deletedBy: user?.uid,
+                          });
+                          setUsersList(prev => prev.filter(u => u.id !== deleteConfirmUserId));
+                          setDeleteConfirmUserId(null);
+                          setDeleteConfirmText('');
+                          alert('User deleted successfully');
+                        } catch (err) {
+                          console.error('Delete error:', err);
+                          alert('Failed to delete user');
+                        } finally {
+                          setIsDeleting(false);
+                        }
+                      }}
+                      disabled={deleteConfirmText !== 'DELETE' || isDeleting}
+                      className={`px-4 py-2 rounded-lg font-medium ${
+                        deleteConfirmText === 'DELETE' && !isDeleting
+                          ? 'bg-red-600 text-white hover:bg-red-700'
+                          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      }`}
+                    >
+                      {isDeleting ? 'Deleting...' : 'Delete User'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Email Compose Modal */}
+            {showEmailModal && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl w-full max-w-2xl p-6">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">✉️ Send Email to {selectedUserIds.size} Users</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+                      <input
+                        type="text"
+                        value={emailSubject}
+                        onChange={(e) => setEmailSubject(e.target.value)}
+                        placeholder="Email subject..."
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                      <textarea
+                        value={emailBody}
+                        onChange={(e) => setEmailBody(e.target.value)}
+                        placeholder="Write your message here...&#10;&#10;Available variables: {{name}}, {{email}}"
+                        rows={8}
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
+                      />
+                    </div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      <strong>Recipients:</strong> {Array.from(selectedUserIds).slice(0, 5).map(id => usersList.find(u => u.id === id)?.email || id).join(', ')}
+                      {selectedUserIds.size > 5 && ` and ${selectedUserIds.size - 5} more...`}
+                    </div>
+                  </div>
+                  <div className="flex gap-3 justify-end mt-6">
+                    <button
+                      onClick={() => {
+                        setShowEmailModal(false);
+                        setEmailSubject('');
+                        setEmailBody('');
+                      }}
+                      className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={async () => {
+                        if (!emailSubject.trim() || !emailBody.trim()) {
+                          alert('Please enter a subject and message');
+                          return;
+                        }
+                        setIsSendingEmail(true);
+                        try {
+                          const recipients = Array.from(selectedUserIds).map(id => {
+                            const u = usersList.find(user => user.id === id);
+                            return { uid: id, email: u?.email || '', name: u?.displayName || u?.email?.split('@')[0] || 'User' };
+                          }).filter(r => r.email);
+                          
+                          const sendAdminEmail = httpsCallable(functions, 'adminSendBulkEmail');
+                          await sendAdminEmail({
+                            subject: emailSubject,
+                            body: emailBody,
+                            recipients,
+                          });
+                          
+                          alert(`Email sent to ${recipients.length} users!`);
+                          setShowEmailModal(false);
+                          setEmailSubject('');
+                          setEmailBody('');
+                          setSelectedUserIds(new Set());
+                          loadEmailHistory(); // Refresh email history
+                        } catch (err) {
+                          console.error('Email error:', err);
+                          alert('Failed to send email: ' + (err instanceof Error ? err.message : 'Unknown error'));
+                        } finally {
+                          setIsSendingEmail(false);
+                        }
+                      }}
+                      disabled={!emailSubject.trim() || !emailBody.trim() || isSendingEmail}
+                      className={`px-4 py-2 rounded-lg font-medium ${
+                        emailSubject.trim() && emailBody.trim() && !isSendingEmail
+                          ? 'bg-green-600 text-white hover:bg-green-700'
+                          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      }`}
+                    >
+                      {isSendingEmail ? 'Sending...' : `Send to ${selectedUserIds.size} Users`}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Email History Section */}
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+              <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📧 Email History</h3>
+                <button
+                  onClick={loadEmailHistory}
+                  disabled={isLoadingEmailHistory}
+                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+                >
+                  {isLoadingEmailHistory ? 'Loading...' : 'Refresh'}
+                </button>
+              </div>
+              <div className="p-4">
+                {isLoadingEmailHistory ? (
+                  <div className="text-center py-8">
+                    <div className="animate-spin w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
+                    <p className="text-sm text-gray-500">Loading email history...</p>
+                  </div>
+                ) : emailHistory.length === 0 ? (
+                  <p className="text-center py-8 text-gray-500 dark:text-gray-400">No emails sent yet.</p>
+                ) : (
+                  <div className="space-y-3">
+                    {emailHistory.map((email) => {
+                      const sentDate = email.sentAt 
+                        ? new Date(email.sentAt.seconds * 1000).toLocaleString()
+                        : 'Unknown';
+                      const isExpanded = expandedEmailId === email.id;
+                      
+                      return (
+                        <div key={email.id} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                          <button
+                            onClick={() => setExpandedEmailId(isExpanded ? null : email.id)}
+                            className="w-full p-3 text-left hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors"
+                          >
+                            <div className="flex justify-between items-start">
+                              <div className="flex-1 min-w-0">
+                                <p className="font-medium text-gray-900 dark:text-white truncate">{email.subject}</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                  {sentDate} • {email.sentCount} sent{email.failedCount > 0 && `, ${email.failedCount} failed`}
+                                </p>
+                              </div>
+                              <span className="text-gray-400 ml-2">{isExpanded ? '▼' : '▶'}</span>
+                            </div>
+                          </button>
+                          {isExpanded && (
+                            <div className="p-3 pt-0 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-slate-800/50">
+                              <div className="grid grid-cols-2 gap-4 text-sm mb-3">
+                                <div>
+                                  <span className="text-gray-500 dark:text-gray-400">Sent by:</span>
+                                  <span className="ml-2 text-gray-900 dark:text-white">{email.sentBy}</span>
+                                </div>
+                                <div>
+                                  <span className="text-gray-500 dark:text-gray-400">Recipients:</span>
+                                  <span className="ml-2 text-gray-900 dark:text-white">{email.recipientCount}</span>
+                                </div>
+                              </div>
+                              <div className="mb-3">
+                                <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase mb-1">Message Template</p>
+                                <div className="bg-white dark:bg-slate-900 p-3 rounded border border-gray-200 dark:border-gray-600 text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap max-h-40 overflow-y-auto">
+                                  {email.body}
+                                </div>
+                              </div>
+                              {email.recipients && email.recipients.length > 0 && (
+                                <div>
+                                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase mb-1">Recipients ({email.recipients.length})</p>
+                                  <div className="bg-white dark:bg-slate-900 p-2 rounded border border-gray-200 dark:border-gray-600 text-sm max-h-32 overflow-y-auto">
+                                    <div className="flex flex-wrap gap-2">
+                                      {email.recipients.slice(0, 20).map((r, i) => (
+                                        <span key={i} className="inline-flex items-center px-2 py-1 rounded bg-gray-100 dark:bg-slate-700 text-xs text-gray-700 dark:text-gray-300">
+                                          {r.email}
+                                        </span>
+                                      ))}
+                                      {email.recipients.length > 20 && (
+                                        <span className="inline-flex items-center px-2 py-1 text-xs text-gray-500">
+                                          +{email.recipients.length - 20} more
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         )}
 
@@ -4692,10 +5165,10 @@ const AdminCMS: React.FC = () => {
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
                   <div className="flex gap-3 mt-2 text-sm">
-                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{getUserCourse(selectedUser).toUpperCase()}</span>
-                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
-                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
-                    {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}
+                    <span className="bg-white/20 px-2 py-1 rounded font-medium">{getUserCourse(selectedUser).toUpperCase()}</span>
+                    <span className="bg-white/20 px-2 py-1 rounded font-medium">{selectedUser.examSection || 'No section'}</span>
+                    <span className="bg-white/20 px-2 py-1 rounded font-medium">{selectedUser.subscription?.tier || 'free'}</span>
+                    {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded font-medium">Admin</span>}
                   </div>
                 </div>
                 <button

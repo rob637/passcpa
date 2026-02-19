@@ -1,0 +1,16 @@
+# Multi-Platform Opportunity Finder dependencies
+
+# Reddit (RSS feeds - no API key needed!)
+feedparser>=6.0.0              # RSS feed parser
+
+# Twitter/X (optional - $100/mo for API)
+tweepy>=4.14.0                 # Twitter API wrapper (optional)
+
+# AI & Notifications  
+google-generativeai>=0.3.0     # Gemini for response generation  
+requests>=2.28.0               # HTTP requests
+python-dotenv>=1.0.0           # Environment variable loading
+
+# Future platforms (optional)
+# selenium>=4.0.0              # For Quora/LinkedIn scraping (not recommended)
+# playwright>=1.40.0           # Alternative to Selenium

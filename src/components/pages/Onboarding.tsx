@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
 // getCourseHomePath removed — onboarding now navigates to /diagnostic
@@ -42,14 +42,17 @@ const SINGLE_EXAM_COURSES: CourseId[] = ['cfp', 'cisa'];
 const isSingleExamCourse = (courseId: string): boolean => 
   SINGLE_EXAM_COURSES.includes(courseId as CourseId);
 
-// Get steps based on course type and whether switching (skips course selection when switching)
-const getStepsForCourse = (courseId: string, isCourseSwitching: boolean = false): Step[] => {
-  const baseSteps: Step[] = [
-    { id: 'welcome', title: 'Welcome' },
-  ];
+// Get steps based on course type, whether switching (skips course selection), and fast-track mode
+const getStepsForCourse = (courseId: string, isCourseSwitching: boolean = false, fastTrack: boolean = false): Step[] => {
+  const baseSteps: Step[] = [];
+  
+  // Skip welcome step in fast-track mode (user just wants to practice)
+  if (!fastTrack) {
+    baseSteps.push({ id: 'welcome', title: 'Welcome' });
+  }
   
   // Skip course selection when switching to a new course (they already chose it)
-  if (!isCourseSwitching) {
+  if (!isCourseSwitching && !fastTrack) {
     baseSteps.push({ id: 'course', title: 'Certification' });
   }
   
@@ -60,10 +63,12 @@ const getStepsForCourse = (courseId: string, isCourseSwitching: boolean = false)
     baseSteps.push({ id: 'section', title: 'Choose Section' });
   }
   
-  baseSteps.push(
-    { id: 'daily-goal', title: 'Daily Goal' },
-    { id: 'complete', title: 'All Set!' }
-  );
+  // Skip daily goal step in fast-track mode (use default)
+  if (!fastTrack) {
+    baseSteps.push({ id: 'daily-goal', title: 'Daily Goal' });
+  }
+  
+  baseSteps.push({ id: 'complete', title: 'All Set!' });
   
   return baseSteps;
 };
@@ -80,6 +85,8 @@ interface ExamDateStepProps {
   value: string;
   onChange: (val: string) => void;
   courseId: string;
+  showSkip?: boolean;
+  onSkip?: () => void;
 }
 
 interface DailyGoalStepProps {
@@ -333,7 +340,7 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate,
   );
 };
 
-const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId }) => {
+const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId, showSkip, onSkip }) => {
   const today = new Date().toISOString().split('T')[0];
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
@@ -446,6 +453,16 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId }
           <strong>Tip:</strong> {getExamTip()} You can change this later in Settings.
         </p>
       </div>
+
+      {/* Skip option for fast-track mode */}
+      {showSkip && (
+        <button
+          onClick={onSkip}
+          className="w-full mt-4 text-center text-sm text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+        >
+          Skip for now — I'll set this later
+        </button>
+      )}
     </div>
   );
 };
@@ -575,8 +592,19 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
 
 const Onboarding: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { userProfile, updateUserProfile } = useAuth();
   const { courseId: currentCourseId, setCourse } = useCourse();
+
+  // Check for fast-track mode (streamlined onboarding from demo/landing pages)
+  // Fast-track skips welcome and daily goal steps (uses defaults)
+  // Check both URL param and localStorage (which persists through registration)
+  const fastTrack = searchParams.get('fast') === '1' || localStorage.getItem('onboardingFastTrack') === '1';
+  
+  // Clear fast-track flag from localStorage after reading it
+  useEffect(() => {
+    localStorage.removeItem('onboardingFastTrack');
+  }, []);
 
   // Detect if this is a course switch (user already completed onboarding for at least one course)
   // In this case, we pre-select the course and skip the course selection step
@@ -586,8 +614,13 @@ const Onboarding: React.FC = () => {
   ) || Boolean(userProfile?.onboardingComplete);
 
   // Check for pending course from registration flow or course-specific launch page
-  // Priority: 1) localStorage pendingCourse, 2) userProfile.activeCourse, 3) CourseProvider courseId
+  // Priority: 1) URL param, 2) localStorage pendingCourse, 3) userProfile.activeCourse, 4) CourseProvider courseId
   const getPendingCourse = (): CourseId | '' => {
+    // URL param takes priority (from demo-practice or landing page)
+    const urlCourse = searchParams.get('course');
+    if (urlCourse && ACTIVE_COURSES.includes(urlCourse as CourseId)) {
+      return urlCourse as CourseId;
+    }
     const pending = localStorage.getItem('pendingCourse');
     if (pending && ACTIVE_COURSES.includes(pending as CourseId)) {
       return pending as CourseId;
@@ -606,6 +639,7 @@ const Onboarding: React.FC = () => {
   // Check if course was pre-selected (from launch page, registration, or stored in profile)
   // This should skip the course selection step
   const hadPendingCourse = Boolean(
+    searchParams.get('course') ||
     localStorage.getItem('pendingCourse') || 
     (userProfile?.activeCourse && ACTIVE_COURSES.includes(userProfile.activeCourse as CourseId))
   );
@@ -619,10 +653,10 @@ const Onboarding: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Track if course was pre-determined (skip course selection step)
-  const [skipCourseStep] = useState(isCourseSwitching || hadPendingCourse);
+  const [skipCourseStep] = useState(isCourseSwitching || hadPendingCourse || fastTrack);
 
-  // Dynamic steps based on course type and whether course was pre-selected
-  const steps = getStepsForCourse(selectedCourse, skipCourseStep);
+  // Dynamic steps based on course type, whether course was pre-selected, and fast-track mode
+  const steps = getStepsForCourse(selectedCourse, skipCourseStep, fastTrack);
 
   // Auto-set section for single-exam courses (they study the whole exam)
   useEffect(() => {
@@ -842,6 +876,15 @@ const Onboarding: React.FC = () => {
     trackEvent('onboarding_daily_goal_set', { goal, course: selectedCourse });
   };
 
+  // Skip exam date - set default 3 months from now
+  const handleSkipExamDate = () => {
+    const defaultDate = new Date();
+    defaultDate.setMonth(defaultDate.getMonth() + 3);
+    const dateStr = defaultDate.toISOString().split('T')[0];
+    setExamDate(dateStr);
+    trackEvent('onboarding_exam_date_skipped', { course: selectedCourse, default_date: dateStr });
+  };
+
   const renderStep = () => {
     switch (steps[currentStep].id) {
       case 'welcome':
@@ -849,7 +892,15 @@ const Onboarding: React.FC = () => {
       case 'course':
         return <CourseStep selected={selectedCourse} onSelect={handleCourseSelect} />;
       case 'exam-date':
-        return <ExamDateStep value={examDate} onChange={handleExamDateChange} courseId={selectedCourse} />;
+        return (
+          <ExamDateStep 
+            value={examDate} 
+            onChange={handleExamDateChange} 
+            courseId={selectedCourse}
+            showSkip={fastTrack}
+            onSkip={handleSkipExamDate}
+          />
+        );
       case 'section':
         return <SectionStep selected={selectedSection} onSelect={handleSectionSelect} examDate={examDate} courseId={selectedCourse} />;
       case 'daily-goal':

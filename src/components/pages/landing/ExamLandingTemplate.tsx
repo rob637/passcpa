@@ -254,10 +254,11 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                to="/"
+                to={`/demo-practice?course=${config.id}`}
                 className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-6 py-3 rounded-xl text-base font-bold hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                View All Certifications
+                <Sparkles className="w-4 h-4" />
+                Try 5 Questions Free
               </Link>
             </div>
 

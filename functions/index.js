@@ -712,6 +712,9 @@ exports.sendWeeklyReports = onSchedule({
       
       if (!userEmail) continue;
       
+      // Skip users who have unsubscribed from marketing emails
+      if (userData.emailUnsubscribed) continue;
+      
       // Aggregate last 7 days of activity
       const weeklyStats = await getWeeklyStats(userDoc.id, weekAgo);
       
@@ -783,6 +786,12 @@ exports.sendOnboardingReminders = onSchedule({
     
     for (const userDoc of usersSnapshot.docs) {
       const userData = userDoc.data();
+      
+      // Skip users who have unsubscribed from marketing emails
+      if (userData.emailUnsubscribed) {
+        skippedCount++;
+        continue;
+      }
       
       try {
         // Check Firebase Auth for email verification status
@@ -1171,6 +1180,12 @@ exports.sendTrialReminderEmails = onSchedule({
           // Get user info
           const userDoc = await db.collection('users').doc(userId).get();
           const userData = userDoc.exists ? userDoc.data() : {};
+          
+          // Skip users who have unsubscribed from marketing emails
+          if (userData?.emailUnsubscribed) {
+            console.log(`Skipping ${userId}: User has unsubscribed from emails`);
+            continue;
+          }
           
           const authUser = await admin.auth().getUser(userId);
           const userEmail = authUser.email;
@@ -1569,6 +1584,11 @@ exports.sendWelcomeDripEmails = onSchedule({
       for (const userDoc of usersSnapshot.docs) {
         const userId = userDoc.id;
         const userData = userDoc.data();
+        
+        // Skip users who have unsubscribed from marketing emails
+        if (userData.emailUnsubscribed) {
+          continue;
+        }
         
         // Check if this drip was already sent
         const dripKey = `welcomeDrip_day${drip.day}`;

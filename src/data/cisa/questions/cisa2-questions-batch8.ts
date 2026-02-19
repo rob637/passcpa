@@ -23,6 +23,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT strategic alignment requires business involvement to ensure IT initiatives support business objectives and priorities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Strategic Alignment'
   },
@@ -42,6 +43,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'System availability directly measures service delivery effectiveness, which is a key IT service metric.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Performance',
     subtopic: 'KPIs'
   },
@@ -61,6 +63,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Contractual controls including SLAs and right-to-audit ensure the organization can monitor and verify vendor performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Operations',
     subtopic: 'Outsourcing Governance'
   },
@@ -80,6 +83,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Lack of capacity planning can lead to performance issues and inability to meet business demands.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Resource Management',
     subtopic: 'Capacity Planning'
   },
@@ -99,6 +103,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk appetite defines the amount and type of risk the organization is willing to accept in pursuit of its objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Appetite'
   },
@@ -118,6 +123,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'COBIT provides a framework for governance and management of enterprise IT, supporting holistic IT oversight.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'COBIT Framework'
   },
@@ -137,6 +143,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The balanced scorecard includes financial, customer, internal processes, and learning/growth perspectives - not employee salary.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Performance',
     subtopic: 'Balanced Scorecard'
   },
@@ -156,6 +163,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT policies often affect the entire enterprise and should have appropriate business stakeholder input and governance approval.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Policy Management',
     subtopic: 'Policy Approval'
   },
@@ -175,6 +183,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The risk register is a living document that should be updated as risks emerge, change, or are mitigated.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Register'
   },
@@ -194,6 +203,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'KRIs are leading indicators that provide early warning of potential risk events, while KPIs typically measure past performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Key Risk Indicators'
   },
@@ -213,6 +223,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'An accurate IT asset inventory enables effective management, security, and lifecycle management of IT resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Resource Management',
     subtopic: 'Asset Management'
   },
@@ -232,6 +243,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Lack of succession planning for key positions creates critical dependency and continuity risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Human Resources',
     subtopic: 'Succession Planning'
   },
@@ -251,6 +263,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Enterprise architecture provides a structured view of current and target states with a roadmap for achieving transformation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Enterprise Architecture'
   },
@@ -270,6 +283,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Investment decisions should be based on business cases that articulate expected value, costs, risks, and strategic alignment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Investment',
     subtopic: 'Business Case'
   },
@@ -289,6 +303,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SLAs define service levels, metrics, and consequences - not internal organizational matters like job descriptions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Service Management',
     subtopic: 'SLA Components'
   },
@@ -308,6 +323,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'ITIL provides best practice guidance for standardizing and improving IT service management processes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Service Management',
     subtopic: 'ITIL'
   },
@@ -327,6 +343,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Projects without business cases may not be properly evaluated for value, risk, and strategic alignment before resources are committed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Project Management',
     subtopic: 'Business Case Requirement'
   },
@@ -346,6 +363,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Separation between development and production prevents unauthorized code changes and ensures proper change control.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Organization Structure',
     subtopic: 'Segregation of Duties'
   },
@@ -365,6 +383,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Exception processes ensure policy deviations are documented, approved, and include appropriate risk acceptance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Policy Management',
     subtopic: 'Exception Process'
   },
@@ -384,6 +403,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Cloud adoption requires a governance framework addressing shared responsibilities, risks, compliance, and security.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Cloud Governance',
     subtopic: 'Cloud Adoption'
   },
@@ -403,6 +423,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Governance is the responsibility of the board and executive management who set direction and ensure objectives are achieved.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Governance Responsibility'
   },
@@ -422,6 +443,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Multi-sourcing creates complexity in integrating services and establishing clear accountability across providers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Service Management',
     subtopic: 'Multi-Sourcing'
   },
@@ -441,6 +463,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT compliance management identifies applicable requirements and ensures they are monitored and addressed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Compliance',
     subtopic: 'Compliance Management'
   },
@@ -460,6 +483,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT risk management should be integrated with enterprise risk management for a holistic view of organizational risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'ERM Integration'
   },
@@ -498,6 +522,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Quarterly reporting enables board oversight and should include balanced information on performance and risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Board Reporting'
   },
@@ -517,6 +542,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT value is demonstrated by the business benefits realized from IT investments, not inputs or activities.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Value',
     subtopic: 'Value Delivery'
   },
@@ -536,6 +562,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Lack of exit strategies for critical vendors creates lock-in risk and may make transitions difficult if needed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Vendor Management',
     subtopic: 'Exit Strategy'
   },
@@ -555,6 +582,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT organization structure should support effective service delivery aligned with business needs and objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Organization Structure',
     subtopic: 'IT Organization'
   }

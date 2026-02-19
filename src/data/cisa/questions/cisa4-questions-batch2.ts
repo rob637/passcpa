@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT operations management ensures reliable, consistent delivery of IT services that meet business requirements and service level agreements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Operations Management'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Job scheduling controls ensure batch processes run in the correct sequence, at appropriate times, with proper dependencies maintained.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Job Scheduling'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Operators with unlimited system access can bypass controls and make unauthorized changes. Access should be limited to what is necessary for operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Access Control'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Problem management focuses on identifying root causes and preventing recurrence, while incident management focuses on quick service restoration.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Problem Management'
   },
@@ -99,6 +103,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Incident management aims to restore normal service operation as quickly as possible, minimizing impact on business operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Incident Management'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Capacity management ensures IT infrastructure has adequate capacity to meet current demands and planned future growth.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Capacity Management'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Resource monitoring enables proactive identification of potential issues before they impact service, allowing preventive action.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Monitoring'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The help desk provides a single point of contact for users to report issues, request services, and receive support.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Service Desk'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Incremental and differential backups only copy data changed since the last full backup (differential) or last backup of any type (incremental), reducing backup time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Backup Types'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Offsite storage must provide environmental protection (temperature, humidity, fire protection) and timely accessibility to meet recovery objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Offsite Storage'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Backup testing must verify that data can be successfully restored. A backup that cannot be restored is useless for recovery purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Backup Testing'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data retention policies must consider legal, regulatory, and business requirements to ensure data is kept long enough but not longer than necessary.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Data Retention'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data center environmental controls include HVAC for cooling, fire suppression systems, humidity control, and water detection to protect equipment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Environmental Controls'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'A UPS provides short-term battery backup power to bridge the gap until a generator can start and take over during a power outage.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Power Management'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Data center physical access should be restricted to authorized personnel, logged for accountability, and regularly reviewed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Physical Security'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Network monitoring tools detect network issues, measure performance, and help diagnose problems to maintain network availability and performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Network Operations',
     subtopic: 'Monitoring'
   },
@@ -327,6 +343,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Without a complete inventory, the organization cannot properly manage, secure, or account for all IT assets, increasing risk of loss and security gaps.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Asset Management'
   },
@@ -346,6 +363,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'End-of-life hardware must be properly sanitized to remove all data before disposal or reuse to prevent unauthorized data disclosure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Asset Disposal'
   },
@@ -365,6 +383,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Business continuity planning is an organization-wide effort driven by business requirements, not just IT. It addresses all critical business functions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BCP Scope'
   },
@@ -384,6 +403,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'BIA is the first step as it identifies critical functions and acceptable downtime, which drives all subsequent planning and investment decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BIA'
   },
@@ -403,6 +423,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Crisis communication plans should designate spokespersons, provide message templates, and establish procedures for communicating with stakeholders during a crisis.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Crisis Communication'
   },
@@ -422,6 +443,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Tabletop exercises walk through disaster scenarios in a discussion format without actually recovering systems, testing plan completeness and team coordination.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'DR Testing'
   },
@@ -441,6 +463,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Disaster recovery planning aims to minimize business impact when disasters occur and enable timely recovery of critical IT systems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'DR Objectives'
   },
@@ -460,6 +483,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A cold site provides basic infrastructure (space, power, connectivity) but requires significant time to install equipment and restore systems.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Recovery Sites'
   },
@@ -479,6 +503,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A warm site has partial equipment and connectivity already in place, requiring moderate time to become fully operational.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Recovery Sites'
   },
@@ -498,6 +523,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Data replication maintains copies of data at alternate locations, providing protection against data loss at the primary site and enabling faster recovery.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Data Replication'
   },
@@ -517,6 +543,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Virtualization enables faster recovery by abstracting systems from specific hardware, allowing recovery on different physical equipment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Virtualization'
   },
@@ -536,6 +563,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Cloud DR offers scalable resources, geographic distribution, and pay-as-you-use pricing, reducing the cost of maintaining standby infrastructure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Cloud DR'
   },
@@ -555,6 +583,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'BCP that does not address all critical business functions leaves the organization vulnerable. All critical functions must have continuity provisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BCP Review'
   },
@@ -574,6 +603,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Lessons learned from DR tests should be documented and used to improve plans, procedures, and address gaps identified during testing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Continuous Improvement'
   },

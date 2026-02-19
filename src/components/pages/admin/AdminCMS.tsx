@@ -313,6 +313,15 @@ interface UserActivityData {
     totalStudyMinutes: number;
     lastActiveDate: string | null;
   };
+  diagnosticResults: Array<{
+    id: string;
+    courseId: string;
+    section: string;
+    percentage: number;
+    passed: boolean;
+    completedAt: { seconds: number };
+    areaPerformance?: Array<{ areaId: string; percentage: number }>;
+  }>;
 }
 
 interface AnalyticsData {
@@ -1425,6 +1434,25 @@ const AdminCMS: React.FC = () => {
       });
       recentConversations.sort((a, b) => (b.updatedAt?.seconds || 0) - (a.updatedAt?.seconds || 0));
       
+      // Load diagnostic results
+      const diagnosticRef = collection(db, 'users', userId, 'diagnosticResults');
+      const diagnosticSnap = await getDocs(diagnosticRef);
+      logger.log('Got diagnosticResults:', diagnosticSnap.docs.length, 'docs');
+      const diagnosticResults = diagnosticSnap.docs.map(doc => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          courseId: data.courseId || '',
+          section: data.section || '',
+          percentage: data.percentage || 0,
+          passed: data.passed || false,
+          completedAt: data.completedAt,
+          areaPerformance: data.areaPerformance || [],
+        };
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      }) as any[];
+      diagnosticResults.sort((a, b) => (b.completedAt?.seconds || 0) - (a.completedAt?.seconds || 0));
+      
       // Calculate stats - use lastCorrect or timesCorrect field
       const totalQuestions = questionHistory.length;
       const totalCorrect = questionHistory.filter(q => q.lastCorrect === true || q.timesCorrect > 0).length;
@@ -1452,6 +1480,7 @@ const AdminCMS: React.FC = () => {
         dailyLogs,
         practiceSessions,
         recentConversations,
+        diagnosticResults,
         stats: {
           totalQuestions,
           totalCorrect,
@@ -5314,6 +5343,47 @@ const AdminCMS: React.FC = () => {
                       </div>
                     ) : (
                       <p className="text-gray-600 dark:text-gray-400 text-sm">No AI conversations.</p>
+                    )}
+                  </div>
+
+                  {/* Diagnostic Results */}
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">🎯 Diagnostic Exams</h4>
+                    {userActivity.diagnosticResults && userActivity.diagnosticResults.length > 0 ? (
+                      <div className="space-y-2">
+                        {userActivity.diagnosticResults.map((diag) => (
+                          <div key={diag.id} className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 flex justify-between items-center">
+                            <div>
+                              <span className={`px-2 py-0.5 rounded text-xs font-semibold mr-2 ${
+                                diag.courseId === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                diag.courseId === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                diag.courseId === 'cma' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' :
+                                diag.courseId === 'cia' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300' :
+                                diag.courseId === 'cisa' ? 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300' :
+                                'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                              }`}>
+                                {diag.courseId?.toUpperCase() || '?'}
+                              </span>
+                              <span className="font-medium">{diag.section || 'Diagnostic'}</span>
+                              <span className="text-gray-600 dark:text-gray-400 text-sm ml-2">
+                                {diag.completedAt?.seconds 
+                                  ? new Date(diag.completedAt.seconds * 1000).toLocaleDateString()
+                                  : ''}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className={`font-bold ${diag.passed ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                                {diag.percentage}%
+                              </span>
+                              <span className={`px-2 py-0.5 rounded text-xs font-semibold ${diag.passed ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300'}`}>
+                                {diag.passed ? 'PASS' : 'FAIL'}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No diagnostic exams completed.</p>
                     )}
                   </div>
 

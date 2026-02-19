@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Graceful degradation maintains core services with reduced functionality when systems are under stress rather than failing completely.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Resilience',
     subtopic: 'Graceful Degradation'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Circuit breakers prevent cascading failures by stopping requests to failing services, allowing them to recover.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Resilience',
     subtopic: 'Circuit Breaker'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Auto-scaling automatically adjusts computing resources up or down based on demand, optimizing cost and maintaining performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Auto-Scaling'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Geographic redundancy provides protection against regional disasters by maintaining capabilities in different geographic locations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Geographic Redundancy'
   },
@@ -99,6 +103,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Active-active configurations use multiple sites simultaneously, with all sites handling traffic and providing immediate failover.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Active-Active'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Split-brain occurs when cluster nodes lose connectivity and operate independently, potentially causing data inconsistency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'High Availability',
     subtopic: 'Split-Brain'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Observability combines metrics, logs, and traces to enable understanding of system behavior and troubleshooting.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Observability'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Distributed tracing follows requests as they flow across multiple services, enabling end-to-end visibility and troubleshooting.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Tracing'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SRE applies software engineering principles to operations, focusing on automation, reliability, and scalability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'SRE'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Error budgets define acceptable unreliability (e.g., 0.1% downtime), balancing innovation speed with reliability requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Error Budgets'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SLOs define target values for key service quality indicators like availability, latency, and error rates.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'SLO'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Blameless post-mortems focus on understanding failures and improving systems, not punishing individuals, encouraging openness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Post-Mortems'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'MTTD measures the time between when an incident occurs and when it is detected, indicating monitoring effectiveness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'MTTD'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'MTTR measures the average time to restore service after a failure, indicating repair and recovery efficiency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'MTTR'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'AIOps applies machine learning to IT operations for intelligent event correlation, anomaly detection, and predictive analysis.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'AIOps'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Configuration drift occurs when system configurations deviate from the intended baseline over time through informal changes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Configuration Drift'
   },
@@ -327,6 +343,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Infrastructure monitoring should cover all layers: compute, storage, network, and application health for complete visibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Infrastructure Monitoring'
   },
@@ -346,6 +363,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Synthetic monitoring simulates user interactions to proactively detect issues before real users are affected.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Synthetic Monitoring'
   },
@@ -365,6 +383,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'RUM captures actual user experience data including page load times, errors, and user journeys from real users.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'RUM'
   },
@@ -384,6 +403,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Capacity planning considers current usage, growth projections, seasonal patterns, and peak demand requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Capacity Planning'
   },
@@ -403,6 +423,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Data center tiers (I-IV) indicate infrastructure redundancy and expected availability levels, with Tier IV being highest.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Tier Classification'
   },
@@ -422,6 +443,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'PUE measures data center energy efficiency by comparing total facility power to IT equipment power.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Center',
     subtopic: 'Energy Efficiency'
   },
@@ -441,6 +463,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Preventive maintenance schedules reduce unexpected failures by performing maintenance proactively based on time or usage.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Preventive Maintenance'
   },
@@ -460,6 +483,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DR plans should be tested at least annually with full tests, and more frequently for component or tabletop tests.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Test Frequency'
   },
@@ -479,6 +503,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Parallel tests activate recovery systems alongside production without disrupting production operations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Parallel Testing'
   },
@@ -498,6 +523,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Full interruption tests shut down production and recover at the DR site, providing realistic validation but carrying production risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'Full Interruption'
   },
@@ -517,6 +543,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Plans should be updated when significant changes occur to systems, personnel, business processes, or contact information.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Plan Maintenance'
   },
@@ -536,6 +563,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Evacuation procedures should include exit routes, assembly points, headcount procedures, special assistance, and communication.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Emergency Response',
     subtopic: 'Evacuation'
   },
@@ -555,6 +583,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Pandemic planning addresses extended-duration events primarily affecting workforce availability rather than physical infrastructure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Pandemic Planning'
   },

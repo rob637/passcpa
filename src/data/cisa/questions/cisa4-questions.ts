@@ -29,6 +29,7 @@ const CISA4_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'An SLA is an agreement between the service provider and the customer that defines the services to be delivered and the performance standards (levels) expected.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IS Operations',
     subtopic: 'Service Level Management'
   },
@@ -48,6 +49,7 @@ const CISA4_QUESTIONS_BATCH1: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A structured walkthrough or tabletop test involves key personnel discussing the plan scenarios step-by-step. It is effective for verification without any operational disruption. (Parallel tests minimize risk but require resources; Walkthrough is often "most effective" for initial validation or non-disruption constraints depending on specific context, but typically the question implies specific constraints only solved by walkthrough or simulation).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Disaster Recovery',
     subtopic: 'DRP Testing'
   }

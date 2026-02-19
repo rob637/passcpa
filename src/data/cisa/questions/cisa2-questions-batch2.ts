@@ -42,6 +42,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT strategy must be linked to business strategy to ensure IT investments support organizational goals. A disconnected IT strategy may lead to misaligned investments and wasted resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Business Alignment'
   },
@@ -61,6 +62,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Enterprise architecture provides a blueprint that defines the structure and operation of an organization, including how IT components work together to support business objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Enterprise Architecture',
     subtopic: 'Definition'
   },
@@ -80,6 +82,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A balanced scorecard includes four perspectives: financial, customer, internal business processes, and learning/growth (or innovation). This provides a balanced view of performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard'
   },
@@ -99,6 +102,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The greatest risk of poor IT governance is that IT investments and activities fail to support business objectives, resulting in misaligned priorities and wasted resources.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Governance Risks'
   },
@@ -118,6 +122,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'COBIT (Control Objectives for Information and Related Technologies) is a comprehensive framework for IT governance and management that helps organizations achieve objectives and manage risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Frameworks',
     subtopic: 'COBIT'
   },
@@ -137,6 +142,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Effective IT resource management ensures that IT resources (people, technology, information) are optimized to meet business needs efficiently and effectively.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Optimization'
   },
@@ -156,6 +162,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Policies without enforcement mechanisms are ineffective because there is no consequence for non-compliance. Policies should include clear enforcement and accountability provisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Policies',
     subtopic: 'Enforcement'
   },
@@ -175,6 +182,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Segregation of duties prevents any single individual from having complete control over a critical process, thereby reducing the risk of errors and fraud.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Internal Controls',
     subtopic: 'Segregation of Duties'
   },
@@ -194,6 +202,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Risk acceptance means the organization acknowledges the risk and chooses to accept the potential consequences without implementing additional controls, often when cost exceeds benefit.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Response'
   },
@@ -213,6 +222,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Risk registers should be reviewed on an ongoing basis because risks change with business conditions, new threats, and organizational changes. Static risk assessments become outdated.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Register'
   },
@@ -232,6 +242,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'A service catalog provides visibility into the IT services available to the organization, helping users understand what services exist and how to request them.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Service Management',
     subtopic: 'Service Catalog'
   },
@@ -251,6 +262,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SLAs should include measurable performance targets (availability, response time, etc.) and clearly define the responsibilities of both the service provider and customer.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Service Management',
     subtopic: 'SLA'
   },
@@ -270,6 +282,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Critical vendors that are not regularly assessed pose significant risk because the organization cannot verify that vendors maintain adequate controls and performance levels.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Vendor Management',
     subtopic: 'Vendor Assessment'
   },
@@ -289,6 +302,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT HR management ensures that the organization has adequate personnel with the right skills to support IT operations and achieve organizational objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT HR Management',
     subtopic: 'Resource Planning'
   },
@@ -308,6 +322,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Security awareness training is critical when onboarding IT personnel to ensure they understand security policies, acceptable use, and their role in protecting information assets.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT HR Management',
     subtopic: 'Onboarding'
   },
@@ -327,6 +342,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'The greatest risk is loss of institutional knowledge and operational continuity, especially if the person had unique skills or knowledge not documented or shared with others.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT HR Management',
     subtopic: 'Key Person Risk'
   },
@@ -346,6 +362,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Project governance should ensure that IT projects deliver expected business value and benefits. This includes appropriate oversight, decision-making, and benefit realization tracking.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Project Governance',
     subtopic: 'Value Delivery'
   },
@@ -365,6 +382,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A PMO provides project management standards, methodology, tools, and oversight. It ensures consistency and quality across the project portfolio but typically does not execute projects directly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Project Governance',
     subtopic: 'PMO'
   },
@@ -384,6 +402,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Without a clear method to measure success, it is impossible to determine whether the project achieved its objectives. This makes benefit realization unverifiable.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Investment',
     subtopic: 'Business Case'
   },
@@ -403,6 +422,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Quality management focuses on meeting or exceeding customer expectations. While defect reduction is important, the ultimate goal is customer satisfaction with products and services.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Quality Management',
     subtopic: 'Customer Focus'
   },
@@ -422,6 +442,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'BIA identifies critical business functions and determines recovery priorities by assessing the impact of disruptions over time. It forms the basis for business continuity planning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Business Continuity',
     subtopic: 'BIA'
   },
@@ -441,6 +462,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'RTO is the maximum acceptable time to restore a system or process after a disruption. It drives decisions about recovery infrastructure and procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Business Continuity',
     subtopic: 'RTO/RPO'
   },
@@ -460,6 +482,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'RPO is the maximum acceptable data loss measured in time (e.g., 4 hours of data). It drives backup frequency decisions to ensure data can be recovered to an acceptable point.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Business Continuity',
     subtopic: 'RTO/RPO'
   },
@@ -479,6 +502,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A hot site is fully equipped with hardware, software, and data, ready for immediate use. It provides the fastest recovery but is the most expensive option.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Disaster Recovery',
     subtopic: 'Recovery Sites'
   },
@@ -498,6 +522,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'DR testing primarily validates that documented recovery procedures actually work and can achieve stated RTOs/RPOs. This verification is essential for reliable recovery.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Disaster Recovery',
     subtopic: 'DR Testing'
   },
@@ -517,6 +542,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Change management controls ensure that changes are properly authorized, tested before implementation, and documented. This reduces the risk of unintended consequences.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Change Management',
     subtopic: 'Controls'
   },
@@ -536,6 +562,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A CAB evaluates and prioritizes proposed changes, assessing risk, impact, and resource requirements before approving changes for implementation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Change Management',
     subtopic: 'CAB'
   },
@@ -555,6 +582,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Emergency changes may bypass normal approval in urgent situations, but must be documented and reviewed retrospectively to ensure proper controls and prevent abuse.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Change Management',
     subtopic: 'Emergency Changes'
   },
@@ -574,6 +602,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT performance metrics should be aligned with business objectives so they measure what matters to the organization, and they must be measurable to be actionable.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Performance Measurement',
     subtopic: 'Metrics'
   },

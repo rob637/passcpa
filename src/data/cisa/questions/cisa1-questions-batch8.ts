@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'The auditor must evaluate whether the compensating control effectively mitigates the risk before accepting it as adequate.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Execution',
     subtopic: 'Compensating Controls'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data integrity is paramount when using CAATs. If the data has been manipulated or is incomplete, audit conclusions will be invalid.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'CAATs',
     subtopic: 'Data Integrity'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Without formal risk owners, there is no accountability for risk treatment decisions and ongoing monitoring.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Risk Ownership'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Professional skepticism helps the auditor critically assess evidence and avoid being misled by assertions that may be false or incomplete.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Professional Skepticism'
   },
@@ -99,6 +103,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk acceptance is valid if within risk appetite and properly authorized. The auditor should first verify proper governance before escalating.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Management',
     subtopic: 'Risk Acceptance'
   },
@@ -118,6 +123,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Stratified sampling divides the population into subgroups (strata) ensuring each significant type is represented in the sample.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Sampling',
     subtopic: 'Stratified Sampling'
   },
@@ -137,6 +143,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Continuous auditing is designed to detect anomalies in near real-time. Timely escalation is critical for effective response.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Continuous Auditing',
     subtopic: 'Anomaly Response'
   },
@@ -156,6 +163,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Self-assessment by those who operate controls lacks independence and objectivity, which is a fundamental control design weakness.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Independence'
   },
@@ -175,6 +183,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'A SOC (Service Organization Control) report provides independent attestation about controls at the service organization, which is the most reliable evidence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Third-Party Evidence'
   },
@@ -194,6 +203,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Consulting on design or implementation could impair independence for future audits of that system. This must be evaluated first.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Independence and Consulting'
   },
@@ -213,6 +223,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Frameworks like COBIT are meant to be tailored. The auditor should assess whether customizations appropriately address organizational needs and risks.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Framework Customization'
   },
@@ -232,6 +243,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Workpapers must contain sufficient detail so that an experienced auditor not involved in the audit can understand the work performed and conclusions reached.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Documentation',
     subtopic: 'Workpaper Standards'
   },
@@ -251,6 +263,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Control gaps represent periods when the control was not effective, creating risk exposure that must be reported regardless of overall performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Testing',
     subtopic: 'Control Gaps'
   },
@@ -270,6 +283,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The audit charter establishes the formal authority, responsibility, and accountability of the internal audit function within the organization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Standards',
     subtopic: 'Audit Charter'
   },
@@ -289,6 +303,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Disagreements should be documented and escalated through governance channels (e.g., audit committee) while maintaining the integrity of the audit report.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Disagreements'
   },
@@ -308,6 +323,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The IS auditor must assess whether the other auditor has the competence, objectivity, and applied due professional care before relying on their work.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Reliance on Other Auditors'
   },
@@ -327,6 +343,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Continuous monitoring enables the auditor to leverage automated evidence, potentially shifting to continuous auditing and reducing substantive procedures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Continuous Auditing',
     subtopic: 'Continuous Monitoring'
   },
@@ -346,6 +363,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Under the shared responsibility model, the organization retains responsibilities for certain controls. The audit should focus on what the organization controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Cloud Auditing',
     subtopic: 'Shared Responsibility'
   },
@@ -365,6 +383,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'The Three Lines Model requires second line functions (risk, compliance) to provide oversight of first line controls, ensuring independence and challenge.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Governance',
     subtopic: 'Three Lines Model'
   },
@@ -384,6 +403,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Fraud indications should be reported to appropriate authority (CAE or equivalent) who will determine the proper course of action including any investigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Fraud Detection',
     subtopic: 'Fraud Response'
   },
@@ -403,6 +423,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'ITGCs create the environment in which application controls operate. Weak ITGCs can undermine the effectiveness of application controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT General Controls',
     subtopic: 'ITGC Purpose'
   },
@@ -422,6 +443,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'Direct examination and testing provides the strongest evidence of actual control operation, not just design or intent.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Testing',
     subtopic: 'Test of Controls'
   },
@@ -441,6 +463,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Aging findings with ongoing risk should be reassessed and reported with updated context. Budget constraints do not eliminate the risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Follow-Up',
     subtopic: 'Aging Findings'
   },
@@ -460,6 +483,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk-based planning ensures limited audit resources are directed toward areas with the highest risk, maximizing audit value.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Risk-Based Planning'
   },
@@ -479,6 +503,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Agile environments require auditing approaches that match the pace of development, such as integrated or continuous auditing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Agile Auditing',
     subtopic: 'Continuous Auditing in Agile'
   },
@@ -498,6 +523,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Independent testing provides direct evidence of control operation, which is more reliable than management assertions or documentation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Testing Automated Controls'
   },
@@ -517,6 +543,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'The auditor can provide valuable input on controls while maintaining independence by serving as an advisor rather than a decision maker.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Consulting Role',
     subtopic: 'Advisory in Projects'
   },
@@ -536,6 +563,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'QAIP programs evaluate whether the audit function conforms to professional standards and identify opportunities for improvement.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Quality Assurance',
     subtopic: 'QAIP'
   },
@@ -555,6 +583,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Key person dependency creates sustainability risk if that individual is unavailable. This is a design weakness in the control environment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Assessment',
     subtopic: 'Key Person Dependency'
   },
@@ -574,6 +603,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'The auditor should determine actual practice before concluding. Documentation inconsistency is a concern, but actual operation matters most.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Control Testing',
     subtopic: 'Documentation vs. Practice'
   }

@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Parallel testing involves processing actual transactions through backup systems while production continues, verifying true recovery capability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'DRP Testing'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'BIA identifies critical processes and their RTOs/RPOs, which drives all subsequent recovery strategy and planning decisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BIA'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Hot sites maintain fully operational duplicate systems with real-time data replication, enabling immediate failover.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Recovery Sites'
   },
@@ -99,6 +102,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Effective incident response requires proper classification, escalation procedures, and root cause analysis to prevent recurrence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Incident Management'
   },
@@ -118,6 +122,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Job scheduling automates the sequencing and execution of batch processes based on dependencies, timing, and resource availability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Job Scheduling'
   },
@@ -137,6 +142,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'HVAC systems maintain proper temperature and humidity for equipment reliability. Inadequate cooling causes hardware failures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Environmental Controls'
   },
@@ -156,6 +162,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Differential captures changes since last full backup (cumulative), while incremental captures only changes since last backup (any type).',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Backup Strategies'
   },
@@ -175,6 +182,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A 1-hour RPO requires near real-time data replication, and 4-hour RTO requires rapid recovery capabilities like automated failover.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'RTO/RPO'
   },
@@ -194,6 +202,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Incident management restores service; problem management identifies and eliminates root causes to prevent recurrence.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Problem Management'
   },
@@ -213,6 +222,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Comparing actual recovery time to RTO validates whether the plan can meet business requirements under real conditions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BCP Testing'
   },
@@ -232,6 +242,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Capacity management monitors and forecasts resource utilization to ensure adequate capacity for current and projected needs.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Capacity Management'
   },
@@ -251,6 +262,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Sustained high utilization (95%+) indicates capacity constraints that risk performance degradation or system failures.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Performance Monitoring'
   },
@@ -270,6 +282,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'SLAs define measurable service levels, responsibilities of each party, and consequences/remedies for non-performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'SLAs'
   },
@@ -289,6 +302,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Reciprocal agreements may fail if both parties need capacity simultaneously, and excess capacity may not be available.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Recovery Sites'
   },
@@ -308,6 +322,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Physical console access often has elevated privileges and bypasses network security controls, requiring strict access controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Physical Security'
   },
@@ -327,6 +342,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Online double-conversion UPS continuously converts power through battery, providing complete isolation from power anomalies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Power Protection'
   },
@@ -365,6 +381,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Effective DRPs require regular testing to validate assumptions, ongoing maintenance, and updates when systems change.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'DRP Maintenance'
   },
@@ -384,6 +401,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'NOC provides continuous monitoring of network infrastructure, identifying and responding to issues to maintain availability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'NOC'
   },
@@ -422,6 +440,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'VTL uses disk storage that appears as tape to backup software, providing faster backup/restore while maintaining tape compatibility.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Backup Technology'
   },
@@ -460,6 +479,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SAN is a dedicated high-speed network connecting servers to storage devices, enabling centralized, high-performance data access.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Storage'
   },
@@ -479,6 +499,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DR contracts should guarantee capacity, and organizations should test with the vendor to verify the contracted services work.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'DR Contracts'
   },
@@ -498,6 +519,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Change documentation enables troubleshooting when issues arise and demonstrates proper change control for audit purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Change Management'
   },
@@ -517,6 +539,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Cyber resilience encompasses prevention, detection, response, and recovery - assuming breaches will occur and planning accordingly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Cyber Resilience'
   },
@@ -536,6 +559,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Geographic dispersion ensures regional disasters (earthquakes, hurricanes) cannot simultaneously affect primary and recovery sites.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'Site Selection'
   },
@@ -555,6 +579,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'EOL planning ensures data is migrated, media is securely disposed, and replacement systems are ready before support ends.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Operations',
     subtopic: 'Asset Lifecycle'
   },
@@ -574,6 +599,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'BCP requires regular review cycles plus updates when major changes (new systems, reorganization, new risks) occur.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Business Continuity',
     subtopic: 'BCP Maintenance'
   }

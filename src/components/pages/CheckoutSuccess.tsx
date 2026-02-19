@@ -22,7 +22,7 @@ const CheckoutSuccess = () => {
 
   // Get user and course for conversion tracking
   const { user } = useAuth();
-  const { activeCourse } = useCourse();
+  const { courseId } = useCourse();
 
   // Force a subscription refresh so the realtime listener picks up the Stripe webhook update
   const { refreshSubscription, subscription } = useSubscription();
@@ -52,12 +52,12 @@ const CheckoutSuccess = () => {
       const estimatedValue = isAnnual ? 199 : 29; // Conservative average pricing
       analytics.trackPurchaseConversion(
         user.uid,
-        activeCourse || 'cpa',
+        courseId || 'cpa',
         estimatedValue,
         isAnnual ? 'annual' : 'monthly'
       );
     }
-  }, [user, subscription, activeCourse]);
+  }, [user, subscription, courseId]);
 
   useEffect(() => {
     // Hide confetti after animation

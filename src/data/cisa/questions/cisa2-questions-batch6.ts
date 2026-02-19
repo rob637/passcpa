@@ -23,6 +23,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Alignment is best evaluated by assessing how IT initiatives directly support and enable business objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Strategic Alignment'
   },
@@ -42,6 +43,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Board oversight focuses on strategic direction, major investment decisions, and significant risk oversight.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Board Oversight'
   },
@@ -61,6 +63,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT structure should reflect business needs, strategic objectives, and applicable regulatory requirements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Structure'
   },
@@ -76,10 +79,11 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
       'May indicate IT is viewed as strategic rather than cost center',
       'Reduces IT effectiveness',
       'Has no impact',
-      'Is always required',
+      'is typically required',
     ],
     correctAnswer: 0,
     explanation: 'CIO reporting to CEO often indicates IT is viewed as a strategic business partner rather than just a cost center.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Reporting Structure'
   },
@@ -99,6 +103,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT performance should be measured using balanced metrics across operational, financial, customer, and strategic dimensions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Performance Framework'
   },
@@ -118,6 +123,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Refresh planning considers support status, performance needs, security requirements, and business drivers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Technology Refresh'
   },
@@ -137,6 +143,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Build vs buy requires evaluating total cost, strategic fit, capabilities, risks, and time to value.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Build vs Buy'
   },
@@ -156,6 +163,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Chargeback allocates IT costs to business units, promoting accountability and informed consumption.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Chargeback'
   },
@@ -175,6 +183,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Demand management helps prioritize and manage IT resource requests against available capacity.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Resource Management',
     subtopic: 'Demand Management'
   },
@@ -194,6 +203,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Capability modeling links business capabilities to supporting IT capabilities for alignment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Capability Modeling'
   },
@@ -213,6 +223,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Standards and guidelines provide detailed implementation guidance for achieving policy objectives.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Standards'
   },
@@ -232,6 +243,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Exception processes should document, review, approve with conditions, and track policy exceptions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Exception Management'
   },
@@ -251,6 +263,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Multi-cloud governance requires consistent control objectives with provider-specific implementations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Cloud Governance',
     subtopic: 'Multi-Cloud'
   },
@@ -270,6 +283,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Exit strategy should address data extraction, transition timeline, continuity, and contractual provisions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Cloud Governance',
     subtopic: 'Exit Strategy'
   },
@@ -289,6 +303,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Effective SLA management requires ongoing measurement, reporting, and regular service review meetings.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'SLA Management'
   },
@@ -308,6 +323,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Concentration risk arises when critical dependence on few vendors creates potential single points of failure.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Concentration Risk'
   },
@@ -327,6 +343,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Due diligence should cover financial stability, security practices, references, and capability assessment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Due Diligence'
   },
@@ -346,6 +363,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Escrow protects against vendor failure by ensuring access to source code under defined conditions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Third-Party Management',
     subtopic: 'Software Escrow'
   },
@@ -365,6 +383,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'M&A IT integration requires early planning, due diligence on IT environments, and governance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'M&A Integration'
   },
@@ -384,6 +403,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Risk tolerance should be set by business leadership in alignment with enterprise risk appetite.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Risk Tolerance'
   },
@@ -403,6 +423,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Scenario analysis helps understand potential risk events, their likelihood, and business impact.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Scenario Analysis'
   },
@@ -417,11 +438,12 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     options: [
       'Should be accepted, transferred, or further mitigated based on tolerance',
       'Is ignored',
-      'Is always zero',
+      'is typically zero',
       'Requires no documentation',
     ],
     correctAnswer: 0,
     explanation: 'Residual risk should be evaluated and addressed through acceptance, transfer, or further mitigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Risk Management',
     subtopic: 'Residual Risk'
   },
@@ -441,6 +463,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'DR capabilities should be regularly tested to validate RTO/RPO objectives can be achieved.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Business Continuity',
     subtopic: 'DR Testing'
   },
@@ -460,6 +483,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Audit committee reports should cover significant findings, risk trends, and audit plan execution.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Audit Reporting'
   },
@@ -479,6 +503,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data governance covers data quality, privacy, classification, lifecycle management, and business ownership.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Data Governance',
     subtopic: 'Responsibilities'
   },
@@ -498,6 +523,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Data stewards ensure data quality, appropriate use, and governance within their assigned domain.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Data Governance',
     subtopic: 'Data Stewardship'
   },
@@ -517,6 +543,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Ethical IT decisions should consider broader impacts on stakeholders, privacy, and societal implications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Ethics'
   },
@@ -536,6 +563,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Digital transformation requires adaptive governance that balances speed to value with appropriate controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Digital Transformation'
   },
@@ -555,6 +583,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT sustainability covers energy efficiency, e-waste, social responsibility, and sustainable supply chain.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Sustainability'
   },
@@ -574,6 +603,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Horizon scanning provides early awareness of emerging regulations for proactive compliance planning.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Regulatory Awareness'
   },

@@ -23,6 +23,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'When fraud is discovered, the auditor should inform appropriate management to determine next steps, as the organization must decide how to proceed with investigation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Fraud',
     subtopic: 'Fraud Response'
   },
@@ -42,6 +43,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Audit trails provide accountability by recording who did what and when, enabling reconstruction of events for investigation or compliance purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Trail',
     subtopic: 'Purpose'
   },
@@ -61,6 +63,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'A qualified opinion indicates material departures from standards or scope limitations, but the overall financial statements are fairly presented.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Audit Opinions'
   },
@@ -80,6 +83,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'An adverse opinion is issued when material misstatements are so pervasive that the financial statements as a whole are not fairly presented.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Reporting',
     subtopic: 'Adverse Opinion'
   },
@@ -99,6 +103,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Continuous auditing uses automated tools to provide real-time or near real-time assurance on controls and transactions.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Continuous Auditing'
   },
@@ -118,6 +123,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'ITF creates a fictitious entity within the production system to process test transactions alongside live data, testing actual processing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'ITF'
   },
@@ -137,6 +143,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Parallel simulation uses auditor-controlled software to reprocess actual data and compare results to production output, verifying processing accuracy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Parallel Simulation'
   },
@@ -156,6 +163,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Snapshot technique captures selected transactions at predetermined points during processing to verify that intermediate steps are performed correctly.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Techniques',
     subtopic: 'Snapshot'
   },
@@ -175,6 +183,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'When auditing organizations using service providers, the auditor should obtain and review SOC reports to understand controls at the service organization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Service Organizations',
     subtopic: 'SOC Reports'
   },
@@ -213,6 +222,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SOC 2 reports address controls related to the Trust Services Criteria: security, availability, processing integrity, confidentiality, and privacy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Service Organizations',
     subtopic: 'SOC 2'
   },
@@ -232,6 +242,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Type II reports cover both control design and operating effectiveness over a period of time, while Type I covers only design at a point in time.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Service Organizations',
     subtopic: 'SOC Report Types'
   },
@@ -251,6 +262,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT general controls cover the IT environment, including change management, logical access, computer operations, and program development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Controls',
     subtopic: 'IT General Controls'
   },
@@ -270,6 +282,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Application controls ensure that transactions are complete, accurate, authorized, and properly processed within specific applications.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'IT Controls',
     subtopic: 'Application Controls'
   },
@@ -289,6 +302,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Input controls verify that data entering a system is accurate, complete, and authorized, preventing garbage-in-garbage-out scenarios.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Application Controls',
     subtopic: 'Input Controls'
   },
@@ -308,6 +322,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Processing controls ensure that data is processed correctly and completely according to program specifications and business rules.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Application Controls',
     subtopic: 'Processing Controls'
   },
@@ -327,6 +342,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Hash totals (sums of non-financial fields like account numbers) detect unauthorized changes or loss of records during transmission or processing.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Application Controls',
     subtopic: 'Hash Totals'
   },
@@ -346,6 +362,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Limit checks (range checks) verify that entered values fall within predefined acceptable limits, catching unreasonable entries.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Application Controls',
     subtopic: 'Validation Controls'
   },
@@ -365,6 +382,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Check digits are computed values added to identification numbers that detect transposition or transcription errors in data entry.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Application Controls',
     subtopic: 'Check Digits'
   },
@@ -384,6 +402,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Direct observation and independent external confirmation provide the most reliable evidence because they are not dependent on auditee statements.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Evidence',
     subtopic: 'Evidence Reliability'
   },
@@ -403,6 +422,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Working papers should be retained according to organizational policy and regulatory requirements, and protected to maintain confidentiality.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Documentation',
     subtopic: 'Working Papers'
   },
@@ -422,6 +442,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Materiality considers both quantitative (financial impact) and qualitative factors (regulatory, reputational) when determining significance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Planning',
     subtopic: 'Materiality'
   },
@@ -441,6 +462,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Inherent risk is the susceptibility of an area to material misstatement before considering internal controls. It exists due to the nature of the process.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Inherent Risk'
   },
@@ -460,6 +482,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Control risk is the risk that internal controls will not prevent or detect material misstatements in a timely manner.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Risk Assessment',
     subtopic: 'Control Risk'
   },
@@ -498,6 +521,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Auditor competence is demonstrated through professional certifications (CISA), relevant education, technical training, and practical experience.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Competence'
   },
@@ -517,6 +541,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Professional skepticism means questioning assumptions, critically evaluating evidence, and maintaining an attitude of doubt without assuming dishonesty.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Skepticism'
   },
@@ -536,6 +561,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Quality assurance should include ongoing internal reviews of audit work and periodic external quality assessments as required by standards.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Professional Standards',
     subtopic: 'Quality Assurance'
   },
@@ -555,6 +581,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Documentation provides evidence that procedures were performed appropriately and supports the conclusions reached in the audit report.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Documentation',
     subtopic: 'Purpose'
   },
@@ -574,6 +601,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Audit follow-up verifies that management has implemented corrective actions in response to audit findings within agreed timeframes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 1',
     topic: 'Audit Process',
     subtopic: 'Follow-up'
   },

@@ -23,6 +23,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'MLOps provides CI/CD, versioning, monitoring, and governance for machine learning models.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'AI/ML Development',
     subtopic: 'MLOps'
   },
@@ -42,6 +43,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Bias testing should occur throughout the ML lifecycle, not just during initial development.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'AI/ML Development',
     subtopic: 'AI Fairness'
   },
@@ -61,6 +63,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Feature engineering governance ensures appropriate data usage and feature transparency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'AI/ML Development',
     subtopic: 'Feature Engineering'
   },
@@ -80,6 +83,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data lineage tracks data origin, transformations, and usage for governance and compliance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Data Management',
     subtopic: 'Data Lineage'
   },
@@ -99,6 +103,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Event-driven testing verifies ordering, idempotency, delivery guarantees, and consistency.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'System Architecture',
     subtopic: 'Event-Driven Architecture'
   },
@@ -118,6 +123,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Contract testing validates API compatibility between service consumers and providers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Contract Testing'
   },
@@ -137,6 +143,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Chaos engineering uses controlled experiments to test and improve system resilience.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Testing',
     subtopic: 'Chaos Engineering'
   },
@@ -156,6 +163,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Schema migration automation includes version control, rollback capability, and validation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Database Development',
     subtopic: 'Schema Migration'
   },
@@ -175,6 +183,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Service mesh provides traffic management, mTLS security, and observability for microservices.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'System Architecture',
     subtopic: 'Service Mesh'
   },
@@ -194,6 +203,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Zero-trust requires authentication and authorization at every service interaction point.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Architecture',
     subtopic: 'Zero Trust'
   },
@@ -213,6 +223,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Performance tuning addresses query optimization, indexing strategies, and connection pooling.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Database Development',
     subtopic: 'Performance Tuning'
   },
@@ -232,6 +243,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Observability provides metrics, logs, and distributed traces for deep system understanding.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'System Architecture',
     subtopic: 'Observability'
   },
@@ -251,6 +263,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Data mesh decentralizes data ownership to domain teams while maintaining federated governance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Data Architecture',
     subtopic: 'Data Mesh'
   },
@@ -270,6 +283,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'GraphQL development requires query complexity limits, authorization, and rate limiting controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'API Development',
     subtopic: 'GraphQL'
   },
@@ -289,6 +303,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Federated identity requires trust relationships and standards like SAML or OIDC.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Security Development',
     subtopic: 'Federated Identity'
   },
@@ -308,6 +323,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Progressive delivery uses canary releases, feature flags, and ring deployments for safe rollouts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'SDLC',
     subtopic: 'Progressive Delivery'
   },
@@ -327,6 +343,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'API gateways provide authentication, rate limiting, validation, and other security controls.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'API Development',
     subtopic: 'API Gateway'
   },
@@ -346,6 +363,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Immutable infrastructure replaces components rather than modifying them in place.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 3',
     topic: 'Infrastructure',
     subtopic: 'Immutable Infrastructure'
   },

@@ -23,6 +23,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Crisis management addresses strategic, organization-wide response to significant events beyond operational incidents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Crisis Management',
     subtopic: 'Crisis vs Incident'
   },
@@ -42,6 +43,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Command centers are activated when incidents exceed normal operational response capabilities and thresholds.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Crisis Management',
     subtopic: 'Command Center'
   },
@@ -61,6 +63,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Cyber resilience emphasizes maintaining operations despite attacks, not just preventing them.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Resilience',
     subtopic: 'Cyber Resilience'
   },
@@ -80,6 +83,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Playbooks provide documented step-by-step procedures for common incident scenarios, enabling consistent response.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Incident Management',
     subtopic: 'Playbooks'
   },
@@ -99,6 +103,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Self-healing systems automatically detect failures and take corrective action without human intervention.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Self-Healing'
   },
@@ -118,6 +123,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Asset lifecycle includes request, procurement, testing, deployment, maintenance, and proper disposal.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Asset Management',
     subtopic: 'Asset Lifecycle'
   },
@@ -137,6 +143,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'SAM ensures license compliance, tracks entitlements, and optimizes software investments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Asset Management',
     subtopic: 'SAM'
   },
@@ -156,6 +163,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'CMDB accuracy requires automated discovery, regular reconciliation, and integration with change management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Configuration Management',
     subtopic: 'CMDB'
   },
@@ -175,6 +183,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Service catalog provides a user-facing view of available IT services, including descriptions and request processes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Service Catalog'
   },
@@ -194,6 +203,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Request fulfillment handles pre-approved routine requests (password resets, access requests) through standardized processes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Request Fulfillment'
   },
@@ -213,6 +223,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Problem management investigates root causes of recurring incidents to prevent future occurrences.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'Problem Management'
   },
@@ -232,6 +243,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'KEDB documents known errors with root causes and workarounds, speeding incident resolution.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Service Management',
     subtopic: 'KEDB'
   },
@@ -251,6 +263,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'CAB should include representatives from impacted business areas and relevant technical experts.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Change Management',
     subtopic: 'CAB'
   },
@@ -270,6 +283,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Emergency changes require expedited approval processes but must still be documented and reviewed post-implementation.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Change Management',
     subtopic: 'Emergency Change'
   },
@@ -289,6 +303,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Change success rate indicates process effectiveness by measuring changes implemented without causing incidents.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Change Management',
     subtopic: 'Change Metrics'
   },
@@ -308,6 +323,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Release management coordinates building, testing, and deploying changes to production environments.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Release Management',
     subtopic: 'Release Process'
   },
@@ -346,6 +362,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Deployment pipelines automate the flow from code commit through build, test, and deployment.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'DevOps',
     subtopic: 'Deployment Pipeline'
   },
@@ -365,6 +382,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Environment parity ensures development, test, and production environments are consistently configured.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'IT Operations',
     subtopic: 'Environment Parity'
   },
@@ -384,6 +402,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Replication lag monitoring ensures acceptable data consistency and failover readiness for recovery.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Replication'
   },
@@ -403,6 +422,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Storage tiering optimizes cost and performance by placing data on appropriate storage tiers based on access patterns.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Storage Tiering'
   },
@@ -422,6 +442,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Archiving moves data for long-term retention and compliance, while backups protect for recovery purposes.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Archiving'
   },
@@ -441,6 +462,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Retention policies must balance legal requirements, business needs, storage costs, and privacy obligations.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Data Management',
     subtopic: 'Retention'
   },
@@ -460,6 +482,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Network monitoring should track latency, bandwidth utilization, packet loss, jitter, and availability.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Network Operations',
     subtopic: 'Performance Monitoring'
   },
@@ -479,6 +502,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Segmentation helps contain security issues, manage traffic, and improve both security and performance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Network Operations',
     subtopic: 'Segmentation'
   },
@@ -498,6 +522,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'SD-WAN provides centralized management, dynamic path selection, and optimization across WAN connections.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Network Operations',
     subtopic: 'SD-WAN'
   },
@@ -517,6 +542,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Cloud operations require adapted practices for consumption-based billing, shared responsibility, and provider-specific tools.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Cloud Operations',
     subtopic: 'Cloud Ops'
   },
@@ -536,6 +562,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'FinOps focuses on cloud financial management, optimizing spend through visibility, accountability, and optimization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 4',
     topic: 'Cloud Operations',
     subtopic: 'FinOps'
   },

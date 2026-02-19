@@ -23,6 +23,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT governance success depends most on commitment from the board and executives, who set the tone, provide resources, and hold management accountable.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Governance',
     subtopic: 'Success Factors'
   },
@@ -42,6 +43,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT strategy should be reviewed regularly and whenever significant changes in business conditions, technology, or competitive environment occur.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Strategy',
     subtopic: 'Strategy Review'
   },
@@ -61,6 +63,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'IT portfolio management provides a structured approach to prioritize, select, and optimize IT investments to maximize value and align with strategy.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Investment',
     subtopic: 'Portfolio Management'
   },
@@ -80,6 +83,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Benefit realization management tracks and ensures that expected benefits from IT investments are actually achieved, not just that projects are completed.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Investment',
     subtopic: 'Benefit Realization'
   },
@@ -118,6 +122,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Standards are mandatory requirements that must be followed, while guidelines provide recommendations that may be adapted based on circumstances.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Policies',
     subtopic: 'Standards vs Guidelines'
   },
@@ -137,6 +142,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Exception management should include formal approval by appropriate authority, documentation of justification, compensating controls, and time limits.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Policies',
     subtopic: 'Exception Management'
   },
@@ -156,6 +162,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'IT organizational structure should clearly define roles, responsibilities, and accountability to ensure effective operations and governance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'Structure'
   },
@@ -175,6 +182,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'The CIO provides strategic IT leadership, ensuring IT strategy aligns with business objectives and IT delivers value to the organization.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Organization',
     subtopic: 'CIO Role'
   },
@@ -194,6 +202,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Risk appetite is the amount and type of risk an organization is willing to accept in pursuit of its objectives, set by governance.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Appetite'
   },
@@ -209,10 +218,11 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
       'Applies to the whole organization',
       'Is the acceptable variance from risk appetite',
       'Is set by the board only',
-      'Is always higher',
+      'is typically higher',
     ],
     correctAnswer: 1,
     explanation: 'Risk tolerance is the acceptable variance from risk appetite for specific objectives or processes, providing operational boundaries.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Tolerance'
   },
@@ -232,6 +242,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'KRIs are metrics that provide early warning when risk levels are increasing, enabling proactive response before issues materialize.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'KRIs'
   },
@@ -251,6 +262,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Insurance is appropriate for transferring the financial impact of risks that cannot be eliminated and where the cost of insurance is reasonable.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Risk Management',
     subtopic: 'Risk Transfer'
   },
@@ -270,6 +282,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Service level management ensures service expectations are documented in SLAs, performance is measured, and agreed-upon levels are achieved.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Service Management',
     subtopic: 'SLM'
   },
@@ -289,6 +302,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'OLAs define internal support relationships between IT groups that underpin the SLAs provided to business customers.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Service Management',
     subtopic: 'OLA'
   },
@@ -308,6 +322,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Outsourcing must align with business requirements with adequate controls. Cost savings alone should not drive the decision.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Outsourcing',
     subtopic: 'Outsourcing Decisions'
   },
@@ -327,6 +342,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Third-party risk management includes initial due diligence, ongoing monitoring of performance and risks, and exit planning if the relationship ends.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Vendor Management',
     subtopic: 'Third-Party Risk'
   },
@@ -365,6 +381,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Succession planning identifies potential successors and provides development opportunities to ensure continuity when key personnel depart.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT HR Management',
     subtopic: 'Succession Planning'
   },
@@ -384,6 +401,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Mandatory vacations force rotation of duties which may expose fraudulent activities that depend on continuous involvement of one person.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT HR Management',
     subtopic: 'Fraud Prevention'
   },
@@ -403,6 +421,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'Scope management ensures the project includes all required work and only required work, preventing scope creep that increases cost and risk.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Project Management',
     subtopic: 'Scope Management'
   },
@@ -422,6 +441,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'EVM integrates scope, schedule, and cost to provide objective measures of project performance and status.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Project Management',
     subtopic: 'EVM'
   },
@@ -441,6 +461,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'Project risk management is continuous throughout the project lifecycle, identifying, assessing, and responding to risks as they evolve.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Project Management',
     subtopic: 'Risk Management'
   },
@@ -460,6 +481,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'ITIL (Information Technology Infrastructure Library) is a framework of best practices for delivering IT services efficiently and effectively.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Frameworks',
     subtopic: 'ITIL'
   },
@@ -479,6 +501,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 0,
     explanation: 'ISO 27001 is an international standard specifying requirements for establishing, implementing, maintaining, and improving an information security management system.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Frameworks',
     subtopic: 'ISO 27001'
   },
@@ -498,6 +521,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IT compliance management must address all applicable requirements: laws, regulations, industry standards, contractual obligations, and internal policies.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'Compliance',
     subtopic: 'Compliance Management'
   },
@@ -517,6 +541,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Asset lifecycle management covers the entire life of an asset: planning, acquisition, deployment, operation, maintenance, and secure disposal.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Management',
     subtopic: 'Asset Lifecycle'
   },
@@ -536,6 +561,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'Non-compliance with software licenses can result in significant legal liability, financial penalties, and reputational damage during audits.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Management',
     subtopic: 'License Compliance'
   },
@@ -555,6 +581,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'A CMDB contains information about configuration items (CIs) including IT assets and their relationships, supporting change and incident management.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Service Management',
     subtopic: 'CMDB'
   },
@@ -574,6 +601,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'TCO includes all costs over the asset lifecycle: acquisition, implementation, operation, maintenance, training, support, and disposal.',
+    reference: 'CISA Review Manual, 27th Ed., Ch. 2',
     topic: 'IT Investment',
     subtopic: 'TCO'
   },

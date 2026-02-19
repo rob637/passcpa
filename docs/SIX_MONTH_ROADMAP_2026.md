@@ -242,7 +242,7 @@ The following systems were built and deployed on launch day:
 | Trial expiration drip | 🔴 P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Cloud Function (Day 7, 10, 13) |
 | **Google Ads conversion tracking** | 🔴 P0 | 2h | ✅ DONE | `analytics.ts` tracks signup/trial/purchase conversions with gtag |
 | Link GA4 ↔ Google Ads | 🔴 P0 | 0.5h | ✅ DONE | VoraPrepMCC linked Feb 17, Personalized Advertising enabled |
-| Landing page CTA flow | 🟡 P1 | 2h | | Ensure free trial CTA → onboarding → first practice is <60s |
+| Landing page CTA flow | 🟡 P1 | 2h | ✅ DONE | DemoPractice page (try 5 Qs free, no auth), fast-track onboarding, improved skip UX |
 | Error boundary coverage | 🟡 P1 | 3h | ✅ DONE | Route-level error boundaries in RouteErrorBoundary.tsx + ErrorBoundary HOC |
 
 ---
@@ -339,7 +339,7 @@ The following systems were built and deployed on launch day:
 |------|----------|-----------|-------------|
 | User management panel | P1 | 6h | ⚠️ Partial | Added diagnostic exam results to user activity modal, subscription viewing works |
 | Revenue dashboard | P1 | 4h | ✅ DONE | MRR, ARR, ARPU, subscribers, churn risk, per-course revenue in AdminCMS Analytics tab |
-| Content quality metrics | P2 | 2h | Question answer rate, avg time, discrimination index |
+| Content quality metrics | P2 | 2h | ✅ DONE | Question answer rate, avg time tracked in AdminCMS Stats tab per-course |
 
 ---
 

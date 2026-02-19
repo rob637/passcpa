@@ -260,7 +260,7 @@ The following systems were built and deployed on launch day:
 | Trial expiration drip | P0 | 4h | ✅ DONE | `sendTrialReminderEmails` Day 7/10/13 sequence |
 | Welcome drip sequence | P0 | 4h | ✅ DONE | `sendWelcomeDripEmails` Day 1/3/5/7 personalized emails (study tips, first Q kudos, AI tutor intro, blueprint mastery) |
 | Trial emails with stats | P0 | 2h | ✅ DONE | Enhanced trial reminders show user stats (questions, accuracy, days active, predicted score) |
-| Stripe webhook hardening | P1 | 3h | | Add retry logic, idempotency keys, failure alerts |
+| Stripe webhook hardening | P1 | 3h | ✅ DONE | Added retry logic, failure logging to Firestore, email alerts for critical events |
 | Onboarding funnel analytics | P1 | 2h | ✅ DONE | 9 tracking events added: `onboarding_started`, `onboarding_abandoned`, per-step tracking in GA4 |
 | Fix Pricing page redirect | P1 | 2h | ✅ DONE | Stripe `cancel_url` now returns to `/{courseId}#pricing` for course-specific context |
 | Error tracking setup | P1 | 4h | | Add Sentry or LogRocket for production error monitoring |

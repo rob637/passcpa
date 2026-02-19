@@ -637,17 +637,50 @@ const Onboarding: React.FC = () => {
     localStorage.removeItem('pendingCourse');
   }, []);
 
+  // Track onboarding started (funnel entry point)
+  useEffect(() => {
+    trackEvent('onboarding_started', {
+      course: selectedCourse || 'not_selected',
+      source: isCourseSwitching ? 'course_switch' : (hadPendingCourse ? 'landing_page' : 'signup'),
+      total_steps: steps.length,
+    });
+    
+    // Track abandonment on unmount (if not completed)
+    return () => {
+      // Only track if they didn't complete
+      const lastStepId = steps[currentStep]?.id;
+      if (lastStepId !== 'complete') {
+        trackEvent('onboarding_abandoned', {
+          dropped_at_step: currentStep + 1,
+          dropped_at_step_id: lastStepId,
+          dropped_at_step_name: steps[currentStep]?.title,
+          course: selectedCourse || 'not_selected',
+        });
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run on mount/unmount
+
   // Track onboarding step changes for funnel analytics
   useEffect(() => {
     const stepId = steps[currentStep]?.id;
     if (stepId) {
+      // Track with GA4 funnel-friendly naming
       trackEvent('onboarding_step', {
         step_number: currentStep + 1,
         step_id: stepId,
         step_name: steps[currentStep].title,
+        total_steps: steps.length,
+        course: selectedCourse || 'not_selected',
+      });
+      
+      // Also track step-specific events for easier funnel building in GA4
+      trackEvent(`onboarding_step_${stepId}`, {
+        step_number: currentStep + 1,
+        course: selectedCourse || 'not_selected',
       });
     }
-  }, [currentStep, steps]);
+  }, [currentStep, steps, selectedCourse]);
 
   const canContinue = () => {
     switch (steps[currentStep].id) {
@@ -778,21 +811,52 @@ const Onboarding: React.FC = () => {
     }
   };
 
+  // Tracked selection handlers for funnel analytics
+  const handleCourseSelect = (course: CourseId | '') => {
+    setSelectedCourse(course);
+    if (course) {
+      trackEvent('onboarding_course_selected', { course });
+    }
+  };
+
+  const handleSectionSelect = (section: string) => {
+    setSelectedSection(section);
+    if (section) {
+      trackEvent('onboarding_section_selected', { section, course: selectedCourse });
+    }
+  };
+
+  const handleExamDateChange = (date: string) => {
+    setExamDate(date);
+    if (date) {
+      const daysUntilExam = Math.ceil((new Date(date).getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+      trackEvent('onboarding_exam_date_set', { 
+        days_until_exam: daysUntilExam,
+        course: selectedCourse,
+      });
+    }
+  };
+
+  const handleDailyGoalChange = (goal: number) => {
+    setDailyGoal(goal);
+    trackEvent('onboarding_daily_goal_set', { goal, course: selectedCourse });
+  };
+
   const renderStep = () => {
     switch (steps[currentStep].id) {
       case 'welcome':
         return <WelcomeStep courseId={selectedCourse} isCourseSwitching={skipCourseStep} />;
       case 'course':
-        return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
+        return <CourseStep selected={selectedCourse} onSelect={handleCourseSelect} />;
       case 'exam-date':
-        return <ExamDateStep value={examDate} onChange={setExamDate} courseId={selectedCourse} />;
+        return <ExamDateStep value={examDate} onChange={handleExamDateChange} courseId={selectedCourse} />;
       case 'section':
-        return <SectionStep selected={selectedSection} onSelect={setSelectedSection} examDate={examDate} courseId={selectedCourse} />;
+        return <SectionStep selected={selectedSection} onSelect={handleSectionSelect} examDate={examDate} courseId={selectedCourse} />;
       case 'daily-goal':
         return (
           <DailyGoalStep
             goal={dailyGoal}
-            onGoalChange={setDailyGoal}
+            onGoalChange={handleDailyGoalChange}
             plan={studyPlan}
             onPlanChange={setStudyPlan}
           />

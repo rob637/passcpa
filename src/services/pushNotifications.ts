@@ -9,7 +9,7 @@
 import { Capacitor } from '@capacitor/core';
 import { LocalNotifications, ScheduleOptions } from '@capacitor/local-notifications';
 import { getApp } from 'firebase/app';
-import { getMessaging, getToken, onMessage, Messaging } from 'firebase/messaging';
+import { getMessaging, getToken, onMessage, isSupported, Messaging } from 'firebase/messaging';
 import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import logger from '../utils/logger';
@@ -40,6 +40,13 @@ export async function initializeFCM(): Promise<boolean> {
   }
   
   try {
+    // Check if browser supports Firebase Messaging (required for iOS Safari, etc.)
+    const messagingSupported = await isSupported();
+    if (!messagingSupported) {
+      logger.info('FCM skipped: Browser does not support Firebase Messaging');
+      return false;
+    }
+    
     const app = getApp();
     messagingInstance = getMessaging(app);
     

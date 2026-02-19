@@ -3,6 +3,7 @@ import logger from '../../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
+import { FEATURES } from '../../config/featureFlags';
 // getCourseHomePath removed — onboarding now navigates to /diagnostic
 import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
@@ -598,8 +599,10 @@ const Onboarding: React.FC = () => {
 
   // Check for fast-track mode (streamlined onboarding from demo/landing pages)
   // Fast-track skips welcome and daily goal steps (uses defaults)
-  // Check both URL param and localStorage (which persists through registration)
-  const fastTrack = searchParams.get('fast') === '1' || localStorage.getItem('onboardingFastTrack') === '1';
+  // Check: 1) URL param, 2) localStorage (persists through registration), 3) feature flag default
+  const fastTrack = searchParams.get('fast') === '1' || 
+    localStorage.getItem('onboardingFastTrack') === '1' ||
+    (searchParams.get('fast') !== '0' && FEATURES.fastTrackOnboarding); // URL ?fast=0 can override flag
   
   // Clear fast-track flag from localStorage after reading it
   useEffect(() => {

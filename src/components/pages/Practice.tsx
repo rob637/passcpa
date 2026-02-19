@@ -688,6 +688,8 @@ const Practice: React.FC = () => {
   const activityId = searchParams.get('activityId') || navSession.activityId || null;
   const blueprintAreaParam = searchParams.get('blueprintArea');
   const subtopicParam = searchParams.get('subtopic'); // Specific topic from lesson
+  const topicParam = searchParams.get('topic'); // Section/topic from daily plan (e.g., CIA1)
+  const countParam = searchParams.get('count'); // Question count from URL
 
   // Session state
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
@@ -1109,7 +1111,7 @@ const Practice: React.FC = () => {
     }
   };
 
-  // Auto-start session if mode=weak OR blueprintArea is specified (coming from lesson)
+  // Auto-start session if mode=weak OR blueprintArea/topic is specified (coming from lesson or daily plan)
   useEffect(() => {
     const mode = searchParams.get('mode');
     
@@ -1141,6 +1143,22 @@ const Practice: React.FC = () => {
         difficulty: 'all',
         questionStatus: 'all',
         blueprintArea: blueprintAreaParam || 'all',
+        scoringMode: 'practice',
+      });
+    }
+    
+    // Auto-start section practice when coming from daily plan with topic param (e.g., topic=CIA1)
+    if (topicParam && !subtopicParam && !blueprintAreaParam && userProfile && !inSession && !loading && mode !== 'weak') {
+      const questionCount = countParam ? parseInt(countParam, 10) : 15;
+      
+      startSession({
+        section: topicParam as ExamSection,
+        mode: 'study',
+        count: isNaN(questionCount) ? 15 : questionCount,
+        topics: [],
+        difficulty: 'all',
+        questionStatus: 'all',
+        blueprintArea: 'all',
         scoringMode: 'practice',
       });
     }

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
-import { Routes, Route, Navigate, useLocation, useSearchParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useSearchParams, useParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
@@ -290,6 +290,20 @@ const PremiumPage = ({ children }: { children: ReactNode }) => (
     <SubscriptionGate>{children}</SubscriptionGate>
   </SuspensePage>
 );
+
+// Course-prefixed URL redirect handler
+// Handles URLs like /cpa/practice, /ea/study-plan from email links
+const CourseRedirect = ({ to }: { to: string }) => {
+  const { courseId } = useParams<{ courseId: string }>();
+  const validCourses = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
+  
+  // Save course preference if valid
+  if (courseId && validCourses.includes(courseId.toLowerCase())) {
+    saveCoursePreference(courseId.toLowerCase() as CourseId);
+  }
+  
+  return <Navigate to={to} replace />;
+};
 
 function App() {
   // Handle PWA updates
@@ -742,6 +756,11 @@ function App() {
                     path="/study"
                     element={<Navigate to="/learn" replace />}
                   />
+                  
+                  {/* Course-prefixed redirects for email links */}
+                  <Route path="/:courseId/practice" element={<CourseRedirect to="/practice" />} />
+                  <Route path="/:courseId/study-plan" element={<CourseRedirect to="/you/study-plan" />} />
+                  <Route path="/:courseId/ai-tutor" element={<CourseRedirect to="/ai-tutor" />} />
                   
                   {/* Keep these routes accessible */}
                   <Route

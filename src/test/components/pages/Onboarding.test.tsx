@@ -56,6 +56,18 @@ vi.mock('clsx', () => ({
   default: (...args: any[]) => args.filter(Boolean).join(' '),
 }));
 
+// Mock feature flags - disable fastTrackOnboarding so tests use full flow
+vi.mock('../../../config/featureFlags', async (importOriginal) => {
+  const actual = await importOriginal() as any;
+  return {
+    ...actual,
+    FEATURES: {
+      ...actual.FEATURES,
+      fastTrackOnboarding: false, // Disable for tests that test full onboarding flow
+    },
+  };
+});
+
 // Mock exam config
 vi.mock('../../../config/examConfig', () => ({
   CPA_SECTIONS: {
